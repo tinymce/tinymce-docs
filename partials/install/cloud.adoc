@@ -1,4 +1,6 @@
-=== Step 1: Include the TinyMCE script
+[[step-1-include-the-tinymce-script]]
+=== Step 1: Include the TinyMCE script 
+anchor:step1includethetinymcescript[historical anchor]
 
 Include this line of code in the `<head>` of your HTML page:
 
@@ -7,7 +9,9 @@ Include this line of code in the `<head>` of your HTML page:
 <script src="{cdnurl}"></script>
 ----
 
-=== Step 2: Initialize TinyMCE as part of a web form
+[[step-2-initialize-tinymce-as-part-of-a-web-form]]
+=== Step 2: Initialize TinyMCE as part of a web form 
+anchor:step2initializetinymceaspartofawebform[historical anchor]
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
@@ -37,11 +41,15 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </html>
 ----
 
-=== Step 3: Saving content with a form POST
+[[step-3-saving-content-with-a-form-post]]
+=== Step 3: Saving content with a form POST 
+anchor:step3savingcontentwithaformpost[historical anchor]
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-=== Additional information about using TinyMCE Cloud
+[[additional-information-about-using-tinymce-cloud]]
+=== Additional information about using TinyMCE Cloud 
+anchor:additionalinformationaboutusingtinymcecloud[historical anchor]
 
 There are a few things you need to consider when using TinyMCE Cloud. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new link:{baseurl}/configure/integration-and-setup/#external_plugins[`external_plugins`] option.
 

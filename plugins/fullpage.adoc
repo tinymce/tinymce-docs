@@ -14,6 +14,7 @@ The plugin also adds a `Document properties` menu under the `File` menu and butt
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -26,10 +27,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `fullpage` plugin. Many of the settings allow you to specify default values for the full page editing process.
 
+[[fullpage_default_doctype]]
 === `fullpage_default_doctype`
 
 This option enables you to specify the default `doctype` for the output HTML.
@@ -47,6 +50,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_default_encoding]]
 === `fullpage_default_encoding`
 
 This option enables you to specify the default encoding for the output HTML.
@@ -64,6 +68,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_default_font_size]]
 === `fullpage_default_font_size`
 
 This option enables you to specify the default font *size* for the `body` element.
@@ -81,6 +86,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_default_font_family]]
 === `fullpage_default_font_family`
 
 This option enables you to specify the default font *family* for the `body` element.
@@ -98,6 +104,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_default_langcode]]
 === `fullpage_default_langcode`
 
 This option enables you to specify the default language codes for the output HTML.
@@ -115,6 +122,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_default_title]]
 === `fullpage_default_title`
 
 This option enables you to specify the default `title` for the output HTML.
@@ -132,6 +140,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_default_text_color]]
 === `fullpage_default_text_color`
 
 This option enables you to specify the default text color for the `body` element.
@@ -149,6 +158,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_default_xml_pi]]
 === `fullpage_default_xml_pi`
 
 This option enables you to specify if a XML declaration should be added or not true/false option.
@@ -168,6 +178,7 @@ tinymce.init({
 });
 ----
 
+[[fullpage_hide_in_source_view]]
 === `fullpage_hide_in_source_view`
 
 This option allows you to specify whether TinyMCE should hide the non `body` content from source view.

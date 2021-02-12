@@ -9,6 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 The `a11ychecker` plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
 
+[[example]]
 ===== Example:
 
 [source,js]
@@ -20,98 +21,129 @@ tinymce.init({
 });
 ----
 
+[[rules]]
 === Rules
 
 These are the various rules that are checked:
 
 [[D1]]
-==== <<D1,Usage of paragraphs as headings>>
+[[d1usage-of-paragraphs-as-headings]]
+==== <<D1,Usage of paragraphs as headings>> 
+anchor:d1usageofparagraphsasheadings[historical anchor]
 
 *Rule info:* This rule checks that you aren't using `p` tags instead of `h1`-`h6` tags for heading content. Not using correct heading markup will make it more difficult for assistive technologies to visually represent and navigate through your content.
 
 https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42[Link to specification].
 
 [[D2]]
-==== <<D2,Sequential headings>>
+[[d2sequential-headings]]
+==== <<D2,Sequential headings>> 
+anchor:d2sequentialheadings[historical anchor]
 
 *Rule info:* This rule checks that headings are used sequentially, meaning that an `h1` heading should be followed by an `h2` heading, a `h4` heading should be followed by an `h5` heading and so on. You should never skip a level, like following an `h3` heading with an `h6` heading. Using sequential links will make it easier for assistive technology to parse your content.
 
 [[D3]]
-==== <<D3,Adjacent links>>
+[[d3adjacent-links]]
+==== <<D3,Adjacent links>> 
+anchor:d3adjacentlinks[historical anchor]
 
 *Rule info:* This rule checks that links next to other links do not have the same href. For example if you have an image link and a text link with the same href they should be contained within the same `a` element and not in two different `a` elements. If the image and the text link are put in two separate elements it can be confusing for users of screen readers and other assistive technologies.
 
 https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H2[Link to specification].
 
 [[D4O]]
-==== <<D4O,Ordered list structure>>
+[[d4oordered-list-structure]]
+==== <<D4O,Ordered list structure>> 
+anchor:d4oorderedliststructure[historical anchor]
 
 *Rule info:* This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numverals instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 [[D4U]]
-==== <<D4U,Unordered list structure>>
+[[d4uunordered-list-structure]]
+==== <<D4U,Unordered list structure>> 
+anchor:d4uunorderedliststructure[historical anchor]
 
 *Rule info:* This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 [[D5]]
-==== <<D5,Contrast ratio of the text>> [[D5A]][[D5B]]
+[[d5contrast-ratio-of-the-text-d5ad5b]]
+==== <<D5,Contrast ratio of the text>> [[D5A]][[D5B]] 
+anchor:d5contrastratioofthetextd5ad5b[historical anchor]
 
 *Rule info:* This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read, especially for users with an impaired vision.
 
 https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html[Link to specification].
 
 [[I1]]
-==== <<I1,Image ALT text>>
+[[i1image-alt-text]]
+==== <<I1,Image ALT text>> 
+anchor:i1imagealttext[historical anchor]
 
 *Rule info:* This rule checks that all images have an alt text so screen readers and other assistive technologies can correctly present the content to your users that can't see the images visually.
 
 [[I2]]
-==== <<I2,Alt text filename>>
+[[i2alt-text-filename]]
+==== <<I2,Alt text filename>> 
+anchor:i2alttextfilename[historical anchor]
 
 *Rule info:* This rule checks that the alt text of you image isn't just the same as the filename of the image.
 
 [[T1]]
-==== <<T1,Table caption>>
+[[t1table-caption]]
+==== <<T1,Table caption>> 
+anchor:t1tablecaption[historical anchor]
 
 *Rule info:* This rule checks that all `table` elements have a caption that describes the data inside of the table to simplify parsing and navigation of the content for users of assistive technologies.
 
 https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H39[Link to specification].
 
 [[T2]]
-==== <<T2,Complex table summary>>
+[[t2complex-table-summary]]
+==== <<T2,Complex table summary>> 
+anchor:t2complextablesummary[historical anchor]
 
 *Rule info:* This rule checks that all complex tables must have a `summary` attribute explaining to users of assistive technologies how to navigate through the data inside of the table. See the specification linked below for examples.
 
 https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73[Link to specification].
 
 [[T3]]
-==== <<T3,Table caption and summary>>
+[[t3table-caption-and-summary]]
+==== <<T3,Table caption and summary>> 
+anchor:t3tablecaptionandsummary[historical anchor]
 
 *Rule info:* This rule checks that the table caption and summary does not have the same text content. The caption should explain *what* the table is about while the summary should explain *how* to navigate the data inside of the table.
 
 [[T4A]]
-==== <<T4A,Table markup>>
+[[t4atable-markup]]
+==== <<T4A,Table markup>> 
+anchor:t4atablemarkup[historical anchor]
 
 *Rule info:* This rule checks that all `tables` contain both `td` and `th` elements.
 
 https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H51[Link to specification].
 
 [[T4B]]
-==== <<T4B,Table headers>>
+[[t4btable-headers]]
+==== <<T4B,Table headers>> 
+anchor:t4btableheaders[historical anchor]
 
 *Rule info:* This rule checks that all `table` elements contain at lease one table header - `th` - element.
 
 https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F91[Link to specification].
 
 [[T4C]]
-==== <<T4C,Table heading scope>>
+[[t4ctable-heading-scope]]
+==== <<T4C,Table heading scope>> 
+anchor:t4ctableheadingscope[historical anchor]
 
 *Rule info:* This rule checks that all table heading - `th` - elements has a `scope` attribute clarifying what scope the heading has inside of the `table`. The allowed values are `row`, `col`, `rowgroup`, and `colgroup`. This is important for users of assistive technologies to be able to parse your table data.
 
 https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H63[Link to specification].
 
+[[options]]
 === Options
 
+[[a11ychecker_allow_decorative_images]]
 === `a11ychecker_allow_decorative_images`
 
 This configuration option sets whether the checker should allow decorative images (images with `alt=""` or `role="presentation"`).
@@ -120,6 +152,7 @@ This configuration option sets whether the checker should allow decorative image
 
 *Default value:* `false`
 
+[[example]]
 ==== Example:
 
 [source,js]
@@ -132,14 +165,17 @@ tinymce.init({
 });
 ----
 
+[[api]]
 === API
 
 Accessibility Checker exposes couple of methods that can be called directly.
 
+[[toggleaudit]]
 === `toggleaudit()`
 
 Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
 
+[[example]]
 ==== Example
 
 [source,js]
@@ -147,6 +183,7 @@ Triggers accessibility dialog with the results of the audit and options to corre
 editor.plugins.a11ychecker.toggleaudit();
 ----
 
+[[getreport]]
 === `getReport()`
 
 Conducts accessibility audit and reports about the results without triggering the dialog. The report represents an array of issues, each of which has details about:
@@ -156,6 +193,7 @@ Conducts accessibility audit and reports about the results without triggering th
 * *url* - _URL of the details page at W3 dedicated specifically to the given issue_
 * *element* - _DOM element having the issue_
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -163,7 +201,9 @@ Conducts accessibility audit and reports about the results without triggering th
 var issues = editor.plugins.a11ychecker.getReport();
 ----
 
-== Downloading Accessibility Checker
+[[downloading-accessibility-checker]]
+== Downloading Accessibility Checker 
+anchor:downloadingaccessibilitychecker[historical anchor]
 
 A https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription includes the ability to download and install the accessibility checker feature for the editor.
 

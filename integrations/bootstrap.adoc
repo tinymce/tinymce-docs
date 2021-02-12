@@ -7,7 +7,9 @@ include::{rootDir}_attributes.adoc[]
 :keywords: integration integrate bootstrap
 :title_nav: Bootstrap
 
-== Using TinyMCE in a Bootstrap Dialog
+[[using-tinymce-in-a-bootstrap-dialog]]
+== Using TinyMCE in a Bootstrap Dialog 
+anchor:usingtinymceinabootstrapdialog[historical anchor]
 
 You need to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE inside it. See this fiddle for a http://fiddle.tinymce.com/oxdaab[working example].
 
@@ -23,6 +25,8 @@ $(document).on('focusin', function(e) {
 });
 ----
 
-==== A note about integrations
+[[a-note-about-integrations]]
+==== A note about integrations 
+anchor:anoteaboutintegrations[historical anchor]
 
 NOTE:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the https://community.tinymce.com[TinyMCE Community].

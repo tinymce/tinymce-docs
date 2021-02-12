@@ -1,3 +1,4 @@
+[[relative_urls]]
 == relative_urls
 
 If this option is set to true, all URLs returned from the MCFileManager will be relative from the specified <<document_base_url,document_base_url>>. If it's set to false all URLs will be converted to absolute URLs.
@@ -8,6 +9,7 @@ If this option is set to true, all URLs returned from the MCFileManager will be 
 
 *Possible Values:* `true`, `false`
 
+[[example]]
 ===== Example
 
 [source,js]

@@ -1,10 +1,14 @@
-=== Step 1: Download the Self-hosted package
+[[step-1-download-the-self-hosted-package]]
+=== Step 1: Download the Self-hosted package 
+anchor:step1downloadtheself-hostedpackage[historical anchor]
 
 If you'd rather download and install the script manually, get the package from https://www.tinymce.com/download[TinyMCE Downloads].
 
 Unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
 
-=== Step 2: Include the TinyMCE script
+[[step-2-include-the-tinymce-script]]
+=== Step 2: Include the TinyMCE script 
+anchor:step2includethetinymcescript[historical anchor]
 
 Include this line of code in the `<head>` of your HTML page:
 
@@ -13,7 +17,9 @@ Include this line of code in the `<head>` of your HTML page:
 <script src="path/to/tinymce/js/tinymce.min.js"></script>
 ----
 
-=== Step 3: Initialize TinyMCE as part of a web form
+[[step-3-initialize-tinymce-as-part-of-a-web-form]]
+=== Step 3: Initialize TinyMCE as part of a web form 
+anchor:step3initializetinymceaspartofawebform[historical anchor]
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
@@ -43,7 +49,9 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </html>
 ----
 
-=== Step 4: Saving content with a form POST
+[[step-4-saving-content-with-a-form-post]]
+=== Step 4: Saving content with a form POST 
+anchor:step4savingcontentwithaformpost[historical anchor]
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 

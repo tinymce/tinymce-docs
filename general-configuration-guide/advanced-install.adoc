@@ -17,41 +17,55 @@ On this page you'll find a detailed guide to our installation options:
 * <<jqueryinstall,jQuery>>
 * <<custombuildinstall,Custom Build>>
 
-== Cloud Install
+[[cloud-install]]
+== Cloud Install 
+anchor:cloudinstall[historical anchor]
 
 include::{partialsDir}install/cloud.adoc[]
 
-== Package Manager Install Options
+[[package-manager-install-options]]
+== Package Manager Install Options 
+anchor:packagemanagerinstalloptions[historical anchor]
 
 * <<npm,NPM>>
 * <<bower,Bower>>
 * <<composer,Composer>>
 * <<nuget,NuGet>>
 
+[[npm]]
 == NPM
 
 include::{partialsDir}install/npm.adoc[]
 
+[[bower]]
 == Bower
 
 include::{partialsDir}install/bower.adoc[]
 
+[[composer]]
 == Composer
 
 include::{partialsDir}install/composer.adoc[]
 
+[[nuget]]
 == NuGet
 
 include::{partialsDir}install/nuget.adoc[]
 
-== SDK Install
+[[sdk-install]]
+== SDK Install 
+anchor:sdkinstall[historical anchor]
 
 include::{partialsDir}install/sdk.adoc[]
 
-== jQuery Install
+[[jquery-install]]
+== jQuery Install 
+anchor:jqueryinstall[historical anchor]
 
 include::{partialsDir}install/jquery.adoc[]
 
-== Custom Build Install
+[[custom-build-install]]
+== Custom Build Install 
+anchor:custombuildinstall[historical anchor]
 
 include::{partialsDir}install/custom.adoc[]

@@ -1,3 +1,4 @@
+[[file_browser_callback_types]]
 == file_browser_callback_types
 
 This option enables you to specify what types of file pickers you need by using a space or comma separated list of type names. There are currently three valid types: `file`, `image` and `media`.
@@ -6,6 +7,7 @@ This option enables you to specify what types of file pickers you need by using 
 
 *Possible Values:* `file`, `image`, `media`
 
+[[example]]
 ===== Example
 
 [source,js]

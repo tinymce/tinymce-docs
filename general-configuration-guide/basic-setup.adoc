@@ -15,7 +15,9 @@ Once you've added the TinyMCE script to your page there are three configuration 
 . <<pluginconfiguration,Plugin configuration>>
 . <<toolbarmenuconfiguration,Toolbar & menu configuration>>
 
-== A note about code snippet examples
+[[a-note-about-code-snippet-examples]]
+== A note about code snippet examples 
+anchor:anoteaboutcodesnippetexamples[historical anchor]
 
 Throughout the reference documentation, we use snippets of code to show you an example implementation of the topic being discussed. Below are some examples of what snippets look like throughout the documentation.
 
@@ -35,7 +37,9 @@ Snippets always include a `selector` with the value `'textarea'`. You need to ch
 
 Cut and paste the snippet into your HTML document, replacing everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). If the setting makes a visual change to the editor, (for example adds a toolbar button or menu item) you'll see the changes in the editor.
 
-== Selector configuration
+[[selector-configuration]]
+== Selector configuration 
+anchor:selectorconfiguration[historical anchor]
 
 Selector configuration is the most critical configuration option for your TinyMCE integration. Selector configuration allows you to use CSS `selector` syntax to determine which elements on the page should be editable through TinyMCE.
 
@@ -78,7 +82,9 @@ tinymce.init({
 For more information on the differences between regular and inline editing modes see the link:../use-tinymce-inline/[Using TinyMCE Inline] page.
 ====
 
-== Plugin configuration
+[[plugin-configuration]]
+== Plugin configuration 
+anchor:pluginconfiguration[historical anchor]
 
 The `plugins` configuration option allows you to enable functionality within the editor. Since several TinyMCE plugins provide useful features to your users, it is essential to consider which plugins you wish to include.
 
@@ -94,13 +100,17 @@ tinymce.init({
 
 We show you how to configure plugins throughout this guide. The full list of plugins, their options, and control associations is link:{baseurl}/plugins/[available here].
 
-== Toolbar & menu configuration
+[[toolbar--menu-configuration]]
+== Toolbar & menu configuration 
+anchor:toolbarmenuconfiguration[historical anchor]
 
 TinyMCE comes with a default set of toolbar controls out of the box, such as bold, italic, and text alignment buttons. Ideally, the type of settings you would expect to find in any WYSIWYG editor.
 
 However, in most integrations, it's desirable to change the toolbar configuration to suit your needs. Fortunately, that's quite easy to do too.
 
-==== Default toolbar controls
+[[default-toolbar-controls]]
+==== Default toolbar controls 
+anchor:defaulttoolbarcontrols[historical anchor]
 
 Before we get to configuring the toolbar, let's have a look at the default toolbar buttons. You can probably work out what they do from their name.
 
@@ -150,11 +160,15 @@ tinymce.init({
 });
 ----
 
-=== A quick look at menu and menubar controls
+[[a-quick-look-at-menu-and-menubar-controls]]
+=== A quick look at menu and menubar controls 
+anchor:aquicklookatmenuandmenubarcontrols[historical anchor]
 
 Just as there is a `toolbar` option, there is also a `menu` option. In fact, there is two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items. Some of these settings are used in the examples throughout this guide and all of them within the plugins and customization documentation.
 
-==== Default menu controls
+[[default-menu-controls]]
+==== Default menu controls 
+anchor:defaultmenucontrols[historical anchor]
 
 [source,js]
 ----
@@ -211,7 +225,9 @@ tinymce.init({
 
 IMPORTANT: If a menu or toolbar control is associated with plugin functionality, we highlight that relationship under its respective plugin entry. Be sure to look for the icons.
 
-== Basic configuration example
+[[basic-configuration-example]]
+== Basic configuration example 
+anchor:basicconfigurationexample[historical anchor]
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 
@@ -248,7 +264,9 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 </html>
 ----
 
-==== Breakdown of the above example
+[[breakdown-of-the-above-example]]
+==== Breakdown of the above example 
+anchor:breakdownoftheaboveexample[historical anchor]
 
 First, we want to select only the `textarea` with the id `myTextarea`.
 

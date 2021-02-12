@@ -10,57 +10,72 @@ include::{rootDir}_attributes.adoc[]
 
 Creating sidebars in TinyMCE is relatively easy and lets you add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow integrators and plugin authors to provide additional tools that can be used on the contents in tinymce.
 
-== Editor sidebar API
+[[editor-sidebar-api]]
+== Editor sidebar API 
+anchor:editorsidebarapi[historical anchor]
 
 The sidebar API is relatively straightforward. It allows you to add sidebars on editor instances in a similar way as adding buttons or menu items. You can either add sidebars directly in the tinymce.init using the setup callback or inside your plugin.
 
 This is the syntax for the addSidebar function: `editor.addSidebar(id:String, options:Object)`
 
-=== Options object
+[[options-object]]
+=== Options object 
+anchor:optionsobject[historical anchor]
 
+[[tooltip]]
 ==== `tooltip`
 
 The `tooltip` allows you to specify a tooltip to be displayed when hovering the sidebar toggle button.
 
 *Type*: `String`
 
+[[icon]]
 ==== `icon`
 
 The `icon` allows you to specify an icon for the sidebar toggle button. The icon should be a name of an icon provided by the TinyMCE skin.
 
 *Type*: `String`
 
+[[image]]
 ==== `image`
 
 The `image` allows you to specify a custom image URL to use as an icon.
 
 *Type*: `String`
 
+[[onrender]]
 ==== `onrender`
 
 The `onrender` allows you to specify a function to be called when the panel is first created. It will pass in an API object.
 
 *Type*: `function`
 
+[[onshow]]
 ==== `onshow`
 
 The `onshow` allows you to specify a function to be called when the panel displayed. It will pass in an API object.
 
 *Type*: `function`
 
+[[onhide]]
 ==== `onhide`
 
 The `onhide` allows you to specify a function to be called when the panel has been hidden. It will pass in an API  object.
 
 *Type*: `function`
 
-=== API Object
+[[api-object]]
+=== API Object 
+anchor:apiobject[historical anchor]
 
+[[elementdomelement]]
 ==== `element():DOMElement`
 
 The `element():DOMElement` function returns the root element of the sidebar panel.
 
-== Example inside the tinymce.init
+[[example-inside-the-tinymceinit]]
+== Example inside the tinymce.init 
+anchor:exampleinsidethetinymceinit[historical anchor]
 
 [source,js]
 ----
@@ -85,7 +100,9 @@ tinymce.init({
 });
 ----
 
-== Example inside a TinyMCE plugin
+[[example-inside-a-tinymce-plugin]]
+== Example inside a TinyMCE plugin 
+anchor:exampleinsideatinymceplugin[historical anchor]
 
 [source,js]
 ----

@@ -13,6 +13,7 @@ Note that by default `contextmenu` does not disable the operating system's nativ
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -24,10 +25,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `contextmenu` plugin. The settings in this section allow direct control over how the `contextmenu` appears and what is included inside the `contextmenu`.
 
+[[contextmenu]]
 === `contextmenu`
 
 This option allows you to specify which items should appear on TinyMCE's context menu.
@@ -49,6 +52,7 @@ tinymce.init({
 });
 ----
 
+[[contextmenu_never_use_native]]
 === `contextmenu_never_use_native`
 
 This option allows you to disable the browser's native context menu from appearing within the editor.

@@ -9,6 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 The *Enhanced Media Embed* plugin is a https://tinymce.com/pricing[premium TinyMCE plugin] that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
 
+[[installation]]
 == Installation
 
 For the moment the *Enhanced Media Embed* plugin has to be used in conjunction with the link:../media[media] plugin, so:
@@ -16,7 +17,9 @@ For the moment the *Enhanced Media Embed* plugin has to be used in conjunction w
 . Make sure you have the `media` plugin added to the `plugins` list.
 . Add the `mediaembed` plugin to the `plugins` list.
 
-=== Example Cloud Configuration
+[[example-cloud-configuration]]
+=== Example Cloud Configuration 
+anchor:examplecloudconfiguration[historical anchor]
 
 The service URL is already configured with link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud].
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
@@ -30,7 +33,9 @@ tinymce.init({
 });
 ----
 
-=== Example Self-hosted Configuration
+[[example-self-hosted-configuration]]
+=== Example Self-hosted Configuration 
+anchor:exampleself-hostedconfiguration[historical anchor]
 
 In a Self-hosted installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
 
@@ -44,21 +49,28 @@ tinymce.init({
 });
 ----
 
+[[usage]]
 == Usage
 
 The plugin can be used in two ways, either by simply entering a URL on an empty line and pressing the enter key - or by entering the URL into the media plugin's dialog window. Either way the URL will be handled by the service backend and the returned code will be embedded into the editor.
 
-== Configuration Options
+[[configuration-options]]
+== Configuration Options 
+anchor:configurationoptions[historical anchor]
 
+[[mediaembed_service_url]]
 === `mediaembed_service_url`
 
 This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription.
 This option is not required for link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud].
 
+[[mediaembed_max_width]]
 === `mediaembed_max_width`
 
 This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `650`.
 
-== Downloading Enhanced Media Embed plugin
+[[downloading-enhanced-media-embed-plugin]]
+== Downloading Enhanced Media Embed plugin 
+anchor:downloadingenhancedmediaembedplugin[historical anchor]
 
 A https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription includes the ability to download and install the *Media Embed* plugin and a *WAR* file to access the service backend. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file.

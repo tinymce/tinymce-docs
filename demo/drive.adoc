@@ -6,7 +6,9 @@ include::{rootDir}_attributes.adoc[]
 :description_short: Tiny Drive :description: Tiny Drive. A premium plugin to manage files & images.
 :keywords: tinydrive storage media tiny drive
 
-== Live example
+[[live-example]]
+== Live example 
+anchor:liveexample[historical anchor]
 
 This example shows you how to use Tiny Drive for your file and image management. For more information on the Tiny Drive plugin, see the link:{baseurl}/plugins/drive/[docs].
 
@@ -59,6 +61,7 @@ tinymce.init({
 </script>
 ++++
 
+[[code]]
 === Code:
 
 [source,js]

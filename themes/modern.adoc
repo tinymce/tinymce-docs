@@ -9,6 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 The `modern` theme is responsible for rendering the editor in iframe or inline mode. This is currently the default theme there is also a lightweight theme called link:{baseurl}/themes/inlite/[inlite]
 
+[[example]]
 ===== Example:
 
 [source,js]
@@ -19,7 +20,9 @@ tinymce.init({
 });
 ----
 
-=== Related configuration options
+[[related-configuration-options]]
+=== Related configuration options 
+anchor:relatedconfigurationoptions[historical anchor]
 
 * link:{baseurl}/configure/editor-appearance/#elementpath[elementpath]
 * link:{baseurl}/configure/editor-appearance/#fixed-toolbar-container[fixed-toolbar-container]

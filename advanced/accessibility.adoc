@@ -10,7 +10,9 @@ include::{rootDir}_attributes.adoc[]
 
 As of version 4.0.17 of TinyMCE, we now follow the WAI-ARIA specification, making it compatible with screen readers such as JAWS and NVDA. At the time of writing, we would *highly* recommend the use of http://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox] for the best Accessibility experience with TinyMCE.
 
-== Keyboard shortcuts
+[[keyboard-shortcuts]]
+== Keyboard shortcuts 
+anchor:keyboardshortcuts[historical anchor]
 
 The `ALT+key` shortcut assumes that you are currently in the content area of the editor.
 
@@ -33,7 +35,9 @@ The `ALT+key` shortcut assumes that you are currently in the content area of the
 | Navigate left/right through menu/toolbar
 |===
 
-== How to work with the editor
+[[how-to-work-with-the-editor]]
+== How to work with the editor 
+anchor:howtoworkwiththeeditor[historical anchor]
 
 When you navigate into an editor instance, you will land in the content area. Arrowing up and down will give you paragraphs, headings and other items such as links. Note that NVDA and Firefox treat links as embedded characters, you have actually to navigate into them to read their texts, but they are accessible.
 
@@ -45,6 +49,7 @@ From either the menus or toolbars, you can open dialogs such as Insert/Edit or I
 
 On the toolbars and in the formatting menu, you can insert emoticons or change the text and background colors. These are panels you open by pressing DownArrow or Enter on their respective menu/toolbar items and then use the arrow keys to select the actual item you want to be applied/inserted. All of these items are also made to talk, so a blind person can change the text color as well and know what they're doing.
 
+[[credits]]
 == Credits
 
 Most of this text was written by Marco, who is working as an Accessibility QA Engineer and Evangelist at Mozilla. We would like to extend our thanks for the help with the WAI-ARIA implementation, could not have done it without him. http://www.marcozehe.de/[Visit Marco's excellent blog!]

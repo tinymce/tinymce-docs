@@ -1,3 +1,4 @@
+[[images_upload_handler]]
 == images_upload_handler
 
 The *images_upload_handler* option allows you to specify a function that is used to replace TinyMCE's default JavaScript upload handler function with custom logic.
@@ -8,6 +9,7 @@ NOTE: Please note that when using this option, no other image uploader options a
 
 *Type:* `JavaScript Function`
 
+[[example]]
 ===== Example
 
 [source,js]

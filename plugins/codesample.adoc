@@ -12,6 +12,7 @@ The Code Sample plugin (`codesample`) lets a user insert and embed syntax color 
 
 This plugin demonstrates the support for the new block based `contenteditable=false` elements available in version TinyMCE 4.3.
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -30,24 +31,29 @@ By default `codesample` uses \http://prismjs.com/ to embed the code samples with
 Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
 ====
 
+[[options]]
 === Options
 
+[[codesample_dialog_width]]
 === `codesample_dialog_width`
 
 This configuration option sets the _internal, editable area_ width of the `codesample` dialog box.
 
 Note that the external dimensions of the actual modal will be slightly larger than the value set.
 
+[[codesample_dialog_height]]
 === `codesample_dialog_height`
 
 This configuration option sets the _internal, editable area_ height of the `codesample` dialog box.
 
 Note that the external dimensions of the actual modal will be slightly larger than the value set.
 
+[[codesample_languages]]
 === `codesample_languages`
 
 This configuration option enables you to set a list of languages to be displayed in the languages drop down.
 
+[[codesample_content_css]]
 === `codesample_content_css`
 
 This option enables you to specify a custom css file to be loaded when codesamples are inserted into the editor.
@@ -75,11 +81,15 @@ tinymce.init({
 });
 ----
 
-===== Using Prism.js on your web page
+[[using-prismjs-on-your-web-page]]
+===== Using Prism.js on your web page 
+anchor:usingprismjsonyourwebpage[historical anchor]
 
 You need to add `prism.js` and `prism.css` to your page in order to get the syntax highlighted code samples on your webpage (as created by the Code Sample plugin). The Code Sample plugin uses the following languages: markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the `prism.js` and `prism.css` files on the http://prismjs.com/download.html[download] page at the Prism website.
 
-===== Example of using the Prism.js script
+[[example-of-using-the-prismjs-script]]
+===== Example of using the Prism.js script 
+anchor:exampleofusingtheprismjsscript[historical anchor]
 
 [source,html]
 ----
@@ -88,7 +98,9 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 <pre class="language-markup"><code>...</code></pre>
 ----
 
-== Live example
+[[live-example]]
+== Live example 
+anchor:liveexample[historical anchor]
 
 ++++
 <p data-height="600" data-theme-id="0" data-slug-hash="mpyXwj" data-default-tab="result" data-user="tinymce" class="codepen">

@@ -9,6 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 The easiest way to get started using TinyMCE with Angular 2+ is with our official https://github.com/tinymce/tinymce-angular[@tinymce/tinymce-angular] component!
 
+[[installation]]
 == Installation
 
 [source,sh]
@@ -16,9 +17,12 @@ The easiest way to get started using TinyMCE with Angular 2+ is with our officia
 $ npm install @tinymce/tinymce-angular
 ----
 
+[[usage]]
 == Usage
 
-=== Loading the component
+[[loading-the-component]]
+=== Loading the component 
+anchor:loadingthecomponent[historical anchor]
 
 Import the `EditorModule` from the npm package like this:
 
@@ -45,7 +49,9 @@ And add it to your application module:
 })
 ----
 
-=== Using the component in your templates
+[[using-the-component-in-your-templates]]
+=== Using the component in your templates 
+anchor:usingthecomponentinyourtemplates[historical anchor]
 
 Use the editor in your templates like this:
 
@@ -54,7 +60,9 @@ Use the editor in your templates like this:
 <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
 ----
 
-=== Configuring the editor
+[[configuring-the-editor]]
+=== Configuring the editor 
+anchor:configuringtheeditor[historical anchor]
 
 The editor accepts the following inputs:
 
@@ -68,6 +76,7 @@ The editor accepts the following inputs:
 * `apiKey`: Api key for TinyMCE cloud, more info below.
 * `cloudChannel`: Cloud channel for TinyMCE Cloud, more info below.
 
+[[ngmodel]]
 === `ngModel`
 
 You can also use the `ngModel` directive (more info in the https://angular.io/api/forms/NgModel[Angular documentation]) on the editor to simplify using it in a form:
@@ -77,7 +86,9 @@ You can also use the `ngModel` directive (more info in the https://angular.io/ap
 <editor [(ngModel)]="dataModel"></editor>
 ----
 
-=== Event binding
+[[event-binding]]
+=== Event binding 
+anchor:eventbinding[historical anchor]
 
 You can also bind editor events via a shorthand prop on the editor, for example:
 [source,js]
@@ -158,9 +169,13 @@ Here is a full list of the events available:
 </details>
 ++++
 
-== Loading TinyMCE
+[[loading-tinymce]]
+== Loading TinyMCE 
+anchor:loadingtinymce[historical anchor]
 
-=== Auto-loading from TinyMCE Cloud
+[[auto-loading-from-tinymce-cloud]]
+=== Auto-loading from TinyMCE Cloud 
+anchor:auto-loadingfromtinymcecloud[historical anchor]
 
 The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/[TinyMCE Cloud] if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
 
@@ -188,10 +203,14 @@ So using the `dev` channel would look like this:
 
 For more info on the different versions see the https://www.tinymce.com/docs/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases[documentation].
 
-=== Loading TinyMCE by yourself
+[[loading-tinymce-by-yourself]]
+=== Loading TinyMCE by yourself 
+anchor:loadingtinymcebyyourself[historical anchor]
 
 To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out https://www.tinymce.com/docs/advanced/usage-with-module-loaders/[this page in the documentation].
 
-==== A note about integrations
+[[a-note-about-integrations]]
+==== A note about integrations 
+anchor:anoteaboutintegrations[historical anchor]
 
 NOTE:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the https://community.tinymce.com[TinyMCE Community].

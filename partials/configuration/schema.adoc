@@ -1,3 +1,4 @@
+[[schema]]
 == schema
 
 The `schema` option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `html5`, `html4` or `html5-strict`.
@@ -12,6 +13,7 @@ Also note that all event attributes are excluded by default since it's a bad pra
 
 *Possible Values:* `html5`, `html4`, `html5-strict`
 
+[[example]]
 ===== Example
 
 [source,js]

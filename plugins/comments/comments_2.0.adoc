@@ -7,6 +7,7 @@ include::{rootDir}_attributes.adoc[]
 :keywords: comments commenting tinycomments
 :title_nav: Comments 2.0
 
+[[introduction]]
 == Introduction
 
 The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the link:{baseurl}/advanced/annotations/[Annotations API] and uses annotations to create comment threads (conversations).
@@ -15,6 +16,7 @@ Comments 2.0 is a premium plugin from Tiny. Please see the link:{baseurl}/enterp
 
 Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
 
+[[modes]]
 === Modes
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
@@ -22,7 +24,9 @@ There are two modes available in Comments 2.0 that provide the ability to save c
 * *Callback Mode* - This is the default mode in Comments 2.0. This mode is used to configure storage and save comments on the user's server. This option provides a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the link:{baseurl}/advanced/configuring-comments-callbacks/[configuring callbacks for comments] section for more information.
 * *Embedded Mode* - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
-=== Configuring Comments 2.0 embedded mode
+[[configuring-comments-20-embedded-mode]]
+=== Configuring Comments 2.0 embedded mode 
+anchor:configuringcomments20embeddedmode[historical anchor]
 
 To configure Comments 2.0 to use the embedded mode use the following script:
 
@@ -43,7 +47,9 @@ tinymce.init({
 })
 ----
 
-=== Configuring the Comments 2.0 addcomment toolbar button
+[[configuring-the-comments-20-addcomment-toolbar-button]]
+=== Configuring the Comments 2.0 addcomment toolbar button 
+anchor:configuringthecomments20addcommenttoolbarbutton[historical anchor]
 
 The `addcomment` toolbar button provides the ability to add comments.
 
@@ -60,7 +66,9 @@ tinymce.init({
 
 *Result*: The *Comments*  image:comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
 
-=== Configuring the Comments 2.0 showcomments toolbar button
+[[configuring-the-comments-20-showcomments-toolbar-button]]
+=== Configuring the Comments 2.0 showcomments toolbar button 
+anchor:configuringthecomments20showcommentstoolbarbutton[historical anchor]
 
 The `showcomments` toolbar button provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
 
@@ -77,7 +85,9 @@ tinymce.init({
 
 *Result*: The *Comments*  image:comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
 
-=== Configuring the Comments 2.0 menu item
+[[configuring-the-comments-20-menu-item]]
+=== Configuring the Comments 2.0 menu item 
+anchor:configuringthecomments20menuitem[historical anchor]
 
 By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), `showcomments` (View Menu), and `deleteallconversations` (File Menu).
 
@@ -89,7 +99,9 @@ Currently, there are three menu items available:
 * `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments as well. By default, this option can be accessed through *View* \-> *Show comment* menu bar item.
 * `deleteallconversations`- Provides the ability to delete all the comments in the content. By default, this option can be accessed through *File* \-> *Delete all conversations* menu bar item.
 
-=== Configuring the commented text properties
+[[configuring-the-commented-text-properties]]
+=== Configuring the commented text properties 
+anchor:configuringthecommentedtextproperties[historical anchor]
 
 The editor needs to be configured to highlight the commented text. Replace the value of `background-color` in the following configuration example to change the highlight color of the text that the comment has been added to:
 
@@ -109,9 +121,13 @@ image:highlight.png[**Highlighted text**]
 
 For more information on TinyMCE formats, refer to the link:{baseurl}/configure/content-formatting/#formats[formats] section.
 
-=== Using Comments
+[[using-comments]]
+=== Using Comments 
+anchor:usingcomments[historical anchor]
 
-==== To add a comment
+[[to-add-a-comment]]
+==== To add a comment 
+anchor:toaddacomment[historical anchor]
 
 . Select the text from the desired location in the editor body.
 . From the navigation menu, choose *Insert*\-> *Add Comment* or click on the *Comments* image:comment-disabled.png[**Comments**] toolbar button to add the comment.
@@ -124,7 +140,9 @@ image:commentedit.png[**Delete Conversation**]
 
 NOTE: The above procedure can be followed for adding multiple comments to the document.
 
-==== Editing a comment
+[[editing-a-comment]]
+==== Editing a comment 
+anchor:editingacomment[historical anchor]
 
 Follow this procedure to edit a comment.
 
@@ -133,7 +151,9 @@ Follow this procedure to edit a comment.
 . The comment field becomes editable. Make the required changes.
 . Click *Cancel* to discard or *Save* to store the changes.
 
-==== Delete a comment
+[[delete-a-comment]]
+==== Delete a comment 
+anchor:deleteacomment[historical anchor]
 
 Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
 
@@ -143,7 +163,9 @@ Follow this procedure to delete a comment. This option is not available for the 
 image:delete.png[**delete comment**]
 . Click *Cancel* to save or *Delete* to remove the comment from the conversation.
 
-==== Delete conversation
+[[delete-conversation]]
+==== Delete conversation 
+anchor:deleteconversation[historical anchor]
 
 This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
 
@@ -155,7 +177,9 @@ image:decision.png[**delete conversation**]
 
 *Result*: The conversation and all its subsequent comments will be deleted.
 
-==== Show comment
+[[show-comment]]
+==== Show comment 
+anchor:showcomment[historical anchor]
 
 Follow this procedure to display the comments sidebar:
 
@@ -164,7 +188,9 @@ Follow this procedure to display the comments sidebar:
 
 *Result*: The comments sidebar will appear and display the corresponding conversation for the highlighted text.
 
-==== Delete all conversations
+[[delete-all-conversations]]
+==== Delete all conversations 
+anchor:deleteallconversations[historical anchor]
 
 Follow this procedure to delete all conversations in the document:
 

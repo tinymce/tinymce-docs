@@ -12,6 +12,7 @@ This plugin adds a save button to the TinyMCE toolbar, which will submit the for
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -41,10 +42,12 @@ With this:
 <form><button name="submitbtn"></button></form>
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or canceling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
+[[save_enablewhendirty]]
 === `save_enablewhendirty`
 
 This option allows you to disable the save button until modifications have been made to the content of the editor. This option is enabled by default.
@@ -63,6 +66,7 @@ tinymce.init({
 });
 ----
 
+[[save_oncancelcallback]]
 === `save_oncancelcallback`
 
 This option allows you to specify the function that will be executed when the cancel button/command is invoked.
@@ -81,6 +85,7 @@ tinymce.init({
 });
 ----
 
+[[save_onsavecallback]]
 === `save_onsavecallback`
 
 This option allows you to specify the function that will be executed when the save button/command is invoked.

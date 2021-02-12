@@ -10,6 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 In version 4.3 of TinyMCE, a new feature was added to allow you to display notifications. These notifications can be customized in several ways.
 
+[[text]]
 == Text
 
 *Text* is the most critical setting when opening a notification. The "text" property sets the text that is displayed at the center of the notification.
@@ -21,6 +22,7 @@ editor.notificationManager.open({
 });
 ----
 
+[[type]]
 == Type
 
 There are several types of notifications that differ in color and purpose. These are:
@@ -40,6 +42,7 @@ editor.notificationManager.open({
 });
 ----
 
+[[timeout]]
 == Timeout
 
 By setting the "timeout" property, the notification will automatically close after the provided value's time has elapsed in milliseconds.
@@ -52,7 +55,9 @@ editor.notificationManager.open({
 });
 ----
 
-== Close Button
+[[close-button]]
+== Close Button 
+anchor:closebutton[historical anchor]
 
 By setting the "closeButton" property to false in conjunction with a non-zero timeout, you may disable the close button to the right of the notification.
 
@@ -65,6 +70,7 @@ editor.notificationManager.open({
 });
 ----
 
+[[icon]]
 == Icon
 
 By setting the "icon" property, the notification will display an icon to the left of the text.
@@ -77,7 +83,9 @@ editor.notificationManager.open({
 });
 ----
 
-== Progress Bar
+[[progress-bar]]
+== Progress Bar 
+anchor:progressbar[historical anchor]
 
 By setting the "progressBar" property to `True`, the notification will display a progress bar to the left of the close button and to the right of the text.
 

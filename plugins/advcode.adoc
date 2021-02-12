@@ -12,6 +12,7 @@ This plugin adds a toolbar button that allows a user to edit the HTML code using
 
 If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code `code` plugin.
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -23,8 +24,10 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
+[[code_dialog_height]]
 === `code_dialog_height`
 
 This configuration option sets the _internal, editable area_ height of the `code` dialog box.
@@ -46,6 +49,7 @@ tinymce.init({
 });
 ----
 
+[[code_dialog_width]]
 === `code_dialog_width`
 
 This configuration option sets the _internal, editable area_ width of the `code` dialog box.

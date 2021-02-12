@@ -11,6 +11,7 @@ This plugin adds the forecolor/backcolor button controls that enable you to pick
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -22,10 +23,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `textcolor` plugin. The dimensions and mapping of the grid of text colors may be set here.
 
+[[textcolor_cols]]
 === `textcolor_cols`
 
 This option allows you to specify how many columns appear on the grid of text colors.
@@ -46,6 +49,7 @@ tinymce.init({
 });
 ----
 
+[[textcolor_rows]]
 === `textcolor_rows`
 
 This option allows you to specify how many rows appear on the grid of text colors.
@@ -66,6 +70,7 @@ tinymce.init({
 });
 ----
 
+[[textcolor_map]]
 === `textcolor_map`
 
 This option allows you to specify a map of the text colors that will appear in the grid.

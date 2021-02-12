@@ -13,6 +13,7 @@ The default pattern is similar to markdown syntax, so you can type `# text` to p
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -23,10 +24,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 This setting affects the execution of the `textpattern` plugin. Text patterns that are matched by the editor can be changed here.
 
+[[textpattern_patterns]]
 === `textpattern_patterns`
 
 This option lets you configure the text patterns that get matched by the `textpattern` plugin. By default, it has basic markdown patterns.

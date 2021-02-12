@@ -1,3 +1,4 @@
+[[external_plugins]]
 == external_plugins
 
 This option allows you to specify a URL based location of plugins outside of the normal TinyMCE plugins directory.
@@ -8,6 +9,7 @@ This value should be set as a JavaScript object that contains a property for eac
 
 *Type:* `Object`
 
+[[example]]
 ===== Example
 
 [source,js]

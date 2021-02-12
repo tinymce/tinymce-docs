@@ -1,3 +1,4 @@
+[[setup]]
 == setup
 
 This option allows you to specify a callback that will be executed before the TinyMCE editor instance is rendered.
@@ -8,6 +9,7 @@ A common use case for this setting is to add editor events to TinyMCE. For insta
 
 *Type:* `JavaScript Function`
 
+[[example]]
 ===== Example
 
 [source,js]

@@ -1,3 +1,4 @@
+[[file_picker_callback]]
 == file_picker_callback
 
 This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in _Image_, _Media_ and _Link_ dialogs. Option replaces deprecated <<file_browser_callback,file_browser_callback>>. New hook provides a way to update values of other fields in the dialog.
@@ -14,6 +15,7 @@ It should be noted, that we only provide a hook. It is up to you to implement sp
 
 _The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check link:{baseurl}/demo/file-picker[Basic Local File Picker] demo for a more functional example._
 
+[[example]]
 ===== Example
 
 [source,js]

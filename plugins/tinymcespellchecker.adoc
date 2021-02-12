@@ -24,7 +24,9 @@ The following languages are supported:
 * Spanish
 * Swedish
 
-== Cloud Installation
+[[cloud-installation]]
+== Cloud Installation 
+anchor:cloudinstallation[historical anchor]
 
 To enable the TinyMCE Enterprise Spellchecking plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features[TinyMCE Cloud]:
 
@@ -33,7 +35,9 @@ To enable the TinyMCE Enterprise Spellchecking plugin with link:{baseurl}/cloud-
 
 With TinyMCE Cloud the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
 
-===== Example TinyMCE Configuration
+[[example-tinymce-configuration]]
+===== Example TinyMCE Configuration 
+anchor:exampletinymceconfiguration[historical anchor]
 
 [source,js]
 ----
@@ -44,7 +48,9 @@ tinymce.init({
 });
 ----
 
-== Self-hosted Installation
+[[self-hosted-installation]]
+== Self-hosted Installation 
+anchor:self-hostedinstallation[historical anchor]
 
 To enable the TinyMCE Enterprise Spellchecking plugin:
 
@@ -65,18 +71,23 @@ tinymce.init({
 });
 ----
 
+[[usage]]
 == Usage
 
 The TinyMCE Enterprise Spellchecking plugin activates automatically when users type content into the editor. To see and select a spelling suggestion after a word has been misspelled, please right click the misspelled red underlined word.
 
-== Configuration Options
+[[configuration-options]]
+== Configuration Options 
+anchor:configurationoptions[historical anchor]
 
+[[spellchecker_rpc_url]]
 === `spellchecker_rpc_url`
 
 This setting enables you to specify the URL to be used for the server side ephox-spelling service. Check the link:{baseurl}/enterprise/server/[server-side component installation guide] for details on how to setup your own spellchecker server.
 
 NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]
 
+[[spellchecker_languages]]
 === `spellchecker_languages`
 
 This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is:
@@ -85,6 +96,7 @@ This optional setting allows you to specify the languages that are available to 
 'US English=en,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
 ----
 
+[[spellchecker_language]]
 === `spellchecker_language`
 
 This optional setting allows you to specify the language code that will be used by default. This defaults to "en".
@@ -134,24 +146,31 @@ The following languages are supported:
 | sv
 |===
 
+[[spellchecker_dialog]]
 === `spellchecker_dialog`
 
 This optional setting allows you to specify the mode of operation of the spellchecker. When set to true, the spellchecker will open a dialog that will check all of the document's contents at once. This also allows a user to step through each error, to ignore errors and accept recommended fixes. If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.
 
+[[spellchecker_whitelist]]
 === `spellchecker_whitelist`
 
 This option lets you specify an array of words that you want to ignore this can for example be the current company name or internal products. You can populate this field from a file by just getting the white list array from an external JS file.
 
+[[spellchecker_on_load]]
 === `spellchecker_on_load`
 
 This option lets run the spellchecker when the contents is loaded into the editor. This option defaults to "false" so it's disabled by default.
 
+[[spellchecker_active]]
 === `spellchecker_active`
 
 This option lets you decide if the spellchecker should be initialized as active or not. With this set to `false` the spellchecker will not be activated automatically on text input, you will have to press the toolbar button or the menu item to start the spellchecking. Only applicable when using the default as-you-type spellchecking, not while using the dialog mode. Defaults to `true`.
 
-== Toolbar Buttons
+[[toolbar-buttons]]
+== Toolbar Buttons 
+anchor:toolbarbuttons[historical anchor]
 
+[[spellchecker]]
 === `spellchecker`
 
 This button allows the user to perform a spellcheck on the entire document. In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spellchecking. You'll find more information about customizing the toolbar in the link:{baseurl}/configure/editor-appearance/#toolbar[Editor Appearance section of the documentation].
@@ -168,12 +187,16 @@ tinymce.init({
 });
 ----
 
-=== Menu items
+[[menu-items]]
+=== Menu items 
+anchor:menuitems[historical anchor]
 
+[[spellchecker]]
 ==== spellchecker
 
 This menu item allows the user to perform a spell check on the entire document.
 
+[[spellcheckerlanguage]]
 ==== spellcheckerlanguage
 
 This menu item allows you to change the current language for the spell checking process.
@@ -192,9 +215,12 @@ tinymce.init({
 });
 ----
 
+[[events]]
 == Events
 
-==== SpellCheckerIgnore event
+[[spellcheckerignore-event]]
+==== SpellCheckerIgnore event 
+anchor:spellcheckerignoreevent[historical anchor]
 
 This event gets fired when the user selects ignore word on a misspelled word.
 
@@ -213,7 +239,9 @@ tinymce.init({
 });
 ----
 
-==== SpellCheckerIgnoreAll event
+[[spellcheckerignoreall-event]]
+==== SpellCheckerIgnoreAll event 
+anchor:spellcheckerignoreallevent[historical anchor]
 
 This event gets fired when the user selects ignore word on a misspelled word.
 
@@ -232,7 +260,9 @@ tinymce.init({
 });
 ----
 
-== Downloading Spell Checker Pro
+[[downloading-spell-checker-pro]]
+== Downloading Spell Checker Pro 
+anchor:downloadingspellcheckerpro[historical anchor]
 
 A https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription includes the ability to download and install a spell check as-you-type feature for the editor.
 

@@ -1,3 +1,4 @@
+[[content_css]]
 == content_css
 
 It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. Consistent styling is achieved with the `content_css` option, which enables you to extend external CSS into the editable area.
@@ -8,7 +9,9 @@ NOTE: If you specify a relative path, it is resolved in relation to the URL of t
 
 *Type:* `String`, `Array`
 
-===== Absolute path example
+[[absolute-path-example]]
+===== Absolute path example 
+anchor:absolutepathexample[historical anchor]
 
 [source,js]
 ----
@@ -20,7 +23,9 @@ tinyMCE.init({
 });
 ----
 
-===== Relative path example
+[[relative-path-example]]
+===== Relative path example 
+anchor:relativepathexample[historical anchor]
 
 [source,js]
 ----
@@ -32,7 +37,9 @@ tinyMCE.init({
 });
 ----
 
-===== Using multiple stylesheets example
+[[using-multiple-stylesheets-example]]
+===== Using multiple stylesheets example 
+anchor:usingmultiplestylesheetsexample[historical anchor]
 
 [source,js]
 ----
@@ -42,7 +49,9 @@ tinyMCE.init({
 });
 ----
 
-===== Using multiple stylesheets as array example
+[[using-multiple-stylesheets-as-array-example]]
+===== Using multiple stylesheets as array example 
+anchor:usingmultiplestylesheetsasarrayexample[historical anchor]
 
 [source,js]
 ----
@@ -52,7 +61,9 @@ tinyMCE.init({
 });
 ----
 
-==== Browser caching
+[[browser-caching]]
+==== Browser caching 
+anchor:browsercaching[historical anchor]
 
 Browser caching might cause TinyMCE to not read the contents of a changed CSS file. You'll see "old" colors & styles.
 

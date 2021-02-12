@@ -1,4 +1,6 @@
-=== Step 1: Download the jQuery package
+[[step-1-download-the-jquery-package]]
+=== Step 1: Download the jQuery package 
+anchor:step1downloadthejquerypackage[historical anchor]
 
 We have a jQuery plugin http://archive.tinymce.com/download/custom_package.php[available here] if you'd rather install TinyMCE using this method.
 
@@ -6,7 +8,9 @@ NOTE: the above link will take you to the custom package download page. When bui
 
 As with the <<sdkinstall,Self-hosted>> option, unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
 
-=== Step 2: Installation
+[[step-2-installation]]
+=== Step 2: Installation 
+anchor:step2installation[historical anchor]
 
 Include this line of code in the `<head>` of your page:
 
@@ -16,7 +20,9 @@ Include this line of code in the `<head>` of your page:
 <script src="/path/to/tinymce/jquery.tinymce.min.js"></script>
 ----
 
-=== Step 2: Initialize TinyMCE as part of a web form
+[[step-2-initialize-tinymce-as-part-of-a-web-form]]
+=== Step 2: Initialize TinyMCE as part of a web form 
+anchor:step2initializetinymceaspartofawebform[historical anchor]
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
@@ -47,7 +53,9 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </html>
 ----
 
-=== Step 3: Saving Content with a form POST
+[[step-3-saving-content-with-a-form-post]]
+=== Step 3: Saving Content with a form POST 
+anchor:step3savingcontentwithaformpost[historical anchor]
 
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 

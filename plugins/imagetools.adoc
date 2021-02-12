@@ -11,11 +11,14 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 
 WARNING: This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
 
-== Cloud Installation
+[[cloud-installation]]
+== Cloud Installation 
+anchor:cloudinstallation[historical anchor]
 
 The Image Tools plugin is provided with all subscriptions to link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud], including an automatically configured image proxy.
 Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -27,7 +30,9 @@ tinymce.init({
 });
 ----
 
-== Self-hosted Installation
+[[self-hosted-installation]]
+== Self-hosted Installation 
+anchor:self-hostedinstallation[historical anchor]
 
 To enable the TinyMCE Image Tools plugin:
 
@@ -47,8 +52,10 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
+[[imagetools_cors_hosts]]
 === `imagetools_cors_hosts`
 
 Image Tools cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[HTTP access control]).
@@ -73,6 +80,7 @@ tinymce.init({
 });
 ----
 
+[[imagetools_credentials_hosts]]
 === `imagetools_credentials_hosts`
 
 This option can be used together with the `imagetools_cors_hosts` option to allow credentials to be sent to the CORS host. This is not enabled by default since the server needs to have proper CORS headers to support this.
@@ -92,6 +100,7 @@ tinymce.init({
 });
 ----
 
+[[imagetools_proxy]]
 === `imagetools_proxy`
 
 Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to TinyMCE, as if it was local. Example of such proxy (written in PHP) can be found below.
@@ -147,6 +156,7 @@ echo $content;
 ?>
 ----
 
+[[imagetools_toolbar]]
 === `imagetools_toolbar`
 
 The exact selection of buttons that will appear on the contextual toolbar can be controlled via `imagetools_toolbar` option.

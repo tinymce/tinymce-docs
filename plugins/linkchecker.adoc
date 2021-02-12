@@ -14,10 +14,13 @@ The `linkchecker` does what it says &ndash; validates URLs, as you type them. UR
 Please note that Link Checker is a *premium* plugin and relies on a server-side service, which is included as a part of a https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription.
 ====
 
-== Cloud Instructions
+[[cloud-instructions]]
+== Cloud Instructions 
+anchor:cloudinstructions[historical anchor]
 
 If you are using link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -28,7 +31,9 @@ tinymce.init({
 });
 ----
 
-== Self-hosted Instructions
+[[self-hosted-instructions]]
+== Self-hosted Instructions 
+anchor:self-hostedinstructions[historical anchor]
 
 Customers using a Self-hosted environment will need to provide a URL to their deployment of the link checking service via the `linkchecker_service_url` parameter
 
@@ -43,10 +48,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 == Options
 
 Link Checker has the following settings.
 
+[[linkchecker_content_css]]
 === `linkchecker_content_css`
 
 After a link is checked for validity, a result of the validation is added to it via `data-mce-linkchecker-status` attribute. There are three possible outcomes of the validation: `valid`, `invalid` and `unknown`. Link Checker visually reflects `invalid` outcome by injecting the following CSS styles into the editor:
@@ -67,6 +74,7 @@ a[data-mce-linkchecker-focus="true"] {
 
 It is possible to replace or extend those styles, by providing a URL to custom stylesheet via `linkchecker_content_css` option.
 
+[[linkchecker_service_url]]
 === `linkchecker_service_url`
 
 A URL of the server-side link validation service. This is required option, without it plugin will fail to operate and will throw a corresponding warning on the screen.

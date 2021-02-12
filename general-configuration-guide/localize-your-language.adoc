@@ -15,27 +15,37 @@ In this section, we show you how to change TinyMCE's user interface to suit your
 Pro tip: Language settings can be controlled in these configuration options: link:{baseurl}/configure/localization/#directionality[directionality], link:{baseurl}/configure/localization/#language[language] and  link:{baseurl}/configure/localization/#language_url[language_url]. There is also a link:{baseurl}/plugins/directionality/[Directionality Plugin] that adds a toolbar button to control `ltr-rtl` behavior.
 ====
 
-=== Step 1
+[[step-1]]
+=== Step 1 
+anchor:step1[historical anchor]
 
 Download the link:/language/tinymce4x_languages.zip[Tinymce 4 language pack] (i18n), which contains the fullset of languages supported by TinyMCE 4.
 
 NOTE: The TinyMCE 4 community translation packs are no longer maintained
 
-=== Step 2
+[[step-2]]
+=== Step 2 
+anchor:step2[historical anchor]
 
 Unpack the language `js` file(s) into your `path/to/tinymce/langs/` folder.
 
 IMPORTANT: If you don't put the language pack in `langs/`, the language settings will not work unless you use the link:{baseurl}/configure/localization/#language_url[language_url] configuration option.
 
-=== Step 3
+[[step-3]]
+=== Step 3 
+anchor:step3[historical anchor]
 
 Set the language option in your TinyMCE configuration to the language code in the list on link:{baseurl}/configure/localization/#language[this page].
 
-=== Step 4
+[[step-4]]
+=== Step 4 
+anchor:step4[historical anchor]
 
 Confirm that the language has been set successfully by loading TinyMCE.
 
-== A working example
+[[a-working-example]]
+== A working example 
+anchor:aworkingexample[historical anchor]
 
 We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left.
 

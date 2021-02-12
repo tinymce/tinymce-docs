@@ -8,7 +8,9 @@ include::{rootDir}_attributes.adoc[]
 :keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
 :title_nav: Editor Events
 
-== Editor Events
+[[editor-events]]
+== Editor Events 
+anchor:editorevents[historical anchor]
 
 Here is an example of how to bind a handler function to the click event.
 
@@ -60,6 +62,7 @@ tinymce.init({
 > Native means that it's just a wrapped native browser event.
 > Core means that it's a core specific event provided by the editor.
 
+[[init]]
 === Init
 
 Here is an example where init events are listened to notice that we bind this on setup.
@@ -76,6 +79,7 @@ tinymce.init({
 });
 ----
 
+[[focus]]
 === Focus
 
 Gets fired when the editor is focused.
@@ -94,6 +98,7 @@ tinymce.init({
 });
 ----
 
+[[blur]]
 === Blur
 
 Gets fired when the editor is blurred but not when the focus is moved to any of the editors UI components.
@@ -112,10 +117,12 @@ tinymce.init({
 });
 ----
 
+[[beforesetcontent]]
 === BeforeSetContent
 
 Gets fired before the contents are inserted into the editor.
 
+[[parameters]]
 ==== Parameters
 
 * *content* `String` - The HTML content that's being inserted into the editor.
@@ -135,6 +142,7 @@ tinymce.init({
 });
 ----
 
+[[setcontent]]
 === SetContent
 
 Gets fired after the content has been inserted into the editor.
@@ -158,6 +166,7 @@ tinymce.init({
 });
 ----
 
+[[getcontent]]
 === GetContent
 
 This event gets fired when the content is being extracted from the editor.
@@ -180,6 +189,7 @@ tinymce.init({
 });
 ----
 
+[[preprocess]]
 === PreProcess
 
 This event gets fired when the contents inside the editor are being serialized to an HTML string.
@@ -202,6 +212,7 @@ tinymce.init({
 });
 ----
 
+[[postprocess]]
 === PostProcess
 
 This event gets fired when the contents inside the editor have been serialized to an HTML string.
@@ -224,6 +235,7 @@ tinymce.init({
 });
 ----
 
+[[nodechange]]
 === NodeChange
 
 This event gets fired when the selection inside the editor is changed.
@@ -247,6 +259,7 @@ tinymce.init({
 });
 ----
 
+[[undo]]
 === Undo
 
 This event gets fired when a request to undo is made by the user.
@@ -269,6 +282,7 @@ tinymce.init({
 });
 ----
 
+[[redo]]
 === Redo
 
 This event gets fired when a request to redo is made by the user.
@@ -291,6 +305,7 @@ tinymce.init({
 });
 ----
 
+[[change]]
 === Change
 
 This event gets fired when changes are made inside the editor that cause an undo level to be added.
@@ -309,6 +324,7 @@ tinymce.init({
 });
 ----
 
+[[dirty]]
 === Dirty
 
 This event gets fired when the editor is considered dirty. This state can be toggled by using: editor.setDirty(false).
@@ -325,6 +341,7 @@ tinymce.init({
 });
 ----
 
+[[remove]]
 === Remove
 
 This event gets fired when the editor is removed from a textarea/div.
@@ -343,6 +360,7 @@ tinymce.init({
 });
 ----
 
+[[execcommand]]
 === ExecCommand
 
 This event is fired when a command like Bold/Italic etc is made by the editor.
@@ -367,6 +385,7 @@ tinymce.init({
 });
 ----
 
+[[pastepreprocess]]
 === PastePreProcess
 
 This event is fired when contents from the clipboard are being processed by the paste process.
@@ -390,6 +409,7 @@ tinymce.init({
 });
 ----
 
+[[pastepostprocess]]
 === PastePostProcess
 
 This event is fired when contents from the clipboard have been processed by the paste process.
@@ -422,6 +442,7 @@ tinymce.init({
 | Fires when an editor instance is removed.
 |===
 
+[[addeditor]]
 === AddEditor
 
 This event is fired when an editor instance is created and added to the EditorManager collection.
@@ -439,6 +460,7 @@ tinymce.on('AddEditor', function (e) {
 });
 ----
 
+[[removeeditor]]
 === RemoveEditor
 
 This event gets fired when editor instances are removed from the target textarea/div.

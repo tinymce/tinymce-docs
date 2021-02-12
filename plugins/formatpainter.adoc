@@ -14,10 +14,13 @@ Format Painter is a premium plugin from Tiny. Please see the link:{baseurl}/ente
 
 Once you have obtained the Format Painter plugin, refer to the following instructions for using it.
 
-=== Configuring the Format Painter toolbar button
+[[configuring-the-format-painter-toolbar-button]]
+=== Configuring the Format Painter toolbar button 
+anchor:configuringtheformatpaintertoolbarbutton[historical anchor]
 
 Use the following script to configure the Format Painter toolbar button:
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -31,7 +34,9 @@ tinymce.init({
 *Result*:
 The image:fp-disabled.png[**Format Painter**](*Format Painter*) button appears in the toolbar menu.
 
-== Using Format Painter
+[[using-format-painter]]
+== Using Format Painter 
+anchor:usingformatpainter[historical anchor]
 
 The format painter is accessed using either keyboard shortcuts or a toolbar button.
 
@@ -57,10 +62,12 @@ The format painter operates in two modes, one for retrieval and one for applicat
 The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `Ctrl+Alt+V` keyboard shortcut.
 ====
 
+[[options]]
 == Options
 
 The format painter acts upon all link:{baseurl}/configure/content-formatting/#formats[`formats`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{baseurl}/plugins/lists/[`lists plugin`] is made available.
 
+[[formats]]
 === `formats`
 
 The format painter plugin will register many formats upon initialization. To override these formats, use the link:{baseurl}/configure/content-formatting/#exampleofusageoftheformatsoption[`formats`] option.
@@ -89,6 +96,7 @@ tinymce.init({
 });
 ----
 
+[[formatpainter_blacklisted_formats]]
 === `formatpainter_blacklisted_formats`
 
 This option makes it possible to block the unwanted formats in the format painter.

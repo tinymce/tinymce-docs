@@ -13,6 +13,7 @@ To enable this functionality, add `tinydrive` to the list of plugins in the `tin
 
 Once you enable Drive it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
+[[example]]
 === Example
 
 [source,js]
@@ -23,10 +24,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 == Options
 
 These settings are necessary to make Drive work:
 
+[[tinydrive_token_provider]]
 === `tinydrive_token_provider`
 
 This setting could take one of the following two forms:
@@ -40,7 +43,9 @@ You can read more about how to create these tokens in the link:{baseurl}/configu
 
 *Required:* yes
 
-==== Example Using a JWT Provider URL
+[[example-using-a-jwt-provider-url]]
+==== Example Using a JWT Provider URL 
+anchor:exampleusingajwtproviderurl[historical anchor]
 
 [source,js]
 ----
@@ -51,7 +56,9 @@ tinymce.init({
 });
 ----
 
-==== Example Using a JWT Provider Callback
+[[example-using-a-jwt-provider-callback]]
+==== Example Using a JWT Provider Callback 
+anchor:exampleusingajwtprovidercallback[historical anchor]
 
 [source,js]
 ----
@@ -65,6 +72,7 @@ tinymce.init({
 });
 ----
 
+[[tinydrive_upload_path]]
 === `tinydrive_upload_path`
 
 This setting enables you to change the default upload path for files that get uploaded when pasted into the editor, uploaded directly through the Image dialog, or when you drag-and-drop images into the editor. It will produce a date-based structure within this path like this `+/uploads/{year}{month}{day}+`. This is to avoid having thousands of files in the same directory.
@@ -73,6 +81,7 @@ This setting enables you to change the default upload path for files that get up
 
 *Default Value:* `"/uploads"`
 
+[[example]]
 ==== Example
 
 [source,js]
@@ -84,6 +93,7 @@ tinymce.init({
 });
 ----
 
+[[tinydrive_max_image_dimension]]
 === `tinydrive_max_image_dimension`
 
 This setting enables you to constrain the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified max dimension.
@@ -101,13 +111,17 @@ tinymce.init({
 });
 ----
 
-== Insert File toolbar button
+[[insert-file-toolbar-button]]
+== Insert File toolbar button 
+anchor:insertfiletoolbarbutton[historical anchor]
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
-=== Example of toolbar button
+[[example-of-toolbar-button]]
+=== Example of toolbar button 
+anchor:exampleoftoolbarbutton[historical anchor]
 
 [source,js]
 ----
@@ -118,13 +132,17 @@ tinymce.init({
 });
 ----
 
-== Insert File menu item
+[[insert-file-menu-item]]
+== Insert File menu item 
+anchor:insertfilemenuitem[historical anchor]
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
 
 The Insert File menu item will insert images as `img` elements or other files as links to that file.
 
-=== Example of menu item
+[[example-of-menu-item]]
+=== Example of menu item 
+anchor:exampleofmenuitem[historical anchor]
 
 [source,js]
 ----
@@ -139,7 +157,9 @@ tinymce.init({
 });
 ----
 
-== Restrictions and Quotas
+[[restrictions-and-quotas]]
+== Restrictions and Quotas 
+anchor:restrictionsandquotas[historical anchor]
 
 Drive has restrictions on what files can be uploaded and how large these files can be:
 
@@ -153,12 +173,16 @@ Drive has restrictions on what files can be uploaded and how large these files c
 
 Your storage and bandwidth quota varies based upon the https://www.tiny.cloud/pricing/[Tiny Cloud Plan] you are subscribed to.
 
-== Upload Files URL
+[[upload-files-url]]
+== Upload Files URL 
+anchor:uploadfilesurl[historical anchor]
 
 All files are uploaded to a central storage with a CDN endpoint that means that we are hosting your files and they are publicly available in read-only mode for anyone that has access to the URL of that file.
 The URL format for each file is `+https://drive.tiny.cloud/1/{your-api-key}/{uuid}+` and gets generated when a file is uploaded.
 If you move or rename a file, it will still have the same unique URL, so the restructuring of your files using Drive won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
 
-== User specific root
+[[user-specific-root]]
+== User specific root 
+anchor:userspecificroot[historical anchor]
 
 It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `+https://claims.tiny.cloud/drive/root+` custom jwt claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a jwt key with that claim. The user only be able to see and manage files within that root.

@@ -1,3 +1,4 @@
+[[anchor_bottom]]
 == anchor_bottom
 
 Lets you specify a custom name for the bottom anchor in the url type ahead drop down. To disable the bottom anchor from the drop down set it `false`.
@@ -6,7 +7,9 @@ Lets you specify a custom name for the bottom anchor in the url type ahead drop 
 
 *Default:* #bottom
 
-===== Example of custom value
+[[example-of-custom-value]]
+===== Example of custom value 
+anchor:exampleofcustomvalue[historical anchor]
 
 [source,js]
 ----
@@ -16,7 +19,9 @@ tinymce.init({
 });
 ----
 
-===== Example of disabling
+[[example-of-disabling]]
+===== Example of disabling 
+anchor:exampleofdisabling[historical anchor]
 
 [source,js]
 ----

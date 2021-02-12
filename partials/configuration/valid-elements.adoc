@@ -1,3 +1,4 @@
+[[valid_elements]]
 == valid_elements
 
 The valid_elements option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
@@ -6,7 +7,9 @@ This option contains a comma separated list of element conversion chunks. Each c
 
 If you just want to add or change some behavior for a few items, use the link:{baseurl}/configure/content-filtering/#extended_valid_elements[extended_valid_elements] option
 
-=== Control characters:
+[[control-characters]]
+=== Control characters: 
+anchor:controlcharacters[historical anchor]
 
 |===
 | Name | Summary
@@ -59,7 +62,9 @@ If you just want to add or change some behavior for a few items, use the link:{b
 
 Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 
-=== Special variables
+[[special-variables]]
+=== Special variables 
+anchor:specialvariables[historical anchor]
 
 |===
 | Name | Summary
@@ -72,6 +77,7 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -84,7 +90,9 @@ tinyMCE.init({
 
 This example string tells TinyMCE to remove all elements that are not a `'a, strong, div or br'` element, convert `'b'` elements to `'strong'` elements, default '[.code]``target``' to '[.code]``_blank``' and keep the '[.code]``href``', '[.code]``target``' and '[.code]``align``' attributes of the elements.
 
-=== Duplicate attribute warning
+[[duplicate-attribute-warning]]
+=== Duplicate attribute warning 
+anchor:duplicateattributewarning[historical anchor]
 
 Be careful not to duplicate attributes in the definitions as this may cause TinyMCE to render duplicate attributes in the output. For example, if you have:
 

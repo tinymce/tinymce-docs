@@ -11,6 +11,7 @@ This plugin adds the possibility to tab in/out of TinyMCE.
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -21,10 +22,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 This setting affects the execution of the `tabfocus` plugin. This setting can be used to change the focus behavior of the editor when the tab key has been pressed inside the editable area.
 
+[[tabfocus_elements]]
 === `tabfocus_elements`
 
 This option enables you to specify an element `ID` to focus when the user presses the tab key inside the editor. You can also use the special `":prev"` and `":next"` values. It will then place the focus on either the previous or next input element placed before/after the TinyMCE instance in the DOM.

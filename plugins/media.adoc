@@ -12,6 +12,7 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -24,10 +25,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `media` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
+[[media_live_embeds]]
 === `media_live_embeds`
 
 [NOTE]
@@ -58,6 +61,7 @@ tinymce.init({
 });
 ----
 
+[[audio_template_callback]]
 === `audio_template_callback`
 
 This option allows you to specify the function that will return the HTML embed code of the audio media that you are attempting to insert into TinyMCE.
@@ -81,6 +85,7 @@ tinymce.init({
 });
 ----
 
+[[media_url_resolver]]
 === `media_url_resolver`
 
 This option allows you to specify a function that will be used to replace TinyMCE's default media embed logic with your own, custom logic.
@@ -115,6 +120,7 @@ tinymce.init({
 });
 ----
 
+[[media_alt_source]]
 === `media_alt_source`
 
 This options allows you disable the `Alternative source` input field in the media dialog.
@@ -138,6 +144,7 @@ tinymce.init({
 });
 ----
 
+[[media_poster]]
 === `media_poster`
 
 This options allows you disable the `Poster` input field in the media dialog.
@@ -161,6 +168,7 @@ tinymce.init({
 });
 ----
 
+[[media_dimensions]]
 === `media_dimensions`
 
 This options allows you disable the `Dimensions` input fields in the media dialog.
@@ -184,6 +192,7 @@ tinymce.init({
 });
 ----
 
+[[media_filter_html]]
 === `media_filter_html`
 
 This option allows you disable the XSS sanitation filter for video/object elements. Scripts, conditional comments, etc, can't be used within these elements by default for security reasons. If you want to include that and have server side sanitizers or if you trust your users, then you can disable this feature.
@@ -207,6 +216,7 @@ tinymce.init({
 });
 ----
 
+[[media_scripts]]
 === `media_scripts`
 
 This option allows you to embed videos using script elements.
@@ -229,6 +239,7 @@ tinymce.init({
 });
 ----
 
+[[video_template_callback]]
 === `video_template_callback`
 
 This option allows you to specify the function that will return the HTML embed code of the video media that you are attempting to insert into TinyMCE.

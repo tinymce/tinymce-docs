@@ -9,6 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 The `mobile` theme is responsible for rendering the editor on mobile devices and gives you a link:{baseurl}/mobile[mobile first experience].
 
+[[example]]
 ===== Example:
 
 We recommend that you use a link:{baseurl}/configure/editor-appearance/#mobile[mobile section] in the config to load this mobile specific theme but it can be used directly as well.
@@ -25,7 +26,9 @@ tinymce.init({
 });
 ----
 
-=== Related configuration options
+[[related-configuration-options]]
+=== Related configuration options 
+anchor:relatedconfigurationoptions[historical anchor]
 
 * link:{baseurl}/configure/editor-appearance/#mobile[mobile]
 * link:{baseurl}/configure/editor-appearance/#toolbar[toolbar]

@@ -13,22 +13,32 @@ agreement, which will be emailed to you upon creating the pull request.
 
 This project is built using https://jekyllrb.com/[Jekyll].
 
-== Contributing to the TinyMCE Documentation
+[[contributing-to-the-tinymce-documentation]]
+== Contributing to the TinyMCE Documentation 
+anchor:contributingtothetinymcedocumentation[historical anchor]
 
 If you would like to contribute to the TinyMCE project please read the TinyMCE Documentation Contributor's Guide at either:
 
 * https://www.tiny.cloud/docs-4x/advanced/contributing-docs/[TinyMCE Documentation - Contributor's Guide].
 * https://github.com/tinymce/tinymce-docs-4x/blob/develop/CONTRIBUTING.md#contributing-to-the-tinymce-developer-documentation[GitHub - Contributing to the TinyMCE developer documentation].
 
-== Working on TinyMCE documentation
+[[working-on-tinymce-documentation]]
+== Working on TinyMCE documentation 
+anchor:workingontinymcedocumentation[historical anchor]
 
-=== Compiling or building the documentation
+[[compiling-or-building-the-documentation]]
+=== Compiling or building the documentation 
+anchor:compilingorbuildingthedocumentation[historical anchor]
 
 The following procedure assists with building (or compiling) the documentation locally. Tiny recommends testing and reviewing changes locally prior to submitting a pull request.
 
-==== Installing Prerequisites
+[[installing-prerequisites]]
+==== Installing Prerequisites 
+anchor:installingprerequisites[historical anchor]
 
-===== Linux users
+[[linux-users]]
+===== Linux users 
+anchor:linuxusers[historical anchor]
 
 You need the following programs installed on your computer:
 
@@ -58,7 +68,9 @@ sudo apt install git gcc cpp make zlib1g-dev
 ----
 . (optional) Docker
 
-===== Windows users
+[[windows-users]]
+===== Windows users 
+anchor:windowsusers[historical anchor]
 
 If you are a Windows user, follow these steps to work on TinyMCE documentation:
 
@@ -69,7 +81,9 @@ If you are a Windows user, follow these steps to work on TinyMCE documentation:
  gem install bundler
 ----
 
-===== Mac OS users
+[[mac-os-users]]
+===== Mac OS users 
+anchor:macosusers[historical anchor]
 
 . Ruby version 2 or later is required. Verify the pre-installed version, using:
  `
@@ -80,7 +94,9 @@ If you are a Windows user, follow these steps to work on TinyMCE documentation:
  gem install bundler
 ----
 
-==== First time set up
+[[first-time-set-up]]
+==== First time set up 
+anchor:firsttimesetup[historical anchor]
 
 Once you have installed any missing prerequisites, in a terminal or on a command prompt:
 
@@ -97,7 +113,9 @@ Once you have installed any missing prerequisites, in a terminal or on a command
  ./_scripts/init.sh
 ----
 
-==== Run the development version of the documentation
+[[run-the-development-version-of-the-documentation]]
+==== Run the development version of the documentation 
+anchor:runthedevelopmentversionofthedocumentation[historical anchor]
 
 To create a development version of the documentation, run:
 
@@ -111,16 +129,21 @@ To view the documentation; in a web browser, navigate to http://localhost:4000/[
 
 NOTE: The development version of the documentation will update automatically when you save changes locally.
 
-==== TinyMCE API documentation
+[[tinymce-api-documentation]]
+==== TinyMCE API documentation 
+anchor:tinymceapidocumentation[historical anchor]
 
 The TinyMCE API documentation is maintained within the https://github.com/tinymce/tinymce[TinyMCE project repository] and compiled for the documentation site using https://github.com/tinymce/moxiedoc[MoxieDoc].
 
+[[prerequisites]]
 ===== Prerequisites
 
 * https://nodejs.org/en/[NodeJS].
 * The TinyMCE documentation repository set up for development as described in <<installing-prerequisites,Installing Prerequisites>> and <<first-time-set-up,First time set up>>.
 
-===== Installing MoxieDoc
+[[installing-moxiedoc]]
+===== Installing MoxieDoc 
+anchor:installingmoxiedoc[historical anchor]
 
 To install MoxieDoc, run:
 
@@ -128,7 +151,9 @@ To install MoxieDoc, run:
 npm install -g git://github.com/tinymce/moxiedoc.git
 ----
 
-===== Run the development version of the documentation for the current TinyMCE version
+[[run-the-development-version-of-the-documentation-for-the-current-tinymce-version]]
+===== Run the development version of the documentation for the current TinyMCE version 
+anchor:runthedevelopmentversionofthedocumentationforthecurrenttinymceversion[historical anchor]
 
 . Download the TinyMCE version in the `.api-version` file in this project's root directory and extract the API documentation using:
 ----
@@ -139,7 +164,9 @@ npm install -g git://github.com/tinymce/moxiedoc.git
  ./_scripts/serve.sh
 ----
 
-===== Run the development version of the documentation for a local TinyMCE repository
+[[run-the-development-version-of-the-documentation-for-a-local-tinymce-repository]]
+===== Run the development version of the documentation for a local TinyMCE repository 
+anchor:runthedevelopmentversionofthedocumentationforalocaltinymcerepository[historical anchor]
 
 . Extract the API documentation from a local copy of the TinyMCE repository using:
 ----

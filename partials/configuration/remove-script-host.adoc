@@ -1,3 +1,4 @@
+[[remove_script_host]]
 == remove_script_host
 
 If this option is enabled the protocol and host part of the URLs returned from the MCFileManager will be removed. This option is only used if the <<relative_urls,relative_urls>> option is set to false.
@@ -8,6 +9,7 @@ If this option is enabled the protocol and host part of the URLs returned from t
 
 *Possible Values:* `true`, `false`
 
+[[example]]
 ===== Example
 
 [source,js]

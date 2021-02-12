@@ -11,6 +11,7 @@ This plugin enables the user to insert an image into TinyMCE's editable area. Th
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -32,12 +33,14 @@ tinymce.init({
 Note that this is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 ====
 
+[[options]]
 === Options
 
 These configuration options affect the execution of the `image` plugin. Many of the settings here will disable dialog box features used to insert or edit images. A predefined list of images can also be provided to enable quick insertion of those images.
 
 If you wish to align the image, you can also use the text align buttons while images are selected.
 
+[[image_caption]]
 === `image_caption`
 
 [NOTE]
@@ -105,6 +108,7 @@ figure.image figcaption {
 }
 ----
 
+[[image_list]]
 === `image_list`
 
 This option lets you specify a predefined list of sources for images. `image_list` takes the form of an array containing items to add to a list with a corresponding image. Each item has a `title` and a `value`.
@@ -160,6 +164,7 @@ tinymce.init({
 });
 ----
 
+[[image_advtab]]
 === `image_advtab`
 
 This option adds an "Advanced" tab to the image dialog allowing you to add custom styles, spacing and borders to images.
@@ -183,6 +188,7 @@ tinymce.init({
 });
 ----
 
+[[image_class_list]]
 === `image_class_list`
 
 This option lets you specify a predefined list of classes to add to an image. It takes the form of an array with items to set classes on links.
@@ -206,6 +212,7 @@ tinymce.init({
 });
 ----
 
+[[image_description]]
 === `image_description`
 
 This options allows you disable the image description input field in the image dialog.
@@ -229,6 +236,7 @@ tinymce.init({
 });
 ----
 
+[[image_dimensions]]
 === `image_dimensions`
 
 This options allows you disable the image dimensions input field in the image dialog.
@@ -252,6 +260,7 @@ tinymce.init({
 });
 ----
 
+[[image_title]]
 === `image_title`
 
 This options allows you enable the image title input field in the image dialog.
@@ -275,6 +284,7 @@ tinymce.init({
 });
 ----
 
+[[image_prepend_url]]
 == `image_prepend_url`
 
 This option allows you to specify a URL prefix that will be applied to images when appropriate.
@@ -294,7 +304,9 @@ tinymce.init({
 });
 ----
 
-== Q: Where are the advanced image options?
+[[q-where-are-the-advanced-image-options]]
+== Q: Where are the advanced image options? 
+anchor:qwherearetheadvancedimageoptions[historical anchor]
 
 Use the `Style Formats` option instead, which is much more powerful.
 

@@ -9,6 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called link:{baseurl}/themes/modern/[modern] this is an optional more lightweight distraction-free UI for the editor.
 
+[[example]]
 ===== Example:
 
 [source,js]
@@ -20,8 +21,11 @@ tinymce.init({
 });
 ----
 
-=== Theme specific controls
+[[theme-specific-controls]]
+=== Theme specific controls 
+anchor:themespecificcontrols[historical anchor]
 
+[[quicklink]]
 ==== quicklink
 
 Lets you quickly insert/edit links inline.
@@ -38,6 +42,7 @@ tinymce.init({
 });
 ----
 
+[[quickimage]]
 ==== quickimage
 
 Lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure link:{baseurl}/advanced/handle-async-image-uploads/[image uploading].
@@ -54,6 +59,7 @@ tinymce.init({
 });
 ----
 
+[[quicktable]]
 ==== quicktable
 
 Lets you quickly insert a table 2x2 with 100% width.
@@ -70,7 +76,9 @@ tinymce.init({
 });
 ----
 
-=== Related configuration options
+[[related-configuration-options]]
+=== Related configuration options 
+anchor:relatedconfigurationoptions[historical anchor]
 
 * link:{baseurl}/configure/editor-appearance/#insert_toolbar[insert_toolbar]
 * link:{baseurl}/configure/editor-appearance/#selection_toolbar[selection_toolbar]

@@ -8,7 +8,9 @@ include::{rootDir}_attributes.adoc[]
 :keywords: custom dialog dialogs cdn windowmanager
 :title_nav: Create Custom Dialogs
 
-== Dialogs as HTML pages
+[[dialogs-as-html-pages]]
+== Dialogs as HTML pages 
+anchor:dialogsashtmlpages[historical anchor]
 
 In TinyMCE 3.x all dialogs were HTML pages that got loaded into an iframe or window. This was changed in TinyMCE 4 to make it easier to create plugins and fully support CDNs. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.
 

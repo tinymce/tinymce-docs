@@ -13,6 +13,7 @@ By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-cla
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -24,10 +25,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `importcss` plugin, specifically the way that these operations are handled.
 
+[[importcss_append]]
 === `importcss_append`
 
 If set to `true` this option will append the imported styles to the end of the `Format` menu and will replace the default formats.
@@ -48,6 +51,7 @@ tinymce.init({
 });
 ----
 
+[[importcss_file_filter]]
 === `importcss_file_filter`
 
 This option enables you to add the CSS files that should be used for populating the styles drop down. This will go though any `@import` rules and only target the specified file. This option can be either a `string`, `regexp` or a `function`. This also allows you to import styles form existing files on the currently editable page in inline mode.
@@ -66,6 +70,7 @@ tinymce.init({
 });
 ----
 
+[[importcss_selector_filter]]
 === `importcss_selector_filter`
 
 This option enables you to only import classes from selectors matching the filter. The filter can be a `string`, `regexp` or a `function`. See the examples below.
@@ -110,6 +115,7 @@ tinymce.init({
 });
 ----
 
+[[importcss_groups]]
 === `importcss_groups`
 
 This option enables group matching selectors into submenus in the `Formats` menu dropdown. You can use a `string`, `regexp` or a `function` to filter selectors. You can also omit the filter to get all non-matching ones into a specific group. You can also specify a group specific `selector_converter` so that formats for a specific group are produced by that converter.
@@ -130,6 +136,7 @@ tinymce.init({
 });
 ----
 
+[[importcss_merge_classes]]
 === `importcss_merge_classes`
 
 This option is used in cases where the class attribute should be replaced or merged. For example, if you have multiple classes you can apply all of them to the same element. If this option is set to `false` it will always replace the contents of the class attribute.
@@ -148,6 +155,7 @@ tinymce.init({
 });
 ----
 
+[[importcss_selector_converter]]
 === `importcss_selector_converter`
 
 This option allows you to override the default selector to format converter function. This allows you to parse the CSS selectors manually and produce format objects out of them. If the converter returns a `false` value the selector is ignored from import.
@@ -168,6 +176,7 @@ tinymce.init({
 });
 ----
 
+[[importcss_exclusive]]
 === `importcss_exclusive`
 
 If set to `false` then selectors will not be globally exclusive meaning they can exist in two separate groups. This can be useful for scenarios where you want to have a ".class" imported as a paragraph selector and as a span format selector.

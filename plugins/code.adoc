@@ -10,6 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 This plugin adds a toolbar button that allows a user to edit the HTML code hidden by the WYSIWYG view. It also adds the menu item `Source code` under the `Tools` menu.
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -22,8 +23,10 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
+[[code_dialog_height]]
 === `code_dialog_height`
 
 This configuration option sets the _internal, editable area_ height of the `code` dialog box.
@@ -45,6 +48,7 @@ tinymce.init({
 });
 ----
 
+[[code_dialog_width]]
 === `code_dialog_width`
 
 This configuration option sets the _internal, editable area_ width of the `code` dialog box.

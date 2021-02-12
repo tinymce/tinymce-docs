@@ -14,6 +14,7 @@ It's worth noting that at present the toolbar button icon is the same for both `
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -26,10 +27,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 This setting affects the execution of the `visualblocks` plugin. You may specify whether blocks are visible by default here.
 
+[[visualblocks_default_state]]
 === `visualblocks_default_state`
 
 This option enables you to specify the default state of the Visual Blocks plugin.

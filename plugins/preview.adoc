@@ -12,6 +12,7 @@ This plugin adds a preview button to the toolbar. Pressing the button opens a di
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -24,10 +25,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `preview` plugin. The height and width of the preview dialog box may be set here.
 
+[[plugin_preview_height]]
 === `plugin_preview_height`
 
 This option allows you to set the height of the preview window that appears when using the `preview` plugin.
@@ -49,6 +52,7 @@ tinymce.init({
 });
 ----
 
+[[plugin_preview_width]]
 === `plugin_preview_width`
 
 This option allows you to set the width of the preview window that appears when using the `preview` plugin.

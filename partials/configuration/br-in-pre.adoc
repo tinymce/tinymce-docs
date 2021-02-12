@@ -1,3 +1,4 @@
+[[br_in_pre]]
 == br_in_pre
 
 This option allows you to disable TinyMCE's default behavior when pressing the enter key within a `pre` tag. By default, pressing enter within a `pre` tag produces a `br` tag at the insertion point. For example:
@@ -17,6 +18,7 @@ NOTE: when set to `false`, `shift+enter` will insert a `br` tag.
 
 *Possible Values:* `true`, `false`
 
+[[example]]
 ===== Example
 
 [source,js]

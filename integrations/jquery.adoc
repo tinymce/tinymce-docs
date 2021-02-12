@@ -7,7 +7,9 @@ include::{rootDir}_attributes.adoc[]
 :keywords: integration integrate jquery javascript
 :title_nav: jQuery
 
-== TinyMCE in a jQuery UI Dialog
+[[tinymce-in-a-jquery-ui-dialog]]
+== TinyMCE in a jQuery UI Dialog 
+anchor:tinymceinajqueryuidialog[historical anchor]
 
 You need to add some custom logic when rendering TinyMCE instances inside jQuery UI dialogs since it blocks all focus in calls of elements outside the dialog. http://fiddle.tinymce.com/rsdaab/713[Check this fiddle out] for a working example.
 
@@ -21,6 +23,8 @@ $(document).on('focusin', function(e) {
 });
 ----
 
-==== A note about integrations
+[[a-note-about-integrations]]
+==== A note about integrations 
+anchor:anoteaboutintegrations[historical anchor]
 
 NOTE: We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the https://community.tinymce.com[TinyMCE Community].

@@ -1,3 +1,4 @@
+[[anchor_top]]
 == anchor_top
 
 Lets you specify a custom name for the top anchor in the url type ahead drop down. To disable the to anchor from the drop down set it `false`.
@@ -6,7 +7,9 @@ Lets you specify a custom name for the top anchor in the url type ahead drop dow
 
 *Default:* #top
 
-===== Example of custom value
+[[example-of-custom-value]]
+===== Example of custom value 
+anchor:exampleofcustomvalue[historical anchor]
 
 [source,js]
 ----
@@ -16,7 +19,9 @@ tinymce.init({
 });
 ----
 
-===== Example of disabling
+[[example-of-disabling]]
+===== Example of disabling 
+anchor:exampleofdisabling[historical anchor]
 
 [source,js]
 ----

@@ -17,6 +17,7 @@ You will need to sacrifice quite a lot of TinyMCE's functionality to use this pl
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -27,8 +28,10 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
+[[bbcode_dialect]]
 === `bbcode_dialect`
 
 This option allows you to specify the BBCode dialect. We only support http://punbb.informer.com/[PunBB] at the moment but hope to add more dialects in the future. Suported tags are listed in the table below:
@@ -91,7 +94,9 @@ tinymce.init({
 });
 ----
 
-== Live example
+[[live-example]]
+== Live example 
+anchor:liveexample[historical anchor]
 
 ++++
 <p data-height="600" data-theme-id="0" data-slug-hash="mpXVZv" data-default-tab="result" data-user="tinymce" class="codepen">

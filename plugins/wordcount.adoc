@@ -11,6 +11,7 @@ This plugin adds word count functionality to TinyMCE, placing a counter on the r
 
 *Type:* `String`
 
+[[example]]
 ===== Example
 
 [source,js]
@@ -21,10 +22,12 @@ tinymce.init({
 });
 ----
 
+[[options]]
 === Options
 
 These settings affect the execution of the `wordcount` plugin. The regular expression values that determine how words are cleaned and counted may be set here.
 
+[[wordcount_cleanregex]]
 === `wordcount_cleanregex`
 
 This option allows you to specify the regular expression that will be used to _strip punctuation and numbers_ from the word count. *Removed in 4.5.0*
@@ -42,6 +45,7 @@ tinymce.init({
 });
 ----
 
+[[wordcount_countregex]]
 === `wordcount_countregex`
 
 This option allows you to specify the regular expression that will be used to _count the words_ for the word count. *Removed in 4.5.0*

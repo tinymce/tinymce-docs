@@ -14,6 +14,7 @@ keywords: releasenotes bugfixes
 - [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
+- [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
@@ -186,6 +187,27 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro]({{ sit
 The {{site.productname}} 5.7 release includes an accompanying release of the **Premium Skins and Icon Packs**. Included is a new `bootstrap` icon pack that provides [Bootstrap icons](https://icons.getbootstrap.com/) for {{site.productname}}.
 
 For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+
+## Accompanying Premium self-hosted server-side component changes
+
+The {{site.productname}} 5.7 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+
+- The Enhanced Media Embed plugin (`mediaembed`)
+- The Image Tools plugin (`imagetools`)
+- The Link Checker plugin (`linkchecker`)
+- The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version 2.102**.
+
+This version upgraded and replaced internal dependencies to provide upstream bug fixes and smaller `.war` archives.
+
+For information on:
+
+- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
+- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
 ## General bug fixes
 

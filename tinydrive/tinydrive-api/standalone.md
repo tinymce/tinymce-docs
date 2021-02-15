@@ -14,7 +14,7 @@ In order to use {{site.cloudfilemanager}} in standalone mode you will need to ad
 
 `https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js`
 
-### Example: Loading the standalone API script
+### Example: Loading the standalone API script, promise-based
 
 ```html
 <script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js" referrerpolicy="origin"></script>
@@ -23,6 +23,29 @@ tinydrive.pick({
   token_provider: '/your-local/jwt-provider'
 }).then(function (result) {
   console.log(result.files);
+});
+</script>
+```
+
+### Example: Loading the standalone API script, callback-based
+
+```html
+<script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js" referrerpolicy="origin"></script>
+<script>
+var controls = tinydrive.controls.pick({
+  token_provider: '/your-local/jwt-provider'
+}, function(result) {
+  console.log(result);
+
+  setTimeout(function() {
+    controls.close();
+  }, 0)
+}, function(error) {
+  console.log(error);
+
+  setTimeout(function() {
+    controls.close();
+  }, 0)
 });
 </script>
 ```
@@ -51,13 +74,49 @@ The URL for the selected file would be in the following format: `https://drive.t
 
 The modification date for the file in ISO 8601 format for example `2019-02-24T15:00:00Z`
 
+## `tinydrive.controls.pick`
+
+The `tinydrive.controls.pick` method enables you to pick files from {{site.cloudfilemanager}} and get the meta data of those files returned in a callback. For a complete list of available settings to pass into this method check the [Picker settings](#pickersettings) section in this page. A control object is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself.
+
+### File Picker Result Format
+
+The `tinydrive.controls.pick` method will return the selected value to the provided callback as an array of files with the following properties.
+
+#### name
+
+The name of the selected file for example `my.jpg`.
+
+#### size
+
+The size in bytes of the selected file.
+
+#### url
+
+The URL for the selected file would be in the following format: `https://drive.tiny.cloud/1/<your api key>/<file uuid>`
+
+#### mdate
+
+The modification date for the file in ISO 8601 format for example `2019-02-24T15:00:00Z`
+
 ### Interactive example: Using `tinydrive.pick`
 
 {% include live-demo.html id="drive-standalone-pick" type="tinydrive" %}
 
+### Interactive example: Using `tinydrive.controls.pick`
+
+{% include live-demo.html id="drive-standalone-pick-controls" type="tinydrive" %}
+
 ## `tinydrive.browse`
 
 The `tinydrive.browse` method enables you to browse your files stored in {{site.cloudfilemanager}} but without the possibility to pick them to be inserted. This might be useful if you want to use {{site.cloudfilemanager}} as a generic file manager. It returns a promise but the promise will only resolve when the {{site.cloudfilemanager}} dialog is closed by using the close button. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
+
+### Interactive example: Using `tinydrive.browse`
+
+{% include live-demo.html id="drive-standalone-browse" type="tinydrive" %}
+
+## `tinydrive.controls.browse`
+
+The `tinydrive.controls.browse` method enables you to browse your files stored in {{site.cloudfilemanager}} but without the possibility to pick them to be inserted. This might be useful if you want to use {{site.cloudfilemanager}} as a generic file manager. A control object is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
 
 ### Interactive example: Using `tinydrive.browse`
 
@@ -80,6 +139,28 @@ Start is similar to pick and browse, the main difference is that method doesn't 
 ```js
 tinydrive.start({
   token_provider: '/your-local/jwt-provider'
+});
+```
+
+## `tinydrive.controls.start`
+
+Start is similar to pick and browse, the main difference is that method doesn't have a way of closing the dialog by the user. This can be useful when you want to launch {{site.cloudfilemanager}} from an url where there is no application to insert the files into. This might be useful when you want to launch {{site.cloudfilemanager}} from an url but not part of a bigger application. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
+
+### Example: Using `tinydrive.controls.start`
+
+```js
+var controls = tinydrive.start({
+  token_provider: '/your-local/jwt-provider'
+}, function() {
+  setTimeout(function() {
+    controls.close();
+  }, 0)
+}, function(error) {
+  console.log(error);
+
+  setTimeout(function() {
+    controls.close();
+  }, 0)
 });
 ```
 

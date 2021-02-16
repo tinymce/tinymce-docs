@@ -184,7 +184,20 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro]({{ sit
 
 ## Accompanying Premium Skins and Icon Packs changes
 
-The {{site.productname}} 5.7 release includes an accompanying release of the **Premium Skins and Icon Packs**. Included is a new `bootstrap` icon pack that provides [Bootstrap icons](https://icons.getbootstrap.com/) for {{site.productname}}.
+The {{site.productname}} 5.7 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+### Premium Skins and Icon Packs - New features
+
+A new `bootstrap` icon pack is now available that provides [Bootstrap icons](https://icons.getbootstrap.com/) for {{site.productname}}.
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+
+### Premium Skins and Icon Packs - Bug fixes
+
+The **Premium Skins and Icon Packs** release includes the following bug fixes:
+
+- Fixes an issue where the Snow skin had a transparent inline and sticky toolbar, as well as a transparent toolbar in fullscreen mode.
+- Fixes an issue where the Snow skin special characters and emoticons dialog icons disappeared on hover.
 
 For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 

@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 The Horizontal Rule (`hr`) plugin allows a user to insert a horizontal rule on the page at the cursor insertion point. It also adds a toolbar button and a menu item `Horizontal line` under the `Insert` menu.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

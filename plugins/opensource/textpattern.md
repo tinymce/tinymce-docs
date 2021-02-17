@@ -10,8 +10,6 @@ The Text Pattern plugin matches special patterns in the text and applies formats
 
 The default pattern is similar to markdown syntax, so the user can type `# text` to produce a header or `**text**` to make text **bold**.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

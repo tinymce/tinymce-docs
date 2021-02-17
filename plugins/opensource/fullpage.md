@@ -14,8 +14,6 @@ This plugin allows user to edit certain metadata and document properties such as
 
 The plugin also adds a `Metadata and Document properties` menu under the `File` menu and button to the toolbar.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

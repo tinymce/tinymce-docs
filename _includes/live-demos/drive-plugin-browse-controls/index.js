@@ -10,16 +10,16 @@ tinymce.init({
   toolbar: 'custom | insertfile | link image media',
   onAction: function () {
     var controls = editor.plugins.tinydrive.controls.pick({
-    }, function() {
-      setTimeout(function() {
+    }, function () {
+      setTimeout(function () {
         controls.close();
-      }, 0)
-    }, function(error) {
+      }, 0);
+    }, function (error) {
       console.error(error);
 
-      setTimeout(function() {
+      setTimeout(function () {
         controls.close();
-      }, 0)
+      }, 0);
     });
   },
   content_style: {{site.liveDemoIframeCSSStyles}}

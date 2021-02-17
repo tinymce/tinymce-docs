@@ -2,19 +2,19 @@ var button = document.querySelector('.tinydrive-standalone-demo-pick');
 var input = document.querySelector('.tinydrive-standalone-demo-input');
 
 button.addEventListener('click', function () {
-  var controls = tinydrive.pick({
+  var controls = tinydrive.controls.pick({
     token_provider: '/your-local/jwt-provider'
-  }, function(result) {
+  }, function (result) {
     input.value = result[0].url;
 
-    setTimeout(function() {
+    setTimeout(function () {
       controls.close();
-    }, 0)
-  }, function(error) {
+    }, 0);
+  }, function (error) {
     console.error(error);
 
-    setTimeout(function() {
+    setTimeout(function () {
       controls.close();
-    }, 0)
+    }, 0);
   });
 }, false);

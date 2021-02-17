@@ -14,7 +14,7 @@ In order to use {{site.cloudfilemanager}} in standalone mode you will need to ad
 
 `https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js`
 
-### Example: Loading the standalone API script, promise-based
+### Example: Loading the standalone API script using promises
 
 ```html
 <script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js" referrerpolicy="origin"></script>
@@ -27,7 +27,7 @@ tinydrive.pick({
 </script>
 ```
 
-### Example: Loading the standalone API script, callback-based
+### Example: Loading the standalone API script using callbacks
 
 ```html
 <script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js" referrerpolicy="origin"></script>
@@ -39,13 +39,13 @@ var controls = tinydrive.controls.pick({
 
   setTimeout(function() {
     controls.close();
-  }, 0)
+  }, 0);
 }, function(error) {
   console.log(error);
 
   setTimeout(function() {
     controls.close();
-  }, 0)
+  }, 0);
 });
 </script>
 ```
@@ -74,11 +74,15 @@ The URL for the selected file would be in the following format: `https://drive.t
 
 The modification date for the file in ISO 8601 format for example `2019-02-24T15:00:00Z`
 
+### Interactive example: Using `tinydrive.pick`
+
+{% include live-demo.html id="drive-standalone-pick" type="tinydrive" %}
+
 ## `tinydrive.controls.pick`
 
-The `tinydrive.controls.pick` method enables you to pick files from {{site.cloudfilemanager}} and get the meta data of those files returned in a callback. For a complete list of available settings to pass into this method check the [Picker settings](#pickersettings) section in this page. A control object is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself.
+The `tinydrive.controls.pick` method enables you to pick files from {{site.cloudfilemanager}} and get the metadata of those files returned in a callback. For a complete list of available settings to pass into this method see [Picker settings](#pickersettings). A [Control Object](#controlobject) is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself.
 
-### File Picker Result Format
+### File picker result format
 
 The `tinydrive.controls.pick` method will return the selected value to the provided callback as an array of files with the following properties.
 
@@ -98,10 +102,6 @@ The URL for the selected file would be in the following format: `https://drive.t
 
 The modification date for the file in ISO 8601 format for example `2019-02-24T15:00:00Z`
 
-### Interactive example: Using `tinydrive.pick`
-
-{% include live-demo.html id="drive-standalone-pick" type="tinydrive" %}
-
 ### Interactive example: Using `tinydrive.controls.pick`
 
 {% include live-demo.html id="drive-standalone-pick-controls" type="tinydrive" %}
@@ -116,7 +116,7 @@ The `tinydrive.browse` method enables you to browse your files stored in {{site.
 
 ## `tinydrive.controls.browse`
 
-The `tinydrive.controls.browse` method enables you to browse your files stored in {{site.cloudfilemanager}} but without the possibility to pick them to be inserted. This might be useful if you want to use {{site.cloudfilemanager}} as a generic file manager. A control object is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
+The `tinydrive.controls.browse` method enables you to browse your files stored in {{site.cloudfilemanager}} but without the possibility to pick them to be inserted. This might be useful if you want to use {{site.cloudfilemanager}} as a generic file manager.  A [Control Object](#controlobject) is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself. For a complete list of available settings to pass in to this method see [Picker settings](#pickersettings).
 
 ### Interactive example: Using `tinydrive.browse`
 
@@ -144,7 +144,7 @@ tinydrive.start({
 
 ## `tinydrive.controls.start`
 
-Start is similar to pick and browse, the main difference is that method doesn't have a way of closing the dialog by the user. This can be useful when you want to launch {{site.cloudfilemanager}} from an url where there is no application to insert the files into. This might be useful when you want to launch {{site.cloudfilemanager}} from an url but not part of a bigger application. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
+Start is similar to pick and browse, the main difference is that users do not have a way of closing the dialog with this method. This can be useful when you want to launch {{site.cloudfilemanager}} from an url where there is no application to insert the files into. This might be useful when you want to launch {{site.cloudfilemanager}} from an url but not as part of a bigger application. A [Control Object](#controlobject) is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself. For a complete list of available settings to pass in to this method see [Picker settings](#pickersettings).
 
 ### Example: Using `tinydrive.controls.start`
 
@@ -154,15 +154,27 @@ var controls = tinydrive.start({
 }, function() {
   setTimeout(function() {
     controls.close();
-  }, 0)
+  }, 0);
 }, function(error) {
   console.log(error);
 
   setTimeout(function() {
     controls.close();
-  }, 0)
+  }, 0);
 });
 ```
+
+## Control Object
+
+When using callback-based methods a control object is returned by the function. This object is used to control the {{site.cloudfilemanager}} lifecycle for the view generated by the call and care must be taken to close the view through this, or it will remain open indefinitively.
+
+As the callbacks may be called before the function has returned it is recommended to put calls to this object from the callbacks into `setTimeout` or similar, to prevent calling it before it is spawned.
+
+The control object has the following functions
+
+### Close
+
+Closes the view, regardless of what it is showing. A call to this function will not trigger calls to either callback, regardless if they've been called previously or not.
 
 ## Generic settings
 

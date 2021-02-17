@@ -2,19 +2,19 @@
   var button = document.querySelector('.tinydrive-standalone-demo-browse');
 
   button.addEventListener('click', function () {
-    var controls = tinydrive.browse({
+    var controls = tinydrive.controls.browse({
       demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',
       token_provider: function (success) { success({ token: 'fake-token' }); },
-    }, function() {
-      setTimeout(function() {
+    }, function () {
+      setTimeout(function () {
         controls.close();
-      }, 0)
-    }, function(error) {
+      }, 0);
+    }, function (error) {
       console.error(error);
   
-      setTimeout(function() {
+      setTimeout(function () {
         controls.close();
-      }, 0)
+      }, 0);
     });
   }, false);
 })();

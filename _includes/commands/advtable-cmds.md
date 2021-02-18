@@ -23,7 +23,7 @@ tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numbers
 
 ### `mceSortTableAdvanced`
 
-`mceSortTableAdvanced` accepts an object with the following value pairs:
+`mceSortTableAdvanced` accepts an object with the following key-value pairs:
 
 - `sortby` - `'row'` or `'column'`
 - `roworcol` - a zero-indexed integer in a string representing the row from the top of the table or column from the left of the table.

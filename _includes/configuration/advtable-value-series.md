@@ -19,7 +19,7 @@ The `advtable_value_series` option allows values series to be configured that ca
   numbers: { 
     update: true,
     resizable: false,
-    generator: `GeneratorFunction` // For deatils, see: 'Usage of generator'
+    generator: `GeneratorFunction` // For details, see: 'Usage of generator'
   },
   // English alphabetic series
   alpha: {

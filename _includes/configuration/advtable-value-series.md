@@ -25,7 +25,7 @@ The `advtable_value_series` option allows values series to be configured that ca
   alpha: {
     update: true,
     resizable: false,
-    generator: `GeneratorFunction` // For deatils, see: 'Usage of generator'
+    generator: `GeneratorFunction` // For details, see: 'Usage of generator'
   },
 }
 ```

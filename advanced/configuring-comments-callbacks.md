@@ -126,6 +126,27 @@ The done callback needs to take an object of the form:
 
 > **Note**: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
+### `tinycomments_resolve`
+
+By adding this option, a _Resolve Conversation_ item will be added to the dropdown menu of the first comment in a conversation.
+
+The `tinycomments_resolve` function should asynchronously return a flag indicating whether the comment/comment thread was resolved using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+
+The `tinycomments_resolve` function is given a request (req) object as the first parameter, which has this field:
+
+* **conversationUid**: The uid of the conversation the reply is a part of.
+
+The done callback needs to take an object of the form:
+
+```js
+{
+  canResolve: boolean // whether or not the conversation can be resolved
+  reason: string? // an optional string explaining why resolving was not allowed (if canResolve is false)
+}
+```
+
+> **Note**: Failure to resolve due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+
 ### `tinycomments_delete_all`
 
 The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.

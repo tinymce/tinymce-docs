@@ -64,6 +64,18 @@ This option is only available for the first comment in a conversation. Once the 
 
 **Result**: The conversation and all its subsequent comments will be deleted.
 
+### Resolve conversation
+
+This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
+
+1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
+1. Select **Resolve conversation** from the menu items.
+1. The following decision dialog box will appear:<br/>
+![resolve conversation]({{site.baseurl}}/images/comments-resolve-conversation.png)
+1. Click **Cancel** to save or **Resolve** to resolve the conversation.
+
+**Result**: The conversation be resolved.
+
 ### Show comment
 
 Follow this procedure to display the comments sidebar:
@@ -194,6 +206,30 @@ tinymce.init({
                   req.comments[0].author === currentAuthor;
     done({
       canDelete: allowed || currentAuthor === '<Admin user>'
+    });
+  }
+});
+```
+
+##### `tinycomments_can_resolve`
+
+_Optional_ - By adding this option, a _Resolve Conversation_ item will be added to the dropdown menu of the first comment in a conversation. This callback sets the author permissions for _resolving comment conversations_.
+
+**Type:** `Function`
+
+###### Example: Using `tinycomments_can_resolve`
+
+```js
+var currentAuthor = 'embedded_journalist';
+
+tinymce.init({
+  selector: '#textarea',
+  tinycomments_author: currentAuthor,
+  tinycomments_can_resolve: function (req, done, fail) {
+    var allowed = req.comments.length > 0 &&
+                  req.comments[0].author === currentAuthor;
+    done({
+      canResolve: allowed || currentAuthor === '<Admin user>'
     });
   }
 });

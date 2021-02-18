@@ -22,14 +22,14 @@ The Comments plugin provides the ability to start or join a conversation by addi
 ### To add a comment
 
 1. Select the text from the desired location in the editor body.
-1. From the navigation menu, choose **Insert**-> **Add Comment** or click on the **Comments** ![Comments]({{site.baseurl}}/images/comment-disabled.png) toolbar button to add the comment.
+1. From the navigation menu, choose **Insert**-> **Add Comment** or click on the **Comments** ![Comments]({{site.baseurl}}/images/comments-toolbar-button.png) toolbar button to add the comment.
 1. The Comment dialog box appears in the sidebar of the editor instance.
 1. Type the comment in the box displaying "_Say something…_" suggested text.
 1. Press **Clear** to delete or **Save** to store the input comment.
 
 **Result**: The selected text will be highlighted as per the configured options. The following screen with the option for editing, deleting, and replying to the comment, will appear.
 
-![Delete Conversation]({{site.baseurl}}/images/commentedit.png)
+![Delete Conversation]({{site.baseurl}}/images/comments-edit.png)
 
 Note: The above procedure can be followed for adding multiple comments to the document.
 
@@ -37,7 +37,7 @@ Note: The above procedure can be followed for adding multiple comments to the do
 
 Follow this procedure to edit a comment.
 
-1. Click on this ![3 dots]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
 1. Select **Edit** from the menu items.
 1. The comment field becomes editable. Make the required changes.
 1. Click **Cancel** to discard or **Save** to store the changes.
@@ -46,20 +46,20 @@ Follow this procedure to edit a comment.
 
 Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
 
-1. Click on this ![3 dots]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
 1. Select **Delete** from the menu items.
 1. The following options appear in the comments sidebar:<br/>
-![delete comment]({{site.baseurl}}/images/delete.png)
+![delete comment]({{site.baseurl}}/images/comments-delete-comment.png)
 1. Click **Cancel** to save or **Delete** to remove the comment from the conversation.
 
 ### Delete conversation
 
 This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
 
-1. Click on this ![3 dots]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
 1. Select **Delete conversation** from the menu items.
 1. The following decision dialog box will appear:<br/>
-![delete conversation]({{site.baseurl}}/images/decision.png)
+![delete conversation]({{site.baseurl}}/images/comments-delete-conversation.png)
 1. Click **Cancel** to save or **Delete** to remove the conversation.
 
 **Result**: The conversation and all its subsequent comments will be deleted.
@@ -69,7 +69,7 @@ This option is only available for the first comment in a conversation. Once the 
 Follow this procedure to display the comments sidebar:
 
 1. Place the cursor on the desired text in the editor body:
-1. From the navigation menu, choose **View** -> **Show Comment** or click on the **Show Comments**![Comments]({{site.baseurl}}/images/comment-disabled.png) toggle toolbar button to display the comment.
+1. From the navigation menu, choose **View** -> **Show Comment** or click on the **Show Comments**![Comments]({{site.baseurl}}/images/comments-toolbar-button.png) toggle toolbar button to display the comment.
 
 **Result**: The comments sidebar will appear and display the corresponding conversation for the highlighted text.
 
@@ -79,7 +79,7 @@ Follow this procedure to delete all conversations in the document:
 
 1. From the navigation menu, choose **File** -> **Delete all conversations** option to delete all the comments in a document.
 1. The following decision dialog box will appear:<br />
-![Delete all conversations]({{site.baseurl}}/images/decision2.png)
+![Delete all conversations]({{site.baseurl}}/images/comments-delete-conversations.png)
 1. Click **Ok** to remove the all the comments or **Cancel** to dismiss the action.
 
 **Result**: All the comments for the selected document will be deleted.

@@ -5,9 +5,9 @@
 > **Note**: The `advtable_value_series` option requires the Advanced Tables plugin.
 {% endif %}
 
-The `advtable_value_series` option is used in conjuction with the [mceTableToggleSeries]({{site.baseurl}}/plugins/premium/advtable/#commands) command.
+The `advtable_value_series` option is used in conjunction with the [mceTableToggleSeries]({{site.baseurl}}/plugins/premium/advtable/#commands) command.
 
-The `advtable_value_series` option allows values series to be configured that can be used to populate cells in a table.
+The `advtable_value_series` option allows value series to be configured that can be used to populate cells in a table.
 
 **Type:** `Object`
 

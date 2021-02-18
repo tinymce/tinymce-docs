@@ -57,7 +57,18 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **<
 
 - <Description>
 
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/premium/advtable/).
+
+### Advanced Tables 1.1.0
+
+The {{site.productname}} 5.8 release includes an accompanying release of the **Advanced Tables** premium plugin.
+
+**Advanced Tables** 1.1.0 provides the following new features:
+
+- Added a new `advtable_value_series` option that allows value series to be configured. For details, see: [Advanced Tables plugin - advtable_value_series]({{site.baseurl}}/plugins/premium/advtable/#advtable_value_series).
+- Added a new `mceTableToggleSeries` command that toggles a series column on the selected table. For details, see: [Advanced Tables plugin - Commands]({{site.baseurl}}/plugins/premium/advtable/#commands).
+
+For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
 ## Accompanying Premium self-hosted server-side component changes
 

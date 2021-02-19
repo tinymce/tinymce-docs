@@ -50,7 +50,7 @@ Follow this procedure to delete a comment. This option is not available for the 
 1. Select **Delete** from the menu items.
 1. The following options appear in the comments sidebar:<br/>
 ![delete comment]({{site.baseurl}}/images/comments-delete-comment.png)
-1. Click **Cancel** to save or **Delete** to remove the comment from the conversation.
+1. Click **Cancel** to cancel the action or **Delete** to remove the comment from the conversation.
 
 ### Delete conversation
 
@@ -60,7 +60,7 @@ This option is only available for the first comment in a conversation. Once the 
 1. Select **Delete conversation** from the menu items.
 1. The following decision dialog box will appear:<br/>
 ![delete conversation]({{site.baseurl}}/images/comments-delete-conversation.png)
-1. Click **Cancel** to save or **Delete** to remove the conversation.
+1. Click **Cancel** to cancel the action or **Delete** to remove the conversation.
 
 **Result**: The conversation and all its subsequent comments will be deleted.
 
@@ -72,9 +72,9 @@ This option is only available for the first comment in a conversation. Once a co
 1. Select **Resolve conversation** from the menu items.
 1. The following decision dialog box will appear:<br/>
 ![resolve conversation]({{site.baseurl}}/images/comments-resolve-conversation.png)
-1. Click **Cancel** to save or **Resolve** to resolve the conversation.
+1. Click **Cancel** to cancel the action or **Resolve** to resolve the conversation.
 
-**Result**: The conversation be resolved.
+**Result**: The conversation will be resolved.
 
 ### Show comment
 

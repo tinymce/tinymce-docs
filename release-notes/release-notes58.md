@@ -65,8 +65,8 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **C
 
 **Comments** 2.4.0 provides the following improvements:
 
-- Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - tinycomments_resolve]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve).
-- Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - tinycomments_can_resolve]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve).
+- Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - `tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve).
+- Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - `tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve).
 
 ## Accompanying Premium self-hosted server-side component changes
 

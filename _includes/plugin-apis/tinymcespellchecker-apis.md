@@ -4,7 +4,7 @@
 |------| ------| ----------- |
 | addIgnoredWords | words: `string[]`, lang?: `string` | Add an array of words to the `spellchecker_ignore_list` for a specific language. Add the array of words to all languages by omitting the `lang` parameter. |
 | getLanguage | N/A | Get the current language enabled for spellchecking.
-| setLanguage | language: `string` | Set the current language for spellchecking. This must be a supported language code (case-sensitive). For a list of supported languages, see: [Spell Checker Pro - `Supported languages`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#supportedlanguages)
+| setLanguage | language: `string` | Set the current language for spellchecking. This must be a supported language code (case-sensitive). For a list of supported languages, see: [Spell Checker Pro - `Supported languages`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#supportedlanguages).
 
 **Examples**
 

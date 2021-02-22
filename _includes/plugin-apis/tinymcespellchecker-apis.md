@@ -19,5 +19,5 @@ tinymce.activeEditor.plugins.tinymcespellchecker.addIgnoredWords(['TinyMCE', 'ti
 tinymce.activeEditor.plugins.tinymcespellchecker.getLanguage()
 
 // set the current language to a specific language
-tinymce.activeEditor.plugins.tinymcespellchecker.setLanguage('sv')  // e.g. Swedish
+tinymce.activeEditor.plugins.tinymcespellchecker.setLanguage('sv');  // e.g. Swedish
 ```

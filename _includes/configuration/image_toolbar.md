@@ -16,7 +16,6 @@ To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars image imagetools',
-  inline: true,
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions'
 });
 ```
@@ -29,7 +28,6 @@ To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
-  inline: true,
   quickbars_image_toolbar: false
 });
 ```

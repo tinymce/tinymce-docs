@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 This plugin adds a dialog to the editor with a map of special unicode characters, which cannot be added directly from the keyboard. The dialog can be invoked via a toolbar button - `charmap` - or a dedicated menu item added as `Insert > Special character`.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

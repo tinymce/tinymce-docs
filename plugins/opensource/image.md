@@ -11,8 +11,6 @@ keywords: photo insert edit style format image_caption image_list image_advtab i
 
 This plugin enables the user to insert an image into {{site.productname}}'s editable area. The plugin also adds a toolbar button and an `Insert/edit image` menu item under the `Insert` menu.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

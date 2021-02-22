@@ -18,8 +18,6 @@ The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown 
 
 > **Note:** The toolbar button won't work in browsers that don't support direct access to the clipboard. In such cases the user will be presented with a modal/dialog box advising them of this along with a reminder of standard keyboard shortcuts.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

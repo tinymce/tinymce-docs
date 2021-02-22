@@ -17,8 +17,6 @@ Full screen mode can be toggled using the following keyboard shortcuts:
 * macOS: Command+Shift+F
 * Most other operating systems (such as Windows or Linux): Ctrl+Shift+F
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

@@ -204,25 +204,51 @@ tinymce.init({
 });
 ```
 
-### `spellchecker_whitelist`
+<!-- Bookmark for deprecated option name -->
+<a class="anchor" id="spellchecker_whitelist">
 
-This option specifies an array of words to be ignored by the spell checker.
+### `spellchecker_ignore_list`
 
-**Type:** `String[]`
+This option specifies which words should be ignored by the spell checker. If an array of words is provided, the specified words will be ignored for all languages. If an object containing an array of words per language is provided, the specified words will be ignored for the specified languages.
 
-#### Example: Using `spellchecker_whitelist`
+> **Note:** Languages specified as keys in the `spellchecker_ignore_list` object must match the configured [Spellchecker Languages]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_languages).
+
+**Type:** `String[]` or `Object`
+
+#### Example: Using `spellchecker_ignore_list` to ignore words in all languages
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_whitelist: ['tinymce','TinyMCE']
+  spellchecker_ignore_list: ['tinymce', 'TinyMCE']
+});
+```
+
+#### Example: Using `spellchecker_ignore_list` for specific languages
+
+{{site.requires_5_7v}}
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_ignore_list: {
+    en_us: ['tinymce', 'TinyMCE'],
+    es: ['tinymce']
+  }
 });
 ```
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
+
+## Commands
+
+The Spell Checker Pro plugin provides the following commands.
+
+{% include commands/tinymcespellchecker-cmds.md %}
 
 ## Events
 
@@ -322,3 +348,30 @@ tinymce.init({
   }
 });
 ```
+
+### SpellcheckerLanguageChanged event
+
+{{ site.requires_5_7v }}
+
+This event fires when the spellchecking language is changed.
+
+#### Example: The SpellcheckerLanguageChanged event
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckerLanguageChanged', function (e) {
+      console.log('Spelling language changed: ' + e.language + '. Previous language: ' + e.prevLanguage);
+    });
+  }
+});
+```
+
+## APIs
+
+The {{pluginname}} plugin provides the following APIs.
+
+{% include plugin-apis/{{plugincode}}-apis.md %}

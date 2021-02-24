@@ -132,7 +132,8 @@ The following events are provided by the {{ site.productname }} editor.
 | Dirty                  | N/A                                                                                                                     | Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when [an undo level]({{site.baseurl}}/api/tinymce/tinymce.undomanager/) has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the [`editor.isDirty` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#isdirty).                                                                                                |
 | CloseWindow            | `{ dialog: DialogApi }`                                                                                                 | Fired when a dialog has been closed.                                                                                                                                       |
 | OpenWindow             | `{ dialog: DialogApi }`                                                                                                 | Fired when a dialog has been opened.                                                                                                                                       |
-| ProgressState          | `{ state: boolean, time?: number }`                                                                                     | Fired when the editor progress state changes using the {{ site.productname }} API [`tinymce.activeEditor.setProgressState()`]({{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate).                                                                                              |
+| ProgressState          | `{ state: boolean, time?: number }`                                                                                     | Fired when a change to the editor progress state is scheduled using the {{ site.productname }} API [`tinymce.activeEditor.setProgressState()`]({{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate).                                                                                              |
+| AfterProgressState     | `{ state: boolean }`                                                                                                    | Fired after the editor progress state is changed, and the new progress state is in effect.<br>{{ site.requires_5_7v}}                                                         |
 | PreProcess             | `{ node: Element, format: string }`                                                                                     | Fired before serializing a DOM node to HTML content.                                                                                                                       |
 | PostProcess            | `{ node: Element, format: string }`                                                                                     | Fired after serializing a DOM node to HTML content.                                                                                                                        |
 | SetAttrib              | `{ attrElm: Element, attrName: string, attrValue: string }`                                                             | Fired when an attribute is updated using the editor [DOMUtils API]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.domutils/).                                                                                                          |
@@ -157,6 +158,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 The following plugins provide events.
 
+  - [Advanced Tables events](#advancedtablesevents)
   - [Autosave events](#autosaveevents)
   - [Character Map events](#charactermapevents)
   - [Comments events](#commentsevents)
@@ -176,6 +178,10 @@ The following plugins provide events.
   - [Visual Blocks events](#visualblocksevents)
   - [Visual Characters events](#visualcharactersevents)
   - [Word Count events](#wordcountevents)
+
+### Advanced Tables events
+
+For events applicable to the Advanced Tables plugin, see: [Table events](#tableevents).
 
 ### Autosave events
 

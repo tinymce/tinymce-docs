@@ -191,6 +191,7 @@ Commands are available for the following plugins:
 - [Save](#save)
 - [Search and Replace](#searchandreplace)
 - [Spell Checker](#spellchecker)
+- [Spell Checker Pro](#spellcheckerpro)
 - [Table](#table)
 - [Template](#template)
 - [Table of Contents](#tableofcontents)
@@ -390,6 +391,12 @@ The following command requires the [Spell Checker (`spellchecker`)]({{site.baseu
 {{site.deprecate_spellchecker}}
 
 {% include commands/spellchecker-cmds.md %}
+
+#### Spell Checker Pro
+
+The following commands require the [Spell Checker Pro (`tinymcespellchecker`)]({{site.baseurl}}/plugins/premium/tinymcespellchecker/) plugin.
+
+{% include commands/tinymcespellchecker-cmds.md %}
 
 #### Table
 

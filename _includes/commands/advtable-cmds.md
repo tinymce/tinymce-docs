@@ -34,6 +34,7 @@ tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numbers
 
 `mceTableToggleSeries` accepts an object with the following key-value pairs:
 
-- `name` - a string indicating the series to toggle. Series and their associated names are configured using the [advtable_value_series]({{site.baseurl}}/plugins/premium/advtable/#advtable_value_series) option. If the provided series name is different to the name currently present on the table, the series column will be updated to use the new series.
-{% comment %} Need to elaborate on this more {% endcomment %}
-- `location` - `'left'`
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| name | `string` | Required |  Specifies the series to toggle. Series and their associated names are configured using the [advtable_value_series]({{site.baseurl}}/plugins/premium/advtable/#advtable_value_series) option. If the provided series name is different to the name currently present on the table, the series column will be updated to use the new series. |
+| location | `'left'` | Required | Specifies the location of where the series should be toggled in the table. |

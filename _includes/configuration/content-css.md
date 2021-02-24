@@ -1,12 +1,14 @@
 
 ## content_css
-It is usually desirable that {{site.productname}}'s editable area has the same styling as the surrounding content. Consistent styling is achieved with the `content_css` option, which enables you to extend external CSS into the editable area.
+The `content_css` option loads the specified CSS files into the editable area. 
+
+**Type:** `String`, `Array`
+
+> **Note:** This option is intended for use with {{site.productname}}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {{site.productname}} is rendered in, not using the `content_css` option.
 
 {% include configuration/shipped-content-css.md %}
 
-> **Note**: If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes {{site.productname}}, not relative to {{site.productname}} itself.
-
-**Type:** `String`, `Array`
+If a relative path is specified, it will be resolved in relation to the URL of the webpage {{site.productname}} is rendered in.
 
 ### Absolute path example
 
@@ -29,6 +31,8 @@ tinymce.init({
   content_css : 'mycontent.css'  // resolved to http://domain.mine/mysite/mycontent.css
 });
 ```
+
+To load multiple stylesheets, provide the paths as either a array of strings or a comma-separated string.
 
 ### Using multiple stylesheets example
 

@@ -133,6 +133,7 @@
     - url: "#content_css"
     - url: "#content_css_cors"
     - url: "#content_style"
+    - url: "#font_css"
     - url: "#inline_boundaries"
     - url: "#inline_boundaries_selector"
     - url: "#color_cols"
@@ -234,6 +235,9 @@
       - url: "#API"
     - url: "advcode"
     - url: "advtable"
+      pages:
+      - url: "#Commands"
+      - url: "#Events"
     - url: "casechange"
     - url: "checklist"
     - url: "comments"
@@ -868,6 +872,17 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes57"
+    pages:
+    - url: "#Overview"
+    - url: "#New features"
+    - url: "#Enhancements"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Accompanying Premium Skins and Icon Packs changes"
+    - url: "#Accompanying Premium self-hosted server-side component changes"
+    - url: "#General bug fixes"
+    - url: "#Deprecated features"
+    - url: "#Known issues"
   - url: "release-notes562"
     pages:
     - url: "#Overview"

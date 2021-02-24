@@ -270,13 +270,13 @@ This section describes issues that users of {{site.productname}} 5.7 may encount
 
 **Outline**
 
-- [](#)
+- [Row sorting not working for tables with `colgroup` elements](#rowsortingnotworkingfortableswithcolgroupelements)
 
-###
+### Row sorting not working for tables with `colgroup` elements
 
-**Issue**: This issue affects ....
+**Issue**: This issue affects the row sorting functionality provided by the **Advanced Tables** plugin. If a row sort is performed on a table containing colgroups, the editor will return invalid HTML.
 
-**Workaround**: There was no known workaround at the time of the release.
+**Workaround**: For existing or pasted tables containing `colgroup` elements, there was no known workaround at the time of the release. To prevent colgroups being added to new tables created using {{site.productname}}, set the `table_use_colgroups` option to `false` (`false` by default).
 
 {% assign enterprise = true %}
 

@@ -276,7 +276,7 @@ This section describes issues that users of {{site.productname}} 5.7 may encount
 
 **Issue**: This issue affects the row sorting functionality provided by the **Advanced Tables** plugin. If a row sort is performed on a table containing colgroups, the editor will return invalid HTML.
 
-**Workaround**: For existing or pasted tables containing `colgroup` elements, there was no known workaround at the time of the release. To prevent colgroups being added to new tables, set the `table_use_colgroups` option to `false` (`false` by default).
+**Workaround**: For existing or pasted tables containing `colgroup` elements, there was no known workaround at the time of the release. To prevent colgroups being added to new tables created using {{site.productname}}, set the `table_use_colgroups` option to `false` (`false` by default).
 
 {% assign enterprise = true %}
 

@@ -1,25 +1,24 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = System Requirements
 :description: Consolidated system requirements for TinyMCE Enterprise features.
 :keywords: support supported browser browsers windows osx linux ie8 chrome firefox safari
 
 [[supported-browsers]]
-== Supported Browsers 
+== Supported Browsers
 anchor:supportedbrowsers[historical anchor]
 
 link:{baseurl}/general-configuration-guide/system-requirements/[Go to this page] for information on which browsers are supported by TinyMCE.
 
 [[word-copypaste]]
-== Word Copy/Paste 
+== Word Copy/Paste
 anchor:wordcopypaste[historical anchor]
 
 Word copy and paste is supported on all the browsers supported by TinyMCE Enterprise. There is some variances of functionality for different browsers. Please see the information below for more details.
 
 [[feature-matrix-and-browser-support]]
-=== Feature Matrix and Browser Support 
+=== Feature Matrix and Browser Support
 anchor:featurematrixandbrowsersupport[historical anchor]
 
 [cols=",^,^,^"]
@@ -58,31 +57,31 @@ anchor:featurematrixandbrowsersupport[historical anchor]
 |===
 
 [[html-cleaning]]
-==== HTML Cleaning 
+==== HTML Cleaning
 anchor:htmlcleaning[historical anchor]
 
 On all browsers PowerPaste provides basic HTML cleaning. For browsers where HTML5 support is not available PowerPaste uses the browser DOM to import and clean HTML. This mechanism is the primary cleaning method on browsers where HTML5 clipboard APIs are not available. While the resulting content is clean HTML the direct conversion to a browser DOM can result in some loss of content structure and/or formatting information.
 
 [[improved-html-cleaning]]
-==== Improved HTML Cleaning 
+==== Improved HTML Cleaning
 anchor:improvedhtmlcleaning[historical anchor]
 
 On browsers that support HTML5 APIs PowerPaste is able to use improved HTML cleaning techniques.  Improved HTML cleaning uses HTML5 clipboard APIs to access the clipboard directly. It can perform more complex and intelligent cleaning of the HTML than the basic HTML cleaning approach.  This better preserves the original document structure and formatting (when importing formatting). Where available this approach gives the highest fidelity copy and paste possible from Microsoft Word and HTML.
 
 [[image-import]]
-==== Image Import 
+==== Image Import
 anchor:imageimport[historical anchor]
 
 On browsers that support HTML5 PowerPaste is able to import images embedded in the content (e.g. from Microsoft Word) into the editor.  These images can then be uploaded via a HTTP post as required.
 
 [[spell-checking]]
-== Spell Checking 
+== Spell Checking
 anchor:spellchecking[historical anchor]
 
 Spell checking is supported on all the browsers supported by TinyMCE Enterprise.
 
 [[internet-explorer-8-and-9-limitations]]
-=== Internet Explorer 8 and 9 Limitations 
+=== Internet Explorer 8 and 9 Limitations
 anchor:internetexplorer8and9limitations[historical anchor]
 
 Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For spell checking to work, the ephox-spelling service must be located on the same domain as the TinyMCE client. The domain is considered to be the combination of the protocol (HTTP vs HTTPS), server name and the port as it appears in the browser's address bar.
@@ -90,19 +89,19 @@ Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For
 Internet Explorer 8 will not highlight misspelt words as you type due to browser limitations. Misspelt words are highlighted after the current HTML node is changed (e.g. when the Enter key is pressed and the cursor enters a new paragraph).
 
 [[supported-application-servers]]
-=== Supported Application Servers 
+=== Supported Application Servers
 anchor:supportedapplicationservers[historical anchor]
 
 The TinyMCE spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
 
 [[java-development-kit]]
-===== Java Development Kit 
+===== Java Development Kit
 anchor:javadevelopmentkit[historical anchor]
 
 JDK 7 update 55+
 
 [[java-j2ee-application-servers]]
-===== Java (J2EE) Application Servers 
+===== Java (J2EE) Application Servers
 anchor:javaj2eeapplicationservers[historical anchor]
 
 * Tomcat 7+
@@ -110,7 +109,7 @@ anchor:javaj2eeapplicationservers[historical anchor]
 * WebSphere Application Server (WAS) 8+
 
 [[operating-systems]]
-==== Operating Systems 
+==== Operating Systems
 anchor:operatingsystems[historical anchor]
 
 * Windows Server 2008 SP2
@@ -118,14 +117,14 @@ anchor:operatingsystems[historical anchor]
 * Red Hat Enterprise Linux v5
 
 [[minimum-hardware-requirements]]
-==== Minimum Hardware Requirements 
+==== Minimum Hardware Requirements
 anchor:minimumhardwarerequirements[historical anchor]
 
 * CPU:  Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
 * RAM: 4 Gigabytes of RAM available for services
 
 [[supported-tinymce-versions]]
-=== Supported TinyMCE versions 
+=== Supported TinyMCE versions
 anchor:supportedtinymceversions[historical anchor]
 
 TinyMCE provides support for the following versions:
@@ -136,7 +135,7 @@ TinyMCE provides support for the following versions:
 All commercially supported plugins are supported on these versions.
 
 [[need-more]]
-==== Need more? 
+==== Need more?
 anchor:needmore[historical anchor]
 
 Tiny is committed to broadening support for various application servers / platforms. If you have a requirement to support an application server that is not listed here, please contact support@tiny.cloud.

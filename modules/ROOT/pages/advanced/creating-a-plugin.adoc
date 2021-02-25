@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Create a Plugin for TinyMCE
 :description: A short introduction to creating plugins for TinyMCE along with an example plugin.
 :description_short: Introducing plugin creation, with an example.
@@ -13,7 +12,7 @@ Creating plugins in TinyMCE is pretty simple - especially if you use the link:{b
 This tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
 
 [[file-structure]]
-== File Structure 
+== File Structure
 anchor:filestructure[historical anchor]
 
 To create a plugin, you need to create a directory in the TinyMCE plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file, it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.
@@ -21,7 +20,7 @@ To create a plugin, you need to create a directory in the TinyMCE plugins direct
 The build scripts that comes with the development package of TinyMCE will automatically build all plugins including your custom ones.
 
 [[example-of-the-plugin-file-structure]]
-== Example of the plugin file structure 
+== Example of the plugin file structure
 anchor:exampleofthepluginfilestructure[historical anchor]
 
 ----
@@ -42,7 +41,7 @@ tinymce.init({
 You can also have the plugin in any location you want by loading the plugin.js/plugin.min.js files directly after the tinymce.js/tinymce.min.js.
 
 [[example-of-loading-the-plugin-from-another-url]]
-== Example of loading the plugin from another URL 
+== Example of loading the plugin from another URL
 anchor:exampleofloadingthepluginfromanotherurl[historical anchor]
 
 [source,html]
@@ -52,7 +51,7 @@ anchor:exampleofloadingthepluginfromanotherurl[historical anchor]
 ----
 
 [[example-plugin]]
-== Example plugin 
+== Example plugin
 anchor:exampleplugin[historical anchor]
 
 Here is an example plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the TinyMCE site in a dialog.
@@ -110,7 +109,7 @@ return {
 ----
 
 [[example-init]]
-== Example init 
+== Example init
 anchor:exampleinit[historical anchor]
 
 Here is an example of how to use the new toolbar button.
@@ -125,13 +124,13 @@ tinymce.init({
 ----
 
 [[exposing-metadata]]
-== Exposing metadata 
+== Exposing metadata
 anchor:exposingmetadata[historical anchor]
 
 You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata will then be used by the link:{baseurl}/plugins/help/[Help Plugin] to show the correct name and link for your plugin in the Plugins installed tab. See the `test` plugin above for example.
 
 [[language-localization]]
-== Language localization 
+== Language localization
 anchor:languagelocalization[historical anchor]
 
 If you want to have custom translations for your plugin you need to create a "langs" directory in your plugin directory. TinyMCE will then try to load language files based on the specified language core for example if the language is "sv_SE" it will try to load `'<your plugin>/langs/sv_SE.js'`.
@@ -139,7 +138,7 @@ If you want to have custom translations for your plugin you need to create a "la
 This file is similar to .po files it has the English string on the left side and the translated string on the right side.
 
 [[example-of-a-swedish-translation-for-the-dialog-title]]
-== Example of a Swedish translation for the dialog title 
+== Example of a Swedish translation for the dialog title
 anchor:exampleofaswedishtranslationforthedialogtitle[historical anchor]
 
 [source,js]

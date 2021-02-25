@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Drive plugin
 :description: Cloud-based file and image management for TinyMCE.
 :keywords: tinydrive storage media tiny drive
@@ -44,7 +43,7 @@ You can read more about how to create these tokens in the link:{baseurl}/configu
 *Required:* yes
 
 [[example-using-a-jwt-provider-url]]
-==== Example Using a JWT Provider URL 
+==== Example Using a JWT Provider URL
 anchor:exampleusingajwtproviderurl[historical anchor]
 
 [source,js]
@@ -57,7 +56,7 @@ tinymce.init({
 ----
 
 [[example-using-a-jwt-provider-callback]]
-==== Example Using a JWT Provider Callback 
+==== Example Using a JWT Provider Callback
 anchor:exampleusingajwtprovidercallback[historical anchor]
 
 [source,js]
@@ -112,7 +111,7 @@ tinymce.init({
 ----
 
 [[insert-file-toolbar-button]]
-== Insert File toolbar button 
+== Insert File toolbar button
 anchor:insertfiletoolbarbutton[historical anchor]
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
@@ -120,7 +119,7 @@ Drive will automatically integrate into the Image, Link, and Media dialogs as a 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
 [[example-of-toolbar-button]]
-=== Example of toolbar button 
+=== Example of toolbar button
 anchor:exampleoftoolbarbutton[historical anchor]
 
 [source,js]
@@ -133,7 +132,7 @@ tinymce.init({
 ----
 
 [[insert-file-menu-item]]
-== Insert File menu item 
+== Insert File menu item
 anchor:insertfilemenuitem[historical anchor]
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
@@ -141,7 +140,7 @@ Drive will automatically integrate into the Image, Link, and Media dialogs as a 
 The Insert File menu item will insert images as `img` elements or other files as links to that file.
 
 [[example-of-menu-item]]
-=== Example of menu item 
+=== Example of menu item
 anchor:exampleofmenuitem[historical anchor]
 
 [source,js]
@@ -158,7 +157,7 @@ tinymce.init({
 ----
 
 [[restrictions-and-quotas]]
-== Restrictions and Quotas 
+== Restrictions and Quotas
 anchor:restrictionsandquotas[historical anchor]
 
 Drive has restrictions on what files can be uploaded and how large these files can be:
@@ -174,7 +173,7 @@ Drive has restrictions on what files can be uploaded and how large these files c
 Your storage and bandwidth quota varies based upon the https://www.tiny.cloud/pricing/[Tiny Cloud Plan] you are subscribed to.
 
 [[upload-files-url]]
-== Upload Files URL 
+== Upload Files URL
 anchor:uploadfilesurl[historical anchor]
 
 All files are uploaded to a central storage with a CDN endpoint that means that we are hosting your files and they are publicly available in read-only mode for anyone that has access to the URL of that file.
@@ -182,7 +181,7 @@ The URL format for each file is `+https://drive.tiny.cloud/1/{your-api-key}/{uui
 If you move or rename a file, it will still have the same unique URL, so the restructuring of your files using Drive won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
 
 [[user-specific-root]]
-== User specific root 
+== User specific root
 anchor:userspecificroot[historical anchor]
 
 It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `+https://claims.tiny.cloud/drive/root+` custom jwt claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a jwt key with that claim. The user only be able to see and manage files within that root.

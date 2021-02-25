@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 02. Use TinyMCE Inline
 :description: Understand the difference between traditional forms-based editing and advanced inline editing.
 :description_short: Learn about forms-based editing v. inline editing.
@@ -16,7 +15,7 @@ When in inline editing mode the editor does not replace the selected element wit
 The distraction-free theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the link:{baseurl}/demo/editor-dfree/[Distraction-free Editor] example page. See link:{baseurl}/themes/inlite/[Inlite Theme] for more information.
 
 [[forms-based-editing-vs-inline-editing]]
-== Forms-based editing vs. inline editing 
+== Forms-based editing vs. inline editing
 anchor:forms-basededitingvsinlineediting[historical anchor]
 
 Most common TinyMCE integrations use the editor in its classic form-based mode. In this integration mode, the editor usage is as a form field that is filled out to provide content. The editor is always visible as part of the form to be edited.
@@ -28,7 +27,7 @@ Most significantly, when using inline editing TinyMCE is not isolated from the p
 Since the editor is not sandboxed in an iframe in inline editing mode, CSS styles for the editor's content are inherited from the page that the editor is on. This feature allows you to edit content exactly as it appears within the context of the page, providing a true WYSIWYG editing experience.
 
 [[inline-editing-and-complex-stylesheets]]
-== Inline editing and complex stylesheets 
+== Inline editing and complex stylesheets
 anchor:inlineeditingandcomplexstylesheets[historical anchor]
 
 When using TinyMCE in the inline mode it inherits the CSS stylesheet from the page it is embedded in.
@@ -54,7 +53,7 @@ This would make the phrase "bold text" bold and orange in the content:
 If the user changed the heading to a paragraph or a different heading level, then the text color of the bold text would, unexpectedly, change for the user. While this is entirely correct behavior according to the stylesheet, it is entirely unexpected from the user's perspective.
 
 [[enabling-inline-editing-mode]]
-== Enabling inline editing mode 
+== Enabling inline editing mode
 anchor:enablinginlineeditingmode[historical anchor]
 
 Enabling inline editing mode is simple. Setting the `inline` configuration property to `true` is all that's needed, in combination with a normal `selector`. It is important to keep in mind that, unlike the classic form-based mode, inline only works with content that is within a block element (e.g. `div`, `h1`). An example of using inline editing mode with a div is as follows:

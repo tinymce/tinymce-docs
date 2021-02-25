@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Autolink Plugin
 :description: Automatically create hyperlinks.
 :keywords: link url urls
@@ -14,7 +13,7 @@ Note that this option won't convert incomplete URLs. For example `example.com` w
 *Type:* `String`
 
 [[autolink-plugin-example]]
-===== Autolink plugin example 
+===== Autolink plugin example
 anchor:autolinkpluginexample[historical anchor]
 
 [source,js]

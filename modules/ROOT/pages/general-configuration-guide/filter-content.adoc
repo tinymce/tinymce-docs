@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 09. Filter Content
 :description: Learn how to create clean, maintainable and readable content.
 
@@ -12,7 +11,7 @@ These settings enable developers to control content styling features that are av
 There are of course many configuration options dealing with complex parsing of text. However, most of these are quite advanced and outside the scope of this Get Started guide. Check out the link:{baseurl}/configure/content-filtering/[Content Filtering] section to learn more.
 
 [[role-your-style-formats]]
-== Role your style formats 
+== Role your style formats
 anchor:roleyourstyleformats[historical anchor]
 
 In this section of the guide we will look at the link:{baseurl}/configure/content-filtering/#font_formats[formats] configuration option, which enables developers to override TinyMCE defaults and add custom "formats" to the editor.
@@ -20,7 +19,7 @@ In this section of the guide we will look at the link:{baseurl}/configure/conten
 A format is a style that gets applied to text when a user presses the bold button inside the editor. TinyMCE is equipped with a text formatting engine that enables you to specify the expected action. For example, when a user clicks the bold button, it lets the user specify what it should produce.
 
 [[style-merging]]
-=== Style merging 
+=== Style merging
 anchor:stylemerging[historical anchor]
 
 [NOTE]
@@ -29,7 +28,7 @@ Pro tip: Similar elements and styles are merged by default to reduce the output 
 ====
 
 [[built-in-formats]]
-=== Built-in formats 
+=== Built-in formats
 anchor:built-informats[historical anchor]
 
 TinyMCE has some built-in formats that you can override. You may recall some of these from the default controls we mentioned in the link:../basic-setup[Basic Setup] part of this guide:
@@ -61,7 +60,7 @@ TinyMCE has some built-in formats that you can override. You may recall some of 
 Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
 
 [[format-parameters]]
-=== Format parameters 
+=== Format parameters
 anchor:formatparameters[historical anchor]
 
 Before we move on to the table of format parameters below, we want to acknowledge that this content is starting to get a little more advanced. Since you've made it this far and we think you can handle it.
@@ -95,7 +94,7 @@ Before we move on to the table of format parameters below, we want to acknowledg
 |===
 
 [[example-of-usage-of-the-formats-option]]
-=== Example of usage of the formats option 
+=== Example of usage of the formats option
 anchor:exampleofusageoftheformatsoption[historical anchor]
 
 This example overrides some of the built-in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` `css` style.
@@ -122,7 +121,7 @@ tinymce.init({
 ----
 
 [[power-user-bonus]]
-=== Power user bonus 
+=== Power user bonus
 anchor:poweruserbonus[historical anchor]
 
 [NOTE]

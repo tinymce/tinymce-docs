@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Advanced List Plugin
 :description: Create styled number and bulleted lists.
 :keywords: advlist advlist_bullet_styles advlist_number_styles
@@ -14,7 +13,7 @@ IMPORTANT: The link:../lists[Lists] (`lists`) plugin must be activated for the `
 *Type:* `String`
 
 [[advanced-list-plugin-example]]
-===== Advanced List plugin example 
+===== Advanced List plugin example
 anchor:advancedlistpluginexample[historical anchor]
 
 [source,js]

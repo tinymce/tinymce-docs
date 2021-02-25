@@ -1,14 +1,13 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = jQuery Integration
 :description: Add custom logic to render TinyMCE inside jQuery dialogs.
 :keywords: integration integrate jquery javascript
 :title_nav: jQuery
 
 [[tinymce-in-a-jquery-ui-dialog]]
-== TinyMCE in a jQuery UI Dialog 
+== TinyMCE in a jQuery UI Dialog
 anchor:tinymceinajqueryuidialog[historical anchor]
 
 You need to add some custom logic when rendering TinyMCE instances inside jQuery UI dialogs since it blocks all focus in calls of elements outside the dialog. http://fiddle.tinymce.com/rsdaab/713[Check this fiddle out] for a working example.
@@ -24,7 +23,7 @@ $(document).on('focusin', function(e) {
 ----
 
 [[a-note-about-integrations]]
-==== A note about integrations 
+==== A note about integrations
 anchor:anoteaboutintegrations[historical anchor]
 
 NOTE: We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the https://community.tinymce.com[TinyMCE Community].

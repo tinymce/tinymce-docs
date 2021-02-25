@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Inlite theme
 :description: Theme that renders a light weight UI for inline editing.
 :keywords: theme inlite
@@ -22,7 +21,7 @@ tinymce.init({
 ----
 
 [[theme-specific-controls]]
-=== Theme specific controls 
+=== Theme specific controls
 anchor:themespecificcontrols[historical anchor]
 
 [[quicklink]]
@@ -77,7 +76,7 @@ tinymce.init({
 ----
 
 [[related-configuration-options]]
-=== Related configuration options 
+=== Related configuration options
 anchor:relatedconfigurationoptions[historical anchor]
 
 * link:{baseurl}/configure/editor-appearance/#insert_toolbar[insert_toolbar]

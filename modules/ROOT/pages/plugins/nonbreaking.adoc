@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Nonbreaking Space Plugin
 :controls: toolbar button, menu item
 :description: Insert a nonbreaking space.
@@ -57,7 +56,7 @@ tinymce.init({
 ----
 
 [[usage-with-table-plugin]]
-==== Usage with `table` plugin 
+==== Usage with `table` plugin
 anchor:usagewithtableplugin[historical anchor]
 
 When using the `nonbreaking_force_tab` setting together with the `table` plugin it will conflict with the tab navigation between table cells. You can choose which setting you want to use by changing the ordering of the plugins in the init object. If `nonbreaking` is before `table` in the plugins setting you will activate the insert `+&nbsp;+` functionality, while if `table` is added before `nonbreaking` you will get tab table cell navigation. See examples:

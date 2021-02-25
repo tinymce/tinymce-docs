@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Modern theme
 :description: Theme that renders iframe or inline modes using the tinymce core UI framework.
 :keywords: theme modern
@@ -21,7 +20,7 @@ tinymce.init({
 ----
 
 [[related-configuration-options]]
-=== Related configuration options 
+=== Related configuration options
 anchor:relatedconfigurationoptions[historical anchor]
 
 * link:{baseurl}/configure/editor-appearance/#elementpath[elementpath]

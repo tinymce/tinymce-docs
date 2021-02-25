@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Keyboard Shortcuts
 :description: Complete list of keyboard shortcuts.
 :description_short: Complete list of keyboard shortcuts.
@@ -9,7 +8,7 @@ include::{rootDir}_attributes.adoc[]
 :title_nav: Keyboard Shortcuts
 
 [[editor-keyboard-shortcuts]]
-== Editor keyboard shortcuts 
+== Editor keyboard shortcuts
 anchor:editorkeyboardshortcuts[historical anchor]
 
 This is a list of keyboard shortcuts available within the editor body.
@@ -134,7 +133,7 @@ This is a list of keyboard shortcuts available within the editor body.
 |===
 
 [[accessibility-keyboard-shortcuts]]
-== Accessibility keyboard shortcuts 
+== Accessibility keyboard shortcuts
 anchor:accessibilitykeyboardshortcuts[historical anchor]
 
 This is a list of keyboard shortcuts available within the editor user interface.
@@ -173,7 +172,7 @@ This is a list of keyboard shortcuts available within the editor user interface.
 NOTE: Browsers/Screen Readers provide additional shortcuts within the editor context.
 
 [[add-custom-shortcuts-to-tinymce]]
-== Add custom shortcuts to TinyMCE 
+== Add custom shortcuts to TinyMCE
 anchor:addcustomshortcutstotinymce[historical anchor]
 
 If you would like to add your custom keyboard shortcuts to TinyMCE, https://go.tinymce.com/blog/creating-keyboard-shortcuts-tinymce/[this post on our blog] will help you get started.

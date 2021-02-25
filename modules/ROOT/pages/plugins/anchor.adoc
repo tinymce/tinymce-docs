@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Anchor Plugin
 :controls: toolbar button, menu item
 :description: Insert anchors (sometimes referred to as a bookmarks).
@@ -14,7 +13,7 @@ When a user clicks on the anchor button or menu item they will be prompted via a
 *Type:* `String`
 
 [[anchor-plugin-example]]
-===== Anchor plugin example 
+===== Anchor plugin example
 anchor:anchorpluginexample[historical anchor]
 
 [source,js]

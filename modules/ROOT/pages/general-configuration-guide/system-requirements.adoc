@@ -1,13 +1,12 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 12. System Requirements
 :description: Official TinyMCE browser support.
 :keywords: browser compatibility explorer ie safari firefox chrome edge
 
 [[mobile-supported-platforms]]
-== Mobile Supported Platforms 
+== Mobile Supported Platforms
 anchor:mobilesupportedplatforms[historical anchor]
 
 We're pleased to introduce https://www.tinymce.com/mobile[TinyMCE mobile], available in version 4.7.
@@ -23,7 +22,7 @@ If you use other platforms and encounter bugs, please let us know in the https:/
 For further information on TinyMCE mobile setup and configuration, please visit link:{baseurl}/mobile[TinyMCE mobile documentation].
 
 [[browser-compatibility]]
-== Browser Compatibility 
+== Browser Compatibility
 anchor:browsercompatibility[historical anchor]
 
 TinyMCE uses advanced JavaScript and tries to be as smart as possible when it comes to different browsers. The primary focus is on Chrome, Firefox, Internet Explorer, and Safari.

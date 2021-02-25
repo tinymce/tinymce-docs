@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Annotations
 :description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
 :keywords: annotation annotations
@@ -14,13 +13,13 @@ The TinyMCE Annotations API provides the ability to add/modify/delete annotation
 The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) which is accessible via `editor.annotator`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `getContent`, depending on the user configuration (`persistent` setting).
 
 [[using-the-annotator-plugin]]
-== Using the Annotator Plugin 
+== Using the Annotator Plugin
 anchor:usingtheannotatorplugin[historical anchor]
 
 To set up the TinyMCE Annotation plugin, perform the following procedure:
 
 [[1-configure-the-annotate-button]]
-=== 1. Configure the Annotate Button 
+=== 1. Configure the Annotate Button
 anchor:1configuretheannotatebutton[historical anchor]
 
 To configure the annotate button on your toolbar, make the following changes:
@@ -44,7 +43,7 @@ setup: function(ed) {
 See link:{baseurl}/configure/[Configure TinyMCE] for more information on how to configure TinyMCE core.
 
 [[2-registering-the-annotator-plugin]]
-=== 2. Registering the Annotator Plugin 
+=== 2. Registering the Annotator Plugin
 anchor:2registeringtheannotatorplugin[historical anchor]
 
 The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator (`editor.annotator`).
@@ -71,7 +70,7 @@ NOTE: The data passed through here is the same as the data specified when callin
 The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
 [[3-making-the-plugin-available]]
-=== 3. Making the Plugin Available 
+=== 3. Making the Plugin Available
 anchor:3makingthepluginavailable[historical anchor]
 
 For adding the annotate tool to the toolbar that is registered with `alpha` set the value of the toolbar to:
@@ -82,7 +81,7 @@ For adding the annotate tool to the toolbar that is registered with `alpha` set 
 ----
 
 [[4-applying-annotations]]
-=== 4. Applying Annotations 
+=== 4. Applying Annotations
 anchor:4applyingannotations[historical anchor]
 
 After registering an annotation, we can use it by applying it to the current selection.
@@ -110,7 +109,7 @@ Example of specifying your own `uid`:
 ----
 
 [[5-listening-to-selection-events]]
-=== 5. Listening to Selection Events 
+=== 5. Listening to Selection Events
 anchor:5listeningtoselectionevents[historical anchor]
 
 The Annotator API can notify the user when the selection cursor moves in or out of a specified annotation. For example, for our `alpha` scenario:
@@ -216,7 +215,7 @@ tinymce.init({
 image:annotate.png[Example]
 
 [[retrieving-all-annotations-for-a-particular-annotation-name]]
-== Retrieving All Annotations for a Particular Annotation Name 
+== Retrieving All Annotations for a Particular Annotation Name
 anchor:retrievingallannotationsforaparticularannotationname[historical anchor]
 
 The Annotator API allows you to retrieve an object of all of the uids for a particular annotation type (e.g. alpha), and the nodes associated with those uids. For example, to retrieve all `alpha` annotations, we would use this code:
@@ -242,7 +241,7 @@ getAll: (name)
 ----
 
 [[deleting-an-annotation]]
-== Deleting an Annotation 
+== Deleting an Annotation
 anchor:deletinganannotation[historical anchor]
 
 To delete a particular annotation at the cursor, use the `remove` API. It will remove the closest annotation that matches the name. For example,

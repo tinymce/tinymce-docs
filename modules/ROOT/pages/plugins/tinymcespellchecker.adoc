@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Spell Checker Pro Plugin
 :description: Check spelling as-you-type in TinyMCE.
 :keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
@@ -25,7 +24,7 @@ The following languages are supported:
 * Swedish
 
 [[cloud-installation]]
-== Cloud Installation 
+== Cloud Installation
 anchor:cloudinstallation[historical anchor]
 
 To enable the TinyMCE Enterprise Spellchecking plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features[TinyMCE Cloud]:
@@ -36,7 +35,7 @@ To enable the TinyMCE Enterprise Spellchecking plugin with link:{baseurl}/cloud-
 With TinyMCE Cloud the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
 
 [[example-tinymce-configuration]]
-===== Example TinyMCE Configuration 
+===== Example TinyMCE Configuration
 anchor:exampletinymceconfiguration[historical anchor]
 
 [source,js]
@@ -49,7 +48,7 @@ tinymce.init({
 ----
 
 [[self-hosted-installation]]
-== Self-hosted Installation 
+== Self-hosted Installation
 anchor:self-hostedinstallation[historical anchor]
 
 To enable the TinyMCE Enterprise Spellchecking plugin:
@@ -77,7 +76,7 @@ tinymce.init({
 The TinyMCE Enterprise Spellchecking plugin activates automatically when users type content into the editor. To see and select a spelling suggestion after a word has been misspelled, please right click the misspelled red underlined word.
 
 [[configuration-options]]
-== Configuration Options 
+== Configuration Options
 anchor:configurationoptions[historical anchor]
 
 [[spellchecker_rpc_url]]
@@ -167,7 +166,7 @@ This option lets run the spellchecker when the contents is loaded into the edito
 This option lets you decide if the spellchecker should be initialized as active or not. With this set to `false` the spellchecker will not be activated automatically on text input, you will have to press the toolbar button or the menu item to start the spellchecking. Only applicable when using the default as-you-type spellchecking, not while using the dialog mode. Defaults to `true`.
 
 [[toolbar-buttons]]
-== Toolbar Buttons 
+== Toolbar Buttons
 anchor:toolbarbuttons[historical anchor]
 
 [[spellchecker]]
@@ -188,7 +187,7 @@ tinymce.init({
 ----
 
 [[menu-items]]
-=== Menu items 
+=== Menu items
 anchor:menuitems[historical anchor]
 
 [[spellchecker]]
@@ -219,7 +218,7 @@ tinymce.init({
 == Events
 
 [[spellcheckerignore-event]]
-==== SpellCheckerIgnore event 
+==== SpellCheckerIgnore event
 anchor:spellcheckerignoreevent[historical anchor]
 
 This event gets fired when the user selects ignore word on a misspelled word.
@@ -240,7 +239,7 @@ tinymce.init({
 ----
 
 [[spellcheckerignoreall-event]]
-==== SpellCheckerIgnoreAll event 
+==== SpellCheckerIgnoreAll event
 anchor:spellcheckerignoreallevent[historical anchor]
 
 This event gets fired when the user selects ignore word on a misspelled word.
@@ -261,7 +260,7 @@ tinymce.init({
 ----
 
 [[downloading-spell-checker-pro]]
-== Downloading Spell Checker Pro 
+== Downloading Spell Checker Pro
 anchor:downloadingspellcheckerpro[historical anchor]
 
 A https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription includes the ability to download and install a spell check as-you-type feature for the editor.

@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Image Tools Plugin
 :description: Image editing features for TinyMCE.
 :keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
@@ -12,7 +11,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 WARNING: This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
 
 [[cloud-installation]]
-== Cloud Installation 
+== Cloud Installation
 anchor:cloudinstallation[historical anchor]
 
 The Image Tools plugin is provided with all subscriptions to link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud], including an automatically configured image proxy.
@@ -31,7 +30,7 @@ tinymce.init({
 ----
 
 [[self-hosted-installation]]
-== Self-hosted Installation 
+== Self-hosted Installation
 anchor:self-hostedinstallation[historical anchor]
 
 To enable the TinyMCE Image Tools plugin:

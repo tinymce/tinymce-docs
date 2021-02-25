@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = PHP Upload Handler
 :description: A server-side upload handler PHP script suitable for TinyMCE.
 :description_short: A server-side upload handler PHP script.
@@ -13,7 +12,7 @@ The following script creates a server-side upload handler in PHP suitable for us
 Please note that this script is provided for your reference - you'll need to update this as necessary for your application.
 
 [[example-postacceptorphp]]
-===== Example postAcceptor.php 
+===== Example postAcceptor.php
 anchor:examplepostacceptorphp[historical anchor]
 
 [source,php]

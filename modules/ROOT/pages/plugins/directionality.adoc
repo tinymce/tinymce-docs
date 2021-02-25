@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Directionality Plugin
 :controls: toolbar button
 :description: Toolbar buttons for setting the left-to-right or right-to-left direction of content.
@@ -15,7 +14,7 @@ This plugin adds directionality controls to the toolbar, enabling TinyMCE to bet
 *Possible Values:* `ltr`, `rtl`
 
 [[directionality-plugin-example]]
-===== Directionality plugin example 
+===== Directionality plugin example
 anchor:directionalitypluginexample[historical anchor]
 
 [source,js]

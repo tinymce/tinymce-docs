@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Access Professional Support
 :description: Find how to contact Tiny support.
 :keywords: support tiny enterprise client services
@@ -14,7 +13,7 @@ Support for TinyMCE Enterprise, is provided online via the Tiny support site.  Y
 Prior to opening a support ticket, we require all users to register with a valid business email address. You can register on the support site at: \https://support.ephox.com/registration. Upon registration you will receive an email requesting that you validate your registration. If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error. If you never receive the validation email please contact the link:mailto:clientservices@tiny.cloud[TIny Client Services team via email].
 
 [[creating-a-support-ticket]]
-=== Creating a support ticket 
+=== Creating a support ticket
 anchor:creatingasupportticket[historical anchor]
 
 Once you are registered on the site you will be able to interact with the Tiny support team via our support site.  To create a new ticket simply go to the following URL: \http://about.tiny.cloud/support/ticket.
@@ -22,7 +21,7 @@ Once you are registered on the site you will be able to interact with the Tiny s
 Note that Tiny support requires that you provide the following information along with your ticket:
 
 [[tinymce-enterprise-editor-client-issues]]
-==== TinyMCE Enterprise Editor Client Issues 
+==== TinyMCE Enterprise Editor Client Issues
 anchor:tinymceenterpriseeditorclientissues[historical anchor]
 
 * Operating System and Browser version
@@ -30,7 +29,7 @@ anchor:tinymceenterpriseeditorclientissues[historical anchor]
 * View source of the editor page (or some other means of obtaining the JS used to instantiate the editor)
 
 [[tinymce-enterprise-server-components-issues]]
-==== TinyMCE Enterprise Server Components Issues 
+==== TinyMCE Enterprise Server Components Issues
 anchor:tinymceenterpriseservercomponentsissues[historical anchor]
 
 * Server type and version (eg. Jetty, Tomcat)

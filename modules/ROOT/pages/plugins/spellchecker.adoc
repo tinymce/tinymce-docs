@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Spell Checker Plugin
 :controls: toolbar button, menu item
 :description: Enables TinyMCE's spellcheck functionality.
@@ -151,7 +150,7 @@ tinymce.init({
 ----
 
 [[spellchecker-request-format]]
-=== Spellchecker request format 
+=== Spellchecker request format
 anchor:spellcheckerrequestformat[historical anchor]
 
 The request is a HTTP POST with URL encoded parameters described below.
@@ -170,7 +169,7 @@ The request is a HTTP POST with URL encoded parameters described below.
 |===
 
 [[spellchecker-response-format]]
-=== Spellchecker response format 
+=== Spellchecker response format
 anchor:spellcheckerresponseformat[historical anchor]
 
 The response of a successful spellcheck request should like this:

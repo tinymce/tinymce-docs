@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Help Plugin
 :controls: toolbar button, menu item
 :description: Shows the help dialog.
@@ -18,7 +17,7 @@ In the footer of the dialog you can also see which version of TinyMCE you are us
 The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 
 [[example-setup]]
-===== Example setup 
+===== Example setup
 anchor:examplesetup[historical anchor]
 
 [source,js]
@@ -31,7 +30,7 @@ tinymce.init({
 ----
 
 [[exposing-metadata-for-the-help-plugin]]
-== Exposing metadata for the help plugin 
+== Exposing metadata for the help plugin
 anchor:exposingmetadataforthehelpplugin[historical anchor]
 
 For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{baseurl}/advanced/creating-a-plugin/#exposingmetadata[Creating a Plugin page].

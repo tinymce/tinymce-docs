@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Create a Custom Toolbar Button
 :description: This example shows you how to add a custom button to the toolbar.
 :description_short: Add a custom button to the toolbar.
@@ -14,7 +13,7 @@ include::{rootDir}_attributes.adoc[]
 * <<togglebutton,Toggle button>>
 
 [[basic-button]]
-== Basic button 
+== Basic button
 anchor:basicbutton[historical anchor]
 
 The first question to answer is probably - how do you create a button in TinyMCE? And the answer is - of course, there's a special method for that - `addButton()`. It should be called with button identifier and configuration object. Here's an example:
@@ -102,7 +101,7 @@ As you see we've supplied identifier of our button in the `toolbar` property, al
 Another point is `setup` callback - see how we put all of our code into it? It is the callback that TinyMCE will link:{baseurl}/configure/integration-and-setup/#setup[automatically invoke] for every initialised editor instance. It will receive a reference to the instance as the first argument. We can use `setup` callback to customize editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added _before_ the editor is ready.
 
 [[button-options]]
-== Button options 
+== Button options
 anchor:buttonoptions[historical anchor]
 
 Button configuration properties:
@@ -116,7 +115,7 @@ Button configuration properties:
 * *cmd* - _editor command to invoke, when button is clicked (command link:{baseurl}/api/tinymce/tinymce.editorcommands/#addcommands[should be registered] prior to this, either by editor or by you)_
 
 [[conditionally-disable-button]]
-== Conditionally disable button 
+== Conditionally disable button
 anchor:conditionallydisablebutton[historical anchor]
 
 You probably do not want your button to be enabled at all times since sometimes it might fall out of context. For example, it would be awkward if we could insert `<time>` tag into another `<time>` tag, right? And you can see in the example above, that it _is_ possible.
@@ -160,7 +159,7 @@ NOTE: In reality, it would have been more practical to simply set `contenteditab
 By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity already. This is the moment when you should ask yourself whether it's better to link:{baseurl}/advanced/creating-a-plugin/[bundle this feature as a plugin] instead.
 
 [[toggle-button]]
-== Toggle button 
+== Toggle button
 anchor:togglebutton[historical anchor]
 
 Sometimes we need a button to act as the on/off switcher, like in the case of basic emphasizing formatting (e.g.,*bold*, _italic_). We've seen how we can <<conditionallydisablebutton,conditionally disable button>>, now let's look at how we can conditionally make button either active (depressed) or inactive (unpressed).

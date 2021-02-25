@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Mentions Plugin
 :description: Enables @mention functionality.
 :keywords: mentions atmentions
@@ -205,7 +204,7 @@ console.log(users);
 ----
 
 [[downloading-mentions-plugin]]
-== Downloading Mentions Plugin 
+== Downloading Mentions Plugin
 anchor:downloadingmentionsplugin[historical anchor]
 
 A https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription includes the ability to download and install the mentions feature for the editor.

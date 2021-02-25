@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Create a Sidebar Panel
 :description: A short introduction to creating sidebars.
 :description_short: Introducing sidebar creation.
@@ -11,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 Creating sidebars in TinyMCE is relatively easy and lets you add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow integrators and plugin authors to provide additional tools that can be used on the contents in tinymce.
 
 [[editor-sidebar-api]]
-== Editor sidebar API 
+== Editor sidebar API
 anchor:editorsidebarapi[historical anchor]
 
 The sidebar API is relatively straightforward. It allows you to add sidebars on editor instances in a similar way as adding buttons or menu items. You can either add sidebars directly in the tinymce.init using the setup callback or inside your plugin.
@@ -19,7 +18,7 @@ The sidebar API is relatively straightforward. It allows you to add sidebars on 
 This is the syntax for the addSidebar function: `editor.addSidebar(id:String, options:Object)`
 
 [[options-object]]
-=== Options object 
+=== Options object
 anchor:optionsobject[historical anchor]
 
 [[tooltip]]
@@ -65,7 +64,7 @@ The `onhide` allows you to specify a function to be called when the panel has be
 *Type*: `function`
 
 [[api-object]]
-=== API Object 
+=== API Object
 anchor:apiobject[historical anchor]
 
 [[elementdomelement]]
@@ -74,7 +73,7 @@ anchor:apiobject[historical anchor]
 The `element():DOMElement` function returns the root element of the sidebar panel.
 
 [[example-inside-the-tinymceinit]]
-== Example inside the tinymce.init 
+== Example inside the tinymce.init
 anchor:exampleinsidethetinymceinit[historical anchor]
 
 [source,js]
@@ -101,7 +100,7 @@ tinymce.init({
 ----
 
 [[example-inside-a-tinymce-plugin]]
-== Example inside a TinyMCE plugin 
+== Example inside a TinyMCE plugin
 anchor:exampleinsideatinymceplugin[historical anchor]
 
 [source,js]

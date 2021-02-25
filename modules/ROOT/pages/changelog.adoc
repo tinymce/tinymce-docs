@@ -1,14 +1,13 @@
 :rootDir: ./
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Changelog
 :class: changelog
 :description: The history of TinyMCE releases.
 :keywords: changelog
 
 [[version-4911-july-13-2020]]
-== Version 4.9.11 July 13, 2020 
+== Version 4.9.11 July 13, 2020
 anchor:version4911july132020[historical anchor]
 
 * Fixed the `selection.setContent()` API not running parser filters.
@@ -16,7 +15,7 @@ anchor:version4911july132020[historical anchor]
 * Fixed up and down keyboard navigation not working for inline `contenteditable="false"` elements.
 
 [[version-4910-april-23-2020]]
-== Version 4.9.10 April 23, 2020 
+== Version 4.9.10 April 23, 2020
 anchor:version4910april232020[historical anchor]
 
 * Fixed an issue where the editor selection could end up inside a short ended element (eg br).
@@ -24,7 +23,7 @@ anchor:version4910april232020[historical anchor]
 * Fixed `media` embed content not processing safely in some cases.
 
 [[version-499-march-25-2020]]
-== Version 4.9.9 March 25, 2020 
+== Version 4.9.9 March 25, 2020
 anchor:version499march252020[historical anchor]
 
 * Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
@@ -33,14 +32,14 @@ anchor:version499march252020[historical anchor]
 * Fixed the editor failing to initialize if a script tag was used inside an SVG.
 
 [[version-498-january-28-2020]]
-== Version 4.9.8 January 28, 2020 
+== Version 4.9.8 January 28, 2020
 anchor:version498january282020[historical anchor]
 
 * Fixed the `mobile` theme failing to load due to a bundling issue.
 * Fixed security issue related to parsing HTML comments and CDATA.
 
 [[version-497-december-19-2019]]
-== Version 4.9.7 December 19, 2019 
+== Version 4.9.7 December 19, 2019
 anchor:version497december192019[historical anchor]
 
 * Fixed the `visualchars` plugin converting HTML-like text to DOM elements in certain cases.
@@ -48,13 +47,13 @@ anchor:version497december192019[historical anchor]
 * Fixed HTML comments incorrectly being parsed in certain cases.
 
 [[version-496-september-2-2019]]
-== Version 4.9.6 September 2, 2019 
+== Version 4.9.6 September 2, 2019
 anchor:version496september22019[historical anchor]
 
 * Fixed image browse button sometimes displaying the browse window twice on mobile.
 
 [[version-495-july-2-2019]]
-== Version 4.9.5 July 2, 2019 
+== Version 4.9.5 July 2, 2019
 anchor:version495july22019[historical anchor]
 
 * Changed annotations navigation to work the same as inline boundaries.
@@ -69,7 +68,7 @@ anchor:version495july22019[historical anchor]
 * Fixed infinite loop in the paste plugin when IE11 takes a long time to process paste events. Patch contributed by lRawd.
 
 [[version-494-march-20-2019]]
-== Version 4.9.4 March 20, 2019 
+== Version 4.9.4 March 20, 2019
 anchor:version494march202019[historical anchor]
 
 * Fixed an issue where *Home/End* keys wouldn't move the caret correctly before or after `contenteditable=false` inline elements.
@@ -79,7 +78,7 @@ anchor:version494march202019[historical anchor]
 * Fixed an issue where typing space between images would cause issues with nbsp not being inserted..
 
 [[version-493-january-31-2019]]
-== Version 4.9.3 January 31, 2019 
+== Version 4.9.3 January 31, 2019
 anchor:version493january312019[historical anchor]
 
 * Added a visualchars_default_state setting to the Visualchars Plugin. Patch contributed by mat3e.
@@ -92,7 +91,7 @@ anchor:version493january312019[historical anchor]
 * Fixed a bug where deletion to/from indented lists would leave list fragments in the editor.
 
 [[version-492-december-17-2018]]
-== Version 4.9.2 December 17, 2018 
+== Version 4.9.2 December 17, 2018
 anchor:version492december172018[historical anchor]
 
 * Fixed a bug with pressing the space key on IE 11 would result in nbsp characters being inserted between words at the end of a block.
@@ -105,7 +104,7 @@ anchor:version492december172018[historical anchor]
 * Fixed a bug where enter key before an image inside a link would remove the image.
 
 [[version-491-december-04-2018]]
-== Version 4.9.1 December 04, 2018 
+== Version 4.9.1 December 04, 2018
 anchor:version491december042018[historical anchor]
 
 * Added functionality to insert html to the replacement feature of the Textpattern Plugin.
@@ -114,7 +113,7 @@ anchor:version491december042018[historical anchor]
 * Fixed a bug where the space bar didn't work correctly in editors with the forced_root_block setting set to false.
 
 [[version-490-november-27-2018]]
-== Version 4.9.0 November 27, 2018 
+== Version 4.9.0 November 27, 2018
 anchor:version490november272018[historical anchor]
 
 * Added a replace feature to the Textpattern Plugin.
@@ -125,7 +124,7 @@ anchor:version490november272018[historical anchor]
 * Reduced insertion of unnecessary nonbreaking spaces in the editor.
 
 [[version-485-october-30-2018]]
-== Version 4.8.5 October 30, 2018 
+== Version 4.8.5 October 30, 2018
 anchor:version485october302018[historical anchor]
 
 * Added a content_css_cors setting to the editor that adds the crossorigin="anonymous" attribute to link tags added by the StyleSheetLoader.
@@ -135,7 +134,7 @@ anchor:version485october302018[historical anchor]
 * Fixed a bug where inline formatting would cause the delete key to do nothing.
 
 [[version-484-october-23-2018]]
-== Version 4.8.4 October 23, 2018 
+== Version 4.8.4 October 23, 2018
 anchor:version484october232018[historical anchor]
 
 * Added support for the HTML5 `main` element.
@@ -153,7 +152,7 @@ anchor:version484october232018[historical anchor]
 * Fixed a bug with mceInsertRawHTML command not working as expected.
 
 [[version-483-september-13-2018]]
-== Version 4.8.3 September 13, 2018 
+== Version 4.8.3 September 13, 2018
 anchor:version483september132018[historical anchor]
 
 * Fixed a bug where the Wordcount Plugin didn't correctly count words within tables on IE11.
@@ -164,7 +163,7 @@ anchor:version483september132018[historical anchor]
 * Fixed a bug with the Table Plugin where it wasn't possible to keyboard navigate to the caption.
 
 [[version-482-august-9-2018]]
-== Version 4.8.2 August 9, 2018 
+== Version 4.8.2 August 9, 2018
 anchor:version482august92018[historical anchor]
 
 * Moved annotator from "experimental" to "annotator" object on editor.
@@ -176,7 +175,7 @@ anchor:version482august92018[historical anchor]
 * Fixed a bug where pasting using the toolbar button on an inline editor in IE11 would cause a looping behaviour.
 
 [[version-481-july-26-2018]]
-== Version 4.8.1 July 26, 2018 
+== Version 4.8.1 July 26, 2018
 anchor:version481july262018[historical anchor]
 
 * Fixed a bug where the content of inline editors was being cleaned on every call of `editor.save()`.
@@ -184,7 +183,7 @@ anchor:version481july262018[historical anchor]
 * Fixed a bug with the Paste Plugin where pasting after inline contenteditable false elements moved the caret to the end of the line.
 
 [[version-480-july-11-2018]]
-== Version 4.8.0 July 11, 2018 
+== Version 4.8.0 July 11, 2018
 anchor:version480july112018[historical anchor]
 
 * Fixed a bug where deleting paragraphs inside of table cells would delete the whole table cell.
@@ -193,7 +192,7 @@ anchor:version480july112018[historical anchor]
 * Fixed a bug where all bogus elements would not be deleted when removing an inline editor.
 
 [[version-4713-may-16-2018]]
-== Version 4.7.13 May 16, 2018 
+== Version 4.7.13 May 16, 2018
 anchor:version4713may162018[historical anchor]
 
 * Fixed a bug where Edge 17 wouldn't be able to select images or tables.
@@ -207,7 +206,7 @@ anchor:version4713may162018[historical anchor]
 * Added new align button for combining the separate align buttons into a menu button.
 
 [[version-4712-may-3-2018]]
-== Version 4.7.12 May 3, 2018 
+== Version 4.7.12 May 3, 2018
 anchor:version4712may32018[historical anchor]
 
 * Added an option to filter out image svg data urls.
@@ -225,7 +224,7 @@ anchor:version4712may32018[historical anchor]
 * Fixed a bug where the same id would be used in the blobcache for all pasted images. Patch contributed by thorn0.
 
 [[version-4711-april-11-2018]]
-== Version 4.7.11 April 11, 2018 
+== Version 4.7.11 April 11, 2018
 anchor:version4711april112018[historical anchor]
 
 * Added a new imagetools_credentials_hosts option to the link:{baseurl}/plugins/imagetools[Imagetools Plugin].
@@ -240,7 +239,7 @@ anchor:version4711april112018[historical anchor]
 * Fixed a bug where an error was thrown in FontInfo when called on a detached element.
 
 [[version-4710-april-3-2018]]
-== Version 4.7.10 April 3, 2018 
+== Version 4.7.10 April 3, 2018
 anchor:version4710april32018[historical anchor]
 
 * Removed the "read" step from the mobile theme.
@@ -268,13 +267,13 @@ anchor:version4710april32018[historical anchor]
 * Fixed a bug in the link:{baseurl}/plugins/table[Table Plugin] where some table row styles were removed when changing other styles in the row properties dialog.
 
 [[version-479-february-27-2018]]
-== Version 4.7.9 February 27, 2018 
+== Version 4.7.9 February 27, 2018
 anchor:version479february272018[historical anchor]
 
 * Fixed a bug where the editor target element didn't get the correct style when removing the editor.
 
 [[version-478-february-26-2018]]
-== Version 4.7.8 February 26, 2018 
+== Version 4.7.8 February 26, 2018
 anchor:version478february262018[historical anchor]
 
 * Fixed an issue with the link:{baseurl}/plugins/help[Help Plugin] where the menuitem name wasn't lowercase.
@@ -291,7 +290,7 @@ anchor:version478february262018[historical anchor]
 * Fixed so the built-in spellchecking on Chrome and Safari creates an undo level when replacing words.
 
 [[version-477--february-19-2018]]
-== Version 4.7.7  February 19, 2018 
+== Version 4.7.7  February 19, 2018
 anchor:version477february192018[historical anchor]
 
 * Added a border style selector to the advanced tab of the link:{baseurl}/plugins/image[Image Plugin].
@@ -319,7 +318,7 @@ anchor:version477february192018[historical anchor]
 * Fixed so you can place the curser before and after table elements within the editor in Firefox and Edge/IE.
 
 [[version-476-january-29-2018]]
-== Version 4.7.6 January 29, 2018 
+== Version 4.7.6 January 29, 2018
 anchor:version476january292018[historical anchor]
 
 * Fixed a bug in the jquery integration where it threw an error saying that "global is not defined".
@@ -331,7 +330,7 @@ anchor:version476january292018[historical anchor]
 * Fixed a bug where TinyMCE didn't work with module loaders like webpack.
 
 [[version-475-january-22-2018]]
-== Version 4.7.5 January 22, 2018 
+== Version 4.7.5 January 22, 2018
 anchor:version475january222018[historical anchor]
 
 * Fixed bug with the link:{baseurl}/plugins/codesample[Codesample Plugin] where it wasn't possible to edit codesamples when the editor was in inline mode.
@@ -345,7 +344,7 @@ anchor:version475january222018[historical anchor]
 * Fixed bug with the inline theme where the toolbar wasn't repositioned on window resize.
 
 [[version-474-december-5-2017]]
-== Version 4.7.4 December 5, 2017 
+== Version 4.7.4 December 5, 2017
 anchor:version474december52017[historical anchor]
 
 * Fixed bug in the link:{baseurl}/plugins/nonbreaking[Nonbreaking Plugin] Plugin where the nonbreaking_force_tab setting was being ignored.
@@ -358,7 +357,7 @@ anchor:version474december52017[historical anchor]
 * Fixed bug where Firefox would throw an error when intialising an editor inside of a hidden iframe.
 
 [[version-473-november-23-2017]]
-== Version 4.7.3 November 23, 2017 
+== Version 4.7.3 November 23, 2017
 anchor:version473november232017[historical anchor]
 
 * Added functionality to open the link:{baseurl}/plugins/codesample[Codesample Plugin] dialog when double clicking on a codesample. Patch contributed by dakuzen.
@@ -377,7 +376,7 @@ anchor:version473november232017[historical anchor]
 * Fixed so the image upload tab is available when the link:{baseurl}/configure/file-image-upload/#images_upload_handler[images_upload_handler] is defined (and not only when the link:{baseurl}/configure/file-image-upload/#images_upload_url[images_upload_url] is defined).
 
 [[version-472-november-7-2017]]
-== Version 4.7.2 November 7, 2017 
+== Version 4.7.2 November 7, 2017
 anchor:version472november72017[historical anchor]
 
 * Rewrote the link:{baseurl}/plugins/table[Table Plugin].
@@ -420,7 +419,7 @@ anchor:version472november72017[historical anchor]
 * Fixed bug where it wasn't possible to remove formatting from content in beginning of table cell.
 
 [[version-471-october-9-2017]]
-== Version 4.7.1 October 9, 2017 
+== Version 4.7.1 October 9, 2017
 anchor:version471october92017[historical anchor]
 
 * Fixed bug where theme set to false on an inline editor produced an extra div element after the target element.
@@ -435,7 +434,7 @@ anchor:version471october92017[historical anchor]
 * Fixed bug where the Save plugin saved all editors instead of only the active editor. Patch contributed by dannoe.
 
 [[version-470-october-3-2017]]
-== Version 4.7.0 October 3, 2017 
+== Version 4.7.0 October 3, 2017
 anchor:version470october32017[historical anchor]
 
 * Added new mobile UI that is specifically designed for mobile devices. See the link:{baseurl}/mobile/[mobile docs].
@@ -450,7 +449,7 @@ anchor:version470october32017[historical anchor]
 * Fixed table bug where `delete` would delete between cells inside a table in Firefox.
 
 [[version-467-september-18-2017]]
-== Version 4.6.7 September 18, 2017 
+== Version 4.6.7 September 18, 2017
 anchor:version467september182017[historical anchor]
 
 * Fixed bug where paste wasn't working in IOS.
@@ -469,7 +468,7 @@ anchor:version467september182017[historical anchor]
 * Fixed the positioning of the inlite toolbar when the target element wasn't big enough to fit the toolbar.
 
 [[version-466-august-30-2017]]
-== Version 4.6.6 August 30, 2017 
+== Version 4.6.6 August 30, 2017
 anchor:version466august302017[historical anchor]
 
 * Fixed so that notifications wrap long text content instead of bleeding outside the notification element.
@@ -493,7 +492,7 @@ anchor:version466august302017[historical anchor]
 * Fixed bug where background color wasn't applied correctly on some partially selected contents.
 
 [[version-465-august-2-2017]]
-== Version 4.6.5 August 2, 2017 
+== Version 4.6.5 August 2, 2017
 anchor:version465august22017[historical anchor]
 
 * Added new link:{baseurl}/configure/content-appearance/#inline_boundaries_selector[inline_boundaries_selector] that allows you to specify the elements that should have boundaries.
@@ -521,7 +520,7 @@ anchor:version465august22017[historical anchor]
 * Fixed bug where applying block formats to lists wrapped in block elements would apply to all elements in that wrapped block.
 
 [[version-464-june-13-2017]]
-== Version 4.6.4 June 13, 2017 
+== Version 4.6.4 June 13, 2017
 anchor:version464june132017[historical anchor]
 
 * Fixed bug where the editor would move the caret when clicking on the scrollbar next to a content editable false block.
@@ -544,7 +543,7 @@ anchor:version464june132017[historical anchor]
 * Fixed so the internal validate setting for the parser/serializer can't be set from editor initialization settings.
 
 [[version-463---may-30-2017]]
-== Version 4.6.3 - May 30, 2017 
+== Version 4.6.3 - May 30, 2017
 anchor:version463-may302017[historical anchor]
 
 * Fixed bug where the arrow keys didn't work correctly when navigating on nested inline boundary elements.
@@ -555,7 +554,7 @@ anchor:version463-may302017[historical anchor]
 * Fixed so rel on target=_blank links gets forced with only noopener instead of both noopener and noreferrer.
 
 [[version-462---may-23-2017]]
-== Version 4.6.2 - May 23, 2017 
+== Version 4.6.2 - May 23, 2017
 anchor:version462-may232017[historical anchor]
 
 * Fixed bug where the SaxParser would run out of memory on very large documents.
@@ -576,7 +575,7 @@ anchor:version462-may232017[historical anchor]
 * Fixed bug where typing would be blocked on IE 11 when within a nested contenteditable=true/false structure.
 
 [[version-461---may-10-2017]]
-== Version 4.6.1 - May 10, 2017 
+== Version 4.6.1 - May 10, 2017
 anchor:version461-may102017[historical anchor]
 
 * Added configuration option to list plugin to disable tab indentation.
@@ -593,7 +592,7 @@ anchor:version461-may102017[historical anchor]
 * Fixed bug where shift-click to select within contenteditable=true fields wasn't working.
 
 [[version-460---may-4-2017]]
-== Version 4.6.0 - May 4, 2017 
+== Version 4.6.0 - May 4, 2017
 anchor:version460-may42017[historical anchor]
 
 * Dropped support for IE 8-10 due to market share and lack of support from Microsoft. See tinymce docs for details.
@@ -645,19 +644,19 @@ anchor:version460-may42017[historical anchor]
 * Fixed bug where the Schema isValidChild function was case sensitive.
 
 [[version-4510---november-7-2018]]
-== Version 4.5.10 - November 7, 2018 
+== Version 4.5.10 - November 7, 2018
 anchor:version4510-november72018[historical anchor]
 
 * Changed the keyboard shortcut to move focus to contextual toolbars to Ctrl+F9.
 
 [[version-459---august-2-2018]]
-== Version 4.5.9 - August 2, 2018 
+== Version 4.5.9 - August 2, 2018
 anchor:version459-august22018[historical anchor]
 
 * Fixed a bug where Edge 17 wouldn't be able to select images or tables.
 
 [[version-458---november-5-2017]]
-== Version 4.5.8 - November 5, 2017 
+== Version 4.5.8 - November 5, 2017
 anchor:version458-november52017[historical anchor]
 
 * Fixed bug where paste on Edge wouldn't paste UTF characters since Microsoft didn't implement the html5 clipboard api correctly.
@@ -665,33 +664,33 @@ anchor:version458-november52017[historical anchor]
 * Fixed bug where malformed blob urls wouldn't be handled correctly by the editor.
 
 [[version-457---april-25-2017]]
-== Version 4.5.7 - April 25, 2017 
+== Version 4.5.7 - April 25, 2017
 anchor:version457-april252017[historical anchor]
 
 * Fixed bug with selection around inline contenteditable false would get collapsed incorrectly.
 * Fixed bug where pasting on Microsoft Edge 40+ would produce clipboard fragment headers.
 
 [[version-456---march-30-2017]]
-== Version 4.5.6 - March 30, 2017 
+== Version 4.5.6 - March 30, 2017
 anchor:version456-march302017[historical anchor]
 
 * Fixed bug where it wasn't possible to select floated images in some cases.
 
 [[version-455---march-7-2017]]
-== Version 4.5.5 - March 7, 2017 
+== Version 4.5.5 - March 7, 2017
 anchor:version455-march72017[historical anchor]
 
 * Fixed bug where fontsize could not be changed after changing the text color.
 
 [[version-454---february-23-2017]]
-== Version 4.5.4 - February 23, 2017 
+== Version 4.5.4 - February 23, 2017
 anchor:version454-february232017[historical anchor]
 
 * Fixed bug where setBaseAndExtend would throw exceptions on Chrome 58 when selecting images.
 * Fixed bug where deleting partially selected contents could remove all contents in some edge cases on WebKit.
 
 [[version-453---february-1-2017]]
-== Version 4.5.3 - February 1, 2017 
+== Version 4.5.3 - February 1, 2017
 anchor:version453-february12017[historical anchor]
 
 * Added keyboard navigation for menu buttons when the menu is in focus.
@@ -714,7 +713,7 @@ anchor:version453-february12017[historical anchor]
 * Fixed bug where Meta+A would select the entire document instead of all contents in nested ce=true elements.
 
 [[version-452---january-4-2017]]
-== Version 4.5.2 - January 4, 2017 
+== Version 4.5.2 - January 4, 2017
 anchor:version452-january42017[historical anchor]
 
 * Added missing keyboard shortcut description for the underline menu item in the format menu.
@@ -734,7 +733,7 @@ anchor:version452-january42017[historical anchor]
 * Fixed so you can multi insert rows/cols by selecting table cells and using insert rows/columns.
 
 [[version-451---december-7-2016]]
-== Version 4.5.1 - December 7, 2016 
+== Version 4.5.1 - December 7, 2016
 anchor:version451-december72016[historical anchor]
 
 * Fixed bug where the lists plugin wouldn't initialize without the advlist plugins if served from cdn.
@@ -748,7 +747,7 @@ anchor:version451-december72016[historical anchor]
 * Fixed so that the name attribute gets removed by the anchor plugin if editing anchors.
 
 [[version-450---november-23-2016]]
-== Version 4.5.0 - November 23, 2016 
+== Version 4.5.0 - November 23, 2016
 anchor:version450-november232016[historical anchor]
 
 * Added new toc plugin allows you to insert table of contents based on editor headings.
@@ -814,7 +813,7 @@ anchor:version450-november232016[historical anchor]
 * Removed format state from the advlist plugin to be more consistent with common word processors.
 
 [[version-443---september-1-2016]]
-== Version 4.4.3 - September 1, 2016 
+== Version 4.4.3 - September 1, 2016
 anchor:version443-september12016[historical anchor]
 
 * Fixed bug where copy would produce an exception on Chrome.
@@ -822,7 +821,7 @@ anchor:version443-september12016[historical anchor]
 * Fixed bug where deleting partial lists with indentation wouldn't cause proper normalization.
 
 [[version-442---august-25-2016]]
-== Version 4.4.2 - August 25, 2016 
+== Version 4.4.2 - August 25, 2016
 anchor:version442-august252016[historical anchor]
 
 * Added new importcss_exclusive option to disable unique selectors per group.
@@ -847,7 +846,7 @@ anchor:version442-august252016[historical anchor]
 * Fixed so template dialog gets resized if it doesn't fit the window viewport.
 
 [[version-441---july-26-2016]]
-== Version 4.4.1 - July 26, 2016 
+== Version 4.4.1 - July 26, 2016
 anchor:version441-july262016[historical anchor]
 
 * Added smart_paste option to paste plugin to allow disabling the paste behavior if needed.
@@ -862,7 +861,7 @@ anchor:version441-july262016[historical anchor]
 * Fixed so inserts of html containing lists doesn't merge with any existing lists unless it's a paste operation.
 
 [[version-440---june-30-2016]]
-== Version 4.4.0 - June 30, 2016 
+== Version 4.4.0 - June 30, 2016
 anchor:version440-june302016[historical anchor]
 
 * Added new inlite theme this is a more lightweight inline UI.
@@ -877,7 +876,7 @@ anchor:version440-june302016[historical anchor]
 * Fixed so invalid targets for inline mode is blocked on initialization. We only support elements that can have children.
 
 [[version-4313---june-8-2016]]
-== Version 4.3.13 - June 8, 2016 
+== Version 4.3.13 - June 8, 2016
 anchor:version4313-june82016[historical anchor]
 
 * Added characters with a diacritical mark to charmap plugin. Patch contributed by Dominik Schilling.
@@ -890,7 +889,7 @@ anchor:version4313-june82016[historical anchor]
 * Fixed bug where multiple editor instance of the same id could be produces in some specific integrations.
 
 [[version-4312---may-10-2016]]
-== Version 4.3.12 - May 10, 2016 
+== Version 4.3.12 - May 10, 2016
 anchor:version4312-may102016[historical anchor]
 
 * Fixed bug where focus calls couldn't be made inside the editors PostRender event handler.
@@ -904,7 +903,7 @@ anchor:version4312-may102016[historical anchor]
 * Fixed so all shadow dom support is under and experimental flag due to flaky browser support.
 
 [[version-4311---april-25-2016]]
-== Version 4.3.11 - April 25, 2016 
+== Version 4.3.11 - April 25, 2016
 anchor:version4311-april252016[historical anchor]
 
 * Fixed bug where it wasn't possible to insert empty blocks though the API unless they where padded.
@@ -915,13 +914,13 @@ anchor:version4311-april252016[historical anchor]
 * Fixed so the codesample plugin textarea gets focused by default.
 
 [[version-4310---april-12-2016]]
-== Version 4.3.10 - April 12, 2016 
+== Version 4.3.10 - April 12, 2016
 anchor:version4310-april122016[historical anchor]
 
 * Fixed bug where the key "y" on WebKit couldn't be entered due to conflict with keycode for F10 on keypress.
 
 [[version-439---april-12-2016]]
-== Version 4.3.9 - April 12, 2016 
+== Version 4.3.9 - April 12, 2016
 anchor:version439-april122016[historical anchor]
 
 * Added support for focusing the contextual toolbars using keyboard.
@@ -942,7 +941,7 @@ anchor:version439-april122016[historical anchor]
 * Changed the Meta+Shift+F shortcut to Ctrl+Shift+F since Czech, Slovak, Polish languages used the first one for input.
 
 [[version-438---march-15-2016]]
-== Version 4.3.8 - March 15, 2016 
+== Version 4.3.8 - March 15, 2016
 anchor:version438-march152016[historical anchor]
 
 * Fixed bug where inserting HR at the end of a block element would produce an extra empty block.
@@ -954,7 +953,7 @@ anchor:version438-march152016[historical anchor]
 * Fixed so nested alignment works more correctly. You will now alter the alignment to the closest block parent.
 
 [[version-437---march-2-2016]]
-== Version 4.3.7 - March 2, 2016 
+== Version 4.3.7 - March 2, 2016
 anchor:version437-march22016[historical anchor]
 
 * Fixed bug where incorrect icons would be rendered for imagetools edit and color levels.
@@ -962,7 +961,7 @@ anchor:version437-march22016[historical anchor]
 * Fixed bug where the visualblocks plugin would render borders round internal UI elements.
 
 [[version-436---march-1-2016]]
-== Version 4.3.6 - March 1, 2016 
+== Version 4.3.6 - March 1, 2016
 anchor:version436-march12016[historical anchor]
 
 * Added new paste_remember_plaintext_info option to allow a global disable of the plain text mode notification.
@@ -983,13 +982,13 @@ anchor:version436-march12016[historical anchor]
 * Fixed so the window close button is more uniform on various platform and also increased it's hit area.
 
 [[version-435---february-11-2016]]
-== Version 4.3.5 - February 11, 2016 
+== Version 4.3.5 - February 11, 2016
 anchor:version435-february112016[historical anchor]
 
 * Npm version bump due to package not being fully updated.
 
 [[version-434---february-11-2016]]
-== Version 4.3.4 - February 11, 2016 
+== Version 4.3.4 - February 11, 2016
 anchor:version434-february112016[historical anchor]
 
 * Added new OpenWindow/CloseWindow events that gets fired when windows open/close.
@@ -1013,7 +1012,7 @@ anchor:version434-february112016[historical anchor]
 * Fixed so events gets properly dispatched in shadow dom. Patch provided by Nazar Mokrynskyi.
 
 [[version-433---january-14-2016]]
-== Version 4.3.3 - January 14, 2016 
+== Version 4.3.3 - January 14, 2016
 anchor:version433-january142016[historical anchor]
 
 * Added new table_resize_bars configuration setting. This setting allows you to disable the table resize bars.
@@ -1032,7 +1031,7 @@ anchor:version433-january142016[historical anchor]
 * Fixed so the template plugins templates setting can be a function that gets a callback that can provide templates.
 
 [[version-432---december-14-2015]]
-== Version 4.3.2 - December 14, 2015 
+== Version 4.3.2 - December 14, 2015
 anchor:version432-december142015[historical anchor]
 
 * Fixed bug where the resize bars for table cells were not affected by the object_resizing property.
@@ -1045,7 +1044,7 @@ anchor:version432-december142015[historical anchor]
 * Fixed bug where drag/drop into a cE=false element was possible on IE.
 
 [[version-431---november-26-2015]]
-== Version 4.3.1 - November 26, 2015 
+== Version 4.3.1 - November 26, 2015
 anchor:version431-november262015[historical anchor]
 
 * Fixed so it's possible to disable the table inline toolbar by setting it to false or an empty string.
@@ -1056,7 +1055,7 @@ anchor:version431-november262015[historical anchor]
 * Fixed bug where the table selection rect wouldn't be removed when selecting another control element.
 
 [[version-430---november-23-2015]]
-== Version 4.3.0 - November 23, 2015 
+== Version 4.3.0 - November 23, 2015
 anchor:version430-november232015[historical anchor]
 
 * Added new table column/row resize support. Makes it a lot more easy to resize the columns/rows in a table.
@@ -1081,7 +1080,7 @@ anchor:version430-november232015[historical anchor]
 * Fixed bug where listboxes with fix widths didn't render correctly.
 
 [[version-427----october-27-2015]]
-== Version 4.2.7 -- October 27, 2015 
+== Version 4.2.7 -- October 27, 2015
 anchor:version427--october272015[historical anchor]
 
 * Fixed bug where backspace/delete would remove all formats on the last paragraph character in WebKit/Blink.
@@ -1097,7 +1096,7 @@ anchor:version427--october272015[historical anchor]
 * Fixed bug where resize handles would be rendered on editable root elements such as table.
 
 [[version-426----september-28-2015]]
-== Version 4.2.6 -- September 28, 2015 
+== Version 4.2.6 -- September 28, 2015
 anchor:version426--september282015[historical anchor]
 
 * Added capability to set request headers when using XHRs.
@@ -1122,7 +1121,7 @@ anchor:version426--september282015[historical anchor]
 * Fixed bug where the proxy url in imagetools was incorrect. Patch contributed by Wong Ho Wang.
 
 [[version-425----august-31-2015]]
-== Version 4.2.5 -- August 31, 2015 
+== Version 4.2.5 -- August 31, 2015
 anchor:version425--august312015[historical anchor]
 
 * Added fullscreen capability to embedded youtube and vimeo videos.
@@ -1139,7 +1138,7 @@ anchor:version425--august312015[historical anchor]
 * Fixed various grammar problems in inline documentation. Patches provided by nikolas.
 
 [[version-424----august-17-2015]]
-== Version 4.2.4 -- August 17, 2015 
+== Version 4.2.4 -- August 17, 2015
 anchor:version424--august172015[historical anchor]
 
 * Added picture as a valid element to the HTML 5 schema. Patch contributed by Adam Taylor.
@@ -1156,7 +1155,7 @@ anchor:version424--august172015[historical anchor]
 * Fixed xss issues with media plugin not properly filtering out some script attributes.
 
 [[version-423----july-30-2015]]
-== Version 4.2.3 -- July 30, 2015 
+== Version 4.2.3 -- July 30, 2015
 anchor:version423--july302015[historical anchor]
 
 * Fixed bug where image selection wasn't possible on Edge due to incompatible setBaseAndExtend API.
@@ -1165,7 +1164,7 @@ anchor:version423--july302015[historical anchor]
 * Fixed skin issue where the borders of panels where not visible on IE 8.
 
 [[version-422----july-22-2015]]
-== Version 4.2.2 -- July 22, 2015 
+== Version 4.2.2 -- July 22, 2015
 anchor:version422--july222015[historical anchor]
 
 * Fixed bug where float panels were not being hidden on inline editor blur when fixed_toolbar_container config option was in use.
@@ -1177,7 +1176,7 @@ anchor:version422--july222015[historical anchor]
 * Fixed bug where menus wasn't rendered correctly when custom images where added to a menu. Patch contributed by Naim Hammadi.
 
 [[version-421----june-29-2015]]
-== Version 4.2.1 -- June 29, 2015 
+== Version 4.2.1 -- June 29, 2015
 anchor:version421--june292015[historical anchor]
 
 * Fixed bug where back/forward buttons in the browser would render blob images as broken images.
@@ -1194,7 +1193,7 @@ anchor:version421--june292015[historical anchor]
 * Fixed so the imagetools dialog is adaptive for smaller screen sizes.
 
 [[version-420----june-25-2015]]
-== Version 4.2.0 -- June 25, 2015 
+== Version 4.2.0 -- June 25, 2015
 anchor:version420--june252015[historical anchor]
 
 * Added new flat default skin to make the UI more modern.
@@ -1221,7 +1220,7 @@ anchor:version420--june252015[historical anchor]
 * Removed the non proportional resize handles since. Unproportional resize can still be done by holding the shift key.
 
 [[version-4110---may-5-2015]]
-== Version 4.1.10 - May 5, 2015 
+== Version 4.1.10 - May 5, 2015
 anchor:version4110-may52015[historical anchor]
 
 * Fixed bug where plugins loaded with compat3x would sometimes throw errors when loading using the jQuery version.
@@ -1238,7 +1237,7 @@ anchor:version4110-may52015[historical anchor]
 * Fixed issue where some PI element values wouldn't be properly encoded.
 
 [[version-419----march-10-2015]]
-== Version 4.1.9 -- March 10, 2015 
+== Version 4.1.9 -- March 10, 2015
 anchor:version419--march102015[historical anchor]
 
 * Fixed bug where indentation wouldn't work properly for non list elements.
@@ -1249,7 +1248,7 @@ anchor:version419--march102015[historical anchor]
 * Fixed bug with pasting from Google Docs would produce extra strong elements and line feeds.
 
 [[version-418----march-5-2015]]
-== Version 4.1.8 -- March 5, 2015 
+== Version 4.1.8 -- March 5, 2015
 anchor:version418--march52015[historical anchor]
 
 * Added new html5 sizes attribute to img elements used together with srcset.
@@ -1295,7 +1294,7 @@ anchor:version418--march52015[historical anchor]
 * Fixed font families in order to provide appropriate web-safe fonts.
 
 [[version-417----november-27-2014]]
-== Version 4.1.7 -- November 27, 2014 
+== Version 4.1.7 -- November 27, 2014
 anchor:version417--november272014[historical anchor]
 
 * Added HTML5 schema support for srcset, source and picture. Patch contributed by mattheu.
@@ -1310,7 +1309,7 @@ anchor:version417--november272014[historical anchor]
 * Fixed bug where the jQuery plugin would fail to append to elements named array prototype names.
 
 [[version-416----october-8-2014]]
-== Version 4.1.6 -- October 8, 2014 
+== Version 4.1.6 -- October 8, 2014
 anchor:version416--october82014[historical anchor]
 
 * Fixed bug with clicking on the scrollbar of the iframe would cause a JS error to be thrown.
@@ -1322,7 +1321,7 @@ anchor:version416--october82014[historical anchor]
 * Replaced jake with grunt since it is more mainstream and has better plugin support.
 
 [[version-415----september-9-2014]]
-== Version 4.1.5 -- September 9, 2014 
+== Version 4.1.5 -- September 9, 2014
 anchor:version415--september92014[historical anchor]
 
 * Fixed bug where sometimes the resize rectangles wouldn't properly render on images on WebKit/Blink.
@@ -1341,7 +1340,7 @@ anchor:version415--september92014[historical anchor]
 * Fixed so nodeChange and focus of the editor isn't automatically performed when opening sub dialogs.
 
 [[version-414----august-21-2014]]
-== Version 4.1.4 -- August 21, 2014 
+== Version 4.1.4 -- August 21, 2014
 anchor:version414--august212014[historical anchor]
 
 * Added new media_filter_html option to media plugin that blocks any conditional comments, scripts etc within a video element.
@@ -1364,7 +1363,7 @@ anchor:version414--august212014[historical anchor]
 * Fixed so the table cell dialog has proper padding when the advanced tab in disabled.
 
 [[version-413---july-29-2014]]
-== Version 4.1.3 - July 29, 2014 
+== Version 4.1.3 - July 29, 2014
 anchor:version413-july292014[historical anchor]
 
 * Added event binding logic to tinymce.util.XHR making it possible to override headers and settings before any request is made.
@@ -1389,7 +1388,7 @@ anchor:version413-july292014[historical anchor]
 * Removed the finish menu item from spellchecker menu since it's redundant you can stop spellchecking by toggling menu item or button.
 
 [[version-412---july-15-2014]]
-== Version 4.1.2 - July 15, 2014 
+== Version 4.1.2 - July 15, 2014
 anchor:version412-july152014[historical anchor]
 
 * Added offset/grep to DomQuery class works basically the same as it's jQuery equivalent.
@@ -1407,7 +1406,7 @@ anchor:version412-july152014[historical anchor]
 * Fixed so the tinymce.dom.Sizzle is the latest version of sizzle this resolves the document context bug.
 
 [[version-411---july-8-2014]]
-== Version 4.1.1 - July 8, 2014 
+== Version 4.1.1 - July 8, 2014
 anchor:version411-july82014[historical anchor]
 
 * Fixed bug where pasting plain text on some WebKit versions would result in an empty line.
@@ -1435,7 +1434,7 @@ anchor:version411-july82014[historical anchor]
 * Fixed so legacyoutput plugin overrides fontselect and fontsizeselect controls and handles font elements properly.
 
 [[version-410---june-18-2014]]
-== Version 4.1.0 - June 18, 2014 
+== Version 4.1.0 - June 18, 2014
 anchor:version410-june182014[historical anchor]
 
 * Added new file_picker_callback option to replace the old file_browser_callback the latter will still work though.
@@ -1463,13 +1462,13 @@ anchor:version410-june182014[historical anchor]
 * Fixed bug where media plugin embed code didn't update correctly.
 
 [[version-4028---may-27-2014]]
-== Version 4.0.28 - May 27, 2014 
+== Version 4.0.28 - May 27, 2014
 anchor:version4028-may272014[historical anchor]
 
 * Fixed critical issue with empty urls producing an exception when converted into absolute urls due to resent bug fix in tinymce.util.URI.
 
 [[version-4027---may-27-2014]]
-== Version 4.0.27 - May 27, 2014 
+== Version 4.0.27 - May 27, 2014
 anchor:version4027-may272014[historical anchor]
 
 * Added support for definition lists to lists plugin and enter key logic. This can now created by the format menu.
@@ -1505,20 +1504,20 @@ anchor:version4027-may272014[historical anchor]
 * Fixed bug where formatting before cursor gets removed when toggled off for continued content.
 
 [[version-4026---may-6-2014]]
-== Version 4.0.26 - May 6, 2014 
+== Version 4.0.26 - May 6, 2014
 anchor:version4026-may62014[historical anchor]
 
 * Fixed bug in media plugin where changing existing url did not use media regex patterns to create protocol neutral url.
 * Fixed bug where selection wasn't properly restored on IE 11 due to a browser bug with Element.contains.
 
 [[version-4025---april-30-2014]]
-== Version 4.0.25 - April 30, 2014 
+== Version 4.0.25 - April 30, 2014
 anchor:version4025-april302014[historical anchor]
 
 * Fixed bug where it wasn't possible to submit forms with editor instances on WebKit/Blink.
 
 [[version-4024---april-30-2014]]
-== Version 4.0.24 - April 30, 2014 
+== Version 4.0.24 - April 30, 2014
 anchor:version4024-april302014[historical anchor]
 
 * Added new event_root setting for inline editors. Lets you bind all editor events on a parent container.
@@ -1530,7 +1529,7 @@ anchor:version4024-april302014[historical anchor]
 * Fixed so image_list/link_list can be a function that allows custom async calls to populate these lists.
 
 [[version-4023---april-24-2014]]
-== Version 4.0.23 - April 24, 2014 
+== Version 4.0.23 - April 24, 2014
 anchor:version4023-april242014[historical anchor]
 
 * Added isSameOrigin method to tinymce.util.URI it handles default protocol port numbers better. Patch contributed by Matt Whelan.
@@ -1547,7 +1546,7 @@ anchor:version4023-april242014[historical anchor]
 * Fixed issue with the paste_webkit_styles option so is disabled by default since it might produce a lot of extra styles.
 
 [[version-4022---april-16-2014]]
-== Version 4.0.22 - April 16, 2014 
+== Version 4.0.22 - April 16, 2014
 anchor:version4022-april162014[historical anchor]
 
 * Added lastLevel to BeforeAddUndo level event so it's easier to block undo level creation based.
@@ -1565,7 +1564,7 @@ anchor:version4022-april162014[historical anchor]
 * Reworked the default spellchecker RPC API to match the new PHP Spellchecker package. Fallback documented in the TinyMCE docs.
 
 [[version-4021---april-1-2014]]
-== Version 4.0.21 - April 1, 2014 
+== Version 4.0.21 - April 1, 2014
 anchor:version4021-april12014[historical anchor]
 
 * Added new getCssText method to formatter to get the preview css text value for a format to be used in UI.
@@ -1603,7 +1602,7 @@ anchor:version4021-april12014[historical anchor]
 * Fixed issue where headings/heading where labeled incorrectly as headers/header.
 
 [[version-4020---march-18-2014]]
-== Version 4.0.20 - March 18, 2014 
+== Version 4.0.20 - March 18, 2014
 anchor:version4020-march182014[historical anchor]
 
 * Fixed so all unit tests can be executed in a headless phantomjs instance for CI testing.
@@ -1624,7 +1623,7 @@ anchor:version4020-march182014[historical anchor]
 * Fixed so the default action of closing the window on a form submission can be prevented using "preventDefault".
 
 [[version-4019---march-11-2014]]
-== Version 4.0.19 - March 11, 2014 
+== Version 4.0.19 - March 11, 2014
 anchor:version4019-march112014[historical anchor]
 
 * Added support for CSS selector expressions in object_resizing option. Allows you to control what to resize.
@@ -1639,13 +1638,13 @@ anchor:version4019-march112014[historical anchor]
 * Fixed bug where the selection change handler on inline editors would fail if the editor instance was removed.
 
 [[version-4018---february-27-2014]]
-== Version 4.0.18 - February 27, 2014 
+== Version 4.0.18 - February 27, 2014
 anchor:version4018-february272014[historical anchor]
 
 * Fixed bug where images would get class false/undefined when initially created.
 
 [[version-4017---february-26-2014]]
-== Version 4.0.17 - February 26, 2014 
+== Version 4.0.17 - February 26, 2014
 anchor:version4017-february262014[historical anchor]
 
 * Added much better wai-aria accessibility support when it comes to keyboard navigation of complex UI controls.
@@ -1682,25 +1681,25 @@ anchor:version4017-february262014[historical anchor]
 * Fixed bug where drag/drop in a scrolled editor would fail since it didn't use clientX/clientY cordinates. Patch contributed by annettem.
 
 [[version-4016---january-31-2014]]
-== Version 4.0.16 - January 31, 2014 
+== Version 4.0.16 - January 31, 2014
 anchor:version4016-january312014[historical anchor]
 
 * Fixed bug where the editor wouldn't be properly rendered on IE 10 depending on the document.readyState.
 
 [[version-4015---january-30-2014]]
-== Version 4.0.15 - January 30, 2014 
+== Version 4.0.15 - January 30, 2014
 anchor:version4015-january302014[historical anchor]
 
 * Fixed bug where paste in inline mode would produce an exception if the contents was pasted inside non overflow element.
 
 [[version-4014---january-30-2014]]
-== Version 4.0.14 - January 30, 2014 
+== Version 4.0.14 - January 30, 2014
 anchor:version4014-january302014[historical anchor]
 
 * Fixed a bug in the image plugin where images couldn't be inserted if the image_advtab option wasn't set to true.
 
 [[version-4013---january-30-2014]]
-== Version 4.0.13 - January 30, 2014 
+== Version 4.0.13 - January 30, 2014
 anchor:version4013-january302014[historical anchor]
 
 * Added language selection menu to spellchecker button similar to the 3.x functionality. Patch contributed by threebytesfull.
@@ -1746,7 +1745,7 @@ anchor:version4013-january302014[historical anchor]
 * Removed the custom scrollbars for WebKit since the default browser scrollbars looks a lot better now days.
 
 [[version-4012---december-18-2013]]
-== Version 4.0.12 - December 18, 2013 
+== Version 4.0.12 - December 18, 2013
 anchor:version4012-december182013[historical anchor]
 
 * Added new media_scripts option to the media plugin. This makes it possible to embed videos using script elements.
@@ -1768,7 +1767,7 @@ anchor:version4012-december182013[historical anchor]
 * Fixed so image button isn't set to an active state when selecting control/media placeholder items.
 
 [[version-4011---novebmer-20-2013]]
-== Version 4.0.11 - Novebmer 20, 2013 
+== Version 4.0.11 - Novebmer 20, 2013
 anchor:version4011-novebmer202013[historical anchor]
 
 * Added the possibility to update button icon after it's been rendered.
@@ -1801,7 +1800,7 @@ anchor:version4011-novebmer202013[historical anchor]
 * Fixed so the fullpage plugin adds/removes any link style sheets to the current iframe document.
 
 [[version-4010---october-28-2013]]
-== Version 4.0.10 - October 28, 2013 
+== Version 4.0.10 - October 28, 2013
 anchor:version4010-october282013[historical anchor]
 
 * Added new forced_root_block_attrs option that allows you to specify attributes for the root block.
@@ -1813,7 +1812,7 @@ anchor:version4010-october282013[historical anchor]
 * Fixed bug where selection bookmark elements would be visible in the elements path list.
 
 [[version-409---october-24-2013]]
-== Version 4.0.9 - October 24, 2013 
+== Version 4.0.9 - October 24, 2013
 anchor:version409-october242013[historical anchor]
 
 * Added support for external template files to template plugin just set the templates option to a URL with JSON data.
@@ -1843,7 +1842,7 @@ anchor:version409-october242013[historical anchor]
 * Fixed so document.readyState is checked when loading and initializing TinyMCE manually after page load.
 
 [[version-408---october-10-2013]]
-== Version 4.0.8 - October 10, 2013 
+== Version 4.0.8 - October 10, 2013
 anchor:version408-october102013[historical anchor]
 
 * Added RTL support so all of the UI is rendered right to left if a language pack has a _dir property set to rtl.
@@ -1856,7 +1855,7 @@ anchor:version408-october102013[historical anchor]
 * Fixed so readonly option renderes the editor in inline mode with all UI elements disabled and all events blocked.
 
 [[version-407---october-2-2013]]
-== Version 4.0.7 - October 2, 2013 
+== Version 4.0.7 - October 2, 2013
 anchor:version407-october22013[historical anchor]
 
 * Added new importcss_selector_filter option to importcss plugin. Makes it easier to select specific classes to import.
@@ -1885,7 +1884,7 @@ anchor:version407-october22013[historical anchor]
 * Fixed bug where paste as plain text on Gecko would add extra BR elements when pasting paragraphs.
 
 [[version-406---september-12-2013]]
-== Version 4.0.6 - September 12, 2013 
+== Version 4.0.6 - September 12, 2013
 anchor:version406-september122013[historical anchor]
 
 * Added new compat3x plugin that makes it possible to load most 3.x plugins. Only available in the development package.
@@ -1916,7 +1915,7 @@ anchor:version406-september122013[historical anchor]
 * Removed CSS for BR elements in visualblocks due to problems with Chrome and IE.
 
 [[version-405---august-27-2013]]
-== Version 4.0.5 - August 27, 2013 
+== Version 4.0.5 - August 27, 2013
 anchor:version405-august272013[historical anchor]
 
 * Added visuals for UL, LI and BR to visualblocks plugin. Patch contributed by Dan Ransom.
@@ -1941,7 +1940,7 @@ anchor:version405-august272013[historical anchor]
 * Fixed issue where custom_elements would not remove the some of the default rules when cloning rules from div and span.
 
 [[version-404---august-21-2013]]
-== Version 4.0.4 - August 21, 2013 
+== Version 4.0.4 - August 21, 2013
 anchor:version404-august212013[historical anchor]
 
 * Added new importcss plugin. Lets you auto import classes from CSS files similar to the 3.x behavior.
@@ -1958,7 +1957,7 @@ anchor:version404-august212013[historical anchor]
 * Fixed so swf gets mapped to object element in media plugin. Enables embedding of flash with alternative poster.
 
 [[version-403---august-8-2013]]
-== Version 4.0.3 - August 8, 2013 
+== Version 4.0.3 - August 8, 2013
 anchor:version403-august82013[historical anchor]
 
 * Added new code_dialog_width/code_dialog_height options to control code dialog size.
@@ -1984,7 +1983,7 @@ anchor:version403-august82013[historical anchor]
 * Fixed so text/javascript type value get removed by default from script elements to match the HTML5 spec.
 
 [[version-402---july-18-2013]]
-== Version 4.0.2 - July 18, 2013 
+== Version 4.0.2 - July 18, 2013
 anchor:version402-july182013[historical anchor]
 
 * Fixed bug where formatting using menus or toolbars wasn't possible on Opera 12.15.
@@ -1998,7 +1997,7 @@ anchor:version402-july182013[historical anchor]
 * Fixed so Ctrl+P can be used to print the current document. Patch contributed by jashua212.
 
 [[version-401---june-26-2013]]
-== Version 4.0.1 - June 26, 2013 
+== Version 4.0.1 - June 26, 2013
 anchor:version401-june262013[historical anchor]
 
 * Added new paste_as_text config option to force paste as plaintext mode.
@@ -2034,7 +2033,7 @@ anchor:version401-june262013[historical anchor]
 * Fixed so paste as plain text produces BR:s in PRE block and when forced_root_block is disabled.
 
 [[version-40---june-13-2013]]
-== Version 4.0 - June 13, 2013 
+== Version 4.0 - June 13, 2013
 anchor:version40-june132013[historical anchor]
 
 * Added new insertdate_dateformat, insertdate_timeformat and insertdate_formats options to insertdatetime.
@@ -2089,7 +2088,7 @@ anchor:version40-june132013[historical anchor]
 * Fixed so the inline editing toolbar will be rendered below elements if it doesn't fit above it.
 
 [[version-40b3---may-15-2013]]
-== Version 4.0b3 - May 15, 2013 
+== Version 4.0b3 - May 15, 2013
 anchor:version40b3-may152013[historical anchor]
 
 * Added new optional advanced tab for image dialog with hspace, vspace, border and style.
@@ -2118,7 +2117,7 @@ anchor:version40b3-may152013[historical anchor]
 * Fixed so bodyId/bodyClass is applied to preview as it's done to the editor iframe.
 
 [[version-40b2---april-24-2013]]
-== Version 4.0b2 - April 24, 2013 
+== Version 4.0b2 - April 24, 2013
 anchor:version40b2-april242013[historical anchor]
 
 * Added new rel_list option to link plugin. Enables you to specify values for a rel drop down.
@@ -2146,7 +2145,7 @@ anchor:version40b2-april242013[historical anchor]
 * Fixed so it's easier to make custom icons for buttons using plain old images.
 
 [[version-40b1---april-11-2013]]
-== Version 4.0b1 - April 11, 2013 
+== Version 4.0b1 - April 11, 2013
 anchor:version40b1-april112013[historical anchor]
 
 * Added new node.js based build process used uglify, amdlc, jake etc.

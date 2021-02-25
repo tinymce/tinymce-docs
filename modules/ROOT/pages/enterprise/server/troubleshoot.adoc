@@ -1,13 +1,12 @@
 :rootDir: ../../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Troubleshoot
 :description: Debug problems with the Enterprise server-side components.
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing troubleshoot
 
 [[general-troubleshooting-advice]]
-== General troubleshooting advice 
+== General troubleshooting advice
 anchor:generaltroubleshootingadvice[historical anchor]
 
 . Verify that that your JavaScript configuration is correct for the relevant TinyMCE plugin.
@@ -15,7 +14,7 @@ anchor:generaltroubleshootingadvice[historical anchor]
 . Check the logs of your Java server for information. When making changes to the configuration you will need to restart the application server each time a change is made for that change to take effect. Refresh your browser window and then try the service again.
 
 [[debug-server-configuration]]
-== Debug server configuration 
+== Debug server configuration
 anchor:debugserverconfiguration[historical anchor]
 
 If a service does not appear to be working, this is generally caused by one of the following reasons. This guide will walk you through the debugging process to identify the specific problem and how to remedy the issue.
@@ -26,23 +25,23 @@ If a service does not appear to be working, this is generally caused by one of t
 . The browser is sending a different origin than expected (and configured in `application.conf`). Refer to step 6 of link:{baseurl}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues]
 
 [[browser-specific-issues]]
-== Browser-specific issues 
+== Browser-specific issues
 anchor:browser-specificissues[historical anchor]
 
 [[internet-explorer-specific-troubleshooting-tips]]
-=== Internet Explorer specific troubleshooting tips 
+=== Internet Explorer specific troubleshooting tips
 anchor:internetexplorerspecifictroubleshootingtips[historical anchor]
 
 If the editor is reporting that the service cannot be found and tracing the network traffic reveals that no request is made at all, check that the server is *not* listed in the `Trusted Sites` section of Internet Explorer's security options.  If it is, remove it and try again.
 
 [[chrome-specific-tips]]
-=== Chrome specific tips 
+=== Chrome specific tips
 anchor:chromespecifictips[historical anchor]
 
 If the server is not running on a standard HTTP or HTTPS port (80 or 443) then Chrome will include the port in the Origin header that is sent to the server. Other browsers do not do this. This is why when specifying the `allowed-origins` config, you should use both the hostname by itself and the hostname and port in the configuration. See link:{baseurl}/enterprise/server/#additionalinformationaroundenteringorigins[Additional Information Around Entering Origins] for more details.
 
 [[using-browser-tooling-to-investigate-services-issues]]
-== Using browser tooling to investigate services issues 
+== Using browser tooling to investigate services issues
 anchor:usingbrowsertoolingtoinvestigateservicesissues[historical anchor]
 
 . Open your browser's Console/Network tools:
@@ -65,7 +64,7 @@ image::spell-checking-browser-tools.png[Using browser tools to investigate servi
 NOTE: The value of the Origin header sent by the must match the origin specified in the `application.conf` server configuration. If it does not match, you must make the server configuration match the browser.
 
 [[windows-server-specific-issues]]
-== Windows Server specific issues 
+== Windows Server specific issues
 anchor:windowsserverspecificissues[historical anchor]
 
 Sometimes the Origin header is never sent to the services, which results in the editor and services not working as intended. Refer to step 6 of link:{baseurl}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues] and determine what the origin is - if you do not see an Origin header at all, please do the following:
@@ -76,11 +75,11 @@ Sometimes the Origin header is never sent to the services, which results in the 
 . Reload the browser page and all should work well.
 
 [[out-of-memory-errors]]
-== Out of memory errors 
+== Out of memory errors
 anchor:outofmemoryerrors[historical anchor]
 
 [[the-java-application-server-throws-out-of-memory-errors]]
-=== The Java application server throws "Out of Memory" errors 
+=== The Java application server throws "Out of Memory" errors
 anchor:thejavaapplicationserverthrowsoutofmemoryerrors[historical anchor]
 
 Even though you may have a large amount of RAM available, the Java Virtual Machine doesn't get to see all of that - by default it is limited to only 256Mb.
@@ -100,7 +99,7 @@ Then, restart the server and go to a browser and open the default tomcat page `h
 image::spell-checking-server_status.png[Spell Checking Server Status]
 
 [[to-increase-the-amount-of-memory]]
-=== To increase the amount of memory 
+=== To increase the amount of memory
 anchor:toincreasetheamountofmemory[historical anchor]
 
 [[tomcat]]
@@ -138,23 +137,23 @@ Restart the service and confirm the settings have been applied like so:
 image::spell-checking-jetty-settings.png[Spell Checking Server Settings on Jetty]
 
 [[troubleshooting-tools-curl]]
-== Troubleshooting tools: curl 
+== Troubleshooting tools: curl
 anchor:troubleshootingtoolscurl[historical anchor]
 
 [[installing-curl-on-mac]]
-=== Installing curl on Mac 
+=== Installing curl on Mac
 anchor:installingcurlonmac[historical anchor]
 
 curl is installed by default on all MacOS X installations. Open the "terminal" application to use it.
 
 [[installing-curl-on-linux]]
-=== Installing curl on Linux 
+=== Installing curl on Linux
 anchor:installingcurlonlinux[historical anchor]
 
 Use your distribution package manager to install curl. See your distribution documentation for details.
 
 [[installing-curl-or-equivalent-package-on-windows]]
-=== Installing curl (or equivalent package) on Windows 
+=== Installing curl (or equivalent package) on Windows
 anchor:installingcurlorequivalentpackageonwindows[historical anchor]
 
 Download and install the curl package based on your environment:
@@ -182,7 +181,7 @@ image::spell-checking-curl-windows-3.png[Curl on Windows step 3]
 image::spell-checking-curl-windows-4.png[Curl on Windows step 4]
 
 [[need-more-help]]
-== Need more help? 
+== Need more help?
 anchor:needmorehelp[historical anchor]
 
 If you are still experiencing problems, please contact http://support.ephox.com[Tiny Support].

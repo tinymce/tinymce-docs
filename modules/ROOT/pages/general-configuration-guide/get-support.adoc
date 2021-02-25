@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 13. Get Support & FAQ
 :description: Community and pro-grade support options.
 :keywords: forum forums url absolute relative security xss
@@ -12,7 +11,7 @@ If you landed here having worked through the link:{baseurl}/general-configuratio
 ====
 
 [[premium-support]]
-== Premium Support 
+== Premium Support
 anchor:premiumsupport[historical anchor]
 
 If your support requirements included guaranteed responses from the TinyMCE Support Team or in-time bug fixes, *paid* premium support is available as part of https://www.tinymce.com/pricing/[TinyMCE Enterprise].
@@ -25,11 +24,11 @@ If you are a TinyMCE Enterprise customer in good standing please link:{baseurl}/
 Users of the open source Community Edition have free access to the https://community.tinymce.com/[TinyMCE Forum]. Sign up https://community.tinymce.com/[here].
 
 [[faq--troubleshooting]]
-== FAQ & Troubleshooting 
+== FAQ & Troubleshooting
 anchor:faqtroubleshooting[historical anchor]
 
 [[q-the-icons-are-missing-when-installing-on-my-server]]
-=== Q: The icons are missing when installing on my server? 
+=== Q: The icons are missing when installing on my server?
 anchor:qtheiconsaremissingwheninstallingonmyserver[historical anchor]
 
 TinyMCE 4 uses Web fonts for its icons. Some web servers do not support the mime types needed for the font file extensions. Below are the mime types needed - the first part is the mime type the second part is the file extension that needs to be mapped. It's in apache mime type format. Other servers might need a different format.
@@ -54,23 +53,23 @@ TinyMCE 4 uses Web fonts for its icons. Some web servers do not support the mime
 |===
 
 [[q-why-do-buttonsselect-boxes-have-the-incorrect-size]]
-=== Q: Why do buttons/select boxes have the incorrect size? 
+=== Q: Why do buttons/select boxes have the incorrect size?
 anchor:qwhydobuttonsselectboxeshavetheincorrectsize[historical anchor]
 
 You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype is required. All web developers should use a standards rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
 
 [[q-is-tinymce-protected-against-xss-vulnerabilities]]
-=== Q: Is TinyMCE protected against XSS vulnerabilities? 
+=== Q: Is TinyMCE protected against XSS vulnerabilities?
 anchor:qistinymceprotectedagainstxssvulnerabilities[historical anchor]
 
 The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using TinyMCE one could as easily disable all JavaScript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like http://htmlpurifier.org/[HTMLPurifier].
 
 [[q-how-do-i-convert-my-urls-to-relative-absolute-or-absolute-with-the-domain]]
-=== Q: How do I convert my URLs to relative, absolute, or absolute with the domain? 
+=== Q: How do I convert my URLs to relative, absolute, or absolute with the domain?
 anchor:qhowdoiconvertmyurlstorelativeabsoluteorabsolutewiththedomain[historical anchor]
 
 [[relative-urls]]
-==== Relative URLs 
+==== Relative URLs
 anchor:relativeurls[historical anchor]
 
 The *Relative URLs* converts all URLs within the same domain to relative URLs. The URLs are relative from the `document_base_url`.
@@ -92,7 +91,7 @@ http://www.site.com/path1/path2/file.htm >> path2/file.htm
 ----
 
 [[absolute-urls]]
-==== Absolute URLs 
+==== Absolute URLs
 anchor:absoluteurls[historical anchor]
 
 The *Absolute URLs* converts all relative URLs to absolute URLs. The URLs are `absolute` based on the `document_base_url`.
@@ -114,7 +113,7 @@ path2/file.htm >> /path1/path2/file.htm
 ----
 
 [[domain-absolute-urls]]
-==== Domain absolute URLs 
+==== Domain absolute URLs
 anchor:domainabsoluteurls[historical anchor]
 
 The *Domain absolute URLs* converts all relative URLs to absolute URLs. The URLs are `absolute` based on the `document_base_url` with the domain.
@@ -136,7 +135,7 @@ path2/file.htm >> http://www.site.com/path1/path2/file.htm
 ----
 
 [[q-where-are-the-advanced-image-options]]
-=== Q: Where are the advanced image options? 
+=== Q: Where are the advanced image options?
 anchor:qwherearetheadvancedimageoptions[historical anchor]
 
 Use the link:{baseurl}/configure/content-filtering/#style_formats[`Style Formats`] option instead, which is much more powerful.

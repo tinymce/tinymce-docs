@@ -1,27 +1,26 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Rails Integration
 :description: Seamlessly integrates TinyMCE into the Rails asset pipeline introduced in Rails 3.1.
 :keywords: integration integrate angular angularjs
 :title_nav: Rails
 
 [[rails-asset-pipeline-integration]]
-== Rails asset pipeline integration 
+== Rails asset pipeline integration
 anchor:railsassetpipelineintegration[historical anchor]
 
 Sam Pohlenz has integrated TinyMCE into the Rails asset pipeline. Check out his https://rubygems.org/gems/tinymce-rails/versions/4.3.0[integration project on Rubygems].
 
 [[other-resources]]
-=== Other resources 
+=== Other resources
 anchor:otherresources[historical anchor]
 
 * https://github.com/spohlenz/tinymce-rails[GitHub repository]
 * http://www.rubydoc.info/gems/tinymce-rails/4.3.0[Documentation]
 
 [[a-note-about-integrations]]
-==== A note about integrations 
+==== A note about integrations
 anchor:anoteaboutintegrations[historical anchor]
 
 NOTE: We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

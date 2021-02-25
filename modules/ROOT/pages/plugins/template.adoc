@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Template Plugin
 :controls: toolbar button, menu item
 :description: Custom templates for your content.
@@ -260,7 +259,7 @@ tinymce.init({
 ----
 
 [[template-plugin-examples]]
-=== Template Plugin Examples 
+=== Template Plugin Examples
 anchor:templatepluginexamples[historical anchor]
 
 *Type:* `String`
@@ -329,7 +328,7 @@ This is the contents your backend page should return if you specify a URL in the
 ----
 
 [[making-templates]]
-=== Making Templates 
+=== Making Templates
 anchor:makingtemplates[historical anchor]
 
 A template is a file with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
@@ -356,7 +355,7 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 ----
 
 [[making-snippets]]
-=== Making Snippets 
+=== Making Snippets
 anchor:makingsnippets[historical anchor]
 
 Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.

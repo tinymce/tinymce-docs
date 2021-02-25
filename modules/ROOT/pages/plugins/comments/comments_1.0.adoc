@@ -1,7 +1,6 @@
 :rootDir: ../../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Comments 1.0
 :description: Tiny Comments 1.0 provides the ability to add comments to the content and collaborate with other users for content editing.
 :keywords: comments commenting tinycomments
@@ -24,7 +23,7 @@ How these comments are stored affects when other users see new comments. The Com
 In this chapter, we have provided examples of both ways of configuring Comments 1.0 storage.
 
 [[storage---persist-in-real-time]]
-=== Storage - persist in real-time 
+=== Storage - persist in real-time
 anchor:storage-persistinreal-time[historical anchor]
 
 The following demo showcases the Comments 1.0 functionality using storage configured to persist in real-time:
@@ -39,7 +38,7 @@ The following demo showcases the Comments 1.0 functionality using storage config
 ++++
 
 [[storage---persist-on-content-save]]
-=== Storage - persist on content-save 
+=== Storage - persist on content-save
 anchor:storage-persistoncontent-save[historical anchor]
 
 The following demo showcases the Comments 1.0 functionality using storage configured to persist on content-save.
@@ -54,7 +53,7 @@ The following demo showcases the Comments 1.0 functionality using storage config
 ++++
 
 [[helper-functions]]
-==== Helper Functions 
+==== Helper Functions
 anchor:helperfunctions[historical anchor]
 
 We have used the following helper functions in our demo above:
@@ -71,7 +70,7 @@ We have used the following helper functions in our demo above:
 `getAuthorDisplayName(authorID)` is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
 
 [[comments-10-implementation-functions]]
-== Comments 1.0 Implementation Functions 
+== Comments 1.0 Implementation Functions
 anchor:comments10implementationfunctions[historical anchor]
 
 Comments 1.0 requires four functions to be defined:
@@ -97,13 +96,13 @@ However, if comments are being persisted directly back to a server as they are m
 === Considerations
 
 [[display-names]]
-==== Display Names 
+==== Display Names
 anchor:displaynames[historical anchor]
 
 Comments 1.0 expects each comment to contain the author's _display name_, not a user ID, as Comments 1.0 does not know the user identities. The implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
 
 [[current-author]]
-==== Current Author 
+==== Current Author
 anchor:currentauthor[historical anchor]
 
 Comments 1.0 does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Comments 1.0 requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
@@ -118,7 +117,7 @@ The `create` function saves the comment as a new conversation and returns a uniq
 The following are examples of how `create` can be implemented if storage settings are configured to be either persistent in real time or on content-save.
 
 [[example---storage---persist-in-real-time]]
-==== Example - Storage - persist in real-time 
+==== Example - Storage - persist in real-time
 anchor:example-storage-persistinreal-time[historical anchor]
 
 Here is an example of how `create` can be implemented using storage configured to persist in real-time:
@@ -140,7 +139,7 @@ function create(content, done, fail) {
 ----
 
 [[example---storage---persist-on-content-save]]
-==== Example - Storage - persist on content-save 
+==== Example - Storage - persist on content-save
 anchor:example-storage-persistoncontent-save[historical anchor]
 
 Here is an example of how `create` can be implemented using storage configured to persist on content-save:
@@ -285,7 +284,7 @@ Comments 1.0 uses the Conversation `lookup` function to retrieve an existing con
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
 [[conversation-object]]
-==== Conversation object 
+==== Conversation object
 anchor:conversationobject[historical anchor]
 
 [source,js]
@@ -300,7 +299,7 @@ anchor:conversationobject[historical anchor]
 ----
 
 [[comment-object]]
-==== Comment object 
+==== Comment object
 anchor:commentobject[historical anchor]
 
 [source,js]

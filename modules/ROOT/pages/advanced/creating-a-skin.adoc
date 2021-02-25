@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Create a Skin for TinyMCE
 :description: Introducing skin creation, less and icon modification.
 :description_short: Introducing skin creation.
@@ -16,7 +15,7 @@ Creating a new skin will allow you to alter the appearance of TinyMCE. If you wo
 To manually build the `less` files you will have to download the https://www.tinymce.com/download/[TinyMCE development package]. This package contains the source code for the entire TinyMCE project and the `less` files needed to skin the editor or use the https://github.com/tinymce/tinymce/[GitHub version]. You will also need to install https://nodejs.org[Node.js] and the NPM node module dependencies needed for the build process. This https://github.com/tinymce/tinymce/blob/master/readme.md[readme.md] file explains how to build TinyMCE manually.
 
 [[building-skinmincss-from-less-files]]
-== Building skin.min.css from less files 
+== Building skin.min.css from less files
 anchor:buildingskinmincssfromlessfiles[historical anchor]
 
 Start by making a copy of the default skin "light gray" and place it in the skins directory (i.e., the same directory that contains the "light gray" skin). The next step is to issue the `grunt less` command from your console. This command will automatically build CSS files out of the `less` files contained in the skins directories. You can also use `grunt watch`, and it will automatically build the skin when changes are made to the less files.
@@ -24,13 +23,13 @@ Start by making a copy of the default skin "light gray" and place it in the skin
 The build process will produce these CSS files: skin.min.css, content.min.css, and content.inline.min.css. The ones prefixed with content are the ones used for the content inside the editor. These files contain CSS for normalizing editing behavior and the appearance of things like video placeholders. The ones prefixed with skin are the files used to render the UI.
 
 [[modifying-the-less-files]]
-== Modifying the less files 
+== Modifying the less files
 anchor:modifyingthelessfiles[historical anchor]
 
 Most things can be modified by altering the Variables.less file as it contains variables for font size, font family, colors, borders and so on. However, you may need to modify other files if you are going to create a radically different skin. The skin only changes the visual presentation of the UI, not the placement of elements. Placement of elements is done by the TinyMCE UI framework, and this is what makes it possible to do complex UI layouts on all browsers without touching any CSS when you create plugins.
 
 [[modifying-the-icons]]
-== Modifying the icons 
+== Modifying the icons
 anchor:modifyingtheicons[historical anchor]
 
 The icons shipped with the default skin are created by the http://icomoon.io/[IcoMoon] project and are embedded as web fonts, making them retina ready and easy to skin. If you need different icons, you can further explore what they offer.

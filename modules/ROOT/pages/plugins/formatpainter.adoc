@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Format Painter
 :controls: toolbar button
 :description: Quickly apply formats to multiple pieces of text.
@@ -15,7 +14,7 @@ Format Painter is a premium plugin from Tiny. Please see the link:{baseurl}/ente
 Once you have obtained the Format Painter plugin, refer to the following instructions for using it.
 
 [[configuring-the-format-painter-toolbar-button]]
-=== Configuring the Format Painter toolbar button 
+=== Configuring the Format Painter toolbar button
 anchor:configuringtheformatpaintertoolbarbutton[historical anchor]
 
 Use the following script to configure the Format Painter toolbar button:
@@ -35,7 +34,7 @@ tinymce.init({
 The image:fp-disabled.png[**Format Painter**](*Format Painter*) button appears in the toolbar menu.
 
 [[using-format-painter]]
-== Using Format Painter 
+== Using Format Painter
 anchor:usingformatpainter[historical anchor]
 
 The format painter is accessed using either keyboard shortcuts or a toolbar button.

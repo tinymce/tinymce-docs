@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Insert Date/Time Plugin
 :controls: toolbar button, menu item
 :description: Insert the current date and/or time into TinyMCE.

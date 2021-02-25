@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Table Plugin
 :controls: toolbar button, menu item
 :description: Table editing features.
@@ -353,13 +352,13 @@ tinymce.init({
 ----
 
 [[examples-of-various-table-setups]]
-=== Examples of various table setups 
+=== Examples of various table setups
 anchor:examplesofvarioustablesetups[historical anchor]
 
 Here are some examples of configuration for common setups.
 
 [[no-default-attributes-or-styles-on-tables]]
-===== No default attributes or styles on tables 
+===== No default attributes or styles on tables
 anchor:nodefaultattributesorstylesontables[historical anchor]
 
 [source,js]
@@ -372,7 +371,7 @@ tinymce.init({
 ----
 
 [[pixel-based-resizing]]
-===== Pixel based resizing 
+===== Pixel based resizing
 anchor:pixelbasedresizing[historical anchor]
 
 [source,js]
@@ -386,7 +385,7 @@ tinymce.init({
 ----
 
 [[percentage-based-resizing]]
-===== Percentage based resizing 
+===== Percentage based resizing
 anchor:percentagebasedresizing[historical anchor]
 
 [source,js]

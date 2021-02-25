@@ -1,7 +1,6 @@
 :rootDir: ./
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = TinyMCE Mobile
 :description: A new mobile-first user experience for rich text editing.
 :keywords: mobile tablet
@@ -17,7 +16,7 @@ Configuration is relatively easy, so let's get started.
 NOTE: Please note that TinyMCE mobile will not work on non-mobile environments.
 
 [[how-to-set-up-mobile]]
-== How to set up mobile 
+== How to set up mobile
 anchor:howtosetupmobile[historical anchor]
 
 In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're using the Self-hosted package, replace `cloud.tinymce.com/dev/` with your path to `tinymce.min.js`.
@@ -70,7 +69,7 @@ The example above loads default settings. To configure the mobile experience, co
 IMPORTANT: *do not* set `theme` to `mobile` in the top-level of your `init` settings, as it will attempt to load mobile mode on desktop environments as well.
 
 [[configuring-mobile]]
-== Configuring mobile 
+== Configuring mobile
 anchor:configuringmobile[historical anchor]
 
 One way to think about configuring TinyMCE mobile is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the link:{baseurl}/configure/editor-appearance/#mobile[mobile] section will be used instead of the equivalent values in the top-level of settings of your config.
@@ -78,7 +77,7 @@ One way to think about configuring TinyMCE mobile is that it is a subset of conf
 Therefore, the mobile section allows you to have completely different settings for mobile than non-mobile devices. The main configuration options you can change are `plugins` and `toolbar`.
 
 [[configuring-the-plugins]]
-=== Configuring the Plugins 
+=== Configuring the Plugins
 anchor:configuringtheplugins[historical anchor]
 
 The plugins supported by mobile are currently limited to the link:{baseurl}/plugins/autosave[autosave], link:{baseurl}/plugins/autolink[autolink] and link:{baseurl}/plugins/lists[lists] plugins. This is by design. We are in the early release cycle and want to hear from our developer community about which plugins should be mobile optimized. Please https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform[complete our survey] to have your say.
@@ -98,7 +97,7 @@ tinymce.init({
 ----
 
 [[configuring-the-toolbar]]
-=== Configuring the Toolbar 
+=== Configuring the Toolbar
 anchor:configuringthetoolbar[historical anchor]
 
 TinyMCE mobile supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the link:{baseurl}/configure/editor-appearance/#mobile[mobile] section also.
@@ -193,7 +192,7 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 |===
 
 [[browser-compatibility]]
-== Browser compatibility 
+== Browser compatibility
 anchor:browsercompatibility[historical anchor]
 
 During our initial QA, we tested mobile on the following platforms. If you use other platforms and encounter bugs, please let us know in the https://github.com/tinymce/tinymce/issues[TinyMCE issue tracker].

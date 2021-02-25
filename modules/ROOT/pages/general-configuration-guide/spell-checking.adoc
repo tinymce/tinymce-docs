@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 08. Check Spelling
 :description: Take spell checking to your users.
 :keywords: spell checker spelling browser_spellcheck gecko_spellcheck
@@ -9,7 +8,7 @@ include::{rootDir}_attributes.adoc[]
 Nobody likes content with spelling errors. Our team at TinyMCE is motivated to help your users create error-free content. Which is why we have several options to help you bring spell checking capabilities to your users.
 
 [[browser-based-spell-checking]]
-== Browser-based spell checking 
+== Browser-based spell checking
 anchor:browser-basedspellchecking[historical anchor]
 
 The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{baseurl}/plugins/contextmenu/[`contextmenu`] plugin.
@@ -24,7 +23,7 @@ tinymce.init({
 ----
 
 [[php-spellchecker-component]]
-== PHP Spellchecker component 
+== PHP Spellchecker component
 anchor:phpspellcheckercomponent[historical anchor]
 
 You can also use TinyMCE's PHP Spellchecker component, which you can http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this http://archive.tinymce.com/develop/changelog/?type=phpspell[txt] file. The TinyMCE's PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
@@ -32,7 +31,7 @@ You can also use TinyMCE's PHP Spellchecker component, which you can http://down
 This plugin enables you to use *Enchant* or *PSpell* on the backend of your server to spell check contents within the TinyMCE editor.
 
 [[installation-steps-for-the-default-enchant-engine]]
-===== Installation steps for the default Enchant engine 
+===== Installation steps for the default Enchant engine
 anchor:installationstepsforthedefaultenchantengine[historical anchor]
 
 . Make sure you enable *Enchant* in your PHP.
@@ -58,7 +57,7 @@ tinymce.init({
 Please see the link:{baseurl}/plugins/spellchecker/[Spell Checker Plugin] for advanced configuration options.
 
 [[tinymce-spellchecker-pro-plugin]]
-== TinyMCE Spellchecker Pro plugin 
+== TinyMCE Spellchecker Pro plugin
 anchor:tinymcespellcheckerproplugin[historical anchor]
 
 For developers requiring a robust enterprise-grade spell check as-you-type functionality, you need the link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker Pro plugin]. Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.

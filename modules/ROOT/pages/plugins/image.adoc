@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Image Plugin
 :description: Insert an image into TinyMCE.
 :keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
@@ -305,7 +304,7 @@ tinymce.init({
 ----
 
 [[q-where-are-the-advanced-image-options]]
-== Q: Where are the advanced image options? 
+== Q: Where are the advanced image options?
 anchor:qwherearetheadvancedimageoptions[historical anchor]
 
 Use the `Style Formats` option instead, which is much more powerful.

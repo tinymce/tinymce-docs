@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Configuring callbacks for Comments 2.0
 :description: Instructions for configuring callbacks for Comments 2.0
 :keywords: comments commenting tinycomments callback
@@ -13,7 +12,7 @@ include::{rootDir}_attributes.adoc[]
 *Callback mode* is the default mode for link:{baseurl}/plugins/comments/comments_2.0/[Comments 2.0]. In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
 [[required-settings]]
-=== Required settings 
+=== Required settings
 anchor:requiredsettings[historical anchor]
 
 Comments 2.0 requires the following functions to be defined:

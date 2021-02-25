@@ -1,14 +1,13 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Specify Editor & Plugin Versions
 :description: Specifying editor and plugin versions for Cloud deployments.
 :description_short: Specifying editor and plugin versions for Cloud deployments.
 :keywords: tinymce cloud script textarea apiKey
 
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
-== Specifying the TinyMCE editor version deployed from Cloud 
+== Specifying the TinyMCE editor version deployed from Cloud
 anchor:specifyingthetinymceeditorversiondeployedfromcloud[historical anchor]
 
 When deploying the link:{baseurl}/cloud-deployment-guide/editor-and-features[TinyMCE editor via the Cloud], you're able to specify the editor version via the provided URL.
@@ -23,7 +22,7 @@ Our documented default for loading TinyMCE via our Cloud is:
 The `stable` in this URL specifies the latest release of TinyMCE that completed our quality assurance testing process, successfully. If you are not using the latest, stable TinyMCE version, you can customize this value. You'll find all https://cloud.tinymce.com/versions/tiny[supported versions here].
 
 [[selecting-specific-version-numbers]]
-=== Selecting specific version numbers 
+=== Selecting specific version numbers
 anchor:selectingspecificversionnumbers[historical anchor]
 
 You can specify a _Major_ version number, a _Major.Minor_ version number or a _Major.Minor.Patch_ version number. If the Minor or Patch versions numbers are not present, it has the latest Minor and Patch version released, by default.
@@ -65,7 +64,7 @@ The following would load TinyMCE _4.3.2_:
 If you enter a version that doesn't exist, you get a *HTTP 404* error in response.
 
 [[dev-testing-and-stable-releases]]
-=== dev, testing, and stable releases 
+=== dev, testing, and stable releases
 anchor:devtestingandstablereleases[historical anchor]
 
 Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our `dev`, `testing`, and `stable` release channels.
@@ -73,7 +72,7 @@ Rather than specifying a specific TinyMCE version to load from the Cloud, you ca
 Updates to these channels are automatic, providing you and your users with the latest TinyMCE version matching the criteria below.
 
 [[dev-release-channel]]
-==== dev release channel 
+==== dev release channel
 anchor:devreleasechannel[historical anchor]
 
 This channel deploys the absolute latest released TinyMCE version seen in the link:{baseurl}/changelog/[TinyMCE changelog]. The current version of TinyMCE available through the `dev` channel https://cloud.tinymce.com/dev/version.txt[can be found at here].
@@ -86,7 +85,7 @@ This channel deploys the absolute latest released TinyMCE version seen in the li
 ----
 
 [[testing-release-channel]]
-==== testing release channel 
+==== testing release channel
 anchor:testingreleasechannel[historical anchor]
 
 This channel deploys the current candidate for release to the `stable` channel. This TinyMCE build is next in line for our quality assurance testing process. The current version of TinyMCE available through the `testing` channel https://cloud.tinymce.com/testing/version.txt[can be found at here].
@@ -99,7 +98,7 @@ This channel deploys the current candidate for release to the `stable` channel. 
 ----
 
 [[stable-release-channel]]
-==== stable release channel 
+==== stable release channel
 anchor:stablereleasechannel[historical anchor]
 
 This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel https://cloud.tinymce.com/stable/version.txt[can be found here].
@@ -112,7 +111,7 @@ This channel deploys the latest release of TinyMCE that has passed our quality a
 ----
 
 [[specifying-the-version-of-featuresplugins-deployed-from-the-cloud]]
-== Specifying the version of features/plugins deployed from the Cloud 
+== Specifying the version of features/plugins deployed from the Cloud
 anchor:specifyingtheversionoffeaturespluginsdeployedfromthecloud[historical anchor]
 
 Whether you're deploying both the link:{baseurl}/cloud-deployment-guide/editor-and-features[TinyMCE editor and premium plugins via the Cloud] or deploying link:{baseurl}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you can use URL query parameters to specify the version of each premium plugin.
@@ -130,7 +129,7 @@ Whether you're deploying both the link:{baseurl}/cloud-deployment-guide/editor-a
 ----
 
 [[spell-checker-pro]]
-==== Spell Checker Pro 
+==== Spell Checker Pro
 anchor:spellcheckerpro[historical anchor]
 
 * link:{baseurl}/plugins/tinymcespellchecker[Developer documentation]
@@ -143,7 +142,7 @@ anchor:spellcheckerpro[historical anchor]
 ----
 
 [[accessibility-checker]]
-==== Accessibility Checker 
+==== Accessibility Checker
 anchor:accessibilitychecker[historical anchor]
 
 * link:{baseurl}/plugins/a11ychecker[Developer documentation]
@@ -156,7 +155,7 @@ anchor:accessibilitychecker[historical anchor]
 ----
 
 [[advanced-code-editor]]
-==== Advanced Code Editor 
+==== Advanced Code Editor
 anchor:advancedcodeeditor[historical anchor]
 
 * link:{baseurl}/plugins/advcode/[Developer documentation]
@@ -169,7 +168,7 @@ anchor:advancedcodeeditor[historical anchor]
 ----
 
 [[enhanced-media-embed]]
-==== Enhanced Media Embed 
+==== Enhanced Media Embed
 anchor:enhancedmediaembed[historical anchor]
 
 * link:{baseurl}/plugins/mediaembed/[Developer documentation]
@@ -182,7 +181,7 @@ anchor:enhancedmediaembed[historical anchor]
 ----
 
 [[link-checker]]
-==== Link Checker 
+==== Link Checker
 anchor:linkchecker[historical anchor]
 
 * link:{baseurl}/plugins/linkchecker/[Developer documentation]
@@ -195,7 +194,7 @@ anchor:linkchecker[historical anchor]
 ----
 
 [[specifying-a-self-hosted-deployment-of-featuresplugins]]
-== Specifying a Self-hosted deployment of features/plugins 
+== Specifying a Self-hosted deployment of features/plugins
 anchor:specifyingaself-hosteddeploymentoffeaturesplugins[historical anchor]
 
 If you're deploying link:{baseurl}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you may want to have some features served from the Cloud and some features served from your Self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
@@ -267,7 +266,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 == Examples
 
 [[featuring-declared-editor-and-plugin-versions]]
-=== Featuring declared editor and plugin versions 
+=== Featuring declared editor and plugin versions
 anchor:featuringdeclarededitorandpluginversions[historical anchor]
 
 The following example would load:
@@ -299,7 +298,7 @@ The following example would load:
 ----
 
 [[featuring-a-combination-of-self-hosted-and-cloud-features]]
-=== Featuring a combination of Self-hosted and Cloud features 
+=== Featuring a combination of Self-hosted and Cloud features
 anchor:featuringacombinationofself-hostedandcloudfeatures[historical anchor]
 
 The following example would load:

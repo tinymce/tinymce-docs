@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Format Painter
 :controls: toolbar button
 :description: Quickly apply formats to multiple pieces of text.
@@ -9,7 +8,7 @@ include::{rootDir}_attributes.adoc[]
 :title_nav: Format Painter
 
 [[live-example]]
-== Live example 
+== Live example
 anchor:liveexample[historical anchor]
 
 This example shows how to use Format Painter Format Painter plugin to copy and paste formatting from one location to another. For more information on the Format Painter plugin, see the link:{baseurl}/plugins/formatpainter/[docs].

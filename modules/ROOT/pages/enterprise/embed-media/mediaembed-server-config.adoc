@@ -1,7 +1,6 @@
 :rootDir: ../../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Configure Enhanced Media Embed Server
 :description: Instructions for getting the Enhanced Media Embed server configured.
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
@@ -17,7 +16,7 @@ When you insert media into your content, the service will do the following (in o
 . Create a summary card.
 
 [[use-your-own-iframely-account]]
-== Use your own Iframely account 
+== Use your own Iframely account
 anchor:useyourowniframelyaccount[historical anchor]
 
 To use your own Iframely account, provide the following configuration items:
@@ -53,7 +52,7 @@ ephox {
 ----
 
 [[configure-a-custom-endpoint]]
-== Configure a custom endpoint 
+== Configure a custom endpoint
 anchor:configureacustomendpoint[historical anchor]
 
 The service can be configured to hit a specific oEmbed endpoint when media from a URL matching a provided pattern is inserted into your content.
@@ -293,7 +292,7 @@ ephox {
 ----
 
 [[combining-iframely-and-custom-endpoints]]
-== Combining Iframely and custom endpoints 
+== Combining Iframely and custom endpoints
 anchor:combiningiframelyandcustomendpoints[historical anchor]
 
 It is also possible to configure Iframely with custom oEmbed endpoints. For example, you may want to use Iframely to embed media from the Internet and an internal oEmbed server to embed media from an Intranet.
@@ -320,7 +319,7 @@ ephox {
 ----
 
 [[summary-cards]]
-== Summary cards 
+== Summary cards
 anchor:summarycards[historical anchor]
 
 If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.

@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Contribute to TinyMCE
 :description: Contribute to the open source project. Help build the core, plugins or even write the documentation.
 :description_short: Contribute to the open source project.
@@ -11,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 TinyMCE is an open source software project, and we encourage developers to contribute patches and code for us to include in the main package of TinyMCE. However, there are a few rules and limitations when doing so, and this page lists them.
 
 [[basic-rules]]
-== Basic rules 
+== Basic rules
 anchor:basicrules[historical anchor]
 
 * Contributed code will be licensed under the LGPL license, but not limited to LGPL.
@@ -22,13 +21,13 @@ anchor:basicrules[historical anchor]
 These basic rules make it possible for us to properly manage the TinyMCE project and to ensure that the code remains open source and under the LGPL license.
 
 [[how-to-contribute]]
-== How to contribute 
+== How to contribute
 anchor:howtocontribute[historical anchor]
 
 The TinyMCE source code is https://github.com/tinymce/tinymce[hosted on Github]. Through Github, you can submit _pull requests_ and log new bugs and feature requests.
 
 [[contributing-to-the-documentation]]
-== Contributing to the documentation 
+== Contributing to the documentation
 anchor:contributingtothedocumentation[historical anchor]
 
 If you would like to contribute to TinyMCE's documentation, please see our link:../contributing-docs/[contrib page and style guide].

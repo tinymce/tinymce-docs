@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Enhanced Media Embed Plugin
 :description: Add rich media previews inside TinyMCE.
 :keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
@@ -18,7 +17,7 @@ For the moment the *Enhanced Media Embed* plugin has to be used in conjunction w
 . Add the `mediaembed` plugin to the `plugins` list.
 
 [[example-cloud-configuration]]
-=== Example Cloud Configuration 
+=== Example Cloud Configuration
 anchor:examplecloudconfiguration[historical anchor]
 
 The service URL is already configured with link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud].
@@ -34,7 +33,7 @@ tinymce.init({
 ----
 
 [[example-self-hosted-configuration]]
-=== Example Self-hosted Configuration 
+=== Example Self-hosted Configuration
 anchor:exampleself-hostedconfiguration[historical anchor]
 
 In a Self-hosted installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
@@ -55,7 +54,7 @@ tinymce.init({
 The plugin can be used in two ways, either by simply entering a URL on an empty line and pressing the enter key - or by entering the URL into the media plugin's dialog window. Either way the URL will be handled by the service backend and the returned code will be embedded into the editor.
 
 [[configuration-options]]
-== Configuration Options 
+== Configuration Options
 anchor:configurationoptions[historical anchor]
 
 [[mediaembed_service_url]]
@@ -70,7 +69,7 @@ This option is not required for link:{baseurl}/cloud-deployment-guide/editor-and
 This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `650`.
 
 [[downloading-enhanced-media-embed-plugin]]
-== Downloading Enhanced Media Embed plugin 
+== Downloading Enhanced Media Embed plugin
 anchor:downloadingenhancedmediaembedplugin[historical anchor]
 
 A https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription includes the ability to download and install the *Media Embed* plugin and a *WAR* file to access the service backend. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file.

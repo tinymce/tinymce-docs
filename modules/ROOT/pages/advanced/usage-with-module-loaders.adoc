@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Usage with module loaders
 :description: How to use TinyMCE in a project using a module bundler like Webpack or Browserify
 :description_short: How to include TinyMCE in a project using CommonJS modules.
@@ -13,7 +12,7 @@ TinyMCE can easily be installed with `npm` and used with module loaders such as 
 The first thing you have to decide is how to load your modules.
 
 [[es2015-modules]]
-=== ES2015 modules 
+=== ES2015 modules
 anchor:es2015modules[historical anchor]
 
 If you are using ES2015 modules, a simple example could look something like this.
@@ -38,7 +37,7 @@ tinymce.init({
 ----
 
 [[commonjs-modules]]
-=== CommonJS modules 
+=== CommonJS modules
 anchor:commonjsmodules[historical anchor]
 
 If you are using CommonJS modules, the example looks pretty much the same, only using the different `require` function to import the dependencies.
@@ -63,7 +62,7 @@ tinymce.init({
 ----
 
 [[getting-the-skin]]
-== Getting the skin 
+== Getting the skin
 anchor:gettingtheskin[historical anchor]
 
 TinyMCE will not work without a *skin*, which consists of some fonts and CSS files used by the editor. By default TinyMCE looks for these files in a `/skins` directory located in your root directory, although this can  be link:{baseurl}/configure/editor-appearance/#skin_url[configured in the init object].
@@ -82,7 +81,7 @@ xcopy /I /E node_modules/tinymce/skins skins
 ----
 
 [[webpack-file-loader]]
-=== Webpack file-loader 
+=== Webpack file-loader
 anchor:webpackfile-loader[historical anchor]
 
 If you are using Webpack, another option is to use the https://github.com/webpack/file-loader[file loader] together with the https://github.com/webpack/docs/wiki/context[require.context] function to copy the skins directory by adding these lines before your call to the TinyMCE `init` function:
@@ -101,7 +100,7 @@ What this does is more or less the same thing as the command line stuff above - 
 Unfortunately, we haven't found any equivalently easy-to-use way to handle this for Browserify builds, but please use the "Contribute to this page"-link at the top of this page and make a pull request if you have any ideas.
 
 [[minification-with-uglifyjs2]]
-=== Minification with UglifyJS2 
+=== Minification with UglifyJS2
 anchor:minificationwithuglifyjs2[historical anchor]
 
 https://github.com/mishoo/UglifyJS2[UglifyJS2], one of the most popular JS minification tools, will corrupt TinyMCE unless `ascii-only` is set.

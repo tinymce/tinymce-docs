@@ -1,14 +1,13 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Drive
 :description: Tiny Drive. A premium plugin to manage files & images.
 :keywords: tinydrive .net php relative_urls
 :title_nav: Drive
 
 [[cloud-based-file-and-image-management-for-tinymce]]
-=== Cloud-based File and Image Management for TinyMCE 
+=== Cloud-based File and Image Management for TinyMCE
 anchor:cloud-basedfileandimagemanagementfortinymce[historical anchor]
 
 Tiny Drive is a premium TinyMCE plugin for cloud-based asset management and storage solution. Tiny Drive is a solution for creating rich text by attaching and embedding images, videos, and other files in your document.
@@ -16,11 +15,11 @@ Tiny Drive is a premium TinyMCE plugin for cloud-based asset management and stor
 Drive presents a cloud-based asset management and storage solution that provides the ease of use of Google Drive without the server requirements of a self-hosted asset manager such as our own MoxieManager.
 
 [[getting-started]]
-=== Getting Started 
+=== Getting Started
 anchor:gettingstarted[historical anchor]
 
 [[creating-an-account]]
-==== Creating an Account 
+==== Creating an Account
 anchor:creatinganaccount[historical anchor]
 
 If you would like to try out Drive and our Cloud-delivered editor, the first step is to create a free https://www.tiny.cloud/download/[Tiny account].  When you create an account, you are assigned an API key, which is required for the implementation of Drive.
@@ -31,7 +30,7 @@ The API key is also provisioned with a free 30-day trial of all of our https://a
 ====
 
 [[configuring-the-editor-for-drive]]
-==== Configuring the Editor for Drive 
+==== Configuring the Editor for Drive
 anchor:configuringtheeditorfordrive[historical anchor]
 
 Once you have the API key, or if you are a current Cloud user who already has an API key, then you have access to Drive.  In order to get the service up and running, you'll need to complete a few more steps. See our link:{baseurl}/plugins/drive[documentation] for more information.
@@ -42,7 +41,7 @@ We are launching the service with a complimentary 100MB of storage and up to 1 G
 ====
 
 [[security--performance]]
-=== Security & Performance 
+=== Security & Performance
 anchor:securityperformance[historical anchor]
 
 We know security is a primary concern when it comes to cloud storage.  Drive uses an https://aws.amazon.com/s3/[Amazon Web Services S3] bucket, the same storage solution used by companies like Netflix, Thomson Reuters, and Zillow.  (You can read about Amazon's comprehensive security approach https://aws.amazon.com/security/[here].)

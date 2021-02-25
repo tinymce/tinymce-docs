@@ -1,13 +1,12 @@
 :rootDir: ../../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Configure
 :description: Configure the Enterprise server-side components.
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server configuration configure
 
 [[creating-a-configuration-file]]
-== Creating a configuration file 
+== Creating a configuration file
 anchor:creatingaconfigurationfile[historical anchor]
 
 NOTE: Use a plain text editor (such as gedit, vim, emacs or notepad) when creating or editing the `application.conf` file. Do not use word processors like Microsoft Word or Evernote as these can insert extra characters which make the file unreadable to the server-side components.
@@ -24,7 +23,7 @@ Some server-side components require additional configuration which can be found 
 * link:{baseurl}/enterprise/check-links/#linkcheckersdkquicksetup[Link Checker]
 
 [[allowed-origins-required]]
-=== `allowed-origins` (required) 
+=== `allowed-origins` (required)
 anchor:allowed-originsrequired[historical anchor]
 
 TinyMCE editor instances make use of the server-side components by performing a cross-origin HTTP request. These requests are subject to a form of HTTP access control called Cross-Origin Resource Sharing (CORS). CORS is built into web browsers and is not a feature of TinyMCE's server side components. A detailed explanation of CORS can be found on the https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[Mozilla Developer Network].
@@ -98,7 +97,7 @@ ephox {
 ----
 
 [[wildcard-support]]
-==== Wildcard support 
+==== Wildcard support
 anchor:wildcardsupport[historical anchor]
 
 The `*` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `allowed-origin` list:
@@ -121,13 +120,13 @@ ephox {
 ----
 
 [[troubleshooting-origins]]
-==== Troubleshooting Origins 
+==== Troubleshooting Origins
 anchor:troubleshootingorigins[historical anchor]
 
 If you missed an Origin or specified an Origin incorrectly, TinyMCE features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{baseurl}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
 
 [[proxy-optional]]
-=== `proxy` (optional) 
+=== `proxy` (optional)
 anchor:proxyoptional[historical anchor]
 
 This element configures use of an HTTP proxy for outgoing HTTP/HTTPS requests made by the server-side components.
@@ -187,7 +186,7 @@ ephox {
 ----
 
 [[http-optional]]
-=== `http` (optional) 
+=== `http` (optional)
 anchor:httpoptional[historical anchor]
 
 Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Image Tools Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
@@ -233,7 +232,7 @@ ephox {
 ----
 
 [[image-proxy-optional]]
-=== `image-proxy` (optional) 
+=== `image-proxy` (optional)
 anchor:image-proxyoptional[historical anchor]
 
 The link:{baseurl}/plugins/imagetools/[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
@@ -268,7 +267,7 @@ It may be useful to make the TinyMCE server-side components write to their own l
 To write the logs to a specific file, you'll need to perform the following steps:
 
 [[step-1-create-a-logging-configuration-xml-file]]
-=== Step 1. Create a logging configuration XML file 
+=== Step 1. Create a logging configuration XML file
 anchor:step1createaloggingconfigurationxmlfile[historical anchor]
 
 The TinyMCE server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
@@ -306,7 +305,7 @@ Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with t
 ----
 
 [[step-2-pass-the-configuration-file-to-the-java-application-server]]
-=== Step 2. Pass the configuration file to the Java application server 
+=== Step 2. Pass the configuration file to the Java application server
 anchor:step2passtheconfigurationfiletothejavaapplicationserver[historical anchor]
 
 Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow link:{baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:{baseurl}/enterprise/server/#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:

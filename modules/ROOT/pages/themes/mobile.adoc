@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Mobile theme
 :description: Theme that renders a mobile-ready user interface.
 :keywords: theme mobile
@@ -27,7 +26,7 @@ tinymce.init({
 ----
 
 [[related-configuration-options]]
-=== Related configuration options 
+=== Related configuration options
 anchor:relatedconfigurationoptions[historical anchor]
 
 * link:{baseurl}/configure/editor-appearance/#mobile[mobile]

@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = React Integration
 :description: React TinyMCE component.
 :keywords: integration integrate react reactjs create-react-app
@@ -10,7 +9,7 @@ include::{rootDir}_attributes.adoc[]
 Integration with React is easily done with our https://github.com/tinymce/tinymce-react[@tinymce/tinymce-react] package. This how-to shows you how to setup a project using https://facebook.github.io/react/[react], link:/docs/demo/basic-example/[tinymce] and https://github.com/facebookincubator/create-react-app[Create React App].
 
 [[1-installing-create-react-app]]
-== 1. Installing `create-react-app` 
+== 1. Installing `create-react-app`
 anchor:1installingcreate-react-app[historical anchor]
 
 We will use the https://github.com/facebookincubator/create-react-app[Create React App] to quickly and easily get our project up and running.
@@ -22,7 +21,7 @@ $ npm install -g create-react-app
 ----
 
 [[2-create-a-new-project]]
-== 2. Create a new project 
+== 2. Create a new project
 anchor:2createanewproject[historical anchor]
 
 Use `create-react-app` to create a new project named `tinymce-react-demo`.
@@ -37,7 +36,7 @@ $ cd tinymce-react-demo
 ----
 
 [[3-setup-react-tinymce]]
-== 3. Setup `react-tinymce` 
+== 3. Setup `react-tinymce`
 anchor:3setupreact-tinymce[historical anchor]
 
 Install the npm package and save it to your `package.json` with `--save`.
@@ -47,11 +46,11 @@ $ npm install --save @tinymce/tinymce-react
 ----
 
 [[31-loading-tinymce]]
-=== 3.1 Loading TinyMCE 
+=== 3.1 Loading TinyMCE
 anchor:31loadingtinymce[historical anchor]
 
 [[auto-loading-from-tinymce-cloud]]
-==== Auto-loading from TinyMCE Cloud 
+==== Auto-loading from TinyMCE Cloud
 anchor:auto-loadingfromtinymcecloud[historical anchor]
 
 `@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] if it can't find TinyMCE available when the component is mounting. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
@@ -76,7 +75,7 @@ So using the `dev` channel would look like this:
 For more info on the different channels see the https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/editor-plugin-version/#devtestingandstablereleases[documentation].
 
 [[loading-tinymce-by-yourself]]
-==== Loading TinyMCE by yourself 
+==== Loading TinyMCE by yourself
 anchor:loadingtinymcebyyourself[historical anchor]
 
 To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out https://www.tinymce.com/docs/advanced/usage-with-module-loaders/[this page in the documentation].
@@ -87,7 +86,7 @@ To opt out of using TinyMCE cloud, you have to make TinyMCE globally available y
 ----
 
 [[4-replace-the-appjs-file]]
-== 4. Replace the App.js file 
+== 4. Replace the App.js file
 anchor:4replacetheappjsfile[historical anchor]
 
 Open up the provided `App.js` file located in the `src` directory and replace its content with the code below.
@@ -120,7 +119,7 @@ export default App;
 ----
 
 [[5-start-the-development-server]]
-== 5. Start the development server 
+== 5. Start the development server
 anchor:5startthedevelopmentserver[historical anchor]
 
 Start up the development server provided with `create-react-app`.
@@ -130,7 +129,7 @@ $ npm start
 ----
 
 [[6-keep-on-hacking]]
-== 6. Keep on hacking 
+== 6. Keep on hacking
 anchor:6keeponhacking[historical anchor]
 
 This was just a simple guide on how to get started. For more complex configuration information, see the  React documentation.

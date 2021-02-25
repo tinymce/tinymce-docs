@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Create Custom Notifications
 :description: Learn how to make custom dialogs with NotificationManager.
 :description_short: Learn how to make custom notifications.
@@ -56,7 +55,7 @@ editor.notificationManager.open({
 ----
 
 [[close-button]]
-== Close Button 
+== Close Button
 anchor:closebutton[historical anchor]
 
 By setting the "closeButton" property to false in conjunction with a non-zero timeout, you may disable the close button to the right of the notification.
@@ -84,7 +83,7 @@ editor.notificationManager.open({
 ----
 
 [[progress-bar]]
-== Progress Bar 
+== Progress Bar
 anchor:progressbar[historical anchor]
 
 By setting the "progressBar" property to `True`, the notification will display a progress bar to the left of the close button and to the right of the text.

@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Autoresize Plugin
 :description: Automatically resize TinyMCE to fit content.
 :description_short:
@@ -13,7 +12,7 @@ This plugin automatically resizes the editor to the content inside it. It is typ
 *Type:* `String`
 
 [[autoresize-plugin-example]]
-===== Autoresize plugin example 
+===== Autoresize plugin example
 anchor:autoresizepluginexample[historical anchor]
 
 [source,js]

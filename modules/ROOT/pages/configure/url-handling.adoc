@@ -1,18 +1,17 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = URL Handling
 :description: These settings affect the way URLs are handled by the editor.
 :description_short:
 :keywords: url urls relative absolute domain document_base_url
 
 [[q-how-do-i-convert-my-urls-to-relative-absolute-or-absolute-with-domain]]
-== Q: How do I convert my URLs to relative, absolute, or absolute with domain? 
+== Q: How do I convert my URLs to relative, absolute, or absolute with domain?
 anchor:qhowdoiconvertmyurlstorelativeabsoluteorabsolutewithdomain[historical anchor]
 
 [[relative-urls]]
-=== Relative URLs 
+=== Relative URLs
 anchor:relativeurls[historical anchor]
 
 This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the <<document_base_url,document_base_url>>.
@@ -25,7 +24,7 @@ document_base_url : "http://www.example.com/path1/"
 Example: `+http://www.example.com/path1/path2/file.htm+` >> `path2/file.htm`
 
 [[absolute-urls]]
-=== Absolute URLs 
+=== Absolute URLs
 anchor:absoluteurls[historical anchor]
 
 This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url].
@@ -39,7 +38,7 @@ document_base_url : "http://www.example.com/path1/"
 Example: path2/file.htm >> /path1/path2/file.htm
 
 [[domain-absolute-urls]]
-=== Domain Absolute URLs 
+=== Domain Absolute URLs
 anchor:domainabsoluteurls[historical anchor]
 
 This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url] with domain.

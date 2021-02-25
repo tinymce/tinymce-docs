@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 04. Advanced Install
 :description: Learn how to install TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, jQuery and custom build options.
 :description_short: Cloud, package managers, Self-hosted, jQuery and custom builds.
@@ -18,13 +17,13 @@ On this page you'll find a detailed guide to our installation options:
 * <<custombuildinstall,Custom Build>>
 
 [[cloud-install]]
-== Cloud Install 
+== Cloud Install
 anchor:cloudinstall[historical anchor]
 
 include::{partialsDir}install/cloud.adoc[]
 
 [[package-manager-install-options]]
-== Package Manager Install Options 
+== Package Manager Install Options
 anchor:packagemanagerinstalloptions[historical anchor]
 
 * <<npm,NPM>>
@@ -53,19 +52,19 @@ include::{partialsDir}install/composer.adoc[]
 include::{partialsDir}install/nuget.adoc[]
 
 [[sdk-install]]
-== SDK Install 
+== SDK Install
 anchor:sdkinstall[historical anchor]
 
 include::{partialsDir}install/sdk.adoc[]
 
 [[jquery-install]]
-== jQuery Install 
+== jQuery Install
 anchor:jqueryinstall[historical anchor]
 
 include::{partialsDir}install/jquery.adoc[]
 
 [[custom-build-install]]
-== Custom Build Install 
+== Custom Build Install
 anchor:custombuildinstall[historical anchor]
 
 include::{partialsDir}install/custom.adoc[]

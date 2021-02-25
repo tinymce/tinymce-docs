@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Editor Control Identifiers
 :description: Complete list of control identifiers.
 :description_short: Complete list of control identifiers.
@@ -11,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 Here is a list of the toolbar/menu controls that the core and plugins provides. These controls can be configured using the link:{baseurl}/configure/editor-appearance/#toolbar[toolbar] or the link:{baseurl}/configure/editor-appearance/#menu[menu] config options.
 
 [[toolbar-controls]]
-== Toolbar controls 
+== Toolbar controls
 anchor:toolbarcontrols[historical anchor]
 
 |===
@@ -371,7 +370,7 @@ anchor:toolbarcontrols[historical anchor]
 |===
 
 [[menu-controls]]
-== Menu controls 
+== Menu controls
 anchor:menucontrols[historical anchor]
 
 |===

@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = TinyMCE plugin Yeoman generator
 :description: How to use the Yeoman generator to bootstrap a new TinyMCE plugin using ES2015/Babel or TypeScript.
 :description_short: How to use the Yeoman generator to bootstrap a new TinyMCE plugin
@@ -11,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 To make it easy and quick to get started creating your plugins for TinyMCE we have created the TinyMCE Plugin Generator. Using this the only thing you have to do is answer a few questions, wait for some dependencies to install and *_bam!_* you are ready to get started creating that plugin you were dreaming about.
 
 [[install-the-generator]]
-== Install the generator 
+== Install the generator
 anchor:installthegenerator[historical anchor]
 
 The plugin generator is built with http://yeoman.io/[Yeoman], which if you haven't heard about it before is a project scaffolding tool, so to get started you have to install both `yo` (the yeoman command) and the generator with the following command:
@@ -24,7 +23,7 @@ npm install --global yo generator-tinymce
 Wait for the install to finish, then let us move on.
 
 [[run-the-generator]]
-== Run the generator 
+== Run the generator
 anchor:runthegenerator[historical anchor]
 
 Start the generator with the following command:
@@ -63,7 +62,7 @@ npm start
 Start hacking and have fun! If you didn't skip it a git repository has also been initialized and an initial commit committed so if it gets too messy you can always go back with a simple `git reset`.
 
 [[create-distribution-ready-build]]
-== Create distribution ready build 
+== Create distribution ready build
 anchor:createdistributionreadybuild[historical anchor]
 
 When you feel satisfied with your plugin the only thing you need to do is run this command in the project root:

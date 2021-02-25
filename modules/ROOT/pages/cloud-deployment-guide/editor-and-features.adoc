@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Cloud Deployment of Editor & Plugins
 :description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 :description_short: Learn how to set up the TinyMCE editor via our Cloud, or migrate from a Self-hosted environment.
@@ -14,11 +13,11 @@ You may use TinyMCE Cloud without an API key as mentioned in the link:{baseurl}/
 All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This is setup using the link:{baseurl}/plugins/imagetools/[Image Tools] plugin.
 
 [[integrating-tinymce-for-the-first-time]]
-== Integrating TinyMCE for the first time 
+== Integrating TinyMCE for the first time
 anchor:integratingtinymceforthefirsttime[historical anchor]
 
 [[step-1-embed-the-tinymce-cloud-script-tag-into-your-webpage]]
-=== Step 1: Embed the TinyMCE Cloud script tag into your webpage 
+=== Step 1: Embed the TinyMCE Cloud script tag into your webpage
 anchor:step1embedthetinymcecloudscripttagintoyourwebpage[historical anchor]
 
 To load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. The code embedding is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
@@ -29,13 +28,13 @@ To load TinyMCE for the very first time, you need to embed the TinyMCE editor co
 ----
 
 [[step-2-load-customize-and-interact-with-tinymce]]
-=== Step 2: Load, customize and interact with TinyMCE 
+=== Step 2: Load, customize and interact with TinyMCE
 anchor:step2loadcustomizeandinteractwithtinymce[historical anchor]
 
 In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of link:{baseurl}/demo/basic-example/[simple examples] and we encourage you to review our walkthrough documentation that will help you link:{baseurl}/quick-start[get started with TinyMCE].
 
 [[step-3-specifying-purchased-tinymce-plugins-and-toolbarmenu-items]]
-=== Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items 
+=== Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 anchor:step3specifyingpurchasedtinymcepluginsandtoolbarmenuitems[historical anchor]
 
 Lastly, you just need to extend your TinyMCE configuration to include any of the additional, advanced plugins (and associated toolbar/menu items) you've purchased. You will find enablement guides here:
@@ -60,7 +59,7 @@ Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be c
 NOTE: Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
 
 [[step-4-forward-proxy-configuration]]
-=== Step 4: Forward proxy configuration 
+=== Step 4: Forward proxy configuration
 anchor:step4forwardproxyconfiguration[historical anchor]
 
 If your company network has a forward proxy that controls access to the internet, please ensure that the following URLs are accessible via this proxy.
@@ -74,17 +73,17 @@ If your company network has a forward proxy that controls access to the internet
 IMPORTANT: Please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
 
 [[step-5-specifying-a-translation]]
-=== Step 5: Specifying a translation 
+=== Step 5: Specifying a translation
 anchor:step5specifyingatranslation[historical anchor]
 
 If you wish to use a language other than English (US), please https://www.tinymce.com/i18n[download a language pack] and then link:{baseurl}/configure/localization/#language_url[specify its location] with the `language_url` configuration option.
 
 [[migrating-from-a-self-hosted-environment-to-tinymce-cloud]]
-== Migrating from a Self-hosted environment to TinyMCE Cloud 
+== Migrating from a Self-hosted environment to TinyMCE Cloud
 anchor:migratingfromaself-hostedenvironmenttotinymcecloud[historical anchor]
 
 [[step-1-replace-existing-reference-to-tinymceminjs]]
-=== Step 1: Replace existing reference to tinymce.min.js 
+=== Step 1: Replace existing reference to tinymce.min.js
 anchor:step1replaceexistingreferencetotinymceminjs[historical anchor]
 
 Migrating from a Self-hosted environment to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE's JavaScript (typically a reference to `tinymce.min.js` either hosted in your application or available via one our legacy CDNs). Now, replace this script tag with the following:
@@ -95,13 +94,13 @@ Migrating from a Self-hosted environment to the Cloud is a relatively straightfo
 ----
 
 [[step-2-update-custom-plugin-paths]]
-=== Step 2: Update custom plugin paths 
+=== Step 2: Update custom plugin paths
 anchor:step2updatecustompluginpaths[historical anchor]
 
 If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via link:{baseurl}/configure/integration-and-setup/#external_plugins[external_plugins] rather than the regular link:{baseurl}/general-configuration-guide/work-with-plugins/[plugins] configuration element.
 
 [[step-3-specify-purchased-tinymce-plugins-and-toolbar-buttons]]
-=== Step 3: Specify purchased TinyMCE plugins and toolbar buttons 
+=== Step 3: Specify purchased TinyMCE plugins and toolbar buttons
 anchor:step3specifypurchasedtinymcepluginsandtoolbarbuttons[historical anchor]
 
 Now, you just need to extend your link:{baseurl}/configure/[TinyMCE configuration] to include any additional plugins (and associated toolbar/menu items) you've purchased. You will find enablement guides here:

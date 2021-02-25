@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = See what's new
 :description: In this example we highlight new features in our latest release, including the image caption option, media embeds and code snippets.
 :description_short: In this example we highlight new features in our latest release.
@@ -9,7 +8,7 @@ include::{rootDir}_attributes.adoc[]
 :title_nav: What's new
 
 [[live-example]]
-== Live example 
+== Live example
 anchor:liveexample[historical anchor]
 
 In this example we highlight new features in our latest release, including the image caption option, media embeds and code snippets. For more information on the latest updates to TinyMCE, see the  link:{baseurl}/changelog[changelog].

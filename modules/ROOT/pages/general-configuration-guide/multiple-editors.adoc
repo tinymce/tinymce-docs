@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 03. Multiple Editors
 :description: Learn how to insert multiple editor instances on a single page.
 :description_short: Learn how to insert multiple editor instances on a single page.
@@ -12,7 +11,7 @@ Now that you know how to add TinyMCE to your page, and how to use the `inline` m
 This is, in fact, a common use case, especially when using TinyMCE's `inline` mode. For example, you may wish to break your content into sections (e.g., titles, paragraphs) that the user can edit individually.
 
 [[multiple-editor-instances-sharing-the-same-configuration]]
-== Multiple editor instances sharing the same configuration 
+== Multiple editor instances sharing the same configuration
 anchor:multipleeditorinstancessharingthesameconfiguration[historical anchor]
 
 In the following example, the page is broken into two separate editable areas, each sharing a single editor configuration. Each editable `div` is provided the same `class` of 'myeditablediv'. When the user clicks within the content area, TinyMCE is loaded for just that area.
@@ -51,7 +50,7 @@ Pro tip: note that the reason the css selector in this example is a `class` is b
 ====
 
 [[multiple-editor-instances-each-with-a-unique-configuration]]
-== Multiple editor instances, each with a unique configuration 
+== Multiple editor instances, each with a unique configuration
 anchor:multipleeditorinstanceseachwithauniqueconfiguration[historical anchor]
 
 In this next example, each editable area is loaded with an instance of TinyMCE with a unique configuration. This is especially helpful when different content areas have different needs. For example, you may want to provide a simple configuration for editing titles and a complete configuration for editing body content. This is accomplished by defining a `tinymce.init` object/method for each desired configuration.

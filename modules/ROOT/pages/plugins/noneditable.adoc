@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Noneditable Plugin
 :description: Prevent users from changing content within elements. Ideal for templates.
 :keywords: noneditable contenteditable editable mceNonEditable noneditable_editable_class noneditable_noneditable_class noneditable_regexp
@@ -30,7 +29,7 @@ tinymce.init({
 When you have existing classes that cannot be removed, you may combine MCE classes with the existing class in the following manner:
 
 [[non-editable-div-example]]
-===== Non-editable div example 
+===== Non-editable div example
 anchor:non-editabledivexample[historical anchor]
 
 [source,html]
@@ -39,7 +38,7 @@ anchor:non-editabledivexample[historical anchor]
 ----
 
 [[editable-div-example]]
-===== Editable div example 
+===== Editable div example
 anchor:editabledivexample[historical anchor]
 
 [source,html]

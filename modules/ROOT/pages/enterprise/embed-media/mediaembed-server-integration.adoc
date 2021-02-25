@@ -1,7 +1,6 @@
 :rootDir: ../../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Integrate Enhanced Media Embed Server
 :description: Using the Enhanced Media Embed server with non-public content such as a corporate CMS.
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
@@ -15,7 +14,7 @@ There are three options for enhancing the embeds created for private content by 
 * Develop your own custom endpoint that returns JSON in the Tiny Enhanced Media Embed format
 
 [[a-note-on-cookies--authentication]]
-== A note on cookies & authentication 
+== A note on cookies & authentication
 anchor:anoteoncookiesauthentication[historical anchor]
 
 If the content or endpoint is on the same domain as the Enhanced Media Embed server, cookies will be forwarded to that server. This should reuse the existing login of the user in a CMS environment.
@@ -29,7 +28,7 @@ As an example:
 * Because your content, oEmbed endpoint and Enhanced Media Embed server are all on the same domain, `http://mydomain.example.com/cms/secretcontent` is embeddable using cookie passthrough
 
 [[annotate-content-with-open-graph-or-other-meta-tags]]
-== Annotate content with Open Graph or other meta tags 
+== Annotate content with Open Graph or other meta tags
 anchor:annotatecontentwithopengraphorothermetatags[historical anchor]
 
 [[opengraph]]
@@ -56,7 +55,7 @@ Additionally, you can specify a video or audio resource to include in the embed 
 * `og:audio` & `og:audio:type` (only MP3 is supported across all browsers)
 
 [[seo-tags]]
-=== SEO tags 
+=== SEO tags
 anchor:seotags[historical anchor]
 
 As an alternative to Open Graph tags, you can include meta tags using the older style recommended by search engines such as Google.
@@ -82,7 +81,7 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 * Iframely can only be enabled or disabled as a global option. If Iframely is enabled, then all content must be world accessible and cookie passthrough will not happen.
 
 [[custom-api]]
-== Custom API 
+== Custom API
 anchor:customapi[historical anchor]
 
 As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or Tiny Enhanced Media Embed formats.
@@ -90,7 +89,7 @@ As an alternative to including meta tags in your content, you can write a custom
 See the docs on link:{baseurl}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint[configuring a custom endpoint] for details on getting the Enhanced Media Embed server to utilise your custom API.
 
 [[oembed-endpoint]]
-=== OEmbed endpoint 
+=== OEmbed endpoint
 anchor:oembedendpoint[historical anchor]
 
 This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Enhanced Media Embed server will embed a link:{baseurl}/enterprise/embed-media/mediaembed-server-config/#summarycards[summary card].
@@ -107,7 +106,7 @@ This is a popular choice and many CMSs have existing plugins that support oEmbed
 * Error messages aren't defined as part of the spec
 
 [[tiny-enhanced-media-embed-endpoint]]
-=== Tiny Enhanced Media Embed endpoint 
+=== Tiny Enhanced Media Embed endpoint
 anchor:tinyenhancedmediaembedendpoint[historical anchor]
 
 The other option for developing a custom API endpoint is to return JSON in the link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat[Tiny Enhanced Media Embed format].
@@ -125,11 +124,11 @@ The other option for developing a custom API endpoint is to return JSON in the l
 * The TinyMCE editor does not fully take advantage of this format yet
 
 [[tiny-enhanced-media-embed-format]]
-=== Tiny Enhanced Media Embed format 
+=== Tiny Enhanced Media Embed format
 anchor:tinyenhancedmediaembedformat[historical anchor]
 
 [[http-response-status-codes]]
-==== HTTP response status codes 
+==== HTTP response status codes
 anchor:httpresponsestatuscodes[historical anchor]
 
 * HTTP 200 (OK): link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#ephoxembedobj[`EphoxEmbedObj`]
@@ -138,7 +137,7 @@ anchor:httpresponsestatuscodes[historical anchor]
 * HTTP 500 (Unexpected Error): link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#errorobj[`ErrorObj`]
 
 [[json-response-objects]]
-==== JSON response objects 
+==== JSON response objects
 anchor:jsonresponseobjects[historical anchor]
 
 [[ephoxembedobj]]
@@ -347,7 +346,7 @@ No additional fields when `type` is `unbounded`.
  ** A string message for developers / support people.
 
 [[summary-cards]]
-== Summary cards 
+== Summary cards
 anchor:summarycards[historical anchor]
 
 When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
@@ -367,7 +366,7 @@ When the Enhanced Media Embed server generates a summary card of a URL (using th
 ----
 
 [[recommended-css]]
-==== Recommended CSS 
+==== Recommended CSS
 anchor:recommendedcss[historical anchor]
 
 [source,css]

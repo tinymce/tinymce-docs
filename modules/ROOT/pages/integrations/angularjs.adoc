@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = Angular 1 Integration
 :description: This directive allows you to add a TinyMCE editor to your form elements.
 :keywords: integration integrate angular angularjs angular1
@@ -10,7 +9,7 @@ include::{rootDir}_attributes.adoc[]
 Integration with Angular 1 is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and link:/docs/demo/basic-example/[tinymce].
 
 [[1-setting-up-the-project-directory]]
-== 1. Setting up the project directory 
+== 1. Setting up the project directory
 anchor:1settinguptheprojectdirectory[historical anchor]
 
 First, we create a directory for the project called "tinymce-angular-demo". After that, we run "bower init"in the new directory, this will set up a new empty bower project.
@@ -22,7 +21,7 @@ $ bower init
 ----
 
 [[2-installation-of-angular-ui-tinymce-and-tinymce]]
-== 2. Installation of angular, ui-tinymce and tinymce 
+== 2. Installation of angular, ui-tinymce and tinymce
 anchor:2installationofangularui-tinymceandtinymce[historical anchor]
 
 We now install the angular-ui-tinymce package this will automatically install angular and tinymce.
@@ -32,7 +31,7 @@ $ bower install angular-ui-tinymce --save
 ----
 
 [[3-creating-the-demohtml-file]]
-== 3. Creating the demo.html file 
+== 3. Creating the demo.html file
 anchor:3creatingthedemohtmlfile[historical anchor]
 
 This *demo.html* file has angular properties and two calls to the controller.
@@ -56,7 +55,7 @@ This *demo.html* file has angular properties and two calls to the controller.
 ----
 
 [[4-creating-the-appjs-file]]
-== 4. Creating the app.js file 
+== 4. Creating the app.js file
 anchor:4creatingtheappjsfile[historical anchor]
 
 The *app.js* file shows you how to work with the model that automatically updates tinymce.
@@ -84,13 +83,13 @@ $scope.tinymceOptions = {
 ----
 
 [[5-testing-the-application]]
-== 5. Testing the application 
+== 5. Testing the application
 anchor:5testingtheapplication[historical anchor]
 
 You can now test the application by running the demo.html page in your favorite browser.
 
 [[a-note-about-integrations]]
-==== A note about integrations 
+==== A note about integrations
 anchor:anoteaboutintegrations[historical anchor]
 
 NOTE:  We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

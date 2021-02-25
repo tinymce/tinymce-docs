@@ -1,7 +1,6 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
 :imagesDir: {rootDir}images/
-include::{rootDir}_attributes.adoc[]
 = 07. Upload Images
 :description: Extend TinyMCE with powerful image uploading capabilities.
 :keywords: uploader uploadImages image handler
@@ -17,7 +16,7 @@ Local images can be uploaded to TinyMCE through the use of the new `editor.uploa
 It is recommended that the `editor.uploadImages()` function be executed before submitting the editor contents to the server, to avoid saving content as Base 64. Once all the images are uploaded, a success callback can be utilized to execute the code.  This success callback can be used to save the editor's content to the server through a `POST`.
 
 [[using-uploadimages-with-jquery]]
-===== Using uploadImages with jQuery 
+===== Using uploadImages with jQuery
 anchor:usinguploadimageswithjquery[historical anchor]
 
 [source,js]
@@ -30,7 +29,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 ----
 
 [[using-uploadimages-and-then-posting-a-form]]
-===== Using uploadImages and then posting a form 
+===== Using uploadImages and then posting a form
 anchor:usinguploadimagesandthenpostingaform[historical anchor]
 
 [source,js]
@@ -41,7 +40,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 ----
 
 [[image-uploader-requirements]]
-== Image uploader requirements 
+== Image uploader requirements
 anchor:imageuploaderrequirements[historical anchor]
 
 To upload local images to the remote server, you need a server-side upload handler script that accepts the images on the server, saves them appropriately, and returns a JSON object containing the location of the saved images.
@@ -66,7 +65,7 @@ This server-side upload handler must return a JSON object that contains a "locat
 ----
 
 [[image-uploader-options]]
-== Image uploader options 
+== Image uploader options
 anchor:imageuploaderoptions[historical anchor]
 
 Multiple configuration options that affect the operation of this feature.  These options are listed below.
@@ -90,7 +89,7 @@ NOTE: Please note, for image uploads to function correctly, either the `images_u
 |===
 
 [[example-of-typical-setup]]
-===== Example of typical setup 
+===== Example of typical setup
 anchor:exampleoftypicalsetup[historical anchor]
 
 [source,js]
@@ -104,7 +103,7 @@ tinymce.init({
 ----
 
 [[rolling-your-image-handler]]
-== Rolling your image handler 
+== Rolling your image handler
 anchor:rollingyourimagehandler[historical anchor]
 
 If the default behavior of TinyMCE's image upload logic is not right for you, you may set your behavior by using the images_upload_handler configuration property.
@@ -145,7 +144,7 @@ xhr.send(formData);   } });
 ----
 
 [[cors-considerations]]
-== CORS considerations 
+== CORS considerations
 anchor:corsconsiderations[historical anchor]
 
 You may choose for your web application to upload image data to a separate domain. If so, you need to configure http://en.wikipedia.org/wiki/Cross-origin_resource_sharing[Cross-origin resource sharing (CORS)] for your application to comply with JavaScript "same origin" restrictions.
@@ -163,7 +162,7 @@ All supported browsers print a message to the JavaScript console if there is a C
 The link:{baseurl}/advanced/php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
 
 [[further-reading-on-cors]]
-=== Further reading on CORS 
+=== Further reading on CORS
 anchor:furtherreadingoncors[historical anchor]
 
 * http://www.w3.org/wiki/CORS_Enabled[W3C Wiki - CORS Enabled]

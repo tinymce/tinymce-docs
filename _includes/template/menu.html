@@ -10,7 +10,8 @@
         background-color: white;
     }
 
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
         header.modern-header {
             position: relative;
         }
@@ -51,7 +52,7 @@
         width: 25%;
     }
 
-    .nav-container__homepage-link-container > span {
+    .nav-container__homepage-link-container>span {
         color: #3ED0A6;
         display: inline-block;
         margin-bottom: 5px;
@@ -104,7 +105,7 @@
         padding-top: 6px;
     }
 
-    .menu-mobile .menu-nav > .header-my-account-button-mobile {
+    .menu-mobile .menu-nav>.header-my-account-button-mobile {
         display: none;
     }
 
@@ -182,7 +183,6 @@
             display: block;
         }
     }
-
 </style>
 
 <header class="modern-header">
@@ -190,31 +190,28 @@
         <div class="nav-container__menu-container">
             <div class="nav-container__homepage-link-container">
                 <a data-marketing="link" type="primary" href="/docs-3x">
-                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTg2cHgiIGhlaWdodD0iMTk4cHgiIHZpZXdCb3g9IjAgMCA1ODYgMTk4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA1MC4yICg1NTA0NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+R3JvdXA8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAiIGZpbGw9IiMxOTc1RDEiPgogICAgICAgICAgICA8cGF0aCBkPSJNODcuOCw2MS4xOSBMMTMxLjcsNjEuMTkgTDEzMS43LDcxIEw4Ny44LDcxIEw4Ny44LDYxLjE5IFogTTg3LjgsMTE5LjgxIEwxMzEuNywxMTkuODEgTDEzMS43LDEyOS41OCBMODcuOCwxMjkuNTggTDg3LjgsMTE5LjgxIFogTTczLjE3LDEwMC4yNyBMMTQ2LjMzLDEwMC4yNyBMMTQ2LjMzLDExMCBMNzMuMTcsMTEwIEw3My4xNywxMDAuMjcgWiBNNzMuMTcsODAuNzMgTDE0Ni4zMyw4MC43MyBMMTQ2LjMzLDkwLjUgTDczLjE3LDkwLjUgTDczLjE3LDgwLjczIFogTTI5LjI3LDkzIEwxMDkuNzgsMTcxLjE1IEwxOTAuMjMsOTIuOTkgTDEwOS43OCwxNC43OSBMMjkuMjcsOTMgWiBNMTA5LjQyLDAuMTMgTDE5Ny41NSw4NSBMMjEwLjMyLDczLjA5IEwyMTkuNSw4MS40IEwxMDkuNzUsMTg4LjIgTDIwLjQ1LDEwMS41MSBMOC42MywxMTIuOTIgTDAsMTA0LjU1IEwxMDkuNDIsMC4xMyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTUyMi40NiwxNTQuNDYgTDQ3Ni44LDQ2LjkyIEw0OTIuNjcsNDYuOTIgTDUzMCwxMzUuNTUgTDU2OS44Niw0Ni45MiBMNTg1LjcyLDQ2LjkyIEw1MTcuNzQsMTk3LjE1IEw1MDIuMDksMTk3LjE1IEw1MjIuNDYsMTU0LjQ2IFogTTM2NS43Miw0Ni45MiBMMzgwLjcyLDQ2LjkyIEwzODAuNzIsNjEuMTUgTDM4MS4xNSw2MS4xNSBDMzgyLjU2NzI5Nyw1OS4xOTQzMzMxIDM4NC4xNDI1NzUsNTcuMzU4MTgwMyAzODUuODYsNTUuNjYgQzM4OC4wOTA4MDEsNTMuNDU2MDMwMSAzOTAuNjE4NTY0LDUxLjU3NDUxMjkgMzkzLjM3LDUwLjA3IEMzOTYuNjU4ODA1LDQ4LjI1NDM1MTIgNDAwLjE0NDg5MSw0Ni44MjE2NjcgNDAzLjc2LDQ1LjggQzQwOC4xMjIwOSw0NC41OTExMTU4IDQxMi42MzM5MTMsNDQuMDA4NjE5MyA0MTcuMTYsNDQuMDcgQzQyMy45MjAwODQsNDQuMDExMTE3NyA0MzAuNjQ2ODA3LDQ1LjAyMzY3MDIgNDM3LjA5LDQ3LjA3IEM0NDMuNTI2NjI4LDQ5LjMwNTg4OTYgNDQ5LjM4MjU0LDUyLjk1MTMxNCA0NTQuMjMsNTcuNzQgQzQ1OC44ODk1MTEsNjIuMTQzMzE1IDQ2Mi41MTMzNTcsNjcuNTI2MTQ0IDQ2NC44NCw3My41IEM0NjcuNTA2NjY3LDc5LjkyNjY2NjcgNDY4Ljg0LDg3Ljc1MzMzMzMgNDY4Ljg0LDk2Ljk4IEw0NjguODQsMTU4LjE3IEw0NTMuODQsMTU4LjE3IEw0NTMuODQsOTYuOTMgQzQ1My44NCw4OS41OTY2NjY3IDQ1Mi44MDMzMzMsODMuNDMgNDUwLjczLDc4LjQzIEM0NDguOTg0NTY2LDczLjg4NzA4OTIgNDQ2LjI1MjEzNSw2OS43ODg0NDM0IDQ0Mi43Myw2Ni40MyBDNDM4Ljk0NDk3Miw2Mi44NDQxNDU3IDQzNC4zNDY5NjQsNjAuMjI5NDU3NCA0MjkuMzMsNTguODEgQzQyMS40NjUxMDQsNTYuMjM2OTE2NyA0MTIuOTg0ODk2LDU2LjIzNjkxNjcgNDA1LjEyLDU4LjgxIEMzOTUuMzk1Nzg3LDYxLjUzNzQxODcgMzg3LjUyOTgxOSw2OC42OTUzNzU2IDM4My45LDc4LjEyIEMzODEuNjk4MDEsODMuNzg2MjQ1NiAzODAuNjQwOTc1LDg5LjgzMjc1NjMgMzgwLjc5LDk1LjkxIEwzODAuNzksMTU4LjEyIEwzNjUuNzksMTU4LjEyIEwzNjUuNzIsNDYuOTIgWiBNMzIyLjg1LDQ2LjkyIEwzMzcuODUsNDYuOTIgTDMzNy44NSwxNTguMTIgTDMyMi44NSwxNTguMTIgTDMyMi44NSw0Ni45MiBaIE0zMjIuODUsNy42OSBMMzM3Ljg1LDcuNjkgTDMzNy44NSwzMy4zIEwzMjIuODUsMzMuMyBMMzIyLjg1LDcuNjkgWiBNMjYzLjkyLDU5LjY5IEwyMzkuMjcsNTkuNjkgTDIzOS4yNyw0Ni45MiBMMjYzLjkyLDQ2LjkyIEwyNjMuOTIsNy42OSBMMjc4LjkyLDcuNjkgTDI3OC45Miw0Ni45MiBMMzA3LDQ2LjkyIEwzMDcsNTkuNzMgTDI3OC45Miw1OS43MyBMMjc4LjkyLDE1OC4xMiBMMjYzLjkyLDE1OC4xMiBMMjYzLjkyLDU5LjY5IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
-                         alt="Tiny logo" height="32px">
+                    <img src="/images/for-base/logo-spaces-docs-for-base.png" srcset="
+                      /images/for-base/logo-spaces-docs-for-base.png 1x,
+                      /images/for-base/logo-spaces-docs-for-base@2x.png 2x,
+                      /images/for-base/logo-spaces-docs-for-base@3x.png 3x
+                    " alt="Tiny logo" height="29px" />
                 </a>
-                <span>
-                    <a href="/docs-3x" class="nav-container__docs-link">Docs</a>
-                </span>
             </div>
 
             {% include template/search.html %}
 
             <div class="nav-container__right-container">
 
-                <a href="https://apps.tiny.cloud/?add-to-cart=197933"
-                   class="header-get-tiny-button narrow"
-                   data-marketing="docs-header-get-started">Get Free API Key</a>
+                <a href="https://apps.tiny.cloud/?add-to-cart=197933" class="header-get-tiny-button narrow"
+                    data-marketing="docs-header-get-started">Get Free API Key</a>
 
-                <a href="https://apps.tiny.cloud/my-account/"
-                   class="header-my-account-button"
-                   data-marketing="docs-header-my-account">
+                <a href="https://apps.tiny.cloud/my-account/" class="header-my-account-button"
+                    data-marketing="docs-header-my-account">
 
                     <i class="header-my-account-button__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <g transform="translate(.75 .75)" stroke-width="1.5" fill="none" fill-rule="evenodd"
-                               stroke-linecap="round"
-                               stroke-linejoin="round">
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="11.25" cy="9" r="5.25"></circle>
                                 <path d="M18.163 20.126a9.746 9.746 0 0 0-13.826 0"></path>
                                 <circle cx="11.25" cy="11.25" r="11.25"></circle>
@@ -231,21 +228,17 @@
     <div class="menu-mobile modern-menu-mobile">
         <a class="modern-menu-mobile__btn-open btn-open" href="#" title="Toggle menus"></a>
         <nav class="menu-nav">
-            <a class="link-menu header-get-tiny-button-mobile"
-               href="https://apps.tiny.cloud/?add-to-cart=197933"
-               data-marketing="docs-header-get-started">Get Started</a>
+            <a class="link-menu header-get-tiny-button-mobile" href="https://apps.tiny.cloud/?add-to-cart=197933"
+                data-marketing="docs-header-get-started">Get Started</a>
 
-            <a href="https://apps.tiny.cloud/my-account/"
-               class="link-menu header-my-account-button-mobile"
-               data-marketing="docs-header-my-account">My Account</a>
+            <a href="https://apps.tiny.cloud/my-account/" class="link-menu header-my-account-button-mobile"
+                data-marketing="docs-header-my-account">My Account</a>
 
-            <a class="link-menu store-button-mobile"
-               href="https://apps.tiny.cloud/cart/"
-               data-marketing="tiny-news-cart-link">Cart</a>
+            <a class="link-menu store-button-mobile" href="https://apps.tiny.cloud/cart/"
+                data-marketing="tiny-news-cart-link">Cart</a>
 
-            <a class="link-menu store-button-mobile"
-               href="https://apps.tiny.cloud/signup/"
-               data-marketing="tiny-docs-news-back-home">Checkout</a>
+            <a class="link-menu store-button-mobile" href="https://apps.tiny.cloud/signup/"
+                data-marketing="tiny-docs-news-back-home">Checkout</a>
 
             <a class="link-menu" href="/" data-marketing="docs-header-back-home">
                 Return to Tiny.cloud

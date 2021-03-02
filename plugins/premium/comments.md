@@ -66,6 +66,8 @@ This option is only available for the first comment in a conversation. Once the 
 
 ### Resolve conversation
 
+{{site.requires_5_8v}}
+
 This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
 
 1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
@@ -213,7 +215,9 @@ tinymce.init({
 
 ##### `tinycomments_can_resolve`
 
-_Optional_ - By adding this option, a _Resolve Conversation_ item will be added to the dropdown menu of the first comment in a conversation. This callback sets the author permissions for _resolving comment conversations_.
+{{site.requires_5_8v}}
+
+_Optional_ - This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation. This callback sets the author permissions for _resolving comment conversations_.
 
 **Type:** `Function`
 

@@ -128,7 +128,9 @@ The done callback needs to take an object of the form:
 
 ### `tinycomments_resolve`
 
-By adding this option, a _Resolve Conversation_ item will be added to the dropdown menu of the first comment in a conversation.
+{{site.requires_5_8v}}
+
+This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation.
 
 The `tinycomments_resolve` function should asynchronously return a flag indicating whether the comment/comment thread was resolved using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 

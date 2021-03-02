@@ -68,6 +68,8 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **C
 - Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - `tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve).
 - Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - `tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve).
 
+With the new resolve conversation functionality it is possible for the user to perform an action which has another semantic meaning than that of deleting a conversation. It is up to the integrator to perform some additional action after a user has resolved a conversation.
+
 ## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} 5.8 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:

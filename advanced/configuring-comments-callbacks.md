@@ -48,8 +48,7 @@ The `tinycomments_create` function is given a request (req) object as the first 
 
 * **createdAt**: The date the comment was created.
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
   conversationUid: string, // the new conversation uid
@@ -68,14 +67,13 @@ The `tinycomments_reply` function saves the comment as a reply to an existing co
 
 The `tinycomments_reply` function is given a request (req) object as the first parameter, which has these fields:
 
-* **conversationUid**: The uid of the conversation the reply is a part of.
+* **conversationUid**: The uid of the conversation the reply is targeting.
 
 * **content**: The content of the comment to create.
 
 * **createdAt**: The date the comment was created.
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
   commentUid: string // the value of the new comment uid
@@ -90,7 +88,7 @@ The `tinycomments_edit_comment` function allows updating or changing original co
 
 The `tinycomments_edit_comment` function is given a request (req) object as the first parameter, which has these fields:
 
-* **conversationUid**: The uid of the conversation the reply is a part of.
+* **conversationUid**: The uid of the conversation the reply is targeting.
 
 * **commentUid**: The uid of the comment to edit (it can be the same as `conversationUid` if editing the first comment in a conversation)
 
@@ -98,8 +96,7 @@ The `tinycomments_edit_comment` function is given a request (req) object as the 
 
 * **modifiedAt**: The date the comment was modified.
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
   canEdit: boolean, // whether or not the Edit succeeded
@@ -109,14 +106,13 @@ The done callback needs to take an object of the form:
 
 ### `tinycomments_delete`
 
-The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment or comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
-The `tinycomments_delete` function is given a request (req) object as the first parameter, which has this field:
+The `tinycomments_delete` function is passed a (`req`) object as the first parameter, which contains the following key-value pair:
 
-* **conversationUid**: The uid of the conversation the reply is a part of.
+* **conversationUid**: The uid of the conversation the reply is targeting.
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
   canDelete: boolean // whether or not the conversation can be deleted
@@ -132,14 +128,13 @@ The done callback needs to take an object of the form:
 
 This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation.
 
-The `tinycomments_resolve` function should asynchronously return a flag indicating whether the comment/comment thread was resolved using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_resolve` function should asynchronously return a flag indicating whether the comment or comment thread was resolved using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
-The `tinycomments_resolve` function is given a request (req) object as the first parameter, which has this field:
+The `tinycomments_resolve` function is passed a (`req`) object as the first parameter, which contains the following key-value pair:
 
-* **conversationUid**: The uid of the conversation the reply is a part of.
+* **conversationUid**: The uid of the conversation the reply is targeting.
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
   canResolve: boolean // whether or not the conversation can be resolved
@@ -147,7 +142,7 @@ The done callback needs to take an object of the form:
 }
 ```
 
-> **Note**: Failure to resolve due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+> **Note**: Failure to resolve due to permissions or business rules should be indicated by `canResolve: false`, while unexpected errors should be indicated using the `fail` callback.
 
 ### `tinycomments_delete_all`
 
@@ -155,8 +150,7 @@ The `tinycomments_delete_all` function should asynchronously return a flag indic
 
 The `tinycomments_delete_all` function is given a request (req) object as the first parameter with no fields.
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
   canDelete: boolean, // whether or not all conversations can be deleted
@@ -164,19 +158,18 @@ The done callback needs to take an object of the form:
 }
 ```
 
-> **Note**: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+> **Note**: Failure to delete due to permissions or business rules should be indicated by `canDelete: false`, while unexpected errors should be indicated using the `fail` callback.
 
 ### `tinycomments_delete_comment`
 
-The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment or comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_delete_comment` function is given a request (req) object as the first parameter, which has these fields:
 
-* **conversationUid**: The uid of the conversation the reply is a part of.
+* **conversationUid**: The uid of the conversation the reply is targeting.
 * **commentUid**: The uid of the comment to delete (cannot be the same as conversationUid)
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
   canDelete: boolean, // whether or not an individual comment can be deleted
@@ -196,12 +189,11 @@ The **Display names** configuration must be considered for the `tinycomments_loo
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
-The `tinycomments_lookup` function is given a request (req) object as the first parameter, which has this field:
+The `tinycomments_lookup` function is passed a (`req`) object as the first parameter, which contains the following key-value pair:
 
-* **conversationUid**: The uid of the conversation the reply is a part of.
+* **conversationUid**: The uid of the conversation the reply is targeting.
 
-The done callback needs to take an object of the form:
-
+The `done` callback should accept the following object:
 ```js
 {
  conversation: {

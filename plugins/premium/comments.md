@@ -22,7 +22,7 @@ The Comments plugin provides the ability to start or join a conversation by addi
 ### To add a comment
 
 1. Select the text from the desired location in the editor body.
-1. From the navigation menu, choose **Insert**-> **Add Comment** or click on the **Comments** ![Comments]({{site.baseurl}}/images/comments-toolbar-button.png) toolbar button to add the comment.
+1. From the navigation menu, choose **Insert**-> **Add Comment** or click on the **Add comment** ![Add comment]({{site.baseurl}}/images/icons/comment-add.svg) toolbar button to add the comment.
 1. The Comment dialog box appears in the sidebar of the editor instance.
 1. Type the comment in the box displaying "_Say something…_" suggested text.
 1. Press **Clear** to delete or **Save** to store the input comment.

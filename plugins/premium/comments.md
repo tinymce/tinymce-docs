@@ -37,7 +37,7 @@ Note: The above procedure can be followed for adding multiple comments to the do
 
 Follow this procedure to edit a comment.
 
-1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
+1. Click on the ellipsis ![(ellipsis - 3 horizontal dots)]({{site.baseurl}}/images/icons/image-options.svg) icon above the comments box to expand the menu.
 1. Select **Edit** from the menu items.
 1. The comment field becomes editable. Make the required changes.
 1. Click **Cancel** to discard or **Save** to store the changes.
@@ -46,7 +46,7 @@ Follow this procedure to edit a comment.
 
 Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
 
-1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
+1. Click on the ellipsis ![(ellipsis - 3 horizontal dots)]({{site.baseurl}}/images/icons/image-options.svg) icon above the comments box to expand the menu.
 1. Select **Delete** from the menu items.
 1. The following options appear in the comments sidebar:<br/>
 ![delete comment]({{site.baseurl}}/images/comments-delete-comment.png)
@@ -56,7 +56,7 @@ Follow this procedure to delete a comment. This option is not available for the 
 
 This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
 
-1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
+1. Click on the ellipsis ![(ellipsis - 3 horizontal dots)]({{site.baseurl}}/images/icons/image-options.svg) icon above the comments box to expand the menu.
 1. Select **Delete conversation** from the menu items.
 1. The following decision dialog box will appear:<br/>
 ![delete conversation]({{site.baseurl}}/images/comments-delete-conversation.png)
@@ -70,7 +70,7 @@ This option is only available for the first comment in a conversation. Once the 
 
 This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
 
-1. Click on this ![3 dots]({{site.baseurl}}/images/comments-3dots.png) icon above the comments box to expand the menu.
+1. Click on the ellipsis ![(ellipsis - 3 horizontal dots)]({{site.baseurl}}/images/icons/image-options.svg) icon above the comments box to expand the menu.
 1. Select **Resolve conversation** from the menu items.
 1. The following decision dialog box will appear:<br/>
 ![resolve conversation]({{site.baseurl}}/images/comments-resolve-conversation.png)

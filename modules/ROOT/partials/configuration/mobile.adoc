@@ -1,12 +1,12 @@
 [[mobile]]
 == mobile
 
-This option allows you specify an alternative config that will extend the existing desktop config when the editor is loaded on a mobile device. This gives you the flexibility to override settings specifically for link:{baseurl}/mobile[mobile] and really customize the mobile experience.
+This option allows you specify an alternative config that will extend the existing desktop config when the editor is loaded on a mobile device. This gives you the flexibility to override settings specifically for link:{baseurl}/mobile/[mobile] and really customize the mobile experience.
 
 *Type:* `Object`
 
 [[example-of-mobile-specific-config]]
-===== Example of mobile specific config 
+===== Example of mobile specific config
 anchor:exampleofmobilespecificconfig[historical anchor]
 
 This example shows how to setup a mobile section override some of the desktop settings with link:{baseurl}/configure/editor-appearance/#mobile[mobile] specific settings.

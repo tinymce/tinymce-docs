@@ -3,12 +3,12 @@
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server
 
 [[server-side-component-installation]]
-== Server-side component installation 
+== Server-side component installation
 anchor:server-sidecomponentinstallation[historical anchor]
 
 Some TinyMCE Enterprise features require a server-side component. If you're using the TinyMCE cloud solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
-Server-side components must be deployed onto a Java Servlet 3.0 compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server. To discuss support for additional Java application servers, please contact us at link:mailto:sales@tiny.cloud[sales@tiny.cloud]
+Server-side components must be deployed onto a Java Servlet 3.0 compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server. To discuss support for additional Java application servers, please contact us at link:mailto:sales@tiny.cloud/[sales@tiny.cloud]
 
 The following server-side components are included in the TinyMCE Self-hosted package:
 
@@ -33,7 +33,7 @@ NOTE: The "Allowed Origins" service (ephox-allowed-origins.war) has been depreca
 This guide will help you get these server-side components up and running.
 
 [[step-1-install-a-java-application-server]]
-=== Step 1. Install a Java application server 
+=== Step 1. Install a Java application server
 anchor:step1installajavaapplicationserver[historical anchor]
 
 If you've already got a Java application server like Jetty or Tomcat installed, skip to Step 2.
@@ -46,7 +46,7 @@ If you don't, pick either http://tomcat.apache.org/[Tomcat] or http://www.eclips
 ====
 
 [[step-2-deploy-server-side-components]]
-=== Step 2. Deploy server-side components 
+=== Step 2. Deploy server-side components
 anchor:step2deployserver-sidecomponents[historical anchor]
 
 Deploy all the WAR files that came packaged with the TinyMCE Enterprise Self-hosted package to your newly installed Java application server:
@@ -63,13 +63,13 @@ More information can be found in the documentation of your chosen application se
 * http://www.eclipse.org/jetty/documentation/current/configuring-deployment.html[Deploying applications with Jetty]
 
 [[step-3-create-a-configuration-file]]
-=== Step 3. Create a configuration file 
+=== Step 3. Create a configuration file
 anchor:step3createaconfigurationfile[historical anchor]
 
 Refer to the link:{baseurl}/enterprise/server/configure/[Configure] page for the details and come back here when you're done.
 
 [[step-4-pass-the-configuration-file-to-the-java-application-server]]
-=== Step 4. Pass the configuration file to the Java application server 
+=== Step 4. Pass the configuration file to the Java application server
 anchor:step4passtheconfigurationfiletothejavaapplicationserver[historical anchor]
 
 [NOTE]
@@ -88,7 +88,7 @@ All Windows examples will assume the name of your configuration file is `applica
 ===== Tomcat
 
 [[from-the-command-line]]
-====== From the command line 
+====== From the command line
 anchor:fromthecommandline[historical anchor]
 
 The following assumes you've downloaded the Tomcat 9.0 zip archive from the Tomcat website, unpacked it and you're working from the unpacked Tomcat directory.
@@ -110,7 +110,7 @@ After editing `setenv.bat`, run the following command to start Tomcat:
 For further information see the documentation on https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt[running Tomcat 9.0].
 
 [[as-a-windows-service]]
-====== As a Windows service 
+====== As a Windows service
 anchor:asawindowsservice[historical anchor]
 
 If you download the Windows installer, Tomcat 9.0 will always be installed as a Windows system service. See the notes on https://tomcat.apache.org/tomcat-9.0-doc/setup.html#Windows[Windows setup] for Tomcat 9.0 and the instructions for setting JVM system properties in the https://tomcat.apache.org/tomcat-9.0-doc/windows-service-howto.html[Tomcat 9.0 Windows Service HOW-TO].
@@ -194,7 +194,7 @@ The path to the configuration file can simply be supplied as a command option:
  java -Dephox.config.file="/config/file/location/application.conf" -jar /opt/jetty/start.jar
 
 [[as-a-linux-service]]
-====== As a Linux service 
+====== As a Linux service
 anchor:asalinuxservice[historical anchor]
 
 Assuming you've followed the instructions to http://www.eclipse.org/jetty/documentation/current/startup-unix-service.html[Startup a Unix Service using jetty.sh] for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
@@ -204,13 +204,13 @@ Assuming you've followed the instructions to http://www.eclipse.org/jetty/docume
 There should only be a single line in this file defining the `JETTY_ARGS` variable.
 
 [[step-5-restart-the-java-application-server]]
-=== Step 5: Restart the Java application server 
+=== Step 5: Restart the Java application server
 anchor:step5restartthejavaapplicationserver[historical anchor]
 
 After you've completed the steps on this page to link:{baseurl}/enterprise/server/#step2deployserver-sidecomponents[Deploy server-side components], link:{baseurl}/enterprise/server/#step3createaconfigurationfile[Create a configuration file] and link:{baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
 
 [[step-6-set-up-editor-client-instances-to-use-the-server-side-functionality]]
-=== Step 6: Set up editor client instances to use the server-side functionality 
+=== Step 6: Set up editor client instances to use the server-side functionality
 anchor:step6setupeditorclientinstancestousetheserver-sidefunctionality[historical anchor]
 
 Now that the server-side components deployed and running, you'll need to tell your TinyMCE instances where to find them:

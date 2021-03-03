@@ -193,23 +193,23 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | Opens the insert image dialog.
 
 | mceEditImage
-| link:{baseurl}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools/[imagetools]
 | Opens the edit image dialog.
 
 | mceImageRotateRight
-| link:{baseurl}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools/[imagetools]
 | Rotates selected image 90 degrees clockwise.
 
 | mceImageRotateLeft
-| link:{baseurl}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools/[imagetools]
 | Rotates selected image 90 degrees counter clockwise.
 
 | mceImageFlipVertical
-| link:{baseurl}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools/[imagetools]
 | Flips selected image vertically.
 
 | mceImageFlipHorizontal
-| link:{baseurl}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools/[imagetools]
 | Flips selected image horizontally.
 
 | mceInsertDate
@@ -281,66 +281,66 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | Merges the selected cells or opens a dialog if there is no cell selection.
 
 | mceTableInsertRowBefore
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Inserts a row before the current row.
 
 | mceTableInsertRowAfter
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Inserts a row after the current row.
 
 | mceTableInsertColBefore
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Inserts a column before the current column.
 
 | mceTableInsertColAfter
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Inserts a column after the current column.
 
 | mceTableDeleteCol
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Deletes the current column.
 
 | mceTableDeleteRow
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Deletes the current row.
 
 | mceTableCutRow
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Cuts the current row into table clipboard.
 
 | mceTableCopyRow
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Copies the current row into table clipboard.
 
 | mceTablePasteRowBefore
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Pastes the clipboard row before the current row.
 
 | mceTablePasteRowAfter
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Pastes the clipboard row after the current row.
 
 | mceTableDelete
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Deletes the current table.
 
 | mceInsertTable
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Opens the insert table dialog.
 
 | mceTableRowProps
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Opens the table row properties dialog.
 
 | mceTableCellProps
-| link:{baseurl}/plugins/table[table]
+| link:{baseurl}/plugins/table/[table]
 | Opens the table cell properties dialog.
 
 | mceInsertToc
-| link:{baseurl}/plugins/toc[toc]
+| link:{baseurl}/plugins/toc/[toc]
 | Inserts a Table of Contents into the editor.
 
 | mceUpdateToc
-| link:{baseurl}/plugins/toc[toc]
+| link:{baseurl}/plugins/toc/[toc]
 | Updates the Table of Contents, if found in the editor.
 |===

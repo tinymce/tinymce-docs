@@ -8,7 +8,7 @@
 
 TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium plugins.
 
-You may use TinyMCE Cloud without an API key as mentioned in the link:{baseurl}/general-configuration-guide[General Configuration] guide. However, to use our premium plugins or avoid the in-editor developer warning, you need to signup for an API key and update the script tag used to load the editor code into your application.
+You may use TinyMCE Cloud without an API key as mentioned in the link:{baseurl}/general-configuration-guide/[General Configuration] guide. However, to use our premium plugins or avoid the in-editor developer warning, you need to signup for an API key and update the script tag used to load the editor code into your application.
 
 All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This is setup using the link:{baseurl}/plugins/imagetools/[Image Tools] plugin.
 
@@ -31,7 +31,7 @@ To load TinyMCE for the very first time, you need to embed the TinyMCE editor co
 === Step 2: Load, customize and interact with TinyMCE
 anchor:step2loadcustomizeandinteractwithtinymce[historical anchor]
 
-In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of link:{baseurl}/demo/basic-example/[simple examples] and we encourage you to review our walkthrough documentation that will help you link:{baseurl}/quick-start[get started with TinyMCE].
+In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of link:{baseurl}/demo/basic-example/[simple examples] and we encourage you to review our walkthrough documentation that will help you link:{baseurl}/quick-start/[get started with TinyMCE].
 
 [[step-3-specifying-purchased-tinymce-plugins-and-toolbarmenu-items]]
 === Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
@@ -42,13 +42,13 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 * link:{baseurl}/plugins/powerpaste/[PowerPaste]
 * link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide[TinyMCE Cloud].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/[TinyMCE Cloud].
 
 * link:{baseurl}/plugins/imagetools/[Image Tools (with configured image proxy)]
 
 [NOTE]
 ====
-Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide[TinyMCE Cloud].
+Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide/[TinyMCE Cloud].
 ====
 
 * link:{baseurl}/plugins/a11ychecker/[Accessibility Checker]
@@ -108,13 +108,13 @@ Now, you just need to extend your link:{baseurl}/configure/[TinyMCE configuratio
 * link:{baseurl}/plugins/powerpaste/[Powerpaste]
 * link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}//cloud-deployment-guide[TinyMCE Cloud].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}//cloud-deployment-guide/[TinyMCE Cloud].
 
 * link:{baseurl}/plugins/imagetools/[Image Tools (with configured image proxy)]
 
 [NOTE]
 ====
-Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide[TinyMCE Cloud].
+Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide/[TinyMCE Cloud].
 ====
 
 * link:{baseurl}/plugins/a11ychecker/[Accessibility Checker]

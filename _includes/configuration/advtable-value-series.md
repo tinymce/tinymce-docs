@@ -19,13 +19,13 @@ The `advtable_value_series` option configures value series for populating cells 
   numbers: { 
     update: true,
     resizable: false,
-    generator: `GeneratorFunction` // For details, see: 'Usage of generator'
+    generator: `GeneratorFunction` // For details, see: 'Creating a value series generator'
   },
   // English alphabetic series
   alpha: {
     update: true,
     resizable: false,
-    generator: `GeneratorFunction` // For details, see: 'Usage of generator'
+    generator: `GeneratorFunction` // For details, see: 'Creating a value series generator'
   },
 }
 ```

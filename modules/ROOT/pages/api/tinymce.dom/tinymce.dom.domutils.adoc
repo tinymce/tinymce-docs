@@ -1,0 +1,1227 @@
+= tinymce.dom.DOMUtils
+
+Utility class for various DOM manipulation and retrieval functions.
+
+== Examples
+
+[source,prettyprint]
+----
+// Add a class to an element by id in the page
+tinymce.DOM.addClass('someid', 'someclass');
+
+// Add a class to an element by id inside the editor
+tinymce.activeEditor.dom.addClass('someid', 'someclass');
+----
+
+[#properties .anchor]##
+
+== link:#properties[Properties]
+
+[cols=",,,",options="header",]
+|===
+|name |type |summary |defined by
+|DOM |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[[.param-type]#tinymce.dom.DOMUtils#] |Instance of DOMUtils for the current document. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|===
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#domutils[DOMUtils()] |Constructs a new DOMUtils instance. Consult the Wiki for more details on settings etc for this class. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[width="100%",cols="34%,33%,33%",options="header",]
+|===
+|name |summary |defined by
+|link:#add[add()] |Adds the specified element to another element or elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#addclass[addClass()] |Adds a class to the specified element or elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#addstyle[addStyle()] |Adds a style element at the top of the document with the specified cssText content. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#bind[bind()] |Adds an event handler to the specified object. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#create[create()] |Creates a new element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#createfragment[createFragment()] |Creates a document fragment out of the specified HTML string. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#createhtml[createHTML()] |Creates HTML string for element. The element will be closed unless an empty inner HTML string is passed in. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#createrng[createRng()] |Creates a new DOM Range object. This will use the native DOM Range API if it's available. If it's not, it will fall back to the custom TinyMCE implementation. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#decode[decode()] |Entity decodes a string. This method decodes any HTML entities, such as å. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#destroy[destroy()] |Destroys all internal references to the DOM to solve IE leak issues. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#encode[encode()] |Entity encodes a string. This method encodes the most common entities, such as <>"&. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#findcommonancestor[findCommonAncestor()] |Find the common ancestor of two elements. This is a shorter method than using the DOM Range logic. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#fire[fire()] |Fires the specified event name with object on target. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#get[get()] |Returns the specified element by ID or the input element if it isn't a string. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getattrib[getAttrib()] |Returns the specified attribute by name. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getattribs[getAttribs()] |Returns a NodeList with attributes for the element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getnext[getNext()] |Returns the next node that matches selector or function |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getouterhtml[getOuterHTML()] |Returns the outer HTML of an element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getparent[getParent()] |Returns a node by the specified selector function. This function will loop through all parent nodes and call the specified function for each node. If the function then returns true indicating that it has found what it was looking for, the loop execution will then end and the node it found will be returned. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getparents[getParents()] |Returns a node list of all parents matching the specified selector function or pattern. If the function then returns true indicating that it has found what it was looking for and that node will be collected. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getpos[getPos()] |Returns the absolute x, y position of a node. The position will be returned in an object with x, y fields. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getprev[getPrev()] |Returns the previous node that matches selector or function |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getrect[getRect()] |Returns the rectangle for a specific element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getroot[getRoot()] |Returns the root node of the document. This is normally the body but might be a DIV. Parents like getParent will not go above the point of this root node. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getsize[getSize()] |Returns the size dimensions of the specified element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getstyle[getStyle()] |Returns the current style or runtime/computed value of an element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#getviewport[getViewPort()] |Returns the viewport of the window. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#hasclass[hasClass()] |Returns true if the specified element has the specified class. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#hide[hide()] |Hides the specified element(s) by ID by setting the "display" style. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#insertafter[insertAfter()] |Inserts an element after the reference element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#is[is()] |Returns true/false if the specified element matches the specified css pattern. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#isblock[isBlock()] |Returns true/false if the specified element is a block element or not. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#isempty[isEmpty()] |Returns true/false if the specified node is to be considered empty or not. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#ishidden[isHidden()] |Returns true/false if the element is hidden or not by checking the "display" style. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#loadcss[loadCSS()] |Imports/loads the specified CSS file into the document bound to the class. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#nodeindex[nodeIndex()] |Returns the index of the specified node within its parent. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#parsestyle[parseStyle()] |Parses the specified style value into an object collection. This parser will also merge and remove any redundant items that browsers might have added. It will also convert non-hex colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#remove[remove()] |Removes/deletes the specified element(s) from the DOM. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#removeallattribs[removeAllAttribs()] |Removes all attributes from an element or elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#removeclass[removeClass()] |Removes a class from the specified element or elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#rename[rename()] |Renames the specified element and keeps its attributes and children. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#replace[replace()] |Replaces the specified element or elements with the new element specified. The new element will be cloned if multiple input elements are passed in. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#run[run()] |Executes the specified function on the element by id or dom element node or array of elements/id. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#select[select()] |Selects specific elements by a CSS level 3 pattern. For example "div#a1 p.test". This function is optimized for the most common patterns needed in TinyMCE but it also performs well enough on more complex patterns. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#serializestyle[serializeStyle()] |Serializes the specified style object into a string. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#setattrib[setAttrib()] |Sets the specified attribute of an element or elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#setattribs[setAttribs()] |Sets two or more specified attributes of an element or elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#sethtml[setHTML()] |Sets the specified HTML content inside the element or elements. The HTML will first be processed. This means URLs will get converted, hex color values fixed etc. Check processHTML for details. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#setouterhtml[setOuterHTML()] |Sets the specified outer HTML on an element or elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#setstyle[setStyle()] |Sets the CSS style value on a HTML element. The name can be a camelcase string or the CSS style name like background-color. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#setstyles[setStyles()] |Sets multiple styles on the specified element(s). |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#show[show()] |Shows the specified element(s) by ID by setting the "display" style. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#split[split()] a|
+Splits an element into two new elements and places the specified split element or elements between the new ones. For example splitting the paragraph at the bold element in this example
+
+abc**abc**123
+
+would produce
+
+abc
+
+*abc*
+
+123
+
+.
+
+|link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#tohex[toHex()] |Parses the specified RGB color value and returns a hex version of that color. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#toggleclass[toggleClass()] |Toggles the specified class on/off. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#unbind[unbind()] |Removes the specified event handler by name and function from an element or collection of elements. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|link:#uniqueid[uniqueId()] |Returns a unique id. This can be useful when generating elements on the fly. This method will not check if the element already exists. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[tinymce.dom.DOMUtils]
+|===
+
+== Constructors
+
+[#domutils .anchor]##
+
+=== link:#domutils[DOMUtils]
+
+public constructor function DOMUtils(doc:Document, settings:settings)
+
+Constructs a new DOMUtils instance. Consult the Wiki for more details on settings etc for this class.
+
+==== Parameters
+
+* [.param-name]#doc# [.param-type]#(Document)# - Document reference to bind the utility class to.
+* [.param-name]#settings# [.param-type]#(settings)# - Optional settings collection.
+
+== Methods
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(parentElm:String, name:String, attrs:Object, html:String, create:Boolean):Element, Array
+
+Adds the specified element to another element or elements.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Adds a new paragraph to the end of the active editor
+tinymce.activeEditor.dom.add(tinymce.activeEditor.getBody(), 'p', {title: 'my title'}, 'Some content');
+----
+
+==== Parameters
+
+* [.param-name]#parentElm# [.param-type]#(String)# - Element id string, DOM node element or array of ids or elements to add to.
+* [.param-name]#name# [.param-type]#(String)# - Name of new element to add or existing element to add.
+* [.param-name]#attrs# [.param-type]#(Object)# - Optional object collection with arguments to add to the new element(s).
+* [.param-name]#html# [.param-type]#(String)# - Optional inner HTML contents to add for each element.
+* [.param-name]#create# [.param-type]#(Boolean)# - Optional flag if the element should be created or added.
+
+==== Return value
+
+* [.return-type]#Element# - Element that got created, or an array of created elements if multiple input elements were passed in.
+* [.return-type]#Array# - Element that got created, or an array of created elements if multiple input elements were passed in.
+
+[#addclass .anchor]##
+
+=== link:#addclass[addClass]
+
+addClass(elm:String, cls:String):String, Array
+
+Adds a class to the specified element or elements.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Adds a class to all paragraphs in the active editor
+tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'myclass');
+
+// Adds a class to a specific element in the current page
+tinymce.DOM.addClass('mydiv', 'myclass');
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - Element ID string or DOM element or array with elements or IDs.
+* [.param-name]#cls# [.param-type]#(String)# - Class name to add to each element.
+
+==== Return value
+
+* [.return-type]#String# - String with new class value or array with new class values for all elements.
+* [.return-type]#Array# - String with new class value or array with new class values for all elements.
+
+[#addstyle .anchor]##
+
+=== link:#addstyle[addStyle]
+
+addStyle(cssText:String)
+
+Adds a style element at the top of the document with the specified cssText content.
+
+==== Parameters
+
+* [.param-name]#cssText# [.param-type]#(String)# - CSS Text style to add to top of head of document.
+
+[#bind .anchor]##
+
+=== link:#bind[bind]
+
+bind(target:Element, name:String, func:function, scope:Object):function
+
+Adds an event handler to the specified object.
+
+==== Parameters
+
+* [.param-name]#target# [.param-type]#(Element)# - Target element to bind events to. handler to or an array of elements/ids/documents.
+* [.param-name]#name# [.param-type]#(String)# - Name of event handler to add, for example: click.
+* [.param-name]#func# [.param-type]#(function)# - Function to execute when the event occurs.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+
+==== Return value
+
+* [.return-type]#function# - Function callback handler the same as the one passed in.
+
+[#create .anchor]##
+
+=== link:#create[create]
+
+create(name:String, attrs:Object, html:String):Element
+
+Creates a new element.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Adds an element where the caret/selection is in the active editor
+var el = tinymce.activeEditor.dom.create('div', {id: 'test', 'class': 'myclass'}, 'some content');
+tinymce.activeEditor.selection.setNode(el);
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of new element.
+* [.param-name]#attrs# [.param-type]#(Object)# - Optional object name/value collection with element attributes.
+* [.param-name]#html# [.param-type]#(String)# - Optional HTML string to set as inner HTML of the element.
+
+==== Return value
+
+* [.return-type]#Element# - HTML DOM node element that got created.
+
+[#createfragment .anchor]##
+
+=== link:#createfragment[createFragment]
+
+createFragment(html:String):DocumentFragment
+
+Creates a document fragment out of the specified HTML string.
+
+==== Parameters
+
+* [.param-name]#html# [.param-type]#(String)# - Html string to create fragment from.
+
+==== Return value
+
+* [.return-type]#DocumentFragment# - Document fragment node.
+
+[#createhtml .anchor]##
+
+=== link:#createhtml[createHTML]
+
+createHTML(name:String, attrs:Object, html:String):String
+
+Creates HTML string for element. The element will be closed unless an empty inner HTML string is passed in.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Creates a html chunk and inserts it at the current selection/caret location
+tinymce.activeEditor.selection.setContent(tinymce.activeEditor.dom.createHTML('a', {href: 'test.html'}, 'some line'));
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of new element.
+* [.param-name]#attrs# [.param-type]#(Object)# - Optional object name/value collection with element attributes.
+* [.param-name]#html# [.param-type]#(String)# - Optional HTML string to set as inner HTML of the element.
+
+==== Return value
+
+* [.return-type]#String# - String with new HTML element, for example: link:#[test].
+
+[#createrng .anchor]##
+
+=== link:#createrng[createRng]
+
+createRng():DOMRange
+
+Creates a new DOM Range object. This will use the native DOM Range API if it's available. If it's not, it will fall back to the custom TinyMCE implementation.
+
+==== Examples
+
+[source,prettyprint]
+----
+var rng = tinymce.DOM.createRng();
+alert(rng.startContainer + "," + rng.startOffset);
+----
+
+==== Return value
+
+* [.return-type]#DOMRange# - DOM Range object.
+
+[#decode .anchor]##
+
+=== link:#decode[decode]
+
+decode(s:String):String
+
+Entity decodes a string. This method decodes any HTML entities, such as å.
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(String)# - String to decode entities on.
+
+==== Return value
+
+* [.return-type]#String# - Entity decoded string.
+
+[#destroy .anchor]##
+
+=== link:#destroy[destroy]
+
+destroy()
+
+Destroys all internal references to the DOM to solve IE leak issues.
+
+[#encode .anchor]##
+
+=== link:#encode[encode]
+
+encode(text:String):String
+
+Entity encodes a string. This method encodes the most common entities, such as <>"&.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - String to encode with entities.
+
+==== Return value
+
+* [.return-type]#String# - Entity encoded string.
+
+[#findcommonancestor .anchor]##
+
+=== link:#findcommonancestor[findCommonAncestor]
+
+findCommonAncestor(a:Element, b:Element):Element
+
+Find the common ancestor of two elements. This is a shorter method than using the DOM Range logic.
+
+==== Parameters
+
+* [.param-name]#a# [.param-type]#(Element)# - Element to find common ancestor of.
+* [.param-name]#b# [.param-type]#(Element)# - Element to find common ancestor of.
+
+==== Return value
+
+* [.return-type]#Element# - Common ancestor element of the two input elements.
+
+[#fire .anchor]##
+
+=== link:#fire[fire]
+
+fire(target:Node, name:String, evt:Object):Event
+
+Fires the specified event name with object on target.
+
+==== Parameters
+
+* [.param-name]#target# [.param-type]#(Node)# - Target element or object to fire event on.
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
+* [.param-name]#evt# [.param-type]#(Object)# - Event object to send.
+
+==== Return value
+
+* [.return-type]#Event# - Event object.
+
+[#get .anchor]##
+
+=== link:#get[get]
+
+get(n:String):Element
+
+Returns the specified element by ID or the input element if it isn't a string.
+
+==== Parameters
+
+* [.param-name]#n# [.param-type]#(String)# - Element id to look for or element to just pass though.
+
+==== Return value
+
+* [.return-type]#Element# - Element matching the specified id or null if it wasn't found.
+
+[#getattrib .anchor]##
+
+=== link:#getattrib[getAttrib]
+
+getAttrib(elm:String, name:String, defaultVal:String):String
+
+Returns the specified attribute by name.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - Element string id or DOM element to get attribute from.
+* [.param-name]#name# [.param-type]#(String)# - Name of attribute to get.
+* [.param-name]#defaultVal# [.param-type]#(String)# - Optional default value to return if the attribute didn't exist.
+
+==== Return value
+
+* [.return-type]#String# - Attribute value string, default value or null if the attribute wasn't found.
+
+[#getattribs .anchor]##
+
+=== link:#getattribs[getAttribs]
+
+getAttribs(elm:HTMLElement):NodeList
+
+Returns a NodeList with attributes for the element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(HTMLElement)# - Element node or string id to get attributes from.
+
+==== Return value
+
+* [.return-type]#NodeList# - NodeList with attributes.
+
+[#getnext .anchor]##
+
+=== link:#getnext[getNext]
+
+getNext(node:Node, selector:String):Node
+
+Returns the next node that matches selector or function
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Node)# - Node to find siblings from.
+* [.param-name]#selector# [.param-type]#(String)# - Selector CSS expression or function.
+
+==== Return value
+
+* [.return-type]#Node# - Next node item matching the selector or null if it wasn't found.
+
+[#getouterhtml .anchor]##
+
+=== link:#getouterhtml[getOuterHTML]
+
+getOuterHTML(elm:String):String
+
+Returns the outer HTML of an element.
+
+==== Examples
+
+[source,prettyprint]
+----
+tinymce.DOM.getOuterHTML(editorElement);
+tinymce.activeEditor.getOuterHTML(tinymce.activeEditor.getBody());
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - Element ID or element object to get outer HTML from.
+
+==== Return value
+
+* [.return-type]#String# - Outer HTML string.
+
+[#getparent .anchor]##
+
+=== link:#getparent[getParent]
+
+getParent(node:Node, selector:function, root:Node):Node
+
+Returns a node by the specified selector function. This function will loop through all parent nodes and call the specified function for each node. If the function then returns true indicating that it has found what it was looking for, the loop execution will then end and the node it found will be returned.
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Node)# - DOM node to search parents on or ID string.
+* [.param-name]#selector# [.param-type]#(function)# - Selection function or CSS selector to execute on each node.
+* [.param-name]#root# [.param-type]#(Node)# - Optional root element, never go beyond this point.
+
+==== Return value
+
+* [.return-type]#Node# - DOM Node or null if it wasn't found.
+
+[#getparents .anchor]##
+
+=== link:#getparents[getParents]
+
+getParents(node:Node, selector:function, root:Node):Array
+
+Returns a node list of all parents matching the specified selector function or pattern. If the function then returns true indicating that it has found what it was looking for and that node will be collected.
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Node)# - DOM node to search parents on or ID string.
+* [.param-name]#selector# [.param-type]#(function)# - Selection function to execute on each node or CSS pattern.
+* [.param-name]#root# [.param-type]#(Node)# - Optional root element, never go beyond this point.
+
+==== Return value
+
+* [.return-type]#Array# - Array of nodes or null if it wasn't found.
+
+[#getpos .anchor]##
+
+=== link:#getpos[getPos]
+
+getPos(elm:Element, rootElm:Element):object
+
+Returns the absolute x, y position of a node. The position will be returned in an object with x, y fields.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - HTML element or element id to get x, y position from.
+* [.param-name]#rootElm# [.param-type]#(Element)# - Optional root element to stop calculations at.
+
+==== Return value
+
+* [.return-type]#object# - Absolute position of the specified element object with x, y fields.
+
+[#getprev .anchor]##
+
+=== link:#getprev[getPrev]
+
+getPrev(node:Node, selector:String):Node
+
+Returns the previous node that matches selector or function
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Node)# - Node to find siblings from.
+* [.param-name]#selector# [.param-type]#(String)# - Selector CSS expression or function.
+
+==== Return value
+
+* [.return-type]#Node# - Previous node item matching the selector or null if it wasn't found.
+
+[#getrect .anchor]##
+
+=== link:#getrect[getRect]
+
+getRect(elm:Element):object
+
+Returns the rectangle for a specific element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - Element object or element ID to get rectangle from.
+
+==== Return value
+
+* [.return-type]#object# - Rectangle for specified element object with x, y, w, h fields.
+
+[#getroot .anchor]##
+
+=== link:#getroot[getRoot]
+
+getRoot():Element
+
+Returns the root node of the document. This is normally the body but might be a DIV. Parents like getParent will not go above the point of this root node.
+
+==== Return value
+
+* [.return-type]#Element# - Root element for the utility class.
+
+[#getsize .anchor]##
+
+=== link:#getsize[getSize]
+
+getSize(elm:Element):object
+
+Returns the size dimensions of the specified element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - Element object or element ID to get rectangle from.
+
+==== Return value
+
+* [.return-type]#object# - Rectangle for specified element object with w, h fields.
+
+[#getstyle .anchor]##
+
+=== link:#getstyle[getStyle]
+
+getStyle(elm:String, name:String, computed:Boolean):String
+
+Returns the current style or runtime/computed value of an element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - HTML element or element id string to get style from.
+* [.param-name]#name# [.param-type]#(String)# - Style name to return.
+* [.param-name]#computed# [.param-type]#(Boolean)# - Computed style.
+
+==== Return value
+
+* [.return-type]#String# - Current style or computed style value of an element.
+
+[#getviewport .anchor]##
+
+=== link:#getviewport[getViewPort]
+
+getViewPort(win:Window):Object
+
+Returns the viewport of the window.
+
+==== Parameters
+
+* [.param-name]#win# [.param-type]#(Window)# - Optional window to get viewport of.
+
+==== Return value
+
+* [.return-type]#Object# - Viewport object with fields x, y, w and h.
+
+[#hasclass .anchor]##
+
+=== link:#hasclass[hasClass]
+
+hasClass(elm:String, cls:String):Boolean
+
+Returns true if the specified element has the specified class.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - HTML element or element id string to check CSS class on.
+* [.param-name]#cls# [.param-type]#(String)# - CSS class to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the specified element has the specified class.
+
+[#hide .anchor]##
+
+=== link:#hide[hide]
+
+hide(elm:String)
+
+Hides the specified element(s) by ID by setting the "display" style.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Hides an element by id in the document
+tinymce.DOM.hide('myid');
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - ID of DOM element or DOM element or array with elements or IDs to hide.
+
+[#insertafter .anchor]##
+
+=== link:#insertafter[insertAfter]
+
+insertAfter(node:Element, referenceNode:Element):Element, Array
+
+Inserts an element after the reference element.
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Element)# - Element to insert after the reference.
+* [.param-name]#referenceNode# [.param-type]#(Element)# - Reference element, element id or array of elements to insert after.
+
+==== Return value
+
+* [.return-type]#Element# - Element that got added or an array with elements.
+* [.return-type]#Array# - Element that got added or an array with elements.
+
+[#is .anchor]##
+
+=== link:#is[is]
+
+is(elm:Node, selector:String)
+
+Returns true/false if the specified element matches the specified css pattern.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Node)# - DOM node to match or an array of nodes to match.
+* [.param-name]#selector# [.param-type]#(String)# - CSS pattern to match the element against.
+
+[#isblock .anchor]##
+
+=== link:#isblock[isBlock]
+
+isBlock(node:Node):Boolean
+
+Returns true/false if the specified element is a block element or not.
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Node)# - Element/Node to check.
+
+==== Return value
+
+* [.return-type]#Boolean# - True/False state if the node is a block element or not.
+
+[#isempty .anchor]##
+
+=== link:#isempty[isEmpty]
+
+isEmpty(elements:Object):Boolean
+
+Returns true/false if the specified node is to be considered empty or not.
+
+==== Examples
+
+[source,prettyprint]
+----
+tinymce.DOM.isEmpty(node, {img: true});
+----
+
+==== Parameters
+
+* [.param-name]#elements# [.param-type]#(Object)# - Optional name/value object with elements that are automatically treated as non-empty elements.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the node is empty or not.
+
+[#ishidden .anchor]##
+
+=== link:#ishidden[isHidden]
+
+isHidden(elm:String):Boolean
+
+Returns true/false if the element is hidden or not by checking the "display" style.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - Id or element to check display state on.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the element is hidden or not.
+
+[#loadcss .anchor]##
+
+=== link:#loadcss[loadCSS]
+
+loadCSS(url:String)
+
+Imports/loads the specified CSS file into the document bound to the class.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Loads a CSS file dynamically into the current document
+tinymce.DOM.loadCSS('somepath/some.css');
+
+// Loads a CSS file into the currently active editor instance
+tinymce.activeEditor.dom.loadCSS('somepath/some.css');
+
+// Loads a CSS file into an editor instance by id
+tinymce.get('someid').dom.loadCSS('somepath/some.css');
+
+// Loads multiple CSS files into the current document
+tinymce.DOM.loadCSS('somepath/some.css,somepath/someother.css');
+----
+
+==== Parameters
+
+* [.param-name]#url# [.param-type]#(String)# - URL to CSS file to load.
+
+[#nodeindex .anchor]##
+
+=== link:#nodeindex[nodeIndex]
+
+nodeIndex(node:Node, normalized:boolean):Number
+
+Returns the index of the specified node within its parent.
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Node)# - Node to look for.
+* [.param-name]#normalized# [.param-type]#(boolean)# - Optional true/false state if the index is what it would be after a normalization.
+
+==== Return value
+
+* [.return-type]#Number# - Index of the specified node.
+
+[#parsestyle .anchor]##
+
+=== link:#parsestyle[parseStyle]
+
+parseStyle(cssText:String):Object
+
+Parses the specified style value into an object collection. This parser will also merge and remove any redundant items that browsers might have added. It will also convert non-hex colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings.
+
+==== Parameters
+
+* [.param-name]#cssText# [.param-type]#(String)# - Style value to parse, for example: border:1px solid red;.
+
+==== Return value
+
+* [.return-type]#Object# - Object representation of that style, for example: \{border: '1px solid red'}
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove(node:String, keepChildren:Boolean):Element, Array
+
+Removes/deletes the specified element(s) from the DOM.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Removes all paragraphs in the active editor
+tinymce.activeEditor.dom.remove(tinymce.activeEditor.dom.select('p'));
+
+// Removes an element by id in the document
+tinymce.DOM.remove('mydiv');
+----
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(String)# - ID of element or DOM element object or array containing multiple elements/ids.
+* [.param-name]#keepChildren# [.param-type]#(Boolean)# - Optional state to keep children or not. If set to true all children will be placed at the location of the removed element.
+
+==== Return value
+
+* [.return-type]#Element# - HTML DOM element that got removed, or an array of removed elements if multiple input elements were passed in.
+* [.return-type]#Array# - HTML DOM element that got removed, or an array of removed elements if multiple input elements were passed in.
+
+[#removeallattribs .anchor]##
+
+=== link:#removeallattribs[removeAllAttribs]
+
+removeAllAttribs(e:Element)
+
+Removes all attributes from an element or elements.
+
+==== Parameters
+
+* [.param-name]#e# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to remove attributes from.
+
+[#removeclass .anchor]##
+
+=== link:#removeclass[removeClass]
+
+removeClass(elm:String, cls:String):String, Array
+
+Removes a class from the specified element or elements.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Removes a class from all paragraphs in the active editor
+tinymce.activeEditor.dom.removeClass(tinymce.activeEditor.dom.select('p'), 'myclass');
+
+// Removes a class from a specific element in the current page
+tinymce.DOM.removeClass('mydiv', 'myclass');
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - Element ID string or DOM element or array with elements or IDs.
+* [.param-name]#cls# [.param-type]#(String)# - Class name to remove from each element.
+
+==== Return value
+
+* [.return-type]#String# - String of remaining class name(s), or an array of strings if multiple input elements were passed in.
+* [.return-type]#Array# - String of remaining class name(s), or an array of strings if multiple input elements were passed in.
+
+[#rename .anchor]##
+
+=== link:#rename[rename]
+
+rename(elm:Element, name:String):Element
+
+Renames the specified element and keeps its attributes and children.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - Element to rename.
+* [.param-name]#name# [.param-type]#(String)# - Name of the new element.
+
+==== Return value
+
+* [.return-type]#Element# - New element or the old element if it needed renaming.
+
+[#replace .anchor]##
+
+=== link:#replace[replace]
+
+replace(newElm:Element, oldElm:Element, keepChildren:Boolean)
+
+Replaces the specified element or elements with the new element specified. The new element will be cloned if multiple input elements are passed in.
+
+==== Parameters
+
+* [.param-name]#newElm# [.param-type]#(Element)# - New element to replace old ones with.
+* [.param-name]#oldElm# [.param-type]#(Element)# - Element DOM node, element id or array of elements or ids to replace.
+* [.param-name]#keepChildren# [.param-type]#(Boolean)# - Optional keep children state, if set to true child nodes from the old object will be added to new ones.
+
+[#run .anchor]##
+
+=== link:#run[run]
+
+run(elm:String, func:function, scope:Object):Object, Array
+
+Executes the specified function on the element by id or dom element node or array of elements/id.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - ID or DOM element object or array with ids or elements.
+* [.param-name]#func# [.param-type]#(function)# - Function to execute for each item.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+
+==== Return value
+
+* [.return-type]#Object# - Single object, or an array of objects if multiple input elements were passed in.
+* [.return-type]#Array# - Single object, or an array of objects if multiple input elements were passed in.
+
+[#select .anchor]##
+
+=== link:#select[select]
+
+select(selector:String, scope:Object):Array
+
+Selects specific elements by a CSS level 3 pattern. For example "div#a1 p.test". This function is optimized for the most common patterns needed in TinyMCE but it also performs well enough on more complex patterns.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Adds a class to all paragraphs in the currently active editor
+tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'someclass');
+
+// Adds a class to all spans that have the test class in the currently active editor
+tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('span.test'), 'someclass')
+----
+
+==== Parameters
+
+* [.param-name]#selector# [.param-type]#(String)# - CSS level 3 pattern to select/find elements by.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional root element/scope element to search in.
+
+==== Return value
+
+* [.return-type]#Array# - Array with all matched elements.
+
+[#serializestyle .anchor]##
+
+=== link:#serializestyle[serializeStyle]
+
+serializeStyle(styles:Object, name:String):String
+
+Serializes the specified style object into a string.
+
+==== Parameters
+
+* [.param-name]#styles# [.param-type]#(Object)# - Object to serialize as string, for example: \{border: '1px solid red'}
+* [.param-name]#name# [.param-type]#(String)# - Optional element name.
+
+==== Return value
+
+* [.return-type]#String# - String representation of the style object, for example: border: 1px solid red.
+
+[#setattrib .anchor]##
+
+=== link:#setattrib[setAttrib]
+
+setAttrib(elm:Element, name:String, value:String)
+
+Sets the specified attribute of an element or elements.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Sets class attribute on all paragraphs in the active editor
+tinymce.activeEditor.dom.setAttrib(tinymce.activeEditor.dom.select('p'), 'class', 'myclass');
+
+// Sets class attribute on a specific element in the current page
+tinymce.dom.setAttrib('mydiv', 'class', 'myclass');
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set attribute on.
+* [.param-name]#name# [.param-type]#(String)# - Name of attribute to set.
+* [.param-name]#value# [.param-type]#(String)# - Value to set on the attribute - if this value is falsy like null, 0 or '' it will remove the attribute instead.
+
+[#setattribs .anchor]##
+
+=== link:#setattribs[setAttribs]
+
+setAttribs(elm:Element, attrs:Object)
+
+Sets two or more specified attributes of an element or elements.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Sets class and title attributes on all paragraphs in the active editor
+tinymce.activeEditor.dom.setAttribs(tinymce.activeEditor.dom.select('p'), {'class': 'myclass', title: 'some title'});
+
+// Sets class and title attributes on a specific element in the current page
+tinymce.DOM.setAttribs('mydiv', {'class': 'myclass', title: 'some title'});
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set attributes on.
+* [.param-name]#attrs# [.param-type]#(Object)# - Name/Value collection of attribute items to add to the element(s).
+
+[#sethtml .anchor]##
+
+=== link:#sethtml[setHTML]
+
+setHTML(elm:Element, html:String)
+
+Sets the specified HTML content inside the element or elements. The HTML will first be processed. This means URLs will get converted, hex color values fixed etc. Check processHTML for details.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Sets the inner HTML of all paragraphs in the active editor
+tinymce.activeEditor.dom.setHTML(tinymce.activeEditor.dom.select('p'), 'some inner html');
+
+// Sets the inner HTML of an element by id in the document
+tinymce.DOM.setHTML('mydiv', 'some inner html');
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set HTML inside of.
+* [.param-name]#html# [.param-type]#(String)# - HTML content to set as inner HTML of the element.
+
+[#setouterhtml .anchor]##
+
+=== link:#setouterhtml[setOuterHTML]
+
+setOuterHTML(elm:Element, html:Object)
+
+Sets the specified outer HTML on an element or elements.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Sets the outer HTML of all paragraphs in the active editor
+tinymce.activeEditor.dom.setOuterHTML(tinymce.activeEditor.dom.select('p'), '<div>some html</div>');
+
+// Sets the outer HTML of an element by id in the document
+tinymce.DOM.setOuterHTML('mydiv', '<div>some html</div>');
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set outer HTML on.
+* [.param-name]#html# [.param-type]#(Object)# - HTML code to set as outer value for the element.
+
+[#setstyle .anchor]##
+
+=== link:#setstyle[setStyle]
+
+setStyle(elm:String, name:String, value:String)
+
+Sets the CSS style value on a HTML element. The name can be a camelcase string or the CSS style name like background-color.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Sets a style value on all paragraphs in the currently active editor
+tinymce.activeEditor.dom.setStyle(tinymce.activeEditor.dom.select('p'), 'background-color', 'red');
+
+// Sets a style value to an element by id in the current document
+tinymce.DOM.setStyle('mydiv', 'background-color', 'red');
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - HTML element/Array of elements to set CSS style value on.
+* [.param-name]#name# [.param-type]#(String)# - Name of the style value to set.
+* [.param-name]#value# [.param-type]#(String)# - Value to set on the style.
+
+[#setstyles .anchor]##
+
+=== link:#setstyles[setStyles]
+
+setStyles(elm:Element, styles:Object)
+
+Sets multiple styles on the specified element(s).
+
+==== Examples
+
+[source,prettyprint]
+----
+// Sets styles on all paragraphs in the currently active editor
+tinymce.activeEditor.dom.setStyles(tinymce.activeEditor.dom.select('p'), {'background-color': 'red', 'color': 'green'});
+
+// Sets styles to an element by id in the current document
+tinymce.DOM.setStyles('mydiv', {'background-color': 'red', 'color': 'green'});
+----
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set styles on.
+* [.param-name]#styles# [.param-type]#(Object)# - Name/Value collection of style items to add to the element(s).
+
+[#show .anchor]##
+
+=== link:#show[show]
+
+show(elm:String)
+
+Shows the specified element(s) by ID by setting the "display" style.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(String)# - ID of DOM element or DOM element or array with elements or IDs to show.
+
+[#split .anchor]##
+
+=== link:#split[split]
+
+split(parentElm:Element, splitElm:Element, replacementElm:Element):Element
+
+Splits an element into two new elements and places the specified split element or elements between the new ones. For example splitting the paragraph at the bold element in this example
+
+abc**abc**123
+
+would produce
+
+abc
+
+*abc*
+
+123
+
+.
+
+==== Parameters
+
+* [.param-name]#parentElm# [.param-type]#(Element)# - Parent element to split.
+* [.param-name]#splitElm# [.param-type]#(Element)# - Element to split at.
+* [.param-name]#replacementElm# [.param-type]#(Element)# - Optional replacement element to replace the split element with.
+
+==== Return value
+
+* [.return-type]#Element# - Returns the split element or the replacement element if that is specified.
+
+[#tohex .anchor]##
+
+=== link:#tohex[toHex]
+
+toHex(rgbVal:String):String
+
+Parses the specified RGB color value and returns a hex version of that color.
+
+==== Parameters
+
+* [.param-name]#rgbVal# [.param-type]#(String)# - RGB string value like rgb(1,2,3)
+
+==== Return value
+
+* [.return-type]#String# - Hex version of that RGB value like #FF00FF.
+
+[#toggleclass .anchor]##
+
+=== link:#toggleclass[toggleClass]
+
+toggleClass(elm:Element, cls:[type], state:[type])
+
+Toggles the specified class on/off.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - Element to toggle class on.
+* [.param-name]#cls# [.param-type]#([type])# - Class to toggle on/off.
+* [.param-name]#state# [.param-type]#([type])# - Optional state to set.
+
+[#unbind .anchor]##
+
+=== link:#unbind[unbind]
+
+unbind(target:Element, name:String, func:function):bool, Array
+
+Removes the specified event handler by name and function from an element or collection of elements.
+
+==== Parameters
+
+* [.param-name]#target# [.param-type]#(Element)# - Target element to unbind events on.
+* [.param-name]#name# [.param-type]#(String)# - Event handler name, for example: "click"
+* [.param-name]#func# [.param-type]#(function)# - Function to remove.
+
+==== Return value
+
+* [.return-type]#bool# - Bool state of true if the handler was removed, or an array of states if multiple input elements were passed in.
+* [.return-type]#Array# - Bool state of true if the handler was removed, or an array of states if multiple input elements were passed in.
+
+[#uniqueid .anchor]##
+
+=== link:#uniqueid[uniqueId]
+
+uniqueId(prefix:String):String
+
+Returns a unique id. This can be useful when generating elements on the fly. This method will not check if the element already exists.
+
+==== Parameters
+
+* [.param-name]#prefix# [.param-type]#(String)# - Optional prefix to add in front of all ids - defaults to "mce_".
+
+==== Return value
+
+* [.return-type]#String# - Unique id.

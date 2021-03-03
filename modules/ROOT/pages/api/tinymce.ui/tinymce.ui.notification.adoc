@@ -1,0 +1,909 @@
+= tinymce.ui.Notification
+
+Creates a notification instance.
+
+[#settings .anchor]##
+
+== link:#settings[Settings]
+
+[cols=",,,",options="header",]
+|===
+|name |type |summary |defined by
+|border |[.param-type]#String# |Border box values example: 1 1 1 1 |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|classes |[.param-type]#String# |Space separated list of classes to add. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|defaults |[.param-type]#Object# |Default settings to apply to all items. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|disabled |[.param-type]#Boolean# |Is the control disabled by default. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|hidden |[.param-type]#Boolean# |Is the control hidden by default. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|items |[.param-type]#Array# |Items to add to container in JSON format or control instances. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|layout |[.param-type]#String# |Layout manager by name to use. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|margin |[.param-type]#String# |Margin box values example: 1 1 1 1 |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|minHeight |[.param-type]#Number# |Minimal height for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|minWidth |[.param-type]#Number# |Minimal width for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|name |[.param-type]#String# |Name of the control instance. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|padding |[.param-type]#String# |Padding box values example: 1 1 1 1 |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|role |[.param-type]#String# |WAI-ARIA role to use for control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|style |[.param-type]#String# |Style CSS properties to add. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|===
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#container[Container()] |Constructs a new control instance with the specified settings. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#control[Control()] |Constructs a new control instance with the specified settings. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#active[active()] |Sets/gets the active for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#add[add()] |Adds one or many items to the current container. This will create instances of the object representations if needed. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#after[after()] |Adds items after the current control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#append[append()] |Appends new instances to the current container. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#aria[aria()] |Sets the specified aria property. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#before[before()] |Adds items before the current control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#blur[blur()] |Blurs the current control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#create[create()] |Creates the specified items. If any of the items is plain JSON style objects it will convert these into real tinymce.ui.Control instances. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#disabled[disabled()] |Sets/gets the disabled state on the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#encode[encode()] |Encodes the specified string with HTML entities. It will also translate the string to different languages. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#find[find()] |Find child controls by selector. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#fire[fire()] |Fires the specified event by name and arguments on the control. This will execute all bound event handlers. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#focus[focus()] |Focuses the current container instance. This will look for the first control in the container and focus that. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#fromjson[fromJSON()] |Populates the form fields from the specified JSON data object. Control items in the form that matches the data will have it's value set. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#getcontainerelm[getContainerElm()] |Returns the root element to render controls into. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#getel[getEl()] |Returns the control DOM element or sub element. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#getparentctrl[getParentCtrl()] |Returns a control instance for the current DOM element. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the specified event has any listeners. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#hide[hide()] |Sets the visible state to false. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#initlayoutrect[initLayoutRect()] |Initializes the current controls layout rect. This will be executed by the layout managers to determine the default minWidth/minHeight etc. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#innerhtml[innerHtml()] |Sets the inner HTML of the control element. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#insert[insert()] |Inserts an control at a specific index. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#items[items()] |Returns a collection of child items that the container currently have. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#layoutrect[layoutRect()] |Getter/setter for the current layout rect. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#moveby[moveBy()] |Move by a relative x, y values. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|link:#moverel[moveRel()] |Move relative to the specified element. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|link:#moveto[moveTo()] |Move to absolute position. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|link:#name[name()] |Sets/gets the name for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#next[next()] |Returns the control next to the current control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#off[off()] |Unbinds the specified event and optionally a specific callback. If you omit the name parameter all event handlers will be removed. If you omit the callback all event handles by the specified name will be removed. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#on[on()] |Binds a callback to the specified event. This event can both be native browser events like "click" or custom ones like PostRender. The callback function will be passed a DOM event like object that enables yout do stop propagation. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#parent[parent()] |Sets/gets the parent container for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#parents[parents()] |Returns a control collection with all parent controls. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#parentsandself[parentsAndSelf()] |Returns the current control and it's parents. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#postrender[postRender()] |Post render method. Called after the control has been rendered to the target. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#prepend[prepend()] |Prepends new instances to the current container. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#prev[prev()] |Returns the control previous to the current control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#recalc[recalc()] |Recalculates the positions of the controls in the current container. This is invoked by the reflow method and shouldn't be called directly. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#reflow[reflow()] |Reflows the current container and it's children and possible parents. This should be used after you for example append children to the current control so that the layout managers know that they need to reposition everything. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#remove[remove()] |Removes the current control from DOM and from UI collections. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#renderbefore[renderBefore()] |Renders the control to the specified element. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#renderhtml[renderHtml()] |Renders the control as a HTML string. |link:/docs-4x/api/tinymce.ui/tinymce.ui.notification[tinymce.ui.Notification]
+|link:#repaint[repaint()] |Repaints the control after a layout operation. |link:/docs-4x/api/tinymce.ui/tinymce.ui.notification[tinymce.ui.Notification]
+|link:#replace[replace()] |Replaces the specified child control with a new control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#scrollintoview[scrollIntoView()] |Scrolls the current control into view. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#show[show()] |Sets the visible state to true. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#testmoverel[testMoveRel()] |Tests various positions to get the most suitable one. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|link:#text[text()] |Sets/gets the text for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#title[title()] |Sets/gets the title for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#tojson[toJSON()] |Serializes the form into a JSON object by getting all items that has a name and a value. |link:/docs-4x/api/tinymce.ui/tinymce.ui.container[tinymce.ui.Container]
+|link:#translate[translate()] |Returns the translated string. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|link:#visible[visible()] |Sets/gets the visible for the control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
+|===
+
+== Constructors
+
+[#container .anchor]##
+
+=== link:#container[Container]
+
+public constructor function Container(settings:Object)
+
+Constructs a new control instance with the specified settings.
+
+==== Parameters
+
+* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+
+[#control .anchor]##
+
+=== link:#control[Control]
+
+public constructor function Control(settings:Object)
+
+Constructs a new control instance with the specified settings.
+
+==== Parameters
+
+* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+
+== Methods
+
+[#active .anchor]##
+
+=== link:#active[active]
+
+active(state:Boolean):Boolean, tinymce.ui.Control
+
+Sets/gets the active for the control.
+
+==== Parameters
+
+* [.param-name]#state# [.param-type]#(Boolean)# - Value to set to control.
+
+==== Return value
+
+* [.return-type]#Boolean# - Current control on a set operation or current state on a get.
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(items:Array):tinymce.ui.Collection
+
+Adds one or many items to the current container. This will create instances of the object representations if needed.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array or item that will be added to the container.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection control.
+
+[#after .anchor]##
+
+=== link:#after[after]
+
+after(items:Array):tinymce.ui.Control
+
+Adds items after the current control.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array of items to append after this control.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#append .anchor]##
+
+=== link:#append[append]
+
+append(items:Array):tinymce.ui.Container
+
+Appends new instances to the current container.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array if controls to append.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.return-type]#tinymce.ui.Container#] - Current container instance.
+
+[#aria .anchor]##
+
+=== link:#aria[aria]
+
+aria(name:String, value:String):tinymce.ui.Control
+
+Sets the specified aria property.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the aria property to set.
+* [.param-name]#value# [.param-type]#(String)# - Value of the aria property.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#before .anchor]##
+
+=== link:#before[before]
+
+before(items:Array):tinymce.ui.Control
+
+Adds items before the current control.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array of items to prepend before this control.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#blur .anchor]##
+
+=== link:#blur[blur]
+
+blur():tinymce.ui.Control
+
+Blurs the current control.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#create .anchor]##
+
+=== link:#create[create]
+
+create(items:Array):Array
+
+Creates the specified items. If any of the items is plain JSON style objects it will convert these into real tinymce.ui.Control instances.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array of items to convert into control instances.
+
+==== Return value
+
+* [.return-type]#Array# - Array with control instances.
+
+[#disabled .anchor]##
+
+=== link:#disabled[disabled]
+
+disabled(state:Boolean):Boolean, tinymce.ui.Control
+
+Sets/gets the disabled state on the control.
+
+==== Parameters
+
+* [.param-name]#state# [.param-type]#(Boolean)# - Value to set to control.
+
+==== Return value
+
+* [.return-type]#Boolean# - Current control on a set operation or current state on a get.
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.
+
+[#encode .anchor]##
+
+=== link:#encode[encode]
+
+encode(text:String, translate:Boolean):String
+
+Encodes the specified string with HTML entities. It will also translate the string to different languages.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to entity encode.
+* [.param-name]#translate# [.param-type]#(Boolean)# - False if the contents shouldn't be translated.
+
+==== Return value
+
+* [.return-type]#String# - Encoded and possible traslated string.
+
+[#find .anchor]##
+
+=== link:#find[find]
+
+find(selector:String):tinymce.ui.Collection
+
+Find child controls by selector.
+
+==== Parameters
+
+* [.param-name]#selector# [.param-type]#(String)# - Selector CSS pattern to find children by.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Control collection with child controls.
+
+[#fire .anchor]##
+
+=== link:#fire[fire]
+
+fire(name:String, args:Object, bubble:Boolean):Object
+
+Fires the specified event by name and arguments on the control. This will execute all bound event handlers.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
+* [.param-name]#args# [.param-type]#(Object)# - Arguments to pass to the event.
+* [.param-name]#bubble# [.param-type]#(Boolean)# - Value to control bubbling. Defaults to true.
+
+==== Return value
+
+* [.return-type]#Object# - Current arguments object.
+
+[#focus .anchor]##
+
+=== link:#focus[focus]
+
+focus(keyboard:Boolean):tinymce.ui.Collection
+
+Focuses the current container instance. This will look for the first control in the container and focus that.
+
+==== Parameters
+
+* [.param-name]#keyboard# [.param-type]#(Boolean)# - Optional true/false if the focus was a keyboard focus or not.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current instance.
+
+[#fromjson .anchor]##
+
+=== link:#fromjson[fromJSON]
+
+fromJSON(data:Object):tinymce.ui.Container
+
+Populates the form fields from the specified JSON data object. Control items in the form that matches the data will have it's value set.
+
+==== Parameters
+
+* [.param-name]#data# [.param-type]#(Object)# - JSON data object to set control values by.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.return-type]#tinymce.ui.Container#] - Current form instance.
+
+[#getcontainerelm .anchor]##
+
+=== link:#getcontainerelm[getContainerElm]
+
+getContainerElm():Element
+
+Returns the root element to render controls into.
+
+==== Return value
+
+* [.return-type]#Element# - HTML DOM element to render into.
+
+[#getel .anchor]##
+
+=== link:#getel[getEl]
+
+getEl(suffix:String):Element
+
+Returns the control DOM element or sub element.
+
+==== Parameters
+
+* [.param-name]#suffix# [.param-type]#(String)# - Suffix to get element by.
+
+==== Return value
+
+* [.return-type]#Element# - HTML DOM element for the current control or it's children.
+
+[#getparentctrl .anchor]##
+
+=== link:#getparentctrl[getParentCtrl]
+
+getParentCtrl(elm:Element):tinymce.ui.Control
+
+Returns a control instance for the current DOM element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - HTML dom element to get parent control from.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Control instance or undefined.
+
+[#haseventlisteners .anchor]##
+
+=== link:#haseventlisteners[hasEventListeners]
+
+hasEventListeners(name:String):Boolean
+
+Returns true/false if the specified event has any listeners.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - True/false state if the event has listeners.
+
+[#hide .anchor]##
+
+=== link:#hide[hide]
+
+hide():tinymce.ui.Control
+
+Sets the visible state to false.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#initlayoutrect .anchor]##
+
+=== link:#initlayoutrect[initLayoutRect]
+
+initLayoutRect():Object
+
+Initializes the current controls layout rect. This will be executed by the layout managers to determine the default minWidth/minHeight etc.
+
+==== Return value
+
+* [.return-type]#Object# - Layout rect instance.
+
+[#innerhtml .anchor]##
+
+=== link:#innerhtml[innerHtml]
+
+innerHtml(html:String):tinymce.ui.Control
+
+Sets the inner HTML of the control element.
+
+==== Parameters
+
+* [.param-name]#html# [.param-type]#(String)# - Html string to set as inner html.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control object.
+
+[#insert .anchor]##
+
+=== link:#insert[insert]
+
+insert(items:Array, index:Number, before:Boolean)
+
+Inserts an control at a specific index.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array if controls to insert.
+* [.param-name]#index# [.param-type]#(Number)# - Index to insert controls at.
+* [.param-name]#before# [.param-type]#(Boolean)# - Inserts controls before the index.
+
+[#items .anchor]##
+
+=== link:#items[items]
+
+items():tinymce.ui.Collection
+
+Returns a collection of child items that the container currently have.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Control collection direct child controls.
+
+[#layoutrect .anchor]##
+
+=== link:#layoutrect[layoutRect]
+
+layoutRect(newRect:Object):tinymce.ui.Control, Object
+
+Getter/setter for the current layout rect.
+
+==== Parameters
+
+* [.param-name]#newRect# [.param-type]#(Object)# - Optional new layout rect.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control or rect object.
+* [.return-type]#Object# - Current control or rect object.
+
+[#moveby .anchor]##
+
+=== link:#moveby[moveBy]
+
+moveBy(dx:Number, dy:Number):tinymce.ui.Control
+
+Move by a relative x, y values.
+
+==== Parameters
+
+* [.param-name]#dx# [.param-type]#(Number)# - Relative x position.
+* [.param-name]#dy# [.param-type]#(Number)# - Relative y position.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#moverel .anchor]##
+
+=== link:#moverel[moveRel]
+
+moveRel(elm:Element, rel:String):tinymce.ui.Control
+
+Move relative to the specified element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - Element to move relative to.
+* [.param-name]#rel# [.param-type]#(String)# - Relative mode. For example: br-tl.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#moveto .anchor]##
+
+=== link:#moveto[moveTo]
+
+moveTo(x:Number, y:Number):tinymce.ui.Control
+
+Move to absolute position.
+
+==== Parameters
+
+* [.param-name]#x# [.param-type]#(Number)# - Absolute x position.
+* [.param-name]#y# [.param-type]#(Number)# - Absolute y position.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#name .anchor]##
+
+=== link:#name[name]
+
+name(value:String):String, tinymce.ui.Control
+
+Sets/gets the name for the control.
+
+==== Parameters
+
+* [.param-name]#value# [.param-type]#(String)# - Value to set to control.
+
+==== Return value
+
+* [.return-type]#String# - Current control on a set operation or current value on a get.
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
+
+[#next .anchor]##
+
+=== link:#next[next]
+
+next():tinymce.ui.Control
+
+Returns the control next to the current control.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Next control instance.
+
+[#off .anchor]##
+
+=== link:#off[off]
+
+off(name:String, callback:function):tinymce.ui.Control
+
+Unbinds the specified event and optionally a specific callback. If you omit the name parameter all event handlers will be removed. If you omit the callback all event handles by the specified name will be removed.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name for the event to unbind.
+* [.param-name]#callback# [.param-type]#(function)# - Callback function to unbind.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control object.
+
+[#on .anchor]##
+
+=== link:#on[on]
+
+on(name:String, callback:String):tinymce.ui.Control
+
+Binds a callback to the specified event. This event can both be native browser events like "click" or custom ones like PostRender. The callback function will be passed a DOM event like object that enables yout do stop propagation.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind. For example "click".
+* [.param-name]#callback# [.param-type]#(String)# - Callback function to execute ones the event occurs.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control object.
+
+[#parent .anchor]##
+
+=== link:#parent[parent]
+
+parent(parent:tinymce.ui.Container):tinymce.ui.Control
+
+Sets/gets the parent container for the control.
+
+==== Parameters
+
+* [.param-name]#parent# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Optional parent to set.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Parent control or the current control on a set action.
+
+[#parents .anchor]##
+
+=== link:#parents[parents]
+
+parents(selector:String):tinymce.ui.Collection
+
+Returns a control collection with all parent controls.
+
+==== Parameters
+
+* [.param-name]#selector# [.param-type]#(String)# - Optional selector expression to find parents.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection with all parent controls.
+
+[#parentsandself .anchor]##
+
+=== link:#parentsandself[parentsAndSelf]
+
+parentsAndSelf(selector:String):tinymce.ui.Collection
+
+Returns the current control and it's parents.
+
+==== Parameters
+
+* [.param-name]#selector# [.param-type]#(String)# - Optional selector expression to find parents.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection with all parent controls.
+
+[#postrender .anchor]##
+
+=== link:#postrender[postRender]
+
+postRender():tinymce.ui.Container
+
+Post render method. Called after the control has been rendered to the target.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.return-type]#tinymce.ui.Container#] - Current combobox instance.
+
+[#prepend .anchor]##
+
+=== link:#prepend[prepend]
+
+prepend(items:Array):tinymce.ui.Container
+
+Prepends new instances to the current container.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array if controls to prepend.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.return-type]#tinymce.ui.Container#] - Current container instance.
+
+[#prev .anchor]##
+
+=== link:#prev[prev]
+
+prev():tinymce.ui.Control
+
+Returns the control previous to the current control.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Previous control instance.
+
+[#recalc .anchor]##
+
+=== link:#recalc[recalc]
+
+recalc()
+
+Recalculates the positions of the controls in the current container. This is invoked by the reflow method and shouldn't be called directly.
+
+[#reflow .anchor]##
+
+=== link:#reflow[reflow]
+
+reflow():tinymce.ui.Container
+
+Reflows the current container and it's children and possible parents. This should be used after you for example append children to the current control so that the layout managers know that they need to reposition everything.
+
+==== Examples
+
+[source,prettyprint]
+----
+container.append({type: 'button', text: 'My button'}).reflow();
+----
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.return-type]#tinymce.ui.Container#] - Current container instance.
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove():tinymce.ui.Control
+
+Removes the current control from DOM and from UI collections.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#renderbefore .anchor]##
+
+=== link:#renderbefore[renderBefore]
+
+renderBefore(elm:Element):tinymce.ui.Control
+
+Renders the control to the specified element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - Element to render to.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#renderhtml .anchor]##
+
+=== link:#renderhtml[renderHtml]
+
+renderHtml():String
+
+Renders the control as a HTML string.
+
+==== Return value
+
+* [.return-type]#String# - HTML representing the control.
+
+[#repaint .anchor]##
+
+=== link:#repaint[repaint]
+
+repaint()
+
+Repaints the control after a layout operation.
+
+[#replace .anchor]##
+
+=== link:#replace[replace]
+
+replace(oldItem:tinymce.ui.Control, newItem:tinymce.ui.Control)
+
+Replaces the specified child control with a new control.
+
+==== Parameters
+
+* [.param-name]#oldItem# link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.param-type]#(tinymce.ui.Control)#] - Old item to be replaced.
+* [.param-name]#newItem# link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.param-type]#(tinymce.ui.Control)#] - New item to be inserted.
+
+[#scrollintoview .anchor]##
+
+=== link:#scrollintoview[scrollIntoView]
+
+scrollIntoView(align:String):tinymce.ui.Control
+
+Scrolls the current control into view.
+
+==== Parameters
+
+* [.param-name]#align# [.param-type]#(String)# - Alignment in view top|center|bottom.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#show .anchor]##
+
+=== link:#show[show]
+
+show():tinymce.ui.Control
+
+Sets the visible state to true.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#testmoverel .anchor]##
+
+=== link:#testmoverel[testMoveRel]
+
+testMoveRel(elm:DOMElement, rels:Array):String
+
+Tests various positions to get the most suitable one.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(DOMElement)# - Element to position against.
+* [.param-name]#rels# [.param-type]#(Array)# - Array with relative positions.
+
+==== Return value
+
+* [.return-type]#String# - Best suitable relative position.
+
+[#text .anchor]##
+
+=== link:#text[text]
+
+text(value:String):String, tinymce.ui.Control
+
+Sets/gets the text for the control.
+
+==== Parameters
+
+* [.param-name]#value# [.param-type]#(String)# - Value to set to control.
+
+==== Return value
+
+* [.return-type]#String# - Current control on a set operation or current value on a get.
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
+
+[#title .anchor]##
+
+=== link:#title[title]
+
+title(value:String):String, tinymce.ui.Control
+
+Sets/gets the title for the control.
+
+==== Parameters
+
+* [.param-name]#value# [.param-type]#(String)# - Value to set to control.
+
+==== Return value
+
+* [.return-type]#String# - Current control on a set operation or current value on a get.
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
+
+[#tojson .anchor]##
+
+=== link:#tojson[toJSON]
+
+toJSON():Object
+
+Serializes the form into a JSON object by getting all items that has a name and a value.
+
+==== Return value
+
+* [.return-type]#Object# - JSON object with form data.
+
+[#translate .anchor]##
+
+=== link:#translate[translate]
+
+translate(text:String):String
+
+Returns the translated string.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to translate.
+
+==== Return value
+
+* [.return-type]#String# - Translated string or the same as the input.
+
+[#visible .anchor]##
+
+=== link:#visible[visible]
+
+visible(state:Boolean):Boolean, tinymce.ui.Control
+
+Sets/gets the visible for the control.
+
+==== Parameters
+
+* [.param-name]#state# [.param-type]#(Boolean)# - Value to set to control.
+
+==== Return value
+
+* [.return-type]#Boolean# - Current control on a set operation or current state on a get.
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.

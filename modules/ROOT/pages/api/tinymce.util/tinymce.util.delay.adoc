@@ -1,0 +1,145 @@
+= tinymce.util.Delay
+
+Utility class for working with delayed actions like setTimeout.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#clearinterval[clearInterval()] |Clears an interval timer so it won't execute. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#cleartimeout[clearTimeout()] |Clears an timeout timer so it won't execute. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#debounce[debounce()] |Creates debounced callback function that only gets executed once within the specified time. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#requestanimationframe[requestAnimationFrame()] |Requests an animation frame and fallbacks to a timeout on older browsers. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#seteditorinterval[setEditorInterval()] |Sets an interval timer it's similar to setInterval except that it checks if the editor instance is still alive when the callback gets executed. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#seteditortimeout[setEditorTimeout()] |Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is still alive when the callback gets executed. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#setinterval[setInterval()] |Sets an interval timer in ms and executes the specified callback at every interval of that time. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#settimeout[setTimeout()] |Sets a timer in ms and executes the specified callback when the timer runs out. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|===
+
+== Methods
+
+[#clearinterval .anchor]##
+
+=== link:#clearinterval[clearInterval]
+
+clearInterval(Interval:Number)
+
+Clears an interval timer so it won't execute.
+
+==== Parameters
+
+* [.param-name]#Interval# [.param-type]#(Number)# - timer id number.
+
+[#cleartimeout .anchor]##
+
+=== link:#cleartimeout[clearTimeout]
+
+clearTimeout(Timeout:Number)
+
+Clears an timeout timer so it won't execute.
+
+==== Parameters
+
+* [.param-name]#Timeout# [.param-type]#(Number)# - timer id number.
+
+[#debounce .anchor]##
+
+=== link:#debounce[debounce]
+
+debounce(callback:function, time:Number):Function
+
+Creates debounced callback function that only gets executed once within the specified time.
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer finishes.
+* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* [.return-type]#Function# - debounced function callback.
+
+[#requestanimationframe .anchor]##
+
+=== link:#requestanimationframe[requestAnimationFrame]
+
+requestAnimationFrame(callback:function, element:DOMElement)
+
+Requests an animation frame and fallbacks to a timeout on older browsers.
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when a new frame is available.
+* [.param-name]#element# [.param-type]#(DOMElement)# - Optional element to scope it to.
+
+[#seteditorinterval .anchor]##
+
+=== link:#seteditorinterval[setEditorInterval]
+
+setEditorInterval(callback:function, time:Number):Number
+
+Sets an interval timer it's similar to setInterval except that it checks if the editor instance is still alive when the callback gets executed.
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when interval time runs out.
+* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* [.return-type]#Number# - Timeout id number.
+
+[#seteditortimeout .anchor]##
+
+=== link:#seteditortimeout[setEditorTimeout]
+
+setEditorTimeout(editor:tinymce.Editor, callback:function, time:Number):Number
+
+Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is still alive when the callback gets executed.
+
+==== Parameters
+
+* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to check the removed state on.
+* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer runs out.
+* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* [.return-type]#Number# - Timeout id number.
+
+[#setinterval .anchor]##
+
+=== link:#setinterval[setInterval]
+
+setInterval(callback:function, time:Number):Number
+
+Sets an interval timer in ms and executes the specified callback at every interval of that time.
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when interval time runs out.
+* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* [.return-type]#Number# - Timeout id number.
+
+[#settimeout .anchor]##
+
+=== link:#settimeout[setTimeout]
+
+setTimeout(callback:function, time:Number):Number
+
+Sets a timer in ms and executes the specified callback when the timer runs out.
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer runs out.
+* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* [.return-type]#Number# - Timeout id number.

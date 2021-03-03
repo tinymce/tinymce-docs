@@ -1,0 +1,230 @@
+= tinymce.Formatter
+
+Text formatter engine class. This class is used to apply formats like bold, italic, font size etc to the current selection or specific nodes. This engine was built to replace the browser's default formatting logic for execCommand due to its inconsistent and buggy behavior.
+
+== Examples
+
+[source,prettyprint]
+----
+tinymce.activeEditor.formatter.register('mycustomformat', {
+   inline: 'span',
+   styles: {color: '#ff0000'}
+ });
+
+ tinymce.activeEditor.formatter.apply('mycustomformat');
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#apply[apply()] |Applies the specified format to the current selection or specified node. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#canapply[canApply()] |Returns true/false if the specified format can be applied to the current selection or not. It will currently only check the state for selector formats, it returns true on all other format types. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#formatchanged[formatChanged()] |Executes the specified callback when the current selection matches the formats or not. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#get[get()] |Returns the format by name or all formats if no name is specified. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#getcsstext[getCssText()] |Returns a preview css text for the specified format. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#match[match()] |Matches the current selection or specified node against the specified format name. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#matchall[matchAll()] |Matches the current selection against the array of formats and returns a new array with matching formats. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#matchnode[matchNode()] |Return true/false if the specified node has the specified format. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#register[register()] |Registers a specific format by name. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#remove[remove()] |Removes the specified format from the current selection or specified node. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#toggle[toggle()] |Toggles the specified format on/off. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|link:#unregister[unregister()] |Unregister a specific format by name. |link:/docs-4x/api/tinymce/tinymce.formatter[tinymce.Formatter]
+|===
+
+== Methods
+
+[#apply .anchor]##
+
+=== link:#apply[apply]
+
+apply(name:String, vars:Object, node:Node)
+
+Applies the specified format to the current selection or specified node.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of format to apply.
+* [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace within format before applying it.
+* [.param-name]#node# [.param-type]#(Node)# - Optional node to apply the format to defaults to current selection.
+
+[#canapply .anchor]##
+
+=== link:#canapply[canApply]
+
+canApply(name:String):boolean
+
+Returns true/false if the specified format can be applied to the current selection or not. It will currently only check the state for selector formats, it returns true on all other format types.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of format to check.
+
+==== Return value
+
+* [.return-type]#boolean# - true/false if the specified format can be applied to the current selection/node.
+
+[#formatchanged .anchor]##
+
+=== link:#formatchanged[formatChanged]
+
+formatChanged(formats:String, callback:function, similar:Boolean)
+
+Executes the specified callback when the current selection matches the formats or not.
+
+==== Parameters
+
+* [.param-name]#formats# [.param-type]#(String)# - Comma separated list of formats to check for.
+* [.param-name]#callback# [.param-type]#(function)# - Callback with state and args when the format is changed/toggled on/off.
+* [.param-name]#similar# [.param-type]#(Boolean)# - True/false state if the match should handle similar or exact formats.
+
+[#get .anchor]##
+
+=== link:#get[get]
+
+get(name:String):Array, Object
+
+Returns the format by name or all formats if no name is specified.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Optional name to retrieve by.
+
+==== Return value
+
+* [.return-type]#Array# - Array/Object with all registered formats or a specific format.
+* [.return-type]#Object# - Array/Object with all registered formats or a specific format.
+
+[#getcsstext .anchor]##
+
+=== link:#getcsstext[getCssText]
+
+getCssText(format:String):String
+
+Returns a preview css text for the specified format.
+
+==== Examples
+
+[source,prettyprint]
+----
+var cssText1 = editor.formatter.getCssText('bold');
+var cssText2 = editor.formatter.getCssText({inline: 'b'});
+----
+
+==== Parameters
+
+* [.param-name]#format# [.param-type]#(String)# - Format to generate preview css text for.
+
+==== Return value
+
+* [.return-type]#String# - Css text for the specified format.
+
+[#match .anchor]##
+
+=== link:#match[match]
+
+match(name:String, vars:Object, node:Node):boolean
+
+Matches the current selection or specified node against the specified format name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of format to match.
+* [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace before checking it.
+* [.param-name]#node# [.param-type]#(Node)# - Optional node to check.
+
+==== Return value
+
+* [.return-type]#boolean# - true/false if the specified selection/node matches the format.
+
+[#matchall .anchor]##
+
+=== link:#matchall[matchAll]
+
+matchAll(names:Array, vars:Object):Array
+
+Matches the current selection against the array of formats and returns a new array with matching formats.
+
+==== Parameters
+
+* [.param-name]#names# [.param-type]#(Array)# - Name of format to match.
+* [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace before checking it.
+
+==== Return value
+
+* [.return-type]#Array# - Array with matched formats.
+
+[#matchnode .anchor]##
+
+=== link:#matchnode[matchNode]
+
+matchNode(node:Node, name:String, vars:Object, similar:Boolean):Object
+
+Return true/false if the specified node has the specified format.
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(Node)# - Node to check the format on.
+* [.param-name]#name# [.param-type]#(String)# - Format name to check.
+* [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace before checking it.
+* [.param-name]#similar# [.param-type]#(Boolean)# - Match format that has similar properties.
+
+==== Return value
+
+* [.return-type]#Object# - Returns the format object it matches or undefined if it doesn't match.
+
+[#register .anchor]##
+
+=== link:#register[register]
+
+register(name:Object, format:Object)
+
+Registers a specific format by name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(Object)# - Name of the format for example "bold".
+* [.param-name]#format# [.param-type]#(Object)# - Optional format object or array of format variants can only be omitted if the first arg is an object.
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove(name:String, vars:Object, node:Node)
+
+Removes the specified format from the current selection or specified node.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of format to remove.
+* [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace within format before removing it.
+* [.param-name]#node# [.param-type]#(Node)# - Optional node or DOM range to remove the format from defaults to current selection.
+
+[#toggle .anchor]##
+
+=== link:#toggle[toggle]
+
+toggle(name:String, vars:Object, node:Node)
+
+Toggles the specified format on/off.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of format to apply/remove.
+* [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace within format before applying/removing it.
+* [.param-name]#node# [.param-type]#(Node)# - Optional node to apply the format to or remove from. Defaults to current selection.
+
+[#unregister .anchor]##
+
+=== link:#unregister[unregister]
+
+unregister(name:String)
+
+Unregister a specific format by name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the format for example "bold".

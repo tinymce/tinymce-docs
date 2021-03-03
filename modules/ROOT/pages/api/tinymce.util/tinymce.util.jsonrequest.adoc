@@ -1,0 +1,67 @@
+= tinymce.util.JSONRequest
+
+This class enables you to use JSON-RPC to call backend methods.
+
+== Examples
+
+[source,prettyprint]
+----
+var json = new tinymce.util.JSONRequest({
+    url: 'somebackend.php'
+});
+
+// Send RPC call 1
+json.send({
+    method: 'someMethod1',
+    params: ['a', 'b'],
+    success: function(result) {
+        console.dir(result);
+    }
+});
+
+// Send RPC call 2
+json.send({
+    method: 'someMethod2',
+    params: ['a', 'b'],
+    success: function(result) {
+        console.dir(result);
+    }
+});
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#send[send()] |Sends a JSON-RPC call. Consult the Wiki API documentation for more details on what you can pass to this function. |link:/docs-4x/api/tinymce.util/tinymce.util.jsonrequest[tinymce.util.JSONRequest]
+|link:#sendrpc[sendRPC()] |Simple helper function to send a JSON-RPC request without the need to initialize an object. Consult the Wiki API documentation for more details on what you can pass to this function. |link:/docs-4x/api/tinymce.util/tinymce.util.jsonrequest[tinymce.util.JSONRequest]
+|===
+
+== Methods
+
+[#send .anchor]##
+
+=== link:#send[send]
+
+send(args:Object)
+
+Sends a JSON-RPC call. Consult the Wiki API documentation for more details on what you can pass to this function.
+
+==== Parameters
+
+* [.param-name]#args# [.param-type]#(Object)# - Call object where there are three field id, method and params this object should also contain callbacks etc.
+
+[#sendrpc .anchor]##
+
+=== link:#sendrpc[sendRPC]
+
+sendRPC(o:Object)
+
+Simple helper function to send a JSON-RPC request without the need to initialize an object. Consult the Wiki API documentation for more details on what you can pass to this function.
+
+==== Parameters
+
+* [.param-name]#o# [.param-type]#(Object)# - Call object where there are three field id, method and params this object should also contain callbacks etc.

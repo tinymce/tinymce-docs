@@ -1,0 +1,90 @@
+= tinymce.Event
+
+This is the base class for all TinyMCE events.
+
+[#properties .anchor]##
+
+== link:#properties[Properties]
+
+[cols=",,,",options="header",]
+|===
+|name |type |summary |defined by
+|type |[.param-type]#String# |The event type name for example "click". |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#isdefaultprevented[isDefaultPrevented()] |Returns true/false if the default action is to be prevented or not. |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
+|link:#isimmediatepropagationstopped[isImmediatePropagationStopped()] |Returns true/false if the event immediate propagation is stopped or not. |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
+|link:#ispropagationstopped[isPropagationStopped()] |Returns true/false if the event propagation is stopped or not. |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
+|link:#preventdefault[preventDefault()] |Prevents the default action of an event to be executed. |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
+|link:#stopimmediatepropagation[stopImmediatePropagation()] |Prevents the event from propagating to listeners on the same object. |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
+|link:#stoppropagation[stopPropagation()] |Stops the event from propagating up to listeners on parent objects. |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
+|===
+
+== Methods
+
+[#isdefaultprevented .anchor]##
+
+=== link:#isdefaultprevented[isDefaultPrevented]
+
+isDefaultPrevented():Boolean
+
+Returns true/false if the default action is to be prevented or not.
+
+==== Return value
+
+* [.return-type]#Boolean# - True/false if the event is to be execured or not.
+
+[#isimmediatepropagationstopped .anchor]##
+
+=== link:#isimmediatepropagationstopped[isImmediatePropagationStopped]
+
+isImmediatePropagationStopped():Boolean
+
+Returns true/false if the event immediate propagation is stopped or not.
+
+==== Return value
+
+* [.return-type]#Boolean# - True/false if the event immediate propagation is stopped or not.
+
+[#ispropagationstopped .anchor]##
+
+=== link:#ispropagationstopped[isPropagationStopped]
+
+isPropagationStopped():Boolean
+
+Returns true/false if the event propagation is stopped or not.
+
+==== Return value
+
+* [.return-type]#Boolean# - True/false if the event propagation is stopped or not.
+
+[#preventdefault .anchor]##
+
+=== link:#preventdefault[preventDefault]
+
+preventDefault()
+
+Prevents the default action of an event to be executed.
+
+[#stopimmediatepropagation .anchor]##
+
+=== link:#stopimmediatepropagation[stopImmediatePropagation]
+
+stopImmediatePropagation()
+
+Prevents the event from propagating to listeners on the same object.
+
+[#stoppropagation .anchor]##
+
+=== link:#stoppropagation[stopPropagation]
+
+stopPropagation()
+
+Stops the event from propagating up to listeners on parent objects.

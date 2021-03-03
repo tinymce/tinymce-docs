@@ -1,0 +1,9 @@
+= tinymce.util.LocalStorage
+
+== Examples
+
+[source,prettyprint]
+----
+tinymce.util.LocalStorage.setItem('key', 'value');
+var value = tinymce.util.LocalStorage.getItem('key');
+----

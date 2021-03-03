@@ -1,0 +1,130 @@
+= tinymce.dom.ScriptLoader
+
+This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks when various items gets loaded. This class is useful to load external JavaScript files.
+
+== Examples
+
+[source,prettyprint]
+----
+// Load a script from a specific URL using the global script loader
+tinymce.ScriptLoader.load('somescript.js');
+
+// Load a script using a unique instance of the script loader
+var scriptLoader = new tinymce.dom.ScriptLoader();
+
+scriptLoader.load('somescript.js');
+
+// Load multiple scripts
+var scriptLoader = new tinymce.dom.ScriptLoader();
+
+scriptLoader.add('somescript1.js');
+scriptLoader.add('somescript2.js');
+scriptLoader.add('somescript3.js');
+
+scriptLoader.loadQueue(function() {
+   alert('All scripts are now loaded.');
+});
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#add[add()] |Adds a specific script to the load queue of the script loader. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
+|link:#isdone[isDone()] |Returns true/false if a script has been loaded or not. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
+|link:#load[load()] |Loads a specific script directly without adding it to the load queue. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
+|link:#loadqueue[loadQueue()] |Starts the loading of the queue. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
+|link:#loadscripts[loadScripts()] |Loads the specified queue of files and executes the callback ones they are loaded. This method is generally not used outside this class but it might be useful in some scenarios. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
+|link:#markdone[markDone()] |Marks a specific script to be loaded. This can be useful if a script got loaded outside the script loader or to skip it from loading some script. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
+|===
+
+== Methods
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(url:String, success:function, scope:Object, failure:function)
+
+Adds a specific script to the load queue of the script loader.
+
+==== Parameters
+
+* [.param-name]#url# [.param-type]#(String)# - Absolute URL to script to add.
+* [.param-name]#success# [.param-type]#(function)# - Optional success callback function to execute when the script loades successfully.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute callback in.
+* [.param-name]#failure# [.param-type]#(function)# - Optional failure callback function to execute when the script failed to load.
+
+[#isdone .anchor]##
+
+=== link:#isdone[isDone]
+
+isDone(url:String):Boolean
+
+Returns true/false if a script has been loaded or not.
+
+==== Parameters
+
+* [.param-name]#url# [.param-type]#(String)# - URL to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the URL is loaded.
+
+[#load .anchor]##
+
+=== link:#load[load]
+
+load(url:String, callback:function, callback:function)
+
+Loads a specific script directly without adding it to the load queue.
+
+==== Parameters
+
+* [.param-name]#url# [.param-type]#(String)# - Absolute URL to script to add.
+* [.param-name]#callback# [.param-type]#(function)# - Optional success callback function when the script loaded successfully.
+* [.param-name]#callback# [.param-type]#(function)# - Optional failure callback function when the script failed to load.
+
+[#loadqueue .anchor]##
+
+=== link:#loadqueue[loadQueue]
+
+loadQueue(success:function, failure:function, scope:Object)
+
+Starts the loading of the queue.
+
+==== Parameters
+
+* [.param-name]#success# [.param-type]#(function)# - Optional callback to execute when all queued items are loaded.
+* [.param-name]#failure# [.param-type]#(function)# - Optional callback to execute when queued items failed to load.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
+
+[#loadscripts .anchor]##
+
+=== link:#loadscripts[loadScripts]
+
+loadScripts(scripts:Array, callback:function, scope:Object, callback:function)
+
+Loads the specified queue of files and executes the callback ones they are loaded. This method is generally not used outside this class but it might be useful in some scenarios.
+
+==== Parameters
+
+* [.param-name]#scripts# [.param-type]#(Array)# - Array of queue items to load.
+* [.param-name]#callback# [.param-type]#(function)# - Optional callback to execute when scripts is loaded successfully.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute callback in.
+* [.param-name]#callback# [.param-type]#(function)# - Optional callback to execute if scripts failed to load.
+
+[#markdone .anchor]##
+
+=== link:#markdone[markDone]
+
+markDone(url:string)
+
+Marks a specific script to be loaded. This can be useful if a script got loaded outside the script loader or to skip it from loading some script.
+
+==== Parameters
+
+* [.param-name]#url# [.param-type]#(string)# - Absolute URL to the script to mark as loaded.

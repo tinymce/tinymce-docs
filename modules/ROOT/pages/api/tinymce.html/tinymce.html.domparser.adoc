@@ -1,0 +1,112 @@
+= tinymce.html.DomParser
+
+This class parses HTML code into a DOM like structure of nodes it will remove redundant whitespace and make sure that the node tree is valid according to the specified schema. So for example: <p>a<p>b</p>c</p> will become <p>a</p><p>b</p><p>c</p>
+
+== Examples
+
+[source,prettyprint]
+----
+var parser = new tinymce.html.DomParser({validate: true}, schema);
+var rootNode = parser.parse('<h1>content</h1>');
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#addattributefilter[addAttributeFilter()] |Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document. |link:/docs-4x/api/tinymce.html/tinymce.html.domparser[tinymce.html.DomParser]
+|link:#addnodefilter[addNodeFilter()] |Adds a node filter function to the parser, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document. |link:/docs-4x/api/tinymce.html/tinymce.html.domparser[tinymce.html.DomParser]
+|link:#filternode[filterNode()] |Runs the specified node though the element and attributes filters. |link:/docs-4x/api/tinymce.html/tinymce.html.domparser[tinymce.html.DomParser]
+|link:#parse[parse()] |Parses the specified HTML string into a DOM like node tree and returns the result. |link:/docs-4x/api/tinymce.html/tinymce.html.domparser[tinymce.html.DomParser]
+|===
+
+== Methods
+
+[#addattributefilter .anchor]##
+
+=== link:#addattributefilter[addAttributeFilter]
+
+addAttributeFilter(callback:function)
+
+Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document.
+
+==== Examples
+
+[source,prettyprint]
+----
+parser.addAttributeFilter('src,href', function(nodes, name) {
+ for (var i = 0; i < nodes.length; i++) {
+  console.log(nodes[i].name);
+ }
+});
+----
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
+
+[#addnodefilter .anchor]##
+
+=== link:#addnodefilter[addNodeFilter]
+
+addNodeFilter(callback:function)
+
+Adds a node filter function to the parser, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document.
+
+==== Examples
+
+[source,prettyprint]
+----
+parser.addNodeFilter('p,h1', function(nodes, name) {
+ for (var i = 0; i < nodes.length; i++) {
+  console.log(nodes[i].name);
+ }
+});
+----
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
+
+[#filternode .anchor]##
+
+=== link:#filternode[filterNode]
+
+filterNode(Node:tinymce.html.Node):tinymce.html.Node
+
+Runs the specified node though the element and attributes filters.
+
+==== Parameters
+
+* [.param-name]#Node# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - the node to run filters on.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The passed in node.
+
+[#parse .anchor]##
+
+=== link:#parse[parse]
+
+parse(html:String, args:Object):tinymce.html.Node
+
+Parses the specified HTML string into a DOM like node tree and returns the result.
+
+==== Examples
+
+[source,prettyprint]
+----
+var rootNode = new DomParser({...}).parse('<b>text</b>');
+----
+
+==== Parameters
+
+* [.param-name]#html# [.param-type]#(String)# - Html string to sax parse.
+* [.param-name]#args# [.param-type]#(Object)# - Optional args object that gets passed to all filter functions.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - Root node containing the tree.

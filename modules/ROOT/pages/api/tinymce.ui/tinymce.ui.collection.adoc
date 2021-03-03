@@ -1,0 +1,456 @@
+= tinymce.ui.Collection
+
+Control collection, this class contains control instances and it enables you to perform actions on all the contained items. This is very similar to how jQuery works.
+
+== Examples
+
+[source,prettyprint]
+----
+someCollection.show().disabled(true);
+----
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#collection[Collection()] |Constructor for the collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#active[active()] |Sets/gets the active state on the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#add[add()] |Adds new items to the control collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#addclass[addClass()] |Adds a class to all items in the collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#disabled[disabled()] |Sets/gets the disabled state on the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#each[each()] |Executes the specified callback on each item in collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#eq[eq()] |Makes the current collection equal to the specified index. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#exec[exec()] |Executes the specific function name with optional arguments an all items in collection if it exists. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#filter[filter()] |Filters the collection item based on the specified selector expression or selector function. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#fire[fire()] |Fires the specified event by name and arguments on the control. This will execute all bound event handlers. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#hasclass[hasClass()] |Returns true/false if the class exists or not. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#hide[hide()] |Hides the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#indexof[indexOf()] |Finds the index of the specified control or return -1 if it isn't in the collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#name[name()] |Sets/gets the name contents of the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#off[off()] |Unbinds the specified event and optionally a specific callback. If you omit the name parameter all event handlers will be removed. If you omit the callback all event handles by the specified name will be removed. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#on[on()] |Binds a callback to the specified event. This event can both be native browser events like "click" or custom ones like PostRender. The callback function gets one parameter: either the browser's native event object or a custom JS object. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#prop[prop()] |Sets/gets the specific property on the items in the collection. The same as executing control.(); |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#remove[remove()] |Remove all items from collection and DOM. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#removeclass[removeClass()] |Removes the specified class from all items in collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#reverse[reverse()] |Returns a new collection of the contents in reverse order. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#selected[selected()] |Sets/gets the selected state on the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#set[set()] |Sets the contents of the collection. This will remove any existing items and replace them with the ones specified in the input array. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#show[show()] |Shows the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#slice[slice()] |Slices the items within the collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#text[text()] |Sets/gets the text contents of the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#toarray[toArray()] |Returns an JavaScript array object of the contents inside the collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|link:#visible[visible()] |Sets/gets the selected state on the items in the current collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
+|===
+
+== Constructors
+
+[#collection .anchor]##
+
+=== link:#collection[Collection]
+
+public constructor function Collection(items:Array)
+
+Constructor for the collection.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Optional array with items to add.
+
+== Methods
+
+[#active .anchor]##
+
+=== link:#active[active]
+
+active():tinymce.ui.Collection
+
+Sets/gets the active state on the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or active state of the first item on a get operation.
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(items:Array):tinymce.ui.Collection
+
+Adds new items to the control collection.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array if items to add to collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#addclass .anchor]##
+
+=== link:#addclass[addClass]
+
+addClass(cls:String):tinymce.ui.Collection
+
+Adds a class to all items in the collection.
+
+==== Parameters
+
+* [.param-name]#cls# [.param-type]#(String)# - Class to add to each item.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#disabled .anchor]##
+
+=== link:#disabled[disabled]
+
+disabled():tinymce.ui.Collection
+
+Sets/gets the disabled state on the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or disabled state of the first item on a get operation.
+
+[#each .anchor]##
+
+=== link:#each[each]
+
+each(callback:function):tinymce.ui.Collection
+
+Executes the specified callback on each item in collection.
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback to execute for each item in collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#eq .anchor]##
+
+=== link:#eq[eq]
+
+eq(index:Number):tinymce.ui.Collection
+
+Makes the current collection equal to the specified index.
+
+==== Parameters
+
+* [.param-name]#index# [.param-type]#(Number)# - Index of the item to set the collection to.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
+
+[#exec .anchor]##
+
+=== link:#exec[exec]
+
+exec(name:String, ...:Object):tinymce.ui.Collection
+
+Executes the specific function name with optional arguments an all items in collection if it exists.
+
+==== Examples
+
+[source,prettyprint]
+----
+collection.exec("myMethod", arg1, arg2, arg3);
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the function to execute.
+* [.param-name]#...# [.param-type]#(Object)# - Multiple arguments to pass to each function.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
+
+[#filter .anchor]##
+
+=== link:#filter[filter]
+
+filter(selector:String):tinymce.ui.Collection
+
+Filters the collection item based on the specified selector expression or selector function.
+
+==== Parameters
+
+* [.param-name]#selector# [.param-type]#(String)# - Selector expression to filter items by.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection containing the filtered items.
+
+[#fire .anchor]##
+
+=== link:#fire[fire]
+
+fire(name:String, args:Object):tinymce.ui.Collection
+
+Fires the specified event by name and arguments on the control. This will execute all bound event handlers.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
+* [.param-name]#args# [.param-type]#(Object)# - Optional arguments to pass to the event.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#hasclass .anchor]##
+
+=== link:#hasclass[hasClass]
+
+hasClass(cls:String):Boolean
+
+Returns true/false if the class exists or not.
+
+==== Parameters
+
+* [.param-name]#cls# [.param-type]#(String)# - Class to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false state if the class exists or not.
+
+[#hide .anchor]##
+
+=== link:#hide[hide]
+
+hide():tinymce.ui.Collection
+
+Hides the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#indexof .anchor]##
+
+=== link:#indexof[indexOf]
+
+indexOf(ctrl:Control):Number
+
+Finds the index of the specified control or return -1 if it isn't in the collection.
+
+==== Parameters
+
+* [.param-name]#ctrl# [.param-type]#(Control)# - Control instance to look for.
+
+==== Return value
+
+* [.return-type]#Number# - Index of the specified control or -1.
+
+[#name .anchor]##
+
+=== link:#name[name]
+
+name():tinymce.ui.Collection
+
+Sets/gets the name contents of the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or name value of the first item on a get operation.
+
+[#off .anchor]##
+
+=== link:#off[off]
+
+off(name:String, callback:function):tinymce.ui.Collection
+
+Unbinds the specified event and optionally a specific callback. If you omit the name parameter all event handlers will be removed. If you omit the callback all event handles by the specified name will be removed.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Optional name for the event to unbind.
+* [.param-name]#callback# [.param-type]#(function)# - Optional callback function to unbind.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#on .anchor]##
+
+=== link:#on[on]
+
+on(name:String, callback:String):tinymce.ui.Collection
+
+Binds a callback to the specified event. This event can both be native browser events like "click" or custom ones like PostRender. The callback function gets one parameter: either the browser's native event object or a custom JS object.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind. For example "click".
+* [.param-name]#callback# [.param-type]#(String)# - Callback function to execute once the event occurs.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#prop .anchor]##
+
+=== link:#prop[prop]
+
+prop(name:String, value:Object):tinymce.ui.Collection
+
+Sets/gets the specific property on the items in the collection. The same as executing control.();
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Property name to get/set.
+* [.param-name]#value# [.param-type]#(Object)# - Optional object value to set.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or value of the first item on a get operation.
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove():tinymce.ui.Collection
+
+Remove all items from collection and DOM.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
+
+[#removeclass .anchor]##
+
+=== link:#removeclass[removeClass]
+
+removeClass(cls:String):tinymce.ui.Collection
+
+Removes the specified class from all items in collection.
+
+==== Parameters
+
+* [.param-name]#cls# [.param-type]#(String)# - Class to remove from each item.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#reverse .anchor]##
+
+=== link:#reverse[reverse]
+
+reverse():tinymce.ui.Collection
+
+Returns a new collection of the contents in reverse order.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection instance with reversed items.
+
+[#selected .anchor]##
+
+=== link:#selected[selected]
+
+selected():tinymce.ui.Collection
+
+Sets/gets the selected state on the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or selected state of the first item on a get operation.
+
+[#set .anchor]##
+
+=== link:#set[set]
+
+set(items:Array):tinymce.ui.Collection
+
+Sets the contents of the collection. This will remove any existing items and replace them with the ones specified in the input array.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Array with items to set into the Collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection instance.
+
+[#show .anchor]##
+
+=== link:#show[show]
+
+show():tinymce.ui.Collection
+
+Shows the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+
+[#slice .anchor]##
+
+=== link:#slice[slice]
+
+slice(index:Number, len:Number):tinymce.ui.Collection
+
+Slices the items within the collection.
+
+==== Parameters
+
+* [.param-name]#index# [.param-type]#(Number)# - Index to slice at.
+* [.param-name]#len# [.param-type]#(Number)# - Optional length to slice.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
+
+[#text .anchor]##
+
+=== link:#text[text]
+
+text():tinymce.ui.Collection
+
+Sets/gets the text contents of the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or text value of the first item on a get operation.
+
+[#toarray .anchor]##
+
+=== link:#toarray[toArray]
+
+toArray():Array
+
+Returns an JavaScript array object of the contents inside the collection.
+
+==== Return value
+
+* [.return-type]#Array# - Array with all items from collection.
+
+[#visible .anchor]##
+
+=== link:#visible[visible]
+
+visible():tinymce.ui.Collection
+
+Sets/gets the selected state on the items in the current collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or visible state of the first item on a get operation.

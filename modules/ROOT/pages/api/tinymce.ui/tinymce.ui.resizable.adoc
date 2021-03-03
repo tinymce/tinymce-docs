@@ -1,0 +1,59 @@
+= tinymce.ui.Resizable
+
+Resizable mixin. Enables controls to be resized.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#resizeby[resizeBy()] |Resizes the control to a specific relative width/height. |link:/docs-4x/api/tinymce.ui/tinymce.ui.resizable[tinymce.ui.Resizable]
+|link:#resizeto[resizeTo()] |Resizes the control to a specific width/height. |link:/docs-4x/api/tinymce.ui/tinymce.ui.resizable[tinymce.ui.Resizable]
+|link:#resizetocontent[resizeToContent()] |Resizes the control to contents. |link:/docs-4x/api/tinymce.ui/tinymce.ui.resizable[tinymce.ui.Resizable]
+|===
+
+== Methods
+
+[#resizeby .anchor]##
+
+=== link:#resizeby[resizeBy]
+
+resizeBy(dw:Number, dh:Number):tinymce.ui.Control
+
+Resizes the control to a specific relative width/height.
+
+==== Parameters
+
+* [.param-name]#dw# [.param-type]#(Number)# - Relative control width.
+* [.param-name]#dh# [.param-type]#(Number)# - Relative control height.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#resizeto .anchor]##
+
+=== link:#resizeto[resizeTo]
+
+resizeTo(w:Number, h:Number):tinymce.ui.Control
+
+Resizes the control to a specific width/height.
+
+==== Parameters
+
+* [.param-name]#w# [.param-type]#(Number)# - Control width.
+* [.param-name]#h# [.param-type]#(Number)# - Control height.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#resizetocontent .anchor]##
+
+=== link:#resizetocontent[resizeToContent]
+
+resizeToContent()
+
+Resizes the control to contents.

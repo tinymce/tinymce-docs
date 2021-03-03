@@ -1,0 +1,45 @@
+= tinymce.ui.Throbber
+
+This class enables you to display a Throbber for any element.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#hide[hide()] |Hides the throbber. |link:/docs-4x/api/tinymce.ui/tinymce.ui.throbber[tinymce.ui.Throbber]
+|link:#show[show()] |Shows the throbber. |link:/docs-4x/api/tinymce.ui/tinymce.ui.throbber[tinymce.ui.Throbber]
+|===
+
+== Methods
+
+[#hide .anchor]##
+
+=== link:#hide[hide]
+
+hide():tinymce.ui.Throbber
+
+Hides the throbber.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.throbber[[.return-type]#tinymce.ui.Throbber#] - Current throbber instance.
+
+[#show .anchor]##
+
+=== link:#show[show]
+
+show(time:Number, callback:function):tinymce.ui.Throbber
+
+Shows the throbber.
+
+==== Parameters
+
+* [.param-name]#time# [.param-type]#(Number)# - Time to wait before showing.
+* [.param-name]#callback# [.param-type]#(function)# - Optional callback to execute when the throbber is shown.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.throbber[[.return-type]#tinymce.ui.Throbber#] - Current throbber instance.

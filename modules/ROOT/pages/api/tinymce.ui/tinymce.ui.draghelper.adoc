@@ -1,0 +1,39 @@
+= tinymce.ui.DragHelper
+
+Drag/drop helper class.
+
+== Examples
+
+[source,prettyprint]
+----
+var dragHelper = new tinymce.ui.DragHelper('mydiv', {
+    start: function(document, window, evt) {
+    },
+
+    drag: function(evt) {
+    },
+
+    end: function(evt) {
+    }
+});
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#destroy[destroy()] |Destroys the drag/drop helper instance. |link:/docs-4x/api/tinymce.ui/tinymce.ui.draghelper[tinymce.ui.DragHelper]
+|===
+
+== Methods
+
+[#destroy .anchor]##
+
+=== link:#destroy[destroy]
+
+destroy()
+
+Destroys the drag/drop helper instance.

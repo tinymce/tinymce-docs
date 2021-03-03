@@ -1,0 +1,104 @@
+= tinymce.util.Color
+
+This class lets you parse/serialize colors and convert rgb/hsb.
+
+== Examples
+
+[source,prettyprint]
+----
+var white = new tinymce.util.Color({r: 255, g: 255, b: 255});
+var red = new tinymce.util.Color('#FF0000');
+
+console.log(white.toHex(), red.toHsv());
+----
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#color[Color()] |Constructs a new color instance. |link:/docs-4x/api/tinymce.util/tinymce.util.color[tinymce.util.Color]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#parse[parse()] |Parses the specified value and populates the color instance. Supported format examples: * rbg(255,0,0) * #ff0000 * #fff * \{r: 255, g: 0, b: 0} * \{h: 360, s: 100, v: 100} |link:/docs-4x/api/tinymce.util/tinymce.util.color[tinymce.util.Color]
+|link:#tohex[toHex()] |Returns the hex string of the current color. For example: #ff00ff |link:/docs-4x/api/tinymce.util/tinymce.util.color[tinymce.util.Color]
+|link:#tohsv[toHsv()] |Returns the h, s, v values of the color. Ranges: h=0-360, s=0-100, v=0-100. |link:/docs-4x/api/tinymce.util/tinymce.util.color[tinymce.util.Color]
+|link:#torgb[toRgb()] |Returns the r, g, b values of the color. Each channel has a range from 0-255. |link:/docs-4x/api/tinymce.util/tinymce.util.color[tinymce.util.Color]
+|===
+
+== Constructors
+
+[#color .anchor]##
+
+=== link:#color[Color]
+
+public constructor function Color(value:String)
+
+Constructs a new color instance.
+
+==== Parameters
+
+* [.param-name]#value# [.param-type]#(String)# - Optional initial value to parse.
+
+== Methods
+
+[#parse .anchor]##
+
+=== link:#parse[parse]
+
+parse(value:Object):tinymce.util.Color
+
+Parses the specified value and populates the color instance. Supported format examples: * rbg(255,0,0) * #ff0000 * #fff * \{r: 255, g: 0, b: 0} * \{h: 360, s: 100, v: 100}
+
+==== Parameters
+
+* [.param-name]#value# [.param-type]#(Object)# - Color value to parse.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.util/tinymce.util.color[[.return-type]#tinymce.util.Color#] - Current color instance.
+
+[#tohex .anchor]##
+
+=== link:#tohex[toHex]
+
+toHex():String
+
+Returns the hex string of the current color. For example: #ff00ff
+
+==== Return value
+
+* [.return-type]#String# - Hex string of current color.
+
+[#tohsv .anchor]##
+
+=== link:#tohsv[toHsv]
+
+toHsv():Object
+
+Returns the h, s, v values of the color. Ranges: h=0-360, s=0-100, v=0-100.
+
+==== Return value
+
+* [.return-type]#Object# - Object with h, s, v fields.
+
+[#torgb .anchor]##
+
+=== link:#torgb[toRgb]
+
+toRgb():Object
+
+Returns the r, g, b values of the color. Each channel has a range from 0-255.
+
+==== Return value
+
+* [.return-type]#Object# - Object with r, g, b fields.

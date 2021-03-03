@@ -1,0 +1,60 @@
+= tinymce.util.JSON
+
+JSON parser and serializer class.
+
+== Examples
+
+[source,prettyprint]
+----
+// JSON parse a string into an object
+var obj = tinymce.util.JSON.parse(somestring);
+
+// JSON serialize a object into an string
+var str = tinymce.util.JSON.serialize(obj);
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#parse[parse()] |Unserializes/parses the specified JSON string into a object. |link:/docs-4x/api/tinymce.util/tinymce.util.json[tinymce.util.JSON]
+|link:#serialize[serialize()] |Serializes the specified object as a JSON string. |link:/docs-4x/api/tinymce.util/tinymce.util.json[tinymce.util.JSON]
+|===
+
+== Methods
+
+[#parse .anchor]##
+
+=== link:#parse[parse]
+
+parse(s:string):Object
+
+Unserializes/parses the specified JSON string into a object.
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(string)# - JSON String to parse into a JavaScript object.
+
+==== Return value
+
+* [.return-type]#Object# - Object from input JSON string or undefined if it failed.
+
+[#serialize .anchor]##
+
+=== link:#serialize[serialize]
+
+serialize(obj:Object, quote:String):string
+
+Serializes the specified object as a JSON string.
+
+==== Parameters
+
+* [.param-name]#obj# [.param-type]#(Object)# - Object to serialize as a JSON string.
+* [.param-name]#quote# [.param-type]#(String)# - Optional quote string defaults to ".
+
+==== Return value
+
+* [.return-type]#string# - JSON string serialized from input.

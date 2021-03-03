@@ -1,0 +1,155 @@
+= tinymce.WindowManager
+
+This class handles the creation of native windows and dialogs. This class can be extended to provide for example inline dialogs.
+
+== Examples
+
+[source,prettyprint]
+----
+// Opens a new dialog with the file.htm file and the size 320x240
+// It also adds a custom parameter this can be retrieved by using tinyMCEPopup.getWindowArg inside the dialog.
+tinymce.activeEditor.windowManager.open({
+   url: 'file.htm',
+   width: 320,
+   height: 240
+}, {
+   custom_param: 1
+});
+
+// Displays an alert box using the active editors window manager instance
+tinymce.activeEditor.windowManager.alert('Hello world!');
+
+// Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
+});
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#alert[alert()] |Creates a alert dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended. |link:/docs-4x/api/tinymce/tinymce.windowmanager[tinymce.WindowManager]
+|link:#close[close()] |Closes the top most window. |link:/docs-4x/api/tinymce/tinymce.windowmanager[tinymce.WindowManager]
+|link:#confirm[confirm()] |Creates a confirm dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended. |link:/docs-4x/api/tinymce/tinymce.windowmanager[tinymce.WindowManager]
+|link:#getparams[getParams()] |Returns the params of the last window open call. This can be used in iframe based dialog to get params passed from the tinymce plugin. |link:/docs-4x/api/tinymce/tinymce.windowmanager[tinymce.WindowManager]
+|link:#getwindows[getWindows()] |Returns the currently opened window objects. |link:/docs-4x/api/tinymce/tinymce.windowmanager[tinymce.WindowManager]
+|link:#open[open()] |Opens a new window. |link:/docs-4x/api/tinymce/tinymce.windowmanager[tinymce.WindowManager]
+|link:#setparams[setParams()] |Sets the params of the last opened window. |link:/docs-4x/api/tinymce/tinymce.windowmanager[tinymce.WindowManager]
+|===
+
+== Methods
+
+[#alert .anchor]##
+
+=== link:#alert[alert]
+
+alert(message:String, callback:function, scope:Object)
+
+Creates a alert dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Displays an alert box using the active editors window manager instance
+tinymce.activeEditor.windowManager.alert('Hello world!');
+----
+
+==== Parameters
+
+* [.param-name]#message# [.param-type]#(String)# - Text to display in the new alert dialog.
+* [.param-name]#callback# [.param-type]#(function)# - Callback function to be executed after the user has selected ok.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
+
+[#close .anchor]##
+
+=== link:#close[close]
+
+close()
+
+Closes the top most window.
+
+[#confirm .anchor]##
+
+=== link:#confirm[confirm]
+
+confirm(message:String, callback:function, scope:Object)
+
+Creates a confirm dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
+tinymce.activeEditor.windowManager.confirm("Do you want to do something", function(s) {
+   if (s)
+      tinymce.activeEditor.windowManager.alert("Ok");
+   else
+      tinymce.activeEditor.windowManager.alert("Cancel");
+});
+----
+
+==== Parameters
+
+* [.param-name]#message# [.param-type]#(String)# - Text to display in the new confirm dialog.
+* [.param-name]#callback# [.param-type]#(function)# - Callback function to be executed after the user has selected ok or cancel.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
+
+[#getparams .anchor]##
+
+=== link:#getparams[getParams]
+
+getParams():Object
+
+Returns the params of the last window open call. This can be used in iframe based dialog to get params passed from the tinymce plugin.
+
+==== Examples
+
+[source,prettyprint]
+----
+var dialogArguments = top.tinymce.activeEditor.windowManager.getParams();
+----
+
+==== Return value
+
+* [.return-type]#Object# - Name/value object with parameters passed from windowManager.open call.
+
+[#getwindows .anchor]##
+
+=== link:#getwindows[getWindows]
+
+getWindows():Array
+
+Returns the currently opened window objects.
+
+==== Return value
+
+* [.return-type]#Array# - Array of the currently opened windows.
+
+[#open .anchor]##
+
+=== link:#open[open]
+
+open(args:Object, params:Object)
+
+Opens a new window.
+
+==== Parameters
+
+* [.param-name]#args# [.param-type]#(Object)# - Optional name/value settings collection contains things like width/height/url etc.
+* [.param-name]#params# [.param-type]#(Object)# - Options like title, file, width, height etc.
+
+[#setparams .anchor]##
+
+=== link:#setparams[setParams]
+
+setParams(params:Object)
+
+Sets the params of the last opened window.
+
+==== Parameters
+
+* [.param-name]#params# [.param-type]#(Object)# - Params object to set for the last opened window.

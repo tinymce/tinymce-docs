@@ -1,0 +1,86 @@
+= tinymce.ui.Movable
+
+Movable mixin. Makes controls movable absolute and relative to other elements.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#moveby[moveBy()] |Move by a relative x, y values. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|link:#moverel[moveRel()] |Move relative to the specified element. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|link:#moveto[moveTo()] |Move to absolute position. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|link:#testmoverel[testMoveRel()] |Tests various positions to get the most suitable one. |link:/docs-4x/api/tinymce.ui/tinymce.ui.movable[tinymce.ui.Movable]
+|===
+
+== Methods
+
+[#moveby .anchor]##
+
+=== link:#moveby[moveBy]
+
+moveBy(dx:Number, dy:Number):tinymce.ui.Control
+
+Move by a relative x, y values.
+
+==== Parameters
+
+* [.param-name]#dx# [.param-type]#(Number)# - Relative x position.
+* [.param-name]#dy# [.param-type]#(Number)# - Relative y position.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#moverel .anchor]##
+
+=== link:#moverel[moveRel]
+
+moveRel(elm:Element, rel:String):tinymce.ui.Control
+
+Move relative to the specified element.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(Element)# - Element to move relative to.
+* [.param-name]#rel# [.param-type]#(String)# - Relative mode. For example: br-tl.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#moveto .anchor]##
+
+=== link:#moveto[moveTo]
+
+moveTo(x:Number, y:Number):tinymce.ui.Control
+
+Move to absolute position.
+
+==== Parameters
+
+* [.param-name]#x# [.param-type]#(Number)# - Absolute x position.
+* [.param-name]#y# [.param-type]#(Number)# - Absolute y position.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
+
+[#testmoverel .anchor]##
+
+=== link:#testmoverel[testMoveRel]
+
+testMoveRel(elm:DOMElement, rels:Array):String
+
+Tests various positions to get the most suitable one.
+
+==== Parameters
+
+* [.param-name]#elm# [.param-type]#(DOMElement)# - Element to position against.
+* [.param-name]#rels# [.param-type]#(Array)# - Array with relative positions.
+
+==== Return value
+
+* [.return-type]#String# - Best suitable relative position.

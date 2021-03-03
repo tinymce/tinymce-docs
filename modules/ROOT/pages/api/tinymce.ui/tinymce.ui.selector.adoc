@@ -1,0 +1,97 @@
+= tinymce.ui.Selector
+
+Selector engine, enables you to select controls by using CSS like expressions. We currently only support basic CSS expressions to reduce the size of the core and the ones we support should be enough for most cases.
+
+== Examples
+
+[source,prettyprint]
+----
+Supported expressions:
+ element
+ element#name
+ element.class
+ element[attr]
+ element[attr*=value]
+ element[attr~=value]
+ element[attr!=value]
+ element[attr^=value]
+ element[attr$=value]
+ element:<state>
+ element:not(<expression>)
+ element:first
+ element:last
+ element:odd
+ element:even
+ element element
+ element > element
+----
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#selector[Selector()] |Constructs a new Selector instance. |link:/docs-4x/api/tinymce.ui/tinymce.ui.selector[tinymce.ui.Selector]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#find[find()] |Returns a tinymce.ui.Collection with matches of the specified selector inside the specified container. |link:/docs-4x/api/tinymce.ui/tinymce.ui.selector[tinymce.ui.Selector]
+|link:#match[match()] |Returns true/false if the selector matches the specified control. |link:/docs-4x/api/tinymce.ui/tinymce.ui.selector[tinymce.ui.Selector]
+|===
+
+== Constructors
+
+[#selector .anchor]##
+
+=== link:#selector[Selector]
+
+public constructor function Selector(selector:String)
+
+Constructs a new Selector instance.
+
+==== Parameters
+
+* [.param-name]#selector# [.param-type]#(String)# - CSS like selector expression.
+
+== Methods
+
+[#find .anchor]##
+
+=== link:#find[find]
+
+find(container:tinymce.ui.Control):tinymce.ui.Collection
+
+Returns a tinymce.ui.Collection with matches of the specified selector inside the specified container.
+
+==== Parameters
+
+* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.param-type]#(tinymce.ui.Control)#] - Container to look for items in.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection with matched elements.
+
+[#match .anchor]##
+
+=== link:#match[match]
+
+match(control:tinymce.ui.Control, selectors:Array):Boolean
+
+Returns true/false if the selector matches the specified control.
+
+==== Parameters
+
+* [.param-name]#control# link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.param-type]#(tinymce.ui.Control)#] - Control to match against the selector.
+* [.param-name]#selectors# [.param-type]#(Array)# - Optional array of selectors, mostly used internally.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false state if the control matches or not.

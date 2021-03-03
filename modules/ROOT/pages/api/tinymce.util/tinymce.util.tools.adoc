@@ -1,0 +1,348 @@
+= tinymce.util.Tools
+
+This class contains various utlity functions. These are also exposed directly on the tinymce namespace.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#create[create()] |Creates a class, subclass or static singleton. More details on this method can be found in the Wiki. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#createns[createNS()] |Creates a namespace on a specific object. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#each[each()] |Performs an iteration of all items in a collection such as an object or array. This method will execure the callback function for each item in the collection, if the callback returns false the iteration will terminate. The callback has the following format: cb(value, key_or_index). |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#explode[explode()] |Splits a string but removes the whitespace before and after each value. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#grep[grep()] |Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#inarray[inArray()] |Returns an index of the item or -1 if item is not present in the array. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#is[is()] |Checks if a object is of a specific type for example an array. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#isarray[isArray()] |Returns true/false if the object is an array or not. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#makemap[makeMap()] |Makes a name/object map out of an array with names. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#map[map()] |Creates a new array by the return value of each iteration function call. This enables you to convert one array list into another. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#resolve[resolve()] |Resolves a string and returns the object from a specific structure. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#toarray[toArray()] |Converts the specified object into a real JavaScript array. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#trim[trim()] |Removes whitespace from the beginning and end of a string. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|link:#walk[walk()] |Executed the specified function for each item in a object tree. |link:/docs-4x/api/tinymce.util/tinymce.util.tools[tinymce.util.Tools]
+|===
+
+== Methods
+
+[#create .anchor]##
+
+=== link:#create[create]
+
+create(s:String, p:Object, root:Object)
+
+Creates a class, subclass or static singleton. More details on this method can be found in the Wiki.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Creates a basic class
+tinymce.create('tinymce.somepackage.SomeClass', {
+    SomeClass: function() {
+        // Class constructor
+    },
+
+    method: function() {
+        // Some method
+    }
+});
+
+// Creates a basic subclass class
+tinymce.create('tinymce.somepackage.SomeSubClass:tinymce.somepackage.SomeClass', {
+    SomeSubClass: function() {
+        // Class constructor
+        this.parent(); // Call parent constructor
+    },
+
+    method: function() {
+        // Some method
+        this.parent(); // Call parent method
+    },
+
+    'static': {
+        staticMethod: function() {
+            // Static method
+        }
+    }
+});
+
+// Creates a singleton/static class
+tinymce.create('static tinymce.somepackage.SomeSingletonClass', {
+    method: function() {
+        // Some method
+    }
+});
+----
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(String)# - Class name, inheritance and prefix.
+* [.param-name]#p# [.param-type]#(Object)# - Collection of methods to add to the class.
+* [.param-name]#root# [.param-type]#(Object)# - Optional root object defaults to the global window object.
+
+[#createns .anchor]##
+
+=== link:#createns[createNS]
+
+createNS(n:String, o:Object):Object
+
+Creates a namespace on a specific object.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Create some namespace
+tinymce.createNS('tinymce.somepackage.subpackage');
+
+// Add a singleton
+var tinymce.somepackage.subpackage.SomeSingleton = {
+    method: function() {
+        // Some method
+    }
+};
+----
+
+==== Parameters
+
+* [.param-name]#n# [.param-type]#(String)# - Namespace to create for example a.b.c.d.
+* [.param-name]#o# [.param-type]#(Object)# - Optional object to add namespace to, defaults to window.
+
+==== Return value
+
+* [.return-type]#Object# - New namespace object the last item in path.
+
+[#each .anchor]##
+
+=== link:#each[each]
+
+each(o:Object, cb:function, s:Object)
+
+Performs an iteration of all items in a collection such as an object or array. This method will execure the callback function for each item in the collection, if the callback returns false the iteration will terminate. The callback has the following format: cb(value, key_or_index).
+
+==== Examples
+
+[source,prettyprint]
+----
+// Iterate an array
+tinymce.each([1,2,3], function(v, i) {
+    console.debug("Value: " + v + ", Index: " + i);
+});
+
+// Iterate an object
+tinymce.each({a: 1, b: 2, c: 3], function(v, k) {
+    console.debug("Value: " + v + ", Key: " + k);
+});
+----
+
+==== Parameters
+
+* [.param-name]#o# [.param-type]#(Object)# - Collection to iterate.
+* [.param-name]#cb# [.param-type]#(function)# - Callback function to execute for each item.
+* [.param-name]#s# [.param-type]#(Object)# - Optional scope to execute the callback in.
+
+[#explode .anchor]##
+
+=== link:#explode[explode]
+
+explode(s:string, d:string)
+
+Splits a string but removes the whitespace before and after each value.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Split a string into an array with a,b,c
+var arr = tinymce.explode('a, b,   c');
+----
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(string)# - String to split.
+* [.param-name]#d# [.param-type]#(string)# - Delimiter to split by.
+
+[#grep .anchor]##
+
+=== link:#grep[grep]
+
+grep(a:Array, f:function):Array
+
+Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Filter out some items, this will return an array with 4 and 5
+var items = tinymce.grep([1,2,3,4,5], function(v) {return v > 3;});
+----
+
+==== Parameters
+
+* [.param-name]#a# [.param-type]#(Array)# - Array of items to loop though.
+* [.param-name]#f# [.param-type]#(function)# - Function to call for each item. Include/exclude depends on it's return value.
+
+==== Return value
+
+* [.return-type]#Array# - New array with values imported and filtered based in input.
+
+[#inarray .anchor]##
+
+=== link:#inarray[inArray]
+
+inArray(item:any, arr:Array):Number
+
+Returns an index of the item or -1 if item is not present in the array.
+
+==== Parameters
+
+* [.param-name]#item# [.param-type]#(any)# - Item to search for.
+* [.param-name]#arr# [.param-type]#(Array)# - Array to search in.
+
+==== Return value
+
+* [.return-type]#Number# - index of the item or -1 if item was not found.
+
+[#is .anchor]##
+
+=== link:#is[is]
+
+is(obj:Object, type:string):Boolean
+
+Checks if a object is of a specific type for example an array.
+
+==== Parameters
+
+* [.param-name]#obj# [.param-type]#(Object)# - Object to check type of.
+* [.param-name]#type# [.param-type]#(string)# - Optional type to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the object is of the specified type.
+
+[#isarray .anchor]##
+
+=== link:#isarray[isArray]
+
+isArray(obj:Object):boolean
+
+Returns true/false if the object is an array or not.
+
+==== Parameters
+
+* [.param-name]#obj# [.param-type]#(Object)# - Object to check.
+
+==== Return value
+
+* [.return-type]#boolean# - true/false state if the object is an array or not.
+
+[#makemap .anchor]##
+
+=== link:#makemap[makeMap]
+
+makeMap(items:Array, delim:String, map:Object):Object
+
+Makes a name/object map out of an array with names.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Items to make map out of.
+* [.param-name]#delim# [.param-type]#(String)# - Optional delimiter to split string by.
+* [.param-name]#map# [.param-type]#(Object)# - Optional map to add items to.
+
+==== Return value
+
+* [.return-type]#Object# - Name/value map of items.
+
+[#map .anchor]##
+
+=== link:#map[map]
+
+map(array:Array, callback:function):Array
+
+Creates a new array by the return value of each iteration function call. This enables you to convert one array list into another.
+
+==== Parameters
+
+* [.param-name]#array# [.param-type]#(Array)# - Array of items to iterate.
+* [.param-name]#callback# [.param-type]#(function)# - Function to call for each item. It's return value will be the new value.
+
+==== Return value
+
+* [.return-type]#Array# - Array with new values based on function return values.
+
+[#resolve .anchor]##
+
+=== link:#resolve[resolve]
+
+resolve(n:String, o:Object):Object
+
+Resolves a string and returns the object from a specific structure.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Resolve a path into an object reference
+var obj = tinymce.resolve('a.b.c.d');
+----
+
+==== Parameters
+
+* [.param-name]#n# [.param-type]#(String)# - Path to resolve for example a.b.c.d.
+* [.param-name]#o# [.param-type]#(Object)# - Optional object to search though, defaults to window.
+
+==== Return value
+
+* [.return-type]#Object# - Last object in path or null if it couldn't be resolved.
+
+[#toarray .anchor]##
+
+=== link:#toarray[toArray]
+
+toArray(obj:Object):Array
+
+Converts the specified object into a real JavaScript array.
+
+==== Parameters
+
+* [.param-name]#obj# [.param-type]#(Object)# - Object to convert into array.
+
+==== Return value
+
+* [.return-type]#Array# - Array object based in input.
+
+[#trim .anchor]##
+
+=== link:#trim[trim]
+
+trim(s:String):String
+
+Removes whitespace from the beginning and end of a string.
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(String)# - String to remove whitespace from.
+
+==== Return value
+
+* [.return-type]#String# - New string with removed whitespace.
+
+[#walk .anchor]##
+
+=== link:#walk[walk]
+
+walk(o:Object, f:function, n:String, s:String)
+
+Executed the specified function for each item in a object tree.
+
+==== Parameters
+
+* [.param-name]#o# [.param-type]#(Object)# - Object tree to walk though.
+* [.param-name]#f# [.param-type]#(function)# - Function to call for each item.
+* [.param-name]#n# [.param-type]#(String)# - Optional name of collection inside the objects to walk for example childNodes.
+* [.param-name]#s# [.param-type]#(String)# - Optional scope to execute the function in.

@@ -1,0 +1,121 @@
+= tinymce.html.Entities
+
+Entity encoder class.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#decode[decode()] |Decodes the specified string, this will replace entities with raw UTF characters. |link:/docs-4x/api/tinymce.html/tinymce.html.entities[tinymce.html.Entities]
+|link:#encodeallraw[encodeAllRaw()] |Encoded the specified text with both the attributes and text entities. This function will produce larger text contents since it doesn't know if the context is within a attribute or text node. This was added for compatibility and is exposed as the DOMUtils.encode function. |link:/docs-4x/api/tinymce.html/tinymce.html.entities[tinymce.html.Entities]
+|link:#encodenamed[encodeNamed()] |Encodes the specified string using named entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into named entities. |link:/docs-4x/api/tinymce.html/tinymce.html.entities[tinymce.html.Entities]
+|link:#encodenumeric[encodeNumeric()] |Encodes the specified string using numeric entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into numeric entities. |link:/docs-4x/api/tinymce.html/tinymce.html.entities[tinymce.html.Entities]
+|link:#encoderaw[encodeRaw()] |Encodes the specified string using raw entities. This means only the required XML base entities will be encoded. |link:/docs-4x/api/tinymce.html/tinymce.html.entities[tinymce.html.Entities]
+|link:#getencodefunc[getEncodeFunc()] |Returns an encode function based on the name(s) and it's optional entities. |link:/docs-4x/api/tinymce.html/tinymce.html.entities[tinymce.html.Entities]
+|===
+
+== Methods
+
+[#decode .anchor]##
+
+=== link:#decode[decode]
+
+decode(text:String):String
+
+Decodes the specified string, this will replace entities with raw UTF characters.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to entity decode.
+
+==== Return value
+
+* [.return-type]#String# - Entity decoded string.
+
+[#encodeallraw .anchor]##
+
+=== link:#encodeallraw[encodeAllRaw]
+
+encodeAllRaw(text:String):String
+
+Encoded the specified text with both the attributes and text entities. This function will produce larger text contents since it doesn't know if the context is within a attribute or text node. This was added for compatibility and is exposed as the DOMUtils.encode function.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to encode.
+
+==== Return value
+
+* [.return-type]#String# - Entity encoded text.
+
+[#encodenamed .anchor]##
+
+=== link:#encodenamed[encodeNamed]
+
+encodeNamed(text:String, attr:Boolean, entities:Object):String
+
+Encodes the specified string using named entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into named entities.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to encode.
+* [.param-name]#attr# [.param-type]#(Boolean)# - Optional flag to specify if the text is attribute contents.
+* [.param-name]#entities# [.param-type]#(Object)# - Optional parameter with entities to use.
+
+==== Return value
+
+* [.return-type]#String# - Entity encoded text.
+
+[#encodenumeric .anchor]##
+
+=== link:#encodenumeric[encodeNumeric]
+
+encodeNumeric(text:String, attr:Boolean):String
+
+Encodes the specified string using numeric entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into numeric entities.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to encode.
+* [.param-name]#attr# [.param-type]#(Boolean)# - Optional flag to specify if the text is attribute contents.
+
+==== Return value
+
+* [.return-type]#String# - Entity encoded text.
+
+[#encoderaw .anchor]##
+
+=== link:#encoderaw[encodeRaw]
+
+encodeRaw(text:String, attr:Boolean):String
+
+Encodes the specified string using raw entities. This means only the required XML base entities will be encoded.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to encode.
+* [.param-name]#attr# [.param-type]#(Boolean)# - Optional flag to specify if the text is attribute contents.
+
+==== Return value
+
+* [.return-type]#String# - Entity encoded text.
+
+[#getencodefunc .anchor]##
+
+=== link:#getencodefunc[getEncodeFunc]
+
+getEncodeFunc(name:String, entities:String):function
+
+Returns an encode function based on the name(s) and it's optional entities.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Comma separated list of encoders for example named,numeric.
+* [.param-name]#entities# [.param-type]#(String)# - Optional parameter with entities to use instead of the built in set.
+
+==== Return value
+
+* [.return-type]#function# - Encode function to be used.

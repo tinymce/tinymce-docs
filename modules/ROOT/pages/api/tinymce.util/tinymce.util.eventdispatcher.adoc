@@ -1,0 +1,171 @@
+= tinymce.util.EventDispatcher
+
+This class lets you add/remove and fire events by name on the specified scope. This makes it easy to add event listener logic to any class.
+
+== Examples
+
+[source,prettyprint]
+----
+var eventDispatcher = new EventDispatcher();
+
+ eventDispatcher.on('click', function() {console.log('data');});
+ eventDispatcher.fire('click', {data: 123});
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#fire[fire()] |Fires the specified event by name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
+|link:#has[has()] |Returns true/false if the dispatcher has a event of the specified name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
+|link:#isnative[isNative()] |Returns true/false if the specified event name is a native browser event or not. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
+|link:#on[on()] |Binds an event listener to a specific event by name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
+|link:#once[once()] |Binds an event listener to a specific event by name and automatically unbind the event once the callback fires. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
+|===
+
+== Methods
+
+[#fire .anchor]##
+
+=== link:#fire[fire]
+
+fire(name:String, args:Object?):Object
+
+Fires the specified event by name.
+
+==== Examples
+
+[source,prettyprint]
+----
+instance.fire('event', {...});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
+* [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
+
+==== Return value
+
+* [.return-type]#Object# - Event args instance passed in.
+
+[#has .anchor]##
+
+=== link:#has[has]
+
+has(name:String):Boolean
+
+Returns true/false if the dispatcher has a event of the specified name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the event exists or not.
+
+[#isnative .anchor]##
+
+=== link:#isnative[isNative]
+
+isNative(name:String):Boolean
+
+Returns true/false if the specified event name is a native browser event or not.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name to check if it's native.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the event is native or not.
+
+[#off .anchor]##
+
+=== link:#off[off]
+
+off(name:String?, callback:callback?):Object
+
+Unbinds an event listener to a specific event by name.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Unbind specific callback
+instance.off('event', handler);
+
+// Unbind all listeners by name
+instance.off('event');
+
+// Unbind all events
+instance.off();
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String?)# - Name of the event to unbind.
+* [.param-name]#callback# [.param-type]#(callback?)# - Callback to unbind.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#on .anchor]##
+
+=== link:#on[on]
+
+on(name:String, callback:callback, first:Boolean):Object
+
+Binds an event listener to a specific event by name.
+
+==== Examples
+
+[source,prettyprint]
+----
+instance.on('event', function(e) {
+    // Callback logic
+});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
+* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
+* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#once .anchor]##
+
+=== link:#once[once]
+
+once(name:String, callback:callback, first:Boolean):Object
+
+Binds an event listener to a specific event by name and automatically unbind the event once the callback fires.
+
+==== Examples
+
+[source,prettyprint]
+----
+instance.once('event', function(e) {
+    // Callback logic
+});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
+* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
+* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.

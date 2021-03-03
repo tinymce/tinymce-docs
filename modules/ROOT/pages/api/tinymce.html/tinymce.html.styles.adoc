@@ -1,0 +1,82 @@
+= tinymce.html.Styles
+
+This class is used to parse CSS styles it also compresses styles to reduce the output size.
+
+== Examples
+
+[source,prettyprint]
+----
+var Styles = new tinymce.html.Styles({
+   url_converter: function(url) {
+      return url;
+   }
+});
+
+styles = Styles.parse('border: 1px solid red');
+styles.color = 'red';
+
+console.log(new tinymce.html.StyleSerializer().serialize(styles));
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#parse[parse()] |Parses the specified style value into an object collection. This parser will also merge and remove any redundant items that browsers might have added. It will also convert non hex colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings. |link:/docs-4x/api/tinymce.html/tinymce.html.styles[tinymce.html.Styles]
+|link:#serialize[serialize()] |Serializes the specified style object into a string. |link:/docs-4x/api/tinymce.html/tinymce.html.styles[tinymce.html.Styles]
+|link:#tohex[toHex()] |Parses the specified RGB color value and returns a hex version of that color. |link:/docs-4x/api/tinymce.html/tinymce.html.styles[tinymce.html.Styles]
+|===
+
+== Methods
+
+[#parse .anchor]##
+
+=== link:#parse[parse]
+
+parse(css:String):Object
+
+Parses the specified style value into an object collection. This parser will also merge and remove any redundant items that browsers might have added. It will also convert non hex colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings.
+
+==== Parameters
+
+* [.param-name]#css# [.param-type]#(String)# - Style value to parse for example: border:1px solid red;.
+
+==== Return value
+
+* [.return-type]#Object# - Object representation of that style like \{border: '1px solid red'}
+
+[#serialize .anchor]##
+
+=== link:#serialize[serialize]
+
+serialize(styles:Object, elementName:String):String
+
+Serializes the specified style object into a string.
+
+==== Parameters
+
+* [.param-name]#styles# [.param-type]#(Object)# - Object to serialize as string for example: \{border: '1px solid red'}
+* [.param-name]#elementName# [.param-type]#(String)# - Optional element name, if specified only the styles that matches the schema will be serialized.
+
+==== Return value
+
+* [.return-type]#String# - String representation of the style object for example: border: 1px solid red.
+
+[#tohex .anchor]##
+
+=== link:#tohex[toHex]
+
+toHex(color:String):String
+
+Parses the specified RGB color value and returns a hex version of that color.
+
+==== Parameters
+
+* [.param-name]#color# [.param-type]#(String)# - RGB string value like rgb(1,2,3)
+
+==== Return value
+
+* [.return-type]#String# - Hex version of that RGB value like #FF00FF.

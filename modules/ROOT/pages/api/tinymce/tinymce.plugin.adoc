@@ -1,0 +1,178 @@
+= tinymce.Plugin
+
+Plugin base class, this is a pseudo class that describes how a plugin is to be created for TinyMCE. The methods below are all optional.
+
+== Examples
+
+[source,prettyprint]
+----
+tinymce.PluginManager.add('example', function(editor, url) {
+    // Add a button that opens a window
+    editor.addButton('example', {
+        text: 'My button',
+        icon: false,
+        onclick: function() {
+            // Open window
+            editor.windowManager.open({
+                title: 'Example plugin',
+                body: [
+                    {type: 'textbox', name: 'title', label: 'Title'}
+                ],
+                onsubmit: function(e) {
+                    // Insert content when the window form is submitted
+                    editor.insertContent('Title: ' + e.data.title);
+                }
+            });
+        }
+    });
+
+    // Adds a menu item to the tools menu
+    editor.addMenuItem('example', {
+        text: 'Example plugin',
+        context: 'tools',
+        onclick: function() {
+            // Open window with a specific url
+            editor.windowManager.open({
+                title: 'TinyMCE site',
+                url: 'http://www.tinymce.com',
+                width: 800,
+                height: 600,
+                buttons: [{
+                    text: 'Close',
+                    onclick: 'close'
+                }]
+            });
+        }
+    });
+});
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#add[add()] |Adds a instance of the add-on by it's short name. |link:/docs-4x/api/tinymce/tinymce.plugin[tinymce.Plugin]
+|link:#addcomponents[addComponents()] |Add a set of components that will make up the add-on. Using the url of the add-on name as the base url. This should be used in development mode. A new compressor/javascript munger process will ensure that the components are put together into the plugin.js file and compressed correctly. |link:/docs-4x/api/tinymce/tinymce.plugin[tinymce.Plugin]
+|link:#get[get()] |Returns the specified add on by the short name. |link:/docs-4x/api/tinymce/tinymce.plugin[tinymce.Plugin]
+|link:#load[load()] |Loads an add-on from a specific url. |link:/docs-4x/api/tinymce/tinymce.plugin[tinymce.Plugin]
+|link:#requirelangpack[requireLangPack()] |Loads a language pack for the specified add-on. |link:/docs-4x/api/tinymce/tinymce.plugin[tinymce.Plugin]
+|===
+
+== Methods
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(id:String, addOn:tinymce.Theme):tinymce.Theme, tinymce.Plugin
+
+Adds a instance of the add-on by it's short name.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Create a simple plugin
+tinymce.create('tinymce.plugins.TestPlugin', {
+  TestPlugin: function(ed, url) {
+  ed.on('click', function(e) {
+     ed.windowManager.alert('Hello World!');
+  });
+  }
+});
+
+// Register plugin using the add method
+tinymce.PluginManager.add('test', tinymce.plugins.TestPlugin);
+
+// Initialize TinyMCE
+tinymce.init({
+ ...
+ plugins: '-test' // Init the plugin but don't try to load it
+});
+----
+
+==== Parameters
+
+* [.param-name]#id# [.param-type]#(String)# - Short name/id for the add-on.
+* [.param-name]#addOn# link:/docs-4x/api/tinymce/tinymce.theme[[.param-type]#(tinymce.Theme)#] - Theme or plugin to add.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.theme[[.return-type]#tinymce.Theme#] - The same theme or plugin instance that got passed in.
+* link:/docs-4x/api/tinymce/tinymce.plugin[[.return-type]#tinymce.Plugin#] - The same theme or plugin instance that got passed in.
+
+[#addcomponents .anchor]##
+
+=== link:#addcomponents[addComponents]
+
+addComponents(pluginName:String, scripts:Array)
+
+Add a set of components that will make up the add-on. Using the url of the add-on name as the base url. This should be used in development mode. A new compressor/javascript munger process will ensure that the components are put together into the plugin.js file and compressed correctly.
+
+==== Parameters
+
+* [.param-name]#pluginName# [.param-type]#(String)# - name of the plugin to load scripts from (will be used to get the base url for the plugins).
+* [.param-name]#scripts# [.param-type]#(Array)# - Array containing the names of the scripts to load.
+
+[#get .anchor]##
+
+=== link:#get[get]
+
+get(name:String):tinymce.Theme, tinymce.Plugin
+
+Returns the specified add on by the short name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Add-on to look for.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.theme[[.return-type]#tinymce.Theme#] - Theme or plugin add-on instance or undefined.
+* link:/docs-4x/api/tinymce/tinymce.plugin[[.return-type]#tinymce.Plugin#] - Theme or plugin add-on instance or undefined.
+
+[#load .anchor]##
+
+=== link:#load[load]
+
+load(name:String, addOnUrl:String, success:function, scope:Object, failure:function)
+
+Loads an add-on from a specific url.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Loads a plugin from an external URL
+tinymce.PluginManager.load('myplugin', '/some/dir/someplugin/plugin.js');
+
+// Initialize TinyMCE
+tinymce.init({
+ ...
+ plugins: '-myplugin' // Don't try to load it again
+});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Short name of the add-on that gets loaded.
+* [.param-name]#addOnUrl# [.param-type]#(String)# - URL to the add-on that will get loaded.
+* [.param-name]#success# [.param-type]#(function)# - Optional success callback to execute when an add-on is loaded.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
+* [.param-name]#failure# [.param-type]#(function)# - Optional failure callback to execute when an add-on failed to load.
+
+[#requirelangpack .anchor]##
+
+=== link:#requirelangpack[requireLangPack]
+
+requireLangPack(name:String, languages:String)
+
+Loads a language pack for the specified add-on.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Short name of the add-on.
+* [.param-name]#languages# [.param-type]#(String)# - Optional comma or space separated list of languages to check if it matches the name.

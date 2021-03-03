@@ -1,0 +1,138 @@
+= tinymce.geom.Rect
+
+Contains various tools for rect/position calculation.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#clamp[clamp()] |Returns a rect clamped within the specified clamp rect. This forces the rect to be inside the clamp rect. |link:/docs-4x/api/tinymce.geom/tinymce.geom.rect[tinymce.geom.Rect]
+|link:#create[create()] |Creates a new rectangle object. |link:/docs-4x/api/tinymce.geom/tinymce.geom.rect[tinymce.geom.Rect]
+|link:#findbestrelativeposition[findBestRelativePosition()] |Tests various positions to get the most suitable one. |link:/docs-4x/api/tinymce.geom/tinymce.geom.rect[tinymce.geom.Rect]
+|link:#fromclientrect[fromClientRect()] |Creates a new rectangle object form a clientRects object. |link:/docs-4x/api/tinymce.geom/tinymce.geom.rect[tinymce.geom.Rect]
+|link:#inflate[inflate()] |Inflates the rect in all directions. |link:/docs-4x/api/tinymce.geom/tinymce.geom.rect[tinymce.geom.Rect]
+|link:#intersect[intersect()] |Returns the intersection of the specified rectangles. |link:/docs-4x/api/tinymce.geom/tinymce.geom.rect[tinymce.geom.Rect]
+|link:#relativeposition[relativePosition()] |Returns the rect positioned based on the relative position name to the target rect. |link:/docs-4x/api/tinymce.geom/tinymce.geom.rect[tinymce.geom.Rect]
+|===
+
+== Methods
+
+[#clamp .anchor]##
+
+=== link:#clamp[clamp]
+
+clamp(rect:Rect, clampRect:Rect, fixedSize:Boolean):Rect
+
+Returns a rect clamped within the specified clamp rect. This forces the rect to be inside the clamp rect.
+
+==== Parameters
+
+* [.param-name]#rect# [.param-type]#(Rect)# - Rectangle to force within clamp rect.
+* [.param-name]#clampRect# [.param-type]#(Rect)# - Rectable to force within.
+* [.param-name]#fixedSize# [.param-type]#(Boolean)# - True/false if size should be fixed.
+
+==== Return value
+
+* [.return-type]#Rect# - Clamped rect.
+
+[#create .anchor]##
+
+=== link:#create[create]
+
+create(x:Number, y:Number, w:Number, h:Number):Rect
+
+Creates a new rectangle object.
+
+==== Parameters
+
+* [.param-name]#x# [.param-type]#(Number)# - Rectangle x location.
+* [.param-name]#y# [.param-type]#(Number)# - Rectangle y location.
+* [.param-name]#w# [.param-type]#(Number)# - Rectangle width.
+* [.param-name]#h# [.param-type]#(Number)# - Rectangle height.
+
+==== Return value
+
+* [.return-type]#Rect# - New rectangle object.
+
+[#findbestrelativeposition .anchor]##
+
+=== link:#findbestrelativeposition[findBestRelativePosition]
+
+findBestRelativePosition(rect:Rect, targetRect:Rect, constrainRect:Rect, rels:Array)
+
+Tests various positions to get the most suitable one.
+
+==== Parameters
+
+* [.param-name]#rect# [.param-type]#(Rect)# - Rect to use as source.
+* [.param-name]#targetRect# [.param-type]#(Rect)# - Rect to move relative to.
+* [.param-name]#constrainRect# [.param-type]#(Rect)# - Rect to constrain within.
+* [.param-name]#rels# [.param-type]#(Array)# - Array of relative positions to test against.
+
+[#fromclientrect .anchor]##
+
+=== link:#fromclientrect[fromClientRect]
+
+fromClientRect(clientRect:ClientRect):Rect
+
+Creates a new rectangle object form a clientRects object.
+
+==== Parameters
+
+* [.param-name]#clientRect# [.param-type]#(ClientRect)# - DOM ClientRect object.
+
+==== Return value
+
+* [.return-type]#Rect# - New rectangle object.
+
+[#inflate .anchor]##
+
+=== link:#inflate[inflate]
+
+inflate(rect:Rect, w:Number, h:Number):Rect
+
+Inflates the rect in all directions.
+
+==== Parameters
+
+* [.param-name]#rect# [.param-type]#(Rect)# - Rect to expand.
+* [.param-name]#w# [.param-type]#(Number)# - Relative width to expand by.
+* [.param-name]#h# [.param-type]#(Number)# - Relative height to expand by.
+
+==== Return value
+
+* [.return-type]#Rect# - New expanded rect.
+
+[#intersect .anchor]##
+
+=== link:#intersect[intersect]
+
+intersect(rect:Rect, cropRect:Rect):Rect
+
+Returns the intersection of the specified rectangles.
+
+==== Parameters
+
+* [.param-name]#rect# [.param-type]#(Rect)# - The first rectangle to compare.
+* [.param-name]#cropRect# [.param-type]#(Rect)# - The second rectangle to compare.
+
+==== Return value
+
+* [.return-type]#Rect# - The intersection of the two rectangles or null if they don't intersect.
+
+[#relativeposition .anchor]##
+
+=== link:#relativeposition[relativePosition]
+
+relativePosition(rect:Rect, targetRect:Rect, rel:String)
+
+Returns the rect positioned based on the relative position name to the target rect.
+
+==== Parameters
+
+* [.param-name]#rect# [.param-type]#(Rect)# - Source rect to modify into a new rect.
+* [.param-name]#targetRect# [.param-type]#(Rect)# - Rect to move relative to based on the rel option.
+* [.param-name]#rel# [.param-type]#(String)# - Relative position. For example: tr-bl.

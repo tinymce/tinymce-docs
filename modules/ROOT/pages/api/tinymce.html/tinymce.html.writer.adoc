@@ -1,0 +1,154 @@
+= tinymce.html.Writer
+
+This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.
+
+== Examples
+
+[source,prettyprint]
+----
+var writer = new tinymce.html.Writer({indent: true});
+var parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
+console.log(writer.getContent());
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[width="100%",cols="34%,33%,33%",options="header",]
+|===
+|name |summary |defined by
+|link:#cdata[cdata()] |Writes a comment node such as . |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#doctype[doctype()] a|
+Writes a doctype node such as
+
+.
+
+|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#end[end()] a|
+Writes the a end element such as
+
+.
+
+|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#getcontent[getContent()] |Returns the contents that got serialized. |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#pi[pi()] a|
+Writes a PI node such as
+
+.
+
+|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#reset[reset()] |Resets the internal buffer if one wants to reuse the writer. |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#start[start()] a|
+Writes the a start element such as
+
+.
+
+|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#text[text()] |Writes a text node. |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|===
+
+== Methods
+
+[#cdata .anchor]##
+
+=== link:#cdata[cdata]
+
+cdata(text:String)
+
+Writes a comment node such as .
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - String to write out inside the comment.
+
+[#doctype .anchor]##
+
+=== link:#doctype[doctype]
+
+doctype(text:String)
+
+Writes a doctype node such as
+
+.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - String to write out inside the doctype.
+
+[#end .anchor]##
+
+=== link:#end[end]
+
+end(name:String)
+
+Writes the a end element such as
+
+.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the element.
+
+[#getcontent .anchor]##
+
+=== link:#getcontent[getContent]
+
+getContent():String
+
+Returns the contents that got serialized.
+
+==== Return value
+
+* [.return-type]#String# - HTML contents that got written down.
+
+[#pi .anchor]##
+
+=== link:#pi[pi]
+
+pi(name:String, text:String)
+
+Writes a PI node such as .
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the pi.
+* [.param-name]#text# [.param-type]#(String)# - String to write out inside the pi.
+
+[#reset .anchor]##
+
+=== link:#reset[reset]
+
+reset()
+
+Resets the internal buffer if one wants to reuse the writer.
+
+[#start .anchor]##
+
+=== link:#start[start]
+
+start(name:String, attrs:Array, empty:Boolean)
+
+Writes the a start element such as
+
+.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the element.
+* [.param-name]#attrs# [.param-type]#(Array)# - Optional attribute array or undefined if it hasn't any.
+* [.param-name]#empty# [.param-type]#(Boolean)# - Optional empty state if the tag should end like +
+.
+
+[#text .anchor]##
+
+=== link:#text[text]
+
+text(text:String, raw:Boolean)
+
+Writes a text node.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - String to write out.
+* [.param-name]#raw# [.param-type]#(Boolean)# - Optional raw state if true the contents wont get encoded.

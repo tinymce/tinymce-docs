@@ -1,0 +1,73 @@
+= tinymce.Annotator
+
+This is the annotator api.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#annotate[annotate()] |Applies the annotation at the current selection using data |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
+|link:#annotationchanged[annotationChanged()] |Executes the specified callback when the current selection matches the annotation or not. |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
+|link:#getall[getAll()] |Retrieve all the annotations for a given name |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
+|link:#register[register()] |Registers a specific annotator by name |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
+|===
+
+== Methods
+
+[#annotate .anchor]##
+
+=== link:#annotate[annotate]
+
+annotate(name:String, data:Object)
+
+Applies the annotation at the current selection using data
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - the name of the annotation to apply
+* [.param-name]#data# [.param-type]#(Object)# - information to pass through to this particular annotation
+
+[#annotationchanged .anchor]##
+
+=== link:#annotationchanged[annotationChanged]
+
+annotationChanged(name:String, callback:function)
+
+Executes the specified callback when the current selection matches the annotation or not.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of annotation to listen for
+* [.param-name]#callback# [.param-type]#(function)# - Calback with (state, name, and data) fired when the annotation at the cursor changes. If state if false, data will not be provided.
+
+[#getall .anchor]##
+
+=== link:#getall[getAll]
+
+getAll(name:String):Object
+
+Retrieve all the annotations for a given name
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - the name of the annotations to retrieve
+
+==== Return value
+
+* [.return-type]#Object# - an index of annotations from uid => DOM nodes
+
+[#register .anchor]##
+
+=== link:#register[register]
+
+register(name:String, settings:Object)
+
+Registers a specific annotator by name
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - the name of the annotation
+* [.param-name]#settings# [.param-type]#(Object)# - settings for the annotation (e.g. decorate)

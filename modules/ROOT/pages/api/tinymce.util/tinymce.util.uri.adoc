@@ -1,0 +1,161 @@
+= tinymce.util.URI
+
+This class handles parsing, modification and serialization of URI/URL strings.
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#uri[URI()] |Constructs a new URI instance. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#geturi[getURI()] |Returns the full URI of the internal structure. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|link:#issameorigin[isSameOrigin()] |Determine whether the given URI has the same origin as this URI. Based on RFC-6454. Supports default ports for protocols listed in DEFAULT_PORTS. Unsupported protocols will fail safe: they won't match, if the port specifications differ. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|link:#setpath[setPath()] |Sets the internal path part of the URI. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|link:#toabspath[toAbsPath()] |Converts a relative path into a absolute path. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|link:#toabsolute[toAbsolute()] |Converts the specified URI into a absolute URI based on the current URI instance location. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|link:#torelpath[toRelPath()] |Converts a absolute path into a relative path. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|link:#torelative[toRelative()] |Converts the specified URI into a relative URI based on the current URI instance location. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
+|===
+
+== Constructors
+
+[#uri .anchor]##
+
+=== link:#uri[URI]
+
+public constructor function URI(url:String, settings:Object)
+
+Constructs a new URI instance.
+
+==== Parameters
+
+* [.param-name]#url# [.param-type]#(String)# - URI string to parse.
+* [.param-name]#settings# [.param-type]#(Object)# - Optional settings object.
+
+== Methods
+
+[#geturi .anchor]##
+
+=== link:#geturi[getURI]
+
+getURI(noProtoHost:Boolean)
+
+Returns the full URI of the internal structure.
+
+==== Parameters
+
+* [.param-name]#noProtoHost# [.param-type]#(Boolean)# - Optional no host and protocol part. Defaults to false.
+
+[#issameorigin .anchor]##
+
+=== link:#issameorigin[isSameOrigin]
+
+isSameOrigin(uri:tinymce.util.URI):Boolean
+
+Determine whether the given URI has the same origin as this URI. Based on RFC-6454. Supports default ports for protocols listed in DEFAULT_PORTS. Unsupported protocols will fail safe: they won't match, if the port specifications differ.
+
+==== Parameters
+
+* [.param-name]#uri# link:/docs-4x/api/tinymce.util/tinymce.util.uri[[.param-type]#(tinymce.util.URI)#] - Uri instance to compare.
+
+==== Return value
+
+* [.return-type]#Boolean# - True if the origins are the same.
+
+[#setpath .anchor]##
+
+=== link:#setpath[setPath]
+
+setPath(path:string)
+
+Sets the internal path part of the URI.
+
+==== Parameters
+
+* [.param-name]#path# [.param-type]#(string)# - Path string to set.
+
+[#toabspath .anchor]##
+
+=== link:#toabspath[toAbsPath]
+
+toAbsPath(base:String, path:String)
+
+Converts a relative path into a absolute path.
+
+==== Parameters
+
+* [.param-name]#base# [.param-type]#(String)# - Base point to convert the path from.
+* [.param-name]#path# [.param-type]#(String)# - Relative path to convert into an absolute path.
+
+[#toabsolute .anchor]##
+
+=== link:#toabsolute[toAbsolute]
+
+toAbsolute(uri:String, noHost:Boolean):String
+
+Converts the specified URI into a absolute URI based on the current URI instance location.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Converts an relative URL to an absolute URL url will be http://www.site.com/dir/somedir/somefile.htm
+var url = new tinymce.util.URI('http://www.site.com/dir/').toAbsolute('somedir/somefile.htm');
+----
+
+==== Parameters
+
+* [.param-name]#uri# [.param-type]#(String)# - URI to convert into a relative path/URI.
+* [.param-name]#noHost# [.param-type]#(Boolean)# - No host and protocol prefix.
+
+==== Return value
+
+* [.return-type]#String# - Absolute URI from the point specified in the current URI instance.
+
+[#torelpath .anchor]##
+
+=== link:#torelpath[toRelPath]
+
+toRelPath(base:String, path:String)
+
+Converts a absolute path into a relative path.
+
+==== Parameters
+
+* [.param-name]#base# [.param-type]#(String)# - Base point to convert the path from.
+* [.param-name]#path# [.param-type]#(String)# - Absolute path to convert into a relative path.
+
+[#torelative .anchor]##
+
+=== link:#torelative[toRelative]
+
+toRelative(uri:String):String
+
+Converts the specified URI into a relative URI based on the current URI instance location.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Converts an absolute URL to an relative URL url will be somedir/somefile.htm
+var url = new tinymce.util.URI('http://www.site.com/dir/').toRelative('http://www.site.com/dir/somedir/somefile.htm');
+----
+
+==== Parameters
+
+* [.param-name]#uri# [.param-type]#(String)# - URI to convert into a relative path/URI.
+
+==== Return value
+
+* [.return-type]#String# - Relative URI from the point specified in the current URI instance.

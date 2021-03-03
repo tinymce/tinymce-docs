@@ -1,0 +1,90 @@
+= tinymce.ui.StackLayout
+
+This layout uses the browsers layout when the items are blocks.
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#layout[Layout()] |Constructs a layout instance with the specified settings. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#postrender[postRender()] |This method gets invoked after the layout renders the controls. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
+|link:#prerender[preRender()] |This method gets invoked before the layout renders the controls. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
+|link:#recalc[recalc()] |Recalculates the positions of the controls in the specified container. |link:/docs-4x/api/tinymce.ui/tinymce.ui.flowlayout[tinymce.ui.FlowLayout]
+|link:#renderhtml[renderHtml()] |Renders the specified container and any layout specific HTML. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
+|===
+
+== Constructors
+
+[#layout .anchor]##
+
+=== link:#layout[Layout]
+
+public constructor function Layout(settings:Object)
+
+Constructs a layout instance with the specified settings.
+
+==== Parameters
+
+* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+
+== Methods
+
+[#postrender .anchor]##
+
+=== link:#postrender[postRender]
+
+postRender(container:tinymce.ui.Container)
+
+This method gets invoked after the layout renders the controls.
+
+==== Parameters
+
+* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to postRender.
+
+[#prerender .anchor]##
+
+=== link:#prerender[preRender]
+
+preRender(container:tinymce.ui.Container)
+
+This method gets invoked before the layout renders the controls.
+
+==== Parameters
+
+* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to preRender.
+
+[#recalc .anchor]##
+
+=== link:#recalc[recalc]
+
+recalc(container:tinymce.ui.Container)
+
+Recalculates the positions of the controls in the specified container.
+
+==== Parameters
+
+* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to recalc.
+
+[#renderhtml .anchor]##
+
+=== link:#renderhtml[renderHtml]
+
+renderHtml(container:tinymce.ui.Container)
+
+Renders the specified container and any layout specific HTML.
+
+==== Parameters
+
+* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container to render HTML for.

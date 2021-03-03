@@ -1,0 +1,396 @@
+= tinymce.EditorManager
+
+This class used as a factory for manager for tinymce.Editor instances.
+
+== Examples
+
+[source,prettyprint]
+----
+tinymce.EditorManager.init({});
+----
+
+[#properties .anchor]##
+
+== link:#properties[Properties]
+
+[cols=",,,",options="header",]
+|===
+|name |type |summary |defined by
+|$ |link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.param-type]#tinymce.dom.DomQuery#] |Dom query instance. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|activeEditor |link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#tinymce.Editor#] |Currently active editor instance. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|baseURI |link:/docs-4x/api/tinymce.util/tinymce.util.uri[[.param-type]#tinymce.util.URI#] |Absolute baseURI for the installation path of TinyMCE. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|baseURL |[.param-type]#String# |Base URL where the root directory if TinyMCE is located. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|documentBaseURL |[.param-type]#String# |Document base URL where the current document is located. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|editors |[.param-type]#Object# |Collection of editor instances. Deprecated use tinymce.get() instead. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|i18n |[.param-type]#Object# |Collection of language pack data. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|majorVersion |[.param-type]#String# |Major version of TinyMCE build. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|minorVersion |[.param-type]#String# |Minor version of TinyMCE build. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|releaseDate |[.param-type]#String# |Release date of TinyMCE build. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|suffix |[.param-type]#String# |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#addi18n[addI18n()] |Adds a language pack, this gets called by the loaded language files like en.js. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#createeditor[createEditor()] |Creates an editor instance and adds it to the EditorManager collection. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#execcommand[execCommand()] |Executes a specific command on the currently active editor. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
+|link:#get[get()] |Returns a editor instance by id. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
+|link:#init[init()] |Initializes a set of editors. This method will create editors based on various settings. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
+|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
+|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
+|link:#overridedefaults[overrideDefaults()] |Overrides the default settings for editor instances. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#remove[remove()] |Removes a editor or editors form page. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#setactive[setActive()] |Sets the active editor instance and fires the deactivate/activate events. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#translate[translate()] |Translates the specified string using the language pack items. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|link:#triggersave[triggerSave()] |Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted. |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
+|===
+
+== Methods
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(editor:tinymce.Editor):tinymce.Editor
+
+Adds an editor instance to the editor collection. This will also set it as the active editor.
+
+==== Parameters
+
+* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to add to the collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The same instance that got passed in.
+
+[#addi18n .anchor]##
+
+=== link:#addi18n[addI18n]
+
+addI18n(code:String, items:Object)
+
+Adds a language pack, this gets called by the loaded language files like en.js.
+
+==== Parameters
+
+* [.param-name]#code# [.param-type]#(String)# - Optional language code.
+* [.param-name]#items# [.param-type]#(Object)# - Name/value object with translations.
+
+[#createeditor .anchor]##
+
+=== link:#createeditor[createEditor]
+
+createEditor(id:String, settings:Object):tinymce.Editor
+
+Creates an editor instance and adds it to the EditorManager collection.
+
+==== Parameters
+
+* [.param-name]#id# [.param-type]#(String)# - Instance id to use for editor.
+* [.param-name]#settings# [.param-type]#(Object)# - Editor instance settings.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance that got created.
+
+[#execcommand .anchor]##
+
+=== link:#execcommand[execCommand]
+
+execCommand(cmd:String, ui:Boolean, value:String):Boolean
+
+Executes a specific command on the currently active editor.
+
+==== Parameters
+
+* [.param-name]#cmd# [.param-type]#(String)# - Command to perform for example Bold.
+* [.param-name]#ui# [.param-type]#(Boolean)# - Optional boolean state if a UI should be presented for the command or not.
+* [.param-name]#value# [.param-type]#(String)# - Optional value parameter like for example an URL to a link.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the command was executed or not.
+
+[#fire .anchor]##
+
+=== link:#fire[fire]
+
+fire(name:String, args:Object?, bubble:Boolean?):Object
+
+Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+
+[source,prettyprint]
+----
+instance.fire('event', {...});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
+* [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
+* [.param-name]#bubble# [.param-type]#(Boolean?)# - True/false if the event is to be bubbled.
+
+==== Return value
+
+* [.return-type]#Object# - Event args instance passed in.
+
+[#get .anchor]##
+
+=== link:#get[get]
+
+get(id:String):tinymce.Editor, Array
+
+Returns a editor instance by id.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Adds an onclick event to an editor by id
+tinymce.get('mytextbox').on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+
+// Adds an onclick event to an editor by index
+tinymce.get(0).on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+
+// Adds an onclick event to an editor by id (longer version)
+tinymce.EditorManager.get('mytextbox').on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+----
+
+==== Parameters
+
+* [.param-name]#id# [.param-type]#(String)# - Editor instance id or index to return.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance to return or array of editor instances.
+* [.return-type]#Array# - Editor instance to return or array of editor instances.
+
+[#haseventlisteners .anchor]##
+
+=== link:#haseventlisteners[hasEventListeners]
+
+hasEventListeners(name:String):Boolean
+
+Returns true/false if the object has a event of the specified name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the event exists or not.
+
+[#init .anchor]##
+
+=== link:#init[init]
+
+init(settings:Object):tinymce.util.Promise
+
+Initializes a set of editors. This method will create editors based on various settings.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Initializes a editor using the longer method
+tinymce.EditorManager.init({
+   some_settings : 'some value'
+});
+
+// Initializes a editor instance using the shorter version and with a promise
+tinymce.init({
+   some_settings : 'some value'
+}).then(function(editors) {
+   ...
+});
+----
+
+==== Parameters
+
+* [.param-name]#settings# [.param-type]#(Object)# - Settings object to be passed to each editor instance.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.util/tinymce.util.promise[[.return-type]#tinymce.util.Promise#] - Promise that gets resolved with an array of editors when all editor instances are initialized.
+
+[#off .anchor]##
+
+=== link:#off[off]
+
+off(name:String?, callback:callback?):Object
+
+Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Unbind specific callback
+instance.off('event', handler);
+
+// Unbind all listeners by name
+instance.off('event');
+
+// Unbind all events
+instance.off();
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String?)# - Name of the event to unbind.
+* [.param-name]#callback# [.param-type]#(callback?)# - Callback to unbind.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#on .anchor]##
+
+=== link:#on[on]
+
+on(name:String, callback:callback, first:Boolean):Object
+
+Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+
+[source,prettyprint]
+----
+instance.on('event', function(e) {
+    // Callback logic
+});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
+* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
+* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#once .anchor]##
+
+=== link:#once[once]
+
+once(name:String, callback:callback):Object
+
+Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind.
+* [.param-name]#callback# [.param-type]#(callback)# - Callback to bind only once.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#overridedefaults .anchor]##
+
+=== link:#overridedefaults[overrideDefaults]
+
+overrideDefaults(defaultSettings:Object)
+
+Overrides the default settings for editor instances.
+
+==== Parameters
+
+* [.param-name]#defaultSettings# [.param-type]#(Object)# - Defaults settings object.
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove(selector:tinymce.Editor):tinymce.Editor
+
+Removes a editor or editors form page.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Remove all editors bound to divs
+tinymce.remove('div');
+
+// Remove all editors bound to textareas
+tinymce.remove('textarea');
+
+// Remove all editors
+tinymce.remove();
+
+// Remove specific instance by id
+tinymce.remove('#id');
+----
+
+==== Parameters
+
+* [.param-name]#selector# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - CSS selector or editor instance to remove.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The editor that got passed in will be return if it was found otherwise null.
+
+[#setactive .anchor]##
+
+=== link:#setactive[setActive]
+
+setActive(editor:tinymce.Editor)
+
+Sets the active editor instance and fires the deactivate/activate events.
+
+==== Parameters
+
+* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to set as the active instance.
+
+[#translate .anchor]##
+
+=== link:#translate[translate]
+
+translate(text:String):String
+
+Translates the specified string using the language pack items.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - String to translate
+
+==== Return value
+
+* [.return-type]#String# - Translated string.
+
+[#triggersave .anchor]##
+
+=== link:#triggersave[triggerSave]
+
+triggerSave()
+
+Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Saves all contents
+tinyMCE.triggerSave();
+----

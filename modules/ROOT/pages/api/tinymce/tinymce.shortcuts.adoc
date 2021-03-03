@@ -1,0 +1,61 @@
+= tinymce.Shortcuts
+
+Contains logic for handling keyboard shortcuts.
+
+== Examples
+
+[source,prettyprint]
+----
+editor.shortcuts.add('ctrl+a', "description of the shortcut", function() {});
+editor.shortcuts.add('meta+a', "description of the shortcut", function() {}); // "meta" maps to Command on Mac and Ctrl on PC
+editor.shortcuts.add('ctrl+alt+a', "description of the shortcut", function() {});
+editor.shortcuts.add('access+a', "description of the shortcut", function() {}); // "access" maps to ctrl+alt on Mac and shift+alt on PC
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#add[add()] |Adds a keyboard shortcut for some command or function. |link:/docs-4x/api/tinymce/tinymce.shortcuts[tinymce.Shortcuts]
+|link:#remove[remove()] |Remove a keyboard shortcut by pattern. |link:/docs-4x/api/tinymce/tinymce.shortcuts[tinymce.Shortcuts]
+|===
+
+== Methods
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(pattern:String, desc:String, cmdFunc:String, scope:Object):Boolean
+
+Adds a keyboard shortcut for some command or function.
+
+==== Parameters
+
+* [.param-name]#pattern# [.param-type]#(String)# - Shortcut pattern. Like for example: ctrl+alt+o.
+* [.param-name]#desc# [.param-type]#(String)# - Text description for the command.
+* [.param-name]#cmdFunc# [.param-type]#(String)# - Command name string or function to execute when the key is pressed.
+* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false state if the shortcut was added or not.
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove(pattern:String):Boolean
+
+Remove a keyboard shortcut by pattern.
+
+==== Parameters
+
+* [.param-name]#pattern# [.param-type]#(String)# - Shortcut pattern. Like for example: ctrl+alt+o.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false state if the shortcut was removed or not.

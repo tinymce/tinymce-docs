@@ -1,0 +1,81 @@
+= tinymce.util.I18n
+
+I18n class that handles translation of TinyMCE UI. Uses po style with csharp style parameters.
+
+[#properties .anchor]##
+
+== link:#properties[Properties]
+
+[cols=",,,",options="header",]
+|===
+|name |type |summary |defined by
+|rtl |[.param-type]#Boolean# |Property gets set to true if a RTL language pack was loaded. |link:/docs-4x/api/tinymce.util/tinymce.util.i18n[tinymce.util.I18n]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#add[add()] |Adds translations for a specific language code. |link:/docs-4x/api/tinymce.util/tinymce.util.i18n[tinymce.util.I18n]
+|link:#getcode[getCode()] |Returns the current language code. |link:/docs-4x/api/tinymce.util/tinymce.util.i18n[tinymce.util.I18n]
+|link:#setcode[setCode()] |Sets the current language code. |link:/docs-4x/api/tinymce.util/tinymce.util.i18n[tinymce.util.I18n]
+|link:#translate[translate()] |Translates the specified text. It has a few formats: I18n.translate("Text"); I18n.translate(["Text \{0}/\{1}", 0, 1]); I18n.translate(\{raw: "Raw string"}); |link:/docs-4x/api/tinymce.util/tinymce.util.i18n[tinymce.util.I18n]
+|===
+
+== Methods
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(code:String, items:Array)
+
+Adds translations for a specific language code.
+
+==== Parameters
+
+* [.param-name]#code# [.param-type]#(String)# - Language code like sv_SE.
+* [.param-name]#items# [.param-type]#(Array)# - Name/value array with English en_US to sv_SE.
+
+[#getcode .anchor]##
+
+=== link:#getcode[getCode]
+
+getCode():String
+
+Returns the current language code.
+
+==== Return value
+
+* [.return-type]#String# - Current language code.
+
+[#setcode .anchor]##
+
+=== link:#setcode[setCode]
+
+setCode(newCode:String)
+
+Sets the current language code.
+
+==== Parameters
+
+* [.param-name]#newCode# [.param-type]#(String)# - Current language code.
+
+[#translate .anchor]##
+
+=== link:#translate[translate]
+
+translate(text:String):String
+
+Translates the specified text. It has a few formats: I18n.translate("Text"); I18n.translate(["Text \{0}/\{1}", 0, 1]); I18n.translate(\{raw: "Raw string"});
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - Text to translate.
+
+==== Return value
+
+* [.return-type]#String# - String that got translated.

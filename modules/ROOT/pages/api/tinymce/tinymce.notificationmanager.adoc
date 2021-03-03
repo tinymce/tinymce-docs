@@ -1,0 +1,60 @@
+= tinymce.NotificationManager
+
+This class handles the creation of TinyMCE's notifications.
+
+== Examples
+
+[source,prettyprint]
+----
+// Opens a new notification of type "error" with text "An error occurred."
+tinymce.activeEditor.notificationManager.open({
+   text: 'An error occurred.',
+   type: 'error'
+});
+----
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#close[close()] |Closes the top most notification. |link:/docs-4x/api/tinymce/tinymce.notificationmanager[tinymce.NotificationManager]
+|link:#getnotifications[getNotifications()] |Returns the currently opened notification objects. |link:/docs-4x/api/tinymce/tinymce.notificationmanager[tinymce.NotificationManager]
+|link:#open[open()] |Opens a new notification. |link:/docs-4x/api/tinymce/tinymce.notificationmanager[tinymce.NotificationManager]
+|===
+
+== Methods
+
+[#close .anchor]##
+
+=== link:#close[close]
+
+close()
+
+Closes the top most notification.
+
+[#getnotifications .anchor]##
+
+=== link:#getnotifications[getNotifications]
+
+getNotifications():Array
+
+Returns the currently opened notification objects.
+
+==== Return value
+
+* [.return-type]#Array# - Array of the currently opened notifications.
+
+[#open .anchor]##
+
+=== link:#open[open]
+
+open(args:Object)
+
+Opens a new notification.
+
+==== Parameters
+
+* [.param-name]#args# [.param-type]#(Object)# - Optional name/value settings collection contains things like timeout/color/message etc.

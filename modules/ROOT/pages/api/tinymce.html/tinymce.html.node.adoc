@@ -1,0 +1,308 @@
+= tinymce.html.Node
+
+This class is a minimalistic implementation of a DOM like node used by the DomParser class.
+
+== Examples
+
+[source,prettyprint]
+----
+var node = new tinymce.html.Node('strong', 1);
+someRoot.append(node);
+----
+
+[#constructors .anchor]##
+
+== link:#constructors[Constructors]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#node[Node()] |Constructs a new Node instance. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#append[append()] |Appends a new node as a child of the current node. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#attr[attr()] |Gets/sets or removes an attribute by name. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#clone[clone()] |Does a shallow clones the node into a new node. It will also exclude id attributes since there should only be one id per document. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#create[create()] |Creates a node of a specific type. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#empty[empty()] |Removes all children of the current node. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#getall[getAll()] |Get all children by name. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#insert[insert()] |Inserts a node at a specific position as a child of the current node. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#isempty[isEmpty()] |Returns true/false if the node is to be considered empty or not. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#remove[remove()] |Removes the node from it's parent. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#replace[replace()] |Replaces the current node with the specified one. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#unwrap[unwrap()] |Unwraps the node in other words it removes the node but keeps the children. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#walk[walk()] |Walks to the next or previous node and returns that node or null if it wasn't found. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|link:#wrap[wrap()] |Wraps the node in in another node. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
+|===
+
+== Constructors
+
+[#node .anchor]##
+
+=== link:#node[Node]
+
+public constructor function Node(name:String, type:Number)
+
+Constructs a new Node instance.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the node type.
+* [.param-name]#type# [.param-type]#(Number)# - Numeric type representing the node.
+
+== Methods
+
+[#append .anchor]##
+
+=== link:#append[append]
+
+append(node:tinymce.html.Node):tinymce.html.Node
+
+Appends a new node as a child of the current node.
+
+==== Examples
+
+[source,prettyprint]
+----
+node.append(someNode);
+----
+
+==== Parameters
+
+* [.param-name]#node# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - Node to append as a child of the current one.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The node that got appended.
+
+[#attr .anchor]##
+
+=== link:#attr[attr]
+
+attr(name:String, value:String):String, tinymce.html.Node
+
+Gets/sets or removes an attribute by name.
+
+==== Examples
+
+[source,prettyprint]
+----
+someNode.attr("name", "value"); // Sets an attribute
+console.log(someNode.attr("name")); // Gets an attribute
+someNode.attr("name", null); // Removes an attribute
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Attribute name to set or get.
+* [.param-name]#value# [.param-type]#(String)# - Optional value to set.
+
+==== Return value
+
+* [.return-type]#String# - String or undefined on a get operation or the current node on a set operation.
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - String or undefined on a get operation or the current node on a set operation.
+
+[#clone .anchor]##
+
+=== link:#clone[clone]
+
+clone():tinymce.html.Node
+
+Does a shallow clones the node into a new node. It will also exclude id attributes since there should only be one id per document.
+
+==== Examples
+
+[source,prettyprint]
+----
+var clonedNode = node.clone();
+----
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - New copy of the original node.
+
+[#create .anchor]##
+
+=== link:#create[create]
+
+create(name:String, attrs:Object)
+
+Creates a node of a specific type.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the node type to create for example "b" or "#text".
+* [.param-name]#attrs# [.param-type]#(Object)# - Name/value collection of attributes that will be applied to elements.
+
+[#empty .anchor]##
+
+=== link:#empty[empty]
+
+empty():tinymce.html.Node
+
+Removes all children of the current node.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The current node that got cleared.
+
+[#getall .anchor]##
+
+=== link:#getall[getAll]
+
+getAll(name:String):Array
+
+Get all children by name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the child nodes to collect.
+
+==== Return value
+
+* [.return-type]#Array# - Array with child nodes matchin the specified name.
+
+[#insert .anchor]##
+
+=== link:#insert[insert]
+
+insert(node:tinymce.html.Node, refNode:tinymce.html.Node, before:Boolean):tinymce.html.Node
+
+Inserts a node at a specific position as a child of the current node.
+
+==== Examples
+
+[source,prettyprint]
+----
+parentNode.insert(newChildNode, oldChildNode);
+----
+
+==== Parameters
+
+* [.param-name]#node# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - Node to insert as a child of the current node.
+* [.param-name]#refNode# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - Reference node to set node before/after.
+* [.param-name]#before# [.param-type]#(Boolean)# - Optional state to insert the node before the reference node.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The node that got inserted.
+
+[#isempty .anchor]##
+
+=== link:#isempty[isEmpty]
+
+isEmpty(elements:Object, whitespace:Object, predicate:function):Boolean
+
+Returns true/false if the node is to be considered empty or not.
+
+==== Examples
+
+[source,prettyprint]
+----
+node.isEmpty({img: true});
+----
+
+==== Parameters
+
+* [.param-name]#elements# [.param-type]#(Object)# - Name/value object with elements that are automatically treated as non empty elements.
+* [.param-name]#whitespace# [.param-type]#(Object)# - Name/value object with elements that are automatically treated whitespace preservables.
+* [.param-name]#predicate# [.param-type]#(function)# - Optional predicate that gets called after the other rules determine that the node is empty. Should return true if the node is a content node.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the node is empty or not.
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove():tinymce.html.Node
+
+Removes the node from it's parent.
+
+==== Examples
+
+[source,prettyprint]
+----
+node.remove();
+----
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - Current node that got removed.
+
+[#replace .anchor]##
+
+=== link:#replace[replace]
+
+replace(node:tinymce.html.Node):tinymce.html.Node
+
+Replaces the current node with the specified one.
+
+==== Examples
+
+[source,prettyprint]
+----
+someNode.replace(someNewNode);
+----
+
+==== Parameters
+
+* [.param-name]#node# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - Node to replace the current node with.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The old node that got replaced.
+
+[#unwrap .anchor]##
+
+=== link:#unwrap[unwrap]
+
+unwrap()
+
+Unwraps the node in other words it removes the node but keeps the children.
+
+==== Examples
+
+[source,prettyprint]
+----
+node.unwrap();
+----
+
+[#walk .anchor]##
+
+=== link:#walk[walk]
+
+walk(prev:Boolean):tinymce.html.Node
+
+Walks to the next or previous node and returns that node or null if it wasn't found.
+
+==== Parameters
+
+* [.param-name]#prev# [.param-type]#(Boolean)# - Optional previous node state defaults to false.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - Node that is next to or previous of the current node.
+
+[#wrap .anchor]##
+
+=== link:#wrap[wrap]
+
+wrap()
+
+Wraps the node in in another node.
+
+==== Examples
+
+[source,prettyprint]
+----
+node.wrap(wrapperNode);
+----

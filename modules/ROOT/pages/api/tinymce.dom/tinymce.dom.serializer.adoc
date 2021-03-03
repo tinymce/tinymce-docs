@@ -1,0 +1,128 @@
+= tinymce.dom.Serializer
+
+This class is used to serialize DOM trees into a string. Consult the TinyMCE Wiki API for more details and examples on how to use this class.
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#addattributefilter[addAttributeFilter()] |Adds a attribute filter function to the parser used by the serializer, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|link:#addnodefilter[addNodeFilter()] |Adds a node filter function to the parser used by the serializer, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|link:#addrules[addRules()] |Adds valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|link:#addtempattr[addTempAttr()] |Adds a temporary internal attribute these attributes will get removed on undo and when getting contents out of the editor. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|link:#gettempattrs[getTempAttrs()] |Returns an array of all added temp attrs names. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|link:#serialize[serialize()] |Serializes the specified browser DOM node into a HTML string. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|link:#setrules[setRules()] |Sets the valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|===
+
+== Methods
+
+[#addattributefilter .anchor]##
+
+=== link:#addattributefilter[addAttributeFilter]
+
+addAttributeFilter(callback:function)
+
+Adds a attribute filter function to the parser used by the serializer, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document.
+
+==== Examples
+
+[source,prettyprint]
+----
+parser.addAttributeFilter('src,href', function(nodes, name) {
+ for (var i = 0; i < nodes.length; i++) {
+  console.log(nodes[i].name);
+ }
+});
+----
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
+
+[#addnodefilter .anchor]##
+
+=== link:#addnodefilter[addNodeFilter]
+
+addNodeFilter(callback:function)
+
+Adds a node filter function to the parser used by the serializer, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document.
+
+==== Examples
+
+[source,prettyprint]
+----
+parser.addNodeFilter('p,h1', function(nodes, name) {
+ for (var i = 0; i < nodes.length; i++) {
+  console.log(nodes[i].name);
+ }
+});
+----
+
+==== Parameters
+
+* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
+
+[#addrules .anchor]##
+
+=== link:#addrules[addRules]
+
+addRules(rules:String)
+
+Adds valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format.
+
+==== Parameters
+
+* [.param-name]#rules# [.param-type]#(String)# - Valid elements rules string to add to schema.
+
+[#addtempattr .anchor]##
+
+=== link:#addtempattr[addTempAttr]
+
+addTempAttr(name:String)
+
+Adds a temporary internal attribute these attributes will get removed on undo and when getting contents out of the editor.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - string
+
+[#gettempattrs .anchor]##
+
+=== link:#gettempattrs[getTempAttrs]
+
+getTempAttrs():String[]
+
+Returns an array of all added temp attrs names.
+
+==== Return value
+
+* [.return-type]#String[]# - Array with attribute names.
+
+[#serialize .anchor]##
+
+=== link:#serialize[serialize]
+
+serialize(node:DOMNode, args:Object)
+
+Serializes the specified browser DOM node into a HTML string.
+
+==== Parameters
+
+* [.param-name]#node# [.param-type]#(DOMNode)# - DOM node to serialize.
+* [.param-name]#args# [.param-type]#(Object)# - Arguments option that gets passed to event handlers.
+
+[#setrules .anchor]##
+
+=== link:#setrules[setRules]
+
+setRules(rules:String)
+
+Sets the valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format.
+
+==== Parameters
+
+* [.param-name]#rules# [.param-type]#(String)# - Valid elements rules string.

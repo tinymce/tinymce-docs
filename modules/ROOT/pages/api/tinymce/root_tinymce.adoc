@@ -1,0 +1,727 @@
+= tinymce
+
+TinyMCE core class.
+
+[#properties .anchor]##
+
+== link:#properties[Properties]
+
+[cols=",,,",options="header",]
+|===
+|name |type |summary |defined by
+|$ |link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.param-type]#tinymce.dom.DomQuery#] |Dom query instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|DOM |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[[.param-type]#tinymce.dom.DOMUtils#] |Global DOM instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|PluginManager |link:/docs-4x/api/tinymce/tinymce.addonmanager[[.param-type]#tinymce.AddOnManager#] |Global PluginManager instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|ScriptLoader |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[[.param-type]#tinymce.dom.ScriptLoader#] |Global ScriptLoader instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|ThemeManager |link:/docs-4x/api/tinymce/tinymce.addonmanager[[.param-type]#tinymce.AddOnManager#] | |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|activeEditor |link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#tinymce.Editor#] |Currently active editor instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|baseURI |link:/docs-4x/api/tinymce.util/tinymce.util.uri[[.param-type]#tinymce.util.URI#] |Absolute baseURI for the installation path of TinyMCE. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|baseURL |[.param-type]#String# |Base URL where the root directory if TinyMCE is located. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|documentBaseURL |[.param-type]#String# |Document base URL where the current document is located. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|editors |[.param-type]#Object# |Collection of editor instances. Deprecated use tinymce.get() instead. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|i18n |[.param-type]#Object# |Collection of language pack data. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|majorVersion |[.param-type]#String# |Major version of TinyMCE build. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|minorVersion |[.param-type]#String# |Minor version of TinyMCE build. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|releaseDate |[.param-type]#String# |Release date of TinyMCE build. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|suffix |[.param-type]#String# |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|===
+
+[#methods .anchor]##
+
+== link:#methods[Methods]
+
+[cols=",,",options="header",]
+|===
+|name |summary |defined by
+|link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#addi18n[addI18n()] |Adds a language pack, this gets called by the loaded language files like en.js. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#create[create()] |Creates a class, subclass or static singleton. More details on this method can be found in the Wiki. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#createeditor[createEditor()] |Creates an editor instance and adds it to the EditorManager collection. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#createns[createNS()] |Creates a namespace on a specific object. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#each[each()] |Performs an iteration of all items in a collection such as an object or array. This method will execure the callback function for each item in the collection, if the callback returns false the iteration will terminate. The callback has the following format: cb(value, key_or_index). |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#execcommand[execCommand()] |Executes a specific command on the currently active editor. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#explode[explode()] |Splits a string but removes the whitespace before and after each value. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#get[get()] |Returns a editor instance by id. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#grep[grep()] |Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#inarray[inArray()] |Returns an index of the item or -1 if item is not present in the array. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#init[init()] |Initializes a set of editors. This method will create editors based on various settings. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#is[is()] |Checks if a object is of a specific type for example an array. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#isarray[isArray()] |Returns true/false if the object is an array or not. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#makemap[makeMap()] |Makes a name/object map out of an array with names. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#map[map()] |Creates a new array by the return value of each iteration function call. This enables you to convert one array list into another. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#overridedefaults[overrideDefaults()] |Overrides the default settings for editor instances. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#remove[remove()] |Removes a editor or editors form page. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#resolve[resolve()] |Resolves a string and returns the object from a specific structure. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#setactive[setActive()] |Sets the active editor instance and fires the deactivate/activate events. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#toarray[toArray()] |Converts the specified object into a real JavaScript array. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#translate[translate()] |Translates the specified string using the language pack items. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#triggersave[triggerSave()] |Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#trim[trim()] |Removes whitespace from the beginning and end of a string. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#walk[walk()] |Executed the specified function for each item in a object tree. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|===
+
+== Methods
+
+[#add .anchor]##
+
+=== link:#add[add]
+
+add(editor:tinymce.Editor):tinymce.Editor
+
+Adds an editor instance to the editor collection. This will also set it as the active editor.
+
+==== Parameters
+
+* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to add to the collection.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The same instance that got passed in.
+
+[#addi18n .anchor]##
+
+=== link:#addi18n[addI18n]
+
+addI18n(code:String, items:Object)
+
+Adds a language pack, this gets called by the loaded language files like en.js.
+
+==== Parameters
+
+* [.param-name]#code# [.param-type]#(String)# - Optional language code.
+* [.param-name]#items# [.param-type]#(Object)# - Name/value object with translations.
+
+[#create .anchor]##
+
+=== link:#create[create]
+
+create(s:String, p:Object, root:Object)
+
+Creates a class, subclass or static singleton. More details on this method can be found in the Wiki.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Creates a basic class
+tinymce.create('tinymce.somepackage.SomeClass', {
+    SomeClass: function() {
+        // Class constructor
+    },
+
+    method: function() {
+        // Some method
+    }
+});
+
+// Creates a basic subclass class
+tinymce.create('tinymce.somepackage.SomeSubClass:tinymce.somepackage.SomeClass', {
+    SomeSubClass: function() {
+        // Class constructor
+        this.parent(); // Call parent constructor
+    },
+
+    method: function() {
+        // Some method
+        this.parent(); // Call parent method
+    },
+
+    'static': {
+        staticMethod: function() {
+            // Static method
+        }
+    }
+});
+
+// Creates a singleton/static class
+tinymce.create('static tinymce.somepackage.SomeSingletonClass', {
+    method: function() {
+        // Some method
+    }
+});
+----
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(String)# - Class name, inheritance and prefix.
+* [.param-name]#p# [.param-type]#(Object)# - Collection of methods to add to the class.
+* [.param-name]#root# [.param-type]#(Object)# - Optional root object defaults to the global window object.
+
+[#createeditor .anchor]##
+
+=== link:#createeditor[createEditor]
+
+createEditor(id:String, settings:Object):tinymce.Editor
+
+Creates an editor instance and adds it to the EditorManager collection.
+
+==== Parameters
+
+* [.param-name]#id# [.param-type]#(String)# - Instance id to use for editor.
+* [.param-name]#settings# [.param-type]#(Object)# - Editor instance settings.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance that got created.
+
+[#createns .anchor]##
+
+=== link:#createns[createNS]
+
+createNS(n:String, o:Object):Object
+
+Creates a namespace on a specific object.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Create some namespace
+tinymce.createNS('tinymce.somepackage.subpackage');
+
+// Add a singleton
+var tinymce.somepackage.subpackage.SomeSingleton = {
+    method: function() {
+        // Some method
+    }
+};
+----
+
+==== Parameters
+
+* [.param-name]#n# [.param-type]#(String)# - Namespace to create for example a.b.c.d.
+* [.param-name]#o# [.param-type]#(Object)# - Optional object to add namespace to, defaults to window.
+
+==== Return value
+
+* [.return-type]#Object# - New namespace object the last item in path.
+
+[#each .anchor]##
+
+=== link:#each[each]
+
+each(o:Object, cb:function, s:Object)
+
+Performs an iteration of all items in a collection such as an object or array. This method will execure the callback function for each item in the collection, if the callback returns false the iteration will terminate. The callback has the following format: cb(value, key_or_index).
+
+==== Examples
+
+[source,prettyprint]
+----
+// Iterate an array
+tinymce.each([1,2,3], function(v, i) {
+    console.debug("Value: " + v + ", Index: " + i);
+});
+
+// Iterate an object
+tinymce.each({a: 1, b: 2, c: 3], function(v, k) {
+    console.debug("Value: " + v + ", Key: " + k);
+});
+----
+
+==== Parameters
+
+* [.param-name]#o# [.param-type]#(Object)# - Collection to iterate.
+* [.param-name]#cb# [.param-type]#(function)# - Callback function to execute for each item.
+* [.param-name]#s# [.param-type]#(Object)# - Optional scope to execute the callback in.
+
+[#execcommand .anchor]##
+
+=== link:#execcommand[execCommand]
+
+execCommand(cmd:String, ui:Boolean, value:String):Boolean
+
+Executes a specific command on the currently active editor.
+
+==== Parameters
+
+* [.param-name]#cmd# [.param-type]#(String)# - Command to perform for example Bold.
+* [.param-name]#ui# [.param-type]#(Boolean)# - Optional boolean state if a UI should be presented for the command or not.
+* [.param-name]#value# [.param-type]#(String)# - Optional value parameter like for example an URL to a link.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the command was executed or not.
+
+[#explode .anchor]##
+
+=== link:#explode[explode]
+
+explode(s:string, d:string)
+
+Splits a string but removes the whitespace before and after each value.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Split a string into an array with a,b,c
+var arr = tinymce.explode('a, b,   c');
+----
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(string)# - String to split.
+* [.param-name]#d# [.param-type]#(string)# - Delimiter to split by.
+
+[#fire .anchor]##
+
+=== link:#fire[fire]
+
+fire(name:String, args:Object?, bubble:Boolean?):Object
+
+Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+
+[source,prettyprint]
+----
+instance.fire('event', {...});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
+* [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
+* [.param-name]#bubble# [.param-type]#(Boolean?)# - True/false if the event is to be bubbled.
+
+==== Return value
+
+* [.return-type]#Object# - Event args instance passed in.
+
+[#get .anchor]##
+
+=== link:#get[get]
+
+get(id:String):tinymce.Editor, Array
+
+Returns a editor instance by id.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Adds an onclick event to an editor by id
+tinymce.get('mytextbox').on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+
+// Adds an onclick event to an editor by index
+tinymce.get(0).on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+
+// Adds an onclick event to an editor by id (longer version)
+tinymce.EditorManager.get('mytextbox').on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+----
+
+==== Parameters
+
+* [.param-name]#id# [.param-type]#(String)# - Editor instance id or index to return.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance to return or array of editor instances.
+* [.return-type]#Array# - Editor instance to return or array of editor instances.
+
+[#grep .anchor]##
+
+=== link:#grep[grep]
+
+grep(a:Array, f:function):Array
+
+Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Filter out some items, this will return an array with 4 and 5
+var items = tinymce.grep([1,2,3,4,5], function(v) {return v > 3;});
+----
+
+==== Parameters
+
+* [.param-name]#a# [.param-type]#(Array)# - Array of items to loop though.
+* [.param-name]#f# [.param-type]#(function)# - Function to call for each item. Include/exclude depends on it's return value.
+
+==== Return value
+
+* [.return-type]#Array# - New array with values imported and filtered based in input.
+
+[#haseventlisteners .anchor]##
+
+=== link:#haseventlisteners[hasEventListeners]
+
+hasEventListeners(name:String):Boolean
+
+Returns true/false if the object has a event of the specified name.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the event exists or not.
+
+[#inarray .anchor]##
+
+=== link:#inarray[inArray]
+
+inArray(item:any, arr:Array):Number
+
+Returns an index of the item or -1 if item is not present in the array.
+
+==== Parameters
+
+* [.param-name]#item# [.param-type]#(any)# - Item to search for.
+* [.param-name]#arr# [.param-type]#(Array)# - Array to search in.
+
+==== Return value
+
+* [.return-type]#Number# - index of the item or -1 if item was not found.
+
+[#init .anchor]##
+
+=== link:#init[init]
+
+init(settings:Object):tinymce.util.Promise
+
+Initializes a set of editors. This method will create editors based on various settings.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Initializes a editor using the longer method
+tinymce.EditorManager.init({
+   some_settings : 'some value'
+});
+
+// Initializes a editor instance using the shorter version and with a promise
+tinymce.init({
+   some_settings : 'some value'
+}).then(function(editors) {
+   ...
+});
+----
+
+==== Parameters
+
+* [.param-name]#settings# [.param-type]#(Object)# - Settings object to be passed to each editor instance.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce.util/tinymce.util.promise[[.return-type]#tinymce.util.Promise#] - Promise that gets resolved with an array of editors when all editor instances are initialized.
+
+[#is .anchor]##
+
+=== link:#is[is]
+
+is(obj:Object, type:string):Boolean
+
+Checks if a object is of a specific type for example an array.
+
+==== Parameters
+
+* [.param-name]#obj# [.param-type]#(Object)# - Object to check type of.
+* [.param-name]#type# [.param-type]#(string)# - Optional type to check for.
+
+==== Return value
+
+* [.return-type]#Boolean# - true/false if the object is of the specified type.
+
+[#isarray .anchor]##
+
+=== link:#isarray[isArray]
+
+isArray(obj:Object):boolean
+
+Returns true/false if the object is an array or not.
+
+==== Parameters
+
+* [.param-name]#obj# [.param-type]#(Object)# - Object to check.
+
+==== Return value
+
+* [.return-type]#boolean# - true/false state if the object is an array or not.
+
+[#makemap .anchor]##
+
+=== link:#makemap[makeMap]
+
+makeMap(items:Array, delim:String, map:Object):Object
+
+Makes a name/object map out of an array with names.
+
+==== Parameters
+
+* [.param-name]#items# [.param-type]#(Array)# - Items to make map out of.
+* [.param-name]#delim# [.param-type]#(String)# - Optional delimiter to split string by.
+* [.param-name]#map# [.param-type]#(Object)# - Optional map to add items to.
+
+==== Return value
+
+* [.return-type]#Object# - Name/value map of items.
+
+[#map .anchor]##
+
+=== link:#map[map]
+
+map(array:Array, callback:function):Array
+
+Creates a new array by the return value of each iteration function call. This enables you to convert one array list into another.
+
+==== Parameters
+
+* [.param-name]#array# [.param-type]#(Array)# - Array of items to iterate.
+* [.param-name]#callback# [.param-type]#(function)# - Function to call for each item. It's return value will be the new value.
+
+==== Return value
+
+* [.return-type]#Array# - Array with new values based on function return values.
+
+[#off .anchor]##
+
+=== link:#off[off]
+
+off(name:String?, callback:callback?):Object
+
+Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Unbind specific callback
+instance.off('event', handler);
+
+// Unbind all listeners by name
+instance.off('event');
+
+// Unbind all events
+instance.off();
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String?)# - Name of the event to unbind.
+* [.param-name]#callback# [.param-type]#(callback?)# - Callback to unbind.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#on .anchor]##
+
+=== link:#on[on]
+
+on(name:String, callback:callback, first:Boolean):Object
+
+Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+
+[source,prettyprint]
+----
+instance.on('event', function(e) {
+    // Callback logic
+});
+----
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
+* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
+* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#once .anchor]##
+
+=== link:#once[once]
+
+once(name:String, callback:callback):Object
+
+Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Parameters
+
+* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind.
+* [.param-name]#callback# [.param-type]#(callback)# - Callback to bind only once.
+
+==== Return value
+
+* [.return-type]#Object# - Current class instance.
+
+[#overridedefaults .anchor]##
+
+=== link:#overridedefaults[overrideDefaults]
+
+overrideDefaults(defaultSettings:Object)
+
+Overrides the default settings for editor instances.
+
+==== Parameters
+
+* [.param-name]#defaultSettings# [.param-type]#(Object)# - Defaults settings object.
+
+[#remove .anchor]##
+
+=== link:#remove[remove]
+
+remove(selector:tinymce.Editor):tinymce.Editor
+
+Removes a editor or editors form page.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Remove all editors bound to divs
+tinymce.remove('div');
+
+// Remove all editors bound to textareas
+tinymce.remove('textarea');
+
+// Remove all editors
+tinymce.remove();
+
+// Remove specific instance by id
+tinymce.remove('#id');
+----
+
+==== Parameters
+
+* [.param-name]#selector# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - CSS selector or editor instance to remove.
+
+==== Return value
+
+* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The editor that got passed in will be return if it was found otherwise null.
+
+[#resolve .anchor]##
+
+=== link:#resolve[resolve]
+
+resolve(n:String, o:Object):Object
+
+Resolves a string and returns the object from a specific structure.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Resolve a path into an object reference
+var obj = tinymce.resolve('a.b.c.d');
+----
+
+==== Parameters
+
+* [.param-name]#n# [.param-type]#(String)# - Path to resolve for example a.b.c.d.
+* [.param-name]#o# [.param-type]#(Object)# - Optional object to search though, defaults to window.
+
+==== Return value
+
+* [.return-type]#Object# - Last object in path or null if it couldn't be resolved.
+
+[#setactive .anchor]##
+
+=== link:#setactive[setActive]
+
+setActive(editor:tinymce.Editor)
+
+Sets the active editor instance and fires the deactivate/activate events.
+
+==== Parameters
+
+* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to set as the active instance.
+
+[#toarray .anchor]##
+
+=== link:#toarray[toArray]
+
+toArray(obj:Object):Array
+
+Converts the specified object into a real JavaScript array.
+
+==== Parameters
+
+* [.param-name]#obj# [.param-type]#(Object)# - Object to convert into array.
+
+==== Return value
+
+* [.return-type]#Array# - Array object based in input.
+
+[#translate .anchor]##
+
+=== link:#translate[translate]
+
+translate(text:String):String
+
+Translates the specified string using the language pack items.
+
+==== Parameters
+
+* [.param-name]#text# [.param-type]#(String)# - String to translate
+
+==== Return value
+
+* [.return-type]#String# - Translated string.
+
+[#triggersave .anchor]##
+
+=== link:#triggersave[triggerSave]
+
+triggerSave()
+
+Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted.
+
+==== Examples
+
+[source,prettyprint]
+----
+// Saves all contents
+tinyMCE.triggerSave();
+----
+
+[#trim .anchor]##
+
+=== link:#trim[trim]
+
+trim(s:String):String
+
+Removes whitespace from the beginning and end of a string.
+
+==== Parameters
+
+* [.param-name]#s# [.param-type]#(String)# - String to remove whitespace from.
+
+==== Return value
+
+* [.return-type]#String# - New string with removed whitespace.
+
+[#walk .anchor]##
+
+=== link:#walk[walk]
+
+walk(o:Object, f:function, n:String, s:String)
+
+Executed the specified function for each item in a object tree.
+
+==== Parameters
+
+* [.param-name]#o# [.param-type]#(Object)# - Object tree to walk though.
+* [.param-name]#f# [.param-type]#(function)# - Function to call for each item.
+* [.param-name]#n# [.param-type]#(String)# - Optional name of collection inside the objects to walk for example childNodes.
+* [.param-name]#s# [.param-type]#(String)# - Optional scope to execute the function in.

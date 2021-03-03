@@ -16,7 +16,7 @@ new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>t
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#serialize[serialize()] |Serializes the specified node into a string. |link:/docs-4x/api/tinymce.html/tinymce.html.serializer[tinymce.html.Serializer]
+|link:#serialize[serialize()] |Serializes the specified node into a string. |link:{baseurl}/api/tinymce.html/tinymce.html.serializer.html[tinymce.html.Serializer]
 |===
 
 == Methods
@@ -39,10 +39,10 @@ new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>t
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#node# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - Node instance to serialize.
+* [.param-name]#node# link:{baseurl}/api/tinymce.html/tinymce.html.node.html[[.param-type]#(tinymce.html.Node)#] - Node instance to serialize.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#String# - String with HTML based on DOM tree.

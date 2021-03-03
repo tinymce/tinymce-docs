@@ -8,7 +8,7 @@ This class handles selection bookmarks.
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#bookmarkmanager[BookmarkManager()] |Constructs a new BookmarkManager instance for a specific selection instance. |link:/docs-4x/api/tinymce.dom/tinymce.dom.bookmarkmanager[tinymce.dom.BookmarkManager]
+|link:#bookmarkmanager[BookmarkManager()] |Constructs a new BookmarkManager instance for a specific selection instance. |link:{baseurl}/api/tinymce.dom/tinymce.dom.bookmarkmanager.html[tinymce.dom.BookmarkManager]
 |===
 
 [[methods]]
@@ -17,9 +17,9 @@ This class handles selection bookmarks.
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#getbookmark[getBookmark()] |Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document. |link:/docs-4x/api/tinymce.dom/tinymce.dom.bookmarkmanager[tinymce.dom.BookmarkManager]
-|link:#isbookmarknode[isBookmarkNode()] |Returns true/false if the specified node is a bookmark node or not. |link:/docs-4x/api/tinymce.dom/tinymce.dom.bookmarkmanager[tinymce.dom.BookmarkManager]
-|link:#movetobookmark[moveToBookmark()] |Restores the selection to the specified bookmark. |link:/docs-4x/api/tinymce.dom/tinymce.dom.bookmarkmanager[tinymce.dom.BookmarkManager]
+|link:#getbookmark[getBookmark()] |Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.bookmarkmanager.html[tinymce.dom.BookmarkManager]
+|link:#isbookmarknode[isBookmarkNode()] |Returns true/false if the specified node is a bookmark node or not. |link:{baseurl}/api/tinymce.dom/tinymce.dom.bookmarkmanager.html[tinymce.dom.BookmarkManager]
+|link:#movetobookmark[moveToBookmark()] |Restores the selection to the specified bookmark. |link:{baseurl}/api/tinymce.dom/tinymce.dom.bookmarkmanager.html[tinymce.dom.BookmarkManager]
 |===
 
 == Constructors
@@ -34,7 +34,7 @@ Constructs a new BookmarkManager instance for a specific selection instance.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#selection# link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[[.param-type]#(tinymce.dom.Selection)#] - Selection instance to handle bookmarks for.
+* [.param-name]#selection# link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[[.param-type]#(tinymce.dom.Selection)#] - Selection instance to handle bookmarks for.
 
 == Methods
 
@@ -65,7 +65,7 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 * [.param-name]#normalized# [.param-type]#(Boolean)# - Optional state that enables you to get a position that it would be after normalization.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Bookmark object, use moveToBookmark with this object to restore the selection.

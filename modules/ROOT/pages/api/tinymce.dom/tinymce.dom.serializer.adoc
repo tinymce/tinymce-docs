@@ -8,13 +8,13 @@ This class is used to serialize DOM trees into a string. Consult the TinyMCE Wik
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#addattributefilter[addAttributeFilter()] |Adds a attribute filter function to the parser used by the serializer, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
-|link:#addnodefilter[addNodeFilter()] |Adds a node filter function to the parser used by the serializer, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
-|link:#addrules[addRules()] |Adds valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
-|link:#addtempattr[addTempAttr()] |Adds a temporary internal attribute these attributes will get removed on undo and when getting contents out of the editor. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
-|link:#gettempattrs[getTempAttrs()] |Returns an array of all added temp attrs names. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
-|link:#serialize[serialize()] |Serializes the specified browser DOM node into a HTML string. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
-|link:#setrules[setRules()] |Sets the valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format. |link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[tinymce.dom.Serializer]
+|link:#addattributefilter[addAttributeFilter()] |Adds a attribute filter function to the parser used by the serializer, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
+|link:#addnodefilter[addNodeFilter()] |Adds a node filter function to the parser used by the serializer, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
+|link:#addrules[addRules()] |Adds valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
+|link:#addtempattr[addTempAttr()] |Adds a temporary internal attribute these attributes will get removed on undo and when getting contents out of the editor. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
+|link:#gettempattrs[getTempAttrs()] |Returns an array of all added temp attrs names. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
+|link:#serialize[serialize()] |Serializes the specified browser DOM node into a HTML string. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
+|link:#setrules[setRules()] |Sets the valid elements rules to the serializers schema instance this enables you to specify things like what elements should be outputted and what attributes specific elements might have. Consult the Wiki for more details on this format. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
 |===
 
 == Methods
@@ -95,7 +95,7 @@ getTempAttrs():String[]
 Returns an array of all added temp attrs names.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#String[]# - Array with attribute names.

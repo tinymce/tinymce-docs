@@ -8,8 +8,8 @@ This class contains a few utility methods for ranges.
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#compareranges[compareRanges()] |Compares two ranges and checks if they are equal. |link:/docs-4x/api/tinymce.dom/tinymce.dom.rangeutils[tinymce.dom.RangeUtils]
-|link:#getcaretrangefrompoint[getCaretRangeFromPoint()] |Gets the caret range for the given x/y location. |link:/docs-4x/api/tinymce.dom/tinymce.dom.rangeutils[tinymce.dom.RangeUtils]
+|link:#compareranges[compareRanges()] |Compares two ranges and checks if they are equal. |link:{baseurl}/api/tinymce.dom/tinymce.dom.rangeutils.html[tinymce.dom.RangeUtils]
+|link:#getcaretrangefrompoint[getCaretRangeFromPoint()] |Gets the caret range for the given x/y location. |link:{baseurl}/api/tinymce.dom/tinymce.dom.rangeutils.html[tinymce.dom.RangeUtils]
 |===
 
 == Methods
@@ -28,7 +28,7 @@ Compares two ranges and checks if they are equal.
 * [.param-name]#rng2# [.param-type]#(DOMRange)# - First range to compare.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false if the ranges are equal.

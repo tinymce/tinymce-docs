@@ -8,11 +8,11 @@ This mixin will add event binding logic to classes.
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
-|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
-|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
-|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
-|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce.util/tinymce.util.observable[tinymce.util.Observable]
+|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
 |===
 
 == Methods
@@ -40,7 +40,7 @@ instance.fire('event', {...});
 * [.param-name]#bubble# [.param-type]#(Boolean?)# - True/false if the event is to be bubbled.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Event args instance passed in.

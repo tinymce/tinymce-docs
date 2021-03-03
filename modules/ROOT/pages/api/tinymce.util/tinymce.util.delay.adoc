@@ -8,14 +8,14 @@ Utility class for working with delayed actions like setTimeout.
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#clearinterval[clearInterval()] |Clears an interval timer so it won't execute. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
-|link:#cleartimeout[clearTimeout()] |Clears an timeout timer so it won't execute. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
-|link:#debounce[debounce()] |Creates debounced callback function that only gets executed once within the specified time. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
-|link:#requestanimationframe[requestAnimationFrame()] |Requests an animation frame and fallbacks to a timeout on older browsers. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
-|link:#seteditorinterval[setEditorInterval()] |Sets an interval timer it's similar to setInterval except that it checks if the editor instance is still alive when the callback gets executed. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
-|link:#seteditortimeout[setEditorTimeout()] |Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is still alive when the callback gets executed. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
-|link:#setinterval[setInterval()] |Sets an interval timer in ms and executes the specified callback at every interval of that time. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
-|link:#settimeout[setTimeout()] |Sets a timer in ms and executes the specified callback when the timer runs out. |link:/docs-4x/api/tinymce.util/tinymce.util.delay[tinymce.util.Delay]
+|link:#clearinterval[clearInterval()] |Clears an interval timer so it won't execute. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
+|link:#cleartimeout[clearTimeout()] |Clears an timeout timer so it won't execute. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
+|link:#debounce[debounce()] |Creates debounced callback function that only gets executed once within the specified time. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
+|link:#requestanimationframe[requestAnimationFrame()] |Requests an animation frame and fallbacks to a timeout on older browsers. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
+|link:#seteditorinterval[setEditorInterval()] |Sets an interval timer it's similar to setInterval except that it checks if the editor instance is still alive when the callback gets executed. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
+|link:#seteditortimeout[setEditorTimeout()] |Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is still alive when the callback gets executed. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
+|link:#setinterval[setInterval()] |Sets an interval timer in ms and executes the specified callback at every interval of that time. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
+|link:#settimeout[setTimeout()] |Sets a timer in ms and executes the specified callback when the timer runs out. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
 |===
 
 == Methods
@@ -56,7 +56,7 @@ Creates debounced callback function that only gets executed once within the spec
 * [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Function# - debounced function callback.
@@ -98,7 +98,7 @@ Sets an editor timeout it's similar to setTimeout except that it checks if the e
 
 ==== Parameters
 
-* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to check the removed state on.
+* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance to check the removed state on.
 * [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer runs out.
 * [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
 

@@ -17,7 +17,7 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#selection[Selection()] |Constructs a new selection instance. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
+|link:#selection[Selection()] |Constructs a new selection instance. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
 |===
 
 [[methods]]
@@ -26,22 +26,22 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#collapse[collapse()] |Collapse the selection to start or end of range. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#getbookmark[getBookmark()] |Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#getcontent[getContent()] |Returns the selected contents using the DOM serializer passed in to this class. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#getend[getEnd()] |Returns the end element of a selection range. If the end is in a text node the parent element will be returned. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#getnode[getNode()] |Returns the currently selected element or the common ancestor element for both start and end of the selection. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#getrng[getRng()] |Returns the browsers internal range object. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#getsel[getSel()] |Returns the browsers internal selection object. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#getstart[getStart()] |Returns the start element of a selection range. If the start is in a text node the parent element will be returned. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#iscollapsed[isCollapsed()] |Returns true/false if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#movetobookmark[moveToBookmark()] |Restores the selection to the specified bookmark. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#select[select()] |Selects the specified element. This will place the start and end of the selection range around the element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#selectorchanged[selectorChanged()] |Executes callback when the current selection starts/stops matching the specified selector. The current state will be passed to the callback as it's first argument. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#setcontent[setContent()] |Sets the current selection to the specified content. If any contents is selected it will be replaced with the contents passed in to this function. If there is no selection the contents will be inserted where the caret is placed in the editor/page. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#setcursorlocation[setCursorLocation()] |Move the selection cursor range to the specified node and offset. If there is no node specified it will move it to the first suitable location within the body. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#setnode[setNode()] |Sets the current selection to the specified DOM element. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
-|link:#setrng[setRng()] |Changes the selection to the specified DOM range. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
+|link:#collapse[collapse()] |Collapse the selection to start or end of range. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#getbookmark[getBookmark()] |Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#getcontent[getContent()] |Returns the selected contents using the DOM serializer passed in to this class. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#getend[getEnd()] |Returns the end element of a selection range. If the end is in a text node the parent element will be returned. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#getnode[getNode()] |Returns the currently selected element or the common ancestor element for both start and end of the selection. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#getrng[getRng()] |Returns the browsers internal range object. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#getsel[getSel()] |Returns the browsers internal selection object. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#getstart[getStart()] |Returns the start element of a selection range. If the start is in a text node the parent element will be returned. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#iscollapsed[isCollapsed()] |Returns true/false if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#movetobookmark[moveToBookmark()] |Restores the selection to the specified bookmark. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#select[select()] |Selects the specified element. This will place the start and end of the selection range around the element. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#selectorchanged[selectorChanged()] |Executes callback when the current selection starts/stops matching the specified selector. The current state will be passed to the callback as it's first argument. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#setcontent[setContent()] |Sets the current selection to the specified content. If any contents is selected it will be replaced with the contents passed in to this function. If there is no selection the contents will be inserted where the caret is placed in the editor/page. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#setcursorlocation[setCursorLocation()] |Move the selection cursor range to the specified node and offset. If there is no node specified it will move it to the first suitable location within the body. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#setnode[setNode()] |Sets the current selection to the specified DOM element. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
+|link:#setrng[setRng()] |Changes the selection to the specified DOM range. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
 |===
 
 == Constructors
@@ -56,10 +56,10 @@ Constructs a new selection instance.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#dom# link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[[.param-type]#(tinymce.dom.DOMUtils)#] - DOMUtils object reference.
+* [.param-name]#dom# link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[[.param-type]#(tinymce.dom.DOMUtils)#] - DOMUtils object reference.
 * [.param-name]#win# [.param-type]#(Window)# - Window to bind the selection object to.
-* [.param-name]#serializer# link:/docs-4x/api/tinymce.dom/tinymce.dom.serializer[[.param-type]#(tinymce.dom.Serializer)#] - DOM serialization class to use for getContent.
-* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance of the selection.
+* [.param-name]#serializer# link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[[.param-type]#(tinymce.dom.Serializer)#] - DOM serialization class to use for getContent.
+* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance of the selection.
 
 == Methods
 
@@ -101,7 +101,7 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 * [.param-name]#normalized# [.param-type]#(Boolean)# - Optional state that enables you to get a position that it would be after normalization.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Bookmark object, use moveToBookmark with this object to restore the selection.

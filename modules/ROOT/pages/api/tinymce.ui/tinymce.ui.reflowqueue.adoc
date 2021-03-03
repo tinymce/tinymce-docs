@@ -8,8 +8,8 @@ This class will automatically reflow controls on the next animation frame within
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds a control to the next automatic reflow call. This is the control that had a state change for example if the control was hidden/shown. |link:/docs-4x/api/tinymce.ui/tinymce.ui.reflowqueue[tinymce.ui.ReflowQueue]
-|link:#remove[remove()] |Removes the specified control from the automatic reflow. This will happen when for example the user manually triggers a reflow. |link:/docs-4x/api/tinymce.ui/tinymce.ui.reflowqueue[tinymce.ui.ReflowQueue]
+|link:#add[add()] |Adds a control to the next automatic reflow call. This is the control that had a state change for example if the control was hidden/shown. |link:{baseurl}/api/tinymce.ui/tinymce.ui.reflowqueue.html[tinymce.ui.ReflowQueue]
+|link:#remove[remove()] |Removes the specified control from the automatic reflow. This will happen when for example the user manually triggers a reflow. |link:{baseurl}/api/tinymce.ui/tinymce.ui.reflowqueue.html[tinymce.ui.ReflowQueue]
 |===
 
 == Methods
@@ -24,7 +24,7 @@ Adds a control to the next automatic reflow call. This is the control that had a
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#ctrl# link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.param-type]#(tinymce.ui.Control)#] - Control to add to queue.
+* [.param-name]#ctrl# link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.param-type]#(tinymce.ui.Control)#] - Control to add to queue.
 
 [[remove]]
 === remove
@@ -35,4 +35,4 @@ Removes the specified control from the automatic reflow. This will happen when f
 
 ==== Parameters
 
-* [.param-name]#ctrl# link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.param-type]#(tinymce.ui.Control)#] - Control to remove from queue.
+* [.param-name]#ctrl# link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.param-type]#(tinymce.ui.Control)#] - Control to remove from queue.

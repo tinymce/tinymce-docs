@@ -8,21 +8,21 @@ TinyMCE core class.
 [cols=",,,",options="header",]
 |===
 |name |type |summary |defined by
-|$ |link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.param-type]#tinymce.dom.DomQuery#] |Dom query instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|DOM |link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[[.param-type]#tinymce.dom.DOMUtils#] |Global DOM instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|PluginManager |link:/docs-4x/api/tinymce/tinymce.addonmanager[[.param-type]#tinymce.AddOnManager#] |Global PluginManager instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|ScriptLoader |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[[.param-type]#tinymce.dom.ScriptLoader#] |Global ScriptLoader instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|ThemeManager |link:/docs-4x/api/tinymce/tinymce.addonmanager[[.param-type]#tinymce.AddOnManager#] | |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|activeEditor |link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#tinymce.Editor#] |Currently active editor instance. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|baseURI |link:/docs-4x/api/tinymce.util/tinymce.util.uri[[.param-type]#tinymce.util.URI#] |Absolute baseURI for the installation path of TinyMCE. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|baseURL |[.param-type]#String# |Base URL where the root directory if TinyMCE is located. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|documentBaseURL |[.param-type]#String# |Document base URL where the current document is located. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|editors |[.param-type]#Object# |Collection of editor instances. Deprecated use tinymce.get() instead. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|i18n |[.param-type]#Object# |Collection of language pack data. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|majorVersion |[.param-type]#String# |Major version of TinyMCE build. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|minorVersion |[.param-type]#String# |Minor version of TinyMCE build. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|releaseDate |[.param-type]#String# |Release date of TinyMCE build. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|suffix |[.param-type]#String# |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|$ |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.param-type]#tinymce.dom.DomQuery#] |Dom query instance. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|DOM |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[[.param-type]#tinymce.dom.DOMUtils#] |Global DOM instance. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|PluginManager |link:{baseurl}/api/tinymce/tinymce.addonmanager.html[[.param-type]#tinymce.AddOnManager#] |Global PluginManager instance. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|ScriptLoader |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[[.param-type]#tinymce.dom.ScriptLoader#] |Global ScriptLoader instance. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|ThemeManager |link:{baseurl}/api/tinymce/tinymce.addonmanager.html[[.param-type]#tinymce.AddOnManager#] | |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|activeEditor |link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#tinymce.Editor#] |Currently active editor instance. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|baseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[[.param-type]#tinymce.util.URI#] |Absolute baseURI for the installation path of TinyMCE. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|baseURL |[.param-type]#String# |Base URL where the root directory if TinyMCE is located. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|documentBaseURL |[.param-type]#String# |Document base URL where the current document is located. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|editors |[.param-type]#Object# |Collection of editor instances. Deprecated use tinymce.get() instead. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|i18n |[.param-type]#Object# |Collection of language pack data. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|majorVersion |[.param-type]#String# |Major version of TinyMCE build. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|minorVersion |[.param-type]#String# |Minor version of TinyMCE build. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|releaseDate |[.param-type]#String# |Release date of TinyMCE build. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|suffix |[.param-type]#String# |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
 |===
 
 [[methods]]
@@ -31,36 +31,36 @@ TinyMCE core class.
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#addi18n[addI18n()] |Adds a language pack, this gets called by the loaded language files like en.js. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#create[create()] |Creates a class, subclass or static singleton. More details on this method can be found in the Wiki. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#createeditor[createEditor()] |Creates an editor instance and adds it to the EditorManager collection. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#createns[createNS()] |Creates a namespace on a specific object. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#each[each()] |Performs an iteration of all items in a collection such as an object or array. This method will execure the callback function for each item in the collection, if the callback returns false the iteration will terminate. The callback has the following format: cb(value, key_or_index). |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#execcommand[execCommand()] |Executes a specific command on the currently active editor. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#explode[explode()] |Splits a string but removes the whitespace before and after each value. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#get[get()] |Returns a editor instance by id. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#grep[grep()] |Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#inarray[inArray()] |Returns an index of the item or -1 if item is not present in the array. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#init[init()] |Initializes a set of editors. This method will create editors based on various settings. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#is[is()] |Checks if a object is of a specific type for example an array. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#isarray[isArray()] |Returns true/false if the object is an array or not. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#makemap[makeMap()] |Makes a name/object map out of an array with names. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#map[map()] |Creates a new array by the return value of each iteration function call. This enables you to convert one array list into another. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#overridedefaults[overrideDefaults()] |Overrides the default settings for editor instances. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#remove[remove()] |Removes a editor or editors form page. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#resolve[resolve()] |Resolves a string and returns the object from a specific structure. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#setactive[setActive()] |Sets the active editor instance and fires the deactivate/activate events. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#toarray[toArray()] |Converts the specified object into a real JavaScript array. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#translate[translate()] |Translates the specified string using the language pack items. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#triggersave[triggerSave()] |Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#trim[trim()] |Removes whitespace from the beginning and end of a string. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
-|link:#walk[walk()] |Executed the specified function for each item in a object tree. |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
+|link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#addi18n[addI18n()] |Adds a language pack, this gets called by the loaded language files like en.js. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#create[create()] |Creates a class, subclass or static singleton. More details on this method can be found in the Wiki. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#createeditor[createEditor()] |Creates an editor instance and adds it to the EditorManager collection. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#createns[createNS()] |Creates a namespace on a specific object. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#each[each()] |Performs an iteration of all items in a collection such as an object or array. This method will execure the callback function for each item in the collection, if the callback returns false the iteration will terminate. The callback has the following format: cb(value, key_or_index). |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#execcommand[execCommand()] |Executes a specific command on the currently active editor. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#explode[explode()] |Splits a string but removes the whitespace before and after each value. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#get[get()] |Returns a editor instance by id. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#grep[grep()] |Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#inarray[inArray()] |Returns an index of the item or -1 if item is not present in the array. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#init[init()] |Initializes a set of editors. This method will create editors based on various settings. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#is[is()] |Checks if a object is of a specific type for example an array. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#isarray[isArray()] |Returns true/false if the object is an array or not. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#makemap[makeMap()] |Makes a name/object map out of an array with names. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#map[map()] |Creates a new array by the return value of each iteration function call. This enables you to convert one array list into another. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#overridedefaults[overrideDefaults()] |Overrides the default settings for editor instances. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#remove[remove()] |Removes a editor or editors form page. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#resolve[resolve()] |Resolves a string and returns the object from a specific structure. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#setactive[setActive()] |Sets the active editor instance and fires the deactivate/activate events. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#toarray[toArray()] |Converts the specified object into a real JavaScript array. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#translate[translate()] |Translates the specified string using the language pack items. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#triggersave[triggerSave()] |Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#trim[trim()] |Removes whitespace from the beginning and end of a string. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
+|link:#walk[walk()] |Executed the specified function for each item in a object tree. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
 |===
 
 == Methods
@@ -75,13 +75,13 @@ Adds an editor instance to the editor collection. This will also set it as the a
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to add to the collection.
+* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance to add to the collection.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The same instance that got passed in.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - The same instance that got passed in.
 
 [[addi18n]]
 === addI18n
@@ -165,7 +165,7 @@ Creates an editor instance and adds it to the EditorManager collection.
 
 ==== Return value
 
-* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance that got created.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - Editor instance that got created.
 
 [[createns]]
 === createNS
@@ -320,7 +320,7 @@ tinymce.EditorManager.get('mytextbox').on('click', function(e) {
 
 ==== Return value
 
-* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance to return or array of editor instances.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - Editor instance to return or array of editor instances.
 * [.return-type]#Array# - Editor instance to return or array of editor instances.
 
 [[grep]]
@@ -408,7 +408,7 @@ tinymce.init({
 
 ==== Return value
 
-* link:/docs-4x/api/tinymce.util/tinymce.util.promise[[.return-type]#tinymce.util.Promise#] - Promise that gets resolved with an array of editors when all editor instances are initialized.
+* link:{baseurl}/api/tinymce.util/tinymce.util.promise.html[[.return-type]#tinymce.util.Promise#] - Promise that gets resolved with an array of editors when all editor instances are initialized.
 
 [[is]]
 === is
@@ -583,11 +583,11 @@ tinymce.remove('#id');
 
 ==== Parameters
 
-* [.param-name]#selector# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - CSS selector or editor instance to remove.
+* [.param-name]#selector# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - CSS selector or editor instance to remove.
 
 ==== Return value
 
-* link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The editor that got passed in will be return if it was found otherwise null.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - The editor that got passed in will be return if it was found otherwise null.
 
 [[resolve]]
 === resolve
@@ -622,7 +622,7 @@ Sets the active editor instance and fires the deactivate/activate events.
 
 ==== Parameters
 
-* [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to set as the active instance.
+* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance to set as the active instance.
 
 [[toarray]]
 === toArray

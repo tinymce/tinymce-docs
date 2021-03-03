@@ -18,34 +18,34 @@ console.log(writer.getContent());
 [width="100%",cols="34%,33%,33%",options="header",]
 |===
 |name |summary |defined by
-|link:#cdata[cdata()] |Writes a comment node such as . |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:#cdata[cdata()] |Writes a comment node such as . |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#doctype[doctype()] a|
 Writes a doctype node such as
 
 .
 
-|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#end[end()] a|
 Writes the a end element such as
 
 .
 
-|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
-|link:#getcontent[getContent()] |Returns the contents that got serialized. |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:#getcontent[getContent()] |Returns the contents that got serialized. |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#pi[pi()] a|
 Writes a PI node such as
 
 .
 
-|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
-|link:#reset[reset()] |Resets the internal buffer if one wants to reuse the writer. |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:#reset[reset()] |Resets the internal buffer if one wants to reuse the writer. |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#start[start()] a|
 Writes the a start element such as
 
 .
 
-|link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
-|link:#text[text()] |Writes a text node. |link:/docs-4x/api/tinymce.html/tinymce.html.writer[tinymce.html.Writer]
+|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:#text[text()] |Writes a text node. |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |===
 
 == Methods
@@ -96,7 +96,7 @@ getContent():String
 Returns the contents that got serialized.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#String# - HTML contents that got written down.

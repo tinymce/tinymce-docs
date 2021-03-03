@@ -19,12 +19,12 @@ var eventDispatcher = new EventDispatcher();
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#fire[fire()] |Fires the specified event by name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
-|link:#has[has()] |Returns true/false if the dispatcher has a event of the specified name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
-|link:#isnative[isNative()] |Returns true/false if the specified event name is a native browser event or not. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
-|link:#off[off()] |Unbinds an event listener to a specific event by name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
-|link:#on[on()] |Binds an event listener to a specific event by name. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
-|link:#once[once()] |Binds an event listener to a specific event by name and automatically unbind the event once the callback fires. |link:/docs-4x/api/tinymce.util/tinymce.util.eventdispatcher[tinymce.util.EventDispatcher]
+|link:#fire[fire()] |Fires the specified event by name. |link:{baseurl}/api/tinymce.util/tinymce.util.eventdispatcher.html[tinymce.util.EventDispatcher]
+|link:#has[has()] |Returns true/false if the dispatcher has a event of the specified name. |link:{baseurl}/api/tinymce.util/tinymce.util.eventdispatcher.html[tinymce.util.EventDispatcher]
+|link:#isnative[isNative()] |Returns true/false if the specified event name is a native browser event or not. |link:{baseurl}/api/tinymce.util/tinymce.util.eventdispatcher.html[tinymce.util.EventDispatcher]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. |link:{baseurl}/api/tinymce.util/tinymce.util.eventdispatcher.html[tinymce.util.EventDispatcher]
+|link:#on[on()] |Binds an event listener to a specific event by name. |link:{baseurl}/api/tinymce.util/tinymce.util.eventdispatcher.html[tinymce.util.EventDispatcher]
+|link:#once[once()] |Binds an event listener to a specific event by name and automatically unbind the event once the callback fires. |link:{baseurl}/api/tinymce.util/tinymce.util.eventdispatcher.html[tinymce.util.EventDispatcher]
 |===
 
 == Methods
@@ -51,7 +51,7 @@ instance.fire('event', {...});
 * [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Event args instance passed in.

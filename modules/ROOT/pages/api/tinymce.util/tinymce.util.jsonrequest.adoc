@@ -36,8 +36,8 @@ json.send({
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#send[send()] |Sends a JSON-RPC call. Consult the Wiki API documentation for more details on what you can pass to this function. |link:/docs-4x/api/tinymce.util/tinymce.util.jsonrequest[tinymce.util.JSONRequest]
-|link:#sendrpc[sendRPC()] |Simple helper function to send a JSON-RPC request without the need to initialize an object. Consult the Wiki API documentation for more details on what you can pass to this function. |link:/docs-4x/api/tinymce.util/tinymce.util.jsonrequest[tinymce.util.JSONRequest]
+|link:#send[send()] |Sends a JSON-RPC call. Consult the Wiki API documentation for more details on what you can pass to this function. |link:{baseurl}/api/tinymce.util/tinymce.util.jsonrequest.html[tinymce.util.JSONRequest]
+|link:#sendrpc[sendRPC()] |Simple helper function to send a JSON-RPC request without the need to initialize an object. Consult the Wiki API documentation for more details on what you can pass to this function. |link:{baseurl}/api/tinymce.util/tinymce.util.jsonrequest.html[tinymce.util.JSONRequest]
 |===
 
 == Methods

@@ -33,12 +33,12 @@ scriptLoader.loadQueue(function() {
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds a specific script to the load queue of the script loader. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
-|link:#isdone[isDone()] |Returns true/false if a script has been loaded or not. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
-|link:#load[load()] |Loads a specific script directly without adding it to the load queue. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
-|link:#loadqueue[loadQueue()] |Starts the loading of the queue. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
-|link:#loadscripts[loadScripts()] |Loads the specified queue of files and executes the callback ones they are loaded. This method is generally not used outside this class but it might be useful in some scenarios. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
-|link:#markdone[markDone()] |Marks a specific script to be loaded. This can be useful if a script got loaded outside the script loader or to skip it from loading some script. |link:/docs-4x/api/tinymce.dom/tinymce.dom.scriptloader[tinymce.dom.ScriptLoader]
+|link:#add[add()] |Adds a specific script to the load queue of the script loader. |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[tinymce.dom.ScriptLoader]
+|link:#isdone[isDone()] |Returns true/false if a script has been loaded or not. |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[tinymce.dom.ScriptLoader]
+|link:#load[load()] |Loads a specific script directly without adding it to the load queue. |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[tinymce.dom.ScriptLoader]
+|link:#loadqueue[loadQueue()] |Starts the loading of the queue. |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[tinymce.dom.ScriptLoader]
+|link:#loadscripts[loadScripts()] |Loads the specified queue of files and executes the callback ones they are loaded. This method is generally not used outside this class but it might be useful in some scenarios. |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[tinymce.dom.ScriptLoader]
+|link:#markdone[markDone()] |Marks a specific script to be loaded. This can be useful if a script got loaded outside the script loader or to skip it from loading some script. |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[tinymce.dom.ScriptLoader]
 |===
 
 == Methods
@@ -70,7 +70,7 @@ Returns true/false if a script has been loaded or not.
 * [.param-name]#url# [.param-type]#(String)# - URL to check for.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false if the URL is loaded.

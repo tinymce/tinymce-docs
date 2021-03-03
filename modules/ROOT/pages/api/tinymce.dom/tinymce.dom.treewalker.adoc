@@ -20,9 +20,9 @@ do {
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#current[current()] |Returns the current node. |link:/docs-4x/api/tinymce.dom/tinymce.dom.treewalker[tinymce.dom.TreeWalker]
-|link:#next[next()] |Walks to the next node in tree. |link:/docs-4x/api/tinymce.dom/tinymce.dom.treewalker[tinymce.dom.TreeWalker]
-|link:#prev[prev()] |Walks to the previous node in tree. |link:/docs-4x/api/tinymce.dom/tinymce.dom.treewalker[tinymce.dom.TreeWalker]
+|link:#current[current()] |Returns the current node. |link:{baseurl}/api/tinymce.dom/tinymce.dom.treewalker.html[tinymce.dom.TreeWalker]
+|link:#next[next()] |Walks to the next node in tree. |link:{baseurl}/api/tinymce.dom/tinymce.dom.treewalker.html[tinymce.dom.TreeWalker]
+|link:#prev[prev()] |Walks to the previous node in tree. |link:{baseurl}/api/tinymce.dom/tinymce.dom.treewalker.html[tinymce.dom.TreeWalker]
 |===
 
 == Methods
@@ -35,7 +35,7 @@ current():Node
 Returns the current node.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Node# - Current node where the walker is.

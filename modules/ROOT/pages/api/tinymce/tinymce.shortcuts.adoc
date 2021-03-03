@@ -19,8 +19,8 @@ editor.shortcuts.add('access+a', "description of the shortcut", function() {}); 
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds a keyboard shortcut for some command or function. |link:/docs-4x/api/tinymce/tinymce.shortcuts[tinymce.Shortcuts]
-|link:#remove[remove()] |Remove a keyboard shortcut by pattern. |link:/docs-4x/api/tinymce/tinymce.shortcuts[tinymce.Shortcuts]
+|link:#add[add()] |Adds a keyboard shortcut for some command or function. |link:{baseurl}/api/tinymce/tinymce.shortcuts.html[tinymce.Shortcuts]
+|link:#remove[remove()] |Remove a keyboard shortcut by pattern. |link:{baseurl}/api/tinymce/tinymce.shortcuts.html[tinymce.Shortcuts]
 |===
 
 == Methods
@@ -41,7 +41,7 @@ Adds a keyboard shortcut for some command or function.
 * [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false state if the shortcut was added or not.

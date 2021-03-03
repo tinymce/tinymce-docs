@@ -8,10 +8,10 @@ This is the annotator api.
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#annotate[annotate()] |Applies the annotation at the current selection using data |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
-|link:#annotationchanged[annotationChanged()] |Executes the specified callback when the current selection matches the annotation or not. |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
-|link:#getall[getAll()] |Retrieve all the annotations for a given name |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
-|link:#register[register()] |Registers a specific annotator by name |link:/docs-4x/api/tinymce/tinymce.annotator[tinymce.Annotator]
+|link:#annotate[annotate()] |Applies the annotation at the current selection using data |link:{baseurl}/api/tinymce/tinymce.annotator.html[tinymce.Annotator]
+|link:#annotationchanged[annotationChanged()] |Executes the specified callback when the current selection matches the annotation or not. |link:{baseurl}/api/tinymce/tinymce.annotator.html[tinymce.Annotator]
+|link:#getall[getAll()] |Retrieve all the annotations for a given name |link:{baseurl}/api/tinymce/tinymce.annotator.html[tinymce.Annotator]
+|link:#register[register()] |Registers a specific annotator by name |link:{baseurl}/api/tinymce/tinymce.annotator.html[tinymce.Annotator]
 |===
 
 == Methods
@@ -53,7 +53,7 @@ Retrieve all the annotations for a given name
 * [.param-name]#name# [.param-type]#(String)# - the name of the annotations to retrieve
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - an index of annotations from uid => DOM nodes

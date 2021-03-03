@@ -8,7 +8,7 @@ This class manages the focus/blur state of the editor. This class is needed sinc
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#iseditoruielement[isEditorUIElement()] |Returns true if the specified element is part of the UI for example an button or text input. |link:/docs-4x/api/tinymce/tinymce.focusmanager[tinymce.FocusManager]
+|link:#iseditoruielement[isEditorUIElement()] |Returns true if the specified element is part of the UI for example an button or text input. |link:{baseurl}/api/tinymce/tinymce.focusmanager.html[tinymce.FocusManager]
 |===
 
 == Methods
@@ -26,7 +26,7 @@ Returns true if the specified element is part of the UI for example an button or
 * [.param-name]#elm# [.param-type]#(Element)# - Element to check if it's part of the UI or not.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - True/false state if the element is part of the UI or not.

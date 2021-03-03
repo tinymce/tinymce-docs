@@ -8,11 +8,11 @@ This class enables you to add custom editor commands and it contains overrides f
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#addcommands[addCommands()] |Adds commands to the command collection. |link:/docs-4x/api/tinymce/tinymce.editorcommands[tinymce.EditorCommands]
-|link:#execcommand[execCommand()] |Executes the specified command. |link:/docs-4x/api/tinymce/tinymce.editorcommands[tinymce.EditorCommands]
-|link:#querycommandstate[queryCommandState()] |Queries the current state for a command for example if the current selection is "bold". |link:/docs-4x/api/tinymce/tinymce.editorcommands[tinymce.EditorCommands]
-|link:#querycommandsupported[queryCommandSupported()] |Returns true/false if the command is supported or not. |link:/docs-4x/api/tinymce/tinymce.editorcommands[tinymce.EditorCommands]
-|link:#querycommandvalue[queryCommandValue()] |Queries the command value for example the current fontsize. |link:/docs-4x/api/tinymce/tinymce.editorcommands[tinymce.EditorCommands]
+|link:#addcommands[addCommands()] |Adds commands to the command collection. |link:{baseurl}/api/tinymce/tinymce.editorcommands.html[tinymce.EditorCommands]
+|link:#execcommand[execCommand()] |Executes the specified command. |link:{baseurl}/api/tinymce/tinymce.editorcommands.html[tinymce.EditorCommands]
+|link:#querycommandstate[queryCommandState()] |Queries the current state for a command for example if the current selection is "bold". |link:{baseurl}/api/tinymce/tinymce.editorcommands.html[tinymce.EditorCommands]
+|link:#querycommandsupported[queryCommandSupported()] |Returns true/false if the command is supported or not. |link:{baseurl}/api/tinymce/tinymce.editorcommands.html[tinymce.EditorCommands]
+|link:#querycommandvalue[queryCommandValue()] |Queries the command value for example the current fontsize. |link:{baseurl}/api/tinymce/tinymce.editorcommands.html[tinymce.EditorCommands]
 |===
 
 == Methods
@@ -45,7 +45,7 @@ Executes the specified command.
 * [.param-name]#args# [.param-type]#(Object)# - Optional extra arguments to the execCommand.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false if the command was found or not.

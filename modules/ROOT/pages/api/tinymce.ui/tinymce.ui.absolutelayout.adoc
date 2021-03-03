@@ -8,7 +8,7 @@ LayoutManager for absolute positioning. This layout manager is more of a base cl
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#layout[Layout()] |Constructs a layout instance with the specified settings. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
+|link:#layout[Layout()] |Constructs a layout instance with the specified settings. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
 |===
 
 [[methods]]
@@ -17,10 +17,10 @@ LayoutManager for absolute positioning. This layout manager is more of a base cl
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#postrender[postRender()] |This method gets invoked after the layout renders the controls. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
-|link:#prerender[preRender()] |This method gets invoked before the layout renders the controls. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
-|link:#recalc[recalc()] |Recalculates the positions of the controls in the specified container. |link:/docs-4x/api/tinymce.ui/tinymce.ui.absolutelayout[tinymce.ui.AbsoluteLayout]
-|link:#renderhtml[renderHtml()] |Renders the specified container and any layout specific HTML. |link:/docs-4x/api/tinymce.ui/tinymce.ui.absolutelayout[tinymce.ui.AbsoluteLayout]
+|link:#postrender[postRender()] |This method gets invoked after the layout renders the controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
+|link:#prerender[preRender()] |This method gets invoked before the layout renders the controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
+|link:#recalc[recalc()] |Recalculates the positions of the controls in the specified container. |link:{baseurl}/api/tinymce.ui/tinymce.ui.absolutelayout.html[tinymce.ui.AbsoluteLayout]
+|link:#renderhtml[renderHtml()] |Renders the specified container and any layout specific HTML. |link:{baseurl}/api/tinymce.ui/tinymce.ui.absolutelayout.html[tinymce.ui.AbsoluteLayout]
 |===
 
 == Constructors
@@ -48,7 +48,7 @@ This method gets invoked after the layout renders the controls.
 
 ==== Parameters
 
-* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to postRender.
+* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container instance to postRender.
 
 [[prerender]]
 === preRender
@@ -59,7 +59,7 @@ This method gets invoked before the layout renders the controls.
 
 ==== Parameters
 
-* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to preRender.
+* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container instance to preRender.
 
 [[recalc]]
 === recalc
@@ -70,7 +70,7 @@ Recalculates the positions of the controls in the specified container.
 
 ==== Parameters
 
-* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to recalc.
+* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container instance to recalc.
 
 [[renderhtml]]
 === renderHtml
@@ -81,4 +81,4 @@ Renders the specified container and any layout specific HTML.
 
 ==== Parameters
 
-* [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container to render HTML for.
+* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container to render HTML for.

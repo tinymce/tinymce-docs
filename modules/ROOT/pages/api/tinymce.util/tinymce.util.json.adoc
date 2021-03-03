@@ -20,8 +20,8 @@ var str = tinymce.util.JSON.serialize(obj);
 [cols=",,",options="header",]
 |===
 |name |summary |defined by
-|link:#parse[parse()] |Unserializes/parses the specified JSON string into a object. |link:/docs-4x/api/tinymce.util/tinymce.util.json[tinymce.util.JSON]
-|link:#serialize[serialize()] |Serializes the specified object as a JSON string. |link:/docs-4x/api/tinymce.util/tinymce.util.json[tinymce.util.JSON]
+|link:#parse[parse()] |Unserializes/parses the specified JSON string into a object. |link:{baseurl}/api/tinymce.util/tinymce.util.json.html[tinymce.util.JSON]
+|link:#serialize[serialize()] |Serializes the specified object as a JSON string. |link:{baseurl}/api/tinymce.util/tinymce.util.json.html[tinymce.util.JSON]
 |===
 
 == Methods
@@ -39,7 +39,7 @@ Unserializes/parses the specified JSON string into a object.
 * [.param-name]#s# [.param-type]#(string)# - JSON String to parse into a JavaScript object.
 
 [[return-value]]
-==== Return value 
+==== Return value
 anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Object from input JSON string or undefined if it failed.

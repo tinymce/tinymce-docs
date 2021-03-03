@@ -11,7 +11,7 @@ The *Enhanced Media Embed* plugin is a https://tinymce.com/pricing[premium TinyM
 [[installation]]
 == Installation
 
-For the moment the *Enhanced Media Embed* plugin has to be used in conjunction with the link:../media/[media] plugin, so:
+For the moment the *Enhanced Media Embed* plugin has to be used in conjunction with the link:{baseurl}/plugins/media.html[media] plugin, so:
 
 . Make sure you have the `media` plugin added to the `plugins` list.
 . Add the `mediaembed` plugin to the `plugins` list.
@@ -20,7 +20,7 @@ For the moment the *Enhanced Media Embed* plugin has to be used in conjunction w
 === Example Cloud Configuration
 anchor:examplecloudconfiguration[historical anchor]
 
-The service URL is already configured with link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud].
+The service URL is already configured with link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud].
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
 [source,js]
@@ -61,7 +61,7 @@ anchor:configurationoptions[historical anchor]
 === `mediaembed_service_url`
 
 This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription.
-This option is not required for link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud].
+This option is not required for link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud].
 
 [[mediaembed_max_width]]
 === `mediaembed_max_width`

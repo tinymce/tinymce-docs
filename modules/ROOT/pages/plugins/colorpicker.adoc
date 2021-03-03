@@ -6,7 +6,7 @@
 :keywords: colorpicker color color_picker_callback
 :title_nav: Color Picker
 
-The `colorpicker` plugin adds an HSV color picker dialog to the editor. When activated *in conjunction with* the link:../textcolor/[textcolor plugin] it adds a "custom color" button to the text color toolbar dropdown. When a user clicks "custom color" a modal will open presenting a color wheel so that the user can choose their own colors (rather than the ones defined by `textcolor`) to be applied to text and/or the selected text's background.
+The `colorpicker` plugin adds an HSV color picker dialog to the editor. When activated *in conjunction with* the link:{baseurl}/plugins/textcolor.html[textcolor plugin] it adds a "custom color" button to the text color toolbar dropdown. When a user clicks "custom color" a modal will open presenting a color wheel so that the user can choose their own colors (rather than the ones defined by `textcolor`) to be applied to text and/or the selected text's background.
 
 The plugin hooks into the <<color_picker_callback,`color_picker_callback`>> so you provide your own color picker specification to the user.
 

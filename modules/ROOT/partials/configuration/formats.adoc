@@ -5,16 +5,16 @@ The format option enables you to override and add custom *formats* to the editor
 
 A format is a style that gets applied to text when you press, for example, the bold button inside the editor. TinyMCE is equipped with a text formatting engine that enables you to precisely specify what it should produce when the user clicks (in this example) the bold button.
 
-Check out the link:{baseurl}/demo/format-custom/[custom formats example] for a demonstration of this option.
+Check out the link:{baseurl}/demo/format-custom.html[custom formats example] for a demonstration of this option.
 
 [[style-merging]]
-=== Style merging 
+=== Style merging
 anchor:stylemerging[historical anchor]
 
 Similar elements and styles are merged by default to reduce the output HTML size. So for example, if you select a word and select a font size and font face for it, it merges these two styles into one `span` element instead of one `span` for *each format type*.
 
 [[built-in-formats]]
-=== Built-in formats 
+=== Built-in formats
 anchor:built-informats[historical anchor]
 
 TinyMCE has some built in formats that you can override. These are:
@@ -46,7 +46,7 @@ TinyMCE has some built in formats that you can override. These are:
 Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a variable in their definition named `%value`. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
 
 [[format-parameters]]
-=== Format parameters 
+=== Format parameters
 anchor:formatparameters[historical anchor]
 
 For each format you can specify some additional parameters:
@@ -80,7 +80,7 @@ For each format you can specify some additional parameters:
 |===
 
 [[example-of-usage-of-the-formats-option]]
-=== Example of usage of the formats option 
+=== Example of usage of the formats option
 anchor:exampleofusageoftheformatsoption[historical anchor]
 
 This example overrides some of the built-in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
@@ -112,7 +112,7 @@ tinymce.init({
 ----
 
 [[using-custom-formats]]
-=== Using custom formats 
+=== Using custom formats
 anchor:usingcustomformats[historical anchor]
 
 Custom formats can be handled through the TinyMCE API. Here is a basic example of usage for the custom format defined above.
@@ -127,7 +127,7 @@ tinymce.activeEditor.formatter.remove('custom_format');
 ----
 
 [[variable-substitution]]
-=== Variable substitution 
+=== Variable substitution
 anchor:variablesubstitution[historical anchor]
 
 You can use variables in your format definition. These variables are then replaced with the ones specified in the call to the apply function. Here is an example of how to use variables within formats.
@@ -142,7 +142,7 @@ tinymce.activeEditor.formatter.apply('custom_format', {value : 'red'});
 ----
 
 [[removing-a-format]]
-=== Removing a format 
+=== Removing a format
 anchor:removingaformat[historical anchor]
 
 Use the `removeformat` option to remove formats.

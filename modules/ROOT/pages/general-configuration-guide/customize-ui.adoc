@@ -108,7 +108,7 @@ tinymce.init({
 
 To learn more about these customization options please see the link:{baseurl}/configure/editor-appearance/#max_height[max_height], link:{baseurl}/configure/editor-appearance/#max_width[max_width], link:{baseurl}/configure/editor-appearance/#min_height[min_height], link:{baseurl}/configure/editor-appearance/#min_width[min_width] documentation pages.
 
-This is not the end of your options when it comes to customizing TinyMCE's height and width behavior. You can also automatically resize the editable area as the user types into the iframe with the link:{baseurl}/plugins/autoresize/[Autoresize Plugin], and you can enable the user to resize the editor on horizontal and vertical axis by dragging the status bar handle with the link:{baseurl}/configure/editor-appearance/#resize[resize] configuration option.
+This is not the end of your options when it comes to customizing TinyMCE's height and width behavior. You can also automatically resize the editable area as the user types into the iframe with the link:{baseurl}/plugins/autoresize.html[Autoresize Plugin], and you can enable the user to resize the editor on horizontal and vertical axis by dragging the status bar handle with the link:{baseurl}/configure/editor-appearance/#resize[resize] configuration option.
 
 [[customizing-the-editable-area-with-content_css]]
 === Customizing the editable area with content_css
@@ -169,7 +169,7 @@ tinymce.init({
 });
 ----
 
-If you tried this snippet, you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See link:{baseurl}/quick-start/[this page] if you need a basic HTML code block.)
+If you tried this snippet, you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See link:{baseurl}/quick-start.html[this page] if you need a basic HTML code block.)
 
 If you wanted the default toolbar _plus_ the `code` functionality you'd need this:
 

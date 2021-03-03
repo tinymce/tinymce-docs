@@ -14,7 +14,7 @@ WARNING: This feature requires at least Internet Explorer 10, since it makes use
 == Cloud Installation
 anchor:cloudinstallation[historical anchor]
 
-The Image Tools plugin is provided with all subscriptions to link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud], including an automatically configured image proxy.
+The Image Tools plugin is provided with all subscriptions to link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud], including an automatically configured image proxy.
 Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
 [[example]]
@@ -63,7 +63,7 @@ An array of supported domains for the images (with CORS enabled on them) can be 
 
 NOTE: Each string in the array _must_ be in the format of `mydomain.com`. Do not include protocols (`http://, https://`) or any trailing slashes in your domains.
 
-NOTE: `imagetools_cors_hosts` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud].
+NOTE: `imagetools_cors_hosts` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud].
 
 *Type:* `String[]`
 
@@ -104,9 +104,9 @@ tinymce.init({
 
 Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to TinyMCE, as if it was local. Example of such proxy (written in PHP) can be found below.
 
-https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription also includes proxy service written in Java. Check link:{baseurl}/enterprise/server/[Install Server-side Components] guide for details.
+https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription also includes proxy service written in Java. Check link:{baseurl}/enterprise/server/index.html[Install Server-side Components] guide for details.
 
-NOTE: `imagetools_proxy` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]
+NOTE: `imagetools_proxy` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud]
 
 *Type:* `String`
 

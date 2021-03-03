@@ -56,7 +56,7 @@ All of these algorithms use the private RSA key to sign the JWT, but vary in how
 === Claims:
 
 * *sub* - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
-* *name* - _(required)_ Full name of the user that will be used for presentation inside Tiny link:{baseurl}/plugins/drive/[Drive]. When the user uploads a file, this name is presented as the creator of that file.
+* *name* - _(required)_ Full name of the user that will be used for presentation inside Tiny link:{baseurl}/plugins/drive.html[Drive]. When the user uploads a file, this name is presented as the creator of that file.
 
 [[php-token-provider-example]]
 == PHP token provider example

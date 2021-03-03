@@ -27,7 +27,7 @@ The following languages are supported:
 == Cloud Installation
 anchor:cloudinstallation[historical anchor]
 
-To enable the TinyMCE Enterprise Spellchecking plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]:
+To enable the TinyMCE Enterprise Spellchecking plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud]:
 
 . If you are currently using the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.
 . Add 'tinymcespellchecker' to the 'plugins' list.
@@ -56,7 +56,7 @@ To enable the TinyMCE Enterprise Spellchecking plugin:
 . If you are currently using the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.
 . Add 'tinymcespellchecker' to the 'plugins' list.
 
-For information on installing the server-side component for spell checking, please see the link:{baseurl}/enterprise/server/[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the link:{baseurl}/enterprise/server/index.html[server-side component installation guide].
 
 ===== Example TinyMCE Configuration
 
@@ -82,9 +82,9 @@ anchor:configurationoptions[historical anchor]
 [[spellchecker_rpc_url]]
 === `spellchecker_rpc_url`
 
-This setting enables you to specify the URL to be used for the server side ephox-spelling service. Check the link:{baseurl}/enterprise/server/[server-side component installation guide] for details on how to setup your own spellchecker server.
+This setting enables you to specify the URL to be used for the server side ephox-spelling service. Check the link:{baseurl}/enterprise/server/index.html[server-side component installation guide] for details on how to setup your own spellchecker server.
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud]
 
 [[spellchecker_languages]]
 === `spellchecker_languages`

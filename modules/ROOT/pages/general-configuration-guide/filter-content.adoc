@@ -8,7 +8,7 @@ TinyMCE has comprehensive content filtering capabilities. These settings change 
 
 These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. It is these type of customizations we focus on here by looking at 1 of the 32 content filtering options available to developers.
 
-There are of course many configuration options dealing with complex parsing of text. However, most of these are quite advanced and outside the scope of this Get Started guide. Check out the link:{baseurl}/configure/content-filtering/[Content Filtering] section to learn more.
+There are of course many configuration options dealing with complex parsing of text. However, most of these are quite advanced and outside the scope of this Get Started guide. Check out the link:{baseurl}/configure/content-filtering.html[Content Filtering] section to learn more.
 
 [[role-your-style-formats]]
 == Role your style formats
@@ -31,7 +31,7 @@ Pro tip: Similar elements and styles are merged by default to reduce the output 
 === Built-in formats
 anchor:built-informats[historical anchor]
 
-TinyMCE has some built-in formats that you can override. You may recall some of these from the default controls we mentioned in the link:../basic-setup/[Basic Setup] part of this guide:
+TinyMCE has some built-in formats that you can override. You may recall some of these from the default controls we mentioned in the link:{baseurl}/general-configuration-guide/basic-setup.html[Basic Setup] part of this guide:
 
 * alignleft
 * aligncenter
@@ -126,7 +126,7 @@ anchor:poweruserbonus[historical anchor]
 
 [NOTE]
 ====
-This probably shouldn't be in a Get Started guide, but we wanted to show you an example of the type of configuration options you'll find in the link:{baseurl}/configure/content-filtering/[Content Filtering] configuration docs. Plus it's something you may need to do someday.
+This probably shouldn't be in a Get Started guide, but we wanted to show you an example of the type of configuration options you'll find in the link:{baseurl}/configure/content-filtering.html[Content Filtering] configuration docs. Plus it's something you may need to do someday.
 ====
 
 The `schema` option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `html5`, `html4` or `html5-strict`.

@@ -15,15 +15,15 @@ The following server-side components are included in the TinyMCE Self-hosted pac
 |===
 | Component | File | Description
 
-| link:{baseurl}/enterprise/check-spelling/[Spellchecking]
+| link:{baseurl}/enterprise/check-spelling/index.html[Spellchecking]
 | ephox-spelling.war
 | Spell checking service for TinyMCE Enterprise.
 
-| link:{baseurl}/plugins/imagetools/[Image Tools Proxy]
+| link:{baseurl}/plugins/imagetools.html[Image Tools Proxy]
 | ephox-image-proxy.war
 | Image proxy service for the Image Tools plugin.
 
-| link:{baseurl}/enterprise/embed-media/[Enhanced Media Embed], link:{baseurl}/enterprise/check-links/[Link Checker]
+| link:{baseurl}/enterprise/embed-media/index.html[Enhanced Media Embed], link:{baseurl}/enterprise/check-links.html[Link Checker]
 | ephox-hyperlinking.war
 | Link Checker and Enhanced Media Embed service for TinyMCE Enterprise.
 |===
@@ -66,7 +66,7 @@ More information can be found in the documentation of your chosen application se
 === Step 3. Create a configuration file
 anchor:step3createaconfigurationfile[historical anchor]
 
-Refer to the link:{baseurl}/enterprise/server/configure/[Configure] page for the details and come back here when you're done.
+Refer to the link:{baseurl}/enterprise/server/configure.html[Configure] page for the details and come back here when you're done.
 
 [[step-4-pass-the-configuration-file-to-the-java-application-server]]
 === Step 4. Pass the configuration file to the Java application server

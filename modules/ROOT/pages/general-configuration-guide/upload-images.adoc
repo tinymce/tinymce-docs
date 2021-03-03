@@ -5,7 +5,7 @@
 :description: Extend TinyMCE with powerful image uploading capabilities.
 :keywords: uploader uploadImages image handler
 
-NOTE: Please note, this image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the link:{baseurl}/plugins/powerpaste/[PowerPaste plugin] is capable of this functionality in versions of TinyMCE 4.0 and above.
+NOTE: Please note, this image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the link:{baseurl}/plugins/powerpaste.html[PowerPaste plugin] is capable of this functionality in versions of TinyMCE 4.0 and above.
 
 The image uploader is designed to complement the new image editing functionality of TinyMCE 4.3. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the link:{baseurl}/plugins/paste/#paste_data_images[paste_data_images] configuration property, or using Tiny's PowerPaste Plugin.
 
@@ -45,7 +45,7 @@ anchor:imageuploaderrequirements[historical anchor]
 
 To upload local images to the remote server, you need a server-side upload handler script that accepts the images on the server, saves them appropriately, and returns a JSON object containing the location of the saved images.
 
-An example PHP upload handler implementation is available link:{baseurl}/advanced/php-upload-handler/[here].
+An example PHP upload handler implementation is available link:{baseurl}/advanced/php-upload-handler.html[here].
 
 Images are sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` takes care of the process required to "save" the image in your application. Some examples would include:
 
@@ -159,7 +159,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers print a message to the JavaScript console if there is a CORS error.
 
-The link:{baseurl}/advanced/php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
+The link:{baseurl}/advanced/php-upload-handler.html[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
 
 [[further-reading-on-cors]]
 === Further reading on CORS

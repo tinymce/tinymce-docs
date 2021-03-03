@@ -9,9 +9,9 @@
 [[introduction]]
 == Introduction
 
-The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the link:{baseurl}/advanced/annotations/[Annotations API] and uses annotations to create comment threads (conversations).
+The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the link:{baseurl}/advanced/annotations.html[Annotations API] and uses annotations to create comment threads (conversations).
 
-Comments 2.0 is a premium plugin from Tiny. Please see the link:{baseurl}/enterprise/tiny-comments/[Premium features] section for all the buying options.
+Comments 2.0 is a premium plugin from Tiny. Please see the link:{baseurl}/enterprise/tiny-comments.html[Premium features] section for all the buying options.
 
 Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
 
@@ -20,7 +20,7 @@ Once you have obtained the Comments 2.0 plugin, refer to the following instructi
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
 
-* *Callback Mode* - This is the default mode in Comments 2.0. This mode is used to configure storage and save comments on the user's server. This option provides a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the link:{baseurl}/advanced/configuring-comments-callbacks/[configuring callbacks for comments] section for more information.
+* *Callback Mode* - This is the default mode in Comments 2.0. This mode is used to configure storage and save comments on the user's server. This option provides a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the link:{baseurl}/advanced/configuring-comments-callbacks.html[configuring callbacks for comments] section for more information.
 * *Embedded Mode* - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
 [[configuring-comments-20-embedded-mode]]

@@ -19,7 +19,7 @@ This configuration file will require you to enter _at least_ the following  info
 
 Some server-side components require additional configuration which can be found in their individual documentation:
 
-* link:{baseurl}/enterprise/embed-media/mediaembed-server-config/[Enhanced Media Embed]
+* link:{baseurl}/enterprise/embed-media/mediaembed-server-config.html[Enhanced Media Embed]
 * link:{baseurl}/enterprise/check-links/#linkcheckersdkquicksetup[Link Checker]
 
 [[allowed-origins-required]]
@@ -235,7 +235,7 @@ ephox {
 === `image-proxy` (optional)
 anchor:image-proxyoptional[historical anchor]
 
-The link:{baseurl}/plugins/imagetools/[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+The link:{baseurl}/plugins/imagetools.html[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
 |===
 |  |  |

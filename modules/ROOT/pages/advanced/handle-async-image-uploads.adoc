@@ -49,7 +49,7 @@ anchor:imageuploaderrequirements[historical anchor]
 
 To upload local images to the remote server, you will need a server-side upload handler script that accepts the images on the server, stores them appropriately, and returns a JSON object containing the location that they were uploaded to.
 
-An example PHP upload handler implementation is available link:../php-upload-handler/[here].
+An example PHP upload handler implementation is available link:{baseurl}/advanced/php-upload-handler.html[here].
 
 Images will be sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` has to do whatever needs to be done to "store" the image in your application. Some examples would include:
 
@@ -168,7 +168,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers will print a message to the JavaScript console if there is a CORS error.
 
-The link:../php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
+The link:{baseurl}/advanced/php-upload-handler.html[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
 
 [[further-reading-on-cors]]
 ==== Further reading on CORS

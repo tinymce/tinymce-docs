@@ -11,7 +11,7 @@ Nobody likes content with spelling errors. Our team at TinyMCE is motivated to h
 == Browser-based spell checking
 anchor:browser-basedspellchecking[historical anchor]
 
-The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{baseurl}/plugins/contextmenu/[`contextmenu`] plugin.
+The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{baseurl}/plugins/contextmenu.html[`contextmenu`] plugin.
 
 [source,js]
 ----
@@ -54,12 +54,12 @@ tinymce.init({
 });
 ----
 
-Please see the link:{baseurl}/plugins/spellchecker/[Spell Checker Plugin] for advanced configuration options.
+Please see the link:{baseurl}/plugins/spellchecker.html[Spell Checker Plugin] for advanced configuration options.
 
 [[tinymce-spellchecker-pro-plugin]]
 == TinyMCE Spellchecker Pro plugin
 anchor:tinymcespellcheckerproplugin[historical anchor]
 
-For developers requiring a robust enterprise-grade spell check as-you-type functionality, you need the link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker Pro plugin]. Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+For developers requiring a robust enterprise-grade spell check as-you-type functionality, you need the link:{baseurl}/plugins/tinymcespellchecker.html[Spell Checker Pro plugin]. Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
-Full documentation can be found in the TinyMCE Enterprise link:{baseurl}/enterprise/check-spelling/[documentation for Spelling]. Learn more about https://www.tinymce.com/pricing/[TinyMCE Enterprise here].
+Full documentation can be found in the TinyMCE Enterprise link:{baseurl}/enterprise/check-spelling/index.html[documentation for Spelling]. Learn more about https://www.tinymce.com/pricing/[TinyMCE Enterprise here].

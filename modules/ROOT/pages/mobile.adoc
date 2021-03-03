@@ -80,7 +80,7 @@ Therefore, the mobile section allows you to have completely different settings f
 === Configuring the Plugins
 anchor:configuringtheplugins[historical anchor]
 
-The plugins supported by mobile are currently limited to the link:{baseurl}/plugins/autosave/[autosave], link:{baseurl}/plugins/autolink/[autolink] and link:{baseurl}/plugins/lists/[lists] plugins. This is by design. We are in the early release cycle and want to hear from our developer community about which plugins should be mobile optimized. Please https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform[complete our survey] to have your say.
+The plugins supported by mobile are currently limited to the link:{baseurl}/plugins/autosave.html[autosave], link:{baseurl}/plugins/autolink.html[autolink] and link:{baseurl}/plugins/lists.html[lists] plugins. This is by design. We are in the early release cycle and want to hear from our developer community about which plugins should be mobile optimized. Please https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform[complete our survey] to have your say.
 
 Specify which of these plugins you want by adding a plugin entry to the mobile section:
 
@@ -115,7 +115,7 @@ tinymce.init({
 });
 ----
 
-Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the link:{baseurl}/plugins/lists/[lists] plugin and <<,styleselect>> requires configuring link:{baseurl}/configure/content-formatting/#style_formats[style_formats].
+Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the link:{baseurl}/plugins/lists.html[lists] plugin and <<,styleselect>> requires configuring link:{baseurl}/configure/content-formatting/#style_formats[style_formats].
 
 |===
 | Name | Function | Plugins Required | Configuration
@@ -162,12 +162,12 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 
 | bullist
 | Insert an unordered list
-| link:{baseurl}/plugins/lists/[lists]
+| link:{baseurl}/plugins/lists.html[lists]
 |
 
 | numlist
 | Insert an ordered list
-| link:{baseurl}/plugins/lists/[lists]
+| link:{baseurl}/plugins/lists.html[lists]
 |
 
 | fontsizeselect

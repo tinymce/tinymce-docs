@@ -8,7 +8,7 @@
 
 If you're already comfortable hosting and maintaining https://www.tinymce.com/download/[TinyMCE Community edition], or you're running a web application where you have no control over the TinyMCE instance, you're still able to load our premium TinyMCE plugins from TinyMCE Cloud. Think of this as a hybrid deployment.
 
-Signing up for a free API key entitles you to the premium link:{baseurl}/plugins/imagetools/[Image Tools] plugin, with a provided cloud image proxy server already configured. You can purchase our Premium Plugins at any time once your API key is set up.
+Signing up for a free API key entitles you to the premium link:{baseurl}/plugins/imagetools.html[Image Tools] plugin, with a provided cloud image proxy server already configured. You can purchase our Premium Plugins at any time once your API key is set up.
 
 [[step-1-embed-your-custom-script-tag-into-your-webpage]]
 == Step 1: Embed your custom script tag into your webpage
@@ -25,28 +25,28 @@ Within your webpage, after you've specified your script tag to load the TinyMCE 
 == Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 anchor:step2specifypurchasedtinymcepluginsandtoolbarbuttons[historical anchor]
 
-Now you just need to extend your link:{baseurl}/configure/[TinyMCE configuration] to include any additional plugins (and associated toolbar/menu items) you've purchased. You will find enablement guides here:
+Now you just need to extend your link:{baseurl}/configure/index.html[TinyMCE configuration] to include any additional plugins (and associated toolbar/menu items) you've purchased. You will find enablement guides here:
 
-* link:{baseurl}/plugins/powerpaste/[Powerpaste]
-* link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker]
+* link:{baseurl}/plugins/powerpaste.html[Powerpaste]
+* link:{baseurl}/plugins/tinymcespellchecker.html[Spell Checker]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/[TinyMCE Cloud]
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/index.html[TinyMCE Cloud]
 
-* link:{baseurl}/plugins/imagetools/[Image Tools (with configured image proxy)]
+* link:{baseurl}/plugins/imagetools.html[Image Tools (with configured image proxy)]
 
 NOTE: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
 
-* link:{baseurl}/plugins/a11ychecker/[Accessibility Checker]
-* link:{baseurl}/plugins/advcode/[Advanced Code Editor]
-* link:{baseurl}/plugins/mediaembed/[Enhanced Media Embed]
-* link:{baseurl}/plugins/linkchecker/[Link Checker]
+* link:{baseurl}/plugins/a11ychecker.html[Accessibility Checker]
+* link:{baseurl}/plugins/advcode.html[Advanced Code Editor]
+* link:{baseurl}/plugins/mediaembed.html[Enhanced Media Embed]
+* link:{baseurl}/plugins/linkchecker.html[Link Checker]
 
 NOTE: Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
 
 Here is a complete example, whereby:
 
 * The account `API key` has the value _TEST_API_KEY_.
-* The account has the link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker] plugin enable.
+* The account has the link:{baseurl}/plugins/tinymcespellchecker.html[Spell Checker] plugin enable.
 
 [source,js]
 ----

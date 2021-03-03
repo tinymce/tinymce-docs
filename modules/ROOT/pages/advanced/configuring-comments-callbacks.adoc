@@ -9,7 +9,7 @@
 [[introduction]]
 == Introduction
 
-*Callback mode* is the default mode for link:{baseurl}/plugins/comments/comments_2.0/[Comments 2.0]. In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
+*Callback mode* is the default mode for link:{baseurl}/plugins/comments/comments_2.0.html[Comments 2.0]. In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
 [[required-settings]]
 === Required settings
@@ -211,4 +211,4 @@ The done callback needs to take an object of the form:
 }
 ----
 
-For more information on Comments commercial feature, visit our link:{baseurl}/enterprise/tiny-comments/[Premium Features] page.
+For more information on Comments commercial feature, visit our link:{baseurl}/enterprise/tiny-comments.html[Premium Features] page.

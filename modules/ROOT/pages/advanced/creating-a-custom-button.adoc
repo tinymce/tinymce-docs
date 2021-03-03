@@ -32,7 +32,7 @@ In fact, the `identifier`  is the only required argument, but if you want to be 
 
 But let's do something more useful than merely alerting a message. Let's insert something into the editor - a current date, for example.
 
-NOTE:  TinyMCE already ships with *nice* link:{baseurl}/plugins/insertdatetime/[Insert date/time plugin] (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does a whole lot of complimentary things - adds some commands and shortcuts, inserts *"Insert date/time"* menu, adds support for fancy date formats, i18n, and some more. We won't go into all of that in this tutorial and make our button much simpler. However, `insertdatetime` plugin is a good read if mentioned stuff is something that you would like to familiarise yourself with. Its source code can be found on https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/insertdatetime/plugin.js[github].
+NOTE:  TinyMCE already ships with *nice* link:{baseurl}/plugins/insertdatetime.html[Insert date/time plugin] (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does a whole lot of complimentary things - adds some commands and shortcuts, inserts *"Insert date/time"* menu, adds support for fancy date formats, i18n, and some more. We won't go into all of that in this tutorial and make our button much simpler. However, `insertdatetime` plugin is a good read if mentioned stuff is something that you would like to familiarise yourself with. Its source code can be found on https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/insertdatetime/plugin.js[github].
 
 For our purpose, we will use https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time[`<time>`] tag. `<time>` tag should have an attribute `datetime` - valid date with an optional time string. And as https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time[MDN] states:
 
@@ -156,7 +156,7 @@ Here's updated demo. Try to click inside and outside the date string:
 
 NOTE: In reality, it would have been more practical to simply set `contenteditable` attribute to *false* on the `time` tag. But I wanted to demonstrate how you can toggle the button state, depending on various logical conditions.
 
-By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity already. This is the moment when you should ask yourself whether it's better to link:{baseurl}/advanced/creating-a-plugin/[bundle this feature as a plugin] instead.
+By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity already. This is the moment when you should ask yourself whether it's better to link:{baseurl}/advanced/creating-a-plugin.html[bundle this feature as a plugin] instead.
 
 [[toggle-button]]
 == Toggle button

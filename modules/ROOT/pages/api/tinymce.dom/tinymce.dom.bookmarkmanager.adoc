@@ -2,9 +2,8 @@
 
 This class handles selection bookmarks.
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -12,9 +11,8 @@ This class handles selection bookmarks.
 |link:#bookmarkmanager[BookmarkManager()] |Constructs a new BookmarkManager instance for a specific selection instance. |link:/docs-4x/api/tinymce.dom/tinymce.dom.bookmarkmanager[tinymce.dom.BookmarkManager]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -26,28 +24,28 @@ This class handles selection bookmarks.
 
 == Constructors
 
-[#bookmarkmanager .anchor]##
-
-=== link:#bookmarkmanager[BookmarkManager]
+[[bookmarkmanager]]
+=== BookmarkManager
 
 public constructor function BookmarkManager(selection:tinymce.dom.Selection)
 
 Constructs a new BookmarkManager instance for a specific selection instance.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#selection# link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[[.param-type]#(tinymce.dom.Selection)#] - Selection instance to handle bookmarks for.
 
 == Methods
 
-[#getbookmark .anchor]##
-
-=== link:#getbookmark[getBookmark]
+[[getbookmark]]
+=== getBookmark
 
 getBookmark(type:Number, normalized:Boolean):Object
 
 Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -66,13 +64,14 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 * [.param-name]#type# [.param-type]#(Number)# - Optional state if the bookmark should be simple or not. Default is complex.
 * [.param-name]#normalized# [.param-type]#(Boolean)# - Optional state that enables you to get a position that it would be after normalization.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Bookmark object, use moveToBookmark with this object to restore the selection.
 
-[#isbookmarknode .anchor]##
-
-=== link:#isbookmarknode[isBookmarkNode]
+[[isbookmarknode]]
+=== isBookmarkNode
 
 isBookmarkNode(node:DOMNode):Boolean
 
@@ -86,9 +85,8 @@ Returns true/false if the specified node is a bookmark node or not.
 
 * [.return-type]#Boolean# - true/false if the node is a bookmark node or not.
 
-[#movetobookmark .anchor]##
-
-=== link:#movetobookmark[moveToBookmark]
+[[movetobookmark]]
+=== moveToBookmark
 
 moveToBookmark(bookmark:Object):Boolean
 

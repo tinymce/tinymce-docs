@@ -2,6 +2,7 @@
 
 This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks when various items gets loaded. This class is useful to load external JavaScript files.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -26,9 +27,8 @@ scriptLoader.loadQueue(function() {
 });
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -43,14 +43,14 @@ scriptLoader.loadQueue(function() {
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(url:String, success:function, scope:Object, failure:function)
 
 Adds a specific script to the load queue of the script loader.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#url# [.param-type]#(String)# - Absolute URL to script to add.
@@ -58,9 +58,8 @@ Adds a specific script to the load queue of the script loader.
 * [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute callback in.
 * [.param-name]#failure# [.param-type]#(function)# - Optional failure callback function to execute when the script failed to load.
 
-[#isdone .anchor]##
-
-=== link:#isdone[isDone]
+[[isdone]]
+=== isDone
 
 isDone(url:String):Boolean
 
@@ -70,13 +69,14 @@ Returns true/false if a script has been loaded or not.
 
 * [.param-name]#url# [.param-type]#(String)# - URL to check for.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false if the URL is loaded.
 
-[#load .anchor]##
-
-=== link:#load[load]
+[[load]]
+=== load
 
 load(url:String, callback:function, callback:function)
 
@@ -88,9 +88,8 @@ Loads a specific script directly without adding it to the load queue.
 * [.param-name]#callback# [.param-type]#(function)# - Optional success callback function when the script loaded successfully.
 * [.param-name]#callback# [.param-type]#(function)# - Optional failure callback function when the script failed to load.
 
-[#loadqueue .anchor]##
-
-=== link:#loadqueue[loadQueue]
+[[loadqueue]]
+=== loadQueue
 
 loadQueue(success:function, failure:function, scope:Object)
 
@@ -102,9 +101,8 @@ Starts the loading of the queue.
 * [.param-name]#failure# [.param-type]#(function)# - Optional callback to execute when queued items failed to load.
 * [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
 
-[#loadscripts .anchor]##
-
-=== link:#loadscripts[loadScripts]
+[[loadscripts]]
+=== loadScripts
 
 loadScripts(scripts:Array, callback:function, scope:Object, callback:function)
 
@@ -117,9 +115,8 @@ Loads the specified queue of files and executes the callback ones they are loade
 * [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute callback in.
 * [.param-name]#callback# [.param-type]#(function)# - Optional callback to execute if scripts failed to load.
 
-[#markdone .anchor]##
-
-=== link:#markdone[markDone]
+[[markdone]]
+=== markDone
 
 markDone(url:string)
 

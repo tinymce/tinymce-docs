@@ -2,6 +2,7 @@
 
 JSON parser and serializer class.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -13,9 +14,8 @@ var obj = tinymce.util.JSON.parse(somestring);
 var str = tinymce.util.JSON.serialize(obj);
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -26,25 +26,26 @@ var str = tinymce.util.JSON.serialize(obj);
 
 == Methods
 
-[#parse .anchor]##
-
-=== link:#parse[parse]
+[[parse]]
+=== parse
 
 parse(s:string):Object
 
 Unserializes/parses the specified JSON string into a object.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#s# [.param-type]#(string)# - JSON String to parse into a JavaScript object.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Object from input JSON string or undefined if it failed.
 
-[#serialize .anchor]##
-
-=== link:#serialize[serialize]
+[[serialize]]
+=== serialize
 
 serialize(obj:Object, quote:String):string
 

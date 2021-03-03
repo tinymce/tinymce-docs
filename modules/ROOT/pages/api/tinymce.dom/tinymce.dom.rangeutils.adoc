@@ -2,9 +2,8 @@
 
 This class contains a few utility methods for ranges.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -15,26 +14,27 @@ This class contains a few utility methods for ranges.
 
 == Methods
 
-[#compareranges .anchor]##
-
-=== link:#compareranges[compareRanges]
+[[compareranges]]
+=== compareRanges
 
 compareRanges(rng1:DOMRange, rng2:DOMRange):Boolean
 
 Compares two ranges and checks if they are equal.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#rng1# [.param-type]#(DOMRange)# - First range to compare.
 * [.param-name]#rng2# [.param-type]#(DOMRange)# - First range to compare.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false if the ranges are equal.
 
-[#getcaretrangefrompoint .anchor]##
-
-=== link:#getcaretrangefrompoint[getCaretRangeFromPoint]
+[[getcaretrangefrompoint]]
+=== getCaretRangeFromPoint
 
 getCaretRangeFromPoint(clientX:Number, clientY:Number, doc:Document):Range
 

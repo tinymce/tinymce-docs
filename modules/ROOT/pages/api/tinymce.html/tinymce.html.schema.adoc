@@ -2,6 +2,7 @@
 
 Schema validator class.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -13,9 +14,8 @@ if (tinymce.activeEditor.schema.isValidChild('p', 'span'))
    alert('P is a valid element.');
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [width="100%",cols="34%,33%,33%",options="header",]
 |===
@@ -50,21 +50,20 @@ Returns a map with self closing tags such as
 
 == Methods
 
-[#addcustomelements .anchor]##
-
-=== link:#addcustomelements[addCustomElements]
+[[addcustomelements]]
+=== addCustomElements
 
 addCustomElements(custom_elements:String)
 
 Adds custom non HTML elements to the schema.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#custom_elements# [.param-type]#(String)# - Comma separated list of custom elements to add.
 
-[#addvalidchildren .anchor]##
-
-=== link:#addvalidchildren[addValidChildren]
+[[addvalidchildren]]
+=== addValidChildren
 
 addValidChildren(valid_children:String)
 
@@ -74,9 +73,8 @@ Parses a valid children string and adds them to the schema structure. The valid 
 
 * [.param-name]#valid_children# [.param-type]#(String)# - Valid children elements string to parse
 
-[#addvalidelements .anchor]##
-
-=== link:#addvalidelements[addValidElements]
+[[addvalidelements]]
+=== addValidElements
 
 addValidElements(valid_elements:String)
 
@@ -86,21 +84,21 @@ Parses a valid elements string and adds it to the schema. The valid elements for
 
 * [.param-name]#valid_elements# [.param-type]#(String)# - String in the valid elements format to be parsed.
 
-[#getblockelements .anchor]##
-
-=== link:#getblockelements[getBlockElements]
+[[getblockelements]]
+=== getBlockElements
 
 getBlockElements():Object
 
 Returns a map with block elements.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Name/value lookup map for block elements.
 
-[#getboolattrs .anchor]##
-
-=== link:#getboolattrs[getBoolAttrs]
+[[getboolattrs]]
+=== getBoolAttrs
 
 getBoolAttrs():Object
 
@@ -110,9 +108,8 @@ Returns a map with boolean attributes.
 
 * [.return-type]#Object# - Name/value lookup map for boolean attributes.
 
-[#getcustomelements .anchor]##
-
-=== link:#getcustomelements[getCustomElements]
+[[getcustomelements]]
+=== getCustomElements
 
 getCustomElements():Object
 
@@ -122,9 +119,8 @@ Returns an map object of all custom elements.
 
 * [.return-type]#Object# - Name/value map object of all custom elements.
 
-[#getelementrule .anchor]##
-
-=== link:#getelementrule[getElementRule]
+[[getelementrule]]
+=== getElementRule
 
 getElementRule(name:String):Object
 
@@ -138,17 +134,15 @@ Returns true/false if the specified element is valid or not according to the sch
 
 * [.return-type]#Object# - Element object or undefined if the element isn't valid.
 
-[#getinvalidstyles .anchor]##
-
-=== link:#getinvalidstyles[getInvalidStyles]
+[[getinvalidstyles]]
+=== getInvalidStyles
 
 getInvalidStyles()
 
 Name/value map object with valid styles for each element.
 
-[#getmovecaretbeforeonenterelements .anchor]##
-
-=== link:#getmovecaretbeforeonenterelements[getMoveCaretBeforeOnEnterElements]
+[[getmovecaretbeforeonenterelements]]
+=== getMoveCaretBeforeOnEnterElements
 
 getMoveCaretBeforeOnEnterElements():Object
 
@@ -158,9 +152,8 @@ Returns a map with elements that the caret should be moved in front of after ent
 
 * [.return-type]#Object# - Name/value lookup map for elements to place the caret in front of.
 
-[#getnonemptyelements .anchor]##
-
-=== link:#getnonemptyelements[getNonEmptyElements]
+[[getnonemptyelements]]
+=== getNonEmptyElements
 
 getNonEmptyElements():Object
 
@@ -170,9 +163,8 @@ Returns a map with elements that should be treated as contents regardless if it 
 
 * [.return-type]#Object# - Name/value lookup map for non empty elements.
 
-[#getselfclosingelements .anchor]##
-
-=== link:#getselfclosingelements[getSelfClosingElements]
+[[getselfclosingelements]]
+=== getSelfClosingElements
 
 getSelfClosingElements():Object
 
@@ -184,9 +176,8 @@ Returns a map with self closing tags such as
 
 * [.return-type]#Object# - Name/value lookup map for self closing tags elements.
 
-[#getshortendedelements .anchor]##
-
-=== link:#getshortendedelements[getShortEndedElements]
+[[getshortendedelements]]
+=== getShortEndedElements
 
 getShortEndedElements():Object
 
@@ -196,9 +187,8 @@ Returns a map with short ended elements such as BR or IMG.
 
 * [.return-type]#Object# - Name/value lookup map for short ended elements.
 
-[#getspecialelements .anchor]##
-
-=== link:#getspecialelements[getSpecialElements]
+[[getspecialelements]]
+=== getSpecialElements
 
 getSpecialElements():Object
 
@@ -208,9 +198,8 @@ Returns a map with special elements. These are elements that needs to be parsed 
 
 * [.return-type]#Object# - Name/value lookup map for special elements.
 
-[#gettextblockelements .anchor]##
-
-=== link:#gettextblockelements[getTextBlockElements]
+[[gettextblockelements]]
+=== getTextBlockElements
 
 getTextBlockElements():Object
 
@@ -220,9 +209,8 @@ Returns a map with text block elements. Such as: p,h1-h6,div,address
 
 * [.return-type]#Object# - Name/value lookup map for block elements.
 
-[#gettextinlineelements .anchor]##
-
-=== link:#gettextinlineelements[getTextInlineElements]
+[[gettextinlineelements]]
+=== getTextInlineElements
 
 getTextInlineElements():Object
 
@@ -232,25 +220,22 @@ Returns a map of inline text format nodes for example strong/span or ins.
 
 * [.return-type]#Object# - Name/value lookup map for text format elements.
 
-[#getvalidclasses .anchor]##
-
-=== link:#getvalidclasses[getValidClasses]
+[[getvalidclasses]]
+=== getValidClasses
 
 getValidClasses()
 
 Name/value map object with valid classes for each element.
 
-[#getvalidstyles .anchor]##
-
-=== link:#getvalidstyles[getValidStyles]
+[[getvalidstyles]]
+=== getValidStyles
 
 getValidStyles()
 
 Name/value map object with valid styles for each element.
 
-[#getwhitespaceelements .anchor]##
-
-=== link:#getwhitespaceelements[getWhiteSpaceElements]
+[[getwhitespaceelements]]
+=== getWhiteSpaceElements
 
 getWhiteSpaceElements():Object
 
@@ -260,9 +245,8 @@ Returns a map with elements where white space is to be preserved like PRE or SCR
 
 * [.return-type]#Object# - Name/value lookup map for white space elements.
 
-[#isvalid .anchor]##
-
-=== link:#isvalid[isValid]
+[[isvalid]]
+=== isValid
 
 isValid(name:String, attr:String):Boolean
 
@@ -277,9 +261,8 @@ Returns true/false if the specified element name and optional attribute is valid
 
 * [.return-type]#Boolean# - True/false if the element and attribute is valid.
 
-[#isvalidchild .anchor]##
-
-=== link:#isvalidchild[isValidChild]
+[[isvalidchild]]
+=== isValidChild
 
 isValidChild(name:String, child:String):Boolean
 
@@ -294,9 +277,8 @@ Returns true/false if the specified element and it's child is valid or not accor
 
 * [.return-type]#Boolean# - True/false if the element is a valid child of the specified parent.
 
-[#setvalidelements .anchor]##
-
-=== link:#setvalidelements[setValidElements]
+[[setvalidelements]]
+=== setValidElements
 
 setValidElements(valid_elements:String)
 

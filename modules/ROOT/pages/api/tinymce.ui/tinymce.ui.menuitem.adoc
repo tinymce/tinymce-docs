@@ -2,9 +2,8 @@
 
 Creates a new menu item.
 
-[#settings .anchor]##
-
-== link:#settings[Settings]
+[[settings]]
+== Settings
 
 [cols=",,,",options="header",]
 |===
@@ -25,9 +24,8 @@ Creates a new menu item.
 |style |[.param-type]#String# |Style CSS properties to add. |link:/docs-4x/api/tinymce.ui/tinymce.ui.control[tinymce.ui.Control]
 |===
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -36,9 +34,8 @@ Creates a new menu item.
 |link:#menuitem[MenuItem()] |Constructs a instance with the specified settings. |link:/docs-4x/api/tinymce.ui/tinymce.ui.menuitem[tinymce.ui.MenuItem]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -87,21 +84,20 @@ Creates a new menu item.
 
 == Constructors
 
-[#control .anchor]##
-
-=== link:#control[Control]
+[[control]]
+=== Control
 
 public constructor function Control(settings:Object)
 
 Constructs a new control instance with the specified settings.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
 
-[#menuitem .anchor]##
-
-=== link:#menuitem[MenuItem]
+[[menuitem]]
+=== MenuItem
 
 public constructor function MenuItem(settings:Object)
 
@@ -113,9 +109,8 @@ Constructs a instance with the specified settings.
 
 == Methods
 
-[#active .anchor]##
-
-=== link:#active[active]
+[[active]]
+=== active
 
 active(state:Boolean):Boolean, tinymce.ui.Control
 
@@ -125,14 +120,15 @@ Sets/gets the active for the control.
 
 * [.param-name]#state# [.param-type]#(Boolean)# - Value to set to control.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - Current control on a set operation or current state on a get.
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.
 
-[#after .anchor]##
-
-=== link:#after[after]
+[[after]]
+=== after
 
 after(items:Array):tinymce.ui.Control
 
@@ -146,9 +142,8 @@ Adds items after the current control.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#aria .anchor]##
-
-=== link:#aria[aria]
+[[aria]]
+=== aria
 
 aria(name:String, value:String):tinymce.ui.Control
 
@@ -163,9 +158,8 @@ Sets the specified aria property.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#before .anchor]##
-
-=== link:#before[before]
+[[before]]
+=== before
 
 before(items:Array):tinymce.ui.Control
 
@@ -179,9 +173,8 @@ Adds items before the current control.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#blur .anchor]##
-
-=== link:#blur[blur]
+[[blur]]
+=== blur
 
 blur():tinymce.ui.Control
 
@@ -191,9 +184,8 @@ Blurs the current control.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#disabled .anchor]##
-
-=== link:#disabled[disabled]
+[[disabled]]
+=== disabled
 
 disabled(state:Boolean):Boolean, tinymce.ui.Control
 
@@ -208,9 +200,8 @@ Sets/gets the disabled state on the control.
 * [.return-type]#Boolean# - Current control on a set operation or current state on a get.
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.
 
-[#encode .anchor]##
-
-=== link:#encode[encode]
+[[encode]]
+=== encode
 
 encode(text:String, translate:Boolean):String
 
@@ -225,9 +216,8 @@ Encodes the specified string with HTML entities. It will also translate the stri
 
 * [.return-type]#String# - Encoded and possible traslated string.
 
-[#fire .anchor]##
-
-=== link:#fire[fire]
+[[fire]]
+=== fire
 
 fire(name:String, args:Object, bubble:Boolean):Object
 
@@ -243,9 +233,8 @@ Fires the specified event by name and arguments on the control. This will execut
 
 * [.return-type]#Object# - Current arguments object.
 
-[#focus .anchor]##
-
-=== link:#focus[focus]
+[[focus]]
+=== focus
 
 focus():tinymce.ui.Control
 
@@ -255,9 +244,8 @@ Focuses the current control.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#getcontainerelm .anchor]##
-
-=== link:#getcontainerelm[getContainerElm]
+[[getcontainerelm]]
+=== getContainerElm
 
 getContainerElm():Element
 
@@ -267,9 +255,8 @@ Returns the root element to render controls into.
 
 * [.return-type]#Element# - HTML DOM element to render into.
 
-[#getel .anchor]##
-
-=== link:#getel[getEl]
+[[getel]]
+=== getEl
 
 getEl(suffix:String):Element
 
@@ -283,9 +270,8 @@ Returns the control DOM element or sub element.
 
 * [.return-type]#Element# - HTML DOM element for the current control or it's children.
 
-[#getparentctrl .anchor]##
-
-=== link:#getparentctrl[getParentCtrl]
+[[getparentctrl]]
+=== getParentCtrl
 
 getParentCtrl(elm:Element):tinymce.ui.Control
 
@@ -299,9 +285,8 @@ Returns a control instance for the current DOM element.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Control instance or undefined.
 
-[#haseventlisteners .anchor]##
-
-=== link:#haseventlisteners[hasEventListeners]
+[[haseventlisteners]]
+=== hasEventListeners
 
 hasEventListeners(name:String):Boolean
 
@@ -315,9 +300,8 @@ Returns true/false if the specified event has any listeners.
 
 * [.return-type]#Boolean# - True/false state if the event has listeners.
 
-[#hasmenus .anchor]##
-
-=== link:#hasmenus[hasMenus]
+[[hasmenus]]
+=== hasMenus
 
 hasMenus():Boolean
 
@@ -327,9 +311,8 @@ Returns true/false if the menuitem has sub menu.
 
 * [.return-type]#Boolean# - True/false state if it has submenu.
 
-[#hide .anchor]##
-
-=== link:#hide[hide]
+[[hide]]
+=== hide
 
 hide():tinymce.ui.Control
 
@@ -339,17 +322,15 @@ Sets the visible state to false.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#hidemenu .anchor]##
-
-=== link:#hidemenu[hideMenu]
+[[hidemenu]]
+=== hideMenu
 
 hideMenu()
 
 Hides the menu for the menu item.
 
-[#initlayoutrect .anchor]##
-
-=== link:#initlayoutrect[initLayoutRect]
+[[initlayoutrect]]
+=== initLayoutRect
 
 initLayoutRect():Object
 
@@ -359,9 +340,8 @@ Initializes the current controls layout rect. This will be executed by the layou
 
 * [.return-type]#Object# - Layout rect instance.
 
-[#innerhtml .anchor]##
-
-=== link:#innerhtml[innerHtml]
+[[innerhtml]]
+=== innerHtml
 
 innerHtml(html:String):tinymce.ui.Control
 
@@ -375,9 +355,8 @@ Sets the inner HTML of the control element.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control object.
 
-[#layoutrect .anchor]##
-
-=== link:#layoutrect[layoutRect]
+[[layoutrect]]
+=== layoutRect
 
 layoutRect(newRect:Object):tinymce.ui.Control, Object
 
@@ -392,9 +371,8 @@ Getter/setter for the current layout rect.
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control or rect object.
 * [.return-type]#Object# - Current control or rect object.
 
-[#name .anchor]##
-
-=== link:#name[name]
+[[name]]
+=== name
 
 name(value:String):String, tinymce.ui.Control
 
@@ -409,9 +387,8 @@ Sets/gets the name for the control.
 * [.return-type]#String# - Current control on a set operation or current value on a get.
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
 
-[#next .anchor]##
-
-=== link:#next[next]
+[[next]]
+=== next
 
 next():tinymce.ui.Control
 
@@ -421,9 +398,8 @@ Returns the control next to the current control.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Next control instance.
 
-[#off .anchor]##
-
-=== link:#off[off]
+[[off]]
+=== off
 
 off(name:String, callback:function):tinymce.ui.Control
 
@@ -438,9 +414,8 @@ Unbinds the specified event and optionally a specific callback. If you omit the 
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control object.
 
-[#on .anchor]##
-
-=== link:#on[on]
+[[on]]
+=== on
 
 on(name:String, callback:String):tinymce.ui.Control
 
@@ -455,9 +430,8 @@ Binds a callback to the specified event. This event can both be native browser e
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control object.
 
-[#parent .anchor]##
-
-=== link:#parent[parent]
+[[parent]]
+=== parent
 
 parent(parent:tinymce.ui.Container):tinymce.ui.Control
 
@@ -471,9 +445,8 @@ Sets/gets the parent container for the control.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Parent control or the current control on a set action.
 
-[#parents .anchor]##
-
-=== link:#parents[parents]
+[[parents]]
+=== parents
 
 parents(selector:String):tinymce.ui.Collection
 
@@ -487,9 +460,8 @@ Returns a control collection with all parent controls.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection with all parent controls.
 
-[#parentsandself .anchor]##
-
-=== link:#parentsandself[parentsAndSelf]
+[[parentsandself]]
+=== parentsAndSelf
 
 parentsAndSelf(selector:String):tinymce.ui.Collection
 
@@ -503,17 +475,15 @@ Returns the current control and it's parents.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection with all parent controls.
 
-[#postrender .anchor]##
-
-=== link:#postrender[postRender]
+[[postrender]]
+=== postRender
 
 postRender()
 
 Gets invoked after the control has been rendered.
 
-[#prev .anchor]##
-
-=== link:#prev[prev]
+[[prev]]
+=== prev
 
 prev():tinymce.ui.Control
 
@@ -523,14 +493,14 @@ Returns the control previous to the current control.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Previous control instance.
 
-[#reflow .anchor]##
-
-=== link:#reflow[reflow]
+[[reflow]]
+=== reflow
 
 reflow():tinymce.ui.Control
 
 Reflows the current control and it's parents. This should be used after you for example append children to the current control so that the layout managers know that they need to reposition everything.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -542,17 +512,15 @@ container.append({type: 'button', text: 'My button'}).reflow();
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove()
 
 Removes the control and it's menus.
 
-[#renderbefore .anchor]##
-
-=== link:#renderbefore[renderBefore]
+[[renderbefore]]
+=== renderBefore
 
 renderBefore(elm:Element):tinymce.ui.Control
 
@@ -566,9 +534,8 @@ Renders the control to the specified element.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#renderhtml .anchor]##
-
-=== link:#renderhtml[renderHtml]
+[[renderhtml]]
+=== renderHtml
 
 renderHtml():String
 
@@ -578,17 +545,15 @@ Renders the control as a HTML string.
 
 * [.return-type]#String# - HTML representing the control.
 
-[#repaint .anchor]##
-
-=== link:#repaint[repaint]
+[[repaint]]
+=== repaint
 
 repaint()
 
 Repaints the control after a layout operation.
 
-[#scrollintoview .anchor]##
-
-=== link:#scrollintoview[scrollIntoView]
+[[scrollintoview]]
+=== scrollIntoView
 
 scrollIntoView(align:String):tinymce.ui.Control
 
@@ -602,9 +567,8 @@ Scrolls the current control into view.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#show .anchor]##
-
-=== link:#show[show]
+[[show]]
+=== show
 
 show():tinymce.ui.Control
 
@@ -614,17 +578,15 @@ Sets the visible state to true.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control instance.
 
-[#showmenu .anchor]##
-
-=== link:#showmenu[showMenu]
+[[showmenu]]
+=== showMenu
 
 showMenu()
 
 Shows the menu for the menu item.
 
-[#text .anchor]##
-
-=== link:#text[text]
+[[text]]
+=== text
 
 text(value:String):String, tinymce.ui.Control
 
@@ -639,9 +601,8 @@ Sets/gets the text for the control.
 * [.return-type]#String# - Current control on a set operation or current value on a get.
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
 
-[#title .anchor]##
-
-=== link:#title[title]
+[[title]]
+=== title
 
 title(value:String):String, tinymce.ui.Control
 
@@ -656,9 +617,8 @@ Sets/gets the title for the control.
 * [.return-type]#String# - Current control on a set operation or current value on a get.
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
 
-[#translate .anchor]##
-
-=== link:#translate[translate]
+[[translate]]
+=== translate
 
 translate(text:String):String
 
@@ -672,9 +632,8 @@ Returns the translated string.
 
 * [.return-type]#String# - Translated string or the same as the input.
 
-[#visible .anchor]##
-
-=== link:#visible[visible]
+[[visible]]
+=== visible
 
 visible(state:Boolean):Boolean, tinymce.ui.Control
 

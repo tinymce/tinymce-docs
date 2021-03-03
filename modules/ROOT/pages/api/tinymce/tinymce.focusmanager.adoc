@@ -2,9 +2,8 @@
 
 This class manages the focus/blur state of the editor. This class is needed since some browsers fire false focus/blur states when the selection is moved to a UI dialog or similar. This class will fire two events focus and blur on the editor instances that got affected. It will also handle the restore of selection when the focus is lost and returned.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -14,18 +13,20 @@ This class manages the focus/blur state of the editor. This class is needed sinc
 
 == Methods
 
-[#iseditoruielement .anchor]##
-
-=== link:#iseditoruielement[isEditorUIElement]
+[[iseditoruielement]]
+=== isEditorUIElement
 
 isEditorUIElement(elm:Element):Boolean
 
 Returns true if the specified element is part of the UI for example an button or text input.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#elm# [.param-type]#(Element)# - Element to check if it's part of the UI or not.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - True/false state if the element is part of the UI or not.

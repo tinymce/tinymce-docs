@@ -2,6 +2,7 @@
 
 TreeWalker class enables you to walk the DOM in a linear manner.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -13,9 +14,8 @@ do {
 } while (walker.next());
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -27,21 +27,21 @@ do {
 
 == Methods
 
-[#current .anchor]##
-
-=== link:#current[current]
+[[current]]
+=== current
 
 current():Node
 
 Returns the current node.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Node# - Current node where the walker is.
 
-[#next .anchor]##
-
-=== link:#next[next]
+[[next]]
+=== next
 
 next():Node
 
@@ -51,9 +51,8 @@ Walks to the next node in tree.
 
 * [.return-type]#Node# - Current node where the walker is after moving to the next node.
 
-[#prev .anchor]##
-
-=== link:#prev[prev]
+[[prev]]
+=== prev
 
 prev():Node
 

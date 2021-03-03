@@ -2,6 +2,7 @@
 
 Contains logic for handling keyboard shortcuts.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -12,9 +13,8 @@ editor.shortcuts.add('ctrl+alt+a', "description of the shortcut", function() {})
 editor.shortcuts.add('access+a', "description of the shortcut", function() {}); // "access" maps to ctrl+alt on Mac and shift+alt on PC
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -25,14 +25,14 @@ editor.shortcuts.add('access+a', "description of the shortcut", function() {}); 
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(pattern:String, desc:String, cmdFunc:String, scope:Object):Boolean
 
 Adds a keyboard shortcut for some command or function.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#pattern# [.param-type]#(String)# - Shortcut pattern. Like for example: ctrl+alt+o.
@@ -40,13 +40,14 @@ Adds a keyboard shortcut for some command or function.
 * [.param-name]#cmdFunc# [.param-type]#(String)# - Command name string or function to execute when the key is pressed.
 * [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false state if the shortcut was added or not.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove(pattern:String):Boolean
 

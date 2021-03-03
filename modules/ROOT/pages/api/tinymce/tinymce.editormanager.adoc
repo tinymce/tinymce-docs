@@ -2,6 +2,7 @@
 
 This class used as a factory for manager for tinymce.Editor instances.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -9,9 +10,8 @@ This class used as a factory for manager for tinymce.Editor instances.
 tinymce.EditorManager.init({});
 ----
 
-[#properties .anchor]##
-
-== link:#properties[Properties]
+[[properties]]
+== Properties
 
 [cols=",,,",options="header",]
 |===
@@ -29,9 +29,8 @@ tinymce.EditorManager.init({});
 |suffix |[.param-type]#String# |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:/docs-4x/api/tinymce/tinymce.editormanager[tinymce.EditorManager]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -56,25 +55,26 @@ tinymce.EditorManager.init({});
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(editor:tinymce.Editor):tinymce.Editor
 
 Adds an editor instance to the editor collection. This will also set it as the active editor.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to add to the collection.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The same instance that got passed in.
 
-[#addi18n .anchor]##
-
-=== link:#addi18n[addI18n]
+[[addi18n]]
+=== addI18n
 
 addI18n(code:String, items:Object)
 
@@ -85,9 +85,8 @@ Adds a language pack, this gets called by the loaded language files like en.js.
 * [.param-name]#code# [.param-type]#(String)# - Optional language code.
 * [.param-name]#items# [.param-type]#(Object)# - Name/value object with translations.
 
-[#createeditor .anchor]##
-
-=== link:#createeditor[createEditor]
+[[createeditor]]
+=== createEditor
 
 createEditor(id:String, settings:Object):tinymce.Editor
 
@@ -102,9 +101,8 @@ Creates an editor instance and adds it to the EditorManager collection.
 
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance that got created.
 
-[#execcommand .anchor]##
-
-=== link:#execcommand[execCommand]
+[[execcommand]]
+=== execCommand
 
 execCommand(cmd:String, ui:Boolean, value:String):Boolean
 
@@ -120,14 +118,14 @@ Executes a specific command on the currently active editor.
 
 * [.return-type]#Boolean# - true/false if the command was executed or not.
 
-[#fire .anchor]##
-
-=== link:#fire[fire]
+[[fire]]
+=== fire
 
 fire(name:String, args:Object?, bubble:Boolean?):Object
 
 Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -145,9 +143,8 @@ instance.fire('event', {...});
 
 * [.return-type]#Object# - Event args instance passed in.
 
-[#get .anchor]##
-
-=== link:#get[get]
+[[get]]
+=== get
 
 get(id:String):tinymce.Editor, Array
 
@@ -182,9 +179,8 @@ tinymce.EditorManager.get('mytextbox').on('click', function(e) {
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance to return or array of editor instances.
 * [.return-type]#Array# - Editor instance to return or array of editor instances.
 
-[#haseventlisteners .anchor]##
-
-=== link:#haseventlisteners[hasEventListeners]
+[[haseventlisteners]]
+=== hasEventListeners
 
 hasEventListeners(name:String):Boolean
 
@@ -198,9 +194,8 @@ Returns true/false if the object has a event of the specified name.
 
 * [.return-type]#Boolean# - true/false if the event exists or not.
 
-[#init .anchor]##
-
-=== link:#init[init]
+[[init]]
+=== init
 
 init(settings:Object):tinymce.util.Promise
 
@@ -231,9 +226,8 @@ tinymce.init({
 
 * link:/docs-4x/api/tinymce.util/tinymce.util.promise[[.return-type]#tinymce.util.Promise#] - Promise that gets resolved with an array of editors when all editor instances are initialized.
 
-[#off .anchor]##
-
-=== link:#off[off]
+[[off]]
+=== off
 
 off(name:String?, callback:callback?):Object
 
@@ -262,9 +256,8 @@ instance.off();
 
 * [.return-type]#Object# - Current class instance.
 
-[#on .anchor]##
-
-=== link:#on[on]
+[[on]]
+=== on
 
 on(name:String, callback:callback, first:Boolean):Object
 
@@ -289,9 +282,8 @@ instance.on('event', function(e) {
 
 * [.return-type]#Object# - Current class instance.
 
-[#once .anchor]##
-
-=== link:#once[once]
+[[once]]
+=== once
 
 once(name:String, callback:callback):Object
 
@@ -306,9 +298,8 @@ Bind the event callback and once it fires the callback is removed. Consult the l
 
 * [.return-type]#Object# - Current class instance.
 
-[#overridedefaults .anchor]##
-
-=== link:#overridedefaults[overrideDefaults]
+[[overridedefaults]]
+=== overrideDefaults
 
 overrideDefaults(defaultSettings:Object)
 
@@ -318,9 +309,8 @@ Overrides the default settings for editor instances.
 
 * [.param-name]#defaultSettings# [.param-type]#(Object)# - Defaults settings object.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove(selector:tinymce.Editor):tinymce.Editor
 
@@ -351,9 +341,8 @@ tinymce.remove('#id');
 
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The editor that got passed in will be return if it was found otherwise null.
 
-[#setactive .anchor]##
-
-=== link:#setactive[setActive]
+[[setactive]]
+=== setActive
 
 setActive(editor:tinymce.Editor)
 
@@ -363,9 +352,8 @@ Sets the active editor instance and fires the deactivate/activate events.
 
 * [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to set as the active instance.
 
-[#translate .anchor]##
-
-=== link:#translate[translate]
+[[translate]]
+=== translate
 
 translate(text:String):String
 
@@ -379,9 +367,8 @@ Translates the specified string using the language pack items.
 
 * [.return-type]#String# - Translated string.
 
-[#triggersave .anchor]##
-
-=== link:#triggersave[triggerSave]
+[[triggersave]]
+=== triggerSave
 
 triggerSave()
 

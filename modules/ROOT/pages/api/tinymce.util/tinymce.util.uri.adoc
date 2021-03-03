@@ -2,9 +2,8 @@
 
 This class handles parsing, modification and serialization of URI/URL strings.
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -12,9 +11,8 @@ This class handles parsing, modification and serialization of URI/URL strings.
 |link:#uri[URI()] |Constructs a new URI instance. |link:/docs-4x/api/tinymce.util/tinymce.util.uri[tinymce.util.URI]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -30,14 +28,14 @@ This class handles parsing, modification and serialization of URI/URL strings.
 
 == Constructors
 
-[#uri .anchor]##
-
-=== link:#uri[URI]
+[[uri]]
+=== URI
 
 public constructor function URI(url:String, settings:Object)
 
 Constructs a new URI instance.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#url# [.param-type]#(String)# - URI string to parse.
@@ -45,9 +43,8 @@ Constructs a new URI instance.
 
 == Methods
 
-[#geturi .anchor]##
-
-=== link:#geturi[getURI]
+[[geturi]]
+=== getURI
 
 getURI(noProtoHost:Boolean)
 
@@ -57,9 +54,8 @@ Returns the full URI of the internal structure.
 
 * [.param-name]#noProtoHost# [.param-type]#(Boolean)# - Optional no host and protocol part. Defaults to false.
 
-[#issameorigin .anchor]##
-
-=== link:#issameorigin[isSameOrigin]
+[[issameorigin]]
+=== isSameOrigin
 
 isSameOrigin(uri:tinymce.util.URI):Boolean
 
@@ -69,13 +65,14 @@ Determine whether the given URI has the same origin as this URI. Based on RFC-64
 
 * [.param-name]#uri# link:/docs-4x/api/tinymce.util/tinymce.util.uri[[.param-type]#(tinymce.util.URI)#] - Uri instance to compare.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - True if the origins are the same.
 
-[#setpath .anchor]##
-
-=== link:#setpath[setPath]
+[[setpath]]
+=== setPath
 
 setPath(path:string)
 
@@ -85,9 +82,8 @@ Sets the internal path part of the URI.
 
 * [.param-name]#path# [.param-type]#(string)# - Path string to set.
 
-[#toabspath .anchor]##
-
-=== link:#toabspath[toAbsPath]
+[[toabspath]]
+=== toAbsPath
 
 toAbsPath(base:String, path:String)
 
@@ -98,14 +94,14 @@ Converts a relative path into a absolute path.
 * [.param-name]#base# [.param-type]#(String)# - Base point to convert the path from.
 * [.param-name]#path# [.param-type]#(String)# - Relative path to convert into an absolute path.
 
-[#toabsolute .anchor]##
-
-=== link:#toabsolute[toAbsolute]
+[[toabsolute]]
+=== toAbsolute
 
 toAbsolute(uri:String, noHost:Boolean):String
 
 Converts the specified URI into a absolute URI based on the current URI instance location.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -123,9 +119,8 @@ var url = new tinymce.util.URI('http://www.site.com/dir/').toAbsolute('somedir/s
 
 * [.return-type]#String# - Absolute URI from the point specified in the current URI instance.
 
-[#torelpath .anchor]##
-
-=== link:#torelpath[toRelPath]
+[[torelpath]]
+=== toRelPath
 
 toRelPath(base:String, path:String)
 
@@ -136,9 +131,8 @@ Converts a absolute path into a relative path.
 * [.param-name]#base# [.param-type]#(String)# - Base point to convert the path from.
 * [.param-name]#path# [.param-type]#(String)# - Absolute path to convert into a relative path.
 
-[#torelative .anchor]##
-
-=== link:#torelative[toRelative]
+[[torelative]]
+=== toRelative
 
 toRelative(uri:String):String
 

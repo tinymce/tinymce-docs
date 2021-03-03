@@ -2,9 +2,8 @@
 
 This class enables you to add custom editor commands and it contains overrides for native browser commands to address various bugs and issues.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -18,22 +17,21 @@ This class enables you to add custom editor commands and it contains overrides f
 
 == Methods
 
-[#addcommands .anchor]##
-
-=== link:#addcommands[addCommands]
+[[addcommands]]
+=== addCommands
 
 addCommands(commandList:Object, type:String)
 
 Adds commands to the command collection.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#commandList# [.param-type]#(Object)# - Name/value collection with commands to add, the names can also be comma separated.
 * [.param-name]#type# [.param-type]#(String)# - Optional type to add, defaults to exec. Can be value or state as well.
 
-[#execcommand .anchor]##
-
-=== link:#execcommand[execCommand]
+[[execcommand]]
+=== execCommand
 
 execCommand(command:String, ui:Boolean, value:Object, args:Object):Boolean
 
@@ -46,13 +44,14 @@ Executes the specified command.
 * [.param-name]#value# [.param-type]#(Object)# - Optional value for command.
 * [.param-name]#args# [.param-type]#(Object)# - Optional extra arguments to the execCommand.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - true/false if the command was found or not.
 
-[#querycommandstate .anchor]##
-
-=== link:#querycommandstate[queryCommandState]
+[[querycommandstate]]
+=== queryCommandState
 
 queryCommandState(command:String):Boolean, Number
 
@@ -67,9 +66,8 @@ Queries the current state for a command for example if the current selection is 
 * [.return-type]#Boolean# - true/false if the selected contents is bold or not, -1 if it's not found.
 * [.return-type]#Number# - true/false if the selected contents is bold or not, -1 if it's not found.
 
-[#querycommandsupported .anchor]##
-
-=== link:#querycommandsupported[queryCommandSupported]
+[[querycommandsupported]]
+=== queryCommandSupported
 
 queryCommandSupported(command:String):Boolean
 
@@ -83,9 +81,8 @@ Returns true/false if the command is supported or not.
 
 * [.return-type]#Boolean# - true/false if the command is supported or not.
 
-[#querycommandvalue .anchor]##
-
-=== link:#querycommandvalue[queryCommandValue]
+[[querycommandvalue]]
+=== queryCommandValue
 
 queryCommandValue(command:String):Object
 

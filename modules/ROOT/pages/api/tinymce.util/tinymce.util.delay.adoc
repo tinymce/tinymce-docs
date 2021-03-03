@@ -2,9 +2,8 @@
 
 Utility class for working with delayed actions like setTimeout.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -21,21 +20,20 @@ Utility class for working with delayed actions like setTimeout.
 
 == Methods
 
-[#clearinterval .anchor]##
-
-=== link:#clearinterval[clearInterval]
+[[clearinterval]]
+=== clearInterval
 
 clearInterval(Interval:Number)
 
 Clears an interval timer so it won't execute.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#Interval# [.param-type]#(Number)# - timer id number.
 
-[#cleartimeout .anchor]##
-
-=== link:#cleartimeout[clearTimeout]
+[[cleartimeout]]
+=== clearTimeout
 
 clearTimeout(Timeout:Number)
 
@@ -45,9 +43,8 @@ Clears an timeout timer so it won't execute.
 
 * [.param-name]#Timeout# [.param-type]#(Number)# - timer id number.
 
-[#debounce .anchor]##
-
-=== link:#debounce[debounce]
+[[debounce]]
+=== debounce
 
 debounce(callback:function, time:Number):Function
 
@@ -58,13 +55,14 @@ Creates debounced callback function that only gets executed once within the spec
 * [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer finishes.
 * [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Function# - debounced function callback.
 
-[#requestanimationframe .anchor]##
-
-=== link:#requestanimationframe[requestAnimationFrame]
+[[requestanimationframe]]
+=== requestAnimationFrame
 
 requestAnimationFrame(callback:function, element:DOMElement)
 
@@ -75,9 +73,8 @@ Requests an animation frame and fallbacks to a timeout on older browsers.
 * [.param-name]#callback# [.param-type]#(function)# - Callback to execute when a new frame is available.
 * [.param-name]#element# [.param-type]#(DOMElement)# - Optional element to scope it to.
 
-[#seteditorinterval .anchor]##
-
-=== link:#seteditorinterval[setEditorInterval]
+[[seteditorinterval]]
+=== setEditorInterval
 
 setEditorInterval(callback:function, time:Number):Number
 
@@ -92,9 +89,8 @@ Sets an interval timer it's similar to setInterval except that it checks if the 
 
 * [.return-type]#Number# - Timeout id number.
 
-[#seteditortimeout .anchor]##
-
-=== link:#seteditortimeout[setEditorTimeout]
+[[seteditortimeout]]
+=== setEditorTimeout
 
 setEditorTimeout(editor:tinymce.Editor, callback:function, time:Number):Number
 
@@ -110,9 +106,8 @@ Sets an editor timeout it's similar to setTimeout except that it checks if the e
 
 * [.return-type]#Number# - Timeout id number.
 
-[#setinterval .anchor]##
-
-=== link:#setinterval[setInterval]
+[[setinterval]]
+=== setInterval
 
 setInterval(callback:function, time:Number):Number
 
@@ -127,9 +122,8 @@ Sets an interval timer in ms and executes the specified callback at every interv
 
 * [.return-type]#Number# - Timeout id number.
 
-[#settimeout .anchor]##
-
-=== link:#settimeout[setTimeout]
+[[settimeout]]
+=== setTimeout
 
 setTimeout(callback:function, time:Number):Number
 

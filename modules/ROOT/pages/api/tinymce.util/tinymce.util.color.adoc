@@ -2,6 +2,7 @@
 
 This class lets you parse/serialize colors and convert rgb/hsb.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -12,9 +13,8 @@ var red = new tinymce.util.Color('#FF0000');
 console.log(white.toHex(), red.toHsv());
 ----
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -22,9 +22,8 @@ console.log(white.toHex(), red.toHsv());
 |link:#color[Color()] |Constructs a new color instance. |link:/docs-4x/api/tinymce.util/tinymce.util.color[tinymce.util.Color]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -37,23 +36,22 @@ console.log(white.toHex(), red.toHsv());
 
 == Constructors
 
-[#color .anchor]##
-
-=== link:#color[Color]
+[[color]]
+=== Color
 
 public constructor function Color(value:String)
 
 Constructs a new color instance.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#value# [.param-type]#(String)# - Optional initial value to parse.
 
 == Methods
 
-[#parse .anchor]##
-
-=== link:#parse[parse]
+[[parse]]
+=== parse
 
 parse(value:Object):tinymce.util.Color
 
@@ -63,13 +61,14 @@ Parses the specified value and populates the color instance. Supported format ex
 
 * [.param-name]#value# [.param-type]#(Object)# - Color value to parse.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce.util/tinymce.util.color[[.return-type]#tinymce.util.Color#] - Current color instance.
 
-[#tohex .anchor]##
-
-=== link:#tohex[toHex]
+[[tohex]]
+=== toHex
 
 toHex():String
 
@@ -79,9 +78,8 @@ Returns the hex string of the current color. For example: #ff00ff
 
 * [.return-type]#String# - Hex string of current color.
 
-[#tohsv .anchor]##
-
-=== link:#tohsv[toHsv]
+[[tohsv]]
+=== toHsv
 
 toHsv():Object
 
@@ -91,9 +89,8 @@ Returns the h, s, v values of the color. Ranges: h=0-360, s=0-100, v=0-100.
 
 * [.return-type]#Object# - Object with h, s, v fields.
 
-[#torgb .anchor]##
-
-=== link:#torgb[toRgb]
+[[torgb]]
+=== toRgb
 
 toRgb():Object
 

@@ -2,6 +2,7 @@
 
 This class parses HTML code using pure JavaScript and executes various events for each item it finds. It will always execute the events in the right order for tag soup code like <b><p></b></p>. It will also remove elements and attributes that doesn't fit the schema if the validate setting is enabled.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -39,9 +40,8 @@ var parser = new tinymce.html.SaxParser({
 }, schema);
 ----
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -49,9 +49,8 @@ var parser = new tinymce.html.SaxParser({
 |link:#saxparser[SaxParser()] |Constructs a new SaxParser instance. |link:/docs-4x/api/tinymce.html/tinymce.html.saxparser[tinymce.html.SaxParser]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -61,14 +60,14 @@ var parser = new tinymce.html.SaxParser({
 
 == Constructors
 
-[#saxparser .anchor]##
-
-=== link:#saxparser[SaxParser]
+[[saxparser]]
+=== SaxParser
 
 public constructor function SaxParser(settings:Object, schema:tinymce.html.Schema)
 
 Constructs a new SaxParser instance.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#settings# [.param-type]#(Object)# - Name/value collection of settings. comment, cdata, text, start and end are callbacks.
@@ -76,14 +75,14 @@ Constructs a new SaxParser instance.
 
 == Methods
 
-[#parse .anchor]##
-
-=== link:#parse[parse]
+[[parse]]
+=== parse
 
 parse(html:String)
 
 Parses the specified HTML string and executes the callbacks for each item it finds.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]

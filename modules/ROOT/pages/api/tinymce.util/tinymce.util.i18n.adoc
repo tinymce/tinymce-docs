@@ -2,9 +2,8 @@
 
 I18n class that handles translation of TinyMCE UI. Uses po style with csharp style parameters.
 
-[#properties .anchor]##
-
-== link:#properties[Properties]
+[[properties]]
+== Properties
 
 [cols=",,,",options="header",]
 |===
@@ -12,9 +11,8 @@ I18n class that handles translation of TinyMCE UI. Uses po style with csharp sty
 |rtl |[.param-type]#Boolean# |Property gets set to true if a RTL language pack was loaded. |link:/docs-4x/api/tinymce.util/tinymce.util.i18n[tinymce.util.I18n]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -27,34 +25,34 @@ I18n class that handles translation of TinyMCE UI. Uses po style with csharp sty
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(code:String, items:Array)
 
 Adds translations for a specific language code.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#code# [.param-type]#(String)# - Language code like sv_SE.
 * [.param-name]#items# [.param-type]#(Array)# - Name/value array with English en_US to sv_SE.
 
-[#getcode .anchor]##
-
-=== link:#getcode[getCode]
+[[getcode]]
+=== getCode
 
 getCode():String
 
 Returns the current language code.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#String# - Current language code.
 
-[#setcode .anchor]##
-
-=== link:#setcode[setCode]
+[[setcode]]
+=== setCode
 
 setCode(newCode:String)
 
@@ -64,9 +62,8 @@ Sets the current language code.
 
 * [.param-name]#newCode# [.param-type]#(String)# - Current language code.
 
-[#translate .anchor]##
-
-=== link:#translate[translate]
+[[translate]]
+=== translate
 
 translate(text:String):String
 

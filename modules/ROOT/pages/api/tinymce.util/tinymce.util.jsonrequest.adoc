@@ -2,6 +2,7 @@
 
 This class enables you to use JSON-RPC to call backend methods.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -29,9 +30,8 @@ json.send({
 });
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -42,21 +42,20 @@ json.send({
 
 == Methods
 
-[#send .anchor]##
-
-=== link:#send[send]
+[[send]]
+=== send
 
 send(args:Object)
 
 Sends a JSON-RPC call. Consult the Wiki API documentation for more details on what you can pass to this function.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#args# [.param-type]#(Object)# - Call object where there are three field id, method and params this object should also contain callbacks etc.
 
-[#sendrpc .anchor]##
-
-=== link:#sendrpc[sendRPC]
+[[sendrpc]]
+=== sendRPC
 
 sendRPC(o:Object)
 

@@ -2,6 +2,7 @@
 
 Drag/drop helper class.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -18,9 +19,8 @@ var dragHelper = new tinymce.ui.DragHelper('mydiv', {
 });
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -30,9 +30,8 @@ var dragHelper = new tinymce.ui.DragHelper('mydiv', {
 
 == Methods
 
-[#destroy .anchor]##
-
-=== link:#destroy[destroy]
+[[destroy]]
+=== destroy
 
 destroy()
 

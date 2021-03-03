@@ -2,9 +2,8 @@
 
 Contains various tools for rect/position calculation.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -20,27 +19,28 @@ Contains various tools for rect/position calculation.
 
 == Methods
 
-[#clamp .anchor]##
-
-=== link:#clamp[clamp]
+[[clamp]]
+=== clamp
 
 clamp(rect:Rect, clampRect:Rect, fixedSize:Boolean):Rect
 
 Returns a rect clamped within the specified clamp rect. This forces the rect to be inside the clamp rect.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#rect# [.param-type]#(Rect)# - Rectangle to force within clamp rect.
 * [.param-name]#clampRect# [.param-type]#(Rect)# - Rectable to force within.
 * [.param-name]#fixedSize# [.param-type]#(Boolean)# - True/false if size should be fixed.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Rect# - Clamped rect.
 
-[#create .anchor]##
-
-=== link:#create[create]
+[[create]]
+=== create
 
 create(x:Number, y:Number, w:Number, h:Number):Rect
 
@@ -57,9 +57,8 @@ Creates a new rectangle object.
 
 * [.return-type]#Rect# - New rectangle object.
 
-[#findbestrelativeposition .anchor]##
-
-=== link:#findbestrelativeposition[findBestRelativePosition]
+[[findbestrelativeposition]]
+=== findBestRelativePosition
 
 findBestRelativePosition(rect:Rect, targetRect:Rect, constrainRect:Rect, rels:Array)
 
@@ -72,9 +71,8 @@ Tests various positions to get the most suitable one.
 * [.param-name]#constrainRect# [.param-type]#(Rect)# - Rect to constrain within.
 * [.param-name]#rels# [.param-type]#(Array)# - Array of relative positions to test against.
 
-[#fromclientrect .anchor]##
-
-=== link:#fromclientrect[fromClientRect]
+[[fromclientrect]]
+=== fromClientRect
 
 fromClientRect(clientRect:ClientRect):Rect
 
@@ -88,9 +86,8 @@ Creates a new rectangle object form a clientRects object.
 
 * [.return-type]#Rect# - New rectangle object.
 
-[#inflate .anchor]##
-
-=== link:#inflate[inflate]
+[[inflate]]
+=== inflate
 
 inflate(rect:Rect, w:Number, h:Number):Rect
 
@@ -106,9 +103,8 @@ Inflates the rect in all directions.
 
 * [.return-type]#Rect# - New expanded rect.
 
-[#intersect .anchor]##
-
-=== link:#intersect[intersect]
+[[intersect]]
+=== intersect
 
 intersect(rect:Rect, cropRect:Rect):Rect
 
@@ -123,9 +119,8 @@ Returns the intersection of the specified rectangles.
 
 * [.return-type]#Rect# - The intersection of the two rectangles or null if they don't intersect.
 
-[#relativeposition .anchor]##
-
-=== link:#relativeposition[relativePosition]
+[[relativeposition]]
+=== relativePosition
 
 relativePosition(rect:Rect, targetRect:Rect, rel:String)
 

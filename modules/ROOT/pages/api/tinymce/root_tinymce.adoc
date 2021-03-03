@@ -2,9 +2,8 @@
 
 TinyMCE core class.
 
-[#properties .anchor]##
-
-== link:#properties[Properties]
+[[properties]]
+== Properties
 
 [cols=",,,",options="header",]
 |===
@@ -26,9 +25,8 @@ TinyMCE core class.
 |suffix |[.param-type]#String# |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:/docs-4x/api/tinymce/root_tinymce[tinymce]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -67,25 +65,26 @@ TinyMCE core class.
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(editor:tinymce.Editor):tinymce.Editor
 
 Adds an editor instance to the editor collection. This will also set it as the active editor.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to add to the collection.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The same instance that got passed in.
 
-[#addi18n .anchor]##
-
-=== link:#addi18n[addI18n]
+[[addi18n]]
+=== addI18n
 
 addI18n(code:String, items:Object)
 
@@ -96,14 +95,14 @@ Adds a language pack, this gets called by the loaded language files like en.js.
 * [.param-name]#code# [.param-type]#(String)# - Optional language code.
 * [.param-name]#items# [.param-type]#(Object)# - Name/value object with translations.
 
-[#create .anchor]##
-
-=== link:#create[create]
+[[create]]
+=== create
 
 create(s:String, p:Object, root:Object)
 
 Creates a class, subclass or static singleton. More details on this method can be found in the Wiki.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -152,9 +151,8 @@ tinymce.create('static tinymce.somepackage.SomeSingletonClass', {
 * [.param-name]#p# [.param-type]#(Object)# - Collection of methods to add to the class.
 * [.param-name]#root# [.param-type]#(Object)# - Optional root object defaults to the global window object.
 
-[#createeditor .anchor]##
-
-=== link:#createeditor[createEditor]
+[[createeditor]]
+=== createEditor
 
 createEditor(id:String, settings:Object):tinymce.Editor
 
@@ -169,9 +167,8 @@ Creates an editor instance and adds it to the EditorManager collection.
 
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance that got created.
 
-[#createns .anchor]##
-
-=== link:#createns[createNS]
+[[createns]]
+=== createNS
 
 createNS(n:String, o:Object):Object
 
@@ -201,9 +198,8 @@ var tinymce.somepackage.subpackage.SomeSingleton = {
 
 * [.return-type]#Object# - New namespace object the last item in path.
 
-[#each .anchor]##
-
-=== link:#each[each]
+[[each]]
+=== each
 
 each(o:Object, cb:function, s:Object)
 
@@ -230,9 +226,8 @@ tinymce.each({a: 1, b: 2, c: 3], function(v, k) {
 * [.param-name]#cb# [.param-type]#(function)# - Callback function to execute for each item.
 * [.param-name]#s# [.param-type]#(Object)# - Optional scope to execute the callback in.
 
-[#execcommand .anchor]##
-
-=== link:#execcommand[execCommand]
+[[execcommand]]
+=== execCommand
 
 execCommand(cmd:String, ui:Boolean, value:String):Boolean
 
@@ -248,9 +243,8 @@ Executes a specific command on the currently active editor.
 
 * [.return-type]#Boolean# - true/false if the command was executed or not.
 
-[#explode .anchor]##
-
-=== link:#explode[explode]
+[[explode]]
+=== explode
 
 explode(s:string, d:string)
 
@@ -269,9 +263,8 @@ var arr = tinymce.explode('a, b,   c');
 * [.param-name]#s# [.param-type]#(string)# - String to split.
 * [.param-name]#d# [.param-type]#(string)# - Delimiter to split by.
 
-[#fire .anchor]##
-
-=== link:#fire[fire]
+[[fire]]
+=== fire
 
 fire(name:String, args:Object?, bubble:Boolean?):Object
 
@@ -294,9 +287,8 @@ instance.fire('event', {...});
 
 * [.return-type]#Object# - Event args instance passed in.
 
-[#get .anchor]##
-
-=== link:#get[get]
+[[get]]
+=== get
 
 get(id:String):tinymce.Editor, Array
 
@@ -331,9 +323,8 @@ tinymce.EditorManager.get('mytextbox').on('click', function(e) {
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - Editor instance to return or array of editor instances.
 * [.return-type]#Array# - Editor instance to return or array of editor instances.
 
-[#grep .anchor]##
-
-=== link:#grep[grep]
+[[grep]]
+=== grep
 
 grep(a:Array, f:function):Array
 
@@ -356,9 +347,8 @@ var items = tinymce.grep([1,2,3,4,5], function(v) {return v > 3;});
 
 * [.return-type]#Array# - New array with values imported and filtered based in input.
 
-[#haseventlisteners .anchor]##
-
-=== link:#haseventlisteners[hasEventListeners]
+[[haseventlisteners]]
+=== hasEventListeners
 
 hasEventListeners(name:String):Boolean
 
@@ -372,9 +362,8 @@ Returns true/false if the object has a event of the specified name.
 
 * [.return-type]#Boolean# - true/false if the event exists or not.
 
-[#inarray .anchor]##
-
-=== link:#inarray[inArray]
+[[inarray]]
+=== inArray
 
 inArray(item:any, arr:Array):Number
 
@@ -389,9 +378,8 @@ Returns an index of the item or -1 if item is not present in the array.
 
 * [.return-type]#Number# - index of the item or -1 if item was not found.
 
-[#init .anchor]##
-
-=== link:#init[init]
+[[init]]
+=== init
 
 init(settings:Object):tinymce.util.Promise
 
@@ -422,9 +410,8 @@ tinymce.init({
 
 * link:/docs-4x/api/tinymce.util/tinymce.util.promise[[.return-type]#tinymce.util.Promise#] - Promise that gets resolved with an array of editors when all editor instances are initialized.
 
-[#is .anchor]##
-
-=== link:#is[is]
+[[is]]
+=== is
 
 is(obj:Object, type:string):Boolean
 
@@ -439,9 +426,8 @@ Checks if a object is of a specific type for example an array.
 
 * [.return-type]#Boolean# - true/false if the object is of the specified type.
 
-[#isarray .anchor]##
-
-=== link:#isarray[isArray]
+[[isarray]]
+=== isArray
 
 isArray(obj:Object):boolean
 
@@ -455,9 +441,8 @@ Returns true/false if the object is an array or not.
 
 * [.return-type]#boolean# - true/false state if the object is an array or not.
 
-[#makemap .anchor]##
-
-=== link:#makemap[makeMap]
+[[makemap]]
+=== makeMap
 
 makeMap(items:Array, delim:String, map:Object):Object
 
@@ -473,9 +458,8 @@ Makes a name/object map out of an array with names.
 
 * [.return-type]#Object# - Name/value map of items.
 
-[#map .anchor]##
-
-=== link:#map[map]
+[[map]]
+=== map
 
 map(array:Array, callback:function):Array
 
@@ -490,9 +474,8 @@ Creates a new array by the return value of each iteration function call. This en
 
 * [.return-type]#Array# - Array with new values based on function return values.
 
-[#off .anchor]##
-
-=== link:#off[off]
+[[off]]
+=== off
 
 off(name:String?, callback:callback?):Object
 
@@ -521,9 +504,8 @@ instance.off();
 
 * [.return-type]#Object# - Current class instance.
 
-[#on .anchor]##
-
-=== link:#on[on]
+[[on]]
+=== on
 
 on(name:String, callback:callback, first:Boolean):Object
 
@@ -548,9 +530,8 @@ instance.on('event', function(e) {
 
 * [.return-type]#Object# - Current class instance.
 
-[#once .anchor]##
-
-=== link:#once[once]
+[[once]]
+=== once
 
 once(name:String, callback:callback):Object
 
@@ -565,9 +546,8 @@ Bind the event callback and once it fires the callback is removed. Consult the l
 
 * [.return-type]#Object# - Current class instance.
 
-[#overridedefaults .anchor]##
-
-=== link:#overridedefaults[overrideDefaults]
+[[overridedefaults]]
+=== overrideDefaults
 
 overrideDefaults(defaultSettings:Object)
 
@@ -577,9 +557,8 @@ Overrides the default settings for editor instances.
 
 * [.param-name]#defaultSettings# [.param-type]#(Object)# - Defaults settings object.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove(selector:tinymce.Editor):tinymce.Editor
 
@@ -610,9 +589,8 @@ tinymce.remove('#id');
 
 * link:/docs-4x/api/tinymce/tinymce.editor[[.return-type]#tinymce.Editor#] - The editor that got passed in will be return if it was found otherwise null.
 
-[#resolve .anchor]##
-
-=== link:#resolve[resolve]
+[[resolve]]
+=== resolve
 
 resolve(n:String, o:Object):Object
 
@@ -635,9 +613,8 @@ var obj = tinymce.resolve('a.b.c.d');
 
 * [.return-type]#Object# - Last object in path or null if it couldn't be resolved.
 
-[#setactive .anchor]##
-
-=== link:#setactive[setActive]
+[[setactive]]
+=== setActive
 
 setActive(editor:tinymce.Editor)
 
@@ -647,9 +624,8 @@ Sets the active editor instance and fires the deactivate/activate events.
 
 * [.param-name]#editor# link:/docs-4x/api/tinymce/tinymce.editor[[.param-type]#(tinymce.Editor)#] - Editor instance to set as the active instance.
 
-[#toarray .anchor]##
-
-=== link:#toarray[toArray]
+[[toarray]]
+=== toArray
 
 toArray(obj:Object):Array
 
@@ -663,9 +639,8 @@ Converts the specified object into a real JavaScript array.
 
 * [.return-type]#Array# - Array object based in input.
 
-[#translate .anchor]##
-
-=== link:#translate[translate]
+[[translate]]
+=== translate
 
 translate(text:String):String
 
@@ -679,9 +654,8 @@ Translates the specified string using the language pack items.
 
 * [.return-type]#String# - Translated string.
 
-[#triggersave .anchor]##
-
-=== link:#triggersave[triggerSave]
+[[triggersave]]
+=== triggerSave
 
 triggerSave()
 
@@ -695,9 +669,8 @@ Calls the save method on all editor instances in the collection. This can be use
 tinyMCE.triggerSave();
 ----
 
-[#trim .anchor]##
-
-=== link:#trim[trim]
+[[trim]]
+=== trim
 
 trim(s:String):String
 
@@ -711,9 +684,8 @@ Removes whitespace from the beginning and end of a string.
 
 * [.return-type]#String# - New string with removed whitespace.
 
-[#walk .anchor]##
-
-=== link:#walk[walk]
+[[walk]]
+=== walk
 
 walk(o:Object, f:function, n:String, s:String)
 

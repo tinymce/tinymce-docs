@@ -2,9 +2,8 @@
 
 This is the base class for all TinyMCE events.
 
-[#properties .anchor]##
-
-== link:#properties[Properties]
+[[properties]]
+== Properties
 
 [cols=",,,",options="header",]
 |===
@@ -12,9 +11,8 @@ This is the base class for all TinyMCE events.
 |type |[.param-type]#String# |The event type name for example "click". |link:/docs-4x/api/tinymce/tinymce.event[tinymce.Event]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -29,21 +27,21 @@ This is the base class for all TinyMCE events.
 
 == Methods
 
-[#isdefaultprevented .anchor]##
-
-=== link:#isdefaultprevented[isDefaultPrevented]
+[[isdefaultprevented]]
+=== isDefaultPrevented
 
 isDefaultPrevented():Boolean
 
 Returns true/false if the default action is to be prevented or not.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Boolean# - True/false if the event is to be execured or not.
 
-[#isimmediatepropagationstopped .anchor]##
-
-=== link:#isimmediatepropagationstopped[isImmediatePropagationStopped]
+[[isimmediatepropagationstopped]]
+=== isImmediatePropagationStopped
 
 isImmediatePropagationStopped():Boolean
 
@@ -53,9 +51,8 @@ Returns true/false if the event immediate propagation is stopped or not.
 
 * [.return-type]#Boolean# - True/false if the event immediate propagation is stopped or not.
 
-[#ispropagationstopped .anchor]##
-
-=== link:#ispropagationstopped[isPropagationStopped]
+[[ispropagationstopped]]
+=== isPropagationStopped
 
 isPropagationStopped():Boolean
 
@@ -65,25 +62,22 @@ Returns true/false if the event propagation is stopped or not.
 
 * [.return-type]#Boolean# - True/false if the event propagation is stopped or not.
 
-[#preventdefault .anchor]##
-
-=== link:#preventdefault[preventDefault]
+[[preventdefault]]
+=== preventDefault
 
 preventDefault()
 
 Prevents the default action of an event to be executed.
 
-[#stopimmediatepropagation .anchor]##
-
-=== link:#stopimmediatepropagation[stopImmediatePropagation]
+[[stopimmediatepropagation]]
+=== stopImmediatePropagation
 
 stopImmediatePropagation()
 
 Prevents the event from propagating to listeners on the same object.
 
-[#stoppropagation .anchor]##
-
-=== link:#stoppropagation[stopPropagation]
+[[stoppropagation]]
+=== stopPropagation
 
 stopPropagation()
 

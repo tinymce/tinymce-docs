@@ -2,6 +2,7 @@
 
 Control collection, this class contains control instances and it enables you to perform actions on all the contained items. This is very similar to how jQuery works.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -9,9 +10,8 @@ Control collection, this class contains control instances and it enables you to 
 someCollection.show().disabled(true);
 ----
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -19,9 +19,8 @@ someCollection.show().disabled(true);
 |link:#collection[Collection()] |Constructor for the collection. |link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[tinymce.ui.Collection]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -56,35 +55,35 @@ someCollection.show().disabled(true);
 
 == Constructors
 
-[#collection .anchor]##
-
-=== link:#collection[Collection]
+[[collection]]
+=== Collection
 
 public constructor function Collection(items:Array)
 
 Constructor for the collection.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#items# [.param-type]#(Array)# - Optional array with items to add.
 
 == Methods
 
-[#active .anchor]##
-
-=== link:#active[active]
+[[active]]
+=== active
 
 active():tinymce.ui.Collection
 
 Sets/gets the active state on the items in the current collection.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or active state of the first item on a get operation.
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(items:Array):tinymce.ui.Collection
 
@@ -98,9 +97,8 @@ Adds new items to the control collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#addclass .anchor]##
-
-=== link:#addclass[addClass]
+[[addclass]]
+=== addClass
 
 addClass(cls:String):tinymce.ui.Collection
 
@@ -114,9 +112,8 @@ Adds a class to all items in the collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#disabled .anchor]##
-
-=== link:#disabled[disabled]
+[[disabled]]
+=== disabled
 
 disabled():tinymce.ui.Collection
 
@@ -126,9 +123,8 @@ Sets/gets the disabled state on the items in the current collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or disabled state of the first item on a get operation.
 
-[#each .anchor]##
-
-=== link:#each[each]
+[[each]]
+=== each
 
 each(callback:function):tinymce.ui.Collection
 
@@ -142,9 +138,8 @@ Executes the specified callback on each item in collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#eq .anchor]##
-
-=== link:#eq[eq]
+[[eq]]
+=== eq
 
 eq(index:Number):tinymce.ui.Collection
 
@@ -158,14 +153,14 @@ Makes the current collection equal to the specified index.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
 
-[#exec .anchor]##
-
-=== link:#exec[exec]
+[[exec]]
+=== exec
 
 exec(name:String, ...:Object):tinymce.ui.Collection
 
 Executes the specific function name with optional arguments an all items in collection if it exists.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -182,9 +177,8 @@ collection.exec("myMethod", arg1, arg2, arg3);
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
 
-[#filter .anchor]##
-
-=== link:#filter[filter]
+[[filter]]
+=== filter
 
 filter(selector:String):tinymce.ui.Collection
 
@@ -198,9 +192,8 @@ Filters the collection item based on the specified selector expression or select
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection containing the filtered items.
 
-[#fire .anchor]##
-
-=== link:#fire[fire]
+[[fire]]
+=== fire
 
 fire(name:String, args:Object):tinymce.ui.Collection
 
@@ -215,9 +208,8 @@ Fires the specified event by name and arguments on the control. This will execut
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#hasclass .anchor]##
-
-=== link:#hasclass[hasClass]
+[[hasclass]]
+=== hasClass
 
 hasClass(cls:String):Boolean
 
@@ -231,9 +223,8 @@ Returns true/false if the class exists or not.
 
 * [.return-type]#Boolean# - true/false state if the class exists or not.
 
-[#hide .anchor]##
-
-=== link:#hide[hide]
+[[hide]]
+=== hide
 
 hide():tinymce.ui.Collection
 
@@ -243,9 +234,8 @@ Hides the items in the current collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#indexof .anchor]##
-
-=== link:#indexof[indexOf]
+[[indexof]]
+=== indexOf
 
 indexOf(ctrl:Control):Number
 
@@ -259,9 +249,8 @@ Finds the index of the specified control or return -1 if it isn't in the collect
 
 * [.return-type]#Number# - Index of the specified control or -1.
 
-[#name .anchor]##
-
-=== link:#name[name]
+[[name]]
+=== name
 
 name():tinymce.ui.Collection
 
@@ -271,9 +260,8 @@ Sets/gets the name contents of the items in the current collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or name value of the first item on a get operation.
 
-[#off .anchor]##
-
-=== link:#off[off]
+[[off]]
+=== off
 
 off(name:String, callback:function):tinymce.ui.Collection
 
@@ -288,9 +276,8 @@ Unbinds the specified event and optionally a specific callback. If you omit the 
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#on .anchor]##
-
-=== link:#on[on]
+[[on]]
+=== on
 
 on(name:String, callback:String):tinymce.ui.Collection
 
@@ -305,9 +292,8 @@ Binds a callback to the specified event. This event can both be native browser e
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#prop .anchor]##
-
-=== link:#prop[prop]
+[[prop]]
+=== prop
 
 prop(name:String, value:Object):tinymce.ui.Collection
 
@@ -322,9 +308,8 @@ Sets/gets the specific property on the items in the collection. The same as exec
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or value of the first item on a get operation.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove():tinymce.ui.Collection
 
@@ -334,9 +319,8 @@ Remove all items from collection and DOM.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
 
-[#removeclass .anchor]##
-
-=== link:#removeclass[removeClass]
+[[removeclass]]
+=== removeClass
 
 removeClass(cls:String):tinymce.ui.Collection
 
@@ -350,9 +334,8 @@ Removes the specified class from all items in collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#reverse .anchor]##
-
-=== link:#reverse[reverse]
+[[reverse]]
+=== reverse
 
 reverse():tinymce.ui.Collection
 
@@ -362,9 +345,8 @@ Returns a new collection of the contents in reverse order.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection instance with reversed items.
 
-[#selected .anchor]##
-
-=== link:#selected[selected]
+[[selected]]
+=== selected
 
 selected():tinymce.ui.Collection
 
@@ -374,9 +356,8 @@ Sets/gets the selected state on the items in the current collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or selected state of the first item on a get operation.
 
-[#set .anchor]##
-
-=== link:#set[set]
+[[set]]
+=== set
 
 set(items:Array):tinymce.ui.Collection
 
@@ -390,9 +371,8 @@ Sets the contents of the collection. This will remove any existing items and rep
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection instance.
 
-[#show .anchor]##
-
-=== link:#show[show]
+[[show]]
+=== show
 
 show():tinymce.ui.Collection
 
@@ -402,9 +382,8 @@ Shows the items in the current collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
 
-[#slice .anchor]##
-
-=== link:#slice[slice]
+[[slice]]
+=== slice
 
 slice(index:Number, len:Number):tinymce.ui.Collection
 
@@ -419,9 +398,8 @@ Slices the items within the collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection.
 
-[#text .anchor]##
-
-=== link:#text[text]
+[[text]]
+=== text
 
 text():tinymce.ui.Collection
 
@@ -431,9 +409,8 @@ Sets/gets the text contents of the items in the current collection.
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Current collection instance or text value of the first item on a get operation.
 
-[#toarray .anchor]##
-
-=== link:#toarray[toArray]
+[[toarray]]
+=== toArray
 
 toArray():Array
 
@@ -443,9 +420,8 @@ Returns an JavaScript array object of the contents inside the collection.
 
 * [.return-type]#Array# - Array with all items from collection.
 
-[#visible .anchor]##
-
-=== link:#visible[visible]
+[[visible]]
+=== visible
 
 visible():tinymce.ui.Collection
 

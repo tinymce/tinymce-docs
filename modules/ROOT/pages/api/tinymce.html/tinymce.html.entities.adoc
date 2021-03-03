@@ -2,9 +2,8 @@
 
 Entity encoder class.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -19,25 +18,26 @@ Entity encoder class.
 
 == Methods
 
-[#decode .anchor]##
-
-=== link:#decode[decode]
+[[decode]]
+=== decode
 
 decode(text:String):String
 
 Decodes the specified string, this will replace entities with raw UTF characters.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#text# [.param-type]#(String)# - Text to entity decode.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#String# - Entity decoded string.
 
-[#encodeallraw .anchor]##
-
-=== link:#encodeallraw[encodeAllRaw]
+[[encodeallraw]]
+=== encodeAllRaw
 
 encodeAllRaw(text:String):String
 
@@ -51,9 +51,8 @@ Encoded the specified text with both the attributes and text entities. This func
 
 * [.return-type]#String# - Entity encoded text.
 
-[#encodenamed .anchor]##
-
-=== link:#encodenamed[encodeNamed]
+[[encodenamed]]
+=== encodeNamed
 
 encodeNamed(text:String, attr:Boolean, entities:Object):String
 
@@ -69,9 +68,8 @@ Encodes the specified string using named entities. The core entities will be enc
 
 * [.return-type]#String# - Entity encoded text.
 
-[#encodenumeric .anchor]##
-
-=== link:#encodenumeric[encodeNumeric]
+[[encodenumeric]]
+=== encodeNumeric
 
 encodeNumeric(text:String, attr:Boolean):String
 
@@ -86,9 +84,8 @@ Encodes the specified string using numeric entities. The core entities will be e
 
 * [.return-type]#String# - Entity encoded text.
 
-[#encoderaw .anchor]##
-
-=== link:#encoderaw[encodeRaw]
+[[encoderaw]]
+=== encodeRaw
 
 encodeRaw(text:String, attr:Boolean):String
 
@@ -103,9 +100,8 @@ Encodes the specified string using raw entities. This means only the required XM
 
 * [.return-type]#String# - Entity encoded text.
 
-[#getencodefunc .anchor]##
-
-=== link:#getencodefunc[getEncodeFunc]
+[[getencodefunc]]
+=== getEncodeFunc
 
 getEncodeFunc(name:String, entities:String):function
 

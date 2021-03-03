@@ -2,9 +2,8 @@
 
 This is the annotator api.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -17,22 +16,21 @@ This is the annotator api.
 
 == Methods
 
-[#annotate .anchor]##
-
-=== link:#annotate[annotate]
+[[annotate]]
+=== annotate
 
 annotate(name:String, data:Object)
 
 Applies the annotation at the current selection using data
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#name# [.param-type]#(String)# - the name of the annotation to apply
 * [.param-name]#data# [.param-type]#(Object)# - information to pass through to this particular annotation
 
-[#annotationchanged .anchor]##
-
-=== link:#annotationchanged[annotationChanged]
+[[annotationchanged]]
+=== annotationChanged
 
 annotationChanged(name:String, callback:function)
 
@@ -43,9 +41,8 @@ Executes the specified callback when the current selection matches the annotatio
 * [.param-name]#name# [.param-type]#(String)# - Name of annotation to listen for
 * [.param-name]#callback# [.param-type]#(function)# - Calback with (state, name, and data) fired when the annotation at the cursor changes. If state if false, data will not be provided.
 
-[#getall .anchor]##
-
-=== link:#getall[getAll]
+[[getall]]
+=== getAll
 
 getAll(name:String):Object
 
@@ -55,13 +52,14 @@ Retrieve all the annotations for a given name
 
 * [.param-name]#name# [.param-type]#(String)# - the name of the annotations to retrieve
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - an index of annotations from uid => DOM nodes
 
-[#register .anchor]##
-
-=== link:#register[register]
+[[register]]
+=== register
 
 register(name:String, settings:Object)
 

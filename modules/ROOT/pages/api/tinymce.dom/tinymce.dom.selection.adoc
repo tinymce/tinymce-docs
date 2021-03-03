@@ -2,6 +2,7 @@
 
 This class handles text and control selection it's an crossbrowser utility class. Consult the TinyMCE Wiki API for more details and examples on how to use this class.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -10,9 +11,8 @@ This class handles text and control selection it's an crossbrowser utility class
 alert(tinymce.activeEditor.selection.getNode().nodeName);
 ----
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -20,9 +20,8 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 |link:#selection[Selection()] |Constructs a new selection instance. |link:/docs-4x/api/tinymce.dom/tinymce.dom.selection[tinymce.dom.Selection]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -47,14 +46,14 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 
 == Constructors
 
-[#selection .anchor]##
-
-=== link:#selection[Selection]
+[[selection]]
+=== Selection
 
 public constructor function Selection(dom:tinymce.dom.DOMUtils, win:Window, serializer:tinymce.dom.Serializer, editor:tinymce.Editor)
 
 Constructs a new selection instance.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#dom# link:/docs-4x/api/tinymce.dom/tinymce.dom.domutils[[.param-type]#(tinymce.dom.DOMUtils)#] - DOMUtils object reference.
@@ -64,9 +63,8 @@ Constructs a new selection instance.
 
 == Methods
 
-[#collapse .anchor]##
-
-=== link:#collapse[collapse]
+[[collapse]]
+=== collapse
 
 collapse(toStart:Boolean)
 
@@ -76,14 +74,14 @@ Collapse the selection to start or end of range.
 
 * [.param-name]#toStart# [.param-type]#(Boolean)# - Optional boolean state if to collapse to end or not. Defaults to false.
 
-[#getbookmark .anchor]##
-
-=== link:#getbookmark[getBookmark]
+[[getbookmark]]
+=== getBookmark
 
 getBookmark(type:Number, normalized:Boolean):Object
 
 Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -102,13 +100,14 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 * [.param-name]#type# [.param-type]#(Number)# - Optional state if the bookmark should be simple or not. Default is complex.
 * [.param-name]#normalized# [.param-type]#(Boolean)# - Optional state that enables you to get a position that it would be after normalization.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Bookmark object, use moveToBookmark with this object to restore the selection.
 
-[#getcontent .anchor]##
-
-=== link:#getcontent[getContent]
+[[getcontent]]
+=== getContent
 
 getContent(args:Object):String
 
@@ -133,9 +132,8 @@ alert(tinymce.activeEditor.selection.getContent({format: 'text'}));
 
 * [.return-type]#String# - Selected contents in for example HTML format.
 
-[#getend .anchor]##
-
-=== link:#getend[getEnd]
+[[getend]]
+=== getEnd
 
 getEnd(real:Boolean):Element
 
@@ -149,9 +147,8 @@ Returns the end element of a selection range. If the end is in a text node the p
 
 * [.return-type]#Element# - End element of selection range.
 
-[#getnode .anchor]##
-
-=== link:#getnode[getNode]
+[[getnode]]
+=== getNode
 
 getNode():Element
 
@@ -169,9 +166,8 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 
 * [.return-type]#Element# - Currently selected element or common ancestor element.
 
-[#getrng .anchor]##
-
-=== link:#getrng[getRng]
+[[getrng]]
+=== getRng
 
 getRng():Range
 
@@ -181,9 +177,8 @@ Returns the browsers internal range object.
 
 * [.return-type]#Range# - Internal browser range object.
 
-[#getsel .anchor]##
-
-=== link:#getsel[getSel]
+[[getsel]]
+=== getSel
 
 getSel():Selection
 
@@ -193,9 +188,8 @@ Returns the browsers internal selection object.
 
 * [.return-type]#Selection# - Internal browser selection object.
 
-[#getstart .anchor]##
-
-=== link:#getstart[getStart]
+[[getstart]]
+=== getStart
 
 getStart(real:Boolean):Element
 
@@ -209,9 +203,8 @@ Returns the start element of a selection range. If the start is in a text node t
 
 * [.return-type]#Element# - Start element of selection range.
 
-[#iscollapsed .anchor]##
-
-=== link:#iscollapsed[isCollapsed]
+[[iscollapsed]]
+=== isCollapsed
 
 isCollapsed():Boolean
 
@@ -221,9 +214,8 @@ Returns true/false if the selection range is collapsed or not. Collapsed means i
 
 * [.return-type]#Boolean# - true/false state if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection.
 
-[#movetobookmark .anchor]##
-
-=== link:#movetobookmark[moveToBookmark]
+[[movetobookmark]]
+=== moveToBookmark
 
 moveToBookmark(bookmark:Object):Boolean
 
@@ -250,9 +242,8 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 
 * [.return-type]#Boolean# - true/false if it was successful or not.
 
-[#select .anchor]##
-
-=== link:#select[select]
+[[select]]
+=== select
 
 select(node:Element, content:Boolean):Element
 
@@ -275,9 +266,8 @@ tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select('p')[0]);
 
 * [.return-type]#Element# - Selected element the same element as the one that got passed in.
 
-[#selectorchanged .anchor]##
-
-=== link:#selectorchanged[selectorChanged]
+[[selectorchanged]]
+=== selectorChanged
 
 selectorChanged(selector:String, callback:function)
 
@@ -288,9 +278,8 @@ Executes callback when the current selection starts/stops matching the specified
 * [.param-name]#selector# [.param-type]#(String)# - CSS selector to check for.
 * [.param-name]#callback# [.param-type]#(function)# - Callback with state and args when the selector is matches or not.
 
-[#setcontent .anchor]##
-
-=== link:#setcontent[setContent]
+[[setcontent]]
+=== setContent
 
 setContent(content:String, args:Object)
 
@@ -309,9 +298,8 @@ tinymce.activeEditor.selection.setContent('<strong>Some contents</strong>');
 * [.param-name]#content# [.param-type]#(String)# - HTML contents to set could also be other formats depending on settings.
 * [.param-name]#args# [.param-type]#(Object)# - Optional settings object with for example data format.
 
-[#setcursorlocation .anchor]##
-
-=== link:#setcursorlocation[setCursorLocation]
+[[setcursorlocation]]
+=== setCursorLocation
 
 setCursorLocation(node:Node, offset:Number)
 
@@ -322,9 +310,8 @@ Move the selection cursor range to the specified node and offset. If there is no
 * [.param-name]#node# [.param-type]#(Node)# - Optional node to put the cursor in.
 * [.param-name]#offset# [.param-type]#(Number)# - Optional offset from the start of the node to put the cursor at.
 
-[#setnode .anchor]##
-
-=== link:#setnode[setNode]
+[[setnode]]
+=== setNode
 
 setNode(elm:Element):Element
 
@@ -346,9 +333,8 @@ tinymce.activeEditor.selection.setNode(tinymce.activeEditor.dom.create('img', {s
 
 * [.return-type]#Element# - Returns the element that got passed in.
 
-[#setrng .anchor]##
-
-=== link:#setrng[setRng]
+[[setrng]]
+=== setRng
 
 setRng(rng:Range, forward:Boolean)
 

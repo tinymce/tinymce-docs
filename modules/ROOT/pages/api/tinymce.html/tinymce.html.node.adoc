@@ -2,6 +2,7 @@
 
 This class is a minimalistic implementation of a DOM like node used by the DomParser class.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -10,9 +11,8 @@ var node = new tinymce.html.Node('strong', 1);
 someRoot.append(node);
 ----
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -20,9 +20,8 @@ someRoot.append(node);
 |link:#node[Node()] |Constructs a new Node instance. |link:/docs-4x/api/tinymce.html/tinymce.html.node[tinymce.html.Node]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -44,14 +43,14 @@ someRoot.append(node);
 
 == Constructors
 
-[#node .anchor]##
-
-=== link:#node[Node]
+[[node]]
+=== Node
 
 public constructor function Node(name:String, type:Number)
 
 Constructs a new Node instance.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#name# [.param-type]#(String)# - Name of the node type.
@@ -59,14 +58,14 @@ Constructs a new Node instance.
 
 == Methods
 
-[#append .anchor]##
-
-=== link:#append[append]
+[[append]]
+=== append
 
 append(node:tinymce.html.Node):tinymce.html.Node
 
 Appends a new node as a child of the current node.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -78,13 +77,14 @@ node.append(someNode);
 
 * [.param-name]#node# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - Node to append as a child of the current one.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The node that got appended.
 
-[#attr .anchor]##
-
-=== link:#attr[attr]
+[[attr]]
+=== attr
 
 attr(name:String, value:String):String, tinymce.html.Node
 
@@ -109,9 +109,8 @@ someNode.attr("name", null); // Removes an attribute
 * [.return-type]#String# - String or undefined on a get operation or the current node on a set operation.
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - String or undefined on a get operation or the current node on a set operation.
 
-[#clone .anchor]##
-
-=== link:#clone[clone]
+[[clone]]
+=== clone
 
 clone():tinymce.html.Node
 
@@ -128,9 +127,8 @@ var clonedNode = node.clone();
 
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - New copy of the original node.
 
-[#create .anchor]##
-
-=== link:#create[create]
+[[create]]
+=== create
 
 create(name:String, attrs:Object)
 
@@ -141,9 +139,8 @@ Creates a node of a specific type.
 * [.param-name]#name# [.param-type]#(String)# - Name of the node type to create for example "b" or "#text".
 * [.param-name]#attrs# [.param-type]#(Object)# - Name/value collection of attributes that will be applied to elements.
 
-[#empty .anchor]##
-
-=== link:#empty[empty]
+[[empty]]
+=== empty
 
 empty():tinymce.html.Node
 
@@ -153,9 +150,8 @@ Removes all children of the current node.
 
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The current node that got cleared.
 
-[#getall .anchor]##
-
-=== link:#getall[getAll]
+[[getall]]
+=== getAll
 
 getAll(name:String):Array
 
@@ -169,9 +165,8 @@ Get all children by name.
 
 * [.return-type]#Array# - Array with child nodes matchin the specified name.
 
-[#insert .anchor]##
-
-=== link:#insert[insert]
+[[insert]]
+=== insert
 
 insert(node:tinymce.html.Node, refNode:tinymce.html.Node, before:Boolean):tinymce.html.Node
 
@@ -194,9 +189,8 @@ parentNode.insert(newChildNode, oldChildNode);
 
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The node that got inserted.
 
-[#isempty .anchor]##
-
-=== link:#isempty[isEmpty]
+[[isempty]]
+=== isEmpty
 
 isEmpty(elements:Object, whitespace:Object, predicate:function):Boolean
 
@@ -219,9 +213,8 @@ node.isEmpty({img: true});
 
 * [.return-type]#Boolean# - true/false if the node is empty or not.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove():tinymce.html.Node
 
@@ -238,9 +231,8 @@ node.remove();
 
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - Current node that got removed.
 
-[#replace .anchor]##
-
-=== link:#replace[replace]
+[[replace]]
+=== replace
 
 replace(node:tinymce.html.Node):tinymce.html.Node
 
@@ -261,9 +253,8 @@ someNode.replace(someNewNode);
 
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - The old node that got replaced.
 
-[#unwrap .anchor]##
-
-=== link:#unwrap[unwrap]
+[[unwrap]]
+=== unwrap
 
 unwrap()
 
@@ -276,9 +267,8 @@ Unwraps the node in other words it removes the node but keeps the children.
 node.unwrap();
 ----
 
-[#walk .anchor]##
-
-=== link:#walk[walk]
+[[walk]]
+=== walk
 
 walk(prev:Boolean):tinymce.html.Node
 
@@ -292,9 +282,8 @@ Walks to the next or previous node and returns that node or null if it wasn't fo
 
 * link:/docs-4x/api/tinymce.html/tinymce.html.node[[.return-type]#tinymce.html.Node#] - Node that is next to or previous of the current node.
 
-[#wrap .anchor]##
-
-=== link:#wrap[wrap]
+[[wrap]]
+=== wrap
 
 wrap()
 

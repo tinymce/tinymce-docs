@@ -2,9 +2,8 @@
 
 This class is a factory for control instances. This enables you to create instances of controls without having to require the UI controls directly. It also allow you to override or add new control types.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -17,27 +16,27 @@ This class is a factory for control instances. This enables you to create instan
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(type:String, typeClass:function)
 
 Adds a new control instance type to the factory.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#type# [.param-type]#(String)# - Type name for example "button".
 * [.param-name]#typeClass# [.param-type]#(function)# - Class type function.
 
-[#create .anchor]##
-
-=== link:#create[create]
+[[create]]
+=== create
 
 create(settings:Object):tinymce.ui.Control
 
 Creates a new control instance based on the settings provided. The instance created will be based on the specified type property it can also create whole structures of components out of the specified JSON object.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -52,13 +51,14 @@ tinymce.ui.Factory.create({
 
 * [.param-name]#settings# [.param-type]#(Object)# - Name/Value object with items used to create the type.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.return-type]#tinymce.ui.Control#] - Control instance based on the specified type.
 
-[#get .anchor]##
-
-=== link:#get[get]
+[[get]]
+=== get
 
 get(type:String):Object
 
@@ -72,9 +72,8 @@ Returns ui control module by name.
 
 * [.return-type]#Object# - Module or undefined.
 
-[#has .anchor]##
-
-=== link:#has[has]
+[[has]]
+=== has
 
 has(type:String):Boolean
 

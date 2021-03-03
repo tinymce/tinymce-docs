@@ -2,9 +2,8 @@
 
 This layout manager will place the controls by using the browsers native layout.
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -12,9 +11,8 @@ This layout manager will place the controls by using the browsers native layout.
 |link:#layout[Layout()] |Constructs a layout instance with the specified settings. |link:/docs-4x/api/tinymce.ui/tinymce.ui.layout[tinymce.ui.Layout]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -27,23 +25,22 @@ This layout manager will place the controls by using the browsers native layout.
 
 == Constructors
 
-[#layout .anchor]##
-
-=== link:#layout[Layout]
+[[layout]]
+=== Layout
 
 public constructor function Layout(settings:Object)
 
 Constructs a layout instance with the specified settings.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
 
 == Methods
 
-[#postrender .anchor]##
-
-=== link:#postrender[postRender]
+[[postrender]]
+=== postRender
 
 postRender(container:tinymce.ui.Container)
 
@@ -53,9 +50,8 @@ This method gets invoked after the layout renders the controls.
 
 * [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to postRender.
 
-[#prerender .anchor]##
-
-=== link:#prerender[preRender]
+[[prerender]]
+=== preRender
 
 preRender(container:tinymce.ui.Container)
 
@@ -65,9 +61,8 @@ This method gets invoked before the layout renders the controls.
 
 * [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to preRender.
 
-[#recalc .anchor]##
-
-=== link:#recalc[recalc]
+[[recalc]]
+=== recalc
 
 recalc(container:tinymce.ui.Container)
 
@@ -77,9 +72,8 @@ Recalculates the positions of the controls in the specified container.
 
 * [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.container[[.param-type]#(tinymce.ui.Container)#] - Container instance to recalc.
 
-[#renderhtml .anchor]##
-
-=== link:#renderhtml[renderHtml]
+[[renderhtml]]
+=== renderHtml
 
 renderHtml(container:tinymce.ui.Container)
 

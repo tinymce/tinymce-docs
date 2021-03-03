@@ -2,6 +2,7 @@
 
 This class enables you to send XMLHTTPRequests cross browser.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -20,9 +21,8 @@ tinymce.util.XHR.on('beforeSend', function(e) {
 });
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -37,14 +37,14 @@ tinymce.util.XHR.on('beforeSend', function(e) {
 
 == Methods
 
-[#fire .anchor]##
-
-=== link:#fire[fire]
+[[fire]]
+=== fire
 
 fire(name:String, args:Object?, bubble:Boolean?):Object
 
 Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -52,19 +52,21 @@ Fires the specified event by name. Consult the link:/docs/advanced/events[event 
 instance.fire('event', {...});
 ----
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
 * [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
 * [.param-name]#bubble# [.param-type]#(Boolean?)# - True/false if the event is to be bubbled.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Event args instance passed in.
 
-[#haseventlisteners .anchor]##
-
-=== link:#haseventlisteners[hasEventListeners]
+[[haseventlisteners]]
+=== hasEventListeners
 
 hasEventListeners(name:String):Boolean
 
@@ -78,9 +80,8 @@ Returns true/false if the object has a event of the specified name.
 
 * [.return-type]#Boolean# - true/false if the event exists or not.
 
-[#off .anchor]##
-
-=== link:#off[off]
+[[off]]
+=== off
 
 off(name:String?, callback:callback?):Object
 
@@ -109,9 +110,8 @@ instance.off();
 
 * [.return-type]#Object# - Current class instance.
 
-[#on .anchor]##
-
-=== link:#on[on]
+[[on]]
+=== on
 
 on(name:String, callback:callback, first:Boolean):Object
 
@@ -136,9 +136,8 @@ instance.on('event', function(e) {
 
 * [.return-type]#Object# - Current class instance.
 
-[#once .anchor]##
-
-=== link:#once[once]
+[[once]]
+=== once
 
 once(name:String, callback:callback):Object
 
@@ -153,9 +152,8 @@ Bind the event callback and once it fires the callback is removed. Consult the l
 
 * [.return-type]#Object# - Current class instance.
 
-[#send .anchor]##
-
-=== link:#send[send]
+[[send]]
+=== send
 
 send(settings:Object)
 

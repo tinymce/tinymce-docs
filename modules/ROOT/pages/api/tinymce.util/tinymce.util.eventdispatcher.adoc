@@ -2,6 +2,7 @@
 
 This class lets you add/remove and fire events by name on the specified scope. This makes it easy to add event listener logic to any class.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -12,9 +13,8 @@ var eventDispatcher = new EventDispatcher();
  eventDispatcher.fire('click', {data: 123});
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -29,14 +29,14 @@ var eventDispatcher = new EventDispatcher();
 
 == Methods
 
-[#fire .anchor]##
-
-=== link:#fire[fire]
+[[fire]]
+=== fire
 
 fire(name:String, args:Object?):Object
 
 Fires the specified event by name.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -44,18 +44,20 @@ Fires the specified event by name.
 instance.fire('event', {...});
 ----
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
 * [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Event args instance passed in.
 
-[#has .anchor]##
-
-=== link:#has[has]
+[[has]]
+=== has
 
 has(name:String):Boolean
 
@@ -69,9 +71,8 @@ Returns true/false if the dispatcher has a event of the specified name.
 
 * [.return-type]#Boolean# - true/false if the event exists or not.
 
-[#isnative .anchor]##
-
-=== link:#isnative[isNative]
+[[isnative]]
+=== isNative
 
 isNative(name:String):Boolean
 
@@ -85,9 +86,8 @@ Returns true/false if the specified event name is a native browser event or not.
 
 * [.return-type]#Boolean# - true/false if the event is native or not.
 
-[#off .anchor]##
-
-=== link:#off[off]
+[[off]]
+=== off
 
 off(name:String?, callback:callback?):Object
 
@@ -116,9 +116,8 @@ instance.off();
 
 * [.return-type]#Object# - Current class instance.
 
-[#on .anchor]##
-
-=== link:#on[on]
+[[on]]
+=== on
 
 on(name:String, callback:callback, first:Boolean):Object
 
@@ -143,9 +142,8 @@ instance.on('event', function(e) {
 
 * [.return-type]#Object# - Current class instance.
 
-[#once .anchor]##
-
-=== link:#once[once]
+[[once]]
+=== once
 
 once(name:String, callback:callback, first:Boolean):Object
 

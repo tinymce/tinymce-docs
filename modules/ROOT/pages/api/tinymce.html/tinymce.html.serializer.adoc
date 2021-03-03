@@ -2,6 +2,7 @@
 
 This class is used to serialize down the DOM tree into a string using a Writer instance.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -9,9 +10,8 @@ This class is used to serialize down the DOM tree into a string using a Writer i
 new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -21,14 +21,14 @@ new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>t
 
 == Methods
 
-[#serialize .anchor]##
-
-=== link:#serialize[serialize]
+[[serialize]]
+=== serialize
 
 serialize(node:tinymce.html.Node):String
 
 Serializes the specified node into a string.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -36,10 +36,13 @@ Serializes the specified node into a string.
 new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
 ----
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#node# link:/docs-4x/api/tinymce.html/tinymce.html.node[[.param-type]#(tinymce.html.Node)#] - Node instance to serialize.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#String# - String with HTML based on DOM tree.

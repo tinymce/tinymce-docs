@@ -2,9 +2,8 @@
 
 This class is used to serialize DOM trees into a string. Consult the TinyMCE Wiki API for more details and examples on how to use this class.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -20,14 +19,14 @@ This class is used to serialize DOM trees into a string. Consult the TinyMCE Wik
 
 == Methods
 
-[#addattributefilter .anchor]##
-
-=== link:#addattributefilter[addAttributeFilter]
+[[addattributefilter]]
+=== addAttributeFilter
 
 addAttributeFilter(callback:function)
 
 Adds a attribute filter function to the parser used by the serializer, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -39,13 +38,13 @@ parser.addAttributeFilter('src,href', function(nodes, name) {
 });
 ----
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
 
-[#addnodefilter .anchor]##
-
-=== link:#addnodefilter[addNodeFilter]
+[[addnodefilter]]
+=== addNodeFilter
 
 addNodeFilter(callback:function)
 
@@ -66,9 +65,8 @@ parser.addNodeFilter('p,h1', function(nodes, name) {
 
 * [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
 
-[#addrules .anchor]##
-
-=== link:#addrules[addRules]
+[[addrules]]
+=== addRules
 
 addRules(rules:String)
 
@@ -78,9 +76,8 @@ Adds valid elements rules to the serializers schema instance this enables you to
 
 * [.param-name]#rules# [.param-type]#(String)# - Valid elements rules string to add to schema.
 
-[#addtempattr .anchor]##
-
-=== link:#addtempattr[addTempAttr]
+[[addtempattr]]
+=== addTempAttr
 
 addTempAttr(name:String)
 
@@ -90,21 +87,21 @@ Adds a temporary internal attribute these attributes will get removed on undo an
 
 * [.param-name]#name# [.param-type]#(String)# - string
 
-[#gettempattrs .anchor]##
-
-=== link:#gettempattrs[getTempAttrs]
+[[gettempattrs]]
+=== getTempAttrs
 
 getTempAttrs():String[]
 
 Returns an array of all added temp attrs names.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#String[]# - Array with attribute names.
 
-[#serialize .anchor]##
-
-=== link:#serialize[serialize]
+[[serialize]]
+=== serialize
 
 serialize(node:DOMNode, args:Object)
 
@@ -115,9 +112,8 @@ Serializes the specified browser DOM node into a HTML string.
 * [.param-name]#node# [.param-type]#(DOMNode)# - DOM node to serialize.
 * [.param-name]#args# [.param-type]#(Object)# - Arguments option that gets passed to event handlers.
 
-[#setrules .anchor]##
-
-=== link:#setrules[setRules]
+[[setrules]]
+=== setRules
 
 setRules(rules:String)
 

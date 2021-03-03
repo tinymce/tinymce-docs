@@ -2,9 +2,8 @@
 
 This class handles the undo/redo history levels for the editor. Since the built-in undo/redo has major drawbacks a custom one was needed.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -23,42 +22,41 @@ This class handles the undo/redo history levels for the editor. Since the built-
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(level:Object, event:DOMEvent):Object
 
 Adds a new undo level/snapshot to the undo list.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#level# [.param-type]#(Object)# - Optional undo level object to add.
 * [.param-name]#event# [.param-type]#(DOMEvent)# - Optional event responsible for the creation of the undo level.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - Undo level that got added or null it a level wasn't needed.
 
-[#beforechange .anchor]##
-
-=== link:#beforechange[beforeChange]
+[[beforechange]]
+=== beforeChange
 
 beforeChange()
 
 Stores away a bookmark to be used when performing an undo action so that the selection is before the change has been made.
 
-[#clear .anchor]##
-
-=== link:#clear[clear]
+[[clear]]
+=== clear
 
 clear()
 
 Removes all undo levels.
 
-[#extra .anchor]##
-
-=== link:#extra[extra]
+[[extra]]
+=== extra
 
 extra(callback1:function, callback2:function)
 
@@ -69,9 +67,8 @@ Adds an extra "hidden" undo level by first applying the first mutation and store
 * [.param-name]#callback1# [.param-type]#(function)# - Function that does mutation but gets stored as a "hidden" extra undo level.
 * [.param-name]#callback2# [.param-type]#(function)# - Function that does mutation but gets displayed to the user.
 
-[#hasredo .anchor]##
-
-=== link:#hasredo[hasRedo]
+[[hasredo]]
+=== hasRedo
 
 hasRedo():Boolean
 
@@ -81,9 +78,8 @@ Returns true/false if the undo manager has any redo levels.
 
 * [.return-type]#Boolean# - true/false if the undo manager has any redo levels.
 
-[#hasundo .anchor]##
-
-=== link:#hasundo[hasUndo]
+[[hasundo]]
+=== hasUndo
 
 hasUndo():Boolean
 
@@ -93,9 +89,8 @@ Returns true/false if the undo manager has any undo levels.
 
 * [.return-type]#Boolean# - true/false if the undo manager has any undo levels.
 
-[#ignore .anchor]##
-
-=== link:#ignore[ignore]
+[[ignore]]
+=== ignore
 
 ignore(callback:function)
 
@@ -105,9 +100,8 @@ Executes the specified mutator function as an undo transaction. But without addi
 
 * [.param-name]#callback# [.param-type]#(function)# - Function that gets executed and has dom manipulation logic in it.
 
-[#redo .anchor]##
-
-=== link:#redo[redo]
+[[redo]]
+=== redo
 
 redo():Object
 
@@ -117,9 +111,8 @@ Redoes the last action.
 
 * [.return-type]#Object# - Redo level or null if no redo was performed.
 
-[#transact .anchor]##
-
-=== link:#transact[transact]
+[[transact]]
+=== transact
 
 transact(callback:function):Object
 
@@ -133,9 +126,8 @@ Executes the specified mutator function as an undo transaction. The selection be
 
 * [.return-type]#Object# - Undo level that got added or null it a level wasn't needed.
 
-[#undo .anchor]##
-
-=== link:#undo[undo]
+[[undo]]
+=== undo
 
 undo():Object
 

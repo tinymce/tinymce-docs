@@ -2,6 +2,7 @@
 
 This class handles the creation of TinyMCE's notifications.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -13,9 +14,8 @@ tinymce.activeEditor.notificationManager.open({
 });
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -27,34 +27,34 @@ tinymce.activeEditor.notificationManager.open({
 
 == Methods
 
-[#close .anchor]##
-
-=== link:#close[close]
+[[close]]
+=== close
 
 close()
 
 Closes the top most notification.
 
-[#getnotifications .anchor]##
-
-=== link:#getnotifications[getNotifications]
+[[getnotifications]]
+=== getNotifications
 
 getNotifications():Array
 
 Returns the currently opened notification objects.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Array# - Array of the currently opened notifications.
 
-[#open .anchor]##
-
-=== link:#open[open]
+[[open]]
+=== open
 
 open(args:Object)
 
 Opens a new notification.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#args# [.param-type]#(Object)# - Optional name/value settings collection contains things like timeout/color/message etc.

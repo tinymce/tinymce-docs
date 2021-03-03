@@ -2,6 +2,7 @@
 
 Plugin base class, this is a pseudo class that describes how a plugin is to be created for TinyMCE. The methods below are all optional.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -47,9 +48,8 @@ tinymce.PluginManager.add('example', function(editor, url) {
 });
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -63,14 +63,14 @@ tinymce.PluginManager.add('example', function(editor, url) {
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(id:String, addOn:tinymce.Theme):tinymce.Theme, tinymce.Plugin
 
 Adds a instance of the add-on by it's short name.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -94,19 +94,21 @@ tinymce.init({
 });
 ----
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#id# [.param-type]#(String)# - Short name/id for the add-on.
 * [.param-name]#addOn# link:/docs-4x/api/tinymce/tinymce.theme[[.param-type]#(tinymce.Theme)#] - Theme or plugin to add.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce/tinymce.theme[[.return-type]#tinymce.Theme#] - The same theme or plugin instance that got passed in.
 * link:/docs-4x/api/tinymce/tinymce.plugin[[.return-type]#tinymce.Plugin#] - The same theme or plugin instance that got passed in.
 
-[#addcomponents .anchor]##
-
-=== link:#addcomponents[addComponents]
+[[addcomponents]]
+=== addComponents
 
 addComponents(pluginName:String, scripts:Array)
 
@@ -117,9 +119,8 @@ Add a set of components that will make up the add-on. Using the url of the add-o
 * [.param-name]#pluginName# [.param-type]#(String)# - name of the plugin to load scripts from (will be used to get the base url for the plugins).
 * [.param-name]#scripts# [.param-type]#(Array)# - Array containing the names of the scripts to load.
 
-[#get .anchor]##
-
-=== link:#get[get]
+[[get]]
+=== get
 
 get(name:String):tinymce.Theme, tinymce.Plugin
 
@@ -134,9 +135,8 @@ Returns the specified add on by the short name.
 * link:/docs-4x/api/tinymce/tinymce.theme[[.return-type]#tinymce.Theme#] - Theme or plugin add-on instance or undefined.
 * link:/docs-4x/api/tinymce/tinymce.plugin[[.return-type]#tinymce.Plugin#] - Theme or plugin add-on instance or undefined.
 
-[#load .anchor]##
-
-=== link:#load[load]
+[[load]]
+=== load
 
 load(name:String, addOnUrl:String, success:function, scope:Object, failure:function)
 
@@ -164,9 +164,8 @@ tinymce.init({
 * [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
 * [.param-name]#failure# [.param-type]#(function)# - Optional failure callback to execute when an add-on failed to load.
 
-[#requirelangpack .anchor]##
-
-=== link:#requirelangpack[requireLangPack]
+[[requirelangpack]]
+=== requireLangPack
 
 requireLangPack(name:String, languages:String)
 

@@ -2,9 +2,8 @@
 
 This class wraps the browsers native event logic with more convenient methods.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -17,14 +16,14 @@ This class wraps the browsers native event logic with more convenient methods.
 
 == Methods
 
-[#bind .anchor]##
-
-=== link:#bind[bind]
+[[bind]]
+=== bind
 
 bind(target:Object, names:String, callback:function, scope:Object):function
 
 Binds a callback to an event on the specified target.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#target# [.param-type]#(Object)# - Target node/window or custom object.
@@ -32,13 +31,14 @@ Binds a callback to an event on the specified target.
 * [.param-name]#callback# [.param-type]#(function)# - Callback function to execute when the event occurs.
 * [.param-name]#scope# [.param-type]#(Object)# - Scope to call the callback function on, defaults to target.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#function# - Callback function that got bound.
 
-[#clean .anchor]##
-
-=== link:#clean[clean]
+[[clean]]
+=== clean
 
 clean(target:Object):EventUtils
 
@@ -52,9 +52,8 @@ Removes all bound event listeners for the specified target. This will also remov
 
 * [.return-type]#EventUtils# - Event utils instance.
 
-[#fire .anchor]##
-
-=== link:#fire[fire]
+[[fire]]
+=== fire
 
 fire(target:Object, name:String, args:Object):EventUtils
 
@@ -70,9 +69,8 @@ Fires the specified event on the specified target.
 
 * [.return-type]#EventUtils# - Event utils instance.
 
-[#unbind .anchor]##
-
-=== link:#unbind[unbind]
+[[unbind]]
+=== unbind
 
 unbind(target:Object, names:String, callback:function):EventUtils
 

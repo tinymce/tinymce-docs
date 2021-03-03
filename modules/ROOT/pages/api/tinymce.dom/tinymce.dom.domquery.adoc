@@ -2,6 +2,7 @@
 
 This class mimics most of the jQuery API: This is whats currently implemented: - Utility functions - DOM traversial - DOM manipulation - Event binding This is not currently implemented: - Dimension - Ajax - Animation - Advanced chaining
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -10,9 +11,8 @@ var $ = tinymce.dom.DomQuery;
 $('p').attr('attr', 'value').addClass('class');
 ----
 
-[#properties .anchor]##
-
-== link:#properties[Properties]
+[[properties]]
+== Properties
 
 [cols=",,,",options="header",]
 |===
@@ -22,9 +22,8 @@ $('p').attr('attr', 'value').addClass('class');
 |selector |[.param-type]#String# |Selector for the current set. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[tinymce.dom.DomQuery]
 |===
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -32,9 +31,8 @@ $('p').attr('attr', 'value').addClass('class');
 |link:#domquery[DomQuery()] |Constructs a new DomQuery instance with the specified selector or context. |link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[tinymce.dom.DomQuery]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -99,14 +97,14 @@ $('p').attr('attr', 'value').addClass('class');
 
 == Constructors
 
-[#domquery .anchor]##
-
-=== link:#domquery[DomQuery]
+[[domquery]]
+=== DomQuery
 
 public constructor function DomQuery(selector:String, context:Document)
 
 Constructs a new DomQuery instance with the specified selector or context.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#selector# [.param-type]#(String)# - Optional CSS selector/Array or array like object or HTML string.
@@ -114,9 +112,8 @@ Constructs a new DomQuery instance with the specified selector or context.
 
 == Methods
 
-[#add .anchor]##
-
-=== link:#add[add]
+[[add]]
+=== add
 
 add(items:Array, sort:Boolean):tinymce.dom.DomQuery
 
@@ -127,13 +124,14 @@ Adds new nodes to the set.
 * [.param-name]#items# [.param-type]#(Array)# - Array of all nodes to add to set.
 * [.param-name]#sort# [.param-type]#(Boolean)# - Optional sort flag that enables sorting of elements.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New instance with nodes added.
 
-[#addclass .anchor]##
-
-=== link:#addclass[addClass]
+[[addclass]]
+=== addClass
 
 addClass(className:String):tinymce.dom.DomQuery
 
@@ -147,9 +145,8 @@ Adds the specified class name to the current set elements.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#after .anchor]##
-
-=== link:#after[after]
+[[after]]
+=== after
 
 after(content:String):tinymce.dom.DomQuery
 
@@ -163,9 +160,8 @@ Adds the specified elements after current set nodes.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#append .anchor]##
-
-=== link:#append[append]
+[[append]]
+=== append
 
 append(content:String):tinymce.dom.DomQuery
 
@@ -179,9 +175,8 @@ Appends the specified node/html or node set to the current set nodes.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#appendto .anchor]##
-
-=== link:#appendto[appendTo]
+[[appendto]]
+=== appendTo
 
 appendTo(val:String):tinymce.dom.DomQuery
 
@@ -195,9 +190,8 @@ Appends the specified set nodes to the specified selector/instance.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set with the appended nodes.
 
-[#attr .anchor]##
-
-=== link:#attr[attr]
+[[attr]]
+=== attr
 
 attr(name:String, value:String):tinymce.dom.DomQuery, String
 
@@ -213,9 +207,8 @@ Sets/gets properties on the elements in the current set.
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set or the specified property when only the name is specified.
 * [.return-type]#String# - Current set or the specified property when only the name is specified.
 
-[#before .anchor]##
-
-=== link:#before[before]
+[[before]]
+=== before
 
 before(content:String):tinymce.dom.DomQuery
 
@@ -229,9 +222,8 @@ Adds the specified elements before current set nodes.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#children .anchor]##
-
-=== link:#children[children]
+[[children]]
+=== children
 
 children(node:Element):tinymce.dom.DomQuery
 
@@ -245,9 +237,8 @@ Returns all child elements matching the optional selector.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
 
-[#clone .anchor]##
-
-=== link:#clone[clone]
+[[clone]]
+=== clone
 
 clone():tinymce.dom.DomQuery
 
@@ -257,9 +248,8 @@ Clones all nodes in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with cloned nodes.
 
-[#closest .anchor]##
-
-=== link:#closest[closest]
+[[closest]]
+=== closest
 
 closest(selector:String):tinymce.dom.DomQuery
 
@@ -273,9 +263,8 @@ Gets the current node or any parent matching the specified selector.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with closest elements.
 
-[#contents .anchor]##
-
-=== link:#contents[contents]
+[[contents]]
+=== contents
 
 contents(node:Element):tinymce.dom.DomQuery
 
@@ -289,9 +278,8 @@ Returns all child nodes matching the optional selector.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
 
-[#css .anchor]##
-
-=== link:#css[css]
+[[css]]
+=== css
 
 css(name:String, value:String):tinymce.dom.DomQuery, String
 
@@ -307,9 +295,8 @@ Sets/gets styles on the elements in the current set.
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set or the specified style when only the name is specified.
 * [.return-type]#String# - Current set or the specified style when only the name is specified.
 
-[#each .anchor]##
-
-=== link:#each[each]
+[[each]]
+=== each
 
 each(callback:function):tinymce.dom.DomQuery
 
@@ -323,9 +310,7 @@ Executes the callback function for each item DomQuery collection. If you return 
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#each .anchor]##
-
-=== link:#each[each]
+=== each
 
 each(obj:Object, callback:function)
 
@@ -336,9 +321,8 @@ Executes the callback function for each item in array/object. If you return fals
 * [.param-name]#obj# [.param-type]#(Object)# - Object to iterate.
 * [.param-name]#callback# [.param-type]#(function)# - Callback function to execute for each item.
 
-[#empty .anchor]##
-
-=== link:#empty[empty]
+[[empty]]
+=== empty
 
 empty():tinymce.dom.DomQuery
 
@@ -348,9 +332,8 @@ Empties all elements in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set with the empty nodes.
 
-[#eq .anchor]##
-
-=== link:#eq[eq]
+[[eq]]
+=== eq
 
 eq(index:Number):tinymce.dom.DomQuery
 
@@ -364,9 +347,8 @@ Makes the set equal to the specified index.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Single item set.
 
-[#extend .anchor]##
-
-=== link:#extend[extend]
+[[extend]]
+=== extend
 
 extend(target:Object, object:Object..):Object
 
@@ -381,9 +363,8 @@ Extends the specified object with one or more objects.
 
 * [.return-type]#Object# - Extended input object.
 
-[#filter .anchor]##
-
-=== link:#filter[filter]
+[[filter]]
+=== filter
 
 filter(selector:String):tinymce.dom.DomQuery
 
@@ -397,9 +378,8 @@ Filters the current set with the specified selector.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with filtered elements.
 
-[#find .anchor]##
-
-=== link:#find[find]
+[[find]]
+=== find
 
 find(selector:String):tinymce.dom.DomQuery
 
@@ -413,9 +393,8 @@ Finds elements by the specified selector for each element in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with matches elements.
 
-[#first .anchor]##
-
-=== link:#first[first]
+[[first]]
+=== first
 
 first():tinymce.dom.DomQuery
 
@@ -425,14 +404,14 @@ Makes the set equal to first element in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Single item set.
 
-[#grep .anchor]##
-
-=== link:#grep[grep]
+[[grep]]
+=== grep
 
 grep(array:Array, callback:function):Array
 
 Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -450,9 +429,8 @@ var items = DomQuery.grep([1, 2, 3, 4, 5], function(v) {return v > 3;});
 
 * [.return-type]#Array# - New array with values imported and filtered based in input.
 
-[#hasclass .anchor]##
-
-=== link:#hasclass[hasClass]
+[[hasclass]]
+=== hasClass
 
 hasClass(className:String):Boolean
 
@@ -466,9 +444,8 @@ Returns true/false if the first item in set has the specified class.
 
 * [.return-type]#Boolean# - True/false if the set has the specified class.
 
-[#hide .anchor]##
-
-=== link:#hide[hide]
+[[hide]]
+=== hide
 
 hide():tinymce.dom.DomQuery
 
@@ -478,9 +455,8 @@ Hides all elements in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#html .anchor]##
-
-=== link:#html[html]
+[[html]]
+=== html
 
 html(value:String):tinymce.dom.DomQuery, String
 
@@ -495,9 +471,8 @@ Sets or gets the HTML of the current set or first set node.
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set or the innerHTML of the first element.
 * [.return-type]#String# - Current set or the innerHTML of the first element.
 
-[#inarray .anchor]##
-
-=== link:#inarray[inArray]
+[[inarray]]
+=== inArray
 
 inArray(item:Object, array:Array):Number
 
@@ -512,9 +487,8 @@ Returns the index of the specified item inside the array.
 
 * [.return-type]#Number# - Index of the item or -1.
 
-[#is .anchor]##
-
-=== link:#is[is]
+[[is]]
+=== is
 
 is(selector:String):Boolean
 
@@ -528,9 +502,8 @@ Returns true/false if the current set items matches the selector.
 
 * [.return-type]#Boolean# - True/false if the current set matches the selector.
 
-[#isarray .anchor]##
-
-=== link:#isarray[isArray]
+[[isarray]]
+=== isArray
 
 isArray(array:Object):Boolean
 
@@ -544,9 +517,8 @@ Returns true/false if the specified object is an array or not.
 
 * [.return-type]#Boolean# - True/false if the object is an array.
 
-[#last .anchor]##
-
-=== link:#last[last]
+[[last]]
+=== last
 
 last():tinymce.dom.DomQuery
 
@@ -556,9 +528,8 @@ Makes the set equal to last element in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Single item set.
 
-[#makearray .anchor]##
-
-=== link:#makearray[makeArray]
+[[makearray]]
+=== makeArray
 
 makeArray(object:Object):Array
 
@@ -572,9 +543,8 @@ Creates an array out of an array like object.
 
 * [.return-type]#Array# - Array produced from object.
 
-[#next .anchor]##
-
-=== link:#next[next]
+[[next]]
+=== next
 
 next(node:Element):tinymce.dom.DomQuery
 
@@ -588,9 +558,8 @@ Returns a new collection with next sibling of each item in current collection ma
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
 
-[#nextuntil .anchor]##
-
-=== link:#nextuntil[nextUntil]
+[[nextuntil]]
+=== nextUntil
 
 nextUntil(node:Element, until:String):tinymce.dom.DomQuery
 
@@ -605,9 +574,8 @@ Returns a new collection with all next siblings of each item in current collecti
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
 
-[#off .anchor]##
-
-=== link:#off[off]
+[[off]]
+=== off
 
 off(name:String, callback:function):tinymce.dom.DomQuery
 
@@ -622,9 +590,8 @@ Unbinds an event with callback function to the elements in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#offset .anchor]##
-
-=== link:#offset[offset]
+[[offset]]
+=== offset
 
 offset(offset:Object):Object, tinymce.dom.DomQuery
 
@@ -639,9 +606,8 @@ Returns the offset of the first element in set or sets the top/left css properti
 * [.return-type]#Object# - Returns the first element offset or the current set if you specified an offset.
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Returns the first element offset or the current set if you specified an offset.
 
-[#on .anchor]##
-
-=== link:#on[on]
+[[on]]
+=== on
 
 on(name:String, callback:function):tinymce.dom.DomQuery
 
@@ -656,9 +622,8 @@ Binds an event with callback function to the elements in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#parent .anchor]##
-
-=== link:#parent[parent]
+[[parent]]
+=== parent
 
 parent(node:Element):tinymce.dom.DomQuery
 
@@ -672,9 +637,8 @@ Returns a new collection with the parent of each item in current collection matc
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching parents.
 
-[#parents .anchor]##
-
-=== link:#parents[parents]
+[[parents]]
+=== parents
 
 parents(node:Element):tinymce.dom.DomQuery
 
@@ -688,9 +652,8 @@ Returns a new collection with the all the parents of each item in current collec
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching parents.
 
-[#parentsuntil .anchor]##
-
-=== link:#parentsuntil[parentsUntil]
+[[parentsuntil]]
+=== parentsUntil
 
 parentsUntil(node:Element, until:String):tinymce.dom.DomQuery
 
@@ -705,9 +668,8 @@ Returns a new collection with the all the parents until the matching selector/el
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching parents.
 
-[#prepend .anchor]##
-
-=== link:#prepend[prepend]
+[[prepend]]
+=== prepend
 
 prepend(content:String):tinymce.dom.DomQuery
 
@@ -721,9 +683,8 @@ Prepends the specified node/html or node set to the current set nodes.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#prependto .anchor]##
-
-=== link:#prependto[prependTo]
+[[prependto]]
+=== prependTo
 
 prependTo(val:String):tinymce.dom.DomQuery
 
@@ -737,9 +698,8 @@ Prepends the specified set nodes to the specified selector/instance.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set with the prepended nodes.
 
-[#prev .anchor]##
-
-=== link:#prev[prev]
+[[prev]]
+=== prev
 
 prev(node:Element):tinymce.dom.DomQuery
 
@@ -753,9 +713,8 @@ Returns a new collection with previous sibling of each item in current collectio
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
 
-[#prevuntil .anchor]##
-
-=== link:#prevuntil[prevUntil]
+[[prevuntil]]
+=== prevUntil
 
 prevUntil(node:Element, until:String):tinymce.dom.DomQuery
 
@@ -770,9 +729,8 @@ Returns a new collection with all previous siblings of each item in current coll
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove():tinymce.dom.DomQuery
 
@@ -782,9 +740,8 @@ Removes all nodes in set from the document.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set with the removed nodes.
 
-[#removeattr .anchor]##
-
-=== link:#removeattr[removeAttr]
+[[removeattr]]
+=== removeAttr
 
 removeAttr(name:String):tinymce.dom.DomQuery, String
 
@@ -799,9 +756,8 @@ Removes attributse on the elements in the current set.
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 * [.return-type]#String# - Current set.
 
-[#removeclass .anchor]##
-
-=== link:#removeclass[removeClass]
+[[removeclass]]
+=== removeClass
 
 removeClass(className:String):tinymce.dom.DomQuery
 
@@ -815,9 +771,8 @@ Removes the specified class name to the current set elements.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#replacewith .anchor]##
-
-=== link:#replacewith[replaceWith]
+[[replacewith]]
+=== replaceWith
 
 replaceWith(content:String):tinymce.dom.DomQuery
 
@@ -831,9 +786,8 @@ Replaces the nodes in set with the specified content.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with replaced nodes.
 
-[#show .anchor]##
-
-=== link:#show[show]
+[[show]]
+=== show
 
 show():tinymce.dom.DomQuery
 
@@ -843,9 +797,8 @@ Shows all elements in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#slice .anchor]##
-
-=== link:#slice[slice]
+[[slice]]
+=== slice
 
 slice(start:Number, end:Number):tinymce.dom.DomQuery
 
@@ -860,9 +813,8 @@ Slices the current set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Sliced set.
 
-[#text .anchor]##
-
-=== link:#text[text]
+[[text]]
+=== text
 
 text(value:String):tinymce.dom.DomQuery, String
 
@@ -877,9 +829,8 @@ Sets or gets the text of the current set or first set node.
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set or the innerText of the first element.
 * [.return-type]#String# - Current set or the innerText of the first element.
 
-[#toarray .anchor]##
-
-=== link:#toarray[toArray]
+[[toarray]]
+=== toArray
 
 toArray():Array
 
@@ -889,9 +840,8 @@ Converts the current set to an array.
 
 * [.return-type]#Array# - Array of all nodes in set.
 
-[#toggleclass .anchor]##
-
-=== link:#toggleclass[toggleClass]
+[[toggleclass]]
+=== toggleClass
 
 toggleClass(className:String, state:Boolean):tinymce.dom.DomQuery
 
@@ -906,9 +856,8 @@ Toggles the specified class name on the current set elements.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#trigger .anchor]##
-
-=== link:#trigger[trigger]
+[[trigger]]
+=== trigger
 
 trigger(name:String):tinymce.dom.DomQuery
 
@@ -922,9 +871,8 @@ Triggers the specified event by name or event object.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Current set.
 
-[#trim .anchor]##
-
-=== link:#trim[trim]
+[[trim]]
+=== trim
 
 trim(str:String):String
 
@@ -938,9 +886,8 @@ Removes whitespace from the beginning and end of a string.
 
 * [.return-type]#String# - New string with removed whitespace.
 
-[#unwrap .anchor]##
-
-=== link:#unwrap[unwrap]
+[[unwrap]]
+=== unwrap
 
 unwrap():tinymce.dom.DomQuery
 
@@ -950,9 +897,8 @@ Unwraps all elements by removing the parent element of each item in set.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with unwrapped nodes.
 
-[#wrap .anchor]##
-
-=== link:#wrap[wrap]
+[[wrap]]
+=== wrap
 
 wrap(content:String):tinymce.dom.DomQuery
 
@@ -966,9 +912,8 @@ Wraps all elements in set with the specified wrapper.
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with wrapped nodes.
 
-[#wrapall .anchor]##
-
-=== link:#wrapall[wrapAll]
+[[wrapall]]
+=== wrapAll
 
 wrapAll(content:String):tinymce.dom.DomQuery
 
@@ -982,9 +927,8 @@ Wraps all nodes in set with the specified wrapper. If the nodes are siblings all
 
 * link:/docs-4x/api/tinymce.dom/tinymce.dom.domquery[[.return-type]#tinymce.dom.DomQuery#] - Set with wrapped nodes.
 
-[#wrapinner .anchor]##
-
-=== link:#wrapinner[wrapInner]
+[[wrapinner]]
+=== wrapInner
 
 wrapInner(content:String):tinymce.dom.DomQuery
 

@@ -2,6 +2,7 @@
 
 Text formatter engine class. This class is used to apply formats like bold, italic, font size etc to the current selection or specific nodes. This engine was built to replace the browser's default formatting logic for execCommand due to its inconsistent and buggy behavior.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -14,9 +15,8 @@ tinymce.activeEditor.formatter.register('mycustomformat', {
  tinymce.activeEditor.formatter.apply('mycustomformat');
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -37,23 +37,22 @@ tinymce.activeEditor.formatter.register('mycustomformat', {
 
 == Methods
 
-[#apply .anchor]##
-
-=== link:#apply[apply]
+[[apply]]
+=== apply
 
 apply(name:String, vars:Object, node:Node)
 
 Applies the specified format to the current selection or specified node.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#name# [.param-type]#(String)# - Name of format to apply.
 * [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace within format before applying it.
 * [.param-name]#node# [.param-type]#(Node)# - Optional node to apply the format to defaults to current selection.
 
-[#canapply .anchor]##
-
-=== link:#canapply[canApply]
+[[canapply]]
+=== canApply
 
 canApply(name:String):boolean
 
@@ -63,13 +62,14 @@ Returns true/false if the specified format can be applied to the current selecti
 
 * [.param-name]#name# [.param-type]#(String)# - Name of format to check.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#boolean# - true/false if the specified format can be applied to the current selection/node.
 
-[#formatchanged .anchor]##
-
-=== link:#formatchanged[formatChanged]
+[[formatchanged]]
+=== formatChanged
 
 formatChanged(formats:String, callback:function, similar:Boolean)
 
@@ -81,9 +81,8 @@ Executes the specified callback when the current selection matches the formats o
 * [.param-name]#callback# [.param-type]#(function)# - Callback with state and args when the format is changed/toggled on/off.
 * [.param-name]#similar# [.param-type]#(Boolean)# - True/false state if the match should handle similar or exact formats.
 
-[#get .anchor]##
-
-=== link:#get[get]
+[[get]]
+=== get
 
 get(name:String):Array, Object
 
@@ -98,14 +97,14 @@ Returns the format by name or all formats if no name is specified.
 * [.return-type]#Array# - Array/Object with all registered formats or a specific format.
 * [.return-type]#Object# - Array/Object with all registered formats or a specific format.
 
-[#getcsstext .anchor]##
-
-=== link:#getcsstext[getCssText]
+[[getcsstext]]
+=== getCssText
 
 getCssText(format:String):String
 
 Returns a preview css text for the specified format.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -122,9 +121,8 @@ var cssText2 = editor.formatter.getCssText({inline: 'b'});
 
 * [.return-type]#String# - Css text for the specified format.
 
-[#match .anchor]##
-
-=== link:#match[match]
+[[match]]
+=== match
 
 match(name:String, vars:Object, node:Node):boolean
 
@@ -140,9 +138,8 @@ Matches the current selection or specified node against the specified format nam
 
 * [.return-type]#boolean# - true/false if the specified selection/node matches the format.
 
-[#matchall .anchor]##
-
-=== link:#matchall[matchAll]
+[[matchall]]
+=== matchAll
 
 matchAll(names:Array, vars:Object):Array
 
@@ -157,9 +154,8 @@ Matches the current selection against the array of formats and returns a new arr
 
 * [.return-type]#Array# - Array with matched formats.
 
-[#matchnode .anchor]##
-
-=== link:#matchnode[matchNode]
+[[matchnode]]
+=== matchNode
 
 matchNode(node:Node, name:String, vars:Object, similar:Boolean):Object
 
@@ -176,9 +172,8 @@ Return true/false if the specified node has the specified format.
 
 * [.return-type]#Object# - Returns the format object it matches or undefined if it doesn't match.
 
-[#register .anchor]##
-
-=== link:#register[register]
+[[register]]
+=== register
 
 register(name:Object, format:Object)
 
@@ -189,9 +184,8 @@ Registers a specific format by name.
 * [.param-name]#name# [.param-type]#(Object)# - Name of the format for example "bold".
 * [.param-name]#format# [.param-type]#(Object)# - Optional format object or array of format variants can only be omitted if the first arg is an object.
 
-[#remove .anchor]##
-
-=== link:#remove[remove]
+[[remove]]
+=== remove
 
 remove(name:String, vars:Object, node:Node)
 
@@ -203,9 +197,8 @@ Removes the specified format from the current selection or specified node.
 * [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace within format before removing it.
 * [.param-name]#node# [.param-type]#(Node)# - Optional node or DOM range to remove the format from defaults to current selection.
 
-[#toggle .anchor]##
-
-=== link:#toggle[toggle]
+[[toggle]]
+=== toggle
 
 toggle(name:String, vars:Object, node:Node)
 
@@ -217,9 +210,8 @@ Toggles the specified format on/off.
 * [.param-name]#vars# [.param-type]#(Object)# - Optional list of variables to replace within format before applying/removing it.
 * [.param-name]#node# [.param-type]#(Node)# - Optional node to apply the format to or remove from. Defaults to current selection.
 
-[#unregister .anchor]##
-
-=== link:#unregister[unregister]
+[[unregister]]
+=== unregister
 
 unregister(name:String)
 

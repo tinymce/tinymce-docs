@@ -2,6 +2,7 @@
 
 Selector engine, enables you to select controls by using CSS like expressions. We currently only support basic CSS expressions to reduce the size of the core and the ones we support should be enough for most cases.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -26,9 +27,8 @@ Supported expressions:
  element > element
 ----
 
-[#constructors .anchor]##
-
-== link:#constructors[Constructors]
+[[constructors]]
+== Constructors
 
 [cols=",,",options="header",]
 |===
@@ -36,9 +36,8 @@ Supported expressions:
 |link:#selector[Selector()] |Constructs a new Selector instance. |link:/docs-4x/api/tinymce.ui/tinymce.ui.selector[tinymce.ui.Selector]
 |===
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -49,23 +48,22 @@ Supported expressions:
 
 == Constructors
 
-[#selector .anchor]##
-
-=== link:#selector[Selector]
+[[selector]]
+=== Selector
 
 public constructor function Selector(selector:String)
 
 Constructs a new Selector instance.
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#selector# [.param-type]#(String)# - CSS like selector expression.
 
 == Methods
 
-[#find .anchor]##
-
-=== link:#find[find]
+[[find]]
+=== find
 
 find(container:tinymce.ui.Control):tinymce.ui.Collection
 
@@ -75,13 +73,14 @@ Returns a tinymce.ui.Collection with matches of the specified selector inside th
 
 * [.param-name]#container# link:/docs-4x/api/tinymce.ui/tinymce.ui.control[[.param-type]#(tinymce.ui.Control)#] - Container to look for items in.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * link:/docs-4x/api/tinymce.ui/tinymce.ui.collection[[.return-type]#tinymce.ui.Collection#] - Collection with matched elements.
 
-[#match .anchor]##
-
-=== link:#match[match]
+[[match]]
+=== match
 
 match(control:tinymce.ui.Control, selectors:Array):Boolean
 

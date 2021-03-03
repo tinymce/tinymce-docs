@@ -2,6 +2,7 @@
 
 This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.
 
+[[examples]]
 == Examples
 
 [source,prettyprint]
@@ -11,9 +12,8 @@ var parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
 console.log(writer.getContent());
 ----
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [width="100%",cols="34%,33%,33%",options="header",]
 |===
@@ -50,21 +50,20 @@ Writes the a start element such as
 
 == Methods
 
-[#cdata .anchor]##
-
-=== link:#cdata[cdata]
+[[cdata]]
+=== cdata
 
 cdata(text:String)
 
 Writes a comment node such as .
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#text# [.param-type]#(String)# - String to write out inside the comment.
 
-[#doctype .anchor]##
-
-=== link:#doctype[doctype]
+[[doctype]]
+=== doctype
 
 doctype(text:String)
 
@@ -76,9 +75,8 @@ Writes a doctype node such as
 
 * [.param-name]#text# [.param-type]#(String)# - String to write out inside the doctype.
 
-[#end .anchor]##
-
-=== link:#end[end]
+[[end]]
+=== end
 
 end(name:String)
 
@@ -90,21 +88,21 @@ Writes the a end element such as
 
 * [.param-name]#name# [.param-type]#(String)# - Name of the element.
 
-[#getcontent .anchor]##
-
-=== link:#getcontent[getContent]
+[[getcontent]]
+=== getContent
 
 getContent():String
 
 Returns the contents that got serialized.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#String# - HTML contents that got written down.
 
-[#pi .anchor]##
-
-=== link:#pi[pi]
+[[pi]]
+=== pi
 
 pi(name:String, text:String)
 
@@ -115,17 +113,15 @@ Writes a PI node such as .
 * [.param-name]#name# [.param-type]#(String)# - Name of the pi.
 * [.param-name]#text# [.param-type]#(String)# - String to write out inside the pi.
 
-[#reset .anchor]##
-
-=== link:#reset[reset]
+[[reset]]
+=== reset
 
 reset()
 
 Resets the internal buffer if one wants to reuse the writer.
 
-[#start .anchor]##
-
-=== link:#start[start]
+[[start]]
+=== start
 
 start(name:String, attrs:Array, empty:Boolean)
 
@@ -140,9 +136,8 @@ Writes the a start element such as
 * [.param-name]#empty# [.param-type]#(Boolean)# - Optional empty state if the tag should end like +
 .
 
-[#text .anchor]##
-
-=== link:#text[text]
+[[text]]
+=== text
 
 text(text:String, raw:Boolean)
 

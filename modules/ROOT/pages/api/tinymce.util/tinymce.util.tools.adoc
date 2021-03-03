@@ -2,9 +2,8 @@
 
 This class contains various utlity functions. These are also exposed directly on the tinymce namespace.
 
-[#methods .anchor]##
-
-== link:#methods[Methods]
+[[methods]]
+== Methods
 
 [cols=",,",options="header",]
 |===
@@ -27,14 +26,14 @@ This class contains various utlity functions. These are also exposed directly on
 
 == Methods
 
-[#create .anchor]##
-
-=== link:#create[create]
+[[create]]
+=== create
 
 create(s:String, p:Object, root:Object)
 
 Creates a class, subclass or static singleton. More details on this method can be found in the Wiki.
 
+[[examples]]
 ==== Examples
 
 [source,prettyprint]
@@ -77,15 +76,15 @@ tinymce.create('static tinymce.somepackage.SomeSingletonClass', {
 });
 ----
 
+[[parameters]]
 ==== Parameters
 
 * [.param-name]#s# [.param-type]#(String)# - Class name, inheritance and prefix.
 * [.param-name]#p# [.param-type]#(Object)# - Collection of methods to add to the class.
 * [.param-name]#root# [.param-type]#(Object)# - Optional root object defaults to the global window object.
 
-[#createns .anchor]##
-
-=== link:#createns[createNS]
+[[createns]]
+=== createNS
 
 createNS(n:String, o:Object):Object
 
@@ -111,13 +110,14 @@ var tinymce.somepackage.subpackage.SomeSingleton = {
 * [.param-name]#n# [.param-type]#(String)# - Namespace to create for example a.b.c.d.
 * [.param-name]#o# [.param-type]#(Object)# - Optional object to add namespace to, defaults to window.
 
-==== Return value
+[[return-value]]
+==== Return value 
+anchor:returnvalue[historical anchor]
 
 * [.return-type]#Object# - New namespace object the last item in path.
 
-[#each .anchor]##
-
-=== link:#each[each]
+[[each]]
+=== each
 
 each(o:Object, cb:function, s:Object)
 
@@ -144,9 +144,8 @@ tinymce.each({a: 1, b: 2, c: 3], function(v, k) {
 * [.param-name]#cb# [.param-type]#(function)# - Callback function to execute for each item.
 * [.param-name]#s# [.param-type]#(Object)# - Optional scope to execute the callback in.
 
-[#explode .anchor]##
-
-=== link:#explode[explode]
+[[explode]]
+=== explode
 
 explode(s:string, d:string)
 
@@ -165,9 +164,8 @@ var arr = tinymce.explode('a, b,   c');
 * [.param-name]#s# [.param-type]#(string)# - String to split.
 * [.param-name]#d# [.param-type]#(string)# - Delimiter to split by.
 
-[#grep .anchor]##
-
-=== link:#grep[grep]
+[[grep]]
+=== grep
 
 grep(a:Array, f:function):Array
 
@@ -190,9 +188,8 @@ var items = tinymce.grep([1,2,3,4,5], function(v) {return v > 3;});
 
 * [.return-type]#Array# - New array with values imported and filtered based in input.
 
-[#inarray .anchor]##
-
-=== link:#inarray[inArray]
+[[inarray]]
+=== inArray
 
 inArray(item:any, arr:Array):Number
 
@@ -207,9 +204,8 @@ Returns an index of the item or -1 if item is not present in the array.
 
 * [.return-type]#Number# - index of the item or -1 if item was not found.
 
-[#is .anchor]##
-
-=== link:#is[is]
+[[is]]
+=== is
 
 is(obj:Object, type:string):Boolean
 
@@ -224,9 +220,8 @@ Checks if a object is of a specific type for example an array.
 
 * [.return-type]#Boolean# - true/false if the object is of the specified type.
 
-[#isarray .anchor]##
-
-=== link:#isarray[isArray]
+[[isarray]]
+=== isArray
 
 isArray(obj:Object):boolean
 
@@ -240,9 +235,8 @@ Returns true/false if the object is an array or not.
 
 * [.return-type]#boolean# - true/false state if the object is an array or not.
 
-[#makemap .anchor]##
-
-=== link:#makemap[makeMap]
+[[makemap]]
+=== makeMap
 
 makeMap(items:Array, delim:String, map:Object):Object
 
@@ -258,9 +252,8 @@ Makes a name/object map out of an array with names.
 
 * [.return-type]#Object# - Name/value map of items.
 
-[#map .anchor]##
-
-=== link:#map[map]
+[[map]]
+=== map
 
 map(array:Array, callback:function):Array
 
@@ -275,9 +268,8 @@ Creates a new array by the return value of each iteration function call. This en
 
 * [.return-type]#Array# - Array with new values based on function return values.
 
-[#resolve .anchor]##
-
-=== link:#resolve[resolve]
+[[resolve]]
+=== resolve
 
 resolve(n:String, o:Object):Object
 
@@ -300,9 +292,8 @@ var obj = tinymce.resolve('a.b.c.d');
 
 * [.return-type]#Object# - Last object in path or null if it couldn't be resolved.
 
-[#toarray .anchor]##
-
-=== link:#toarray[toArray]
+[[toarray]]
+=== toArray
 
 toArray(obj:Object):Array
 
@@ -316,9 +307,8 @@ Converts the specified object into a real JavaScript array.
 
 * [.return-type]#Array# - Array object based in input.
 
-[#trim .anchor]##
-
-=== link:#trim[trim]
+[[trim]]
+=== trim
 
 trim(s:String):String
 
@@ -332,9 +322,8 @@ Removes whitespace from the beginning and end of a string.
 
 * [.return-type]#String# - New string with removed whitespace.
 
-[#walk .anchor]##
-
-=== link:#walk[walk]
+[[walk]]
+=== walk
 
 walk(o:Object, f:function, n:String, s:String)
 

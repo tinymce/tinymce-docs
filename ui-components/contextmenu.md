@@ -44,17 +44,17 @@ type ContextMenuContents = string | ContextMenuItem | SeparatorMenuItemApi | Con
 type ContextMenuItem = {
   type?: 'item';
   text: string;
-  disabled?: boolean;
-  shortcut?: string;
   icon?: string;
+  shortcut?: string;
+  disabled?: boolean;
   onAction: () => void;
 }
 type ContextSubMenu = {
   type: 'submenu';
   text: string;
-  disabled?: boolean;
-  shortcut?: string;
   icon?: string;
+  shortcut?: string;
+  disabled?: boolean;
   getSubmenuItems: () => string | Array<ContextMenuContents>;
 }
 

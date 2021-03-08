@@ -45,12 +45,16 @@ type ContextMenuItem = {
   type?: 'item';
   text: string;
   icon?: string;
+  shortcut?: string;
+  disabled?: boolean;
   onAction: () => void;
 }
 type ContextSubMenu = {
   type: 'submenu';
   text: string;
   icon?: string;
+  shortcut?: string;
+  disabled?: boolean;
   getSubmenuItems: () => string | Array<ContextMenuContents>;
 }
 

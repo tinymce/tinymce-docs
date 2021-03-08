@@ -68,6 +68,8 @@ This option is only available for the first comment in a conversation. Once the 
 
 {{site.requires_5_8v}}
 
+> **NOTE**: This feature requires the [`tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve) or [`tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve) setting to be configured.
+
 This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
 
 1. Click on the ellipsis ![(ellipsis - 3 horizontal dots)]({{site.baseurl}}/images/icons/image-options.svg) icon above the comments box to expand the menu.

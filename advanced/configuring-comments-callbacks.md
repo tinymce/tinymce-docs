@@ -128,7 +128,7 @@ The `done` callback should accept the following object:
 
 This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation.
 
-The `tinycomments_resolve` function should asynchronously return a flag indicating whether the comment or comment thread was resolved using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_resolve` function should asynchronously return a flag indicating whether the comment thread was resolved using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_resolve` function is passed a (`req`) object as the first parameter, which contains the following key-value pair:
 

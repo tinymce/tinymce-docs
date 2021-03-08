@@ -8,6 +8,7 @@ keywords: sort tables advanced advtable premium
 
 {% assign pluginname = "Advanced Tables" %}
 {% assign plugincode = "advtable" %}
+{% assign plugincategory = "premium" %}
 {{site.requires_5_1v}}<br/>
 {{site.premiumplugin}}
 
@@ -42,10 +43,20 @@ tinymce.init({
 });
 ```
 
+## Configuration options
+
+The following configuration options affect the behavior of the {{pluginname}} plugin.
+
+{% include configuration/advtable-value-series.md %}
+
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 
-The Table plugin provides the following JavaScript commands.
+The Advanced Tables plugin provides the following JavaScript commands.
 
 {% include commands/advtable-cmds.md %}
+
+## Events
+
+For events applicable to the Advanced Tables plugin, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).

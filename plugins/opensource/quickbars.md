@@ -23,15 +23,16 @@ This plugin also adds three new toolbar buttons:
 
 > **Note**: The Quick Toolbars plugin provides the contextual toolbars found in the `inlite` theme from TinyMCE 4 and earlier.
 
+## Interactive example
+
+{% include live-demo.html id="quickbars" %}
+
 ## Basic setup
 
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: [ 'quickbars' ],
-  toolbar: false,
-  menubar: false,
-  inline: true
+  plugins: [ 'quickbars' ]
 });
 ```
 
@@ -45,9 +46,6 @@ The following examples show how to disable specific quick toolbars for editors w
 tinymce.init({
   selector: 'div.tinymce',
   plugins: [ 'quickbars' ],
-  toolbar: false,
-  menubar: false,
-  inline: true,
   quickbars_insert_toolbar: false
 });
 ```
@@ -58,9 +56,6 @@ tinymce.init({
 tinymce.init({
   selector: 'div.tinymce',
   plugins: [ 'quickbars' ],
-  toolbar: false,
-  menubar: false,
-  inline: true,
   quickbars_selection_toolbar: false
 });
 ```
@@ -73,9 +68,6 @@ tinymce.init({
 tinymce.init({
   selector: 'div.tinymce',
   plugins: [ 'quickbars' ],
-  toolbar: false,
-  menubar: false,
-  inline: true,
   quickbars_image_toolbar: false
 });
 ```

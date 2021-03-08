@@ -60,7 +60,8 @@ requires_5_3v: "> **Note**: This feature is only available for TinyMCE 5.3 and l
 requires_5_4v: "> **Note**: This feature is only available for TinyMCE 5.4 and later."
 requires_5_5v: "> **Note**: This feature is only available for TinyMCE 5.5 and later."
 requires_5_6v: "> **Note**: This feature is only available for TinyMCE 5.6 and later."
-requires_5_8v: "> **Note**: This feature is only available for TinyMCE 5.6 and later."
+requires_5_7v: "> **Note**: This feature is only available for TinyMCE 5.7 and later."
+requires_5_8v: "> **Note**: This feature is only available for TinyMCE 5.8 and later."
 
 requires_jsscwar_230v: "> **Note**: This feature is only available for TinyMCE self-hosted server-side components, version 2.3.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-hyperlinking/version`."
 deprecate_spellchecker: "> **Important**: The **free** TinyMCE Spell Checker plugin (`spellchecker`) was deprecated with the release of TinyMCE 5.4. For details, see [the free TinyMCE Spell Checker plugin deprecation notice](https://www.tiny.cloud/docs/release-notes/release-notes54/#thefreetinymcespellcheckerplugin)."
@@ -78,6 +79,8 @@ svgsNotSupported: "> **Note**: SVGs (Scalable Vector Graphics) are not supported
 predefinedIconsOnly: "Name of the icon to be displayed. Must correspond to an icon: in the [icon pack](https://www.tiny.cloud/docs/advanced/editor-icon-identifiers/), in a [custom icon pack](https://www.tiny.cloud/docs/advanced/creating-an-icon-pack/), or added using the [`addIcon` API](https://www.tiny.cloud/docs/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon)."
 
 liveDemoIframeCSSStyles: "'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'"
+
+primaryColor: "#1976D2"
 
 exclude:
   - Dockerfile

@@ -49,7 +49,7 @@ tinymce.init({
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
   noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
-  spellchecker_whitelist: ['Ephox', 'Moxiecode'],
+  spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
   tinycomments_mode: 'embedded',
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image imagetools table configurepermanentpen',
@@ -65,5 +65,6 @@ tinymce.init({
   mentions_fetch: mentions_fetch,
   mentions_menu_hover: mentions_menu_hover,
   mentions_menu_complete: mentions_menu_complete,
-  mentions_select: mentions_select
+  mentions_select: mentions_select,
+  mentions_item_type: 'profile'
 });

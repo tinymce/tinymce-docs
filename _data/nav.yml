@@ -133,6 +133,7 @@
     - url: "#content_css"
     - url: "#content_css_cors"
     - url: "#content_style"
+    - url: "#font_css"
     - url: "#inline_boundaries"
     - url: "#inline_boundaries_selector"
     - url: "#color_cols"
@@ -236,6 +237,8 @@
     - url: "advtable"
       pages:
       - url: "#advtable_value_series"
+      - url: "#Commands"
+      - url: "#Events"
     - url: "casechange"
     - url: "checklist"
     - url: "comments"
@@ -881,6 +884,18 @@
     - url: "#Deprecated features"
     - url: "#Known issues"
     - url: "#Upgrading to the latest version of TinyMCE 5"
+  - url: "release-notes57"
+    pages:
+    - url: "#Overview"
+    - url: "#New features"
+    - url: "#Enhancements"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Accompanying Premium Skins and Icon Packs changes"
+    - url: "#Accompanying Premium self-hosted server-side component changes"
+    - url: "#General bug fixes"
+    - url: "#Deprecated features"
+    - url: "#Known issues"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes562"
     pages:
     - url: "#Overview"
@@ -1046,6 +1061,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.7.0 February 10, 2021"
   - url: "#Version 5.6.2 December 8, 2020"
   - url: "#Version 5.6.1 November 25, 2020"
   - url: "#Version 5.6.0 November 18, 2020"

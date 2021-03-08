@@ -47,6 +47,7 @@ Use the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option with
 
 Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons) packs:
 
+- bootstrap
 - material
 - small
 - jam
@@ -69,14 +70,14 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 | Skin | Compatible Icon pack |
 | --- | --- |
-| material-classic | material, jam, small, thin |
-| material-outline | material, jam, small, thin |
-| bootstrap | material, jam, small, thin |
-| fabric | material, jam, small, thin |
-| borderless | material, jam, small, thin |
-| naked | material, jam, small, thin |
-| outside | material, jam, small, thin |
-| snow | material, jam, small, thin |
+| material-classic | bootstrap, material, jam, small, thin |
+| material-outline | bootstrap, material, jam, small, thin |
+| bootstrap | bootstrap, material, jam, small, thin |
+| fabric | bootstrap, material, jam, small, thin |
+| borderless | bootstrap, material, jam, small, thin |
+| naked | bootstrap, material, jam, small, thin |
+| outside | bootstrap, material, jam, small, thin |
+| snow | bootstrap, material, jam, small, thin |
 | small | jam, small |
 | jam | jam, small |
 

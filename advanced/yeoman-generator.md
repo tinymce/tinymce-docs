@@ -7,10 +7,10 @@ description: How to use the Yeoman generator to bootstrap a new TinyMCE plugin u
 keywords: webpack yeoman generator plugin tinymce
 ---
 
-{{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands. 
-
+{{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
 
 ## Install the generator
+
 The plugin generator is built with the project scaffolding tool [Yeoman](http://yeoman.io/). To get started install both `yo` (the yeoman command) and the generator with the following command:
 
 ```sh
@@ -20,8 +20,8 @@ npm install --global yo generator-tinymce
 Wait for the install to finish.
 
 ## Run the generator
-Start the generator with the following command:
 
+Start the generator with the following command:
 
 ```sh
 yo tinymce
@@ -29,21 +29,19 @@ yo tinymce
 
 You will then be guided through these questions:
 
-1. **Plugin name?**  
+1. **Plugin name:**
 The name of the plugin.
-2. **How do you want to write your plugin?**  
-With what technology do you want to write your plugin? ES2015 transpiled with Babel, Typescript or the module system used internally by {{site.companyname}} called Bolt.
-3. **Use yarn instead of npm?**  
-Use `yarn` instead of `npm` for a speedier install.
-4. **Skip git repo initialization?**  
+2. **Plugin description (optional):**
+An optional description of the plugin.
+3. **Initialize git repo?**
 Here you can skip the creation of a new repository for the plugin.
-5. **What’s your name?**  
+4. **What’s your name?**
 For license.
-6. **Your email? (optional)**  
+5. **Your email (optional):**
 For license.
-7. **Your website? (optional)**  
-For license
-8. **Which license do you want to use?**  
+6. **Your website (optional):**
+For license.
+7. **Which license do you want to use?**
 Choose the license for the plugin.
 
 Yeoman installs the needed dependencies, and the project is bootstrapped and ready. `cd` into the plugin directory and run the following command to start the auto-reloading development server:
@@ -52,17 +50,30 @@ Yeoman installs the needed dependencies, and the project is bootstrapped and rea
 npm start
 ```
 
-
 ## Create distribution ready build
 
-Run the following command as root once you have completed development of the plugin:
+Run the following command once you have completed development of the plugin:
 
 ```sh
-npm run build
+yarn build
 ```
 
-A `dist` directory will be created with a directory named the same as your plugin containing three files:
+A `dist` directory will be created, containing a sub-directory with the same name as the plugin. The sub-directory will contain the following files:
 
 * `plugin.js` - unminified plugin bundle
 * `plugin.min.js` - minified and uglified plugin bundle
-* `LICENSE` - the text file containing your license
+* `CHANGELOG.txt` - the text file containing your changes
+* `LICENSE.txt` - the text file containing your license
+* `version.txt` - the text file containing the version of your plugin
+
+For example, `yarn build` will generate the following output for a plugin named `my_plugin`:
+
+```sh
+dist/
+└── my_plugin/
+    ├── CHANGELOG.txt
+    ├── LICENSE.txt
+    ├── plugin.js
+    ├── plugin.min.js
+    └── version.txt
+```

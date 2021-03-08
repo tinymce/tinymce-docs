@@ -10,7 +10,7 @@ class: changelog
 {% capture changelog %}
 
 ## Version 1.4.0 (TBD)
-  * Added new standalone API functions: 'controls.pick', 'controls.browse', and 'controls.start'
+  * Added new standalone API functions: `controls.pick`, `controls.browse`, and `controls.start`.
 
 ## Version 1.3.0 (2019-06-03)
   * Added new standalone api functions pick, browse, start and upload.

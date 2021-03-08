@@ -52,7 +52,7 @@ var controls = tinydrive.controls.pick({
 
 ## `tinydrive.pick`
 
-The `tinydrive.pick` method enables you to pick files from {{site.cloudfilemanager}} and get the meta data of those files returned in a promise. For a complete list of available settings to pass into this method check the [Picker settings](#pickersettings) section in this page.
+The `tinydrive.pick` method allows users to pick files from {{site.cloudfilemanager}} and get the metadata of those files returned in a promise. For a complete list of available settings to pass into this method, see: [Picker settings](#pickersettings).
 
 ### File Picker Result Format
 
@@ -80,7 +80,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 
 ## `tinydrive.controls.pick`
 
-The `tinydrive.controls.pick` method enables you to pick files from {{site.cloudfilemanager}} and get the metadata of those files returned in a callback. For a complete list of available settings to pass into this method, see: [Picker settings](#pickersettings). A [Control Object](#controlobject) is returned for controlling the {{site.cloudfilemanager}} lifecycle, which is not handled by {{site.cloudfilemanager}} when using the `controls` APIs.
+The `tinydrive.controls.pick` method allows users to pick files from {{site.cloudfilemanager}} and get the metadata of those files returned in a callback. For a complete list of available settings to pass into this method, see: [Picker settings](#pickersettings). A [Control Object](#controlobject) is returned for controlling the {{site.cloudfilemanager}} lifecycle, which is not handled by {{site.cloudfilemanager}} when using the `controls` APIs.
 
 ### File picker result format
 
@@ -88,7 +88,7 @@ The `tinydrive.controls.pick` method will return the selected value to the provi
 
 #### name
 
-The name of the selected file. For example `my.jpg`.
+The name of the selected file. For example: `my.jpg`.
 
 #### size
 
@@ -116,7 +116,7 @@ The `tinydrive.browse` method enables you to browse your files stored in {{site.
 
 ## `tinydrive.controls.browse`
 
-The `tinydrive.controls.browse` method enables you to browse your files stored in {{site.cloudfilemanager}} but without the possibility to pick them to be inserted. This might be useful if you want to use {{site.cloudfilemanager}} as a generic file manager.  A [Control Object](#controlobject) is returned which control the {{site.cloudfilemanager}} lifecycle, which it no longer does by itself. For a complete list of available settings to pass in to this method see [Picker settings](#pickersettings).
+The `tinydrive.controls.browse` method allows users to browse the files stored in {{site.cloudfilemanager}} but without the possibility to pick them to be inserted. This functionality is useful when using {{site.cloudfilemanager}} as a generic file manager.  A [Control Object](#controlobject) is returned for controlling the {{site.cloudfilemanager}} lifecycle, which is not handled by {{site.cloudfilemanager}} when using the `controls` APIs. For a complete list of available settings to pass in to this method, see: [Picker settings](#pickersettings).
 
 ### Interactive example: Using `tinydrive.browse`
 
@@ -144,7 +144,7 @@ tinydrive.start({
 
 ## `tinydrive.controls.start`
 
-Start is similar to pick and browse, but users do not have a way of closing the dialog with this method. This can be useful when you want to launch {{site.cloudfilemanager}} from a URL where there is no application to insert the files into. This might be useful when you want to launch {{site.cloudfilemanager}} from a URL, but not as part of a bigger application. A [Control Object](#controlobject) is returned which control the {{site.cloudfilemanager}} lifecycle, which is not handled by {{site.cloudfilemanager}} when using the `controls` APIs. For a complete list of available settings to pass in to this method, see: [Picker settings](#pickersettings).
+Start is similar to pick and browse, but users do not have a way of closing the dialog with this method. This can be useful when launching {{site.cloudfilemanager}} from a URL where there is no application to insert the files into. A [Control Object](#controlobject) is returned for controlling the {{site.cloudfilemanager}} lifecycle, which is not handled by {{site.cloudfilemanager}} when using the `controls` APIs. For a complete list of available settings for this method, see: [Picker settings](#pickersettings).
 
 ### Example: Using `tinydrive.controls.start`
 

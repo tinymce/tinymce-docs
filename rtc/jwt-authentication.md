@@ -35,11 +35,13 @@ Claims are additional data that can be sent as part of the JWT token. The RTC JW
 
 ## Need help?
 
-{{ site.companyname }} recommends looking into how JWT works; some knowledge about JWT is necessary to implement RTC. This can be tricky, so if you need some help contact our support.
+{{ site.companyname }} recommends looking into how JWT works; some knowledge about JWT is necessary to implement RTC. This can be tricky, so if you need some help contact our support team.
 
 ## PHP token provider endpoint example
 
-This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be a private key generated at {{site.accountpage}}.
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager.
+
+`$privateKey` should be a private key generated at {{site.accountpage}}.
 
 ### jwt.php
 
@@ -94,6 +96,8 @@ tinymce.init({
 ## Node token provider endpoint example
 
 This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic NodeJS Express server and adding {{site.productname}}, see: [Integrating TinyMCE into an Express JS App]({{site.baseurl}}/integrations/expressjs/).
+
+`privateKey` should be a private key generated at {{site.accountpage}}.
 
 ### /jwt
 
@@ -150,7 +154,7 @@ tinymce.init({
 
 ### More configuration
 
-Once JWT authentication has been set up, the RTC plugin can be configured further using the options shown on the [RTC configuration options page]({{site.baseurl}}/rtc/configuration/). Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+Once JWT authentication has been set up, the RTC plugin can be configured further using the options shown on the [RTC configuration options page]({{site.baseurl}}/rtc/configuration/). Don't forget to change the example JWT claims (user id, user name) to get those from your system.
 
 If you want help [submit a support request]({{site.supporturl}}).
 

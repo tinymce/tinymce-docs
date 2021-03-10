@@ -18,51 +18,25 @@ The following options are required for the RTC plugin:
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
 * [`rtc_token_provider`](#rtc_token_provider)
 
-## `rtc_document_details_provider`
+## `rtc_document_id`
 
 The RTC plugin needs to know the identifier for the content before collaboration can begin. We call this the document ID.
 
-### Document ID
-
-Each document must have a unique ID. This ID is used to determine whether a client connecting to the server should retrieve the existing content or send new initial content. As such it is essential that items of content never share a Document ID.
+Each document must have a unique document ID. This ID is used to determine whether a client connecting to the server should retrieve the existing content or send new initial content. As such it is essential that items of content never share a Document ID.
 
 If your server stores a unique ID for each item of content that would be ideal to use as the document ID.
 
-**Type:** `Function`
+**Type:** `Object`
 
 **Required:** yes
 
-### Return fields for `rtc_document_details_provider`
-
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `documentId` | `string` | Unique identifier for the document. In a content management system, this could be the resource identifier for the document. |
-
-### Example Using the document details provider to return static document details
+### Example of providing document details
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
-  rtc_document_details_provider: () => {
-    return Promise.resolve({ documentId: "your-document-id" })
-  }
-})
-```
-
-### Example Using the document details provider to return document details from your server
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'rtc',
-  rtc_document_details_provider: () => {
-    return fetch('http://yourserver/getDocumentId', {
-      method: 'POST'
-    })
-    .then(response => response.json())
-    .then(documentId => ({ documentId });
-  }
+  rtc_document_id: "your-document-id"
 })
 ```
 
@@ -278,28 +252,6 @@ tinymce.init({
 })
 ```
 
-## `rtc_custom_user_details`
-
-The `rtc_custom_user_details` option allows extra details to be provided about the current user to the other connecting clients. This option should not be used to communicate sensitive information; the authenticity of user data cannot not guaranteed.
-
-This API is designed for status flags such as "is the user on a mobile device".
-
-This option accepts an object that must be serializable (`JSON.stringify` will be used to transmit it between clients).
-
-**Type:** `Object`
-
-**Required:** no
-
-### Example of providing custom user details
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'rtc',
-  rtc_custom_user_details: { onMobile: true, region: 'us' }
-})
-```
-
 ## `rtc_user_details_provider`
 
 By default, a user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) will be displayed as their name on remote carets shown to other collaborators.
@@ -353,62 +305,103 @@ tinymce.init({
 })
 ```
 
-## `rtc_user_connected`
+## `rtc_client_info`
 
-This option allows applications to show when a user enters the RTC session. In combination with [`rtc_user_disconnected`](#rtc_user_disconnected) this allows a list of connected users to be kept up to date.
+The `rtc_client_info` option allows status flags from the local editor environment to be provided to other connecting clients via the [`rtc_client_connected`](#rtc_client_connected) API, for example "is the user on a mobile device". This configuration should not be used to communicate sensitive information; the authenticity of the data cannot be guaranteed.
 
-There are 8 distinct caret colors (given a value from 1 to 8). If more than 8 people connect to a session, the numbers will be reused.
+This option accepts an object that must be serializable (`JSON.stringify` will be used to transmit it between clients).
 
-Along with the user ID and caret number this function a copy of the [`rtc_custom_user_details`](#rtc_custom_user_details) data from the user's editor configuration.
-
-> **Caution**: only `userId` is guaranteed to be authentic as it comes from the JWT. {{site.companyname}} suggests using `userId` to fetch the user data from your server to guarantee authenticity, and only using the custom fields for status flags.
-
-**Type:** `Function`
+**Type:** `Object`
 
 **Required:** no
 
-### Input fields for `rtc_user_connected`
-
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `userId` | `string` | The user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) |
-| `caretNumber` | `integer` | The user's caret number (1-8) |
-| `custom` | `object` | Additional data provided by [`rtc_custom_user_details`](#rtc_custom_user_details) when the user connected to the session. If none was provided, this will be an empty object. |
-
-### Example of providing custom user details for `rtc_user_connected`
+### Example of providing custom user details
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
-  rtc_user_connected: ({userId, caretNumber, custom}) => {
-    console.log('Connected', userId, caretNumber, custom);
+  rtc_client_details: { onMobile: true, region: 'us' }
+})
+```
+
+## `rtc_client_connected`
+
+This option allows applications to show when a user enters the RTC session. In combination with [`rtc_client_disconnected`](#rtc_client_disconnected) a user interface of connected users can be kept up to date.
+
+Only one `rtc_client_disconnected` event will be fired per client connection. Connecting to a session with multiple existing clients will fire separate `rtc_client_disconnected` events for each existing client.
+
+To help with generating a user interface for connected users, four pieces of data are provided:
+
+### User ID
+
+This is the user's unique ID (the `sub` field from their [JWT](#rtc_token_provider), which is also used for [`rtc_user_details_provider`](#rtc_user_details_provider)). Multiple connection events will be received with the same user ID if a user opens multiple sessions (for example on desktop and mobile).
+
+### User Details
+
+This is the object returned by [`rtc_user_details_provider`](#rtc_user_details_provider). RTC only uses the `fullName` field, but the entire object will be passed to `rtc_client_connected`.
+
+### Client ID
+
+This is a unique identifier, generated by the RTC protocol, that can be used to differentiate between the same user connecting multiple times.
+
+### Caret Number
+
+This number corresponds to one of [the 8 colours defined in TinyMCE CSS](https://github.com/tinymce/tinymce/blob/master/modules/oxide/src/less/theme/content/rtc/rtc.less#L1-L8). TinyMCE supports 8 distinct caret colors. If more than 8 clients connect to a session, the numbers will be reused.
+
+
+A custom skin is required to change these colours, and no more than 8 are supported in this release. For more information on creating a custom skin, see the [Customizing the Editor UI]({{site.baseurl}}/general-configuration-guide/customize-ui/) article.
+
+### Client information
+
+This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote user's editor configuration.
+
+> **Caution**: client information data has no authenticity guarantee as it comes from a remote object. {{site.companyname}} recommends only using the client information data for status flags, to obtain authentic information leverage the [`rtc_user_details_provider`](#rtc_user_details_provider) API via the `userDetails` property.
+
+**Type:** `Function`
+
+**Required:** no
+
+### Input fields for `rtc_client_connected`
+
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `userId` | `string` | The user's unique ID |
+| `userDetails` | `object` | User details object. If none is configured, this will be an empty object. |
+| `clientId` | `string` | The unique ID for this client connection |
+| `caretNumber` | `integer` | The user's caret number (1-8) |
+| `clientInfo` | `object` | Additional client information. If none was configured, this will be an empty object. |
+
+### Example of leveraging client connected information
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'rtc',
+  rtc_client_connected: ({userId, clientId, caretNumber, custom}) => {
+    console.log('Connected', userId, clientId, caretNumber, custom);
   }
 })
 ```
 
-## `rtc_user_disconnected`
+## `rtc_client_disconnected`
 
-In combination with [`rtc_user_connected`](#rtc_user_connected) this allows a list of connected users to be kept up to date.
+In combination with [`rtc_client_connected`](#rtc_client_connected) this allows a list of connected users to be kept up to date.
 
 **Type:** `Function`
 
 **Required:** no
 
-### Input fields for `rtc_user_disconnected`
+### Input fields for `rtc_client_disconnected`
 
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `userId` | `string` | The user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) |
-| `caretNumber` | `integer` | The user's caret number (1-8) |
-| `custom` | `object` | Additional data provided by [`rtc_custom_user_details`](#rtc_custom_user_details) when the user connected to the session. If none was provided, this will be an empty object. |
+The same as [`rtc_client_connected`](#rtc_client_connected)
 
-### Example of providing custom user details for `rtc_user_disconnected`
+### Example of leveraging client disconnected information
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
-  rtc_user_disconnected: ({userId, caretNumber, custom}) => console.log('Disconnected', userId, caretNumber);
+  rtc_client_disconnected: ({userId, clientId, caretNumber, custom}) => console.log('Disconnected', userId, caretNumber);
 })
 ```

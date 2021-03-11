@@ -14,15 +14,19 @@ keywords: rtc configuration
 
 The following options are required for the RTC plugin:
 
-* [`rtc_document_details_provider`](#rtc_document_details_provider)
+* [`rtc_document_id`](#rtc_document_id)
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
 * [`rtc_token_provider`](#rtc_token_provider)
 
 ## `rtc_document_id`
 
-The RTC plugin needs to know the identifier for the content before collaboration can begin. We call this the document ID.
+The RTC plugin needs an identifier for the content before collaboration can begin. We call this the document ID. Each item of content must have a unique document ID; this ID is used as a permanent reference for the content.
 
-Each document must have a unique document ID. This ID is used to determine whether a client connecting to the server should retrieve the existing content or send new initial content. As such it is essential that items of content never share a Document ID.
+> **Note**: It is essential that items of content never share a document ID.
+
+When a client connects, if the RTC protocol already knows about the document ID the most recent content version is sent to the client. If it is an unknown document ID the client uploads new initial content as the first version of that document ID.
+
+> **Note**: Due to this behaviour, if changes are made to content outside of an RTC session the document ID must also change. A future release may allow re-upload of initial content for an existing document ID.
 
 If your server stores a unique ID for each item of content that would be ideal to use as the document ID.
 
@@ -46,13 +50,10 @@ The RTC plugin requires an encryption key for end-to-end encryption. This key is
 
 To help generate a secure encryption key, three pieces of data are provided:
 
-### Document ID
-For more information about Document IDs, see [`rtc_document_details_provider`](#rtc_document_details_provider) above.
-
 ### New Key
-Document collaboration may be performed in multiple sessions, for example when a new version of TinyMCE is deployed it may be incompatible with existing sessions.
+Document collaboration may be performed in multiple sessions, for example when a new version of TinyMCE is deployed it may be incompatible with existing sessions. Only one session can be active at a time, but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
 
-In order to support key rotation a new key is requested when creating a new collaboration session with the server. This will always be `false` when connecting to an existing session.
+In order to support key rotation a new key is requested when creating a new collaboration session with the server. This will be `false` when connecting to an existing session.
 
 If keys are never rotated this can be ignored.
 
@@ -71,7 +72,6 @@ The key hint can be a key thumbprint, ID or other non-sensitive identifier that 
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The active document unique ID returned by [`rtc_document_details_provider`](#rtc_document_details_provider). |
 | `newKey` | `boolean` | Indicates whether this is a new key request or a connection to an existing session. |
 | `keyHint` | `string` or `undefined` | Key hint (e.g. salt data) provided by the client which opened the session, if connecting to an existing session. |
 
@@ -84,12 +84,12 @@ The key hint can be a key thumbprint, ID or other non-sensitive identifier that 
 
 ### Suggested ways to generate a secure encryption key
 
-> **Caution**: this is not guaranteed security advice, if data secrecy is important to you please consult a security professional.
+> **Caution**: these suggestions may not guarantee a secure connection. If data secrecy is important to you please consult a security professional.
 
 Encryption security is a trade off between the complexity of generating a key and the risk of compromise should the key be disclosed to an unknown third party. Here are some suggested ways to generate keys, in increasing order of safety:
 
 * Generate and store a fixed random key for each document in your database. Ignore `newKey` and `keyHint`.
-* Use a fixed random key for each document, and salt this key with random data to provide a unique key for each session. Return the salt data via `keyHint`.
+* Use a fixed random key for each document, and salt this key with random data to provide a unique key for each session. Pass the salt data via `keyHint`.
 * Store a global list of keys for your application, and use the document ID along with random data to salt the current key _on your server_ to produce a key unique to the document session. Do not return the salt data via `keyHint`; return an identifier that can be used to look up the unique key on the server.
 
 ### Example of providing static encryption details
@@ -172,9 +172,12 @@ tinymce.init({
 
 ## `rtc_snapshot`
 
-Real-time collaboration sessions don't typically have a save button and the session is constantly stored. Responsibility for content storage is left up to the integrator; a version number is provided to aid conflict resolution. For each document ID and version combination the snapshot content is guaranteed to be identical.
+Real-time collaboration sessions don't typically have a save button and the session is constantly stored. Responsibility for content storage is left up to the integrator; a version number is provided to aid with storage decisions.
+
+> **Note**: For any given document ID, the server guarantees the version number will only ever increase. It can be safely used for conflict resolution. For each document ID and version combination the snapshot content is guaranteed to be identical.
 
 The snapshot callback will be executed at regular intervals with access to the serialized editor content. The content is retrieved though a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
+
 
 **Type:** `Function`
 
@@ -184,8 +187,7 @@ The snapshot callback will be executed at regular intervals with access to the s
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The active document unique ID returned by [`rtc_document_details_provider`](#rtc_document_details_provider). |
-| `version` | `integer` | An increasing version number between 0 and 2147483648 (2<sup>31</sup>). |
+| `version` | `integer` | An increasing version number, specific to the current document ID, between 0 and 2147483648 (2<sup>31</sup>). |
 | `getContent()` | `string` | Function to execute to get the content for that particular version. |
 
 ### Example of getting content snapshots
@@ -203,22 +205,15 @@ tinymce.init({
 
 ## `rtc_initial_content_provider`
 
-By default, the initial editor content is retrieved from the target element using normal TinyMCE content loading. For more information on this, see the [TODO link to doc] documentation.
+By default, the initial editor content is retrieved from the target element using normal TinyMCE content loading.
 
-As an alternative to this, the RTC plugin provides a `rtc_initial_content_provider` option to allow the initial content be retrieved for a new RTC session. This also works better with the various {{site.productname}} [integrations]({{site.baseurl}}/integrations/) that don't provide access to the target element directly.
+As an alternative to this, the RTC plugin includes a `rtc_initial_content_provider` option to allow the initial content be retrieved for a new RTC session. This also works better with the various {{site.productname}} [integrations]({{site.baseurl}}/integrations/) that don't provide access to the target element directly.
 
 **Type:** `Function`
 
 **Required:** no
 
-### Input fields for `rtc_snapshot`
-
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `documentId` | `string` | The active document unique ID returned by [`rtc_document_details_provider`](#rtc_document_details_provider). |
-
-
-### Return fields for `rtc_initial_content_provider`
+### Fields to return from `rtc_initial_content_provider`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
@@ -254,11 +249,13 @@ tinymce.init({
 
 ## `rtc_user_details_provider`
 
-By default, a user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) will be displayed as their name on remote carets shown to other collaborators.
+By default, a user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) will be displayed as their name in remote caret tooltips.
 
-To display an alternative name on the caret the user ID needs to be resolved into user details that include the full user name. This resolution is done on the client side to avoid storing user details in the RTC server.
+To display a descriptive name on the caret the user ID needs to be resolved into user details that include the full user name. This resolution is done on each client to avoid sending any personal information through the RTC server.
 
-This provider function will be called for each connecting client. If this option is omitted, the user ID will be presented as the name for the remote user when a user hovers over the remote carets.
+Only the full name is required, but the complete object will be passed without alteration to [`rtc_client_connected`](#rtc_client_connected) so that callback does not need to repeat the lookup.
+
+This provider function will be called once for each connecting client. If this option is omitted, the user ID will be presented as the tooltip on remote carets. User details are not cached by the RTC plugin, so if a client reconnects this function will be called again.
 
 **Type:** `Function`
 
@@ -270,11 +267,12 @@ This provider function will be called for each connecting client. If this option
 |-------|:----:|-------------|
 | `userId` | `string` | User ID to resolve into user details. |
 
-### Return fields for `rtc_user_details_provider`
+### Fields to return from `rtc_user_details_provider`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `fullName` | `string` | Full name of user. For example: `"John Doe"`. |
+| any custom field | `any` | Extra user data for use in the [`rtc_client_connected`](#rtc_client_connected) api |
 
 ### Example of providing static user details
 
@@ -378,7 +376,7 @@ This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
-  rtc_client_connected: ({userId, clientId, caretNumber, custom}) => {
+  rtc_client_connected: ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
     console.log('Connected', userId, clientId, caretNumber, custom);
   }
 })
@@ -402,6 +400,6 @@ The same as [`rtc_client_connected`](#rtc_client_connected)
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
-  rtc_client_disconnected: ({userId, clientId, caretNumber, custom}) => console.log('Disconnected', userId, caretNumber);
+  rtc_client_disconnected: ({userId, userDetails, clientId, caretNumber, clientInfo}) => console.log('Disconnected', userId, clientId);
 })
 ```

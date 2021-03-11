@@ -16,11 +16,7 @@ This event is fired when a user enters the session.
 
 ### Event fields: `RtcUserConnected`
 
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `userId` | `string` | Unique user ID of the connecting user. |
-| `caretNumber` | `integer` | Caret number assigned to the user. |
-| `custom` | `object` | Custom data object provided by the `rtc_custom_user_details` option, sent from the connecting user client. |
+See the [`rtc_client_connected`]({{site.baseurl}}/rtc/configuration#rtc_client_connected) documentation for a full description of the event fields.
 
 ### Example of using the RtcUserConnected event
 
@@ -29,7 +25,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcUserConnected', ({userId, caretNumber, custom}) => {
+    editor.on('RtcUserConnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
       console.log(`User connected userId:${userId}`);
     });
   }
@@ -42,11 +38,7 @@ This event is fired when a user leaves the session.
 
 ### Event fields: `RtcUserDisconnected`
 
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `userId` | `string` | Unique user ID of the disconnecting user. |
-| `caretNumber` | `integer` | Caret number assigned to the user. |
-| `custom` | `object` | Custom data object provided by the `rtc_custom_user_details` option, sent from the disconnecting user client. |
+The same as [`RtcUserConnected`](#RtcUserConnected)
 
 ### Example of using the RtcUserDisconnected event
 
@@ -55,7 +47,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcUserDisconnected', ({userId, caretNumber, custom}) => {
+    editor.on('RtcUserDisconnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
       console.log(`User disconnected userId:${userId}`);
     });
   }

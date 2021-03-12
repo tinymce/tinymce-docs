@@ -190,11 +190,16 @@ As an alternative to this, the RTC plugin includes a `rtc_initial_content_provid
 
 **Required:** no
 
-### Fields to return from `rtc_initial_content_provider`
+### Input fields for `rtc_initial_content_provider`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `documentId` | `string` | The document ID configured via `rtc_document_id`
+
+### Fields to return from `rtc_initial_content_provider`
+
+| Field | Type | Description |
+|-------|:----:|-------------|
 | `content` | `string` | String containing the HTML to be imported into the editor when there is no active session. |
 
 ### Example of providing static content

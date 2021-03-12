@@ -21,21 +21,17 @@ The following example assumes you are familiar with integrating TinyMCE; if you 
 This example shows how to get the RTC plugin up and running using hardcoded values. For a production setup, the document ID and secret would be retrieved from your server. This example also assumes that a JWT provider endpoint exists at '/jwt'. For information on setting up a JWT endpoint, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
 
 ```js
-const yourDocumentId = 'unique-document-id';
-const yourSecretKey = 'a secret key';
 
 tinymce.init({
   selector: 'textarea',
-  plugin: 'rtc',
-  rtc_document_details_provider: () => Promise.resolve({ documentId: yourDocumentId }).
-  rtc_encryption_provider: ({documentId, sessionId}) => {
-    return Promise.resolve({ key: yourSecretKey });
-  },
-  rtc_token_provider: () => {
-    return fetch('/jwt', {
+  plugins: 'rtc',
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+  rtc_token_provider: () =>
+    fetch('/jwt', {
       method: 'POST'
-    });
-  },
+    })
+    .then(response => response.json()),
   rtc_snapshot: ({version, html}) => console.log(version, html)
 })
 ```

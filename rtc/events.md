@@ -10,44 +10,44 @@ keywords: rtc events
 
 > **Note**: These events are subject to change based on customer feedback.
 
-## `RtcUserConnected`
+## `RtcClientConnected`
 
 This event is fired when a user enters the session.
 
-### Event fields: `RtcUserConnected`
+### Event fields: `RtcClientConnected`
 
 See the [`rtc_client_connected`]({{site.baseurl}}/rtc/configuration#rtc_client_connected) documentation for a full description of the event fields.
 
-### Example of using the RtcUserConnected event
+### Example of using the RtcClientConnected event
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcUserConnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
+    editor.on('RtcClientConnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
       console.log(`User connected userId:${userId}`);
     });
   }
 })
 ```
 
-## `RtcUserDisconnected`
+## `RtcClientDisconnected`
 
 This event is fired when a user leaves the session.
 
-### Event fields: `RtcUserDisconnected`
+### Event fields: `RtcClientDisconnected`
 
-The same as [`RtcUserConnected`](#RtcUserConnected)
+The same as [`RtcClientConnected`](#RtcClientConnected)
 
-### Example of using the RtcUserDisconnected event
+### Example of using the RtcClientDisconnected event
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcUserDisconnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
+    editor.on('RtcClientDisconnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
       console.log(`User disconnected userId:${userId}`);
     });
   }

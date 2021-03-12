@@ -10,13 +10,21 @@ keywords: rtc configuration
 
 > **Note**: These configuration options are subject to change based on customer feedback. API compatibility is not guaranteed during beta.
 
-## Required options
+# Configuration style
 
-The following options are required for the RTC plugin:
+The RTC plugin primarily uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server.
+
+Function input parameters are provided as an object; this allows use of object destructuring syntax where unused fields can be omitted.
+
+# Required configuration
+
+The following options are the minimum required to use the RTC plugin:
 
 * [`rtc_document_id`](#rtc_document_id)
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
 * [`rtc_token_provider`](#rtc_token_provider)
+
+An example minimum configuration follows a description of each option.
 
 ## `rtc_document_id`
 
@@ -24,9 +32,9 @@ The RTC plugin needs an identifier for the content before collaboration can begi
 
 > **Note**: It is essential that items of content never share a document ID.
 
-When a client connects, if the RTC protocol already knows about the document ID the most recent content version is sent to the client. If it is an unknown document ID the client uploads new initial content as the first version of that document ID.
+When a client connects, if the RTC protocol already knows about the document ID the most recent content data is sent to the client. If it is an unknown document ID the client uploads new initial content as the first version of that document ID.
 
-> **Note**: Due to this behaviour, if changes are made to content outside of an RTC session the document ID must also change. A future release may allow re-upload of initial content for an existing document ID.
+> **Note**: Due to this behaviour, if changes are made to content outside of an RTC session the document ID must also change otherwise the content will be overwritten with the most recent RTC version. A future release may allow re-upload of initial content for an existing document ID.
 
 If your server stores a unique ID for each item of content that would be ideal to use as the document ID.
 
@@ -34,21 +42,15 @@ If your server stores a unique ID for each item of content that would be ideal t
 
 **Required:** yes
 
-### Example of providing document details
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'rtc',
-  rtc_document_id: "your-document-id"
-})
-```
-
 ## `rtc_encryption_provider`
 
 The RTC plugin requires an encryption key for end-to-end encryption. This key is not sent to the {{site.cloudname}} server; the {{site.productname}} RTC service cannot read the editor content. The encryption key is used by the browser's [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) API to encrypt and decrypt editor content on the client.
 
-To help generate a secure encryption key, three pieces of data are provided:
+Suggestions on how to generate a secure encryption key are available in the [RTC FAQ]({{site.baseurl}}/rtc/jwt-authentication/#HowdoIgenerateasecureencryptionkey). To help with this process, along with the document ID a "key hint" is available.
+
+### Document ID
+
+A copy of the document ID configuration.
 
 ### New Key
 Document collaboration may be performed in multiple sessions, for example when a new version of TinyMCE is deployed it may be incompatible with existing sessions. Only one session can be active at a time, but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
@@ -72,6 +74,7 @@ The key hint can be a key thumbprint, ID or other non-sensitive identifier that 
 
 | Field | Type | Description |
 |-------|:----:|-------------|
+| `documentId` | `string` | The document ID configured via `rtc_document_id`
 | `newKey` | `boolean` | Indicates whether this is a new key request or a connection to an existing session. |
 | `keyHint` | `string` or `undefined` | Key hint (e.g. salt data) provided by the client which opened the session, if connecting to an existing session. |
 
@@ -81,47 +84,6 @@ The key hint can be a key thumbprint, ID or other non-sensitive identifier that 
 |-------|:----:|:----:|-------------|
 | `key` | `string` | required | Encryption key that is used to locally encrypt operations. This key needs to be the same for all connecting clients on the same session. |
 | `keyHint` | `string` | optional | Optional key hint to provide to future clients to aid in key selection. It is only recorded when opening a new session. (unicode, max 256 characters) |
-
-### Suggested ways to generate a secure encryption key
-
-> **Caution**: these suggestions may not guarantee a secure connection. If data secrecy is important to you please consult a security professional.
-
-Encryption security is a trade off between the complexity of generating a key and the risk of compromise should the key be disclosed to an unknown third party. Here are some suggested ways to generate keys, in increasing order of safety:
-
-* Generate and store a fixed random key for each document in your database. Ignore `newKey` and `keyHint`.
-* Use a fixed random key for each document, and salt this key with random data to provide a unique key for each session. Pass the salt data via `keyHint`.
-* Store a global list of keys for your application, and use the document ID along with random data to salt the current key _on your server_ to produce a key unique to the document session. Do not return the salt data via `keyHint`; return an identifier that can be used to look up the unique key on the server.
-
-### Example of providing static encryption details
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'rtc',
-  rtc_encryption_provider: ({documentId, sessionId}) => {
-    return Promise.resolve({
-      key: "your shared encryption key"
-    });
-  }
-})
-```
-
-### Example of providing encryption details from your server
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'rtc',
-  rtc_encryption_provider: ({documentId, sessionId, keyHint}) => {
-    return fetch('http://yourserver/getKey', {
-      method: 'POST',
-      body: JSON.stringify({ documentId, sessionId, keyId: keyHint })
-    })
-    .then(response => response.json())
-    .then(({keyId, secret}) => ({ key: secret, keyHint: keyId });
-  }
-})
-```
 
 ## `rtc_token_provider`
 
@@ -144,31 +106,45 @@ The RTC plugin and service uses [JWT]({{site.baseurl}}/rtc/jwt-authentication/) 
 |-------|:----:|-------------|
 | `token` | `string` | A generated JWT token. This token should be signed with a private key as described in [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/). |
 
-### Example of providing a static JWT token
+## Minimum configuration example
+
+### Static configuration
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
+  rtc_document_id: "your-document-id",
+  rtc_encryption_provider: () => Promise.resolve({ key: "your shared encryption key" }),
   rtc_token_provider: () => Promise.resolve({ token: "your-jwt-token" })
 })
 ```
 
-### Example of providing a JWT token from your server
+### Dynamic configuration that fetches encryption keys and tokens from a server
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
-  rtc_token_provider: () => {
-    return fetch('http://yourserver/getJwtToken', {
-      method: 'POST'
+  rtc_document_id: "your-document-id",
+  rtc_encryption_provider: ({documentId, newKey, keyHint}) =>
+    fetch('/getKey', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({ documentId, newKey, keyId: keyHint })
     })
     .then(response => response.json())
-    .then(token => ({ token });
-  }
+    .then(({keyId, secret}) => ({ key: secret, keyHint: keyId }),
+  rtc_token_provider: () =>
+    fetch('/getJwtToken', {
+      method: 'POST',
+      credentials: 'include'
+    })
+    .then(response => response.json()),
 })
 ```
+
+# Optional configuration
 
 ## `rtc_snapshot`
 
@@ -176,7 +152,7 @@ Real-time collaboration sessions don't typically have a save button and the sess
 
 > **Note**: For any given document ID, the server guarantees the version number will only ever increase. It can be safely used for conflict resolution. For each document ID and version combination the snapshot content is guaranteed to be identical.
 
-The snapshot callback will be executed at regular intervals with access to the serialized editor content. The content is retrieved though a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
+The snapshot callback will be executed at regular intervals with access to the serialized editor content. The content is retrieved through a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
 
 
 **Type:** `Function`
@@ -187,6 +163,7 @@ The snapshot callback will be executed at regular intervals with access to the s
 
 | Field | Type | Description |
 |-------|:----:|-------------|
+| `documentId` | `string` | The document ID configured via `rtc_document_id`
 | `version` | `integer` | An increasing version number, specific to the current document ID, between 0 and 2147483648 (2<sup>31</sup>). |
 | `getContent()` | `string` | Function to execute to get the content for that particular version. |
 
@@ -217,6 +194,7 @@ As an alternative to this, the RTC plugin includes a `rtc_initial_content_provid
 
 | Field | Type | Description |
 |-------|:----:|-------------|
+| `documentId` | `string` | The document ID configured via `rtc_document_id`
 | `content` | `string` | String containing the HTML to be imported into the editor when there is no active session. |
 
 ### Example of providing static content
@@ -236,7 +214,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
   rtc_initial_content_provider: ({documentId}) => {
-    return fetch(`http://yourserver/getContent/${documentId}`, {
+    return fetch(`/getContent/${documentId}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -253,9 +231,9 @@ By default, a user's unique ID (the `sub` field from their [JWT](#rtc_token_prov
 
 To display a descriptive name on the caret the user ID needs to be resolved into user details that include the full user name. This resolution is done on each client to avoid sending any personal information through the RTC server.
 
-Only the full name is required, but the complete object will be passed without alteration to [`rtc_client_connected`](#rtc_client_connected) so that callback does not need to repeat the lookup.
+Only the full name is required, but the complete object will be cloned and stored within the RTC caret information. It will then be included with both [`rtc_client_connected`](#rtc_client_connected) and [`rtc_client_disconnected`](#rtc_client_disconnected) callbacks so that the lookup does not need to be repeated.
 
-This provider function will be called once for each connecting client. If this option is omitted, the user ID will be presented as the tooltip on remote carets. User details are not cached by the RTC plugin, so if a client reconnects this function will be called again.
+This provider function will be called once for each connecting client. Clients that reconnect may trigger a new call to the provider function rather than using cached data.
 
 **Type:** `Function`
 
@@ -291,7 +269,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
   rtc_user_details_provider: ({userId}) => {
-    return fetch('http://yourserver/getUserDetails', {
+    return fetch('/getUserDetails', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -313,7 +291,7 @@ This option accepts an object that must be serializable (`JSON.stringify` will b
 
 **Required:** no
 
-### Example of providing custom user details
+### Example of custom user details
 
 ```js
 tinymce.init({
@@ -337,7 +315,7 @@ This is the user's unique ID (the `sub` field from their [JWT](#rtc_token_provid
 
 ### User Details
 
-This is the object returned by [`rtc_user_details_provider`](#rtc_user_details_provider). RTC only uses the `fullName` field, but the entire object will be passed to `rtc_client_connected`.
+This is a copy of the object returned by [`rtc_user_details_provider`](#rtc_user_details_provider). RTC only uses the `fullName` field, but the entire object will be passed to `rtc_client_connected`.
 
 ### Client ID
 
@@ -370,18 +348,6 @@ This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote
 | `caretNumber` | `integer` | The user's caret number (1-8) |
 | `clientInfo` | `object` | Additional client information. If none was configured, this will be an empty object. |
 
-### Example of leveraging client connected information
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'rtc',
-  rtc_client_connected: ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
-    console.log('Connected', userId, clientId, caretNumber, custom);
-  }
-})
-```
-
 ## `rtc_client_disconnected`
 
 In combination with [`rtc_client_connected`](#rtc_client_connected) this allows a list of connected users to be kept up to date.
@@ -394,12 +360,16 @@ In combination with [`rtc_client_connected`](#rtc_client_connected) this allows 
 
 The same as [`rtc_client_connected`](#rtc_client_connected)
 
-### Example of leveraging client disconnected information
+## Example leveraging client connect and disconnect events with custom user details
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
-  rtc_client_disconnected: ({userId, userDetails, clientId, caretNumber, clientInfo}) => console.log('Disconnected', userId, clientId);
+  rtc_user_details_provider: ({userId}) => Promise.resolve({ fullName: "John Doe", jobTitle: "Engineer" }),
+  rtc_client_connected: ({userDetails: {fullName, jobTitle}, caretNumber}) =>
+    console.log(`${jobTitle} ${fullName} connected with caret number ${caretNumber}`)
+  rtc_client_disconnected: ({userId, clientId, caretNumber, clientInfo}) =>
+    console.log('Disconnected', userId, clientId, caretNumber, clientInfo)
 })
 ```

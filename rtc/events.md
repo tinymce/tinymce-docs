@@ -38,7 +38,7 @@ This event is fired when a user leaves the session.
 
 ### Event fields: `RtcClientDisconnected`
 
-The same as [`RtcClientConnected`](#RtcClientConnected)
+The same as [`RtcClientConnected`](#rtcclientconnected)
 
 ### Example of using the RtcClientDisconnected event
 

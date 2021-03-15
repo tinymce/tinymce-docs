@@ -8,6 +8,8 @@ keywords: rtc faq trouble troubleshoot troubleshooting bug
 
 {% include misc/beta-note-rtc.md %}
 
+This documentation is in progress. Please contact us with any suggestions you think should be here.
+
 ## FAQ
 
 ### Why is only the `sub` field required for JWT? Why not include full name and email as well?
@@ -62,8 +64,6 @@ Care must be taken to avoid losing encryption keys to this race condition.
 
 
 ## Troubleshooting
-
-This documentation is in progress. Please contact us with any suggestions you think should be here.
 
 ### Server reports JWT authentication was issued in the future
 

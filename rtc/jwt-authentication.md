@@ -35,6 +35,16 @@ The `sub` field is used to identify users to avoid sending sensitive or identity
 
 {% include auth/jwt-endpoint-setup-procedure.md %}
 
+## Generating a secure encryption key
+
+> **Caution**: These suggestions may not guarantee a secure connection. If data secrecy is important to you please consult a security professional.
+
+Encryption security is a trade off between the complexity of generating a key and the risk of compromise should the key be disclosed to an unknown third party. Here are some suggested ways to generate keys, in descending order of safety:
+
+* Store a global list of keys for your application, and use the document ID along with random data to salt the current key _on your server_ to produce a key unique to the document session. Do not return the salt data to `keyHint`; return an identifier that can be used to look up the unique key on the server.
+* Use a fixed random key for each document, and generate random salt data to provide a unique key for each session. Pass the salt data to `keyHint`.
+* Generate and store a fixed random key for each document in your database. Ignore the `keyHint` input field and return a fixed arbitrary `keyHint` value.
+
 ## Need help?
 
 {{ site.companyname }} recommends looking into how JWT works; some knowledge about JWT is necessary to implement RTC. This can be tricky, so if you need some help contact our support team.

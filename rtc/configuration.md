@@ -24,7 +24,7 @@ The following options are the minimum required to use the RTC plugin:
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
 * [`rtc_token_provider`](#rtc_token_provider)
 
-An example minimum configuration follows a description of each option.
+An [example minimum configuration](#minimumconfigurationexample) follows a description of each option.
 
 ### `rtc_document_id`
 
@@ -48,10 +48,10 @@ A key is required when the client needs to:
 1. encrypt new data in the collaboration session
 2. read previously written data from the collaboration session
 
-Suggestions on how to generate a secure encryption key and participate in key rotation are available in the [RTC FAQ]({{site.baseurl}}/rtc/faq/#HowdoIgenerateasecureencryptionkey). To help with this process a customisable "key hint" is available.
+Suggestions on how to generate a secure encryption key and participate in key rotation are available in the [RTC FAQ]({{site.baseurl}}/rtc/faq/#howdoigenerateasecureencryptionkey). To help with this process a customisable "key hint" is available.
 
 #### Key Hint
-If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see the [How do I generate a secure encryption key?]({{site.baseurl}}/rtc/faq/#HowdoIgenerateasecureencryptionkey) FAQ entry.
+If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see the [How do I generate a secure encryption key?]({{site.baseurl}}/rtc/faq/#howdoigenerateasecureencryptionkey) FAQ entry.
 
 **Type:** `Function`
 
@@ -62,7 +62,7 @@ If keys are never rotated this can be ignored. For advice on how to use the key 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `documentId` | `string` | The document ID configured via `rtc_document_id`
-| `keyHint` | `string` or `null` | Key hint (e.g. salt data) provided by the client which opened the session, if connecting to an existing session. |
+| `keyHint` | `string` or `null` | Key hint returned by the client which opened the session, if connecting to an existing session. |
 
 #### Return fields for `rtc_encryption_provider`
 
@@ -282,7 +282,7 @@ This option accepts an object that must be serializable (`JSON.stringify` will b
 
 **Required:** no
 
-#### Example of custom user details
+#### Example of client status information
 
 ```js
 tinymce.init({
@@ -296,17 +296,17 @@ tinymce.init({
 
 This option allows applications to show when a user enters the RTC session. In combination with [`rtc_client_disconnected`](#rtc_client_disconnected) a user interface of connected users can be kept up to date.
 
-Only one `rtc_client_disconnected` event will be fired per client connection. Connecting to a session with multiple existing clients will fire separate `rtc_client_disconnected` events for each existing client.
+Only one `rtc_client_connected` event will be fired per client connection. Connecting to a session with multiple existing clients will fire separate `rtc_client_connected` events for each existing client.
 
 To help with generating a user interface for connected users, four pieces of data are provided:
 
 #### User ID
 
-This is the user's unique ID (the `sub` field from their [JWT](#rtc_token_provider), which is also used for [`rtc_user_details_provider`](#rtc_user_details_provider)). Multiple connection events will be received with the same user ID if a user opens multiple sessions (for example on desktop and mobile).
+This is the user's unique ID (the `sub` field from their [JWT](({{site.baseurl}}/rtc/jwt-authentication/)), which is also used for [`rtc_user_details_provider`](#rtc_user_details_provider)). Multiple connection events will be received with the same user ID if a user opens multiple sessions (for example on desktop and mobile).
 
 #### User Details
 
-This is a copy of the object returned by [`rtc_user_details_provider`](#rtc_user_details_provider). RTC only uses the `fullName` field, but the entire object will be passed to `rtc_client_connected`.
+This is a copy of the object returned by [`rtc_user_details_provider`](#rtc_user_details_provider). RTC only uses the `fullName` field, but the entire object will be cloned and passed to `rtc_client_connected`.
 
 #### Client ID
 
@@ -323,7 +323,7 @@ A custom skin is required to change these colours, and no more than 8 are suppor
 
 This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote user's editor configuration.
 
-> **Caution**: client information data has no authenticity guarantee as it comes from a remote object. {{site.companyname}} recommends only using the client information data for status flags, to obtain authentic information leverage the [`rtc_user_details_provider`](#rtc_user_details_provider) API via the `userDetails` property.
+> **Caution**: client information data has no authenticity guarantee as it comes from a remote object. {{site.companyname}} recommends only using the client information data for status flags, to obtain authentic information leverage the [`rtc_user_details_provider`](#rtc_user_details_provider) API via the user details field.
 
 **Type:** `Function`
 

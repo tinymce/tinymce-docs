@@ -48,10 +48,11 @@ A key is required when the client needs to:
 1. encrypt new data in the collaboration session
 2. read previously written data from the collaboration session
 
-Suggestions on how to generate a secure encryption key and participate in key rotation are available in the [RTC FAQ]({{site.baseurl}}/rtc/faq/#howdoigenerateasecureencryptionkey). To help with this process a customisable "key hint" is available.
+Suggestions on how to generate a secure encryption key and participate in key rotation are available in [Generating a secure encryption key]({{site.baseurl}}/rtc/jwt-authentication/#generatingasecureencryptionkey). To help with this process a customisable "key hint" is available.
 
 #### Key Hint
-If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see the [How do I generate a secure encryption key?]({{site.baseurl}}/rtc/faq/#howdoigenerateasecureencryptionkey) FAQ entry.
+
+If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see [Generating a secure encryption key]({{site.baseurl}}/rtc/jwt-authentication/#generatingasecureencryptionkey).
 
 **Type:** `Function`
 

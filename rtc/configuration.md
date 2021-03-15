@@ -10,13 +10,13 @@ keywords: rtc configuration
 
 > **Note**: These configuration options are subject to change based on customer feedback. API compatibility is not guaranteed during beta.
 
-# Configuration style
+## Configuration style
 
 The RTC plugin primarily uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server.
 
 Function input parameters are provided as an object; this allows use of object destructuring syntax where unused fields can be omitted.
 
-# Required configuration
+## Required configuration
 
 The following options are the minimum required to use the RTC plugin:
 
@@ -26,66 +26,52 @@ The following options are the minimum required to use the RTC plugin:
 
 An example minimum configuration follows a description of each option.
 
-## `rtc_document_id`
+### `rtc_document_id`
 
-The RTC plugin needs an identifier for the content before collaboration can begin. We call this the document ID. Each item of content must have a unique document ID; this ID is used as a permanent reference for the content.
+The RTC plugin needs an identifier for the content before collaboration can begin. We call this the document ID. The identifier contents are completely up to the integrator, but each item of content must have a unique document ID; this ID is used by the server as a permanent reference for the content. If your server stores a unique ID for each item of content that would be ideal to use as the document ID.
 
-> **Note**: It is essential that items of content never share a document ID.
+> **Caution**: It is essential that items of content never share a document ID.
 
-When a client connects, if the RTC protocol already knows about the document ID the most recent content data is sent to the client. If it is an unknown document ID the client uploads new initial content as the first version of that document ID.
+When a client connects, if the RTC server already knows about the document ID the most recent content data is sent to the client. If it is an unknown document ID the client uploads new initial content as the first version of that document ID.
 
-> **Note**: Due to this behaviour, if changes are made to content outside of an RTC session the document ID must also change otherwise the content will be overwritten with the most recent RTC version. A future release may allow re-upload of initial content for an existing document ID.
-
-If your server stores a unique ID for each item of content that would be ideal to use as the document ID.
+> **Note**: Due to this behaviour, if changes are made to content outside of an RTC session a new document ID must be generated otherwise those changes will be overwritten by the RTC server content during the next collaboration session. A future release may allow re-upload of initial content for an existing document ID.
 
 **Type:** `Object`
 
 **Required:** yes
 
-## `rtc_encryption_provider`
+### `rtc_encryption_provider`
 
 The RTC plugin requires an encryption key for end-to-end encryption. This key is not sent to the {{site.cloudname}} server; the {{site.productname}} RTC service cannot read the editor content. The encryption key is used by the browser's [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) API to encrypt and decrypt editor content on the client.
 
-Suggestions on how to generate a secure encryption key are available in the [RTC FAQ]({{site.baseurl}}/rtc/jwt-authentication/#HowdoIgenerateasecureencryptionkey). To help with this process, along with the document ID a "key hint" is available.
+A key is required when the client needs to:
+1. encrypt new data in the collaboration session
+2. read previously written data from the collaboration session
 
-### Document ID
+Suggestions on how to generate a secure encryption key and participate in key rotation are available in the [RTC FAQ]({{site.baseurl}}/rtc/faq/#HowdoIgenerateasecureencryptionkey). To help with this process a customisable "key hint" is available.
 
-A copy of the document ID configuration.
-
-### New Key
-Document collaboration may be performed in multiple sessions, for example when a new version of TinyMCE is deployed it may be incompatible with existing sessions. Only one session can be active at a time, but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
-
-In order to support key rotation a new key is requested when creating a new collaboration session with the server. This will be `false` when connecting to an existing session.
-
-If keys are never rotated this can be ignored.
-
-### Key Hint
-In order to support key rotation, a key hint can be provided along with new encryption keys. Future connections to the collaboration session will then be provided with a copy of the key hint to ensure they are able to generate a matching key.
-
-> **Caution**: the key hint is transmitted in plain text; do not store secret information in the key hint.
-
-The key hint can be a key thumbprint, ID or other non-sensitive identifier that will help select the key e.g. a timestamp. It is only recorded when opening a new session.
+#### Key Hint
+If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see the [How do I generate a secure encryption key?]({{site.baseurl}}/rtc/faq/#HowdoIgenerateasecureencryptionkey) FAQ entry.
 
 **Type:** `Function`
 
 **Required:** yes
 
-### Input fields for `rtc_encryption_provider`
+#### Input fields for `rtc_encryption_provider`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `documentId` | `string` | The document ID configured via `rtc_document_id`
-| `newKey` | `boolean` | Indicates whether this is a new key request or a connection to an existing session. |
-| `keyHint` | `string` or `undefined` | Key hint (e.g. salt data) provided by the client which opened the session, if connecting to an existing session. |
+| `keyHint` | `string` or `null` | Key hint (e.g. salt data) provided by the client which opened the session, if connecting to an existing session. |
 
-### Return fields for `rtc_encryption_provider`
+#### Return fields for `rtc_encryption_provider`
 
-| Field | Type | Required? | Description |
-|-------|:----:|:----:|-------------|
-| `key` | `string` | required | Encryption key that is used to locally encrypt operations. This key needs to be the same for all connecting clients on the same session. |
-| `keyHint` | `string` | optional | Optional key hint to provide to future clients to aid in key selection. It is only recorded when opening a new session. (unicode, max 256 characters) |
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `key` | `string` | Encryption key that is used to locally encrypt operations. This key needs to be the same for all connecting clients on the same session. |
+| `keyHint` | `string` | Key hint to provide to future clients to aid in key selection. If keys are never rotated, it can be a fixed arbitrary value. It is only recorded when the input `keyHint` is `null`. (unicode, max 256 characters) |
 
-## `rtc_token_provider`
+### `rtc_token_provider`
 
 The RTC plugin and service uses [JWT]({{site.baseurl}}/rtc/jwt-authentication/) to authenticate the user. The user's token should include a unique user ID and a relative expiration time. This provider function will be called multiple times to refresh the token if it's about to expire. For production usage, we recommend the token provider be a dynamic request that produces a new JWT token with an updated `exp` claim.
 
@@ -93,34 +79,34 @@ The RTC plugin and service uses [JWT]({{site.baseurl}}/rtc/jwt-authentication/) 
 
 **Required:** yes
 
-### Required JWT claims
+#### Required JWT claims
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `sub` | `string` | The unique user ID (If `sub` is the same for two clients, the server will trust them as if they are the same user). |
 | `exp` | `integer` | The timestamp when the token expires. |
 
-### Return fields for `rtc_token_provider`
+#### Return fields for `rtc_token_provider`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `token` | `string` | A generated JWT token. This token should be signed with a private key as described in [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/). |
 
-## Minimum configuration example
+### Minimum configuration example
 
-### Static configuration
+#### Static configuration
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
   rtc_document_id: "your-document-id",
-  rtc_encryption_provider: () => Promise.resolve({ key: "your shared encryption key" }),
+  rtc_encryption_provider: () => Promise.resolve({ key: "your shared encryption key", keyHint: "not used" }),
   rtc_token_provider: () => Promise.resolve({ token: "your-jwt-token" })
 })
 ```
 
-### Dynamic configuration that fetches encryption keys and tokens from a server
+#### Dynamic configuration that fetches encryption keys and tokens from a server
 
 ```js
 tinymce.init({
@@ -144,9 +130,9 @@ tinymce.init({
 })
 ```
 
-# Optional configuration
+## Optional configuration
 
-## `rtc_snapshot`
+### `rtc_snapshot`
 
 Real-time collaboration sessions don't typically have a save button and the session is constantly stored. Responsibility for content storage is left up to the integrator; a version number is provided to aid with storage decisions.
 
@@ -159,7 +145,7 @@ The snapshot callback will be executed at regular intervals with access to the s
 
 **Required:** no
 
-### Input fields for `rtc_snapshot`
+#### Input fields for `rtc_snapshot`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
@@ -167,7 +153,7 @@ The snapshot callback will be executed at regular intervals with access to the s
 | `version` | `integer` | An increasing version number, specific to the current document ID, between 0 and 2147483648 (2<sup>31</sup>). |
 | `getContent()` | `string` | Function to execute to get the content for that particular version. |
 
-### Example of getting content snapshots
+#### Example of getting content snapshots
 
 ```js
 tinymce.init({
@@ -180,7 +166,7 @@ tinymce.init({
 }
 ```
 
-## `rtc_initial_content_provider`
+### `rtc_initial_content_provider`
 
 By default, the initial editor content is retrieved from the target element using normal TinyMCE content loading.
 
@@ -202,7 +188,7 @@ As an alternative to this, the RTC plugin includes a `rtc_initial_content_provid
 |-------|:----:|-------------|
 | `content` | `string` | String containing the HTML to be imported into the editor when there is no active session. |
 
-### Example of providing static content
+#### Example of providing static content
 
 ```js
 tinymce.init({
@@ -212,7 +198,7 @@ tinymce.init({
 })
 ```
 
-### Example of providing dynamic content from the server
+#### Example of providing dynamic content from the server
 
 ```js
 tinymce.init({
@@ -230,7 +216,7 @@ tinymce.init({
 })
 ```
 
-## `rtc_user_details_provider`
+### `rtc_user_details_provider`
 
 By default, a user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) will be displayed as their name in remote caret tooltips.
 
@@ -244,20 +230,20 @@ This provider function will be called once for each connecting client. Clients t
 
 **Required:** no
 
-### Input fields for `rtc_user_details_provider`
+#### Input fields for `rtc_user_details_provider`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `userId` | `string` | User ID to resolve into user details. |
 
-### Fields to return from `rtc_user_details_provider`
+#### Fields to return from `rtc_user_details_provider`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `fullName` | `string` | Full name of user. For example: `"John Doe"`. |
 | any custom field | `any` | Extra user data for use in the [`rtc_client_connected`](#rtc_client_connected) api |
 
-### Example of providing static user details
+#### Example of providing static user details
 
 ```js
 tinymce.init({
@@ -267,7 +253,7 @@ tinymce.init({
 })
 ```
 
-### Example of providing user details from your server
+#### Example of providing user details from your server
 
 ```js
 tinymce.init({
@@ -286,7 +272,7 @@ tinymce.init({
 })
 ```
 
-## `rtc_client_info`
+### `rtc_client_info`
 
 The `rtc_client_info` option allows status flags from the local editor environment to be provided to other connecting clients via the [`rtc_client_connected`](#rtc_client_connected) API, for example "is the user on a mobile device". This configuration should not be used to communicate sensitive information; the authenticity of the data cannot be guaranteed.
 
@@ -296,7 +282,7 @@ This option accepts an object that must be serializable (`JSON.stringify` will b
 
 **Required:** no
 
-### Example of custom user details
+#### Example of custom user details
 
 ```js
 tinymce.init({
@@ -306,7 +292,7 @@ tinymce.init({
 })
 ```
 
-## `rtc_client_connected`
+### `rtc_client_connected`
 
 This option allows applications to show when a user enters the RTC session. In combination with [`rtc_client_disconnected`](#rtc_client_disconnected) a user interface of connected users can be kept up to date.
 
@@ -314,26 +300,26 @@ Only one `rtc_client_disconnected` event will be fired per client connection. Co
 
 To help with generating a user interface for connected users, four pieces of data are provided:
 
-### User ID
+#### User ID
 
 This is the user's unique ID (the `sub` field from their [JWT](#rtc_token_provider), which is also used for [`rtc_user_details_provider`](#rtc_user_details_provider)). Multiple connection events will be received with the same user ID if a user opens multiple sessions (for example on desktop and mobile).
 
-### User Details
+#### User Details
 
 This is a copy of the object returned by [`rtc_user_details_provider`](#rtc_user_details_provider). RTC only uses the `fullName` field, but the entire object will be passed to `rtc_client_connected`.
 
-### Client ID
+#### Client ID
 
 This is a unique identifier, generated by the RTC protocol, that can be used to differentiate between the same user connecting multiple times.
 
-### Caret Number
+#### Caret Number
 
 This number corresponds to one of [the 8 colours defined in TinyMCE CSS](https://github.com/tinymce/tinymce/blob/master/modules/oxide/src/less/theme/content/rtc/rtc.less#L1-L8). TinyMCE supports 8 distinct caret colors. If more than 8 clients connect to a session, the numbers will be reused.
 
 
 A custom skin is required to change these colours, and no more than 8 are supported in this release. For more information on creating a custom skin, see the [Customizing the Editor UI]({{site.baseurl}}/general-configuration-guide/customize-ui/) article.
 
-### Client information
+#### Client information
 
 This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote user's editor configuration.
 
@@ -343,7 +329,7 @@ This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote
 
 **Required:** no
 
-### Input fields for `rtc_client_connected`
+#### Input fields for `rtc_client_connected`
 
 | Field | Type | Description |
 |-------|:----:|-------------|
@@ -353,7 +339,7 @@ This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote
 | `caretNumber` | `integer` | The user's caret number (1-8) |
 | `clientInfo` | `object` | Additional client information. If none was configured, this will be an empty object. |
 
-## `rtc_client_disconnected`
+### `rtc_client_disconnected`
 
 In combination with [`rtc_client_connected`](#rtc_client_connected) this allows a list of connected users to be kept up to date.
 
@@ -361,11 +347,11 @@ In combination with [`rtc_client_connected`](#rtc_client_connected) this allows 
 
 **Required:** no
 
-### Input fields for `rtc_client_disconnected`
+#### Input fields for `rtc_client_disconnected`
 
 The same as [`rtc_client_connected`](#rtc_client_connected)
 
-## Example leveraging client connect and disconnect events with custom user details
+### Example leveraging client connect and disconnect events with custom user details
 
 ```js
 tinymce.init({

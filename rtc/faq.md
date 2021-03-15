@@ -20,9 +20,24 @@ At {{site.companyname}} we do not want to store any sensitive information on the
 
 Encryption security is a trade off between the complexity of generating a key and the risk of compromise should the key be disclosed to an unknown third party. Here are some suggested ways to generate keys, in increasing order of safety:
 
-* Generate and store a fixed random key for each document in your database. Ignore `newKey` and `keyHint`.
-* Use a fixed random key for each document, and salt this key with random data to provide a unique key for each session. Pass the salt data via `keyHint`.
+* Generate and store a fixed random key for each document in your database. Ignore the `keyHint` input field and return a fixed arbitrary `keyHint` value.
+* Use a fixed random key for each document, and generate random salt data to provide a unique key for each session. Pass the salt data via `keyHint`.
 * Store a global list of keys for your application, and use the document ID along with random data to salt the current key _on your server_ to produce a key unique to the document session. Do not return the salt data via `keyHint`; return an identifier that can be used to look up the unique key on the server.
+
+### Encryption key rotation and key hints
+
+The RTC configuration API has design elements to support key rotation. Keys cannot be rotated on demand; if this is important to you please contact us to discuss how we can best provide that functionality.
+
+Document collaboration may be performed in multiple sessions, for example when a new version of TinyMCE is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
+
+
+In order to allow for key rotation, a key hint is supplied so the provider may tell the difference between these two cases and act accordingly. If the key hint is `null`, then the client wants the "current" key and is happy to be issued a key different from any previously used. If the key hint is set, then the client is requesting a previously-issued key so that it can read the session history.
+
+A specific key hint may be specified in the key response. If it is not, then an empty string will be sent when the client requests that key in future.
+
+> **Caution**: the key hint is transmitted in plain text; do not store secret information in the key hint.
+
+The key hint can be a key thumbprint, ID or other non-sensitive identifier that will help select the key e.g. a timestamp. It is only recorded when `keyHint` is `null` in the request.
 
 ### What happens if two clients attempt to establish a session at the same time, and how does that interact with encryption key generation?
 

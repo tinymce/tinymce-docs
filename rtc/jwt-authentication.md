@@ -45,6 +45,20 @@ Encryption security is a trade off between the complexity of generating a key an
 * Use a fixed random key for each document, and generate random salt data to provide a unique key for each session. Pass the salt data to `keyHint`.
 * Generate and store a fixed random key for each document in your database. Ignore the `keyHint` input field and return a fixed arbitrary `keyHint` value.
 
+## Encryption key rotation and key hints
+
+The RTC configuration API is designed to support key rotation. Keys cannot be rotated on demand; if this is important to you, please contact {{site.companyname}} to discuss how we can best provide that functionality.
+
+Document collaboration may be performed in multiple sessions. For example, when a new version of {{site.productname}} is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
+
+In order to allow for key rotation, a key hint is supplied so the provider may tell the difference between these two cases and act accordingly. If the key hint is `null`, then the client wants the "current" key and can be issued a key different from any previously used key. If the key hint is set, then the client is requesting a previously-issued key so that it can read the session history.
+
+A specific key hint may be specified in the key response. If it is not specified, then an empty string will be sent when the client requests that key in future.
+
+> **Warning**: The key hint is transmitted _in plain text_. Do not store secret or sensitive information in the key hint.
+
+The key hint can be a key thumbprint, ID, or other non-sensitive identifier that will help select the key, such as a timestamp. It is only recorded when `keyHint` is `null` in the request.
+
 ## Need help?
 
 {{ site.companyname }} recommends looking into how JWT works; some knowledge about JWT is necessary to implement RTC. This can be tricky, so if you need some help contact our support team.

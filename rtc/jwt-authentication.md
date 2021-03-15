@@ -28,8 +28,10 @@ Claims are additional data that can be sent as part of the JWT token. The RTC JW
 
 | Data | Optional or required | Description |
 |---|:---:|---|
-| `sub` | required | The unique user ID (i.e. if `sub` is the same for two clients, you should trust them as if they're the same user). |
+| `sub` | required | The unique user ID (for example, if `sub` is the same for two clients, you should trust them as if they're the same user). |
 | `exp` | required | The timestamp when the token expires. |
+
+The `sub` field is used to identify users to avoid sending sensitive or identity information to {{site.companyname}} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
 
 {% include auth/jwt-endpoint-setup-procedure.md %}
 

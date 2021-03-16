@@ -6,18 +6,9 @@ description: Beta specific access and setup
 keywords: rtc
 ---
 
-> **Important**: The Real-Time Collaboration beta is invite only.
-
-## Joining the beta
-
-To register your interest in the beta program for {{site.productname}} Real-Time Collaboration (RTC), join the {{site.betaprogram}}. {{site.companyname}} will contact you with further details.
-
-To join the {{site.betaprogram}}, visit the [{{site.betaprogram}}]({{site.betaprogramurl}}).
-
-
 ## Accessing the RTC beta plugin
 
-Once you have been invited into the RTC beta program, to try the RTC beta plugin:
+To try the RTC beta plugin:
 
 * Set up a {{site.accountpage}}.
 * Configure {{site.productname}} to use the {{site.cloudname}} RTC channel.

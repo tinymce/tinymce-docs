@@ -6,8 +6,6 @@ description: Useful information for troubleshooting issues with the RTC plugin.
 keywords: rtc faq trouble troubleshoot troubleshooting bug
 ---
 
-{% include misc/beta-note-rtc.md %}
-
 This documentation is in progress. Please contact us with any suggestions you think should be here.
 
 ## What happens if two clients attempt to establish a session at the same time? How does that impact on encryption key generation?

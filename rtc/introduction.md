@@ -6,8 +6,6 @@ description: Introduction of what RTC is and its capabilities
 keywords: rtc introduction overview
 ---
 
-{% include misc/beta-note-rtc.md %}
-
 ## Introduction
 
 {% include misc/rtc-description.md %}

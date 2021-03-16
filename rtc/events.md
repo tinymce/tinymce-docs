@@ -6,9 +6,7 @@ description: List of all available RTC specific events.
 keywords: rtc events
 ---
 
-{% include misc/beta-note-rtc.md %}
-
-> **Note**: These events are subject to change based on customer feedback.
+> **Caution**: These events are subject to change based on customer feedback. API compatibility is not guaranteed during the beta.
 
 ## `RtcClientConnected`
 

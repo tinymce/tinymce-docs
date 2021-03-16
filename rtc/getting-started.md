@@ -6,8 +6,6 @@ description: Getting started with RTC
 keywords: rtc
 ---
 
-{% include misc/beta-note-rtc.md %}
-
 ## Prerequisites
 
 * A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).

@@ -6,8 +6,6 @@ description: List of all available RTC configuration options.
 keywords: rtc configuration
 ---
 
-{% include misc/beta-note-rtc.md %}
-
 > **Caution**: These configuration options are subject to change based on customer feedback. API compatibility is not guaranteed during the beta.
 
 ## Configuration style

@@ -38,7 +38,7 @@ This event is fired when a user leaves the session.
 
 ### Event fields: `RtcClientDisconnected`
 
-The same as [`RtcClientConnected`](#rtcclientconnected)
+This event provides the same event fields as the `RtcClientConnected` event. See the [`rtc_client_connected`]({{site.baseurl}}/rtc/configuration#rtc_client_connected) documentation for a full description of the event fields.
 
 ### Example of using the RtcClientDisconnected event
 

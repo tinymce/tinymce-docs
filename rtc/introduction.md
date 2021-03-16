@@ -22,11 +22,11 @@ For information on using JWT authentication with the RTC plugin, see: [JWT authe
 
 ## Presence API
 
-The RTC plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. Documentation on user resolution is in the [`rtc_user_details_provider`]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider) configuration setting. Presence events can be received via either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
+The RTC plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. Documentation on user resolution is provide with the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
 
 ## End-to-end encryption
 
-The RTC plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect which is used to transmit cursor position along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.
+The RTC plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect, which is used to transmit cursor position along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.
 
 ### RTC enabled features
 
@@ -67,7 +67,14 @@ Here is a list of plugins currently supported:
 
 ### Browser support
 
-RTC only supports the latest desktop versions of Chrome, Firefox, Microsoft Edge and Safari. Older browsers will not be supported.
+RTC only supports the latest desktop versions of:
+
+* Google Chrome
+* Mozilla Firefox
+* Microsoft Edge
+* Apple Safari
+
+Older browsers will not be supported.
 
 ### Mobile support
 

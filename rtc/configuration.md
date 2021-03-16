@@ -12,13 +12,11 @@ keywords: rtc configuration
 
 ## Configuration style
 
-The RTC plugin primarily uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server.
-
-Function input parameters are provided as an object, allowing unused fields to be omitted.
+The RTC plugin uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server. Function input parameters are provided as an object, allowing unused fields to be omitted.
 
 ## Required configuration
 
-The following options are the minimum required to use the RTC plugin:
+The following options are required to use the RTC plugin:
 
 * [`rtc_document_id`](#rtc_document_id)
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
@@ -28,15 +26,15 @@ For an example minimum configuration, see: [Examples of the minimum required con
 
 ### `rtc_document_id`
 
-The RTC plugin requires a unique identifier for editor content to enable collaboration, known as the document ID. The identifier string is set by the integrator is used by the server as a permanent reference for the content. {{site.companyname}} recommends using the same unique ID used by your server where possible, such as the unique page or document ID from a CMS.
+The RTC plugin requires a unique identifier for editor content to enable collaboration, known as the document ID. The identifier set by the integrator is used by the RTC server as a permanent reference for the content. {{site.companyname}} recommends using the same unique ID used by your server where possible, such as the unique page or document ID from a CMS.
 
-> **Caution**: Do not reuse the document ID for different documents, otherwise conflicts will occur. Each document must have a unique identifier.
+> **Caution**: Do not reuse the document ID for different documents, otherwise content will be overwritten. Each document must have a unique identifier.
 
 When a client (user) connects:
 * If the document ID already exist, the most recent version of the content is sent to the client's editor.
 * If the document ID does not exist, the client uploads new initial content as the first version of that document ID.
 
-> **Caution**: If the content is changed outside of an RTC session, a new document ID must be generated. Changes made outside the RTC will be overwritten by the content on the RTC server during the next collaboration session.
+> **Caution**: If the content is changed outside of an RTC session, a new document ID must be generated. Changes made outside the RTC session will be overwritten by the content on the RTC server during the next collaboration session.
 
 **Type:** `Object`
 
@@ -106,7 +104,7 @@ The `rtc_token_provider` function will be called one or more times to refresh th
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_document_id: "your-document-id",
   rtc_encryption_provider: () => Promise.resolve({ key: "your shared encryption key", keyHint: "not used" }),
@@ -118,7 +116,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_document_id: "your-document-id",
   rtc_encryption_provider: ({documentId, newKey, keyHint}) =>
@@ -142,7 +140,7 @@ tinymce.init({
 
 ### `rtc_snapshot`
 
-Real-time collaboration sessions regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides as version number to assist with storing the regular content snapshots. These snapshots are not stored by the {{site.cloudname}} and must be handled by the integrator.
+Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides a version number to assist with storing the regular content snapshots. These snapshots are not stored by the {{site.cloudname}} and must be handled by the integrator.
 
 For any given document ID, the server guarantees the version number will only increase. It can be safely used for conflict resolution. For each document ID and version combination the snapshot content is guaranteed to be identical.
 
@@ -165,7 +163,7 @@ The snapshot callback will be executed at regular intervals with access to the s
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_snapshot: ({version, getContent}) => {
     console.log('Current version', version);
@@ -176,7 +174,7 @@ tinymce.init({
 
 ### `rtc_initial_content_provider`
 
-By default, the initial editor content is retrieved from the target element; such as the element targeted using the {{site.productname}} [`selector` option]({{site.baseurl}}/configure/integration-and-setup/#selector).
+By default, the initial editor content is retrieved from the element targeted using the {{site.productname}} [`selector` option]({{site.baseurl}}/configure/integration-and-setup/#selector).
 
 The `rtc_initial_content_provider` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {{site.productname}} [integrations]({{site.baseurl}}/integrations/)) that don't provide access to the target element directly.
 
@@ -200,7 +198,7 @@ The `rtc_initial_content_provider` option allows alternative initial content be 
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_initial_content_provider: () => Promise.resolve({ content: "<p>Hello world!</p>" })
 })
@@ -210,7 +208,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_initial_content_provider: ({documentId}) => {
     return fetch(`/getContent/${documentId}`, {
@@ -255,7 +253,7 @@ This provider function will be called once for each connecting client. Clients t
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_user_details_provider: ({userId}) => Promise.resolve({ fullName: "John Doe" })
 })
@@ -265,7 +263,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_user_details_provider: ({userId}) => {
     return fetch('/getUserDetails', {
@@ -294,7 +292,7 @@ This option accepts an object that must be serializable (`JSON.stringify` will b
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_client_details: { onMobile: true, region: 'us' }
 })
@@ -331,7 +329,7 @@ A custom skin is required to change these colours, and no more than 8 are suppor
 
 This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote user's editor configuration.
 
-> **Caution**: {{site.productname}} cannot guarantee the authenticity of client information data, which comes from a remote object. {{site.companyname}} recommends only using the client information data for status flags. To obtain authentic information, use the [`rtc_user_details_provider` option](#rtc_user_details_provider).
+> **Caution**: {{site.productname}} cannot guarantee the accuracy of client information data, which comes from a remote object. {{site.companyname}} recommends only using the client information data for status flags. To obtain authentic client information, use the [`rtc_user_details_provider`](#rtc_user_details_provider) data returned through the `userDetails` field.
 
 **Type:** `Function`
 
@@ -363,7 +361,7 @@ The same as [`rtc_client_connected`](#rtc_client_connected)
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_user_details_provider: ({userId}) => Promise.resolve({ fullName: "John Doe", jobTitle: "Engineer" }),
   rtc_client_connected: ({userDetails: {fullName, jobTitle}, caretNumber}) =>

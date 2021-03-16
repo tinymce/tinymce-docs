@@ -23,7 +23,7 @@ This example shows how to get the RTC plugin up and running using hardcoded valu
 ```js
 
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),

@@ -109,7 +109,7 @@ try {
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_token_provider: () => {
     return fetch('jwt.php', {
@@ -168,7 +168,7 @@ app.listen(3000);
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_token_provider: () => {
     return fetch('/jwt', {

@@ -22,7 +22,7 @@ For information on using JWT authentication with the RTC plugin, see: [JWT authe
 
 ## Presence API
 
-The RTC plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. Documentation on user resolution is provide with the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
+The RTC plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. User resolution is performed through the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
 
 ## End-to-end encryption
 

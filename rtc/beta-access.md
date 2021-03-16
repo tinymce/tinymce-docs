@@ -20,7 +20,7 @@ To join the {{site.betaprogram}}, visit the [{{site.betaprogram}}]({{site.betapr
 Once you have been invited into the RTC beta program, to try the RTC beta plugin:
 
 * Set up a {{site.accountpage}}.
-* Configure {{site.productname}} to use the {{site.cloudname}} development channel.
+* Configure {{site.productname}} to use the {{site.cloudname}} RTC channel.
 * Add the RTC plugin and configuration options to {{site.productname}}.
 
 ### Set up a {{site.accountpage}}
@@ -29,12 +29,12 @@ The RTC beta plugin is only available for {{site.cloudname}} deployments and req
 
 To create a {{site.accountpage}}, visit the [{{site.accountpage}} sign-up page]({{site.accountsignup}}).
 
-### Configure {{site.productname}} to use the {{site.cloudname}} development channel
+### Configure {{site.productname}} to use the {{site.cloudname}} RTC channel
 
-To access the {{site.cloudname}} development channel (`5-dev`), source {{site.productname}} using the following script:
+To access the {{site.cloudname}} RTC channel (`5-rtc`), source {{site.productname}} using the following script:
 
 ```js
-<script src="{{site.cdnurl_dev}}" referrerpolicy="origin"></script>
+<script src="{{site.cdnurl_rtc}}" referrerpolicy="origin"></script>
 ```
 
 Replace `no-api-key` in the source script (`<script src=...`) with a {{site.accountpage}} API key, which is created when signing up to [{{site.accountpage}}]({{site.accountsignup}}).

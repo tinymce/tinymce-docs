@@ -10,6 +10,14 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.7.1 March 17, 2021
+* Fixed the `help` dialog incorrectly linked to the changelog of TinyMCE 4 instead of TinyMCE 5.
+* Fixed a bug where error messages were displayed incorrectly in the image dialog.
+* Fixed an issue where URLs were not correctly filtered in some cases.
+* Fixed a bug where context menu items with names that contained uppercase characters were not displayed.
+* Fixed context menu items lacking support for the `disabled` and `shortcut` properties.
+* Fixed a regression where the width and height were incorrectly set when embedding content using the `media` dialog.
+
 ## Version 5.7.0 February 10, 2021
 * Added IPv6 address support to the URI API. Patch contributed by dev7355608.
 * Added new `structure` and `style` properties to the `TableModified` event to indicate what kinds of modifications were made.

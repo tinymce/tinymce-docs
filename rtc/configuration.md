@@ -341,7 +341,7 @@ This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote
 |-------|:----:|-------------|
 | `userId` | `string` | The user's unique ID. |
 | `userDetails` | `object` | User details object. If none is configured, this will be an empty object. |
-| `clientId` | `string` | The unique ID for this client connection |
+| `clientId` | `string` | The unique ID for the new client connection |
 | `caretNumber` | `integer` | The user's caret number (1-8). |
 | `clientInfo` | `object` | Additional client information. If none was configured, this will be an empty object. |
 

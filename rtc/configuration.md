@@ -28,13 +28,13 @@ For an example minimum configuration, see: [Examples of the minimum required con
 
 The RTC plugin requires a unique identifier for editor content to enable collaboration, known as the document ID. The identifier set by the integrator is used by the RTC server as a permanent reference for the content. {{site.companyname}} recommends using the same unique ID used by your server where possible, such as the unique page or document ID from a CMS.
 
-> **Caution**: Do not reuse the document ID for different documents, otherwise content will be overwritten. Each document must have a unique identifier.
+> **Warning**: Do not reuse the document ID for different documents, otherwise content will be overwritten. Each document must have a unique identifier.
 
 When a client (user) connects:
 * If the document ID already exist, the most recent version of the content is sent to the client's editor.
 * If the document ID does not exist, the client uploads new initial content as the first version of that document ID.
 
-> **Caution**: If the content is changed outside of an RTC session, a new document ID must be generated. Changes made outside the RTC session will be overwritten by the content on the RTC server during the next collaboration session.
+> **Warning**: If the content is changed outside of an RTC session, a new document ID must be generated. Changes made outside the RTC session will be overwritten by the content on the RTC server during the next collaboration session.
 
 **Type:** `Object`
 
@@ -62,7 +62,7 @@ If keys are never rotated this can be ignored. For advice on how to use the key 
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The document ID configured via `rtc_document_id`
+| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option
 | `keyHint` | `string` or `null` | Key hint returned by the client which opened the session, if connecting to an existing session. |
 
 #### Return fields for `rtc_encryption_provider`
@@ -155,7 +155,7 @@ The snapshot callback will be executed at regular intervals with access to the s
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The document ID configured via `rtc_document_id`
+| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option
 | `version` | `integer` | An increasing version number, specific to the current document ID, between 0 and 2147483648 (2<sup>31</sup>). |
 | `getContent()` | `string` | Function to execute to get the content for that particular version. |
 
@@ -280,9 +280,9 @@ tinymce.init({
 
 ### `rtc_client_info`
 
-The `rtc_client_info` option allows status flags from the local editor environment to be provided to other connecting clients via the [`rtc_client_connected`](#rtc_client_connected) API, for example "is the user on a mobile device". This configuration should not be used to communicate sensitive information; the authenticity of the data cannot be guaranteed.
+The `rtc_client_info` option allows status flags from the local editor environment to be provided to other connecting clients, for example "is the user on a mobile device". This option should not be used to communicate sensitive information; the authenticity of the data cannot be guaranteed.
 
-This option accepts an object that must be serializable (`JSON.stringify` will be used to transmit it between clients).
+This option accepts an object that must be serializable (`JSON.stringify` will be used to transmit it between clients). Other clients receive a copy of this object in their [`rtc_client_connected`](#rtc_client_connected) events.
 
 **Type:** `Object`
 

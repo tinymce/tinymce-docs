@@ -6,6 +6,10 @@ description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
 
+{% assign beta_feature = "The RTC plugin" %}
+{% assign pre-release_type = "Open Beta" %}
+{% include misc/beta-note.md %}
+
 {% assign pluginname = "RTC" %}
 {% assign plugincode = "rtc" %}
 ## Introduction

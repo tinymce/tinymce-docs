@@ -6,6 +6,10 @@ description: Beta specific access and setup
 keywords: rtc
 ---
 
+{% assign beta_feature = "The RTC plugin" %}
+{% assign pre-release_type = "Open Beta" %}
+{% include misc/beta-note.md %}
+
 ## Accessing the RTC beta plugin
 
 To try the RTC beta plugin:

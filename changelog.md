@@ -11,7 +11,7 @@ class: changelog
 {% capture changelog %}
 
 ## Version 5.7.1 March 17, 2021
-* Fixed the `help` dialog incorrectly linked to the changelog of TinyMCE 4 instead of TinyMCE 5.
+* Fixed the `help` dialog incorrectly linking to the changelog of TinyMCE 4 instead of TinyMCE 5.
 * Fixed a bug where error messages were displayed incorrectly in the image dialog.
 * Fixed an issue where URLs were not correctly filtered in some cases.
 * Fixed a bug where context menu items with names that contained uppercase characters were not displayed.

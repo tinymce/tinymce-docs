@@ -37,14 +37,15 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 * Fixed the `help` dialog incorrectly linking to the changelog of TinyMCE 4 instead of TinyMCE 5.
 * Fixed a bug where error messages were displayed incorrectly in the image dialog.
-* Fixed an issue where URLs were not correctly filtered in some cases.
 * Fixed a bug where context menu items with names that contained uppercase characters were not displayed.
 * Fixed context menu items lacking support for the `disabled` and `shortcut` properties.
 * Fixed a regression where the width and height were incorrectly set when embedding content using the `media` dialog.
 
 ## Security fixes
 
-{{site.productname}} 5.7.1 provides a fix for the following security issue.
+{{site.productname}} 5.7.1 provides fixes for the following security issues.
+
+Fixed an issue where URLs were not correctly filtered in some cases.
 
 **PowerPaste** 5.4.2 fixes a security issue where dragging and dropping content wasn't correctly sanitized in some cases.
 

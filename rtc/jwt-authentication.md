@@ -28,7 +28,7 @@ JWT is a standard authorization solution for web services and is documented in m
 
 ### Claims
 
-Claims are additional data that can be sent as part of the JWT token. The RTC JWT requires the following claims:
+Claims are additional data that can be sent as part of the JWT payload. The RTC JWT requires the following claims:
 
 | Data | Optional or required | Description |
 |---|:---:|---|
@@ -38,30 +38,6 @@ Claims are additional data that can be sent as part of the JWT token. The RTC JW
 The `sub` field is used to identify users to avoid sending sensitive or identity information to {{site.companyname}} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
 
 {% include auth/jwt-endpoint-setup-procedure.md %}
-
-## Generating a secure encryption key
-
-> **Caution**: These suggestions may not guarantee a secure connection. If data secrecy is important to you please consult a security professional.
-
-Encryption security is a trade off between the complexity of generating a key and the risk of compromise should the key be disclosed to an unknown third party. Here are some suggested ways to generate keys, in descending order of safety:
-
-* Store a global list of keys for your application, and use the document ID along with random data to salt the current key _on your server_ to produce a key unique to the document session. Do not return the salt data to `keyHint`; return an identifier that can be used to look up the unique key on the server.
-* Use a fixed random key for each document, and generate random salt data to provide a unique key for each session. Pass the salt data to `keyHint`.
-* Generate and store a fixed random key for each document in your database. Ignore the `keyHint` input field and return a fixed arbitrary `keyHint` value.
-
-## Encryption key rotation and key hints
-
-The RTC configuration API is designed to support key rotation. Keys cannot be rotated on demand; if this is important to you, please contact {{site.companyname}} to discuss how we can best provide that functionality.
-
-Document collaboration may be performed in multiple sessions. For example, when a new version of {{site.productname}} is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
-
-In order to allow for key rotation, a key hint is supplied so the provider may tell the difference between these two cases and act accordingly. If the key hint is `null`, then the client wants the "current" key and can be issued a key different from any previously used key. If the key hint is set, then the client is requesting a previously-issued key so that it can read the session history.
-
-A specific key hint may be specified in the key response. If it is not specified, then an empty string will be sent when the client requests that key in future.
-
-> **Warning**: The key hint is transmitted _in plain text_. Do not store secret or sensitive information in the key hint.
-
-The key hint can be a key thumbprint, ID, or other non-sensitive identifier that will help select the key, such as a timestamp. It is only recorded when `keyHint` is `null` in the request.
 
 ## Need help?
 

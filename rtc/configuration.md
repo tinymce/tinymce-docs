@@ -34,7 +34,7 @@ When a client (user) connects:
 
 > **Warning**: If the content is changed outside of an RTC session, a new document ID must be generated. Changes made outside the RTC session will be overwritten by the content on the RTC server during the next collaboration session.
 
-**Type:** `Object`
+**Type:** `String`
 
 **Required:** yes
 
@@ -46,11 +46,11 @@ A key is required when the client needs to:
 1. Encrypt new data in the collaboration session.
 2. Read previously written data from the collaboration session.
 
-Suggestions on how to generate a secure encryption key and participate in key rotation are available in [Generating a secure encryption key]({{site.baseurl}}/rtc/jwt-authentication/#generatingasecureencryptionkey). To help with this process a customisable "key hint" is available.
+Suggestions on how to generate a secure encryption key and participate in key rotation are available in [Generating a secure encryption key]({{site.baseurl}}/rtc/encryption/#generatingasecureencryptionkey). To help with this process a customisable "key hint" is available.
 
 #### Key Hint
 
-If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see [Generating a secure encryption key]({{site.baseurl}}/rtc/jwt-authentication/#generatingasecureencryptionkey).
+If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see [Encryption key rotation and key hints]({{site.baseurl}}/rtc/encryption/#encryptionkeyrotationandkeyhints).
 
 **Type:** `Function`
 
@@ -65,10 +65,10 @@ If keys are never rotated this can be ignored. For advice on how to use the key 
 
 #### Return fields for `rtc_encryption_provider`
 
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `key` | `string` | Encryption key that is used to locally encrypt operations. This key needs to be the same for all connecting clients on the same session. |
-| `keyHint` | `string` | Key hint to provide to future clients to aid in key selection. If keys are never rotated, it can be a fixed arbitrary value. It is only recorded when the input `keyHint` is `null`. (unicode, max 256 characters) |
+| Field | Type | Required? | Description |
+|-------|:----:|:----:|-------------|
+| `key` | `string` | required | Encryption key that is used to locally encrypt operations. This key needs to be the same for all connecting clients on the same session. |
+| `keyHint` | `string` | optional | Key hint to provide to future clients to aid in key selection. It is only recorded when the input `keyHint` is `null`. (unicode, max 256 characters) |
 
 ### `rtc_token_provider`
 

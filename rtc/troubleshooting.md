@@ -8,7 +8,7 @@ keywords: rtc faq trouble troubleshoot troubleshooting bug
 
 This documentation is in progress. Please contact us with any suggestions you think should be here.
 
-## What happens if two clients attempt to establish a session at the same time? How does that impact on encryption key generation?
+## What happens if two clients attempt to establish a session at the same time? What impact does that have on encryption key generation?
 
 As noted in the [Document ID configuration option]({{site.baseurl}}/rtc/configuration/#rtc_document_id), if a document ID is not known to the server, new initial data will be uploaded. If two users manage to do this at the same time, one will be forced to wait for the other to establish the session. This has implications for configurations using a dynamic [`rtc_encryption_provider`]({{site.baseurl}}/rtc/configuration/#rtc_encryption_provider).
 
@@ -29,8 +29,36 @@ As a result of this process:
 
 Care must be taken to avoid losing encryption keys to this race condition.
 
-### Server reports JWT authentication was issued in the future
+## Common JWT error messages
 
-JWT is a very strict protocol. If the computer that signs the JWT has a clock that is significantly ahead of the server clock, and tokens are signed on demand, this error can occur.
+If the below error descriptions do not immediately solve the problem, try pasting the token into [https://jwt.io/](https://jwt.io/) which will provide more detailed token format debugging.
+
+### Unsupported JWT signature algorithm
+
+RTC requires an [asymmetric signing algorithm]({{site.baseurl}}/rtc/jwt-authentication/#supportedalgorithms) for JWT identity tokens. Asymmetric signatures use separate private and public keys; the public key stored on the {{site.cloudname}} server can only be used to verify signatures, not create new ones. The private key, used to create new signatures, remains private.
+
+### Time-based error messages
+
+These errors include:
+
+* JWT was issued in the future
+* JWT has expired
+* JWT is not yet valid
+
+JWT is a very strict protocol. If the computer that signs the JWT has a clock that is not synchronised with the server clock, and tokens are generated on demand, one of these errors can occur.
 
 To resolve this issue ensure all computer clocks are synchronised using [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol) or a similar service.
+
+### Unable to retrieve JWK set
+
+A "JWK set" is the technical term for a public key that will be used to validate the JWT signature. It must match the private key used to sign the JWT. This error means a public key could not be found in the {{site.cloudname}} account that matches the API key used to load RTC. For more information on see the [Private/public key pairs for Tiny Cloud services]({{site.baseurl}}/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices) documentation.
+
+### Errors related to "parts"
+
+A number of part-related errors can be raised if the JWT fails to decode:
+
+* Not enough parts
+* A part was not correctly base64 encoded
+* A part was not valid JSON
+* The header part does not specify an algorithm
+* The payload part does not contain all [required claims]({{site.baseurl}}/rtc/jwt-authentication/#claims)

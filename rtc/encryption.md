@@ -16,15 +16,13 @@ RTC requires an encryption key so {{site.companyname}} can prove to ourselves (a
 
 ## The difference between content encryption and JWT signing
 
-Encryption is a two way process (encryption and decryption) that transforms data into an encrypted form. Encrypted data cannot be decrypted without the original key. If the key is not transmitted the content is end-to-end encrypted.
+Encryption is a two way process (encryption and decryption) that transforms data into an encrypted form. Modern encryption algorithms produce an output that is indistinguishable from random data without the decryption key. RTC performs symmetric encryption (meaning encryption and decryption use the same key) on all document content, but the key is never sent to the server. As the key only exists on the client endpoints, the term for this is end-to-end encryption.
 
-Signing is a one way process where the data is not modified and can still be read by anyone. A signature is transmitted along with the data and can be used to validate the data has not been modified since it was signed. RTC requires an [asymmetric signing algorithm]({{site.baseurl}}/rtc/jwt-authentication/#supportedalgorithms) for JWT identity tokens. Asymmetric signatures use separate private and public keys; the public key stored on the {{site.cloudname}} server can only be used to verify signatures, not create new ones.
+Signing is a one way process where the data is not modified and can still be read by anyone. A signature is transmitted along with the data and can be used to validate the data has not been modified since it was approved by whoever has the signing key. RTC requires an [asymmetric signing algorithm]({{site.baseurl}}/rtc/jwt-authentication/#supportedalgorithms) for JWT identity tokens. Asymmetric signing uses a public/private key pair: signatures are created with the private key and verified using the public key. The public key stored on the Tiny Cloud servers can only be used to verify signatures, not create new ones, so it is quite safe for us to hold or cache without security implications should it be disclosed.
 
 ## Choosing an encryption key
 
-RTC encryption keys can be any unicode string. Our demo application for example uses the simple fixed key `"not a very secret 🔑"`. Even simple keys like this still provide some security; the RTC protocol uses random salt data to derive a unique encryption key for each session. For details on this process see [RTC encryption details](#rtcencryptiondetails) below.
-
-Simple fixed keys can be a good way to get a test environment up and running but we strongly recommend using secure keys when collaborating on private production data.
+RTC encryption keys can be any unicode string. Our demo application for example uses the simple fixed key `"not a very secret 🔑"`. Even simple keys provide some obfuscation and protection if the key is disclosed; for details on this see [RTC encryption details](#rtcencryptiondetails) below. Simple fixed keys can be a good way to get a test environment up and running but we strongly recommend using secure keys when collaborating on private production data.
 
 ## Generating a secure encryption key
 
@@ -53,6 +51,8 @@ The key hint can be a key thumbprint, ID, or other non-sensitive identifier that
 > **Note**: This section contains the technical details of encryption used to securely transmit document contents. It is provided for information purposes only; understanding these details is not required to integrate RTC.
 
 The RTC protocol does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) to encrypt content directly. Using industry standard cryptography algorithms a unique session key for content encryption is derived from the provided key in a way that makes brute force decryption very difficult.
+
+> **Note**: {{site.companyname}} is in the process of changing RTC encryption to [AES-KW](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey) which does not require an initialization vector or protocol salt. The description below is still correct for the current beta release.
 
 The RTC protocol encryption technique is as follows:
 * 256 bits of random data are generated as the salt for each session. As described above, each document ID used for collaboration may have multiple sessions. The salt is generated with the [Crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) browser API and a `Uint8Array` of length 32 bytes.

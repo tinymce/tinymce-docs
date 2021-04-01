@@ -22,7 +22,11 @@ Signing is a one way process where the data is not modified and can still be rea
 
 ## Choosing an encryption key
 
-RTC encryption keys can be any unicode string. Our demo application for example uses the simple fixed key `"not a very secret 🔑"`. Even simple keys provide some obfuscation and protection if the key is disclosed; for details on this see [RTC encryption details](#rtcencryptiondetails) below. Simple fixed keys can be a good way to get a test environment up and running but we strongly recommend using secure keys when collaborating on private production data.
+RTC encryption keys can be any unicode string. {{site.companyname}} strongly recommends using secure keys when collaborating on private production data, but for test environments a simple fixed key is still valid. Our demo application for example uses the simple fixed key `"not a very secret 🔑"`.
+
+### Fixed keys are not secure
+
+Even simple keys provide some protection against data disclosure; for details on this see [RTC encryption details](#rtcencryptiondetails) below. Simple fixed keys can be a good way to get started with RTC but if a key is disclosed it can be used to access any document encrypted with that key. Fixed keys mean _every_ document can be decrypted if the key is disclosed.
 
 ## Generating a secure encryption key
 

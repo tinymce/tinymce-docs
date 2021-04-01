@@ -45,13 +45,13 @@ These errors include:
 * JWT has expired
 * JWT is not yet valid
 
-JWT is a very strict protocol. If the computer that signs the JWT has a clock that is not synchronised with the server clock, and tokens are generated on demand, one of these errors can occur.
+JWT is a very strict standard. If the computer that signs the JWT has a clock that is not synchronised with the server clock, and tokens are generated on demand, one of these errors can occur.
 
 To resolve this issue ensure all computer clocks are synchronised using [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol) or a similar service.
 
 ### Unable to retrieve JWK set
 
-A "JWK set" is the technical term for a public key that will be used to validate the JWT signature. It must match the private key used to sign the JWT. This error means a public key could not be found in the {{site.cloudname}} account that matches the API key used to load RTC. For more information on see the [Private/public key pairs for Tiny Cloud services]({{site.baseurl}}/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices) documentation.
+A "JWK set" is a structure that contains public keys for validating JWT signatures. At least one public key in the set must match the private key used to sign the provided identity token for RTC. This error means a public key could not be found in the {{site.cloudname}} account of the API key used to load RTC. For more information on creating public/private key pairs see the [JWT Authentication]({{site.baseurl}}/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices) documentation.
 
 ### Errors related to "parts"
 

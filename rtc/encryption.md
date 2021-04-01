@@ -3,7 +3,7 @@ layout: default
 title: Encryption information for the RTC protocol
 title_nav: RTC Encryption help
 description: Useful information for understanding how encryption is used with RTC
-keywords: rtc encrypt encryption decrypt decryption key rotate signature
+keywords: rtc encrypt decrypt key rotate signature
 ---
 
 This documentation is in progress. Please contact us with any suggestions you think should be here.

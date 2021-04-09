@@ -6,56 +6,46 @@ description: List of all available RTC specific events.
 keywords: rtc events
 ---
 
-{% include misc/beta-note-rtc.md %}
+> **Caution**: These events are subject to change based on customer feedback. API compatibility is not guaranteed during the beta.
 
-> **Note**: These events are subject to change based on customer feedback.
-
-## `RtcUserConnected`
+## `RtcClientConnected`
 
 This event is fired when a user enters the session.
 
-### Event fields: `RtcUserConnected`
+### Event fields: `RtcClientConnected`
 
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `userId` | `string` | Unique user ID of the connecting user. |
-| `caretNumber` | `integer` | Caret number assigned to the user. |
-| `custom` | `object` | Custom data object provided by the `rtc_custom_user_details` option, sent from the connecting user client. |
+See the [`rtc_client_connected`]({{site.baseurl}}/rtc/configuration#rtc_client_connected) documentation for a full description of the event fields.
 
-### Example of using the RtcUserConnected event
+### Example of using the RtcClientConnected event
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcUserConnected', ({userId, caretNumber, custom}) => {
+    editor.on('RtcClientConnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
       console.log(`User connected userId:${userId}`);
     });
   }
 })
 ```
 
-## `RtcUserDisconnected`
+## `RtcClientDisconnected`
 
 This event is fired when a user leaves the session.
 
-### Event fields: `RtcUserDisconnected`
+### Event fields: `RtcClientDisconnected`
 
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `userId` | `string` | Unique user ID of the disconnecting user. |
-| `caretNumber` | `integer` | Caret number assigned to the user. |
-| `custom` | `object` | Custom data object provided by the `rtc_custom_user_details` option, sent from the disconnecting user client. |
+This event provides the same event fields as the `RtcClientConnected` event. See the [`rtc_client_connected`]({{site.baseurl}}/rtc/configuration#rtc_client_connected) documentation for a full description of the event fields.
 
-### Example of using the RtcUserDisconnected event
+### Example of using the RtcClientDisconnected event
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcUserDisconnected', ({userId, caretNumber, custom}) => {
+    editor.on('RtcClientDisconnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
       console.log(`User disconnected userId:${userId}`);
     });
   }

@@ -6,6 +6,10 @@ description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
 
+{% assign beta_feature = "The RTC plugin" %}
+{% assign pre-release_type = "Open Beta" %}
+{% include misc/beta-note.md %}
+
 {% assign pluginname = "RTC" %}
 {% assign plugincode = "rtc" %}
 ## Introduction
@@ -28,18 +32,46 @@ Claims are additional data that can be sent as part of the JWT token. The RTC JW
 
 | Data | Optional or required | Description |
 |---|:---:|---|
-| `sub` | required | The unique user ID (i.e. if `sub` is the same for two clients, you should trust them as if they're the same user). |
+| `sub` | required | The unique user ID (for example, if `sub` is the same for two clients, you should trust them as if they're the same user). |
 | `exp` | required | The timestamp when the token expires. |
+
+The `sub` field is used to identify users to avoid sending sensitive or identity information to {{site.companyname}} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
 
 {% include auth/jwt-endpoint-setup-procedure.md %}
 
+## Generating a secure encryption key
+
+> **Caution**: These suggestions may not guarantee a secure connection. If data secrecy is important to you please consult a security professional.
+
+Encryption security is a trade off between the complexity of generating a key and the risk of compromise should the key be disclosed to an unknown third party. Here are some suggested ways to generate keys, in descending order of safety:
+
+* Store a global list of keys for your application, and use the document ID along with random data to salt the current key _on your server_ to produce a key unique to the document session. Do not return the salt data to `keyHint`; return an identifier that can be used to look up the unique key on the server.
+* Use a fixed random key for each document, and generate random salt data to provide a unique key for each session. Pass the salt data to `keyHint`.
+* Generate and store a fixed random key for each document in your database. Ignore the `keyHint` input field and return a fixed arbitrary `keyHint` value.
+
+## Encryption key rotation and key hints
+
+The RTC configuration API is designed to support key rotation. Keys cannot be rotated on demand; if this is important to you, please contact {{site.companyname}} to discuss how we can best provide that functionality.
+
+Document collaboration may be performed in multiple sessions. For example, when a new version of {{site.productname}} is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
+
+In order to allow for key rotation, a key hint is supplied so the provider may tell the difference between these two cases and act accordingly. If the key hint is `null`, then the client wants the "current" key and can be issued a key different from any previously used key. If the key hint is set, then the client is requesting a previously-issued key so that it can read the session history.
+
+A specific key hint may be specified in the key response. If it is not specified, then an empty string will be sent when the client requests that key in future.
+
+> **Warning**: The key hint is transmitted _in plain text_. Do not store secret or sensitive information in the key hint.
+
+The key hint can be a key thumbprint, ID, or other non-sensitive identifier that will help select the key, such as a timestamp. It is only recorded when `keyHint` is `null` in the request.
+
 ## Need help?
 
-{{ site.companyname }} recommends looking into how JWT works; some knowledge about JWT is necessary to implement RTC. This can be tricky, so if you need some help contact our support.
+{{ site.companyname }} recommends looking into how JWT works; some knowledge about JWT is necessary to implement RTC. This can be tricky, so if you need some help contact our support team.
 
 ## PHP token provider endpoint example
 
-This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be a private key generated at {{site.accountpage}}.
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager.
+
+`$privateKey` should be a private key generated at {{site.accountpage}}.
 
 ### jwt.php
 
@@ -81,7 +113,7 @@ try {
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_token_provider: () => {
     return fetch('jwt.php', {
@@ -94,6 +126,8 @@ tinymce.init({
 ## Node token provider endpoint example
 
 This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic NodeJS Express server and adding {{site.productname}}, see: [Integrating TinyMCE into an Express JS App]({{site.baseurl}}/integrations/expressjs/).
+
+`privateKey` should be a private key generated at {{site.accountpage}}.
 
 ### /jwt
 
@@ -138,7 +172,7 @@ app.listen(3000);
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_token_provider: () => {
     return fetch('/jwt', {
@@ -150,7 +184,7 @@ tinymce.init({
 
 ### More configuration
 
-Once JWT authentication has been set up, the RTC plugin can be configured further using the options shown on the [RTC configuration options page]({{site.baseurl}}/rtc/configuration/). Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+Once JWT authentication has been set up, the RTC plugin can be configured further using the options shown on the [RTC configuration options page]({{site.baseurl}}/rtc/configuration/). Don't forget to change the example JWT claims (user id, user name) to get those from your system.
 
 If you want help [submit a support request]({{site.supporturl}}).
 

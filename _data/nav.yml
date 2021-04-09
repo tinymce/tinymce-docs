@@ -683,20 +683,21 @@
       - url: "#Creating a private/public key pair for RTC"
     - url: "configuration"
       pages:
-      - url: "#Required options"
-      - url: "#rtc_document_details_provider"
+      - url: "#Required configuration"
+      - url: "#rtc_document_id"
       - url: "#rtc_encryption_provider"
       - url: "#rtc_token_provider"
       - url: "#rtc_snapshot"
       - url: "#rtc_initial_content_provider"
       - url: "#rtc_user_details_provider"
-      - url: "#rtc_custom_user_details"
-      - url: "#rtc_user_connected"
-      - url: "#rtc_user_disconnected"
+      - url: "#rtc_client_info"
+      - url: "#rtc_client_connected"
+      - url: "#rtc_client_disconnected"
     - url: "events"
       pages:
-      - url: "#RtcUserConnected"
-      - url: "#RtcUserDisconnected"
+      - url: "#RtcClientConnected"
+      - url: "#RtcClientDisconnected"
+    - url: "rtc-troubleshooting"
 
 - url: "advanced"
   pages:
@@ -884,6 +885,12 @@
     - url: "#Deprecated features"
     - url: "#Known issues"
     - url: "#Upgrading to the latest version of TinyMCE 5"
+  - url: "release-notes571"
+    pages:
+    - url: "#Overview"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#General bug fixes"
+    - url: "#Security fixes"
   - url: "release-notes57"
     pages:
     - url: "#Overview"
@@ -1061,6 +1068,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.7.1 March 17, 2021"
   - url: "#Version 5.7.0 February 10, 2021"
   - url: "#Version 5.6.2 December 8, 2020"
   - url: "#Version 5.6.1 November 25, 2020"

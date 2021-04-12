@@ -8,6 +8,8 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+<div><a class="anchor" id="version571march172021"></a></div>
+
 ## 5.7.1 - 2021-03-17
 
 ### Fixed
@@ -17,6 +19,8 @@ class: changelog
 - Fixed a bug where context menu items with names that contained uppercase characters were not displayed #TINY-7072
 - Fixed context menu items lacking support for the `disabled` and `shortcut` properties #TINY-7073
 - Fixed a regression where the width and height were incorrectly set when embedding content using the `media` dialog #TINY-7074
+
+<div><a class="anchor" id="version570february102021"></a></div>
 
 ## 5.7.0 - 2021-02-10
 
@@ -68,10 +72,14 @@ class: changelog
 - Fixed an issue where file extensions with uppercase characters were treated as invalid #TINY-6940
 - Fixed dialog block messages were not passed through TinyMCE's translation system #TINY-6971
 
+<div><a class="anchor" id="version562december82020"></a></div>
+
 ## 5.6.2 - 2020-12-08
 
 ### Fixed
 - Fixed a UI rendering regression when the document body is using `display: flex` #TINY-6783
+
+<div><a class="anchor" id="version561november252020"></a></div>
 
 ## 5.6.1 - 2020-11-25
 
@@ -80,6 +88,8 @@ class: changelog
 - Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting #TINY-6681
 - Fixed an issue where copying and pasting table columns resulted in invalid HTML when using colgroups #TINY-6684
 - Fixed an issue where the toolbar would render with the wrong width for inline editors in some situations #TINY-6683
+
+<div><a class="anchor" id="version560november182020"></a></div>
 
 ## 5.6.0 - 2020-11-18
 
@@ -130,11 +140,15 @@ class: changelog
 - Fixed a regression that caused the selection to be difficult to see in tables with backgrounds #TINY-6495
 - Fixed content pasted multiple times in the editor when using Microsoft Internet Explorer 11. Patch contributed by mattford #GH-4905
 
+<div><a class="anchor" id="version551october12020"></a></div>
+
 ## 5.5.1 - 2020-10-01
 
 ### Fixed
 - Fixed pressing the down key near the end of a document incorrectly raising an exception #TINY-6471
 - Fixed incorrect Typescript types for the `Tools` API #TINY-6475
+
+<div><a class="anchor" id="version550september292020"></a></div>
 
 ## 5.5.0 - 2020-09-29
 
@@ -191,6 +205,8 @@ class: changelog
 - Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances #TINY-4058
 - Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false #TINY-4058
 
+<div><a class="anchor" id="version542august172020"></a></div>
+
 ## 5.4.2 - 2020-08-17
 
 ### Fixed
@@ -208,6 +224,8 @@ class: changelog
 - Fixed the list type style not retained when copying list items #TINY-6289
 - Fixed the Paste plugin converting tabs in plain text to a single space character. A `paste_tab_spaces` option has been included for setting the number of spaces used to replace a tab character #TINY-6237
 
+<div><a class="anchor" id="version541july82020"></a></div>
+
 ## 5.4.1 - 2020-07-08
 
 ### Fixed
@@ -217,6 +235,8 @@ class: changelog
 - Fixed content in an iframe element parsing as DOM elements instead of text content #TINY-5943
 - Fixed Oxide checklist styles not showing when printing #TINY-5139
 - Fixed bug with `scope` attribute not being added to the cells of header rows #TINY-6206
+
+<div><a class="anchor" id="version540june302020"></a></div>
 
 ## 5.4.0 - 2020-06-30
 
@@ -260,16 +280,22 @@ class: changelog
 - Fixed the `link` plugin now suggest `mailto:` when the text contains an '@' and no slashes (`/`) #TINY-5941
 - Fixed the `valid_children` check of custom elements now allows a wider range of characters in names #TINY-5971
 
+<div><a class="anchor" id="version532june102020"></a></div>
+
 ## 5.3.2 - 2020-06-10
 
 ### Fixed
 - Fixed a regression introduced in 5.3.0, where `images_dataimg_filter` was no-longer called #TINY-6086
+
+<div><a class="anchor" id="version531may272020"></a></div>
 
 ## 5.3.1 - 2020-05-27
 
 ### Fixed
 - Fixed the image upload error alert also incorrectly closing the image dialog #TINY-6020
 - Fixed editor content scrolling incorrectly on focus in Firefox by reverting default content CSS html and body heights added in 5.3.0 #TINY-6019
+
+<div><a class="anchor" id="version530may212020"></a></div>
 
 ## 5.3.0 - 2020-05-21
 
@@ -314,6 +340,8 @@ class: changelog
 - Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting #TINY-5998
 - Fixed an issue where deleting all content in a single cell table would delete the entire table #TINY-1044
 
+<div><a class="anchor" id="version522april232020"></a></div>
+
 ## 5.2.2 - 2020-04-23
 
 ### Fixed
@@ -322,6 +350,8 @@ class: changelog
 - Fixed `format` menu alignment buttons inconsistently applying to images #TINY-4057
 - Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers #TINY-4837
 - Fixed `media` embed content not processing safely in some cases #TINY-4857
+
+<div><a class="anchor" id="version521march252020"></a></div>
 
 ## 5.2.1 - 2020-03-25
 
@@ -344,6 +374,8 @@ class: changelog
 - Fixed context toolbars activating without the editor having focus #TINY-4754
 - Fixed an issue where removing the background color of text did not always work #TINY-4770
 - Fixed an issue where new rows and columns in a table did not retain the style of the previous row or column #TINY-4788
+
+<div><a class="anchor" id="version520february132020"></a></div>
 
 ## 5.2.0 - 2020-02-13
 
@@ -402,6 +434,8 @@ class: changelog
 - Fixed keyboard flicker when opening a context menu on mobile #TINY-4540
 - Fixed issue where plus icon svg contained strokes #TINY-4681
 
+<div><a class="anchor" id="version516january282020"></a></div>
+
 ## 5.1.6 - 2020-01-28
 
 ### Fixed
@@ -413,6 +447,8 @@ class: changelog
 - Fixed the `image` plugin not respecting the `automatic_uploads` setting when uploading local images #TINY-4287
 - Fixed security issue related to parsing HTML comments and CDATA #TINY-4544
 
+<div><a class="anchor" id="version515december192019"></a></div>
+
 ## 5.1.5 - 2019-12-19
 
 ### Fixed
@@ -420,6 +456,8 @@ class: changelog
 - Fixed the `charmap` dialog initially focusing the first tab of the dialog instead of the search input field #TINY-4342
 - Fixed an exception being raised when inserting content if the caret was directly before or after a `contenteditable="false"` element #TINY-4528
 - Fixed a bug with pasting image URLs when paste as text is enabled #TINY-4523
+
+<div><a class="anchor" id="version514december112019"></a></div>
 
 ## 5.1.4 - 2019-12-11
 
@@ -431,6 +469,8 @@ class: changelog
 - Fixed an issue with the `paste` plugin not sanitizing content in some cases #TINY-4510
 - Fixed HTML comments incorrectly being parsed in certain cases #TINY-4511
 
+<div><a class="anchor" id="version513december42019"></a></div>
+
 ## 5.1.3 - 2019-12-04
 
 ### Fixed
@@ -441,6 +481,8 @@ class: changelog
 - Fixed keyboard navigation of the Help dialog's Keyboard Navigation tab #TINY-4391
 - Fixed search and replace dialog disappearing when finding offscreen matches on iOS devices #TINY-4350
 - Fixed performance issues where sticky toolbar was jumping while scrolling on slower browsers #TINY-4475
+
+<div><a class="anchor" id="version512november192019"></a></div>
 
 ## 5.1.2 - 2019-11-19
 
@@ -462,6 +504,8 @@ class: changelog
 - Fixed quickbars quickimage picker not working on mobile #TINY-4377
 - Fixed fullscreen not resizing in an iOS WKWebView component #TINY-4413
 
+<div><a class="anchor" id="version511october282019"></a></div>
+
 ## 5.1.1 - 2019-10-28
 
 ### Fixed
@@ -469,6 +513,8 @@ class: changelog
 - Fixed alert and confirm dialogs losing focus when clicked #TINY-4248
 - Fixed clicking outside a modal dialog focusing on the document body #TINY-4249
 - Fixed the context toolbar not hiding when scrolled out of view #TINY-4265
+
+<div><a class="anchor" id="version510october172019"></a></div>
 
 ## 5.1.0 - 2019-10-17
 
@@ -521,6 +567,8 @@ class: changelog
 - Fixed the autocompleter not activating immediately after a `br` or `contenteditable=false` element #TINY-4194
 - Fixed an issue where the autocompleter would incorrectly close on IE 11 in certain edge cases #TINY-4205
 
+<div><a class="anchor" id="version5016september242019"></a></div>
+
 ## 5.0.16 - 2019-09-24
 
 ### Added
@@ -536,6 +584,8 @@ class: changelog
 - Fixed notifications appearing on top of the toolbar when scrolled in inline mode #TINY-4159
 - Fixed notifications displaying incorrectly on IE 11 #TINY-4169
 
+<div><a class="anchor" id="version5015september22019"></a></div>
+
 ## 5.0.15 - 2019-09-02
 
 ### Added
@@ -548,6 +598,8 @@ class: changelog
 - Fixed missing CSS active state on toolbar buttons #TINY-3966
 - Fixed `onChange` callback not firing for the colorinput dialog component #TINY-3968
 - Fixed context toolbars not showing in fullscreen mode #TINY-4023
+
+<div><a class="anchor" id="version5014august192019"></a></div>
 
 ## 5.0.14 - 2019-08-19
 
@@ -564,6 +616,8 @@ class: changelog
 
 ### Removed
 - Removed Oxide variable `@menubar-select-disabled-border-color` and replaced it with `@menubar-select-disabled-border` #TINY-3965
+
+<div><a class="anchor" id="version5013august62019"></a></div>
 
 ## 5.0.13 - 2019-08-06
 
@@ -586,6 +640,8 @@ class: changelog
 - Fixed dialogs being able to be dragged outside the window viewport #TINY-3787
 - Fixed inline dialogs appearing above modal dialogs #TINY-3932
 
+<div><a class="anchor" id="version5012july182019"></a></div>
+
 ## 5.0.12 - 2019-07-18
 
 ### Added
@@ -606,12 +662,16 @@ class: changelog
 - Fixed the context toolbar overlapping the toolbar in various conditions #TINY-3205
 - Fixed IE11 edge case where items were being inserted into the wrong location #TINY-3884
 
+<div><a class="anchor" id="version5011july42019"></a></div>
+
 ## 5.0.11 - 2019-07-04
 
 ### Fixed
 - Fixed packaging errors caused by a rollup treeshaking bug (https://github.com/rollup/rollup/issues/2970) #TINY-3866
 - Fixed the customeditor component not able to get data from the dialog api #TINY-3866
 - Fixed collection component tooltips not being translated #TINY-3855
+
+<div><a class="anchor" id="version5010july22019"></a></div>
 
 ## 5.0.10 - 2019-07-02
 
@@ -641,10 +701,14 @@ class: changelog
 - Fixed exception being thrown when creating relative URIs #TINY-3851
 - Fixed focus is no longer set to the editor content during mode changes unless the editor already had focus #TINY-3852
 
+<div><a class="anchor" id="version509june262019"></a></div>
+
 ## 5.0.9 - 2019-06-26
 
 ### Fixed
 - Fixed print plugin not working in Firefox #TINY-3834
+
+<div><a class="anchor" id="version508june182019"></a></div>
 
 ## 5.0.8 - 2019-06-18
 
@@ -671,6 +735,8 @@ class: changelog
 - Fixed space key properly inserts a nbsp before/after block elements #TINY-3745
 - Fixed native context menu not showing with images in IE11 #TINY-3392
 - Fixed inconsistent browser context menu image selection #TINY-3789
+
+<div><a class="anchor" id="version507june52019"></a></div>
 
 ## 5.0.7 - 2019-06-05
 
@@ -700,6 +766,8 @@ class: changelog
 - Fixed the autocompleter menu showing up after a selection had been made #TINY-3718
 - Fixed an exception being thrown when a file or number input has focus during initialization. Patch contributed by t00 #GH-2194
 
+<div><a class="anchor" id="version506may222019"></a></div>
+
 ## 5.0.6 - 2019-05-22
 
 ### Added
@@ -721,6 +789,8 @@ class: changelog
 - Fixed `mceInsertLink` command inserting spaces instead of url encoded characters #GH-4990
 - Fixed text content floating on top of dialogs in IE11 #TINY-3640
 
+<div><a class="anchor" id="version505may92019"></a></div>
+
 ## 5.0.5 - 2019-05-09
 
 ### Added
@@ -735,6 +805,8 @@ class: changelog
 
 ### Removed
 - Removed unused and hidden validation icons to avoid displaying phantom tooltips #TINY-2329
+
+<div><a class="anchor" id="version504april232019"></a></div>
 
 ## 5.0.4 - 2019-04-23
 
@@ -762,6 +834,8 @@ class: changelog
 ### Removed
 - Removed redundant mobile wrapper #TINY-3480
 
+<div><a class="anchor" id="version503march192019"></a></div>
+
 ## 5.0.3 - 2019-03-19
 
 ### Changed
@@ -782,6 +856,8 @@ class: changelog
 - Fixed styles to be preserved in IE 11 when editing via the `fullpage` plugin #TINY-3464
 - Fixed the `link` plugin context toolbar missing the open link button #TINY-3461
 - Fixed inconsistent dialog component spacing #TINY-3436
+
+<div><a class="anchor" id="version502march52019"></a></div>
 
 ## 5.0.2 - 2019-03-05
 
@@ -810,6 +886,8 @@ class: changelog
 - Fixed inconsistent button focus styles in Firefox #TINY-3377
 - Fixed the resize icon floating left when all status bar elements were disabled #TINY-3340
 - Fixed the resize handle to not show in fullscreen mode #TINY-3404
+
+<div><a class="anchor" id="version501february212019"></a></div>
 
 ## 5.0.1 - 2019-02-21
 
@@ -840,6 +918,8 @@ class: changelog
 ### Removed
 - Removed paste as text notification banner and paste_plaintext_inform setting #POW-102
 
+<div><a class="anchor" id="version500february42019"></a></div>
+
 ## 5.0.0 - 2019-02-04
 
 Full documentation for the version 5 features and changes is available at https://www.tiny.cloud/docs/release-notes/
@@ -861,6 +941,8 @@ Full documentation for the version 5 features and changes is available at https:
 - Fixed charmap and emoticons dialogs not having a primary button #TINY-3233
 - Fixed an issue where resizing wouldn't work correctly depending on the box-sizing model #TINY-3278
 
+<div><a class="anchor" id="version500-rc-2january222019"></a></div>
+
 ## 5.0.0-rc-2 - 2019-01-22
 
 ### Added
@@ -881,6 +963,8 @@ Full documentation for the version 5 features and changes is available at https:
 
 ### Removed
 - Removed unnecessary 'flex' and unused 'colspan' properties from the new dialog APIs #TINY-2973
+
+<div><a class="anchor" id="version500-rc-1january82019"></a></div>
 
 ## 5.0.0-rc-1 - 2019-01-08
 
@@ -906,6 +990,8 @@ Full documentation for the version 5 features and changes is available at https:
 - Fixed an issue where preview wouldn't show anything in Edge under certain circumstances #TINY-3035
 - Fixed the height being incorrectly calculated for the autoresize plugin #TINY-2807
 
+<div><a class="anchor" id="version500-beta-1november302018"></a></div>
+
 ## 5.0.0-beta-1 - 2018-11-30
 
 ### Added
@@ -930,6 +1016,8 @@ Full documentation for the version 5 features and changes is available at https:
 
 ### Removed
 - Removed compat3x plugin #TINY-2815
+
+<div><a class="anchor" id="version500-preview-4november122018"></a></div>
 
 ## 5.0.0-preview-4 - 2018-11-12
 
@@ -971,6 +1059,8 @@ Full documentation for the version 5 features and changes is available at https:
 ### Removed
 - Removed the tox-custom-editor class that was added to the wrapping element of codemirror #TINY-2211
 
+<div><a class="anchor" id="version500-preview-3october182018"></a></div>
+
 ## 5.0.0-preview-3 - 2018-10-18
 
 ### Changed
@@ -987,6 +1077,8 @@ Full documentation for the version 5 features and changes is available at https:
 - Fixed "match case" option on the Find and Replace dialog is no longer selected by default #AP-298
 - Fixed vertical alignment of toolbar icons #DES-134
 - Fixed toolbar icons not appearing on IE11 #DES-133
+
+<div><a class="anchor" id="version500-preview-2october102018"></a></div>
 
 ## 5.0.0-preview-2 - 2018-10-10
 
@@ -1010,6 +1102,8 @@ Full documentation for the version 5 features and changes is available at https:
 ### Removed
 - Removed `colorpicker` plugin, it is now in the theme #AP-328
 - Removed `textcolor` plugin, it is now in the theme #AP-328
+
+<div><a class="anchor" id="version500-preview-1october12018"></a></div>
 
 ## 5.0.0-preview-1 - 2018-10-01
 

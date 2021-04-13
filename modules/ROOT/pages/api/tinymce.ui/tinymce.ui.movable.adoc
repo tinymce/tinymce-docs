@@ -8,10 +8,10 @@ Movable mixin. Makes controls movable absolute and relative to other elements.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#moveby[moveBy()] |Move by a relative x, y values. |link:{baseurl}/api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
-|link:#moverel[moveRel()] |Move relative to the specified element. |link:{baseurl}/api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
-|link:#moveto[moveTo()] |Move to absolute position. |link:{baseurl}/api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
-|link:#testmoverel[testMoveRel()] |Tests various positions to get the most suitable one. |link:{baseurl}/api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
+|link:#moveby[moveBy()] |Move by a relative x, y values. |link:{rootDir}api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
+|link:#moverel[moveRel()] |Move relative to the specified element. |link:{rootDir}api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
+|link:#moveto[moveTo()] |Move to absolute position. |link:{rootDir}api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
+|link:#testmoverel[testMoveRel()] |Tests various positions to get the most suitable one. |link:{rootDir}api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
 |===
 
 == Methods
@@ -33,7 +33,7 @@ Move by a relative x, y values.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[moverel]]
 === moveRel
@@ -49,7 +49,7 @@ Move relative to the specified element.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[moveto]]
 === moveTo
@@ -65,7 +65,7 @@ Move to absolute position.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[testmoverel]]
 === testMoveRel

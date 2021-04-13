@@ -8,10 +8,10 @@ This class wraps the browsers native event logic with more convenient methods.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#bind[bind()] |Binds a callback to an event on the specified target. |link:{baseurl}/api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
-|link:#clean[clean()] |Removes all bound event listeners for the specified target. This will also remove any bound listeners to child nodes within that target. |link:{baseurl}/api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
-|link:#fire[fire()] |Fires the specified event on the specified target. |link:{baseurl}/api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
-|link:#unbind[unbind()] |Unbinds the specified event by name, name and callback or all events on the target. |link:{baseurl}/api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
+|link:#bind[bind()] |Binds a callback to an event on the specified target. |link:{rootDir}api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
+|link:#clean[clean()] |Removes all bound event listeners for the specified target. This will also remove any bound listeners to child nodes within that target. |link:{rootDir}api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
+|link:#fire[fire()] |Fires the specified event on the specified target. |link:{rootDir}api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
+|link:#unbind[unbind()] |Unbinds the specified event by name, name and callback or all events on the target. |link:{rootDir}api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
 |===
 
 == Methods

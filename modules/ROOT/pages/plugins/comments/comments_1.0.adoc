@@ -1,6 +1,5 @@
 :rootDir: ../../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Comments 1.0
 :description: Tiny Comments 1.0 provides the ability to add comments to the content and collaborate with other users for content editing.
 :keywords: comments commenting tinycomments
@@ -9,7 +8,7 @@
 [[introduction]]
 == Introduction
 
-The Comments 1.0 plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 1.0 plugin is built upon the link:{baseurl}/advanced/annotations.html[Annotations API] and uses annotations to create comment threads (conversations).
+The Comments 1.0 plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 1.0 plugin is built upon the link:{rootDir}advanced/annotations.html[Annotations API] and uses annotations to create comment threads (conversations).
 
 This section describes the various configuration options for the Comments 1.0 plugin.
 
@@ -367,4 +366,4 @@ function lookup(uid, done, fail) {
 }
 ----
 
-For more information on Comments 1.0 commercial feature, visit our [Premium Features]({baseurl}/enterprise/tiny-comments/) page.
+For more information on Comments 1.0 commercial feature, visit our [Premium Features]({rootDir}enterprise/tiny-comments/) page.

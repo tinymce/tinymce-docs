@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = System Requirements
 :description: Consolidated system requirements for TinyMCE Enterprise features.
 :keywords: support supported browser browsers windows osx linux ie8 chrome firefox safari
@@ -9,7 +8,7 @@
 == Supported Browsers
 anchor:supportedbrowsers[historical anchor]
 
-link:{baseurl}/general-configuration-guide/system-requirements.html[Go to this page] for information on which browsers are supported by TinyMCE.
+link:{rootDir}general-configuration-guide/system-requirements.html[Go to this page] for information on which browsers are supported by TinyMCE.
 
 [[word-copypaste]]
 == Word Copy/Paste

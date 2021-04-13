@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Format Painter
 :controls: toolbar button
 :description: Quickly apply formats to multiple pieces of text.
@@ -36,6 +35,6 @@ Start with the https://www.tiny.cloud/pricing/[pricing page]
 // this [dedicated product page](https://about.tiny.cloud/products/formatpainter/)
 to see all the flexible pricing options. OEM and enterprise customers should https://www.tiny.cloud/contact/[contact sales directly].
 
-For more information on Format Painter refer to the full link:{baseurl}/plugins/formatpainter.html[documentation].
+For more information on Format Painter refer to the full link:{rootDir}plugins/formatpainter.html[documentation].
 
-There is also a demo provided to explore the Format Painter capabilities link:{baseurl}/demo/formatpainter.html[here].
+There is also a demo provided to explore the Format Painter capabilities link:{rootDir}demo/formatpainter.html[here].

@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = 06. Customize UI
 :description: Learn how to change the appearance of the editor.
 :keywords: themes skins statusbar
@@ -68,7 +67,7 @@ tinymce.init({
 });
 ----
 
-See the link:{baseurl}/configure/editor-appearance/#height[height option] for customization details.
+See the link:{rootDir}configure/editor-appearance/#height[height option] for customization details.
 
 [[set-the-editable-area-width]]
 ===== Set the editable area width
@@ -87,7 +86,7 @@ tinymce.init({
 });
 ----
 
-See the link:{baseurl}/configure/editor-appearance/#width[width option] for customization details.
+See the link:{rootDir}configure/editor-appearance/#width[width option] for customization details.
 
 [[set-maximum-and-minimum-heights-and-widths]]
 ===== Set maximum and minimum heights and widths
@@ -106,15 +105,15 @@ tinymce.init({
 });
 ----
 
-To learn more about these customization options please see the link:{baseurl}/configure/editor-appearance/#max_height[max_height], link:{baseurl}/configure/editor-appearance/#max_width[max_width], link:{baseurl}/configure/editor-appearance/#min_height[min_height], link:{baseurl}/configure/editor-appearance/#min_width[min_width] documentation pages.
+To learn more about these customization options please see the link:{rootDir}configure/editor-appearance/#max_height[max_height], link:{rootDir}configure/editor-appearance/#max_width[max_width], link:{rootDir}configure/editor-appearance/#min_height[min_height], link:{rootDir}configure/editor-appearance/#min_width[min_width] documentation pages.
 
-This is not the end of your options when it comes to customizing TinyMCE's height and width behavior. You can also automatically resize the editable area as the user types into the iframe with the link:{baseurl}/plugins/autoresize.html[Autoresize Plugin], and you can enable the user to resize the editor on horizontal and vertical axis by dragging the status bar handle with the link:{baseurl}/configure/editor-appearance/#resize[resize] configuration option.
+This is not the end of your options when it comes to customizing TinyMCE's height and width behavior. You can also automatically resize the editable area as the user types into the iframe with the link:{rootDir}plugins/autoresize.html[Autoresize Plugin], and you can enable the user to resize the editor on horizontal and vertical axis by dragging the status bar handle with the link:{rootDir}configure/editor-appearance/#resize[resize] configuration option.
 
 [[customizing-the-editable-area-with-content_css]]
 === Customizing the editable area with content_css
 anchor:customizingtheeditableareawithcontent_css[historical anchor]
 
-It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the link:{baseurl}/configure/content-appearance/#content_css[`content_css`] customization option.
+It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the link:{rootDir}configure/content-appearance/#content_css[`content_css`] customization option.
 
 The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages. Let's say you include a file `myLayout.css` in all your pages to control your site's global appearance; then this file must be set as your `content_css` value. Doing this ensures the content in the editable area also has your site's style.
 
@@ -132,7 +131,7 @@ tinyMCE.init({
 });
 ----
 
-Refer to the link:{baseurl}/configure/content-appearance/#content_css[content_css] customization page if you want to learn more about the use of absolute and relative paths and multiple stylesheets.
+Refer to the link:{rootDir}configure/content-appearance/#content_css[content_css] customization page if you want to learn more about the use of absolute and relative paths and multiple stylesheets.
 
 [[hiding-the-status-bar]]
 === Hiding the status bar
@@ -169,7 +168,7 @@ tinymce.init({
 });
 ----
 
-If you tried this snippet, you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See link:{baseurl}/quick-start.html[this page] if you need a basic HTML code block.)
+If you tried this snippet, you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See link:{rootDir}quick-start.html[this page] if you need a basic HTML code block.)
 
 If you wanted the default toolbar _plus_ the `code` functionality you'd need this:
 

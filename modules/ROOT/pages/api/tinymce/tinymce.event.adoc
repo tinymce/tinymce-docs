@@ -8,7 +8,7 @@ This is the base class for all TinyMCE events.
 [cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|type |`+String+` |The event type name for example "click". |link:{baseurl}/api/tinymce/tinymce.event.html[tinymce.Event]
+|type |`+String+` |The event type name for example "click". |link:{rootDir}api/tinymce/tinymce.event.html[tinymce.Event]
 |===
 
 [[methods]]
@@ -17,12 +17,12 @@ This is the base class for all TinyMCE events.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#isdefaultprevented[isDefaultPrevented()] |Returns true/false if the default action is to be prevented or not. |link:{baseurl}/api/tinymce/tinymce.event.html[tinymce.Event]
-|link:#isimmediatepropagationstopped[isImmediatePropagationStopped()] |Returns true/false if the event immediate propagation is stopped or not. |link:{baseurl}/api/tinymce/tinymce.event.html[tinymce.Event]
-|link:#ispropagationstopped[isPropagationStopped()] |Returns true/false if the event propagation is stopped or not. |link:{baseurl}/api/tinymce/tinymce.event.html[tinymce.Event]
-|link:#preventdefault[preventDefault()] |Prevents the default action of an event to be executed. |link:{baseurl}/api/tinymce/tinymce.event.html[tinymce.Event]
-|link:#stopimmediatepropagation[stopImmediatePropagation()] |Prevents the event from propagating to listeners on the same object. |link:{baseurl}/api/tinymce/tinymce.event.html[tinymce.Event]
-|link:#stoppropagation[stopPropagation()] |Stops the event from propagating up to listeners on parent objects. |link:{baseurl}/api/tinymce/tinymce.event.html[tinymce.Event]
+|link:#isdefaultprevented[isDefaultPrevented()] |Returns true/false if the default action is to be prevented or not. |link:{rootDir}api/tinymce/tinymce.event.html[tinymce.Event]
+|link:#isimmediatepropagationstopped[isImmediatePropagationStopped()] |Returns true/false if the event immediate propagation is stopped or not. |link:{rootDir}api/tinymce/tinymce.event.html[tinymce.Event]
+|link:#ispropagationstopped[isPropagationStopped()] |Returns true/false if the event propagation is stopped or not. |link:{rootDir}api/tinymce/tinymce.event.html[tinymce.Event]
+|link:#preventdefault[preventDefault()] |Prevents the default action of an event to be executed. |link:{rootDir}api/tinymce/tinymce.event.html[tinymce.Event]
+|link:#stopimmediatepropagation[stopImmediatePropagation()] |Prevents the event from propagating to listeners on the same object. |link:{rootDir}api/tinymce/tinymce.event.html[tinymce.Event]
+|link:#stoppropagation[stopPropagation()] |Stops the event from propagating up to listeners on parent objects. |link:{rootDir}api/tinymce/tinymce.event.html[tinymce.Event]
 |===
 
 == Methods

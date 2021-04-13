@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Paste Plugin
 :controls: toolbar button, menu item
 :description: Standard version of features for copying-and-pasting content from Microsoft Word.
@@ -9,7 +8,7 @@
 
 [NOTE]
 ====
-Looking for more advanced Microsoft Word importing and pasting? Try the link:{baseurl}/plugins/powerpaste.html[PowerPaste] plugin.
+Looking for more advanced Microsoft Word importing and pasting? Try the link:{rootDir}plugins/powerpaste.html[PowerPaste] plugin.
 ====
 
 This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
@@ -187,7 +186,7 @@ tinymce.init({
 
 This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
-NOTE: To access this feature, you need to set the value of link:{baseurl}plugins/paste/#paste_enable_default_filters[paste_enable_default_filters] to `"false"` in your configuration.
+NOTE: To access this feature, you need to set the value of link:{rootDir}plugins/paste/#paste_enable_default_filters[paste_enable_default_filters] to `"false"` in your configuration.
 
 *Type:* `String`
 

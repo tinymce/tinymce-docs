@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Cloud Deployment of Editor & Plugins
 :description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 :description_short: Learn how to set up the TinyMCE editor via our Cloud, or migrate from a Self-hosted environment.
@@ -8,9 +7,9 @@
 
 TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium plugins.
 
-You may use TinyMCE Cloud without an API key as mentioned in the link:{baseurl}/general-configuration-guide/index.html[General Configuration] guide. However, to use our premium plugins or avoid the in-editor developer warning, you need to signup for an API key and update the script tag used to load the editor code into your application.
+You may use TinyMCE Cloud without an API key as mentioned in the link:{rootDir}general-configuration-guide/index.html[General Configuration] guide. However, to use our premium plugins or avoid the in-editor developer warning, you need to signup for an API key and update the script tag used to load the editor code into your application.
 
-All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This is setup using the link:{baseurl}/plugins/imagetools.html[Image Tools] plugin.
+All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This is setup using the link:{rootDir}plugins/imagetools.html[Image Tools] plugin.
 
 [[integrating-tinymce-for-the-first-time]]
 == Integrating TinyMCE for the first time
@@ -31,7 +30,7 @@ To load TinyMCE for the very first time, you need to embed the TinyMCE editor co
 === Step 2: Load, customize and interact with TinyMCE
 anchor:step2loadcustomizeandinteractwithtinymce[historical anchor]
 
-In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of link:{baseurl}/demo/basic-example.html[simple examples] and we encourage you to review our walkthrough documentation that will help you link:{baseurl}/quick-start.html[get started with TinyMCE].
+In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of link:{rootDir}demo/basic-example.html[simple examples] and we encourage you to review our walkthrough documentation that will help you link:{rootDir}quick-start.html[get started with TinyMCE].
 
 [[step-3-specifying-purchased-tinymce-plugins-and-toolbarmenu-items]]
 === Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
@@ -39,22 +38,22 @@ anchor:step3specifyingpurchasedtinymcepluginsandtoolbarmenuitems[historical anch
 
 Lastly, you just need to extend your TinyMCE configuration to include any of the additional, advanced plugins (and associated toolbar/menu items) you've purchased. You will find enablement guides here:
 
-* link:{baseurl}/plugins/powerpaste.html[PowerPaste]
-* link:{baseurl}/plugins/tinymcespellchecker.html[Spell Checker]
+* link:{rootDir}plugins/powerpaste.html[PowerPaste]
+* link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/index.html[TinyMCE Cloud].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{rootDir}cloud-deployment-guide/index.html[TinyMCE Cloud].
 
-* link:{baseurl}/plugins/imagetools.html[Image Tools (with configured image proxy)]
+* link:{rootDir}plugins/imagetools.html[Image Tools (with configured image proxy)]
 
 [NOTE]
 ====
-Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide.html[TinyMCE Cloud].
+Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{rootDir}cloud-deployment-guide.html[TinyMCE Cloud].
 ====
 
-* link:{baseurl}/plugins/a11ychecker.html[Accessibility Checker]
-* link:{baseurl}/plugins/advcode.html[Advanced Code Editor]
-* link:{baseurl}/plugins/mediaembed.html[Enhanced Media Embed]
-* link:{baseurl}/plugins/linkchecker.html[Link Checker]
+* link:{rootDir}plugins/a11ychecker.html[Accessibility Checker]
+* link:{rootDir}plugins/advcode.html[Advanced Code Editor]
+* link:{rootDir}plugins/mediaembed.html[Enhanced Media Embed]
+* link:{rootDir}plugins/linkchecker.html[Link Checker]
 
 NOTE: Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
 
@@ -76,7 +75,7 @@ IMPORTANT: Please ensure that the `tiny-api-key` and `tinymce-api-key` headers a
 === Step 5: Specifying a translation
 anchor:step5specifyingatranslation[historical anchor]
 
-If you wish to use a language other than English (US), please link:{product_homepage}/i18n[download a language pack] and then link:{baseurl}/configure/localization/#language_url[specify its location] with the `language_url` configuration option.
+If you wish to use a language other than English (US), please link:{product_homepage}i18n[download a language pack] and then link:{rootDir}configure/localization/#language_url[specify its location] with the `language_url` configuration option.
 
 [[migrating-from-a-self-hosted-environment-to-tinymce-cloud]]
 == Migrating from a Self-hosted environment to TinyMCE Cloud
@@ -97,27 +96,27 @@ Migrating from a Self-hosted environment to the Cloud is a relatively straightfo
 === Step 2: Update custom plugin paths
 anchor:step2updatecustompluginpaths[historical anchor]
 
-If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via link:{baseurl}/configure/integration-and-setup/#external_plugins[external_plugins] rather than the regular link:{baseurl}/general-configuration-guide/work-with-plugins.html[plugins] configuration element.
+If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via link:{rootDir}configure/integration-and-setup/#external_plugins[external_plugins] rather than the regular link:{rootDir}general-configuration-guide/work-with-plugins.html[plugins] configuration element.
 
 [[step-3-specify-purchased-tinymce-plugins-and-toolbar-buttons]]
 === Step 3: Specify purchased TinyMCE plugins and toolbar buttons
 anchor:step3specifypurchasedtinymcepluginsandtoolbarbuttons[historical anchor]
 
-Now, you just need to extend your link:{baseurl}/configure/index.html[TinyMCE configuration] to include any additional plugins (and associated toolbar/menu items) you've purchased. You will find enablement guides here:
+Now, you just need to extend your link:{rootDir}configure/index.html[TinyMCE configuration] to include any additional plugins (and associated toolbar/menu items) you've purchased. You will find enablement guides here:
 
-* link:{baseurl}/plugins/powerpaste.html[Powerpaste]
-* link:{baseurl}/plugins/tinymcespellchecker.html[Spell Checker]
+* link:{rootDir}plugins/powerpaste.html[Powerpaste]
+* link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}//cloud-deployment-guide.html[TinyMCE Cloud].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{rootDir}cloud-deployment-guide.html[TinyMCE Cloud].
 
-* link:{baseurl}/plugins/imagetools.html[Image Tools (with configured image proxy)]
+* link:{rootDir}plugins/imagetools.html[Image Tools (with configured image proxy)]
 
 [NOTE]
 ====
-Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide.html[TinyMCE Cloud].
+Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{rootDir}cloud-deployment-guide.html[TinyMCE Cloud].
 ====
 
-* link:{baseurl}/plugins/a11ychecker.html[Accessibility Checker]
-* link:{baseurl}/plugins/advcode.html[Advanced Code Editor]
-* link:{baseurl}/plugins/mediaembed.html[Enhanced Media Embed]
-* link:{baseurl}/plugins/linkchecker.html[Link Checker]
+* link:{rootDir}plugins/a11ychecker.html[Accessibility Checker]
+* link:{rootDir}plugins/advcode.html[Advanced Code Editor]
+* link:{rootDir}plugins/mediaembed.html[Enhanced Media Embed]
+* link:{rootDir}plugins/linkchecker.html[Link Checker]

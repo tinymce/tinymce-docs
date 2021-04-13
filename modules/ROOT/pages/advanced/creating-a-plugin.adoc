@@ -1,13 +1,12 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Create a Plugin for TinyMCE
 :description: A short introduction to creating plugins for TinyMCE along with an example plugin.
 :description_short: Introducing plugin creation, with an example.
 :keywords: plugin plugin.js plugin.min.js tinymce.js
 :title_nav: Create a Plugin
 
-Creating plugins in TinyMCE is pretty simple - especially if you use the link:{baseurl}/advanced/yeoman-generator.html[Yeoman generator]! - but if you would rather do it all by yourself, keep reading.
+Creating plugins in TinyMCE is pretty simple - especially if you use the link:{rootDir}advanced/yeoman-generator.html[Yeoman generator]! - but if you would rather do it all by yourself, keep reading.
 
 This tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
 
@@ -127,7 +126,7 @@ tinymce.init({
 == Exposing metadata
 anchor:exposingmetadata[historical anchor]
 
-You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata will then be used by the link:{baseurl}/plugins/help.html[Help Plugin] to show the correct name and link for your plugin in the Plugins installed tab. See the `test` plugin above for example.
+You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata will then be used by the link:{rootDir}plugins/help.html[Help Plugin] to show the correct name and link for your plugin in the Plugins installed tab. See the `test` plugin above for example.
 
 [[language-localization]]
 == Language localization

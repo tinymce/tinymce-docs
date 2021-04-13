@@ -30,13 +30,13 @@ tinymce.activeEditor.windowManager.alert('Hello world!');
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#alert[alert()] |Creates a alert dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended. |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
-|link:#close[close()] |Closes the top most window. |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
-|link:#confirm[confirm()] |Creates a confirm dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended. |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
-|link:#getparams[getParams()] |Returns the params of the last window open call. This can be used in iframe based dialog to get params passed from the tinymce plugin. |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
-|link:#getwindows[getWindows()] |Returns the currently opened window objects. |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
-|link:#open[open()] |Opens a new window. |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
-|link:#setparams[setParams()] |Sets the params of the last opened window. |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
+|link:#alert[alert()] |Creates a alert dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended. |link:{rootDir}api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
+|link:#close[close()] |Closes the top most window. |link:{rootDir}api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
+|link:#confirm[confirm()] |Creates a confirm dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended. |link:{rootDir}api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
+|link:#getparams[getParams()] |Returns the params of the last window open call. This can be used in iframe based dialog to get params passed from the tinymce plugin. |link:{rootDir}api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
+|link:#getwindows[getWindows()] |Returns the currently opened window objects. |link:{rootDir}api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
+|link:#open[open()] |Opens a new window. |link:{rootDir}api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
+|link:#setparams[setParams()] |Sets the params of the last opened window. |link:{rootDir}api/tinymce/tinymce.windowmanager.html[tinymce.WindowManager]
 |===
 
 == Methods

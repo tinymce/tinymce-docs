@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = PowerPaste Plugin
 :keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 :title_nav: PowerPaste
@@ -18,7 +17,7 @@ To paste clipboard content as plain text, users can click the "Paste As Text" to
 
 If you configure *PowerPaste* to allow local images (see the `powerpaste_allow_local_images` setting below), then images copied from Microsoft Word and other sources will appear in TinyMCE as Base64 encoded images. You can have TinyMCE automatically upload Base64 encoded images for reverting back to a standard image as documented on the following page:
 
-\{baseurl}/advanced/handle-async-image-uploads/
+\{rootDir}advanced/handle-async-image-uploads/
 
 NOTE: PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, *PowerPaste* extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
 
@@ -26,7 +25,7 @@ NOTE: PowerPaste (when configured to allow local images) will import images from
 == Cloud Installation
 anchor:cloudinstallation[historical anchor]
 
-To enable the TinyMCE *PowerPaste* plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud]:
+To enable the TinyMCE *PowerPaste* plugin with link:{rootDir}cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud]:
 
 . If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
 . Add `powerpaste` to the `plugins` list.
@@ -57,10 +56,10 @@ See the example TinyMCE configuration above.
 == Using the PowerPaste Plugin with Module Loaders
 anchor:usingthepowerpastepluginwithmoduleloaders[historical anchor]
 
-To enable the *PowerPaste* plugin when using a link:{baseurl}/advanced/usage-with-module-loaders.html[module loader], follow these instructions:
+To enable the *PowerPaste* plugin when using a link:{rootDir}advanced/usage-with-module-loaders.html[module loader], follow these instructions:
 
 . Make the PowerPaste plugin folder available over http.
-. Add the path to the PowerPaste plugin folder to the link:{baseurl}/configure/integration-and-setup/#external_plugins[external plugins] option in `tinymce.init()`.
+. Add the path to the PowerPaste plugin folder to the link:{rootDir}configure/integration-and-setup/#external_plugins[external plugins] option in `tinymce.init()`.
 
 Example:
 
@@ -112,7 +111,7 @@ When set to true Base 64 encoded images using a data URI in the copied content w
 
 The default is `true`.
 
-NOTE: If you configure_ *_PowerPaste_* _to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: \{baseurl}/advanced/handle-async-image-uploads
+NOTE: If you configure_ *_PowerPaste_* _to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: \{rootDir}advanced/handle-async-image-uploads
 
 [[example]]
 ===== Example

@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Spell Checker Plugin
 :controls: toolbar button, menu item
 :description: Enables TinyMCE's spellcheck functionality.
@@ -27,7 +26,7 @@ tinymce.init({
 [[options]]
 == Options
 
-These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with TinyMCE please link:{baseurl}/general-configuration-guide/spell-checking.html[refer to this section] in the General Configuration Guide.
+These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with TinyMCE please link:{rootDir}general-configuration-guide/spell-checking.html[refer to this section] in the General Configuration Guide.
 
 [[spellchecker_callback]]
 === `spellchecker_callback`

@@ -21,18 +21,18 @@ tinymce.activeEditor.formatter.register('mycustomformat', {
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#apply[apply()] |Applies the specified format to the current selection or specified node. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#canapply[canApply()] |Returns true/false if the specified format can be applied to the current selection or not. It will currently only check the state for selector formats, it returns true on all other format types. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#formatchanged[formatChanged()] |Executes the specified callback when the current selection matches the formats or not. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#get[get()] |Returns the format by name or all formats if no name is specified. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#getcsstext[getCssText()] |Returns a preview css text for the specified format. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#match[match()] |Matches the current selection or specified node against the specified format name. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#matchall[matchAll()] |Matches the current selection against the array of formats and returns a new array with matching formats. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#matchnode[matchNode()] |Return true/false if the specified node has the specified format. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#register[register()] |Registers a specific format by name. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#remove[remove()] |Removes the specified format from the current selection or specified node. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#toggle[toggle()] |Toggles the specified format on/off. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
-|link:#unregister[unregister()] |Unregister a specific format by name. |link:{baseurl}/api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#apply[apply()] |Applies the specified format to the current selection or specified node. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#canapply[canApply()] |Returns true/false if the specified format can be applied to the current selection or not. It will currently only check the state for selector formats, it returns true on all other format types. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#formatchanged[formatChanged()] |Executes the specified callback when the current selection matches the formats or not. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#get[get()] |Returns the format by name or all formats if no name is specified. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#getcsstext[getCssText()] |Returns a preview css text for the specified format. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#match[match()] |Matches the current selection or specified node against the specified format name. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#matchall[matchAll()] |Matches the current selection against the array of formats and returns a new array with matching formats. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#matchnode[matchNode()] |Return true/false if the specified node has the specified format. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#register[register()] |Registers a specific format by name. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#remove[remove()] |Removes the specified format from the current selection or specified node. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#toggle[toggle()] |Toggles the specified format on/off. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
+|link:#unregister[unregister()] |Unregister a specific format by name. |link:{rootDir}api/tinymce/tinymce.formatter.html[tinymce.Formatter]
 |===
 
 == Methods

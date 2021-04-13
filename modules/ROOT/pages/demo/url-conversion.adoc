@@ -1,13 +1,12 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = URL Conversion Example
 :description: This example shows you how to setup TinyMCE to produce different results for URLs in images and links. You can read more about these config options in the FAQ.
 :description_short: Examples of absolute, relative urls and urls with no conversion.
 :keywords: example demo custom url conversion absolute relative url urls
 :title_nav: URL Conversion
 
-This example shows you how to setup TinyMCE to produce different results for its URLs in images and links. You can read more about these config options in the link:{baseurl}/general-configuration-guide/get-support.html[TinyMCE FAQ].
+This example shows you how to setup TinyMCE to produce different results for its URLs in images and links. You can read more about these config options in the link:{rootDir}general-configuration-guide/get-support.html[TinyMCE FAQ].
 
 [[absolute-urls-on-links-and-images]]
 === Absolute URLs on links and images

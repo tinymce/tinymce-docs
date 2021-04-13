@@ -20,8 +20,8 @@ var str = tinymce.util.JSON.serialize(obj);
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#parse[parse()] |Unserializes/parses the specified JSON string into a object. |link:{baseurl}/api/tinymce.util/tinymce.util.json.html[tinymce.util.JSON]
-|link:#serialize[serialize()] |Serializes the specified object as a JSON string. |link:{baseurl}/api/tinymce.util/tinymce.util.json.html[tinymce.util.JSON]
+|link:#parse[parse()] |Unserializes/parses the specified JSON string into a object. |link:{rootDir}api/tinymce.util/tinymce.util.json.html[tinymce.util.JSON]
+|link:#serialize[serialize()] |Serializes the specified object as a JSON string. |link:{rootDir}api/tinymce.util/tinymce.util.json.html[tinymce.util.JSON]
 |===
 
 == Methods

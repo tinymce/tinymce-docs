@@ -8,8 +8,8 @@ This class enables you to display a Throbber for any element.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#hide[hide()] |Hides the throbber. |link:{baseurl}/api/tinymce.ui/tinymce.ui.throbber.html[tinymce.ui.Throbber]
-|link:#show[show()] |Shows the throbber. |link:{baseurl}/api/tinymce.ui/tinymce.ui.throbber.html[tinymce.ui.Throbber]
+|link:#hide[hide()] |Hides the throbber. |link:{rootDir}api/tinymce.ui/tinymce.ui.throbber.html[tinymce.ui.Throbber]
+|link:#show[show()] |Shows the throbber. |link:{rootDir}api/tinymce.ui/tinymce.ui.throbber.html[tinymce.ui.Throbber]
 |===
 
 == Methods
@@ -25,7 +25,7 @@ Hides the throbber.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.throbber.html[`+tinymce.ui.Throbber+`] - Current throbber instance.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.throbber.html[`+tinymce.ui.Throbber+`] - Current throbber instance.
 
 [[show]]
 === show
@@ -42,4 +42,4 @@ Shows the throbber.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.throbber.html[`+tinymce.ui.Throbber+`] - Current throbber instance.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.throbber.html[`+tinymce.ui.Throbber+`] - Current throbber instance.

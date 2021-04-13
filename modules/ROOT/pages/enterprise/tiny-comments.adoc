@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Comments
 :description: Tiny Comments. A premium plugin to add comments and collaborate for content editing.
 :keywords: enterprise pricing comment commenting
@@ -13,8 +12,8 @@ Users can now add comments to their text from within their TinyMCE editor for co
 
 Currently, there are two versions of Comments compatible with TinyMCE v4:
 
-* link:{baseurl}/plugins/comments/comments_1.0.html[Comments 1.0]
-* link:{baseurl}/plugins/comments/comments_2.0.html[Comments 2.0]
+* link:{rootDir}plugins/comments/comments_1.0.html[Comments 1.0]
+* link:{rootDir}plugins/comments/comments_2.0.html[Comments 2.0]
 
 [[collaborate-on-your-projects-within-your-content]]
 === Collaborate on your projects within your content
@@ -50,7 +49,7 @@ anchor:commentsdemo[historical anchor]
 
 Still not sure? Check out the demos below.
 
-* link:{baseurl}/demo/comments/#comments10demo.html[Comments 1.0 demo]
-* link:{baseurl}/demo/comments/#comments20demo.html[Comments 2.0 demo]
+* link:{rootDir}demo/comments/#comments10demo.html[Comments 1.0 demo]
+* link:{rootDir}demo/comments/#comments20demo.html[Comments 2.0 demo]
 
-NOTE: For more information on installing and configuring Tiny Comments, please visit the link:{baseurl}/plugins/comments/index.html[documentation].
+NOTE: For more information on installing and configuring Tiny Comments, please visit the link:{rootDir}plugins/comments/index.html[documentation].

@@ -8,13 +8,13 @@ This layout manager places controls in a grid.
 [cols=",,,",options="header",]
 |===
 |name |type |summary |defined by
-|alignH |`+String+` |start|end|center|stretch or array of values for each column. |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
-|alignV |`+String+` |start|end|center|stretch or array of values for each column. |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
-|columns |`+Number+` |Number of columns to use. |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
-|pack |`+String+` |start|end |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
-|spacing |`+Number+` |Spacing between controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
-|spacingH |`+Number+` |Horizontal spacing between controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
-|spacingV |`+Number+` |Vertical spacing between controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|alignH |`+String+` |start|end|center|stretch or array of values for each column. |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|alignV |`+String+` |start|end|center|stretch or array of values for each column. |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|columns |`+Number+` |Number of columns to use. |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|pack |`+String+` |start|end |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|spacing |`+Number+` |Spacing between controls. |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|spacingH |`+Number+` |Horizontal spacing between controls. |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|spacingV |`+Number+` |Vertical spacing between controls. |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
 |===
 
 [[constructors]]
@@ -23,7 +23,7 @@ This layout manager places controls in a grid.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#layout[Layout()] |Constructs a layout instance with the specified settings. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
+|link:#layout[Layout()] |Constructs a layout instance with the specified settings. |link:{rootDir}api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
 |===
 
 [[methods]]
@@ -32,10 +32,10 @@ This layout manager places controls in a grid.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#postrender[postRender()] |This method gets invoked after the layout renders the controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
-|link:#prerender[preRender()] |This method gets invoked before the layout renders the controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
-|link:#recalc[recalc()] |Recalculates the positions of the controls in the specified container. |link:{baseurl}/api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
-|link:#renderhtml[renderHtml()] |Renders the specified container and any layout specific HTML. |link:{baseurl}/api/tinymce.ui/tinymce.ui.absolutelayout.html[tinymce.ui.AbsoluteLayout]
+|link:#postrender[postRender()] |This method gets invoked after the layout renders the controls. |link:{rootDir}api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
+|link:#prerender[preRender()] |This method gets invoked before the layout renders the controls. |link:{rootDir}api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
+|link:#recalc[recalc()] |Recalculates the positions of the controls in the specified container. |link:{rootDir}api/tinymce.ui/tinymce.ui.gridlayout.html[tinymce.ui.GridLayout]
+|link:#renderhtml[renderHtml()] |Renders the specified container and any layout specific HTML. |link:{rootDir}api/tinymce.ui/tinymce.ui.absolutelayout.html[tinymce.ui.AbsoluteLayout]
 |===
 
 == Constructors
@@ -63,7 +63,7 @@ This method gets invoked after the layout renders the controls.
 
 ==== Parameters
 
-* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to postRender.
+* `+container+` link:{rootDir}api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to postRender.
 
 [[prerender]]
 === preRender
@@ -74,7 +74,7 @@ This method gets invoked before the layout renders the controls.
 
 ==== Parameters
 
-* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to preRender.
+* `+container+` link:{rootDir}api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to preRender.
 
 [[recalc]]
 === recalc
@@ -85,7 +85,7 @@ Recalculates the positions of the controls in the specified container.
 
 ==== Parameters
 
-* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to recalc.
+* `+container+` link:{rootDir}api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to recalc.
 
 [[renderhtml]]
 === renderHtml
@@ -96,4 +96,4 @@ Renders the specified container and any layout specific HTML.
 
 ==== Parameters
 
-* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container to render HTML for.
+* `+container+` link:{rootDir}api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container to render HTML for.

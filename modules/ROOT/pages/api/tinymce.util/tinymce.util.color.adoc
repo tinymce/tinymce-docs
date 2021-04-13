@@ -19,7 +19,7 @@ console.log(white.toHex(), red.toHsv());
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#color[Color()] |Constructs a new color instance. |link:{baseurl}/api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
+|link:#color[Color()] |Constructs a new color instance. |link:{rootDir}api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
 |===
 
 [[methods]]
@@ -28,10 +28,10 @@ console.log(white.toHex(), red.toHsv());
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#parse[parse()] |Parses the specified value and populates the color instance. Supported format examples: * rbg(255,0,0) * #ff0000 * #fff * \{r: 255, g: 0, b: 0} * \{h: 360, s: 100, v: 100} |link:{baseurl}/api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
-|link:#tohex[toHex()] |Returns the hex string of the current color. For example: #ff00ff |link:{baseurl}/api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
-|link:#tohsv[toHsv()] |Returns the h, s, v values of the color. Ranges: h=0-360, s=0-100, v=0-100. |link:{baseurl}/api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
-|link:#torgb[toRgb()] |Returns the r, g, b values of the color. Each channel has a range from 0-255. |link:{baseurl}/api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
+|link:#parse[parse()] |Parses the specified value and populates the color instance. Supported format examples: * rbg(255,0,0) * #ff0000 * #fff * \{r: 255, g: 0, b: 0} * \{h: 360, s: 100, v: 100} |link:{rootDir}api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
+|link:#tohex[toHex()] |Returns the hex string of the current color. For example: #ff00ff |link:{rootDir}api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
+|link:#tohsv[toHsv()] |Returns the h, s, v values of the color. Ranges: h=0-360, s=0-100, v=0-100. |link:{rootDir}api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
+|link:#torgb[toRgb()] |Returns the r, g, b values of the color. Each channel has a range from 0-255. |link:{rootDir}api/tinymce.util/tinymce.util.color.html[tinymce.util.Color]
 |===
 
 == Constructors
@@ -65,7 +65,7 @@ Parses the specified value and populates the color instance. Supported format ex
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.util/tinymce.util.color.html[`+tinymce.util.Color+`] - Current color instance.
+* link:{rootDir}api/tinymce.util/tinymce.util.color.html[`+tinymce.util.Color+`] - Current color instance.
 
 [[tohex]]
 === toHex

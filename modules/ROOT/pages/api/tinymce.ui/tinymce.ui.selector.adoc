@@ -33,7 +33,7 @@ Supported expressions:
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#selector[Selector()] |Constructs a new Selector instance. |link:{baseurl}/api/tinymce.ui/tinymce.ui.selector.html[tinymce.ui.Selector]
+|link:#selector[Selector()] |Constructs a new Selector instance. |link:{rootDir}api/tinymce.ui/tinymce.ui.selector.html[tinymce.ui.Selector]
 |===
 
 [[methods]]
@@ -42,8 +42,8 @@ Supported expressions:
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#find[find()] |Returns a tinymce.ui.Collection with matches of the specified selector inside the specified container. |link:{baseurl}/api/tinymce.ui/tinymce.ui.selector.html[tinymce.ui.Selector]
-|link:#match[match()] |Returns true/false if the selector matches the specified control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.selector.html[tinymce.ui.Selector]
+|link:#find[find()] |Returns a tinymce.ui.Collection with matches of the specified selector inside the specified container. |link:{rootDir}api/tinymce.ui/tinymce.ui.selector.html[tinymce.ui.Selector]
+|link:#match[match()] |Returns true/false if the selector matches the specified control. |link:{rootDir}api/tinymce.ui/tinymce.ui.selector.html[tinymce.ui.Selector]
 |===
 
 == Constructors
@@ -71,13 +71,13 @@ Returns a tinymce.ui.Collection with matches of the specified selector inside th
 
 ==== Parameters
 
-* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+(tinymce.ui.Control)+`] - Container to look for items in.
+* `+container+` link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+(tinymce.ui.Control)+`] - Container to look for items in.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Collection with matched elements.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Collection with matched elements.
 
 [[match]]
 === match
@@ -88,7 +88,7 @@ Returns true/false if the selector matches the specified control.
 
 ==== Parameters
 
-* `+control+` link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+(tinymce.ui.Control)+`] - Control to match against the selector.
+* `+control+` link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+(tinymce.ui.Control)+`] - Control to match against the selector.
 * `+selectors+` `+(Array)+` - Optional array of selectors, mostly used internally.
 
 ==== Return value

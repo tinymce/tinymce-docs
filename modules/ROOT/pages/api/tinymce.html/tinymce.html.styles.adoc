@@ -25,9 +25,9 @@ console.log(new tinymce.html.StyleSerializer().serialize(styles));
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#parse[parse()] |Parses the specified style value into an object collection. This parser will also merge and remove any redundant items that browsers might have added. It will also convert non hex colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings. |link:{baseurl}/api/tinymce.html/tinymce.html.styles.html[tinymce.html.Styles]
-|link:#serialize[serialize()] |Serializes the specified style object into a string. |link:{baseurl}/api/tinymce.html/tinymce.html.styles.html[tinymce.html.Styles]
-|link:#tohex[toHex()] |Parses the specified RGB color value and returns a hex version of that color. |link:{baseurl}/api/tinymce.html/tinymce.html.styles.html[tinymce.html.Styles]
+|link:#parse[parse()] |Parses the specified style value into an object collection. This parser will also merge and remove any redundant items that browsers might have added. It will also convert non hex colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings. |link:{rootDir}api/tinymce.html/tinymce.html.styles.html[tinymce.html.Styles]
+|link:#serialize[serialize()] |Serializes the specified style object into a string. |link:{rootDir}api/tinymce.html/tinymce.html.styles.html[tinymce.html.Styles]
+|link:#tohex[toHex()] |Parses the specified RGB color value and returns a hex version of that color. |link:{rootDir}api/tinymce.html/tinymce.html.styles.html[tinymce.html.Styles]
 |===
 
 == Methods

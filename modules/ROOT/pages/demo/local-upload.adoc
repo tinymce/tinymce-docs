@@ -1,12 +1,11 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Local Upload
 :description: This example demonstrates the local file upload feature.
 :keywords: example demo image local-upload
 :title_nav: Local Upload
 
-We've supported link:{baseurl}/demo/file-picker.html[local file picking] and link:{baseurl}/general-configuration-guide/upload-images.html[image uploading] for quite some time already. However making these features functional required some effort on the user's side, while not being immediately obvious, at the same time. Some effort is still required, but we decided to supplement the feature with an intuitive UI.
+We've supported link:{rootDir}demo/file-picker.html[local file picking] and link:{rootDir}general-configuration-guide/upload-images.html[image uploading] for quite some time already. However making these features functional required some effort on the user's side, while not being immediately obvious, at the same time. Some effort is still required, but we decided to supplement the feature with an intuitive UI.
 
 Once `images_upload_url` is defined in the config, an *Upload* tab appears in the *Image Dialog*.
 
@@ -23,6 +22,6 @@ So a setup like this displays a friendly UI simplifying image upload either by p
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 ++++
 
-All link:{baseurl}/general-configuration-guide/upload-images/#imageuploaderoptions[image uploading options] are supported, including `images_upload_handler` (a way to define custom file uploader) and `images_upload_credentials`.
+All link:{rootDir}general-configuration-guide/upload-images/#imageuploaderoptions[image uploading options] are supported, including `images_upload_handler` (a way to define custom file uploader) and `images_upload_credentials`.
 
-For more details check link:{baseurl}/general-configuration-guide/upload-images.html[Upload Images] tutorial from the General Configuration series.
+For more details check link:{rootDir}general-configuration-guide/upload-images.html[Upload Images] tutorial from the General Configuration series.

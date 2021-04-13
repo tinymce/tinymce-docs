@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Paste from Word
 :description: Upgrade the Microsoft Word copy-and-paste capabilities of TinyMCE.
 :keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
@@ -15,7 +14,7 @@ TinyMCE PowerPaste is a Premium Plugin from TinyMCE. We have flexible purchase o
 
 [NOTE]
 ====
-Customers: we have full documentation explaining how to install and configure TinyMCE PowerPaste. link:{baseurl}/plugins/powerpaste.html[Go to the docs.]
+Customers: we have full documentation explaining how to install and configure TinyMCE PowerPaste. link:{rootDir}plugins/powerpaste.html[Go to the docs.]
 ====
 
 [[example-use-cases]]

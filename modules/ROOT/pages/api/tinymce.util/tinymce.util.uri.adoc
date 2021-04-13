@@ -8,7 +8,7 @@ This class handles parsing, modification and serialization of URI/URL strings.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#uri[URI()] |Constructs a new URI instance. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#uri[URI()] |Constructs a new URI instance. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
 |===
 
 [[methods]]
@@ -17,13 +17,13 @@ This class handles parsing, modification and serialization of URI/URL strings.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#geturi[getURI()] |Returns the full URI of the internal structure. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
-|link:#issameorigin[isSameOrigin()] |Determine whether the given URI has the same origin as this URI. Based on RFC-6454. Supports default ports for protocols listed in DEFAULT_PORTS. Unsupported protocols will fail safe: they won't match, if the port specifications differ. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
-|link:#setpath[setPath()] |Sets the internal path part of the URI. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
-|link:#toabspath[toAbsPath()] |Converts a relative path into a absolute path. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
-|link:#toabsolute[toAbsolute()] |Converts the specified URI into a absolute URI based on the current URI instance location. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
-|link:#torelpath[toRelPath()] |Converts a absolute path into a relative path. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
-|link:#torelative[toRelative()] |Converts the specified URI into a relative URI based on the current URI instance location. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#geturi[getURI()] |Returns the full URI of the internal structure. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#issameorigin[isSameOrigin()] |Determine whether the given URI has the same origin as this URI. Based on RFC-6454. Supports default ports for protocols listed in DEFAULT_PORTS. Unsupported protocols will fail safe: they won't match, if the port specifications differ. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#setpath[setPath()] |Sets the internal path part of the URI. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#toabspath[toAbsPath()] |Converts a relative path into a absolute path. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#toabsolute[toAbsolute()] |Converts the specified URI into a absolute URI based on the current URI instance location. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#torelpath[toRelPath()] |Converts a absolute path into a relative path. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
+|link:#torelative[toRelative()] |Converts the specified URI into a relative URI based on the current URI instance location. |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
 |===
 
 == Constructors
@@ -63,7 +63,7 @@ Determine whether the given URI has the same origin as this URI. Based on RFC-64
 
 ==== Parameters
 
-* `+uri+` link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[`+(tinymce.util.URI)+`] - Uri instance to compare.
+* `+uri+` link:{rootDir}api/tinymce.util/tinymce.util.uri.html[`+(tinymce.util.URI)+`] - Uri instance to compare.
 
 [[return-value]]
 ==== Return value

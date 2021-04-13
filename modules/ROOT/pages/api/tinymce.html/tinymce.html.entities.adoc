@@ -8,12 +8,12 @@ Entity encoder class.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#decode[decode()] |Decodes the specified string, this will replace entities with raw UTF characters. |link:{baseurl}/api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
-|link:#encodeallraw[encodeAllRaw()] |Encoded the specified text with both the attributes and text entities. This function will produce larger text contents since it doesn't know if the context is within a attribute or text node. This was added for compatibility and is exposed as the DOMUtils.encode function. |link:{baseurl}/api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
-|link:#encodenamed[encodeNamed()] |Encodes the specified string using named entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into named entities. |link:{baseurl}/api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
-|link:#encodenumeric[encodeNumeric()] |Encodes the specified string using numeric entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into numeric entities. |link:{baseurl}/api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
-|link:#encoderaw[encodeRaw()] |Encodes the specified string using raw entities. This means only the required XML base entities will be encoded. |link:{baseurl}/api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
-|link:#getencodefunc[getEncodeFunc()] |Returns an encode function based on the name(s) and it's optional entities. |link:{baseurl}/api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
+|link:#decode[decode()] |Decodes the specified string, this will replace entities with raw UTF characters. |link:{rootDir}api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
+|link:#encodeallraw[encodeAllRaw()] |Encoded the specified text with both the attributes and text entities. This function will produce larger text contents since it doesn't know if the context is within a attribute or text node. This was added for compatibility and is exposed as the DOMUtils.encode function. |link:{rootDir}api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
+|link:#encodenamed[encodeNamed()] |Encodes the specified string using named entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into named entities. |link:{rootDir}api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
+|link:#encodenumeric[encodeNumeric()] |Encodes the specified string using numeric entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into numeric entities. |link:{rootDir}api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
+|link:#encoderaw[encodeRaw()] |Encodes the specified string using raw entities. This means only the required XML base entities will be encoded. |link:{rootDir}api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
+|link:#getencodefunc[getEncodeFunc()] |Returns an encode function based on the name(s) and it's optional entities. |link:{rootDir}api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
 |===
 
 == Methods

@@ -8,10 +8,10 @@ This class is a factory for control instances. This enables you to create instan
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds a new control instance type to the factory. |link:{baseurl}/api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
-|link:#create[create()] |Creates a new control instance based on the settings provided. The instance created will be based on the specified type property it can also create whole structures of components out of the specified JSON object. |link:{baseurl}/api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
-|link:#get[get()] |Returns ui control module by name. |link:{baseurl}/api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
-|link:#has[has()] |Returns true/false if the specified type exists or not. |link:{baseurl}/api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
+|link:#add[add()] |Adds a new control instance type to the factory. |link:{rootDir}api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
+|link:#create[create()] |Creates a new control instance based on the settings provided. The instance created will be based on the specified type property it can also create whole structures of components out of the specified JSON object. |link:{rootDir}api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
+|link:#get[get()] |Returns ui control module by name. |link:{rootDir}api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
+|link:#has[has()] |Returns true/false if the specified type exists or not. |link:{rootDir}api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
 |===
 
 == Methods
@@ -55,7 +55,7 @@ tinymce.ui.Factory.create({
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Control instance based on the specified type.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Control instance based on the specified type.
 
 [[get]]
 === get

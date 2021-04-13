@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Angular Integration
 :description: Using TinyMCE together with Angular 2+ with the @tinymce/tinymce-angular component
 :keywords: integration integrate angular2 angular4 angular6 angular3 angular5 angularjs
@@ -176,7 +175,7 @@ anchor:loadingtinymce[historical anchor]
 === Auto-loading from TinyMCE Cloud
 anchor:auto-loadingfromtinymcecloud[historical anchor]
 
-The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load link:{baseurl}/cloud-deployment-guide/[TinyMCE Cloud] if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
+The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load link:{rootDir}cloud-deployment-guide/[TinyMCE Cloud] if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
 
 [source,tsx]
 ----
@@ -200,13 +199,13 @@ So using the `dev` channel would look like this:
 </editor>
 ----
 
-For more info on the different versions see the link:{baseurl}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases[documentation].
+For more info on the different versions see the link:{rootDir}cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases[documentation].
 
 [[loading-tinymce-by-yourself]]
 === Loading TinyMCE by yourself
 anchor:loadingtinymcebyyourself[historical anchor]
 
-To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out link:{baseurl}/advanced/usage-with-module-loaders/[this page in the documentation].
+To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out link:{rootDir}advanced/usage-with-module-loaders/[this page in the documentation].
 
 [[a-note-about-integrations]]
 ==== A note about integrations

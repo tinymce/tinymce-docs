@@ -19,8 +19,8 @@ editor.shortcuts.add('access+a', "description of the shortcut", function() {}); 
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds a keyboard shortcut for some command or function. |link:{baseurl}/api/tinymce/tinymce.shortcuts.html[tinymce.Shortcuts]
-|link:#remove[remove()] |Remove a keyboard shortcut by pattern. |link:{baseurl}/api/tinymce/tinymce.shortcuts.html[tinymce.Shortcuts]
+|link:#add[add()] |Adds a keyboard shortcut for some command or function. |link:{rootDir}api/tinymce/tinymce.shortcuts.html[tinymce.Shortcuts]
+|link:#remove[remove()] |Remove a keyboard shortcut by pattern. |link:{rootDir}api/tinymce/tinymce.shortcuts.html[tinymce.Shortcuts]
 |===
 
 == Methods

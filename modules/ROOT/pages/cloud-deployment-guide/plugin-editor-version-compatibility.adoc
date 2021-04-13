@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Version Compatibility Reference
 :description: Premium plugins compatibility with TinyMCE editor versions.
 :description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins.
@@ -8,14 +7,14 @@
 
 Some of our premium plugins are only compatible with specific versions of TinyMCE.
 
-If you're deploying link:{baseurl}/cloud-deployment-guide/editor-and-features.html[both the TinyMCE editor and premium plugins via the Cloud], use the following matrix in conjunction with the optional parameters for specifying editor version and link:{baseurl}/cloud-deployment-guide/editor-plugin-version.html[plugin version] to ensure your editor and plugins are compatible.
+If you're deploying link:{rootDir}cloud-deployment-guide/editor-and-features.html[both the TinyMCE editor and premium plugins via the Cloud], use the following matrix in conjunction with the optional parameters for specifying editor version and link:{rootDir}cloud-deployment-guide/editor-plugin-version.html[plugin version] to ensure your editor and plugins are compatible.
 
-If you're deploying link:{baseurl}/cloud-deployment-guide/features-only.html[premium plugins _only_ via the Cloud], you'll need to ensure you're either only loading plugins supported for your editor version, or that your editor is upgraded to the required release.
+If you're deploying link:{rootDir}cloud-deployment-guide/features-only.html[premium plugins _only_ via the Cloud], you'll need to ensure you're either only loading plugins supported for your editor version, or that your editor is upgraded to the required release.
 
 [cols=",^,^,^,,^,^,^,^"]
 |===
-|  | link:{baseurl}/plugins/powerpaste.html[PowerPaste] | link:{baseurl}/plugins/tinymcespellchecker.html[Spell Checker] | link:{baseurl}/plugins/a11ychecker.html[Accessibility Checker] | Mentions | link:{baseurl}/plugins/advcode.html[Advanced Code Editor] | MoxieManager +
-(SDK ONLY) | link:{baseurl}/plugins/mediaembed.html[Enhanced Media Embed] | link:{baseurl}/plugins/linkchecker.html[Link Checker]
+|  | link:{rootDir}plugins/powerpaste.html[PowerPaste] | link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker] | link:{rootDir}plugins/a11ychecker.html[Accessibility Checker] | Mentions | link:{rootDir}plugins/advcode.html[Advanced Code Editor] | MoxieManager +
+(SDK ONLY) | link:{rootDir}plugins/mediaembed.html[Enhanced Media Embed] | link:{rootDir}plugins/linkchecker.html[Link Checker]
 
 | 4.5.2
 | Y
@@ -98,4 +97,4 @@ If you're deploying link:{baseurl}/cloud-deployment-guide/features-only.html[pre
 |
 |===
 
-_N1_ - For this combination of TinyMCE and Spellchecking, the link:{baseurl}/plugins/tinymcespellchecker/#spellchecker_dialog[spellchecker_dialog mode] is unavailable.
+_N1_ - For this combination of TinyMCE and Spellchecking, the link:{rootDir}plugins/tinymcespellchecker/#spellchecker_dialog[spellchecker_dialog mode] is unavailable.

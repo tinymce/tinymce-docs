@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Usage with module loaders
 :description: How to use TinyMCE in a project using a module bundler like Webpack or Browserify
 :description_short: How to include TinyMCE in a project using CommonJS modules.
@@ -65,7 +64,7 @@ tinymce.init({
 == Getting the skin
 anchor:gettingtheskin[historical anchor]
 
-TinyMCE will not work without a *skin*, which consists of some fonts and CSS files used by the editor. By default TinyMCE looks for these files in a `/skins` directory located in your root directory, although this can  be link:{baseurl}/configure/editor-appearance/#skin_url[configured in the init object].
+TinyMCE will not work without a *skin*, which consists of some fonts and CSS files used by the editor. By default TinyMCE looks for these files in a `/skins` directory located in your root directory, although this can  be link:{rootDir}configure/editor-appearance/#skin_url[configured in the init object].
 
 No matter where you choose to put it you need a skin, and the quickest way to get started is to copy the skin that comes packaged with TinyMCE, located in `node_modules/tinymce/skins` - either manually copying the files in the finder/file explorer, or using the terminal with a command something like this:
 

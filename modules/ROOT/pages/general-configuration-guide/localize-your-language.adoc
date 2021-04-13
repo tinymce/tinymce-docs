@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = 10. Localize TinyMCE
 :description: Localize TinyMCE with global language capabilities.
 :keywords: internationalization localization languages
@@ -11,7 +10,7 @@ In this section, we show you how to change TinyMCE's user interface to suit your
 
 [NOTE]
 ====
-Pro tip: Language settings can be controlled in these configuration options: link:{baseurl}/configure/localization/#directionality[directionality], link:{baseurl}/configure/localization/#language[language] and  link:{baseurl}/configure/localization/#language_url[language_url]. There is also a link:{baseurl}/plugins/directionality.html[Directionality Plugin] that adds a toolbar button to control `ltr-rtl` behavior.
+Pro tip: Language settings can be controlled in these configuration options: link:{rootDir}configure/localization/#directionality[directionality], link:{rootDir}configure/localization/#language[language] and  link:{rootDir}configure/localization/#language_url[language_url]. There is also a link:{rootDir}plugins/directionality.html[Directionality Plugin] that adds a toolbar button to control `ltr-rtl` behavior.
 ====
 
 [[step-1]]
@@ -28,13 +27,13 @@ anchor:step2[historical anchor]
 
 Unpack the language `js` file(s) into your `path/to/tinymce/langs/` folder.
 
-IMPORTANT: If you don't put the language pack in `langs/`, the language settings will not work unless you use the link:{baseurl}/configure/localization/#language_url[language_url] configuration option.
+IMPORTANT: If you don't put the language pack in `langs/`, the language settings will not work unless you use the link:{rootDir}configure/localization/#language_url[language_url] configuration option.
 
 [[step-3]]
 === Step 3
 anchor:step3[historical anchor]
 
-Set the language option in your TinyMCE configuration to the language code in the list on link:{baseurl}/configure/localization/#language[this page].
+Set the language option in your TinyMCE configuration to the language code in the list on link:{rootDir}configure/localization/#language[this page].
 
 [[step-4]]
 === Step 4
@@ -48,7 +47,7 @@ anchor:aworkingexample[historical anchor]
 
 We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left.
 
-If you want to try it for yourself, link:{rootdir}_attachments/tinymce4x_languages.zip[download the TinyMCE 4 language pack], unzip the file and place the `zh_CN.js` file in your `tinymce/lang` folder. If you don't have TinyMCE setup, you can grab a copy from our link:{downloadspage}[downloads page]. Follow the link:{baseurl}/general-configuration-guide/advanced-install/#sdkinstall[Self-hosted install instructions] if you're not familiar with setting up TinyMCE locally.
+If you want to try it for yourself, link:{rootdir}_attachments/tinymce4x_languages.zip[download the TinyMCE 4 language pack], unzip the file and place the `zh_CN.js` file in your `tinymce/lang` folder. If you don't have TinyMCE setup, you can grab a copy from our link:{downloadspage}[downloads page]. Follow the link:{rootDir}general-configuration-guide/advanced-install/#sdkinstall[Self-hosted install instructions] if you're not familiar with setting up TinyMCE locally.
 
 [source,html]
 ----

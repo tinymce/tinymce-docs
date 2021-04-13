@@ -1,13 +1,12 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Advanced Code Editor
 :controls: toolbar button, menu item
 :description: How to setup TinyMCE's Advanced Code Editor plugin.
 :keywords: code advcode codemirror
 :title_nav: Advanced Code Editor
 
-This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{baseurl}/enterprise/advcode.html[code editor] than the default textarea.
+This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{rootDir}enterprise/advcode.html[code editor] than the default textarea.
 
 If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code `code` plugin.
 

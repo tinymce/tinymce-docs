@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Keyboard Shortcuts
 :description: Complete list of keyboard shortcuts.
 :description_short: Complete list of keyboard shortcuts.
@@ -114,22 +113,22 @@ This is a list of keyboard shortcuts available within the editor body.
 | Insert link
 | Ctrl+K
 | Command+K
-| link:{baseurl}/plugins/link.html[link]
+| link:{rootDir}plugins/link.html[link]
 
 | Toggle Fullscreen
 | Ctrl+Shift+F
 | Ctrl+Shift+F
-| link:{baseurl}/plugins/fullscreen.html[fullscreen]
+| link:{rootDir}plugins/fullscreen.html[fullscreen]
 
 | Save
 | Ctrl+S
 | Command+S
-| link:{baseurl}/plugins/save.html[save]
+| link:{rootDir}plugins/save.html[save]
 
 | Find
 | Ctrl+F
 | Command+F
-| link:{baseurl}/plugins/searchreplace.html[searchreplace]
+| link:{rootDir}plugins/searchreplace.html[searchreplace]
 |===
 
 [[accessibility-keyboard-shortcuts]]

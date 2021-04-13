@@ -8,7 +8,7 @@ I18n class that handles translation of TinyMCE UI. Uses po style with csharp sty
 [cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|rtl |`+Boolean+` |Property gets set to true if a RTL language pack was loaded. |link:{baseurl}/api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
+|rtl |`+Boolean+` |Property gets set to true if a RTL language pack was loaded. |link:{rootDir}api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
 |===
 
 [[methods]]
@@ -17,10 +17,10 @@ I18n class that handles translation of TinyMCE UI. Uses po style with csharp sty
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds translations for a specific language code. |link:{baseurl}/api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
-|link:#getcode[getCode()] |Returns the current language code. |link:{baseurl}/api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
-|link:#setcode[setCode()] |Sets the current language code. |link:{baseurl}/api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
-|link:#translate[translate()] |Translates the specified text. It has a few formats: I18n.translate("Text"); I18n.translate(["Text \{0}/\{1}", 0, 1]); I18n.translate(\{raw: "Raw string"}); |link:{baseurl}/api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
+|link:#add[add()] |Adds translations for a specific language code. |link:{rootDir}api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
+|link:#getcode[getCode()] |Returns the current language code. |link:{rootDir}api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
+|link:#setcode[setCode()] |Sets the current language code. |link:{rootDir}api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
+|link:#translate[translate()] |Translates the specified text. It has a few formats: I18n.translate("Text"); I18n.translate(["Text \{0}\{1}", 0, 1]); I18n.translate(\{raw: "Raw string"}); |link:{rootDir}api/tinymce.util/tinymce.util.i18n.html[tinymce.util.I18n]
 |===
 
 == Methods
@@ -67,7 +67,7 @@ Sets the current language code.
 
 translate(text:String):String
 
-Translates the specified text. It has a few formats: I18n.translate("Text"); I18n.translate(["Text \{0}/\{1}", 0, 1]); I18n.translate(\{raw: "Raw string"});
+Translates the specified text. It has a few formats: I18n.translate("Text"); I18n.translate(["Text \{0}\{1}", 0, 1]); I18n.translate(\{raw: "Raw string"});
 
 ==== Parameters
 

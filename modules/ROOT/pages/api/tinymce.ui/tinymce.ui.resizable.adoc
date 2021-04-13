@@ -8,9 +8,9 @@ Resizable mixin. Enables controls to be resized.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#resizeby[resizeBy()] |Resizes the control to a specific relative width/height. |link:{baseurl}/api/tinymce.ui/tinymce.ui.resizable.html[tinymce.ui.Resizable]
-|link:#resizeto[resizeTo()] |Resizes the control to a specific width/height. |link:{baseurl}/api/tinymce.ui/tinymce.ui.resizable.html[tinymce.ui.Resizable]
-|link:#resizetocontent[resizeToContent()] |Resizes the control to contents. |link:{baseurl}/api/tinymce.ui/tinymce.ui.resizable.html[tinymce.ui.Resizable]
+|link:#resizeby[resizeBy()] |Resizes the control to a specific relative width/height. |link:{rootDir}api/tinymce.ui/tinymce.ui.resizable.html[tinymce.ui.Resizable]
+|link:#resizeto[resizeTo()] |Resizes the control to a specific width/height. |link:{rootDir}api/tinymce.ui/tinymce.ui.resizable.html[tinymce.ui.Resizable]
+|link:#resizetocontent[resizeToContent()] |Resizes the control to contents. |link:{rootDir}api/tinymce.ui/tinymce.ui.resizable.html[tinymce.ui.Resizable]
 |===
 
 == Methods
@@ -32,7 +32,7 @@ Resizes the control to a specific relative width/height.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[resizeto]]
 === resizeTo
@@ -48,7 +48,7 @@ Resizes the control to a specific width/height.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
+* link:{rootDir}api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[resizetocontent]]
 === resizeToContent

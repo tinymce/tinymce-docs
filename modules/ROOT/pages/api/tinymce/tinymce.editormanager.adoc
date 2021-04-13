@@ -16,17 +16,17 @@ tinymce.EditorManager.init({});
 [cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|$ |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] |Dom query instance. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|activeEditor |link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] |Currently active editor instance. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|baseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[`+tinymce.util.URI+`] |Absolute baseURI for the installation path of TinyMCE. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|baseURL |`+String+` |Base URL where the root directory if TinyMCE is located. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|documentBaseURL |`+String+` |Document base URL where the current document is located. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|editors |`+Object+` |Collection of editor instances. Deprecated use tinymce.get() instead. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|i18n |`+Object+` |Collection of language pack data. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|majorVersion |`+String+` |Major version of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|minorVersion |`+String+` |Minor version of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|releaseDate |`+String+` |Release date of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|suffix |`+String+` |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|$ |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] |Dom query instance. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|activeEditor |link:{rootDir}api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] |Currently active editor instance. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|baseURI |link:{rootDir}api/tinymce.util/tinymce.util.uri.html[`+tinymce.util.URI+`] |Absolute baseURI for the installation path of TinyMCE. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|baseURL |`+String+` |Base URL where the root directory if TinyMCE is located. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|documentBaseURL |`+String+` |Document base URL where the current document is located. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|editors |`+Object+` |Collection of editor instances. Deprecated use tinymce.get() instead. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|i18n |`+Object+` |Collection of language pack data. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|majorVersion |`+String+` |Major version of TinyMCE build. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|minorVersion |`+String+` |Minor version of TinyMCE build. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|releaseDate |`+String+` |Release date of TinyMCE build. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|suffix |`+String+` |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
 |===
 
 [[methods]]
@@ -35,22 +35,22 @@ tinymce.EditorManager.init({});
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#addi18n[addI18n()] |Adds a language pack, this gets called by the loaded language files like en.js. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#createeditor[createEditor()] |Creates an editor instance and adds it to the EditorManager collection. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#execcommand[execCommand()] |Executes a specific command on the currently active editor. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#get[get()] |Returns a editor instance by id. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#init[init()] |Initializes a set of editors. This method will create editors based on various settings. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#overridedefaults[overrideDefaults()] |Overrides the default settings for editor instances. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#remove[remove()] |Removes a editor or editors form page. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#setactive[setActive()] |Sets the active editor instance and fires the deactivate/activate events. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#translate[translate()] |Translates the specified string using the language pack items. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|link:#triggersave[triggerSave()] |Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#addi18n[addI18n()] |Adds a language pack, this gets called by the loaded language files like en.js. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#createeditor[createEditor()] |Creates an editor instance and adds it to the EditorManager collection. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#execcommand[execCommand()] |Executes a specific command on the currently active editor. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#get[get()] |Returns a editor instance by id. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#init[init()] |Initializes a set of editors. This method will create editors based on various settings. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#overridedefaults[overrideDefaults()] |Overrides the default settings for editor instances. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#remove[remove()] |Removes a editor or editors form page. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#setactive[setActive()] |Sets the active editor instance and fires the deactivate/activate events. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#translate[translate()] |Translates the specified string using the language pack items. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|link:#triggersave[triggerSave()] |Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted. |link:{rootDir}api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
 |===
 
 == Methods
@@ -65,13 +65,13 @@ Adds an editor instance to the editor collection. This will also set it as the a
 [[parameters]]
 ==== Parameters
 
-* `+editor+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance to add to the collection.
+* `+editor+` link:{rootDir}api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance to add to the collection.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - The same instance that got passed in.
+* link:{rootDir}api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - The same instance that got passed in.
 
 [[addi18n]]
 === addI18n
@@ -99,7 +99,7 @@ Creates an editor instance and adds it to the EditorManager collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - Editor instance that got created.
+* link:{rootDir}api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - Editor instance that got created.
 
 [[execcommand]]
 === execCommand
@@ -176,7 +176,7 @@ tinymce.EditorManager.get('mytextbox').on('click', function(e) {
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - Editor instance to return or array of editor instances.
+* link:{rootDir}api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - Editor instance to return or array of editor instances.
 * `+Array+` - Editor instance to return or array of editor instances.
 
 [[haseventlisteners]]
@@ -224,7 +224,7 @@ tinymce.init({
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.util/tinymce.util.promise.html[`+tinymce.util.Promise+`] - Promise that gets resolved with an array of editors when all editor instances are initialized.
+* link:{rootDir}api/tinymce.util/tinymce.util.promise.html[`+tinymce.util.Promise+`] - Promise that gets resolved with an array of editors when all editor instances are initialized.
 
 [[off]]
 === off
@@ -335,11 +335,11 @@ tinymce.remove('#id');
 
 ==== Parameters
 
-* `+selector+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - CSS selector or editor instance to remove.
+* `+selector+` link:{rootDir}api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - CSS selector or editor instance to remove.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - The editor that got passed in will be return if it was found otherwise null.
+* link:{rootDir}api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - The editor that got passed in will be return if it was found otherwise null.
 
 [[setactive]]
 === setActive
@@ -350,7 +350,7 @@ Sets the active editor instance and fires the deactivate/activate events.
 
 ==== Parameters
 
-* `+editor+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance to set as the active instance.
+* `+editor+` link:{rootDir}api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance to set as the active instance.
 
 [[translate]]
 === translate

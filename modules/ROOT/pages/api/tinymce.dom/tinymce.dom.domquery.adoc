@@ -17,9 +17,9 @@ $('p').attr('attr', 'value').addClass('class');
 [cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|context |`+Element+` |Context used to create the set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|length |`+Number+` |Number of items in the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|selector |`+String+` |Selector for the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|context |`+Element+` |Context used to create the set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|length |`+Number+` |Number of items in the current set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|selector |`+String+` |Selector for the current set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
 |===
 
 [[constructors]]
@@ -28,7 +28,7 @@ $('p').attr('attr', 'value').addClass('class');
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#domquery[DomQuery()] |Constructs a new DomQuery instance with the specified selector or context. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#domquery[DomQuery()] |Constructs a new DomQuery instance with the specified selector or context. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
 |===
 
 [[methods]]
@@ -37,62 +37,62 @@ $('p').attr('attr', 'value').addClass('class');
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds new nodes to the set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#addclass[addClass()] |Adds the specified class name to the current set elements. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#after[after()] |Adds the specified elements after current set nodes. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#append[append()] |Appends the specified node/html or node set to the current set nodes. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#appendto[appendTo()] |Appends the specified set nodes to the specified selector/instance. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#attr[attr()] |Sets/gets properties on the elements in the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#before[before()] |Adds the specified elements before current set nodes. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#children[children()] |Returns all child elements matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#clone[clone()] |Clones all nodes in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#closest[closest()] |Gets the current node or any parent matching the specified selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#contents[contents()] |Returns all child nodes matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#css[css()] |Sets/gets styles on the elements in the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#each[each()] |Executes the callback function for each item DomQuery collection. If you return false in the callback it will break the loop. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#each[each()] |Executes the callback function for each item in array/object. If you return false in the callback it will break the loop. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#empty[empty()] |Empties all elements in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#eq[eq()] |Makes the set equal to the specified index. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#extend[extend()] |Extends the specified object with one or more objects. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#filter[filter()] |Filters the current set with the specified selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#find[find()] |Finds elements by the specified selector for each element in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#first[first()] |Makes the set equal to first element in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#grep[grep()] |Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#hasclass[hasClass()] |Returns true/false if the first item in set has the specified class. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#hide[hide()] |Hides all elements in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#html[html()] |Sets or gets the HTML of the current set or first set node. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#inarray[inArray()] |Returns the index of the specified item inside the array. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#is[is()] |Returns true/false if the current set items matches the selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#isarray[isArray()] |Returns true/false if the specified object is an array or not. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#last[last()] |Makes the set equal to last element in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#makearray[makeArray()] |Creates an array out of an array like object. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#next[next()] |Returns a new collection with next sibling of each item in current collection matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#nextuntil[nextUntil()] |Returns a new collection with all next siblings of each item in current collection matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#off[off()] |Unbinds an event with callback function to the elements in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#offset[offset()] |Returns the offset of the first element in set or sets the top/left css properties of all elements in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#on[on()] |Binds an event with callback function to the elements in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#parent[parent()] |Returns a new collection with the parent of each item in current collection matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#parents[parents()] |Returns a new collection with the all the parents of each item in current collection matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#parentsuntil[parentsUntil()] |Returns a new collection with the all the parents until the matching selector/element of each item in current collection matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#prepend[prepend()] |Prepends the specified node/html or node set to the current set nodes. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#prependto[prependTo()] |Prepends the specified set nodes to the specified selector/instance. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#prev[prev()] |Returns a new collection with previous sibling of each item in current collection matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#prevuntil[prevUntil()] |Returns a new collection with all previous siblings of each item in current collection matching the optional selector. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#remove[remove()] |Removes all nodes in set from the document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#removeattr[removeAttr()] |Removes attributse on the elements in the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#removeclass[removeClass()] |Removes the specified class name to the current set elements. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#replacewith[replaceWith()] |Replaces the nodes in set with the specified content. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#show[show()] |Shows all elements in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#slice[slice()] |Slices the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#text[text()] |Sets or gets the text of the current set or first set node. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#toarray[toArray()] |Converts the current set to an array. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#toggleclass[toggleClass()] |Toggles the specified class name on the current set elements. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#trigger[trigger()] |Triggers the specified event by name or event object. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#trim[trim()] |Removes whitespace from the beginning and end of a string. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#unwrap[unwrap()] |Unwraps all elements by removing the parent element of each item in set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#wrap[wrap()] |Wraps all elements in set with the specified wrapper. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#wrapall[wrapAll()] |Wraps all nodes in set with the specified wrapper. If the nodes are siblings all of them will be wrapped in the same wrapper. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|link:#wrapinner[wrapInner()] |Wraps all elements inner contents in set with the specified wrapper. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#add[add()] |Adds new nodes to the set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#addclass[addClass()] |Adds the specified class name to the current set elements. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#after[after()] |Adds the specified elements after current set nodes. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#append[append()] |Appends the specified node/html or node set to the current set nodes. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#appendto[appendTo()] |Appends the specified set nodes to the specified selector/instance. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#attr[attr()] |Sets/gets properties on the elements in the current set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#before[before()] |Adds the specified elements before current set nodes. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#children[children()] |Returns all child elements matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#clone[clone()] |Clones all nodes in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#closest[closest()] |Gets the current node or any parent matching the specified selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#contents[contents()] |Returns all child nodes matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#css[css()] |Sets/gets styles on the elements in the current set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#each[each()] |Executes the callback function for each item DomQuery collection. If you return false in the callback it will break the loop. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#each[each()] |Executes the callback function for each item in array/object. If you return false in the callback it will break the loop. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#empty[empty()] |Empties all elements in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#eq[eq()] |Makes the set equal to the specified index. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#extend[extend()] |Extends the specified object with one or more objects. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#filter[filter()] |Filters the current set with the specified selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#find[find()] |Finds elements by the specified selector for each element in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#first[first()] |Makes the set equal to first element in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#grep[grep()] |Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#hasclass[hasClass()] |Returns true/false if the first item in set has the specified class. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#hide[hide()] |Hides all elements in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#html[html()] |Sets or gets the HTML of the current set or first set node. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#inarray[inArray()] |Returns the index of the specified item inside the array. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#is[is()] |Returns true/false if the current set items matches the selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#isarray[isArray()] |Returns true/false if the specified object is an array or not. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#last[last()] |Makes the set equal to last element in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#makearray[makeArray()] |Creates an array out of an array like object. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#next[next()] |Returns a new collection with next sibling of each item in current collection matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#nextuntil[nextUntil()] |Returns a new collection with all next siblings of each item in current collection matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#off[off()] |Unbinds an event with callback function to the elements in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#offset[offset()] |Returns the offset of the first element in set or sets the top/left css properties of all elements in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#on[on()] |Binds an event with callback function to the elements in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#parent[parent()] |Returns a new collection with the parent of each item in current collection matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#parents[parents()] |Returns a new collection with the all the parents of each item in current collection matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#parentsuntil[parentsUntil()] |Returns a new collection with the all the parents until the matching selector/element of each item in current collection matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#prepend[prepend()] |Prepends the specified node/html or node set to the current set nodes. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#prependto[prependTo()] |Prepends the specified set nodes to the specified selector/instance. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#prev[prev()] |Returns a new collection with previous sibling of each item in current collection matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#prevuntil[prevUntil()] |Returns a new collection with all previous siblings of each item in current collection matching the optional selector. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#remove[remove()] |Removes all nodes in set from the document. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#removeattr[removeAttr()] |Removes attributse on the elements in the current set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#removeclass[removeClass()] |Removes the specified class name to the current set elements. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#replacewith[replaceWith()] |Replaces the nodes in set with the specified content. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#show[show()] |Shows all elements in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#slice[slice()] |Slices the current set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#text[text()] |Sets or gets the text of the current set or first set node. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#toarray[toArray()] |Converts the current set to an array. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#toggleclass[toggleClass()] |Toggles the specified class name on the current set elements. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#trigger[trigger()] |Triggers the specified event by name or event object. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#trim[trim()] |Removes whitespace from the beginning and end of a string. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#unwrap[unwrap()] |Unwraps all elements by removing the parent element of each item in set. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#wrap[wrap()] |Wraps all elements in set with the specified wrapper. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#wrapall[wrapAll()] |Wraps all nodes in set with the specified wrapper. If the nodes are siblings all of them will be wrapped in the same wrapper. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|link:#wrapinner[wrapInner()] |Wraps all elements inner contents in set with the specified wrapper. |link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
 |===
 
 == Constructors
@@ -128,7 +128,7 @@ Adds new nodes to the set.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New instance with nodes added.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New instance with nodes added.
 
 [[addclass]]
 === addClass
@@ -143,7 +143,7 @@ Adds the specified class name to the current set elements.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[after]]
 === after
@@ -158,7 +158,7 @@ Adds the specified elements after current set nodes.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[append]]
 === append
@@ -173,7 +173,7 @@ Appends the specified node/html or node set to the current set nodes.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[appendto]]
 === appendTo
@@ -188,7 +188,7 @@ Appends the specified set nodes to the specified selector/instance.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the appended nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the appended nodes.
 
 [[attr]]
 === attr
@@ -204,7 +204,7 @@ Sets/gets properties on the elements in the current set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the specified property when only the name is specified.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the specified property when only the name is specified.
 * `+String+` - Current set or the specified property when only the name is specified.
 
 [[before]]
@@ -220,7 +220,7 @@ Adds the specified elements before current set nodes.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[children]]
 === children
@@ -235,7 +235,7 @@ Returns all child elements matching the optional selector.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[clone]]
 === clone
@@ -246,7 +246,7 @@ Clones all nodes in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with cloned nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with cloned nodes.
 
 [[closest]]
 === closest
@@ -261,7 +261,7 @@ Gets the current node or any parent matching the specified selector.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with closest elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with closest elements.
 
 [[contents]]
 === contents
@@ -276,7 +276,7 @@ Returns all child nodes matching the optional selector.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[css]]
 === css
@@ -292,7 +292,7 @@ Sets/gets styles on the elements in the current set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the specified style when only the name is specified.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the specified style when only the name is specified.
 * `+String+` - Current set or the specified style when only the name is specified.
 
 [[each]]
@@ -308,7 +308,7 @@ Executes the callback function for each item DomQuery collection. If you return 
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 === each
 
@@ -330,7 +330,7 @@ Empties all elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the empty nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the empty nodes.
 
 [[eq]]
 === eq
@@ -345,7 +345,7 @@ Makes the set equal to the specified index.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
 
 [[extend]]
 === extend
@@ -376,7 +376,7 @@ Filters the current set with the specified selector.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with filtered elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with filtered elements.
 
 [[find]]
 === find
@@ -391,7 +391,7 @@ Finds elements by the specified selector for each element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with matches elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with matches elements.
 
 [[first]]
 === first
@@ -402,7 +402,7 @@ Makes the set equal to first element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
 
 [[grep]]
 === grep
@@ -453,7 +453,7 @@ Hides all elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[html]]
 === html
@@ -468,7 +468,7 @@ Sets or gets the HTML of the current set or first set node.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the innerHTML of the first element.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the innerHTML of the first element.
 * `+String+` - Current set or the innerHTML of the first element.
 
 [[inarray]]
@@ -526,7 +526,7 @@ Makes the set equal to last element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
 
 [[makearray]]
 === makeArray
@@ -556,7 +556,7 @@ Returns a new collection with next sibling of each item in current collection ma
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[nextuntil]]
 === nextUntil
@@ -572,7 +572,7 @@ Returns a new collection with all next siblings of each item in current collecti
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[off]]
 === off
@@ -588,7 +588,7 @@ Unbinds an event with callback function to the elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[offset]]
 === offset
@@ -604,7 +604,7 @@ Returns the offset of the first element in set or sets the top/left css properti
 ==== Return value
 
 * `+Object+` - Returns the first element offset or the current set if you specified an offset.
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Returns the first element offset or the current set if you specified an offset.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Returns the first element offset or the current set if you specified an offset.
 
 [[on]]
 === on
@@ -620,7 +620,7 @@ Binds an event with callback function to the elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[parent]]
 === parent
@@ -635,7 +635,7 @@ Returns a new collection with the parent of each item in current collection matc
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
 
 [[parents]]
 === parents
@@ -650,7 +650,7 @@ Returns a new collection with the all the parents of each item in current collec
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
 
 [[parentsuntil]]
 === parentsUntil
@@ -666,7 +666,7 @@ Returns a new collection with the all the parents until the matching selector/el
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
 
 [[prepend]]
 === prepend
@@ -681,7 +681,7 @@ Prepends the specified node/html or node set to the current set nodes.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[prependto]]
 === prependTo
@@ -696,7 +696,7 @@ Prepends the specified set nodes to the specified selector/instance.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the prepended nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the prepended nodes.
 
 [[prev]]
 === prev
@@ -711,7 +711,7 @@ Returns a new collection with previous sibling of each item in current collectio
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[prevuntil]]
 === prevUntil
@@ -727,7 +727,7 @@ Returns a new collection with all previous siblings of each item in current coll
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[remove]]
 === remove
@@ -738,7 +738,7 @@ Removes all nodes in set from the document.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the removed nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the removed nodes.
 
 [[removeattr]]
 === removeAttr
@@ -753,7 +753,7 @@ Removes attributse on the elements in the current set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 * `+String+` - Current set.
 
 [[removeclass]]
@@ -769,7 +769,7 @@ Removes the specified class name to the current set elements.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[replacewith]]
 === replaceWith
@@ -784,7 +784,7 @@ Replaces the nodes in set with the specified content.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with replaced nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with replaced nodes.
 
 [[show]]
 === show
@@ -795,7 +795,7 @@ Shows all elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[slice]]
 === slice
@@ -811,7 +811,7 @@ Slices the current set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Sliced set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Sliced set.
 
 [[text]]
 === text
@@ -826,7 +826,7 @@ Sets or gets the text of the current set or first set node.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the innerText of the first element.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the innerText of the first element.
 * `+String+` - Current set or the innerText of the first element.
 
 [[toarray]]
@@ -854,7 +854,7 @@ Toggles the specified class name on the current set elements.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[trigger]]
 === trigger
@@ -869,7 +869,7 @@ Triggers the specified event by name or event object.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[trim]]
 === trim
@@ -895,7 +895,7 @@ Unwraps all elements by removing the parent element of each item in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with unwrapped nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with unwrapped nodes.
 
 [[wrap]]
 === wrap
@@ -910,7 +910,7 @@ Wraps all elements in set with the specified wrapper.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.
 
 [[wrapall]]
 === wrapAll
@@ -925,7 +925,7 @@ Wraps all nodes in set with the specified wrapper. If the nodes are siblings all
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.
 
 [[wrapinner]]
 === wrapInner
@@ -940,4 +940,4 @@ Wraps all elements inner contents in set with the specified wrapper.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.
+* link:{rootDir}api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.

@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Mentions
 :description: Mentions brings social sharing to TinyMCE.
 :keywords: atmention mention
@@ -15,18 +14,18 @@ anchor:buytinymcementions[historical anchor]
 
 Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the https://apps.tiny.cloud/products/atmention/[pricing and plans here]. OEM and enterprise customers should https://www.tiny.cloud/contact/[contact sales directly].
 
-There are two deployment options. One is with TinyMCE Cloud, the other is the more traditional Self-hosted route, requiring an additional link:{baseurl}/enterprise/server/index.html[server-side component] to be installed and configured.
+There are two deployment options. One is with TinyMCE Cloud, the other is the more traditional Self-hosted route, requiring an additional link:{rootDir}enterprise/server/index.html[server-side component] to be installed and configured.
 
-Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this link:{baseurl}/plugins/mentions/#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
+Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this link:{rootDir}plugins/mentions/#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
 
 [[mentions-cloud-setup]]
 == Mentions cloud setup
 anchor:mentionscloudsetup[historical anchor]
 
-Mentions is available for download through link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud]. Include the `mentions` parameter in the `tinymce.init` script. Refer to the link:{baseurl}/plugins/mentions.html[Mentions documentation], for more information on setup and configuration.
+Mentions is available for download through link:{rootDir}cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud]. Include the `mentions` parameter in the `tinymce.init` script. Refer to the link:{rootDir}plugins/mentions.html[Mentions documentation], for more information on setup and configuration.
 
 [[downloading-mentions]]
 == Downloading Mentions
 anchor:downloadingmentions[historical anchor]
 
-A link:{pricingpage}[TinyMCE Enterprise] subscription includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the link:{baseurl}/plugins/mentions.html[Mentions documentation].
+A link:{pricingpage}[TinyMCE Enterprise] subscription includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the link:{rootDir}plugins/mentions.html[Mentions documentation].

@@ -1,6 +1,5 @@
 :rootDir: ./
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Tiny Quick Start
 :description: Get a local instance of TinyMCE up and running in less than 5 minutes.
 :description_short: Setup TinyMCE in less than 5 minutes (on your desktop).
@@ -63,6 +62,6 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 So that's all there is to it!
 
-If you prefer to download TinyMCE and install it locally the link:{baseurl}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Advanced Install] page in the link:{baseurl}/general-configuration-guide.html[General Configuration Guide] has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
+If you prefer to download TinyMCE and install it locally the link:{rootDir}general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Advanced Install] page in the link:{rootDir}general-configuration-guide.html[General Configuration Guide] has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
 
-You may use TinyMCE Cloud without an API key. However, to avoid the in-editor developer warning or use our premium plugins, sign up for an API key and update the script tag used to load the editor code into your application. Please visit the link:{baseurl}/cloud-deployment-guide.html[Cloud Deployment Guide] to learn more about the plugins and other features of TinyMCE.
+You may use TinyMCE Cloud without an API key. However, to avoid the in-editor developer warning or use our premium plugins, sign up for an API key and update the script tag used to load the editor code into your application. Please visit the link:{rootDir}cloud-deployment-guide.html[Cloud Deployment Guide] to learn more about the plugins and other features of TinyMCE.

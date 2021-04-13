@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = 11. Attribution Requirements
 :description: TinyMCE Terms of Service.
 :keywords: legal attribution requirements logo branding
@@ -22,7 +21,7 @@ The editor demo on the https://www.tiny.cloud/[Tiny homepage] displays the statu
 ////
 as in the screenshot below:
 
-![Demo]({baseurl}/images/screenshot-tiny-editor.png)
+![Demo]({rootDir}images/screenshot-tiny-editor.png)
 ////
 
 Have questions about this? https://www.tiny.cloud/contact/[Contact us] for help.

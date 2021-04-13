@@ -46,7 +46,7 @@ var parser = new tinymce.html.SaxParser({
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#saxparser[SaxParser()] |Constructs a new SaxParser instance. |link:{baseurl}/api/tinymce.html/tinymce.html.saxparser.html[tinymce.html.SaxParser]
+|link:#saxparser[SaxParser()] |Constructs a new SaxParser instance. |link:{rootDir}api/tinymce.html/tinymce.html.saxparser.html[tinymce.html.SaxParser]
 |===
 
 [[methods]]
@@ -55,7 +55,7 @@ var parser = new tinymce.html.SaxParser({
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#parse[parse()] |Parses the specified HTML string and executes the callbacks for each item it finds. |link:{baseurl}/api/tinymce.html/tinymce.html.saxparser.html[tinymce.html.SaxParser]
+|link:#parse[parse()] |Parses the specified HTML string and executes the callbacks for each item it finds. |link:{rootDir}api/tinymce.html/tinymce.html.saxparser.html[tinymce.html.SaxParser]
 |===
 
 == Constructors
@@ -71,7 +71,7 @@ Constructs a new SaxParser instance.
 ==== Parameters
 
 * `+settings+` `+(Object)+` - Name/value collection of settings. comment, cdata, text, start and end are callbacks.
-* `+schema+` link:{baseurl}/api/tinymce.html/tinymce.html.schema.html[`+(tinymce.html.Schema)+`] - HTML Schema class to use when parsing.
+* `+schema+` link:{rootDir}api/tinymce.html/tinymce.html.schema.html[`+(tinymce.html.Schema)+`] - HTML Schema class to use when parsing.
 
 == Methods
 

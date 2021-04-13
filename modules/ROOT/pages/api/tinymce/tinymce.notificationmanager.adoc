@@ -20,9 +20,9 @@ tinymce.activeEditor.notificationManager.open({
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#close[close()] |Closes the top most notification. |link:{baseurl}/api/tinymce/tinymce.notificationmanager.html[tinymce.NotificationManager]
-|link:#getnotifications[getNotifications()] |Returns the currently opened notification objects. |link:{baseurl}/api/tinymce/tinymce.notificationmanager.html[tinymce.NotificationManager]
-|link:#open[open()] |Opens a new notification. |link:{baseurl}/api/tinymce/tinymce.notificationmanager.html[tinymce.NotificationManager]
+|link:#close[close()] |Closes the top most notification. |link:{rootDir}api/tinymce/tinymce.notificationmanager.html[tinymce.NotificationManager]
+|link:#getnotifications[getNotifications()] |Returns the currently opened notification objects. |link:{rootDir}api/tinymce/tinymce.notificationmanager.html[tinymce.NotificationManager]
+|link:#open[open()] |Opens a new notification. |link:{rootDir}api/tinymce/tinymce.notificationmanager.html[tinymce.NotificationManager]
 |===
 
 == Methods

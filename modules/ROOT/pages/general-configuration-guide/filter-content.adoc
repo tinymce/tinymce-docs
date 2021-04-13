@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = 09. Filter Content
 :description: Learn how to create clean, maintainable and readable content.
 
@@ -8,13 +7,13 @@ TinyMCE has comprehensive content filtering capabilities. These settings change 
 
 These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. It is these type of customizations we focus on here by looking at 1 of the 32 content filtering options available to developers.
 
-There are of course many configuration options dealing with complex parsing of text. However, most of these are quite advanced and outside the scope of this Get Started guide. Check out the link:{baseurl}/configure/content-filtering.html[Content Filtering] section to learn more.
+There are of course many configuration options dealing with complex parsing of text. However, most of these are quite advanced and outside the scope of this Get Started guide. Check out the link:{rootDir}configure/content-filtering.html[Content Filtering] section to learn more.
 
 [[role-your-style-formats]]
 == Role your style formats
 anchor:roleyourstyleformats[historical anchor]
 
-In this section of the guide we will look at the link:{baseurl}/configure/content-filtering/#font_formats[formats] configuration option, which enables developers to override TinyMCE defaults and add custom "formats" to the editor.
+In this section of the guide we will look at the link:{rootDir}configure/content-filtering/#font_formats[formats] configuration option, which enables developers to override TinyMCE defaults and add custom "formats" to the editor.
 
 A format is a style that gets applied to text when a user presses the bold button inside the editor. TinyMCE is equipped with a text formatting engine that enables you to specify the expected action. For example, when a user clicks the bold button, it lets the user specify what it should produce.
 
@@ -31,7 +30,7 @@ Pro tip: Similar elements and styles are merged by default to reduce the output 
 === Built-in formats
 anchor:built-informats[historical anchor]
 
-TinyMCE has some built-in formats that you can override. You may recall some of these from the default controls we mentioned in the link:{baseurl}/general-configuration-guide/basic-setup.html[Basic Setup] part of this guide:
+TinyMCE has some built-in formats that you can override. You may recall some of these from the default controls we mentioned in the link:{rootDir}general-configuration-guide/basic-setup.html[Basic Setup] part of this guide:
 
 * alignleft
 * aligncenter
@@ -87,7 +86,7 @@ Before we move on to the table of format parameters below, we want to acknowledg
 | Name/value object with attributes to apply to the selected elements or the new inline/block element.
 
 | exact
-| Disables the link:{baseurl}/configure/content-formatting/#stylemerging[Style merging] feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough.
+| Disables the link:{rootDir}configure/content-formatting/#stylemerging[Style merging] feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough.
 
 | wrapper
 | State that tells that the current format is a container format for block elements. For example a `div wrapper` or `blockquote`.
@@ -126,7 +125,7 @@ anchor:poweruserbonus[historical anchor]
 
 [NOTE]
 ====
-This probably shouldn't be in a Get Started guide, but we wanted to show you an example of the type of configuration options you'll find in the link:{baseurl}/configure/content-filtering.html[Content Filtering] configuration docs. Plus it's something you may need to do someday.
+This probably shouldn't be in a Get Started guide, but we wanted to show you an example of the type of configuration options you'll find in the link:{rootDir}configure/content-filtering.html[Content Filtering] configuration docs. Plus it's something you may need to do someday.
 ====
 
 The `schema` option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `html5`, `html4` or `html5-strict`.

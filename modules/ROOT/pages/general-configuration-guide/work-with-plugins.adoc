@@ -1,12 +1,11 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = 05. Work With Plugins
 :description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. In this section, we show you the power of plugins with several working examples.
 :description_short: Learn about TinyMCE's plugin functionality and discover our Top 10 plugins.
 :keywords: plugin
 
-For most developers, the real power of TinyMCE's functionality is found in its plugins. link:{baseurl}/plugins/index.html[Plugins] either extend default editor functionality or add new functionality. For example, the link:{baseurl}/plugins/advlist.html[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{baseurl}/plugins/code.html[Code] plugin adds entirely new functionality.
+For most developers, the real power of TinyMCE's functionality is found in its plugins. link:{rootDir}plugins/index.html[Plugins] either extend default editor functionality or add new functionality. For example, the link:{rootDir}plugins/advlist.html[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{rootDir}plugins/code.html[Code] plugin adds entirely new functionality.
 
 Because most people install TinyMCE via TinyMCE Cloud or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{downloadspage}[custom package] download option, you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the TinyMCE team.
 
@@ -47,7 +46,7 @@ The code we want to work with is in the second `<script>` element. Specifically 
 === Code plugin
 anchor:codeplugin[historical anchor]
 
-The link:{baseurl}/plugins/code.html[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
+The link:{rootDir}plugins/code.html[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
 
 The first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is going to be ``'code'``for this example.
 
@@ -72,7 +71,7 @@ tinymce.init({
 });
 ----
 
-Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the link:{baseurl}/general-configuration-guide/basic-setup.html[Basic Setup], so if this behavior surprises you, please re-read that section.
+Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the link:{rootDir}general-configuration-guide/basic-setup.html[Basic Setup], so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
@@ -118,7 +117,7 @@ Even if you found the above example quite easy, hang with us we'll show you how 
 === Advanced Lists
 anchor:advancedlists[historical anchor]
 
-The link:{baseurl}/plugins/advlist.html[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
+The link:{rootDir}plugins/advlist.html[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
 As before, let's start by adding the `plugins` key and giving it the Advanced List value of `'advlist'`.
 
@@ -142,7 +141,7 @@ The `advlist` plugin has two options which provide more granular control of list
 
 Many plugin options have more than one possible value. The `advlist_bullet_styles` option has possible values of `circle`, `disc`, and `square`. While the `advlist_number_styles` has possible values of `lower-alpha`, `lower-greek`, `lower-roman`, `upper-alpha`, and `upper-roman`.
 
-Don't worry if you can't remember all these values. The link:{baseurl}/plugins/index.html[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
+Don't worry if you can't remember all these values. The link:{rootDir}plugins/index.html[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
 
 Let's add the Advanced List options and give them some of the available options.
 
@@ -160,7 +159,7 @@ tinymce.init({
 
 In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for TinyMCE to work).
 
-As we noted at the start TinyMCE is an incredibly powerful, flexible, and customizable rich text editor. Once you've finished the Get Started guide, deep dive into the link:{baseurl}/plugins/index.html[plugins] and link:{baseurl}/configure/index.html[configuration options].
+As we noted at the start TinyMCE is an incredibly powerful, flexible, and customizable rich text editor. Once you've finished the Get Started guide, deep dive into the link:{rootDir}plugins/index.html[plugins] and link:{rootDir}configure/index.html[configuration options].
 
 [[top-10-plugins]]
 == Top 10 plugins
@@ -173,41 +172,41 @@ Customizing TinyMCE with the default plugins is that easy. There are 40 default 
 
 | *1*
 | Image
-| link:{baseurl}/plugins/image.html[image]
+| link:{rootDir}plugins/image.html[image]
 
 | *2*
 | Image Tools
-| link:{baseurl}/plugins/imagetools.html[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 
 | *3*
 | Advanced List
-| link:{baseurl}/plugins/advlist.html[advlist]
+| link:{rootDir}plugins/advlist.html[advlist]
 
 | *4*
 | Code
-| link:{baseurl}/plugins/code.html[code]
+| link:{rootDir}plugins/code.html[code]
 
 | *5*
 | Media
-| link:{baseurl}/plugins/media.html[media]
+| link:{rootDir}plugins/media.html[media]
 
 | *6*
 | Link
-| link:{baseurl}/plugins/link.html[link]
+| link:{rootDir}plugins/link.html[link]
 
 | *7*
 | Color Picker
-| link:{baseurl}/plugins/colorpicker.html[colorpicker]
+| link:{rootDir}plugins/colorpicker.html[colorpicker]
 
 | *8*
 | Paste
-| link:{baseurl}/plugins/paste.html[paste]
+| link:{rootDir}plugins/paste.html[paste]
 
 | *9*
 | Table
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 
 | *10*
 | Text Color
-| link:{baseurl}/plugins/textcolor.html[textcolor]
+| link:{rootDir}plugins/textcolor.html[textcolor]
 |===

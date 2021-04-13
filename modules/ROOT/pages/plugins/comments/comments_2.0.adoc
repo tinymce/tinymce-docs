@@ -1,6 +1,5 @@
 :rootDir: ../../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Comments 2.0
 :description: Comments 2.0 provides the ability to add comments to the content and collaborate with other users for content editing.
 :keywords: comments commenting tinycomments
@@ -9,9 +8,9 @@
 [[introduction]]
 == Introduction
 
-The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the link:{baseurl}/advanced/annotations.html[Annotations API] and uses annotations to create comment threads (conversations).
+The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the link:{rootDir}advanced/annotations.html[Annotations API] and uses annotations to create comment threads (conversations).
 
-Comments 2.0 is a premium plugin from Tiny. Please see the link:{baseurl}/enterprise/tiny-comments.html[Premium features] section for all the buying options.
+Comments 2.0 is a premium plugin from Tiny. Please see the link:{rootDir}enterprise/tiny-comments.html[Premium features] section for all the buying options.
 
 Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
 
@@ -20,7 +19,7 @@ Once you have obtained the Comments 2.0 plugin, refer to the following instructi
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
 
-* *Callback Mode* - This is the default mode in Comments 2.0. This mode is used to configure storage and save comments on the user's server. This option provides a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the link:{baseurl}/advanced/configuring-comments-callbacks.html[configuring callbacks for comments] section for more information.
+* *Callback Mode* - This is the default mode in Comments 2.0. This mode is used to configure storage and save comments on the user's server. This option provides a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the link:{rootDir}advanced/configuring-comments-callbacks.html[configuring callbacks for comments] section for more information.
 * *Embedded Mode* - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
 [[configuring-comments-20-embedded-mode]]
@@ -90,7 +89,7 @@ anchor:configuringthecomments20menuitem[historical anchor]
 
 By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), `showcomments` (View Menu), and `deleteallconversations` (File Menu).
 
-For more information on configuring menu items refer to the link:{baseurl}/configure/editor-appearance/#toolbar[toolbar] and link:{baseurl}/configure/editor-appearance/#menu[menu] sections.
+For more information on configuring menu items refer to the link:{rootDir}configure/editor-appearance/#toolbar[toolbar] and link:{rootDir}configure/editor-appearance/#menu[menu] sections.
 
 Currently, there are three menu items available:
 
@@ -118,7 +117,7 @@ tinymce.init({
 *Result*: The commented text will be highlighted yellow.
 image:highlight.png[**Highlighted text**]
 
-For more information on TinyMCE formats, refer to the link:{baseurl}/configure/content-formatting/#formats[formats] section.
+For more information on TinyMCE formats, refer to the link:{rootDir}configure/content-formatting/#formats[formats] section.
 
 [[using-comments]]
 === Using Comments
@@ -200,4 +199,4 @@ image:decision2.png[**Delete all conversations**]
 
 *Result*: All the comments for the selected document will be deleted.
 
-Check out the link:{baseurl}/demo/comments/#comments20demo[Comments demo] to try out this new feature.
+Check out the link:{rootDir}demo/comments/#comments20demo[Comments demo] to try out this new feature.

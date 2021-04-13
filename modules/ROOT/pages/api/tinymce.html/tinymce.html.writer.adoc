@@ -18,34 +18,34 @@ console.log(writer.getContent());
 [width="100%",cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#cdata[cdata()] |Writes a comment node such as . |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:#cdata[cdata()] |Writes a comment node such as . |link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#doctype[doctype()] a|
 Writes a doctype node such as
 
 .
 
-|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#end[end()] a|
 Writes the a end element such as
 
 .
 
-|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
-|link:#getcontent[getContent()] |Returns the contents that got serialized. |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:#getcontent[getContent()] |Returns the contents that got serialized. |link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#pi[pi()] a|
 Writes a PI node such as
 
 .
 
-|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
-|link:#reset[reset()] |Resets the internal buffer if one wants to reuse the writer. |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:#reset[reset()] |Resets the internal buffer if one wants to reuse the writer. |link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |link:#start[start()] a|
 Writes the a start element such as
 
 .
 
-|link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
-|link:#text[text()] |Writes a text node. |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
+|link:#text[text()] |Writes a text node. |link:{rootDir}api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
 |===
 
 == Methods

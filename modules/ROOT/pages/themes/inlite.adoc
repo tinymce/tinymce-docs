@@ -1,12 +1,11 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Inlite theme
 :description: Theme that renders a light weight UI for inline editing.
 :keywords: theme inlite
 :title_nav: Inlite
 
-The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called link:{baseurl}/themes/modern.html[modern] this is an optional more lightweight distraction-free UI for the editor.
+The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called link:{rootDir}themes/modern.html[modern] this is an optional more lightweight distraction-free UI for the editor.
 
 [[example]]
 ===== Example:
@@ -44,7 +43,7 @@ tinymce.init({
 [[quickimage]]
 ==== quickimage
 
-Lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure link:{baseurl}/advanced/handle-async-image-uploads.html[image uploading].
+Lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure link:{rootDir}advanced/handle-async-image-uploads.html[image uploading].
 
 ===== Example:
 
@@ -79,8 +78,8 @@ tinymce.init({
 === Related configuration options
 anchor:relatedconfigurationoptions[historical anchor]
 
-* link:{baseurl}/configure/editor-appearance/#insert_toolbar[insert_toolbar]
-* link:{baseurl}/configure/editor-appearance/#selection_toolbar[selection_toolbar]
-* link:{baseurl}/configure/editor-appearance/#inline[inline]
-* link:{baseurl}/configure/editor-appearance/#skin[skin]
-* link:{baseurl}/configure/editor-appearance/#theme[theme]
+* link:{rootDir}configure/editor-appearance/#insert_toolbar[insert_toolbar]
+* link:{rootDir}configure/editor-appearance/#selection_toolbar[selection_toolbar]
+* link:{rootDir}configure/editor-appearance/#inline[inline]
+* link:{rootDir}configure/editor-appearance/#skin[skin]
+* link:{rootDir}configure/editor-appearance/#theme[theme]

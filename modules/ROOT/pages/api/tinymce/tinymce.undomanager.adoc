@@ -8,16 +8,16 @@ This class handles the undo/redo history levels for the editor. Since the built-
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds a new undo level/snapshot to the undo list. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#beforechange[beforeChange()] |Stores away a bookmark to be used when performing an undo action so that the selection is before the change has been made. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#clear[clear()] |Removes all undo levels. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#extra[extra()] |Adds an extra "hidden" undo level by first applying the first mutation and store that to the undo stack then roll back that change and do the second mutation on top of the stack. This will produce an extra undo level that the user doesn't see until they undo. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#hasredo[hasRedo()] |Returns true/false if the undo manager has any redo levels. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#hasundo[hasUndo()] |Returns true/false if the undo manager has any undo levels. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#ignore[ignore()] |Executes the specified mutator function as an undo transaction. But without adding an undo level. Any logic within the translation that adds undo levels will be ignored. So a translation can include calls to execCommand or editor.insertContent. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#redo[redo()] |Redoes the last action. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#transact[transact()] |Executes the specified mutator function as an undo transaction. The selection before the modification will be stored to the undo stack and if the DOM changes it will add a new undo level. Any logic within the translation that adds undo levels will be ignored. So a translation can include calls to execCommand or editor.insertContent. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
-|link:#undo[undo()] |Undoes the last action. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#add[add()] |Adds a new undo level/snapshot to the undo list. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#beforechange[beforeChange()] |Stores away a bookmark to be used when performing an undo action so that the selection is before the change has been made. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#clear[clear()] |Removes all undo levels. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#extra[extra()] |Adds an extra "hidden" undo level by first applying the first mutation and store that to the undo stack then roll back that change and do the second mutation on top of the stack. This will produce an extra undo level that the user doesn't see until they undo. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#hasredo[hasRedo()] |Returns true/false if the undo manager has any redo levels. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#hasundo[hasUndo()] |Returns true/false if the undo manager has any undo levels. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#ignore[ignore()] |Executes the specified mutator function as an undo transaction. But without adding an undo level. Any logic within the translation that adds undo levels will be ignored. So a translation can include calls to execCommand or editor.insertContent. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#redo[redo()] |Redoes the last action. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#transact[transact()] |Executes the specified mutator function as an undo transaction. The selection before the modification will be stored to the undo stack and if the DOM changes it will add a new undo level. Any logic within the translation that adds undo levels will be ignored. So a translation can include calls to execCommand or editor.insertContent. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
+|link:#undo[undo()] |Undoes the last action. |link:{rootDir}api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
 |===
 
 == Methods

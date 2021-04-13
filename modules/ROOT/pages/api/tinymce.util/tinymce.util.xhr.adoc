@@ -27,12 +27,12 @@ tinymce.util.XHR.on('beforeSend', function(e) {
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
-|link:#send[send()] |Sends a XMLHTTPRequest. Consult the Wiki for details on what settings this method takes. |link:{baseurl}/api/tinymce.util/tinymce.util.xhr.html[tinymce.util.XHR]
+|link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#haseventlisteners[hasEventListeners()] |Returns true/false if the object has a event of the specified name. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#off[off()] |Unbinds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#on[on()] |Binds an event listener to a specific event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#once[once()] |Bind the event callback and once it fires the callback is removed. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{rootDir}api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
+|link:#send[send()] |Sends a XMLHTTPRequest. Consult the Wiki for details on what settings this method takes. |link:{rootDir}api/tinymce.util/tinymce.util.xhr.html[tinymce.util.XHR]
 |===
 
 == Methods

@@ -1,12 +1,11 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Modern theme
 :description: Theme that renders iframe or inline modes using the tinymce core UI framework.
 :keywords: theme modern
 :title_nav: Modern
 
-The `modern` theme is responsible for rendering the editor in iframe or inline mode. This is currently the default theme there is also a lightweight theme called link:{baseurl}/themes/inlite.html[inlite]
+The `modern` theme is responsible for rendering the editor in iframe or inline mode. This is currently the default theme there is also a lightweight theme called link:{rootDir}themes/inlite.html[inlite]
 
 [[example]]
 ===== Example:
@@ -23,15 +22,15 @@ tinymce.init({
 === Related configuration options
 anchor:relatedconfigurationoptions[historical anchor]
 
-* link:{baseurl}/configure/editor-appearance/#elementpath[elementpath]
-* link:{baseurl}/configure/editor-appearance/#fixed-toolbar-container[fixed-toolbar-container]
-* link:{baseurl}/configure/editor-appearance/#inline[inline]
-* link:{baseurl}/configure/editor-appearance/#menu[menu]
-* link:{baseurl}/configure/editor-appearance/#menubar[menubar]
-* link:{baseurl}/configure/editor-appearance/#resize[resize]
-* link:{baseurl}/configure/editor-appearance/#skin[skin]
-* link:{baseurl}/configure/editor-appearance/#statusbar[statusbar]
-* link:{baseurl}/configure/editor-appearance/#theme[theme]
-* link:{baseurl}/configure/editor-appearance/#toolbar[toolbar]
-* link:{baseurl}/configure/editor-appearance/#toolbar-n[toolbar-n]
-* link:{baseurl}/configure/editor-appearance/#height[height]
+* link:{rootDir}configure/editor-appearance/#elementpath[elementpath]
+* link:{rootDir}configure/editor-appearance/#fixed-toolbar-container[fixed-toolbar-container]
+* link:{rootDir}configure/editor-appearance/#inline[inline]
+* link:{rootDir}configure/editor-appearance/#menu[menu]
+* link:{rootDir}configure/editor-appearance/#menubar[menubar]
+* link:{rootDir}configure/editor-appearance/#resize[resize]
+* link:{rootDir}configure/editor-appearance/#skin[skin]
+* link:{rootDir}configure/editor-appearance/#statusbar[statusbar]
+* link:{rootDir}configure/editor-appearance/#theme[theme]
+* link:{rootDir}configure/editor-appearance/#toolbar[toolbar]
+* link:{rootDir}configure/editor-appearance/#toolbar-n[toolbar-n]
+* link:{rootDir}configure/editor-appearance/#height[height]

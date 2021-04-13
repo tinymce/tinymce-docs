@@ -7,7 +7,7 @@ If you wish to use a language other than English, please follow these steps:
 
 . Download the TinyMCE 4 language pack link:{rootdir}_attachments/tinymce4x_languages.zip[from here].
 . Unpack the language `.js` file into your `tinymce/langs` folder.
-. Set the link:{baseurl}/configure/localization/#language[`language`] option in your TinyMCE configuration to the language code in the list below the example.
+. Set the link:{rootDir}configure/localization/#language[`language`] option in your TinyMCE configuration to the language code in the list below the example.
 . Confirm that the language has been set successfully by loading TinyMCE.
 
 Please note, the language code you set in your TinyMCE configuration must match the filename of the language file. If the language file is not found, TinyMCE will not load.

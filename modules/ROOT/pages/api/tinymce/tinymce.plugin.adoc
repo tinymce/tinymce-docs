@@ -54,11 +54,11 @@ tinymce.PluginManager.add('example', function(editor, url) {
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#add[add()] |Adds a instance of the add-on by it's short name. |link:{baseurl}/api/tinymce/tinymce.plugin.html[tinymce.Plugin]
-|link:#addcomponents[addComponents()] |Add a set of components that will make up the add-on. Using the url of the add-on name as the base url. This should be used in development mode. A new compressor/javascript munger process will ensure that the components are put together into the plugin.js file and compressed correctly. |link:{baseurl}/api/tinymce/tinymce.plugin.html[tinymce.Plugin]
-|link:#get[get()] |Returns the specified add on by the short name. |link:{baseurl}/api/tinymce/tinymce.plugin.html[tinymce.Plugin]
-|link:#load[load()] |Loads an add-on from a specific url. |link:{baseurl}/api/tinymce/tinymce.plugin.html[tinymce.Plugin]
-|link:#requirelangpack[requireLangPack()] |Loads a language pack for the specified add-on. |link:{baseurl}/api/tinymce/tinymce.plugin.html[tinymce.Plugin]
+|link:#add[add()] |Adds a instance of the add-on by it's short name. |link:{rootDir}api/tinymce/tinymce.plugin.html[tinymce.Plugin]
+|link:#addcomponents[addComponents()] |Add a set of components that will make up the add-on. Using the url of the add-on name as the base url. This should be used in development mode. A new compressor/javascript munger process will ensure that the components are put together into the plugin.js file and compressed correctly. |link:{rootDir}api/tinymce/tinymce.plugin.html[tinymce.Plugin]
+|link:#get[get()] |Returns the specified add on by the short name. |link:{rootDir}api/tinymce/tinymce.plugin.html[tinymce.Plugin]
+|link:#load[load()] |Loads an add-on from a specific url. |link:{rootDir}api/tinymce/tinymce.plugin.html[tinymce.Plugin]
+|link:#requirelangpack[requireLangPack()] |Loads a language pack for the specified add-on. |link:{rootDir}api/tinymce/tinymce.plugin.html[tinymce.Plugin]
 |===
 
 == Methods
@@ -98,14 +98,14 @@ tinymce.init({
 ==== Parameters
 
 * `+id+` `+(String)+` - Short name/id for the add-on.
-* `+addOn+` link:{baseurl}/api/tinymce/tinymce.theme.html[`+(tinymce.Theme)+`] - Theme or plugin to add.
+* `+addOn+` link:{rootDir}api/tinymce/tinymce.theme.html[`+(tinymce.Theme)+`] - Theme or plugin to add.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce/tinymce.theme.html[`+tinymce.Theme+`] - The same theme or plugin instance that got passed in.
-* link:{baseurl}/api/tinymce/tinymce.plugin.html[`+tinymce.Plugin+`] - The same theme or plugin instance that got passed in.
+* link:{rootDir}api/tinymce/tinymce.theme.html[`+tinymce.Theme+`] - The same theme or plugin instance that got passed in.
+* link:{rootDir}api/tinymce/tinymce.plugin.html[`+tinymce.Plugin+`] - The same theme or plugin instance that got passed in.
 
 [[addcomponents]]
 === addComponents
@@ -132,8 +132,8 @@ Returns the specified add on by the short name.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.theme.html[`+tinymce.Theme+`] - Theme or plugin add-on instance or undefined.
-* link:{baseurl}/api/tinymce/tinymce.plugin.html[`+tinymce.Plugin+`] - Theme or plugin add-on instance or undefined.
+* link:{rootDir}api/tinymce/tinymce.theme.html[`+tinymce.Theme+`] - Theme or plugin add-on instance or undefined.
+* link:{rootDir}api/tinymce/tinymce.plugin.html[`+tinymce.Plugin+`] - Theme or plugin add-on instance or undefined.
 
 [[load]]
 === load

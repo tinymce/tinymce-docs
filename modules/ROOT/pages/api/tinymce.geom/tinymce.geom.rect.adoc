@@ -8,13 +8,13 @@ Contains various tools for rect/position calculation.
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#clamp[clamp()] |Returns a rect clamped within the specified clamp rect. This forces the rect to be inside the clamp rect. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
-|link:#create[create()] |Creates a new rectangle object. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
-|link:#findbestrelativeposition[findBestRelativePosition()] |Tests various positions to get the most suitable one. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
-|link:#fromclientrect[fromClientRect()] |Creates a new rectangle object form a clientRects object. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
-|link:#inflate[inflate()] |Inflates the rect in all directions. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
-|link:#intersect[intersect()] |Returns the intersection of the specified rectangles. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
-|link:#relativeposition[relativePosition()] |Returns the rect positioned based on the relative position name to the target rect. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
+|link:#clamp[clamp()] |Returns a rect clamped within the specified clamp rect. This forces the rect to be inside the clamp rect. |link:{rootDir}api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
+|link:#create[create()] |Creates a new rectangle object. |link:{rootDir}api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
+|link:#findbestrelativeposition[findBestRelativePosition()] |Tests various positions to get the most suitable one. |link:{rootDir}api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
+|link:#fromclientrect[fromClientRect()] |Creates a new rectangle object form a clientRects object. |link:{rootDir}api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
+|link:#inflate[inflate()] |Inflates the rect in all directions. |link:{rootDir}api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
+|link:#intersect[intersect()] |Returns the intersection of the specified rectangles. |link:{rootDir}api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
+|link:#relativeposition[relativePosition()] |Returns the rect positioned based on the relative position name to the target rect. |link:{rootDir}api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
 |===
 
 == Methods

@@ -1,13 +1,12 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Editor Control Identifiers
 :description: Complete list of control identifiers.
 :description_short: Complete list of control identifiers.
 :keywords: aligncenter alignjustify alignleft alignright anchor backcolor blockquote bold bullist cancel cell charmap code column controls copy cut deletetable emoticons fontselect fontsizeselect forecolor formats formatselect  fullscreen hr image indent insertdatetime insertfile inserttable italic link ltr media newdocument nonbreaking numlist outdent pagebreak paste pastetext preview print redo removeformat row rtl save searchreplace selectall spellchecker strikethrough styleselect subscript superscript table tableprops template toolbar underline undo unlink visualaid visualblocks visualchars a11ycheck
 :title_nav: Editor Control Identifiers
 
-Here is a list of the toolbar/menu controls that the core and plugins provides. These controls can be configured using the link:{baseurl}/configure/editor-appearance/#toolbar[toolbar] or the link:{baseurl}/configure/editor-appearance/#menu[menu] config options.
+Here is a list of the toolbar/menu controls that the core and plugins provides. These controls can be configured using the link:{rootDir}configure/editor-appearance/#toolbar[toolbar] or the link:{rootDir}configure/editor-appearance/#menu[menu] config options.
 
 [[toolbar-controls]]
 == Toolbar controls
@@ -125,247 +124,247 @@ anchor:toolbarcontrols[historical anchor]
 | Groups various insert actions into one button.
 
 | hr
-| link:{baseurl}/plugins/hr.html[hr]
+| link:{rootDir}plugins/hr.html[hr]
 | Inserts a horizontal rule into the editor.
 
 | bullist
-| link:{baseurl}/plugins/lists.html[lists]
+| link:{rootDir}plugins/lists.html[lists]
 | Formats the current selection as a bullet list.
 
 | numlist
-| link:{baseurl}/plugins/lists.html[lists]
+| link:{rootDir}plugins/lists.html[lists]
 | Formats the current selection as a numbered list.
 
 | link
-| link:{baseurl}/plugins/link.html[link]
+| link:{rootDir}plugins/link.html[link]
 | Creates/Edits links within the editor.
 
 | unlink
-| link:{baseurl}/plugins/link.html[link]
+| link:{rootDir}plugins/link.html[link]
 | Removes links from the current selection.
 
 | openlink
-| link:{baseurl}/plugins/link.html[link]
+| link:{rootDir}plugins/link.html[link]
 | Opens the selected link in a new tab.
 
 | image
-| link:{baseurl}/plugins/image.html[image]
+| link:{rootDir}plugins/image.html[image]
 | Creates/Edits images within the editor.
 
 | charmap
-| link:{baseurl}/plugins/charmap.html[charmap]
+| link:{rootDir}plugins/charmap.html[charmap]
 | Inserts custom characters into the editor.
 
 | pastetext
-| link:{baseurl}/plugins/paste.html[paste]
+| link:{rootDir}plugins/paste.html[paste]
 | Toggles plain text pasting mode on/off.
 
 | print
-| link:{baseurl}/plugins/print.html[print]
+| link:{rootDir}plugins/print.html[print]
 | Prints the current editor contents.
 
 | preview
-| link:{baseurl}/plugins/preview.html[preview]
+| link:{rootDir}plugins/preview.html[preview]
 | Previews the current editor contents.
 
 | anchor
-| link:{baseurl}/plugins/anchor.html[anchor]
+| link:{rootDir}plugins/anchor.html[anchor]
 | Creates/Edits anchor elements.
 
 | pagebreak
-| link:{baseurl}/plugins/pagebreak.html[pagebreak]
+| link:{rootDir}plugins/pagebreak.html[pagebreak]
 | Inserts a pagebreak into the editor.
 
 | spellchecker
-| link:{baseurl}/plugins/spellchecker.html[spellchecker]
+| link:{rootDir}plugins/spellchecker.html[spellchecker]
 | Spellchecks the current editor contents.
 
 | searchreplace
-| link:{baseurl}/plugins/searchreplace.html[searchreplace]
+| link:{rootDir}plugins/searchreplace.html[searchreplace]
 | Searches and/or Replaces contents within the editor.
 
 | visualblocks
-| link:{baseurl}/plugins/visualblocks.html[visualblocks]
+| link:{rootDir}plugins/visualblocks.html[visualblocks]
 | Toggles the visibility of block elements.
 
 | visualchars
-| link:{baseurl}/plugins/visualchars.html[visualchars]
+| link:{rootDir}plugins/visualchars.html[visualchars]
 | Toggles the visibility of non breaking character elements.
 
 | code
-| link:{baseurl}/plugins/code.html[code]
+| link:{rootDir}plugins/code.html[code]
 | Opens the code dialog
 
 | help
-| link:{baseurl}/plugins/help.html[help]
+| link:{rootDir}plugins/help.html[help]
 | Opens the help dialog
 
 | fullscreen
-| link:{baseurl}/plugins/fullscreen.html[fullscreen]
+| link:{rootDir}plugins/fullscreen.html[fullscreen]
 | Toggles fullscreen mode
 
 | insertdatetime
-| link:{baseurl}/plugins/insertdatetime.html[insertdatetime]
+| link:{rootDir}plugins/insertdatetime.html[insertdatetime]
 | Inserts the current date/time
 
 | media
-| link:{baseurl}/plugins/media.html[media]
+| link:{rootDir}plugins/media.html[media]
 | Creates/Edits embedded media elements.
 
 | nonbreaking
-| link:{baseurl}/plugins/nonbreaking.html[nonbreaking]
+| link:{rootDir}plugins/nonbreaking.html[nonbreaking]
 | Inserts a nonbreaking space into the editor.
 
 | save
-| link:{baseurl}/plugins/save.html[save]
+| link:{rootDir}plugins/save.html[save]
 | Saves the current editor contents to a form or ajax call.
 
 | cancel
-| link:{baseurl}/plugins/save.html[save]
+| link:{rootDir}plugins/save.html[save]
 | Cancels/Resets the editor contents to it's initial state.
 
 | table
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Creates/Edits table elements.
 
 | tabledelete
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Deletes table.
 
 | tablecellprops
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Opens the Cell properties dialog.
 
 | tablemergecells
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Merges the selected cells.
 
 | tablesplitcells
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Splits the current merged cell.
 
 | tableinsertrowbefore
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts a new row before the current one.
 
 | tableinsertrowafter
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts a new row after the current one.
 
 | tabledeleterow
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Deletes the current row row.
 
 | tablerowprops
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Opens the Row properties dialog.
 
 | tablecutrow
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Cuts the selected rows.
 
 | tablecopyrow
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Copies the selected rows.
 
 | tablepasterowbefore
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Pastes rows before the current one.
 
 | tablepasterowafter
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Pastes rows after the current one.
 
 | tableinsertcolbefore
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts a column before the current one.
 
 | tableinsertcolafter
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts column after the current one.
 
 | tabledeletecol
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Deletes the selected column.
 
 | rotateleft
-| link:{baseurl}/plugins/imagetools.html[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Rotates the current image counterclockwise.
 
 | rotateright
-| link:{baseurl}/plugins/imagetools.html[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Rotates the current image clockwise.
 
 | flipv
-| link:{baseurl}/plugins/imagetools.html[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Flips the current image vertically.
 
 | fliph
-| link:{baseurl}/plugins/imagetools.html[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Flips the current image horizontally.
 
 | editimage
-| link:{baseurl}/plugins/imagetools.html[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Edits the current image in the image dialog.
 
 | imageoptions
-| link:{baseurl}/plugins/imagetools.html[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Opens the image options dialog.
 
 | fullpage
-| link:{baseurl}/plugins/fullpage.html[fullpage]
+| link:{rootDir}plugins/fullpage.html[fullpage]
 | Documents properties for the full page.
 
 | ltr
-| link:{baseurl}/plugins/directionality.html[directionality]
+| link:{rootDir}plugins/directionality.html[directionality]
 | Sets the directionality of contents to ltr.
 
 | rtl
-| link:{baseurl}/plugins/directionality.html[directionality]
+| link:{rootDir}plugins/directionality.html[directionality]
 | Sets the directionality of contents to rtl.
 
 | emoticons
-| link:{baseurl}/plugins/emoticons.html[emoticons]
+| link:{rootDir}plugins/emoticons.html[emoticons]
 | Opens the emoticons dialog.
 
 | template
-| link:{baseurl}/plugins/template.html[template]
+| link:{rootDir}plugins/template.html[template]
 | Inserts templates into the editor.
 
 | forecolor
-| link:{baseurl}/plugins/textcolor.html[textcolor]
+| link:{rootDir}plugins/textcolor.html[textcolor]
 | Applies foreground/text color to selection.
 
 | backcolor
-| link:{baseurl}/plugins/textcolor.html[textcolor]
+| link:{rootDir}plugins/textcolor.html[textcolor]
 | Applies background color to selection.
 
 | restoredraft
-| link:{baseurl}/plugins/autosave.html[restoredraft]
+| link:{rootDir}plugins/autosave.html[restoredraft]
 | Restores to the latest auto saved draft.
 
 | insertfile
-| link:{baseurl}/plugins/moxiemanager.html[moxiemanager]
+| link:{rootDir}plugins/moxiemanager.html[moxiemanager]
 | Opens the MoxieManager dialog.
 
 | a11ycheck
-| link:{baseurl}/plugins/a11ychecker.html[a11ychecker]
+| link:{rootDir}plugins/a11ychecker.html[a11ychecker]
 | Opens the accessibility checker dialog.
 
 | toc
-| link:{baseurl}/plugins/toc.html[toc]
+| link:{rootDir}plugins/toc.html[toc]
 | Inserts a Table of Contents into the editor.
 
 | quickimage
-| link:{baseurl}/themes/inlite.html[inlite]
+| link:{rootDir}themes/inlite.html[inlite]
 | Inserts an image from the local machine.
 
 | quicktable
-| link:{baseurl}/themes/inlite.html[inlite]
+| link:{rootDir}themes/inlite.html[inlite]
 | Inserts an table 2x2.
 
 | quicklink
-| link:{baseurl}/themes/inlite.html[inlite]
+| link:{rootDir}themes/inlite.html[inlite]
 | Inserts an link in a quicker way.
 |===
 
@@ -453,118 +452,118 @@ anchor:menucontrols[historical anchor]
 | Menu of all available formats.
 
 | link
-| link:{baseurl}/plugins/link.html[link]
+| link:{rootDir}plugins/link.html[link]
 | Opens the link dialog.
 
 | openlink
-| link:{baseurl}/plugins/link.html[link]
+| link:{rootDir}plugins/link.html[link]
 | Opens the selected link in a new tab.
 
 | image
-| link:{baseurl}/plugins/image.html[image]
+| link:{rootDir}plugins/image.html[image]
 | Opens the image dialog.
 
 | charmap
-| link:{baseurl}/plugins/charmap.html[charmap]
+| link:{rootDir}plugins/charmap.html[charmap]
 | Opens the charmap dialog.
 
 | pastetext
-| link:{baseurl}/plugins/paste.html[paste]
+| link:{rootDir}plugins/paste.html[paste]
 | Toggles paste as plain text on/off.
 
 | print
-| link:{baseurl}/plugins/print.html[print]
+| link:{rootDir}plugins/print.html[print]
 | Prints the current document.
 
 | preview
-| link:{baseurl}/plugins/preview.html[preview]
+| link:{rootDir}plugins/preview.html[preview]
 | Previews the current document.
 
 | hr
-| link:{baseurl}/plugins/hr.html[hr]
+| link:{rootDir}plugins/hr.html[hr]
 | Inserts a horizontal rule into the editor.
 
 | anchor
-| link:{baseurl}/plugins/anchor.html[anchor]
+| link:{rootDir}plugins/anchor.html[anchor]
 | Inserts an anchor into the editor.
 
 | pagebreak
-| link:{baseurl}/plugins/pagebreak.html[pagebreak]
+| link:{rootDir}plugins/pagebreak.html[pagebreak]
 | Inserts a pagebreak into the editor.
 
 | spellchecker
-| link:{baseurl}/plugins/spellchecker.html[spellchecker]
+| link:{rootDir}plugins/spellchecker.html[spellchecker]
 | Toggles the spellchecker on/off.
 
 | searchreplace
-| link:{baseurl}/plugins/searchreplace.html[searchreplace]
+| link:{rootDir}plugins/searchreplace.html[searchreplace]
 | Opens the search/replace dialog.
 
 | visualblocks
-| link:{baseurl}/plugins/visualblocks.html[visualblocks]
+| link:{rootDir}plugins/visualblocks.html[visualblocks]
 | Toggles block visibility on/off.
 
 | visualchars
-| link:{baseurl}/plugins/visualchars.html[visualchars]
+| link:{rootDir}plugins/visualchars.html[visualchars]
 | Toggles visibility of nonbreaking spaces on/off.
 
 | code
-| link:{baseurl}/plugins/code.html[code]
+| link:{rootDir}plugins/code.html[code]
 | Opens the code dialog.
 
 | fullscreen
-| link:{baseurl}/plugins/fullscreen.html[fullscreen]
+| link:{rootDir}plugins/fullscreen.html[fullscreen]
 | Toggles fullscreen on/off.
 
 | insertdatetime
-| link:{baseurl}/plugins/insertdatetime.html[insertdatetime]
+| link:{rootDir}plugins/insertdatetime.html[insertdatetime]
 | Inserts the current date/time into the editor.
 
 | media
-| link:{baseurl}/plugins/media.html[media]
+| link:{rootDir}plugins/media.html[media]
 | Opens the media dialog.
 
 | nonbreaking
-| link:{baseurl}/plugins/nonbreaking.html[nonbreaking]
+| link:{rootDir}plugins/nonbreaking.html[nonbreaking]
 | Inserts a nonbreaking space into the editor.
 
 | inserttable
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts table grid menu.
 
 | tableprops
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Opens the table properties dialog.
 
 | deletetable
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Deletes the current table.
 
 | cell
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Cell menu item with related controls.
 
 | row
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Row menu item with related controls.
 
 | column
-| link:{baseurl}/plugins/table.html[table]
+| link:{rootDir}plugins/table.html[table]
 | Column menu item with related controls.
 
 | restoredraft
-| link:{baseurl}/plugins/autosave.html[autosave]
+| link:{rootDir}plugins/autosave.html[autosave]
 | Restores to the latest auto saved draft.
 
 | fullpage
-| link:{baseurl}/plugins/fullpage.html[fullpage]
+| link:{rootDir}plugins/fullpage.html[fullpage]
 | Documents properties for the full page.
 
 | toc
-| link:{baseurl}/plugins/toc.html[toc]
+| link:{rootDir}plugins/toc.html[toc]
 | Inserts a Table of Contents into the editor.
 
 | help
-| link:{baseurl}/plugins/help.html[help]
+| link:{rootDir}plugins/help.html[help]
 | Opens the help dialog
 |===

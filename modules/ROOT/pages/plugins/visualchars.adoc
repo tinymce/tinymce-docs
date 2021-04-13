@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Visual Characters Plugin
 :controls: toolbar button, menu item
 :description: See invisible characters like non-breaking spaces.
@@ -11,7 +10,7 @@ This plugin adds the ability for users to see invisible characters like `+&nbsp;
 
 [NOTE]
 ====
-It's worth noting that at present the toolbar button icon is the same for both link:{baseurl}/plugins/visualblocks.html[Visual Blocks] and Visual Characters plugins.
+It's worth noting that at present the toolbar button icon is the same for both link:{rootDir}plugins/visualblocks.html[Visual Blocks] and Visual Characters plugins.
 ====
 
 *Type:* `String`

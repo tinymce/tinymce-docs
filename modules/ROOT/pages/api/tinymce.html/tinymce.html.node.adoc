@@ -17,7 +17,7 @@ someRoot.append(node);
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#node[Node()] |Constructs a new Node instance. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#node[Node()] |Constructs a new Node instance. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
 |===
 
 [[methods]]
@@ -26,19 +26,19 @@ someRoot.append(node);
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#append[append()] |Appends a new node as a child of the current node. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#attr[attr()] |Gets/sets or removes an attribute by name. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#clone[clone()] |Does a shallow clones the node into a new node. It will also exclude id attributes since there should only be one id per document. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#create[create()] |Creates a node of a specific type. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#empty[empty()] |Removes all children of the current node. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#getall[getAll()] |Get all children by name. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#insert[insert()] |Inserts a node at a specific position as a child of the current node. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#isempty[isEmpty()] |Returns true/false if the node is to be considered empty or not. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#remove[remove()] |Removes the node from it's parent. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#replace[replace()] |Replaces the current node with the specified one. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#unwrap[unwrap()] |Unwraps the node in other words it removes the node but keeps the children. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#walk[walk()] |Walks to the next or previous node and returns that node or null if it wasn't found. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
-|link:#wrap[wrap()] |Wraps the node in in another node. |link:{baseurl}/api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#append[append()] |Appends a new node as a child of the current node. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#attr[attr()] |Gets/sets or removes an attribute by name. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#clone[clone()] |Does a shallow clones the node into a new node. It will also exclude id attributes since there should only be one id per document. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#create[create()] |Creates a node of a specific type. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#empty[empty()] |Removes all children of the current node. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#getall[getAll()] |Get all children by name. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#insert[insert()] |Inserts a node at a specific position as a child of the current node. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#isempty[isEmpty()] |Returns true/false if the node is to be considered empty or not. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#remove[remove()] |Removes the node from it's parent. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#replace[replace()] |Replaces the current node with the specified one. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#unwrap[unwrap()] |Unwraps the node in other words it removes the node but keeps the children. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#walk[walk()] |Walks to the next or previous node and returns that node or null if it wasn't found. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
+|link:#wrap[wrap()] |Wraps the node in in another node. |link:{rootDir}api/tinymce.html/tinymce.html.node.html[tinymce.html.Node]
 |===
 
 == Constructors
@@ -75,13 +75,13 @@ node.append(someNode);
 
 ==== Parameters
 
-* `+node+` link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Node to append as a child of the current one.
+* `+node+` link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Node to append as a child of the current one.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The node that got appended.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The node that got appended.
 
 [[attr]]
 === attr
@@ -107,7 +107,7 @@ someNode.attr("name", null); // Removes an attribute
 ==== Return value
 
 * `+String+` - String or undefined on a get operation or the current node on a set operation.
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - String or undefined on a get operation or the current node on a set operation.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - String or undefined on a get operation or the current node on a set operation.
 
 [[clone]]
 === clone
@@ -125,7 +125,7 @@ var clonedNode = node.clone();
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - New copy of the original node.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - New copy of the original node.
 
 [[create]]
 === create
@@ -148,7 +148,7 @@ Removes all children of the current node.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The current node that got cleared.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The current node that got cleared.
 
 [[getall]]
 === getAll
@@ -181,13 +181,13 @@ parentNode.insert(newChildNode, oldChildNode);
 
 ==== Parameters
 
-* `+node+` link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Node to insert as a child of the current node.
-* `+refNode+` link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Reference node to set node before/after.
+* `+node+` link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Node to insert as a child of the current node.
+* `+refNode+` link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Reference node to set node before/after.
 * `+before+` `+(Boolean)+` - Optional state to insert the node before the reference node.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The node that got inserted.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The node that got inserted.
 
 [[isempty]]
 === isEmpty
@@ -229,7 +229,7 @@ node.remove();
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - Current node that got removed.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - Current node that got removed.
 
 [[replace]]
 === replace
@@ -247,11 +247,11 @@ someNode.replace(someNewNode);
 
 ==== Parameters
 
-* `+node+` link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Node to replace the current node with.
+* `+node+` link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Node to replace the current node with.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The old node that got replaced.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The old node that got replaced.
 
 [[unwrap]]
 === unwrap
@@ -280,7 +280,7 @@ Walks to the next or previous node and returns that node or null if it wasn't fo
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - Node that is next to or previous of the current node.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - Node that is next to or previous of the current node.
 
 [[wrap]]
 === wrap

@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = 02. Use TinyMCE Inline
 :description: Understand the difference between traditional forms-based editing and advanced inline editing.
 :description_short: Learn about forms-based editing v. inline editing.
@@ -12,7 +11,7 @@ The inline editing mode is useful when creating user experiences where you want 
 
 When in inline editing mode the editor does not replace the selected element with its own iframe, but instead edits the element's content in place instead.
 
-The distraction-free theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the link:{baseurl}/demo/editor-dfree.html[Distraction-free Editor] example page. See link:{baseurl}/themes/inlite.html[Inlite Theme] for more information.
+The distraction-free theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the link:{rootDir}demo/editor-dfree.html[Distraction-free Editor] example page. See link:{rootDir}themes/inlite.html[Inlite Theme] for more information.
 
 [[forms-based-editing-vs-inline-editing]]
 == Forms-based editing vs. inline editing

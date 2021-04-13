@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Editor Events
 :description: List of common editor events
 :description_short: List of common editor events
@@ -56,8 +55,8 @@ tinymce.init({
 | <<dirty,Dirty>> | core | Fires when editor contents are being considered dirty. |
 | <<remove,Remove>> | core | Fires when the editor is removed. |
 | <<execcommand,ExecCommand>> | core | Fires after a command has been executed. |
-| <<pastepreprocess,PastePreProcess>> | link:{baseurl}/plugins/paste.html[paste] | Fires when contents are pasted into the editor. |
-| <<pastepostprocess,PastePostProcess>> | link:{baseurl}/plugins/paste.html[paste] | Fires when contents are pasted into the editor. |
+| <<pastepreprocess,PastePreProcess>> | link:{rootDir}plugins/paste.html[paste] | Fires when contents are pasted into the editor. |
+| <<pastepostprocess,PastePostProcess>> | link:{rootDir}plugins/paste.html[paste] | Fires when contents are pasted into the editor. |
 > Native means that it's just a wrapped native browser event.
 > Core means that it's a core specific event provided by the editor.
 

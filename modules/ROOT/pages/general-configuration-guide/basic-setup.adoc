@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = 01. Basic Setup
 :description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
 :description_short: The 3 most important configuration settings, with examples.
@@ -64,7 +63,7 @@ tinymce.init({
 });
 ----
 
-When using this option in TinyMCE's link:{baseurl}/general-configuration-guide/use-tinymce-inline.html[inline editing mode] the selector can be used on any block element, which edits the content in place instead of replacing the element with an `iframe`.
+When using this option in TinyMCE's link:{rootDir}general-configuration-guide/use-tinymce-inline.html[inline editing mode] the selector can be used on any block element, which edits the content in place instead of replacing the element with an `iframe`.
 
 Here, `selector` is being used in inline editing mode on a `div` element with `id` `'editable'`:
 
@@ -78,7 +77,7 @@ tinymce.init({
 
 [NOTE]
 ====
-For more information on the differences between regular and inline editing modes see the link:{baseurl}/general-configuration-guide/use-tinymce-inline.html[Using TinyMCE Inline] page.
+For more information on the differences between regular and inline editing modes see the link:{rootDir}general-configuration-guide/use-tinymce-inline.html[Using TinyMCE Inline] page.
 ====
 
 [[plugin-configuration]]
@@ -97,7 +96,7 @@ tinymce.init({
 });
 ----
 
-We show you how to configure plugins throughout this guide. The full list of plugins, their options, and control associations is link:{baseurl}/plugins/index.html[available here].
+We show you how to configure plugins throughout this guide. The full list of plugins, their options, and control associations is link:{rootDir}plugins/index.html[available here].
 
 [[toolbar--menu-configuration]]
 == Toolbar & menu configuration
@@ -230,7 +229,7 @@ anchor:basicconfigurationexample[historical anchor]
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 
-You will find full list of link:{baseurl}/configure/index.html[configuration options here]. Plugins, their options and control associations are link:{baseurl}/plugins/index.html[available here].
+You will find full list of link:{rootDir}configure/index.html[configuration options here]. Plugins, their options and control associations are link:{rootDir}plugins/index.html[available here].
 
 To help get you started, let's walk through an example of a basic TinyMCE configuration.
 

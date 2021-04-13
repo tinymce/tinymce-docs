@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 = Format Painter
 :controls: toolbar button
 :description: Quickly apply formats to multiple pieces of text.
@@ -11,7 +10,7 @@
 == Live example
 anchor:liveexample[historical anchor]
 
-This example shows how to use Format Painter Format Painter plugin to copy and paste formatting from one location to another. For more information on the Format Painter plugin, see the link:{baseurl}/plugins/formatpainter.html[docs].
+This example shows how to use Format Painter Format Painter plugin to copy and paste formatting from one location to another. For more information on the Format Painter plugin, see the link:{rootDir}plugins/formatpainter.html[docs].
 
 ++++
 <p data-height="600" data-theme-id="0" data-slug-hash="roKWpJ" data-default-tab="result" data-user="tinymce" class="codepen">

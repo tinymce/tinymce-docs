@@ -17,10 +17,10 @@ var rootNode = parser.parse('<h1>content</h1>');
 [cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
-|link:#addattributefilter[addAttributeFilter()] |Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document. |link:{baseurl}/api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
-|link:#addnodefilter[addNodeFilter()] |Adds a node filter function to the parser, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document. |link:{baseurl}/api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
-|link:#filternode[filterNode()] |Runs the specified node though the element and attributes filters. |link:{baseurl}/api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
-|link:#parse[parse()] |Parses the specified HTML string into a DOM like node tree and returns the result. |link:{baseurl}/api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
+|link:#addattributefilter[addAttributeFilter()] |Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document. |link:{rootDir}api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
+|link:#addnodefilter[addNodeFilter()] |Adds a node filter function to the parser, the parser will collect the specified nodes by name and then execute the callback once it has finished parsing the document. |link:{rootDir}api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
+|link:#filternode[filterNode()] |Runs the specified node though the element and attributes filters. |link:{rootDir}api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
+|link:#parse[parse()] |Parses the specified HTML string into a DOM like node tree and returns the result. |link:{rootDir}api/tinymce.html/tinymce.html.domparser.html[tinymce.html.DomParser]
 |===
 
 == Methods
@@ -80,13 +80,13 @@ Runs the specified node though the element and attributes filters.
 
 ==== Parameters
 
-* `+Node+` link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - the node to run filters on.
+* `+Node+` link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - the node to run filters on.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The passed in node.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - The passed in node.
 
 [[parse]]
 === parse
@@ -109,4 +109,4 @@ var rootNode = new DomParser({...}).parse('<b>text</b>');
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - Root node containing the tree.
+* link:{rootDir}api/tinymce.html/tinymce.html.node.html[`+tinymce.html.Node+`] - Root node containing the tree.

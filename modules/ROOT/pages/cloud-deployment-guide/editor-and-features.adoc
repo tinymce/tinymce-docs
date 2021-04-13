@@ -75,7 +75,7 @@ IMPORTANT: Please ensure that the `tiny-api-key` and `tinymce-api-key` headers a
 === Step 5: Specifying a translation
 anchor:step5specifyingatranslation[historical anchor]
 
-If you wish to use a language other than English (US), please link:{product_homepage}i18n[download a language pack] and then link:{rootDir}configure/localization/#language_url[specify its location] with the `language_url` configuration option.
+If you wish to use a language other than English (US), please link:{product_homepage}i18n[download a language pack] and then xref:configure/localization.adoc#language_url[specify its location] with the `language_url` configuration option.
 
 [[migrating-from-a-self-hosted-environment-to-tinymce-cloud]]
 == Migrating from a Self-hosted environment to TinyMCE Cloud
@@ -96,7 +96,7 @@ Migrating from a Self-hosted environment to the Cloud is a relatively straightfo
 === Step 2: Update custom plugin paths
 anchor:step2updatecustompluginpaths[historical anchor]
 
-If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via link:{rootDir}configure/integration-and-setup/#external_plugins[external_plugins] rather than the regular link:{rootDir}general-configuration-guide/work-with-plugins.html[plugins] configuration element.
+If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via xref:configure/integration-and-setup.adoc#external_plugins[external_plugins] rather than the regular link:{rootDir}general-configuration-guide/work-with-plugins.html[plugins] configuration element.
 
 [[step-3-specify-purchased-tinymce-plugins-and-toolbar-buttons]]
 === Step 3: Specify purchased TinyMCE plugins and toolbar buttons

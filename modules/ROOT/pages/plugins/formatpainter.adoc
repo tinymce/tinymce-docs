@@ -63,14 +63,14 @@ The format painter retains the formatting after application making it possible t
 [[options]]
 == Options
 
-The format painter acts upon all link:{rootDir}configure/content-formatting/#formats[`formats`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{rootDir}plugins/lists.html[`lists plugin`] is made available.
+The format painter acts upon all xref:configure/content-formatting.adoc#formats[`formats`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{rootDir}plugins/lists.html[`lists plugin`] is made available.
 
 [[formats]]
 === `formats`
 
-The format painter plugin will register many formats upon initialization. To override these formats, use the link:{rootDir}configure/content-formatting/#exampleofusageoftheformatsoption[`formats`] option.
+The format painter plugin will register many formats upon initialization. To override these formats, use the xref:configure/content-formatting.adoc#exampleofusageoftheformatsoption[`formats`] option.
  +
-The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the link:{rootDir}configure/content-formatting/#removingaformat[`removeformat`] format.
+The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the xref:configure/content-formatting.adoc#removingaformat[`removeformat`] format.
 
 *Type:* `Object`
 

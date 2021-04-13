@@ -371,16 +371,16 @@ anchor:version473november232017[historical anchor]
 * Fixed bug where pressing the enter button inside of an h1 with contenteditable set to true would sometimes produce a p tag.
 * Fixed bug with backspace not working as expected before a noneditable element.
 * Fixed bug where operating on tables with invalid rowspans would cause an error to be thrown.
-* Fixed so a real base64 representation of the image is available on the blobInfo that the link:{rootDir}configure/file-image-upload/#images_upload_handler[images_upload_handler] gets called with.
-* Fixed so the image upload tab is available when the link:{rootDir}configure/file-image-upload/#images_upload_handler[images_upload_handler] is defined (and not only when the link:{rootDir}configure/file-image-upload/#images_upload_url[images_upload_url] is defined).
+* Fixed so a real base64 representation of the image is available on the blobInfo that the xref:configure/file-image-upload.adoc#images_upload_handler[images_upload_handler] gets called with.
+* Fixed so the image upload tab is available when the xref:configure/file-image-upload.adoc#images_upload_handler[images_upload_handler] is defined (and not only when the xref:configure/file-image-upload.adoc#images_upload_url[images_upload_url] is defined).
 
 [[version-472-november-7-2017]]
 == Version 4.7.2 November 7, 2017
 anchor:version472november72017[historical anchor]
 
 * Rewrote the link:{rootDir}plugins/table.html[Table Plugin].
-* Rewrote/simplified the CSS for link:{rootDir}configure/content-appearance/#inline_boundaries[inline boundaries] selection by switching to an attribute selector.
-* Added support for attributes with colon in link:{rootDir}configure/content-filtering/#valid_elements[valid_elements] and addValidElements.
+* Rewrote/simplified the CSS for xref:configure/content-appearance.adoc#inline_boundaries[inline boundaries] selection by switching to an attribute selector.
+* Added support for attributes with colon in xref:configure/content-filtering.adoc#valid_elements[valid_elements] and addValidElements.
 * Added support for dailymotion short url in the link:{rootDir}plugins/media.html[Media Plugin]. Patch contributed by https://github.com/maat8[maat8].
 * Added support for converting to half pt when converting font size from px to pt. Patch contributed by https://github.com/danny6514[danny6514].
 * Added support for location hash to the link:{rootDir}plugins/autosave.html[Autosave plugin] to make it work better with SPAs using hash routing.
@@ -438,12 +438,12 @@ anchor:version470october32017[historical anchor]
 
 * Added new mobile UI that is specifically designed for mobile devices. See the link:{rootDir}mobile.html[mobile docs].
 * Added an updated the default skin to be more modern. It's now more white (since white is preferred by most implementations).
-* Added an updated default menu structure to be more similar to common office suites like Google Docs. To customize the menu, see the link:{rootDir}configure/editor-appearance/#menu[menu] and link:{rootDir}configure/editor-appearance/#menubar[menubar] config docs.
+* Added an updated default menu structure to be more similar to common office suites like Google Docs. To customize the menu, see the xref:configure/editor-appearance.adoc#menu[menu] and xref:configure/editor-appearance.adoc#menubar[menubar] config docs.
 * Fixed so theme can be set to false on both inline and iframe editor modes.
 * Fixed bug where inline editor would add/remove the link:{rootDir}plugins/visualblocks.html[visualblocks] css multiple times.
 * Fixed bug where selection wouldn't be properly restored when editor lost focus and commands were invoked.
 * Fixed bug where the link:{rootDir}plugins/toc.html[Table of Contents plugin] would generate `id:s` for headers even though a `toc` wasn't inserted into the content.
-* Fixed bug where is wasn't possible to drag/drop contents within the editor if link:{rootDir}plugins/paste/#paste_data_images[paste_data_images] was set to true.
+* Fixed bug where is wasn't possible to drag/drop contents within the editor if xref:plugins/paste.adoc#paste_data_images[paste_data_images] was set to true.
 * Fixed bug where *getParam* and close in *WindowManager* would get the first opened window instead of the last opened window.
 * Fixed table bug where `delete` would delete between cells inside a table in Firefox.
 
@@ -471,7 +471,7 @@ anchor:version467september182017[historical anchor]
 anchor:version466august302017[historical anchor]
 
 * Fixed so that notifications wrap long text content instead of bleeding outside the notification element.
-* Fixed so the link:{rootDir}configure/content-appearance/#content_style[content_style] css is added after the skin and custom stylesheets.
+* Fixed so the xref:configure/content-appearance.adoc#content_style[content_style] css is added after the skin and custom stylesheets.
 * Fixed bug where it wasn't possible to remove a table with the cut button.
 * Fixed bug where the center format wasn't getting the same font size as the other formats in the format preview.
 * Fixed bug where the link:{rootDir}plugins/wordcount.html[Word Count plugin] wasn't counting hyphenated words correctly.
@@ -494,7 +494,7 @@ anchor:version466august302017[historical anchor]
 == Version 4.6.5 August 2, 2017
 anchor:version465august22017[historical anchor]
 
-* Added new link:{rootDir}configure/content-appearance/#inline_boundaries_selector[inline_boundaries_selector] that allows you to specify the elements that should have boundaries.
+* Added new xref:configure/content-appearance.adoc#inline_boundaries_selector[inline_boundaries_selector] that allows you to specify the elements that should have boundaries.
 * Added new local upload feature, which allows the user to upload images directly from the image dialog.
 * Added a new API for providing meta data for plugins. It will show up in the link:{rootDir}plugins/help.html[Help dialog] if it's provided.
 * Fixed so that the notifications created by the notification manager are more screen reader accessible.

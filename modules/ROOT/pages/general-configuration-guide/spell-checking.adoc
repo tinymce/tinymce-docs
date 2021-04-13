@@ -10,7 +10,7 @@ Nobody likes content with spelling errors. Our team at TinyMCE is motivated to h
 == Browser-based spell checking
 anchor:browser-basedspellchecking[historical anchor]
 
-The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the link:{rootDir}configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{rootDir}plugins/contextmenu.html[`contextmenu`] plugin.
+The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the xref:configure/spelling.adoc#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{rootDir}plugins/contextmenu.html[`contextmenu`] plugin.
 
 [source,js]
 ----

@@ -89,7 +89,7 @@ anchor:configuringthecomments20menuitem[historical anchor]
 
 By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), `showcomments` (View Menu), and `deleteallconversations` (File Menu).
 
-For more information on configuring menu items refer to the link:{rootDir}configure/editor-appearance/#toolbar[toolbar] and link:{rootDir}configure/editor-appearance/#menu[menu] sections.
+For more information on configuring menu items refer to the xref:configure/editor-appearance.adoc#toolbar[toolbar] and xref:configure/editor-appearance.adoc#menu[menu] sections.
 
 Currently, there are three menu items available:
 
@@ -117,7 +117,7 @@ tinymce.init({
 *Result*: The commented text will be highlighted yellow.
 image:highlight.png[**Highlighted text**]
 
-For more information on TinyMCE formats, refer to the link:{rootDir}configure/content-formatting/#formats[formats] section.
+For more information on TinyMCE formats, refer to the xref:configure/content-formatting.adoc#formats[formats] section.
 
 [[using-comments]]
 === Using Comments
@@ -199,4 +199,4 @@ image:decision2.png[**Delete all conversations**]
 
 *Result*: All the comments for the selected document will be deleted.
 
-Check out the link:{rootDir}demo/comments/#comments20demo[Comments demo] to try out this new feature.
+Check out the xref:demo/comments.adoc#comments20demo[Comments demo] to try out this new feature.

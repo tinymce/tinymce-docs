@@ -8,7 +8,7 @@
 
 There are a few advanced features in TinyMCE that require some CSS to be added to the page that displays the contents produced by the editor. In general, you want to get an as clean output as possible from a rich text editor, and some of the more advanced features like captioned images use CSS rather than inline styles to render correctly.
 
-This Boilerplate CSS can be used to style these advanced elements. This CSS file can be used within the editor using the link:{rootDir}configure/content-appearance/#content_css[content_css] option and also on your page where the saved content is presented.
+This Boilerplate CSS can be used to style these advanced elements. This CSS file can be used within the editor using the xref:configure/content-appearance.adoc#content_css[content_css] option and also on your page where the saved content is presented.
 
 [source,css]
 ----

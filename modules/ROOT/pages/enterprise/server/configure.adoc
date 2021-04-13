@@ -19,7 +19,7 @@ This configuration file will require you to enter _at least_ the following  info
 Some server-side components require additional configuration which can be found in their individual documentation:
 
 * link:{rootDir}enterprise/embed-media/mediaembed-server-config.html[Enhanced Media Embed]
-* link:{rootDir}enterprise/check-links/#linkcheckersdkquicksetup[Link Checker]
+* xref:enterprise/check-links.adoc#linkcheckersdkquicksetup[Link Checker]
 
 [[allowed-origins-required]]
 === `allowed-origins` (required)
@@ -122,7 +122,7 @@ ephox {
 ==== Troubleshooting Origins
 anchor:troubleshootingorigins[historical anchor]
 
-If you missed an Origin or specified an Origin incorrectly, TinyMCE features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{rootDir}enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
+If you missed an Origin or specified an Origin incorrectly, TinyMCE features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about xref:enterprise/server/troubleshoot.adoc#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
 
 [[proxy-optional]]
 === `proxy` (optional)
@@ -307,7 +307,7 @@ Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with t
 === Step 2. Pass the configuration file to the Java application server
 anchor:step2passtheconfigurationfiletothejavaapplicationserver[historical anchor]
 
-Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow link:{rootDir}enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:{rootDir}enterprise/server/#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
+Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow xref:enterprise/server.adoc#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and xref:enterprise/server.adoc#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
 
 ----
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml

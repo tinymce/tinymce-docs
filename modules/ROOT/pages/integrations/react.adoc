@@ -5,7 +5,7 @@
 :keywords: integration integrate react reactjs create-react-app
 :title_nav: React
 
-Integration with React is easily done with our https://github.com/tinymce/tinymce-react[@tinymce/tinymce-react] package. This how-to shows you how to setup a project using https://facebook.github.io/react/[react], link:/docs/demo/basic-example/[tinymce] and https://github.com/facebookincubator/create-react-app[Create React App].
+Integration with React is easily done with our https://github.com/tinymce/tinymce-react[@tinymce/tinymce-react] package. This how-to shows you how to setup a project using https://facebook.github.io/react/[react], xref:demo/basic-example.adoc[tinymce] and https://github.com/facebookincubator/create-react-app[Create React App].
 
 [[1-installing-create-react-app]]
 == 1. Installing `create-react-app`
@@ -52,7 +52,7 @@ anchor:31loadingtinymce[historical anchor]
 ==== Auto-loading from TinyMCE Cloud
 anchor:auto-loadingfromtinymcecloud[historical anchor]
 
-`@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load link:{rootDir}cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] if it can't find TinyMCE available when the component is mounting. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
+`@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load xref:cloud-deployment-guide/editor-and-features.adoc[TinyMCE Cloud] if it can't find TinyMCE available when the component is mounting. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
 
 [source,js]
 ----
@@ -71,13 +71,13 @@ So using the `dev` channel would look like this:
 <Editor apiKey='YOUR_API_KEY' cloudChannel='dev' init={{ /* your other settings */ }} />
 ----
 
-For more info on the different channels see the link:{rootDir}cloud-deployment-guide/editor-and-features/editor-plugin-version/#devtestingandstablereleases[documentation].
+For more info on the different channels see the xref:cloud-deployment-guide/editor-and-features/editor-plugin-version.adoc#devtestingandstablereleases[documentation].
 
 [[loading-tinymce-by-yourself]]
 ==== Loading TinyMCE by yourself
 anchor:loadingtinymcebyyourself[historical anchor]
 
-To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out link:{rootDir}advanced/usage-with-module-loaders/[this page in the documentation].
+To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out xref:advanced/usage-with-module-loaders.adoc[this page in the documentation].
 
 [source,html]
 ----

@@ -71,7 +71,7 @@ IMPORTANT: *do not* set `theme` to `mobile` in the top-level of your `init` sett
 == Configuring mobile
 anchor:configuringmobile[historical anchor]
 
-One way to think about configuring TinyMCE mobile is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the link:{rootDir}configure/editor-appearance/#mobile[mobile] section will be used instead of the equivalent values in the top-level of settings of your config.
+One way to think about configuring TinyMCE mobile is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the xref:configure/editor-appearance.adoc#mobile[mobile] section will be used instead of the equivalent values in the top-level of settings of your config.
 
 Therefore, the mobile section allows you to have completely different settings for mobile than non-mobile devices. The main configuration options you can change are `plugins` and `toolbar`.
 
@@ -99,7 +99,7 @@ tinymce.init({
 === Configuring the Toolbar
 anchor:configuringthetoolbar[historical anchor]
 
-TinyMCE mobile supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the link:{rootDir}configure/editor-appearance/#mobile[mobile] section also.
+TinyMCE mobile supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the xref:configure/editor-appearance.adoc#mobile[mobile] section also.
 
 [source,js]
 ----
@@ -114,7 +114,7 @@ tinymce.init({
 });
 ----
 
-Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the link:{rootDir}plugins/lists.html[lists] plugin and <<,styleselect>> requires configuring link:{rootDir}configure/content-formatting/#style_formats[style_formats].
+Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the xref:plugins/lists.html[lists] plugin and <<,styleselect>> requires configuring link:{rootDir}configure/content-formatting.adoc#style_formats[style_formats].
 
 |===
 | Name | Function | Plugins Required | Configuration
@@ -182,7 +182,7 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 | styleselect
 | Apply a custom style
 |
-| link:{rootDir}configure/content-formatting/#style_formats[style_formats]
+| xref:configure/content-formatting.adoc#style_formats[style_formats]
 
 | removeformat
 | Removes any inline formatting

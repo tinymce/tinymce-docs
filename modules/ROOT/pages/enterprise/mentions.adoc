@@ -12,11 +12,11 @@ Users can communicate every day using `@username` on social networks and can exp
 === Buy TinyMCE Mentions
 anchor:buytinymcementions[historical anchor]
 
-Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the https://apps.tiny.cloud/products/atmention/[pricing and plans here]. OEM and enterprise customers should https://www.tiny.cloud/contact/[contact sales directly].
+Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the link:{pricingpage}[pricing and plans here]. OEM and enterprise customers should link:{contactpage}[contact sales directly].
 
 There are two deployment options. One is with TinyMCE Cloud, the other is the more traditional Self-hosted route, requiring an additional link:{rootDir}enterprise/server/index.html[server-side component] to be installed and configured.
 
-Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this link:{rootDir}plugins/mentions/#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
+Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this xref:plugins/mentions.adoc#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
 
 [[mentions-cloud-setup]]
 == Mentions cloud setup

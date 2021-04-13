@@ -51,9 +51,9 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 === Additional information about using TinyMCE Cloud
 anchor:additionalinformationaboutusingtinymcecloud[historical anchor]
 
-There are a few things you need to consider when using TinyMCE Cloud. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new link:{rootDir}configure/integration-and-setup/#external_plugins[`external_plugins`] option.
+There are a few things you need to consider when using TinyMCE Cloud. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new xref:configure/integration-and-setup.adoc#external_plugins[`external_plugins`] option.
 
-Also, if you wish to use a custom language, you need to enter the location of the language file into the new link:{rootDir}configure/localization/#language_url[`language_url`] option.
+Also, if you wish to use a custom language, you need to enter the location of the language file into the new xref:configure/localization.adoc#language_url[`language_url`] option.
 
 You may also want to select a specific version of the editor from TinyMCE Cloud and you should head on over to link:{rootDir}cloud-deployment-guide/editor-plugin-version.html[Specify Editor & Plugin Versions] for details on that.
 

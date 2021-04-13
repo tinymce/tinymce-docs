@@ -5,7 +5,7 @@
 :keywords: tinydrive storage media tiny drive
 :title_nav: Drive
 
-The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in https://www.tiny.cloud/download/[Tiny Cloud] and requires you to register for an API key.
+The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in link:{pricingpage}[Tiny Cloud] and requires you to register for an API key.
 
 To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a link:{rootDir}configure/jwt-authentication.html[JSON Web Token] (JWT).
 
@@ -169,7 +169,7 @@ Drive has restrictions on what files can be uploaded and how large these files c
 * Allowed archive extensions: zip
 * The Copy operation is limited to single files due to technical reasons.
 
-Your storage and bandwidth quota varies based upon the https://www.tiny.cloud/pricing/[Tiny Cloud Plan] you are subscribed to.
+Your storage and bandwidth quota varies based upon the link:{pricingpage}[Tiny Cloud Plan] you are subscribed to.
 
 [[upload-files-url]]
 == Upload Files URL

@@ -21,7 +21,7 @@ anchor:privatepublickeypair[historical anchor]
 
 Tokens used by the TinyMCE cloud services make use of a public/private RSA key-pair. This allows the integrating developer to have full control over the authentication as Tiny does not store the private key. Only the user has access to the private key and can produce valid tokens. Tiny only verifies that they are valid and extracts user information from that token.
 
-The private/public key pair is created in the user's https://apps.tiny.cloud/my-account/jwt-key-manager/[Tiny account page], but only the public key is stored on Tiny web server. The user needs to store the private key in their backend.
+The private/public key pair is created in the user's link:{accountsignuppage}[Tiny account page], but only the public key is stored on Tiny web server. The user needs to store the private key in their backend.
 
 [[jwt-provider-url]]
 == JWT provider URL

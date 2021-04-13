@@ -149,7 +149,7 @@ top.tinymce.activeEditor.windowManager.close();
 == HTML5 output
 anchor:html5output[historical anchor]
 
-TinyMCE produces HTML5 loose output as of 4.0. This means it can handle all new HTML5 elements and also allow the deprecated HTML4 attributes and elements. If you want to use html4 or html5-strict output check the link:{rootDir}configure/content-filtering/#schema[schema] option for details.
+TinyMCE produces HTML5 loose output as of 4.0. This means it can handle all new HTML5 elements and also allow the deprecated HTML4 attributes and elements. If you want to use html4 or html5-strict output check the xref:configure/content-filtering.adoc#schema[schema] option for details.
 
 [[using-the-compat3x-plugin]]
 == Using the compat3x plugin

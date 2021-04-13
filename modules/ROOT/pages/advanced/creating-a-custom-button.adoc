@@ -97,7 +97,7 @@ Here is the full code (you can experiment on it by clicking _Edit on Codepen_ in
 
 As you see we've supplied identifier of our button in the `toolbar` property, along with `undo` and `redo` (`code` plugin is also included - so that you could see HTML code that gets generated). So whenever the user clicks _Insert Current Date_, the date will be inserted into the editor at the current cursor position. Notice how `undo` button gets enabled after insertion, that's because we handle modification history for you.
 
-Another point is `setup` callback - see how we put all of our code into it? It is the callback that TinyMCE will link:{rootDir}configure/integration-and-setup/#setup[automatically invoke] for every initialised editor instance. It will receive a reference to the instance as the first argument. We can use `setup` callback to customize editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added _before_ the editor is ready.
+Another point is `setup` callback - see how we put all of our code into it? It is the callback that TinyMCE will xref:configure/integration-and-setup.adoc#setup[automatically invoke] for every initialised editor instance. It will receive a reference to the instance as the first argument. We can use `setup` callback to customize editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added _before_ the editor is ready.
 
 [[button-options]]
 == Button options
@@ -111,7 +111,7 @@ Button configuration properties:
 * *tooltip* - _tooltip to pop up on hover_
 * *onclick* - _callback to call when button is clicked_
 * *onpostrender* - _callback to call when button is rendered_
-* *cmd* - _editor command to invoke, when button is clicked (command link:{rootDir}api/tinymce/tinymce.editorcommands/#addcommands[should be registered] prior to this, either by editor or by you)_
+* *cmd* - _editor command to invoke, when button is clicked (command xref:api/tinymce/tinymce.editorcommands.adoc#addcommands[should be registered] prior to this, either by editor or by you)_
 
 [[conditionally-disable-button]]
 == Conditionally disable button
@@ -119,7 +119,7 @@ anchor:conditionallydisablebutton[historical anchor]
 
 You probably do not want your button to be enabled at all times since sometimes it might fall out of context. For example, it would be awkward if we could insert `<time>` tag into another `<time>` tag, right? And you can see in the example above, that it _is_ possible.
 
-So basically we need a way to monitor the cursor position and disable our button when it's inappropriate. For this purpose, we can hook onto a link:{rootDir}advanced/events/#nodechange[NodeChange event], that gets fired when cursor jumps from one node to another.
+So basically we need a way to monitor the cursor position and disable our button when it's inappropriate. For this purpose, we can hook onto a xref:advanced/events.adoc#nodechange[NodeChange event], that gets fired when cursor jumps from one node to another.
 
 [source,js]
 ----

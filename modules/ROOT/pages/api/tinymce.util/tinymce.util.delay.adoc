@@ -5,7 +5,7 @@ Utility class for working with delayed actions like setTimeout.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#clearinterval[clearInterval()] |Clears an interval timer so it won't execute. |link:{baseurl}/api/tinymce.util/tinymce.util.delay.html[tinymce.util.Delay]
@@ -30,7 +30,7 @@ Clears an interval timer so it won't execute.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#Interval# [.param-type]#(Number)# - timer id number.
+* `+Interval+` `+(Number)+` - timer id number.
 
 [[cleartimeout]]
 === clearTimeout
@@ -41,7 +41,7 @@ Clears an timeout timer so it won't execute.
 
 ==== Parameters
 
-* [.param-name]#Timeout# [.param-type]#(Number)# - timer id number.
+* `+Timeout+` `+(Number)+` - timer id number.
 
 [[debounce]]
 === debounce
@@ -52,14 +52,14 @@ Creates debounced callback function that only gets executed once within the spec
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer finishes.
-* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+* `+callback+` `+(function)+` - Callback to execute when timer finishes.
+* `+time+` `+(Number)+` - Optional time to wait before the callback is executed, defaults to 0.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Function# - debounced function callback.
+* `+Function+` - debounced function callback.
 
 [[requestanimationframe]]
 === requestAnimationFrame
@@ -70,8 +70,8 @@ Requests an animation frame and fallbacks to a timeout on older browsers.
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when a new frame is available.
-* [.param-name]#element# [.param-type]#(DOMElement)# - Optional element to scope it to.
+* `+callback+` `+(function)+` - Callback to execute when a new frame is available.
+* `+element+` `+(DOMElement)+` - Optional element to scope it to.
 
 [[seteditorinterval]]
 === setEditorInterval
@@ -82,12 +82,12 @@ Sets an interval timer it's similar to setInterval except that it checks if the 
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when interval time runs out.
-* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+* `+callback+` `+(function)+` - Callback to execute when interval time runs out.
+* `+time+` `+(Number)+` - Optional time to wait before the callback is executed, defaults to 0.
 
 ==== Return value
 
-* [.return-type]#Number# - Timeout id number.
+* `+Number+` - Timeout id number.
 
 [[seteditortimeout]]
 === setEditorTimeout
@@ -98,13 +98,13 @@ Sets an editor timeout it's similar to setTimeout except that it checks if the e
 
 ==== Parameters
 
-* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance to check the removed state on.
-* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer runs out.
-* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+* `+editor+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance to check the removed state on.
+* `+callback+` `+(function)+` - Callback to execute when timer runs out.
+* `+time+` `+(Number)+` - Optional time to wait before the callback is executed, defaults to 0.
 
 ==== Return value
 
-* [.return-type]#Number# - Timeout id number.
+* `+Number+` - Timeout id number.
 
 [[setinterval]]
 === setInterval
@@ -115,12 +115,12 @@ Sets an interval timer in ms and executes the specified callback at every interv
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when interval time runs out.
-* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+* `+callback+` `+(function)+` - Callback to execute when interval time runs out.
+* `+time+` `+(Number)+` - Optional time to wait before the callback is executed, defaults to 0.
 
 ==== Return value
 
-* [.return-type]#Number# - Timeout id number.
+* `+Number+` - Timeout id number.
 
 [[settimeout]]
 === setTimeout
@@ -131,9 +131,9 @@ Sets a timer in ms and executes the specified callback when the timer runs out.
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback to execute when timer runs out.
-* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the callback is executed, defaults to 0.
+* `+callback+` `+(function)+` - Callback to execute when timer runs out.
+* `+time+` `+(Number)+` - Optional time to wait before the callback is executed, defaults to 0.
 
 ==== Return value
 
-* [.return-type]#Number# - Timeout id number.
+* `+Number+` - Timeout id number.

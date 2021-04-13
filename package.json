@@ -11,7 +11,7 @@
   "homepage": "https://github.com/tinymce/tinymce-docs#readme",
   "scripts": {
     "build": "antora antora-playbook.yml",
-    "watch": "watch --interval=15 --ignoreDirectoryPattern='/build\\\//' \"yarn build\" ./",
+    "watch": "watch --interval=15 --ignoreDirectoryPattern='/(build|\\.git)\\\//' \"yarn build\" ./",
     "server": "http-server build/site/ --port 4000",
     "serve": "npm-run-all -p watch server"
   },

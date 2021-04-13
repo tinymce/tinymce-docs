@@ -12,7 +12,7 @@ Creating a new skin will allow you to alter the appearance of TinyMCE. If you wo
 [[preparation]]
 == Preparation
 
-To manually build the `less` files you will have to download the https://www.tinymce.com/download/[TinyMCE development package]. This package contains the source code for the entire TinyMCE project and the `less` files needed to skin the editor or use the https://github.com/tinymce/tinymce/[GitHub version]. You will also need to install https://nodejs.org[Node.js] and the NPM node module dependencies needed for the build process. This https://github.com/tinymce/tinymce/blob/master/readme.md[readme.md] file explains how to build TinyMCE manually.
+To manually build the `less` files you will have to download the link:{downloadspage}[TinyMCE development package]. This package contains the source code for the entire TinyMCE project and the `less` files needed to skin the editor or use the https://github.com/tinymce/tinymce/[GitHub version]. You will also need to install https://nodejs.org[Node.js] and the NPM node module dependencies needed for the build process. This https://github.com/tinymce/tinymce/blob/master/readme.md[readme.md] file explains how to build TinyMCE manually.
 
 [[building-skinmincss-from-less-files]]
 == Building skin.min.css from less files

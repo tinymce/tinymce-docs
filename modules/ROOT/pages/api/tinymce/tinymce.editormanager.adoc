@@ -5,7 +5,7 @@ This class used as a factory for manager for tinymce.Editor instances.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 tinymce.EditorManager.init({});
 ----
@@ -13,26 +13,26 @@ tinymce.EditorManager.init({});
 [[properties]]
 == Properties
 
-[cols=",,,",options="header",]
+[cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|$ |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.param-type]#tinymce.dom.DomQuery#] |Dom query instance. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|activeEditor |link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#tinymce.Editor#] |Currently active editor instance. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|baseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[[.param-type]#tinymce.util.URI#] |Absolute baseURI for the installation path of TinyMCE. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|baseURL |[.param-type]#String# |Base URL where the root directory if TinyMCE is located. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|documentBaseURL |[.param-type]#String# |Document base URL where the current document is located. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|editors |[.param-type]#Object# |Collection of editor instances. Deprecated use tinymce.get() instead. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|i18n |[.param-type]#Object# |Collection of language pack data. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|majorVersion |[.param-type]#String# |Major version of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|minorVersion |[.param-type]#String# |Minor version of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|releaseDate |[.param-type]#String# |Release date of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
-|suffix |[.param-type]#String# |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|$ |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] |Dom query instance. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|activeEditor |link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] |Currently active editor instance. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|baseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[`+tinymce.util.URI+`] |Absolute baseURI for the installation path of TinyMCE. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|baseURL |`+String+` |Base URL where the root directory if TinyMCE is located. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|documentBaseURL |`+String+` |Document base URL where the current document is located. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|editors |`+Object+` |Collection of editor instances. Deprecated use tinymce.get() instead. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|i18n |`+Object+` |Collection of language pack data. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|majorVersion |`+String+` |Major version of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|minorVersion |`+String+` |Minor version of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|releaseDate |`+String+` |Release date of TinyMCE build. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
+|suffix |`+String+` |Current suffix to add to each plugin/theme that gets loaded for example ".min". |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
 |===
 
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:{baseurl}/api/tinymce/tinymce.editormanager.html[tinymce.EditorManager]
@@ -65,13 +65,13 @@ Adds an editor instance to the editor collection. This will also set it as the a
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance to add to the collection.
+* `+editor+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance to add to the collection.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - The same instance that got passed in.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - The same instance that got passed in.
 
 [[addi18n]]
 === addI18n
@@ -82,8 +82,8 @@ Adds a language pack, this gets called by the loaded language files like en.js.
 
 ==== Parameters
 
-* [.param-name]#code# [.param-type]#(String)# - Optional language code.
-* [.param-name]#items# [.param-type]#(Object)# - Name/value object with translations.
+* `+code+` `+(String)+` - Optional language code.
+* `+items+` `+(Object)+` - Name/value object with translations.
 
 [[createeditor]]
 === createEditor
@@ -94,12 +94,12 @@ Creates an editor instance and adds it to the EditorManager collection.
 
 ==== Parameters
 
-* [.param-name]#id# [.param-type]#(String)# - Instance id to use for editor.
-* [.param-name]#settings# [.param-type]#(Object)# - Editor instance settings.
+* `+id+` `+(String)+` - Instance id to use for editor.
+* `+settings+` `+(Object)+` - Editor instance settings.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - Editor instance that got created.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - Editor instance that got created.
 
 [[execcommand]]
 === execCommand
@@ -110,13 +110,13 @@ Executes a specific command on the currently active editor.
 
 ==== Parameters
 
-* [.param-name]#cmd# [.param-type]#(String)# - Command to perform for example Bold.
-* [.param-name]#ui# [.param-type]#(Boolean)# - Optional boolean state if a UI should be presented for the command or not.
-* [.param-name]#value# [.param-type]#(String)# - Optional value parameter like for example an URL to a link.
+* `+cmd+` `+(String)+` - Command to perform for example Bold.
+* `+ui+` `+(Boolean)+` - Optional boolean state if a UI should be presented for the command or not.
+* `+value+` `+(String)+` - Optional value parameter like for example an URL to a link.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the command was executed or not.
+* `+Boolean+` - true/false if the command was executed or not.
 
 [[fire]]
 === fire
@@ -128,20 +128,20 @@ Fires the specified event by name. Consult the link:/docs/advanced/events[event 
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.fire('event', {...});
 ----
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
-* [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
-* [.param-name]#bubble# [.param-type]#(Boolean?)# - True/false if the event is to be bubbled.
+* `+name+` `+(String)+` - Name of the event to fire.
+* `+args+` `+(Object?)+` - Event arguments.
+* `+bubble+` `+(Boolean?)+` - True/false if the event is to be bubbled.
 
 ==== Return value
 
-* [.return-type]#Object# - Event args instance passed in.
+* `+Object+` - Event args instance passed in.
 
 [[get]]
 === get
@@ -152,7 +152,7 @@ Returns a editor instance by id.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds an onclick event to an editor by id
 tinymce.get('mytextbox').on('click', function(e) {
@@ -172,12 +172,12 @@ tinymce.EditorManager.get('mytextbox').on('click', function(e) {
 
 ==== Parameters
 
-* [.param-name]#id# [.param-type]#(String)# - Editor instance id or index to return.
+* `+id+` `+(String)+` - Editor instance id or index to return.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - Editor instance to return or array of editor instances.
-* [.return-type]#Array# - Editor instance to return or array of editor instances.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - Editor instance to return or array of editor instances.
+* `+Array+` - Editor instance to return or array of editor instances.
 
 [[haseventlisteners]]
 === hasEventListeners
@@ -188,11 +188,11 @@ Returns true/false if the object has a event of the specified name.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+* `+name+` `+(String)+` - Name of the event to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the event exists or not.
+* `+Boolean+` - true/false if the event exists or not.
 
 [[init]]
 === init
@@ -203,7 +203,7 @@ Initializes a set of editors. This method will create editors based on various s
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Initializes a editor using the longer method
 tinymce.EditorManager.init({
@@ -220,11 +220,11 @@ tinymce.init({
 
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Settings object to be passed to each editor instance.
+* `+settings+` `+(Object)+` - Settings object to be passed to each editor instance.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.util/tinymce.util.promise.html[[.return-type]#tinymce.util.Promise#] - Promise that gets resolved with an array of editors when all editor instances are initialized.
+* link:{baseurl}/api/tinymce.util/tinymce.util.promise.html[`+tinymce.util.Promise+`] - Promise that gets resolved with an array of editors when all editor instances are initialized.
 
 [[off]]
 === off
@@ -235,7 +235,7 @@ Unbinds an event listener to a specific event by name. Consult the link:/docs/ad
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Unbind specific callback
 instance.off('event', handler);
@@ -249,12 +249,12 @@ instance.off();
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String?)# - Name of the event to unbind.
-* [.param-name]#callback# [.param-type]#(callback?)# - Callback to unbind.
+* `+name+` `+(String?)+` - Name of the event to unbind.
+* `+callback+` `+(callback?)+` - Callback to unbind.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[on]]
 === on
@@ -265,7 +265,7 @@ Binds an event listener to a specific event by name. Consult the link:/docs/adva
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.on('event', function(e) {
     // Callback logic
@@ -274,13 +274,13 @@ instance.on('event', function(e) {
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
-* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+* `+name+` `+(String)+` - Event name or space separated list of events to bind.
+* `+callback+` `+(callback)+` - Callback to be executed when the event occurs.
+* `+first+` `+(Boolean)+` - Optional flag if the event should be prepended. Use this with care.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[once]]
 === once
@@ -291,12 +291,12 @@ Bind the event callback and once it fires the callback is removed. Consult the l
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to bind only once.
+* `+name+` `+(String)+` - Name of the event to bind.
+* `+callback+` `+(callback)+` - Callback to bind only once.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[overridedefaults]]
 === overrideDefaults
@@ -307,7 +307,7 @@ Overrides the default settings for editor instances.
 
 ==== Parameters
 
-* [.param-name]#defaultSettings# [.param-type]#(Object)# - Defaults settings object.
+* `+defaultSettings+` `+(Object)+` - Defaults settings object.
 
 [[remove]]
 === remove
@@ -318,7 +318,7 @@ Removes a editor or editors form page.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Remove all editors bound to divs
 tinymce.remove('div');
@@ -335,11 +335,11 @@ tinymce.remove('#id');
 
 ==== Parameters
 
-* [.param-name]#selector# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - CSS selector or editor instance to remove.
+* `+selector+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - CSS selector or editor instance to remove.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.editor.html[[.return-type]#tinymce.Editor#] - The editor that got passed in will be return if it was found otherwise null.
+* link:{baseurl}/api/tinymce/tinymce.editor.html[`+tinymce.Editor+`] - The editor that got passed in will be return if it was found otherwise null.
 
 [[setactive]]
 === setActive
@@ -350,7 +350,7 @@ Sets the active editor instance and fires the deactivate/activate events.
 
 ==== Parameters
 
-* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance to set as the active instance.
+* `+editor+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance to set as the active instance.
 
 [[translate]]
 === translate
@@ -361,11 +361,11 @@ Translates the specified string using the language pack items.
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - String to translate
+* `+text+` `+(String)+` - String to translate
 
 ==== Return value
 
-* [.return-type]#String# - Translated string.
+* `+String+` - Translated string.
 
 [[triggersave]]
 === triggerSave
@@ -376,7 +376,7 @@ Calls the save method on all editor instances in the collection. This can be use
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Saves all contents
 tinyMCE.triggerSave();

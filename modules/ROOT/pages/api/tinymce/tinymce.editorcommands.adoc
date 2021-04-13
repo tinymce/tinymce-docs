@@ -5,7 +5,7 @@ This class enables you to add custom editor commands and it contains overrides f
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#addcommands[addCommands()] |Adds commands to the command collection. |link:{baseurl}/api/tinymce/tinymce.editorcommands.html[tinymce.EditorCommands]
@@ -27,8 +27,8 @@ Adds commands to the command collection.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#commandList# [.param-type]#(Object)# - Name/value collection with commands to add, the names can also be comma separated.
-* [.param-name]#type# [.param-type]#(String)# - Optional type to add, defaults to exec. Can be value or state as well.
+* `+commandList+` `+(Object)+` - Name/value collection with commands to add, the names can also be comma separated.
+* `+type+` `+(String)+` - Optional type to add, defaults to exec. Can be value or state as well.
 
 [[execcommand]]
 === execCommand
@@ -39,16 +39,16 @@ Executes the specified command.
 
 ==== Parameters
 
-* [.param-name]#command# [.param-type]#(String)# - Command to execute.
-* [.param-name]#ui# [.param-type]#(Boolean)# - Optional user interface state.
-* [.param-name]#value# [.param-type]#(Object)# - Optional value for command.
-* [.param-name]#args# [.param-type]#(Object)# - Optional extra arguments to the execCommand.
+* `+command+` `+(String)+` - Command to execute.
+* `+ui+` `+(Boolean)+` - Optional user interface state.
+* `+value+` `+(Object)+` - Optional value for command.
+* `+args+` `+(Object)+` - Optional extra arguments to the execCommand.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Boolean# - true/false if the command was found or not.
+* `+Boolean+` - true/false if the command was found or not.
 
 [[querycommandstate]]
 === queryCommandState
@@ -59,12 +59,12 @@ Queries the current state for a command for example if the current selection is 
 
 ==== Parameters
 
-* [.param-name]#command# [.param-type]#(String)# - Command to check the state of.
+* `+command+` `+(String)+` - Command to check the state of.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the selected contents is bold or not, -1 if it's not found.
-* [.return-type]#Number# - true/false if the selected contents is bold or not, -1 if it's not found.
+* `+Boolean+` - true/false if the selected contents is bold or not, -1 if it's not found.
+* `+Number+` - true/false if the selected contents is bold or not, -1 if it's not found.
 
 [[querycommandsupported]]
 === queryCommandSupported
@@ -75,11 +75,11 @@ Returns true/false if the command is supported or not.
 
 ==== Parameters
 
-* [.param-name]#command# [.param-type]#(String)# - Command that we check support for.
+* `+command+` `+(String)+` - Command that we check support for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the command is supported or not.
+* `+Boolean+` - true/false if the command is supported or not.
 
 [[querycommandvalue]]
 === queryCommandValue
@@ -90,8 +90,8 @@ Queries the command value for example the current fontsize.
 
 ==== Parameters
 
-* [.param-name]#command# [.param-type]#(String)# - Command to check the value of.
+* `+command+` `+(String)+` - Command to check the value of.
 
 ==== Return value
 
-* [.return-type]#Object# - Command value of false if it's not found.
+* `+Object+` - Command value of false if it's not found.

@@ -5,7 +5,7 @@ Contains logic for handling keyboard shortcuts.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 editor.shortcuts.add('ctrl+a', "description of the shortcut", function() {});
 editor.shortcuts.add('meta+a', "description of the shortcut", function() {}); // "meta" maps to Command on Mac and Ctrl on PC
@@ -16,7 +16,7 @@ editor.shortcuts.add('access+a', "description of the shortcut", function() {}); 
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds a keyboard shortcut for some command or function. |link:{baseurl}/api/tinymce/tinymce.shortcuts.html[tinymce.Shortcuts]
@@ -35,16 +35,16 @@ Adds a keyboard shortcut for some command or function.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#pattern# [.param-type]#(String)# - Shortcut pattern. Like for example: ctrl+alt+o.
-* [.param-name]#desc# [.param-type]#(String)# - Text description for the command.
-* [.param-name]#cmdFunc# [.param-type]#(String)# - Command name string or function to execute when the key is pressed.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+* `+pattern+` `+(String)+` - Shortcut pattern. Like for example: ctrl+alt+o.
+* `+desc+` `+(String)+` - Text description for the command.
+* `+cmdFunc+` `+(String)+` - Command name string or function to execute when the key is pressed.
+* `+scope+` `+(Object)+` - Optional scope to execute the function in.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Boolean# - true/false state if the shortcut was added or not.
+* `+Boolean+` - true/false state if the shortcut was added or not.
 
 [[remove]]
 === remove
@@ -55,8 +55,8 @@ Remove a keyboard shortcut by pattern.
 
 ==== Parameters
 
-* [.param-name]#pattern# [.param-type]#(String)# - Shortcut pattern. Like for example: ctrl+alt+o.
+* `+pattern+` `+(String)+` - Shortcut pattern. Like for example: ctrl+alt+o.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false state if the shortcut was removed or not.
+* `+Boolean+` - true/false state if the shortcut was removed or not.

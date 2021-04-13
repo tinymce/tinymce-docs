@@ -8,7 +8,7 @@
 
 For most developers, the real power of TinyMCE's functionality is found in its plugins. link:{baseurl}/plugins/index.html[Plugins] either extend default editor functionality or add new functionality. For example, the link:{baseurl}/plugins/advlist.html[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{baseurl}/plugins/code.html[Code] plugin adds entirely new functionality.
 
-Because most people install TinyMCE via TinyMCE Cloud or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the https://www.tinymce.com/download/custom-builds/[custom package] download option, you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the TinyMCE team.
+Because most people install TinyMCE via TinyMCE Cloud or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{downloadspage}[custom package] download option, you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the TinyMCE team.
 
 In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins.
 

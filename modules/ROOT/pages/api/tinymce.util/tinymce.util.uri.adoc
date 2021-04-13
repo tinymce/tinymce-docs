@@ -5,7 +5,7 @@ This class handles parsing, modification and serialization of URI/URL strings.
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#uri[URI()] |Constructs a new URI instance. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
@@ -14,7 +14,7 @@ This class handles parsing, modification and serialization of URI/URL strings.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#geturi[getURI()] |Returns the full URI of the internal structure. |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[tinymce.util.URI]
@@ -38,8 +38,8 @@ Constructs a new URI instance.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#url# [.param-type]#(String)# - URI string to parse.
-* [.param-name]#settings# [.param-type]#(Object)# - Optional settings object.
+* `+url+` `+(String)+` - URI string to parse.
+* `+settings+` `+(Object)+` - Optional settings object.
 
 == Methods
 
@@ -52,7 +52,7 @@ Returns the full URI of the internal structure.
 
 ==== Parameters
 
-* [.param-name]#noProtoHost# [.param-type]#(Boolean)# - Optional no host and protocol part. Defaults to false.
+* `+noProtoHost+` `+(Boolean)+` - Optional no host and protocol part. Defaults to false.
 
 [[issameorigin]]
 === isSameOrigin
@@ -63,13 +63,13 @@ Determine whether the given URI has the same origin as this URI. Based on RFC-64
 
 ==== Parameters
 
-* [.param-name]#uri# link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[[.param-type]#(tinymce.util.URI)#] - Uri instance to compare.
+* `+uri+` link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[`+(tinymce.util.URI)+`] - Uri instance to compare.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Boolean# - True if the origins are the same.
+* `+Boolean+` - True if the origins are the same.
 
 [[setpath]]
 === setPath
@@ -80,7 +80,7 @@ Sets the internal path part of the URI.
 
 ==== Parameters
 
-* [.param-name]#path# [.param-type]#(string)# - Path string to set.
+* `+path+` `+(string)+` - Path string to set.
 
 [[toabspath]]
 === toAbsPath
@@ -91,8 +91,8 @@ Converts a relative path into a absolute path.
 
 ==== Parameters
 
-* [.param-name]#base# [.param-type]#(String)# - Base point to convert the path from.
-* [.param-name]#path# [.param-type]#(String)# - Relative path to convert into an absolute path.
+* `+base+` `+(String)+` - Base point to convert the path from.
+* `+path+` `+(String)+` - Relative path to convert into an absolute path.
 
 [[toabsolute]]
 === toAbsolute
@@ -104,7 +104,7 @@ Converts the specified URI into a absolute URI based on the current URI instance
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Converts an relative URL to an absolute URL url will be http://www.site.com/dir/somedir/somefile.htm
 var url = new tinymce.util.URI('http://www.site.com/dir/').toAbsolute('somedir/somefile.htm');
@@ -112,12 +112,12 @@ var url = new tinymce.util.URI('http://www.site.com/dir/').toAbsolute('somedir/s
 
 ==== Parameters
 
-* [.param-name]#uri# [.param-type]#(String)# - URI to convert into a relative path/URI.
-* [.param-name]#noHost# [.param-type]#(Boolean)# - No host and protocol prefix.
+* `+uri+` `+(String)+` - URI to convert into a relative path/URI.
+* `+noHost+` `+(Boolean)+` - No host and protocol prefix.
 
 ==== Return value
 
-* [.return-type]#String# - Absolute URI from the point specified in the current URI instance.
+* `+String+` - Absolute URI from the point specified in the current URI instance.
 
 [[torelpath]]
 === toRelPath
@@ -128,8 +128,8 @@ Converts a absolute path into a relative path.
 
 ==== Parameters
 
-* [.param-name]#base# [.param-type]#(String)# - Base point to convert the path from.
-* [.param-name]#path# [.param-type]#(String)# - Absolute path to convert into a relative path.
+* `+base+` `+(String)+` - Base point to convert the path from.
+* `+path+` `+(String)+` - Absolute path to convert into a relative path.
 
 [[torelative]]
 === toRelative
@@ -140,7 +140,7 @@ Converts the specified URI into a relative URI based on the current URI instance
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Converts an absolute URL to an relative URL url will be somedir/somefile.htm
 var url = new tinymce.util.URI('http://www.site.com/dir/').toRelative('http://www.site.com/dir/somedir/somefile.htm');
@@ -148,8 +148,8 @@ var url = new tinymce.util.URI('http://www.site.com/dir/').toRelative('http://ww
 
 ==== Parameters
 
-* [.param-name]#uri# [.param-type]#(String)# - URI to convert into a relative path/URI.
+* `+uri+` `+(String)+` - URI to convert into a relative path/URI.
 
 ==== Return value
 
-* [.return-type]#String# - Relative URI from the point specified in the current URI instance.
+* `+String+` - Relative URI from the point specified in the current URI instance.

@@ -5,7 +5,7 @@ This class enables you to use JSON-RPC to call backend methods.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 var json = new tinymce.util.JSONRequest({
     url: 'somebackend.php'
@@ -33,7 +33,7 @@ json.send({
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#send[send()] |Sends a JSON-RPC call. Consult the Wiki API documentation for more details on what you can pass to this function. |link:{baseurl}/api/tinymce.util/tinymce.util.jsonrequest.html[tinymce.util.JSONRequest]
@@ -52,7 +52,7 @@ Sends a JSON-RPC call. Consult the Wiki API documentation for more details on wh
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#args# [.param-type]#(Object)# - Call object where there are three field id, method and params this object should also contain callbacks etc.
+* `+args+` `+(Object)+` - Call object where there are three field id, method and params this object should also contain callbacks etc.
 
 [[sendrpc]]
 === sendRPC
@@ -63,4 +63,4 @@ Simple helper function to send a JSON-RPC request without the need to initialize
 
 ==== Parameters
 
-* [.param-name]#o# [.param-type]#(Object)# - Call object where there are three field id, method and params this object should also contain callbacks etc.
+* `+o+` `+(Object)+` - Call object where there are three field id, method and params this object should also contain callbacks etc.

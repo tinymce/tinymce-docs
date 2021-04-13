@@ -5,7 +5,7 @@ This class lets you add/remove and fire events by name on the specified scope. T
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 var eventDispatcher = new EventDispatcher();
 
@@ -16,7 +16,7 @@ var eventDispatcher = new EventDispatcher();
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#fire[fire()] |Fires the specified event by name. |link:{baseurl}/api/tinymce.util/tinymce.util.eventdispatcher.html[tinymce.util.EventDispatcher]
@@ -39,7 +39,7 @@ Fires the specified event by name.
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.fire('event', {...});
 ----
@@ -47,14 +47,14 @@ instance.fire('event', {...});
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
-* [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
+* `+name+` `+(String)+` - Name of the event to fire.
+* `+args+` `+(Object?)+` - Event arguments.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - Event args instance passed in.
+* `+Object+` - Event args instance passed in.
 
 [[has]]
 === has
@@ -65,11 +65,11 @@ Returns true/false if the dispatcher has a event of the specified name.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+* `+name+` `+(String)+` - Name of the event to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the event exists or not.
+* `+Boolean+` - true/false if the event exists or not.
 
 [[isnative]]
 === isNative
@@ -80,11 +80,11 @@ Returns true/false if the specified event name is a native browser event or not.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name to check if it's native.
+* `+name+` `+(String)+` - Name to check if it's native.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the event is native or not.
+* `+Boolean+` - true/false if the event is native or not.
 
 [[off]]
 === off
@@ -95,7 +95,7 @@ Unbinds an event listener to a specific event by name.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Unbind specific callback
 instance.off('event', handler);
@@ -109,12 +109,12 @@ instance.off();
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String?)# - Name of the event to unbind.
-* [.param-name]#callback# [.param-type]#(callback?)# - Callback to unbind.
+* `+name+` `+(String?)+` - Name of the event to unbind.
+* `+callback+` `+(callback?)+` - Callback to unbind.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[on]]
 === on
@@ -125,7 +125,7 @@ Binds an event listener to a specific event by name.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.on('event', function(e) {
     // Callback logic
@@ -134,13 +134,13 @@ instance.on('event', function(e) {
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
-* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+* `+name+` `+(String)+` - Event name or space separated list of events to bind.
+* `+callback+` `+(callback)+` - Callback to be executed when the event occurs.
+* `+first+` `+(Boolean)+` - Optional flag if the event should be prepended. Use this with care.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[once]]
 === once
@@ -151,7 +151,7 @@ Binds an event listener to a specific event by name and automatically unbind the
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.once('event', function(e) {
     // Callback logic
@@ -160,10 +160,10 @@ instance.once('event', function(e) {
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
-* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+* `+name+` `+(String)+` - Event name or space separated list of events to bind.
+* `+callback+` `+(callback)+` - Callback to be executed when the event occurs.
+* `+first+` `+(Boolean)+` - Optional flag if the event should be prepended. Use this with care.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.

@@ -5,7 +5,7 @@ Movable mixin. Makes controls movable absolute and relative to other elements.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#moveby[moveBy()] |Move by a relative x, y values. |link:{baseurl}/api/tinymce.ui/tinymce.ui.movable.html[tinymce.ui.Movable]
@@ -26,14 +26,14 @@ Move by a relative x, y values.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#dx# [.param-type]#(Number)# - Relative x position.
-* [.param-name]#dy# [.param-type]#(Number)# - Relative y position.
+* `+dx+` `+(Number)+` - Relative x position.
+* `+dy+` `+(Number)+` - Relative y position.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[moverel]]
 === moveRel
@@ -44,12 +44,12 @@ Move relative to the specified element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element to move relative to.
-* [.param-name]#rel# [.param-type]#(String)# - Relative mode. For example: br-tl.
+* `+elm+` `+(Element)+` - Element to move relative to.
+* `+rel+` `+(String)+` - Relative mode. For example: br-tl.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[moveto]]
 === moveTo
@@ -60,12 +60,12 @@ Move to absolute position.
 
 ==== Parameters
 
-* [.param-name]#x# [.param-type]#(Number)# - Absolute x position.
-* [.param-name]#y# [.param-type]#(Number)# - Absolute y position.
+* `+x+` `+(Number)+` - Absolute x position.
+* `+y+` `+(Number)+` - Absolute y position.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[testmoverel]]
 === testMoveRel
@@ -76,9 +76,9 @@ Tests various positions to get the most suitable one.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(DOMElement)# - Element to position against.
-* [.param-name]#rels# [.param-type]#(Array)# - Array with relative positions.
+* `+elm+` `+(DOMElement)+` - Element to position against.
+* `+rels+` `+(Array)+` - Array with relative positions.
 
 ==== Return value
 
-* [.return-type]#String# - Best suitable relative position.
+* `+String+` - Best suitable relative position.

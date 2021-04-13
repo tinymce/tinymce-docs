@@ -5,7 +5,7 @@ Plugin base class, this is a pseudo class that describes how a plugin is to be c
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js,subs="attributes+"]
 ----
 tinymce.PluginManager.add('example', function(editor, url) {
     // Add a button that opens a window
@@ -35,7 +35,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
             // Open window with a specific url
             editor.windowManager.open({
                 title: 'TinyMCE site',
-                url: 'http://www.tinymce.com',
+                url: '{product_homepage}',
                 width: 800,
                 height: 600,
                 buttons: [{
@@ -51,7 +51,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds a instance of the add-on by it's short name. |link:{baseurl}/api/tinymce/tinymce.plugin.html[tinymce.Plugin]
@@ -73,7 +73,7 @@ Adds a instance of the add-on by it's short name.
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Create a simple plugin
 tinymce.create('tinymce.plugins.TestPlugin', {
@@ -97,15 +97,15 @@ tinymce.init({
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#id# [.param-type]#(String)# - Short name/id for the add-on.
-* [.param-name]#addOn# link:{baseurl}/api/tinymce/tinymce.theme.html[[.param-type]#(tinymce.Theme)#] - Theme or plugin to add.
+* `+id+` `+(String)+` - Short name/id for the add-on.
+* `+addOn+` link:{baseurl}/api/tinymce/tinymce.theme.html[`+(tinymce.Theme)+`] - Theme or plugin to add.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce/tinymce.theme.html[[.return-type]#tinymce.Theme#] - The same theme or plugin instance that got passed in.
-* link:{baseurl}/api/tinymce/tinymce.plugin.html[[.return-type]#tinymce.Plugin#] - The same theme or plugin instance that got passed in.
+* link:{baseurl}/api/tinymce/tinymce.theme.html[`+tinymce.Theme+`] - The same theme or plugin instance that got passed in.
+* link:{baseurl}/api/tinymce/tinymce.plugin.html[`+tinymce.Plugin+`] - The same theme or plugin instance that got passed in.
 
 [[addcomponents]]
 === addComponents
@@ -116,8 +116,8 @@ Add a set of components that will make up the add-on. Using the url of the add-o
 
 ==== Parameters
 
-* [.param-name]#pluginName# [.param-type]#(String)# - name of the plugin to load scripts from (will be used to get the base url for the plugins).
-* [.param-name]#scripts# [.param-type]#(Array)# - Array containing the names of the scripts to load.
+* `+pluginName+` `+(String)+` - name of the plugin to load scripts from (will be used to get the base url for the plugins).
+* `+scripts+` `+(Array)+` - Array containing the names of the scripts to load.
 
 [[get]]
 === get
@@ -128,12 +128,12 @@ Returns the specified add on by the short name.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Add-on to look for.
+* `+name+` `+(String)+` - Add-on to look for.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce/tinymce.theme.html[[.return-type]#tinymce.Theme#] - Theme or plugin add-on instance or undefined.
-* link:{baseurl}/api/tinymce/tinymce.plugin.html[[.return-type]#tinymce.Plugin#] - Theme or plugin add-on instance or undefined.
+* link:{baseurl}/api/tinymce/tinymce.theme.html[`+tinymce.Theme+`] - Theme or plugin add-on instance or undefined.
+* link:{baseurl}/api/tinymce/tinymce.plugin.html[`+tinymce.Plugin+`] - Theme or plugin add-on instance or undefined.
 
 [[load]]
 === load
@@ -144,7 +144,7 @@ Loads an add-on from a specific url.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Loads a plugin from an external URL
 tinymce.PluginManager.load('myplugin', '/some/dir/someplugin/plugin.js');
@@ -158,11 +158,11 @@ tinymce.init({
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Short name of the add-on that gets loaded.
-* [.param-name]#addOnUrl# [.param-type]#(String)# - URL to the add-on that will get loaded.
-* [.param-name]#success# [.param-type]#(function)# - Optional success callback to execute when an add-on is loaded.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
-* [.param-name]#failure# [.param-type]#(function)# - Optional failure callback to execute when an add-on failed to load.
+* `+name+` `+(String)+` - Short name of the add-on that gets loaded.
+* `+addOnUrl+` `+(String)+` - URL to the add-on that will get loaded.
+* `+success+` `+(function)+` - Optional success callback to execute when an add-on is loaded.
+* `+scope+` `+(Object)+` - Optional scope to execute the callback in.
+* `+failure+` `+(function)+` - Optional failure callback to execute when an add-on failed to load.
 
 [[requirelangpack]]
 === requireLangPack
@@ -173,5 +173,5 @@ Loads a language pack for the specified add-on.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Short name of the add-on.
-* [.param-name]#languages# [.param-type]#(String)# - Optional comma or space separated list of languages to check if it matches the name.
+* `+name+` `+(String)+` - Short name of the add-on.
+* `+languages+` `+(String)+` - Optional comma or space separated list of languages to check if it matches the name.

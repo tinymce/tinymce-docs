@@ -5,7 +5,7 @@ This class is used to write HTML tags out it can be used with the Serializer or 
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 var writer = new tinymce.html.Writer({indent: true});
 var parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
@@ -15,7 +15,7 @@ console.log(writer.getContent());
 [[methods]]
 == Methods
 
-[width="100%",cols="34%,33%,33%",options="header",]
+[width="100%",cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#cdata[cdata()] |Writes a comment node such as . |link:{baseurl}/api/tinymce.html/tinymce.html.writer.html[tinymce.html.Writer]
@@ -60,7 +60,7 @@ Writes a comment node such as .
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - String to write out inside the comment.
+* `+text+` `+(String)+` - String to write out inside the comment.
 
 [[doctype]]
 === doctype
@@ -73,7 +73,7 @@ Writes a doctype node such as
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - String to write out inside the doctype.
+* `+text+` `+(String)+` - String to write out inside the doctype.
 
 [[end]]
 === end
@@ -86,7 +86,7 @@ Writes the a end element such as
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the element.
+* `+name+` `+(String)+` - Name of the element.
 
 [[getcontent]]
 === getContent
@@ -99,7 +99,7 @@ Returns the contents that got serialized.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#String# - HTML contents that got written down.
+* `+String+` - HTML contents that got written down.
 
 [[pi]]
 === pi
@@ -110,8 +110,8 @@ Writes a PI node such as .
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the pi.
-* [.param-name]#text# [.param-type]#(String)# - String to write out inside the pi.
+* `+name+` `+(String)+` - Name of the pi.
+* `+text+` `+(String)+` - String to write out inside the pi.
 
 [[reset]]
 === reset
@@ -131,9 +131,9 @@ Writes the a start element such as
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the element.
-* [.param-name]#attrs# [.param-type]#(Array)# - Optional attribute array or undefined if it hasn't any.
-* [.param-name]#empty# [.param-type]#(Boolean)# - Optional empty state if the tag should end like +
+* `+name+` `+(String)+` - Name of the element.
+* `+attrs+` `+(Array)+` - Optional attribute array or undefined if it hasn't any.
+* `+empty+` `+(Boolean)+` - Optional empty state if the tag should end like +
 .
 
 [[text]]
@@ -145,5 +145,5 @@ Writes a text node.
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - String to write out.
-* [.param-name]#raw# [.param-type]#(Boolean)# - Optional raw state if true the contents wont get encoded.
+* `+text+` `+(String)+` - String to write out.
+* `+raw+` `+(Boolean)+` - Optional raw state if true the contents wont get encoded.

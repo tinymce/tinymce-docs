@@ -5,7 +5,7 @@ TinyMCE theme class.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#renderui[renderUI()] |This method is responsible for rendering/generating the overall user interface with toolbars, buttons, iframe containers etc. |link:{baseurl}/api/tinymce/tinymce.theme.html[tinymce.Theme]
@@ -23,10 +23,10 @@ This method is responsible for rendering/generating the overall user interface w
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#obj# [.param-type]#(Object)# - Object parameter containing the targetNode DOM node that will be replaced visually with an editor instance.
+* `+obj+` `+(Object)+` - Object parameter containing the targetNode DOM node that will be replaced visually with an editor instance.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - an object with items like iframeContainer, editorContainer, sizeContainer, deltaWidth, deltaHeight.
+* `+Object+` - an object with items like iframeContainer, editorContainer, sizeContainer, deltaWidth, deltaHeight.

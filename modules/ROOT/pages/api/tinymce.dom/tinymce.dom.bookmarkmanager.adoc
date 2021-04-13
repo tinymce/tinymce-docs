@@ -5,7 +5,7 @@ This class handles selection bookmarks.
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#bookmarkmanager[BookmarkManager()] |Constructs a new BookmarkManager instance for a specific selection instance. |link:{baseurl}/api/tinymce.dom/tinymce.dom.bookmarkmanager.html[tinymce.dom.BookmarkManager]
@@ -14,7 +14,7 @@ This class handles selection bookmarks.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#getbookmark[getBookmark()] |Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.bookmarkmanager.html[tinymce.dom.BookmarkManager]
@@ -34,7 +34,7 @@ Constructs a new BookmarkManager instance for a specific selection instance.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#selection# link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[[.param-type]#(tinymce.dom.Selection)#] - Selection instance to handle bookmarks for.
+* `+selection+` link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[`+(tinymce.dom.Selection)+`] - Selection instance to handle bookmarks for.
 
 == Methods
 
@@ -48,7 +48,7 @@ Returns a bookmark location for the current selection. This bookmark object can 
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Stores a bookmark of the current selection
 var bm = tinymce.activeEditor.selection.getBookmark();
@@ -61,14 +61,14 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 
 ==== Parameters
 
-* [.param-name]#type# [.param-type]#(Number)# - Optional state if the bookmark should be simple or not. Default is complex.
-* [.param-name]#normalized# [.param-type]#(Boolean)# - Optional state that enables you to get a position that it would be after normalization.
+* `+type+` `+(Number)+` - Optional state if the bookmark should be simple or not. Default is complex.
+* `+normalized+` `+(Boolean)+` - Optional state that enables you to get a position that it would be after normalization.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - Bookmark object, use moveToBookmark with this object to restore the selection.
+* `+Object+` - Bookmark object, use moveToBookmark with this object to restore the selection.
 
 [[isbookmarknode]]
 === isBookmarkNode
@@ -79,11 +79,11 @@ Returns true/false if the specified node is a bookmark node or not.
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(DOMNode)# - DOM Node to check if it's a bookmark node or not.
+* `+node+` `+(DOMNode)+` - DOM Node to check if it's a bookmark node or not.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the node is a bookmark node or not.
+* `+Boolean+` - true/false if the node is a bookmark node or not.
 
 [[movetobookmark]]
 === moveToBookmark
@@ -94,7 +94,7 @@ Restores the selection to the specified bookmark.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Stores a bookmark of the current selection
 var bm = tinymce.activeEditor.selection.getBookmark();
@@ -107,8 +107,8 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 
 ==== Parameters
 
-* [.param-name]#bookmark# [.param-type]#(Object)# - Bookmark to restore selection from.
+* `+bookmark+` `+(Object)+` - Bookmark to restore selection from.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if it was successful or not.
+* `+Boolean+` - true/false if it was successful or not.

@@ -5,7 +5,7 @@ This class is used to serialize DOM trees into a string. Consult the TinyMCE Wik
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#addattributefilter[addAttributeFilter()] |Adds a attribute filter function to the parser used by the serializer, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[tinymce.dom.Serializer]
@@ -29,7 +29,7 @@ Adds a attribute filter function to the parser used by the serializer, the parse
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 parser.addAttributeFilter('src,href', function(nodes, name) {
  for (var i = 0; i < nodes.length; i++) {
@@ -41,7 +41,7 @@ parser.addAttributeFilter('src,href', function(nodes, name) {
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
+* `+callback+` `+(function)+` - Callback function to execute once it has collected nodes.
 
 [[addnodefilter]]
 === addNodeFilter
@@ -52,7 +52,7 @@ Adds a node filter function to the parser used by the serializer, the parser wil
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 parser.addNodeFilter('p,h1', function(nodes, name) {
  for (var i = 0; i < nodes.length; i++) {
@@ -63,7 +63,7 @@ parser.addNodeFilter('p,h1', function(nodes, name) {
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute once it has collected nodes.
+* `+callback+` `+(function)+` - Callback function to execute once it has collected nodes.
 
 [[addrules]]
 === addRules
@@ -74,7 +74,7 @@ Adds valid elements rules to the serializers schema instance this enables you to
 
 ==== Parameters
 
-* [.param-name]#rules# [.param-type]#(String)# - Valid elements rules string to add to schema.
+* `+rules+` `+(String)+` - Valid elements rules string to add to schema.
 
 [[addtempattr]]
 === addTempAttr
@@ -85,7 +85,7 @@ Adds a temporary internal attribute these attributes will get removed on undo an
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - string
+* `+name+` `+(String)+` - string
 
 [[gettempattrs]]
 === getTempAttrs
@@ -98,7 +98,7 @@ Returns an array of all added temp attrs names.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#String[]# - Array with attribute names.
+* `+String[]+` - Array with attribute names.
 
 [[serialize]]
 === serialize
@@ -109,8 +109,8 @@ Serializes the specified browser DOM node into a HTML string.
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(DOMNode)# - DOM node to serialize.
-* [.param-name]#args# [.param-type]#(Object)# - Arguments option that gets passed to event handlers.
+* `+node+` `+(DOMNode)+` - DOM node to serialize.
+* `+args+` `+(Object)+` - Arguments option that gets passed to event handlers.
 
 [[setrules]]
 === setRules
@@ -121,4 +121,4 @@ Sets the valid elements rules to the serializers schema instance this enables yo
 
 ==== Parameters
 
-* [.param-name]#rules# [.param-type]#(String)# - Valid elements rules string.
+* `+rules+` `+(String)+` - Valid elements rules string.

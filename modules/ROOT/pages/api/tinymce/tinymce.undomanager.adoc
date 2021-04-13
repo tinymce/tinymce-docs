@@ -5,7 +5,7 @@ This class handles the undo/redo history levels for the editor. Since the built-
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds a new undo level/snapshot to the undo list. |link:{baseurl}/api/tinymce/tinymce.undomanager.html[tinymce.UndoManager]
@@ -32,14 +32,14 @@ Adds a new undo level/snapshot to the undo list.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#level# [.param-type]#(Object)# - Optional undo level object to add.
-* [.param-name]#event# [.param-type]#(DOMEvent)# - Optional event responsible for the creation of the undo level.
+* `+level+` `+(Object)+` - Optional undo level object to add.
+* `+event+` `+(DOMEvent)+` - Optional event responsible for the creation of the undo level.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - Undo level that got added or null it a level wasn't needed.
+* `+Object+` - Undo level that got added or null it a level wasn't needed.
 
 [[beforechange]]
 === beforeChange
@@ -64,8 +64,8 @@ Adds an extra "hidden" undo level by first applying the first mutation and store
 
 ==== Parameters
 
-* [.param-name]#callback1# [.param-type]#(function)# - Function that does mutation but gets stored as a "hidden" extra undo level.
-* [.param-name]#callback2# [.param-type]#(function)# - Function that does mutation but gets displayed to the user.
+* `+callback1+` `+(function)+` - Function that does mutation but gets stored as a "hidden" extra undo level.
+* `+callback2+` `+(function)+` - Function that does mutation but gets displayed to the user.
 
 [[hasredo]]
 === hasRedo
@@ -76,7 +76,7 @@ Returns true/false if the undo manager has any redo levels.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the undo manager has any redo levels.
+* `+Boolean+` - true/false if the undo manager has any redo levels.
 
 [[hasundo]]
 === hasUndo
@@ -87,7 +87,7 @@ Returns true/false if the undo manager has any undo levels.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the undo manager has any undo levels.
+* `+Boolean+` - true/false if the undo manager has any undo levels.
 
 [[ignore]]
 === ignore
@@ -98,7 +98,7 @@ Executes the specified mutator function as an undo transaction. But without addi
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Function that gets executed and has dom manipulation logic in it.
+* `+callback+` `+(function)+` - Function that gets executed and has dom manipulation logic in it.
 
 [[redo]]
 === redo
@@ -109,7 +109,7 @@ Redoes the last action.
 
 ==== Return value
 
-* [.return-type]#Object# - Redo level or null if no redo was performed.
+* `+Object+` - Redo level or null if no redo was performed.
 
 [[transact]]
 === transact
@@ -120,11 +120,11 @@ Executes the specified mutator function as an undo transaction. The selection be
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Function that gets executed and has dom manipulation logic in it.
+* `+callback+` `+(function)+` - Function that gets executed and has dom manipulation logic in it.
 
 ==== Return value
 
-* [.return-type]#Object# - Undo level that got added or null it a level wasn't needed.
+* `+Object+` - Undo level that got added or null it a level wasn't needed.
 
 [[undo]]
 === undo
@@ -135,4 +135,4 @@ Undoes the last action.
 
 ==== Return value
 
-* [.return-type]#Object# - Undo level or null if no undo was performed.
+* `+Object+` - Undo level or null if no undo was performed.

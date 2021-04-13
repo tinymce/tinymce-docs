@@ -53,7 +53,7 @@ anchor:31loadingtinymce[historical anchor]
 ==== Auto-loading from TinyMCE Cloud
 anchor:auto-loadingfromtinymcecloud[historical anchor]
 
-`@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] if it can't find TinyMCE available when the component is mounting. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
+`@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] if it can't find TinyMCE available when the component is mounting. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
 
 [source,js]
 ----
@@ -72,13 +72,13 @@ So using the `dev` channel would look like this:
 <Editor apiKey='YOUR_API_KEY' cloudChannel='dev' init={{ /* your other settings */ }} />
 ----
 
-For more info on the different channels see the https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/editor-plugin-version/#devtestingandstablereleases[documentation].
+For more info on the different channels see the link:{baseurl}/cloud-deployment-guide/editor-and-features/editor-plugin-version/#devtestingandstablereleases[documentation].
 
 [[loading-tinymce-by-yourself]]
 ==== Loading TinyMCE by yourself
 anchor:loadingtinymcebyyourself[historical anchor]
 
-To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out https://www.tinymce.com/docs/advanced/usage-with-module-loaders/[this page in the documentation].
+To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out link:{baseurl}/advanced/usage-with-module-loaders/[this page in the documentation].
 
 [source,html]
 ----

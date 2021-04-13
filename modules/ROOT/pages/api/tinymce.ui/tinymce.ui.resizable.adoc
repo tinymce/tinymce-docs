@@ -5,7 +5,7 @@ Resizable mixin. Enables controls to be resized.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#resizeby[resizeBy()] |Resizes the control to a specific relative width/height. |link:{baseurl}/api/tinymce.ui/tinymce.ui.resizable.html[tinymce.ui.Resizable]
@@ -25,14 +25,14 @@ Resizes the control to a specific relative width/height.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#dw# [.param-type]#(Number)# - Relative control width.
-* [.param-name]#dh# [.param-type]#(Number)# - Relative control height.
+* `+dw+` `+(Number)+` - Relative control width.
+* `+dh+` `+(Number)+` - Relative control height.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[resizeto]]
 === resizeTo
@@ -43,12 +43,12 @@ Resizes the control to a specific width/height.
 
 ==== Parameters
 
-* [.param-name]#w# [.param-type]#(Number)# - Control width.
-* [.param-name]#h# [.param-type]#(Number)# - Control height.
+* `+w+` `+(Number)+` - Control width.
+* `+h+` `+(Number)+` - Control height.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[resizetocontent]]
 === resizeToContent

@@ -5,7 +5,7 @@ This class handles the creation of TinyMCE's notifications.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Opens a new notification of type "error" with text "An error occurred."
 tinymce.activeEditor.notificationManager.open({
@@ -17,7 +17,7 @@ tinymce.activeEditor.notificationManager.open({
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#close[close()] |Closes the top most notification. |link:{baseurl}/api/tinymce/tinymce.notificationmanager.html[tinymce.NotificationManager]
@@ -45,7 +45,7 @@ Returns the currently opened notification objects.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Array# - Array of the currently opened notifications.
+* `+Array+` - Array of the currently opened notifications.
 
 [[open]]
 === open
@@ -57,4 +57,4 @@ Opens a new notification.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#args# [.param-type]#(Object)# - Optional name/value settings collection contains things like timeout/color/message etc.
+* `+args+` `+(Object)+` - Optional name/value settings collection contains things like timeout/color/message etc.

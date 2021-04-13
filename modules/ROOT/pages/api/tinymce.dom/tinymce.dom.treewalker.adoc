@@ -5,7 +5,7 @@ TreeWalker class enables you to walk the DOM in a linear manner.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 var walker = new tinymce.dom.TreeWalker(startNode);
 
@@ -17,7 +17,7 @@ do {
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#current[current()] |Returns the current node. |link:{baseurl}/api/tinymce.dom/tinymce.dom.treewalker.html[tinymce.dom.TreeWalker]
@@ -38,7 +38,7 @@ Returns the current node.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Node# - Current node where the walker is.
+* `+Node+` - Current node where the walker is.
 
 [[next]]
 === next
@@ -49,7 +49,7 @@ Walks to the next node in tree.
 
 ==== Return value
 
-* [.return-type]#Node# - Current node where the walker is after moving to the next node.
+* `+Node+` - Current node where the walker is after moving to the next node.
 
 [[prev]]
 === prev
@@ -60,4 +60,4 @@ Walks to the previous node in tree.
 
 ==== Return value
 
-* [.return-type]#Node# - Current node where the walker is after moving to the previous node.
+* `+Node+` - Current node where the walker is after moving to the previous node.

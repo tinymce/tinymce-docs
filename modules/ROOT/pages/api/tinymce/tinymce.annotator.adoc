@@ -26,8 +26,8 @@ Applies the annotation at the current selection using data
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - the name of the annotation to apply
-* [.param-name]#data# [.param-type]#(Object)# - information to pass through to this particular annotation
+* `+name+` `+(String)+` - the name of the annotation to apply
+* `+data+` `+(Object)+` - information to pass through to this particular annotation
 
 [[annotationchanged]]
 === annotationChanged
@@ -38,8 +38,8 @@ Executes the specified callback when the current selection matches the annotatio
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of annotation to listen for
-* [.param-name]#callback# [.param-type]#(function)# - Calback with (state, name, and data) fired when the annotation at the cursor changes. If state if false, data will not be provided.
+* `+name+` `+(String)+` - Name of annotation to listen for
+* `+callback+` `+(function)+` - Calback with (state, name, and data) fired when the annotation at the cursor changes. If state if false, data will not be provided.
 
 [[getall]]
 === getAll
@@ -50,13 +50,13 @@ Retrieve all the annotations for a given name
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - the name of the annotations to retrieve
+* `+name+` `+(String)+` - the name of the annotations to retrieve
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - an index of annotations from uid => DOM nodes
+* `+Object+` - an index of annotations from uid => DOM nodes
 
 [[register]]
 === register
@@ -67,5 +67,5 @@ Registers a specific annotator by name
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - the name of the annotation
-* [.param-name]#settings# [.param-type]#(Object)# - settings for the annotation (e.g. decorate)
+* `+name+` `+(String)+` - the name of the annotation
+* `+settings+` `+(Object)+` - settings for the annotation (e.g. decorate)

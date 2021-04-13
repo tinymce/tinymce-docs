@@ -5,7 +5,7 @@ This class is used to serialize down the DOM tree into a string using a Writer i
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
 ----
@@ -13,7 +13,7 @@ new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>t
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#serialize[serialize()] |Serializes the specified node into a string. |link:{baseurl}/api/tinymce.html/tinymce.html.serializer.html[tinymce.html.Serializer]
@@ -31,7 +31,7 @@ Serializes the specified node into a string.
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
 ----
@@ -39,10 +39,10 @@ new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>t
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#node# link:{baseurl}/api/tinymce.html/tinymce.html.node.html[[.param-type]#(tinymce.html.Node)#] - Node instance to serialize.
+* `+node+` link:{baseurl}/api/tinymce.html/tinymce.html.node.html[`+(tinymce.html.Node)+`] - Node instance to serialize.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#String# - String with HTML based on DOM tree.
+* `+String+` - String with HTML based on DOM tree.

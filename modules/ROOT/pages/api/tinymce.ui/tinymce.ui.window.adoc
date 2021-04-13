@@ -8,27 +8,27 @@ Creates a new window.
 [cols=",,,",options="header",]
 |===
 |name |type |summary |defined by
-|autohide |[.param-type]#Boolean# |Automatically hide the panel. |link:{baseurl}/api/tinymce.ui/tinymce.ui.floatpanel.html[tinymce.ui.FloatPanel]
-|border |[.param-type]#String# |Border box values example: 1 1 1 1 |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|classes |[.param-type]#String# |Space separated list of classes to add. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|defaults |[.param-type]#Object# |Default settings to apply to all items. |link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[tinymce.ui.Container]
-|disabled |[.param-type]#Boolean# |Is the control disabled by default. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|hidden |[.param-type]#Boolean# |Is the control hidden by default. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|items |[.param-type]#Array# |Items to add to container in JSON format or control instances. |link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[tinymce.ui.Container]
-|layout |[.param-type]#String# |Layout manager by name to use. |link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[tinymce.ui.Container]
-|margin |[.param-type]#String# |Margin box values example: 1 1 1 1 |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|minHeight |[.param-type]#Number# |Minimal height for the control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|minWidth |[.param-type]#Number# |Minimal width for the control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|name |[.param-type]#String# |Name of the control instance. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|padding |[.param-type]#String# |Padding box values example: 1 1 1 1 |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|role |[.param-type]#String# |WAI-ARIA role to use for control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
-|style |[.param-type]#String# |Style CSS properties to add. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|autohide |`+Boolean+` |Automatically hide the panel. |link:{baseurl}/api/tinymce.ui/tinymce.ui.floatpanel.html[tinymce.ui.FloatPanel]
+|border |`+String+` |Border box values example: 1 1 1 1 |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|classes |`+String+` |Space separated list of classes to add. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|defaults |`+Object+` |Default settings to apply to all items. |link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[tinymce.ui.Container]
+|disabled |`+Boolean+` |Is the control disabled by default. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|hidden |`+Boolean+` |Is the control hidden by default. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|items |`+Array+` |Items to add to container in JSON format or control instances. |link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[tinymce.ui.Container]
+|layout |`+String+` |Layout manager by name to use. |link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[tinymce.ui.Container]
+|margin |`+String+` |Margin box values example: 1 1 1 1 |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|minHeight |`+Number+` |Minimal height for the control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|minWidth |`+Number+` |Minimal width for the control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|name |`+String+` |Name of the control instance. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|padding |`+String+` |Padding box values example: 1 1 1 1 |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|role |`+String+` |WAI-ARIA role to use for control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
+|style |`+String+` |Style CSS properties to add. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
 |===
 
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#container[Container()] |Constructs a new control instance with the specified settings. |link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[tinymce.ui.Container]
@@ -40,7 +40,7 @@ Creates a new window.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#active[active()] |Sets/gets the active for the control. |link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[tinymce.ui.Control]
@@ -118,7 +118,7 @@ Constructs a new control instance with the specified settings.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+* `+settings+` `+(Object)+` - Name/value object with settings.
 
 [[control]]
 === Control
@@ -129,7 +129,7 @@ Constructs a new control instance with the specified settings.
 
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+* `+settings+` `+(Object)+` - Name/value object with settings.
 
 [[floatpanel]]
 === FloatPanel
@@ -140,7 +140,7 @@ Constructs a new control instance with the specified settings.
 
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+* `+settings+` `+(Object)+` - Name/value object with settings.
 
 [[window]]
 === Window
@@ -151,7 +151,7 @@ Constructs a instance with the specified settings.
 
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+* `+settings+` `+(Object)+` - Name/value object with settings.
 
 == Methods
 
@@ -164,14 +164,14 @@ Sets/gets the active for the control.
 
 ==== Parameters
 
-* [.param-name]#state# [.param-type]#(Boolean)# - Value to set to control.
+* `+state+` `+(Boolean)+` - Value to set to control.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Boolean# - Current control on a set operation or current state on a get.
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.
+* `+Boolean+` - Current control on a set operation or current state on a get.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control on a set operation or current state on a get.
 
 [[add]]
 === add
@@ -182,11 +182,11 @@ Adds one or many items to the current container. This will create instances of t
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array or item that will be added to the container.
+* `+items+` `+(Array)+` - Array or item that will be added to the container.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection control.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection control.
 
 [[after]]
 === after
@@ -197,11 +197,11 @@ Adds items after the current control.
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array of items to append after this control.
+* `+items+` `+(Array)+` - Array of items to append after this control.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[append]]
 === append
@@ -212,11 +212,11 @@ Appends new instances to the current container.
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array if controls to append.
+* `+items+` `+(Array)+` - Array if controls to append.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.return-type]#tinymce.ui.Container#] - Current container instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+tinymce.ui.Container+`] - Current container instance.
 
 [[aria]]
 === aria
@@ -227,12 +227,12 @@ Sets the specified aria property.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the aria property to set.
-* [.param-name]#value# [.param-type]#(String)# - Value of the aria property.
+* `+name+` `+(String)+` - Name of the aria property to set.
+* `+value+` `+(String)+` - Value of the aria property.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[before]]
 === before
@@ -243,11 +243,11 @@ Adds items before the current control.
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array of items to prepend before this control.
+* `+items+` `+(Array)+` - Array of items to prepend before this control.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[blur]]
 === blur
@@ -258,7 +258,7 @@ Blurs the current control.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[close]]
 === close
@@ -276,11 +276,11 @@ Creates the specified items. If any of the items is plain JSON style objects it 
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array of items to convert into control instances.
+* `+items+` `+(Array)+` - Array of items to convert into control instances.
 
 ==== Return value
 
-* [.return-type]#Array# - Array with control instances.
+* `+Array+` - Array with control instances.
 
 [[disabled]]
 === disabled
@@ -291,12 +291,12 @@ Sets/gets the disabled state on the control.
 
 ==== Parameters
 
-* [.param-name]#state# [.param-type]#(Boolean)# - Value to set to control.
+* `+state+` `+(Boolean)+` - Value to set to control.
 
 ==== Return value
 
-* [.return-type]#Boolean# - Current control on a set operation or current state on a get.
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.
+* `+Boolean+` - Current control on a set operation or current state on a get.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control on a set operation or current state on a get.
 
 [[encode]]
 === encode
@@ -307,12 +307,12 @@ Encodes the specified string with HTML entities. It will also translate the stri
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - Text to entity encode.
-* [.param-name]#translate# [.param-type]#(Boolean)# - False if the contents shouldn't be translated.
+* `+text+` `+(String)+` - Text to entity encode.
+* `+translate+` `+(Boolean)+` - False if the contents shouldn't be translated.
 
 ==== Return value
 
-* [.return-type]#String# - Encoded and possible traslated string.
+* `+String+` - Encoded and possible traslated string.
 
 [[find]]
 === find
@@ -323,11 +323,11 @@ Find child controls by selector.
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Selector CSS pattern to find children by.
+* `+selector+` `+(String)+` - Selector CSS pattern to find children by.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Control collection with child controls.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Control collection with child controls.
 
 [[fire]]
 === fire
@@ -338,13 +338,13 @@ Fires the specified event by name and arguments on the control. This will execut
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
-* [.param-name]#args# [.param-type]#(Object)# - Arguments to pass to the event.
-* [.param-name]#bubble# [.param-type]#(Boolean)# - Value to control bubbling. Defaults to true.
+* `+name+` `+(String)+` - Name of the event to fire.
+* `+args+` `+(Object)+` - Arguments to pass to the event.
+* `+bubble+` `+(Boolean)+` - Value to control bubbling. Defaults to true.
 
 ==== Return value
 
-* [.return-type]#Object# - Current arguments object.
+* `+Object+` - Current arguments object.
 
 [[focus]]
 === focus
@@ -355,11 +355,11 @@ Focuses the current container instance. This will look for the first control in 
 
 ==== Parameters
 
-* [.param-name]#keyboard# [.param-type]#(Boolean)# - Optional true/false if the focus was a keyboard focus or not.
+* `+keyboard+` `+(Boolean)+` - Optional true/false if the focus was a keyboard focus or not.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current instance.
 
 [[fromjson]]
 === fromJSON
@@ -370,11 +370,11 @@ Populates the form fields from the specified JSON data object. Control items in 
 
 ==== Parameters
 
-* [.param-name]#data# [.param-type]#(Object)# - JSON data object to set control values by.
+* `+data+` `+(Object)+` - JSON data object to set control values by.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.return-type]#tinymce.ui.Container#] - Current form instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+tinymce.ui.Container+`] - Current form instance.
 
 [[fullscreen]]
 === fullscreen
@@ -385,11 +385,11 @@ Switches the window fullscreen mode.
 
 ==== Parameters
 
-* [.param-name]#state# [.param-type]#(Boolean)# - True/false state.
+* `+state+` `+(Boolean)+` - True/false state.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.window.html[[.return-type]#tinymce.ui.Window#] - Current window instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.window.html[`+tinymce.ui.Window+`] - Current window instance.
 
 [[getcontainerelm]]
 === getContainerElm
@@ -400,7 +400,7 @@ Returns the root element to render controls into.
 
 ==== Return value
 
-* [.return-type]#Element# - HTML DOM element to render into.
+* `+Element+` - HTML DOM element to render into.
 
 [[getcontentwindow]]
 === getContentWindow
@@ -411,7 +411,7 @@ Returns the contentWindow object of the iframe if it exists.
 
 ==== Return value
 
-* [.return-type]#Window# - window object or null.
+* `+Window+` - window object or null.
 
 [[getel]]
 === getEl
@@ -422,11 +422,11 @@ Returns the control DOM element or sub element.
 
 ==== Parameters
 
-* [.param-name]#suffix# [.param-type]#(String)# - Suffix to get element by.
+* `+suffix+` `+(String)+` - Suffix to get element by.
 
 ==== Return value
 
-* [.return-type]#Element# - HTML DOM element for the current control or it's children.
+* `+Element+` - HTML DOM element for the current control or it's children.
 
 [[getparentctrl]]
 === getParentCtrl
@@ -437,11 +437,11 @@ Returns a control instance for the current DOM element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - HTML dom element to get parent control from.
+* `+elm+` `+(Element)+` - HTML dom element to get parent control from.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Control instance or undefined.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Control instance or undefined.
 
 [[haseventlisteners]]
 === hasEventListeners
@@ -452,11 +452,11 @@ Returns true/false if the specified event has any listeners.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+* `+name+` `+(String)+` - Name of the event to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false state if the event has listeners.
+* `+Boolean+` - True/false state if the event has listeners.
 
 [[hide]]
 === hide
@@ -467,7 +467,7 @@ Hides the current float panel.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.floatpanel.html[[.return-type]#tinymce.ui.FloatPanel#] - Current floatpanel instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.floatpanel.html[`+tinymce.ui.FloatPanel+`] - Current floatpanel instance.
 
 [[hideall]]
 === hideAll
@@ -491,7 +491,7 @@ Initializes the current controls layout rect. This will be executed by the layou
 
 ==== Return value
 
-* [.return-type]#Object# - Layout rect instance.
+* `+Object+` - Layout rect instance.
 
 [[innerhtml]]
 === innerHtml
@@ -502,11 +502,11 @@ Sets the inner HTML of the control element.
 
 ==== Parameters
 
-* [.param-name]#html# [.param-type]#(String)# - Html string to set as inner html.
+* `+html+` `+(String)+` - Html string to set as inner html.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control object.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control object.
 
 [[insert]]
 === insert
@@ -517,9 +517,9 @@ Inserts an control at a specific index.
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array if controls to insert.
-* [.param-name]#index# [.param-type]#(Number)# - Index to insert controls at.
-* [.param-name]#before# [.param-type]#(Boolean)# - Inserts controls before the index.
+* `+items+` `+(Array)+` - Array if controls to insert.
+* `+index+` `+(Number)+` - Index to insert controls at.
+* `+before+` `+(Boolean)+` - Inserts controls before the index.
 
 [[items]]
 === items
@@ -530,7 +530,7 @@ Returns a collection of child items that the container currently have.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Control collection direct child controls.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Control collection direct child controls.
 
 [[layoutrect]]
 === layoutRect
@@ -541,12 +541,12 @@ Getter/setter for the current layout rect.
 
 ==== Parameters
 
-* [.param-name]#newRect# [.param-type]#(Object)# - Optional new layout rect.
+* `+newRect+` `+(Object)+` - Optional new layout rect.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control or rect object.
-* [.return-type]#Object# - Current control or rect object.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control or rect object.
+* `+Object+` - Current control or rect object.
 
 [[moveby]]
 === moveBy
@@ -557,12 +557,12 @@ Move by a relative x, y values.
 
 ==== Parameters
 
-* [.param-name]#dx# [.param-type]#(Number)# - Relative x position.
-* [.param-name]#dy# [.param-type]#(Number)# - Relative y position.
+* `+dx+` `+(Number)+` - Relative x position.
+* `+dy+` `+(Number)+` - Relative y position.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[moverel]]
 === moveRel
@@ -573,12 +573,12 @@ Move relative to the specified element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element to move relative to.
-* [.param-name]#rel# [.param-type]#(String)# - Relative mode. For example: br-tl.
+* `+elm+` `+(Element)+` - Element to move relative to.
+* `+rel+` `+(String)+` - Relative mode. For example: br-tl.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[moveto]]
 === moveTo
@@ -589,12 +589,12 @@ Move to absolute position.
 
 ==== Parameters
 
-* [.param-name]#x# [.param-type]#(Number)# - Absolute x position.
-* [.param-name]#y# [.param-type]#(Number)# - Absolute y position.
+* `+x+` `+(Number)+` - Absolute x position.
+* `+y+` `+(Number)+` - Absolute y position.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[name]]
 === name
@@ -605,12 +605,12 @@ Sets/gets the name for the control.
 
 ==== Parameters
 
-* [.param-name]#value# [.param-type]#(String)# - Value to set to control.
+* `+value+` `+(String)+` - Value to set to control.
 
 ==== Return value
 
-* [.return-type]#String# - Current control on a set operation or current value on a get.
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
+* `+String+` - Current control on a set operation or current value on a get.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control on a set operation or current value on a get.
 
 [[next]]
 === next
@@ -621,7 +621,7 @@ Returns the control next to the current control.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Next control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Next control instance.
 
 [[off]]
 === off
@@ -632,12 +632,12 @@ Unbinds the specified event and optionally a specific callback. If you omit the 
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name for the event to unbind.
-* [.param-name]#callback# [.param-type]#(function)# - Callback function to unbind.
+* `+name+` `+(String)+` - Name for the event to unbind.
+* `+callback+` `+(function)+` - Callback function to unbind.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control object.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control object.
 
 [[on]]
 === on
@@ -648,12 +648,12 @@ Binds a callback to the specified event. This event can both be native browser e
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind. For example "click".
-* [.param-name]#callback# [.param-type]#(String)# - Callback function to execute ones the event occurs.
+* `+name+` `+(String)+` - Name of the event to bind. For example "click".
+* `+callback+` `+(String)+` - Callback function to execute ones the event occurs.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control object.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control object.
 
 [[parent]]
 === parent
@@ -664,11 +664,11 @@ Sets/gets the parent container for the control.
 
 ==== Parameters
 
-* [.param-name]#parent# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Optional parent to set.
+* `+parent+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Optional parent to set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Parent control or the current control on a set action.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Parent control or the current control on a set action.
 
 [[parents]]
 === parents
@@ -679,11 +679,11 @@ Returns a control collection with all parent controls.
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Optional selector expression to find parents.
+* `+selector+` `+(String)+` - Optional selector expression to find parents.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Collection with all parent controls.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Collection with all parent controls.
 
 [[parentsandself]]
 === parentsAndSelf
@@ -694,11 +694,11 @@ Returns the current control and it's parents.
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Optional selector expression to find parents.
+* `+selector+` `+(String)+` - Optional selector expression to find parents.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Collection with all parent controls.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Collection with all parent controls.
 
 [[postrender]]
 === postRender
@@ -716,11 +716,11 @@ Prepends new instances to the current container.
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array if controls to prepend.
+* `+items+` `+(Array)+` - Array if controls to prepend.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.return-type]#tinymce.ui.Container#] - Current container instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+tinymce.ui.Container+`] - Current container instance.
 
 [[prev]]
 === prev
@@ -731,7 +731,7 @@ Returns the control previous to the current control.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Previous control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Previous control instance.
 
 [[recalc]]
 === recalc
@@ -750,14 +750,14 @@ Reflows the current container and it's children and possible parents. This shoul
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 container.append({type: 'button', text: 'My button'}).reflow();
 ----
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.return-type]#tinymce.ui.Container#] - Current container instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+tinymce.ui.Container+`] - Current container instance.
 
 [[remove]]
 === remove
@@ -768,7 +768,7 @@ Removes the current control from DOM and from UI collections.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[renderbefore]]
 === renderBefore
@@ -779,11 +779,11 @@ Renders the control to the specified element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element to render to.
+* `+elm+` `+(Element)+` - Element to render to.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[renderhtml]]
 === renderHtml
@@ -794,7 +794,7 @@ Renders the control as a HTML string.
 
 ==== Return value
 
-* [.return-type]#String# - HTML representing the control.
+* `+String+` - HTML representing the control.
 
 [[repaint]]
 === repaint
@@ -812,8 +812,8 @@ Replaces the specified child control with a new control.
 
 ==== Parameters
 
-* [.param-name]#oldItem# link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.param-type]#(tinymce.ui.Control)#] - Old item to be replaced.
-* [.param-name]#newItem# link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.param-type]#(tinymce.ui.Control)#] - New item to be inserted.
+* `+oldItem+` link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+(tinymce.ui.Control)+`] - Old item to be replaced.
+* `+newItem+` link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+(tinymce.ui.Control)+`] - New item to be inserted.
 
 [[resizeby]]
 === resizeBy
@@ -824,12 +824,12 @@ Resizes the control to a specific relative width/height.
 
 ==== Parameters
 
-* [.param-name]#dw# [.param-type]#(Number)# - Relative control width.
-* [.param-name]#dh# [.param-type]#(Number)# - Relative control height.
+* `+dw+` `+(Number)+` - Relative control width.
+* `+dh+` `+(Number)+` - Relative control height.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[resizeto]]
 === resizeTo
@@ -840,12 +840,12 @@ Resizes the control to a specific width/height.
 
 ==== Parameters
 
-* [.param-name]#w# [.param-type]#(Number)# - Control width.
-* [.param-name]#h# [.param-type]#(Number)# - Control height.
+* `+w+` `+(Number)+` - Control width.
+* `+h+` `+(Number)+` - Control height.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[resizetocontent]]
 === resizeToContent
@@ -863,11 +863,11 @@ Scrolls the current control into view.
 
 ==== Parameters
 
-* [.param-name]#align# [.param-type]#(String)# - Alignment in view top|center|bottom.
+* `+align+` `+(String)+` - Alignment in view top|center|bottom.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control instance.
 
 [[show]]
 === show
@@ -878,7 +878,7 @@ Shows the current float panel.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.floatpanel.html[[.return-type]#tinymce.ui.FloatPanel#] - Current floatpanel instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.floatpanel.html[`+tinymce.ui.FloatPanel+`] - Current floatpanel instance.
 
 [[submit]]
 === submit
@@ -889,7 +889,7 @@ Fires a submit event with the serialized form.
 
 ==== Return value
 
-* [.return-type]#Object# - Event arguments object.
+* `+Object+` - Event arguments object.
 
 [[testmoverel]]
 === testMoveRel
@@ -900,12 +900,12 @@ Tests various positions to get the most suitable one.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(DOMElement)# - Element to position against.
-* [.param-name]#rels# [.param-type]#(Array)# - Array with relative positions.
+* `+elm+` `+(DOMElement)+` - Element to position against.
+* `+rels+` `+(Array)+` - Array with relative positions.
 
 ==== Return value
 
-* [.return-type]#String# - Best suitable relative position.
+* `+String+` - Best suitable relative position.
 
 [[text]]
 === text
@@ -916,12 +916,12 @@ Sets/gets the text for the control.
 
 ==== Parameters
 
-* [.param-name]#value# [.param-type]#(String)# - Value to set to control.
+* `+value+` `+(String)+` - Value to set to control.
 
 ==== Return value
 
-* [.return-type]#String# - Current control on a set operation or current value on a get.
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
+* `+String+` - Current control on a set operation or current value on a get.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control on a set operation or current value on a get.
 
 [[title]]
 === title
@@ -932,12 +932,12 @@ Sets/gets the title for the control.
 
 ==== Parameters
 
-* [.param-name]#value# [.param-type]#(String)# - Value to set to control.
+* `+value+` `+(String)+` - Value to set to control.
 
 ==== Return value
 
-* [.return-type]#String# - Current control on a set operation or current value on a get.
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current value on a get.
+* `+String+` - Current control on a set operation or current value on a get.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control on a set operation or current value on a get.
 
 [[tojson]]
 === toJSON
@@ -948,7 +948,7 @@ Serializes the form into a JSON object by getting all items that has a name and 
 
 ==== Return value
 
-* [.return-type]#Object# - JSON object with form data.
+* `+Object+` - JSON object with form data.
 
 [[translate]]
 === translate
@@ -959,11 +959,11 @@ Returns the translated string.
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - Text to translate.
+* `+text+` `+(String)+` - Text to translate.
 
 ==== Return value
 
-* [.return-type]#String# - Translated string or the same as the input.
+* `+String+` - Translated string or the same as the input.
 
 [[visible]]
 === visible
@@ -974,9 +974,9 @@ Sets/gets the visible for the control.
 
 ==== Parameters
 
-* [.param-name]#state# [.param-type]#(Boolean)# - Value to set to control.
+* `+state+` `+(Boolean)+` - Value to set to control.
 
 ==== Return value
 
-* [.return-type]#Boolean# - Current control on a set operation or current state on a get.
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Current control on a set operation or current state on a get.
+* `+Boolean+` - Current control on a set operation or current state on a get.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Current control on a set operation or current state on a get.

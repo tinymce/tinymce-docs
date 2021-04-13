@@ -5,7 +5,7 @@ This class enables you to send XMLHTTPRequests cross browser.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sends a low level Ajax request
 tinymce.util.XHR.send({
@@ -24,7 +24,7 @@ tinymce.util.XHR.on('beforeSend', function(e) {
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#fire[fire()] |Fires the specified event by name. Consult the link:/docs/advanced/events[event reference] for more details on each event. |link:{baseurl}/api/tinymce.util/tinymce.util.observable.html[tinymce.util.Observable]
@@ -47,7 +47,7 @@ Fires the specified event by name. Consult the link:/docs/advanced/events[event 
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.fire('event', {...});
 ----
@@ -55,15 +55,15 @@ instance.fire('event', {...});
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
-* [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
-* [.param-name]#bubble# [.param-type]#(Boolean?)# - True/false if the event is to be bubbled.
+* `+name+` `+(String)+` - Name of the event to fire.
+* `+args+` `+(Object?)+` - Event arguments.
+* `+bubble+` `+(Boolean?)+` - True/false if the event is to be bubbled.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - Event args instance passed in.
+* `+Object+` - Event args instance passed in.
 
 [[haseventlisteners]]
 === hasEventListeners
@@ -74,11 +74,11 @@ Returns true/false if the object has a event of the specified name.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+* `+name+` `+(String)+` - Name of the event to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the event exists or not.
+* `+Boolean+` - true/false if the event exists or not.
 
 [[off]]
 === off
@@ -89,7 +89,7 @@ Unbinds an event listener to a specific event by name. Consult the link:/docs/ad
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Unbind specific callback
 instance.off('event', handler);
@@ -103,12 +103,12 @@ instance.off();
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String?)# - Name of the event to unbind.
-* [.param-name]#callback# [.param-type]#(callback?)# - Callback to unbind.
+* `+name+` `+(String?)+` - Name of the event to unbind.
+* `+callback+` `+(callback?)+` - Callback to unbind.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[on]]
 === on
@@ -119,7 +119,7 @@ Binds an event listener to a specific event by name. Consult the link:/docs/adva
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.on('event', function(e) {
     // Callback logic
@@ -128,13 +128,13 @@ instance.on('event', function(e) {
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
-* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+* `+name+` `+(String)+` - Event name or space separated list of events to bind.
+* `+callback+` `+(callback)+` - Callback to be executed when the event occurs.
+* `+first+` `+(Boolean)+` - Optional flag if the event should be prepended. Use this with care.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[once]]
 === once
@@ -145,12 +145,12 @@ Bind the event callback and once it fires the callback is removed. Consult the l
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to bind only once.
+* `+name+` `+(String)+` - Name of the event to bind.
+* `+callback+` `+(callback)+` - Callback to bind only once.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[send]]
 === send
@@ -161,4 +161,4 @@ Sends a XMLHTTPRequest. Consult the Wiki for details on what settings this metho
 
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Object will target URL, callbacks and other info needed to make the request.
+* `+settings+` `+(Object)+` - Object will target URL, callbacks and other info needed to make the request.

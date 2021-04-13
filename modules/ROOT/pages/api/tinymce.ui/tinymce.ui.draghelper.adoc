@@ -5,7 +5,7 @@ Drag/drop helper class.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 var dragHelper = new tinymce.ui.DragHelper('mydiv', {
     start: function(document, window, evt) {
@@ -22,7 +22,7 @@ var dragHelper = new tinymce.ui.DragHelper('mydiv', {
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#destroy[destroy()] |Destroys the drag/drop helper instance. |link:{baseurl}/api/tinymce.ui/tinymce.ui.draghelper.html[tinymce.ui.DragHelper]

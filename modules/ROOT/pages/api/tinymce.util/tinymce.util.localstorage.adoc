@@ -3,7 +3,7 @@
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 tinymce.util.LocalStorage.setItem('key', 'value');
 var value = tinymce.util.LocalStorage.getItem('key');

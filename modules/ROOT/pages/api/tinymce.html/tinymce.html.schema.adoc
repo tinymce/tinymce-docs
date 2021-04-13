@@ -5,7 +5,7 @@ Schema validator class.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 if (tinymce.activeEditor.schema.isValidChild('p', 'span'))
    alert('span is valid child of p.');
@@ -17,7 +17,7 @@ if (tinymce.activeEditor.schema.isValidChild('p', 'span'))
 [[methods]]
 == Methods
 
-[width="100%",cols="34%,33%,33%",options="header",]
+[width="100%",cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#addcustomelements[addCustomElements()] |Adds custom non HTML elements to the schema. |link:{baseurl}/api/tinymce.html/tinymce.html.schema.html[tinymce.html.Schema]
@@ -60,7 +60,7 @@ Adds custom non HTML elements to the schema.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#custom_elements# [.param-type]#(String)# - Comma separated list of custom elements to add.
+* `+custom_elements+` `+(String)+` - Comma separated list of custom elements to add.
 
 [[addvalidchildren]]
 === addValidChildren
@@ -71,7 +71,7 @@ Parses a valid children string and adds them to the schema structure. The valid 
 
 ==== Parameters
 
-* [.param-name]#valid_children# [.param-type]#(String)# - Valid children elements string to parse
+* `+valid_children+` `+(String)+` - Valid children elements string to parse
 
 [[addvalidelements]]
 === addValidElements
@@ -82,7 +82,7 @@ Parses a valid elements string and adds it to the schema. The valid elements for
 
 ==== Parameters
 
-* [.param-name]#valid_elements# [.param-type]#(String)# - String in the valid elements format to be parsed.
+* `+valid_elements+` `+(String)+` - String in the valid elements format to be parsed.
 
 [[getblockelements]]
 === getBlockElements
@@ -95,7 +95,7 @@ Returns a map with block elements.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - Name/value lookup map for block elements.
+* `+Object+` - Name/value lookup map for block elements.
 
 [[getboolattrs]]
 === getBoolAttrs
@@ -106,7 +106,7 @@ Returns a map with boolean attributes.
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for boolean attributes.
+* `+Object+` - Name/value lookup map for boolean attributes.
 
 [[getcustomelements]]
 === getCustomElements
@@ -117,7 +117,7 @@ Returns an map object of all custom elements.
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value map object of all custom elements.
+* `+Object+` - Name/value map object of all custom elements.
 
 [[getelementrule]]
 === getElementRule
@@ -128,11 +128,11 @@ Returns true/false if the specified element is valid or not according to the sch
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Element name to check for.
+* `+name+` `+(String)+` - Element name to check for.
 
 ==== Return value
 
-* [.return-type]#Object# - Element object or undefined if the element isn't valid.
+* `+Object+` - Element object or undefined if the element isn't valid.
 
 [[getinvalidstyles]]
 === getInvalidStyles
@@ -150,7 +150,7 @@ Returns a map with elements that the caret should be moved in front of after ent
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for elements to place the caret in front of.
+* `+Object+` - Name/value lookup map for elements to place the caret in front of.
 
 [[getnonemptyelements]]
 === getNonEmptyElements
@@ -161,7 +161,7 @@ Returns a map with elements that should be treated as contents regardless if it 
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for non empty elements.
+* `+Object+` - Name/value lookup map for non empty elements.
 
 [[getselfclosingelements]]
 === getSelfClosingElements
@@ -174,7 +174,7 @@ Returns a map with self closing tags such as
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for self closing tags elements.
+* `+Object+` - Name/value lookup map for self closing tags elements.
 
 [[getshortendedelements]]
 === getShortEndedElements
@@ -185,7 +185,7 @@ Returns a map with short ended elements such as BR or IMG.
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for short ended elements.
+* `+Object+` - Name/value lookup map for short ended elements.
 
 [[getspecialelements]]
 === getSpecialElements
@@ -196,7 +196,7 @@ Returns a map with special elements. These are elements that needs to be parsed 
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for special elements.
+* `+Object+` - Name/value lookup map for special elements.
 
 [[gettextblockelements]]
 === getTextBlockElements
@@ -207,7 +207,7 @@ Returns a map with text block elements. Such as: p,h1-h6,div,address
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for block elements.
+* `+Object+` - Name/value lookup map for block elements.
 
 [[gettextinlineelements]]
 === getTextInlineElements
@@ -218,7 +218,7 @@ Returns a map of inline text format nodes for example strong/span or ins.
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for text format elements.
+* `+Object+` - Name/value lookup map for text format elements.
 
 [[getvalidclasses]]
 === getValidClasses
@@ -243,7 +243,7 @@ Returns a map with elements where white space is to be preserved like PRE or SCR
 
 ==== Return value
 
-* [.return-type]#Object# - Name/value lookup map for white space elements.
+* `+Object+` - Name/value lookup map for white space elements.
 
 [[isvalid]]
 === isValid
@@ -254,12 +254,12 @@ Returns true/false if the specified element name and optional attribute is valid
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of element to check.
-* [.param-name]#attr# [.param-type]#(String)# - Optional attribute name to check for.
+* `+name+` `+(String)+` - Name of element to check.
+* `+attr+` `+(String)+` - Optional attribute name to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false if the element and attribute is valid.
+* `+Boolean+` - True/false if the element and attribute is valid.
 
 [[isvalidchild]]
 === isValidChild
@@ -270,12 +270,12 @@ Returns true/false if the specified element and it's child is valid or not accor
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Element name to check for.
-* [.param-name]#child# [.param-type]#(String)# - Element child to verify.
+* `+name+` `+(String)+` - Element name to check for.
+* `+child+` `+(String)+` - Element child to verify.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false if the element is a valid child of the specified parent.
+* `+Boolean+` - True/false if the element is a valid child of the specified parent.
 
 [[setvalidelements]]
 === setValidElements
@@ -286,4 +286,4 @@ Parses a valid elements string and sets it to the schema. The valid elements for
 
 ==== Parameters
 
-* [.param-name]#valid_elements# [.param-type]#(String)# - String in the valid elements format to be parsed.
+* `+valid_elements+` `+(String)+` - String in the valid elements format to be parsed.

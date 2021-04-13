@@ -5,7 +5,7 @@ This class contains the core logic for a TinyMCE editor.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Add a class to all paragraphs in the editor.
 tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'someclass');
@@ -24,35 +24,35 @@ ed.render();
 [[properties]]
 == Properties
 
-[cols=",,,",options="header",]
+[cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|$ |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.param-type]#tinymce.dom.DomQuery#] |Dom query instance with default scope to the editor document and default element is the body of the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|baseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[[.param-type]#tinymce.util.URI#] |URI object to current document that holds the TinyMCE editor instance. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|contentCSS |[.param-type]#Array# |Array with CSS files to load into the iframe. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|contentStyles |[.param-type]#Array# |Array of CSS styles to add to head of document when the editor loads. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|documentBaseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[[.param-type]#tinymce.util.URI#] |URI object to document configured for the TinyMCE instance. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|dom |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[[.param-type]#tinymce.dom.DOMUtils#] |DOM instance for the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|formatter |link:{baseurl}/api/tinymce/tinymce.formatter.html[[.param-type]#tinymce.Formatter#] |Formatter instance. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|id |[.param-type]#String# |Editor instance id, normally the same as the div/textarea that was replaced. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|initialized |[.param-type]#Boolean# |Is set to true after the editor instance has been initialized |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|isNotDirty |[.param-type]#Boolean# |State to force the editor to return false on a isDirty call. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|notificationManager |link:{baseurl}/api/tinymce/tinymce.notificationmanager.html[[.param-type]#tinymce.NotificationManager#] |Notification manager reference, use this to open new windows and dialogs. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|parser |link:{baseurl}/api/tinymce.html/tinymce.html.domparser.html[[.param-type]#tinymce.html.DomParser#] |HTML parser will be used when contents is inserted into the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|plugins |[.param-type]#Object# |Name/Value object containing plugin instances. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|schema |link:{baseurl}/api/tinymce.html/tinymce.html.schema.html[[.param-type]#tinymce.html.Schema#] |Schema instance, enables you to validate elements and its children. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|selection |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[[.param-type]#tinymce.dom.Selection#] |Selection instance for the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|serializer |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[[.param-type]#tinymce.dom.Serializer#] |DOM serializer for the editor. Will be used when contents is extracted from the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|settings |[.param-type]#Object# |Name/value collection with editor settings. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|theme |link:{baseurl}/api/tinymce/tinymce.theme.html[[.param-type]#tinymce.Theme#] |Reference to the theme instance that was used to generate the UI. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|undoManager |link:{baseurl}/api/tinymce/tinymce.undomanager.html[[.param-type]#tinymce.UndoManager#] |Undo manager instance, responsible for handling undo levels. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
-|windowManager |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[[.param-type]#tinymce.WindowManager#] |Window manager reference, use this to open new windows and dialogs. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|$ |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] |Dom query instance with default scope to the editor document and default element is the body of the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|baseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[`+tinymce.util.URI+`] |URI object to current document that holds the TinyMCE editor instance. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|contentCSS |`+Array+` |Array with CSS files to load into the iframe. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|contentStyles |`+Array+` |Array of CSS styles to add to head of document when the editor loads. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|documentBaseURI |link:{baseurl}/api/tinymce.util/tinymce.util.uri.html[`+tinymce.util.URI+`] |URI object to document configured for the TinyMCE instance. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|dom |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[`+tinymce.dom.DOMUtils+`] |DOM instance for the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|formatter |link:{baseurl}/api/tinymce/tinymce.formatter.html[`+tinymce.Formatter+`] |Formatter instance. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|id |`+String+` |Editor instance id, normally the same as the div/textarea that was replaced. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|initialized |`+Boolean+` |Is set to true after the editor instance has been initialized |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|isNotDirty |`+Boolean+` |State to force the editor to return false on a isDirty call. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|notificationManager |link:{baseurl}/api/tinymce/tinymce.notificationmanager.html[`+tinymce.NotificationManager+`] |Notification manager reference, use this to open new windows and dialogs. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|parser |link:{baseurl}/api/tinymce.html/tinymce.html.domparser.html[`+tinymce.html.DomParser+`] |HTML parser will be used when contents is inserted into the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|plugins |`+Object+` |Name/Value object containing plugin instances. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|schema |link:{baseurl}/api/tinymce.html/tinymce.html.schema.html[`+tinymce.html.Schema+`] |Schema instance, enables you to validate elements and its children. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|selection |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[`+tinymce.dom.Selection+`] |Selection instance for the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|serializer |link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[`+tinymce.dom.Serializer+`] |DOM serializer for the editor. Will be used when contents is extracted from the editor. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|settings |`+Object+` |Name/value collection with editor settings. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|theme |link:{baseurl}/api/tinymce/tinymce.theme.html[`+tinymce.Theme+`] |Reference to the theme instance that was used to generate the UI. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|undoManager |link:{baseurl}/api/tinymce/tinymce.undomanager.html[`+tinymce.UndoManager+`] |Undo manager instance, responsible for handling undo levels. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
+|windowManager |link:{baseurl}/api/tinymce/tinymce.windowmanager.html[`+tinymce.WindowManager+`] |Window manager reference, use this to open new windows and dialogs. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
 |===
 
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#editor[Editor()] |Constructs a editor instance by id. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
@@ -61,7 +61,7 @@ ed.render();
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#addbutton[addButton()] |Adds a button that later gets created by the theme in the editors toolbars. |link:{baseurl}/api/tinymce/tinymce.editor.html[tinymce.Editor]
@@ -126,9 +126,9 @@ Constructs a editor instance by id.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#id# [.param-type]#(String)# - Unique id for the editor.
-* [.param-name]#settings# [.param-type]#(Object)# - Settings for the editor.
-* [.param-name]#editorManager# link:{baseurl}/api/tinymce/tinymce.editormanager.html[[.param-type]#(tinymce.EditorManager)#] - EditorManager instance.
+* `+id+` `+(String)+` - Unique id for the editor.
+* `+settings+` `+(Object)+` - Settings for the editor.
+* `+editorManager+` link:{baseurl}/api/tinymce/tinymce.editormanager.html[`+(tinymce.EditorManager)+`] - EditorManager instance.
 
 == Methods
 
@@ -142,7 +142,7 @@ Adds a button that later gets created by the theme in the editors toolbars.
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds a custom button to the editor that inserts contents when clicked
 tinymce.init({
@@ -164,8 +164,8 @@ tinymce.init({
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Button name to add.
-* [.param-name]#settings# [.param-type]#(Object)# - Settings object with title, cmd etc.
+* `+name+` `+(String)+` - Button name to add.
+* `+settings+` `+(Object)+` - Settings object with title, cmd etc.
 
 [[addcommand]]
 === addCommand
@@ -176,7 +176,7 @@ Adds a custom command to the editor, you can also override existing commands wit
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds a custom command that later can be executed using execCommand
 tinymce.init({
@@ -193,9 +193,9 @@ tinymce.init({
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Command name to add/override.
-* [.param-name]#callback# [.param-type]#(addCommandCallback)# - Function to execute when the command occurs.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+* `+name+` `+(String)+` - Command name to add/override.
+* `+callback+` `+(addCommandCallback)+` - Function to execute when the command occurs.
+* `+scope+` `+(Object)+` - Optional scope to execute the function in.
 
 [[addcontexttoolbar]]
 === addContextToolbar
@@ -206,8 +206,8 @@ Adds a contextual toolbar to be rendered when the selector matches.
 
 ==== Parameters
 
-* [.param-name]#predicate# [.param-type]#(function)# - Predicate that needs to return true if provided strings get converted into CSS predicates.
-* [.param-name]#items# [.param-type]#(String)# - String or array with items to add to the context toolbar.
+* `+predicate+` `+(function)+` - Predicate that needs to return true if provided strings get converted into CSS predicates.
+* `+items+` `+(String)+` - String or array with items to add to the context toolbar.
 
 [[addmenuitem]]
 === addMenuItem
@@ -218,7 +218,7 @@ Adds a menu item to be used in the menus of the theme. There might be multiple i
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds a custom menu item to the editor that inserts contents when clicked
 // The context option allows you to add the menu item to an existing default menu
@@ -239,8 +239,8 @@ tinymce.init({
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Menu item name to add.
-* [.param-name]#settings# [.param-type]#(Object)# - Settings object with title, cmd etc.
+* `+name+` `+(String)+` - Menu item name to add.
+* `+settings+` `+(Object)+` - Settings object with title, cmd etc.
 
 [[addquerystatehandler]]
 === addQueryStateHandler
@@ -251,9 +251,9 @@ Adds a custom query state command to the editor, you can also override existing 
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Command name to add/override.
-* [.param-name]#callback# [.param-type]#(addQueryStateHandlerCallback)# - Function to execute when the command state retrieval occurs.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+* `+name+` `+(String)+` - Command name to add/override.
+* `+callback+` `+(addQueryStateHandlerCallback)+` - Function to execute when the command state retrieval occurs.
+* `+scope+` `+(Object)+` - Optional scope to execute the function in.
 
 [[addqueryvaluehandler]]
 === addQueryValueHandler
@@ -264,9 +264,9 @@ Adds a custom query value command to the editor, you can also override existing 
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Command name to add/override.
-* [.param-name]#callback# [.param-type]#(addQueryValueHandlerCallback)# - Function to execute when the command value retrieval occurs.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+* `+name+` `+(String)+` - Command name to add/override.
+* `+callback+` `+(addQueryValueHandlerCallback)+` - Function to execute when the command value retrieval occurs.
+* `+scope+` `+(Object)+` - Optional scope to execute the function in.
 
 [[addshortcut]]
 === addShortcut
@@ -277,16 +277,16 @@ Adds a keyboard shortcut for some command or function.
 
 ==== Parameters
 
-* [.param-name]#pattern# [.param-type]#(String)# - Shortcut pattern. Like for example: ctrl+alt+o.
-* [.param-name]#desc# [.param-type]#(String)# - Text description for the command.
-* [.param-name]#cmdFunc# [.param-type]#(String)# - Command name string or function to execute when the key is pressed.
-* [.param-name]#sc# [.param-type]#(Object)# - Optional scope to execute the function in.
+* `+pattern+` `+(String)+` - Shortcut pattern. Like for example: ctrl+alt+o.
+* `+desc+` `+(String)+` - Text description for the command.
+* `+cmdFunc+` `+(String)+` - Command name string or function to execute when the key is pressed.
+* `+sc+` `+(Object)+` - Optional scope to execute the function in.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Boolean# - true/false state if the shortcut was added or not.
+* `+Boolean+` - true/false state if the shortcut was added or not.
 
 [[addsidebar]]
 === addSidebar
@@ -297,7 +297,7 @@ Adds a sidebar for the editor instance.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds a custom sidebar that when clicked logs the panel element
 tinymce.init({
@@ -316,8 +316,8 @@ tinymce.init({
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Sidebar name to add.
-* [.param-name]#settings# [.param-type]#(Object)# - Settings object with icon, onshow etc.
+* `+name+` `+(String)+` - Sidebar name to add.
+* `+settings+` `+(Object)+` - Settings object with icon, onshow etc.
 
 [[addvisual]]
 === addVisual
@@ -328,7 +328,7 @@ Adds visual aid for tables, anchors etc so they can be more easily edited inside
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Optional root element to loop though to find tables etc that needs the visual aid.
+* `+elm+` `+(Element)+` - Optional root element to loop though to find tables etc that needs the visual aid.
 
 [[converturl]]
 === convertURL
@@ -339,13 +339,13 @@ URL converter function this gets executed each time a user adds an img, a or any
 
 ==== Parameters
 
-* [.param-name]#url# [.param-type]#(string)# - URL to convert.
-* [.param-name]#name# [.param-type]#(string)# - Attribute name src, href etc.
-* [.param-name]#elm# [.param-type]#(string)# - Tag name or HTML DOM element depending on HTML or DOM insert.
+* `+url+` `+(string)+` - URL to convert.
+* `+name+` `+(string)+` - Attribute name src, href etc.
+* `+elm+` `+(string)+` - Tag name or HTML DOM element depending on HTML or DOM insert.
 
 ==== Return value
 
-* [.return-type]#string# - Converted URL string.
+* `+string+` - Converted URL string.
 
 [[destroy]]
 === destroy
@@ -356,7 +356,7 @@ Destroys the editor instance by removing all events, element references or other
 
 ==== Parameters
 
-* [.param-name]#automatic# [.param-type]#(Boolean)# - Optional state if the destroy is an automatic destroy or user called one.
+* `+automatic+` `+(Boolean)+` - Optional state if the destroy is an automatic destroy or user called one.
 
 [[execcallback]]
 === execCallback
@@ -367,11 +367,11 @@ Executes a legacy callback. This method is useful to call old 2.x option callbac
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the callback to execute.
+* `+name+` `+(String)+` - Name of the callback to execute.
 
 ==== Return value
 
-* [.return-type]#Object# - Return value passed from callback function.
+* `+Object+` - Return value passed from callback function.
 
 [[execcommand]]
 === execCommand
@@ -382,10 +382,10 @@ Executes a command on the current instance. These commands can be TinyMCE intern
 
 ==== Parameters
 
-* [.param-name]#cmd# [.param-type]#(String)# - Command name to execute, for example mceLink or Bold.
-* [.param-name]#ui# [.param-type]#(Boolean)# - True/false state if a UI (dialog) should be presented or not.
-* [.param-name]#value# [.param-type]#(mixed)# - Optional command value, this can be anything.
-* [.param-name]#args# [.param-type]#(Object)# - Optional arguments object.
+* `+cmd+` `+(String)+` - Command name to execute, for example mceLink or Bold.
+* `+ui+` `+(Boolean)+` - True/false state if a UI (dialog) should be presented or not.
+* `+value+` `+(mixed)+` - Optional command value, this can be anything.
+* `+args+` `+(Object)+` - Optional arguments object.
 
 [[fire]]
 === fire
@@ -396,20 +396,20 @@ Fires the specified event by name. Consult the link:/docs/advanced/events[event 
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.fire('event', {...});
 ----
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
-* [.param-name]#args# [.param-type]#(Object?)# - Event arguments.
-* [.param-name]#bubble# [.param-type]#(Boolean?)# - True/false if the event is to be bubbled.
+* `+name+` `+(String)+` - Name of the event to fire.
+* `+args+` `+(Object?)+` - Event arguments.
+* `+bubble+` `+(Boolean?)+` - True/false if the event is to be bubbled.
 
 ==== Return value
 
-* [.return-type]#Object# - Event args instance passed in.
+* `+Object+` - Event args instance passed in.
 
 [[focus]]
 === focus
@@ -420,7 +420,7 @@ Focuses/activates the editor. This will set this editor as the activeEditor in t
 
 ==== Parameters
 
-* [.param-name]#skipFocus# [.param-type]#(Boolean)# - Skip DOM focus. Just set is as the active editor.
+* `+skipFocus+` `+(Boolean)+` - Skip DOM focus. Just set is as the active editor.
 
 [[getbody]]
 === getBody
@@ -431,7 +431,7 @@ Returns the root element of the editable area. For a non-inline iframe-based edi
 
 ==== Return value
 
-* [.return-type]#Element# - The root element of the editable area.
+* `+Element+` - The root element of the editable area.
 
 [[getcontainer]]
 === getContainer
@@ -442,7 +442,7 @@ Returns the editors container element. The container element wrappes in all the 
 
 ==== Return value
 
-* [.return-type]#Element# - HTML DOM element for the editor container.
+* `+Element+` - HTML DOM element for the editor container.
 
 [[getcontent]]
 === getContent
@@ -453,7 +453,7 @@ Gets the content from the editor instance, this will cleanup the content before 
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Get the HTML contents of the currently active editor
 console.debug(tinymce.activeEditor.getContent());
@@ -467,11 +467,11 @@ tinymce.get('content id').getContent()
 
 ==== Parameters
 
-* [.param-name]#args# [.param-type]#(Object)# - Optional content object, this gets passed around through the whole get process.
+* `+args+` `+(Object)+` - Optional content object, this gets passed around through the whole get process.
 
 ==== Return value
 
-* [.return-type]#String# - Cleaned content string, normally HTML contents.
+* `+String+` - Cleaned content string, normally HTML contents.
 
 [[getcontentareacontainer]]
 === getContentAreaContainer
@@ -482,7 +482,7 @@ Returns the editors content area container element. The this element is the one 
 
 ==== Return value
 
-* [.return-type]#Element# - HTML DOM element for the editor area container.
+* `+Element+` - HTML DOM element for the editor area container.
 
 [[getdoc]]
 === getDoc
@@ -493,7 +493,7 @@ Returns the iframes document object.
 
 ==== Return value
 
-* [.return-type]#Document# - Iframe DOM document object.
+* `+Document+` - Iframe DOM document object.
 
 [[getelement]]
 === getElement
@@ -504,7 +504,7 @@ Returns the target element/textarea that got replaced with a TinyMCE editor inst
 
 ==== Return value
 
-* [.return-type]#Element# - HTML DOM element for the replaced element.
+* `+Element+` - HTML DOM element for the replaced element.
 
 [[getlang]]
 === getLang
@@ -515,8 +515,8 @@ Returns a language pack item by name/key.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name/key to get from the language pack.
-* [.param-name]#defaultVal# [.param-type]#(String)# - Optional default value to retrieve.
+* `+name+` `+(String)+` - Name/key to get from the language pack.
+* `+defaultVal+` `+(String)+` - Optional default value to retrieve.
 
 [[getparam]]
 === getParam
@@ -527,7 +527,7 @@ Returns a configuration parameter by name.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Returns a specific config value from the currently active editor
 var someval = tinymce.activeEditor.getParam('myvalue');
@@ -538,13 +538,13 @@ var someval2 = tinymce.get('my_editor').getParam('myvalue');
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Configruation parameter to retrieve.
-* [.param-name]#defaultVal# [.param-type]#(String)# - Optional default value to return.
-* [.param-name]#type# [.param-type]#(String)# - Optional type parameter.
+* `+name+` `+(String)+` - Configruation parameter to retrieve.
+* `+defaultVal+` `+(String)+` - Optional default value to return.
+* `+type+` `+(String)+` - Optional type parameter.
 
 ==== Return value
 
-* [.return-type]#String# - Configuration parameter value or default value.
+* `+String+` - Configuration parameter value or default value.
 
 [[getwin]]
 === getWin
@@ -555,7 +555,7 @@ Returns the iframes window object.
 
 ==== Return value
 
-* [.return-type]#Window# - Iframe DOM window object.
+* `+Window+` - Iframe DOM window object.
 
 [[haseventlisteners]]
 === hasEventListeners
@@ -566,11 +566,11 @@ Returns true/false if the object has a event of the specified name.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to check for.
+* `+name+` `+(String)+` - Name of the event to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the event exists or not.
+* `+Boolean+` - true/false if the event exists or not.
 
 [[hasfocus]]
 === hasFocus
@@ -581,7 +581,7 @@ Returns true/false if the editor has real keyboard focus.
 
 ==== Return value
 
-* [.return-type]#Boolean# - Current focus state of the editor.
+* `+Boolean+` - Current focus state of the editor.
 
 [[hide]]
 === hide
@@ -599,8 +599,8 @@ Inserts content at caret position.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to insert.
-* [.param-name]#args# [.param-type]#(Object)# - Optional args to pass to insert call.
+* `+content+` `+(String)+` - Content to insert.
+* `+args+` `+(Object)+` - Optional args to pass to insert call.
 
 [[isdirty]]
 === isDirty
@@ -611,7 +611,7 @@ Returns true/false if the editor is dirty or not. It will get dirty if the user 
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 if (tinymce.activeEditor.isDirty())
     alert("You must save your contents.");
@@ -619,7 +619,7 @@ if (tinymce.activeEditor.isDirty())
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false if the editor is dirty or not. It will get dirty if the user has made modifications to the contents.
+* `+Boolean+` - True/false if the editor is dirty or not. It will get dirty if the user has made modifications to the contents.
 
 [[ishidden]]
 === isHidden
@@ -630,7 +630,7 @@ Returns true/false if the editor is hidden or not.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false if the editor is hidden or not.
+* `+Boolean+` - True/false if the editor is hidden or not.
 
 [[load]]
 === load
@@ -641,11 +641,11 @@ Loads contents from the textarea or div element that got converted into an edito
 
 ==== Parameters
 
-* [.param-name]#args# [.param-type]#(Object)# - Optional content object, this gets passed around through the whole load process.
+* `+args+` `+(Object)+` - Optional content object, this gets passed around through the whole load process.
 
 ==== Return value
 
-* [.return-type]#String# - HTML string that got set into the editor.
+* `+String+` - HTML string that got set into the editor.
 
 [[nodechanged]]
 === nodeChanged
@@ -656,7 +656,7 @@ Dispatches out a onNodeChange event to all observers. This method should be call
 
 ==== Parameters
 
-* [.param-name]#args# [.param-type]#(Object)# - Optional args to pass to NodeChange event handlers.
+* `+args+` `+(Object)+` - Optional args to pass to NodeChange event handlers.
 
 [[off]]
 === off
@@ -667,7 +667,7 @@ Unbinds an event listener to a specific event by name. Consult the link:/docs/ad
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Unbind specific callback
 instance.off('event', handler);
@@ -681,12 +681,12 @@ instance.off();
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String?)# - Name of the event to unbind.
-* [.param-name]#callback# [.param-type]#(callback?)# - Callback to unbind.
+* `+name+` `+(String?)+` - Name of the event to unbind.
+* `+callback+` `+(callback?)+` - Callback to unbind.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[on]]
 === on
@@ -697,7 +697,7 @@ Binds an event listener to a specific event by name. Consult the link:/docs/adva
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 instance.on('event', function(e) {
     // Callback logic
@@ -706,13 +706,13 @@ instance.on('event', function(e) {
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Event name or space separated list of events to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to be executed when the event occurs.
-* [.param-name]#first# [.param-type]#(Boolean)# - Optional flag if the event should be prepended. Use this with care.
+* `+name+` `+(String)+` - Event name or space separated list of events to bind.
+* `+callback+` `+(callback)+` - Callback to be executed when the event occurs.
+* `+first+` `+(Boolean)+` - Optional flag if the event should be prepended. Use this with care.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[once]]
 === once
@@ -723,12 +723,12 @@ Bind the event callback and once it fires the callback is removed. Consult the l
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind.
-* [.param-name]#callback# [.param-type]#(callback)# - Callback to bind only once.
+* `+name+` `+(String)+` - Name of the event to bind.
+* `+callback+` `+(callback)+` - Callback to bind only once.
 
 ==== Return value
 
-* [.return-type]#Object# - Current class instance.
+* `+Object+` - Current class instance.
 
 [[querycommandstate]]
 === queryCommandState
@@ -739,11 +739,11 @@ Returns a command specific state, for example if bold is enabled or not.
 
 ==== Parameters
 
-* [.param-name]#cmd# [.param-type]#(string)# - Command to query state from.
+* `+cmd+` `+(string)+` - Command to query state from.
 
 ==== Return value
 
-* [.return-type]#Boolean# - Command specific state, for example if bold is enabled or not.
+* `+Boolean+` - Command specific state, for example if bold is enabled or not.
 
 [[querycommandsupported]]
 === queryCommandSupported
@@ -754,11 +754,11 @@ Returns true/false if the command is supported or not.
 
 ==== Parameters
 
-* [.param-name]#cmd# [.param-type]#(String)# - Command that we check support for.
+* `+cmd+` `+(String)+` - Command that we check support for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the command is supported or not.
+* `+Boolean+` - true/false if the command is supported or not.
 
 [[querycommandvalue]]
 === queryCommandValue
@@ -769,11 +769,11 @@ Returns a command specific value, for example the current font size.
 
 ==== Parameters
 
-* [.param-name]#cmd# [.param-type]#(string)# - Command to query value from.
+* `+cmd+` `+(string)+` - Command to query value from.
 
 ==== Return value
 
-* [.return-type]#Object# - Command specific value, for example the current font size.
+* `+Object+` - Command specific value, for example the current font size.
 
 [[remove]]
 === remove
@@ -798,11 +798,11 @@ Saves the contents from a editor out to the textarea or div element that got con
 
 ==== Parameters
 
-* [.param-name]#args# [.param-type]#(Object)# - Optional content object, this gets passed around through the whole save process.
+* `+args+` `+(Object)+` - Optional content object, this gets passed around through the whole save process.
 
 ==== Return value
 
-* [.return-type]#String# - HTML string that got set into the textarea/div.
+* `+String+` - HTML string that got set into the textarea/div.
 
 [[setcontent]]
 === setContent
@@ -813,7 +813,7 @@ Sets the specified content to the editor instance, this will cleanup the content
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sets the HTML contents of the activeEditor editor
 tinymce.activeEditor.setContent('<span>some</span> html');
@@ -830,12 +830,12 @@ tinymce.activeEditor.setContent('[b]some[/b] html', {format: 'bbcode'});
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to set to editor, normally HTML contents but can be other formats as well.
-* [.param-name]#args# [.param-type]#(Object)# - Optional content object, this gets passed around through the whole set process.
+* `+content+` `+(String)+` - Content to set to editor, normally HTML contents but can be other formats as well.
+* `+args+` `+(Object)+` - Optional content object, this gets passed around through the whole set process.
 
 ==== Return value
 
-* [.return-type]#String# - HTML string that got set into the editor.
+* `+String+` - HTML string that got set into the editor.
 
 [[setdirty]]
 === setDirty
@@ -846,7 +846,7 @@ Explicitly sets the dirty state. This will fire the dirty event if the editor di
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 function ajaxSave() {
     var editor = tinymce.get('elm1');
@@ -860,7 +860,7 @@ function ajaxSave() {
 
 ==== Parameters
 
-* [.param-name]#state# [.param-type]#(Boolean)# - True/false if the editor is considered dirty.
+* `+state+` `+(Boolean)+` - True/false if the editor is considered dirty.
 
 [[setmode]]
 === setMode
@@ -871,7 +871,7 @@ Sets the editor mode. Mode can be for example "design", "code" or "readonly".
 
 ==== Parameters
 
-* [.param-name]#mode# [.param-type]#(String)# - Mode to set the editor in.
+* `+mode+` `+(String)+` - Mode to set the editor in.
 
 [[setprogressstate]]
 === setProgressState
@@ -882,7 +882,7 @@ Sets the progress state, this will display a throbber/progess for the editor. Th
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Show progress for the active editor
 tinymce.activeEditor.setProgressState(true);
@@ -896,12 +896,12 @@ tinymce.activeEditor.setProgressState(true, 3000);
 
 ==== Parameters
 
-* [.param-name]#state# [.param-type]#(Boolean)# - Boolean state if the progress should be shown or hidden.
-* [.param-name]#time# [.param-type]#(Number)# - Optional time to wait before the progress gets shown.
+* `+state+` `+(Boolean)+` - Boolean state if the progress should be shown or hidden.
+* `+time+` `+(Number)+` - Optional time to wait before the progress gets shown.
 
 ==== Return value
 
-* [.return-type]#Boolean# - Same as the input state.
+* `+Boolean+` - Same as the input state.
 
 [[show]]
 === show
@@ -919,11 +919,11 @@ Translates the specified string by replacing variables with language pack items 
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - String to translate by the language pack data.
+* `+text+` `+(String)+` - String to translate by the language pack data.
 
 ==== Return value
 
-* [.return-type]#String# - Translated string.
+* `+String+` - Translated string.
 
 [[uploadimages]]
 === uploadImages
@@ -934,8 +934,8 @@ Uploads all data uri/blob uri images in the editor contents to server.
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Optional callback with images and status for each image.
+* `+callback+` `+(function)+` - Optional callback with images and status for each image.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.util/tinymce.util.promise.html[[.return-type]#tinymce.util.Promise#] - Promise instance.
+* link:{baseurl}/api/tinymce.util/tinymce.util.promise.html[`+tinymce.util.Promise+`] - Promise instance.

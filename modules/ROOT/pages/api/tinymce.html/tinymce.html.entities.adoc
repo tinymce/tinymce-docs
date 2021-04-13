@@ -5,7 +5,7 @@ Entity encoder class.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#decode[decode()] |Decodes the specified string, this will replace entities with raw UTF characters. |link:{baseurl}/api/tinymce.html/tinymce.html.entities.html[tinymce.html.Entities]
@@ -28,13 +28,13 @@ Decodes the specified string, this will replace entities with raw UTF characters
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - Text to entity decode.
+* `+text+` `+(String)+` - Text to entity decode.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#String# - Entity decoded string.
+* `+String+` - Entity decoded string.
 
 [[encodeallraw]]
 === encodeAllRaw
@@ -45,11 +45,11 @@ Encoded the specified text with both the attributes and text entities. This func
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - Text to encode.
+* `+text+` `+(String)+` - Text to encode.
 
 ==== Return value
 
-* [.return-type]#String# - Entity encoded text.
+* `+String+` - Entity encoded text.
 
 [[encodenamed]]
 === encodeNamed
@@ -60,13 +60,13 @@ Encodes the specified string using named entities. The core entities will be enc
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - Text to encode.
-* [.param-name]#attr# [.param-type]#(Boolean)# - Optional flag to specify if the text is attribute contents.
-* [.param-name]#entities# [.param-type]#(Object)# - Optional parameter with entities to use.
+* `+text+` `+(String)+` - Text to encode.
+* `+attr+` `+(Boolean)+` - Optional flag to specify if the text is attribute contents.
+* `+entities+` `+(Object)+` - Optional parameter with entities to use.
 
 ==== Return value
 
-* [.return-type]#String# - Entity encoded text.
+* `+String+` - Entity encoded text.
 
 [[encodenumeric]]
 === encodeNumeric
@@ -77,12 +77,12 @@ Encodes the specified string using numeric entities. The core entities will be e
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - Text to encode.
-* [.param-name]#attr# [.param-type]#(Boolean)# - Optional flag to specify if the text is attribute contents.
+* `+text+` `+(String)+` - Text to encode.
+* `+attr+` `+(Boolean)+` - Optional flag to specify if the text is attribute contents.
 
 ==== Return value
 
-* [.return-type]#String# - Entity encoded text.
+* `+String+` - Entity encoded text.
 
 [[encoderaw]]
 === encodeRaw
@@ -93,12 +93,12 @@ Encodes the specified string using raw entities. This means only the required XM
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - Text to encode.
-* [.param-name]#attr# [.param-type]#(Boolean)# - Optional flag to specify if the text is attribute contents.
+* `+text+` `+(String)+` - Text to encode.
+* `+attr+` `+(Boolean)+` - Optional flag to specify if the text is attribute contents.
 
 ==== Return value
 
-* [.return-type]#String# - Entity encoded text.
+* `+String+` - Entity encoded text.
 
 [[getencodefunc]]
 === getEncodeFunc
@@ -109,9 +109,9 @@ Returns an encode function based on the name(s) and it's optional entities.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Comma separated list of encoders for example named,numeric.
-* [.param-name]#entities# [.param-type]#(String)# - Optional parameter with entities to use instead of the built in set.
+* `+name+` `+(String)+` - Comma separated list of encoders for example named,numeric.
+* `+entities+` `+(String)+` - Optional parameter with entities to use instead of the built in set.
 
 ==== Return value
 
-* [.return-type]#function# - Encode function to be used.
+* `+function+` - Encode function to be used.

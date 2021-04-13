@@ -8,16 +8,16 @@ This layout manager works similar to the CSS flex box.
 [cols=",,,",options="header",]
 |===
 |name |type |summary |defined by
-|align |[.param-type]#String# |start|end|center|stretch |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
-|direction |[.param-type]#String# |row|row-reverse|column|column-reverse |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
-|flex |[.param-type]#Number# |A positive-number to flex by. |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
-|pack |[.param-type]#String# |start|end|justify |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
+|align |`+String+` |start|end|center|stretch |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
+|direction |`+String+` |row|row-reverse|column|column-reverse |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
+|flex |`+Number+` |A positive-number to flex by. |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
+|pack |`+String+` |start|end|justify |link:{baseurl}/api/tinymce.ui/tinymce.ui.flexlayout.html[tinymce.ui.FlexLayout]
 |===
 
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#layout[Layout()] |Constructs a layout instance with the specified settings. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
@@ -26,7 +26,7 @@ This layout manager works similar to the CSS flex box.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#postrender[postRender()] |This method gets invoked after the layout renders the controls. |link:{baseurl}/api/tinymce.ui/tinymce.ui.layout.html[tinymce.ui.Layout]
@@ -47,7 +47,7 @@ Constructs a layout instance with the specified settings.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Name/value object with settings.
+* `+settings+` `+(Object)+` - Name/value object with settings.
 
 == Methods
 
@@ -60,7 +60,7 @@ This method gets invoked after the layout renders the controls.
 
 ==== Parameters
 
-* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container instance to postRender.
+* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to postRender.
 
 [[prerender]]
 === preRender
@@ -71,7 +71,7 @@ This method gets invoked before the layout renders the controls.
 
 ==== Parameters
 
-* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container instance to preRender.
+* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to preRender.
 
 [[recalc]]
 === recalc
@@ -82,7 +82,7 @@ Recalculates the positions of the controls in the specified container.
 
 ==== Parameters
 
-* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container instance to recalc.
+* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container instance to recalc.
 
 [[renderhtml]]
 === renderHtml
@@ -93,4 +93,4 @@ Renders the specified container and any layout specific HTML.
 
 ==== Parameters
 
-* [.param-name]#container# link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[[.param-type]#(tinymce.ui.Container)#] - Container to render HTML for.
+* `+container+` link:{baseurl}/api/tinymce.ui/tinymce.ui.container.html[`+(tinymce.ui.Container)+`] - Container to render HTML for.

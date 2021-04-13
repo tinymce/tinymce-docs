@@ -5,7 +5,7 @@ This class handles text and control selection it's an crossbrowser utility class
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Getting the currently selected node for the active editor
 alert(tinymce.activeEditor.selection.getNode().nodeName);
@@ -14,7 +14,7 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#selection[Selection()] |Constructs a new selection instance. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
@@ -23,7 +23,7 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#collapse[collapse()] |Collapse the selection to start or end of range. |link:{baseurl}/api/tinymce.dom/tinymce.dom.selection.html[tinymce.dom.Selection]
@@ -56,10 +56,10 @@ Constructs a new selection instance.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#dom# link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[[.param-type]#(tinymce.dom.DOMUtils)#] - DOMUtils object reference.
-* [.param-name]#win# [.param-type]#(Window)# - Window to bind the selection object to.
-* [.param-name]#serializer# link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[[.param-type]#(tinymce.dom.Serializer)#] - DOM serialization class to use for getContent.
-* [.param-name]#editor# link:{baseurl}/api/tinymce/tinymce.editor.html[[.param-type]#(tinymce.Editor)#] - Editor instance of the selection.
+* `+dom+` link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[`+(tinymce.dom.DOMUtils)+`] - DOMUtils object reference.
+* `+win+` `+(Window)+` - Window to bind the selection object to.
+* `+serializer+` link:{baseurl}/api/tinymce.dom/tinymce.dom.serializer.html[`+(tinymce.dom.Serializer)+`] - DOM serialization class to use for getContent.
+* `+editor+` link:{baseurl}/api/tinymce/tinymce.editor.html[`+(tinymce.Editor)+`] - Editor instance of the selection.
 
 == Methods
 
@@ -72,7 +72,7 @@ Collapse the selection to start or end of range.
 
 ==== Parameters
 
-* [.param-name]#toStart# [.param-type]#(Boolean)# - Optional boolean state if to collapse to end or not. Defaults to false.
+* `+toStart+` `+(Boolean)+` - Optional boolean state if to collapse to end or not. Defaults to false.
 
 [[getbookmark]]
 === getBookmark
@@ -84,7 +84,7 @@ Returns a bookmark location for the current selection. This bookmark object can 
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Stores a bookmark of the current selection
 var bm = tinymce.activeEditor.selection.getBookmark();
@@ -97,14 +97,14 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 
 ==== Parameters
 
-* [.param-name]#type# [.param-type]#(Number)# - Optional state if the bookmark should be simple or not. Default is complex.
-* [.param-name]#normalized# [.param-type]#(Boolean)# - Optional state that enables you to get a position that it would be after normalization.
+* `+type+` `+(Number)+` - Optional state if the bookmark should be simple or not. Default is complex.
+* `+normalized+` `+(Boolean)+` - Optional state that enables you to get a position that it would be after normalization.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Object# - Bookmark object, use moveToBookmark with this object to restore the selection.
+* `+Object+` - Bookmark object, use moveToBookmark with this object to restore the selection.
 
 [[getcontent]]
 === getContent
@@ -115,7 +115,7 @@ Returns the selected contents using the DOM serializer passed in to this class.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Alerts the currently selected contents
 alert(tinymce.activeEditor.selection.getContent());
@@ -126,11 +126,11 @@ alert(tinymce.activeEditor.selection.getContent({format: 'text'}));
 
 ==== Parameters
 
-* [.param-name]#args# [.param-type]#(Object)# - Optional settings class with for example output format text or html.
+* `+args+` `+(Object)+` - Optional settings class with for example output format text or html.
 
 ==== Return value
 
-* [.return-type]#String# - Selected contents in for example HTML format.
+* `+String+` - Selected contents in for example HTML format.
 
 [[getend]]
 === getEnd
@@ -141,11 +141,11 @@ Returns the end element of a selection range. If the end is in a text node the p
 
 ==== Parameters
 
-* [.param-name]#real# [.param-type]#(Boolean)# - Optional state to get the real parent when the selection is collapsed not the closest element.
+* `+real+` `+(Boolean)+` - Optional state to get the real parent when the selection is collapsed not the closest element.
 
 ==== Return value
 
-* [.return-type]#Element# - End element of selection range.
+* `+Element+` - End element of selection range.
 
 [[getnode]]
 === getNode
@@ -156,7 +156,7 @@ Returns the currently selected element or the common ancestor element for both s
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Alerts the currently selected elements node name
 alert(tinymce.activeEditor.selection.getNode().nodeName);
@@ -164,7 +164,7 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 
 ==== Return value
 
-* [.return-type]#Element# - Currently selected element or common ancestor element.
+* `+Element+` - Currently selected element or common ancestor element.
 
 [[getrng]]
 === getRng
@@ -175,7 +175,7 @@ Returns the browsers internal range object.
 
 ==== Return value
 
-* [.return-type]#Range# - Internal browser range object.
+* `+Range+` - Internal browser range object.
 
 [[getsel]]
 === getSel
@@ -186,7 +186,7 @@ Returns the browsers internal selection object.
 
 ==== Return value
 
-* [.return-type]#Selection# - Internal browser selection object.
+* `+Selection+` - Internal browser selection object.
 
 [[getstart]]
 === getStart
@@ -197,11 +197,11 @@ Returns the start element of a selection range. If the start is in a text node t
 
 ==== Parameters
 
-* [.param-name]#real# [.param-type]#(Boolean)# - Optional state to get the real parent when the selection is collapsed not the closest element.
+* `+real+` `+(Boolean)+` - Optional state to get the real parent when the selection is collapsed not the closest element.
 
 ==== Return value
 
-* [.return-type]#Element# - Start element of selection range.
+* `+Element+` - Start element of selection range.
 
 [[iscollapsed]]
 === isCollapsed
@@ -212,7 +212,7 @@ Returns true/false if the selection range is collapsed or not. Collapsed means i
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false state if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection.
+* `+Boolean+` - true/false state if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection.
 
 [[movetobookmark]]
 === moveToBookmark
@@ -223,7 +223,7 @@ Restores the selection to the specified bookmark.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Stores a bookmark of the current selection
 var bm = tinymce.activeEditor.selection.getBookmark();
@@ -236,11 +236,11 @@ tinymce.activeEditor.selection.moveToBookmark(bm);
 
 ==== Parameters
 
-* [.param-name]#bookmark# [.param-type]#(Object)# - Bookmark to restore selection from.
+* `+bookmark+` `+(Object)+` - Bookmark to restore selection from.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if it was successful or not.
+* `+Boolean+` - true/false if it was successful or not.
 
 [[select]]
 === select
@@ -251,7 +251,7 @@ Selects the specified element. This will place the start and end of the selectio
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Select the first paragraph in the active editor
 tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select('p')[0]);
@@ -259,12 +259,12 @@ tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select('p')[0]);
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - HTML DOM element to select.
-* [.param-name]#content# [.param-type]#(Boolean)# - Optional bool state if the contents should be selected or not on non IE browser.
+* `+node+` `+(Element)+` - HTML DOM element to select.
+* `+content+` `+(Boolean)+` - Optional bool state if the contents should be selected or not on non IE browser.
 
 ==== Return value
 
-* [.return-type]#Element# - Selected element the same element as the one that got passed in.
+* `+Element+` - Selected element the same element as the one that got passed in.
 
 [[selectorchanged]]
 === selectorChanged
@@ -275,8 +275,8 @@ Executes callback when the current selection starts/stops matching the specified
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - CSS selector to check for.
-* [.param-name]#callback# [.param-type]#(function)# - Callback with state and args when the selector is matches or not.
+* `+selector+` `+(String)+` - CSS selector to check for.
+* `+callback+` `+(function)+` - Callback with state and args when the selector is matches or not.
 
 [[setcontent]]
 === setContent
@@ -287,7 +287,7 @@ Sets the current selection to the specified content. If any contents is selected
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Inserts some HTML contents at the current selection
 tinymce.activeEditor.selection.setContent('<strong>Some contents</strong>');
@@ -295,8 +295,8 @@ tinymce.activeEditor.selection.setContent('<strong>Some contents</strong>');
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - HTML contents to set could also be other formats depending on settings.
-* [.param-name]#args# [.param-type]#(Object)# - Optional settings object with for example data format.
+* `+content+` `+(String)+` - HTML contents to set could also be other formats depending on settings.
+* `+args+` `+(Object)+` - Optional settings object with for example data format.
 
 [[setcursorlocation]]
 === setCursorLocation
@@ -307,8 +307,8 @@ Move the selection cursor range to the specified node and offset. If there is no
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Node)# - Optional node to put the cursor in.
-* [.param-name]#offset# [.param-type]#(Number)# - Optional offset from the start of the node to put the cursor at.
+* `+node+` `+(Node)+` - Optional node to put the cursor in.
+* `+offset+` `+(Number)+` - Optional offset from the start of the node to put the cursor at.
 
 [[setnode]]
 === setNode
@@ -319,7 +319,7 @@ Sets the current selection to the specified DOM element.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Inserts a DOM node at current selection/caret location
 tinymce.activeEditor.selection.setNode(tinymce.activeEditor.dom.create('img', {src: 'some.gif', title: 'some title'}));
@@ -327,11 +327,11 @@ tinymce.activeEditor.selection.setNode(tinymce.activeEditor.dom.create('img', {s
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element to set as the contents of the selection.
+* `+elm+` `+(Element)+` - Element to set as the contents of the selection.
 
 ==== Return value
 
-* [.return-type]#Element# - Returns the element that got passed in.
+* `+Element+` - Returns the element that got passed in.
 
 [[setrng]]
 === setRng
@@ -342,5 +342,5 @@ Changes the selection to the specified DOM range.
 
 ==== Parameters
 
-* [.param-name]#rng# [.param-type]#(Range)# - Range to select.
-* [.param-name]#forward# [.param-type]#(Boolean)# - Optional boolean if the selection is forwards or backwards.
+* `+rng+` `+(Range)+` - Range to select.
+* `+forward+` `+(Boolean)+` - Optional boolean if the selection is forwards or backwards.

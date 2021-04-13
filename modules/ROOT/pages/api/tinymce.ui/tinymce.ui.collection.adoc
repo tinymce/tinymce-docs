@@ -5,7 +5,7 @@ Control collection, this class contains control instances and it enables you to 
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 someCollection.show().disabled(true);
 ----
@@ -13,7 +13,7 @@ someCollection.show().disabled(true);
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#collection[Collection()] |Constructor for the collection. |link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[tinymce.ui.Collection]
@@ -22,7 +22,7 @@ someCollection.show().disabled(true);
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#active[active()] |Sets/gets the active state on the items in the current collection. |link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[tinymce.ui.Collection]
@@ -65,7 +65,7 @@ Constructor for the collection.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Optional array with items to add.
+* `+items+` `+(Array)+` - Optional array with items to add.
 
 == Methods
 
@@ -80,7 +80,7 @@ Sets/gets the active state on the items in the current collection.
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance or active state of the first item on a get operation.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance or active state of the first item on a get operation.
 
 [[add]]
 === add
@@ -91,11 +91,11 @@ Adds new items to the control collection.
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array if items to add to collection.
+* `+items+` `+(Array)+` - Array if items to add to collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[addclass]]
 === addClass
@@ -106,11 +106,11 @@ Adds a class to all items in the collection.
 
 ==== Parameters
 
-* [.param-name]#cls# [.param-type]#(String)# - Class to add to each item.
+* `+cls+` `+(String)+` - Class to add to each item.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[disabled]]
 === disabled
@@ -121,7 +121,7 @@ Sets/gets the disabled state on the items in the current collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance or disabled state of the first item on a get operation.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance or disabled state of the first item on a get operation.
 
 [[each]]
 === each
@@ -132,11 +132,11 @@ Executes the specified callback on each item in collection.
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback to execute for each item in collection.
+* `+callback+` `+(function)+` - Callback to execute for each item in collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[eq]]
 === eq
@@ -147,11 +147,11 @@ Makes the current collection equal to the specified index.
 
 ==== Parameters
 
-* [.param-name]#index# [.param-type]#(Number)# - Index of the item to set the collection to.
+* `+index+` `+(Number)+` - Index of the item to set the collection to.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection.
 
 [[exec]]
 === exec
@@ -163,19 +163,19 @@ Executes the specific function name with optional arguments an all items in coll
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 collection.exec("myMethod", arg1, arg2, arg3);
 ----
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the function to execute.
-* [.param-name]#...# [.param-type]#(Object)# - Multiple arguments to pass to each function.
+* `+name+` `+(String)+` - Name of the function to execute.
+* `+...+` `+(Object)+` - Multiple arguments to pass to each function.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection.
 
 [[filter]]
 === filter
@@ -186,11 +186,11 @@ Filters the collection item based on the specified selector expression or select
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Selector expression to filter items by.
+* `+selector+` `+(String)+` - Selector expression to filter items by.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Collection containing the filtered items.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Collection containing the filtered items.
 
 [[fire]]
 === fire
@@ -201,12 +201,12 @@ Fires the specified event by name and arguments on the control. This will execut
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
-* [.param-name]#args# [.param-type]#(Object)# - Optional arguments to pass to the event.
+* `+name+` `+(String)+` - Name of the event to fire.
+* `+args+` `+(Object)+` - Optional arguments to pass to the event.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[hasclass]]
 === hasClass
@@ -217,11 +217,11 @@ Returns true/false if the class exists or not.
 
 ==== Parameters
 
-* [.param-name]#cls# [.param-type]#(String)# - Class to check for.
+* `+cls+` `+(String)+` - Class to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false state if the class exists or not.
+* `+Boolean+` - true/false state if the class exists or not.
 
 [[hide]]
 === hide
@@ -232,7 +232,7 @@ Hides the items in the current collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[indexof]]
 === indexOf
@@ -243,11 +243,11 @@ Finds the index of the specified control or return -1 if it isn't in the collect
 
 ==== Parameters
 
-* [.param-name]#ctrl# [.param-type]#(Control)# - Control instance to look for.
+* `+ctrl+` `+(Control)+` - Control instance to look for.
 
 ==== Return value
 
-* [.return-type]#Number# - Index of the specified control or -1.
+* `+Number+` - Index of the specified control or -1.
 
 [[name]]
 === name
@@ -258,7 +258,7 @@ Sets/gets the name contents of the items in the current collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance or name value of the first item on a get operation.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance or name value of the first item on a get operation.
 
 [[off]]
 === off
@@ -269,12 +269,12 @@ Unbinds the specified event and optionally a specific callback. If you omit the 
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Optional name for the event to unbind.
-* [.param-name]#callback# [.param-type]#(function)# - Optional callback function to unbind.
+* `+name+` `+(String)+` - Optional name for the event to unbind.
+* `+callback+` `+(function)+` - Optional callback function to unbind.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[on]]
 === on
@@ -285,12 +285,12 @@ Binds a callback to the specified event. This event can both be native browser e
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind. For example "click".
-* [.param-name]#callback# [.param-type]#(String)# - Callback function to execute once the event occurs.
+* `+name+` `+(String)+` - Name of the event to bind. For example "click".
+* `+callback+` `+(String)+` - Callback function to execute once the event occurs.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[prop]]
 === prop
@@ -301,12 +301,12 @@ Sets/gets the specific property on the items in the collection. The same as exec
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Property name to get/set.
-* [.param-name]#value# [.param-type]#(Object)# - Optional object value to set.
+* `+name+` `+(String)+` - Property name to get/set.
+* `+value+` `+(Object)+` - Optional object value to set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance or value of the first item on a get operation.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance or value of the first item on a get operation.
 
 [[remove]]
 === remove
@@ -317,7 +317,7 @@ Remove all items from collection and DOM.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection.
 
 [[removeclass]]
 === removeClass
@@ -328,11 +328,11 @@ Removes the specified class from all items in collection.
 
 ==== Parameters
 
-* [.param-name]#cls# [.param-type]#(String)# - Class to remove from each item.
+* `+cls+` `+(String)+` - Class to remove from each item.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[reverse]]
 === reverse
@@ -343,7 +343,7 @@ Returns a new collection of the contents in reverse order.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Collection instance with reversed items.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Collection instance with reversed items.
 
 [[selected]]
 === selected
@@ -354,7 +354,7 @@ Sets/gets the selected state on the items in the current collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance or selected state of the first item on a get operation.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance or selected state of the first item on a get operation.
 
 [[set]]
 === set
@@ -365,11 +365,11 @@ Sets the contents of the collection. This will remove any existing items and rep
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array with items to set into the Collection.
+* `+items+` `+(Array)+` - Array with items to set into the Collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Collection instance.
 
 [[show]]
 === show
@@ -380,7 +380,7 @@ Shows the items in the current collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance.
 
 [[slice]]
 === slice
@@ -391,12 +391,12 @@ Slices the items within the collection.
 
 ==== Parameters
 
-* [.param-name]#index# [.param-type]#(Number)# - Index to slice at.
-* [.param-name]#len# [.param-type]#(Number)# - Optional length to slice.
+* `+index+` `+(Number)+` - Index to slice at.
+* `+len+` `+(Number)+` - Optional length to slice.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection.
 
 [[text]]
 === text
@@ -407,7 +407,7 @@ Sets/gets the text contents of the items in the current collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance or text value of the first item on a get operation.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance or text value of the first item on a get operation.
 
 [[toarray]]
 === toArray
@@ -418,7 +418,7 @@ Returns an JavaScript array object of the contents inside the collection.
 
 ==== Return value
 
-* [.return-type]#Array# - Array with all items from collection.
+* `+Array+` - Array with all items from collection.
 
 [[visible]]
 === visible
@@ -429,4 +429,4 @@ Sets/gets the selected state on the items in the current collection.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[[.return-type]#tinymce.ui.Collection#] - Current collection instance or visible state of the first item on a get operation.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.collection.html[`+tinymce.ui.Collection+`] - Current collection instance or visible state of the first item on a get operation.

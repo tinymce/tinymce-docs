@@ -5,7 +5,7 @@ This class contains a few utility methods for ranges.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#compareranges[compareRanges()] |Compares two ranges and checks if they are equal. |link:{baseurl}/api/tinymce.dom/tinymce.dom.rangeutils.html[tinymce.dom.RangeUtils]
@@ -24,14 +24,14 @@ Compares two ranges and checks if they are equal.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#rng1# [.param-type]#(DOMRange)# - First range to compare.
-* [.param-name]#rng2# [.param-type]#(DOMRange)# - First range to compare.
+* `+rng1+` `+(DOMRange)+` - First range to compare.
+* `+rng2+` `+(DOMRange)+` - First range to compare.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Boolean# - true/false if the ranges are equal.
+* `+Boolean+` - true/false if the ranges are equal.
 
 [[getcaretrangefrompoint]]
 === getCaretRangeFromPoint
@@ -42,10 +42,10 @@ Gets the caret range for the given x/y location.
 
 ==== Parameters
 
-* [.param-name]#clientX# [.param-type]#(Number)# - X coordinate for range
-* [.param-name]#clientY# [.param-type]#(Number)# - Y coordinate for range
-* [.param-name]#doc# [.param-type]#(Document)# - Document that x/y are relative to
+* `+clientX+` `+(Number)+` - X coordinate for range
+* `+clientY+` `+(Number)+` - Y coordinate for range
+* `+doc+` `+(Document)+` - Document that x/y are relative to
 
 ==== Return value
 
-* [.return-type]#Range# - caret range
+* `+Range+` - caret range

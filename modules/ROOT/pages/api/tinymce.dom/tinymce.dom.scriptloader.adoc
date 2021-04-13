@@ -5,7 +5,7 @@ This class handles asynchronous/synchronous loading of JavaScript files it will 
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Load a script from a specific URL using the global script loader
 tinymce.ScriptLoader.load('somescript.js');
@@ -30,7 +30,7 @@ scriptLoader.loadQueue(function() {
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds a specific script to the load queue of the script loader. |link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader.html[tinymce.dom.ScriptLoader]
@@ -53,10 +53,10 @@ Adds a specific script to the load queue of the script loader.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#url# [.param-type]#(String)# - Absolute URL to script to add.
-* [.param-name]#success# [.param-type]#(function)# - Optional success callback function to execute when the script loades successfully.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute callback in.
-* [.param-name]#failure# [.param-type]#(function)# - Optional failure callback function to execute when the script failed to load.
+* `+url+` `+(String)+` - Absolute URL to script to add.
+* `+success+` `+(function)+` - Optional success callback function to execute when the script loades successfully.
+* `+scope+` `+(Object)+` - Optional scope to execute callback in.
+* `+failure+` `+(function)+` - Optional failure callback function to execute when the script failed to load.
 
 [[isdone]]
 === isDone
@@ -67,13 +67,13 @@ Returns true/false if a script has been loaded or not.
 
 ==== Parameters
 
-* [.param-name]#url# [.param-type]#(String)# - URL to check for.
+* `+url+` `+(String)+` - URL to check for.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Boolean# - true/false if the URL is loaded.
+* `+Boolean+` - true/false if the URL is loaded.
 
 [[load]]
 === load
@@ -84,9 +84,9 @@ Loads a specific script directly without adding it to the load queue.
 
 ==== Parameters
 
-* [.param-name]#url# [.param-type]#(String)# - Absolute URL to script to add.
-* [.param-name]#callback# [.param-type]#(function)# - Optional success callback function when the script loaded successfully.
-* [.param-name]#callback# [.param-type]#(function)# - Optional failure callback function when the script failed to load.
+* `+url+` `+(String)+` - Absolute URL to script to add.
+* `+callback+` `+(function)+` - Optional success callback function when the script loaded successfully.
+* `+callback+` `+(function)+` - Optional failure callback function when the script failed to load.
 
 [[loadqueue]]
 === loadQueue
@@ -97,9 +97,9 @@ Starts the loading of the queue.
 
 ==== Parameters
 
-* [.param-name]#success# [.param-type]#(function)# - Optional callback to execute when all queued items are loaded.
-* [.param-name]#failure# [.param-type]#(function)# - Optional callback to execute when queued items failed to load.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the callback in.
+* `+success+` `+(function)+` - Optional callback to execute when all queued items are loaded.
+* `+failure+` `+(function)+` - Optional callback to execute when queued items failed to load.
+* `+scope+` `+(Object)+` - Optional scope to execute the callback in.
 
 [[loadscripts]]
 === loadScripts
@@ -110,10 +110,10 @@ Loads the specified queue of files and executes the callback ones they are loade
 
 ==== Parameters
 
-* [.param-name]#scripts# [.param-type]#(Array)# - Array of queue items to load.
-* [.param-name]#callback# [.param-type]#(function)# - Optional callback to execute when scripts is loaded successfully.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute callback in.
-* [.param-name]#callback# [.param-type]#(function)# - Optional callback to execute if scripts failed to load.
+* `+scripts+` `+(Array)+` - Array of queue items to load.
+* `+callback+` `+(function)+` - Optional callback to execute when scripts is loaded successfully.
+* `+scope+` `+(Object)+` - Optional scope to execute callback in.
+* `+callback+` `+(function)+` - Optional callback to execute if scripts failed to load.
 
 [[markdone]]
 === markDone
@@ -124,4 +124,4 @@ Marks a specific script to be loaded. This can be useful if a script got loaded 
 
 ==== Parameters
 
-* [.param-name]#url# [.param-type]#(string)# - Absolute URL to the script to mark as loaded.
+* `+url+` `+(string)+` - Absolute URL to the script to mark as loaded.

@@ -5,7 +5,7 @@ Utility class for various DOM manipulation and retrieval functions.
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Add a class to an element by id in the page
 tinymce.DOM.addClass('someid', 'someclass');
@@ -17,16 +17,16 @@ tinymce.activeEditor.dom.addClass('someid', 'someclass');
 [[properties]]
 == Properties
 
-[cols=",,,",options="header",]
+[cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|DOM |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[[.param-type]#tinymce.dom.DOMUtils#] |Instance of DOMUtils for the current document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[tinymce.dom.DOMUtils]
+|DOM |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[`+tinymce.dom.DOMUtils+`] |Instance of DOMUtils for the current document. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[tinymce.dom.DOMUtils]
 |===
 
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#domutils[DOMUtils()] |Constructs a new DOMUtils instance. Consult the Wiki for more details on settings etc for this class. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[tinymce.dom.DOMUtils]
@@ -35,7 +35,7 @@ tinymce.activeEditor.dom.addClass('someid', 'someclass');
 [[methods]]
 == Methods
 
-[width="100%",cols="34%,33%,33%",options="header",]
+[width="100%",cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds the specified element to another element or elements. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils.html[tinymce.dom.DOMUtils]
@@ -124,8 +124,8 @@ Constructs a new DOMUtils instance. Consult the Wiki for more details on setting
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#doc# [.param-type]#(Document)# - Document reference to bind the utility class to.
-* [.param-name]#settings# [.param-type]#(settings)# - Optional settings collection.
+* `+doc+` `+(Document)+` - Document reference to bind the utility class to.
+* `+settings+` `+(settings)+` - Optional settings collection.
 
 == Methods
 
@@ -139,7 +139,7 @@ Adds the specified element to another element or elements.
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds a new paragraph to the end of the active editor
 tinymce.activeEditor.dom.add(tinymce.activeEditor.getBody(), 'p', {title: 'my title'}, 'Some content');
@@ -147,18 +147,18 @@ tinymce.activeEditor.dom.add(tinymce.activeEditor.getBody(), 'p', {title: 'my ti
 
 ==== Parameters
 
-* [.param-name]#parentElm# [.param-type]#(String)# - Element id string, DOM node element or array of ids or elements to add to.
-* [.param-name]#name# [.param-type]#(String)# - Name of new element to add or existing element to add.
-* [.param-name]#attrs# [.param-type]#(Object)# - Optional object collection with arguments to add to the new element(s).
-* [.param-name]#html# [.param-type]#(String)# - Optional inner HTML contents to add for each element.
-* [.param-name]#create# [.param-type]#(Boolean)# - Optional flag if the element should be created or added.
+* `+parentElm+` `+(String)+` - Element id string, DOM node element or array of ids or elements to add to.
+* `+name+` `+(String)+` - Name of new element to add or existing element to add.
+* `+attrs+` `+(Object)+` - Optional object collection with arguments to add to the new element(s).
+* `+html+` `+(String)+` - Optional inner HTML contents to add for each element.
+* `+create+` `+(Boolean)+` - Optional flag if the element should be created or added.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Element# - Element that got created, or an array of created elements if multiple input elements were passed in.
-* [.return-type]#Array# - Element that got created, or an array of created elements if multiple input elements were passed in.
+* `+Element+` - Element that got created, or an array of created elements if multiple input elements were passed in.
+* `+Array+` - Element that got created, or an array of created elements if multiple input elements were passed in.
 
 [[addclass]]
 === addClass
@@ -169,7 +169,7 @@ Adds a class to the specified element or elements.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds a class to all paragraphs in the active editor
 tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'myclass');
@@ -180,13 +180,13 @@ tinymce.DOM.addClass('mydiv', 'myclass');
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - Element ID string or DOM element or array with elements or IDs.
-* [.param-name]#cls# [.param-type]#(String)# - Class name to add to each element.
+* `+elm+` `+(String)+` - Element ID string or DOM element or array with elements or IDs.
+* `+cls+` `+(String)+` - Class name to add to each element.
 
 ==== Return value
 
-* [.return-type]#String# - String with new class value or array with new class values for all elements.
-* [.return-type]#Array# - String with new class value or array with new class values for all elements.
+* `+String+` - String with new class value or array with new class values for all elements.
+* `+Array+` - String with new class value or array with new class values for all elements.
 
 [[addstyle]]
 === addStyle
@@ -197,7 +197,7 @@ Adds a style element at the top of the document with the specified cssText conte
 
 ==== Parameters
 
-* [.param-name]#cssText# [.param-type]#(String)# - CSS Text style to add to top of head of document.
+* `+cssText+` `+(String)+` - CSS Text style to add to top of head of document.
 
 [[bind]]
 === bind
@@ -208,14 +208,14 @@ Adds an event handler to the specified object.
 
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Element)# - Target element to bind events to. handler to or an array of elements/ids/documents.
-* [.param-name]#name# [.param-type]#(String)# - Name of event handler to add, for example: click.
-* [.param-name]#func# [.param-type]#(function)# - Function to execute when the event occurs.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+* `+target+` `+(Element)+` - Target element to bind events to. handler to or an array of elements/ids/documents.
+* `+name+` `+(String)+` - Name of event handler to add, for example: click.
+* `+func+` `+(function)+` - Function to execute when the event occurs.
+* `+scope+` `+(Object)+` - Optional scope to execute the function in.
 
 ==== Return value
 
-* [.return-type]#function# - Function callback handler the same as the one passed in.
+* `+function+` - Function callback handler the same as the one passed in.
 
 [[create]]
 === create
@@ -226,7 +226,7 @@ Creates a new element.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds an element where the caret/selection is in the active editor
 var el = tinymce.activeEditor.dom.create('div', {id: 'test', 'class': 'myclass'}, 'some content');
@@ -235,13 +235,13 @@ tinymce.activeEditor.selection.setNode(el);
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of new element.
-* [.param-name]#attrs# [.param-type]#(Object)# - Optional object name/value collection with element attributes.
-* [.param-name]#html# [.param-type]#(String)# - Optional HTML string to set as inner HTML of the element.
+* `+name+` `+(String)+` - Name of new element.
+* `+attrs+` `+(Object)+` - Optional object name/value collection with element attributes.
+* `+html+` `+(String)+` - Optional HTML string to set as inner HTML of the element.
 
 ==== Return value
 
-* [.return-type]#Element# - HTML DOM node element that got created.
+* `+Element+` - HTML DOM node element that got created.
 
 [[createfragment]]
 === createFragment
@@ -252,11 +252,11 @@ Creates a document fragment out of the specified HTML string.
 
 ==== Parameters
 
-* [.param-name]#html# [.param-type]#(String)# - Html string to create fragment from.
+* `+html+` `+(String)+` - Html string to create fragment from.
 
 ==== Return value
 
-* [.return-type]#DocumentFragment# - Document fragment node.
+* `+DocumentFragment+` - Document fragment node.
 
 [[createhtml]]
 === createHTML
@@ -267,7 +267,7 @@ Creates HTML string for element. The element will be closed unless an empty inne
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Creates a html chunk and inserts it at the current selection/caret location
 tinymce.activeEditor.selection.setContent(tinymce.activeEditor.dom.createHTML('a', {href: 'test.html'}, 'some line'));
@@ -275,13 +275,13 @@ tinymce.activeEditor.selection.setContent(tinymce.activeEditor.dom.createHTML('a
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of new element.
-* [.param-name]#attrs# [.param-type]#(Object)# - Optional object name/value collection with element attributes.
-* [.param-name]#html# [.param-type]#(String)# - Optional HTML string to set as inner HTML of the element.
+* `+name+` `+(String)+` - Name of new element.
+* `+attrs+` `+(Object)+` - Optional object name/value collection with element attributes.
+* `+html+` `+(String)+` - Optional HTML string to set as inner HTML of the element.
 
 ==== Return value
 
-* [.return-type]#String# - String with new HTML element, for example: link:#[test].
+* `+String+` - String with new HTML element, for example: link:#[test].
 
 [[createrng]]
 === createRng
@@ -292,7 +292,7 @@ Creates a new DOM Range object. This will use the native DOM Range API if it's a
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 var rng = tinymce.DOM.createRng();
 alert(rng.startContainer + "," + rng.startOffset);
@@ -300,7 +300,7 @@ alert(rng.startContainer + "," + rng.startOffset);
 
 ==== Return value
 
-* [.return-type]#DOMRange# - DOM Range object.
+* `+DOMRange+` - DOM Range object.
 
 [[decode]]
 === decode
@@ -311,11 +311,11 @@ Entity decodes a string. This method decodes any HTML entities, such as å.
 
 ==== Parameters
 
-* [.param-name]#s# [.param-type]#(String)# - String to decode entities on.
+* `+s+` `+(String)+` - String to decode entities on.
 
 ==== Return value
 
-* [.return-type]#String# - Entity decoded string.
+* `+String+` - Entity decoded string.
 
 [[destroy]]
 === destroy
@@ -333,11 +333,11 @@ Entity encodes a string. This method encodes the most common entities, such as <
 
 ==== Parameters
 
-* [.param-name]#text# [.param-type]#(String)# - String to encode with entities.
+* `+text+` `+(String)+` - String to encode with entities.
 
 ==== Return value
 
-* [.return-type]#String# - Entity encoded string.
+* `+String+` - Entity encoded string.
 
 [[findcommonancestor]]
 === findCommonAncestor
@@ -348,12 +348,12 @@ Find the common ancestor of two elements. This is a shorter method than using th
 
 ==== Parameters
 
-* [.param-name]#a# [.param-type]#(Element)# - Element to find common ancestor of.
-* [.param-name]#b# [.param-type]#(Element)# - Element to find common ancestor of.
+* `+a+` `+(Element)+` - Element to find common ancestor of.
+* `+b+` `+(Element)+` - Element to find common ancestor of.
 
 ==== Return value
 
-* [.return-type]#Element# - Common ancestor element of the two input elements.
+* `+Element+` - Common ancestor element of the two input elements.
 
 [[fire]]
 === fire
@@ -364,13 +364,13 @@ Fires the specified event name with object on target.
 
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Node)# - Target element or object to fire event on.
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to fire.
-* [.param-name]#evt# [.param-type]#(Object)# - Event object to send.
+* `+target+` `+(Node)+` - Target element or object to fire event on.
+* `+name+` `+(String)+` - Name of the event to fire.
+* `+evt+` `+(Object)+` - Event object to send.
 
 ==== Return value
 
-* [.return-type]#Event# - Event object.
+* `+Event+` - Event object.
 
 [[get]]
 === get
@@ -381,11 +381,11 @@ Returns the specified element by ID or the input element if it isn't a string.
 
 ==== Parameters
 
-* [.param-name]#n# [.param-type]#(String)# - Element id to look for or element to just pass though.
+* `+n+` `+(String)+` - Element id to look for or element to just pass though.
 
 ==== Return value
 
-* [.return-type]#Element# - Element matching the specified id or null if it wasn't found.
+* `+Element+` - Element matching the specified id or null if it wasn't found.
 
 [[getattrib]]
 === getAttrib
@@ -396,13 +396,13 @@ Returns the specified attribute by name.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - Element string id or DOM element to get attribute from.
-* [.param-name]#name# [.param-type]#(String)# - Name of attribute to get.
-* [.param-name]#defaultVal# [.param-type]#(String)# - Optional default value to return if the attribute didn't exist.
+* `+elm+` `+(String)+` - Element string id or DOM element to get attribute from.
+* `+name+` `+(String)+` - Name of attribute to get.
+* `+defaultVal+` `+(String)+` - Optional default value to return if the attribute didn't exist.
 
 ==== Return value
 
-* [.return-type]#String# - Attribute value string, default value or null if the attribute wasn't found.
+* `+String+` - Attribute value string, default value or null if the attribute wasn't found.
 
 [[getattribs]]
 === getAttribs
@@ -413,11 +413,11 @@ Returns a NodeList with attributes for the element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(HTMLElement)# - Element node or string id to get attributes from.
+* `+elm+` `+(HTMLElement)+` - Element node or string id to get attributes from.
 
 ==== Return value
 
-* [.return-type]#NodeList# - NodeList with attributes.
+* `+NodeList+` - NodeList with attributes.
 
 [[getnext]]
 === getNext
@@ -428,12 +428,12 @@ Returns the next node that matches selector or function
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Node)# - Node to find siblings from.
-* [.param-name]#selector# [.param-type]#(String)# - Selector CSS expression or function.
+* `+node+` `+(Node)+` - Node to find siblings from.
+* `+selector+` `+(String)+` - Selector CSS expression or function.
 
 ==== Return value
 
-* [.return-type]#Node# - Next node item matching the selector or null if it wasn't found.
+* `+Node+` - Next node item matching the selector or null if it wasn't found.
 
 [[getouterhtml]]
 === getOuterHTML
@@ -444,7 +444,7 @@ Returns the outer HTML of an element.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 tinymce.DOM.getOuterHTML(editorElement);
 tinymce.activeEditor.getOuterHTML(tinymce.activeEditor.getBody());
@@ -452,11 +452,11 @@ tinymce.activeEditor.getOuterHTML(tinymce.activeEditor.getBody());
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - Element ID or element object to get outer HTML from.
+* `+elm+` `+(String)+` - Element ID or element object to get outer HTML from.
 
 ==== Return value
 
-* [.return-type]#String# - Outer HTML string.
+* `+String+` - Outer HTML string.
 
 [[getparent]]
 === getParent
@@ -467,13 +467,13 @@ Returns a node by the specified selector function. This function will loop throu
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Node)# - DOM node to search parents on or ID string.
-* [.param-name]#selector# [.param-type]#(function)# - Selection function or CSS selector to execute on each node.
-* [.param-name]#root# [.param-type]#(Node)# - Optional root element, never go beyond this point.
+* `+node+` `+(Node)+` - DOM node to search parents on or ID string.
+* `+selector+` `+(function)+` - Selection function or CSS selector to execute on each node.
+* `+root+` `+(Node)+` - Optional root element, never go beyond this point.
 
 ==== Return value
 
-* [.return-type]#Node# - DOM Node or null if it wasn't found.
+* `+Node+` - DOM Node or null if it wasn't found.
 
 [[getparents]]
 === getParents
@@ -484,13 +484,13 @@ Returns a node list of all parents matching the specified selector function or p
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Node)# - DOM node to search parents on or ID string.
-* [.param-name]#selector# [.param-type]#(function)# - Selection function to execute on each node or CSS pattern.
-* [.param-name]#root# [.param-type]#(Node)# - Optional root element, never go beyond this point.
+* `+node+` `+(Node)+` - DOM node to search parents on or ID string.
+* `+selector+` `+(function)+` - Selection function to execute on each node or CSS pattern.
+* `+root+` `+(Node)+` - Optional root element, never go beyond this point.
 
 ==== Return value
 
-* [.return-type]#Array# - Array of nodes or null if it wasn't found.
+* `+Array+` - Array of nodes or null if it wasn't found.
 
 [[getpos]]
 === getPos
@@ -501,12 +501,12 @@ Returns the absolute x, y position of a node. The position will be returned in a
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - HTML element or element id to get x, y position from.
-* [.param-name]#rootElm# [.param-type]#(Element)# - Optional root element to stop calculations at.
+* `+elm+` `+(Element)+` - HTML element or element id to get x, y position from.
+* `+rootElm+` `+(Element)+` - Optional root element to stop calculations at.
 
 ==== Return value
 
-* [.return-type]#object# - Absolute position of the specified element object with x, y fields.
+* `+object+` - Absolute position of the specified element object with x, y fields.
 
 [[getprev]]
 === getPrev
@@ -517,12 +517,12 @@ Returns the previous node that matches selector or function
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Node)# - Node to find siblings from.
-* [.param-name]#selector# [.param-type]#(String)# - Selector CSS expression or function.
+* `+node+` `+(Node)+` - Node to find siblings from.
+* `+selector+` `+(String)+` - Selector CSS expression or function.
 
 ==== Return value
 
-* [.return-type]#Node# - Previous node item matching the selector or null if it wasn't found.
+* `+Node+` - Previous node item matching the selector or null if it wasn't found.
 
 [[getrect]]
 === getRect
@@ -533,11 +533,11 @@ Returns the rectangle for a specific element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element object or element ID to get rectangle from.
+* `+elm+` `+(Element)+` - Element object or element ID to get rectangle from.
 
 ==== Return value
 
-* [.return-type]#object# - Rectangle for specified element object with x, y, w, h fields.
+* `+object+` - Rectangle for specified element object with x, y, w, h fields.
 
 [[getroot]]
 === getRoot
@@ -548,7 +548,7 @@ Returns the root node of the document. This is normally the body but might be a 
 
 ==== Return value
 
-* [.return-type]#Element# - Root element for the utility class.
+* `+Element+` - Root element for the utility class.
 
 [[getsize]]
 === getSize
@@ -559,11 +559,11 @@ Returns the size dimensions of the specified element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element object or element ID to get rectangle from.
+* `+elm+` `+(Element)+` - Element object or element ID to get rectangle from.
 
 ==== Return value
 
-* [.return-type]#object# - Rectangle for specified element object with w, h fields.
+* `+object+` - Rectangle for specified element object with w, h fields.
 
 [[getstyle]]
 === getStyle
@@ -574,13 +574,13 @@ Returns the current style or runtime/computed value of an element.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - HTML element or element id string to get style from.
-* [.param-name]#name# [.param-type]#(String)# - Style name to return.
-* [.param-name]#computed# [.param-type]#(Boolean)# - Computed style.
+* `+elm+` `+(String)+` - HTML element or element id string to get style from.
+* `+name+` `+(String)+` - Style name to return.
+* `+computed+` `+(Boolean)+` - Computed style.
 
 ==== Return value
 
-* [.return-type]#String# - Current style or computed style value of an element.
+* `+String+` - Current style or computed style value of an element.
 
 [[getviewport]]
 === getViewPort
@@ -591,11 +591,11 @@ Returns the viewport of the window.
 
 ==== Parameters
 
-* [.param-name]#win# [.param-type]#(Window)# - Optional window to get viewport of.
+* `+win+` `+(Window)+` - Optional window to get viewport of.
 
 ==== Return value
 
-* [.return-type]#Object# - Viewport object with fields x, y, w and h.
+* `+Object+` - Viewport object with fields x, y, w and h.
 
 [[hasclass]]
 === hasClass
@@ -606,12 +606,12 @@ Returns true if the specified element has the specified class.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - HTML element or element id string to check CSS class on.
-* [.param-name]#cls# [.param-type]#(String)# - CSS class to check for.
+* `+elm+` `+(String)+` - HTML element or element id string to check CSS class on.
+* `+cls+` `+(String)+` - CSS class to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the specified element has the specified class.
+* `+Boolean+` - true/false if the specified element has the specified class.
 
 [[hide]]
 === hide
@@ -622,7 +622,7 @@ Hides the specified element(s) by ID by setting the "display" style.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Hides an element by id in the document
 tinymce.DOM.hide('myid');
@@ -630,7 +630,7 @@ tinymce.DOM.hide('myid');
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - ID of DOM element or DOM element or array with elements or IDs to hide.
+* `+elm+` `+(String)+` - ID of DOM element or DOM element or array with elements or IDs to hide.
 
 [[insertafter]]
 === insertAfter
@@ -641,13 +641,13 @@ Inserts an element after the reference element.
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Element to insert after the reference.
-* [.param-name]#referenceNode# [.param-type]#(Element)# - Reference element, element id or array of elements to insert after.
+* `+node+` `+(Element)+` - Element to insert after the reference.
+* `+referenceNode+` `+(Element)+` - Reference element, element id or array of elements to insert after.
 
 ==== Return value
 
-* [.return-type]#Element# - Element that got added or an array with elements.
-* [.return-type]#Array# - Element that got added or an array with elements.
+* `+Element+` - Element that got added or an array with elements.
+* `+Array+` - Element that got added or an array with elements.
 
 [[is]]
 === is
@@ -658,8 +658,8 @@ Returns true/false if the specified element matches the specified css pattern.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Node)# - DOM node to match or an array of nodes to match.
-* [.param-name]#selector# [.param-type]#(String)# - CSS pattern to match the element against.
+* `+elm+` `+(Node)+` - DOM node to match or an array of nodes to match.
+* `+selector+` `+(String)+` - CSS pattern to match the element against.
 
 [[isblock]]
 === isBlock
@@ -670,11 +670,11 @@ Returns true/false if the specified element is a block element or not.
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Node)# - Element/Node to check.
+* `+node+` `+(Node)+` - Element/Node to check.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/False state if the node is a block element or not.
+* `+Boolean+` - True/False state if the node is a block element or not.
 
 [[isempty]]
 === isEmpty
@@ -685,18 +685,18 @@ Returns true/false if the specified node is to be considered empty or not.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 tinymce.DOM.isEmpty(node, {img: true});
 ----
 
 ==== Parameters
 
-* [.param-name]#elements# [.param-type]#(Object)# - Optional name/value object with elements that are automatically treated as non-empty elements.
+* `+elements+` `+(Object)+` - Optional name/value object with elements that are automatically treated as non-empty elements.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the node is empty or not.
+* `+Boolean+` - true/false if the node is empty or not.
 
 [[ishidden]]
 === isHidden
@@ -707,11 +707,11 @@ Returns true/false if the element is hidden or not by checking the "display" sty
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - Id or element to check display state on.
+* `+elm+` `+(String)+` - Id or element to check display state on.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the element is hidden or not.
+* `+Boolean+` - true/false if the element is hidden or not.
 
 [[loadcss]]
 === loadCSS
@@ -722,7 +722,7 @@ Imports/loads the specified CSS file into the document bound to the class.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Loads a CSS file dynamically into the current document
 tinymce.DOM.loadCSS('somepath/some.css');
@@ -739,7 +739,7 @@ tinymce.DOM.loadCSS('somepath/some.css,somepath/someother.css');
 
 ==== Parameters
 
-* [.param-name]#url# [.param-type]#(String)# - URL to CSS file to load.
+* `+url+` `+(String)+` - URL to CSS file to load.
 
 [[nodeindex]]
 === nodeIndex
@@ -750,12 +750,12 @@ Returns the index of the specified node within its parent.
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Node)# - Node to look for.
-* [.param-name]#normalized# [.param-type]#(boolean)# - Optional true/false state if the index is what it would be after a normalization.
+* `+node+` `+(Node)+` - Node to look for.
+* `+normalized+` `+(boolean)+` - Optional true/false state if the index is what it would be after a normalization.
 
 ==== Return value
 
-* [.return-type]#Number# - Index of the specified node.
+* `+Number+` - Index of the specified node.
 
 [[parsestyle]]
 === parseStyle
@@ -766,11 +766,11 @@ Parses the specified style value into an object collection. This parser will als
 
 ==== Parameters
 
-* [.param-name]#cssText# [.param-type]#(String)# - Style value to parse, for example: border:1px solid red;.
+* `+cssText+` `+(String)+` - Style value to parse, for example: border:1px solid red;.
 
 ==== Return value
 
-* [.return-type]#Object# - Object representation of that style, for example: \{border: '1px solid red'}
+* `+Object+` - Object representation of that style, for example: \{border: '1px solid red'}
 
 [[remove]]
 === remove
@@ -781,7 +781,7 @@ Removes/deletes the specified element(s) from the DOM.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Removes all paragraphs in the active editor
 tinymce.activeEditor.dom.remove(tinymce.activeEditor.dom.select('p'));
@@ -792,13 +792,13 @@ tinymce.DOM.remove('mydiv');
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(String)# - ID of element or DOM element object or array containing multiple elements/ids.
-* [.param-name]#keepChildren# [.param-type]#(Boolean)# - Optional state to keep children or not. If set to true all children will be placed at the location of the removed element.
+* `+node+` `+(String)+` - ID of element or DOM element object or array containing multiple elements/ids.
+* `+keepChildren+` `+(Boolean)+` - Optional state to keep children or not. If set to true all children will be placed at the location of the removed element.
 
 ==== Return value
 
-* [.return-type]#Element# - HTML DOM element that got removed, or an array of removed elements if multiple input elements were passed in.
-* [.return-type]#Array# - HTML DOM element that got removed, or an array of removed elements if multiple input elements were passed in.
+* `+Element+` - HTML DOM element that got removed, or an array of removed elements if multiple input elements were passed in.
+* `+Array+` - HTML DOM element that got removed, or an array of removed elements if multiple input elements were passed in.
 
 [[removeallattribs]]
 === removeAllAttribs
@@ -809,7 +809,7 @@ Removes all attributes from an element or elements.
 
 ==== Parameters
 
-* [.param-name]#e# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to remove attributes from.
+* `+e+` `+(Element)+` - DOM element, element id string or array of elements/ids to remove attributes from.
 
 [[removeclass]]
 === removeClass
@@ -820,7 +820,7 @@ Removes a class from the specified element or elements.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Removes a class from all paragraphs in the active editor
 tinymce.activeEditor.dom.removeClass(tinymce.activeEditor.dom.select('p'), 'myclass');
@@ -831,13 +831,13 @@ tinymce.DOM.removeClass('mydiv', 'myclass');
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - Element ID string or DOM element or array with elements or IDs.
-* [.param-name]#cls# [.param-type]#(String)# - Class name to remove from each element.
+* `+elm+` `+(String)+` - Element ID string or DOM element or array with elements or IDs.
+* `+cls+` `+(String)+` - Class name to remove from each element.
 
 ==== Return value
 
-* [.return-type]#String# - String of remaining class name(s), or an array of strings if multiple input elements were passed in.
-* [.return-type]#Array# - String of remaining class name(s), or an array of strings if multiple input elements were passed in.
+* `+String+` - String of remaining class name(s), or an array of strings if multiple input elements were passed in.
+* `+Array+` - String of remaining class name(s), or an array of strings if multiple input elements were passed in.
 
 [[rename]]
 === rename
@@ -848,12 +848,12 @@ Renames the specified element and keeps its attributes and children.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element to rename.
-* [.param-name]#name# [.param-type]#(String)# - Name of the new element.
+* `+elm+` `+(Element)+` - Element to rename.
+* `+name+` `+(String)+` - Name of the new element.
 
 ==== Return value
 
-* [.return-type]#Element# - New element or the old element if it needed renaming.
+* `+Element+` - New element or the old element if it needed renaming.
 
 [[replace]]
 === replace
@@ -864,9 +864,9 @@ Replaces the specified element or elements with the new element specified. The n
 
 ==== Parameters
 
-* [.param-name]#newElm# [.param-type]#(Element)# - New element to replace old ones with.
-* [.param-name]#oldElm# [.param-type]#(Element)# - Element DOM node, element id or array of elements or ids to replace.
-* [.param-name]#keepChildren# [.param-type]#(Boolean)# - Optional keep children state, if set to true child nodes from the old object will be added to new ones.
+* `+newElm+` `+(Element)+` - New element to replace old ones with.
+* `+oldElm+` `+(Element)+` - Element DOM node, element id or array of elements or ids to replace.
+* `+keepChildren+` `+(Boolean)+` - Optional keep children state, if set to true child nodes from the old object will be added to new ones.
 
 [[run]]
 === run
@@ -877,14 +877,14 @@ Executes the specified function on the element by id or dom element node or arra
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - ID or DOM element object or array with ids or elements.
-* [.param-name]#func# [.param-type]#(function)# - Function to execute for each item.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional scope to execute the function in.
+* `+elm+` `+(String)+` - ID or DOM element object or array with ids or elements.
+* `+func+` `+(function)+` - Function to execute for each item.
+* `+scope+` `+(Object)+` - Optional scope to execute the function in.
 
 ==== Return value
 
-* [.return-type]#Object# - Single object, or an array of objects if multiple input elements were passed in.
-* [.return-type]#Array# - Single object, or an array of objects if multiple input elements were passed in.
+* `+Object+` - Single object, or an array of objects if multiple input elements were passed in.
+* `+Array+` - Single object, or an array of objects if multiple input elements were passed in.
 
 [[select]]
 === select
@@ -895,7 +895,7 @@ Selects specific elements by a CSS level 3 pattern. For example "div#a1 p.test".
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Adds a class to all paragraphs in the currently active editor
 tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'someclass');
@@ -906,12 +906,12 @@ tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('span.test'), 
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - CSS level 3 pattern to select/find elements by.
-* [.param-name]#scope# [.param-type]#(Object)# - Optional root element/scope element to search in.
+* `+selector+` `+(String)+` - CSS level 3 pattern to select/find elements by.
+* `+scope+` `+(Object)+` - Optional root element/scope element to search in.
 
 ==== Return value
 
-* [.return-type]#Array# - Array with all matched elements.
+* `+Array+` - Array with all matched elements.
 
 [[serializestyle]]
 === serializeStyle
@@ -922,12 +922,12 @@ Serializes the specified style object into a string.
 
 ==== Parameters
 
-* [.param-name]#styles# [.param-type]#(Object)# - Object to serialize as string, for example: \{border: '1px solid red'}
-* [.param-name]#name# [.param-type]#(String)# - Optional element name.
+* `+styles+` `+(Object)+` - Object to serialize as string, for example: \{border: '1px solid red'}
+* `+name+` `+(String)+` - Optional element name.
 
 ==== Return value
 
-* [.return-type]#String# - String representation of the style object, for example: border: 1px solid red.
+* `+String+` - String representation of the style object, for example: border: 1px solid red.
 
 [[setattrib]]
 === setAttrib
@@ -938,7 +938,7 @@ Sets the specified attribute of an element or elements.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sets class attribute on all paragraphs in the active editor
 tinymce.activeEditor.dom.setAttrib(tinymce.activeEditor.dom.select('p'), 'class', 'myclass');
@@ -949,9 +949,9 @@ tinymce.dom.setAttrib('mydiv', 'class', 'myclass');
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set attribute on.
-* [.param-name]#name# [.param-type]#(String)# - Name of attribute to set.
-* [.param-name]#value# [.param-type]#(String)# - Value to set on the attribute - if this value is falsy like null, 0 or '' it will remove the attribute instead.
+* `+elm+` `+(Element)+` - DOM element, element id string or array of elements/ids to set attribute on.
+* `+name+` `+(String)+` - Name of attribute to set.
+* `+value+` `+(String)+` - Value to set on the attribute - if this value is falsy like null, 0 or '' it will remove the attribute instead.
 
 [[setattribs]]
 === setAttribs
@@ -962,7 +962,7 @@ Sets two or more specified attributes of an element or elements.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sets class and title attributes on all paragraphs in the active editor
 tinymce.activeEditor.dom.setAttribs(tinymce.activeEditor.dom.select('p'), {'class': 'myclass', title: 'some title'});
@@ -973,8 +973,8 @@ tinymce.DOM.setAttribs('mydiv', {'class': 'myclass', title: 'some title'});
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set attributes on.
-* [.param-name]#attrs# [.param-type]#(Object)# - Name/Value collection of attribute items to add to the element(s).
+* `+elm+` `+(Element)+` - DOM element, element id string or array of elements/ids to set attributes on.
+* `+attrs+` `+(Object)+` - Name/Value collection of attribute items to add to the element(s).
 
 [[sethtml]]
 === setHTML
@@ -985,7 +985,7 @@ Sets the specified HTML content inside the element or elements. The HTML will fi
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sets the inner HTML of all paragraphs in the active editor
 tinymce.activeEditor.dom.setHTML(tinymce.activeEditor.dom.select('p'), 'some inner html');
@@ -996,8 +996,8 @@ tinymce.DOM.setHTML('mydiv', 'some inner html');
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set HTML inside of.
-* [.param-name]#html# [.param-type]#(String)# - HTML content to set as inner HTML of the element.
+* `+elm+` `+(Element)+` - DOM element, element id string or array of elements/ids to set HTML inside of.
+* `+html+` `+(String)+` - HTML content to set as inner HTML of the element.
 
 [[setouterhtml]]
 === setOuterHTML
@@ -1008,7 +1008,7 @@ Sets the specified outer HTML on an element or elements.
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sets the outer HTML of all paragraphs in the active editor
 tinymce.activeEditor.dom.setOuterHTML(tinymce.activeEditor.dom.select('p'), '<div>some html</div>');
@@ -1019,8 +1019,8 @@ tinymce.DOM.setOuterHTML('mydiv', '<div>some html</div>');
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set outer HTML on.
-* [.param-name]#html# [.param-type]#(Object)# - HTML code to set as outer value for the element.
+* `+elm+` `+(Element)+` - DOM element, element id string or array of elements/ids to set outer HTML on.
+* `+html+` `+(Object)+` - HTML code to set as outer value for the element.
 
 [[setstyle]]
 === setStyle
@@ -1031,7 +1031,7 @@ Sets the CSS style value on a HTML element. The name can be a camelcase string o
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sets a style value on all paragraphs in the currently active editor
 tinymce.activeEditor.dom.setStyle(tinymce.activeEditor.dom.select('p'), 'background-color', 'red');
@@ -1042,9 +1042,9 @@ tinymce.DOM.setStyle('mydiv', 'background-color', 'red');
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - HTML element/Array of elements to set CSS style value on.
-* [.param-name]#name# [.param-type]#(String)# - Name of the style value to set.
-* [.param-name]#value# [.param-type]#(String)# - Value to set on the style.
+* `+elm+` `+(String)+` - HTML element/Array of elements to set CSS style value on.
+* `+name+` `+(String)+` - Name of the style value to set.
+* `+value+` `+(String)+` - Value to set on the style.
 
 [[setstyles]]
 === setStyles
@@ -1055,7 +1055,7 @@ Sets multiple styles on the specified element(s).
 
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Sets styles on all paragraphs in the currently active editor
 tinymce.activeEditor.dom.setStyles(tinymce.activeEditor.dom.select('p'), {'background-color': 'red', 'color': 'green'});
@@ -1066,8 +1066,8 @@ tinymce.DOM.setStyles('mydiv', {'background-color': 'red', 'color': 'green'});
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - DOM element, element id string or array of elements/ids to set styles on.
-* [.param-name]#styles# [.param-type]#(Object)# - Name/Value collection of style items to add to the element(s).
+* `+elm+` `+(Element)+` - DOM element, element id string or array of elements/ids to set styles on.
+* `+styles+` `+(Object)+` - Name/Value collection of style items to add to the element(s).
 
 [[show]]
 === show
@@ -1078,7 +1078,7 @@ Shows the specified element(s) by ID by setting the "display" style.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(String)# - ID of DOM element or DOM element or array with elements or IDs to show.
+* `+elm+` `+(String)+` - ID of DOM element or DOM element or array with elements or IDs to show.
 
 [[split]]
 === split
@@ -1101,13 +1101,13 @@ abc
 
 ==== Parameters
 
-* [.param-name]#parentElm# [.param-type]#(Element)# - Parent element to split.
-* [.param-name]#splitElm# [.param-type]#(Element)# - Element to split at.
-* [.param-name]#replacementElm# [.param-type]#(Element)# - Optional replacement element to replace the split element with.
+* `+parentElm+` `+(Element)+` - Parent element to split.
+* `+splitElm+` `+(Element)+` - Element to split at.
+* `+replacementElm+` `+(Element)+` - Optional replacement element to replace the split element with.
 
 ==== Return value
 
-* [.return-type]#Element# - Returns the split element or the replacement element if that is specified.
+* `+Element+` - Returns the split element or the replacement element if that is specified.
 
 [[tohex]]
 === toHex
@@ -1118,11 +1118,11 @@ Parses the specified RGB color value and returns a hex version of that color.
 
 ==== Parameters
 
-* [.param-name]#rgbVal# [.param-type]#(String)# - RGB string value like rgb(1,2,3)
+* `+rgbVal+` `+(String)+` - RGB string value like rgb(1,2,3)
 
 ==== Return value
 
-* [.return-type]#String# - Hex version of that RGB value like #FF00FF.
+* `+String+` - Hex version of that RGB value like #FF00FF.
 
 [[toggleclass]]
 === toggleClass
@@ -1133,9 +1133,9 @@ Toggles the specified class on/off.
 
 ==== Parameters
 
-* [.param-name]#elm# [.param-type]#(Element)# - Element to toggle class on.
-* [.param-name]#cls# [.param-type]#([type])# - Class to toggle on/off.
-* [.param-name]#state# [.param-type]#([type])# - Optional state to set.
+* `+elm+` `+(Element)+` - Element to toggle class on.
+* `+cls+` `+([type])+` - Class to toggle on/off.
+* `+state+` `+([type])+` - Optional state to set.
 
 [[unbind]]
 === unbind
@@ -1146,14 +1146,14 @@ Removes the specified event handler by name and function from an element or coll
 
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Element)# - Target element to unbind events on.
-* [.param-name]#name# [.param-type]#(String)# - Event handler name, for example: "click"
-* [.param-name]#func# [.param-type]#(function)# - Function to remove.
+* `+target+` `+(Element)+` - Target element to unbind events on.
+* `+name+` `+(String)+` - Event handler name, for example: "click"
+* `+func+` `+(function)+` - Function to remove.
 
 ==== Return value
 
-* [.return-type]#bool# - Bool state of true if the handler was removed, or an array of states if multiple input elements were passed in.
-* [.return-type]#Array# - Bool state of true if the handler was removed, or an array of states if multiple input elements were passed in.
+* `+bool+` - Bool state of true if the handler was removed, or an array of states if multiple input elements were passed in.
+* `+Array+` - Bool state of true if the handler was removed, or an array of states if multiple input elements were passed in.
 
 [[uniqueid]]
 === uniqueId
@@ -1164,8 +1164,8 @@ Returns a unique id. This can be useful when generating elements on the fly. Thi
 
 ==== Parameters
 
-* [.param-name]#prefix# [.param-type]#(String)# - Optional prefix to add in front of all ids - defaults to "mce_".
+* `+prefix+` `+(String)+` - Optional prefix to add in front of all ids - defaults to "mce_".
 
 ==== Return value
 
-* [.return-type]#String# - Unique id.
+* `+String+` - Unique id.

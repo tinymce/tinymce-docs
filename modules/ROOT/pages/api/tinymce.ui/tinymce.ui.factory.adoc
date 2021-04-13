@@ -5,7 +5,7 @@ This class is a factory for control instances. This enables you to create instan
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds a new control instance type to the factory. |link:{baseurl}/api/tinymce.ui/tinymce.ui.factory.html[tinymce.ui.Factory]
@@ -26,8 +26,8 @@ Adds a new control instance type to the factory.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#type# [.param-type]#(String)# - Type name for example "button".
-* [.param-name]#typeClass# [.param-type]#(function)# - Class type function.
+* `+type+` `+(String)+` - Type name for example "button".
+* `+typeClass+` `+(function)+` - Class type function.
 
 [[create]]
 === create
@@ -39,7 +39,7 @@ Creates a new control instance based on the settings provided. The instance crea
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 tinymce.ui.Factory.create({
     type: 'button',
@@ -49,13 +49,13 @@ tinymce.ui.Factory.create({
 
 ==== Parameters
 
-* [.param-name]#settings# [.param-type]#(Object)# - Name/Value object with items used to create the type.
+* `+settings+` `+(Object)+` - Name/Value object with items used to create the type.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[[.return-type]#tinymce.ui.Control#] - Control instance based on the specified type.
+* link:{baseurl}/api/tinymce.ui/tinymce.ui.control.html[`+tinymce.ui.Control+`] - Control instance based on the specified type.
 
 [[get]]
 === get
@@ -66,11 +66,11 @@ Returns ui control module by name.
 
 ==== Parameters
 
-* [.param-name]#type# [.param-type]#(String)# - Type get.
+* `+type+` `+(String)+` - Type get.
 
 ==== Return value
 
-* [.return-type]#Object# - Module or undefined.
+* `+Object+` - Module or undefined.
 
 [[has]]
 === has
@@ -81,8 +81,8 @@ Returns true/false if the specified type exists or not.
 
 ==== Parameters
 
-* [.param-name]#type# [.param-type]#(String)# - Type to look for.
+* `+type+` `+(String)+` - Type to look for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - true/false if the control by name exists.
+* `+Boolean+` - true/false if the control by name exists.

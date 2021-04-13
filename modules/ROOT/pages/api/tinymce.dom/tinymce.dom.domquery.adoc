@@ -5,7 +5,7 @@ This class mimics most of the jQuery API: This is whats currently implemented: -
 [[examples]]
 == Examples
 
-[source,prettyprint]
+[source,js]
 ----
 var $ = tinymce.dom.DomQuery;
 $('p').attr('attr', 'value').addClass('class');
@@ -14,18 +14,18 @@ $('p').attr('attr', 'value').addClass('class');
 [[properties]]
 == Properties
 
-[cols=",,,",options="header",]
+[cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
-|context |[.param-type]#Element# |Context used to create the set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|length |[.param-type]#Number# |Number of items in the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
-|selector |[.param-type]#String# |Selector for the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|context |`+Element+` |Context used to create the set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|length |`+Number+` |Number of items in the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
+|selector |`+String+` |Selector for the current set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
 |===
 
 [[constructors]]
 == Constructors
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#domquery[DomQuery()] |Constructs a new DomQuery instance with the specified selector or context. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
@@ -34,7 +34,7 @@ $('p').attr('attr', 'value').addClass('class');
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds new nodes to the set. |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[tinymce.dom.DomQuery]
@@ -107,8 +107,8 @@ Constructs a new DomQuery instance with the specified selector or context.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Optional CSS selector/Array or array like object or HTML string.
-* [.param-name]#context# [.param-type]#(Document)# - Optional context to search in.
+* `+selector+` `+(String)+` - Optional CSS selector/Array or array like object or HTML string.
+* `+context+` `+(Document)+` - Optional context to search in.
 
 == Methods
 
@@ -121,14 +121,14 @@ Adds new nodes to the set.
 
 ==== Parameters
 
-* [.param-name]#items# [.param-type]#(Array)# - Array of all nodes to add to set.
-* [.param-name]#sort# [.param-type]#(Boolean)# - Optional sort flag that enables sorting of elements.
+* `+items+` `+(Array)+` - Array of all nodes to add to set.
+* `+sort+` `+(Boolean)+` - Optional sort flag that enables sorting of elements.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New instance with nodes added.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New instance with nodes added.
 
 [[addclass]]
 === addClass
@@ -139,11 +139,11 @@ Adds the specified class name to the current set elements.
 
 ==== Parameters
 
-* [.param-name]#className# [.param-type]#(String)# - Class name to add.
+* `+className+` `+(String)+` - Class name to add.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[after]]
 === after
@@ -154,11 +154,11 @@ Adds the specified elements after current set nodes.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to add after to each element in set.
+* `+content+` `+(String)+` - Content to add after to each element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[append]]
 === append
@@ -169,11 +169,11 @@ Appends the specified node/html or node set to the current set nodes.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to append to each element in set.
+* `+content+` `+(String)+` - Content to append to each element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[appendto]]
 === appendTo
@@ -184,11 +184,11 @@ Appends the specified set nodes to the specified selector/instance.
 
 ==== Parameters
 
-* [.param-name]#val# [.param-type]#(String)# - Item to append the current set to.
+* `+val+` `+(String)+` - Item to append the current set to.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set with the appended nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the appended nodes.
 
 [[attr]]
 === attr
@@ -199,13 +199,13 @@ Sets/gets properties on the elements in the current set.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of property to get or an object with properties to set.
-* [.param-name]#value# [.param-type]#(String)# - Optional value to set.
+* `+name+` `+(String)+` - Name of property to get or an object with properties to set.
+* `+value+` `+(String)+` - Optional value to set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set or the specified property when only the name is specified.
-* [.return-type]#String# - Current set or the specified property when only the name is specified.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the specified property when only the name is specified.
+* `+String+` - Current set or the specified property when only the name is specified.
 
 [[before]]
 === before
@@ -216,11 +216,11 @@ Adds the specified elements before current set nodes.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to add before to each element in set.
+* `+content+` `+(String)+` - Content to add before to each element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[children]]
 === children
@@ -231,11 +231,11 @@ Returns all child elements matching the optional selector.
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to match the elements against.
+* `+node+` `+(Element)+` - Node to match the elements against.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[clone]]
 === clone
@@ -246,7 +246,7 @@ Clones all nodes in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with cloned nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with cloned nodes.
 
 [[closest]]
 === closest
@@ -257,11 +257,11 @@ Gets the current node or any parent matching the specified selector.
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Selector or element to find.
+* `+selector+` `+(String)+` - Selector or element to find.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with closest elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with closest elements.
 
 [[contents]]
 === contents
@@ -272,11 +272,11 @@ Returns all child nodes matching the optional selector.
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to get the contents of.
+* `+node+` `+(Element)+` - Node to get the contents of.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[css]]
 === css
@@ -287,13 +287,13 @@ Sets/gets styles on the elements in the current set.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of style to get or an object with styles to set.
-* [.param-name]#value# [.param-type]#(String)# - Optional value to set.
+* `+name+` `+(String)+` - Name of style to get or an object with styles to set.
+* `+value+` `+(String)+` - Optional value to set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set or the specified style when only the name is specified.
-* [.return-type]#String# - Current set or the specified style when only the name is specified.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the specified style when only the name is specified.
+* `+String+` - Current set or the specified style when only the name is specified.
 
 [[each]]
 === each
@@ -304,11 +304,11 @@ Executes the callback function for each item DomQuery collection. If you return 
 
 ==== Parameters
 
-* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute for each item.
+* `+callback+` `+(function)+` - Callback function to execute for each item.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 === each
 
@@ -318,8 +318,8 @@ Executes the callback function for each item in array/object. If you return fals
 
 ==== Parameters
 
-* [.param-name]#obj# [.param-type]#(Object)# - Object to iterate.
-* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute for each item.
+* `+obj+` `+(Object)+` - Object to iterate.
+* `+callback+` `+(function)+` - Callback function to execute for each item.
 
 [[empty]]
 === empty
@@ -330,7 +330,7 @@ Empties all elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set with the empty nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the empty nodes.
 
 [[eq]]
 === eq
@@ -341,11 +341,11 @@ Makes the set equal to the specified index.
 
 ==== Parameters
 
-* [.param-name]#index# [.param-type]#(Number)# - Index to set it equal to.
+* `+index+` `+(Number)+` - Index to set it equal to.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Single item set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
 
 [[extend]]
 === extend
@@ -356,12 +356,12 @@ Extends the specified object with one or more objects.
 
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Object)# - Target object to extend with new items.
-* [.param-name]#object# [.param-type]#(Object..)# - Object to extend the target with.
+* `+target+` `+(Object)+` - Target object to extend with new items.
+* `+object+` `+(Object..)+` - Object to extend the target with.
 
 ==== Return value
 
-* [.return-type]#Object# - Extended input object.
+* `+Object+` - Extended input object.
 
 [[filter]]
 === filter
@@ -372,11 +372,11 @@ Filters the current set with the specified selector.
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Selector to filter elements by.
+* `+selector+` `+(String)+` - Selector to filter elements by.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with filtered elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with filtered elements.
 
 [[find]]
 === find
@@ -387,11 +387,11 @@ Finds elements by the specified selector for each element in set.
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Selector to find elements by.
+* `+selector+` `+(String)+` - Selector to find elements by.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with matches elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with matches elements.
 
 [[first]]
 === first
@@ -402,7 +402,7 @@ Makes the set equal to first element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Single item set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
 
 [[grep]]
 === grep
@@ -414,7 +414,7 @@ Filters out items from the input array by calling the specified function for eac
 [[examples]]
 ==== Examples
 
-[source,prettyprint]
+[source,js]
 ----
 // Filter out some items, this will return an array with 4 and 5
 var items = DomQuery.grep([1, 2, 3, 4, 5], function(v) {return v > 3;});
@@ -422,12 +422,12 @@ var items = DomQuery.grep([1, 2, 3, 4, 5], function(v) {return v > 3;});
 
 ==== Parameters
 
-* [.param-name]#array# [.param-type]#(Array)# - Array of items to loop though.
-* [.param-name]#callback# [.param-type]#(function)# - Function to call for each item. Include/exclude depends on it's return value.
+* `+array+` `+(Array)+` - Array of items to loop though.
+* `+callback+` `+(function)+` - Function to call for each item. Include/exclude depends on it's return value.
 
 ==== Return value
 
-* [.return-type]#Array# - New array with values imported and filtered based in input.
+* `+Array+` - New array with values imported and filtered based in input.
 
 [[hasclass]]
 === hasClass
@@ -438,11 +438,11 @@ Returns true/false if the first item in set has the specified class.
 
 ==== Parameters
 
-* [.param-name]#className# [.param-type]#(String)# - Class name to check for.
+* `+className+` `+(String)+` - Class name to check for.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false if the set has the specified class.
+* `+Boolean+` - True/false if the set has the specified class.
 
 [[hide]]
 === hide
@@ -453,7 +453,7 @@ Hides all elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[html]]
 === html
@@ -464,12 +464,12 @@ Sets or gets the HTML of the current set or first set node.
 
 ==== Parameters
 
-* [.param-name]#value# [.param-type]#(String)# - Optional innerHTML value to set on each element.
+* `+value+` `+(String)+` - Optional innerHTML value to set on each element.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set or the innerHTML of the first element.
-* [.return-type]#String# - Current set or the innerHTML of the first element.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the innerHTML of the first element.
+* `+String+` - Current set or the innerHTML of the first element.
 
 [[inarray]]
 === inArray
@@ -480,12 +480,12 @@ Returns the index of the specified item inside the array.
 
 ==== Parameters
 
-* [.param-name]#item# [.param-type]#(Object)# - Item to look for.
-* [.param-name]#array# [.param-type]#(Array)# - Array to look for item in.
+* `+item+` `+(Object)+` - Item to look for.
+* `+array+` `+(Array)+` - Array to look for item in.
 
 ==== Return value
 
-* [.return-type]#Number# - Index of the item or -1.
+* `+Number+` - Index of the item or -1.
 
 [[is]]
 === is
@@ -496,11 +496,11 @@ Returns true/false if the current set items matches the selector.
 
 ==== Parameters
 
-* [.param-name]#selector# [.param-type]#(String)# - Selector to match the elements against.
+* `+selector+` `+(String)+` - Selector to match the elements against.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false if the current set matches the selector.
+* `+Boolean+` - True/false if the current set matches the selector.
 
 [[isarray]]
 === isArray
@@ -511,11 +511,11 @@ Returns true/false if the specified object is an array or not.
 
 ==== Parameters
 
-* [.param-name]#array# [.param-type]#(Object)# - Object to check if it's an array or not.
+* `+array+` `+(Object)+` - Object to check if it's an array or not.
 
 ==== Return value
 
-* [.return-type]#Boolean# - True/false if the object is an array.
+* `+Boolean+` - True/false if the object is an array.
 
 [[last]]
 === last
@@ -526,7 +526,7 @@ Makes the set equal to last element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Single item set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Single item set.
 
 [[makearray]]
 === makeArray
@@ -537,11 +537,11 @@ Creates an array out of an array like object.
 
 ==== Parameters
 
-* [.param-name]#object# [.param-type]#(Object)# - Object to convert to array.
+* `+object+` `+(Object)+` - Object to convert to array.
 
 ==== Return value
 
-* [.return-type]#Array# - Array produced from object.
+* `+Array+` - Array produced from object.
 
 [[next]]
 === next
@@ -552,11 +552,11 @@ Returns a new collection with next sibling of each item in current collection ma
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to match the next element against.
+* `+node+` `+(Element)+` - Node to match the next element against.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[nextuntil]]
 === nextUntil
@@ -567,12 +567,12 @@ Returns a new collection with all next siblings of each item in current collecti
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to find next siblings on.
-* [.param-name]#until# [.param-type]#(String)# - Until the matching selector or element.
+* `+node+` `+(Element)+` - Node to find next siblings on.
+* `+until+` `+(String)+` - Until the matching selector or element.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[off]]
 === off
@@ -583,12 +583,12 @@ Unbinds an event with callback function to the elements in set.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Optional name of the event to bind.
-* [.param-name]#callback# [.param-type]#(function)# - Optional callback function to execute when the event occurs.
+* `+name+` `+(String)+` - Optional name of the event to bind.
+* `+callback+` `+(function)+` - Optional callback function to execute when the event occurs.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[offset]]
 === offset
@@ -599,12 +599,12 @@ Returns the offset of the first element in set or sets the top/left css properti
 
 ==== Parameters
 
-* [.param-name]#offset# [.param-type]#(Object)# - Optional offset object to set on each item.
+* `+offset+` `+(Object)+` - Optional offset object to set on each item.
 
 ==== Return value
 
-* [.return-type]#Object# - Returns the first element offset or the current set if you specified an offset.
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Returns the first element offset or the current set if you specified an offset.
+* `+Object+` - Returns the first element offset or the current set if you specified an offset.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Returns the first element offset or the current set if you specified an offset.
 
 [[on]]
 === on
@@ -615,12 +615,12 @@ Binds an event with callback function to the elements in set.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to bind.
-* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute when the event occurs.
+* `+name+` `+(String)+` - Name of the event to bind.
+* `+callback+` `+(function)+` - Callback function to execute when the event occurs.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[parent]]
 === parent
@@ -631,11 +631,11 @@ Returns a new collection with the parent of each item in current collection matc
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to match parents against.
+* `+node+` `+(Element)+` - Node to match parents against.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching parents.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
 
 [[parents]]
 === parents
@@ -646,11 +646,11 @@ Returns a new collection with the all the parents of each item in current collec
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to match parents against.
+* `+node+` `+(Element)+` - Node to match parents against.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching parents.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
 
 [[parentsuntil]]
 === parentsUntil
@@ -661,12 +661,12 @@ Returns a new collection with the all the parents until the matching selector/el
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to find parent of.
-* [.param-name]#until# [.param-type]#(String)# - Until the matching selector or element.
+* `+node+` `+(Element)+` - Node to find parent of.
+* `+until+` `+(String)+` - Until the matching selector or element.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching parents.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching parents.
 
 [[prepend]]
 === prepend
@@ -677,11 +677,11 @@ Prepends the specified node/html or node set to the current set nodes.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to prepend to each element in set.
+* `+content+` `+(String)+` - Content to prepend to each element in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[prependto]]
 === prependTo
@@ -692,11 +692,11 @@ Prepends the specified set nodes to the specified selector/instance.
 
 ==== Parameters
 
-* [.param-name]#val# [.param-type]#(String)# - Item to prepend the current set to.
+* `+val+` `+(String)+` - Item to prepend the current set to.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set with the prepended nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the prepended nodes.
 
 [[prev]]
 === prev
@@ -707,11 +707,11 @@ Returns a new collection with previous sibling of each item in current collectio
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to match the previous element against.
+* `+node+` `+(Element)+` - Node to match the previous element against.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[prevuntil]]
 === prevUntil
@@ -722,12 +722,12 @@ Returns a new collection with all previous siblings of each item in current coll
 
 ==== Parameters
 
-* [.param-name]#node# [.param-type]#(Element)# - Node to find previous siblings on.
-* [.param-name]#until# [.param-type]#(String)# - Until the matching selector or element.
+* `+node+` `+(Element)+` - Node to find previous siblings on.
+* `+until+` `+(String)+` - Until the matching selector or element.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - New DomQuery instance with all matching elements.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - New DomQuery instance with all matching elements.
 
 [[remove]]
 === remove
@@ -738,7 +738,7 @@ Removes all nodes in set from the document.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set with the removed nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set with the removed nodes.
 
 [[removeattr]]
 === removeAttr
@@ -749,12 +749,12 @@ Removes attributse on the elements in the current set.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of attribute to remove.
+* `+name+` `+(String)+` - Name of attribute to remove.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
-* [.return-type]#String# - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
+* `+String+` - Current set.
 
 [[removeclass]]
 === removeClass
@@ -765,11 +765,11 @@ Removes the specified class name to the current set elements.
 
 ==== Parameters
 
-* [.param-name]#className# [.param-type]#(String)# - Class name to remove.
+* `+className+` `+(String)+` - Class name to remove.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[replacewith]]
 === replaceWith
@@ -780,11 +780,11 @@ Replaces the nodes in set with the specified content.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to replace nodes with.
+* `+content+` `+(String)+` - Content to replace nodes with.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with replaced nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with replaced nodes.
 
 [[show]]
 === show
@@ -795,7 +795,7 @@ Shows all elements in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[slice]]
 === slice
@@ -806,12 +806,12 @@ Slices the current set.
 
 ==== Parameters
 
-* [.param-name]#start# [.param-type]#(Number)# - Start index to slice at.
-* [.param-name]#end# [.param-type]#(Number)# - Optional end index to end slice at.
+* `+start+` `+(Number)+` - Start index to slice at.
+* `+end+` `+(Number)+` - Optional end index to end slice at.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Sliced set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Sliced set.
 
 [[text]]
 === text
@@ -822,12 +822,12 @@ Sets or gets the text of the current set or first set node.
 
 ==== Parameters
 
-* [.param-name]#value# [.param-type]#(String)# - Optional innerText value to set on each element.
+* `+value+` `+(String)+` - Optional innerText value to set on each element.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set or the innerText of the first element.
-* [.return-type]#String# - Current set or the innerText of the first element.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set or the innerText of the first element.
+* `+String+` - Current set or the innerText of the first element.
 
 [[toarray]]
 === toArray
@@ -838,7 +838,7 @@ Converts the current set to an array.
 
 ==== Return value
 
-* [.return-type]#Array# - Array of all nodes in set.
+* `+Array+` - Array of all nodes in set.
 
 [[toggleclass]]
 === toggleClass
@@ -849,12 +849,12 @@ Toggles the specified class name on the current set elements.
 
 ==== Parameters
 
-* [.param-name]#className# [.param-type]#(String)# - Class name to add/remove.
-* [.param-name]#state# [.param-type]#(Boolean)# - Optional state to toggle on/off.
+* `+className+` `+(String)+` - Class name to add/remove.
+* `+state+` `+(Boolean)+` - Optional state to toggle on/off.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[trigger]]
 === trigger
@@ -865,11 +865,11 @@ Triggers the specified event by name or event object.
 
 ==== Parameters
 
-* [.param-name]#name# [.param-type]#(String)# - Name of the event to trigger or event object.
+* `+name+` `+(String)+` - Name of the event to trigger or event object.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Current set.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Current set.
 
 [[trim]]
 === trim
@@ -880,11 +880,11 @@ Removes whitespace from the beginning and end of a string.
 
 ==== Parameters
 
-* [.param-name]#str# [.param-type]#(String)# - String to remove whitespace from.
+* `+str+` `+(String)+` - String to remove whitespace from.
 
 ==== Return value
 
-* [.return-type]#String# - New string with removed whitespace.
+* `+String+` - New string with removed whitespace.
 
 [[unwrap]]
 === unwrap
@@ -895,7 +895,7 @@ Unwraps all elements by removing the parent element of each item in set.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with unwrapped nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with unwrapped nodes.
 
 [[wrap]]
 === wrap
@@ -906,11 +906,11 @@ Wraps all elements in set with the specified wrapper.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to wrap nodes with.
+* `+content+` `+(String)+` - Content to wrap nodes with.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with wrapped nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.
 
 [[wrapall]]
 === wrapAll
@@ -921,11 +921,11 @@ Wraps all nodes in set with the specified wrapper. If the nodes are siblings all
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to wrap nodes with.
+* `+content+` `+(String)+` - Content to wrap nodes with.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with wrapped nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.
 
 [[wrapinner]]
 === wrapInner
@@ -936,8 +936,8 @@ Wraps all elements inner contents in set with the specified wrapper.
 
 ==== Parameters
 
-* [.param-name]#content# [.param-type]#(String)# - Content to wrap nodes with.
+* `+content+` `+(String)+` - Content to wrap nodes with.
 
 ==== Return value
 
-* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.return-type]#tinymce.dom.DomQuery#] - Set with wrapped nodes.
+* link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[`+tinymce.dom.DomQuery+`] - Set with wrapped nodes.

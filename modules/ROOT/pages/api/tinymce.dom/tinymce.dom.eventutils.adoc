@@ -5,7 +5,7 @@ This class wraps the browsers native event logic with more convenient methods.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#bind[bind()] |Binds a callback to an event on the specified target. |link:{baseurl}/api/tinymce.dom/tinymce.dom.eventutils.html[tinymce.dom.EventUtils]
@@ -26,16 +26,16 @@ Binds a callback to an event on the specified target.
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Object)# - Target node/window or custom object.
-* [.param-name]#names# [.param-type]#(String)# - Name of the event to bind.
-* [.param-name]#callback# [.param-type]#(function)# - Callback function to execute when the event occurs.
-* [.param-name]#scope# [.param-type]#(Object)# - Scope to call the callback function on, defaults to target.
+* `+target+` `+(Object)+` - Target node/window or custom object.
+* `+names+` `+(String)+` - Name of the event to bind.
+* `+callback+` `+(function)+` - Callback function to execute when the event occurs.
+* `+scope+` `+(Object)+` - Scope to call the callback function on, defaults to target.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#function# - Callback function that got bound.
+* `+function+` - Callback function that got bound.
 
 [[clean]]
 === clean
@@ -46,11 +46,11 @@ Removes all bound event listeners for the specified target. This will also remov
 
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Object)# - Target node/window object.
+* `+target+` `+(Object)+` - Target node/window object.
 
 ==== Return value
 
-* [.return-type]#EventUtils# - Event utils instance.
+* `+EventUtils+` - Event utils instance.
 
 [[fire]]
 === fire
@@ -61,13 +61,13 @@ Fires the specified event on the specified target.
 
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Object)# - Target node/window or custom object.
-* [.param-name]#name# [.param-type]#(String)# - Event name to fire.
-* [.param-name]#args# [.param-type]#(Object)# - Optional arguments to send to the observers.
+* `+target+` `+(Object)+` - Target node/window or custom object.
+* `+name+` `+(String)+` - Event name to fire.
+* `+args+` `+(Object)+` - Optional arguments to send to the observers.
 
 ==== Return value
 
-* [.return-type]#EventUtils# - Event utils instance.
+* `+EventUtils+` - Event utils instance.
 
 [[unbind]]
 === unbind
@@ -78,10 +78,10 @@ Unbinds the specified event by name, name and callback or all events on the targ
 
 ==== Parameters
 
-* [.param-name]#target# [.param-type]#(Object)# - Target node/window or custom object.
-* [.param-name]#names# [.param-type]#(String)# - Optional event name to unbind.
-* [.param-name]#callback# [.param-type]#(function)# - Optional callback function to unbind.
+* `+target+` `+(Object)+` - Target node/window or custom object.
+* `+names+` `+(String)+` - Optional event name to unbind.
+* `+callback+` `+(function)+` - Optional callback function to unbind.
 
 ==== Return value
 
-* [.return-type]#EventUtils# - Event utils instance.
+* `+EventUtils+` - Event utils instance.

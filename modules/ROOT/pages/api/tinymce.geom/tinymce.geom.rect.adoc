@@ -5,7 +5,7 @@ Contains various tools for rect/position calculation.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#clamp[clamp()] |Returns a rect clamped within the specified clamp rect. This forces the rect to be inside the clamp rect. |link:{baseurl}/api/tinymce.geom/tinymce.geom.rect.html[tinymce.geom.Rect]
@@ -29,15 +29,15 @@ Returns a rect clamped within the specified clamp rect. This forces the rect to 
 [[parameters]]
 ==== Parameters
 
-* [.param-name]#rect# [.param-type]#(Rect)# - Rectangle to force within clamp rect.
-* [.param-name]#clampRect# [.param-type]#(Rect)# - Rectable to force within.
-* [.param-name]#fixedSize# [.param-type]#(Boolean)# - True/false if size should be fixed.
+* `+rect+` `+(Rect)+` - Rectangle to force within clamp rect.
+* `+clampRect+` `+(Rect)+` - Rectable to force within.
+* `+fixedSize+` `+(Boolean)+` - True/false if size should be fixed.
 
 [[return-value]]
 ==== Return value
 anchor:returnvalue[historical anchor]
 
-* [.return-type]#Rect# - Clamped rect.
+* `+Rect+` - Clamped rect.
 
 [[create]]
 === create
@@ -48,14 +48,14 @@ Creates a new rectangle object.
 
 ==== Parameters
 
-* [.param-name]#x# [.param-type]#(Number)# - Rectangle x location.
-* [.param-name]#y# [.param-type]#(Number)# - Rectangle y location.
-* [.param-name]#w# [.param-type]#(Number)# - Rectangle width.
-* [.param-name]#h# [.param-type]#(Number)# - Rectangle height.
+* `+x+` `+(Number)+` - Rectangle x location.
+* `+y+` `+(Number)+` - Rectangle y location.
+* `+w+` `+(Number)+` - Rectangle width.
+* `+h+` `+(Number)+` - Rectangle height.
 
 ==== Return value
 
-* [.return-type]#Rect# - New rectangle object.
+* `+Rect+` - New rectangle object.
 
 [[findbestrelativeposition]]
 === findBestRelativePosition
@@ -66,10 +66,10 @@ Tests various positions to get the most suitable one.
 
 ==== Parameters
 
-* [.param-name]#rect# [.param-type]#(Rect)# - Rect to use as source.
-* [.param-name]#targetRect# [.param-type]#(Rect)# - Rect to move relative to.
-* [.param-name]#constrainRect# [.param-type]#(Rect)# - Rect to constrain within.
-* [.param-name]#rels# [.param-type]#(Array)# - Array of relative positions to test against.
+* `+rect+` `+(Rect)+` - Rect to use as source.
+* `+targetRect+` `+(Rect)+` - Rect to move relative to.
+* `+constrainRect+` `+(Rect)+` - Rect to constrain within.
+* `+rels+` `+(Array)+` - Array of relative positions to test against.
 
 [[fromclientrect]]
 === fromClientRect
@@ -80,11 +80,11 @@ Creates a new rectangle object form a clientRects object.
 
 ==== Parameters
 
-* [.param-name]#clientRect# [.param-type]#(ClientRect)# - DOM ClientRect object.
+* `+clientRect+` `+(ClientRect)+` - DOM ClientRect object.
 
 ==== Return value
 
-* [.return-type]#Rect# - New rectangle object.
+* `+Rect+` - New rectangle object.
 
 [[inflate]]
 === inflate
@@ -95,13 +95,13 @@ Inflates the rect in all directions.
 
 ==== Parameters
 
-* [.param-name]#rect# [.param-type]#(Rect)# - Rect to expand.
-* [.param-name]#w# [.param-type]#(Number)# - Relative width to expand by.
-* [.param-name]#h# [.param-type]#(Number)# - Relative height to expand by.
+* `+rect+` `+(Rect)+` - Rect to expand.
+* `+w+` `+(Number)+` - Relative width to expand by.
+* `+h+` `+(Number)+` - Relative height to expand by.
 
 ==== Return value
 
-* [.return-type]#Rect# - New expanded rect.
+* `+Rect+` - New expanded rect.
 
 [[intersect]]
 === intersect
@@ -112,12 +112,12 @@ Returns the intersection of the specified rectangles.
 
 ==== Parameters
 
-* [.param-name]#rect# [.param-type]#(Rect)# - The first rectangle to compare.
-* [.param-name]#cropRect# [.param-type]#(Rect)# - The second rectangle to compare.
+* `+rect+` `+(Rect)+` - The first rectangle to compare.
+* `+cropRect+` `+(Rect)+` - The second rectangle to compare.
 
 ==== Return value
 
-* [.return-type]#Rect# - The intersection of the two rectangles or null if they don't intersect.
+* `+Rect+` - The intersection of the two rectangles or null if they don't intersect.
 
 [[relativeposition]]
 === relativePosition
@@ -128,6 +128,6 @@ Returns the rect positioned based on the relative position name to the target re
 
 ==== Parameters
 
-* [.param-name]#rect# [.param-type]#(Rect)# - Source rect to modify into a new rect.
-* [.param-name]#targetRect# [.param-type]#(Rect)# - Rect to move relative to based on the rel option.
-* [.param-name]#rel# [.param-type]#(String)# - Relative position. For example: tr-bl.
+* `+rect+` `+(Rect)+` - Source rect to modify into a new rect.
+* `+targetRect+` `+(Rect)+` - Rect to move relative to based on the rel option.
+* `+rel+` `+(String)+` - Relative position. For example: tr-bl.

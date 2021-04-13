@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.util.I18n
 
 I18n class that handles translation of TinyMCE UI. Uses po style with csharp style parameters.

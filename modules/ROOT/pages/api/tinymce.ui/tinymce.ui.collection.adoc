@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.Collection
 
 Control collection, this class contains control instances and it enables you to perform actions on all the contained items. This is very similar to how jQuery works.

@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.Plugin
 
 Plugin base class, this is a pseudo class that describes how a plugin is to be created for TinyMCE. The methods below are all optional.

@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.Control
 
 This is the base class for all controls and containers. All UI control instances inherit from this one as it has the base logic needed by all of them.

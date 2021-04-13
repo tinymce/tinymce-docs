@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.html.SaxParser
 
 This class parses HTML code using pure JavaScript and executes various events for each item it finds. It will always execute the events in the right order for tag soup code like <b><p></b></p>. It will also remove elements and attributes that doesn't fit the schema if the validate setting is enabled.

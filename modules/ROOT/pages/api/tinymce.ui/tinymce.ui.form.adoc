@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.Form
 
 This class creates a form container. A form container has the ability to automatically wrap items in tinymce.ui.FormItem instances. Each FormItem instance is a container for the label and the item.

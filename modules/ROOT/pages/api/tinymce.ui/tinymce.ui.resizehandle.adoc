@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.ResizeHandle
 
 Renders a resize handle that fires ResizeStart, Resize and ResizeEnd events.

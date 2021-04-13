@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.Container
 
 Container control. This is extended by all controls that can have children such as panels etc. You can also use this class directly as an generic container instance. The container doesn't have any specific role or style.

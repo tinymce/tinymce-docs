@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.dom.EventUtils
 
 This class wraps the browsers native event logic with more convenient methods.

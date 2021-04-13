@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.EditorObservable
 
 This mixin contains the event logic for the tinymce.Editor class.

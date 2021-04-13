@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.AbsoluteLayout
 
 LayoutManager for absolute positioning. This layout manager is more of a base class for other layouts but can be created and used directly.

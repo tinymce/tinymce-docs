@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.Factory
 
 This class is a factory for control instances. This enables you to create instances of controls without having to require the UI controls directly. It also allow you to override or add new control types.

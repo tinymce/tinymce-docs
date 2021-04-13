@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.FitLayout
 
 This layout manager will resize the control to be the size of it's parent container. In other words width: 100% and height: 100%.

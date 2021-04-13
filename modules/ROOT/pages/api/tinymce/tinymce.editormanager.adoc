@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.EditorManager
 
 This class used as a factory for manager for tinymce.Editor instances.

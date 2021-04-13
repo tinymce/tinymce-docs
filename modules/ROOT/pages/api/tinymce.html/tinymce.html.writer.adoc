@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.html.Writer
 
 This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.

@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.EditorCommands
 
 This class enables you to add custom editor commands and it contains overrides for native browser commands to address various bugs and issues.

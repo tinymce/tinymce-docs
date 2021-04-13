@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.util.Delay
 
 Utility class for working with delayed actions like setTimeout.

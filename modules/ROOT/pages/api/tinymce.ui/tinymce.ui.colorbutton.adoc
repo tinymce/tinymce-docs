@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.ui.ColorButton
 
 This class creates a color button control. This is a split button in which the main button has a visual representation of the currently selected color. When clicked the caret button displays a color picker, allowing the user to select a new color.

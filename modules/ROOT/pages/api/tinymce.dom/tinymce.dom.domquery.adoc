@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = tinymce.dom.DomQuery
 
 This class mimics most of the jQuery API: This is whats currently implemented: - Utility functions - DOM traversial - DOM manipulation - Event binding This is not currently implemented: - Dimension - Ajax - Animation - Advanced chaining

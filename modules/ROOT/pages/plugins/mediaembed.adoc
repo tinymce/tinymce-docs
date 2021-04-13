@@ -60,7 +60,7 @@ anchor:configurationoptions[historical anchor]
 [[mediaembed_service_url]]
 === `mediaembed_service_url`
 
-This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription.
+This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your link:{pricingpage}[premium TinyMCE plugin] subscription.
 This option is not required for link:{baseurl}/cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud].
 
 [[mediaembed_max_width]]
@@ -72,4 +72,4 @@ This optional setting specifies a maximum width in pixels of the embedded conten
 == Downloading Enhanced Media Embed plugin
 anchor:downloadingenhancedmediaembedplugin[historical anchor]
 
-A https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription includes the ability to download and install the *Media Embed* plugin and a *WAR* file to access the service backend. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file.
+A link:{pricingpage}[premium TinyMCE plugin] subscription includes the ability to download and install the *Media Embed* plugin and a *WAR* file to access the service backend. Please follow these link:{baseurl}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file.

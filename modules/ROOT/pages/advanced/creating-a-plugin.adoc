@@ -56,7 +56,7 @@ anchor:exampleplugin[historical anchor]
 
 Here is an example plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the TinyMCE site in a dialog.
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
 tinymce.PluginManager.add('example', function(editor, url) {
   // Add a button that opens a window
@@ -86,7 +86,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
       // Open window with a specific url
       editor.windowManager.open({
         title: 'TinyMCE site',
-        url: 'https://www.tinymce.com',
+        url: '{product_homepage}',
         width: 800,
         height: 600,
         buttons: [{

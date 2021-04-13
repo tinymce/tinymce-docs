@@ -26,7 +26,7 @@ tinymce.init({
 == PHP Spellchecker component
 anchor:phpspellcheckercomponent[historical anchor]
 
-You can also use TinyMCE's PHP Spellchecker component, which you can http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this http://archive.tinymce.com/develop/changelog/?type=phpspell[txt] file. The TinyMCE's PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
+You can also use TinyMCE's PHP Spellchecker component, which you can link:{rootdir}attachments/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this link:{rootdir}_attachments/php_spelling_changelog.txt[txt] file. The TinyMCE's PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
 
 This plugin enables you to use *Enchant* or *PSpell* on the backend of your server to spell check contents within the TinyMCE editor.
 
@@ -35,7 +35,7 @@ This plugin enables you to use *Enchant* or *PSpell* on the backend of your serv
 anchor:installationstepsforthedefaultenchantengine[historical anchor]
 
 . Make sure you enable *Enchant* in your PHP.
-. Download the *TinyMCE Spellchecker* for PHP package. http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[(Direct download)].
+. Download the *TinyMCE Spellchecker* for PHP package. link:{rootdir}attachments/tinymce_spellchecker_php_4.0.zip[(Direct download)].
 . Unpack the package in the your``/path/to/tinymce/plugins/spellchecker`` directory.
 . Configure TinyMCE to use the spell checker by enabling the `spellchecker` plugin.
 . Configure the `spellchecker_rpc_url` to `'spellchecker.php'`.
@@ -62,4 +62,4 @@ anchor:tinymcespellcheckerproplugin[historical anchor]
 
 For developers requiring a robust enterprise-grade spell check as-you-type functionality, you need the link:{baseurl}/plugins/tinymcespellchecker.html[Spell Checker Pro plugin]. Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
-Full documentation can be found in the TinyMCE Enterprise link:{baseurl}/enterprise/check-spelling/index.html[documentation for Spelling]. Learn more about https://www.tinymce.com/pricing/[TinyMCE Enterprise here].
+Full documentation can be found in the TinyMCE Enterprise link:{baseurl}/enterprise/check-spelling/index.html[documentation for Spelling]. Learn more about link:{pricingpage}[TinyMCE Enterprise here].

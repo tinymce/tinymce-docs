@@ -5,7 +5,7 @@ TinyMCE core class.
 [[properties]]
 == Properties
 
-[cols=",,,",options="header",]
+[cols="1,1,2,1",options="header",]
 |===
 |name |type |summary |defined by
 |$ |link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery.html[[.param-type]#tinymce.dom.DomQuery#] |Dom query instance. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]
@@ -28,7 +28,7 @@ TinyMCE core class.
 [[methods]]
 == Methods
 
-[cols=",,",options="header",]
+[cols="1,3,1",options="header",]
 |===
 |name |summary |defined by
 |link:#add[add()] |Adds an editor instance to the editor collection. This will also set it as the active editor. |link:{baseurl}/api/tinymce/root_tinymce.html[tinymce]

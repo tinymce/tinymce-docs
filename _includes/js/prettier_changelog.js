@@ -38,7 +38,7 @@ function prettyDate (heading, dateRegex)
     month: 'long',
     day: 'numeric'
   };
-  return replaceSubString(heading, dateRegex, getDate(heading, dateRegex).toLocaleDateString('en-US', date_options));
+  return heading.replace(dateRegex, function(match) { return new Date(match).toLocaleDateString('en-US', date_options); });
 }
 
 function getDate (string, dateRegex)

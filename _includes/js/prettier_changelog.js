@@ -2,7 +2,7 @@ var headings = document.querySelectorAll('h2,h3');
 /* Store last level 2 heading */
 var lastHeadingTwo = '';
 /* Regex for ISO-like date strings */
-var dateRE = new RegExp('\\d{2,4}\\-\\d{1,2}\\-\\d{1,2}');
+var dateRE = /\d{2,4}-\d{1,2}-\d{1,2}/;
 
 function getHref (element)
 {

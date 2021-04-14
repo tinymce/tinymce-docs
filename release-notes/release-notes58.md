@@ -81,6 +81,16 @@ This release adds new resolve conversation functionality, making it is possible 
 - Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - `tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve).
 - Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - `tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve).
 
+### Tiny Drive 1.4.0
+
+The {{site.productname}} 5.8 release includes an accompanying release of **Tiny Drive**.
+
+**Tiny Drive** 1.4.0 provides the following new features:
+
+- Added new [tinydrive_skin]({{ site.baseurl }}/tinydrive/configuration/#tinydrive_skin) setting for configuring the skin to use in plugin mode.
+- Added new [skin]({{ site.baseurl }}/tinydrive/tinydrive-api/standalone/#skin) setting for configuring the skin to use in standalone mode mode.
+- Added new 'oxide-dark' skin.
+
 
 ## Accompanying Premium self-hosted server-side component changes
 

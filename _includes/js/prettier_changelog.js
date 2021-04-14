@@ -33,41 +33,30 @@ function fixAnchor (element, newValue)
 function prettyDate (heading, dateRegex)
 {
   /* Change ISO-like date to human-readable date. */
-  var date_options = {
+  var dateOptions = {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   };
-  return heading.replace(dateRegex, function(match) { return new Date(match).toLocaleDateString('en-US', date_options); });
-}
-
-function getDate (string, dateRegex)
-{
-  /* Get date from string and return a date object. */
-  return new Date(string.match(dateRegex).toString());
-}
-
-function replaceSubString (originalString, dateRegex, substitution)
-{
-  /* Replace match with a new substring. */
-  return originalString.replace(dateRegex, substitution);
+  return heading.replace(dateRegex, function(match) { return new Date(match).toLocaleDateString('en-US', dateOptions); });
 }
 
 for (var item in headings)
 {
-  if (headings.hasOwnProperty(item) && headings[item].firstChild.attributes)
+  var headingElm = headings[item];
+  if (headings.hasOwnProperty(item) && headingElm.firstChild.attributes)
   {
-    if (headings[item].tagName === 'H2')
+    if (headingElm.tagName === 'H2')
     {
       /* Store the Current level 2 heading */
-      lastHeadingTwo = getHref(headings[item]);
+      lastHeadingTwo = getHref(headingElm);
       /* Update the Heading text to include productname */
-      headings[item].firstChild.innerText = "Version " + prettyDate(headings[item].firstChild.innerText, dateRE);
+      headingElm.firstChild.innerText = "Version " + prettyDate(headingElm.firstChild.innerText, dateRE);
     }
-    else if (headings[item].tagName === 'H3')
+    else if (headingElm.tagName === 'H3')
     {
-      setHref(headings[item], '#' + getHref(headings[item]) + '_' + lastHeadingTwo);
-      fixAnchor(headings[item], getHref(headings[item]));
+      setHref(headingElm, '#' + getHref(headingElm) + '_' + lastHeadingTwo);
+      fixAnchor(headingElm, getHref(headingElm));
     }
   }
 }

@@ -85,7 +85,7 @@ tinymce.init({
 
 ### tinydrive_skin
 
-This option allows you to specify the skin that {{site.cloudfilemanager}} should use. The default skin included with {{site.cloudfilemanager}} is named "oxide".
+This options sets the skin applied to {{site.cloudfilemanager}}. The default skin included with {{site.cloudfilemanager}} is named "oxide".
 
 **Type:** `String`
 
@@ -93,7 +93,7 @@ This option allows you to specify the skin that {{site.cloudfilemanager}} should
 
 **Possible Values:** `oxide`, `oxide-dark`
 
-If the `tinydrive_skin` setting is not specified, {{site.cloudfilemanager}} will try and use the skin specified by the [skin]({{ site.baseurl }}/configure/editor-appearance/#skin) setting before falling back to the default "oxide" skin.
+If the `tinydrive_skin` option is not specified, {{site.cloudfilemanager}} will try and use the skin specified by the [{{site.productname}} `skin` option]({{ site.baseurl }}/configure/editor-appearance/#skin) before falling back to the default "oxide" skin.
 
 ```js
 tinymce.init({

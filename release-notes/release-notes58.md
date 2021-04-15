@@ -87,18 +87,18 @@ The {{site.productname}} 5.8 release includes an accompanying release of **Tiny 
 
 **Tiny Drive** 1.4.0 provides the following new features:
 
-- Added new [tinydrive_skin]({{ site.baseurl }}/tinydrive/configuration/#tinydrive_skin) setting for configuring the skin to use in plugin mode.
-- Added new [skin]({{ site.baseurl }}/tinydrive/tinydrive-api/standalone/#skin) setting for configuring the skin to use in standalone mode mode.
+- Added a new [`tinydrive_skin`]({{ site.baseurl }}/tinydrive/configuration/#tinydrive_skin) option for applying a skin to the {{site.productname}} {{site.cloudfilemanager}} plugin.
+- Added a new [`skin`]({{ site.baseurl }}/tinydrive/tinydrive-api/standalone/#skin) option for applying a skin to standalone instances of {{site.cloudfilemanager}}.
 - Added new 'oxide-dark' skin.
-- Added new PDF viewer to enable previewing of PDF files.
+- Added a new PDF viewer to add previews for PDF files.
 
 **Tiny Drive** 1.4.0 provides the following bug fixes:
 
-- Fixed a bug where images with exif orientation would get incorrectly oriented.
-- Fixed a bug where specifying 'audio' for the `filetype` setting would not list the files in grid view.
+- Fixed a bug where images with `exif` orientation would be incorrectly oriented.
+- Fixed a bug where specifying 'audio' for the `filetype` setting would not list the files in the grid view.
 - Fixed a bug where tabbing though the user interface could throw an error.
 
-For more information on **Tiny Drive** refer to the full [documentation]({{site.baseurl}}/tinydrive/).
+For information on Tiny Drive, see: [Tiny Drive]({{ site.baseurl }}/tinydrive/).
 
 ## Accompanying Premium self-hosted server-side component changes
 

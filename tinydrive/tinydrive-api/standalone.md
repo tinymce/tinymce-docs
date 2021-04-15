@@ -212,7 +212,7 @@ tinydrive.pick({
 
 ### `skin`
 
-This option allows you to specify the skin that {{site.cloudfilemanager}} should use. The default skin included with {{site.cloudfilemanager}} is named "oxide".
+This option sets the skin applied to {{site.cloudfilemanager}}. The default skin included with {{site.cloudfilemanager}} is named "oxide".
 
 **Type:** `String`
 

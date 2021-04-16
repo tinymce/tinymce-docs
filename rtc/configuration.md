@@ -52,7 +52,7 @@ Suggestions on how to generate a secure encryption key and participate in key ro
 
 If keys are never rotated this can be ignored. For advice on how to use the key hint to rotate encryption keys, see [Encryption key rotation and key hints]({{site.baseurl}}/rtc/encryption/#encryptionkeyrotationandkeyhints).
 
-> **Warning**: The key hint is stored by the server in plain text. Do not add secret or sensitive information to the key hint.
+> **Warning**: Do not include secret or sensitive information in the key hint. The key hint is stored by the server in plain text.
 
 **Type:** `Function`
 

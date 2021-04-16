@@ -31,7 +31,7 @@ Care must be taken to avoid losing encryption keys to this race condition.
 
 ## Common JWT error messages
 
-If the below error descriptions do not immediately solve the problem, try pasting the token into [https://jwt.io/](https://jwt.io/) which will provide more detailed token format debugging.
+If the below error descriptions do not solve the problem, try pasting the token into the [https://jwt.io/ Debugger](https://jwt.io/#debugger-io) for detailed token-format debugging.
 
 ### Unsupported JWT signature algorithm
 
@@ -39,19 +39,19 @@ RTC requires an [asymmetric signing algorithm]({{site.baseurl}}/rtc/jwt-authenti
 
 ### Time-based error messages
 
-These errors include:
+Time-based errors include:
 
 * JWT was issued in the future
 * JWT has expired
 * JWT is not yet valid
 
-JWT is a very strict standard. If the computer that signs the JWT has a clock that is not synchronised with the server clock, and tokens are generated on demand, one of these errors can occur.
+If the system clock on device that signs the JWT is incorrect, the RTC server may return one of these errors. JWTs can include several timestamps-like values to protect the token from misuse. If the client or server clocks are significantly different, time-based errors may occur.
 
 To resolve this issue ensure all computer clocks are synchronised using [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol) or a similar service.
 
 ### Unable to retrieve JWK set
 
-A "JWK set" is a structure that contains public keys for validating JWT signatures. At least one public key in the set must match the private key used to sign the provided identity token for RTC. This error means a public key could not be found in the {{site.cloudname}} account of the API key used to load RTC. For more information on creating public/private key pairs see the [JWT Authentication]({{site.baseurl}}/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices) documentation.
+A "JWK set" is a structure that contains public keys for validating JWT signatures. At least one public key in the set must match the private key used to sign the provided identity token for RTC. This error means a public key could not be found in the {{site.cloudname}} account of the {{site.companyname}} API key used to load the RTC plugin. For information on creating public/private key pairs, see: [JWT Authentication]({{site.baseurl}}/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices).
 
 ### Errors related to "parts"
 

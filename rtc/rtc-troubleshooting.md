@@ -47,7 +47,7 @@ Time-based errors include:
 * JWT has expired
 * JWT is not yet valid
 
-If the system clock on device that signs the JWT is incorrect, the RTC server may return one of these errors. JWTs can include several timestamps-like values to protect the token from misuse. If the client or server clocks are significantly different, time-based errors may occur.
+If the system clock on the device that signs JWTs is incorrect, the {{site.cloudname}} server may return one of these errors. RTC only requires the `exp` claim as an expiration timestamp, but other optional timestamp claims can be used to protect a token from misuse. If the client or server clocks are significantly different, time-based errors may occur.
 
 To resolve this issue ensure all computer clocks are synchronised using [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol) or a similar service.
 

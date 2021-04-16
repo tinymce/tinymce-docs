@@ -16,16 +16,16 @@ This documentation is in progress. Please contact us with any suggestions you th
 
 {{site.productname}} Real-Time Collaboration requires an encryption key:
 
-- To verify that the content is encrypted.
-- So the content can be decrypted by the end user and your server.
+- To encrypt content before a client sends it to the {{site.cloudname}} server.
+- To decrypt content clients receive from the {{site.cloudname}} server.
 
-{{site.companyname}} will be able to see the _encryption key_ but **will not know how to use the key to decrypt the content**.
+{{site.productname}} clients use the encryption key but do not transmit it to the {{site.cloudname}} servers. {{site.companyname}} **will never have the key to decrypt document content**.
 
 ## The difference between content encryption and JWT signing
 
-Encrypted data is indistinguishable from random data without the decryption key. The RTC plugin performs client-side symmetric encryption (using the same key for encryption and decryption) on the editor content. The encryption key is provided to the user and your server (the client endpoints), and is never sent to the {{site.{{site.cloudname}}}} servers; providing end-to-end encryption.
+Encrypted data is indistinguishable from random data without the decryption key. The RTC plugin performs client-side symmetric encryption (using the same key for encryption and decryption) on the editor content. The encryption key is provided to the client by your server, and is never sent to the {{site.cloudname}} servers; that is end-to-end encryption.
 
-JWT signing does not modify the data, and the data can be read by anyone (the data is not encrypted). A JWT signature is transmitted along with the data and is used to validate that the data has not been modified since the signature (JWT) was created. RTC requires an [asymmetric signing algorithm]({{site.baseurl}}/rtc/jwt-authentication/#supportedalgorithms) for JWT identity tokens. Asymmetric signing uses a public/private key pair: signatures are created with the private key and verified using the public key. The public key stored on the {{site.cloudname}} servers can only be used to verify signatures, not create new ones. This allows the {{site.cloudname}} server to verify that the data has not been tampered between the end-points, but does not allow {{site.companyname}} to decrypt the data.
+JWT signing does not modify data, and the data can be read by anyone (the data is not encrypted). A JWT signature is transmitted along with the data and is used to validate that the data was not modified after the JWT was created. RTC requires an [asymmetric signing algorithm]({{site.baseurl}}/rtc/jwt-authentication/#supportedalgorithms) for JWT identity tokens. Asymmetric signing uses a public/private key pair: signatures are created with the private key and verified using the public key. The public key stored on the {{site.cloudname}} servers can only be used to verify signatures, not create new ones. This allows the {{site.cloudname}} server to verify that the data contained in the JWT has not been tampered with and is an authentic statement of identity from your server.
 
 ## Choosing an encryption key
 
@@ -35,7 +35,7 @@ For test environments, a fixed key can be used. However, in a production environ
 
 ### Fixed keys are not secure
 
-Simple, fixed encryption keys provide minimal protection against data disclosure; for details see: [RTC encryption details](#rtcencryptiondetails). Simple fixed keys can be a good way to get started with RTC but if a key is disclosed, it can be used to access any document encrypted with that key. Fixed keys allow _every_ document can be decrypted if the key is disclosed.
+Simple, fixed encryption keys provide minimal protection against data disclosure; for details see: [RTC encryption details](#rtcencryptiondetails). Simple fixed keys can be a good way to get started with RTC, but if a fixed key is disclosed it can be used to decrypt _every_ document uploaded to the {{site.cloudname}} server with that key.
 
 ## Generating a secure encryption key
 
@@ -63,16 +63,16 @@ The key hint can be a key thumbprint, ID, or other non-sensitive identifier that
 
 > **Note**: This section contains the technical details of the encryption used to securely transmit document content. It is provided for information purposes only; an understanding these details is not required to use the RTC plugin.
 
-The RTC plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) to encrypt content directly. The plugin uses industry standard cryptography algorithms to generate a unique session key for content encryption based on the provided key to improve protection against brute force decryption.
+The RTC plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) to encrypt content directly. The plugin derives a unique session key from the provided key using industry standard cryptography algorithms. This method of content encryption improves protection against brute force decryption.
 
-> **Note**: {{site.companyname}} is in the process of changing the RTC encryption to [AES-KW](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey), which does not require an initialization vector or protocol salt. The description below is still correct for the current beta release.
+> **Note**: {{site.companyname}} is in the process of changing the RTC encryption method to [AES-KW](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey), which does not require an initialization vector or protocol salt. The description below is still correct for the current beta release.
 
 The RTC protocol encryption technique is as follows:
-* 256 bits of random data are generated as the salt for each session. As described above, each document ID used for collaboration may have multiple sessions. The salt is generated using the [`Crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) browser API and a 32 byte long [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array).
+* 256 bits of random data are generated as the salt for each session. As described above, each document ID used for collaboration may have multiple sessions. The salt is generated using the [`Crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) browser API and a 32 byte [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array).
 * The salt data and the provided encryption key are combined using the [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) key derivation function. Derivation is performed by the [SubtleCrypto.deriveKey()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveKey) browser API, using the following parameters:
   * PBKDF2 [algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Pbkdf2Params), with SHA-512 digest algorithm and 10000 iterations,
   * AES-GCM [derivedKeyAlgorithm](https://developer.mozilla.org/en-US/docs/Web/API/AesKeyGenParams) with a length of 256.
-* The derived key is cached (in memory only) and used with [SubtleCrypto.encrypt()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt) and [SubtleCrypto.decrypt()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/decrypt) as necessary, specifying the [AES-GCM algorithm](https://developer.mozilla.org/en-US/docs/Web/API/AesGcmParams). For each encrypted message, 96 bits of random data are used as the initialization vector, also generated with [Crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) but this time using `Uint8Array` with a length of 12. Each IV is transmitted alongside the encrypted message.
+* The derived key is cached (in memory only) and used with [SubtleCrypto.encrypt()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt) and [SubtleCrypto.decrypt()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/decrypt) as necessary, specifying the [AES-GCM algorithm](https://developer.mozilla.org/en-US/docs/Web/API/AesGcmParams). For each encrypted message, 96 bits of random data are used as the initialization vector, also generated with [Crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) but this time using a 12 byte `Uint8Array`. The initialization vector is transmitted alongside the encrypted message.
 * The provided key and derived key are never transmitted between clients. Each client will already have the provided key, so only the salt needs to be transmitted for clients to recreate the derived key. The salt alone cannot be used to decrypt the document content.
 * When a Real-time collaboration session is established, the provided `keyHint` and protocol-generated salt are sent to the server through a HTTPS websocket connection, where they are stored in a database-entry linked to the session. When subsequent clients connect to the session, the server sends these values along with other session information so the client can replicate the unique session key using [rtc_encryption_provider]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) and key derivation.
 

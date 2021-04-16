@@ -107,7 +107,7 @@ tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_document_id: "your-document-id",
-  rtc_encryption_provider: () => Promise.resolve({ key: "your shared encryption key", keyHint: "not used" }),
+  rtc_encryption_provider: () => Promise.resolve({ key: "your shared encryption 🔑", keyHint: "not used" }),
   rtc_token_provider: () => Promise.resolve({ token: "your-jwt-token" })
 })
 ```

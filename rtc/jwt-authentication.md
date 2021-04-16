@@ -28,7 +28,7 @@ JWT is a standard authorization solution for web services and is documented in m
 
 ### Claims
 
-Claims are additional data that can be sent as part of the JWT payload. The RTC JWT requires the following claims:
+Claims are additional data that can be sent as part of the JWT payload. RTC requires the following claims:
 
 | Data | Optional or required | Description |
 |---|:---:|---|

@@ -43,16 +43,16 @@ This procedure requires:
     import { Editor } from '@tinymce/tinymce-react';
 
     export default function App() {
-      const edRef = useRef(null);
+      const editorRef = useRef(null);
       const log = () => {
-        if (edRef.current) {
-          console.log(edRef.current.getContent());
+        if (editorRef.current) {
+          console.log(editorRef.current.getContent());
         }
       };
       return (
         <>
         <Editor
-          onInit={(evt, editor) => edRef.current = editor}
+          onInit={(evt, editor) => editorRef.current = editor}
           initialValue="<p>This is the initial content of the editor.</p>"
           init={% raw %}{{{% endraw %}
             height: 500,

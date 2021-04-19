@@ -108,7 +108,7 @@ These settings can be updated once the editor is initialized. Note that there ar
 <dd>Sets and enforces the value of the editor. Only used for a controlled component.</dd>
 </dl>
 
-None of the configuration properties are **required** for the {{site.productname}} React component to work however as previously noted that when loading from {{site.cloudname}} a warning message
+None of the configuration properties are **required** for the {{site.productname}} React component to work, however as previously noted that when loading from {{site.cloudname}} a warning message
 will display if the `apiKey` is not configured correctly.
 
 #### `apiKey`

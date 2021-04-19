@@ -137,14 +137,14 @@ Changes the {{site.productname}} build used for the editor to either a specific 
 
 **Default value:** `{{site.productmajorversion}}-stable`
 
-**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`, `{{site.productminorversion}}.0`
+**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`, `{{site.productminorversion}}`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
 - `{{site.productmajorversion}}-stable` (**Default**): The current enterprise release of {{site.productname}}.
 - `{{site.productmajorversion}}-testing`: The current release candidate for the next enterprise release of {{site.productname}}.
 - `{{site.productmajorversion}}-dev`: The nightly-build version of {{site.productname}}.
-- A version number such as `{{site.productminorversion}}.0`: The specific enterprise release version of {{site.productname}}.
+- A version number such as `{{site.productminorversion}}`: The specific enterprise release version of {{site.productname}}.
 
 Such as:
 

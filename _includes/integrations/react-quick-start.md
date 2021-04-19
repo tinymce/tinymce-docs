@@ -146,7 +146,7 @@ This procedure requires:
           // Editor styles
           import 'tinymce/skins/ui/oxide/skin.min.css';
 
-          // importing the plugin js. Note that most of the premium plugins can't be imported this way because they have extra resources that have to be loaded asynchronously at runtime
+          // importing the plugin js.
           import 'tinymce/plugins/advlist';
           import 'tinymce/plugins/autolink';
           import 'tinymce/plugins/link';

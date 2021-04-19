@@ -190,7 +190,7 @@ Note that unlike the {{site.productname}} method `tinymce.init()` the `selector`
 `target` and `readonly` properties should not be specified as they will be overridden
 by the integration.
 
-**Default value:** `{% raw %}{{{% endraw %} {% raw %}}}{% endraw %}`
+**Default value:** `{ }`
 
 **Type:** Object
 

@@ -115,8 +115,12 @@ This procedure requires:
         ```
 
         To do this with create-react-app, add the script tag to `./public/index.html`.
+        
         Normally the tinymce distribution would be put in the `public` folder
-        and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`.
+        and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
+        ```html
+        <script src="%PUBLIC_URL%/tinymce/tinymce.min.js"></script>
+        ```
 
         For information on self-hosting {{site.productname}}, see: [Installing {{site.productname}}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 

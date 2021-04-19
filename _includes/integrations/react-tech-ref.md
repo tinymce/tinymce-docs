@@ -45,6 +45,7 @@ $ yarn add @tinymce/tinymce-react
 The following are the most common properties grouped by category.
 
 #### Configuring editor source
+
 The integration will load {{site.productname}} from these sources in this priority:
 1. If the global `tinymce` is present on the page nothing additional will be loaded and it will be used.
 2. If the `tinymceScriptSrc` property is provided then a script tag will be added to load {{site.productname}} from the given URL.
@@ -64,6 +65,7 @@ These settings are used to configure this behavior further:
 </dl>
 
 #### Configuring page elements
+
 These settings provide some control over the page elements that the integration creates:.
 <dl>
 <dt><a href="#id"><code>id</code></a></dt>
@@ -77,6 +79,7 @@ These settings provide some control over the page elements that the integration 
 </dl>
 
 #### Configuring editor settings
+
 These settings are read once when the editor is initialized. Changes after the editor has launched are ignored.
 <dl>
 <dt><a href="#init"><code>init</code></a></dt>
@@ -88,6 +91,7 @@ These settings are read once when the editor is initialized. Changes after the e
 </dl>
 
 #### Managing the editor
+
 These settings can be updated once the editor is initialized. Note that there are [other events](#eventbinding) not mentioned here.
 <dl>
 <dt><a href="#disabled"><code>disabled</code></a></dt>
@@ -108,6 +112,7 @@ None of the configuration properties are **required** for the {{site.productname
 will display if the `apiKey` is not configured correctly.
 
 #### `apiKey`
+
 {{site.cloudname}} API key. 
 
 Needed for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor without the warning message "This domain is not registered...".
@@ -127,6 +132,7 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 ```
 
 #### `cloudChannel`
+
 Changes the {{site.productname}} build used for the editor to either a specific version or a channel indicating a stability level.
 
 **Default value:** `{{site.productmajorversion}}-stable`
@@ -152,6 +158,7 @@ Such as:
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
 #### `disabled`
+
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
 **Default value:** `false`
@@ -167,6 +174,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 ```
 
 #### `id`
+
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method.
 
 **Default value:** Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
@@ -182,6 +190,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 ```
 
 #### `init`
+
 Additional settings passed to the `tinymce.init({...})` method used to initialize the editor.
 
 For information on the {{site.productname}} method `tinymce.init({...})`, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
@@ -208,6 +217,7 @@ by the integration.
 ```
 
 #### `initialValue`
+
 The initial HTML content of the editor. This will reset the editor undo state and cursor when changed.
 
 This may be set either before the editor loads, or soon afterwards by an asynchronous
@@ -244,6 +254,7 @@ return (
 ```
 
 #### `inline`
+
 Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the {{site.productname}} method `tinymce.init({...})`.
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
@@ -261,6 +272,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 ```
 
 #### `onEditorChange`
+
 Used to store the state of the editor outside the {{site.productname}} React component. 
 This property is commonly used when using the {{site.productname}} React component as a controlled component.
 
@@ -344,6 +356,7 @@ return (
 ```
 
 #### `plugins`
+
 Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {{site.productname}} method `tinymce.init({...})`.
 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
@@ -359,6 +372,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 ```
 
 #### `scriptLoading`
+
 Used to configure the script tag created to load {{site.productname}}.
 
 Contains 3 settings:
@@ -389,16 +403,19 @@ Contains 3 settings:
 ```
 
 ##### Example: Loading {{site.productname}} asynchronously
+
 ```jsx
 <Editor scriptLoading={% raw %}{{{% endraw %} async: true {% raw %}}}{% endraw %}>
 ```
 
 ##### Example: Delaying load of {{site.productname}} for 500 milliseconds
+
 ```jsx
 <Editor scriptLoading={% raw %}{{{% endraw %} delay: 500 {% raw %}}}{% endraw %}>
 ```
 
 #### `tagName`
+
 Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML element for the editor in inline mode.
 
 **Default value:** `div`
@@ -415,6 +432,7 @@ Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML e
 ```
 
 #### `textareaName`
+
 Only valid when the editor is in iframe mode. Sets the `name` attribute for the `textarea` element used for the editor in forms.
 
 **Default value:** `undefined`
@@ -433,6 +451,7 @@ Only valid when the editor is in iframe mode. Sets the `name` attribute for the 
 ```
 
 #### `toolbar`
+
 Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the {{site.productname}} method `tinymce.init({...})`.
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
@@ -451,6 +470,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 ```
 
 #### `tinymceScriptSrc`
+
 Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to lazy load.
 
 **Type:** String
@@ -464,6 +484,7 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 ```
 
 #### `value`
+
 The HTML content of the editor when operating as a controlled component. 
 
 When this property is different to the current editor content, the editor content

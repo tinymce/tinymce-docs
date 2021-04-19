@@ -264,6 +264,14 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 Used to store the state of the editor outside the {{site.productname}} React component. 
 This property is commonly used when using the {{site.productname}} React component as a controlled component.
 
+It is called with two arguments:
+<dl>
+<dt><code>value</code></dt>
+<dd>The current value of the editor. This is normally HTML but can be text if the deprecated <a href="#outputformat"><code>outputFormat</code></a> property is used.</dd>
+<dt><code>editor</code></dt>
+<dd>A reference to the editor.</dd>
+</dl>
+
 For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 **Type:** EventHandler
@@ -631,9 +639,12 @@ Functions can be bound to editor events, such as:
 ```
 
 When the handler is called (**handlerFunction** in this example), it is called with two arguments:
-
-* `event` - The TinyMCE event object.
-* `editor` - A reference to the editor.
+<dl>
+<dt><code>event</code></dt>
+<dd>The TinyMCE event object.</dd>
+<dt><code>editor</code></dt>
+<dd>A reference to the editor.</dd>
+</dl>
 
 The following events are available:
 

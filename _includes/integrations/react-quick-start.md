@@ -45,38 +45,40 @@ This procedure requires:
 5. Using a text editor, open `/path/to/tinymce-react-demo/src/App.js` and replace the contents with:
 
     ```jsx
-    import React from 'react';
+    import React, { useRef } from 'react';
     import { Editor } from '@tinymce/tinymce-react';
 
-    class App extends React.Component {
-      handleEditorChange = (content, editor) => {
-        console.log('Content was updated:', content);
-      }
-
-      render() {
-        return (
-          <Editor
-            initialValue="<p>This is the initial content of the editor</p>"
-            init={% raw %}{{{% endraw %}
-              height: 500,
-              menubar: false,
-              plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table paste code help wordcount'
-              ],
-              toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
-                alignleft aligncenter alignright alignjustify | \
-                bullist numlist outdent indent | removeformat | help'
-            {% raw %}}}{% endraw %}
-            onEditorChange={this.handleEditorChange}
-          />
-        );
-      }
+    export default function App() {
+      const edRef = useRef(null);
+      const log = () => {
+        if (edRef.current) {
+          console.log(edRef.current.getContent());
+        }
+      };
+      return (
+        <>
+        <Editor
+          onInit={(evt, editor) => edRef.current = editor}
+          initialValue="<p>This is the initial content of the editor.</p>"
+          init={% raw %}{{{% endraw %}
+            height: 500,
+            menubar: false,
+            plugins: [
+              'advlist autolink lists link image charmap print preview anchor',
+              'searchreplace visualblocks code fullscreen',
+              'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+          {% raw %}}}{% endraw %}
+        />
+        <button onClick={log}>Log editor content</button>
+        </>
+      );
     }
-
-    export default App;
     ```
     This JavaScript file will create the class `App` containing a {{site.productname}} editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 

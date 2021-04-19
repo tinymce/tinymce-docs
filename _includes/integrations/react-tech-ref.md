@@ -2,7 +2,7 @@
 
 **Covered in this section:**
 
-- [Installing the TinyMCE React integration using the NPM](#installingthetinymcereactintegrationusingnpm)
+- [Installing the TinyMCE React integration using NPM or Yarn](#installingthetinymcereactintegrationusingnpmoryarn)
 - [Configuring the editor](#configuringtheeditor)
 
   - [`apiKey`](#apikey)

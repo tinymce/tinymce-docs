@@ -127,7 +127,7 @@ This procedure requires:
 
           To bundle {{site.productname}} using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
 
-          ##### Example: bundling
+          Example of bundling:
           ```jsx
           import { Editor } from '@tinymce/tinymce-react';
 

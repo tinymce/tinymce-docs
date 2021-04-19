@@ -216,9 +216,9 @@ This option sets the skin applied to {{site.cloudfilemanager}}. The default skin
 
 **Type:** `String`
 
-**Default Value:** `oxide`
+**Default Value:** `'oxide'`
 
-**Possible Values:** `oxide`, `oxide-dark`
+**Possible Values:** `'oxide'`, `'oxide-dark'`
 
 ```js
 tinydrive.pick({

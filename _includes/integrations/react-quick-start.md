@@ -18,7 +18,7 @@ This procedure requires:
 
 ### Procedure
 
-1. Use the the [Create React App](https://github.com/facebook/create-react-app) package to create a new React project named `tinymce-react-demo`.
+1. Use the [Create React App](https://github.com/facebook/create-react-app) package to create a new React project named `tinymce-react-demo`.
 
     ```sh
     $ npx create-react-app tinymce-react-demo

@@ -278,9 +278,9 @@ For more information, see: [Using the {{site.productname}} React component as a 
 
 #### `outputFormat`
 
-> **Important**: This option was deprecated with the release of {{site.productname}} 
-React component 3.11.0. `outputFormat` will be removed in a future release of 
-{{site.productname}} React component.
+> **Important**: This option was deprecated with the release of the {{site.productname}} 
+React component 3.11.0. The `outputFormat` option will be removed in a future 
+release of the {{site.productname}} React component.
 
 Used to specify the format of the content emitted via the [`onEditorChange`](#oneditorchange) event.
 

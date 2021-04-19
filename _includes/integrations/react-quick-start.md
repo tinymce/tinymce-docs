@@ -18,31 +18,25 @@ This procedure requires:
 
 ### Procedure
 
-1. On a command line or command prompt, install the [Create React App](https://github.com/facebook/create-react-app) package.
+1. Use the the [Create React App](https://github.com/facebook/create-react-app) package to create a new React project named `tinymce-react-demo`.
 
     ```sh
-    $ npm install -g create-react-app
+    $ npx create-react-app tinymce-react-demo
     ```
 
-2. Create a new React project named `tinymce-react-demo`.
-
-    ```sh
-    $ create-react-app tinymce-react-demo
-    ```
-
-3. Change into the newly created directory.
+2. Change into the newly created directory.
 
     ```sh
     $ cd tinymce-react-demo
     ```
 
-4. Install the `tinymce-react` package and save it to your `package.json` with `--save`.
+3. Install the `tinymce-react` package and save it to your `package.json` with `--save`.
 
     ```sh
     $ npm install --save @tinymce/tinymce-react
     ```
 
-5. Using a text editor, open `/path/to/tinymce-react-demo/src/App.js` and replace the contents with:
+4. Using a text editor, open `./src/App.js` and replace the contents with:
 
     ```jsx
     import React, { useRef } from 'react';
@@ -82,7 +76,7 @@ This procedure requires:
     ```
     This JavaScript file will create the class `App` containing a {{site.productname}} editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 
-6. Provide access to {{site.productname}} using either {{site.cloudname}} or by self-hosting {{site.productname}}.
+5. Provide access to {{site.productname}} using either {{site.cloudname}} or by self-hosting {{site.productname}}.
 
     * **{{site.cloudname}}**
 
@@ -113,7 +107,7 @@ This procedure requires:
 
           To bundle {{site.productname}} using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
 
-7. Test the application using the Node.js development server.
+6. Test the application using the Node.js development server.
     * To start the development server, navigate to the `tinymce-react-demo` directory and run:
 
         ```sh

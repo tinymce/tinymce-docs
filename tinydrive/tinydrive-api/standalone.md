@@ -210,6 +210,25 @@ tinydrive.pick({
 });
 ```
 
+### `skin`
+
+This option sets the skin applied to {{site.cloudfilemanager}}. The default skin included with {{site.cloudfilemanager}} is named "oxide".
+
+**Type:** `String`
+
+**Default Value:** `'oxide'`
+
+**Possible Values:** `'oxide'`, `'oxide-dark'`
+
+```js
+tinydrive.pick({
+  skin: 'dark',
+  token_provider: '/your-local/jwt-provider'
+}).then(function (result) {
+  console.log(result.files);
+});
+```
+
 ### `target`
 
 This setting enables you to render {{site.cloudfilemanager}} within a target element by using a CSS selector. If the container has display: flex then the container will be filled with the {{site.cloudfilemanager}} UI this could be useful if you want to position the {{site.cloudfilemanager}} UI inside your web applications interface.
@@ -258,6 +277,7 @@ interface StandalonePickerApiSettings extends CommonStandaloneApiSettings {
   google_drive_client_id?: string;
   google_drive_key?: string;
   max_image_dimension?: number;
+  skin?: string;
   target?: string;
 }
 

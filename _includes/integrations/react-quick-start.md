@@ -92,20 +92,96 @@ This procedure requires:
 
       {{site.productname}} can be self-hosted by: deploying {{site.productname}} independent of the React application, or bundling {{site.productname}} with the React application.
 
-      * **Deploy {{site.productname}} independent of the React application**
+      * **Deploy {{site.productname}} independent of the React application using `tinymceScriptSrc`**
 
-        To use an independent deployment of {{site.productname}}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+        To use an independent deployment of {{site.productname}}, add the property `tinymceScriptSrc` to specify the path to the {{site.productname}} script, such as:
+        ```jsx
+        <Editor tinymceScriptSrc="/path/to/tinymce.min.js" />
+        ```
+
+        To do this with create-react-app put the tinymce distribution in `./public`
+        and reference the path to the `public` folder using the environment 
+        variable `process.env.PUBLIC_URL`, such as:
+         ```jsx
+         <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
+         ```
+
+      * **Deploy {{site.productname}} independent of the React application with a script tag**
+
+        An alternative method is to add a script to either the `<head>` or the
+        end of the `<body>` of the HTML file, such as:
         ```html
         <script src="/path/to/tinymce.min.js"></script>
         ```
 
-        To use an independent deployment of {{site.productname}} with the create a React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
+        To do this with create-react-app, add the script tag to `./public/index.html`.
+        Normally the tinymce distribution would be put in the `public` folder
+        and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`.
 
-        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Installing {{site.productname}}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
       * **Bundling {{site.productname}} with the React application using a module loader**
 
+          Bundling with a module loader can be complex and error prone so it is
+          not recommended.
+
           To bundle {{site.productname}} using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+
+          ##### Example: bundling
+          ```jsx
+          import { Editor } from '@tinymce/tinymce-react';
+
+          // TinyMCE so the global var exists
+          // eslint-disable-next-line no-unused-vars
+          import tinymce from 'tinymce/tinymce';
+
+          // Theme
+          import 'tinymce/themes/silver';
+          // Toolbar icons
+          import 'tinymce/icons/default';
+          // Editor styles
+          import 'tinymce/skins/ui/oxide/skin.min.css';
+
+          // importing the plugin js. Note that most of the premium plugins can't be imported this way because they have extra resources that have to be loaded asynchronously at runtime
+          import 'tinymce/plugins/advlist';
+          import 'tinymce/plugins/autolink';
+          import 'tinymce/plugins/link';
+          import 'tinymce/plugins/image';
+          import 'tinymce/plugins/lists';
+          import 'tinymce/plugins/charmap';
+          import 'tinymce/plugins/hr';
+          import 'tinymce/plugins/anchor';
+          import 'tinymce/plugins/spellchecker';
+          import 'tinymce/plugins/searchreplace';
+          import 'tinymce/plugins/wordcount';
+          import 'tinymce/plugins/code';
+          import 'tinymce/plugins/fullscreen';
+          import 'tinymce/plugins/insertdatetime';
+          import 'tinymce/plugins/media';
+          import 'tinymce/plugins/nonbreaking';
+          import 'tinymce/plugins/table';
+          import 'tinymce/plugins/template';
+          import 'tinymce/plugins/help';
+
+          // Content styles, including inline UI like fake cursors
+          /* eslint import/no-webpack-loader-syntax: off */
+          import contentCss from '!!raw-loader!tinymce/skins/content/default/content.min.css';
+          import contentUiCss from '!!raw-loader!tinymce/skins/ui/oxide/content.min.css';
+
+          export default function TinyEditorComponent(props) {
+            // note that skin and content_css is disabled to avoid the normal
+            // loading process and is instead loaded as a string via content_style
+            return (
+              <Editor
+                init={% raw %}{{{% endraw %}
+                  skin: false,
+                  content_css: false,
+                  content_style: [contentCss, contentUiCss].join('\n'),
+                {% raw %}}}{% endraw %}
+              />
+            );
+          }
+          ```
 
 6. Test the application using the Node.js development server.
     * To start the development server, navigate to the `tinymce-react-demo` directory and run:

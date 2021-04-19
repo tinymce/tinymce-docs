@@ -464,9 +464,16 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 ```
 
 #### `value`
+The HTML content of the editor when operating as a controlled component. 
+
+When this property is different to the current editor content, the editor content
+will be changed to match (within 200 milliseconds) and a undo level will be created.
+When the editor content changes by this mechanism an attempt will be made to
+retain the selection however if the previous selection does not exist in the new
+content the cursor will be returned to the start of the document.
 
 This property allows the editor to be used as a controlled component by setting 
-the `value` property and using the `onEditorChange` event.
+the `value` property and using the `onEditorChange` event to update the `value`.
 
 For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 

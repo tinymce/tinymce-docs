@@ -24,7 +24,7 @@ This procedure requires:
     $ npx create-react-app tinymce-react-demo
     ```
 
-2. Change into the newly created directory.
+2. Change to the newly created directory.
 
     ```sh
     $ cd tinymce-react-demo

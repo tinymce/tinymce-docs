@@ -506,7 +506,7 @@ The {{site.productname}} React component is best used as a uncontrolled componen
 as it allows the editor to perform well on larger documents.
 
 When using the editor in the uncontrolled mode you must avoid using the `value`
-and `onEditorChange` props. Instead get the content of the editor directly
+and `onEditorChange` props. Instead, get the content of the editor directly
 when it is needed. This is easiest done by storing the editor reference when the
 `onInit` event handler is called.
 

@@ -223,7 +223,7 @@ The initial HTML content of the editor. This will reset the editor undo state an
 This may be set either before the editor loads, or soon afterwards by an asynchronous
 process.
 
-Ensure that this is **not** updated by the editor value or the editor will be unusable.
+> **Important**: Ensure that this is **not** updated by `onEditorChange` or the editor will be unusable.
 
 **Default value:** `''`
 

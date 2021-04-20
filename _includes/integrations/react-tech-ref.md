@@ -532,13 +532,13 @@ function MyComponent({initialValue}) {
   };
   return (
     <>
-    <Editor
-      initialValue={initialValue}
-      onInit={(evt, editor) => edRef.current = editor}
-      onDirty={() => setDirty(true)}
-    />
-    <button onClick={save} disabled={!dirty}>Save</button>
-    {dirty && <p>You have unsaved content!</p>}
+      <Editor
+        initialValue={initialValue}
+        onInit={(evt, editor) => edRef.current = editor}
+        onDirty={() => setDirty(true)}
+      />
+      <button onClick={save} disabled={!dirty}>Save</button>
+      {dirty && <p>You have unsaved content!</p>}
     </>
   );
 }

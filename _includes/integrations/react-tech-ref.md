@@ -502,7 +502,7 @@ For more information, see: [Using the {{site.productname}} React component as a 
 
 ### Using the {{site.productname}} React component as a uncontrolled component
 
-The {{site.productname}} React component is best used as a uncontrolled component
+The {{site.productname}} React component is best used as an uncontrolled component
 as it allows the editor to perform well on larger documents.
 
 When using the editor in the uncontrolled mode you must avoid using the `value`

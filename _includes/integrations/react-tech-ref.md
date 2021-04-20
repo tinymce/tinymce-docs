@@ -48,7 +48,7 @@ The following are the most common properties grouped by category.
 
 The integration will load {{site.productname}} from these sources in this priority:
 1. If the global `tinymce` is present on the page nothing additional will be loaded and it will be used.
-2. If the `tinymceScriptSrc` property is provided then a script tag will be added to load {{site.productname}} from the given URL.
+2. If the `tinymceScriptSrc` property is provided, then a script tag will be added to load {{site.productname}} from the given URL.
 3. Finally if none of the above conditions apply then a script tag will be added to load {{site.productname}} from {{site.cloudname}}.
 
 These settings are used to configure this behavior further:

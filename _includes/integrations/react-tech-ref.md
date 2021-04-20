@@ -518,14 +518,14 @@ the dirty state when saving the editor content.
 
 ```jsx
 function MyComponent({initialValue}) {
-  const edRef = useRef(null);
+  const editorRef = useRef(null);
   const [dirty, setDirty] = useState(false);
   useEffect(() => setDirty(false), [initialValue]);
   const save = () => {
-    if (edRef.current) {
-      const content = edRef.current.getContent();
+    if (editorRef.current) {
+      const content = editorRef.current.getContent();
       setDirty(false);
-      edRef.current.setDirty(false);
+      editorRef.current.setDirty(false);
       // an application would save the editor content to the server here
       console.log(content);
     }
@@ -534,7 +534,7 @@ function MyComponent({initialValue}) {
     <>
       <Editor
         initialValue={initialValue}
-        onInit={(evt, editor) => edRef.current = editor}
+        onInit={(evt, editor) => editorRef.current = editor}
         onDirty={() => setDirty(true)}
       />
       <button onClick={save} disabled={!dirty}>Save</button>

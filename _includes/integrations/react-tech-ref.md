@@ -59,14 +59,14 @@ These settings are used to configure this behavior further:
 <dt><a href="#cloudchannel"><code>cloudChannel</code></a></dt>
 <dd>The channel of {{site.productname}} used when loading from {{site.cloudname}}.</dd>
 <dt><a href="#scriptloading"><code>scriptLoading</code></a></dt>
-<dd>The script loading behavior settings. Allows setting the async and defer attributes as well as adding an additional delay in milliseconds.</dd>
+<dd>The script loading behavior settings. Allows setting the async and defer attributes, as well as adding an additional delay in milliseconds.</dd>
 <dt><a href="#tinymcescriptsrc"><code>tinymceScriptSrc</code></a></dt>
 <dd>The URL to load {{site.productname}}, normally used when loading a self hosted version of {{site.productname}}.</dd>
 </dl>
 
 #### Configuring page elements
 
-These settings provide some control over the page elements that the integration creates:.
+These settings provide some control over the page elements that the integration creates:
 <dl>
 <dt><a href="#id"><code>id</code></a></dt>
 <dd>The id attribute for the element that the editor is initialized on.</dd>

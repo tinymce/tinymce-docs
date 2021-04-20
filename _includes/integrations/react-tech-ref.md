@@ -57,7 +57,7 @@ These settings are used to configure this behavior further:
 <dt><a href="#apikey"><code>apiKey</code></a></dt>
 <dd>The {{site.cloudname}} API key. When loading from {{site.cloudname}} specify this to remove the &quot;This domain is not registered...&quot; warning message.</dd>
 <dt><a href="#cloudchannel"><code>cloudChannel</code></a></dt>
-<dd>The build of {{site.productname}} used when loading from {{site.cloudname}}.</dd>
+<dd>The channel of {{site.productname}} used when loading from {{site.cloudname}}.</dd>
 <dt><a href="#scriptloading"><code>scriptLoading</code></a></dt>
 <dd>The script loading behavior settings. Allows setting the async and defer attributes as well as adding an additional delay in milliseconds.</dd>
 <dt><a href="#tinymcescriptsrc"><code>tinymceScriptSrc</code></a></dt>

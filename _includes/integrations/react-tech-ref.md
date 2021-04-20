@@ -73,9 +73,9 @@ These settings provide some control over the page elements that the integration 
 <dt><a href="#inline"><code>inline</code></a></dt>
 <dd>Load the editor as part of the page sharing the page styling and selection.</dd>
 <dt><a href="#tagname"><code>tagName</code></a></dt>
-<dd>The tag used for creating an inline editor. Ignored for an iframe editor.</dd>
+<dd>The tag used for creating an inline editor. Ignored for a classic (iframe) editor.</dd>
 <dt><a href="#textareaname"><code>textareaName</code></a></dt>
-<dd>The name attribute on the textarea tag used for creating the iframe editor. Ignored for an inline editor.</dd>
+<dd>The name attribute on the textarea tag used for creating the classic (iframe) editor. Ignored for an inline editor.</dd>
 </dl>
 
 #### Configuring editor settings
@@ -433,7 +433,7 @@ Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML e
 
 #### `textareaName`
 
-Only valid when the editor is in iframe mode. Sets the `name` attribute for the `textarea` element used for the editor in forms.
+Only valid when the editor is in classic (iframe) mode. Sets the `name` attribute for the `textarea` element used for the editor in forms.
 
 **Default value:** `undefined`
 

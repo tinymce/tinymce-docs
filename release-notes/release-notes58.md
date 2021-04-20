@@ -81,6 +81,19 @@ This release adds new resolve conversation functionality, making it is possible 
 - Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - `tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve).
 - Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - `tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve).
 
+### Export 1.0.0
+
+The {{site.productname}} 5.8 release includes an accompanying release of the **Export** premium plugin.
+
+**Export** 1.0.0 provides the following improvements:
+
+- Improved error handling when a PDF conversion failure occurs due to browser limitations.
+- Changed how image proxy errors are handled to gracefully fail and render a transparent image when an image proxy error occurs.
+
+**Export** 1.0.0 provides the following bug fixes:
+
+- Fixed an issue where internal document links did not navigate within the client-side PDF exporter output.
+
 ### Tiny Drive 1.4.0
 
 The {{site.productname}} 5.8 release includes an accompanying release of **Tiny Drive**.

@@ -511,7 +511,7 @@ when it is needed. This is easiest done by storing the editor reference when the
 `onInit` event handler is called.
 
 If you need to provide visual feedback to the user when there is content ready 
-to be saved then you can use the `onDirty` event handler combined with clearing
+to be saved you can use the `onDirty` event handler combined with clearing
 the dirty state when saving the editor content.
 
 ##### Example: Functional uncontrolled component with save button and dirty state

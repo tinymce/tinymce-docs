@@ -380,16 +380,16 @@ Contains 3 settings:
 <dt><code>async</code></dt>
 <dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async"><code>async</code></a> attribute on the script tag created to load {{site.productname}}. 
 <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async">For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.</blockquote>
-<b>Default value:</b> <code>false</code>
+<strong>Default value:</strong> <code>false</code>
 </dd>
 <dt><code>defer</code></dt>
 <dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer"><code>defer</code></a> attribute on the script tag created to load {{site.productname}}. 
 <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer">This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.</blockquote>
-<b>Default value:</b> <code>false</code>
+<strong>Default value:</strong> <code>false</code>
 </dd>
 <dt><code>delay</code></dt>
 <dd>The script tag to load {{site.productname}} will not be added to the document for the number of milliseconds indicated.<br/>
-<b>Default value:</b> <code>0</code>
+<strong>Default value:</strong> <code>0</code>
 </dd>
 </dl>
 

@@ -680,6 +680,12 @@
       - url: "#PHP token provider endpoint example"
       - url: "#Node token provider endpoint example"
       - url: "#Creating a private/public key pair for RTC"
+    - url: "encryption"
+      pages:
+      - url: "#Encryption keys are mandatory"
+      - url: "#The difference between content encryption and JWT signing"
+      - url: "#Choosing an encryption key"
+      - url: "#Generating a secure encryption key"
     - url: "configuration"
       pages:
       - url: "#Required configuration"

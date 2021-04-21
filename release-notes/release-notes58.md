@@ -13,6 +13,7 @@ keywords: releasenotes bugfixes
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -100,37 +101,15 @@ The {{site.productname}} 5.8 release includes an accompanying release of **Tiny 
 
 For information on Tiny Drive, see: [Tiny Drive]({{ site.baseurl }}/tinydrive/).
 
-## Accompanying Premium self-hosted server-side component changes
+## Accompanying Premium Skins and Icon Packs changes
 
-The {{site.productname}} 5.8 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+The {{site.productname}} 5.8 release includes an accompanying release of the **Premium Skins and Icon Packs**.
 
-- The Enhanced Media Embed plugin (`mediaembed`)
-- The Image Tools plugin (`imagetools`)
-- The Link Checker plugin (`linkchecker`)
-- The Spell Checker Pro plugin (`tinymcespellchecker`)
+### Premium Skins and Icon Packs - New features
 
-The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version X.Y.Z**.
+A new Fluent skin and accompanying content css, which follows the Microsoft design language, is now available for {{site.productname}}.
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
-
-For information on:
-
-- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
-- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
-- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
-- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
-
-### Security update for self-hosted server-side components
-
-Version X.Y.Z provides security updates for the Java-based server-side components. To deploy the updated version of the server-side components:
-
-1.
-
-For information on:
-
-- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
-- Deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
 ## General bug fixes
 

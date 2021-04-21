@@ -42,13 +42,13 @@ $ yarn add @tinymce/tinymce-react
 
 ### Configuring the editor
 
-The following are the most common properties grouped by category.
+The following are the most common props grouped by category.
 
 #### Configuring editor source
 
 The integration will load {{site.productname}} from these sources in this priority:
 1. If the global `tinymce` is present on the page nothing additional will be loaded and it will be used.
-2. If the `tinymceScriptSrc` property is provided, then a script tag will be added to load {{site.productname}} from the given URL.
+2. If the `tinymceScriptSrc` prop is provided, then a script tag will be added to load {{site.productname}} from the given URL.
 3. Finally if none of the above conditions apply then a script tag will be added to load {{site.productname}} from {{site.cloudname}}.
 
 These settings are used to configure this behavior further:
@@ -85,9 +85,9 @@ These settings are read once when the editor is initialized. Changes after the e
 <dt><a href="#init"><code>init</code></a></dt>
 <dd>Additional settings passed to {{site.productname}} when it is initialized.</dd>
 <dt><a href="#plugins"><code>plugins</code></a></dt>
-<dd>Specify the editor plugins. This will be combined with <code>plugins</code> in the <code>init</code> property.</dd>
+<dd>Specify the editor plugins. This will be combined with <code>plugins</code> in the <code>init</code> prop.</dd>
 <dt><a href="#toolbar"><code>toolbar</code></a></dt>
-<dd>Specify the editor toolbar. This will override the <code>toolbar</code> in the <code>init</code> property.</dd>
+<dd>Specify the editor toolbar. This will override the <code>toolbar</code> in the <code>init</code> prop.</dd>
 </dl>
 
 #### Managing the editor
@@ -108,7 +108,7 @@ These settings can be updated once the editor is initialized. Note that there ar
 <dd>Sets and enforces the value of the editor. Only used for a controlled component.</dd>
 </dl>
 
-None of the configuration properties are **required** for the {{site.productname}} React component to work, however as previously noted that when loading from {{site.cloudname}} a warning message
+None of the configuration props are **required** for the {{site.productname}} React component to work, however as previously noted that when loading from {{site.cloudname}} a warning message
 will display if the `apiKey` is not configured correctly.
 
 #### `apiKey`
@@ -159,7 +159,7 @@ For information {{site.productname}} development channels, see: [Specifying the 
 
 #### `disabled`
 
-The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
+The `disabled` prop can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
 **Default value:** `false`
 
@@ -196,7 +196,7 @@ Additional settings passed to the `tinymce.init({...})` method used to initializ
 For information on the {{site.productname}} method `tinymce.init({...})`, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
 Note that unlike the {{site.productname}} method `tinymce.init()` the `selector`, 
-`target` and `readonly` properties should not be specified as they will be overridden
+`target` and `readonly` props should not be specified as they will be overridden
 by the integration.
 
 **Default value:** `{ }`
@@ -274,12 +274,12 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 #### `onEditorChange`
 
 Used to store the state of the editor outside the {{site.productname}} React component. 
-This property is commonly used when using the {{site.productname}} React component as a controlled component.
+This prop is commonly used when using the {{site.productname}} React component as a controlled component.
 
 It is called with two arguments:
 <dl>
 <dt><code>value</code></dt>
-<dd>The current value of the editor. This is normally HTML but can be text if the deprecated <a href="#outputformat"><code>outputFormat</code></a> property is used.</dd>
+<dd>The current value of the editor. This is normally HTML but can be text if the deprecated <a href="#outputformat"><code>outputFormat</code></a> prop is used.</dd>
 <dt><code>editor</code></dt>
 <dd>A reference to the editor.</dd>
 </dl>
@@ -487,14 +487,14 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 
 The HTML content of the editor when operating as a controlled component. 
 
-When this property is different to the current editor content, the editor content
+When this prop is different to the current editor content, the editor content
 will be changed to match (within 200 milliseconds) and an undo level will be created.
 When the editor content changes by this mechanism an attempt will be made to
 retain the selection, however if the previous selection does not exist in the new
 content the cursor will be returned to the start of the document.
 
-This property allows the editor to be used as a controlled component by setting 
-the `value` property and using the `onEditorChange` event to update the `value`.
+This prop allows the editor to be used as a controlled component by setting 
+the `value` prop and using the `onEditorChange` event to update the `value`.
 
 For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 

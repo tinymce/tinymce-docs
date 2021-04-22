@@ -364,7 +364,7 @@ return (
 
 #### `plugins`
 
-Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {{site.productname}} method `tinymce.init({...})`.
+Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {{site.productname}} `tinymce.init({...})` method.
 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 

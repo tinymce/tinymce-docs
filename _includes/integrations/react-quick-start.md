@@ -94,7 +94,7 @@ This procedure requires:
 
       * **Deploy {{site.productname}} independent of the React application using `tinymceScriptSrc`**
 
-        To use an independent deployment of {{site.productname}}, add the prop `tinymceScriptSrc` to specify the path to the {{site.productname}} script, such as:
+        To use an independent deployment of {{site.productname}}, add the property `tinymceScriptSrc` to specify the path to the {{site.productname}} script, such as:
         ```jsx
         <Editor tinymceScriptSrc="/path/to/tinymce.min.js" />
         ```

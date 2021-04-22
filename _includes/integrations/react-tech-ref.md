@@ -499,7 +499,7 @@ When this prop is different to the current editor content, the editor content
 will be changed to match (within 200 milliseconds) and an undo level will be created.
 When the editor content changes by this mechanism, the editor will attempt to
 retain the selection, however if the previous selection does not exist in the new
-content, the cursor set to the start of the document.
+content, the cursor returns to the start of the document.
 
 This prop allows the editor to be used as a controlled component by setting
 the `value` prop and using the `onEditorChange` event to update the `value`.

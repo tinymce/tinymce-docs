@@ -42,80 +42,87 @@ $ yarn add @tinymce/tinymce-react
 
 ### Configuring the editor
 
-The following are the most common properties grouped by category.
+The `tinymce-react` component provides properties for:
+
+ - [Configuring editor source](#configuringeditorsource)
+ - [Configuring page elements](#configuringpageelements)
+ - [Configuring editor settings](#configuringeditorsettings)
+ - [Managing the editor](#managingtheeditor)
 
 #### Configuring editor source
 
-The integration will load {{site.productname}} from these sources in this priority:
-1. If the global `tinymce` is present on the page nothing additional will be loaded and it will be used.
-2. If the `tinymceScriptSrc` property is provided, then a script tag will be added to load {{site.productname}} from the given URL.
-3. Finally if none of the above conditions apply then a script tag will be added to load {{site.productname}} from {{site.cloudname}}.
+The `tinymce-react` integration will try to source {{site.productname}} in the following order:
+1. The global `tinymce` will be loaded, if it is present on the page.
+2. If the `tinymceScriptSrc` prop is provided, then a script tag will be added to the page to load {{site.productname}} from the given URL.
+3. If none of the above conditions apply, then a script tag will be added to the page to load {{site.productname}} from {{site.cloudname}}.
 
-These settings are used to configure this behavior further:
+These props are used to configure how the editor is sourced:
 
 <dl>
 <dt><a href="#apikey"><code>apiKey</code></a></dt>
-<dd>The {{site.cloudname}} API key. When loading from {{site.cloudname}} specify this to remove the &quot;This domain is not registered...&quot; warning message.</dd>
+<dd>The {{site.cloudname}} API key. When loading from {{site.cloudname}}, use this prop to remove the &quot;This domain is not registered...&quot; warning message.</dd>
 <dt><a href="#cloudchannel"><code>cloudChannel</code></a></dt>
 <dd>The channel of {{site.productname}} used when loading from {{site.cloudname}}.</dd>
 <dt><a href="#scriptloading"><code>scriptLoading</code></a></dt>
-<dd>The script loading behavior settings. Allows setting the async and defer attributes, as well as adding an additional delay in milliseconds.</dd>
+<dd>The script loading behavior prop. Allows setting of the `async` and `defer` attributes, as well as adding an additional delay in milliseconds.</dd>
 <dt><a href="#tinymcescriptsrc"><code>tinymceScriptSrc</code></a></dt>
-<dd>The URL to load {{site.productname}}, normally used when loading a self hosted version of {{site.productname}}.</dd>
+<dd>The URL to use for sourcing {{site.productname}}, when loading a self-hosted version of {{site.productname}}.</dd>
 </dl>
 
 #### Configuring page elements
 
-These settings provide some control over the page elements that the integration creates:
+These properties provide some control over the page elements that the integration creates:
+
 <dl>
 <dt><a href="#id"><code>id</code></a></dt>
-<dd>The id attribute for the element that the editor is initialized on.</dd>
+<dd>The id attribute of the element that the editor is initialized on.</dd>
 <dt><a href="#inline"><code>inline</code></a></dt>
-<dd>Load the editor as part of the page sharing the page styling and selection.</dd>
+<dd>Load the editor as part of the page&#59; sharing the page styles and selection.</dd>
 <dt><a href="#tagname"><code>tagName</code></a></dt>
 <dd>The tag used for creating an inline editor. Ignored for a classic (iframe) editor.</dd>
 <dt><a href="#textareaname"><code>textareaName</code></a></dt>
-<dd>The name attribute on the textarea tag used for creating the classic (iframe) editor. Ignored for an inline editor.</dd>
+<dd>The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.</dd>
 </dl>
 
 #### Configuring editor settings
 
-These settings are read once when the editor is initialized. Changes after the editor has launched are ignored.
+These properties are read when the editor is initialized. Changes after the editor has launched are ignored.
 <dl>
 <dt><a href="#init"><code>init</code></a></dt>
-<dd>Additional settings passed to {{site.productname}} when it is initialized.</dd>
+<dd>Additional options passed to {{site.productname}} when it is initialized.</dd>
 <dt><a href="#plugins"><code>plugins</code></a></dt>
-<dd>Specify the editor plugins. This will be combined with <code>plugins</code> in the <code>init</code> property.</dd>
+<dd>Specify the editor plugins. This will be <em>combined</em> with <code>plugins</code> in the <code>init</code> prop.</dd>
 <dt><a href="#toolbar"><code>toolbar</code></a></dt>
-<dd>Specify the editor toolbar. This will override the <code>toolbar</code> in the <code>init</code> property.</dd>
+<dd>Specify the editor toolbar. This will <strong>override</strong> the <code>toolbar</code> in the <code>init</code> prop.</dd>
 </dl>
 
 #### Managing the editor
 
-These settings can be updated once the editor is initialized. Note that there are [other events](#eventbinding) not mentioned here.
+These properties can be updated after the editor is initialized. Note that there are [other events](#eventbinding) not mentioned here.
 <dl>
 <dt><a href="#disabled"><code>disabled</code></a></dt>
 <dd>Should the editor be in read-only mode.</dd>
 <dt><a href="#initialvalue"><code>initialValue</code></a></dt>
-<dd>The starting value of the editor which should only be set once as any change will reset the editor.</dd>
+<dd>The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).</dd>
 <dt><a href="#eventbinding"><code>onBeforeAddUndo</code></a></dt>
-<dd>An event handler for notifying when the editor is about to create an undo level and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.</dd>
+<dd>An event handler for notifying when the editor is about to create an undo level, and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.</dd>
 <dt><a href="#oneditorchange"><code>onEditorChange</code></a></dt>
-<dd>An event handler for detecting editor changes normally used when implementing a controlled component.</dd>
+<dd>An event handler for detecting editor changes. Useful when implementing {{site.productname}} as a controlled component.</dd>
 <dt><a href="#eventbinding"><code>onInit</code></a></dt>
 <dd>An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.</dd>
 <dt><a href="#value"><code>value</code></a></dt>
 <dd>Sets and enforces the value of the editor. Only used for a controlled component.</dd>
 </dl>
 
-None of the configuration properties are **required** for the {{site.productname}} React component to work, however as previously noted that when loading from {{site.cloudname}} a warning message
-will display if the `apiKey` is not configured correctly.
+### Available props
+
+None of the configuration props are **required** for the {{site.productname}} React component; however, if the `apiKey` prop is not configured when loading from {{site.cloudname}}, a warning message will be shown in the editor.
 
 #### `apiKey`
 
 {{site.cloudname}} API key. 
 
-Needed for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor without the warning message "This domain is not registered...".
+Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor without the warning message "This domain is not registered...".
 
 To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.accountsignup}}).
 
@@ -193,11 +200,11 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 Additional settings passed to the `tinymce.init({...})` method used to initialize the editor.
 
-For information on the {{site.productname}} method `tinymce.init({...})`, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+For information on the {{site.productname}} `tinymce.init({...})` method, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
-Note that unlike the {{site.productname}} method `tinymce.init()` the `selector`, 
-`target` and `readonly` properties should not be specified as they will be overridden
-by the integration.
+When using `tinymce-react`:
+- The `init` prop does not require the `selector` or `target` options
+- If the `selector`, `target`, or `readonly` options are set using the `init` prop, they will be *overridden* by the integration.
 
 **Default value:** `{ }`
 
@@ -218,7 +225,7 @@ by the integration.
 
 #### `initialValue`
 
-The initial HTML content of the editor. This will reset the editor undo state and cursor when changed.
+The initial HTML content of the editor. This will reset the editor undo state and the cursor position when changed.
 
 This may be set either before the editor loads, or soon afterwards by an asynchronous
 process.
@@ -255,7 +262,7 @@ return (
 
 #### `inline`
 
-Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the {{site.productname}} method `tinymce.init({...})`.
+Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the {{site.productname}} `tinymce.init({...})`method.
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
@@ -284,7 +291,7 @@ It is called with two arguments:
 <dd>A reference to the editor.</dd>
 </dl>
 
-For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
+For detailed information on using `onEditorChange`, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 **Type:** EventHandler
 
@@ -294,10 +301,10 @@ For more information, see: [Using the {{site.productname}} React component as a 
 React component 3.11.0. The `outputFormat` option will be removed in a future 
 release of the {{site.productname}} React component.
 
-Used to specify the format of the content emitted via the [`onEditorChange`](#oneditorchange) event.
+Used to specify the format of the content produced by the [`onEditorChange`](#oneditorchange) event.
 
 This does not change the input format, so the editor must still be supplied HTML 
-in the `value` or `initialValue` which makes this option much harder to use 
+in the `value` or `initialValue`, which makes this prop much harder to use 
 correctly than it initially seems.
 
 **Type:** String
@@ -388,7 +395,7 @@ Contains 3 settings:
 <strong>Default value:</strong> <code>false</code>
 </dd>
 <dt><code>delay</code></dt>
-<dd>The script tag to load {{site.productname}} will not be added to the document for the number of milliseconds indicated.<br/>
+<dd>Adds a delay (in milliseconds) between; when the script tag read by the browser and {{site.productname}} is loaded.<br/>
 <strong>Default value:</strong> <code>0</code>
 </dd>
 </dl>
@@ -471,7 +478,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 #### `tinymceScriptSrc`
 
-Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to lazy load.
+Use the `tinymceScriptSrc` prop to specify an external version of {{site.productname}} to lazy load.
 
 **Type:** String
 
@@ -485,34 +492,35 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 
 #### `value`
 
-The HTML content of the editor when operating as a controlled component. 
+Sets the HTML content of the editor when operating as a controlled component. 
 
 When this property is different to the current editor content, the editor content
 will be changed to match (within 200 milliseconds) and an undo level will be created.
-When the editor content changes by this mechanism an attempt will be made to
+When the editor content changes by this mechanism, the editor will attempt to
 retain the selection, however if the previous selection does not exist in the new
-content the cursor will be returned to the start of the document.
+content, the cursor set to the start of the document.
 
 This property allows the editor to be used as a controlled component by setting 
 the `value` property and using the `onEditorChange` event to update the `value`.
 
-For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
+For detailed information on using the `value` prop, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 **Type:** String
 
 ### Using the {{site.productname}} React component as a uncontrolled component
 
-The {{site.productname}} React component is best used as an uncontrolled component
-as it allows the editor to perform well on larger documents.
+The {{site.productname}} React component is designed to be used as an uncontrolled component,
+which allows the editor to perform well on larger documents.
 
-When using the editor in the uncontrolled mode you must avoid using the `value`
-and `onEditorChange` props. Instead, get the content of the editor directly
-when it is needed. This is easiest done by storing the editor reference when the
-`onInit` event handler is called.
+When using the editor as an uncontrolled component, avoid using the `value`
+and `onEditorChange` properties. {{site.companyname}} recommends retrieving the editor content
+when it is needed. The `onInit` event handler can be used to store a editor reference when the editor is loaded to assist with retrieving the content.
 
-If you need to provide visual feedback to the user when there is content ready 
-to be saved you can use the `onDirty` event handler combined with clearing
-the dirty state when saving the editor content.
+To provide visual feedback to the user when the content is ready 
+to be saved, use the `onDirty` event handler; combined with clearing
+the editor's "dirty" state when saving the editor content.
+
+> **Note**: The editor is "dirty" (or in a "dirty" state) when the user modifies editor content after initialization or the last `tinymce.editor.save()` call. This includes changes made using undo or redo.
 
 ##### Example: Functional uncontrolled component with save button and dirty state
 
@@ -546,19 +554,19 @@ function MyComponent({initialValue}) {
 
 ### Using the {{site.productname}} React component as a controlled component
 
-> **Warning**: The controlled component can have performance problems on large
+> **Caution**: The controlled component can have performance problems on large
 documents as it requires converting the entire document to a string on each
 keystroke or modification.
 
-To use the editor as a [controlled component](https://reactjs.org/docs/forms.html#controlled-components)
-both the `value` and `onEditorChange` props should be used.
+To use the editor as a [controlled component](https://reactjs.org/docs/forms.html#controlled-components),
+both the `value` and `onEditorChange` props are required.
 
-The `value` prop enforces the given value so if it is provided on its own then the
+The `value` prop is used to set and re-set the editor content. If it is not updated to the latest version of the editor content, the
 editor will rollback any changes. 
 
-The `onEditorChange` prop allows providing an event handler that will be run
-on any change to the editor value. Changes to the editor must be applied to the
-`value` prop within 200 milliseconds to avoid them being rolled back.
+The `onEditorChange` prop is used to provide an event handler that will be run
+when any change is made to the editor content. Changes to the editor must be applied to the
+`value` prop within _200 milliseconds_ to prevent the changes being rolled back.
 
 ##### Example: Functional controlled component
 

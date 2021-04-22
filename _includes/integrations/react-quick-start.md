@@ -99,7 +99,7 @@ This procedure requires:
         <Editor tinymceScriptSrc="/path/to/tinymce.min.js" />
         ```
 
-        To do this with create-react-app put the tinymce distribution in `./public`
+        To use `tinymceScriptSrc` with the `create-react-app` project, put the {{site.productname}} distribution in `./public` folder
         and reference the path to the `public` folder using the environment 
         variable `process.env.PUBLIC_URL`, such as:
          ```jsx
@@ -114,7 +114,7 @@ This procedure requires:
         <script src="/path/to/tinymce.min.js"></script>
         ```
 
-        To do this with create-react-app, add the script tag to `./public/index.html`.
+        To use the independently sourced {{site.productname}} with create-react-app, add the script tag to `./public/index.html`.
         
         Normally the tinymce distribution would be put in the `public` folder
         and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
@@ -126,8 +126,7 @@ This procedure requires:
 
       * **Bundling {{site.productname}} with the React application using a module loader**
 
-          Bundling with a module loader can be complex and error prone so it is
-          not recommended.
+          {{site.companyname}} does not recommend bundling `tinymce` and `tinymce-react` with a module loader. Bundling these packages can be complex and error prone.
 
           To bundle {{site.productname}} using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
 

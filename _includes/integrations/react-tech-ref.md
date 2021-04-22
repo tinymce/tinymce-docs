@@ -4,7 +4,7 @@
 
 - [Installing the TinyMCE React integration using NPM or Yarn](#installingthetinymcereactintegrationusingnpmoryarn)
 - [Configuring the editor](#configuringtheeditor)
-
+- [Available props](#availableprops)
   - [`apiKey`](#apikey)
   - [`cloudChannel`](#cloudchannel)
   - [`disabled`](#disabled)
@@ -52,7 +52,7 @@ The `tinymce-react` component provides props for:
 #### Configuring editor source
 
 The `tinymce-react` integration will try to source {{site.productname}} in the following order:
-1. The global `tinymce` will be loaded, if it is present on the page.
+1. The global `tinymce` will be used, if it is present on the page.
 2. If the `tinymceScriptSrc` prop is provided, then a script tag will be added to the page to load {{site.productname}} from the given URL.
 3. If none of the above conditions apply, then a script tag will be added to the page to load {{site.productname}} from {{site.cloudname}}.
 
@@ -64,7 +64,7 @@ These props are used to configure how the editor is sourced:
 <dt><a href="#cloudchannel"><code>cloudChannel</code></a></dt>
 <dd>The channel of {{site.productname}} used when loading from {{site.cloudname}}.</dd>
 <dt><a href="#scriptloading"><code>scriptLoading</code></a></dt>
-<dd>The script loading behavior prop. Allows setting of the `async` and `defer` attributes, as well as adding an additional delay in milliseconds.</dd>
+<dd>The script loading behavior prop. Allows setting of the <code>async</code> and <code>defer</code> attributes, as well as adding an additional delay in milliseconds.</dd>
 <dt><a href="#tinymcescriptsrc"><code>tinymceScriptSrc</code></a></dt>
 <dd>The URL to use for sourcing {{site.productname}}, when loading a self-hosted version of {{site.productname}}.</dd>
 </dl>
@@ -116,7 +116,7 @@ These props can be updated after the editor is initialized. Note that there are 
 
 ### Available props
 
-None of the configuration props are **required** for the {{site.productname}} React component; however, if the `apiKey` prop is not configured when loading from {{site.cloudname}}, a warning message will be shown in the editor.
+None of the configuration props are **required** for the {{site.productname}} React component; however, if the `apiKey` prop is not configured when loading from {{site.cloudname}}, a warning message will be shown in the editor. For guidance about which props to use, see: [Configuring the editor](#configuringtheeditor).
 
 #### `apiKey`
 
@@ -162,6 +162,7 @@ Such as:
   init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %}
 />
 ```
+
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
 #### `disabled`
@@ -262,7 +263,7 @@ return (
 
 #### `inline`
 
-Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the {{site.productname}} `tinymce.init({...})`method.
+Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the {{site.productname}} `tinymce.init({...})` method.
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
@@ -520,7 +521,7 @@ To provide visual feedback to the user when the content is ready
 to be saved, use the `onDirty` event handler; combined with clearing
 the editor's "dirty" state when saving the editor content.
 
-> **Note**: The editor is "dirty" (or in a "dirty" state) when the user modifies editor content after initialization or the last `tinymce.editor.save()` call. This includes changes made using undo or redo.
+{% include misc/concept-dirty-state.md %}
 
 ##### Example: Functional uncontrolled component with save button and dirty state
 

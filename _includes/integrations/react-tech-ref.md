@@ -42,7 +42,7 @@ $ yarn add @tinymce/tinymce-react
 
 ### Configuring the editor
 
-The `tinymce-react` component provides properties for:
+The `tinymce-react` component provides props for:
 
  - [Configuring editor source](#configuringeditorsource)
  - [Configuring page elements](#configuringpageelements)
@@ -71,7 +71,7 @@ These props are used to configure how the editor is sourced:
 
 #### Configuring page elements
 
-These properties provide some control over the page elements that the integration creates:
+These props provide some control over the page elements that the integration creates:
 
 <dl>
 <dt><a href="#id"><code>id</code></a></dt>
@@ -86,7 +86,7 @@ These properties provide some control over the page elements that the integratio
 
 #### Configuring editor settings
 
-These properties are read when the editor is initialized. Changes after the editor has launched are ignored.
+These props are read when the editor is initialized. Changes after the editor has launched are ignored.
 <dl>
 <dt><a href="#init"><code>init</code></a></dt>
 <dd>Additional options passed to {{site.productname}} when it is initialized.</dd>
@@ -98,7 +98,7 @@ These properties are read when the editor is initialized. Changes after the edit
 
 #### Managing the editor
 
-These properties can be updated after the editor is initialized. Note that there are [other events](#eventbinding) not mentioned here.
+These props can be updated after the editor is initialized. Note that there are [other events](#eventbinding) not mentioned here.
 <dl>
 <dt><a href="#disabled"><code>disabled</code></a></dt>
 <dd>Should the editor be in read-only mode.</dd>
@@ -120,7 +120,7 @@ None of the configuration props are **required** for the {{site.productname}} Re
 
 #### `apiKey`
 
-{{site.cloudname}} API key. 
+{{site.cloudname}} API key.
 
 Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor without the warning message "This domain is not registered...".
 
@@ -166,7 +166,7 @@ For information {{site.productname}} development channels, see: [Specifying the 
 
 #### `disabled`
 
-The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
+The `disabled` prop can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
 **Default value:** `false`
 
@@ -280,13 +280,13 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 #### `onEditorChange`
 
-Used to store the state of the editor outside the {{site.productname}} React component. 
-This property is commonly used when using the {{site.productname}} React component as a controlled component.
+Used to store the state of the editor outside the {{site.productname}} React component.
+This prop is commonly used when using the {{site.productname}} React component as a controlled component.
 
 It is called with two arguments:
 <dl>
 <dt><code>value</code></dt>
-<dd>The current value of the editor. This is normally HTML but can be text if the deprecated <a href="#outputformat"><code>outputFormat</code></a> property is used.</dd>
+<dd>The current value of the editor. This is normally HTML but can be text if the deprecated <a href="#outputformat"><code>outputFormat</code></a> prop is used.</dd>
 <dt><code>editor</code></dt>
 <dd>A reference to the editor.</dd>
 </dl>
@@ -297,14 +297,14 @@ For detailed information on using `onEditorChange`, see: [Using the {{site.produ
 
 #### `outputFormat`
 
-> **Important**: This option was deprecated with the release of the {{site.productname}} 
-React component 3.11.0. The `outputFormat` option will be removed in a future 
+> **Important**: This option was deprecated with the release of the {{site.productname}}
+React component 3.11.0. The `outputFormat` option will be removed in a future
 release of the {{site.productname}} React component.
 
 Used to specify the format of the content produced by the [`onEditorChange`](#oneditorchange) event.
 
-This does not change the input format, so the editor must still be supplied HTML 
-in the `value` or `initialValue`, which makes this prop much harder to use 
+This does not change the input format, so the editor must still be supplied HTML
+in the `value` or `initialValue`, which makes this prop much harder to use
 correctly than it initially seems.
 
 **Type:** String
@@ -385,12 +385,12 @@ Used to configure the script tag created to load {{site.productname}}.
 Contains 3 settings:
 <dl>
 <dt><code>async</code></dt>
-<dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async"><code>async</code></a> attribute on the script tag created to load {{site.productname}}. 
+<dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async"><code>async</code></a> attribute on the script tag created to load {{site.productname}}.
 <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async">For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.</blockquote>
 <strong>Default value:</strong> <code>false</code>
 </dd>
 <dt><code>defer</code></dt>
-<dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer"><code>defer</code></a> attribute on the script tag created to load {{site.productname}}. 
+<dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer"><code>defer</code></a> attribute on the script tag created to load {{site.productname}}.
 <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer">This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.</blockquote>
 <strong>Default value:</strong> <code>false</code>
 </dd>
@@ -492,16 +492,16 @@ Use the `tinymceScriptSrc` prop to specify an external version of {{site.product
 
 #### `value`
 
-Sets the HTML content of the editor when operating as a controlled component. 
+Sets the HTML content of the editor when operating as a controlled component.
 
-When this property is different to the current editor content, the editor content
+When this prop is different to the current editor content, the editor content
 will be changed to match (within 200 milliseconds) and an undo level will be created.
 When the editor content changes by this mechanism, the editor will attempt to
 retain the selection, however if the previous selection does not exist in the new
 content, the cursor set to the start of the document.
 
-This property allows the editor to be used as a controlled component by setting 
-the `value` property and using the `onEditorChange` event to update the `value`.
+This prop allows the editor to be used as a controlled component by setting
+the `value` prop and using the `onEditorChange` event to update the `value`.
 
 For detailed information on using the `value` prop, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
@@ -513,10 +513,10 @@ The {{site.productname}} React component is designed to be used as an uncontroll
 which allows the editor to perform well on larger documents.
 
 When using the editor as an uncontrolled component, avoid using the `value`
-and `onEditorChange` properties. {{site.companyname}} recommends retrieving the editor content
+and `onEditorChange` props. {{site.companyname}} recommends retrieving the editor content
 when it is needed. The `onInit` event handler can be used to store a editor reference when the editor is loaded to assist with retrieving the content.
 
-To provide visual feedback to the user when the content is ready 
+To provide visual feedback to the user when the content is ready
 to be saved, use the `onDirty` event handler; combined with clearing
 the editor's "dirty" state when saving the editor content.
 
@@ -562,7 +562,7 @@ To use the editor as a [controlled component](https://reactjs.org/docs/forms.htm
 both the `value` and `onEditorChange` props are required.
 
 The `value` prop is used to set and re-set the editor content. If it is not updated to the latest version of the editor content, the
-editor will rollback any changes. 
+editor will rollback any changes.
 
 The `onEditorChange` prop is used to provide an event handler that will be run
 when any change is made to the editor content. Changes to the editor must be applied to the

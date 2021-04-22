@@ -94,13 +94,13 @@ This procedure requires:
 
       * **Deploy {{site.productname}} independent of the React application using `tinymceScriptSrc`**
 
-        To use an independent deployment of {{site.productname}}, add the property `tinymceScriptSrc` to specify the path to the {{site.productname}} script, such as:
+        To use an independent deployment of {{site.productname}}, add the `tinymceScriptSrc` prop to specify the path to the {{site.productname}} script, such as:
         ```jsx
         <Editor tinymceScriptSrc="/path/to/tinymce.min.js" />
         ```
 
         To use `tinymceScriptSrc` with the `create-react-app` project, put the {{site.productname}} distribution in `./public` folder
-        and reference the path to the `public` folder using the environment 
+        and reference the path to the `public` folder using the environment
         variable `process.env.PUBLIC_URL`, such as:
          ```jsx
          <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
@@ -115,7 +115,7 @@ This procedure requires:
         ```
 
         To use the independently sourced {{site.productname}} with create-react-app, add the script tag to `./public/index.html`.
-        
+
         Normally the tinymce distribution would be put in the `public` folder
         and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
         ```html

@@ -396,7 +396,7 @@ Contains 3 settings:
 <strong>Default value:</strong> <code>false</code>
 </dd>
 <dt><code>delay</code></dt>
-<dd>Adds a delay (in milliseconds) between; when the script tag read by the browser and {{site.productname}} is loaded.<br/>
+<dd>The script tag to load {{site.productname}} will be added after the specified delay in milliseconds.<br/>
 <strong>Default value:</strong> <code>0</code>
 </dd>
 </dl>

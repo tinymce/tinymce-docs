@@ -18,7 +18,7 @@ class: changelog
 ### Fixed
 - Fixed an issue where images with exif orientation would get incorrectly oriented.
 - Fixed an issue where specifying 'audio' for the `filetype` setting would not list the files in grid view.
-- Fixed issue with tab key throwing a max call stack exceeded error.
+- Fixed an issue with tab key throwing a max call stack exceeded error.
 
 ## 1.3.0 - 2019-06-03
 

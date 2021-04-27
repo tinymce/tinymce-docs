@@ -17,7 +17,7 @@ If you are using {{site.productname}} on a paid tier of {{site.cloudname}} or ha
 
 ## Free and Open Source Users
 
-Users on a free tier of {{site.cloudname}} are **required** by the [Terms of Service]({{site.legalpage}}/tiny-cloud-services-subscription-agreement/) to include attribution when {{site.productname}} is shown.
+Users on a free tier of {{site.cloudname}} are **required** by the [Terms of Service]({{site.legalpages}}/tiny-cloud-services-subscription-agreement/) to include attribution when {{site.productname}} is shown.
 
 As per [clause 6 of the LGPL 2.1](https://github.com/tinymce/tinymce/blob/develop/LICENSE.TXT#L278), users using {{site.productname}} under the LGPL are required to give prominent notice that {{site.productname}} is in use. We recommend including attribution as described below.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RTC configuration
+title: Real-Time Collaboration configuration options
 title_nav: Configuration options
 description: List of all available RTC configuration options.
 keywords: rtc configuration
@@ -10,11 +10,11 @@ keywords: rtc configuration
 
 ## Configuration style
 
-The RTC plugin uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server. Function input parameters are provided as an object, allowing unused fields to be omitted.
+The Real-Time Collaboration (RTC) plugin uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server. Function input parameters are provided as an object, allowing unused fields to be omitted.
 
 ## Required configuration
 
-The following options are required to use the RTC plugin:
+The following options are required to use the Real-Time Collaboration (RTC) plugin:
 
 * [`rtc_document_id`](#rtc_document_id)
 * [`rtc_encryption_provider`](#rtc_encryption_provider)

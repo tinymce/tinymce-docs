@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Troubleshooting information for the RTC plugin
+title: Troubleshooting information for the Real-Time Collaboration (RTC) plugin
 title_nav: RTC Troubleshooting
 description: Useful information for troubleshooting issues with the RTC plugin.
 keywords: rtc faq trouble troubleshoot troubleshooting bug
@@ -35,7 +35,7 @@ If the below error descriptions do not solve the problem, try pasting the token 
 
 ### Unsupported JWT signature algorithm
 
-RTC requires an _asymmetric signing algorithm_ for JWT identity tokens. Asymmetric signatures use separate private and public keys; the public key stored on the {{site.cloudname}} server can only be used to verify signatures, not create new ones. The private key, used to create new signatures, remains private. 
+RTC requires an _asymmetric signing algorithm_ for JWT identity tokens. Asymmetric signatures use separate private and public keys; the public key stored on the {{site.cloudname}} server can only be used to verify signatures, not create new ones. The private key, used to create new signatures, remains private.
 
 For a list of supported algorithms, see: [RTC JWT Authentication - Supported algorithms]({{site.baseurl}}/rtc/jwt-authentication/#supportedalgorithms).
 

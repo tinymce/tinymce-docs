@@ -1,20 +1,20 @@
 ---
 layout: default
-title: RTC JWT Authentication
+title: Real-Time Collaboration (RTC) JWT Authentication
 title_nav: JWT Authentication
 description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
 
-{% assign beta_feature = "The RTC plugin" %}
+{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
 {% assign pre-release_type = "Open Beta" %}
 {% include misc/beta-note.md %}
 
-{% assign pluginname = "RTC" %}
+{% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
 ## Introduction
 
-RTC requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
+Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
 JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. This guide aims to show how to setup JWT authentication for RTC.
 

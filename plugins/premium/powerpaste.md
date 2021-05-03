@@ -93,7 +93,9 @@ tinymce.init({
 
 ### powerpaste_word_import
 
-This setting controls how content pasted from Microsoft Word is filtered.
+This option controls how content pasted from Microsoft Word is filtered.
+
+**Type:** `String`
 
 **Default value:** `prompt`
 
@@ -105,16 +107,34 @@ The supported values are:
 
 > **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
+### powerpaste_googledocs_import
+
+{{site.requires_5_8v}}
+
+This option controls how content pasted from Google Docs is filtered.
+
+**Type:** `String`
+
+**Default value:** `prompt`
+
+The supported values are:
+
+* `clean` - Preserve the structure of the content such as headings, tables and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
+* `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
+* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste Microsoft Word content.
+
 ### powerpaste_html_import
 
-This setting controls how content pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from {{site.productname}} itself.
+This option controls how content pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from {{site.productname}} itself.
+
+**Type:** `String`
 
 **Default value:** `clean`
 
 The supported values are:
 
 * `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
-* `merge` Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
+* `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
 ### powerpaste_allow_local_images
@@ -123,7 +143,7 @@ When set to `true`, Base64 encoded images using a data URI in the copied content
 
 **Default value:** `true`
 
-**Possible values:**  `true`, `false`
+**Possible values:** `true`, `false`
 
 > **Note:** If you configure ***PowerPaste*** to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documentation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
 

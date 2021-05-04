@@ -1,7 +1,7 @@
 ---
 layout: default
-title: RTC events
-title_nav: Events
+title: Real-Time Collaboration (RTC) events
+title_nav: RTC Events
 description: List of all available RTC specific events.
 keywords: rtc events
 ---

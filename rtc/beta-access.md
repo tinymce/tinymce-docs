@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Beta access
+title: Accessing the Real-Time Collaboration plugin beta
 title_nav: Beta access
 description: Beta specific access and setup
 keywords: rtc
 ---
 
-{% assign beta_feature = "The RTC plugin" %}
+{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
 {% assign pre-release_type = "Open Beta" %}
 {% include misc/beta-note.md %}
 
-## Accessing the RTC beta plugin
+## Accessing the Real-Time Collaboration (RTC) plugin beta
 
 To try the RTC beta plugin:
 

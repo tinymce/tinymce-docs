@@ -25,7 +25,9 @@ keywords: releasenotes bugfixes
 
 The following new features were added for the {{site.productname}} 5.8 release.
 
-### Feature name
+### Add support for keys Home, End, PageUp and PageDown to escape inline elements
+
+A new set of keys has been added `Home`, `End`, `PageUp`, and `PageDown` to allow escape outside of the inline element scope (eg for links or comments).
 
 ### Additional new features
 

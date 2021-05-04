@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RTC Introduction
+title: Introduction to Real-Time Collaboration (RTC)
 title_nav: Introduction
 description: Introduction of what RTC is and its capabilities
 keywords: rtc introduction overview
@@ -10,7 +10,7 @@ keywords: rtc introduction overview
 
 {% include misc/rtc-description.md %}
 
-{% assign beta_feature = "The RTC plugin" %}
+{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
 {% assign pre-release_type = "Open Beta" %}
 {% include misc/beta-note.md %}
 
@@ -20,19 +20,19 @@ Some cloud services for {{site.productname}} require setting up JSON Web Token (
 
 For general information on JWTs, visit: [https://jwt.io/](https://jwt.io/).
 
-For information on using JWT authentication with the RTC plugin, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
+For information on using JWT authentication with the Real-Time Collaboration (RTC) plugin, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
 
 ## Presence API
 
-The RTC plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. User resolution is performed through the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
+The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. User resolution is performed through the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
 
 ## End-to-end encryption
 
-The RTC plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect, which is used to transmit cursor position along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.
+The Real-Time Collaboration (RTC) plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect, which is used to transmit cursor position along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.
 
 ### RTC enabled features
 
-Currently, RTC only supports a subset of the features that {{site.productname}} provides. However, we are working on bringing over more and more of those features.
+Currently, Real-Time Collaboration (RTC) only supports a subset of the features that {{site.productname}} provides. However, we are working on bringing over more and more of those features.
 
 Here is a list of plugins currently supported:
 

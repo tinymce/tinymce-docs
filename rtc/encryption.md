@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Understanding encryption for RTC
+title: Understanding encryption for Real-Time Collaboration
 title_nav: RTC Encryption help
 description: Useful information for understanding how encryption is used with RTC
 keywords: rtc encrypt decrypt key rotate signature
@@ -23,13 +23,13 @@ This documentation is in progress. Please contact us with any suggestions you th
 
 ## The difference between content encryption and JWT signing
 
-Encrypted data is indistinguishable from random data without the decryption key. The RTC plugin performs client-side symmetric encryption (using the same key for encryption and decryption) on the editor content. The encryption key is provided to the client by your server, and is never sent to the {{site.cloudname}} servers; providing end-to-end encryption.
+Encrypted data is indistinguishable from random data without the decryption key. The Real-Time Collaboration (RTC) plugin performs client-side symmetric encryption (using the same key for encryption and decryption) on the editor content. The encryption key is provided to the client by your server, and is never sent to the {{site.cloudname}} servers; providing end-to-end encryption.
 
 JWT signing does not modify data, and the data can be read by anyone (the data is not encrypted). A JWT signature is transmitted along with the data and is used to validate that the data was not modified after the JWT was created. RTC requires an [asymmetric signing algorithm]({{site.baseurl}}/rtc/jwt-authentication/#supportedalgorithms) for JWT identity tokens. Asymmetric signing uses a public/private key pair: signatures are created with the private key and verified using the public key. The public key stored on the {{site.cloudname}} servers can only be used to verify signatures, not create new ones. This allows the {{site.cloudname}} server to verify that the data contained in the JWT has not been tampered with and is an authentic statement of identity from your server.
 
 ## Choosing an encryption key
 
-{{site.companyname}} recommends using secure keys for production environments. RTC encryption keys are a string of unicode characters, and can include emoji, such as: "`not a very secret 🔑`".
+{{site.companyname}} recommends using secure keys for production environments. Real-Time Collaboration (RTC) encryption keys are a string of unicode characters, and can include emoji, such as: "`not a very secret 🔑`".
 
 For test environments, a fixed key can be used. However, in a production environment, encryption keys should be rotated to improve data protection.
 
@@ -47,7 +47,7 @@ Encryption security is a trade off between: the complexity of generating a key, 
 
 ## Encryption key rotation and key hints
 
-The RTC configuration API is designed to support key rotation. Keys cannot be rotated on demand; if this is important to you, please contact {{site.companyname}} to discuss how we can best provide that functionality.
+The Real-Time Collaboration (RTC) configuration API is designed to support key rotation. Keys cannot be rotated on demand; if this is important to you, please contact {{site.companyname}} to discuss how we can best provide that functionality.
 
 Document collaboration may be performed in multiple sessions. For example, when a new version of {{site.productname}} is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be immediately discarded when a new key is requested.
 
@@ -63,11 +63,11 @@ The key hint can be a key thumbprint, ID, or other non-sensitive identifier that
 
 > **Note**: This section contains the technical details of the encryption used to securely transmit document content. It is provided for information purposes only; an understanding these details is not required to use the RTC plugin.
 
-The RTC plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) to encrypt content directly. The plugin derives a unique session key from the provided key using industry standard cryptography algorithms. This method of content encryption improves protection against brute force decryption.
+The Real-Time Collaboration (RTC) plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) to encrypt content directly. The plugin derives a unique session key from the provided key using industry standard cryptography algorithms. This method of content encryption improves protection against brute force decryption.
 
 > **Note**: {{site.companyname}} is in the process of changing the RTC encryption method to [AES-KW](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey), which does not require an initialization vector or protocol salt. The description below is still correct for the current beta release.
 
-The RTC protocol encryption technique is as follows:
+The Real-Time Collaboration (RTC) protocol encryption technique is as follows:
 * As described above, each document ID used for collaboration may have multiple sessions. To ensure each session has a unique key, 256 bits of random data are generated as the salt for each session. The salt is generated using the [`Crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) browser API and a 32 byte [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array).
 * The salt data and the provided encryption key are combined using a [PBKDF2](https://tools.ietf.org/html/rfc2898#section-5.2) key derivation function. Derivation is performed by the [SubtleCrypto.deriveKey()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveKey) browser API, using the following parameters:
   * PBKDF2 [algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Pbkdf2Params), with SHA-512 digest algorithm and 10,000 iterations,

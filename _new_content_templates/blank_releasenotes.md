@@ -18,6 +18,8 @@ Replace vnumcode with the version number without points, such as XYZ
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
+- [Accompanying Premium self-hosted server-side component changes](##accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -72,6 +74,28 @@ The {{site.productname}} vnumtxt release includes an accompanying release of the
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+## Accompanying Premium Skins and Icon Packs changes
+
+The {{site.productname}} vnumtxt release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+### Premium Skins and Icon Packs - New features
+
+{% comment %}
+Add description here.
+{% endcomment %}
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+
+### Premium Skins and Icon Packs - Bug fixes
+
+The **Premium Skins and Icon Packs** release includes the following bug fixes:
+
+{% comment %}
+Add description here.
+{% endcomment %}
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+
 ## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} vnumtxt release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
@@ -93,11 +117,20 @@ For information on:
 - The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
-### Security update for self-hosted server-side components
+### Updating the self-hosted server-side components
 
-Version X.Y.Z provides security updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+Version X.Y.Z provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
-1.
+1. Update your Java Application Server to the minimum required version:
+
+    - Eclipse Jetty 9.4 or later
+    - Apache Tomcat:
+        - 9 or later
+        - 8.5.12+
+        - 8.0.42+
+        - 7.0.76+
+
+2. Replace the existing server-side `.war` files with the version 2.5.0 `.war` files bundled with {{site.productname}} vnumtxt or later.
 
 For information on:
 

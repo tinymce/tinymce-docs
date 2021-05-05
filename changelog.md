@@ -8,6 +8,45 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.8.0 - 2021-05-06
+
+### Added
+- Added the `PAGE_UP` and `PAGE_DOWN` key code constants to the `VK` API #TINY-4612
+- The editor resize handle can now be controlled using the keyboard #TINY-4823
+- Added a new `fixed_toolbar_container_target` setting which renders the toolbar in the specified `HTMLElement`. Patch contributed by pvrobays
+
+### Improved
+- The `inline_boundaries` feature now supports the `home`, `end`, `pageup`, and `pagedown` keys #TINY-4612
+- Updated the `formatter.matchFormat` API to support matching formats with variables in the `classes` property #TINY-7227
+- Added HTML5 `audio` and `video` elements to the default alignment formats #TINY-6633
+- Added support for alpha list numbering to the list properties dialog #TINY-6891
+
+### Changed
+- Updated the `image` dialog to display the class list dropdown as full-width if the caption checkbox is not present #TINY-6400
+- Renamed the "H Align" and "V Align" input labels in the Table Cell Properties dialog to "Horizontal align" and "Vertical align" respectively #TINY-7285
+
+### Deprecated
+- The undocumented `setIconStroke` Split Toolbar Button API has been deprecated and will be removed in a future release #TINY-3551
+
+### Fixed
+- Fixed a bug where it wasn't possible to align nested list items #TINY-6567
+- The RGB fields in the color picker dialog were not staying in sync with the color palette and hue slider #TINY-6952
+- The color preview box in the color picker dialog was not correctly displaying the saturation and value of the chosen color #TINY-6952
+- The color picker dialog will now show an alert if it is submitted with an invalid hex color code #TINY-2814
+- Fixed a bug where the `TableModified` event was not fired when adding a table row with the Tab key #TINY-7006
+- Added missing `images_file_types` setting to the exported TypeScript types #GH-6607
+- Fixed a bug where lists pasted from Word with Roman numeral markers were not displayed correctly. Patch contributed by aautio #GH-6620
+- The `editor.insertContent` API was incorrectly handling nested `span` elements with matching styles #TINY-6263
+- The HTML5 `small` element could not be removed when clearing text formatting #TINY-6633
+- The Oxide button text transform variable was incorrectly using `capitalize` instead of `none`. Patch contributed by dakur #GH-6341
+- Fix dialog button text that was using title-style capitalization #TINY-6816
+- Table plugin could perform operations on tables containing the inline editor #TINY-6625
+- Fixed Tab key navigation inside table cells with a ranged selection #TINY-6638
+- The foreground and background toolbar button color indicator is no longer blurry #TINY-3551
+- Fixed a regression in the `tinymce.create()` API that caused issues when multiple objects were created #TINY-7358
+- Fixed the `LineHeight` command causing the `change` event to be fired inconsistently #TINY-7048
+
+<!-- Note: The below anchor is matches a historical changelog format and is not needed for new versions in the changelog. -->
 <div><a class="anchor" id="version571march172021"></a></div>
 
 ## 5.7.1 - 2021-03-17

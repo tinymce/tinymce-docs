@@ -47,7 +47,7 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 Fixed an issue where URLs were not correctly filtered in some cases.
 
-**PowerPaste** 5.4.2 fixes a security issue where dragging and dropping content wasn't correctly sanitized in some cases.
+**PowerPaste** 5.4.2 fixes a security issue where dragging and dropping content wasn't correctly sanitized in some cases. Tiny Technologies would like to thank Maurice Dauer for discovering this vulnerability.
 
 {% assign enterprise = true %}
 

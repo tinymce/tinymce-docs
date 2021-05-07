@@ -15,7 +15,7 @@
 TinyMCE theme class.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -24,7 +24,7 @@ anchor:publicmethods[historical anchor]
 | <<getinfo,getInfo>>():Object : Meta info method, this method gets executed when TinyMCE wants to present information about the theme for example in the...
 | Theme
 
-| <<init,init>>(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:String):void : Initializes the theme.
+| <<init,init>>(editor:xref:api/class_tinymce.Editor.adoc[Editor], url:String):void : Initializes the theme.
 | Theme
 
 | <<renderui,renderUI>>(obj:Object):Object : This method is responsible for rendering/generating the overall user interface with toolbars, buttons, iframe containers...
@@ -32,7 +32,7 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[getinfo]]
@@ -47,7 +47,7 @@ Object - Returns an object with meta information about the theme the current ite
 [[init]]
 === init
 
-*_public function init(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:String):void_* +
+*_public function init(editor:xref:api/class_tinymce.Editor.adoc[Editor], url:String):void_* +
 Initializes the theme.
 
 *Parameters*
@@ -55,7 +55,7 @@ Initializes the theme.
 |===
 | Param | Detail
 
-| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| editor:xref:api/class_tinymce.Editor.adoc[Editor]
 | Editor instance that created the theme instance.
 
 | url:String

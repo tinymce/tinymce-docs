@@ -68,6 +68,6 @@ anchor:thetinymceinitsection[historical anchor]
 
 A few words on the JavaScript `+tinyMCE.init({...}+` part in the example.
 
-* theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → https://www.tiny.cloud/docs-3x/reference/configuration/theme/[theme] in the TinyMCE documentation
-* mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → https://www.tiny.cloud/docs-3x/reference/configuration/mode/[mode] in the TinyMCE documentation
-* elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → https://www.tiny.cloud/docs-3x/reference/configuration/elements/[elements] in the TinyMCE documentation.
+* theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → xref:reference/configuration/theme.adoc[theme] in the TinyMCE documentation
+* mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → xref:reference/configuration/mode.adoc[mode] in the TinyMCE documentation
+* elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → xref:reference/configuration/elements.adoc[elements] in the TinyMCE documentation.

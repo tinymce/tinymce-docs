@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = theme_advanced_statusbar_location
 
-This option enables you to specify where the element statusbar with the path and resize tool should be located. This option can be set to "top", "bottom" or "none". The default value is set to "bottom". This option can only be used when the https://www.tiny.cloud/docs-3x/reference/configuration/theme/[theme] is set to "advanced" and when the https://www.tiny.cloud/docs-3x/reference/configuration/theme_advanced_layout_manager/[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".
+This option enables you to specify where the element statusbar with the path and resize tool should be located. This option can be set to "top", "bottom" or "none". The default value is set to "bottom". This option can only be used when the xref:reference/configuration/theme.adoc[theme] is set to "advanced" and when the xref:reference/configuration/theme_advanced_layout_manager.adoc[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".
 
 NOTE: same behaviour with (undescribed) option `theme_advanced_path_location`, most likely the old name of same option?
 

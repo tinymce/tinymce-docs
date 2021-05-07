@@ -10,7 +10,7 @@ anchor:ihaveaquestionwhatinformationshouldiprovidesothatsomebodycanhelpmewithana
 
 Remember: People in the forum spend their spare time to help you. So make helping you as pleasant and easy for them as possible or you might get no help at all. Tell them as many useful (= relevant) details (e.g. what browsers you use for testing,what TinyMCE version you are using and the scope of your application) as you can think of right in your first posting. Include possible error messages which your browser tells you (you might need to search for them depending on which browser you use). It is especially tiresome if you ask a question that has been asked already many times so make sure you use the forum's search functionality before you post your problem!! And if you ask, don't ask in multiple threads because this will only split the process which makes it hard to follow - for both you and the willing helpers. Later when someone looks for the solution to your problem they, too, will have a hard time finding what they need.
 
-For many questions (especially for beginners' questions) an answer can be found in the https://www.tiny.cloud/docs-3x/reference/Configuration3x/[documentation on the configuration settings of TinyMCE]. Often people just don't know (or simply don't realise) that the solution to their problems can be found there. They just need a hint on where to look for it. Therefore it is somehow mandatory that you provide the configuration code of your TinyMCE so that others can see how you have set up your editor and which changes can help solve your problem.
+For many questions (especially for beginners' questions) an answer can be found in the xref:reference/Configuration3x.adoc[documentation on the configuration settings of TinyMCE]. Often people just don't know (or simply don't realise) that the solution to their problems can be found there. They just need a hint on where to look for it. Therefore it is somehow mandatory that you provide the configuration code of your TinyMCE so that others can see how you have set up your editor and which changes can help solve your problem.
 
 Now where is this code to be found? Have a look into the HTML source code of your editor's page and look for something like this:
 
@@ -38,8 +38,8 @@ Don't write any excuses for your English language skills! The fewest people in t
 == Where can I find installation instructions ?
 anchor:wherecanifindinstallationinstructions[historical anchor]
 
-. https://www.tiny.cloud/docs-3x/Installation/[Fully detailed]
-. https://www.tiny.cloud/docs-3x/reference/for-dummies/[For Dummies]
+. xref:Installation.adoc[Fully detailed]
+. xref:reference/for-dummies.adoc[For Dummies]
 
 +++<a name="How_can_I_upload_image_files_from_my_local_computer.3F">++++++</a>+++
 
@@ -104,7 +104,7 @@ These are the different configuration scenarios for URLs within TinyMCE. There i
 ===== Relative URLs
 anchor:relativeurls[historical anchor]
 
-This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the https://www.tiny.cloud/docs-3x/reference/configuration/document_base_url/[document_base_url].
+This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the xref:reference/configuration/document_base_url.adoc[document_base_url].
 
 [source,js]
 ----
@@ -119,7 +119,7 @@ Example: `+http://www.site.com/path1/path2/file.htm >> path2/file.htm+`
 ===== Absolute URLs
 anchor:absoluteurls[historical anchor]
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the https://www.tiny.cloud/docs-3x/reference/configuration/document_base_url/[document_base_url].
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the xref:reference/configuration/document_base_url.adoc[document_base_url].
 
 [source,js]
 ----
@@ -135,7 +135,7 @@ Example: `path2/file.htm >> /path1/path2/file.htm`
 ===== Domain Absolute URLs
 anchor:domainabsoluteurls[historical anchor]
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the https://www.tiny.cloud/docs-3x/reference/configuration/document_base_url/[document_base_url] with domain.
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the xref:reference/configuration/document_base_url.adoc[document_base_url] with domain.
 
 [source,js]
 ----
@@ -166,7 +166,7 @@ NOTE: Some versions of Internet Explorer may continue to convert URLs even with 
 == TinyMCE strip away attributes or tags from my source?
 anchor:tinymcestripawayattributesortagsfrommysource[historical anchor]
 
-You need to check out the https://www.tiny.cloud/docs-3x/reference/configuration/valid_elements/[valid_elements] and https://www.tiny.cloud/docs-3x/reference/configuration/extended_valid_elements/[extended_valid_elements] option in the configuration. By default, TinyMCE only allows certain tags and attributes. TinyMCE also tries to follow the XHTML specification as much as possible, this can cause some unexpected source changes, there are however configuration options to battle this issue, study the configuration options in details.
+You need to check out the xref:reference/configuration/valid_elements.adoc[valid_elements] and xref:reference/configuration/extended_valid_elements.adoc[extended_valid_elements] option in the configuration. By default, TinyMCE only allows certain tags and attributes. TinyMCE also tries to follow the XHTML specification as much as possible, this can cause some unexpected source changes, there are however configuration options to battle this issue, study the configuration options in details.
 
 [[tinymce-strips-away-or-alters-my-server-side-code]]
 == TinyMCE strips away or alters my server-side code
@@ -178,13 +178,13 @@ So you mix HTML markup with server-side logic? Moxiecode developer spocke http:/
 == How do I change the default font size/face color of the editor?
 anchor:howdoichangethedefaultfontsizefacecoloroftheeditor[historical anchor]
 
-We recommend that you have a look at the https://www.tiny.cloud/docs-3x/reference/configuration/content_css/[content_css] option, this enables you to switch the CSS file TinyMCE uses for its editing area with a file with your CSS rules for font size and so forth.
+We recommend that you have a look at the xref:reference/configuration/content_css.adoc[content_css] option, this enables you to switch the CSS file TinyMCE uses for its editing area with a file with your CSS rules for font size and so forth.
 
 [[how-do-i-removeadd-buttonscontrols-to-tinymce]]
 == How do I remove/add buttons/controls to TinyMCE?
 anchor:howdoiremoveaddbuttonscontrolstotinymce[historical anchor]
 
-There are quite a few options for this but a reference of all available buttons/control names can be found in the https://www.tiny.cloud/docs-3x/reference/buttons/[button/control reference].
+There are quite a few options for this but a reference of all available buttons/control names can be found in the xref:reference/buttons.adoc[button/control reference].
 
 [[tinymce-adds-br-elements-to-my-content]]
 == TinyMCE adds BR elements to my content
@@ -196,7 +196,7 @@ No it should not, if you are using PHP, check so that you are not using http://p
 == TinyMCE produce P elements on enter/return instead of BR elements?
 anchor:tinymceproducepelementsonenterreturninsteadofbrelements[historical anchor]
 
-TinyMCE produced P tags on enter by default since all desktop and online word processors use the concept of paragraphs on enter and it also makes your content semantic. If you for some reason need BR elements use the https://www.tiny.cloud/docs-3x/reference/configuration/forced_root_block/[forced_root_block] option in TinyMCE 3.5.
+TinyMCE produced P tags on enter by default since all desktop and online word processors use the concept of paragraphs on enter and it also makes your content semantic. If you for some reason need BR elements use the xref:reference/configuration/forced_root_block.adoc[forced_root_block] option in TinyMCE 3.5.
 
 So if you really really must use BR elements for some reason use this:
 
@@ -417,27 +417,27 @@ So you want the styles dropdown to actually show how the element will look like 
 == TinyMCE does not update the content when I set a new text in textarea by JavaScript
 anchor:tinymcedoesnotupdatethecontentwhenisetanewtextintextareabyjavascript[historical anchor]
 
-TinyMCE reads the content of the `<textarea>` element only on start, and writes it when the edition is done. If you want to change the edited content, do not update the `<textarea>`  but call editor's https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#setcontent[setContent] method.
+TinyMCE reads the content of the `<textarea>` element only on start, and writes it when the edition is done. If you want to change the edited content, do not update the `<textarea>`  but call editor's xref:api/class_tinymce.Editor.html.adoc#setcontent[setContent] method.
 
-You may also read the https://www.tiny.cloud/docs-3x/howto/save_with_Ajax_in_TinyMCE/[How to load/save with Ajax in TinyMCE] article.
+You may also read the xref:howto/save_with_Ajax_in_TinyMCE.adoc[How to load/save with Ajax in TinyMCE] article.
 
 [[loading-is-slow-is-there-a-way-to-make-it-load-quicker]]
 == Loading is slow, is there a way to make it load quicker?
 anchor:loadingisslowisthereawaytomakeitloadquicker[historical anchor]
 
-There is a extra package for TinyMCE called https://www.tiny.cloud/docs-3x/compressor/about/[TinyMCE compressor] that reduces download and initialization time dramatically by using GZip to compress the JavaScript files.
+There is a extra package for TinyMCE called xref:compressor/about.adoc[TinyMCE compressor] that reduces download and initialization time dramatically by using GZip to compress the JavaScript files.
 
 [[change-default-text-coloreditor-background-in-tinymce]]
 == Change default text color/editor background in TinyMCE?
 anchor:changedefaulttextcoloreditorbackgroundintinymce[historical anchor]
 
-You need to specify a content css file with the https://www.tiny.cloud/docs-3x/reference/configuration/content_css/[content_css] option in order to change the default text color or background of the editor. The specified CSS is loaded after the default CSS so you can use it to override. A good idea to check the CSS status of elements is to install Firebug addon to Firefox.
+You need to specify a content css file with the xref:reference/configuration/content_css.adoc[content_css] option in order to change the default text color or background of the editor. The specified CSS is loaded after the default CSS so you can use it to override. A good idea to check the CSS status of elements is to install Firebug addon to Firefox.
 
 [[edit-a-full-page-with-html-and-head-tags-in-tinymce]]
 == Edit a full page (with <html> and <head> tags) in TinyMCE?
 anchor:editafullpagewithhtmlandheadtagsintinymce[historical anchor]
 
-By default TinyMCE is only interested in your page's content which is contained within the document's <body> part. If you want to have TinyMCE edit every part of your document, especially the <head> section, then you'll need the https://www.tiny.cloud/docs-3x/reference/plugins/fullpage/[fullpage plugin].
+By default TinyMCE is only interested in your page's content which is contained within the document's <body> part. If you want to have TinyMCE edit every part of your document, especially the <head> section, then you'll need the xref:reference/plugins/fullpage.adoc[fullpage plugin].
 
 [[can-i-use-tinymce-in-my-commercial-application]]
 == Can I use TinyMCE in my commercial application?

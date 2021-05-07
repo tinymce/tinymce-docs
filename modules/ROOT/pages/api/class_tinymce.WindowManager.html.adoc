@@ -17,13 +17,13 @@ This class handles the creation of native windows and dialogs. This class can be
 *Example*
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<windowmanager,WindowManager>>(ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]) : Constructs a new window manager instance.
+| <<windowmanager,WindowManager>>(ed:xref:api/class_tinymce.Editor.adoc[Editor]) : Constructs a new window manager instance.
 | WindowManager
 
 | <<alert,alert>>(t:String, cb:function, s:Object):void : Creates a alert dialog.

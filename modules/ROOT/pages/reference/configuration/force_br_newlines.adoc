@@ -5,7 +5,7 @@
 
 *This option is deprecated as of 3.5 use `forced_root_blocks: false` instead to control `p` vs `br` behavior.*
 
-If you set this option to true, TinyMCE will force BR elements on newlines instead of inserting paragraphs. This option is set to false by default since paragraphs is a much better concept. BR elements should only be used when you really have to (mostly never). Also as of 3.x the https://www.tiny.cloud/docs-3x/reference/configuration/forced_root_block/[forced_root_block] option is enabled by default so if you really want to disable paragraphs disable that one as well.
+If you set this option to true, TinyMCE will force BR elements on newlines instead of inserting paragraphs. This option is set to false by default since paragraphs is a much better concept. BR elements should only be used when you really have to (mostly never). Also as of 3.x the xref:reference/configuration/forced_root_block.adoc[forced_root_block] option is enabled by default so if you really want to disable paragraphs disable that one as well.
 
 [[example-of-usage-of-the-force_br_newlines-option]]
 == Example of usage of the force_br_newlines option:
@@ -33,7 +33,7 @@ p {margin: 0; padding: 0;}
 == Post processing away P tags before output to Flash/E-mail
 anchor:postprocessingawayptagsbeforeoutputtoflashe-mail[historical anchor]
 
-See also: https://www.tiny.cloud/docs-3x/extras/TinyMCE_FAQ/[Reasons why not to use BR elements for linebreaks]
+See also: xref:extras/TinyMCE_FAQ.adoc[Reasons why not to use BR elements for linebreaks]
 
 [[perl-example]]
 == Perl Example

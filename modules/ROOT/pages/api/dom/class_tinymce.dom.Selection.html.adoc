@@ -17,13 +17,13 @@ This class handles text and control selection it's an crossbrowser utility class
 *Example*
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<selection,Selection>>(dom:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html[DOMUtils], win:Window, serializer:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html[Serializer]) : Constructs a new selection instance.
+| <<selection,Selection>>(dom:xref:api/dom/class_tinymce.dom.DOMUtils.adoc[DOMUtils], win:Window, serializer:xref:api/dom/class_tinymce.dom.Serializer.adoc[Serializer]) : Constructs a new selection instance.
 | Selection
 
 | <<collapse,collapse>>(to_start:Boolean):void : Collapse the selection to start or end of range.
@@ -73,33 +73,33 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[public-events]]
-== Public Events 
+== Public Events
 anchor:publicevents[historical anchor]
 
 |===
 | Event | Defined By
 
-| <<onbeforegetcontent,onBeforeGetContent>>(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object) : This event gets executed before contents is inserted into selection.
+| <<onbeforegetcontent,onBeforeGetContent>>(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object) : This event gets executed before contents is inserted into selection.
 | Selection
 
-| <<onbeforesetcontent,onBeforeSetContent>>(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object) : This event gets executed before contents is extracted from the selection.
+| <<onbeforesetcontent,onBeforeSetContent>>(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object) : This event gets executed before contents is extracted from the selection.
 | Selection
 
-| <<ongetcontent,onGetContent>>(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object) : This event gets executed when contents is extracted from the selection.
+| <<ongetcontent,onGetContent>>(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object) : This event gets executed when contents is extracted from the selection.
 | Selection
 
-| <<onsetcontent,onSetContent>>(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object) : This event gets executed when contents is inserted into selection.
+| <<onsetcontent,onSetContent>>(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object) : This event gets executed when contents is inserted into selection.
 | Selection
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[selection]]
 === Selection
 
-*_public function Selection(dom:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html[DOMUtils], win:Window, serializer:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html[Serializer])_* +
+*_public function Selection(dom:xref:api/dom/class_tinymce.dom.DOMUtils.adoc[DOMUtils], win:Window, serializer:xref:api/dom/class_tinymce.dom.Serializer.adoc[Serializer])_* +
 Constructs a new selection instance.
 
 *Parameters*
@@ -107,13 +107,13 @@ Constructs a new selection instance.
 |===
 | Param | Detail
 
-| dom:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html[DOMUtils]
+| dom:xref:api/dom/class_tinymce.dom.DOMUtils.adoc[DOMUtils]
 | DOMUtils object reference.
 
 | win:Window
 | Window to bind the selection object to.
 
-| serializer:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html[Serializer]
+| serializer:xref:api/dom/class_tinymce.dom.Serializer.adoc[Serializer]
 | DOM serialization class to use for getContent.
 |===
 
@@ -215,8 +215,8 @@ Range - Internal browser range object.
 
 *See Also*
 
-* https://www.tiny.cloud/docs-3x/api/class_http://www.quirksmode.org/dom/range_intro.html.html[]
-* https://www.tiny.cloud/docs-3x/api/class_http://www.dotvoid.com/2001/03/using-the-range-object-in-mozilla.html[]
+* xref:api/class_http://www.quirksmode.org/dom/range_intro.html.adoc[]
+* xref:api/class_http://www.dotvoid.com/2001/03/using-the-range-object-in-mozilla.adoc[]
 
 [[getsel]]
 === getSel
@@ -362,13 +362,13 @@ Changes the selection to the specified DOM range.
 |===
 
 [[event-details]]
-== Event details 
+== Event details
 anchor:eventdetails[historical anchor]
 
 [[onbeforegetcontent]]
 === onBeforeGetContent
 
-*_public event onBeforeGetContent(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object)_* +
+*_public event onBeforeGetContent(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object)_* +
 This event gets executed before contents is inserted into selection.
 
 *Parameters*
@@ -376,7 +376,7 @@ This event gets executed before contents is inserted into selection.
 |===
 | Param | Detail
 
-| selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection]
+| selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection]
 | Selection object that fired the event.
 
 | args:Object
@@ -386,7 +386,7 @@ This event gets executed before contents is inserted into selection.
 [[onbeforesetcontent]]
 === onBeforeSetContent
 
-*_public event onBeforeSetContent(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object)_* +
+*_public event onBeforeSetContent(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object)_* +
 This event gets executed before contents is extracted from the selection.
 
 *Parameters*
@@ -394,7 +394,7 @@ This event gets executed before contents is extracted from the selection.
 |===
 | Param | Detail
 
-| selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection]
+| selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection]
 | Selection object that fired the event.
 
 | args:Object
@@ -404,7 +404,7 @@ This event gets executed before contents is extracted from the selection.
 [[ongetcontent]]
 === onGetContent
 
-*_public event onGetContent(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object)_* +
+*_public event onGetContent(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object)_* +
 This event gets executed when contents is extracted from the selection.
 
 *Parameters*
@@ -412,7 +412,7 @@ This event gets executed when contents is extracted from the selection.
 |===
 | Param | Detail
 
-| selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection]
+| selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection]
 | Selection object that fired the event.
 
 | args:Object
@@ -422,7 +422,7 @@ This event gets executed when contents is extracted from the selection.
 [[onsetcontent]]
 === onSetContent
 
-*_public event onSetContent(selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection], args:Object)_* +
+*_public event onSetContent(selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection], args:Object)_* +
 This event gets executed when contents is inserted into selection.
 
 *Parameters*
@@ -430,7 +430,7 @@ This event gets executed when contents is inserted into selection.
 |===
 | Param | Detail
 
-| selection:https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html[Selection]
+| selection:xref:api/dom/class_tinymce.dom.Selection.adoc[Selection]
 | Selection object that fired the event.
 
 | args:Object

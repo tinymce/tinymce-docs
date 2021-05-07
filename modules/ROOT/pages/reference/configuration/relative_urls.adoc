@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = relative_urls
 
-If this option is set to true, all URLs returned from the MCFileManager will be relative from the specified https://www.tiny.cloud/docs-3x/reference/configuration/document_base_url/[document_base_url]. If it's set to false all URLs will be converted to absolute URLs. This option is set to true by default.
+If this option is set to true, all URLs returned from the MCFileManager will be relative from the specified xref:reference/configuration/document_base_url.adoc[document_base_url]. If it's set to false all URLs will be converted to absolute URLs. This option is set to true by default.
 
 [[example-of-usage-of-the-relative_urls-option]]
 == Example of usage of the relative_urls option:

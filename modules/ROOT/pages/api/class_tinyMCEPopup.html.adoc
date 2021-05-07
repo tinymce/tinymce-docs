@@ -15,7 +15,7 @@
 TinyMCE popup/dialog helper class. This gives you easy access to the parent editor instance and a bunch of other things. It's higly recommended that you load this script into your dialogs.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -71,18 +71,18 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[public-events]]
-== Public Events 
+== Public Events
 anchor:publicevents[historical anchor]
 
 |===
 | Event | Defined By
 
-| <<oninit,onInit>>(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]) : [.static]#[static]# Fires when the popup is initialized.
+| <<oninit,onInit>>(editor:xref:api/class_tinymce.Editor.adoc[Editor]) : [.static]#[static]# Fires when the popup is initialized.
 | tinyMCEPopup
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[alert]]
@@ -314,13 +314,13 @@ Restores any stored selection. This can be useful since some browsers looses it'
 Stores the current editor selection for later restoration. This can be useful since some browsers looses it's selection if a control element is selected/focused inside the dialogs.
 
 [[event-details]]
-== Event details 
+== Event details
 anchor:eventdetails[historical anchor]
 
 [[oninit]]
 === onInit
 
-*_public static event onInit(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor])_* +
+*_public static event onInit(editor:xref:api/class_tinymce.Editor.adoc[Editor])_* +
 Fires when the popup is initialized.
 
 *Parameters*
@@ -328,7 +328,7 @@ Fires when the popup is initialized.
 |===
 | Param | Detail
 
-| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| editor:xref:api/class_tinymce.Editor.adoc[Editor]
 | Editor instance.
 |===
 

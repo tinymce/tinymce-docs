@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = font_size_classes
 
-This option allows specification of a comma separated list of class names that is to be used when the user selects font sizes. This option is only used when the https://www.tiny.cloud/docs-3x/reference/configuration/convert_fonts_to_spans/[convert_fonts_to_spans] option is enabled. This list of classes should be 7 items. This option is not used by default, but can be useful if you want to have custom classes for each font size for browser compatibility.
+This option allows specification of a comma separated list of class names that is to be used when the user selects font sizes. This option is only used when the xref:reference/configuration/convert_fonts_to_spans.adoc[convert_fonts_to_spans] option is enabled. This list of classes should be 7 items. This option is not used by default, but can be useful if you want to have custom classes for each font size for browser compatibility.
 
 [[example-of-usage-of-the-font_size_classes-option]]
 == Example of usage of the font_size_classes option:

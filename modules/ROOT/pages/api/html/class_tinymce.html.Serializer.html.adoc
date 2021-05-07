@@ -17,27 +17,27 @@ This class is used to serialize down the DOM tree into a string using a Writer i
 *Example*
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<serializer,Serializer>>(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]) : Constructs a new Serializer instance.
+| <<serializer,Serializer>>(settings:Object, schema:xref:api/html/class_tinymce.html.Schema.adoc[Schema]) : Constructs a new Serializer instance.
 | Serializer
 
-| <<serialize,serialize>>(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):String : Serializes the specified node into a string.
+| <<serialize,serialize>>(node:xref:api/html/class_tinymce.html.Node.adoc[Node]):String : Serializes the specified node into a string.
 | Serializer
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[serializer]]
 === Serializer
 
-*_public function Serializer(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema])_* +
+*_public function Serializer(settings:Object, schema:xref:api/html/class_tinymce.html.Schema.adoc[Schema])_* +
 Constructs a new Serializer instance.
 
 *Parameters*
@@ -48,14 +48,14 @@ Constructs a new Serializer instance.
 | settings:Object
 | Name/value settings object.
 
-| schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]
+| schema:xref:api/html/class_tinymce.html.Schema.adoc[Schema]
 | Schema instance to use.
 |===
 
 [[serialize]]
 === serialize
 
-*_public function serialize(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):String_* +
+*_public function serialize(node:xref:api/html/class_tinymce.html.Node.adoc[Node]):String_* +
 Serializes the specified node into a string.
 
 *Parameters*
@@ -63,7 +63,7 @@ Serializes the specified node into a string.
 |===
 | Param | Detail
 
-| node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]
+| node:xref:api/html/class_tinymce.html.Node.adoc[Node]
 | Node instance to serialize.
 |===
 

@@ -12,71 +12,71 @@
 | ToolbarGroup
 
 | Inheritance
-| ToolbarGroup https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container] [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+| ToolbarGroup xref:api/ui/class_tinymce.ui.Container.adoc[Container] [.last]#xref:api/ui/class_tinymce.ui.Control.adoc[Control]#
 |===
 
 This class is used to group a set of toolbars together and control the keyboard navigation and focus.
 
 [[public-properties]]
-== Public Properties 
+== Public Properties
 anchor:publicproperties[historical anchor]
 
 |===
 | Property | Defined By
 
 | <<controls,controls>> : Array : Array of controls added to the container.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container]
+| xref:api/ui/class_tinymce.ui.Container.adoc[Container]
 |===
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<add,add>>(c:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Adds a control to the collection of controls for the container.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container]
+| <<add,add>>(c:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Adds a control to the collection of controls for the container.
+| xref:api/ui/class_tinymce.ui.Container.adoc[Container]
 
 | <<destroy,destroy>>():void : Destroys the control will free any memory by removing event listeners etc.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
-| <<get,get>>(n:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Returns a control by id from the containers collection.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container]
+| <<get,get>>(n:String):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Returns a control by id from the containers collection.
+| xref:api/ui/class_tinymce.ui.Container.adoc[Container]
 
 | <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<postrender,postRender>>():void : Post render event.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<remove,remove>>():void : Removes the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<renderhtml,renderHTML>>():String : Renders the toolbar group as a HTML string.
 | ToolbarGroup
 
 | <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[renderhtml]]

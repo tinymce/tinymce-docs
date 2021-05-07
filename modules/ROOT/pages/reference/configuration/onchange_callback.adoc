@@ -5,7 +5,7 @@
 This option should contain a function name to be executed each time content is modified by TinyMCE. This function is called each time an undo level is added to TinyMCE. The format of this function is: `onchange(inst)`, where `inst` is the editor instance object reference.
 
 [[example-of-usage-of-the-onchange_callback-option]]
-== Example of usage of the onchange_callback option 
+== Example of usage of the onchange_callback option
 anchor:exampleofusageoftheonchange_callbackoption[historical anchor]
 
 ```js
@@ -24,6 +24,6 @@ tinyMCE.init({
 
 This function is called once the user "blurs" the area (in the same way a `textarea` or input field is blurred upon exiting that field) and it will check if a change has occurred. It will also fire when a new undo level is added to the queue. Undo levels are added when the user types text and then moves the cursor, performs an action like pressing the bold button while having text selected, or pressing return. There are many ways undo levels get added to the editor.
 
-We strongly recommend users to utilize the https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#isdirty/[isDirty] method to determine if the editor contents were changed or not since this is much more exact because it doesn't need undo levels/blurring, etc.
+We strongly recommend users to utilize the xref:api/class_tinymce.Editor.html/#isdirty.adoc[isDirty] method to determine if the editor contents were changed or not since this is much more exact because it doesn't need undo levels/blurring, etc.
 
-It is important to note that the `onchange` callback will not fire on each keystroke due to performance considerations. Executing the onchange callback all the time is just a bad design practice and it wastes the users CPU. It's better to check the https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#isdirty/[isDirty] state before leaving the page in a document `onbeforeunload` event. This is how the autosave plugin functions. The https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#isdirty/[isDirty] approach is the recommended way of tracking if an editor instance has been modified or not.
+It is important to note that the `onchange` callback will not fire on each keystroke due to performance considerations. Executing the onchange callback all the time is just a bad design practice and it wastes the users CPU. It's better to check the xref:api/class_tinymce.Editor.html/#isdirty.adoc[isDirty] state before leaving the page in a document `onbeforeunload` event. This is how the autosave plugin functions. The xref:api/class_tinymce.Editor.html/#isdirty.adoc[isDirty] approach is the recommended way of tracking if an editor instance has been modified or not.

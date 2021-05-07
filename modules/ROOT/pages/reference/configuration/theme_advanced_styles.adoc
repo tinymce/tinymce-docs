@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = theme_advanced_styles
 
-This option should contain a semicolon separated list of class titles and class names separated by =. The titles will be presented to the user in the styles dropdown list and the class names will be inserted. If this option is not defined, TinyMCE imports the classes from the https://www.tiny.cloud/docs-3x/reference/configuration/content_css/[content_css].
+This option should contain a semicolon separated list of class titles and class names separated by =. The titles will be presented to the user in the styles dropdown list and the class names will be inserted. If this option is not defined, TinyMCE imports the classes from the xref:reference/configuration/content_css.adoc[content_css].
 
 [[example-of-usage-of-the-theme_advanced_styles-option]]
 == Example of usage of the theme_advanced_styles option:

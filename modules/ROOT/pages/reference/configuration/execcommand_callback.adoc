@@ -4,10 +4,10 @@
 
 This option allows you to add a custom callback function for execCommand handling. This enables you to override internal command functions in TinyMCE. The example below shows how the mceLink and mceImage are overridden.
 
-Use the https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#addcommand/[addCommand] method instead.
+Use the xref:api/class_tinymce.Editor.html/#addcommand.adoc[addCommand] method instead.
 
 [[example-of-usage-of-the-execcommand_callback-option]]
-== Example of usage of the execcommand_callback option: 
+== Example of usage of the execcommand_callback option:
 anchor:exampleofusageoftheexeccommand_callbackoption[historical anchor]
 
 ```js

@@ -14,7 +14,7 @@ anchor:encodingtypes[historical anchor]
 | Name | Summary
 
 | named
-| Characters will be converted into named entities based on the https://www.tiny.cloud/docs-3x/api/configuration/entities/[entities] option. For example, a non-breaking space could be encoded as &nbsp;.
+| Characters will be converted into named entities based on the xref:reference/configuration/entities.adoc[entities] option. For example, a non-breaking space could be encoded as &nbsp;.
 
 | numeric
 | Characters will be converted into numeric entities. For example, a non-breaking space would be encoded as &#160;.

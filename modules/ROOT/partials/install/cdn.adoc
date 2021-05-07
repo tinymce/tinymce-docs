@@ -1,5 +1,5 @@
 [[step-1-include-the-tinymce-script]]
-=== Step 1: Include the TinyMCE script 
+=== Step 1: Include the TinyMCE script
 anchor:step1includethetinymcescript[historical anchor]
 
 Include this line of code in the `<head>` of your HTML page:
@@ -10,7 +10,7 @@ Include this line of code in the `<head>` of your HTML page:
 ----
 
 [[step-2-initialize-tinymce-as-part-of-a-web-form]]
-=== Step 2: Initialize TinyMCE as part of a web form 
+=== Step 2: Initialize TinyMCE as part of a web form
 anchor:step2initializetinymceaspartofawebform[historical anchor]
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
@@ -42,13 +42,13 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 ----
 
 [[step-3-saving-content-with-a-form-post]]
-=== Step 3: Saving content with a form POST 
+=== Step 3: Saving content with a form POST
 anchor:step3savingcontentwithaformpost[historical anchor]
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
 [[additional-information-about-using-the-cdn]]
-=== Additional information about using the CDN 
+=== Additional information about using the CDN
 anchor:additionalinformationaboutusingthecdn[historical anchor]
 
 There are a few things you need to consider when using the CDN version. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new link:{{ site.baseurl }}/configure/integration-and-setup/#external_plugins[`external_plugins`] option.
@@ -60,5 +60,5 @@ For a list of versions supported by the CacheFly CDN, check this text document: 
 While we're at it a big shout out to http://www.cachefly.com/[Cachefly] who sponsors the CDN hosting of TinyMCE. If you haven't tried CacheFly now is the perfect time. Use promo code `TINYMCE` to get exclusive pay-as-you-go pricing. They also have a risk-free 2TB 14-day trial with no credit card required. Sign up at http://www.cachefly.com/[www.cachefly.com].
 
 ____
-If you have decided to use the CDN, move on to the next step https://www.tiny.cloud/docs-3x/api/work-with-plugins/[working with plugins], where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
+If you have decided to use the CDN, move on to the next step xref:api/work-with-plugins.adoc[working with plugins], where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
 ____

@@ -15,16 +15,16 @@
 This class handles the loading of themes/plugins or other add-ons and their language packs.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<add,add>>(id:String, o:https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin] : Adds a instance of the add-on by it's short name.
+| <<add,add>>(id:String, o:xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin]):xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin] : Adds a instance of the add-on by it's short name.
 | AddOnManager
 
-| <<get,get>>(n:String):https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin] : Returns the specified add on by the short name.
+| <<get,get>>(n:String):xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin] : Returns the specified add on by the short name.
 | AddOnManager
 
 | <<load,load>>(n:String, u:String, cb:function, s:Object):void : Loads an add-on from a specific url.
@@ -35,7 +35,7 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[public-events]]
-== Public Events 
+== Public Events
 anchor:publicevents[historical anchor]
 
 |===
@@ -46,13 +46,13 @@ anchor:publicevents[historical anchor]
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[add]]
 === add
 
-*_public function add(id:String, o:https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin]_* +
+*_public function add(id:String, o:xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin]):xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin]_* +
 Adds a instance of the add-on by it's short name.
 
 *Parameters*
@@ -63,19 +63,19 @@ Adds a instance of the add-on by it's short name.
 | id:String
 | Short name/id for the add-on.
 
-| o:https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin]
+| o:xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin]
 | Theme or plugin to add.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin] - The same theme or plugin instance that got passed in.
+xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin] - The same theme or plugin instance that got passed in.
 
 *Example*
 
 [[get]]
 === get
 
-*_public function get(n:String):https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin]_* +
+*_public function get(n:String):xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin]_* +
 Returns the specified add on by the short name.
 
 *Parameters*
@@ -88,7 +88,7 @@ Returns the specified add on by the short name.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html[Theme]/https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html[Plugin] - Theme or plugin add-on instance or undefined.
+xref:api/class_tinymce.Theme.adoc[Theme]/xref:api/plugins/class_tinymce.Plugin.adoc[Plugin] - Theme or plugin add-on instance or undefined.
 
 [[load]]
 === load
@@ -132,7 +132,7 @@ Loads a language pack for the specified add-on.
 |===
 
 [[event-details]]
-== Event details 
+== Event details
 anchor:eventdetails[historical anchor]
 
 [[onadd]]

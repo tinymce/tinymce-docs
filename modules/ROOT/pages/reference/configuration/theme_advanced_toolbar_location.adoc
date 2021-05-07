@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = theme_advanced_toolbar_location
 
-This option enables you to specify where the toolbar should be located. This option can be set to "top" (the default) or "bottom" or "external". This option can only be used when https://www.tiny.cloud/docs-3x/reference/configuration/theme/[theme] is set to advanced and when the https://www.tiny.cloud/docs-3x/reference/configuration/theme_advanced_layout_manager/[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".
+This option enables you to specify where the toolbar should be located. This option can be set to "top" (the default) or "bottom" or "external". This option can only be used when xref:reference/configuration/theme.adoc[theme] is set to advanced and when the xref:reference/configuration/theme_advanced_layout_manager.adoc[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".
 
 Choosing the "external" location adds the toolbar to a DIV element and sets the class of this DIV to "mceExternalToolbar". This enables you to freely specify the location of the toolbar.
 

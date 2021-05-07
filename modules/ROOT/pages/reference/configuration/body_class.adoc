@@ -4,7 +4,7 @@
 
 (Requires: 3.0.2)
 
-This option enables you to specify a class for the body of each editor instance. This class can then be used to do TinyMCE specific overrides in your https://www.tiny.cloud/docs-3x/api/configuration/content_css/[content_css]. There is also a specific mceForceColors class that can be used to override the text and background colors to be black and white.
+This option enables you to specify a class for the body of each editor instance. This class can then be used to do TinyMCE specific overrides in your xref:reference/configuration/content_css.adoc[content_css]. There is also a specific mceForceColors class that can be used to override the text and background colors to be black and white.
 
 [[examples-of-usage-of-the-body_class-option]]
 == Examples of usage of the body_class option

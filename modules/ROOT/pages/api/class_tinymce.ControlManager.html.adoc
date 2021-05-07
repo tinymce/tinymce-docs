@@ -15,69 +15,69 @@
 This class is responsible for managing UI control instances. It's both a factory and a collection for the controls.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<controlmanager,ControlManager>>(ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], s:Object) : Constructs a new control manager instance.
+| <<controlmanager,ControlManager>>(ed:xref:api/class_tinymce.Editor.adoc[Editor], s:Object) : Constructs a new control manager instance.
 | ControlManager
 
-| <<add,add>>(Control:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Adds a control to the control collection inside the manager.
+| <<add,add>>(Control:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Adds a control to the control collection inside the manager.
 | ControlManager
 
-| <<createbutton,createButton>>(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a button control instance by id.
+| <<createbutton,createButton>>(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a button control instance by id.
 | ControlManager
 
-| <<createcolorsplitbutton,createColorSplitButton>>(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a color split button control instance by id.
+| <<createcolorsplitbutton,createColorSplitButton>>(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a color split button control instance by id.
 | ControlManager
 
-| <<createcontrol,createControl>>(name:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a control by name, when a control is created it will automatically add it to the control collection.
+| <<createcontrol,createControl>>(name:String):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a control by name, when a control is created it will automatically add it to the control collection.
 | ControlManager
 
-| <<createdropmenu,createDropMenu>>(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a drop menu control instance by id.
+| <<createdropmenu,createDropMenu>>(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a drop menu control instance by id.
 | ControlManager
 
-| <<createlistbox,createListBox>>(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a list box control instance by id.
+| <<createlistbox,createListBox>>(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a list box control instance by id.
 | ControlManager
 
-| <<createmenubutton,createMenuButton>>(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a menu button control instance by id.
+| <<createmenubutton,createMenuButton>>(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a menu button control instance by id.
 | ControlManager
 
-| <<createseparator,createSeparator>>(cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a separator control instance.
+| <<createseparator,createSeparator>>(cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a separator control instance.
 | ControlManager
 
-| <<createsplitbutton,createSplitButton>>(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a split button control instance by id.
+| <<createsplitbutton,createSplitButton>>(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a split button control instance by id.
 | ControlManager
 
-| <<createtoolbar,createToolbar>>(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Creates a toolbar container control instance by id.
+| <<createtoolbar,createToolbar>>(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Creates a toolbar container control instance by id.
 | ControlManager
 
 | <<destroy,destroy>>():void : Destroy.
 | ControlManager
 
-| <<get,get>>(id:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Returns a control by id or undefined it it wasn't found.
+| <<get,get>>(id:String):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Returns a control by id or undefined it it wasn't found.
 | ControlManager
 
-| <<setactive,setActive>>(id:String, s:Boolean):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Sets the active state of a control by id.
+| <<setactive,setActive>>(id:String, s:Boolean):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Sets the active state of a control by id.
 | ControlManager
 
 | <<setcontroltype,setControlType>>(n:string, c:function):function : Overrides a specific control type with a custom class.
 | ControlManager
 
-| <<setdisabled,setDisabled>>(id:String, s:Boolean):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Sets the dsiabled state of a control by id.
+| <<setdisabled,setDisabled>>(id:String, s:Boolean):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Sets the dsiabled state of a control by id.
 | ControlManager
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[controlmanager]]
 === ControlManager
 
-*_public function ControlManager(ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], s:Object)_* +
+*_public function ControlManager(ed:xref:api/class_tinymce.Editor.adoc[Editor], s:Object)_* +
 Constructs a new control manager instance. Consult the Wiki for more details on this class.
 
 *Parameters*
@@ -85,7 +85,7 @@ Constructs a new control manager instance. Consult the Wiki for more details on 
 |===
 | Param | Detail
 
-| ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| ed:xref:api/class_tinymce.Editor.adoc[Editor]
 | TinyMCE editor instance to add the control to.
 
 | s:Object
@@ -95,7 +95,7 @@ Constructs a new control manager instance. Consult the Wiki for more details on 
 [[add]]
 === add
 
-*_public function add(Control:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function add(Control:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Adds a control to the control collection inside the manager.
 
 *Parameters*
@@ -103,17 +103,17 @@ Adds a control to the control collection inside the manager.
 |===
 | Param | Detail
 
-| Control:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| Control:xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 | instance to add to collection.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got passed in.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got passed in.
 
 [[createbutton]]
 === createButton
 
-*_public function createButton(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createButton(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a button control instance by id.
 
 *Parameters*
@@ -132,12 +132,12 @@ Creates a button control instance by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createcolorsplitbutton]]
 === createColorSplitButton
 
-*_public function createColorSplitButton(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createColorSplitButton(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a color split button control instance by id.
 
 *Parameters*
@@ -156,12 +156,12 @@ Creates a color split button control instance by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createcontrol]]
 === createControl
 
-*_public function createControl(name:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createControl(name:String):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a control by name, when a control is created it will automatically add it to the control collection. It first ask all plugins for the specified control if the plugins didn't return a control then the default behavior will be used.
 
 *Parameters*
@@ -174,12 +174,12 @@ Creates a control by name, when a control is created it will automatically add i
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createdropmenu]]
 === createDropMenu
 
-*_public function createDropMenu(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createDropMenu(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a drop menu control instance by id.
 
 *Parameters*
@@ -198,12 +198,12 @@ Creates a drop menu control instance by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createlistbox]]
 === createListBox
 
-*_public function createListBox(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createListBox(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a list box control instance by id. A list box is either a native select element or a DOM/JS based list box control. This depends on the use_native_selects settings state.
 
 *Parameters*
@@ -222,12 +222,12 @@ Creates a list box control instance by id. A list box is either a native select 
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createmenubutton]]
 === createMenuButton
 
-*_public function createMenuButton(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createMenuButton(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a menu button control instance by id.
 
 *Parameters*
@@ -246,12 +246,12 @@ Creates a menu button control instance by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createseparator]]
 === createSeparator
 
-*_public function createSeparator(cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createSeparator(cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a separator control instance.
 
 *Parameters*
@@ -264,12 +264,12 @@ Creates a separator control instance.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createsplitbutton]]
 === createSplitButton
 
-*_public function createSplitButton(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createSplitButton(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a split button control instance by id.
 
 *Parameters*
@@ -288,12 +288,12 @@ Creates a split button control instance by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[createtoolbar]]
 === createToolbar
 
-*_public function createToolbar(id:String, s:Object, cc:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function createToolbar(id:String, s:Object, cc:Object):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Creates a toolbar container control instance by id.
 
 *Parameters*
@@ -312,7 +312,7 @@ Creates a toolbar container control instance by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got created and added.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got created and added.
 
 [[destroy]]
 === destroy
@@ -323,7 +323,7 @@ Destroy.
 [[get]]
 === get
 
-*_public function get(id:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function get(id:String):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Returns a control by id or undefined it it wasn't found.
 
 *Parameters*
@@ -336,12 +336,12 @@ Returns a control by id or undefined it it wasn't found.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance or undefined.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance or undefined.
 
 [[setactive]]
 === setActive
 
-*_public function setActive(id:String, s:Boolean):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function setActive(id:String, s:Boolean):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Sets the active state of a control by id.
 
 *Parameters*
@@ -357,7 +357,7 @@ Sets the active state of a control by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got activated or null if it wasn't found.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got activated or null if it wasn't found.
 
 [[setcontroltype]]
 === setControlType
@@ -383,7 +383,7 @@ function - Same as the class reference.
 [[setdisabled]]
 === setDisabled
 
-*_public function setDisabled(id:String, s:Boolean):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function setDisabled(id:String, s:Boolean):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Sets the dsiabled state of a control by id.
 
 *Parameters*
@@ -399,4 +399,4 @@ Sets the dsiabled state of a control by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance that got disabled or null if it wasn't found.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance that got disabled or null if it wasn't found.

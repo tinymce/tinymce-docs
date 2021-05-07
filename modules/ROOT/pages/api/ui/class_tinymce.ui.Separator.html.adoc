@@ -12,13 +12,13 @@
 | Separator
 
 | Inheritance
-| Separator [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+| Separator [.last]#xref:api/ui/class_tinymce.ui.Control.adoc[Control]#
 |===
 
 This class is used to create vertical separator between other controls.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -28,41 +28,41 @@ anchor:publicmethods[historical anchor]
 | Separator
 
 | <<destroy,destroy>>():void : Destroys the control will free any memory by removing event listeners etc.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<postrender,postRender>>():void : Post render event.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<remove,remove>>():void : Removes the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<renderhtml,renderHTML>>():String : Renders the separator as a HTML string.
 | Separator
 
 | <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[separator]]

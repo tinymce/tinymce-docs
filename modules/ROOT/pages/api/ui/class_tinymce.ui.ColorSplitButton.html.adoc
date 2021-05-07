@@ -12,13 +12,13 @@
 | ColorSplitButton
 
 | Inheritance
-| ColorSplitButton https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.SplitButton.html[SplitButton] https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Button.html[Button] [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+| ColorSplitButton xref:api/ui/class_tinymce.ui.SplitButton.adoc[SplitButton] xref:api/ui/class_tinymce.ui.Button.adoc[Button] [.last]#xref:api/ui/class_tinymce.ui.Control.adoc[Control]#
 |===
 
 This class is used to create UI color split button. A color split button will present show a small color picker when you press the open menu.
 
 [[public-properties]]
-== Public Properties 
+== Public Properties
 anchor:publicproperties[historical anchor]
 
 |===
@@ -32,7 +32,7 @@ anchor:publicproperties[historical anchor]
 |===
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -51,47 +51,47 @@ anchor:publicmethods[historical anchor]
 | ColorSplitButton
 
 | <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<postrender,postRender>>():void : Post render event.
 | ColorSplitButton
 
 | <<remove,remove>>():void : Removes the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<renderhtml,renderHTML>>():String : Renders the split button as a HTML string.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.SplitButton.html[SplitButton]
+| xref:api/ui/class_tinymce.ui.SplitButton.adoc[SplitButton]
 
 | <<rendermenu,renderMenu>>():void : Renders the menu to the DOM.
 | ColorSplitButton
 
 | <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setcolor,setColor>>(c:String):void : Sets the current color for the control and hides the menu if it should be visible.
 | ColorSplitButton
 
 | <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<showmenu,showMenu>>():void : Shows the color menu.
 | ColorSplitButton
 |===
 
 [[public-events]]
-== Public Events 
+== Public Events
 anchor:publicevents[historical anchor]
 
 |===
@@ -105,7 +105,7 @@ anchor:publicevents[historical anchor]
 |===
 
 [[property-details]]
-== Property details 
+== Property details
 anchor:propertydetails[historical anchor]
 
 [[settings]]
@@ -121,7 +121,7 @@ Settings object.
 Current color value.
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[colorsplitbutton]]
@@ -215,7 +215,7 @@ Sets the current color for the control and hides the menu if it should be visibl
 Shows the color menu. The color menu is a layer places under the button and displays a table of colors for the user to pick from.
 
 [[event-details]]
-== Event details 
+== Event details
 anchor:eventdetails[historical anchor]
 
 [[onhidemenu]]

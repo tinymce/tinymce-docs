@@ -12,16 +12,16 @@
 | Menu
 
 | Inheritance
-| Menu https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem] [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+| Menu xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem] [.last]#xref:api/ui/class_tinymce.ui.Control.adoc[Control]#
 
 | Subclasses
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.DropMenu.html[DropMenu]
+| xref:api/ui/class_tinymce.ui.DropMenu.adoc[DropMenu]
 |===
 
 This class is base class for all menu types like DropMenus etc. This class should not be instantiated directly other menu controls should inherit from this one.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -30,23 +30,23 @@ anchor:publicmethods[historical anchor]
 | <<menu,Menu>>(id:String, s:Object) : Constructs a new button control instance.
 | Menu
 
-| <<add,add>>(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Adds a new menu, menu item or sub classes of them to the drop menu.
+| <<add,add>>(o:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Adds a new menu, menu item or sub classes of them to the drop menu.
 | Menu
 
-| <<addmenu,addMenu>>(o:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu] : Adds a sub menu to the menu.
+| <<addmenu,addMenu>>(o:Object):xref:api/ui/class_tinymce.ui.Menu.adoc[Menu] : Adds a sub menu to the menu.
 | Menu
 
-| <<addseparator,addSeparator>>():https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem] : Adds a menu separator between the menu items.
+| <<addseparator,addSeparator>>():xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem] : Adds a menu separator between the menu items.
 | Menu
 
 | <<collapse,collapse>>(d:Boolean):void : Collapses the menu, this will hide the menu and all menu items.
 | Menu
 
-| <<createmenu,createMenu>>(s:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu] : Created a new sub menu for the menu control.
+| <<createmenu,createMenu>>(s:Object):xref:api/ui/class_tinymce.ui.Menu.adoc[Menu] : Created a new sub menu for the menu control.
 | Menu
 
 | <<destroy,destroy>>():void : Destroys the control will free any memory by removing event listeners etc.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<expand,expand>>(d:Boolean):void : Expands the menu, this will show them menu and all menu items.
 | Menu
@@ -55,50 +55,50 @@ anchor:publicmethods[historical anchor]
 | Menu
 
 | <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<iscollapsed,isCollapsed>>():Boolean : Returns true/false if the menu has been collapsed or not.
 | Menu
 
 | <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isselected,isSelected>>():Boolean : Returns true/false if the control is selected or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem]
+| xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem]
 
 | <<postrender,postRender>>():void : Post render handler.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem]
+| xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem]
 
-| <<remove,remove>>(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Removes a specific sub menu or menu item from the menu.
+| <<remove,remove>>(o:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Removes a specific sub menu or menu item from the menu.
 | Menu
 
 | <<removeall,removeAll>>():void : Removes all menu items and sub menu items from the menu.
 | Menu
 
 | <<renderhtml,renderHTML>>():String : Renders the control as a HTML string.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setselected,setSelected>>(s:Boolean):void : Sets the selected state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem]
+| xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem]
 
 | <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[menu]]
@@ -122,7 +122,7 @@ Constructs a new button control instance.
 [[add]]
 === add
 
-*_public function add(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function add(o:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Adds a new menu, menu item or sub classes of them to the drop menu.
 
 *Parameters*
@@ -130,17 +130,17 @@ Adds a new menu, menu item or sub classes of them to the drop menu.
 |===
 | Param | Detail
 
-| o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| o:xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 | Menu or menu item to add to the drop menu.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Same as the input control, the menu or menu item.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Same as the input control, the menu or menu item.
 
 [[addmenu]]
 === addMenu
 
-*_public function addMenu(o:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]_* +
+*_public function addMenu(o:Object):xref:api/ui/class_tinymce.ui.Menu.adoc[Menu]_* +
 Adds a sub menu to the menu.
 
 *Parameters*
@@ -153,16 +153,16 @@ Adds a sub menu to the menu.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu] - Menu control instance passed in or created.
+xref:api/ui/class_tinymce.ui.Menu.adoc[Menu] - Menu control instance passed in or created.
 
 [[addseparator]]
 === addSeparator
 
-*_public function addSeparator():https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem]_* +
+*_public function addSeparator():xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem]_* +
 Adds a menu separator between the menu items.
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem] - Menu item instance for the separator.
+xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem] - Menu item instance for the separator.
 
 [[collapse]]
 === collapse
@@ -182,7 +182,7 @@ Collapses the menu, this will hide the menu and all menu items.
 [[createmenu]]
 === createMenu
 
-*_public function createMenu(s:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]_* +
+*_public function createMenu(s:Object):xref:api/ui/class_tinymce.ui.Menu.adoc[Menu]_* +
 Created a new sub menu for the menu control.
 
 *Parameters*
@@ -195,7 +195,7 @@ Created a new sub menu for the menu control.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu] - New drop menu instance.
+xref:api/ui/class_tinymce.ui.Menu.adoc[Menu] - New drop menu instance.
 
 [[expand]]
 === expand
@@ -233,7 +233,7 @@ Boolean - True/false state if the menu has been collapsed or not.
 [[remove]]
 === remove
 
-*_public function remove(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function remove(o:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Removes a specific sub menu or menu item from the menu.
 
 *Parameters*
@@ -241,12 +241,12 @@ Removes a specific sub menu or menu item from the menu.
 |===
 | Param | Detail
 
-| o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| o:xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 | Menu item or menu to remove from menu.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance or null if it wasn't found.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance or null if it wasn't found.
 
 [[removeall]]
 === removeAll

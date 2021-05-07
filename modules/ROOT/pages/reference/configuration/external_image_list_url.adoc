@@ -17,7 +17,7 @@ tinyMCE.init({
 });
 +`
 
-NOTE: If utilizing the https://www.tiny.cloud/docs-3x/reference/configuration/document_base_url/[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
+NOTE: If utilizing the xref:reference/configuration/document_base_url.adoc[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
 [[example-of-a-external-image-list-file-myexternallistjs]]
 == Example of a external image list file: (myexternallist.js)

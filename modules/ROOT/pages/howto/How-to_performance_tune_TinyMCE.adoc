@@ -12,7 +12,7 @@ anchor:optimizinginitializationspeed[historical anchor]
 
 Here are some actions to take to boost initialization/loading time of TinyMCE.
 
-Use and install the https://www.tiny.cloud/docs-3x/compressor/about/[TinyMCE Compressor].
+Use and install the xref:compressor/about.adoc[TinyMCE Compressor].
 This will bundle all JavaScript HTTP requests into one big request and also gzip compress them by 75%.
 
 Enable the button_tile_map option (should be enabled by default if you have a newer version of TinyMCE).
@@ -30,10 +30,10 @@ anchor:optimizingcleanupsave[historical anchor]
 
 Here are some actions to take to boost cleanup/saving time of TinyMCE.
 
-Set the https://www.tiny.cloud/docs-3x/reference/configuration/entity_encoding/[entity_encoding] option to "raw".
+Set the xref:reference/configuration/entity_encoding.adoc[entity_encoding] option to "raw".
 Since the default option uses a lookup table for all entities it's kind of slow. Switching to raw will skip entity encoding on everything but the essentials.
 
-Set the https://www.tiny.cloud/docs-3x/reference/configuration/verify_html/[verify_html] to false.
+Set the xref:reference/configuration/verify_html.adoc[verify_html] to false.
 This will switch the cleanup method to another but also enable all elements and attributes in output. *You might need to add some form of server side cleanup.*
 
 [[other-cleanup-options]]
@@ -45,5 +45,5 @@ These options are not recommended, they will disable any of the above cleanup/sa
 Switch to the somewhat experimental XML serializer by setting cleanup_serializer to "xml".
 This will switch the serialization engine to one based on a XML document DOM tree. Sometimes this is a lot faster but most of the cleanup options doesn't apply to this engine. It will always produce a parsable XML output.
 
-Disable the cleanup by setting https://www.tiny.cloud/docs-3x/reference/configuration/cleanup/[cleanup] option to false.
+Disable the cleanup by setting xref:reference/configuration/cleanup.adoc[cleanup] option to false.
 This will make it faster to save but IE will produce invalid HTML code. So you should clean that up by using some other method like a server side Tidy cleanup or http://htmlpurifier.org/[HTML Purifier].

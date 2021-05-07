@@ -5,13 +5,13 @@
 Creating your own themes for the TinyMCE application is fairly easy if you know the basics of HTML, CSS and Javascript. The easiest way is to copy the "simple" or the "advanced" template and rename it ("mytheme", for example). After you copy the template, you need to change the red sections marked below to "mytheme". This is needed so that themes don't conflict; in other words, it gives the theme a unique name. Then just alter the HTML code as you see fit, but notice some elements need to be there, so check the documents below about each function. Also remember that your custom theme needs to be located in TinyMCE's "themes" directory.
 
 [[theme-options]]
-== Theme options 
+== Theme options
 anchor:themeoptions[historical anchor]
 
-If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: `"<your theme>_<option>"` ("mytheme_someoption", for example). Use https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#getparam[tinyMCE.getParam] to retrieve a custom theme option value.
+If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: `"<your theme>_<option>"` ("mytheme_someoption", for example). Use xref:api/class_tinymce.Editor.html.adoc#getparam[tinyMCE.getParam] to retrieve a custom theme option value.
 
 [[theme-directory-structure]]
-== Theme directory structure 
+== Theme directory structure
 anchor:themedirectorystructure[historical anchor]
 
 |===
@@ -43,7 +43,7 @@ anchor:themedirectorystructure[historical anchor]
 |===
 
 [[theme-example-source]]
-== Theme example source 
+== Theme example source
 anchor:themeexamplesource[historical anchor]
 
 The example below shows a simple empty theme and all possible callbacks.
@@ -266,13 +266,13 @@ tinyMCE.addTheme("sometheme", TinyMCE_SomeThemeTheme);
 ----
 
 [[creating-popup-html-files]]
-== Creating popup HTML files 
+== Creating popup HTML files
 anchor:creatingpopuphtmlfiles[historical anchor]
 
 When creating a popup you need to include the "tiny_mce_popup.js" this enables you to retrive the tinyMCE global instance in all popup windows. All variables and language definitions gets replaced in the page when it loads. So language variables such as {$lang_something} can be places in the HTML code, if you need to get a language string in JavaScript simply use the tinyMCE.getLang function.
 
 [[example-of-simple-popup-file]]
-== Example of simple popup file 
+== Example of simple popup file
 anchor:exampleofsimplepopupfile[historical anchor]
 
 [source,html]

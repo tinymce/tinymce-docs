@@ -20,13 +20,13 @@ Entity encoder class.Version:3.4
 *Example*
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<saxparser,SaxParser>>(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]) : Constructs a new SaxParser instance.
+| <<saxparser,SaxParser>>(settings:Object, schema:xref:api/html/class_tinymce.html.Schema.adoc[Schema]) : Constructs a new SaxParser instance.
 | SaxParser
 
 | <<encodeallraw,encodeAllRaw>>(text:String):String : [.static]#[static]# Encoded the specified text with both the attributes and text entities.
@@ -49,13 +49,13 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[saxparser]]
 === SaxParser
 
-*_public function SaxParser(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema])_* +
+*_public function SaxParser(settings:Object, schema:xref:api/html/class_tinymce.html.Schema.adoc[Schema])_* +
 Constructs a new SaxParser instance.
 
 *Parameters*
@@ -66,7 +66,7 @@ Constructs a new SaxParser instance.
 | settings:Object
 | Name/value collection of settings. comment, cdata, text, start and end are callbacks.
 
-| schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]
+| schema:xref:api/html/class_tinymce.html.Schema.adoc[Schema]
 | HTML Schema class to use when parsing.
 |===
 

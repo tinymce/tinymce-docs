@@ -15,7 +15,7 @@
 This plugin adds auto-save capability to the TinyMCE text editor to rescue content inadvertently lost. By using localStorage.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -30,7 +30,7 @@ anchor:publicmethods[historical anchor]
 | <<hasdraft,hasDraft>>():boolean : This method will return true/false if there is a local storage draft available.
 | AutoSave
 
-| <<init,init>>(ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:string):void : Initializes the plugin, this will be executed after the plugin has been created.
+| <<init,init>>(ed:xref:api/class_tinymce.Editor.adoc[Editor], url:string):void : Initializes the plugin, this will be executed after the plugin has been created.
 | AutoSave
 
 | <<removedraft,removeDraft>>():void : Removes the currently stored draft.
@@ -47,24 +47,24 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[public-events]]
-== Public Events 
+== Public Events
 anchor:publicevents[historical anchor]
 
 |===
 | Event | Defined By
 
-| <<onremovedraft,onRemoveDraft>>(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave], draft:Object) : This event gets fired when a draft removed/expired.
+| <<onremovedraft,onRemoveDraft>>(sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave], draft:Object) : This event gets fired when a draft removed/expired.
 | AutoSave
 
-| <<onstoredraft,onStoreDraft>>(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave], draft:Object) : This event gets fired when a draft is stored to local storage.
+| <<onstoredraft,onStoreDraft>>(sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave], draft:Object) : This event gets fired when a draft is stored to local storage.
 | AutoSave
 
-| <<onstoredraft,onStoreDraft>>(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave], draft:Object) : This event gets fired when a draft is restored from local storage.
+| <<onstoredraft,onStoreDraft>>(sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave], draft:Object) : This event gets fired when a draft is restored from local storage.
 | AutoSave
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[getexpdate]]
@@ -97,7 +97,7 @@ boolean - true/false state if there is a local draft.
 [[init]]
 === init
 
-*_public function init(ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:string):void_* +
+*_public function init(ed:xref:api/class_tinymce.Editor.adoc[Editor], url:string):void_* +
 Initializes the plugin, this will be executed after the plugin has been created. This call is done before the editor instance has finished it's initialization so use the onInit event of the editor instance to intercept that event.
 
 *Parameters*
@@ -105,7 +105,7 @@ Initializes the plugin, this will be executed after the plugin has been created.
 |===
 | Param | Detail
 
-| ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| ed:xref:api/class_tinymce.Editor.adoc[Editor]
 | Editor instance that the plugin is initialized in.
 
 | url:string
@@ -137,13 +137,13 @@ This method will setup the storage engine. If the browser has support for it.
 This method will store the current contents in the the storage engine.
 
 [[event-details]]
-== Event details 
+== Event details
 anchor:eventdetails[historical anchor]
 
 [[onremovedraft]]
 === onRemoveDraft
 
-*_public event onRemoveDraft(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave], draft:Object)_* +
+*_public event onRemoveDraft(sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave], draft:Object)_* +
 This event gets fired when a draft removed/expired.
 
 *Parameters*
@@ -151,7 +151,7 @@ This event gets fired when a draft removed/expired.
 |===
 | Param | Detail
 
-| sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave]
+| sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave]
 | Plugin instance sending the event.
 
 | draft:Object
@@ -161,7 +161,7 @@ This event gets fired when a draft removed/expired.
 [[onstoredraft]]
 === onStoreDraft
 
-*_public event onStoreDraft(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave], draft:Object)_* +
+*_public event onStoreDraft(sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave], draft:Object)_* +
 This event gets fired when a draft is stored to local storage.
 
 *Parameters*
@@ -169,7 +169,7 @@ This event gets fired when a draft is stored to local storage.
 |===
 | Param | Detail
 
-| sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave]
+| sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave]
 | Plugin instance sending the event.
 
 | draft:Object
@@ -178,7 +178,7 @@ This event gets fired when a draft is stored to local storage.
 
 === onStoreDraft
 
-*_public event onStoreDraft(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave], draft:Object)_* +
+*_public event onStoreDraft(sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave], draft:Object)_* +
 This event gets fired when a draft is restored from local storage.
 
 *Parameters*
@@ -186,7 +186,7 @@ This event gets fired when a draft is restored from local storage.
 |===
 | Param | Detail
 
-| sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.AutoSave.html[AutoSave]
+| sender:xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[AutoSave]
 | Plugin instance sending the event.
 
 | draft:Object

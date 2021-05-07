@@ -12,13 +12,13 @@
 | Control
 
 | Subclasses
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Button.html[Button], https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container], https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html[ListBox], https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuButton.html[MenuButton], https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem], https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Separator.html[Separator]
+| xref:api/ui/class_tinymce.ui.Button.adoc[Button], xref:api/ui/class_tinymce.ui.Container.adoc[Container], xref:api/ui/class_tinymce.ui.ListBox.adoc[ListBox], xref:api/ui/class_tinymce.ui.MenuButton.adoc[MenuButton], xref:api/ui/class_tinymce.ui.MenuItem.adoc[MenuItem], xref:api/ui/class_tinymce.ui.Separator.adoc[Separator]
 |===
 
 This class is the base class for all controls like buttons, toolbars, containers. This class should not be instantiated directly other controls should inherit from this one.
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -62,7 +62,7 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[control]]

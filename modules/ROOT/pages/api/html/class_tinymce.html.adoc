@@ -17,16 +17,16 @@ Core namespace with core functionality for the TinyMCE API all sub classes will 
 *Example*
 
 [[public-properties]]
-== Public Properties 
+== Public Properties
 anchor:publicproperties[historical anchor]
 
 |===
 | Property | Defined By
 
-| <<activeeditor,activeEditor>> : https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Currently active editor instance.
+| <<activeeditor,activeEditor>> : xref:api/class_tinymce.Editor.adoc[Editor] : Currently active editor instance.
 | tinymce
 
-| <<baseuri,baseURI>> : https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html[URI] : Absolute baseURI for the installation path of TinyMCE.
+| <<baseuri,baseURI>> : xref:api/util/class_tinymce.util.URI.adoc[URI] : Absolute baseURI for the installation path of TinyMCE.
 | tinymce
 
 | <<editors,editors>> : Object : Collection of editor instances.
@@ -82,13 +82,13 @@ anchor:publicproperties[historical anchor]
 |===
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
 | Method | Defined By
 
-| <<add,add>>(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Adds an editor instance to the editor collection.
+| <<add,add>>(editor:xref:api/class_tinymce.Editor.adoc[Editor]):xref:api/class_tinymce.Editor.adoc[Editor] : Adds an editor instance to the editor collection.
 | tinymce
 
 | <<addi18n,addI18n>>(p:String, o:Object):void : Adds a language pack, this gets called by the loaded language files like en.
@@ -118,10 +118,10 @@ anchor:publicmethods[historical anchor]
 | <<extend,extend>>(obj:Object, ext..n:Object):Object : [.static]#[static]# Extends an object with the specified other object(s).
 | tinymce
 
-| <<get,get>>(id:String/Number):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Returns a editor instance by id.
+| <<get,get>>(id:String/Number):xref:api/class_tinymce.Editor.adoc[Editor] : Returns a editor instance by id.
 | tinymce
 
-| <<getinstancebyid,getInstanceById>>(id:String):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]Deprecated: Use get method instead.
+| <<getinstancebyid,getInstanceById>>(id:String):xref:api/class_tinymce.Editor.adoc[Editor]Deprecated: Use get method instead.
 | tinymce
 
 | <<grep,grep>>(a:Array, f:function):Array : [.static]#[static]# Filters out items from the input array by calling the specified function for each item.
@@ -145,7 +145,7 @@ anchor:publicmethods[historical anchor]
 | <<map,map>>(a:Array, f:function):Array : [.static]#[static]# Creates a new array by the return value of each iteration function call.
 | tinymce
 
-| <<remove,remove>>(e:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Removes a editor instance from the collection.
+| <<remove,remove>>(e:xref:api/class_tinymce.Editor.adoc[Editor]):xref:api/class_tinymce.Editor.adoc[Editor] : Removes a editor instance from the collection.
 | tinymce
 
 | <<removeunload,removeUnload>>(f:function):function : [.static]#[static]# Removes the specified function form the unload handler list.
@@ -165,27 +165,27 @@ anchor:publicmethods[historical anchor]
 |===
 
 [[public-events]]
-== Public Events 
+== Public Events
 anchor:publicevents[historical anchor]
 
 |===
 | Event | Defined By
 
-| <<onaddeditor,onAddEditor>>(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]) : Fires when a new editor instance is added to the tinymce collection.
+| <<onaddeditor,onAddEditor>>(sender:xref:api/html/class_tinymce.adoc[tinymce], editor:xref:api/class_tinymce.Editor.adoc[Editor]) : Fires when a new editor instance is added to the tinymce collection.
 | tinymce
 
-| <<onremoveeditor,onRemoveEditor>>(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]) : Fires when an editor instance is removed from the tinymce collection.
+| <<onremoveeditor,onRemoveEditor>>(sender:xref:api/html/class_tinymce.adoc[tinymce], editor:xref:api/class_tinymce.Editor.adoc[Editor]) : Fires when an editor instance is removed from the tinymce collection.
 | tinymce
 |===
 
 [[property-details]]
-== Property details 
+== Property details
 anchor:propertydetails[historical anchor]
 
 [[activeeditor]]
 === activeEditor
 
-*_public activeEditor : https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+*_public activeEditor : xref:api/class_tinymce.Editor.adoc[Editor]_* +
 Currently active editor instance.
 
 *Example*
@@ -193,7 +193,7 @@ Currently active editor instance.
 [[baseuri]]
 === baseURI
 
-*_public baseURI : https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html[URI]_* +
+*_public baseURI : xref:api/util/class_tinymce.util.URI.adoc[URI]_* +
 Absolute baseURI for the installation path of TinyMCE.
 
 [[editors]]
@@ -301,13 +301,13 @@ Major version of TinyMCE build.
 Release date of TinyMCE build.
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[add]]
 === add
 
-*_public function add(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+*_public function add(editor:xref:api/class_tinymce.Editor.adoc[Editor]):xref:api/class_tinymce.Editor.adoc[Editor]_* +
 Adds an editor instance to the editor collection. This will also set it as the active editor.
 
 *Parameters*
@@ -315,12 +315,12 @@ Adds an editor instance to the editor collection. This will also set it as the a
 |===
 | Param | Detail
 
-| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| editor:xref:api/class_tinymce.Editor.adoc[Editor]
 | Editor instance to add to the collection.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - The same instance that got passed in.
+xref:api/class_tinymce.Editor.adoc[Editor] - The same instance that got passed in.
 
 [[addi18n]]
 === addI18n
@@ -529,7 +529,7 @@ Object - o New extended object, same reference as the input object.
 [[get]]
 === get
 
-*_public function get(id:String/Number):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+*_public function get(id:String/Number):xref:api/class_tinymce.Editor.adoc[Editor]_* +
 Returns a editor instance by id.
 
 *Parameters*
@@ -542,14 +542,14 @@ Returns a editor instance by id.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - Editor instance to return.
+xref:api/class_tinymce.Editor.adoc[Editor] - Editor instance to return.
 
 *Example*
 
 [[getinstancebyid]]
 === getInstanceById
 
-*_public function getInstanceById(id:String):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+*_public function getInstanceById(id:String):xref:api/class_tinymce.Editor.adoc[Editor]_* +
 Deprecated: Use get method instead.Returns a editor instance by id. This method was added for compatibility with the 2.x branch.
 
 *Parameters*
@@ -562,7 +562,7 @@ Deprecated: Use get method instead.Returns a editor instance by id. This method 
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - Editor instance to return.
+xref:api/class_tinymce.Editor.adoc[Editor] - Editor instance to return.
 
 *See Also*
 
@@ -718,7 +718,7 @@ Array - Array with new values based on function return values.
 [[remove]]
 === remove
 
-*_public function remove(e:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+*_public function remove(e:xref:api/class_tinymce.Editor.adoc[Editor]):xref:api/class_tinymce.Editor.adoc[Editor]_* +
 Removes a editor instance from the collection.
 
 *Parameters*
@@ -726,12 +726,12 @@ Removes a editor instance from the collection.
 |===
 | Param | Detail
 
-| e:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| e:xref:api/class_tinymce.Editor.adoc[Editor]
 | Editor instance to remove.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - The editor that got passed in will be return if it was found otherwise null.
+xref:api/class_tinymce.Editor.adoc[Editor] - The editor that got passed in will be return if it was found otherwise null.
 
 [[removeunload]]
 === removeUnload
@@ -825,13 +825,13 @@ Executed the specified function for each item in a object tree.
 |===
 
 [[event-details]]
-== Event details 
+== Event details
 anchor:eventdetails[historical anchor]
 
 [[onaddeditor]]
 === onAddEditor
 
-*_public event onAddEditor(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor])_* +
+*_public event onAddEditor(sender:xref:api/html/class_tinymce.adoc[tinymce], editor:xref:api/class_tinymce.Editor.adoc[Editor])_* +
 Fires when a new editor instance is added to the tinymce collection.
 
 *Parameters*
@@ -839,10 +839,10 @@ Fires when a new editor instance is added to the tinymce collection.
 |===
 | Param | Detail
 
-| sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce]
+| sender:xref:api/html/class_tinymce.adoc[tinymce]
 | TinyMCE root class/namespace.
 
-| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| editor:xref:api/class_tinymce.Editor.adoc[Editor]
 | Editor instance.
 |===
 
@@ -851,7 +851,7 @@ Fires when a new editor instance is added to the tinymce collection.
 [[onremoveeditor]]
 === onRemoveEditor
 
-*_public event onRemoveEditor(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor])_* +
+*_public event onRemoveEditor(sender:xref:api/html/class_tinymce.adoc[tinymce], editor:xref:api/class_tinymce.Editor.adoc[Editor])_* +
 Fires when an editor instance is removed from the tinymce collection.
 
 *Parameters*
@@ -859,9 +859,9 @@ Fires when an editor instance is removed from the tinymce collection.
 |===
 | Param | Detail
 
-| sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce]
+| sender:xref:api/html/class_tinymce.adoc[tinymce]
 | TinyMCE root class/namespace.
 
-| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| editor:xref:api/class_tinymce.Editor.adoc[Editor]
 | Editor instance.
 |===

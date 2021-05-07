@@ -12,16 +12,16 @@
 | Container
 
 | Inheritance
-| Container [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+| Container [.last]#xref:api/ui/class_tinymce.ui.Control.adoc[Control]#
 
 | Subclasses
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Toolbar.html[Toolbar], https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ToolbarGroup.html[ToolbarGroup]
+| xref:api/ui/class_tinymce.ui.Toolbar.adoc[Toolbar], xref:api/ui/class_tinymce.ui.ToolbarGroup.adoc[ToolbarGroup]
 |===
 
 This class is the base class for all container controls like toolbars. This class should not be instantiated directly other container controls should inherit from this one.
 
 [[public-properties]]
-== Public Properties 
+== Public Properties
 anchor:publicproperties[historical anchor]
 
 |===
@@ -32,7 +32,7 @@ anchor:publicproperties[historical anchor]
 |===
 
 [[public-methods]]
-== Public Methods 
+== Public Methods
 anchor:publicmethods[historical anchor]
 
 |===
@@ -41,48 +41,48 @@ anchor:publicmethods[historical anchor]
 | <<container,Container>>(id:String, s:Object) : Base contrustor a new container control instance.
 | Container
 
-| <<add,add>>(c:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Adds a control to the collection of controls for the container.
+| <<add,add>>(c:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Adds a control to the collection of controls for the container.
 | Container
 
 | <<destroy,destroy>>():void : Destroys the control will free any memory by removing event listeners etc.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
-| <<get,get>>(n:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Returns a control by id from the containers collection.
+| <<get,get>>(n:String):xref:api/ui/class_tinymce.ui.Control.adoc[Control] : Returns a control by id from the containers collection.
 | Container
 
 | <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<postrender,postRender>>():void : Post render event.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<remove,remove>>():void : Removes the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<renderhtml,renderHTML>>():String : Renders the control as a HTML string.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 
 | <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
-| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 |===
 
 [[property-details]]
-== Property details 
+== Property details
 anchor:propertydetails[historical anchor]
 
 [[controls]]
@@ -92,7 +92,7 @@ anchor:propertydetails[historical anchor]
 Array of controls added to the container.
 
 [[method-details]]
-== Method details 
+== Method details
 anchor:methoddetails[historical anchor]
 
 [[container]]
@@ -116,7 +116,7 @@ Base contrustor a new container control instance.
 [[add]]
 === add
 
-*_public function add(c:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function add(c:xref:api/ui/class_tinymce.ui.Control.adoc[Control]):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Adds a control to the collection of controls for the container.
 
 *Parameters*
@@ -124,17 +124,17 @@ Adds a control to the collection of controls for the container.
 |===
 | Param | Detail
 
-| c:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| c:xref:api/ui/class_tinymce.ui.Control.adoc[Control]
 | Control instance to add to the container.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Same control instance that got passed in.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Same control instance that got passed in.
 
 [[get]]
 === get
 
-*_public function get(n:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+*_public function get(n:String):xref:api/ui/class_tinymce.ui.Control.adoc[Control]_* +
 Returns a control by id from the containers collection.
 
 *Parameters*
@@ -147,4 +147,4 @@ Returns a control by id from the containers collection.
 |===
 
 *Returns* +
-https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance by the specified name or undefined if it wasn't found.
+xref:api/ui/class_tinymce.ui.Control.adoc[Control] - Control instance by the specified name or undefined if it wasn't found.

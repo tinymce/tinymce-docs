@@ -4,16 +4,16 @@
 
 Installing TinyMCE is very simple; follow the instructions here. We give a few examples of how to integrate TinyMCE. You should also take a look at TinyMCE's extensive configuration options.
 
-Recently added is the https://www.tiny.cloud/docs-3x/reference/for-dummies/[For Dummies section].
+Recently added is the xref:reference/for-dummies.adoc[For Dummies section].
 
 [[requirements]]
 == Requirements
 
-TinyMCE has no direct requirements except for browser compatibility (see https://www.tiny.cloud/docs-3x/extras/Browser_compatiblity/[TinyMCE:compatibility] and, of course, having JavaScript enabled.
+TinyMCE has no direct requirements except for browser compatibility (see xref:extras/Browser_compatiblity.adoc[TinyMCE:compatibility] and, of course, having JavaScript enabled.
 
 There is NO back-end code distributed with TinyMCE.
 
-TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, https://www.tiny.cloud/docs-3x/reference/configuration/mode/[Mode] for more information.
+TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, xref:reference/configuration/mode.adoc[Mode] for more information.
 
 [[windows-specific-apache-configuration]]
 == Windows specific Apache configuration
@@ -120,7 +120,7 @@ which should be turned into :
 
 ```
 
-Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](https://www.tiny.cloud/docs-3x/reference/Configuration3x/).
+Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](xref:reference/Configuration3x.adoc).
 
 ## Examples
 

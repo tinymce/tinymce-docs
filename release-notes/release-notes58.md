@@ -25,9 +25,9 @@ keywords: releasenotes bugfixes
 
 The following new features were added for the {{site.productname}} 5.8 release.
 
-### Add support for keys Home, End, PageUp and PageDown to escape inline elements
+### Improved keyboard navigation for the inline boundary feature
 
-A new set of keys has been added `Home`, `End`, `PageUp`, and `PageDown` to allow escape outside of the inline element scope (eg for links or comments).
+Users can now escape inline elements (such as links and comments) using the `Home`, `End`, `PageUp`, and `PageDown` keys, see: [Content appearance options - Inline boundaries]({{site.baseurl}}/configure/content-appearance/#inline_boundaries).
 
 ### Additional new features
 

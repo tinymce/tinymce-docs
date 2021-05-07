@@ -1,0 +1,14 @@
+Related Ticket: 
+
+Description of Changes:
+* Placeholder text
+
+Pre-checks:
+- [ ] Branch prefixed with `feature/` or `hotfix/`
+- [ ] `modules/ROOT/nav.adoc` has been updated (if applicable)
+- [ ] Files has been included where required (if applicable)
+- [ ] Files removed have been deleted, not just excluded from the build (if applicable)
+
+Review:
+- [ ] Documentation Team Lead has reviewed
+- [ ] Product Manager has reviewed

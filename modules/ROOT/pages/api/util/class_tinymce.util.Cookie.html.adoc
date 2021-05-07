@@ -1,0 +1,162 @@
+= tinymce.util.Cookie
+
+|===
+|  |
+
+| Namespace
+| tinymce.util
+
+| Class
+| Cookie
+
+| Type
+| Singleton
+|===
+
+This class contains simple cookie manangement functions.
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<get,get>>(n:String):String : [.static]#[static]# Gets the raw data of a cookie by name.
+| Cookie
+
+| <<gethash,getHash>>(n:String):Object : [.static]#[static]# Parses the specified query string into an name/value object.
+| Cookie
+
+| <<remove,remove>>(name:String, path:Strong, domain:Strong):void : [.static]#[static]# Removes/deletes a cookie by name.
+| Cookie
+
+| <<set,set>>(n:String, v:String, e:Date, p:String, d:String, s:String):void : [.static]#[static]# Sets a raw cookie string.
+| Cookie
+
+| <<sethash,setHash>>(n:String, v:Object, e:Date, p:String, d:String, s:String):void : [.static]#[static]# Sets a hashtable name/value object to a cookie.
+| Cookie
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[get]]
+=== get
+
+*_public static function get(n:String):String_* +
+Gets the raw data of a cookie by name.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Name of cookie to retrive.
+|===
+
+*Returns* +
+String - Cookie data string.
+
+[[gethash]]
+=== getHash
+
+*_public static function getHash(n:String):Object_* +
+Parses the specified query string into an name/value object.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| String to parse into a n Hashtable object.
+|===
+
+*Returns* +
+Object - Name/Value object with items parsed from querystring.
+
+[[remove]]
+=== remove
+
+*_public static function remove(name:String, path:Strong, domain:Strong):void_* +
+Removes/deletes a cookie by name.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Cookie name to remove/delete.
+
+| path:Strong
+| Optional path to remove the cookie from.
+
+| domain:Strong
+| Optional domain to restrict the cookie to.
+|===
+
+[[set]]
+=== set
+
+*_public static function set(n:String, v:String, e:Date, p:String, d:String, s:String):void_* +
+Sets a raw cookie string.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Name of the cookie.
+
+| v:String
+| Raw cookie data.
+
+| e:Date
+| Optional date object for the expiration of the cookie.
+
+| p:String
+| Optional path to restrict the cookie to.
+
+| d:String
+| Optional domain to restrict the cookie to.
+
+| s:String
+| Is the cookie secure or not.
+|===
+
+[[sethash]]
+=== setHash
+
+*_public static function setHash(n:String, v:Object, e:Date, p:String, d:String, s:String):void_* +
+Sets a hashtable name/value object to a cookie.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Name of the cookie.
+
+| v:Object
+| Hashtable object to set as cookie.
+
+| e:Date
+| Optional date object for the expiration of the cookie.
+
+| p:String
+| Optional path to restrict the cookie to.
+
+| d:String
+| Optional domain to restrict the cookie to.
+
+| s:String
+| Is the cookie secure or not.
+|===

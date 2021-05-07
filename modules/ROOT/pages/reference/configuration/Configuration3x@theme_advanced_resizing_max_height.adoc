@@ -1,0 +1,16 @@
+= theme_advanced_resizing_max_height
+
+*(Requires: 3.0)*
+
+This option enables you to specify a maximum height for the editor.
+
+[[example-of-usage-of-the-theme_advanced_resizing_max_height-option]]
+== Example of usage of the theme_advanced_resizing_max_height option: 
+anchor:exampleofusageofthetheme_advanced_resizing_max_heightoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  theme_advanced_resizing_max_height : 240
+});
++`

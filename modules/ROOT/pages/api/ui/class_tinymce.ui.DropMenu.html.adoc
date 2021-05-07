@@ -1,0 +1,246 @@
+= tinymce.ui.DropMenu
+
+|===
+|  |
+
+| Namespace
+| tinymce.ui
+
+| Class
+| DropMenu
+
+| Inheritance
+| DropMenu https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu] https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem] [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+|===
+
+This class is used to create drop menus, a drop menu can be a context menu, or a menu for a list box or a menu bar.
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<dropmenu,DropMenu>>(id:String, s:Object) : Constructs a new drop menu control instance.
+| DropMenu
+
+| <<add,add>>(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Adds a new menu, menu item or sub classes of them to the drop menu.
+| DropMenu
+
+| <<addmenu,addMenu>>(o:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu] : Adds a sub menu to the menu.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]
+
+| <<addseparator,addSeparator>>():https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem] : Adds a menu separator between the menu items.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]
+
+| <<collapse,collapse>>(d:Boolean):void : Collapses the menu, this will hide the menu and all menu items.
+| DropMenu
+
+| <<createmenu,createMenu>>(s:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.DropMenu.html[DropMenu] : Created a new sub menu for the drop menu control.
+| DropMenu
+
+| <<destroy,destroy>>():void : Destroys the menu.
+| DropMenu
+
+| <<expand,expand>>(d:Boolean):void : Expands the menu, this will show them menu and all menu items.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]
+
+| <<hasmenus,hasMenus>>():Boolean : Returns true/false if the menu has sub menus or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]
+
+| <<hidemenu,hideMenu>>():void : Hides the displayed menu.
+| DropMenu
+
+| <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<iscollapsed,isCollapsed>>():Boolean : Returns true/false if the menu has been collapsed or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]
+
+| <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isselected,isSelected>>():Boolean : Returns true/false if the control is selected or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem]
+
+| <<postrender,postRender>>():void : Post render handler.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem]
+
+| <<remove,remove>>(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Removes a specific sub menu or menu item from the drop menu.
+| DropMenu
+
+| <<removeall,removeAll>>():void : Removes all menu items and sub menu items from the menu.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Menu.html[Menu]
+
+| <<renderhtml,renderHTML>>():String : Renders the control as a HTML string.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<rendernode,renderNode>>():Element : Renders the specified menu node to the dom.
+| DropMenu
+
+| <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setselected,setSelected>>(s:Boolean):void : Sets the selected state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html[MenuItem]
+
+| <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<showmenu,showMenu>>(x:Number, y:Number, px:Numner):void : Displays the menu at the specified cordinate.
+| DropMenu
+
+| <<update,update>>():void : Repaints the menu after new items have been added dynamically.
+| DropMenu
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[dropmenu]]
+=== DropMenu
+
+*_public function DropMenu(id:String, s:Object)_* +
+Constructs a new drop menu control instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| id:String
+| Button control id for the button.
+
+| s:Object
+| Optional name/value settings object.
+|===
+
+[[add]]
+=== add
+
+*_public function add(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+Adds a new menu, menu item or sub classes of them to the drop menu.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| Menu or menu item to add to the drop menu.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Same as the input control, the menu or menu item.
+
+[[collapse]]
+=== collapse
+
+*_public function collapse(d:Boolean):void_* +
+Collapses the menu, this will hide the menu and all menu items.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| d:Boolean
+| Optional deep state. If this is set to true all children will be collapsed as well.
+|===
+
+[[createmenu]]
+=== createMenu
+
+*_public function createMenu(s:Object):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.DropMenu.html[DropMenu]_* +
+Created a new sub menu for the drop menu control.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| s:Object
+| Optional name/value settings object.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.DropMenu.html[DropMenu] - New drop menu instance.
+
+[[destroy]]
+=== destroy
+
+*_public function destroy():void_* +
+Destroys the menu. This will remove the menu from the DOM and any events added to it etc.
+
+[[hidemenu]]
+=== hideMenu
+
+*_public function hideMenu():void_* +
+Hides the displayed menu.
+
+[[remove]]
+=== remove
+
+*_public function remove(o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+Removes a specific sub menu or menu item from the drop menu.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| o:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+| Menu item or menu to remove from drop menu.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Control instance or null if it wasn't found.
+
+[[rendernode]]
+=== renderNode
+
+*_public function renderNode():Element_* +
+Renders the specified menu node to the dom.
+
+*Returns* +
+Element - Container element for the drop menu.
+
+[[showmenu]]
+=== showMenu
+
+*_public function showMenu(x:Number, y:Number, px:Numner):void_* +
+Displays the menu at the specified cordinate.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| x:Number
+| Horizontal position of the menu.
+
+| y:Number
+| Vertical position of the menu.
+
+| px:Numner
+| Optional parent X position used when menus are cascading.
+|===
+
+[[update]]
+=== update
+
+*_public function update():void_* +
+Repaints the menu after new items have been added dynamically.

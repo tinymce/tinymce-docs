@@ -1,0 +1,14 @@
+= selector
+
+This option enables you to specify a CSS selector expression that will be used to find textareas you want to convert.
+
+[[example-of-usage-of-the-selector-option]]
+== Example of usage of the selector option: 
+anchor:exampleofusageoftheselectoroption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  selector : "textarea.editor"
+});
++`

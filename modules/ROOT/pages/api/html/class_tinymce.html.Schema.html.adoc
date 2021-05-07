@@ -1,0 +1,282 @@
+= tinymce.html.Schema
+
+|===
+|  |
+
+| Namespace
+| tinymce.html
+
+| Class
+| Schema
+|===
+
+Schema validator class.Version:3.4
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<schema,Schema>>(settings:Object) : Constructs a new Schema instance.
+| Schema
+
+| <<addcustomelements,addCustomElements>>(custom_elements:String):void : Adds custom non HTML elements to the schema.
+| Schema
+
+| <<addvalidchildren,addValidChildren>>(valid_children:String):void : Parses a valid children string and adds them to the schema structure.
+| Schema
+
+| <<addvalidelements,addValidElements>>(valid_elements:String):void : Parses a valid elements string and adds it to the schema.
+| Schema
+
+| <<getblockelements,getBlockElements>>():Object : Returns a map with block elements.
+| Schema
+
+| <<getboolattrs,getBoolAttrs>>():Object : Returns a map with boolean attributes.
+| Schema
+
+| <<getcustomelements,getCustomElements>>():Object : Returns an map object of all custom elements.
+| Schema
+
+| <<getelementrule,getElementRule>>(name:String):Object : Returns true/false if the specified element is valid or not according to the schema.
+| Schema
+
+| <<getnonemptyelements,getNonEmptyElements>>():Object : Returns a map with elements that should be treated as contents regardless if it has text content in them or not such as ...
+| Schema
+
+| <<getselfclosingelements,getSelfClosingElements>>():Object : Returns a map with self closing tags such as .
+| Schema
+
+| <<getshortendedelements,getShortEndedElements>>():Object : Returns a map with short ended elements such as BR or IMG.
+| Schema
+
+| <<gettextblockelements,getTextBlockElements>>():Object : Returns a map with text block elements.
+| Schema
+
+| <<getwhitespaceelements,getWhiteSpaceElements>>():Object : Returns a map with elements where white space is to be preserved like PRE or SCRIPT.
+| Schema
+
+| <<isvalid,isValid>>(name:String, attr:String):Boolean : Returns true/false if the specified element name and optional attribute is valid according to the schema.
+| Schema
+
+| <<isvalidchild,isValidChild>>(name:String, child:String):Boolean : Returns true/false if the specified element and it's child is valid or not according to the schema.
+| Schema
+
+| <<setvalidelements,setValidElements>>(valid_elements:String):void : Parses a valid elements string and sets it to the schema.
+| Schema
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[schema]]
+=== Schema
+
+*_public function Schema(settings:Object)_* +
+Constructs a new Schema instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| settings:Object
+| Name/value settings object.
+|===
+
+[[addcustomelements]]
+=== addCustomElements
+
+*_public function addCustomElements(custom_elements:String):void_* +
+Adds custom non HTML elements to the schema.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| custom_elements:String
+| Comma separated list of custom elements to add.
+|===
+
+[[addvalidchildren]]
+=== addValidChildren
+
+*_public function addValidChildren(valid_children:String):void_* +
+Parses a valid children string and adds them to the schema structure. The valid children format is for example: "element[child1|child2]".
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| valid_children:String
+| Valid children elements string to parse
+|===
+
+[[addvalidelements]]
+=== addValidElements
+
+*_public function addValidElements(valid_elements:String):void_* +
+Parses a valid elements string and adds it to the schema. The valid elements format is for example "element[attr=default|otherattr]". Existing rules will be replaced with the ones specified, so this extends the schema.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| valid_elements:String
+| String in the valid elements format to be parsed.
+|===
+
+[[getblockelements]]
+=== getBlockElements
+
+*_public function getBlockElements():Object_* +
+Returns a map with block elements.
+
+*Returns* +
+Object - Name/value lookup map for block elements.
+
+[[getboolattrs]]
+=== getBoolAttrs
+
+*_public function getBoolAttrs():Object_* +
+Returns a map with boolean attributes.
+
+*Returns* +
+Object - Name/value lookup map for boolean attributes.
+
+[[getcustomelements]]
+=== getCustomElements
+
+*_public function getCustomElements():Object_* +
+Returns an map object of all custom elements.
+
+*Returns* +
+Object - Name/value map object of all custom elements.
+
+[[getelementrule]]
+=== getElementRule
+
+*_public function getElementRule(name:String):Object_* +
+Returns true/false if the specified element is valid or not according to the schema.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Element name to check for.
+|===
+
+*Returns* +
+Object - Element object or undefined if the element isn't valid.
+
+[[getnonemptyelements]]
+=== getNonEmptyElements
+
+*_public function getNonEmptyElements():Object_* +
+Returns a map with elements that should be treated as contents regardless if it has text content in them or not such as TD, VIDEO or IMG.
+
+*Returns* +
+Object - Name/value lookup map for non empty elements.
+
+[[getselfclosingelements]]
+=== getSelfClosingElements
+
+*_public function getSelfClosingElements():Object_* +
+Returns a map with self closing tags such as*   .
+
+*Returns* +
+Object - Name/value lookup map for self closing tags elements.
+
+[[getshortendedelements]]
+=== getShortEndedElements
+
+*_public function getShortEndedElements():Object_* +
+Returns a map with short ended elements such as BR or IMG.
+
+*Returns* +
+Object - Name/value lookup map for short ended elements.
+
+[[gettextblockelements]]
+=== getTextBlockElements
+
+*_public function getTextBlockElements():Object_* +
+Returns a map with text block elements. Such as: p,h1-h6,div,address
+
+*Returns* +
+Object - Name/value lookup map for block elements.
+
+[[getwhitespaceelements]]
+=== getWhiteSpaceElements
+
+*_public function getWhiteSpaceElements():Object_* +
+Returns a map with elements where white space is to be preserved like PRE or SCRIPT.
+
+*Returns* +
+Object - Name/value lookup map for white space elements.
+
+[[isvalid]]
+=== isValid
+
+*_public function isValid(name:String, attr:String):Boolean_* +
+Returns true/false if the specified element name and optional attribute is valid according to the schema.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Name of element to check.
+
+| attr:String
+| Optional attribute name to check for.
+|===
+
+*Returns* +
+Boolean - True/false if the element and attribute is valid.
+
+[[isvalidchild]]
+=== isValidChild
+
+*_public function isValidChild(name:String, child:String):Boolean_* +
+Returns true/false if the specified element and it's child is valid or not according to the schema.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Element name to check for.
+
+| child:String
+| Element child to verify.
+|===
+
+*Returns* +
+Boolean - True/false if the element is a valid child of the specified parent.
+
+[[setvalidelements]]
+=== setValidElements
+
+*_public function setValidElements(valid_elements:String):void_* +
+Parses a valid elements string and sets it to the schema. The valid elements format is for example "element[attr=default|otherattr]". Existing rules will be replaced with the ones specified, so this extends the schema.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| valid_elements:String
+| String in the valid elements format to be parsed.
+|===

@@ -1,0 +1,285 @@
+= tinymce.ui.ListBox
+
+|===
+|  |
+
+| Namespace
+| tinymce.ui
+
+| Class
+| ListBox
+
+| Inheritance
+| ListBox [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+
+| Subclasses
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.NativeListBox.html[NativeListBox]
+|===
+
+This class is used to create list boxes/select list. This one will generate a non native control. This one has the benefits of having visual items added.
+
+*Example*
+
+[[public-properties]]
+== Public Properties 
+anchor:publicproperties[historical anchor]
+
+|===
+| Property | Defined By
+
+| <<items,items>> : Array : Array of ListBox items.
+| ListBox
+|===
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<listbox,ListBox>>(id:String, s:Object, ed:Editor) : Constructs a new listbox control instance.
+| ListBox
+
+| <<add,add>>(n:String, v:String, o:Object):void : Adds a option item to the list box.
+| ListBox
+
+| <<destroy,destroy>>():void : Destroys the ListBox i.
+| ListBox
+
+| <<getlength,getLength>>(Number:Number):void : Returns the number of items inside the list box.
+| ListBox
+
+| <<hidemenu,hideMenu>>():void : Hides the drop menu.
+| ListBox
+
+| <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<postrender,postRender>>():void : Post render event.
+| ListBox
+
+| <<remove,remove>>():void : Removes the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<renderhtml,renderHTML>>():String : Renders the list box as a HTML string.
+| ListBox
+
+| <<rendermenu,renderMenu>>():void : Renders the menu to the DOM.
+| ListBox
+
+| <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<select,select>>(va:String/function):void : Selects a item/option by value.
+| ListBox
+
+| <<selectbyindex,selectByIndex>>(idx:String):void : Selects a item/option by index.
+| ListBox
+
+| <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<showmenu,showMenu>>():void : Displays the drop menu with all items.
+| ListBox
+|===
+
+[[public-events]]
+== Public Events 
+anchor:publicevents[historical anchor]
+
+|===
+| Event | Defined By
+
+| <<onadd,onAdd>>() : Fires when a new item is added.
+| ListBox
+
+| <<onchange,onChange>>() : Fires when the selection has been changed.
+| ListBox
+
+| <<onpostrender,onPostRender>>() : Fires after the element has been rendered to DOM.
+| ListBox
+
+| <<onrendermenu,onRenderMenu>>() : Fires when the menu gets rendered.
+| ListBox
+|===
+
+[[property-details]]
+== Property details 
+anchor:propertydetails[historical anchor]
+
+[[items]]
+=== items
+
+*_public items : Array_* +
+Array of ListBox items.
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[listbox]]
+=== ListBox
+
+*_public function ListBox(id:String, s:Object, ed:Editor)_* +
+Constructs a new listbox control instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| id:String
+| Control id for the list box.
+
+| s:Object
+| Optional name/value settings object.
+
+| ed:Editor
+| Optional the editor instance this button is for.
+|===
+
+[[add]]
+=== add
+
+*_public function add(n:String, v:String, o:Object):void_* +
+Adds a option item to the list box.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Title for the new option.
+
+| v:String
+| Value for the new option.
+
+| o:Object
+| Optional object with settings like for example class.
+|===
+
+[[destroy]]
+=== destroy
+
+*_public function destroy():void_* +
+Destroys the ListBox i.e. clear memory and events.
+
+[[getlength]]
+=== getLength
+
+*_public function getLength(Number:Number):void_* +
+Returns the number of items inside the list box.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| Number:Number
+| of items inside the list box.
+|===
+
+[[hidemenu]]
+=== hideMenu
+
+*_public function hideMenu():void_* +
+Hides the drop menu.
+
+[[postrender]]
+=== postRender
+
+*_public function postRender():void_* +
+Post render event. This will be executed after the control has been rendered and can be used to set states, add events to the control etc. It's recommended for subclasses of the control to call this method by using this.parent().
+
+[[renderhtml]]
+=== renderHTML
+
+*_public function renderHTML():String_* +
+Renders the list box as a HTML string. This method is much faster than using the DOM and when creating a whole toolbar with buttons it does make a lot of difference.
+
+*Returns* +
+String - HTML for the list box control element.
+
+[[rendermenu]]
+=== renderMenu
+
+*_public function renderMenu():void_* +
+Renders the menu to the DOM.
+
+[[select]]
+=== select
+
+*_public function select(va:String/function):void_* +
+Selects a item/option by value. This will both add a visual selection to the item and change the title of the control to the title of the option.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| va:String/function
+| Value to look for inside the list box or a function selector.
+|===
+
+[[selectbyindex]]
+=== selectByIndex
+
+*_public function selectByIndex(idx:String):void_* +
+Selects a item/option by index. This will both add a visual selection to the item and change the title of the control to the title of the option.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| idx:String
+| Index to select, pass -1 to select menu/title of select box.
+|===
+
+[[showmenu]]
+=== showMenu
+
+*_public function showMenu():void_* +
+Displays the drop menu with all items.
+
+[[event-details]]
+== Event details 
+anchor:eventdetails[historical anchor]
+
+[[onadd]]
+=== onAdd
+
+*_public event onAdd()_* +
+Fires when a new item is added.
+
+[[onchange]]
+=== onChange
+
+*_public event onChange()_* +
+Fires when the selection has been changed.
+
+[[onpostrender]]
+=== onPostRender
+
+*_public event onPostRender()_* +
+Fires after the element has been rendered to DOM.
+
+[[onrendermenu]]
+=== onRenderMenu
+
+*_public event onRenderMenu()_* +
+Fires when the menu gets rendered.

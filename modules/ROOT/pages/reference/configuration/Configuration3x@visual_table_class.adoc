@@ -1,0 +1,14 @@
+= visual_table_class
+
+This option enables you to specify what CSS class to use for presenting visual aids for borderless tables. The default value of this option is set to "mceVisualAid".
+
+[[example-of-usage-of-the-visual_table_class-option]]
+== Example of usage of the visual_table_class option: 
+anchor:exampleofusageofthevisual_table_classoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  visual_table_class : "myCustomVisualAidTableClass"
+});
++`

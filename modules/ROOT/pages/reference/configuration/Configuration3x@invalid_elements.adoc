@@ -1,0 +1,18 @@
+= invalid_elements
+
+This option should contain a comma separated list of element names to exclude from the content. Elements in this list will be removed when TinyMCE executes a cleanup.
+
+[[example-of-usage-of-the-invalid_elements-option]]
+== Example of usage of the invalid_elements option 
+anchor:exampleofusageoftheinvalid_elementsoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  invalid_elements : "strong,em"
+});
++`
+
+CAUTION: This option doesn't accept attributes in the list, only elements
+
+Also see https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_elements/[valid_elements] and https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/[extended_valid_elements] for more configuration options.

@@ -1,0 +1,90 @@
+= tinymce.Plugin
+
+|===
+|  |
+
+| Namespace
+| tinymce
+
+| Class
+| Plugin
+|===
+
+Plugin base class, this is a pseudo class that describes how a plugin is to be created for TinyMCE. The methods below are all optional.
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<createcontrol,createControl>>(name:String, controlman:https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html[ControlManager]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Gets called when a new control instance is created.
+| Plugin
+
+| <<getinfo,getInfo>>():Object : Meta info method, this method gets executed when TinyMCE wants to present information about the plugin for example in th...
+| Plugin
+
+| <<init,init>>(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:String):void : Initialization function for the plugin.
+| Plugin
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[createcontrol]]
+=== createControl
+
+*_public function createControl(name:String, controlman:https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html[ControlManager]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]_* +
+Gets called when a new control instance is created.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Control name to create for example "mylistbox"
+
+| controlman:https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html[ControlManager]
+| Control manager/factory to use to create the control.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] - Returns a new control instance or null.
+
+*Example*
+
+[[getinfo]]
+=== getInfo
+
+*_public function getInfo():Object_* +
+Meta info method, this method gets executed when TinyMCE wants to present information about the plugin for example in the about/help dialog.
+
+*Returns* +
+Object - Returns an object with meta information about the plugin the current items are longname, author, authorurl, infourl and version.
+
+*Example*
+
+[[init]]
+=== init
+
+*_public function init(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:String):void_* +
+Initialization function for the plugin. This will be called when the plugin is created.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance that created the plugin instance.
+
+| url:String
+| Absolute URL where the plugin is located.
+|===
+
+*Example*

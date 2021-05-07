@@ -1,0 +1,229 @@
+= tinymce.ui.ColorSplitButton
+
+|===
+|  |
+
+| Namespace
+| tinymce.ui
+
+| Class
+| ColorSplitButton
+
+| Inheritance
+| ColorSplitButton https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.SplitButton.html[SplitButton] https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Button.html[Button] [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+|===
+
+This class is used to create UI color split button. A color split button will present show a small color picker when you press the open menu.
+
+[[public-properties]]
+== Public Properties 
+anchor:publicproperties[historical anchor]
+
+|===
+| Property | Defined By
+
+| <<settings,settings>> : Object : Settings object.
+| ColorSplitButton
+
+| <<value,value>> : String : Current color value.
+| ColorSplitButton
+|===
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<colorsplitbutton,ColorSplitButton>>(id:String, s:Object, ed:Editor) : Constructs a new color split button control instance.
+| ColorSplitButton
+
+| <<destroy,destroy>>():void : Destroys the control.
+| ColorSplitButton
+
+| <<displaycolor,displayColor>>(c:String):void : Change the currently selected color for the control.
+| ColorSplitButton
+
+| <<hidemenu,hideMenu>>(e:Event):void : Hides the color menu.
+| ColorSplitButton
+
+| <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<postrender,postRender>>():void : Post render event.
+| ColorSplitButton
+
+| <<remove,remove>>():void : Removes the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<renderhtml,renderHTML>>():String : Renders the split button as a HTML string.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.SplitButton.html[SplitButton]
+
+| <<rendermenu,renderMenu>>():void : Renders the menu to the DOM.
+| ColorSplitButton
+
+| <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setcolor,setColor>>(c:String):void : Sets the current color for the control and hides the menu if it should be visible.
+| ColorSplitButton
+
+| <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<showmenu,showMenu>>():void : Shows the color menu.
+| ColorSplitButton
+|===
+
+[[public-events]]
+== Public Events 
+anchor:publicevents[historical anchor]
+
+|===
+| Event | Defined By
+
+| <<onhidemenu,onHideMenu>>() : Fires when the menu is hidden.
+| ColorSplitButton
+
+| <<onshowmenu,onShowMenu>>() : Fires when the menu is shown.
+| ColorSplitButton
+|===
+
+[[property-details]]
+== Property details 
+anchor:propertydetails[historical anchor]
+
+[[settings]]
+=== settings
+
+*_public settings : Object_* +
+Settings object.
+
+[[value]]
+=== value
+
+*_public value : String_* +
+Current color value.
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[colorsplitbutton]]
+=== ColorSplitButton
+
+*_public function ColorSplitButton(id:String, s:Object, ed:Editor)_* +
+Constructs a new color split button control instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| id:String
+| Control id for the color split button.
+
+| s:Object
+| Optional name/value settings object.
+
+| ed:Editor
+| The editor instance this button is for.
+|===
+
+[[destroy]]
+=== destroy
+
+*_public function destroy():void_* +
+Destroys the control. This means it will be removed from the DOM and any events tied to it will also be removed.
+
+[[displaycolor]]
+=== displayColor
+
+*_public function displayColor(c:String):void_* +
+Change the currently selected color for the control.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| c:String
+| Color code value in hex for example: #FF00FF
+|===
+
+[[hidemenu]]
+=== hideMenu
+
+*_public function hideMenu(e:Event):void_* +
+Hides the color menu. The optional event parameter is used to check where the event occured so it doesn't close them menu if it was a event inside the menu.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| e:Event
+| Optional event object.
+|===
+
+[[postrender]]
+=== postRender
+
+*_public function postRender():void_* +
+Post render event. This will be executed after the control has been rendered and can be used to set states, add events to the control etc. It's recommended for subclasses of the control to call this method by using this.parent().
+
+[[rendermenu]]
+=== renderMenu
+
+*_public function renderMenu():void_* +
+Renders the menu to the DOM.
+
+[[setcolor]]
+=== setColor
+
+*_public function setColor(c:String):void_* +
+Sets the current color for the control and hides the menu if it should be visible.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| c:String
+| Color code value in hex for example: #FF00FF
+|===
+
+[[showmenu]]
+=== showMenu
+
+*_public function showMenu():void_* +
+Shows the color menu. The color menu is a layer places under the button and displays a table of colors for the user to pick from.
+
+[[event-details]]
+== Event details 
+anchor:eventdetails[historical anchor]
+
+[[onhidemenu]]
+=== onHideMenu
+
+*_public event onHideMenu()_* +
+Fires when the menu is hidden.
+
+[[onshowmenu]]
+=== onShowMenu
+
+*_public event onShowMenu()_* +
+Fires when the menu is shown.

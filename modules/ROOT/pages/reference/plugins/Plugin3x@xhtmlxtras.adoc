@@ -1,0 +1,49 @@
+= xhtmlxtras
+
+This plugin adds support for some XHTML elements these include `cite`, `ins`, `del`, `abbr`, and `acronym`.
+
+[[xhtmlxtras-controlsbuttons]]
+== xhtmlxtras controls/buttons 
+anchor:xhtmlxtrascontrolsbuttons[historical anchor]
+
+|===
+| Name | Summary
+
+| cite
+| Cite element control.
+
+| ins
+| Ins element control.
+
+| del
+| Del element control.
+
+| abbr
+| Abbr element control.
+
+| acronym
+| Acronym element control.
+
+| attribs
+| Common element attributes such as class, id, lang etc.
+|===
+
+[[installation-instructions]]
+== Installation Instructions 
+anchor:installationinstructions[historical anchor]
+
+. Add plugin to TinyMCE plugin option list example: plugins : "xhtmlxtras".
+. Add the cite,ins,del,abbr,acronym button names to button list, example: theme_advanced_buttons3_add : "cite,ins,del,abbr,acronym".
+
+[[initialization-example]]
+== Initialization Example 
+anchor:initializationexample[historical anchor]
+
+`js
+tinyMCE.init({
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "xhtmlxtras",
+  theme_advanced_buttons3_add : "cite,ins,del,abbr,acronym"
+});
+`

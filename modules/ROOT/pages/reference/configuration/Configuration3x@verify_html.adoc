@@ -1,0 +1,14 @@
+= verify_html
+
+This option enables or disables the element cleanup functionality. If you set this option to false, all element cleanup will be skipped but other cleanup functionality such as URL conversion will still be executed.
+
+[[example-of-usage-of-the-verify_html-option]]
+== Example of usage of the verify_html option: 
+anchor:exampleofusageoftheverify_htmloption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  verify_html : false
+});
++`

@@ -1,0 +1,191 @@
+= tinymce.html.SaxParser
+
+|===
+|  |
+
+| Namespace
+| tinymce.html
+
+| Class
+| SaxParser
+
+| Type
+| Singleton
+|===
+
+Entity encoder class.Version:3.4
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<saxparser,SaxParser>>(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]) : Constructs a new SaxParser instance.
+| SaxParser
+
+| <<encodeallraw,encodeAllRaw>>(text:String):String : [.static]#[static]# Encoded the specified text with both the attributes and text entities.
+| SaxParser
+
+| <<encodenamed,encodeNamed>>(text:String, attr:Boolean, entities:Object):String : [.static]#[static]# Encodes the specified string using named entities.
+| SaxParser
+
+| <<encodenumeric,encodeNumeric>>(text:String, attr:Boolean):String : [.static]#[static]# Encodes the specified string using numeric entities.
+| SaxParser
+
+| <<encoderaw,encodeRaw>>(text:String, attr:Boolean):String : [.static]#[static]# Encodes the specified string using raw entities.
+| SaxParser
+
+| <<getencodefunc,getEncodeFunc>>(name:String, entities:String):function : [.static]#[static]# Returns an encode function based on the name(s) and it's optional entities.
+| SaxParser
+
+| <<parse,parse>>(html:String):void : Parses the specified HTML string and executes the callbacks for each item it finds.
+| SaxParser
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[saxparser]]
+=== SaxParser
+
+*_public function SaxParser(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema])_* +
+Constructs a new SaxParser instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| settings:Object
+| Name/value collection of settings. comment, cdata, text, start and end are callbacks.
+
+| schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]
+| HTML Schema class to use when parsing.
+|===
+
+[[encodeallraw]]
+=== encodeAllRaw
+
+*_public static function encodeAllRaw(text:String):String_* +
+Encoded the specified text with both the attributes and text entities. This function will produce larger text contents since it doesn't know if the context is within a attribute or text node. This was added for compatibility and is exposed as the DOMUtils.encode function.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| text:String
+| Text to encode.
+|===
+
+*Returns* +
+String - Entity encoded text.
+
+[[encodenamed]]
+=== encodeNamed
+
+*_public static function encodeNamed(text:String, attr:Boolean, entities:Object):String_* +
+Encodes the specified string using named entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into named entities.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| text:String
+| Text to encode.
+
+| attr:Boolean
+| Optional flag to specify if the text is attribute contents.
+
+| entities:Object
+| Optional parameter with entities to use.
+|===
+
+*Returns* +
+String - Entity encoded text.
+
+[[encodenumeric]]
+=== encodeNumeric
+
+*_public static function encodeNumeric(text:String, attr:Boolean):String_* +
+Encodes the specified string using numeric entities. The core entities will be encoded as named ones but all non lower ascii characters will be encoded into numeric entities.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| text:String
+| Text to encode.
+
+| attr:Boolean
+| Optional flag to specify if the text is attribute contents.
+|===
+
+*Returns* +
+String - Entity encoded text.
+
+[[encoderaw]]
+=== encodeRaw
+
+*_public static function encodeRaw(text:String, attr:Boolean):String_* +
+Encodes the specified string using raw entities. This means only the required XML base entities will be endoded.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| text:String
+| Text to encode.
+
+| attr:Boolean
+| Optional flag to specify if the text is attribute contents.
+|===
+
+*Returns* +
+String - Entity encoded text.
+
+[[getencodefunc]]
+=== getEncodeFunc
+
+*_public static function getEncodeFunc(name:String, entities:String):function_* +
+Returns an encode function based on the name(s) and it's optional entities.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Comma separated list of encoders for example named,numeric.
+
+| entities:String
+| Optional parameter with entities to use instead of the built in set.
+|===
+
+*Returns* +
+function - Encode function to be used.
+
+[[parse]]
+=== parse
+
+*_public function parse(html:String):void_* +
+Parses the specified HTML string and executes the callbacks for each item it finds.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| html:String
+| Html string to sax parse.
+|===
+
+*Example*

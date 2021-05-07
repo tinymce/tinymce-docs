@@ -1,0 +1,34 @@
+= advlink
+
+This is a more advanced link dialog mostly based on code contributed by Michael Keck. This link plugin supports popup windows and targets.
+
+[[installation-instructions]]
+== Installation Instructions 
+anchor:installationinstructions[historical anchor]
+
+. Copy the advlink directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
+. Add plugin to TinyMCE plugin option list example: plugins : "advlink".
+
+[[advlink-plugin-options]]
+== Advlink plugin options 
+anchor:advlinkpluginoptions[historical anchor]
+
+|===
+| Name | Summary
+
+| advlink_styles
+| This option should contain a semicolon separated list of class titles and class names linked by equal signs. The titles are the ones that get presented to the user in the styles drop down list and the class names are the classes that get inserted.
+|===
+
+[[initialization-example]]
+== Initialization Example 
+anchor:initializationexample[historical anchor]
+
+```js
+tinyMCE.init({
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "advlink"
+});
+
+```

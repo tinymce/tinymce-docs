@@ -1,0 +1,23 @@
+= searchreplace
+
+This plugin adds search/replace dialogs to TinyMCE.
+
+[[installation-instructions]]
+== Installation Instructions 
+anchor:installationinstructions[historical anchor]
+
+. Add plugin to TinyMCE plugin option list example: plugins : "searchreplace"
+. Add the search and replace button names to button list, example: theme_advanced_buttons3_add : "search,replace"
+
+[[initialization-example]]
+== Initialization Example 
+anchor:initializationexample[historical anchor]
+
+`js
+tinyMCE.init({
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "searchreplace",
+  theme_advanced_buttons3_add : "search,replace"
+});
+`

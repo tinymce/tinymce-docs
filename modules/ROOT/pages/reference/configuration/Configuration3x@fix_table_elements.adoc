@@ -1,0 +1,44 @@
+= fix_table_elements
+
+*Removed in 3.4, this is now the default behavior.*
+
+This option enables you to specify that table elements should be moved outside paragraphs or other block elements. If you enable this option block elements will be split into two chunks when a table is found within it, see the example below for details. This option is disabled by default.
+
+[[this-invalid-table]]
+== This invalid table: 
+anchor:thisinvalidtable[historical anchor]
+
+```html
+
+a
+
+|===
+| b
+| c
+|=== d```
+
+[[gets-converted-into-this-valid-xhtml]]
+== Gets converted into this valid XHTML: 
+anchor:getsconvertedintothisvalidxhtml[historical anchor]
+
+```html
+
+a
+
+|===
+| b
+| c
+|===
+
+d```
+
+[[example-of-usage-of-the-fix_table_elements-option]]
+== Example of usage of the fix_table_elements option: 
+anchor:exampleofusageofthefix_table_elementsoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  fix_table_elements : true
+});
++`

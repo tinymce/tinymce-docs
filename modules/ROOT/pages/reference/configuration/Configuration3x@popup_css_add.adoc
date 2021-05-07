@@ -1,0 +1,14 @@
+= popup_css_add
+
+This option enables you to add a CSS to be used in all popup/dialog windows within TinyMCE. This option is added after theme dialog CSS and enables you to override the default CSS.
+
+[[example-of-usage-of-the-popup_css_add-option]]
+== Example of usage of the popup_css_add option: 
+anchor:exampleofusageofthepopup_css_addoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  popup_css_add : "/mypopup.css"
+});
++`

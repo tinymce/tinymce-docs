@@ -1,0 +1,16 @@
+= inline_styles
+
+Enable the inline styles feature by setting this option to true. Most of the attributes get converted into CSS style attributes instead. This will make the editor output more XHTML strict compatible.
+
+This option is enabled by default as of 3.0a1.
+
+[[example-of-usage-of-the-inline_styles-option]]
+== Example of usage of the inline_styles option: 
+anchor:exampleofusageoftheinline_stylesoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  inline_styles : true
+});
++`

@@ -1,0 +1,225 @@
+= Configuration
+
+This document is the index/reference page for all available core configuration options in TinyMCE. There is also a list of old and https://www.tiny.cloud/docs-3x/TinyMCE3x@Deprecated_Configuration_Options/[deprecated config options] for older versions of TinyMCE.
+
+[[configuration-options]]
+=== Configuration options
+anchor:configurationoptions[historical anchor]
+
+All configuration options below are to be placed within the `tinyMCE.init()` JavaScript call. This call will usually be made from outside of TinyMCE.
+
+[[general]]
+== General
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@accessibility_warnings/[accessibility_warnings]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@auto_focus/[auto_focus]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@browsers/[browsers]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@class_filter/[class_filter]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@custom_shortcuts/[custom_shortcuts]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@dialog_type/[dialog_type]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@directionality/[directionality]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@editor_deselector/[editor_deselector]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@editor_selector/[editor_selector]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@elements/[elements]
+* https://www.tiny.cloud/docs/configure/spelling/#gecko_spellcheck/[gecko_spellcheck]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@keep_styles/[keep_styles]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@language/[language]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/[mode]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@nowrap/[nowrap]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@object_resizing/[object_resizing]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@plugins/[plugins]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@readonly/[readonly]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@selector/[selector]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@skin/[skin]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@skin_variant/[skin_variant]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@table_inline_editing/[table_inline_editing]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme/[theme]
+* imagemanager_contextmenu
+
+[[callbacks]]
+== Callbacks
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@cleanup_callback/[cleanup_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@execcommand_callback/[execcommand_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@file_browser_callback/[file_browser_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@handle_event_callback/[handle_event_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@handle_node_change_callback/[handle_node_change_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@init_instance_callback/[init_instance_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@onchange_callback/[onchange_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@oninit/[oninit]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@onpageload/[onpageload]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@remove_instance_callback/[remove_instance_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@save_callback/[save_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@setup/[setup]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@setupcontent_callback/[setupcontent_callback]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@urlconverter_callback/[urlconverter_callback]
+
+[[cleanupoutput]]
+== Cleanup/Output
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@apply_source_formatting/[apply_source_formatting]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@convert_fonts_to_spans/[convert_fonts_to_spans]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@convert_newlines_to_brs/[convert_newlines_to_brs]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@custom_elements/[custom_elements]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@doctype/[doctype]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@element_format/[element_format]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@encoding/[encoding]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@entities/[entities]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@entity_encoding/[entity_encoding]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/[extended_valid_elements]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@fix_list_elements/[fix_list_elements]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@font_size_classes/[font_size_classes]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@font_size_style_values/[font_size_style_values]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@force_p_newlines/[force_p_newlines]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@force_br_newlines/[force_br_newlines]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@force_hex_style_colors/[force_hex_style_colors]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@forced_root_block/[forced_root_block]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@formats/[formats]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@indentation/[indentation]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@inline_styles/[inline_styles]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@invalid_elements/[invalid_elements]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@remove_linebreaks/[remove_linebreaks]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@preformatted/[preformatted]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@protect/[protect]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@schema/[schema]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@style_formats/[style_formats]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_children/[valid_children]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_elements/[valid_elements]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@verify_css_classes/[verify_css_classes]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@verify_html/[verify_html]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@removeformat_selector/[removeformat_selector]
+
+|===
+|===
+
+[[url]]
+== URL
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@convert_urls/[convert_urls]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@relative_urls/[relative_urls]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@remove_script_host/[remove_script_host]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@document_base_url/[document_base_url]
+
+[[layout]]
+== Layout
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@body_id/[body_id]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@body_class/[body_class]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@constrain_menus/[constrain_menus]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@content_css/[content_css]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@popup_css/[popup_css]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@popup_css_add/[popup_css_add]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@editor_css/[editor_css]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@width/[width]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@height/[height]
+
+[[visual-aids]]
+== Visual aids
+anchor:visualaids[historical anchor]
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@visual/[visual]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@visual_table_class/[visual_table_class]
+
+[[undoredo]]
+== Undo/Redo
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@custom_undo_redo/[custom_undo_redo]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@custom_undo_redo_levels/[custom_undo_redo_levels]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@custom_undo_redo_keyboard_shortcuts/[custom_undo_redo_keyboard_shortcuts]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@custom_undo_redo_restore_selection/[custom_undo_redo_restore_selection]
+
+[[file-lists]]
+== File lists
+anchor:filelists[historical anchor]
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_link_list_url/[external_link_list_url]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_image_list_url/[external_image_list_url]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_media_list_url/[external_media_list_url]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_template_list_url/[external_template_list_url]
+
+[[triggerspatches]]
+== Triggers/Patches
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@add_form_submit_trigger/[add_form_submit_trigger]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@add_unload_trigger/[add_unload_trigger]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@submit_patch/[submit_patch]
+
+[[advanced-theme]]
+== Advanced theme
+anchor:advancedtheme[historical anchor]
+
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_layout_manager/[theme_advanced_layout_manager]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_blockformats/[theme_advanced_blockformats]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_styles/[theme_advanced_styles]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_source_editor_width/[theme_advanced_source_editor_width]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_source_editor_height/[theme_advanced_source_editor_height]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_source_editor_wrap/[theme_advanced_source_editor_wrap]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_toolbar_location/[theme_advanced_toolbar_location]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_toolbar_align/[theme_advanced_toolbar_align]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_statusbar_location/[theme_advanced_statusbar_location]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_buttons_1_n/[theme_advanced_buttons<1-n>]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_buttons_1_n_add/[theme_advanced_buttons<1-n>_add]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_buttons_1_n_add_before/[theme_advanced_buttons<1-n>_add_before]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_disable/[theme_advanced_disable]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_containers/[theme_advanced_containers]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_containers_default_class/[theme_advanced_containers_default_class]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_containers_default_align/[theme_advanced_containers_default_align]
+* [theme_advanced_container_+++<container>+++](\https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_container_container/)+++</container>+++
+* [theme_advanced_container_+++<container>+++_class](\https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_container_container_class/)+++</container>+++
+* [theme_advanced_container_+++<container>+++_align](\https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_container_container_align/)+++</container>+++
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_custom_layout/[theme_advanced_custom_layout]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_link_targets/[theme_advanced_link_targets]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_resizing/[theme_advanced_resizing]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_resizing_min_width/[theme_advanced_resizing_min_width]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_resizing_min_height/[theme_advanced_resizing_min_height]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_resizing_max_width/[theme_advanced_resizing_max_width]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_resizing_max_height/[theme_advanced_resizing_max_height]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_resizing_use_cookie/[theme_advanced_resizing_use_cookie]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_resize_horizontal/[theme_advanced_resize_horizontal]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_path/[theme_advanced_path]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_fonts/[theme_advanced_fonts]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_font_sizes/[theme_advanced_font_sizes]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_text_colors/[theme_advanced_text_colors]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_background_colors/[theme_advanced_background_colors]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_default_foreground_color/[theme_advanced_default_foreground_color]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_default_background_color/[theme_advanced_default_background_color]
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_more_colors/[theme_advanced_more_colors]
+
+[[initialization-of-tinymce]]
+== Initialization of TinyMCE
+anchor:initializationoftinymce[historical anchor]
+
+In order to initialize the TinyMCE the following code must be placed within HEAD element of a document. The following example is configured to convert all TEXTAREA elements into editors when the page loads. There are other https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/[modes] as well.
+
+[[example-of-tinymce-configuration]]
+== Example of TinyMCE configuration
+anchor:exampleoftinymceconfiguration[historical anchor]
+
+[source,html]
+----
+<html>
+<head>
+<script language="javascript" type="text/javascript" src="../jscripts/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+tinyMCE.init({
+  theme : "advanced",
+  mode : "textareas"
+});
+</script>
+</head>
+----
+
+NOTE: Remember to remove the last "," character in the options list. In some versions of Microsoft Internet Explorer, not removing the final comma will cause tinyMCE to be initialized with the default settings.
+
+As an alternative, the tinyMCE.init statement can be put in it's own file and referenced in a script tag:
+
+[source,html]
+----
+<html>
+<head>
+<script language="javascript" type="text/javascript" src="../jscripts/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript" src="../jscripts/tiny_mce/basic_config.js"></script>
+</head>
+----
+
+Using this approach, you can create various configurations and reuse them in scripts as needed.

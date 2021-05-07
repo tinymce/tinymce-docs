@@ -1,0 +1,15 @@
+= custom_shortcuts
+
+This option enables you to disable/enable the custom keyboard shortcuts, which plugins and themes may register. The value of this option is set to true by default.
+
+[[example-of-usage-of-the-custom_shortcuts-option]]
+== Example of usage of the custom_shortcuts option: 
+anchor:exampleofusageofthecustom_shortcutsoption[historical anchor]
+
+`js
+tinyMCE.init({
+  custom_shortcuts : false
+});
+`
+
+In case you'd like to register custom shortcuts you'll need +++<editor>+++.[addShortcut()](\https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#addshortcut/).+++</editor>+++

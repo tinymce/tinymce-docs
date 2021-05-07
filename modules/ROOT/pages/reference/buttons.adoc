@@ -1,0 +1,128 @@
+= Buttons/Controls
+
+This is a list of all the available buttons that you can configure, the requirements are also listed as some buttons require you to include the plugin first. Check each plugin for more information, some plugins have separate configurations.
+
+Use the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_buttons_1_n/[theme_advanced_disable] option.
+
+[[default-buttons-available-in-the-advanced-theme]]
+== Default buttons available in the advanced theme 
+anchor:defaultbuttonsavailableintheadvancedtheme[historical anchor]
+
+* bold
+* italic
+* underline
+* strikethrough
+* justifyleft
+* justifycenter
+* justifyright
+* justifyfull
+* bullist
+* numlist
+* outdent
+* indent
+* cut
+* copy
+* paste
+* undo
+* redo
+* link
+* unlink
+* image
+* cleanup
+* help
+* code
+* hr
+* removeformat
+* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_blockformats/[formatselect]
+* fontselect
+* fontsizeselect
+* styleselect
+* sub
+* sup
+* forecolor
+* backcolor
+* forecolorpicker
+* backcolorpicker
+* charmap
+* visualaid
+* anchor
+* newdocument
+* blockquote
+* {blank}
++
+[cols=2*]
+|===
+| separator (
+| is possible as separator, too/)
+|===
+
+[[plugins-with-the-button-name-same-as-plugin-name]]
+== Plugins with the button name same as plugin name 
+anchor:pluginswiththebuttonnamesameaspluginname[historical anchor]
+
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@advhr/[advhr]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@emotions/[emotions]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@fullpage/[fullpage]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@fullscreen/[fullscreen]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@iespell/[iespell]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@media/[media]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@nonbreaking/[nonbreaking]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@pagebreak/[pagebreak]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@preview/[preview]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@print/[print]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@spellchecker/[spellchecker]
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@visualchars/[visualchars]
+
+[[plugins-with-custom-buttons]]
+== Plugins with custom buttons 
+anchor:pluginswithcustombuttons[historical anchor]
+
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@advlink/[advlink]
+ ** Will override the "link" button
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@advimage/[advimage]
+ ** Will override the "image" button
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@paste/[paste]
+ ** pastetext
+ ** pasteword
+ ** selectall
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@searchreplace/[searchreplace]
+ ** search
+ ** replace
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@insertdatetime/[insertdatetime]
+ ** insertdate
+ ** inserttime
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@table/[table]
+ ** tablecontrols
+ ** table
+ ** row_props
+ ** cell_props
+ ** delete_col
+ ** delete_row
+ ** col_after
+ ** col_before
+ ** row_after
+ ** row_before
+ ** split_cells
+ ** merge_cells
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@directionality/[directionality]
+ ** ltr
+ ** rtl
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@layer/[layer]
+ ** moveforward
+ ** movebackward
+ ** absolute
+ ** insertlayer
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@save/[save]
+ ** save
+ ** cancel
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@style/[style]
+ ** styleprops
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@xhtmlxtras/[xhtmlxtras]
+ ** cite
+ ** abbr
+ ** acronym
+ ** ins
+ ** del
+ ** attribs
+* https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@template/[template]
+ ** template

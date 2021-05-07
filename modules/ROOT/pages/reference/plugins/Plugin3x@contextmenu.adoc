@@ -1,0 +1,21 @@
+= contextmenu
+
+[[installation-instructions]]
+== Installation Instructions 
+anchor:installationinstructions[historical anchor]
+
+. Copy the contextmenu directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
+. Add plugin to TinyMCE plugin option list example: plugins : "contextmenu".
+
+[[initialization-example]]
+== Initialization Example 
+anchor:initializationexample[historical anchor]
+
+```js
+tinyMCE.init({
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "contextmenu"
+});
+
+```

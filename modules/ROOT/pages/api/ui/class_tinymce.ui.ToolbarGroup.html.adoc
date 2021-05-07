@@ -1,0 +1,87 @@
+= tinymce.ui.ToolbarGroup
+
+|===
+|  |
+
+| Namespace
+| tinymce.ui
+
+| Class
+| ToolbarGroup
+
+| Inheritance
+| ToolbarGroup https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container] [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+|===
+
+This class is used to group a set of toolbars together and control the keyboard navigation and focus.
+
+[[public-properties]]
+== Public Properties 
+anchor:publicproperties[historical anchor]
+
+|===
+| Property | Defined By
+
+| <<controls,controls>> : Array : Array of controls added to the container.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container]
+|===
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<add,add>>(c:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Adds a control to the collection of controls for the container.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container]
+
+| <<destroy,destroy>>():void : Destroys the control will free any memory by removing event listeners etc.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<get,get>>(n:String):https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control] : Returns a control by id from the containers collection.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html[Container]
+
+| <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<postrender,postRender>>():void : Post render event.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<remove,remove>>():void : Removes the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<renderhtml,renderHTML>>():String : Renders the toolbar group as a HTML string.
+| ToolbarGroup
+
+| <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[renderhtml]]
+=== renderHTML
+
+*_public function renderHTML():String_* +
+Renders the toolbar group as a HTML string.
+
+*Returns* +
+String - HTML for the toolbar control.

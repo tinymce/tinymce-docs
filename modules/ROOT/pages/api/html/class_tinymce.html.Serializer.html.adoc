@@ -1,0 +1,71 @@
+= tinymce.html.Serializer
+
+|===
+|  |
+
+| Namespace
+| tinymce.html
+
+| Class
+| Serializer
+|===
+
+This class is used to serialize down the DOM tree into a string using a Writer instance.Version:3.4
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<serializer,Serializer>>(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]) : Constructs a new Serializer instance.
+| Serializer
+
+| <<serialize,serialize>>(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):String : Serializes the specified node into a string.
+| Serializer
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[serializer]]
+=== Serializer
+
+*_public function Serializer(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema])_* +
+Constructs a new Serializer instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| settings:Object
+| Name/value settings object.
+
+| schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]
+| Schema instance to use.
+|===
+
+[[serialize]]
+=== serialize
+
+*_public function serialize(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):String_* +
+Serializes the specified node into a string.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]
+| Node instance to serialize.
+|===
+
+*Returns* +
+String - String with HTML based on DOM tree.
+
+*Example*

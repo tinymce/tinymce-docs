@@ -1,0 +1,297 @@
+= tinymce.html.Node
+
+|===
+|  |
+
+| Namespace
+| tinymce.html
+
+| Class
+| Node
+|===
+
+This class is a minimalistic implementation of a DOM like node used by the DomParser class.Version:3.4
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<node,Node>>(name:String, type:Number) : Constructs a new Node instance.
+| Node
+
+| <<append,append>>(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Appends a new node as a child of the current node.
+| Node
+
+| <<attr,attr>>(name:String, value:String):String/https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Gets/sets or removes an attribute by name.
+| Node
+
+| <<clone,clone>>():https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Does a shallow clones the node into a new node.
+| Node
+
+| <<create,create>>(name:String, attrs:Object):void : [.static]#[static]# Creates a node of a specific type.
+| Node
+
+| <<empty,empty>>():https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Removes all children of the current node.
+| Node
+
+| <<getall,getAll>>(name:String):Array : Get all children by name.
+| Node
+
+| <<insert,insert>>(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node], ref_node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node], before:Boolean):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Inserts a node at a specific position as a child of the current node.
+| Node
+
+| <<isempty,isEmpty>>(elements:Object):Boolean : Returns true/false if the node is to be considered empty or not.
+| Node
+
+| <<remove,remove>>():https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Removes the node from it's parent.
+| Node
+
+| <<replace,replace>>(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Replaces the current node with the specified one.
+| Node
+
+| <<unwrap,unwrap>>():void : Unwraps the node in other words it removes the node but keeps the children.
+| Node
+
+| <<walk,walk>>(prev:Boolean):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Walks to the next or previous node and returns that node or null if it wasn't found.
+| Node
+
+| <<wrap,wrap>>():void : Wraps the node in in another node.
+| Node
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[node]]
+=== Node
+
+*_public function Node(name:String, type:Number)_* +
+Constructs a new Node instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Name of the node type.
+
+| type:Number
+| Numeric type representing the node.
+|===
+
+[[append]]
+=== append
+
+*_public function append(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Appends a new node as a child of the current node.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]
+| Node to append as a child of the current one.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - The node that got appended.
+
+*Example*
+
+[[attr]]
+=== attr
+
+*_public function attr(name:String, value:String):String/https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Gets/sets or removes an attribute by name.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Attribute name to set or get.
+
+| value:String
+| Optional value to set.
+|===
+
+*Returns* +
+String/https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - String or undefined on a get operation or the current node on a set operation.
+
+*Example*
+
+[[clone]]
+=== clone
+
+*_public function clone():https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Does a shallow clones the node into a new node. It will also exclude id attributes since there should only be one id per document.
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - New copy of the original node.
+
+*Example*
+
+[[create]]
+=== create
+
+*_public static function create(name:String, attrs:Object):void_* +
+Creates a node of a specific type.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Name of the node type to create for example "b" or "#text".
+
+| attrs:Object
+| Name/value collection of attributes that will be applied to elements.
+|===
+
+[[empty]]
+=== empty
+
+*_public function empty():https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Removes all children of the current node.
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - The current node that got cleared.
+
+[[getall]]
+=== getAll
+
+*_public function getAll(name:String):Array_* +
+Get all children by name.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| name:String
+| Name of the child nodes to collect.
+|===
+
+*Returns* +
+Array - Array with child nodes matchin the specified name.
+
+[[insert]]
+=== insert
+
+*_public function insert(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node], ref_node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node], before:Boolean):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Inserts a node at a specific position as a child of the current node.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]
+| Node to insert as a child of the current node.
+
+| ref_node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]
+| Reference node to set node before/after.
+
+| before:Boolean
+| Optional state to insert the node before the reference node.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - The node that got inserted.
+
+*Example*
+
+[[isempty]]
+=== isEmpty
+
+*_public function isEmpty(elements:Object):Boolean_* +
+Returns true/false if the node is to be considered empty or not.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| elements:Object
+| Name/value object with elements that are automatically treated as non empty elements.
+|===
+
+*Returns* +
+Boolean - true/false if the node is empty or not.
+
+*Example*
+
+[[remove]]
+=== remove
+
+*_public function remove():https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Removes the node from it's parent.
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - Current node that got removed.
+
+*Example*
+
+[[replace]]
+=== replace
+
+*_public function replace(node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Replaces the current node with the specified one.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| node:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]
+| Node to replace the current node with.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - The old node that got replaced.
+
+*Example*
+
+[[unwrap]]
+=== unwrap
+
+*_public function unwrap():void_* +
+Unwraps the node in other words it removes the node but keeps the children.
+
+*Example*
+
+[[walk]]
+=== walk
+
+*_public function walk(prev:Boolean):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Walks to the next or previous node and returns that node or null if it wasn't found.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| prev:Boolean
+| Optional previous node state defaults to false.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - Node that is next to or previous of the current node.
+
+[[wrap]]
+=== wrap
+
+*_public function wrap():void_* +
+Wraps the node in in another node.
+
+*Example*

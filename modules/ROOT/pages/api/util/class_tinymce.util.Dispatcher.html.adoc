@@ -1,0 +1,135 @@
+= tinymce.util.Dispatcher
+
+|===
+|  |
+
+| Namespace
+| tinymce.util
+
+| Class
+| Dispatcher
+|===
+
+This class is used to dispatch event to observers/listeners. All internal events inside TinyMCE uses this class.
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<dispatcher,Dispatcher>>(scope:Object) : Constructs a new event dispatcher object.
+| Dispatcher
+
+| <<add,add>>(callback:function, s:Object):function : Add an observer function to be executed when a dispatch call is done.
+| Dispatcher
+
+| <<addtotop,addToTop>>(callback:function, scope:Object):function : Add an observer function to be executed to the top of the list of observers.
+| Dispatcher
+
+| <<dispatch,dispatch>>(..:Object):Object : Dispatches an event to all observers/listeners.
+| Dispatcher
+
+| <<remove,remove>>(callback:function):function : Removes an observer function.
+| Dispatcher
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[dispatcher]]
+=== Dispatcher
+
+*_public function Dispatcher(scope:Object)_* +
+Constructs a new event dispatcher object.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| scope:Object
+| Optional default execution scope for all observer functions.
+|===
+
+[[add]]
+=== add
+
+*_public function add(callback:function, s:Object):function_* +
+Add an observer function to be executed when a dispatch call is done.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| callback:function
+| Callback function to execute when a dispatch event occurs.
+
+| s:Object
+| Optional execution scope, defaults to the one specified in the class constructor.
+|===
+
+*Returns* +
+function - Returns the same function as the one passed on.
+
+[[addtotop]]
+=== addToTop
+
+*_public function addToTop(callback:function, scope:Object):function_* +
+Add an observer function to be executed to the top of the list of observers.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| callback:function
+| Callback function to execute when a dispatch event occurs.
+
+| scope:Object
+| Optional execution scope, defaults to the one specified in the class constructor.
+|===
+
+*Returns* +
+function - Returns the same function as the one passed on.
+
+[[dispatch]]
+=== dispatch
+
+*_public function dispatch(..:Object):Object_* +
+Dispatches an event to all observers/listeners.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| ..:Object
+| Any number of arguments to dispatch.
+|===
+
+*Returns* +
+Object - Last observer functions return value.
+
+[[remove]]
+=== remove
+
+*_public function remove(callback:function):function_* +
+Removes an observer function.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| callback:function
+| Observer function to remove.
+|===
+
+*Returns* +
+function - The same function that got passed in or null if it wasn't found.

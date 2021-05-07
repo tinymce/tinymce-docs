@@ -1,0 +1,79 @@
+= tinymce.Theme
+
+|===
+|  |
+
+| Namespace
+| tinymce
+
+| Class
+| Theme
+|===
+
+TinyMCE theme class.
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<getinfo,getInfo>>():Object : Meta info method, this method gets executed when TinyMCE wants to present information about the theme for example in the...
+| Theme
+
+| <<init,init>>(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:String):void : Initializes the theme.
+| Theme
+
+| <<renderui,renderUI>>(obj:Object):Object : This method is responsible for rendering/generating the overall user interface with toolbars, buttons, iframe containers...
+| Theme
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[getinfo]]
+=== getInfo
+
+*_public function getInfo():Object_* +
+Meta info method, this method gets executed when TinyMCE wants to present information about the theme for example in the about/help dialog.
+
+*Returns* +
+Object - Returns an object with meta information about the theme the current items are longname, author, authorurl, infourl and version.
+
+[[init]]
+=== init
+
+*_public function init(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:String):void_* +
+Initializes the theme.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance that created the theme instance.
+
+| url:String
+| Absolute URL where the theme is located.
+|===
+
+[[renderui]]
+=== renderUI
+
+*_public function renderUI(obj:Object):Object_* +
+This method is responsible for rendering/generating the overall user interface with toolbars, buttons, iframe containers etc.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| obj:Object
+| Object parameter containing the targetNode DOM node that will be replaced visually with an editor instance.
+|===
+
+*Returns* +
+Object - an object with items like iframeContainer, editorContainer, sizeContainer, deltaWidth, deltaHeight.

@@ -1,0 +1,333 @@
+= tinyMCEPopup
+
+|===
+|  |
+
+| Class
+| tinyMCEPopup
+
+| Type
+| Singleton
+|===
+
+TinyMCE popup/dialog helper class. This gives you easy access to the parent editor instance and a bunch of other things. It's higly recommended that you load this script into your dialogs.
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<alert,alert>>(t:String, cb:function, s:Object):void : [.static]#[static]# Creates a alert dialog.
+| tinyMCEPopup
+
+| <<close,close>>():void : [.static]#[static]# Closes the current window.
+| tinyMCEPopup
+
+| <<confirm,confirm>>(t:String, cb:function, s:Object):void : [.static]#[static]# Creates a confirm dialog.
+| tinyMCEPopup
+
+| <<execcommand,execCommand>>(cmd:String, ui:Boolean, val:Object, a:Object):void : [.static]#[static]# Executed a command on editor that opened the dialog/popup.
+| tinyMCEPopup
+
+| <<executeonload,executeOnLoad>>(s:String):void : [.static]#[static]# Will executed the specified string when the page has been loaded.
+| tinyMCEPopup
+
+| <<getlang,getLang>>(n:String, dv:String):String : [.static]#[static]# Returns a language item by key.
+| tinyMCEPopup
+
+| <<getparam,getParam>>(n:String, dv:String):String : [.static]#[static]# Returns a editor parameter/config option value.
+| tinyMCEPopup
+
+| <<getwin,getWin>>():Window : [.static]#[static]# Returns the reference to the parent window that opened the dialog.
+| tinyMCEPopup
+
+| <<getwindowarg,getWindowArg>>(n:String, dv:String):String : [.static]#[static]# Returns a window argument/parameter by name.
+| tinyMCEPopup
+
+| <<init,init>>():void : [.static]#[static]# Initializes the popup this will be called automatically.
+| tinyMCEPopup
+
+| <<openbrowser,openBrowser>>(element_id:string, type:string, option:string):void : [.static]#[static]# Opens a filebrowser/imagebrowser this will set the output value from the browser as a value on the specified element.
+| tinyMCEPopup
+
+| <<pickcolor,pickColor>>(e:DOMEvent, element_id:string):void : [.static]#[static]# Executes a color picker on the specified element id.
+| tinyMCEPopup
+
+| <<requirelangpack,requireLangPack>>():void : [.static]#[static]# Loads a specific dialog language pack.
+| tinyMCEPopup
+
+| <<resizetoinnersize,resizeToInnerSize>>():void : [.static]#[static]# Resizes the dialog to the inner size of the window.
+| tinyMCEPopup
+
+| <<restoreselection,restoreSelection>>():void : [.static]#[static]# Restores any stored selection.
+| tinyMCEPopup
+
+| <<storeselection,storeSelection>>():void : [.static]#[static]# Stores the current editor selection for later restoration.
+| tinyMCEPopup
+|===
+
+[[public-events]]
+== Public Events 
+anchor:publicevents[historical anchor]
+
+|===
+| Event | Defined By
+
+| <<oninit,onInit>>(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]) : [.static]#[static]# Fires when the popup is initialized.
+| tinyMCEPopup
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[alert]]
+=== alert
+
+*_public static function alert(t:String, cb:function, s:Object):void_* +
+Creates a alert dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| t:String
+| Title for the new alert dialog.
+
+| cb:function
+| Callback function to be executed after the user has selected ok.
+
+| s:Object
+| Optional scope to execute the callback in.
+|===
+
+[[close]]
+=== close
+
+*_public static function close():void_* +
+Closes the current window.
+
+[[confirm]]
+=== confirm
+
+*_public static function confirm(t:String, cb:function, s:Object):void_* +
+Creates a confirm dialog. Please don't use the blocking behavior of this native version use the callback method instead then it can be extended.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| t:String
+| Title for the new confirm dialog.
+
+| cb:function
+| Callback function to be executed after the user has selected ok or cancel.
+
+| s:Object
+| Optional scope to execute the callback in.
+|===
+
+[[execcommand]]
+=== execCommand
+
+*_public static function execCommand(cmd:String, ui:Boolean, val:Object, a:Object):void_* +
+Executed a command on editor that opened the dialog/popup.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| cmd:String
+| Command to execute.
+
+| ui:Boolean
+| Optional boolean value if the UI for the command should be presented or not.
+
+| val:Object
+| Optional value to pass with the comman like an URL.
+
+| a:Object
+| Optional arguments object.
+|===
+
+[[executeonload]]
+=== executeOnLoad
+
+*_public static function executeOnLoad(s:String):void_* +
+Will executed the specified string when the page has been loaded. This function was added for compatibility with the 2.x branch.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| s:String
+| String to evalutate on init.
+|===
+
+[[getlang]]
+=== getLang
+
+*_public static function getLang(n:String, dv:String):String_* +
+Returns a language item by key.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Language item like mydialog.something.
+
+| dv:String
+| Optional default value to return.
+|===
+
+*Returns* +
+String - Language value for the item like "my string" or the default value if it wasn't found.
+
+[[getparam]]
+=== getParam
+
+*_public static function getParam(n:String, dv:String):String_* +
+Returns a editor parameter/config option value.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Name of the editor config option to retrive.
+
+| dv:String
+| Optional default value to return.
+|===
+
+*Returns* +
+String - Parameter value or default value if it wasn't found.
+
+[[getwin]]
+=== getWin
+
+*_public static function getWin():Window_* +
+Returns the reference to the parent window that opened the dialog.
+
+*Returns* +
+Window - Reference to the parent window that opened the dialog.
+
+[[getwindowarg]]
+=== getWindowArg
+
+*_public static function getWindowArg(n:String, dv:String):String_* +
+Returns a window argument/parameter by name.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Name of the window argument to retrive.
+
+| dv:String
+| Optional default value to return.
+|===
+
+*Returns* +
+String - Argument value or default value if it wasn't found.
+
+[[init]]
+=== init
+
+*_public static function init():void_* +
+Initializes the popup this will be called automatically.
+
+[[openbrowser]]
+=== openBrowser
+
+*_public static function openBrowser(element_id:string, type:string, option:string):void_* +
+Opens a filebrowser/imagebrowser this will set the output value from the browser as a value on the specified element.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| element_id:string
+| Id of the element to set value in.
+
+| type:string
+| Type of browser to open image/file/flash.
+
+| option:string
+| Option name to get the file_broswer_callback function name from.
+|===
+
+[[pickcolor]]
+=== pickColor
+
+*_public static function pickColor(e:DOMEvent, element_id:string):void_* +
+Executes a color picker on the specified element id. When the user then selects a color it will be set as the value of the specified element.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| e:DOMEvent
+| DOM event object.
+
+| element_id:string
+| Element id to be filled with the color value from the picker.
+|===
+
+[[requirelangpack]]
+=== requireLangPack
+
+*_public static function requireLangPack():void_* +
+Loads a specific dialog language pack. If you pass in plugin_url as a arugment when you open the window it will load the +++<plugin url="">+++/langs/***_dlg.js lang pack file.***+++</plugin>+++
+
+[[resizetoinnersize]]
+=== resizeToInnerSize
+
+*_public static function resizeToInnerSize():void_* +
+Resizes the dialog to the inner size of the window. This is needed since various browsers have different border sizes on windows.
+
+[[restoreselection]]
+=== restoreSelection
+
+*_public static function restoreSelection():void_* +
+Restores any stored selection. This can be useful since some browsers looses it's selection if a control element is selected/focused inside the dialogs.
+
+[[storeselection]]
+=== storeSelection
+
+*_public static function storeSelection():void_* +
+Stores the current editor selection for later restoration. This can be useful since some browsers looses it's selection if a control element is selected/focused inside the dialogs.
+
+[[event-details]]
+== Event details 
+anchor:eventdetails[historical anchor]
+
+[[oninit]]
+=== onInit
+
+*_public static event onInit(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor])_* +
+Fires when the popup is initialized.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance.
+|===
+
+*Example*

@@ -1,0 +1,20 @@
+= print
+
+This plugin adds a print button to TinyMCE. Installation Instructions
+
+. Copy the print directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
+. Add plugin to TinyMCE plugin option list example: plugins : "print".
+. Add the button name to button list, example: theme_advanced_buttons3_add : "print".
+
+[[initialization-example]]
+== Initialization Example 
+anchor:initializationexample[historical anchor]
+
+`js
+tinyMCE.init({
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "print",
+  theme_advanced_buttons3_add : "print"
+});
+`

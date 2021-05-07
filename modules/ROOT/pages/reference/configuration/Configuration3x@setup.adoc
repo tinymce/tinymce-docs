@@ -1,0 +1,20 @@
+= setup
+
+(Requires: 3.0)
+
+This option enables you to add link:/[events] to editor instances before they get rendered.
+
+[[example-of-usage-of-the-setup-option]]
+== Example of usage of the setup option: 
+anchor:exampleofusageofthesetupoption[historical anchor]
+
+`+js
+tinyMCE.init({
+   ...
+   setup : function(ed) {
+      ed.onClick.add(function(ed, evt) {
+          ed.selection.select(evt.target);
+      });
+   }
+});
++`

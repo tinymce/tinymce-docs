@@ -1,0 +1,14 @@
+= verify_css_classes
+
+If you enable this option, class names placed in class attributes will be verified against the content CSS so elements with a class attribute containing a class that doesn't exist in the CSS will be removed.
+
+[[example-of-usage-of-the-verify_css_classes-option]]
+== Example of usage of the verify_css_classes option: 
+anchor:exampleofusageoftheverify_css_classesoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  verify_css_classes : true
+});
++`

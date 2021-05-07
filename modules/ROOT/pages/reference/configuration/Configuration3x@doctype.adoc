@@ -1,0 +1,30 @@
+= doctype
+
+This option enables you to specify the doctype that is used while editing content within TinyMCE.
+
+The default value is set to:
+
+`html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+`
+
+This option does not affect the format of tags: " +
+" versus " +
+". See https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@element_format/[element_format] option instead.
+
+Note however that there is no need to change the doctype to XHTML because TinyMCE will produce XHTML in any case. Read the http://archive.tinymce.com/forum/viewtopic.php?id=15069[comments here].
+
+On the other hand, if you set it to XHTML your IE7 users will have problem selecting the edit area.
+
+If unsure, don't specify the doctype.
+
+[[example-of-usage-of-the-doctype-option]]
+== Example of usage of the doctype option: 
+anchor:exampleofusageofthedoctypeoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  doctype : '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
+});
++`

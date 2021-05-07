@@ -1,0 +1,91 @@
+= tinymce.plugins.ContextMenu
+
+|===
+|  |
+
+| Namespace
+| tinymce.plugins
+
+| Class
+| ContextMenu
+|===
+
+This plugin a context menu to TinyMCE editor instances.
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<getinfo,getInfo>>():Object : Returns information about the plugin as a name/value array.
+| ContextMenu
+
+| <<init,init>>(ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:string):void : Initializes the plugin, this will be executed after the plugin has been created.
+| ContextMenu
+|===
+
+[[public-events]]
+== Public Events 
+anchor:publicevents[historical anchor]
+
+|===
+| Event | Defined By
+
+| <<oncontextmenu,onContextMenu>>(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.ContextMenu.html[ContextMenu], menu:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.DropMenu.html[DropMenu]) : This event gets fired when the context menu is shown.
+| ContextMenu
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[getinfo]]
+=== getInfo
+
+*_public function getInfo():Object_* +
+Returns information about the plugin as a name/value array. The current keys are longname, author, authorurl, infourl and version.
+
+*Returns* +
+Object - Name/value array containing information about the plugin.
+
+[[init]]
+=== init
+
+*_public function init(ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor], url:string):void_* +
+Initializes the plugin, this will be executed after the plugin has been created. This call is done before the editor instance has finished it's initialization so use the onInit event of the editor instance to intercept that event.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| ed:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance that the plugin is initialized in.
+
+| url:string
+| Absolute URL to where the plugin is located.
+|===
+
+[[event-details]]
+== Event details 
+anchor:eventdetails[historical anchor]
+
+[[oncontextmenu]]
+=== onContextMenu
+
+*_public event onContextMenu(sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.ContextMenu.html[ContextMenu], menu:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.DropMenu.html[DropMenu])_* +
+This event gets fired when the context menu is shown.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| sender:https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.plugins.ContextMenu.html[ContextMenu]
+| Plugin instance sending the event.
+
+| menu:https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.DropMenu.html[DropMenu]
+| Drop down menu to fill with more items if needed.
+|===

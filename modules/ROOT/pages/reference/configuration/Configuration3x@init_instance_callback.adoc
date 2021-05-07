@@ -1,0 +1,20 @@
+= init_instance_callback
+
+This option should contain a function name to be executed each time a editor instance is initialized. The format of this function is: `initInstance(inst)` where `inst` is the editor instance object reference.
+
+[[example-of-usage-of-the-init_instance_callback-option]]
+== Example of usage of the init_instance_callback option: 
+anchor:exampleofusageoftheinit_instance_callbackoption[historical anchor]
+
+```js
+function myCustomInitInstance(inst) {
+  alert("Editor: " + inst.editorId + " is now initialized.");
+}
+
+tinyMCE.init({
+  ...
+  init_instance_callback : "myCustomInitInstance"
+});
+```
+
+Also see the the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@setup/[setup callback option] it enabled you to bind events before the editor instance is initialized.

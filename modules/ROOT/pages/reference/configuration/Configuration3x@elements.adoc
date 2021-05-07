@@ -1,0 +1,14 @@
+= elements
+
+This option should contain a comma separated list of element IDs to convert into editor instances. This option is only used if https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/[mode] is set to "exact".
+
+[[example-of-usage-of-the-elements-option]]
+== Example of usage of the elements option: 
+anchor:exampleofusageoftheelementsoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  elements : "elm1,elm2"
+});
++`

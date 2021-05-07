@@ -1,0 +1,18 @@
+= removeformat_selector
+
+*Removed in 3.3*
+
+This option allows specification of which elements should be removed when you press the `removeformat` button. This is a CSS selector pattern.
+
+[[example-of-usage-of-the-removeformat_selector-option]]
+== Example of usage of the removeformat_selector option: 
+anchor:exampleofusageoftheremoveformat_selectoroption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  removeformat_selector : 'b,strong,em,i,span,ins'
+});
++`
+
+You can now use the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@formats/[formats] option instead.

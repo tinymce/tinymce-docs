@@ -1,0 +1,115 @@
+= tinymce.EditorCommands
+
+|===
+|  |
+
+| Namespace
+| tinymce
+
+| Class
+| EditorCommands
+|===
+
+This class enables you to add custom editor commands and it contains overrides for native browser commands to address various bugs and issues.
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<addcommands,addCommands>>(command_list:Object, type:String):void : Adds commands to the command collection.
+| EditorCommands
+
+| <<execcommand,execCommand>>(command:String, ui:Boolean, value:Object):Boolean : Executes the specified command.
+| EditorCommands
+
+| <<querycommandstate,queryCommandState>>(command:String):Boolean/Number : Queries the current state for a command for example if the current selection is "bold".
+| EditorCommands
+
+| <<querycommandvalue,queryCommandValue>>(command:String):Object : Queries the command value for example the current fontsize.
+| EditorCommands
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[addcommands]]
+=== addCommands
+
+*_public function addCommands(command_list:Object, type:String):void_* +
+Adds commands to the command collection.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| command_list:Object
+| Name/value collection with commands to add, the names can also be comma separated.
+
+| type:String
+| Optional type to add, defaults to exec. Can be value or state as well.
+|===
+
+[[execcommand]]
+=== execCommand
+
+*_public function execCommand(command:String, ui:Boolean, value:Object):Boolean_* +
+Executes the specified command.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| command:String
+| Command to execute.
+
+| ui:Boolean
+| Optional user interface state.
+
+| value:Object
+| Optional value for command.
+|===
+
+*Returns* +
+Boolean - true/false if the command was found or not.
+
+[[querycommandstate]]
+=== queryCommandState
+
+*_public function queryCommandState(command:String):Boolean/Number_* +
+Queries the current state for a command for example if the current selection is "bold".
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| command:String
+| Command to check the state of.
+|===
+
+*Returns* +
+Boolean/Number - true/false if the selected contents is bold or not, -1 if it's not found.
+
+[[querycommandvalue]]
+=== queryCommandValue
+
+*_public function queryCommandValue(command:String):Object_* +
+Queries the command value for example the current fontsize.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| command:String
+| Command to check the value of.
+|===
+
+*Returns* +
+Object - Command value of false if it's not found.

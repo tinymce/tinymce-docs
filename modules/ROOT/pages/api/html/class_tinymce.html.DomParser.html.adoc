@@ -1,0 +1,114 @@
+= tinymce.html.DomParser
+
+|===
+|  |
+
+| Namespace
+| tinymce.html
+
+| Class
+| DomParser
+|===
+
+This class parses HTML code into a DOM like structure of nodes it will remove redundant whitespace and make sure that the node tree is valid according to the specified schema. So for example: <p>a<p>b</p>c</p> will become <p>a</p><p>b</p><p>c</p>Version:3.4
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<domparser,DomParser>>(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]) : Constructs a new DomParser instance.
+| DomParser
+
+| <<addattributefilter,addAttributeFilter>>(callback:function):void : Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then...
+| DomParser
+
+| <<addnodefilter,addNodeFilter>>(callback:function):void : Adds a node filter function to the parser, the parser will collect the specified nodes by name and then execute the call...
+| DomParser
+
+| <<parse,parse>>(html:String, args:Object):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] : Parses the specified HTML string into a DOM like node tree and returns the result.
+| DomParser
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[domparser]]
+=== DomParser
+
+*_public function DomParser(settings:Object, schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema])_* +
+Constructs a new DomParser instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| settings:Object
+| Name/value collection of settings. comment, cdata, text, start and end are callbacks.
+
+| schema:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html[Schema]
+| HTML Schema class to use when parsing.
+|===
+
+[[addattributefilter]]
+=== addAttributeFilter
+
+*_public function addAttributeFilter(callback:function):void_* +
+Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then execute the callback ones it has finished parsing the document.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| callback:function
+| Callback function to execute once it has collected nodes.
+|===
+
+*Example*
+
+[[addnodefilter]]
+=== addNodeFilter
+
+*_public function addNodeFilter(callback:function):void_* +
+Adds a node filter function to the parser, the parser will collect the specified nodes by name and then execute the callback ones it has finished parsing the document.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| callback:function
+| Callback function to execute once it has collected nodes.
+|===
+
+*Example*
+
+[[parse]]
+=== parse
+
+*_public function parse(html:String, args:Object):https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node]_* +
+Parses the specified HTML string into a DOM like node tree and returns the result.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| html:String
+| Html string to sax parse.
+
+| args:Object
+| Optional args object that gets passed to all filter functions.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html[Node] - Root node containing the tree.
+
+*Example*

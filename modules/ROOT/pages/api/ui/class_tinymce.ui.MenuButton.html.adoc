@@ -1,0 +1,150 @@
+= tinymce.ui.MenuButton
+
+|===
+|  |
+
+| Namespace
+| tinymce.ui
+
+| Class
+| MenuButton
+
+| Inheritance
+| MenuButton [.last]#https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]#
+|===
+
+This class is used to create a UI button. A button is basically a link that is styled to look like a button or icon.
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<menubutton,MenuButton>>(id:String, s:Object, ed:Editor) : Constructs a new split button control instance.
+| MenuButton
+
+| <<destroy,destroy>>():void : Destroys the control will free any memory by removing event listeners etc.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<hidemenu,hideMenu>>(e:Event):void : Hides the menu.
+| MenuButton
+
+| <<isactive,isActive>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isdisabled,isDisabled>>():Boolean : Returns true/false if the control is disabled or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<isrendered,isRendered>>():Boolean : Returns true/false if the control has been rendered or not.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<postrender,postRender>>():void : Post render handler.
+| MenuButton
+
+| <<remove,remove>>():void : Removes the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<renderhtml,renderHTML>>():String : Renders the control as a HTML string.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<rendermenu,renderMenu>>():void : Renders the menu to the DOM.
+| MenuButton
+
+| <<renderto,renderTo>>(n:Element):void : Renders the control to the specified container element.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setactive,setActive>>(s:Boolean):void : Sets the activated state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setdisabled,setDisabled>>(s:Boolean):void : Sets the disabled state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<setstate,setState>>(c:String, s:Boolean):void : Sets the specified class state for the control.
+| https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html[Control]
+
+| <<showmenu,showMenu>>():void : Shows the menu.
+| MenuButton
+|===
+
+[[public-events]]
+== Public Events 
+anchor:publicevents[historical anchor]
+
+|===
+| Event | Defined By
+
+| <<onrendermenu,onRenderMenu>>() : Fires when the menu is rendered.
+| MenuButton
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[menubutton]]
+=== MenuButton
+
+*_public function MenuButton(id:String, s:Object, ed:Editor)_* +
+Constructs a new split button control instance.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| id:String
+| Control id for the split button.
+
+| s:Object
+| Optional name/value settings object.
+
+| ed:Editor
+| Optional the editor instance this button is for.
+|===
+
+[[hidemenu]]
+=== hideMenu
+
+*_public function hideMenu(e:Event):void_* +
+Hides the menu. The optional event parameter is used to check where the event occured so it doesn't close them menu if it was a event inside the menu.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| e:Event
+| Optional event object.
+|===
+
+[[postrender]]
+=== postRender
+
+*_public function postRender():void_* +
+Post render handler. This function will be called after the UI has been rendered so that events can be added.
+
+[[rendermenu]]
+=== renderMenu
+
+*_public function renderMenu():void_* +
+Renders the menu to the DOM.
+
+[[showmenu]]
+=== showMenu
+
+*_public function showMenu():void_* +
+Shows the menu.
+
+[[event-details]]
+== Event details 
+anchor:eventdetails[historical anchor]
+
+[[onrendermenu]]
+=== onRenderMenu
+
+*_public event onRenderMenu()_* +
+Fires when the menu is rendered.

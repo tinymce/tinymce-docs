@@ -1,0 +1,48 @@
+= tinymce.util.XHR
+
+|===
+|  |
+
+| Namespace
+| tinymce.util
+
+| Class
+| XHR
+
+| Type
+| Singleton
+|===
+
+This class enables you to send XMLHTTPRequests cross browser.
+
+*Example*
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<send,send>>(o:Object):void : [.static]#[static]# Sends a XMLHTTPRequest.
+| XHR
+|===
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[send]]
+=== send
+
+*_public static function send(o:Object):void_* +
+Sends a XMLHTTPRequest. Consult the Wiki for details on what settings this method takes.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| o:Object
+| Object will target URL, callbacks and other info needed to make the request.
+|===

@@ -1,0 +1,14 @@
+= directionality
+
+This option specifies the default writing direction. Some languages (Like Hebrew, Arabic, Urdu...) write from right to left instead of left to right. The default value of this option is "ltr" but if you want to use from right to left mode specify "rtl" instead.
+
+[[example-of-usage-of-the-directionality-option]]
+== Example of usage of the directionality option: 
+anchor:exampleofusageofthedirectionalityoption[historical anchor]
+
+`+js
+tinyMCE.init({
+  ...
+  directionality : "rtl"
+});
++`

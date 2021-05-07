@@ -1,0 +1,865 @@
+= tinymce
+
+|===
+|  |
+
+| Class
+| tinymce
+
+| Type
+| Singleton
+|===
+
+Core namespace with core functionality for the TinyMCE API all sub classes will be added to this namespace/object.
+
+*Example*
+
+[[public-properties]]
+== Public Properties 
+anchor:publicproperties[historical anchor]
+
+|===
+| Property | Defined By
+
+| <<activeeditor,activeEditor>> : https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Currently active editor instance.
+| tinymce
+
+| <<baseuri,baseURI>> : https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html[URI] : Absolute baseURI for the installation path of TinyMCE.
+| tinymce
+
+| <<editors,editors>> : Object : Collection of editor instances.
+| tinymce
+
+| <<i18n,i18n>> : Object : Collection of language pack data.
+| tinymce
+
+| <<isair,isAir>> : Boolean : [.static]#[static]# Constant that is true if the runtime is Adobe Air.
+| tinymce
+
+| <<isgecko,isGecko>> : Boolean : [.static]#[static]# Constant that is true if the browser is Gecko.
+| tinymce
+
+| <<isidevice,isIDevice>> : Boolean : [.static]#[static]# Constant that tells if the current browser is an iPhone or iPad.
+| tinymce
+
+| <<isie,isIE>> : Boolean : [.static]#[static]# Constant that is true if the browser is IE.
+| tinymce
+
+| <<isie6,isIE6>> : Boolean : [.static]#[static]# Constant that is true if the browser is IE 6 or older.
+| tinymce
+
+| <<isie7,isIE7>> : Boolean : [.static]#[static]# Constant that is true if the browser is IE 7.
+| tinymce
+
+| <<isie8,isIE8>> : Boolean : [.static]#[static]# Constant that is true if the browser is IE 8.
+| tinymce
+
+| <<isie9,isIE9>> : Boolean : [.static]#[static]# Constant that is true if the browser is IE 9.
+| tinymce
+
+| <<isios5,isIOS5>> : Boolean : [.static]#[static]# Constant that is true if the current browser is running on iOS 5 or greater.
+| tinymce
+
+| <<ismac,isMac>> : Boolean : [.static]#[static]# Constant that is true if the os is Mac OS.
+| tinymce
+
+| <<isopera,isOpera>> : Boolean : [.static]#[static]# Constant that is true if the browser is Opera.
+| tinymce
+
+| <<iswebkit,isWebKit>> : Boolean : [.static]#[static]# Constant that is true if the browser is WebKit (Safari/Chrome).
+| tinymce
+
+| <<majorversion,majorVersion>> : String : [.static]#[static]# Major version of TinyMCE build.
+| tinymce
+
+| <<minorversion,minorVersion>> : String : [.static]#[static]# Major version of TinyMCE build.
+| tinymce
+
+| <<releasedate,releaseDate>> : String : [.static]#[static]# Release date of TinyMCE build.
+| tinymce
+|===
+
+[[public-methods]]
+== Public Methods 
+anchor:publicmethods[historical anchor]
+
+|===
+| Method | Defined By
+
+| <<add,add>>(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Adds an editor instance to the editor collection.
+| tinymce
+
+| <<addi18n,addI18n>>(p:String, o:Object):void : Adds a language pack, this gets called by the loaded language files like en.
+| tinymce
+
+| <<addunload,addUnload>>(f:function, s:Object):function : [.static]#[static]# Adds an unload handler to the document.
+| tinymce
+
+| <<create,create>>(s:String, p:Object, root:Object):void : [.static]#[static]# Creates a class, subclass or static singleton.
+| tinymce
+
+| <<createns,createNS>>(n:String, o:Object):Object : [.static]#[static]# Creates a namespace on a specific object.
+| tinymce
+
+| <<each,each>>(o:Object, cb:function, s:Object):void : [.static]#[static]# Performs an iteration of all items in a collection such as an object or array.
+| tinymce
+
+| <<execcommand,execCommand>>(c:String, u:Boolean, v:String):Boolean : Executes a specific command on the currently active editor.
+| tinymce
+
+| <<execinstancecommand,execInstanceCommand>>(id:String, c:String, u:Boolean, v:String):BooleanDeprecated: Use the execCommand method of a editor instance instead.
+| tinymce
+
+| <<explode,explode>>(s:string, d:string):void : [.static]#[static]# Splits a string but removes the whitespace before and after each value.
+| tinymce
+
+| <<extend,extend>>(obj:Object, ext..n:Object):Object : [.static]#[static]# Extends an object with the specified other object(s).
+| tinymce
+
+| <<get,get>>(id:String/Number):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Returns a editor instance by id.
+| tinymce
+
+| <<getinstancebyid,getInstanceById>>(id:String):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]Deprecated: Use get method instead.
+| tinymce
+
+| <<grep,grep>>(a:Array, f:function):Array : [.static]#[static]# Filters out items from the input array by calling the specified function for each item.
+| tinymce
+
+| <<inarray,inArray>>(a:Array, v:Object):Number/String : [.static]#[static]# Returns the index of a value in an array, this method will return -1 if the item wasn't found.
+| tinymce
+
+| <<init,init>>(s:Object):void : Initializes a set of editors.
+| tinymce
+
+| <<is,is>>(o:Object, t:string):Boolean : [.static]#[static]# Checks if a object is of a specific type for example an array.
+| tinymce
+
+| <<isarray,isArray>>(obj:Object):boolean : [.static]#[static]# Returns true/false if the object is an array or not.
+| tinymce
+
+| <<makemap,makeMap>>(items:Array/String, delim:String, map:Object):Object : [.static]#[static]# Makes a name/object map out of an array with names.
+| tinymce
+
+| <<map,map>>(a:Array, f:function):Array : [.static]#[static]# Creates a new array by the return value of each iteration function call.
+| tinymce
+
+| <<remove,remove>>(e:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] : Removes a editor instance from the collection.
+| tinymce
+
+| <<removeunload,removeUnload>>(f:function):function : [.static]#[static]# Removes the specified function form the unload handler list.
+| tinymce
+
+| <<resolve,resolve>>(n:String, o:Object):Object : [.static]#[static]# Resolves a string and returns the object from a specific structure.
+| tinymce
+
+| <<triggersave,triggerSave>>():void : Calls the save method on all editor instances in the collection.
+| tinymce
+
+| <<trim,trim>>(s:String):String : [.static]#[static]# Removes whitespace from the beginning and end of a string.
+| tinymce
+
+| <<walk,walk>>(o:Object, f:function, n:String, s:String):void : [.static]#[static]# Executed the specified function for each item in a object tree.
+| tinymce
+|===
+
+[[public-events]]
+== Public Events 
+anchor:publicevents[historical anchor]
+
+|===
+| Event | Defined By
+
+| <<onaddeditor,onAddEditor>>(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]) : Fires when a new editor instance is added to the tinymce collection.
+| tinymce
+
+| <<onremoveeditor,onRemoveEditor>>(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]) : Fires when an editor instance is removed from the tinymce collection.
+| tinymce
+|===
+
+[[property-details]]
+== Property details 
+anchor:propertydetails[historical anchor]
+
+[[activeeditor]]
+=== activeEditor
+
+*_public activeEditor : https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+Currently active editor instance.
+
+*Example*
+
+[[baseuri]]
+=== baseURI
+
+*_public baseURI : https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html[URI]_* +
+Absolute baseURI for the installation path of TinyMCE.
+
+[[editors]]
+=== editors
+
+*_public editors : Object_* +
+Collection of editor instances.
+
+*Example*
+
+[[i18n]]
+=== i18n
+
+*_public i18n : Object_* +
+Collection of language pack data.
+
+[[isair]]
+=== isAir
+
+*_public static isAir : Boolean_* +
+Constant that is true if the runtime is Adobe Air.
+
+[[isgecko]]
+=== isGecko
+
+*_public static isGecko : Boolean_* +
+Constant that is true if the browser is Gecko.
+
+[[isidevice]]
+=== isIDevice
+
+*_public static isIDevice : Boolean_* +
+Constant that tells if the current browser is an iPhone or iPad.
+
+[[isie]]
+=== isIE
+
+*_public static isIE : Boolean_* +
+Constant that is true if the browser is IE.
+
+[[isie6]]
+=== isIE6
+
+*_public static isIE6 : Boolean_* +
+Constant that is true if the browser is IE 6 or older.
+
+[[isie7]]
+=== isIE7
+
+*_public static isIE7 : Boolean_* +
+Constant that is true if the browser is IE 7.
+
+[[isie8]]
+=== isIE8
+
+*_public static isIE8 : Boolean_* +
+Constant that is true if the browser is IE 8.
+
+[[isie9]]
+=== isIE9
+
+*_public static isIE9 : Boolean_* +
+Constant that is true if the browser is IE 9.
+
+[[isios5]]
+=== isIOS5
+
+*_public static isIOS5 : Boolean_* +
+Constant that is true if the current browser is running on iOS 5 or greater.
+
+[[ismac]]
+=== isMac
+
+*_public static isMac : Boolean_* +
+Constant that is true if the os is Mac OS.
+
+[[isopera]]
+=== isOpera
+
+*_public static isOpera : Boolean_* +
+Constant that is true if the browser is Opera.
+
+[[iswebkit]]
+=== isWebKit
+
+*_public static isWebKit : Boolean_* +
+Constant that is true if the browser is WebKit (Safari/Chrome).
+
+[[majorversion]]
+=== majorVersion
+
+*_public static majorVersion : String_* +
+Major version of TinyMCE build.
+
+[[minorversion]]
+=== minorVersion
+
+*_public static minorVersion : String_* +
+Major version of TinyMCE build.
+
+[[releasedate]]
+=== releaseDate
+
+*_public static releaseDate : String_* +
+Release date of TinyMCE build.
+
+[[method-details]]
+== Method details 
+anchor:methoddetails[historical anchor]
+
+[[add]]
+=== add
+
+*_public function add(editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+Adds an editor instance to the editor collection. This will also set it as the active editor.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance to add to the collection.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - The same instance that got passed in.
+
+[[addi18n]]
+=== addI18n
+
+*_public function addI18n(p:String, o:Object):void_* +
+Adds a language pack, this gets called by the loaded language files like en.js.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| p:String
+| Prefix for the language items. For example en.myplugin
+
+| o:Object
+| Name/Value collection with items to add to the language group.
+|===
+
+[[addunload]]
+=== addUnload
+
+*_public static function addUnload(f:function, s:Object):function_* +
+Adds an unload handler to the document. This handler will be executed when the document gets unloaded. This method is useful for dealing with browser memory leaks where it might be vital to remove DOM references etc.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| f:function
+| Function to execute before the document gets unloaded.
+
+| s:Object
+| Optional scope to execute the function in.
+|===
+
+*Returns* +
+function - Returns the specified unload handler function.
+
+*Example*
+
+[[create]]
+=== create
+
+*_public static function create(s:String, p:Object, root:Object):void_* +
+Creates a class, subclass or static singleton. More details on this method can be found in the Wiki.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| s:String
+| Class name, inheritage and prefix.
+
+| p:Object
+| Collection of methods to add to the class.
+
+| root:Object
+| Optional root object defaults to the global window object.
+|===
+
+*Example*
+
+[[createns]]
+=== createNS
+
+*_public static function createNS(n:String, o:Object):Object_* +
+Creates a namespace on a specific object.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Namespace to create for example a.b.c.d.
+
+| o:Object
+| Optional object to add namespace to, defaults to window.
+|===
+
+*Returns* +
+Object - New namespace object the last item in path.
+
+*Example*
+
+[[each]]
+=== each
+
+*_public static function each(o:Object, cb:function, s:Object):void_* +
+Performs an iteration of all items in a collection such as an object or array. This method will execure the callback function for each item in the collection, if the callback returns false the iteration will terminate. The callback has the following format: cb(value, key_or_index).
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| o:Object
+| Collection to iterate.
+
+| cb:function
+| Callback function to execute for each item.
+
+| s:Object
+| Optional scope to execute the callback in.
+|===
+
+*Example*
+
+[[execcommand]]
+=== execCommand
+
+*_public function execCommand(c:String, u:Boolean, v:String):Boolean_* +
+Executes a specific command on the currently active editor.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| c:String
+| Command to perform for example Bold.
+
+| u:Boolean
+| Optional boolean state if a UI should be presented for the command or not.
+
+| v:String
+| Optional value parameter like for example an URL to a link.
+|===
+
+*Returns* +
+Boolean - true/false if the command was executed or not.
+
+[[execinstancecommand]]
+=== execInstanceCommand
+
+*_public function execInstanceCommand(id:String, c:String, u:Boolean, v:String):Boolean_* +
+Deprecated: Use the execCommand method of a editor instance instead.Executes a command on a specific editor by id. This method was added for compatibility with the 2.x branch.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| id:String
+| Editor id to perform the command on.
+
+| c:String
+| Command to perform for example Bold.
+
+| u:Boolean
+| Optional boolean state if a UI should be presented for the command or not.
+
+| v:String
+| Optional value parameter like for example an URL to a link.
+|===
+
+*Returns* +
+Boolean - true/false if the command was executed or not.
+
+[[explode]]
+=== explode
+
+*_public static function explode(s:string, d:string):void_* +
+Splits a string but removes the whitespace before and after each value.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| s:string
+| String to split.
+
+| d:string
+| Delimiter to split by.
+|===
+
+*Example*
+
+[[extend]]
+=== extend
+
+*_public static function extend(obj:Object, ext..n:Object):Object_* +
+Extends an object with the specified other object(s).
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| obj:Object
+| Object to extend with new items.
+
+| ext..n:Object
+| Object(s) to extend the specified object with.
+|===
+
+*Returns* +
+Object - o New extended object, same reference as the input object.
+
+*Example*
+
+[[get]]
+=== get
+
+*_public function get(id:String/Number):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+Returns a editor instance by id.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| id:String/Number
+| Editor instance id or index to return.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - Editor instance to return.
+
+*Example*
+
+[[getinstancebyid]]
+=== getInstanceById
+
+*_public function getInstanceById(id:String):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+Deprecated: Use get method instead.Returns a editor instance by id. This method was added for compatibility with the 2.x branch.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| id:String
+| Editor instance id to return.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - Editor instance to return.
+
+*See Also*
+
+* <<get,get>>
+
+[[grep]]
+=== grep
+
+*_public static function grep(a:Array, f:function):Array_* +
+Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| a:Array
+| Array of items to loop though.
+
+| f:function
+| Function to call for each item. Include/exclude depends on it's return value.
+|===
+
+*Returns* +
+Array - New array with values imported and filtered based in input.
+
+*Example*
+
+[[inarray]]
+=== inArray
+
+*_public static function inArray(a:Array, v:Object):Number/String_* +
+Returns the index of a value in an array, this method will return -1 if the item wasn't found.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| a:Array
+| Array/Object to search for value in.
+
+| v:Object
+| Value to check for inside the array.
+|===
+
+*Returns* +
+Number/String - Index of item inside the array inside an object. Or -1 if it wasn't found.
+
+*Example*
+
+[[init]]
+=== init
+
+*_public function init(s:Object):void_* +
+Initializes a set of editors. This method will create a bunch of editors based in the input.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| s:Object
+| Settings object to be passed to each editor instance.
+|===
+
+*Example*
+
+[[is]]
+=== is
+
+*_public static function is(o:Object, t:string):Boolean_* +
+Checks if a object is of a specific type for example an array.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| o:Object
+| Object to check type of.
+
+| t:string
+| Optional type to check for.
+|===
+
+*Returns* +
+Boolean - true/false if the object is of the specified type.
+
+[[isarray]]
+=== isArray
+
+*_public static function isArray(obj:Object):boolean_* +
+Returns true/false if the object is an array or not.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| obj:Object
+| Object to check.
+|===
+
+*Returns* +
+boolean - true/false state if the object is an array or not.
+
+[[makemap]]
+=== makeMap
+
+*_public static function makeMap(items:Array/String, delim:String, map:Object):Object_* +
+Makes a name/object map out of an array with names.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| items:Array/String
+| Items to make map out of.
+
+| delim:String
+| Optional delimiter to split string by.
+
+| map:Object
+| Optional map to add items to.
+|===
+
+*Returns* +
+Object - Name/value map of items.
+
+[[map]]
+=== map
+
+*_public static function map(a:Array, f:function):Array_* +
+Creates a new array by the return value of each iteration function call. This enables you to convert one array list into another.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| a:Array
+| Array of items to iterate.
+
+| f:function
+| Function to call for each item. It's return value will be the new value.
+|===
+
+*Returns* +
+Array - Array with new values based on function return values.
+
+[[remove]]
+=== remove
+
+*_public function remove(e:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]):https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]_* +
+Removes a editor instance from the collection.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| e:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance to remove.
+|===
+
+*Returns* +
+https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor] - The editor that got passed in will be return if it was found otherwise null.
+
+[[removeunload]]
+=== removeUnload
+
+*_public static function removeUnload(f:function):function_* +
+Removes the specified function form the unload handler list.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| f:function
+| Function to remove from unload handler list.
+|===
+
+*Returns* +
+function - Removed function name or null if it wasn't found.
+
+[[resolve]]
+=== resolve
+
+*_public static function resolve(n:String, o:Object):Object_* +
+Resolves a string and returns the object from a specific structure.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| n:String
+| Path to resolve for example a.b.c.d.
+
+| o:Object
+| Optional object to search though, defaults to window.
+|===
+
+*Returns* +
+Object - Last object in path or null if it couldn't be resolved.
+
+*Example*
+
+[[triggersave]]
+=== triggerSave
+
+*_public function triggerSave():void_* +
+Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted.
+
+*Example*
+
+[[trim]]
+=== trim
+
+*_public static function trim(s:String):String_* +
+Removes whitespace from the beginning and end of a string.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| s:String
+| String to remove whitespace from.
+|===
+
+*Returns* +
+String - New string with removed whitespace.
+
+[[walk]]
+=== walk
+
+*_public static function walk(o:Object, f:function, n:String, s:String):void_* +
+Executed the specified function for each item in a object tree.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| o:Object
+| Object tree to walk though.
+
+| f:function
+| Function to call for each item.
+
+| n:String
+| Optional name of collection inside the objects to walk for example childNodes.
+
+| s:String
+| Optional scope to execute the function in.
+|===
+
+[[event-details]]
+== Event details 
+anchor:eventdetails[historical anchor]
+
+[[onaddeditor]]
+=== onAddEditor
+
+*_public event onAddEditor(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor])_* +
+Fires when a new editor instance is added to the tinymce collection.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce]
+| TinyMCE root class/namespace.
+
+| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance.
+|===
+
+*Example*
+
+[[onremoveeditor]]
+=== onRemoveEditor
+
+*_public event onRemoveEditor(sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce], editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor])_* +
+Fires when an editor instance is removed from the tinymce collection.
+
+*Parameters*
+
+|===
+| Param | Detail
+
+| sender:https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html[tinymce]
+| TinyMCE root class/namespace.
+
+| editor:https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html[Editor]
+| Editor instance.
+|===

@@ -99,6 +99,18 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **E
 
 - Fixed an issue where internal document links did not navigate within the client-side PDF exporter output.
 
+For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/premium/export/).
+
+### Spell Checker Pro 2.3.1
+
+The {{site.productname}} 5.8 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.3.1 provides the following bug fixes:
+
+- Fixed as-you-type spellchecking not running when editor content is changed programmatically.
+
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+
 ### Tiny Drive 1.4.0
 
 The {{site.productname}} 5.8 release includes an accompanying release of **Tiny Drive**.

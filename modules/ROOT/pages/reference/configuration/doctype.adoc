@@ -12,7 +12,7 @@ The default value is set to:
 
 This option does not affect the format of tags: " +
 " versus " +
-". See https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@element_format/[element_format] option instead.
+". See https://www.tiny.cloud/docs-3x/reference/configuration/element_format/[element_format] option instead.
 
 Note however that there is no need to change the doctype to XHTML because TinyMCE will produce XHTML in any case. Read the http://archive.tinymce.com/forum/viewtopic.php?id=15069[comments here].
 
@@ -21,7 +21,7 @@ On the other hand, if you set it to XHTML your IE7 users will have problem selec
 If unsure, don't specify the doctype.
 
 [[example-of-usage-of-the-doctype-option]]
-== Example of usage of the doctype option: 
+== Example of usage of the doctype option:
 anchor:exampleofusageofthedoctypeoption[historical anchor]
 
 `+js

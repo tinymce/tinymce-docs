@@ -7,7 +7,7 @@ This option enables you to have an external list of links, which can be generate
 Change in 3.0: The way that relative URLs are calculated has changed since the 2.x version - you may want to use absolute URLs for this setting.
 
 [[example-of-usage-of-the-external_link_list_url-option]]
-== Example of usage of the external_link_list_url option: 
+== Example of usage of the external_link_list_url option:
 anchor:exampleofusageoftheexternal_link_list_urloption[historical anchor]
 
 `+js
@@ -17,10 +17,10 @@ tinyMCE.init({
 });
 +`
 
-NOTE: If utilizing the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@document_base_url/[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
+NOTE: If utilizing the https://www.tiny.cloud/docs-3x/reference/configuration/document_base_url/[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
 [[example-of-a-external-link-list-file-myexternallistjs]]
-== Example of a external link list file: (myexternallist.js) 
+== Example of a external link list file: (myexternallist.js)
 anchor:exampleofaexternallinklistfilemyexternallistjs[historical anchor]
 
 `+js
@@ -33,7 +33,7 @@ var tinyMCELinkList = new Array(
 +`
 
 [[example-of-a-php-generated-external-link-list-file]]
-== Example of a PHP-generated external link list file 
+== Example of a PHP-generated external link list file
 anchor:exampleofaphp-generatedexternallinklistfile[historical anchor]
 
-See the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_image_list_url/[example of a PHP-generated image list file] for comparison.
+See the https://www.tiny.cloud/docs-3x/reference/configuration/external_image_list_url/[example of a PHP-generated image list file] for comparison.

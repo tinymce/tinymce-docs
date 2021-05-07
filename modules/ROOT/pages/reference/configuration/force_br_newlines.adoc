@@ -5,10 +5,10 @@
 
 *This option is deprecated as of 3.5 use `forced_root_blocks: false` instead to control `p` vs `br` behavior.*
 
-If you set this option to true, TinyMCE will force BR elements on newlines instead of inserting paragraphs. This option is set to false by default since paragraphs is a much better concept. BR elements should only be used when you really have to (mostly never). Also as of 3.x the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@forced_root_block/[forced_root_block] option is enabled by default so if you really want to disable paragraphs disable that one as well.
+If you set this option to true, TinyMCE will force BR elements on newlines instead of inserting paragraphs. This option is set to false by default since paragraphs is a much better concept. BR elements should only be used when you really have to (mostly never). Also as of 3.x the https://www.tiny.cloud/docs-3x/reference/configuration/forced_root_block/[forced_root_block] option is enabled by default so if you really want to disable paragraphs disable that one as well.
 
 [[example-of-usage-of-the-force_br_newlines-option]]
-== Example of usage of the force_br_newlines option: 
+== Example of usage of the force_br_newlines option:
 anchor:exampleofusageoftheforce_br_newlinesoption[historical anchor]
 
 `js
@@ -20,7 +20,7 @@ tinyMCE.init({
 `
 
 [[example-of-paragraph-no-margin-css]]
-== Example of paragraph no margin css 
+== Example of paragraph no margin css
 anchor:exampleofparagraphnomargincss[historical anchor]
 
 This CSS will reduce the space between (lines) paragraphs to zero. It will look more like the default line spacing in popular Word processors.
@@ -30,13 +30,13 @@ p {margin: 0; padding: 0;}
 `
 
 [[post-processing-away-p-tags-before-output-to-flashe-mail]]
-== Post processing away P tags before output to Flash/E-mail 
+== Post processing away P tags before output to Flash/E-mail
 anchor:postprocessingawayptagsbeforeoutputtoflashe-mail[historical anchor]
 
-See also: https://www.tiny.cloud/docs-3x/extras/TinyMCE3x@TinyMCE_FAQ/[Reasons why not to use BR elements for linebreaks]
+See also: https://www.tiny.cloud/docs-3x/extras/TinyMCE_FAQ/[Reasons why not to use BR elements for linebreaks]
 
 [[perl-example]]
-== Perl Example 
+== Perl Example
 anchor:perlexample[historical anchor]
 
 Note that this code does not rely upon regular expressions for processing the HTML, since you really cannot rely upon them to do the job. For a detailed discussion, see How do I remove HTML from a string? in perlfaq9; at the terminal of a machine with Perl, type perldoc -q html.
@@ -90,7 +90,7 @@ warn $output;
 ```
 
 [[php-example]]
-== PHP Example 
+== PHP Example
 anchor:phpexample[historical anchor]
 
 `+php

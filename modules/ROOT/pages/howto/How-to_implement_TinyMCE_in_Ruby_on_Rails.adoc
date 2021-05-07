@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = Implement TinyMCE in Ruby on Rails
 
-In your RubyOnRails application you can just invoke TinyMCE https://www.tiny.cloud/docs-3x/TinyMCE3x@Installation/[in the standard way], in the layout file, or just for the views in which you want to use TinyMCE. A good place for TinyMCE files may be `public/javascripts/tiny_mce` directory, but you are free to choose any other location.
+In your RubyOnRails application you can just invoke TinyMCE https://www.tiny.cloud/docs-3x/Installation/[in the standard way], in the layout file, or just for the views in which you want to use TinyMCE. A good place for TinyMCE files may be `public/javascripts/tiny_mce` directory, but you are free to choose any other location.
 
 The plugins listed below will just make this task even easier.
 
@@ -14,7 +14,7 @@ The most crucial thing to keep in mind is to include the TinyMCE javascript libr
 . tinyMCE.init({ ...options... })
 
 [[tiny_mce-plugin]]
-== tiny_mce plugin 
+== tiny_mce plugin
 anchor:tiny_mceplugin[historical anchor]
 
 To integrate TinyMCE into a Ruby on Rails application, there is a http://github.com/kete/tiny_mce[tiny_mce] plugin originally created by Blake Watters, and maintained by KieranP. This plugin makes TinyMCE available to all textareas for the controllers and actions you choose. For an installation guide, see the README documentation of the plugin at http://github.com/kete/tiny_mce[\http://github.com/kete/tiny_mce] (hosted on Github). It includes full installation, upgrade, and configuration documentation that should get you started. If you have any questions or problems, please file a ticket at http://kete.lighthouseapp.com/projects/14744-tiny_mce/tickets[\http://kete.lighthouseapp.com/projects/14744-tiny_mce/tickets] and someone will help ASAP.
@@ -26,7 +26,7 @@ To integrate TinyMCE into a Ruby on Rails application, there is a http://github.
 * http://kete.lighthouseapp.com/projects/14744-tiny_mce/tickets[Ticketing Support System]
 
 [[tinymce_hammer-plugin]]
-== tinymce_hammer plugin 
+== tinymce_hammer plugin
 anchor:tinymce_hammerplugin[historical anchor]
 
 http://tinymcehammer.lanalot.com/[tinymce_hammer] is a Ruby on Rails plugin (requires Rails 2.3+) that provides
@@ -42,7 +42,7 @@ http://tinymcehammer.lanalot.com/[tinymce_hammer] is a Ruby on Rails plugin (req
 * http://groups.google.com/group/tinymce_hammer/topics[Mailing list]
 
 [[see-also]]
-== See also: 
+== See also:
 anchor:seealso[historical anchor]
 
 * http://webonrails.com/2008/08/08/configuring-tinymce-spellchecker-with-rails-application/[Configure tinyMCE Spellcheck with rails app]

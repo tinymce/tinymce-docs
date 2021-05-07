@@ -7,14 +7,14 @@ This option controls how entities/characters get processed by TinyMCE. The value
 The base entities `<` `>` `&` `'` and `"` will always be entity encoded into their named equivalents. Though `'` and `"` will only be encoded within attribute values and `<` `>` will only be encoded within text nodes. This is correct according too the HTML and XML specs.
 
 [[encoding-types]]
-== Encoding Types 
+== Encoding Types
 anchor:encodingtypes[historical anchor]
 
 |===
 | Name | Summary
 
 | named
-| Characters will be converted into named entities based on the https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@entities[entities] option. For example, a non-breaking space could be encoded as &nbsp;.
+| Characters will be converted into named entities based on the https://www.tiny.cloud/docs-3x/api/configuration/entities/[entities] option. For example, a non-breaking space could be encoded as &nbsp;.
 
 | numeric
 | Characters will be converted into numeric entities. For example, a non-breaking space would be encoded as &#160;.
@@ -24,7 +24,7 @@ anchor:encodingtypes[historical anchor]
 |===
 
 [[example-of-usage-of-the-entity_encoding-option]]
-== Example of usage of the entity_encoding option: 
+== Example of usage of the entity_encoding option:
 anchor:exampleofusageoftheentity_encodingoption[historical anchor]
 
 `+js

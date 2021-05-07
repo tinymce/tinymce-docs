@@ -2,10 +2,10 @@
 :partialsDir: {rootDir}partials/
 = theme_advanced_toolbar_align
 
-This option enables you to specify the alignment of the toolbar, this value can be "left" (the default), "right" or "center". This option can only be used when https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme/[theme] is set to "advanced" and when the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_layout_manager/[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".
+This option enables you to specify the alignment of the toolbar, this value can be "left" (the default), "right" or "center". This option can only be used when https://www.tiny.cloud/docs-3x/reference/configuration/theme/[theme] is set to "advanced" and when the https://www.tiny.cloud/docs-3x/reference/configuration/theme_advanced_layout_manager/[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".
 
 [[example-of-usage-of-the-theme_advanced_toolbar_align-option]]
-== Example of usage of the theme_advanced_toolbar_align option: 
+== Example of usage of the theme_advanced_toolbar_align option:
 anchor:exampleofusageofthetheme_advanced_toolbar_alignoption[historical anchor]
 
 `+js

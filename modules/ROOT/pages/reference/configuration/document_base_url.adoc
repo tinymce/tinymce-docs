@@ -2,16 +2,16 @@
 :partialsDir: {rootDir}partials/
 = document_base_url
 
-This option specifies the base URL for all relative URLs in the document. The default value is the directory of the current document. If a value is provided, it must specify a directory (not a document) and must end with a "/". This option also interacts with the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@relative_urls/[relative_urls], https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@remove_script_host/[remove_script_host], and https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@convert_urls/[convert_urls] options to determine whether TinyMCE returns relative or absolute URLs. The FAQ contains a thorough link:/extras/TinyMCE3x@TinyMCE_FAQ/[description] and an https://www.tiny.cloud/docs/demo/full-featured/[example page] of working with relative/absolute URLs.
+This option specifies the base URL for all relative URLs in the document. The default value is the directory of the current document. If a value is provided, it must specify a directory (not a document) and must end with a "/". This option also interacts with the https://www.tiny.cloud/docs-3x/reference/configuration/relative_urls/[relative_urls], https://www.tiny.cloud/docs-3x/reference/configuration/remove_script_host/[remove_script_host], and https://www.tiny.cloud/docs-3x/reference/configuration/convert_urls/[convert_urls] options to determine whether TinyMCE returns relative or absolute URLs. The FAQ contains a thorough link:/extras/TinyMCE_FAQ/[description] and an https://www.tiny.cloud/docs/demo/full-featured/[example page] of working with relative/absolute URLs.
 
 Changed in 3.0: This may affect how other paths are interpreted, such as calls to tinyMCE.windowManager.open, so you may want to use absolute paths. The following configuration settings also appear to be affected by the document_base_url setting:
 
-* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@content_css/[content_css]
-* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_link_list_url/[external_link_list_url]
-* https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_image_list_url/[external_image_list_url]
+* https://www.tiny.cloud/docs-3x/reference/configuration/content_css/[content_css]
+* https://www.tiny.cloud/docs-3x/reference/configuration/external_link_list_url/[external_link_list_url]
+* https://www.tiny.cloud/docs-3x/reference/configuration/external_image_list_url/[external_image_list_url]
 
 [[example-of-usage-of-the-document_base_url-option]]
-== Example of usage of the document_base_url option: 
+== Example of usage of the document_base_url option:
 anchor:exampleofusageofthedocument_base_urloption[historical anchor]
 
 `+js

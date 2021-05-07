@@ -5,15 +5,15 @@
 This plugin handles embedded media such as QuickTime, Flash, ShockWave, RealPlayer and Windows Media Player. It has two output methods. One is normal embed/object tags and the other is using Javascript; the latter was added to work around the IE embedded media issue, read more about that below.
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Add plugin to TinyMCE plugin option list example: plugins : "media".
 . Add the button control name to a toolbar row in the theme.
-. Verify init option link:/reference/configuration/Configuration3x@cleanup/[cleanup] is omitted or set to true.
+. Verify init option link:/reference/configuration/cleanup/[cleanup] is omitted or set to true.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
 `js
@@ -26,7 +26,7 @@ tinyMCE.init({
 `
 
 [[using-the-javascript-output-method]]
-== Using the JavaScript output method 
+== Using the JavaScript output method
 anchor:usingthejavascriptoutputmethod[historical anchor]
 
 Object/embed tags are output to the HTML code by default when using this plugin but there is an alternative JS output method. This enables you to workaround the issue with IE not being able to "seamlessly embed" media objects in a HTML page due to a lawsuit.
@@ -36,7 +36,7 @@ You will have to add a specific media embed script to your page in order to use 
 We recommend that you copy the script from the TinyMCE directory to your sites/systems script directory since deep linking into TinyMCE from page level isn't recommended since files such as this might be moved in the future.
 
 [[example-on-how-to-add-the-script-to-your-page-header]]
-== Example on how to add the script to your page header: 
+== Example on how to add the script to your page header:
 anchor:exampleonhowtoaddthescripttoyourpageheader[historical anchor]
 
 ```html+++<html>++++++<head>++++++<script type="text/javascript" src="embed.js">++++++</script>++++++</head>++++++<body>+++Some page with a TinyMCE instance.+++</body>++++++</html>+++
@@ -44,7 +44,7 @@ anchor:exampleonhowtoaddthescripttoyourpageheader[historical anchor]
 ```
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
 
 |===

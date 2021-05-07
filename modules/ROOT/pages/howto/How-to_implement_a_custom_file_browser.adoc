@@ -2,10 +2,10 @@
 :partialsDir: {rootDir}partials/
 = Implement a custom file browser
 
-With TinyMCE you can implement your own file browser functionality. When the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@file_browser_callback/[file_browser_callback] setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.
+With TinyMCE you can implement your own file browser functionality. When the https://www.tiny.cloud/docs-3x/reference/configuration/file_browser_callback/[file_browser_callback] setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.
 
 [[the-necessary-tinymce-settings]]
-== The Necessary TinyMCE Settings 
+== The Necessary TinyMCE Settings
 anchor:thenecessarytinymcesettings[historical anchor]
 
 Let's have a look at the required part of tinyMCE.init:
@@ -27,7 +27,7 @@ The value 'myFileBrowser' defines the name of the Javascript function which will
 Let's have a closer look at what this function could look like.
 
 [[the-custom-callback-function]]
-== The Custom Callback Function 
+== The Custom Callback Function
 anchor:thecustomcallbackfunction[historical anchor]
 
 This is a working example for a possible callback function in TinyMCE 2.x as can be defined in tinyMCE.init:
@@ -113,7 +113,7 @@ Remember that the custom filebrowser function opens a new (popup) window to offe
 What is important to know about the four values that come with the function call?
 
 [[the-values-carried-with-the-filebrowser-function-call]]
-== The Values Carried With The Filebrowser Function Call 
+== The Values Carried With The Filebrowser Function Call
 anchor:thevaluescarriedwiththefilebrowserfunctioncall[historical anchor]
 
 * field_name is the name (and ID) of the dialogue window's input field which needs to be filled with the value your file browser is about to provide.
@@ -123,13 +123,13 @@ anchor:thevaluescarriedwiththefilebrowserfunctioncall[historical anchor]
 * editor_id (only for TinyMCE2.x!!!) is the TinyMCE editor instance that is calling this function. This is required, as the advImage plug-in requires this value when the Browse button is pushed. Otherwise, you will get an "undefined" error.
 
 [[your-server-side-logic]]
-== Your Server-Side Logic 
+== Your Server-Side Logic
 anchor:yourserver-sidelogic[historical anchor]
 
 Your callback function can determine whether the file browser is supposed to deliver the URL of an image or a file to link to. It can do this by using the type variable. Your server-side script will need to be given this information. My example above makes use of the GET method by adding ?type=image or ?type=file to the URL (depending on the value of type). You can of course use completely different URLs depending on type but it may be more convenient to differentiate the request inside your server-side script.
 
 [[necessary-html-output]]
-== Necessary HTML Output 
+== Necessary HTML Output
 anchor:necessaryhtmloutput[historical anchor]
 
 Regardless of what your file browser functionality is supposed to be capable of - at some point you need to return some information to the editor's dialogue window because you were about to insert a link or an image. This means your HTML output of your custom popup window must contain certain elements without which you can't communicate with this dialogue window of the editor (called "insert/edit link (or image)"). The following code must be included in the HTML file before any functions that relate to the file browser are called:
@@ -143,7 +143,7 @@ Now your file browser window has all the necessary TinyMCE extras it needs to in
 
 [discrete]
 [[file-browser-dialogue-initialization-in-tinymce2x]]
-===== File Browser Dialogue Initialization in TinyMCE2.x 
+===== File Browser Dialogue Initialization in TinyMCE2.x
 anchor:filebrowserdialogueinitializationintinymce2x[historical anchor]
 
 If you would like your file browser window to initialize itself via your own Javascript function do this only by the following onload event handler or you might break TinyMCE_Popup!
@@ -157,7 +157,7 @@ Instead of init() you can call any other function you have previousely defined i
 
 [discrete]
 [[file-browser-dialogue-initialization-in-tinymce3x]]
-===== File Browser Dialogue Initialization in TinyMCE3.x 
+===== File Browser Dialogue Initialization in TinyMCE3.x
 anchor:filebrowserdialogueinitializationintinymce3x[historical anchor]
 
 Since the 3.x branch of TinyMCE it is best to define a more complex object to carry your functions. Take a look:
@@ -182,7 +182,7 @@ The last line of the code above sets the "init()" function of your new FileBrows
 Remember that all this HTML output will be placed into your custom popup window and not into the javascript part of your editor's document!
 
 [[retrieve-tinymces-references]]
-== Retrieve TinyMCE's References 
+== Retrieve TinyMCE's References
 anchor:retrievetinymcesreferences[historical anchor]
 
 As mentioned above tinyMCE.openWindow() (for the 2.x branch) or tinyMCE.activeEditor.windowManager.open() (for the 3.x branch) does communicate some parameters to the newly opened window. More specifically it does this to the TinyMCE_Popup script which can access the transferred object. Have a look:
@@ -210,7 +210,7 @@ var inline = tinyMCEPopup.getWindowArg("inline");
 The function tinyMCE.getWindowArg() (2.x branch) or tinyMCEPopup.getWindowArg() (3.x branch) can retrieve all the properties of your object defined as second parameter of tinyMCE.openWindow() / tinyMCE.activeEditor.windowManager.open(). Compare the above four variables with our function call above!
 
 [[how-to-return-values]]
-== How To Return Values 
+== How To Return Values
 anchor:howtoreturnvalues[historical anchor]
 
 With the retrieved references you can now return your values (like image URL or hyperlink URL) back to the editor dialogue window. Earlier in the callback function we defined two important properties of the object transferred to the file browser window: window : win and input : field_name. These two can now be used to return information to the dialogue window. Let's say we have a function 'mySubmit' in our file browser window like the following example:
@@ -272,18 +272,18 @@ var FileBrowserDialogue = {
 tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
 ----
 
-Make sure you close your file browser window with tinyMCEPopup.close(). This ensures that any alterations by a plugin (as is the case with the https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@inlinepopups/[inline popup-plugin]) won't break.
+Make sure you close your file browser window with tinyMCEPopup.close(). This ensures that any alterations by a plugin (as is the case with the https://www.tiny.cloud/docs-3x/reference/plugins/inlinepopups/[inline popup-plugin]) won't break.
 
 Again remember that this function needs to be placed in your custom popup window and not in the editor's document!
 
 [[some-additional-information]]
-== Some Additional Information 
+== Some Additional Information
 anchor:someadditionalinformation[historical anchor]
 
 Here are some tweaks and tricks for your file browser popup window.
 
 [[remove-tinymces-default-popup-css]]
-=== Remove TinyMCE's default popup CSS 
+=== Remove TinyMCE's default popup CSS
 anchor:removetinymcesdefaultpopupcss[historical anchor]
 
 Since 3.2 version of TinyMCE you can simply supply a popup_css : false parameter when creating a popup window. Like this:
@@ -315,7 +315,7 @@ allLinks[allLinks.length-1].parentNode.removeChild(allLinks[allLinks.length-1]);
 ----
 
 [[keep-tinymces-editor_id-to-prevent-undefined-errors]]
-=== Keep TinyMCE's editor_id to prevent undefined errors 
+=== Keep TinyMCE's editor_id to prevent undefined errors
 anchor:keeptinymceseditor_idtopreventundefinederrors[historical anchor]
 
 This is important for the 2.x branch of TinyMCE only. TinyMCE3 doesn't need this since a reference to the editor gets passed to tinyMCEPopup automatically.
@@ -336,7 +336,7 @@ tinyMCE.openWindow(fileBrowserWindow, {
 ----
 
 [[enable-image-preview-in-original-insertedit-image-dialogue-window]]
-=== Enable Image Preview in original insert/edit image dialogue window 
+=== Enable Image Preview in original insert/edit image dialogue window
 anchor:enableimagepreviewinoriginalinserteditimagedialoguewindow[historical anchor]
 
 This line will come in handy if you want to preview the image after closing your custom filebrowser:
@@ -354,12 +354,12 @@ win.ImageDialog.showPreviewImage(inurl);
 ----
 
 [[how-to-ensure-your-file-browsers-window-title-using-inline-popups-plugin]]
-=== How to ensure your file browser's window title using inline popups plugin 
+=== How to ensure your file browser's window title using inline popups plugin
 anchor:howtoensureyourfilebrowserswindowtitleusinginlinepopupsplugin[historical anchor]
 
 Again this information refers to the 2.x branch of TinyMCE. It isn't valid for the 3.x branch.
 
-If you use the https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@inlinepopups/[inlinepopups plugin] then your popup won't carry your window's title automatically. This is due to the fact that the inlinepopups plugin creates iframes in layers. To get your window title shown correctly you'll need to add some JavaScript code inside your custom file browser's template like shown below:
+If you use the https://www.tiny.cloud/docs-3x/reference/plugins/inlinepopups/[inlinepopups plugin] then your popup won't carry your window's title automatically. This is due to the fact that the inlinepopups plugin creates iframes in layers. To get your window title shown correctly you'll need to add some JavaScript code inside your custom file browser's template like shown below:
 
 [source,html]
 ----
@@ -386,10 +386,10 @@ If you use the https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@inlinep
 ----
 
 [[how-to-prevent-multiple-file-browser-windows]]
-=== How to prevent multiple file browser windows 
+=== How to prevent multiple file browser windows
 anchor:howtopreventmultiplefilebrowserwindows[historical anchor]
 
-If you don't use the https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@inlinepopups/[inlinepopups plugin] then this might be interesting for you.
+If you don't use the https://www.tiny.cloud/docs-3x/reference/plugins/inlinepopups/[inlinepopups plugin] then this might be interesting for you.
 
 The idea is to store something into the current editor object (tinyMCE.selectedInstance/tinyMCE.activeEditor) to prevent the file_browser_callback function from opening yet another window. This is a bit tricky since you might overwrite existing objects or properties/methods! So make sure you know what you are doing!
 
@@ -509,7 +509,7 @@ tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
 == Problems
 
 [[pressing-insert-doesnt-work]]
-=== Pressing insert doesn't work 
+=== Pressing insert doesn't work
 anchor:pressinginsertdoesntwork[historical anchor]
 
 The following information is for TinyMCE2.x only.

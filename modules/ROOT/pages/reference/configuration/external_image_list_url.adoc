@@ -7,7 +7,7 @@ This option enables you to have an external list of images. This list of images 
 Change in 3.0: The way that relative URLs are calculated has changed since the 2.x version - you may want to use absolute URLs for this setting.
 
 [[example-of-usage-of-the-external_image_list_url-option]]
-== Example of usage of the external_image_list_url option: 
+== Example of usage of the external_image_list_url option:
 anchor:exampleofusageoftheexternal_image_list_urloption[historical anchor]
 
 `+js
@@ -17,10 +17,10 @@ tinyMCE.init({
 });
 +`
 
-NOTE: If utilizing the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@document_base_url/[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
+NOTE: If utilizing the https://www.tiny.cloud/docs-3x/reference/configuration/document_base_url/[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
 [[example-of-a-external-image-list-file-myexternallistjs]]
-== Example of a external image list file: (myexternallist.js) 
+== Example of a external image list file: (myexternallist.js)
 anchor:exampleofaexternalimagelistfilemyexternallistjs[historical anchor]
 
 `js
@@ -32,7 +32,7 @@ var tinyMCEImageList = new Array(
 `
 
 [[example-of-a-php-generated-image-list-file]]
-== Example of a PHP-generated image list file 
+== Example of a PHP-generated image list file
 anchor:exampleofaphp-generatedimagelistfile[historical anchor]
 
 ```php

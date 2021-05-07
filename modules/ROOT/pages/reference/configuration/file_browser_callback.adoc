@@ -7,7 +7,7 @@ This option enables you to add your own file browser/image browser to TinyMCE. I
 This function is executed each time a user clicks on the "browse" buttons in various dialogues. The format of this callback function is: fileBrowser(field_name, url, type, win) where field_name is the id/name of the form element that the browser should insert its URL into. The url parameter contains the URL value that is currently inside the field. The type parameter contains what type of browser to present; this value can be file, image or flash depending on what dialogue is calling the function. The win parameter contains a reference to the dialog/window that executes the function.
 
 [[example-of-usage-of-the-file_browser_callback-option]]
-== Example of usage of the file_browser_callback option: 
+== Example of usage of the file_browser_callback option:
 anchor:exampleofusageofthefile_browser_callbackoption[historical anchor]
 
 ```js
@@ -22,7 +22,7 @@ tinyMCE.init({
 ```
 
 [[howto-for-this-option]]
-== HowTo for this Option 
+== HowTo for this Option
 anchor:howtoforthisoption[historical anchor]
 
-There is a HowTo article for this option which also provides a working example (without a server-side counterpart yet): https://www.tiny.cloud/docs-3x/howto/TinyMCE3x@How-to_implement_a_custom_file_browser/[Custom FileBrowser Implementation]
+There is a HowTo article for this option which also provides a working example (without a server-side counterpart yet): https://www.tiny.cloud/docs-3x/howto/How-to_implement_a_custom_file_browser/[Custom FileBrowser Implementation]

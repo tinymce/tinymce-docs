@@ -5,7 +5,7 @@
 Embedding the editor on a web page form is simple, but handling the content is what makes it useful.
 
 [[example-without-a-database]]
-== Example without a database 
+== Example without a database
 anchor:examplewithoutadatabase[historical anchor]
 
 More or less useless for a CMS in reality, but good enough to play around with. The sample file -- explained below:
@@ -13,7 +13,7 @@ More or less useless for a CMS in reality, but good enough to play around with. 
 ----
 <?php
  $allowedTags='<p><strong><em><u><h1><h2><h3><h4><h5><h6><img>';
- $allowedTags.='<li><ol><ul><span><div><br><ins><del>';  
+ $allowedTags.='<li><ol><ul><span><div><br><ins><del>';
 // Should use some proper HTML filtering here.
   if($_POST['elm1']!='') {
     $sHeader = '<h1>Ah, content is king.</h1>';
@@ -63,11 +63,11 @@ More or less useless for a CMS in reality, but good enough to play around with. 
 Save the code above into a file ending with .php, upload it to your webserver and test/modify it yourself.
 
 [[the-tinymceinit-section]]
-== The tinyMCE.init section 
+== The tinyMCE.init section
 anchor:thetinymceinitsection[historical anchor]
 
 A few words on the JavaScript `+tinyMCE.init({...}+` part in the example.
 
-* theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme/[theme] in the TinyMCE documentation
-* mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/[mode] in the TinyMCE documentation
-* elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@elements/[elements] in the TinyMCE documentation.
+* theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → https://www.tiny.cloud/docs-3x/reference/configuration/theme/[theme] in the TinyMCE documentation
+* mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → https://www.tiny.cloud/docs-3x/reference/configuration/mode/[mode] in the TinyMCE documentation
+* elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → https://www.tiny.cloud/docs-3x/reference/configuration/elements/[elements] in the TinyMCE documentation.

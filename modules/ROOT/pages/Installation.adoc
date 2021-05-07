@@ -9,14 +9,14 @@ Recently added is the https://www.tiny.cloud/docs-3x/reference/for-dummies/[For 
 [[requirements]]
 == Requirements
 
-TinyMCE has no direct requirements except for browser compatibility (see https://www.tiny.cloud/docs-3x/extras/TinyMCE3x@Browser_compatiblity/[TinyMCE:compatibility] and, of course, having JavaScript enabled.
+TinyMCE has no direct requirements except for browser compatibility (see https://www.tiny.cloud/docs-3x/extras/Browser_compatiblity/[TinyMCE:compatibility] and, of course, having JavaScript enabled.
 
 There is NO back-end code distributed with TinyMCE.
 
-TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/[Mode] for more information.
+TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, https://www.tiny.cloud/docs-3x/reference/configuration/mode/[Mode] for more information.
 
 [[windows-specific-apache-configuration]]
-== Windows specific Apache configuration 
+== Windows specific Apache configuration
 anchor:windowsspecificapacheconfiguration[historical anchor]
 
 You may get errors like tinyMCE is not defined or missing } after property list on Windows installations.
@@ -33,7 +33,7 @@ Side note: tinyMCE is not defined or missing } after property list may also occu
 For download instructions check our https://www.tiny.cloud[TinyMCE Website].
 
 [[extracting-the-archives]]
-== Extracting the archives 
+== Extracting the archives
 anchor:extractingthearchives[historical anchor]
 
 On Windows you could use WinZip or something similar, and on other operating systems such as Linux you simply extract the archive with the tar command. You can find an example on how to extract the archived file on Linux below.
@@ -41,7 +41,7 @@ On Windows you could use WinZip or something similar, and on other operating sys
 You should extract TinyMCE in your `wwwroot` or site domain root folder.
 
 [[extract-example-using-a-shell]]
-== Extract example using a shell 
+== Extract example using a shell
 anchor:extractexampleusingashell[historical anchor]
 
 ```
@@ -53,7 +53,7 @@ anchor:extractexampleusingashell[historical anchor]
 ```
 
 [[a-folder-structure-looking-like-this-is-created]]
-== A folder structure looking like this is created 
+== A folder structure looking like this is created
 anchor:afolderstructurelookinglikethisiscreated[historical anchor]
 
 ```

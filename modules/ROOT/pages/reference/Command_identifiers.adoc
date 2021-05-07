@@ -5,7 +5,7 @@
 TinyMCE uses commands to perform RTE actions, such as making the selected text bold or italic. There are two major types of commands, "global commands" and "instance commands". Global commands are independent of any editor instance (focusing a specific editor or adding a new editor to a textarea, for example). Instance commands are for a specific editor instance (making the current selection in a specific editor bold, for example).
 
 [[invoking-commands]]
-== Invoking commands 
+== Invoking commands
 anchor:invokingcommands[historical anchor]
 
 There are a couple of methods for invoking these commands.
@@ -19,7 +19,7 @@ There are a couple of methods for invoking these commands.
 |===
 
 [[browser-commands]]
-== Browser commands 
+== Browser commands
 anchor:browsercommands[historical anchor]
 
 Here are the built-in commands for various browsers.
@@ -28,7 +28,7 @@ Here are the built-in commands for various browsers.
 * http://msdn.microsoft.com/en-us/library/ms533049%28VS.85%29.aspx[Explorer commands]
 
 [[global-commands]]
-== Global commands 
+== Global commands
 anchor:globalcommands[historical anchor]
 
 These commands can only be executed by using tinyMCE.execCommand.
@@ -45,7 +45,7 @@ These commands can only be executed by using tinyMCE.execCommand.
 |===
 
 [[instance-commands]]
-== Instance commands 
+== Instance commands
 anchor:instancecommands[historical anchor]
 
 These commands are instance specific so they can only be executed on a specific editor.
@@ -65,7 +65,7 @@ These commands are instance specific so they can only be executed on a specific 
 |mceRemoveNode |Removes a specific node or element.
 |mceRepaint |Repaints the editor. Sometimes the browser has graphic glitches.
 |mceReplaceContent |Replaces the selected contents with the given value contents.
-|mceResize |resizes the editor container in the advanced theme (requires https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@theme_advanced_resizing[theme_advanced_resizing] set to true as by default)
+|mceResize |resizes the editor container in the advanced theme (requires https://www.tiny.cloud/docs-3x/api/configuration/theme_advanced_resizing/[theme_advanced_resizing] set to true as by default)
 |mceSetAttribute |Sets an attribute on the selected element.
 |mceSetCSSClass (removed in 3.3) |Sets a CSS class of the selected element or selection.
 |mceSelectNode |Selects a specific node or element.

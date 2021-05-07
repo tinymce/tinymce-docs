@@ -7,7 +7,7 @@ This option enables you to specify a custom CSS file that extends the theme cont
 If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes TinyMCE, NOT relative to TinyMCE itself.
 
 [[changing-the-editor-default-font-size-and-font-dropdown]]
-== Changing the editor default font size and font dropdown: 
+== Changing the editor default font size and font dropdown:
 anchor:changingtheeditordefaultfontsizeandfontdropdown[historical anchor]
 
 If you want the editor default font size to match your actual website and the TinyMCE font size drop down menu to match follow these steps:
@@ -33,7 +33,7 @@ In this case the default font size is 14px. Ensure your actual website style she
 theme_advanced_font_sizes changes the dropdown menu fonts to visually match the style values. font_size_style_values controls the font size values inserted into the editor and code.
 
 [[example-of-usage-of-the-content_css-option]]
-== Example of usage of the content_css option: 
+== Example of usage of the content_css option:
 anchor:exampleofusageofthecontent_cssoption[historical anchor]
 
 Absolute path:
@@ -83,15 +83,15 @@ content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime(),
 `
 
 [[what-is-this-good-for]]
-== What is this good for? 
+== What is this good for?
 anchor:whatisthisgoodfor[historical anchor]
 
 The CSS file in this setting should be the very CSS file that controls the looks (or "layout") of all your pages! So, let's say you include a file "myLayout.css" in all your pages in order to control your site's global looks then this file must be set as your content_css option, because then the contents in the editor will also have the looks of your site.
 
-Any CSS classes defined in your CSS file will show up in the styles dropdown lists (unless you explicitly set what shows up in the styles dropdown list with the https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@theme_advanced_styles[theme_advanced_styles] option), be they in the main editor window or in a plugin's dialogue window (for example, the https://www.tiny.cloud/docs-3x/api/plugins/Plugin3x@advimage[advimage plugin] dialogue window) because TinyMCE will generate them dynamically based on your CSS file.
+Any CSS classes defined in your CSS file will show up in the styles dropdown lists (unless you explicitly set what shows up in the styles dropdown list with the https://www.tiny.cloud/docs-3x/api/configuration/theme_advanced_styles/[theme_advanced_styles] option), be they in the main editor window or in a plugin's dialogue window (for example, the https://www.tiny.cloud/docs-3x/api/plugins/advimage/[advimage plugin] dialogue window) because TinyMCE will generate them dynamically based on your CSS file.
 
 [[default-css]]
-== Default CSS 
+== Default CSS
 anchor:defaultcss[historical anchor]
 
 As of TinyMCE3 there is a default CSS file loaded into your editor's content window. This default stylesheet can be found here:
@@ -105,7 +105,7 @@ tiny_mce/themes/
 `
 
 [[tinymce-specific-rules]]
-== TinyMCE specific rules 
+== TinyMCE specific rules
 anchor:tinymcespecificrules[historical anchor]
 
 The body element of a TinyMCE instance has it's own class called mceContentBody this can be used to add TinyMCE specific CSS rules to your site's css.

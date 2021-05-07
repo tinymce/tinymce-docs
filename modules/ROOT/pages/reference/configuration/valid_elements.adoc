@@ -7,7 +7,7 @@ The valid_elements option defines which elements will remain in the edited text 
 This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is specified below.
 
 [[control-characters]]
-== Control characters: 
+== Control characters:
 anchor:controlcharacters[historical anchor]
 
 |===
@@ -88,7 +88,7 @@ If applied in extended_valid_elements, it is only effective for the elements in 
 Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 
 [[special-variables]]
-== Special variables: 
+== Special variables:
 anchor:specialvariables[historical anchor]
 
 |===
@@ -110,7 +110,7 @@ tinyMCE.init({
 +`
 
 [[duplicate-attribute-warning]]
-== Duplicate Attribute Warning 
+== Duplicate Attribute Warning
 anchor:duplicateattributewarning[historical anchor]
 
 Be careful not to duplicate attributes in the definitions as this may cause tinyMCE to render duplicate attributes in the output. For example, if you have
@@ -126,7 +126,7 @@ Be careful not to duplicate attributes in the definitions as this may cause tiny
 then if you happen to have a <blockquote> element in your code with style= or dir= attributes, the editor will cause each of those attributes to be duplicated in the output, which will result in invalid XHTML. (This is related to bug http://sourceforge.net/tracker/index.php?func=detail&aid=1824716&group_id=103281&atid=635682[1824716 - Duplicate attributes caused by valid_elements] on the SourceForge tracker.)
 
 [[default-rule-set]]
-== Default rule set: 
+== Default rule set:
 anchor:defaultruleset[historical anchor]
 
 This is the default string used by TinyMCE to clean up the HTML contents.
@@ -156,7 +156,7 @@ valid_elements : "@[id|class|style|title|dir<ltr?rtl|lang|xml::lang|onclick|ondb
 `
 
 [[full-xhtml-rule-set]]
-== Full XHTML rule set: 
+== Full XHTML rule set:
 anchor:fullxhtmlruleset[historical anchor]
 
 The following will validate that the page complies fully with the XHTML specification.
@@ -422,7 +422,7 @@ valid_elements : ""
 `
 
 [[full-flashmx-2004-rule-set]]
-== Full FlashMX 2004 rule set: 
+== Full FlashMX 2004 rule set:
 anchor:fullflashmx2004ruleset[historical anchor]
 
 The following will validate that the page complies fully with the flashMX 2004 specification.
@@ -450,4 +450,4 @@ valid_elements : ""
 
 Reference: http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html[\http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html]
 
-Also see https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/[extended_valid_elements] and https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@invalid_elements/[invalid_elements] for more configuration options.
+Also see https://www.tiny.cloud/docs-3x/reference/configuration/extended_valid_elements/[extended_valid_elements] and https://www.tiny.cloud/docs-3x/reference/configuration/invalid_elements/[invalid_elements] for more configuration options.

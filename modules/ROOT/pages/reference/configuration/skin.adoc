@@ -7,7 +7,7 @@
 This option enables you to specify what skin you want to use with your theme. A skin is basically a CSS file that gets loaded from the skins directory inside the theme. The advanced theme that TinyMCE comes with has two skins these are called `"default"` and `"o2k7"`.
 
 [[example-of-usage-of-the-skin-option]]
-== Example of usage of the skin option: 
+== Example of usage of the skin option:
 anchor:exampleofusageoftheskinoption[historical anchor]
 
 `js
@@ -17,4 +17,4 @@ tinyMCE.init({
 });
 `
 
-Also see https://www.tiny.cloud/docs-3x/customization/TinyMCE3x@Creating_a_skin/[Creating_a_Skin]
+Also see https://www.tiny.cloud/docs-3x/customization/Creating_a_skin/[Creating_a_Skin]

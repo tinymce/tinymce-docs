@@ -11,7 +11,7 @@ This option enables you to specify a variant for the skin, for example "silver" 
 When creating a skin, additional variants may also be created, by adding ui_+++<variant_name>+++.css files alongside the default ui.css.+++</variant_name>+++
 
 [[example-of-usage-of-the-skin-option]]
-== Example of usage of the skin option: 
+== Example of usage of the skin option:
 anchor:exampleofusageoftheskinoption[historical anchor]
 
 `+js
@@ -23,4 +23,4 @@ tinyMCE.init({
 });
 +`
 
-Also see: https://www.tiny.cloud/docs-3x/customization/TinyMCE3x@Creating_a_skin/[Creating_Skin], https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@skin/[skin]
+Also see: https://www.tiny.cloud/docs-3x/customization/Creating_a_skin/[Creating_Skin], https://www.tiny.cloud/docs-3x/reference/configuration/skin/[skin]

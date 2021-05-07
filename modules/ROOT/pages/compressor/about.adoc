@@ -6,32 +6,32 @@
 :title_nav: About Compressors
 
 [[tinymce-compressor]]
-== TinyMCE Compressor 
+== TinyMCE Compressor
 anchor:tinymcecompressor[historical anchor]
 
 The TinyMCE compressor is a backend for reducing the overall download and initialization time for TinyMCE it consists of a JavaScript loader that requests a php/aspx/jsp/cfm page that compresses the specified resources using GZip. This method makes the overall download 75% smaller and the number of requests will also be reduced. The overall initialization time for TinyMCE will be reduced dramatically if you use this script for loading TinyMCE.
 
 [[what-is-gzip]]
-== What is GZip? 
+== What is GZip?
 anchor:whatisgzip[historical anchor]
 
 gzipis short for GNU zip, a GNU free software file compression program. It was created by Jean-loup Gailly and Mark Adler. Version 0.1 was first publicly released on October 31, 1992. Version 1.0 followed in February 1993. The HTTP/1.1 protocol allows for clients to optionally request the compression of content from the server.
 
 [[server-technologies]]
-== Server technologies 
+== Server technologies
 anchor:servertechnologies[historical anchor]
 
 There are currently 4 different compressors written by MoxieCode based on various server technologies:
 
-* https://www.tiny.cloud/docs-3x/compressor/Compressors3x@PHP/[PHP]
-* https://www.tiny.cloud/docs-3x/compressor/Compressors3x@.NET/[ASPX / Microsoft .NET]
-* https://www.tiny.cloud/docs-3x/compressor/Compressors3x@JSP/[JSP / Tomcat or compatible application servers]
-* https://www.tiny.cloud/docs-3x/compressor/Compressors3x@Coldfusion/[CFM / Coldfusion]
+* https://www.tiny.cloud/docs-3x/compressor/PHP/[PHP]
+* https://www.tiny.cloud/docs-3x/compressor/.NET/[ASPX / Microsoft .NET]
+* https://www.tiny.cloud/docs-3x/compressor/JSP/[JSP / Tomcat or compatible application servers]
+* https://www.tiny.cloud/docs-3x/compressor/Coldfusion/[CFM / Coldfusion]
 
 They can be downloaded from our https://www.tiny.cloud/get-tiny/[Download page].
 
 [[third-party-compressors]]
-== Third-party Compressors 
+== Third-party Compressors
 anchor:third-partycompressors[historical anchor]
 
 There are also other compressors maintained by third-party developers:
@@ -43,7 +43,7 @@ There are also other compressors maintained by third-party developers:
 * http://code.google.com/p/tinymce-python-compressor/[Python (CGI)]
 
 [[compressing-into-a-static-file]]
-== Compressing into a static file 
+== Compressing into a static file
 anchor:compressingintoastaticfile[historical anchor]
 
 It's also possible to simply concatenate the necessary components and some boilerplate code into a single .js file. However you will always have to recreate this file if you want to use other TinyMCE plugins, or you upgrade TinyMCE. You will also probably want to configure your webserver to compress javascript files.

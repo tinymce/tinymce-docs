@@ -3,7 +3,7 @@
 = Migrate from TinyMCE 2.x to 3.x
 
 [[overall-changes-from-the-old-and-new-api]]
-== Overall changes from the old and new API 
+== Overall changes from the old and new API
 anchor:overallchangesfromtheoldandnewapi[historical anchor]
 
 The new API of TinyMCE 3.x has changed quite a bit from the old 2.x API. The biggest change is that all methods are now contained in individual classes instead of being added to the root class. The old API had its DOM methods inside the tinyMCE class, for example, tinyMCE.addClass; but the new API has an extra level for the same call: tinymce.DOM.addClass . this makes the API clearer and easier to work with since each type of functionality has its own namespace in the API.
@@ -11,15 +11,15 @@ The new API of TinyMCE 3.x has changed quite a bit from the old 2.x API. The big
 Another change is that the https://www.tiny.cloud/docs-3x/api/[new API] uses the observer pattern internally: this enables you to more easily trap events and add custom logic before/after a specific action. You can now add an click event by using patterns like tinyMCE.activeEditor.onClick.add.
 
 [[config-changes]]
-== Config changes 
+== Config changes
 anchor:configchanges[historical anchor]
 
 The default config/settings for TinyMCE have been changed. Some values are now enabled by default to produce more valid output. Non-string values are as of 3.x forced to be the right datatype. Strings like "false" will not be converted into a boolean false automatically, this is a performance enhancement.
 
-https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@forced_root_block/[forced_root_block] This option is now enabled by default to normalize the behavior for different browsers. To learn more why we changed this read the https://www.tiny.cloud/docs-3x/extras/TinyMCE3x@TinyMCE_FAQ/[FAQ]. https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@apply_source_formatting/[apply_source_formatting] This option is now enabled by default to produce better output. It might produce problems for users that have an nl2br call in their PHP code. https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@convert_fonts_to_spans/[convert_fonts_to_spans] This is now enabled by default since font elements are deprecated and should not be used.
+https://www.tiny.cloud/docs-3x/reference/configuration/forced_root_block/[forced_root_block] This option is now enabled by default to normalize the behavior for different browsers. To learn more why we changed this read the https://www.tiny.cloud/docs-3x/extras/TinyMCE_FAQ/[FAQ]. https://www.tiny.cloud/docs-3x/reference/configuration/apply_source_formatting/[apply_source_formatting] This option is now enabled by default to produce better output. It might produce problems for users that have an nl2br call in their PHP code. https://www.tiny.cloud/docs-3x/reference/configuration/convert_fonts_to_spans/[convert_fonts_to_spans] This is now enabled by default since font elements are deprecated and should not be used.
 
 [[common-functions]]
-== Common functions 
+== Common functions
 anchor:commonfunctions[historical anchor]
 
 This is a list of common function calls, how they were made in the old API, and how they are made in the new API:
@@ -75,7 +75,7 @@ This is a list of common function calls, how they were made in the old API, and 
 https://www.tiny.cloud/docs-3x/api/[See the API for details!]
 
 [[language-files]]
-== Language files 
+== Language files
 anchor:languagefiles[historical anchor]
 
 Language file format:
@@ -88,7 +88,7 @@ To refer to a language string:
 * Old: {$lang_pluginName_stringName}
 * New: {#pluginName.stringName}
 
-To create language packs for tinyMCE plugins use the new https://www.tiny.cloud/docs-3x/customization/TinyMCE3x@Creating_a_language_pack/[language packs].
+To create language packs for tinyMCE plugins use the new https://www.tiny.cloud/docs-3x/customization/Creating_a_language_pack/[language packs].
 
 [[editor_pluginjs]]
 == editor_plugin.js
@@ -103,7 +103,7 @@ Plugin initialization
 * New: getInfo() function remains the same, but is moved into init().
 
 [[adding-a-button]]
-== Adding a button 
+== Adding a button
 anchor:addingabutton[historical anchor]
 
 Remove the getControlHTML() function, buttons are now added in init() function using https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#addbutton[addButton()] function.
@@ -116,7 +116,7 @@ Parameters:
 button_name is used to refer to the button when changing its state (selected, disabled, normal) title is name of the language dependent string (note that # symbol is omitted). To refer to theme lang string use 'themeName.stringName' cmd is command name (leave it as it was) class refers to CSS style class. By default button images are now taken from image map (themes/advanced/img/icons.gif). Although it is possible to enter icon filename (see: https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Button.html/[Button constructor] it is better to add your icon to the image map and use CSS class_name to refer to it. CSS class `'class_name'` should be defined in `/themes/advanced/skins/default/ui.css` (eg. `.defaultSkin span.mce_print {background-position:-440px -20px}`) (replace `defaultskin` with whatever skin you are using)
 
 [[adding-a-keyboard-shortcut]]
-== Adding a keyboard shortcut 
+== Adding a keyboard shortcut
 anchor:addingakeyboardshortcut[historical anchor]
 
 * Old: `inst.addShortcut('ctrl', 'k', 'lang_pluginName_stringName', 'mceplugin_command');`
@@ -125,14 +125,14 @@ anchor:addingakeyboardshortcut[historical anchor]
 * New: `tinymce.PluginManager.[requireLangPack](/api/class_tinymce.AddOnManager.html/)('plugin_name');`
 
 [[handling-node-change]]
-== Handling node change 
+== Handling node change
 anchor:handlingnodechange[historical anchor]
 
 * Old: `handleNodeChange : function(editor_id, node, undo_index, undo_levels, visual_aid, any_selection) {`
 * New: nodechange handler can now be added into the `init()` function: `+ed.[onNodeChange](/api/class_tinymce.Editor.html/#nodechanged).add(function(ed, cm, n, co) { ... });+`
 
 [[to-change-the-button-appearance]]
-== To change the button appearance 
+== To change the button appearance
 anchor:tochangethebuttonappearance[historical anchor]
 
 * Old: `tinyMCE.switchClass(editor_id + '_button_name', 'mceButtonSelected');`
@@ -149,28 +149,28 @@ or/and
 NOTE: Before setting button to active, make sure that you set disabled to false (if there the button can get into disabled state) otherwise the button will look weird.
 
 [[to-check-parent-element]]
-== To check parent element 
+== To check parent element
 anchor:tocheckparentelement[historical anchor]
 
 * Old: `if (elm = tinyMCE.getParentElement(node, "p"))`
 * New: `if (elm = ed.dom.getParent(n, 'p'))`
 
 [[to-check-if-something-is-selected]]
-== To check if something is selected 
+== To check if something is selected
 anchor:tocheckifsomethingisselected[historical anchor]
 
 * Old `if (anySelection || (focusElm != null))`
 * New `if (!ed.selection.isCollapsed())`
 
 [[to-get-selected-element]]
-== To get selected element 
+== To get selected element
 anchor:togetselectedelement[historical anchor]
 
 * Old `elm = tinyMCE.selectedElement;`
 * New `elm = ed.selection.getNode();`
 
 [[execute-command]]
-== Execute command 
+== Execute command
 anchor:executecommand[historical anchor]
 
 Either register a command handler in the init function: ed.addCommand('mcePluginName', function() { ... handle command ... }); or use the the `execcommand` function as in 2.x plugin
@@ -179,14 +179,14 @@ Either register a command handler in the init function: ed.addCommand('mcePlugin
 * New: `execCommand : function(cmd, ui, val)`
 
 [[to-get-the-editor-instance]]
-== To get the editor instance 
+== To get the editor instance
 anchor:togettheeditorinstance[historical anchor]
 
 * Old: `ed = tinyMCE.getInstanceById(editor_id);`
 * New: `ed = tinyMCE.activeEditor;`
 
 [[to-open-window]]
-== To open window 
+== To open window
 anchor:toopenwindow[historical anchor]
 
 * Old:
@@ -214,14 +214,14 @@ ed.windowManager.open({
 NOTE: To get access to the plugin url either register command handler in init function, or store the 'url' variable value in this.url
 
 [[alert-user-with-language-dependent-string]]
-== Alert user with language dependent string 
+== Alert user with language dependent string
 anchor:alertuserwithlanguagedependentstring[historical anchor]
 
 * Old: `alert(tinyMCE.entityDecode(tinyMCE.getLang('lang_pluginName_stringName')));`
 * New: `alert(ed.getLang('pluginName.stringName'));`
 
 [[get-editor-instance-in-plugin]]
-== Get editor instance in plugin 
+== Get editor instance in plugin
 anchor:geteditorinstanceinplugin[historical anchor]
 
 * Old: var ed = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));

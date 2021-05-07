@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = style
 
 Adds CSS style editing support to TinyMCE, this will enable you to edit almost any CSS style property in a visual way. You simply need to load the "style" plugin and add the control "styleprops" to any toolbar.

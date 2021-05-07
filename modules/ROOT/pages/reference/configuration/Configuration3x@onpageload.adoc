@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = onpageload
 
 This option enables you to specify a function name to be executed when the page is loaded but before the TinyMCE instances are created.

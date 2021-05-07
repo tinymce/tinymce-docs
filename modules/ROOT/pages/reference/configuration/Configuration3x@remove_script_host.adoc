@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = remove_script_host
 
 If this option is enabled the protocol and host part of the URLs returned from the MCFileManager will be removed. This option is only used if the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@relative_urls/[relative_urls] option is set to false. This option is set to true by default.

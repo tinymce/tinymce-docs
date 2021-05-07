@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = theme
 
 This option enables you to specify what theme to use when rendering the TinyMCE WYSIWYG editor instances. This name matches the directories located in `tinymce/jscripts/tiny_mce/themes`. The default value of this option is "advanced". TinyMCE has two built-in themes described below.

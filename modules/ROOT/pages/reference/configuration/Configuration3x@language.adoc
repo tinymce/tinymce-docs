@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = language
 
 This option should contain a language code of the language pack to use with TinyMCE. These codes are in ISO-639-1 format. To see if your language is available, check the contents of `"tinymce/jscripts/tiny_mce/langs"`. The default value of this option is "en" for English.

@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = Implement a custom file browser
 
 With TinyMCE you can implement your own file browser functionality. When the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@file_browser_callback/[file_browser_callback] setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.

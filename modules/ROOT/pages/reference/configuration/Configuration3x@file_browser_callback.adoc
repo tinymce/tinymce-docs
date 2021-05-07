@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = file_browser_callback
 
 This option enables you to add your own file browser/image browser to TinyMCE. If this option is set with a value a browse button will appear in different dialogues such as "insert/edit link" or "insert/edit image". If this option hasn't got a value set (or equals to false or null) the dialogues in question won't show any browse button.

@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = noneditable
 
 Adds non editable elements support for MSIE and Mozilla/FF. Any element with the "mceNonEditable" class will be blocked from modifications and treated as a single character. This class name is configurable using the "noneditable_noneditable_class". Any elements with the MSIE specific attribute "contenteditable" will be converted into classes instead.

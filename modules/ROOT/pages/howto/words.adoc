@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = Limit number of characters/words
 
 It seems fairly common that people want to limit the number of words/characters in a form with TinyMCE so here is a small code snippet that can be used in your implementation logic to count the number of characters in the text and the number of words. The character/word limit checking needs to be in the implementation logic since TinyMCE shouldn't mess with form submission or validation that is up to the implementation.

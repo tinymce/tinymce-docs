@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = theme_advanced_resize_horizontal
 
 This option gives you the ability to enable/disable the horizontal resizing. This option is only useful if the `theme_advanced_statusbar_location` option is set to "top" or "bottom" and when the theme_advanced_resizing is set to true. This option is set to true by default, allowing both resizing horizontal and vertical.

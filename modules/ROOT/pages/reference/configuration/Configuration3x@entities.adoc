@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = entities
 
 This option contains a comma separated list of entity names that is used instead of characters. Odd items are the character code and even items are the name of the character code. Part of the default value of this option is placed in the example below.

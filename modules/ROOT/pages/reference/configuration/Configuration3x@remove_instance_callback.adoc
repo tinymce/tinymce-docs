@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = remove_instance_callback
 
 This option should contain a function name to be executed each time an editor instance is removed. The format of this function is: `removeInstance(inst)` where `inst` is the editor instance object reference.

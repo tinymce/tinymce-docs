@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = inlinepopups
 
 This plugin makes all dialogs to open as floating DIV layers instead of popup windows. This option can be very useful in order to get around popup blockers. You can also make them modal by setting the dialog_type to modal see the example below.

@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = Browser compatiblity
 
 TinyMCE uses advanced JavaScript and tries to be as smart as possible when it comes to different browsers. The main focus is on Microsoft Internet Explorer, Mozilla/Firefox and Safari. The table was reset to only show the browsers we ourselves can test on. It works with many older versions of Mozilla and Firefox. If a browser is not listed on this page, that doesn't mean TinyMCE won't work. To determine compatibility with an unlisted browser, try out the examples on our website.

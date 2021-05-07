@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = plugins
 
 This option should contain a comma separated list of plugins. Plugins are loaded from the `"tinymce/jscripts/tiny_mce/plugins"` directory, and the plugin name matches the name of the directory. TinyMCE is shipped with some core plugins; these are described in greater detail in the https://www.tiny.cloud/docs-3x/reference/TinyMCE3x@Plugins/[Plugins reference].

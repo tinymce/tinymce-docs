@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = Implement TinyMCE in Ruby on Rails
 
 In your RubyOnRails application you can just invoke TinyMCE https://www.tiny.cloud/docs-3x/TinyMCE3x@Installation/[in the standard way], in the layout file, or just for the views in which you want to use TinyMCE. A good place for TinyMCE files may be `public/javascripts/tiny_mce` directory, but you are free to choose any other location.

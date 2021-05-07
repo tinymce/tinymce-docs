@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = urlconverter_callback
 
 This option enables you to add your own URL converter logic. This option should contain a JavaScript function name. The format of this converter function is: URLConverter(url, node, on_save), where:

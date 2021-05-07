@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = oninit
 
 This option enables you to specify a function to be executed when all editor instances have finished their initialization. This is much like the onload event of an HTML page.

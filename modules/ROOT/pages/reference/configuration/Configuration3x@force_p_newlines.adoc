@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = force_p_newlines
 
 *This option is deprecated as of 3.5 use `forced_root_blocks: false` instead to control `p` vs `br` behavior.*

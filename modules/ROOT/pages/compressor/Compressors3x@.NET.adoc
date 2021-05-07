@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = .NET
 
 TinyMCE Compressor gzips all javascript files in TinyMCE to a single streamable file. This makes the overall download size 75% smaller and reduces the number of requests to the web server. The initialization time for TinyMCE will also be reduced dramatically by using this script.

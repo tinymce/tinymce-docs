@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = bbcode
 
 This plugin makes it possible for TinyMCE to edit BBCode in WYSIWYG way by converting tags like [b] into +++<strong>+++and then +++<strong>+++back to [b] when the user submits the content. Remember you will need to remove lots of TinyMCEs functionality in order to use this plugin successfully, since the BBCode format doesn't support the whole HTML specification. The BBCode plugin also requires you to set some specific TinyMCE options in order to function.+++</strong>++++++</strong>+++

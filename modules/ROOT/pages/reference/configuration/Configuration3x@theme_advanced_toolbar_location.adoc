@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = theme_advanced_toolbar_location
 
 This option enables you to specify where the toolbar should be located. This option can be set to "top" (the default) or "bottom" or "external". This option can only be used when https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme/[theme] is set to advanced and when the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_layout_manager/[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".

@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = theme_advanced_link_targets
 
 This option should contain a semicolon separated list of link target names and target titles linked by an equal sign. The titles are the ones that get presented to the user in the link target drop down list and the target names are the targets that get inserted as a 'target' attribute.

@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = theme_advanced_buttons_1_n
 
 This option should contain a comma separated list of button/control names to insert into the toolbar. The number 1-n is the row number to insert the buttons/controls into. Below is a list of built-in controls, plugins may include other controls names that can be inserted but these are documented in the individual plugins. This option can only be used when theme is set to advanced and when the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme_advanced_layout_manager/[theme_advanced_layout_manager] option is set to the default value of "SimpleLayout".

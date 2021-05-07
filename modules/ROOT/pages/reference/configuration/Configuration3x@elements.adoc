@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = elements
 
 This option should contain a comma separated list of element IDs to convert into editor instances. This option is only used if https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/[mode] is set to "exact".

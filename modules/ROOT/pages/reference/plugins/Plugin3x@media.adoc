@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = media
 
 This plugin handles embedded media such as QuickTime, Flash, ShockWave, RealPlayer and Windows Media Player. It has two output methods. One is normal embed/object tags and the other is using Javascript; the latter was added to work around the IE embedded media issue, read more about that below.

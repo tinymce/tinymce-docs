@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = paste
 
 This plugin was completely rewritten for TinyMCE 3.2.3. The new version will auto detect word contents and automatically clean it up before inserting it to the editor. So there is no longer any need to use the dialogs to paste contents from third party sources.

@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = jQuery Plugin
 
 TinyMCE 3.2.5 introduced a new jQuery plugin. This plugin helps integrate the TinyMCE with http://jquery.com/[jQuery] by extending some internal functions and adding a new tinymce function and tinymce pseudo selector.

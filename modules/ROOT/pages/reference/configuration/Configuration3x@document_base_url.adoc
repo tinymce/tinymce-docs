@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = document_base_url
 
 This option specifies the base URL for all relative URLs in the document. The default value is the directory of the current document. If a value is provided, it must specify a directory (not a document) and must end with a "/". This option also interacts with the https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@relative_urls/[relative_urls], https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@remove_script_host/[remove_script_host], and https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@convert_urls/[convert_urls] options to determine whether TinyMCE returns relative or absolute URLs. The FAQ contains a thorough link:/extras/TinyMCE3x@TinyMCE_FAQ/[description] and an https://www.tiny.cloud/docs/demo/full-featured/[example page] of working with relative/absolute URLs.

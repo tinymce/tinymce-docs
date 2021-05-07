@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = PHP
 
 TinyMCE Compressor gzips all javascript files in TinyMCE to a single streamable file. This makes the overall download size 75% smaller and the number of requests will also be reduced. The overall initialization time for TinyMCE will be reduced dramaticly if you use this script.

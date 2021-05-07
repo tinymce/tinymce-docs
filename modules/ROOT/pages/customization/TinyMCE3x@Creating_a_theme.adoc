@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = Creating a theme
 
 Creating your own themes for the TinyMCE application is fairly easy if you know the basics of HTML, CSS and Javascript. The easiest way is to copy the "simple" or the "advanced" template and rename it ("mytheme", for example). After you copy the template, you need to change the red sections marked below to "mytheme". This is needed so that themes don't conflict; in other words, it gives the theme a unique name. Then just alter the HTML code as you see fit, but notice some elements need to be there, so check the documents below about each function. Also remember that your custom theme needs to be located in TinyMCE's "themes" directory.

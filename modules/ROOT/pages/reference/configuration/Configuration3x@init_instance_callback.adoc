@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = init_instance_callback
 
 This option should contain a function name to be executed each time a editor instance is initialized. The format of this function is: `initInstance(inst)` where `inst` is the editor instance object reference.

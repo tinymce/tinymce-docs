@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = extended_valid_elements
 
 This option is very similar to https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_elements/[valid_elements]. The only difference between this option and https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_elements[valid_elements] is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid.

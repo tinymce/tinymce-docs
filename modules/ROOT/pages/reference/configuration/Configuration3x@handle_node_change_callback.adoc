@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = handle_node_change_callback
 
 Gets called once the cursor/selection in a TinyMCE instance changes. This is useful to enable/disable button controls depending on where the users are and what they have selected. This method gets executed a lot and should be as performance tuned as possible.

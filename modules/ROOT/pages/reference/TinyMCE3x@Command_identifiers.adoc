@@ -1,3 +1,5 @@
+:rootDir: ./../
+:partialsDir: {rootDir}partials/
 = Command identifiers
 
 TinyMCE uses commands to perform RTE actions, such as making the selected text bold or italic. There are two major types of commands, "global commands" and "instance commands". Global commands are independent of any editor instance (focusing a specific editor or adding a new editor to a textarea, for example). Instance commands are for a specific editor instance (making the current selection in a specific editor bold, for example).

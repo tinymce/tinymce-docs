@@ -1,3 +1,5 @@
+:rootDir: ./../../
+:partialsDir: {rootDir}partials/
 = onchange_callback
 
 This option should contain a function name to be executed each time content is modified by TinyMCE. This function is called each time an undo level is added to TinyMCE. The format of this function is: `onchange(inst)`, where `inst` is the editor instance object reference.

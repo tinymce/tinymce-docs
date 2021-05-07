@@ -5,7 +5,7 @@ This option gives you the ability to disable the resize handle or set it to resi
 When resizing is enabled, the editor can be resized by either:
 
 * Clicking and dragging the resize handle.
-* Focussing the resize handle, and using the arrow keys. The **Up Arrow** and **Left Arrow** keys will make the editor smaller, and the **Down Arrow** and **Right Arrow** keys will make the editor larger.
+* Focusing the resize handle, and using the arrow keys. The **Up Arrow** and **Left Arrow** keys will make the editor smaller, and the **Down Arrow** and **Right Arrow** keys will make the editor larger.
 
 ### Disabling the resize
 

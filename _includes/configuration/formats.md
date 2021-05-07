@@ -118,10 +118,10 @@ tinymce.init({
   selector: 'textarea',
   formats: {
     // Changes the alignment buttons to add a class to each of the matching selector elements
-    alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'left' },
-    aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'center' },
-    alignright: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'right' },
-    alignjustify: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'full' }
+    alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'left' },
+    aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'center' },
+    alignright: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'right' },
+    alignjustify: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'full' }
   }
 });
 ```
@@ -272,7 +272,7 @@ tinymce.init({
   formats: {
     removeformat: [
       // Configures `clear formatting` to remove specified elements regardless of its attributes
-      { selector: 'b,strong,em,i,font,u,strike', remove: 'all' },
+      { selector: 'b,strong,em,i,font,u,strike,s', remove: 'all' },
 
       // Configures `clear formatting` to remove the class red from spans and if the element then becomes empty i.e has no attributes it gets removed
       { selector: 'span', classes: 'red', remove: 'empty' },
@@ -308,7 +308,7 @@ tinymce.init({
         deep: true
       },
       {
-        selector: 'a,b,strong,em,i,font,u,strike,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins',
+        selector: 'b,strong,em,i,font,u,strike,s,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins,small',
         remove: 'all',
         split: true,
         expand: false,
@@ -388,10 +388,10 @@ This example overrides some of the built-in formats and tells {{site.productname
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   formats: {
-    alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'left' },
-    aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'center' },
-    alignright: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'right' },
-    alignjustify: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'full' },
+    alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'left' },
+    aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'center' },
+    alignright: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'right' },
+    alignjustify: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'full' },
     bold: { inline: 'span', classes: 'bold' },
     italic: { inline: 'span', classes: 'italic' },
     underline: { inline: 'span', classes: 'underline', exact: true },
@@ -441,7 +441,7 @@ tinymce.init({
   formats: {
     removeformat: [
       {
-        selector: 'b,strong,em,i,font,u,strike,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins',
+        selector: 'b,strong,em,i,font,u,strike,s,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins,small',
         remove: 'all',
         split: true,
         block_expand: true,

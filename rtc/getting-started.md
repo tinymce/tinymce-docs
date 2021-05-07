@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Getting started with RTC
-title_nav: Getting started
+title: Getting started with Real-Time Collaboration (RTC)
+title_nav: Getting started with RTC
 description: Getting started with RTC
 keywords: rtc
 ---
 
-{% assign beta_feature = "The RTC plugin" %}
+{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
 {% assign pre-release_type = "Open Beta" %}
 {% include misc/beta-note.md %}
 
@@ -16,14 +16,13 @@ keywords: rtc
 * A JSON Web Token (JWT) key generated at [{{site.accountpageurl}}]({{site.accountpageurl}}). Temporarily store the generated keys for use in the following procedure.
 * A [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) for your web server. RTC makes use of [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) which is only available in secure contexts.
 
-## Basic RTC setup
+## Basic Real-Time Collaboration (RTC) setup
 
 The following example assumes you are familiar with integrating TinyMCE; if you are new TinyMCE user please follow the [basic setup guide]({{site.baseurl}}/general-configuration-guide/basic-setup/) first.
 
-This example shows how to get the RTC plugin up and running using hardcoded values. For a production setup, the document ID and secret would be retrieved from your server. This example also assumes that a JWT provider endpoint exists at '/jwt'. For information on setting up a JWT endpoint, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
+This example shows how to get the Real-Time Collaboration (RTC) plugin up and running using hardcoded values. For a production setup, the document ID and secret would be retrieved from your server. This example also assumes that a JWT provider endpoint exists at '/jwt'. For information on setting up a JWT endpoint, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
 
 ```js
-
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',

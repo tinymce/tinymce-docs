@@ -27,7 +27,8 @@ NOTE: To view your latest CSS changes you may have to clear your browsers tempor
 
 To apply different styles (font-sizes, font-family etc.) to your editor you could add the following styles to jscripts/tiny_mce/themes/advanced/skins/+++<your skin="" name="">+++/content.css+++</your>+++
 
-```css
+[source,css]
+----
 /* Custom main font size, family and color */
 body,p,div,li,ol,dl,td,em,pre,td{
   font-size: 11px;
@@ -43,13 +44,14 @@ h3 {font-size:16px; }
 h4 {font-size:14px; }
 h5 {font-size:12px; }
 h6 {font-size:11px; }
-```
+----
 
 To change the toolbar background colour, edit jscripts/tiny_mce/themes/advanced/skins/+++<your skin="" name="">+++/ui.css+++</your>+++
 
-`css
+[source,css]
+----
 /* Containers */
 .<your skin name>Skin table {background:#FBE6ED}
-`
+----
 
 xref:reference/configuration/skin.adoc[Skin configuration option]

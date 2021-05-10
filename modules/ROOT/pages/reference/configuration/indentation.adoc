@@ -7,13 +7,14 @@
 This option allows specification of the indentation level for indent/outdent buttons in the UI. This defaults to 30px but can be any value.
 
 [[example-of-usage-of-the-indentation-option]]
-== Example of usage of the indentation option: 
+== Example of usage of the indentation option:
 anchor:exampleofusageoftheindentationoption[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   ...
   indentation : '20pt'
 });
 
-```
+----

@@ -9,10 +9,11 @@ The emotions plugin is able to insert smiley images into the TinyMCE editable ar
 . Add the emotions button name to button list, example: theme_advanced_buttons3_add : "emotions".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -20,10 +21,10 @@ tinyMCE.init({
   theme_advanced_buttons3_add : "emotions"
 });
 
-```
+----
 
 [[copyright-notice]]
-== Copyright notice 
+== Copyright notice
 anchor:copyrightnotice[historical anchor]
 
 These emotions were taken from Mozilla Thunderbird. I hope they don't get angry if I use them here; after all this is an open source project as well, and I really love their product.

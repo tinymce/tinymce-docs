@@ -10,7 +10,8 @@ This option enables you to execute custom content set up logic when the editor i
 == Example of usage of the setupcontent_callback option:
 anchor:exampleofusageofthesetupcontent_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomSetupContent(editor_id, body, doc) {
   body.innerHTML = "my new content" + body.innerHTML;
 }
@@ -18,4 +19,4 @@ function myCustomSetupContent(editor_id, body, doc) {
 tinyMCE.init({
   setupcontent_callback : "myCustomSetupContent"
 });
-```
+----

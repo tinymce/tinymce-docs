@@ -16,9 +16,10 @@ Each of these layout managers have different options and can be configured in di
 == Example of usage of the theme_advanced_layout_manager option:
 anchor:exampleofusageofthetheme_advanced_layout_manageroption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_layout_manager : "RowLayout"
 });
-+`
+----

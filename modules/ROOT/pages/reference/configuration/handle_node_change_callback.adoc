@@ -5,9 +5,9 @@
 Gets called once the cursor/selection in a TinyMCE instance changes. This is useful to enable/disable button controls depending on where the users are and what they have selected. This method gets executed a lot and should be as performance tuned as possible.
 
 [[callback-arguments]]
-== Callback arguments 
+== Callback arguments
 anchor:callbackarguments[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -31,10 +31,11 @@ anchor:callbackarguments[historical anchor]
 |===
 
 [[example-of-usage-of-the-handle_node_change_callback-option]]
-== Example of usage of the handle_node_change_callback option 
+== Example of usage of the handle_node_change_callback option
 anchor:exampleofusageofthehandle_node_change_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   ...
   handle_node_change_callback : "nodeChangeHandler"
@@ -44,4 +45,4 @@ function nodeChangeHandler(editor_id, node, undo_index, undo_levels, visual_aid,
    // Debug to Firebug in FF
    console.debug(node.nodeName);
 }
-```
+----

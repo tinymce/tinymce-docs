@@ -10,12 +10,13 @@ Change in 3.0: The way that relative URLs are calculated has changed since the 2
 == Example of usage of the external_image_list_url option:
 anchor:exampleofusageoftheexternal_image_list_urloption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   external_image_list_url : "myexternallist.js"
 });
-+`
+----
 
 NOTE: If utilizing the xref:reference/configuration/document_base_url.adoc[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
@@ -23,19 +24,21 @@ NOTE: If utilizing the xref:reference/configuration/document_base_url.adoc[docum
 == Example of a external image list file: (myexternallist.js)
 anchor:exampleofaexternalimagelistfilemyexternallistjs[historical anchor]
 
-`js
+[source,js]
+----
 var tinyMCEImageList = new Array(
   // Name, URL
   ["Logo 1", "logo.jpg"],
   ["Logo 2 Over", "logo_over.jpg"]
 );
-`
+----
 
 [[example-of-a-php-generated-image-list-file]]
 == Example of a PHP-generated image list file
 anchor:exampleofaphp-generatedimagelistfile[historical anchor]
 
-```php
+[source,php]
+----
 <?php // this must be the very first line in your PHP file!
 
 // You can't simply echo everything right away because we need to set some headers first!
@@ -87,6 +90,6 @@ header('expires: 0'); // i.e. contents have already expired
 echo $output;
 
 ?>
-```
+----
 
 Put this PHP code into your PHP file (the one you set as resource in the `external_image_list_url` option) and your browser should receive a valid JavaScript file (which of course hasn't got the typical ".js" file extension).

@@ -5,12 +5,13 @@
 This option enables you to disable/enable the usage of keyboard shortcuts for undo/redo. This feature is enabled by default. Keyboard shortcuts are Ctrl+Z for undo, Ctrl+Y for redo.
 
 [[example-of-usage-of-the-custom_undo_redo_keyboard_shortcuts-option]]
-== Example of usage of the custom_undo_redo_keyboard_shortcuts option: 
+== Example of usage of the custom_undo_redo_keyboard_shortcuts option:
 anchor:exampleofusageofthecustom_undo_redo_keyboard_shortcutsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   custom_undo_redo_keyboard_shortcuts : false
 });
-+`
+----

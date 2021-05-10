@@ -6,21 +6,14 @@ This is a more advanced hr dialog contributed by Michael Keck. This hr plugin su
 
 . Copy the advhr directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
 . Add plugin to TinyMCE plugin option list example: plugins : "advhr".
-. {blank}
-+
-[cols=4*]
-|===
-| Add this "hr[class
-| width
-| size
-| noshade]" to extended_valid_elements option.
-|===
+. Add this "hr[class|width|size|noshade]" to extended_valid_elements option.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -29,4 +22,4 @@ tinyMCE.init({
   extended_valid_elements : "hr[class|width|size|noshade]"
 });
 
-```
+----

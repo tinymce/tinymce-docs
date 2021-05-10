@@ -7,20 +7,21 @@ Normalizes behaviour with IE that produces links when you simply type links in t
 Feature contributed by Ephox.
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Copy the autolink directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
 . Add plugin to TinyMCE plugin option list example: plugins : "autolink".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "autolink"
 });
-`
+----

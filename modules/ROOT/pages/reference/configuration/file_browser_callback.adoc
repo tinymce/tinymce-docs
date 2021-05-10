@@ -10,7 +10,8 @@ This function is executed each time a user clicks on the "browse" buttons in var
 == Example of usage of the file_browser_callback option:
 anchor:exampleofusageofthefile_browser_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomFileBrowser(field_name, url, type, win) {
   // Do custom browser logic
   win.document.forms[0].elements[field_name].value = 'my browser value';
@@ -19,7 +20,7 @@ function myCustomFileBrowser(field_name, url, type, win) {
 tinyMCE.init({
   file_browser_callback : "myCustomFileBrowser"
 });
-```
+----
 
 [[howto-for-this-option]]
 == HowTo for this Option

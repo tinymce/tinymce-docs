@@ -3,7 +3,7 @@
 = mode
 
 This option specifies how elements are converted into TinyMCE WYSIWYG editor instances. This option can be set to any of the values below.
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -26,12 +26,14 @@ NOTE: The textarea_trigger option is deprecated. We strongly recommend you to us
 == Example of usage of the mode option:
 anchor:exampleofusageofthemodeoption[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   mode : "exact",
   elements : "elm1,elm2"
 });
-`
-`+html
+----
+[source,html]
+----
 <textarea id="elm1" ...>
-+`
+----

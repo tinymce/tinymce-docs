@@ -7,12 +7,13 @@
 This option enables you to disable/enable the creation of paragraphs on return/enter in Mozilla/Firefox. The default value of this option is true.
 
 [[example-of-usage-of-the-force_p_newlines-option]]
-== Example of usage of the force_p_newlines option: 
+== Example of usage of the force_p_newlines option:
 anchor:exampleofusageoftheforce_p_newlinesoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   force_p_newlines : true
 });
-+`
+----

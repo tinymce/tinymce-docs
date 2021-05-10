@@ -14,13 +14,14 @@ When creating a skin, additional variants may also be created, by adding ui_+++<
 == Example of usage of the skin option:
 anchor:exampleofusageoftheskinoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme : "advanced",
   skin : "o2k7",
   skin_variant : "silver"
 });
-+`
+----
 
 Also see: xref:customization/Creating_a_skin.adoc[Creating_Skin], xref:reference/configuration/skin.adoc[skin]

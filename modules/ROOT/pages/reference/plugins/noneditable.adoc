@@ -5,17 +5,18 @@
 Adds non editable elements support for MSIE and Mozilla/FF. Any element with the "mceNonEditable" class will be blocked from modifications and treated as a single character. This class name is configurable using the "noneditable_noneditable_class". Any elements with the MSIE specific attribute "contenteditable" will be converted into classes instead.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "noneditable",
   noneditable_leave_contenteditable : true
 });
-`
+----
 
 HTML contents example:
 
@@ -23,34 +24,37 @@ When you have existing classes that cannot be removed, you may combine MCE class
 
 Non editable div example:
 
-```js
+[source,js]
+----
 
 Contents
 
-```
+----
 
 Editable div example:
 
-```html
+[source,html]
+----
 
 Contents
 
-```
+----
 
 Nested editable elements are not currently supported. You would not be able to edit the cell contents in the following table:
 
-```html
+[source,html]
+----
 
 |===
 | Contents
 |===
 
-```
+----
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 

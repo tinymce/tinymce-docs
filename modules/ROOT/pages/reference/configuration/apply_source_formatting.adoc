@@ -11,12 +11,13 @@ With this option set to *true*, line break characters are placed after and befor
 With this option set to *false*, the line breaks are stripped from the HTML source.
 
 [[example-of-usage-of-the-apply_source_formatting-option]]
-== Example of usage of the apply_source_formatting option: 
+== Example of usage of the apply_source_formatting option:
 anchor:exampleofusageoftheapply_source_formattingoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   apply_source_formatting : true
 });
-+`
+----

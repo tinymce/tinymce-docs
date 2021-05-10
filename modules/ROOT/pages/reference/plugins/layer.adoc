@@ -12,14 +12,15 @@ Installation Instructions
 . Add the insertlayer,moveforward,movebackward,absolute button names to button list, example: theme_advanced_buttons3_add : "insertlayer,moveforward,movebackward,absolute".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "layer",
   theme_advanced_buttons3_add : "insertlayer,moveforward,movebackward,absolute"
 });
-`
+----

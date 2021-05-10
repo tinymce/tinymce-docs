@@ -5,16 +5,16 @@
 This plugin adds fullpage editing support. This enables you to edit whole documents with both head and body.
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Add plugin to TinyMCE plugin option list example: `plugins : "fullpage"`.
 . Add the fullpage button name to button list, example: `theme_advanced_buttons3_add : "fullpage"`.
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -78,10 +78,11 @@ anchor:pluginoptions[historical anchor]
 |===
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -93,4 +94,4 @@ tinyMCE.init({
   fullpage_default_title : "My document title"
 });
 
-```
+----

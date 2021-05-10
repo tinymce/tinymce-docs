@@ -10,12 +10,13 @@ If you set this option to true, TinyMCE will perform a HTML cleanup call when th
 == Example of usage of the cleanup_on_startup option:
 anchor:exampleofusageofthecleanup_on_startupoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   cleanup_on_startup : true
 });
-+`
+----
 
 [[see-also]]
 == See also

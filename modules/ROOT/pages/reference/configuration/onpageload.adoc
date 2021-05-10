@@ -5,10 +5,11 @@
 This option enables you to specify a function name to be executed when the page is loaded but before the TinyMCE instances are created.
 
 [[example-of-usage-of-the-onpageload-option]]
-== Example of usage of the onpageload option: 
+== Example of usage of the onpageload option:
 anchor:exampleofusageoftheonpageloadoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomOnPageLoad() {
   alert("We are nearly ready to rumble!!");
 }
@@ -17,4 +18,4 @@ tinyMCE.init({
   ...
   onpageload : "myCustomOnPageLoad"
 });
-```
+----

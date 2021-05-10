@@ -7,10 +7,11 @@
 This option enables you to add link:/[events] to editor instances before they get rendered.
 
 [[example-of-usage-of-the-setup-option]]
-== Example of usage of the setup option: 
+== Example of usage of the setup option:
 anchor:exampleofusageofthesetupoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
    ...
    setup : function(ed) {
@@ -19,4 +20,4 @@ tinyMCE.init({
       });
    }
 });
-+`
+----

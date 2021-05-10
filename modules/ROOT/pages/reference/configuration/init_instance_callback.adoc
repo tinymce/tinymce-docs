@@ -8,7 +8,8 @@ This option should contain a function name to be executed each time a editor ins
 == Example of usage of the init_instance_callback option:
 anchor:exampleofusageoftheinit_instance_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomInitInstance(inst) {
   alert("Editor: " + inst.editorId + " is now initialized.");
 }
@@ -17,6 +18,6 @@ tinyMCE.init({
   ...
   init_instance_callback : "myCustomInitInstance"
 });
-```
+----
 
 Also see the the xref:reference/configuration/setup.adoc[setup callback option] it enabled you to bind events before the editor instance is initialized.

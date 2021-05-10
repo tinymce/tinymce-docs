@@ -5,9 +5,9 @@
 This plugin adds a button for inserting nonbreaking space entities &nbsp; at the current caret location.
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -19,17 +19,18 @@ anchor:pluginoptions[historical anchor]
 |===
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Add plugin to TinyMCE plugin option list example: plugins : "nonbreaking".
 . Add the nonbreaking button name to button list, example: theme_advanced_buttons3_add : "nonbreaking".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -37,4 +38,4 @@ tinyMCE.init({
   theme_advanced_buttons3_add : "nonbreaking",
   nonbreaking_force_tab : true
 });
-`
+----

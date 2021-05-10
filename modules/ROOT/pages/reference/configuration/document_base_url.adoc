@@ -14,8 +14,9 @@ Changed in 3.0: This may affect how other paths are interpreted, such as calls t
 == Example of usage of the document_base_url option:
 anchor:exampleofusageofthedocument_base_urloption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   document_base_url : "http://www.site.com/path1/"
 });
-+`
+----

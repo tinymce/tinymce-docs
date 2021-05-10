@@ -9,9 +9,9 @@ The valid_children enables you to control what child elements can exists within 
 The syntax for this option is a comma separated list of parents with elements that should be added/removed as valid children for that element. So for example "+body[style]" would add style as a valid child of body.
 
 [[control-characters]]
-== Control characters: 
+== Control characters:
 anchor:controlcharacters[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -24,9 +24,10 @@ anchor:controlcharacters[historical anchor]
 
 This example shows you how to add style as a valid child of body and remove div as a valid child. It also forces only strong and a and text contents to be valid children of P.
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   valid_children : "+body[style],-body[div],p[strong|a|#text]"
 });
-+`
+----

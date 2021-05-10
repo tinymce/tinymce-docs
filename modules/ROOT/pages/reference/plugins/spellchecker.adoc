@@ -15,7 +15,8 @@ An unofficial http://achorniy.wordpress.com/2009/08/11/tinymce-spellchecker-in-j
 * Serverside technology
 * If you wish to use the PHP integrated PSpell you need to have PSpell/Aspell installed on the server, as well as the dictionaries you wish to use and have this compiled with PHP. Read more about this on the PHP website or use Google to learn more. Use the following script to test that PSpell is working correctly before trying the TinyMCE spellchecker, as the PSpell error messages aren't optimal.
 
-`php
+[source,php]
+----
 <?php
 if (function_exists('pspell_new')) {
   $pspell_link = pspell_new("en");
@@ -29,7 +30,7 @@ if (function_exists('pspell_new')) {
   echo "pspell is not installed";
 }
 ?>
-`
+----
 
 * If you wish to use the exec version, that is you have PSpell/ASpell installed on the server, but not compiled with PHP, you need to make sure the correct dictionaries are installed and working.
 * If you wish to use the Google version, make sure that your PHP version is above 4.3.0 or that you have the PHP http://nl3.php.net/curl/[CURL] extension installed and enabled (IIS:php_curl.dll). This is required since the Google Spell Checking service is only available through SSL/HTTPS. Multibyte string function extensions also need to be enabled (IIS:php_mbstring.dll).
@@ -37,7 +38,7 @@ if (function_exists('pspell_new')) {
 * Access to the server to edit configuration and uploading files.
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Download the latest version of the TinyMCE Spellchecker plugin, available on our https://www.tiny.cloud/get-tiny/[download page].
@@ -49,10 +50,11 @@ anchor:installationinstructions[historical anchor]
 . Add "spellchecker" as a button some where on your toolbar.
 
 [[google-spellchecker-configuration-example]]
-== Google Spellchecker configuration example 
+== Google Spellchecker configuration example
 anchor:googlespellcheckerconfigurationexample[historical anchor]
 
-```js
+[source,js]
+----
 // General settings
 $config['general.engine'] = 'GoogleSpell';
 //$config['general.engine'] = 'PSpell';
@@ -72,14 +74,14 @@ $config['PSpellShell.tmp'] = '/tmp';
 // Windows PSpellShell settings
 //$config['PSpellShell.aspell'] = 'aspell.exe';
 //$config['PSpellShell.tmp'] = 'c:/temp';
-```
+----
 
 [[spellchecker-engines]]
-== Spellchecker engines 
+== Spellchecker engines
 anchor:spellcheckerengines[historical anchor]
 
 There are 3 types of spellchecker implementations, that needs to be required/included individually.
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -94,9 +96,9 @@ There are 3 types of spellchecker implementations, that needs to be required/inc
 |===
 
 [[spellchecker-php-options]]
-== Spellchecker PHP options 
+== Spellchecker PHP options
 anchor:spellcheckerphpoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -120,10 +122,11 @@ anchor:spellcheckerphpoptions[historical anchor]
 |===
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -131,12 +134,12 @@ tinyMCE.init({
   theme_advanced_buttons3_add : "spellchecker",
   spellchecker_languages : "+English=en,Swedish=sv"
 });
-`
+----
 
 [[plugin-javascript-options]]
-== Plugin JavaScript options 
+== Plugin JavaScript options
 anchor:pluginjavascriptoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary |
 

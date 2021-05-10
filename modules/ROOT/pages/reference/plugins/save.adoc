@@ -5,16 +5,16 @@
 This plugin adds a save button to TinyMCE this save button will submit the form that the editor is within.
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Add plugin to TinyMCE plugin option list example: plugins : "save".
 . Add the save and cancel button names to button list, example: theme_advanced_buttons3_add : "save,cancel".
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -29,10 +29,11 @@ anchor:pluginoptions[historical anchor]
 |===
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -41,4 +42,4 @@ tinyMCE.init({
   save_enablewhendirty : true,
   save_onsavecallback : "mysave"
 });
-`
+----

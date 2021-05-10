@@ -7,12 +7,13 @@
 This option enables you to specify a minimum height for the editor.
 
 [[example-of-usage-of-the-theme_advanced_resizing_min_height-option]]
-== Example of usage of the theme_advanced_resizing_min_height option: 
+== Example of usage of the theme_advanced_resizing_min_height option:
 anchor:exampleofusageofthetheme_advanced_resizing_min_heightoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_resizing_min_height : 240
 });
-+`
+----

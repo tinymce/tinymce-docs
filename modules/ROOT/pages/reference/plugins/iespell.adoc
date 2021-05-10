@@ -9,7 +9,7 @@ You can download the IESpell ActiveX control from here.
 http://www.iespell.com/download.php[\http://www.iespell.com/download.php]
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Copy the iespell directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
@@ -17,14 +17,15 @@ anchor:installationinstructions[historical anchor]
 . Add the iespell button name to button list, example: theme_advanced_buttons3_add : "iespell".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "iespell",
   theme_advanced_buttons3_add : "iespell"
 });
-`
+----

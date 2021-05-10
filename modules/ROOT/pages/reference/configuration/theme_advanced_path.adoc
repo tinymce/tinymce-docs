@@ -8,9 +8,10 @@ This option gives you the ability to enable/disable the element path. This optio
 == Example of usage of the theme_advanced_path option:
 anchor:exampleofusageofthetheme_advanced_pathoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_path : true
 });
-+`
+----

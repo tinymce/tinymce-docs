@@ -191,17 +191,19 @@ anchor:toopenwindow[historical anchor]
 
 * Old:
 
-`js
+[source,js]
+----
 var params = new Array();
 params['file']   = '../../plugins/plugin_name/file.html?param=' + tinyMCE.getParam("pluginName_param_name");
 params['width']  = 640;
 params['height'] = 511;
 tinyMCE.openWindow(params, {editor_id : editor_id, inline : "yes"});
-`
+----
 
 * New:
 
-`js
+[source,js]
+----
 ed.windowManager.open({
   url : this.url + 'file.html?param=' + ed.getParam("pluginName_param_name"),
   width : 640 + parseInt(ed.getLang('amadeo_draft.delta_width', 0)),
@@ -209,7 +211,7 @@ ed.windowManager.open({
   movable : true,
   inline : true
 });
-`
+----
 
 NOTE: To get access to the plugin url either register command handler in init function, or store the 'url' variable value in this.url
 

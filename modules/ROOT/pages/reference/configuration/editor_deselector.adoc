@@ -9,27 +9,30 @@
 |===
 
 [[example-of-usage-of-the-editor_deselector-option]]
-== Example of usage of the editor_deselector option: 
+== Example of usage of the editor_deselector option:
 anchor:exampleofusageoftheeditor_deselectoroption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   editor_deselector : "mceNoEditor"
 });
-+`
+----
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   editor_deselector : /(NoEditor|NoRichText)/
 });
-+`
+----
 
 [[example-of-usage-in-the-html]]
-== Example of usage in the HTML: 
+== Example of usage in the HTML:
 anchor:exampleofusageinthehtml[historical anchor]
 
-```html+++<textarea id="myarea1" class="mceNoEditor">+++This will NOT be an editor.+++</textarea>++++++<textarea id="myarea2">+++This will be an editor.+++</textarea>+++
-
-```
+[source,html]
+----
+<textarea id="myarea1" class="mceNoEditor">This will NOT be an editor.</textarea><textarea id="myarea2">This will be an editor.</textarea>
+----

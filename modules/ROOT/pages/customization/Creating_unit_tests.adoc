@@ -3,13 +3,13 @@
 = Creating unit tests
 
 [[why-write-tests]]
-== Why Write Tests? 
+== Why Write Tests?
 anchor:whywritetests[historical anchor]
 
 Writing automated tests for any plugins or patches you develop ensures that the code works as intended and that future changes don't unintentionally cause bugs. While testing can be done manually, taking the time to write good automated tests saves a lot of time and effort in testing in the future. The tests in the main TinyMCE codebase are automatically run after every change is pushed into the git repository (http://tinymce.ephox.com/test-results[view the results]).
 
 [[running-existing-tests]]
-== Running Existing Tests 
+== Running Existing Tests
 anchor:runningexistingtests[historical anchor]
 
 If you download the https://www.tiny.cloud/get-tiny/[development package] for TinyMCE, it will contain a tests directory with all the tests for TinyMCE. Tests are grouped into separate HTML files for different areas of functionality. You can open any test file in a browser and the tests in that file will automatically run, showing you the results. If the tests pass you'll see a green bar but if any test fails the bar will be red. Refreshing the page will rerun the tests.
@@ -19,14 +19,15 @@ Open the `index.html` file to see a list of all the test files so you can easily
 The http://tinymce.moxiecode.com/js/tinymce/tests/[tests for the latest release] can also be run online.
 
 [[writing-tests]]
-== Writing Tests 
+== Writing Tests
 anchor:writingtests[historical anchor]
 
 Tests for TinyMCE are written using the http://docs.jquery.com/QUnit[QUnit] testing framework. The QUnit documentation is a very nice, short guide to using QUnit. You can also look at the existing tests for TinyMCE for examples of how to do things.
 
 One very useful tip is that if you are using a full instance of TinyMCE in your tests, you need to ensure it finishes loading before QUnit starts running the tests. This is done by calling QUnit.setup(); in the init_instance_callback function:
 
-`+js
+[source,js]
+----
 tinyMCE.init({
 ...
 init_instance_callback : function(ed) {
@@ -34,6 +35,6 @@ init_instance_callback : function(ed) {
 }
 ...
 });
-+`
+----
 
 Finally, it's worth knowing that the http://github.com/tinymce/tinymce/blob/master/tests/js/utils.js[tests/js/utils.js] file is planned to become a useful collection of test utilities for TinyMCE so consider putting any functions which are likely to be useful to multiple test pages in that file.

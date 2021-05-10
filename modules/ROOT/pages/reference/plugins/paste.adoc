@@ -8,10 +8,11 @@ This plugin was completely rewritten for TinyMCE 3.2.3. The new version will aut
 . Add the button names to button list, example: theme_advanced_buttons3_add : "pastetext,pasteword,selectall".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -29,12 +30,12 @@ tinyMCE.init({
     o.node.innerHTML = o.node.innerHTML + "\n-: CLEANED :-";
   }
 });
-`
+----
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 

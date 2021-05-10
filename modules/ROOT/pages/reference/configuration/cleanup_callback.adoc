@@ -10,7 +10,8 @@ This option enables you to add custom cleanup logic to TinyMCE. This function is
 == Example of usage of the cleanup_callback option
 anchor:exampleofusageofthecleanup_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomCleanup(type, value) {
   switch (type) {
     case "get_from_editor":
@@ -49,4 +50,4 @@ return value;
 tinyMCE.init({
   cleanup_callback : "myCustomCleanup"
 });
-```
+----

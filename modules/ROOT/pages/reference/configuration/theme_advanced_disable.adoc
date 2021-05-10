@@ -10,8 +10,9 @@ A complete reference of all built in buttons and controls can be found in the xr
 == Example of usage of the theme_advanced_disable option:
 anchor:exampleofusageofthetheme_advanced_disableoption[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme_advanced_disable : "bold,italic"
 });
-`
+----

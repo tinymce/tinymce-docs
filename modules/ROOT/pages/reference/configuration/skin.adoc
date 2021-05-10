@@ -10,11 +10,12 @@ This option enables you to specify what skin you want to use with your theme. A 
 == Example of usage of the skin option:
 anchor:exampleofusageoftheskinoption[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   skin : "o2k7"
 });
-`
+----
 
 Also see xref:customization/Creating_a_skin.adoc[Creating_a_Skin]

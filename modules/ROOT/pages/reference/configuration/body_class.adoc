@@ -12,18 +12,20 @@ anchor:examplesofusageofthebody_classoption[historical anchor]
 
 This will add the same class to all editors that gets created by the init call.
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   body_class : "my_class"
 });
-+`
+----
 
 This will set specific classes on the bodies of specific editors.
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   body_class : "elm1=my_class,elm2=my_class"
 });
-+`
+----

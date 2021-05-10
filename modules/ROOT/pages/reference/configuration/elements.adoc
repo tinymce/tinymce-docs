@@ -8,9 +8,10 @@ This option should contain a comma separated list of element IDs to convert into
 == Example of usage of the elements option:
 anchor:exampleofusageoftheelementsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   elements : "elm1,elm2"
 });
-+`
+----

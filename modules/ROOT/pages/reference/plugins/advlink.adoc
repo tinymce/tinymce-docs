@@ -5,16 +5,16 @@
 This is a more advanced link dialog mostly based on code contributed by Michael Keck. This link plugin supports popup windows and targets.
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Copy the advlink directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
 . Add plugin to TinyMCE plugin option list example: plugins : "advlink".
 
 [[advlink-plugin-options]]
-== Advlink plugin options 
+== Advlink plugin options
 anchor:advlinkpluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -23,14 +23,15 @@ anchor:advlinkpluginoptions[historical anchor]
 |===
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "advlink"
 });
 
-```
+----

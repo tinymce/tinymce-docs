@@ -8,7 +8,7 @@ This option gives you the ability to specify what elements are valid inside diff
 
 [[format]]
 == Format:
-
+[cols="2,3",]
 |===
 | Name | Summary |
 
@@ -69,9 +69,10 @@ This option gives you the ability to specify what elements are valid inside diff
 == Example of usage of the valid_child_elements option:
 anchor:exampleofusageofthevalid_child_elementsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   valid_child_elements : "h1/h2/h3/h4/h5/h6/a[%itrans_na],table[thead|tbody|tfoot|tr|td],strong/b/p/div/em/i/td[%itrans|#text],body[%btrans|#text]"
 });
-+`
+----

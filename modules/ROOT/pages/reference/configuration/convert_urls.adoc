@@ -8,9 +8,10 @@ This option enables you to control whether TinyMCE is to be clever and restore U
 == Example of usage of the convert_urls option:
 anchor:exampleofusageoftheconvert_urlsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   convert_urls : false
 });
-+`
+----

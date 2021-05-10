@@ -10,9 +10,10 @@ Choosing the "external" location adds the toolbar to a DIV element and sets the 
 == Example of usage of the theme_advanced_toolbar_location option:
 anchor:exampleofusageofthetheme_advanced_toolbar_locationoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_toolbar_location : "bottom"
 });
-+`
+----

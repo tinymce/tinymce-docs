@@ -8,9 +8,10 @@ This option allows specification of a comma separated list of style values that 
 == Example of usage of the font_size_style_values option:
 anchor:exampleofusageofthefont_size_style_valuesoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   font_size_style_values : "xx-small,x-small,small,medium,large,x-large,xx-large"
 });
-+`
+----

@@ -7,12 +7,13 @@ Enable the inline styles feature by setting this option to true. Most of the att
 This option is enabled by default as of 3.0a1.
 
 [[example-of-usage-of-the-inline_styles-option]]
-== Example of usage of the inline_styles option: 
+== Example of usage of the inline_styles option:
 anchor:exampleofusageoftheinline_stylesoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   inline_styles : true
 });
-+`
+----

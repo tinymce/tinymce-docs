@@ -10,7 +10,8 @@ This option enables you to add custom logic to be executed when the contents are
 == Example of usage of the save_callback option:
 anchor:exampleofusageofthesave_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomSaveContent(element_id, html, body) {
   // Do some custom HTML cleanup
   html = html.replace(/a/g,'b');
@@ -21,4 +22,4 @@ return html;
 tinyMCE.init({
   save_callback : "myCustomSaveContent"
 });
-```
+----

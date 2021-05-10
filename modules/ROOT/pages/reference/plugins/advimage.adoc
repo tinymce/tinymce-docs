@@ -8,32 +8,18 @@ Installation Instructions
 
 . Copy the advimage directory to the plugins directory of TinyMCE (/jscripts/tiny_mce/plugins).
 . Add plugin to TinyMCE plugin option list example: plugins : "advimage".
-. {blank}
-+
-[cols=11*]
-|===
-| Add this "img[!src
-| border:0
-| alt
-| title
-| width
-| height
-| style]a[name
-| href
-| target
-| title
-| onclick]" to extended_valid_elements option.
-|===
+. Add this "img[!src|border:0|alt|title|width|height|style]a[name|href|target|title|onclick]" to extended_valid_elements option.
 
 [[advimage-plugin-options]]
 == Advimage plugin options
 anchor:advimagepluginoptions[historical anchor]
 
+[cols="2,3",]
 |===
 | Name | Summary
 
 | xref:reference/configuration/theme_advanced_styles.adoc[theme_advanced_styles]
-| This option should contain a semicolon separated list of class titles and class names separated by =. The titles are the ones that get presented to the user in the styles drop down list and and the class names is the classes that gets inserted.
+| This option should contain a semicolon separated list of class titles and class names separated by =. The titles are the ones that get presented to the user in the styles drop down list and the class names is the classes that gets inserted.
 
 | advimage_update_dimensions_onchange
 | This option enables you to control if the image dimensions should be updated with new data if the image src field is changed. This option is enabled by default.
@@ -43,10 +29,11 @@ anchor:advimagepluginoptions[historical anchor]
 == Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "advimage"
 });
-`
+----

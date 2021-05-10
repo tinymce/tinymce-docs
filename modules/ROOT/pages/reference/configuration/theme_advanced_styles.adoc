@@ -8,9 +8,10 @@ This option should contain a semicolon separated list of class titles and class 
 == Example of usage of the theme_advanced_styles option:
 anchor:exampleofusageofthetheme_advanced_stylesoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Table Row=tableRow1"
 });
-+`
+----

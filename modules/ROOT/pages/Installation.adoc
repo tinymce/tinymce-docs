@@ -44,19 +44,21 @@ You should extract TinyMCE in your `wwwroot` or site domain root folder.
 == Extract example using a shell
 anchor:extractexampleusingashell[historical anchor]
 
-```
+[source]
+----
 
  $ cd wwwroot
  $ gzip -d tinymce_1_44.tar.gz
  $ tar xvf tinymce_1_44.tar
 
-```
+----
 
 [[a-folder-structure-looking-like-this-is-created]]
 == A folder structure looking like this is created
 anchor:afolderstructurelookinglikethisiscreated[historical anchor]
 
-```
+[source]
+----
 
 ....
 /tinymce/
@@ -73,7 +75,7 @@ anchor:afolderstructurelookinglikethisiscreated[historical anchor]
 /tinymce/jscripts/tiny_mce/themes/advanced/
 /tinymce/jscripts/tiny_mce/themes/default/
 /tinymce/jscripts/tiny_mce/themes/simple/</pre>
-```
+----
 
 ## Making changes on your web site
 
@@ -98,25 +100,28 @@ Make sure you read the 2 html comments (starting with `
 
 
 </html>
-```
+[source]
+----
 
 The Save button in this example sends the content of the textarea to the show.php page that will simply display it to you if you make it like this (of course you can adapt it to your needs to write the content to a file or database) :
 
-```php
+----php
 
-```
+[source]
+----
 
 ## Same example using some more buttons
 
 Just change the following code :
 
-```html
+----html
 
-```
+[source]
+----
 
 which should be turned into :
 
-```html
+----html
 
 ```
 

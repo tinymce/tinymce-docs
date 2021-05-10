@@ -44,7 +44,8 @@ anchor:pluginexamplesource[historical anchor]
 
 Replace all instances of "Example" with your own plugin name
 
-```js
+[source,js]
+----
 (function() {
   // Load plugin specific language pack
   tinymce.PluginManager.requireLangPack('example');
@@ -120,7 +121,7 @@ getInfo : function() {
 // Register plugin
   tinymce.PluginManager.add('example', tinymce.plugins.ExamplePlugin);
 })();
-```
+----
 
 [[troubleshooting]]
 == Troubleshooting

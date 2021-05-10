@@ -5,10 +5,11 @@
 Adds CSS style editing support to TinyMCE, this will enable you to edit almost any CSS style property in a visual way. You simply need to load the "style" plugin and add the control "styleprops" to any toolbar.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "Love",
   mode : "textareas",
@@ -16,12 +17,12 @@ tinyMCE.init({
   theme_advanced_buttons3_add : "styleprops"
 });
 
-```
+----
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 

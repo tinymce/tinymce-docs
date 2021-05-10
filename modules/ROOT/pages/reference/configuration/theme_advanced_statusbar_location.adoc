@@ -10,9 +10,10 @@ NOTE: same behaviour with (undescribed) option `theme_advanced_path_location`, m
 == Example of usage of the theme_advanced_statusbar_location option:
 anchor:exampleofusageofthetheme_advanced_statusbar_locationoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_statusbar_location : "bottom"
 });
-+`
+----

@@ -5,13 +5,14 @@
 This plugin adds word count functionality to TinyMCE.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "wordcount"
 });
-`
+----

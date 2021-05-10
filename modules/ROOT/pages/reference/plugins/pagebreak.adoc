@@ -7,22 +7,23 @@
 Adds pagebreak support, some CMS systems uses a special separator to break the contents into pages. This plugin enables you to insert such page breaks in the editor.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "pagebreak",
   pagebreak_separator : "<!-- my page break -->"
 });
-+`
+----
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -31,12 +32,13 @@ anchor:pluginoptions[historical anchor]
 |===
 
 [[usage-notes]]
-== Usage Notes 
+== Usage Notes
 anchor:usagenotes[historical anchor]
 
 You must allow your img tags to have the class attribute in order for this plugin to work correctly. If you are overriding the default valid_elements, make sure you include something like:
 
-```
+[source]
+----
 img[src|border|alt=|title|width|height|align|class]
 
-```
+----

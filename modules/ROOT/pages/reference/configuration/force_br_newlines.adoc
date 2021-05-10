@@ -11,13 +11,14 @@ If you set this option to true, TinyMCE will force BR elements on newlines inste
 == Example of usage of the force_br_newlines option:
 anchor:exampleofusageoftheforce_br_newlinesoption[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   force_br_newlines : true,
   force_p_newlines : false,
   forced_root_block : '' // Needed for 3.x
 });
-`
+----
 
 [[example-of-paragraph-no-margin-css]]
 == Example of paragraph no margin css
@@ -25,9 +26,10 @@ anchor:exampleofparagraphnomargincss[historical anchor]
 
 This CSS will reduce the space between (lines) paragraphs to zero. It will look more like the default line spacing in popular Word processors.
 
-`css
+[source,css]
+----
 p {margin: 0; padding: 0;}
-`
+----
 
 [[post-processing-away-p-tags-before-output-to-flashe-mail]]
 == Post processing away P tags before output to Flash/E-mail
@@ -41,7 +43,8 @@ anchor:perlexample[historical anchor]
 
 Note that this code does not rely upon regular expressions for processing the HTML, since you really cannot rely upon them to do the job. For a detailed discussion, see How do I remove HTML from a string? in perlfaq9; at the terminal of a machine with Perl, type perldoc -q html.
 
-```perl
+[source,perl]
+----
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -87,16 +90,17 @@ while (my $token = $p\->get_token){
 
 warn $output;
 *END*
-```
+----
 
 [[php-example]]
 == PHP Example
 anchor:phpexample[historical anchor]
 
-`+php
+[source,php]
+----
 // Get content from TinyMCE
 $content = $_REQUEST['content'];
 $content = preg_replace('/<p[^>]*>/', '', $content); // Remove the start <p> or <p attr="">
 $content = preg_replace('/</p>/', '<br />', $content); // Replace the end
 echo $content; // Output content without P tags
-+`
+----

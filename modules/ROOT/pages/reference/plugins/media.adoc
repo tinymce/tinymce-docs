@@ -16,14 +16,15 @@ anchor:installationinstructions[historical anchor]
 == Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "media",
   theme_advanced_buttons1_add : "media"
 });
-`
+----
 
 [[using-the-javascript-output-method]]
 == Using the JavaScript output method
@@ -39,14 +40,15 @@ We recommend that you copy the script from the TinyMCE directory to your sites/s
 == Example on how to add the script to your page header:
 anchor:exampleonhowtoaddthescripttoyourpageheader[historical anchor]
 
-```html+++<html>++++++<head>++++++<script type="text/javascript" src="embed.js">++++++</script>++++++</head>++++++<body>+++Some page with a TinyMCE instance.+++</body>++++++</html>+++
-
-```
+[source,html]
+----
+<html><head><script type="text/javascript" src="embed.js"></script></head><body>Some page with a TinyMCE instance.</body></html>
+----
 
 [[plugin-options]]
 == Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 

@@ -10,9 +10,10 @@ This list is used to populate available formats in the xref:reference/buttons.ad
 == Example of usage of the theme_advanced_blockformats option:
 anchor:exampleofusageofthetheme_advanced_blockformatsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_blockformats : "p,div,h1,h2,h3,h4,h5,h6,blockquote,dt,dd,code,samp"
 });
-+`
+----

@@ -5,16 +5,17 @@
 This plugin adds the possibility to tab in/out of TinyMCE.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "tabfocus"
 });
-`
+----
 
 [[tabfocus_elements]]
 == tabfocus_elements
@@ -25,7 +26,8 @@ This option enables you to specify an element ID to focus, when the user pressed
 
 Example of usage of the `tab_focus` option
 
-```js
+[source,js]
+----
 // Move focus to specific element
 tinyMCE.init({
   theme : "advanced",
@@ -37,4 +39,4 @@ tinyMCE.init({
   theme : "advanced",
   tabfocus_elements : ":prev,:next"
 });
-```
+----

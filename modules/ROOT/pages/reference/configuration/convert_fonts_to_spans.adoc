@@ -10,9 +10,10 @@ This option is enabled by default as of 3.0a1.
 == Example of usage of the convert_fonts_to_spans option:
 anchor:exampleofusageoftheconvert_fonts_to_spansoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   convert_fonts_to_spans : false
 });
-+`
+----

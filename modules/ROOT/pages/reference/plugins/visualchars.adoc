@@ -8,14 +8,15 @@ This plugin adds the possibility to see invisible characters like &nbsp;. Instal
 . Add the visualchars button name to button list, example: theme_advanced_buttons3_add : "visualchars".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "visualchars",
   theme_advanced_buttons3_add : "visualchars"
 });
-`
+----

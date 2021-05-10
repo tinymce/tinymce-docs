@@ -9,7 +9,7 @@ This option contains a comma separated list of element conversion chunks. Each c
 [[control-characters]]
 == Control characters:
 anchor:controlcharacters[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -90,7 +90,7 @@ Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 [[special-variables]]
 == Special variables:
 anchor:specialvariables[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -102,12 +102,13 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 
 This example string tells TinyMCE to remove all elements that are not a "a, strong, div or br" element, convert "b" elements to "strong" elements, default "target" to `"_blank"` and keep the "href", "target" and "align" attributes of the elements.
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   valid_elements : "a[href|target=_blank],strong/b,div[align],br"
 });
-+`
+----
 
 [[duplicate-attribute-warning]]
 == Duplicate Attribute Warning
@@ -115,13 +116,14 @@ anchor:duplicateattributewarning[historical anchor]
 
 Be careful not to duplicate attributes in the definitions as this may cause tinyMCE to render duplicate attributes in the output. For example, if you have
 
-`+js
+[source,js]
+----
  ... //bad code: dir and style listed twice
  "blockquote[dir|style|cite|class|dir<ltr?rtl|id|lang|onclick|ondblclick"
   +"|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout"
   +"|onmouseover|onmouseup|style|title]"
  ...
-+`
+----
 
 then if you happen to have a <blockquote> element in your code with style= or dir= attributes, the editor will cause each of those attributes to be duplicated in the output, which will result in invalid XHTML. (This is related to bug http://sourceforge.net/tracker/index.php?func=detail&aid=1824716&group_id=103281&atid=635682[1824716 - Duplicate attributes caused by valid_elements] on the SourceForge tracker.)
 
@@ -131,7 +133,8 @@ anchor:defaultruleset[historical anchor]
 
 This is the default string used by TinyMCE to clean up the HTML contents.
 
-`js
+[source,js]
+----
 valid_elements : "@[id|class|style|title|dir<ltr?rtl|lang|xml::lang|onclick|ondblclick|"
 + "onmousedown|onmouseup|onmouseover|onmousemove|onmouseout|onkeypress|"
 + "onkeydown|onkeyup],a[rel|rev|charset|hreflang|tabindex|accesskey|type|"
@@ -153,7 +156,7 @@ valid_elements : "@[id|class|style|title|dir<ltr?rtl|lang|xml::lang|onclick|ondb
 + "kbd,label[for],legend,noscript,optgroup[label|disabled],option[disabled|label|selected|value],"
 + "q[cite],samp,select[disabled|multiple|name|size],small,"
 + "textarea[cols|rows|disabled|name|readonly],tt,var,big"
-`
+----
 
 [[full-xhtml-rule-set]]
 == Full XHTML rule set:
@@ -163,7 +166,8 @@ The following will validate that the page complies fully with the XHTML specific
 
 Please note that using this may slow down performance when TinyMCE is cleaning up the document (on save etc). If you use very large bodies of text, it is recommended that you stick with the default rule set, because it should be sufficient for most people.
 
-`js
+[source,js]
+----
 valid_elements : ""
 +"a[accesskey|charset|class|coords|dir<ltr?rtl|href|hreflang|id|lang|name"
   +"|onblur|onclick|ondblclick|onfocus|onkeydown|onkeypress|onkeyup"
@@ -419,7 +423,7 @@ valid_elements : ""
 +"var[class|dir<ltr?rtl|id|lang|onclick|ondblclick|onkeydown|onkeypress"
   +"|onkeyup|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|style"
   +"|title]"
-`
+----
 
 [[full-flashmx-2004-rule-set]]
 == Full FlashMX 2004 rule set:
@@ -427,7 +431,8 @@ anchor:fullflashmx2004ruleset[historical anchor]
 
 The following will validate that the page complies fully with the flashMX 2004 specification.
 
-`js
+[source,js]
+----
 valid_elements : ""
 +"a[href|target],"
 +"b,"
@@ -446,7 +451,7 @@ valid_elements : ""
 +"span[class],"
 +"textformat[blockindent|indent|leading|leftmargin|rightmargin|tabstops],"
 +"u"
-`
+----
 
 Reference: http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html[\http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html]
 

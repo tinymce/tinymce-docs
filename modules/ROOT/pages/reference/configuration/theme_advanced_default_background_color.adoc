@@ -5,12 +5,13 @@
 This option enables you to specify the default backgroundcolor.
 
 [[example-of-usage-of-the-theme_advanced_background_colors-option]]
-== Example of usage of the theme_advanced_background_colors option: 
+== Example of usage of the theme_advanced_background_colors option:
 anchor:exampleofusageofthetheme_advanced_background_colorsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_default_background_color : "#FF00FF"
 });
-+`
+----

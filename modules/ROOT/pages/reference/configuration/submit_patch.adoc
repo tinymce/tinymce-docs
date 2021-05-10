@@ -7,12 +7,13 @@ This toggle option enables you to turn on/off the auto patching of the submit fu
 Enable this option if your submit buttons are named "submit", to fix JavaScript errors in Internet Explorer 7.
 
 [[example-of-usage-of-the-submit_patch-option]]
-== Example of usage of the submit_patch option: 
+== Example of usage of the submit_patch option:
 anchor:exampleofusageofthesubmit_patchoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   submit_patch : false
 });
-+`
+----

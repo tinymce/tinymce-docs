@@ -8,7 +8,8 @@ This option should contain a function name to be executed each time content is m
 == Example of usage of the onchange_callback option
 anchor:exampleofusageoftheonchange_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomOnChangeHandler(inst) {
   alert("Some one modified something");
   alert("The HTML is now:" + inst.getBody().innerHTML);
@@ -17,7 +18,7 @@ function myCustomOnChangeHandler(inst) {
 tinyMCE.init({
   onchange_callback : "myCustomOnChangeHandler"
 });
-```
+----
 
 [[note]]
 == Note:

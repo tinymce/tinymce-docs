@@ -7,15 +7,16 @@ This option should contain a language code of the language pack to use with Tiny
 If TinyMCE doesn't have a language pack for your language you could always write your own and contribute it back to the project by uploading it as a patch at SourceForge. A description on how to create language packs can be found in the Language Packs section.
 
 [[example-of-usage-of-the-language-option]]
-== Example of usage of the language option: 
+== Example of usage of the language option:
 anchor:exampleofusageofthelanguageoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   mode : "textareas",
   language : "nl"
 ...
 });
-+`
+----
 
 Replace `"nl"` for your language.

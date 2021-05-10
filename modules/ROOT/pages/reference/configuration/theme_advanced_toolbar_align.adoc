@@ -8,9 +8,10 @@ This option enables you to specify the alignment of the toolbar, this value can 
 == Example of usage of the theme_advanced_toolbar_align option:
 anchor:exampleofusageofthetheme_advanced_toolbar_alignoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_toolbar_align : "left"
 });
-+`
+----

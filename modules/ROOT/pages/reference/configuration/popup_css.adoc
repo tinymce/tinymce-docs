@@ -5,12 +5,13 @@
 This option enables you to specify the CSS to be used in all popup/dialog windows within TinyMCE this option is set to a CSS file found in the currently used theme by default.
 
 [[example-of-usage-of-the-popup_css-option]]
-== Example of usage of the popup_css option: 
+== Example of usage of the popup_css option:
 anchor:exampleofusageofthepopup_cssoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   popup_css : "/mypopup.css"
 });
-+`
+----

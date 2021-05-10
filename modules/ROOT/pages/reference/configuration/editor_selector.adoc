@@ -12,26 +12,29 @@
 == Example of usage of the editor_selector option:
 anchor:exampleofusageoftheeditor_selectoroption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   mode : "specific_textareas",
   editor_selector : "mceEditor"
 });
-+`
+----
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   mode : "specific_textareas",
   editor_selector : /(mceEditor|mceRichText)/
 });
-+`
+----
 
 [[example-of-usage-in-the-html]]
 == Example of usage in the HTML:
 anchor:exampleofusageinthehtml[historical anchor]
 
-```html+++<textarea id="myarea1" class="mceEditor">+++This will be an editor.+++</textarea>++++++<textarea id="myarea2">+++This will NOT be an editor.+++</textarea>+++
-
-```
+[source,html]
+----
+<textarea id="myarea1" class="mceEditor">This will be an editor.+++</textarea>++++++<textarea id="myarea2">+++This will NOT be an editor.+++</textarea>+++
+----

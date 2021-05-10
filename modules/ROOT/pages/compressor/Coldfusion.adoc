@@ -15,18 +15,19 @@ Here is a step by step list on how to install the GZip compressor.
 . Add the new GZip initialization call that will tell the compressor what to include in the output. This should be the sum of all and themes, plugins contained on page.
 
 [[example-of-initialization]]
-== Example of initialization 
+== Example of initialization
 anchor:exampleofinitialization[historical anchor]
 
 The example below will pack both themes and all plugins into one file/steam. Remove the things you don't need or add you custom plugins to the settings below. Remember that the tinyMCE_GZ.init call must be placed in it's own script tag.
 
-```html
+[source,html]
+----
 +++<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_gzip.js">++++++</script>+++
 +++<script type="text/javascript">+++tinyMCE_GZ.init({ plugins : 'style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras', themes : 'simple,advanced', languages : 'en', disk_cache : true, debug : false });+++</script>+++
 // Needs to be seperate script tags!
 +++<script type="text/javascript">+++tinyMCE.init({ .. your normal init .. });+++</script>+++
 
-```
+----
 
 [[troubleshooting]]
 == Troubleshooting

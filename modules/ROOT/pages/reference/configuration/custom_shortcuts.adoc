@@ -8,10 +8,11 @@ This option enables you to disable/enable the custom keyboard shortcuts, which p
 == Example of usage of the custom_shortcuts option:
 anchor:exampleofusageofthecustom_shortcutsoption[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   custom_shortcuts : false
 });
-`
+----
 
 In case you'd like to register custom shortcuts you'll need +++<editor>+++.[addShortcut()](\xref:api/class_tinymce.Editor.html/#addshortcut/).+++<.adoceditor>+++

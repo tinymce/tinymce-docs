@@ -5,12 +5,13 @@
 This option enables you to disable the storage of editor size in a cookie. By default the editors size is stored and retrieved from a cookie.
 
 [[example-of-usage-of-the-theme_advanced_resizing_use_cookie-option]]
-== Example of usage of the theme_advanced_resizing_use_cookie option: 
+== Example of usage of the theme_advanced_resizing_use_cookie option:
 anchor:exampleofusageofthetheme_advanced_resizing_use_cookieoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_resizing_use_cookie : false
 });
-+`
+----

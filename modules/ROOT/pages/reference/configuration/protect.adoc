@@ -8,7 +8,8 @@ The option takes an array of regexps that it will match the contents against and
 
 Example of usage:
 
-`+js
+[source,js]
+----
 tinymce.init({
     protect: [
         /\<\/?(if|endif)\>/g, // Protect <if> & </endif>
@@ -16,4 +17,4 @@ tinymce.init({
         /<\?php.*?\?>/g // Protect php code
     ]
 });
-+`
+----

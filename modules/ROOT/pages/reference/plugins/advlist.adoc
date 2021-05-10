@@ -5,14 +5,15 @@
 This plugin adds more advanced options to the ordered and unordered list buttons. It enables you to set number formats and bullet types.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "advlist"
 });
 
-```
+----

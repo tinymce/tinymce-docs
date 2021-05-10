@@ -5,15 +5,15 @@
 This plugin makes it possible for TinyMCE to edit BBCode in WYSIWYG way by converting tags like [b] into +++<strong>+++and then +++<strong>+++back to [b] when the user submits the content. Remember you will need to remove lots of TinyMCEs functionality in order to use this plugin successfully, since the BBCode format doesn't support the whole HTML specification. The BBCode plugin also requires you to set some specific TinyMCE options in order to function.+++</strong>++++++</strong>+++
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Add plugin to TinyMCE plugin option list example: `plugins : "bbcode"`.
 
 [[bbcode-plugin-options]]
-== BBCode plugin options 
+== BBCode plugin options
 anchor:bbcodepluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -22,10 +22,11 @@ anchor:bbcodepluginoptions[historical anchor]
 |===
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -42,4 +43,4 @@ tinyMCE.init({
   remove_linebreaks : false
 });
 
-```
+----

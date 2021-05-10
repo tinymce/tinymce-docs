@@ -12,8 +12,9 @@ There are many third party plugins for TinyMCE; some of these may be found under
 == Example of usage of the plugins option:
 anchor:exampleofusageofthepluginsoption[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   plugins : "table,contextmenu,paste,-externalplugin"
 });
-`
+----

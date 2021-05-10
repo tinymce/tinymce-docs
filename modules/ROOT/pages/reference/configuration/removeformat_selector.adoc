@@ -10,11 +10,12 @@ This option allows specification of which elements should be removed when you pr
 == Example of usage of the removeformat_selector option:
 anchor:exampleofusageoftheremoveformat_selectoroption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   removeformat_selector : 'b,strong,em,i,span,ins'
 });
-+`
+----
 
 You can now use the xref:reference/configuration/formats.adoc[formats] option instead.

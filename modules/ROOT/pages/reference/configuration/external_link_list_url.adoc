@@ -10,12 +10,13 @@ Change in 3.0: The way that relative URLs are calculated has changed since the 2
 == Example of usage of the external_link_list_url option:
 anchor:exampleofusageoftheexternal_link_list_urloption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   external_link_list_url : "myexternallist.js"
 });
-+`
+----
 
 NOTE: If utilizing the xref:reference/configuration/document_base_url.adoc[document_base_url] option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
@@ -23,14 +24,15 @@ NOTE: If utilizing the xref:reference/configuration/document_base_url.adoc[docum
 == Example of a external link list file: (myexternallist.js)
 anchor:exampleofaexternallinklistfilemyexternallistjs[historical anchor]
 
-`+js
+[source,js]
+----
 var tinyMCELinkList = new Array(
   // Name, URL
   ["Moxiecode", "http://www.moxiecode.com"],
   ["Freshmeat", "http://www.freshmeat.com"],
   ["Sourceforge", "http://www.sourceforge.com"]
 );
-+`
+----
 
 [[example-of-a-php-generated-external-link-list-file]]
 == Example of a PHP-generated external link list file

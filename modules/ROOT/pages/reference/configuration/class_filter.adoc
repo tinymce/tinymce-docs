@@ -7,10 +7,11 @@
 This option enables you specify a function that all classes will be passed through when the auto import classes feature is used with TinyMCE.
 
 [[example-of-usage-of-the-class_filter-option]]
-== Example of usage of the class_filter option: 
+== Example of usage of the class_filter option:
 anchor:exampleofusageoftheclass_filteroption[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
     ...
     class_filter : function(cls, rule) {
@@ -29,5 +30,6 @@ tinyMCE.init({
 
     // Pass though the rest
     return cls;
-} }); ```
+} });
+----
 ....

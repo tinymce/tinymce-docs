@@ -5,7 +5,7 @@
 This plugin adds support for custom templates. There are two types of files this plugin supports: templates and snippets.
 
 [[installation-instructions]]
-== Installation Instructions 
+== Installation Instructions
 anchor:installationinstructions[historical anchor]
 
 . Add plugin to TinyMCE plugin option list example: plugins : "template".
@@ -14,9 +14,9 @@ anchor:installationinstructions[historical anchor]
 . Setup your template options (see below)
 
 [[plugin-options]]
-== Plugin options 
+== Plugin options
 anchor:pluginoptions[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -52,39 +52,42 @@ anchor:pluginoptions[historical anchor]
 |===
 
 [[replace-values-example]]
-== Replace values example 
+== Replace values example
 anchor:replacevaluesexample[historical anchor]
 
 Class names are used for templates and variable names are used for snippets.
 
-```js
+[source,js]
+----
 template_replace_values : {
   className : "Replace with this content",
   anotherClassName: "Replacement content"
 }
 
-```
+----
 
 [[replace-values-functions-example]]
-== Replace values (functions) example 
+== Replace values (functions) example
 anchor:replacevaluesfunctionsexample[historical anchor]
 
 Replace content array values can also be functions. If a template element has a classname matching and the value is a fuction the function is called and the element passed as an argument.
 
-`js
+[source,js]
+----
 template_replace_values : {
   className : function(element) {
     // do something and then:
     // element.innerHTML = something
   }
 }
-`
+----
 
 [[templates-example]]
-== Templates example 
+== Templates example
 anchor:templatesexample[historical anchor]
 
-`js
+[source,js]
+----
 template_templates : [
   {
     title : "Editor Details",
@@ -92,57 +95,61 @@ template_templates : [
     description : "Adds Editors Name and Staff ID"
   }
 ]
-`
+----
 
 [[example-of-an-external-list]]
-== Example of an external list 
+== Example of an external list
 anchor:exampleofanexternallist[historical anchor]
 
 This is the contents your backend page should return if you specify a URL using the template_external_list_url option. A simple array containing each template to present. This URL can be a backend page, for example a PHP file.
 
-`js
+[source,js]
+----
 var tinyMCETemplateList = [
   // Name, URL, Description
   ["Simple snippet", "templates/snippet1.htm", "Simple HTML snippet."],
   ["Layout", "templates/layout1.htm", "HTML Layout."]
 ];
-`
+----
 
 [[making-snippets]]
-== Making Snippets 
+== Making Snippets
 anchor:makingsnippets[historical anchor]
 
 Snippets are HTML code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template DIV element. So if you define somevar1 in template_replace_values array it will be replaced on preview and insert.
 
-```
+[source]
+----
 This is a simple *snippet*. Will be replaced: {$somevar1}.
 
-```
+----
 
 [[making-templates]]
-== Making Templates 
+== Making Templates
 anchor:makingtemplates[historical anchor]
 
 A template is a file with DIV containing the template data. All HTML outside the DIV will simply be presented to the user in the preview frame. A template has more capabilities than a simple snippet, a template can have dynamic content/smart content that gets updated by functions located in the template_replace_values. These functions will continue to be executed each time a cleanup procedure is performed.
 
 [discrete]
 [[each-template-needs-to-use-the-following-base-html]]
-===== Each template needs to use the following base HTML: 
+===== Each template needs to use the following base HTML:
 anchor:eachtemplateneedstousethefollowingbasehtml[historical anchor]
 
-```html
+[source,html]
+----
 // This will not be inserted+++<div class="mceTmpl">++++++<table width="98%%" border="0" cellspacing="0" cellpadding="0">++++++<tr>++++++<th scope="col">+++ +++</th>+++
     +++<th scope="col">+++ +++</th>++++++</tr>+++
   +++<tr>++++++<td>+++ +++</td>+++
     +++<td>+++ +++</td>++++++</tr>++++++</table>++++++</div>+++
 
-```
+----
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -170,4 +177,4 @@ tinyMCE.init({
     }
   ]
 });
-`
+----

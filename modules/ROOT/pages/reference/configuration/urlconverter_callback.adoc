@@ -16,7 +16,8 @@ This function should return the converted URL as a string. This option is set to
 == Example of usage of the urlconverter_callback option:
 anchor:exampleofusageoftheurlconverter_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomURLConverter(url, node, on_save) {
   // Do some custom URL convertion
   url = url.substring(3);
@@ -28,4 +29,4 @@ function myCustomURLConverter(url, node, on_save) {
 tinyMCE.init({
   urlconverter_callback : "myCustomURLConverter"
 });
-```
+----

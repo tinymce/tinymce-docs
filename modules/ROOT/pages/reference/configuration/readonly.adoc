@@ -8,10 +8,11 @@ This option enables you to specify make editor instances in readonly mode. When 
 === Example of usage of the readonly option
 anchor:exampleofusageofthereadonlyoption[historical anchor]
 
-`js
+[source,js]
+----
 // Move focus to specific element
 tinyMCE.init({
   theme : "advanced",
   readonly : 1
 });
-`
+----

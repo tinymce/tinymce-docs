@@ -10,7 +10,8 @@ Use the xref:api/class_tinymce.Editor.html/#addcommand.adoc[addCommand] method i
 == Example of usage of the execcommand_callback option:
 anchor:exampleofusageoftheexeccommand_callbackoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomExecCommandHandler(editor_id, elm, command, user_interface, value) {
   var linkElm, imageElm, inst;
 
@@ -45,12 +46,13 @@ return false; // Pass to next handler in chain
 tinyMCE.init({
   execcommand_callback : "myCustomExecCommandHandler"
 });
-```
+----
 
 An additional note: if you have URL processing rules, you may wish to apply these to the HREF of the attribute you're using, as follows (getFocusElement should be replaced by getNode in 3.xx):
 
-`js
+[source,js]
+----
   var linkRef = (linkElm) ? tinyMCE.getAttrib(linkElm, "href") : '';
   if (linkRef != '')
   linkRef = tinyMCE.convertURL(linkRef, inst.selection.getFocusElement(), false);
-`
+----

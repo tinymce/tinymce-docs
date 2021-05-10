@@ -12,8 +12,9 @@ It might be worth mentioning that the browser usually messes with the HTML. The 
 
 Example of usage of the cleanup option:
 
-`js
+[source,js]
+----
 tinyMCE.init({
   cleanup : true
 });
-`
+----

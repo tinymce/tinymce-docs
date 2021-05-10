@@ -8,12 +8,13 @@ This option should contain a comma separated list of element names to exclude fr
 == Example of usage of the invalid_elements option
 anchor:exampleofusageoftheinvalid_elementsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   invalid_elements : "strong,em"
 });
-+`
+----
 
 CAUTION: This option doesn't accept attributes in the list, only elements
 

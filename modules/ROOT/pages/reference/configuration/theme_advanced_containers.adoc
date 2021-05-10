@@ -8,9 +8,10 @@ This option should contain a comma separated list of container names. Each conta
 == Example of usage of the theme_advanced_containers option:
 anchor:exampleofusageofthetheme_advanced_containersoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   theme_advanced_containers : "mycontainer1,mycontainer2"
 });
-+`
+----

@@ -8,9 +8,10 @@ If this option is set to true, all URLs returned from the MCFileManager will be 
 == Example of usage of the relative_urls option:
 anchor:exampleofusageoftherelative_urlsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   relative_urls : false
 });
-+`
+----

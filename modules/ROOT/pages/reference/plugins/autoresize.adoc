@@ -7,20 +7,21 @@ This is a plugin which automatically resizes the editor to the content inside it
 To activate this plugin, just add "autoresize" to TinyMCE plugin option list.
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "autoresize"
 });
-`
+----
 
 [[options]]
 === Options
-
+[cols="2,3",]
 |===
 | Name | Summary
 

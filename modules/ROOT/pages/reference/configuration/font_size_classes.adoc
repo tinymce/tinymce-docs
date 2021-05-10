@@ -8,9 +8,10 @@ This option allows specification of a comma separated list of class names that i
 == Example of usage of the font_size_classes option:
 anchor:exampleofusageofthefont_size_classesoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   font_size_classes : "fontSize1,fontSize2,fontSize3,fontSize4,fontSize5,fontSize6,fontSize7"
 });
-+`
+----

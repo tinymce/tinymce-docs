@@ -5,10 +5,11 @@
 This option enables you to specify that list elements UL/OL is to be converted to valid XHTML. This option is disabled by default.
 
 [[this-invalid-list]]
-== This invalid list: 
+== This invalid list:
 anchor:thisinvalidlist[historical anchor]
 
-```html
+[source,html]
+----
 
 . a
  .. b
@@ -16,28 +17,30 @@ anchor:thisinvalidlist[historical anchor]
 
 . e
 
-```
+----
 
 [[gets-converted-into-this-valid-list]]
-== Gets converted into this valid list: 
+== Gets converted into this valid list:
 anchor:getsconvertedintothisvalidlist[historical anchor]
 
-```html
+[source,html]
+----
 
 . a
  .. b
  .. c
 . e
 
-```
+----
 
 [[example-of-usage-of-the-fix_list_elements-option]]
-== Example of usage of the fix_list_elements option: 
+== Example of usage of the fix_list_elements option:
 anchor:exampleofusageofthefix_list_elementsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   fix_list_elements : true
 });
-+`
+----

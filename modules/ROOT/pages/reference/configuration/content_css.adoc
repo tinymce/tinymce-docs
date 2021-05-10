@@ -14,17 +14,19 @@ If you want the editor default font size to match your actual website and the Ti
 
 Add the following to `tinyMCE.init()`
 
-`js
+[source,js]
+----
 content_css : "css/custom_content.css",
 theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
 font_size_style_values : "10px,12px,13px,14px,16px,18px,20px",
-`
+----
 
 The content_css option points to a modified (change font-size) copy of the default CSS file (`tiny_mce/themes/advanced/skins/default/content.css`). Update the following:
 
-`css
+[source,css]
+----
 body, td, pre {color:#000; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; margin:8px;}
-`
+----
 
 NOTE: updating the actual content.css will have no effect. You need to create a copy and reference it in tinyMCE.init().
 
@@ -38,34 +40,37 @@ anchor:exampleofusageofthecontent_cssoption[historical anchor]
 
 Absolute path:
 
-```js
+[source,js]
+----
 // File: \http://domain.mine/mysite/index.html
 
 tinyMCE.init({
   ...
   content_css : "/mycontent.css"    // resolved to \http://domain.mine/mycontent.css
 });
-```
+----
 
 Relative path:
 
-```js
+[source,js]
+----
 // File: \http://domain.mine/mysite/index.html
 
 tinyMCE.init({
   ...
   content_css : "mycontent.css"    // resolved to \http://domain.mine/mysite/mycontent.css
 });
-```
+----
 
 Using multiple stylesheets:
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   content_css : "mycontent.css,mycontent2.css"    // includes both css files in header
 });
-+`
+----
 
 [[note]]
 == Note:
@@ -74,13 +79,15 @@ Browser caching might cause tinyMCE to not read the contents of a changed CSS fi
 
 One solution is to manually clear the browser cache when the file for content_css or editor_css has changed. Another solution is to use an old hack which adds a bogus parameter to the URL containing a present timestamp (number of milliseconds since January 1st, 1970) like "myFile.css?bogus=10023561235". Possible solutions could look like this:
 
-`js
+[source,js]
+----
 content_css : "path/myfile.css?" + new Date().getTime(),
-`
+----
 
-`js
+[source,js]
+----
 content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime(),
-`
+----
 
 [[what-is-this-good-for]]
 == What is this good for?
@@ -110,7 +117,8 @@ anchor:tinymcespecificrules[historical anchor]
 
 The body element of a TinyMCE instance has it's own class called mceContentBody this can be used to add TinyMCE specific CSS rules to your site's css.
 
-```css
+[source,css]
+----
 /* Site rules */
 body {
    background: #000 url('somebg.gif');
@@ -124,4 +132,4 @@ body.mceContentBody {
 .mceContentBody a {
    color: red !important; /* FF requires a important here */
 }
-```
+----

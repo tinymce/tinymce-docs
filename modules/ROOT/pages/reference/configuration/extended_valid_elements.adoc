@@ -12,11 +12,12 @@ anchor:exampleofusageoftheextended_valid_elementsoption[historical anchor]
 
 The below example replaces the current img rule (including the global element rules)
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   extended_valid_elements : "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]"
 });
-+`
+----
 
 Also see xref:reference/configuration/valid_elements.adoc[valid_elements] and xref:reference/configuration/invalid_elements.adoc[invalid_elements] for more configuration options.

@@ -6,7 +6,7 @@ This plugin makes all dialogs to open as floating DIV layers instead of popup wi
 
 [[options]]
 == Options
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -15,14 +15,15 @@ This plugin makes all dialogs to open as floating DIV layers instead of popup wi
 |===
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-`js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
   plugins : "inlinepopups",
   dialog_type : "modal"
 });
-`
+----

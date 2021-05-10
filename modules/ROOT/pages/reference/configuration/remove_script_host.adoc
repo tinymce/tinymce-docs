@@ -10,9 +10,10 @@ If disabled, URLs will be returned in this format: `+http://www.example.com/some
 == Example of usage of the remove_script_host option:
 anchor:exampleofusageoftheremove_script_hostoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   remove_script_host : false
 });
-+`
+----

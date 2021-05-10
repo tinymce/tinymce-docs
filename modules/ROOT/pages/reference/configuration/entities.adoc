@@ -7,21 +7,23 @@ This option contains a comma separated list of entity names that is used instead
 The base entities `<` `>` `&` `'` and `"` will always be entity encoded into their named equivalents. Though `'` and `"` will only be encoded within attribute values and `<` `>` will only be encoded within text nodes. This is correct according too the HTML and XML specs.
 
 [[example-of-usage-of-the-entities-option--default-value]]
-== Example of usage of the entities option / default value: 
+== Example of usage of the entities option / default value:
 anchor:exampleofusageoftheentitiesoptiondefaultvalue[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   entities : "160,nbsp,38,amp,34,quot,162,cent,8364,euro,163,pound,165,yen,169,copy,174,reg,8482,trade,8240,permil,60,lt,62,gt,8804,le,8805,ge,176,deg,8722,minus"
 });
-+`
+----
 
 [[version-338--default-value]]
-== Version: 3.3.8 / default value: 
+== Version: 3.3.8 / default value:
 anchor:version338defaultvalue[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
         ...
         entities : '160,nbsp,161,iexcl,162,cent,163,pound,164,curren,165,yen,166,brvbar,167,sect,168,uml,169,copy,170,ordf,'
@@ -46,4 +48,4 @@ tinyMCE.init({
         + '376,Yuml,710,circ,732,tilde,8194,ensp,8195,emsp,8201,thinsp,8204,zwnj,8205,zwj,8206,lrm,8207,rlm,8211,ndash,8212,mdash,8216,lsquo,'
         + '8217,rsquo,8218,sbquo,8220,ldquo,8221,rdquo,8222,bdquo,8224,dagger,8225,Dagger,8240,permil,8249,lsaquo,8250,rsaquo,8364,euro'
 });
-+`
+----

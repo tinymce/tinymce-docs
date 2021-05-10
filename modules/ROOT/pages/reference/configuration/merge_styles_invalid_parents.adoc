@@ -9,13 +9,14 @@ This option enables you to specify a regular expression with elements you want t
 The value may be a RegExp object or a string. If it's a string, then it is internally converted to a RegExp with ignore-case flag set.
 
 [[example-of-usage-of-the-merge_styles_invalid_parents-option]]
-== Example of usage of the merge_styles_invalid_parents option: 
+== Example of usage of the merge_styles_invalid_parents option:
 anchor:exampleofusageofthemerge_styles_invalid_parentsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   // Excludes table cells and strong elements from any parent merge operation
   merge_styles_invalid_parents : "^(TD|STRONG)$"
 });
-+`
+----

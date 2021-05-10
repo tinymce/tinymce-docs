@@ -7,25 +7,27 @@
 This option is enabled by default and will control the output of trailing BR elements at the end of block elements. Since IE can't render these properly we need to remove them by default to ensure proper output across all browsers. So for some browsers this BR at the end of the LI at the example below is redundant.
 
 [[example-of-inputoutput]]
-== Example of input/output 
+== Example of input/output
 anchor:exampleofinputoutput[historical anchor]
 
-```js
+[source,js]
+----
 This:
  Text +
 
 Will become:
  Text
 
-```
+----
 
 [[example-of-usage-of-the-remove_redundant_brs-option]]
-== Example of usage of the remove_redundant_brs option: 
+== Example of usage of the remove_redundant_brs option:
 anchor:exampleofusageoftheremove_redundant_brsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   remove_redundant_brs : false
 });
-+`
+----

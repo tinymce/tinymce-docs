@@ -9,7 +9,7 @@ The base entities `<` `>` `&` `'` and `"` will always be entity encoded into the
 [[encoding-types]]
 == Encoding Types
 anchor:encodingtypes[historical anchor]
-
+[cols="2,3",]
 |===
 | Name | Summary
 
@@ -27,9 +27,10 @@ anchor:encodingtypes[historical anchor]
 == Example of usage of the entity_encoding option:
 anchor:exampleofusageoftheentity_encodingoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
   ...
   entity_encoding : "raw"
 });
-+`
+----

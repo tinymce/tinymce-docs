@@ -10,7 +10,8 @@ This option enables you to add more advanced style formats for text and other el
 == Example of usage of the style_formats option:
 anchor:exampleofusageofthestyle_formatsoption[historical anchor]
 
-`+js
+[source,js]
+----
 tinyMCE.init({
     ...
     style_formats : [
@@ -23,6 +24,6 @@ tinyMCE.init({
         {title : 'Table row 1', selector : 'tr', classes : 'tablerow1'}
     ]
 });
-+`
+----
 
 A live demo of this option can be found in the https://www.tiny.cloud/docs/demo/format-custom/[Custom formats example].

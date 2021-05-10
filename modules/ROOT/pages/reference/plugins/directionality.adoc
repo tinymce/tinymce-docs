@@ -8,10 +8,11 @@ This plugin adds directionality icons to TinyMCE that enables TinyMCE to better 
 . Add the ltr, rtl button names to button list, example: theme_advanced_buttons3_add : "ltr,rtl".
 
 [[initialization-example]]
-== Initialization Example 
+== Initialization Example
 anchor:initializationexample[historical anchor]
 
-```js
+[source,js]
+----
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",
@@ -19,4 +20,4 @@ tinyMCE.init({
   theme_advanced_buttons3_add : "ltr,rtl"
 });
 
-```
+----

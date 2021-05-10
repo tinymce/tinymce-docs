@@ -7,10 +7,11 @@ This option enables you to specify a function to be executed when all editor ins
 Note : You can also pass the function name as a string. But in this case, the function has to be declared in the global scope of the page.
 
 [[example-of-usage-of-the-oninit-option]]
-== Example of usage of the oninit option: 
+== Example of usage of the oninit option:
 anchor:exampleofusageoftheoninitoption[historical anchor]
 
-```js
+[source,js]
+----
 function myCustomOnInit() {
   alert("We are ready to rumble!!");
 }
@@ -19,4 +20,4 @@ tinyMCE.init({
   ...
   oninit : myCustomOnInit
 });
-```
+----

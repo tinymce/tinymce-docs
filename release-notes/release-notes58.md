@@ -199,9 +199,9 @@ This section describes issues that users of {{site.productname}} 5.8 may encount
 
 ### Accessibility when using keyboard navigation to resize the editor
 
-**Issue**: The editor can now be resized using keyboard navigation, however there is currently no available ARIA role to indicate the resize state for a screen reader or other assistive technology to consume.
+**Issue**: The editor can now be resized using keyboard navigation, however there is currently no available ARIA specifications to indicate the resize state for a screen reader or other assistive technology to consume.
 
-**Workaround**: There was no known workaround at the time of the release. We are tracking the relevant [ARIA GitHub issue](https://github.com/w3c/aria/issues/432).
+**Workaround**: There was no known workaround at the time of the release. We are tracking the relevant [ARIA GitHub issue](https://github.com/w3c/aria/issues/432) for a way to support this.
 
 {% assign enterprise = true %}
 

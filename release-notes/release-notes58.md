@@ -109,7 +109,7 @@ This release adds support for copying and pasting content from Google Docs, maki
 
 **PowerPaste** 5.5.0 provides the following new features:
 
-- Added Google Docs paste support which can be controlled using the new [`powerpaste_googledocs_import`]({{site.baseurl}}/plugins/premium/powerpaste/#powerpaste_googledocs_import) option.
+- Added Google Docs paste support which can be controlled using the new [`powerpaste_googledocs_import` option]({{site.baseurl}}/plugins/premium/powerpaste/#powerpaste_googledocs_import).
 
 **PowerPaste** 5.5.0 provides the following improvements:
 

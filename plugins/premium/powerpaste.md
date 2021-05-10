@@ -121,11 +121,11 @@ The supported values are:
 
 * `clean` - Preserve the structure of the content such as headings, tables and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
-* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste Microsoft Word content.
+* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste Google Docs content.
 
 ### powerpaste_html_import
 
-This option controls how content pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from {{site.productname}} itself.
+This option controls how content pasted from sources other than Microsoft Word and Google Docs is filtered. Note that this includes content copied from {{site.productname}} itself.
 
 **Type:** `String`
 

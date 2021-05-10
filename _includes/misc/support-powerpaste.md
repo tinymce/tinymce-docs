@@ -23,7 +23,7 @@ On all browsers, PowerPaste provides basic HTML cleaning. For browsers where HTM
 
 #### Improved HTML Cleaning
 
-On browsers that support HTML5 APIs, PowerPaste is able to use improved HTML cleaning techniques.  Improved HTML cleaning uses the HTML5 clipboard APIs to access the clipboard directly. The original document structure and formatting (when importing formatting) is more likely to be preserved. Where available this approach gives the highest fidelity copy and paste from supported applications to HTML.
+On browsers that support HTML5 APIs, PowerPaste is able to use improved HTML cleaning techniques. Improved HTML cleaning uses the HTML5 clipboard APIs to access the clipboard directly. The original document structure and formatting (when importing formatting) is more likely to be preserved. Where available this approach gives the highest fidelity copy and paste from supported applications to HTML.
 
 #### Image Import
 

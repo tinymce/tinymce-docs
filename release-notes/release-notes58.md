@@ -28,6 +28,12 @@ The following new features were added for the {{site.productname}} 5.8 release.
 
 ### Feature name
 
+### Added support for resizing the editor using the keyboard
+
+Keyboard navigation can now be used to select the editor resize handle. Once it is selected, the arrow keys can be used to resize the editor.
+
+For information on editor resizing, see: [User interface options - Resize]({{site.baseurl}}/configure/editor-appearance#resize).
+
 ### Additional new features
 
 {{site.productname}} 5.8 introduces the following minor new features:

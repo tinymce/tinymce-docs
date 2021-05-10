@@ -188,13 +188,20 @@ This section describes issues that users of {{site.productname}} 5.8 may encount
 
 **Outline**
 
-- [](#)
+- [Unexpected behavior when moving the caret using the PageDown key](#unexpectedbehaviorwhenmovingthecaretusingthepagedownkey)
+- [Accessibility when using keyboard navigation to resize the editor](#accessibilitywhenusingkeyboardnavigationtoresizetheeditor)
 
-###
+### Unexpected behavior when moving the caret using the PageDown key
 
-**Issue**: This issue affects ....
+**Issue**: This issue affects moving the caret over links using the PageDown key. If the caret is placed before a link and the PageDown key is pressed, the caret will move inside the link rather than past it.
 
 **Workaround**: There was no known workaround at the time of the release.
+
+### Accessibility when using keyboard navigation to resize the editor
+
+**Issue**: The editor can now be resized using keyboard navigation, however there is currently no available ARIA role to indicate the resize state for a screen reader or other assistive technology to consume.
+
+**Workaround**: There was no known workaround at the time of the release. We are tracking the relevant [ARIA GitHub issue](https://github.com/w3c/aria/issues/432).
 
 {% assign enterprise = true %}
 

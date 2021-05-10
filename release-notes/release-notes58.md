@@ -191,9 +191,9 @@ This section describes issues that users of {{site.productname}} 5.8 may encount
 - [Unexpected behavior when moving the caret using the PageDown key](#unexpectedbehaviorwhenmovingthecaretusingthepagedownkey)
 - [Accessibility when using keyboard navigation to resize the editor](#accessibilitywhenusingkeyboardnavigationtoresizetheeditor)
 
-### Unexpected behavior when moving the caret using the PageDown key
+### Unexpected behavior when moving the caret using the PageUp, PageDown, and End keys
 
-**Issue**: This issue affects moving the caret over links using the PageDown key. If the caret is placed before a link and the PageDown key is pressed, the caret will move inside the link rather than past it.
+**Issue**: This issue affects moving the caret over links using the PageUp, PageDown, or End keys. If the caret is placed adjacent to a link and the key is pressed, the caret will move inside the link rather than past it.
 
 **Workaround**: There was no known workaround at the time of the release.
 

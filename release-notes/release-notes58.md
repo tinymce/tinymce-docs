@@ -65,6 +65,20 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **<
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+### Accessibility Checker 2.3.2
+
+The {{site.productname}} 5.8 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 2.3.2 provides the following bug fixes:
+
+- Fixed an issue where the ordered list structure rule was not enforced when list items were separated by `br` elements.
+- Fixed an issue where adjacent links were not detected when separated by zero-width unicode characters.
+- Fixed an issue that could cause paragraphs that were used as headings to not be detected.
+- Fixed help documentation URLs pointing to old website locations.
+- Fixed dialog button text incorrectly using title-style capitalization.
+
+For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/premium/a11ychecker/).
+
 ### Comments 2.4.0
 
 The {{site.productname}} 5.8 release includes an accompanying release of the **Comments** premium plugin.
@@ -75,6 +89,8 @@ This release adds new resolve conversation functionality, making it is possible 
 
 - Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - `tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve).
 - Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - `tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve).
+
+For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
 ### Export 1.0.0
 
@@ -88,6 +104,18 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **E
 **Export** 1.0.0 provides the following bug fixes:
 
 - Fixed an issue where internal document links did not navigate within the client-side PDF exporter output.
+
+For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/premium/export/).
+
+### Spell Checker Pro 2.3.1
+
+The {{site.productname}} 5.8 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.3.1 provides the following bug fixes:
+
+- Fixed as-you-type spellchecking not running when editor content is changed programmatically.
+
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
 ### Tiny Drive 1.4.0
 

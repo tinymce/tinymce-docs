@@ -270,7 +270,7 @@ If the editor is set to `inline: true`, and `toolbar_drawer` or `toolbar_mode` i
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'div',
   inline: true,
   toolbar_drawer: 'floating'
 });
@@ -280,7 +280,7 @@ or
 
 ```js
 tinymce.init({
-  selector: 'textarea',
+  selector: 'div',
   inline: true,
   toolbar_mode: 'floating'
 });

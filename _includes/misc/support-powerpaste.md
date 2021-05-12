@@ -7,7 +7,7 @@
 
 ### PowerPaste Feature and Browser Support
 
-PowerPaste (Copy and Paste) is supported on all the browsers supported by {{site.productname}} Enterprise. There is some variances of functionality for different browsers.
+PowerPaste (Copy and Paste) is supported on all the browsers supported by {{site.productname}} Enterprise. There are some variances of functionality for different browsers.
 
 |                       | HTML Cleaning | Improved HTML Cleaning | Image Import  |
 |-----------------------| :-----------: | :--------------------: | :-----------: |

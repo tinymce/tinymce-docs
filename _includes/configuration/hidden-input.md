@@ -14,7 +14,7 @@ The **hidden_input** option can be disabled if you don't need these controls.
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'div',  // change this value according to your HTML
   inline: true,
   hidden_input: false
 });

@@ -26,7 +26,11 @@ keywords: releasenotes bugfixes
 
 The following new features were added for the {{site.productname}} 5.8 release.
 
-### Feature name
+### Improved keyboard navigation for the inline boundary feature
+
+Users can now escape inline elements (such as links and comments) using the `Home`, `End`, `PageUp`, and `PageDown` keys. Due to their unique behavior, `PageUp` and `PageDown` are not available in macOS.
+
+For information on inline boundaries, see: [Content appearance options - Inline boundaries]({{site.baseurl}}/configure/content-appearance/#inline_boundaries).
 
 ### Added support for resizing the editor using the keyboard
 

@@ -27,7 +27,7 @@ The following new features were added for the {{site.productname}} 5.8 release.
 
 ### Feature name
 
-### Added new `fixed_toolbar_container_target` setting
+### Added new `fixed_toolbar_container_target` option
 
 Added a new `fixed_toolbar_container_target` setting which renders the toolbar in the specified `HTMLElement`. Patch contributed by [pvrobays](https://github.com/pvrobays).
 

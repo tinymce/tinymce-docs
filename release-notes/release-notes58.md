@@ -28,11 +28,11 @@ The following new features were added for the {{site.productname}} 5.8 release.
 
 ### Feature name
 
-### Added new `fixed_toolbar_container_target` setting
+### Added new `fixed_toolbar_container_target` option
 
 The new `fixed_toolbar_container_target` option allows the inline toolbar to be rendered in a specified `HTMLElement`, similar to the `fixed_toolbar_container` setting. This feature was contributed by [pvrobays](https://github.com/pvrobays).
 
-For more information on `fixed_toolbar_container_target`, see [User interface options: `fixed_toolbar_container_target`]({{ site.baseurl }}/configure/editor-appearance/#fixed_toolbar_container_target).
+For information on the `fixed_toolbar_container_target` option, see [User interface options - `fixed_toolbar_container_target`]({{ site.baseurl }}/configure/editor-appearance/#fixed_toolbar_container_target).
 
 ### Added support for resizing the editor using the keyboard
 

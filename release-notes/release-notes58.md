@@ -32,6 +32,12 @@ Users can now escape inline elements (such as links and comments) using the `Hom
 
 For information on inline boundaries, see: [Content appearance options - Inline boundaries]({{site.baseurl}}/configure/content-appearance/#inline_boundaries).
 
+### Added new `fixed_toolbar_container_target` option
+
+The new `fixed_toolbar_container_target` option allows the inline toolbar to be rendered in a specified `HTMLElement`, similar to the `fixed_toolbar_container` setting. This feature was contributed by [pvrobays](https://github.com/pvrobays).
+
+For information on the `fixed_toolbar_container_target` option, see [User interface options - `fixed_toolbar_container_target`]({{ site.baseurl }}/configure/editor-appearance/#fixed_toolbar_container_target).
+
 ### Added support for resizing the editor using the keyboard
 
 Keyboard navigation can now be used to select the editor resize handle. Once it is selected, the arrow keys can be used to resize the editor.

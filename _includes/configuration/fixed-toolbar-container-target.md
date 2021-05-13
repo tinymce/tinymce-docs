@@ -15,8 +15,6 @@ Use this option to render the inline toolbar into a fixed-positioned HTML elemen
 var el = document.createElement('div');
 document.body.appendChild(el);
 
-// ...
-
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   inline: true,

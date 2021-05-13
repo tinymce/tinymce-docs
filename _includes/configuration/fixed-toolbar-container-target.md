@@ -2,7 +2,10 @@
 
 {{ site.requires_5_8v }}
 
-Use this option to render the inline toolbar into a fixed positioned HTML element, similarly to [`fixed_toolbar_container`]({{ site.baseurl }}/configure/editor-appearance/#fixed_toolbar_container). The difference between these two options is that `fixed_toolbar_container_target` accepts a `HTMLElement` directly, instead of a CSS selector. These two settings should not be used together, but if they are then the value of `fixed_toolbar_container` will take precedence.
+Use this option to render the inline toolbar into a fixed positioned HTML element, similarly to [`fixed_toolbar_container`]({{ site.baseurl }}/configure/editor-appearance/#fixed_toolbar_container). The difference between these two options is that `fixed_toolbar_container_target` accepts a `HTMLElement` directly, instead of a CSS selector.
+
+
+> **Important:** `fixed_toolbar_container` has precedence over `fixed_toolbar_container_target`, so in order for `fixed_toolbar_container_target` to work, do not use the `fixed_toolbar_container` option.
 
 **Type:** `HTMLElement`
 

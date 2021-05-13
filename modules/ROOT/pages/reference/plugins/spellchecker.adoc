@@ -141,21 +141,17 @@ tinyMCE.init({
 anchor:pluginjavascriptoptions[historical anchor]
 [cols="2,3",]
 |===
-| Name | Summary |
+| Name | Summary
 
 | [spellchecker_languages]
 | Enables you to specify what languages your pspell installation can handle. The value of this option should be a comma separated name value list in the following format name1=value1,name2=value,name3=value where name is the string to present in the menu and the value is a ISO language code like sv or en. If you add a + character infront of the name it will be the default value for the spellchecker. The default value for this option is: +English=en.
-|
 
 | [spellchecker_word_separator_chars]
-| This option enables you to specify the word separator characters. The default value for this option is: s!"#$%&()*+,-./:;\<=>?@[]{caret}_{
-| }§©«®±¶·¸»¼½¾¿×÷¤u201du201c.
+| This option enables you to specify the word separator characters. The default value for this option is: `+s!"#$%&()*+,-./:;<=>?@[]^_{\|}§©«®±¶·¸»¼½¾¿×÷¤u201du201c+`.
 
 | [spellchecker_report_misspellings]
 | This option enables you to get an alert box with the number of misspelled words, this option is set to false by default.
-|
 
 | [spellchecker_rpc_url]
 | URL to back end for example the PHP rpc service document or some custom spellchecker service. This option doesn't need to be specified if you downloaded the PHP Spellchecker package.
-|
 |===

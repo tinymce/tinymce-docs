@@ -8,61 +8,48 @@ This option gives you the ability to specify what elements are valid inside diff
 
 [[format]]
 == Format:
-[cols="2,3",]
+[cols="1,5",]
 |===
-| Name | Summary |
+| Name | Summary
 
 | /
 | Separates elements. Multiple elements may match a set of child nodes.
-|
 
 | ,
 | Separates element chunks.
-|
 
-|
-|
+| \|
 | Separates child element names.
 
 | [
 | Starts a new child node list for a element definition.
-|
 
 | ]
 | Ends a new child node list for a element definition.
-|
 
 | %itrans
 | Variable for inline XHTML transitional elements.
-|
 
 | %itrans_na
 | Variable for inline XHTML transitional elements excluding A elements.
-|
 
 | %btrans
 | Variable for block XHTML transitional elements.
-|
 
 | %istrict
 | Variable for inline XHTML strict elements.
-|
 
 | %istrict_na
 | Variable for inline XHTML strict elements excluding A elements.
-|
 
 | %bstrict
 | Variable for block XHTML strict elements.
-|
 
 | #text
 | Name for text nodes.
-|
 
 | #comment
 | Name for comment nodes.
-|
 |===
 
 [[example-of-usage-of-the-valid_child_elements-option]]

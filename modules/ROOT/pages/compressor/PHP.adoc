@@ -17,10 +17,8 @@ Here are step-by-step instructions for installing the GZip compressor.
 
 . Ensure that your server does not have zlib compression enabled in the file php.ini
 . Copy the tiny_mce_gzip.js and tiny_mce_gzip.php to the tiny_mce directory. The same directory that contains the tiny_mce.js file. (You can download the necessary files from our http://archive.tinymce.com/download/download.php[download page].)
-. Remove the current script tag.
-+++<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js">++++++</script>+++
-. Add the new new GZip script
-+++<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_gzip.js">++++++</script>+++
+. Remove the current script tag. `<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>``
+. Add the new new GZip script `<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_gzip.js"></script>`
 . Add the new GZip initialization call that will tell the compressor what to include in the output. This should be all of the plugins, themes, and languages required by your TinyMCE implementation.
 
 [[example-of-initialization]]
@@ -31,16 +29,27 @@ The example below packs all of the plugins, themes, and languages into one file/
 
 [source,html]
 ----
-+++<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_gzip.js">++++++</script>+++
-+++<script type="text/javascript">+++tinyMCE_GZ.init({
+<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_gzip.js"></script>
+<script type="text/javascript">
+tinyMCE_GZ.init({
+<!-- user-defined plugins and themes should be identical to those in "tinyMCE.init" below.-->
+  plugins : 'style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,'+
+        'searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras',
+  themes : 'simple,advanced',
+  languages : 'en',
+  disk_cache : true,
+  debug : false
+});
+</script>
+<!-- Needs to be seperate script tags! -->
+<script type="text/javascript">
+tinyMCE.init({
+<!-- user-defined plugins and themes should be identical to those in "tinyMCE_GZ.init" above i.e.-->
+        plugins : 'style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,'+
+        'searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras',
+  themes : 'simple,advanced',
 
-// user-defined plugins and themes should be identical to those in "tinyMCE.init" below. plugins : 'style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,'+ 'searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras', themes : 'simple,advanced', languages : 'en', disk_cache : true, debug : false });+++</script>+++
-// Needs to be seperate script tags!
-+++<script type="text/javascript">+++tinyMCE.init({
-
-// user-defined plugins and themes should be identical to those in "tinyMCE_GZ.init" above i.e. plugins : 'style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,'+ 'searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras', themes : 'simple,advanced',+++</script>+++
-
-.. now add your normal init, which will not be added to the tinyMCE_GZ.init above ..
+  .. now add your normal init, which will not be added to the tinyMCE_GZ.init above ..
 });
 </script>
 ----
@@ -51,7 +60,7 @@ anchor:directmethod[historical anchor]
 
 As of 2.0.3 there is also a direct method for loading TinyMCE without the need of first loading the tiny_mce_gzip.js file.
 
-[source,js]
+[source,php]
 ----
 // Load the TinyMCE compressor class
 require_once("../tiny_mce/tiny_mce_gzip.php");
@@ -69,6 +78,7 @@ TinyMCE_Compressor::renderTag(array(
 === Direct method options:
 anchor:directmethodoptions[historical anchor]
 
+[cols="1,2",]
 |===
 | Option | Description
 

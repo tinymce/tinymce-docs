@@ -7,11 +7,27 @@
 This option controls if invalid contents should be corrected before insertion in IE. IE has a bug that produced an invalid DOM tree if the input contents aren't correct so this option tries to fix this using preprocessing of the HTML string. This option is disabled by default since it might be a bit slow.
 
 [[this-invalid-code]]
-== This invalid code: 
+== This invalid code:
 anchor:thisinvalidcode[historical anchor]
 
-```html
+[source,html]
+----
+<p><b></p></b>
+----
 
-*</p>* ``` ## Gets converted into this correct value: ```html
+== Gets converted into this correct value:
 
-** ``` ## Example of usage of the fix_nesting option: ```js tinyMCE.init({ \... fix_nesting : true }); ```
+[source,html]
+----
+<p><b></b></p>
+----
+
+== Example of usage of the fix_nesting option:
+
+[source,js]
+----
+tinyMCE.init({
+  ...
+  fix_nesting : true
+});
+----

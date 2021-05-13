@@ -103,13 +103,14 @@ anchor:defaultcss[historical anchor]
 
 As of TinyMCE3 there is a default CSS file loaded into your editor's content window. This default stylesheet can be found here:
 
-`
+[source]
+----
 tiny_mce/themes/
     {your theme here (usually "advanced" or "simple")}
         /skins/
             {your skin here (usually "default")}
                 /content.css
-`
+----
 
 [[tinymce-specific-rules]]
 == TinyMCE specific rules

@@ -1,7 +1,63 @@
 :rootDir: ./../
 :partialsDir: {rootDir}partials/
 = API Reference
-:type: folder
 
-{% assign links = site.data.nav[12].pages %}
-{% include index.html links=links %}
+* xref:api/member_tinyMCE.adoc[tinyMCE]
+* xref:api/class_tinymce.AddOnManager.adoc[tinymce.AddOnManager]
+* xref:api/class_tinymce.ControlManager.adoc[tinymce.ControlManager]
+* xref:api/member_tinymce.DOM.adoc[tinymce.DOM]
+* xref:api/class_tinymce.Editor.adoc[tinymce.Editor]
+* xref:api/class_tinymce.EditorCommands.adoc[tinymce.EditorCommands]
+* xref:api/member_tinymce.EditorManager.adoc[tinymce.EditorManager]
+* xref:api/class_tinymce.Formatter.adoc[tinymce.Formatter]
+* xref:api/class_tinymce.Theme.adoc[tinymce.Theme]
+* xref:api/class_tinymce.UndoManager.adoc[tinymce.UndoManager]
+* xref:api/class_tinymce.WindowManager.adoc[tinymce.WindowManager]
+* xref:api/class_tinyMCEPopup.adoc[tinyMCEPopup]
+
+== util
+** xref:api/util/class_tinymce.util.Cookie.adoc[tinymce.util.Cookie]
+** xref:api/util/class_tinymce.util.Dispatcher.adoc[tinymce.util.Dispatcher]
+** xref:api/util/class_tinymce.util.JSON.adoc[tinymce.util.JSON]
+** xref:api/util/class_tinymce.util.JSONRequest.adoc[tinymce.util.JSONRequest]
+** xref:api/util/class_tinymce.util.URI.adoc[tinymce.util.URI]
+** xref:api/util/class_tinymce.util.XHR.adoc[tinymce.util.XHR]
+
+== ui
+** xref:api/ui/class_tinymce.ui.Button.adoc[tinymce.ui.Button]
+** xref:api/ui/class_tinymce.ui.ColorSplitButton.adoc[tinymce.ui.ColorSplitButton]
+** xref:api/ui/class_tinymce.ui.Container.adoc[tinymce.ui.Container]
+** xref:api/ui/class_tinymce.ui.Control.adoc[tinymce.ui.Control]
+** xref:api/ui/class_tinymce.ui.DropMenu.adoc[tinymce.ui.DropMenu]
+** xref:api/ui/class_tinymce.ui.KeyboardNavigation.adoc[tinymce.ui.KeyboardNavigation]
+** xref:api/ui/class_tinymce.ui.ListBox.adoc[tinymce.ui.ListBox]
+** xref:api/ui/class_tinymce.ui.Menu.adoc[tinymce.ui.Menu]
+** xref:api/ui/class_tinymce.ui.MenuButton.adoc[tinymce.ui.MenuButton]
+** xref:api/ui/class_tinymce.ui.MenuItem.adoc[tinymce.ui.MenuItem]
+** xref:api/ui/class_tinymce.ui.NativeListBox.adoc[tinymce.ui.NativeListBox]
+** xref:api/ui/class_tinymce.ui.Separator.adoc[tinymce.ui.Separator]
+** xref:api/ui/class_tinymce.ui.SplitButton.adoc[tinymce.ui.SplitButton]
+** xref:api/ui/class_tinymce.ui.Toolbar.adoc[tinymce.ui.Toolbar]
+** xref:api/ui/class_tinymce.ui.ToolbarGroup.adoc[tinymce.ui.ToolbarGroup]
+
+== plugins
+** xref:api/plugins/class_tinymce.Plugin.adoc[tinymce.Plugin]
+** xref:api/plugins/class_tinymce.plugins.AutoSave.adoc[tinymce.plugins.AutoSave]
+** xref:api/plugins/class_tinymce.plugins.ContextMenu.adoc[tinymce.plugins.ContextMenu]
+
+== html
+** xref:api/html/class_tinymce.adoc[tinymce]
+** xref:api/html/class_tinymce.html.DomParser.adoc[tinymce.html.DomParser]
+** xref:api/html/class_tinymce.html.Node.adoc[tinymce.html.Node]
+** xref:api/html/class_tinymce.html.SaxParser.adoc[tinymce.html.SaxParser]
+** xref:api/html/class_tinymce.html.Schema.adoc[tinymce.html.Schema]
+** xref:api/html/class_tinymce.html.Serializer.adoc[tinymce.html.Serializer]
+** xref:api/html/class_tinymce.html.Styles.adoc[tinymce.html.Styles]
+** xref:api/html/class_tinymce.html.Writer.adoc[tinymce.html.Writer]
+
+== dom
+** xref:api/dom/class_tinymce.dom.DOMUtils.adoc[tinymce.dom.DOMUtils]
+** xref:api/dom/class_tinymce.dom.Element.adoc[tinymce.dom.Element]
+** xref:api/dom/class_tinymce.dom.ScriptLoader.adoc[tinymce.dom.ScriptLoader]
+** xref:api/dom/class_tinymce.dom.Selection.adoc[tinymce.dom.Selection]
+** xref:api/dom/class_tinymce.dom.Serializer.adoc[tinymce.dom.Serializer]

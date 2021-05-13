@@ -417,7 +417,7 @@ So you want the styles dropdown to actually show how the element will look like 
 == TinyMCE does not update the content when I set a new text in textarea by JavaScript
 anchor:tinymcedoesnotupdatethecontentwhenisetanewtextintextareabyjavascript[historical anchor]
 
-TinyMCE reads the content of the `<textarea>` element only on start, and writes it when the edition is done. If you want to change the edited content, do not update the `<textarea>`  but call editor's xref:api/class_tinymce.Editor.html.adoc#setcontent[setContent] method.
+TinyMCE reads the content of the `<textarea>` element only on start, and writes it when the edition is done. If you want to change the edited content, do not update the `<textarea>`  but call editor's xref:api/class_tinymce.Editor.adoc#setcontent[setContent] method.
 
 You may also read the xref:howto/save_with_Ajax_in_TinyMCE.adoc[How to load/save with Ajax in TinyMCE] article.
 

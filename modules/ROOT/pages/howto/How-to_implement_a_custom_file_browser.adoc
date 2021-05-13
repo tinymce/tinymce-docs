@@ -365,7 +365,7 @@ If you use the xref:reference/plugins/inlinepopups.adoc[inlinepopups plugin] the
 ----
 <head>
     <script type="text/javascript" src="{path}/tiny_mce/tiny_mce_popup.js"></script>
-... <!-- more scripts here... -->
+    <!-- more scripts here... -->
     <script type="text/javascript">
         myInitFunction = function () {
             // ensure window title in inlinepopups
@@ -441,7 +441,7 @@ Now let's see how the closing function of the popup's tinyMCEPopup object needs 
 ----
 <head>
     <script type="text/javascript" src="{path}/tiny_mce/tiny_mce_popup.js"></script>
-... <!-- more scripts here... -->
+    <!-- more scripts here... -->
     <script type="text/javascript">
         myInitFunction = function () {
 
@@ -464,7 +464,7 @@ Now let's see how the closing function of the popup's tinyMCEPopup object needs 
 
 Finally, here is a fully working exampel of the popup window for tinyMCE 3.x (just change the path of tiny_mce_popup.js):
 
-[source,js]
+[source,html]
 ----
 <script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_popup.js">
 </script>

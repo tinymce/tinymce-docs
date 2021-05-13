@@ -11,9 +11,7 @@ The default value is set to:
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ----
 
-This option does not affect the format of tags: " +
-" versus " +
-". See xref:reference/configuration/element_format.adoc[element_format] option instead.
+This option does not affect the format of tags: "`<br>`" versus "`<br />`". See xref:reference/configuration/element_format.adoc[element_format] option instead.
 
 Note however that there is no need to change the doctype to XHTML because TinyMCE will produce XHTML in any case. Read the http://archive.tinymce.com/forum/viewtopic.php?id=15069[comments here].
 

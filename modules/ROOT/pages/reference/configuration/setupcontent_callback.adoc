@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = setupcontent_callback
 
-This option is considered deprecated use the new xref:api/class_tinymce.Editor.html.adoc[Event API]
+This option is considered deprecated use the new xref:api/class_tinymce.Editor.adoc[Event API]
 
 This option enables you to execute custom content set up logic when the editor initializes. The format of this callback is: setupContent(editor_id, body, doc), where "editor_id" is the TinyMCE editor instance ID. The editor instance object reference can be retrieved by using tinyMCE.getInstanceById(editor_id). The "body" parameter is a reference to the IFRAME's BODY element and "doc" is the IFRAME's document element. This option is not used if it's not specified.
 

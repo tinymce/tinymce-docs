@@ -18,37 +18,35 @@ tinyMCE.init({
 });
 ----
 
-HTML contents example:
+== HTML contents example
 
 When you have existing classes that cannot be removed, you may combine MCE classes with the existing class in the following manner:
 
 Non editable div example:
 
-[source,js]
+[source,html]
 ----
-
-Contents
-
+<div class="myclass mceNonEditable">Contents</div>
 ----
 
 Editable div example:
 
 [source,html]
 ----
-
-Contents
-
+<div class="myclass mceEditable">Contents</div>
 ----
 
 Nested editable elements are not currently supported. You would not be able to edit the cell contents in the following table:
 
 [source,html]
 ----
-
-|===
-| Contents
-|===
-
+<table class="mceNonEditable">
+  <tr>
+    <td class="mceEditable">
+      Contents
+    </td>
+  </tr>
+</table>
 ----
 
 [[plugin-options]]

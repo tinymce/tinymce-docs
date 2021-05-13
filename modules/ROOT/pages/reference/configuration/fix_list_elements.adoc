@@ -10,13 +10,14 @@ anchor:thisinvalidlist[historical anchor]
 
 [source,html]
 ----
-
-. a
- .. b
- .. c
-
-. e
-
+<ol>
+    <li>a</li>
+    <ol>
+        <li>b</li>
+        <li>c</li>
+    </ol>
+    <li>e</li>
+</ol>
 ----
 
 [[gets-converted-into-this-valid-list]]
@@ -25,12 +26,15 @@ anchor:getsconvertedintothisvalidlist[historical anchor]
 
 [source,html]
 ----
-
-. a
- .. b
- .. c
-. e
-
+<ol>
+    <li>a
+        <ol>
+            <li>b</li>
+            <li>c</li>
+        </ol>
+    </li>
+    <li>e</li>
+</ol>
 ----
 
 [[example-of-usage-of-the-fix_list_elements-option]]

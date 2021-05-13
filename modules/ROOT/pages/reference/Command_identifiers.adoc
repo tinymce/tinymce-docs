@@ -33,7 +33,7 @@ anchor:globalcommands[historical anchor]
 
 These commands can only be executed by using tinyMCE.execCommand.
 
-[cols=",",options="header",]
+[cols="1,3",options="header",]
 |===
 |Name |Summary
 |mceFocus |Moves the focus and caret to the editor specified by its ID. Example: tinyMCE.execCommand('mceFocus',false,'myeditor');
@@ -50,7 +50,7 @@ anchor:instancecommands[historical anchor]
 
 These commands are instance specific so they can only be executed on a specific editor.
 
-[cols=",",options="header",]
+[cols="1,3",options="header",]
 |===
 |Name |Summary
 |mceAddUndoLevel |Adds a new undo level of the current editor HTML contents, unless processing is currently inside of a section marked by mceBeginUndoLevel and mceEndUndoLevel.

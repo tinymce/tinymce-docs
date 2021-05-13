@@ -2,7 +2,7 @@
 :partialsDir: {rootDir}partials/
 = Configuration
 
-This document is the index/reference page for all available core configuration options in TinyMCE. There is also a list of old and xref:Deprecated_Configuration_Options.adoc[deprecated config options] for older versions of TinyMCE.
+This document is the index/reference page for all available core configuration options in TinyMCE. There is also a list of old and xref:reference/Deprecated_Configuration_Options.adoc[deprecated config options] for older versions of TinyMCE.
 
 [[configuration-options]]
 === Configuration options
@@ -23,7 +23,6 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 * xref:reference/configuration/editor_deselector.adoc[editor_deselector]
 * xref:reference/configuration/editor_selector.adoc[editor_selector]
 * xref:reference/configuration/elements.adoc[elements]
-* https://www.tiny.cloud/docs/configure/spelling/#gecko_spellcheck/[gecko_spellcheck]
 * xref:reference/configuration/keep_styles.adoc[keep_styles]
 * xref:reference/configuration/language.adoc[language]
 * xref:reference/configuration/mode.adoc[mode]
@@ -91,8 +90,6 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 * xref:reference/configuration/verify_html.adoc[verify_html]
 * xref:reference/configuration/removeformat_selector.adoc[removeformat_selector]
 
-|===
-|===
 
 [[url]]
 == URL
@@ -166,9 +163,9 @@ anchor:advancedtheme[historical anchor]
 * xref:reference/configuration/theme_advanced_containers.adoc[theme_advanced_containers]
 * xref:reference/configuration/theme_advanced_containers_default_class.adoc[theme_advanced_containers_default_class]
 * xref:reference/configuration/theme_advanced_containers_default_align.adoc[theme_advanced_containers_default_align]
-* [theme_advanced_container_+++<container>+++](\xref:reference/configuration/theme_advanced_container_container/)+++<.adoccontainer>+++
-* [theme_advanced_container_+++<container>+++_class](\xref:reference/configuration/theme_advanced_container_container_class/)+++<.adoccontainer>+++
-* [theme_advanced_container_+++<container>+++_align](\xref:reference/configuration/theme_advanced_container_container_align/)+++<.adoccontainer>+++
+* xref:reference/configuration/theme_advanced_container_container.adoc[theme_advanced_container_<container>]
+* xref:reference/configuration/theme_advanced_container_container_class.adoc[theme_advanced_container_<container>_class]
+* xref:reference/configuration/theme_advanced_container_container_align.adoc[theme_advanced_container_<container>_align]
 * xref:reference/configuration/theme_advanced_custom_layout.adoc[theme_advanced_custom_layout]
 * xref:reference/configuration/theme_advanced_link_targets.adoc[theme_advanced_link_targets]
 * xref:reference/configuration/theme_advanced_resizing.adoc[theme_advanced_resizing]

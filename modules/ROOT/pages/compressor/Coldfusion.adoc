@@ -22,11 +22,21 @@ The example below will pack both themes and all plugins into one file/steam. Rem
 
 [source,html]
 ----
-+++<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_gzip.js">++++++</script>+++
-+++<script type="text/javascript">+++tinyMCE_GZ.init({ plugins : 'style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras', themes : 'simple,advanced', languages : 'en', disk_cache : true, debug : false });+++</script>+++
-// Needs to be seperate script tags!
-+++<script type="text/javascript">+++tinyMCE.init({ .. your normal init .. });+++</script>+++
-
+<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_gzip.js"></script>
+<script type="text/javascript">
+tinyMCE_GZ.init({
+  plugins : 'style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras',
+  themes : 'simple,advanced',
+  languages : 'en',
+  disk_cache : true,
+  debug : false
+});
+</script>
+<script type="text/javascript">
+tinyMCE.init({
+  .. your normal init ..
+});
+</script>
 ----
 
 [[troubleshooting]]

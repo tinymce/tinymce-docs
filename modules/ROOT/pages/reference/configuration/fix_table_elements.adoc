@@ -10,29 +10,35 @@ This option enables you to specify that table elements should be moved outside p
 == This invalid table:
 anchor:thisinvalidtable[historical anchor]
 
-```html
-
+[source,html]
+----
+<p>
 a
-
-|===
-| b
-| c
-|=== d```
+<table>
+  <tr><td>b</td></tr>
+  <tr><td>c</td></tr>
+</table>
+d
+</p>
+----
 
 [[gets-converted-into-this-valid-xhtml]]
 == Gets converted into this valid XHTML:
 anchor:getsconvertedintothisvalidxhtml[historical anchor]
 
-```html
-
+[source,html]
+----
+<p>
 a
-
-|===
-| b
-| c
-|===
-
-d```
+</p>
+<table>
+  <tr><td>b</td></tr>
+  <tr><td>c</td></tr>
+</table>
+<p>
+d
+</p>
+----
 
 [[example-of-usage-of-the-fix_table_elements-option]]
 == Example of usage of the fix_table_elements option:

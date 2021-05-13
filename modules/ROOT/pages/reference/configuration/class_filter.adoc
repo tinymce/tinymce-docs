@@ -19,7 +19,6 @@ tinyMCE.init({
         if (cls == 'someClass')
             return false;
 
-....
     // Swap the otherClass
     if (cls == 'otherClass')
         return 'someOtherClass';
@@ -32,4 +31,3 @@ tinyMCE.init({
     return cls;
 } });
 ----
-....

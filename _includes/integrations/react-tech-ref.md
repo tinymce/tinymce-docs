@@ -43,7 +43,7 @@ $ yarn add @tinymce/tinymce-react
 
 ### Using TinyMCE React integration in a Bootstrap dialog
 
-To use {{site.productname}} React instances inside Bootstrap UI dialogs, add the following React effect to a component that renders with the editor. This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog.
+To use the {{site.productname}} React integration inside Bootstrap UI dialogs, add the following React effect to a component that renders with the editor. This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog.
 
 #### Bootstrap 5
 

@@ -47,7 +47,7 @@ To use TinyMCE React instances inside Bootstrap UI dialogs, add the following Re
 
 ```jsx
   useEffect(() => {
-    const handler = function (e) {
+    const handler = (e) => {
       if (
         $(e.target).closest(
           ".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"

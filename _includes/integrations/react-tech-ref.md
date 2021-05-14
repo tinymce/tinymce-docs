@@ -3,6 +3,7 @@
 **Covered in this section:**
 
 - [Installing the TinyMCE React integration using NPM or Yarn](#installingthetinymcereactintegrationusingnpmoryarn)
+- [Using TinyMCE React integration in a Bootstrap dialog](#usingtinymcereactintegrationinabootstrapdialog)
 - [Configuring the editor](#configuringtheeditor)
 - [Available props](#availableprops)
   - [`apiKey`](#apikey)
@@ -39,6 +40,27 @@ or with Yarn
 ```sh
 $ yarn add @tinymce/tinymce-react
 ```
+
+### Using TinyMCE React integration in a Bootstrap dialog
+
+To use TinyMCE React instances inside Bootstrap UI dialogs, add the following React effect to a component that renders with the editor:
+
+```jsx
+  useEffect(() => {
+    const handler = function (e) {
+      if (
+        $(e.target).closest(
+          ".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"
+        ).length
+      ) {
+        e.stopImmediatePropagation();
+      }
+    };
+    document.addEventListener("focusin", handler);
+    return () => document.removeEventListener("focusin", handler);
+  }, []);
+```
+This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog.
 
 ### Configuring the editor
 

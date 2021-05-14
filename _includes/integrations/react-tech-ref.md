@@ -52,11 +52,7 @@ To use {{site.productname}} React instances inside Bootstrap UI dialogs, add the
 ```jsx
 useEffect(() => {
   const handler = (e) => {
-    if (
-      e.target.closest(
-        ".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"
-      ) !== null
-    ) {
+    if (e.target.closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root") !== null) {
       e.stopImmediatePropagation();
     }
   };
@@ -70,11 +66,7 @@ useEffect(() => {
 ```js
 useEffect(function() {
   var handler = function(e) {
-    if (
-      $(e.target).closest(
-        ".tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"
-      ).length
-    ) {
+    if ($(e.target).closest(".tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
       e.stopImmediatePropagation();
     }
   };

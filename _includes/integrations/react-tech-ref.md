@@ -43,23 +43,46 @@ $ yarn add @tinymce/tinymce-react
 
 ### Using TinyMCE React integration in a Bootstrap dialog
 
-To use TinyMCE React instances inside Bootstrap UI dialogs, add the following React effect to a component that renders with the editor:
+To use TinyMCE React instances inside Bootstrap UI dialogs, add the following React effect to a component that renders with the editor.
+
+#### Bootstrap 5 (no JQuery, does not support IE 11)
 
 ```jsx
-  useEffect(() => {
-    const handler = (e) => {
-      if (
-        $(e.target).closest(
-          ".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"
-        ).length
-      ) {
-        e.stopImmediatePropagation();
-      }
-    };
-    document.addEventListener("focusin", handler);
-    return () => document.removeEventListener("focusin", handler);
-  }, []);
+useEffect(() => {
+  const handler = (e) => {
+    if (
+      e.target.closest(
+        ".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"
+      ) !== null
+    ) {
+      e.stopImmediatePropagation();
+    }
+  };
+  document.addEventListener("focusin", handler);
+  return () => document.removeEventListener("focusin", handler);
+}, []);
 ```
+
+#### Bootstrap 4
+
+```js
+useEffect(function() {
+  var handler = function(e) {
+    if (
+      $(e.target).closest(
+        ".tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"
+      ).length
+    ) {
+      e.stopImmediatePropagation();
+    }
+  };
+  $(document).on('focusin', handler);
+  return function() {
+    $(document).off('focusin', handler);
+  };
+}, []);
+```
+
 This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog.
 
 ### Configuring the editor

@@ -12,7 +12,7 @@ This option disables the automatic show and hide behavior of the toolbar and men
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'div',  // change this value according to your HTML
   inline: true,
   toolbar_persist: true
 });

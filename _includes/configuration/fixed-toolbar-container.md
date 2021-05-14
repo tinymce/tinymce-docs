@@ -10,7 +10,7 @@ This example takes a CSS 3 selector named `'#mytoolbar'` and renders any inline 
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'div',  // change this value according to your HTML
   inline: true,
   fixed_toolbar_container: '#mytoolbar'
 });

@@ -110,7 +110,7 @@ This option specifies the default language used by Spell Checker Pro.
 
 **Type:** `String`
 
-**Default Value:** `'en_us'`
+**Default Value:** `'en_US'`
 
 #### Example: Using `spellchecker_language`
 
@@ -118,7 +118,7 @@ This option specifies the default language used by Spell Checker Pro.
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_language: 'en-US'
+  spellchecker_language: 'de'
 });
 ```
 
@@ -132,7 +132,7 @@ This option specifies the spellchecker languages that are available to the user,
 
 **Default Value:**
 ```
-'English (United States)=en-US,English (United Kingdom)=en-GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Portuguese=pt,Portuguese (Portugal)=pt-PT,Spanish=es,Swedish=sv'
+'English (United States)=en_US,English (United Kingdom)=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Portuguese=pt,Portuguese (Portugal)=pt_PT,Spanish=es,Swedish=sv'
 ```
 
 #### Example: Using `spellchecker_languages`
@@ -141,7 +141,7 @@ This option specifies the spellchecker languages that are available to the user,
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_languages: 'US English=en-US,UK English=en-GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt-PT,Spanish=es,Swedish=sv'
+  spellchecker_languages: 'US English=en_US,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
 });
 ```
 
@@ -234,8 +234,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_ignore_list: {
-    'en-US': ['tinymce', 'TinyMCE'],
-    'es': ['tinymce']
+    en_US: ['tinymce', 'TinyMCE'],
+    es: ['tinymce']
   }
 });
 ```

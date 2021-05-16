@@ -4,10 +4,10 @@ The following languages are supported:
 
 | **Language**                                 | **Code**            |
 |----------------------------------------------|---------------------|
-| English (US)                                 | en, en-US           |
-| English (UK)                                 | en-UK, en-GB, en-BR |
-| English (US) - with additional medical terms | en-US-medical       |
-| English (UK) - with additional medical terms | en-GB-medical       |
+| English (US)                                 | en, en_US           |
+| English (UK)                                 | en_UK, en_GB, en_BR |
+| English (US) - with additional medical terms | en_US-medical       |
+| English (UK) - with additional medical terms | en_GB-medical       |
 | Danish                                       | da                  |
 | Dutch                                        | nl                  |
 | Finnish                                      | fi                  |
@@ -16,6 +16,6 @@ The following languages are supported:
 | Italian                                      | it                  |
 | Norwegian                                    | nb                  |
 | Portuguese (Brazil)                          | pt                  |
-| Portuguese (Europe)                          | pt-PT               |
+| Portuguese (Europe)                          | pt_PT               |
 | Spanish                                      | es                  |
 | Swedish                                      | sv                  |

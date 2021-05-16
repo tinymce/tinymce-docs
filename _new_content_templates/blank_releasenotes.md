@@ -17,6 +17,7 @@ Replace vnumcode with the version number without points, such as XYZ
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
+- [Changes in behavior](#changesinbehavior)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
@@ -47,6 +48,12 @@ The following enhancements were made for the {{site.productname}} vnumtxt releas
 ### Additional enhancements
 
 {{site.productname}} vnumtxt introduces the following minor enhancements:
+
+- changelog
+
+## Changes in behavior
+
+The following changes in behavior were made for the {{site.productname}} vnumtxt release:
 
 - changelog
 

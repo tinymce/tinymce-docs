@@ -16,6 +16,6 @@ The following languages are supported:
 | Italian                                      | it                  |
 | Norwegian                                    | nb                  |
 | Portuguese (Brazil)                          | pt                  |
-| Portuguese (Europe)                          | pt_PT               |
+| Portuguese (Portugal)                        | pt_PT               |
 | Spanish                                      | es                  |
 | Swedish                                      | sv                  |

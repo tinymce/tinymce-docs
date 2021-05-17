@@ -122,6 +122,9 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **S
 **Spell Checker Pro** 2.3.1 provides the following bug fixes:
 
 - Fixed as-you-type spellchecking not running when editor content is changed programmatically.
+- Fixed English medical variants incorrectly falling back to regular English.
+- Fixed `en_UK` and `en_BR` incorrectly spellchecking as US English instead of UK English.
+- Fixed menu items sometimes not rendering as toggled due to language codes using a case sensitive comparison.
 
 For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 

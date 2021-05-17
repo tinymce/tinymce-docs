@@ -12,7 +12,7 @@ keywords: releasenotes bugfixes
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
-- [Changes in behavior](#changesinbehavior)
+- [Functionality changes](#functionalitychanges)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [General bug fixes](#generalbugfixes)

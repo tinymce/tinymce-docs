@@ -125,7 +125,7 @@ The supported values are:
 
 ### powerpaste_html_import
 
-This option controls how content pasted from sources other than Microsoft Word and Google Docs is filtered. Note that this includes content copied from {{site.productname}} itself.
+This option controls how content pasted from sources other than Microsoft Word and Google Docs are filtered. Note that this includes content copied from {{site.productname}} itself.
 
 **Type:** `String`
 

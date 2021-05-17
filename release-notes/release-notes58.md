@@ -105,7 +105,7 @@ For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plug
 
 The {{site.productname}} 5.8 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-This release adds support for copying and pasting content from Google Docs, making it possible to copy and retain styles from Google Docs content. By default, a dialog will now appear asking users if the content should be cleaned or merged when pasting Google Docs content.
+This release adds support for copying and pasting content from Google Docs, making it possible to copy content and retain styles from Google Docs. By default, a dialog will appear asking users if the content should be cleaned or merged when pasting Google Docs content.
 
 **PowerPaste** 5.5.0 provides the following new features:
 

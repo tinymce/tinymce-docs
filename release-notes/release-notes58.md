@@ -122,7 +122,10 @@ This release adds support for copying and pasting content from Google Docs, maki
 - Fixed an issue where it was possible for the width to be stripped from a table when pasted.
 - Fixed merge and clean dialog button text incorrectly using title-style capitalization.
 
-For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+For information on:
+
+- The PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+- PowerPaste support and compatibility, including Google Docs support, see: [Supported Premium Versions and Platforms - PowerPaste support]({{site.baseurl}}/enterprise/system-requirements/#powerpastesupportcopyandpaste).
 
 ### Spell Checker Pro 2.3.1
 

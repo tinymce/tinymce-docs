@@ -1,9 +1,25 @@
 ## PowerPaste support (Copy and Paste)
 
-{{site.companynameformal}} tests and supports using the PowerPaste plugin for copying content from Google Docs and versions of Microsoft Word and Microsoft Excel:
+This section details supported use of the {{site.companyname}} PowerPaste plugin.
+
+### Pasting from Microsoft Word
+
+{{site.companynameformal}} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
 
 * Covered by Microsoft Mainstream Support based on the [Microsoft Fixed Lifecycle Policy](https://support.microsoft.com/en-us/help/14085/fixed-lifecycle-policy).
 * Provided by Microsoft Office 365.
+
+### Pasting from Google Docs
+
+{{site.companynameformal}} tests and supports using the PowerPaste plugin for copying content from [Google Docs](https://www.google.com/docs/about/) for:
+
+* Copying content from the latest version of Google Docs.
+* Pasting into any supported version of {{site.productname}} using PowerPaste 5.5.0 or later.
+
+The following may work, but is _not officially supported_:
+
+* Pasting Google Docs content into {{site.productname}} on Microsoft Internet Explorer 11.
+* Copying content from other Google suite applications such as Google Sheets into {{site.productname}}.
 
 ### PowerPaste Feature and Browser Support
 

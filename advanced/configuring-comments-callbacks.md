@@ -49,6 +49,7 @@ The `tinycomments_create` function is given a request (req) object as the first 
 * **createdAt**: The date the comment was created.
 
 The `done` callback should accept the following object:
+
 ```js
 {
   conversationUid: string, // the new conversation uid
@@ -74,6 +75,7 @@ The `tinycomments_reply` function is given a request (req) object as the first p
 * **createdAt**: The date the comment was created.
 
 The `done` callback should accept the following object:
+
 ```js
 {
   commentUid: string // the value of the new comment uid
@@ -97,6 +99,7 @@ The `tinycomments_edit_comment` function is given a request (req) object as the 
 * **modifiedAt**: The date the comment was modified.
 
 The `done` callback should accept the following object:
+
 ```js
 {
   canEdit: boolean, // whether or not the Edit succeeded
@@ -113,6 +116,7 @@ The `tinycomments_delete` function is passed a (`req`) object as the first param
 * **conversationUid**: The uid of the conversation the reply is targeting.
 
 The `done` callback should accept the following object:
+
 ```js
 {
   canDelete: boolean // whether or not the conversation can be deleted
@@ -135,6 +139,7 @@ The `tinycomments_resolve` function is passed a (`req`) object as the first para
 * **conversationUid**: The uid of the conversation the reply is targeting.
 
 The `done` callback should accept the following object:
+
 ```js
 {
   canResolve: boolean // whether or not the conversation can be resolved
@@ -151,6 +156,7 @@ The `tinycomments_delete_all` function should asynchronously return a flag indic
 The `tinycomments_delete_all` function is given a request (req) object as the first parameter with no fields.
 
 The `done` callback should accept the following object:
+
 ```js
 {
   canDelete: boolean, // whether or not all conversations can be deleted
@@ -170,6 +176,7 @@ The `tinycomments_delete_comment` function is given a request (req) object as th
 * **commentUid**: The uid of the comment to delete (cannot be the same as conversationUid)
 
 The `done` callback should accept the following object:
+
 ```js
 {
   canDelete: boolean, // whether or not an individual comment can be deleted
@@ -194,6 +201,7 @@ The `tinycomments_lookup` function is passed a (`req`) object as the first param
 * **conversationUid**: The uid of the conversation the reply is targeting.
 
 The `done` callback should accept the following object:
+
 ```js
 {
  conversation: {

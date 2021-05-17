@@ -8,14 +8,14 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.8 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.8 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.8, including:
+{{site.productname}} 5.8 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, May 19<sup>th</sup>, 2021. It includes {{site.productname}} 5.8 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.8, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
+- [Changes in behavior](#changesinbehavior)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [General bug fixes](#generalbugfixes)
-- [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
@@ -25,12 +25,6 @@ keywords: releasenotes bugfixes
 ## New features
 
 The following new features were added for the {{site.productname}} 5.8 release.
-
-### Improved keyboard navigation for the inline boundary feature
-
-Users can now escape inline elements (such as links and comments) using the `Home`, `End`, `PageUp`, and `PageDown` keys. Due to their unique behavior, `PageUp` and `PageDown` are not available in macOS.
-
-For information on inline boundaries, see: [Content appearance options - Inline boundaries]({{site.baseurl}}/configure/content-appearance/#inline_boundaries).
 
 ### Added new `fixed_toolbar_container_target` option
 
@@ -48,33 +42,36 @@ For information on editor resizing, see: [User interface options - Resize]({{sit
 
 {{site.productname}} 5.8 introduces the following minor new features:
 
-- changelog
+- Added the `PAGE_UP` and `PAGE_DOWN` key code constants to the `VK` API.
 
 ## Enhancements
 
 The following enhancements were made for the {{site.productname}} 5.8 release.
 
-### Enhancement name
+### Improved keyboard navigation for the inline boundary feature
+
+Users can now escape inline elements (such as links and comments) using the `Home`, `End`, `PageUp`, and `PageDown` keys. Due to their unique behavior, `PageUp` and `PageDown` are not available in macOS.
+
+For information on inline boundaries, see: [Content appearance options - Inline boundaries]({{site.baseurl}}/configure/content-appearance/#inline_boundaries).
 
 ### Additional enhancements
 
 {{site.productname}} 5.8 introduces the following minor enhancements:
 
-- changelog
+- Updated the `formatter.matchFormat` API to support matching formats with variables in the `classes` property.
+- Added HTML5 `audio` and `video` elements to the default alignment formats.
+- Added support for alpha list numbering to the list properties dialog.
+
+## Functionality changes
+
+The following functionality changes were made for the {{site.productname}} 5.8 release:
+
+- Updated the `image` dialog to display the class list dropdown as full-width if the caption checkbox is not present.
+- Renamed the "H Align" and "V Align" input labels in the Table Cell Properties dialog to "Horizontal align" and "Vertical align" respectively.
 
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.8.
-
-### Premium Plugin Name X.Y.Z
-
-The {{site.productname}} 5.8 release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
-
-**<<Premium Plugin Name>>** X.Y.Z provides the following improvements:
-
-- <Description>
-
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
 ### Accessibility Checker 2.3.2
 
@@ -161,21 +158,28 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 
 {{site.productname}} 5.8 provides fixes for the following bugs:
 
-- changelog
-
-## Security fixes
-
-{{site.productname}} 5.8 provides fixes for the following security issues:
-
-- changelog
+- Fixed a bug where it wasn't possible to align nested list items.
+- The RGB fields in the color picker dialog were not staying in sync with the color palette and hue slider.
+- The color preview box in the color picker dialog was not correctly displaying the saturation and value of the chosen color.
+- The color picker dialog will now show an alert if it is submitted with an invalid hex color code.
+- Fixed a bug where the `TableModified` event was not fired when adding a table row with the Tab key.
+- Added missing `images_file_types` setting to the exported TypeScript types.
+- Fixed a bug where lists pasted from Word with Roman numeral markers were not displayed correctly. Patch contributed by aautio.
+- The `editor.insertContent` API was incorrectly handling nested `span` elements with matching styles.
+- The HTML5 `small` element could not be removed when clearing text formatting.
+- The Oxide button text transform variable was incorrectly using `capitalize` instead of `none`. Patch contributed by dakur.
+- Fix dialog button text that was using title-style capitalization.
+- Table plugin could perform operations on tables containing the inline editor.
+- Fixed Tab key navigation inside table cells with a ranged selection.
+- The foreground and background toolbar button color indicator is no longer blurry.
+- Fixed a regression in the `tinymce.create()` API that caused issues when multiple objects were created.
+- Fixed the `LineHeight` command causing the `change` event to be fired inconsistently.
 
 ## Deprecated features
 
 The following features have been deprecated with the release of {{site.productname}} 5.8:
 
-- [](#).
-
-### The...
+The undocumented `setIconStroke` Split Toolbar Button API has been deprecated and will be removed in a future release.
 
 ## Known issues
 

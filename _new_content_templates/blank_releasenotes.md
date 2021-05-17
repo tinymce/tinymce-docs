@@ -17,7 +17,7 @@ Replace vnumcode with the version number without points, such as XYZ
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
-- [Changes in behavior](#changesinbehavior)
+- [Functionality changes](#functionalitychanges)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)

@@ -51,9 +51,9 @@ The following enhancements were made for the {{site.productname}} vnumtxt releas
 
 - changelog
 
-## Changes in behavior
+## Functionality changes
 
-The following changes in behavior were made for the {{site.productname}} vnumtxt release:
+The following functionality changes were made for the {{site.productname}} vnumtxt release:
 
 - changelog
 

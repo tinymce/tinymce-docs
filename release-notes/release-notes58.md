@@ -62,9 +62,9 @@ For information on inline boundaries, see: [Content appearance options - Inline 
 - Added HTML5 `audio` and `video` elements to the default alignment formats.
 - Added support for alpha list numbering to the list properties dialog.
 
-## Changes in behavior
+## Functionality changes
 
-The following changes in behavior were made for the {{site.productname}} 5.8 release:
+The following functionality changes were made for the {{site.productname}} 5.8 release:
 
 - Updated the `image` dialog to display the class list dropdown as full-width if the caption checkbox is not present.
 - Renamed the "H Align" and "V Align" input labels in the Table Cell Properties dialog to "Horizontal align" and "Vertical align" respectively.

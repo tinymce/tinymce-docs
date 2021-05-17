@@ -115,6 +115,32 @@ The {{site.productname}} 5.8 release includes an accompanying release of the **E
 
 For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/premium/export/).
 
+### PowerPaste 5.5.0
+
+The {{site.productname}} 5.8 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+This release adds support for copying and pasting content from Google Docs, making it possible to copy content and retain styles from Google Docs. By default, a dialog will appear asking users if the content should be cleaned or merged when pasting Google Docs content.
+
+**PowerPaste** 5.5.0 provides the following new features:
+
+- Added Google Docs paste support which can be controlled using the new [`powerpaste_googledocs_import` option]({{site.baseurl}}/plugins/premium/powerpaste/#powerpaste_googledocs_import).
+
+**PowerPaste** 5.5.0 provides the following improvements:
+
+- The editor will now show a "loading" screen while paste events are processed.
+
+**PowerPaste** 5.5.0 provides the following bug fixes:
+
+- Fixed an issue where automatic linking didn't work with URLs containing commas in the path.
+- Fixed an issue where tables or images sometimes had negative left margins after being pasted.
+- Fixed an issue where it was possible for the width to be stripped from a table when pasted.
+- Fixed merge and clean dialog button text incorrectly using title-style capitalization.
+
+For information on:
+
+- The PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+- PowerPaste support and compatibility, including Google Docs support, see: [Supported Premium Versions and Platforms - PowerPaste support]({{site.baseurl}}/enterprise/system-requirements/#powerpastesupportcopyandpaste).
+
 ### Spell Checker Pro 2.3.1
 
 The {{site.productname}} 5.8 release includes an accompanying release of the **Spell Checker Pro** premium plugin.

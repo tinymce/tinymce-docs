@@ -143,7 +143,7 @@ The `done` callback should accept the following object:
 ```js
 {
   canResolve: boolean // whether or not the conversation can be resolved
-  reason: string? // an optional string explaining why resolving was not allowed (if canResolve is false)
+  reason?: string // an optional string explaining why resolving was not allowed (if canResolve is false)
 }
 ```
 

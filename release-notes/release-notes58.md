@@ -216,13 +216,27 @@ This section describes issues that users of {{site.productname}} 5.8 may encount
 
 **Outline**
 
-- [](#)
+- [Unexpected behavior when moving the caret using the PageDown and End keys](#unexpectedbehaviorwhenmovingthecaretusingthepagedownandendkeys)
+- [Accessibility when using keyboard navigation to resize the editor](#accessibilitywhenusingkeyboardnavigationtoresizetheeditor)
+- [Content pasted from Google Docs cannot be outdented](#contentpastedfromgoogledocscannotbeoutdented)
 
-###
+### Unexpected behavior when moving the caret using the PageDown and End keys
 
-**Issue**: This issue affects ....
+**Issue**: This issue affects moving the caret over links using the `Page Down` or `End` keys. If the caret is placed adjacent to a link and the key is pressed, the caret will move inside the link rather than past it.
 
 **Workaround**: There was no known workaround at the time of the release.
+
+### Accessibility when using keyboard navigation to resize the editor
+
+**Issue**: The editor can now be resized using keyboard navigation, however there is currently no available ARIA specification to indicate the resize state for screen readers or other assistive technology to consume.
+
+**Workaround**: There was no known workaround at the time of the release. We are tracking the relevant [ARIA GitHub issue](https://github.com/w3c/aria/issues/432) for a way to support this.
+
+### Content pasted from Google Docs cannot be outdented
+
+**Issue**: This issue affects content pasted in from Google Docs using the [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/). When content is pasted into the editor that contains indentation, it then cannot be outdented using the available toolbar buttons.
+
+**Workaround**: The only known workaround is to configure TinyMCE to use margins instead of padding for indentation. This can be enabled by configuring the [`indent_use_margin` option]({{site.baseurl}}/configure/content-formatting/#indent_use_margin).
 
 {% assign enterprise = true %}
 

@@ -26,6 +26,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/fixed-toolbar-container.md %}
 
+{% include configuration/fixed-toolbar-container-target.md %}
+
 {% include configuration/font-formats.md %}
 
 {% include configuration/fontsize-formats.md %}

@@ -17,6 +17,7 @@ Replace vnumcode with the version number without points, such as XYZ
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
+- [Functionality changes](#functionalitychanges)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [Accompanying Premium self-hosted server-side component changes](##accompanyingpremiumself-hostedserver-sidecomponentchanges)
@@ -49,6 +50,12 @@ The following enhancements were made for the {{site.productname}} vnumtxt releas
 ### Additional enhancements
 
 {{site.productname}} vnumtxt introduces the following minor enhancements:
+
+- changelog
+
+## Functionality changes
+
+The following functionality changes were made for the {{site.productname}} vnumtxt release:
 
 - changelog
 

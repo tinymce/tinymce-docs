@@ -5,9 +5,10 @@ baseurl: ""
 shared_baseurl: ""
 syntax_highlight_theme: "tomorrow-night"
 cdnurl: "https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+tdcdnurl: "https://cdn.tiny.cloud/1/_your_api_key_/tinydrive/5-stable/tinydrive.min.js"
 cdnurl_rtc: "https://cdn.tiny.cloud/1/no-api-key/tinymce/5-rtc/tinymce.min.js"
-tinymce_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5/tinymce.min.js"
-tinydrive_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/stable/tinydrive.min.js"
+tinymce_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5-stable/tinymce.min.js"
+tinydrive_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/5-stable/tinydrive.min.js"
 webcomponent_url: "https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.min.js"
 default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor, inline editor, distraction-free editor, classic editor, wysiwyg
 # product variables
@@ -61,6 +62,7 @@ requires_5_4v: "> **Note**: This feature is only available for TinyMCE 5.4 and l
 requires_5_5v: "> **Note**: This feature is only available for TinyMCE 5.5 and later."
 requires_5_6v: "> **Note**: This feature is only available for TinyMCE 5.6 and later."
 requires_5_7v: "> **Note**: This feature is only available for TinyMCE 5.7 and later."
+requires_5_8v: "> **Note**: This feature is only available for TinyMCE 5.8 and later."
 requires_5_9v: "> **Note**: This feature is only available for TinyMCE 5.9 and later."
 
 requires_jsscwar_230v: "> **Note**: This feature is only available for TinyMCE self-hosted server-side components, version 2.3.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-hyperlinking/version`."

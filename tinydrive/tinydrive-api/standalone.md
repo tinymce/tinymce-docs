@@ -12,12 +12,14 @@ keywords: tinydrive api
 
 In order to use {{site.cloudfilemanager}} in standalone mode you will need to add a script to your page with your API key as part of the URL. The URL is in the following format:
 
-`https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js`
+```
+{{site.tdcdnurl}}
+```
 
 ### Example: Loading the standalone API script
 
 ```html
-<script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js" referrerpolicy="origin"></script>
+<script src="{{site.tdcdnurl}}" referrerpolicy="origin"></script>
 <script>
 tinydrive.pick({
   token_provider: '/your-local/jwt-provider'
@@ -258,6 +260,7 @@ interface StandalonePickerApiSettings extends CommonStandaloneApiSettings {
   google_drive_client_id?: string;
   google_drive_key?: string;
   max_image_dimension?: number;
+  skin?: string;
   target?: string;
 }
 

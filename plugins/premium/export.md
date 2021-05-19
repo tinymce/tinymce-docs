@@ -9,10 +9,6 @@ keywords: plugin export pdf
 {% assign pluginname = "Export" %}
 {% assign plugincode = "export" %}
 
-{% assign beta_feature = "The Export plugin" %}
-{% assign pre-release_type = "Open Beta" %}
-{% include misc/beta-note.md %}
-
 {{site.requires_5_5v}}<br/>
 {{site.premiumplugin}}
 
@@ -63,7 +59,6 @@ This exporter has a few limitations or known issues that should be noted:
 
 The following plugins are not supported:
 
-- [Anchor]({{site.baseurl}}/plugins/opensource/anchor/)
 - [BBCode]({{site.baseurl}}/plugins/opensource/bbcode/)
 - [Comments]({{site.baseurl}}/plugins/premium/comments/)
 - [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/)

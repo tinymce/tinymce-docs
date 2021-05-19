@@ -83,6 +83,26 @@ tinymce.init({
 
 ## Configuring the Tiny Drive UI
 
+### tinydrive_skin
+
+This option sets the skin applied to {{site.cloudfilemanager}}. The default skin included with {{site.cloudfilemanager}} is named "oxide".
+
+**Type:** `String`
+
+**Default Value:** `'oxide'`
+
+**Possible Values:** `'oxide'`, `'oxide-dark'`
+
+If the `tinydrive_skin` option is not specified, {{site.cloudfilemanager}} will try and use the skin specified by the [{{site.productname}} `skin` option]({{ site.baseurl }}/configure/editor-appearance/#skin) before falling back to the default "oxide" skin.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
+  tinydrive_skin: 'oxide-dark'
+});
+```
+
 ### Configuring the Insert File toolbar button
 
 {{site.cloudfilemanager}} will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `insertfile` button. To enable this button, add it to the toolbar editor setting.

@@ -22,6 +22,8 @@ The Enhanced Media Embed server-side component require additional configuration,
 
 The `allowed-origins` element configures a list of **all** values that can be expected by the server-side components in a HTTP Origin header from your {{site.productname}} instances (see the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {{site.productname}} instances will be served from without the path information.
 
+> **Note:** Unless defining regular expression based `allowed-origins`, the `scheme` (e.g. http) and the `port` (e.g. 800) are **ignored**. 
+
 This is best illustrated with some examples:
 
 If users load {{site.productname}} from the following URLs:
@@ -29,42 +31,40 @@ If users load {{site.productname}} from the following URLs:
 - `http://server.example.com/editor.php`
 - `http://server.example.com/subpage/editor.php`
 
-Add `http://server.example.com` to the `allowed-origins` list.
+Add `server.example.com` to the `allowed-origins` list.
 
 If users load {{site.productname}} from the following URLs:
 
 - `https://server.example.com/editor.php`
 - `http://server.example.com/subpage/editor.php`
 
-Add `http://server.example.com` and `https://server.example.com` to the `allowed-origins` list.
+Add `server.example.com` to the `allowed-origins` list because the scheme is ignored.
 
 If users load {{site.productname}} from the following URLs:
 
 - `https://server.example.com/editor.php`
 - `https://server.example.com/`
 
-Add `https://server.example.com` to the `allowed-origins` list.
+Add `server.example.com` to the `allowed-origins` list.
 
 If users load {{site.productname}} from the following URLs:
 
 - `http://oneserver.example.com/editor.php`
 - `http://twoserver.example.com/subpage/editor.php`
 
-Add `http://oneserver.example.com` and `http://twoserver.example.com` to the`allowed-origins` list.
-
-> **Note:** If some of your URLs include a port then add an entry with and without the port. The value of the `Origin` header may be different across browsers. Add both to be safe.
+Add `oneserver.example.com` and `twoserver.example.com` to the`allowed-origins` list.
 
 If users load {{site.productname}} from the following URLs:
 
 - `http://server.example.com:8080/editor.php`
 
-Add `http://server.example.com:8080` and `http://server.example.com` to the `allowed-origins` list.
+Add `server.example.com` to the `allowed-origins` list because the port is ignored.
 
 If users load {{site.productname}} from the following URLs:
 
 - `https://server.example.com:9000/editor.php`
 
-Add `https://server.example.com:9000` and `https://server.example.com` to the `allowed-origins` list.
+Add `server.example.com` to the `allowed-origins` list because the scheme and the port are ignored.
 
 
 |               |                     |             |
@@ -77,7 +77,7 @@ Example:
 ```
 ephox {
   allowed-origins {
-    origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
+    origins = [ "myserver", "myserver.example.com", "myotherserver", "mysecureserver" ]
   }
 }
 ```
@@ -86,20 +86,16 @@ ephox {
 
 The `*` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `allowed-origin` list:
 
-1. The scheme (e.g. `*://mydomain.com`). Omitting the scheme entirely is equivalent (e.g. `mydomain.com`).
-2. The port (e.g. `http://mydomain.com:*`).
-3. As a prefix of the domain (e.g. `http://*.mydomain.com`).
-4. Any combination of scheme, port, and domain prefix (e.g. `*://*.mydomain.com:*`).
-5. As the only character (e.g. `*`). This will allow **any** Origin to access the server-side components.
-6. As the only character after the scheme (e.g. `https://*`). This will allow **any** Origin serving {{site.productname}} from a HTTPS page to access the server-side components.
+1. As a prefix of the domain (e.g. `*.mydomain.com`).
+2. As the only character (e.g. `*`). This will allow **any** Origin to access the server-side components.
 
 
-> **Note:** Options 5 and 6 allow a broad set of origins access to the server-side components and are NOT recommended for production deployments.
+> **Note:** Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.
 
 ```
 ephox {
   allowed-origins {
-    origins = [ "http://myserver:*", "*://myotherserver.example.com", "*://*.mydomain.example.com:*"]
+    origins = [ "myserver", "*.mydomain.example.com" ]
   }
 }
 ```
@@ -108,14 +104,14 @@ ephox {
 
 {{site.requires_jsscwar_230v}}
 
-Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
+Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character. When using regular expressions, the `scheme` and `port` is not excluded from the matching process.
 
 For example:
 
 ```
 ephox {
   allowed-origins {
-    origins = [ "https?://myserver", "/(myserver|myotherserver\.)?example\.com/", "http://myserver:8080" ]
+    origins = [ "https?://myserver", "/(myserver|myotherserver\.)?example\.com/", "myserver" ]
   }
 }
 ```

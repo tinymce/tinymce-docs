@@ -8,6 +8,15 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.8.1 - 2021-05-20
+
+### Fixed
+- An unexpected exception was thrown when switching to readonly mode and adjusting the editor width.
+- Content could be lost when the `pagebreak_split_block` setting was enabled.
+- The `list-style-type: none;` style on nested list items was incorrectly removed when clearing formatting.
+- URLs were not always detected when pasting over a selection. Patch contributed by jwcooper.
+- Properties on the `OpenNotification` event were incorrectly namespaced.
+
 ## 5.8.0 - 2021-05-06
 
 ### Added
@@ -399,7 +408,7 @@ class: changelog
 - Fixed possible uncaught exception when a `style` attribute is removed using a content filter on `setContent`.
 - Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
 - Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.
-- Fixed the floating toolbar drawer disconnecting from the toolbar when adding content in inline mode #TINY-4725.
+- Fixed the floating toolbar drawer disconnecting from the toolbar when adding content in inline mode.
 - Fixed `readonly` mode not returning the appropriate boolean value.
 - Fixed the `forced_root_block_attrs` setting not applying attributes to new blocks consistently.
 - Fixed the editor incorrectly stealing focus during initialization in Microsoft Internet Explorer.
@@ -576,7 +585,7 @@ class: changelog
   - `table_grid`.
   - `resize`.
   - `object_resizing`.
-- Changed toolbars and context toolbars to sidescroll on mobile #TINY-3894.
+- Changed toolbars and context toolbars to sidescroll on mobile.
 - Changed context menus to render as horizontal menus on touch devices.
 - Changed the editor to use the `VisualViewport` API of the browser where possible.
 - Changed visualblocks toolbar button icon and renamed `paragraph` icon to `visualchars`.

@@ -9,6 +9,21 @@ keywords: releasenotes bugfixes
 {% comment %}
 Replace vnumtxt with the version number such as: X.Y.Z
 Replace vnumcode with the version number without points, such as XYZ
+The following "list" should be added to `data/nav.yml`
+- url: "release-notesvnumcode"
+  page:
+  - url: "#Overview"
+  - url: "#New features"
+  - url: "#Enhancements"
+  - url: "#Functionality changes"
+  - url: "#Accompanying Premium Plugin changes"
+  - url: "#Accompanying Premium Skins and Icon Packs changes"
+  - url: "#Accompanying Premium self-hosted server-side component changes"
+  - url: "#General bug fixes"
+  - url: "#Security fixes"
+  - url: "#Deprecated features"
+  - url: "#Known issues"
+  - url: "#Upgrading to the latest version of TinyMCE 5"
 {% endcomment %}
 
 ## Overview

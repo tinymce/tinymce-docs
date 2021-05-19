@@ -12,7 +12,9 @@ keywords: releasenotes bugfixes
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
+- [Functionality changes](#functionalitychanges)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [Accompanying Premium self-hosted server-side component changes](##accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
@@ -46,6 +48,12 @@ The following enhancements were made for the {{site.productname}} 5.9 release.
 
 - changelog
 
+## Functionality changes
+
+The following functionality changes were made for the {{site.productname}} 5.9 release:
+
+- changelog
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.9.
@@ -68,6 +76,28 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **<
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+## Accompanying Premium Skins and Icon Packs changes
+
+The {{site.productname}} 5.9 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+### Premium Skins and Icon Packs - New features
+
+{% comment %}
+Add description here.
+{% endcomment %}
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+
+### Premium Skins and Icon Packs - Bug fixes
+
+The **Premium Skins and Icon Packs** release includes the following bug fixes:
+
+{% comment %}
+Add description here.
+{% endcomment %}
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+
 ## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
@@ -84,11 +114,14 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 For information on:
 
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
 ### Updating the self-hosted server-side components
 
-Version 2.5.0 provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+Version X.Y.Z provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
 1. Update your Java Application Server to the minimum required version:
 

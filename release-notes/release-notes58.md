@@ -161,7 +161,8 @@ The {{site.productname}} 5.8 release includes an accompanying release of **Tiny 
 **Tiny Drive** 1.4.0 provides the following new features:
 
 - Added a new [`tinydrive_skin`]({{ site.baseurl }}/tinydrive/configuration/#tinydrive_skin) option for applying a skin to the {{site.productname}} {{site.cloudfilemanager}} plugin.
-- Added a new `oxide-dark` skin for plugin mode.
+- Added a new [`skin`]({{ site.baseurl }}/tinydrive/tinydrive-api/standalone/#skin) option for applying a skin to standalone instances of {{site.cloudfilemanager}}. Before using this setting with {{site.cloudfilemanager}} 1.4.0, see: [Known issues](#knownissues).
+- Added a new `oxide-dark` skin for standalone and plugin mode.
 - Added a new PDF viewer to add previews for PDF files.
 
 **Tiny Drive** 1.4.0 provides the following bug fixes:

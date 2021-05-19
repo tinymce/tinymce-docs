@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.8.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.8.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.8.1, including:
+{{site.productname}} 5.8.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, May 26<sup>th</sup>, 2021. It includes {{site.productname}} 5.8.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.8.1, including:
 
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [General bug fixes](#generalbugfixes)
@@ -39,6 +39,14 @@ The {{site.productname}} 5.8.1 release includes an accompanying release of the *
 - <Description>
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+
+### Tiny Drive 1.4.1
+
+The {{site.productname}} 5.8.1 release includes an accompanying release of **Tiny Drive**.
+
+**Tiny Drive** 1.4.1 fixes an issue where the `skin` setting wasn't working in standalone-mode.
+
+For information on Tiny Drive, see: [Tiny Drive]({{ site.baseurl }}/tinydrive/).
 
 ## General bug fixes
 

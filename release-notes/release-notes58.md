@@ -241,7 +241,7 @@ This section describes issues that users of {{site.productname}} 5.8 may encount
 
 ### The configured skin is ignored for Tiny Drive in standalone mode
 
-**Issue**: This issue prevents setting the skin for {{site.cloudfilemanager}} in standalone mode using the `skin` option. This issue does not affect the `tinydrive_skin` option the {{site.productname}} {{site.cloudfilemanager}} plugin.
+**Issue**: This issue prevents setting the skin for {{site.cloudfilemanager}} in standalone mode using the `skin` option. This issue does not affect the `tinydrive_skin` option for the {{site.productname}} {{site.cloudfilemanager}} plugin.
 
 **Workaround**: There was no known workaround at the time of the release.
 

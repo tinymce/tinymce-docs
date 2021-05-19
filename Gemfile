@@ -4,6 +4,7 @@
 source 'https://rubygems.org'
 
 group :development, :test do
+  gem 'bundler', '1.17.1'
   gem 'jekyll', '~> 3.9.0'
   gem 'jekyll-redirect-from', '~> 0.14.0'
   gem 'jekyll-sitemap', '~> 1.2.0'

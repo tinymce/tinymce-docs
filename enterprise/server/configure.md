@@ -22,7 +22,7 @@ The Enhanced Media Embed server-side component require additional configuration,
 
 The `allowed-origins` element configures a list of **all** values that can be expected by the server-side components in a HTTP Origin header from your {{site.productname}} instances (see the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {{site.productname}} instances will be served from without the path information.
 
-> **Note:** Unless defining regular expression based `allowed-origins`, the `scheme` (e.g. http) and the `port` (e.g. 800) are **ignored**. 
+> **Note:** When the services are matching against the `allowed-origins` list, the `scheme` (e.g. http) and the `port` (e.g. 800) are **ignored**. 
 
 This is best illustrated with some examples:
 
@@ -104,14 +104,14 @@ ephox {
 
 {{site.requires_jsscwar_230v}}
 
-Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character. When using regular expressions, the `scheme` and `port` is not excluded from the matching process.
+Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
 
 For example:
 
 ```
 ephox {
   allowed-origins {
-    origins = [ "https?://myserver", "/(myserver|myotherserver\.)?example\.com/", "myserver" ]
+    origins = [ "myserver", "/(myserver|myotherserver\.)?example\.com/" ]
   }
 }
 ```

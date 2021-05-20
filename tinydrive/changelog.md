@@ -7,6 +7,11 @@ keywords: changelog
 class: changelog
 ---
 
+## 1.4.1 - 2021-05-26
+
+### Fixed
+- Fixed an issue where the `skin` setting wasn't working in standalone-mode.
+
 ## 1.4.0 - 2021-05-19
 
 ### Added

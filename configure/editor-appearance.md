@@ -94,4 +94,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/toolbar_sticky.md %}
 
+{% include configuration/toolbar_sticky_offset.md %}
+
 {% include configuration/width.md %}

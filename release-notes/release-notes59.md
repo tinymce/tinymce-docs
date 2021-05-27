@@ -28,11 +28,11 @@ keywords: releasenotes bugfixes
 
 The following new features were added for the {{site.productname}} 5.9 release.
 
-### New `toolbar_sticky_offset` option for customizing toolbar sticky
+### New `toolbar_sticky_offset` option for customizing sticky toolbars
 
-The new `toolbar_sticky_offset` setting was added to allow the toolbar to stick at a specific offset from the top/bottom of the view (depending on the toolbar mode).
+The new `toolbar_sticky_offset` option was added to allow the toolbar to stick at a specific offset from the top or bottom of the view depending on the toolbar mode.
 
-For information on the `toolbar_sticky` option, see: [User interface options - toolbar_sticky]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
+For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 
 ### Additional new features
 

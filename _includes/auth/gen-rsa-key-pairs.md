@@ -65,15 +65,13 @@ sudo zypper install openssl
 
 To create a private/public key pair:
 
-1. On a command line, run:
+On a command line, run:
 
-    ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
-    ```
+```sh
+ssh-keygen -m PEM -t rsa -b 2048 -N "" -f <MY_KEY_PAIR_NAME>
+```
 
-    Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
-
-2. Enter a passphrase for accessing the key.
+Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
 Two files will be created in the current directory:
 
@@ -105,12 +103,10 @@ To create a private/public key pair:
 1. On a terminal, run:
 
     ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
+    ssh-keygen -m PEM -t rsa -b 2048 -N "" -f <MY_KEY_PAIR_NAME>
     ```
 
     Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
-
-1. Enter a passphrase for accessing the key.
 
 Two files will be created in the current directory:
 
@@ -154,12 +150,10 @@ To create a private/public key pair:
 1. On the _Git bash_ command line, run:
 
     ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
+    ssh-keygen -m PEM -t rsa -b 2048 -N "" -f <MY_KEY_PAIR_NAME>
     ```
 
     Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
-
-2. Enter a passphrase for accessing the key.
 
 Two files will be created in the current directory:
 

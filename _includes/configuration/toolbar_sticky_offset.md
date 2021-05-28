@@ -2,8 +2,9 @@
 
 {{site.requires_5_9v}}
 
-The Sticky offset option allow the toolbar to stick at a specific offset from the top or bottom of the view depending on the toolbar mode.
-To see it works `toolbar_sticky` must be `true`.
+This option allows the toolbar to stick or dock at the specified offset from the top or bottom of the view depending on the [toolbar mode]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode}}). This can be useful when a site has it's own sticky header navigation bar to ensure the toolbar sticks below.
+
+**Note:** This option requires the [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky}}) option be set to `true` to take effect.
 
 **Type:** `Number`
 

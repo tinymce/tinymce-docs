@@ -294,7 +294,7 @@ This option accepts an object that must be serializable (`JSON.stringify` will b
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
-  rtc_client_details: { onMobile: true, region: 'us' }
+  rtc_client_info: { onMobile: true, region: 'us' }
 })
 ```
 

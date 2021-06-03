@@ -30,7 +30,7 @@ The following new features were added for the {{site.productname}} 5.9 release.
 
 ### New `toolbar_sticky_offset` option for customizing sticky toolbars
 
-The new `toolbar_sticky_offset` option was added to allow the toolbar to stick at a specific offset from the top or bottom of the view depending on the toolbar mode.
+The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
 
 For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 

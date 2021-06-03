@@ -63,6 +63,8 @@ sudo zypper install openssl
 
 #### Create a private/public key pair on Linux
 
+{% include auth/recommend-passphrase.md %}
+
 On a command line run the following, where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair:
 
 ```sh
@@ -92,6 +94,8 @@ To create a private/public key pair on a macOS operating system:
 1. [Retrieve the public key](#retrievethepublickeyonmacos).
 
 #### Create a private/public key pair on macOS
+
+{% include auth/recommend-passphrase.md %}
 
 To create a private/public key pair:
 
@@ -139,6 +143,8 @@ To install OpenSSL with _Git for Windows_:
 1. Once the installation is complete, click **Finish**.
 
 #### Create a private/public key pair on Windows
+
+{% include auth/recommend-passphrase.md %}
 
 To create a private/public key pair:
 

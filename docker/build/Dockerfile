@@ -2,7 +2,7 @@
 # Images build from this Dockerfile are used in Wercker to build
 # our webiste and documentation
 
-FROM ubuntu
+FROM debian:stable
 MAINTAINER Tiny, is-inbox@tiny.cloud
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -17,8 +17,6 @@ RUN \
     git \
     make \
     python \
-    nodejs \
-    npm \
     awscli \
     ruby \
     ruby-dev \
@@ -28,10 +26,10 @@ RUN \
     unzip \
     zlib1g-dev \
     && \
+  curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
+  apt-get install nodejs && \
   apt-get clean autoclean && \
   apt-get autoremove -y && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
-
-RUN npm install -g npm@6
 
 RUN gem install bundle

@@ -26,7 +26,7 @@ The two arguments this method take are:
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | ch | string (of one character) | Required | The character to trigger the autocompleter. |
-| fetch | `(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleterContents[]>` | Required | A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a Promise containing matching results. |
+| fetch | `(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleteItem[] | CardMenuItem[]>` | Required | A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a Promise containing matching results. |
 | onAction | `(api, rng: Range, value: string) => void` | Required | A function invoked when a fetched item is selected. |
 | columns | number or 'auto' | Optional | default: auto - The number of columns to show. If set to `1` column, then icons and text are displayed, otherwise only icons are displayed. |
 | matches | `(rng: Range, text: string, pattern: string) => boolean` | Optional | default: `isStartOfWord` - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
@@ -74,9 +74,9 @@ The `CardMenuItem` allows customization of layout and content. This is done by c
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
+| items | array | required | An array of [CardItems](#carditems) |
 | value | string | optional | Value of the item. This will be passed to the `onAction` callback when selected. |
 | label | string | optional | Label of the item. Will be used for [accessibility purposes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA). |
-| items | array | required | An array of [CardItems](#carditems) |
 
 ```js
 {
@@ -102,10 +102,10 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
+| items | array | required | An array of [CardItems](#carditem) |
 | direction | `'vertical'` or `'horizontal'` | optional | default: `horizontal` - directionality of subitems |
 | align | `'left'` or `'right'` | optional | default: `left` - horizontal alignment of subitems |
 | valign | `'top'`, `'middle'` or `'bottom'` | optional | default: `middle` - vertical alignment of subitems |
-| items | array | required | An array of [CardItems](#carditem) |
 
 ```js
 {
@@ -125,7 +125,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | ---- | ----- | ----------- | ----------- |
 | text | string | required | Text to display |
 | name | string | optional | Identifier used to reference specific CardText items. The autocompleter will use this for the text-highlight functionality. |
-| classes | array | required | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `font-style`. |
+| classes | array | optional | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `font-style`. |
 
 ```js
 {
@@ -144,7 +144,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | ---- | ----- | ----------- | ----------- |
 | src | string | required | Image source to use |
 | alt | string | required | Image alt text |
-| classes | array | required | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `border-radius`. |
+| classes | array | optional | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `border-radius`. |
 
 ```js
 {

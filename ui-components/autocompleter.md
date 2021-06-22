@@ -8,7 +8,7 @@ keywords: autocomplete
 
 ## Overview
 
-An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the [charmap]({{site.baseurl}}/plugins/opensource/charmap/) plugin enabled, typing **:amp** should show the ampersand item in the menu. To activate the `autocompleter`, the user must precede the trigger character (colon in this case) with a separator character, such as a space or a newline. Pressing `esc` should close the autocomplete menu.
+An automcompleter displays suggestions while the user is typing. Suggestions are shown when the trigger character is typed in (e.g. ':'). Pressing esc should close the autocompleter.
 
 ## How to create custom autocompleters
 

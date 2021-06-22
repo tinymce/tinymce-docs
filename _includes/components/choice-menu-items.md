@@ -6,9 +6,9 @@ Choice menu items are a special type of menu item used for split toolbar button 
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
+| value | any | required | A value that is passed to `onItemAction` when the choice menu item is clicked. |
 | text | string | optional | Text to display. |
 | icon | string | optional | {{site.predefinedIconsOnly}} |
-| value | string | required | A value that is passed to `onItemAction` when the choice menu item is clicked. |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |
 | shortcut | string | optional | Text to display in the shortcut label. To register a shortcut, see: [Add custom shortcuts to TinyMCE]({{site.baseurl}}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce). |
 

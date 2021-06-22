@@ -8,6 +8,12 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.8.2 - 2021-06-23
+
+### Fixed
+- Fixed an issue when pasting cells from tables containing `colgroup`s into tables without `colgroup`s.
+- Fixed an issue that could cause an invalid toolbar button state when multiple inline editors were on a single page.
+
 ## 5.8.1 - 2021-05-20
 
 ### Fixed

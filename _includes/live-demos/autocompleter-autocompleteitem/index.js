@@ -44,47 +44,5 @@ tinymce.init({
         });
       }
     });
-
-    /**
-     * An autocompleter that allows you to insert special characters.
-     * Items are built using the CardMenuItem.
-     */
-    editor.ui.registry.addAutocompleter('specialchars_cardmenuitems', {
-      ch: '-',
-      minChars: 1,
-      columns: 1,
-      highlightOn: ['char_name'],
-      onAction: onAction,
-      fetch: function (pattern) {
-        return new tinymce.util.Promise(function (resolve) {
-          var results = getMatchedChars(pattern).map(function (char) {
-            return {
-              type: 'cardmenuitem',
-              value: char.value,
-              label: char.text,
-              items: [
-                {
-                  type: 'cardcontainer',
-                  direction: 'vertical',
-                  items: [
-                    {
-                      type: 'cardtext',
-                      text: char.text,
-                      name: 'char_name'
-                    },
-                    {
-                      type: 'cardtext',
-                      text: char.value
-                    }
-                  ]
-                }
-              ]
-            }
-          });
-          resolve(results);
-        });
-      }
-    });
-  },
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  }
 });

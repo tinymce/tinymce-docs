@@ -29,6 +29,6 @@ tinymce.init({
 });
 ```
 
-{%if page.title != "Context menu" %}
+{% if page.title != "Context menu" %}
 For information on configuring the `contextmenu` option and creating custom context menu items [context menu examples]({{site.baseurl}}/ui-components/contextmenu/).
 {% endif %}

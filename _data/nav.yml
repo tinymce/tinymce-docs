@@ -242,6 +242,13 @@
     - url: "casechange"
     - url: "checklist"
     - url: "comments"
+      pages:
+      - url: "introduction_to_tiny_comments"
+      - url: "comments_end-user_docs"
+      - url: "comments_embedded_mode"
+      - url: "comments_callback_mode"
+      - url: "comments_toolbars_menus"
+      - url: "comments_commands_events_apis"
     - url: "mediaembed"
     - url: "export"
       pages:
@@ -723,7 +730,6 @@
     - url: "#Deploying an icon pack"
   - url: "creating-a-plugin"
   - url: "annotations"
-  - url: "configuring-comments-callbacks"
   - url: "yeoman-generator"
   - url: "creating-custom-notifications"
   - url: "php-upload-handler"

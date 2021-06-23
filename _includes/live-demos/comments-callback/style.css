@@ -1,0 +1,35 @@
+/*
+ * The following CSS is for styling the user drop-down menus
+ * above the editor and are not required for the Comments plugin.
+ */
+.box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  margin-bottom: 15px;
+}
+
+.button {
+  display: inline-block;
+  min-width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 20 20px;
+  text-align: center;
+}
+
+.button-color {
+  background-color: {{site.primaryColor}};
+}
+
+.button-color:hover {
+  background-color: #1d6abe;
+}
+
+.link-text {
+  color: #fff;
+  font-weight: 600;
+}

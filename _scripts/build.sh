@@ -14,10 +14,10 @@ echo "baseurl: \"$BASE_URL\"" > _config-environment.yml
 # origin -- we need to do this for the template imports on the
 # head, footer and newsletter parts of the docs.
 #
-if [ -z "${WERCKER_GIT_BRANCH}" ]; then
+if [[ -z "${WERCKER_GIT_BRANCH}" ]]; then
   echo -e " > local build - using default origin in config.yml"
 else
-  if [ $WERCKER_GIT_BRANCH = "develop" ]; then
+  if [[ $WERCKER_GIT_BRANCH = "develop" ]]; then
     echo -e " > staging build - setting origin to: $STAGING_ORIGIN"
     echo "origin: \"$STAGING_ORIGIN\"" >> _config-environment.yml
   else

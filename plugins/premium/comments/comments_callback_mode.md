@@ -294,7 +294,20 @@ The `done` callback should accept the following object:
 For example:
 
 ```js
-
+function resolve_comment_thread(_ref, done, fail) {
+  var conversationUid = _ref.conversationUid;
+  fetch('https://api.example/conversations/' + conversationUid, {
+    method: 'PUT',
+  }).then(function (response) {
+    if (response.ok) {
+      done({ canResolve: true });
+    } else if (response.status === 403) {
+      done({ canResolve: false });
+    } else {
+      fail(new Error('Something has gone wrong...'));
+    }
+  });
+}
 
 tinymce.init({
   selector: '#editor',

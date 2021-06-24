@@ -8,7 +8,7 @@ keywords: autocomplete
 
 ## Overview
 
-An autocompleter displays suggestions while the user is typing. Suggestions are shown when the trigger character is typed in (e.g. ':'). Pressing `esc` should close the autocompleter.
+An autocompleter displays suggestions while the user is typing. Suggestions are shown when the trigger character is typed in (such as '`:`'). Pressing the Escape key should close the autocompleter.
 
 ## How to create custom autocompleters
 
@@ -162,9 +162,9 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | hide | `() => void` | Hides the autocompleter menu. |
 | reload | `(fetchOptions: Record<string, any>) => void` | Hides the autocompleter menu and fetches new menu items. The  `fetchOptions` will be passed to the autocompleter `fetch` callback. |
 
-## Interactive example
+## Interactive examples
 
-The following shows two examples of how to create a charmap autocompleter. The first example is constructed using the standard autocompleter item and will show whenever a `:` character is typed plus at least one additional character. The second is constructed using [CardMenuItems](#cardmenuitem) and will show whenever a `-` character is typed plus at least one additional character.
+The following examples show how to create a special characters autocompleter. The first example uses the standard autocompleter item and will show when user types the colon (`:`) character and at least one additional character. The second uses [CardMenuItems](#cardmenuitem) and will show when a user types a hyphen (`-`) character and at least one additional character.
 
 {% include live-demo.html id="autocompleter-autocompleteitem" height="300" tab="js" %}
 

@@ -8,7 +8,7 @@ keywords: autocomplete
 
 ## Overview
 
-An autocompleter displays suggestions while the user is typing. Suggestions are shown when the trigger character is typed in (such as '`:`'). Pressing the Escape key should close the autocompleter.
+An autocompleter displays suggestions while the user is typing. Suggestions are shown when the trigger character is entered after a space or at the start of a new line (such as '` :`'). Pressing the Escape key will close the autocompleter.
 
 ## How to create custom autocompleters
 

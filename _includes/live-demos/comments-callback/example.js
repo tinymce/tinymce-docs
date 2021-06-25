@@ -3,15 +3,15 @@
  * (must call "done" or "fail") *
  ********************************/
 
-function tinycomments_create(ref, done, fail) {
-  let content = ref.content;
-  let createdAt = ref.createdAt;
+function tinycomments_create(req, done, fail) {
+  let content = req.content;
+  let createdAt = req.createdAt;
 
   fetch('https://api.example/conversations/', {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {
-      Accept: 'application/json',
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
   })
@@ -21,8 +21,8 @@ function tinycomments_create(ref, done, fail) {
       }
       return response.json();
     })
-    .then((ref2) => {
-      let conversationUid = ref2.conversationUid;
+    .then((req2) => {
+      let conversationUid = req2.conversationUid;
       done({ conversationUid: conversationUid });
     })
     .catch((e) => {
@@ -30,16 +30,16 @@ function tinycomments_create(ref, done, fail) {
     });
 }
 
-function tinycomments_reply(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
-  let content = ref.content;
-  let createdAt = ref.createdAt;
+function tinycomments_reply(req, done, fail) {
+  let conversationUid = req.conversationUid;
+  let content = req.content;
+  let createdAt = req.createdAt;
 
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {
-      Accept: 'application/json',
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
   })
@@ -49,8 +49,8 @@ function tinycomments_reply(ref, done, fail) {
       }
       return response.json();
     })
-    .then((ref2) => {
-      let commentUid = ref2.commentUid;
+    .then((req2) => {
+      let commentUid = req2.commentUid;
       done({ commentUid: commentUid });
     })
     .catch((e) => {
@@ -58,11 +58,11 @@ function tinycomments_reply(ref, done, fail) {
     });
 }
 
-function tinycomments_edit_comment(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
-  let commentUid = ref.commentUid;
-  let content = ref.content;
-  let modifiedAt = ref.modifiedAt;
+function tinycomments_edit_comment(req, done, fail) {
+  let conversationUid = req.conversationUid;
+  let commentUid = req.commentUid;
+  let content = req.content;
+  let modifiedAt = req.modifiedAt;
 
   fetch(
     'https://api.example/conversations/' + conversationUid + '/' + commentUid,
@@ -70,7 +70,7 @@ function tinycomments_edit_comment(ref, done, fail) {
       method: 'PUT',
       body: JSON.stringify({ content: content, modifiedAt: modifiedAt }),
       headers: {
-        Accept: 'application/json',
+        'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
     }
@@ -81,17 +81,17 @@ function tinycomments_edit_comment(ref, done, fail) {
       }
       return response.json();
     })
-    .then((ref2) => {
-      let canEdit = ref2.canEdit;
-      return void done({ canEdit: canEdit });
+    .then((req2) => {
+      let canEdit = req2.canEdit;
+      done({ canEdit: canEdit });
     })
     .catch((e) => {
-      return void fail(e);
+      fail(e);
     });
 }
 
-function tinycomments_delete(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
+function tinycomments_delete(req, done, fail) {
+  let conversationUid = req.conversationUid;
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'DELETE',
   }).then((response) => {
@@ -119,9 +119,9 @@ function tinycomments_delete_all(_req, done, fail) {
   });
 }
 
-function tinycomments_delete_comment(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
-  let commentUid = ref.commentUid;
+function tinycomments_delete_comment(req, done, fail) {
+  let conversationUid = req.conversationUid;
+  let commentUid = req.commentUid;
 
   fetch(
     'https://api.example/conversations/' + conversationUid + '/' + commentUid,

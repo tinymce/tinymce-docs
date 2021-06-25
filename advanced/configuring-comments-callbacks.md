@@ -97,10 +97,10 @@ function create_comment(_ref, done, fail) {
     })
     .then(function (_ref2) {
       var conversationUid = _ref2.conversationUid;
-      return void done({ conversationUid: conversationUid });
+      done({ conversationUid: conversationUid });
     })
     .catch(function (e) {
-      return void fail(e);
+      fail(e);
     });
 }
 
@@ -167,10 +167,10 @@ function reply_comment(_ref, done, fail) {
     })
     .then(function (_ref2) {
       var commentUid = _ref2.commentUid;
-      return void done({ commentUid: commentUid });
+      done({ commentUid: commentUid });
     })
     .catch(function (e) {
-      return void fail(e);
+      fail(e);
     });
 }
 
@@ -245,10 +245,10 @@ function edit_comment(_ref, done, fail) {
     })
     .then(function (_ref2) {
       var canEdit = _ref2.canEdit;
-      return void done({ canEdit: canEdit });
+      done({ canEdit: canEdit });
     })
     .catch(function (e) {
-      return void fail(e);
+      fail(e);
     });
 }
 

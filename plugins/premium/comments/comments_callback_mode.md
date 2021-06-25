@@ -245,10 +245,10 @@ function edit_comment(ref, done, fail) {
     })
     .then((ref2) => {
       let canEdit = ref2.canEdit;
-      return void done({ canEdit: canEdit });
+      done({ canEdit: canEdit });
     })
     .catch((e) => {
-      return void fail(e);
+      fail(e);
     });
 }
 

@@ -273,37 +273,6 @@ tinymce.ScriptLoader.loadScripts(
     /* Set initial Author */
     setAuthor(users[0].id);
 
-    function buildUserList(userList, parentNodeId, selectedUser) {
-      let parentNode = document.getElementById(parentNodeId);
-      let uid;
-      for (uid in userList) {
-        let newOption = document.createElement('option');
-        newOption.setAttribute('class', 'link-text');
-        newOption.setAttribute('value', userList[uid].id);
-        if (parentNodeId === 'owner') {
-          const onclickfunc =
-            "localStorage.setItem('owner','" + userList[uid].id + "')";
-          newOption.setAttribute('onclick', onclickfunc);
-        } else if (parentNodeId === 'author') {
-          const onclickfunc =
-            "localStorage.setItem('author','" + userList[uid].id + "')";
-          newOption.setAttribute('onclick', onclickfunc);
-        } else {
-          console.log('invalid user type in configuration');
-        }
-        newOption.appendChild(
-          document.createTextNode(userList[uid].displayName)
-        );
-        if (userList[uid].id === selectedUser) {
-          newOption.setAttribute('selected', '');
-        }
-        parentNode.appendChild(newOption);
-      }
-    }
-
-    buildUserList(users, 'owner', getOwner());
-    buildUserList(users, 'author', getAuthor());
-
     /********************************
      *   Tiny Comments functions    *
      * (must call "done" or "fail") *

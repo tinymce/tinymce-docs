@@ -77,9 +77,9 @@ The `done` callback should accept the following object:
 For example:
 
 ```js
-function create_comment(_ref, done, fail) {
-  var content = _ref.content;
-  var createdAt = _ref.createdAt;
+function create_comment(ref, done, fail) {
+  let content = ref.content;
+  let createdAt = ref.createdAt;
 
   fetch('https://api.example/conversations/', {
     method: 'POST',
@@ -89,18 +89,18 @@ function create_comment(_ref, done, fail) {
       'Content-Type': 'application/json',
     },
   })
-    .then(function (response) {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to create comment');
       }
       return response.json();
     })
-    .then(function (_ref2) {
-      var conversationUid = _ref2.conversationUid;
-      return void done({ conversationUid: conversationUid });
+    .then((ref2) => {
+      let conversationUid = ref2.conversationUid;
+      done({ conversationUid: conversationUid });
     })
-    .catch(function (e) {
-      return void fail(e);
+    .catch((e) => {
+      fail(e);
     });
 }
 
@@ -146,10 +146,10 @@ The `done` callback should accept the following object:
 For example:
 
 ```js
-function reply_comment(_ref, done, fail) {
-  var conversationUid = _ref.conversationUid;
-  var content = _ref.content;
-  var createdAt = _ref.createdAt;
+function reply_comment(ref, done, fail) {
+  let conversationUid = ref.conversationUid;
+  let content = ref.content;
+  let createdAt = ref.createdAt;
 
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'POST',
@@ -159,18 +159,18 @@ function reply_comment(_ref, done, fail) {
       'Content-Type': 'application/json',
     },
   })
-    .then(function (response) {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to reply to comment');
       }
       return response.json();
     })
-    .then(function (_ref2) {
-      var commentUid = _ref2.commentUid;
-      return void done({ commentUid: commentUid });
+    .then((ref2) => {
+      let commentUid = ref2.commentUid;
+      done({ commentUid: commentUid });
     })
-    .catch(function (e) {
-      return void fail(e);
+    .catch((e) => {
+      fail(e);
     });
 }
 
@@ -220,11 +220,11 @@ The `done` callback should accept the following object:
 For example:
 
 ```js
-function edit_comment(_ref, done, fail) {
-  var conversationUid = _ref.conversationUid;
-  var commentUid = _ref.commentUid;
-  var content = _ref.content;
-  var modifiedAt = _ref.modifiedAt;
+function edit_comment(ref, done, fail) {
+  let conversationUid = ref.conversationUid;
+  let commentUid = ref.commentUid;
+  let content = ref.content;
+  let modifiedAt = ref.modifiedAt;
 
   fetch(
     'https://api.example/conversations/' + conversationUid + '/' + commentUid,
@@ -237,17 +237,17 @@ function edit_comment(_ref, done, fail) {
       },
     }
   )
-    .then(function (response) {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to edit comment');
       }
       return response.json();
     })
-    .then(function (_ref2) {
-      var canEdit = _ref2.canEdit;
+    .then((ref2) => {
+      let canEdit = ref2.canEdit;
       return void done({ canEdit: canEdit });
     })
-    .catch(function (e) {
+    .catch((e) => {
       return void fail(e);
     });
 }
@@ -265,7 +265,6 @@ tinymce.init({
   tinycomments_lookup: lookup_comment
 });
 ```
-
 
 ### `tinycomments_resolve`
 
@@ -294,11 +293,11 @@ The `done` callback should accept the following object:
 For example:
 
 ```js
-function resolve_comment_thread(_ref, done, fail) {
-  var conversationUid = _ref.conversationUid;
+function resolve_comment_thread(ref, done, fail) {
+  let conversationUid = ref.conversationUid;
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'PUT',
-  }).then(function (response) {
+  }).then((response) => {
     if (response.ok) {
       done({ canResolve: true });
     } else if (response.status === 403) {
@@ -350,16 +349,16 @@ The `done` callback should accept the following object:
 For example:
 
 ```js
-function delete_comment(_ref, done, fail) {
-  var conversationUid = _ref.conversationUid;
-  var commentUid = _ref.commentUid;
+function delete_comment(ref, done, fail) {
+  let conversationUid = ref.conversationUid;
+  let commentUid = ref.commentUid;
 
   fetch(
     'https://api.example/conversations/' + conversationUid + '/' + commentUid,
     {
       method: 'DELETE',
     }
-  ).then(function (response) {
+  ).then((response) => {
     if (response.ok) {
       done({ canDelete: true });
     } else if (response.status === 403) {
@@ -407,11 +406,11 @@ The `done` callback should accept the following object:
 For example:
 
 ```js
-function delete_comment_thread(_ref, done, fail) {
-  var conversationUid = _ref.conversationUid;
+function delete_comment_thread(ref, done, fail) {
+  let conversationUid = ref.conversationUid;
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'DELETE',
-  }).then(function (response) {
+  }).then((response) => {
     if (response.ok) {
       done({ canDelete: true });
     } else if (response.status === 403) {
@@ -459,7 +458,7 @@ For example:
 function delete_all_comment_threads(_req, done, fail) {
   fetch('https://api.example/conversations', {
     method: 'DELETE',
-  }).then(function (response) {
+  }).then((response) => {
     if (response.ok) {
       done({ canDelete: true });
     } else if (response.status === 403) {
@@ -535,28 +534,28 @@ For example:
 
 ```js
 function lookup_comment({ conversationUid }, done, fail) {
-  var lookup = async function () {
-    var convResp = await fetch(
+  let lookup = async function () {
+    let convResp = await fetch(
       'https://api.example/conversations/' + conversationUid
     );
     if (!convResp.ok) {
       throw new Error('Failed to get conversation');
     }
-    var comments = await convResp.json();
-    var usersResp = await fetch('https://api.example/users/');
+    let comments = await convResp.json();
+    let usersResp = await fetch('https://api.example/users/');
     if (!usersResp.ok) {
       throw new Error('Failed to get users');
     }
-    var { users } = await usersResp.json();
-    var getUser = function (userId) {
-      return users.find(function (u) {
+    let { users } = await usersResp.json();
+    let getUser = function (userId) {
+      return users.find((u) => {
         return u.id === userId;
       });
     };
     return {
       conversation: {
         uid: conversationUid,
-        comments: comments.map(function (comment) {
+        comments: comments.map((comment) => {
           return {
             ...comment,
             content: comment.content,
@@ -567,11 +566,11 @@ function lookup_comment({ conversationUid }, done, fail) {
     };
   };
   lookup()
-    .then(function (data) {
+    .then((data) => {
       console.log('Lookup success ' + conversationUid, data);
       done(data);
     })
-    .catch(function (err) {
+    .catch((err) => {
       console.error('Lookup failure ' + conversationUid, err);
       fail(err);
     });

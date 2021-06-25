@@ -4,28 +4,28 @@ tinymce.ScriptLoader.loadScripts(
     '//unpkg.com/@pollyjs/adapter-fetch@5.1.1',
     '//unpkg.com/@pollyjs/persister-local-storage@5.1.1',
   ],
-  function () {
+  () => {
     /******************************
      * Mock server implementation *
      ******************************/
 
-    var { Polly } = window['@pollyjs/core'];
-    var FetchAdapter = window['@pollyjs/adapter-fetch'];
-    var LocalStoragePersister = window['@pollyjs/persister-local-storage'];
+    let { Polly } = window['@pollyjs/core'];
+    let FetchAdapter = window['@pollyjs/adapter-fetch'];
+    let LocalStoragePersister = window['@pollyjs/persister-local-storage'];
 
     Polly.register(FetchAdapter);
     Polly.register(LocalStoragePersister);
-    var polly = new Polly('test', {
+    let polly = new Polly('test', {
       adapters: ['fetch'],
       persister: 'local-storage',
     });
-    var server = polly.server;
+    let server = polly.server;
 
-    server.any().on('request', function (req) {
+    server.any().on('request', (req) => {
       console.log('Server request:', req);
     });
 
-    server.any().on('beforeResponse', function (req, res) {
+    server.any().on('beforeResponse', (req, res) => {
       console.log('Server response:', res);
     });
 
@@ -63,20 +63,20 @@ tinymce.ScriptLoader.loadScripts(
     }
 
     function getConversation(uid) {
-      var store = getDB();
+      let store = getDB();
       console.log('DB get:', uid, store[uid]);
       return store[uid];
     }
 
     function setConversation(uid, conversation) {
-      var store = getDB();
+      let store = getDB();
       console.log('DB set:', uid, store[uid], conversation);
       store[uid] = conversation;
       setDB(store);
     }
 
     function deleteConversation(uid) {
-      var store = getDB();
+      let store = getDB();
       console.log('DB delete:', uid);
       delete store[uid];
       setDB(store);
@@ -84,18 +84,18 @@ tinymce.ScriptLoader.loadScripts(
 
     function deleteAllConversations() {
       console.log('DB delete all');
-      var store = {};
+      let store = {};
       setDB(store);
     }
 
-    server.host('https://api.example', function () {
+    server.host('https://api.example', () => {
       /* create new conversation */
-      server.post('/conversations/').intercept(function (req, res) {
-        var author = getAuthor();
-        var { content, createdAt } = JSON.parse(req.body);
+      server.post('/conversations/').intercept((req, res) => {
+        let author = getAuthor();
+        let { content, createdAt } = JSON.parse(req.body);
         console.log(req.body);
         try {
-          var conversationUid = randomString();
+          let conversationUid = randomString();
           setConversation(conversationUid, [
             {
               author,
@@ -113,50 +113,48 @@ tinymce.ScriptLoader.loadScripts(
       });
 
       /* add new comment to conversation */
-      server
-        .post('/conversations/:conversationUid')
-        .intercept(function (req, res) {
-          var author = getAuthor();
-          var { content, createdAt } = JSON.parse(req.body);
-          var conversationUid = req.params.conversationUid;
-          try {
-            var conversation = getConversation(conversationUid);
-            var commentUid = randomString();
-            setConversation(
-              conversationUid,
-              conversation.concat([
-                {
-                  author,
-                  createdAt,
-                  modifiedAt: createdAt,
-                  content,
-                  uid: commentUid,
-                },
-              ])
-            );
-            res.status(201).json({ commentUid });
-          } catch (e) {
-            console.log('Server error:', e);
-            res.status(500);
-          }
-        });
+      server.post('/conversations/:conversationUid').intercept((req, res) => {
+        let author = getAuthor();
+        let { content, createdAt } = JSON.parse(req.body);
+        let conversationUid = req.params.conversationUid;
+        try {
+          let conversation = getConversation(conversationUid);
+          let commentUid = randomString();
+          setConversation(
+            conversationUid,
+            conversation.concat([
+              {
+                author,
+                createdAt,
+                modifiedAt: createdAt,
+                content,
+                uid: commentUid,
+              },
+            ])
+          );
+          res.status(201).json({ commentUid });
+        } catch (e) {
+          console.log('Server error:', e);
+          res.status(500);
+        }
+      });
 
       /* edit a comment */
       server
         .put('/conversations/:conversationUid/:commentUid')
-        .intercept(function (req, res) {
-          var author = getAuthor();
-          var { content, modifiedAt } = JSON.parse(req.body);
-          var conversationUid = req.params.conversationUid;
-          var commentUid = req.params.commentUid;
+        .intercept((req, res) => {
+          let author = getAuthor();
+          let { content, modifiedAt } = JSON.parse(req.body);
+          let conversationUid = req.params.conversationUid;
+          let commentUid = req.params.commentUid;
 
           try {
-            var conversation = getConversation(conversationUid);
-            var commentIndex = conversation.findIndex(function (comment) {
+            let conversation = getConversation(conversationUid);
+            let commentIndex = conversation.findIndex((comment) => {
               return comment.uid === commentUid;
             });
-            var comment = conversation[commentIndex];
-            var canEdit = comment.author === author;
+            let comment = conversation[commentIndex];
+            let canEdit = comment.author === author;
             if (canEdit) {
               setConversation(conversationUid, [
                 ...conversation.slice(0, commentIndex),
@@ -178,16 +176,16 @@ tinymce.ScriptLoader.loadScripts(
       /* delete a comment */
       server
         .delete('/conversations/:conversationUid/:commentUid')
-        .intercept(function (req, res) {
-          var author = getAuthor();
-          var owner = getOwner();
-          var conversationUid = req.params.conversationUid;
-          var commentUid = req.params.commentUid;
-          var conversation = getConversation(conversationUid);
+        .intercept((req, res) => {
+          let author = getAuthor();
+          let owner = getOwner();
+          let conversationUid = req.params.conversationUid;
+          let commentUid = req.params.commentUid;
+          let conversation = getConversation(conversationUid);
           if (!conversation) {
             res.status(404);
           }
-          var commentIndex = conversation.findIndex(function (comment) {
+          let commentIndex = conversation.findIndex((comment) => {
             return comment.uid === commentUid;
           });
           if (commentIndex === -1) {
@@ -208,29 +206,27 @@ tinymce.ScriptLoader.loadScripts(
         });
 
       /* delete a conversation */
-      server
-        .delete('/conversations/:conversationUid')
-        .intercept(function (req, res) {
-          var author = getAuthor();
-          var owner = getOwner();
-          var conversationUid = req.params.conversationUid;
-          var conversation = getConversation(conversationUid);
-          if (conversation) {
-            if (conversation[0].author === author || author === owner) {
-              deleteConversation(conversationUid);
-              res.status(204);
-            } else {
-              res.status(403);
-            }
+      server.delete('/conversations/:conversationUid').intercept((req, res) => {
+        let author = getAuthor();
+        let owner = getOwner();
+        let conversationUid = req.params.conversationUid;
+        let conversation = getConversation(conversationUid);
+        if (conversation) {
+          if (conversation[0].author === author || author === owner) {
+            deleteConversation(conversationUid);
+            res.status(204);
           } else {
-            res.status(404);
+            res.status(403);
           }
-        });
+        } else {
+          res.status(404);
+        }
+      });
 
       /* delete all conversations */
-      server.delete('/conversations').intercept(function (req, res) {
-        var author = getAuthor();
-        var owner = getOwner();
+      server.delete('/conversations').intercept((req, res) => {
+        let author = getAuthor();
+        let owner = getOwner();
         if (author === owner) {
           deleteAllConversations();
           res.status(204);
@@ -240,19 +236,17 @@ tinymce.ScriptLoader.loadScripts(
       });
 
       /* lookup a conversation */
-      server
-        .get('/conversations/:conversationUid')
-        .intercept(function (req, res) {
-          var conversation = getConversation(req.params.conversationUid);
-          if (conversation) {
-            res.status(200).json(conversation);
-          } else {
-            res.status(404);
-          }
-        });
+      server.get('/conversations/:conversationUid').intercept((req, res) => {
+        let conversation = getConversation(req.params.conversationUid);
+        if (conversation) {
+          res.status(200).json(conversation);
+        } else {
+          res.status(404);
+        }
+      });
 
       /* lookup users */
-      server.get('/users/').intercept(function (req, res) {
+      server.get('/users/').intercept((req, res) => {
         res.status(200).json({
           users,
         });
@@ -267,7 +261,7 @@ tinymce.ScriptLoader.loadScripts(
      * Should be based on sessions and backend data *
      ***********************************************/
 
-    var users = [
+    const users = [
       { id: 'alex', displayName: 'Alex' },
       { id: 'jessie', displayName: 'Jessie' },
       { id: 'sam', displayName: 'Sam' },
@@ -280,17 +274,18 @@ tinymce.ScriptLoader.loadScripts(
     setAuthor(users[0].id);
 
     function buildUserList(userList, parentNodeId, selectedUser) {
-      var parentNode = document.getElementById(parentNodeId);
+      let parentNode = document.getElementById(parentNodeId);
+      let uid;
       for (uid in userList) {
-        var newOption = document.createElement('option');
+        let newOption = document.createElement('option');
         newOption.setAttribute('class', 'link-text');
         newOption.setAttribute('value', userList[uid].id);
         if (parentNodeId === 'owner') {
-          var onclickfunc =
+          const onclickfunc =
             "localStorage.setItem('owner','" + userList[uid].id + "')";
           newOption.setAttribute('onclick', onclickfunc);
         } else if (parentNodeId === 'author') {
-          var onclickfunc =
+          const onclickfunc =
             "localStorage.setItem('author','" + userList[uid].id + "')";
           newOption.setAttribute('onclick', onclickfunc);
         } else {
@@ -353,9 +348,9 @@ tinymce.ScriptLoader.loadScripts(
      * @param {done<TinyCommentsCreateResp>} done - callback to call when the comment is created on the server
      * @param {fail} fail - callback to call when something fails
      */
-    function tinycomments_create(_ref, done, fail) {
-      var content = _ref.content;
-      var createdAt = _ref.createdAt;
+    function tinycomments_create(ref, done, fail) {
+      let content = ref.content;
+      let createdAt = ref.createdAt;
 
       fetch('https://api.example/conversations/', {
         method: 'POST',
@@ -365,17 +360,17 @@ tinymce.ScriptLoader.loadScripts(
           'Content-Type': 'application/json',
         },
       })
-        .then(function (response) {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Failed to create comment');
           }
           return response.json();
         })
-        .then(function (_ref2) {
-          var conversationUid = _ref2.conversationUid;
+        .then((ref2) => {
+          let conversationUid = ref2.conversationUid;
           return void done({ conversationUid: conversationUid });
         })
-        .catch(function (e) {
+        .catch((e) => {
           return void fail(e);
         });
     }
@@ -403,10 +398,10 @@ tinymce.ScriptLoader.loadScripts(
      * @param {done<TinyCommentsReplyResp>} done - callback to call when the comment is created on the server
      * @param {fail} fail - callback to call when something fails
      */
-    function tinycomments_reply(_ref, done, fail) {
-      var conversationUid = _ref.conversationUid;
-      var content = _ref.content;
-      var createdAt = _ref.createdAt;
+    function tinycomments_reply(ref, done, fail) {
+      let conversationUid = ref.conversationUid;
+      let content = ref.content;
+      let createdAt = ref.createdAt;
 
       fetch('https://api.example/conversations/' + conversationUid, {
         method: 'POST',
@@ -416,17 +411,17 @@ tinymce.ScriptLoader.loadScripts(
           'Content-Type': 'application/json',
         },
       })
-        .then(function (response) {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Failed to reply to comment');
           }
           return response.json();
         })
-        .then(function (_ref2) {
-          var commentUid = _ref2.commentUid;
+        .then((ref2) => {
+          let commentUid = ref2.commentUid;
           return void done({ commentUid: commentUid });
         })
-        .catch(function (e) {
+        .catch((e) => {
           return void fail(e);
         });
     }
@@ -452,11 +447,11 @@ tinymce.ScriptLoader.loadScripts(
      * @param {done<TinyCommentsEditResp>} done
      * @param {fail} fail
      */
-    function tinycomments_edit_comment(_ref, done, fail) {
-      var conversationUid = _ref.conversationUid;
-      var commentUid = _ref.commentUid;
-      var content = _ref.content;
-      var modifiedAt = _ref.modifiedAt;
+    function tinycomments_edit_comment(ref, done, fail) {
+      let conversationUid = ref.conversationUid;
+      let commentUid = ref.commentUid;
+      let content = ref.content;
+      let modifiedAt = ref.modifiedAt;
 
       fetch(
         'https://api.example/conversations/' +
@@ -472,17 +467,17 @@ tinymce.ScriptLoader.loadScripts(
           },
         }
       )
-        .then(function (response) {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Failed to edit comment');
           }
           return response.json();
         })
-        .then(function (_ref2) {
-          var canEdit = _ref2.canEdit;
+        .then((ref2) => {
+          let canEdit = ref2.canEdit;
           return void done({ canEdit: canEdit });
         })
-        .catch(function (e) {
+        .catch((e) => {
           return void fail(e);
         });
     }
@@ -510,11 +505,11 @@ tinymce.ScriptLoader.loadScripts(
      * @param {done<TinyCommentsDeleteResp>} done
      * @param {fail} fail
      */
-    function tinycomments_delete(_ref, done, fail) {
-      var conversationUid = _ref.conversationUid;
+    function tinycomments_delete(ref, done, fail) {
+      let conversationUid = ref.conversationUid;
       fetch('https://api.example/conversations/' + conversationUid, {
         method: 'DELETE',
-      }).then(function (response) {
+      }).then((response) => {
         if (response.ok) {
           done({ canDelete: true });
         } else if (response.status === 403) {
@@ -551,7 +546,7 @@ tinymce.ScriptLoader.loadScripts(
     function tinycomments_delete_all(_req, done, fail) {
       fetch('https://api.example/conversations', {
         method: 'DELETE',
-      }).then(function (response) {
+      }).then((response) => {
         if (response.ok) {
           done({ canDelete: true });
         } else if (response.status === 403) {
@@ -582,9 +577,9 @@ tinymce.ScriptLoader.loadScripts(
      * @param {done<TinyCommentsDeleteCommentResp>} done
      * @param {fail} fail
      */
-    function tinycomments_delete_comment(_ref, done, fail) {
-      var conversationUid = _ref.conversationUid;
-      var commentUid = _ref.commentUid;
+    function tinycomments_delete_comment(ref, done, fail) {
+      let conversationUid = ref.conversationUid;
+      let commentUid = ref.commentUid;
 
       fetch(
         'https://api.example/conversations/' +
@@ -594,7 +589,7 @@ tinymce.ScriptLoader.loadScripts(
         {
           method: 'DELETE',
         }
-      ).then(function (response) {
+      ).then((response) => {
         if (response.ok) {
           done({ canDelete: true });
         } else if (response.status === 403) {
@@ -644,28 +639,28 @@ tinymce.ScriptLoader.loadScripts(
      * @param {fail} fail
      */
     function tinycomments_lookup({ conversationUid }, done, fail) {
-      var lookup = async function () {
-        var convResp = await fetch(
+      let lookup = async function () {
+        let convResp = await fetch(
           'https://api.example/conversations/' + conversationUid
         );
         if (!convResp.ok) {
           throw new Error('Failed to get conversation');
         }
-        var comments = await convResp.json();
-        var usersResp = await fetch('https://api.example/users/');
+        let comments = await convResp.json();
+        let usersResp = await fetch('https://api.example/users/');
         if (!usersResp.ok) {
           throw new Error('Failed to get users');
         }
-        var { users } = await usersResp.json();
-        var getUser = function (userId) {
-          return users.find(function (u) {
+        let { users } = await usersResp.json();
+        let getUser = function (userId) {
+          return users.find((u) => {
             return u.id === userId;
           });
         };
         return {
           conversation: {
             uid: conversationUid,
-            comments: comments.map(function (comment) {
+            comments: comments.map((comment) => {
               return {
                 ...comment,
                 content: comment.content,
@@ -676,11 +671,11 @@ tinymce.ScriptLoader.loadScripts(
         };
       };
       lookup()
-        .then(function (data) {
+        .then((data) => {
           console.log('Lookup success ' + conversationUid, data);
           done(data);
         })
-        .catch(function (err) {
+        .catch((err) => {
           console.error('Lookup failure ' + conversationUid, err);
           fail(err);
         });
@@ -711,10 +706,12 @@ tinymce.ScriptLoader.loadScripts(
       tinycomments_lookup,
       /* The following setup callback opens the comments sidebar when the editor loads */
       setup: function (editor) {
-        editor.on('SkinLoaded', function () {
-          editor.execCommand("ToggleSidebar", false, "showcomments", { skip_focus: true });
-        })
-      }
-    })
+        editor.on('SkinLoaded', () => {
+          editor.execCommand('ToggleSidebar', false, 'showcomments', {
+            skip_focus: true,
+          });
+        });
+      },
+    });
   }
 );

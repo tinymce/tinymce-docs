@@ -593,4 +593,4 @@ tinymce.init({
 
 {% include plugins/comments_open_sidebar.md %}
 
-{% include plugins/comments_common_issues.md %}
+{% include plugins/comments_highlighting_css.md %}

@@ -28,7 +28,7 @@ The Comments plugin provides:
 * A **user interface** to collaborate on content by creating and replying to comments.
 * A way to control the delete and resolve operations on a comment or comment thread.
 
-### Primary Comments Functions
+### Primary Comments functions
 
 The Comments plugin allows the user to perform the following functions:
 

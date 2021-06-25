@@ -23,10 +23,10 @@ function tinycomments_create(_ref, done, fail) {
     })
     .then(function (_ref2) {
       var conversationUid = _ref2.conversationUid;
-      return void done({ conversationUid: conversationUid });
+      done({ conversationUid: conversationUid });
     })
     .catch(function (e) {
-      return void fail(e);
+      fail(e);
     });
 }
 
@@ -51,10 +51,10 @@ function tinycomments_reply(_ref, done, fail) {
     })
     .then(function (_ref2) {
       var commentUid = _ref2.commentUid;
-      return void done({ commentUid: commentUid });
+      done({ commentUid: commentUid });
     })
     .catch(function (e) {
-      return void fail(e);
+      fail(e);
     });
 }
 
@@ -208,7 +208,7 @@ tinymce.init({
   /* The following setup callback opens the comments sidebar when the editor loads */
   setup: function (editor) {
     editor.on('SkinLoaded', function () {
-      editor.execCommand('ToggleSidebar', false, 'showcomments', { skip_focus: true });
+      editor.execCommand('ToggleSidebar', false, 'showcomments');
     });
   },
 });

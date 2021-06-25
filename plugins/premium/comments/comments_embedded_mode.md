@@ -29,7 +29,7 @@ This is the minimum recommended setup for the Comments plugin in embedded mode. 
 
 {% include live-demo.html id="comments-embedded" %}
 
-## Configuration options - embedded mode
+## Configuration options
 
 ### `tinycomments_author`
 

@@ -28,11 +28,11 @@ All options accept functions incorporating `done` and `fail` callbacks as parame
 Most (create, reply, and edit) functions require an `id` identifying the **current author**.
 
 Current author
-: The Comments plugin does not know the name of the current user. Determining the current user and storing the comment related to that user, has to be configured by the user.
+: The Comments plugin does not know the name of the current user. Determining the current user and storing the comment related to that user, has to be configured by the developer.
 
 After a user comments (triggering `tinycomments_create` for the first comment, or `tinycomments_reply` for subsequent comments), the Comments plugin requests the updated conversation using `tinycomments_lookup`, which should now contain the additional comment with the proper author.
 
-## Configuration options - callback mode
+## Configuration options
 
 ### Required options
 
@@ -50,7 +50,7 @@ The [`tinycomments_resolve`](#tinycomments_resolve) option is _optional_.
 
 ### `tinycomments_create`
 
-The Comments plugin uses the conversation `tinycomments_create` function to create a comment.
+The Comments plugin uses the `tinycomments_create` function to create a comment.
 
 The `tinycomments_create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
 
@@ -120,7 +120,7 @@ tinymce.init({
 
 ### `tinycomments_reply`
 
-The Comments plugin uses the conversation `tinycomments_reply` function to reply to a comment.
+The Comments plugin uses the `tinycomments_reply` function to reply to a comment.
 
 The `tinycomments_reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
@@ -190,9 +190,9 @@ tinymce.init({
 
 ### `tinycomments_edit_comment`
 
-The Comments plugin uses the conversation `tinycomments_edit_comment` function to edit a comment.
+The Comments plugin uses the `tinycomments_edit_comment` function to edit a comment.
 
-The `tinycomments_edit_comment` function allows updating or changing original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_edit_comment` function allows updating or changing existing comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_edit_comment` function is given a request (req) object as the first parameter, which has these fields:
 
@@ -200,7 +200,7 @@ The `tinycomments_edit_comment` function is given a request (req) object as the 
 : The uid of the conversation the reply is targeting.
 
 `commentUid`
-: The uid of the comment to edit (it can be the same as `conversationUid` if editing the first comment in a conversation)
+: The uid of the comment to edit (it can be the same as `conversationUid` if editing the first comment in a conversation).
 
 `content`
 : The content of the comment to create.
@@ -386,7 +386,7 @@ tinymce.init({
 
 ### `tinycomments_delete`
 
-The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment or comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_delete` function is passed a (`req`) object as the first parameter, which contains the following key-value pair:
 
@@ -438,7 +438,7 @@ tinymce.init({
 
 ### `tinycomments_delete_all`
 
-The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comment threads were removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_delete_all` function is given a request (req) object as the first parameter with no fields.
 
@@ -487,7 +487,7 @@ tinymce.init({
 
 ### `tinycomments_lookup`
 
-The Comments plugin uses the Conversation `tinycomments_lookup` function to retrieve an existing conversation via a conversation unique ID.
+The Comments plugin uses the `tinycomments_lookup` function to retrieve an existing conversation using a conversation's unique ID.
 
 The **Display names** configuration must be considered for the `tinycomments_lookup` function:
 

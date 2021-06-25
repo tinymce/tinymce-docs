@@ -10,7 +10,7 @@ For more information on configuring {{site.productname}} formats, refer to the [
 
 ## Using Comments embedded mode with the Full Page plugin
 
-Users have to be cautious when deciding the order in which the plugins are added in the plugins list.
+Developers have to be cautious when deciding the order in which the plugins are added in the plugins list.
 
 Comments can cause an issue if the [Full Page]({{site.baseurl}}/plugins/opensource/fullpage/) plugin `fullpage` appears before Comments plugin `tinycomments` in the plugin list, and `tinycomments` is configured to use `embedded mode`.
 

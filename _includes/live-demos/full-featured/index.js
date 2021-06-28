@@ -168,7 +168,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     },
     menu: {
       tc: {
-        title: 'TinyComments',
+        title: 'Comments',
         items: 'addcomment showcomments deleteallconversations'
       }
     },

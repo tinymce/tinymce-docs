@@ -7,7 +7,7 @@ tinymce.init({
   menubar: 'file edit view insert format tools tc',
   menu: {
     tc: {
-      title: 'TinyComments',
+      title: 'Comments',
       items: 'addcomment showcomments deleteallconversations'
     }
   },
@@ -21,5 +21,11 @@ tinymce.init({
       canResolve: allowed || currentAuthor === userAllowedToResolve
     });
   },
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}},
+  /* The following setup callback opens the comments sidebar when the editor loads */
+  setup: function (editor) {
+    editor.on('SkinLoaded', function () {
+      editor.execCommand("ToggleSidebar", false, "showcomments", { skip_focus: true });
+    })
+  }
 });

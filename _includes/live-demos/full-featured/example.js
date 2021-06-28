@@ -12,7 +12,7 @@ tinymce.init({
   },
   menu: {
     tc: {
-      title: 'TinyComments',
+      title: 'Comments',
       items: 'addcomment showcomments deleteallconversations'
     }
   },

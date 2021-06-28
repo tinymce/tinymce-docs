@@ -30,7 +30,7 @@ The Comments plugin allows the user to perform the following functions:
 
 ## Try our Comments plugin demo
 
-{% include live-demo.html id="comments-2" %}
+{% include live-demo.html id="comments-embedded" %}
 
 {% assign pluginname = 'Comments' %}
 {% assign pluginminimumplan = 'enterprise' %}

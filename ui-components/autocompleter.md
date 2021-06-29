@@ -164,8 +164,16 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 
 ## Interactive examples
 
-The following examples show how to create a special characters autocompleter. The first example uses the standard autocompleter item and will show when user types the colon (`:`) character and at least one additional character. The second uses [CardMenuItems](#cardmenuitem) and will show when a user types a hyphen (`-`) character and at least one additional character.
+The following examples show how to create a special characters autocompleters.
+
+### Example: Standard Autocompleter
+
+This example uses the standard autocompleter item and will show when user types the colon (`:`) character and at least one additional character.
 
 {% include live-demo.html id="autocompleter-autocompleteitem" height="300" tab="js" %}
+
+### Example: Autocompleter including the character name in the results
+
+This example uses [CardMenuItems](#cardmenuitem) and will show when a user types a hyphen (`-`) character and at least one additional character.
 
 {% include live-demo.html id="autocompleter-cardmenuitem" height="300" tab="js" %}

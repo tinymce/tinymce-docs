@@ -315,6 +315,41 @@ ephox {
 }
 ```
 
+### `spelling` (optional)
+
+The Spelling service has two configurable settings:
+
+- `custom-dictionaries-path`
+- `dynamic-custom-dictionaries`
+
+#### `custom-dictionaries-path` (optional)
+
+Used to define the location of the custom dictionaries. When the setting is not provided, no custom dictionaries are loaded.
+
+For example:
+
+```
+ephox {
+  spelling {
+    custom-dictionaries-path = "/opt/ephox/dictionaries"
+  }
+}
+```
+
+#### `dynamic-custom-dictionaries` (optional)
+
+{{site.requires_jsspelling_war_2_110_0v}}
+
+The spelling service by default requires restarting to pick up any changes to the custom dictionaries. If `dynamic-custom-dictionaries` is `true`, however, it will periodically poll for changes and update the custom dictionaries to match the changes. This prevents the need for a restart. The default value is `false`.
+
+```
+ephox {
+  spelling {
+    dynamic-custom-dictionaries = true
+  }
+}
+```
+
 ## Logging
 
 It may be useful to make the {{site.productname}} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.

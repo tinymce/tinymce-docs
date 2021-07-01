@@ -21,6 +21,23 @@ ephox {
 }
 ```
 
+### Dynamic Custom Dictionaries
+
+{{site.requires_jsspelling_war_2_110_0v}}
+
+Adding the `ephox.spelling.dynamic-custom-dictionaries` element and setting it to `true` means that the spelling service will periodically watch the `custom-dictionaries-path` for changes, and update the custom dictionaries accordingly. This prevents the need for a restart to pick up new changes to the custom dictionaries. The default value is `false`.
+
+Example:
+
+```conf
+ephox {
+  spelling {
+    custom-dictionaries-path = "/opt/ephox/dictionaries"
+    dynamic-custom-dictionaries = true
+  }
+}
+```
+
 ## Creating custom dictionary files
 
 One custom dictionary can be created for each language supported by the spell checker (see [supported languages]({{ site.baseurl }}/enterprise/check-spelling/)), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
@@ -65,4 +82,4 @@ The above log shows that 3 custom dictionaries were found, one "global", languag
 
 ### Ongoing dictionary maintenance
 
-Future additions/changes to dictionaries after the initial deployment will require a restart of the spell check service each time.
+Unless the `ephox.spelling.dynamic-custom-dictionaries` setting is set to true, future additions/changes to dictionaries after the initial deployment will require a restart of the spell check service each time.

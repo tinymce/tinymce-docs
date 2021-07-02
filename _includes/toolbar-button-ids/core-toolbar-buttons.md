@@ -22,6 +22,7 @@
 | `h6`                      | Changes current line to the "Heading 6" style.                                    |
 | `indent`                  | Indents the current list item or block element.                                   |
 | `italic`                  | Applies the italic format to the current selection.                               |
+| `language`                | Dropdown list with languages to apply to selection. {{site.requires_5_9v}}        | 
 | `lineheight`              | Dropdown list with line heights to apply to selection. {{site.requires_5_5v}}     |
 | `newdocument`             | Creates a new document.                                                           |
 | `outdent`                 | Outdents the current list item or block element.                                  |

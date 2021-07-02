@@ -63,7 +63,7 @@ If keys are never rotated this can be ignored. For advice on how to use the key 
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option
+| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option |
 | `keyHint` | `string` or `null` | Key hint returned by the client which opened the session, if connecting to an existing session. |
 
 #### Return fields for `rtc_encryption_provider`
@@ -134,6 +134,105 @@ tinymce.init({
       credentials: 'include'
     })
     .then(response => response.json()),
+})
+```
+
+## Recommended configuration
+
+For the best user experience, {{site.companyname}} recommends including these configuration settings:
+
+* [`rtc_server_disconnected`](#rtc_server_disconnected)
+* [`rtc_user_details_provider`](#rtc_user_details_provider)
+
+### `rtc_server_disconnected`
+
+If the RTC session fails to connect, or is disconnected due to an error, the editor content will be frozen (using setProgressState [link TBD]) and users will be blocked from editing with an error notification:
+
+![RTC disconnected error example]({{site.baseurl}}/images/rtc-error-example.png "RTC disconnected error example")
+
+The server disconnected callback can be used to provide an integration response to this condition. The function is provided both a reason for the disconnect and a suggested HTML error message to display to the user.
+
+> **Caution**: It is critical to at least handle the `client_update_required` reason. This indicates the plugin is out of date compared to other users on the session. The behaviour in this scenario depends on the configuration:
+> * If the option is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
+> * If the option is not set, a default message will be displayed in a notification asking the user to reload the page.
+
+**Type:** `Function`
+
+**Required:** no
+
+#### Input fields for `rtc_server_disconnected`
+
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `reason` | `string` | One of the reasons described below |
+| `message` | `string` | A translated description suitable for displaying to users. This string might contain HTML, and in some cases is the same string displayed in the editor notification. |
+
+#### Reasons for disconnection
+
+The `reason` field will have one of the following values. 
+
+| Value |  Description |
+|-------|-------------|
+| `client_update_required` | This error indicates the RTC client is not up to date  |
+| `encryption` | a |
+| `jwt` | a |
+| `content` | a |
+| `general` | a |
+
+
+### `rtc_user_details_provider`
+
+By default, a user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) will be displayed as their name in remote caret tooltips.
+
+To display a descriptive name on the caret, the user ID needs to be resolved into user details that include the full user name. This resolution is done on each client to avoid sending any personal information through the RTC server.
+
+Only the full name is required, but the whole object will be cloned and stored within the RTC caret information. It will then be included with both [`rtc_client_connected`](#rtc_client_connected) and [`rtc_client_disconnected`](#rtc_client_disconnected) callbacks so that the lookup does not need to be repeated.
+
+This provider function will be called once for each connecting client. Clients that reconnect may trigger a new call to the provider function rather than using cached data.
+
+**Type:** `Function`
+
+**Required:** no
+
+#### Input fields for `rtc_user_details_provider`
+
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `userId` | `string` | User ID to resolve into user details. |
+
+#### Fields to return from `rtc_user_details_provider`
+
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `fullName` | `string` | Full name of user. For example: `"John Doe"`. |
+| any custom field | `any` | Extra user data for use in the [`rtc_client_connected` API](#rtc_client_connected). |
+
+#### Example of providing static user details
+
+```js
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'rtc',
+  rtc_user_details_provider: ({userId}) => Promise.resolve({ fullName: "John Doe" })
+})
+```
+
+#### Example of providing user details from your server
+
+```js
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'rtc',
+  rtc_user_details_provider: ({userId}) => {
+    return fetch('/getUserDetails', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({userId})
+    }).then(response => response.json());
+  }
 })
 ```
 
@@ -218,62 +317,6 @@ tinymce.init({
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then(response => response.json());
-  }
-})
-```
-
-### `rtc_user_details_provider`
-
-By default, a user's unique ID (the `sub` field from their [JWT](#rtc_token_provider)) will be displayed as their name in remote caret tooltips.
-
-To display a descriptive name on the caret, the user ID needs to be resolved into user details that include the full user name. This resolution is done on each client to avoid sending any personal information through the RTC server.
-
-Only the full name is required, but the whole object will be cloned and stored within the RTC caret information. It will then be included with both [`rtc_client_connected`](#rtc_client_connected) and [`rtc_client_disconnected`](#rtc_client_disconnected) callbacks so that the lookup does not need to be repeated.
-
-This provider function will be called once for each connecting client. Clients that reconnect may trigger a new call to the provider function rather than using cached data.
-
-**Type:** `Function`
-
-**Required:** no
-
-#### Input fields for `rtc_user_details_provider`
-
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `userId` | `string` | User ID to resolve into user details. |
-
-#### Fields to return from `rtc_user_details_provider`
-
-| Field | Type | Description |
-|-------|:----:|-------------|
-| `fullName` | `string` | Full name of user. For example: `"John Doe"`. |
-| any custom field | `any` | Extra user data for use in the [`rtc_client_connected` API](#rtc_client_connected). |
-
-#### Example of providing static user details
-
-```js
-tinymce.init({
-  selector: 'textarea', // change this value according to your HTML
-  plugins: 'rtc',
-  rtc_user_details_provider: ({userId}) => Promise.resolve({ fullName: "John Doe" })
-})
-```
-
-#### Example of providing user details from your server
-
-```js
-tinymce.init({
-  selector: 'textarea', // change this value according to your HTML
-  plugins: 'rtc',
-  rtc_user_details_provider: ({userId}) => {
-    return fetch('/getUserDetails', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({userId})
     }).then(response => response.json());
   }
 })

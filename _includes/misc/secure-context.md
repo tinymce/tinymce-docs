@@ -1,0 +1,1 @@
+A [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) on your web server is required. This generally means `https` must be used for any URL other than a local server. Modern browsers [restrict many new features to secure contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts).

@@ -14,6 +14,10 @@ keywords: rtc introduction overview
 {% assign pre-release_type = "Open Beta" %}
 {% include misc/beta-note.md %}
 
+## Secure Context
+
+{% include misc/secure-context.md %}
+
 ## JSON Web Token based authentication
 
 Some cloud services for {{site.productname}} require setting up JSON Web Token (JWT) authentication. JWTs are a common solution for communicating user authorization with web services. JWTs are used to communicate to {{site.productname}} that the user has been authorized to access {{site.cloudname}} services.

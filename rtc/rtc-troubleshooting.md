@@ -8,7 +8,9 @@ keywords: rtc faq trouble troubleshoot troubleshooting bug
 
 This documentation is in progress. Please contact us with any suggestions you think should be here.
 
-## RTC services require a secure context
+## Common error messages
+
+### RTC services require a secure context
 
 {% include misc/secure-context.md %}
 

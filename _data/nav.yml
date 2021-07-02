@@ -242,6 +242,13 @@
     - url: "casechange"
     - url: "checklist"
     - url: "comments"
+      pages:
+      - url: "introduction_to_tiny_comments"
+      - url: "comments_using_comments"
+      - url: "comments_callback_mode"
+      - url: "comments_embedded_mode"
+      - url: "comments_toolbars_menus"
+      - url: "comments_commands_events_apis"
     - url: "mediaembed"
     - url: "export"
       pages:
@@ -534,7 +541,7 @@
     - url: "#How to create custom autocompleters"
     - url: "#Configuration options"
     - url: "#API"
-    - url: "#Example"
+    - url: "#Interactive example"
   - url: "contextform"
     pages:
     - url: "#Registering a context form"
@@ -582,7 +589,7 @@
     - url: "#URL dialog configuration"
     - url: "#URL dialog instance API"
     - url: "#URL dialog messaging"
-    - url: "#Example"
+    - url: "#Interactive example"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:
@@ -723,7 +730,6 @@
     - url: "#Deploying an icon pack"
   - url: "creating-a-plugin"
   - url: "annotations"
-  - url: "configuring-comments-callbacks"
   - url: "yeoman-generator"
   - url: "creating-custom-notifications"
   - url: "php-upload-handler"
@@ -882,6 +888,12 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes582"
+    pages:
+    - url: "#Overview"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#General bug fixes"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes581"
     pages:
     - url: "#Overview"
@@ -1084,6 +1096,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#5.8.2 - 2021-06-23"
   - url: "#5.8.1 - 2021-05-20"
   - url: "#5.8.0 - 2021-05-06"
   - url: "#5.7.1 - 2021-03-17"

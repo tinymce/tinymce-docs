@@ -103,10 +103,10 @@ For example: The table plugin's `table` toolbar button opens a menu similar to t
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
+| fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | text | string | optional | Text to display if no icon is found. |
 | icon | string | optional | {{site.predefinedIconsOnly}} |
 | tooltip | string | optional | Text for button tooltip. |
-| fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
 > **Note**: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
@@ -143,7 +143,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | onAction     | (api) => void                     | Primary button    | required    | Function invoked when the basic button section is clicked.                                                                         |
 | select       | (value: string) => boolean        | Choice menu items | optional    | default: false - Function run on each option when the menu is opened to determine if it should be highlighted as active.           |
 | columns      | number or `'auto'`                            | Drop-down menu    | optional    | default: 1 - Number of columns for the list of options. When set to more than 1 column, only the icon for each item will be shown. |
-| fetch        | (success: (menu) => void) => void | Drop-down menu    | required    | A callback function that should be passed a list of choice menu items for the dropdown menu.                                              |
+| fetch        | (success: (menu) => void) => void | Drop-down menu    | required    | A callback function that should be passed a list of [choice menu items](#choicemenuitems) for the dropdown menu.                                              |
 | onItemAction | (api, value) => void              | Choice menu items | required    | Function invoked when a dropdown list option is clicked. The `value` is passed from the selected choice menu item.                    |
 | onSetup      | (api) => (api) => void            | All               | optional    | default: () => () => {} - Function invoked when the button is rendered.                                                            |
 

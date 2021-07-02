@@ -45,7 +45,7 @@ tinymce.init({
 
 ### Using `content_langs` with Spellchecker Pro
 
-The Spellchecker Pro plugin also defines a `language` toolbar button, with similar functionality. In TinyMCE 5.9 and later, the `content_langs` setting has precedence over [`spellchecker_select_languages`]({{site.baseurl}}//plugins/premium/tinymcespellchecker/#spellchecker_select_languages) and the `language` toolbar button will be controlled by the `content_langs` setting if both are specified.
+The Spellchecker Pro plugin also defines a `language` toolbar button, with similar functionality. In TinyMCE 5.9 and later, the `content_langs` option has precedence over [`spellchecker_select_languages`]({{site.baseurl}}//plugins/premium/tinymcespellchecker/#spellchecker_select_languages) and the `language` toolbar button will be controlled by the `content_langs` option if both are specified.
 
 Content languages applied by the `language` toolbar button or menu item will determine which dictionary Spellchecker Pro uses to check words within those elements. Ensure that the `code` you specify is within the [Supported Languages]({{site.baseurl}}//plugins/premium/tinymcespellchecker/#supportedlanguages) section. If the language code you with to use is not valid according to [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt), set `customCode` to the code supported by Spellchecker Pro and set `code` to an equivalent code that is valid as per BCP47.
 
@@ -53,6 +53,7 @@ Content languages applied by the `language` toolbar button or menu item will det
 tinymce.init({
     selector: 'textarea', // change this according to your HTML
     toolbar: 'language',
+    plugins: 'tinymcespellchecker',
     content_langs: [
         { title: 'English (US)', code: 'en_US' },
         { title: 'English (US Medical)', code: 'en_US', customCode: 'en_US-medical' },

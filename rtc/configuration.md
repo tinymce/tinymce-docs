@@ -19,7 +19,6 @@ The following options are required to use the Real-Time Collaboration (RTC) plug
 * [`rtc_document_id`](#rtc_document_id)
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
 * [`rtc_token_provider`](#rtc_token_provider)
-* [`rtc_server_disconnected`](#rtc_server_disconnected)
 
 For an example minimum configuration, see: [Examples of the minimum required configuration for the RTC plugin](#examplesoftheminimumrequiredconfigurationforthertcplugin).
 
@@ -146,15 +145,15 @@ For the best user experience, {{site.companyname}} recommends including these co
 
 ### `rtc_server_disconnected`
 
-If the RTC session fails to connect, or is disconnected due to an error, the editor content will be frozen (using setProgressState [link TBD]) and users will be blocked from editing with an error notification:
+If the RTC session fails to connect, or is disconnected due to an error, the user will be blocked from editing (using [setProgressState]({{site.baseurl}}/api/tinymce/tinymce.editor/#setprogressstate)) along with an error notification:
 
 ![RTC disconnected error example]({{site.baseurl}}/images/rtc-error-example.png "RTC disconnected error example")
 
 The server disconnected callback can be used to provide an integration response to this condition. The function is provided both a reason for the disconnect and a suggested HTML error message to display to the user.
 
 > **Caution**: It is critical to at least handle the `client_update_required` reason. This indicates the plugin is out of date compared to other users on the session. The behaviour in this scenario depends on the configuration:
-> * If the option is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
-> * If the option is not set, a default message will be displayed in a notification asking the user to reload the page.
+> * If the `rtc_server_disconnected` is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
+> * If the `rtc_server_disconnected` is not set, the suggested error message will be displayed in a notification asking the user to reload the page.
 
 **Type:** `Function`
 
@@ -164,7 +163,7 @@ The server disconnected callback can be used to provide an integration response 
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `reason` | `string` | One of the reasons described below |
+| `reason` | `string` | One of the reasons described below. |
 | `message` | `string` | A translated description suitable for displaying to users. This string might contain HTML, and in some cases is the same string displayed in the editor notification. |
 
 #### Reasons for disconnection
@@ -173,12 +172,24 @@ The `reason` field will have one of the following values.
 
 | Value |  Description |
 |-------|-------------|
-| `client_update_required` | This error indicates the RTC client is not up to date  |
-| `encryption` | a |
-| `jwt` | a |
-| `content` | a |
-| `general` | a |
+| `client_update_required` | This error indicates the RTC plugin is out of date and cannot connect to an active session for the supplied `rtc_document_id`. This can happen on startup, but is more common at runtime during editor upgrades. The suggested message recommends the user reload the page. |
+| `encryption` | Indicates a failure either in the cryptography process or `rtc_encryption_provider`. This usually means there is an error in the editor configuration. |
+| `jwt` | Indicates a problem with `rtc_token_provider`. Either the provider returned a rejected promise or the token was invalid. |
+| `content` | Indicates a problem with `rtc_initial_content_provider`. The only time this generally happens is when the provider returns a rejected promise. |
+| `general` | A generic error for reasons that do not yet have a category. Details will be printed to the browser console. |
 
+#### Example of handling server disconnection
+
+```js
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'rtc',
+  rtc_server_disconnected: ({reason, message}) => {
+    console.log('Disconnected', reason, message);
+    // perform some action in response to the RTC session disconnecting
+  }
+}
+```
 
 ### `rtc_user_details_provider`
 

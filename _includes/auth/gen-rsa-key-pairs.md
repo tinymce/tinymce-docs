@@ -73,7 +73,7 @@ To create a private/public key pair:
 
     Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
-2. Enter a passphrase for accessing the key.
+{% include auth/passphrase-step-jwt.md %}
 
 Two files will be created in the current directory:
 
@@ -110,7 +110,7 @@ To create a private/public key pair:
 
     Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
-1. Enter a passphrase for accessing the key.
+{% include auth/passphrase-step-jwt.md %}
 
 Two files will be created in the current directory:
 
@@ -159,7 +159,7 @@ To create a private/public key pair:
 
     Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
-2. Enter a passphrase for accessing the key.
+{% include auth/passphrase-step-jwt.md %}
 
 Two files will be created in the current directory:
 

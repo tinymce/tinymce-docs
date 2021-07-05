@@ -36,14 +36,14 @@ For information on the `toolbar_sticky_offset` option, see: [User interface opti
 
 ### New `language` toolbar button and menu item in core
 
-{{site.productname} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` button available for toolbars, and a new `language` menu item (included by default in the format menu), both configurable using the `content_langs` option. There is also a new `ContentLanguage` editor command to change the language of the selection.
+{{site.productname}} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` button available for toolbars, and a new `language` menu item, both configurable using the `content_langs` option. There is also a new `Lang` editor command to change the language of the selection.
 
 For information on:
 
 - The `language` toolbar button, see: [Available Toolbar Buttons - The core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons).
 - The `language` menu item, see: [Available Menu Items - The core menu items]({{site.baseurl}}/advanced/available-menu-items/#the-core-menu-items).
-- The `content_langs` option, see: [Content appearance options - `content_langs`]({{site.baseurl}}/configure/content-apperance/#content_langs).
-- The `ContentLang` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
+- The `content_langs` option, see: [Content appearance options - `content_langs`]({{site.baseurl}}/configure/content-appearance/#content_langs).
+- The `Lang` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 
 ### Additional new features
 

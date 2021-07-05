@@ -189,7 +189,7 @@ tinymce.init({
 
 This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).  For a list of available languages, see: [Supported languages](#supportedlanguages).
 
-> **Important:** In {{site.productname}} 5.9 and later, `content_langs` has precedence over `spellchecker_select_languages`, so in order for `spellchecker_select_languages` to work, do not use the `content_langs` option. For more information, see [Content appearance options - `content_langs`]({{site.baseurl}}/configure/content-appearance/#content_langs).
+> **Important:** In {{site.productname}} 5.9 and later, `content_langs` has precedence over `spellchecker_select_languages`. In order for `spellchecker_select_languages` to work, do not use the `content_langs` option. For more information, see [Content appearance options - `content_langs`]({{site.baseurl}}/configure/content-appearance/#content_langs).
 
 **Type:** comma-separated `String`
 

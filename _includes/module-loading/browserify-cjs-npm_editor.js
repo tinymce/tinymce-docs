@@ -1,0 +1,41 @@
+const fs = require('fs');
+
+// Import TinyMCE
+var tinymce = require('tinymce/tinymce');
+
+// Default icons are required for TinyMCE 5.3 or above. Also import custom icons if applicable
+require('tinymce/icons/default');
+
+// A editor theme (required) - customize the editor appearance by creating a 'skin'
+require('tinymce/themes/silver');
+
+require('tinymce/skins/ui/oxide/skin.css');
+
+// Import plugins - include the relevant plugin in the 'plugins' option.
+require('tinymce/plugins/advlist');
+require('tinymce/plugins/code');
+require('tinymce/plugins/emoticons');
+require('tinymce/plugins/emoticons/js/emojis');
+require('tinymce/plugins/link');
+require('tinymce/plugins/lists');
+require('tinymce/plugins/table');
+
+/* Import content CSS */
+var contentCssUi = fs.readFileSync('node_modules/tinymce/skins/ui/oxide/content.css', {encoding: 'UTF-8'});
+// Import the default content CSS, replace with the CSS for the editor content.
+var contentCss = fs.readFileSync('node_modules/tinymce/skins/content/default/content.css', {encoding: 'UTF-8'});
+
+// Initialize TinyMCE
+function render () {
+  tinymce.init({
+    selector: 'textarea#editor',
+    /* All plugins need to be imported and added to the plugins option. */
+    plugins: 'advlist code emoticons link lists table',
+    toolbar: 'checklist',
+    skin: false,
+    content_css: false,
+    content_style: contentCss.toString() + '\n' + contentCssUi.toString(),
+  });
+};
+
+module.exports = render;

@@ -4,7 +4,7 @@ title: Usage with module loaders
 title_nav: Usage with module loaders
 description_short: How to include TinyMCE in a project using CommonJS modules.
 description: How to use TinyMCE in a project using a module bundler like Webpack or Browserify
-keywords: webpack browserify commonjs modules tinymce
+keywords: webpack browserify es6 rollup commonjs modules tinymce
 ---
 
 {{site.productname}} can easily be installed with `npm` and used with module loaders such as [Webpack](https://webpack.github.io/) and [Browserify](http://browserify.org/).

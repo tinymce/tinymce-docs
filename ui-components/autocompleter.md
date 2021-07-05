@@ -172,7 +172,7 @@ This example uses the standard autocompleter item and will show when user types 
 
 {% include live-demo.html id="autocompleter-autocompleteitem" height="300" tab="js" %}
 
-### Example: Autocompleter including the character name in the results
+### Example: Using `CardMenuItems` in the Autocompleter
 
 This example uses [CardMenuItems](#cardmenuitem) and will show when a user types a hyphen (`-`) character and at least one additional character.
 

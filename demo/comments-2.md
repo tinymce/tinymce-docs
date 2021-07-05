@@ -15,4 +15,4 @@ In this example, the features in the Comments plugin are highlighted, including 
 
 For information on the other Comments plugin configuration options, see: [The Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
-{% include live-demo.html id="comments-2" %}
+{% include live-demo.html id="comments-embedded" %}

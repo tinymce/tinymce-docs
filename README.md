@@ -52,7 +52,7 @@ You need the following programs installed on your computer:
 
 3. Install Ruby Bundler. Install using:
     ```
-    sudo gem install bundler -v 1.17.3
+    sudo gem install bundler -v 2.2.19
     ```
 
 4. (optional) Docker
@@ -67,7 +67,7 @@ If you are a Windows user, follow these steps to work on TinyMCE documentation:
 
 3. Run the following command on a command prompt to install Ruby Bundler:
     ```
-    gem install bundler
+    gem install bundler -v 2.2.19
     ```
 
 ##### Mac OS users
@@ -79,7 +79,7 @@ If you are a Windows user, follow these steps to work on TinyMCE documentation:
 
 2. Install Ruby Bundler, using:
     ```
-    gem install bundler
+    gem install bundler -v 2.2.19
     ```
 
 #### First time set up

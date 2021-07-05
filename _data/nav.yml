@@ -244,6 +244,13 @@
     - url: "casechange"
     - url: "checklist"
     - url: "comments"
+      pages:
+      - url: "introduction_to_tiny_comments"
+      - url: "comments_using_comments"
+      - url: "comments_callback_mode"
+      - url: "comments_embedded_mode"
+      - url: "comments_toolbars_menus"
+      - url: "comments_commands_events_apis"
     - url: "mediaembed"
     - url: "export"
       pages:
@@ -536,7 +543,7 @@
     - url: "#How to create custom autocompleters"
     - url: "#Configuration options"
     - url: "#API"
-    - url: "#Example"
+    - url: "#Interactive example"
   - url: "contextform"
     pages:
     - url: "#Registering a context form"
@@ -584,7 +591,7 @@
     - url: "#URL dialog configuration"
     - url: "#URL dialog instance API"
     - url: "#URL dialog messaging"
-    - url: "#Example"
+    - url: "#Interactive example"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:
@@ -684,7 +691,7 @@
       - url: "#JWT endpoint setup procedure"
       - url: "#PHP token provider endpoint example"
       - url: "#Node token provider endpoint example"
-      - url: "#Creating a private/public key pair for RTC"
+      - url: "#Creating a private/public key pair for Real-Time Collaboration (RTC)"
     - url: "encryption"
       pages:
       - url: "#Encryption keys are mandatory"
@@ -725,7 +732,6 @@
     - url: "#Deploying an icon pack"
   - url: "creating-a-plugin"
   - url: "annotations"
-  - url: "configuring-comments-callbacks"
   - url: "yeoman-generator"
   - url: "creating-custom-notifications"
   - url: "php-upload-handler"
@@ -897,6 +903,12 @@
     - url: "#Security fixes"
     - url: "#Deprecated features"
     - url: "#Known issues"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
+  - url: "release-notes582"
+    pages:
+    - url: "#Overview"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#General bug fixes"
     - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes581"
     pages:
@@ -1100,6 +1112,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#5.8.2 - 2021-06-23"
   - url: "#5.8.1 - 2021-05-20"
   - url: "#5.8.0 - 2021-05-06"
   - url: "#5.7.1 - 2021-03-17"

@@ -12,10 +12,8 @@
 
     <title>{{ page.meta_title | or:page.title }} | Docs | TinyMCE</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;"/>
     <link href="{{ site.shared_baseurl }}{{ site.baseurl }}/css/common.min.css" rel="stylesheet">
-    <link href="{{ site.shared_baseurl }}{{ site.baseurl }}/css/docs.min.css" rel="stylesheet">
-    <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
 
     {% include_remote {{ site.origin }}/_docs/head.html css="head > *" %}
 

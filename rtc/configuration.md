@@ -173,7 +173,7 @@ The `reason` field will have one of the following values.
 | Value |  Description |
 |-------|-------------|
 | `client_update_required` | This error indicates the RTC plugin is out of date and cannot connect to an active session for the supplied `rtc_document_id`. This can happen on startup, but is more common at runtime during editor upgrades. The suggested message recommends the user reload the page. |
-| `encryption` | Indicates a failure either in the cryptography process or `rtc_encryption_provider`. This usually means there is an error in the editor configuration. |
+| `encryption` | Indicates a failure on startup either in the cryptography process or `rtc_encryption_provider`. This usually means there is an error in the editor configuration. |
 | `jwt` | Indicates a problem with `rtc_token_provider`. Either the provider returned a rejected promise or the token was invalid. |
 | `content` | Indicates a problem with `rtc_initial_content_provider`. The only time this generally happens is when the provider returns a rejected promise. |
 | `general` | A generic error for reasons that do not yet have a category. Details will be printed to the browser console. |

@@ -80,6 +80,16 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **<
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+### PowerPaste 5.6.0
+
+The {{site.productname}} 5.9 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 5.6.0 introduces the following enhancements:
+
+- Asynchronous callback functionality added to the `powerpaste_word_import`, `powerpaste_googledocs_import` and `powerpaste_html_import` options. This allows the integrator to dynamically choose the paste mode on each paste event. It is designed to be used to replicate the `prompt` dialog with custom, non-TinyMCE UI.
+
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/PowerPaste/).
+
 ## Accompanying Premium Skins and Icon Packs changes
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **Premium Skins and Icon Packs**.

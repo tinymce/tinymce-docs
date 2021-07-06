@@ -105,7 +105,7 @@ The supported `string` values are:
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
-Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
+Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom, non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
 
 > **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
@@ -175,7 +175,7 @@ The supported `string` values are:
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
-Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
+Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom, non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
 
 #### Example: powerpaste_html_import using an asynchronous callback
 

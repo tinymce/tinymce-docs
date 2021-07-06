@@ -95,17 +95,36 @@ tinymce.init({
 
 This option controls how content pasted from Microsoft Word is filtered.
 
-**Type:** `String`
+**Type:** `String` or `function`
 
 **Default value:** `prompt`
 
-The supported values are:
+The supported `string` values are:
 
-* `clean` - Preserve the structure of the content such as headings, tables and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
+* `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
-* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste Microsoft Word content.
+* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
+
+Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
 
 > **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
+
+#### Example: powerpaste_word_import using an asynchronous callback
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste',
+  powerpaste_word_import: function() {
+    // use a native confirm dialog to prompt the user to choose between clean and merge
+    if (confirm('Would you like to keep formatting?')) {
+      return Promise.resolve('merge');
+    } else {
+      return Promise.resolve('clean');
+    }
+  }
+});
+```
 
 ### powerpaste_googledocs_import
 
@@ -113,29 +132,67 @@ The supported values are:
 
 This option controls how content pasted from Google Docs is filtered.
 
-**Type:** `String`
+**Type:** `String` or `function`
 
 **Default value:** `prompt`
 
-The supported values are:
+The supported `string` values are:
 
-* `clean` - Preserve the structure of the content such as headings, tables and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
+* `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
-* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste Google Docs content.
+* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
+
+Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
+
+#### Example: powerpaste_googledocs_import using an asynchronous callback
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste',
+  powerpaste_googledocs_imports: function() {
+    // use a native confirm dialog to prompt the user to choose between clean and merge
+    if (confirm('Would you like to keep formatting?')) {
+      return Promise.resolve('merge');
+    } else {
+      return Promise.resolve('clean');
+    }
+  }
+});
+```
 
 ### powerpaste_html_import
 
 This option controls how content pasted from sources other than Microsoft Word and Google Docs are filtered. Note that this includes content copied from {{site.productname}} itself.
 
-**Type:** `String`
+**Type:** `String` or `function`
 
 **Default value:** `clean`
 
-The supported values are:
+The supported `string` values are:
 
 * `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
+
+Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
+
+#### Example: powerpaste_html_import using an asynchronous callback
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste',
+  powerpaste_html_import: function() {
+    // use a native confirm dialog to prompt the user to choose between clean and merge
+    if (confirm('Would you like to keep formatting?')) {
+      return Promise.resolve('merge');
+    } else {
+      return Promise.resolve('clean');
+    }
+  }
+});
+```
 
 ### powerpaste_allow_local_images
 

@@ -36,7 +36,7 @@ For information on the `toolbar_sticky_offset` option, see: [User interface opti
 
 ### New `language` toolbar button and menu item in core
 
-{{site.productname}} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` button available for toolbars, and a new `language` menu item, both configurable using the `content_langs` option. There is also a new `Lang` editor command to change the language of the selection.
+{{site.productname}} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` toolbar button, and a new `language` menu item, both configured using the `content_langs` option. There is also a new `Lang` editor command for changing the language of the selection.
 
 For information on:
 

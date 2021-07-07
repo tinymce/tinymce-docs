@@ -22,7 +22,7 @@ These configuration options affect the execution of the `mentions` plugin. The m
 
 This option lets you request a list of users from your server that match a search query. The callback gets passed two parameters: one is the search query object, the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users. For information on the user properties to pass the success callback for the available mentions item types (`mentions_item_type`), see: [User properties](#userproperties).
 
-**Type:** `function`
+**Type:** `Function`
 
 **Default Value:** `none`
 
@@ -153,7 +153,7 @@ tinymce.init({
 
 This option overrides the default logic for inserting the mention into the editor. The callback should return an element created using the editor's document.
 
-**Type:** `function`
+**Type:** `Function`
 
 **Default Value:** `none`
 
@@ -179,7 +179,7 @@ tinymce.init({
 
 This option enables you to provide an element to present next to the menu item being hovered. This lets you do custom UIs for presenting user information.
 
-**Type:** `function`
+**Type:** `Function`
 
 **Default Value:** `none`
 
@@ -217,7 +217,7 @@ tinymce.init({
 
 This option enables you to provide a custom CSS selector that should match the element created using `mentions_menu_complete`. This enables the plugin to find existing mentions. The callback takes two parameters: the editor instance and the userInfo object.
 
-**Type:** `function`
+**Type:** `Function`
 
 **Default Value:** `none`
 

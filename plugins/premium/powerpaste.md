@@ -2,7 +2,7 @@
 layout: default
 title: PowerPaste plugin
 title_nav: PowerPaste
-keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
+keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_googledocs_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
 {% assign pluginname = "PowerPaste" %}
@@ -99,13 +99,7 @@ This option controls how content pasted from Microsoft Word is filtered.
 
 **Default value:** `prompt`
 
-The supported string-based values are:
-
-* `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
-* `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
-* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
-
-Alternatively, this option accepts an asynchronous function that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which will resolve with `clean` or `merge`. This allows the paste mode to be dynamically chosen on each paste event. It can be used, for example, to replicate the `prompt` dialog using a custom dialog.
+{% include plugins/powerpaste_import_types.md %}
 
 > **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
@@ -136,13 +130,7 @@ This option controls how content pasted from Google Docs is filtered.
 
 **Default value:** `prompt`
 
-The supported string-based values are:
-
-* `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
-* `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
-* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
-
-Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
+{% include plugins/powerpaste_import_types.md %}
 
 #### Example: `powerpaste_googledocs_import` using an asynchronous function
 
@@ -169,13 +157,7 @@ This option controls how content pasted from sources other than Microsoft Word a
 
 **Default value:** `clean`
 
-The supported string-based values are:
-
-* `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
-* `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
-* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
-
-Alternatively, this option can take an asyncronous callback that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to `clean` or `merge`. Allows the integrator to dynamically choose the paste mode on each paste event. Can be used to replicate the `prompt` dialog with custom, non-TinyMCE UI. Note: this requires [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) support.
+{% include plugins/powerpaste_import_types.md %}
 
 #### Example: `powerpaste_html_import` using an asynchronous function
 

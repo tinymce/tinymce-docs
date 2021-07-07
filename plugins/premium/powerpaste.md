@@ -105,7 +105,7 @@ The supported string-based values are:
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
-Alternatively, this option can take an asynchronous function that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which will resolve with `clean` or `merge`. This allows the paste mode to be dynamically chosen on each paste event. It can be used to replicate the `prompt` dialog with custom, non-TinyMCE UI for example.
+Alternatively, this option accepts an asynchronous function that returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which will resolve with `clean` or `merge`. This allows the paste mode to be dynamically chosen on each paste event. It can be used, for example, to replicate the `prompt` dialog using a custom dialog.
 
 > **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
@@ -136,7 +136,7 @@ This option controls how content pasted from Google Docs is filtered.
 
 **Default value:** `prompt`
 
-The supported `string` values are:
+The supported string-based values are:
 
 * `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
@@ -169,7 +169,7 @@ This option controls how content pasted from sources other than Microsoft Word a
 
 **Default value:** `clean`
 
-The supported `string` values are:
+The supported string-based values are:
 
 * `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.

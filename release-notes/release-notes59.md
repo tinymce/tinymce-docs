@@ -86,9 +86,9 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 **PowerPaste** 5.6.0 introduces the following enhancements:
 
-- Asynchronous callback functionality added to the `powerpaste_word_import`, `powerpaste_googledocs_import` and `powerpaste_html_import` options. This allows the integrator to dynamically choose the paste mode on each paste event. It is designed to be used to replicate the `prompt` dialog with custom, non-TinyMCE UI.
+- Asynchronous functions are now possible for the `powerpaste_word_import`, `powerpaste_googledocs_import` and `powerpaste_html_import` options. This allows the paste mode to be dynamically chosen on each paste event. It is designed to be used to replicate the `prompt` dialog with custom, non-TinyMCE UI.
 
-For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/PowerPaste/).
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
 ## Accompanying Premium Skins and Icon Packs changes
 

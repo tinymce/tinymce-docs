@@ -1,10 +1,12 @@
+{% if page.name == "tinymcespellchecker.md" %}
+### `content_langs`
+{% else %}
 ## `content_langs`
+{% endif %}
 
 {{ site.requires_5_9v }}
 
-This option sets the languages displayed in the `language` dropdown toolbar button and the `language` menu item. The `content_langs` option has no default, and if it is not set then the `language` toolbar button and menu item will not be available. The option accepts an array of language objects.
-
-Each language object is a JavaScript object defined using the following properties.
+This option sets the languages displayed in the `language` dropdown toolbar button and the `language` menu item. The option accepts an array of language objects. Each language object is a JavaScript object defined using the following properties.
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
@@ -14,28 +16,32 @@ Each language object is a JavaScript object defined using the following properti
 
 **Type:** `Array`
 
-### Example: Using `content_langs`
-
+{% if page.name == "tinymcespellchecker.md" %}
+**Default:**
 ```js
-tinymce.init({
-    selector: 'textarea', // change this according to your HTML
-    toolbar: 'language',
-    content_langs: [
-        { title: 'English', code: 'en' },
-        { title: 'Spanish', code: 'es' },
-        { title: 'French', code: 'fr' },
-        { title: 'German', code: 'de' },
-        { title: 'Portuguese', code: 'pt' },
-        { title: 'Chinese', code: 'zh' }
-    ]
-});
+[
+    { title: 'English', code: 'en' },
+    { title: 'Spanish', code: 'es' },
+    { title: 'French', code: 'fr' },
+    { title: 'German', code: 'de' },
+    { title: 'Portuguese', code: 'pt' },
+    { title: 'Chinese', code: 'zh' }
+]
 ```
+> **Note:** This default is provided by the Spell Checker Pro plugin, it is not available in the core editor.
 
-### Using `content_langs` with Spell Checker Pro
+> **Note:** The languages specified by the deprecated [`spellchecker_select_language`](#spellchecker_select_language) option are used as a fallback if they are available.
 
-The Spell Checker Pro plugin also defines a `language` toolbar button, with similar functionality. In {{site.productname}} 5.9 and later, the `language` toolbar button and menu item replace this. The `content_langs` option has precedence over [`spellchecker_select_languages`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_select_languages) for determining which languages are available, where both are defined. Where the `content_langs` option is not specified, the `spellchecker_select_languages` option or its default will set the available languages.
+{% else %}
+There is no default value for the `content_langs` option. If no value is specified, the `language` toolbar button and menu item are not available. A default value for this option is provided by the Spell Checker Pro plugin, for more information see: [Spell Checker Pro plugin - `content_langs`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#content_langs).
+{% endif %}
 
-Content languages applied by the `language` toolbar button or menu item will determine which dictionary Spell Checker Pro uses to check words within those elements. Ensure that the `code` specified is within the [Supported Languages]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#supportedlanguages) section. To use a language code that is not valid according to [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt), set `customCode` to the code supported by Spell Checker Pro and set `code` to an equivalent code that is valid as per BCP47.
+For example:
+
+{% if page.name == "tinymcespellchecker.md" %}
+#### Example: Using `content_langs` to change spelling dictionaries
+
+Content languages applied by the `language` toolbar button or menu item will determine which dictionary Spell Checker Pro uses to check words within those elements. Ensure that the `code` specified is within the [Supported Languages](#supportedlanguages) section. To use a language code that is not valid according to [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt), set `customCode` to the code supported by Spell Checker Pro and set `code` to an equivalent code that is valid as per BCP47.
 
 For example:
 
@@ -57,3 +63,21 @@ tinymce.init({
     ]
 });
 ```
+{% else %}
+### Example: Using `content_langs`
+
+```js
+tinymce.init({
+selector: 'textarea', // change this according to your HTML
+toolbar: 'language',
+content_langs: [
+    { title: 'English', code: 'en' },
+    { title: 'Spanish', code: 'es' },
+    { title: 'French', code: 'fr' },
+    { title: 'German', code: 'de' },
+    { title: 'Portuguese', code: 'pt' },
+    { title: 'Chinese', code: 'zh' }
+    ]
+});
+```
+{% endif %}

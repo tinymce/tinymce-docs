@@ -9,7 +9,7 @@ keywords: comments commenting tinycomments callback
 {% assign pluginname = "Comments" %}
 {% assign plugincode = "comments" %}
 
-**Callback mode** is the default mode for [the Comments plugin]({{site.baseurl}}/plugins/premium/comments/). In the callback mode, callback functions are required to save user comments on a server. The Comments functions (create, reply, edit, delete comment, delete all conversations, resolve, and lookup) are configured differently depending upon the server-side storage configuration.
+**Callback mode** is the default mode for the Comments plugin. In the callback mode, callback functions are required to save user comments on a server. The Comments functions (create, reply, edit, delete comment, delete all conversations, resolve, and lookup) are configured differently depending upon the server-side storage configuration.
 
 ## Interactive example
 

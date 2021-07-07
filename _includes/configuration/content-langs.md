@@ -33,15 +33,17 @@ This option sets the languages displayed in the `language` dropdown toolbar butt
 > **Note:** The languages specified by the deprecated [`spellchecker_select_language`](#spellchecker_select_language) option are used as a fallback if they are available.
 
 {% else %}
-There is no default value for the `content_langs` option. If no value is specified, the `language` toolbar button and menu item are not available. A default value for this option is provided by the Spell Checker Pro plugin, for more information see: [Spell Checker Pro plugin - `content_langs`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#content_langs).
+There is no default value for the `content_langs` option. If no value is specified, the `language` toolbar button and menu item are not available. A default value for this option is provided by the Spell Checker Pro plugin. For more information, see: [Spell Checker Pro plugin - `content_langs`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#content_langs).
 {% endif %}
-
-For example:
 
 {% if page.name == "tinymcespellchecker.md" %}
 #### Example: Using `content_langs` to change spelling dictionaries
 
-Content languages applied by the `language` toolbar button or menu item will determine which dictionary Spell Checker Pro uses to check words within those elements. Ensure that the `code` specified is within the [Supported Languages](#supportedlanguages) section. To use a language code that is not valid according to [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt), set `customCode` to the code supported by Spell Checker Pro and set `code` to an equivalent code that is valid as per BCP47.
+The Spell Checker Pro plugin will use the `code` property to determine which dictionary to use on the content, unless the `customCode` property is available. The language tag specified by `customCode` overrides the spelling dictionary, to allow for non-standard languages such as the medical dictionaries provided with Spell Checker Pro. For all languages, ensure that:
+
+- The `code` property is valid language tag, according to [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt)
+- Either the `code` property is one of the [Supported Languages](#supportedlanguages) or the `customCode` override property is defined.
+- The `customCode` property is one of the [Supported Languages](#supportedlanguages) if it is defined.
 
 For example:
 

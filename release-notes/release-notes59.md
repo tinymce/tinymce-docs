@@ -170,9 +170,13 @@ For information on:
 
 The following features have been deprecated with the release of {{site.productname}} 5.9:
 
-- [](#).
+- [The `spellchecker_select_languages` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed).
 
-### The...
+### The `spellchecker_select_languages` option
+
+With the release of {{site.productname}} 5.9, the `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option.
+
+For information on the `content_langs` option, see: [Spell Checker Pro - `content_langs`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#content_langs).
 
 ## Known issues
 

@@ -170,7 +170,7 @@ For information on:
 
 The following features have been deprecated with the release of {{site.productname}} 5.9:
 
-- [The `spellchecker_select_languages` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed).
+- [The `spellchecker_select_languages` option](#thespellchecker_select_languagesoption).
 
 ### The `spellchecker_select_languages` option
 

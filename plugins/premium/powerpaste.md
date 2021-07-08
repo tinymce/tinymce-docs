@@ -111,11 +111,13 @@ tinymce.init({
   plugins: 'powerpaste',
   powerpaste_word_import: function() {
     // use a native confirm dialog to prompt the user to choose between clean and merge
-    if (confirm('Would you like to keep formatting?')) {
-      return Promise.resolve('merge');
-    } else {
-      return Promise.resolve('clean');
-    }
+    return new Promise(function (resolve) {
+      if (confirm('Would you like to keep formatting?')) {
+        resolve('merge');
+      } else {
+        resolve('clean');
+      }
+    });
   }
 });
 ```
@@ -140,11 +142,13 @@ tinymce.init({
   plugins: 'powerpaste',
   powerpaste_googledocs_imports: function() {
     // use a native confirm dialog to prompt the user to choose between clean and merge
-    if (confirm('Would you like to keep formatting?')) {
-      return Promise.resolve('merge');
-    } else {
-      return Promise.resolve('clean');
-    }
+    return new Promise(function (resolve) {
+      if (confirm('Would you like to keep formatting?')) {
+        resolve('merge');
+      } else {
+        resolve('clean');
+      }
+    });
   }
 });
 ```
@@ -167,11 +171,13 @@ tinymce.init({
   plugins: 'powerpaste',
   powerpaste_html_import: function() {
     // use a native confirm dialog to prompt the user to choose between clean and merge
-    if (confirm('Would you like to keep formatting?')) {
-      return Promise.resolve('merge');
-    } else {
-      return Promise.resolve('clean');
-    }
+    return new Promise(function (resolve) {
+      if (confirm('Would you like to keep formatting?')) {
+        resolve('merge');
+      } else {
+        resolve('clean');
+      }
+    });
   }
 });
 ```

@@ -18,3 +18,13 @@
 | `tableprops`              | Opens the table properties dialog.                                             |
 | `tablerowprops`           | Opens the Row properties dialog.                                               |
 | `tablesplitcells`         | Splits the current merged cell.                                                |
+| `tableclass`              | Adds pre-defined classes to selected table {{site.requires_5_9v}}              |
+| `tablecellclass`          | Adds pre-defined classes to selected cells in the table {{site.requires_5_9v}} |
+| `tablecellvalign`         | Sets vertical align of selected cells {{site.requires_5_9v}}                   |
+| `tablecellborderwidth`    | Sets the width of the borders of all selected cells {{site.requires_5_9v}}     |
+| `tablecellborderstyle`    | Sets the style of the borders of all selected cells {{site.requires_5_9v}}     |
+| `tablecaption`            | Toggles the caption of the selected cell {{site.requires_5_9v}}                |
+| `tablecellbackgroundcolor`| Sets the background of the selected cells {{site.requires_5_9v}}               |
+| `tablecellbordercolor`    | Sets the color of the selected cell borders {{site.requires_5_9v}}             |
+| `tablerowheader`          | Change row to or from being headers {{site.requires_5_9v}}                     |
+| `tablecolheader`          | Change column to or from being headers {{site.requires_5_9v}}                  |

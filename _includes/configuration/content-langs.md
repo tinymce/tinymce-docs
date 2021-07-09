@@ -6,18 +6,22 @@
 
 {{ site.requires_5_9v }}
 
-This option sets the languages displayed in the `language` dropdown toolbar button and the `language` menu item. The option accepts an array of language objects. Each language object is a JavaScript object defined using the following properties.
+This option sets the languages displayed in the `language` toolbar button and the `language` menu item. The option accepts an array of language specs. Each language spec is a JavaScript object defined using the following properties.
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
 | `title` | String | required | The name shown for this language in the UI. |
-| `code` | String | required | The language tag, as defined in [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt), for this language. This tag is placed in the `lang` attribute for elements formatted using this language. |
-| `customCode` | String | optional | An alternative language tag, that does not need to be compatible with BCP47. This code is placed in the `data-mce-lang` attribute for elements formatted using this language, if it is defined. |
+| `code` | String | required | The language tag, as defined in [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt), for this language. This language tag is placed in the `lang` attribute for elements formatted using this language. |
+| `customCode` | String | optional | An alternative language tag, that does not need to be compatible with BCP47. This string is placed in the `data-mce-lang` attribute for elements formatted using this language, if it is defined. |
+
+{% if page.name != "tinymcespellchecker.md" %}
+There is no default value for the `content_langs` option. If no value is specified, the `language` toolbar button and menu item are not available. A default value for this option is provided by the Spell Checker Pro plugin. For information on using the `content_langs` option with the Spell Checker Pro plugin, see: [Spell Checker Pro plugin - `content_langs`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#content_langs).
+{% endif %}
 
 **Type:** `Array`
 
 {% if page.name == "tinymcespellchecker.md" %}
-**Default:**
+**Default Value:**
 
 ```js
 [
@@ -30,12 +34,7 @@ This option sets the languages displayed in the `language` dropdown toolbar butt
 ]
 ```
 
-> **Note:** This default is provided by the Spell Checker Pro plugin, it is not available in the core editor.
-
-> **Note:** The languages specified by the deprecated [`spellchecker_select_language`](#spellchecker_select_language) option are used as a fallback if they are available.
-
-{% else %}
-There is no default value for the `content_langs` option. If no value is specified, the `language` toolbar button and menu item are not available. A default value for this option is provided by the Spell Checker Pro plugin. For information on using the `content_langs` option with the Spell Checker Pro plugin, see: [Spell Checker Pro plugin - `content_langs`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#content_langs).
+> **Note:** This default is provided by the Spell Checker Pro plugin, it is not available in the core editor. The languages specified by the deprecated [`spellchecker_select_language`](#spellchecker_select_language) option are used as a fallback if they are available.
 {% endif %}
 
 {% if page.name == "tinymcespellchecker.md" %}

@@ -60,6 +60,8 @@ The {{site.productname}} Enterprise Spellchecking plugin activates automatically
 
 ## Configuration Options
 
+{% include configuration/content-langs.md %}
+
 ### `spellchecker_active`
 
 This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be active when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
@@ -145,29 +147,6 @@ tinymce.init({
 });
 ```
 
-{% include configuration/content-langs.md %}
-
-### `spellchecker_select_languages`
-
-> **Note:** The `spellchecker_select_languages` option was deprecated with the release of {{site.productname}} 5.9. The `content_langs` option should be used instead. This change was made to allow more control over the way languages are specified, and to reflect that the option can be used outside of spell checking.
-
-This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).  For a list of available languages, see: [Supported languages](#supportedlanguages).
-
-**Type:** comma-separated `String`
-
-**Default Value:** `'en,es,fr,de,pt,zh'`
-
-#### Example: Using `spellchecker_select_languages`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  toolbar: 'language',
-  spellchecker_select_languages: 'en,es,fi,fr,da,de,nl,it,nb,pt,sv,zh'
-});
-```
-
 ### `spellchecker_on_load`
 
 > **Note**: Removed in Spell Checker Pro 2.0 (TinyMCE 5.2). Spell Checker Pro will now always run on editor initialization. To disable Spell Checker Pro on load, use [`spellchecker_active`](#spellchecker_active).
@@ -247,6 +226,27 @@ tinymce.init({
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
+
+### `spellchecker_select_languages`
+
+> **Note:** The `spellchecker_select_languages` option was deprecated with the release of {{site.productname}} 5.9. The `content_langs` option should be used instead. This change was made to allow more control over the way languages are specified, and to reflect that the option can be used outside of spell checking.
+
+This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).  For a list of available languages, see: [Supported languages](#supportedlanguages).
+
+**Type:** comma-separated `String`
+
+**Default Value:** `'en,es,fr,de,pt,zh'`
+
+#### Example: Using `spellchecker_select_languages`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'language',
+  spellchecker_select_languages: 'en,es,fi,fr,da,de,nl,it,nb,pt,sv,zh'
+});
+```
 
 ## Commands
 

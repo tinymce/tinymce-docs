@@ -14,8 +14,6 @@ description: Configure the appearance of content inside TinyMCE's editable area.
 
 {% include configuration/content-css-cors.md %}
 
-{% include configuration/content-langs.md %}
-
 {% include configuration/content-style.md %}
 
 {% include configuration/font-css.md %}

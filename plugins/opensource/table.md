@@ -468,7 +468,7 @@ tinymce.init({
 
 {{site.requires_5_9v}}
 
-This option enables you to specify a list of pre-defined cell border widths for quick access by the `tablecellborderstyle` toolbar button or menu item.
+This option enables you to specify a list of pre-defined cell border widths for quick access by the `tablecellborderstyle` toolbar button or menu item, in addition to the dialog options.
 
 **Type:** `Array`
 

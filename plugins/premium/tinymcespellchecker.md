@@ -243,6 +243,7 @@ tinymce.init({
   }
 });
 ```
+
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}

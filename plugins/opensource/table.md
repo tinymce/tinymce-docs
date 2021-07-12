@@ -431,7 +431,7 @@ tinymce.init({
 
 {{site.requires_5_9v}}
 
-This option enables you to specify a list of pre-defined cell border withs for quick access by the `tablecellborderwidth` toolbar button or menu item.
+This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderwidth` toolbar button or menu item.
 
 **Type:** `Array`
 
@@ -455,11 +455,10 @@ tinymce.init({
   menubar: 'table',
   toolbar: 'table',
   table_border_widths: [
-    {title: '1px', value: '1px'},
-    {title: '2px', value: '2px'},
-    {title: '3px', value: '3px'},
-    {title: '4px', value: '4px'},
-    {title: '5px', value: '5px'}
+    {title: '1 pixel', value: '1px'},
+    {title: '2 pixels', value: '2px'},
+    {title: '3 pixels', value: '3px'},
+    {title: '5 pixels', value: '5px'}
   ]
 });
 ```
@@ -468,7 +467,7 @@ tinymce.init({
 
 {{site.requires_5_9v}}
 
-This option enables you to specify a list of pre-defined cell border widths for quick access by the `tablecellborderstyle` toolbar button or menu item, in addition to the dialog options.
+This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderstyle` toolbar button or menu item, in addition to the dialog options.
 
 **Type:** `Array`
 
@@ -508,7 +507,7 @@ tinymce.init({
 
 {{site.requires_5_9v}}
 
-This option enables you to specify the default values for the table cell background color picker `tablecellbackgroundcolor`. If no values are defined, uses the values of `color_map`.
+This option is used to specify the default values for the table cell background color picker `tablecellbackgroundcolor`. If no values are defined, the toolbar button and menu item will use the values or default values of the `color_map` option.
 
 Custom colors are not enabled.
 

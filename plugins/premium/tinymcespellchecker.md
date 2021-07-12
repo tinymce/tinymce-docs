@@ -208,7 +208,6 @@ tinymce.init({
 });
 ```
 
-
 <!-- Bookmark for deprecated option name -->
 <a class="anchor" id="spellchecker_whitelist">
 

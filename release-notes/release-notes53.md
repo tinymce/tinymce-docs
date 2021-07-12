@@ -95,7 +95,7 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **C
 
 For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
-For a list of Comments plugin menu items, see: [Comments plugin - Menu items]({{site.baseurl}}/plugins/premium/comments/#menuitems).
+For a list of Comments plugin menu items, see: [Comments plugin - Menu items]({{site.baseurl}}/plugins/premium/comments/comments_toolbars_menus/#menuitems).
 
 ### Enhanced Media Embed
 

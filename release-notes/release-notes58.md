@@ -95,8 +95,8 @@ This release adds new resolve conversation functionality, making it is possible 
 
 **Comments** 2.4.0 provides the following new features:
 
-- Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - `tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve).
-- Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - `tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve).
+- Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: [Configuring comments callbacks - `tinycomments_resolve`]({{site.baseurl}}/plugins/premium/comments/comments_callback_mode/#tinycomments_resolve).
+- Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: [Comments plugin - `tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/comments_embedded_mode/#tinycomments_can_resolve).
 
 For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 

@@ -3,7 +3,7 @@
 | ------------ | ---------------------------------- |
 | mceEmoticons | Opens the Emoticons dialog. |
 
-**Examples**
+**Example**
 
 ```js
 tinymce.activeEditor.execCommand('mceEmoticons');

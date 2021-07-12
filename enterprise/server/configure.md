@@ -22,7 +22,7 @@ The Enhanced Media Embed server-side component require additional configuration,
 
 The `allowed-origins` element configures a list of **all** values that can be expected by the server-side components in a HTTP Origin header from your {{site.productname}} instances (see the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {{site.productname}} instances will be served from without the path information.
 
-> **Important:** When the services are matching against the `allowed-origins` list, the `scheme` (e.g. http) and the `port` (e.g. 800) are **ignored**.
+> **Important:** When the services are matching against the `allowed-origins` list, the `scheme` (e.g. http) and the `port` (e.g. 800) are **ignored** by default. Using the `ephox.allowed-origins.ignore-port` setting can customize this behaviour.
 
 This is best illustrated with some examples:
 
@@ -134,6 +134,25 @@ For example:
 ephox {
   allowed-origins {
     same-origin: true
+  }
+}
+```
+
+#### `allowed-origins.ignore-port` (optional)
+
+{% include misc/list_ignore_port_service_versions.md %}
+
+Disabling `ignore-port` means that the port of the origin **must match** the port of the origin specified in the `allowed-origins` list. This option is set to `true` by default, so the port is ignored.
+
+Setting `ignore-port` to `true` will mean that the port is ignored when checking against the allowed origins. Setting it to `false` will mean that the port must match the origin when checking allowed-origins.
+
+For example:
+
+```
+ephox {
+  allowed-origins {
+    origins = ["myserver:8000", "myserver:8001"]
+    ignore-port = false
   }
 }
 ```

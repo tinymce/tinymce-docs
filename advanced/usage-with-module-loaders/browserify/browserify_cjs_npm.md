@@ -8,3 +8,23 @@ keywords: browserify commonjs cjs npm modules tinymce
 ---
 
 [Browserify](https://browserify.org/)
+
+```sh
+npm install promise-polyfill tinymce browserify browserify-css brfs --save-dev
+```
+
+```html
+{% include module-loading/browserify-cjs-demo.html %}
+```
+
+```js
+{% include module-loading/browserify-cjs-main.js %}
+```
+
+```js
+{% include module-loading/browserify-cjs-npm_editor.js %}
+```
+
+```sh
+browserify -t brfs -g browserify-css src/main.js -o dist/main.bundle.js
+```

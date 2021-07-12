@@ -1,4 +1,4 @@
-const fs = require('fs');
+var fs = require('fs');
 
 // Import TinyMCE
 var tinymce = require('tinymce/tinymce');

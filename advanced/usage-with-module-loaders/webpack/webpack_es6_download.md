@@ -8,3 +8,9 @@ keywords: webpack es6 es2015 zip modules tinymce
 ---
 
 [Webpack](https://webpack.js.org/)
+
+{% include module-loading/content-css-files.md %}
+
+{% assign forModuleLoaders = true %}
+{% include misc/ui-languages.md %}
+{% assign forModuleLoaders = false %}

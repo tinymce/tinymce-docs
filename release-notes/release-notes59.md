@@ -42,7 +42,7 @@ For information on:
 
 - The `language` toolbar button, see: [Available Toolbar Buttons - The core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons).
 - The `language` menu item, see: [Available Menu Items - The core menu items]({{site.baseurl}}/advanced/available-menu-items/#the-core-menu-items).
-- The `content_langs` option, see: [Content appearance options - `content_langs`]({{site.baseurl}}/configure/content-appearance/#content_langs).
+- The `content_langs` option, see: [Content appearance options - `content_langs`]({{site.baseurl}}/configure/localization/#content_langs).
 - The `Lang` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 
 ### Additional new features

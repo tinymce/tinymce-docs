@@ -38,7 +38,10 @@ For information on the `toolbar_sticky_offset` option, see: [User interface opti
 
 {{site.productname}} 5.9 introduces the following minor new features:
 
-- Added new plugin commands: `mceEmoticons` (emoticons), `mceWordCount` (wordcount), and `mceTemplate` (template)
+- Added new plugins commands:
+  - `mceEmoticons` opens Emoticons dialog
+  - `mceWordCount` displays the Word Count summary
+  - `mceTemplate` shows the Template selector dialog
 
 ## Enhancements
 

@@ -60,8 +60,6 @@ The {{site.productname}} Enterprise Spellchecking plugin activates automatically
 
 ## Configuration Options
 
-{% include configuration/content-langs.md %}
-
 ### `spellchecker_active`
 
 This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be active when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
@@ -223,9 +221,7 @@ tinymce.init({
 });
 ```
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+{% include plugins/tinymcespellchecker_content_langs.md %}
 
 ### `spellchecker_select_languages`
 
@@ -247,6 +243,10 @@ tinymce.init({
   spellchecker_select_languages: 'en,es,fi,fr,da,de,nl,it,nb,pt,sv,zh'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

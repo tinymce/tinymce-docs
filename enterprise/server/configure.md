@@ -142,9 +142,9 @@ ephox {
 
 {% include misc/list_ignore_port_service_versions.md %}
 
-Setting `ignore-port` to `false` means that the port of the origin **must match** the port of the origin specified in the `allowed-origins` list. This option is set to `true` by default, so the port is ignored.
+To enforce a port check for the service's `allowed-origins`, set `ignore-port` to `false`. When `ignore-port` is set to false, all `allowed-origins` **must** include the port of the origin.
 
-Setting `ignore-port` to `true` will mean that the port is ignored when checking against the allowed origins. Setting it to `false` will mean that the port must match the origin when checking allowed-origins.
+This option is set to `true` by default, so ports specified in `allowed-origins` are ignored.
 
 For example:
 

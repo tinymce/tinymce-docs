@@ -53,6 +53,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | Subscript            | Toggles subscript formatting to selection.                                                                                                                                                                                                                                                  |
 | Cut                  | Cuts the selected contents and puts in into users clipboard.                                                                                                                                                                                                                                |
 | Copy                 | Copies the selected contents and puts in into users clipboard.                                                                                                                                                                                                                              |
+| Lang                 | Sets the language of the current selection. The value passed in should be a language spec described in [Content appearance options - `content_langs`]({{site.baseurl}}/configure/localization/#content_langs).                                                                              |
 | Paste                | Pastes the current clipboard contents into the editor.                                                                                                                                                                                                                                      |
 | mceInsertLink        | Inserts a link at the current selection. The value is the URL to add to the link(s).                                                                                                                                                                                                        |
 | Unlink               | Removes any links from the current selection.                                                                                                                                                                                                                                               |
@@ -170,6 +171,7 @@ Commands are available for the following plugins:
 - [Code Sample](#codesample)
 - [Comments](#comments)
 - [Directionality](#directionality)
+- [Emoticons](#emoticons)
 - [Export](#export)
 - [Format Painter](#formatpainter)
 - [Full Page](#fullpage)
@@ -197,6 +199,7 @@ Commands are available for the following plugins:
 - [Table of Contents](#tableofcontents)
 - [Visual Blocks](#visualblocks)
 - [Visual Characters](#visualcharacters)
+- [Word Count](#wordcount)
 
 #### Advanced Code
 
@@ -263,6 +266,12 @@ The following commands require the [Comments (`tinycomments`)]({{site.baseurl}}/
 The following commands require the [Directionality (`directionality`)]({{site.baseurl}}/plugins/opensource/directionality/) plugin.
 
 {% include commands/directionality-cmds.md %}
+
+#### Emoticons
+
+The following commands require the [Emoticons (`emoticons`)]({{site.baseurl}}/plugins/opensource/emoticons/) plugin.
+
+{% include commands/emoticons-cmds.md %}
 
 #### Export
 
@@ -427,6 +436,12 @@ The following command requires the [Visual Blocks (`visualblocks`)]({{site.baseu
 The following command requires the [Visual Characters (`visualchars`)]({{site.baseurl}}/plugins/opensource/visualchars/) plugin.
 
 {% include commands/visualchars-cmds.md %}
+
+#### Word Count
+
+The following command requires the [Word Count (`wordcount`)]({{site.baseurl}}/plugins/opensource/visualchars/) plugin.
+
+{% include commands/wordcount-cmds.md %}
 
 ### Editor Management Commands
 

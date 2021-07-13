@@ -34,11 +34,25 @@ The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a sp
 
 For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 
+### New `language` toolbar button and menu item in core
+
+{{site.productname}} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` toolbar button, and a new `language` menu item, both configured using the `content_langs` option. There is also a new `Lang` editor command for changing the language of the selection.
+
+For information on:
+
+- The `language` toolbar button, see: [Available Toolbar Buttons - The core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons).
+- The `language` menu item, see: [Available Menu Items - The core menu items]({{site.baseurl}}/advanced/available-menu-items/#thecoremenuitems).
+- The `content_langs` option, see: [Content appearance options - `content_langs`]({{site.baseurl}}/configure/localization/#content_langs).
+- The `Lang` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
+
 ### Additional new features
 
 {{site.productname}} 5.9 introduces the following minor new features:
 
-- changelog
+- Added new plugin commands:
+  - `mceEmoticons` opens the Emoticons dialog.
+  - `mceWordCount` displays the Word Count summary dialog.
+  - `mceTemplate` shows the Template dialog.
 
 ## Enhancements
 
@@ -165,9 +179,13 @@ For information on:
 
 The following features have been deprecated with the release of {{site.productname}} 5.9:
 
-- [](#).
+- [The `spellchecker_select_languages` option](#thespellchecker_select_languagesoption).
 
-### The...
+### The `spellchecker_select_languages` option
+
+With the release of {{site.productname}} 5.9, the `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option.
+
+For information on the `content_langs` option, see: [Spell Checker Pro - `content_langs`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#content_langs).
 
 ## Known issues
 

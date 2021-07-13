@@ -15,7 +15,7 @@ keywords: releasenotes bugfixes
 - [Functionality changes](#functionalitychanges)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
-- [Accompanying Premium self-hosted server-side component changes](##accompanyingpremiumself-hostedserver-sidecomponentchanges)
+- [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -117,28 +117,24 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 
 ## Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the Spell Checker Pro plugin (`tinymcespellchecker`).
 
-- The Enhanced Media Embed plugin (`mediaembed`)
-- The Image Tools plugin (`imagetools`)
-- The Link Checker plugin (`linkchecker`)
-- The Spell Checker Pro plugin (`tinymcespellchecker`)
+The Java server-side component (`ephox-spelling.war`) has been updated to **version 2.110.0**.
 
-The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version X.Y.Z**.
+A new configuration option allowing custom dictionaries to periodically deploy changes has been added.
+
+For information on the configuration option, see: [Configure server-side components: `dynamic-custom-dictionaries`]({{site.baseurl}}/enterprise/server/configure/#dynamic-custom-dictionariesoptional).
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 
 For information on:
 
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
-- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
-- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
 ### Updating the self-hosted server-side components
 
-Version X.Y.Z provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+Version 2.110.0 of the spelling service provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
 1. Update your Java Application Server to the minimum required version:
 
@@ -149,7 +145,7 @@ Version X.Y.Z provides updates for the Java-based server-side components. To dep
         - 8.0.42+
         - 7.0.76+
 
-2. Replace the existing server-side `.war` files with the version 2.5.0 `.war` files bundled with {{site.productname}} 5.9 or later.
+2. Replace the existing server-side `.war` file with the version 2.110.0 `.war` file bundled with {{site.productname}} 5.9 or later.
 
 For information on:
 

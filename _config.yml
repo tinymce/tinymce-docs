@@ -66,7 +66,7 @@ requires_5_8v: "> **Note**: This feature is only available for TinyMCE 5.8 and l
 requires_5_9v: "> **Note**: This feature is only available for TinyMCE 5.9 and later."
 
 requires_jsscwar_230v: "> **Note**: This feature is only available for TinyMCE self-hosted server-side components, version 2.3.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-hyperlinking/version`."
-requires_jsscwar_2_108_0v: "> **Note**: This feature is only available for TinyMCE self-hosted server-side components, version 2.108.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-spelling/version`."
+requires_jsspelling_war_2_110_0v: "> **Note**: This feature is only available for the TinyMCE self-hosted spelling component, version 2.110.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-spelling/version`."
 deprecate_spellchecker: "> **Important**: The **free** TinyMCE Spell Checker plugin (`spellchecker`) was deprecated with the release of TinyMCE 5.4. For details, see [the free TinyMCE Spell Checker plugin deprecation notice](https://www.tiny.cloud/docs/release-notes/release-notes54/#thefreetinymcespellcheckerplugin)."
 ctrl_right_click: "> **Note**: When the TinyMCE context menu is _enabled_, users can still access the browser context menu, including the browser spellchecker, using the `Ctrl+Right click` shortcut. However if the `contextmenu_never_use_native` option is enabled, holding the `Ctrl` key will have no effect."
 notonmobile: "> **Note**: This option is not supported on mobile devices."
@@ -84,7 +84,7 @@ predefinedIconsOnly: "Name of the icon to be displayed. Must correspond to an ic
 liveDemoIframeCSSStyles: "'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'"
 
 logoForDemos: "https://www.tiny.cloud/labs/android-chrome-256x256.png"
-logoForDemosHTML: "<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"Tiny Logo\" src=\"https://www.tiny.cloud/labs/android-chrome-256x256.png\" alt=\"TinyMCE Logo\" width=\"128\" height=\"128\" /></p>" 
+logoForDemosHTML: "<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"Tiny Logo\" src=\"https://www.tiny.cloud/labs/android-chrome-256x256.png\" alt=\"TinyMCE Logo\" width=\"128\" height=\"128\" /></p>"
 logoForDemosHTMLRight: "<p><img style=\"float: right;\" title=\"Tiny Logo\" src=\"https://www.tiny.cloud/labs/android-chrome-256x256.png\" alt=\"TinyMCE Logo\" width=\"128\" height=\"128\" /></p>"
 
 primaryColor: "#1976D2"

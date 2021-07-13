@@ -185,7 +185,7 @@ tinymce.init({
 });
 ```
 
-{% include plugins/tinymcespellchecker_content_langs.md %}
+{% include plugins/tinymcespellchecker-content-langs.md %}
 
 ### `spellchecker_select_languages`
 

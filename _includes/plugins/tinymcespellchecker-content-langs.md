@@ -1,5 +1,5 @@
 ### `content_langs`
-{% include configuration/content_langs_base.md %}
+{% include configuration/content-langs-base.md %}
 
 > **Note:** The `content_langs` option replaces the `spellchecker_select_languages` option
 

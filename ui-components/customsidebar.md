@@ -37,19 +37,19 @@ The `onSetup` specifies a function to be called when the panel is first created.
 
 `onSetup` is a complex property. It requires a function that takes the sidebar’s API and should return a callback that takes the sidebar's API and returns nothing. This occurs because `onSetup` runs whenever the sidebar is rendered, and the returned callback is executed when the sidebar is destroyed. Therefore the returned function is essentially an `onTeardown` handler, and can be used to unbind events and callbacks.
 
-**Type**: `function`
+**Type**: `Function`
 
 #### `onShow`
 
 The `onShow` specifies a function to be called when the panel displayed. It passes in an API object.
 
-**Type**: `function`
+**Type**: `Function`
 
 #### `onHide`
 
 The `onHide` specifies a function to be called when the panel is hidden. It passes in an API  object.
 
-**Type**: `function`
+**Type**: `Function`
 
 ### API Object
 

@@ -1,7 +1,8 @@
 ### `content_langs`
+{{ site.requires_5_9v }} The `content_langs` option replaces the `spellchecker_select_languages` option.
+
 {% include configuration/content-langs-base.md %}
 
-> **Note:** The `content_langs` option replaces the `spellchecker_select_languages` option
 
 **Type:** `Array`
 

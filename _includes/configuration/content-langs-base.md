@@ -1,5 +1,3 @@
-{{ site.requires_5_9v }}
-
 This option sets the languages displayed in the `language` toolbar button and the `language` menu item. The option accepts an array of language specs. Each language spec is a JavaScript object defined using the following properties.
 
 | Name | Type | Requirement | Description |

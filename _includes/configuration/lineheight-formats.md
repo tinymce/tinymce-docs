@@ -8,7 +8,7 @@ This option allows you to override the line heights displayed in the `lineheight
 
 **Default Value:** `'1 1.1 1.2 1.3 1.4 1.5 2'`
 
-##### Example
+### Example: Using `lineheight_formats`
 
 ```js
 tinymce.init({

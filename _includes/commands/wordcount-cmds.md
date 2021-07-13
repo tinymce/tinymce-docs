@@ -1,7 +1,7 @@
 
 | Command           | Description                                                                     |
 | ----------------- | ------------------------------------------------------------------------------- |
-| mceWordCount      | Opens the Word Count dialog. |
+| mceWordCount      | Opens the Word Count summary dialog. |
 
 **Example**
 

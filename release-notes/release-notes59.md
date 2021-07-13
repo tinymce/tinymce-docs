@@ -49,7 +49,10 @@ For information on:
 
 {{site.productname}} 5.9 introduces the following minor new features:
 
-- changelog
+- Added new plugin commands:
+  - `mceEmoticons` opens the Emoticons dialog.
+  - `mceWordCount` displays the Word Count summary dialog.
+  - `mceTemplate` shows the Template dialog.
 
 ## Enhancements
 

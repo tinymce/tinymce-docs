@@ -1,25 +1,10 @@
 ### `content_langs`
-{{ site.requires_5_9v }} The `content_langs` option replaces the `spellchecker_select_languages` option.
+{{ site.requires_5_9v }} The `content_langs` option replaces the `spellchecker_select_languages` option. The value of the `spellchecker_select_languages` option, or its default, are used as a fallback for `content_langs`.
 
 {% include configuration/content-langs-base.md %}
 
 
 **Type:** `Array`
-
-**Default Value:**
-
-```js
-[
-  { title: 'English', code: 'en' },
-  { title: 'Spanish', code: 'es' },
-  { title: 'French', code: 'fr' },
-  { title: 'German', code: 'de' },
-  { title: 'Portuguese', code: 'pt' },
-  { title: 'Chinese', code: 'zh' }
-]
-```
-
-> **Note:** This default is provided by the Spell Checker Pro plugin, it is not available in the core editor. The languages specified by the deprecated [`spellchecker_select_language`](#spellchecker_select_language) option are used as a fallback if they are available.
 
 #### Example: Using `content_langs` to change spelling dictionaries
 

@@ -5,22 +5,6 @@ description: Custom dictionaries can be added to Spell Checker Pro
 keywords: enterprise tinymcespellchecker spell check checker pro
 ---
 
-## Configuring the custom dictionary feature
-
-Additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
-
-Adding the `ephox.spelling.custom-dictionaries-path` element activates the custom dictionary feature. It points to a directory on the server's file system that will contain custom dictionary files and should not contain anything else. It is a good idea to store these files where the `application.conf` file lives, i.e. if `application.conf` is in a directory called `/opt/ephox`, the dictionary files could live in a sub-directory `/opt/ephox/dictionaries`.
-
-Example:
-
-```conf
-ephox {
-  spelling {
-    custom-dictionaries-path = "/opt/ephox/dictionaries"
-  }
-}
-```
-
 ## Creating custom dictionary files
 
 One custom dictionary can be created for each language supported by the spell checker (see [supported languages]({{ site.baseurl }}/enterprise/check-spelling/)), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
@@ -44,10 +28,20 @@ A dictionary file must be a simple text file with:
 
 The last point is important for files created or edited on non-Linux (Windows or Mac) systems, as these will usually encode text files differently. However, Windows or Mac editors such as Windows Notepad can optionally save files in UTF-8 if asked to do so. Please check your editor of choice for this functionality. Failure to chose the correct encoding will result in problems with non-English letters such as umlauts and accents.
 
-**NOTE for German and Finnish languages**: Spell checking in German and Finnish will employ compound word spell checking. Compound words such as "Fußballtennis" will be assumed correct as long as the root words "Fußball" and "Tennis" are
+> **Note**: **German and Finnish languages** - Spell checking in German and Finnish will employ compound word spell checking. Compound words such as "Fußballtennis" will be assumed correct as long as the root words "Fußball" and "Tennis" are
 individually present in the dictionary. It is not necessary to add "Fußballtennis" separately.
 
-### Verifying custom dictionary functionality
+## Configuring the custom dictionary feature
+
+Additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
+
+{% include misc/custom-dictionaries-path.md %}
+
+### Dynamic Custom Dictionaries
+
+{% include misc/dynamic-custom-dictionaries.md %}
+
+## Verifying custom dictionary functionality
 
 If successfully configured, the custom dictionary feature will report dictionaries found in the application server's log at service startup.
 
@@ -63,6 +57,6 @@ Example:
 
 The above log shows that 3 custom dictionaries were found, one "global", language-independent one and one each for English and French. They were found to contain 1, 3 and 2 words, respectively. Please check that this report matches your expectations.
 
-### Ongoing dictionary maintenance
+## Ongoing dictionary maintenance
 
-Future additions/changes to dictionaries after the initial deployment will require a restart of the spell check service each time.
+Unless the `ephox.spelling.dynamic-custom-dictionaries` setting is set to true, future additions/changes to dictionaries after the initial deployment will require a restart of the spell check service each time.

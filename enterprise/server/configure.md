@@ -22,7 +22,7 @@ The Enhanced Media Embed server-side component require additional configuration,
 
 The `allowed-origins` element configures a list of **all** values that can be expected by the server-side components in a HTTP Origin header from your {{site.productname}} instances (see the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {{site.productname}} instances will be served from without the path information.
 
-> **Important:** When the services are matching against the `allowed-origins` list, the `scheme` (e.g. http) and the `port` (e.g. 800) are **ignored**. 
+> **Important:** When the services are matching against the `allowed-origins` list, the `scheme` (e.g. http) and the `port` (e.g. 800) are **ignored**.
 
 This is best illustrated with some examples:
 
@@ -314,6 +314,23 @@ ephox {
   }
 }
 ```
+
+### `spelling` (optional)
+
+The Spelling service has two configurable settings:
+
+- `custom-dictionaries-path`
+- `dynamic-custom-dictionaries`
+
+#### `custom-dictionaries-path` (optional)
+
+For information on creating custom dictionaries, see: [Adding custom dictionaries - Creating custom dictionary files]({{site.baseurl}}/enterprise/check-spelling/custom/#creatingcustomdictionaryfiles).
+
+{% include misc/custom-dictionaries-path.md %}
+
+#### `dynamic-custom-dictionaries` (optional)
+
+{% include misc/dynamic-custom-dictionaries.md %}
 
 ## Logging
 

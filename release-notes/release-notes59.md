@@ -128,13 +128,24 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 
 ## Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the Spell Checker Pro plugin (`tinymcespellchecker`).
+The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
-The Java server-side component (`ephox-spelling.war`) has been updated to **version 2.110.0**.
+- The Enhanced Media Embed plugin (`mediaembed`)
+- The Image Tools plugin (`imagetools`)
+- The Link Checker plugin (`linkchecker`)
+- The Spell Checker Pro plugin (`tinymcespellchecker`)
 
-A new configuration option allowing custom dictionaries to periodically deploy changes has been added.
+The Java server-side components have been updated to the following versions:
 
-For information on the configuration option, see: [Configure server-side components: `dynamic-custom-dictionaries`]({{site.baseurl}}/enterprise/server/configure/#dynamic-custom-dictionariesoptional).
+* `ephox-spelling.war`: 2.113.0
+* `ephox-hyperlinking.war`: 2.104.0
+* `ephox-image-proxy.war`: 2.104.0
+
+### New Server-side component features
+
+All the services now include a `ignore-port` port option to allow ports specified in `allowed-origins` to be enforced. For details, see: [Configure server-side components: `allowed-origins.ignore-port` (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originsignore-portoptional).
+
+The Spelling service now includes a new configuration option, allowing custom dictionaries to periodically deploy changes. For details, see: [Configure server-side components: `dynamic-custom-dictionaries`]({{site.baseurl}}/enterprise/server/configure/#dynamic-custom-dictionariesoptional).
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 
@@ -145,7 +156,7 @@ For information on:
 
 ### Updating the self-hosted server-side components
 
-Version 2.110.0 of the spelling service provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
 1. Update your Java Application Server to the minimum required version:
 

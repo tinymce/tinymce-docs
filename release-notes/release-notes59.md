@@ -77,6 +77,8 @@ The following commands have been added to the table plugin to improve the usabil
 `mceTableToggleCaption`
 : Allows the user to add or remove a caption on selected tables.
 
+For information on these commands, see: [Table - Commands]({{site.baseurl}}/plugins/opensource/table/#commands)
+
 #### New table toolbar buttons and menu items
 
 {{site.productname}} 5.9 adds new buttons and menu items for the Table plugin to improve the user experience when working with tables. The toolbar buttons and menu item use the same name (identifier). These toolbar buttons and menu items can be added to contextual menus (right-click menus) and contextual toolbars such as the table toolbar. The following toolbar buttons and menu items have been added:
@@ -101,7 +103,22 @@ The following commands have been added to the table plugin to improve the usabil
 `tablecolheader`
 : Allows the user to toggle selected columns into headers.
 
+For information on these buttons, see: [Available toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#tableplugin)
+For information on these menu items, see: [Available menu items]({{site.baseurl}}/advanced/available-menu-items/#tableplugin)
 
+#### New table options
+
+{{site.productname}} 5.9 adds new options for the Table plugin to improve the user experience when working with tables. These new options are optional, and allows further customization of user experience.
+`table_cell_background_color_map`
+: Allows setting a specific set of colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map)
+`table_cell_border_color_map`
+: Allows setting a specific set of colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map)
+`table_border_widths`
+: Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths)
+`table_border_styles`
+: Allows setting a specific set of widths to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: [Table options - table_border_styles]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
+
+For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugins/opensource/table/).
 
 ### Additional new features
 

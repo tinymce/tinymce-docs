@@ -64,6 +64,9 @@
 
 - url: "configure"
   pages:
+  - url: "accessibility-options"
+    pages:
+    - url: "#iframe_aria_text"
   - url: "integration-and-setup"
     pages:
     - url: "#auto_focus"

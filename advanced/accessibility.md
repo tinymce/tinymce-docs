@@ -46,7 +46,6 @@ To open submenus or grid selections on toolbar buttons, use the **Enter**, **Ret
 
 Dialogs such as **Insert/Edit Image** are opened from either a menu item or a toolbar button. Some dialogs contain multiple tabs or pages of options. To change tabs or pages, use the arrow keys; the highlighted tab will become active immediately. Use the **Tab** key to navigate between the dialog options on the selected dialog tab. The **Save** dialog button stores the changes, and the **Cancel** dialog button or the **Esc** key discards changes.
 
-
 ## Accessibility options
 
-TinyMCE has accessibility options that can be set when initialising the editor, see: [Accessibilty options]({{site.baseurl}}/configure/accessibility-options/).
+{{site.productname}} has accessibility options that can be set when initialising the editor, see: [Accessibilty options]({{site.baseurl}}/configure/accessibility/).

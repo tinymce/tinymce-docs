@@ -2,7 +2,7 @@
 
 {{ site.requires_5_9v }}
 
-This option allows you to set the editor iframe title attribute.
+This option allows setting the editor iframe title attribute. It is intended for use with {{site.productname}}'s [classic mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-classic/) only, as the editable area is sandboxed within an iframe.
 
 **Type:** `String`
 

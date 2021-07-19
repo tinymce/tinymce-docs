@@ -4,9 +4,9 @@
 
 This option is used to customize the `title` attribute on the {{site.productname}} `iframe` element. For example:
  
-~~~html
+```html
 <iframe title="Rich Text Area. Press ALT-0 for help."></iframe>
-~~~
+```
 
 The `title` attribute is read by screen-readers to help users identify the editor. This option only applies to {{site.productname}} classic (iframe) mode and has no effect on [`inline` editors]({{site.baseurl}}/configure/editor-appearance/#inline).
 

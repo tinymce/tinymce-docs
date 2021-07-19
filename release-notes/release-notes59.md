@@ -53,6 +53,7 @@ For information on:
   - `mceEmoticons` opens the Emoticons dialog.
   - `mceWordCount` displays the Word Count summary dialog.
   - `mceTemplate` shows the Template dialog.
+- A new `iframe_aria_text` option for customizing the `title` attribute on the editor iframe. For details, see: [Accessibility options - `iframe_aria_text`]({{site.baseurl}}/configure/accessibility/#iframe_aria_text).
 
 ## Enhancements
 

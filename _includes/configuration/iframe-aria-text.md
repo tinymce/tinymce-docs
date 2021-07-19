@@ -2,7 +2,13 @@
 
 {{ site.requires_5_9v }}
 
-This option allows setting the editor iframe title attribute. It is intended for use with {{site.productname}}'s [classic mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-classic/) only, as the editable area is sandboxed within an iframe.
+This option is used to customize the `title` attribute on the {{site.productname}} `iframe` element. For example:
+ 
+~~~html
+<iframe title="Rich Text Area. Press ALT-0 for help."></iframe>
+~~~
+
+The `title` attribute is read by screen-readers to help users identify the editor. This option only applies to {{site.productname}} classic (iframe) mode and has no effect on [`inline` editors]({{site.baseurl}}/configure/editor-appearance/#inline).
 
 **Type:** `String`
 

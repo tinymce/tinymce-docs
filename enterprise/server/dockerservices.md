@@ -32,7 +32,7 @@ The following sections assist with containerizing the {{ site.productname }} ser
 ### Download and extract the TinyMCE Self-hosted Bundle
 
 1. Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download either:
-
+[Tiny Account - Downloads]({{site.download-enterprise}})
     - The **Self-hosted Essential** bundle.
     - The **Self-hosted Professional** bundle.
     - The **Self-hosted Premium** bundle.

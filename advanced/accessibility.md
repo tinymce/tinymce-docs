@@ -48,4 +48,4 @@ Dialogs such as **Insert/Edit Image** are opened from either a menu item or a to
 
 ## Accessibility options
 
-{{site.productname}} has accessibility options that can be set when initialising the editor, see: [Accessibilty options]({{site.baseurl}}/configure/accessibility/).
+{{site.productname}} has accessibility options that can be set when initializing the editor, see: [Accessibility options]({{site.baseurl}}/configure/accessibility/).

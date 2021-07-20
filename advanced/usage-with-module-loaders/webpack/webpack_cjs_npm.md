@@ -27,20 +27,11 @@ This guide requires the following:
 
 {% include module-loading/webpack-dev-dependencies.md %}
 
-`src/editor.js`
-```js
-{% include module-loading/bundling-webpack-cjs-npm_editor.js %}
-```
+{% include module-loading/bundling-webpack-cjs-npm_editor.md %}
 
-`webpack.config.js`
-```js
-{% include module-loading/bundling-webpack-cjs-npm_webpack.config.js %}
-```
+{% include module-loading/bundling-webpack-cjs-npm_webpack.config.md %}
 
-`src/index.js`
-```js
-{% include module-loading/bundling-webpack-cjs_index.js %}
-```
+{% include module-loading/bundling-webpack-cjs_index.md %}
 
 ```sh
 webpack --config webpack.config.js

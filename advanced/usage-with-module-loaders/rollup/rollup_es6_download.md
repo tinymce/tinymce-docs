@@ -27,25 +27,11 @@ This guide requires the following:
 
 {% include module-loading/webpack-dev-dependencies.md %}
 
-`src/editor.js`
-```js
-{% include module-loading/bundling-rollup-es6-zip_editor.js %}
-```
+{% include module-loading/bundling-rollup-es6-zip_editor.md %}
 
-`rollup.config.js`
-```js
-{% include module-loading/bundling-rollup-es6-zip_rollup.config.js %}
-```
+{% include module-loading/bundling-rollup-es6-zip_rollup.config.md %}
 
-`src/index.js`
-```js
-{% include module-loading/bundling-rollup-es6-index.js %}
-```
-
-`demo.html`
-```html
-{% include module-loading/bundling-rollup-es6-demo.html %}
-```
+{% include module-loading/bundling-rollup-es6-index.md %}
 
 ```sh
 rollup --config

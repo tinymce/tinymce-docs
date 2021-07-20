@@ -26,21 +26,11 @@ This guide requires the following:
 {% assign is_zip_install = false %}
 {% include module-loading/webpack-dev-dependencies.md %}
 
-1. Create a new source file for importing the required components from {{site.productname}} and configuring the editor.
+{% include module-loading/bundling-webpack-es6-npm_editor.md %}
 
-    **src/editor.js**
+{% include module-loading/bundling-webpack-es6-npm_webpack.config.md %}
 
-        {% include module-loading/bundling-webpack-es6-npm_editor.js %}
-
-`webpack.config.js`
-```js
-{% include module-loading/bundling-webpack-es6-npm_webpack.config.js %}
-```
-
-`src/index.js`
-```js
-{% include module-loading/bundling-webpack-es6_index.js %}
-```
+{% include module-loading/bundling-webpack-es6_index.md %}
 
 ```sh
 webpack --config webpack.config.js

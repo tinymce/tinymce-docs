@@ -27,20 +27,9 @@ This guide requires the following:
 
 {% include module-loading/browserify-dev-dependencies.md %}
 
-`src/editor.js`
-```js
-{% include module-loading/bundling-browserify-cjs-npm_editor.js %}
-```
+{% include module-loading/bundling-browserify-cjs-npm_editor.md %}
 
-`src/main.js`
-```js
-{% include module-loading/bundling-browserify-cjs-main.js %}
-```
-
-`demo.html`
-```html
-{% include module-loading/bundling-browserify-cjs-demo.html %}
-```
+{% include module-loading/bundling-browserify-cjs-main.md %}
 
 ```sh
 browserify -t brfs -g browserify-css src/main.js -o dist/main.bundle.js

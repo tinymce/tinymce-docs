@@ -26,20 +26,10 @@ This guide requires the following:
 {% include install/download-tinymce.md %}
 {% include module-loading/browserify-dev-dependencies.md %}
 
-`src/editor.js`
-```js
-{% include module-loading/bundling-browserify-cjs-zip_editor.js %}
-```
+{% include module-loading/bundling-browserify-cjs-zip_editor.md %}
 
-`src/main.js`
-```js
-{% include module-loading/bundling-browserify-cjs-main.js %}
-```
+{% include module-loading/bundling-browserify-cjs-main.md %}
 
-`demo.html`
-```html
-{% include module-loading/bundling-browserify-cjs-demo.html %}
-```
 
 ```sh
 browserify -t brfs -g browserify-css src/main.js -o dist/main.bundle.js

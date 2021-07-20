@@ -27,20 +27,11 @@ This guide requires the following:
 {% include install/download-tinymce.md %}
 {% include module-loading/webpack-dev-dependencies.md %}
 
-`src/editor.js`
-```js
-{% include module-loading/bundling-webpack-es6-zip_editor.js %}
-```
+{% include module-loading/bundling-webpack-es6-zip_editor.md %}
 
-`webpack.config.js`
-```js
-{% include module-loading/bundling-webpack-es6-zip_webpack.config.js %}
-```
+{% include module-loading/bundling-webpack-es6-zip_webpack.config.md %}
 
-`src/index.js`
-```js
-{% include module-loading/bundling-webpack-es6_index.js %}
-```
+{% include module-loading/bundling-webpack-es6_index.md %}
 
 ```sh
 webpack --config webpack.config.js

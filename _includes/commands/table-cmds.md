@@ -24,8 +24,8 @@
 | mceTablePasteColAfter   | Paste the {{site.productname}} clipboard column after the current row. {{site.requires_5_4v}} |
 | mceTableDelete          | Deletes the current table.                      |
 | mceTableCellToggleClass | Adds a class to all selected cells that do not have it, or removes the class if all of them have it. {{site.requires_5_9v}}                  |
-| mceTableToggleClass     | Adds a class to all selected tables that do not have it, or removes the class if all of them have it. {{site.requires_5_9v}}                 |
-| mceTableToggleCaption   | Adds a caption to all selected tables that do not have it, or removes the class if all of them have it. {{site.requires_5_9v}}.              |
+| mceTableToggleClass     | Adds a class to the selected table that do not have it, or removes the class if all of them have it. {{site.requires_5_9v}}                 |
+| mceTableToggleCaption   | Adds a caption to the selected table that do not have it, or removes the class if all of them have it. {{site.requires_5_9v}}.              |
 | mceInsertTable          | Opens the insert/edit table dialog or inserts a table without using a dialog if additional arguments are provided (see examples below).      |
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |

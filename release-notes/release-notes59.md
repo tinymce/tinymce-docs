@@ -192,12 +192,33 @@ For information on:
 The following features have been deprecated with the release of {{site.productname}} 5.9:
 
 - [The `spellchecker_select_languages` option](#thespellchecker_select_languagesoption).
+- [The BBCode (`bbcode`) plugin](#thebbcodebbcodeplugin)
+- [The Full Page (`fullpage`) plugin](#thefullpagefullpageplugin)
+- [The Legacy Output (`legacyoutput`) plugin](#thelegacyoutputlegacyoutputplugin)
 
 ### The `spellchecker_select_languages` option
 
 With the release of {{site.productname}} 5.9, the `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option.
 
 For information on the `content_langs` option, see: [Spell Checker Pro - `content_langs`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#content_langs).
+
+### The BBCode (`bbcode`) plugin
+
+The BBCode plugin (`bbcode`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
+
+To develop and maintain a new BBCode plugin based on the {{site.productname}} BBCode plugin, you can create a fork using the [BBCode plugin source code in the TinyMCE monorepo](https://github.com/tinymce/tinymce/tree/5.8.2/modules/tinymce/src/plugins/bbcode).
+
+### The Full Page (`fullpage`) plugin
+
+The Full Page plugin (`fullpage`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
+
+To develop and maintain a new Full Page plugin based on the {{site.productname}} Full Page plugin, you can create a fork using the [Full Page plugin source code in the TinyMCE monorepo](https://github.com/tinymce/tinymce/tree/5.8.2/modules/tinymce/src/plugins/fullpage).
+
+### The Legacy Output (`legacyoutput`) plugin
+
+The Legacy Output plugin (`legacyoutput`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
+
+To develop and maintain a new Legacy Output plugin based on the {{site.productname}} Legacy Output plugin, you can create a fork using the [Legacy Output plugin source code in the TinyMCE monorepo](https://github.com/tinymce/tinymce/tree/5.8.2/modules/tinymce/src/plugins/legacyoutput).
 
 ## Known issues
 

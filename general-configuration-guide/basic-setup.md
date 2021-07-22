@@ -208,7 +208,7 @@ The following example is a basic {{site.productname}} configuration.
       'table emoticons template paste help'
     ],
     toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
-      'bullist numlist outdent indent | link image | print preview media fullpage | ' +
+      'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
       'forecolor backcolor emoticons | help',
     menu: {
       favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}

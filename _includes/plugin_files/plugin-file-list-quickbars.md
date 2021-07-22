@@ -1,0 +1,3 @@
+```
+./plugins/quickbars/plugin.js
+```

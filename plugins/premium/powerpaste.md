@@ -49,24 +49,6 @@ To enable the {{site.productname}} **PowerPaste** plugin:
 
 See the example {{site.productname}} configuration above.
 
-## Using the PowerPaste Plugin with Module Loaders
-
-To enable the **PowerPaste** plugin when using a [module loader]({{site.baseurl}}/advanced/usage-with-module-loaders/), follow these instructions:
-
-1. Make the PowerPaste plugin folder available over http.
-2. Add the path to the PowerPaste plugin folder to the [external plugins]({{site.baseurl}}/configure/integration-and-setup/#external_plugins) option in `tinymce.init()`.
-
-Example:
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  external_plugins: {
-    'powerpaste': 'http://www.server.com/application/external_plugins/powerpaste/plugin.js'
-  }
-});
-```
-
 ## Configuration Options
 
 ### paste_as_text

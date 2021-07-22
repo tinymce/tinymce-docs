@@ -1,0 +1,3 @@
+```
+./plugins/checklist/plugin.js
+```

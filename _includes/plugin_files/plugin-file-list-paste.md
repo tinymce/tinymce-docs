@@ -1,0 +1,3 @@
+```
+./plugins/paste/plugin.js
+```

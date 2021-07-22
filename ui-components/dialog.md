@@ -312,7 +312,7 @@ To see the output of the code, click on the {{site.productname}} tab on the fidd
 
 {% include live-demo.html id="redial" height="900" tab="js" %}
 
-The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The {{site.productname}} initialisation code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
+The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The {{site.productname}} initialization code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
 
 The configuration for the first page of the multipage form contains a description of the form and a checkbox. The checkbox, via the dialog's `onChange()` callback function, toggles whether the `next` button is disabled or enabled. The `next` button when clicked fires the `onAction()` callback function, which in turn triggers `redial()` which will replace the `page1Config` dialog with the `page2Config` dialog.
 

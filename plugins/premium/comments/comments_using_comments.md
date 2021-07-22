@@ -68,7 +68,7 @@ This option is only available for the first comment in a conversation. Once the 
 
 {{site.requires_5_8v}}
 
-> **NOTE**: This feature requires the [`tinycomments_resolve`]({{site.baseurl}}/advanced/configuring-comments-callbacks/#tinycomments_resolve) or [`tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/#tinycomments_can_resolve) setting to be configured.
+> **NOTE**: This feature requires the [`tinycomments_resolve`]({{site.baseurl}}/plugins/premium/comments/comments_callback_mode/#tinycomments_resolve) or [`tinycomments_can_resolve`]({{site.baseurl}}/plugins/premium/comments/comments_embedded_mode/#tinycomments_can_resolve) setting to be configured.
 
 This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
 

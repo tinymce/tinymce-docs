@@ -7,11 +7,10 @@ description: Bundling a .zip archive version of TinyMCE in a project using Commo
 keywords: webpack commonjs cjs zip modules tinymce
 ---
 
-[CommonJS syntax](http://www.commonjs.org/specs/modules/1.0/)
-[ES6+ syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-
-
-[Webpack](https://webpack.js.org/)
+{% assign installtype = "a `.zip`" %}
+{% assign bundler = "[Webpack](https://webpack.js.org/)" %}
+{% assign syntax = "[CommonJS syntax](http://www.commonjs.org/specs/modules/1.0/)" %}
+{% include module-loading/bundling-procedure-intro.md %}
 
 ## Requirements
 
@@ -34,8 +33,15 @@ This guide requires the following:
 
 {% include module-loading/bundling-webpack-cjs_index.md %}
 
-```sh
-webpack --config webpack.config.js
-```
+1. Run Webpack to test the bundle, such as:
+
+    ```sh
+    webpack --config webpack.config.js
+    ```
+
+    If Webpack runs successfully, check that the editor loads in the application.
+    If Webpack fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {{site.productname}} into an existing project.
 
 {% assign is_zip_install = nil %}
+
+{% include module-loading/bundling-next-steps.md %}

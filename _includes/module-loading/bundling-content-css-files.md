@@ -22,6 +22,8 @@ Writer
 
 ## Premium
 
+For information on premium content CSS, see: [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+
 Fabric
 : ```
 ./skins/content/fabric/content.css

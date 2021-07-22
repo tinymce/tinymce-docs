@@ -1,6 +1,72 @@
+## Contents
+
+- [Premium plugins](#premiumplugins)
+
+  - [Accessibility Checker (a11ychecker)](#accessibilitycheckera11ychecker)
+  - [Advanced Code (advcode)](#advancedcodeadvcode)
+  - [Advanced Tables (advtable)](#advancedtablesadvtable)
+  - [Case Change (casechange)](#casechangecasechange)
+  - [Checklist (checklist)](#checklistchecklist)
+  - [Comments (tinycomments)](#commentstinycomments)
+  - [Enhanced Media Embed (mediaembed)](#enhancedmediaembedmediaembed)
+  - [Export (export)](#exportexport)
+  - [Format Painter (formatpainter)](#formatpainterformatpainter)
+  - [Link Checker (linkchecker)](#linkcheckerlinkchecker)
+  - [Mentions (mentions)](#mentionsmentions)
+  - [Page Embed (pageembed)](#pageembedpageembed)
+  - [Permanent Pen (permanentpen)](#permanentpenpermanentpen)
+  - [PowerPaste (powerpaste)](#powerpastepowerpaste)
+  - [Spell Checker Pro (tinymcespellchecker)](#spellcheckerprotinymcespellchecker)
+
+- [Community plugins](#communityplugins)
+
+  - [Advanced List (advlist)](#advancedlistadvlist)
+  - [Anchor (anchor)](#anchoranchor)
+  - [Autolink (autolink)](#autolinkautolink)
+  - [Autoresize (autoresize)](#autoresizeautoresize)
+  - [Autosave (autosave)](#autosaveautosave)
+  - [BBCode (bbcode)](#bbcodebbcode)
+  - [Character Map (charmap)](#charactermapcharmap)
+  - [Code (code)](#codecode)
+  - [Code Sample (codesample)](#codesamplecodesample)
+  - [Directionality (directionality)](#directionalitydirectionality)
+  - [Emoticons (emoticons)](#emoticonsemoticons)
+  - [Full Page (fullpage)](#fullpagefullpage)
+  - [Full Screen (fullscreen)](#fullscreenfullscreen)
+  - [Help (help)](#helphelp)
+  - [Horizontal Rule (hr)](#horizontalrulehr)
+  - [Image (image)](#imageimage)
+  - [Image Tools (imagetools)](#imagetoolsimagetools)
+  - [Import CSS (importcss)](#importcssimportcss)
+  - [Insert Date/Time (insertdatetime)](#insertdatetimeinsertdatetime)
+  - [Legacy Output (legacyoutput)](#legacyoutputlegacyoutput)
+  - [Link (link)](#linklink)
+  - [Lists (lists)](#listslists)
+  - [Media (media)](#mediamedia)
+  - [Nonbreaking Space (nonbreaking)](#nonbreakingspacenonbreaking)
+  - [Noneditable (noneditable)](#noneditablenoneditable)
+  - [Page Break (pagebreak)](#pagebreakpagebreak)
+  - [Paste (paste)](#pastepaste)
+  - [Preview (preview)](#previewpreview)
+  - [Print (print)](#printprint)
+  - [Quick Toolbar (quickbars)](#quicktoolbarquickbars)
+  - [Save (save)](#savesave)
+  - [Search and Replace (searchreplace)](#searchandreplacesearchreplace)
+  - [Spell Checker (spellchecker)](#spellcheckerspellchecker)
+  - [Tab Focus (tabfocus)](#tabfocustabfocus)
+  - [Table (table)](#tabletable)
+  - [Template (template)](#templatetemplate)
+  - [Text Pattern (textpattern)](#textpatterntextpattern)
+  - [Table of Contents (toc)](#tableofcontentstoc)
+  - [Visual Block (visualblocks)](#visualblockvisualblocks)
+  - [Visual Characters (visualchars)](#visualcharactersvisualchars)
+  - [Word Count (wordcount)](#wordcountwordcount)
+
 ## Premium plugins
 
 ### Accessibility Checker (`a11ychecker`)
+
+{% include module-loading/admon-bundling-plugin-langs.md %}
 
 {% include plugin_files/plugin-file-list-a11ychecker.md %}
 
@@ -22,6 +88,8 @@
 
 ### Comments (`tinycomments`)
 
+{% include module-loading/admon-bundling-plugin-langs.md %}
+
 {% include plugin_files/plugin-file-list-tinycomments.md %}
 
 ### Enhanced Media Embed (`mediaembed`)
@@ -29,6 +97,8 @@
 {% include plugin_files/plugin-file-list-mediaembed.md %}
 
 ### Export (`export`)
+
+{% include module-loading/admon-bundling-plugin-langs.md %}
 
 {% include plugin_files/plugin-file-list-export.md %}
 
@@ -54,9 +124,13 @@
 
 ### PowerPaste (`powerpaste`)
 
+{% include module-loading/admon-bundling-plugin-langs.md %}
+
 {% include plugin_files/plugin-file-list-powerpaste.md %}
 
 ### Spell Checker Pro (`tinymcespellchecker`)
+
+{% include module-loading/admon-bundling-plugin-langs.md %}
 
 {% include plugin_files/plugin-file-list-tinymcespellchecker.md %}
 

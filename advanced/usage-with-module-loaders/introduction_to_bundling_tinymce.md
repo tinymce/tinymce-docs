@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Usage with module loaders
-title_nav: Usage with module loaders
-description_short: How to include TinyMCE in a project using CommonJS modules.
-description: How to use TinyMCE in a project using a module bundler like Webpack or Browserify
-keywords: webpack browserify es6 rollup commonjs modules tinymce
+title: Introduction to bundling TinyMCE
+title_nav: Introduction
+description_short: Introduction to bundling TinyMCE using a module loader.
+description: Introduction to bundling TinyMCE with Webpack, Rollup.js, or Browserify.
+keywords: webpack browserify es6 rollup commonjs modules tinymce es2015
 ---
 
-////////{{site.productname}} can easily be installed with `npm` and used with module loaders such as [Webpack](https://webpack.github.io/) and [Browserify](http://browserify.org/).
+The following guides and reference pages assist with bundling {{site.productname}} using a module loader, such as Webpack, Rollup.js, and Browserify. {{site.productname}} is a modular platform that is designed to lazy-load libraries when they are required. This allows developers to only bundle the components of {{site.productname}} that are required and keep resulting bundle as small as possible.
 
 ## Webpack
 

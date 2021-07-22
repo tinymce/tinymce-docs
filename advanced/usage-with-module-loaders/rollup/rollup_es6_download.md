@@ -7,11 +7,10 @@ description: Bundling a .zip archive version of TinyMCE in a project using ES6 a
 keywords: rollupjs es6 es2015 zip modules tinymce
 ---
 
-[CommonJS syntax](http://www.commonjs.org/specs/modules/1.0/)
-[ES6+ syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-
-
-[Rollup.js](https://www.rollupjs.org/)
+{% assign installtype = "a `.zip`" %}
+{% assign bundler = "[Rollup.js](https://www.rollupjs.org/)" %}
+{% assign syntax = "[ES6+ syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)" %}
+{% include module-loading/bundling-procedure-intro.md %}
 
 ## Requirements
 
@@ -33,8 +32,15 @@ This guide requires the following:
 
 {% include module-loading/bundling-rollup-es6-index.md %}
 
-```sh
-rollup --config
-```
+1. Run Rollup.js to test the bundle, such as:
+
+    ```sh
+    rollup --config
+    ```
+
+    If Rollup.js runs successfully, check that the editor loads in the application.
+    If Rollup.js fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {{site.productname}} into an existing project.
 
 {% assign is_zip_install = nil %}
+
+{% include module-loading/bundling-next-steps.md %}

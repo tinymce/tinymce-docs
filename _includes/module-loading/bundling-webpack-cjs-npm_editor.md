@@ -1,21 +1,23 @@
 1. Create a new source file for importing the required components from {{site.productname}} and configuring the editor.
 
+    {% include module-loading/bundling-required-components.md %}
+
     Example `src/editor.js`
 
     ```js
-    // Import TinyMCE
+    /* Import TinyMCE */
     var tinymce = require('tinymce/tinymce');
 
-    // Default icons are required for TinyMCE 5.3 or above. Also import custom icons if applicable
+    /* Default icons are required for TinyMCE 5.3 or above. Also import custom icons if applicable */
     require('tinymce/icons/default');
 
-    // A editor theme (required) - customize the editor appearance by creating a 'skin'
+    /* A editor theme (required) - customize the editor appearance by creating a 'skin' */
     require('tinymce/themes/silver');
 
-    // Import the editor skin - replace with a custom skin if applicable.
+    /* Import the editor skin - replace with a custom skin if applicable. */
     require('tinymce/skins/ui/oxide/skin.css');
 
-    // Import plugins - include the relevant plugin in the 'plugins' option.
+    /* Import plugins - include the relevant plugin in the 'plugins' option. */
     require('tinymce/plugins/advlist');
     require('tinymce/plugins/code');
     require('tinymce/plugins/emoticons');
@@ -24,13 +26,13 @@
     require('tinymce/plugins/lists');
     require('tinymce/plugins/table');
 
-    // Import content CSS
+    /* Import content CSS */
     var contentUiCss = require('tinymce/skins/ui/oxide/content.css').toString();
 
-    // Import the default content CSS, replace with the CSS for the editor content.
+    /* Import the default content CSS, replace with the CSS for the editor content. */
     var contentCss = require('tinymce/skins/content/default/content.css').toString();
 
-    // Initialize TinyMCE
+    /* Initialize TinyMCE */
     function render () {
       tinymce.init({
         selector: 'textarea#editor',

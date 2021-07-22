@@ -1,7 +1,13 @@
+## Community
+
 Default icons
 : ```
 ./icons/default/icons.js
 ```
+
+## Premium
+
+For information on premium icon packs, see: [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
 Bootstrap icons
 : ```

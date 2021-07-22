@@ -1,15 +1,18 @@
 ## `language`
 
-This option allows you to specify the language that {{site.productname}}'s user interface will appear in. That is, the toolbar buttons and menu items. By default, {{site.productname}} will use US English as the language of the interface.
+This option specifies the language used for the {{site.productname}} user interface, such as menu items, dialogs, and tooltips. By default, {{site.productname}} user interface is set to US English.
 
-If you wish to use a language other than English, please follow these steps:
+Before changing the language option, ensure that the language pack is available to the {{site.productname}} instance. {{site.companyname}} provides two collections of language packs:
 
-1. Download the language pack you wish to use [from here]({{site.gettiny}}/language-packages/).
-2. Unpack the language file into your `tinymce/langs` folder.
-3. Set the [`language`]({{ site.baseurl }}/configure/localization/#language) option in your {{site.productname}} configuration to the language code in the list below (which you'll also find on the language pack [download page]({{site.gettiny}}/language-packages/).
-4. Confirm that the language has been set successfully by loading {{site.productname}}.
+- _Premium_ language packs - Professionally localized language packs provided on {{site.cloudname}} and bundled with premium self-hosted bundles.
+- _Community_ language packs - Localizations provided by {{site.productname}} users through Transifex, which need to be downloaded prior to use, from [the {{site. companyname}} Downloads Page - Language Packages]({{site.gettiny}}/language-packages/).
 
-Please note, the language code you set in your {{site.productname}} configuration must match the filename of the language file. If the language file is not found, {{site.productname}} will not load.
+For information on:
+
+- Using the premium language packs, see: [Using the premium language packs](#usingthecommunitylanguagepacks).
+- Using the community language packs, see: [Using the community language packs](#usingthepremiumlanguagepacks).
+
+**Option:** `language`
 
 **Type:** `String`
 
@@ -26,10 +29,10 @@ tinymce.init({
 });
 ```
 
-### Supported Languages
+{% include misc/using-community-lang-packs.md %}
 
-The available language codes for use with this option are as follows:
+### Using the premium language packs
+
+The following professionally localized language packs are provided to paid {{site.cloudname}} and premium self-hosted deployments. To use these language packs, set the `language` option to the corresponding language code. No additional configuration is required.
 
 {% include misc/ui-languages.md %}
-
-If a language you need is not available, you may wish to translate it yourself. To contribute to translating {{site.productname}}, go to our [Transifex translation](https://www.transifex.com/projects/p/tinymce/) page and sign up, then request to join a team or create a new team if your language are not listed.

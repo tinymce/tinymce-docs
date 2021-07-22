@@ -4,7 +4,7 @@
 
 ## Overview
 
-This page shows the files required for each {{site.productname}} {{editorcomponent}}. The file paths shown are relative to the root {{site.productname}} package directory, where `tinymce.min.js` is stored. For example:
+This section shows the files required for each {{site.productname}} {{editorcomponent}}. The file paths shown are relative to the root {{site.productname}} package directory, where `tinymce.min.js` is stored. For example:
 
 ```
 ./

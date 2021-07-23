@@ -59,57 +59,9 @@ The format painter operates in two modes, one for retrieval and one for applicat
 
 The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formatting, it will treat **lists** as a block format whenever the [`lists plugin`]({{site.baseurl}}/plugins/opensource/lists/) is made available.
 
-### `formats`
+{% include configuration/formatpainter_formats.md %}
 
-The format painter plugin will register many formats upon initialization. To override these formats, use the [`formats`]({{ site.baseurl }}/configure/content-formatting/#exampleofusageoftheformatsoption) option.
-
-The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the [`removeformat`]({{ site.baseurl }}/configure/content-formatting/#removingaformat) format.
-
-**Type:** `Object`
-
-#### Example: Using `formats`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'formatpainter',
-  formats: {
-    formatpainter_checklist: { selector: 'ul', classes: 'tox-checklist' },
-    formatpainter_liststyletype: { selector: 'ul,ol', styles: { listStyleType: '%value' } },
-    formatpainter_borderstyle: { selector: 'td,th', styles: { borderTopStyle: '%valueTop', borderRightStyle: '%valueRight', borderBottomStyle: '%valueBottom', borderLeftStyle: '%valueLeft', }, remove_similar: true },
-    formatpainter_bordercolor: { selector: 'td,th', styles: { borderTopColor: '%valueTop', borderRightColor: '%valueRight', borderBottomColor: '%valueBottom', borderLeftColor: '%valueLeft' }, remove_similar: true },
-    formatpainter_backgroundcolor: { selector: 'td,th', styles: { backgroundColor: '%value' }, remove_similar: true },
-    formatpainter_removeformat: [
-      {
-        selector: 'b,strong,em,i,font,u,strike,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins',
-        remove: 'all', split: true, expand: false, block_expand: true, deep: true
-      },
-      { selector: 'span', attributes: ['style', 'class'], remove: 'empty', split: true, expand: false, deep: true },
-      { selector: '*:not(tr,td,th,table)', attributes: ['style', 'class'], split: false, expand: false, deep: true }
-    ]
-  }
-});
-```
-
-### `formatpainter_blacklisted_formats`
-
-This option makes it possible to block the unwanted formats in the format painter.
-
-**Type:** `String`
-
-**Default:** `'link,address,removeformat,formatpainter_removeformat'`
-
-#### Example: Using `formatpainter_blacklisted_formats`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'formatpainter',
-  formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
-});
-```
-
-Check out the [Format Painter demo]({{site.baseurl}}/demo/formatpainter/) to try out this new feature.
+{% include configuration/formatpainter_blacklisted_formats.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

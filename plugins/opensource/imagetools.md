@@ -55,76 +55,13 @@ tinymce.init({
 
 {% include configuration/image-cors-hosts.md %}
 
-### `imagetools_credentials_hosts`
+{% include configuration/imagetools_credentials_hosts.md %}
 
-This option can be used together with the `imagetools_cors_hosts` option to allow credentials to be sent to the CORS host. This is not enabled by default since the server needs to have proper CORS headers to support this.
-
-**Type:** `String[]`
-
-#### Example: Using `imagetools_credentials_hosts`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  toolbar: 'image',
-  plugins: 'image imagetools',
-  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
-  imagetools_credentials_hosts: ['mydomain.com', 'otherdomain.com']
-});
-```
-
-### `imagetools_fetch_image`
-
-This option can be used to define a custom fetch function, which provides another way to access images in complex situations. The function will be passed the HTML element of the image to be fetched and should return a `Promise` containing a `Blob` representation of the image.
-
-**Type:** `Function`
-
-#### Example: Using `imagetools_fetch_image`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  toolbar: 'image',
-  plugins: 'image imagetools',
-  imagetools_fetch_image: function (img) {
-    return new tinymce.util.Promise(function (resolve) {
-      // Fetch the image and return a blob containing the image content
-      ...
-      resolve(new Blob(...));
-    });
-  }
-});
-```
+{% include configuration/imagetools_fetch_image.md %}
 
 {% include configuration/image-proxy.md %}
 
-### `imagetools_toolbar`
-
-The exact selection of buttons that will appear on the contextual toolbar can be controlled via `imagetools_toolbar` option.
-
-**Possible Values:**
-
-* `rotateleft`
-* `rotateright`
-* `flipv`
-* `fliph`
-* `editimage`
-* `imageoptions`
-
-**Type:** `String`
-
-**Default Value:** `'rotateleft rotateright | flipv fliph | editimage imageoptions'`
-
-#### Example: Using `imagetools_toolbar`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  toolbar: 'image',
-  plugins: 'image imagetools',
-  imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions'
-});
-```
+{% include configuration/imagetools_toolbar.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

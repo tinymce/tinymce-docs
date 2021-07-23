@@ -33,62 +33,11 @@ Internally plugin doesn't apply any inline styles. Basic formatting can be added
 
 ## Options
 
-### `toc_depth`
+{% include configuration/toc_depth.md %}
 
-By default headers in the content will be inspected only three levels deep, so - `H1` through `H3`. But it is possible to change this behavior by setting `toc_depth` to any number in 1-9 range, therefore matching all the headers beginning with `H1` and all the way down to `H9`.
+{% include configuration/toc_header.md %}
 
-**Type:** `Number`
-
-**Default Value:** `3`
-
-#### Example: Using `toc_depth`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'toc',
-  toolbar: 'toc',
-  toc_depth: 3
-});
-```
-
-### `toc_header`
-
-Table of contents has a header and by default it will be marked up with `H2` tag. With `toc_header` option you can change it to some other tag.
-
-**Type:** `String`
-
-**Default Value:** `H2`
-
-#### Example: Using `toc_header`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'toc',
-  toolbar: 'toc',
-  toc_header: 'div' // case doesn't matter
-});
-```
-
-### `toc_class`
-
-With `toc_class` you can change the class name that gets assigned to the wrapper `div`. Please note that you will have to alter [Boilerplate Content CSS]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/)) accordingly.
-
-**Type:** `String`
-
-**Default Value:** `mce-toc`
-
-#### Example: Using `toc_class`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'toc',
-  toolbar: 'toc',
-  toc_class: 'our-toc'
-});
-```
+{% include configuration/toc_class.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

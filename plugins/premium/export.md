@@ -74,24 +74,7 @@ The following configuration options affect the behavior of the {{pluginname}} pl
 
 {% include configuration/image-cors-hosts.md %}
 
-### `export_ignore_elements`
-
-This option takes an array of HTML element names and allows specific HTML elements to be excluded from the exported content. This can be used to exclude HTML elements that may cause issues with exported content, such as video or audio elements.
-
-**Type:** `Array`
-
-**Default Value:** `[]`
-
-##### Example: `export_ignore_elements`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
-  toolbar: 'export',
-  export_ignore_elements: [ 'iframe', 'video', 'audio' ]
-});
-```
+{% include configuration/export_ignore_elements.md %}
 
 {% include configuration/image-proxy.md %}
 

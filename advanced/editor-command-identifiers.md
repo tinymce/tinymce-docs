@@ -287,6 +287,8 @@ The following commands require the [Format Painter (`formatpainter`)]({{site.bas
 
 #### Full Page
 
+{{site.deprecate_fullpage}}
+
 The following command requires the [Full Page (`fullpage`)]({{site.baseurl}}/plugins/opensource/fullpage/) plugin.
 
 {% include commands/fullpage-cmds.md %}

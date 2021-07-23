@@ -427,6 +427,137 @@ tinymce.init({
 });
 ```
 
+### `table_border_widths`
+
+{{site.requires_5_9v}}
+
+This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderwidth` toolbar button or menu item. This option accepts any valid CSS numeric value. [MDN web docs - Numeric data types](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units#numeric_data_types)
+
+**Type:** `Array`
+
+**Default Value:** 
+```
+[
+  {title: '1px', value: '1px'},
+  {title: '2px', value: '2px'},
+  {title: '3px', value: '3px'},
+  {title: '4px', value: '4px'},
+  {title: '5px', value: '5px'}
+]
+```
+
+#### Example: Using `table_border_widths`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_border_widths: [
+    {title: '1 pixel', value: '1px'},
+    {title: '1 Em', value: '1em'},
+    {title: '1 Vh', value: '1vh'},
+  ]
+});
+```
+
+### `table_border_styles`
+
+{{site.requires_5_9v}}
+
+This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderstyle` toolbar button or menu item, in addition to the dialog options. This option accepts any valid CSS border style. [MDN web docs - Border style](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#values) 
+
+**Type:** `Array`
+
+**Default Value:** 
+```
+[
+  {title: 'Solid', value: 'solid'},
+  {title: 'Dotted', value: 'dotted'},
+  {title: 'Dashed', value: 'dashed'},
+  {title: 'Double', value: 'double'},
+  {title: 'Groove', value: 'groove'},
+  {title: 'Ridge', value: 'ridge'},
+  {title: 'Inset', value: 'inset'},
+  {title: 'Outset', value: 'outset'},
+  {title: 'None', value: 'none'},
+  {title: 'Hidden', value: 'hidden'}
+]
+```
+
+#### Example: Using `table_border_styles`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_border_styles: [
+    {title: 'Solid', value: 'solid'},
+    {title: 'Dotted', value: 'dotted'},
+    {title: 'Dashed', value: 'dashed'}
+  ]
+});
+```
+
+### `table_cell_background_color_map`
+
+{{site.requires_5_9v}}
+
+This option is used to specify the default values for the table cell background color picker `tablecellbackgroundcolor`. If no values are defined, the toolbar button and menu item will use the values or default values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). The option can handle Hex, sRGB and HSL, and ignores alpha values.
+
+Custom colors can't be enabled.
+
+**Type:** `Array`
+
+**Default Value:** See [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map)
+
+#### Example: Using `table_cell_background_color_map`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_cell_background_color_map: [
+    {title: 'Red', value: 'FF0000'},
+    {title: 'White', value: 'FFFFFF'},
+    {title: 'Yellow', value: 'F1C40F'}
+  ]
+});
+```
+
+### `table_cell_border_color_map`
+
+{{site.requires_5_9v}}
+
+This option enables you to specify the default values for the table cell border color picker, which can be opened with the `tablecellbordercolor` toolbar button or menu item. If no values are defined, uses the values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). The option can handle Hex, sRGB and HSL, and ignores alpha values.
+
+Custom colors can't be enabled.
+
+**Type:** `Array`
+
+**Default Value:** See [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map)
+
+#### Example: Using `table_cell_border_color_map`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_cell_border_color_map: [
+    {title: 'Red', value: 'FF0000'},
+    {title: 'White', value: 'FFFFFF'},
+    {title: 'Yellow', value: 'F1C40F'}
+  ]
+});
+```
+
 ### `table_advtab`
 
 This option makes it possible to disable the advanced tab in the table dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.

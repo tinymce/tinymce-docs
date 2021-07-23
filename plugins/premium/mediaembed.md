@@ -57,24 +57,11 @@ The plugin can be used in two ways, either by simply entering a URL on an empty 
 
 ## Configuration Options
 
-### `mediaembed_inline_styles`
+{% include configuration/mediaembed_inline_styles.md %}
 
-This optional setting will inline all styles, instead of using CSS classes, when rendering the embedded snippet. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
+{% include configuration/mediaembed_service_url.md %}
 
-**Type:** `Boolean`
-
-### `mediaembed_service_url`
-
-This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [{{site.enterpriseversion}} subscription]({{site.pricingpage}}).
-This option is not required for [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-
-**Type:** `String`
-
-### `mediaembed_max_width`
-
-This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `650`.
-
-**Type:** `Number`
+{% include configuration/mediaembed_max_width.md %}
 
 ## Downloading Enhanced Media Embed plugin
 

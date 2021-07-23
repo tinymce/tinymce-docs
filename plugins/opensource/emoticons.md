@@ -54,107 +54,13 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 }
 ```
 
-### `emoticons_append`
+{% include configuration/emoticons_append.md %}
 
-This option provides a way to append some additional emoji to the default emoji database. This should be an object in the above mentioned format.
+{% include configuration/emoticons_database.md %}
 
-**Type:** `Object`
+{% include configuration/emoticons_database_url.md %}
 
-#### Example: Using `emoticons_append`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'emoticons',
-  toolbar: 'emoticons',
-  emoticons_append: {
-    custom_mind_explode: {
-      keywords: ['brain', 'mind', 'explode', 'blown'],
-      char: '🤯'
-    }
-  }
-});
-```
-
-### `emoticons_database`
-
-{{ site.requires_5_6v }}
-
-This option provides the ability to specify which built-in emoji database to use when rendering emojis in the editor. The following built-in emoji databases are available:
-* `emojis` - This database uses Unicode characters to represent emoji in the editor content.
-* `emojiimages` - This database uses images provided by the Twitter Emoji (twemoji) project to represent emoji in the editor content.
-
-{% assign feature = "`emojiimages` database" %}
-{% assign third_party_product = "Twitter Emoji (twemoji) graphics" %}
-{% assign license_agreement_name = "CC-BY 4.0" %}
-{% include misc/under-license.md %}
-
-**Type:** `String`
-
-**Default:** `emojis`
-
-#### Example: Using `emoticons_database`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'emoticons',
-  toolbar: 'emoticons',
-  emoticons_database: 'emojis'
-});
-```
-
-### `emoticons_database_url`
-
-This option provides the default location to load the emoji database from. The database should be an external JavaScript file, that registers a `tinymce.plugins.emoticons` resource.
-
-**Type:** `String`
-
-**Default:** `${pluginUrl}/js/emojis.js`
-
-```js
-tinymce.Resource.add('tinymce.plugins.emoticons', {
-  robot: {
-    keywords: ['computer', 'machine', 'bot'],
-    char: '🤖',
-    category: 'people'
-  }
-});
-```
-
-#### Example: Using `emoticons_database_url`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'emoticons',
-  toolbar: 'emoticons',
-  emoticons_database_url: '/emojis.js'
-});
-```
-
-### `emoticons_images_url`
-
-{{ site.requires_5_6v }}
-
-This option sets the base URL for the images used to represent emojis when using the `emojiimages` database.
-
-By default, this option loads the required image _assets_ from the Twemoji CDN. To use self-hosted emoji images, download the image _assets_ from the [Twitter Emoji (twemoji) GitHub repository](https://github.com/twitter/twemoji/#download).
-
-**Type:** `String`
-
-**Default:** `https://twemoji.maxcdn.com/v/13.0.1/72x72/`
-
-#### Example: Using `emoticons_images_url`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'emoticons',
-  toolbar: 'emoticons',
-  emoticons_images_url: 'http://my.server/images/emoticons/'
-});
-```
+{% include configuration/emoticons_images_url.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

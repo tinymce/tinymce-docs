@@ -91,148 +91,19 @@ tinymce.init({
 
 {% include configuration/paste-tab-spaces.md %}
 
-### powerpaste_word_import
+{% include configuration/powerpaste_word_import.md %}
 
-This option controls how content pasted from Microsoft Word is filtered.
+{% include configuration/powerpaste_googledocs_import.md %}
 
-**Type:** `String` or `Function`
+{% include configuration/powerpaste_html_import.md %}
 
-**Default value:** `prompt`
-
-{% include plugins/powerpaste_import_types.md %}
-
-> **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
-
-#### Example: `powerpaste_word_import` using an asynchronous function
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  powerpaste_word_import: function() {
-    // use a native confirm dialog to prompt the user to choose between clean and merge
-    return new Promise(function (resolve) {
-      if (confirm('Would you like to keep formatting?')) {
-        resolve('merge');
-      } else {
-        resolve('clean');
-      }
-    });
-  }
-});
-```
-
-### powerpaste_googledocs_import
-
-{{site.requires_5_8v}}
-
-This option controls how content pasted from Google Docs is filtered.
-
-**Type:** `String` or `Function`
-
-**Default value:** `prompt`
-
-{% include plugins/powerpaste_import_types.md %}
-
-#### Example: `powerpaste_googledocs_import` using an asynchronous function
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  powerpaste_googledocs_imports: function() {
-    // use a native confirm dialog to prompt the user to choose between clean and merge
-    return new Promise(function (resolve) {
-      if (confirm('Would you like to keep formatting?')) {
-        resolve('merge');
-      } else {
-        resolve('clean');
-      }
-    });
-  }
-});
-```
-
-### powerpaste_html_import
-
-This option controls how content pasted from sources other than Microsoft Word and Google Docs are filtered. Note that this includes content copied from {{site.productname}} itself.
-
-**Type:** `String` or `Function`
-
-**Default value:** `clean`
-
-{% include plugins/powerpaste_import_types.md %}
-
-#### Example: `powerpaste_html_import` using an asynchronous function
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  powerpaste_html_import: function() {
-    // use a native confirm dialog to prompt the user to choose between clean and merge
-    return new Promise(function (resolve) {
-      if (confirm('Would you like to keep formatting?')) {
-        resolve('merge');
-      } else {
-        resolve('clean');
-      }
-    });
-  }
-});
-```
-
-### powerpaste_allow_local_images
-
-When set to `true`, Base64 encoded images using a data URI in the copied content will not be removed after pasting.
-
-**Default value:** `true`
-
-**Possible values:** `true`, `false`
-
-> **Note:** If you configure ***PowerPaste*** to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documentation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
+{% include configuration/powerpaste_allow_local_images.md %}
 
 {% include configuration/paste-block-drop.md %}
 
-### powerpaste_clean_filtered_inline_elements
+{% include configuration/powerpaste_clean_filtered_inline_elements.md %}
 
-This setting allows for configuration of PowerPaste's **"clean"** paste filters for inline elements. These filters are run when `powerpaste_word_import` or `powerpaste_html_import` are set to `"clean"`; or when a user clicks the **"Remove formatting"** button on the paste prompt dialog.
-
-The list of inline elements that should be removed on paste can be specified by setting `powerpaste_clean_filtered_inline_elements` to a comma-separated string of inline element tag names.
-
-**Possible values:**  A comma-separated string.
-
-#### Example: powerpaste_clean_filtered_inline_elements
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  powerpaste_word_import: 'clean', // optional
-  powerpaste_html_import: 'clean', // optional
-  powerpaste_clean_filtered_inline_elements: 'strong, em, b, i, u, strike, sup, sub, font'
-});
-```
-
-### powerpaste_keep_unsupported_src
-
-Due to browser limitations, PowerPaste is not able to support all image types supported by Microsoft Word and Microsoft Excel. When `powerpaste_keep_unsupported_src` is set to `true`, PowerPaste will store the original `src` of unsupported images in a `data-image-src` attribute on the pasted image element. This enables developers to add further image support via post-processing.
-
-For example, browsers do not allow PowerPaste to access the file system. If your application has access to the file system, setting `powerpaste_keep_unsupported_src` to `true` may allow you to replace unsupported images during post-processing using the original file paths.
-
-**Default value:** `false`
-
-**Possible values:** `true`, `false`
-
-#### Example: powerpaste_keep_unsupported_src
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  powerpaste_keep_unsupported_src: true
-});
-```
+{% include configuration/powerpaste_keep_unsupported_src.md %}
 
 {% include configuration/smart-paste.md %}
 
@@ -252,69 +123,9 @@ Developers can add custom filtering before and after **PowerPaste**'s filters ar
 
 > **Note**: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
 
-### paste_preprocess
+{% include configuration/paste_preprocess.md %}
 
-This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
-
-- Standard paste event data.
-- `content` - A string containing the content to be pasted.
-- `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
-- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `imagedrop`, `plaintext`, `text`, or `invalid`.
-
-> **Note**: The `imagedrop` `source` was added in {{site.productname}} 5.3.
-
-> **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
-
-Example {{site.productname}} configuration:
-
-```js
-const yourCustomFilter = function(content) {
-  // Implement your custom filtering and return the filtered content
-  return content;
-};
-
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
-  paste_preprocess: function (pluginApi, data) {
-    console.log(data.content, data.mode, data.source);
-    // Apply custom filtering by mutating data.content
-    // For example:
-    const content = data.content;
-    const newContent = yourCustomFilter(content);
-    data.content = newContent;
-  }
-});
-```
-
-### paste_postprocess
-
-This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
-
-- Standard paste event data.
-- `node` - A DOM node containing the DOM structure of the filtered paste content.
-- `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
-- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `imagedrop`, `plaintext`, `text`, or `invalid`.
-
-> **Note**: The `imagedrop` `source` was added in {{site.productname}} 5.3.
-
-> **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
-
-Example {{site.productname}} configuration:
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
-  paste_postprocess: function (pluginApi, data) {
-    console.log(data.node, data.mode, data.source);
-    // Apply custom filtering by mutating data.node
-    const additionalNode = document.createElement('div');
-    additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
-    data.node.insertBefore(additionalNode, data.node.firstElementChild);
-  }
-});
-```
+{% include configuration/paste_postprocess.md %}
 
 ## Event Listeners
 

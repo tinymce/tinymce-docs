@@ -1,0 +1,46 @@
+### `a11ychecker_filter_issue`
+
+The `a11ychecker_filter_issue` option allows Accessibility Checker issues to be removed from the Accessibility Checker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option. This option can remove issues from the results shown in the dialog and the `getReport` API.
+
+The function will be passed the results of the [`getReport()` API](#getreport). To filter an issue from the Accessibility Checker report, the callback needs to return `false` for that particular issue.
+
+**Type:** `Function`
+
+**Default Value:**
+
+```js
+function(issue) {
+  return true;
+}
+```
+
+#### Example: Using `a11ychecker_filter_issue` to filter out the Accessibility Checker T1 rule
+
+The callback function in the following example will return `false` if the issue `id` value is `'T1'`, filtering `'T1'` issues from the Accessibility Checker report.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_filter_issue: function(issue) {
+    return issue.id !== 'T1';
+  }
+});
+```
+
+#### Example: Using `a11ychecker_filter_issue` to filter out all Accessibility Checker table rules
+
+The callback function in the following example will return `false` if the issue `element` value is `'table'`, filtering all `table` element-related issues from the Accessibility Checker report.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_filter_issue: function(issue) {
+    return issue.element.nodeName.toLowerCase() !== 'table';
+  }
+});
+```
+

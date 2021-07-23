@@ -23,44 +23,6 @@ tinymce.init({
 
 ## Options
 
-### `default_link_target`
+{% include configuration/default_link_target.md %}
 
-This option allows you to specify a default `target` value for links inserted by the autolink plugin.
-
-> **Note**: This setting also applies to the [link]({{site.baseurl}}/plugins/opensource/link) plugin.
-
-**Type:** `String`
-
-#### Example: Using `default_link_target`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'autolink link',
-  menubar: 'insert',
-  toolbar: 'link',
-  default_link_target: '_blank'
-});
-```
-
-### `link_default_protocol`
-
-This option allows you to set a default protocol for links inserted by the autolink plugin.
-
-> **Note**: This setting also applies to the [link]({{site.baseurl}}/plugins/opensource/link) plugin.
-
-**Type:** `String`
-
-**Default Value:** `'http'`
-
-#### Example: Using `link_default_protocol`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'autolink link',
-  menubar: 'insert',
-  toolbar: 'link',
-  link_default_protocol: 'https'
-});
-```
+{% include configuration/link_default_protocol.md %}

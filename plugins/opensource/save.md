@@ -42,56 +42,11 @@ With this:
 
 These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or canceling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
-### `save_enablewhendirty`
+{% include configuration/save_enablewhendirty.md %}
 
-This option allows you to disable the save button until modifications have been made to the content of the editor. This option is enabled by default.
+{% include configuration/save_oncancelcallback.md %}
 
-**Type:** `Boolean`
-
-#### Example: Using `save_enablewhendirty`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'save',
-  toolbar: 'save',
-  save_enablewhendirty: true
-});
-```
-
-### `save_oncancelcallback`
-
-This option allows you to specify the function that will be executed when the cancel button/command is invoked.
-
-**Type:** `String`
-
-#### Example: Using `save_oncancelcallback`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'save',
-  toolbar: 'save',
-  save_oncancelcallback: function () { console.log('Save canceled'); }
-});
-```
-
-### `save_onsavecallback`
-
-This option allows you to specify the function that will be executed when the save button/command is invoked.
-
-**Type:** `String`
-
-#### Example: Using `save_onsavecallback`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'save',
-  toolbar: 'save',
-  save_onsavecallback: function () { console.log('Saved'); }
-});
-```
+{% include configuration/save_onsavecallback.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

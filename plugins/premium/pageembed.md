@@ -75,58 +75,9 @@ Use the following procedure for embedding an iframe into the content:
 
 ## Options to configure the Page Embed properties
 
-### Create custom classes
+{% include configuration/tiny_pageembed_classes.md %}
 
-The `tiny_pageembed_classes` takes an array of objects with `text` and `value` properties that will populate the size selection fields in the plugin dialog. Use the following script to create custom classes using the `tiny_pageembed_classes` option:
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'pageembed',
-  menubar: 'view',
-  toolbar: 'pageembed',
-  tiny_pageembed_classes: [
-    { text: 'Big embed', value: 'my-big-class' },
-    { text: 'Small embed', value: 'my-small-class' }
-  ]
-});
-```
-
-### Disable select
-
-When the `tiny_pageembed_classes` value is set to an empty array, the size selection fields are not available and only exact sizes can be set. Use the following script to disable `select` using the `tiny_pageembed_classes` option:
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'pageembed',
-  menubar: 'view',
-  toolbar: 'pageembed',
-  tiny_pageembed_classes: [ ]
-});
-```
-
-### Inline styles for page embeds
-
-The `tiny_pageembed_inline_styles` setting will inline all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
-
-**Type:** `Boolean`
-
-**Default Value:** `false`
-
-**Possible Values:** `true`, `false`
-
-#### Example: `tiny_pageembed_inline_styles`
-
-To inline page embed styles:
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'pageembed',
-  tiny_pageembed_inline_styles: true
-});
-```
+{% include configuration/tiny_pageembed_inline_styles.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

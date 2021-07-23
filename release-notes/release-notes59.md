@@ -195,6 +195,7 @@ The following features have been deprecated with the release of {{site.productna
 - [The BBCode (`bbcode`) plugin](#thebbcodebbcodeplugin)
 - [The Full Page (`fullpage`) plugin](#thefullpagefullpageplugin)
 - [The Legacy Output (`legacyoutput`) plugin](#thelegacyoutputlegacyoutputplugin)
+- [Reminder: The free TinyMCE Spell Checker plugin](#reminderthefreetinymcespellcheckerplugin)
 
 ### The `spellchecker_select_languages` option
 
@@ -206,19 +207,25 @@ For information on the `content_langs` option, see: [Spell Checker Pro - `conten
 
 The BBCode plugin (`bbcode`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
 
-To develop and maintain a new BBCode plugin based on the {{site.productname}} BBCode plugin, you can create a fork using the [BBCode plugin source code in the TinyMCE monorepo](https://github.com/tinymce/tinymce/tree/5.8.2/modules/tinymce/src/plugins/bbcode).
+To develop and maintain a new BBCode plugin based on the {{site.productname}} BBCode plugin, you can create a fork using the [BBCode plugin source code in the TinyMCE distribution monorepo](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/bbcode).
 
 ### The Full Page (`fullpage`) plugin
 
 The Full Page plugin (`fullpage`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
 
-To develop and maintain a new Full Page plugin based on the {{site.productname}} Full Page plugin, you can create a fork using the [Full Page plugin source code in the TinyMCE monorepo](https://github.com/tinymce/tinymce/tree/5.8.2/modules/tinymce/src/plugins/fullpage).
+To develop and maintain a new Full Page plugin based on the {{site.productname}} Full Page plugin, you can create a fork using the [Full Page plugin source code in the TinyMCE distribution monorepo](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/fullpage).
 
 ### The Legacy Output (`legacyoutput`) plugin
 
 The Legacy Output plugin (`legacyoutput`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
 
-To develop and maintain a new Legacy Output plugin based on the {{site.productname}} Legacy Output plugin, you can create a fork using the [Legacy Output plugin source code in the TinyMCE monorepo](https://github.com/tinymce/tinymce/tree/5.8.2/modules/tinymce/src/plugins/legacyoutput).
+To develop and maintain a new Legacy Output plugin based on the {{site.productname}} Legacy Output plugin, you can create a fork using the [Legacy Output plugin source code in the TinyMCE distribution monorepo](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/legacyoutput).
+
+### Reminder: The free TinyMCE Spell Checker plugin
+
+The free TinyMCE Spell Checker plugin (`spellchecker`) was deprecated with the release of TinyMCE 5.4 and will be removed in the 6.0 release of {{site.productname}}.
+
+For information on the deprecation of the free TinyMCE Spell Checker plugin, see: [TinyMCE 5.4 Release notes - Deprecated features]({{site.baseurl}}/release-notes/release-notes54/#thefreetinymcespellcheckerplugin).
 
 ## Known issues
 

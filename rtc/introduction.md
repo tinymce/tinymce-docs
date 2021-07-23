@@ -8,7 +8,7 @@ keywords: rtc introduction overview
 
 ## Introduction
 
-{% include misc/rtc-description.md %}
+{% include rtc/description.md %}
 
 {% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
 {% assign pre-release_type = "Open Beta" %}

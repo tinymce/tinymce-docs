@@ -149,7 +149,7 @@ If the RTC session fails to connect, or is disconnected due to an error, the use
 
 ![RTC disconnected error example]({{site.baseurl}}/images/rtc-error-example.png "RTC disconnected error example")
 
-The server disconnected callback can be used to provide an integration response to this condition.
+The `rtc_server_disconnected` callback can be used to provide an alternative response to this condition.
 
 > **Caution**: It is critical to at least handle the `client_update_required` reason. This indicates the RTC plugin is out of date compared to other users on the session. The behavior in this scenario depends on the configuration:
 > * If the `rtc_server_disconnected` is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
@@ -164,19 +164,26 @@ The server disconnected callback can be used to provide an integration response 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `reason` | `string` | The cause of the disconnection. The value will be one of the reasons described below. |
-| `message` | `string` | A suggested description for the error, translated into the active user interface language, suitable for displaying to a user. This string might contain HTML, and in some cases is the same string displayed in the editor notification. |
+| `message` | `string` | A suggested description for the error, translated into the active user interface language, suitable for displaying to a user. This string may contain HTML, and in some cases is the same string displayed in the editor notification. |
 
 #### Reasons for disconnection
 
 The `reason` field will have one of the following values. 
 
-| Value |  Description |
-|-------|-------------|
-| `client_update_required` | This error indicates the RTC plugin is out of date and cannot connect to an active session for the supplied `rtc_document_id`. This can happen on startup, but is more common at runtime during editor upgrades. The suggested message recommends the user reload the page. |
-| `encryption` | Indicates a failure on startup either in the cryptography process or `rtc_encryption_provider`. This usually means there is an error in the editor configuration. |
-| `jwt` | Indicates a problem with `rtc_token_provider`. Either the provider returned a rejected promise, the returned object structure was incorrect, or the token was invalid. |
-| `content` | Indicates a problem with `rtc_initial_content_provider`. Either the provider returned a rejected promise or the returned object structure was incorrect. |
-| `general` | A generic error for reasons that do not yet have a category. Details will be printed to the browser console. |
+`client_update_required`
+: This error indicates the RTC plugin is out of date and cannot connect to an active session for the supplied `rtc_document_id`. This can happen on startup, but is more common at runtime during editor upgrades. The suggested message recommends the user reload the page.
+
+`encryption`
+: Indicates a failure on startup either in the cryptography process or `rtc_encryption_provider`. This usually means there is an error in the editor configuration.
+
+`jwt`
+: Indicates a problem with `rtc_token_provider`. Either the provider returned a rejected promise, the returned object structure was incorrect, or the token was invalid.
+
+`content`
+: Indicates a problem with `rtc_initial_content_provider`. Either the provider returned a rejected promise or the returned object structure was incorrect.
+
+`general`
+: A generic error for reasons that do not yet have a category. Details will be printed to the browser console.
 
 #### Example of handling server disconnection
 
@@ -365,49 +372,60 @@ Only one `rtc_client_connected` event will be fired per client connection. Conne
 
 #### Input fields for `rtc_client_connected`
 
-To help with generating a user interface for connected users, an object with multiple fields is provided.
+To help with generating a user interface for connected users, an object for user details is provided with the following fields:
 
-#### User ID
+- [User ID (`userId`)](#userid)
+- [User Details (`userDetails`)](#userdetails)
+- [Client ID (`clientId`)](#clientid)
+- [Caret Number (`caretNumber`)](#caretnumber)
+- [Client information (`clientInfo`)](#clientinformation)
+
+##### User ID
 
 | Field | Type |
 |-------|:----:|
 | `userId` | `string` |
+{: style="width: auto;"}
 
 This is the user's unique ID (the `sub` field from their [JWT](({{site.baseurl}}/rtc/jwt-authentication/)), which is also used for [`rtc_user_details_provider`](#rtc_user_details_provider)). Multiple connection events will be received with the same user ID if a user opens multiple sessions (for example on desktop and mobile).
 
-#### User Details
+##### User Details
 
 | Field | Type |
 |-------|:----:|
 | `userDetails` | `object` |
+{: style="width: auto;"}
 
 This is a copy of the object returned by [`rtc_user_details_provider`](#rtc_user_details_provider). RTC only uses the `fullName` field, but the entire object will be cloned and passed to `rtc_client_connected`.
 
 If a user details provider is not configured, this will be an empty object.
 
-#### Client ID
+##### Client ID
 
 | Field | Type |
 |-------|:----:|
 | `clientId` | `string` |
+{: style="width: auto;"}
 
 This is a unique identifier, generated by the RTC protocol, that can be used to differentiate between the same user connecting multiple times.
 
-#### Caret Number
+##### Caret Number
 
 | Field | Type |
 |-------|:----:|
 | `caretNumber` | `integer` |
+{: style="width: auto;"}
 
 This will be a number between 1 and 8, corresponding to one of [the 8 colors defined in TinyMCE CSS](https://github.com/tinymce/tinymce/blob/master/modules/oxide/src/less/theme/content/rtc/rtc.less#L1-L8). TinyMCE supports 8 distinct caret colors. If more than 8 clients connect to a session, the numbers will be reused.
 
 A custom skin is required to change these colors, and no more than 8 are supported in this release. For information on creating a custom skin, see: [Customizing the Editor UI]({{site.baseurl}}/general-configuration-guide/customize-ui/).
 
-#### Client information
+##### Client information
 
 | Field | Type |
 |-------|:----:|
 | `clientInfo` | `object` |
+{: style="width: auto;"}
 
 This is a copy of the [`rtc_client_info`](#rtc_client_info) data from the remote user's editor configuration.
 
@@ -433,7 +451,7 @@ The same as [`rtc_client_connected`](#rtc_client_connected)
 
 ### Example using client connect and disconnect events with custom user details
 
-While all fields are provided to both `rtc_client_connected` and `rtc_client_disconnected` functions, this example shows only relevant fields need to be used.
+While all fields are provided to both `rtc_client_connected` and `rtc_client_disconnected` functions, this example only handles the relevant fields for each callback function.
 
 ```js
 const connectedUsers = {}

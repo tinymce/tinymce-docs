@@ -87,9 +87,9 @@ tinymce.init({
 });
 ```
 
-{% include configuration/paste-merge-formats.md %}
+{% include configuration/paste_merge_formats.md %}
 
-{% include configuration/paste-tab-spaces.md %}
+{% include configuration/paste_tab_spaces.md %}
 
 {% include configuration/powerpaste_word_import.md %}
 
@@ -99,15 +99,15 @@ tinymce.init({
 
 {% include configuration/powerpaste_allow_local_images.md %}
 
-{% include configuration/paste-block-drop.md %}
+{% include configuration/paste_block_drop.md %}
 
 {% include configuration/powerpaste_clean_filtered_inline_elements.md %}
 
 {% include configuration/powerpaste_keep_unsupported_src.md %}
 
-{% include configuration/smart-paste.md %}
+{% include configuration/smart_paste.md %}
 
-{% include configuration/image-file-types.md %}
+{% include configuration/image_file_types.md %}
 
 {% assign altplugincode = "paste" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}

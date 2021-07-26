@@ -6,19 +6,19 @@ description_short:
 description: Essential editor configuration, including `selector` and `plugins` keys.
 ---
 
-{% include configuration/auto-focus.md %}
+{% include configuration/auto_focus.md %}
 
-{% include configuration/base-url.md %}
+{% include configuration/base_url.md %}
 
-{% include configuration/cache-suffix.md %}
+{% include configuration/cache_suffix.md %}
 
-{% include configuration/content-security-policy.md %}
+{% include configuration/content_security_policy.md %}
 
-{% include configuration/external-plugins.md %}
+{% include configuration/external_plugins.md %}
 
-{% include configuration/hidden-input.md %}
+{% include configuration/hidden_input.md %}
 
-{% include configuration/init-instance-callback.md %}
+{% include configuration/init_instance_callback.md %}
 
 {% include configuration/plugins.md %}
 

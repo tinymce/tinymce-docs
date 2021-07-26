@@ -53,13 +53,13 @@ tinymce.init({
 
 ## Options
 
-{% include configuration/image-cors-hosts.md %}
+{% include configuration/image_cors_hosts.md %}
 
 {% include configuration/imagetools_credentials_hosts.md %}
 
 {% include configuration/imagetools_fetch_image.md %}
 
-{% include configuration/image-proxy.md %}
+{% include configuration/image_proxy.md %}
 
 {% include configuration/imagetools_toolbar.md %}
 

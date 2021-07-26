@@ -128,9 +128,9 @@ tinymce.init({
 
 ## Configuration options
 
-{% include configuration/selection-toolbar.md %}
+{% include configuration/selection_toolbar.md %}
 
-{% include configuration/insert-toolbar.md %}
+{% include configuration/insert_toolbar.md %}
 
 {% include configuration/image_toolbar.md %}
 

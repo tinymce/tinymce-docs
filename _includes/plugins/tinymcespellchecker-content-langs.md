@@ -1,7 +1,7 @@
 ### `content_langs`
 {{ site.requires_5_9v }} The `content_langs` option replaces the `spellchecker_select_languages` option. The value of the `spellchecker_select_languages` option, or its default, are used as a fallback for `content_langs`.
 
-{% include configuration/content-langs-base.md %}
+{% include configuration/content_langs_base.md %}
 
 
 **Type:** `Array`

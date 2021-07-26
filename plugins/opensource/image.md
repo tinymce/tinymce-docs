@@ -40,9 +40,9 @@ If you wish to align the image, you can also use the text align buttons while im
 {% assign includedSection = 'imagePlugin' %}
 #{% include configuration/a11y_advanced_options.md %}
 {% assign includedSection = false %}
-#{% include configuration/file-picker-callback.md %}
+#{% include configuration/file_picker_callback.md %}
 
-#{% include configuration/file-picker-types.md %}
+#{% include configuration/file_picker_types.md %}
 
 {% include configuration/image_caption.md %}
 
@@ -62,17 +62,17 @@ If you wish to align the image, you can also use the text align buttons while im
 
 {% include configuration/image_uploadtab.md %}
 
-#{% include configuration/images-file-types.md %}
+#{% include configuration/images_file_types.md %}
 
-#{% include configuration/images-upload-base-path.md %}
+#{% include configuration/images_upload_base_path.md %}
 
-#{% include configuration/images-upload-credentials.md %}
+#{% include configuration/images_upload_credentials.md %}
 
-#{% include configuration/images-upload-handler.md %}
+#{% include configuration/images_upload_handler.md %}
 
-#{% include configuration/images-uploads-url.md %}
+#{% include configuration/images_uploads_url.md %}
 
-#{% include configuration/type-ahead-urls.md %}
+#{% include configuration/type_ahead_urls.md %}
 
 
 ## Q: Where are the advanced image options?

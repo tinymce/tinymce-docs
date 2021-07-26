@@ -47,7 +47,7 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 {% include configuration/table_sizing_mode.md %}
 
-#{% include configuration/table-column-resizing.md %}
+#{% include configuration/table_column_resizing.md %}
 
 {% include configuration/table_class_list.md %}
 

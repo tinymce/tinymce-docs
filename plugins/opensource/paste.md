@@ -33,7 +33,7 @@ tinymce.init({
 
 These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
-{% include configuration/paste-block-drop.md %}
+{% include configuration/paste_block_drop.md %}
 
 {% include configuration/paste_data_images.md %}
 
@@ -53,17 +53,17 @@ These settings affect the way content is eliminated or preserved when being past
 
 {% include configuration/paste_retain_style_properties.md %}
 
-{% include configuration/paste-merge-formats.md %}
+{% include configuration/paste_merge_formats.md %}
 
-{% include configuration/paste-tab-spaces.md %}
+{% include configuration/paste_tab_spaces.md %}
 
 {% include configuration/paste_convert_word_fake_lists.md %}
 
 {% include configuration/paste_remove_styles_if_webkit.md %}
 
-{% include configuration/smart-paste.md %}
+{% include configuration/smart_paste.md %}
 
-{% include configuration/image-file-types.md %}
+{% include configuration/image_file_types.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

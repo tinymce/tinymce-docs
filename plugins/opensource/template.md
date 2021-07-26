@@ -126,7 +126,7 @@ Snippets are `html` code chunks that can be inserted. Replace variables will onl
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ```
 
-{% include configuration/ref-time-date-formats.md %}
+{% include configuration/ref_time_date_formats.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

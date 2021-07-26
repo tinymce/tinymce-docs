@@ -35,7 +35,7 @@ These settings affect the execution of the `insertdatetime` plugin. Formats for 
 
 {% include configuration/insertdatetime_element.md %}
 
-{% include configuration/ref-time-date-formats.md %}
+{% include configuration/ref_time_date_formats.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

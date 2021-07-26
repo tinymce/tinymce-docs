@@ -1,10 +1,14 @@
-### `max_height`
+## `max_height`
 
-This option enables you to specify the **maximum** `height` that the editor will automatically resize to when a user enters text into the editor. In other words, the editor will stop automatically resizing when the set value is reached.
+The `max_height` option has two kinds of behaviors depending on the state of the [`autoresize`]({{site.baseurl}}/plugins/opensource/autoresize/) plugin:
+
+* `autoresize` OFF (Default) : Without the `autoresize` plugin, this option allows you to set the maximum height that a user can stretch the entire {{site.productname}} interface (by grabbing the dragable area in the bottom right of the editor interface).
+
+* `autoresize` ON : With the `autoresize` plugin, this option sets the maximum height the editor can automatically expand to.
 
 **Type:** `Number`
 
-#### Example: `max_height`
+### Example: Using `max_height`
 
 ```js
 tinymce.init({
@@ -12,3 +16,5 @@ tinymce.init({
   max_height: 500
 });
 ```
+
+> **Note**: If you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.

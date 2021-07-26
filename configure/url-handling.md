@@ -8,11 +8,11 @@ keywords: url urls relative absolute domain document_base_url
 
 {% include misc/url-handling.md %}
 
-{% include configuration/anchor-bottom.md %}
-{% include configuration/anchor-top.md %}
-{% include configuration/allow-script-urls.md %}
-{% include configuration/convert-urls.md %}
-{% include configuration/document-base-url.md %}
-{% include configuration/relative-urls.md %}
-{% include configuration/remove-script-host.md %}
-{% include configuration/urlconverter-callback.md %}
+{% include configuration/anchor_bottom.md %}
+{% include configuration/anchor_top.md %}
+{% include configuration/allow_script_urls.md %}
+{% include configuration/convert_urls.md %}
+{% include configuration/document_base_url.md %}
+{% include configuration/relative_urls.md %}
+{% include configuration/remove_script_host.md %}
+{% include configuration/urlconverter_callback.md %}

@@ -72,11 +72,11 @@ The following plugins are not supported:
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.
 
-{% include configuration/image-cors-hosts.md %}
+{% include configuration/image_cors_hosts.md %}
 
 {% include configuration/export_ignore_elements.md %}
 
-{% include configuration/image-proxy.md %}
+{% include configuration/image_proxy.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

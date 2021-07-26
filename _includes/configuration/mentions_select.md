@@ -4,8 +4,6 @@ This option enables a hover card to be presented when a user hovers over a menti
 
 **Type:** `Function`
 
-**Default Value:** `none`
-
 #### Example: Using `mentions_select`
 
 ```js

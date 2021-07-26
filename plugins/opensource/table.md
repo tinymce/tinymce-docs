@@ -508,7 +508,7 @@ tinymce.init({
 
 This option is used to specify the default values for the table cell background color picker `tablecellbackgroundcolor`. If no values are defined, the toolbar button and menu item will use the values or default values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). The option can handle Hex, sRGB and HSL, and ignores alpha values.
 
-Custom colors can't be enabled.
+The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_colors) is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
 
 **Type:** `Array`
 
@@ -536,7 +536,7 @@ tinymce.init({
 
 This option enables you to specify the default values for the table cell border color picker, which can be opened with the `tablecellbordercolor` toolbar button or menu item. If no values are defined, uses the values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). The option can handle Hex, sRGB and HSL, and ignores alpha values.
 
-Custom colors can't be enabled.
+The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_colors) is not available for the `tablecellbordercolor` toolbar button or menu item.
 
 **Type:** `Array`
 

@@ -4,7 +4,7 @@ This option controls how content pasted from sources other than Microsoft Word a
 
 **Type:** `String`
 
-**Default value:** `clean`
+**Default Value:** `clean`
 
 The supported values are:
 

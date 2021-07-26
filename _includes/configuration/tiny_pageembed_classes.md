@@ -1,4 +1,4 @@
-### Create custom classes
+### `tiny_pageembed_classes`
 
 The `tiny_pageembed_classes` takes an array of objects with `text` and `value` properties that will populate the size selection fields in the plugin dialog. Use the following script to create custom classes using the `tiny_pageembed_classes` option:
 

@@ -1,6 +1,6 @@
 ### `media_poster`
 
-This options allows you disable the `Poster` input field in the media dialog.
+To remove the `Poster` input field in the media dialog, set this option to `false`.
 
 **Type:** `Boolean`
 
@@ -19,4 +19,3 @@ tinymce.init({
   media_poster: false
 });
 ```
-

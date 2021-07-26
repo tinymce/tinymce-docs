@@ -1,6 +1,6 @@
-### Inline styles for page embeds
+### `tiny_pageembed_inline_styles`
 
-The `tiny_pageembed_inline_styles` setting will inline all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
+The `tiny_pageembed_inline_styles` option will inline all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
 
 **Type:** `Boolean`
 

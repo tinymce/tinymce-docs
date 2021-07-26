@@ -4,8 +4,6 @@ This option enables you to provide a custom CSS selector that should match the e
 
 **Type:** `Function`
 
-**Default Value:** `none`
-
 #### Example: Using `mentions_selector`
 
 ```js
@@ -22,4 +20,3 @@ tinymce.init({
   }
 });
 ```
-

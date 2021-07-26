@@ -4,7 +4,7 @@ This option controls how content pasted from Microsoft Word is filtered.
 
 **Type:** `String` or `Function`
 
-**Default value:** `prompt`
+**Default Value:** `prompt`
 
 {% include plugins/powerpaste_import_types.md %}
 
@@ -28,4 +28,3 @@ tinymce.init({
   }
 });
 ```
-

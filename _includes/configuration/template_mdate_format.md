@@ -1,6 +1,6 @@
 ### `template_mdate_format`
 
-This option allows you to provide TinyMCE with a date/time format that all 'modified' date templates will use.
+This option allows you to provide {{site.productname}} with a date/time format that all 'modified' date templates will use.
 
 **Type:** `String`
 
@@ -28,4 +28,3 @@ If the date modified is set as 9:00AM on January 15th 2000, then inserting this 
 ```
 
 For a list of available date and time formats, see: [Reference Date/Time formats](#referencedatetimeformats).
-

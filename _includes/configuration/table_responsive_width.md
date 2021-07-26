@@ -7,8 +7,6 @@ will force pixel resizing. The default is to automatically detect what the table
 
 **Type:** `Boolean`
 
-**Default Value:** `none`
-
 #### Example: Using `table_responsive_width`
 
 ```js
@@ -20,4 +18,3 @@ tinymce.init({
   table_responsive_width: false
 });
 ```
-

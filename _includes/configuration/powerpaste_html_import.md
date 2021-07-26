@@ -1,31 +1,13 @@
-### `powerpaste_word_import`
+### `powerpaste_html_import`
 
-This option controls how content pasted from Microsoft Word is filtered.
+This option controls how content pasted from sources other than Microsoft Word and Google Docs are filtered. Note that this includes content copied from {{site.productname}} itself.
 
-**Type:** `String` or `Function`
+**Type:** `String`
 
-**Default value:** `prompt`
+**Default value:** `clean`
 
-{% include plugins/powerpaste_import_types.md %}
+The supported values are:
 
-> **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
-
-#### Example: `powerpaste_word_import` using an asynchronous function
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  powerpaste_word_import: function() {
-    // use a native confirm dialog to prompt the user to choose between clean and merge
-    return new Promise(function (resolve) {
-      if (confirm('Would you like to keep formatting?')) {
-        resolve('merge');
-      } else {
-        resolve('clean');
-      }
-    });
-  }
-});
-```
-
+* `clean` - Preserve the structure of the content such as headings, tables, and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
+* `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
+* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.

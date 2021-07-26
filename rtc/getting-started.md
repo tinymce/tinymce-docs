@@ -14,7 +14,7 @@ keywords: rtc
 
 * A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).
 * A JSON Web Token (JWT) key generated at [{{site.accountpageurl}}]({{site.accountpageurl}}). Temporarily store the generated keys for use in the following procedure.
-* {% include misc/secure-context.md %}
+* A [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts) for your web server. RTC makes use of [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) which is only available in secure contexts.
 
 ## Basic Real-Time Collaboration (RTC) setup
 

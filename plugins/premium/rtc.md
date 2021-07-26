@@ -11,6 +11,6 @@ keywords: rtc
 
 {{site.premiumplugin}}
 
-{% include misc/rtc-description.md %}
+{% include rtc/description.md %}
 
 For information on the Real-Time Collaboration plugin, see [Real-Time Collaboration (RTC) (beta)]({{site.baseurl}}/rtc/).

@@ -1,6 +1,6 @@
 ### `visualchars_default_state`
 
-This option enables specifying the default state of the Visual Blocks plugin.
+This option enables specifying the default state of the Visual Characters plugin.
 
 **Type:** `Boolean`
 

@@ -25,7 +25,7 @@ tinymce.init({
 });
 ```
 
-##### User properties
+#### User properties
 
 The following table describes the properties available for user objects provided to the [`mentions_fetch` callback](#mentions_fetch). Properties may be required, optional, or not available; depending on the [`mentions_item_type`](#mentions_item_type) and [`mentions_select`](#mentions_select) options.
 
@@ -35,4 +35,3 @@ The following table describes the properties available for user objects provided
 | name | string | required | required |  Name to display and highlight matches |
 | image | string | not available | optional | Image source for user avatar |
 | description | string | not available | optional | Description to display |
-

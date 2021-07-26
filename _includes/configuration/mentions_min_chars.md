@@ -6,7 +6,7 @@ This option specifies the number of characters a user needs to type after the "@
 
 **Type:** `Number`
 
-**Default Value:** 1
+**Default Value:** `1`
 
 #### Example: Using `mentions_min_chars`
 
@@ -17,4 +17,3 @@ tinymce.init({
   mentions_min_chars: 1
 });
 ```
-

@@ -1,6 +1,6 @@
 ### `toc_header`
 
-Table of contents has a header and by default it will be marked up with `H2` tag. With `toc_header` option you can change it to some other tag.
+Table of contents has a header and by default it will be marked up with `H2` tag. With the `toc_header` option you can change it to some other tag.
 
 **Type:** `String`
 
@@ -16,4 +16,3 @@ tinymce.init({
   toc_header: 'div' // case doesn't matter
 });
 ```
-

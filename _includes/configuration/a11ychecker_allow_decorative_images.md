@@ -25,7 +25,7 @@ If `a11ychecker_allow_decorative_images` is set to `false`, the Accessibility Ch
 
 > **Note**: If [`a11y_advanced_options`](#a11y_advanced_options) is set to `true`, `a11ychecker_allow_decorative_images` will default to `true`.
 
-**Type:** `boolean`
+**Type:** `Boolean`
 
 **Default value:** `false`
 
@@ -41,4 +41,3 @@ tinymce.init({
   a11ychecker_allow_decorative_images: true
 });
 ```
-

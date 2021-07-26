@@ -1,4 +1,4 @@
-### powerpaste_googledocs_import
+### `powerpaste_googledocs_import`
 
 {{site.requires_5_8v}}
 
@@ -6,7 +6,7 @@ This option controls how content pasted from Google Docs is filtered.
 
 **Type:** `String` or `Function`
 
-**Default value:** `prompt`
+**Default Value:** `prompt`
 
 {% include plugins/powerpaste_import_types.md %}
 

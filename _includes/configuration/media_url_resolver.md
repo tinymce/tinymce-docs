@@ -8,7 +8,7 @@ If you in your handler would like fall back to the default media embed logic you
 
 If something goes wrong in your function and you want to show an error to the user you can do so by calling the `reject` callback with an object where the message you want to show the user is set under the `msg` property, like this: `reject({msg: 'YOUR_ERROR_MESSAGE'})`. The message entered will be shown in an error notification to the user.
 
-**Type:** `JavaScript Function`
+**Type:** `Function`
 
 #### Example: Using `media_url_resolver`
 
@@ -30,4 +30,3 @@ tinymce.init({
   }
 });
 ```
-

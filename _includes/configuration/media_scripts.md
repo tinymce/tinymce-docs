@@ -2,7 +2,7 @@
 
 This option allows you to embed videos using script elements.
 
-**Type:** `String`
+**Type:** `Array`
 
 #### Example: Using `media_scripts`
 
@@ -18,4 +18,3 @@ tinymce.init({
  ]
 });
 ```
-

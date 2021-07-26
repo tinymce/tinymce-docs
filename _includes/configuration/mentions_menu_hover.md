@@ -4,8 +4,6 @@ This option enables you to provide an element to present next to the menu item b
 
 **Type:** `Function`
 
-**Default Value:** `none`
-
 #### Example: Using `mentions_menu_hover`
 
 ```js
@@ -35,4 +33,3 @@ tinymce.init({
   }
 });
 ```
-

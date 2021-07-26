@@ -4,7 +4,7 @@ The `target_list` option lets you specify a list of named targets for the `link`
 
 If [`default_link_target`](#default_link_target) is also configured and its value matches a value specified by `target_list`, that item will be set as the default item for the targets dropdown in the link dialog.
 
-**Default:**
+**Default Value:**
 
 ```js
 [
@@ -43,4 +43,3 @@ tinymce.init({
   target_list: false
 });
 ```
-

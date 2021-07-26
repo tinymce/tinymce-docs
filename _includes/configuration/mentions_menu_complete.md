@@ -4,8 +4,6 @@ This option overrides the default logic for inserting the mention into the edito
 
 **Type:** `Function`
 
-**Default Value:** `none`
-
 #### Example: Using `mentions_menu_complete`
 
 ```js
@@ -23,4 +21,3 @@ tinymce.init({
   }
 });
 ```
-

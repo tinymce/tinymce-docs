@@ -22,7 +22,7 @@ tinymce.init({
 {% else %}
 ### `paste_postprocess`
 
-This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
+This option allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
 - Standard paste event data.
 - `node` - A DOM node containing the DOM structure of the filtered paste content.

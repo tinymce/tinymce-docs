@@ -22,7 +22,7 @@ tinymce.init({
 {% else %}
 ### `paste_preprocess`
 
-This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
+This option allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
 - Standard paste event data.
 - `content` - A string containing the content to be pasted.

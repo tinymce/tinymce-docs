@@ -4,8 +4,6 @@ This option lets you request a list of users from your server that match a searc
 
 **Type:** `Function`
 
-**Default Value:** `none`
-
 #### Example: Using `mentions_fetch`
 
 ```js
@@ -70,4 +68,3 @@ tinymce.init({
   }
 });
 ```
-

@@ -18,9 +18,9 @@
 | `tableprops`              | Opens the table properties dialog.                                             |
 | `tablerowprops`           | Opens the Row properties dialog.                                               |
 | `tablesplitcells`         | Splits the current merged cell.                                                |
-| `tableclass`              | Adds pre-defined classes to the selected table. {{site.requires_5_9v}}         |
-| `tablecellclass`          | Adds pre-defined classes to selected cells in the table. {{site.requires_5_9v}} |
-| `tablecellvalign`         | Sets the vertical alignment of selected cells. {{site.requires_5_9v}}           |
+| `tableclass`              | Adds or removes pre-defined classes to the selected table. {{site.requires_5_9v}} |
+| `tablecellclass`          | Adds or removes pre-defined classes to selected cells in the table. {{site.requires_5_9v}} |
+| `tablecellvalign`         | Sets the vertical alignment of the selected cells. {{site.requires_5_9v}}       |
 | `tablecellborderwidth`    | Sets the border width of all selected cells. {{site.requires_5_9v}}             |
 | `tablecellborderstyle`    | Sets the style of border for all selected cells. {{site.requires_5_9v}}         |
 | `tablecaption`            | Toggles the caption on the selected table. {{site.requires_5_9v}}               |

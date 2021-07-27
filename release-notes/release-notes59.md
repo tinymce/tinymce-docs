@@ -45,37 +45,6 @@ For information on:
 - The `content_langs` option, see: [Content appearance options - `content_langs`]({{site.baseurl}}/configure/localization/#content_langs).
 - The `Lang` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 
-### New table commands
-
-A series of new commands have been added to the table plugin to improve the usability of the plugin.
-- The new command `mceTableCellToggleClass` allows the user to add or remove a class to selected cells .
-- The new command `mceTableToggleClass` allows the user to add or remove a class to selected table.
-- The new command `mceTableToggleCaption` allows the user to add or remove a caption to selected table.
-
-#### New table toolbar buttons and menu items
-
-{{site.productname}} 5.9 adds new buttons and menu items for the Table plugin to improve the user experience when working with tables. The toolbar buttons and menu item use the same name (identifier). These toolbar buttons and menu items can be added to contextual menus (right-click menus) and contextual toolbars such as the table toolbar. The following toolbar buttons and menu items have been added:
-`tableclass`
-: Allows the user to add or remove a class from selected tables. Available classes are defined by the [`table_class_list` option]({{site.baseurl}}/plugins/opensource/table/#table_class_list).
-`tablecellclass`
-: Allows the user to add or remove a class from selected cells. Available classes are defined by the [`table_cell_class_list` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_class_list).
-`tablecellvalign`
-: Allows the user to set the vertical alignment for the content of selected cells.
-`tablecellborderwidth`
-: Allows the user to set the border width on selected table cells. The available widths are set with the [`table_border_widths` option]({{site.baseurl}}/plugins/opensource/table/#table_border_widths).
-`tablecellborderstyle`
-: Allows the user to set the border style on selected table cells. The available styles are set with the [`table_border_styles` option]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
-`tablecaption`
-: Toggles the caption on selected tables.
-`tablecellbackgroundcolor`
-: Allows the user to change the background color of selected cells. The available colors are set by the [`table_cell_background_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
-`tablecellbordercolor`
-: Allows the user to change the border color of selected cells. The available colors are set by the [`table_cell_border_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
-`tablerowheader`
-: Allows the user to toggle selected rows into headers.
-`tablecolheader`
-: Allows the user to toggle selected columns into headers.
-
 ### New Table plugin features
 
 #### New table commands

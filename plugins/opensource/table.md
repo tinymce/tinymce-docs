@@ -431,7 +431,7 @@ tinymce.init({
 
 {{site.requires_5_9v}}
 
-This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderwidth` toolbar button or menu item. This option accepts any valid CSS numeric value. [MDN web docs - Numeric data types](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units#numeric_data_types)
+This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderwidth` toolbar button or menu item. This option accepts any valid [CSS numeric value](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units#numeric_data_types).
 
 **Type:** `Array`
 
@@ -506,7 +506,7 @@ tinymce.init({
 
 {{site.requires_5_9v}}
 
-This option is used to specify the default values for the table cell background color picker `tablecellbackgroundcolor`. If no values are defined, the toolbar button and menu item will use the values or default values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). The option can handle Hex, sRGB and HSL, and ignores alpha values.
+This option is used to specify the default values for the table cell background color picker `tablecellbackgroundcolor`. If no values are defined, the toolbar button and menu item will use the values or default values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). This option accepts Hex, RGB and HSL color values.
 
 The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_colors) is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
 
@@ -534,7 +534,7 @@ tinymce.init({
 
 {{site.requires_5_9v}}
 
-This option enables you to specify the default values for the table cell border color picker, which can be opened with the `tablecellbordercolor` toolbar button or menu item. If no values are defined, uses the values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). The option can handle Hex, sRGB and HSL, and ignores alpha values.
+This option enables you to specify the default values for the table cell border color picker, which can be opened with the `tablecellbordercolor` toolbar button or menu item. If no values are defined, uses the values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). This option accepts Hex, RGB and HSL color values.
 
 The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_colors) is not available for the `tablecellbordercolor` toolbar button or menu item.
 

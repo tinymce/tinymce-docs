@@ -67,6 +67,7 @@ tinymce.activeEditor.execCommand('mceTableProps');
 tinymce.activeEditor.execCommand('mceTableRowProps');
 tinymce.activeEditor.execCommand('mceTableCellProps');
 tinymce.activeEditor.execCommand('mceTableToggleClass', false, 'myclass');
+tinymce.activeEditor.execCommand('mceTableCellToggleClass', false, 'mycellclass');
 tinymce.activeEditor.execCommand('mceTableToggleCaption');
 tinymce.activeEditor.execCommand('mceTableRowType', false, { type: 'header' });
 tinymce.activeEditor.execCommand('mceTableColType', false, { type: 'th' });

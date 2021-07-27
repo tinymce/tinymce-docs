@@ -455,9 +455,9 @@ tinymce.init({
   menubar: 'table',
   toolbar: 'table',
   table_border_widths: [
-    {title: '1 pixel', value: '1px'},
-    {title: '1 Em', value: '1em'},
-    {title: '1 Vh', value: '1vh'},
+    {title: 'small', value: '1px'},
+    {title: 'medium', value: '3px'},
+    {title: 'large', value: '5px'},
   ]
 });
 ```

@@ -11,14 +11,13 @@
     For example:
 
     ```sh
-    npm install \
+    npm install --save-dev \
       postcss \
       rollup \
       @rollup/plugin-commonjs \
       rollup-plugin-css-bundle \
       rollup-plugin-postcss \
-      rollup-plugin-string \
-      --save-dev
+      rollup-plugin-string
     ```
 {% else %}
 1. Add `tinymce` and the following development dependencies to the project.
@@ -34,15 +33,14 @@
     For example:
 
     ```sh
-    npm install \
-      tinymce \
+    npm install tinymce &&
+    npm install --save-dev \
       postcss \
       rollup \
       @rollup/plugin-commonjs \
       @rollup/plugin-node-resolve \
       rollup-plugin-css-bundle \
       rollup-plugin-postcss \
-      rollup-plugin-string \
-      --save-dev
+      rollup-plugin-string
     ```
 {% endif %}

@@ -9,12 +9,11 @@
     For example:
 
     ```sh
-    npm install \
+    npm install --save-dev \
       promise-polyfill \
       browserify \
       browserify-css \
-      brfs \
-      --save-dev
+      brfs
     ```
 {% else %}
 1. Add `tinymce` and the following development dependencies to the project.
@@ -27,12 +26,11 @@
     For example:
 
     ```sh
-    npm install \
-      tinymce \
+    npm install tinymce &&
+    npm install --save-dev \
       promise-polyfill \
       browserify \
       browserify-css \
-      brfs \
-      --save-dev
+      brfs
     ```
 {% endif %}

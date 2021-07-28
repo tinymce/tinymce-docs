@@ -10,13 +10,12 @@
     For example:
 
     ```sh
-    npm install \
+    npm install --save-dev \
       webpack \
       webpack-cli \
       mini-css-extract-plugin \
       html-webpack-plugin \
-      css-loader \
-      --save-dev
+      css-loader
     ```
 {% else %}
 1. Add `tinymce` and the following development dependencies to the project.
@@ -30,13 +29,12 @@
     For example:
 
     ```sh
-    npm install \
-      tinymce \
+    npm install tinymce &&
+    npm install --save-dev \
       webpack \
       webpack-cli \
       mini-css-extract-plugin \
       html-webpack-plugin \
-      css-loader \
-      --save-dev
+      css-loader
     ```
 {% endif %}

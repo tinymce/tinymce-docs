@@ -50,10 +50,13 @@ For information on:
 #### New table commands
 
 The following commands have been added to the table plugin to improve the usability:
+
 `mceTableCellToggleClass`
 : Allows the user to add or remove a class on selected cells.
+
 `mceTableToggleClass`
 : Allows the user to add or remove a class from the selected table.
+
 `mceTableToggleCaption`
 : Allows the user to add or remove a caption from the selected table.
 
@@ -62,24 +65,34 @@ For information on these commands, see: [Table - Commands]({{site.baseurl}}/plug
 #### New table toolbar buttons and menu items
 
 {{site.productname}} 5.9 adds new buttons and menu items for the Table plugin to improve the user experience when working with tables. The toolbar buttons and menu item use the same name (identifier). These toolbar buttons and menu items can be added to contextual menus (right-click menus) and contextual toolbars such as the table toolbar. The following toolbar buttons and menu items have been added:
+
 `tableclass`
 : Allows the user to add or remove a class from the selected table. Available classes are defined by the [`table_class_list` option]({{site.baseurl}}/plugins/opensource/table/#table_class_list).
+
 `tablecellclass`
 : Allows the user to add or remove a class from selected cells. Available classes are defined by the [`table_cell_class_list` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_class_list).
+
 `tablecellvalign`
 : Allows the user to set the vertical alignment for the content of selected cells.
+
 `tablecellborderwidth`
 : Allows the user to set the border width on selected table cells. The available widths are set with the [`table_border_widths` option]({{site.baseurl}}/plugins/opensource/table/#table_border_widths).
+
 `tablecellborderstyle`
 : Allows the user to set the border style on selected table cells. The available styles are set with the [`table_border_styles` option]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
+
 `tablecaption`
 : Toggles the caption on the selected table.
+
 `tablecellbackgroundcolor`
 : Allows the user to change the background color of selected cells. The available colors are set by the [`table_cell_background_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
+
 `tablecellbordercolor`
 : Allows the user to change the border color of selected cells. The available colors are set by the [`table_cell_border_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
+
 `tablerowheader`
 : Allows the user to toggle selected rows into headers.
+
 `tablecolheader`
 : Allows the user to toggle selected columns into headers.
 
@@ -89,12 +102,16 @@ For information on these menu items, see: [Available menu items]({{site.baseurl}
 #### New table options
 
 {{site.productname}} 5.9 adds new options for the Table plugin to improve the user experience when working with tables. These new options are optional, and allows further customization of user experience.
+
 `table_cell_background_color_map`
 : Allows setting a specific set of colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map)
+
 `table_cell_border_color_map`
 : Allows setting a specific set of colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map)
+
 `table_border_widths`
 : Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths)
+
 `table_border_styles`
 : Allows setting a specific set of widths to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: [Table options - table_border_styles]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
 

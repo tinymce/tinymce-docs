@@ -7,7 +7,7 @@ description: Introduction to bundling TinyMCE with Webpack, Rollup.js, or Browse
 keywords: webpack browserify es6 rollup commonjs modules tinymce es2015
 ---
 
-The following guides and reference pages assist with bundling {{site.productname}} using a module loader, such as Webpack, Rollup.js, and Browserify. {{site.productname}} is a modular platform that is designed to lazy-load libraries when they are required. This allows developers to only bundle the components of {{site.productname}} that are required and keep resulting bundle as small as possible.
+The following guides and reference pages assist with bundling {{site.productname}} using a module loader, such as Webpack, Rollup.js, and Browserify. {{site.productname}} is a modular platform that is designed to lazy-load libraries when they are required. This allows developers to only bundle the components of {{site.productname}} that are required and keep the resulting bundle as small as possible.
 
 ## Webpack
 

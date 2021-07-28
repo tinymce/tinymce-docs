@@ -10,8 +10,6 @@
       element.innerText = 'TinyMCE Webpack demo';
       return element;
     }
-
-
     const parent = document.createElement('p');
 
     function editorArea() {

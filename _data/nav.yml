@@ -712,9 +712,12 @@
       - url: "#rtc_document_id"
       - url: "#rtc_encryption_provider"
       - url: "#rtc_token_provider"
+      - url: "#Recommended configuration"
+      - url: "#rtc_user_details_provider"
+      - url: "#rtc_server_disconnected"
+      - url: "#Optional configuration"
       - url: "#rtc_snapshot"
       - url: "#rtc_initial_content_provider"
-      - url: "#rtc_user_details_provider"
       - url: "#rtc_client_info"
       - url: "#rtc_client_connected"
       - url: "#rtc_client_disconnected"
@@ -723,6 +726,9 @@
       - url: "#RtcClientConnected"
       - url: "#RtcClientDisconnected"
     - url: "rtc-troubleshooting"
+      pages:
+      - url: "#Common error messages"
+      - url: "#Common JWT error messages"
 
 - url: "advanced"
   pages:

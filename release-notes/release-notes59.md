@@ -104,16 +104,16 @@ For information on these menu items, see: [Available menu items]({{site.baseurl}
 {{site.productname}} 5.9 adds new options for the Table plugin to improve the user experience when working with tables. These new options are optional, and allows further customization of user experience.
 
 `table_cell_background_color_map`
-: Allows setting a specific set of colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map)
+: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map)
 
 `table_cell_border_color_map`
-: Allows setting a specific set of colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map)
+: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map)
 
 `table_border_widths`
 : Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths)
 
 `table_border_styles`
-: Allows setting a specific set of widths to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: [Table options - table_border_styles]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
+: Allows setting a specific set of HTML border style to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: [Table options - table_border_styles]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
 
 For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugins/opensource/table/).
 

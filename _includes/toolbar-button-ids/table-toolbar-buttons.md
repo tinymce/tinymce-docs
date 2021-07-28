@@ -26,5 +26,5 @@
 | `tablecaption`            | Toggles the caption on the selected table. {{site.requires_5_9v}}               |
 | `tablecellbackgroundcolor`| Sets the background color of the selected cells. {{site.requires_5_9v}}         |
 | `tablecellbordercolor`    | Sets the border color of the selected cells. {{site.requires_5_9v}}             |
-| `tablerowheader`          | Toggle a row between being a table header row and a table body row. {{site.requires_5_9v}}          |
+| `tablerowheader`          | Toggle a row between being a table header row or a table body row. {{site.requires_5_9v}}          |
 | `tablecolheader`          | Toggle a column between being a table header column and a table body column. {{site.requires_5_9v}} |

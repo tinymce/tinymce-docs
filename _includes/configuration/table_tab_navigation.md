@@ -19,4 +19,3 @@ tinymce.init({
   table_tab_navigation: false
 });
 ```
-

@@ -6,7 +6,7 @@
 
     ```js
     /* Import TinyMCE */
-    import '../tinymce/js/tinymce/tinymce';
+    import tinymce from  '../tinymce/js/tinymce/tinymce';
 
     /* Default icons are required for TinyMCE 5.3 or above */
     import '../tinymce/js/tinymce/icons/default/icons';

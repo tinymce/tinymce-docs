@@ -27,10 +27,10 @@
     require('../tinymce/js/tinymce/plugins/table/plugin.js');
 
     /* Import content CSS */
-    var contentUiCss = require('../tinymce/js/tinymce/skins/ui/oxide/content.css').toString();
+    var contentUiCss = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');
 
     /* Import the default content CSS, replace with the CSS for the editor content. */
-    var contentCss = require('../tinymce/js/tinymce/skins/content/default/content.css').toString();
+    var contentCss = require('../tinymce/js/tinymce/skins/content/default/content.css');
 
     /* Initialize TinyMCE */
     exports.render = function () {
@@ -41,7 +41,7 @@
         toolbar: 'bold italic | bullist numlist | link emoticons',
         skin: false,
         content_css: false,
-        content_style: contentUiCss + '\n' + contentCss,
+        content_style: contentUiCss.toString() + '\n' + contentCss.toString(),
       });
     };
     ```

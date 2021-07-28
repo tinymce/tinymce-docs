@@ -33,7 +33,7 @@
     var contentCss = fs.readFileSync('tinymce/js/tinymce/skins/content/default/content.css', {encoding: 'UTF-8'});
 
     /* Initialize TinyMCE */
-    function render () {
+    exports.render = function () {
       tinymce.init({
         selector: 'textarea#editor',
         /* All plugins need to be imported and added to the plugins option. */
@@ -44,6 +44,4 @@
         content_style: contentCss.toString() + '\n' + contentCssUi.toString(),
       });
     };
-
-    module.exports = render;
     ```

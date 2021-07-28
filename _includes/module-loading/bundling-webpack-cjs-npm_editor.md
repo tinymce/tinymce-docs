@@ -33,7 +33,7 @@
     var contentCss = require('tinymce/skins/content/default/content.css').toString();
 
     /* Initialize TinyMCE */
-    function render () {
+    exports.render = function () {
       tinymce.init({
         selector: 'textarea#editor',
         /* All plugins need to be imported and added to the plugins option. */
@@ -44,6 +44,4 @@
         content_style: contentUiCss + '\n' + contentCss,
       });
     };
-
-    module.exports = render;
     ```

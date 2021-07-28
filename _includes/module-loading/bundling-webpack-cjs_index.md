@@ -3,7 +3,7 @@
     Example `src/index.js`
 
     ```js
-    var render = require('./editor.js');
+    var editor = require('./editor.js');
     /* Create a parent element for the textarea */
     var parent = document.createElement('p');
     /* Create a textarea with id="editor" for the TinyMCE `selector` option */
@@ -23,5 +23,5 @@
     document.body.appendChild(heading());
     document.body.appendChild(parent);
     /* Initialize TinyMCE */
-    render();
+    editor.render();
     ```

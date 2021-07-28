@@ -1,5 +1,4 @@
 ```
-./plugins/tinymcespellchecker/langs
 ./plugins/tinymcespellchecker/langs/ar.js
 ./plugins/tinymcespellchecker/langs/bg_BG.js
 ./plugins/tinymcespellchecker/langs/ca.js

@@ -1,5 +1,7 @@
 ## Contents
 
+{% include module-loading/bundling-plugins-that-cant-bundle.md %}
+
 - [Premium plugins](#premiumplugins)
 
   - [Accessibility Checker (a11ychecker)](#accessibilitycheckera11ychecker)

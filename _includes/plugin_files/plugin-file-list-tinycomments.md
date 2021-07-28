@@ -1,7 +1,6 @@
 ```
 ./plugins/tinycomments/css/tinycomments.css
 ./plugins/tinycomments/js/tinycomments-sidebar.js
-./plugins/tinycomments/langs
 ./plugins/tinycomments/langs/ar.js
 ./plugins/tinycomments/langs/bg_BG.js
 ./plugins/tinycomments/langs/ca.js

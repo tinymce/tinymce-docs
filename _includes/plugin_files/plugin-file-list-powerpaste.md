@@ -1,6 +1,5 @@
 ```
 ./plugins/powerpaste/js/wordimport.js
-./plugins/powerpaste/langs
 ./plugins/powerpaste/langs/ar.js
 ./plugins/powerpaste/langs/bg_BG.js
 ./plugins/powerpaste/langs/ca.js

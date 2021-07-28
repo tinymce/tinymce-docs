@@ -33,252 +33,21 @@ This example shows how the template plugin can be used to insert custom template
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
 
-### `templates`
+{% include configuration/templates.md %}
 
-This option lets you specify a predefined list of templates to be inserted by the user into the editable area. It is structured as an array with each item having a `title`, `description` and `content`/`url`.
+{% include configuration/template_cdate_classes.md %}
 
-If this option is a string then it will be requested as a URL that should produce a JSON output in the same format the option accepts.
+{% include configuration/template_cdate_format.md %}
 
-Each item in the list can either be inline using a `content` property or a whole file using the `url` property.
+{% include configuration/template_mdate_classes.md %}
 
-#### Example using templates object
+{% include configuration/template_mdate_format.md %}
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  templates: [
-    {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
-    {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
-  ]
-});
-```
+{% include configuration/template_replace_values.md %}
 
-#### Example using templates URL
+{% include configuration/template_preview_replace_values.md %}
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  templates: '/dir/templates.php'
-});
-```
-
-#### Example JSON output of templates.php
-
-```json
-[
-  {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
-  {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
-]
-```
-
-### `template_cdate_classes`
-
-When HTML elements in a template are assigned this class, the content of the element will be replaced with the 'creation' date (`creationdate`), formatted according to the `template_cdate_format` option. This option accepts a list of classes (separated by spaces).
-
-A creation date is one that is set if no previous date existed within the element. Once set, the original date is stored inside the element in a HTML comment and is designed not to change even with a template change.
-
-**Type:** `String`
-
-**Default Value:** `cdate`
-
-#### Example: Using `template_cdate_classes`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  template_cdate_classes: 'cdate creationdate'
-});
-```
-
-### `template_cdate_format`
-
-This option allows you to provide a date format that all 'creation' date templates will use.
-
-**Type:** `String`
-
-**Default:** `'%Y-%m-%d'`
-
-#### Example: Using `template_cdate_format`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  template_cdate_format: '%m/%d/%Y : %H:%M',
-  templates: [
-    {title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>'}
-  ]
-});
-```
-
-If the creation date is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
-
-```html
-<p class="cdate">01/15/2000 : 09:00</p>
-```
-
-For a list of available date and time formats, see: [Reference Date/Time formats](#referencedatetimeformats).
-
-### `template_mdate_classes`
-
-When HTML elements in a template are assigned this class, the content of the element will be replaced with the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option. This option accepts a list of classes (separated by spaces).
-
-A modified date is one that is updated with each edit.
-
-**Type:** `String`
-
-**Default Value:** `mdate`
-
-#### Example: Using `template_mdate_classes`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  template_mdate_classes: 'mdate modifieddate'
-});
-```
-
-### `template_mdate_format`
-
-This option allows you to provide TinyMCE with a date/time format that all 'modified' date templates will use.
-
-**Type:** `String`
-
-**Default:** `'%Y-%m-%d'`
-
-#### Example: Using `template_mdate_format`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  template_mdate_format: '%m/%d/%Y : %H:%M:%S',
-  templates: [
-    {title: 'Mdate', description: 'Mdate example', content: '<p class="mdate">This will be replaced with the date modified</p>'}
-  ]
-});
-```
-
-If the date modified is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
-
-```html
-<p class="mdate">01/15/2000 : 09:00</p>
-```
-
-For a list of available date and time formats, see: [Reference Date/Time formats](#referencedatetimeformats).
-
-### `template_replace_values`
-
-This is an object containing items that will be replaced with their respective string values when a template is inserted into the editor content.
-
-**Type:** `Object`
-
-#### Example: Using `template_replace_values`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  template_replace_values: {
-    username: 'Jack Black',
-    staffid: '991234'
-  }
-});
-```
-
-This can then be used in a template or snippet that looks like this:
-
-```html
-<p>Name: {$username}, StaffID: {$staffid}</p>
-```
-
-And that will be changed to:
-
-```html
-<p>Name: Jack Black, StaffID: 991234</p>
-```
-
-### `template_preview_replace_values`
-
-This is an object containing items that will be replaced with their respective string values in the template preview shown in the template dialog; **but will not be replaced when a template is inserted into the editor content**.
-
-**Type:** `Object`
-
-#### Example: Using `template_preview_replace_values`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  menubar: 'insert',
-  toolbar: 'template',
-  template_preview_replace_values: {
-    username: 'Jack Black',
-    staffid: '991234'
-  }
-});
-```
-
-This can then be used in a template or snippet that looks like this:
-
-```html
-<p>Name: {$username}, StaffID: {$staffid}</p>
-```
-
-And the preview will look like:
-
-```html
-<p>Name: Jack Black, StaffID: 991234</p>
-```
-
-### `template_selected_content_classes`
-
-When HTML elements in a template are assigned this class, the content of the element will be replaced with selected content from the editor. This option accepts a list of classes (separated by spaces).
-
-**Type:** `String`
-
-**Default Value:** `selcontent`
-
-#### Example: Using `template_selected_content_classes`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'template',
-  template_selected_content_classes: 'selcontent selectedcontent',
-  templates: [
-    {
-      title: 'My Template',
-      description: 'This is my template.',
-      content: '<p>Hello, <span class="selcontent">this statement will be replaced.</span></p>'
-    }
-  ]
-});
-```
-
-If the word `world` is selected in the editor and _My Template_ is applied, `world` will be updated to:
-
-```html
-<p>Hello, <span class="selcontent">world</span></p>
-```
+{% include configuration/template_selected_content_classes.md %}
 
 ## Template Plugin Examples
 
@@ -357,7 +126,7 @@ Snippets are `html` code chunks that can be inserted. Replace variables will onl
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ```
 
-{% include configuration/ref-time-date-formats.md %}
+{% include configuration/ref_time_date_formats.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

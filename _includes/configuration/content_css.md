@@ -1,12 +1,12 @@
 
 ## content_css
-The `content_css` option loads the specified CSS files into the editable area. 
+The `content_css` option loads the specified CSS files into the editable area.
 
 **Type:** `String`, `Array`
 
 > **Note:** This option is intended for use with {{site.productname}}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {{site.productname}} is rendered in, not using the `content_css` option.
 
-{% include configuration/shipped-content-css.md %}
+{% include misc/shipped-content-css.md %}
 
 If a relative path is specified, it will be resolved in relation to the URL of the webpage {{site.productname}} is rendered in.
 

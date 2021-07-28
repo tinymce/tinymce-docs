@@ -6,24 +6,24 @@ description_short:
 description: These settings affect TinyMCE's image and file handling capabilities.
 ---
 
-{% include configuration/automatic-uploads.md %}
+{% include configuration/automatic_uploads.md %}
 
-{% include configuration/block-unsupported-drop.md %}
+{% include configuration/block_unsupported_drop.md %}
 
-{% include configuration/file-picker-callback.md %}
+{% include configuration/file_picker_callback.md %}
 
-{% include configuration/file-picker-types.md %}
+{% include configuration/file_picker_types.md %}
 
-{% include configuration/images-dataimg-filter.md %}
+{% include configuration/images_dataimg_filter.md %}
 
-{% include configuration/images-file-types.md %}
+{% include configuration/images_file_types.md %}
 
-{% include configuration/images-upload-reuse-filename.md %}
+{% include configuration/images_upload_reuse_filename.md %}
 
-{% include configuration/images-upload-base-path.md %}
+{% include configuration/images_upload_base_path.md %}
 
-{% include configuration/images-upload-credentials.md %}
+{% include configuration/images_upload_credentials.md %}
 
-{% include configuration/images-upload-handler.md %}
+{% include configuration/images_upload_handler.md %}
 
-{% include configuration/images-uploads-url.md %}
+{% include configuration/images_uploads_url.md %}

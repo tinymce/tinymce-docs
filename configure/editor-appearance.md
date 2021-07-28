@@ -6,7 +6,7 @@ description_short:
 description: Configure the editor's appearance, including menu and toolbar controls.
 ---
 
-{% include configuration/block-formats.md %}
+{% include configuration/block_formats.md %}
 
 {% include configuration/branding.md %}
 
@@ -16,21 +16,21 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/contextmenu_never_use_native.md %}
 
-{% include configuration/custom-ui-selector.md %}
+{% include configuration/custom_ui_selector.md %}
 
-{% include configuration/draggable-modal.md %}
+{% include configuration/draggable_modal.md %}
 
 {% include configuration/elementpath.md %}
 
-{% include configuration/event-root.md %}
+{% include configuration/event_root.md %}
 
-{% include configuration/fixed-toolbar-container.md %}
+{% include configuration/fixed_toolbar_container.md %}
 
-{% include configuration/fixed-toolbar-container-target.md %}
+{% include configuration/fixed_toolbar_container_target.md %}
 
-{% include configuration/font-formats.md %}
+{% include configuration/font_formats.md %}
 
-{% include configuration/fontsize-formats.md %}
+{% include configuration/fontsize_formats.md %}
 
 {% include configuration/height.md %}
 
@@ -40,57 +40,57 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/inline.md %}
 
-{% include configuration/lineheight-formats.md %}
+{% include configuration/lineheight_formats.md %}
 
-{% include configuration/max-height.md %}
+{% include configuration/max_height.md %}
 
-{% include configuration/max-width.md %}
+{% include configuration/max_width.md %}
 
 {% include configuration/menu.md %}
 
 {% include configuration/menubar.md %}
 
-{% include configuration/min-height.md %}
+{% include configuration/min_height.md %}
 
-{% include configuration/min-width.md %}
+{% include configuration/min_width.md %}
 
 {% include configuration/mobile.md %}
 
 {% include configuration/placeholder.md %}
 
-{% include configuration/preview-styles.md %}
+{% include configuration/preview_styles.md %}
 
-{% include configuration/removed-menuitems.md %}
+{% include configuration/removed_menuitems.md %}
 
 {% include configuration/resize.md %}
 
 {% include configuration/skin.md %}
 
-{% include configuration/skin-url.md %}
+{% include configuration/skin_url.md %}
 
 {% include configuration/statusbar.md %}
 
-{% include configuration/style-formats.md %}
+{% include configuration/style_formats.md %}
 
-{% include configuration/style-formats-autohide.md %}
+{% include configuration/style_formats_autohide.md %}
 
-{% include configuration/style-formats-merge.md %}
+{% include configuration/style_formats_merge.md %}
 
 {% include configuration/theme.md %}
 
-{% include configuration/theme-url.md %}
+{% include configuration/theme_url.md %}
 
 {% include configuration/toolbar.md %}
 
-{% include configuration/toolbar-n.md %}
+{% include configuration/toolbar_n.md %}
 
-{% include configuration/toolbar-mode.md %}
+{% include configuration/toolbar_mode.md %}
 
-{% include configuration/toolbar-groups.md %}
+{% include configuration/toolbar_groups.md %}
 
-{% include configuration/toolbar-location.md %}
+{% include configuration/toolbar_location.md %}
 
-{% include configuration/toolbar-persist.md %}
+{% include configuration/toolbar_persist.md %}
 
 {% include configuration/toolbar_sticky.md %}
 

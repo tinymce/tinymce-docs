@@ -23,8 +23,6 @@ Optional files for the example skin:
 ```js
 /* Only required for inline editors */
 ./skins/ui/example/content.inline.css
-/* Only required when using the editor in a shadowDOM */
-./skins/ui/example/skin.shadowdom.css
 /* Only required when using the deprecated mobile theme */
 ./skins/ui/example/skin.mobile.css
 ./skins/ui/example/content.mobile.css
@@ -49,9 +47,7 @@ Example syntax for including the example icon pack in a bundle:
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.css'</span></span><span class="p"><span class="pun">;</span></span><span class="pln">
 </span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">;</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
-</span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">;</span></span><span class="pln">
-</span><span class="cm"><span class="com">/* Only required when using the editor in a shadowDOM */</span></span><span class="pln">
-</span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/skins/ui/example/skin.shadowdom.css'</span></span><span class="p"><span class="pun">;</span></span>
+</span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">;</span></span>
 </code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
 </td>
 </tr>
@@ -61,9 +57,7 @@ Example syntax for including the example icon pack in a bundle:
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.css'</span></span><span class="p"><span class="pun">;</span></span><span class="pln">
 </span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">;</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
-</span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.inline.css'</span></span><span class="pln">
-</span><span class="cm"><span class="com">/* Only required when using the editor in a shadowDOM */</span></span><span class="pln">
-</span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/skins/ui/example/skin.shadowdom.css'</span></span><span class="p"><span class="pun">;</span></span>
+</span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.inline.css'</span></span>
 </code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
 </td>
 </tr>
@@ -74,9 +68,7 @@ Example syntax for including the example icon pack in a bundle:
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
 </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
-</span><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
-</span><span class="cm"><span class="com">/* Only required when using the editor in a shadowDOM */</span></span><span class="pln">
-</span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/skins/ui/example/skin.shadowdom.css'</span></span><span class="p"><span class="pun">);</span></span>
+</span><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">);</span></span>
 </code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
 </td>
 </tr>
@@ -86,9 +78,7 @@ Example syntax for including the example icon pack in a bundle:
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
 </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
-</span><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
-</span><span class="cm"><span class="com">/* Only required when using the editor in a shadowDOM */</span></span><span class="pln">
-</span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/skins/ui/example/skin.shadowdom.css'</span></span><span class="p"><span class="pun">);</span></span>
+</span><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">);</span></span>
 </code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
 </td>
 </tr>
@@ -103,32 +93,24 @@ import contentUiCss from 'tinymce/skins/ui/example/content.css';
 import 'tinymce/skins/ui/example/skin.css';
 /* Only required for inline editors */
 import contentUiInlineCss from 'tinymce/skins/ui/example/content.inline.css';
-/* Only required when using the editor in a shadowDOM */
-import 'tinymce/skins/ui/example/skin.shadowdom.css';
 ```
 ```js
 import contentUiCss from '../tinymce/skins/ui/example/content.css';
 import '../tinymce/skins/ui/example/skin.css';
 /* Only required for inline editors */
 import contentUiInlineCss from '../tinymce/skins/ui/example/content.inline.css'
-/* Only required when using the editor in a shadowDOM */
-import '../tinymce/skins/ui/example/skin.shadowdom.css';
 ```
 ```js
 var contentUiCss = require('tinymce/skins/ui/example/content.css');
 require('tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
 var contentUiInlineCss = require('tinymce/skins/ui/example/content.inline.css');
-/* Only required when using the editor in a shadowDOM */
-require('tinymce/skins/ui/example/skin.shadowdom.css');
 ```
 ```js
 var contentUiCss = require('../tinymce/skins/ui/example/content.css');
 require('../tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
 var contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css');
-/* Only required when using the editor in a shadowDOM */
-require('../tinymce/skins/ui/example/skin.shadowdom.css');
 ```
 {% endcomment %}
 

@@ -113,7 +113,7 @@ For information on these menu items, see: [Available menu items]({{site.baseurl}
 : Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths)
 
 `table_border_styles`
-: Allows setting a specific set of HTML border style to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: [Table options - table_border_styles]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
+: Allows setting a specific set of HTML border styles to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: [Table options - table_border_styles]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
 
 For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugins/opensource/table/).
 

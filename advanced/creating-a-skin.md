@@ -16,7 +16,7 @@ The {{site.productname}} Skin Tool provides an interactive method for designing 
 This guide assumes:
 
 * Familiarity with the command line and running simple commands.
-* [NodeJS](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/en/) and [Gulp](https://gulpjs.com) are already installed.
+* [Node.js](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/en/) and [Gulp](https://gulpjs.com) are already installed.
 * Basic understanding of [Less](http://lesscss.org), the CSS preprocessor we use to build the skins. More specifically, [read the section about variables](http://lesscss.org/features/#variables-feature).
 
 ## Preparation

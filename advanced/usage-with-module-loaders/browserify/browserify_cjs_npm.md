@@ -16,7 +16,7 @@ keywords: browserify commonjs cjs npm modules tinymce
 
 This guide requires the following:
 
-- Nodejs and npm
+- Node.js and npm
 - Basic knowledge of how to use [Browserify](https://browserify.org/)
 - (Optional: For premium features) The latest premium `.zip` bundle of TinyMCE for including premium plugins
 

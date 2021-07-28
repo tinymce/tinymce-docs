@@ -16,7 +16,7 @@ keywords: browserify commonjs cjs zip modules tinymce
 
 This guide requires the following:
 
-- Nodejs and npm
+- Node.js and npm
 - Basic knowledge of how to use [Browserify](https://browserify.org/)
 
 ## Procedure

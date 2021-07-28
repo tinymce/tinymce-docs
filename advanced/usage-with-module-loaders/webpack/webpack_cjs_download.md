@@ -16,7 +16,7 @@ keywords: webpack commonjs cjs zip modules tinymce
 
 This guide requires the following:
 
-- Nodejs and npm
+- Node.js and npm
 - Basic knowledge of how to use [Webpack](https://webpack.js.org/)
 
 ## Procedure

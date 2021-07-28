@@ -6,7 +6,7 @@ description: Node.js
 keywords: tinydrive node.js
 ---
 
-## Tiny Drive NodeJS Starter Project
+## Tiny Drive Node.js Starter Project
 
 This project will help you get started with {{site.cloudfilemanager}} and allow you to play around with its features.
 
@@ -21,7 +21,7 @@ Store the keys temporarily somewhere as you will need to copy & paste them later
 
 ### Prerequisites
 
-* NodeJS 11 on any supported platform.
+* Node.js 11 on any supported platform.
 
 ### Procedure
 

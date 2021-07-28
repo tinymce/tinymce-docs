@@ -16,7 +16,7 @@ keywords: rollupjs es6 es2015 zip modules tinymce
 
 This guide requires the following:
 
-- Nodejs and npm
+- Node.js and npm
 - Basic knowledge of how to use [Rollup.js](https://www.rollupjs.org/)
 
 ## Procedure

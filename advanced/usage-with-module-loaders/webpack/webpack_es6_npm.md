@@ -16,7 +16,7 @@ keywords: webpack es6 es2015 npm modules tinymce
 
 This guide requires the following:
 
-- Nodejs and npm
+- Node.js and npm
 - Basic knowledge of how to use [Webpack](https://webpack.js.org/)
 - (Optional: For premium features) The latest premium `.zip` bundle of TinyMCE for including premium plugins
 

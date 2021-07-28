@@ -1,4 +1,4 @@
-## `table_column_resizing`
+### `table_column_resizing`
 
 {{ site.requires_5_5v }}
 
@@ -19,7 +19,7 @@ There are two settings:
 
 **Possible values:** `'preservetable'`, `'resizetable'`
 
-### Example: Using `table_column_resizing`
+#### Example: Using `table_column_resizing`
 
 ```js
 tinymce.init({

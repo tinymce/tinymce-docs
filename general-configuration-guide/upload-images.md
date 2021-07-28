@@ -86,17 +86,17 @@ Optional:
 * [`images_upload_credentials`](#images_upload_credentials)
 * [`images_reuse_filename`](#images_reuse_filename)
 
-{% include configuration/images-uploads-url.md %}
+{% include configuration/images_uploads_url.md %}
 
-{% include configuration/images-upload-handler.md %}
+{% include configuration/images_upload_handler.md %}
 
-{% include configuration/images-upload-base-path.md %}
+{% include configuration/images_upload_base_path.md %}
 
-{% include configuration/images-upload-credentials.md %}
+{% include configuration/images_upload_credentials.md %}
 
-{% include configuration/images-upload-reuse-filename.md %}
+{% include configuration/images_upload_reuse_filename.md %}
 
-{% include configuration/images-dataimg-filter.md %}
+{% include configuration/images_dataimg_filter.md %}
 
 ## CORS considerations
 

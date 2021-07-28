@@ -7,6 +7,8 @@ keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_d
 controls: toolbar button, menu item
 ---
 
+{{site.deprecate_fullpage}}
+
 {% assign pluginname = "Full Page" %}
 {% assign plugincode = "fullpage" %}
 

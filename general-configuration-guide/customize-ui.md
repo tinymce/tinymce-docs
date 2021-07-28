@@ -88,7 +88,7 @@ The editable area can also automatically resize itself as the user enters conten
 
 Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that {{site.productname}}'s editable area has the same styling as the surrounding content.
 
-{% include configuration/shipped-content-css.md %}
+{% include misc/shipped-content-css.md %}
 
 The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
 

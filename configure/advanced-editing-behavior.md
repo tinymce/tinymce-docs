@@ -6,14 +6,14 @@ description_short:
 description: Learn about some edge case editor behavior.
 ---
 
-{% include configuration/br-in-pre.md %}
+{% include configuration/br_in_pre.md %}
 
-{% include configuration/custom-undo-redo-levels.md %}
+{% include configuration/custom_undo_redo_levels.md %}
 
-{% include configuration/end-container-on-empty-block.md %}
+{% include configuration/end_container_on_empty_block.md %}
 
-{% include configuration/object-resizing.md %}
+{% include configuration/object_resizing.md %}
 
-{% include configuration/resize-img-proportional.md %}
+{% include configuration/resize_img_proportional.md %}
 
-{% include configuration/type-ahead-urls.md %}
+{% include configuration/type_ahead_urls.md %}

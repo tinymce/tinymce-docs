@@ -20,10 +20,6 @@
           meta: {viewport: 'width=device-width, initial-scale=1'}
         }),
       ],
-      devtool: 'inline-source-map',
-      devServer: {
-        contentBase: './public',
-      },
       module: {
         rules: [
           {

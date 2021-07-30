@@ -1,6 +1,6 @@
 
 ```
-npm install tinymce
+npm install tinymce@^5
 ```
 
 ### Step 1: Include the TinyMCE script

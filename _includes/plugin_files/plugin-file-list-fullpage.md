@@ -1,0 +1,3 @@
+```
+./plugins/fullpage/plugin.js
+```

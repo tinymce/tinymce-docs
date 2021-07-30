@@ -5,7 +5,7 @@ description: Using the Enhanced Media Embed server with non-public content such 
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-Websites like [Facebook](https://developers.facebook.com/docs/plugins/oembed-endpoints) and [Instagram](https://www.instagram.com/developer/embedding/) expose an [oEmbed](http://oembed.com/) endpoint for developers to utilise. The [Iframely](https://iframely.com/) service creates embeds from websites on the public Internet. For content on private networks, such as a corporate CMS, this document outlines how to enrich the content or build an API that the Enhanced Media Embed server can utilise to create rich hyperlinks. We'll also provide some information about the Enhanced Media Embed server's summary cards.
+Websites like [Facebook](https://developers.facebook.com/docs/plugins/oembed-endpoints) and [Instagram](https://www.instagram.com/developer/embedding/) expose an [oEmbed](http://oembed.com/) endpoint for developers to utilize. The [Iframely](https://iframely.com/) service creates embeds from websites on the public Internet. For content on private networks, such as a corporate CMS, this document outlines how to enrich the content or build an API that the Enhanced Media Embed server can utilize to create rich hyperlinks. We'll also provide some information about the Enhanced Media Embed server's summary cards.
 
 There are three options for enhancing the embeds created for private content by the Enhanced Media Embed server:
 
@@ -76,7 +76,7 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 
 As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or {{site.productname}} Enhanced Media Embed formats.
 
-See the docs on [configuring a custom endpoint]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint) for details on getting the Enhanced Media Embed server to utilise your custom API.
+See the docs on [configuring a custom endpoint]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint) for details on getting the Enhanced Media Embed server to utilize your custom API.
 
 ### OEmbed endpoint
 

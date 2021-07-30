@@ -844,7 +844,30 @@
       - url: "#Editor Manager events"
   - url: "keyboard-shortcuts"
   - url: "usage-with-module-loaders"
-
+    pages:
+    - url: "introduction_to_bundling_tinymce"
+    - url: "webpack"
+      pages:
+      - url: "webpack_es6_npm"
+      - url: "webpack_cjs_npm"
+      - url: "webpack_es6_download"
+      - url: "webpack_cjs_download"
+    - url: "rollup"
+      pages:
+      - url: "rollup_es6_npm"
+      - url: "rollup_es6_download"
+    - url: "browserify"
+      pages:
+      - url: "browserify_cjs_npm"
+      - url: "browserify_cjs_download"
+    - url: "reference"
+      pages:
+      - url: "plugins"
+      - url: "content-css"
+      - url: "skins"
+      - url: "icons"
+      - url: "localization"
+      - url: "themes"
 - url: "integrations"
   pages:
   - url: "angularjs"

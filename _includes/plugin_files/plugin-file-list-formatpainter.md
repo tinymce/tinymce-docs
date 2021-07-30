@@ -1,0 +1,3 @@
+```
+./plugins/formatpainter/plugin.js
+```

@@ -36,7 +36,7 @@ The starter projects have their own procedures to get {{site.cloudfilemanager}} 
         </tr>
         <tr>
             <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter">.NET Core</a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter">NodeJS</a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter">Node.js</a></td>
             <td><a href="https://github.com/tinymce/tinydrive-php-starter">PHP</a></td>
             <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter">Java Spring</a></td>
         </tr>

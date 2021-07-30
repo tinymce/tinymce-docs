@@ -14,7 +14,7 @@ TinyMCE 5 introduced icon packs for customizing the editor icons.
 This guide assumes:
 
 * Familiarity with the command line and running commands.
-* [NodeJS](https://nodejs.org/en/) and [NPM](https://www.npmjs.com) are already installed.
+* [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com) are already installed.
 * Optional: [`git`](https://git-scm.com/) is already installed.
 
 ## How icons work in TinyMCE

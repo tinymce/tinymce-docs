@@ -121,7 +121,7 @@ The TinyMCE API documentation is maintained within the [TinyMCE project reposito
 
 ##### Prerequisites
 
-- [NodeJS](https://nodejs.org/en/).
+- [Node.js](https://nodejs.org/en/).
 - The TinyMCE documentation repository set up for development as described in [Installing Prerequisites](#installing-prerequisites) and [First time set up](#first-time-set-up).
 
 ##### Installing MoxieDoc

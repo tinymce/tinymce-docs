@@ -1,0 +1,3 @@
+```
+./plugins/codesample/plugin.js
+```

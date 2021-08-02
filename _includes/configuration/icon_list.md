@@ -12,10 +12,13 @@
 | `arrow-right` | ![arrow-right.svg]({{ site.baseurl }}/images/icons/arrow-right.svg) | `arrow-right.svg` |
 | `bold` | ![bold.svg]({{ site.baseurl }}/images/icons/bold.svg) | `bold.svg` |
 | `bookmark` | ![bookmark.svg]({{ site.baseurl }}/images/icons/bookmark.svg) | `bookmark.svg` |
+| `border-style` | ![border-style.svg]({{ site.baseurl }}/images/icons/border-style.svg) | `border-style.svg` |
 | `border-width` | ![border-width.svg]({{ site.baseurl }}/images/icons/border-width.svg) | `border-width.svg` |
 | `brightness` | ![brightness.svg]({{ site.baseurl }}/images/icons/brightness.svg) | `brightness.svg` |
 | `browse` | ![browse.svg]({{ site.baseurl }}/images/icons/browse.svg) | `browse.svg` |
 | `cancel` | ![cancel.svg]({{ site.baseurl }}/images/icons/cancel.svg) | `cancel.svg` |
+| `cell-background-color` | ![cell-background-color.svg]({{ site.baseurl }}/images/icons/cell-background-color.svg) | `cell-background-color.svg` |
+| `cell-border-color` | ![cell-border-color.svg]({{ site.baseurl }}/images/icons/cell-border-color.svg) | `cell-border-color.svg` |
 | `change-case` | ![change-case.svg]({{ site.baseurl }}/images/icons/change-case.svg) | `change-case.svg` |
 | `character-count` | ![character-count.svg]({{ site.baseurl }}/images/icons/character-count.svg) | `character-count.svg` |
 | `checklist-rtl` | ![checklist-rtl.svg]({{ site.baseurl }}/images/icons/checklist-rtl.svg) | `checklist-rtl.svg` |
@@ -70,6 +73,7 @@
 | `insert-time` | ![insert-time.svg]({{ site.baseurl }}/images/icons/insert-time.svg) | `insert-time.svg` |
 | `invert` | ![invert.svg]({{ site.baseurl }}/images/icons/invert.svg) | `invert.svg` |
 | `italic` | ![italic.svg]({{ site.baseurl }}/images/icons/italic.svg) | `italic.svg` |
+| `language` | ![language.svg]({{ site.baseurl }}/images/icons/language.svg) | `language.svg` |
 | `line-height` | ![line-height.svg]({{ site.baseurl }}/images/icons/line-height.svg) | `line-height.svg` |
 | `line` | ![line.svg]({{ site.baseurl }}/images/icons/line.svg) | `line.svg` |
 | `link` | ![link.svg]({{ site.baseurl }}/images/icons/link.svg) | `link.svg` |
@@ -105,8 +109,8 @@
 | `paste-column-before` | ![paste-column-before.svg]({{ site.baseurl }}/images/icons/paste-column-before.svg) | `paste-column-before.svg` |
 | `paste-row-after` | ![paste-row-after.svg]({{ site.baseurl }}/images/icons/paste-row-after.svg) | `paste-row-after.svg` |
 | `paste-row-before` | ![paste-row-before.svg]({{ site.baseurl }}/images/icons/paste-row-before.svg) | `paste-row-before.svg` |
-| `paste` | ![paste.svg]({{ site.baseurl }}/images/icons/paste.svg) | `paste.svg` |
 | `paste-text` | ![paste-text.svg]({{ site.baseurl }}/images/icons/paste-text.svg) | `paste-text.svg` |
+| `paste` | ![paste.svg]({{ site.baseurl }}/images/icons/paste.svg) | `paste.svg` |
 | `permanent-pen` | ![permanent-pen.svg]({{ site.baseurl }}/images/icons/permanent-pen.svg) | `permanent-pen.svg` |
 | `plus` | ![plus.svg]({{ site.baseurl }}/images/icons/plus.svg) | `plus.svg` |
 | `preferences` | ![preferences.svg]({{ site.baseurl }}/images/icons/preferences.svg) | `preferences.svg` |
@@ -134,9 +138,12 @@
 | `strike-through` | ![strike-through.svg]({{ site.baseurl }}/images/icons/strike-through.svg) | `strike-through.svg` |
 | `subscript` | ![subscript.svg]({{ site.baseurl }}/images/icons/subscript.svg) | `subscript.svg` |
 | `superscript` | ![superscript.svg]({{ site.baseurl }}/images/icons/superscript.svg) | `superscript.svg` |
+| `table-caption` | ![table-caption.svg]({{ site.baseurl }}/images/icons/table-caption.svg) | `table-caption.svg` |
+| `table-cell-classes` | ![table-cell-classes.svg]({{ site.baseurl }}/images/icons/table-cell-classes.svg) | `table-cell-classes.svg` |
 | `table-cell-properties` | ![table-cell-properties.svg]({{ site.baseurl }}/images/icons/table-cell-properties.svg) | `table-cell-properties.svg` |
 | `table-cell-select-all` | ![table-cell-select-all.svg]({{ site.baseurl }}/images/icons/table-cell-select-all.svg) | `table-cell-select-all.svg` |
 | `table-cell-select-inner` | ![table-cell-select-inner.svg]({{ site.baseurl }}/images/icons/table-cell-select-inner.svg) | `table-cell-select-inner.svg` |
+| `table-classes` | ![table-classes.svg]({{ site.baseurl }}/images/icons/table-classes.svg) | `table-classes.svg` |
 | `table-delete-column` | ![table-delete-column.svg]({{ site.baseurl }}/images/icons/table-delete-column.svg) | `table-delete-column.svg` |
 | `table-delete-row` | ![table-delete-row.svg]({{ site.baseurl }}/images/icons/table-delete-row.svg) | `table-delete-row.svg` |
 | `table-delete-table` | ![table-delete-table.svg]({{ site.baseurl }}/images/icons/table-delete-table.svg) | `table-delete-table.svg` |
@@ -148,8 +155,8 @@
 | `table-merge-cells` | ![table-merge-cells.svg]({{ site.baseurl }}/images/icons/table-merge-cells.svg) | `table-merge-cells.svg` |
 | `table-row-properties` | ![table-row-properties.svg]({{ site.baseurl }}/images/icons/table-row-properties.svg) | `table-row-properties.svg` |
 | `table-split-cells` | ![table-split-cells.svg]({{ site.baseurl }}/images/icons/table-split-cells.svg) | `table-split-cells.svg` |
-| `table` | ![table.svg]({{ site.baseurl }}/images/icons/table.svg) | `table.svg` |
 | `table-top-header` | ![table-top-header.svg]({{ site.baseurl }}/images/icons/table-top-header.svg) | `table-top-header.svg` |
+| `table` | ![table.svg]({{ site.baseurl }}/images/icons/table.svg) | `table.svg` |
 | `template` | ![template.svg]({{ site.baseurl }}/images/icons/template.svg) | `template.svg` |
 | `temporary-placeholder` | ![temporary-placeholder.svg]({{ site.baseurl }}/images/icons/temporary-placeholder.svg) | `temporary-placeholder.svg` |
 | `text-color` | ![text-color.svg]({{ site.baseurl }}/images/icons/text-color.svg) | `text-color.svg` |
@@ -163,6 +170,7 @@
 | `unselected` | ![unselected.svg]({{ site.baseurl }}/images/icons/unselected.svg) | `unselected.svg` |
 | `upload` | ![upload.svg]({{ site.baseurl }}/images/icons/upload.svg) | `upload.svg` |
 | `user` | ![user.svg]({{ site.baseurl }}/images/icons/user.svg) | `user.svg` |
+| `vertical-align` | ![vertical-align.svg]({{ site.baseurl }}/images/icons/vertical-align.svg) | `vertical-align.svg` |
 | `visualblocks` | ![visualblocks.svg]({{ site.baseurl }}/images/icons/visualblocks.svg) | `visualblocks.svg` |
 | `visualchars` | ![visualchars.svg]({{ site.baseurl }}/images/icons/visualchars.svg) | `visualchars.svg` |
 | `warning` | ![warning.svg]({{ site.baseurl }}/images/icons/warning.svg) | `warning.svg` |

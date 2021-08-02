@@ -15,7 +15,7 @@ rm -rf $icon_svg_dir*
 cp $tinymce_root/modules/oxide-icons-default/src/svg/* $icon_svg_dir
 
 << COMMENT
-IF loop to verify that the markdown file already exists
+IF statement to verify that the markdown file already exists
   (A lazy check to ensure the script is run from the root directory).
 If file not found, informative message should be printed in the console
   and the script will exit.

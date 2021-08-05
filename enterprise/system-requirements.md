@@ -35,7 +35,7 @@ JDK 8
     - 8.0.42+
     - 7.0.76+
 
-> **Note:** Tomcat 10 will require WAR files to be places in *webapp-javaee* rather than *webapps* due to the change to Jakarta servlets. Jetty 11 is not currently supported due to this change.
+> **Important:** Tomcat 10 will require WAR files to be placed in the *webapp-javaee* directory rather than the *webapps* directory due to the change to Jakarta servlets. Jetty 11 is not currently supported due to this change.
 
 ### Operating Systems
 

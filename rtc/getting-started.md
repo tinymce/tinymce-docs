@@ -10,6 +10,8 @@ keywords: rtc
 {% assign pre-release_type = "Open Beta" %}
 {% include misc/beta-note.md %}
 
+{% include live-demo.html id="rtc" %}
+
 ## Prerequisites
 
 * A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).

@@ -126,7 +126,7 @@ tinymce.init({
       body: JSON.stringify({ documentId, newKey, keyId: keyHint })
     })
     .then(response => response.json())
-    .then(({keyId, secret}) => ({ key: secret, keyHint: keyId }),
+    .then(({keyId, secret}) => ({ key: secret, keyHint: keyId })),
   rtc_token_provider: () =>
     fetch('/getJwtToken', {
       method: 'POST',
@@ -168,7 +168,7 @@ The `rtc_server_disconnected` callback can be used to provide an alternative res
 
 #### Reasons for disconnection
 
-The `reason` field will have one of the following values. 
+The `reason` field will have one of the following values.
 
 `client_update_required`
 : This error indicates the RTC plugin is out of date and cannot connect to an active session for the supplied `rtc_document_id`. This can happen on startup, but is more common at runtime during editor upgrades. The suggested message recommends the user reload the page.

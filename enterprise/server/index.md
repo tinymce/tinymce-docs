@@ -43,6 +43,8 @@ Deploy all the WAR files that came packaged with the {{site.productname}} Enterp
 
 The easiest way to deploy these files is to copy them into the *webapps* directory of your Tomcat/Jetty installation and then restart the application server.
 
+> **Important:** Tomcat 10 will require the applications to be placed in the *webapps-javaee* directory. Once placed there they will be converted by Tomcat to the Jakarta servlet framework. [Tomcat 10 Migration guide](https://tomcat.apache.org/migration-10.html#Specification_APIs)
+
 More information can be found in the documentation of your chosen application server:
 
 - [Deploying applications with Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/deployer-howto.html)

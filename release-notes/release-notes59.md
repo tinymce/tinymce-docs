@@ -216,9 +216,14 @@ The Java server-side components have been updated to the following versions:
 
 ### New Server-side component features
 
-All the services now include a `ignore-port` port option to allow ports specified in `allowed-origins` to be enforced. For details, see: [Configure server-side components: `allowed-origins.ignore-port` (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originsignore-portoptional).
+The Spelling service now supports a broader range of dictionaries by introducing support for [Hunspell dictionaries](https://hunspell.github.io/).
+
+* For details on enabling Hunspell support, see: [Add Hunspell dictionaries to Spell Checker Pro]({{site.baseurl}}/enterprise/server/self-hosting-hunspell/).
+* For a list of supported Spell Checker languages, see: [Spell Checker Pro plugin - Supported languages]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#supportedlanguages).
 
 The Spelling service now includes a new configuration option, allowing custom dictionaries to periodically deploy changes. For details, see: [Configure server-side components: `dynamic-custom-dictionaries`]({{site.baseurl}}/enterprise/server/configure/#dynamic-custom-dictionariesoptional).
+
+All the services now include a `ignore-port` port option to allow ports specified in `allowed-origins` to be enforced. For details, see: [Configure server-side components: `allowed-origins.ignore-port` (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originsignore-portoptional).
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 

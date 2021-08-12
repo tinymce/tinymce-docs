@@ -1,8 +1,35 @@
 ---
 layout: default
 title: Configure server-side components
+description: Configuration options for premium server-side components.
 keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server configuration configure
 ---
+
+## Overview
+
+* Creating a configuration file
+* General service settings
+  * `allowed-origins` (required)
+    * Wildcard support
+    * Regular Expressions support
+    * `allowed-origins.same-origin` (optional)
+    * `allowed-origins.ignore-port` (optional)
+    * Troubleshooting Origins
+  * `proxy` (optional)
+  * `http` (optional)
+    * Alternative http timeout settings
+* Image proxy service settings
+  * `image-proxy` (optional)
+* Hyperlinking service settings
+  * `link-checking` (optional)
+    * `enabled` (optional)
+    * `fallback-to-get` (optional)
+    * `cache` (optional)
+* Spelling service settings
+  * `spelling` (optional)
+    * `custom-dictionaries-path` (optional)
+    * `dynamic-custom-dictionaries` (optional)
+* Logging service activity
 
 ## Creating a configuration file
 
@@ -15,6 +42,8 @@ This configuration file will require you to enter *at least* the following  info
 - `allowed-origins` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
 
 The Enhanced Media Embed server-side component require additional configuration, which can be found on the [Enhanced Media Embed page]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/).
+
+## General service settings
 
 ### `allowed-origins` (required)
 
@@ -67,10 +96,10 @@ If users load {{site.productname}} from the following URLs:
 Add `server.example.com` to the `allowed-origins` list because the scheme and the port are ignored.
 
 
-|               |                     |             |
-|---------------|---------------------|-------------|
-| **element**   |  `allowed-origins`  | Stores CORS setup information |
-| **attribute** |  `origins`          | An array of strings containing all possible values of the HTTP Origin header the server-side components can expect. |
+|     Type      | Setting           | Description                                                                                                         |
+|:-------------:|-------------------|---------------------------------------------------------------------------------------------------------------------|
+|  **element**  | `allowed-origins` | Stores CORS setup information                                                                                       |
+| **attribute** | `origins`         | An array of strings containing all possible values of the HTTP Origin header the server-side components can expect. |
 
 Example:
 
@@ -169,16 +198,16 @@ Default proxy settings are picked up from JVM system properties, usually provide
 
 This optional proxy element provides an alternative to providing proxy settings as JVM system properties, or to override system properties.
 
-|               |                       |             |
-|---------------|-----------------------|-------------|
-| **element**   |  `proxy`              | Stores HTTP outgoing proxy settings for the server-side components. |
-| **attribute** |  `http.proxyHost`     | A string defining the host name of the proxy for plain HTTP (not HTTPS) connections. (Mandatory) |
-| **attribute** |  `http.proxyPort`     | An integer defining the port number of the proxy for plain HTTP (not HTTPS) connections. (Mandatory) |
-| **attribute** |  `http.nonProxyHosts` | A list of strings separated by vertical lines ("&#124;") listing hosts and domains to be excluded from proxying, for **both** plain HTTP and HTTPS connections. The strings can contain asterisks ("*") as wildcards. (Optional, defaults to "localhost&#124;127.\*&#124;[::1]" if not set.) |
-| **attribute** |  `https.proxyHost`    | A string defining the host name of the proxy for HTTPS connections. (Optional) |
-| **attribute** |  `https.proxyPort`    | An integer defining the port number of the proxy for HTTPS connections. (Optional) |
-| **attribute** |  `http.proxyUser`     | Username for authenticating to **both** the HTTP and HTTPS proxy. (Optional) |
-| **attribute** |  `http.proxyPassword` | Password for authenticating to **both** the HTTP and HTTPS proxy. (Optional) |
+|     Type      | Setting              | Description                                                                                                                                                                                                                                                                                  |
+|:-------------:|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  **element**  | `proxy`              | Stores HTTP outgoing proxy settings for the server-side components.                                                                                                                                                                                                                          |
+| **attribute** | `http.proxyHost`     | A string defining the host name of the proxy for plain HTTP (not HTTPS) connections. (Mandatory)                                                                                                                                                                                             |
+| **attribute** | `http.proxyPort`     | An integer defining the port number of the proxy for plain HTTP (not HTTPS) connections. (Mandatory)                                                                                                                                                                                         |
+| **attribute** | `http.nonProxyHosts` | A list of strings separated by vertical lines ("&#124;") listing hosts and domains to be excluded from proxying, for **both** plain HTTP and HTTPS connections. The strings can contain asterisks ("*") as wildcards. (Optional, defaults to "localhost&#124;127.\*&#124;[::1]" if not set.) |
+| **attribute** | `https.proxyHost`    | A string defining the host name of the proxy for HTTPS connections. (Optional)                                                                                                                                                                                                               |
+| **attribute** | `https.proxyPort`    | An integer defining the port number of the proxy for HTTPS connections. (Optional)                                                                                                                                                                                                           |
+| **attribute** | `http.proxyUser`     | Username for authenticating to **both** the HTTP and HTTPS proxy. (Optional)                                                                                                                                                                                                                 |
+| **attribute** | `http.proxyPassword` | Password for authenticating to **both** the HTTP and HTTPS proxy. (Optional)                                                                                                                                                                                                                 |
 
 
 In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
@@ -201,11 +230,11 @@ Some server-side components make outbound HTTP and HTTPS connections. These incl
 
 This is not recommended for production environments.
 
-|               |                     |             |
-|---------------|---------------------|-------------|
-| **element**   |  `http`             | Configures  HTTP client behaviour. |
-| **attribute** |  `trust-all-cert`   | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. Default: false |
-| **attribute** |  `request-timeout-seconds` | An integer defining the number of seconds to allow HTTP requests to take. Default: 10 |
+|     Type      | Setting                   | Description                                                                                                          |
+|:-------------:|---------------------------|----------------------------------------------------------------------------------------------------------------------|
+|  **element**  | `http`                    | Configures  HTTP client behavior.                                                                                   |
+| **attribute** | `trust-all-cert`          | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. Default: false |
+| **attribute** | `request-timeout-seconds` | An integer defining the number of seconds to allow HTTP requests to take. Default: 10                                |
 
 Example:
 
@@ -253,14 +282,16 @@ ephox {
 }
 ```
 
+## Image proxy service settings
+
 ### `image-proxy` (optional)
 
 The [image proxy service]({{site.baseurl}}/plugins/opensource/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
-|               |                     |             |
-|---------------|---------------------|-------------|
-| **element**   |  `image-proxy`             | Configures image proxy behaviour. |
-| **attribute** |  `size-limit`   | An integer defining the maximum allowed image size in bytes. Default: 10000000 |
+|     Type      | Setting       | Description                                                                    |
+|:-------------:|---------------|--------------------------------------------------------------------------------|
+|  **element**  | `image-proxy` | Configures image proxy behavior.                                              |
+| **attribute** | `size-limit`  | An integer defining the maximum allowed image size in bytes. Default: `10000000` |
 
 Example:
 
@@ -271,6 +302,8 @@ ephox {
     }
 }
 ```
+
+## Hyperlinking service settings
 
 ### `link-checking` (optional)
 
@@ -316,9 +349,9 @@ This element configures the Link Checker service's built-in cache. When a hyperl
 
 Default settings are automatically configured, meaning these settings are optional.
 
-- `capacity` - sets the capacity of the cache. The default setting is 500.
-- `timeToLiveInSeconds` - sets the time-to-live of elements of the cache, measured in seconds. This is the maximum total amount of time that an element is allowed to remain in the cache. The default setting is 86400 seconds, which is one day.
-- `timeToIdleInSeconds` - sets the time-to-idle of elements of the cache, measured in seconds. This is the maximum amount of time that an element will remain in the cache if it is not being accessed. The default setting is 3600 seconds, which is one hour.
+- `capacity` - sets the capacity of the cache. The default setting is `500`.
+- `timeToLiveInSeconds` - sets the time-to-live of elements of the cache, measured in seconds. This is the maximum total amount of time that an element is allowed to remain in the cache. The default setting is `86400` seconds, which is one day.
+- `timeToIdleInSeconds` - sets the time-to-idle of elements of the cache, measured in seconds. This is the maximum amount of time that an element will remain in the cache if it is not being accessed. The default setting is `3600` seconds, which is one hour.
 
 Example:
 
@@ -334,12 +367,19 @@ ephox {
 }
 ```
 
+## Spelling service settings
+
 ### `spelling` (optional)
 
-The Spelling service has two configurable settings:
+The Spelling service has three configurable settings:
 
+- `hunspell-dictionaries-path`
 - `custom-dictionaries-path`
 - `dynamic-custom-dictionaries`
+
+#### `hunspell-dictionaries-path` (optional)
+
+{% include misc/hunspell-dictionaries-path.md %}
 
 #### `custom-dictionaries-path` (optional)
 
@@ -351,51 +391,48 @@ For information on creating custom dictionaries, see: [Adding custom dictionarie
 
 {% include misc/dynamic-custom-dictionaries.md %}
 
-## Logging
+<a class="anchor" id="logging"></a>
+## Logging service activity
 
 It may be useful to make the {{site.productname}} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
-To write the logs to a specific file, you’ll need to perform the following steps:
-
-### Step 1. Create a logging configuration XML file
-
 The {{site.productname}} server-side components use the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
 
-Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
+To write the logs to a specific file:
+<a class="anchor" id="step1createaloggingconfigurationxmlfile"></a>
+1. Create a logging configuration XML file. Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 
-```xml
-<configuration>
+    ```xml
+    <configuration>
 
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-    </encoder>
-  </appender>
+      <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+          <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+      </appender>
 
-  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-    <file>{$LOG_LOCATION}</file>
-    <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-    </encoder>
-  </appender>
+      <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>{$LOG_LOCATION}</file>
+        <encoder>
+          <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+      </appender>
 
-  <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
-  <logger name="com.ephox" level="INFO"/>
+      <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
+      <logger name="com.ephox" level="INFO"/>
 
-  <root level="INFO">
-    <appender-ref ref="FILE" />
-    <!-- If you want logging to go to the container as well uncomment
-    the following line -->
-    <!-- <appender-ref ref="STDOUT" /> -->
-  </root>
+      <root level="INFO">
+        <appender-ref ref="FILE" />
+        <!-- If you want logging to go to the container as well uncomment
+        the following line -->
+        <!-- <appender-ref ref="STDOUT" /> -->
+      </root>
 
-</configuration>
-```
+    </configuration>
+    ```
+<a class="anchor" id="step2passtheconfigurationfiletothejavaapplicationserver"></a>
+1. Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow [step 4]({{ site.baseurl }}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5]({{ site.baseurl }}/enterprise/server/#step5restartthejavaapplicationserver) on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
 
-### Step 2. Pass the configuration file to the Java application server
-
-Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow [step 4]({{ site.baseurl }}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5]({{ site.baseurl }}/enterprise/server/#step5restartthejavaapplicationserver) on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
-
-```
--Dlogback.configurationFile=/etc/opt/tinymce/logback.xml
-```
+    ```
+    -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml
+    ```

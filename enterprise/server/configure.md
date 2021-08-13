@@ -371,7 +371,7 @@ ephox {
 
 ### `spelling` (optional)
 
-The Spelling service has three configurable settings:
+The Spelling service has these configurable settings:
 
 - `hunspell-dictionaries-path`
 - `custom-dictionaries-path`

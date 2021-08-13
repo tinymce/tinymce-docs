@@ -3,7 +3,7 @@ layout: default
 title: Add Hunspell dictionaries to Spell Checker Pro
 title_nav: Using Hunspell dictionaries
 description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker Pro.
-keywords: enterprise tinymcespellchecker spell check checker pro server configuration configure
+keywords: enterprise tinymcespellchecker hunspell spell check checker pro server configuration configure
 ---
 
 {{site.requires_5_9v}}

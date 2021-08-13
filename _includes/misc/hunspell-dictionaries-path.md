@@ -1,6 +1,6 @@
 {{site.requires_5_9v}}
 
-The `ephox.spelling.hunspell-dictionaries-path` element is used to define the location of the Hunspell dictionaries. When the setting is not provided, Hunspell dictionaries are not supported.
+The `ephox.spelling.hunspell-dictionaries-path` property is used to define the location of the Hunspell dictionaries. When the setting is not provided, Hunspell dictionaries are not supported.
 
 Requirements:
 

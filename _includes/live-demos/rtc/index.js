@@ -2,15 +2,62 @@
 tinymce.ScriptLoader.loadScripts([
   'https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js',
   'https://cdn.jsdelivr.net/npm/pouchdb@7/dist/pouchdb.min.js',
-  'https://cdn.jsdelivr.net/npm/jsrsasign@10/lib/jsrsasign.min.js',
+  'https://cdn.jsdelivr.net/npm/jsrsasign@10.3.0/lib/jsrsasign-all-min.js',
   '//unpkg.com/@pollyjs/core@5.1.1',
   '//unpkg.com/@pollyjs/adapter-fetch@5.1.1',
   '//unpkg.com/@pollyjs/persister-local-storage@5.1.1',
   ], () => {
 
+  /*
+   * WARNING: Never publish PUBLIC KEYS. The following key has been included as part of the "mock" server-side set up for this demo.
+   */
+
   /**********************************
    * Mock web server implementation *
    **********************************/
+
+  function randomString() {
+    /*
+     * Generating a random string to use as a document ID.
+     * This can be any string, but must be unique.
+     */
+    return Math.random().toString(32).split('.')[1]
+  }
+
+  /* Generate a document ID */
+  const documentID = randomString();
+
+  /* Generating random encryption key and keyHint for demonstration purposes */
+  const demoEncryptionKeyPair = {
+    key: randomString(),
+    keyHint: randomString(),
+  };
+
+  /*
+    * Warning: Do not generate keypairs in the browser for a production
+    * environment. This is for demonstration purposes only.
+    */
+  /* Using jsrsasign https://kjur.github.io/jsrsasign/api/symbols/KEYUTIL.html */
+  const insecureKeypairForJWT = KEYUTIL.generateKeypair('RSA', 512);
+  const insecurePrivateKeyForJWT = insecureKeypairForJWT.prvKeyObj,
+        insecurePublicKeyForJWT = insecureKeypairForJWT.pubKeyObj;
+
+  function jwtGenerator(user, documentID, algorithm, privateKey) {
+    const header = {alg: algorithm, typ: 'JWT'};
+    let payload = new Object();
+    const generationTime = KJUR.jws.IntDate.get('now');
+    const expirationTime = KJUR.jws.IntDate.get('now + 1hour');
+    payload.sub = user;
+    payload.exp = expirationTime;
+    payload.iss = "example.com";
+    payload.nbf = generationTime;
+    payload.iat = generationTime;
+    payload.did = documentID;
+
+    const stringHeader = JSON.stringify(header),
+          stringPayload = JSON.stringify(payload);
+    return KJUR.jws.JWS.sign(algorithm, stringHeader, stringPayload, privateKey)
+  }
 
   let { Polly } = window['@pollyjs/core'];
   let FetchAdapter = window['@pollyjs/adapter-fetch'];
@@ -18,64 +65,41 @@ tinymce.ScriptLoader.loadScripts([
 
   Polly.register(FetchAdapter);
   Polly.register(LocalStoragePersister);
-  let polly = new Polly('test', {
+  let polly = new Polly('docs-rtc-demo', {
     adapters: ['fetch'],
     persister: 'local-storage',
+    logging: true,
   });
   let server = polly.server;
 
-  server.any().on('request', (req) => {
-    console.log('Server request:', req);
-  });
-
-  server.any().on('beforeResponse', (req, res) => {
-    console.log('Server response:', res);
-  });
-
-  /* Our server "database" */
-  function getDB() {
-    return JSON.parse(localStorage.getItem('fakedb') ?? '{}');
-  }
-  function setDB(data) {
-    localStorage.setItem('fakedb', JSON.stringify(data));
-  }
-
-  function setConversation(uid, conversation) {
-    let store = getDB();
-    console.log('DB set:', uid, store[uid], conversation);
-    store[uid] = conversation;
-    setDB(store);
-  }
-
   server.host('https://api.example', () => {
-    /* create new conversation */
-    server.post('/conversations/').intercept((req, res) => {
-      let author = getAuthor();
-      let { content, createdAt } = JSON.parse(req.body);
-      console.log(req.body);
-      try {
-        let conversationUid = randomString();
-        setConversation(conversationUid, [
-          {
-            author,
-            createdAt,
-            modifiedAt: createdAt,
-            content,
-            uid: conversationUid /* first comment has same uid as conversation */,
-          },
-        ]);
-        res.status(201).json({ conversationUid });
-      } catch (e) {
-        console.log('Server error:', e);
-        res.status(500);
-      }
+    /* JWT provider - basic example */
+    server.post('/getJwtToken/')
+      .intercept((req, res) => {
+        const { documentID, userID } = JSON.parse(req.body);
+        try {
+          res.status(200).json({
+            token: jwtGenerator(userID, documentID, 'RS256', insecurePrivateKeyForJWT)
+          });
+        } catch { (error) => {
+          console.log('JWT server error:', error);
+          res.status(404);
+        }
+      };
     });
-
-    /* lookup users */
-    server.get('/users/').intercept((req, res) => {
-      res.status(200).json({
-        users,
-      });
+    server.post('/getEncryptionKey/')
+      .intercept((req, res) => {
+        const { documentID, keyHint } = JSON.parse(req.body);
+        try {
+          res.status(200).json({
+            key: demoEncryptionKeyPair.key,
+            keyHint: demoEncryptionKeyPair.keyHint,
+          });
+        } catch { (error) => {
+          console.log('Encryption Key server error:', error);
+          res.status(404);
+        }
+      };
     });
   }); /* server.host */
 
@@ -117,16 +141,10 @@ tinymce.ScriptLoader.loadScripts([
    * Create a fake identity server using PouchDB for
    * simulating queries for user data
    */
-  const usersServer = new PouchDB('userServer').destroy().then(
-    () => {
-      return new PouchDB('userServer')
-    }).then(
-      (db) => {
-        db.bulkDocs(userArray)
-        .catch((err) => {
-      console.log('User database failed to initialize:\n' + err);
-    });
-  });
+  const usersServer = new PouchDB('userServer').destroy()
+  .then(() => new PouchDB('userServer'))
+  .then(db => db.bulkDocs(userArray))
+  .catch(err => console.log('User database failed to initialize:\n' + err));
 
   /*  */
   function getUserDetails(userId) {
@@ -154,18 +172,6 @@ tinymce.ScriptLoader.loadScripts([
    * option.
    */
   const initialEditorContent = '<p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="../../../labs/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128" /></p><h2 style="text-align: center;">Welcome to the TinyMCE Real-Time Collaboration demo!</h2><p>This editor is collaborating with the other editor on the page. Try editing the content by adding images, lists, or any other currently supported content, it should appear in the other editor too!</p><h2>Got questions or need help?</h2><ul><li>Our <a class="mceNonEditable" href="../../">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li></ul><h2>Found a bug?</h2><p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p><h2>Finally,</h2><p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br />All the best from the TinyMCE team.</p>';
-
-
-  function randomString() {
-    /*
-     * Generating a random string to use as a document ID.
-     * This can be any string, but must be unique.
-     */
-    return Math.random().toString(32).split('.')[1]
-  }
-
-  /* Generate a document ID */
-  const documentID = randomString();
 
   /*
    * Create a fake content ('document') server using PouchDB for simulating
@@ -206,9 +212,9 @@ tinymce.ScriptLoader.loadScripts([
      * TinyMCE init function. Wrapped in a function to allow the same
      * configuration to be used for two 'independent' editors on the same page.
      */
-  function ed (parent_attr) {
+  function createTinyMCEInstance (parent_attr,editorID,userID) {
     tinymce.init({
-      selector: 'textarea[rtc-editor]',
+      selector: editorID,
       plugins: 'rtc advlist autoresize charmap emoticons help hr image insertdatetime link lists powerpaste print save tabfocus visualblocks wordcount',
       menubar: 'file edit insert view format table tools help',
       toolbar: 'formatting alignment | bullist numlist | insert | help',
@@ -233,7 +239,8 @@ tinymce.ScriptLoader.loadScripts([
         editor.on('init', function(e) {
           /*
            * Set the editor to visible once external scripts used for fake
-           * server-side components have loaded (such as faker.js and pouchdb)
+           * server-side components have loaded (such as faker.js, polly.js
+           * and pouchdb).
            */
           document.querySelectorAll(parent_attr).forEach((node) => {
             node.style.display = 'block';
@@ -241,8 +248,8 @@ tinymce.ScriptLoader.loadScripts([
         });
       },
       rtc_document_id: documentID,
-      rtc_encryption_provider: ({documentId, newKey, keyHint}) => {
-        fetch('/getKey', {
+      rtc_encryption_provider: ({documentId, keyHint}) => {
+        fetch('https://api.example/getEncryptionKey/', {
           method: 'POST',
           credentials: 'include',
           body: JSON.stringify({ documentId, newKey, keyId: keyHint })
@@ -254,15 +261,17 @@ tinymce.ScriptLoader.loadScripts([
          ({keyId, secret}) => {
            ({ key: secret, keyHint: keyId })
           })},
-      rtc_token_provider: () => {
-        fetch('/getJwtToken', {
+      rtc_token_provider: () =>
+        fetch('https://api.example/getJwtToken/', {
           method: 'POST',
-          credentials: 'include'
+          credentials: 'include',
+          body: JSON.stringify({ documentID, userID })
         })
       .then(
-        (response) => { response.json() }
+        (response) => {
+          return response.json() }
         )
-      },
+        .catch((error) => console.log('Failed to return a JWT\n' + error)),
       /* rtc_server_disconnected
       rtc_user_details_provider: (userId) => Promise.resolve(getUserDetails(userId)),
       rtc_snapshot: () =>
@@ -272,5 +281,6 @@ tinymce.ScriptLoader.loadScripts([
       rtc_client_disconnected */
     });
   }
-  ed('[rtc-editor-parent]')
+  createTinyMCEInstance('[rtc-editor-parent]', 'textarea#rtc-editor-1', currentUser1);
+  createTinyMCEInstance('[rtc-editor-parent]', 'textarea#rtc-editor-2', currentUser2);
 });

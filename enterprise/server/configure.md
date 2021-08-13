@@ -7,29 +7,30 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
 
 ## Overview
 
-* Creating a configuration file
-* General service settings
-  * `allowed-origins` (required)
-    * Wildcard support
-    * Regular Expressions support
-    * `allowed-origins.same-origin` (optional)
-    * `allowed-origins.ignore-port` (optional)
-    * Troubleshooting Origins
-  * `proxy` (optional)
-  * `http` (optional)
-    * Alternative http timeout settings
-* Image proxy service settings
-  * `image-proxy` (optional)
-* Hyperlinking service settings
-  * `link-checking` (optional)
-    * `enabled` (optional)
-    * `fallback-to-get` (optional)
-    * `cache` (optional)
-* Spelling service settings
-  * `spelling` (optional)
-    * `custom-dictionaries-path` (optional)
-    * `dynamic-custom-dictionaries` (optional)
-* Logging service activity
+* [Creating a configuration file](#creatingaconfigurationfile)
+* [General service settings](#generalservicesettings)
+  * [allowed-origins (required)](#allowed-originsrequired)
+    * [Wildcard support](#wildcardsupport)
+    * [Regular Expressions support](#regularexpressionssupport)
+    * [allowed-origins.same-origin (optional)](#allowed-originssame-originoptional)
+    * [allowed-origins.ignore-port (optional)](#allowed-originsignore-portoptional)
+    * [Troubleshooting Origins](#troubleshootingorigins)
+  * [proxy (optional)](#proxyoptional)
+  * [http (optional)](#httpoptional)
+    * [Alternative http timeout settings](#alternativehttptimeoutsettings)
+* [Image proxy service settings](#imageproxyservicesettings)
+  * [image-proxy (optional)](#image-proxyoptional)
+* [Hyperlinking service settings](#hyperlinkingservicesettings)
+  * [link-checking (optional)](#link-checkingoptional)
+    * [enabled (optional)](#enabledoptional)
+    * [fallback-to-get (optional)](#fallback-to-getoptional)
+    * [cache (optional)](#cacheoptional)
+* [Spelling service settings](#spellingservicesettings)
+  * [spelling (optional)](#spellingoptional)
+    * [hunspell-dictionaries-path (optional)](#hunspell-dictionaries-pathoptional)
+    * [custom-dictionaries-path (optional)](#custom-dictionaries-pathoptional)
+    * [dynamic-custom-dictionaries (optional)](#dynamic-custom-dictionariesoptional)
+* [Logging service activity](#loggingserviceactivity)
 
 ## Creating a configuration file
 
@@ -378,6 +379,8 @@ The Spelling service has these configurable settings:
 - `dynamic-custom-dictionaries`
 
 #### `hunspell-dictionaries-path` (optional)
+
+{{site.requires_5_9v}}
 
 {% include misc/hunspell-dictionaries-path.md %}
 

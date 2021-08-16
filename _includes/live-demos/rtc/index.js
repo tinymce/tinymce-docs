@@ -8,10 +8,6 @@ tinymce.ScriptLoader.loadScripts([
   '//unpkg.com/@pollyjs/persister-local-storage@5.1.1',
   ], () => {
 
-  /*
-   * WARNING: Never publish PUBLIC KEYS. The following key has been included as part of the "mock" server-side set up for this demo.
-   */
-
   /**********************************
    * Mock web server implementation *
    **********************************/
@@ -38,9 +34,7 @@ tinymce.ScriptLoader.loadScripts([
     * environment. This is for demonstration purposes only.
     */
   /* Using jsrsasign https://kjur.github.io/jsrsasign/api/symbols/KEYUTIL.html */
-  const insecureKeypairForJWT = KEYUTIL.generateKeypair('RSA', 512);
-  const insecurePrivateKeyForJWT = insecureKeypairForJWT.prvKeyObj,
-        insecurePublicKeyForJWT = insecureKeypairForJWT.pubKeyObj;
+  const insecurePrivateKeyForJWT = KEYUTIL.getKeyFromPlainPrivatePKCS8PEM();
 
   function jwtGenerator(user, documentID, algorithm, privateKey) {
     const header = {alg: algorithm, typ: 'JWT'};

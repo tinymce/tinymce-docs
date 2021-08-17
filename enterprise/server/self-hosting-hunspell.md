@@ -8,7 +8,7 @@ keywords: enterprise tinymcespellchecker hunspell spell check checker pro server
 
 {{site.requires_5_9v}}
 
-{{site.productname}} 5.9 introduced support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {{site.productname}} Spell Checker Pro. {{site.companyname}} provides dowloadable bundles that have the required structure.
+{{site.productname}} 5.9 introduced support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {{site.productname}} Spell Checker Pro. {{site.companyname}} provides downloadable bundles that have the required structure.
 
 To add Hunspell dictionaries to a self-hosted {{site.productname}}:
 

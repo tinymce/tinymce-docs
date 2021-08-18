@@ -233,7 +233,7 @@ This is not recommended for production environments.
 
 |     Type      | Setting                   | Description                                                                                                          |
 |:-------------:|---------------------------|----------------------------------------------------------------------------------------------------------------------|
-|  **element**  | `http`                    | Configures  HTTP client behavior.                                                                                   |
+|  **element**  | `http`                    | Configures HTTP client behavior.                                                                                   |
 | **attribute** | `trust-all-cert`          | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. Default: false |
 | **attribute** | `request-timeout-seconds` | An integer defining the number of seconds to allow HTTP requests to take. Default: 10                                |
 

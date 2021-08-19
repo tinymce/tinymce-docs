@@ -6,10 +6,6 @@ description: Getting started with RTC
 keywords: rtc
 ---
 
-{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
-{% assign pre-release_type = "Open Beta" %}
-{% include misc/beta-note.md %}
-
 {% include live-demo.html id="rtc" %}
 
 ## Prerequisites

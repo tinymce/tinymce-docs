@@ -28,11 +28,17 @@ JWT is a standard authorization solution for web services and is documented in m
 
 These are like options/data you can send with the JWT token.
 
-<dl>
-<dt><code>sub</code> <em>(required)</em></dt><dd>Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.</dd>
-<dt><code>name</code> <em>(required)</em></dt><dd>Full name of the user that will be used for presentation inside {{site.cloudfilemanager}}. When the user uploads a file, this name is presented as the creator of that file.</dd>
-<dt><code>https://claims.tiny.cloud/drive/root</code> <em>(optional)</em></dt><dd>Full path to a {{site.cloudfilemanager}} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.</dd>
-</dl>
+`sub` _(required)_
+: **Type**: `string`
+: Unique string or URI to identify the user. This can be a database ID, hashed email address, or similar identifier.
+
+`name` _(required)_
+: **Type**: `string`
+: Full name of the user that will be used for presentation inside {{site.cloudfilemanager}}. When the user uploads a file, this name is presented as the creator of that file.
+
+`https://claims.tiny.cloud/drive/root` _(optional)_
+: **Type**: `string`
+: Full path to a {{site.cloudfilemanager}} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
 
 > **Note**: The "`sub`" claim is a case-sensitive string containing a **String** or **URI** value. The `sub` claim cannot have a `:` *unless* it is a valid URI or else the callback will fail.
 

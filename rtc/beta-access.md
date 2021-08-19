@@ -6,10 +6,6 @@ description: Beta specific access and setup
 keywords: rtc
 ---
 
-{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
-{% assign pre-release_type = "Open Beta" %}
-{% include misc/beta-note.md %}
-
 ## Accessing the Real-Time Collaboration (RTC) plugin beta
 
 To try the RTC beta plugin:
@@ -29,7 +25,7 @@ To create a {{site.accountpage}}, visit the [{{site.accountpage}} sign-up page](
 To access the {{site.cloudname}} RTC channel (`5-rtc`), source {{site.productname}} using the following script:
 
 ```js
-<script src="{{site.cdnurl_rtc}}" referrerpolicy="origin"></script>
+<script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
 ```
 
 Replace `no-api-key` in the source script (`<script src=...`) with a {{site.accountpage}} API key, which is created when signing up to [{{site.accountpage}}]({{site.accountsignup}}).

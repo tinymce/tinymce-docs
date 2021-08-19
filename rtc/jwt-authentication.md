@@ -6,10 +6,6 @@ description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
 
-{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
-{% assign pre-release_type = "Open Beta" %}
-{% include misc/beta-note.md %}
-
 {% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
 ## Introduction
@@ -30,10 +26,10 @@ JWT is a standard authorization solution for web services and is documented in m
 
 Claims are additional data that can be sent as part of the JWT payload. RTC requires the following claims:
 
-| Data | Optional or required | Description |
-|---|:---:|---|
-| `sub` | required | The unique user ID (for example, if `sub` is the same for two clients, you should trust them as if they're the same user). |
-| `exp` | required | The unix timestamp when the token expires. |
+| Data | Optional or required | Type | Description |
+|---|:---:|:---:|---|
+| `sub` | required | `string` or `URI` | The unique user ID string or URI (for example, if `sub` is the same for two clients, you should trust them as if they're the same user). |
+| `exp` | required | `number` | The unix timestamp when the token expires. |
 
 The `sub` field is used to identify users to avoid sending sensitive or identity information to {{site.companyname}} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
 

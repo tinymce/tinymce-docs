@@ -264,7 +264,16 @@ tinymce.ScriptLoader.loadScripts([
           return response.json() }
         )
         .catch((error) => console.log('Failed to return a JWT\n' + error)),
-      rtc_user_details_provider: ({userId}) => Promise.resolve(getUserDetails(userId)),
+      rtc_user_details_provider: ({userId}) => {
+        return fetch('/getUserDetails', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({userId})
+        }).then(response => response.json());
+      },
       /* rtc_server_disconnected
       rtc_snapshot: () =>
       rtc_initial_content_provider: (docID) => Promise.resolve(getDoc(docID))

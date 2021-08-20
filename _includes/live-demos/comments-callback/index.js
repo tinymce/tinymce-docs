@@ -18,16 +18,9 @@ tinymce.ScriptLoader.loadScripts(
     let polly = new Polly('test', {
       adapters: ['fetch'],
       persister: 'local-storage',
+      logging: true,
     });
     let server = polly.server;
-
-    server.any().on('request', (req) => {
-      console.log('Server request:', req);
-    });
-
-    server.any().on('beforeResponse', (req, res) => {
-      console.log('Server response:', res);
-    });
 
     /* this would be an admin for the file, they're allowed to do all operations */
     function getOwner() {

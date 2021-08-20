@@ -292,6 +292,8 @@ tinymce.init({
 
 ### `rtc_initial_content_provider`
 
+<!--content provided via this method will have precedent-->
+
 By default, the initial editor content is retrieved from the element targeted using the {{site.productname}} [`selector` option]({{site.baseurl}}/configure/integration-and-setup/#selector).
 
 The `rtc_initial_content_provider` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {{site.productname}} [integrations]({{site.baseurl}}/integrations/)) that don't provide access to the target element directly.

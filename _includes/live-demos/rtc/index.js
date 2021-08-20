@@ -1,11 +1,21 @@
-/* Script to import faker.js for generating random data for demonstration purposes */
+/* Script to import polly.js for simulating servers and logging requests to the console */
 tinymce.ScriptLoader.loadScripts([
-  'https://cdn.jsdelivr.net/npm/pouchdb@7/dist/pouchdb.min.js',
   '//unpkg.com/@pollyjs/core@5.1.1',
   '//unpkg.com/@pollyjs/adapter-fetch@5.1.1',
   '//unpkg.com/@pollyjs/persister-local-storage@5.1.1',
   ], () => {
 
+  /*
+   * Initial content for the editor, to be added to the document database and
+   * loaded into the editor using the optional `rtc_initial_content_provider`
+   * option.
+   */
+  const initialEditorContent = '{{site.logoForDemosHTML}}<h2 style="text-align: center;">Welcome to the TinyMCE Real-Time Collaboration demo!</h2><p>This editor is collaborating with the other editor on the page. Try editing the content by adding images, lists, or any other currently supported content, it should appear in the other editor too!</p><p>All network requests made by this demo, fake or real, are logged in the browser console using <a href="https://netflix.github.io/pollyjs" target="_blank" rel="noopener">Polly.js</a> (the browser console is typically accessed using the F12 key).</p><h2>Got questions or need help?</h2><ul><li>Our <a class="mceNonEditable" href="../../">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li></ul><h2>Found a bug?</h2><p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p><h2>Finally,</h2><p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br />All the best from the TinyMCE team.</p>';
+
+  /*
+   * The following JWTs have been pre-generated for demonstration purposes.
+   * These JWTs are passed to TinyMCE through the getJwtToken endpoint/server.
+   */
   const fakeJWTs = [
     {_id: 'melyna_hartmann28',token: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtZWx5bmFfaGFydG1hbm4yOCIsImV4cCI6MjA4Mjc1ODM5OSwiaXNzIjoiZXhhbXBsZS5jb20iLCJuYmYiOjE2MjUwOTc2MDAsImlhdCI6MTYyNTA5NzYwMH0.G9Zq2TYpnn--V_OKF5zBLktzaBDO7YwPM3jR2uNuWgv6rkkyufxgog72znfMYREBWiEDtFKOP3vovwAu_-hASUL-wP8WLq82Rl9z8EawDuotka_FO0jHeVpBsIGc5nb-qWzIdp861uiVk5Fwml-P0Lt7LOQupYl83FDCT2oONyWpNVWGcyBbhB8riIQ-w2ZPTrTVsm2rRMlnH-7FeNWMznAlFAGCMe5_m66KxzAHxPqzG0h53M_sVeZboRohbIUQm6EnmaFqdHYg7T21TPApdmXrNAx7v0YKsHgvmgg5mtzJdK4jt1ZHGsRMaV7iKregBVglJ8vsxJw62MoP-Llu2A'},
     {_id: 'nettie_kuhic',token: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuZXR0aWVfa3VoaWMiLCJleHAiOjIwODI3NTgzOTksImlzcyI6ImV4YW1wbGUuY29tIiwibmJmIjoxNjI1MDk3NjAwLCJpYXQiOjE2MjUwOTc2MDB9.Sg3Bz0Vb9w1eYqLBkQDpw5cwl4JN6iml9zaj4-ZdXkn7eWPCrj_rCaHJmp8dIzTEVJb0BpT0L0YgOj_FsdZvm_vIYMIFbIfgERqUiimSj_RfpuNOsMjgVmfwkI0-N1RTJDxM1vLEbfZ0T89rMGNaNX5tJvsFrSyMFjxdJTw50S1-K3AiqNGwaLFmESZg9qsjsRyyMurpUp8--gvqKCvecFD0jNxbCJg1CxmU0WQk1yWNqgyzK5HdjlbRfLWwavumBC7ZW_j1oqSxYZKh93BzlfVAWo91xgDjzAGzkmHWUysG-dTUvSCDXEJd5zGskaU46E_lMeFVgUm11O2ji4Ugmw'},
@@ -20,7 +30,11 @@ tinymce.ScriptLoader.loadScripts([
     {_id: 'guadalupe48',token: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJndWFkYWx1cGU0OCIsImV4cCI6MjA4Mjc1ODM5OSwiaXNzIjoiZXhhbXBsZS5jb20iLCJuYmYiOjE2MjUwOTc2MDAsImlhdCI6MTYyNTA5NzYwMH0.TmtHW1iNjAD7bzVfSOKPt3I5uDOHxbpqh6zIJdP28NpRxWKacrgUdBHvudr-LoIHt4mFtD3J1A2hLlG4t6woCDxvZ-M1f3sLdSMj0M0_kSWfx1-NgDd5OBirlHVLyIkT5AnTrwsWsjLI6EMpk8MR34jIjL-xZ_ejH7MukWLnyJh2Z99Fz3TV9JNHigMzv4q7jHBUEBa12obua9Y8B2_TcY1i8VXiDtqDT8X0Kzd3xztCv2qqPaNICZ6Y8lZ6cD2YV5-iF78BzS4QV19JpzRZJjm2fJjLOYHh8HcT1YbGUehxrjx5xOdKpi5UzU2nfyUZI9hPLQY0YoTXCJ-q8sYyjA'},
     {_id: 'jayde92',token: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqYXlkZTkyIiwiZXhwIjoyMDgyNzU4Mzk5LCJpc3MiOiJleGFtcGxlLmNvbSIsIm5iZiI6MTYyNTA5NzYwMCwiaWF0IjoxNjI1MDk3NjAwfQ.E9vfaoSccchvyQGi0lchMc9Yy3RHWq2LJaGPZdT78p073PvCxnS1FSzGVGdJ1k2mV_Wr_1XADvVHn4Sw1llXqaqGHu4NDT72s651FlorIaJ5yhWtXs1dWZgMo0HsFWJ7L5Gj0mv-XDd1ywMw5blMNPLlv6vMpVNHvPgXvShpsWmBHa2qh-Zj83JvpTZ5PTnaIZWmV7apGFySV-ethhKK6IdCajCNKH5JrfypKgFobgMrksX-wHF-Q6-RFzMcnAW0-bKPuNXheZSlSSN01CzrAee08TqJLIvi6_31l2qxtIvcWtCGHDyDk1lj1yqSR1Gpe_VV5bELC2HmAxFi30tFpA'}
   ];
-
+  /*
+   * A set of pregenerated fake users. The user details are passed to TinyMCE
+   * using the getUserDetails endpoint/server so full names or other details can
+   * be presented in the UI.
+   */
   const fakeUsers = [
     {_id: 'melyna_hartmann28',firstname: 'Melyna',lastname: 'Hartmann',fullname: 'Miss Melyna Hartmann',email: 'melyna62@hotmail.com'},
     {_id: 'nettie_kuhic',firstname: 'Nettie',lastname: 'Kuhic',fullname: 'Nettie Kuhic Jr.',email: 'nettie.kuhic@gmail.com'},
@@ -36,14 +50,16 @@ tinymce.ScriptLoader.loadScripts([
     {_id: 'jayde92',firstname: 'Jayde',lastname: 'Gutkowski',fullname: 'Jayde Gutkowski',email: 'jayde11@gmail.com'}
   ];
 
-  /**********************************
-   * Mock web server implementation *
-   **********************************/
   function getRandomInt(max) {
+    /* Random number generator */
     return Math.floor(Math.random() * (max));
   }
 
   function getTwoRandomInt(max) {
+    /*
+     * Generates two random, numbers with removal
+     * (so there are always to different fake users)
+     */
     let tempArray = [...Array(max).keys()];
     const valueOne = getRandomInt(tempArray.length);
     tempArray = tempArray.filter(item => item !== valueOne);
@@ -53,8 +69,9 @@ tinymce.ScriptLoader.loadScripts([
 
   function randomString() {
     /*
-     * Generating a random string to use as a document ID.
-     * This can be any string, but must be unique.
+     * Generating a random string to use as a document ID, Encryption key, and
+     * Encryption keyHint (randomized for demonstration purposes only).
+     * These values can be any string, but must be unique.
      */
     return Math.random().toString(32).split('.')[1]
   }
@@ -67,6 +84,10 @@ tinymce.ScriptLoader.loadScripts([
     key: randomString(),
     keyHint: randomString(),
   };
+
+  /**********************************
+   * Mock web server implementation *
+   **********************************/
 
   let { Polly } = window['@pollyjs/core'];
   let FetchAdapter = window['@pollyjs/adapter-fetch'];
@@ -82,7 +103,10 @@ tinymce.ScriptLoader.loadScripts([
   let server = polly.server;
 
   server.host('https://api.example', () => {
-    /* JWT provider - basic example */
+    /*
+     * JWT provider/endpoint. A real JWT endpoint would generate a JWT
+     * and it to user's editor, rather than using a static list.
+     */
     server.post('/getJwtToken/')
       .intercept((req, res) => {
         const { userID } = JSON.parse(req.body);
@@ -96,6 +120,11 @@ tinymce.ScriptLoader.loadScripts([
         }
       };
     });
+    /*
+     * Encryption key endpoint. These should be generated for each document.
+     * The same encryption key needs to be sent to all users on the document and
+     * is not sent to the RTC server.
+     */
     server.post('/getEncryptionKey/')
       .intercept((req, res) => {
         const { documentID, keyHint } = JSON.parse(req.body);
@@ -104,130 +133,70 @@ tinymce.ScriptLoader.loadScripts([
             key: demoEncryptionKeyPair.key,
             keyHint: demoEncryptionKeyPair.keyHint,
           });
-        } catch { (error) => {
+        } catch (error) {
           console.log('Encryption Key server error:', error);
           res.status(404);
         }
-      };
+    });
+    /*
+     * This endpoint is for sending user details to TinyMCE for the
+     * collaborator's username shown on the caret in the editors and can be used
+     * in the rtc_client_connected and rtc_client_disconnected options.
+     */
+    server.post('/getUserDetails/')
+      .intercept((req, res) => {
+        const { userId } = JSON.parse(req.body);
+        try {
+          const userDetails = fakeUsers.find( (user) => { return user._id === userId } );
+          res.status(200).json(
+            {
+              fullName: userDetails.fullname,
+              firstName: userDetails.firstname,
+              lastName: userDetails.lastname,
+              email: userDetails.email,
+            }
+          );
+        } catch (error) {
+          console.log('Error getting user details:', error);
+          res.status(404);
+        }
     });
   }); /* server.host */
 
   /* Connect using the `connectTo` API */
   polly.connectTo('fetch');
 
-  /***********************************
-   * Mock user server implementation *
-   ***********************************/
-
-  /* Create a list of users and set 'user' for each editor. */
+  /* Retrieve random two users, one for each editor. */
   const sessionUsers = getTwoRandomInt(fakeUsers.length);
   const currentUser1 = fakeUsers[sessionUsers[0]]._id,
         currentUser2 = fakeUsers[sessionUsers[1]]._id;
 
-  /*
-   * Create a fake identity server using PouchDB for
-   * simulating queries for user data
-   */
-  const usersServer = new PouchDB('userServer').destroy()
-  .then(() => new PouchDB('userServer'))
-  .then(db => db.bulkDocs(fakeUsers))
-  .catch(err => console.log('User database failed to initialize:\n' + err));
-
-  /*  */
-  function getUserDetails(userId) {
-    usersServer.get(userID)
-    .then((result) => {
-      return {
-        fullName: result.fullname,
-        firstName: result.firstname,
-        lastName: result.lastname,
-        email: result.email,
-      }
-    })
-    .catch((err) => {
-      console.log('Failed to retrieve user details:\n' + err);
-    });
-  }
-
-  /***********************************************
-   * Mock document/content server implementation *
-   ***********************************************/
+  /* Set up a connected users object for maintaining a list of connected users */
+  const connectedUsers = {};
 
   /*
-   * Initial content for the editor, to be added to the document database and
-   * loaded into the editor using the optional `rtc_initial_content_provider`
-   * option.
+   * TinyMCE init function. Wrapped in a function to allow the same
+   * configuration to be used for two 'independent' editors on the same page.
    */
-  const initialEditorContent = '{{site.logoForDemosHTML}}<h2 style="text-align: center;">Welcome to the TinyMCE Real-Time Collaboration demo!</h2><p>This editor is collaborating with the other editor on the page. Try editing the content by adding images, lists, or any other currently supported content, it should appear in the other editor too!</p><h2>Got questions or need help?</h2><ul><li>Our <a class="mceNonEditable" href="../../">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li></ul><h2>Found a bug?</h2><p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p><h2>Finally,</h2><p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br />All the best from the TinyMCE team.</p>';
-
-  /*
-   * Create a fake content ('document') server using PouchDB for simulating
-   * a self-hosted document storage for user documents.
-   */
-    const contentServer = new PouchDB('contentServer').destroy().then(
-      () => {
-        return new PouchDB('contentServer')
-      }).then(
-        /* Add initial content for the editor (not required) */
-        (db) => {
-          db.put({
-            _id: documentID,
-            content: initialEditorContent,
-            snapshot_version: null,
-          })
-          .catch((err) => {
-        console.log('Content database failed to initialize:\n' + err);
-      });
-    });
-
-    /* Get document */
-    function getDoc (documentID) {
-      contentServer.get(documentID)
-      .then((result) => {
-        return {
-          doc_id: result._id,
-          doc_content: result.content,
-          snapshot_version: result.snapshot_version,
-        }
-      })
-      .catch((err) => {
-        console.log('Failed to get content from the document database:\n' + err);
-      });
-    }
-
-    /*
-     * TinyMCE init function. Wrapped in a function to allow the same
-     * configuration to be used for two 'independent' editors on the same page.
-     */
-  function createTinyMCEInstance (parent_attr,editorID,userID) {
+  function createTinyMCEInstance (parent_attr, editorID, userID, collaboratorUsernameElem) {
     tinymce.init({
       selector: editorID,
-      plugins: 'rtc advlist autoresize charmap emoticons help hr image insertdatetime link lists powerpaste print save tabfocus visualblocks wordcount',
+      plugins: 'rtc advlist charmap emoticons help hr image insertdatetime link lists powerpaste print save tabfocus visualblocks wordcount',
       menubar: 'file edit insert view format table tools help',
-      toolbar: 'formatting alignment | bullist numlist | insert | help',
+      toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | insert | help',
+      height: 400,
       toolbar_groups: {
-        formatting: {
-          icon: 'bold',
-          tooltip: 'Formatting',
-          items: 'bold italic underline | superscript subscript'
-        },
         insert: {
           icon: 'plus',
           tooltip:'Insert',
           items: 'link | charmap emoticons | image | insertdatetime'
-        },
-        alignment: {
-          icon: 'align-left',
-          tooltip: 'Alignment',
-          items: 'alignleft aligncenter alignright | alignjustify'
         }
       },
       setup: function(editor) {
         editor.on('init', function(e) {
           /*
            * Set the editor to visible once external scripts used for fake
-           * server-side components have loaded (such as faker.js, polly.js
-           * and pouchdb).
+           * server-side components have loaded (such as polly.js).
            */
           document.querySelectorAll(parent_attr).forEach((node) => {
             node.style.display = 'block';
@@ -259,29 +228,45 @@ tinymce.ScriptLoader.loadScripts([
           },
           body: JSON.stringify({ userID })
         })
-      .then(
-        (response) => {
-          return response.json() }
-        )
+        .then((response) => { return response.json() })
         .catch((error) => console.log('Failed to return a JWT\n' + error)),
       rtc_user_details_provider: ({userId}) => {
-        return fetch('/getUserDetails', {
+        return fetch('https://api.example/getUserDetails/', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({userId})
-        }).then(response => response.json());
+        }).then(response => {return response.json()});
       },
-      /* rtc_server_disconnected
-      rtc_snapshot: () =>
-      rtc_initial_content_provider: (docID) => Promise.resolve(getDoc(docID))
-      rtc_client_info
-      rtc_client_connected
-      rtc_client_disconnected */
+      rtc_initial_content_provider: () => Promise.resolve({ content: initialEditorContent }),
+      rtc_client_connected: ({userDetails, userId, caretNumber, clientId}) => {
+        connectedUsers[clientId] = {
+          caretNumber,
+          userDetails,
+          userId
+        };
+        /* Adds the collaborator above the editor and logs details to the console */
+        document.getElementById(collaboratorUsernameElem).innerText = userDetails.fullName;
+        console.log(`Fake user ${userDetails.fullName} (${userDetails.email}) connected with caret number ${caretNumber}`);
+      },
+      rtc_client_disconnected: ({clientId, userDetails}) => {
+        delete connectedUsers[clientId];
+        /* Removes collaborator from above the editor and logs to the console */
+        document.getElementById(collaboratorUsernameElem).innerText = userDetails.fullName;
+        console.log(`Fake user ${userDetails.fullName} (${userDetails.email}) disconnected`);
+      }
     });
   }
-  createTinyMCEInstance('[rtc-editor-parent]', 'textarea#rtc-editor-1', currentUser1);
-  createTinyMCEInstance('[rtc-editor-parent]', 'textarea#rtc-editor-2', currentUser2);
+  /* Create the two separate editors */
+  createTinyMCEInstance('[rtc-editor-parent]', 'textarea#rtc-editor-1', currentUser1, 'otherfakeuser1');
+  createTinyMCEInstance('[rtc-editor-parent]', 'textarea#rtc-editor-2', currentUser2, 'otherfakeuser2');
+
+  /*
+   * Add the "current user" of the editor above each instance, outside the
+   * editor, for reference purposes only
+   */
+  document.getElementById('fakedemouser1').innerText = fakeUsers.find( (user) => { return user._id === currentUser1 } ).fullname;
+  document.getElementById('fakedemouser2').innerText = fakeUsers.find( (user) => { return user._id === currentUser2 } ).fullname;
 });

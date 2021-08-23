@@ -687,8 +687,8 @@
 
 - url: "rtc"
   pages:
-    - url: "beta-access"
     - url: "introduction"
+    - url: "rtc-supported-functionality"
     - url: "getting-started"
     - url: "jwt-authentication"
       pages:
@@ -699,7 +699,6 @@
       - url: "#JWT endpoint setup procedure"
       - url: "#PHP token provider endpoint example"
       - url: "#Node token provider endpoint example"
-      - url: "#Creating a private/public key pair for Real-Time Collaboration (RTC)"
     - url: "encryption"
       pages:
       - url: "#Encryption keys are mandatory"

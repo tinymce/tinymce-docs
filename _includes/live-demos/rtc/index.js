@@ -78,7 +78,7 @@ tinymce.ScriptLoader.loadScripts(
     }
 
     /* Generate a document ID */
-    const documentID = randomString();
+    const documentID = randomString() + Date.now();
 
     /* Generating random encryption key and keyHint for demonstration purposes */
     const demoEncryptionKeyPair = {

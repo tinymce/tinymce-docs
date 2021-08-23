@@ -8,35 +8,39 @@ keywords: rtc introduction overview
 
 ## Introduction
 
-{% include rtc/description.md %}
+{% include rtc/rtc-description.md %}
 
-## How we do.
+## Interactive example
 
-1. New document is opened. Initial content is provided within the replaced element or using the initial content setting
+The following example shows two editors that are collaborating using the {{site.productname}} Real-Time Collaboration plugin. All network requests made by these editors, real or simulated, are being logged to the browser console. To view the network requests, open the browser console using the **F12** keyboard key and navigate to the _Console_ tab.
+
+{% include live-demo.html id="rtc" %}
+
+## Overview of how TinyMCE real-time collaboration works
+
+1. New document is opened. Initial content is provided within the replaced element or using the initial content option.
 1. The editor requests and receives a JWT and the encryption details from your server for the user.
 1. When the editor content is changed, the editor encrypts the content using the encryption details provided.
 1. The encrypted content and the JWT (but not the encryption details) are sent to the RTC server.
 1. The RTC server verifies that the JWT was signed by the same private key as the public key stored on the RTC server.
 1. Once verified, the content is sent to collaborating editors were the editor will decrypt the content using the encryption details provided when the user opened the editor.
 1. Once decrypted, the plugin will merge the local content and the decrypted content from the server.
-1. When the content is submitted, it will be sent to your server. If snapshotting setting is configured, no submission is needed as snapshots of the content will be sent to your server from the editors
+1. When the content is submitted, it will be sent to your server. If snapshotting option is configured, no submission is needed as snapshots of the content will be sent to your server from the editors
 
-## Secure Context
+## Features
 
-{% include misc/secure-context.md %}
+### End-to-end encryption
 
-## JSON Web Token based authentication
+The Real-Time Collaboration (RTC) plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect, which is used to transmit cursor position along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.
+
+### Presence API
+
+The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. User resolution is performed through the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
+
+### JSON Web Token based authentication
 
 Some cloud services for {{site.productname}} require setting up JSON Web Token (JWT) authentication. JWTs are a common solution for communicating user authorization with web services. JWTs are used to communicate to {{site.productname}} that the user has been authorized to access {{site.cloudname}} services.
 
 For general information on JWTs, visit: [https://jwt.io/](https://jwt.io/).
 
 For information on using JWT authentication with the Real-Time Collaboration (RTC) plugin, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
-
-## Presence API
-
-The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. User resolution is performed through the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
-
-## End-to-end encryption
-
-The Real-Time Collaboration (RTC) plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect, which is used to transmit cursor position along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.

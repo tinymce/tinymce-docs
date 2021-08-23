@@ -6,8 +6,6 @@ description: List of all available RTC specific events.
 keywords: rtc events
 ---
 
-> **Caution**: These events are subject to change based on customer feedback. API compatibility is not guaranteed during the beta.
-
 ## `RtcClientConnected`
 
 This event is fired when a user enters the session.

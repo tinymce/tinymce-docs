@@ -6,8 +6,6 @@ description: List of all available RTC configuration options.
 keywords: rtc configuration
 ---
 
-> **Caution**: These configuration options are subject to change based on customer feedback. API compatibility is not guaranteed during the beta.
-
 ## Configuration style
 
 The Real-Time Collaboration (RTC) plugin uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server. Function input parameters are provided as an object, allowing unused fields to be omitted.
@@ -138,7 +136,7 @@ tinymce.init({
 
 ## Recommended configuration
 
-For the best user experience, {{site.companyname}} recommends including these configuration settings:
+For the best user experience, {{site.companyname}} recommends including these configuration options:
 
 * [`rtc_server_disconnected`](#rtc_server_disconnected)
 * [`rtc_user_details_provider`](#rtc_user_details_provider)
@@ -435,7 +433,7 @@ If none was configured, this will be an empty object.
 
 > **Caution**: {{site.productname}} cannot guarantee the accuracy of data which comes from a remote object. {{site.companyname}} recommends only using the client information data for status flags. To obtain authentic client information, use the [`rtc_user_details_provider`](#rtc_user_details_provider) data returned through the `userDetails` field.
 
-{% include rtc/client-connect-disconnect-example.md %}
+{% include rtc/rtc-client-connect-disconnect-example.md %}
 
 ### `rtc_client_disconnected`
 
@@ -449,4 +447,4 @@ The `rtc_client_disconnected` option can be used with the [`rtc_client_connected
 
 The same as [`rtc_client_connected`](#rtc_client_connected)
 
-{% include rtc/client-connect-disconnect-example.md %}
+{% include rtc/rtc-client-connect-disconnect-example.md %}

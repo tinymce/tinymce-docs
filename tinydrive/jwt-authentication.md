@@ -168,4 +168,3 @@ tinymce.init({
 If you managed to set this up, you should be good to go with checking out the various [configuration options]({{site.baseurl}}/tinydrive/configuration/) for {{site.cloudfilemanager}} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
 
 If you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, [submit a support request]({{site.supporturl}}).
-

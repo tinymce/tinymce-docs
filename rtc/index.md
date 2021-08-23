@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Real-Time Collaboration plugin (beta)
-title_nav: Real-Time Collaboration (RTC) (beta)
+title: Real-Time Collaboration plugin
+title_nav: Real-Time Collaboration (RTC)
 description: The TinyMCE Real-Time Collaboration plugin
 type: folder
 ---

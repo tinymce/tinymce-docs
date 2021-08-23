@@ -6,8 +6,6 @@ description: Getting started with RTC
 keywords: rtc
 ---
 
-{% include live-demo.html id="rtc" %}
-
 ## Prerequisites
 
 * A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).

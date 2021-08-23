@@ -2,13 +2,13 @@
 
 {{site.requires_5_9v}}
 
-This option enables you to specify the default values for the table cell border color picker, which can be opened with the `tablecellbordercolor` toolbar button or menu item. If no values are defined, uses the values of the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). This option accepts Hex, RGB and HSL color values.
+This option enables you to specify the default values for the table cell border color picker, which can be opened with the `tablecellbordercolor` toolbar button or menu item. If no values are defined, uses the values of the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). This option accepts Hex, RGB and HSL color values.
 
 The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_colors) is not available for the `tablecellbordercolor` toolbar button or menu item.
 
 **Type:** `Array`
 
-**Default Value:** See [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map)
+**Default Value:** See [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map)
 
 #### Example: Using `table_cell_border_color_map`
 

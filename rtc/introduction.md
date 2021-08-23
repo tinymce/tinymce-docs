@@ -61,15 +61,6 @@ Here is a list of plugins currently supported:
 
 ### Settings that are not available when RTC is enabled
 
-* [custom_elements]({{site.baseurl}}/configure/content-filtering/#custom_elements)
-* [end_container_on_empty_block]({{site.baseurl}}/configure/advanced-editing-behavior/#end_container_on_empty_block)
-* [forced_root_block]({{site.baseurl}}/configure/content-filtering/#forced_root_block)
-* [forced_root_block_attrs]({{site.baseurl}}/configure/content-filtering/#forced_root_block_attrs)
-* [image_caption]({{site.baseurl}}/plugins/opensource/image/#image_caption)
-* [indent_use_margin]({{site.baseurl}}/configure/content-formatting/#indent_use_margin)
-* [keep_styles]({{site.baseurl}}/configure/content-filtering/#keep_styles)
-* [resize_img_proportional]({{site.baseurl}}/configure/advanced-editing-behavior/#resize_img_proportional)
-* [valid_children]({{site.baseurl}}/configure/content-filtering/#valid_children)
 * [allow_unsafe_link_target]({{site.baseurl}}/configure/content-filtering/#allow_unsafe_link_target)
 * [br_in_pre]({{site.baseurl}}/configure/advanced-editing-behavior/#br_in_pre)
 * [custom_elements]({{site.baseurl}}/configure/content-filtering/#custom_elements)
@@ -88,6 +79,7 @@ Here is a list of plugins currently supported:
 * [placeholder]({{site.baseurl}}/configure/editor-appearance/#placeholder)
 * [protect]({{site.baseurl}}/configure/content-filtering/#protect)
 * [rel_list]({{site.baseurl}}/plugins/opensource/link/#rel_list)
+* [resize_img_proportional]({{site.baseurl}}/configure/advanced-editing-behavior/#resize_img_proportional)
 * [valid_children]({{site.baseurl}}/configure/content-filtering/#valid_children)
 * [valid_elements]({{site.baseurl}}/configure/content-filtering/#valid_elements)
 

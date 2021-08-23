@@ -6,4 +6,4 @@ The private/public key pair can be created on your [{{site.accountpage}} page]({
 
 > **Important**: Keep the private key secure. Do not commit files containing the key to public repositories or websites.
 
-For information on generating a RSA key pair locally, see: [Creating a private/public key pair for {{pluginname}}](#creatingaprivatepublickeypairfor{{plugincode}}).
+For information on generating a RSA key pair locally, see: [Creating a private/public key pair for {{pluginname}}]({{site.baseurl}}/advanced/generate-rsa-key-pairs/).

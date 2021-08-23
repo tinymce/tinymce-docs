@@ -159,5 +159,3 @@ tinymce.init({
 Once JWT authentication has been set up, the RTC plugin can be configured further using the options shown on the [RTC configuration options page]({{site.baseurl}}/rtc/configuration/). Don't forget to change the example JWT claims (user id, user name) to get those from your system.
 
 If you want help [submit a support request]({{site.supporturl}}).
-
-{% include auth/gen-rsa-key-pairs.md %}

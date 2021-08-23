@@ -169,4 +169,3 @@ If you managed to set this up, you should be good to go with checking out the va
 
 If you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, [submit a support request]({{site.supporturl}}).
 
-{% include auth/gen-rsa-key-pairs.md %}

@@ -61,15 +61,27 @@ Here is a list of plugins currently supported:
 
 ### Settings that are not available when RTC is enabled
 
+* [allow_unsafe_link_target]({{site.baseurl}}/configure/content-filtering/#allow_unsafe_link_target)
+* [br_in_pre]({{site.baseurl}}/configure/advanced-editing-behavior/#br_in_pre)
 * [custom_elements]({{site.baseurl}}/configure/content-filtering/#custom_elements)
 * [end_container_on_empty_block]({{site.baseurl}}/configure/advanced-editing-behavior/#end_container_on_empty_block)
-* [forced_root_block]({{site.baseurl}}/configure/content-filtering/#forced_root_block)
+* [extended_valid_elements]({{site.baseurl}}/configure/content-filtering/#extended_valid_elements)
 * [forced_root_block_attrs]({{site.baseurl}}/configure/content-filtering/#forced_root_block_attrs)
+* [forced_root_block]({{site.baseurl}}/configure/content-filtering/#forced_root_block)
+* [format_empty_lines]({{site.baseurl}}/configure/content-formatting/#format_empty_lines)
+* [gecko_spellcheck]({{site.baseurl}}/configure/spelling/#gecko_spellcheck)
 * [image_caption]({{site.baseurl}}/plugins/opensource/image/#image_caption)
+* [images_dataimg_filter]({{site.baseurl}}/configure/file-image-upload/#images_dataimg_filter)
 * [indent_use_margin]({{site.baseurl}}/configure/content-formatting/#indent_use_margin)
+* [inline_boundaries_selector]({{site.baseurl}}/configure/content-appearance/#inline_boundaries_selector)
+* [inline_boundaries]({{site.baseurl}}/configure/content-appearance/#inline_boundaries)
 * [keep_styles]({{site.baseurl}}/configure/content-filtering/#keep_styles)
+* [placeholder]({{site.baseurl}}/configure/editor-appearance/#placeholder)
+* [protect]({{site.baseurl}}/configure/content-filtering/#protect)
+* [rel_list]({{site.baseurl}}/plugins/opensource/link/#rel_list)
 * [resize_img_proportional]({{site.baseurl}}/configure/advanced-editing-behavior/#resize_img_proportional)
 * [valid_children]({{site.baseurl}}/configure/content-filtering/#valid_children)
+* [valid_elements]({{site.baseurl}}/configure/content-filtering/#valid_elements)
 
 ### Browser support
 

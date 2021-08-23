@@ -13,7 +13,7 @@ _Spell Checker Pro_ adds spell checking as-you-type capabilities to {{site.produ
 
 {% include live-demo.html id="spellcheckerpro" %}
 
-{% include configuration/languages.md %}
+{% include misc/spellchecker-languages.md %}
 
 ## Custom dictionaries
 Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See [these instructions]({{ site.baseurl }}/enterprise/check-spelling/custom/) for details.

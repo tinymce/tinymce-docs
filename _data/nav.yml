@@ -442,7 +442,7 @@
       - url: "#noneditable_editable_class"
       - url: "#noneditable_noneditable_class"
       - url: "#noneditable_regexp"
-      - url: "#makingcontentnoneditable"
+      - url: "#Making Content Non-editable"
     - url: "pagebreak"
       pages:
       - url: "#pagebreak_separator"
@@ -646,6 +646,14 @@
   - url: "server"
     pages:
     - url: "configure"
+      pages:
+      - url: "#Creating a configuration file"
+      - url: "#General service settings"
+      - url: "#Image proxy service settings"
+      - url: "#Hyperlinking service settings"
+      - url: "#Spelling service settings"
+      - url: "#Logging service activity"
+    - url: "self-hosting-hunspell"
     - url: "dockerservices"
     - url: "troubleshoot"
   - url: "advcode"

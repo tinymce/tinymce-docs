@@ -79,7 +79,6 @@ Here is a list of plugins currently supported:
 * [placeholder]({{site.baseurl}}/configure/editor-appearance/#placeholder)
 * [protect]({{site.baseurl}}/configure/content-filtering/#protect)
 * [rel_list]({{site.baseurl}}/plugins/opensource/link/#rel_list)
-* [resize_img_proportional]({{site.baseurl}}/configure/advanced-editing-behavior/#resize_img_proportional)
 * [valid_children]({{site.baseurl}}/configure/content-filtering/#valid_children)
 * [valid_elements]({{site.baseurl}}/configure/content-filtering/#valid_elements)
 

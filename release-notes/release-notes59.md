@@ -131,7 +131,15 @@ For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugin
 
 The following enhancements were made for the {{site.productname}} 5.9 release.
 
-### Enhancement name
+## Context Toolbars
+
+{{site.productname}} 5.9 improves context toolbar positioning so that the toolbar will remain in the previous position while scrolling and now moves out of the way if the toolbar will overlap the content. For example, previously when using a table the context toolbar may have covered the cells in the first row. Now, when clicking into any cell within that row, the toolbar will move to the bottom of the viewport instead.
+
+To further enhance the user experience, the context toolbar will now use a short animation when the toolbar transitions from above or below an element.
+
+![Enchanced context toolbar behavior]({{site.baseurl}}/images/context-toolbar-improvements.gif)
+
+For information on context toolbars, see: [UI components - Context toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
 
 ### Additional enhancements
 

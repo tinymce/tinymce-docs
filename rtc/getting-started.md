@@ -6,11 +6,27 @@ description: Getting started with RTC
 keywords: rtc
 ---
 
+This procedure will assist with setting up {{site.productname}} with real-time collaboration.
+
 ## Prerequisites
 
 * A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).
 * A JSON Web Token (JWT) key generated at [{{site.accountpageurl}}]({{site.accountpageurl}}). Temporarily store the generated keys for use in the following procedure.
 * {% include misc/secure-context.md %}
+* endpoints
+
+get an API key
+Generate keypair with site or locally
+setup endpoints
+configure the editor
+
+
+
+
+
+
+
+
 
 ## Basic Real-Time Collaboration (RTC) setup
 
@@ -20,17 +36,12 @@ This example shows how to get the Real-Time Collaboration (RTC) plugin up and ru
 
 ```js
 tinymce.init({
-  selector: 'textarea', // change this value according to your HTML
+  selector: 'textarea#static-rtc-example',
   plugins: 'rtc',
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
-  rtc_token_provider: () =>
-    fetch('/jwt', {
-      method: 'POST'
-    })
-    .then(response => response.json()),
-  rtc_snapshot: ({version, html}) => console.log(version, html)
-})
+  rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' })
+});
 ```
 
 ### Additional resources

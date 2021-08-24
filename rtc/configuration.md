@@ -44,7 +44,7 @@ A key is required when the client needs to:
 1. Encrypt new data in the collaboration session.
 2. Read previously written data from the collaboration session.
 
-Suggestions on how to generate a secure encryption key and participate in key rotation are available in [Generating a secure encryption key]({{site.baseurl}}/rtc/encryption/#generatingasecureencryptionkey). To help with this process a customisable "key hint" is available.
+Suggestions on how to generate a secure encryption key and participate in key rotation are available in [Generating a secure encryption key]({{site.baseurl}}/rtc/encryption/#generatingasecureencryptionkey). To help with this process a customizable "key hint" is available.
 
 #### Key Hint
 

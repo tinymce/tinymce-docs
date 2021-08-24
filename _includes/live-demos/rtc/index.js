@@ -1,9 +1,9 @@
 /* Script to import polly.js for simulating servers and logging requests to the console */
 tinymce.ScriptLoader.loadScripts(
   [
-    "//unpkg.com/@pollyjs/core@5.1.1",
-    "//unpkg.com/@pollyjs/adapter-fetch@5.1.1",
-    "//unpkg.com/@pollyjs/persister-local-storage@5.1.1",
+    '//unpkg.com/@pollyjs/core@5.1.1',
+    '//unpkg.com/@pollyjs/adapter-fetch@5.1.1',
+    '//unpkg.com/@pollyjs/persister-local-storage@5.1.1',
   ],
   () => {
     /*
@@ -74,7 +74,7 @@ tinymce.ScriptLoader.loadScripts(
        * Encryption keyHint (randomized for demonstration purposes only).
        * These values can be any string, but must be unique.
        */
-      return Math.random().toString(32).split(".")[1];
+      return Math.random().toString(32).split('.')[1];
     }
 
     /* Generate a document ID */
@@ -90,25 +90,25 @@ tinymce.ScriptLoader.loadScripts(
      * Mock web server implementation *
      **********************************/
 
-    let { Polly } = window["@pollyjs/core"];
-    let FetchAdapter = window["@pollyjs/adapter-fetch"];
-    let LocalStoragePersister = window["@pollyjs/persister-local-storage"];
+    let { Polly } = window['@pollyjs/core'];
+    let FetchAdapter = window['@pollyjs/adapter-fetch'];
+    let LocalStoragePersister = window['@pollyjs/persister-local-storage'];
 
     Polly.register(FetchAdapter);
     Polly.register(LocalStoragePersister);
-    let polly = new Polly("docs-rtc-demo", {
-      adapters: ["fetch"],
-      persister: "local-storage",
+    let polly = new Polly('docs-rtc-demo', {
+      adapters: ['fetch'],
+      persister: 'local-storage',
       logging: true,
     });
     let server = polly.server;
 
-    server.host("https://api.example", () => {
+    server.host('https://api.example', () => {
       /*
        * JWT provider/endpoint. A real JWT endpoint would generate a JWT
        * and it to user's editor, rather than using a static list.
        */
-      server.post("/getJwtToken/").intercept((req, res) => {
+      server.post('/getJwtToken/').intercept((req, res) => {
         const { userID } = JSON.parse(req.body);
         try {
           res.status(200).json({
@@ -118,7 +118,7 @@ tinymce.ScriptLoader.loadScripts(
           });
         } catch {
           (error) => {
-            console.log("JWT server error:", error);
+            console.log('JWT server error:', error);
             res.status(404);
           };
         }
@@ -128,7 +128,7 @@ tinymce.ScriptLoader.loadScripts(
        * The same encryption key needs to be sent to all users on the document and
        * is not sent to the RTC server.
        */
-      server.post("/getEncryptionKey/").intercept((req, res) => {
+      server.post('/getEncryptionKey/').intercept((req, res) => {
         const { documentID, keyHint } = JSON.parse(req.body);
         try {
           res.status(200).json({
@@ -136,7 +136,7 @@ tinymce.ScriptLoader.loadScripts(
             keyHint: demoEncryptionKeyPair.keyHint,
           });
         } catch (error) {
-          console.log("Encryption Key server error:", error);
+          console.log('Encryption Key server error:', error);
           res.status(404);
         }
       });
@@ -145,7 +145,7 @@ tinymce.ScriptLoader.loadScripts(
        * collaborator's username shown on the caret in the editors and can be used
        * in the rtc_client_connected and rtc_client_disconnected options.
        */
-      server.post("/getUserDetails/").intercept((req, res) => {
+      server.post('/getUserDetails/').intercept((req, res) => {
         const { userId } = JSON.parse(req.body);
         try {
           const userDetails = fakeUsers.find((user) => {
@@ -158,14 +158,14 @@ tinymce.ScriptLoader.loadScripts(
             email: userDetails.email,
           });
         } catch (error) {
-          console.log("Error getting user details:", error);
+          console.log('Error getting user details:', error);
           res.status(404);
         }
       });
     }); /* server.host */
 
     /* Connect using the `connectTo` API */
-    polly.connectTo("fetch");
+    polly.connectTo('fetch');
 
     /* Retrieve random two users, one for each editor. */
     const sessionUsers = getTwoRandomInt(fakeUsers.length);
@@ -188,37 +188,37 @@ tinymce.ScriptLoader.loadScripts(
       tinymce.init({
         selector: editorID,
         plugins:
-          "rtc advlist charmap emoticons help hr image insertdatetime link lists powerpaste print save tabfocus visualblocks wordcount",
-        menubar: "file edit insert view format table tools help",
+          'rtc advlist charmap emoticons help hr image insertdatetime link lists powerpaste print save tabfocus visualblocks wordcount',
+        menubar: 'file edit insert view format table tools help',
         toolbar:
-          "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | insert | help",
+          'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | insert | help',
         height: 400,
         toolbar_groups: {
           insert: {
-            icon: "plus",
-            tooltip: "Insert",
-            items: "link | charmap emoticons | image | insertdatetime",
+            icon: 'plus',
+            tooltip: 'Insert',
+            items: 'link | charmap emoticons | image | insertdatetime',
           },
         },
         setup: function (editor) {
-          editor.on("init", function (e) {
+          editor.on('init', function (e) {
             /*
              * Set the editor to visible once external scripts used for fake
              * server-side components have loaded (such as polly.js).
              */
             document.querySelectorAll(parent_attr).forEach((node) => {
-              node.style.display = "block";
+              node.style.display = 'block';
             });
           });
         },
         rtc_document_id: documentID,
         rtc_encryption_provider: ({ documentId, keyHint }) =>
-          fetch("https://api.example/getEncryptionKey/", {
-            method: "POST",
-            credentials: "include",
+          fetch('https://api.example/getEncryptionKey/', {
+            method: 'POST',
+            credentials: 'include',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({ documentId, keyId: keyHint }),
           })
@@ -226,28 +226,28 @@ tinymce.ScriptLoader.loadScripts(
               return response.json();
             })
             .catch((error) =>
-              console.log("Failed to return encryption key\n" + error)
+              console.log('Failed to return encryption key\n' + error)
             ),
         rtc_token_provider: () =>
-          fetch("https://api.example/getJwtToken/", {
-            method: "POST",
-            credentials: "include",
+          fetch('https://api.example/getJwtToken/', {
+            method: 'POST',
+            credentials: 'include',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({ userID }),
           })
             .then((response) => {
               return response.json();
             })
-            .catch((error) => console.log("Failed to return a JWT\n" + error)),
+            .catch((error) => console.log('Failed to return a JWT\n' + error)),
         rtc_user_details_provider: ({ userId }) => {
-          return fetch("https://api.example/getUserDetails/", {
-            method: "POST",
+          return fetch('https://api.example/getUserDetails/', {
+            method: 'POST',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({ userId }),
           }).then((response) => {
@@ -287,28 +287,28 @@ tinymce.ScriptLoader.loadScripts(
     }
     /* Create the two separate editors */
     createTinyMCEInstance(
-      "[rtc-editor-parent]",
-      "textarea#rtc-editor-1",
+      '[rtc-editor-parent]',
+      'textarea#rtc-editor-1',
       currentUser1,
-      "otherfakeuser1"
+      'otherfakeuser1'
     );
     createTinyMCEInstance(
-      "[rtc-editor-parent]",
-      "textarea#rtc-editor-2",
+      '[rtc-editor-parent]',
+      'textarea#rtc-editor-2',
       currentUser2,
-      "otherfakeuser2"
+      'otherfakeuser2'
     );
 
     /*
      * Add the "current user" of the editor above each instance, outside the
      * editor, for reference purposes only
      */
-    document.getElementById("fakedemouser1").innerText = fakeUsers.find(
+    document.getElementById('fakedemouser1').innerText = fakeUsers.find(
       (user) => {
         return user._id === currentUser1;
       }
     ).fullname;
-    document.getElementById("fakedemouser2").innerText = fakeUsers.find(
+    document.getElementById('fakedemouser2').innerText = fakeUsers.find(
       (user) => {
         return user._id === currentUser2;
       }

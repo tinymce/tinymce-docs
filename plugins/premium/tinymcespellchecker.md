@@ -66,7 +66,7 @@ The {{site.productname}} Enterprise Spellchecking plugin activates automatically
 
 {% include configuration/spellchecker_language.md %}
 
-{% include configuration/languages.md %}
+{% include misc/spellchecker-languages.md %}
 
 {% include configuration/spellchecker_languages.md %}
 

@@ -249,7 +249,7 @@ The following new methods have been added for creating and using new components:
 
 ### Custom toolbar buttons
 
-The API methods for adding [Custom toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons) have changed for TinyMCE 5. The methods have been moved from [`editor.*`]({{site.url}}/docs-4x/api/tinymce/tinymce.editor/) to [`editor.ui.registry.*`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/). The toolbar button type `listbox` has been removed and a toogle button type has been added. The button types available in TinyMCE 5 are:
+The API methods for adding [Custom toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons) have changed for TinyMCE 5. The methods have been moved from [`editor.*`]({{site.url}}/docs-4x/api/tinymce/tinymce.editor/) to [`editor.ui.registry.*`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/). The toolbar button type `listbox` has been removed and a toggle button type has been added. The button types available in TinyMCE 5 are:
 
 * [Basic button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton)
 * [Toggle button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#togglebutton)

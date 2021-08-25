@@ -1,4 +1,4 @@
-### `table_cell_background_color_map`
+### `table_background_color_map`
 
 {{site.requires_5_9v}}
 
@@ -10,7 +10,7 @@ The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_
 
 **Default Value:** See [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map)
 
-#### Example: Using `table_cell_background_color_map`
+#### Example: Using `table_background_color_map`
 
 ```js
 tinymce.init({
@@ -18,7 +18,7 @@ tinymce.init({
   plugins: 'table',
   menubar: 'table',
   toolbar: 'table',
-  table_cell_background_color_map: [
+  table_background_color_map: [
     {title: 'Red', value: 'FF0000'},
     {title: 'White', value: 'FFFFFF'},
     {title: 'Yellow', value: 'F1C40F'}

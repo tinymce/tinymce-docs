@@ -59,9 +59,9 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 {% include configuration/table_border_styles.md %}
 
-{% include configuration/table_cell_background_color_map.md %}
+{% include configuration/table_background_color_map.md %}
 
-{% include configuration/table_cell_border_color_map.md %}
+{% include configuration/table_border_color_map.md %}
 
 {% include configuration/table_advtab.md %}
 

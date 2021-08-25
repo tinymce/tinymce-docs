@@ -11,91 +11,91 @@ class: changelog
 ## 5.9.0 - 2021-08-26
 
 ### Added
-- Added a new `toolbar_sticky_offset` setting to allow the toolbar to be offset from the top of the page #TINY-7337
-- Added a new `mceFocus` command that focuses the editor. Equivalent to using `editor.focus()` #TINY-7373
-- Added a new `mceTableToggleClass` command which toggles the provided class on the currently selected table #TINY-7476
-- Added a new `mceTableCellToggleClass` command which toggles the provided class on the currently selected table cells #TINY-7476
-- Added a new `tablecellvalign` toolbar button and menu item for vertical table cell alignment #TINY-7477
-- Added a new `tablecellborderwidth` toolbar button and menu item to change table cell border width #TINY-7478
-- Added a new `tablecellborderstyle` toolbar button and menu item to change table cell border style #TINY-7478
-- Added a new `tablecaption` toolbar button and menu item to toggle captions on tables #TINY-7479
-- Added a new `mceTableToggleCaption` command that toggles captions on a selected table #TINY-7479
-- Added a new `tablecellbordercolor` toolbar button and menu item to select table cell border colors, with an accompanying setting `table_border_color_map` to customize the available values #TINY-7480
-- Added a new `tablecellbackgroundcolor` toolbar button and menu item to select table cell background colors, with an accompanying setting `table_background_color_map` to customize the available values #TINY-7480
-- Added a new `initData` property to `fancymenuitem` to allow custom initialization data #TINY-7480
-- Added a new `language` menu item and toolbar button to add `lang` attributes to content, with an accompanying `content_langs` setting to specify the languages available #TINY-6149
-- A new `lang` format is now available that can be used with `editor.formatter`, or applied with the `Lang` editor command #TINY-6149
-- Added a new `language` icon for the `language` toolbar button #TINY-7670
-- Added new plugin commands: `mceEmoticons` (emoticons), `mceWordCount` (wordcount), and `mceTemplate` (template) #TINY-7619
-- Added a new `tablerowheader` toolbar button and menu item to toggle the header state of row cells #TINY-7478
-- Added a new `tablecolheader` toolbar button and menu item to toggle the header state of column cells #TINY-7482
-- Added a new `table-row-numbering` icon #TINY-7327
-- Added a new `iframe_aria_text` setting to set the iframe title attribute #TINY-1264
-- Added a new DomParser `Node.children()` API to return all the children of a `Node` #TINY-7756
-- Added new `FormatApply` and `FormatRemove` events #TINY-7713
+- Added a new `toolbar_sticky_offset` setting to allow the toolbar to be offset from the top of the page.
+- Added a new `mceFocus` command that focuses the editor. Equivalent to using `editor.focus()`.
+- Added a new `mceTableToggleClass` command which toggles the provided class on the currently selected table.
+- Added a new `mceTableCellToggleClass` command which toggles the provided class on the currently selected table cells.
+- Added a new `tablecellvalign` toolbar button and menu item for vertical table cell alignment.
+- Added a new `tablecellborderwidth` toolbar button and menu item to change table cell border width.
+- Added a new `tablecellborderstyle` toolbar button and menu item to change table cell border style.
+- Added a new `tablecaption` toolbar button and menu item to toggle captions on tables.
+- Added a new `mceTableToggleCaption` command that toggles captions on a selected table.
+- Added a new `tablecellbordercolor` toolbar button and menu item to select table cell border colors, with an accompanying setting `table_border_color_map` to customize the available values.
+- Added a new `tablecellbackgroundcolor` toolbar button and menu item to select table cell background colors, with an accompanying setting `table_background_color_map` to customize the available values.
+- Added a new `initData` property to `fancymenuitem` to allow custom initialization data.
+- Added a new `language` menu item and toolbar button to add `lang` attributes to content, with an accompanying `content_langs` setting to specify the languages available.
+- A new `lang` format is now available that can be used with `editor.formatter`, or applied with the `Lang` editor command.
+- Added a new `language` icon for the `language` toolbar button.
+- Added new plugin commands: `mceEmoticons` (emoticons), `mceWordCount` (wordcount), and `mceTemplate` (template).
+- Added a new `tablerowheader` toolbar button and menu item to toggle the header state of row cells.
+- Added a new `tablecolheader` toolbar button and menu item to toggle the header state of column cells.
+- Added a new `table-row-numbering` icon.
+- Added a new `iframe_aria_text` setting to set the iframe title attribute.
+- Added a new DomParser `Node.children()` API to return all the children of a `Node`.
+- Added new `FormatApply` and `FormatRemove` events.
 
 ### Improved
-- Improved the load time of the `fullpage` plugin by using the existing editor schema rather than creating a new one #TINY-6504
-- Improved the performance when rendering UI components #TINY-7572
-- When scrolling, the context toolbar will stick to where it was previously for large elements, such as tables #TINY-7545
-- The context toolbar will now move out of the way when it overlaps with the selection, such as in table cells #TINY-7192
-- The context toolbar will now use transition animations when changing placements #TINY-7740
-- The `formatter.match` API can now take an optional `similar` parameter to check if the format partially matches #TINY-7712
-- `Env.browser` now uses the User-Agent Client Hints API when it is available #TINY-7785
-- Icons with a `-rtl` suffix in their name will now automatically be used when the UI is rendered in right-to-left mode #TINY-7782
-- `editor.formatter.formatChanged` now supports listening for changes to formats with specific variables #TINY-7713
-- The `autolink` plugin link detection now permits custom protocols and improves valid link detection #TINY-7714
+- Improved the load time of the `fullpage` plugin by using the existing editor schema rather than creating a new one.
+- Improved the performance when rendering UI components.
+- When scrolling, the context toolbar will stick to where it was previously for large elements, such as tables.
+- The context toolbar will now move out of the way when it overlaps with the selection, such as in table cells.
+- The context toolbar will now use transition animations when changing placements.
+- The `formatter.match` API can now take an optional `similar` parameter to check if the format partially matches.
+- `Env.browser` now uses the User-Agent Client Hints API when it is available.
+- Icons with a `-rtl` suffix in their name will now automatically be used when the UI is rendered in right-to-left mode.
+- `editor.formatter.formatChanged` now supports listening for changes to formats with specific variables.
+- The `autolink` plugin link detection now permits custom protocols and improves valid link detection.
 
 ### Changed
-- Changed the load order so that the content CSS is loaded before the editor gets populated with content #TINY-7249
-- Changed `emoticons`, `wordcount`, `code`, `codesample`, and `template` plugins to open dialogs using commands #TINY-7619
-- The context toolbar will no longer show an arrow when it overlaps the content, such as in table cells #TINY-7665
-- The context toolbar will no longer overlap the statusbar for toolbars using `node` or `selection` positions #TINY-7666
+- Changed the load order so that the content CSS is loaded before the editor gets populated with content.
+- Changed `emoticons`, `wordcount`, `code`, `codesample`, and `template` plugins to open dialogs using commands.
+- The context toolbar will no longer show an arrow when it overlaps the content, such as in table cells.
+- The context toolbar will no longer overlap the statusbar for toolbars using `node` or `selection` positions.
 
 ### Fixed
-- The `dir` attribute was being incorrectly applied to list items #TINY-4589
-- `editor.fire` was incorrectly mutating the original `args` provided #TINY-3254
-- The `SetContent` event contained the incorrect `content` when using the `editor.selection.setContent()` API #TINY-3254
-- The editor content could be edited after calling `setProgressState(true)` in iframe mode #TINY-7373
-- Tabbing out of the editor after calling `setProgressState(true)` was inconsistent in iframe mode #TINY-7373
-- Flash of unstyled content while loading the editor because the content CSS was loaded after the editor content was rendered #TINY-7249
-- Only table content would be deleted when partially selecting a table and content outside the table #TINY-6044
-- Unbinding an event handler did not take effect immediately while the event was firing #TINY-7436
-- The table cell selection handling was incorrect in some cases when dealing with nested tables #TINY-6298
-- Binding an event handler incorrectly took effect immediately while the event was firing #TINY-7436
-- Partially transparent RGBA values provided in the `color_map` setting were given the wrong hex value #TINY-7163
-- HTML comments with mismatched quotes were parsed incorrectly under certain circumstances #TINY-7589
-- Links in notification text did not show the correct mouse pointer #TINY-7661
-- Applying selector formats would sometimes not apply the format correctly to elements in a list #TINY-7393
-- For formats that specify an attribute or style that should be removed, the formatter `match` API incorrectly returned `false` #TINY-6149
-- The type signature on `editor.formatter.matchNode` had the wrong return type (was `boolean` but should have been `Formatter | undefined`) #TINY-6149
-- Menus and context menus were not closed when clicking into a different editor #TINY-7399
-- Using the Tab key to navigate into the editor on Microsoft Internet Explorer 11 would incorrectly focus the toolbar #TINY-3707
-- The editor selection could be placed in an incorrect location when undoing or redoing changes in a document containing `contenteditable="false"` elements #TINY-7663
-- Context menus on Android were not displayed when more than one HTML element was selected #TINY-7688
-- The editor could crash when inserting certain HTML content #TINY-7756
-- Inserting certain HTML content into the editor could result in invalid HTML once parsed #TINY-7756
-- Unbinding a native event handler inside the `remove` event caused an exception that blocked editor removal #TINY-7730
-- Disabled nested menu items could still be opened #TINY-7700
-- `imagetools` buttons were incorrectly enabled for remote images without `imagetools_proxy` set #TINY-7772
-- Removing a table row or column could result in the cursor getting placed in an invalid location #TINY-7695
-- Pressing the Tab key to navigate through table cells did not skip noneditable cells #TINY-7705
-- Clicking on a noneditable table cell did not show a visual selection like other noneditable elements #TINY-7724
-- Some table operations would incorrectly cause table row attributes and styles to be lost #TINY-6666
-- The selection was incorrectly lost when using the `mceTableCellType` and `mceTableRowType` commands #TINY-6666
-- The `mceTableRowType` was reversing the order of the rows when converting multiple header rows back to body rows #TINY-6666
-- The nested menu item chevron icon was not fading when the menu item was disabled #TINY-7700
-- The table dialog did not always respect the `table_style_with_css` option #TINY-4926
-- Pasting into a table with multiple cells selected could cause the content to be pasted in the wrong location #TINY-7485
-- `editor.formatter.formatChanged` would ignore the `similar` parameter if another callback had already been registered for the same format #TINY-7713
-- `editor.formatter.formatChanged` would sometimes not run the callback the first time the format was removed #TINY-7713
-- The `TableModified` event was not fired when pasting cells into a table #TINY-6939
-- The table paste column before and after icons were not flipped in RTL mode #TINY-7851
-- Fixed table corruption when deleting a `contenteditable="false"` cell #TINY-7891
+- The `dir` attribute was being incorrectly applied to list items.
+- `editor.fire` was incorrectly mutating the original `args` provided.
+- The `SetContent` event contained the incorrect `content` when using the `editor.selection.setContent()` API.
+- The editor content could be edited after calling `setProgressState(true)` in iframe mode.
+- Tabbing out of the editor after calling `setProgressState(true)` was inconsistent in iframe mode.
+- Flash of unstyled content while loading the editor because the content CSS was loaded after the editor content was rendered.
+- Only table content would be deleted when partially selecting a table and content outside the table.
+- Unbinding an event handler did not take effect immediately while the event was firing.
+- The table cell selection handling was incorrect in some cases when dealing with nested tables.
+- Binding an event handler incorrectly took effect immediately while the event was firing.
+- Partially transparent RGBA values provided in the `color_map` setting were given the wrong hex value.
+- HTML comments with mismatched quotes were parsed incorrectly under certain circumstances.
+- Links in notification text did not show the correct mouse pointer.
+- Applying selector formats would sometimes not apply the format correctly to elements in a list.
+- For formats that specify an attribute or style that should be removed, the formatter `match` API incorrectly returned `false`.
+- The type signature on `editor.formatter.matchNode` had the wrong return type (was `boolean` but should have been `Formatter | undefined`).
+- Menus and context menus were not closed when clicking into a different editor.
+- Using the Tab key to navigate into the editor on Microsoft Internet Explorer 11 would incorrectly focus the toolbar.
+- The editor selection could be placed in an incorrect location when undoing or redoing changes in a document containing `contenteditable="false"` elements.
+- Context menus on Android were not displayed when more than one HTML element was selected.
+- The editor could crash when inserting certain HTML content.
+- Inserting certain HTML content into the editor could result in invalid HTML once parsed.
+- Unbinding a native event handler inside the `remove` event caused an exception that blocked editor removal.
+- Disabled nested menu items could still be opened.
+- `imagetools` buttons were incorrectly enabled for remote images without `imagetools_proxy` set.
+- Removing a table row or column could result in the cursor getting placed in an invalid location.
+- Pressing the Tab key to navigate through table cells did not skip noneditable cells.
+- Clicking on a noneditable table cell did not show a visual selection like other noneditable elements.
+- Some table operations would incorrectly cause table row attributes and styles to be lost.
+- The selection was incorrectly lost when using the `mceTableCellType` and `mceTableRowType` commands.
+- The `mceTableRowType` was reversing the order of the rows when converting multiple header rows back to body rows.
+- The nested menu item chevron icon was not fading when the menu item was disabled.
+- The table dialog did not always respect the `table_style_with_css` option.
+- Pasting into a table with multiple cells selected could cause the content to be pasted in the wrong location.
+- `editor.formatter.formatChanged` would ignore the `similar` parameter if another callback had already been registered for the same format.
+- `editor.formatter.formatChanged` would sometimes not run the callback the first time the format was removed.
+- The `TableModified` event was not fired when pasting cells into a table.
+- The table paste column before and after icons were not flipped in RTL mode.
+- Fixed table corruption when deleting a `contenteditable="false"` cell.
 - Base64 encoded images with spaces or line breaks in the data URI were not displayed correctly. Patch contributed by RoboBurned
 
 ### Deprecated
-- The `bbcode`, `fullpage`, `legacyoutput`, and `spellchecker` plugins have been deprecated and marked for removal in the next major release #TINY-7260
+- The `bbcode`, `fullpage`, `legacyoutput`, and `spellchecker` plugins have been deprecated and marked for removal in the next major release.
 
 ## 5.8.2 - 2021-06-23
 
@@ -499,7 +499,7 @@ class: changelog
 ## 5.2.1 - 2020-03-25
 
 ### Fixed
-- Fixed the "is decorative" checkbox in the image dialog clearing after certain dialog events #FOAM-11
+- Fixed the "is decorative" checkbox in the image dialog clearing after certain dialog events.
 - Fixed possible uncaught exception when a `style` attribute is removed using a content filter on `setContent`.
 - Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
 - Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.
@@ -533,8 +533,8 @@ class: changelog
 - Added `quickbars_image_toolbar` setting to allow for the image quickbar to be turned off.
 - Added iframe and img `loading` attribute to the default schema. Patch contributed by ataylor32.
 - Added new `getNodeFilters`/`getAttributeFilters` functions to the `editor.serializer` instance.
-- Added new `a11y_advanced_options` setting to allow additional accessibility options to be added #FOAM-11
-- Added new accessibility options and behaviours to the image dialog using `a11y_advanced_options` #FOAM-11
+- Added new `a11y_advanced_options` setting to allow additional accessibility options to be added.
+- Added new accessibility options and behaviours to the image dialog using `a11y_advanced_options`.
 - Added the ability to use the window `PrismJS` instance for the `codesample` plugin instead of the bundled version to allow for styling custom languages.
 - Added error message events that fire when a resource loading error occurs.
 

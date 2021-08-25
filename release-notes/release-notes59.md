@@ -85,10 +85,10 @@ For information on these commands, see: [Table - Commands]({{site.baseurl}}/plug
 : Toggles the caption on the selected table.
 
 `tablecellbackgroundcolor`
-: Allows the user to change the background color of selected cells. The available colors are set by the [`table_background_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
+: Allows the user to change the background color of selected cells. The available colors are set by the [`table_background_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map) or [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map).
 
 `tablecellbordercolor`
-: Allows the user to change the border color of selected cells. The available colors are set by the [`table_border_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
+: Allows the user to change the border color of selected cells. The available colors are set by the [`table_border_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map) or [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map).
 
 `tablerowheader`
 : Allows the user to toggle selected rows into headers.
@@ -104,10 +104,10 @@ For information on these menu items, see: [Available menu items]({{site.baseurl}
 {{site.productname}} 5.9 adds new options for the Table plugin to improve the user experience when working with tables. These new options are optional, and allows further customization of user experience.
 
 `table_background_color_map`
-: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map)
+: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map)
 
 `table_border_color_map`
-: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map)
+: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map)
 
 `table_border_widths`
 : Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths)

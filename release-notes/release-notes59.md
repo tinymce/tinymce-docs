@@ -133,7 +133,7 @@ The following enhancements were made for the {{site.productname}} 5.9 release.
 
 ## Context Toolbars
 
-{{site.productname}} 5.9 improves context toolbar positioning so that the toolbar will remain in the previous position while scrolling and now moves out of the way if the toolbar will overlap the content. For example, previously when using a table the context toolbar may have covered the cells in the first row. Now, when clicking into any cell within that row, the toolbar will move to the bottom of the viewport instead.
+{{site.productname}} 5.9 improves context toolbar positioning by ensuring the toolbar remains in the same position when the user scrolls. Additionally, the context toolbar repositions if the toolbar will overlap the selected content or the cursor. For example: Prior to this improvement, if a user was editing a table, the context toolbar may have covered cells in the first row while it was being edited. Now, when clicking into any cell within that row, the toolbar will move to the bottom of the viewport instead.
 
 To further enhance the user experience, the context toolbar will now use a short animation when the toolbar transitions from above or below an element.
 

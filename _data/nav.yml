@@ -729,6 +729,7 @@
       - url: "#rtc_client_info"
       - url: "#rtc_client_connected"
       - url: "#rtc_client_disconnected"
+      - url: "#rtc_unsupported_content_notification"
     - url: "events"
       pages:
       - url: "#RtcClientConnected"
@@ -1157,6 +1158,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#5.9.0 - 2021-08-26"
   - url: "#5.8.2 - 2021-06-23"
   - url: "#5.8.1 - 2021-05-20"
   - url: "#5.8.0 - 2021-05-06"

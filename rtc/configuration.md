@@ -454,3 +454,23 @@ The `rtc_client_disconnected` option can be used with the [`rtc_client_connected
 The same as [`rtc_client_connected`](#rtc_client_connected)
 
 {% include rtc/client-connect-disconnect-example.md %}
+
+### `rtc_unsupported_content_notification`
+
+The `rtc_unsupported_content_notification` option can be used to disable the notification about unsupported HTML inside the RTC enabled editor. Existing documents containing HTML generated using plugins not yet supported by the RTC plugin could lead to unexpected behavior.
+
+**Type:** `Boolean`
+
+**Default:** `true`
+
+**Required:** no
+
+#### Example of blocking unsupported content notifications
+
+```js
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'rtc',
+  rtc_unsupported_content_notification: false
+})
+```

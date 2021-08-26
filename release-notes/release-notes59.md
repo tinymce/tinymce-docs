@@ -234,7 +234,7 @@ For information on:
 
 ### Stability update for the pre-configured server-side component Dockerfiles
 
-The pre-configured Dockerfiles for containerizing the server-side components, also known as the Docker starter kits, have been updated to improve stability, note that the resulting docker image will be larger as a result of these changes.
+The pre-configured Dockerfiles for containerizing the server-side components, also known as the Docker starter kits, have been updated to improve stability. Note that the resulting docker image will be larger as a result of these changes.
 
 For information on deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 

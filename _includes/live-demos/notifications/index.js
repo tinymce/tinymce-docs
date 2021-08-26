@@ -38,7 +38,7 @@ tinymce.init({
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',
   setup: function(editor) {
-    editor.on('init', function(e) {
+    editor.on('skinLoaded', function(e) {
       createSuccessNotification();
       createInformationNotification();
       createWarningNotification();

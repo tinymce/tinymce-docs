@@ -167,6 +167,16 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **<
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+### Mentions 2.3.0
+
+The {{site.productname}} 5.9 release includes an accompanying release of the **Mentions** premium plugin.
+
+**Mentions** 2.3.0 adds the "profile" card feature to the `mentions_menu_hover` callback.
+
+**Mentions** 2.3.0 also fixes the "profile" cards not displaying the `fullName` property when available.
+
+For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/plugins/premium/mentions/).
+
 ### PowerPaste 5.6.0
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **PowerPaste** premium plugin.

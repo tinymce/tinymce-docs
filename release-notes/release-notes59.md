@@ -28,12 +28,6 @@ keywords: releasenotes bugfixes
 
 The following new features were added for the {{site.productname}} 5.9 release.
 
-### New `toolbar_sticky_offset` option for customizing sticky toolbars
-
-The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
-
-For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
-
 ### New `language` toolbar button and menu item in core
 
 {{site.productname}} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` toolbar button, and a new `language` menu item, both configured using the `content_langs` option. There is also a new `Lang` editor command for changing the language of the selection.
@@ -140,6 +134,12 @@ To further enhance the user experience, the context toolbar will now use a short
 ![Enchanced context toolbar behavior]({{site.baseurl}}/images/context-toolbar-improvements.gif)
 
 For information on context toolbars, see: [UI components - Context toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
+
+### New `toolbar_sticky_offset` option for customizing sticky toolbars
+
+The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
+
+For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 
 ### Additional enhancements
 

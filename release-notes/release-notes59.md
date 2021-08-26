@@ -228,9 +228,11 @@ The {{site.productname}} 5.9 release includes accompanying changes affecting the
 
 The Java server-side components have been updated to the following versions:
 
-* `ephox-spelling.war`: 2.113.0
-* `ephox-hyperlinking.war`: 2.104.0
-* `ephox-image-proxy.war`: 2.104.0
+* `ephox-spelling.war`: 2.117.1
+* `ephox-hyperlinking.war`: 2.105.0
+* `ephox-image-proxy.war`: 2.105.0
+
+These versions require Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 
 ### New Server-side component features
 
@@ -243,12 +245,16 @@ The Spelling service now includes a new configuration option, allowing custom di
 
 All the services now include an `ignore-port` port option to allow ports specified in `allowed-origins` to be enforced. For details, see: [Configure server-side components: `allowed-origins.ignore-port` (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originsignore-portoptional).
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
-
 For information on:
 
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
+
+### Stability update for the pre-configured server-side component Dockerfiles
+
+The pre-configured Dockerfiles for containerizing the server-side components, also known as the Docker starter kits, have been updated to improve stability. Note that the resulting docker image will be larger as a result of these changes.
+
+For information on deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
 ### Updating the self-hosted server-side components
 

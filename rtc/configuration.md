@@ -459,7 +459,7 @@ The `rtc_unsupported_content_notification` option can be used to disable the not
 
 **Required:** no
 
-#### Example of providing dynamic content from the server
+#### Example of blocking unsupported content notifications
 
 ```js
 tinymce.init({

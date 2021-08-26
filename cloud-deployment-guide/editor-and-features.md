@@ -31,7 +31,11 @@ The following example adds a script tag into the application that inserts the co
 
 ![Script Tag Description]({{ site.baseurl }}/images/scripttag.png)
 
-> **Note**: Our Cloud platform verifies the domain you are attempting to load Tiny from by checking the "Referer" header in the network request to load TinyMCE. Sometimes the domains in the "Referer" header do not match up with the URL in the browser's address bar.  Using your browser's *Developer's Tools*, open the *Network* tab. From there, find the request being made to load Tiny with your API key, and click on the *Headers* tab.  In the section called "Request Headers" there should be a field for "Referer". If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's "Refer" header settings.”
+<a class="anchor" id="referer-troubleshooting"></a>
+
+> **Important**: {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the **Referer** header in the network request. Sometimes the domains in the **Referer** header does not match with the URL in the browser's address bar.  
+>
+> To check the **Referer** header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {{site.productname}} with your API key, and click on the **Headers** tab.  In the section called **Request Headers** there should be a field for **Referer**. If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's **Refer** header settings.
 
 ### Step 2: Load, customize and interact with TinyMCE
 

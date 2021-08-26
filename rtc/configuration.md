@@ -451,7 +451,7 @@ The same as [`rtc_client_connected`](#rtc_client_connected)
 
 ### `rtc_unsupported_content_notification`
 
-The `rtc_unsupported_content_notification` option can be used to disable the notification about unsupported content inside the editor. Existing documents containing content generated using plugins that are unsupported by RTC plugin could lead to unexpected behavior.
+The `rtc_unsupported_content_notification` option can be used to disable the notification about unsupported HTML inside the RTC enabled editor. Existing documents containing HTML generated using plugins not yet supported by the RTC plugin could lead to unexpected behavior. For a list of RTC supported plugins, see: [Supported {{site.productname}} functionality for Real-Time Collaboration]({{site.baseurl}}/rtc/rtc-supported-functionality/).
 
 **Type:** `Boolean`
 

@@ -97,7 +97,7 @@ The callback given to `editor.formatter.formatChanged` is a function that takes 
 
 For formats that require variables, the `editor.formatter.formatChanged` function takes two extra arguments: `similar` and `vars`.
 
-When the `similar` argument is true, similar formats will all be treated as the same by `formatChanged`. Similar formats are those with the same `formatName` but different variables. This argument will default to `false`.
+When the `similar` argument is `true`, similar formats will all be treated as the same by `formatChanged`. Similar formats are those with the same `formatName` but different variables. This argument will default to `false`.
 
 The `vars` argument controls which variables are used to match the content when determining whether to run the callback. This argument is only used when `similar` is `false`.
 

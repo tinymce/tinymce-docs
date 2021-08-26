@@ -16,6 +16,10 @@ Required plugin
 {% endif %}
 
 Type
-: `String`
+: String
 
-**Required:** yes
+### Example: Using `rtc_document_id`
+
+This example shows the minimum required configuration for the Real-Time Collaboration plugin, including the `rtc_document_id` option.
+
+{% include rtc/rtc-min-configuration-example.md %}

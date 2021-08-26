@@ -51,3 +51,5 @@ For the best user experience, {{site.companyname}} recommends including these co
 {% include configuration/rtc_client_connected.md %}
 
 {% include configuration/rtc_client_disconnected.md %}
+
+{% include configuration/rtc_unsupported_content_notification.md %}

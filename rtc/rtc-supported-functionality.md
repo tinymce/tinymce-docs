@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TinyMCE functionality support for Real-Time Collaboration
+title: Supported TinyMCE functionality for Real-Time Collaboration
 title_nav: Supported Functionality
 description: Information on what TinyMCE functionality is, and is not, supported in Real-Time Collaboration
 keywords: rtc support functionality

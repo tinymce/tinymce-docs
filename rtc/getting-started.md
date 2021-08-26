@@ -34,15 +34,9 @@ The following example assumes you are familiar with integrating TinyMCE; if you 
 
 This example shows how to get the Real-Time Collaboration (RTC) plugin up and running using hardcoded values. For a production setup, the document ID and secret would be retrieved from your server. This example also assumes that a JWT provider endpoint exists at '/jwt'. For information on setting up a JWT endpoint, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
 
-```js
-tinymce.init({
-  selector: 'textarea#static-rtc-example',
-  plugins: 'rtc',
-  rtc_document_id: 'unique-document-id',
-  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
-  rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' })
-});
-```
+This example shows the minimum required configuration for the Real-Time Collaboration plugin.
+
+{% include rtc/rtc-min-configuration-example.md %}
 
 ### Additional resources
 

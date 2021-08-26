@@ -28,12 +28,6 @@ keywords: releasenotes bugfixes
 
 The following new features were added for the {{site.productname}} 5.9 release.
 
-### New `toolbar_sticky_offset` option for customizing sticky toolbars
-
-The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
-
-For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
-
 ### New `language` toolbar button and menu item in core
 
 {{site.productname}} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` toolbar button, and a new `language` menu item, both configured using the `content_langs` option. There is also a new `Lang` editor command for changing the language of the selection.
@@ -85,10 +79,10 @@ For information on these commands, see: [Table - Commands]({{site.baseurl}}/plug
 : Toggles the caption on the selected table.
 
 `tablecellbackgroundcolor`
-: Allows the user to change the background color of selected cells. The available colors are set by the [`table_cell_background_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
+: Allows the user to change the background color of selected cells. The available colors are set by the [`table_background_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map) or [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map).
 
 `tablecellbordercolor`
-: Allows the user to change the border color of selected cells. The available colors are set by the [`table_cell_border_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map) or [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map).
+: Allows the user to change the border color of selected cells. The available colors are set by the [`table_border_color_map` option]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map) or [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map).
 
 `tablerowheader`
 : Allows the user to toggle selected rows into headers.
@@ -103,11 +97,11 @@ For information on these menu items, see: [Available menu items]({{site.baseurl}
 
 {{site.productname}} 5.9 adds new options for the Table plugin to improve the user experience when working with tables. These new options are optional, and allows further customization of user experience.
 
-`table_cell_background_color_map`
-: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_background_color_map)
+`table_background_color_map`
+: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map)
 
-`table_cell_border_color_map`
-: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/plugins/opensource/table/#color_map). For information on this option, see: [Table options - table_cell_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_cell_border_color_map)
+`table_border_color_map`
+: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map)
 
 `table_border_widths`
 : Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths)
@@ -130,6 +124,12 @@ For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugin
 ## Enhancements
 
 The following enhancements were made for the {{site.productname}} 5.9 release.
+
+### New `toolbar_sticky_offset` option for customizing sticky toolbars
+
+The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
+
+For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 
 ### Enhancement name
 

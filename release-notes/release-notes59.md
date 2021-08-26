@@ -125,13 +125,21 @@ For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugin
 
 The following enhancements were made for the {{site.productname}} 5.9 release.
 
+### Improved context toolbar user experience
+
+{{site.productname}} 5.9 improves context toolbar positioning by ensuring the toolbar remains in the same position when the user scrolls. Additionally, the context toolbar repositions if the toolbar will overlap the selected content or the cursor. For example: Prior to this improvement, if a user was editing a table, the context toolbar may have covered cells in the first row while it was being edited. Now, when clicking into any cell within that row, the toolbar will move to the bottom of the viewport instead.
+
+To further enhance the user experience, the context toolbar will now use a short animation when the toolbar transitions between different locations.
+
+![Enchanced context toolbar behavior]({{site.baseurl}}/images/context-toolbar-improvements.gif)
+
+For information on context toolbars, see: [UI components - Context toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
+
 ### New `toolbar_sticky_offset` option for customizing sticky toolbars
 
 The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
 
 For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
-
-### Enhancement name
 
 ### Additional enhancements
 

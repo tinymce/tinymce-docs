@@ -26,35 +26,35 @@ Support for requesting specific versions of {{site.productname}} {{site.productm
 
 ### dev, testing, and stable releases
 
-Choose from `dev`, `testing`, or `stable` release channels to load the latest version of {{site.productname}} from {{site.cloudname}}.
+Choose from `5-dev`, `5-testing`, or `5-stable` release channels to load the latest version of {{site.productname}} from {{site.cloudname}}.
 
 These channels are updated automatically and provide the latest {{site.productname}} version that matches the criteria below.
 
-#### dev release channel
+#### 5-dev release channel
 
-This channel deploys the absolute latest version of {{site.productname}} as documented in [{{site.productname}} changelog]({{ site.baseurl }}/changelog/). The current version of {{site.productname}} available through the `dev` channel [can be found here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/version.txt).
+This channel deploys the absolute latest version of {{site.productname}} as documented in [{{site.productname}} changelog]({{ site.baseurl }}/changelog/). The current version of {{site.productname}} available through the `5-dev` channel [can be found here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/version.txt).
 
-##### Example: Using the `dev` release channel
+##### Example: Using the `5-dev` release channel
 
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js" referrerpolicy="origin"></script>
 ```
 
-#### testing release channel
+#### 5-testing release channel
 
-This channel deploys the current release candidate for the `stable` channel. The {{site.productname}} release candidate is undergoing quality assurance. The current version of {{site.productname}} available through the `testing` channel [can be found at here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/version.txt).
+This channel deploys the current release candidate for the `5-stable` channel. The {{site.productname}} release candidate is undergoing quality assurance. The current version of {{site.productname}} available through the `5-testing` channel [can be found at here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/version.txt).
 
-##### Example: Using the `testing` release channel
+##### Example: Using the `5-testing` release channel
 
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/tinymce.min.js" referrerpolicy="origin"></script>
 ```
 
-#### stable release channel
+#### 5-stable release channel
 
-This channel deploys the latest release of {{site.productname}} that has passed our quality assurance process. The current version of {{site.productname}} available through the `/{{site.productmajorversion}}` stable channel can be found [here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt). The {{site.productname}} {{site.productmajorversion}} stable channel can be loaded from [this url](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js).
+This channel deploys the latest release of {{site.productname}} that has passed our quality assurance process. The current version of {{site.productname}} available through the `/{{site.productmajorversion}}` 5-stable channel can be found [here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt). The {{site.productname}} {{site.productmajorversion}} stable channel can be loaded from [this url](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js).
 
-##### Example: Using the `stable` release channel
+##### Example: Using the `5-stable` release channel
 
 ```js
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>

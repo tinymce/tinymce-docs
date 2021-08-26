@@ -10,6 +10,7 @@ let
     buildInputs = [
       nixpkgs.ruby
       nixpkgs.zlib
+      nixpkgs.bundler
     ];
   };
 in ui

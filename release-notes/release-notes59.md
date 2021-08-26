@@ -28,12 +28,6 @@ keywords: releasenotes bugfixes
 
 The following new features were added for the {{site.productname}} 5.9 release.
 
-### New `toolbar_sticky_offset` option for customizing sticky toolbars
-
-The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
-
-For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
-
 ### New `language` toolbar button and menu item in core
 
 {{site.productname}} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` toolbar button, and a new `language` menu item, both configured using the `content_langs` option. There is also a new `Lang` editor command for changing the language of the selection.
@@ -131,7 +125,21 @@ For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugin
 
 The following enhancements were made for the {{site.productname}} 5.9 release.
 
-### Enhancement name
+### Improved context toolbar user experience
+
+{{site.productname}} 5.9 improves context toolbar positioning by ensuring the toolbar remains in the same position when the user scrolls. Additionally, the context toolbar repositions if the toolbar will overlap the selected content or the cursor. For example: Prior to this improvement, if a user was editing a table, the context toolbar may have covered cells in the first row while it was being edited. Now, when clicking into any cell within that row, the toolbar will move to the bottom of the viewport instead.
+
+To further enhance the user experience, the context toolbar will now use a short animation when the toolbar transitions between different locations.
+
+![Enchanced context toolbar behavior]({{site.baseurl}}/images/context-toolbar-improvements.gif)
+
+For information on context toolbars, see: [UI components - Context toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
+
+### New `toolbar_sticky_offset` option for customizing sticky toolbars
+
+The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the [`toolbar_location` option]({{site.baseurl}}/configure/editor-appearance/#toolbar_location)).
+
+For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 
 ### Additional enhancements
 
@@ -166,6 +174,16 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **<
 - <Description>
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+
+### Mentions 2.3.0
+
+The {{site.productname}} 5.9 release includes an accompanying release of the **Mentions** premium plugin.
+
+**Mentions** 2.3.0 adds the "profile" card feature to the `mentions_menu_hover` callback.
+
+**Mentions** 2.3.0 also fixes the "profile" cards not displaying the `fullName` property when available.
+
+For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/plugins/premium/mentions/).
 
 ### PowerPaste 5.6.0
 

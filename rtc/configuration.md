@@ -85,6 +85,12 @@ The `rtc_token_provider` function will be called one or more times to refresh th
 
 **Required:** yes
 
+#### Input fields for `rtc_token_provider`
+
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option. |
+
 #### Required JWT claims
 
 | Field | Type | Description |
@@ -108,7 +114,7 @@ tinymce.init({
   plugins: 'rtc',
   rtc_document_id: "your-document-id",
   rtc_encryption_provider: () => Promise.resolve({ key: "your shared encryption 🔑", keyHint: "not used" }),
-  rtc_token_provider: () => Promise.resolve({ token: "your-jwt-token" })
+  rtc_token_provider: ({documentId}) => Promise.resolve({ token: "your-jwt-token" })
 })
 ```
 

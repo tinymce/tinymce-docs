@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
+{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
@@ -294,6 +294,8 @@ For information on:
 
 {{site.productname}} 5.9 provides fixes for the following bugs:
 
+- Published TinyMCE types failed to compile in strict mode.
+- The `TableModified` event sometimes didn't fire when performing certain table actions.
 - The `editor.fire` API was incorrectly mutating the original `args` provided.
 - Unbinding an event handler did not take effect immediately while the event was firing.
 - Binding an event handler incorrectly took effect immediately while the event was firing.

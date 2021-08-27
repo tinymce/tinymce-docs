@@ -150,7 +150,6 @@ For information on the `toolbar_sticky_offset` option, see: [User interface opti
 
 - Fancy menu items now accept an `initData` property to allow custom initialization data.
 - Improved the load time of the `fullpage` plugin by using the existing editor schema rather than creating a new one.
-- Improved the performance when UI components are rendered.
 - `Env.browser` now uses the User-Agent Client Hints API where it is available.
 - Icons with a `-rtl` suffix in their name will now automatically be used when the UI is rendered in right-to-left mode.
 - The `formatter.match` API now accepts an optional `similar` parameter to check if the format partially matches.

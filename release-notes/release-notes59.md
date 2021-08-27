@@ -192,6 +192,12 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 **PowerPaste** 5.6.0 introduces the following enhancements:
 
 - The `powerpaste_word_import`, `powerpaste_googledocs_import`, and `powerpaste_html_import` options now also accept asynchronous functions. This allows the paste mode to be dynamically set each time a user pastes relevant content. It is designed to be used, for example, to replicate the `prompt` dialog with a custom dialog.
+- More URLs can now be detected with the `smart_paste` option. Specifically, custom URL scheme detection is more accurate. For more information on URL schemes, see: [What is a URL - Scheme](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#scheme).
+
+**PowerPaste** 5.6.0 provides the following bug fixes:
+
+- Word content was incorrectly parsed when copied from a German user interface.
+- Paste incorrectly inserted content when the editor was in readonly mode.
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 

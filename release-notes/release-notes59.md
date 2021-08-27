@@ -294,8 +294,6 @@ For information on:
 
 {{site.productname}} 5.9 provides fixes for the following bugs:
 
-- Published TinyMCE types failed to compile in strict mode.
-- The `TableModified` event sometimes didn't fire when performing certain table actions.
 - The `editor.fire` API was incorrectly mutating the original `args` provided.
 - Unbinding an event handler did not take effect immediately while the event was firing.
 - Binding an event handler incorrectly took effect immediately while the event was firing.

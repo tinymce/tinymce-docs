@@ -195,6 +195,33 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
+### Spell Checker Pro 2.4.0
+
+The {{site.productname}} 5.9 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.4.0 adds the following new features:
+
+- The Spelling service now supports a broader range of dictionaries by introducing support for [Hunspell dictionaries](https://hunspell.github.io/), see: [New Server-side component features](#newserver-sidecomponentfeatures).
+- The spellchecker dialog now supports navigating to the next and previous words.
+
+**Spell Checker Pro** 2.4.0 includes the following changes:
+
+- The `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option, see: [The `spellchecker_select_languages` option](#thespellchecker_select_languagesoption).
+- Language code validation has been moved from the client to the server.
+- The Spell Checker Pro plugin has been upgraded to use version 2 of the spelling service API.
+- The "Change" button text in the spellchecker dialog has been changed to "Accept".
+
+**Spell Checker Pro** 2.4.0 introduces the following improvements:
+
+- Improved the error messages shown in the developer console for the `SpellcheckError` event, see: [Spell Checker Pro - `Events`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#events).
+
+**Spell Checker Pro** 2.4.0 provides the following bug fixes:
+
+- Links with a URL as the text content will no longer be spellchecked.
+- Resizing the editor with as-you-type mode enabled wouldn't spellcheck words that came into view.
+
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+
 ## Accompanying Premium Skins and Icon Packs changes
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **Premium Skins and Icon Packs**.

@@ -202,7 +202,7 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **S
 **Spell Checker Pro** 2.4.0 adds the following new features:
 
 - The Spelling service now supports a broader range of dictionaries by introducing support for [Hunspell dictionaries](https://hunspell.github.io/), see: [New Server-side component features](#newserver-sidecomponentfeatures).
-- The spellchecker dialog now supports navigating to the next and previous words.
+- The spellchecker dialog now supports navigating to the next and previous misspelled words.
 
 **Spell Checker Pro** 2.4.0 includes the following changes:
 
@@ -217,7 +217,7 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **S
 
 **Spell Checker Pro** 2.4.0 provides the following bug fixes:
 
-- Links with a URL as the text content will no longer be spellchecked.
+- Links with a URL as the text content were incorrectly spellchecked.
 - Resizing the editor with as-you-type mode enabled wouldn't spellcheck words that came into view.
 
 For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).

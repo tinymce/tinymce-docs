@@ -2,7 +2,7 @@
 
 {{site.requires_5_9v}}
 
-This option is used to specify the default values for the table cell background color picker `tablecellbackgroundcolor`. If no values are defined, the toolbar button and menu item will use the values or default values of the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). This option accepts Hex, RGB and HSL color values.
+This option is used to specify the default values for the table cell background color picker, which can be opened with the `tablecellbackgroundcolor` toolbar button or menu item. If no values are defined, the toolbar button and menu item will use the values or default values of the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). This option does not modify the background color picker in the table dialog. This option accepts Hex, RGB and HSL color values.
 
 The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_colors) is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
 

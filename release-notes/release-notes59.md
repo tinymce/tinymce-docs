@@ -144,6 +144,10 @@ The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a sp
 
 For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 
+### Enhanced UI rendering performance
+
+The User Interface has been profiled to find performance bottlenecks and a number of improvements have been made to increase the rendering speed. {{site.productname}} 5.9 should now be up to 20% faster at rendering the UI components, which also leads to an improved editor initialization time.
+
 ### Additional enhancements
 
 {{site.productname}} 5.9 introduces the following minor enhancements:

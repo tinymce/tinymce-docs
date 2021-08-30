@@ -146,7 +146,7 @@ For information on the `toolbar_sticky_offset` option, see: [User interface opti
 
 ### Enhanced UI rendering performance
 
-The User Interface has been profiled to find performance bottlenecks and as such a number of improvements have been made to increase the rendering speed. TinyMCE 5.9 should now be up to 20% faster at rendering the UI components, which also leads to improved editor initialization time.
+The User Interface has been profiled to find performance bottlenecks and a number of improvements have been made to increase the rendering speed. {{site.productname}} 5.9 should now be up to 20% faster at rendering the UI components, which also leads to an improved editor initialization time.
 
 ### Additional enhancements
 

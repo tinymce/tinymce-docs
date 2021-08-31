@@ -1,9 +1,21 @@
-## Private/public key pairs for {{site.cloudname}} services
+## Add a public key to the {{site.cloudname}} API key
 
-{{site.cloudname}} services tokens use public/private RSA key pairs. The {{site.cloudname}} services only store the public key, allowing developers to have full control over the authentication.
+The {{pluginname}} Server requires a _public_ key generated from the same _private_ key that will be used on your JSON Web Token (JWT) Provider server. The public key(s) stored on the {{pluginname}} Server are used to ensure that content is sent by authorized users.
 
-The private/public key pair can be created on your [{{site.accountpage}} page]({{site.accountpageurl}}), however the public key is only stored on the {{site.accountpage}}. The private key should be downloaded and stored in your backend.
+There are two methods for generating and adding a public key to your API key:
 
-> **Important**: Keep the private key secure. Do not commit files containing the key to public repositories or websites.
+1. The secure keypair generator at [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) (recommend).
+1. Generate a keypair locally and add the _public_ key to [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
 
-For information on generating a RSA key pair locally, see: [Creating a private/public key pair for {{pluginname}}]({{site.baseurl}}/advanced/generate-rsa-key-pairs/).
+### Generate a keypair using the {{site.accountpage}} JWT Keys page
+
+The [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) page provides a private/public key generator. This generator will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {{site.companyname}} does not store the _private_ key and the key-pair cannot be retrieved later.
+
+### Generate a keypair locally
+
+When generating a keypair locally, use one of the supported algorithms.
+{% include auth/jwt-supported-algorithms.md %}
+
+For instructions on generating a keypair locally, see: [Creating a private/public key pair for Tiny Cloud]({{site.baseurl}}/advanced/generate-rsa-key-pairs/).
+
+Once a public key has been generated, add the public key to the {{site.cloudname}} API key at: [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).

@@ -25,27 +25,7 @@ The key steps required for setting up Real-Time Collaboration for {{site.product
 
 If you do not have a {{site.cloudname}} API key with a paid subscription, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}).
 
-## Add a public key to the {{site.cloudname}} API key
-
-The {{site.companyname}} RTC Server (Real-Time Collaboration Server) requires a _public_ key generated from the same _private_ key that will be used on your JSON Web Token (JWT) Provide server. The public key(s) stored on the RTC Server are used to ensure that content is only sent between authorized users.
-
-There are two methods for generating and adding a public key to your API key:
-
-1. The secure keypair generator at [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) (recommend).
-1. Generate a keypair locally and add the _public_ key to [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
-
-### Generate a keypair using the {{site.accountpage}} JWT Keys page
-
-The [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) page provides a private/public key generator. This generator will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {{site.companyname}} does not store the _private_ key and the key-pair cannot be retrieved later.
-
-### Generate a keypair locally
-
-When generating a keypair locally, use one of the supported algorithms.
-{% include auth/jwt-supported-algorithms.md %}
-
-For instructions on generating a keypair locally, see: [Creating a private/public key pair for Tiny Cloud]({{site.baseurl}}/advanced/generate-rsa-key-pairs/).
-
-Once a public key has been generated, add the public key to the {{site.cloudname}} API key at: [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
+{% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
 ## Set up an Encryption endpoint
 

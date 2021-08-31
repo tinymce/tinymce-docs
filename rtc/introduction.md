@@ -23,7 +23,7 @@ The following example shows two editors that are collaborating using the {{site.
 1. When the editor content is changed, the editor encrypts the content using the encryption details provided.
 1. The encrypted content and the JWT (but not the encryption details) are sent to the RTC server.
 1. The RTC server verifies that the JWT was signed by the same private key as the public key stored on the RTC server.
-1. Once verified, the content is sent to collaborating editors were the editor will decrypt the content using the encryption details provided when the user opened the editor.
+1. Once verified, the content is sent to collaborating editors where the editor will decrypt the content using the encryption details provided when the user opened the editor.
 1. Once decrypted, the plugin will merge the local content and the decrypted content from the server.
 1. When the content is submitted, it will be sent to your server. If snapshotting option is configured, no submission is needed as snapshots of the content will be sent to your server from the editors
 

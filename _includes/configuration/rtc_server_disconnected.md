@@ -10,13 +10,16 @@ The `rtc_server_disconnected` callback can be used to provide an alternative res
 > * If the `rtc_server_disconnected` is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
 > * If the `rtc_server_disconnected` is not set, the suggested error message will be displayed in a notification asking the user to reload the page.
 
-**Type:** `Function`
+{% if plugincode != "rtc" %}
+Required plugin
+: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+{% endif %}
 
-**Required:** no
+Type
+: Function (Promise)
 
-#### Input fields for `rtc_server_disconnected`
-
-| Field | Type | Description |
+Input parameters
+: | Field | Type | Description |
 |-------|:----:|-------------|
 | `reason` | `string` | The cause of the disconnection. The value will be one of the reasons described below. |
 | `message` | `string` | A suggested description for the error, translated into the active user interface language, suitable for displaying to a user. This string may contain HTML, and in some cases is the same string displayed in the editor notification. |
@@ -46,9 +49,16 @@ The `reason` field will have one of the following values.
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+  rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
+
   rtc_server_disconnected: ({reason, message}) => {
-    console.log('Disconnected', reason, message);
-    // perform some action in response to the RTC session disconnecting
+    // perform some action in response to the RTC session disconnecting, such as:
+    tinymce.activeEditor.notificationManager.open({
+      text: 'Disconnected: ' + reason + '\n' + message,
+      type: 'error'
+    });
   }
 }
 ```

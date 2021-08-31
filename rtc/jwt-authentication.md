@@ -20,6 +20,8 @@ JWT is a standard authorization solution for web services and is documented in m
 
 ## JWT requirements
 
+### Supported algorithms
+
 {% include auth/jwt-supported-algorithms.md %}
 
 ### Claims

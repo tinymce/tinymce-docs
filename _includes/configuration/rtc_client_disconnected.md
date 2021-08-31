@@ -2,12 +2,15 @@
 
 The `rtc_client_disconnected` option can be used with the [`rtc_client_connected`](#rtc_client_connected) option to maintain a list of connected users.
 
-**Type:** `Function`
+{% if plugincode != "rtc" %}
+Required plugin
+: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+{% endif %}
 
-**Required:** no
+Type
+: Function (Promise)
 
-#### Input fields for `rtc_client_disconnected`
-
-The same as [`rtc_client_connected`](#rtc_client_connected)
+Input parameters
+: {% include rtc/rtc-client-connect-inputs.md %}
 
 {% include rtc/rtc-client-connect-disconnect-example.md %}

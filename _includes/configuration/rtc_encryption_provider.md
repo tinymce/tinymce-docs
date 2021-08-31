@@ -14,20 +14,44 @@ If keys are never rotated this can be ignored. For advice on how to use the key 
 
 > **Warning**: Do not include secret or sensitive information in the key hint. The key hint is stored by the server in plain text.
 
-**Type:** `Function`
+{% if plugincode != "rtc" %}
+Required plugin
+: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+{% endif %}
 
-**Required:** yes
+Type
+: Function (Promise)
 
-#### Input fields for `rtc_encryption_provider`
-
-| Field | Type | Description |
+Input data
+: | Field | Type | Description |
 |-------|:----:|-------------|
 | `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option |
 | `keyHint` | `string` or `null` | Key hint returned by the client which opened the session, if connecting to an existing session. |
 
-#### Return fields for `rtc_encryption_provider`
-
-| Field | Type | Required? | Description |
+Return data
+: | Field | Type | Required? | Description |
 |-------|:----:|:----:|-------------|
 | `key` | `string` | required | Encryption key that is used to locally encrypt operations. This key needs to be the same for all connecting clients on the same session. |
 | `keyHint` | `string` | optional | Key hint to provide to future clients to aid in key selection. It is only recorded when the input `keyHint` is `null`. (unicode, max 256 characters) |
+
+### Example: Using `rtc_encryption_provider`
+
+This example shows the minimum required configuration for the Real-Time Collaboration plugin, including the `rtc_encryption_provider` option.
+
+```js
+tinymce.init({
+  selector: 'textarea#rtc-example',
+  plugins: 'rtc',
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: ({documentId, keyHint}) =>
+    fetch('/getKey', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({ documentId, keyId: keyHint })
+    })
+    .then(response => response.json())
+    .then(({keyId, secret}) => ({ key: secret, keyHint: keyId }))
+    .catch((error) => console.log('Failed to return encryption key\n' + error)),
+  rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' })
+});
+```

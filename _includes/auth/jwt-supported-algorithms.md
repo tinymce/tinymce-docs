@@ -1,5 +1,3 @@
-### Supported algorithms
-
 {{pluginname}} does not support symmetrical encryption algorithms, such as HS256. {{site.companyname}} recommends using the RS256 algorithm. The following algorithms are supported:
 
 - RS256

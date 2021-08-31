@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Understanding encryption for Real-Time Collaboration
+title: Encryption for Real-Time Collaboration
 title_nav: RTC Encryption help
 description: Useful information for understanding how encryption is used with RTC
 keywords: rtc encrypt decrypt key rotate signature

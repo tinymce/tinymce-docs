@@ -49,7 +49,7 @@ Input parameters
 |---|:---:|----|
 | `id` | `string` | The id description. |
 
-Return datatype
+Return data
 : | Field | Type | Required or optional | Description |
 |---|:---:|:---:|----|
 | `data` | `string` | required | The data description. |

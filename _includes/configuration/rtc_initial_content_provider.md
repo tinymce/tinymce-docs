@@ -4,19 +4,21 @@ By default, the initial editor content is retrieved from the element targeted us
 
 The `rtc_initial_content_provider` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {{site.productname}} [integrations]({{site.baseurl}}/integrations/)) that don't provide access to the target element directly.
 
-**Type:** `Function`
+{% if plugincode != "rtc" %}
+Required plugin
+: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+{% endif %}
 
-**Required:** no
+Type
+: Function (Promise)
 
-### Input fields for `rtc_initial_content_provider`
-
-| Field | Type | Description |
+Input parameters
+: | Field | Type | Description |
 |-------|:----:|-------------|
 | `documentId` | `string` | The document ID configured using the `rtc_document_id` option.
 
-### Fields to return from `rtc_initial_content_provider`
-
-| Field | Type | Description |
+Return data
+: | Field | Type | Description |
 |-------|:----:|-------------|
 | `content` | `string` | String containing the HTML to be imported into the editor when there is no active session. |
 
@@ -26,6 +28,10 @@ The `rtc_initial_content_provider` option allows alternative initial content be 
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+  rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
+
   rtc_initial_content_provider: () => Promise.resolve({ content: "<p>Hello world!</p>" })
 })
 ```
@@ -36,6 +42,10 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+  rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
+
   rtc_initial_content_provider: ({documentId}) => {
     return fetch(`/getContent/${documentId}`, {
       method: 'POST',

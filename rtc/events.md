@@ -12,7 +12,7 @@ This event is fired when a user enters the session.
 
 ### Event fields: `RtcClientConnected`
 
-See the [`rtc_client_connected`]({{site.baseurl}}/rtc/configuration#rtc_client_connected) documentation for a full description of the event fields.
+{% include rtc/rtc-client-connect-inputs.md %}
 
 ### Example of using the RtcClientConnected event
 
@@ -21,7 +21,13 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcClientConnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
+    editor.on('RtcClientConnected', ({
+      userId,
+      userDetails,
+      clientId,
+      caretNumber,
+      clientInfo
+      }) => {
       console.log(`User connected userId:${userId}`);
     });
   }
@@ -34,7 +40,7 @@ This event is fired when a user leaves the session.
 
 ### Event fields: `RtcClientDisconnected`
 
-This event provides the same event fields as the `RtcClientConnected` event. See the [`rtc_client_connected`]({{site.baseurl}}/rtc/configuration#rtc_client_connected) documentation for a full description of the event fields.
+{% include rtc/rtc-client-connect-inputs.md %}
 
 ### Example of using the RtcClientDisconnected event
 
@@ -43,7 +49,13 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
   setup: (editor) => {
-    editor.on('RtcClientDisconnected', ({userId, userDetails, clientId, caretNumber, clientInfo}) => {
+    editor.on('RtcClientDisconnected', ({
+      userId,
+      userDetails,
+      clientId,
+      caretNumber,
+      clientInfo
+      }) => {
       console.log(`User disconnected userId:${userId}`);
     });
   }

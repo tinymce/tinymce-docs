@@ -7,7 +7,7 @@
 | mceSortTableByColumnDesc | Sorts the current table descending by column based on the current cursor position or selection. |
 | mceSortTableByRowAsc     | Sorts the current table ascending by row based on the current cursor position or selection.     |
 | mceSortTableByRowDesc    | Sorts the current table descending by row based on the current cursor position or selection.    |
-| mceTableToggleSeries     | Toggles a series column on the selected table. For details, see [mceTableToggleSeries](#mcetabletoggleseries). {{ site.requires_5_7v }} |
+| mceTableToggleSeries     | Toggles a series column on the selected table. For details, see [mceTableToggleSeries](#mcetabletoggleseries). {{ site.requires_5_9_1v }} |
 
 **Examples**
 
@@ -18,7 +18,7 @@ tinymce.activeEditor.execCommand('mceSortTableByColumnAsc')
 tinymce.activeEditor.execCommand('mceSortTableByColumnDesc')
 tinymce.activeEditor.execCommand('mceSortTableByRowAsc')
 tinymce.activeEditor.execCommand('mceSortTableByRowDesc')
-tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numbers', location: 'left' })
+tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numeric', location: 'left' })
 ```
 
 ### `mceSortTableAdvanced`

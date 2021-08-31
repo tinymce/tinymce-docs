@@ -1,5 +1,5 @@
 ## `advtable_value_series`
-{{ site.requires_5_7 }}
+{{ site.requires_5_9_1v }}
 
 {% if pluginname != "Advanced Tables" %}
 > **Note**: The `advtable_value_series` option requires the Advanced Tables plugin.
@@ -16,13 +16,15 @@ The `advtable_value_series` option configures value series for populating cells 
 ```js
 {
   // Natural number series
-  numbers: { 
+  numeric: { 
+    title: 'Numeric',
     update: true,
     resizable: false,
     generator: `GeneratorFunction` // For details, see: 'Creating a value series generator'
   },
   // English alphabetic series
   alpha: {
+    title: 'Alpha',
     update: true,
     resizable: false,
     generator: `GeneratorFunction` // For details, see: 'Creating a value series generator'
@@ -36,6 +38,7 @@ Both default series are configured to update on table changes and not resize whe
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
+| title | `string` | Required | The title of the value series. This is used for menu item and toolbar button. |
 | update | `boolean` | Optional | default: `false` - When `true`, the series values will be updated when changes are made to the table. |
 | resizable | `boolean` | Optional | default: `true` - When `true`, table cells containing the series values can be resized using a mouse or touch device. |
 | generator | `(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult` | Required | For details on creating a value series generator, see: [Creating a value series generator](#creatingavalueseriesgenerator).  |
@@ -44,14 +47,17 @@ Both default series are configured to update on table changes and not resize whe
 
 The `generator` is a callback function for specifying how to update a table cell of a value series. The callback is passed information relating to the generator and table cell, the row index, and column index of the table cell. For details, see: [GeneratorInfo](#generatorinfo). The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: [GeneratorResult](#generatorresult).
 
+If state needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: [GeneratorInfo](#generatorinfo). 
+
 ##### GeneratorInfo
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
-| rowType | `'thead'`, `'tbody'` or `'tfoot'` | The section of the table cell. |
+| sectionType | `'thead'`, `'tbody'` or `'tfoot'` | The section of the table cell. |
 | cellType | `'td'` or `'th'` | The type of the table cell. |
+| classes | `string[]` | The classes present on the table cell. |
 | direction | `'row'` or `'column'` | The direction of the generator. |
-| prevSeriesValue | `string` or `undefined` | The previous value calculated by the generator. |
+| prev | `GeneratorResult` | The generator result from the previous iteration. |
 
 ##### GeneratorResult
 
@@ -69,7 +75,8 @@ tinymce.init({
   plugins: 'table advtable',
   menubar: 'table',
   advtable_value_series: {
-    numbers: {
+    numeric: {
+      title: 'Numeric',
       update: true,
       resizable: false,
       generator: function (info, rowIndex, columnIndex) {

@@ -201,6 +201,7 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **A
 
 - Added a new `advtable_value_series` option that allows value series to be configured. For details, see: [Advanced Tables plugin - advtable_value_series]({{site.baseurl}}/plugins/premium/advtable/#advtable_value_series).
 - Added a new `mceTableToggleSeries` command that toggles a series column on the selected table. For details, see: [Advanced Tables plugin - Commands]({{site.baseurl}}/plugins/premium/advtable/#commands).
+- Added a new `advtablerownumbering` toolbar button and menu item that allows the user to add and remove a row numbering column on the selected table. The available numbering options are set with the [`advtable_value_series` option]({{site.baseurl}}/plugins/premium/advtable/#advtable_value_series).
 
 For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 

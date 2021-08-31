@@ -2,17 +2,33 @@
 layout: default
 title: Advanced Tables plugin
 title_nav: Advanced Tables
-description: Add sorting functionality to tables.
-keywords: sort tables advanced advtable premium
+description: Add sorting and row numbering functionality to tables.
+keywords: sort rownumbering series tables advanced advtable premium
 ---
 
 {% assign pluginname = "Advanced Tables" %}
 {% assign plugincode = "advtable" %}
 {% assign plugincategory = "premium" %}
-{{site.requires_5_1v}}<br/>
 {{site.premiumplugin}}
 
-The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding sort options for rows and columns. Tables can be sorted by row or column values using:
+The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding sort options for rows and columns and adding a row identifier column.
+
+## Enabling the Advanced Tables plugin
+
+To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table advtable',
+  menubar: 'table'
+});
+```
+
+## Sorting table rows and columns
+{{site.requires_5_1v}}
+
+Tables can be sorted by row or column values using:
 
 * The **Sort** options in the **Table** menu.
 * The **Sort** options in the table contextual menu.
@@ -31,23 +47,24 @@ The plugin is capable of sorting:
 
 > **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
 
-## Enabling the Advanced Tables plugin
+## Adding row numbering to a table
+{{ site.requires_5_9_1v }}
 
-To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
+A row numbering column can be added to a table to help identify rows in a table.
+![Advanced Tables TODO:.]({{ site.baseurl }}/images/advtable_row_numbering.png)
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table advtable',
-  menubar: 'table'
-});
-```
+The available numbering options are set with the [`advtable_value_series` option](#advtable_value_series).
+
+
+> **Note**: Currently, the **Row numbering** menu item is not added by default in the table contextual menu or in the **Table** menu. TODO:
 
 ## Configuration options
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.
 
 {% include configuration/advtable-value-series.md %}
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 

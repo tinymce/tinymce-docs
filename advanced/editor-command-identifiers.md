@@ -97,7 +97,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSelectNode        | Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                      |
 | mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
 | mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
-| mceFocus             | Focuses and activates the editor. The optional value passed in specifies if the editor should only be activated and not focused.                                                                                                                                                            |
+| mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the `activeEditor` in the tinymce collection. {{site.requires_5_9v}}                                                                                                                       |
 
 **Examples**
 
@@ -155,7 +155,7 @@ tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nodes up.
 tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
-tinymce.activeEditor.execCommand('mceFocus', false, false);
+tinymce.activeEditor.execCommand('mceFocus');
 ```
 
 ### Plugin Commands

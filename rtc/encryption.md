@@ -6,8 +6,6 @@ description: Useful information for understanding how encryption is used with RT
 keywords: rtc encrypt decrypt key rotate signature
 ---
 
-This documentation is in progress. Please contact us with any suggestions you think should be here.
-
 > **Caution**: The advice on this page does not guarantee a secure connection. If data secrecy is important for your users, please consult a security professional.
 
 ## Encryption keys are mandatory
@@ -58,23 +56,3 @@ If the key hint is not included in an encryption provider response for a new key
 > **Warning**: The key hint is stored by the server in plain text. Do not add secret or sensitive information to the key hint.
 
 The key hint can be a key thumbprint, ID, or other non-sensitive identifier that will help select the key, such as a timestamp. It is only recorded when the protocol requests a new key. Returning a key hint from requests for previously issued keys will have no effect.
-
-## RTC encryption details
-
-> **Note**: This section contains the technical details of the encryption used to securely transmit document content. It is provided for information purposes only; an understanding these details is not required to use the RTC plugin.
-
-The Real-Time Collaboration (RTC) plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) to encrypt content directly. The plugin derives a unique session key from the provided key using industry standard cryptography algorithms. This method of content encryption improves protection against brute force decryption.
-
-> **Note**: {{site.companyname}} is in the process of changing the RTC encryption method to [AES-KW](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey), which does not require an initialization vector or protocol salt. The description below is still correct for the current beta release.
-
-The Real-Time Collaboration (RTC) protocol encryption technique is as follows:
-* As described above, each document ID used for collaboration may have multiple sessions. To ensure each session has a unique key, 256 bits of random data are generated as the salt for each session. The salt is generated using the [`Crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) browser API and a 32 byte [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array).
-* The salt data and the provided encryption key are combined using a [PBKDF2](https://tools.ietf.org/html/rfc2898#section-5.2) key derivation function. Derivation is performed by the [SubtleCrypto.deriveKey()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveKey) browser API, using the following parameters:
-  * PBKDF2 [algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Pbkdf2Params), with SHA-512 digest algorithm and 10,000 iterations,
-  * AES-GCM [derivedKeyAlgorithm](https://developer.mozilla.org/en-US/docs/Web/API/AesKeyGenParams) with a length of 256.
-* The derived key is cached (in memory only) and used with [SubtleCrypto.encrypt()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt) and [SubtleCrypto.decrypt()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/decrypt) as necessary, specifying the [AES-GCM algorithm](https://developer.mozilla.org/en-US/docs/Web/API/AesGcmParams). For each encrypted message, 96 bits of random data are used as the initialization vector, also generated with [Crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) but this time using a 12 byte `Uint8Array`. The initialization vector is transmitted alongside the encrypted message.
-* When a real-time collaboration session is established, the provided [`keyHint`]({{site.baseurl}}/rtc/configuration#keyhint) and protocol-generated salt are sent to the server through a HTTPS websocket connection, where they are stored as session metadata. When subsequent clients connect to the session, the server sends these values along with other session information so the client can derive the same unique key.
-* The provided key and derived key are never transmitted between clients. Each client will already have the provided key through the [rtc_encryption_provider]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) configuration, so only the salt needs to be transmitted for clients to derive the unique key. The salt alone cannot be used to decrypt the document content.
-
-
-Our choice of encryption parameters results in an expensive derivation process, even on modern hardware, but the derivation is only performed once by each client when connecting to a session. {{site.companyname}} is committed to the security and privacy of customer data, and {{site.companyname}} has prioritized increased security over derivation performance. Once derivation is complete, encryption and decryption will be hardware accelerated.

@@ -70,6 +70,7 @@ The `identifier` of the plugin is used as a query parameter. This table summaris
 | [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/) |  `advcode` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions) |
 | [Advanced Tables]({{site.baseurl}}/plugins/premium/advtable/) | `advtable` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions) |
 | [Case Change]({{site.baseurl}}/plugins/premium/casechange/) | `casechange` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions) |
+| [Checklist]({{site.baseurl}}/docs/plugins/premium/checklist/) | `checklist` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions) |
 | [Comments]({{site.baseurl}}/plugins/premium/comments/) | `comments` |   [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions) |
 | [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/) | `mediaembed` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions) |
 | [Export]({{site.baseurl}}/plugins/premium/export/) | `export` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions) |

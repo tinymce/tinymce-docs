@@ -62,34 +62,37 @@ This channel deploys the latest release of {{site.productname}} that has passed 
 
 Each TinyMCE version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with TinyMCE. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the [{{site.productname}} editor and premium plugins deployment via {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or just the [premium plugins deployment from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
-The `name` of the plugin is used as a query parameter. This table summarises the possible options.
+The `identifier` of the plugin is used as a query parameter. This table summarises the possible options.
 
-| Description | Name |  Supported Versions |
+| Plugin | Identifier |  Supported Versions |
 | ---- | ------------------|  ------------------ |
-| [Mentions]({{site.baseurl}}/plugins/premium/mentions/) | mentions   |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions) |
-| [TinyDrive]({{ site.baseurl }}/plugins/premium/tinydrive/) | tinydrive | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions) |
-| [Comments]({{site.baseurl}}/plugins/premium/comments/) | comments |   [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions) |
-| [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/) | pageembed |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions) |
-| [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/) | permanentpen |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions) |
-| [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/) | formatpainter |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions) |
-| [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste) | powerpaste |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions) |
-| [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker) | tinymcespellchecker |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions) |
-| [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker) | a11ychecker |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions) |
-| [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/) |  advcode |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions) |
-| [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/) | mediaembed | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions) |
-| [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/) | linkchecker |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions) |
-
+| [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker) | `a11ychecker` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions) |
+| [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/) |  `advcode` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions) |
+| [Advanced Tables]({{site.baseurl}}/plugins/premium/advtable/) | `advtable` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions) |
+| [Case Change]({{site.baseurl}}/plugins/premium/casechange/) | `casechange` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions) |
+| [Comments]({{site.baseurl}}/plugins/premium/comments/) | `comments` |   [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions) |
+| [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/) | `mediaembed` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions) |
+| [Export]({{site.baseurl}}/plugins/premium/export/) | `export` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions) |
+| [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/) | `formatpainter` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions) |
+| [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/) | `linkchecker` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions) |
+| [Mentions]({{site.baseurl}}/plugins/premium/mentions/) | `mentions`   |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions) |
+| [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/) | `pageembed` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions) |
+| [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/) | `permanentpen` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions) |
+| [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste) | `powerpaste` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions) |
+| [Real-Time Collaboration]({{site.baseurl}}/plugins/premium/rtc/) | `rtc` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/rtc/available-versions) |
+| [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker) | `tinymcespellchecker` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions) |
+| [Tiny Drive]({{site.baseurl}}/plugins/premium/tinydrive/) | `tinydrive` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions) |
 
 ### Specifying versions for the editor and premium plugin deployment
 
 If you're deploying [both the editor and premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features), then {{site.productname}} will load the premium plugins bundled with that version of the editor. If you want to choose to load a different version of a premium plugin, they you must provide then name of the plugin and the version to load via query parameters. The version must match one of the versions listed in the `Supported Versions` link for the relevant plugin.
 
 
-You can combine multiple plugin specifications using `&` in your query string. For example, you can load 
+You can combine multiple plugin specifications using `&` in your query string. For example, you can load
 
 * mentions v2.2
 * powerpaste v5.5
-* all other premium plugins from those bundled with `{{site.productmajorversion}}` with: 
+* all other premium plugins from those bundled with `{{site.productmajorversion}}` with:
 
 ```
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}/tinymce.min.js?mentions=2.2&powerpaste=5.5" referrerpolicy="origin"></script>
@@ -101,7 +104,7 @@ If you're deploying [only premium plugins from {{site.cloudname}}]({{ site.baseu
 
 #### plugins.min.js
 
-Instead of using `tinymce.min.js`, you can load {{site.productname}} yourself, and then use `plugins.min.js`, which will attempt to load every **premium** plugin from {{site.cloudname}}, unless the version of the plugin is specified as the special version `sdk`. The query string for `plugins.min.js` works the same way as `tinymce.min.js`, except for the addition of `sdk`. For example, this script tag: 
+Instead of using `tinymce.min.js`, you can load {{site.productname}} yourself, and then use `plugins.min.js`, which will attempt to load every **premium** plugin from {{site.cloudname}}, unless the version of the plugin is specified as the special version `sdk`. The query string for `plugins.min.js` works the same way as `tinymce.min.js`, except for the addition of `sdk`. For example, this script tag:
 
 ```
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}/plugins.min.js?mentions=2.2&powerpaste=5.5&advcode=sdk" referrerpolicy="origin"></script>

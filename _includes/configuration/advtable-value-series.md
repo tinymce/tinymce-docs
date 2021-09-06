@@ -5,7 +5,8 @@
 > **Note**: The `advtable_value_series` option requires the Advanced Tables plugin.
 {% endif %}
 
-The `advtable_value_series` option is used in conjunction with the [mceTableToggleSeries command]({{site.baseurl}}/plugins/premium/advtable/#commands).
+<!-- TODO: Do I still need this? -->
+<!-- The `advtable_value_series` option is used in conjunction with the [mceTableToggleSeries command]({{site.baseurl}}/plugins/premium/advtable/#commands). It also -->
 
 The `advtable_value_series` option configures value series for populating cells in a table. This option can be used to create row identifiers.
 
@@ -38,7 +39,7 @@ Both default series are configured to update on table changes and not resize whe
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| title | `string` | Required | The title of the value series. This is used for menu item and toolbar button. |
+| title | `string` | Required | The name shown in the UI for the series. |
 | update | `boolean` | Optional | default: `false` - When `true`, the series values will be updated when changes are made to the table. |
 | resizable | `boolean` | Optional | default: `true` - When `true`, table cells containing the series values can be resized using a mouse or touch device. |
 | generator | `(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult` | Required | For details on creating a value series generator, see: [Creating a value series generator](#creatingavalueseriesgenerator).  |

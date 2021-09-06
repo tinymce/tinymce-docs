@@ -2,13 +2,20 @@
 layout: default
 title: Advanced Tables plugin
 title_nav: Advanced Tables
-description: Add sorting functionality to tables.
-keywords: sort tables advanced advtable premium
+description: Add advanced functionality to tables.
+keywords: sort rownumbering series tables advanced advtable premium
 ---
 
 {{site.requires_5_1v}}
 
-Advanced Tables adds sorting functionality to tables in {{site.productname}}. Tables can be sorted by row or column values using:
+<!-- TODO: Have to fix this page as well -->
+<!-- TODO: Try and update demo as well -->
+
+Advanced Tables adds advanced functionality to tables in {{site.productname}}, including:
+* Sorting row and columns
+*  
+
+Tables can be sorted by row or column values using:
 
 * The **Sort** options in the **Table** menu.
 * The **Sort** options in the table contextual menu.

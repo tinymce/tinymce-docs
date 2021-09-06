@@ -2,7 +2,7 @@
 layout: default
 title: Advanced Tables plugin
 title_nav: Advanced Tables
-description: Add sorting and row numbering functionality to tables.
+description: Add advanced functionality to tables.
 keywords: sort rownumbering series tables advanced advtable premium
 ---
 
@@ -11,7 +11,9 @@ keywords: sort rownumbering series tables advanced advtable premium
 {% assign plugincategory = "premium" %}
 {{site.premiumplugin}}
 
-The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding sort options for rows and columns and adding a row identifier column.
+The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding the following advanced functionality:
+- sort options for rows and columns.
+- ability to add a row numbering column.
 
 ## Enabling the Advanced Tables plugin
 
@@ -50,13 +52,16 @@ The plugin is capable of sorting:
 ## Adding row numbering to a table
 {{ site.requires_5_9_1v }}
 
-A row numbering column can be added to a table to help identify rows in a table.
+<!-- TODO: Try and mention series of values... -->
+A row numbering column containg a series of values can be added to a table to help identify rows in a table. To allow row numbering on tables, the `advtablerownumbering` toolbar button and menu item can be used.
+
+A numeric and alpha value series are available by default. The available value series can be configured using the [`advtable_value_series` option](#advtable_value_series).
+
 ![Advanced Tables TODO:.]({{ site.baseurl }}/images/advtable_row_numbering.png)
 
-The available numbering options are set with the [`advtable_value_series` option](#advtable_value_series).
-
-
-> **Note**: Currently, the **Row numbering** menu item is not added by default in the table contextual menu or in the **Table** menu. TODO:
+<!-- TODO: Probably do need to mention the toolbar button and menu button is some capacity -->
+<!-- TODO: Series are what row numbering is doing  -->
+<!-- TODO: Talk about the setting like it is just for row numbering -->
 
 ## Configuration options
 

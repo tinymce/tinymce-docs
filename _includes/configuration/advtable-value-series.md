@@ -5,9 +5,6 @@
 > **Note**: The `advtable_value_series` option requires the Advanced Tables plugin.
 {% endif %}
 
-<!-- TODO: Do I still need this? -->
-<!-- The `advtable_value_series` option is used in conjunction with the [mceTableToggleSeries command]({{site.baseurl}}/plugins/premium/advtable/#commands). It also -->
-
 The `advtable_value_series` option configures value series for populating cells in a table. This option can be used to create row identifiers.
 
 **Type:** `Object`
@@ -75,6 +72,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'table advtable',
   menubar: 'table',
+  toolbar: 'advtablerownumbering',
   advtable_value_series: {
     numeric: {
       title: 'Numeric',

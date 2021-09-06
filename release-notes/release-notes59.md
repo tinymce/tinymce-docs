@@ -200,8 +200,6 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **A
 **Advanced Tables** 1.1.0 provides the following new features:
 
 Added row numbering support that allows the user to add and remove a row numbering column on the selected table. For details, see: [Advanced Tables plugin - Adding row numbering to a table]({{site.baseurl}}/plugins/premium/advtable/#addingrownumberingtoatable).
-
-<!-- TODO: Wondering if I need to document these as I think they just confuse the row numbering feature more -->
 - Added a new `advtablerownumbering` toolbar button and menu item.
 - Added a new `advtable_value_series` option.
 - Added a new `mceTableToggleSeries` command.

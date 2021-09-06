@@ -97,7 +97,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSelectNode        | Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                      |
 | mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
 | mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
-| mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the `activeEditor` in the tinymce collection. {{site.requires_5_9v}}                                                                                                                       |
+| mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page. {{site.requires_5_9v}}                                                                                                                       |
 
 **Examples**
 

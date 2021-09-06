@@ -6,12 +6,12 @@ description: Add advanced functionality to tables.
 keywords: sort rownumbering series tables advanced advtable premium
 ---
 
-
+{{site.requires_5_1v}}
 
 Advanced Tables adds advanced functionality to tables in {{site.productname}}, including:
 
-* sorting rows and columns. {{site.requires_5_1v}}
-* inserting a row numbering column to identify rows. {{site.requires_5_9_1v}}
+* sorting rows and columns.
+* inserting a row numbering column to identify rows. {{site.requires_5_9v}}
 
 ## Try our Advanced Tables Demo
 

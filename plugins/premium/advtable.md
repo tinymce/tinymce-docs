@@ -9,11 +9,12 @@ keywords: sort rownumbering series tables advanced advtable premium
 {% assign pluginname = "Advanced Tables" %}
 {% assign plugincode = "advtable" %}
 {% assign plugincategory = "premium" %}
+{{site.requires_5_1v}}<br/>
 {{site.premiumplugin}}
 
 The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding the following advanced functionality:
 - sort options for rows and columns.
-- row numbering column for tables.
+- row numbering column for tables. {{site.requires_5_9v}}
 
 ## Enabling the Advanced Tables plugin
 
@@ -28,7 +29,6 @@ tinymce.init({
 ```
 
 ## Sorting table rows and columns
-{{site.requires_5_1v}}
 
 Tables can be sorted by row or column values using:
 
@@ -50,7 +50,7 @@ The plugin is capable of sorting:
 > **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
 
 ## Adding row numbering to a table
-{{ site.requires_5_9_1v }}
+{{ site.requires_5_9v }}
 
 A row numbering column containing a series of values can be added to a table to help identify rows in a table. To allow row numbering on tables, the `advtablerownumbering` toolbar button and menu item can be used.
 

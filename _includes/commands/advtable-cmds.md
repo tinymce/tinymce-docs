@@ -7,7 +7,7 @@
 | mceSortTableByColumnDesc | Sorts the current table descending by column based on the current cursor position or selection. |
 | mceSortTableByRowAsc     | Sorts the current table ascending by row based on the current cursor position or selection.     |
 | mceSortTableByRowDesc    | Sorts the current table descending by row based on the current cursor position or selection.    |
-| mceTableToggleSeries     | Toggles a series column on the selected table. For details, see [mceTableToggleSeries](#mcetabletoggleseries). {{ site.requires_5_9_1v }} |
+| mceTableToggleSeries     | Toggles a series column on the selected table. For details, see [mceTableToggleSeries](#mcetabletoggleseries). {{ site.requires_5_9v }} |
 
 **Examples**
 

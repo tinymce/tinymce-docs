@@ -1,5 +1,5 @@
 ## `advtable_value_series`
-{{ site.requires_5_9_1v }}
+{{ site.requires_5_9v }}
 
 {% if pluginname != "Advanced Tables" %}
 > **Note**: The `advtable_value_series` option requires the Advanced Tables plugin.

@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
+{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
@@ -98,13 +98,13 @@ For information on these menu items, see: [Available menu items]({{site.baseurl}
 {{site.productname}} 5.9 adds new options for the Table plugin to improve the user experience when working with tables. These new options are optional, and allows further customization of user experience.
 
 `table_background_color_map`
-: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map)
+: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_background_color_map]({{site.baseurl}}/plugins/opensource/table/#table_background_color_map).
 
 `table_border_color_map`
-: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map)
+: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map). For information on this option, see: [Table options - table_border_color_map]({{site.baseurl}}/plugins/opensource/table/#table_border_color_map).
 
 `table_border_widths`
-: Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths)
+: Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: [Table options - table_border_widths]({{site.baseurl}}/plugins/opensource/table/#table_border_widths).
 
 `table_border_styles`
 : Allows setting a specific set of HTML border styles to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: [Table options - table_border_styles]({{site.baseurl}}/plugins/opensource/table/#table_border_styles).
@@ -120,6 +120,9 @@ For information on the Table plugin, see: [Table plugin]({{site.baseurl}}/plugin
   - `mceWordCount` displays the Word Count summary dialog.
   - `mceTemplate` shows the Template dialog.
 - A new `iframe_aria_text` option for customizing the `title` attribute on the editor iframe. For details, see: [Accessibility options - `iframe_aria_text`]({{site.baseurl}}/configure/accessibility/#iframe_aria_text).
+- Added a new `mceFocus` command that focuses the editor. Equivalent to using `editor.focus()`.
+- Added a new `table-row-numbering` icon.
+- Added a new DomParser `Node.children()` API to return all the children of a `Node`.
 
 ## Enhancements
 
@@ -141,17 +144,32 @@ The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a sp
 
 For information on the `toolbar_sticky_offset` option, see: [User interface options - toolbar_sticky_offset]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky_offset).
 
+### Enhanced UI rendering performance
+
+The User Interface has been profiled to find performance bottlenecks and a number of improvements have been made to increase the rendering speed. {{site.productname}} 5.9 should now be up to 20% faster at rendering the UI components, which also leads to an improved editor initialization time.
+
 ### Additional enhancements
 
 {{site.productname}} 5.9 introduces the following minor enhancements:
 
-- changelog
+- Fancy menu items now accept an `initData` property to allow custom initialization data.
+- Improved the load time of the `fullpage` plugin by using the existing editor schema rather than creating a new one.
+- `Env.browser` now uses the User-Agent Client Hints API where it is available.
+- Icons with a `-rtl` suffix in their name will now automatically be used when the UI is rendered in right-to-left mode.
+- The `formatter.match` API now accepts an optional `similar` parameter to check if the format partially matches.
+- The `formatter.formatChanged` API now supports providing format variables when listening for changes.
+- The formatter will now fire `FormatApply` and `FormatRemove` events for the relevant actions.
+- The `autolink` plugin link detection now permits custom protocols.
+- The `autolink` plugin valid link detection has been improved.
 
 ## Functionality changes
 
 The following functionality changes were made for the {{site.productname}} 5.9 release:
 
-- changelog
+- Changed the load order so content CSS is loaded before the editor is populated with content.
+- Changed the `emoticons`, `wordcount`, `code`, `codesample`, and `template` plugins to open dialogs using commands.
+- The context toolbar will no longer show an arrow when it overlaps the content, such as in table cells.
+- The context toolbar will no longer overlap the statusbar for toolbars using `node` or `selection` positions.
 
 ## Accompanying Premium Plugin changes
 
@@ -192,8 +210,41 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 **PowerPaste** 5.6.0 introduces the following enhancements:
 
 - The `powerpaste_word_import`, `powerpaste_googledocs_import`, and `powerpaste_html_import` options now also accept asynchronous functions. This allows the paste mode to be dynamically set each time a user pastes relevant content. It is designed to be used, for example, to replicate the `prompt` dialog with a custom dialog.
+- More URLs can now be detected with the `smart_paste` option. Specifically, custom URL scheme detection is more accurate. For more information on URL schemes, see: [What is a URL - Scheme](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#scheme).
+
+**PowerPaste** 5.6.0 provides the following bug fixes:
+
+- Word content was incorrectly parsed when copied from a German user interface.
+- Paste incorrectly inserted content when the editor was in readonly mode.
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+
+### Spell Checker Pro 2.4.0
+
+The {{site.productname}} 5.9 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.4.0 adds the following new features:
+
+- The Spelling service now supports a broader range of dictionaries by introducing support for [Hunspell dictionaries](https://hunspell.github.io/), see: [New Server-side component features](#newserver-sidecomponentfeatures).
+- The spellchecker dialog now supports navigating to the next and previous misspelled words.
+
+**Spell Checker Pro** 2.4.0 includes the following changes:
+
+- The `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option, see: [The `spellchecker_select_languages` option](#thespellchecker_select_languagesoption).
+- Language code validation has been moved from the client to the server.
+- The Spell Checker Pro plugin has been upgraded to use version 2 of the spelling service API.
+- The "Change" button text in the spellchecker dialog has been changed to "Accept".
+
+**Spell Checker Pro** 2.4.0 introduces the following improvements:
+
+- Improved the error messages shown in the developer console for the `SpellcheckError` event, see: [Spell Checker Pro - `Events`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#events).
+
+**Spell Checker Pro** 2.4.0 provides the following bug fixes:
+
+- Links with a URL as the text content were incorrectly spellchecked.
+- Resizing the editor with as-you-type mode enabled wouldn't spellcheck words that came into view.
+
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
 ## Accompanying Premium Skins and Icon Packs changes
 
@@ -280,7 +331,46 @@ For information on:
 
 {{site.productname}} 5.9 provides fixes for the following bugs:
 
-- changelog
+- The `editor.fire` API was incorrectly mutating the original `args` provided.
+- Unbinding an event handler did not take effect immediately while the event was firing.
+- Binding an event handler incorrectly took effect immediately while the event was firing.
+- Unbinding a native event handler inside the `remove` event caused an exception that blocked editor removal.
+- The `SetContent` event contained the incorrect `content` when using the `editor.selection.setContent()` API.
+- The editor content could be edited after calling `setProgressState(true)` in iframe mode.
+- Tabbing out of the editor after calling `setProgressState(true)` behaved inconsistently in iframe mode.
+- Flash of unstyled content while loading the editor because the content CSS was loaded after the editor content was rendered.
+- Partially transparent RGBA values provided in the `color_map` setting were given the wrong hex value.
+- HTML comments with mismatched quotes were parsed incorrectly under certain circumstances.
+- The editor could crash when inserting certain HTML content.
+- Inserting certain HTML content into the editor could result in invalid HTML once parsed.
+- Links in notification text did not show the correct mouse pointer.
+- Using the Tab key to navigate into the editor on Microsoft Internet Explorer 11 would incorrectly focus the toolbar.
+- The editor selection could be placed in an incorrect location when undoing or redoing changes in a document containing `contenteditable="false"` elements.
+- Menus and context menus were not closed when clicking into a different editor.
+- Context menus on Android were not displayed when more than one HTML element was selected.
+- Disabled nested menu items could still be opened.
+- The nested menu item chevron icon was not fading when the menu item was disabled.
+- `imagetools` buttons were incorrectly enabled for remote images without `imagetools_proxy` set.
+- Only table content would be deleted when partially selecting a table and content outside the table.
+- The table cell selection handling was incorrect in some cases when dealing with nested tables.
+- Removing a table row or column could result in the cursor getting placed in an invalid location.
+- Pressing the Tab key to navigate through table cells did not skip noneditable cells.
+- Clicking on a noneditable table cell did not show a visual selection like other noneditable elements.
+- Some table operations would incorrectly cause table row attributes and styles to be lost.
+- The selection was incorrectly lost when using the `mceTableCellType` and `mceTableRowType` commands.
+- The `mceTableRowType` was reversing the order of the rows when converting multiple header rows back to body rows.
+- The table dialog did not always respect the `table_style_with_css` option.
+- Pasting into a table with multiple cells selected could cause the content to be pasted in the wrong location.
+- The `TableModified` event was not fired when pasting cells into a table.
+- The table paste column before and after icons were not flipped in RTL mode.
+- Fixed table corruption when deleting a `contenteditable="false"` cell.
+- The `dir` attribute was being incorrectly applied to list items.
+- Applying selector formats would sometimes not apply the format correctly to elements in a list.
+- For formats that specify an attribute or style that should be removed, the formatter `match` API incorrectly returned `false`.
+- The type signature on the `formatter.matchNode` API had the wrong return type (was `boolean` but should have been `Formatter | undefined`).
+- The `formatter.formatChanged` API would ignore the `similar` parameter if another callback had already been registered for the same format.
+- The `formatter.formatChanged` API would sometimes not run the callback the first time the format was removed.
+- Base64 encoded images with spaces or line breaks in the data URI were not displayed correctly. Patch contributed by RoboBurned
 
 ## Security fixes
 

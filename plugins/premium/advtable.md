@@ -62,7 +62,7 @@ A numeric and alpha value series are available by default. The available value s
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.
 
-{% include configuration/advtable-value-series.md %}
+{% include configuration/advtable_value_series.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

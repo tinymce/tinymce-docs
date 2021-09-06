@@ -1,6 +1,6 @@
 This section contains the technical details of the encryption used to securely transmit document content. It is provided for information purposes only; an understanding these details is not required to use the RTC plugin.
 
-For information on how to set up an encryption endpoint for Real-Time Collaboration, see: []({{site.baseurl}}/rtc/encryption/)
+For information on how to set up an encryption endpoint for Real-Time Collaboration, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/rtc/encryption/)
 
 The Real-Time Collaboration (RTC) plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration#rtc_encryption_provider) to encrypt content directly. The plugin derives a unique session key from the provided key using industry standard cryptography algorithms. This method of content encryption improves protection against brute force decryption.
 

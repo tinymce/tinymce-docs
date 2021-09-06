@@ -204,10 +204,12 @@ tinymce.ScriptLoader.loadScripts(
       tinymce.init({
         selector: editorID,
         plugins:
-          'rtc advlist charmap emoticons help hr image insertdatetime link lists powerpaste print save tabfocus visualblocks wordcount',
+          'rtc advlist charmap emoticons help hr image insertdatetime link ' +
+          'lists powerpaste print save tabfocus visualblocks wordcount',
         menubar: 'file edit insert view format table tools help',
         toolbar:
-          'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | insert | help',
+          'undo redo | formatselect | bold italic underline | ' +
+          'alignleft aligncenter alignright | bullist numlist | insert | help',
         height: 400,
         toolbar_groups: {
           insert: {

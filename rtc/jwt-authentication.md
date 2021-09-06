@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Real-Time Collaboration (RTC) JWT Authentication
-title_nav: JWT Authentication
+title: Real-Time Collaboration (RTC) JWT Authentication Setup
+title_nav: JWT Authentication Setup
 description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
@@ -56,6 +56,8 @@ JSON Web Tokens produced by the JWT endpoint must include the following claims:
 | `exp` | required | `number` | The unix timestamp for when the token expires. |
 
 The `sub` field is used to identify users to avoid sending sensitive or identity information to {{site.companyname}} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
+
+> **Caution**: The RTC plugin does not request a new JWT if user's JWT expires during a session. To avoid user disconnections from expired JWTs, ensure the `exp` claim allows for a reasonable
 
 ## JWT endpoint examples
 

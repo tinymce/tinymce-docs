@@ -696,23 +696,35 @@
 - url: "rtc"
   pages:
     - url: "introduction"
-    - url: "rtc-supported-functionality"
-    - url: "getting-started"
-    - url: "jwt-authentication"
       pages:
-      - url: "#Introduction"
-      - url: "#Private/public key pairs for Tiny Cloud services"
-      - url: "#JWT provider endpoint URL"
-      - url: "#JWT requirements"
-      - url: "#JWT endpoint setup procedure"
-      - url: "#PHP token provider endpoint example"
-      - url: "#Node token provider endpoint example"
+      - url: "#Interactive example"
+      - url: "#Features of TinyMCE Real-Time Collaboration"
+      - url: "#Overview of how TinyMCE Real-Time Collaboration works"
+      - url: "#Getting started with Real-Time Collaboration"
+    - url: "rtc-supported-functionality"
+      pages:
+      - url: "#Browser support"
+      - url: "#Mobile support"
+      - url: "#RTC enabled features (plugins)"
+      - url: "#Options that are not available when RTC is enabled"
+    - url: "getting-started"
+      pages:
+      - url: "#Register for a Tiny Cloud API key"
+      - url: "#Add a public key to the Tiny Cloud API key"
+      - url: "#Set up an Encryption endpoint"
+      - url: "#Set up a JSON Web Token (JWT) Provider endpoint"
+      - url: "#Configure the required TinyMCE options"
     - url: "encryption"
       pages:
-      - url: "#Encryption keys are mandatory"
-      - url: "#The difference between content encryption and JWT signing"
-      - url: "#Choosing an encryption key"
-      - url: "#Generating a secure encryption key"
+      - url: "#Setting up an encryption endpoint"
+      - url: "#General advice on generating a secure encryption key"
+      - url: "#Encryption key rotation and key hints"
+    - url: "jwt-authentication"
+      pages:
+      - url: "#Setting up JWT authentication for Real-Time Collaboration"
+      - url: "#Add a public key to the Tiny Cloud API key"
+      - url: "#Set up a JSON Web Token (JWT) endpoint"
+      - url: "#JWT endpoint examples"
     - url: "configuration"
       pages:
       - url: "#Required configuration"
@@ -733,6 +745,7 @@
       pages:
       - url: "#RtcClientConnected"
       - url: "#RtcClientDisconnected"
+    - url: "how-the-rtc-plugin-encrypts-content"
     - url: "rtc-troubleshooting"
       pages:
       - url: "#Common error messages"

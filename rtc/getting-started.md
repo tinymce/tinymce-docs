@@ -29,11 +29,15 @@ If you do not have a {{site.cloudname}} API key with a paid subscription, you ca
 
 ## Set up an Encryption endpoint
 
-For information on setting up an Encryption Provider endpoint, see: [Encryption for Real-Time Collaboration]({{site.baseurl}}/rtc/encryption/).
+{{site.productname}} Real-Time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption.
+
+For information on setting up an Encryption Provider endpoint, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/rtc/encryption/).
 
 ## Set up a JSON Web Token (JWT) Provider endpoint
 
-For information on setting up a JSON Web Token Provider endpoint, see: [Real-Time Collaboration (RTC) JWT Authentication]({{site.baseurl}}/rtc/jwt-authentication/).
+Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
+
+For information on setting up a JSON Web Token Provider endpoint, see: [Real-Time Collaboration (RTC) JWT Authentication Setup]({{site.baseurl}}/rtc/jwt-authentication/).
 
 ## Configure the required {{site.productname}} options
 

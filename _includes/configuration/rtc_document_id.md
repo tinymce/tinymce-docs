@@ -1,4 +1,4 @@
-### `rtc_document_id`
+## `rtc_document_id`
 
 The RTC plugin requires a unique identifier for editor content to enable collaboration, known as the document ID. The identifier set by the integrator is used by the RTC server as a permanent reference for the content. {{site.companyname}} recommends using the same unique ID used by your server where possible, such as the unique page or document ID from a CMS.
 
@@ -6,7 +6,7 @@ The RTC plugin requires a unique identifier for editor content to enable collabo
 
 When a client (user) connects:
 * If the document ID already exist, the most recent version of the content is sent to the client's editor.
-* If the document ID does not exist, the client uploads new initial content as the first version of that document ID.
+* If the document ID does not exist, the client uploads the initial content as the first version of that document.
 
 > **Warning**: If the content is changed outside of an RTC session, a new document ID must be generated. Changes made outside the RTC session will be overwritten by the content on the RTC server during the next collaboration session.
 

@@ -41,7 +41,7 @@ Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentic
 
 For information on setting up a JSON Web Token Provider endpoint, see: [Real-Time Collaboration (RTC) JWT Authentication Setup]({{site.baseurl}}/rtc/jwt-authentication/).
 
-## Configure the required {{site.productname}} options
+## Configure the required {{site.productname}} RTC options
 
 ### Basic static Real-Time Collaboration (RTC) setup
 

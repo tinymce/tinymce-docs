@@ -1,11 +1,13 @@
-### `rtc_token_provider`
+## `rtc_token_provider`
 
-The RTC plugin and the RTC service uses [JSON Web Tokens (JWT)]({{site.baseurl}}/rtc/jwt-authentication/) to authenticate the user. The user's token should include:
+The RTC plugin and the RTC service uses [JSON Web Tokens (JWT)](https://jwt.io/introduction/) to authenticate the user. The user's token should include:
 
-* A unique user ID,
-* A relative expiration time.
+* A unique user ID (`sub`).
+* A relative expiration time (`exp`).
 
 The `rtc_token_provider` function will be called one or more times to refresh the token before it expires. For production usage, {{site.companyname}} recommends a token provider with a dynamic request that produces a new JWT token with an updated `exp` claim.
+
+For information on generating and serving JWTs for {{site.productname}} RTC, see: [Real-Time Collaboration (RTC) JWT Authentication Setup]({{site.baseurl}}/rtc/jwt-authentication/).
 
 {% if plugincode != "rtc" %}
 Required plugin
@@ -23,14 +25,14 @@ Input parameters
 Return data
 : | Field | Type | Description |
 |-------|:----:|-------------|
-| `token` | `string` | A generated JWT token. This token should be signed with a private key as described in [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices). |
+| `token` | `string` | A generated JWT token. This token should be signed with a private key as described in [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/#jwtendpointrequirements). |
 
-#### Required JWT claims
+### Required JWT claims
 
 | Field | Type | Description |
 |-------|:----:|-------------|
 | `sub` | `string` | The unique user ID (If `sub` is the same for two clients, the server will trust them as if they are the same user). |
-| `exp` | `integer` | The timestamp when the token expires. |
+| `exp` | `integer` | A timestamp indicating the token expiry date and time. |
 
 ### Example: Using `rtc_token_provider`
 

@@ -1,6 +1,6 @@
-### Example using client connect and disconnect events with custom user details
+#### Example using client connect and disconnect events with custom user details
 
-While all fields are provided to both `rtc_client_connected` and `rtc_client_disconnected` functions, this example only handles the relevant fields for each callback function.
+While all fields are provided to both the `rtc_client_connected` and `rtc_client_disconnected` functions, this example only handles the relevant fields for each callback function.
 
 ```js
 const connectedUsers = {}

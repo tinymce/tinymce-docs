@@ -1,8 +1,8 @@
 ### `rtc_snapshot`
 
-Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides a version number to assist with storing the regular content snapshots. These snapshots are not stored by the {{site.cloudname}} and must be handled by the integrator.
+Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides a version number to assist with storing the regular content snapshots. These snapshots are not stored on the {{site.cloudname}} and must be handled by the integrator.
 
-For any given document ID, the server guarantees the version number will only increase. It can be safely used for conflict resolution. For each document ID and version combination the snapshot content is guaranteed to be identical.
+For any given document ID, the server guarantees the version number will only increase. It can be safely used for conflict resolution. For each document ID and version combination, the snapshot content is guaranteed to be identical.
 
 The snapshot callback will be executed at regular intervals with access to the serialized editor content. The content is retrieved through a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
 

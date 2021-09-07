@@ -15,7 +15,7 @@ The following options are required to use the Real-Time Collaboration (RTC) plug
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
 * [`rtc_token_provider`](#rtc_token_provider)
 
-For an example minimum configuration, see: [Examples of the minimum required configuration for the RTC plugin](#examplesoftheminimumrequiredconfigurationforthertcplugin).
+For an example showing the minimum required configuration for RTC, see: [Getting started with RTC - Configure the required TinyMCE RTC options]({{site.baseurl}}/rtc/getting-started/#configuretherequiredtinymcertcoptions).
 
 {% include configuration/rtc_document_id.md %}
 

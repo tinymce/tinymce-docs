@@ -43,8 +43,8 @@ tinymce.ScriptLoader.loadScripts(
     }
 
     function randomString() {
-      /* ~62 bits of randomness, so very unlikely to collide for <100K uses */
-      return Math.random().toString(36).substring(2, 14);
+      const randomArray = new Uint32Array(20);
+      return window.crypto.getRandomValues(randomArray)[0];
     }
 
     /* Our server "database" */

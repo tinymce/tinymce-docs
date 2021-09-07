@@ -8,7 +8,7 @@ keywords: rtc events
 
 ## `RtcClientConnected`
 
-This event is fired when a user enters the session.
+When a user joins a real-time collaboration session, the `RtcClientConnected` event is fired on existing {{site.productname}} in the session and provides the user information of the newly joined user to other editors in the session.
 
 ### Event fields: `RtcClientConnected`
 
@@ -36,7 +36,7 @@ tinymce.init({
 
 ## `RtcClientDisconnected`
 
-This event is fired when a user leaves the session.
+This event is fired when a user leaves the session, and can be used to trigger user interface changes to let other users know that the user has disconnected.
 
 ### Event fields: `RtcClientDisconnected`
 

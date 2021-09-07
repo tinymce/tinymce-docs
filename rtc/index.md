@@ -5,8 +5,8 @@ title_nav: Real-Time Collaboration (RTC)
 description: The TinyMCE Real-Time Collaboration plugin
 type: folder
 ---
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "rtc" %}
     {% assign links = entry.pages %}
   {% endif %}

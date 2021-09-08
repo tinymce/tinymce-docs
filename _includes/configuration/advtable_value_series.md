@@ -28,6 +28,8 @@ The `advtable_value_series` option configures value series for populating cells 
 
 Both default series are configured to update on table changes and not resize when using the resize bars.
 
+Each property of the `advtable_value_series` object indicates the name of the value series and its configuration.
+
 ### Series configuration
 
 | Name | Value | Requirement | Description |
@@ -45,6 +47,8 @@ If state needs to be kept between generator iterations, additional properties ca
 
 ##### GeneratorInfo
 
+An object with the following properties is passed to the generator callback function as the `info` parameter.
+
 | Name | Value | Description |
 | ---- | ----- | ----------- |
 | sectionType | `'thead'`, `'tbody'` or `'tfoot'` | The section of the table cell. |
@@ -54,6 +58,8 @@ If state needs to be kept between generator iterations, additional properties ca
 | prev | `GeneratorResult` | The generator result from the previous iteration. |
 
 ##### GeneratorResult
+
+The generator callback function should return an object with the following properties.
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |

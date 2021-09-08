@@ -9,8 +9,6 @@
 
 {{site.productname}} may not function as expected on unlisted browsers. Try out the {{site.productname}} examples on {{site.url}} to determine any functional limitations of an unlisted browser.
 
-Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/issues) to submit bugs on listed browsers only.
-
 |Browser | Windows       | Mac           | GNU/Linux     |
 |--------|:-------------:|:-------------:|:-------------:|
 |Chrome  | {{site.tick}} | {{site.tick}} | {{site.tick}} |

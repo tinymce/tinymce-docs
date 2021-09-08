@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
+{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)

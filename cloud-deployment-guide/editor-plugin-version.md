@@ -60,7 +60,7 @@ This channel deploys the latest release of {{site.productname}} that has passed 
 
 ## Specifying the version of premium plugins deployed from Tiny Cloud
 
-Each TinyMCE version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with TinyMCE. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the [{{site.productname}} editor and premium plugins deployment via {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or just the [premium plugins deployment from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
+Each {{site.productname}} version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with {{site.productname}}. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the [{{site.productname}} editor and premium plugins deployment via {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or just the [premium plugins deployment from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
 The `identifier` of the plugin is used as a query parameter. This table summarises the possible options.
 

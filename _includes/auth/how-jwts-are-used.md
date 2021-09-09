@@ -16,6 +16,6 @@ When a user starts a {{pluginname}} session:
 
 1. The RTC plugin requests a signed JWT on behalf of the user.
 1. If your JWT endpoint authorizes the user, your JWT endpoint will send a JWT to the RTC plugin, certifying the user.
-1. When the user makes a request (such as adding or deleting content), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the {{site.cloudname}} Server.
-1. The {{site.cloudname}} Server sends the verified content to collaborating editors.
+1. When the user makes a request (such as adding or deleting content), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the RTC Server.
+1. The RTC Server sends the verified content to collaborating editors.
 {% endif %}

@@ -39,10 +39,7 @@ To retrieve your API key, or to sign up for an API key, visit: [{{site.cloudname
 
 ### Cause
 
-This notification is shown when either:
-
-- The API key provided cannot be found on the {{site.cloudname}} server.
-- The provided `apiKey` has the wrong structure.
+This notification is shown when the API key provided cannot be found on the {{site.cloudname}} server.
 
 The `apiKey` must be:
 

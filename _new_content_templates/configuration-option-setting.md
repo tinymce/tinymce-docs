@@ -15,7 +15,7 @@ Required plugin
 {% endif %}
 
 Type
-: String, Boolean, Number, Function, Object, Array,or Regexp
+: String, Boolean, Number, Function, Object, Array, or Regexp
 
 {% comment %} Remove "Possible values" where there is not a discrete set of possible values {% endcomment%}
 Possible values

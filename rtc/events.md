@@ -8,7 +8,7 @@ keywords: rtc events
 
 ## `RtcClientConnected`
 
-When a user joins a real-time collaboration session, the `RtcClientConnected` event is fired on existing {{site.productname}} in the session and provides the user information of the newly joined user to other editors in the session.
+When a user joins a real-time collaboration session, the `RtcClientConnected` event is fired on existing {{site.productname}} instances in the session and provides the user information of the newly joined user to other editors in the session.
 
 ### Event fields: `RtcClientConnected`
 
@@ -27,7 +27,7 @@ tinymce.init({
       clientId,
       caretNumber,
       clientInfo
-      }) => {
+    }) => {
       console.log(`User connected userId:${userId}`);
     });
   }
@@ -55,7 +55,7 @@ tinymce.init({
       clientId,
       caretNumber,
       clientInfo
-      }) => {
+    }) => {
       console.log(`User disconnected userId:${userId}`);
     });
   }

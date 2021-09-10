@@ -36,9 +36,8 @@ tinymce.init({
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
-
-  rtc_user_details_provider: ({userId}) => Promise.resolve({ fullName: "John Doe" })
-})
+  rtc_user_details_provider: ({ userId }) => Promise.resolve({ fullName: "John Doe" })
+});
 ```
 
 #### Example of providing user details from your server
@@ -50,21 +49,18 @@ tinymce.init({
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
-
-  rtc_user_details_provider: ({userId}) => {
-    return fetch('/getUserDetails', {
+  rtc_user_details_provider: ({ userId }) =>
+    fetch('/getUserDetails', {
       method: 'POST',
       credentials: 'include',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({userId})
-      })
-      .then(response => response.json())
-      .then(({ fullnamefromserver })) => ({ fullName: fullnamefromserver })
-      .catch((error) => console.log('Failed to retrieve user details\n' + error)),
-    ;
-  }
-})
+      body: JSON.stringify({ userId })
+    })
+    .then((response) => response.json())
+    .then(({ fullnamefromserver })) => ({ fullName: fullnamefromserver })
+    .catch((error) => console.log('Failed to retrieve user details\n' + error))
+});
 ```

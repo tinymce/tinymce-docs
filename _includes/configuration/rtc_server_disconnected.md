@@ -54,13 +54,12 @@ tinymce.init({
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
-
-  rtc_server_disconnected: ({reason, message}) => {
+  rtc_server_disconnected: ({ reason, message }) => {
     // perform some action in response to the RTC session disconnecting, such as:
     tinymce.activeEditor.notificationManager.open({
       text: 'Disconnected: ' + reason + '\n' + message,
       type: 'error'
     });
   }
-}
+});
 ```

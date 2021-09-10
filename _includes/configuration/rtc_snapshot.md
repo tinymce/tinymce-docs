@@ -1,6 +1,6 @@
 ### `rtc_snapshot`
 
-Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides a version number to assist with storing the regular content snapshots. These snapshots are not stored on the {{site.cloudname}} and must be handled by the integrator.
+Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides a version number to assist with storing the regular content snapshots. These snapshots are not stored on the RTC server and must be handled by the integrator.
 
 For any given document ID, the server guarantees the version number will only increase. It can be safely used for conflict resolution. For each document ID and version combination, the snapshot content is guaranteed to be identical.
 
@@ -30,10 +30,9 @@ tinymce.init({
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
-
-  rtc_snapshot: ({version, getContent}) => {
+  rtc_snapshot: ({ version, getContent }) => {
     console.log('Current version', version);
     console.log('HTML', getContent());
   }
-}
+});
 ```

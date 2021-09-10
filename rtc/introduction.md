@@ -20,7 +20,7 @@ The following example shows two editors that are collaborating using the {{site.
 
 ### End-to-end encryption
 
-The Real-Time Collaboration (RTC) plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect, which is used to transmit cursor position along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.
+The Real-Time Collaboration (RTC) plugin encrypts all content-specific traffic. Clients are assigned a random presence ID when they connect, which is used to transmit their cursor position, along with their JWT user ID. This means the {{site.productname}} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {{ site.productname }}.
 
 ### User Presence API
 

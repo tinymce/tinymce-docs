@@ -1,4 +1,4 @@
-This section contains the technical details of the encryption used to securely transmit document content. It is provided for information purposes only; an understanding these details is not required to use the RTC plugin.
+This section contains the technical details of the encryption used to securely transmit document content. It is provided for information purposes only; an understanding of these details is not required to use the RTC plugin.
 
 For information on how to set up an encryption endpoint for Real-Time Collaboration, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/rtc/encryption/)
 

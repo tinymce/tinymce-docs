@@ -10,7 +10,6 @@ tinymce.init({
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
-
   rtc_user_details_provider: ({userId}) => Promise.resolve({ fullName: "John Doe", jobTitle: "Engineer" }),
   rtc_client_connected: ({userDetails: {fullName, jobTitle}, userId, caretNumber, clientId, clientInfo}) => {
     connectedUsers[clientId] = {

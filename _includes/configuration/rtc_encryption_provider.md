@@ -1,6 +1,6 @@
 ## `rtc_encryption_provider`
 
-The RTC plugin requires an encryption key for end-to-end encryption. This key is not sent to the {{site.cloudname}} server; the {{site.productname}} RTC service cannot read the editor content. The encryption key is used by the [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) browser API to encrypt and decrypt the editor content in the user's browser.
+The RTC plugin requires an encryption key for end-to-end encryption. This key is not sent to the RTC server; the {{site.productname}} RTC service cannot read the editor content. The encryption key is used by the [SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto) browser API to encrypt and decrypt the editor content in the user's browser.
 
 A key is required when the client needs to:
 1. Encrypt new data in the collaboration session.
@@ -39,14 +39,14 @@ tinymce.init({
   selector: 'textarea#rtc-example',
   plugins: 'rtc',
   rtc_document_id: 'unique-document-id',
-  rtc_encryption_provider: ({documentId, keyHint}) =>
+  rtc_encryption_provider: ({ documentId, keyHint }) =>
     fetch('/getKey', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify({ documentId, keyId: keyHint })
     })
-    .then(response => response.json())
-    .then(({keyId, secret}) => ({ key: secret, keyHint: keyId }))
+    .then((response) => response.json())
+    .then(({ keyId, secret }) => ({ key: secret, keyHint: keyId }))
     .catch((error) => console.log('Failed to return encryption key\n' + error)),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' })
 });

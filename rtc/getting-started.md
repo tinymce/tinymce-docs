@@ -15,7 +15,7 @@ This procedure will assist with setting up {{site.productname}} with real-time c
 
 > **Important**: {% include misc/secure-context.md %}
 
-The key steps required for setting up Real-Time Collaboration for {{site.productname}} are:
+The steps required for setting up Real-Time Collaboration for {{site.productname}} are:
 
 1. Register for a {{site.cloudname}} API key (paid plan required).
 1. Add a public key to the {{site.cloudname}} API key.
@@ -69,9 +69,9 @@ tinymce.init({
       credentials: 'include',
       body: JSON.stringify({ documentId, keyId: keyHint })
     })
-    .then(response => response.json())
-    .then(({keyId, secret}) => ({ key: secret, keyHint: keyId }))
-    .catch(error => console.log('Failed to return encryption key\n' + error)),
+    .then((response) => response.json())
+    .then(({ keyId, secret }) => ({ key: secret, keyHint: keyId }))
+    .catch((error) => console.log('Failed to return encryption key\n' + error)),
   /*
    * Provide a promise that retrieves a JSON Web Token for the user
    * from a remote endpoint or server.
@@ -82,9 +82,9 @@ tinymce.init({
       credentials: 'include',
       body: JSON.stringify({ documentId }),
     })
-    .then(response => response.json())
+    .then((response) => response.json())
     .then(({ jwt }) => ({ token: jwt }))
-    .catch(error => console.log('Failed to return a JWT\n' + error))
+    .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
 ```
 

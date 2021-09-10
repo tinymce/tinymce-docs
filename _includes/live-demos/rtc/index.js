@@ -16,18 +16,18 @@ function getTwoRandomInt(max) {
 
 function randomString() {
   /*
-    * Generating a random string to use as a document ID, Encryption key, and
-    * Encryption keyHint (randomized for demonstration purposes only).
-    * These values can be any string, but must be unique.
-    */
+   * Generating a random string to use as a document ID, Encryption key, and
+   * Encryption keyHint (randomized for demonstration purposes only).
+   * These values can be any string, but must be unique.
+   */
   return Math.random().toString(32).split('.')[1];
 }
 
 /*
-  * Initial content for the editor, to loaded into the editor using the
-  * optional `rtc_initial_content_provider` option. This could pulled from
-  * a database when using the editor in production.
-  */
+ * Initial content for the editor, to be loaded into the editor using the
+ * optional `rtc_initial_content_provider` option. This could pulled from
+ * a database when using the editor in production.
+ */
 const initialEditorContent = '{{site.logoForDemosHTML}}<h2 style="text-align: center;">Welcome to the TinyMCE Real-Time Collaboration demo!</h2><p>This editor is collaborating with the other editor on the page. Try editing the content by adding images, lists, or any other currently supported content, it should appear in the other editor too!</p><p>All network requests made by this demo, fake or real, are logged in the browser console using <a href="https://netflix.github.io/pollyjs" target="_blank" rel="noopener">Polly.js</a> (the browser console is typically accessed using the F12 key).</p><h2>Got questions or need help?</h2><ul><li>Our <a class="mceNonEditable" href="../../">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li></ul><h2>Found a bug?</h2><p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p><h2>Finally,</h2><p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br />All the best from the TinyMCE team.</p>';
 
 /*
@@ -84,18 +84,14 @@ const currentUser1 = fakeUsers[sessionUsers[0]]._id,
       currentUser2 = fakeUsers[sessionUsers[1]]._id;
 
 /*
-  * Add the "current user" of the editor above each instance, outside the
-  * editor, for reference purposes only
-  */
+ * Add the "current user" of the editor above each instance, outside the
+ * editor, for reference purposes only
+ */
 document.getElementById('fakedemouser1').innerText = fakeUsers.find(
-  (user) => {
-    return user._id === currentUser1;
-  }
+  (user) =>  user._id === currentUser1
 ).fullname;
 document.getElementById('fakedemouser2').innerText = fakeUsers.find(
-  (user) => {
-    return user._id === currentUser2;
-  }
+  (user) => user._id === currentUser2
 ).fullname;
 
 /* Set up a connected users object for maintaining a list of connected users */

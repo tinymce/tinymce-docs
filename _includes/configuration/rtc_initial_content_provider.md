@@ -33,7 +33,6 @@ tinymce.init({
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
-
   rtc_initial_content_provider: () => Promise.resolve({ content: "<p>Hello world!</p>" })
 })
 ```
@@ -47,15 +46,14 @@ tinymce.init({
   rtc_document_id: 'unique-document-id',
   rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
-
-  rtc_initial_content_provider: ({documentId}) => {
+  rtc_initial_content_provider: ({ documentId }) => {
     return fetch(`/getContent/${documentId}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then(response => response.json());
+    }).then((response) => response.json());
   }
-})
+});
 ```

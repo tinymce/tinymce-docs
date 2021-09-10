@@ -62,13 +62,13 @@ Check the `apiKey` provided in the script tag:
 {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain portion of the **Referer** header in the network request. This notification is shown when the **Referer** of your page does not match the list of approved domains stored against your `apiKey`. You can
 view what your approved domains are in [Account]({{site.accountpageurl}}).
 
-Sometimes the domains in the **Referer** header does not match with the URL in the browser's address bar. To check the **Referer** header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {{site.productname}} with your API key, and click on the **Headers** tab.  In the section called **Request Headers** there should be a field for **Referer**. This is the value that {{site.productname}} is checking against your approved domains. It must match one your approved domains, or you will receive this notification.
+Sometimes the domains in the **Referer** header does not match with the URL in the browser's address bar. To check the **Referer** header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {{site.productname}} with your API key, and click on the **Headers** tab.  In the section called **Request Headers** there should be a field for **Referer**. This is the value that {{site.productname}} is checking against your approved domains. It must match one of your approved domains, or you will receive this notification.
 
 ### Solution
 
 If the `Referer` is what you are expecting, then you need to ensure that domain is included in your list of approved domains. If the `Referer` is not what you are expecting, you may need to adjust your application's **Referer** header settings.
 
-## "We could not check your domain because the referer header was missing. Please see the guide on how to ensure the referer header is present."
+## "We’re unable to check your domain because the referer header is missing. Please read the Guide on how to ensure your referer header is present, so we can then customize your editor experience."
 
 ### Cause
 
@@ -81,7 +81,6 @@ If the `Referer` is what you are expecting, then you need to ensure that domain 
 Identify which setting or extension is responsible for blocking the **Referer** being sent. Some common extensions are:
 
 * `Referer Control` - [Google Chrome](https://chrome.google.com/webstore/detail/referer-control/hnkcfpcejkafcihlgbojoidoihckciin?hl=en) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/referercontrol/)
-*
 
 Once you have identified the setting or extension, modify it to allow just the `Origin` portion of the `Referer` to be sent. Alternatively, you can disable it for any pages where you are running {{site.cloudname}}.
 

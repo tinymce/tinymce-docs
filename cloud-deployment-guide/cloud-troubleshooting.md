@@ -17,7 +17,7 @@ When {{site.cloudname}} detects a problem, it will show an editor notification c
 This notification is **only shown** when either:
 
 - An `apiKey` is not provided in the script tag.
-- `no-api-key` is provided as the apiKey.
+- `no-api-key` is provided as the API key.
 
 Such as:
 
@@ -27,7 +27,7 @@ Such as:
 
 ### Solution
 
-Update the `src` URL include your (website or application developer's) {{site.cloudname}} API Key. Your API key should replace the string `no-api-key`. For example, if your API is `abcd1234`:
+Update the `src` URL to include your (website or application developer's) {{site.cloudname}} API Key. Your API key should replace the string `no-api-key`. For example, if your API is `abcd1234`:
 
 ```html
 <script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -51,8 +51,8 @@ The `apiKey` must be:
 
 Check the `apiKey` provided in the script tag:
 
-- Remove any leading or trailing spaces
-- Any other characters that are not in your apiKey. If you are using variable substitution, ensure that the variable is substituting properly.
+- Remove any leading or trailing spaces.
+- Any other characters that are not in your API key. If you are using variable substitution, ensure that the variable is substituting properly.
 - Matches the API key shown at {{site.accountpageurl}}.
 
 ## "This domain is not registered with Tiny Cloud. Please review your approved domains."
@@ -77,7 +77,7 @@ If the `Referer` is correct for the site, ensure that the domain is included in 
 
 ### Cause
 
-This notification is shown if the [**Referer** header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) is absent for the network request for loading {{site.productname}} from {{site.cloudname}}. {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain of the **Referer** header in the network request.
+This notification is shown if the [**Referer** header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) is absent for the network request when loading {{site.productname}} from {{site.cloudname}}. {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain of the **Referer** header in the network request.
 
 *Referer* headers are sometimes removed by browser settings or browser extensions. {{site.cloudname}} only needs the domain in the **Referer** header, so for improved performance and privacy {{site.companyname}} recommends setting the `referrerpolicy` to `origin` when requesting {{site.cloudname}} resources.
 
@@ -94,9 +94,9 @@ Once you have identified the setting or extension, modify it to allow just the `
 
 ### Cause
 
-This notification is shown when your apiKey does not have access to the premium plugin being requested. This could be the result of a trial expiring, and your {{site.productname}} configuration attempting to load premium plugins you can no longer access.
+This notification is shown when your API key does not have access to the premium plugin being requested. This could be the result of a trial expiring, and your {{site.productname}} configuration attempting to load premium plugins you can no longer access.
 
-You may also be seeing this notification if you are using the wrong apiKey. Ensure that you are using the apiKey that has the right entitlements.
+You may also be seeing this notification if you are using the wrong API key. Ensure that you are using the API key that has the right entitlements.
 
 ### Solution
 

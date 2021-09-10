@@ -14,7 +14,7 @@ Required plugin
 {% endif %}
 
 Type
-: Function (Promise)
+: Function (Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise))
 
 Input data
 : | Field | Type | Description |

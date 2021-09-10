@@ -23,14 +23,14 @@ keywords: rtc encrypt decrypt key rotate signature
 
 ### Encryption endpoint requirements
 
-An encryption endpoint for {{pluginname}} requires:
+An encryption endpoint for {{pluginname}} is required to:
 
-- The endpoint or server accepts a JSON HTTP POST request.
-- Accepts `documentId` and `keyHint`.
-- Has access to a database containing `documentId` and the encryption details: `keyHint` and `key`.
-- When provided a `documentId` and a non-null `keyHint`, the server determines if the pair matches any existing entries in the database and returns the `key` and rejects the request (access not permitted).
-- Will generate new encryption keys and keyhints for new documents.
-- The endpoint or server produces a JSON response with the `key` and `keyHint`. The RTC plugin will use the key to encrypt and decrypt the editor content prior to transmission to the RTC Server.
+- Accept a JSON HTTP POST request.
+- Accept the `documentId` and `keyHint`.
+- Have access to a database containing `documentId` and the encryption details: `keyHint` and `key`.
+- When provided a `documentId` and a non-null `keyHint`, the endpoint determines if the pair matches any existing entries in the database and returns the `key` and rejects the request (access not permitted).
+- Generate new encryption keys and keyhints for new documents.
+- Produce a JSON response with the `key` and `keyHint`. The RTC plugin will use the key to encrypt and decrypt the editor content prior to transmission to the RTC Server.
 
 ### Encryption key and keyHint requirements
 
@@ -38,8 +38,11 @@ The encryption `key`s and `keyHint`s for {{pluginname}}:
 
 - Must both be strings.
 - Can include any unicode characters, including emoji, such as: "`not a very secret 🔑`".
-- The same `key` needs to be provided to all collaborators working on the same document (`documentId`).
-- The `key` should be unique to the document (`documentId`).
+
+When setting up the encryption endpoint, ensure that:
+
+- The same `key` is provided to all collaborators working on the same document (`documentId`).
+- Each `key` is unique to the document (`documentId`).
 - The `key`, `keyHint`, and the `documentId` should not contain personal or confidential information.
 
 > **Warning**: Fixed keys are not secure. Fixed keys can be useful in development, but if a fixed key is disclosed it can be used to decrypt _every_ document uploaded to the {{site.cloudname}} server with that key.

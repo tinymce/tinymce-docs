@@ -219,7 +219,7 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
-### Real-Time Collaboration 1.0.0
+### Real-Time Collaboration 1.0.1
 
 The {{site.productname}} 5.9 release includes the first generally available release of the **Real-Time Collaboration (RTC)** premium plugin (version 1.0.0).
 
@@ -228,7 +228,7 @@ Add collaborative editing to your application and allow your content teams to ed
 The RTC plugin features:
 
 - _End-to-end encryption_ to keep content private.
-- Works with a growing list of {{site.productname}} plugins and features, including: **PowerPaste**, **Tiny Drive**, **Images**, **Lists**, custom and premium **skins and icons**.
+- A growing list of compatible {{site.productname}} plugins and features, including: **PowerPaste**, **Tiny Drive**, **Images**, **Lists**, custom and premium **skins and icons**.
 - A user presence API to assist with showing a list of connected collaborators.
 - JSON Web Token based authentication.
 

@@ -25,10 +25,12 @@ tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numeric
 
 `mceSortTableAdvanced` accepts an object with the following key-value pairs:
 
-- `sortby` - `'row'` or `'column'`
-- `roworcol` - a zero-indexed integer in a string representing the row from the top of the table or column from the left of the table.
-- `sort` - `'row'`, `'column'`, `'selection'`, or `'table'`
-- `order` - `'ascending'` or `'descending'`
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| sortby | `'row'` or `'column'` | Required | |
+| roworcol | `number` | Required | A zero-indexed integer in a string representing the row from the top of the table or column from the left of the table. |
+| sort | `'row'`, `'column'`, `'selection'`, or `'table'` | Required | |
+| order | `'ascending'` or `'descending'` | Required | |
 
 ### `mceTableToggleSeries`
 

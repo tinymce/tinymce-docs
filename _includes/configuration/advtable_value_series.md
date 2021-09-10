@@ -1,4 +1,5 @@
 ## `advtable_value_series`
+
 {{ site.requires_5_9v }}
 
 The `advtable_value_series` option configures value series for populating cells in a table. This option can be used to create row identifiers.
@@ -41,7 +42,7 @@ Each property of the `advtable_value_series` object indicates the name of the va
 
 #### Creating a value series generator
 
-The `generator` is a callback function for specifying how to update a table cell of a value series. The callback is passed information relating to the generator and table cell, the row index, and column index of the table cell. For details, see: [GeneratorInfo](#generatorinfo). The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: [GeneratorResult](#generatorresult).
+The `generator` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to the generator and table cell, the row index, and column index of the table cell. For details, see: [GeneratorInfo](#generatorinfo). The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: [GeneratorResult](#generatorresult).
 
 If state needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: [GeneratorInfo](#generatorinfo). 
 

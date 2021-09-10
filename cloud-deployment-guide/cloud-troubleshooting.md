@@ -59,39 +59,45 @@ Check the `apiKey` provided in the script tag:
 
 ### Cause
 
-{{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain portion of the **Referer** header in the network request. This notification is shown when the **Referer** of your page does not match the list of approved domains stored against your `apiKey`. You can
-view what your approved domains are in [Account]({{site.accountpageurl}}).
+This notification is shown when the [**Referer**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) of the page does not match the list of approved domains stored against your `apiKey`. {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain portion of the **Referer** header in the network request. You can view a list of your approved domains on your [{{site.accountpage}}]({{site.accountpageurl}}).
 
-Sometimes the domains in the **Referer** header does not match with the URL in the browser's address bar. To check the **Referer** header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {{site.productname}} with your API key, and click on the **Headers** tab.  In the section called **Request Headers** there should be a field for **Referer**. This is the value that {{site.productname}} is checking against your approved domains. It must match one of your approved domains, or you will receive this notification.
+Sometimes the domain in the **Referer** header does not match with the URL in the browser's address bar. To check the **Referer** header:
+1. Open your browser's _Developer's Tools_.
+1. Open the _Network_ tab.
+1. Find and select the request being made to load {{site.productname}} from {{site.cloudname}} with your API key.
+1. Click on the **Headers** tab.
+
+In the section called **Request Headers** there should be a field for **Referer**. This is the value that {{site.productname}} is checking against your approved domains. It must match one of your approved domains listed on your [{{site.accountpage}}]({{site.accountpageurl}}).
 
 ### Solution
 
-If the `Referer` is what you are expecting, then you need to ensure that domain is included in your list of approved domains. If the `Referer` is not what you are expecting, you may need to adjust your application's **Referer** header settings.
+If the `Referer` is correct for the site, ensure that the domain is included in your list of approved domains on [{{site.accountpage}}]({{site.accountpageurl}}). If the `Referer` is not what you are expecting, you may need to adjust your application's [**Referer** header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) settings.
 
 ## "We’re unable to check your domain because the referer header is missing. Please read the Guide on how to ensure your referer header is present, so we can then customize your editor experience."
 
 ### Cause
 
-{{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain portion of the **Referer** header in the network request. If the **Referer** header is absent, you will receive this notification.
+This notification is shown if the [**Referer** header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) is absent for the network request for loading {{site.productname}} from {{site.cloudname}}. {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain of the **Referer** header in the network request.
 
-*Referer* headers are sometimes stripped out by certain browser settings and browser extensions. Remember, {{site.cloudname}} only cares about the domain portion of the **Referer** header, so for improved performance and privacy we recommend setting the `referrerpolicy` to `origin` when requesting {{site.cloudname}} resources.
+*Referer* headers are sometimes removed by browser settings or browser extensions. {{site.cloudname}} only needs the domain in the **Referer** header, so for improved performance and privacy {{site.companyname}} recommends setting the `referrerpolicy` to `origin` when requesting {{site.cloudname}} resources.
 
 ### Solution
 
-Identify which setting or extension is responsible for blocking the **Referer** being sent. Some common extensions are:
+Identify which browser setting or extension is responsible for blocking the **Referer** being sent. A common extension is `Referer Control`:
 
-* `Referer Control` - [Google Chrome](https://chrome.google.com/webstore/detail/referer-control/hnkcfpcejkafcihlgbojoidoihckciin?hl=en) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/referercontrol/)
+- [Google Chrome](https://chrome.google.com/webstore/detail/referer-control/hnkcfpcejkafcihlgbojoidoihckciin?hl=en)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/referercontrol/)
 
-Once you have identified the setting or extension, modify it to allow just the `Origin` portion of the `Referer` to be sent. Alternatively, you can disable it for any pages where you are running {{site.cloudname}}.
+Once you have identified the setting or extension, modify it to allow just the `Origin` of the `Referer` to be sent. Alternatively, disable the extension or setting for any pages using {{site.cloudname}}.
 
 ## "The ___ premium plugin is not enabled on your API key. Upgrade your account."
 
 ### Cause
 
-This notification is shown when your apiKey does not have access to the premium plugin being requested. This could be the result of a trial recently expiring, and your {{site.productname}} configuration attempting to load premium plugins you can no longer access.
+This notification is shown when your apiKey does not have access to the premium plugin being requested. This could be the result of a trial expiring, and your {{site.productname}} configuration attempting to load premium plugins you can no longer access.
 
 You may also be seeing this notification if you are using the wrong apiKey. Ensure that you are using the apiKey that has the right entitlements.
 
 ### Solution
 
-Either remove the premium plugin that you do not have access to, or upgrade your subscription to provide access to that premium plugin.
+Either remove the premium plugin from your {{site.productname}} configuration, or upgrade your subscription to provide access to that premium plugin.

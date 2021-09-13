@@ -2,7 +2,7 @@
 
 {{ site.requires_5_9v }}
 
-The `advtable_value_series` option configures value series for populating cells in a table. This option can be used to create row identifiers.
+The `advtable_value_series` option configures one or more series of values for populating cells in a table. This option can be used to create row identifiers.
 
 **Type:** `Object`
 
@@ -42,9 +42,9 @@ Each property of the `advtable_value_series` object indicates the name of the va
 
 #### Creating a value series generator
 
-The `generator` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to the generator and table cell, the row index, and column index of the table cell. For details, see: [GeneratorInfo](#generatorinfo). The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: [GeneratorResult](#generatorresult).
+The `generator` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to: the generator and table cell, the row index, and column index of the table cell. For details, see: [GeneratorInfo](#generatorinfo). The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: [GeneratorResult](#generatorresult).
 
-If state needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: [GeneratorInfo](#generatorinfo). 
+If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: [GeneratorInfo](#generatorinfo). 
 
 ##### GeneratorInfo
 
@@ -65,7 +65,7 @@ The generator callback function should return an object with the following prope
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | classes | `string[]` | Optional | The classes to be applied to the table cell. |
-| attributes | `Object` | Optional | The attributes to be applied to the table cell. The `attributes` should be provided as an object where each key is an attribute and each value is of type `string`, `boolean`, `number` or `null`. A value of `null` for an attribute will remove the attribute from the table cell. |
+| attributes | `Object` | Optional | The attributes to be applied to the table cell. The `attributes` should be provided as an object where each key is an attribute and each value is of type `string`, `boolean`, `number`, or `null`. A value of `null` for an attribute will remove the attribute from the table cell. |
 | value | `string`, `number` or `undefined` | Optional | The value of the table cell. If the value is `undefined`, the editor will use the previous value of the table cell. |
 
 ### Example: Using `advtable_value_series`

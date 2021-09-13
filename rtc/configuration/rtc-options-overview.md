@@ -33,8 +33,8 @@ These options are _required_ when using the Real-Time Collaboration (`rtc`) plug
 These options are assist with improving the user experience. They are not required, but are recommended.
 
 [`rtc_server_disconnected`]({{site.baseurl}}/rtc/configuration/rtc-options-optional/#rtc_server_disconnected)
-: Assists with communitcating to the end-user that:
-- They have been unsuccessful in connecting to the collaboration session, or
+: Assists with communitcating to the end-user that either:
+- They have been unsuccessful in connecting to the collaboration session.
 - They have lost their connection to the collaboration session.
 
 [`rtc_user_details_provider`]({{site.baseurl}}/rtc/configuration/rtc-options-optional/#rtc_user_details_provider)

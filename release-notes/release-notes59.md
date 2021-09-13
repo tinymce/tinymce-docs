@@ -258,7 +258,7 @@ The following icons have been added to all premium icon packs:
 - An icon for the [new Advanced Tables row numbering feature](#advancedtables110).
 - A new `language` icon for the [New language toolbar button and menu item in core](#newlanguagetoolbarbuttonandmenuitemincore).
 
-The **Bootstrap** icon pack has been updated with the latest Bootstrap icons and also include improved `table-cell-properties` and `table-row-properties` icons.
+The **Bootstrap** icon pack has been updated with the latest Bootstrap icons and includes improved `table-cell-properties` and `table-row-properties` icons.
 
 The **Material**, **Small**, and **Thin** icon packs have been updated to include improved table-cell-properties and table-row-properties icons.
 

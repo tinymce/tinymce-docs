@@ -223,7 +223,7 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 2.4.1 adds the following new features:
+**Spell Checker Pro** 2.4 (2.4.1) adds the following new features:
 
 - The Spelling service now supports a broader range of dictionaries by introducing support for [Hunspell dictionaries](https://hunspell.github.io/), see: [New Server-side component features](#newserver-sidecomponentfeatures).
 - The spellchecker dialog now supports navigating to the next and previous misspelled words.
@@ -320,7 +320,7 @@ The new versions of the server-side services provide updates for the Java-based 
         - 8.0.42+
         - 7.0.76+
 
-2. Replace the existing server-side `.war` file with the version 2.110.? `.war` file bundled with {{site.productname}} 5.9 or later.
+2. Replace the existing server-side `.war` file with the `.war` file bundled with {{site.productname}} 5.9 or later.
 
 For information on:
 

@@ -269,6 +269,7 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
 - The Enhanced Media Embed plugin (`mediaembed`)
+- The Export plugin (`export`)
 - The Image Tools plugin (`imagetools`)
 - The Link Checker plugin (`linkchecker`)
 - The Spell Checker Pro plugin (`tinymcespellchecker`)

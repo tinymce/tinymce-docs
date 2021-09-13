@@ -252,19 +252,15 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 ### Premium Skins and Icon Packs - New features
 
-{% comment %}
-Add description here.
-{% endcomment %}
+The following icons have been added to all premium icon packs:
 
-For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- New icons for new table toolbar buttons described under [New features - New table toolbar buttons and menu items](#newtabletoolbarbuttonsandmenuitems).
+- An icon for the [new Advanced Tables row numbering feature](#advancedtables110).
+- A new `language` icon for the [New language toolbar button and menu item in core](#newlanguagetoolbarbuttonandmenuitemincore).
 
-### Premium Skins and Icon Packs - Bug fixes
+The **Bootstrap** icon pack has been updated with the latest Bootstrap icons and also include improved `table-cell-properties` and `table-row-properties` icons.
 
-The **Premium Skins and Icon Packs** release includes the following bug fixes:
-
-{% comment %}
-Add description here.
-{% endcomment %}
+The **Material**, **Small**, and **Thin** icon packs have been updated to include improved table-cell-properties and table-row-properties icons.
 
 For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 

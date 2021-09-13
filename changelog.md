@@ -8,6 +8,12 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.9.1 - 2021-08-27
+
+### Fixed
+- Published TinyMCE types failed to compile in strict mode.
+- The `TableModified` event sometimes didn't fire when performing certain table actions.
+
 ## 5.9.0 - 2021-08-26
 
 ### Added

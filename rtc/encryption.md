@@ -37,7 +37,7 @@ An encryption endpoint for {{pluginname}} is required to:
 The encryption `key`s and `keyHint`s for {{pluginname}}:
 
 - Must both be strings.
-- Can include any unicode characters, including emoji, such as: "`not a very secret 🔑`".
+- Can include any unicode characters.
 
 When setting up the encryption endpoint, ensure that:
 

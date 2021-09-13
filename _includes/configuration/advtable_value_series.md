@@ -29,7 +29,20 @@ The `advtable_value_series` option configures one or more series of values for p
 
 Both default series are configured to update on table changes and not resize when using the resize bars.
 
-Each property of the `advtable_value_series` object indicates the name of the value series and its configuration.
+Each top-level properties of the `advtable_value_series` object are used as the name of the value series and its configuration. In the following example, there are two value series named "`numbers`" and "`letters`":
+
+```js
+{
+  numbers: { 
+    title: 'Numbered',
+    generator: `GeneratorFunction`
+  },
+  letters: {
+    title: 'Lettered',
+    generator: `GeneratorFunction`
+  },
+}
+```
 
 ### Series configuration
 

@@ -23,25 +23,27 @@ The steps required for setting up Real-Time Collaboration for {{site.productname
 1. Set up a JSON Web Token (JWT) Provider endpoint (or server).
 1. Configure the required {{site.productname}} options.
 
-## Register for a {{site.cloudname}} API key
+## 1. Register for a Tiny Cloud API key
 
 If you do not have a {{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}).
 
+## 2. Add a public key to the {{site.cloudname}} API key
+
 {% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
-## Set up an Encryption endpoint
+## 3. Set up an Encryption endpoint
 
 {{site.productname}} Real-Time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption.
 
 For information on setting up an Encryption Provider endpoint, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/rtc/encryption/).
 
-## Set up a JSON Web Token (JWT) Provider endpoint
+## 4. Set up a JSON Web Token (JWT) Provider endpoint
 
 Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
 For information on setting up a JSON Web Token Provider endpoint, see: [Real-Time Collaboration (RTC) JWT Authentication Setup]({{site.baseurl}}/rtc/jwt-authentication/).
 
-## Configure the required {{site.productname}} RTC options
+## 5. Configure the required TinyMCE RTC options
 
 ### Basic static Real-Time Collaboration (RTC) setup
 

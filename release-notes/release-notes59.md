@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
+{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, September 15<sup>th</sup>, 2021. It includes {{site.productname}} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
@@ -174,24 +174,6 @@ The following functionality changes were made for the {{site.productname}} 5.9 r
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.9.
-
-### Premium Plugin Name X.Y.Z
-
-The {{site.productname}} 5.9 release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
-
-**<<Premium Plugin Name>>** X.Y.Z adds the following new features:
-
-- <Description>
-
-**<<Premium Plugin Name>>** X.Y.Z introduces the following enhancements:
-
-- <Description>
-
-**<<Premium Plugin Name>>** X.Y.Z provides the following bug fixes:
-
-- <Description>
-
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
 ### Advanced Tables 1.1.0
 

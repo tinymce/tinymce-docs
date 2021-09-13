@@ -4,7 +4,7 @@ The {{pluginname}} Server requires a _public_ key generated from the same _priva
 
 There are two methods for generating and adding a public key to your API key:
 
-1. The secure key pair generator at [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) (recommend).
+1. The secure key pair generator at [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) (recommended).
 1. Generate a key pair locally and add the _public_ key to [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
 
 ### Generate a key pair using the {{site.accountpage}} JWT Keys page

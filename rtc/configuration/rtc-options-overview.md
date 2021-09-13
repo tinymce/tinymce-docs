@@ -17,7 +17,7 @@ The Real-Time Collaboration (RTC) plugin uses promise-based "provider" functions
 
 ### Required configuration options
 
-These options are _required_ when using the Real-Time Collaboration (`rtc`) plugin.
+These options are _required_ when using the Real-Time Collaboration (RTC) plugin.
 
 [`rtc_document_id`]({{site.baseurl}}/rtc/configuration/rtc-options-required/#rtc_document_id)
 : Provide a unique identifier for current document (editor content).

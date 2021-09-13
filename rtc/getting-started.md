@@ -17,7 +17,7 @@ This procedure will assist with setting up {{site.productname}} with real-time c
 
 The steps required for setting up Real-Time Collaboration for {{site.productname}} are:
 
-1. Register for a {{site.cloudname}} API key (paid plan required).
+1. Register for a {{site.cloudname}} API key.
 1. Add a public key to the {{site.cloudname}} API key.
 1. Set up an Encryption Provider endpoint (or server).
 1. Set up a JSON Web Token (JWT) Provider endpoint (or server).
@@ -25,7 +25,7 @@ The steps required for setting up Real-Time Collaboration for {{site.productname
 
 ## Register for a {{site.cloudname}} API key
 
-If you do not have a {{site.cloudname}} API key with a paid subscription, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}).
+If you do not have a {{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}).
 
 {% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
@@ -45,7 +45,7 @@ For information on setting up a JSON Web Token Provider endpoint, see: [Real-Tim
 
 ### Basic static Real-Time Collaboration (RTC) setup
 
-This example shows how to add the Real-Time Collaboration (RTC) plugin and configure the required options using static values. This configuration may be useful for setting up an RTC-enabled editor for initial testing, but not for production environments.
+This example shows how to add the Real-Time Collaboration (RTC) plugin and configure the required options using static values. This configuration may be useful for setting up an RTC-enabled editor for initial testing, but not for production environments as it exposes your sensitive and private data.
 
 {% include rtc/rtc-min-configuration-example.md %}
 

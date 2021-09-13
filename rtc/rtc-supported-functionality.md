@@ -19,9 +19,11 @@ The Real-Time Collaboration (RTC) plugin supports the latest desktop versions of
 
 Real-Time Collaboration is currently not supported on mobile devices.
 
-## RTC enabled features (plugins)
+## TinyMCE features (plugins) support when using RTC
 
 The Real-Time Collaboration (RTC) plugin supports a subset of the features that {{site.productname}} provides.
+
+> **Warning**: Enabling plugins not shown here is not supported and may lead to unexpected behavior.
 
 The following plugins are currently supported:
 

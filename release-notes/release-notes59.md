@@ -193,6 +193,20 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **<
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+### Advanced Tables 1.1.0
+
+The {{site.productname}} 5.9 release includes an accompanying release of the **Advanced Tables** premium plugin.
+
+**Advanced Tables** 1.1.0 provides the following new features:
+
+This release adds row numbering functionality, allowing users to add (and remove) row numbering columns on tables. For details, see: [Advanced Tables plugin - Adding row numbering to a table]({{site.baseurl}}/plugins/premium/advtable/#addingrownumberingtoatable). This includes:
+
+- Added a new `advtablerownumbering` toolbar button and menu item.
+- Added a new `advtable_value_series` option.
+- Added a new `mceTableToggleSeries` command.
+
+For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
+
 ### Mentions 2.3.0
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **Mentions** premium plugin.

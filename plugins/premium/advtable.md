@@ -2,16 +2,35 @@
 layout: default
 title: Advanced Tables plugin
 title_nav: Advanced Tables
-description: Add sorting functionality to tables.
-keywords: sort tables advanced advtable premium
+description: Add advanced functionality to tables.
+keywords: sort rownumbering series tables advanced advtable premium
 ---
 
 {% assign pluginname = "Advanced Tables" %}
 {% assign plugincode = "advtable" %}
+{% assign plugincategory = "premium" %}
 {{site.requires_5_1v}}<br/>
 {{site.premiumplugin}}
 
-The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding sort options for rows and columns. Tables can be sorted by row or column values using:
+The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding the following advanced functionality:
+- Sort options for rows and columns.
+- Row numbering column for tables. {{site.requires_5_9v}}
+
+## Enabling the Advanced Tables plugin
+
+To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table advtable',
+  menubar: 'table'
+});
+```
+
+## Sorting table rows and columns
+
+Tables can be sorted by row or column values using:
 
 * The **Sort** options in the **Table** menu.
 * The **Sort** options in the table contextual menu.
@@ -30,17 +49,22 @@ The plugin is capable of sorting:
 
 > **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
 
-## Enabling the Advanced Tables plugin
+## Adding row numbering to a table
+{{ site.requires_5_9v }}
 
-To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
+A row numbering column containing a series of values can be added to a table to help identify rows in a table. To allow row numbering on tables, the `advtablerownumbering` toolbar button and menu item can be used.
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table advtable',
-  menubar: 'table'
-});
-```
+A numeric and alpha value series are available by default. The available value series can be configured using the [`advtable_value_series` option](#advtable_value_series).
+
+![Table with numeric row numbering column and row numbering menu open (Numeric item checked)]({{ site.baseurl }}/images/advtable_row_numbering.png)
+
+## Configuration options
+
+The following configuration options affect the behavior of the {{pluginname}} plugin.
+
+{% include configuration/advtable_value_series.md %}
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 

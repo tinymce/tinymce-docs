@@ -32,6 +32,11 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% assign altplugincode = "code" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
+{% assign plugincategory = "premium" %}
+{% assign pluginname = "Advanced Tables" %}
+{% assign plugincode = "advtable" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
 {% assign plugincategory = "opensource" %}
 {% assign pluginname = "Anchor" %}
 {% assign plugincode = "anchor" %}

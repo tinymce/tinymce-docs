@@ -51,11 +51,11 @@ The following plugins are currently supported:
 
 ## Integration considerations
 
-When planning your collaboration integration, please take into account the following details and consider how they impact your use-case. If you are in doubt, don't hesitate to reach out to us and discuss your requirements.
+When planning to integrate Real-Time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to [contact us]({{site.contactpage}}) and discuss your requirements.
 
-* Do not load content into TinyMCE that were created using a plugin not yet supported in RTC, for example tables, media embed, checklist or table of contents. Without the plugin being there to protect the integrity for, let's say a checklist or table of contents, you risk making changes to the HTML in a way it's not longer recognized by the plugin.
-* To update the content outside of the RTC clients, you have to create a new document id. Currently API's for updating the content programmatically is not yet available. If your use-case requires you to update the content outside of the RTC clients, you'll have to generate a new document id and distribute it to all collaborators and make sure they don't continue collaborate on the old document id. A future version of the RTC plugin will add support for updating the content outside of the clients while keeping the same document id.
-* Using the RTC plugin in hybrid mode is not supported and not recommended – meaning you should not use a self hosted version of TinyMCE together with the cloud version of the RTC plugin. Due to the very tight integration between the TinyMCE client and the collaboration server, it's very important that the clients are in lockstep with the server version.
+* Do not load content into {{site.productname}} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's not longer recognized by the plugin.
+* If content is created in an RTC session, then updated outside of an _RTC-enable_ {{site.productname}} editor, a new document ID (`documentId`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.
+* Using the RTC plugin in hybrid mode is not supported and not recommended. Self-hosted versions of {{site.productname}} should not be used with the cloud version of the RTC plugin. The RTC plugin is dependent on the {{site.productname}} version it is released with. When using {{site.productname}} for the {{site.cloudname}}, {{site.productname}} will use the linked version of the RTC plugin.
 
 ## Options that are not available when RTC is enabled
 

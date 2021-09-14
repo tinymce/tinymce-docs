@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
+{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, September 15<sup>th</sup>, 2021. It includes {{site.productname}} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
@@ -175,23 +175,19 @@ The following functionality changes were made for the {{site.productname}} 5.9 r
 
 The following premium plugin updates were released alongside {{site.productname}} 5.9.
 
-### Premium Plugin Name X.Y.Z
+### Advanced Tables 1.1.0
 
-The {{site.productname}} 5.9 release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
+The {{site.productname}} 5.9 release includes an accompanying release of the **Advanced Tables** premium plugin.
 
-**<<Premium Plugin Name>>** X.Y.Z adds the following new features:
+**Advanced Tables** 1.1.0 provides the following new features:
 
-- <Description>
+This release adds row numbering functionality, allowing users to add (and remove) row numbering columns on tables. For details, see: [Advanced Tables plugin - Adding row numbering to a table]({{site.baseurl}}/plugins/premium/advtable/#addingrownumberingtoatable). This includes:
 
-**<<Premium Plugin Name>>** X.Y.Z introduces the following enhancements:
+- Added a new `advtablerownumbering` toolbar button and menu item.
+- Added a new `advtable_value_series` option.
+- Added a new `mceTableToggleSeries` command.
 
-- <Description>
-
-**<<Premium Plugin Name>>** X.Y.Z provides the following bug fixes:
-
-- <Description>
-
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
 ### Mentions 2.3.0
 
@@ -235,27 +231,27 @@ The RTC plugin features:
 For information on using the Real-Time Collaboration (RTC) plugin, see: [Real-Time Collaboration plugin]({{site.baseurl}}/rtc/).
 For sales information, visit: [TinyMCE Features - Real-time Collaboration]({{site.plugindirectory}}real-time-collaboration).
 
-### Spell Checker Pro 2.4.0
+### Spell Checker Pro 2.4.1
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 2.4.0 adds the following new features:
+**Spell Checker Pro** 2.4 (2.4.1) adds the following new features:
 
 - The Spelling service now supports a broader range of dictionaries by introducing support for [Hunspell dictionaries](https://hunspell.github.io/), see: [New Server-side component features](#newserver-sidecomponentfeatures).
 - The spellchecker dialog now supports navigating to the next and previous misspelled words.
 
-**Spell Checker Pro** 2.4.0 includes the following changes:
+**Spell Checker Pro** 2.4.1 includes the following changes:
 
 - The `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option, see: [The `spellchecker_select_languages` option](#thespellchecker_select_languagesoption).
 - Language code validation has been moved from the client to the server.
 - The Spell Checker Pro plugin has been upgraded to use version 2 of the spelling service API.
 - The "Change" button text in the spellchecker dialog has been changed to "Accept".
 
-**Spell Checker Pro** 2.4.0 introduces the following improvements:
+**Spell Checker Pro** 2.4.1 introduces the following improvements:
 
 - Improved the error messages shown in the developer console for the `SpellcheckError` event, see: [Spell Checker Pro - `Events`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#events).
 
-**Spell Checker Pro** 2.4.0 provides the following bug fixes:
+**Spell Checker Pro** 2.4.1 provides the following bug fixes:
 
 - Links with a URL as the text content were incorrectly spellchecked.
 - Resizing the editor with as-you-type mode enabled wouldn't spellcheck words that came into view.
@@ -268,19 +264,15 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 ### Premium Skins and Icon Packs - New features
 
-{% comment %}
-Add description here.
-{% endcomment %}
+The following icons have been added to all premium icon packs:
 
-For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- New icons for new table toolbar buttons described under [New features - New table toolbar buttons and menu items](#newtabletoolbarbuttonsandmenuitems).
+- An icon for the [new Advanced Tables row numbering feature](#advancedtables110).
+- A new `language` icon for the [New language toolbar button and menu item in core](#newlanguagetoolbarbuttonandmenuitemincore).
 
-### Premium Skins and Icon Packs - Bug fixes
+The **Bootstrap** icon pack has been updated with the latest Bootstrap icons and includes improved `table-cell-properties` and `table-row-properties` icons.
 
-The **Premium Skins and Icon Packs** release includes the following bug fixes:
-
-{% comment %}
-Add description here.
-{% endcomment %}
+The **Material**, **Small**, and **Thin** icon packs have been updated to include improved table-cell-properties and table-row-properties icons.
 
 For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
@@ -289,15 +281,16 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
 - The Enhanced Media Embed plugin (`mediaembed`)
+- The Export plugin (`export`)
 - The Image Tools plugin (`imagetools`)
 - The Link Checker plugin (`linkchecker`)
 - The Spell Checker Pro plugin (`tinymcespellchecker`)
 
 The Java server-side components have been updated to the following versions:
 
-* `ephox-spelling.war`: 2.117.1
-* `ephox-hyperlinking.war`: 2.105.0
-* `ephox-image-proxy.war`: 2.105.0
+* `ephox-spelling.war`: 2.117.3
+* `ephox-hyperlinking.war`: 2.105.4
+* `ephox-image-proxy.war`: 2.105.3
 
 These versions require Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 
@@ -317,7 +310,11 @@ For information on:
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
-### Stability update for the pre-configured server-side component Dockerfiles
+### Server-side component security fixes
+
+The server-side components (`.war` files) packaged with the {{site.productname}} 5.9 release have been updated to address various security issues.
+
+### Stability fixes for the pre-configured server-side component Dockerfiles
 
 The pre-configured Dockerfiles for containerizing the server-side components, also known as the Docker starter kits, have been updated to improve stability. Note that the resulting docker image will be larger as a result of these changes.
 
@@ -336,7 +333,7 @@ The new versions of the server-side services provide updates for the Java-based 
         - 8.0.42+
         - 7.0.76+
 
-2. Replace the existing server-side `.war` file with the version 2.110.0 `.war` file bundled with {{site.productname}} 5.9 or later.
+2. Replace the existing server-side `.war` file with the `.war` file bundled with {{site.productname}} 5.9 or later.
 
 For information on:
 
@@ -390,9 +387,7 @@ For information on:
 
 ## Security fixes
 
-{{site.productname}} 5.9 provides fixes for the following security issues:
-
-- changelog
+{{site.productname}} 5.9 provides fixes for the accompanying premium self-hosted server-side components. The `.war` files have been updated to address various high and medium severity security issues.
 
 ## Deprecated features
 
@@ -438,17 +433,30 @@ For information on the deprecation of the free TinyMCE Spell Checker plugin, see
 
 This section describes issues that users of {{site.productname}} 5.9 may encounter and possible workarounds for these issues.
 
-**Outline**
+- [Table plugin known issues](#tablepluginknownissues)
+- [Real-Time Collaboration (RTC) known issues](#real-timecollaborationrtcknownissues)
 
-- [RTC - Users are unable to add content below an `hr` (Horizontal Rule) if inserted on the last line](#rtcknownissue1)
-- [RTC - Circumstances where users are unable to clear content formatting](#rtcknownissue2)
-- [RTC - Possibility of inconsistent undo operations](#rtcknownissue3)
-- [RTC - Inconsistent editor scrolling behavior when multiple users are editing various areas of large content](#rtcknownissue4)
-- [RTC - Connection issues may occur when users delete large sections of content while multiple users are editing](#rtcknownissue5)
-- [RTC - Errors and warnings present in the JavaScript developer console](#rtcknownissue6)
+### Table plugin known issues
 
-<a class="anchor" id="rtcknownissue1"></a>
-### Users are unable to add content below an Horizontal Rule (`hr`) if inserted on the last line
+#### The new table color map settings do not apply to color pickers in the table dialogs
+
+Issue
+: This issue affects the new `table_background_color_map` and `table_border_color_map` options. Setting these options will change the set of colors used in their respective toolbar buttons and menu items, but not the table dialog.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+#### Issues with the new _Table Column Header_ and _Table Row Header_ toolbar buttons and menu items
+
+Issue
+: This issue affects users of the new `tablecolheader` and `tablerowheader` toolbar buttons and menu items. Toggling off column or row headers may result in a cell being converted into a normal cell when still part of a header row or column.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+### Real-Time Collaboration (RTC) known issues
+
+#### Users are unable to add content below an Horizontal Rule (`hr`) if inserted on the last line
 
 Issue
 : If an `hr` is inserted at the end of the editor content, placing the cursor below it overwrites the `hr`.
@@ -456,8 +464,7 @@ Issue
 Workaround
 : There was no known workaround at the time of the release.
 
-<a class="anchor" id="rtcknownissue2"></a>
-### Circumstances where users are unable to clear content formatting
+#### Circumstances where users are unable to clear content formatting
 
 Issue
 : The clear formatting feature only works with a selection across the text to be cleared.
@@ -465,8 +472,7 @@ Issue
 Workaround
 : There was no known workaround at the time of the release.
 
-<a class="anchor" id="rtcknownissue3"></a>
-### Possibility of inconsistent undo operations
+#### Possibility of inconsistent undo operations
 
 Issue
 : After adding content locally, when remote users edit that same content, local undo might not work or might remove more text than expected. This will not remove remote content.
@@ -474,8 +480,7 @@ Issue
 Workaround
 : There was no known workaround at the time of the release.
 
-<a class="anchor" id="rtcknownissue4"></a>
-### Inconsistent editor scrolling behavior when multiple users are editing various areas of a document
+#### Inconsistent editor scrolling behavior when multiple users are editing various areas of a document
 
 Issue
 : When the caret is not visible, remote changes might scroll the editor to make the caret visible.
@@ -483,8 +488,7 @@ Issue
 Workaround
 : There was no known workaround at the time of the release.
 
-<a class="anchor" id="rtcknownissue5"></a>
-### Connection issues may occur when users delete large sections of content while multiple users are editing
+#### Connection issues may occur when users delete large sections of content while multiple users are editing
 
 Issue
 : Deleting large sections of content (either deliberately or using undo) may result in a disconnection from the server.
@@ -492,8 +496,7 @@ Issue
 Workaround
 : There was no known workaround at the time of the release.
 
-<a class="anchor" id="rtcknownissue6"></a>
-### Errors and warnings present in the JavaScript developer console
+#### Errors and warnings present in the JavaScript developer console
 
 Issue
 : Several errors and warnings may be shown in the developer console (for example, opening some format menus).

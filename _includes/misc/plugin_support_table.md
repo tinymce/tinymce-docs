@@ -19,5 +19,6 @@ The following table lists the premium plugins supported by {{site.companynamefor
 | [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)                  | {{site.cross}}| {{site.tick}} |
 | [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)            | {{site.cross}}| {{site.tick}} |
 | [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/)                 | {{site.tick}} | {{site.tick}} |
+| [Real-Time Collaboration (RTC)]({{site.baseurl}}/plugins/premium/rtc/)     | {{site.cross}} | Version **5.9.2** and higher |
 | [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/) | {{site.tick}} | {{site.tick}} |
 | [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/)|{{site.cross}}|{{site.tick}}|

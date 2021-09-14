@@ -109,8 +109,8 @@
 | `paste-column-before` | ![paste-column-before.svg]({{ site.baseurl }}/images/icons/paste-column-before.svg) | `paste-column-before.svg` |
 | `paste-row-after` | ![paste-row-after.svg]({{ site.baseurl }}/images/icons/paste-row-after.svg) | `paste-row-after.svg` |
 | `paste-row-before` | ![paste-row-before.svg]({{ site.baseurl }}/images/icons/paste-row-before.svg) | `paste-row-before.svg` |
-| `paste-text` | ![paste-text.svg]({{ site.baseurl }}/images/icons/paste-text.svg) | `paste-text.svg` |
 | `paste` | ![paste.svg]({{ site.baseurl }}/images/icons/paste.svg) | `paste.svg` |
+| `paste-text` | ![paste-text.svg]({{ site.baseurl }}/images/icons/paste-text.svg) | `paste-text.svg` |
 | `permanent-pen` | ![permanent-pen.svg]({{ site.baseurl }}/images/icons/permanent-pen.svg) | `permanent-pen.svg` |
 | `plus` | ![plus.svg]({{ site.baseurl }}/images/icons/plus.svg) | `plus.svg` |
 | `preferences` | ![preferences.svg]({{ site.baseurl }}/images/icons/preferences.svg) | `preferences.svg` |
@@ -153,10 +153,12 @@
 | `table-insert-row-after` | ![table-insert-row-after.svg]({{ site.baseurl }}/images/icons/table-insert-row-after.svg) | `table-insert-row-after.svg` |
 | `table-left-header` | ![table-left-header.svg]({{ site.baseurl }}/images/icons/table-left-header.svg) | `table-left-header.svg` |
 | `table-merge-cells` | ![table-merge-cells.svg]({{ site.baseurl }}/images/icons/table-merge-cells.svg) | `table-merge-cells.svg` |
+| `table-row-numbering-rtl` | ![table-row-numbering-rtl.svg]({{ site.baseurl }}/images/icons/table-row-numbering-rtl.svg) | `table-row-numbering-rtl.svg` |
+| `table-row-numbering` | ![table-row-numbering.svg]({{ site.baseurl }}/images/icons/table-row-numbering.svg) | `table-row-numbering.svg` |
 | `table-row-properties` | ![table-row-properties.svg]({{ site.baseurl }}/images/icons/table-row-properties.svg) | `table-row-properties.svg` |
 | `table-split-cells` | ![table-split-cells.svg]({{ site.baseurl }}/images/icons/table-split-cells.svg) | `table-split-cells.svg` |
-| `table-top-header` | ![table-top-header.svg]({{ site.baseurl }}/images/icons/table-top-header.svg) | `table-top-header.svg` |
 | `table` | ![table.svg]({{ site.baseurl }}/images/icons/table.svg) | `table.svg` |
+| `table-top-header` | ![table-top-header.svg]({{ site.baseurl }}/images/icons/table-top-header.svg) | `table-top-header.svg` |
 | `template` | ![template.svg]({{ site.baseurl }}/images/icons/template.svg) | `template.svg` |
 | `temporary-placeholder` | ![temporary-placeholder.svg]({{ site.baseurl }}/images/icons/temporary-placeholder.svg) | `temporary-placeholder.svg` |
 | `text-color` | ![text-color.svg]({{ site.baseurl }}/images/icons/text-color.svg) | `text-color.svg` |

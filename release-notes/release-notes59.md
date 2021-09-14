@@ -419,13 +419,26 @@ This section describes issues that users of {{site.productname}} 5.9 may encount
 
 **Outline**
 
-- [](#)
+- [The new table color map settings do not apply to color pickers in the table dialogs](#knownissue1)
+- [Issues with the new _Table Column Header_ and _Table Row Header_ toolbar buttons and menu items](#knownissue2)
 
-###
+<a class="anchor" id="knownissue1"></a>
+### The new table color map settings do not apply to color pickers in the table dialogs
 
-**Issue**: This issue affects ....
+Issue
+: This issue affects the new `table_background_color_map` and `table_border_color_map` options. Setting these options will change the set of colors used in their respective toolbar buttons and menu items, but not the table dialog.
 
-**Workaround**: There was no known workaround at the time of the release.
+Workaround
+: There was no known workaround at the time of the release.
+
+<a class="anchor" id="knownissue2"></a>
+### Issues with the new _Table Column Header_ and _Table Row Header_ toolbar buttons and menu items
+
+Issue
+: This issue affects users of the new `tablecolheader` and `tablerowheader` toolbar buttons and menu items. Toggling off column or row headers may result in a cell being converted into a normal cell when still part of a header row or column.
+
+Workaround
+: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

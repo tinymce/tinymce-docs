@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
+{{site.productname}} 5.9 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, September 15<sup>th</sup>, 2021. It includes {{site.productname}} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.9, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
@@ -175,23 +175,19 @@ The following functionality changes were made for the {{site.productname}} 5.9 r
 
 The following premium plugin updates were released alongside {{site.productname}} 5.9.
 
-### Premium Plugin Name X.Y.Z
+### Advanced Tables 1.1.0
 
-The {{site.productname}} 5.9 release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
+The {{site.productname}} 5.9 release includes an accompanying release of the **Advanced Tables** premium plugin.
 
-**<<Premium Plugin Name>>** X.Y.Z adds the following new features:
+**Advanced Tables** 1.1.0 provides the following new features:
 
-- <Description>
+This release adds row numbering functionality, allowing users to add (and remove) row numbering columns on tables. For details, see: [Advanced Tables plugin - Adding row numbering to a table]({{site.baseurl}}/plugins/premium/advtable/#addingrownumberingtoatable). This includes:
 
-**<<Premium Plugin Name>>** X.Y.Z introduces the following enhancements:
+- Added a new `advtablerownumbering` toolbar button and menu item.
+- Added a new `advtable_value_series` option.
+- Added a new `mceTableToggleSeries` command.
 
-- <Description>
-
-**<<Premium Plugin Name>>** X.Y.Z provides the following bug fixes:
-
-- <Description>
-
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
 ### Mentions 2.3.0
 
@@ -219,27 +215,27 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
-### Spell Checker Pro 2.4.0
+### Spell Checker Pro 2.4.1
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 2.4.0 adds the following new features:
+**Spell Checker Pro** 2.4 (2.4.1) adds the following new features:
 
 - The Spelling service now supports a broader range of dictionaries by introducing support for [Hunspell dictionaries](https://hunspell.github.io/), see: [New Server-side component features](#newserver-sidecomponentfeatures).
 - The spellchecker dialog now supports navigating to the next and previous misspelled words.
 
-**Spell Checker Pro** 2.4.0 includes the following changes:
+**Spell Checker Pro** 2.4.1 includes the following changes:
 
 - The `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option, see: [The `spellchecker_select_languages` option](#thespellchecker_select_languagesoption).
 - Language code validation has been moved from the client to the server.
 - The Spell Checker Pro plugin has been upgraded to use version 2 of the spelling service API.
 - The "Change" button text in the spellchecker dialog has been changed to "Accept".
 
-**Spell Checker Pro** 2.4.0 introduces the following improvements:
+**Spell Checker Pro** 2.4.1 introduces the following improvements:
 
 - Improved the error messages shown in the developer console for the `SpellcheckError` event, see: [Spell Checker Pro - `Events`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#events).
 
-**Spell Checker Pro** 2.4.0 provides the following bug fixes:
+**Spell Checker Pro** 2.4.1 provides the following bug fixes:
 
 - Links with a URL as the text content were incorrectly spellchecked.
 - Resizing the editor with as-you-type mode enabled wouldn't spellcheck words that came into view.
@@ -269,15 +265,16 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 The {{site.productname}} 5.9 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
 - The Enhanced Media Embed plugin (`mediaembed`)
+- The Export plugin (`export`)
 - The Image Tools plugin (`imagetools`)
 - The Link Checker plugin (`linkchecker`)
 - The Spell Checker Pro plugin (`tinymcespellchecker`)
 
 The Java server-side components have been updated to the following versions:
 
-* `ephox-spelling.war`: 2.117.1
-* `ephox-hyperlinking.war`: 2.105.0
-* `ephox-image-proxy.war`: 2.105.0
+* `ephox-spelling.war`: 2.117.3
+* `ephox-hyperlinking.war`: 2.105.4
+* `ephox-image-proxy.war`: 2.105.3
 
 These versions require Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 
@@ -316,7 +313,7 @@ The new versions of the server-side services provide updates for the Java-based 
         - 8.0.42+
         - 7.0.76+
 
-2. Replace the existing server-side `.war` file with the version 2.110.0 `.war` file bundled with {{site.productname}} 5.9 or later.
+2. Replace the existing server-side `.war` file with the `.war` file bundled with {{site.productname}} 5.9 or later.
 
 For information on:
 

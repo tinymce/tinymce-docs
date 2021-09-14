@@ -440,13 +440,66 @@ This section describes issues that users of {{site.productname}} 5.9 may encount
 
 **Outline**
 
-- [](#)
+- [RTC - Users are unable to add content below an `hr` (Horizontal Rule) if inserted on the last line](#rtcknownissue1)
+- [RTC - Circumstances where users are unable to clear content formatting](#rtcknownissue2)
+- [RTC - Possibility of inconsistent undo operations](#rtcknownissue3)
+- [RTC - Inconsistent editor scrolling behavior when multiple users are editing various areas of large content](#rtcknownissue4)
+- [RTC - Connection issues may occur when users delete large sections of content while multiple users are editing](#rtcknownissue5)
+- [RTC - Errors and warnings present in the JavaScript developer console](#rtcknownissue6)
 
-###
+<a class="anchor" id="rtcknownissue1"></a>
+### Users are unable to add content below an Horizontal Rule (`hr`) if inserted on the last line
 
-**Issue**: This issue affects ....
+Issue
+: If an `hr` is inserted at the end of the editor content, placing the cursor below it overwrites the `hr`.
 
-**Workaround**: There was no known workaround at the time of the release.
+Workaround
+: There was no known workaround at the time of the release.
+
+<a class="anchor" id="rtcknownissue2"></a>
+### Circumstances where users are unable to clear content formatting
+
+Issue
+: The clear formatting feature only works with a selection across the text to be cleared.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+<a class="anchor" id="rtcknownissue3"></a>
+### Possibility of inconsistent undo operations
+
+Issue
+: After adding content locally, when remote users edit that same content, local undo might not work or might remove more text than expected. This will not remove remote content.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+<a class="anchor" id="rtcknownissue4"></a>
+### Inconsistent editor scrolling behavior when multiple users are editing various areas of a document
+
+Issue
+: When the caret is not visible, remote changes might scroll the editor to make the caret visible.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+<a class="anchor" id="rtcknownissue5"></a>
+### Connection issues may occur when users delete large sections of content while multiple users are editing
+
+Issue
+: Deleting large sections of content (either deliberately or using undo) may result in a disconnection from the server.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+<a class="anchor" id="rtcknownissue6"></a>
+### Errors and warnings present in the JavaScript developer console
+
+Issue
+: Several errors and warnings may be shown in the developer console (for example, opening some format menus).
+
+Workaround
+: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

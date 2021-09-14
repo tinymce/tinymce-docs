@@ -49,6 +49,14 @@ The following plugins are currently supported:
 * [Visual Blocks (`visualblocks`)]({{site.baseurl}}/plugins/opensource/visualblocks/)
 * [Word Count (`wordcount`)]({{site.baseurl}}/plugins/opensource/wordcount/)
 
+## Integration considerations
+
+When planning your collaboration integration, please take into account the following details and consider how they impact your use-case. If you are in doubt, don't hesitate to reach out to us and discuss your requirements.
+
+* Do not load content into TinyMCE that were created using a plugin not yet supported in RTC, for example tables, media embed, checklist or table of contents. Without the plugin being there to protect the integrity for, let's say a checklist or table of contents, you risk making changes to the HTML in a way it's not longer recognized by the plugin.
+* To update the content outside of the RTC clients, you have to create a new document id. Currently API's for updating the content programmatically is not yet available. If your use-case requires you to update the content outside of the RTC clients, you'll have to generate a new document id and distribute it to all collaborators and make sure they don't continue collaborate on the old document id. A future version of the RTC plugin will add support for updating the content outside of the clients while keeping the same document id.
+* Using the RTC plugin in hybrid mode is not supported and not recommended – meaning you should not use a self hosted version of TinyMCE together with the cloud version of the RTC plugin. Due to the very tight integration between the TinyMCE client and the collaboration server, it's very important that the clients are in lockstep with the server version.
+
 ## Options that are not available when RTC is enabled
 
 * [`allow_unsafe_link_target`]({{site.baseurl}}/configure/content-filtering/#allow_unsafe_link_target)

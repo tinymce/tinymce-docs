@@ -424,7 +424,7 @@ This section describes issues that users of {{site.productname}} 5.9 may encount
 ### The new table color map settings do not apply to color pickers in the table dialogs
 
 Issue
-: This issue affects users of the new `table_background_color_map` and `table_border_color_map` options. These will change the set of colors used in their respective toolbar buttons and menu items, but not the table dialog.
+: This issue affects the new `table_background_color_map` and `table_border_color_map` options. Setting these options will change the set of colors used in their respective toolbar buttons and menu items, but not the table dialog.
 
 Workaround
 : There was no known workaround at the time of the release.

@@ -294,7 +294,11 @@ For information on:
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
-### Stability update for the pre-configured server-side component Dockerfiles
+### Server-side component security fixes
+
+The server-side components (`.war` files) packaged with the {{site.productname}} 5.9 release have been updated to address various security issues.
+
+### Stability fixes for the pre-configured server-side component Dockerfiles
 
 The pre-configured Dockerfiles for containerizing the server-side components, also known as the Docker starter kits, have been updated to improve stability. Note that the resulting docker image will be larger as a result of these changes.
 
@@ -367,9 +371,7 @@ For information on:
 
 ## Security fixes
 
-{{site.productname}} 5.9 provides fixes for the following security issues:
-
-- changelog
+{{site.productname}} 5.9 provides fixes for the accompanying premium self-hosted server-side components. The `.war` files have been updated to address various high and medium severity security issues.
 
 ## Deprecated features
 

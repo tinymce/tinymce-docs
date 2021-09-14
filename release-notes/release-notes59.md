@@ -371,7 +371,7 @@ For information on:
 
 ## Security fixes
 
-{{site.productname}} 5.9 provides fixes for the accompanying premium self-hosted server-side components. The `.war` files have been updated to address various security issues.
+{{site.productname}} 5.9 provides fixes for the accompanying premium self-hosted server-side components. The `.war` files have been updated to address various high and medium severity security issues.
 
 ## Deprecated features
 

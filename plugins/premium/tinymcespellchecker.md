@@ -60,185 +60,28 @@ The {{site.productname}} Enterprise Spellchecking plugin activates automatically
 
 ## Configuration Options
 
-### `spellchecker_active`
+{% include configuration/spellchecker_active.md %}
 
-This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be active when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
+{% include configuration/spellchecker_dialog.md %}
 
-**Type:** `Boolean`
+{% include configuration/spellchecker_language.md %}
 
-**Default Value:** `true`
+{% include misc/spellchecker-languages.md %}
 
-**Possible Values:** `true`, `false`
+{% include configuration/spellchecker_languages.md %}
 
-#### Example: Using `spellchecker_active`
+{% include configuration/spellchecker_on_load.md %}
 
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_active: true
-});
-```
+{% include configuration/spellchecker_rpc_url.md %}
 
-### `spellchecker_dialog`
+{% include plugins/tinymcespellchecker-content-langs.md %}
 
-This option specifies the primary spell checking mode.
-
-- When set to `true`, the [`spellcheck` toolbar button](#toolbarbuttons) will open a dialog that will step the user through each potential spelling error in the document.
-- When set to `false`, the [`spellcheck` toolbar button](#toolbarbuttons) will enable or disable as-you-type spell checking and the [`spellcheckdialog` toolbar button](#toolbarbuttons) will open the spell checker dialog.
-
-**Type:** `Boolean`
-
-**Default Value:** `false`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `spellchecker_dialog`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  toolbar: 'spellchecker',
-  spellchecker_dialog: true
-});
-```
-
-### `spellchecker_language`
-
-This option specifies the default language used by Spell Checker Pro.
-
-**Type:** `String`
-
-**Default Value:** `'en_US'`
-
-#### Example: Using `spellchecker_language`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_language: 'de'
-});
-```
-
-{% include configuration/languages.md %}
-
-### `spellchecker_languages`
-
-This option specifies the spellchecker languages that are available to the user, provided as a comma delimited string. For a list of available languages, see: [Supported languages](#supportedlanguages).
-
-**Type:** comma-separated `String`
-
-**Default Value:**
-```
-'English (United States)=en_US,English (United Kingdom)=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Portuguese=pt,Portuguese (Portugal)=pt_PT,Spanish=es,Swedish=sv'
-```
-
-#### Example: Using `spellchecker_languages`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_languages: 'US English=en_US,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
-});
-```
-
-### `spellchecker_on_load`
-
-> **Note**: Removed in Spell Checker Pro 2.0 (TinyMCE 5.2). Spell Checker Pro will now always run on editor initialization. To disable Spell Checker Pro on load, use [`spellchecker_active`](#spellchecker_active).
-
-This option runs the spellchecker when the contents of the editor is loaded.
-
-**Type:** `Boolean`
-
-**Default Value:** `false`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `spellchecker_on_load`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_on_load: true
-});
-```
-
-### `spellchecker_rpc_url`
-
-This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
-
-> **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
-
-**Type:** `String`
-
-#### Example: Using `spellchecker_rpc_url`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_rpc_url: 'localhost/ephox-spelling'
-});
-```
-
-### `spellchecker_select_languages`
-
-This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).  For a list of available languages, see: [Supported languages](#supportedlanguages).
-
-**Type:** comma-separated `String`
-
-**Default Value:** `'en,es,fr,de,pt,zh'`
-
-#### Example: Using `spellchecker_select_languages`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  toolbar: 'language',
-  spellchecker_select_languages: 'en,es,fi,fr,da,de,nl,it,nb,pt,sv,zh'
-});
-```
+{% include configuration/spellchecker_select_languages.md %}
 
 <!-- Bookmark for deprecated option name -->
 <a class="anchor" id="spellchecker_whitelist">
 
-### `spellchecker_ignore_list`
-
-This option specifies which words should be ignored by the spell checker. If an array of words is provided, the specified words will be ignored for all languages. If an object containing an array of words per language is provided, the specified words will be ignored for the specified languages.
-
-> **Note:** Languages specified as keys in the `spellchecker_ignore_list` object must match the configured [Spellchecker Languages]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_languages).
-
-**Type:** `String[]` or `Object`
-
-#### Example: Using `spellchecker_ignore_list` to ignore words in all languages
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_ignore_list: ['tinymce', 'TinyMCE']
-});
-```
-
-#### Example: Using `spellchecker_ignore_list` for specific languages
-
-{{site.requires_5_7v}}
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_ignore_list: {
-    en_US: ['tinymce', 'TinyMCE'],
-    es: ['tinymce']
-  }
-});
-```
+{% include configuration/spellchecker_ignore_list.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

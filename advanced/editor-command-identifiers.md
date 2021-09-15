@@ -53,6 +53,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | Subscript            | Toggles subscript formatting to selection.                                                                                                                                                                                                                                                  |
 | Cut                  | Cuts the selected contents and puts in into users clipboard.                                                                                                                                                                                                                                |
 | Copy                 | Copies the selected contents and puts in into users clipboard.                                                                                                                                                                                                                              |
+| Lang                 | Sets the language of the current selection. The value passed in should be a language spec described in [Content appearance options - `content_langs`]({{site.baseurl}}/configure/localization/#content_langs).                                                                              |
 | Paste                | Pastes the current clipboard contents into the editor.                                                                                                                                                                                                                                      |
 | mceInsertLink        | Inserts a link at the current selection. The value is the URL to add to the link(s).                                                                                                                                                                                                        |
 | Unlink               | Removes any links from the current selection.                                                                                                                                                                                                                                               |
@@ -96,6 +97,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSelectNode        | Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                      |
 | mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
 | mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
+| mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page. {{site.requires_5_9v}}                                                                                                                       |
 
 **Examples**
 
@@ -153,6 +155,7 @@ tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nodes up.
 tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
+tinymce.activeEditor.execCommand('mceFocus');
 ```
 
 ### Plugin Commands
@@ -170,6 +173,7 @@ Commands are available for the following plugins:
 - [Code Sample](#codesample)
 - [Comments](#comments)
 - [Directionality](#directionality)
+- [Emoticons](#emoticons)
 - [Export](#export)
 - [Format Painter](#formatpainter)
 - [Full Page](#fullpage)
@@ -197,6 +201,7 @@ Commands are available for the following plugins:
 - [Table of Contents](#tableofcontents)
 - [Visual Blocks](#visualblocks)
 - [Visual Characters](#visualcharacters)
+- [Word Count](#wordcount)
 
 #### Advanced Code
 
@@ -264,6 +269,12 @@ The following commands require the [Directionality (`directionality`)]({{site.ba
 
 {% include commands/directionality-cmds.md %}
 
+#### Emoticons
+
+The following commands require the [Emoticons (`emoticons`)]({{site.baseurl}}/plugins/opensource/emoticons/) plugin.
+
+{% include commands/emoticons-cmds.md %}
+
 #### Export
 
 The following commands require the [Export (`export`)]({{site.baseurl}}/plugins/premium/export/) plugin.
@@ -277,6 +288,8 @@ The following commands require the [Format Painter (`formatpainter`)]({{site.bas
 {% include commands/formatpainter-cmds.md %}
 
 #### Full Page
+
+{{site.deprecate_fullpage}}
 
 The following command requires the [Full Page (`fullpage`)]({{site.baseurl}}/plugins/opensource/fullpage/) plugin.
 
@@ -427,6 +440,12 @@ The following command requires the [Visual Blocks (`visualblocks`)]({{site.baseu
 The following command requires the [Visual Characters (`visualchars`)]({{site.baseurl}}/plugins/opensource/visualchars/) plugin.
 
 {% include commands/visualchars-cmds.md %}
+
+#### Word Count
+
+The following command requires the [Word Count (`wordcount`)]({{site.baseurl}}/plugins/opensource/visualchars/) plugin.
+
+{% include commands/wordcount-cmds.md %}
 
 ### Editor Management Commands
 

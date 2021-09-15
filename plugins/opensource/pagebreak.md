@@ -29,45 +29,9 @@ tinymce.init({
 
 These settings affect the execution of the `pagebreak` plugin. They enable you to specify how the page break should be generated in the HTML source code and determine whether the page break element(s) should be wrapped in `<p>`tags`</p>`.
 
-### `pagebreak_separator`
+{% include configuration/pagebreak_separator.md %}
 
-**Type:** `String`
-
-**Default Value:** `"<!-- pagebreak -->"`
-
-#### Example: Using `pagebreak_separator`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'pagebreak',
-  menubar: 'insert',
-  toolbar: 'pagebreak',
-  pagebreak_separator: '<!-- my page break -->'
-});
-```
-
-### `pagebreak_split_block`
-
-When enabled this option makes it easier to split block elements with a page break.
-
-**Type:** `Boolean`
-
-**Default Value:** `false`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `pagebreak_split_block`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'pagebreak',
-  menubar: 'insert',
-  toolbar: 'pagebreak',
-  pagebreak_split_block: true
-});
-```
+{% include configuration/pagebreak_split_block.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

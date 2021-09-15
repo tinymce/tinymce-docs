@@ -6,6 +6,8 @@ description: Changes HTML output to old HTML syntax such as font, b and i
 keywords: legacyoutput filter content cms email flash
 ---
 
+> **Important**: The Legacy Output plugin (`legacyoutput`) was deprecated with the release of TinyMCE 5.9. For details, see [the Legacy Output plugin deprecation notice]({{site.baseurl}}/release-notes/release-notes59/#thelegacyoutputlegacyoutputplugin).
+
 The `legacyoutput` plugin changes {{site.productname}}'s output, producing legacy elements such as `font`, `b`, `i`, `u`, `strike`, and use `align` attributes.
 
 > **Important**: Editor content created while this plugin is active will be formatted using HTML3. Using this plugin will greatly reduce the functionality of the editor.

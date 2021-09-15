@@ -75,11 +75,11 @@ Proceed to setting up and deploying the containerized services:
 
 {% assign shbundledockerfiles = true %}
 
-{% include configuration/dockerized-hyperlinking-service.md %}
+{% include docker/dockerized-hyperlinking-service.md %}
 
-{% include configuration/dockerized-image-proxy.md %}
+{% include docker/dockerized-image-proxy.md %}
 
-{% include configuration/dockerized-spelling-service.md %}
+{% include docker/dockerized-spelling-service.md %}
 
 {% assign shbundledockerfiles = false %}
 
@@ -96,6 +96,6 @@ Select from the following:
 - For the Tiny Enhanced Media Embed and Tiny Link Checker service, see: [Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)](#deploythetinymcehyperlinkingserver-sidecomponentusingdockerindividuallylicensed).
 - For the Tiny Spell Checker Pro service, see: [Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)](#deploythetinymcespellingserviceserver-sidecomponentusingdockerindividuallylicensed).
 
-{% include configuration/dockerized-hyperlinking-service.md %}
+{% include docker/dockerized-hyperlinking-service.md %}
 
-{% include configuration/dockerized-spelling-service.md %}
+{% include docker/dockerized-spelling-service.md %}

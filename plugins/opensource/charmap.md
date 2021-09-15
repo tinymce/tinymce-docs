@@ -41,46 +41,9 @@ Internally, character map is defined by the array of arrays, where each sub-arra
 ];
 ```
 
-### `charmap`
+{% include configuration/charmap.md %}
 
-With this option it is possible to fully override the default character map. This can be an array or a function that returns an array in the above mentioned format.
-
-**Type:** `Array`, `Function`
-
-#### Example: Using `charmap`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'charmap',
-  toolbar: 'charmap',
-  menubar: 'insert',
-  charmap: [
-    [0x2615, 'morning coffee']
-  ]
-});
-```
-
-### `charmap_append`
-
-This option provides a way to append some additional characters to the default character map. This can be array or a function that returns an array in the above mentioned format.
-
-**Type:** `Array`, `Function`
-
-#### Example: Using `charmap_append`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'charmap',
-  toolbar: 'charmap',
-  menubar: 'insert',
-  charmap_append: [
-    [0x2600, 'sun'],
-    [0x2601, 'cloud']
-  ]
-});
-```
+{% include configuration/charmap_append.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

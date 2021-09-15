@@ -7,6 +7,8 @@ description: Add basic BBCode input/output support to TinyMCE.
 keywords: punbb informer
 ---
 
+> **Important**: The BBCode plugin (`bbcode`) was deprecated with the release of TinyMCE 5.9. For details, see [the BBCode plugin deprecation notice]({{site.baseurl}}/release-notes/release-notes59/#thebbcodebbcodeplugin).
+
 This plugin makes it possible to edit BBCode in a WYSIWYG style by converting tags like `[b]` into `<strong>` and then back, when user submits the content.
 
 > You will need to sacrifice quite a lot of {{site.productname}}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.

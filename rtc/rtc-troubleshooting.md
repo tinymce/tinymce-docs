@@ -16,7 +16,7 @@ This documentation is in progress. Please contact us with any suggestions you th
 
 ## What happens if two clients attempt to establish a session at the same time? What impact does that have on encryption key generation?
 
-As noted in the [Document ID configuration option]({{site.baseurl}}/rtc/configuration/#rtc_document_id), if a document ID is not known to the server, new initial data will be uploaded. If two users manage to do this at the same time, one will be forced to wait for the other to establish the session. This has implications for configurations using a dynamic [`rtc_encryption_provider`]({{site.baseurl}}/rtc/configuration/#rtc_encryption_provider).
+As noted in the [Document ID configuration option]({{site.baseurl}}/rtc/configuration/rtc-options-required/#rtc_document_id), if a document ID is not known to the server, new initial data will be uploaded. If two users manage to do this at the same time, one will be forced to wait for the other to establish the session. This has implications for configurations using a dynamic [`rtc_encryption_provider`]({{site.baseurl}}/rtc/configuration/rtc-options-required/#rtc_encryption_provider).
 
 If the situation occurs, the connection process for the RTC plugin will be as follows:
 

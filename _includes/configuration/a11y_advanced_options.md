@@ -40,6 +40,7 @@ tinymce.init({
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  plugins: 'a11ychecker image',
   a11y_advanced_options: true
 });
 ```

@@ -32,7 +32,7 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.
 
-{% include configuration/fullscreen-native.md %}
+{% include configuration/fullscreen_native.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

@@ -93,6 +93,14 @@ To achieve this, the second button uses `onSetup` to register a callback for str
 
 The callback given to `editor.formatter.formatChanged` is a function that takes a `state` boolean representing whether the currently selected content contains the applied format. This `state` boolean is used to set the button's active state to match if the selected content has the specified formatting by using `api.setActive(state)` from the button's API. This ensures the `customToggleStrikethrough` button is only **active** when the selected content contains the strikethrough formatting.
 
+{{site.requires_5_9v}}
+
+For formats that require variables, the `editor.formatter.formatChanged` function takes two extra arguments: `similar` and `vars`.
+
+When the `similar` argument is `true`, similar formats will all be treated as the same by `formatChanged`. Similar formats are those with the same `formatName` but different variables. This argument will default to `false`.
+
+The `vars` argument controls which variables are used to match the content when determining whether to run the callback. This argument is only used when `similar` is `false`.
+
 ## Menu button
 
 A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain submenus. This is useful for grouping together actions that would otherwise be several buttons on the toolbar. It can also be used to reduce visual clutter and save UI space, as menubar menu items and some toolbar buttons could be moved into a toolbar menu button. Potentially, all menubar menu items could be moved into toolbar menu buttons, allowing for the editor to be used without a menubar at all.

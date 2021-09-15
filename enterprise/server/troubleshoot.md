@@ -28,7 +28,7 @@ If the editor is reporting that the service cannot be found and tracing the netw
 
 ### Chrome specific tips
 
-If the server is not running on a standard HTTP or HTTPS port (80 or 443) then Chrome will include the port in the Origin header that is sent to the server. Other browsers do not do this. This is why when specifying the `allowed-origins` config, you should use both the hostname by itself and the hostname and port in the configuration. See [Additional Information Around Entering Origins]({{ site.baseurl }}/enterprise/server/#additionalinformationaroundenteringorigins) for more details.
+If the server is not running on a standard HTTP or HTTPS port (80 or 443) then Chrome will include the port in the Origin header that is sent to the server. Other browsers do not do this. If you have set `ignore-port` to `false`, then you will need to include the port in the `allowed-origins`. See [Additional Information Around Entering Origins]({{ site.baseurl }}/enterprise/server/#additionalinformationaroundenteringorigins) for more details.
 
 ## Using browser tooling to investigate services issues
 

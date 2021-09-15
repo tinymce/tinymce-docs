@@ -9,6 +9,10 @@ keywords: custom notification notifications cdn notificationmanager
 
 {{site.productname}} can display customized notifications.
 
+## Interactive example
+
+{% include live-demo.html id="notifications" %}
+
 ## Text
 
 The **text** property sets the text that is displayed at the center of the notification. This is the most important setting when opening a notification.

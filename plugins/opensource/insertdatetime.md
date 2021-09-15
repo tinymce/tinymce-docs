@@ -27,75 +27,15 @@ tinymce.init({
 
 These settings affect the execution of the `insertdatetime` plugin. Formats for both dates and times can be set in these configuration options.
 
-### `insertdatetime_dateformat`
+{% include configuration/insertdatetime_dateformat.md %}
 
-This option allows you to override the default formatting rule for date formats inserted by the `mceInsertDate` command. This defaults to `%Y-%m-%d` and where the different `%` variables get replaced with various [date format options](#referencedatetimeformats).
+{% include configuration/insertdatetime_formats.md %}
 
-#### Example: Using `insertdatetime_dateformat`
+{% include configuration/insertdatetime_timeformat.md %}
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'insertdatetime',
-  menubar: 'insert',
-  toolbar: 'insertdatetime',
-  insertdatetime_dateformat: '%Y-%m-%d'
-});
-```
+{% include configuration/insertdatetime_element.md %}
 
-### `insertdatetime_formats`
-
-Allows you to specify a list of date/time formats to be used in the date menu or date select box. A complete list of formats is available under [date formats](#referencedatetimeformats) below.
-
-#### Example: Using `insertdatetime_formats`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'insertdatetime',
-  menubar: 'insert',
-  toolbar: 'insertdatetime',
-  insertdatetime_formats: ['%H:%M:%S', '%Y-%m-%d', '%I:%M:%S %p', '%D']
-});
-```
-
-### `insertdatetime_timeformat`
-
-This option allows you to override the default formatting rule for times inserted by the `mceInsertTime` command. This defaults to `%H:%M:%S` and where the different `%` variables get replaced with various [date format options](#referencedatetimeformats).
-
-#### Example: Using `insertdatetime_timeformat`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'insertdatetime',
-  menubar: 'insert',
-  toolbar: 'insertdatetime',
-  insertdatetime_timeformat: '%H:%M:%S'
-});
-```
-
-### `insertdatetime_element`
-
-When this option is enabled HTML5 time elements gets generated when you insert dates/times.
-
-**Type:** `Boolean`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `insertdatetime_element`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'insertdatetime',
-  menubar: 'insert',
-  toolbar: 'insertdatetime',
-  insertdatetime_element: true
-});
-```
-
-{% include configuration/ref-time-date-formats.md %}
+{% include configuration/ref_time_date_formats.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

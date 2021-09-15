@@ -9,8 +9,8 @@ Before changing the language option, ensure that the language pack is available 
 
 For information on:
 
-- Using the premium language packs, see: [Using the premium language packs](#usingthecommunitylanguagepacks).
-- Using the community language packs, see: [Using the community language packs](#usingthepremiumlanguagepacks).
+- Using the premium language packs, see: [Using the premium language packs](#usingthepremiumlanguagepacks).
+- Using the community language packs, see: [Using the community language packs](#usingthecommunitylanguagepacks).
 
 **Option:** `language`
 
@@ -29,10 +29,10 @@ tinymce.init({
 });
 ```
 
-{% include misc/using-community-lang-packs.md %}
-
 ### Using the premium language packs
 
 The following professionally localized language packs are provided to paid {{site.cloudname}} and premium self-hosted deployments. To use these language packs, set the `language` option to the corresponding language code. No additional configuration is required.
 
 {% include misc/ui-languages.md %}
+
+{% include misc/using-community-lang-packs.md %}

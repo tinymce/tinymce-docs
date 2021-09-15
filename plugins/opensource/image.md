@@ -40,317 +40,39 @@ If you wish to align the image, you can also use the text align buttons while im
 {% assign includedSection = 'imagePlugin' %}
 #{% include configuration/a11y_advanced_options.md %}
 {% assign includedSection = false %}
-#{% include configuration/file-picker-callback.md %}
-
-#{% include configuration/file-picker-types.md %}
+#{% include configuration/file_picker_callback.md %}
 
-### `image_caption`
+#{% include configuration/file_picker_types.md %}
 
-This option lets users enable captions for images. When this option is enabled the image dialog will have an extra checkbox called "Caption". When a user checks the checkbox the image will get wrapped in an HTML5 `figure` element with a `figcaption` inside it. The user will then be able to type caption content inside the editor.
+{% include configuration/image_caption.md %}
 
-**Type:** `Boolean`
-
-**Default Value:** `false`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `image_caption`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_caption: true
-});
-```
-
-Below is an example of the HTML created when a user selects the caption checkbox.
-
-```html
-<figure class="image">
-<img src="url" alt="" />
-<figcaption>Caption</figcaption>
-</figure>
-```
+{% include configuration/image_list.md %}
 
-Note that the `figure` element needs some custom CSS added to render properly. This is what we use in the internal `content.css` within {{site.productname}}, and can be overridden with your own custom [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) stylesheet.
+{% include configuration/image_advtab.md %}
 
-```css
-{% include css-codeblock/image-plugin-css.md %}
-```
-
-### `image_list`
-
-This option lets you specify a predefined list of sources for images. `image_list` takes the form of an array containing items to add to a list with a corresponding image. Each item has a `title` and a `value`.
+{% include configuration/image_class_list.md %}
 
-**Type:** `String`
+{% include configuration/image_description.md %}
 
-#### Example: Using `image_list`
+{% include configuration/image_dimensions.md %}
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_list: [
-    {title: 'Cat', value: 'cat.png'},
-    {title: 'Dog', value: 'dog.jpg'}
-  ]
-});
-```
-
-#### Example of a nested list of images
-
-{{site.requires_5_5v}}
-
-To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
-
-For example:
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_list: [
-    {title: 'Cat', value: 'cat.png'},
-    {title: 'Dogs',
-      menu: [
-        {title: 'Alaskan Husky', value: 'husky.jpg'},
-        {title: 'Dingo', value: 'dingo.png'},
-        {title: 'Swedish Lapphund', value: 'swedish_lapphund.gif'}
-      ]
-    }
-  ]
-});
-```
-
-#### Example of an external script that returns an JSON array of images
-
-You can also configure a URL with JSON data. The format of that list is the same as above.
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_list: '/mylist.php'
-});
-```
-
-#### Example of a custom async function
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_list: function(success) {
-    success([
-      {title: 'Dog', value: 'mydog.jpg'},
-      {title: 'Cat', value: 'mycat.gif'}
-    ]);
-  }
-});
-```
-
-### `image_advtab`
-
-This option adds an "Advanced" tab to the image dialog allowing you to add custom styles, spacing and borders to images.
-
-**Type:** `Boolean`
-
-**Default Value:** `false`
+{% include configuration/image_prepend_url.md %}
 
-**Possible Values:** `true`, `false`
+{% include configuration/image_title.md %}
 
-#### Example: Using `image_advtab`
+{% include configuration/image_uploadtab.md %}
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_advtab: true
-});
-```
-
-### `image_class_list`
+#{% include configuration/images_file_types.md %}
 
-This option lets you specify a predefined list of classes to add to an image. It takes the form of an array with items to set classes on links.
+#{% include configuration/images_upload_base_path.md %}
 
-**Type:** `String`
+#{% include configuration/images_upload_credentials.md %}
 
-#### Example: Using `image_class_list`
+#{% include configuration/images_upload_handler.md %}
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_class_list: [
-    {title: 'None', value: ''},
-    {title: 'No border', value: 'img_no_border'},
-    {title: 'Green border', value: 'img_green_border'},
-    {title: 'Blue border', value: 'img_blue_border'},
-    {title: 'Red border', value: 'img_red_border'}
-  ]
-});
-```
+#{% include configuration/images_uploads_url.md %}
 
-#### Example of a nested list of image classes
-
-{{site.requires_5_5v}}
-
-To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
-
-For example:
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_class_list: [
-    {title: 'None', value: ''},
-    {title: 'No border', value: 'img_no_border'},
-    {title: 'Borders',
-      menu: [
-        {title: 'Green border', value: 'img_green_border'},
-        {title: 'Blue border', value: 'img_blue_border'},
-        {title: 'Red border', value: 'img_red_border'}
-      ]
-    }
-  ]
-});
-```
-
-### `image_description`
-
-This options allows you disable the image description input field in the image dialog.
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `image_description`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_description: false
-});
-```
-
-### `image_dimensions`
-
-This options allows you disable the image dimensions input field in the image dialog.
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `image_dimensions`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_dimensions: false
-});
-```
-
-### `image_prepend_url`
-
-This option allows you to specify a URL prefix that will be applied to images when appropriate.
-
-**Type:** `String`
-
-#### Example: Using `image_prepend_url`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_prepend_url: 'https://www.example.com/images/'
-});
-```
-
-### `image_title`
-
-This options allows you enable the image title input field in the image dialog.
-
-**Type:** `Boolean`
-
-**Default Value:** `false`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `image_title`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_title: true
-});
-```
-
-### `image_uploadtab`
-
-This option adds an "Upload" tab to the image dialog allowing you to upload local images, when the [`images_upload_url`]({{site.baseurl}}/configure/file-image-upload/#images_upload_url) is also configured.
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`
-
-#### Example: Using `image_uploadtab`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  image_uploadtab: false
-});
-```
-
-#{% include configuration/images-file-types.md %}
-
-#{% include configuration/images-upload-base-path.md %}
-
-#{% include configuration/images-upload-credentials.md %}
-
-#{% include configuration/images-upload-handler.md %}
-
-#{% include configuration/images-uploads-url.md %}
-
-#{% include configuration/type-ahead-urls.md %}
+#{% include configuration/type_ahead_urls.md %}
 
 
 ## Q: Where are the advanced image options?

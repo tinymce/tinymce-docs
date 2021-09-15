@@ -8,10 +8,6 @@ If the RTC session fails to connect, or is disconnected due to an error, the use
 
 The `rtc_server_disconnected` callback can be used to provide an alternative response to this condition.
 
-> **Caution**: It is critical to at least handle the `client_update_required` reason. This indicates the RTC plugin in the current editor instance is out-of-date compared to other users on the session. The behavior in this scenario depends on the configuration:
-> * If the `rtc_server_disconnected` is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
-> * If the `rtc_server_disconnected` is not set, the suggested error message will be displayed in a notification asking the user to reload the page.
-
 {% if plugincode != "rtc" %}
 Required plugin
 : [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
@@ -27,6 +23,10 @@ Input parameters
 | `message` | `string` | A suggested description for the error, translated into the active user interface language, suitable for displaying to a user. This string may contain HTML, and in some cases is the same string displayed in the editor notification. |
 
 #### Reasons for disconnection
+
+> **Caution**: It is critical to at least handle the `client_update_required` reason. This indicates the RTC plugin in the current editor instance is out-of-date compared to other users on the session. The behavior in this scenario depends on the configuration:
+> * If the `rtc_server_disconnected` is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
+> * If the `rtc_server_disconnected` is not set, the suggested error message will be displayed in a notification asking the user to reload the page.
 
 The `reason` field will have one of the following values.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Real-Time Collaboration plugin (beta)
-title_nav: Real-Time Collaboration (beta)
+title: Real-Time Collaboration plugin
+title_nav: Real-Time Collaboration
 description: The Real-Time Collaboration plugin for TinyMCE
 keywords: rtc
 ---
@@ -11,6 +11,6 @@ keywords: rtc
 
 {{site.premiumplugin}}
 
-{% include rtc/description.md %}
+{% include rtc/rtc-description.md %}
 
-For information on the Real-Time Collaboration plugin, see [Real-Time Collaboration (RTC) (beta)]({{site.baseurl}}/rtc/).
+For information on the Real-Time Collaboration plugin, see [Real-Time Collaboration (RTC)]({{site.baseurl}}/rtc/).

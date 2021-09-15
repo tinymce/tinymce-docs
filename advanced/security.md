@@ -16,7 +16,7 @@ keywords: security xss scripting vulnerability hack hacker csp mitigation protec
 
   - [Scripts and XSS vulnerabilities](#scriptsandxssvulnerabilities)
   - [Keeping dependencies up-to-date](#keepingdependenciesup-to-date)
-  - [Configuring Content Security Policy (CSP) for TinyMCE](#configuringcontentsecuritypolicycspfortinymce)
+- [Configuring Content Security Policy (CSP) for TinyMCE](#configuringcontentsecuritypolicycspfortinymce)
 - [General security risks for user input elements](#generalsecurityrisksforuserinputelements)
 
   - [Cross-Site Scripting (XSS)](#cross-sitescriptingxss)
@@ -50,7 +50,7 @@ From the 1st of January 2020, Security Advisories for patched XSS vulnerabilitie
 
 To protect our users, {{site.companyname}} ensures that the TinyMCE dependencies are updated before the next version (major or minor) is released.
 
-### Configuring Content Security Policy (CSP) for TinyMCE
+## Configuring Content Security Policy (CSP) for TinyMCE
 
 {{site.productname}} can be used with a [CSP](https://content-security-policy.com/) header. When using a CSP, the following directives are **required** for {{site.productname}} to function:
 

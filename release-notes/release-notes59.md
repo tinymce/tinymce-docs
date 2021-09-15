@@ -215,6 +215,22 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
+### Real-Time Collaboration 1.0.1
+
+The {{site.productname}} 5.9 release includes the first generally available release of the **Real-Time Collaboration (RTC)** premium plugin (version 1.0.1).
+
+Add collaborative editing to your application and allow your content teams to edit content simultaneously and view content changes as they happen.
+
+The RTC plugin features:
+
+- _End-to-end encryption_ to keep content private.
+- A growing list of compatible {{site.productname}} plugins and features, including: **PowerPaste**, **Tiny Drive**, **Images**, **Lists**, custom and premium **skins and icons**.
+- A user presence API to assist with showing a list of connected collaborators.
+- JSON Web Token based authentication.
+
+For information on using the Real-Time Collaboration (RTC) plugin, see: [Real-Time Collaboration plugin]({{site.baseurl}}/rtc/).
+For sales information, visit: [TinyMCE Features - Real-time Collaboration]({{site.plugindirectory}}real-time-collaboration).
+
 ### Spell Checker Pro 2.4.1
 
 The {{site.productname}} 5.9 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
@@ -417,13 +433,12 @@ For information on the deprecation of the free TinyMCE Spell Checker plugin, see
 
 This section describes issues that users of {{site.productname}} 5.9 may encounter and possible workarounds for these issues.
 
-**Outline**
+- [Table plugin known issues](#tablepluginknownissues)
+- [Real-Time Collaboration (RTC) known issues](#real-timecollaborationrtcknownissues)
 
-- [The new table color map settings do not apply to color pickers in the table dialogs](#knownissue1)
-- [Issues with the new _Table Column Header_ and _Table Row Header_ toolbar buttons and menu items](#knownissue2)
+### Table plugin known issues
 
-<a class="anchor" id="knownissue1"></a>
-### The new table color map settings do not apply to color pickers in the table dialogs
+#### The new table color map settings do not apply to color pickers in the table dialogs
 
 Issue
 : This issue affects the new `table_background_color_map` and `table_border_color_map` options. Setting these options will change the set of colors used in their respective toolbar buttons and menu items, but not the table dialog.
@@ -431,11 +446,60 @@ Issue
 Workaround
 : There was no known workaround at the time of the release.
 
-<a class="anchor" id="knownissue2"></a>
-### Issues with the new _Table Column Header_ and _Table Row Header_ toolbar buttons and menu items
+#### Issues with the new _Table Column Header_ and _Table Row Header_ toolbar buttons and menu items
 
 Issue
 : This issue affects users of the new `tablecolheader` and `tablerowheader` toolbar buttons and menu items. Toggling off column or row headers may result in a cell being converted into a normal cell when still part of a header row or column.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+### Real-Time Collaboration (RTC) known issues
+
+#### Users are unable to add content below an Horizontal Rule (`hr`) if inserted on the last line
+
+Issue
+: If an `hr` is inserted at the end of the editor content, placing the cursor below it overwrites the `hr`.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+#### Circumstances where users are unable to clear content formatting
+
+Issue
+: The clear formatting feature only works with a selection across the text to be cleared.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+#### Possibility of inconsistent undo operations
+
+Issue
+: After adding content locally, when remote users edit that same content, local undo might not work or might remove more text than expected. This will not remove remote content.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+#### Inconsistent editor scrolling behavior when multiple users are editing various areas of a document
+
+Issue
+: When the caret is not visible, remote changes might scroll the editor to make the caret visible.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+#### Connection issues may occur when users delete large sections of content while multiple users are editing
+
+Issue
+: Deleting large sections of content (either deliberately or using undo) may result in a disconnection from the server.
+
+Workaround
+: There was no known workaround at the time of the release.
+
+#### Errors and warnings present in the JavaScript developer console
+
+Issue
+: Several errors and warnings may be shown in the developer console (for example, opening some format menus).
 
 Workaround
 : There was no known workaround at the time of the release.

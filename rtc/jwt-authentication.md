@@ -1,14 +1,10 @@
 ---
 layout: default
-title: Real-Time Collaboration (RTC) JWT Authentication
-title_nav: JWT Authentication
+title: Real-Time Collaboration (RTC) JWT Authentication Setup
+title_nav: JWT Authentication Setup
 description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
-
-{% assign beta_feature = "The Real-Time Collaboration (RTC) plugin" %}
-{% assign pre-release_type = "Open Beta" %}
-{% include misc/beta-note.md %}
 
 {% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
@@ -16,40 +12,67 @@ keywords: jwt authentication
 
 Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
-JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. This guide aims to show how to setup JWT authentication for RTC.
+A JSON Web Token (JWT) endpoint is a service for generating and providing authorization tokens to users. These tokens are used to verify that submitted content was sent by an authorized user and to prevent submissions by unauthorized collaborators.
+
+JWT is a standard authorization solution for web services and is documented in detail at [https://jwt.io/](https://jwt.io/). This guide aims to show how to setup JWT authentication for RTC.
+
+## Overview
+
+- [Setting up JWT authentication for Real-Time Collaboration](#settingupjwtauthenticationforreal-timecollaboration)
+- [Add a public key to the Tiny Cloud API key](#addapublickeytothetinycloudapikey)
+- [Set up a JSON Web Token (JWT) endpoint](#setupajsonwebtokenjwtendpoint)
+- [JWT endpoint examples](#jwtendpointexamples)
+
+## Setting up JWT authentication for Real-Time Collaboration
+
+To set up JSON Web Token (JWT) authentication for {{site.productname}} {{pluginname}}:
+
+1. Add a public key to your {{site.accountpage}}.
+1. Set up a JSON Web Token (JWT) Provider endpoint.
+1. Configure {{site.productname}} to use the JWT endpoint.
 
 {% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
-{% include auth/jwt-provider-endpoint-url.md %}
+## Set up a JSON Web Token (JWT) endpoint
 
-## JWT requirements
+{% include auth/how-jwts-are-used.md %}
 
-{% include auth/jwt-supported-algorithms.md %}
+### JWT endpoint requirements
 
-### Claims
+A JSON Web Token (JWT) endpoint for {{pluginname}} requires:
 
-Claims are additional data that can be sent as part of the JWT payload. RTC requires the following claims:
+- The endpoint or server accepts a JSON HTTP POST request.
+- User authentication - A method of verifying the user, and that they should have access to the document.
+- The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key generated at (or provided to) [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
+- The endpoint or server produces a JSON response with the token. The RTC plugin will submit the token with requests to the RTC Server.
 
-| Data | Optional or required | Description |
-|---|:---:|---|
-| `sub` | required | The unique user ID (for example, if `sub` is the same for two clients, you should trust them as if they're the same user). |
-| `exp` | required | The unix timestamp when the token expires. |
+### Required JWT claims for Real-Time Collaboration
+
+JSON Web Tokens produced by the JWT endpoint must include the following claims:
+
+| Data | Optional or required | Type | Description |
+|---|:---:|:---:|---|
+| `sub` | required | `string` or `URI` | The _unique_ user ID string or URI. |
+| `exp` | required | `number` | The unix timestamp for when the token expires. |
 
 The `sub` field is used to identify users to avoid sending sensitive or identity information to {{site.companyname}} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
 
-{% include auth/jwt-endpoint-setup-procedure.md %}
+> **Caution**: The RTC plugin does not request a new JWT if user's JWT expires during a session. To avoid user disconnections from expired JWTs, ensure the `exp` claim allows for a reasonable
 
-## Need help?
+## JWT endpoint examples
 
-{{ site.companyname }} recommends looking into how JWT works; some knowledge about JWT is necessary to implement RTC. This can be tricky, so if you need some help contact our support team.
+The following examples show a minimal JWT endpoint and how to configure {{site.productname}} to use them.
 
-## PHP token provider endpoint example
+- [PHP token provider endpoint example](#phptokenproviderendpointexample)
+- [Node.js token provider endpoint example](#nodejstokenproviderendpointexample)
+
+### PHP token provider endpoint example
 
 This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager.
 
-`$privateKey` should be a private key generated at {{site.accountpage}}.
+`$privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
 
-### jwt.php
+#### jwt.php
 
 ```php
 <?php
@@ -85,27 +108,33 @@ try {
 ?>
 ```
 
-### TinyMCE example with jwt.php Endpoint
+#### TinyMCE example using the jwt.php endpoint
 
 ```js
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
-  rtc_token_provider: () => {
-    return fetch('jwt.php', {
-      method: 'POST'
-    });
-  }
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+  rtc_token_provider: ({ documentId }) =>
+    fetch('jwt.php', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({ documentId }),
+    })
+    .then((response) => response.json())
+    .then(({ jwt })) => ({ token: jwt })
+    .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
 ```
 
-## Node token provider endpoint example
+### Node.js token provider endpoint example
 
 This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic Node.js Express server and adding {{site.productname}}, see: [Integrating TinyMCE into an Express JS App]({{site.baseurl}}/integrations/expressjs/).
 
-`privateKey` should be a private key generated at {{site.accountpage}}.
+`privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
 
-### /jwt
+#### /jwt
 
 ```js
 const express = require('express');
@@ -144,24 +173,23 @@ app.post('/jwt', function (req, res) {
 app.listen(3000);
 ```
 
-### TinyMCE example with /jwt endpoint
+#### TinyMCE example using the /jwt endpoint
 
 ```js
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
-  rtc_token_provider: () => {
-    return fetch('/jwt', {
-      method: 'POST'
-    });
-  }
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+
+  rtc_token_provider: ({ documentId }) =>
+    fetch('/jwt', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({ documentId }),
+    })
+    .then((response) => response.json())
+    .then(({ jwt })) => ({ token: jwt })
+    .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
 ```
-
-### More configuration
-
-Once JWT authentication has been set up, the RTC plugin can be configured further using the options shown on the [RTC configuration options page]({{site.baseurl}}/rtc/configuration/). Don't forget to change the example JWT claims (user id, user name) to get those from your system.
-
-If you want help [submit a support request]({{site.supporturl}}).
-
-{% include auth/gen-rsa-key-pairs.md %}

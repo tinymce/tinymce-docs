@@ -217,7 +217,7 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 ### Real-Time Collaboration 1.0.1
 
-The {{site.productname}} 5.9 release includes the first generally available release of the **Real-Time Collaboration (RTC)** premium plugin (version 1.0.0).
+The {{site.productname}} 5.9 release includes the first generally available release of the **Real-Time Collaboration (RTC)** premium plugin (version 1.0.1).
 
 Add collaborative editing to your application and allow your content teams to edit content simultaneously and view content changes as they happen.
 

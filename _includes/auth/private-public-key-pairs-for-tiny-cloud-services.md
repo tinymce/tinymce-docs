@@ -7,7 +7,7 @@ There are two methods for generating and adding a public key to your API key:
 
 ### Generate a key pair using the {{site.accountpage}} JWT Keys page
 
-The [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) page provides a private/public key generator. This generator will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {{site.companyname}} does not store the _private_ key and the key pair cannot be retrieved later.
+The [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) page provides a private/public key generator, providing a quick and secure way of generating the required keys. This generator will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {{site.companyname}} does not store the _private_ key and the key pair cannot be retrieved later.
 
 ### Generate a key pair locally
 

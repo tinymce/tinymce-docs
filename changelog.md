@@ -8,6 +8,11 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.9.2 - 2021-09-08
+
+### Fixed
+- Fixed an exception getting thrown when disabling events and setting content.
+
 ## 5.9.1 - 2021-08-27
 
 ### Fixed

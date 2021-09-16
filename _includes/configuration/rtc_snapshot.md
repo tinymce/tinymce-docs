@@ -12,7 +12,7 @@ Required plugin
 {% endif %}
 
 Type
-: Function (Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise))
+: Function
 
 Input parameters
 : | Field | Type | Description |

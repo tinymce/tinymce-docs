@@ -88,11 +88,6 @@ The following menu items are available for all {{site.productname}} instances wi
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}
-{% assign pluginname = "Full Page" %}
-{% assign plugincode = "fullpage" %}
-{% include misc/plugin-menu-item-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
 {% assign pluginname = "Full Screen" %}
 {% assign plugincode = "fullscreen" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}
@@ -171,11 +166,6 @@ The following menu items are available for all {{site.productname}} instances wi
 {% assign plugincategory = "opensource" %}
 {% assign pluginname = "Search and Replace" %}
 {% assign plugincode = "searchreplace" %}
-{% include misc/plugin-menu-item-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Spell Checker" %}
-{% assign plugincode = "spellchecker" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
 {% assign plugincategory = "premium" %}

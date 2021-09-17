@@ -1,3 +1,0 @@
-```
-./plugins/spellchecker/plugin.js
-```

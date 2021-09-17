@@ -1,3 +1,0 @@
-```
-./plugins/legacyoutput/plugin.js
-```

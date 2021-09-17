@@ -27,13 +27,11 @@
   - [Autolink (autolink)](#autolinkautolink)
   - [Autoresize (autoresize)](#autoresizeautoresize)
   - [Autosave (autosave)](#autosaveautosave)
-  - [BBCode (bbcode)](#bbcodebbcode)
   - [Character Map (charmap)](#charactermapcharmap)
   - [Code (code)](#codecode)
   - [Code Sample (codesample)](#codesamplecodesample)
   - [Directionality (directionality)](#directionalitydirectionality)
   - [Emoticons (emoticons)](#emoticonsemoticons)
-  - [Full Page (fullpage)](#fullpagefullpage)
   - [Full Screen (fullscreen)](#fullscreenfullscreen)
   - [Help (help)](#helphelp)
   - [Horizontal Rule (hr)](#horizontalrulehr)
@@ -41,7 +39,6 @@
   - [Image Tools (imagetools)](#imagetoolsimagetools)
   - [Import CSS (importcss)](#importcssimportcss)
   - [Insert Date/Time (insertdatetime)](#insertdatetimeinsertdatetime)
-  - [Legacy Output (legacyoutput)](#legacyoutputlegacyoutput)
   - [Link (link)](#linklink)
   - [Lists (lists)](#listslists)
   - [Media (media)](#mediamedia)
@@ -54,7 +51,6 @@
   - [Quick Toolbar (quickbars)](#quicktoolbarquickbars)
   - [Save (save)](#savesave)
   - [Search and Replace (searchreplace)](#searchandreplacesearchreplace)
-  - [Spell Checker (spellchecker)](#spellcheckerspellchecker)
   - [Tab Focus (tabfocus)](#tabfocustabfocus)
   - [Table (table)](#tabletable)
   - [Template (template)](#templatetemplate)
@@ -158,10 +154,6 @@
 
 {% include plugin_files/plugin-file-list-autosave.md %}
 
-### BBCode (`bbcode`)
-
-{% include plugin_files/plugin-file-list-bbcode.md %}
-
 ### Character Map (`charmap`)
 
 {% include plugin_files/plugin-file-list-charmap.md %}
@@ -181,10 +173,6 @@
 ### Emoticons (`emoticons`)
 
 {% include plugin_files/plugin-file-list-emoticons.md %}
-
-### Full Page (`fullpage`)
-
-{% include plugin_files/plugin-file-list-fullpage.md %}
 
 ### Full Screen (`fullscreen`)
 
@@ -213,10 +201,6 @@
 ### Insert Date/Time (`insertdatetime`)
 
 {% include plugin_files/plugin-file-list-insertdatetime.md %}
-
-### Legacy Output (`legacyoutput`)
-
-{% include plugin_files/plugin-file-list-legacyoutput.md %}
 
 ### Link (`link`)
 
@@ -265,10 +249,6 @@
 ### Search and Replace (`searchreplace`)
 
 {% include plugin_files/plugin-file-list-searchreplace.md %}
-
-### Spell Checker (`spellchecker`)
-
-{% include plugin_files/plugin-file-list-spellchecker.md %}
 
 ### Tab Focus (`tabfocus`)
 

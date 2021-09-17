@@ -176,7 +176,6 @@ Commands are available for the following plugins:
 - [Emoticons](#emoticons)
 - [Export](#export)
 - [Format Painter](#formatpainter)
-- [Full Page](#fullpage)
 - [Full Screen](#fullscreen)
 - [Help](#help)
 - [Image](#image)
@@ -194,7 +193,6 @@ Commands are available for the following plugins:
 - [Print](#print)
 - [Save](#save)
 - [Search and Replace](#searchandreplace)
-- [Spell Checker](#spellchecker)
 - [Spell Checker Pro](#spellcheckerpro)
 - [Table](#table)
 - [Template](#template)
@@ -286,14 +284,6 @@ The following commands require the [Export (`export`)]({{site.baseurl}}/plugins/
 The following commands require the [Format Painter (`formatpainter`)]({{site.baseurl}}/plugins/premium/formatpainter/) plugin.
 
 {% include commands/formatpainter-cmds.md %}
-
-#### Full Page
-
-{{site.deprecate_fullpage}}
-
-The following command requires the [Full Page (`fullpage`)]({{site.baseurl}}/plugins/opensource/fullpage/) plugin.
-
-{% include commands/fullpage-cmds.md %}
 
 #### Full Screen
 
@@ -396,14 +386,6 @@ The following commands require the [Save (`save`)]({{site.baseurl}}/plugins/open
 The following command requires the [Search and Replace (`searchreplace`)]({{site.baseurl}}/plugins/opensource/searchreplace/) plugin.
 
 {% include commands/searchreplace-cmds.md %}
-
-#### Spell Checker
-
-The following command requires the [Spell Checker (`spellchecker`)]({{site.baseurl}}/plugins/opensource/spellchecker/) plugin.
-
-{{site.deprecate_spellchecker}}
-
-{% include commands/spellchecker-cmds.md %}
 
 #### Spell Checker Pro
 

@@ -1,3 +1,0 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                      |
-|----------------------|----------------------------------------------------------------------------------------------------------|----------------------------------|
-| `spellchecker`       | Tools                                                                                                    | Toggles the spellchecker on/off. |

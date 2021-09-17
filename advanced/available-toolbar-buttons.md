@@ -98,11 +98,6 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}
-{% assign pluginname = "Full Page" %}
-{% assign plugincode = "fullpage" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
 {% assign pluginname = "Full Screen" %}
 {% assign plugincode = "fullscreen" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
@@ -201,11 +196,6 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% assign plugincategory = "opensource" %}
 {% assign pluginname = "Search and Replace" %}
 {% assign plugincode = "searchreplace" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Spell Checker" %}
-{% assign plugincode = "spellchecker" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% assign plugincategory = "premium" %}

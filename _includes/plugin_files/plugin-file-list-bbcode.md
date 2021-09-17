@@ -1,3 +1,0 @@
-```
-./plugins/bbcode/plugin.js
-```

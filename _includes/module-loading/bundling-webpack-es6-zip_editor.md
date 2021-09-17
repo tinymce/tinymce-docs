@@ -8,7 +8,7 @@
     /* Import TinyMCE */
     import tinymce from '../tinymce/js/tinymce/tinymce';
 
-    /* Default icons are required for TinyMCE 5.3 or above */
+    /* Default icons are required. Also import custom icons if applicable */
     import '../tinymce/js/tinymce/icons/default/icons';
 
     /* A theme is also required */

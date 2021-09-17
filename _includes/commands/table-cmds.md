@@ -4,8 +4,8 @@
 
 | Command                 | Description                                     |
 | ----------------------- | ----------------------------------------------- |
-| mceTableSizingMode | When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: [Table plugin - `table_sizing_mode`]({{site.baseurl}}/plugins/opensource/table/#table_sizing_mode). {{site.requires_5_4v}} |
-| mceTableApplyCellStyle | Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ 'background-color': '' }`. {{site.requires_5_4v}} |
+| mceTableSizingMode | When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: [Table plugin - `table_sizing_mode`]({{site.baseurl}}/plugins/opensource/table/#table_sizing_mode).  |
+| mceTableApplyCellStyle | Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ 'background-color': '' }`.  |
 | mceTableSplitCells      | Splits the current merged table cell.           |
 | mceTableMergeCells      | Merges the selected cells.                      |
 | mceTableInsertRowBefore | Inserts a row before the current row.           |
@@ -15,24 +15,24 @@
 | mceTableDeleteCol       | Deletes the current column.                     |
 | mceTableDeleteRow       | Deletes the current row.                        |
 | mceTableCutRow          | Cuts the current row to the {{site.productname}} clipboard.        |
-| mceTableCutCol          | Cuts the current column to the {{site.productname}} clipboard. {{site.requires_5_4v}}    |
+| mceTableCutCol          | Cuts the current column to the {{site.productname}} clipboard.     |
 | mceTableCopyRow         | Copies the current row to the {{site.productname}} clipboard.      |
-| mceTableCopyCol         | Copies the current column to the {{site.productname}} clipboard. {{site.requires_5_4v}}  |
+| mceTableCopyCol         | Copies the current column to the {{site.productname}} clipboard.   |
 | mceTablePasteRowBefore  | Paste the {{site.productname}} clipboard row before the current row. |
 | mceTablePasteRowAfter   | Paste the {{site.productname}} clipboard row after the current row.  |
-| mceTablePasteColBefore  | Paste the {{site.productname}} clipboard column before the current row. {{site.requires_5_4v}} |
-| mceTablePasteColAfter   | Paste the {{site.productname}} clipboard column after the current row. {{site.requires_5_4v}} |
+| mceTablePasteColBefore  | Paste the {{site.productname}} clipboard column before the current row.  |
+| mceTablePasteColAfter   | Paste the {{site.productname}} clipboard column after the current row.  |
 | mceTableDelete          | Deletes the current table.                      |
-| mceTableCellToggleClass | Adds a class to all selected cells that do not have it, or removes the class if all of them have it. {{site.requires_5_9v}}                  |
-| mceTableToggleClass     | Adds a class to the selected table, or removes the class if it already exists. {{site.requires_5_9v}}                                        |
-| mceTableToggleCaption   | Adds a caption to the selected table, or removes the caption if it already exists. {{site.requires_5_9v}}.                                   |
+| mceTableCellToggleClass | Adds a class to all selected cells that do not have it, or removes the class if all of them have it.                   |
+| mceTableToggleClass     | Adds a class to the selected table, or removes the class if it already exists.                                         |
+| mceTableToggleCaption   | Adds a caption to the selected table, or removes the caption if it already exists. .                                   |
 | mceInsertTable          | Opens the insert/edit table dialog or inserts a table without using a dialog if additional arguments are provided (see examples below).      |
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |
 | mceTableCellProps       | Opens the table cell properties dialog.         |
-| mceTableRowType       | Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the [`table_header_type` option]({{site.baseurl}}/plugins/opensource/table/#table_header_type). {{site.requires_5_4v}} |
-| mceTableColType       | Changes all cells in the current column or columns to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
-| mceTableCellType       | Changes the current cell or cells to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
+| mceTableRowType       | Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the [`table_header_type` option]({{site.baseurl}}/plugins/opensource/table/#table_header_type).  |
+| mceTableColType       | Changes all cells in the current column or columns to the specified type, either: `'td'` or `'th'`.  |
+| mceTableCellType       | Changes the current cell or cells to the specified type, either: `'td'` or `'th'`.  |
 
 **Examples**
 

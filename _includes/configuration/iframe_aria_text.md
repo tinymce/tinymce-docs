@@ -1,9 +1,9 @@
 ## `iframe_aria_text`
 
-{{ site.requires_5_9v }}
+
 
 This option is used to customize the `title` attribute on the {{site.productname}} `iframe` element. For example:
- 
+
 ```html
 <iframe title="Rich Text Area. Press ALT-0 for help."></iframe>
 ```

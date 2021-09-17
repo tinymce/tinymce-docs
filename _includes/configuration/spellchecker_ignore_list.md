@@ -18,7 +18,7 @@ tinymce.init({
 
 #### Example: Using `spellchecker_ignore_list` for specific languages
 
-{{site.requires_5_7v}}
+
 
 ```js
 tinymce.init({

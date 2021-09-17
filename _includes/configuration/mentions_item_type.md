@@ -1,6 +1,6 @@
 ### `mentions_item_type`
 
-{{site.requires_5_6v}}
+
 
 This option sets which user interface item type to use when displaying the list of users.
 

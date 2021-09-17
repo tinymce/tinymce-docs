@@ -1,6 +1,6 @@
 ## `fullscreen_native`
 
-{{ site.requires_5_5v }}
+
 
 {% if pluginname != "fullscreen" %}
 > **Note**: The `fullscreen_native` option requires the Fullscreen plugin.

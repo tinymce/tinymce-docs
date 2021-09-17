@@ -194,7 +194,7 @@ tinymce.init({
 
 ### SpellcheckerLanguageChanged event
 
-{{ site.requires_5_7v }}
+
 
 This event fires when the spellchecking language is changed.
 

@@ -1,8 +1,8 @@
 ## Supported languages
 
-The following languages are supported for the Spell Checker Pro plugin. All of the listed languages are supported for customers using {{site.productname}} version 5.9 or higher on {{site.cloudname}}.
+The following languages are supported for the Spell Checker Pro plugin. All of the listed languages are supported for customers using {{site.productname}} on {{site.cloudname}}.
 
-| Language                                     |        Code         | Pre-packaged with<br/>{{site.productname}} 5.0+ | Supported Hunspell dictionaries<br/>({{site.productname}} 5.9 or newer) |
+| Language                                     |        Code         | Pre-packaged with<br/>{{site.productname}}   | Supported Hunspell dictionaries                                       |
 |----------------------------------------------|:-------------------:|:--------------------------------------------:|:---------------------------------------------------------------------:|
 | Afrikaans (South Africa)                     |        af_ZA        |                {{site.cross}}                |                             {{site.tick}}                             |
 | English (Australia)                          |        en_AU        |                {{site.cross}}                |                             {{site.tick}}                             |

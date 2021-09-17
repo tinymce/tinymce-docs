@@ -2,7 +2,7 @@
 layout: default
 title: Migrating from Froala to TinyMCE
 title_nav: Migrating from Froala
-description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 5.
+description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 6.
 keywords: migration considerations premigration pre-migration froala
 ---
 
@@ -98,7 +98,7 @@ The following examples show an initial Froala configuration and the migrated {{s
 </html>
 ```
 
-#### TinyMCE 5 - A Basic Configuration
+#### TinyMCE 6 - A Basic Configuration
 
 ```html
 <!DOCTYPE html>
@@ -162,7 +162,7 @@ The following examples show how plugins are included or enabled in the Froala an
 </head>
 ```
 
-#### TinyMCE 5 - Enabling Plugins
+#### TinyMCE 6 - Enabling Plugins
 
 ```html
 <script>
@@ -238,7 +238,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 </script>
 ```
 
-#### TinyMCE 5 - Creating a Custom Toolbar Layout
+#### TinyMCE 6 - Creating a Custom Toolbar Layout
 
 ```html
 <h2>{{site.productname}} Custom Toolbar</h2>
@@ -289,7 +289,7 @@ The following examples show Froala and {{site.productname}} configured for inlin
 </script>
 ```
 
-#### TinyMCE 5 - Configuring Inline Mode
+#### TinyMCE 6 - Configuring Inline Mode
 
 ```html
 <h3>TinyMCE Inline Mode</h3>
@@ -359,7 +359,7 @@ The following examples show a Froala editor and a {{site.productname}} editor wi
 </script>
 ```
 
-#### TinyMCE 5 - Creating a Custom Toolbar Button
+#### TinyMCE 6 - Creating a Custom Toolbar Button
 
 ```html
 <h2>{{site.productname}} Custom Button</h2>
@@ -437,7 +437,7 @@ The following examples show a Froala editor and a {{site.productname}} editor wi
 </script>
 ```
 
-#### TinyMCE 5 - Creating a Custom Drop-down Button
+#### TinyMCE 6 - Creating a Custom Drop-down Button
 
 ```html
 <h2>{{site.productname}} Custom Drop-down Button</h2>

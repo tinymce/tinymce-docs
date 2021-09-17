@@ -132,7 +132,7 @@ ephox {
 
 #### Regular Expressions support
 
-{{site.requires_jsscwar_230v}}
+
 
 Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
 
@@ -150,7 +150,7 @@ For a list of valid constructs, see: [Java 8: `java.util.regex` - Summary of reg
 
 #### `allowed-origins.same-origin` (optional)
 
-{{site.requires_jsscwar_230v}}
+
 
 Enabling `same-origin` removes the need to specify the domain origin accessing the service if the service is deployed from the same server.
 
@@ -261,7 +261,7 @@ ephox {
 
 #### Alternative http timeout settings
 
-{{site.requires_jsscwar_230v}}
+
 
 When greater control over timeout settings is needed, the following three settings can be used instead of the `request-timeout-seconds` setting:
 
@@ -330,7 +330,7 @@ ephox {
 
 #### `fallback-to-get` (optional)
 
-{{site.requires_jsscwar_230v}}
+
 
 The Link-checker normally relies on the `HEAD` response. If `fallback-to-get` is `true`, the link-checker may issue a `GET` request after receiving a non-standard `HEAD` response to verify a link. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. Enabling the `fallback-to-get` setting can lead to server performance issues and is set to `false` by default.
 
@@ -380,7 +380,7 @@ The Spelling service has these configurable settings:
 
 #### `hunspell-dictionaries-path` (optional)
 
-{{site.requires_5_9v}}
+
 
 {% include misc/hunspell-dictionaries-path.md %}
 

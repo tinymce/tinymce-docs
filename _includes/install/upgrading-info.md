@@ -1,4 +1,4 @@
-## Upgrading to the latest version of TinyMCE 5
+## Upgrading to the latest version of TinyMCE 6
 The procedure for upgrading to the latest version of {{site.productname}} {{site.productmajorversion}} depends on the deployment type.
 
 * [Upgrading Tiny Cloud](#upgradingtinycloud).{% if enterprise != true %}

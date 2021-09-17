@@ -9,7 +9,7 @@ keywords: plugin export pdf
 {% assign pluginname = "Export" %}
 {% assign plugincode = "export" %}
 
-{{site.requires_5_5v}}<br/>
+<br/>
 {{site.premiumplugin}}
 
 The {{pluginname}} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the [Exporters section](#exporters).

@@ -6,7 +6,7 @@ description: What is RTC and what can it do
 keywords: rtc introduction overview
 ---
 
-{{site.requires_5_9v}}
+
 
 {% include rtc/rtc-description.md %}
 

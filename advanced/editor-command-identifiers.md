@@ -66,7 +66,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | HiliteColor          | Changes the background color of the text. The value passed in should be the color.                                                                                                                                                                                                          |
 | FontName             | Font name to apply to the text. The value passed in should be the font family name.                                                                                                                                                                                                         |
 | FontSize             | Font size of the text. The value passed in should be a valid CSS font size.                                                                                                                                                                                                                 |
-| LineHeight           | Sets the line height of the text. The value passed in should be a valid CSS line height. {{ site.requires_5_5v }}                                                                                                                                                                           |
+| LineHeight           | Sets the line height of the text. The value passed in should be a valid CSS line height.                                                                                                                                                                            |
 | mceApplyTextcolor    | Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.                                                                                                                               |
 | mceRemoveTextcolor   | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                                                                                                                                                     |
 | RemoveFormat         | Removes any formats from the current selection.                                                                                                                                                                                                                                             |
@@ -77,7 +77,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSetContent        | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                                                                                                                                                   |
 | mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats).                                                                               |
 | ToggleSidebar        | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                                                                                                                                                        |
-| ToggleToolbarDrawer  | Toggles the Toolbar Drawer. For information on toolbars, see: [User interface options - Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar). {{site.requires_5_5v}}                                                                                                             |
+| ToggleToolbarDrawer  | Toggles the Toolbar Drawer. For information on toolbars, see: [User interface options - Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).                                                                                                              |
 | Indent               | Indents the current selection.                                                                                                                                                                                                                                                              |
 | Outdent              | Outdents the current selection.                                                                                                                                                                                                                                                             |
 | InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection.                                                                                                                                                                                                       |
@@ -97,7 +97,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSelectNode        | Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                      |
 | mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
 | mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
-| mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page. {{site.requires_5_9v}}                                                                                                                       |
+| mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.                                                                                                                        |
 
 **Examples**
 
@@ -497,7 +497,7 @@ The following command states can be queried using the [queryCommandState]({{ sit
 | Strikethrough        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Strikethrough` command.          |
 | Subscript            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Subscript` command.              |
 | Superscript          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Superscript` command.            |
-| ToggleToolbarDrawer  | Returns `true` if the Toolbar Drawer is open. The state can be controlled by the {{site.productname}} `ToggleToolbarDrawer` command. {{site.requires_5_5v}} |
+| ToggleToolbarDrawer  | Returns `true` if the Toolbar Drawer is open. The state can be controlled by the {{site.productname}} `ToggleToolbarDrawer` command.  |
 | Underline            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Underline` command.              |
 
 **Examples**
@@ -541,7 +541,7 @@ The following command values can be queried using the [queryCommandValue]({{ sit
 | --------------| -------------------------------------------------------------------------- |
 | FontName      | Returns the font name of the current selection.                            |
 | FontSize      | Returns the font size of the current selection.                            |
-| LineHeight    | Returns the line height of the current selection. {{ site.requires_5_5v }} |
+| LineHeight    | Returns the line height of the current selection.  |
 | ToggleSidebar | Returns the current state of sidebar (open or closed).                     |
 
 

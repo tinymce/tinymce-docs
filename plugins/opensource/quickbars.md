@@ -62,7 +62,7 @@ tinymce.init({
 
 #### Example: Disabling the Quick Image context toolbar
 
-{{ site.requires_5_2v }}
+
 
 ```js
 tinymce.init({

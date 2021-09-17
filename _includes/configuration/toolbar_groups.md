@@ -1,6 +1,6 @@
 ## toolbar_groups
 
-{{ site.requires_5_2v }}
+
 
 The `toolbar_groups` option creates a toolbar button that displays a collection of other toolbar buttons as a pop-up toolbar. The style of toolbar shown is based on the current [toolbar mode](#toolbarmode). For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
 

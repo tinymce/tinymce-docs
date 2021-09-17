@@ -1,6 +1,6 @@
 ### `tinycomments_resolve`
 
-{{site.requires_5_8v}}
+
 
 This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation.
 

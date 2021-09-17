@@ -1,6 +1,6 @@
 ## `advtable_value_series`
 
-{{ site.requires_5_9v }}
+
 
 The `advtable_value_series` option configures one or more series of values for populating cells in a table. This option can be used to create row identifiers.
 
@@ -11,7 +11,7 @@ The `advtable_value_series` option configures one or more series of values for p
 ```js
 {
   // Natural number series
-  numeric: { 
+  numeric: {
     title: 'Numeric',
     update: true,
     resizable: false,
@@ -33,7 +33,7 @@ Each top-level properties of the `advtable_value_series` object are used as the 
 
 ```js
 {
-  numbers: { 
+  numbers: {
     title: 'Numbered',
     generator: `GeneratorFunction`
   },
@@ -57,7 +57,7 @@ Each top-level properties of the `advtable_value_series` object are used as the 
 
 The `generator` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to: the generator and table cell, the row index, and column index of the table cell. For details, see: [GeneratorInfo](#generatorinfo). The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: [GeneratorResult](#generatorresult).
 
-If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: [GeneratorInfo](#generatorinfo). 
+If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: [GeneratorInfo](#generatorinfo).
 
 ##### GeneratorInfo
 

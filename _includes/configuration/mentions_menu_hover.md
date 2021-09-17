@@ -36,7 +36,7 @@ tinymce.init({
 
 #### `mentions_menu_hover` with predefined templates
 
-{{site.requires_5_9v}}
+
 
 If `mentions_menu_hover` is resolved with an object specifying the type and user details, a predefined hover card template will be used. To use the predefined template, set `type` to `'profile'`. For details on the user properties required for the `profile` template, see: [User properties](#userproperties).
 

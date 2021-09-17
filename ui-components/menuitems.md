@@ -171,8 +171,6 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | onSetup | `(api) => (api) => void` | optional | default: `() => () => {}` - Function invoked when the menu item is rendered, each time its menu is opened. |
 | onAction | `(api) => void` | required | Function invoked when the menu item is clicked. |
 
-> **Note**: The `icon` option for Toggle menu items was added in {{site.productname}} 5.3.
-
 #### API
 
 | Name | Value | Description |

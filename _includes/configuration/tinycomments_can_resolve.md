@@ -1,6 +1,6 @@
 ### `tinycomments_can_resolve`
 
-{{site.requires_5_8v}}
+
 
 _Optional_ - This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation. This callback sets the author permissions for _resolving comment conversations_.
 

@@ -6,9 +6,7 @@ description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Chec
 keywords: enterprise tinymcespellchecker hunspell spell check checker pro server configuration configure
 ---
 
-{{site.requires_5_9v}}
-
-{{site.productname}} 5.9 introduced support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {{site.productname}} Spell Checker Pro. {{site.companyname}} provides downloadable bundles that have the required structure.
+Spell Checker Pro for {{site.productname}} includes support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {{site.productname}} Spell Checker Pro. {{site.companyname}} provides downloadable bundles that have the required structure.
 
 To add Hunspell dictionaries to a self-hosted {{site.productname}}:
 
@@ -32,7 +30,7 @@ Hunspell dictionaries can be downloaded from other sources, but will need to be 
 
 ## Configuring the spelling service to use Hunspell dictionaries
 
-{{site.requires_5_9v}}
+
 
 {% include misc/hunspell-dictionaries-path.md %}
 

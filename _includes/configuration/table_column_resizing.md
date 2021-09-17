@@ -1,6 +1,6 @@
 ### `table_column_resizing`
 
-{{ site.requires_5_5v }}
+
 
 {% if page.dir != "/plugins/opensource/table/" %}
 > **Note**: The `table_column_resizing` option requires the `table` plugin.

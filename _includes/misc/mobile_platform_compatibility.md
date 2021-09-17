@@ -1,7 +1,5 @@
 ## Supported Mobile Platforms
 
-[{{site.productname}} mobile]({{site.baseurl}}/mobile/) is available in {{site.productname}} versions 4.7+ and 5.
-
 {{site.productname}} mobile is designed to run on iOS Safari and Android Chrome. {{site.productname}} mobile is tested on the following platforms:
 
 | OS            | Browser | Device       |

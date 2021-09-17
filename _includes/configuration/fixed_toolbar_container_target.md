@@ -1,6 +1,6 @@
 ## `fixed_toolbar_container_target`
 
-{{ site.requires_5_8v }}
+
 
 Use this option to render the inline toolbar into a fixed-positioned HTML element by passing a `HTMLElement` directly to the option. This option is similar to the [`fixed_toolbar_container` option]({{ site.baseurl }}/configure/editor-appearance/#fixed_toolbar_container), which accepts a CSS selector.
 

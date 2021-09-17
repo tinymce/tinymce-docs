@@ -1,6 +1,6 @@
 ### `powerpaste_googledocs_import`
 
-{{site.requires_5_8v}}
+
 
 This option controls how content pasted from Google Docs is filtered.
 

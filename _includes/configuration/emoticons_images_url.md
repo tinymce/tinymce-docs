@@ -1,6 +1,6 @@
 ### `emoticons_images_url`
 
-{{ site.requires_5_6v }}
+
 
 This option sets the base URL for the images used to represent emojis when using the `emojiimages` database.
 

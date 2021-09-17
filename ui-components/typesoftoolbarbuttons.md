@@ -93,7 +93,7 @@ To achieve this, the second button uses `onSetup` to register a callback for str
 
 The callback given to `editor.formatter.formatChanged` is a function that takes a `state` boolean representing whether the currently selected content contains the applied format. This `state` boolean is used to set the button's active state to match if the selected content has the specified formatting by using `api.setActive(state)` from the button's API. This ensures the `customToggleStrikethrough` button is only **active** when the selected content contains the strikethrough formatting.
 
-{{site.requires_5_9v}}
+
 
 For formats that require variables, the `editor.formatter.formatChanged` function takes two extra arguments: `similar` and `vars`.
 
@@ -182,7 +182,7 @@ The `fetch` function is called whenever the split button's drop-down menu is ope
 
 ## Group toolbar button
 
-{{ site.requires_5_2v }}
+
 
 A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current [toolbar mode]({{site.baseurl}}/configure/editor-appearance/#toolbarmode). For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
 
@@ -217,4 +217,4 @@ The example above configures a custom **alignment** group toolbar button. When c
 
 ## `onSetup` explanation
 
-{% include release-notes/onSetup.md %}
+{% include misc/onSetup.md %}

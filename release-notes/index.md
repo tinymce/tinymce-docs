@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Release notes for TinyMCE 5
-title_nav: Release notes for TinyMCE 5
+title: Release notes for TinyMCE 6
+title_nav: Release notes for TinyMCE 6
+description: Release notes for TinyMCE 6
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 type: folder
 ---

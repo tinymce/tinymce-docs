@@ -345,7 +345,7 @@ An **input** is a composite component that renders a label and a single line tex
 
 ##### inputMode
 
-{{site.requires_5_1v}}
+
 
 `inputMode` is a property of `input`.
 
@@ -355,7 +355,7 @@ For a list of valid input modes, see: [MDN Web Docs - inputmode](https://develop
 
 #### listbox
 
-{{site.requires_5_5v}}
+
 
 A **listbox** is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
 

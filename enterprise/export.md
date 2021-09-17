@@ -6,7 +6,7 @@ description: Export content from TinyMCE, into varying formats.
 keywords: export pdf premium
 ---
 
-{{site.requires_5_5v}}
+
 
 The Export plugin provides the ability to export content from the editor to a user's local machine as a PDF.
 

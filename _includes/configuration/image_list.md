@@ -21,7 +21,7 @@ tinymce.init({
 
 #### Example of a nested list of images
 
-{{site.requires_5_5v}}
+
 
 To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
 

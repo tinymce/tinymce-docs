@@ -1,6 +1,6 @@
 ### `emoticons_database`
 
-{{ site.requires_5_6v }}
+
 
 This option provides the ability to specify which built-in emoji database to use when rendering emojis in the editor. The following built-in emoji databases are available:
 * `emojis` - This database uses Unicode characters to represent emoji in the editor content.

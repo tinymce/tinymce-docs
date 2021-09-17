@@ -7,7 +7,7 @@ description: How to make your own icon pack.
 keywords: create creator skin icon
 ---
 
-TinyMCE 5 introduced icon packs for customizing the editor icons.
+TinyMCE 6 introduced icon packs for customizing the editor icons.
 
 ## Prerequisites
 

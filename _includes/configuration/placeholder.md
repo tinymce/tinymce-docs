@@ -1,6 +1,6 @@
 ## `placeholder`
 
-{{ site.requires_5_2v }}
+
 
 This option adds placeholder content that will be shown when the editor is empty.
 

@@ -1,8 +1,6 @@
 ## `file_picker_callback`
 
-This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in *Image*, *Media* and *Link* dialogs. This replaces the [`file_browser_callback`]({{site.url}}/docs-4x/configure/file-image-upload/#file_browser_callback) (removed in version {{site.productname}} 5) option. The new `file_picker_callback` provides a way to update values of other fields in the dialog.
-
-Once you define `file_picker_callback`, small browse button will appear along the fields of supported file types (see [file_picker_types](#file_picker_types)). When user clicks the button, {{site.productname}} will automatically call the callback with three arguments:
+This hook can be used to add custom file picker to those dialogs that have it. Once you define `file_picker_callback`, small browse button will appear along the fields of supported file types (see [file_picker_types](#file_picker_types)). When user clicks the button, {{site.productname}} will automatically call the callback with three arguments:
 
 * **callback** - *a callback to call, once you have hold of the file; it expects new value for the field as the first argument and optionally meta information for other fields in the dialog as the second one*
 * **value** - *current value of the affected field*

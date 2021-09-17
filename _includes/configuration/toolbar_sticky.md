@@ -1,6 +1,6 @@
 ## toolbar_sticky
 
-{{site.requires_5_1v}}
+
 
 A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top of the screen when scrolling down a web page until the editor is no longer visible.
 

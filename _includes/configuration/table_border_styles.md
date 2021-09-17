@@ -1,6 +1,6 @@
 ### `table_border_styles`
 
-{{site.requires_5_9v}}
+
 
 This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderstyle` toolbar button or menu item, in addition to the dialog options. This option accepts any valid [CSS border style](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style#values).
 

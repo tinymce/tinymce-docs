@@ -20,7 +20,7 @@ Skins control the appearance of {{site.productname}} such as colors and spacing.
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   skin: 'oxide-dark',
-  content_css: 'dark'  // {{site.requires_5_1v}}
+  content_css: 'dark'  //
 });
 ```
 
@@ -34,7 +34,7 @@ tinymce.init({
 });
 ```
 
-To create a skin interactively, visit [the {{site.productname}} 5 Skin Tool](http://skin.tiny.cloud/t5/). For information on manually creating skins for {{site.productname}}, see [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/).
+To create a skin interactively, visit [the {{site.productname}} 6 Skin Tool](http://skin.tiny.cloud/t5/). For information on manually creating skins for {{site.productname}}, see [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/).
 
 > **Note**: Developers often confuse the difference between {{site.productname}} "themes" and "skins". A **Skin** in {{site.productname}} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 

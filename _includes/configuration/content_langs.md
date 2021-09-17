@@ -1,5 +1,5 @@
 ## `content_langs`
-{{ site.requires_5_9v }}
+
 
 {% include configuration/content_langs_base.md %}
 

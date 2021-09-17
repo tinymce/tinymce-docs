@@ -9,7 +9,7 @@ keywords: rtc
 {% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
 
-{{site.requires_5_9v}}
+
 
 This procedure will assist with setting up {{site.productname}} with real-time collaboration.
 

@@ -1,6 +1,6 @@
 ### `table_use_colgroups`
 
-{{ site.requires_5_5v }}
+
 
 This option adds `colgroup` and `col` elements to new tables for specifying column widths. Existing tables and tables added using `setContent` or paste are not affected.
 

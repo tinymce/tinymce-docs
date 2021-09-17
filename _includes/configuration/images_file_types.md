@@ -1,6 +1,6 @@
 ### `images_file_types`
 
-{{site.requires_5_6v}}
+
 
 This option configures which image file formats are accepted by the editor. Changing this option will adjust the following editor behaviour:
   - Which image file formats are allowed to be uploaded in the [Image]({{site.baseurl}}/plugins/opensource/image/) dialog.

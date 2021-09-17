@@ -10,7 +10,7 @@
     /* Import TinyMCE */
     var tinymce = require('tinymce/tinymce');
 
-    /* Default icons are required for TinyMCE 5.3 or above. Also import custom icons if applicable */
+    /* Default icons are required. Also import custom icons if applicable */
     require('tinymce/icons/default');
 
     /* A editor theme (required) - customize the editor appearance by creating a 'skin' */

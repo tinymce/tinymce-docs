@@ -433,8 +433,20 @@ For information on the deprecation of the free TinyMCE Spell Checker plugin, see
 
 This section describes issues that users of {{site.productname}} 5.9 may encounter and possible workarounds for these issues.
 
+- [Core known issues](#coreknownissues)
 - [Table plugin known issues](#tablepluginknownissues)
 - [Real-Time Collaboration (RTC) known issues](#real-timecollaborationrtcknownissues)
+
+### Core known issues
+
+#### "Right-hand side of 'instanceof' is not callable" or "Event is not a function. (evaluating 'e instanceof Event')" exceptions
+
+Issue
+: This issue affects developers who have overridden the native browser `Event` window object, such as those seen in some Vue.js tutorials. This breaks the native `Event` API which TinyMCE 5.9 makes use of.
+
+Solution
+: Ensure that the `Event` window or global object is not overridden in your code. The cases reported to {{site.companyname}} so far use something like `window.Event = new Vue();`. This should be renamed to something that does not conflict with a browser API, such as `window.EventBus = new Vue();`.
+{{site.companyname}} highly recommends against overriding any built-in browser APIs, as the editor relies on built-in browser API behavior to function as expected.
 
 ### Table plugin known issues
 

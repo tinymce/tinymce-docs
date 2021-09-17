@@ -445,7 +445,7 @@ Issue
 : This issue affects developers who have overridden the native browser `Event` window object, such as those seen in some Vue.js tutorials. This breaks the native `Event` API which TinyMCE 5.9 makes use of.
 
 Solution
-: Ensure that the `Event` window or global object is not overridden in your code. The cases reported to {{site.companyname}} so far use something like `window.Event = new Vue();`. This should be renamed to something that does not conflict with a browser API, such as `window.EventBus = new Vue();`.
+: Ensure that the `Event` window or global object is not overridden in your code. The cases reported to {{site.companyname}} use something similar to `window.Event = new Vue();`. This should be renamed to something that does not conflict with a browser API, such as `window.EventBus = new Vue();`.
 {{site.companyname}} highly recommends against overriding any built-in browser APIs, as the editor relies on built-in browser API behavior to function as expected.
 
 ### Table plugin known issues

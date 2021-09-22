@@ -2,7 +2,7 @@ var currentAuthor = 'A Tiny User';
 var userAllowedToResolve = 'Admin1';
 
 tinymce.init({
-  selector: '#tiny-ui .editor',
+  selector: 'textarea#comments-embedded',
   toolbar: 'bold italic underline | addcomment showcomments',
   menubar: 'file edit view insert format tools tc',
   menu: {

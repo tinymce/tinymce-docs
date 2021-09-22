@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: '#editor',
+  selector: '#file-picker',
   plugins: 'image code',
   toolbar: 'undo redo | link image | code',
   /* enable title field in the Image dialog*/

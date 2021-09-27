@@ -9,7 +9,7 @@ var specialChars = [
   { text: 'asterisk', value: '*' }
 ];
 tinymce.init({
-  selector: 'textarea#autocompleter',
+  selector: 'textarea#autocompleter-autocompleteitem',
   height: 250,
   setup: function (editor) {
     var onAction = function (autocompleteApi, rng, value) {

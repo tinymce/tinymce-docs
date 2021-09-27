@@ -4,7 +4,7 @@ Real-time collaboration integrations regularly store the content, eliminating th
 
 For any given document ID, the server guarantees the version number will only increase. It can be safely used for conflict resolution. For each document ID and version combination, the snapshot content is guaranteed to be identical.
 
-The snapshot callback will be executed shortly after edits are made with access to the serialized editor content. The content is retrieved through a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
+The snapshot callback will be executed in response to local changes, with access to the serialized editor content. The content is retrieved through a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
 
 {% if plugincode != "rtc" %}
 Required plugin

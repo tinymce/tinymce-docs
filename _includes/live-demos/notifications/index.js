@@ -27,7 +27,7 @@ function createErrorNotification() {
 }
 
 tinymce.init({
-  selector: 'textarea#notification',
+  selector: 'textarea#notifications',
   height: 500,
   menubar: false,
   plugins: [

@@ -644,7 +644,7 @@ tinymce.ScriptLoader.loadScripts(
     }
 
     tinymce.init({
-      selector: 'textarea#callback-mode',
+      selector: 'textarea#comments-callback',
       height: 800,
       plugins: 'paste code tinycomments help lists',
       toolbar:

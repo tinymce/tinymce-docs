@@ -1,10 +1,10 @@
 ### `rtc_snapshot`
 
-Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides a version number to assist with storing the regular content snapshots. These snapshots are not stored on the RTC server and must be handled by the integrator.
+Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {{site.productname}} RTC plugin provides a version number to assist with storing the HTML content snapshots. These snapshots are not stored on the RTC server and must be handled by the integrator.
 
 For any given document ID, the server guarantees the version number will only increase. It can be safely used for conflict resolution. For each document ID and version combination, the snapshot content is guaranteed to be identical.
 
-The snapshot callback will be executed at regular intervals with access to the serialized editor content. The content is retrieved through a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
+The snapshot callback will be executed in response to local changes, with access to the serialized editor content. The content is retrieved through a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
 
 {% if plugincode != "rtc" %}
 Required plugin
@@ -12,7 +12,7 @@ Required plugin
 {% endif %}
 
 Type
-: Function (Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise))
+: Function
 
 Input parameters
 : | Field | Type | Description |

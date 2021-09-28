@@ -217,7 +217,7 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 ### Real-Time Collaboration 1.0.1
 
-The {{site.productname}} 5.9 release includes the first generally available release of the **Real-Time Collaboration (RTC)** premium plugin (version 1.0.1).
+The {{site.productname}} 5.9 release includes the first generally available cloud release of the **Real-Time Collaboration (RTC)** premium plugin (version 1.0.1).
 
 Add collaborative editing to your application and allow your content teams to edit content simultaneously and view content changes as they happen.
 
@@ -409,19 +409,19 @@ For information on the `content_langs` option, see: [Spell Checker Pro - `conten
 
 The BBCode plugin (`bbcode`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
 
-To develop and maintain a new BBCode plugin based on the {{site.productname}} BBCode plugin, you can create a fork using the [BBCode plugin source code in the TinyMCE distribution monorepo](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/bbcode).
+To develop and maintain a new BBCode plugin based on the {{site.productname}} BBCode plugin, you can create a fork using the [BBCode plugin source code in the TinyMCE distribution repository](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/bbcode).
 
 ### The Full Page (`fullpage`) plugin
 
 The Full Page plugin (`fullpage`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
 
-To develop and maintain a new Full Page plugin based on the {{site.productname}} Full Page plugin, you can create a fork using the [Full Page plugin source code in the TinyMCE distribution monorepo](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/fullpage).
+To develop and maintain a new Full Page plugin based on the {{site.productname}} Full Page plugin, you can create a fork using the [Full Page plugin source code in the TinyMCE distribution repository](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/fullpage).
 
 ### The Legacy Output (`legacyoutput`) plugin
 
 The Legacy Output plugin (`legacyoutput`) has been deprecated and will be removed in the 6.0 release of {{site.productname}}.
 
-To develop and maintain a new Legacy Output plugin based on the {{site.productname}} Legacy Output plugin, you can create a fork using the [Legacy Output plugin source code in the TinyMCE distribution monorepo](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/legacyoutput).
+To develop and maintain a new Legacy Output plugin based on the {{site.productname}} Legacy Output plugin, you can create a fork using the [Legacy Output plugin source code in the TinyMCE distribution repository](https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/legacyoutput).
 
 ### Reminder: The free TinyMCE Spell Checker plugin
 
@@ -433,8 +433,20 @@ For information on the deprecation of the free TinyMCE Spell Checker plugin, see
 
 This section describes issues that users of {{site.productname}} 5.9 may encounter and possible workarounds for these issues.
 
+- [Core known issues](#coreknownissues)
 - [Table plugin known issues](#tablepluginknownissues)
 - [Real-Time Collaboration (RTC) known issues](#real-timecollaborationrtcknownissues)
+
+### Core known issues
+
+#### "Right-hand side of 'instanceof' is not callable" or "Event is not a function. (evaluating 'e instanceof Event')" exceptions
+
+Issue
+: This issue affects developers who have overridden the native browser `Event` window object, such as those seen in some Vue.js tutorials. This breaks the native `Event` API which TinyMCE 5.9 makes use of.
+
+Solution
+: Ensure that the `Event` window or global object is not overridden in your code. The cases reported to {{site.companyname}} use something similar to `window.Event = new Vue();`. This should be renamed to something that does not conflict with a browser API, such as `window.EventBus = new Vue();`.
+{{site.companyname}} highly recommends against overriding any built-in browser APIs, as the editor relies on built-in browser API behavior to function as expected.
 
 ### Table plugin known issues
 

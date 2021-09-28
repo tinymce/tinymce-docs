@@ -25,6 +25,12 @@ tinymce.init({
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
+## Commands
+
+The {{pluginname}} plugin provides the following JavaScript command.
+
+{% include commands/{{plugincode}}-cmds.md %}
+
 ## API
 
 The Word Count plugin exposes an API for retrieving the word and character count of either the whole document or the current editor selection. Following is an example of how to retrieve each property.

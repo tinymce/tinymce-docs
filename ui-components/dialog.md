@@ -310,7 +310,7 @@ The following example demonstrates one way of implementing a multipage form dial
 
 To see the output of the code, click on the {{site.productname}} tab on the fiddle below.
 
-{% include live-demo.html id="redial" height="900" tab="js" %}
+{% include live-demo.html id="redial-demo" height="900" tab="js" %}
 
 The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The {{site.productname}} initialization code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
 

@@ -26,6 +26,7 @@ build:
 
 check_links:
   box: jointiny/tiny-cloud-docs-linkchecker
+  command-timeout: 30
   steps:
     - script:
         name: check links

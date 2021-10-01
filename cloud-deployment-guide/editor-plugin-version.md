@@ -12,7 +12,7 @@ Use the URL provided to specify the {{site.productname}} version when deploying 
 
 The following example is the default for loading {{site.productname}} {{site.productmajorversion}} via {{site.cloudname}}. Substitute 'no-api-key' with your api key in the examples below.
 
-```js
+```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
@@ -56,7 +56,7 @@ This channel deploys the latest release of {{site.productname}} that has passed 
 
 ##### Example: Using the `stable` release channel
 
-```js
+```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 

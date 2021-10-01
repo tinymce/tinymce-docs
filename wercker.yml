@@ -4,6 +4,7 @@ box:
   password: $DOCKER_PASSWORD
   tag: latest
 no-response-timeout: 30
+command-timeout: 30
 
 build:
   steps:
@@ -26,7 +27,6 @@ build:
 
 check_links:
   box: jointiny/tiny-cloud-docs-linkchecker
-  command-timeout: 30
   steps:
     - script:
         name: check links

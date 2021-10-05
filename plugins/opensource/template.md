@@ -7,6 +7,8 @@ keywords: insert template_cdate_classes template_cdate_format template_mdate_cla
 controls: toolbar button, menu item
 ---
 
+{% include DEPRECATED/template.md %}
+
 {% assign pluginname = "Template" %}
 {% assign plugincode = "template" %}
 

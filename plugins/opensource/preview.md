@@ -7,6 +7,8 @@ keywords: view preview
 controls: toolbar button, menu item
 ---
 
+{% include DEPRECATED/preview.md %}
+
 {% assign pluginname = "Preview" %}
 {% assign plugincode = "preview" %}
 

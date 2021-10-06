@@ -1,1 +1,0 @@
-> **Important**: The Insert Date/Time plugin (`insertdatetime`) was deprecated with the release of {{site.productname}} 5.10.{% if site.productminorversion > 5.9 %} For details, see [the Insert Date/Time plugin deprecation notice]({{site.baseurl}}/release-notes/release-notes510/#theinsertdatetimeplugin).{% endif %}

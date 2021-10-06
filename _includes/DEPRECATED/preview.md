@@ -1,1 +1,0 @@
-> **Important**: The Preview plugin (`preview`) was deprecated with the release of {{site.productname}} 5.10. {% if site.productminorversion > 5.9 %}For details, see [the Preview plugin deprecation notice]({{site.baseurl}}/release-notes/release-notes510/#thepreviewplugin).{% endif %}

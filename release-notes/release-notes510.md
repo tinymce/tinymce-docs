@@ -76,6 +76,20 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+### Advanced Tables 1.2.0
+
+The {{site.productname}} 5.10 release includes an accompanying release of the **Advanced Tables** premium plugin.
+
+**Advanced Tables** 1.2.0 introduces the following enhancements:
+
+- Added `getRowType` and `getColType` properties to the series generator `info` argument. For details, see [`GeneratorInfo`]({{site.baseurl}}/plugins/premium/advtable/#generatorinfo).
+
+**Advanced Tables** 1.2.0 provides the following bug fixes:
+
+- The selection could be placed in an invalid location when a row numbering column was updated.
+
+For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
+
 ## Accompanying Premium Skins and Icon Packs changes
 
 The {{site.productname}} 5.10 release includes an accompanying release of the **Premium Skins and Icon Packs**.

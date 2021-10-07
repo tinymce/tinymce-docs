@@ -8,7 +8,7 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
-## 5.10.0 - 2021-10-07
+## 5.10.0 - 2021-10-11
 
 ### Added
 - Added a new `URI.isDomSafe(uri)` API to check if a URI is considered safe to be inserted into the DOM.

@@ -1,0 +1,1 @@
+> **Important**: The Image Tools plugin (`imagetools`) was deprecated with the release of {{site.productname}} 5.10.{% if site.productminorversion > 5.9 %} For details, see [the Image Tools plugin deprecation notice]({{site.baseurl}}/release-notes/release-notes510/#imagetoolsimagetoolsplugin).{% endif %} The Image Tools plugin will be removed in TinyMCE 6.0.

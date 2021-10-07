@@ -1,5 +1,7 @@
 ### `media_scripts`
 
+{% include DEPRECATED/generic-5_10.md %}
+
 This option allows you to embed videos using script elements.
 
 **Type:** `Array`

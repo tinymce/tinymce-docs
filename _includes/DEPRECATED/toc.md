@@ -1,0 +1,1 @@
+> **Important**: The Table of Contents plugin (`toc`) was deprecated with the release of {{site.productname}} 5.10.{% if site.productminorversion > 5.9 %} For details, see [the Table of Contents plugin deprecation notice]({{site.baseurl}}/release-notes/release-notes510/#tableofcontentstocplugin).{% endif %} The Table of Contents plugin will be removed in TinyMCE 6.0.

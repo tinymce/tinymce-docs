@@ -1,5 +1,5 @@
 ## toolbar_mode
-{% if site.productminorversion < 6.1 %}
+{% if site.productminorversion < 6.0 %}
 <a class="anchor" id="toolbar_drawer"></a>
 > **Note**: The `toolbar_drawer` option was deprecated with the release of {{site.productname}} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option. The `toolbar_drawer` option will be removed in {{site.productname}} 6.0.
 {% endif %}

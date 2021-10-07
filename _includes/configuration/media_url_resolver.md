@@ -16,7 +16,7 @@ The following example simply checks if the url contains some special url and ret
 
 ```js
 tinymce.init({
-  selector: 'textarea.tinymce',
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'media',
   toolbar: 'media',
   media_url_resolver: function (data, resolve/*, reject*/) {

@@ -45,13 +45,13 @@ class: changelog
 - Dragging and dropping `contenteditable="false"` elements could result in the element being placed in an unexpected location.
 - Pressing the Escape key would not cancel a drag action that started on a `contenteditable="false"` element within the editor.
 - `video` and `audio` elements were unable to be played when the `media` plugin live embeds were enabled in some cases.
-- Pasting images would throw an exception if the clipboard `items` were not files (for example, screenshots taken from gnome-software). Patch contributed by cedric-anne #TINY-8079
+- Pasting images would throw an exception if the clipboard `items` were not files (for example, screenshots taken from gnome-software). Patch contributed by cedric-anne.
 
 ### Deprecated
 - Several APIs have been deprecated. See the release notes section for information.
-- Several Editor settings have been deprecated. See the release notes section for information #TINY-8086
-- The Table of Contents and Image Tools plugins will be classified as Premium plugins in the next major release #TINY-8087
-- Word support in the `paste` plugin has been deprecated and will be removed in the next major release #TINY-8087
+- Several Editor settings have been deprecated. See the release notes section for information.
+- The Table of Contents and Image Tools plugins will be classified as Premium plugins in the next major release.
+- Word support in the `paste` plugin has been deprecated and will be removed in the next major release.
 
 ## 5.9.2 - 2021-09-08
 

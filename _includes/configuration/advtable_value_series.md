@@ -68,7 +68,6 @@ An object with the following properties is passed to the generator callback func
 | sectionType | `'thead'`, `'tbody'` or `'tfoot'` | The section of the table cell. |
 | cellType | `'td'` or `'th'` | The type of the table cell. |
 | getRowType | `() => 'header' | 'body' | 'footer'` | A function that returns the type of row the table cell is part of. A 'header' row is either a row that is part of a `thead` section or contains all `th` cells. |
-| getColType | `() => 'th' | 'td' | ''` | A function that returns the type of column the table cell is part of. If there are both `th` and `td` cells in the column, an empty string is returned. |
 | classes | `string[]` | The classes present on the table cell. |
 | direction | `'row'` or `'column'` | The direction of the generator. |
 | prev | `GeneratorResult` | The generator result from the previous iteration. |

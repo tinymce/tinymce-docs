@@ -82,7 +82,7 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 **Advanced Tables** 1.2.0 introduces the following enhancements:
 
-- Added `getRowType` and `getColType` properties to the series generator `info` argument. For details, see [`GeneratorInfo`]({{site.baseurl}}/plugins/premium/advtable/#generatorinfo).
+- Added `getRowType` property to the series generator `info` argument. For details, see [`GeneratorInfo`]({{site.baseurl}}/plugins/premium/advtable/#generatorinfo).
 
 **Advanced Tables** 1.2.0 provides the following bug fixes:
 

@@ -10,7 +10,7 @@ controls: toolbar button, menu item
 {% assign pluginname = "Spell Checker" %}
 {% assign plugincode = "spellchecker" %}
 
-{{site.deprecate_spellchecker}}
+{% include DEPRECATED/spellchecker.md %}
 
 > **Note**: The Spell Checker plugin is self-hosted _only_. The Spell Checker Pro plugin is provided for some {{site.cloudname}} plans. For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 

@@ -154,7 +154,6 @@ This procedure requires:
           import 'tinymce/plugins/charmap';
           import 'tinymce/plugins/hr';
           import 'tinymce/plugins/anchor';
-          import 'tinymce/plugins/spellchecker';
           import 'tinymce/plugins/searchreplace';
           import 'tinymce/plugins/wordcount';
           import 'tinymce/plugins/code';

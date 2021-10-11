@@ -10,6 +10,9 @@ This procedure assumes the following prerequisites have been installed:
 
 * [PHP](https://www.php.net/)
 * [Composer](https://getcomposer.org/)
+{% if productSource != "cloud" %}
+* [Node.js](https://nodejs.org/)
+{% endif %}
 
 ## Procedure
 
@@ -25,6 +28,57 @@ This procedure assumes the following prerequisites have been installed:
     cd my-example-app
     ```
 
+{% if productSource != "cloud" %}
+1. Install the required Node.js components, including [Laravel Mix](https://laravel.com/docs/8.x/mix):
+
+    ```sh
+    npm install
+    ```
+
+{% endif %}
+{% if productSource == "composer" %}
+1. Add {{site.productname}} to the project using Composer:
+
+    ```sh
+    composer require tinymce/tinymce
+    ```
+
+1. Add a Laravel Mix task to copy {{site.productname}} to the public files when Mix is run, such as:
+
+    _File:_ `webpack.mix.js`
+    ```js
+    mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
+    ```
+
+{% endif %}
+{% if productSource == "zip" %}
+1. Download {{site.productname}}.
+
+    * For Self-hosted Enterprise customers, visit [{{site.companyname}} - Self-hosted releases]({{site.download-community}})
+    * For the self-hosted {{site.productname}} community edition, visit [{{site.accountpage}} - Downloads]({{site.download-enterprise}})
+
+1. Extract (or unzip) the downloaded {{site.productname}} `.zip` file into the `resources/js/` directory of the Laravel project, such as:
+
+    ```sh
+    unzip ../tinymce_latest.zip -d resources/js
+    ```
+
+1. Add a Laravel Mix task to copy {{site.productname}} to the public files when Mix is run, such as:
+
+    _File:_ `webpack.mix.js`
+    ```js
+    mix.copyDirectory('resources/js/tinymce/js/tinymce', 'public/js/tinymce');
+    ```
+
+{% endif %}
+{% if productSource != "cloud" %}
+1. Run Laravel Mix to copy {{site.productname}} to the `public/js/` directory:
+
+    ```sh
+    npx mix
+    ```
+
+{% endif %}
 1. Create a new reusable [component (`blade.php`)](https://laravel.com/docs/8.x/blade#components) for the {{site.productname}} configuration, such as:
 
     ```sh
@@ -40,7 +94,7 @@ This procedure assumes the following prerequisites have been installed:
 
     For example:
 
-    File: `resources/views/components/head/tinymce-config.blade.php`
+    _File:_ `resources/views/components/head/tinymce-config.blade.php`
 
     ```html
     <script src="{{ scriptSource }}" referrerpolicy="origin"></script>
@@ -65,7 +119,7 @@ This procedure assumes the following prerequisites have been installed:
 
     For example:
 
-    File: `resources/views/components/forms/tinymce-editor.blade.php`
+    _File:_ `resources/views/components/forms/tinymce-editor.blade.php`
 
     ```html
     <form method="post">
@@ -77,7 +131,7 @@ This procedure assumes the following prerequisites have been installed:
 
     For example:
 
-    File: `resources/views/welcome.blade.php`
+    _File:_ `resources/views/welcome.blade.php`
 
     ```html
     <!DOCTYPE html>

@@ -8,6 +8,6 @@ keywords: integration integrate laravel php composer
 
 [Laravel - Installation Via Composer](https://laravel.com/docs/8.x/installation#installation-via-composer)
 
-{% assign productSource == "cloud" %}
+{% assign productSource = "cloud" %}
 
-{% include integration/laravel-quick-start.md %}
+{% include integrations/laravel-quick-start.md %}

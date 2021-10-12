@@ -207,6 +207,8 @@ When the handler is called (**handlerFunction** in this example), it is called w
 `editor`
 : A reference to the editor.
 
+Ensure event names are specified in lower-case (event names are case-sensitive).
+
 The following events are available:
 
 * `activate`

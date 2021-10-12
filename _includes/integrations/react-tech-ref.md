@@ -713,12 +713,12 @@ Functions can be bound to editor events, such as:
 ```
 
 When the handler is called (**handlerFunction** in this example), it is called with two arguments:
-<dl>
-<dt><code>event</code></dt>
-<dd>The TinyMCE event object.</dd>
-<dt><code>editor</code></dt>
-<dd>A reference to the editor.</dd>
-</dl>
+
+`event`
+: The {{site.productname}} event object.
+
+`editor`
+: A reference to the editor.
 
 The following events are available:
 

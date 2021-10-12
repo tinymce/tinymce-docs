@@ -1,22 +1,28 @@
 {% if productSource == "cloud" %}
   {% assign scriptSource = site.cdnurl %}
+  {% assign packageSource = site.cloudname %}
+{% elsif productSource == "composer" %}
+  {% assign scriptSource = "{{ asset('js/tinymce/tinymce.min.js') }}" %}
+  {% assign packageSource = "[TinyMCE Composer package](https://packagist.org/packages/tinymce/tinymce)" %}
 {% else %}
   {% assign scriptSource = "{{ asset('js/tinymce/tinymce.min.js') }}" %}
+  {% assign packageSource = "TinyMCE .zip package" %}
 {% endif %}
+
+This guide assists with adding {{site.productname}} from the {{packageSource}} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under [Installation Via Composer](https://laravel.com/docs/8.x/installation#installation-via-composer). The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {{site.productname}} should be used in production environments.
 
 ## Requirements
 
 This procedure assumes the following prerequisites have been installed:
 
 * [PHP](https://www.php.net/)
-* [Composer](https://getcomposer.org/)
-{% if productSource != "cloud" %}
+* [Composer](https://getcomposer.org/){% if productSource != "cloud" %}
 * [Node.js](https://nodejs.org/)
 {% endif %}
 
 ## Procedure
 
-1. On a command line (or command prompt), create a new Lavarel project named `my-example-app` by running the following command:
+1. On a command line (or command prompt), create a new Laravel project named `my-example-app` by running the following command:
 
     ```sh
     composer create-project laravel/laravel my-example-app
@@ -106,6 +112,12 @@ This procedure assumes the following prerequisites have been installed:
       });
     </script>
     ```
+
+{% if productSource == "cloud" %}
+1. Replace `no-api-key` in the {{site.productname}} source script with your {{site.cloudname}} API Key.
+
+    {% include misc/get-an-api-key.md %}
+{% endif %}
 
 1. Create a second blade containing a placeholder HTML element for {{site.productname}}, such as:
 

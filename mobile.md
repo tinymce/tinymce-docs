@@ -6,10 +6,11 @@ description: The TinyMCE rich text editing experience for mobile devices.
 keywords: mobile tablet
 ---
 
-{{site.productname}} {{site.productminorversion}} provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
+{% include DEPRECATED/legacy-mobile-removal.md %}
 
+{{site.productname}} 5.1 introduced an improved mobile editor, replacing the existing mobile editor with a touch friendly version of the silver theme.
 
-The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
+The mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
 
 * Mobile devices now use the `silver` theme.
 * Horizontal contextual menus on mobile.
@@ -18,7 +19,7 @@ The new mobile experience comes with a number of user interface changes in addit
 * [Mobile defaults for selected settings](#mobiledefaultsforselectedsettings).
 * Table cell selection on mobile.
 
-The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
+The mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 
 * [Comments]({{site.baseurl}}/plugins/premium/comments/).
 * [Image tools]({{site.baseurl}}/plugins/opensource/imagetools/).
@@ -27,7 +28,7 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 
 {{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
-> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+> **Note**: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPad users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
 {% include misc/mobile_platform_compatibility.md %}
 
@@ -75,8 +76,9 @@ The following settings are not supported on mobile devices:
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize).
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing).
 
-
 ## The legacy mobile theme
+
+{% include DEPRECATED/legacy-mobile-removal.md %}
 
 The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated as of {{site.productname}} 5.1.
 

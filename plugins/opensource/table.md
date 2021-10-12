@@ -96,9 +96,7 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  table_default_attributes: {},
-  table_default_styles: {},
-  table_responsive_width: false
+  table_sizing_mode: 'fixed'
 });
 ```
 
@@ -108,14 +106,7 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  table_default_attributes: {
-    'border': '1'
-  },
-  table_default_styles: {
-    'border-collapse': 'collapse',
-    'width': '100%'
-  },
-  table_responsive_width: true
+  table_sizing_mode: 'relative'
 });
 ```
 

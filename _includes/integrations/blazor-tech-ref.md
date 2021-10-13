@@ -19,6 +19,7 @@ The `TinyMCE.Blazor` `Editor` component accepts the following properties:
   JsConfSrc="path_to_jsObj"
   Conf="@yourConf"
   ApiKey="your-api-key"
+  ClassName="tinymce-wrapper"
 />
 ```
 
@@ -76,6 +77,24 @@ Type
 <Editor
   Id="my-unique-identifier"
 />
+```
+
+#### ClassName
+
+Specifies the class of the Editor's container `div` in the component. This `div` is the parent of the Editor and adding styles to it will not add styles to the editor.
+
+Default value
+: `"tinymce-wrapper"`
+
+Type
+: String
+
+##### Example using ClassName
+
+```cs
+<Editor ClassName="my-editor-container" />
+
+<Editor ClassName="@((isEditorActive) ? "active-editor-div" : "default-editor-div")" />
 ```
 
 #### Inline

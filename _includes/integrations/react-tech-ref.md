@@ -161,7 +161,7 @@ None of the configuration props are **required** for the {{site.productname}} Re
 
 Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor without the warning message "This domain is not registered...".
 
-To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.accountsignup}}).
+{% include misc/get-an-api-key.md %}
 
 **Default value:** `no-api-key`
 

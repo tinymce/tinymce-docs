@@ -89,11 +89,17 @@ Default value
 Type
 : String
 
-##### Example using ClassName
+##### Examples using ClassName
+
+Setting a static class name:
 
 ```cs
 <Editor ClassName="my-editor-container" />
+```
 
+Setting a dynamic class name:
+
+```cs
 <Editor ClassName="@((isEditorActive) ? "active-editor-div" : "default-editor-div")" />
 ```
 

@@ -233,6 +233,8 @@ The editor component allows developers to bind the contents of editor to a varia
 
 Starting from TinyMCE.Blazor v0.0.4, the editor exposes the `@bind-Text` property, which developers can `bind` to retrieve a read-only value of the editor content as text. Changes will not propagate up to the editor if the `text` bound variable changes. It will only propagate changes from the editor.
 
+##### Example using output text binding
+
 ```cs
 <Editor
   @bind-Text=content

@@ -90,7 +90,7 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
-### RTC 1.1.1
+### Real-Time Collaboration 1.1.1
 
 The {{site.productname}} 5.10 release includes an accompanying release of the **RTC** premium plugin.
 

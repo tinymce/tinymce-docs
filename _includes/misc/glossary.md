@@ -30,9 +30,7 @@ Cascading Style Sheets (CSS)
 channel
 : Use _channel_ to describe the various CDN URLs that developers can use to source the TinyMCE JavaScript files.
 
-    For example:
-
-    Load TinyMCE from the stable channel on Tiny Cloud by including the following script tag.
+    For example: Load TinyMCE from the stable channel on Tiny Cloud by including the following script tag.
 
 cloud
 : Use _cloud_ as an adjective. Do not use as a noun (the cloud). Do not use cloud interchangeably with _internet_

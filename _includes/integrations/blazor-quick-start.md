@@ -21,7 +21,7 @@ This procedure requires:
 
 1. On the Visual Studio toolbar, click the [**New Project** button](https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project).
 1. Select the **Blazor Server App** template.
-1. Use the NuGet package manager console to install the `tinyMCE.Blazor` package, such as:
+1. Use the NuGet package manager console to install the `TinyMCE.Blazor` package, such as:
 
     ```sh
     Install-Package TinyMCE.Blazor

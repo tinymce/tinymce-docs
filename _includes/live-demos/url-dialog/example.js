@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea.urldialog',
+  selector: 'textarea#url-dialog',
   toolbar: 'urldialog',
   height: 300,
   setup: function (editor) {

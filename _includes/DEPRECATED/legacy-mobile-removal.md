@@ -1,0 +1,1 @@
+> **Important**: The dedicated `mobile` theme, sometimes referred to as the __legacy mobile theme__ was depreacted with the release of {{site.productname}} 5.1 and will be removed in {{site.productname}} 6.0. The `silver` theme was updated in {{site.productname}} 5.1 to provide an improved mobile experience.

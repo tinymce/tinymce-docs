@@ -70,7 +70,9 @@ The {{site.productname}} Enterprise Spellchecking plugin activates automatically
 
 {% include configuration/spellchecker_languages.md %}
 
+{% if site.productmajorversion < 6 %}
 {% include configuration/spellchecker_on_load.md %}
+{% endif %}
 
 {% include configuration/spellchecker_rpc_url.md %}
 

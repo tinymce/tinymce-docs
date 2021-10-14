@@ -289,7 +289,7 @@ The following commands require the [Format Painter (`formatpainter`)]({{site.bas
 
 #### Full Page
 
-{{site.deprecate_fullpage}}
+{% include DEPRECATED/fullpage.md %}
 
 The following command requires the [Full Page (`fullpage`)]({{site.baseurl}}/plugins/opensource/fullpage/) plugin.
 
@@ -401,7 +401,7 @@ The following command requires the [Search and Replace (`searchreplace`)]({{site
 
 The following command requires the [Spell Checker (`spellchecker`)]({{site.baseurl}}/plugins/opensource/spellchecker/) plugin.
 
-{{site.deprecate_spellchecker}}
+{% include DEPRECATED/spellchecker.md %}
 
 {% include commands/spellchecker-cmds.md %}
 

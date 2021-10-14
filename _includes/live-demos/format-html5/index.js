@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea#format-hmtl5',
+  selector: 'textarea#format-html5',
   height: 500,
   plugins: 'visualblocks',
   style_formats: [

@@ -218,6 +218,17 @@
 </script>
 {% endif %}
 {% include_remote {{ site.origin }}/_docs/footer.html %}
+<script>
+  var elements = document.getElementsByClassName('highlighter-rouge');
+  for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var pre = element.querySelector('.prettyprint');
+      var language = /language-([^ ]+)/.exec(element.className);
+      if (language && pre) {
+          pre.className += ' lang-' + language[1];
+      }
+  }
+</script>
 <script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/common.min.js"></script>
 <script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/docs.min.js"></script>
 

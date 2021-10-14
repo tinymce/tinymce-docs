@@ -1,6 +1,6 @@
 ## Using Comments embedded mode with the Full Page plugin
 
-{{site.deprecate_fullpage}}
+{% include DEPRECATED/fullpage.md %}
 
 Developers have to be cautious when deciding the order in which the plugins are added in the plugins list.
 

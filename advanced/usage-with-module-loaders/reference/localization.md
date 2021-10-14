@@ -43,14 +43,14 @@ The following table shows examples of the syntax used to bundle the following ex
 <td>npm</td>
 <td>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/langs/sv_SE'</span></span><span class="p"><span class="pun">;</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 <tr>
 <td><code>.zip</code>&nbsp;</td>
 <td>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/langs/sv_SE'</span></span><span class="p"><span class="pun">;</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 <tr>
@@ -58,14 +58,14 @@ The following table shows examples of the syntax used to bundle the following ex
 <td>npm</td>
 <td>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/langs/sv_SE'</span></span><span class="p"><span class="pun">);</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 <tr>
 <td><code>.zip</code>&nbsp;</td>
 <td>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="prettyprint prettyprinted" style=""><code><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/langs/sv_SE.js'</span></span><span class="p"><span class="pun">);</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 </tbody>

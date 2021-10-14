@@ -156,7 +156,7 @@ To disable the toolbar, set the `toolbar` attribute to `"false"`. For example:
 
 #### Setting the toolbar mode
 
-To control the behavior of the toolbar, set the `toolbar_drawer` attribute. For example:
+To control the behavior of the toolbar, set the `toolbar_mode` attribute. For example:
 
 ```html
 <tinymce-editor toolbar_mode="floating"></tinymce-editor>

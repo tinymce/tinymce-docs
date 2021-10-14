@@ -102,7 +102,7 @@ None of the configuration properties are **required** for `tinymce-vue` to work.
 #### `api-key`
 {{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
-To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.accountsignup}}).
+{% include misc/get-an-api-key.md %}
 
 **Default value:** `no-api-key`
 
@@ -137,7 +137,7 @@ Such as:
   :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}"
 />
 ```
-For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
+For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels).
 
 #### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -336,7 +336,7 @@ For information on `v-model` and form input bindings, see: [Vue.js documentation
 Functions can be bound to editor events, such as:
 
 ```html
-<editor @onSelectionChange="handlerFunction" />
+<editor @selectionChange="handlerFunction" />
 ```
 
 When the handler is called (**handlerFunction** in this example), it is called with two arguments:
@@ -346,65 +346,65 @@ When the handler is called (**handlerFunction** in this example), it is called w
 
 The following events are available:
 
-* `onActivate`
-* `onAddUndo`
-* `onBeforeAddUndo`
-* `onBeforeExecCommand`
-* `onBeforeGetContent`
-* `onBeforeRenderUI`
-* `onBeforeSetContent`
-* `onBeforePaste`
-* `onBlur`
-* `onChange`
-* `onClearUndos`
-* `onClick`
-* `onContextMenu`
-* `onCopy`
-* `onCut`
-* `onDblclick`
-* `onDeactivate`
-* `onDirty`
-* `onDrag`
-* `onDragDrop`
-* `onDragEnd`
-* `onDragGesture`
-* `onDragOver`
-* `onDrop`
-* `onExecCommand`
-* `onFocus`
-* `onFocusIn`
-* `onFocusOut`
-* `onGetContent`
-* `onHide`
-* `onInit`
-* `onKeyDown`
-* `onKeyPress`
-* `onKeyUp`
-* `onLoadContent`
-* `onMouseDown`
-* `onMouseEnter`
-* `onMouseLeave`
-* `onMouseMove`
-* `onMouseOut`
-* `onMouseOver`
-* `onMouseUp`
-* `onNodeChange`
-* `onObjectResizeStart`
-* `onObjectResized`
-* `onObjectSelected`
-* `onPaste`
-* `onPostProcess`
-* `onPostRender`
-* `onPreProcess`
-* `onProgressState`
-* `onRedo`
-* `onRemove`
-* `onReset`
-* `onSaveContent`
-* `onSelectionChange`
-* `onSetAttrib`
-* `onSetContent`
-* `onShow`
-* `onSubmit`
-* `onUndo`
-* `onVisualAid`
+* `activate`
+* `addUndo`
+* `beforeAddUndo`
+* `beforeExecCommand`
+* `beforeGetContent`
+* `beforeRenderUI`
+* `beforeSetContent`
+* `beforePaste`
+* `blur`
+* `change`
+* `clearUndos`
+* `click`
+* `contextMenu`
+* `copy`
+* `cut`
+* `dblclick`
+* `deactivate`
+* `dirty`
+* `drag`
+* `dragDrop`
+* `dragEnd`
+* `dragGesture`
+* `dragOver`
+* `drop`
+* `execCommand`
+* `focus`
+* `focusIn`
+* `focusOut`
+* `getContent`
+* `hide`
+* `init`
+* `keyDown`
+* `keyPress`
+* `keyUp`
+* `loadContent`
+* `mouseDown`
+* `mouseEnter`
+* `mouseLeave`
+* `mouseMove`
+* `mouseOut`
+* `mouseOver`
+* `mouseUp`
+* `nodeChange`
+* `objectResizeStart`
+* `objectResized`
+* `objectSelected`
+* `paste`
+* `postProcess`
+* `postRender`
+* `preProcess`
+* `progressState`
+* `redo`
+* `remove`
+* `reset`
+* `saveContent`
+* `selectionChange`
+* `setAttrib`
+* `setContent`
+* `show`
+* `submit`
+* `undo`
+* `visualAid`

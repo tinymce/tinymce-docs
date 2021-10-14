@@ -34,6 +34,13 @@ Return data
 | `sub` | `string` | The unique user ID (If `sub` is the same for two clients, the server will trust them as if they are the same user). |
 | `exp` | `integer` | A timestamp indicating the token expiry date and time. |
 
+### Optional JWT claims
+
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `https://claims.tiny.cloud/rtc/document` | `string` | The document id that this jwt token can access. If omitted the jwt token will be able to access any document within the account. |
+| `https://claims.tiny.cloud/rtc/role` | `string` | The role possible values are `editor` or `viewer` where viewer will put the editor into readonly mode and `editor` (default) will let the user edit the document. |
+
 ### Example: Using `rtc_token_provider`
 
 This example shows the minimum required configuration for the Real-Time Collaboration plugin, including the `rtc_token_provider` option.

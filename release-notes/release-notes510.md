@@ -96,10 +96,10 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 **RTC** 1.1.1 adds the following new features:
 
-- Added support for [`indent_use_margin`]({{site.baseurl}}/configure/content-formatting/#indent_use_margin) setting.
-- Added validation of document and role jwt claims. For details, see: [`Optional JWT claims`]({{site.baseurl}}/rtc/configuration/rtc-options-required/#optionaljwtclaims)
-- Addes support for [`allow_unsafe_link_target`]({{site.baseurl}}/configure/content-filtering/#allow_unsafe_link_target) and [`rel_list`]({{site.baseurl}}/plugins/opensource/link/#rel_list) settings.
-- RTC will now automatically recover from temporary network connection issues. If the network issues are persistent it will show a disconnected notification after 30s.
+- Added support for the [`indent_use_margin`]({{site.baseurl}}/configure/content-formatting/#indent_use_margin) option.
+- Added validation of document and role JWT claims. For details, see: [`Optional JWT claims`]({{site.baseurl}}/rtc/configuration/rtc-options-required/#optionaljwtclaims).
+- Added support for the [`allow_unsafe_link_target`]({{site.baseurl}}/configure/content-filtering/#allow_unsafe_link_target) and [`rel_list`]({{site.baseurl}}/plugins/opensource/link/#rel_list) options.
+- RTC will now automatically recover from temporary network connection issues. If the network issues are persistent it will show a disconnected notification after 30 seconds.
 
 **RTC** 1.1.1 introduces the following enhancements:
 
@@ -115,7 +115,7 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 - Clear Formatting did not work on collapsed selections.
 - Disconnect was not clean if the page unloaded without removing the editor.
 
-For information on the RTC plugin, see: [RTC plugin]({{site.baseurl}}/plugins/premium/rtc/).
+For information on the RTC plugin, see: [RTC plugin]({{site.baseurl}}/rtc/).
 
 ## Accompanying Premium Skins and Icon Packs changes
 

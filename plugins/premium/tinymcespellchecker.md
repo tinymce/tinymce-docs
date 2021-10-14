@@ -120,9 +120,7 @@ tinymce.init({
 
 This event triggers when the user selects **Ignore All** on a misspelled word.
 
-{{ site.requires_5_10v }}
-
-The `language` field on the event is only available for {{ site.productname }} 5.10 and later.
+> **Note:** The `language` property on the event is only available for {{ site.productname }} 5.10 and later.
 
 #### Example: The SpellcheckerIgnoreAll event
 

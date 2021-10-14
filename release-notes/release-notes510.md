@@ -96,7 +96,7 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 **Spell Checker Pro** 2.5.0 introduces the following enhancements:
 
-- The `SpellcheckerIgnoreAll` event now includes a `language` field. For details, see [Spell Checker Pro - SpellcheckerIgnoreAll Event]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellcheckerignoreallevent).
+- The `SpellcheckerIgnoreAll` event now includes a `language` property. For details, see [Spell Checker Pro - SpellcheckerIgnoreAll Event]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellcheckerignoreallevent).
 
 **Spell Checker Pro** 2.5.0 provides the following bug fixes:
 

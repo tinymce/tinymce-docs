@@ -90,6 +90,18 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
+### Spell Checker Pro 2.5.0
+
+The {{site.productname}} 5.10 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.5.0 introduces the following enhancements:
+
+- The `SpellcheckerIgnoreAll` event now includes a `language` field. For details, see [Spell Checker Pro - SpellcheckerIgnoreAll Event]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellcheckerignoreallevent).
+
+**Spell Checker Pro** 2.5.0 provides the following bug fixes:
+
+- The "Ignore all" action would incorrectly affect words that were in a different language to the selected word, if they were spelled the same.
+
 ## Accompanying Premium Skins and Icon Packs changes
 
 The {{site.productname}} 5.10 release includes an accompanying release of the **Premium Skins and Icon Packs**.

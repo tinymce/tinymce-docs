@@ -133,8 +133,7 @@ These versions require Java 8 or higher. For information on the removal of Java 
 ### New Server-side component features
 
 The Spelling service now includes a new configuration option, allowing the server to reject spelling requests that contain too many incorrect words. For details, see: [Configure server-side components: `num-incorrect-words-in-suggestions-request-limit
-`]({{site.baseurl}}/enterprise/server/configure/#num-incorrect-words-in-suggestions-request-limit
-optional).
+`]({{site.baseurl}}/enterprise/server/configure/#num-incorrect-words-in-suggestions-request-limitoptional).
 
 For information on:
 

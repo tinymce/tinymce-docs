@@ -90,7 +90,7 @@ var page2Config = {
 };
 
 tinymce.init({
-  selector: 'textarea.wizard',
+  selector: 'textarea#redial-demo',
   toolbar: 'wizardExample',
   height: '900px',
   setup: function (editor) {

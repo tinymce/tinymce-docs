@@ -1,4 +1,4 @@
-{{site.deprecate_fullpage}}
+{% include DEPRECATED/fullpage.md %}
 
 | Toolbar button identifier | Description                             |
 |---------------------------|-----------------------------------------|

@@ -1,5 +1,7 @@
 ### `paste_convert_word_fake_lists`
 
+{% include DEPRECATED/generic-5_10.md %}
+
 This option lets you disable the logic that converts list like paragraph structures into real semantic HTML lists.
 
 **Type:** `Boolean`

@@ -1,5 +1,7 @@
 ### `autoresize_on_init`
 
+{% include DEPRECATED/generic-5_10.md %}
+
 This option allows you to set whether the editor will attempt to resize itself upon initialization. By default this option is set to `true`.
 
 **Type:** `Boolean`

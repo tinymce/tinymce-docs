@@ -675,7 +675,7 @@ For information on Context Menus, see [UI components - Context menu]({{site.base
 
 ### Spellchecker plugin
 
-{{site.deprecate_spellchecker}}
+{% include DEPRECATED/spellchecker.md %}
 
 [`spellchecker_callback`]({{site.baseurl}}/plugins/opensource/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
 

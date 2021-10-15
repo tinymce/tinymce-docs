@@ -22,7 +22,7 @@ tinymce.init({
 
 ## PHP Spellchecker component
 
-{{site.deprecate_spellchecker}}
+{% include DEPRECATED/spellchecker.md %}
 
 You can also use {{site.productname}}'s PHP _Spellchecker_ component, that you can [download here](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip). To view the complete changelog history, view this [`txt`](http://archive.tinymce.com/develop/changelog/?type=phpspell) file. The {{site.productname}}'s PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
 

@@ -14,7 +14,6 @@ keywords: releasenotes bugfixes
 - [Enhancements](#enhancements)
 - [Functionality changes](#functionalitychanges)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
@@ -26,33 +25,24 @@ keywords: releasenotes bugfixes
 
 ## New features
 
-The following new features were added for the {{site.productname}} 5.10 release.
-
-### Feature name
-
-### Additional new features
-
 {{site.productname}} 5.10 introduces the following minor new features:
 
-- changelog
+- Added a new `URI.isDomSafe(uri)` API to check if a URI is considered safe to be inserted into the DOM.
+- Added the `ESC` key code constant to the `VK` API.
+- Added a new `deprecation_warnings` setting for turning off deprecation console warning messages.
 
 ## Enhancements
 
-The following enhancements were made for the {{site.productname}} 5.10 release.
-
-### Enhancement name
-
-### Additional enhancements
-
 {{site.productname}} 5.10 introduces the following minor enhancements:
 
-- changelog
+- The `element` argument of the `editor.selection.scrollIntoView()` API is now optional, and if it is not provided the current selection will be scrolled into view.
 
 ## Functionality changes
 
 The following functionality changes were made for the {{site.productname}} 5.10 release:
 
-- changelog
+- The deprecated `scope` attribute is no longer added to `td` cells when converting a row to a header row.
+- The number of `col` elements is normalized to match the number of columns in a table after a table action.
 
 ## Accompanying Premium Plugin changes
 
@@ -89,28 +79,6 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 - The selection could be placed in an invalid location when a row numbering column was updated.
 
 For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
-
-## Accompanying Premium Skins and Icon Packs changes
-
-The {{site.productname}} 5.10 release includes an accompanying release of the **Premium Skins and Icon Packs**.
-
-### Premium Skins and Icon Packs - New features
-
-{% comment %}
-Add description here.
-{% endcomment %}
-
-For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
-
-### Premium Skins and Icon Packs - Bug fixes
-
-The **Premium Skins and Icon Packs** release includes the following bug fixes:
-
-{% comment %}
-Add description here.
-{% endcomment %}
-
-For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
 ## Accompanying Premium self-hosted server-side component changes
 
@@ -158,7 +126,29 @@ For information on:
 
 {{site.productname}} 5.10 provides fixes for the following bugs:
 
-- changelog
+- Fixed a regression that caused block wrapper formats to apply and remove incorrectly when using a collapsed selection with multiple words.
+- Resizing table columns in some scenarios would resize the column to an incorrect position.
+- Inserting a table where the parent element had padding would cause the table width to be incorrect.
+- The resize backdrop element did not have the `data-mce-bogus="all"` attribute set to prevent it being included in output.
+- Resize handles appeared on top of dialogs and menus when using an inline editor.
+- Fixed the `autoresize` plugin incorrectly scrolling to the top of the editor content in some cases when changing content.
+- Fixed the `editor.selection.scrollIntoView()` type signature, as it incorrectly required an `Element` instead of `HTMLElement`.
+- Table cells that were both row and column headers did not retain the correct state when converting back to a regular row or column.
+- Clicking beside a non-editable element could cause the editor to incorrectly scroll to the top of the content.
+- Clicking in a table cell, with a non-editable element in an adjacent cell, incorrectly caused the non-editable element to be selected.
+- Split toolbar buttons incorrectly had nested `tabindex="-1"` attributes.
+- Fixed notifications rendering in the wrong place initially and when the page was scrolled.
+- Fixed an exception getting thrown when the number of `col` elements didn't match the number of columns in a table.
+- The table selection state could become incorrect after selecting a noneditable table cell.
+- As of Mozilla Firefox 91, toggling fullscreen mode with `toolbar_sticky` enabled would cause the toolbar to disappear.
+- Fixed URLs not cleaned correctly in some cases in the `link` and `image` plugins.
+- Fixed the `image` and `media` toolbar buttons incorrectly appearing to be in an inactive state in some cases.
+- Fixed the `editor.selection.selectorChanged` API not firing if the selector matched the current selection when registered in some cases.
+- Inserting content into a `contenteditable="true"` element that was contained within a `contenteditable="false"` element would move the selection to an incorrect location.
+- Dragging and dropping `contenteditable="false"` elements could result in the element being placed in an unexpected location.
+- Pressing the Escape key would not cancel a drag action that started on a `contenteditable="false"` element within the editor.
+- `video` and `audio` elements were unable to be played when the `media` plugin live embeds were enabled in some cases.
+- Pasting images would throw an exception if the clipboard `items` were not files (for example, screenshots taken from gnome-software). Patch contributed by cedric-anne.
 
 ## Security fixes
 

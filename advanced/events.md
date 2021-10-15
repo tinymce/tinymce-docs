@@ -296,7 +296,7 @@ The following events are provided by the [PowerPaste plugin]({{site.baseurl}}/pl
 
 The following events are provided by the [Spell Checker plugin]({{site.baseurl}}/plugins/opensource/spellchecker/).
 
-{{site.deprecate_spellchecker}}
+{% include DEPRECATED/spellchecker.md %}
 
 | Name            | Data | Description                           |
 | --------------- | ---- | ------------------------------------- |

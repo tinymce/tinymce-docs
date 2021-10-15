@@ -70,15 +70,5 @@ Process the content with a form handler.
 
 When the `<form>` is submitted, {{site.productname}} {{site.productmajorversion}} will `POST` the content in the same way as a normal HTML `<textarea>`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.
 
-## Next Steps
-For information on:
-
-  * Customizing {{site.productname}}, see: [Basic Setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
-  * The three editor modes:
-    * [{{site.productname}} classic editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-classic/).
-    * [{{site.productname}} inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
-    * [{{site.productname}} distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
-  * Adding {{site.productname}} plugins, see: [Work with plugins to extend TinyMCE]({{site.baseurl}}/general-configuration-guide/work-with-plugins/).
-  * Localizing the {{site.productname}} editor, see: [Localize {{site.productname}}]({{site.baseurl}}/general-configuration-guide/localize-your-language/).
-  * For information on the CSS required to render some {{site.productname}} elements outside of the editor, see: [Boilerplate content CSS]({{site.baseurl}}/general-configuration-guide/boilerplate-content-css/).
-  * Self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+{% include misc/quickstart-next-steps.md %}
+* Self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).

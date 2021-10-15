@@ -30,6 +30,7 @@
   - url: "features-only"
   - url: "editor-plugin-version"
   - url: "plugin-editor-version-compatibility"
+  - url: "cloud-troubleshooting"
 
 - url: "demo"
   pages:
@@ -884,9 +885,19 @@
     pages:
     - url: "#TinyMCE Angular integration quick start guide"
     - url: "#TinyMCE Angular technical reference"
+  - url: "blazor"
+    pages:
+    - url: "#TinyMCE Blazor integration quick start guides"
+    - url: "#TinyMCE Blazor integration technical reference"
   - url: "bootstrap"
   - url: "django"
   - url: "jquery"
+  - url: "laravel"
+    pages:
+    - url: "laravel-introduction"
+    - url: "laravel-tiny-cloud"
+    - url: "laravel-composer-install"
+    - url: "laravel-zip-install"
   - url: "expressjs"
   - url: "rails"
     pages:
@@ -897,6 +908,10 @@
     pages:
     - url: "#TinyMCE React integration quick start guide"
     - url: "#TinyMCE React technical reference"
+  - url: "svelte"
+    pages:
+    - url: "#TinyMCE Svelte integration quick start guide"
+    - url: "#TinyMCE Svelte integration technical reference"
   - url: "swing"
   - url: "vue"
     pages:

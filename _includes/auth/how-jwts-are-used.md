@@ -2,7 +2,7 @@ A JSON Web Token (JWT) endpoint is a service for generating and providing author
 
 The following diagram shows how JWTs are used:
 
-![JSON Web Token Call Flow]({{site.baseurl}}/images/jwt-call-flow.png "JSON Web Token Call Flow")
+![JSON Web Token Call Flow]({{site.baseurl}}/images/JWT_Flow.svg "JSON Web Token Call Flow")
 
 {% if plugincode == 'tinydrive' %}
 When a user opens {{pluginname}}:

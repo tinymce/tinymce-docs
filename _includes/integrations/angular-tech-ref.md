@@ -104,7 +104,7 @@ None of the configuration properties are **required** for `tinymce-angular` to w
 #### `apiKey`
 {{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
-To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.accountsignup}}).
+{% include misc/get-an-api-key.md %}
 
 **Default value:** `no-api-key`
 
@@ -138,7 +138,7 @@ Such as:
   cloudChannel="{{site.productmajorversion}}-dev"
 ></editor>
 ```
-For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
+For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels).
 
 
 #### `disabled`

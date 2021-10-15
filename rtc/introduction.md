@@ -36,6 +36,8 @@ The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracki
 
 ## Overview of how TinyMCE Real-Time Collaboration works
 
+![Conceptual diagram showing how {{site.productname}} RTC works, description below image]({{site.baseurl}}/images/RTC_conceptual_diagram.svg)
+
 ### When a new document is created
 
 1. The initial content is set using the HTML within the element replaced by the editor, or using the [initial content option]({{site.baseurl}}/rtc/configuration/rtc-options-optional/#rtc_initial_content_provider).

@@ -48,7 +48,7 @@ Example syntax for including the example icon pack in a bundle:
 </span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">;</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
 </span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">;</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 <tr>
@@ -58,7 +58,7 @@ Example syntax for including the example icon pack in a bundle:
 </span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">;</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
 </span><span class="k"><span class="kwd">import</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="k"><span class="kwd">from</span></span><span class="pln"> </span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.inline.css'</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 <tr>
@@ -69,7 +69,7 @@ Example syntax for including the example icon pack in a bundle:
 </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
 </span><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">);</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 <tr>
@@ -79,7 +79,7 @@ Example syntax for including the example icon pack in a bundle:
 </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/skins/ui/example/skin.css'</span></span><span class="p"><span class="pun">);</span></span><span class="pln">
 </span><span class="cm"><span class="com">/* Only required for inline editors */</span></span><span class="pln">
 </span><span class="kd"><span class="kwd">var</span></span><span class="pln"> </span><span class="nx"><span class="pln">contentUiInlineCss</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="nx"><span class="kwd">require</span></span><span class="p"><span class="pun">(</span></span><span class="s1"><span class="str">'../tinymce/skins/ui/example/content.inline.css'</span></span><span class="p"><span class="pun">);</span></span>
-</code><button class="copy-to-clipboard-button">COPY CODE</button></pre></div></div>
+</code></pre></div></div>
 </td>
 </tr>
 </tbody>

@@ -13,7 +13,7 @@ The mobile experience for {{site.productname}} is enabled by default and has the
 * Contextual keyboard settings for dialogs using [`inputMode`]({{site.baseurl}}/ui-components/dialogcomponents/#inputmode).
 * [Mobile defaults for selected settings](#mobiledefaultsforselectedsettings).
 
-The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
+The mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 
 * [Comments]({{site.baseurl}}/plugins/premium/comments/).
 * [Image tools]({{site.baseurl}}/plugins/opensource/imagetools/).
@@ -22,7 +22,7 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 
 {{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
-> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+> **Note**: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPad users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
 {% include misc/mobile_platform_compatibility.md %}
 

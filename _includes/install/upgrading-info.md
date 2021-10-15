@@ -35,7 +35,7 @@ $ npm install {{site.prodnamecode}}@latest --save
 #### Composer
 To upgrade to {{site.productname}} {{site.productminorversion}} using Composer, run:
 ```sh
-$ php composer.phar update "{{site.prodnamecode}}/{{site.prodnamecode}}"
+$ composer require tinymce/tinymce
 ```
 
 #### NuGet

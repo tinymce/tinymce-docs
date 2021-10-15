@@ -38,7 +38,7 @@ Return data
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `https://claims.tiny.cloud/rtc/document` | `string` | The document ID that this JWT token can access. If omitted, the JWT token will be able to access any document on the same account. |
+| `https://claims.tiny.cloud/rtc/document` | `string` | The document ID that this JWT can access. If omitted, the JWT will be able to access any document on the same account. |
 | `https://claims.tiny.cloud/rtc/role` | `string` | The possible role values are: `editor` or `viewer`. `viewer` will put the editor into readonly mode and `editor` (default) will let the user edit the document. |
 
 ### Example: Using `rtc_token_provider`

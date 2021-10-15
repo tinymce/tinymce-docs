@@ -122,6 +122,8 @@ tinymce.init({
 
 This event triggers when the user selects **Ignore All** on a misspelled word.
 
+> **Note:** The `language` property on the event is only available for {{ site.productname }} 5.10 and later.
+
 #### Example: The SpellcheckerIgnoreAll event
 
 ```js
@@ -131,7 +133,7 @@ tinymce.init({
   toolbar: 'spellchecker',
   init_instance_callback: function (editor) {
     editor.on('SpellcheckerIgnoreAll', function (e) {
-      console.log('Ignore word (all)', e.word);
+      console.log('Ignore word (all)', e.word, e.language);
     });
   }
 });

@@ -20,7 +20,7 @@ This URL specifies the latest and quality assured release of {{site.productname}
 
 ### Selecting specific version numbers
 
-> All {{site.cloudname}} channels are based on the {{site.enterpriseversion}} version. For information on the latest version of the {{site.cloudname}} `{{site.productmajorversion}}` release channel, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/). For a list of changes that **may** be present in the {{site.cloudname}} testing channel, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+> All {{site.cloudname}} channels are based on the {{site.enterpriseversion}} version. For information on the latest version of the {{site.cloudname}} `{{site.productmajorversion}}` release channel, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-information/release-notes/). For a list of changes that **may** be present in the {{site.cloudname}} testing channel, see: [{{site.productname}} Changelog]({{site.baseurl}}/release-information/changelog/).
 
 ### {{site.productmajorversion}}, {{site.productmajorversion}}-testing, and {{site.productmajorversion}}-dev release channels
 

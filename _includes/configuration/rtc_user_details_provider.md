@@ -1,6 +1,6 @@
 ### `rtc_user_details_provider`
 
-By default, a user's unique ID (`userId`, the `sub` field from their [JWT]({{site.baseurl}}/rtc/jwt-authentication/#requiredjwtclaimsforreal-timecollaboration)) will be displayed as the username in remote caret tooltips.
+By default, a user's unique ID (`userId`, the `sub` field from their [JWT]({{site.baseurl}}/plugins/premium/rtc/jwt-authentication/#requiredjwtclaimsforreal-timecollaboration)) will be displayed as the username in remote caret tooltips.
 
 To display a descriptive name on the caret, the `userId` needs to be resolved into user details that include the user's display name (`fullName`). This resolution is done on each client to avoid sending any personal information through the RTC server.
 

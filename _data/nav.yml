@@ -34,6 +34,22 @@
     - url: "self-hosting-hunspell"
     - url: "dockerservices"
     - url: "troubleshoot"
+  - url: "tinymce-for-mobile"
+  - url: "migration-from-5x"
+    pages:
+    - url: "#Editor-Core"
+    - url: "#Themes"
+    - url: "#User Interface components"
+    - url: "#Plugins"
+
+  - url: "migration-from-froala"
+    pages:
+    - url: "#Migrating a Basic Froala Configuration to TinyMCE"
+    - url: "#Updating the list of Plugins"
+    - url: "#Migrating a Custom Toolbar Layout"
+    - url: "#Configuring Inline Mode"
+    - url: "#Migrating Custom Buttons"
+    - url: "#Migrating Custom Drop-down Toolbar Buttons"
 
 - url: "demo"
   pages:
@@ -76,8 +92,6 @@
   - url: "custom-menu-item"
   - url: "file-picker"
   - url: "local-upload"
-
-- url: "mobile"
 
 - url: "interface"
   pages:
@@ -336,6 +350,65 @@
       - url: "custom-dictionaries-for-tiny-spellchecker"
     - url: "tinydrive"
     - url: "rtc"
+      pages:
+        - url: "introduction"
+          pages:
+          - url: "#Interactive example"
+          - url: "#Features of TinyMCE Real-Time Collaboration"
+          - url: "#Overview of how TinyMCE Real-Time Collaboration works"
+          - url: "#Getting started with Real-Time Collaboration"
+        - url: "rtc-supported-functionality"
+          pages:
+          - url: "#Browser support"
+          - url: "#Mobile support"
+          - url: "#TinyMCE features (plugins) support when using RTC"
+          - url: "#Options that are not available when RTC is enabled"
+        - url: "getting-started"
+          pages:
+          - url: "#1. Register for a Tiny Cloud API key"
+          - url: "#2. Add a public key to the Tiny Cloud API key"
+          - url: "#3. Set up an Encryption endpoint"
+          - url: "#4. Set up a JSON Web Token (JWT) Provider endpoint"
+          - url: "#5. Configure the required TinyMCE RTC options"
+        - url: "encryption"
+          pages:
+          - url: "#Setting up an encryption endpoint"
+          - url: "#General advice on generating a secure encryption key"
+          - url: "#Encryption key rotation and key hints"
+        - url: "jwt-authentication"
+          pages:
+          - url: "#Setting up JWT authentication for Real-Time Collaboration"
+          - url: "#Add a public key to the Tiny Cloud API key"
+          - url: "#Set up a JSON Web Token (JWT) endpoint"
+          - url: "#JWT endpoint examples"
+        - url: "configuration"
+          pages:
+          - url: "rtc-options-overview"
+          - url: "rtc-options-required"
+            pages:
+            - url: "#rtc_document_id"
+            - url: "#rtc_encryption_provider"
+            - url: "#rtc_token_provider"
+          - url: "rtc-options-optional"
+            pages:
+            - url: "#rtc_server_disconnected"
+            - url: "#rtc_user_details_provider"
+            - url: "#rtc_snapshot"
+            - url: "#rtc_initial_content_provider"
+            - url: "#rtc_client_info"
+            - url: "#rtc_client_connected"
+            - url: "#rtc_client_disconnected"
+            - url: "#rtc_unsupported_content_notification"
+        - url: "events"
+          pages:
+          - url: "#RtcClientConnected"
+          - url: "#RtcClientDisconnected"
+        - url: "how-the-rtc-plugin-encrypts-content"
+        - url: "rtc-troubleshooting"
+          pages:
+          - url: "#Common error messages"
+          - url: "#Common JWT error messages"
+
   - url: "opensource"
     pages:
     - url: "advlist"
@@ -639,66 +712,6 @@
       - url: "plugin"
     - url: "changelog"
 
-- url: "rtc"
-  pages:
-    - url: "introduction"
-      pages:
-      - url: "#Interactive example"
-      - url: "#Features of TinyMCE Real-Time Collaboration"
-      - url: "#Overview of how TinyMCE Real-Time Collaboration works"
-      - url: "#Getting started with Real-Time Collaboration"
-    - url: "rtc-supported-functionality"
-      pages:
-      - url: "#Browser support"
-      - url: "#Mobile support"
-      - url: "#TinyMCE features (plugins) support when using RTC"
-      - url: "#Options that are not available when RTC is enabled"
-    - url: "getting-started"
-      pages:
-      - url: "#1. Register for a Tiny Cloud API key"
-      - url: "#2. Add a public key to the Tiny Cloud API key"
-      - url: "#3. Set up an Encryption endpoint"
-      - url: "#4. Set up a JSON Web Token (JWT) Provider endpoint"
-      - url: "#5. Configure the required TinyMCE RTC options"
-    - url: "encryption"
-      pages:
-      - url: "#Setting up an encryption endpoint"
-      - url: "#General advice on generating a secure encryption key"
-      - url: "#Encryption key rotation and key hints"
-    - url: "jwt-authentication"
-      pages:
-      - url: "#Setting up JWT authentication for Real-Time Collaboration"
-      - url: "#Add a public key to the Tiny Cloud API key"
-      - url: "#Set up a JSON Web Token (JWT) endpoint"
-      - url: "#JWT endpoint examples"
-    - url: "configuration"
-      pages:
-      - url: "rtc-options-overview"
-      - url: "rtc-options-required"
-        pages:
-        - url: "#rtc_document_id"
-        - url: "#rtc_encryption_provider"
-        - url: "#rtc_token_provider"
-      - url: "rtc-options-optional"
-        pages:
-        - url: "#rtc_server_disconnected"
-        - url: "#rtc_user_details_provider"
-        - url: "#rtc_snapshot"
-        - url: "#rtc_initial_content_provider"
-        - url: "#rtc_client_info"
-        - url: "#rtc_client_connected"
-        - url: "#rtc_client_disconnected"
-        - url: "#rtc_unsupported_content_notification"
-    - url: "events"
-      pages:
-      - url: "#RtcClientConnected"
-      - url: "#RtcClientDisconnected"
-    - url: "how-the-rtc-plugin-encrypts-content"
-    - url: "rtc-troubleshooting"
-      pages:
-      - url: "#Common error messages"
-      - url: "#Common JWT error messages"
-
 - url: "advanced"
   pages:
   - url: "accessibility"
@@ -889,36 +902,22 @@
     - url: "#TinyMCE Web Component technical reference"
   - url: "wordpress"
 
-- url: "migration-from-5x"
+- url: "release-information"
   pages:
-  - url: "#Editor-Core"
-  - url: "#Themes"
-  - url: "#User Interface components"
-  - url: "#Plugins"
-
-- url: "migration-from-froala"
-  pages:
-  - url: "#Migrating a Basic Froala Configuration to TinyMCE"
-  - url: "#Updating the list of Plugins"
-  - url: "#Migrating a Custom Toolbar Layout"
-  - url: "#Configuring Inline Mode"
-  - url: "#Migrating Custom Buttons"
-  - url: "#Migrating Custom Drop-down Toolbar Buttons"
-
-- url: "release-notes"
-  pages:
-  - url: "6_0_0"
+  - url: "release-notes"
     pages:
-    - url: "6_0_0-release-notes-overview"
-    - url: "6_0_0-release-notes-core-changes"
-    - url: "6_0_0-release-notes-premium-changes"
-    - url: "6_0_0-release-notes-core-security-fixes"
-    - url: "6_0_0-release-notes-core-fixes"
-    - url: "6_0_0-release-notes-deprecated-features"
-    - url: "6_0_0-release-notes-known-issues"
+    - url: "6_0_0"
+      pages:
+      - url: "6_0_0-release-notes-overview"
+      - url: "6_0_0-release-notes-core-changes"
+      - url: "6_0_0-release-notes-premium-changes"
+      - url: "6_0_0-release-notes-core-security-fixes"
+      - url: "6_0_0-release-notes-core-fixes"
+      - url: "6_0_0-release-notes-deprecated-features"
+      - url: "6_0_0-release-notes-known-issues"
 
-- url: "changelog"
-  pages:
-  - url: "#6.0.0 - 2000-12-31"
+  - url: "changelog"
+    pages:
+    - url: "#6.0.0 - 2000-12-31"
 
 - url: "support"

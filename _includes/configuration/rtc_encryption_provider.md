@@ -6,7 +6,7 @@ A key is required when the client needs to:
 1. Encrypt new data in the collaboration session.
 2. Read previously written data from the collaboration session.
 
-For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/rtc/encryption/).
+For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/plugins/premium/rtc/encryption/).
 
 {% if plugincode != "rtc" %}
 Required plugin

@@ -27,9 +27,9 @@ The following "list" should be added to `data/nav.yml`
 
 {{site.productname}} vnumtxt was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} vnumtxt, including:
 
-- [{{site.productname}} core new features, enhancements, and changes]({{site.baseurl}}/release-notes/vnumsnake/vnumsnake-release-notes-core-changes/)
-- [Accompanying premium feature changes]({{site.baseurl}}/release-notes/vnumsnake/vnumsnake-release-notes-premium-changes/)
-- [Security fixes]({{site.baseurl}}/release-notes/vnumsnake/vnumsnake-release-notes-core-security-fixes/)
-- [{{site.productname}} core and core plugin bug fixes]({{site.baseurl}}/release-notes/vnumsnake/vnumsnake-release-notes-core-fixes/)
-- [Deprecated features]({{site.baseurl}}/release-notes/vnumsnake/vnumsnake-release-notes-deprecated-features/)
-- [Known issues]({{site.baseurl}}/release-notes/vnumsnake/vnumsnake-release-notes-known-issues/)
+- [{{site.productname}} core new features, enhancements, and changes]({{site.baseurl}}/release-information/release-notes/vnumsnake/vnumsnake-release-notes-core-changes/)
+- [Accompanying premium feature changes]({{site.baseurl}}/release-information/release-notes/vnumsnake/vnumsnake-release-notes-premium-changes/)
+- [Security fixes]({{site.baseurl}}/release-information/release-notes/vnumsnake/vnumsnake-release-notes-core-security-fixes/)
+- [{{site.productname}} core and core plugin bug fixes]({{site.baseurl}}/release-information/release-notes/vnumsnake/vnumsnake-release-notes-core-fixes/)
+- [Deprecated features]({{site.baseurl}}/release-information/release-notes/vnumsnake/vnumsnake-release-notes-deprecated-features/)
+- [Known issues]({{site.baseurl}}/release-information/release-notes/vnumsnake/vnumsnake-release-notes-known-issues/)

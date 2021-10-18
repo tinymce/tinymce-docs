@@ -25,7 +25,7 @@ Open Source Community Edition users can get free help from Stack Overflow using 
 
 {% include misc/mobile_platform_compatibility.md %}
 
-Visit [{{site.productname}} mobile documentation]({{site.baseurl}}/mobile) for information on {{site.productname}} mobile setup and configuration.
+Visit [{{site.productname}} mobile documentation]({{site.baseurl}}/how-to-guides/tinymce-for-mobile/) for information on {{site.productname}} mobile setup and configuration.
 
 ## Premium plugin support information
 

@@ -28,11 +28,11 @@ Some cloud services for {{site.productname}} require setting up JSON Web Token (
 
 For general information on JWTs, visit: [https://jwt.io/](https://jwt.io/).
 
-For information on using JWT authentication with the Real-Time Collaboration (RTC) plugin, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
+For information on using JWT authentication with the Real-Time Collaboration (RTC) plugin, see: [JWT authentication]({{site.baseurl}}/plugins/premium/rtc/jwt-authentication/).
 
 ### User Presence API
 
-The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. User resolution is performed through the [`rtc_user_details_provider` option]({{site.baseurl}}/rtc/configuration/rtc-options-optional/#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/rtc/configuration/rtc-options-optional/#rtc_client_connected) or [editor events]({{site.baseurl}}/rtc/events#rtcclientconnected).
+The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {{site.cloudname}} will never see who is actually connecting. User resolution is performed through the [`rtc_user_details_provider` option]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_user_details_provider). Presence events can be received through either [configuration callbacks]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_client_connected) or [editor events]({{site.baseurl}}/plugins/premium/rtc/events#rtcclientconnected).
 
 ## Overview of how TinyMCE Real-Time Collaboration works
 
@@ -40,7 +40,7 @@ The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracki
 
 ### When a new document is created
 
-1. The initial content is set using the HTML within the element replaced by the editor, or using the [initial content option]({{site.baseurl}}/rtc/configuration/rtc-options-optional/#rtc_initial_content_provider).
+1. The initial content is set using the HTML within the element replaced by the editor, or using the [initial content option]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_initial_content_provider).
 1. The editor requests and receives the following on behalf of the user:
 
     - A JSON Web Token (JWT) from your server.
@@ -59,4 +59,4 @@ The JWT and encryption details are stored in the browser until required.
 
 ## Getting started with Real-Time Collaboration
 
-For instructions for getting started with {{site.productname}} Real-Time Collaboration, see: [Getting started with Real-Time Collaboration (RTC)]({{site.baseurl}}/rtc/getting-started/).
+For instructions for getting started with {{site.productname}} Real-Time Collaboration, see: [Getting started with Real-Time Collaboration (RTC)]({{site.baseurl}}/plugins/premium/rtc/getting-started/).

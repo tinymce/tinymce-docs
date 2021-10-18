@@ -114,6 +114,14 @@ These versions require Java 8 or higher. For information on the removal of Java 
 
 The Spelling service now includes a new configuration option, allowing the server to reject spelling requests that contain too many incorrect words. For details, see: [Configure server-side components: `num-incorrect-words-in-suggestions-request-limit`]({{site.baseurl}}/enterprise/server/configure/#num-incorrect-words-in-suggestions-request-limitoptional).
 
+### Image Proxy service patch release
+
+Version 2.105.4 of the image proxy service returns a new error when `Content-Length` is not present on the image being proxied.
+
+### Hyperlinking service patch release 
+
+Version 2.105.5 of the hyperlinking service includes a fix to send `Accept` headers with the link-checking requests. 
+
 For information on:
 
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).

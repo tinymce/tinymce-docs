@@ -7,8 +7,8 @@ description: This section lists the premium plugins provided by Tiny.
 type: folder
 ---
 
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "plugins" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "premium" %}

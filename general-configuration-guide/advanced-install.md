@@ -52,6 +52,3 @@ There are multiple ways to instantiate {{site.productname}}. Accessing {{site.pr
 ## Custom Build Install
 
 {% include install/custom.md %}
-
-{% assign_page next_page = "/general-configuration-guide/work-with-plugins/index.html" %}
-{% include next-step.html next=next_page %}

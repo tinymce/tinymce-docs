@@ -127,11 +127,11 @@ The following procedure covers downloading, configuring, building and testing th
     }
     ```
 
-    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
+    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#httpoptional).
 
 14. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-spelling-docker-env.conf`. See:
-    [Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
-15. _Optional_: Add a custom dictionary, as described in [Adding custom dictionaries]({{site.baseurl}}/enterprise/check-spelling/custom/).
+    [Configure server-side components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/).
+15. _Optional_: Add a custom dictionary, as described in [Adding custom dictionaries]({{site.baseurl}}/plugins/premium/tinymcespellchecker/custom-dictionaries-for-tiny-spellchecker/).
 16. Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-spelling-docker-env.conf`.
 
     For example:
@@ -142,7 +142,7 @@ The following procedure covers downloading, configuring, building and testing th
     ORIGIN2=http://example.org
     ```
 
-    For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/enterprise/server/configure/#allowed-originsrequired).
+    For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired).
 
 17. As the root user or Administrator, build the {{site.productname}} Spelling Service Docker image using the following command:
 

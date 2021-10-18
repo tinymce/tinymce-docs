@@ -16,13 +16,6 @@
   - url: "spell-checking"
   - url: "filter-content"
   - url: "localize-your-language"
-  - url: "attribution-requirements"
-  - url: "system-requirements"
-    pages:
-    - url: "#Supported TinyMCE versions"
-    - url: "#Supported Web Browsers"
-    - url: "#Supported Mobile Platforms"
-  - url: "get-support"
 
 - url: "cloud-deployment-guide"
   pages:
@@ -32,6 +25,16 @@
   - url: "plugin-editor-version-compatibility"
   - url: "cloud-troubleshooting"
 
+- url: "how-to-guides"
+  pages:
+  - url: "premium-server-side-guide"
+    pages:
+    - url: "introduction-to-premium-selfhosted-services"
+    - url: "configure"
+    - url: "self-hosting-hunspell"
+    - url: "dockerservices"
+    - url: "troubleshoot"
+
 - url: "demo"
   pages:
   - url: "basic-example"
@@ -39,6 +42,19 @@
     pages:
     - url: "#Full Featured: Including Premium Plugins"
     - url: "#Full Featured: Non-Premium Plugins"
+  - url: "premium-skins-and-icon-packs"
+    pages:
+    - url: "bootstrap-demo"
+    - url: "borderless-demo"
+    - url: "fabric-demo"
+    - url: "fluent-demo"
+    - url: "jam-demo"
+    - url: "material-classic-demo"
+    - url: "material-outline-demo"
+    - url: "naked-demo"
+    - url: "outside-demo"
+    - url: "small-demo"
+    - url: "snow-demo"
   - url: "casechange"
   - url: "comments-2"
   - url: "checklist"
@@ -62,6 +78,12 @@
   - url: "local-upload"
 
 - url: "mobile"
+
+- url: "interface"
+  pages:
+  - url: "editor-appearance"
+    pages:
+    - url: "premium-skins-and-icons"
 
 - url: "configure"
   pages:
@@ -224,8 +246,6 @@
     - url: "#object_resizing"
     - url: "#resize_img_proportional"
     - url: "#typeahead_urls"
-  - url: "contributing-to-open-source"
-  - url: "contributing-docs"
 
 - url: "plugins"
   pages:
@@ -258,6 +278,10 @@
       - url: "comments_toolbars_menus"
       - url: "comments_commands_events_apis"
     - url: "mediaembed"
+      pages:
+      - url: "introduction-to-mediaembed"
+      - url: "mediaembed-server-config"
+      - url: "mediaembed-server-integration"
     - url: "export"
       pages:
       - url: "#export_cors_hosts"
@@ -307,6 +331,9 @@
       - url: "#paste_preprocess"
       - url: "#paste_postprocess"
     - url: "tinymcespellchecker"
+      pages:
+      - url: "introduction-to-tiny-spellchecker"
+      - url: "custom-dictionaries-for-tiny-spellchecker"
     - url: "tinydrive"
     - url: "rtc"
   - url: "opensource"
@@ -590,66 +617,6 @@
     - url: "#Split button"
     - url: "#Group button"
 
-- url: "enterprise"
-  pages:
-  - url: "tiny-comments"
-  - url: "tinydrive"
-  - url: "moxiemanager"
-  - url: "premium-skins-and-icon-packs"
-    pages:
-    - url: "bootstrap-demo"
-    - url: "material-classic-demo"
-    - url: "material-outline-demo"
-    - url: "fabric-demo"
-    - url: "fluent-demo"
-    - url: "borderless-demo"
-    - url: "small-demo"
-    - url: "jam-demo"
-    - url: "naked-demo"
-    - url: "outside-demo"
-    - url: "snow-demo"
-  - url: "pageembed"
-  - url: "permanentpen"
-  - url: "formatpainter"
-  - url: "checklist"
-  - url: "paste-from-word"
-  - url: "check-spelling"
-    pages:
-    - url: "custom"
-  - url: "casechange"
-  - url: "check-links"
-  - url: "embed-media"
-    pages:
-    - url: "mediaembed-server-config"
-    - url: "mediaembed-server-integration"
-  - url: "accessibility"
-  - url: "mentions"
-  - url: "server"
-    pages:
-    - url: "configure"
-      pages:
-      - url: "#Creating a configuration file"
-      - url: "#General service settings"
-      - url: "#Image proxy service settings"
-      - url: "#Hyperlinking service settings"
-      - url: "#Spelling service settings"
-      - url: "#Logging service activity"
-    - url: "self-hosting-hunspell"
-    - url: "dockerservices"
-    - url: "troubleshoot"
-  - url: "advcode"
-  - url: "advanced-tables"
-  - url: "export"
-  - url: "support"
-  - url: "system-requirements"
-    pages:
-    - url: "#Supported TinyMCE versions"
-    - url: "#Supported Web Browsers"
-    - url: "#Supported Mobile Platforms"
-    - url: "#Supported Application Servers: Self-hosted Enterprise"
-    - url: "#Premium Plugin Support"
-    - url: "#Supported Premium Plugins"
-
 - url: "tinydrive"
   pages:
     - url: "introduction"
@@ -671,7 +638,6 @@
       - url: "standalone"
       - url: "plugin"
     - url: "changelog"
-    - url: "get-help"
 
 - url: "rtc"
   pages:
@@ -954,3 +920,5 @@
 - url: "changelog"
   pages:
   - url: "#6.0.0 - 2000-12-31"
+
+- url: "support"

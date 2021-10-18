@@ -12,11 +12,19 @@ controls: toolbar button, menu item
 
 {{site.premiumplugin}}
 
-The **Page Embed** plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for online courses and learning materials.
+The **Page Embed** plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for:
+
+* Online courses and learning materials.
+* Online advertising
+* Creating multimedia content
 
 ## Try our Page Embed plugin demo
 
 {% include live-demo.html id="page-embed" %}
+
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'pageembed' %}
+{% include misc/purchase-premium-plugins.md %}
 
 ## Creating a Page Embed toolbar button
 

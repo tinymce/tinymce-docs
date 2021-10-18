@@ -8,7 +8,7 @@
 {% endif %}
 ## Getting started with {% if pluginname != 'Tiny Drive' %}{{site.productname}}{% endif %} {{pluginname}}
 
-### Creating an account
+### Creating a {{site.cloudname}} account
 
 Try the **{{pluginname}} {{extensionType}}** and the {{site.cloudname}} with a free [{{site.accountpage}}]({{site.accountsignup}}). New accounts receive a 30-day trial of the {{site.companyname}} [premium plugins]({{site.plugindirectory}}), skins, and icon packs; with no credit card information or commitment required.
 
@@ -33,7 +33,7 @@ A 14-day free trial is also available for the {{site.tiertwoplan}} and the {{sit
 A 14-day free trial is available for the {{site.tierthreeplan}}.
 {% endif %}
 
-## Further information
+### Further information
 
 For information on:
 

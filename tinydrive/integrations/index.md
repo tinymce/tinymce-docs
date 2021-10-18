@@ -6,8 +6,8 @@ description: Third-party integrations to make your Tiny Drive experience smooth 
 type: folder
 keywords: tinydrive storage googledrive dropbox
 ---
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "tinydrive" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "integrations" %}

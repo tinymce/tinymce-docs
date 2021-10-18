@@ -18,6 +18,10 @@ The **Case Change** plugin is a time saving and handy extension that allows chan
 
 {% include live-demo.html id="casechange" %}
 
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'casechange' %}
+{% include misc/purchase-premium-plugins.md %}
+
 ## Changing the case of selected text
 
 Perform the following steps to change the case of selected text in a document to lowercase, UPPERCASE, or Title Case:
@@ -34,11 +38,11 @@ Currently, there are three types of formats available:
 
 ### lowercase
 
-The **lowercase** option changes all the selected characters to lowercase. This is a handy option in situations when the Caps Lock key was accidentally left on while typing. Instead of starting over and retyping everything, the user can simply select this text and change words to lowercase if they have been erroneously capitalized in the input.
+The **lowercase** option changes all the selected characters to lowercase.
 
 ### UPPERCASE
 
-The **UPPERCASE** option changes all the selected characters to uppercase. This formatting option is useful in documentation, where "initial caps" are to be used ("headline style") as opposed to sentence style (first word of sentence or phrase capitalized only), regardless of the specific type of title, heading, header, or interface text.
+The **UPPERCASE** option changes all the selected characters to uppercase.
 
 ### Title Case
 

@@ -48,7 +48,7 @@ The following procedure covers downloading, configuring, building and testing th
     }
     ```
 
-    For information on the `image-proxy` configuration setting, see: [Configure server-side components - `image-proxy`]({{site.baseurl}}/enterprise/server/configure/#image-proxyoptional).
+    For information on the `image-proxy` configuration setting, see: [Configure server-side components - `image-proxy`]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#image-proxyoptional).
 
 1. _Optional_: Edit the `http` configuration settings in `config/ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
@@ -66,9 +66,9 @@ The following procedure covers downloading, configuring, building and testing th
     }
     ```
 
-    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
+    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#httpoptional).
 
-1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See: [Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
+1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See: [Configure server-side components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/).
 7. Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-image-proxy-docker-env.conf`.
 
     For example:
@@ -79,7 +79,7 @@ The following procedure covers downloading, configuring, building and testing th
     ORIGIN2=http://example.org
     ```
 
-    For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/enterprise/server/configure/#allowed-originsrequired).
+    For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired).
 
 8. As the root user or Administrator, build the {{site.productname}} Image Proxy Docker image using the following command:
 

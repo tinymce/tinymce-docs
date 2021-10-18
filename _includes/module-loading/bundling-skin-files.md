@@ -24,7 +24,7 @@ Dark skin (oxide-dark)
 
 ## Premium Skins
 
-For information on premium editor skins, see: [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+For information on premium editor skins, see: [{{site.prem_skins_icons}}]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/).
 
 Bootstrap skin
 : ```

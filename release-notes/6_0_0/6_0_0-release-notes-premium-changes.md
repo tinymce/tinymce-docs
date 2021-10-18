@@ -42,7 +42,7 @@ The {{site.productname}} 6.0 release includes an accompanying release of the **P
 Add description here.
 {% endcomment %}
 
-For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/).
 
 ### Premium Skins and Icon Packs - Bug fixes
 
@@ -52,7 +52,7 @@ The **Premium Skins and Icon Packs** release includes the following bug fixes:
 Add description here.
 {% endcomment %}
 
-For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/).
 
 ## Accompanying Premium self-hosted server-side component changes
 
@@ -77,7 +77,7 @@ For information on:
 - The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
 - The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
-- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
+- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/how-to-guides/premium-server-side-guide/).
 
 ### Updating the self-hosted server-side components
 
@@ -91,5 +91,5 @@ The new versions of the server-side services provide updates for the Java-based 
 
 For information on:
 
-- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
-- Deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/how-to-guides/premium-server-side-guide/).
+- Deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/how-to-guides/premium-server-side-guide/dockerservices/).

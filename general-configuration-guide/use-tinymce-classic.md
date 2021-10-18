@@ -39,5 +39,4 @@ tinymce.init({
 * For information on localizing {{site.productname}}, see: [Localize TinyMCE]({{site.baseurl}}/general-configuration-guide/localize-your-language/).
 * For information on all {{site.productname}} configuration settings, see: [Configuration options reference]({{site.baseurl}}/configure/).
 
-{% assign_page next_page = "/general-configuration-guide/use-tinymce-inline/index.html" %}
-{% include next-step.html next=next_page %}
+

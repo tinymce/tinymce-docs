@@ -62,5 +62,4 @@ The following code snippet sets {{site.productname}}'s language to Chinese and t
 </html>
 ```
 
-{% assign_page next_page = "/general-configuration-guide/system-requirements/index.html" %}
-{% include next-step.html next=next_page %}
+

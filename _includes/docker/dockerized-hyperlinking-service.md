@@ -124,11 +124,11 @@ and download either:
     }
     ```
 
-    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
+    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#httpoptional).
 
-1. _Optional_: Update the link-checking cache configuration, as described in [Link Checker self-hosted quick setup]({{site.baseurl}}/enterprise/check-links/#linkcheckerself-hostedquicksetup).
-1. _Optional_: Configure the Enhanced Media Embed Service, as described in [Configure Enhanced Media Embed Server]({{site.baseurl}}/enterprise/embed-media/mediaembed-server-config/).
-1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See: [Configure server-side components - proxy]({{site.baseurl}}/enterprise/server/configure/#proxyoptional).
+1. _Optional_: Update the link-checking cache configuration, as described in [Link Checker self-hosted quick setup]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#hyperlinkingservicesettings).
+1. _Optional_: Configure the Enhanced Media Embed Service, as described in [Configure Enhanced Media Embed Server]({{site.baseurl}}/plugins/premium/mediaembed/mediaembed-server-config/).
+1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See: [Configure server-side components - proxy]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#proxyoptional).
 1. Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-hyperlinking-docker-env.conf`.
 
     For example:
@@ -139,7 +139,7 @@ and download either:
     ORIGIN2=http://example.org
     ```
 
-    For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/enterprise/server/configure/#allowed-originsrequired).
+    For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired).
 
 2. As the root user or Administrator, build the {{site.productname}} Hyperlinking Docker image using the following command:
 

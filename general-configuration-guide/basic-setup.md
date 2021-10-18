@@ -62,7 +62,7 @@ tinymce.init({
 Providing a {{site.productname}} editor with the default configuration, such as:
 {% include live-demo.html id="default" %}
 
-The selector can target most block elements when the editor is used in [inline editing mode](../use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
+The selector can target most block elements when the editor is used in [inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
 
 The following example uses the `selector` in inline editing mode on a `div` element with `id` `'editable'`:
 
@@ -73,7 +73,7 @@ tinymce.init({
 });
 ```
 
-For information on the differences between the classic and inline editing modes, see: [Setup inline editing mode](../use-tinymce-inline/).
+For information on the differences between the classic and inline editing modes, see: [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
 ## Plugin configuration
 
@@ -282,5 +282,4 @@ content_css: 'css/content.css',
 * For information on the UI elements, see: [User interface components]({{ site.baseurl }}/ui-components/).
 * For information on the CSS required to render some {{site.productname}} elements outside of the editor, see: [Boilerplate content CSS]({{site.baseurl}}/general-configuration-guide/boilerplate-content-css/).
 
-{% assign_page next_page = "/general-configuration-guide/use-tinymce-classic/index.html" %}
-{% include next-step.html next=next_page %}
+

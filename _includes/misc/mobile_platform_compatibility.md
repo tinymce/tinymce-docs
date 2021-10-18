@@ -1,4 +1,4 @@
-## Supported Mobile Platforms
+### Supported Mobile Platforms
 
 {{site.productname}} mobile is designed to run on iOS Safari and Android Chrome. {{site.productname}} mobile is tested on the following platforms:
 

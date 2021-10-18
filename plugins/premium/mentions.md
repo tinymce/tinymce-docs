@@ -6,6 +6,9 @@ description: Enables @mention functionality.
 keywords: mentions atmentions
 ---
 
+{% assign pluginname = 'Mentions' %}
+{% assign plugincode = 'mentions' %}
+
 {{site.premiumplugin}}
 
 The mentions plugin will present a list of users when a user types the "@" symbol followed by the beginnings of a username after it. It will then query your server using the `mentions_fetch` callback.
@@ -13,6 +16,10 @@ The mentions plugin will present a list of users when a user types the "@" symbo
 ## Interactive example
 
 {% include live-demo.html id="mentions" height="400" %}
+
+{% assign pluginminimumplan = 'enterprise' %}
+{% assign plugindocspage = 'mentions' %}
+{% include misc/purchase-premium-plugins.md %}
 
 ## Options
 

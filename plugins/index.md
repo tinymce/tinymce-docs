@@ -7,8 +7,8 @@ description: TinyMCE is an incredibly powerful, flexible and customizable rich t
 type: folder
 ---
 
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "plugins" %}
     {% assign links = entry.pages %}
   {% endif %}

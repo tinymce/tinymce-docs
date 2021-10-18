@@ -33,7 +33,7 @@ The storage and bandwidth quota varies based upon the [{{site.cloudname}} Plan](
 
 Here is a quick demo on how {{site.cloudfilemanager}} integrates with {{site.productname}}.
 
-{% include live-demo.html id="drive-demo" %}
+{% include live-demo.html id="drive" %}
 
 ## Upload files URL
 

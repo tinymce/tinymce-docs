@@ -13,8 +13,16 @@ keywords: sort rownumbering series tables advanced advtable premium
 {{site.premiumplugin}}
 
 The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding the following advanced functionality:
+
 - Sort options for rows and columns.
 - Row numbering column for tables.
+
+## Try our Advanced Tables Demo
+
+{% include live-demo.html id="advtable" %}
+
+{% assign pluginminimumplan = 'tiertwo' %}
+{% include misc/purchase-premium-plugins.md %}
 
 ## Enabling the Advanced Tables plugin
 
@@ -50,7 +58,6 @@ The plugin is capable of sorting:
 > **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
 
 ## Adding row numbering to a table
-
 
 A row numbering column containing a series of values can be added to a table to help identify rows in a table. To allow row numbering on tables, the `advtablerownumbering` toolbar button and menu item can be used.
 

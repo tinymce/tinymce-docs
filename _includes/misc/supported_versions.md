@@ -1,4 +1,4 @@
-## Supported {{site.productname}} versions
+### Supported {{site.productname}} versions
 
 Supported versions of {{site.productname}}:
 

@@ -37,6 +37,10 @@ For more information on {{site.productname}} formats, refer to the [formats]({{s
 
 {% include live-demo.html id="permanent-pen" %}
 
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'permanentpen' %}
+{% include misc/purchase-premium-plugins.md %}
+
 ## Using a Permanent Pen
 
 ### To enable Permanent Pen

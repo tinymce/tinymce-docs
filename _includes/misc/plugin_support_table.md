@@ -1,4 +1,4 @@
-## Supported Premium Plugins
+### Supported Premium Plugins
 
 The following list of premium plugins are supported by {{site.companynameformal}} for {{site.productname}} {{site.productminorversion}}:
 
@@ -19,4 +19,4 @@ The following list of premium plugins are supported by {{site.companynameformal}
 - [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/)
 - [Real-Time Collaboration (RTC)]({{site.baseurl}}/plugins/premium/rtc/)
 - [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/)
-- [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/)
+- [{{site.prem_skins_icons}}]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/)

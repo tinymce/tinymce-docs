@@ -12,13 +12,17 @@ controls: toolbar button
 
 {{site.premiumplugin}}
 
-The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
+The **Checklist** plugin allows the user to add checkbox lists to their content for creating checklists.
 
 ## Try our Checklist demo
 
 In the {{site.productname}} editor, checklists are presented as lists with small checkboxes beside the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 
 {% include live-demo.html id="checklist" %}
+
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'checklist' %}
+{% include misc/purchase-premium-plugins.md %}
 
 ## Creating a Checklist
 

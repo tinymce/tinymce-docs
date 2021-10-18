@@ -7,8 +7,8 @@ type: folder
 keywords: tinydrive .net node.js php java
 ---
 
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "tinydrive" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "libraries" %}

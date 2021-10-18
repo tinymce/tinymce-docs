@@ -6,7 +6,7 @@ description: Checks the contents of the editor for WCAG & Section 508 accessibil
 keywords: a11y accessibility WCAG
 ---
 
-{% assign pluginname = "A11yChecker" %}
+{% assign pluginname = 'Accessibility Checker' %}
 {% assign plugincode = "a11ychecker" %}
 
 {{site.premiumplugin}}
@@ -16,6 +16,10 @@ The `a11ychecker` premium plugin allows you to check the HTML in the editor for 
 ## Interactive example
 
 {% include live-demo.html id="a11ychecker" %}
+
+{% assign pluginminimumplan = 'tierthree' %}
+{% assign plugindocspage = 'a11ychecker' %}
+{% include misc/purchase-premium-plugins.md %}
 
 ## Basic setup
 

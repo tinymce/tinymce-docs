@@ -1,0 +1,1996 @@
+Configuration file: _config.yml
+Configuration file: _config-local.yml
+Configuration file: _config-local-override.yml
+            Source: /home/tyler/Projects/docs
+       Destination: /home/tyler/Projects/docs/_site
+ Incremental build: enabled
+      Generating... 
+jekyll 3.9.0 | Error:  783: unexpected token at '{
+
+  "/release-notes/6.0-upcoming-changes/": {
+    "title": "List of upcoming changes for TinyMCE 6",
+    "description": "List of upcoming changes for TinyMCE 6, including deprecated features.",
+    "url": "/release-notes/6.0-upcoming-changes/"
+  },
+
+  "/release-notes/6_0_0/6_0_0-release-notes-core-changes/": {
+    "title": "New features, enhancements, and changes for TinyMCE 6.0 core and core plugins",
+    "description": "New features, enhancements, and functionality changes for TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/6_0_0-release-notes-core-changes/"
+  },
+
+  "/release-notes/6_0_0/6_0_0-release-notes-core-fixes/": {
+    "title": "6.0 Core and core plugin bug fixes",
+    "description": "Bug fixes for TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/6_0_0-release-notes-core-fixes/"
+  },
+
+  "/release-notes/6_0_0/6_0_0-release-notes-core-security-fixes/": {
+    "title": "6.0 Security fixes",
+    "description": "Security fixes in TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/6_0_0-release-notes-core-security-fixes/"
+  },
+
+  "/release-notes/6_0_0/6_0_0-release-notes-deprecated-features/": {
+    "title": "6.0 Deprecated features",
+    "description": "Features deprecated in TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/6_0_0-release-notes-deprecated-features/"
+  },
+
+  "/release-notes/6_0_0/6_0_0-release-notes-known-issues/": {
+    "title": "6.0 Known issues",
+    "description": "Known issues for TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/6_0_0-release-notes-known-issues/"
+  },
+
+  "/release-notes/6_0_0/6_0_0-release-notes-overview/": {
+    "title": "TinyMCE 6.0",
+    "description": "Release notes overview for TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/6_0_0-release-notes-overview/"
+  },
+
+  "/release-notes/6_0_0/6_0_0-release-notes-premium-changes/": {
+    "title": "Accompanying premium feature changes",
+    "description": "Premium feature changes accompanying TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/6_0_0-release-notes-premium-changes/"
+  },
+
+  "/plugins/premium/a11ychecker/": {
+    "title": "Accessibility Checker plugin",
+    "description": "Checks the contents of the editor for WCAG & Section 508 accessibility problems.",
+    "url": "/plugins/premium/a11ychecker/"
+  },
+
+  "/advanced/accessibility/": {
+    "title": "Accessibility",
+    "description": "Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.",
+    "url": "/advanced/accessibility/"
+  },
+
+  "/configure/accessibility/": {
+    "title": "Accessibility options",
+    "description": "Configure the accessibility of TinyMCE.",
+    "url": "/configure/accessibility/"
+  },
+
+  "/configure/advanced-editing-behavior/": {
+    "title": "Advanced editing behaviors",
+    "description": "Learn about some edge case editor behavior.",
+    "url": "/configure/advanced-editing-behavior/"
+  },
+
+  "/general-configuration-guide/advanced-install/": {
+    "title": "Installing TinyMCE",
+    "description": "Learn how to install TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, jQuery and custom build options.",
+    "url": "/general-configuration-guide/advanced-install/"
+  },
+
+  "/plugins/premium/advcode/": {
+    "title": "Advanced Code Editor plugin",
+    "description": "How to setup TinyMCE's Advanced Code Editor plugin.",
+    "url": "/plugins/premium/advcode/"
+  },
+
+  "/plugins/opensource/advlist/": {
+    "title": "Advanced List plugin",
+    "description": "Create styled number and bulleted lists.",
+    "url": "/plugins/opensource/advlist/"
+  },
+
+  "/plugins/premium/advtable/": {
+    "title": "Advanced Tables plugin",
+    "description": "Add advanced functionality to tables.",
+    "url": "/plugins/premium/advtable/"
+  },
+
+  "/plugins/opensource/anchor/": {
+    "title": "Anchor plugin",
+    "description": "Insert anchors (sometimes referred to as a bookmarks).",
+    "url": "/plugins/opensource/anchor/"
+  },
+
+  "/integrations/angular/": {
+    "title": "Angular 5+ integration",
+    "description": "Using TinyMCE together with Angular with the @tinymce/tinymce-angular component",
+    "url": "/integrations/angular/"
+  },
+
+  "/integrations/angularjs/": {
+    "title": "AngularJS integration",
+    "description": "This directive allows you to add a TinyMCE editor to your form elements.",
+    "url": "/integrations/angularjs/"
+  },
+
+  "/advanced/annotations/": {
+    "title": "Annotations",
+    "description": "TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.",
+    "url": "/advanced/annotations/"
+  },
+
+  "/ui-components/autocompleter/": {
+    "title": "Autocompleter",
+    "description": "Add a custom autocompleter to TinyMCE 6.",
+    "url": "/ui-components/autocompleter/"
+  },
+
+  "/plugins/opensource/autolink/": {
+    "title": "Autolink plugin",
+    "description": "Automatically create hyperlinks.",
+    "url": "/plugins/opensource/autolink/"
+  },
+
+  "/plugins/opensource/autoresize/": {
+    "title": "Autoresize plugin",
+    "description": "Automatically resize TinyMCE to fit content.",
+    "url": "/plugins/opensource/autoresize/"
+  },
+
+  "/plugins/opensource/autosave/": {
+    "title": "Autosave plugin",
+    "description": "Automatically save content in your local browser.",
+    "url": "/plugins/opensource/autosave/"
+  },
+
+  "/advanced/available-menu-items/": {
+    "title": "Menu Items Available for TinyMCE",
+    "description": "Complete list of menu items available for the menu bar and context menus.",
+    "url": "/advanced/available-menu-items/"
+  },
+
+  "/advanced/available-toolbar-buttons/": {
+    "title": "Toolbar Buttons Available for TinyMCE",
+    "description": "Complete list of toolbar buttons available for the toolbar and quick toolbars.",
+    "url": "/advanced/available-toolbar-buttons/"
+  },
+
+  "/demo/basic-example/": {
+    "title": "Basic example",
+    "description": "This example contains the plugins needed for the most common use cases.",
+    "url": "/demo/basic-example/"
+  },
+
+  "/general-configuration-guide/basic-setup/": {
+    "title": "Basic setup",
+    "description": "TinyMCE provides a range of configuration options that allow you to integrate it into your application.",
+    "url": "/general-configuration-guide/basic-setup/"
+  },
+
+  "/integrations/blazor/": {
+    "title": "Blazor integration",
+    "description": "Blazor TinyMCE component.",
+    "url": "/integrations/blazor/"
+  },
+
+  "/general-configuration-guide/boilerplate-content-css/": {
+    "title": "Boilerplate content CSS",
+    "description": "Learn how to set up CSS for your site to integrate TinyMCE.",
+    "url": "/general-configuration-guide/boilerplate-content-css/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/bootstrap-demo/": {
+    "title": "Bootstrap skin demo",
+    "description": "Bootstrap Demo",
+    "url": "/demo/premium-skins-and-icon-packs/bootstrap-demo/"
+  },
+
+  "/integrations/bootstrap/": {
+    "title": "Bootstrap integration",
+    "description": "How to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE.",
+    "url": "/integrations/bootstrap/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/borderless-demo/": {
+    "title": "Borderless skin demo",
+    "description": "Borderless Demo",
+    "url": "/demo/premium-skins-and-icon-packs/borderless-demo/"
+  },
+
+  "/advanced/usage-with-module-loaders/browserify/browserify_cjs_download/": {
+    "title": "Bundling a .zip version of TinyMCE with CommonJS and Browserify",
+    "description": "Bundling a .zip archive version of TinyMCE in a project using CommonJS and Browserify",
+    "url": "/advanced/usage-with-module-loaders/browserify/browserify_cjs_download/"
+  },
+
+  "/advanced/usage-with-module-loaders/browserify/browserify_cjs_npm/": {
+    "title": "Bundling an npm version of TinyMCE with CommonJS and Browserify",
+    "description": "Bundling an npm version of TinyMCE in a project using CommonJS and Browserify",
+    "url": "/advanced/usage-with-module-loaders/browserify/browserify_cjs_npm/"
+  },
+
+  "/demo/casechange/": {
+    "title": "Case Change",
+    "description": "Change the case of text.",
+    "url": "/demo/casechange/"
+  },
+
+  "/plugins/premium/casechange/": {
+    "title": "Case Change",
+    "description": "Change the case of text.",
+    "url": "/plugins/premium/casechange/"
+  },
+
+  "/tinydrive/changelog/": {
+    "title": "Tiny Drive Changelog",
+    "description": "The history of Tiny Drive releases.",
+    "url": "/tinydrive/changelog/"
+  },
+
+  "/changelog/": {
+    "title": "Changelog",
+    "description": "The history of TinyMCE releases.",
+    "url": "/changelog/"
+  },
+
+  "/plugins/opensource/charmap/": {
+    "title": "Character Map plugin",
+    "description": "Insert special characters into TinyMCE.",
+    "url": "/plugins/opensource/charmap/"
+  },
+
+  "/demo/checklist/": {
+    "title": "Checklist plugin",
+    "description": "Add checklists to the content.",
+    "url": "/demo/checklist/"
+  },
+
+  "/plugins/premium/checklist/": {
+    "title": "Checklist plugin",
+    "description": "Add checklists to your content.",
+    "url": "/plugins/premium/checklist/"
+  },
+
+  "/demo/classic/": {
+    "title": "Classic editor example",
+    "description": "This example shows you how to use TinyMCE classic editor.",
+    "url": "/demo/classic/"
+  },
+
+  "/cloud-deployment-guide/cloud-troubleshooting/": {
+    "title": "Cloud Troubleshooting",
+    "description": "Causes and solutions to common issues when using Tiny Cloud",
+    "url": "/cloud-deployment-guide/cloud-troubleshooting/"
+  },
+
+  "/plugins/opensource/code/": {
+    "title": "Code plugin",
+    "description": "Edit your content's HTML source.",
+    "url": "/plugins/opensource/code/"
+  },
+
+  "/plugins/opensource/codesample/": {
+    "title": "Code Sample plugin",
+    "description": "Insert and embed syntax highlighted code snippets.",
+    "url": "/plugins/opensource/codesample/"
+  },
+
+  "/demo/comments-2/": {
+    "title": "The Comments plugin Demo",
+    "description": "Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.",
+    "url": "/demo/comments-2/"
+  },
+
+  "/plugins/premium/comments/comments_callback_mode/": {
+    "title": "Configuring the Comments plugin in callback mode",
+    "description": "Information on configuring the Comments plugin in callback mode",
+    "url": "/plugins/premium/comments/comments_callback_mode/"
+  },
+
+  "/plugins/premium/comments/comments_commands_events_apis/": {
+    "title": "Commands for the comments plugin",
+    "description": "Information on the commands provided with the comments plugin.",
+    "url": "/plugins/premium/comments/comments_commands_events_apis/"
+  },
+
+  "/plugins/premium/comments/comments_embedded_mode/": {
+    "title": "Configuring the Comments plugin in embedded mode",
+    "description": "Information on configuring the Comments plugin in embedded mode",
+    "url": "/plugins/premium/comments/comments_embedded_mode/"
+  },
+
+  "/plugins/premium/comments/comments_toolbars_menus/": {
+    "title": "Toolbar buttons and menu items for the comments plugin",
+    "description": "Details of the toolbar buttons and menu items provided for the comments plugin.",
+    "url": "/plugins/premium/comments/comments_toolbars_menus/"
+  },
+
+  "/plugins/premium/comments/comments_using_comments/": {
+    "title": "Using TinyMCE Comments",
+    "description": "How to add, edit, resolve, and remove comments in TinyMCE",
+    "url": "/plugins/premium/comments/comments_using_comments/"
+  },
+
+  "/tinydrive/configuration/": {
+    "title": "Tiny Drive configuration",
+    "description": "List of all available Tiny Drive configuration options.",
+    "url": "/tinydrive/configuration/"
+  },
+
+  "/how-to-guides/premium-server-side-guide/configure/": {
+    "title": "Configure server-side components",
+    "description": "Configuration options for premium server-side components.",
+    "url": "/how-to-guides/premium-server-side-guide/configure/"
+  },
+
+  "/configure/content-appearance/": {
+    "title": "Content appearance options",
+    "description": "Configure the appearance of content inside TinyMCE's editable area.",
+    "url": "/configure/content-appearance/"
+  },
+
+  "/advanced/usage-with-module-loaders/reference/content-css/": {
+    "title": "Bundling TinyMCE content CSS using module loading",
+    "description": "Information on bundling the editor content CSS using module loading",
+    "url": "/advanced/usage-with-module-loaders/reference/content-css/"
+  },
+
+  "/configure/content-filtering/": {
+    "title": "Content filtering options",
+    "description": "These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.",
+    "url": "/configure/content-filtering/"
+  },
+
+  "/configure/content-formatting/": {
+    "title": "Content formatting options",
+    "description": "These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.",
+    "url": "/configure/content-formatting/"
+  },
+
+  "/ui-components/contextform/": {
+    "title": "Context forms",
+    "description": "Context forms overview",
+    "url": "/ui-components/contextform/"
+  },
+
+  "/ui-components/contextmenu/": {
+    "title": "Context menu",
+    "description": "Context menu overview",
+    "url": "/ui-components/contextmenu/"
+  },
+
+  "/ui-components/contexttoolbar/": {
+    "title": "Context toolbar",
+    "description": "Context toolbar overview",
+    "url": "/ui-components/contexttoolbar/"
+  },
+
+  "/configure/contributing-docs/": {
+    "title": "Contribute to documentation",
+    "description": "Contribute to TinyMCE's developer documentation.",
+    "url": "/configure/contributing-docs/"
+  },
+
+  "/advanced/creating-a-plugin/": {
+    "title": "Create a plugin for TinyMCE",
+    "description": "A short introduction to creating plugins for TinyMCE along with an example plugin.",
+    "url": "/advanced/creating-a-plugin/"
+  },
+
+  "/advanced/creating-a-skin/": {
+    "title": "Create a skin for TinyMCE",
+    "description": "Introducing skin creation, less and icon modification.",
+    "url": "/advanced/creating-a-skin/"
+  },
+
+  "/advanced/creating-an-icon-pack/": {
+    "title": "Create an icon pack for TinyMCE",
+    "description": "How to make your own icon pack.",
+    "url": "/advanced/creating-an-icon-pack/"
+  },
+
+  "/advanced/creating-custom-notifications/": {
+    "title": "Create custom notifications",
+    "description": "Learn how to make custom dialogs with NotificationManager.",
+    "url": "/advanced/creating-custom-notifications/"
+  },
+
+  "/plugins/premium/tinymcespellchecker/custom-dictionaries-for-tiny-spellchecker/": {
+    "title": "Adding custom dictionaries",
+    "description": "Custom dictionaries can be added to Spell Checker Pro",
+    "url": "/plugins/premium/tinymcespellchecker/custom-dictionaries-for-tiny-spellchecker/"
+  },
+
+  "/demo/custom-menu-item/": {
+    "title": "Custom menu item",
+    "description": "This example shows you how to add simple menu items to a new custom menu.",
+    "url": "/demo/custom-menu-item/"
+  },
+
+  "/demo/custom-toolbar-button/": {
+    "title": "Custom toolbar button",
+    "description": "This example shows you how to add a custom button to the toolbar.",
+    "url": "/demo/custom-toolbar-button/"
+  },
+
+  "/demo/custom-toolbar-menu-button/": {
+    "title": "Custom toolbar menu button",
+    "description": "This example shows you how to add a simple menu button to TinyMCE's toolbar.",
+    "url": "/demo/custom-toolbar-menu-button/"
+  },
+
+  "/demo/custom-toolbar-split-button/": {
+    "title": "Custom toolbar split button",
+    "description": "This example shows you how to add a simple split menu button to TinyMCE's toolbar.",
+    "url": "/demo/custom-toolbar-split-button/"
+  },
+
+  "/general-configuration-guide/customize-ui/": {
+    "title": "Customizing the editor UI",
+    "description": "Learn how to change the appearance of TinyMCE.",
+    "url": "/general-configuration-guide/customize-ui/"
+  },
+
+  "/ui-components/customsidebar/": {
+    "title": "Custom sidebar",
+    "description": "A short introduction to creating sidebars.",
+    "url": "/ui-components/customsidebar/"
+  },
+
+  "/ui-components/dialog/": {
+    "title": "Dialog",
+    "description": "An overview of TinyMCE dialogs and how to create custom dialogs.",
+    "url": "/ui-components/dialog/"
+  },
+
+  "/ui-components/dialogcomponents/": {
+    "title": "Dialog components",
+    "description": "A reference list of all TinyMCE dialog components.",
+    "url": "/ui-components/dialogcomponents/"
+  },
+
+  "/plugins/opensource/directionality/": {
+    "title": "Directionality plugin",
+    "description": "Toolbar buttons for setting the left-to-right or right-to-left direction of content.",
+    "url": "/plugins/opensource/directionality/"
+  },
+
+  "/integrations/django/": {
+    "title": "Django integration",
+    "description": "Django TinyMCE component.",
+    "url": "/integrations/django/"
+  },
+
+  "/how-to-guides/premium-server-side-guide/dockerservices/": {
+    "title": "Containerized service deployments",
+    "description": "Server-side components for premium plugins using Dockerfiles",
+    "url": "/how-to-guides/premium-server-side-guide/dockerservices/"
+  },
+
+  "/tinydrive/libraries/dotnet/": {
+    "title": ".Net Core",
+    "description": ".Net Core",
+    "url": "/tinydrive/libraries/dotnet/"
+  },
+
+  "/tinydrive/integrations/dropbox-integration/": {
+    "title": "Dropbox integration",
+    "description": "Guide for setting up Tiny Drive with Dropbox.",
+    "url": "/tinydrive/integrations/dropbox-integration/"
+  },
+
+  "/cloud-deployment-guide/editor-and-features/": {
+    "title": "Cloud deployment of editor & plugins",
+    "description": "Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.",
+    "url": "/cloud-deployment-guide/editor-and-features/"
+  },
+
+  "/configure/editor-appearance/": {
+    "title": "User interface options",
+    "description": "Configure the editor's appearance, including menu and toolbar controls.",
+    "url": "/configure/editor-appearance/"
+  },
+
+  "/advanced/editor-command-identifiers/": {
+    "title": "Commands Available for TinyMCE",
+    "description": "The complete list of exposed editor commands.",
+    "url": "/advanced/editor-command-identifiers/"
+  },
+
+  "/advanced/editor-context-menu-identifiers/": {
+    "title": "Context Menu Items Available for TinyMCE",
+    "description": "Complete list of available context menu sections.",
+    "url": "/advanced/editor-context-menu-identifiers/"
+  },
+
+  "/demo/editor-dfree/": {
+    "title": "Distraction-free editor example",
+    "description": "Distraction-free editor",
+    "url": "/demo/editor-dfree/"
+  },
+
+  "/advanced/editor-icon-identifiers/": {
+    "title": "Icons Available for TinyMCE",
+    "description": "Complete list of icon identifiers.",
+    "url": "/advanced/editor-icon-identifiers/"
+  },
+
+  "/cloud-deployment-guide/editor-plugin-version/": {
+    "title": "Specify editor & plugin versions",
+    "description": "Specifying editor and plugin versions for Tiny Cloud deployments.",
+    "url": "/cloud-deployment-guide/editor-plugin-version/"
+  },
+
+  "/plugins/opensource/emoticons/": {
+    "title": "Emoticons plugin",
+    "description": "Bring a smiley to your content.",
+    "url": "/plugins/opensource/emoticons/"
+  },
+
+  "/rtc/encryption/": {
+    "title": "Real-Time Collaboration (RTC) Encryption Setup",
+    "description": "Useful information for setting up encryption for RTC",
+    "url": "/rtc/encryption/"
+  },
+
+  "/rtc/events/": {
+    "title": "Real-Time Collaboration (RTC) events",
+    "description": "List of all available RTC specific events.",
+    "url": "/rtc/events/"
+  },
+
+  "/advanced/events/": {
+    "title": "Events Available for TinyMCE",
+    "description": "List of common editor events",
+    "url": "/advanced/events/"
+  },
+
+  "/plugins/premium/export/": {
+    "title": "Export plugin",
+    "description": "Export content from TinyMCE, into various formats.",
+    "url": "/plugins/premium/export/"
+  },
+
+  "/integrations/expressjs/": {
+    "title": "Integrating TinyMCE into an Express JS App",
+    "description": "A quick start guide on integrating TinyMCE into an Express JS Application",
+    "url": "/integrations/expressjs/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/fabric-demo/": {
+    "title": "Fabric skin demo",
+    "description": "Fabric Demo",
+    "url": "/demo/premium-skins-and-icon-packs/fabric-demo/"
+  },
+
+  "/cloud-deployment-guide/features-only/": {
+    "title": "Cloud deployment of plugins Only",
+    "description": "Connect to Tiny Cloud within a hybrid deployment.",
+    "url": "/cloud-deployment-guide/features-only/"
+  },
+
+  "/configure/file-image-upload/": {
+    "title": "Image &amp; file options",
+    "description": "These settings affect TinyMCE's image and file handling capabilities.",
+    "url": "/configure/file-image-upload/"
+  },
+
+  "/demo/file-picker/": {
+    "title": "Basic local file picker",
+    "description": "This example shows how to add a local file picker to the Image dialog.",
+    "url": "/demo/file-picker/"
+  },
+
+  "/general-configuration-guide/filter-content/": {
+    "title": "Filtering TinyMCE content",
+    "description": "Learn how to create clean, maintainable and readable content.",
+    "url": "/general-configuration-guide/filter-content/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/fluent-demo/": {
+    "title": "Fluent skin demo",
+    "description": "Fluent Demo",
+    "url": "/demo/premium-skins-and-icon-packs/fluent-demo/"
+  },
+
+  "/demo/format-custom/": {
+    "title": "Custom formats example",
+    "description": "This example shows you how to override the built in style formats and add a few custom ones to the Formats menu.",
+    "url": "/demo/format-custom/"
+  },
+
+  "/demo/format-html5/": {
+    "title": "HTML5 formats example",
+    "description": "This example shows you how to edit HTML5 contents such as sections and articles. It also highlights use of visualblocks and content_css options.",
+    "url": "/demo/format-html5/"
+  },
+
+  "/demo/formatpainter/": {
+    "title": "Format Painter",
+    "description": "Quickly apply formats to multiple pieces of text.",
+    "url": "/demo/formatpainter/"
+  },
+
+  "/plugins/premium/formatpainter/": {
+    "title": "Format Painter",
+    "description": "Quickly apply formats to multiple pieces of text.",
+    "url": "/plugins/premium/formatpainter/"
+  },
+
+  "/demo/full-featured/": {
+    "title": "Full featured examples",
+    "description": "These examples display all of the plugins available with TinyMCE Cloud premium subscriptions.",
+    "url": "/demo/full-featured/"
+  },
+
+  "/plugins/opensource/fullscreen/": {
+    "title": "Full Screen plugin",
+    "description": "Zoom TinyMCE up to the whole screen.",
+    "url": "/plugins/opensource/fullscreen/"
+  },
+
+  "/advanced/generate-rsa-key-pairs/": {
+    "title": "Creating a private/public key pair for Tiny Cloud",
+    "description": "Instructions on how to generate private/public key pairs for the Tiny Cloud",
+    "url": "/advanced/generate-rsa-key-pairs/"
+  },
+
+  "/rtc/getting-started/": {
+    "title": "Getting started with Real-Time Collaboration (RTC)",
+    "description": "Getting started with RTC",
+    "url": "/rtc/getting-started/"
+  },
+
+  "/tinydrive/getting-started/": {
+    "title": "Getting started",
+    "description": "Getting started with Tiny Drive",
+    "url": "/tinydrive/getting-started/"
+  },
+
+  "/tinydrive/integrations/googledrive-integration/": {
+    "title": "Google Drive integration",
+    "description": "Guide for setting up Tiny Drive with Google Drive.",
+    "url": "/tinydrive/integrations/googledrive-integration/"
+  },
+
+  "/plugins/opensource/help/": {
+    "title": "Help plugin",
+    "description": "Shows the help dialog.",
+    "url": "/plugins/opensource/help/"
+  },
+
+  "/rtc/how-the-rtc-plugin-encrypts-content/": {
+    "title": "How the RTC plugin encryption works",
+    "description": "Useful information for understanding how encryption is used with RTC",
+    "url": "/rtc/how-the-rtc-plugin-encrypts-content/"
+  },
+
+  "/plugins/opensource/hr/": {
+    "title": "Horizontal Rule plugin",
+    "description": "Insert a horizontal line.",
+    "url": "/plugins/opensource/hr/"
+  },
+
+  "/advanced/usage-with-module-loaders/reference/icons/": {
+    "title": "Bundling TinyMCE icon packs using module loading",
+    "description": "Information on bundling TinyMCE icon packs using module loading",
+    "url": "/advanced/usage-with-module-loaders/reference/icons/"
+  },
+
+  "/demo/image-tools/": {
+    "title": "Image tools example",
+    "description": "This example contains the plugins needed for the most common use cases, as well as the Image Tools Plugin. Clicking on the image will give you the inline toolbar for image editing.",
+    "url": "/demo/image-tools/"
+  },
+
+  "/plugins/opensource/image/": {
+    "title": "Image plugin",
+    "description": "Insert an image into TinyMCE.",
+    "url": "/plugins/opensource/image/"
+  },
+
+  "/plugins/opensource/imagetools/": {
+    "title": "Image Tools plugin",
+    "description": "Image editing features for TinyMCE.",
+    "url": "/plugins/opensource/imagetools/"
+  },
+
+  "/plugins/opensource/importcss/": {
+    "title": "Import CSS plugin",
+    "description": "Automatically populate CSS class names into the Format dropdown.",
+    "url": "/plugins/opensource/importcss/"
+  },
+
+  "/api/tinymce.html/": {
+    "title": "tinymce.html",
+    "description": "APIs for working with HTML within the editor.",
+    "url": "/api/tinymce.html/"
+  },
+
+  "/api/tinymce.geom/": {
+    "title": "tinymce.geom",
+    "description": "Various rectangle APIs.",
+    "url": "/api/tinymce.geom/"
+  },
+
+  "/api/tinymce.util/": {
+    "title": "tinymce.util",
+    "description": "Browser related APIs.",
+    "url": "/api/tinymce.util/"
+  },
+
+  "/api/tinymce.dom/": {
+    "title": "tinymce.dom",
+    "description": "APIs for working with the DOM from within the editor.",
+    "url": "/api/tinymce.dom/"
+  },
+
+  "/api/tinymce.editor.ui/": {
+    "title": "tinymce.editor.ui",
+    "description": "APIs for registering User Interface components.",
+    "url": "/api/tinymce.editor.ui/"
+  },
+
+  "/api/tinymce/": {
+    "title": "tinymce",
+    "description": "Global APIs for working with the editor.",
+    "url": "/api/tinymce/"
+  },
+
+  "/api/": {
+    "title": "API Reference",
+    "description": "JavaScript API reference for TinyMCE",
+    "url": "/api/"
+  },
+
+  "/release-notes/6_0_0/": {
+    "title": "Release notes for TinyMCE 6.0",
+    "description": "Release notes for TinyMCE 6.0",
+    "url": "/release-notes/6_0_0/"
+  },
+
+  "/release-notes/": {
+    "title": "Release notes for TinyMCE 6",
+    "description": "Release notes for TinyMCE 6",
+    "url": "/release-notes/"
+  },
+
+  "/cloud-deployment-guide/": {
+    "title": "Cloud deployment guide",
+    "description": "Start here for Tiny Cloud.",
+    "url": "/cloud-deployment-guide/"
+  },
+
+  "/ui-components/": {
+    "title": "User interface components",
+    "description": "The configurable UI components available for customization.",
+    "url": "/ui-components/"
+  },
+
+  "/rtc/configuration/": {
+    "title": "Real-Time Collaboration configuration options",
+    "description": "Available RTC configuration options.",
+    "url": "/rtc/configuration/"
+  },
+
+  "/rtc/": {
+    "title": "Real-Time Collaboration plugin",
+    "description": "The TinyMCE Real-Time Collaboration plugin",
+    "url": "/rtc/"
+  },
+
+  "/integrations/laravel/": {
+    "title": "Using TinyMCE with the Laravel framework",
+    "description": "A guide to using TinyMCE with the PHP-based Laravel framework.",
+    "url": "/integrations/laravel/"
+  },
+
+  "/integrations/": {
+    "title": "Integrate with other projects",
+    "description": "Faster development with integrations of TinyMCE into your favorite framework or CMS.",
+    "url": "/integrations/"
+  },
+
+  "/how-to-guides/premium-server-side-guide/": {
+    "title": "Premium server-side services guide",
+    "description": "Server-side components for premium plugins like spelling as-you-type.",
+    "url": "/how-to-guides/premium-server-side-guide/"
+  },
+
+  "/how-to-guides/": {
+    "title": "How-to guides for using TinyMCE",
+    "description": "TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance.",
+    "url": "/how-to-guides/"
+  },
+
+  "/advanced/usage-with-module-loaders/browserify/": {
+    "title": "Bundling TinyMCE with Browserify",
+    "description": "Guides for bundling TinyMCE with Browserify.",
+    "url": "/advanced/usage-with-module-loaders/browserify/"
+  },
+
+  "/advanced/usage-with-module-loaders/reference/": {
+    "title": "Bundling TinyMCE Reference Information",
+    "description": "Reference information for bundling TinyMCE",
+    "url": "/advanced/usage-with-module-loaders/reference/"
+  },
+
+  "/advanced/usage-with-module-loaders/webpack/": {
+    "title": "Bundling TinyMCE with Webpack",
+    "description": "Guides for bundling TinyMCE with Webpack.",
+    "url": "/advanced/usage-with-module-loaders/webpack/"
+  },
+
+  "/advanced/usage-with-module-loaders/rollup/": {
+    "title": "Bundling TinyMCE with Rollup.js",
+    "description": "Guides for bundling TinyMCE with Rollup.js.",
+    "url": "/advanced/usage-with-module-loaders/rollup/"
+  },
+
+  "/advanced/usage-with-module-loaders/": {
+    "title": "Bundling TinyMCE with a module loader",
+    "description": "A series of guides for bundling TinyMCE with Webpack, rollup.js, or Browserify.",
+    "url": "/advanced/usage-with-module-loaders/"
+  },
+
+  "/advanced/": {
+    "title": "Explore advanced topics",
+    "description": "Information and guides for developers wanting to build advanced capabilities into TinyMCE.",
+    "url": "/advanced/"
+  },
+
+  "/configure/": {
+    "title": "Configuration options reference",
+    "description": "TinyMCE is not only the most advanced rich text editor it's also the most customizable.",
+    "url": "/configure/"
+  },
+
+  "/tinydrive/libraries/": {
+    "title": "Tiny Drive Starter projects",
+    "description": "Starter projects to make your Tiny Drive experience smooth with the technologies you use.",
+    "url": "/tinydrive/libraries/"
+  },
+
+  "/tinydrive/integrations/": {
+    "title": "Tiny Drive third-party storage integrations",
+    "description": "Third-party integrations to make your Tiny Drive experience smooth with the technologies you use.",
+    "url": "/tinydrive/integrations/"
+  },
+
+  "/tinydrive/tinydrive-api/": {
+    "title": "Tiny Drive API",
+    "description": "Tiny Drive API.",
+    "url": "/tinydrive/tinydrive-api/"
+  },
+
+  "/tinydrive/": {
+    "title": "Tiny Drive",
+    "description": "Tiny Drive",
+    "url": "/tinydrive/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/": {
+    "title": "Tiny Skins and Icon Packs",
+    "description": "Quickly give TinyMCE a new look.",
+    "url": "/demo/premium-skins-and-icon-packs/"
+  },
+
+  "/demo/": {
+    "title": "Examples & demos",
+    "description": "Working examples of TinyMCE's popular functionality.",
+    "url": "/demo/"
+  },
+
+  "/general-configuration-guide/": {
+    "title": "Introduction & getting started",
+    "description": "New to self-hosting TinyMCE? Start here.",
+    "url": "/general-configuration-guide/"
+  },
+
+  "/interface/editor-appearance/": {
+    "title": "Customizing the editor's appearance",
+    "description": "Information on customizing TinyMCE's "skin" and icons",
+    "url": "/interface/editor-appearance/"
+  },
+
+  "/interface/": {
+    "title": "Customizing the TinyMCE User Interface",
+    "description": "Information on customizing the TinyMCE user interface",
+    "url": "/interface/"
+  },
+
+  "/plugins/premium/mediaembed/": {
+    "title": "Enhanced Media Embed plugin",
+    "description": "Add rich media previews inside TinyMCE.",
+    "url": "/plugins/premium/mediaembed/"
+  },
+
+  "/plugins/premium/tinymcespellchecker/": {
+    "title": "Spell Checker Pro plugin",
+    "description": "Check spelling as-you-type in TinyMCE.",
+    "url": "/plugins/premium/tinymcespellchecker/"
+  },
+
+  "/plugins/premium/comments/": {
+    "title": "Tiny Comments",
+    "description": "This section lists the premium plugins provided by Tiny.",
+    "url": "/plugins/premium/comments/"
+  },
+
+  "/plugins/premium/": {
+    "title": "Premium plugins for TinyMCE",
+    "description": "This section lists the premium plugins provided by Tiny.",
+    "url": "/plugins/premium/"
+  },
+
+  "/plugins/opensource/": {
+    "title": "Open source for TinyMCE",
+    "description": "This section lists the open source plugins provided with TinyMCE.",
+    "url": "/plugins/opensource/"
+  },
+
+  "/plugins/": {
+    "title": "Add plugins to TinyMCE",
+    "description": "TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance.",
+    "url": "/plugins/"
+  },
+
+  "/": {
+    "title": "TinyMCE 6 Documentation",
+    "description": "",
+    "url": "/"
+  },
+
+  "/demo/inline/": {
+    "title": "Inline editor example",
+    "description": "This example shows you the inline editing capabilities of TinyMCE.",
+    "url": "/demo/inline/"
+  },
+
+  "/plugins/opensource/insertdatetime/": {
+    "title": "Insert Date/Time plugin",
+    "description": "Insert the current date and/or time into TinyMCE.",
+    "url": "/plugins/opensource/insertdatetime/"
+  },
+
+  "/configure/integration-and-setup/": {
+    "title": "Integration and setup options",
+    "description": "Essential editor configuration, including `selector` and `plugins` keys.",
+    "url": "/configure/integration-and-setup/"
+  },
+
+  "/plugins/premium/mediaembed/introduction-to-mediaembed/": {
+    "title": "Enhanced Media Embed plugin",
+    "description": "Add rich media previews inside TinyMCE.",
+    "url": "/plugins/premium/mediaembed/introduction-to-mediaembed/"
+  },
+
+  "/how-to-guides/premium-server-side-guide/introduction-to-premium-selfhosted-services/": {
+    "title": "Server-side component installation",
+    "description": "Server-side components for premium plugins like spelling as-you-type.",
+    "url": "/how-to-guides/premium-server-side-guide/introduction-to-premium-selfhosted-services/"
+  },
+
+  "/plugins/premium/tinymcespellchecker/introduction-to-tiny-spellchecker/": {
+    "title": "Spell Checker Pro plugin",
+    "description": "Check spelling as-you-type in TinyMCE.",
+    "url": "/plugins/premium/tinymcespellchecker/introduction-to-tiny-spellchecker/"
+  },
+
+  "/rtc/introduction/": {
+    "title": "Introduction to Real-Time Collaboration (RTC)",
+    "description": "What is RTC and what can it do",
+    "url": "/rtc/introduction/"
+  },
+
+  "/tinydrive/introduction/": {
+    "title": "Tiny Drive Introduction",
+    "description": "Introduction of what Tiny Drive is and its capabilities",
+    "url": "/tinydrive/introduction/"
+  },
+
+  "/advanced/usage-with-module-loaders/introduction_to_bundling_tinymce/": {
+    "title": "Introduction to bundling TinyMCE",
+    "description": "Introduction to bundling TinyMCE with Webpack, Rollup.js, or Browserify.",
+    "url": "/advanced/usage-with-module-loaders/introduction_to_bundling_tinymce/"
+  },
+
+  "/plugins/premium/comments/introduction_to_tiny_comments/": {
+    "title": "Introduction to Tiny Comments",
+    "description": "Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.",
+    "url": "/plugins/premium/comments/introduction_to_tiny_comments/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/jam-demo/": {
+    "title": "Jam icons pack demo",
+    "description": "Jam Icons Demo",
+    "url": "/demo/premium-skins-and-icon-packs/jam-demo/"
+  },
+
+  "/tinydrive/libraries/java/": {
+    "title": "Java Spring",
+    "description": "Java Spring",
+    "url": "/tinydrive/libraries/java/"
+  },
+
+  "/integrations/jquery/": {
+    "title": "jQuery integration",
+    "description": "Documentation for the official TinyMCE jQuery integration.",
+    "url": "/integrations/jquery/"
+  },
+
+  "/rtc/jwt-authentication/": {
+    "title": "Real-Time Collaboration (RTC) JWT Authentication Setup",
+    "description": "Guide on how to setup JWT Authentication for RTC",
+    "url": "/rtc/jwt-authentication/"
+  },
+
+  "/tinydrive/jwt-authentication/": {
+    "title": "Tiny Drive JWT Authentication",
+    "description": "Guide on how to setup JWT Authentication for Tiny Drive",
+    "url": "/tinydrive/jwt-authentication/"
+  },
+
+  "/advanced/keyboard-shortcuts/": {
+    "title": "Keyboard shortcuts",
+    "description": "Complete list of keyboard shortcuts.",
+    "url": "/advanced/keyboard-shortcuts/"
+  },
+
+  "/integrations/laravel/laravel-composer-install/": {
+    "title": "Using the TinyMCE composer package with the Laravel framework",
+    "description": "A guide on integrating the TinyMCE Composer package into the Laravel framework.",
+    "url": "/integrations/laravel/laravel-composer-install/"
+  },
+
+  "/integrations/laravel/laravel-introduction/": {
+    "title": "Introduction to using TinyMCE with the Laravel framework",
+    "description": "Overview of integrating TinyMCE into the Laravel framework.",
+    "url": "/integrations/laravel/laravel-introduction/"
+  },
+
+  "/integrations/laravel/laravel-tiny-cloud/": {
+    "title": "Using TinyMCE from the Tiny Cloud CDN with the Laravel framework",
+    "description": "A guide on integrating TinyMCE from the Tiny Cloud into the Laravel framework.",
+    "url": "/integrations/laravel/laravel-tiny-cloud/"
+  },
+
+  "/integrations/laravel/laravel-zip-install/": {
+    "title": "Using the TinyMCE .zip package with the Laravel framework",
+    "description": "A guide on integrating a .zip version of TinyMCE into the Laravel framework.",
+    "url": "/integrations/laravel/laravel-zip-install/"
+  },
+
+  "/plugins/opensource/link/": {
+    "title": "Link plugin",
+    "description": "Add hyperlinks to content.",
+    "url": "/plugins/opensource/link/"
+  },
+
+  "/plugins/premium/linkchecker/": {
+    "title": "Link Checker plugin",
+    "description": "Validate links, as you type.",
+    "url": "/plugins/premium/linkchecker/"
+  },
+
+  "/plugins/opensource/lists/": {
+    "title": "Lists plugin",
+    "description": "Normalizes list behavior between browsers.",
+    "url": "/plugins/opensource/lists/"
+  },
+
+  "/demo/local-upload/": {
+    "title": "Local upload",
+    "description": "This example demonstrates the local file upload feature.",
+    "url": "/demo/local-upload/"
+  },
+
+  "/advanced/usage-with-module-loaders/reference/localization/": {
+    "title": "Bundling the User Interface localizations for TinyMCE",
+    "description": "Information on bundling User Interface localizations",
+    "url": "/advanced/usage-with-module-loaders/reference/localization/"
+  },
+
+  "/configure/localization/": {
+    "title": "Localization options",
+    "description": "These settings configure TinyMCE's language capabilities, including right-to-left support and language Localization.",
+    "url": "/configure/localization/"
+  },
+
+  "/general-configuration-guide/localize-your-language/": {
+    "title": "Localize TinyMCE",
+    "description": "Localize TinyMCE with global language capabilities.",
+    "url": "/general-configuration-guide/localize-your-language/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/material-classic-demo/": {
+    "title": "Material Classic skin demo",
+    "description": "Material Classic Demo",
+    "url": "/demo/premium-skins-and-icon-packs/material-classic-demo/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/material-outline-demo/": {
+    "title": "Material Outline skin demo",
+    "description": "Material Outline Demo",
+    "url": "/demo/premium-skins-and-icon-packs/material-outline-demo/"
+  },
+
+  "/plugins/opensource/media/": {
+    "title": "Media plugin",
+    "description": "Add HTML5 video and audio elements.",
+    "url": "/plugins/opensource/media/"
+  },
+
+  "/plugins/premium/mediaembed/mediaembed-server-config/": {
+    "title": "Configure Enhanced Media Embed Server",
+    "description": "Instructions for getting the Enhanced Media Embed server configured.",
+    "url": "/plugins/premium/mediaembed/mediaembed-server-config/"
+  },
+
+  "/plugins/premium/mediaembed/mediaembed-server-integration/": {
+    "title": "Integrate Enhanced Media Embed Server",
+    "description": "Using the Enhanced Media Embed server with non-public content such as a corporate CMS.",
+    "url": "/plugins/premium/mediaembed/mediaembed-server-integration/"
+  },
+
+  "/plugins/premium/mentions/": {
+    "title": "Mentions plugin",
+    "description": "Enables @mention functionality.",
+    "url": "/plugins/premium/mentions/"
+  },
+
+  "/ui-components/menuitems/": {
+    "title": "Custom menu items",
+    "description": "This section demonstrates different types of menu items.",
+    "url": "/ui-components/menuitems/"
+  },
+
+  "/migration-from-5x/": {
+    "title": "Migrating from TinyMCE 5 to TinyMCE 6.",
+    "description": "Guidance for migrating from TinyMCE 5 to TinyMCE 6.",
+    "url": "/migration-from-5x/"
+  },
+
+  "/migration-from-froala/": {
+    "title": "Migrating from Froala to TinyMCE",
+    "description": "Upgrading your rich text editor from Froala Editor v3 to TinyMCE 6.",
+    "url": "/migration-from-froala/"
+  },
+
+  "/mobile/": {
+    "title": "TinyMCE Mobile",
+    "description": "The TinyMCE rich text editing experience for mobile devices.",
+    "url": "/mobile/"
+  },
+
+  "/plugins/premium/moxiemanager/": {
+    "title": "MoxieManager plugin",
+    "description": "File and image management plugin and service",
+    "url": "/plugins/premium/moxiemanager/"
+  },
+
+  "/general-configuration-guide/multiple-editors/": {
+    "title": "Use multiple TinyMCE instances in a single page",
+    "description": "",
+    "url": "/general-configuration-guide/multiple-editors/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/naked-demo/": {
+    "title": "Naked skin demo",
+    "description": "Naked Demo",
+    "url": "/demo/premium-skins-and-icon-packs/naked-demo/"
+  },
+
+  "/tinydrive/libraries/nodejs/": {
+    "title": "Node.js",
+    "description": "Node.js",
+    "url": "/tinydrive/libraries/nodejs/"
+  },
+
+  "/plugins/opensource/nonbreaking/": {
+    "title": "Nonbreaking Space plugin",
+    "description": "Insert a nonbreaking space.",
+    "url": "/plugins/opensource/nonbreaking/"
+  },
+
+  "/plugins/opensource/noneditable/": {
+    "title": "Noneditable plugin",
+    "description": "Prevent users from changing content within elements. Ideal for templates.",
+    "url": "/plugins/opensource/noneditable/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/outside-demo/": {
+    "title": "Outside skin demo",
+    "description": "Outside Demo",
+    "url": "/demo/premium-skins-and-icon-packs/outside-demo/"
+  },
+
+  "/plugins/opensource/pagebreak/": {
+    "title": "Page Break plugin",
+    "description": "Add a page break.",
+    "url": "/plugins/opensource/pagebreak/"
+  },
+
+  "/demo/pageembed/": {
+    "title": "Page Embed plugin",
+    "description": "Easily inserts iframe into the content.",
+    "url": "/demo/pageembed/"
+  },
+
+  "/plugins/premium/pageembed/": {
+    "title": "Page Embed plugin",
+    "description": "Easily inserts iframe into the content.",
+    "url": "/plugins/premium/pageembed/"
+  },
+
+  "/pages.json": {
+    "title": "",
+    "description": "",
+    "url": "/pages.json"
+  },
+
+  "/plugins/opensource/paste/": {
+    "title": "Paste plugin",
+    "description": "Standard version of features for copying-and-pasting content from Microsoft Word.",
+    "url": "/plugins/opensource/paste/"
+  },
+
+  "/demo/permanentpen/": {
+    "title": "Permanent Pen plugin",
+    "description": "Apply formats while typing.",
+    "url": "/demo/permanentpen/"
+  },
+
+  "/plugins/premium/permanentpen/": {
+    "title": "Permanent Pen Plugin",
+    "description": "Apply formats while typing.",
+    "url": "/plugins/premium/permanentpen/"
+  },
+
+  "/advanced/php-upload-handler/": {
+    "title": "PHP image upload handler",
+    "description": "A server-side upload handler PHP script suitable for TinyMCE.",
+    "url": "/advanced/php-upload-handler/"
+  },
+
+  "/tinydrive/libraries/php/": {
+    "title": "PHP",
+    "description": "PHP",
+    "url": "/tinydrive/libraries/php/"
+  },
+
+  "/cloud-deployment-guide/plugin-editor-version-compatibility/": {
+    "title": "Version compatibility reference",
+    "description": "Premium plugins compatibility with TinyMCE editor versions.",
+    "url": "/cloud-deployment-guide/plugin-editor-version-compatibility/"
+  },
+
+  "/tinydrive/tinydrive-api/plugin/": {
+    "title": "Tiny Drive Plugin API",
+    "description": "Description of the Tiny Drive plugin API",
+    "url": "/tinydrive/tinydrive-api/plugin/"
+  },
+
+  "/advanced/usage-with-module-loaders/reference/plugins/": {
+    "title": "Bundling TinyMCE plugins using module loading",
+    "description": "Information on bundling TinyMCE plugins using module loading",
+    "url": "/advanced/usage-with-module-loaders/reference/plugins/"
+  },
+
+  "/plugins/premium/powerpaste/": {
+    "title": "PowerPaste plugin",
+    "description": "",
+    "url": "/plugins/premium/powerpaste/"
+  },
+
+  "/interface/editor-appearance/premium-skins-and-icons/": {
+    "title": "Tiny Skins and Icon Packs",
+    "description": "Quickly give TinyMCE a new look.",
+    "url": "/interface/editor-appearance/premium-skins-and-icons/"
+  },
+
+  "/plugins/opensource/preview/": {
+    "title": "Preview plugin",
+    "description": "Shows a popup of the current content in read-only format.",
+    "url": "/plugins/opensource/preview/"
+  },
+
+  "/plugins/opensource/print/": {
+    "title": "Print plugin",
+    "description": "Print the content in TinyMCE.",
+    "url": "/plugins/opensource/print/"
+  },
+
+  "/quick-start/": {
+    "title": "Quick start",
+    "description": "Get an instance of TinyMCE 6 up and running using the Tiny Cloud.",
+    "url": "/quick-start/"
+  },
+
+  "/plugins/opensource/quickbars/": {
+    "title": "Quick Toolbars plugin",
+    "description": "User interface controls to create content faster.",
+    "url": "/plugins/opensource/quickbars/"
+  },
+
+  "/integrations/rails/": {
+    "title": "Rails integration",
+    "description": "Seamlessly integrates TinyMCE into the Rails asset pipeline.",
+    "url": "/integrations/rails/"
+  },
+
+  "/integrations/react/": {
+    "title": "React integration",
+    "description": "React TinyMCE component.",
+    "url": "/integrations/react/"
+  },
+
+  "/advanced/usage-with-module-loaders/rollup/rollup_es6_download/": {
+    "title": "Bundling a .zip version of TinyMCE with ES6 and Rollup.js",
+    "description": "Bundling a .zip archive version of TinyMCE in a project using ES6 and Rollup.js",
+    "url": "/advanced/usage-with-module-loaders/rollup/rollup_es6_download/"
+  },
+
+  "/advanced/usage-with-module-loaders/rollup/rollup_es6_npm/": {
+    "title": "Bundling an npm version of TinyMCE with ES6 and Rollup.js",
+    "description": "Bundling an npm version of TinyMCE in a project using ES6 and Rollup.js",
+    "url": "/advanced/usage-with-module-loaders/rollup/rollup_es6_npm/"
+  },
+
+  "/api/tinymce/root_tinymce/": {
+    "title": "tinymce",
+    "description": "TinyMCE core class.",
+    "url": "/api/tinymce/root_tinymce/"
+  },
+
+  "/rtc/configuration/rtc-options-optional/": {
+    "title": "Recommended and optional Real-Time Collaboration configuration options",
+    "description": "List of all recommended and optional RTC configuration options.",
+    "url": "/rtc/configuration/rtc-options-optional/"
+  },
+
+  "/rtc/configuration/rtc-options-overview/": {
+    "title": "Overview of the Real-Time Collaboration configuration options",
+    "description": "List of all available RTC configuration options.",
+    "url": "/rtc/configuration/rtc-options-overview/"
+  },
+
+  "/rtc/configuration/rtc-options-required/": {
+    "title": "Required Real-Time Collaboration configuration options",
+    "description": "List of all required RTC configuration options.",
+    "url": "/rtc/configuration/rtc-options-required/"
+  },
+
+  "/rtc/rtc-supported-functionality/": {
+    "title": "Supported TinyMCE functionality for Real-Time Collaboration",
+    "description": "Information on what TinyMCE functionality is, and is not, supported in Real-Time Collaboration",
+    "url": "/rtc/rtc-supported-functionality/"
+  },
+
+  "/rtc/rtc-troubleshooting/": {
+    "title": "Troubleshooting information for the Real-Time Collaboration (RTC) plugin",
+    "description": "Useful information for troubleshooting issues with the RTC plugin.",
+    "url": "/rtc/rtc-troubleshooting/"
+  },
+
+  "/plugins/premium/rtc/": {
+    "title": "Real-Time Collaboration plugin",
+    "description": "The Real-Time Collaboration plugin for TinyMCE",
+    "url": "/plugins/premium/rtc/"
+  },
+
+  "/plugins/opensource/save/": {
+    "title": "Save plugin",
+    "description": "Adds a save button to the TinyMCE toolbar.",
+    "url": "/plugins/opensource/save/"
+  },
+
+  "/search-db.json": {
+    "title": "",
+    "description": "",
+    "url": "/search-db.json"
+  },
+
+  "/plugins/opensource/searchreplace/": {
+    "title": "Search and Replace plugin",
+    "description": "Find and replace content in TinyMCE.",
+    "url": "/plugins/opensource/searchreplace/"
+  },
+
+  "/advanced/security/": {
+    "title": "Security",
+    "description": "Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users.",
+    "url": "/advanced/security/"
+  },
+
+  "/how-to-guides/premium-server-side-guide/self-hosting-hunspell/": {
+    "title": "Add Hunspell dictionaries to Spell Checker Pro",
+    "description": "Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker Pro.",
+    "url": "/how-to-guides/premium-server-side-guide/self-hosting-hunspell/"
+  },
+
+  "/advanced/usage-with-module-loaders/reference/skins/": {
+    "title": "Bundling TinyMCE skins using module loading",
+    "description": "Information on bundling TinyMCE skins using module loading",
+    "url": "/advanced/usage-with-module-loaders/reference/skins/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/small-demo/": {
+    "title": "Small icons pack demo",
+    "description": "Small Icons and Skin demo",
+    "url": "/demo/premium-skins-and-icon-packs/small-demo/"
+  },
+
+  "/demo/premium-skins-and-icon-packs/snow-demo/": {
+    "title": "Snow skin demo",
+    "description": "Snow Demo",
+    "url": "/demo/premium-skins-and-icon-packs/snow-demo/"
+  },
+
+  "/general-configuration-guide/spell-checking/": {
+    "title": "Check spelling in TinyMCE",
+    "description": "",
+    "url": "/general-configuration-guide/spell-checking/"
+  },
+
+  "/configure/spelling/": {
+    "title": "Spelling options",
+    "description": "TinyMCE spell checking",
+    "url": "/configure/spelling/"
+  },
+
+  "/tinydrive/tinydrive-api/standalone/": {
+    "title": "Tiny Drive Standalone API",
+    "description": "Description of the Tiny Drive standalone API",
+    "url": "/tinydrive/tinydrive-api/standalone/"
+  },
+
+  "/support/": {
+    "title": "Support",
+    "description": "Getting support and supported platforms",
+    "url": "/support/"
+  },
+
+  "/integrations/svelte/": {
+    "title": "Svelte integration",
+    "description": "Svelte TinyMCE component.",
+    "url": "/integrations/svelte/"
+  },
+
+  "/integrations/swing/": {
+    "title": "TinyMCE for Swing integration",
+    "description": "Seamlessly integrates TinyMCE into Swing applications.",
+    "url": "/integrations/swing/"
+  },
+
+  "/plugins/opensource/tabfocus/": {
+    "title": "Tab Focus plugin",
+    "description": "Tab into and out of the TinyMCE control in your web form.",
+    "url": "/plugins/opensource/tabfocus/"
+  },
+
+  "/plugins/opensource/table/": {
+    "title": "Table plugin",
+    "description": "Table editing features.",
+    "url": "/plugins/opensource/table/"
+  },
+
+  "/plugins/opensource/template/": {
+    "title": "Template plugin",
+    "description": "Custom templates for your content.",
+    "url": "/plugins/opensource/template/"
+  },
+
+  "/plugins/opensource/textpattern/": {
+    "title": "Text Pattern plugin",
+    "description": "Matches special patterns in the text and applies formats or executed commands on these patterns.",
+    "url": "/plugins/opensource/textpattern/"
+  },
+
+  "/advanced/usage-with-module-loaders/reference/themes/": {
+    "title": "Bundling TinyMCE themes using module loading",
+    "description": "Information on bundling TinyMCE themes using module loading",
+    "url": "/advanced/usage-with-module-loaders/reference/themes/"
+  },
+
+  "/demo/tinydrive/": {
+    "title": "Tiny Drive",
+    "description": "Tiny Drive. A premium plugin to manage files & images.",
+    "url": "/demo/tinydrive/"
+  },
+
+  "/plugins/premium/tinydrive/": {
+    "title": "Tiny Drive plugin",
+    "description": "Cloud-based file and image management for TinyMCE.",
+    "url": "/plugins/premium/tinydrive/"
+  },
+
+  "/api/tinymce/tinymce.addonmanager/": {
+    "title": "tinymce.AddOnManager",
+    "description": "This class handles the loading of add-ons and their language packs. ThemeManager and PluginManager are instances of AddOnManager, and manage themes and plugins.",
+    "url": "/api/tinymce/tinymce.addonmanager/"
+  },
+
+  "/api/tinymce/tinymce.annotator/": {
+    "title": "tinymce.Annotator",
+    "description": "This is the annotator api.",
+    "url": "/api/tinymce/tinymce.annotator/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.bookmarkmanager/": {
+    "title": "tinymce.dom.BookmarkManager",
+    "description": "This class handles selection bookmarks.",
+    "url": "/api/tinymce.dom/tinymce.dom.bookmarkmanager/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.domquery/": {
+    "title": "tinymce.dom.DomQuery",
+    "description": "This class mimics most of the jQuery API: &lt;br&gt; &lt;em&gt;&lt;code&gt;DomQuery&lt;/code&gt; has been deprecated and marked for removal in TinyMCE 6.0.&lt;/em&gt;  This is whats currently implemented: - Utility functions - DOM traversial - DOM manipulation - Event binding  This is not currently implemented: - Dimension - Ajax - Animation - Advanced chaining",
+    "url": "/api/tinymce.dom/tinymce.dom.domquery/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.domutils/": {
+    "title": "tinymce.dom.DOMUtils",
+    "description": "Utility class for various DOM manipulation and retrieval functions.",
+    "url": "/api/tinymce.dom/tinymce.dom.domutils/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.eventutils/": {
+    "title": "tinymce.dom.EventUtils",
+    "description": "This class wraps the browsers native event logic with more convenient methods.",
+    "url": "/api/tinymce.dom/tinymce.dom.eventutils/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.rangeutils/": {
+    "title": "tinymce.dom.RangeUtils",
+    "description": "This class contains a few utility methods for ranges.",
+    "url": "/api/tinymce.dom/tinymce.dom.rangeutils/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.scriptloader/": {
+    "title": "tinymce.dom.ScriptLoader",
+    "description": "This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks when various items gets loaded. This class is useful to load external JavaScript files.",
+    "url": "/api/tinymce.dom/tinymce.dom.scriptloader/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.selection/": {
+    "title": "tinymce.dom.Selection",
+    "description": "This class handles text and control selection it&#x27;s an crossbrowser utility class. Consult the TinyMCE API Documentation for more details and examples on how to use this class.",
+    "url": "/api/tinymce.dom/tinymce.dom.selection/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.serializer/": {
+    "title": "tinymce.dom.Serializer",
+    "description": "This class is used to serialize DOM trees into a string. Consult the TinyMCE API Documentation for more details and examples on how to use this class.",
+    "url": "/api/tinymce.dom/tinymce.dom.serializer/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.stylesheetloader/": {
+    "title": "tinymce.dom.StyleSheetLoader",
+    "description": "This class handles loading of external stylesheets and fires events when these are loaded.",
+    "url": "/api/tinymce.dom/tinymce.dom.stylesheetloader/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.textseeker/": {
+    "title": "tinymce.dom.TextSeeker",
+    "description": "The TextSeeker class enables you to seek for a specific point in text across the DOM.",
+    "url": "/api/tinymce.dom/tinymce.dom.textseeker/"
+  },
+
+  "/api/tinymce.dom/tinymce.dom.treewalker/": {
+    "title": "tinymce.dom.TreeWalker",
+    "description": "TreeWalker class enables you to walk the DOM in a linear manner.",
+    "url": "/api/tinymce.dom/tinymce.dom.treewalker/"
+  },
+
+  "/api/tinymce/tinymce.editaor/": {
+    "title": "tinymce.Editaor",
+    "description": "This class contains the core logic for a TinyMCE editor.",
+    "url": "/api/tinymce/tinymce.editaor/"
+  },
+
+  "/api/tinymce/tinymce.editor/": {
+    "title": "tinymce.Editor",
+    "description": "This class contains the core logic for a TinyMCE editor.",
+    "url": "/api/tinymce/tinymce.editor/"
+  },
+
+  "/api/tinymce.editor.ui/tinymce.editor.ui.registry/": {
+    "title": "tinymce.editor.ui.Registry",
+    "description": "TinyMCE 5 Ui registration API.",
+    "url": "/api/tinymce.editor.ui/tinymce.editor.ui.registry/"
+  },
+
+  "/api/tinymce.editor.ui/tinymce.editor.ui.ui/": {
+    "title": "tinymce.editor.ui.Ui",
+    "description": "This editor ui instance.",
+    "url": "/api/tinymce.editor.ui/tinymce.editor.ui.ui/"
+  },
+
+  "/api/tinymce/tinymce.editorcommands/": {
+    "title": "tinymce.EditorCommands",
+    "description": "This class enables you to add custom editor commands and it contains overrides for native browser commands to address various bugs and issues.",
+    "url": "/api/tinymce/tinymce.editorcommands/"
+  },
+
+  "/api/tinymce/tinymce.editormode/": {
+    "title": "tinymce.EditorMode",
+    "description": "TinyMCE 5 Mode API.",
+    "url": "/api/tinymce/tinymce.editormode/"
+  },
+
+  "/api/tinymce/tinymce.env/": {
+    "title": "tinymce.Env",
+    "description": "This class contains various environment constants like browser versions etc. Normally you don&#x27;t want to sniff specific browser versions but sometimes you have to when it&#x27;s impossible to feature detect. So use this with care.",
+    "url": "/api/tinymce/tinymce.env/"
+  },
+
+  "/api/tinymce/tinymce.event/": {
+    "title": "tinymce.Event",
+    "description": "This is the base class for all TinyMCE events.",
+    "url": "/api/tinymce/tinymce.event/"
+  },
+
+  "/api/tinymce/tinymce.formatter/": {
+    "title": "tinymce.Formatter",
+    "description": "Text formatter engine class. This class is used to apply formats like bold, italic, font size etc to the current selection or specific nodes. This engine was built to replace the browser&#x27;s default formatting logic for execCommand due to its inconsistent and buggy behavior.",
+    "url": "/api/tinymce/tinymce.formatter/"
+  },
+
+  "/api/tinymce.geom/tinymce.geom.rect/": {
+    "title": "tinymce.geom.Rect",
+    "description": "Contains various tools for rect/position calculation.",
+    "url": "/api/tinymce.geom/tinymce.geom.rect/"
+  },
+
+  "/api/tinymce.html/tinymce.html.domparser/": {
+    "title": "tinymce.html.DomParser",
+    "description": "This class parses HTML code into a DOM like structure of nodes it will remove redundant whitespace and make sure that the node tree is valid according to the specified schema. So for example: &lt;p&gt;a&lt;p&gt;b&lt;/p&gt;c&lt;/p&gt; will become &lt;p&gt;a&lt;/p&gt;&lt;p&gt;b&lt;/p&gt;&lt;p&gt;c&lt;/p&gt;",
+    "url": "/api/tinymce.html/tinymce.html.domparser/"
+  },
+
+  "/api/tinymce.html/tinymce.html.entities/": {
+    "title": "tinymce.html.Entities",
+    "description": "Entity encoder class.",
+    "url": "/api/tinymce.html/tinymce.html.entities/"
+  },
+
+  "/api/tinymce.html/tinymce.html.node/": {
+    "title": "tinymce.html.Node",
+    "description": "This class is a minimalistic implementation of a DOM like node used by the DomParser class.",
+    "url": "/api/tinymce.html/tinymce.html.node/"
+  },
+
+  "/api/tinymce.html/tinymce.html.saxparser/": {
+    "title": "tinymce.html.SaxParser",
+    "description": "This class parses HTML code using pure JavaScript and executes various events for each item it finds. It will always execute the events in the right order for tag soup code like &lt;b&gt;&lt;p&gt;&lt;/b&gt;&lt;/p&gt;. It will also remove elements and attributes that doesn&#x27;t fit the schema if the validate setting is enabled.",
+    "url": "/api/tinymce.html/tinymce.html.saxparser/"
+  },
+
+  "/api/tinymce.html/tinymce.html.schema/": {
+    "title": "tinymce.html.Schema",
+    "description": "Schema validator class.",
+    "url": "/api/tinymce.html/tinymce.html.schema/"
+  },
+
+  "/api/tinymce.html/tinymce.html.serializer/": {
+    "title": "tinymce.html.Serializer",
+    "description": "This class is used to serialize down the DOM tree into a string using a Writer instance.",
+    "url": "/api/tinymce.html/tinymce.html.serializer/"
+  },
+
+  "/api/tinymce.html/tinymce.html.styles/": {
+    "title": "tinymce.html.Styles",
+    "description": "This class is used to parse CSS styles it also compresses styles to reduce the output size.",
+    "url": "/api/tinymce.html/tinymce.html.styles/"
+  },
+
+  "/api/tinymce.html/tinymce.html.writer/": {
+    "title": "tinymce.html.Writer",
+    "description": "This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.",
+    "url": "/api/tinymce.html/tinymce.html.writer/"
+  },
+
+  "/api/tinymce/tinymce.notificationmanager/": {
+    "title": "tinymce.NotificationManager",
+    "description": "This class handles the creation of TinyMCE&#x27;s notifications.",
+    "url": "/api/tinymce/tinymce.notificationmanager/"
+  },
+
+  "/api/tinymce/tinymce.plugin/": {
+    "title": "tinymce.Plugin",
+    "description": "TinyMCE plugin psuedo class. Allows for custom plugins to be added to TinyMCE when registered using the PluginManager.",
+    "url": "/api/tinymce/tinymce.plugin/"
+  },
+
+  "/api/tinymce/tinymce.shortcuts/": {
+    "title": "tinymce.Shortcuts",
+    "description": "Contains logic for handling keyboard shortcuts.",
+    "url": "/api/tinymce/tinymce.shortcuts/"
+  },
+
+  "/api/tinymce/tinymce.theme/": {
+    "title": "tinymce.Theme",
+    "description": "TinyMCE theme pseudo class. Allows for a custom theme to be used with TinyMCE when registered using the ThemeManager.",
+    "url": "/api/tinymce/tinymce.theme/"
+  },
+
+  "/api/tinymce/tinymce.undomanager/": {
+    "title": "tinymce.UndoManager",
+    "description": "This class handles the undo/redo history levels for the editor. Since the built-in undo/redo has major drawbacks a custom one was needed.",
+    "url": "/api/tinymce/tinymce.undomanager/"
+  },
+
+  "/api/tinymce.util/tinymce.util.delay/": {
+    "title": "tinymce.util.Delay",
+    "description": "Utility class for working with delayed actions like setTimeout.",
+    "url": "/api/tinymce.util/tinymce.util.delay/"
+  },
+
+  "/api/tinymce.util/tinymce.util.eventdispatcher/": {
+    "title": "tinymce.util.EventDispatcher",
+    "description": "This class lets you add/remove and fire events by name on the specified scope. This makes it easy to add event listener logic to any class.",
+    "url": "/api/tinymce.util/tinymce.util.eventdispatcher/"
+  },
+
+  "/api/tinymce.util/tinymce.util.i18n/": {
+    "title": "tinymce.util.I18n",
+    "description": "I18n class that handles translation of TinyMCE UI. Uses po style with csharp style parameters.",
+    "url": "/api/tinymce.util/tinymce.util.i18n/"
+  },
+
+  "/api/tinymce.util/tinymce.util.imageuploader/": {
+    "title": "tinymce.util.ImageUploader",
+    "description": "This class handles uploading images to a back-end server.",
+    "url": "/api/tinymce.util/tinymce.util.imageuploader/"
+  },
+
+  "/api/tinymce.util/tinymce.util.json/": {
+    "title": "tinymce.util.JSON",
+    "description": "JSON parser and serializer class. &lt;br&gt; &lt;em&gt;&lt;code&gt;JSON&lt;/code&gt; has been deprecated and marked for removal in TinyMCE 6.0. Use the native browser &lt;code&gt;JSON&lt;/code&gt; API instead.&lt;/em&gt;",
+    "url": "/api/tinymce.util/tinymce.util.json/"
+  },
+
+  "/api/tinymce.util/tinymce.util.jsonrequest/": {
+    "title": "tinymce.util.JSONRequest",
+    "description": "This class enables you to use JSON-RPC to call backend methods. &lt;br&gt; &lt;em&gt;&lt;code&gt;JSONRequest&lt;/code&gt; has been deprecated and marked for removal in TinyMCE 6.0.&lt;/em&gt;",
+    "url": "/api/tinymce.util/tinymce.util.jsonrequest/"
+  },
+
+  "/api/tinymce.util/tinymce.util.observable/": {
+    "title": "tinymce.util.Observable",
+    "description": "This mixin adds event binding logic to classes. Adapts the EventDispatcher class.",
+    "url": "/api/tinymce.util/tinymce.util.observable/"
+  },
+
+  "/api/tinymce.util/tinymce.util.tools/": {
+    "title": "tinymce.util.Tools",
+    "description": "This class contains various utlity functions. These are also exposed directly on the tinymce namespace.",
+    "url": "/api/tinymce.util/tinymce.util.tools/"
+  },
+
+  "/api/tinymce.util/tinymce.util.uri/": {
+    "title": "tinymce.util.URI",
+    "description": "This class handles parsing, modification and serialization of URI/URL strings.",
+    "url": "/api/tinymce.util/tinymce.util.uri/"
+  },
+
+  "/api/tinymce.util/tinymce.util.xhr/": {
+    "title": "tinymce.util.XHR",
+    "description": "This API allows you to send XMLHTTPRequests cross browser. Extends the Observable class.",
+    "url": "/api/tinymce.util/tinymce.util.xhr/"
+  },
+
+  "/api/tinymce/tinymce.windowmanager/": {
+    "title": "tinymce.WindowManager",
+    "description": "This class handles the creation of native windows and dialogs. This class can be extended to provide for example inline dialogs.",
+    "url": "/api/tinymce/tinymce.windowmanager/"
+  },
+
+  "/plugins/opensource/toc/": {
+    "title": "Table of Contents plugin",
+    "description": "Insert a simple Table of Contents into TinyMCE editor",
+    "url": "/plugins/opensource/toc/"
+  },
+
+  "/ui-components/toolbarbuttons/": {
+    "title": "Toolbar buttons",
+    "description": "Add a custom buttons to the TinyMCE 6 toolbar.",
+    "url": "/ui-components/toolbarbuttons/"
+  },
+
+  "/how-to-guides/premium-server-side-guide/troubleshoot/": {
+    "title": "Troubleshoot server-side components",
+    "description": "Debug problems with the Enterprise server-side components.",
+    "url": "/how-to-guides/premium-server-side-guide/troubleshoot/"
+  },
+
+  "/ui-components/typesoftoolbarbuttons/": {
+    "title": "Types of toolbar buttons",
+    "description": "This section demonstrates different types of toolbar buttons.",
+    "url": "/ui-components/typesoftoolbarbuttons/"
+  },
+
+  "/general-configuration-guide/upgrading/": {
+    "title": "Upgrading TinyMCE",
+    "description": "How to upgrade TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, and custom build options.",
+    "url": "/general-configuration-guide/upgrading/"
+  },
+
+  "/general-configuration-guide/upload-images/": {
+    "title": "Handling image uploads",
+    "description": "How to manage asynchronous image uploads.",
+    "url": "/general-configuration-guide/upload-images/"
+  },
+
+  "/demo/url-conversion/": {
+    "title": "URL conversion example",
+    "description": "This example shows you how to setup TinyMCE to produce different results for URLs in images and links. You can read more about these config options in the FAQ.",
+    "url": "/demo/url-conversion/"
+  },
+
+  "/configure/url-handling/": {
+    "title": "URL handling options",
+    "description": "These settings affect the way URLs are handled by the editor.",
+    "url": "/configure/url-handling/"
+  },
+
+  "/ui-components/urldialog/": {
+    "title": "URL dialog",
+    "description": "URL dialogs are a TinyMCE UI component used to display an external page.",
+    "url": "/ui-components/urldialog/"
+  },
+
+  "/general-configuration-guide/use-tinymce-classic/": {
+    "title": "TinyMCE classic editing mode",
+    "description": "The Theme that renders iframe or inline modes using the TinyMCE core UI framework.",
+    "url": "/general-configuration-guide/use-tinymce-classic/"
+  },
+
+  "/general-configuration-guide/use-tinymce-distraction-free/": {
+    "title": "TinyMCE distraction-free editing mode",
+    "description": "Mode that renders a lightweight UI for inline editing.",
+    "url": "/general-configuration-guide/use-tinymce-distraction-free/"
+  },
+
+  "/general-configuration-guide/use-tinymce-inline/": {
+    "title": "Setup inline editing mode",
+    "description": "Understand the difference between traditional forms-based editing and advanced inline editing.",
+    "url": "/general-configuration-guide/use-tinymce-inline/"
+  },
+
+  "/demo/valid-elements/": {
+    "title": "Valid elements example",
+    "description": "This example shows you how to use the extended_valid_elements option, enabling you to specify valid elements and attributes.",
+    "url": "/demo/valid-elements/"
+  },
+
+  "/plugins/opensource/visualblocks/": {
+    "title": "Visual Blocks plugin",
+    "description": "Allows a user to see block level elements such as paragraphs.",
+    "url": "/plugins/opensource/visualblocks/"
+  },
+
+  "/plugins/opensource/visualchars/": {
+    "title": "Visual Characters plugin",
+    "description": "See invisible characters like non-breaking spaces.",
+    "url": "/plugins/opensource/visualchars/"
+  },
+
+  "/integrations/vue/": {
+    "title": "Vue integration",
+    "description": "The Official TinyMCE Vue.js component",
+    "url": "/integrations/vue/"
+  },
+
+  "/integrations/webcomponent/": {
+    "title": "The TinyMCE Web Component integration",
+    "description": "The TinyMCE Web Component integration guide",
+    "url": "/integrations/webcomponent/"
+  },
+
+  "/advanced/usage-with-module-loaders/webpack/webpack_cjs_download/": {
+    "title": "Bundling a .zip version of TinyMCE with CommonJS and Webpack",
+    "description": "Bundling a .zip archive version of TinyMCE in a project using CommonJS and Webpack",
+    "url": "/advanced/usage-with-module-loaders/webpack/webpack_cjs_download/"
+  },
+
+  "/advanced/usage-with-module-loaders/webpack/webpack_cjs_npm/": {
+    "title": "Bundling an npm version of TinyMCE with CommonJS and Webpack",
+    "description": "Bundling an npm version of TinyMCE in a project using CommonJS and Webpack",
+    "url": "/advanced/usage-with-module-loaders/webpack/webpack_cjs_npm/"
+  },
+
+  "/advanced/usage-with-module-loaders/webpack/webpack_es6_download/": {
+    "title": "Bundling a .zip version of TinyMCE with ES6 and Webpack",
+    "description": "Bundling a .zip archive version of TinyMCE in a project using ES6 and Webpack",
+    "url": "/advanced/usage-with-module-loaders/webpack/webpack_es6_download/"
+  },
+
+  "/advanced/usage-with-module-loaders/webpack/webpack_es6_npm/": {
+    "title": "Bundling an npm version of TinyMCE with ES6 and Webpack",
+    "description": "Bundling an npm version of TinyMCE in a project using ES6 and Webpack",
+    "url": "/advanced/usage-with-module-loaders/webpack/webpack_es6_npm/"
+  },
+
+  "/plugins/opensource/wordcount/": {
+    "title": "Word Count plugin",
+    "description": "Show a word count in the TinyMCE status bar.",
+    "url": "/plugins/opensource/wordcount/"
+  },
+
+  "/integrations/wordpress/": {
+    "title": "WordPress integration",
+    "description": "",
+    "url": "/integrations/wordpress/"
+  },
+
+  "/general-configuration-guide/work-with-plugins/": {
+    "title": "Work with plugins to extend TinyMCE",
+    "description": "TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.",
+    "url": "/general-configuration-guide/work-with-plugins/"
+  },
+
+  "/advanced/yeoman-generator/": {
+    "title": "TinyMCE plugin Yeoman generator",
+    "description": "How to use the Yeoman generator to bootstrap a new TinyMCE plugin using ES2015/Babel or TypeScript.",
+    "url": "/advanced/yeoman-generator/"
+  },
+
+  "/example/": {
+    "title": "",
+    "description": "",
+    "url": "/example/"
+  },
+
+  "/examples/": {
+    "title": "",
+    "description": "",
+    "url": "/examples/"
+  },
+
+  "/tutorial/": {
+    "title": "",
+    "description": "",
+    "url": "/tutorial/"
+  },
+
+  "/tutorials/": {
+    "title": "",
+    "description": "",
+    "url": "/tutorials/"
+  },
+
+  "/example-tutorial/": {
+    "title": "",
+    "description": "",
+    "url": "/example-tutorial/"
+  },
+
+  "/try-tinymce/": {
+    "title": "",
+    "description": "",
+    "url": "/try-tinymce/"
+  },
+
+  "/redirects.json": {
+    "title": "",
+    "description": "",
+    "url": "/redirects.json"
+  },
+
+  "/sitemap.xml": {
+    "title": "",
+    "description": "",
+    "url": "/sitemap.xml"
+  }
+
+}'

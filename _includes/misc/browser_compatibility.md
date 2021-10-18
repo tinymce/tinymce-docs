@@ -1,4 +1,4 @@
-## Supported Web Browsers
+### Supported Web Browsers
 
 {{site.productname}} uses advanced JavaScript techniques to normalize inconsistencies among browsers to ensure a uniform user experience. The primary focus is on:
 * Google Chrome

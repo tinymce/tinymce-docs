@@ -29,7 +29,7 @@ The following example breaks the page into two separate editable areas. Each are
   <form method="post">
     <h1>Multiple editors on a page: Section 1</h1>
     <div class="myeditablediv" id="section001">Click here to edit the first section of content!</div>
-  
+
     <h1>Multiple editors on a page: Section 2</h1>
     <div class="myeditablediv" id="section002">Click here to edit the second section of content!</div>
   </form>
@@ -55,7 +55,7 @@ The following example loads each editable area with a unique configuration of {{
     menubar: false,
     toolbar: 'undo redo'
   });
- 
+
   tinymce.init({
     selector: '#myeditable-div',
     inline: true
@@ -75,5 +75,4 @@ The following example loads each editable area with a unique configuration of {{
 </html>
 ```
 
-{% assign_page next_page = "/general-configuration-guide/advanced-install/index.html" %}
-{% include next-step.html next=next_page %}
+

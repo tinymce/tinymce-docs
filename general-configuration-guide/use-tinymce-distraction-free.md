@@ -38,5 +38,4 @@ For information on:
 * Disabling the {{site.productname}} menubar, see: [Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
 * The `inline` setting, see: [inline]({{ site.baseurl }}/configure/editor-appearance/#inline).
 
-{% assign_page next_page = "/general-configuration-guide/multiple-editors/index.html" %}
-{% include next-step.html next=next_page %}
+

@@ -12,8 +12,8 @@ redirect_from:
   - /example-tutorial/
   - /try-tinymce/
 ---
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "demo" %}
     {% assign links = entry.pages %}
   {% endif %}

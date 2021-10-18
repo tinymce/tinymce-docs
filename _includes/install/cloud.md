@@ -47,4 +47,4 @@ Also, if you wish to use a custom language, you need to enter the location of th
 
 You may also want to select a specific version of the editor from {{site.cloudname}} and you should head on over to [Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version) for details on that.
 
-> If you have decided to use {{site.cloudname}}, please move on to the next step [working with plugins](../work-with-plugins/) where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
+> If you have decided to use {{site.cloudname}}, please move on to the next step [working with plugins]({{site.baseurl}}/general-configuration-guide/work-with-plugins/) where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.

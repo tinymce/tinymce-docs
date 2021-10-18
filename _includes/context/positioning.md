@@ -4,7 +4,6 @@
   {% when "Context forms" %}
     {% assign contextItemType = "form" %}
 {% endcase %}
-<a class="anchor" id="positioningcontexttoolbars"></a><a class="anchor" id="positioningcontextforms"></a>
 
 ### Positioning of context {{contextItemType}}s
 

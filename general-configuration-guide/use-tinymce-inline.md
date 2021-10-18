@@ -53,5 +53,4 @@ The following demonstration is using four {{site.productname}} editors in inline
 
 For information on inline mode and the `inline` setting, see: [User interface options - inline]({{site.baseurl}}/configure/editor-appearance/#inline).
 
-{% assign_page next_page = "/general-configuration-guide/use-tinymce-distraction-free/index.html" %}
-{% include next-step.html next=next_page %}
+

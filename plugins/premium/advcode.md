@@ -11,9 +11,21 @@ controls: toolbar button, menu item
 {% assign plugincode = "advcode" %}
 {{site.premiumplugin}}
 
-This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced [code editor]({{ site.baseurl }}/enterprise/advcode/) than the default textarea.
+The [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/) plugin (`advcode`) brings a more advanced code editor to {{site.productname}}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
 
-If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code (`code`) plugin.
+* Syntax color highlighting
+* Bracket matching
+* Code folding
+* Multiple selections/carets
+* Search and Replace
+
+## The difference between the Code and Advanced Code Editor plugins
+
+{% include live-demo.html id="advcode" %}
+
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'advcode' %}
+{% include misc/purchase-premium-plugins.md %}
 
 ## Example: Basic setup
 
@@ -24,10 +36,6 @@ tinymce.init({
   toolbar: 'code'
 });
 ```
-
-## The difference between the Code and Advanced Code Editor plugins
-
-{% include live-demo.html id="advcode" %}
 
 {% include misc/advcode-shortcuts.md %}
 

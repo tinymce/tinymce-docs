@@ -5,8 +5,8 @@ title_nav: Tiny Drive
 description: Tiny Drive
 type: folder
 ---
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "tinydrive" %}
     {% assign links = entry.pages %}
   {% endif %}

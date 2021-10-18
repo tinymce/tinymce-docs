@@ -6,8 +6,8 @@ description_short: The most customizable rich text editor.
 description: TinyMCE is not only the most advanced rich text editor it's also the most customizable.
 type: folder
 ---
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "configure" %}
     {% assign links = entry.pages %}
   {% endif %}

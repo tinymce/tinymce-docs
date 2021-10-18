@@ -1,5 +1,3 @@
-<a class="anchor" id="contexttoolbarpriority"></a><a class="anchor" id="contextformpriority"></a>
-
 ## Troubleshooting context toolbar and context form conflicts
 
 There are situations where custom context toolbars or custom context forms may conflict with:

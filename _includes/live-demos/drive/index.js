@@ -1,6 +1,6 @@
 tinymce.init({
   selector: 'textarea#drive',
-  plugins: 'image media link tinydrive code imagetools',
+  plugins: 'image media link tinydrive code imagetools lists',
   api_key: 'fake-key',
   height: 600,
   imagetools_cors_hosts: ['picsum.photos'],
@@ -9,5 +9,8 @@ tinymce.init({
   },
   tinydrive_demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',
   toolbar: 'insertfile image link | code',
+  menu: {
+    insert: { title: 'Insert', items: 'image link media insertfile' },
+  },
   content_style: {{site.liveDemoIframeCSSStyles}}
 });

@@ -21,6 +21,10 @@ Once you enable {{site.cloudfilemanager}} it integrates as the default file pick
 
 {% include live-demo.html id="drive" %}
 
+{% assign pluginminimumplan = 'tierone' %}
+{% assign plugindocspage = '../tinydrive' %}
+{% include misc/purchase-premium-plugins.md %}
+
 ## Basic setup
 
 ```js

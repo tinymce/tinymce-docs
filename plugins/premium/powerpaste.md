@@ -14,6 +14,14 @@ The {{site.productname}} **PowerPaste** plugin automatically cleans up content f
 
 > **Note:** Due to limitations in Microsoft Excel online (part of Office Live) PowerPaste does not support pasting from Microsoft Excel online.  If you paste content using Microsoft Excel in Office Live you will get a plain text representation of the content.
 
+## Try our PowerPaste plugin demo
+
+{% include live-demo.html id="paste-from-word" %}
+
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'powerpaste' %}
+{% include misc/purchase-premium-plugins.md %}
+
 ## Usage
 
 The **PowerPaste** plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action. Simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu), or the {{site.productname}} "Paste" toolbar button.

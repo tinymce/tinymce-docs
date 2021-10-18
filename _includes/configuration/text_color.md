@@ -1,5 +1,3 @@
-<a class="anchorable" href="#text_color"></a>
-
 ## Text color options
 
 These options affect the color selector shown when using the `forecolor` (text color) and `backcolor` (text background) toolbar buttons or menu items. The dimensions and mapping of the grid of text colors can be set here.

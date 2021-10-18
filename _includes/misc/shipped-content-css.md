@@ -19,6 +19,6 @@ tinymce.init({
 These content CSS files can also be used as a template for creating a custom content CSS file for the editor. For the CSS files, see: [{{site.prodnamecode}}-dist GitHub Repository - Content CSS files](https://github.com/tinymce/tinymce-dist/tree/master/skins/content).
 
 {{site.companyname}} also provides content CSS files with the premium skins, for a list of premium content CSS files, see:
-[{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+[{{site.prem_skins_icons}}]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/).
 
 {{site.companyname}} recommends using the same CSS for both the editor and the page where the editor content will be rendered.

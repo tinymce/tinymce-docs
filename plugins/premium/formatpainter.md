@@ -16,7 +16,13 @@ The Format Painter plugin allows a user to copy and paste formatting from one lo
 
 ## Interactive example
 
+The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `Ctrl+Alt+V` keyboard shortcut.
+
 {% include live-demo.html id="format-painter" %}
+
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'formatpainter' %}
+{% include misc/purchase-premium-plugins.md %}
 
 ## Basic setup
 

@@ -6,8 +6,9 @@ description: Release notes for TinyMCE 6
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 type: folder
 ---
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "release-notes" %}
     {% assign links = entry.pages %}
   {% endif %}

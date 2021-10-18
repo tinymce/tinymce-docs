@@ -60,4 +60,4 @@ tinymce.init({
 });
 ```
 
-> If you have decided to use this package manager, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
+> If you have decided to use this package manager, move on to the next step [working with plugins]({{site.baseurl}}/general-configuration-guide/work-with-plugins/), where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.

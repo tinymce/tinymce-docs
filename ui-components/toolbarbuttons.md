@@ -53,5 +53,3 @@ The following example creates different types of toolbar buttons.
 
 {% include live-demo.html id="toolbar-button" height="400" %}
 
-{% assign_page next_page = "/ui-components/typesoftoolbarbuttons/index.html" %}
-{% include next-step.html next=next_page %}

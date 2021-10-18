@@ -359,7 +359,7 @@ To apply a custom skin to the editor, use the `skin` attribute. For example:
 For information on:
 
 - Using the `skin` option, see: [User interface options - `skin`]({{site.baseurl}}/configure/editor-appearance/#skin).
-- {{site.companyname}} premium skins, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- {{site.companyname}} premium skins, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/).
 - Creating a custom skin for {{site.productname}}, see: [Create a skin for {{site.productname}}]({{site.baseurl}}/advanced/creating-a-skin/).
 
 #### Setting the images upload URL
@@ -434,7 +434,7 @@ Use this attribute if the icon pack is bundled with {{site.productname}} (includ
 For information on:
 
 - Using the `icons` option, see: [User interface options - `icons`]({{site.baseurl}}/configure/editor-appearance/#icons).
-- {{site.companyname}} premium icon packs, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- {{site.companyname}} premium icon packs, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/).
 - Creating a custom icon pack for {{site.productname}}, see: [Create an icon pack for {{site.productname}}]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 
 #### Setting the icon pack URL
@@ -450,7 +450,7 @@ Use this attribute if the icon pack is hosted on a web site. If the icon pack is
 For information on:
 
 - Using the `icons_url` option, see: [User interface options - `icons_url`]({{site.baseurl}}/configure/editor-appearance/#icons_url).
-- {{site.companyname}} premium icon packs, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- {{site.companyname}} premium icon packs, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/).
 - Creating a custom icon pack for {{site.productname}}, see: [Create an icon pack for {{site.productname}}]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 
 #### Setting additional configuration options

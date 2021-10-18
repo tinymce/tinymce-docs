@@ -7,8 +7,8 @@ description: This section lists the open source plugins provided with TinyMCE.
 type: folder
 ---
 
-{% assign navigaton = site.data.nav %}
-{% for entry in navigaton %}
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
   {% if entry.url == "plugins" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "opensource" %}

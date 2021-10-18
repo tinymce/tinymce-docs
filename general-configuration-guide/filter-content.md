@@ -23,7 +23,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 ### Built-in formats
 
-{{site.productname}} contains built-in formats that can be overridden. More information about these default controls is in the [Basic setup](../basic-setup) part of this guide.
+{{site.productname}} contains built-in formats that can be overridden. More information about these default controls is in the [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/) part of this guide.
 
 * alignleft
 * aligncenter
@@ -93,5 +93,4 @@ tinymce.init({
 });
 ```
 
-{% assign_page next_page = "/general-configuration-guide/localize-your-language/index.html" %}
-{% include next-step.html next=next_page %}
+

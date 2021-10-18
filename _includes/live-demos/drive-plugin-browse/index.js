@@ -1,5 +1,5 @@
 tinymce.init({
-  tinydrive_demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',
+  tinydrive_demo_files_url: '{{ site.baseurl }}/images/tiny-drive-demo/demo_files.json',
   tinydrive_token_provider: function (success) { success({ token: 'fake-token' }); },
   selector: 'textarea#drive-browse-example',
   height: 200,

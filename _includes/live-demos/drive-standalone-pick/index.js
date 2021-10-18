@@ -4,7 +4,7 @@
 
   button.addEventListener('click', function () {
     tinydrive.pick({
-      demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',
+      demo_files_url: '{{ site.baseurl }}/images/tiny-drive-demo/demo_files.json',
       token_provider: function (success) { success({ token: 'fake-token' }); },
     }).then(function(result) {
       /* input.value = result.files[0].url; */

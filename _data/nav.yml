@@ -56,8 +56,8 @@
   - url: "basic-example"
   - url: "full-featured"
     pages:
-    - url: "#Full Featured: Including Premium Plugins"
-    - url: "#Full Featured: Non-Premium Plugins"
+    - url: "premium-full-featured"
+    - url: "os-full-featured"
   - url: "premium-skins-and-icon-packs"
     pages:
     - url: "bootstrap-demo"
@@ -71,27 +71,9 @@
     - url: "outside-demo"
     - url: "small-demo"
     - url: "snow-demo"
-  - url: "casechange"
-  - url: "comments-2"
-  - url: "checklist"
-  - url: "pageembed"
-  - url: "permanentpen"
-  - url: "formatpainter"
-  - url: "tinydrive"
-  - url: "editor-dfree"
-  - url: "inline"
   - url: "classic"
-  - url: "image-tools"
-  - url: "format-custom"
-  - url: "format-html5"
-  - url: "url-conversion"
-  - url: "valid-elements"
-  - url: "custom-toolbar-button"
-  - url: "custom-toolbar-menu-button"
-  - url: "custom-toolbar-split-button"
-  - url: "custom-menu-item"
-  - url: "file-picker"
-  - url: "local-upload"
+  - url: "inline"
+  - url: "editor-dfree"
 
 - url: "interface"
   pages:
@@ -344,11 +326,7 @@
       - url: "#smart_paste"
       - url: "#paste_preprocess"
       - url: "#paste_postprocess"
-    - url: "tinymcespellchecker"
-      pages:
-      - url: "introduction-to-tiny-spellchecker"
-      - url: "custom-dictionaries-for-tiny-spellchecker"
-    - url: "tinydrive"
+
     - url: "rtc"
       pages:
         - url: "introduction"
@@ -408,6 +386,11 @@
           pages:
           - url: "#Common error messages"
           - url: "#Common JWT error messages"
+    - url: "tinymcespellchecker"
+      pages:
+      - url: "introduction-to-tiny-spellchecker"
+      - url: "custom-dictionaries-for-tiny-spellchecker"
+    - url: "tinydrive"
 
   - url: "opensource"
     pages:

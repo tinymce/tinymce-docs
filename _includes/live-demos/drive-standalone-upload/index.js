@@ -1,10 +1,10 @@
 (function () {
   var button = document.querySelector('.tinydrive-standalone-demo-upload');
   var percent = document.querySelector('.tinydrive-standalone-demo-percent');
-  
+
   button.addEventListener('click', function () {
     tinydrive.upload({
-      demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',
+      demo_files_url: '{{ site.baseurl }}/images/tiny-drive-demo/demo_files.json',
       token_provider: function (success) { success({ token: 'fake-token' }); },
       path: '/hello',
       name: 'hello.txt',

@@ -80,6 +80,33 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
+### Real-Time Collaboration 1.1.1
+
+The {{site.productname}} 5.10 release includes an accompanying release of the **RTC** premium plugin.
+
+**RTC** 1.1.1 adds the following new features:
+
+- Added support for the [`indent_use_margin`]({{site.baseurl}}/configure/content-formatting/#indent_use_margin) option.
+- Added validation of document and role JWT claims. For details, see: [`Optional JWT claims`]({{site.baseurl}}/rtc/configuration/rtc-options-required/#optionaljwtclaims).
+- Added support for the [`allow_unsafe_link_target`]({{site.baseurl}}/configure/content-filtering/#allow_unsafe_link_target) and [`rel_list`]({{site.baseurl}}/plugins/opensource/link/#rel_list) options.
+- RTC will now automatically recover from temporary network connection issues. If the network issues are persistent it will show a disconnected notification after 30 seconds.
+
+**RTC** 1.1.1 introduces the following enhancements:
+
+- Improved compatibility with future server changes.
+- Undo now splits local undo levels more intelligently based on remote changes.
+- Crash logs now include more details about the websocket connection.
+- Reduced bundle size by 21kb with Slate version 0.65.3.
+- Added better error handling while establishing a session.
+
+**RTC** 1.1.1 provides the following bug fixes:
+
+- Images inserted by the emoticons plugin were resizable in the editor view.
+- Clear Formatting did not work on collapsed selections.
+- Disconnect was not clean if the page unloaded without removing the editor.
+
+For information on the RTC plugin, see: [RTC plugin]({{site.baseurl}}/rtc/).
+
 ### Spell Checker Pro 2.5.0
 
 The {{site.productname}} 5.10 release includes an accompanying release of the **Spell Checker Pro** premium plugin.

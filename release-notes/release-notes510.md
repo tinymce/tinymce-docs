@@ -100,6 +100,8 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 - The "Ignore all" action would incorrectly affect words that were in a different language to the selected word, if they were spelled the same.
 
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+
 ## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} 5.10 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:

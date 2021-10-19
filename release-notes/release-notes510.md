@@ -18,7 +18,6 @@ keywords: releasenotes bugfixes
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
-- [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 {{site.releasenotes_for_stable}}
@@ -300,20 +299,6 @@ tinymce.util.Tools API methods
 
 The tinymce.util.XHR API class
 : The `tinymce.util.XHR` class has been deprecated in {{site.productname}} 5.10. Use the native [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) instead. For information on the deprecated class, see: [tinymce.util.XHR]({{site.baseurl}}/api/tinymce.util/tinymce.util.xhr/).
-
-## Known issues
-
-This section describes issues that users of {{site.productname}} 5.10 may encounter and possible workarounds for these issues.
-
-- [](#)
-
-###
-
-Issue
-: This issue affects ....
-
-Workaround
-: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

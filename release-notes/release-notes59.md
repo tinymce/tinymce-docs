@@ -355,7 +355,6 @@ For information on:
 - Partially transparent RGBA values provided in the `color_map` setting were given the wrong hex value.
 - HTML comments with mismatched quotes were parsed incorrectly under certain circumstances.
 - The editor could crash when inserting certain HTML content.
-- Inserting certain HTML content into the editor could result in invalid HTML once parsed.
 - Links in notification text did not show the correct mouse pointer.
 - Using the Tab key to navigate into the editor on Microsoft Internet Explorer 11 would incorrectly focus the toolbar.
 - The editor selection could be placed in an incorrect location when undoing or redoing changes in a document containing `contenteditable="false"` elements.
@@ -387,7 +386,10 @@ For information on:
 
 ## Security fixes
 
-{{site.productname}} 5.9 provides fixes for the accompanying premium self-hosted server-side components. The `.war` files have been updated to address various high and medium severity security issues.
+{{site.productname}} 5.9 provides fixes for the following security issues:
+
+- Inserting certain HTML content into the editor could result in invalid HTML once parsed. This caused a medium severity Cross Site Scripting (XSS) vulnerability. Tiny Technologies would like to thank William Bowling for discovering this vulnerability.
+- The `.war` files for the premium self-hosted server-side components have been updated to address various high and medium severity security issues.
 
 ## Deprecated features
 

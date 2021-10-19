@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.10 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.10 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.10, including:
+{{site.productname}} 5.10 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, October 20<sup>th</sup>, 2021. It includes {{site.productname}} 5.10 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.10, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
@@ -46,24 +46,6 @@ The following functionality changes were made for the {{site.productname}} 5.10 
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.10.
-
-### Premium Plugin Name X.Y.Z
-
-The {{site.productname}} 5.10 release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
-
-**<<Premium Plugin Name>>** X.Y.Z adds the following new features:
-
-- <Description>
-
-**<<Premium Plugin Name>>** X.Y.Z introduces the following enhancements:
-
-- <Description>
-
-**<<Premium Plugin Name>>** X.Y.Z provides the following bug fixes:
-
-- <Description>
-
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
 ### Advanced Tables 1.2.0
 
@@ -142,7 +124,7 @@ For information on:
 
 ### Updating the self-hosted server-side components
 
-Version X.Y.Z provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
 1. Update your Java Application Server to the minimum required version:
 

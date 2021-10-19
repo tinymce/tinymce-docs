@@ -112,9 +112,25 @@ The {{site.productname}} 5.10 release includes accompanying changes affecting th
 - The Link Checker plugin (`linkchecker`)
 - The Spell Checker Pro plugin (`tinymcespellchecker`)
 
-The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version X.Y.Z**.
+The Java server-side components have been updated to the following versions:
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
+* `ephox-spelling.war`: 2.118.0
+* `ephox-hyperlinking.war`: 2.105.5
+* `ephox-image-proxy.war`: 2.105.4
+
+These versions require Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
+
+### New Server-side component features
+
+The Spelling service now includes a new configuration option, allowing the server to reject spelling requests that contain too many incorrect words. For details, see: [Configure server-side components: `num-incorrect-words-in-suggestions-request-limit`]({{site.baseurl}}/enterprise/server/configure/#num-incorrect-words-in-suggestions-request-limitoptional).
+
+### Image Proxy service patch release
+
+Version 2.105.4 of the image proxy service returns a new error when `Content-Length` is not present on the image being proxied.
+
+### Hyperlinking service patch release 
+
+Version 2.105.5 of the hyperlinking service includes a fix to send `Accept` headers with the link-checking requests. 
 
 For information on:
 

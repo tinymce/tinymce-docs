@@ -78,6 +78,24 @@
     - url: "dockerservices"
     - url: "troubleshoot"
   - url: "tinymce-for-mobile"
+  - url: "accessibility"
+  - url: "keyboard-shortcuts"
+  - url: "generate-rsa-key-pairs"
+  - url: "creating-a-skin"
+  - url: "creating-an-icon-pack"
+    pages:
+    - url: "#How icons work in TinyMCE"
+    - url: "#Creating a TinyMCE icon pack"
+    - url: "#Deploying an icon pack"
+  - url: "creating-a-plugin"
+  - url: "annotations"
+  - url: "yeoman-generator"
+  - url: "creating-custom-notifications"
+  - url: "security"
+    pages:
+    - url: "#Reporting TinyMCE security issues"
+    - url: "#What we do to maintain security for TinyMCE"
+    - url: "#General security risks for user input elements"
   - url: "migration-from-5x"
     pages:
     - url: "#Editor-Core"
@@ -740,22 +758,8 @@
 
 - url: "advanced"
   pages:
-  - url: "accessibility"
-  - url: "security"
-    pages:
-    - url: "#Reporting TinyMCE security issues"
-    - url: "#What we do to maintain security for TinyMCE"
-    - url: "#General security risks for user input elements"
-  - url: "creating-a-skin"
-  - url: "creating-an-icon-pack"
-    pages:
-    - url: "#How icons work in TinyMCE"
-    - url: "#Creating a TinyMCE icon pack"
-    - url: "#Deploying an icon pack"
-  - url: "creating-a-plugin"
-  - url: "annotations"
-  - url: "yeoman-generator"
-  - url: "creating-custom-notifications"
+
+
   - url: "php-upload-handler"
   - url: "available-menu-items"
     pages:
@@ -856,7 +860,6 @@
       - url: "#Editor core events"
       - url: "#Plugin events"
       - url: "#Editor Manager events"
-  - url: "keyboard-shortcuts"
   - url: "usage-with-module-loaders"
     pages:
     - url: "introduction_to_bundling_tinymce"
@@ -882,7 +885,6 @@
       - url: "icons"
       - url: "localization"
       - url: "themes"
-  - url: "generate-rsa-key-pairs"
 
 - url: "release-information"
   pages:

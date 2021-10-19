@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Accessibility
-title_nav: Accessibility
+title: Accessible navigation guide
+title_nav: Accessibility Guide
 description_short: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
 description: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
 keywords: accessibility wai aria jaws nvda

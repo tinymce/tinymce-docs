@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Security
-title_nav: Security
+title: Security guide
+title_nav: Security guide
 description_short: Security information for TinyMCE.
 description: Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users.
 keywords: security xss scripting vulnerability hack hacker csp mitigation protection protect

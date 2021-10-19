@@ -7,20 +7,18 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 type: folder
 ---
 
-{% comment %}
-Replace 6.0 with the version number such as: X.Y.Z
-Replace 6_0_0 with the version number such as: X_Y_Z
-{% endcomment %}
-
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "release-notes" %}
+  {% if entry.url == "release-information" %}
     {% for subentry in entry.pages %}
-      {% if subentry.url == "6_0_0" %}
-        {% assign links = subentry.pages %}
+      {% if subentry.url == "release-notes" %}
+        {% for sub2entry in subentry.pages %}
+          {% if sub2entry.url == "6_0_0" %}
+            {% assign links = sub2entry.pages %}
+          {% endif %}
+        {% endfor %}
       {% endif %}
     {% endfor %}
   {% endif %}
 {% endfor %}
-
 {% include index.html links=links %}

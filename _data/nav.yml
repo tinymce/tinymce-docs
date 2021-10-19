@@ -1,4 +1,49 @@
-- url: "quick-start"
+- url: "getting-started"
+  pages:
+  - url: "introduction-to-tinymce"
+  - url: "cloud-quick-start"
+  - url: "angularjs"
+  - url: "angular"
+    pages:
+    - url: "#TinyMCE Angular integration quick start guide"
+    - url: "#TinyMCE Angular technical reference"
+  - url: "blazor"
+    pages:
+    - url: "#TinyMCE Blazor integration quick start guides"
+    - url: "#TinyMCE Blazor integration technical reference"
+  - url: "bootstrap"
+  - url: "django"
+  - url: "jquery"
+  - url: "laravel"
+    pages:
+    - url: "laravel-introduction"
+    - url: "laravel-tiny-cloud"
+    - url: "laravel-composer-install"
+    - url: "laravel-zip-install"
+  - url: "expressjs"
+  - url: "rails"
+    pages:
+    - url: "#TinyMCE in Ruby on Rails using the Tiny Cloud"
+    - url: "#TinyMCE in Ruby on Rails using TinyMCE self-hosted"
+    - url: "#The third-party TinyMCE Ruby on Rails gem"
+  - url: "react"
+    pages:
+    - url: "#TinyMCE React integration quick start guide"
+    - url: "#TinyMCE React technical reference"
+  - url: "svelte"
+    pages:
+    - url: "#TinyMCE Svelte integration quick start guide"
+    - url: "#TinyMCE Svelte integration technical reference"
+  - url: "swing"
+  - url: "vue"
+    pages:
+    - url: "#TinyMCE Vue.js integration quick start guide"
+    - url: "#TinyMCE Vue.js technical reference"
+  - url: "webcomponent"
+    pages:
+    - url: "#TinyMCE Web Component quick start guide"
+    - url: "#TinyMCE Web Component technical reference"
+  - url: "wordpress"
 
 - url: "general-configuration-guide"
   pages:
@@ -7,7 +52,6 @@
   - url: "use-tinymce-inline"
   - url: "use-tinymce-distraction-free"
   - url: "multiple-editors"
-  - url: "advanced-install"
   - url: "upgrading"
   - url: "work-with-plugins"
   - url: "customize-ui"
@@ -17,16 +61,15 @@
   - url: "filter-content"
   - url: "localize-your-language"
 
-- url: "cloud-deployment-guide"
-  pages:
-  - url: "editor-and-features"
-  - url: "features-only"
-  - url: "editor-plugin-version"
-  - url: "plugin-editor-version-compatibility"
-  - url: "cloud-troubleshooting"
-
 - url: "how-to-guides"
   pages:
+  - url: "cloud-deployment-guide"
+    pages:
+    - url: "editor-and-features"
+    - url: "features-only"
+    - url: "editor-plugin-version"
+    - url: "plugin-editor-version-compatibility"
+    - url: "cloud-troubleshooting"
   - url: "premium-server-side-guide"
     pages:
     - url: "introduction-to-premium-selfhosted-services"
@@ -840,50 +883,6 @@
       - url: "localization"
       - url: "themes"
   - url: "generate-rsa-key-pairs"
-- url: "integrations"
-  pages:
-  - url: "angularjs"
-  - url: "angular"
-    pages:
-    - url: "#TinyMCE Angular integration quick start guide"
-    - url: "#TinyMCE Angular technical reference"
-  - url: "blazor"
-    pages:
-    - url: "#TinyMCE Blazor integration quick start guides"
-    - url: "#TinyMCE Blazor integration technical reference"
-  - url: "bootstrap"
-  - url: "django"
-  - url: "jquery"
-  - url: "laravel"
-    pages:
-    - url: "laravel-introduction"
-    - url: "laravel-tiny-cloud"
-    - url: "laravel-composer-install"
-    - url: "laravel-zip-install"
-  - url: "expressjs"
-  - url: "rails"
-    pages:
-    - url: "#TinyMCE in Ruby on Rails using the Tiny Cloud"
-    - url: "#TinyMCE in Ruby on Rails using TinyMCE self-hosted"
-    - url: "#The third-party TinyMCE Ruby on Rails gem"
-  - url: "react"
-    pages:
-    - url: "#TinyMCE React integration quick start guide"
-    - url: "#TinyMCE React technical reference"
-  - url: "svelte"
-    pages:
-    - url: "#TinyMCE Svelte integration quick start guide"
-    - url: "#TinyMCE Svelte integration technical reference"
-  - url: "swing"
-  - url: "vue"
-    pages:
-    - url: "#TinyMCE Vue.js integration quick start guide"
-    - url: "#TinyMCE Vue.js technical reference"
-  - url: "webcomponent"
-    pages:
-    - url: "#TinyMCE Web Component quick start guide"
-    - url: "#TinyMCE Web Component technical reference"
-  - url: "wordpress"
 
 - url: "release-information"
   pages:

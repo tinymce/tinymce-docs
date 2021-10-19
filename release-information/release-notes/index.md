@@ -9,8 +9,12 @@ type: folder
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "release-notes" %}
-    {% assign links = entry.pages %}
+  {% if entry.url == "release-information" %}
+    {% for subentry in entry.pages %}
+      {% if subentry.url == "release-notes" %}
+        {% assign links = subentry.pages %}
+      {% endif %}
+    {% endfor %}
   {% endif %}
 {% endfor %}
 

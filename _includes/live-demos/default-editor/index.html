@@ -1,0 +1,57 @@
+<style>
+  .button {
+  display: inline-block;
+  min-width: 158px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 25px;
+  text-align: center;
+  margin: 5px;
+}
+.button:active {
+  transform: translateY(1px);
+}
+
+.button-color {
+  background-color: {{site.primaryColor}};
+}
+
+.button-color:hover {
+  background-color: #1d6abe;
+}
+
+.link-text {
+  color: #fff;
+  font-weight: 600;
+}
+#submitContainer {
+  display: flex;
+  justify-content: center;
+}
+.contentDumpBox {
+  white-space: normal;
+  padding: 5px;
+  border: 2px solid {{site.primaryColor}};
+  border-radius: 10px;
+  margin: 5px;
+}
+</style>
+<script>
+  function dumpEditorContent (editorID, outputElementId) {
+    var editorContent = tinymce.get(editorID).getContent();
+    var outputElement = document.getElementById(outputElementId);
+        outputElement.innerText = editorContent;
+  }
+</script>
+<textarea id="default-editor">
+  <p><em>Hello</em>, <span style="text-decoration: underline;"><strong>World!</strong></span></p>
+</textarea>
+<div id="submitContainer">
+  <button id="fake-submit" class="button button-color link-text" onclick="dumpEditorContent('default-editor','output-content')">Submit!</button>
+</div>
+<pre id="output-content" class="contentDumpBox">
+  Click the submit button to view the output HTML.
+</pre>

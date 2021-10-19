@@ -161,7 +161,6 @@ For information on:
 - Fixed an exception getting thrown when the number of `col` elements didn't match the number of columns in a table.
 - The table selection state could become incorrect after selecting a noneditable table cell.
 - As of Mozilla Firefox 91, toggling fullscreen mode with `toolbar_sticky` enabled would cause the toolbar to disappear.
-- Fixed URLs not cleaned correctly in some cases in the `link` and `image` plugins.
 - Fixed the `image` and `media` toolbar buttons incorrectly appearing to be in an inactive state in some cases.
 - Fixed the `editor.selection.selectorChanged` API not firing if the selector matched the current selection when registered in some cases.
 - Inserting content into a `contenteditable="true"` element that was contained within a `contenteditable="false"` element would move the selection to an incorrect location.
@@ -172,9 +171,9 @@ For information on:
 
 ## Security fixes
 
-{{site.productname}} 5.10 provides fixes for the following security issues:
+{{site.productname}} 5.10 provides fixes for the following security issues.
 
-- changelog
+Fixed URLs not cleaned correctly in some cases in the `link` and `image` plugins. This caused a medium severity Cross Site Scripting (XSS) vulnerability. Tiny Technologies would like to thank Yakir6 for discovering this vulnerability.
 
 ## Deprecated features
 

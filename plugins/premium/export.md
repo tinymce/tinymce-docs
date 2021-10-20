@@ -24,7 +24,6 @@ To export the editor content, either:
 {% include live-demo.html id="export" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'export' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Basic setup

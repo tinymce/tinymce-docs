@@ -18,7 +18,6 @@ The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin]({
 {% include live-demo.html id="mediaembed" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'mediaembed' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Installation

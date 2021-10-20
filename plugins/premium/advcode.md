@@ -24,7 +24,6 @@ The [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/) plugin (`a
 {% include live-demo.html id="advcode" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'advcode' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Example: Basic setup

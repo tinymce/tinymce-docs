@@ -19,7 +19,6 @@ The **Case Change** plugin is a time saving and handy extension that allows chan
 {% include live-demo.html id="casechange" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'casechange' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Changing the case of selected text

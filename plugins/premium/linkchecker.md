@@ -20,7 +20,6 @@ The Link Checker plugin relies on HTTP response status codes to determine if a l
 {% include live-demo.html id="linkchecker" %}
 
 {% assign pluginminimumplan = 'tierthree' %}
-{% assign plugindocspage = 'linkchecker' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Cloud Instructions

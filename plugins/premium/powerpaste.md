@@ -19,7 +19,6 @@ The {{site.productname}} **PowerPaste** plugin automatically cleans up content f
 {% include live-demo.html id="paste-from-word" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'powerpaste' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Usage

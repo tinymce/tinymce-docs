@@ -18,7 +18,6 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 {% include live-demo.html id="spellcheckerpro" %}
 
 {% assign pluginminimumplan = 'tierthree' %}
-{% assign plugindocspage = 'tinymcespellchecker' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Cloud Installation

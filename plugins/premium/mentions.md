@@ -18,7 +18,6 @@ The mentions plugin will present a list of users when a user types the "@" symbo
 {% include live-demo.html id="mentions" height="400" %}
 
 {% assign pluginminimumplan = 'enterprise' %}
-{% assign plugindocspage = 'mentions' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Options

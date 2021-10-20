@@ -23,7 +23,6 @@ The **Page Embed** plugin embeds a page in the content using an iframe (Inline f
 {% include live-demo.html id="page-embed" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'pageembed' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Creating a Page Embed toolbar button

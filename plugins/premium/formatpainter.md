@@ -21,7 +21,6 @@ The format painter retains the formatting after application making it possible t
 {% include live-demo.html id="format-painter" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'formatpainter' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Basic setup

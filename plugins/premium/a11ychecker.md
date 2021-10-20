@@ -18,7 +18,6 @@ The `a11ychecker` premium plugin allows you to check the HTML in the editor for 
 {% include live-demo.html id="a11ychecker" %}
 
 {% assign pluginminimumplan = 'tierthree' %}
-{% assign plugindocspage = 'a11ychecker' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Basic setup

@@ -102,7 +102,6 @@ Below are some recommended combinations of skins and icon packs:
 
 {% assign pluginname = 'Tiny Skins and Icon' %}
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = '../configure/editor-appearance/#skin' %}
 {% assign extensionType = 'Packs' %}
 {% assign pluralExtensionType = true %}
 {% include misc/purchase-premium-plugins.md %}

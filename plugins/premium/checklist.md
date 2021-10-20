@@ -21,7 +21,6 @@ In the {{site.productname}} editor, checklists are presented as lists with small
 {% include live-demo.html id="checklist" %}
 
 {% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'checklist' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Creating a Checklist

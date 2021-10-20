@@ -46,7 +46,6 @@ The following example shows how to configure the Comments plugin in **embedded**
 {% include live-demo.html id="comments-embedded" %}
 
 {% assign pluginminimumplan = 'enterprise' %}
-{% assign plugindocspage = 'comments' %}
 {% include misc/purchase-premium-plugins.md %}
 
 ## Getting started with the Comments plugin - Selecting a mode

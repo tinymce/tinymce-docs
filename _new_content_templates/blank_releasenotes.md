@@ -153,7 +153,7 @@ Version X.Y.Z provides updates for the Java-based server-side components. To dep
         - 8.0.42+
         - 7.0.76+
 
-2. Replace the existing server-side `.war` files with the version 2.5.0 `.war` files bundled with {{site.productname}} vnumtxt or later.
+2. Replace the existing server-side `.war` files with the `.war` files bundled with {{site.productname}} vnumtxt or later.
 
 For information on:
 
@@ -184,15 +184,15 @@ The following features have been deprecated with the release of {{site.productna
 
 This section describes issues that users of {{site.productname}} vnumtxt may encounter and possible workarounds for these issues.
 
-**Outline**
-
 - [](#)
 
 ###
 
-**Issue**: This issue affects ....
+Issue
+: This issue affects ....
 
-**Workaround**: There was no known workaround at the time of the release.
+Workaround
+: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

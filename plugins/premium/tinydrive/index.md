@@ -1,14 +1,13 @@
 ---
 layout: default
-title: Getting started with TinyMCE
-title_nav: Getting started
-description: Faster development with integrations of TinyMCE into your favorite framework or CMS.
+title: Tiny Drive
+title_nav: Tiny Drive
+description: Tiny Drive
 type: folder
 ---
-
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "getting-started" %}
+  {% if entry.url == "tinydrive" %}
     {% assign links = entry.pages %}
   {% endif %}
 {% endfor %}

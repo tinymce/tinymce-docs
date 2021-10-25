@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Explore advanced topics
-title_nav: Advanced topics
-description: Information and guides for developers wanting to build advanced capabilities into TinyMCE.
+title: Accessibility
+title_nav: Accessibility
+description: Accessible usage and keyboard shortcuts.
 type: folder
 ---
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "advanced" %}
+  {% if entry.url == "accessibility" %}
     {% assign links = entry.pages %}
   {% endif %}
 {% endfor %}

@@ -107,4 +107,3 @@ Below are some recommended combinations of skins and icon packs:
 {% include misc/purchase-premium-plugins.md %}
 {% assign extensionType = false %}
 {% assign pluralExtensionType = false %}
-

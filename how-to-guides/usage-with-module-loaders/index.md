@@ -9,7 +9,7 @@ type: folder
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "advanced" %}
+  {% if entry.url == "how-to-guides" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "usage-with-module-loaders" %}
         {% assign links = subentry.pages %}

@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Bundling TinyMCE with Rollup.js
-title_nav: Rollup.js
-description_short: Bundling TinyMCE with Rollup.js
-description: Guides for bundling TinyMCE with Rollup.js.
+title: Bundling TinyMCE Reference Information
+title_nav: Reference
+description_short: Reference information for bundling TinyMCE
+description: Reference information for bundling TinyMCE
 type: folder
 ---
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "advanced" %}
+  {% if entry.url == "how-to-guides" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "usage-with-module-loaders" %}
         {% for subsubentry in subentry.pages %}
-          {% if subsubentry.url == "rollup" %}
+          {% if subsubentry.url == "reference" %}
             {% assign links = subsubentry.pages %}
           {% endif %}
         {% endfor %}

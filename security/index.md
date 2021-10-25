@@ -1,14 +1,13 @@
 ---
 layout: default
-title: Getting started with TinyMCE
-title_nav: Getting started
-description: Faster development with integrations of TinyMCE into your favorite framework or CMS.
+title: Security
+title_nav: Security
+description: The TinyMCE security guide.
 type: folder
 ---
-
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "getting-started" %}
+  {% if entry.url == "security" %}
     {% assign links = entry.pages %}
   {% endif %}
 {% endfor %}

@@ -101,7 +101,7 @@ This procedure requires:
 
         To load {{site.productname}} and {{site.productname}}-Angular in a project managed by the [Angular CLI Tool](https://angular.io/cli):
 
-        1. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
+        1. Install the `tinymce` package and save it to your `package.json` with `--save`.
 
             ```sh
             $ npm install --save tinymce

@@ -12,7 +12,7 @@ keywords: tinydrive api
 
 In order to use {{site.cloudfilemanager}} in standalone mode you will need to add a script to your page with your API key as part of the URL. The URL is in the following format:
 
-```
+```html
 {{site.tdcdnurl}}
 ```
 

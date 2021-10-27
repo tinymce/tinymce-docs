@@ -29,11 +29,11 @@ Developers at {{site.companyname}} build the upload UI, libs, and APIs for devel
 
 The storage and bandwidth quota varies based upon the [{{site.cloudname}} Plan]({{site.pricingpage}}) you are subscribed to.
 
-## Demo
+## Interactive example
 
 Here is a quick demo on how {{site.cloudfilemanager}} integrates with {{site.productname}}.
 
-{% include live-demo.html id="drive" %}
+{% include live-demo.html id="drive-standalone" type="tinydrive" %}
 
 ## Upload files URL
 

@@ -1,6 +1,6 @@
 (function () {
   var button = document.querySelector('.tinydrive-standalone-demo-upload');
-  var percent = document.querySelector('.tinydrive-standalone-demo-percent');
+  var percent = document.querySelector('.live_demo_progress');
 
   button.addEventListener('click', function () {
     tinydrive.upload({

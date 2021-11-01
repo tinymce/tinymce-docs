@@ -646,7 +646,7 @@
       - url: "getting-started"
       - url: "jwt-authentication"
       - url: "configuration"
-      - url: "libraries"
+      - url: "starter-projects"
         pages:
         - url: "dotnet"
         - url: "java"
@@ -882,20 +882,17 @@
     - url: "introduction"
     - url: "getting-started"
     - url: "jwt-authentication"
-    - url: "configuration"
-    - url: "libraries"
+    - url: "apis"
       pages:
-      - url: "dotnet"
-      - url: "java"
-      - url: "nodejs"
-      - url: "php"
+      - url: "tinydrive-upload"
+      - url: "tinydrive-browse"
+      - url: "tinydrive-pick"
+      - url: "tinydrive-start"
+      - url: "type-interfaces"
     - url: "integrations"
       pages:
       - url: "dropbox-integration"
       - url: "googledrive-integration"
-    - url: "tinydrive-api"
-      pages:
-      - url: "standalone"
     - url: "changelog"
 - url: "accessibility"
   pages:

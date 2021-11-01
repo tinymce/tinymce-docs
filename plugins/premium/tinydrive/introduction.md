@@ -76,8 +76,4 @@ There is a fixed set of file extensions that you can upload and these are placed
 * `image` - gif, jpeg, jpg, png, tif, tiff, bmp
 * `archive` - zip
 
-## Starter projects
-
-To get started quickly and understand how {{site.cloudfilemanager}} works, {{site.companyname}} highly recommends trying one of the starter projects on Github to set up a {{site.cloudfilemanager}} instance by following a few simple steps.
-
-The starter projects have their procedures to get {{site.cloudfilemanager}} up and running. Choose a [starter project]({{site.baseurl}}/tinydrive/getting-started/#starterprojects) of a familiar language and follow the steps to set up {{site.cloudfilemanager}}.
+{% include tinydrive-starter-projects.md %}

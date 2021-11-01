@@ -129,7 +129,7 @@ These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydri
 
 ### `dropbox_app_key`
 
-This setting enables specifying the Dropbox API key for integrating dropbox into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
+This setting enables specifying the Dropbox API key for integrating Dropbox into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
 
 **Type:** `string`
 

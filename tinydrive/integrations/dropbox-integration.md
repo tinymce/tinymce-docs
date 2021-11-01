@@ -39,21 +39,23 @@ You can get Dropbox integration up and running by following the steps below.
 You configure the Dropbox API key by setting the [tinydrive_dropbox_app_key]({{site.baseurl}}/tinydrive/configuration/#tinydrive_dropbox_app_key) like in the example below.
 
 ```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'tinydrive',
-  tinydrive_dropbox_app_key: '<your dropbox app key>'
-});
+(function () {
+  // Configure the Tiny Drive Start API
+  tinydrive.start({
+    token_provider: '/your-local/jwt-provider',
+    dropbox_app_key: '<your dropbox app key>',
+    target: 'div#drive-standalone-start'
+  });
+})();
 ```
 
 For more information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox) section of this document.
 
 ### 4. Tiny Drive UI
 
-1. From the {{site.productname}} user interface, click on the ![Insert/edit image]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
-2. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Dropbox from the list of storages.
-3. Select the file to upload/import from Dropbox by clicking on the radio button next to it and click the **Choose** button to upload or **Cancel** to abort the operation.
-4. Alternatively, files from your local browser can be uploaded to the Dropbox by clicking on the **Upload files** option and selecting the files to upload.
+1. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Dropbox from the list of storages.
+1. Select the file to upload/import from Dropbox by clicking on the radio button next to it and click the **Choose** button to upload or **Cancel** to abort the operation.
+1. Alternatively, files from your local browser can be uploaded to the Dropbox by clicking on the **Upload files** option and selecting the files to upload.
 
 **Result:** You should be able to view the selected files in your {{site.cloudfilemanager}} storage.
 
@@ -63,4 +65,4 @@ Read more about more Dropbox options [here](https://www.dropbox.com/guide/busine
 
 Here is an interactive example of Dropbox-enabled on {{site.cloudfilemanager}}.
 
-{% include live-demo.html id="drive-demo-dropbox" %}
+{% include live-demo.html id="drive-standalone-dropbox" type="tinydrive" %}

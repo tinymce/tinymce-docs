@@ -17,31 +17,7 @@ To enable this functionality in the {{site.productname}} editor, add `tinydrive`
 
 Once {{site.cloudfilemanager}} is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
-
-## Starter projects
-
-To get started quickly and understand how {{site.cloudfilemanager}} works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
-
-The starter projects have their own procedures to get {{site.cloudfilemanager}} up and running. Choose a starter project of a familiar language and follow the steps to setup {{site.cloudfilemanager}}. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view.
-
-#### Choose a familiar language
-
-<table style="text-align: center">
-    <tbody>
-        <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter"><img src="{{site.baseurl}}/images/netcore.svg" width="120"></a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter"><img src="{{site.baseurl}}/images/nodejs.svg"  width="120"></a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-php-starter"><img src="{{site.baseurl}}/images/php.svg"  width="120"></a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter"><img src="{{site.baseurl}}/images/java.png" height="120"></a></td>
-        </tr>
-        <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter">.NET Core</a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter">Node.js</a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-php-starter">PHP</a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter">Java Spring</a></td>
-        </tr>
-    </tbody>
-</table>
+{% include tinydrive-starter-projects.md %}
 
 ## Basic setup
 

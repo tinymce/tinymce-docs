@@ -64,19 +64,20 @@ Click on the `Create credentials` button then on `OAuth client ID` item:
 The Google Drive API key can be configured by setting the [tinydrive_google_drive_key]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_key). The Google OAuth client ID can be configured by setting the [tinydrive_google_drive_client_id]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_client_id).
 
 ```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'tinydrive',
-  tinydrive_google_drive_key: '<your google api key>',
-  tinydrive_google_drive_client_id: '<your google drive OAuth client ID>'
-});
+(function () {
+  tinydrive.start({
+    google_drive_key: '<your google api key>',
+    google_drive_client_id: '<your google drive OAuth client ID>',
+    token_provider: '/your-local/jwt-provider',
+    target: 'div#drive-standalone-googledrive'
+  });
+})();
 ```
 
-For more information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration) section of this document.
+For information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration) section of this document.
 
 ### 7. Tiny Drive UI
 
-1. From the {{site.productname}} user interface, click on the ![Insert/edit image]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
 2. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Google Drive from the list of storages.
 3. Select the file to upload/import from Google Drive by clicking on the radio button next to it. Alternatively, to directly insert the file into the editor, double-click on it.
 4. Choose **Save** to upload/import the selected file/files to {{site.cloudfilemanager}}.
@@ -99,4 +100,4 @@ Read more about these options [here](https://gsuite.google.com/learning-center/p
 
 Here is an interactive example of Google Drive enabled on {{site.cloudfilemanager}}.
 
-{% include live-demo.html id="drive-demo-googledrive" %}
+{% include live-demo.html id="drive-standalone-googledrive" type="tinydrive" %}

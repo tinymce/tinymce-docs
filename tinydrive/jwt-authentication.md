@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Tiny Drive JWT Authentication
-title_nav: JWT Authentication
+title: Set up Tiny Drive JWT Authentication
+title_nav: JWT Authentication setup
 description: Guide on how to setup JWT Authentication for Tiny Drive
 keywords: jwt authentication
 ---
@@ -27,11 +27,11 @@ JWT is a standard authorization solution for web services and is documented in m
 
 ## Setting up JWT authentication for Tiny Drive
 
-To set up JSON Web Token (JWT) authentication for {{site.productname}} {{pluginname}}:
+To set up JSON Web Token (JWT) authentication for {{pluginname}}:
 
 1. Add a public key to your {{site.accountpage}}.
 1. Set up a JSON Web Token (JWT) Provider endpoint.
-1. Configure {{site.productname}} to use the JWT endpoint.
+1. Configure {{site.cloudfilemanager}} to use the JWT endpoint.
 
 ## Add a public key to the {{site.cloudname}} API key
 
@@ -70,7 +70,7 @@ JSON Web Tokens produced by the JWT endpoint must include the following claims:
 
 ## JWT endpoint examples
 
-The following examples show a minimal JWT endpoint and how to configure {{site.productname}} to use them.
+The following examples show a minimal JWT endpoint and how to configure {{site.cloudfilemanager}} to use them.
 
 - [PHP token provider endpoint example](#phptokenproviderendpointexample)
 - [Node.js token provider endpoint example](#nodejstokenproviderendpointexample)
@@ -125,17 +125,20 @@ try {
 #### TinyMCE example using the jwt.php endpoint
 
 ```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'image media link tinydrive code imagetools',
-  tinydrive_token_provider: 'jwt.php',
-  toolbar: 'insertfile image link | code'
-});
+var button = document.querySelector('.tinydrive-browse');
+
+    button.addEventListener('click', function () {
+      tinydrive.browse({
+        token_provider: 'jwt.php'
+      }).then(function () {
+        console.log('Dialog closed');
+      });
+    }, false);
 ```
 
 ### Node.js token provider endpoint example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. For instructions on setting up a basic Node.js Express server and adding {{site.productname}}, see: [Integrating TinyMCE into an Express JS App]({{site.baseurl}}/integrations/expressjs/).
+This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules.
 
 `privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
 
@@ -183,17 +186,16 @@ app.post('/jwt', function (req, res) {
 app.listen(3000);
 ```
 
-#### TinyMCE example using the /jwt endpoint
+#### Tiny Drive example using the /jwt endpoint
 
 ```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'image media link tinydrive code imagetools',
-  tinydrive_token_provider: '/jwt',
-  toolbar: 'insertfile image link | code'
-});
+var button = document.querySelector('.tinydrive-browse');
+
+    button.addEventListener('click', function () {
+      tinydrive.browse({
+        token_provider: '/jwt'
+      }).then(function () {
+        console.log('Dialog closed');
+      });
+    }, false);
 ```
-
-### More configuration
-
-If you managed to set this up, you should be good to go with checking out the various [configuration options]({{site.baseurl}}/tinydrive/configuration/) for {{site.cloudfilemanager}} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.

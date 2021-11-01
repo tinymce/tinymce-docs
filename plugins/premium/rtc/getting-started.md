@@ -9,8 +9,6 @@ keywords: rtc
 {% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
 
-
-
 This procedure will assist with setting up {{site.productname}} with real-time collaboration.
 
 > **Important**: {% include misc/secure-context.md %}

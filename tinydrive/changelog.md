@@ -41,7 +41,7 @@ class: changelog
 ## 1.2.1 - 2019-04-24
 
 ### Added
-- Added new dropbox/google drive icons.
+- Added new Dropbox/google drive icons.
 
 ### Fixed
 - Fixed an issue where file selection wouldn't be cleared when navigating to a new directory.
@@ -52,7 +52,7 @@ class: changelog
 ## 1.2.0 - 2019-03-28
 
 ### Added
-- Added new google drive and dropbox file pickers.
+- Added new google drive and Dropbox file pickers.
 
 ### Improved
 - Improved file type listing support when picking files in tinymce.

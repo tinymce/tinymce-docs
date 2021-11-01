@@ -20,10 +20,10 @@ function uploadToTinyDrive () {
   });
 };
 
-var uploadButton = document.querySelector('.drive-standalone-upload');
-    uploadButton.addEventListener('click', uploadToTinyDrive, false);
 var percent = document.querySelector('.live_demo_progress');
 var uploadResult = document.querySelector('#upload-done');
+var uploadButton = document.querySelector('.drive-standalone-upload');
+    uploadButton.addEventListener('click', uploadToTinyDrive, false);
 
 /*
  * Browse the content on a Tiny Drive with tinydrive.browse
@@ -56,9 +56,18 @@ function retrieveFromTinyDrive () {
   });
 };
 
-var downloadButton = document.querySelector('.drive-standalone-pick');
-    downloadButton.addEventListener('click', retrieveFromTinyDrive, false);
-var output = document.querySelector('img.drive_output');
-
 var input = document.querySelector('.drive-standalone-input');
+var output = document.querySelector('img.drive_output');
+var insertButton = document.querySelector('.drive-standalone-pick');
+    insertButton.addEventListener('click', retrieveFromTinyDrive, false);
 
+/*
+ * Add the file manager to a page with tinydrive.start
+ */
+(function () {
+  tinydrive.start({
+    demo_files_url: '{{ site.baseurl }}/images/tiny-drive-demo/demo_files.json',
+    target: 'div#drive-standalone-start',
+    token_provider: function (success) { success({ token: 'fake-token' }); },
+  });
+})();

@@ -6,56 +6,63 @@ description: Getting started with Tiny Drive
 keywords: tinydrive starter projects
 ---
 
-## Prerequisites
+The steps required for setting up {{site.cloudfilemanager}} are:
 
-* A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).
-* A JWT key generated at [{{site.accountpageurl}}]({{site.accountpageurl}}). Temporarily store the generated keys for use in the following procedure.
+1. Register for a {{site.cloudname}} API key.
+1. Add a public key to the {{site.cloudname}} API key.
+1. Set up a JSON Web Token (JWT) Provider endpoint (or server).
+1. Configure the required {{site.cloudfilemanager}} options.
 
-{{site.cloudfilemanager}} allows trouble free management of assets such as images and files in the cloud. {{site.cloudfilemanager}} is only available in [{{site.cloudname}}]({{site.accountsignup}}) and requires registering for an API key.
+## 1. Register for a Tiny Cloud API key
 
-To enable this functionality in the {{site.productname}} editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/jwt-authentication/).
+If you do not have a {{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}).
 
-Once {{site.cloudfilemanager}} is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
+## 2. Add a public key to the {{site.cloudname}} API key
 
+{% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
-## Starter projects
+## 3. Set up a JSON Web Token (JWT) Provider endpoint
 
-To get started quickly and understand how {{site.cloudfilemanager}} works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
+{{site.cloudfilemanager}} requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access {{site.cloudfilemanager}}.
 
-The starter projects have their own procedures to get {{site.cloudfilemanager}} up and running. Choose a starter project of a familiar language and follow the steps to setup {{site.cloudfilemanager}}. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view.
+For information on setting up a JSON Web Token Provider endpoint, see: [{{site.cloudfilemanager}} JWT Authentication Setup]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
-#### Choose a familiar language
+---------------------------------------
 
-<table style="text-align: center">
-    <tbody>
-        <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter"><img src="{{site.baseurl}}/images/netcore.svg" width="120"></a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter"><img src="{{site.baseurl}}/images/nodejs.svg"  width="120"></a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-php-starter"><img src="{{site.baseurl}}/images/php.svg"  width="120"></a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter"><img src="{{site.baseurl}}/images/java.png" height="120"></a></td>
-        </tr>
-        <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter">.NET Core</a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter">Node.js</a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-php-starter">PHP</a></td>
-            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter">Java Spring</a></td>
-        </tr>
-    </tbody>
-</table>
+{{site.cloudfilemanager}} can be used as a generic file manager separate from {{site.productname}} this is referred to as standalone mode.
 
+## 4. Configure the required {{site.cloudfilemanager}} options
 
-### Implementing with your system
+To use {{site.cloudfilemanager}}, add a script to the page with your API key as part of the URL. The URL is in the following format:
 
-The next step, after seeing how {{site.cloudfilemanager}} works in these starter projects, is trying to implement it with your own system, the [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {{site.cloudfilemanager}} and your system at the same time.
+```html
+{{site.tdcdnurl}}
+```
 
-#### Additional resources
+Then add and configure the required {{site.cloudfilemanager}} APIs. {{site.cloudfilemanager}} has the following APIs:
 
-Go through the following additional resources to figure out how to configure {{site.cloudfilemanager}} with a specific system.
+- [Upload]({{site.baseurl}}/tinydrive/apis/tinydrive-upload/)
+- [Browse]({{site.baseurl}}/tinydrive/apis/tinydrive-browse/)
+- [Pick]({{site.baseurl}}/tinydrive/apis/tinydrive-pick/)
+- [Start]({{site.baseurl}}/tinydrive/apis/tinydrive-start/)
 
-- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works.
-- [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
-- [Integrations]({{site.baseurl}}/tinydrive/integrations/)
+### Example: Adding {{site.cloudfilemanager}} to a page
 
-## Need help?
+```html
+<script src="{{site.tdcdnurl}}" referrerpolicy="origin"></script>
+<script>
+tinydrive.pick({
+  token_provider: '/your-local/jwt-provider'
+}).then(function (result) {
+  console.log(result.files);
+});
+</script>
+```
 
-{{site.companyname}} is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).
+## Next Steps
+
+For information on:
+
+- Setting up a JWT endpoint for authentication, see: [JWT Authentication Setup]({{site.baseurl}}/tinydrive/jwt-authentication/).
+- The Upload, Browse, Pick, and Start {{site.cloudfilemanager}} APIs, see: [{{site.cloudfilemanager}} APIs]({{site.baseurl}}/tinydrive/apis/).
+- The {{site.cloudfilemanager}} Google Drive and Dropbox integrations, see: [{{site.cloudfilemanager}} integrations]({{site.baseurl}}/tinydrive/integrations/).

@@ -49,7 +49,7 @@ You configure the Dropbox API key by setting the [tinydrive_dropbox_app_key]({{s
 })();
 ```
 
-For more information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox) section of this document.
+For information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox) section of this document.
 
 ### 4. Tiny Drive UI
 
@@ -59,7 +59,7 @@ For more information on other {{site.cloudfilemanager}} config options refer to 
 
 **Result:** You should be able to view the selected files in your {{site.cloudfilemanager}} storage.
 
-Read more about more Dropbox options [here](https://www.dropbox.com/guide/business).
+Read about other Dropbox options [here](https://www.dropbox.com/guide/business).
 
 ## Interactive example
 

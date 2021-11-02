@@ -27,10 +27,6 @@ If you do not have a {{site.cloudname}} API key, you can sign up for a trial or 
 
 For information on setting up a JSON Web Token Provider endpoint, see: [{{site.cloudfilemanager}} JWT Authentication Setup]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
----------------------------------------
-
-{{site.cloudfilemanager}} can be used as a generic file manager separate from {{site.productname}} this is referred to as standalone mode.
-
 ## 4. Configure the required {{site.cloudfilemanager}} options
 
 To use {{site.cloudfilemanager}}, add a script to the page with your API key as part of the URL. The URL is in the following format:

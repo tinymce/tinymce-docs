@@ -657,9 +657,13 @@
         - url: "dropbox-integration"
         - url: "googledrive-integration"
       - url: "tinydrive_toolbars_menus"
-      - url: "tinydrive-api"
+      - url: "apis"
         pages:
-        - url: "plugin"
+        - url: "introduction-to-tinydrive-apis"
+        - url: "tinydrive-upload"
+        - url: "tinydrive-browse"
+        - url: "tinydrive-pick"
+        - url: "type-interfaces"
       - url: "changelog"
 
   - url: "opensource"

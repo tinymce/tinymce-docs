@@ -6,7 +6,11 @@ description: Introduction of what Tiny Drive is and its capabilities
 keywords: tinydrive introduction overview
 ---
 
-{{site.cloudfilemanager}} is a premium {{site.productname}} plugin for cloud-based asset management and storage solution. Files can be dragged and dropped and instantly uploaded to the cloud storage using a CDN to serve the required files and images.
+{{site.cloudfilemanager}} is a premium cloud-based asset management and storage solution. {{site.cloudfilemanager}} allows your users to upload, manage, and use files in your web application.
+
+For documentation on the {{site.cloudfilemanager}} {{site.productname}} plugin, visit: [Premium plugins - {{site.cloudfilemanager}}]({{site.baseurl}}/plugins/premium/tinydrive/).
+
+> **Note**: {{site.cloudfilemanager}} is only available through the [{{site.cloudname}}]({{site.pricingpage}}).
 
 ## Tiny Drive features
 
@@ -42,10 +46,10 @@ Some {{site.companyname}} services require setting up JSON Web Token (JWT) authe
 
 ## Security and performance
 
-{{site.companyname}} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed between {{site.cloudfilemanager}} and the {{site.cloudname}}, {{site.cloudfilemanager}} uses the user's API key and a JSON Web Token (JWT) to authenticate each data transaction.
+{{site.companyname}} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed between {{site.cloudfilemanager}} and the {{site.cloudname}}, {{site.cloudfilemanager}} uses the {{site.accountname}} API key and a JSON Web Token (JWT) to authenticate each data transaction.
 
 ## File types
 
-There is a fixed set of file extensions that you can upload and these are placed in the file type categories below. We constantly expand these sets with new file extensions. We don't allow any file type to be uploaded since some extensions are problematic from a security perspective.
+There is a fixed set of file extensions (formats) that can be uploaded, and these are placed in the file type categories below. Some file formats are blocked as they can be a security issue.
 
 {% include tinydrive/filetypeslist.md %}

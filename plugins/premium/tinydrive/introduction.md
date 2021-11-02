@@ -9,23 +9,11 @@ keywords: tinydrive introduction overview
 {% assign pluginname = "Tiny Drive" %}
 {% assign plugincode = "tinydrive" %}
 
+{{site.cloudfilemanager}} is a premium {{site.productname}} plugin for cloud-based asset management and storage. {{site.cloudfilemanager}} allows your users to upload, manage, and use files in {{site.productname}}.
+
+For documentation on using {{site.cloudfilemanager}} outside {{site.productname}}, visit: [{{site.cloudfilemanager}} documentation]({{site.baseurl}}/tinydrive/).
+
 > **Note**: This plugin is only available for [{{site.cloudname}} users]({{site.pricingpage}}).
-
-The [{{site.cloudfilemanager}}]({{site.baseurl}}/tinydrive/introduction/) plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [{{site.cloudname}}]({{site.accountsignup}}) and requires you to register for an API key.
-
-To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication) (JWT).
-
-Once you enable {{site.cloudfilemanager}} it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
-
----
-
-{{site.cloudfilemanager}} is a premium {{site.productname}} plugin for cloud-based asset management and storage solution.
-
-{{site.cloudfilemanager}} allows trouble-free management of assets such as images and files in the cloud. Files can be dragged and dropped to be instantly uploaded to the cloud storage using a CDN to serve the required files and images.
-
-User can manage file uploads, storage, processing, and delivery for your website or app. All components of {{site.cloudfilemanager}} infrastructure seamlessly work as a whole, are easy to configure, and can be extremely flexible when needed.
-
-Developers at {{site.companyname}} build the upload UI, libs, and APIs for developers. {{site.cloudfilemanager}} integrations are designed to be non-coder ready, easy to configure, and well-covered with documentation and guides.
 
 ## Tiny Drive features
 
@@ -33,14 +21,14 @@ Developers at {{site.companyname}} build the upload UI, libs, and APIs for devel
 
 | Feature | Value |
 | ------- | ----- |
-| File upload | Upload files through drag & drop or via upload button. If integrated with {{site.productname}}, files added via drag & drop or copy & paste in {{site.productname}} will be uploaded using {{site.cloudfilemanager}} |
+| File upload | Upload files through drag and drop or using the upload button. If integrated with {{site.productname}}, files added using drag and drop or copy and paste in {{site.productname}} will be uploaded using {{site.cloudfilemanager}} |
 | CDN | Files are stored in S3 and accessed through Amazons CDN for fast delivery anywhere in the world |
 | File management | Move, copy, delete and organize your online file storage |
 | Search | Search your library of files, star the ones you use often for quick access |
-| Preview | Preview images (and video, coming soon) before you select what content to use |
+| Preview | Preview images and video before you select which content to use |
 | Integrations | Integrations with Google Drive and Dropbox allows you to import file from these systems through {{site.cloudfilemanager}} |
 
-The storage and bandwidth quota varies based upon the [{{site.cloudname}} Plan]({{site.pricingpage}}) you are subscribed to.
+The storage and bandwidth quota varies based upon your [{{site.cloudname}} Plan]({{site.pricingpage}}).
 
 ## Interactive example
 
@@ -51,29 +39,25 @@ The storage and bandwidth quota varies based upon the [{{site.cloudname}} Plan](
 
 ## Upload files URL
 
-The URL format for each file is `https://drive.tiny.cloud/1/{your-api-key}/{uuid}` and gets generated when a file is uploaded.
-If a file is moved or renamed, it will still have the same unique URL, so the restructuring of the files using {{site.cloudfilemanager}} won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
+The URL format for each file is `https://drive.tiny.cloud/1/{your-api-key}/{uuid}`, and is generated when a file is uploaded.
+If a file is moved or renamed, it will still have the same unique URL, so the restructuring of the files using {{site.cloudfilemanager}} won't affect the URL. Deleting a file will mark the URL as being unused, and the URL will not continue to work.
 
-## User specific root
+## JSON Web Token (JWT) based authentication
 
-It is common to desire to be able to have user specific paths so that each user within a system gets its directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom JWT claim to a path within {{site.accountpage}}. This path will automatically be constructed when the user is accessing {{site.cloudfilemanager}} using a JWT key with that claim. The user can only see and manage files within that root.
+Some {{site.companyname}} services require setting up JSON Web Token (JWT) authentication. This allows the {{site.cloudname}} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the [JWT authentication section]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
-## Security & performance
+## User specific file access
 
-{{site.companyname}} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed back and forth between a {{site.productname}} editor instance and the S3 bucket, {{site.cloudfilemanager}} uses the user's API key and a JSON Web Token (JWT) to authenticate each data transaction. Each {{site.cloudfilemanager}} user will need to create their own JWT.
+{{site.cloudfilemanager}} allows developers to set user-specific directories, so users can only see their own files. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom JSON Web Token (JWT) claim to a path within {{site.accountpage}}. This path will automatically be constructed when the user is accessing {{site.cloudfilemanager}} using a JWT key with that claim. The user can only see and manage files within that directory.
 
-## JWT
+## Security and performance
 
-Some cloud services for {{site.productname}} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. For more information, see the [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) section.
+{{site.companyname}} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed between {{site.cloudfilemanager}} and the {{site.cloudname}}, {{site.cloudfilemanager}} uses the {{site.accountname}} API key and a JSON Web Token (JWT) to authenticate each data transaction.
 
 ## File types
 
-There is a fixed set of file extensions that you can upload and these are placed in the file type categories below. We constantly expand these sets with new file extensions. We don't allow any file type to be uploaded since some extensions are problematic from a security perspective.
+There is a fixed set of file extensions (formats) that can be uploaded, and these are placed in the file type categories below. Some file formats are blocked as they can be a security issue.
 
-* `document` - doc, xls, ppt, pps, docx, xlsx, pptx, pdf, rtf, txt, key, pages, numbers
-* `audio` - wav, wave, mp3, ogg, oga, ogx, ogm, spx, opus
-* `video` - mp4, m4v, ogv, webm, mov
-* `image` - gif, jpeg, jpg, png, tif, tiff, bmp
-* `archive` - zip
+{% include plugins/tinydrive-filetypeslist.md %}
 
 {% include tinydrive-starter-projects.md %}

@@ -18,7 +18,7 @@ This setting could take one of the following two forms:
 * A URL to a page that takes an HTTP JSON POST request and produces a JSON structure with a valid JWT. It uses a POST request to avoid caching by browsers and proxies.
 * A function that provides the same token through a callback. This allows making an HTTP request in any desired format. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT, and the failure callback takes a string to present as an error message if the token could not be produced.
 
-For more information on how to create these tokens, refer to the [JWT authentication guide]({{site.baseurl}}/tinydrive/jwt-authentication/) or try one of the [starter projects]({{site.baseurl}}/tinydrive/getting-started/#starterprojects).
+For more information on how to create these tokens, refer to the [JWT authentication guide]({{site.baseurl}}/plugins/premium/tinydrive/jwt-authentication/) or try one of the [starter projects]({{site.baseurl}}/plugins/premium/tinydrive/getting-started/#starterprojects).
 
 **Type:** `String` or `Function`
 
@@ -125,7 +125,7 @@ tinymce.init({
 
 ### `tinydrive_dropbox_app_key`
 
-This setting enables specifying the Dropbox API key for integrating Dropbox into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
+This setting enables specifying the Dropbox API key for integrating Dropbox into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Dropbox integration guide]({{site.baseurl}}/plugins/premium/tinydrive/integrations/dropbox-integration/).
 
 **Type:** `string`
 
@@ -143,7 +143,7 @@ tinymce.init({
 
 ### `tinydrive_google_drive_key`
 
-This setting enables specifying the Google Drive API key for integrating Google Drive into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+This setting enables specifying the Google Drive API key for integrating Google Drive into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Google Drive integration guide]({{site.baseurl}}/plugins/premium/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 
@@ -159,7 +159,7 @@ tinymce.init({
 
 ### `tinydrive_google_drive_client_id`
 
-This setting enables specifying the Google Drive client ID for integrating Google Drive into {{site.cloudfilemanager}}. For more information on how you obtain this ID, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+This setting enables specifying the Google Drive client ID for integrating Google Drive into {{site.cloudfilemanager}}. For more information on how you obtain this ID, refer to the [Google Drive integration guide]({{site.baseurl}}/plugins/premium/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 
@@ -179,4 +179,4 @@ tinymce.init({
 
 ## Need help?
 
-{{site.companyname}} is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).
+{{site.companyname}} is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/plugins/premium/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).

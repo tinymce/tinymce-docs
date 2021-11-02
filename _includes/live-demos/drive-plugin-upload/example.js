@@ -6,6 +6,7 @@ tinymce.init({
     'tinydrive link image media'
   ],
   toolbar: 'custom | insertfile | link image media',
+  tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
   setup: function (editor) {
     editor.ui.registry.addButton('custom', {
       text: 'Custom upload',

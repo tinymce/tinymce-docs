@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Tiny Drive third-party storage integrations
-title_nav: Integrations
-description: Third-party integrations to make your Tiny Drive experience smooth with the technologies you use.
+title: Tiny Drive plugin APIs
+title_nav: APIs
+description: Description of the Tiny Drive plugin APIs
 type: folder
-keywords: tinydrive storage googledrive dropbox
+keywords: tinydrive api
 ---
+
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
   {% if entry.url == "plugins" %}
@@ -14,7 +15,7 @@ keywords: tinydrive storage googledrive dropbox
         {% for subsubentry in subentry.pages %}
           {% if subsubentry.url == "tinydrive" %}
             {% for sub3entry in subsubentry.pages %}
-              {% if sub3entry.url == "integrations" %}
+              {% if sub3entry.url == "apis" %}
                 {% assign links = sub3entry.pages %}
               {% endif %}
             {% endfor %}

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Real-Time Collaboration (RTC) Encryption Setup
+title: Real-time Collaboration (RTC) Encryption Setup
 title_nav: Encryption Setup
 description: Useful information for setting up encryption for RTC
 keywords: rtc encrypt decrypt key rotate signature
 ---
 
-{{site.productname}} Real-Time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption. This is different from the use of JWTs for RTC, which are used to verify that your servers have allowed the user to access and collaborate on the content.
+{{site.productname}} Real-time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption. This is different from the use of JWTs for RTC, which are used to verify that your servers have allowed the user to access and collaborate on the content.
 
 > **Caution**: The advice on this page does not guarantee a secure connection. If data secrecy is important for your users, please consult a security professional.
 
@@ -14,7 +14,7 @@ keywords: rtc encrypt decrypt key rotate signature
 
 {{site.companyname}} is committed to protecting customer and end-user privacy through end-to-end encryption.
 
-{{site.productname}} Real-Time Collaboration requires an encryption key:
+{{site.productname}} Real-time Collaboration requires an encryption key:
 
 - To encrypt content before a client sends it to the {{site.cloudname}} server.
 - To decrypt content clients receive from the {{site.cloudname}} server.
@@ -62,7 +62,7 @@ Methods to generate keys include (in descending order of safety):
 
 ## Encryption key rotation and key hints
 
-> **Important**: The Real-Time Collaboration (RTC) configuration API is designed to support key rotation, but _keys cannot be rotated on demand_ at this time. If this is important to you, please contact {{site.companyname}} to discuss how we can best provide on-demand key rotation support.
+> **Important**: The Real-time Collaboration (RTC) configuration API is designed to support key rotation, but _keys cannot be rotated on demand_ at this time. If this is important to you, please contact {{site.companyname}} to discuss how we can best provide on-demand key rotation support.
 
 Document collaboration may be performed in multiple sessions. For example, when a new version of {{site.productname}} is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be discarded when a new key is requested.
 

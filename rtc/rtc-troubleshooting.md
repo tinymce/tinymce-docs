@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Troubleshooting information for the Real-Time Collaboration (RTC) plugin
+title: Troubleshooting information for the Real-time Collaboration (RTC) plugin
 title_nav: RTC Troubleshooting
 description: Useful information for troubleshooting issues with the RTC plugin.
 keywords: rtc faq trouble troubleshoot troubleshooting bug

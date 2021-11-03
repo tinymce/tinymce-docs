@@ -8,6 +8,20 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.1 - 2021-11-03
+
+### Fixed
+- The iframe aria help text was not read by some screen readers.
+- Clicking the `forecolor` or `backcolor` toolbar buttons would do nothing until selecting a color.
+- Crop functionality did not work in the `imagetools` plugin when the editor was rendered in a shadow root.
+- Fixed an exception thrown on Safari when closing the `searchreplace` plugin dialog.
+- The `autolink` plugin did not convert URLs to links when starting with a bracket.
+- The `autolink` plugin incorrectly created nested links in some cases.
+- Tables could have an incorrect height set on rows when rendered outside of the editor.
+- In certain circumstances, the table of contents plugin would incorrectly add an extra empty list item.
+- The insert table grid menu displayed an incorrect size when re-opening the grid.
+- The word count plugin was treating the zero width space character (`&#8203;`) as a word.
+
 ## 5.10.0 - 2021-10-11
 
 ### Added

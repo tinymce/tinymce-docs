@@ -1,4 +1,4 @@
-### `token_provider`
+## `tinydrive_token_provider`
 
 This option could take one of the following two forms:
 
@@ -7,7 +7,7 @@ This option could take one of the following two forms:
   * The success callback accepts an object with a `token` property containing the JWT
   * The failure callback accepts a string to present as an error message if the token could not be produced.
 
-For information on how to create these tokens, refer to the [JWT authentication guide]({{site.baseurl}}/tinydrive/jwt-authentication/).
+For information on how to create these tokens, refer to the [JWT authentication guide]({{site.baseurl}}/plugins/premium/tinydrive/jwt-authentication/).
 
 Type
 : `String` or `Function`
@@ -15,19 +15,25 @@ Type
 Required
 : yes
 
-#### Example Using a JWT Provider URL
+### Example Using a JWT Provider URL
 
 ```js
-tinydrive.{{apiname}}({
-  token_provider: '/jwt' // this can be a page or endpoint like this{% include tinydrive/then_code_chunk.md %}
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
+  tinydrive_token_provider: '/jwt' // this can be a page or endpoint like this
+});
 ```
 
-#### Example Using a JWT Provider Callback
+### Example Using a JWT Provider Callback
 
 ```js
-tinydrive.{{apiname}}({
-  token_provider: function (success, failure) {
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
+  tinydrive_token_provider: function (success, failure) {
      success({ token: 'jwt-token' });
      // failure('Could not create a jwt token')
-  }{% include tinydrive/then_code_chunk.md %}
+  }
+});
 ```

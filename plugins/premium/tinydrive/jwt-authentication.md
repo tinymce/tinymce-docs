@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Tiny Drive JWT Authentication
-title_nav: JWT Authentication
+title: Set up Tiny Drive JWT Authentication
+title_nav: JWT Authentication setup
 description: Guide on how to setup JWT Authentication for Tiny Drive
 keywords: jwt authentication
 ---

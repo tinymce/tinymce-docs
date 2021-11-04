@@ -644,14 +644,18 @@
       pages:
       - url: "introduction"
       - url: "getting-started"
-      - url: "jwt-authentication"
-      - url: "configuration"
       - url: "starter-projects"
         pages:
         - url: "dotnet"
         - url: "java"
         - url: "nodejs"
         - url: "php"
+      - url: "jwt-authentication"
+      - url: "configuration"
+        pages:
+        - url: "setup-options"
+        - url: "ui-options"
+        - url: "dropbox-and-google-drive"
       - url: "integrations"
         pages:
         - url: "dropbox-integration"

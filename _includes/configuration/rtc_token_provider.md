@@ -7,11 +7,11 @@ The RTC plugin and the RTC service uses [JSON Web Tokens (JWT)](https://jwt.io/i
 
 The `rtc_token_provider` function will be called one or more times to refresh the token before it expires. For production usage, {{site.companyname}} recommends a token provider with a dynamic request that produces a new JWT token with an updated `exp` claim.
 
-For information on generating and serving JWTs for {{site.productname}} RTC, see: [Real-Time Collaboration (RTC) JWT Authentication Setup]({{site.baseurl}}/rtc/jwt-authentication/).
+For information on generating and serving JWTs for {{site.productname}} RTC, see: [Real-time Collaboration (RTC) JWT Authentication Setup]({{site.baseurl}}/rtc/jwt-authentication/).
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
 {% endif %}
 
 Type
@@ -43,7 +43,7 @@ Return data
 
 ### Example: Using `rtc_token_provider`
 
-This example shows the minimum required configuration for the Real-Time Collaboration plugin, including the `rtc_token_provider` option.
+This example shows the minimum required configuration for the Real-time Collaboration plugin, including the `rtc_token_provider` option.
 
 ```js
 tinymce.init({

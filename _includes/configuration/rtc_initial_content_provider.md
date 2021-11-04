@@ -8,7 +8,7 @@ The `rtc_initial_content_provider` is used for new documents (`documentId`) and 
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
 {% endif %}
 
 Type

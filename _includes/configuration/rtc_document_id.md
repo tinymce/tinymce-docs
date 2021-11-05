@@ -12,7 +12,7 @@ When a client (user) connects:
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
 {% endif %}
 
 Type
@@ -20,6 +20,6 @@ Type
 
 ### Example: Using `rtc_document_id`
 
-This example shows the minimum required configuration for the Real-Time Collaboration plugin, including the `rtc_document_id` option.
+This example shows the minimum required configuration for the Real-time Collaboration plugin, including the `rtc_document_id` option.
 
 {% include rtc/rtc-min-configuration-example.md %}

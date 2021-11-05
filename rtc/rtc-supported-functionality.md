@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Supported TinyMCE functionality for Real-Time Collaboration
+title: Supported TinyMCE functionality for Real-time Collaboration
 title_nav: Supported Functionality
-description: Information on what TinyMCE functionality is, and is not, supported in Real-Time Collaboration
+description: Information on what TinyMCE functionality is, and is not, supported in Real-time Collaboration
 keywords: rtc support functionality
 ---
 
 ## Browser support
 
-The Real-Time Collaboration (RTC) plugin supports the latest desktop versions of:
+The Real-time Collaboration (RTC) plugin supports the latest desktop versions of:
 
 * Google Chrome
 * Mozilla Firefox
@@ -17,11 +17,11 @@ The Real-Time Collaboration (RTC) plugin supports the latest desktop versions of
 
 ## Mobile support
 
-Real-Time Collaboration is currently not supported on mobile devices.
+Real-time Collaboration is currently not supported on mobile devices.
 
 ## TinyMCE features (plugins) support when using RTC
 
-The Real-Time Collaboration (RTC) plugin supports a subset of the features that {{site.productname}} provides.
+The Real-time Collaboration (RTC) plugin supports a subset of the features that {{site.productname}} provides.
 
 > **Warning**: Enabling plugins not shown here is not supported and may lead to unexpected behavior.
 
@@ -51,7 +51,7 @@ The following plugins are currently supported:
 
 ## Integration considerations
 
-When planning to integrate Real-Time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to [contact us]({{site.contactpage}}) and discuss your requirements.
+When planning to integrate Real-time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to [contact us]({{site.contactpage}}) and discuss your requirements.
 
 * Do not load content into {{site.productname}} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's no longer recognized by the plugin.
 * If content is created in an RTC session, then updated outside of an _RTC-enabled_ {{site.productname}} editor, a new document ID (`documentId`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.

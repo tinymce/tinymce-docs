@@ -61,7 +61,7 @@ The {{site.productname}} 5.10 release includes an accompanying release of the **
 
 For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
-### Real-Time Collaboration 1.1.1
+### Real-time Collaboration 1.1.1
 
 The {{site.productname}} 5.10 release includes an accompanying release of the **RTC** premium plugin.
 
@@ -219,7 +219,7 @@ toolbar_mode
 : The [`toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode) option will no-longer accept the `false` value in {{site.productname}} 6.0, which was retained for backwards compatibility with the `toolbar_drawer` option. Use `'wrap'` instead to keep the same functionality as `false`.
 
 forced_root_block
-: The [`forced_root_block`]({{site.baseurl}}/configure/content-filtering/#forced_root_block) option will no-longer accept the `false` value or an empty string value in {{site.productname}} 6.0. Setting `forced_root_block` to `false` is not compatible with Real-Time Collaboration. It also blocks various editor functions from working correctly and causes non-semantic HTML to be generated.
+: The [`forced_root_block`]({{site.baseurl}}/configure/content-filtering/#forced_root_block) option will no-longer accept the `false` value or an empty string value in {{site.productname}} 6.0. Setting `forced_root_block` to `false` is not compatible with Real-time Collaboration. It also blocks various editor functions from working correctly and causes non-semantic HTML to be generated.
 
 The following options have been deprecated in {{site.productname}} 5.10.
 

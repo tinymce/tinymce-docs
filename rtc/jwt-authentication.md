@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Real-Time Collaboration (RTC) JWT Authentication Setup
+title: Real-time Collaboration (RTC) JWT Authentication Setup
 title_nav: JWT Authentication Setup
 description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
 
-{% assign pluginname = "Real-Time Collaboration (RTC)" %}
+{% assign pluginname = "Real-time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
 ## Introduction
 
-Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
+Real-time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
 A JSON Web Token (JWT) endpoint is a service for generating and providing authorization tokens to users. These tokens are used to verify that submitted content was sent by an authorized user and to prevent submissions by unauthorized collaborators.
 
@@ -18,12 +18,12 @@ JWT is a standard authorization solution for web services and is documented in d
 
 ## Overview
 
-- [Setting up JWT authentication for Real-Time Collaboration](#settingupjwtauthenticationforreal-timecollaboration)
+- [Setting up JWT authentication for Real-time Collaboration](#settingupjwtauthenticationforreal-timecollaboration)
 - [Add a public key to the Tiny Cloud API key](#addapublickeytothetinycloudapikey)
 - [Set up a JSON Web Token (JWT) endpoint](#setupajsonwebtokenjwtendpoint)
 - [JWT endpoint examples](#jwtendpointexamples)
 
-## Setting up JWT authentication for Real-Time Collaboration
+## Setting up JWT authentication for Real-time Collaboration
 
 To set up JSON Web Token (JWT) authentication for {{site.productname}} {{pluginname}}:
 
@@ -46,7 +46,7 @@ A JSON Web Token (JWT) endpoint for {{pluginname}} requires:
 - The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key generated at (or provided to) [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).
 - The endpoint or server produces a JSON response with the token. The RTC plugin will submit the token with requests to the RTC Server.
 
-### Required JWT claims for Real-Time Collaboration
+### Required JWT claims for Real-time Collaboration
 
 JSON Web Tokens produced by the JWT endpoint must include the following claims:
 

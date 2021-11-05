@@ -215,9 +215,9 @@ The {{site.productname}} 5.9 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
-### Real-Time Collaboration 1.0.1
+### Real-time Collaboration 1.0.1
 
-The {{site.productname}} 5.9 release includes the first generally available cloud release of the **Real-Time Collaboration (RTC)** premium plugin (version 1.0.1).
+The {{site.productname}} 5.9 release includes the first generally available cloud release of the **Real-time Collaboration (RTC)** premium plugin (version 1.0.1).
 
 Add collaborative editing to your application and allow your content teams to edit content simultaneously and view content changes as they happen.
 
@@ -228,7 +228,7 @@ The RTC plugin features:
 - A user presence API to assist with showing a list of connected collaborators.
 - JSON Web Token based authentication.
 
-For information on using the Real-Time Collaboration (RTC) plugin, see: [Real-Time Collaboration plugin]({{site.baseurl}}/rtc/).
+For information on using the Real-time Collaboration (RTC) plugin, see: [Real-time Collaboration plugin]({{site.baseurl}}/rtc/).
 For sales information, visit: [TinyMCE Features - Real-time Collaboration]({{site.plugindirectory}}real-time-collaboration).
 
 ### Spell Checker Pro 2.4.1
@@ -437,7 +437,7 @@ This section describes issues that users of {{site.productname}} 5.9 may encount
 
 - [Core known issues](#coreknownissues)
 - [Table plugin known issues](#tablepluginknownissues)
-- [Real-Time Collaboration (RTC) known issues](#real-timecollaborationrtcknownissues)
+- [Real-time Collaboration (RTC) known issues](#real-timecollaborationrtcknownissues)
 
 ### Core known issues
 
@@ -468,7 +468,7 @@ Issue
 Workaround
 : There was no known workaround at the time of the release.
 
-### Real-Time Collaboration (RTC) known issues
+### Real-time Collaboration (RTC) known issues
 
 #### Users are unable to add content below an Horizontal Rule (`hr`) if inserted on the last line
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Real-Time Collaboration configuration options
+title: Real-time Collaboration configuration options
 title_nav: Configuration options
 description: Available RTC configuration options.
 keywords: rtc configuration

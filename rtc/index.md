@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Real-Time Collaboration plugin
-title_nav: Real-Time Collaboration (RTC)
-description: The TinyMCE Real-Time Collaboration plugin
+title: Real-time Collaboration plugin
+title_nav: Real-time Collaboration (RTC)
+description: The TinyMCE Real-time Collaboration plugin
 type: folder
 ---
 {% assign navigation = site.data.nav %}

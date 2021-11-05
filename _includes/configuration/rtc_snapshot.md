@@ -8,7 +8,7 @@ The snapshot callback will be executed in response to local changes, with access
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
 {% endif %}
 
 Type

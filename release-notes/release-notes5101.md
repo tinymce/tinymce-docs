@@ -43,7 +43,7 @@ For information on the Enhanced Media Embed plugin, see: [Enhanced Media Embed p
 
 The {{site.productname}} 5.10.1 release includes an accompanying release of the **Page Embed** premium plugin.
 
-**Page Embed** 1.1.1 fixes a bug where the wrong media type used in the source URL dialog field.
+**Page Embed** 1.1.1 fixes a bug where the wrong media type was used in the source URL dialog field.
 
 For information on the Page Embed plugin, see: [Page Embed plugin]({{site.baseurl}}/plugins/premium/pageembed/).
 
@@ -83,7 +83,7 @@ For information on:
 
 ### Security related dependency update for all 3 server-side services
 
-All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ serverity vulnerability fixes.
+All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
 
 ### Fixed Link Checker highlighting for unresolvable hosts
 
@@ -128,7 +128,7 @@ For information on:
 
 {{site.productname}} 5.10.1 provides fixes for the following security issues:
 
-All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ serverity vulnerability fixes.
+All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
 
 For information on the server-side components updates, see: [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 

@@ -124,22 +124,3 @@ tinymce.init({
 In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for {{site.productname}} to work).
 
 As we noted at the start {{site.productname}} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
-
-## Top 10 plugins
-
-Customizing {{site.productname}} with the default plugins is that easy. There are 60 plugins available to developers. Let's take a look at the 10 most popular plugins (by documentation page views).
-
-| Position | Plugin Name   | Plugin Value                                         |
-| -------- | ------------- | ---------------------------------------------------- |
-| **1**    | Image         | [image]({{site.baseurl}}/plugins/opensource/image/)           |
-| **2**    | Paste         | [paste]({{site.baseurl}}/plugins/opensource/paste/)           |
-| **3**    | Code          | [code]({{site.baseurl}}/plugins/opensource/code/)             |
-| **4**    | Table         | [table]({{site.baseurl}}/plugins/opensource/table/)           |
-| **5**    | Link          | [link]({{site.baseurl}}/plugins/opensource/link/)             |
-| **6**    | Image Tools   | [imagetools]({{site.baseurl}}/plugins/opensource/imagetools/) |
-| **7**    | Advanced Code | [advcode]({{site.baseurl}}/plugins/premium/advcode/)       |
-| **8**    | Media         | [media]({{site.baseurl}}/plugins/opensource/media/)           |
-| **9**    | PowerPaste    | [powerpaste]({{site.baseurl}}/plugins/premium/powerpaste/) |
-| **10**   | Code Sample   | [codesample]({{site.baseurl}}/plugins/opensource/codesample/) |
-
-

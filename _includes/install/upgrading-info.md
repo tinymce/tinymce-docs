@@ -1,8 +1,9 @@
 ## Upgrading to the latest version of TinyMCE 6
+
 The procedure for upgrading to the latest version of {{site.productname}} {{site.productmajorversion}} depends on the deployment type.
 
 * [Upgrading Tiny Cloud](#upgradingtinycloud).{% if enterprise != true %}
-* [Upgrading TinyMCE Self-hosted using a package manager](##upgradingtinymceself-hostedusingapackagemanager).{% endif %}
+* [Upgrading TinyMCE Self-hosted using a package manager](#upgradingtinymceself-hostedusingapackagemanager).{% endif %}
 * [Upgrading TinyMCE Self-hosted manually](#upgradingtinymceself-hostedmanually).
 
 ### Upgrading Tiny Cloud
@@ -12,6 +13,7 @@ The procedure for upgrading to the latest version of {{site.productname}} {{site
 {% if enterprise != true %}
 
 ### Upgrading TinyMCE Self-hosted using a package manager
+
 Select from the following package managers.
 
 * [Yarn](#yarn)
@@ -21,31 +23,41 @@ Select from the following package managers.
 * [Bower](#bower)
 
 #### Yarn
+
 To upgrade to {{site.productname}} {{site.productminorversion}} using Yarn, run:
+
 ```sh
 $ yarn upgrade {{site.prodnamecode}}
 ```
 
 #### npm
+
 To upgrade to {{site.productname}} {{site.productminorversion}} using npm, run:
+
 ```sh
 $ npm install {{site.prodnamecode}}@latest --save
 ```
 
 #### Composer
+
 To upgrade to {{site.productname}} {{site.productminorversion}} using Composer, run:
+
 ```sh
 $ composer require tinymce/tinymce
 ```
 
 #### NuGet
+
 To upgrade to {{site.productname}} {{site.productminorversion}} using NuGet, run:
+
 ```sh
 $ Install-Package {{site.productname}}
 ```
 
 #### Bower
+
 To upgrade to {{site.productname}} {{site.productminorversion}} using Bower, run:
+
 ```sh
 $ bower install {{site.prodnamecode}}#{{site.productminorversion}} --save
 ```
@@ -53,6 +65,7 @@ $ bower install {{site.prodnamecode}}#{{site.productminorversion}} --save
 {% endif %}
 
 ### Upgrading TinyMCE Self-hosted manually
+
 To upgrade to {{site.productname}} {{site.productminorversion}} using a manually downloaded package:
 
 1. Backup the `{{site.prodnamecode}}/` directory so any customizations can be restored after the upgrade.

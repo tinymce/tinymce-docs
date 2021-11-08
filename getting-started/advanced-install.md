@@ -7,25 +7,28 @@ description: Learn how to install TinyMCE via TinyMCE Cloud, package manager opt
 keywords: npm bower composer nuget
 ---
 
-There are multiple ways to instantiate {{site.productname}}. Accessing {{site.productname}} through {{site.cloudname}} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
+There are multiple ways to  {{site.productname}}. Accessing {{site.productname}} through {{site.cloudname}} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
 
 * [{{site.cloudname}}](#cloudinstall)
 * [Package Managers](#packagemanagerinstalloptions)
 * [Self-Hosted Download / Install](#self-hostedinstall)
 * [Custom Build](#custombuildinstall)
 
-
 ## Cloud Install
 
 {% include install/cloud.md %}
 
-
 ## Package Manager Install Options
 
+* [Yarn](#yarn)
 * [NPM](#npm)
 * [Bower](#bower)
 * [Composer](#composer)
 * [NuGet](#nuget)
+
+## Yarn
+
+{% include install/yarn.md %}
 
 ## NPM
 
@@ -43,11 +46,9 @@ There are multiple ways to instantiate {{site.productname}}. Accessing {{site.pr
 
 {% include install/nuget.md %}
 
-
 ## Self-Hosted Install
 
 {% include install/sdk.md %}
-
 
 ## Custom Build Install
 

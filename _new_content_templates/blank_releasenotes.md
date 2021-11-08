@@ -128,7 +128,11 @@ The {{site.productname}} vnumtxt release includes accompanying changes affecting
 - The Link Checker plugin (`linkchecker`)
 - The Spell Checker Pro plugin (`tinymcespellchecker`)
 
-The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version X.Y.Z**.
+The Java server-side components have been updated to the following versions:
+
+- `ephox-spelling.war`: X.Y.Z
+- `ephox-hyperlinking.war`: X.Y.Z
+- `ephox-image-proxy.war`: X.Y.Z
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 
@@ -142,7 +146,7 @@ For information on:
 
 ### Updating the self-hosted server-side components
 
-Version X.Y.Z provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
 1. Update your Java Application Server to the minimum required version:
 

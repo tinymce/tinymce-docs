@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.10.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.10.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.10.1, including:
+{{site.productname}} 5.10.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, November 10<sup>th</sup>, 2021. It includes {{site.productname}} 5.10.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.10.1, including:
 
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)

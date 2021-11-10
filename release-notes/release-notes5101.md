@@ -14,7 +14,6 @@ keywords: releasenotes bugfixes
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
-- [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 {{site.releasenotes_for_stable}}
@@ -131,20 +130,6 @@ For information on:
 All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
 
 For information on the server-side components updates, see: [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
-
-## Known issues
-
-This section describes issues that users of {{site.productname}} 5.10.1 may encounter and possible workarounds for these issues.
-
-- [](#)
-
-###
-
-Issue
-: This issue affects ....
-
-Workaround
-: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

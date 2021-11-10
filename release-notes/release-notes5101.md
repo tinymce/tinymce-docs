@@ -30,22 +30,6 @@ The {{site.productname}} 5.10.1 release includes an accompanying release of the 
 
 For information on the Advanced Code plugin, see: [Advanced Code plugin]({{site.baseurl}}/plugins/premium/advcode/).
 
-### Enhanced Media Embed 2.2.6
-
-The {{site.productname}} 5.10.1 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
-
-**Enhanced Media Embed** 2.2.6 fixes the `mediaembed` content CSS loading incorrectly, which caused it to not display in previews.
-
-For information on the Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
-
-### Page Embed 1.1.1
-
-The {{site.productname}} 5.10.1 release includes an accompanying release of the **Page Embed** premium plugin.
-
-**Page Embed** 1.1.1 fixes a bug where the wrong media type was used in the source URL dialog field.
-
-For information on the Page Embed plugin, see: [Page Embed plugin]({{site.baseurl}}/plugins/premium/pageembed/).
-
 ### PowerPaste 5.6.1
 
 The {{site.productname}} 5.10.1 release includes an accompanying release of the **PowerPaste** premium plugin.

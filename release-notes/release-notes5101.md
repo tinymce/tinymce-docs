@@ -66,7 +66,7 @@ For information on:
 
 ### Security related dependency update for all 3 server-side services
 
-> **Important**: These security issues have not been resolved in the 5.10.1 release and will be resolved in an upcoming release. Note that no details of the security vulnerabilities have been publicly disclosed at the time of release.
+> **Important**: During further scans, some vulnerable dependencies were missed in this release. As such, these security issues have not been resolved in the 5.10.1 release and will be resolved in an upcoming release. Note that no details of the security vulnerabilities have been publicly disclosed at the time of release.
 
 ~~All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.~~
 

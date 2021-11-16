@@ -1,4 +1,3 @@
-## TinyMCE Blazor integration quick start guides
 
 The [Official {{site.productname}} Blazor component](https://github.com/tinymce/tinymce-blazor) integrates {{site.productname}} into [Blazor applications](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor).
 This procedure creates a basic Blazor application and adds a {{site.productname}} editor using the {{site.productname}} Blazor integration. The basic Blazor application is based on the following tutorial: [Microsoft .NET Blazor Tutorial - Build your first Blazor app](https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/).
@@ -26,7 +25,13 @@ This procedure requires:
     ```sh
     Install-Package TinyMCE.Blazor
     ```
+{% if productSource == "package-manager" %}
+1. Use the NuGet package manager console to install the `{{site.productname}}` package, such as:
 
+    ```sh
+    Install-Package TinyMCE
+    ```
+{% endif %}
 {% include integrations/blazor-postinstall.md %}
 
 1. To test the application, run the application by pressing **Ctrl+F5**.
@@ -58,7 +63,13 @@ This procedure requires:
     ```sh
     dotnet add package TinyMCE.Blazor
     ```
+{% if productSource == "package-manager" %}
+1. Install the `{{site.productname}}` package, such as:
 
+    ```sh
+    dotnet add package TinyMCE
+    ```
+{% endif %}
 {% include integrations/blazor-postinstall.md %}
 
 1. Test the application using the .NET development server.

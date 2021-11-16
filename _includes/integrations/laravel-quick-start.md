@@ -9,7 +9,7 @@
   {% assign packageSource = "TinyMCE .zip package" %}
 {% endif %}
 
-This guide assists with adding {{site.productname}} from the {{packageSource}} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under [Installation Via Composer](https://laravel.com/docs/8.x/installation#installation-via-composer). The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {{site.productname}} should be used in production environments.
+[Laravel](https://laravel.com/) is a scaleable web application framework built on PHP. This guide assists with adding {{site.productname}} from the {{packageSource}} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under [Installation Via Composer](https://laravel.com/docs/8.x/installation#installation-via-composer). The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {{site.productname}} should be used in production environments.
 
 ## Requirements
 

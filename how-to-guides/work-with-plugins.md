@@ -2,7 +2,7 @@
 layout: default
 title: Work with plugins to extend TinyMCE
 title_nav: Using plugins to extend TinyMCE
-description_short: Learn about TinyMCE's plugin functionality and discover our Top 10 plugins.
+description_short: Learn about TinyMCE's plugin functionality.
 description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
 keywords: plugin
 ---

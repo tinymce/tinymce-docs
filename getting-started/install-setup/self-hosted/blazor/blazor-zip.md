@@ -1,11 +1,10 @@
 ---
 layout: default
 title: Blazor integration
-title_nav: Blazor
+title_nav: Using a .zip package
 description: Blazor TinyMCE component.
 keywords: integration integrate blazor blazorapp
 ---
 
+{% assign productSource = "zip" %}
 {% include integrations/blazor-quick-start.md %}
-
-{% include integrations/blazor-tech-ref.md %}

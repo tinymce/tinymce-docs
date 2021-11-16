@@ -1,4 +1,3 @@
-## TinyMCE Blazor integration technical reference
 
 Covered in this section:
 
@@ -18,6 +17,7 @@ The `TinyMCE.Blazor` `Editor` component accepts the following properties:
   Disable=false
   JsConfSrc="path_to_jsObj"
   Conf="@yourConf"
+  ScriptSrc="/path/to/tinymce.min.js"
   ApiKey="your-api-key"
   ClassName="tinymce-wrapper"
 />

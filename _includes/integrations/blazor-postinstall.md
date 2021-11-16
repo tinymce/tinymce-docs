@@ -42,3 +42,12 @@
     Welcome to your new app.
     <Editor />
     ```
+{% if productSource != "cloud" %}
+1. To load {{site.productname}} from the self-hosted package instead of the {{site.cloudname}}, configure the `ScriptSrc` property:
+
+    ```cs
+    <Editor
+      ScriptSrc="/path/to/tinymce.min.js"
+    />
+    ```
+{% endif %}

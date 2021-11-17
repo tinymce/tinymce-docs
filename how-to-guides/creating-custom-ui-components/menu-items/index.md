@@ -1,18 +1,18 @@
 ---
 layout: default
-title: TinyMCE Blazor framework integration guide
-title_nav: Blazor framework
-description: The Blazor framework integration guide for TinyMCE
+title: Creating custom Menu Items
+title_nav: Creating custom Menu Items
+description: How-to create custom menu items for TinyMCE
 type: folder
 ---
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "initial-configuration" %}
+  {% if entry.url == "how-to-guides" %}
     {% for subentry in entry.pages %}
-      {% if subentry.url == "framework-integrations" %}
+      {% if subentry.url == "creating-custom-ui-components" %}
         {% for sub2entry in subentry.pages %}
-          {% if sub2entry.url == "blazor" %}
+          {% if sub2entry.url == "menu-items" %}
             {% assign links = sub2entry.pages %}
           {% endif %}
         {% endfor %}

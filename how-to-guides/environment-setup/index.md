@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Framework integration guides
-title_nav: Framework integration guides
-description: The TinyMCE framework integration guides and references
+title: Environment setup guides
+title_nav: Environment setup guides
+description: The TinyMCE framework and CMS integration guides and references
 type: folder
 ---
 
@@ -10,7 +10,7 @@ type: folder
 {% for entry in navigation %}
   {% if entry.url == "initial-configuration" %}
     {% for subentry in entry.pages %}
-      {% if subentry.url == "framework-integrations" %}
+      {% if subentry.url == "environment-setup" %}
         {% assign links = subentry.pages %}
       {% endif %}
     {% endfor %}

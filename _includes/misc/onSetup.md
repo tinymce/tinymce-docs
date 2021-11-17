@@ -1,3 +1,5 @@
+### Using `onSetup`
+
 `onSetup` is a complex property. It takes a function that is passed the component's API and should return a callback that is passed the component's API and returns nothing. This occurs because `onSetup` runs whenever the component is rendered, and the returned callback is executed when the component is destroyed. This is essentially an `onTeardown` handler, and can be used to unbind events and callbacks.
 
 To clarify, in code `onSetup` may look like this:

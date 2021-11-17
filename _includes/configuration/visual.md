@@ -1,6 +1,6 @@
 ## `visual`
 
-This option the initial state of the editor visual aids for bookmarks (`anchor`) and tables with a border width of `0`. If the border of a table is set to `0`, then {{site.productname}} adds a dotted line around the table by default.
+This option sets the initial state of the editor visual aids for bookmarks (`anchor`) and tables with a border width of `0`. If the border of a table is set to `0`, then {{site.productname}} adds a dotted line around the table by default.
 
 When set to `false`, the visual aids will be disabled when the editor loads. The `visualaid` toolbar button and menu item allow users to toggle the visibility of the visual aids.
 

@@ -8,6 +8,11 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.2 - 2021-11-17
+
+### Fixed
+- Internal selectors were appearing in the style list when using the `importcss` plugin.
+
 ## 5.10.1 - 2021-11-03
 
 ### Fixed

@@ -13,7 +13,7 @@ on click will open a dialog box to accept raw code input.
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -25,7 +25,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `autosave` plugin. The settings described here will affect the interval, duration and behavior of locally stored drafts of the current editor instance.
 
@@ -40,7 +40,7 @@ This option allows you to set whether the editor should prompt the user to advis
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -60,8 +60,8 @@ This option enables you to specify the time the editor should wait between takin
 
 *Default Value:* `"30s"`
 
-[[example]]
-===== Example:
+[[example-autosave_interval]]
+==== Example:
 
 [source,js]
 ----
@@ -78,9 +78,9 @@ This option allows you to set the prefix that is used for local storage keys.
 
 *Type*: `String`
 
-*Default Value*: `"tinymce-autosave-{path}{query}-{id}-"`
+*Default Value*: pass:[<code>"tinymce-autosave-{path}{query}-{id}-"</code>]
 
-===== Example:
+==== Example:
 
 [source,js]
 ----
@@ -102,7 +102,7 @@ This option enables you to specify if TinyMCE should automatically restore the c
 
 *Possible Values*: `true`, `false`
 
-===== Example:
+==== Example:
 
 [source,js]
 ----
@@ -122,7 +122,7 @@ This option lets you to specify the duration editor content should remain in loc
 
 *Default Value*: "20m"
 
-===== Example:
+==== Example:
 
 [source,js]
 ----

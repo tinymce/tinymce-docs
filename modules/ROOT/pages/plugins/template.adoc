@@ -11,7 +11,7 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -26,7 +26,7 @@ tinymce.init({
 There are two types of files the `template` plugin supports: _templates_ and _snippets_. We will first review the plugin options before moving on to some examples.
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
 
@@ -87,7 +87,7 @@ A creation date is one that is set if no previous date existed within the elemen
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -107,7 +107,7 @@ This option allows you to provide a date format that all 'creation' date templat
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -129,7 +129,7 @@ A modified date is one that is updated with each edit.
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -149,7 +149,7 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -171,7 +171,7 @@ This option allows you to specify the height of the template dialog box.
 
 *Default Value:* `"500"`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -193,7 +193,7 @@ This option allows you to specify the width of the template dialog box.
 
 *Default Value:* `"600"`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -213,7 +213,7 @@ This is an array of items that controls content replacement in the inserted temp
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -246,7 +246,7 @@ Name: Jack Black, StaffID: 991234
 
 This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -263,7 +263,7 @@ anchor:templatepluginexamples[historical anchor]
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -327,7 +327,7 @@ This is the contents your backend page should return if you specify a URL in the
 ----
 
 [[making-templates]]
-=== Making Templates
+== Making Templates
 anchor:makingtemplates[historical anchor]
 
 A template is a file with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
@@ -354,7 +354,7 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 ----
 
 [[making-snippets]]
-=== Making Snippets
+== Making Snippets
 anchor:makingsnippets[historical anchor]
 
 Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.

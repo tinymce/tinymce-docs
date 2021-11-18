@@ -12,7 +12,7 @@ The plugin hooks into the <<color_picker_callback,`color_picker_callback`>> so y
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 In this example you'll note that we have also activated the `textcolor` plugin. This is necessary because in a typical TinyMCE installation `colorpicker` is dependent on activation of `textcolor`. Try it out. Remove `textcolor` and see what happens.
 
@@ -30,7 +30,7 @@ tinymce.init({
 
 This option enables you to provide your own color picker.
 
-===== Example
+==== Example
 
 [source,js]
 ----

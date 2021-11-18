@@ -4,7 +4,7 @@
 This options allows you to turn on/off the resizing handles on images, tables or media objects. This option is enabled by default and allows you to resize table and images. You can also specify a CSS3 selector of what you want to enable resizing on.
 
 [[disable-all-resizing-of-imagestables]]
-=== Disable all resizing of images/tables 
+=== Disable all resizing of images/tables
 anchor:disableallresizingofimagestables[historical anchor]
 
 *Type:* `Boolean`, `String`
@@ -13,8 +13,7 @@ anchor:disableallresizingofimagestables[historical anchor]
 
 *Possible Values:* `true`, `false`, `img`
 
-[[example]]
-===== Example
+=== Example
 
 [source,js]
 ----
@@ -25,7 +24,7 @@ tinymce.init({
 ----
 
 [[enable-resizing-on-images-only]]
-=== Enable resizing on images only 
+=== Enable resizing on images only
 anchor:enableresizingonimagesonly[historical anchor]
 
 *Type:* `Boolean`, `String`
@@ -34,7 +33,7 @@ anchor:enableresizingonimagesonly[historical anchor]
 
 *Possible Values:* `true`, `false`, `img`
 
-===== Example
+=== Example
 
 [source,js]
 ----

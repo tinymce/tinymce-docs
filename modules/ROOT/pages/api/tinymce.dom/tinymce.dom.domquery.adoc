@@ -413,7 +413,7 @@ grep(array:Array, callback:function):Array
 
 Filters out items from the input array by calling the specified function for each item. If the function returns false the item will be excluded if it returns true it will be included.
 
-[[examples]]
+[[examples-grep]]
 ==== Examples
 
 [source,js]

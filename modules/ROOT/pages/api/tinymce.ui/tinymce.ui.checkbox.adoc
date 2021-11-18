@@ -526,7 +526,7 @@ reflow():tinymce.ui.Control
 
 Reflows the current control and it's parents. This should be used after you for example append children to the current control so that the layout managers know that they need to reposition everything.
 
-[[examples]]
+[[examples-reflow]]
 ==== Examples
 
 [source,js]

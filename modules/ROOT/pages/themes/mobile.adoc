@@ -8,7 +8,7 @@
 The `mobile` theme is responsible for rendering the editor on mobile devices and gives you a link:{rootDir}mobile.html[mobile first experience].
 
 [[example]]
-===== Example:
+== Example:
 
 We recommend that you use a xref:configure/editor-appearance.adoc#mobile[mobile section] in the config to load this mobile specific theme but it can be used directly as well.
 
@@ -25,7 +25,7 @@ tinymce.init({
 ----
 
 [[related-configuration-options]]
-=== Related configuration options
+== Related configuration options
 anchor:relatedconfigurationoptions[historical anchor]
 
 * xref:configure/editor-appearance.adoc#mobile[mobile]

@@ -4,7 +4,7 @@
 This option gives you the ability to disable the resize handle or set it to resize both horizontal and vertically. The option can be true, false or the string `'both'`. `False` disables the resize, `true` enables vertical resizing only, `'both'` makes it possible to resize in both directions horizontal and vertical.
 
 [[disabling-the-resize]]
-=== Disabling the resize 
+=== Disabling the resize
 anchor:disablingtheresize[historical anchor]
 
 *Type:* `Boolean`
@@ -13,8 +13,7 @@ anchor:disablingtheresize[historical anchor]
 
 *Possible Values:* `true`, `false`, `'both'`
 
-[[example]]
-===== Example
+=== Example
 
 [source,js]
 ----
@@ -25,7 +24,7 @@ tinymce.init({
 ----
 
 [[enabling-both-vertical-and-horizontal-resize]]
-=== Enabling both vertical and horizontal resize 
+=== Enabling both vertical and horizontal resize
 anchor:enablingbothverticalandhorizontalresize[historical anchor]
 
 *Type:* `Boolean`
@@ -34,7 +33,7 @@ anchor:enablingbothverticalandhorizontalresize[historical anchor]
 
 *Possible Values:* `true`, `false`, `'both'`
 
-===== Example
+=== Example
 
 [source,js]
 ----

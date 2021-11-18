@@ -15,7 +15,7 @@ Local images can be uploaded to TinyMCE through the use of the new `editor.uploa
 It is recommended that the `editor.uploadImages()` function be executed before submitting the editor contents to the server, to avoid saving content as Base 64. Once all the images are uploaded, a success callback can be utilized to execute the code.  This success callback can be used to save the editor's content to the server through a `POST`.
 
 [[using-uploadimages-with-jquery]]
-===== Using uploadImages with jQuery
+== Using uploadImages with jQuery
 anchor:usinguploadimageswithjquery[historical anchor]
 
 [source,js]
@@ -28,7 +28,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 ----
 
 [[using-uploadimages-and-then-posting-a-form]]
-===== Using uploadImages and then posting a form
+== Using uploadImages and then posting a form
 anchor:usinguploadimagesandthenpostingaform[historical anchor]
 
 [source,js]
@@ -88,7 +88,7 @@ NOTE: Please note, for image uploads to function correctly, either the `images_u
 |===
 
 [[example-of-typical-setup]]
-===== Example of typical setup
+=== Example of typical setup
 anchor:exampleoftypicalsetup[historical anchor]
 
 [source,js]
@@ -110,7 +110,7 @@ If the default behavior of TinyMCE's image upload logic is not right for you, yo
 Please note that while using this option, other image uploader options are not necessary. Additionally, if you would like TinyMCE to replace the `<image>`tag's src attribute with the remote location, please use the success callback defined in the image_upload_handler function with the returned JSON object's location property.`</image>`
 
 [[example]]
-===== Example
+=== Example
 
 [source,js]
 ----

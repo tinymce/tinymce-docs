@@ -9,7 +9,7 @@
 This plugin adds a toolbar button that allows a user to edit the HTML code hidden by the WYSIWYG view. It also adds the menu item `Source code` under the `Tools` menu.
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -22,7 +22,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 [[code_dialog_height]]
 === `code_dialog_height`
@@ -33,7 +33,7 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 *Type:* `Number`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -55,7 +55,7 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 *Type:* `Number`
 
-===== Example
+==== Example
 
 [source,js]
 ----

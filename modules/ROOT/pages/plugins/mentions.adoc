@@ -8,7 +8,7 @@
 The mentions plugin will present a list of users when a user types the "@" symbol followed by the beginnings of a username after it. It will then query your server using the `mentions_fetch` callback.
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -46,7 +46,7 @@ This option lets you request a list of uses from your server that match a search
 
 *Default Value:* `none`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -81,7 +81,7 @@ This option overrides the default logic for inserting the mention into the edito
 
 *Default Value:* `none`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -107,7 +107,7 @@ This option enables you to provide an element to present next to the menu item b
 
 *Default Value:* `none`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -139,7 +139,7 @@ This option enables you to provide a custom CSS selector that should match the e
 
 *Default Value:* `none`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -165,7 +165,7 @@ This option enables you to provide an element to be presented next to a selected
 
 *Default Value:* `none`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -194,7 +194,7 @@ success(div);   } });
 
 You can retrieve the inserted users by calling `getUsers` on the plugin instance object of an editor. This will return an array of users that the author `@mentioned` in the content, but only the ones currently present in the content and will exclude any existing before the content was created. It will also exclude duplicate inserts by using the `userinfo` objects id property.
 
-===== Example
+==== Example
 
 [source,js]
 ----

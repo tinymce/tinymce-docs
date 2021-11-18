@@ -11,7 +11,7 @@ The `table` plugin adds table management functionality to TinyMCE. It also adds 
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -23,7 +23,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
 
@@ -36,7 +36,7 @@ This option allows you to specify the buttons and the order that they will appea
 
 *Default Value:* `"tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -57,7 +57,7 @@ This option allows you to disable some of the options available to a user when i
 
 *Possible Values:*  `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -75,7 +75,7 @@ This option enables you to specify which elements should be cloned as empty chil
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -98,7 +98,7 @@ However, if you set this option to `false` the dragable matrix will be replaced 
 
 *Possible Values:*  `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -122,7 +122,7 @@ This option enables you to disable the default tab between table cells feature. 
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -144,7 +144,7 @@ This option enables you to specify default attributes for inserted tables.
 
 *Default Value:* `{ border: '1' }`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -168,7 +168,7 @@ This option enables you to specify the default styles for inserted tables.
 
 *Default Value:* `{ 'border-collapsed': 'collapse', 'width': '100%' }`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -193,7 +193,7 @@ will force pixel resizing. The default is to automatically detect what the table
 
 *Default Value:* `none`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -213,7 +213,7 @@ This option enables you to specify a list of classes to present in the table opt
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -237,7 +237,7 @@ This option enables you to specify a list of classes to present in the table cel
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -261,7 +261,7 @@ This option enables you to specify a list of classes to present in the table row
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -289,7 +289,7 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -313,7 +313,7 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -337,7 +337,7 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -351,13 +351,13 @@ tinymce.init({
 ----
 
 [[examples-of-various-table-setups]]
-=== Examples of various table setups
+== Examples of various table setups
 anchor:examplesofvarioustablesetups[historical anchor]
 
 Here are some examples of configuration for common setups.
 
 [[no-default-attributes-or-styles-on-tables]]
-===== No default attributes or styles on tables
+=== No default attributes or styles on tables
 anchor:nodefaultattributesorstylesontables[historical anchor]
 
 [source,js]
@@ -370,7 +370,7 @@ tinymce.init({
 ----
 
 [[pixel-based-resizing]]
-===== Pixel based resizing
+=== Pixel based resizing
 anchor:pixelbasedresizing[historical anchor]
 
 [source,js]
@@ -384,7 +384,7 @@ tinymce.init({
 ----
 
 [[percentage-based-resizing]]
-===== Percentage based resizing
+=== Percentage based resizing
 anchor:percentagebasedresizing[historical anchor]
 
 [source,js]

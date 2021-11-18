@@ -10,7 +10,7 @@ NOTE: If you specify a relative path, it is resolved in relation to the URL of t
 *Type:* `String`, `Array`
 
 [[absolute-path-example]]
-===== Absolute path example 
+=== Absolute path example
 anchor:absolutepathexample[historical anchor]
 
 [source,js]
@@ -24,7 +24,7 @@ tinyMCE.init({
 ----
 
 [[relative-path-example]]
-===== Relative path example 
+=== Relative path example
 anchor:relativepathexample[historical anchor]
 
 [source,js]
@@ -38,7 +38,7 @@ tinyMCE.init({
 ----
 
 [[using-multiple-stylesheets-example]]
-===== Using multiple stylesheets example 
+=== Using multiple stylesheets example
 anchor:usingmultiplestylesheetsexample[historical anchor]
 
 [source,js]
@@ -50,7 +50,7 @@ tinyMCE.init({
 ----
 
 [[using-multiple-stylesheets-as-array-example]]
-===== Using multiple stylesheets as array example 
+=== Using multiple stylesheets as array example
 anchor:usingmultiplestylesheetsasarrayexample[historical anchor]
 
 [source,js]
@@ -62,7 +62,7 @@ tinyMCE.init({
 ----
 
 [[browser-caching]]
-==== Browser caching 
+== Browser caching
 anchor:browsercaching[historical anchor]
 
 Browser caching might cause TinyMCE to not read the contents of a changed CSS file. You'll see "old" colors & styles.

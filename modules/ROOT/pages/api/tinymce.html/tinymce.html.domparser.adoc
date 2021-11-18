@@ -34,7 +34,7 @@ addAttributeFilter(callback:function)
 
 Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then execute the callback once it has finished parsing the document.
 
-[[examples]]
+[[examples-addattributefilter]]
 ==== Examples
 
 [source,js]

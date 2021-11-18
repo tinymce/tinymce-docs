@@ -17,7 +17,7 @@ anchor:usingtheannotatorplugin[historical anchor]
 
 To set up the TinyMCE Annotation plugin, perform the following procedure:
 
-[[1-configure-the-annotate-button]]
+[[configure-the-annotate-button]]
 === 1. Configure the Annotate Button
 anchor:1configuretheannotatebutton[historical anchor]
 
@@ -41,7 +41,7 @@ setup: function(ed) {
 
 See link:{rootDir}configure/index.html[Configure TinyMCE] for more information on how to configure TinyMCE core.
 
-[[2-registering-the-annotator-plugin]]
+[[registering-the-annotator-plugin]]
 === 2. Registering the Annotator Plugin
 anchor:2registeringtheannotatorplugin[historical anchor]
 
@@ -68,7 +68,7 @@ This will register an annotation with the name `alpha`. In our example, when an 
 NOTE: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
 The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
-[[3-making-the-plugin-available]]
+[[making-the-plugin-available]]
 === 3. Making the Plugin Available
 anchor:3makingthepluginavailable[historical anchor]
 
@@ -79,7 +79,7 @@ For adding the annotate tool to the toolbar that is registered with `alpha` set 
   toolbar: "annotate-alpha"
 ----
 
-[[4-applying-annotations]]
+[[applying-annotations]]
 === 4. Applying Annotations
 anchor:4applyingannotations[historical anchor]
 
@@ -107,7 +107,7 @@ Example of specifying your own `uid`:
   });
 ----
 
-[[5-listening-to-selection-events]]
+[[listening-to-selection-events]]
 === 5. Listening to Selection Events
 anchor:5listeningtoselectionevents[historical anchor]
 

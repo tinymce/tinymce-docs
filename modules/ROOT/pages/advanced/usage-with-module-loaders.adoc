@@ -11,7 +11,7 @@ TinyMCE can easily be installed with `npm` and used with module loaders such as 
 The first thing you have to decide is how to load your modules.
 
 [[es2015-modules]]
-=== ES2015 modules
+== ES2015 modules
 anchor:es2015modules[historical anchor]
 
 If you are using ES2015 modules, a simple example could look something like this.
@@ -36,7 +36,7 @@ tinymce.init({
 ----
 
 [[commonjs-modules]]
-=== CommonJS modules
+== CommonJS modules
 anchor:commonjsmodules[historical anchor]
 
 If you are using CommonJS modules, the example looks pretty much the same, only using the different `require` function to import the dependencies.

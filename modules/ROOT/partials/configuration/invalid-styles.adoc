@@ -7,13 +7,12 @@ The *invalid_styles* option enables you to restrict the styles that are valid fo
 * *Object format* - This is a more complex format where you can specify invalid styles for individual elements.
 
 [[simple-global-classes]]
-=== Simple global classes 
+=== Simple global classes
 anchor:simpleglobalclasses[historical anchor]
 
 *Type:* `String`, `Object`
 
-[[example]]
-===== Example
+=== Example
 
 [source,js]
 ----
@@ -24,12 +23,12 @@ tinymce.init({
 ----
 
 [[element-specific-classes]]
-=== Element specific classes 
+=== Element specific classes
 anchor:elementspecificclasses[historical anchor]
 
 *Type:* `String`, `Object`
 
-===== Example
+=== Example
 
 [source,js]
 ----

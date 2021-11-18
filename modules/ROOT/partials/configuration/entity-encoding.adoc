@@ -6,7 +6,7 @@ This option controls how entities/characters get processed by TinyMCE. The value
 The base entities `<` `>` `&` `'` and `"` will always be entity encoded into their named equivalents. Though `'` and `"` will only be encoded within attribute values and `<` `>` will only be encoded within text nodes. This is correct according too the HTML and XML specs.
 
 [[encoding-types]]
-=== Encoding Types 
+=== Encoding Types
 anchor:encodingtypes[historical anchor]
 
 |===
@@ -24,8 +24,7 @@ anchor:encodingtypes[historical anchor]
 
 *Type:* `String`
 
-[[example]]
-===== Example
+=== Example
 
 [source,js]
 ----

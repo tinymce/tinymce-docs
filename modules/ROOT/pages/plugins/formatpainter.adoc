@@ -13,13 +13,13 @@ Format Painter is a premium plugin from Tiny. Please see the link:{rootDir}enter
 Once you have obtained the Format Painter plugin, refer to the following instructions for using it.
 
 [[configuring-the-format-painter-toolbar-button]]
-=== Configuring the Format Painter toolbar button
+== Configuring the Format Painter toolbar button
 anchor:configuringtheformatpaintertoolbarbutton[historical anchor]
 
 Use the following script to configure the Format Painter toolbar button:
 
 [[example]]
-===== Example
+=== Example
 
 [source,js]
 ----
@@ -74,7 +74,7 @@ The example below showcases the formats registered automatically by the plugin u
 
 *Type:* `Object`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -103,7 +103,7 @@ This option makes it possible to block the unwanted formats in the format painte
 
 *Default:* `'link,address,removeformat,formatpainter_removeformat'`
 
-===== Example
+==== Example
 
 [source,js]
 ----

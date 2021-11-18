@@ -12,7 +12,7 @@ By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-cla
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -24,7 +24,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `importcss` plugin, specifically the way that these operations are handled.
 
@@ -37,7 +37,7 @@ If set to `true` this option will append the imported styles to the end of the `
 
 *Default Value:* `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -56,7 +56,7 @@ This option enables you to add the CSS files that should be used for populating 
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -141,7 +141,7 @@ This option is used in cases where the class attribute should be replaced or mer
 
 *Type:* `Boolean`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -160,7 +160,7 @@ This option allows you to override the default selector to format converter func
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----

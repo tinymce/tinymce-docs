@@ -20,7 +20,7 @@ NOTE: The toolbar button won't work in browsers that don't support direct access
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -33,7 +33,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
@@ -52,7 +52,7 @@ For example, Firefox enables you to paste images directly into any `contentEdita
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -76,7 +76,7 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 *Possbile Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -100,7 +100,7 @@ This option allows you to disable TinyMCE's default paste filters when set to fa
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -124,7 +124,7 @@ This option allows developers to disable the default drop filters when set to `f
 
 *Possible Values:*  `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -142,7 +142,7 @@ This option enables you to modify the pasted content before it gets inserted int
 
 *Type:* `Function`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -165,7 +165,7 @@ This option enables you to modify the pasted content before it gets inserted int
 
 *Type:* `Function`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -190,7 +190,7 @@ NOTE: To access this feature, you need to set the value of xref:plugins/paste.ad
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -210,7 +210,7 @@ This option allows you to specify styles you want to keep when pasting in WebKit
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -230,7 +230,7 @@ This option allows you to specify which styles you want to retain when pasting c
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -254,7 +254,7 @@ This option enables the merge format feature of the paste plugin. This merges si
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -278,7 +278,7 @@ This option lets you disable the logic that converts list like paragraph structu
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -302,7 +302,7 @@ This option allows you to disable TinyMCE's default paste filters for webkit sty
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----

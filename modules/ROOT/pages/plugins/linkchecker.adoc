@@ -19,7 +19,7 @@ anchor:cloudinstructions[historical anchor]
 If you are using link:{rootDir}cloud-deployment-guide/editor-and-features.html[TinyMCE Cloud], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
 [[example]]
-===== Example
+=== Example
 
 [source,js]
 ----
@@ -35,7 +35,7 @@ anchor:self-hostedinstructions[historical anchor]
 
 Customers using a Self-hosted environment will need to provide a URL to their deployment of the link checking service via the `linkchecker_service_url` parameter
 
-===== Example
+=== Example
 
 [source,js]
 ----
@@ -79,7 +79,7 @@ A URL of the server-side link validation service. This is required option, witho
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----

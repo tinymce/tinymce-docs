@@ -7,7 +7,7 @@
 By now it should be clear that TinyMCE is incredibly powerful and at the same time extremely flexible. This is also true for user interface customizations. In this section we look at skinning the editor UI, adding a useful toolbar button not included in the default theme and hiding the status bar.
 
 [[themes]]
-=== Themes
+== Themes
 
 TinyMCE comes with a beautiful, lightweight theme out of the box called "modern". This theme is enabled by default, and you can easily customize the menubar or toolbar without having to edit the theme.
 
@@ -16,7 +16,7 @@ Although any developer can create their themes, it does require a more in-depth 
 However, TinyMCE skins are much easier to make thanks to the TinyMCE Skin Creator.
 
 [[skins]]
-=== Skins
+== Skins
 
 Unlike TinyMCE themes, which affect much more than just the editor's user interface, skins only change the editor's appearance.
 
@@ -40,7 +40,7 @@ Pro tip. Many developers confuse the difference between TinyMCE themes and skins
 ====
 
 [[changing-editor-height-and-width]]
-=== Changing editor height and width
+== Changing editor height and width
 anchor:changingeditorheightandwidth[historical anchor]
 
 One of the most common UI customizations is changing the height and width of the editable area. Let's quickly look at how you can do this with some code snippets.
@@ -51,7 +51,7 @@ We have included links to the source documentation if you want to get into the s
 ====
 
 [[set-the-editable-area-height]]
-===== Set the editable area height
+=== Set the editable area height
 anchor:settheeditableareaheight[historical anchor]
 
 [NOTE]
@@ -70,7 +70,7 @@ tinymce.init({
 See the xref:configure/editor-appearance.adoc#height[height option] for customization details.
 
 [[set-the-editable-area-width]]
-===== Set the editable area width
+=== Set the editable area width
 anchor:settheeditableareawidth[historical anchor]
 
 [NOTE]
@@ -89,7 +89,7 @@ tinymce.init({
 See the xref:configure/editor-appearance.adoc#width[width option] for customization details.
 
 [[set-maximum-and-minimum-heights-and-widths]]
-===== Set maximum and minimum heights and widths
+=== Set maximum and minimum heights and widths
 anchor:setmaximumandminimumheightsandwidths[historical anchor]
 
 By now you're fast becoming a TinyMCE pro, so we're going to include several options in this snippet to set the maximum and minimum values for heights and widths of the editable area. See if you can work out what's going on.
@@ -110,7 +110,7 @@ To learn more about these customization options please see the xref:configure/ed
 This is not the end of your options when it comes to customizing TinyMCE's height and width behavior. You can also automatically resize the editable area as the user types into the iframe with the xref:plugins/autoresize.html[Autoresize Plugin], and you can enable the user to resize the editor on horizontal and vertical axis by dragging the status bar handle with the link:{rootDir}configure/editor-appearance.adoc#resize[resize] configuration option.
 
 [[customizing-the-editable-area-with-content_css]]
-=== Customizing the editable area with content_css
+== Customizing the editable area with content_css
 anchor:customizingtheeditableareawithcontent_css[historical anchor]
 
 It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the xref:configure/content-appearance.adoc#content_css[`content_css`] customization option.
@@ -118,7 +118,7 @@ It is usually desirable that TinyMCE's editable area has the same styling as the
 The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages. Let's say you include a file `myLayout.css` in all your pages to control your site's global appearance; then this file must be set as your `content_css` value. Doing this ensures the content in the editable area also has your site's style.
 
 [[example-using-an-absolute-path]]
-===== Example using an absolute path
+=== Example using an absolute path
 anchor:exampleusinganabsolutepath[historical anchor]
 
 [source,js]
@@ -134,7 +134,7 @@ tinyMCE.init({
 Refer to the xref:configure/content-appearance.adoc#content_css[content_css] customization page if you want to learn more about the use of absolute and relative paths and multiple stylesheets.
 
 [[hiding-the-status-bar]]
-=== Hiding the status bar
+== Hiding the status bar
 anchor:hidingthestatusbar[historical anchor]
 
 In this step, we're going to remove a UI element entirely, and for this example, we say hello and goodbye to the status bar.
@@ -150,7 +150,7 @@ tinymce.init({
 ----
 
 [[we-all-need-code]]
-=== We all need code
+== We all need code
 anchor:weallneedcode[historical anchor]
 
 If you're struggling with menus, menu items and toolbars from the previous sections, we'll quickly revisit this for you with another example.

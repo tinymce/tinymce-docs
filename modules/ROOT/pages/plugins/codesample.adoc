@@ -11,7 +11,7 @@ The Code Sample plugin (`codesample`) lets a user insert and embed syntax color 
 This plugin demonstrates the support for the new block based `contenteditable=false` elements available in version TinyMCE 4.3.
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -30,7 +30,7 @@ Prism.js and prism.css need to be added to a page for syntax highlighting to wor
 ====
 
 [[options]]
-=== Options
+== Options
 
 [[codesample_dialog_width]]
 === `codesample_dialog_width`
@@ -56,7 +56,7 @@ This configuration option enables you to set a list of languages to be displayed
 
 This option enables you to specify a custom css file to be loaded when codesamples are inserted into the editor.
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -80,7 +80,7 @@ tinymce.init({
 ----
 
 [[using-prismjs-on-your-web-page]]
-===== Using Prism.js on your web page
+==== Using Prism.js on your web page
 anchor:usingprismjsonyourwebpage[historical anchor]
 
 You need to add `prism.js` and `prism.css` to your page in order to get the syntax highlighted code samples on your webpage (as created by the Code Sample plugin). The Code Sample plugin uses the following languages: markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the `prism.js` and `prism.css` files on the http://prismjs.com/download.html[download] page at the Prism website.

@@ -7,7 +7,7 @@
 
 Integration with React is easily done with our https://github.com/tinymce/tinymce-react[@tinymce/tinymce-react] package. This how-to shows you how to setup a project using https://facebook.github.io/react/[react], xref:demo/basic-example.adoc[tinymce] and https://github.com/facebookincubator/create-react-app[Create React App].
 
-[[1-installing-create-react-app]]
+[[installing-create-react-app]]
 == 1. Installing `create-react-app`
 anchor:1installingcreate-react-app[historical anchor]
 
@@ -19,7 +19,7 @@ Simply run the following.
 $ npm install -g create-react-app
 ----
 
-[[2-create-a-new-project]]
+[[create-a-new-project]]
 == 2. Create a new project
 anchor:2createanewproject[historical anchor]
 
@@ -34,7 +34,7 @@ When all of the installs have finished, cd into the directory.
 $ cd tinymce-react-demo
 ----
 
-[[3-setup-react-tinymce]]
+[[setup-react-tinymce]]
 == 3. Setup `react-tinymce`
 anchor:3setupreact-tinymce[historical anchor]
 
@@ -44,7 +44,7 @@ Install the npm package and save it to your `package.json` with `--save`.
 $ npm install --save @tinymce/tinymce-react
 ----
 
-[[31-loading-tinymce]]
+[[loading-tinymce]]
 === 3.1 Loading TinyMCE
 anchor:31loadingtinymce[historical anchor]
 
@@ -84,7 +84,7 @@ To opt out of using TinyMCE cloud, you have to make TinyMCE globally available y
 <script src="{cdnurl}"></script>
 ----
 
-[[4-replace-the-appjs-file]]
+[[replace-the-appjs-file]]
 == 4. Replace the App.js file
 anchor:4replacetheappjsfile[historical anchor]
 
@@ -117,7 +117,7 @@ render() {
 export default App;
 ----
 
-[[5-start-the-development-server]]
+[[start-the-development-server]]
 == 5. Start the development server
 anchor:5startthedevelopmentserver[historical anchor]
 
@@ -127,7 +127,7 @@ Start up the development server provided with `create-react-app`.
 $ npm start
 ----
 
-[[6-keep-on-hacking]]
+[[keep-on-hacking]]
 == 6. Keep on hacking
 anchor:6keeponhacking[historical anchor]
 

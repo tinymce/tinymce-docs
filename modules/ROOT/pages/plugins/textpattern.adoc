@@ -12,7 +12,7 @@ The default pattern is similar to markdown syntax, so you can type `# text` to p
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -23,7 +23,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 This setting affects the execution of the `textpattern` plugin. Text patterns that are matched by the editor can be changed here.
 
@@ -34,7 +34,7 @@ This option lets you configure the text patterns that get matched by the `textpa
 
 There are three types of patterns: inline, block, and replacement patterns. Inline patterns have a start and end whereas the block- and replacement-based patterns only have a start. You can specify formats to be applied to the selection, commands to be executed, or text to be replaced.
 
-===== Example
+==== Example
 
 [source,js]
 ----

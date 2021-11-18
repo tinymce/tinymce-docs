@@ -30,7 +30,7 @@ You can also use TinyMCE's PHP Spellchecker component, which you can link:{rootd
 This plugin enables you to use *Enchant* or *PSpell* on the backend of your server to spell check contents within the TinyMCE editor.
 
 [[installation-steps-for-the-default-enchant-engine]]
-===== Installation steps for the default Enchant engine
+=== Installation steps for the default Enchant engine
 anchor:installationstepsforthedefaultenchantengine[historical anchor]
 
 . Make sure you enable *Enchant* in your PHP.
@@ -41,7 +41,7 @@ anchor:installationstepsforthedefaultenchantengine[historical anchor]
 . Download word lists and place them in the `/dicts` directory for example "sv_SE.dic, sv_SE.aff".
 
 [[example]]
-===== Example
+==== Example
 
 [source,js]
 ----

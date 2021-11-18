@@ -11,7 +11,7 @@ This plugin adds a save button to the TinyMCE toolbar, which will submit the for
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -41,7 +41,7 @@ With this:
 ----
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or canceling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
@@ -52,7 +52,7 @@ This option allows you to disable the save button until modifications have been 
 
 *Type:* `Boolean`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -71,7 +71,7 @@ This option allows you to specify the function that will be executed when the ca
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -90,7 +90,7 @@ This option allows you to specify the function that will be executed when the sa
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----

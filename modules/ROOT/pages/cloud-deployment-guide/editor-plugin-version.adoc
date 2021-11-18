@@ -27,7 +27,7 @@ anchor:selectingspecificversionnumbers[historical anchor]
 You can specify a _Major_ version number, a _Major.Minor_ version number or a _Major.Minor.Patch_ version number. If the Minor or Patch versions numbers are not present, it has the latest Minor and Patch version released, by default.
 
 [[example]]
-===== Example
+==== Example
 
 Major version number (e.g. "4").
 
@@ -38,7 +38,7 @@ The following would load TinyMCE _4.latest.latest_:
 <script src="https://cloud.tinymce.com/4/tinymce.min.js?apiKey=your_API_key"></script>
 ----
 
-===== Example
+==== Example
 
 Major.Minor version number (e.g. "4.3").
 
@@ -49,7 +49,7 @@ The following would load TinyMCE _4.3.latest_:
 <script src="https://cloud.tinymce.com/4.3/tinymce.min.js?apiKey=your_API_key"></script>
 ----
 
-===== Example
+==== Example
 
 Major.Minor.Patch version number (e.g. "4.3.2").
 
@@ -116,7 +116,7 @@ anchor:specifyingtheversionoffeaturespluginsdeployedfromthecloud[historical anch
 Whether you're deploying both the link:{rootDir}cloud-deployment-guide/editor-and-features.html[TinyMCE editor and premium plugins via the Cloud] or deploying link:{rootDir}cloud-deployment-guide/features-only.html[only premium plugins from the Cloud], you can use URL query parameters to specify the version of each premium plugin.
 
 [[powerpaste]]
-==== PowerPaste
+=== PowerPaste
 
 * link:{rootDir}plugins/powerpaste.html[Developer documentation]
 * https://plugins.tinymce.com/versions/powerpaste[Supported versions]
@@ -128,7 +128,7 @@ Whether you're deploying both the link:{rootDir}cloud-deployment-guide/editor-an
 ----
 
 [[spell-checker-pro]]
-==== Spell Checker Pro
+=== Spell Checker Pro
 anchor:spellcheckerpro[historical anchor]
 
 * link:{rootDir}plugins/tinymcespellchecker.html[Developer documentation]
@@ -141,7 +141,7 @@ anchor:spellcheckerpro[historical anchor]
 ----
 
 [[accessibility-checker]]
-==== Accessibility Checker
+=== Accessibility Checker
 anchor:accessibilitychecker[historical anchor]
 
 * link:{rootDir}plugins/a11ychecker.html[Developer documentation]
@@ -154,7 +154,7 @@ anchor:accessibilitychecker[historical anchor]
 ----
 
 [[advanced-code-editor]]
-==== Advanced Code Editor
+=== Advanced Code Editor
 anchor:advancedcodeeditor[historical anchor]
 
 * link:{rootDir}plugins/advcode.html[Developer documentation]
@@ -167,7 +167,7 @@ anchor:advancedcodeeditor[historical anchor]
 ----
 
 [[enhanced-media-embed]]
-==== Enhanced Media Embed
+=== Enhanced Media Embed
 anchor:enhancedmediaembed[historical anchor]
 
 * link:{rootDir}plugins/mediaembed.html[Developer documentation]
@@ -180,7 +180,7 @@ anchor:enhancedmediaembed[historical anchor]
 ----
 
 [[link-checker]]
-==== Link Checker
+=== Link Checker
 anchor:linkchecker[historical anchor]
 
 * link:{rootDir}plugins/linkchecker.html[Developer documentation]
@@ -201,7 +201,7 @@ If you're deploying link:{rootDir}cloud-deployment-guide/features-only.html[only
 The "SDK" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
 from the Cloud. It also won't display any warning or error messages if you're not entitled to it.
 
-==== PowerPaste
+=== PowerPaste
 
 * link:{rootDir}plugins/powerpaste.html[Developer documentation]
 
@@ -211,7 +211,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=sdk"></script>
 ----
 
-==== Spell Checker Pro
+=== Spell Checker Pro
 
 * link:{rootDir}plugins/tinymcespellchecker.html[Developer documentation]
 
@@ -221,7 +221,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=sdk"></script>
 ----
 
-==== Accessibility Checker
+=== Accessibility Checker
 
 * link:{rootDir}plugins/a11ychecker.html[Developer documentation]
 
@@ -231,7 +231,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=sdk"></script>
 ----
 
-==== Advanced Code Editor
+=== Advanced Code Editor
 
 * link:{rootDir}plugins/advcode.html[Developer documentation]
 
@@ -241,7 +241,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=sdk"></script>
 ----
 
-==== Enhanced Media Embed
+=== Enhanced Media Embed
 
 * link:{rootDir}plugins/mediaembed.html[Developer documentation]
 
@@ -251,7 +251,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=sdk"></script>
 ----
 
-==== Link Checker
+=== Link Checker
 
 * link:{rootDir}plugins/linkchecker.html[Developer documentation]
 

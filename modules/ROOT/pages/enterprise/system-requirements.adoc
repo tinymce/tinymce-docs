@@ -88,19 +88,19 @@ Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For
 Internet Explorer 8 will not highlight misspelt words as you type due to browser limitations. Misspelt words are highlighted after the current HTML node is changed (e.g. when the Enter key is pressed and the cursor enters a new paragraph).
 
 [[supported-application-servers]]
-=== Supported Application Servers
+== Supported Application Servers
 anchor:supportedapplicationservers[historical anchor]
 
 The TinyMCE spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
 
 [[java-development-kit]]
-===== Java Development Kit
+=== Java Development Kit
 anchor:javadevelopmentkit[historical anchor]
 
 JDK 7 update 55+
 
 [[java-j2ee-application-servers]]
-===== Java (J2EE) Application Servers
+=== Java (J2EE) Application Servers
 anchor:javaj2eeapplicationservers[historical anchor]
 
 * Tomcat 7+
@@ -108,7 +108,7 @@ anchor:javaj2eeapplicationservers[historical anchor]
 * WebSphere Application Server (WAS) 8+
 
 [[operating-systems]]
-==== Operating Systems
+=== Operating Systems
 anchor:operatingsystems[historical anchor]
 
 * Windows Server 2008 SP2
@@ -116,14 +116,14 @@ anchor:operatingsystems[historical anchor]
 * Red Hat Enterprise Linux v5
 
 [[minimum-hardware-requirements]]
-==== Minimum Hardware Requirements
+=== Minimum Hardware Requirements
 anchor:minimumhardwarerequirements[historical anchor]
 
 * CPU:  Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
 * RAM: 4 Gigabytes of RAM available for services
 
 [[supported-tinymce-versions]]
-=== Supported TinyMCE versions
+== Supported TinyMCE versions
 anchor:supportedtinymceversions[historical anchor]
 
 TinyMCE provides support for the following versions:
@@ -134,7 +134,7 @@ TinyMCE provides support for the following versions:
 All commercially supported plugins are supported on these versions.
 
 [[need-more]]
-==== Need more?
+== Need more?
 anchor:needmore[historical anchor]
 
 Tiny is committed to broadening support for various application servers / platforms. If you have a requirement to support an application server that is not listed here, please contact support@tiny.cloud.

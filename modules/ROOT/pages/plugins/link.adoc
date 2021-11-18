@@ -13,7 +13,7 @@ It also adds a toolbar button and a menu item `Insert/edit link` under the `Inse
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -37,7 +37,7 @@ This option allows you to set a default target for links when inserting/editing 
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -61,7 +61,7 @@ By default links are defunct in TinyMCE, it is not possible to open them directl
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -87,7 +87,7 @@ With the default setting the user will only be prompted to prepend `http://` if 
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -107,7 +107,7 @@ The `link_class_list` plugin adds a predefined `class` dropdown to the `link` di
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -227,7 +227,7 @@ tinymce.init({
 
 To disable the option dialog set `target_list` to `false`.
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -247,7 +247,7 @@ This option lets you specify a predefined list of values for the `link` dialog. 
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -274,7 +274,7 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----

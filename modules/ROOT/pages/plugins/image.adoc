@@ -10,7 +10,7 @@ This plugin enables the user to insert an image into TinyMCE's editable area. Th
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -32,7 +32,7 @@ Note that this is not drag-drop functionality and the user is required to enter 
 ====
 
 [[options]]
-=== Options
+== Options
 
 These configuration options affect the execution of the `image` plugin. Many of the settings here will disable dialog box features used to insert or edit images. A predefined list of images can also be provided to enable quick insertion of those images.
 
@@ -54,7 +54,7 @@ This option lets users enable captions for images. When this option is enabled t
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -113,7 +113,7 @@ This option lets you specify a predefined list of sources for images. `image_lis
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -173,7 +173,7 @@ This option adds an "Advanced" tab to the image dialog allowing you to add custo
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -193,7 +193,7 @@ This option lets you specify a predefined list of classes to add to an image. It
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -221,7 +221,7 @@ This options allows you disable the image description input field in the image d
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -245,7 +245,7 @@ This options allows you disable the image dimensions input field in the image di
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -269,7 +269,7 @@ This options allows you enable the image title input field in the image dialog.
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -283,13 +283,13 @@ tinymce.init({
 ----
 
 [[image_prepend_url]]
-== `image_prepend_url`
+=== `image_prepend_url`
 
 This option allows you to specify a URL prefix that will be applied to images when appropriate.
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----

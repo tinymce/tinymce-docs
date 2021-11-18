@@ -125,7 +125,7 @@ As a minimal example, if the installer installed Tomcat to `C:\Program Files\Apa
 +
 ----
   -Dephox.config.file=C:\config\file\location\application.conf
- `
+----
 
 For other versions of Tomcat on Windows, check the Tomcat documentation for that version.
 
@@ -136,7 +136,9 @@ For other versions of Tomcat on Windows, check the Tomcat documentation for that
 
 If you're following the instructions for http://www.eclipse.org/jetty/documentation/current/startup.html[Starting Jetty] for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
 
+----
  java -D"ephox.config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
+----
 
 For other versions of Jetty on Windows, check the Jetty documentation for that version.
 
@@ -144,7 +146,9 @@ For other versions of Jetty on Windows, check the Jetty documentation for that v
 
 Follow the instructions in http://www.eclipse.org/jetty/documentation/current/startup-windows-service.html[Startup via Windows Service] for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
 
+----
  ;-Dephox.config.file="C:\config\file\location\application.conf"
+----
 
 NOTE: Check the `install-jetty-service.bat` has the correct paths to your Java installation. The service will fail to start with some rather unhelpful errors if the paths are incorrect.
 
@@ -171,13 +175,17 @@ If you've obtained Tomcat from your distribution's package manager, refer to you
 
 Create or edit the script `/opt/tomcat/bin/setenv.sh` to contain the following line:
 
+----
  CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf"
+----
 
 There should only be a single line in this file defining the `CATALINA_OPTS` environment variable.
 
 After editing `setenv.sh`, run the following command to start Tomcat:
 
+----
  /opt/tomcat/bin/startup.sh
+----
 
 For further information see the documentation on https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt[running Tomcat 9.0].
 
@@ -193,7 +201,9 @@ If you've obtained Jetty from your distribution's package manager, refer to your
 
 The path to the configuration file can simply be supplied as a command option:
 
+----
  java -Dephox.config.file="/config/file/location/application.conf" -jar /opt/jetty/start.jar
+----
 
 [[as-a-linux-service]]
 ====== As a Linux service
@@ -201,7 +211,9 @@ anchor:asalinuxservice[historical anchor]
 
 Assuming you've followed the instructions to http://www.eclipse.org/jetty/documentation/current/startup-unix-service.html[Startup a Unix Service using jetty.sh] for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
 
+----
  JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"
+----
 
 There should only be a single line in this file defining the `JETTY_ARGS` variable.
 
@@ -209,7 +221,7 @@ There should only be a single line in this file defining the `JETTY_ARGS` variab
 === Step 5: Restart the Java application server
 anchor:step5restartthejavaapplicationserver[historical anchor]
 
-After you've completed the steps on this page to xref:enterprise/server.adoc#step2deployserver-sidecomponents[Deploy server-side components], xref:enterprise/server.adoc#step3createaconfigurationfile[Create a configuration file] and xref:enterprise/server.adoc#step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
+After you've completed the steps on this page to xref:step2deployserver-sidecomponents[Deploy server-side components], xref:step3createaconfigurationfile[Create a configuration file] and xref:step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
 
 [[step-6-set-up-editor-client-instances-to-use-the-server-side-functionality]]
 === Step 6: Set up editor client instances to use the server-side functionality
@@ -225,6 +237,7 @@ This example assume your Java application server is running on port 80 (http) on
 
 Example of TinyMCE client configuration:
 
+[source,js]
 ----
 tinymce.init({
 	selector: 'textarea', // change this value according to your HTML

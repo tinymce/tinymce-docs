@@ -7,7 +7,7 @@
 
 Integration with Angular 1 is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and xref:demo/basic-example.adoc[tinymce].
 
-[[1-setting-up-the-project-directory]]
+[[setting-up-the-project-directory]]
 == 1. Setting up the project directory
 anchor:1settinguptheprojectdirectory[historical anchor]
 
@@ -19,7 +19,7 @@ $ cd tinymce-angular-demo
 $ bower init
 ----
 
-[[2-installation-of-angular-ui-tinymce-and-tinymce]]
+[[installation-of-angular-ui-tinymce-and-tinymce]]
 == 2. Installation of angular, ui-tinymce and tinymce
 anchor:2installationofangularui-tinymceandtinymce[historical anchor]
 
@@ -29,7 +29,7 @@ We now install the angular-ui-tinymce package this will automatically install an
 $ bower install angular-ui-tinymce --save
 ----
 
-[[3-creating-the-demohtml-file]]
+[[creating-the-demohtml-file]]
 == 3. Creating the demo.html file
 anchor:3creatingthedemohtmlfile[historical anchor]
 
@@ -53,7 +53,7 @@ This *demo.html* file has angular properties and two calls to the controller.
 </body>
 ----
 
-[[4-creating-the-appjs-file]]
+[[creating-the-appjs-file]]
 == 4. Creating the app.js file
 anchor:4creatingtheappjsfile[historical anchor]
 
@@ -81,14 +81,14 @@ $scope.tinymceOptions = {
 });
 ----
 
-[[5-testing-the-application]]
+[[testing-the-application]]
 == 5. Testing the application
 anchor:5testingtheapplication[historical anchor]
 
 You can now test the application by running the demo.html page in your favorite browser.
 
 [[a-note-about-integrations]]
-==== A note about integrations
+== A note about integrations
 anchor:anoteaboutintegrations[historical anchor]
 
 NOTE:  We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

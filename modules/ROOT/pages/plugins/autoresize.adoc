@@ -11,7 +11,7 @@ This plugin automatically resizes the editor to the content inside it. It is typ
 *Type:* `String`
 
 [[autoresize-plugin-example]]
-===== Autoresize plugin example
+== Autoresize plugin example
 anchor:autoresizepluginexample[historical anchor]
 
 [source,js]
@@ -35,7 +35,7 @@ This option allows you to specify the size of the `padding` at the bottom of the
 *Type:* `Number`
 
 [[example]]
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -53,7 +53,7 @@ This option enables you to specify the *maximum* `height` that the editor will a
 
 *Type:* `Number`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -70,7 +70,7 @@ This option enables you to specify the *minimum* `height` of the editor when it'
 
 *Type:* `Number`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -91,7 +91,7 @@ This option allows you to set whether the editor will attempt to resize itself u
 
 *Possible Values:* `true`, `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -109,7 +109,7 @@ This option allows you to specify the size of the `padding` at the sides of the 
 
 *Type:* `Number`
 
-===== Example
+==== Example
 
 [source,js]
 ----

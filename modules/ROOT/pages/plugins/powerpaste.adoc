@@ -114,7 +114,7 @@ The default is `true`.
 NOTE: If you configure_ *_PowerPaste_* _to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: \{rootDir}advanced/handle-async-image-uploads
 
 [[example]]
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -131,7 +131,7 @@ tinymce.init({
 anchor:toolbarbuttons[historical anchor]
 
 [[pastetext]]
-==== pastetext
+=== pastetext
 
 This button allows you to toggle paste as plain text mode on/off. When in plain text mode all rich formatted contents gets converted into plain text.
 
@@ -150,7 +150,7 @@ tinymce.init({
 == Menu Items
 anchor:menuitems[historical anchor]
 
-==== pastetext
+=== pastetext
 
 This menu item allows you to toggle paste as plain text mode on/off. When in plain text mode all rich formatted contents gets converted into plain text.
 
@@ -178,7 +178,7 @@ anchor:postfiltercallback[historical anchor]
 Developers can add customer filtering after *PowerPaste* filters are run using the post filter callback. This can be added as an init option or at runtime by adding the event listener.
 
 [[using-the-init-option]]
-===== Using the init option
+==== Using the init option
 anchor:usingtheinitoption[historical anchor]
 
 [source,js]
@@ -197,7 +197,7 @@ tinymce.init({
 ----
 
 [[using-an-event-listener]]
-===== Using an event listener
+==== Using an event listener
 anchor:usinganeventlistener[historical anchor]
 
 [source,js]

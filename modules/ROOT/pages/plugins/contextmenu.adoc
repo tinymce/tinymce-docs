@@ -12,7 +12,7 @@ Note that by default `contextmenu` does not disable the operating system's nativ
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -24,7 +24,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `contextmenu` plugin. The settings in this section allow direct control over how the `contextmenu` appears and what is included inside the `contextmenu`.
 
@@ -39,7 +39,7 @@ By default if you load the `contextmenu` plugin several TinyMCE plugins will aut
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -61,7 +61,7 @@ We advise you give some thought about whether you really want to do this. Many u
 
 *Default Value:* `false`
 
-===== Example
+==== Example
 
 [source,js]
 ----

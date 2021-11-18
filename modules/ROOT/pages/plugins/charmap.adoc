@@ -11,7 +11,7 @@ This plugin adds a dialog to the editor with a map of special unicode characters
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -24,7 +24,7 @@ tinymce.init({
 ----
 
 [[options]]
-=== Options
+== Options
 
 The default map of unicode characters can be overridden or extended through the options below.
 
@@ -50,7 +50,7 @@ With this option it is possible to fully override the default character map. Thi
 
 *Type:* `Array`, `Function`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -72,7 +72,7 @@ This option provides a way to append some additional characters to the default c
 
 *Type:* `Array`, `Function`
 
-===== Example
+==== Example
 
 [source,js]
 ----

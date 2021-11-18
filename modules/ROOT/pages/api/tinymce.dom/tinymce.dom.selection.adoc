@@ -83,7 +83,7 @@ getBookmark(type:Number, normalized:Boolean):Object
 
 Returns a bookmark location for the current selection. This bookmark object can then be used to restore the selection after some content modification to the document.
 
-[[examples]]
+[[examples-getbookmark]]
 ==== Examples
 
 [source,js]

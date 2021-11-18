@@ -15,7 +15,7 @@ This plugin enables you to prevent users from being able to edit content within 
 *Type:* `String`
 
 [[example]]
-===== Example
+== Example
 
 [source,js]
 ----
@@ -28,7 +28,7 @@ tinymce.init({
 When you have existing classes that cannot be removed, you may combine MCE classes with the existing class in the following manner:
 
 [[non-editable-div-example]]
-===== Non-editable div example
+=== Non-editable div example
 anchor:non-editabledivexample[historical anchor]
 
 [source,html]
@@ -37,7 +37,7 @@ anchor:non-editabledivexample[historical anchor]
 ----
 
 [[editable-div-example]]
-===== Editable div example
+=== Editable div example
 anchor:editabledivexample[historical anchor]
 
 [source,html]
@@ -46,7 +46,7 @@ anchor:editabledivexample[historical anchor]
 ----
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `noneditable` plugin. These settings help determine which areas of the editor's editable area will remain editable and which will be converted to non-editable status.
 
@@ -61,7 +61,7 @@ Note that classes with the `mceItem` prefix are invisible within TinyMCE.
 
 *Default Value:* `"mceEditable"`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -83,7 +83,7 @@ Note that classes with the `mceItem` prefix is invisible within TinyMCE.
 
 *Default Value:* `"mceNonEditable"`
 
-===== Example
+==== Example
 
 [source,js]
 ----
@@ -101,7 +101,7 @@ This option allows you to specify a regular expression or array of regular expre
 
 *Type:* `String`
 
-===== Example
+==== Example
 
 [source,js]
 ----

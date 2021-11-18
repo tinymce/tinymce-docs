@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Creating custom Menu Items
-title_nav: Creating custom Menu Items
+title_nav: Menu Items
 description: How-to create custom menu items for TinyMCE
 type: folder
 ---

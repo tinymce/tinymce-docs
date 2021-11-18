@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Creating custom Dialogs
-title_nav: Creating custom Dialogs
+title_nav: Dialogs
 description: How-to create custom Dialogs for TinyMCE
 type: folder
 ---

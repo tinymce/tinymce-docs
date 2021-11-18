@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dialog components
-title_nav: Dialog components
+title_nav: Components
 description: A reference list of all TinyMCE dialog components.
 keywords: dialog dialogapi
 ---

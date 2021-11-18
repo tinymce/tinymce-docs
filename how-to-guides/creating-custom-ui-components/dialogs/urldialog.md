@@ -1,7 +1,7 @@
 ---
 layout: default
-title: URL dialog
-title_nav: URL dialog
+title: Creating custom URL dialogs
+title_nav: URL dialogs
 description: URL dialogs are a TinyMCE UI component used to display an external page.
 keywords: dialog urldialog api
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Custom sidebar
-title_nav: Custom sidebar
+title_nav: Sidebars
 description_short: Introducing sidebar panel creation.
 description: A short introduction to creating sidebars.
 keywords: sidebar

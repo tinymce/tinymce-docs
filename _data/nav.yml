@@ -45,7 +45,6 @@
   - url: "basic-setup"
   - url: "work-with-plugins"
   - url: "localize-your-language"
-  - url: "upgrading"
   - url: "spell-checking"
   - url: "filter-content"
   - url: "boilerplate-content-css"
@@ -70,9 +69,11 @@
     - url: "php-upload-handler"
   - url: "creating-custom-ui-components"
     pages:
-    - url: "creating-a-plugin"
     - url: "annotations"
-    - url: "yeoman-generator"
+    - url: "making-plugins"
+      pages:
+      - url: "creating-a-plugin"
+      - url: "yeoman-generator"
     - url: "autocompleter"
       pages:
       - url: "#Overview"
@@ -113,7 +114,10 @@
     - url: "dialogs"
       pages:
       - url: "dialog"
-      - url: "dialogcomponents"
+      - url: "dialog-configuration"
+      - url: "dialog-components"
+      - url: "dialog-apis"
+      - url: "dialog-examples"
       - url: "urldialog"
     - url: "toolbar-buttons"
       pages:
@@ -169,13 +173,8 @@
       - url: "icons"
       - url: "localization"
       - url: "themes"
+  - url: "upgrading"
   - url: "migration-from-5x"
-    pages:
-    - url: "#Editor-Core"
-    - url: "#Themes"
-    - url: "#User Interface components"
-    - url: "#Plugins"
-
   - url: "migration-from-froala"
     pages:
     - url: "#Migrating a Basic Froala Configuration to TinyMCE"

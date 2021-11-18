@@ -11,7 +11,7 @@ keywords: plugin plugin.js plugin.min.js tinymce.js
 
 ## Requirements
 
-To be recognised as a plugin by {{site.productname}}, the code for a custom plugin must have a JavaScript file with a single entry point that registers the plugin with {{site.productname}} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {{site.productname}} also has various APIs for loading [scripts]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.scriptloader/) and [stylesheets]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.stylesheetloader/).
+To be recognized as a plugin by {{site.productname}}, the code for a custom plugin must have a JavaScript file with a single entry point that registers the plugin with {{site.productname}} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {{site.productname}} also has various APIs for loading [scripts]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.scriptloader/) and [stylesheets]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.stylesheetloader/).
 
 {{site.productname}} does not require any special file structure or tooling apart from these requirements, so custom plugins can be developed using most frameworks and tools.
 
@@ -20,6 +20,7 @@ To be recognised as a plugin by {{site.productname}}, the code for a custom plug
 {{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
 
 ## Registering a custom plugin with {{site.productname}}
+
 Register a custom plugin with {{site.productname}} using the PluginManager. `PluginManager.add()` takes a string for the plugin identifier and a function that contains the code for initializing the plugin.
 
 The plugin identifier passed to `PluginManager.add()` is used by {{site.productname}} as an identifier string. It should:

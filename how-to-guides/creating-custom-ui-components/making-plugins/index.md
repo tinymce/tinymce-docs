@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Creating custom Toolbar Buttons
-title_nav: Toolbar Buttons
-description: How-to create custom toolbar buttons for TinyMCE
+title: Creating custom plugins
+title_nav: Plugins
+description: How-to create custom plugins for TinyMCE
 type: folder
 ---
 
@@ -12,7 +12,7 @@ type: folder
     {% for subentry in entry.pages %}
       {% if subentry.url == "creating-custom-ui-components" %}
         {% for sub2entry in subentry.pages %}
-          {% if sub2entry.url == "toolbar-buttons" %}
+          {% if sub2entry.url == "making-plugins" %}
             {% assign links = sub2entry.pages %}
           {% endif %}
         {% endfor %}

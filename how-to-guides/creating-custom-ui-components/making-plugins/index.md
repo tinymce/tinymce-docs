@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Creating custom plugins
-title_nav: Plugins
-description: How-to create custom plugins for TinyMCE
+title_nav: Creating custom plugins
+description: How-to convert custom UI components into plugins for TinyMCE
 type: folder
 ---
 

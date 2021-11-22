@@ -1,0 +1,99 @@
+{% include template/menu.html css="body > *" %}
+<style>
+  .content {
+    min-height: 100px;
+    background: none;
+  }
+  .heading {
+    width: unset;
+    margin-left: unset;
+  }
+  .overthetoplink {
+    display: block;
+    font-size: 24px;
+    padding: 12px 45px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    color: {{site.primaryColor}};
+  }
+  @media screen and (max-width: 799px) {
+    .custom-iframe {
+      display: none;
+    }
+    .too-small {
+      visibility: visible;
+      min-height: 50px;
+      padding: 20px;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .custom-iframe {
+      display: flex;
+      flex-direction: column;
+      position: relative
+    }
+    .custom-iframe > iframe {
+      width: 100%;
+    }
+    .too-small {
+      visibility: hidden;
+      padding: 0px;
+      height: 0px;
+      min-height: 0px;
+    }
+  }
+</style>
+<div class="modern-main {{ page.type }} {{ page.class }}">
+  <div class="heading modern-heading" style="text-align: center;">
+  <h1 class="light">{{ page.title }}</h1>
+  <h2 class="light">{{ page.description }}</h2>
+  </div>
+  <div class="overthetoplink">
+  <a href="{{site.baseurl}}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+      <path fill="{{site.primaryColor}}" fill-rule="evenodd" d="M6.25 10.5L1 5.25 6.25 0l1.361 1.361-2.917 2.917h5.445C12.86 4.278 15 6.417 15 9.138 15 11.862 12.861 14 10.139 14H2.36v-1.944h7.778c1.653 0 2.917-1.264 2.917-2.917 0-1.653-1.264-2.917-2.917-2.917H4.694L7.611 9.14 6.25 10.5z"/>
+  </svg>
+    Back to the {{site.productname}} Documentation</a>
+  </div>
+    <main>
+      {{ content }}
+      <div class="content modern-content">
+            {% include feedback.html %}
+            <p class="let-us-know">
+              {% capture issue_title %}I can't find what I'm looking for: {{ page.path }}{% endcapture %}
+                Can't find what you're looking for?
+                <a href="https://github.com/tinymce/tinymce-docs/issues/new?title={{ issue_title | url_encode }}" target="_blank" rel="noopener" data-modal="let-us-know">
+                    Let us know.
+                </a>
+            </p>
+        </div>
+
+        <div style="clear: both"></div>
+    </main>
+
+</div>
+{% include_remote {{ site.origin }}/_docs/footer.html %}
+
+<script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/common.min.js"></script>
+<script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/docs.min.js"></script>
+
+<script>
+
+    {% include js/polyfill/promise-polyfill/polyfill.js %}
+    {% include js/polyfill/whatwg-fetch/fetch.umd.js %}
+    {% include js/my-account-button.js %}
+    {% include js/notifications.js %}
+    {% include js/store.js %}
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'd70977481e4a0b72eacaec1533b2d81b',
+        indexName: 'tiny',
+        inputSelector: '#searchInput',
+        algoliaOptions: { 'facetFilters': ["tags:docs"] },
+        debug: true
+    });
+</script>

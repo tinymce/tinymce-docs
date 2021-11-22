@@ -4,6 +4,7 @@ box:
   password: $DOCKER_PASSWORD
   tag: latest
 no-response-timeout: 30
+command-timeout: 30
 
 build:
   steps:

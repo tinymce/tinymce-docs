@@ -89,67 +89,75 @@ The `tinymce-react` component provides props for:
 #### Configuring editor source
 
 The `tinymce-react` integration will try to source {{site.productname}} in the following order:
+
 1. The global `tinymce` will be used, if it is present on the page.
 2. If the `tinymceScriptSrc` prop is provided, then a script tag will be added to the page to load {{site.productname}} from the given URL.
 3. If none of the above conditions apply, then a script tag will be added to the page to load {{site.productname}} from {{site.cloudname}}.
 
 These props are used to configure how the editor is sourced:
 
-<dl>
-<dt><a href="#apikey"><code>apiKey</code></a></dt>
-<dd>The {{site.cloudname}} API key. When loading from {{site.cloudname}}, use this prop to remove the &quot;This domain is not registered...&quot; warning message.</dd>
-<dt><a href="#cloudchannel"><code>cloudChannel</code></a></dt>
-<dd>The channel of {{site.productname}} used when loading from {{site.cloudname}}.</dd>
-<dt><a href="#scriptloading"><code>scriptLoading</code></a></dt>
-<dd>The script loading behavior prop. Allows setting of the <code>async</code> and <code>defer</code> attributes, as well as adding an additional delay in milliseconds.</dd>
-<dt><a href="#tinymcescriptsrc"><code>tinymceScriptSrc</code></a></dt>
-<dd>The URL to use for sourcing {{site.productname}}, when loading a self-hosted version of {{site.productname}}.</dd>
-</dl>
+[apiKey](#apikey)
+: The {{site.cloudname}} API key. When loading from {{site.cloudname}}, use this prop to remove the "This domain is not registered..." warning message.
+
+[`cloudChannel`](#cloudchannel)
+: The channel of {{site.productname}} used when loading from {{site.cloudname}}.
+
+[`scriptLoading`](#scriptloading)
+: The script loading behavior prop. Allows setting of the `async` and `defer` attributes, as well as adding an additional delay in milliseconds.
+
+[`tinymceScriptSrc`](#tinymcescriptsrc)
+: The URL to use for sourcing {{site.productname}}, when loading a self-hosted version of {{site.productname}}.
 
 #### Configuring page elements
 
 These props provide some control over the page elements that the integration creates:
 
-<dl>
-<dt><a href="#id"><code>id</code></a></dt>
-<dd>The id attribute of the element that the editor is initialized on.</dd>
-<dt><a href="#inline"><code>inline</code></a></dt>
-<dd>Load the editor as part of the page&#59; sharing the page styles and selection.</dd>
-<dt><a href="#tagname"><code>tagName</code></a></dt>
-<dd>The tag used for creating an inline editor. Ignored for a classic (iframe) editor.</dd>
-<dt><a href="#textareaname"><code>textareaName</code></a></dt>
-<dd>The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.</dd>
-</dl>
+[`id`](#id)
+: The id attribute of the element that the editor is initialized on.
+
+[`inline`](#inline)
+: Load the editor as part of the page; sharing the page styles and selection.
+
+[`tagName`](#tagname)
+: The tag used for creating an inline editor. Ignored for a classic (iframe) editor.
+
+[`textareaName`](#textareaname)
+: The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.
 
 #### Configuring editor settings
 
 These props are read when the editor is initialized. Changes after the editor has launched are ignored.
-<dl>
-<dt><a href="#init"><code>init</code></a></dt>
-<dd>Additional options passed to {{site.productname}} when it is initialized.</dd>
-<dt><a href="#plugins"><code>plugins</code></a></dt>
-<dd>Specify the editor plugins. This will be <em>combined</em> with <code>plugins</code> in the <code>init</code> prop.</dd>
-<dt><a href="#toolbar"><code>toolbar</code></a></dt>
-<dd>Specify the editor toolbar. This will <strong>override</strong> the <code>toolbar</code> in the <code>init</code> prop.</dd>
-</dl>
+
+[`init`](#init)
+: Additional options passed to {{site.productname}} when it is initialized.
+
+[`plugins`](#plugins)
+: Specify the editor plugins. This will be _combined_ with `plugins` in the `init` prop.
+
+[`toolbar`](#toolbar)
+: Specify the editor toolbar. This will **override** the `toolbar` in the `init` prop.
 
 #### Managing the editor
 
 These props can be updated after the editor is initialized. Note that there are [other events](#eventbinding) not mentioned here.
-<dl>
-<dt><a href="#disabled"><code>disabled</code></a></dt>
-<dd>Should the editor be in read-only mode.</dd>
-<dt><a href="#initialvalue"><code>initialValue</code></a></dt>
-<dd>The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).</dd>
-<dt><a href="#eventbinding"><code>onBeforeAddUndo</code></a></dt>
-<dd>An event handler for notifying when the editor is about to create an undo level, and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.</dd>
-<dt><a href="#oneditorchange"><code>onEditorChange</code></a></dt>
-<dd>An event handler for detecting editor changes. Useful when implementing {{site.productname}} as a controlled component.</dd>
-<dt><a href="#eventbinding"><code>onInit</code></a></dt>
-<dd>An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.</dd>
-<dt><a href="#value"><code>value</code></a></dt>
-<dd>Sets and enforces the value of the editor. Only used for a controlled component.</dd>
-</dl>
+
+[`disabled`](#disabled)
+: Should the editor be in read-only mode.
+
+[`initialValue`](#initialvalue)
+: The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).
+
+[`onBeforeAddUndo`](#eventbinding)
+: An event handler for notifying when the editor is about to create an undo level, and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.
+
+[`onEditorChange`](#oneditorchange)
+: An event handler for detecting editor changes. Useful when implementing {{site.productname}} as a controlled component.
+
+[`onInit`](#eventbinding)
+: An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.
+
+[`value`](#value)
+: Sets and enforces the value of the editor. Only used for a controlled component.
 
 ### Available props
 
@@ -161,7 +169,7 @@ None of the configuration props are **required** for the {{site.productname}} Re
 
 Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor without the warning message "This domain is not registered...".
 
-To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.accountsignup}}).
+{% include misc/get-an-api-key.md %}
 
 **Default value:** `no-api-key`
 
@@ -200,7 +208,7 @@ Such as:
 />
 ```
 
-For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
+For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels).
 
 #### `disabled`
 
@@ -322,12 +330,12 @@ Used to store the state of the editor outside the {{site.productname}} React com
 This prop is commonly used when using the {{site.productname}} React component as a controlled component.
 
 It is called with two arguments:
-<dl>
-<dt><code>value</code></dt>
-<dd>The current value of the editor. This is normally HTML but can be text if the deprecated <a href="#outputformat"><code>outputFormat</code></a> prop is used.</dd>
-<dt><code>editor</code></dt>
-<dd>A reference to the editor.</dd>
-</dl>
+
+`value`
+: The current value of the editor. This is normally HTML but can be text if the deprecated [`outputFormat`](#outputformat) prop is used.
+
+`editor`
+: A reference to the editor.
 
 For detailed information on using `onEditorChange`, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
@@ -421,31 +429,35 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 Used to configure the script tag created to load {{site.productname}}.
 
 Contains 3 settings:
-<dl>
-<dt><code>async</code></dt>
-<dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async"><code>async</code></a> attribute on the script tag created to load {{site.productname}}.
-<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async">For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.</blockquote>
-<strong>Default value:</strong> <code>false</code>
-</dd>
-<dt><code>defer</code></dt>
-<dd>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer"><code>defer</code></a> attribute on the script tag created to load {{site.productname}}.
-<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer">This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.</blockquote>
-<strong>Default value:</strong> <code>false</code>
-</dd>
-<dt><code>delay</code></dt>
-<dd>The script tag to load {{site.productname}} will be added after the specified delay in milliseconds.<br/>
-<strong>Default value:</strong> <code>0</code>
-</dd>
-</dl>
 
-**Type:** Object
-```ts
-{
-  async?: boolean;
-  defer?: boolean;
-  delay?: number;
-}
-```
+`async`
+: Sets the [`async`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async) attribute on the script tag created to load {{site.productname}}.
+
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async">For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.</blockquote>
+
+    **Default value:** `false`
+
+`defer`
+: Sets the [`defer`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer) attribute on the script tag created to load {{site.productname}}.
+
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer">This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.</blockquote>
+
+    **Default value:** `false`
+
+`delay`
+: The script tag to load {{site.productname}} will be added after the specified delay in milliseconds.
+
+    **Default value:** `0`
+
+    **Type:** Object
+
+    ```ts
+    {
+      async?: boolean;
+      defer?: boolean;
+      delay?: number;
+    }
+    ```
 
 ##### Example: Loading {{site.productname}} asynchronously
 
@@ -713,12 +725,12 @@ Functions can be bound to editor events, such as:
 ```
 
 When the handler is called (**handlerFunction** in this example), it is called with two arguments:
-<dl>
-<dt><code>event</code></dt>
-<dd>The TinyMCE event object.</dd>
-<dt><code>editor</code></dt>
-<dd>A reference to the editor.</dd>
-</dl>
+
+`event`
+: The {{site.productname}} event object.
+
+`editor`
+: A reference to the editor.
 
 The following events are available:
 

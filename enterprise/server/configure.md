@@ -30,6 +30,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
     * [hunspell-dictionaries-path (optional)](#hunspell-dictionaries-pathoptional)
     * [custom-dictionaries-path (optional)](#custom-dictionaries-pathoptional)
     * [dynamic-custom-dictionaries (optional)](#dynamic-custom-dictionariesoptional)
+    * [num-incorrect-words-in-suggestions-request-limit (optional)](#num-incorrect-words-in-suggestions-request-limitoptional)
 * [Logging service activity](#loggingserviceactivity)
 
 ## Creating a configuration file
@@ -393,6 +394,11 @@ For information on creating custom dictionaries, see: [Adding custom dictionarie
 #### `dynamic-custom-dictionaries` (optional)
 
 {% include misc/dynamic-custom-dictionaries.md %}
+
+
+#### `num-incorrect-words-in-suggestions-request-limit` (optional)
+
+{% include misc/num-incorrect-words-in-suggestions-request-limit.md %}
 
 <a class="anchor" id="logging"></a>
 ## Logging service activity

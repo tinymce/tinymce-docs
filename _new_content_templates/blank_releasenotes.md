@@ -11,7 +11,7 @@ Replace vnumtxt with the version number such as: X.Y.Z
 Replace vnumcode with the version number without points, such as XYZ
 The following "list" should be added to `data/nav.yml`
 - url: "release-notesvnumcode"
-  page:
+  pages:
   - url: "#Overview"
   - url: "#New features"
   - url: "#Enhancements"
@@ -128,7 +128,11 @@ The {{site.productname}} vnumtxt release includes accompanying changes affecting
 - The Link Checker plugin (`linkchecker`)
 - The Spell Checker Pro plugin (`tinymcespellchecker`)
 
-The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version X.Y.Z**.
+The Java server-side components have been updated to the following versions:
+
+- `ephox-spelling.war`: X.Y.Z
+- `ephox-hyperlinking.war`: X.Y.Z
+- `ephox-image-proxy.war`: X.Y.Z
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 
@@ -142,7 +146,7 @@ For information on:
 
 ### Updating the self-hosted server-side components
 
-Version X.Y.Z provides updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
 1. Update your Java Application Server to the minimum required version:
 
@@ -153,7 +157,7 @@ Version X.Y.Z provides updates for the Java-based server-side components. To dep
         - 8.0.42+
         - 7.0.76+
 
-2. Replace the existing server-side `.war` files with the version 2.5.0 `.war` files bundled with {{site.productname}} vnumtxt or later.
+2. Replace the existing server-side `.war` files with the `.war` files bundled with {{site.productname}} vnumtxt or later.
 
 For information on:
 
@@ -184,15 +188,15 @@ The following features have been deprecated with the release of {{site.productna
 
 This section describes issues that users of {{site.productname}} vnumtxt may encounter and possible workarounds for these issues.
 
-**Outline**
-
 - [](#)
 
 ###
 
-**Issue**: This issue affects ....
+Issue
+: This issue affects ....
 
-**Workaround**: There was no known workaround at the time of the release.
+Workaround
+: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

@@ -1,7 +1,7 @@
-If you're using Composer package manager, add the following to `composer.json`.
+If you're using Composer package manager, run the following on a command line or command prompt:
 
-```
-php composer.phar require "tinymce/tinymce" ">= {{site.productmajorversion}}"
+```sh
+composer require tinymce/tinymce
 ```
 
 ### Step 1: Include the TinyMCE script

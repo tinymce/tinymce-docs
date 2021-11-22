@@ -699,9 +699,9 @@
     - url: "introduction"
       pages:
       - url: "#Interactive example"
-      - url: "#Features of TinyMCE Real-Time Collaboration"
-      - url: "#Overview of how TinyMCE Real-Time Collaboration works"
-      - url: "#Getting started with Real-Time Collaboration"
+      - url: "#Features of TinyMCE Real-time Collaboration"
+      - url: "#Overview of how TinyMCE Real-time Collaboration works"
+      - url: "#Getting started with Real-time Collaboration"
     - url: "rtc-supported-functionality"
       pages:
       - url: "#Browser support"
@@ -722,7 +722,7 @@
       - url: "#Encryption key rotation and key hints"
     - url: "jwt-authentication"
       pages:
-      - url: "#Setting up JWT authentication for Real-Time Collaboration"
+      - url: "#Setting up JWT authentication for Real-time Collaboration"
       - url: "#Add a public key to the Tiny Cloud API key"
       - url: "#Set up a JSON Web Token (JWT) endpoint"
       - url: "#JWT endpoint examples"
@@ -910,9 +910,19 @@
     pages:
     - url: "#TinyMCE Angular integration quick start guide"
     - url: "#TinyMCE Angular technical reference"
+  - url: "blazor"
+    pages:
+    - url: "#TinyMCE Blazor integration quick start guides"
+    - url: "#TinyMCE Blazor integration technical reference"
   - url: "bootstrap"
   - url: "django"
   - url: "jquery"
+  - url: "laravel"
+    pages:
+    - url: "laravel-introduction"
+    - url: "laravel-tiny-cloud"
+    - url: "laravel-composer-install"
+    - url: "laravel-zip-install"
   - url: "expressjs"
   - url: "rails"
     pages:
@@ -923,6 +933,10 @@
     pages:
     - url: "#TinyMCE React integration quick start guide"
     - url: "#TinyMCE React technical reference"
+  - url: "svelte"
+    pages:
+    - url: "#TinyMCE Svelte integration quick start guide"
+    - url: "#TinyMCE Svelte integration technical reference"
   - url: "swing"
   - url: "vue"
     pages:
@@ -952,8 +966,37 @@
 
 - url: "release-notes"
   pages:
+  - url: "6.0-upcoming-changes"
+  - url: "release-notes5102"
+    pages:
+    - url: "#Overview"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Accompanying Premium self-hosted server-side component changes"
+    - url: "#General bug fixes"
+    - url: "#Security fixes"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
+  - url: "release-notes5101"
+    pages:
+    - url: "#Overview"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Accompanying Premium self-hosted server-side component changes"
+    - url: "#General bug fixes"
+    - url: "#Security fixes"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
+  - url: "release-notes510"
+    pages:
+    - url: "#Overview"
+    - url: "#New features"
+    - url: "#Enhancements"
+    - url: "#Functionality changes"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Accompanying Premium self-hosted server-side component changes"
+    - url: "#General bug fixes"
+    - url: "#Security fixes"
+    - url: "#Deprecated features"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes59"
-    page:
+    pages:
     - url: "#Overview"
     - url: "#New features"
     - url: "#Enhancements"
@@ -1174,6 +1217,9 @@
 
 - url: "changelog"
   pages:
+  - url: "#5.10.2 - 2021-11-17"
+  - url: "#5.10.1 - 2021-11-03"
+  - url: "#5.10.0 - 2021-10-11"
   - url: "#5.9.2 - 2021-09-08"
   - url: "#5.9.1 - 2021-08-27"
   - url: "#5.9.0 - 2021-08-26"

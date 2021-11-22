@@ -10,7 +10,7 @@ The `rtc_server_disconnected` callback can be used to provide an alternative res
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
 {% endif %}
 
 Type

@@ -1,10 +1,10 @@
 This section contains the technical details of the encryption used to securely transmit document content. It is provided for information purposes only; an understanding of these details is not required to use the RTC plugin.
 
-For information on how to set up an encryption endpoint for Real-Time Collaboration, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/rtc/encryption/)
+For information on how to set up an encryption endpoint for Real-time Collaboration, see: [Real-time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/rtc/encryption/)
 
-The Real-Time Collaboration (RTC) plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration/rtc-options-required/#rtc_encryption_provider) to encrypt content directly. The plugin derives a unique session key from the provided key using industry standard cryptography algorithms. This method of content encryption improves protection against brute force decryption.
+The Real-time Collaboration (RTC) plugin does not use the [provided encryption key]({{site.baseurl}}/rtc/configuration/rtc-options-required/#rtc_encryption_provider) to encrypt content directly. The plugin derives a unique session key from the provided key using industry standard cryptography algorithms. This method of content encryption improves protection against brute force decryption.
 
-The Real-Time Collaboration (RTC) protocol encryption technique is as follows:
+The Real-time Collaboration (RTC) protocol encryption technique is as follows:
 
 * As described above, each document ID used for collaboration may have multiple sessions. To ensure each session has a unique key, 256 bits of random data are generated as the salt for each session along with a randomly generated AES-256 key. The salt is generated using the [`Crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) browser API and a 32 byte [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array).
 * The salt data and the provided encryption key are combined using a [PBKDF2](https://tools.ietf.org/html/rfc2898#section-5.2) key derivation function. Derivation is performed by the [SubtleCrypto.deriveKey()](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveKey) browser API, using the following parameters:

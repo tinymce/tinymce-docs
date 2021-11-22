@@ -10,6 +10,8 @@ controls: toolbar button, menu item
 {% assign pluginname = "Table of Contents" %}
 {% assign plugincode = "toc" %}
 
+{% include DEPRECATED/toc.md %}
+
 The `toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
 
 ## Basic setup

@@ -9,6 +9,8 @@ keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage im
 {% assign pluginname = "Image Tools" %}
 {% assign plugincode = "imagetools" %}
 
+{% include DEPRECATED/imagetools.md %}
+
 Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
 
 ## Interactive example

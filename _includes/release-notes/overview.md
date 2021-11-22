@@ -7,7 +7,7 @@ TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-gu
 
 Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file. Substitute 'no-api-key' with your api key.
 
-```js
+```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 

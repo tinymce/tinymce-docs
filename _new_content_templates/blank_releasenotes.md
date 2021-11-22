@@ -11,7 +11,7 @@ Replace vnumtxt with the version number such as: X.Y.Z
 Replace vnumcode with the version number without points, such as XYZ
 The following "list" should be added to `data/nav.yml`
 - url: "release-notesvnumcode"
-  page:
+  pages:
   - url: "#Overview"
   - url: "#New features"
   - url: "#Enhancements"

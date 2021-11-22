@@ -1,9 +1,9 @@
-require 'uri'
+require 'cgi'
 
 module Jekyll
   module URLEncode
     def url_encode(input)
-      input = URI.escape(input, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+      input = CGI.escape(input)
     end
   end
 end

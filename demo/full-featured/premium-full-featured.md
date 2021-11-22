@@ -9,6 +9,8 @@ keywords: example demo custom wysiwyg full-featured plugins non-premium
 
 This example includes most of the available {{site.productname}} plugins, including plugins available on {{site.cloudname}} premium subscriptions. Please note, it includes [premium plugins]({{site.plugindirectory}}).
 
+Want to try it for yourself? [Get started with TinyMCE now on Cloud]({{site.accountsignup}}).
+
 {% include live-demo.html id="full-featured" %}
 
 The following plugins are excluded from this example:

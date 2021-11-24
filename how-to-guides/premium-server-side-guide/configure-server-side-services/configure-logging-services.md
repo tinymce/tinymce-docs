@@ -1,4 +1,8 @@
-## Logging service activity
+---
+layout: default
+title: Activity logging
+description: Setting up logging for the premium server-side components.
+---
 
 It may be useful to make the {{site.productname}} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 

@@ -1,6 +1,12 @@
-## Hyperlinking service settings
+---
+layout: default
+title: Hyperlinking service settings
+description: Configuration options for the hyperlinking premium server-side component.
+---
 
-### `link-checking` (optional)
+The following settings for the Hyperlinking premium server-side component are optional. These settings should be added to the `application.conf` file described in [Required configuration for the server-side components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure-server-side-services/configure-required-services/).
+
+## `link-checking` (optional)
 
 The Link checker has three configurable settings:
 
@@ -8,13 +14,13 @@ The Link checker has three configurable settings:
 - `fallback-to-get`
 - `link-checking.cache`
 
-#### `enabled` (optional)
+### `enabled` (optional)
 
 Used to enable (`true`) or disable (`false`) the Link-checking service. This setting is `true` by default.
 
 For example:
 
-```
+```properties
 ephox {
   link-checking {
     enabled = true
@@ -22,13 +28,13 @@ ephox {
 }
 ```
 
-#### `fallback-to-get` (optional)
+### `fallback-to-get` (optional)
 
 The Link-checker normally relies on the `HEAD` response. If `fallback-to-get` is `true`, the link-checker may issue a `GET` request after receiving a non-standard `HEAD` response to verify a link. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. Enabling the `fallback-to-get` setting can lead to server performance issues and is set to `false` by default.
 
 For example:
 
-```
+```properties
 ephox {
   link-checking {
     fallback-to-get = true
@@ -36,7 +42,7 @@ ephox {
 }
 ```
 
-#### `cache` (optional)
+### `cache` (optional)
 
 This element configures the Link Checker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.
 
@@ -48,7 +54,7 @@ Default settings are automatically configured, meaning these settings are option
 
 Example:
 
-```
+```properties
 ephox {
   link-checking {
     cache {

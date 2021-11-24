@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Add Hunspell dictionaries to Spell Checker Pro
-title_nav: Using Hunspell dictionaries
+title_nav: Spelling service - Using Hunspell dictionaries
 description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker Pro.
 keywords: enterprise tinymcespellchecker hunspell spell check checker pro server configuration configure
 ---
@@ -36,7 +36,7 @@ Hunspell dictionaries can be downloaded from other sources, but will need to be 
 
 You can remove unwanted dictionaries and their associated directories, but the file structure must be as follows (including filenames):
 
-```
+```pre
 ├── af_ZA
 │   ├── af_ZA.aff
 │   ├── af_ZA.dic

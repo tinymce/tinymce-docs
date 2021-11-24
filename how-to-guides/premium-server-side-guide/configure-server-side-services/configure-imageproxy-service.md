@@ -1,6 +1,12 @@
-## Image proxy service settings
+---
+layout: default
+title: Image Proxy service settings
+description: Configuration options for the Image Proxy premium server-side component.
+---
 
-### `image-proxy` (optional)
+The following settings for the Image Proxy premium server-side component are optional. These settings should be added to the `application.conf` file described in [Required configuration for the server-side components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure-server-side-services/configure-required-services/).
+
+## `image-proxy` (optional)
 
 The [image proxy service]({{site.baseurl}}/plugins/opensource/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
@@ -11,7 +17,7 @@ The [image proxy service]({{site.baseurl}}/plugins/opensource/imagetools/) has s
 
 Example:
 
-```
+```properties
 ephox {
     image-proxy {
         size-limit = 10000000 // 10MB in bytes

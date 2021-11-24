@@ -40,9 +40,9 @@
     - url: "basic-setup"
     - url: "work-with-plugins"
     - url: "filter-content"
-    - url: "boilerplate-content-css"
     - url: "localize-your-language"
     - url: "spell-checking"
+    - url: "editor-content-css"
   - url: "environment-setup"
     pages:
     - url: "blazor"
@@ -61,9 +61,27 @@
   - url: "premium-server-side-guide"
     pages:
     - url: "introduction-to-premium-selfhosted-services"
-    - url: "configure"
-    - url: "self-hosting-hunspell"
-    - url: "dockerservices"
+    - url: "configure-server-side-services"
+      pages:
+      - url: "configure-required-services"
+      - url: "configure-common-settings-services"
+      - url: "configure-hyperlink-service"
+      - url: "configure-imageproxy-service"
+      - url: "configure-spelling-service"
+      - url: "self-hosting-hunspell"
+      - url: "configure-logging-services"
+    - url: "docker"
+      pages:
+      - url: "bundle"
+        pages:
+        - url: "bundle-hyperlinking-container"
+        - url: "bundle-spelling-container"
+        - url: "bundle-imageproxy-container"
+      - url: "individual"
+        pages:
+        - url: "individual-hyperlinking-container"
+        - url: "individual-spelling-container"
+      - url: "dockerservices"
     - url: "troubleshoot"
   - url: "customizing-the-editor-appearance"
     pages:

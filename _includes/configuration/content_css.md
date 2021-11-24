@@ -1,5 +1,5 @@
-
 ## content_css
+
 The `content_css` option loads the specified CSS files into the editable area.
 
 **Type:** `String`, `Array`
@@ -71,3 +71,13 @@ tinymce.init({
   content_css: 'path/myscript.php?myParam=myValue&bogus=' + new Date().getTime()
 });
 ```
+
+> **TIP**: To remove the margins between paragraphs (sometimes requested for using {{site.productname}} in email clients), add the following style to the content CSS:
+>
+> ```css
+> /*
+>  Removes margins on paragraphs,
+>  might be useful for mail clients
+> */
+> p { margin: 0 }
+> ```

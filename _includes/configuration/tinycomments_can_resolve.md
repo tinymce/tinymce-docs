@@ -1,7 +1,5 @@
 ### `tinycomments_can_resolve`
 
-
-
 _Optional_ - This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation. This callback sets the author permissions for _resolving comment conversations_.
 
 **Type:** `Function`

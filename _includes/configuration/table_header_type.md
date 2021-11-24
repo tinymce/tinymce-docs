@@ -1,7 +1,5 @@
 ### `table_header_type`
 
-
-
 The `table_header_type` option affects how tables are structured when a table row is set as a header row. Note that this setting does not affect header columns.
 
 The `table_header_type` option has four different settings: `'section`', `'cells'`, `'sectionCells'`, and `'auto'`.

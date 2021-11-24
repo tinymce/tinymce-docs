@@ -26,7 +26,6 @@ tinymce.init({
 
 For more information on the differences between the editing modes, please see this page [here]({{ site.baseurl }}/general-configuration-guide/use-tinymce-inline/).
 
-
 ### CSS stylesheets and inline editor content
 
 When using {{site.productname}} in inline mode, the editor inherits the CSS stylesheet from the page it is embedded in.

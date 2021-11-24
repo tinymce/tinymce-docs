@@ -18,7 +18,6 @@ tinymce.init({
 });
 ```
 
-
 #### Example: Disabling the Quick Insert toolbar
 
 To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.

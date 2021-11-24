@@ -23,7 +23,6 @@ The following server-side components are included in the {{site.productname}} Se
 
 This guide will help you get these server-side components up and running.
 
-
 ### Step 1. Install a Java application server
 
 If you've already got a Java application server like Jetty or Tomcat installed, skip to Step 2.
@@ -31,7 +30,6 @@ If you've already got a Java application server like Jetty or Tomcat installed, 
 If you don't, pick either [Tomcat](http://tomcat.apache.org/) or [Jetty](https://www.eclipse.org/jetty/) and install one of these with their default settings using the instructions on their website.
 
 > **Memory requirement:** Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to [Out of memory errors]({{ site.baseurl }}/how-to-guides/premium-server-side-guide/troubleshoot/#outofmemoryerrors) section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
-
 
 ### Step 2. Deploy server-side components
 
@@ -106,9 +104,7 @@ As a minimal example, if the installer installed Tomcat to `C:\Program Files\Apa
     -Dephox.config.file=C:\config\file\location\application.conf
     ```
 
-
 For other versions of Tomcat on Windows, check the Tomcat documentation for that version.
-
 
 ##### Jetty
 

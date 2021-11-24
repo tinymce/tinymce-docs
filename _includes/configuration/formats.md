@@ -30,7 +30,6 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
 
-
 ### Format Type
 
 There are three types of formats:
@@ -210,7 +209,6 @@ tinymce.init({
 
 Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for `underline` and `strikethrough` formats.
 
-
 **Type:** `Boolean`
 
 **Default:** `false`
@@ -227,7 +225,6 @@ tinymce.init({
   }
 });
 ```
-
 
 #### `wrapper`
 

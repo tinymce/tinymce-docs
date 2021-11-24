@@ -96,7 +96,6 @@ If users load {{site.productname}} from the following URLs:
 
 Add `server.example.com` to the `allowed-origins` list because the scheme and the port are ignored.
 
-
 |     Type      | Setting           | Description                                                                                                         |
 |:-------------:|-------------------|---------------------------------------------------------------------------------------------------------------------|
 |  **element**  | `allowed-origins` | Stores CORS setup information                                                                                       |
@@ -118,7 +117,6 @@ The `*` wildcard character matches any value. Wildcards are supported in the fol
 
 1. As a prefix of the domain (e.g. `*.mydomain.com`).
 2. As the only character (e.g. `*`). This will allow **any** Origin to access the server-side components.
-
 
 > **Note:** Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.
 
@@ -203,7 +201,6 @@ This optional proxy element provides an alternative to providing proxy settings 
 | **attribute** | `https.proxyPort`    | An integer defining the port number of the proxy for HTTPS connections. (Optional)                                                                                                                                                                                                           |
 | **attribute** | `http.proxyUser`     | Username for authenticating to **both** the HTTP and HTTPS proxy. (Optional)                                                                                                                                                                                                                 |
 | **attribute** | `http.proxyPassword` | Password for authenticating to **both** the HTTP and HTTPS proxy. (Optional)                                                                                                                                                                                                                 |
-
 
 In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
 

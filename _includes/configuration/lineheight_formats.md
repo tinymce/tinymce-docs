@@ -1,7 +1,5 @@
 ## lineheight_formats
 
-
-
 This option allows you to override the line heights displayed in the `lineheight` dropdown toolbar button and the `lineheight` menu item. Each item in the string should be space separated.
 
 **Type:** `String`

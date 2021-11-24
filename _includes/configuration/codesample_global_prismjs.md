@@ -1,7 +1,5 @@
 ### `codesample_global_prismjs`
 
-
-
 This configuration option allows a global Prism.js version to be used when highlighting code sample blocks, instead of using the Prism.js version bundled inside the `codesample` plugin. This allows for a custom version of Prism.js, including additional languages, to be used.
 
 When using this option, ensure that Prism.js and any language add-ons are loaded on the site, alongside the TinyMCE script:

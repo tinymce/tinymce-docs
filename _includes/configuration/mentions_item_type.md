@@ -1,7 +1,5 @@
 ### `mentions_item_type`
 
-
-
 This option sets which user interface item type to use when displaying the list of users.
 
 - The `name` item will only display the user's name.

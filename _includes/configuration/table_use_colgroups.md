@@ -1,7 +1,5 @@
 ### `table_use_colgroups`
 
-
-
 This option adds `colgroup` and `col` elements to new tables for specifying column widths. Existing tables and tables added using `setContent` or paste are not affected.
 
 {{site.productname}} only supports the `width` attribute on `col` elements. Other attributes are not supported, such as the `span` attribute.

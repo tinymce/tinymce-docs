@@ -1,7 +1,5 @@
 ## `referrer_policy`
 
-
-
 Used for setting the level of referrer information sent when loading plugins and CSS. Referrer policies can be used to:
 
 * Improve the privacy of end-users.

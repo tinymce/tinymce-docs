@@ -526,7 +526,6 @@ The following command values can be queried using the [queryCommandValue]({{ sit
 | LineHeight    | Returns the line height of the current selection.  |
 | ToggleSidebar | Returns the current state of sidebar (open or closed).                     |
 
-
 **Examples**
 
 ```js

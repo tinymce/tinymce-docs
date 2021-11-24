@@ -291,7 +291,6 @@ ephox {
 ## Combining Iframely and custom endpoints
 It is also possible to configure Iframely with custom oEmbed endpoints. For example, you may want to use Iframely to embed media from the Internet and an internal oEmbed server to embed media from an Intranet.
 
-
 Example (replace `xxx` with your Iframely API key):
 
 ```

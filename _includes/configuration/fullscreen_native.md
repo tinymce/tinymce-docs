@@ -1,7 +1,5 @@
 ## `fullscreen_native`
 
-
-
 {% if pluginname != "fullscreen" %}
 > **Note**: The `fullscreen_native` option requires the Fullscreen plugin.
 {% endif %}

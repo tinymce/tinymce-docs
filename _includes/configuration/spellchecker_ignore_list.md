@@ -18,8 +18,6 @@ tinymce.init({
 
 #### Example: Using `spellchecker_ignore_list` for specific languages
 
-
-
 ```js
 tinymce.init({
   selector: 'textarea',

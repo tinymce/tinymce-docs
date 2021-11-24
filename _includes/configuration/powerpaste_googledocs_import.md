@@ -1,7 +1,5 @@
 ### `powerpaste_googledocs_import`
 
-
-
 This option controls how content pasted from Google Docs is filtered.
 
 **Type:** `String` or `Function`

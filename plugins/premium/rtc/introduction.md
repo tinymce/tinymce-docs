@@ -6,8 +6,6 @@ description: What is RTC and what can it do
 keywords: rtc introduction overview
 ---
 
-
-
 {% include rtc/rtc-description.md %}
 
 ## Interactive example

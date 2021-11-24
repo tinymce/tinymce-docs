@@ -38,4 +38,3 @@ For information on:
 * Disabling the {{site.productname}} menubar, see: [Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
 * The `inline` setting, see: [inline]({{ site.baseurl }}/configure/editor-appearance/#inline).
 
-

@@ -85,7 +85,6 @@ Then, restart the server and go to a browser and open the default tomcat page `h
 
 ![Spell Checking Server Status]({{ site.baseurl }}/images/spell-checking-server_status.png)
 
-
 ### To increase the amount of memory
 
 #### Tomcat

@@ -6,7 +6,6 @@ description: Details of the toolbar buttons and menu items provided for the Comm
 keywords: comments commenting tinycomments
 ---
 
-
 {% assign pluginname = "Comments" %}
 {% assign plugincode = "comments" %}
 

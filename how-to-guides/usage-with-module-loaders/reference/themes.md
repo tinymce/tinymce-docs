@@ -9,7 +9,6 @@ description: Information on bundling TinyMCE themes using module loading
 {% include module-loading/bundling-ref-example.md %}
 {% assign editorcomponent = nil %}
 
-
 The following table shows examples of the syntax used to bundle the silver theme:
 
 ```

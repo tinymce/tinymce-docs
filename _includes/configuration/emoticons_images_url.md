@@ -1,7 +1,5 @@
 ### `emoticons_images_url`
 
-
-
 This option sets the base URL for the images used to represent emojis when using the `emojiimages` database.
 
 By default, this option loads the required image _assets_ from the Twemoji CDN. To use self-hosted emoji images, download the image _assets_ from the [Twitter Emoji (twemoji) GitHub repository](https://github.com/twitter/twemoji/#download).

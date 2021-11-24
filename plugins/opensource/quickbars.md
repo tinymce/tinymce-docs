@@ -62,8 +62,6 @@ tinymce.init({
 
 #### Example: Disabling the Quick Image context toolbar
 
-
-
 ```js
 tinymce.init({
   selector: 'div.tinymce',

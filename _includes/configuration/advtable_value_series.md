@@ -1,7 +1,5 @@
 ## `advtable_value_series`
 
-
-
 The `advtable_value_series` option configures one or more series of values for populating cells in a table. This option can be used to create row identifiers.
 
 **Type:** `Object`

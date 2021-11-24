@@ -335,7 +335,6 @@ The following event is provided by the [Word Count plugin]({{site.baseurl}}/plug
 | --------------- | --------------------------------------------------------------------------------------- | -------------------------------------------- |
 | WordCountUpdate | `{ wordCount: { words: number, characters: number, charactersWithoutSpaces: number } }` | Fired when the editor word count is updated. |
 
-
 ## Editor Manager events
 
 The following events are used for editor management. These events are handled using `tinymce.on`, rather than `editor.on` or `editor.fire`, as shown in [Examples: Handling Editor Manager events](#exampleshandlingeditormanagerevents).

@@ -19,7 +19,6 @@ Inline editing mode does not replace the selected element with an iframe, but in
 - To use the CSS stylesheet of the page where it initializes, and
 - To have minimal UI around the content area to minimize the area occupied by the editor.
 
-
 ## Enabling inline editing mode
 
 Inline mode only works on content within a block element (such as: `div` or `h1`).
@@ -52,5 +51,4 @@ The following demonstration is using four {{site.productname}} editors in inline
 {% include live-demo.html id="inline" %}
 
 For information on inline mode and the `inline` setting, see: [User interface options - inline]({{site.baseurl}}/configure/editor-appearance/#inline).
-
 

@@ -40,7 +40,6 @@ This procedure creates a basic Bootstrap integration containing a {{site.product
 
         For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
-
 3. Add an initialization point for {{site.productname}}, such as:
 
     ```html

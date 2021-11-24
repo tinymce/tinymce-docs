@@ -81,7 +81,6 @@ For a list of the icon identifiers, see: [Available icons]({{site.baseurl}}/adva
 
 Set the `progressBar` property type to `True` to display a progress bar to the left of the close button and to the right of the text.
 
-
 ```js
 var notification = editor.notificationManager.open({
   text: 'A test notification that contains a progress bar.',

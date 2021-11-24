@@ -42,7 +42,6 @@ The following example breaks the page into two separate editable areas. Each are
 
 The following example loads each editable area with a unique configuration of {{site.productname}}. This is useful when different content areas have different needs, such as providing simple configuration for editing titles and a complete configuration for editing body content. Define a `tinymce.init` object/method for each configuration.
 
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -74,5 +73,4 @@ The following example loads each editable area with a unique configuration of {{
 </body>
 </html>
 ```
-
 

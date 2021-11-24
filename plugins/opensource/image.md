@@ -74,7 +74,6 @@ If you wish to align the image, you can also use the text align buttons while im
 
 #{% include configuration/type_ahead_urls.md %}
 
-
 ## Q: Where are the advanced image options?
 
 Use the `Style Formats` option instead, which is much more powerful.

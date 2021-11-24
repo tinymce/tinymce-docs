@@ -1,7 +1,5 @@
 ### `images_file_types`
 
-
-
 This option configures which image file formats are accepted by the editor. Changing this option will adjust the following editor behaviour:
   - Which image file formats are allowed to be uploaded in the [Image]({{site.baseurl}}/plugins/opensource/image/) dialog.
   - Which image file formats are recognized and placed in an `img` element by the [Paste]({{site.baseurl}}/plugins/opensource/paste/) and [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/) `smart_paste` functionality.

@@ -71,7 +71,6 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 * Only works for HTML URLs
 * Iframely can only be enabled or disabled as a global option. If Iframely is enabled, then all content must be world accessible and cookie passthrough will not happen.
 
-
 ## Custom API
 
 As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or {{site.productname}} Enhanced Media Embed formats.

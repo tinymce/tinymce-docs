@@ -30,8 +30,6 @@ Hunspell dictionaries can be downloaded from other sources, but will need to be 
 
 ## Configuring the spelling service to use Hunspell dictionaries
 
-
-
 {% include misc/hunspell-dictionaries-path.md %}
 
 ## Hunspell dictionary storage for Spell Checker Pro

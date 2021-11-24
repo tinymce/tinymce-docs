@@ -7,7 +7,7 @@ description: Learn how to create clean, maintainable and readable content.
 
 {{site.productname}} has comprehensive content filtering capabilities that change the way the editor handles the input and output of content. This capability ensures content is clean, maintainable, and readable.
 
-These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. This section focuses on 1 of 32 content filtering options available in {{site.productname}}. There are additional configuration options concerning the complex parsing of text. Those options are beyond the scope of the General Configuration Guide. Refer to the [Content filtering options]({{ site.baseurl }}/configure/content-filtering/) section to learn more.
+These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. There are additional configuration options concerning the complex parsing of text. Those options are beyond the scope of the General Configuration Guide. Refer to the [Content filtering options]({{ site.baseurl }}/configure/content-filtering/) section to learn more.
 
 ## Roll your style formats
 
@@ -92,5 +92,3 @@ tinymce.init({
   }
 });
 ```
-
-

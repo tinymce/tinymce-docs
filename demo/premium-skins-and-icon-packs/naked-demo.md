@@ -11,5 +11,3 @@ This demo uses the Naked skin. The Naked skin completely removes outside borders
 The example below uses the small icon pack and a custom editor frame.
 
 {% include live-demo.html id="premiumskinsandicons-naked" %}
-
-

@@ -18,5 +18,3 @@ keywords: tinydrive storage googledrive dropbox
 {% endfor %}
 
 {% include index.html links=links %}
-
-

@@ -68,8 +68,6 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 
 #### CardMenuItem
 
-
-
 The `CardMenuItem` allows customization of layout and content. This is done by constructing an array of subcomponent specifications which will determine the structure of the final item. A classical example of this would be the need to display a "user" item containing a profile picture, a user name, and a description.
 
 | Name | Value | Requirement | Description |

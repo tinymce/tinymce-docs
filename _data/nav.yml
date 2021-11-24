@@ -34,6 +34,15 @@
 
 - url: "how-to-guides"
   pages:
+
+  - url: "learn-the-basics"
+    pages:
+    - url: "basic-setup"
+    - url: "work-with-plugins"
+    - url: "filter-content"
+    - url: "boilerplate-content-css"
+    - url: "localize-your-language"
+    - url: "spell-checking"
   - url: "environment-setup"
     pages:
     - url: "blazor"
@@ -42,13 +51,6 @@
       - url: "blazor-pm"
       - url: "blazor-zip"
       - url: "blazor-ref"
-  - url: "basic-setup"
-  - url: "work-with-plugins"
-  - url: "localize-your-language"
-  - url: "spell-checking"
-  - url: "filter-content"
-  - url: "boilerplate-content-css"
-
   - url: "cloud-deployment-guide"
     pages:
     - url: "editor-and-features"
@@ -63,6 +65,11 @@
     - url: "self-hosting-hunspell"
     - url: "dockerservices"
     - url: "troubleshoot"
+  - url: "customizing-the-editor-appearance"
+    pages:
+    - url: "customize-ui"
+    - url: "creating-a-skin"
+    - url: "creating-an-icon-pack"
   - url: "image-handling-guide"
     pages:
     - url: "upload-images"
@@ -143,12 +150,6 @@
     - url: "editor-icon-identifiers"
     - url: "annotations"
 
-  - url: "customizing-the-editor-appearance"
-    pages:
-    - url: "customize-ui"
-    - url: "creating-a-skin"
-    - url: "creating-an-icon-pack"
-  - url: "generate-rsa-key-pairs"
   - url: "usage-with-module-loaders"
     pages:
     - url: "introduction_to_bundling_tinymce"
@@ -184,6 +185,7 @@
     - url: "#Configuring Inline Mode"
     - url: "#Migrating Custom Buttons"
     - url: "#Migrating Custom Drop-down Toolbar Buttons"
+  - url: "generate-rsa-key-pairs"
 
 - url: "demo"
   pages:

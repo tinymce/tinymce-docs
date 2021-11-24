@@ -7,5 +7,3 @@ keywords: npm bower composer nuget update updating upgrade upgrading
 ---
 
 {% include install/upgrading-info.md %}
-
-

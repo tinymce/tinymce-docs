@@ -482,5 +482,3 @@ The following examples show a Froala editor and a {{site.productname}} editor wi
 ### Additional Information on Drop-down Buttons
 
 For information on creating drop-down buttons, see: [Types of toolbar buttons: Menu button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton).
-
-

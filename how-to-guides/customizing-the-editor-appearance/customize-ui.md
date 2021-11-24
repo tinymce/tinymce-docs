@@ -151,5 +151,3 @@ tinymce.init({
 ```
 
 The ability to customize the user interface is an integral part of ensuring an integrated and complete user experience.
-
-

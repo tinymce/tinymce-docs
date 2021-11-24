@@ -61,5 +61,3 @@ The following code snippet sets {{site.productname}}'s language to Chinese and t
 </body>
 </html>
 ```
-
-

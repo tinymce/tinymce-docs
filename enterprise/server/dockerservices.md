@@ -87,9 +87,9 @@ Proceed to setting up and deploying the containerized services:
 
 The following sections assist with containerizing the {{ site.productname }} services for users with licenses to self-hosted versions of:
 
-* [_Tiny Enhanced Media Embed_](https://apps.tiny.cloud/products/enhanced-media-embed/)
-* [_Tiny Link Checker_](https://apps.tiny.cloud/products/link-checker/)
-* [_Tiny Spell Checker Pro_](https://apps.tiny.cloud/products/spell-checker-pro/)
+* [_Tiny Enhanced Media Embed_]({{site.plugindirectory}}enhanced-media-embed/)
+* [_Tiny Link Checker_]({{site.plugindirectory}}link-checker/)
+* [_Tiny Spell Checker Pro_]({{site.plugindirectory}}spell-checker-pro/)
 
 Select from the following:
 

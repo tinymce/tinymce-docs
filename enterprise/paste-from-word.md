@@ -7,7 +7,7 @@ keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_ht
 
 ## Improve your productivity & writing experience
 
-[{{site.productname}} PowerPaste]({{site.productpages}}/powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
+[{{site.productname}} PowerPaste]({{site.plugindirectory}}powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
 
 ## Example use cases
 

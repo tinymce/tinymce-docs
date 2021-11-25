@@ -15,7 +15,7 @@ NOTE: You must include the plugin in your download options to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
 
-[source,html]
+[source,html,subs=+attributes]
 ----
 <!DOCTYPE html>
 <html>

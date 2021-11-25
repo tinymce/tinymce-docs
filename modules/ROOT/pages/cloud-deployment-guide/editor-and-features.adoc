@@ -21,9 +21,9 @@ anchor:step1embedthetinymcecloudscripttagintoyourwebpage[historical anchor]
 
 To load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. The code embedding is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
-[source,js]
+[source,js,subs=+attributes]
 ----
-<script src="{cdnurl}?apiKey=your_API_key"></script>
+<script src="{cdnurl}"></script>
 ----
 
 [[step-2-load-customize-and-interact-with-tinymce]]
@@ -87,9 +87,9 @@ anchor:step1replaceexistingreferencetotinymceminjs[historical anchor]
 
 Migrating from a Self-hosted environment to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE's JavaScript (typically a reference to `tinymce.min.js` either hosted in your application or available via one our legacy CDNs). Now, replace this script tag with the following:
 
-[source,js]
+[source,js,subs=+attributes]
 ----
-<script src="{cdnurl}?apiKey=your_API_key"></script>
+<script src="{cdnurl}"></script>
 ----
 
 [[step-2-update-custom-plugin-paths]]

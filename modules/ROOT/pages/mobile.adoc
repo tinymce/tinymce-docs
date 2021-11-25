@@ -18,14 +18,14 @@ NOTE: Please note that TinyMCE mobile will not work on non-mobile environments.
 == How to set up mobile
 anchor:howtosetupmobile[historical anchor]
 
-In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're using the Self-hosted package, replace `cloud.tinymce.com/dev/` with your path to `tinymce.min.js`.
+In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're using the Self-hosted package, replace `cdn.tiny.cloud` with your path to `tinymce.min.js`.
 
-[source,html]
+[source,html,subs=+attributes]
 ----
 <!DOCTYPE html>
 <html>
 <head><!-- Get TinyMCe Cloud -->
-  <script src="https://cloud.tinymce.com/dev/tinymce.min.js"></script>
+  <script src="{cdnurl}"></script>
   <script>tinymce.init({
       selector:'textarea',
       theme: 'modern',
@@ -38,15 +38,15 @@ In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're 
 </html>
 ----
 
-NOTE:  If you're new to TinyMCE Cloud, https://go.tinymce.com/blog/how-to-get-tinymce-cloud-up-in-less-than-5-minutes/[this post] will help you get the editor instantiated quickly.
+NOTE:  If you're new to TinyMCE Cloud, link:{blogsite}how-to-get-tinymce-cloud-up-in-less-than-5-minutes/[this post] will help you get the editor instantiated quickly.
 
 [TIP]
 ====
 Don't forget to add your API key to the `init`:
 
-[source,html]
+[source,html,subs=+attributes]
 ----
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{cdnurl}"></script>
 ----
 ====
 

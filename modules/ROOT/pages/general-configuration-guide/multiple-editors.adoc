@@ -15,7 +15,7 @@ anchor:multipleeditorinstancessharingthesameconfiguration[historical anchor]
 
 In the following example, the page is broken into two separate editable areas, each sharing a single editor configuration. Each editable `div` is provided the same `class` of 'myeditablediv'. When the user clicks within the content area, TinyMCE is loaded for just that area.
 
-[source,html]
+[source,html,subs=+attributes]
 ----
 <!DOCTYPE html>
 <html>
@@ -56,7 +56,7 @@ In this next example, each editable area is loaded with an instance of TinyMCE w
 
 [source,html]
 ----
-<!DOCTYPE html>
+<!DOCTYPE html,subs=+attributes>
 <html>
 <head>
   <script src="{cdnurl}"></script>

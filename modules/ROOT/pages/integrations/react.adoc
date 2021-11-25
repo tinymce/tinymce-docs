@@ -79,7 +79,7 @@ anchor:loadingtinymcebyyourself[historical anchor]
 
 To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out xref:advanced/usage-with-module-loaders.adoc[this page in the documentation].
 
-[source,html]
+[source,html,subs=+attributes]
 ----
 <script src="{cdnurl}"></script>
 ----

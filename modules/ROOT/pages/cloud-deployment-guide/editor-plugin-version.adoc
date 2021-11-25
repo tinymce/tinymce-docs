@@ -13,9 +13,9 @@ When deploying the link:{rootDir}cloud-deployment-guide/editor-and-features.html
 
 Our documented default for loading TinyMCE via our Cloud is:
 
-[source,js]
+[source,js,subs=+attributes]
 ----
-<script src="{cdnurl}?apiKey=your_API_key"></script>
+<script src="{cdnurl}"></script>
 ----
 
 The `stable` in this URL specifies the latest release of TinyMCE that completed our quality assurance testing process, successfully. If you are not using the latest, stable TinyMCE version, you can customize this value. You'll find all https://cloud.tinymce.com/versions/tiny[supported versions here].
@@ -33,9 +33,9 @@ Major version number (e.g. "4").
 
 The following would load TinyMCE _4.latest.latest_:
 
-[source,js]
+[source,js,subs=+attributes]
 ----
-<script src="https://cloud.tinymce.com/4/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{cdnurl}"></script>
 ----
 
 ==== Example
@@ -46,7 +46,7 @@ The following would load TinyMCE _4.3.latest_:
 
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/4.3/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4.3/tinymce.min.js"></script>
 ----
 
 ==== Example
@@ -57,7 +57,7 @@ The following would load TinyMCE _4.3.2_:
 
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/4.3.2/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4.3.2/tinymce.min.js"></script>
 ----
 
 If you enter a version that doesn't exist, you get a *HTTP 404* error in response.
@@ -80,7 +80,7 @@ This channel deploys the absolute latest released TinyMCE version seen in the li
 
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/dev/tinymce.min.js"></script>
 ----
 
 [[testing-release-channel]]
@@ -93,20 +93,20 @@ This channel deploys the current candidate for release to the `stable` channel. 
 
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/testing/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/testing/tinymce.min.js"></script>
 ----
 
 [[stable-release-channel]]
 ==== stable release channel
 anchor:stablereleasechannel[historical anchor]
 
-This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel https://cloud.tinymce.com/stable/version.txt[can be found here].
+This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel https://cdn.tiny.cloud/1/no-api-key/tinymce/stable/version.txt[can be found here].
 
 ===== Example
 
-[source,js]
+[source,js,subs=+attributes]
 ----
-<script src="{cdnurl}?apiKey=your_API_key"></script>
+<script src="{cdnurl}"></script>
 ----
 
 [[specifying-the-version-of-featuresplugins-deployed-from-the-cloud]]
@@ -119,12 +119,12 @@ Whether you're deploying both the link:{rootDir}cloud-deployment-guide/editor-an
 === PowerPaste
 
 * link:{rootDir}plugins/powerpaste.html[Developer documentation]
-* https://plugins.tinymce.com/versions/powerpaste[Supported versions]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Supported versions]
 
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?powerpaste=2.1.8"></script>
 ----
 
 [[spell-checker-pro]]
@@ -132,12 +132,12 @@ Whether you're deploying both the link:{rootDir}cloud-deployment-guide/editor-an
 anchor:spellcheckerpro[historical anchor]
 
 * link:{rootDir}plugins/tinymcespellchecker.html[Developer documentation]
-* https://plugins.tinymce.com/versions/tinymcespellchecker[Supported versions]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions[Supported versions]
 
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=0.9.6"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?tinymcespellchecker=0.9.6"></script>
 ----
 
 [[accessibility-checker]]
@@ -145,12 +145,12 @@ anchor:spellcheckerpro[historical anchor]
 anchor:accessibilitychecker[historical anchor]
 
 * link:{rootDir}plugins/a11ychecker.html[Developer documentation]
-* https://plugins.tinymce.com/versions/a11ychecker[Supported versions]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions[Supported versions]
 
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=1.0.2"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?a11ychecker=1.0.2"></script>
 ----
 
 [[advanced-code-editor]]
@@ -158,12 +158,12 @@ anchor:accessibilitychecker[historical anchor]
 anchor:advancedcodeeditor[historical anchor]
 
 * link:{rootDir}plugins/advcode.html[Developer documentation]
-* https://plugins.tinymce.com/versions/advcode[Supported versions]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions[Supported versions]
 
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=1.0.2"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?advcode=1.0.2"></script>
 ----
 
 [[enhanced-media-embed]]
@@ -171,12 +171,12 @@ anchor:advancedcodeeditor[historical anchor]
 anchor:enhancedmediaembed[historical anchor]
 
 * link:{rootDir}plugins/mediaembed.html[Developer documentation]
-* https://plugins.tinymce.com/versions/mediaembed[Supported versions]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions[Supported versions]
 
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=0.0.1"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?mediaembed=0.0.1"></script>
 ----
 
 [[link-checker]]
@@ -184,12 +184,12 @@ anchor:enhancedmediaembed[historical anchor]
 anchor:linkchecker[historical anchor]
 
 * link:{rootDir}plugins/linkchecker.html[Developer documentation]
-* https://plugins.tinymce.com/versions/linkchecker[Supported versions]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions[Supported versions]
 
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?linkchecker=1.0.0"></script>
 ----
 
 [[specifying-a-self-hosted-deployment-of-featuresplugins]]
@@ -208,7 +208,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?powerpaste=sdk"></script>
 ----
 
 === Spell Checker Pro
@@ -218,7 +218,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?tinymcespellchecker=sdk"></script>
 ----
 
 === Accessibility Checker
@@ -228,7 +228,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?a11ychecker=sdk"></script>
 ----
 
 === Advanced Code Editor
@@ -238,7 +238,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?advcode=sdk"></script>
 ----
 
 === Enhanced Media Embed
@@ -248,7 +248,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?mediaembed=sdk"></script>
 ----
 
 === Link Checker
@@ -258,7 +258,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 .Example
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?linkchecker=sdk"></script>
 ----
 
 [[examples]]
@@ -278,7 +278,7 @@ The following example would load:
 ----
 <html>
    <head>
-      <script src="https://cloud.tinymce.com/4.5.0/tinymce.min.js?apiKey=your_API_key&powerpaste=2.1.8&advcode=1.0.2"></script>
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4.5.0/tinymce.min.js?powerpaste=2.1.8&advcode=1.0.2"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>
@@ -310,7 +310,7 @@ The following example would load:
 ----
 <html>
    <head>
-      <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8&advcode=sdk"></script>
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js?powerpaste=2.1.8&advcode=sdk"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>

@@ -17,7 +17,7 @@ Within your webpage, after you've specified your script tag to load the TinyMCE 
 
 [source,js]
 ----
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js"></script>
 ----
 
 [[step-2-specify-purchased-tinymce-plugins-and-toolbar-buttons]]
@@ -52,7 +52,7 @@ Here is a complete example, whereby:
 <html>
    <head>
       <script src="https://your_server/tinymce.min.js"></script>
-      <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/4/plugins.min.js"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>

@@ -27,7 +27,7 @@ Currently, there are three types of formats available:
 
 * **Title Case** - The **Title Case** option changes anything other than articles, coordinating conjunctions, or short prepositions to capital letters. The default rule set for **Title Case** is based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP).
 
-To try out **Case Change** start with this [dedicated product page]({{site.productpages}}/case-change/) to see all the flexible pricing options.
+To try out **Case Change** start with this [dedicated product page]({{site.plugindirectory}}case-change) to see all the flexible pricing options.
 
 For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/premium/casechange/).
 

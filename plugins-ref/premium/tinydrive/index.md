@@ -1,24 +1,19 @@
 ---
 layout: default
-title: Tiny Drive plugin APIs
-title_nav: APIs
-description: Description of the Tiny Drive plugin APIs
+title: Tiny Drive
+title_nav: Tiny Drive
+description: Tiny Drive
 type: folder
-keywords: tinydrive api
 ---
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "plugins" %}
+  {% if entry.url == "plugins-ref" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "premium" %}
         {% for subsubentry in subentry.pages %}
           {% if subsubentry.url == "tinydrive" %}
-            {% for sub3entry in subsubentry.pages %}
-              {% if sub3entry.url == "apis" %}
-                {% assign links = sub3entry.pages %}
-              {% endif %}
-            {% endfor %}
+            {% assign links = subsubentry.pages %}
           {% endif %}
         {% endfor %}
       {% endif %}

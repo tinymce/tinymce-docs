@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Tiny Skins and Icon Packs
-title_nav: Tiny Skins and Icon Packs
-description: Quickly give TinyMCE a new look.
-keywords: skin skins icon icons material bootstrap customize theme
+title: Premium plugins for TinyMCE
+title_nav: Premium plugins
+description_short: TinyMCE premium plugins
+description: This section lists the premium plugins provided by Tiny.
 type: folder
 ---
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "demo" %}
+  {% if entry.url == "plugins-ref" %}
     {% for subentry in entry.pages %}
-      {% if subentry.url == "premium-skins-and-icon-packs" %}
+      {% if subentry.url == "premium" %}
         {% assign links = subentry.pages %}
       {% endif %}
     {% endfor %}

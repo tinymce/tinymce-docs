@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Open source for TinyMCE
-title_nav: Open source plugins
-description_short: TinyMCE open source plugins
-description: This section lists the open source plugins provided with TinyMCE.
+title: Tiny Skins and Icon Packs
+title_nav: Tiny Skins and Icon Packs
+description: Quickly give TinyMCE a new look.
+keywords: skin skins icon icons material bootstrap customize theme
 type: folder
 ---
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "plugins" %}
+  {% if entry.url == "demos" %}
     {% for subentry in entry.pages %}
-      {% if subentry.url == "opensource" %}
+      {% if subentry.url == "premium-skins-and-icon-packs" %}
         {% assign links = subentry.pages %}
       {% endif %}
     {% endfor %}

@@ -9,7 +9,7 @@ type: folder
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "plugins" %}
+  {% if entry.url == "plugins-ref" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "premium" %}
         {% for subsubentry in subentry.pages %}

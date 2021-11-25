@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Premium plugins for TinyMCE
-title_nav: Premium plugins
-description_short: TinyMCE premium plugins
-description: This section lists the premium plugins provided by Tiny.
+title: Open source for TinyMCE
+title_nav: Open source plugins
+description_short: TinyMCE open source plugins
+description: This section lists the open source plugins provided with TinyMCE.
 type: folder
 ---
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "plugins" %}
+  {% if entry.url == "plugins-ref" %}
     {% for subentry in entry.pages %}
-      {% if subentry.url == "premium" %}
+      {% if subentry.url == "opensource" %}
         {% assign links = subentry.pages %}
       {% endif %}
     {% endfor %}

@@ -14,7 +14,7 @@ redirect_from:
 ---
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "demo" %}
+  {% if entry.url == "demos" %}
     {% assign links = entry.pages %}
   {% endif %}
 {% endfor %}

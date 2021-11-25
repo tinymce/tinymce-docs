@@ -23,7 +23,7 @@ A {{site.productname}} icon pack is a `.js` file containing strings of [SVG's](h
 
 An icon pack only requires the custom icons to be included; the default {{site.productname}} icons are used as a fallback for icons missing from the custom icon pack.
 
-> Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at [{{site.prem_skins_icons}}]({{site.plugindirectory}}skins-and-icon-packs/).
+> Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at [{{site.prem_skins_icons}}]({{site.plugindirectory}}skins-and-icon-packs).
 
 ## Creating a TinyMCE icon pack
 

@@ -13,7 +13,7 @@ To use {{site.productname}} in WordPress, TinyMCE Advanced is a great option.
 
 ## PowerPaste for WordPress
 
-[{{site.productname}} PowerPaste for WordPress]({{site.productpages}}/powerpaste/) is a premium plugin from the makers of {{site.productname}} that brings the PowerPaste features to WordPress. It automatically fixes Word formatting, creates tables from Excel, and links & embed images with content pasted from the web.
+[{{site.productname}} PowerPaste for WordPress]({{site.plugindirectory}}powerpaste) is a premium plugin from the makers of {{site.productname}} that brings the PowerPaste features to WordPress. It automatically fixes Word formatting, creates tables from Excel, and links & embed images with content pasted from the web.
 
 ## TinyMCE Advanced
 

@@ -74,6 +74,7 @@
       pages:
       - url: "bundle"
         pages:
+        - url: "bundle-intro-setup"
         - url: "bundle-hyperlinking-container"
         - url: "bundle-spelling-container"
         - url: "bundle-imageproxy-container"
@@ -81,7 +82,6 @@
         pages:
         - url: "individual-hyperlinking-container"
         - url: "individual-spelling-container"
-      - url: "dockerservices"
     - url: "troubleshoot"
   - url: "customizing-the-editor-appearance"
     pages:

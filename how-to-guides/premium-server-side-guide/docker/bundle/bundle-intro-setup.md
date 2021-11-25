@@ -1,16 +1,11 @@
 ---
 layout: default
-title: Containerized service deployments
-description: Server-side components for premium plugins using Dockerfiles
-keywords: enterprise tinymcespellchecker spell check checker pro imagetools server
+title: Introduction and initial setup for containerized server-side services from the premium self-hosted bundle
+title_nav: Introduction and initial setup
+description: The containerized server-side components for premium plugins.
 ---
 
 The {{site.enterpriseversion}} server-side components can be deployed on Docker orchestration applications such as [Kubernetes](https://kubernetes.io/), [Docker Swarm](https://docs.docker.com/engine/swarm/), or [OpenShift](https://www.openshift.com/). {{site.companyname}} provides packages containing pre-configured [`Dockerfiles`](https://docs.docker.com/engine/reference/builder/) for building and deploying the {{site.enterpriseversion}} server-side components using Docker.
-
-**Outline**
-
-- [Containerized services for Self-hosted Enterprise deployments](#containerizedservicesforself-hostedenterprisedeployments)
-- [Containerized services for individually licensed premium plugins](#containerizedservicesforindividuallylicensedpremiumplugins)
 
 ## Containerized services for Self-hosted Enterprise deployments
 
@@ -69,34 +64,6 @@ The following sections assist with containerizing the {{ site.productname }} ser
 
 Proceed to setting up and deploying the containerized services:
 
-- For the Enhanced Media Embed and Link Checker service, see: [Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)](#deploythetinymcehyperlinkingserver-sidecomponentusingdockerself-hostedenterprisebundles).
-- For the Image Tools plugin service, see: [Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)](#deploythetinymceimageproxyserver-sidecomponentusingdockerself-hostedenterprisebundles).
-- For the Spell Checker Pro service, see: [Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)](#deploythetinymcespellingserviceserver-sidecomponentusingdockerself-hostedenterprisebundles).
-
-{% assign shbundledockerfiles = true %}
-
-{% include docker/dockerized-hyperlinking-service.md %}
-
-{% include docker/dockerized-image-proxy.md %}
-
-{% include docker/dockerized-spelling-service.md %}
-
-{% assign shbundledockerfiles = false %}
-
-## Containerized services for individually licensed premium plugins
-
-The following sections assist with containerizing the {{ site.productname }} services for users with licenses to self-hosted versions of:
-
-* [_Tiny Enhanced Media Embed_]({{site.plugindirectory}}enhanced-media-embed/)
-* [_Tiny Link Checker_]({{site.plugindirectory}}link-checker/)
-* [_Tiny Spell Checker Pro_]({{site.plugindirectory}}spell-checker-pro/)
-
-Select from the following:
-
-- For the Tiny Enhanced Media Embed and Tiny Link Checker service, see: [Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)](#deploythetinymcehyperlinkingserver-sidecomponentusingdockerindividuallylicensed).
-
-- For the Tiny Spell Checker Pro service, see: [Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)](#deploythetinymcespellingserviceserver-sidecomponentusingdockerindividuallylicensed).
-
-{% include docker/dockerized-hyperlinking-service.md %}
-
-{% include docker/dockerized-spelling-service.md %}
+- For the Enhanced Media Embed and Link Checker service, see: [Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)]({{site.baseurl}}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-hyperlinking-container/).
+- For the Image Tools plugin service, see: [Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)]({{site.baseurl}}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-imageproxy-container/).
+- For the Spell Checker Pro service, see: [Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)]({{site.baseurl}}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-spelling-container/).

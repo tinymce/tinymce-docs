@@ -37,7 +37,7 @@ For more information on new toolbar button and menu item refer to the [documenta
 
 The new **Premium Skins and Icon Packs** adds an easy way to quickly give TinyMCE a new look, or to make it easier to integrate with popular CSS frameworks, such as Bootstrap, Material Design from Google, and Fabric, which is the design system for Microsoft Office.
 
-To try out the **Premium Skins and Icon Packs** start with this [dedicated product page]({{site.plugindirectory}}skins-and-icon-packs/) or check out the [pricing page](https://www.tiny.cloud/pricing) to see all the flexible pricing options.
+To try out the **Premium Skins and Icon Packs** start with this [dedicated product page]({{site.plugindirectory}}skins-and-icon-packs) or check out the [pricing page](https://www.tiny.cloud/pricing) to see all the flexible pricing options.
 
 For more information and demos on the new **Premium Skins and Icon Packs** refer to the full [documentation]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 

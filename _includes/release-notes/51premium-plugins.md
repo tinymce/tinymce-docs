@@ -16,7 +16,7 @@ The plugin is capable of sorting:
 
 For information on this plugin, see:
 
-* [The Advanced Tables product page]({{site.plugindirectory}}advanced-tables/).
+* [The Advanced Tables product page]({{site.plugindirectory}}advanced-tables).
 * [The Advanced Tables Premium features page (including demo)]({{site.baseurl}}/enterprise/advanced-tables/).
 * [The Advanced Tables plugin documentation page]({{site.baseurl}}/plugins/premium/advtable/).
 

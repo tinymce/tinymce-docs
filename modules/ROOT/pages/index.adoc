@@ -1,5 +1,29 @@
 :rootDir: ./
 :partialsDir: {rootDir}partials/
-= TinyMCE 4 Documentation
+= TinyMCE 4
 
-The official documentation source for the most advanced editor designed to simplify website creation.
+IMPORTANT: TinyMCE 4 is no-longer supported or maintained. Please upgrade to the link:{product_latest_url}[latest version of TinyMCE].
+
+TinyMCE is a powerful and flexible text editor that makes it incredibly easy for people with various levels of technical expertise to create rich content.
+
+== Full-Featured Example
+
+++++
+<p data-height="750" data-theme-id="0" data-slug-hash="NGegZK" data-default-tab="result" data-user="tinymce" class="codepen">
+  See the Pen <a href="http://codepen.io/tinymce/pen/NGegZK/">NGegZK</a>
+  by TinyMCE (<a href="http://codepen.io/tinymce">@tinymce</a>)
+  on <a href="http://codepen.io">CodePen</a>.
+</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+++++
+
+== Inline editor Example
+
+++++
+<p data-height="600" data-theme-id="0" data-slug-hash="bKPBjg" data-default-tab="result" data-user="tinymce" class="codepen">
+  See the Pen <a href="http://codepen.io/tinymce/pen/bKPBjg/">bKPBjg</a>
+  by TinyMCE (<a href="http://codepen.io/tinymce">@tinymce</a>)
+  on <a href="http://codepen.io">CodePen</a>.
+</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+++++

@@ -5,7 +5,7 @@
 It seems fairly common that people want to limit the number of words/characters in a form with TinyMCE so here is a small code snippet that can be used in your implementation logic to count the number of characters in the text and the number of words. The character/word limit checking needs to be in the implementation logic since TinyMCE shouldn't mess with form submission or validation that is up to the implementation.
 
 [[function-that-returns-text-statistics-for-an-editor-instance-by-id]]
-=== Function that returns text statistics for an editor instance by id
+== Function that returns text statistics for an editor instance by id
 anchor:functionthatreturnstextstatisticsforaneditorinstancebyid[historical anchor]
 
 [source,js]
@@ -21,7 +21,7 @@ function getStats(id) {
 ----
 
 [[example-of-usage-of-the-statistics-function-above]]
-=== Example of usage of the statistics function above
+== Example of usage of the statistics function above
 anchor:exampleofusageofthestatisticsfunctionabove[historical anchor]
 
 [source,js]

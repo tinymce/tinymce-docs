@@ -5,13 +5,13 @@
 This document is the index/reference page for all available core configuration options in TinyMCE. There is also a list of old and xref:reference/Deprecated_Configuration_Options.adoc[deprecated config options] for older versions of TinyMCE.
 
 [[configuration-options]]
-=== Configuration options
+== Configuration options
 anchor:configurationoptions[historical anchor]
 
 All configuration options below are to be placed within the `tinyMCE.init()` JavaScript call. This call will usually be made from outside of TinyMCE.
 
 [[general]]
-== General
+=== General
 
 * xref:reference/configuration/accessibility_warnings.adoc[accessibility_warnings]
 * xref:reference/configuration/auto_focus.adoc[auto_focus]
@@ -38,7 +38,7 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 * imagemanager_contextmenu
 
 [[callbacks]]
-== Callbacks
+=== Callbacks
 
 * xref:reference/configuration/cleanup_callback.adoc[cleanup_callback]
 * xref:reference/configuration/execcommand_callback.adoc[execcommand_callback]
@@ -56,7 +56,7 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 * xref:reference/configuration/urlconverter_callback.adoc[urlconverter_callback]
 
 [[cleanupoutput]]
-== Cleanup/Output
+=== Cleanup/Output
 
 * xref:reference/configuration/apply_source_formatting.adoc[apply_source_formatting]
 * xref:reference/configuration/convert_fonts_to_spans.adoc[convert_fonts_to_spans]
@@ -92,7 +92,7 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 
 
 [[url]]
-== URL
+=== URL
 
 * xref:reference/configuration/convert_urls.adoc[convert_urls]
 * xref:reference/configuration/relative_urls.adoc[relative_urls]
@@ -100,7 +100,7 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 * xref:reference/configuration/document_base_url.adoc[document_base_url]
 
 [[layout]]
-== Layout
+=== Layout
 
 * xref:reference/configuration/body_id.adoc[body_id]
 * xref:reference/configuration/body_class.adoc[body_class]
@@ -113,14 +113,14 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 * xref:reference/configuration/height.adoc[height]
 
 [[visual-aids]]
-== Visual aids
+=== Visual aids
 anchor:visualaids[historical anchor]
 
 * xref:reference/configuration/visual.adoc[visual]
 * xref:reference/configuration/visual_table_class.adoc[visual_table_class]
 
 [[undoredo]]
-== Undo/Redo
+=== Undo/Redo
 
 * xref:reference/configuration/custom_undo_redo.adoc[custom_undo_redo]
 * xref:reference/configuration/custom_undo_redo_levels.adoc[custom_undo_redo_levels]
@@ -128,7 +128,7 @@ anchor:visualaids[historical anchor]
 * xref:reference/configuration/custom_undo_redo_restore_selection.adoc[custom_undo_redo_restore_selection]
 
 [[file-lists]]
-== File lists
+=== File lists
 anchor:filelists[historical anchor]
 
 * xref:reference/configuration/external_link_list_url.adoc[external_link_list_url]
@@ -137,14 +137,14 @@ anchor:filelists[historical anchor]
 * xref:reference/configuration/external_template_list_url.adoc[external_template_list_url]
 
 [[triggerspatches]]
-== Triggers/Patches
+=== Triggers/Patches
 
 * xref:reference/configuration/add_form_submit_trigger.adoc[add_form_submit_trigger]
 * xref:reference/configuration/add_unload_trigger.adoc[add_unload_trigger]
 * xref:reference/configuration/submit_patch.adoc[submit_patch]
 
 [[advanced-theme]]
-== Advanced theme
+=== Advanced theme
 anchor:advancedtheme[historical anchor]
 
 * xref:reference/configuration/theme_advanced_layout_manager.adoc[theme_advanced_layout_manager]
@@ -191,7 +191,7 @@ anchor:initializationoftinymce[historical anchor]
 In order to initialize the TinyMCE the following code must be placed within HEAD element of a document. The following example is configured to convert all TEXTAREA elements into editors when the page loads. There are other xref:reference/configuration/mode.adoc[modes] as well.
 
 [[example-of-tinymce-configuration]]
-== Example of TinyMCE configuration
+=== Example of TinyMCE configuration
 anchor:exampleoftinymceconfiguration[historical anchor]
 
 [source,html]

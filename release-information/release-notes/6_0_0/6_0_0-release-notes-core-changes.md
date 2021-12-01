@@ -29,7 +29,7 @@ The following enhancements were made for the {{site.productname}} 6.0 release.
 
 ### `tabindex` improvement
 
-In iframe mode, TinyMCE now copies the [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) attribute from the target element to the editor's iframe. This accessibility improvement allows integrators to rely on the browser behaviour for specifying tab order, instead of specially configuring TinyMCE. It also replaces the [Tabfocus plugin](#tabfocusplugin).
+In iframe (classic editor) mode, {{site.productname}} now copies the [`tabindex` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) from the target element to the editor's iframe. This accessibility improvement allows integrators to rely on the browser behavior for specifying tab order, instead of specially configuring {{site.productname}}. It also replaces the [Tabfocus plugin](#tabfocusplugin).
 
 ### Enhancement name
 
@@ -49,4 +49,4 @@ The following functionality changes were made for the {{site.productname}} 6.0 r
 
 ### Tabfocus plugin
 
-The tabfocus plugin has been removed in TinyMCE 6.0. Tab order of the elements in a page, including TinyMCE, should now be specified using the [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) attribute. For information about configuring tab order, see: [Tab order]({{site.baseurl}}/configure/accessibility#taborder).
+The `tabfocus` plugin has been removed in {{site.productname}} 6.0. The tab order of the elements in a page, including {{site.productname}}, should now be specified using the [`tabindex` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex). For information about configuring tab order, see: [Tab order]({{site.baseurl}}/configure/accessibility#taborder).

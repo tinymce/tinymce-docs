@@ -9,3 +9,5 @@ description: Configure the accessibility of TinyMCE.
 {% include configuration/a11y_advanced_options.md %}
 
 {% include configuration/iframe_aria_text.md %}
+
+{% include configuration/taborder.md %}

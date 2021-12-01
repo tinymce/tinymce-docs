@@ -44,7 +44,6 @@ The following plugins are currently supported:
 * [PowerPaste (`powerpaste`)]({{site.baseurl}}/plugins/premium/powerpaste/)
 * [Print (`print`)]({{site.baseurl}}/plugins/opensource/print/)
 * [Save (`save`)]({{site.baseurl}}/plugins/opensource/save/)
-* [Tab Focus (`tabfocus`)]({{site.baseurl}}/plugins/opensource/tabfocus/)
 * [Tiny Drive (`tinydrive`)]({{site.baseurl}}/plugins/premium/tinydrive/)
 * [Visual Blocks (`visualblocks`)]({{site.baseurl}}/plugins/opensource/visualblocks/)
 * [Word Count (`wordcount`)]({{site.baseurl}}/plugins/opensource/wordcount/)

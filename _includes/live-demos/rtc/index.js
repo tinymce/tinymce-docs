@@ -201,7 +201,7 @@ tinymce.ScriptLoader.loadScripts(
         selector: editorID,
         plugins:
           'rtc advlist charmap emoticons help hr image insertdatetime link ' +
-          'lists powerpaste print save tabfocus visualblocks wordcount',
+          'lists powerpaste print save visualblocks wordcount',
         menubar: 'file edit insert view format table tools help',
         toolbar:
           'undo redo | formatselect | bold italic underline | ' +

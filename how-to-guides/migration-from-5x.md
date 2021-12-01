@@ -37,7 +37,7 @@ For information on using the latest development and testing builds, see: [Cloud 
 
 ### Tabfocus plugin removed
 
-The Tabfocus plugin has been removed in TinyMCE 6.0. 
+The Tabfocus plugin has been removed in TinyMCE 6.0. This includes the `tabfocus_elements` option.
 
 Instead, tab order should be configured by specifying [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) on the target element for the editor, or the equivalent if using a framework. This allows tab order to be handled by the browser. In inline mode, this works as in TinyMCE 5.x. In iframe mode, TinyMCE now copies the `tabindex` attribute from the target element to the editor's iframe, to allow this to work correctly.
 

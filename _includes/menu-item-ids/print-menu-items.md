@@ -1,3 +1,0 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                  |
-|----------------------|----------------------------------------------------------------------------------------------------------|------------------------------|
-| `print`              | File                                                                                                     | Prints the current document. |

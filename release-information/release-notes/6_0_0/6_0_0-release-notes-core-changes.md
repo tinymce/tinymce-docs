@@ -18,11 +18,11 @@ The following new features were added for the {{site.productname}} 6.0 release.
 
 ### Print plugin moved to TinyMCE Core
 
-The Print plugin has been moved to Core in TinyMCE 6.0.
+The Print plugin has been moved to Core in {{site.productname}} 6.0.
 
 Its toolbar button, menu item, shortcut and command will now work by default, without needing to specify `print` as a plugin.
 
-Integrators can remove `print` from the `plugins` section of their TinyMCE configuration.
+Integrators can remove `print` from the `plugins` section of their {{site.productname}} configuration.
 
 For information about print-related functionality, see:
 - [Core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons)

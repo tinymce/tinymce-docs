@@ -82,7 +82,7 @@ To load a TinyMCE editor similar to the [Basic example]({{site.baseurl}}/demo/ba
         height: 500,
         menubar: false,
         plugins: [
-          'advlist autolink lists link image charmap print preview anchor',
+          'advlist autolink lists link image charmap preview anchor',
           'searchreplace visualblocks code fullscreen',
           'insertdatetime media table paste code help wordcount'
         ],

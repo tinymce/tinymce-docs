@@ -3,7 +3,7 @@ tinymce.init({
   height: 400,
   menubar: true,
   plugins: [
-    'advlist autolink lists link image charmap print preview anchor',
+    'advlist autolink lists link image charmap preview anchor',
     'searchreplace visualblocks advcode fullscreen',
     'insertdatetime media table powerpaste hr code'
   ],

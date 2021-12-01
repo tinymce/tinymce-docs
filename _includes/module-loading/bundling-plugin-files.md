@@ -47,7 +47,6 @@
   - [Page Break (pagebreak)](#pagebreakpagebreak)
   - [Paste (paste)](#pastepaste)
   - [Preview (preview)](#previewpreview)
-  - [Print (print)](#printprint)
   - [Quick Toolbar (quickbars)](#quicktoolbarquickbars)
   - [Save (save)](#savesave)
   - [Search and Replace (searchreplace)](#searchandreplacesearchreplace)
@@ -233,10 +232,6 @@
 ### Preview (`preview`)
 
 {% include plugin_files/plugin-file-list-preview.md %}
-
-### Print (`print`)
-
-{% include plugin_files/plugin-file-list-print.md %}
 
 ### Quick Toolbar (`quickbars`)
 

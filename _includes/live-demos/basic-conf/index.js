@@ -3,7 +3,7 @@ tinymce.init({
   width: 600,
   height: 300,
   plugins: [
-    'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+    'advlist autolink link image lists charmap preview hr anchor pagebreak',
     'searchreplace wordcount visualblocks code fullscreen insertdatetime media nonbreaking',
     'table emoticons template paste help'
   ],

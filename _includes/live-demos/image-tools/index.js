@@ -2,7 +2,7 @@ tinymce.init({
   selector: 'textarea#image-tools',
   height: 500,
   plugins: [
-    'advlist autolink lists link image charmap print preview anchor',
+    'advlist autolink lists link image charmap preview anchor',
     'searchreplace visualblocks code fullscreen',
     'insertdatetime media table paste imagetools wordcount'
   ],

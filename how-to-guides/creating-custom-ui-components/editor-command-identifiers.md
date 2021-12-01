@@ -191,7 +191,6 @@ Commands are available for the following plugins:
 - [Permanent Pen](#permanentpen)
 - [PowerPaste](#powerpaste)
 - [Preview](#preview)
-- [Print](#print)
 - [Save](#save)
 - [Search and Replace](#searchandreplace)
 - [Spell Checker Pro](#spellcheckerpro)
@@ -369,12 +368,6 @@ The following command requires the [PowerPaste (`powerpaste`)]({{site.baseurl}}/
 The following command requires the [Preview (`preview`)]({{site.baseurl}}/plugins/opensource/preview/) plugin.
 
 {% include commands/preview-cmds.md %}
-
-#### Print
-
-The following command requires the [Print (`print`)]({{site.baseurl}}/plugins/opensource/print/) plugin.
-
-{% include commands/print-cmds.md %}
 
 #### Save
 

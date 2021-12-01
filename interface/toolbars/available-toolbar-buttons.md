@@ -179,11 +179,6 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}
-{% assign pluginname = "Print" %}
-{% assign plugincode = "print" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
 {% assign pluginname = "Quick Toolbars" %}
 {% assign plugincode = "quickbars" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}

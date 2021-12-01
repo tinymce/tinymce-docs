@@ -9,7 +9,7 @@ This option allows you to specify which plugins {{site.productname}} will attemp
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins : 'advlist autolink link image lists charmap print preview'
+  plugins : 'advlist autolink link image lists charmap preview'
 });
 ```
 

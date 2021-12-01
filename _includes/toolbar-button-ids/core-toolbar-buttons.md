@@ -27,6 +27,7 @@
 | `newdocument`             | Creates a new document.                                                           |
 | `outdent`                 | Outdents the current list item or block element.                                  |
 | `paste`                   | Pastes the current clipboard into the editor.                                     |
+| `print`                   | Prints the current editor contents.                                     |
 | `redo`                    | To redo the last undone operation.                                                |
 | `remove`                  | Removes (deletes) the selected content or the content before the cursor position. |
 | `removeformat`            | Removes the formatting from the current selection.                                |

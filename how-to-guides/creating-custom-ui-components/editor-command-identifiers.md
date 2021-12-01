@@ -98,6 +98,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
 | mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
 | mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.                                                                                                                        |
+| mcePrint             | Opens the browser's print dialog for the current page.                                                                                        |
 
 **Examples**
 

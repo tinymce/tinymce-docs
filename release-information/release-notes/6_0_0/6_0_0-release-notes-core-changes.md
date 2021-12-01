@@ -20,7 +20,7 @@ The following new features were added for the {{site.productname}} 6.0 release.
 
 The Print plugin has been moved to Core in {{site.productname}} 6.0.
 
-Its toolbar button, menu item, shortcut and command will now work by default, without needing to specify `print` as a plugin.
+The print toolbar button, menu item, shortcut, and command will now work by default, without needing to specify `print` as a plugin.
 
 Integrators can remove `print` from the `plugins` section of their {{site.productname}} configuration.
 

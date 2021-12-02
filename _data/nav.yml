@@ -684,8 +684,8 @@
     - url: "anchor"
     - url: "autolink"
       pages:
-      - url: "#default_link_target"
       - url: "#link_default_protocol"
+      - url: "#link_default_target"
     - url: "autoresize"
       pages:
       - url: "#autoresize_bottom_margin"
@@ -764,15 +764,15 @@
       - url: "#Reference Date/Time formats"
     - url: "link"
       pages:
-      - url: "#default_link_target"
       - url: "#link_assume_external_targets"
       - url: "#link_class_list"
       - url: "#link_context_toolbar"
       - url: "#link_default_protocol"
+      - url: "#link_default_target"
       - url: "#link_list"
+      - url: "#link_rel_list"
+      - url: "#link_target_list"
       - url: "#link_title"
-      - url: "#rel_list"
-      - url: "#target_list"
     - url: "lists"
       pages:
       - url: "#lists_indent_on_tab"

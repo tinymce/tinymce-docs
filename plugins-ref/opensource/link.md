@@ -3,7 +3,7 @@ layout: default
 title: Link plugin
 title_nav: Link
 description: Add hyperlinks to content.
-keywords: url urls insert edit default_link_target link_assume_external_targets link_class_list link_list target_list rel_list link_title
+keywords: url urls insert edit link_default_target link_assume_external_targets link_class_list link_list link_target_list link_rel_list link_title
 controls: toolbar button, menu item
 ---
 
@@ -31,7 +31,7 @@ tinymce.init({
 
 These settings affect the execution of the `link` plugin. Predefined links, targets, and more can be specified here.
 
-{% include configuration/default_link_target.md %}
+{% include configuration/link_default_target.md %}
 
 {% include configuration/link_assume_external_targets.md %}
 
@@ -47,9 +47,9 @@ These settings affect the execution of the `link` plugin. Predefined links, targ
 
 {% include configuration/link_quicklink.md %}
 
-{% include configuration/rel_list.md %}
+{% include configuration/link_rel_list.md %}
 
-{% include configuration/target_list.md %}
+{% include configuration/link_target_list.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

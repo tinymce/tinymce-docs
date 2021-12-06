@@ -11,11 +11,14 @@ However, when `br_in_pre` is set to `false`, rather than inserting a `br` tag {{
 
 > **Note**: when set to `false`, `shift+enter` will insert a `br` tag.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `br_in_pre`
 

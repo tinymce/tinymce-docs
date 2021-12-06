@@ -2,9 +2,11 @@
 
 Lets you specify a custom name for the top anchor in the url type ahead drop down. To disable the to anchor from the drop down set it `false`.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default:** #top
+Default
+: #top
 
 ### Example of custom value
 

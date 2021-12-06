@@ -6,7 +6,8 @@ The `max_height` option has two kinds of behaviors depending on the state of the
 
 * `autoresize` ON : With the `autoresize` plugin, this option sets the maximum height the editor can automatically expand to.
 
-**Type:** `Number`
+Type
+: `Number`
 
 ### Example: Using `max_height`
 

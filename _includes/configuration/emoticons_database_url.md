@@ -2,9 +2,11 @@
 
 This option provides the default location to load the emoji database from. The database should be an external JavaScript file, that registers a `tinymce.plugins.emoticons` resource.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default:** `${pluginUrl}/js/emojis.js`
+Default
+: `${pluginUrl}/js/emojis.js`
 
 ```js
 tinymce.Resource.add('tinymce.plugins.emoticons', {

@@ -2,7 +2,8 @@
 
 This option is used in cases where the class attribute should be replaced or merged. For example, if you have multiple classes you can apply all of them to the same element. If this option is set to `false` it will always replace the contents of the class attribute.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
 #### Example: Using `importcss_merge_classes`
 

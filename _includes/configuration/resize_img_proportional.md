@@ -5,11 +5,14 @@ When a user resizes an image in the editor, this option controls whether image i
 - `true` --- When users resize an image, the image will be resized proportionally (both dimensions of the image are resized by the same percentage of length). Users can freely resize images by holding the `Shift` key while resizing.
 - `false` --- When users resize an image, the image can be resized freely. Users can proportionally resize images by holding the `Shift` key while resizing.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `resize_img_proportional`
 

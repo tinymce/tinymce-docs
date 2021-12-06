@@ -4,11 +4,14 @@ By default it is not possible to open links directly from the editor. Setting `l
 
 > **Note**: This context toolbar is the same as the context toolbar mentioned in the [`link_quicklink`](#link_quicklink) documentation below.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `link_context_toolbar`
 

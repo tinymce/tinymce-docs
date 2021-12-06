@@ -7,11 +7,14 @@ This option sets which user interface item type to use when displaying the list 
 
 For information on the properties required for the user object provided to [`mentions_fetch`](#mentions_fetch), see: [User properties](#userproperties).
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `name`
+Default Value
+: `name`
 
-**Possible Values:** `name`, `profile`
+Possible Values
+: `name`, `profile`
 
 #### Example: Using `mentions_item_type`
 

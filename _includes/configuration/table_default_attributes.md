@@ -2,9 +2,11 @@
 
 This option enables you to specify default attributes for inserted tables.
 
-**Type:** `Object`
+Type
+: `Object`
 
-**Default Value:** `{ border: '1' }`
+Default Value
+: `{ border: '1' }`
 
 #### Example: Using `table_default_attributes`
 

@@ -4,11 +4,14 @@ This option allows you to specify the toolbar buttons shown on the contextual to
 
 To disable the table toolbar, set the value to an empty string.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
+Default Value
+: `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
 
-**Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+Possible Values
+: Any toolbar button. For a list of predefined toolbar buttons, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 #### Example: Default table_toolbar configuration
 

@@ -2,16 +2,17 @@
 
 This option allows you to include specific unordered list item markers in the default `bullist` toolbar control.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'default,circle,disc,square'`
+Default Value
+: `'default,circle,disc,square'`
 
-**Possible Values:**
-
-  * `default`: your browser's default style
-  * `circle`: a hollow circle
-  * `disc`: a filled circle
-  * `square`: a filled square
+Possible Values
+: * `default`: your browser's default style
+* `circle`: a hollow circle
+* `disc`: a filled circle
+* `square`: a filled square
 
 #### Example: Using `advlist_bullet_styles`
 

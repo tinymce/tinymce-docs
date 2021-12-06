@@ -2,7 +2,8 @@
 
 This option enables you to specify an id for the body of each editor instance. This id can then be used to do {{site.productname}} specific overrides in your `content_css`.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `body_id`
 

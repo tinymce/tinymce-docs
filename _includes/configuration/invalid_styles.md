@@ -7,7 +7,8 @@ The `invalid_styles` option enables you to restrict the styles that are valid fo
 
 ### Simple global classes
 
-**Type:** `String`, `Object`
+Type
+: `String`, `Object`
 
 #### Example: Using `invalid_styles` string
 
@@ -20,7 +21,8 @@ tinymce.init({
 
 ### Element specific classes
 
-**Type:** `String`, `Object`
+Type
+: `String`, `Object`
 
 #### Example: Using `invalid_styles` object
 

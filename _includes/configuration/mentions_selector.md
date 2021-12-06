@@ -2,7 +2,8 @@
 
 This option enables you to provide a custom CSS selector that should match the element created using `mentions_menu_complete`. This enables the plugin to find existing mentions. The callback takes two parameters: the editor instance and the userInfo object.
 
-**Type:** `Function`
+Type
+: `Function`
 
 #### Example: Using `mentions_selector`
 

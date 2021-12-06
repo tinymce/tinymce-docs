@@ -4,11 +4,14 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 ### Disable all resizing of images/tables
 
-**Type:** `Boolean`, `String`
+Type
+: `Boolean`, `String`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`, `img`
+Possible Values
+: `true`, `false`, `img`
 
 {{site.differs_for_mobile}}
 
@@ -23,11 +26,14 @@ tinymce.init({
 
 ### Enable resizing on images only
 
-**Type:** `Boolean`, `String`
+Type
+: `Boolean`, `String`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`, `img`
+Possible Values
+: `true`, `false`, `img`
 
 #### Example: Enable object resizing for images
 

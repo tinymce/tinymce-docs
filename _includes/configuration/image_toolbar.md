@@ -4,9 +4,11 @@ The **quickbars_image_toolbar** option configures the Quick Image toolbar provid
 
 To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
-**Type:** `String` or `false`
+Type
+: `String` or `false`
 
-**Defaults:** `alignleft aligncenter alignright`
+Defaults
+: `alignleft aligncenter alignright`
 
 #### Example: Customizing the Quick Image toolbar
 

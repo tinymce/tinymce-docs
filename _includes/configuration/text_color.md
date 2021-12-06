@@ -10,7 +10,8 @@ By default, the number of rows and columns is dependent of the number of colors 
 
 > **Note**: The `textcolor_cols` and `textcolor_rows` properties have been removed in {{site.productname}}{{site.nbsp}}5.
 
-**Type:** `Integer`
+Type
+: `Integer`
 
 #### Example: Using `color_cols`
 
@@ -26,7 +27,8 @@ tinymce.init({
 
 This option allows specifying a map of the text colors that will appear in the grid.
 
-**Type:** `Array`
+Type
+: `Array`
 
 #### Example: Using `color_map`
 
@@ -83,9 +85,11 @@ color_map: [
 
 This option allows disabling the custom color picker in all color swatches of the editor.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
 #### Example: Using `custom_colors`
 

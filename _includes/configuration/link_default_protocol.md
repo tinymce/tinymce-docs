@@ -4,9 +4,11 @@ This option allows you to set a default protocol for links when inserting/editin
 
 > **Note**: This option also applies to the [autolink]({{site.baseurl}}/plugins/opensource/autolink) plugin.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'http'`
+Default Value
+: `'http'`
 
 #### Example: Using `link_default_protocol`
 

@@ -12,11 +12,14 @@ For information on:
 - Using the premium language packs, see: [Using the premium language packs](#usingthepremiumlanguagepacks).
 - Using the community language packs, see: [Using the community language packs](#usingthecommunitylanguagepacks).
 
-**Option:** `language`
+Option
+: `language`
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `en_US`
+Default Value
+: `en_US`
 
 ### Example: Using `language`
 

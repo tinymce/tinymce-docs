@@ -7,9 +7,11 @@ Set whether {{site.productname}} should prepend a `http://` prefix if the suppli
 - `'http'`: URLs are assumed to be external. URLs without a protocol prefix are prepended a `http://` prefix.
 - `'https'`: URLs are assumed to be external. URLs without a protocol prefix are prepended a `https://` prefix.
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`, `'http'`, `'https'`
+Possible Values
+: `true`, `false`, `'http'`, `'https'`
 
 #### Example: Using `link_assume_external_targets`
 

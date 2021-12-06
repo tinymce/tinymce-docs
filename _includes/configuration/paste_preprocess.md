@@ -3,7 +3,8 @@
 
 This option enables you to modify the pasted content before it gets inserted into the editor.
 
-**Type:** `Function`
+Type
+: `Function`
 
 #### Example: Using `paste_preprocess`
 

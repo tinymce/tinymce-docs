@@ -2,9 +2,11 @@
 
 When HTML elements in a template are assigned this class, the content of the element will be replaced with selected content from the editor. This option accepts a list of classes (separated by spaces).
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `selcontent`
+Default Value
+: `selcontent`
 
 #### Example: Using `template_selected_content_classes`
 

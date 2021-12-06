@@ -23,11 +23,14 @@ Two situations to consider when organising the toolbar:
 
 The toolbar modes are not available when using [multiple toolbars]({{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars) or the [toolbar(n)]({{site.baseurl}}/configure/editor-appearance/#toolbarn) option.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'floating'`
+Default Value
+: `'floating'`
 
-**Possible Values:** `'floating'`, `'sliding'`, `'scrolling'`, or `'wrap'`
+Possible Values
+: `'floating'`, `'sliding'`, `'scrolling'`, or `'wrap'`
 
 {{site.differs_for_mobile}}
 

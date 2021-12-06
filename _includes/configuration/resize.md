@@ -9,11 +9,14 @@ When resizing is enabled, the editor can be resized by either:
 
 ### Disabling the resize
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`, `'both'`
+Possible Values
+: `true`, `false`, `'both'`
 
 {{site.differs_for_mobile}}
 
@@ -28,11 +31,14 @@ tinymce.init({
 
 ### Enabling both vertical and horizontal resize
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`, `'both'`
+Possible Values
+: `true`, `false`, `'both'`
 
 #### Example: Enabling vertical and horizontal editor resizing
 

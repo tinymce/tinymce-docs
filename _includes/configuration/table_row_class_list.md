@@ -2,7 +2,8 @@
 
 This option enables you to specify a list of classes to present in the table row options dialog. This is useful if you want users to assign predefined classes to table rows.
 
-**Type:** `Array`
+Type
+: `Array`
 
 #### Example: Using `table_row_class_list`
 

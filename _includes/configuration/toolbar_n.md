@@ -2,7 +2,8 @@
 
 This option allows you to specify the buttons and the order that they will appear on instances of multiple toolbars.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `toolbar(n)`
 

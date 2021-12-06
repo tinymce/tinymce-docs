@@ -4,7 +4,8 @@ This option lets you specify the base URL for {{site.productname}}. This is usef
 
 By default, the `base_url` is the directory containing {{site.productname}} javascript file (such as `tinymce.min.js`).
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `base_url`
 

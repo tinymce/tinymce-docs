@@ -3,7 +3,8 @@
 
 The **icons** option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: [Create an icon pack for {{site.productname}}]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 
-**Type:**  `String`
+Type
+: `String`
 {% endif %}
 
 On initialization, {{site.productname}} will try to load any icon pack specified by the **icons** option. The icons in the icon pack will be merged with [{{site.productname}}'s default icons]({{site.baseurl}}/advanced/editor-icon-identifiers/) and icons in the icon pack will overwrite the default icons with the same identifier.

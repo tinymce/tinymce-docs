@@ -2,9 +2,11 @@
 
 With `toc_class` you can change the class name that gets assigned to the wrapper `div`. Please note that you will have to alter [Boilerplate Content CSS]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/)) accordingly.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `mce-toc`
+Default Value
+: `mce-toc`
 
 #### Example: Using `toc_class`
 

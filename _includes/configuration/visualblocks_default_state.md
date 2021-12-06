@@ -2,11 +2,14 @@
 
 This option enables you to specify the default state of the Visual Blocks plugin.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `visualblocks_default_state`
 

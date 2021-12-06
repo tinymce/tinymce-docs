@@ -4,9 +4,11 @@ The **quickbars_insert_toolbar** option configures the Quick Insert toolbar prov
 
 To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.
 
-**Type:** `String`
+Type
+: `String`
 
-**Defaults:** `quickimage quicktable`
+Defaults
+: `quickimage quicktable`
 
 #### Example: Customizing the Quick Insert toolbar
 

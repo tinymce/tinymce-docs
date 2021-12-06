@@ -4,7 +4,8 @@ Use this option to render the inline toolbar into a fixed-positioned HTML elemen
 
 > **Important:** `fixed_toolbar_container` has precedence over `fixed_toolbar_container_target`, so in order for `fixed_toolbar_container_target` to work, do not use the `fixed_toolbar_container` option.
 
-**Type:** `HTMLElement`
+Type
+: `HTMLElement`
 
 ### Example: Using `fixed_toolbar_container_target`
 

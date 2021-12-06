@@ -4,9 +4,11 @@ The **inline_boundaries_selector** option allows you specify what elements the i
 
 If you add new elements, you need to add CSS selectors for them in the content CSS. See the [Boilerplate Content CSS page]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/) for details.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `a[href],code,.mce-annotation`
+Default Value
+: `a[href],code,.mce-annotation`
 
 ### Example: Using `inline_boundaries_selector`
 

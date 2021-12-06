@@ -7,11 +7,14 @@
 
 This option enables you to set the default state of the `Paste as text` menu item, which is added by the `{{plugin}}` plugin under the `Edit` menu dropdown. It's disabled by default.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `paste_as_text`
 

@@ -6,7 +6,8 @@ The **min_height** option has two kinds of behaviors depending on the state of t
 
 * `autoresize` ON : With the `autoresize` plugin, this option sets the minimum height the editor can automatically shrink to.
 
-**Type:** `Number`
+Type
+: `Number`
 
 ### Example: Using `min_height`
 

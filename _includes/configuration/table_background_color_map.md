@@ -4,9 +4,11 @@ This option is used to specify the default values for the table cell background 
 
 The [custom color picker]({{site.baseurl}}/configure/content-appearance/#custom_colors) is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
 
-**Type:** `Array`
+Type
+: `Array`
 
-**Default Value:** See [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map)
+Default Value
+: See [`color_map` option]({{site.baseurl}}/configure/content-appearance/#color_map)
 
 #### Example: Using `table_background_color_map`
 

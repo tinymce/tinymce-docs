@@ -2,11 +2,14 @@
 
 Use the `draggable_modal` option to enable dragging for [modal dialogs]({{site.baseurl}}/ui-components/dialog/).
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `draggable_modal`
 

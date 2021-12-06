@@ -7,11 +7,14 @@ The **inline** option allows you to specify whether {{site.productname}} should 
 
 The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. When in inline mode, content is edited within the element the editor was initialized on, not within an iframe. Inline editors are designed to be "hidden" until content is selected and to use the CSS styles of the page where it initializes.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `inline`
 

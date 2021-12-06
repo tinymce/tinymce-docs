@@ -8,7 +8,8 @@ The `title` property should contain a string with the name of the `menu`. The `i
 
 If you would like to group these menu items, please insert a `|` pipe character between the menu items.
 
-**Type:** `Object`
+Type
+: `Object`
 
 ### Example: The TinyMCE Default Menu Items
 

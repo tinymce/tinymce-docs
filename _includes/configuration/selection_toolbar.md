@@ -4,9 +4,11 @@ The **quickbars_selection_toolbar** option configures the Quick Selection toolba
 
 To disable the Quick Selection toolbar, set `quickbars_selection_toolbar` to `false`.
 
-**Type:** `String`
+Type
+: `String`
 
-**Defaults:** `bold italic | quicklink h2 h3 blockquote`
+Defaults
+: `bold italic | quicklink h2 h3 blockquote`
 
 #### Example: Customizing the Quick Selection toolbar
 

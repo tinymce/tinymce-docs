@@ -2,9 +2,11 @@
 
 This option controls how content pasted from sources other than Microsoft Word and Google Docs are filtered. Note that this includes content copied from {{site.productname}} itself.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `clean`
+Default Value
+: `clean`
 
 The supported values are:
 

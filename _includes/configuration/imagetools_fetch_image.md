@@ -2,7 +2,8 @@
 
 This option can be used to define a custom fetch function, which provides another way to access images in complex situations. The function will be passed the HTML element of the image to be fetched and should return a `Promise` containing a `Blob` representation of the image.
 
-**Type:** `Function`
+Type
+: `Function`
 
 #### Example: Using `imagetools_fetch_image`
 

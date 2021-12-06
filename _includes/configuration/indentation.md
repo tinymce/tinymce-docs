@@ -4,9 +4,11 @@ The **indentation** option allows specification of the indentation level for ind
 
 The **indentation** option defaults to 30px but can be any value.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `30px`
+Default Value
+: `30px`
 
 ### Example: Using `indentation`
 
@@ -21,9 +23,11 @@ tinymce.init({
 
 The **indent_use_margin** option is set if the editor should use margin instead of padding when indenting content.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
 ### Example: Using `indent_use_margin`
 

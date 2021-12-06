@@ -4,7 +4,8 @@ This configuration option enables you to control what contents should be protect
 
 The option takes an array of regular expression that it will match the contents against and these will be invisible while editing.
 
-**Type:** `Array`
+Type
+: `Array`
 
 ### Example: Using `protect`
 

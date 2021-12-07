@@ -12,9 +12,11 @@ An array of supported domains for the images (with CORS enabled on them) can be 
 
 > **Note**: `{{plugincode}}_cors_hosts` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
 
-**Type:** `String[]`
+Type
+: `String[]`
 
-**Default Value:** `[]`
+Default Value
+: `[]`
 
 ##### Example: `{{plugincode}}_cors_hosts`
 

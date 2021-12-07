@@ -4,11 +4,14 @@ This option changes the behaviour of the `CTRL + K` shortcut. By default, pressi
 
 > **Note**: This context toolbar is the same as the context toolbar mentioned in the [`link_context_toolbar`](#link_context_toolbar) documentation above.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `link_quicklink`
 

@@ -2,11 +2,11 @@
 
 This option is used to specify a list of pre-defined cell border widths for quick access on the `tablecellborderwidth` toolbar button or menu item. This option accepts any valid [CSS numeric value](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units#numeric_data_types).
 
-**Type:** `Array`
+Type
+: `Array`
 
-**Default Value:**
-
-```
+Default Value
+: ```
 [
   {title: '1px', value: '1px'},
   {title: '2px', value: '2px'},

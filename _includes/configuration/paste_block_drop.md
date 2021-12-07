@@ -8,9 +8,11 @@
 
 Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When `{{plugin}}_block_drop` is set to true the plugin will disable drag and dropping content into the editor. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
 {% if page.title == "Paste plugin" %}
 #### Example: Using `paste_block_drop`

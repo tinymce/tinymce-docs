@@ -4,11 +4,14 @@ The **hidden_input** option gives you the ability to disable the auto-generation
 
 The **hidden_input** option can be disabled if you don't need these controls.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `hidden_input`
 

@@ -4,11 +4,11 @@ The `a11ychecker_filter_issue` option allows Accessibility Checker issues to be 
 
 The function will be passed the results of the [`getReport()` API](#getreport). To filter an issue from the Accessibility Checker report, the callback needs to return `false` for that particular issue.
 
-**Type:** `Function`
+Type
+: `Function`
 
-**Default Value:**
-
-```js
+Default Value
+: ```js
 function(issue) {
   return true;
 }

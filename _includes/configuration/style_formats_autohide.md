@@ -2,8 +2,11 @@
 
 This option enables auto hiding of styles that can't be applied to the current context. For example: if a style applies only to tables, it wouldn't be visible in the styles drop down when the caret isn't inside a table. By default, irrelevant menu items are disabled
 
-**Type:** `Boolean`
-**Default:** `false`
+Type
+: `Boolean`
+
+Default
+: `false`
 
 ### Example: Using `style_formats_autohide`
 

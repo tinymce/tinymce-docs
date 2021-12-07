@@ -12,7 +12,8 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 | numeric  | Characters will be converted into numeric entities. For example, a non-breaking space would be encoded as `&#160;`. |
 | raw      | All characters will be stored in non-entity form except these XML default entities: ```&```, ```<```, ```>```, ```'```, and ```"```. |
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `entity_encoding`
 

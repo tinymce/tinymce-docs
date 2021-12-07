@@ -1,8 +1,10 @@
 ### `pagebreak_separator`
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `"<!-- pagebreak -->"`
+Default Value
+: `'<!-- pagebreak -->'`
 
 #### Example: Using `pagebreak_separator`
 

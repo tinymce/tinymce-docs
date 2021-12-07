@@ -2,11 +2,14 @@
 
 This option adds an "Advanced" tab to the image dialog allowing you to add custom styles, spacing and borders to images.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `image_advtab`
 

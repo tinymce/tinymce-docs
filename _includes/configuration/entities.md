@@ -6,14 +6,15 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 
 *This setting will only encode characters higher than \u007E (126 in unicode).*
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:**
-```js
+Default Value
+: ```js
 '160,nbsp,161,iexcl,162,cent,163,pound,164,curren,165,yen,166,brvbar,' +
 '167,sect,168,uml,169,copy,170,ordf,171,laquo,172,not,173,shy,174,' +
-'reg,175,macr,176,deg,177,plusmn,178,sup2,179,sup3,180,acute,181,' + 
-'micro,182,para,183,middot,184,cedil,185,sup1,186,ordm,187,raquo,188,' + 
+'reg,175,macr,176,deg,177,plusmn,178,sup2,179,sup3,180,acute,181,' +
+'micro,182,para,183,middot,184,cedil,185,sup1,186,ordm,187,raquo,188,' +
 'frac14,189,frac12,190,frac34,191,iquest,192,Agrave,193,Aacute,194,' +
 'Acirc,195,Atilde,196,Auml,197,Aring,198,AElig,199,Ccedil,200,Egrave,' +
 '201,Eacute,202,Ecirc,203,Euml,204,Igrave,205,Iacute,206,Icirc,207,' +

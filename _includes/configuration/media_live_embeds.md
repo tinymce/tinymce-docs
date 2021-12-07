@@ -4,11 +4,14 @@ When you enable this option users will see a live preview of embedded video cont
 
 This option is enabled by default and accepts URLs input into the source field or embed field in the dialog box by the user.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `media_live_embeds`
 

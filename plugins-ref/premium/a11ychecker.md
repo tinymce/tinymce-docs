@@ -55,13 +55,18 @@ Each rule has a severity level, which will be one of the following, listed in or
 
 #### {{pluginname}} rule details - D1
 
-* **Notification level (severity)**: Warning
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specifications**:
+Notification level (severity)
+: Warning
 
-  * [H42 - Using h1-h6 to identify headings](https://www.w3.org/WAI/WCAG21/Techniques/html/H42.html).
-  * [H69 - Providing heading elements at the beginning of each section of content](https://www.w3.org/WAI/WCAG21/Techniques/html/H69.html).
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specifications
+: * [H42 - Using h1-h6 to identify headings](https://www.w3.org/WAI/WCAG21/Techniques/html/H42.html).
+* [H69 - Providing heading elements at the beginning of each section of content](https://www.w3.org/WAI/WCAG21/Techniques/html/H69.html).
 
 <a class="anchor" id="D2"></a>
 
@@ -73,10 +78,17 @@ For example: A `h1` heading should be followed by a `h2` heading, not a `h3` hea
 
 #### {{pluginname}} rule details - D2
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [G141 - Organizing a page using headings](https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [G141 - Organizing a page using headings](https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html).
 
 <a class="anchor" id="D3"></a>
 
@@ -88,10 +100,17 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 #### {{pluginname}} rule details - D3
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H2 - Combining adjacent image and text links for the same resource](https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H2 - Combining adjacent image and text links for the same resource](https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html).
 
 <a class="anchor" id="D4O"></a>
 
@@ -101,10 +120,17 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 #### {{pluginname}} rule details - D4O
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H48 - Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H48 - Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html).
 
 <a class="anchor" id="D4U"></a>
 
@@ -114,10 +140,17 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 #### {{pluginname}} rule details - D4U
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H48 - Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H48 - Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html).
 
 <a class="anchor" id="D5"></a>
 <a class="anchor" id="D5A"></a>
@@ -138,24 +171,45 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - D5A
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level AA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [G145 - Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level AA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [G145 - Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html).
 
 #### {{pluginname}} rule details - D5B
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level AA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [G18 - Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level AA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [G18 - Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html).
 
 #### {{pluginname}} rule details - D5C
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [G17 - Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G17.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [G17 - Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G17.html).
 
 <a class="anchor" id="H93"></a>
 
@@ -165,10 +219,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - H93
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H93 - Ensuring that id attributes are unique on a Web page](https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H93 - Ensuring that id attributes are unique on a Web page](https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html).
 
 <a class="anchor" id="I1"></a>
 
@@ -178,10 +239,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - I1
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [G95 - Providing short text alternatives that provide a brief description of the non-text content](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [G95 - Providing short text alternatives that provide a brief description of the non-text content](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html).
 
 <a class="anchor" id="I2"></a>
 
@@ -191,10 +259,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - I2
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [G95 - Providing short text alternatives that provide a brief description of the non-text content](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [G95 - Providing short text alternatives that provide a brief description of the non-text content](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html).
 
 <a class="anchor" id="T1"></a>
 
@@ -204,10 +279,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - T1
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H39 - Using caption elements to associate data table captions with data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H39 - Using caption elements to associate data table captions with data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html).
 
 <a class="anchor" id="T2"></a>
 
@@ -219,10 +301,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - T2
 
-* **Notification level (severity)**: Warning
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4
-* **WCAG 2.1 specification**: [H73 - Using the summary attribute of the table element to give an overview of data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html).
+Notification level (severity)
+: Warning
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4
+
+WCAG 2.1 specification
+: [H73 - Using the summary attribute of the table element to give an overview of data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html).
 
 <a class="anchor" id="T3"></a>
 
@@ -234,10 +323,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - T3
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H73 - Using the summary attribute of the table element to give an overview of data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H73 - Using the summary attribute of the table element to give an overview of data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html).
 
 <a class="anchor" id="T4A"></a>
 
@@ -247,10 +343,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - T4A
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H51 - Using table markup to present tabular information](https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H51 - Using table markup to present tabular information](https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html).
 
 <a class="anchor" id="T4B"></a>
 
@@ -260,10 +363,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - T4B
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H51 - Using table markup to present tabular information](https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H51 - Using table markup to present tabular information](https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html).
 
 <a class="anchor" id="T4C"></a>
 
@@ -273,10 +383,17 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - T4C
 
-* **Notification level (severity)**: Error
-* **[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)**: Level A ; Level AA ; Level AAA
-* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.1 specification**: [H63 - Using the scope attribute to associate header cells and data cells in data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html).
+Notification level (severity)
+: Error
+
+[WCAG level](https://www.w3.org/TR/WCAG21/#conformance)
+: Level A ; Level AA ; Level AAA
+
+[HTML version](#a11ychecker_html_version)
+: HTML4 and HTML5
+
+WCAG 2.1 specification
+: [H63 - Using the scope attribute to associate header cells and data cells in data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html).
 
 ## Configuration Options
 
@@ -320,11 +437,20 @@ editor.plugins.a11ychecker.toggleaudit();
 
 Conducts an accessibility audit and reports the results without opening the dialog. The report produced is an array of objects, where each object represents an issue and contains the following details:
 
-* **id** - The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Accessibility Rules](#accessiblityrules).
-* **description** - A description of the issue.
-* **severity** - The severity of the issue, either: `info`, `warning`, or `error`.
-* **element** - The DOM element where the issue was found.
-* **url** - A URL to the W3 WCAG technique that needs to be addressed to clear the issue.
+id
+: The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Accessibility Rules](#accessiblityrules).
+
+description
+: A description of the issue.
+
+severity
+: The severity of the issue, either: `info`, `warning`, or `error`.
+
+element
+: The DOM element where the issue was found.
+
+url
+: A URL to the W3 WCAG technique that needs to be addressed to clear the issue.
 
 #### Example: Using `getReport()`
 

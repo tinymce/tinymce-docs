@@ -2,11 +2,14 @@
 
 This options allows you disable the `Alternative source` input field in the media dialog.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `media_alt_source`
 

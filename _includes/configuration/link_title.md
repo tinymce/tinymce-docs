@@ -2,11 +2,14 @@
 
 This options allows you disable the link `title` input field in the `link` dialog.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `link_title`
 

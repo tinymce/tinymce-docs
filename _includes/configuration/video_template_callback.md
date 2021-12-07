@@ -2,7 +2,8 @@
 
 This option allows you to specify the function that will return the HTML embed code of the video media that you are attempting to insert into {{site.productname}}.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `video_template_callback`
 

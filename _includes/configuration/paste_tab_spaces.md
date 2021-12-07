@@ -9,9 +9,11 @@
 
 This option controls how many spaces are used to represent a tab character in HTML when pasting plain text content. By default, the {{pluginname}} plugin will convert each tab character into 4 sequential space characters.
 
-**Type:** `Number`
+Type
+: `Number`
 
-**Default Value:** `4`
+Default Value
+: `4`
 
 #### Example: Using `paste_tab_spaces`
 

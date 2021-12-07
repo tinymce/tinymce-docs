@@ -18,7 +18,8 @@ tinymce.init({
 });
 ```
 {% else %}
-**Type:**  `String`
+Type
+: `String`
 
 ### Example: Using `icons_url`
 

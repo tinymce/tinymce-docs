@@ -2,9 +2,11 @@
 
 This option sets the author id to be used when creating or replying to comments.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'Anon'`
+Default Value
+: `'Anon'`
 
 #### Example: Using `tinycomments_author`
 

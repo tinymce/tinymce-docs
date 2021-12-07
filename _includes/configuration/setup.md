@@ -6,7 +6,8 @@ To specify a setup callback, please provide the `setup` option with a JavaScript
 
 A common use case for this setting is to add editor events to {{site.productname}}. For instance, if you would like to add a click event to {{site.productname}}, you would add it through the setup configuration setting.
 
-**Type:** `JavaScript Function`
+Type
+: `JavaScript Function`
 
 ### Example: Using `setup`
 

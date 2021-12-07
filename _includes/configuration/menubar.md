@@ -4,11 +4,14 @@ This option allows you to specify which menus should appear and the order that t
 
 To specify the menus that should appear on {{site.productname}}'s menu bar, the menubar option should be provided with a space separated list of menus.
 
-**Type:** `String` _or_ `Boolean`
+Type
+: `String` _or_ `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`, or `string` of menus
+Possible Values
+: `true`, `false`, or `string` of menus
 
 {{site.differs_for_mobile}}
 

@@ -6,9 +6,11 @@ If `help_tabs` is configured, only tabs named in `help_tabs` will be displayed. 
 
 If `help_tabs` is not configured, any tabs defined using `addTab` will be displayed after the default tabs.
 
-**Type:** `Array`
+Type
+: `Array`
 
-**Default Value:** `['shortcuts', 'keyboardnav', 'plugins', 'versions']`
+Default Value
+: `['shortcuts', 'keyboardnav', 'plugins', 'versions']`
 
 #### Example: Using `help_tabs`
 

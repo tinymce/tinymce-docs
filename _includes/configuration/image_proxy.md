@@ -12,7 +12,8 @@ This option can be used as a way of getting images across domains using a local 
 
 > **Note**: `{{proxy_setting_name}}` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `{{proxy_setting_name}}`
 

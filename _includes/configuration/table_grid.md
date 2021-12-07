@@ -6,11 +6,14 @@ However, if `table_grid` is set to `false` the table picker will be replaced by 
 
 > **Note**: To configure the Table menu to include both the table picker and the table dialog menu items, set `table_grid` to `true` and configure [`menu`]({{ site.baseurl}}/configure/editor-appearance/#menu) to include both the `inserttable` and `inserttabledialog` menu items.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:**  `true`, `false`
+Possible Values
+: `true`, `false`
 
 {{site.differs_for_mobile}}
 

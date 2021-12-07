@@ -8,11 +8,14 @@ However, the `true` condition does capture the tab key and contain it within the
 
 > **Note**: Review [Usage with `table` or `lists` plugin](#usagewithtableorlistsplugin) before using this setting.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `nonbreaking_force_tab`
 

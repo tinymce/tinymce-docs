@@ -6,7 +6,8 @@ This option enables you to configure the `valid_elements` specific to MS Office.
 
 >**Note:** To access this feature, you need to set the value of [paste_enable_default_filters]({{site.baseurl}}/plugins/opensource/paste/#paste_enable_default_filters) to `"false"` in your configuration.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `paste_word_valid_elements`
 

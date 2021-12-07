@@ -193,7 +193,7 @@ Default value
 : `'{{site.productmajorversion}}-stable'`
 
 Possible values
-: `'{{site.productmajorversion}}-stable'`, `'{{site.productmajorversion}}-testing'`, `'{{site.productmajorversion}}-dev`, `{{site.productminorversion}}'`
+: `'{{site.productmajorversion}}-stable'`, `'{{site.productmajorversion}}-testing'`, `'{{site.productmajorversion}}-dev'`, `'{{site.productminorversion}}'`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 

@@ -8,7 +8,7 @@ Type
 : `String`
 
 Defaults
-: `bold italic | quicklink h2 h3 blockquote`
+: `'bold italic | quicklink h2 h3 blockquote'`
 
 #### Example: Customizing the Quick Selection toolbar
 

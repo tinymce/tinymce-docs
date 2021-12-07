@@ -8,7 +8,7 @@ Type
 : `String`
 
 Default Value
-: `a[href],code,.mce-annotation`
+: `'a[href],code,.mce-annotation'`
 
 ### Example: Using `inline_boundaries_selector`
 

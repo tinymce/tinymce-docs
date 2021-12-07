@@ -6,7 +6,7 @@ Type
 : `String`
 
 Default Value
-: `selcontent`
+: `'selcontent'`
 
 #### Example: Using `template_selected_content_classes`
 

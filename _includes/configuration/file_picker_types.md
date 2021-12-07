@@ -6,7 +6,7 @@ Type
 : `String`
 
 Possible Values
-: `file`, `image`, `media`
+: `'file'`, `'image'`, `'media'`
 
 ### Example: Using `file_picker_types`
 

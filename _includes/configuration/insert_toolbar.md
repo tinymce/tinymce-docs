@@ -8,7 +8,7 @@ Type
 : `String`
 
 Defaults
-: `quickimage quicktable`
+: `'quickimage quicktable'`
 
 #### Example: Customizing the Quick Insert toolbar
 

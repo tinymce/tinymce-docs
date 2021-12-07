@@ -108,7 +108,7 @@ Default value
 : `no-api-key`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `api-key`
 
@@ -121,10 +121,10 @@ Type
 #### `cloud-channel`
 
 Default value
-: `{{site.productmajorversion}}`
+: `'{{site.productmajorversion}}'`
 
 Possible values
-: `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
+: `'{{site.productmajorversion}}-stable'`, `'{{site.productmajorversion}}-testing'`, `'{{site.productmajorversion}}-dev'`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
@@ -167,7 +167,7 @@ Default value
 : Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
 Type
-: String
+: `String`
 
 ##### Example: Using `id`
 
@@ -186,7 +186,7 @@ Default value
 : `"{% raw %}{{% endraw %} {% raw %}}{% endraw %}"`
 
 Type
-: Object
+: `Object`
 
 ##### Example: Using `init`
 
@@ -208,7 +208,7 @@ Default value
 : `" "`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `initial-value`
 
@@ -244,10 +244,10 @@ Sets the trigger events for [v-model events](#forminputbindingsv-model).
 For a list of available {{site.productname}} events, see: [Available Events - Editor events]({{site.baseurl}}/advanced/events/#editorcoreevents).
 
 Default value
-: `"change keyup undo redo"`.
+: `'change keyup undo redo'`.
 
 Type
-: String
+: `String`
 
 ##### Example: Using `model-events`
 
@@ -262,13 +262,13 @@ Type
 Used to specify the format of the content emitted via the `input` event. This affects the format of the content used in conjunction with data binding.
 
 Type
-: String
+: `String`
 
 Default value
-: `html`
+: `'html'`
 
 Possible values
-: `html`, `text`
+: `'html'`, `'text'`
 
 ##### Example: Using `output-format`
 
@@ -284,7 +284,7 @@ Used to include plugins for the editor. Using `<editor plugins="lists code" />` 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
 Type
-: String or Array
+: `String` or `Array`
 
 ##### Example: Using `plugins`
 
@@ -298,10 +298,10 @@ Type
 Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML element for the editor in inline mode.
 
 Default value
-: `div`
+: `'div'`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `tag-name`
 
@@ -321,7 +321,7 @@ Possible values
 : See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 Type
-: String
+: `String`
 
 ##### Example: Using `toolbar`
 
@@ -336,7 +336,7 @@ Type
 Use the `tinymce-script-src` prop to specify an external version of TinyMCE to lazy load.
 
 Type
-: String
+: `String`
 
 ##### Example: Using `tinymce-script-src`
 

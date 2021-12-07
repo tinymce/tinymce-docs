@@ -8,7 +8,7 @@ Type
 : `String`
 
 Default Value
-: `mdate`
+: `'mdate'`
 
 #### Example: Using `template_mdate_classes`
 

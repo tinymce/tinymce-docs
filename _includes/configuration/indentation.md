@@ -8,7 +8,7 @@ Type
 : `String`
 
 Default Value
-: `30px`
+: `'30px'`
 
 ### Example: Using `indentation`
 

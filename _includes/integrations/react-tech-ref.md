@@ -175,7 +175,7 @@ Default value
 : `no-api-key`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `apiKey`
 
@@ -190,10 +190,10 @@ Type
 Changes the {{site.productname}} build used for the editor to either a specific version or a channel indicating a stability level.
 
 Default value
-: `{{site.productmajorversion}}-stable`
+: `'{{site.productmajorversion}}-stable'`
 
 Possible values
-: `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`, `{{site.productminorversion}}`
+: `'{{site.productmajorversion}}-stable'`, `'{{site.productmajorversion}}-testing'`, `'{{site.productmajorversion}}-dev`, `{{site.productminorversion}}'`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
@@ -240,7 +240,7 @@ Default value
 : Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
 Type
-: String
+: `String`
 
 ##### Example: Using `id`
 
@@ -264,7 +264,7 @@ Default value
 : `{ }`
 
 Type
-: Object
+: `Object`
 
 ##### Example: Using `init`
 
@@ -292,7 +292,7 @@ Default value
 : `''`
 
 Type
-: String
+: `String`
 
 ##### Example: Using static `initialValue`
 
@@ -354,7 +354,7 @@ It is called with two arguments:
 For detailed information on using `onEditorChange`, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 Type
-: EventHandler
+: `EventHandler`
 
 #### `outputFormat`
 
@@ -369,13 +369,13 @@ in the `value` or `initialValue`, which makes this prop much harder to use
 correctly than it initially seems.
 
 Type
-: String
+: `String`
 
 Default value
-: `html`
+: `'html'`
 
 Possible values
-: `html`, `text`
+: `'html'`, `'text'`
 
 ##### Example: Using `outputFormat`
 
@@ -433,7 +433,7 @@ Used to include plugins for the editor. Using `<Editor plugins='lists' />` is th
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
 Type
-: String or Array
+: `String` or `Array`
 
 ##### Example: Using `plugins`
 
@@ -495,10 +495,10 @@ Contains 3 settings:
 Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML element for the editor in inline mode.
 
 Default value
-: `div`
+: `'div'`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `tagName`
 
@@ -517,7 +517,7 @@ Default value
 : `undefined`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `textareaName`
 
@@ -540,7 +540,7 @@ Possible values
 : See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 Type
-: String
+: `String`
 
 ##### Example: Using `toolbar`
 
@@ -556,7 +556,7 @@ Type
 Use the `tinymceScriptSrc` prop to specify an external version of {{site.productname}} to lazy load.
 
 Type
-: String
+: `String`
 
 ##### Example: Using `tinymceScriptSrc`
 
@@ -582,7 +582,7 @@ the `value` prop and using the `onEditorChange` event to update the `value`.
 For detailed information on using the `value` prop, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 Type
-: String
+: `String`
 
 ### Using the {{site.productname}} React component as a uncontrolled component
 

@@ -8,7 +8,7 @@ Type
 : `String`
 
 Default Value
-: `cdate`
+: `'cdate'`
 
 #### Example: Using `template_cdate_classes`
 

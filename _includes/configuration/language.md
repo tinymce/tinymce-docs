@@ -19,7 +19,7 @@ Type
 : `String`
 
 Default Value
-: `en_US`
+: `'en_US'`
 
 ### Example: Using `language`
 

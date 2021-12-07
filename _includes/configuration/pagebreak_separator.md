@@ -4,7 +4,7 @@ Type
 : `String`
 
 Default Value
-: `"<!-- pagebreak -->"`
+: `'<!-- pagebreak -->'`
 
 #### Example: Using `pagebreak_separator`
 

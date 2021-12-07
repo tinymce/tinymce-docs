@@ -11,7 +11,7 @@ Default Value
 : `true`
 
 Possible Values
-: `true`, `false`, `img`
+: `true`, `false`, or a valid CSS selector
 
 {{site.differs_for_mobile}}
 

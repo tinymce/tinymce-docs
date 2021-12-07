@@ -110,7 +110,7 @@ Default value
 : `no-api-key`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `apiKey`
 
@@ -168,7 +168,7 @@ Default value
 : Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
 Type
-: String
+: `String`
 
 ##### Example: Using `id`
 
@@ -187,7 +187,7 @@ Default value
 : `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
 
 Type
-: Object
+: `Object`
 
 ##### Example: Using `init`
 
@@ -209,7 +209,7 @@ Default value
 : `' '`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `initialValue`
 
@@ -244,7 +244,7 @@ Used to include plugins for the editor. Using `<editor plugins="lists code"></ed
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
 Type
-: String or Array
+: `String` or `Array`
 
 ##### Example: Using `plugins`
 
@@ -259,13 +259,13 @@ Type
 Used to specify the format of the content emitted by the `tinymce-angular` component when used in conjunction with forms or plain data bindings.
 
 Type
-: String
+: `String`
 
 Default value
-: `html`
+: `'html'`
 
 Possible values
-: `html`, `text`
+: `'html'`, `'text'`
 
 ##### Example: Using `outputFormat`
 
@@ -279,10 +279,10 @@ Possible values
 Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define the HTML element for the editor in inline mode.
 
 Default value
-: `div`
+: `'div'`
 
 Type
-: String
+: `String`
 
 ##### Example: Using `tagName`
 
@@ -302,7 +302,7 @@ Possible values
 : See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 Type
-: String
+: `String`
 
 ##### Example: Using `toolbar`
 
@@ -330,13 +330,13 @@ For information on using `NgModel`, see: [Angular documentation - NgModel](https
 Used to specify the events that trigger the `NgModelChange` to emit.
 
 Default value
-: `"change input undo redo"`.
+: `'change input undo redo'`.
 
 Possible value
 : A space separated list of TinyMCE editor events.
 
 Type
-: String
+: `String`
 
 ##### Example: Using `modelEvents`
 
@@ -456,7 +456,7 @@ Possible values
 : A comma separated list of events to allow.
 
 Type
-: String
+: `String`
 
 ##### Example: Using `allowedEvents`
 
@@ -476,7 +476,7 @@ Possible values
 : A comma separated list of events to ignore.
 
 Type
-: String
+: `String`
 
 ##### Example: Using `ignoreEvents`
 

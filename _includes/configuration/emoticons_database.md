@@ -13,7 +13,7 @@ Type
 : `String`
 
 Default
-: `emojis`
+: `'emojis'`
 
 #### Example: Using `emoticons_database`
 

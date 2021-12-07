@@ -6,7 +6,7 @@ Type
 : `String`
 
 Default Value
-: `H2`
+: `'h2'`
 
 #### Example: Using `toc_header`
 

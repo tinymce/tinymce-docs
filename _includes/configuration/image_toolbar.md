@@ -8,7 +8,7 @@ Type
 : `String` or `false`
 
 Defaults
-: `alignleft aligncenter alignright`
+: `'alignleft aligncenter alignright'`
 
 #### Example: Customizing the Quick Image toolbar
 

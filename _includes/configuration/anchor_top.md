@@ -6,7 +6,7 @@ Type
 : `String`
 
 Default
-: #top
+: `'#top'`
 
 ### Example of custom value
 

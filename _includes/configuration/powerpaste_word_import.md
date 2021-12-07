@@ -6,7 +6,7 @@ Type
 : `String` or `Function`
 
 Default Value
-: `prompt`
+: `'prompt'`
 
 {% include plugins/powerpaste_import_types.md %}
 

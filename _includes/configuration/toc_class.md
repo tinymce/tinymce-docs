@@ -6,7 +6,7 @@ Type
 : `String`
 
 Default Value
-: `mce-toc`
+: `'mce-toc'`
 
 #### Example: Using `toc_class`
 

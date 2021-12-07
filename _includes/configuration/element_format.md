@@ -6,10 +6,10 @@ Type
 : `String`
 
 Default Value
-: `xhtml`
+: `'xhtml'`
 
 Possible Values
-: `xhtml`, `html`
+: `'xhtml'`, `'html'`
 
 ### Example: Using `element_format`
 

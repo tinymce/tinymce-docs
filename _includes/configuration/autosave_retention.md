@@ -6,7 +6,7 @@ Type
 : `String`
 
 Default Value
-: '20m'
+: `'20m'`
 
 #### Example: Using `autosave_retention`
 

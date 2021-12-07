@@ -6,7 +6,7 @@ Type
 : `String`
 
 Default
-: `${pluginUrl}/js/emojis.js`
+: `'${pluginUrl}/js/emojis.js'`
 
 ```js
 tinymce.Resource.add('tinymce.plugins.emoticons', {

@@ -10,10 +10,10 @@ Type
 : `String`
 
 Default Value
-: `html5`
+: `'html5'`
 
 Possible Values
-: `html5`, `html4`, `html5-strict`
+: `'html5'`, `'html4'`, `'html5-strict'`
 
 ### Example: Using `schema`
 

@@ -5,10 +5,10 @@ This option lets you configure the preview of styles in format/style listboxes. 
 If unset the editor will preview the styles listed in the default value listed below.
 
 Type
-: `Boolean || String`
+: `Boolean` or `String`
 
 Default Value
-: `font-family font-size font-weight font-style text-decoration text-transform color background-color border border-radius outline text-shadow`
+: `'font-family font-size font-weight font-style text-decoration text-transform color background-color border border-radius outline text-shadow'`
 
 Possible Values
 : `String`, `false`

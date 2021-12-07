@@ -11,10 +11,10 @@ Type
 : `String`
 
 Default Value
-: `auto`
+: `'auto'`
 
 Possible values
-: `auto`, `top`, `bottom`
+: `'auto'`, `'top'`, `'bottom'`
 
 ### Example: Using `toolbar_location`
 

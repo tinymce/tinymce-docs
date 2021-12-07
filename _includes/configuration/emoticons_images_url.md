@@ -8,7 +8,7 @@ Type
 : `String`
 
 Default
-: `https://twemoji.maxcdn.com/v/13.0.1/72x72/`
+: `'https://twemoji.maxcdn.com/v/13.0.1/72x72/'`
 
 #### Example: Using `emoticons_images_url`
 

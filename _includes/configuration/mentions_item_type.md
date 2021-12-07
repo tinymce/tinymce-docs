@@ -11,10 +11,10 @@ Type
 : `String`
 
 Default Value
-: `name`
+: `'name'`
 
 Possible Values
-: `name`, `profile`
+: `'name'`, `'profile'`
 
 #### Example: Using `mentions_item_type`
 

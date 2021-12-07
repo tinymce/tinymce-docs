@@ -6,7 +6,7 @@ Type
 : `String`
 
 Default Value
-: `clean`
+: `'clean'`
 
 The supported values are:
 

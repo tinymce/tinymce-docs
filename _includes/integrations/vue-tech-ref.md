@@ -51,7 +51,7 @@ To install the `tinymce-vue` package and save it to your `package.json`.
         // NOTE: default needed after require
         var Editor = require('@tinymce/tinymce-vue').default;
         ```
-    * To load `tinymce-vue` in a HTML file:
+    * To load `tinymce-vue` in an HTML file:
 
         ```html
         <script src="/path/to/tinymce-vue.min.js"></script>

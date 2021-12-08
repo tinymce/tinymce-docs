@@ -5,9 +5,7 @@ For examples of the {{site.productname}} Angular integration, visit [the tinymce
 
 ## Prerequisites
 
-This procedure requires:
-
-* [Node.js (and npm)](https://nodejs.org/).
+This procedure requires [Node.js (and npm)](https://nodejs.org/).
 
 ## Procedure
 
@@ -62,7 +60,7 @@ This procedure requires:
     ```jsx
     <h1>{{site.productname}} {{site.productmajorversion}} Angular Demo</h1>
     <editor
-      [init]="{ plugins: 'lists link image code help wordcount' }"
+      [init]="{ plugins: 'lists link image table code help wordcount' }"
     ></editor>
     ```
 
@@ -144,7 +142,7 @@ This procedure requires:
     <a id="bundle" class="anchor"></a>
     * Bundling {{site.productname}} with the Angular application using a module loader (such as Webpack).
 
-{% include integrations/bundling-angular.md depth='2' %}
+{% include integrations/bundling-integration.md package="tinymce-angular" depth='2' %}
 {% endif %}
 8. Test the application using the Angular development server.
     * To start the development server, navigate to the `tinymce-angular-demo` directory and run:
@@ -158,7 +156,7 @@ This procedure requires:
 {% if productSource == "package-manager" %}
 ## Bunding {{site.productname}} with an Angular application
 
-{% include integrations/bundling-angular.md %}
+{% include integrations/bundling-integration.md package="tinymce-angular" %}
 {% endif %}
 
 ## Deploying the application to a HTTP server

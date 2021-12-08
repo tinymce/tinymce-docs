@@ -5,9 +5,7 @@ For examples of the {{site.productname}} integration, visit [the tinymce-react s
 
 ## Prerequisites
 
-This procedure requires:
-
-* [Node.js (and npm)](https://nodejs.org/).
+This procedure requires [Node.js (and npm)](https://nodejs.org/).
 
 ## Procedure
 
@@ -68,7 +66,7 @@ This procedure requires:
 {% elsif productSource == "package-manager" %}
 5. Bundle {{site.productname}} with the React application using a module loader (such as Webpack).
 
-{% include integrations/bundling-react.md depth='1' %}
+{% include integrations/bundling-integration.md package="tinymce-react" depth='1' %}
 {% else %}
 5. {{site.productname}} can be self-hosted by either: [Deploying {{site.productname}} independent of the React application](#deployingtinymceindependent), or [Bundling {{site.productname}} with the React application](#bundle).
     <a id="deployingtinymceindependent" class="anchor"></a>
@@ -108,7 +106,7 @@ This procedure requires:
     <a id="bundle" class="anchor"></a>
     * Bundle {{site.productname}} with the React application using a module loader (such as Webpack).
 
-{% include integrations/bundling-react.md depth='2' %}
+{% include integrations/bundling-integration.md package="tinymce-react" depth='2' %}
 {% endif %}
 6. Test the application using the Node.js development server.
     * To start the development server, navigate to the `tinymce-react-demo` directory and run:

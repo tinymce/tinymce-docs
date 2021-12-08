@@ -31,3 +31,14 @@ To use TinyMCE 6 from the {{site.cloudname}}, include this script in your HTML p
 ```
 
 For information on using the latest development and testing builds, see: [Cloud deployment guide - Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
+
+
+## Plugin Changes
+
+### Horizontal rule plugin moved to TinyMCE Core
+
+The Horizontal rule (`hr`) plugin has been moved to Core in {{site.productname}} 6.0.
+
+The `hr` toolbar button and menu item will now work by default, without needing to specify `hr` as a plugin.
+
+Integrators can remove `hr` from the `plugins` section of their {{site.productname}} configuration.

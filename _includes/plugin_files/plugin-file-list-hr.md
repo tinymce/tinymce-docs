@@ -1,3 +1,0 @@
-```
-./plugins/hr/plugin.js
-```

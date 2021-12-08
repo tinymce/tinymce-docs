@@ -20,6 +20,7 @@
 | `h4`                      | Changes current line to the "Heading 4" style.                                    |
 | `h5`                      | Changes current line to the "Heading 5" style.                                    |
 | `h6`                      | Changes current line to the "Heading 6" style.                                    |
+| `hr`                      | Inserts a horizontal rule into the editor. |
 | `indent`                  | Indents the current list item or block element.                                   |
 | `italic`                  | Applies the italic format to the current selection.                               |
 | `language`                | Dropdown list with languages to apply to the selection. This button requires the [`content_langs` option]({{site.baseurl}}/configure/localization/#content_langs).<br /> |

@@ -108,11 +108,6 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}
-{% assign pluginname = "Horizontal Rule" %}
-{% assign plugincode = "hr" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
 {% assign pluginname = "Image" %}
 {% assign plugincode = "image" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}

@@ -65,7 +65,7 @@ The example below has the following:
             selector: 'textarea',
             height: 500,
             plugins: [
-               'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+               'advlist autolink lists link image charmap print preview anchor pagebreak',
                'tinymcespellchecker']
          });
       </script>

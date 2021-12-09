@@ -27,11 +27,19 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
     cd tinymce-angular-demo
     ```
 
+{% if productSource == "package-manager" %}
+3. Install the `tinymce` and `tinymce-angular` packages and save them to your `package.json` with `--save`.
+
+    ```sh
+    npm install --save tinymce @tinymce/tinymce-angular
+    ```
+{% else %}
 4. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
 
     ```sh
     npm install --save @tinymce/tinymce-angular
     ```
+{% endif %}
 
 5. Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.module.ts` and replace the contents with:
 
@@ -74,12 +82,6 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
     ```
 
 {% elsif productSource == "package-manager" %}
-1. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
-
-    ```sh
-    npm install --save tinymce
-    ```
-
 2. Using a text editor; open `angular.json` and add {{site.productname}} to the `assets` property.
 
     ```json

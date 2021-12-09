@@ -39,3 +39,9 @@ The following enhancements were made for the {{site.productname}} 6.0 release.
 The following functionality changes were made for the {{site.productname}} 6.0 release:
 
 - changelog
+
+### Renamed Options
+
+- The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins
+- The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin
+- The `target_list` option has been renamed to `link_target_list` for the `link` plugin

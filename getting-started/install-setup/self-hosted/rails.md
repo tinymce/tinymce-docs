@@ -15,7 +15,7 @@ keywords: integration integrate rails
 ## TinyMCE in Ruby on Rails using the Tiny Cloud
 
 The {{site.cloudname}} can be used to integrate {{site.productname}} into Ruby on Rails projects.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor.
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -26,17 +26,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     <script>
       tinymce.init({
         selector: '.tinymce',
-        height: 500,
-        menubar: false,
-        plugins: [
-          'advlist autolink lists link image charmap print preview anchor',
-          'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste code help wordcount'
-        ],
-          toolbar: 'undo redo | formatselect | ' +
-          ' bold italic backcolor | alignleft aligncenter ' +
-          ' alignright alignjustify | bullist numlist outdent indent | ' +
-          ' removeformat | help'
+        plugins: 'lists link image table code help wordcount'
       });
     </script>
     ```
@@ -57,7 +47,7 @@ The page containing the {{site.productname}} will be accessible at `http://local
 ## TinyMCE in Ruby on Rails using TinyMCE self-hosted
 
 Self-hosted instances of {{site.productname}} can be integrated into Ruby on Rails projects.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor.
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -68,17 +58,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     <script>
       tinymce.init({
         selector: '.tinymce',
-        height: 500,
-        menubar: false,
-        plugins: [
-          'advlist autolink lists link image charmap print preview anchor',
-          'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste code help wordcount'
-        ],
-          toolbar: 'undo redo | formatselect | ' +
-          'bold italic backcolor | alignleft aligncenter ' +
-          'alignright alignjustify | bullist numlist outdent indent | ' +
-          ' removeformat | help'
+        plugins: 'lists link image table code help wordcount'
       });
     </script>
     ```
@@ -104,7 +84,7 @@ For information on self-hosting {{site.productname}}, see: [Installing {{ site.p
 {{site.thirdPartyInteg}}
 
 Sam Pohlenz maintains the [{{site.productname}} Ruby on Rails gem](https://github.com/spohlenz/tinymce-rails) for integrating {{site.productname}} into the Ruby on Rails asset pipeline.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor.
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -136,11 +116,10 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
       height: 500
       menubar: false
       toolbar:
-        - undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help
+        - undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat | help
       plugins:
-        - advlist autolink lists link image charmap print preview anchor
-        - searchreplace visualblocks code fullscreen
-        - insertdatetime media table paste code help wordcount
+        - insertdatetime media
+        - table paste code help wordcount
       ```
 
 3. Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {{site.productname}} on pages using the `application` layout:

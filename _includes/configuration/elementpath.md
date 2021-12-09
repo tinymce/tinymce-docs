@@ -8,11 +8,14 @@ For example: If a paragraph element within a table is selected, the element path
 
 Selecting elements from the element path allows users to perform operations on blocks, such as applying formatting or copying an entire block.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `elementpath`
 

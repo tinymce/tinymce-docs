@@ -11,11 +11,14 @@ There are two settings:
 - `preservetable`: The table width is maintained when manipulating table columns by changing the size of nearby columns.
 - `resizetable`: The table width is changed when manipulating table columns and the size of other columns is maintained.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'preservetable'`
+Default Value
+: `'preservetable'`
 
-**Possible values:** `'preservetable'`, `'resizetable'`
+Possible values
+: `'preservetable'`, `'resizetable'`
 
 #### Example: Using `table_column_resizing`
 

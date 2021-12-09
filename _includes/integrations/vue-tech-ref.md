@@ -104,9 +104,11 @@ None of the configuration properties are **required** for `tinymce-vue` to work.
 
 {% include misc/get-an-api-key.md %}
 
-**Default value:** `no-api-key`
+Default value
+: `no-api-key`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `api-key`
 
@@ -118,9 +120,11 @@ None of the configuration properties are **required** for `tinymce-vue` to work.
 
 #### `cloud-channel`
 
-**Default value:** `{{site.productmajorversion}}`
+Default value
+: `'{{site.productmajorversion}}'`
 
-**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
+Possible values
+: `'{{site.productmajorversion}}-stable'`, `'{{site.productmajorversion}}-testing'`, `'{{site.productmajorversion}}-dev'`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
@@ -142,9 +146,11 @@ For information {{site.productname}} development channels, see: [Specifying the 
 #### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
 ##### Example: Using `disabled`
 
@@ -157,9 +163,11 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 #### `id`
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method. Defaults to an automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Default value:** Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
+Default value
+: Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `id`
 
@@ -174,9 +182,11 @@ Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
-**Default value:** `"{% raw %}{{% endraw %} {% raw %}}{% endraw %}"`
+Default value
+: `"{% raw %}{{% endraw %} {% raw %}}{% endraw %}"`
 
-**Type:** Object
+Type
+: `Object`
 
 ##### Example: Using `init`
 
@@ -194,9 +204,11 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 #### `initial-value`
 Initial content of the editor when the editor is initialized.
 
-**Default value:** `" "`
+Default value
+: `" "`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `initial-value`
 
@@ -211,9 +223,11 @@ Used to set the editor to inline mode. Using `<editor :inline=true />` is the sa
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
 ##### Example: Using `inline`
 
@@ -229,9 +243,11 @@ Sets the trigger events for [v-model events](#forminputbindingsv-model).
 
 For a list of available {{site.productname}} events, see: [Available Events - Editor events]({{site.baseurl}}/advanced/events/#editorcoreevents).
 
-**Default value:** `"change keyup undo redo"`.
+Default value
+: `'change keyup undo redo'`.
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `model-events`
 
@@ -245,11 +261,14 @@ For a list of available {{site.productname}} events, see: [Available Events - Ed
 
 Used to specify the format of the content emitted via the `input` event. This affects the format of the content used in conjunction with data binding.
 
-**Type:** String
+Type
+: `String`
 
-**Default value:** `html`
+Default value
+: `'html'`
 
-**Possible values:** `html`, `text`
+Possible values
+: `'html'`, `'text'`
 
 ##### Example: Using `output-format`
 
@@ -264,7 +283,8 @@ Used to include plugins for the editor. Using `<editor plugins="lists code" />` 
 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
-**Type:** String or Array
+Type
+: `String` or `Array`
 
 ##### Example: Using `plugins`
 
@@ -277,9 +297,11 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 #### `tag-name`
 Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML element for the editor in inline mode.
 
-**Default value:** `div`
+Default value
+: `'div'`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `tag-name`
 
@@ -295,9 +317,11 @@ Used to set the toolbar for the editor. Using `<editor toolbar="bold italic" />`
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+Possible values
+: See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `toolbar`
 
@@ -311,7 +335,8 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 #### `tinymce-script-src`
 Use the `tinymce-script-src` prop to specify an external version of TinyMCE to lazy load.
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `tinymce-script-src`
 

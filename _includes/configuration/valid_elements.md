@@ -37,7 +37,8 @@ Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 
 Use `*[*]` to include all elements and all attributes. This can be very useful when used with the [invalid_elements]({{ site.baseurl }}/configure/content-filtering/#invalid_elements) option.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `valid_elements`
 

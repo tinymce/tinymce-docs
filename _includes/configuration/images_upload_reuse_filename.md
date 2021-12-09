@@ -4,11 +4,14 @@ By default {{site.productname}} will generate unique filename for each uploaded 
 
 Setting `images_reuse_filename` to *true* tells {{site.productname}} to use the actual filename of the image, instead of generating a new one each time. Take into account that `src` attribute of the corresponding `<img>` tag gets replaced with whatever filename you send back from the server (see [images_upload_url](#images_upload_url)). It can be the same filename or something else, but the next time that filename is used for the upload.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `images_reuse_filename`
 

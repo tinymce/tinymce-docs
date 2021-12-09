@@ -4,11 +4,14 @@ Enable or disable automatic upload of images represented by data URLs or blob UR
 
 > **Note**: This option will do nothing if `images_upload_url` is not specified.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `automatic_uploads`
 

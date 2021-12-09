@@ -2,9 +2,11 @@
 
 This option makes it possible to block the unwanted formats in the format painter.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default:** `'link,address,removeformat,formatpainter_removeformat'`
+Default
+: `'link,address,removeformat,formatpainter_removeformat'`
 
 #### Example: Using `formatpainter_blacklisted_formats`
 

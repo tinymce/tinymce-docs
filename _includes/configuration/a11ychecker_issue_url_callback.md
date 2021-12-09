@@ -2,9 +2,11 @@
 
 The `a11ychecker_issue_url_callback` option is used to change the target URL for the "Click for more info" button (![help icon - a question mark inside a circle]({{site.baseurl}}/images/icons/help.svg)) in the Accessibility Checker dialog. By default, the "more info" links will point to `{{site.url}}/docs/plugins/a11ychecker/#<ruleId>`, such as `{{site.url}}/docs/plugins/a11ychecker/#D1`. This option can be used to set the target URL to a page or pages outside {{site.url}}/docs/.
 
-**Type:** `Function`
+Type
+: `Function`
 
-**Default Value:** `undefined`
+Default Value
+: `undefined`
 
 #### Example: Using `a11ychecker_issue_url_callback`
 

@@ -171,9 +171,11 @@ Required for deployments using the {{site.cloudname}} to provide the {{site.prod
 
 {% include misc/get-an-api-key.md %}
 
-**Default value:** `no-api-key`
+Default value
+: `no-api-key`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `apiKey`
 
@@ -187,9 +189,11 @@ Required for deployments using the {{site.cloudname}} to provide the {{site.prod
 
 Changes the {{site.productname}} build used for the editor to either a specific version or a channel indicating a stability level.
 
-**Default value:** `{{site.productmajorversion}}-stable`
+Default value
+: `'{{site.productmajorversion}}-stable'`
 
-**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`, `{{site.productminorversion}}`
+Possible values
+: `'{{site.productmajorversion}}-stable'`, `'{{site.productmajorversion}}-testing'`, `'{{site.productmajorversion}}-dev'`, `'{{site.productminorversion}}'`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
@@ -214,9 +218,11 @@ For information {{site.productname}} development channels, see: [Specifying the 
 
 The `disabled` prop can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
 ##### Example: Using `disabled`
 
@@ -230,9 +236,11 @@ The `disabled` prop can dynamically switch the editor between a "disabled" (read
 
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method.
 
-**Default value:** Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
+Default value
+: Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `id`
 
@@ -252,9 +260,11 @@ When using `tinymce-react`:
 - The `init` prop does not require the `selector` or `target` options
 - If the `selector`, `target`, or `readonly` options are set using the `init` prop, they will be *overridden* by the integration.
 
-**Default value:** `{ }`
+Default value
+: `{ }`
 
-**Type:** Object
+Type
+: `Object`
 
 ##### Example: Using `init`
 
@@ -278,9 +288,11 @@ process.
 
 > **Important**: Ensure that this is **not** updated by `onEditorChange` or the editor will be unusable.
 
-**Default value:** `''`
+Default value
+: `''`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using static `initialValue`
 
@@ -312,9 +324,11 @@ Used to set the editor to inline mode. Using `<Editor inline={true} />` is the s
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
 ##### Example: Using `inline`
 
@@ -339,7 +353,8 @@ It is called with two arguments:
 
 For detailed information on using `onEditorChange`, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
-**Type:** EventHandler
+Type
+: `EventHandler`
 
 #### `outputFormat`
 
@@ -353,11 +368,14 @@ This does not change the input format, so the editor must still be supplied HTML
 in the `value` or `initialValue`, which makes this prop much harder to use
 correctly than it initially seems.
 
-**Type:** String
+Type
+: `String`
 
-**Default value:** `html`
+Default value
+: `'html'`
 
-**Possible values:** `html`, `text`
+Possible values
+: `'html'`, `'text'`
 
 ##### Example: Using `outputFormat`
 
@@ -414,7 +432,8 @@ Used to include plugins for the editor. Using `<Editor plugins='lists' />` is th
 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
-**Type:** String or Array
+Type
+: `String` or `Array`
 
 ##### Example: Using `plugins`
 
@@ -475,9 +494,11 @@ Contains 3 settings:
 
 Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML element for the editor in inline mode.
 
-**Default value:** `div`
+Default value
+: `'div'`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `tagName`
 
@@ -492,9 +513,11 @@ Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML e
 
 Only valid when the editor is in classic (iframe) mode. Sets the `name` attribute for the `textarea` element used for the editor in forms.
 
-**Default value:** `undefined`
+Default value
+: `undefined`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `textareaName`
 
@@ -513,9 +536,11 @@ Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+Possible values
+: See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `toolbar`
 
@@ -530,7 +555,8 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 Use the `tinymceScriptSrc` prop to specify an external version of {{site.productname}} to lazy load.
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `tinymceScriptSrc`
 
@@ -555,7 +581,8 @@ the `value` prop and using the `onEditorChange` event to update the `value`.
 
 For detailed information on using the `value` prop, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
-**Type:** String
+Type
+: `String`
 
 ### Using the {{site.productname}} React component as a uncontrolled component
 

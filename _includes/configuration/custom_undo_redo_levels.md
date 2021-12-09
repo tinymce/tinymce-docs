@@ -3,9 +3,11 @@
 
 This option should contain the number of undo levels to keep in memory. By default, it is set to use an unlimited number of undo levels. The value of `custom_undo_redo_levels` should be 10 or lower for low-end systems otherwise it **steals a lot of memory**.
 
-**Type:** `Number`
+Type
+: `Number`
 
-**Default Value:** `unlimited`
+Default Value
+: `unlimited`
 
 ### Example: Using `custom_undo_redo_levels`
 

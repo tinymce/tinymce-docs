@@ -4,7 +4,8 @@ Sometimes there might be already a reference to a DOM element at hand, for examp
 
 > **Important:** `selector` option has precedence over `target`, so in order for `target` to work, do not use the `selector` option.
 
-**Type:** `Node`
+Type
+: `Node`
 
 ### Example: Using `target`
 

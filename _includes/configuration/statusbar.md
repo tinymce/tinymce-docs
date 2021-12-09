@@ -6,11 +6,14 @@ The statusbar includes the [`elementpath`](#elementpath), [`wordcount`]({{site.b
 
 To disable the status bar, the `statusbar` option should be provided with a boolean `false` value.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `statusbar`
 

@@ -1,9 +1,10 @@
 ## font_css
 The `font_css` option loads the specified font CSS files into both the editable area and the webpage {{site.productname}} is rendered in.
 
-Font CSS files should only contain CSS for specifying custom fonts using the `@font-face` and related CSS rules. 
+Font CSS files should only contain CSS for specifying custom fonts using the `@font-face` and related CSS rules.
 
-**Type:** `String`, `Array`
+Type
+: `String`, `Array`
 
 > **Note:** This option is intended for use with {{site.productname}}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant font CSS files should be loaded as part of the webpage {{site.productname}} is rendered in, not using the `font_css` option.
 

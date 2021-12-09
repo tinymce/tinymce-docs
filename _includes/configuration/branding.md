@@ -4,11 +4,14 @@ Use the `branding` option to disable the "**Powered by Tiny**" link displayed in
 
 > **Important**: Product attribution is required for free and open source users. For information on {{site.productname}} attribution requirements, see: [Logo & attribution requirements]({{site.legalpages}}/attribution-requirements/).
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `branding`
 

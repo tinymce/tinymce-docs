@@ -4,7 +4,8 @@ This option specifies the base URL for all relative URLs in the document. The de
 
 This option also interacts with the [relative_urls](#relative_urls), [remove_script_host](#remove_script_host), and [convert_urls](#convert_urls) options to determine whether {{site.productname}} returns relative or absolute URLs. The [FAQ]({{ site.baseurl }}/general-configuration-guide/get-support/) contains a thorough description and examples of working with relative and absolute URLs.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `document_base_url`
 

@@ -2,9 +2,11 @@
 
 This option takes an array of HTML element names and allows specific HTML elements to be excluded from the exported content. This can be used to exclude HTML elements that may cause issues with exported content, such as video or audio elements.
 
-**Type:** `Array`
+Type
+: `Array`
 
-**Default Value:** `[]`
+Default Value
+: `[]`
 
 ##### Example: `export_ignore_elements`
 
@@ -15,4 +17,4 @@ tinymce.init({
   toolbar: 'export',
   export_ignore_elements: [ 'iframe', 'video', 'audio' ]
 });
-``` 
+```

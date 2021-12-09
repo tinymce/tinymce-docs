@@ -4,7 +4,8 @@ This option specifies the URL of the server-side `ephox-spelling` service. For i
 
 > **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `spellchecker_rpc_url`
 

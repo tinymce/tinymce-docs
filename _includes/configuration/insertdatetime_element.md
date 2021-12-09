@@ -2,9 +2,11 @@
 
 When this option is enabled HTML5 time elements gets generated when you insert dates/times.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `insertdatetime_element`
 

@@ -7,11 +7,14 @@ Setting this option to `auto`, positions the toolbar and menu bar either:
 * Above the content area by default.
 * Below the content area if there is not enough space to display the toolbar and menu bar above.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `auto`
+Default Value
+: `'auto'`
 
-**Possible values:** `auto`, `top`, `bottom`
+Possible values
+: `'auto'`, `'top'`, `'bottom'`
 
 ### Example: Using `toolbar_location`
 

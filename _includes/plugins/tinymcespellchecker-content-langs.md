@@ -3,7 +3,8 @@
 
 {% include configuration/content_langs_base.md %}
 
-**Type:** `Array`
+Type
+: `Array`
 
 #### Example: Using `content_langs` to change spelling dictionaries
 

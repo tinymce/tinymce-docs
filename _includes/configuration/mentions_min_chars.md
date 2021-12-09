@@ -2,9 +2,11 @@
 
 This option specifies the number of characters a user needs to type after the "@" symbol before the list of users will be displayed.
 
-**Type:** `Number`
+Type
+: `Number`
 
-**Default Value:** `1`
+Default Value
+: `1`
 
 #### Example: Using `mentions_min_chars`
 

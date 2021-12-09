@@ -4,7 +4,8 @@ The format painter plugin will register many formats upon initialization. To ove
 
 The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the [`removeformat`]({{ site.baseurl }}/configure/content-formatting/#removingaformat) format.
 
-**Type:** `Object`
+Type
+: `Object`
 
 #### Example: Using `formats`
 

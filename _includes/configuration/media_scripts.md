@@ -4,7 +4,8 @@
 
 This option allows you to embed videos using script elements.
 
-**Type:** `Array`
+Type
+: `Array`
 
 #### Example: Using `media_scripts`
 

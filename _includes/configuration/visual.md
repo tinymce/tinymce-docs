@@ -4,11 +4,14 @@ This option sets the initial state of the editor visual aids for bookmarks (`anc
 
 When set to `false`, the visual aids will be disabled when the editor loads. The `visualaid` toolbar button and menu item allow users to toggle the visibility of the visual aids.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `visual`
 

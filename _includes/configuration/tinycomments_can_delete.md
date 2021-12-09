@@ -2,11 +2,11 @@
 
 _Optional_ - This option sets the author permissions for _deleting comment conversations_. If the `tinycomments_can_delete` option is not included, the current author (`tinycomments_author`) cannot delete comment conversations created by other authors.
 
-**Type:** `Function`
+Type
+: `Function`
 
-**Default Function:**
-
-```js
+Default Function
+: ```js
 function (req, done, fail) {
   var allowed = req.comments.length > 0 &&
                 req.comments[0].author === <Current_tinycomments_author>;

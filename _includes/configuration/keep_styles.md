@@ -2,11 +2,14 @@
 
 The **keep_styles** option will keep the editor's current text style when a user presses `enter/return`.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `keep_styles`
 

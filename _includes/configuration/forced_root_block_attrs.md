@@ -2,7 +2,8 @@
 
 This option enables you specify attributes for the [forced_root_block](#forced_root_block).
 
-**Type:** `Object`
+Type
+: `Object`
 
 ### Example: Using `forced_root_block_attrs`
 

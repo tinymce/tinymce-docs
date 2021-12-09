@@ -9,11 +9,14 @@ When using this option, ensure that Prism.js and any language add-ons are loaded
 <script src="tinymce.js"></script>
 ```
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:** `true`, `false`
+Possible values
+: `true`, `false`
 
 #### Example: Using `codesample_global_prismjs`
 

@@ -106,9 +106,11 @@ None of the configuration properties are **required** for `tinymce-angular` to w
 
 {% include misc/get-an-api-key.md %}
 
-**Default value:** `no-api-key`
+Default value
+: `no-api-key`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `apiKey`
 
@@ -120,9 +122,11 @@ None of the configuration properties are **required** for `tinymce-angular` to w
 
 #### `cloudChannel`
 
-**Default value:** `{{site.productmajorversion}}`
+Default value
+: `{{site.productmajorversion}}`
 
-**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
+Possible values
+: `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
@@ -143,9 +147,11 @@ For information {{site.productname}} development channels, see: [Specifying the 
 #### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
 ##### Example: Using `disabled`
 
@@ -158,9 +164,11 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 #### `id`
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method. Defaults to an automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Default value:** Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
+Default value
+: Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `id`
 
@@ -175,9 +183,11 @@ Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
-**Default value:** `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
+Default value
+: `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
 
-**Type:** Object
+Type
+: `Object`
 
 ##### Example: Using `init`
 
@@ -195,9 +205,11 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 #### `initialValue`
 Initial content of the editor when the editor is initialized.
 
-**Default value:** `' '`
+Default value
+: `' '`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `initialValue`
 
@@ -212,9 +224,11 @@ Used to set the editor to inline mode. Using `<editor [inline]="true"></editor>`
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
 ##### Example: Using `inline`
 
@@ -229,7 +243,8 @@ Used to include plugins for the editor. Using `<editor plugins="lists code"></ed
 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
-**Type:** String or Array
+Type
+: `String` or `Array`
 
 ##### Example: Using `plugins`
 
@@ -243,11 +258,14 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 Used to specify the format of the content emitted by the `tinymce-angular` component when used in conjunction with forms or plain data bindings.
 
-**Type:** String
+Type
+: `String`
 
-**Default value:** `html`
+Default value
+: `'html'`
 
-**Possible values:** `html`, `text`
+Possible values
+: `'html'`, `'text'`
 
 ##### Example: Using `outputFormat`
 
@@ -260,9 +278,11 @@ Used to specify the format of the content emitted by the `tinymce-angular` compo
 #### `tagName`
 Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define the HTML element for the editor in inline mode.
 
-**Default value:** `div`
+Default value
+: `'div'`
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `tagName`
 
@@ -278,9 +298,11 @@ Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></e
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+Possible values
+: See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-**Type:** String
+Type
+: `String`
 
 ##### Example: Using `toolbar`
 
@@ -307,11 +329,14 @@ For information on using `NgModel`, see: [Angular documentation - NgModel](https
 
 Used to specify the events that trigger the `NgModelChange` to emit.
 
-**Default value:** `"change input undo redo"`.
+Default value
+: `'change input undo redo'`.
 
-**Possible value:** A space separated list of TinyMCE editor events.
+Possible value
+: A space separated list of TinyMCE editor events.
 
-**Type** String
+Type
+: `String`
 
 ##### Example: Using `modelEvents`
 
@@ -427,9 +452,11 @@ By default, all the available events will trigger from the editor to the `tinymc
 
 Used to provide an allow-list of valid events to trigger from the editor to the `tinymce-angular` component. By default, the component will emit all the events listed in the [Event binding section](#eventbinding).
 
-**Possible values:** A comma separated list of events to allow.
+Possible values
+: A comma separated list of events to allow.
 
-**Type** String
+Type
+: `String`
 
 ##### Example: Using `allowedEvents`
 
@@ -445,9 +472,11 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 
 Used to block a list of events from the `tinymce-angular` component.
 
-**Possible values:** A comma separated list of events to ignore.
+Possible values
+: A comma separated list of events to ignore.
 
-**Type** String
+Type
+: `String`
 
 ##### Example: Using `ignoreEvents`
 

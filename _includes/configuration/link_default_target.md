@@ -4,7 +4,8 @@ This option allows you to set a default `target` value for links when inserting/
 
 > **Note**: This option also applies to the [autolink]({{site.baseurl}}/plugins/opensource/autolink) plugin.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `link_default_target`
 

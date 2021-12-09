@@ -2,11 +2,14 @@
 
 This option makes it possible to disable the ability to resize table columns and rows by dragging the border between two columns or rows.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `table_resize_bars`
 

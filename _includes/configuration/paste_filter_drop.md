@@ -2,11 +2,14 @@
 
 This option allows developers to disable the default drop filters when set to `false`.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:**  `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `paste_filter_drop`
 

@@ -13,9 +13,11 @@ The default configuration includes the context menu sections for the following p
 
 To disable the editor's context menu, set this option to `false`.
 
-**Type:** `String` or `false`
+Type
+: `String` or `false`
 
-**Default Value:** `'link linkchecker image imagetools table spellchecker configurepermanentpen'`
+Default Value
+: `'link linkchecker image imagetools table spellchecker configurepermanentpen'`
 
 {{site.ctrl_right_click}}
 

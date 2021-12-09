@@ -2,7 +2,8 @@
 
 This option enables a hover card to be presented when a user hovers over a mention in {{site.productname}}. This could include details about the user. A custom hover card HTML element can be provided or a predefined template can be specified.
 
-**Type:** `Function`
+Type
+: `Function`
 
 #### Example: Using `mentions_select`
 

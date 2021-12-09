@@ -4,11 +4,14 @@
 
 This option runs the spellchecker when the contents of the editor is loaded.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `spellchecker_on_load`
 

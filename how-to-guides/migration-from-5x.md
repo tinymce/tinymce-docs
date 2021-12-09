@@ -34,6 +34,6 @@ For information on using the latest development and testing builds, see: [Cloud 
 
 ### Renamed Options
 
-* The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins
-* The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin
-* The `target_list` option has been renamed to `link_target_list` for the `link` plugin
+* The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
+* The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
+* The `target_list` option has been renamed to `link_target_list` for the `link` plugin.

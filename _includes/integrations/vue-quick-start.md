@@ -69,6 +69,22 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
     cd tinymce-vue-demo
     ```
 
+{% if productSource == "package-manager" %}
+3. Install the `tinymce` and `tinymce-vue` packages and save them to your `package.json` with `--save`.
+
+    * For Vue.js 3.x users:
+
+      ```sh
+      npm install --save tinymce "@tinymce/tinymce-vue@^4"
+      ```
+
+    * For Vue.js 2.x users:
+
+      ```sh
+      npm install --save tinymce "@tinymce/tinymce-vue@^3"
+      ```
+{% else %}
+
 4. Install the `tinymce-vue` package and save it to your `package.json` with `--save`.
 
     * For Vue.js 3.x users:
@@ -82,6 +98,7 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
       ```sh
       npm install --save "@tinymce/tinymce-vue@^3"
       ```
+{% endif %}
 
 5. Using a text editor, open `/path/to/tinymce-vue-demo/src/App.vue`.
 

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Using TinyMCE with the Laravel framework
-title_nav: Laravel
-description_short: A guide to using TinyMCE with the PHP-based Laravel framework.
-description: A guide to using TinyMCE with the PHP-based Laravel framework.
+title: Using TinyMCE with the React framework
+title_nav: React
+description_short: A guide to using TinyMCE with the React framework.
+description: A guide to using TinyMCE with the React framework.
 type: folder
 ---
 
@@ -15,7 +15,7 @@ type: folder
         {% for subsubentry in subentry.pages %}
           {% if subsubentry.url == "self-hosted" %}
             {% for sub3entry in subsubentry.pages %}
-              {% if sub3entry.url == "laravel" %}
+              {% if sub3entry.url == "react" %}
                 {% assign links = sub3entry.pages %}
               {% endif %}
             {% endfor %}

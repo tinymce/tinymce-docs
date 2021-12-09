@@ -6,10 +6,15 @@
     - url: "cloud"
       pages:
       - url: "cloud-quick-start"
-      - url: "laravel-tiny-cloud"
+      - url: "react-cloud"
       - url: "blazor-cloud"
+      - url: "laravel-tiny-cloud"
     - url: "self-hosted"
       pages:
+      - url: "react"
+        pages:
+        - url: "react-pm"
+        - url: "react-zip"
       - url: "blazor"
         pages:
         - url: "blazor-pm"
@@ -24,7 +29,6 @@
       - url: "jquery"
       - url: "expressjs"
       - url: "rails"
-      - url: "react"
       - url: "svelte"
       - url: "swing"
       - url: "vue"
@@ -45,12 +49,23 @@
     - url: "editor-content-css"
   - url: "environment-setup"
     pages:
+    - url: "react"
+      pages:
+      - url: "react-cloud"
+      - url: "react-pm"
+      - url: "react-zip"
+      - url: "react-ref"
     - url: "blazor"
       pages:
       - url: "blazor-cloud"
       - url: "blazor-pm"
       - url: "blazor-zip"
       - url: "blazor-ref"
+    - url: "laravel"
+      pages:
+      - url: "laravel-tiny-cloud"
+      - url: "laravel-composer-install"
+      - url: "laravel-zip-install"
   - url: "cloud-deployment-guide"
     pages:
     - url: "editor-and-features"

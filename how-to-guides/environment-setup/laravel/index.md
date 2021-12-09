@@ -1,18 +1,18 @@
 ---
 layout: default
-title: TinyMCE Blazor framework integration guide
-title_nav: Blazor framework
-description: The Blazor framework integration guide for TinyMCE
+title: TinyMCE Laravel framework integration guide
+title_nav: Laravel framework
+description: The Laravel framework integration guide for TinyMCE
 type: folder
 ---
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "how-to-guides" %}
+  {% if entry.url == "initial-configuration" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "environment-setup" %}
         {% for sub2entry in subentry.pages %}
-          {% if sub2entry.url == "blazor" %}
+          {% if sub2entry.url == "laravel" %}
             {% assign links = sub2entry.pages %}
           {% endif %}
         {% endfor %}

@@ -23,11 +23,19 @@ This procedure requires:
     cd tinymce-react-demo
     ```
 
+{% if productSource == "package-manager" %}
+3. Install the `tinymce` and `tinymce-react` packages and save them to your `package.json` with `--save`.
+
+    ```sh
+    npm install --save tinymce @tinymce/tinymce-react
+    ```
+{% else %}
 3. Install the `tinymce-react` package and save it to your `package.json` with `--save`.
 
     ```sh
     npm install --save @tinymce/tinymce-react
     ```
+{% endif %}
 
 4. Using a text editor, open `./src/App.js` and replace the contents with:
 
@@ -55,7 +63,7 @@ This procedure requires:
     }
     ```
 
-    This JavaScript file will create the class `App` containing a {{site.productname}} editor configured with basic features.
+    This JavaScript file will create a component "`App`" containing a {{site.productname}} editor configured with basic features.
 {% if productSource == "cloud" %}
 5. Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
 

@@ -7,8 +7,9 @@
     Example of bundling:
 
     ```js
+    /* Add the tinymce-react wrapper to the bundle */
     import { Editor } from '@tinymce/tinymce-react';
-    /* The rest of the bundling script  */
+    /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
     ```
 
     For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/advanced/usage-with-module-loaders/).
@@ -22,8 +23,9 @@
         Example of bundling:
 
         ```js
+        /* Add the tinymce-react wrapper to the bundle */
         import { Editor } from '@tinymce/tinymce-react';
-        /* The rest of the bundling script  */
+        /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
         ```
 
         For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/advanced/usage-with-module-loaders/).
@@ -37,8 +39,9 @@ To bundle {{site.productname}} using a module loader (such as Webpack, Rollup, o
 Example of bundling:
 
 ```js
+/* Add the tinymce-react wrapper to the bundle */
 import { Editor } from '@tinymce/tinymce-react';
-/* The rest of the bundling script  */
+/* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
 ```
 
 For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/advanced/usage-with-module-loaders/).

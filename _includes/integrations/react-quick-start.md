@@ -1,17 +1,15 @@
-## TinyMCE React integration quick start guide
-
 The [Official {{site.productname}} React component](https://github.com/tinymce/tinymce-react) integrates {{site.productname}} into React projects.
 This procedure creates a [basic React application](https://github.com/facebook/create-react-app) containing a {{site.productname}} editor.
 
 For examples of the {{site.productname}} integration, visit [the tinymce-react storybook](https://tinymce.github.io/tinymce-react/).
 
-### Prerequisites
+## Prerequisites
 
 This procedure requires:
 
 * [Node.js (and npm)](https://nodejs.org/).
 
-### Procedure
+## Procedure
 
 1. Use the [Create React App](https://github.com/facebook/create-react-app) package to create a new React project named `tinymce-react-demo`.
 
@@ -57,9 +55,7 @@ This procedure requires:
           <Editor
             onInit={(evt, editor) => editorRef.current = editor}
             initialValue="<p>This is the initial content of the editor.</p>"
-            init={% raw %}{{{% endraw %}
-              plugins: 'lists link image table code help wordcount'
-            {% raw %}}}{% endraw %}
+            init={% raw %}{{{% endraw %} plugins: 'lists link image table code help wordcount' {% raw %}}}{% endraw %}
           />
           <button onClick={log}>Log editor content</button>
         </>
@@ -111,7 +107,7 @@ This procedure requires:
 
             1. To use the independently sourced {{site.productname}} with create-react-app, add the script tag to `./public/index.html`.
 
-                Normally the tinymce distribution would be put in the `public` folder and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
+                Normally the `tinymce` distribution would be put in the `public` folder and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
 
                 ```html
                 <script src="%PUBLIC_URL%/tinymce/tinymce.min.js"></script>
@@ -131,7 +127,7 @@ This procedure requires:
 
     * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
-### Deploying the application to a HTTP server
+## Deploying the application to a HTTP server
 
 The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: [Create React App - Deployment](https://create-react-app.dev/docs/deployment).
 
@@ -149,7 +145,7 @@ The application has now been deployed on the web server.
 
 > **Note:** Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:&#60;port&#62;/my_react_application.
 
-### Next Steps
+## Next Steps
 
 * For examples of the {{site.productname}} integration, see: [the tinymce-react storybook](https://tinymce.github.io/tinymce-react/).
 * For information on customizing:

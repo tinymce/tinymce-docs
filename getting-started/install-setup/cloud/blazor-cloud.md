@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Blazor integration
+title: Using TinyMCE from the Tiny Cloud CDN with the Blazor framework
+description: A guide on integrating TinyMCE from the Tiny Cloud into the Blazor framework.
 title_nav: Blazor
-description: Blazor TinyMCE component.
 keywords: integration integrate blazor blazorapp
 ---
 

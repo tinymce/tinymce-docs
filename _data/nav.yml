@@ -7,6 +7,7 @@
       pages:
       - url: "cloud-quick-start"
       - url: "react-cloud"
+      - url: "angular-cloud"
       - url: "blazor-cloud"
       - url: "laravel-tiny-cloud"
     - url: "self-hosted"
@@ -15,6 +16,10 @@
         pages:
         - url: "react-pm"
         - url: "react-zip"
+      - url: "angular"
+        pages:
+        - url: "angular-pm"
+        - url: "angular-zip"
       - url: "blazor"
         pages:
         - url: "blazor-pm"
@@ -23,7 +28,6 @@
         pages:
         - url: "laravel-composer-install"
         - url: "laravel-zip-install"
-      - url: "angular"
       - url: "bootstrap"
       - url: "django"
       - url: "jquery"
@@ -55,6 +59,12 @@
       - url: "react-pm"
       - url: "react-zip"
       - url: "react-ref"
+    - url: "angular"
+      pages:
+      - url: "angular-cloud"
+      - url: "angular-pm"
+      - url: "angular-zip"
+      - url: "angular-ref"
     - url: "blazor"
       pages:
       - url: "blazor-cloud"

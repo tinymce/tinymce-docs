@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Environment setup guides
-title_nav: Environment setup guides
-description: The TinyMCE framework and CMS integration guides and references
+title: TinyMCE Angular framework integration guide
+title_nav: Angular framework
+description: The Angular framework integration guide for TinyMCE
 type: folder
 ---
 
@@ -11,7 +11,11 @@ type: folder
   {% if entry.url == "how-to-guides" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "environment-setup" %}
-        {% assign links = subentry.pages %}
+        {% for sub2entry in subentry.pages %}
+          {% if sub2entry.url == "angular" %}
+            {% assign links = sub2entry.pages %}
+          {% endif %}
+        {% endfor %}
       {% endif %}
     {% endfor %}
   {% endif %}

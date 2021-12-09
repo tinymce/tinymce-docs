@@ -8,6 +8,7 @@
       - url: "cloud-quick-start"
       - url: "react-cloud"
       - url: "angular-cloud"
+      - url: "vue-cloud"
       - url: "blazor-cloud"
       - url: "laravel-tiny-cloud"
     - url: "self-hosted"
@@ -20,6 +21,10 @@
         pages:
         - url: "angular-pm"
         - url: "angular-zip"
+      - url: "vue"
+        pages:
+        - url: "vue-pm"
+        - url: "vue-zip"
       - url: "blazor"
         pages:
         - url: "blazor-pm"
@@ -65,6 +70,12 @@
       - url: "angular-pm"
       - url: "angular-zip"
       - url: "angular-ref"
+    - url: "vue"
+      pages:
+      - url: "vue-cloud"
+      - url: "vue-pm"
+      - url: "vue-zip"
+      - url: "vue-ref"
     - url: "blazor"
       pages:
       - url: "blazor-cloud"

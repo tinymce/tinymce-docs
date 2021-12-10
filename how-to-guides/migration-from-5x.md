@@ -31,3 +31,9 @@ To use TinyMCE 6 from the {{site.cloudname}}, include this script in your HTML p
 ```
 
 For information on using the latest development and testing builds, see: [Cloud deployment guide - Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
+
+### Renamed Options
+
+* The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
+* The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
+* The `target_list` option has been renamed to `link_target_list` for the `link` plugin.

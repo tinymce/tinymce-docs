@@ -32,7 +32,6 @@ The following plugins are currently supported:
 * [Character Map (`charmap`)]({{site.baseurl}}/plugins/opensource/charmap/)
 * [Emoticons (`emoticons`)]({{site.baseurl}}/plugins/opensource/emoticons/)
 * [Help (`help`)]({{site.baseurl}}/plugins/opensource/help/)
-* [Horizontal Rule (`hr`)]({{site.baseurl}}/plugins/opensource/hr/)
 * [Image (`image`)]({{site.baseurl}}/plugins/opensource/image/)
   * Captioned images are not yet supported.
   * The [`image_caption`]({{site.baseurl}}/plugins/opensource/image/#image_caption) option is not supported.

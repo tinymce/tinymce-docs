@@ -37,7 +37,7 @@ The following plugins are currently supported:
   * The [`image_caption`]({{site.baseurl}}/plugins/opensource/image/#image_caption) option is not supported.
 * [Insert Date/Time (`insertdatetime`)]({{site.baseurl}}/plugins/opensource/insertdatetime/)
 * [Link (`link`)]({{site.baseurl}}/plugins/opensource/link/)
-  * The [`rel_list`]({{site.baseurl}}/plugins/opensource/link/#rel_list) option is not supported.
+  * The [`link_rel_list`]({{site.baseurl}}/plugins/opensource/link/#link_rel_list) option is not supported.
 * [Lists (`lists`)]({{site.baseurl}}/plugins/opensource/lists/)
 * [MoxieManager (`moxiemanager`)]({{site.baseurl}}/plugins/premium/moxiemanager/)
 * [PowerPaste (`powerpaste`)]({{site.baseurl}}/plugins/premium/powerpaste/)
@@ -75,6 +75,6 @@ When planning to integrate Real-Time Collaboration into your application or webs
 * [`keep_styles`]({{site.baseurl}}/configure/content-filtering/#keep_styles)
 * [`placeholder`]({{site.baseurl}}/configure/editor-appearance/#placeholder)
 * [`protect`]({{site.baseurl}}/configure/content-filtering/#protect)
-* [`rel_list`]({{site.baseurl}}/plugins/opensource/link/#rel_list)
+* [`link_rel_list`]({{site.baseurl}}/plugins/opensource/link/#link_rel_list)
 * [`valid_children`]({{site.baseurl}}/configure/content-filtering/#valid_children)
 * [`valid_elements`]({{site.baseurl}}/configure/content-filtering/#valid_elements)

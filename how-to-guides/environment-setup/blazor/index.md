@@ -8,7 +8,7 @@ type: folder
 
 {% assign navigation = site.data.nav %}
 {% for entry in navigation %}
-  {% if entry.url == "initial-configuration" %}
+  {% if entry.url == "how-to-guides" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "environment-setup" %}
         {% for sub2entry in subentry.pages %}

@@ -1,5 +1,3 @@
-## TinyMCE React technical reference
-
 **Covered in this section:**
 
 - [Installing the TinyMCE React integration using NPM or Yarn](#installingthetinymcereactintegrationusingnpmoryarn)
@@ -27,7 +25,7 @@
 - [Using the TinyMCE React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent)
 - [Event binding](#eventbinding)
 
-### Installing the TinyMCE React integration using NPM or Yarn
+## Installing the TinyMCE React integration using NPM or Yarn
 
 To install the `tinymce-react` package and save it to your `package.json`.
 
@@ -41,11 +39,11 @@ or with Yarn
 $ yarn add @tinymce/tinymce-react
 ```
 
-### Using TinyMCE React integration in a Bootstrap dialog
+## Using TinyMCE React integration in a Bootstrap dialog
 
 To use the {{site.productname}} React integration inside Bootstrap UI dialogs, add the following React effect hook to a component that renders with the editor. This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog.
 
-#### Bootstrap 5
+### Bootstrap 5
 
 > **Note**: For Bootstrap 5, the React effect hook contains no JQuery and does not support Microsoft Internet Explorer 11.
 
@@ -61,7 +59,7 @@ useEffect(() => {
 }, []);
 ```
 
-#### Bootstrap 4
+### Bootstrap 4
 
 ```js
 useEffect(function() {
@@ -77,7 +75,7 @@ useEffect(function() {
 }, []);
 ```
 
-### Configuring the editor
+## Configuring the editor
 
 The `tinymce-react` component provides props for:
 
@@ -86,7 +84,7 @@ The `tinymce-react` component provides props for:
  - [Configuring editor settings](#configuringeditorsettings)
  - [Managing the editor](#managingtheeditor)
 
-#### Configuring editor source
+### Configuring editor source
 
 The `tinymce-react` integration will try to source {{site.productname}} in the following order:
 
@@ -108,7 +106,7 @@ These props are used to configure how the editor is sourced:
 [`tinymceScriptSrc`](#tinymcescriptsrc)
 : The URL to use for sourcing {{site.productname}}, when loading a self-hosted version of {{site.productname}}.
 
-#### Configuring page elements
+### Configuring page elements
 
 These props provide some control over the page elements that the integration creates:
 
@@ -124,7 +122,7 @@ These props provide some control over the page elements that the integration cre
 [`textareaName`](#textareaname)
 : The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.
 
-#### Configuring editor settings
+### Configuring editor settings
 
 These props are read when the editor is initialized. Changes after the editor has launched are ignored.
 
@@ -137,7 +135,7 @@ These props are read when the editor is initialized. Changes after the editor ha
 [`toolbar`](#toolbar)
 : Specify the editor toolbar. This will **override** the `toolbar` in the `init` prop.
 
-#### Managing the editor
+### Managing the editor
 
 These props can be updated after the editor is initialized. Note that there are [other events](#eventbinding) not mentioned here.
 
@@ -159,11 +157,11 @@ These props can be updated after the editor is initialized. Note that there are 
 [`value`](#value)
 : Sets and enforces the value of the editor. Only used for a controlled component.
 
-### Available props
+## Available props
 
 None of the configuration props are **required** for the {{site.productname}} React component; however, if the `apiKey` prop is not configured when loading from {{site.cloudname}}, a warning message will be shown in the editor. For guidance about which props to use, see: [Configuring the editor](#configuringtheeditor).
 
-#### `apiKey`
+### `apiKey`
 
 {{site.cloudname}} API key.
 
@@ -177,7 +175,7 @@ Default value
 Type
 : `String`
 
-##### Example: Using `apiKey`
+#### Example: Using `apiKey`
 
 ```jsx
 <Editor
@@ -185,7 +183,7 @@ Type
 />
 ```
 
-#### `cloudChannel`
+### `cloudChannel`
 
 Changes the {{site.productname}} build used for the editor to either a specific version or a channel indicating a stability level.
 
@@ -214,7 +212,7 @@ Such as:
 
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels).
 
-#### `disabled`
+### `disabled`
 
 The `disabled` prop can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
@@ -224,7 +222,7 @@ Default value
 Possible values
 : `true`, `false`
 
-##### Example: Using `disabled`
+#### Example: Using `disabled`
 
 ```jsx
 <Editor
@@ -232,7 +230,7 @@ Possible values
 />
 ```
 
-#### `id`
+### `id`
 
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method.
 
@@ -242,7 +240,7 @@ Default value
 Type
 : `String`
 
-##### Example: Using `id`
+#### Example: Using `id`
 
 ```jsx
 <Editor
@@ -250,7 +248,7 @@ Type
 />
 ```
 
-#### `init`
+### `init`
 
 Additional settings passed to the `tinymce.init({...})` method used to initialize the editor.
 
@@ -266,7 +264,7 @@ Default value
 Type
 : `Object`
 
-##### Example: Using `init`
+#### Example: Using `init`
 
 ```jsx
 <Editor
@@ -279,7 +277,7 @@ Type
 />
 ```
 
-#### `initialValue`
+### `initialValue`
 
 The initial HTML content of the editor. This will reset the editor undo state and the cursor position when changed.
 
@@ -294,7 +292,7 @@ Default value
 Type
 : `String`
 
-##### Example: Using static `initialValue`
+#### Example: Using static `initialValue`
 
 ```jsx
 <Editor
@@ -302,7 +300,7 @@ Type
 />
 ```
 
-##### Example: Using asynchronous `initialValue`
+#### Example: Using asynchronous `initialValue`
 
 ```jsx
 const [initialValue, setInitialValue] = useState(undefined);
@@ -318,7 +316,7 @@ return (
 );
 ```
 
-#### `inline`
+### `inline`
 
 Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the {{site.productname}} `tinymce.init({...})` method.
 
@@ -330,7 +328,7 @@ Default value
 Possible values
 : `true`, `false`
 
-##### Example: Using `inline`
+#### Example: Using `inline`
 
 ```jsx
 <Editor
@@ -338,7 +336,7 @@ Possible values
 />
 ```
 
-#### `onEditorChange`
+### `onEditorChange`
 
 Used to store the state of the editor outside the {{site.productname}} React component.
 This prop is commonly used when using the {{site.productname}} React component as a controlled component.
@@ -356,7 +354,7 @@ For detailed information on using `onEditorChange`, see: [Using the {{site.produ
 Type
 : `EventHandler`
 
-#### `outputFormat`
+### `outputFormat`
 
 > **Important**: This option was deprecated with the release of the {{site.productname}}
 React component 3.11.0. The `outputFormat` option will be removed in a future
@@ -377,7 +375,7 @@ Default value
 Possible values
 : `'html'`, `'text'`
 
-##### Example: Using `outputFormat`
+#### Example: Using `outputFormat`
 
 ```jsx
 const textToHtml = (text) => {
@@ -403,7 +401,7 @@ return (
 );
 ```
 
-##### Example: Replacing usage of `outputFormat`
+#### Example: Replacing usage of `outputFormat`
 
 ```jsx
 const [value, setValue] = useState('<p>The quick brown fox jumps over the lazy dog</p>');
@@ -426,7 +424,7 @@ return (
 );
 ```
 
-#### `plugins`
+### `plugins`
 
 Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {{site.productname}} `tinymce.init({...})` method.
 
@@ -435,7 +433,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 Type
 : `String` or `Array`
 
-##### Example: Using `plugins`
+#### Example: Using `plugins`
 
 ```jsx
 <Editor
@@ -443,7 +441,7 @@ Type
 />
 ```
 
-#### `scriptLoading`
+### `scriptLoading`
 
 Used to configure the script tag created to load {{site.productname}}.
 
@@ -478,19 +476,19 @@ Contains 3 settings:
     }
     ```
 
-##### Example: Loading {{site.productname}} asynchronously
+#### Example: Loading {{site.productname}} asynchronously
 
 ```jsx
 <Editor scriptLoading={% raw %}{{{% endraw %} async: true {% raw %}}}{% endraw %}>
 ```
 
-##### Example: Delaying load of {{site.productname}} for 500 milliseconds
+#### Example: Delaying load of {{site.productname}} for 500 milliseconds
 
 ```jsx
 <Editor scriptLoading={% raw %}{{{% endraw %} delay: 500 {% raw %}}}{% endraw %}>
 ```
 
-#### `tagName`
+### `tagName`
 
 Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML element for the editor in inline mode.
 
@@ -500,7 +498,7 @@ Default value
 Type
 : `String`
 
-##### Example: Using `tagName`
+#### Example: Using `tagName`
 
 ```jsx
 <Editor
@@ -509,7 +507,7 @@ Type
 />
 ```
 
-#### `textareaName`
+### `textareaName`
 
 Only valid when the editor is in classic (iframe) mode. Sets the `name` attribute for the `textarea` element used for the editor in forms.
 
@@ -519,7 +517,7 @@ Default value
 Type
 : `String`
 
-##### Example: Using `textareaName`
+#### Example: Using `textareaName`
 
 ```jsx
 <form method="post">
@@ -530,7 +528,7 @@ Type
 </form>
 ```
 
-#### `toolbar`
+### `toolbar`
 
 Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the {{site.productname}} method `tinymce.init({...})`.
 
@@ -542,7 +540,7 @@ Possible values
 Type
 : `String`
 
-##### Example: Using `toolbar`
+#### Example: Using `toolbar`
 
 ```jsx
 <Editor
@@ -551,14 +549,14 @@ Type
 />
 ```
 
-#### `tinymceScriptSrc`
+### `tinymceScriptSrc`
 
 Use the `tinymceScriptSrc` prop to specify an external version of {{site.productname}} to lazy load.
 
 Type
 : `String`
 
-##### Example: Using `tinymceScriptSrc`
+#### Example: Using `tinymceScriptSrc`
 
 ```jsx
 <Editor
@@ -566,7 +564,7 @@ Type
 />
 ```
 
-#### `value`
+### `value`
 
 Sets the HTML content of the editor when operating as a controlled component.
 
@@ -584,7 +582,7 @@ For detailed information on using the `value` prop, see: [Using the {{site.produ
 Type
 : `String`
 
-### Using the {{site.productname}} React component as a uncontrolled component
+## Using the {{site.productname}} React component as a uncontrolled component
 
 The {{site.productname}} React component is designed to be used as an uncontrolled component,
 which allows the editor to perform well on larger documents.
@@ -599,7 +597,7 @@ the editor's "dirty" state when saving the editor content.
 
 {% include misc/concept-dirty-state.md %}
 
-##### Example: Functional uncontrolled component with save button and dirty state
+#### Example: Functional uncontrolled component with save button and dirty state
 
 ```jsx
 function MyComponent({initialValue}) {
@@ -629,7 +627,7 @@ function MyComponent({initialValue}) {
 }
 ```
 
-### Using the {{site.productname}} React component as a controlled component
+## Using the {{site.productname}} React component as a controlled component
 
 > **Caution**: The controlled component can have performance problems on large
 documents as it requires converting the entire document to a string on each
@@ -645,7 +643,7 @@ The `onEditorChange` prop is used to provide an event handler that will be run
 when any change is made to the editor content. Changes to the editor must be applied to the
 `value` prop within _200 milliseconds_ to prevent the changes being rolled back.
 
-##### Example: Functional controlled component
+#### Example: Functional controlled component
 
 ```jsx
 function MyComponent({initialValue}) {
@@ -661,7 +659,7 @@ function MyComponent({initialValue}) {
 }
 ```
 
-##### Example: Class controlled component
+#### Example: Class controlled component
 
 ```jsx
 class MyComponent extends React.Component {
@@ -697,7 +695,7 @@ class MyComponent extends React.Component {
 When the editor must be restricted to avoid invalid states, such as exceeding a maximum length,
 then a handler for `onBeforeAddUndo` must be added to avoid those states in the undo history.
 
-##### Example: Limited length controlled component
+#### Example: Limited length controlled component
 
 ```jsx
 function MyComponent({initialValue, limit}) {
@@ -743,7 +741,7 @@ function MyComponent({initialValue, limit}) {
 
 For information on controlled components in React, see: [React Docs - Controlled Components](https://reactjs.org/docs/forms.html#controlled-components).
 
-### Event binding
+## Event binding
 
 Functions can be bound to editor events, such as:
 

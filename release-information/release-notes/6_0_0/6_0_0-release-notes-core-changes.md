@@ -56,3 +56,9 @@ For information about horizontal rule-related functionality, see:
 {{site.productname}} 6.0 introduces the following minor changes:
 
 - changelog
+
+### Renamed Options
+
+- The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
+- The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
+- The `target_list` option has been renamed to `link_target_list` for the `link` plugin.

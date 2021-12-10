@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Blazor integration
+title: Using the TinyMCE .zip package with the Blazor framework
 title_nav: Using a .zip package
-description: Blazor TinyMCE component.
+description: A guide on integrating a .zip version of TinyMCE into the Blazor framework.
 keywords: integration integrate blazor blazorapp
 ---
 

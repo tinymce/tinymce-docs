@@ -11,10 +11,13 @@
       - url: "angular-cloud"
       - url: "vue-cloud"
       - url: "blazor-cloud"
+      - url: "svelte-cloud"
+      - url: "webcomponent-cloud"
       # Third-party integrations
       - url: "bootstrap-cloud"
       - url: "django-cloud"
       - url: "laravel-tiny-cloud"
+      - url: "rails-cloud"
     - url: "self-hosted"
       pages:
       # Official integrations
@@ -34,6 +37,12 @@
         pages:
         - url: "blazor-pm"
         - url: "blazor-zip"
+      - url: "swing"
+      - url: "svelte-zip"
+      - url: "webcomponent"
+        pages:
+        - url: "webcomponent-pm"
+        - url: "webcomponent-zip"
       # Third-party integrations
       - url: "bootstrap-zip"
       - url: "django-zip"
@@ -43,10 +52,16 @@
         - url: "laravel-composer-install"
         - url: "laravel-zip-install"
       - url: "rails"
-      - url: "svelte"
-      - url: "swing"
-      - url: "webcomponent"
+        pages:
+        - url: "rails-third-party"
+        - url: "rails-zip"
       - url: "wordpress"
+      # Non-specific installs
+      - url: "npm-projects"
+      - url: "php-projects"
+      - url: "dotnet-projects"
+      - url: "bower-projects"
+      - url: "zip-install"
   - url: "upgrading"
 
 - url: "how-to-guides"
@@ -87,6 +102,18 @@
       - url: "blazor-pm"
       - url: "blazor-zip"
       - url: "blazor-ref"
+    - url: "swing"
+    - url: "svelte"
+      pages:
+      - url: "svelte-cloud"
+      - url: "svelte-zip"
+      - url: "svelte-ref"
+    - url: "webcomponent"
+      pages:
+      - url: "webcomponent-cloud"
+      - url: "webcomponent-pm"
+      - url: "webcomponent-zip"
+      - url: "webcomponent-ref"
     # Third-party integrations
     - url: "bootstrap"
       pages:
@@ -102,6 +129,18 @@
       - url: "laravel-tiny-cloud"
       - url: "laravel-composer-install"
       - url: "laravel-zip-install"
+    - url: "rails"
+      pages:
+      - url: "rails-cloud"
+      - url: "rails-third-party"
+      - url: "rails-zip"
+    - url: "wordpress"
+    # Non-specific installs
+    - url: "npm-projects"
+    - url: "php-projects"
+    - url: "dotnet-projects"
+    - url: "bower-projects"
+    - url: "zip-install"
   - url: "cloud-deployment-guide"
     pages:
     - url: "editor-and-features"
@@ -200,6 +239,7 @@
       - url: "#Context toolbar priority"
       - url: "#Positioning context toolbars"
       - url: "#Example configuration"
+    - url: "shortcuts"
     - url: "making-plugins"
       pages:
       - url: "creating-a-plugin"

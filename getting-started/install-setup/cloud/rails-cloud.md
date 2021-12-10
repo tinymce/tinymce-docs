@@ -6,4 +6,6 @@ description: A guide on integrating TinyMCE from the Tiny Cloud into Ruby on Rai
 keywords: integration integrate ruby rails
 ---
 
+{% assign productSource = "cloud" %}
 
+{% include integrations/rails-quick-start.md %}

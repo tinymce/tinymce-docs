@@ -317,7 +317,7 @@ No additional fields when `type` is `unbounded`.
 
 ## Summary cards
 
-When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
+When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns an HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
 
 ```html
 <div class="ephox-summary-card">

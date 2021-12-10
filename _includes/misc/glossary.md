@@ -19,7 +19,7 @@ back end, back-end, backend
 : Do not use backend. Use _back end_ as a noun. Use back-end as a compound adjective.
 
 bookmark
-: A common term for a HTML anchor element. Use _bookmark_ instead of anchor in content for a general audience. Do not use when referring to the anchor plugin.
+: A common term for an HTML anchor element. Use _bookmark_ instead of anchor in content for a general audience. Do not use when referring to the anchor plugin.
 
 control, such as control identifier
 : Do not use. Use the type of control, such as _Toolbar button_ or _Menu item_

@@ -25,7 +25,7 @@ tinymce.activeEditor.windowManager.open({
     type: 'panel', // The root body type - a Panel or TabPanel
     items: [ // A list of panel components
       {
-        type: 'htmlpanel', // A HTML panel component
+        type: 'htmlpanel', // an HTML panel component
         html: 'Panel content goes here.'
       }
     ]

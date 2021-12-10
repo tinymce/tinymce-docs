@@ -269,7 +269,7 @@ A **dropzone** is a composite component that catches drag and drops items or let
 
 A **htmlpanel** component takes any valid HTML and renders it in the dialog.
 
-> **Note**: Despite the name a htmlpanel can not be used as a body component like `panel` and `tabpanel`.
+> **Note**: Despite the name an HTMLpanel can not be used as a body component like `panel` and `tabpanel`.
 
 ```js
 {
@@ -280,7 +280,7 @@ A **htmlpanel** component takes any valid HTML and renders it in the dialog.
 
 ### iframe
 
-An **iframe** component takes a HTML document as a string and displays it in the dialog within an iframe.
+An **iframe** component takes an HTML document as a string and displays it in the dialog within an iframe.
 
 > **Note**: To replace the entire dialog body with an iframe that loads its content from a URL, use a [URL dialog]({{site.baseurl}}/ui-components/urldialog).
 

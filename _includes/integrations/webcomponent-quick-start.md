@@ -1,7 +1,7 @@
 ## TinyMCE Web Component quick start guide
 
 The [Official {{site.productname}} Web Component](https://github.com/tinymce/tinymce-webcomponent) integrates {{site.productname}} into Web Component projects.
-This procedure creates a HTML page containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates an HTML page containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
 
 ### Procedure
 
@@ -50,9 +50,9 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
 
     The default {{site.productname}} editor will load at this location if the page is opened in a web browser.
 
-### Example: Adding the TinyMCE Web Component to a HTML page
+### Example: Adding the TinyMCE Web Component to an HTML page
 
-The following example shows the {{site.productname}} Web Component in a HTML page, with:
+The following example shows the {{site.productname}} Web Component in an HTML page, with:
 
 - Various {{site.productname}} configuration options set using attributes.
 - {{site.productname}} sourced from the {{site.cloudname}}.

@@ -33,7 +33,7 @@ tinymce.init({
 
 Snippets include the `selector` option, which is described below. Change the value of the working code block according to the HTML.
 
-Insert the snippet into a HTML document between the `<script>` tags and update the selector as described below.
+Insert the snippet into an HTML document between the `<script>` tags and update the selector as described below.
 
 ## Selector configuration
 

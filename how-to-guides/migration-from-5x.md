@@ -21,6 +21,8 @@ This chapter describes the migration process and workarounds for customers using
 To migrate the core TinyMCE editor to TinyMCE 6, review the following sections:
 
 * [Cloud Delivery](#clouddelivery).
+* [Option/setting changes](#optionsettingchanges).
+* [Plugin Changes](#pluginchanges)
 
 ### Cloud Delivery
 
@@ -31,3 +33,21 @@ To use TinyMCE 6 from the {{site.cloudname}}, include this script in your HTML p
 ```
 
 For information on using the latest development and testing builds, see: [Cloud deployment guide - Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
+
+### Option/Setting changes
+
+#### Renamed Options
+
+* The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
+* The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
+* The `target_list` option has been renamed to `link_target_list` for the `link` plugin.
+
+### Plugin Changes
+
+#### Horizontal rule plugin moved to TinyMCE Core
+
+The Horizontal rule (`hr`) plugin has been moved to Core in {{site.productname}} 6.0.
+
+The `hr` toolbar button and menu item will now work by default, without needing to specify `hr` as a plugin.
+
+Integrators can remove `hr` from the `plugins` section of their {{site.productname}} configuration.

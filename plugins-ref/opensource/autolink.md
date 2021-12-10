@@ -23,6 +23,6 @@ tinymce.init({
 
 ## Options
 
-{% include configuration/default_link_target.md %}
+{% include configuration/link_default_target.md %}
 
 {% include configuration/link_default_protocol.md %}

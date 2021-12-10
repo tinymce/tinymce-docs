@@ -208,7 +208,7 @@ The quick-insert toolbar is shown when a new line is added, providing buttons fo
 To add a quick-insert toolbar, add `"quickbars"` to the `plugins` attribute. To change the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute, such as:
 
 ```html
-<tinymce-editor plugins="quickbars hr pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
+<tinymce-editor plugins="quickbars pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
 ```
 
 The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Toolbar Buttons Available for TinyMCE]({{site.baseurl}}/advanced/available-toolbar-buttons/).

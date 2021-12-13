@@ -11,7 +11,8 @@ The format of the converter function is: `URLConverter(url, node, on_save)`, whe
 
 This function should return the converted URL as a string. This option is set to an internal {{site.productname}} function [convertURL()]({{ site.baseurl }}/api/tinymce/tinymce.editor/) by default. You may call this function from your extension in order to use the built-in convert options.
 
-**Type:** `Javascript Function`
+Type
+: `Javascript Function`
 
 ### Example: Using `urlconverter_callback`
 

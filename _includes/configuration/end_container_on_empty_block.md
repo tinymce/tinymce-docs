@@ -2,11 +2,14 @@
 
 This option allows you to to split the current container block element if the enter key is pressed inside an empty inner block element.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`  // confirmation required
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `end_container_on_empty_block`
 

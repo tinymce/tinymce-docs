@@ -6,7 +6,8 @@ This option allows you to specify the [buttons]({{ site.baseurl }}/advanced/avai
 
 To specify the buttons that should appear on {{site.productname}}'s toolbar, the `toolbar` option should be provided with a space separated list of [toolbar buttons]({{ site.baseurl }}/advanced/available-toolbar-buttons/). To create groups within this list, please add `|` pipe characters between the groups of buttons that you would like to create.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example grouped toolbar
 
@@ -23,7 +24,8 @@ tinymce.init({
 
 To specify labels to the grouped buttons that appear on {{site.productname}}'s toolbar, the `toolbar` option should be provided with an array of objects with `name` and `items` as object properties. The `name` should be a string value that will be set as the `title` attribute on the `div` containing the toolbar group. The `items` should be an array of strings that indicate the buttons that should appear within the particular toolbar group.
 
-**Type:** `Array`
+Type
+: `Array`
 
 ##### Example: Adding toolbar group labels
 
@@ -54,11 +56,14 @@ tinymce.init({
 
 To disable the toolbar, the toolbar option should be provided a boolean value of `false`.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Disabling the toolbar
 
@@ -73,7 +78,8 @@ tinymce.init({
 
 To specify multiple toolbars, the toolbar option should be provided with an array of space separated strings.
 
-**Type:** `Array`
+Type
+: `Array`
 
 #### Example: Adding multiple toolbars
 

@@ -2,7 +2,8 @@
 
 This option enables you to provide your own color picker.
 
-**Type:** `JavaScript Function`
+Type
+: `JavaScript Function`
 
 ### Example: Using `color_picker_callback`
 

@@ -4,9 +4,11 @@ The `contextmenu_never_use_native` option allows you to prevent the browser cont
 
 > **Caution**: Using this option may result in unexpected behavior when right-clicking in text areas. We advise you to consider all your options carefully before using this feature.
 
-**Type**: `Boolean`
+Type
+: `Boolean`
 
-**Default Value**: `false`
+Default Value
+: `false`
 
 ### Example: Using `contextmenu_never_use_native`
 

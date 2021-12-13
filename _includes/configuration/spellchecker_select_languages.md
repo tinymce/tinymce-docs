@@ -6,9 +6,11 @@
 
 This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).  For a list of available languages, see: [Supported languages](#supportedlanguages).
 
-**Type:** comma-separated `String`
+Type
+: comma-separated `String`
 
-**Default Value:** `'en,es,fr,de,pt,zh'`
+Default Value
+: `'en,es,fr,de,pt,zh'`
 
 #### Example: Using `spellchecker_select_languages`
 

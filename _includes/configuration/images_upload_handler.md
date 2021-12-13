@@ -14,7 +14,8 @@ When this option is not set, {{site.productname}} utilizes an `XMLHttpRequest` t
 
 > **Note**: To replace the `<img>` tag's `src` attribute with the remote location, please use the success callback defined in the `images_upload_handler` function with the returned JSON object's location property.
 
-**Type:** `JavaScript Function`
+Type
+: `JavaScript Function`
 
 ### Example: Using `images_upload_handler`
 

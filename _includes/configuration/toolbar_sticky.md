@@ -6,11 +6,14 @@ To enable Sticky Toolbars, set `toolbar_sticky` as `true` in the `tinymce.init` 
 
  To see a demo of sticky toolbar, see the [{{site.productname}} Sticky Toolbar Demo](https://codepen.io/tinymce/full/qBWLLMP).
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 {{site.differs_for_mobile}}
 

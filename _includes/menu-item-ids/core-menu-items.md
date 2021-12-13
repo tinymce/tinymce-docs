@@ -11,6 +11,7 @@
 | `formats`            | Format                                                                                                   | Menu of all available formats.                                                 |
 | `fontformats`        | Format                                                                                                   | Dropdown list with font families to apply to selection.                        |
 | `fontsizes`          | Format                                                                                                   | Dropdown list with font sizes to apply to selection.                           |
+| `hr`                 | Insert                                                                                                   | Inserts a horizontal rule into the editor. |
 | `italic`             | Format                                                                                                   | Applies italic format to current selection.                                    |
 | `language`           | Format                                                                                                   | Dropdown list with languages to apply to the selection. This item requires the [`content_langs` option]({{site.baseurl}}/configure/localization/#content_langs).<br /> |
 | `lineheight`         | Format                                                                                                   | Dropdown list with line heights to apply to selection.  |

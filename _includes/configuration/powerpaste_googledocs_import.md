@@ -2,9 +2,11 @@
 
 This option controls how content pasted from Google Docs is filtered.
 
-**Type:** `String` or `Function`
+Type
+: `String` or `Function`
 
-**Default Value:** `prompt`
+Default Value
+: `'prompt'`
 
 {% include plugins/powerpaste_import_types.md %}
 

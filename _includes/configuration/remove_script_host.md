@@ -6,11 +6,14 @@ If this option is set to `true`, the protocol and host of the `document_base_url
 
 If this option is set to `false`, the protocol and host of the `document_base_url` is _added_ for relative links.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Examples: Using `remove_script_host`
 

@@ -7,11 +7,14 @@ The `smart_paste` function will:
 
 To disable the `smart_paste` functionality, set `smart_paste` to `false`. To configure which image file types are recognised, see [Image & file options - images_file_types]({{site.baseurl}}/configure/file-image-upload/#images_file_types).
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `smart_paste`
 

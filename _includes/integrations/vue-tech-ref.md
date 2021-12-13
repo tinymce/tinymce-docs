@@ -1,5 +1,3 @@
-## TinyMCE Vue.js technical reference
-
 **Covered in this section:**
 
 - [Installing the TinyMCE Vue.js integration using NPM](#installingthetinymcevuejsintegrationusingnpm)
@@ -23,23 +21,23 @@
 - [Form Input Bindings: `v-model`](#forminputbindingsv-model)
 - [Event binding](#eventbinding)
 
-### Installing the TinyMCE Vue.js integration using NPM
+## Installing the TinyMCE Vue.js integration using NPM
 
 To install the `tinymce-vue` package and save it to your `package.json`.
 
 * For Vue.js 3.x users:
 
   ```sh
-  $ npm install --save "@tinymce/tinymce-vue@^4"
+  npm install --save "@tinymce/tinymce-vue@^4"
   ```
 
 * For Vue.js 2.x users:
 
   ```sh
-  $ npm install --save "@tinymce/tinymce-vue@^3"
+  npm install --save "@tinymce/tinymce-vue@^3"
   ```
 
-### Using the TinyMCE Vue.js integration
+## Using the TinyMCE Vue.js integration
 
 1. Load the component.
     * For bundle loader users (such as `webpack`, `rollup`, or `browserify`):
@@ -51,7 +49,7 @@ To install the `tinymce-vue` package and save it to your `package.json`.
         // NOTE: default needed after require
         var Editor = require('@tinymce/tinymce-vue').default;
         ```
-    * To load `tinymce-vue` in a HTML file:
+    * To load `tinymce-vue` in an HTML file:
 
         ```html
         <script src="/path/to/tinymce-vue.min.js"></script>
@@ -76,7 +74,7 @@ To install the `tinymce-vue` package and save it to your `package.json`.
     <editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
     ```
 
-### Configuring the editor
+## Configuring the editor
 
 The editor accepts the following properties:
 
@@ -99,16 +97,18 @@ The editor accepts the following properties:
 
 None of the configuration properties are **required** for `tinymce-vue` to work. Specify a {{site.cloudname}} API key using `api-key` to remove the `This domain is not registered...` warning message.
 
-#### `api-key`
+### `api-key`
 {{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
 {% include misc/get-an-api-key.md %}
 
-**Default value:** `no-api-key`
+Default value
+: `no-api-key`
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `api-key`
+#### Example: Using `api-key`
 
 ```html
 <editor
@@ -116,11 +116,13 @@ None of the configuration properties are **required** for `tinymce-vue` to work.
 />
 ```
 
-#### `cloud-channel`
+### `cloud-channel`
 
-**Default value:** `{{site.productmajorversion}}`
+Default value
+: `'{{site.productmajorversion}}'`
 
-**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
+Possible values
+: `'{{site.productmajorversion}}-stable'`, `'{{site.productmajorversion}}-testing'`, `'{{site.productmajorversion}}-dev'`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
@@ -139,14 +141,16 @@ Such as:
 ```
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels).
 
-#### `disabled`
+### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
-##### Example: Using `disabled`
+#### Example: Using `disabled`
 
 ```html
 <editor
@@ -154,14 +158,16 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 />
 ```
 
-#### `id`
+### `id`
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method. Defaults to an automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Default value:** Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
+Default value
+: Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `id`
+#### Example: Using `id`
 
 ```html
 <editor
@@ -169,16 +175,18 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 />
 ```
 
-#### `init`
+### `init`
 Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
-**Default value:** `"{% raw %}{{% endraw %} {% raw %}}{% endraw %}"`
+Default value
+: `"{% raw %}{{% endraw %} {% raw %}}{% endraw %}"`
 
-**Type:** Object
+Type
+: `Object`
 
-##### Example: Using `init`
+#### Example: Using `init`
 
 ```html
 <editor
@@ -191,14 +199,16 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 />
 ```
 
-#### `initial-value`
+### `initial-value`
 Initial content of the editor when the editor is initialized.
 
-**Default value:** `" "`
+Default value
+: `" "`
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `initial-value`
+#### Example: Using `initial-value`
 
 ```html
 <editor
@@ -206,16 +216,18 @@ Initial content of the editor when the editor is initialized.
 />
 ```
 
-#### `inline`
+### `inline`
 Used to set the editor to inline mode. Using `<editor :inline=true />` is the same as setting `{inline: true}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
-##### Example: Using `inline`
+#### Example: Using `inline`
 
 ```html
 <editor
@@ -223,17 +235,19 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 />
 ```
 
-#### `model-events`
+### `model-events`
 
 Sets the trigger events for [v-model events](#forminputbindingsv-model).
 
 For a list of available {{site.productname}} events, see: [Available Events - Editor events]({{site.baseurl}}/advanced/events/#editorcoreevents).
 
-**Default value:** `"change keyup undo redo"`.
+Default value
+: `'change keyup undo redo'`.
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `model-events`
+#### Example: Using `model-events`
 
 ```html
 <editor
@@ -241,17 +255,20 @@ For a list of available {{site.productname}} events, see: [Available Events - Ed
 />
 ```
 
-#### `output-format`
+### `output-format`
 
 Used to specify the format of the content emitted via the `input` event. This affects the format of the content used in conjunction with data binding.
 
-**Type:** String
+Type
+: `String`
 
-**Default value:** `html`
+Default value
+: `'html'`
 
-**Possible values:** `html`, `text`
+Possible values
+: `'html'`, `'text'`
 
-##### Example: Using `output-format`
+#### Example: Using `output-format`
 
 ```html
 <editor
@@ -259,14 +276,15 @@ Used to specify the format of the content emitted via the `input` event. This af
 />
 ```
 
-#### `plugins`
+### `plugins`
 Used to include plugins for the editor. Using `<editor plugins="lists code" />` is the same as setting `{plugins: 'lists code'}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
-**Type:** String or Array
+Type
+: `String` or `Array`
 
-##### Example: Using `plugins`
+#### Example: Using `plugins`
 
 ```html
 <editor
@@ -274,14 +292,16 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 />
 ```
 
-#### `tag-name`
+### `tag-name`
 Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML element for the editor in inline mode.
 
-**Default value:** `div`
+Default value
+: `'div'`
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `tag-name`
+#### Example: Using `tag-name`
 
 ```html
 <editor
@@ -290,16 +310,18 @@ Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML el
 />
 ```
 
-#### `toolbar`
+### `toolbar`
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic" />` is the same as setting `{toolbar: 'bold italic'}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+Possible values
+: See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `toolbar`
+#### Example: Using `toolbar`
 
 ```html
 <editor
@@ -308,12 +330,13 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 />
 ```
 
-#### `tinymce-script-src`
+### `tinymce-script-src`
 Use the `tinymce-script-src` prop to specify an external version of TinyMCE to lazy load.
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `tinymce-script-src`
+#### Example: Using `tinymce-script-src`
 
 ```html
 <editor
@@ -321,7 +344,7 @@ Use the `tinymce-script-src` prop to specify an external version of TinyMCE to l
 />
 ```
 
-### Form Input Bindings: `v-model`
+## Form Input Bindings: `v-model`
 
 The `v-model` directive can be used to create a two-way data binding. For example:
 
@@ -331,7 +354,7 @@ The `v-model` directive can be used to create a two-way data binding. For exampl
 
 For information on `v-model` and form input bindings, see: [Vue.js documentation - Form Input Bindings](https://vuejs.org/v2/guide/forms.html).
 
-### Event binding
+## Event binding
 
 Functions can be bound to editor events, such as:
 

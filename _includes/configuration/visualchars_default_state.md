@@ -2,11 +2,14 @@
 
 This option enables specifying the default state of the Visual Characters plugin.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `visualchars_default_state`
 

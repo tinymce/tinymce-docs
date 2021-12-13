@@ -4,7 +4,8 @@ This option allows you to set the maximum width that a user can stretch the enti
 
 > **Note**: This behavior is different than the [`autoresize`]({{site.baseurl}}/plugins/opensource/autoresize/) plugin, which controls the resizing of the editable area only, not the entire editor.
 
-**Type:** `Number`
+Type
+: `Number`
 
 ### Example: Using `max_width`
 

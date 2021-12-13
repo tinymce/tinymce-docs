@@ -34,7 +34,6 @@
   - [Emoticons (emoticons)](#emoticonsemoticons)
   - [Full Screen (fullscreen)](#fullscreenfullscreen)
   - [Help (help)](#helphelp)
-  - [Horizontal Rule (hr)](#horizontalrulehr)
   - [Image (image)](#imageimage)
   - [Image Tools (imagetools)](#imagetoolsimagetools)
   - [Import CSS (importcss)](#importcssimportcss)
@@ -180,10 +179,6 @@
 ### Help (`help`)
 
 {% include plugin_files/plugin-file-list-help.md %}
-
-### Horizontal Rule (`hr`)
-
-{% include plugin_files/plugin-file-list-hr.md %}
 
 ### Image (`image`)
 

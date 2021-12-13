@@ -1,5 +1,3 @@
-## TinyMCE Angular technical reference
-
 **Covered in this section:**
 
 - [Supported Angular versions](#supportedangularversions)
@@ -31,7 +29,7 @@
   - [`allowedEvents`](#allowedevents)
   - [`ignoreEvents`](#ignoreevents)
 
-### Supported Angular versions
+## Supported Angular versions
 
 The following table shows the supported versions of Angular and the required version of the `tinymce-angular` integration package.
 
@@ -41,7 +39,7 @@ The following table shows the supported versions of Angular and the required ver
 | 5 to 8 | 3.x |
 | 4 or older | Not Supported |
 
-### Installing the TinyMCE Angular integration using NPM
+## Installing the TinyMCE Angular integration using NPM
 
 To install the `tinymce-angular` package and save it to your `package.json`.
 
@@ -49,7 +47,7 @@ To install the `tinymce-angular` package and save it to your `package.json`.
 $ npm install --save @tinymce/tinymce-angular
 ```
 
-### Using the TinyMCE Angular integration
+## Using the TinyMCE Angular integration
 
 1. Import the `EditorModule` from the npm package using:
 
@@ -80,7 +78,7 @@ $ npm install --save @tinymce/tinymce-angular
     <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
     ```
 
-### Configuring the editor
+## Configuring the editor
 
 The editor accepts the following properties:
 
@@ -101,16 +99,18 @@ The editor accepts the following properties:
 
 None of the configuration properties are **required** for `tinymce-angular` to work. Specify a {{site.cloudname}} API key using `apiKey` to remove the `This domain is not registered...` warning message.
 
-#### `apiKey`
+### `apiKey`
 {{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
 {% include misc/get-an-api-key.md %}
 
-**Default value:** `no-api-key`
+Default value
+: `no-api-key`
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `apiKey`
+#### Example: Using `apiKey`
 
 ```html
 <editor
@@ -118,11 +118,13 @@ None of the configuration properties are **required** for `tinymce-angular` to w
 ></editor>
 ```
 
-#### `cloudChannel`
+### `cloudChannel`
 
-**Default value:** `{{site.productmajorversion}}`
+Default value
+: `{{site.productmajorversion}}`
 
-**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
+Possible values
+: `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
@@ -140,14 +142,16 @@ Such as:
 ```
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels).
 
-#### `disabled`
+### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
-##### Example: Using `disabled`
+#### Example: Using `disabled`
 
 ```html
 <editor
@@ -155,14 +159,16 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 ></editor>
 ```
 
-#### `id`
+### `id`
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method. Defaults to an automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Default value:** Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
+Default value
+: Automatically generated [UUID](https://tools.ietf.org/html/rfc4122).
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `id`
+#### Example: Using `id`
 
 ```html
 <editor
@@ -170,16 +176,18 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 ></editor>
 ```
 
-#### `init`
+### `init`
 Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
-**Default value:** `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
+Default value
+: `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
 
-**Type:** Object
+Type
+: `Object`
 
-##### Example: Using `init`
+#### Example: Using `init`
 
 ```html
 <editor
@@ -192,14 +200,16 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 ></editor>
 ```
 
-#### `initialValue`
+### `initialValue`
 Initial content of the editor when the editor is initialized.
 
-**Default value:** `' '`
+Default value
+: `' '`
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `initialValue`
+#### Example: Using `initialValue`
 
 ```html
 <editor
@@ -207,16 +217,18 @@ Initial content of the editor when the editor is initialized.
 ></editor>
 ```
 
-#### `inline`
+### `inline`
 Used to set the editor to inline mode. Using `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
-**Default value:** `false`
+Default value
+: `false`
 
-**Possible values:**  `true`, `false`
+Possible values
+: `true`, `false`
 
-##### Example: Using `inline`
+#### Example: Using `inline`
 
 ```html
 <editor
@@ -224,14 +236,15 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 ></editor>
 ```
 
-#### `plugins`
+### `plugins`
 Used to include plugins for the editor. Using `<editor plugins="lists code"></editor>` is the same as setting `{plugins: 'lists code'}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
-**Type:** String or Array
+Type
+: `String` or `Array`
 
-##### Example: Using `plugins`
+#### Example: Using `plugins`
 
 ```html
 <editor
@@ -239,17 +252,20 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 ></editor>
 ```
 
-#### `outputFormat`
+### `outputFormat`
 
 Used to specify the format of the content emitted by the `tinymce-angular` component when used in conjunction with forms or plain data bindings.
 
-**Type:** String
+Type
+: `String`
 
-**Default value:** `html`
+Default value
+: `'html'`
 
-**Possible values:** `html`, `text`
+Possible values
+: `'html'`, `'text'`
 
-##### Example: Using `outputFormat`
+#### Example: Using `outputFormat`
 
 ```html
 <editor
@@ -257,14 +273,16 @@ Used to specify the format of the content emitted by the `tinymce-angular` compo
 ></editor>
 ```
 
-#### `tagName`
+### `tagName`
 Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define the HTML element for the editor in inline mode.
 
-**Default value:** `div`
+Default value
+: `'div'`
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `tagName`
+#### Example: Using `tagName`
 
 ```html
 <editor
@@ -273,16 +291,18 @@ Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define t
 ></editor>
 ```
 
-#### `toolbar`
+### `toolbar`
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></editor>` is the same as setting `{toolbar: 'bold italic'}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+Possible values
+: See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-**Type:** String
+Type
+: `String`
 
-##### Example: Using `toolbar`
+#### Example: Using `toolbar`
 
 ```html
 <editor
@@ -291,7 +311,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 ></editor>
 ```
 
-### Using the `ngModel` directive
+## Using the `ngModel` directive
 
 The `ngModel` directive can be added to use the editor in a form:
 
@@ -301,19 +321,22 @@ The `ngModel` directive can be added to use the editor in a form:
 
 For information on using `NgModel`, see: [Angular documentation - NgModel](https://angular.io/api/forms/NgModel).
 
-#### `modelEvents`
+### `modelEvents`
 
 > **Note**: This property requires `tinymce-angular` 4.0.0 or newer
 
 Used to specify the events that trigger the `NgModelChange` to emit.
 
-**Default value:** `"change input undo redo"`.
+Default value
+: `'change input undo redo'`.
 
-**Possible value:** A space separated list of TinyMCE editor events.
+Possible value
+: A space separated list of TinyMCE editor events.
 
-**Type** String
+Type
+: `String`
 
-##### Example: Using `modelEvents`
+#### Example: Using `modelEvents`
 
 ```html
 <editor
@@ -321,7 +344,7 @@ Used to specify the events that trigger the `NgModelChange` to emit.
 ></editor>
 ```
 
-### Using with reactive forms
+## Using with reactive forms
 
 To use {{site.productname}} Angular component with reactive forms:
 
@@ -334,7 +357,7 @@ To use {{site.productname}} Angular component with reactive forms:
 
 For information on using reactive forms, see: [Angular documentation - Reactive Forms](https://angular.io/guide/reactive-forms).
 
-### Event binding
+## Event binding
 
 Functions can be bound to editor events, such as:
 
@@ -349,7 +372,7 @@ When the handler is called (`handleEvent` in this example), it is called with an
 
 The following events are available:
 
-#### Supported browser events
+### Supported browser events
 
 * `onBeforePaste`
 * `onBlur`
@@ -380,7 +403,7 @@ The following events are available:
 * `onPaste`
 * `onSelectionChange`
 
-#### Supported TinyMCE events
+### Supported TinyMCE events
 
 * `onActivate`
 * `onAddUndo`
@@ -421,17 +444,19 @@ The following events are available:
 
 By default, all the available events will trigger from the editor to the `tinymce-angular` component. To limit the events triggering in the component, use the `allowedEvents` and `ignoreEvents` properties.
 
-#### `allowedEvents`
+### `allowedEvents`
 
 > **Note**: This property requires `tinymce-angular` 4.2.0 or newer
 
 Used to provide an allow-list of valid events to trigger from the editor to the `tinymce-angular` component. By default, the component will emit all the events listed in the [Event binding section](#eventbinding).
 
-**Possible values:** A comma separated list of events to allow.
+Possible values
+: A comma separated list of events to allow.
 
-**Type** String
+Type
+: `String`
 
-##### Example: Using `allowedEvents`
+#### Example: Using `allowedEvents`
 
 ```html
 <editor
@@ -439,17 +464,19 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 ></editor>
 ```
 
-#### `ignoreEvents`
+### `ignoreEvents`
 
 > **Note**: This property requires `tinymce-angular` 4.2.0 or newer
 
 Used to block a list of events from the `tinymce-angular` component.
 
-**Possible values:** A comma separated list of events to ignore.
+Possible values
+: A comma separated list of events to ignore.
 
-**Type** String
+Type
+: `String`
 
-##### Example: Using `ignoreEvents`
+#### Example: Using `ignoreEvents`
 
 ```html
 <editor

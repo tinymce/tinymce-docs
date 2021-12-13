@@ -4,7 +4,8 @@ This option allows you to get XML escaped content out of {{site.productname}}. B
 
 This option is disabled by default.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `encoding`
 

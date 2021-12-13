@@ -2,9 +2,11 @@
 
 This option allows you to provide {{site.productname}} with a date/time format that all 'modified' date templates will use.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default:** `'%Y-%m-%d'`
+Default
+: `'%Y-%m-%d'`
 
 #### Example: Using `template_mdate_format`
 

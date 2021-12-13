@@ -2,11 +2,14 @@
 
 This option allows you to specify whether the editor should parse and keep conditional comments.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `allow_conditional_comments`
 

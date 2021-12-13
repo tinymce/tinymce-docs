@@ -6,11 +6,14 @@ The html5 schema is the full HTML5 specification including the older HTML4 eleme
 
 Also note that all event attributes are excluded by default since it's a bad practice to use inline script handles like "onclick". You can manually add extra elements and attributes using the [extended_valid_elements](#extended_valid_elements) option.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `html5`
+Default Value
+: `'html5'`
 
-**Possible Values:** `html5`, `html4`, `html5-strict`
+Possible Values
+: `'html5'`, `'html4'`, `'html5-strict'`
 
 ### Example: Using `schema`
 

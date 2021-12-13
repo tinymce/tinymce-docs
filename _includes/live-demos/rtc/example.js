@@ -11,7 +11,7 @@ const connectedUsers = {};
 tinymce.init({
   selector: 'textarea#rtc',
   plugins:
-    'rtc advlist charmap emoticons help hr image insertdatetime link ' +
+    'rtc advlist charmap emoticons help image insertdatetime link ' +
     'lists powerpaste save tabfocus visualblocks wordcount',
   menubar: 'file edit insert view format table tools help',
   toolbar:

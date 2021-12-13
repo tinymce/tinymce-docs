@@ -2,7 +2,8 @@
 
 This option lets you specify a predefined list of classes to add to an image. It takes the form of an array with items to set classes on links.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `image_class_list`
 

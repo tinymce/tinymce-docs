@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Blazor integration
+title: Using the TinyMCE package with the Blazor framework
 title_nav: Using a package manager
-description: Blazor TinyMCE component.
+description: A guide on integrating the TinyMCE package into the Blazor framework.
 keywords: integration integrate blazor blazorapp
 ---
 

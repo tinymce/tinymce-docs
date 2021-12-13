@@ -2,11 +2,14 @@
 
 This option allows disable the type ahead url field feature.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `typeahead_urls`
 

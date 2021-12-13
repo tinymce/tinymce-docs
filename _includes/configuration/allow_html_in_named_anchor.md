@@ -2,11 +2,14 @@
 
 This option allows you to specify whether the editor should parse and keep `html` within named `anchor` tags.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `allow_html_in_named_anchor`
 

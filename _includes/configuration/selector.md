@@ -6,7 +6,8 @@ When using this option in {{site.productname}}'s regular editing mode, the eleme
 
 ### Replace all textarea elements on the page
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Replace all textarea elements with TinyMCE
 
@@ -18,7 +19,8 @@ tinymce.init({
 
 ### Replace a textarea element with id "editable"
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Replace a textarea element with the `id` "editable"
 
@@ -32,7 +34,8 @@ When using this option in {{site.productname}}'s inline editing mode, the select
 
 ### Inline editing mode on a div element with id "editable"
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Add an inline editor on a div with the `id` "editable"
 

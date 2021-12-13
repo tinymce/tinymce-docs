@@ -4,11 +4,14 @@
 
 This option lets you disable the logic that converts list like paragraph structures into real semantic HTML lists.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `paste_convert_word_fake_lists`
 

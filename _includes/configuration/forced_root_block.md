@@ -9,7 +9,8 @@ If you set this option to `false` it will never produce `p` tags on enter, or, a
 {% endif %}
 > **Warning**: Not using `p` elements as the root block will impair the functionality of the editor.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `forced_root_block`
 

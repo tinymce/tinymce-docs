@@ -72,7 +72,8 @@ A registered format can also be used by name with the built-in [formatter]({{ si
 
 Tag name of the block element to use as a wrapper, for example, `h1`. Existing block elements within the selection are replaced with this block element.
 
-**Type:** `String`
+Type
+: `String`
 
 ##### Example: Using `block` format
 
@@ -90,7 +91,8 @@ tinymce.init({
 
 Tag name of the inline element to use as a wrapper, for example, `span` is used to wrap the current selection.
 
-**Type:** `String`
+Type
+: `String`
 
 ##### Example: Using `inline` format
 
@@ -108,7 +110,8 @@ tinymce.init({
 
 CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table.
 
-**Type:** `String`
+Type
+: `String`
 
 ##### Example: Using `selector` format
 
@@ -138,7 +141,8 @@ Space-separated list of classes that are:
 
 To replace existing classes, use the `class` attribute.
 
-**Type:** `String`
+Type
+: `String`
 
 ##### Example: Using `classes` parameter
 
@@ -156,7 +160,8 @@ tinymce.init({
 
 Key/value object with CSS styles to apply to the selected or newly created inline/block element (e.g. `color`, `backgroundColor`, `textDecoration`, etc).
 
-**Type:** `Object`
+Type
+: `Object`
 
 ##### Example: Using `styles` parameter
 
@@ -174,7 +179,8 @@ tinymce.init({
 
 Key/value object with attributes to apply to the selected or newly created inline/block element.
 
-**Type:** `Object`
+Type
+: `Object`
 
 ##### Example: Using `attributes` parameter
 
@@ -209,9 +215,11 @@ tinymce.init({
 
 Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for `underline` and `strikethrough` formats.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default:** `false`
+Default
+: `false`
 
 ##### Example: Using `exact` parameter
 
@@ -230,9 +238,11 @@ tinymce.init({
 
 States that the format is a container format for block elements. For example, a `div` wrapper or `blockquote`.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default:** `false`
+Default
+: `false`
 
 ##### Example: Using `wrapper`
 
@@ -250,9 +260,11 @@ tinymce.init({
 
 Specifies what the remove behavior of the element should be when the format is removed.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default:** `none` for `Selector` formats and `empty` for all other format types.
+Default
+: `none` for `Selector` formats and `empty` for all other format types.
 
 This can be set to three different modes:
 
@@ -287,7 +299,8 @@ This option controls if the selection should expand upwards to the closest match
 
 So if the selection is from _a_ to _b_ in this html contents `<h1><b>[a</b></h1><p>b]</p>` then the _h1_ will be removed even if it's not part of the actual selection.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
 ##### Example: Using `block_expand`
 
@@ -322,9 +335,11 @@ tinymce.init({
 
 Enables control for removing the child elements of the matching format. This is set to `false`  by default on selector formats. As a result, when a class is removed from a selected table class, disabling `deep` retains the class in the child elements within the other nested tables.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default:** `false` for `selector` formats
+Default
+: `false` for `selector` formats
 
 ##### Example: Using `deep`
 
@@ -356,9 +371,11 @@ After merge:
 <span class="myclass">sometext</span>
 ```
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default:** `true`
+Default
+: `true`
 
 ##### Example: Using `merge_siblings`
 
@@ -376,7 +393,8 @@ tinymce.init({
 
 This example overrides some of the built-in formats and tells {{site.productname}} to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
 
-**Type:** `Object`
+Type
+: `Object`
 
 #### Example: Using the `formats` option
 
@@ -428,7 +446,8 @@ tinymce.activeEditor.formatter.apply('custom_format', { value: 'red' });
 
 Use the `removeformat` option to specify how the `clear formatting` feature should work in the editor.
 
-**Type:** `Array`
+Type
+: `Array`
 
 #### Example: Removing a format
 

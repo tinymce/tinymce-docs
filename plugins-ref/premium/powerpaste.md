@@ -169,7 +169,7 @@ The PowerPaste plugin provides the following JavaScript command.
 
 ### What happens when copy and pasting from Microsoft Word?
 
-When content is copied from an application (such as Microsoft Word), the application places a HTML representation of the copied content onto the computer's clipboard. PowerPaste uses the HTML from the clipboard and cannot access the file directly.
+When content is copied from an application (such as Microsoft Word), the application places an HTML representation of the copied content onto the computer's clipboard. PowerPaste uses the HTML from the clipboard and cannot access the file directly.
 
 > **Note**: Web browsers and the applications running in them cannot directly access files on the device for security reasons.
 
@@ -177,7 +177,7 @@ Microsoft Word or Microsoft Excel can create content that does not have an equiv
 
 ### Why are some images or elements from Microsoft Word not appearing?
 
-Some "images" in Microsoft Word cannot be represented as image files in a HTML document, such as: charts, drawings, and "Word Art". PowerPaste may not be able to paste these items into the {{site.productname}} editor, because they were not represented as HTML-compatible images on the clipboard. Microsoft Word also allows some formats on images that cannot be represented in HTML, such as wrap and inline.
+Some "images" in Microsoft Word cannot be represented as image files in an HTML document, such as: charts, drawings, and "Word Art". PowerPaste may not be able to paste these items into the {{site.productname}} editor, because they were not represented as HTML-compatible images on the clipboard. Microsoft Word also allows some formats on images that cannot be represented in HTML, such as wrap and inline.
 
 Microsoft Word can also create content that cannot be accurately recreated in HTML, such as columns, page headers and page footers. Some of these elements may not be copied to the clipboard by Microsoft Word, such as page headers and footers.
 

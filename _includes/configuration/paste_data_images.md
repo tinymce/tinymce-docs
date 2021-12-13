@@ -6,11 +6,14 @@ Setting `paste_data_images` to `"true"` will allow the pasted images, while sett
 
 For example, Firefox enables you to paste images directly into any `contentEditable` field. This is normally not something people want, so this option is `"false"` by default. For example, a 600kb embedded image would block page loads and prevents it from being cached on multiple pages.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `paste_data_images`
 

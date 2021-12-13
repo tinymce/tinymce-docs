@@ -6,7 +6,8 @@ When adding a new attribute by specifying an existing element rule (e.g. `img`),
 
 The below example replaces the current `img` rule (including the global element rules).
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `extended_valid_elements`
 

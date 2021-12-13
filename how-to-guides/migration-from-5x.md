@@ -57,6 +57,6 @@ Integrators can remove `hr` from the `plugins` section of their {{site.productna
 
 The Print plugin has been moved to Core in {{site.productname}} 6.0.
 
-The print toolbar button, menu item, shortcut, and command will now work by default, without needing to specify `print` as a plugin.
+The toolbar button, menu item, shortcut, and command for printing content are now available by default, without needing to specify `print` as a plugin.
 
 Integrators can remove `print` from the `plugins` section of their {{site.productname}} configuration.

@@ -1,0 +1,1 @@
+There are two options for adding plugins to {{site.productname}}: `plugins` and `external_plugins`. {{site.companyname}} recommends using the `plugins` option for plugins bundled with the product or included in your cloud subscription. Custom or third-party plugins should be included using the `external_plugins` option to simplify updating and upgrading {{site.productname}}.

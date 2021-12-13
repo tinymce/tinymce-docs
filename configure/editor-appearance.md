@@ -22,7 +22,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/elementpath.md %}
 
-{% include configuration/event_root.md %}
 
 {% include configuration/fixed_toolbar_container.md %}
 
@@ -32,7 +31,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/fontsize_formats.md %}
 
-{% include configuration/height.md %}
 
 {% include configuration/icons.md %}
 
@@ -42,27 +40,21 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/lineheight_formats.md %}
 
-{% include configuration/max_height.md %}
 
-{% include configuration/max_width.md %}
 
 {% include configuration/menu.md %}
 
 {% include configuration/menubar.md %}
 
-{% include configuration/min_height.md %}
-
-{% include configuration/min_width.md %}
 
 {% include configuration/mobile.md %}
 
-{% include configuration/placeholder.md %}
+{% include configuration/event_root.md %}
 
 {% include configuration/preview_styles.md %}
 
 {% include configuration/removed_menuitems.md %}
 
-{% include configuration/resize.md %}
 
 {% include configuration/skin.md %}
 
@@ -96,4 +88,3 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/toolbar_sticky_offset.md %}
 
-{% include configuration/width.md %}

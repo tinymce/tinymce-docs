@@ -157,6 +157,7 @@ tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nod
 tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceFocus');
+tinymce.activeEditor.execCommand('mcePrint');
 ```
 
 ### Plugin Commands

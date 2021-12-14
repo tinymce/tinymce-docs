@@ -98,6 +98,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
 | mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
 | mceFocus             | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.                                                                                                                        |
+| mcePrint             | Opens the browser's print dialog for the current page.                                                                                        |
 
 **Examples**
 
@@ -156,6 +157,7 @@ tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nod
 tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceFocus');
+tinymce.activeEditor.execCommand('mcePrint');
 ```
 
 ### Plugin Commands
@@ -190,7 +192,6 @@ Commands are available for the following plugins:
 - [Permanent Pen](#permanentpen)
 - [PowerPaste](#powerpaste)
 - [Preview](#preview)
-- [Print](#print)
 - [Save](#save)
 - [Search and Replace](#searchandreplace)
 - [Spell Checker Pro](#spellcheckerpro)
@@ -368,12 +369,6 @@ The following command requires the [PowerPaste (`powerpaste`)]({{site.baseurl}}/
 The following command requires the [Preview (`preview`)]({{site.baseurl}}/plugins/opensource/preview/) plugin.
 
 {% include commands/preview-cmds.md %}
-
-#### Print
-
-The following command requires the [Print (`print`)]({{site.baseurl}}/plugins/opensource/print/) plugin.
-
-{% include commands/print-cmds.md %}
 
 #### Save
 

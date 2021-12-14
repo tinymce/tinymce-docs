@@ -15,6 +15,7 @@ This chapter describes the migration process and workarounds for customers using
 ## Contents
 
 * [Editor-Core](#editor-core)
+* [Plugin Changes](#pluginchanges)
 
 ## Editor-Core
 
@@ -51,3 +52,11 @@ The Horizontal rule (`hr`) plugin has been moved to Core in {{site.productname}}
 The `hr` toolbar button and menu item will now work by default, without needing to specify `hr` as a plugin.
 
 Integrators can remove `hr` from the `plugins` section of their {{site.productname}} configuration.
+
+#### Print plugin moved to TinyMCE Core
+
+The Print plugin has been moved to Core in {{site.productname}} 6.0.
+
+The toolbar button, menu item, shortcut, and command for printing content are now available by default, without needing to specify `print` as a plugin.
+
+Integrators can remove `print` from the `plugins` section of their {{site.productname}} configuration.

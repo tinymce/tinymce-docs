@@ -16,6 +16,7 @@ The following new features were added for the {{site.productname}} 6.0 release.
 
 ### Feature name
 
+
 ### Additional new features
 
 {{site.productname}} 6.0 introduces the following minor new features:
@@ -50,6 +51,20 @@ For information about horizontal rule-related functionality, see:
 - [Core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons)
 - [Core menu items]({{site.baseurl}}/advanced/available-menu-items/#thecoremenuitems)
 - [Core commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands)
+
+### Print plugin moved to TinyMCE Core
+
+The Print plugin has been moved to Core in {{site.productname}} 6.0.
+
+The toolbar button, menu item, shortcut, and command for printing content are now available by default, without needing to specify `print` as a plugin.
+
+Integrators can remove `print` from the `plugins` section of their {{site.productname}} configuration.
+
+For information about print-related functionality, see:
+- [Core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons)
+- [Core menu items]({{site.baseurl}}/advanced/available-menu-items/#thecoremenuitems)
+- [Core commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands)
+- [Shortcuts]({{site.baseurl}}/advanced/keyboard-shortcuts/#editorkeyboardshortcuts)
 
 ### Additional changes
 

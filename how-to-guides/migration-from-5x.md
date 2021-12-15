@@ -43,7 +43,7 @@ The Tabfocus plugin has been removed in {{site.productname}} 6.0. This includes 
 
 Instead, tab order should be configured by specifying the [`tabindex` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) on the target element for the editor, or the equivalent if using a framework. This allows the tab order to be handled by the browser. In inline mode, this works as in {{site.productname}} 5.x. In iframe (classic editor) mode, {{site.productname}} now copies the `tabindex` attribute from the target element to the editor's iframe, to allow this to work correctly.
 
-This allows integrators to define the tab order of the page using standard HTML attributes, or the equivalent in any frameworks used, without needing to specially configure {{site.productname}}. 
+This allows integrators to define the tab order of the page using standard HTML attributes, without needing to specially configure {{site.productname}}. 
 
 For information on specifying tab order, see: [Tab order]({{site.baseurl}}/configure/accessibility#taborder).
 ### Option/Setting changes

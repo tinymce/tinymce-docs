@@ -2,7 +2,8 @@
 
 The **invalid_elements** option instructs the editor to remove specific elements when {{site.productname}} executes a cleanup. This option should contain a comma-separated list of element names to exclude from the content.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `invalid_elements`
 

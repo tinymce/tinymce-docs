@@ -5,9 +5,11 @@ Used for setting the level of referrer information sent when loading plugins and
 * Improve the privacy of end-users.
 * Assist with server-side filtering of cross-origin requests for {{site.productname}} resources.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `''`
+Default Value
+: `''`
 
 For a list of valid referrer policies (directives), see: [MDN Web Docs - Referrer-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy).
 

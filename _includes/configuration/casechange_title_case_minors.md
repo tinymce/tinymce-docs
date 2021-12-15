@@ -2,9 +2,11 @@
 
 The `casechange_title_case_minors` option is used to customize the rules while using **Title Case.** This option makes it possible to configure what words not to capitalize. All other words not specified by this rule set will be capitalized overriding the default **Title Case** rule set.
 
-**Type:** `Array`
+Type
+: `Array`
 
-**Default:** _A rule set based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP)_
+Default
+: _A rule set based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP)_
 
 ##### Example: Using `casechange_title_case_minors`
 

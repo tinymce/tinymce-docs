@@ -2,11 +2,11 @@
 
 The `advtable_value_series` option configures one or more series of values for populating cells in a table. This option can be used to create row identifiers.
 
-**Type:** `Object`
+Type
+: `Object`
 
-**Default Value:**
-
-```js
+Default Value
+: ```js
 {
   // Natural number series
   numeric: {

@@ -6,11 +6,14 @@
 
 The `fullscreen_native` option allows the editor to use the browser full screen mode, rather than only filling the [browser window](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts#What_is_a_viewport) when full screen mode is enabled. This functionality is the same as full screen mode for online videos.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible values:** `true`, `false`
+Possible values
+: `true`, `false`
 
 ### Example: Using `fullscreen_native`
 

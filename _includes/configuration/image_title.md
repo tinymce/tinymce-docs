@@ -2,11 +2,14 @@
 
 This options allows you enable the image title input field in the image dialog.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `image_title`
 

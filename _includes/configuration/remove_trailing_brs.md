@@ -4,11 +4,14 @@ This option allows you to disable {{site.productname}}'s default behavior of rem
 
 [Gecko](https://en.wikipedia.org/wiki/Gecko_(software)) and [WebKit](https://en.wikipedia.org/wiki/WebKit) browsers inject these elements to make it possible to place the caret in empty blocks. This logic attempts to remove these elements while also keeping tags that were intentionally placed by the user.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `remove_trailing_brs`
 

@@ -4,11 +4,14 @@ This option configures {{site.productname}} to use the browser's native spell ch
 
 `browser_spellcheck` is not available in either Internet Explorer 8 or 9, as neither browser has native spell checker functionality. For more complete browser support, we recommend using [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ```js
 tinymce.init({

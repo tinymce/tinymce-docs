@@ -108,11 +108,6 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}
-{% assign pluginname = "Horizontal Rule" %}
-{% assign plugincode = "hr" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
 {% assign pluginname = "Image" %}
 {% assign plugincode = "image" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
@@ -176,11 +171,6 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% assign plugincategory = "opensource" %}
 {% assign pluginname = "Preview" %}
 {% assign plugincode = "preview" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Print" %}
-{% assign plugincode = "print" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}

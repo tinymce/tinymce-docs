@@ -9,9 +9,11 @@ This option provides the ability to specify which built-in emoji database to use
 {% assign license_agreement_name = "CC-BY 4.0" %}
 {% include misc/under-license.md %}
 
-**Type:** `String`
+Type
+: `String`
 
-**Default:** `emojis`
+Default
+: `'emojis'`
 
 #### Example: Using `emoticons_database`
 

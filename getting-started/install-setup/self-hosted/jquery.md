@@ -13,7 +13,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 
 ### Procedure
 
-1. In a HTML file, add a source script for source jQuery.
+1. In an HTML file, add a source script for source jQuery.
 
     If the project loads jQuery from https://code.jquery.com/, use the script provided by the [jQuery CDN](https://code.jquery.com/), which includes the `integrity` and `crossorigin` attributes.
 
@@ -82,7 +82,7 @@ To load a TinyMCE editor similar to the [Basic example]({{site.baseurl}}/demo/ba
         height: 500,
         menubar: false,
         plugins: [
-          'advlist autolink lists link image charmap print preview anchor',
+          'advlist autolink lists link image charmap preview anchor',
           'searchreplace visualblocks code fullscreen',
           'insertdatetime media table paste code help wordcount'
         ],

@@ -12,7 +12,8 @@ The URLs provided can be:
 - **Relative to the root directory of the web-server**: Including the leading "`/`" to indicate that it is relative to the web-server root, such as `/plugin.min.js`.
 - **Relative to the {{site.productname}} `base_url`**: A relative path without the leading "`/`", such as `../../myplugins/plugin.min.js`. By default, the `base_url` is the directory containing {{site.productname}} javascript file (such as `tinymce.min.js`). For information on the `base_url` option, see: [Integration and setup options - `base_url`](https://www.tiny.cloud/docs/configure/integration-and-setup/#base_url).
 
-**Type:** `Object`
+Type
+: `Object`
 
 ### Example: Using `external_plugins`
 

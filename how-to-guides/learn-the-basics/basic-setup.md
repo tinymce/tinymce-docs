@@ -33,7 +33,7 @@ tinymce.init({
 
 Snippets include the `selector` option, which is described below. Change the value of the working code block according to the HTML.
 
-Insert the snippet into a HTML document between the `<script>` tags and update the selector as described below.
+Insert the snippet into an HTML document between the `<script>` tags and update the selector as described below.
 
 ## Selector configuration
 
@@ -203,7 +203,7 @@ The following example is a basic {{site.productname}} configuration.
     width: 600,
     height: 300,
     plugins: [
-      'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+      'advlist autolink link image lists charmap preview anchor pagebreak',
       'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
       'table emoticons template paste help'
     ],
@@ -246,7 +246,7 @@ Selects the plugins to be included on load.
 
 ```js
 plugins: [
-  'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+  'advlist autolink link image lists charmap preview anchor pagebreak',
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
   'table emoticons template paste help'
 ],

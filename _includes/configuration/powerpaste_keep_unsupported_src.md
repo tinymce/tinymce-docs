@@ -4,9 +4,11 @@ Due to browser limitations, PowerPaste is not able to support all image types su
 
 For example, browsers do not allow PowerPaste to access the file system. If your application has access to the file system, setting `powerpaste_keep_unsupported_src` to `true` may allow you to replace unsupported images during post-processing using the original file paths.
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: powerpaste_keep_unsupported_src
 

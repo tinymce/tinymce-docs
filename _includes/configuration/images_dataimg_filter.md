@@ -4,7 +4,8 @@
 
 The **images_dataimg_filter** option is used to filter `<img>` elements before they are passed to [`image_upload_handler`]({{site.baseurl}}/configure/file-image-upload/#images_upload_handler) or [`images_upload_url`]({{site.baseurl}}/configure/file-image-upload/#images_upload_url). If the callback function provided returns `false` for an image, the image will not be uploaded.
 
-**Type:** `JavaScript Function`
+Type
+: `JavaScript Function`
 
 ### Example: Using `images_dataimg_filter`
 

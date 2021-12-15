@@ -4,7 +4,8 @@
 
 _Optional_ - This option sets the author's display name to be used when creating or replying to comments. If this option is omitted, then the author id is used instead.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `tinycomments_author_name`
 

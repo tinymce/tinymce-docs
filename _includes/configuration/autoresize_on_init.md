@@ -4,11 +4,14 @@
 
 This option allows you to set whether the editor will attempt to resize itself upon initialization. By default this option is set to `true`.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: `autoresize_on_init`
 

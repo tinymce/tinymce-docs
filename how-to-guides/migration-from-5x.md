@@ -22,6 +22,8 @@ This chapter describes the migration process and workarounds for customers using
 To migrate the core TinyMCE editor to TinyMCE 6, review the following sections:
 
 * [Cloud Delivery](#clouddelivery).
+* [Option/setting changes](#optionsettingchanges).
+* [Plugin Changes](#pluginchanges)
 
 ### Cloud Delivery
 
@@ -44,3 +46,28 @@ Instead, tab order should be configured by specifying the [`tabindex` attribute]
 This allows integrators to define the tab order of the page using standard HTML attributes, or the equivalent in any frameworks used, without needing to specially configure {{site.productname}}. 
 
 For information on specifying tab order, see: [Tab order]({{site.baseurl}}/configure/accessibility#taborder).
+### Option/Setting changes
+
+#### Renamed Options
+
+* The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
+* The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
+* The `target_list` option has been renamed to `link_target_list` for the `link` plugin.
+
+### Plugin Changes
+
+#### Horizontal rule plugin moved to TinyMCE Core
+
+The Horizontal rule (`hr`) plugin has been moved to Core in {{site.productname}} 6.0.
+
+The `hr` toolbar button and menu item will now work by default, without needing to specify `hr` as a plugin.
+
+Integrators can remove `hr` from the `plugins` section of their {{site.productname}} configuration.
+
+#### Print plugin moved to TinyMCE Core
+
+The Print plugin has been moved to Core in {{site.productname}} 6.0.
+
+The toolbar button, menu item, shortcut, and command for printing content are now available by default, without needing to specify `print` as a plugin.
+
+Integrators can remove `print` from the `plugins` section of their {{site.productname}} configuration.

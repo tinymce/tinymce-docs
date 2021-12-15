@@ -2,18 +2,19 @@
 
 The exact selection of buttons that will appear on the contextual toolbar can be controlled via `imagetools_toolbar` option.
 
-**Possible Values:**
-
-* `rotateleft`
+Possible Values
+: * `rotateleft`
 * `rotateright`
 * `flipv`
 * `fliph`
 * `editimage`
 * `imageoptions`
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'rotateleft rotateright | flipv fliph | editimage imageoptions'`
+Default Value
+: `'rotateleft rotateright | flipv fliph | editimage imageoptions'`
 
 #### Example: Using `imagetools_toolbar`
 

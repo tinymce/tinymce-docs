@@ -5,7 +5,8 @@
 This option enables you to force pixels or percentage sizes for tables. Setting this to true will force resizing by percentages and setting this to false
 will force pixel resizing. The default is to automatically detect what the table size is and just use that unit for resizing.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
 #### Example: Using `table_responsive_width`
 

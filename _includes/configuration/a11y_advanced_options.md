@@ -12,11 +12,14 @@ Setting `a11y_advanced_options` to `true`:
 
 > **Important**: When `a11y_advanced_options` is set to `true`, [`a11ychecker_allow_decorative_images`]({{site.baseurl}}/plugins/premium/a11ychecker/#a11ychecker_allow_decorative_images) will default to `true`.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `a11y_advanced_options`
 

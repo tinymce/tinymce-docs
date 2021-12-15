@@ -99,7 +99,7 @@ The editor will load the text content in the `tinymce-editor` element as the ini
 To add plugins and extend the functionality of the editor, add a string of plugin identifiers using the `plugins` attribute, such as:
 
 ```html
-<tinymce-editor plugins="advlist autolink link image lists charmap print preview"></tinymce-editor>
+<tinymce-editor plugins="advlist autolink link image lists charmap preview"></tinymce-editor>
 ```
 
 For a list of available plugins, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
@@ -210,7 +210,7 @@ The quick-insert toolbar is shown when a new line is added, providing buttons fo
 To add a quick-insert toolbar, add `"quickbars"` to the `plugins` attribute. To change the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute, such as:
 
 ```html
-<tinymce-editor plugins="quickbars hr pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
+<tinymce-editor plugins="quickbars pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
 ```
 
 The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Toolbar Buttons Available for TinyMCE]({{site.baseurl}}/advanced/available-toolbar-buttons/).

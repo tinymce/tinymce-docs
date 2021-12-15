@@ -2,7 +2,8 @@
 
 This option can be used together with the `imagetools_cors_hosts` option to allow credentials to be sent to the CORS host. This is not enabled by default since the server needs to have proper CORS headers to support this.
 
-**Type:** `String[]`
+Type
+: `String[]`
 
 #### Example: Using `imagetools_credentials_hosts`
 

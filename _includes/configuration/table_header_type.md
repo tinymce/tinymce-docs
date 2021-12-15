@@ -67,11 +67,14 @@ The `table_header_type` option has four different settings: `'section`', `'cells
 
 - `auto` - Finds the first existing header row in the table and uses the same structure. If no other table header row exists, the `section` header type will be applied.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'section'`
+Default Value
+: `'section'`
 
-**Possible Values:** `'section`', `'cells'`, `'sectionCells'`, `'auto'`
+Possible Values
+: `'section`', `'cells'`, `'sectionCells'`, `'auto'`
 
 #### Example: Using `table_header_type`
 

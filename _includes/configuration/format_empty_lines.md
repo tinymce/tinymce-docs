@@ -2,9 +2,11 @@
 
 This option allows "inline" formats to be applied to empty lines for multi-line selections. Examples of inline formats include bold (`<strong>`) and underline (`<span style="text-decoration: underline;">`).
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `false`
+Default Value
+: `false`
 
 ### Example: Using `format_empty_lines`
 

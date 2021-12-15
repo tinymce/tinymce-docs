@@ -2,11 +2,14 @@
 
 This option controls whether elements are output in the HTML or XHTML mode. `xhtml` is the default state for this option. This means that for example `<br />` will be `<br>` if you set this option to `html`.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `xhtml`
+Default Value
+: `'xhtml'`
 
-**Possible Values:** `xhtml`, `html`
+Possible Values
+: `'xhtml'`, `'html'`
 
 ### Example: Using `element_format`
 

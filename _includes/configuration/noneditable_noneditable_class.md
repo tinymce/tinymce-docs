@@ -4,9 +4,11 @@ This option allows you to specify the class name that {{site.productname}} will 
 
 Note that classes with the `mceItem` prefix are invisible within {{site.productname}}.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'mceNonEditable'`
+Default Value
+: `'mceNonEditable'`
 
 #### Example: Using `noneditable_noneditable_class`
 

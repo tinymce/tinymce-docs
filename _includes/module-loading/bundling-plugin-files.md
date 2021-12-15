@@ -34,7 +34,6 @@
   - [Emoticons (emoticons)](#emoticonsemoticons)
   - [Full Screen (fullscreen)](#fullscreenfullscreen)
   - [Help (help)](#helphelp)
-  - [Horizontal Rule (hr)](#horizontalrulehr)
   - [Image (image)](#imageimage)
   - [Image Tools (imagetools)](#imagetoolsimagetools)
   - [Import CSS (importcss)](#importcssimportcss)
@@ -47,7 +46,6 @@
   - [Page Break (pagebreak)](#pagebreakpagebreak)
   - [Paste (paste)](#pastepaste)
   - [Preview (preview)](#previewpreview)
-  - [Print (print)](#printprint)
   - [Quick Toolbar (quickbars)](#quicktoolbarquickbars)
   - [Save (save)](#savesave)
   - [Search and Replace (searchreplace)](#searchandreplacesearchreplace)
@@ -181,10 +179,6 @@
 
 {% include plugin_files/plugin-file-list-help.md %}
 
-### Horizontal Rule (`hr`)
-
-{% include plugin_files/plugin-file-list-hr.md %}
-
 ### Image (`image`)
 
 {% include plugin_files/plugin-file-list-image.md %}
@@ -232,10 +226,6 @@
 ### Preview (`preview`)
 
 {% include plugin_files/plugin-file-list-preview.md %}
-
-### Print (`print`)
-
-{% include plugin_files/plugin-file-list-print.md %}
 
 ### Quick Toolbar (`quickbars`)
 

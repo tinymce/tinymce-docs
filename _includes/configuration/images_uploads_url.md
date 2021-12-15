@@ -8,7 +8,8 @@ This option lets you specify a URL for the server-side upload handler. Upload wi
 
 Be sure to checkout a demo implementation of the server-side upload handler [here]({{ site.baseurl }}/advanced/php-upload-handler/) (written in PHP).
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `images_upload_url`
 

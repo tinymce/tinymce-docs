@@ -2,9 +2,11 @@
 
 This option allows you to provide a date format that all 'creation' date templates will use.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default:** `'%Y-%m-%d'`
+Default
+: `'%Y-%m-%d'`
 
 #### Example: Using `template_cdate_format`
 

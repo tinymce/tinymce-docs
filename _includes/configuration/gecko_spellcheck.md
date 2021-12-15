@@ -4,11 +4,14 @@
 
 This option allows you to disable [Gecko](https://en.wikipedia.org/wiki/Gecko_(software)) based browsers' internal spell checker from being used in {{site.productname}}.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ### Example: Using `gecko_spellcheck`
 

@@ -6,10 +6,25 @@
     - url: "cloud"
       pages:
       - url: "cloud-quick-start"
-      - url: "laravel-tiny-cloud"
+      - url: "react-cloud"
+      - url: "angular-cloud"
+      - url: "vue-cloud"
       - url: "blazor-cloud"
+      - url: "laravel-tiny-cloud"
     - url: "self-hosted"
       pages:
+      - url: "react"
+        pages:
+        - url: "react-pm"
+        - url: "react-zip"
+      - url: "angular"
+        pages:
+        - url: "angular-pm"
+        - url: "angular-zip"
+      - url: "vue"
+        pages:
+        - url: "vue-pm"
+        - url: "vue-zip"
       - url: "blazor"
         pages:
         - url: "blazor-pm"
@@ -18,13 +33,11 @@
         pages:
         - url: "laravel-composer-install"
         - url: "laravel-zip-install"
-      - url: "angular"
       - url: "bootstrap"
       - url: "django"
       - url: "jquery"
       - url: "expressjs"
       - url: "rails"
-      - url: "react"
       - url: "svelte"
       - url: "swing"
       - url: "vue"
@@ -45,12 +58,35 @@
     - url: "editor-content-css"
   - url: "environment-setup"
     pages:
+    - url: "react"
+      pages:
+      - url: "react-cloud"
+      - url: "react-pm"
+      - url: "react-zip"
+      - url: "react-ref"
+    - url: "angular"
+      pages:
+      - url: "angular-cloud"
+      - url: "angular-pm"
+      - url: "angular-zip"
+      - url: "angular-ref"
+    - url: "vue"
+      pages:
+      - url: "vue-cloud"
+      - url: "vue-pm"
+      - url: "vue-zip"
+      - url: "vue-ref"
     - url: "blazor"
       pages:
       - url: "blazor-cloud"
       - url: "blazor-pm"
       - url: "blazor-zip"
       - url: "blazor-ref"
+    - url: "laravel"
+      pages:
+      - url: "laravel-tiny-cloud"
+      - url: "laravel-composer-install"
+      - url: "laravel-zip-install"
   - url: "cloud-deployment-guide"
     pages:
     - url: "editor-and-features"
@@ -263,7 +299,6 @@
       - url: "#Export plugin"
       - url: "#Full Screen plugin"
       - url: "#Help plugin"
-      - url: "#Horizontal Rule plugin"
       - url: "#Image plugin"
       - url: "#Insert Date/Time plugin"
       - url: "#Link plugin"
@@ -275,7 +310,6 @@
       - url: "#Permanent Pen plugin"
       - url: "#PowerPaste plugin"
       - url: "#Preview plugin"
-      - url: "#Print plugin"
       - url: "#Search and Replace plugin"
       - url: "#Spell Checker Pro plugin"
       - url: "#Table plugin"
@@ -307,7 +341,6 @@
       - url: "#Format Painter plugin"
       - url: "#Full Screen plugin"
       - url: "#Help plugin"
-      - url: "#Horizontal Rule plugin"
       - url: "#Image plugin"
       - url: "#Image Tools plugin"
       - url: "#Insert Date/Time plugin"
@@ -321,7 +354,6 @@
       - url: "#Permanent Pen plugin"
       - url: "#PowerPaste plugin"
       - url: "#Preview plugin"
-      - url: "#Print plugin"
       - url: "#Quick Toolbars plugin"
       - url: "#Save plugin"
       - url: "#Search and Replace plugin"
@@ -685,8 +717,8 @@
     - url: "anchor"
     - url: "autolink"
       pages:
-      - url: "#default_link_target"
       - url: "#link_default_protocol"
+      - url: "#link_default_target"
     - url: "autoresize"
       pages:
       - url: "#autoresize_bottom_margin"
@@ -719,7 +751,6 @@
       - url: "#emoticons_images_url"
     - url: "fullscreen"
     - url: "help"
-    - url: "hr"
     - url: "image"
       pages:
       - url: "#a11y_advanced_options"
@@ -765,15 +796,15 @@
       - url: "#Reference Date/Time formats"
     - url: "link"
       pages:
-      - url: "#default_link_target"
       - url: "#link_assume_external_targets"
       - url: "#link_class_list"
       - url: "#link_context_toolbar"
       - url: "#link_default_protocol"
+      - url: "#link_default_target"
       - url: "#link_list"
+      - url: "#link_rel_list"
+      - url: "#link_target_list"
       - url: "#link_title"
-      - url: "#rel_list"
-      - url: "#target_list"
     - url: "lists"
       pages:
       - url: "#lists_indent_on_tab"
@@ -820,7 +851,6 @@
       - url: "#paste_remove_styles_if_webkit"
       - url: "#smart_paste"
     - url: "preview"
-    - url: "print"
     - url: "quickbars"
       pages:
       - url: "#Plugin-specific toolbar buttons"

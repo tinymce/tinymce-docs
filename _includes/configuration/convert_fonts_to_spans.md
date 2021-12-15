@@ -4,11 +4,14 @@
 
 If you set this option to `true`, {{site.productname}} will convert all `font` elements to `span` elements and generate `span` elements instead of `font` elements. This option should be used in order to get more W3C compatible code, since font elements are deprecated.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 ```js
 tinymce.init({

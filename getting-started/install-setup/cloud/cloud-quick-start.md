@@ -11,7 +11,7 @@ keywords: tinymce script textarea
 
 ## Step 1: Include the TinyMCE script
 
-Include the following line of code in the `<head>` of a HTML page.
+Include the following line of code in the `<head>` of an HTML page.
 
 ```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
@@ -51,7 +51,7 @@ For example:
 </html>
 ```
 
-Adding this content to a HTML file and opening it in a web browser will load a TinyMCE editor, such as:
+Adding this content to an HTML file and opening it in a web browser will load a TinyMCE editor, such as:
 
 {% include live-demo.html id="default" %}
 

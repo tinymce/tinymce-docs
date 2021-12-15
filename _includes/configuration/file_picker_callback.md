@@ -8,7 +8,8 @@ This hook can be used to add custom file picker to those dialogs that have it. O
 
 It should be noted, that we only provide a hook. It is up to you to implement specific functionality.
 
-**Type:** `JavaScript Function`
+Type
+: `JavaScript Function`
 
 > **Note**: The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check [Basic Local File Picker]({{ site.baseurl }}/demo/file-picker) demo for a more functional example.
 

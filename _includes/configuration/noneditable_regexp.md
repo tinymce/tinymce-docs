@@ -4,7 +4,8 @@ This option is used to specify a regular expression or array of regular expressi
 
 > **Note**: If elements are matched by the regular expression, the elements will be replaced with spans. Use [`noneditable_noneditable_class`](#noneditable_noneditable_class) for elements.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `noneditable_regexp`
 

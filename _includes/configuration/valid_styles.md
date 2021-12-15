@@ -4,7 +4,8 @@ To use this option, specify an object containing a mapping of element names to a
 
 By default, all styles are allowed unless `valid_styles` or `invalid_styles` is configured.
 
-**Type:** `Object`
+Type
+: `Object`
 
 ### Example: Using `valid_styles`
 

@@ -4,9 +4,11 @@ When HTML elements in a template are assigned this class, the content of the ele
 
 A modified date is one that is updated with each edit.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `mdate`
+Default Value
+: `'mdate'`
 
 #### Example: Using `template_mdate_classes`
 

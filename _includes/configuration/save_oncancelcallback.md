@@ -2,7 +2,8 @@
 
 This option allows you to specify the function that will be executed when the cancel button/command is invoked.
 
-**Type:** `String`
+Type
+: `String`
 
 #### Example: Using `save_oncancelcallback`
 

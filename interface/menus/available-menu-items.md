@@ -98,11 +98,6 @@ The following menu items are available for all {{site.productname}} instances wi
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}
-{% assign pluginname = "Horizontal Rule" %}
-{% assign plugincode = "hr" %}
-{% include misc/plugin-menu-item-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
 {% assign pluginname = "Image" %}
 {% assign plugincode = "image" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}
@@ -156,11 +151,6 @@ The following menu items are available for all {{site.productname}} instances wi
 {% assign plugincategory = "opensource" %}
 {% assign pluginname = "Preview" %}
 {% assign plugincode = "preview" %}
-{% include misc/plugin-menu-item-id-boilerplate.md %}
-
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Print" %}
-{% assign plugincode = "print" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
 {% assign plugincategory = "opensource" %}

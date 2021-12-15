@@ -2,7 +2,8 @@
 
 This option allows you to set a custom content security policy for the editor's iframe contents.
 
-**Type:** `String`
+Type
+: `String`
 
 ### Example: Using `content_security_policy`
 

@@ -2,9 +2,11 @@
 
 This option specifies the default language used by Spell Checker Pro.
 
-**Type:** `String`
+Type
+: `String`
 
-**Default Value:** `'en_US'`
+Default Value
+: `'en_US'`
 
 #### Example: Using `spellchecker_language`
 

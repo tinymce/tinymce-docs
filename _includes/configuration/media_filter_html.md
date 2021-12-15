@@ -2,11 +2,14 @@
 
 This option allows you disable the XSS sanitation filter for video/object elements. Scripts, conditional comments, etc, can't be used within these elements by default for security reasons. If you want to include that and have server side sanitizers or if you trust your users, then you can disable this feature.
 
-**Type:** `Boolean`
+Type
+: `Boolean`
 
-**Default Value:** `true`
+Default Value
+: `true`
 
-**Possible Values:** `true`, `false`
+Possible Values
+: `true`, `false`
 
 #### Example: Using `media_filter_html`
 

@@ -16,7 +16,7 @@ This procedure creates a basic Bootstrap integration containing a {{site.product
 
 ### Procedure
 
-1. In a HTML file, add a source script for Bootstrap JS.
+1. In an HTML file, add a source script for Bootstrap JS.
 
     If the project loads Bootstrap from https://www.bootstrapcdn.com/, use the script provided by the [Bootstrap CDN](https://www.bootstrapcdn.com/), which includes the `integrity` and `crossorigin` attributes.
 2. Source {{site.productname}} from the {{site.cloudname}} or from a self-hosted location.

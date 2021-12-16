@@ -2,7 +2,7 @@
 
     > **Important**: {{site.companyname}} does not recommend bundling `tinymce` and `{{include.package}}` with a module loader. Bundling these packages can be complex and error prone.
 
-    To bundle {{site.productname}} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `{{include.package}}` package, followed by the `tinymce` package and the other required imports.
+    To bundle {{site.productname}} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{{include.package}}` package, then the other required {{site.productname}}-related imports.
 
     Example of bundling:
 
@@ -18,7 +18,7 @@
 
         > **Important**: {{site.companyname}} does not recommend bundling `tinymce` and `{{include.package}}` with a module loader. Bundling these packages can be complex and error prone.
 
-        To bundle {{site.productname}} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `{{include.package}}` package, followed by the `tinymce` package and the other required imports.
+        To bundle {{site.productname}} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{{include.package}}` package, then the other required {{site.productname}}-related imports.
 
         Example of bundling:
 
@@ -34,7 +34,7 @@
 
 > **Important**: {{site.companyname}} does not recommend bundling `tinymce` and `{{include.package}}` with a module loader. Bundling these packages can be complex and error prone.
 
-To bundle {{site.productname}} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `{{include.package}}` package, followed by the `tinymce` package and the other required imports.
+To bundle {{site.productname}} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{{include.package}}` package, then the other required {{site.productname}}-related imports.
 
 Example of bundling:
 

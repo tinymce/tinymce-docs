@@ -1,21 +1,7 @@
----
-layout: default
-title: Rails integration
-title_nav: Rails
-description: Seamlessly integrates TinyMCE into the Rails asset pipeline.
-keywords: integration integrate rails
----
 
-{{site.productname}} can be added to a Ruby on Rails project using either:
-
-- [TinyMCE in Ruby on Rails using the Tiny Cloud](#tinymceinrubyonrailsusingthetinycloud)
-- [TinyMCE in Ruby on Rails using TinyMCE self-hosted](#tinymceinrubyonrailsusingtinymceself-hosted)
-- [The third-party TinyMCE Ruby on Rails gem](#thethird-partytinymcerubyonrailsgem)
-
-## TinyMCE in Ruby on Rails using the Tiny Cloud
-
+{% if productSource == 'cloud' %}
 The {{site.cloudname}} can be used to integrate {{site.productname}} into Ruby on Rails projects.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor.
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -26,17 +12,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     <script>
       tinymce.init({
         selector: '.tinymce',
-        height: 500,
-        menubar: false,
-        plugins: [
-          'advlist autolink lists link image charmap preview anchor',
-          'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste code help wordcount'
-        ],
-          toolbar: 'undo redo | formatselect | ' +
-          ' bold italic backcolor | alignleft aligncenter ' +
-          ' alignright alignjustify | bullist numlist outdent indent | ' +
-          ' removeformat | help'
+        plugins: 'lists link image table code help wordcount'
       });
     </script>
     ```
@@ -53,11 +29,9 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     ```
 
 The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: http://localhost:3000/).
-
-## TinyMCE in Ruby on Rails using TinyMCE self-hosted
-
+{% elsif productSource == 'zip' %}
 Self-hosted instances of {{site.productname}} can be integrated into Ruby on Rails projects.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor.
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -68,17 +42,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     <script>
       tinymce.init({
         selector: '.tinymce',
-        height: 500,
-        menubar: false,
-        plugins: [
-          'advlist autolink lists link image charmap preview anchor',
-          'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste code help wordcount'
-        ],
-          toolbar: 'undo redo | formatselect | ' +
-          'bold italic backcolor | alignleft aligncenter ' +
-          'alignright alignjustify | bullist numlist outdent indent | ' +
-          ' removeformat | help'
+        plugins: 'lists link image table code help wordcount'
       });
     </script>
     ```
@@ -98,13 +62,11 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
 The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: http://localhost:3000/).
 
 For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
-
-## The third-party TinyMCE Ruby on Rails gem
-
+{% else %}
 {{site.thirdPartyInteg}}
 
 Sam Pohlenz maintains the [{{site.productname}} Ruby on Rails gem](https://github.com/spohlenz/tinymce-rails) for integrating {{site.productname}} into the Ruby on Rails asset pipeline.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor.
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -136,11 +98,10 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
       height: 500
       menubar: false
       toolbar:
-        - undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help
+        - undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat | help
       plugins:
-        - advlist autolink lists link image charmap preview anchor
-        - searchreplace visualblocks code fullscreen
-        - insertdatetime media table paste code help wordcount
+        - insertdatetime media
+        - table paste code help wordcount
       ```
 
 3. Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {{site.productname}} on pages using the `application` layout:
@@ -166,3 +127,4 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
 The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: http://localhost:3000/).
 
 For information on creating advanced configurations for the third-party TinyMCE Ruby on Rails integration, visit the project on GitHub: [Rails Integration for TinyMCE](https://github.com/spohlenz/tinymce-rails).
+{% endif %}

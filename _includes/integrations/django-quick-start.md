@@ -1,18 +1,8 @@
----
-layout: default
-title: Django integration
-title_nav: Django
-description: Django TinyMCE component.
-keywords: integration integrate Django django django-tinymce python
----
-
 {{site.thirdPartyInteg}}
 
 For information on adding {{site.productname}} to a Django project, try using the Python-based `django-tinymce` package. For information on setting up `django-tinymce`, see: [the django-tinymce Documentation](https://django-tinymce.readthedocs.io/en/latest/index.html).
-To use an newer version of {{site.productname}}, use the {{site.cloudname}} or statically host a manually downloaded copy of {{site.productname}}.
 
-## Using the Tiny Cloud with django-tinymce
-
+{% if productSource == "cloud" %}
 To load {{site.productname}} from the {{site.cloudname}}, update the project’s `settings.py` file:
 
 * Set `TINYMCE_JS_URL` to the {{site.cloudname}} CDN.
@@ -25,9 +15,8 @@ TINYMCE_JS_URL = '{{site.cdnurl}}'
 TINYMCE_COMPRESSOR = False
 ```
 
-## Using self-hosted TinyMCE with django-tinymce
-
-If you'd rather download and install the script manually:
+{% else %}
+To download {{site.productname}} and use it with the `django-tinymce` package:
 
 1. Get the package from [{{site.productname}} Downloads]({{site.gettiny}}).
 1. Unzip the package and move the `'path/to/{{site.prodnamecode}}/'` directory into the django project.
@@ -49,3 +38,4 @@ If you'd rather download and install the script manually:
         TINYMCE_JS_ROOT = os.path.join(MEDIA_URL, "path/to/tinymce")
         TINYMCE_COMPRESSOR = True
         ```
+{% endif %}

@@ -50,10 +50,23 @@ This procedure creates a basic Bootstrap integration containing a {{site.product
 
 To render {{site.productname}} instances inside Bootstrap UI dialogs, add the following code:
 
+**Bootstrap 4 or below**
+
 ```js
 // Prevent Bootstrap dialog from blocking focusin
 $(document).on('focusin', function(e) {
   if ($(e.target).closest(".tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
+    e.stopImmediatePropagation();
+  }
+});
+```
+
+**Bootstrap 5 or above**
+
+```js
+// Prevent Bootstrap dialog from blocking focusin
+document.addEventListener('focusin', (e) => {
+  if (e.target.closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root") !== null) {
     e.stopImmediatePropagation();
   }
 });

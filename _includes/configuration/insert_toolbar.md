@@ -15,7 +15,7 @@ Defaults
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbars hr pagebreak',
+  plugins: 'quickbars pagebreak',
   quickbars_insert_toolbar: 'quickimage quicktable | hr pagebreak'
 });
 ```

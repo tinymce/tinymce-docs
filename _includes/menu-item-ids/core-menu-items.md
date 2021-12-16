@@ -17,6 +17,7 @@
 | `lineheight`         | Format                                                                                                   | Dropdown list with line heights to apply to selection.  |
 | `newdocument`        | File                                                                                                     | Creates a new document.                                                        |
 | `paste`              | Edit                                                                                                     | Pastes the current clipboard contents into editor.                             |
+| `print`              | File                                                                                                     | Prints the current document.                            |
 | `redo`               | Edit                                                                                                     | To redo the last undo-ed operation.                                            |
 | `removeformat`       | Format                                                                                                   | Removes all formats form the current selection.                                |
 | `selectall`          | Edit                                                                                                     | Selects all the editor contents.                                               |

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Tiny Comments
-title_nav: Comments
-description: The TinyMCE Comments plugin
+title: PowerPaste
+title_nav: PowerPaste
+description: The PowerPaste plugin
 type: folder
 ---
 
@@ -12,7 +12,7 @@ type: folder
     {% for subentry in entry.pages %}
       {% if subentry.url == "premium" %}
         {% for subsubentry in subentry.pages %}
-          {% if subsubentry.url == "comments" %}
+          {% if subsubentry.url == "powerpaste" %}
             {% assign links = subsubentry.pages %}
           {% endif %}
         {% endfor %}

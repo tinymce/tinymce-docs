@@ -14,3 +14,7 @@ keywords: enterprise powerpaste power paste microsoft word excel google docs
 The PowerPaste plugin provides the following JavaScript commands.
 
 {% include commands/powerpaste-cmds.md %}
+
+## Event Listeners 
+
+{% include events/powerpaste-events.md %}

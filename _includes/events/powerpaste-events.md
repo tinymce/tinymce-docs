@@ -1,5 +1,3 @@
-## Event Listeners
-
 Custom paste filtering can also be configured at runtime using event listeners.
 
 - `PastePreProcess` is equivalent to `paste_preprocess`

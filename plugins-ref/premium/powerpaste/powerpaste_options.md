@@ -48,12 +48,6 @@ tinymce.init({
 
 {% include configuration/image_file_types.md %}
 
-{% assign altplugincode = "paste" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
-
-{% assign altplugincode = "paste" %}
-{% include misc/plugin-menu-item-id-boilerplate.md %}
-
 ## Advanced Config Options
 
 ### Pre-filtering and post-filtering callbacks

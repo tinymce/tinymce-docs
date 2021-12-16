@@ -126,7 +126,7 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
         npm start
         ```
 
-    * Visit <http://localhost:3000> to view the application.
+    * Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
     * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 

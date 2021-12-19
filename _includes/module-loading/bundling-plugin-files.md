@@ -42,7 +42,6 @@
   - [Lists (lists)](#listslists)
   - [Media (media)](#mediamedia)
   - [Nonbreaking Space (nonbreaking)](#nonbreakingspacenonbreaking)
-  - [Noneditable (noneditable)](#noneditablenoneditable)
   - [Page Break (pagebreak)](#pagebreakpagebreak)
   - [Paste (paste)](#pastepaste)
   - [Preview (preview)](#previewpreview)
@@ -211,10 +210,6 @@
 ### Nonbreaking Space (`nonbreaking`)
 
 {% include plugin_files/plugin-file-list-nonbreaking.md %}
-
-### Noneditable (`noneditable`)
-
-{% include plugin_files/plugin-file-list-noneditable.md %}
 
 ### Page Break (`pagebreak`)
 

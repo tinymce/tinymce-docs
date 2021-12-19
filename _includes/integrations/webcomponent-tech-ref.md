@@ -475,7 +475,7 @@ window.myConfig = {
   config="myConfig"
   width="50%"
   toolbar="undo redo | bold italic | forecolor backcolor | template | alignleft aligncenter alignright alignjustify | bullist numlist | link | spellchecker"
-  plugins="lists link noneditable searchreplace table template tinymcespellchecker wordcount"
+  plugins="lists link searchreplace table template tinymcespellchecker wordcount"
 ></tinymce-editor>
 ```
 

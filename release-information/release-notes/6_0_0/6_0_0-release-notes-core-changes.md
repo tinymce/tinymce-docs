@@ -52,6 +52,17 @@ For information about horizontal rule-related functionality, see:
 - [Core menu items]({{site.baseurl}}/advanced/available-menu-items/#thecoremenuitems)
 - [Core commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands)
 
+### Noneditable plugin moved to TinyMCE Core
+
+The Noneditable (`noneditable`) plugin has been moved to Core in {{site.productname}} 6.0.
+
+Integrators can remove `noneditable` from the `plugins` section of their {{site.productname}} configuration.
+
+For information about noneditable-related functionality, see:
+- [Content filtering options - editable_class]({{site.baseurl}}/configure/content-filtering/#editable_class)
+- [Content filtering options - noneditable_class]({{site.baseurl}}/configure/content-filtering/#noneditable_class)
+- [Content filtering options - noneditable_regexp]({{site.baseurl}}/configure/content-filtering/#noneditable_regexp)
+
 ### Print plugin moved to TinyMCE Core
 
 The Print plugin has been moved to Core in {{site.productname}} 6.0.
@@ -66,14 +77,17 @@ For information about print-related functionality, see:
 - [Core commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands)
 - [Shortcuts]({{site.baseurl}}/advanced/keyboard-shortcuts/#editorkeyboardshortcuts)
 
+### Renamed Options
+
+The following options have been renamed in {{site.productname}} 6.0:
+- The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
+- The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
+- The `target_list` option has been renamed to `link_target_list` for the `link` plugin.
+- The `noneditable_editable_class` option has been renamed to `editable_class`.
+- The `noneditable_noneditable_class` option has been renamed to `noneditable_class`.
+
 ### Additional changes
 
 {{site.productname}} 6.0 introduces the following minor changes:
 
 - changelog
-
-### Renamed Options
-
-- The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
-- The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
-- The `target_list` option has been renamed to `link_target_list` for the `link` plugin.

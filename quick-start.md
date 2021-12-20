@@ -6,7 +6,7 @@ description_short: Setup a basic TinyMCE 5 editor using the Tiny Cloud.
 description: Get an instance of TinyMCE 5 up and running using the Tiny Cloud.
 keywords: tinymce script textarea
 ---
-
+# Introduction
 {{site.productname}} {{site.productmajorversion}} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {{site.productname}} editor to a web page using the {{site.cloudname}}.
 
 ## Step 1: Include the TinyMCE script

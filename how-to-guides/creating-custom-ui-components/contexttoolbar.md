@@ -16,7 +16,7 @@ A context toolbar is registered by calling the `addContextToolbar` API in the re
 | ---- | ----------- |
 | `predicate` | This controls when the context toolbar will appear |
 | `position` | This controls where the context toolbar will appear with regards to the current cursor |
-| `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See context toolbar proirity section below, for more details. |
+| `scope` | This controls whether the predicate (condition) is a `node`-based predicate, or an `editor`-based predicate. See context toolbar priority section below, for more details. |
 | `items` | A list of strings which represent either a registered toolbar button, or a registered context form launcher. |
 
 {% include context/positioning.md %}

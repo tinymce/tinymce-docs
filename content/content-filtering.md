@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Content filtering options
-title_nav: Content filtering options
+title_nav: Content filtering
 description_short: Learn how to create clean, maintainable and readable content.
 description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
 ---
@@ -11,6 +11,8 @@ description: These settings change the way the editor handles the input and outp
 {% include configuration/allow_html_in_named_anchor.md %}
 
 {% include configuration/allow_unsafe_link_target.md %}
+
+{% include configuration/br_in_pre.md %}
 
 {% include configuration/convert_fonts_to_spans.md %}
 
@@ -37,8 +39,6 @@ description: These settings change the way the editor handles the input and outp
 {% include configuration/invalid_elements.md %}
 
 {% include configuration/invalid_styles.md %}
-
-{% include configuration/keep_styles.md %}
 
 {% include configuration/protect.md %}
 

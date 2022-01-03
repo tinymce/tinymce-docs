@@ -72,6 +72,10 @@ If you wish to align the image, you can also use the text align buttons while im
 
 #{% include configuration/images_uploads_url.md %}
 
+#{% include configuration/object_resizing.md %}
+
+#{% include configuration/resize_img_proportional.md %}
+
 #{% include configuration/type_ahead_urls.md %}
 
 ## Q: Where are the advanced image options?

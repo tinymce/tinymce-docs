@@ -11,7 +11,7 @@ There are situations where custom context toolbars or custom context forms may c
 There are three settings that determine the priority of context toolbars and context forms: `scope`, `predicate`, and `position`.
 
 - `scope` - Sets the context toolbar or form as either: specific to certain types of content (`node`), or a general (global) toolbar or form (`editor`).
-- `predicate` - A function for determining if the context menu or form applies to the current selection or cursor position. This function should return a boolean value.
+- `predicate` - The predicate is the condition(s) where the context toolbar or form should be shown. This setting is a function for determining if the context menu or form applies to the current selection or cursor position. This function should return a boolean value.
 - `position` - Sets where the context toolbar or form is rendered, relative to the current context (`selection`, `node`, or `line`).
 
 Generally:
@@ -38,7 +38,7 @@ The editor will determine which context toolbars or context form will be shown u
 1. Find all **context forms** with both:
 
     - `scope: 'node'`
-    - A predicate matching the current selection or cursor position.
+    - A predicate (condition) matching the current selection or cursor position.
 
     If there are any matching **context forms**, the first one found will be displayed in the editor and the process will end.
 

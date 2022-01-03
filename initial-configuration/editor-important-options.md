@@ -21,6 +21,8 @@ keywords:
 {% include configuration/auto_focus.md %}
 
 
+{% include configuration/custom_ui_selector.md %}
+
 ## Extend {{site.productname}} with plugins
 
 {% include misc/plugins-or-external_plugins.md %}
@@ -44,6 +46,10 @@ keywords:
 {% include configuration/base_url.md %}
 
 {% include configuration/cache_suffix.md %}
+
+{% include configuration/content_security_policy.md %}
+
+{% include configuration/referrer_policy.md %}
 
 {% include configuration/suffix.md %}
 

@@ -2,7 +2,7 @@
 layout: default
 title: Context forms
 title_nav: Context forms
-description: Context forms overview
+description: Creating custom context forms for TinyMCE 6
 keywords: contextforms context forms contextformsbarapi
 ---
 

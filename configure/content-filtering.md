@@ -18,6 +18,8 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/doctype.md %}
 
+{% include configuration/editable_class.md %}
+
 {% include configuration/element_format.md %}
 
 {% include configuration/encoding.md %}
@@ -39,6 +41,10 @@ description: These settings change the way the editor handles the input and outp
 {% include configuration/invalid_styles.md %}
 
 {% include configuration/keep_styles.md %}
+
+{% include configuration/noneditable_class.md %}
+
+{% include configuration/noneditable_regexp.md %}
 
 {% include configuration/protect.md %}
 

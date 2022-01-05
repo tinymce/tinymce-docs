@@ -2,7 +2,7 @@
 layout: default
 title: Context toolbar
 title_nav: Context toolbar
-description: Context toolbar overview
+description: Creating custom context toolbars for TinyMCE 6
 keywords: contexttoolbar context toolbar contexttoolbarapi
 ---
 

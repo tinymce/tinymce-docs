@@ -58,10 +58,7 @@ This procedure assumes the following prerequisites have been installed:
 
 {% endif %}
 {% if productSource == "zip" %}
-1. Download {{site.productname}}.
-
-    * For Self-hosted Enterprise customers, visit [{{site.companyname}} - Self-hosted releases]({{site.download-community}})
-    * For the self-hosted {{site.productname}} community edition, visit [{{site.accountpage}} - Downloads]({{site.download-enterprise}})
+{% include integrations/download-tinymce-zip.md %}
 
 1. Extract (or unzip) the downloaded {{site.productname}} `.zip` file into the `resources/js/` directory of the Laravel project, such as:
 

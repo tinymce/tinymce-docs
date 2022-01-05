@@ -5,14 +5,22 @@
     pages:
     - url: "cloud"
       pages:
+      # Official integrations
       - url: "cloud-quick-start"
       - url: "react-cloud"
       - url: "angular-cloud"
       - url: "vue-cloud"
       - url: "blazor-cloud"
+      - url: "svelte-cloud"
+      - url: "webcomponent-cloud"
+      # Third-party integrations
+      - url: "bootstrap-cloud"
+      - url: "django-cloud"
       - url: "laravel-tiny-cloud"
+      - url: "rails-cloud"
     - url: "self-hosted"
       pages:
+      # Official integrations
       - url: "react"
         pages:
         - url: "react-pm"
@@ -29,20 +37,31 @@
         pages:
         - url: "blazor-pm"
         - url: "blazor-zip"
+      - url: "swing"
+      - url: "svelte-zip"
+      - url: "webcomponent"
+        pages:
+        - url: "webcomponent-pm"
+        - url: "webcomponent-zip"
+      # Third-party integrations
+      - url: "bootstrap-zip"
+      - url: "django-zip"
+      - url: "expressjs-pm"
       - url: "laravel"
         pages:
         - url: "laravel-composer-install"
         - url: "laravel-zip-install"
-      - url: "bootstrap"
-      - url: "django"
-      - url: "jquery"
-      - url: "expressjs"
       - url: "rails"
-      - url: "svelte"
-      - url: "swing"
-      - url: "vue"
-      - url: "webcomponent"
+        pages:
+        - url: "rails-third-party"
+        - url: "rails-zip"
       - url: "wordpress"
+      # Non-specific installs
+      - url: "npm-projects"
+      - url: "php-projects"
+      - url: "dotnet-projects"
+      - url: "bower-projects"
+      - url: "zip-install"
   - url: "upgrading"
 
 - url: "how-to-guides"
@@ -58,6 +77,7 @@
     - url: "editor-content-css"
   - url: "environment-setup"
     pages:
+      # Official integrations
     - url: "react"
       pages:
       - url: "react-cloud"
@@ -82,11 +102,45 @@
       - url: "blazor-pm"
       - url: "blazor-zip"
       - url: "blazor-ref"
+    - url: "swing"
+    - url: "svelte"
+      pages:
+      - url: "svelte-cloud"
+      - url: "svelte-zip"
+      - url: "svelte-ref"
+    - url: "webcomponent"
+      pages:
+      - url: "webcomponent-cloud"
+      - url: "webcomponent-pm"
+      - url: "webcomponent-zip"
+      - url: "webcomponent-ref"
+    # Third-party integrations
+    - url: "bootstrap"
+      pages:
+      - url: "bootstrap-cloud"
+      - url: "bootstrap-zip"
+    - url: "django"
+      pages:
+      - url: "django-cloud"
+      - url: "django-zip"
+    - url: "expressjs-pm"
     - url: "laravel"
       pages:
       - url: "laravel-tiny-cloud"
       - url: "laravel-composer-install"
       - url: "laravel-zip-install"
+    - url: "rails"
+      pages:
+      - url: "rails-cloud"
+      - url: "rails-third-party"
+      - url: "rails-zip"
+    - url: "wordpress"
+    # Non-specific installs
+    - url: "npm-projects"
+    - url: "php-projects"
+    - url: "dotnet-projects"
+    - url: "bower-projects"
+    - url: "zip-install"
   - url: "cloud-deployment-guide"
     pages:
     - url: "editor-and-features"
@@ -185,6 +239,7 @@
       - url: "#Context toolbar priority"
       - url: "#Positioning context toolbars"
       - url: "#Example configuration"
+    - url: "shortcuts"
     - url: "making-plugins"
       pages:
       - url: "creating-a-plugin"
@@ -458,6 +513,7 @@
     - url: "#convert_fonts_to_spans"
     - url: "#custom_elements"
     - url: "#doctype"
+    - url: "#editable_class"
     - url: "#element_format"
     - url: "#encoding"
     - url: "#entities"
@@ -469,6 +525,8 @@
     - url: "#invalid_elements"
     - url: "#invalid_styles"
     - url: "#keep_styles"
+    - url: "#noneditable_class"
+    - url: "#noneditable_regexp"
     - url: "#protect"
     - url: "#remove_trailing_brs"
     - url: "#schema"
@@ -823,12 +881,6 @@
       pages:
       - url: "#nonbreaking_force_tab"
       - url: "#nonbreaking_wrap"
-    - url: "noneditable"
-      pages:
-      - url: "#noneditable_editable_class"
-      - url: "#noneditable_noneditable_class"
-      - url: "#noneditable_regexp"
-      - url: "#Making Content Non-editable"
     - url: "pagebreak"
       pages:
       - url: "#pagebreak_separator"

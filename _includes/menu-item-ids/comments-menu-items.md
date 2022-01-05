@@ -1,4 +1,4 @@
-| Menu item identifier     | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                     |
+| Menu item identifier     | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                                                     |
 |--------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
 | `addcomment`             | Insert                                                                                                   | Adds a comment at the cursor location or for the selected text. |
 | `deleteallconversations` | File                                                                                                     | Deletes all comments from the editor.                           |

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting started with TinyMCE
+title: Getting started with TinyMCE Self-hosted
 title_nav: Self-hosted
 description: Faster development with integrations of TinyMCE into your favorite framework or CMS.
 type: folder

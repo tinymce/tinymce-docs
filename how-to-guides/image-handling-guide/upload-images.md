@@ -9,7 +9,7 @@ keywords: uploader uploadImages image handler asynchronous async paste_data_imag
 
 {{site.productname}} uploads edited images with the image uploader. This complements {{site.productname}}'s image editing functionality.
 
-Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the [`paste_data_images`]({{site.baseurl}}/plugins/opensource/paste/#paste_data_images) configuration property, or using the {{site.companyname}} [**PowerPaste** plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the [`paste_data_images`]({{site.baseurl}}/plugins-ref/opensource/paste/#paste_data_images) configuration property, or using the {{site.companyname}} [**PowerPaste** plugin]({{site.baseurl}}/plugins-ref/premium/powerpaste/).
 
 {{site.productname}} automatically updates the `<img>` src attribute with the new path to the remote image.
 
@@ -47,7 +47,7 @@ A server-side upload handler script uploads local images to a remote server. The
 * Store images appropriately
 * Return a JSON object containing the image's upload location
 
-An example PHP upload handler implementation is available [here]({{ site.baseurl }}/advanced/php-upload-handler/).
+An example PHP upload handler implementation is available [here]({{ site.baseurl }}/how-to-guides/image-handling-guide/php-upload-handler/).
 
 Images are sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` must "store" the image in the application. Some examples include:
 
@@ -86,7 +86,7 @@ Optional:
 * [`images_upload_credentials`](#images_upload_credentials)
 * [`images_reuse_filename`](#images_reuse_filename)
 
-{% include configuration/images_uploads_url.md %}
+{% include configuration/images_upload_url.md %}
 
 {% include configuration/images_upload_handler.md %}
 
@@ -94,7 +94,7 @@ Optional:
 
 {% include configuration/images_upload_credentials.md %}
 
-{% include configuration/images_upload_reuse_filename.md %}
+{% include configuration/images_reuse_filename.md %}
 
 {% include configuration/images_dataimg_filter.md %}
 
@@ -112,7 +112,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers print messages to the JavaScript console if there is a CORS error.
 
-The [PHP Upload Handler Script]({{ site.baseurl }}/advanced/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
+The [PHP Upload Handler Script]({{ site.baseurl }}/how-to-guides/image-handling-guide/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
 
 ### Further reading on CORS
 

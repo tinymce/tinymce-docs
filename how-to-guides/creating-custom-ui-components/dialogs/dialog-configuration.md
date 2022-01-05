@@ -10,7 +10,7 @@ A dialog configuration has three main parts to match the three main parts of the
 
 * **Title:** The title of the dialog. This will display in the header of the dialog.
 
-* **Body:** The body of the dialog. The body component can be a [panel](#panel) or a [tab panel](#tabpanel), which can contain an array of [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as buttons, inputs and text.
+* **Body:** The body of the dialog. The body component can be a [panel](#panel) or a [tab panel](#tabpanel), which can contain an array of [panel components]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panelcomponents) such as buttons, inputs and text.
 
 * **Buttons:** An array of [footer buttons](#footerbuttons) that are displayed in the dialog's footer.
 
@@ -53,7 +53,7 @@ tinymce.activeEditor.windowManager.open({
 | onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and a **Cancel** type footer button invoke this function. |
 | onChange | `(dialogApi, details) => void` | optional | Function invoked when the value of an `input` type panel component changes. |
 | onClose | `() => void` | optional | Function invoked when the dialog is closed. The dialog header's close button, a **Cancel** type footer button and the dialog instance API's `close()` method invoke this function. |
-| onTabChange | `(dialogApi, details) => void` | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
+| onTabChange | `(dialogApi, details) => void` | optional | **This method only applies to [tab panel]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialoginstanceapi) documentation.
 

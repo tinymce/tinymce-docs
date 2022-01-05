@@ -45,4 +45,4 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {{site.produc
 
 When the `<form>` is submitted the {{site.productname}} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-> If you decided to use the Self-hosted package, move on to the next step [working with plugins]({{site.baseurl}}/general-configuration-guide/work-with-plugins/), where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
+> If you decided to use the Self-hosted package, move on to the next step [working with plugins]({{site.baseurl}}/how-to-guides/learn-the-basics/work-with-plugins/), where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.

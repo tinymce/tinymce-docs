@@ -98,7 +98,7 @@ The following events are provided by the {{ site.productname }} editor.
 | AfterScrollIntoView          | `{ elm: HTMLElement, alignToTop: boolean }`                                                                             | Fired when an element has been scrolled into view.                                                                                                                   |
 | ObjectResized          | `{ target: HTMLElement, width: number, height: number, origin: string }`                                                                | Fired when an object (such as an image) has finished being resized.                                                                                                                |
 | ObjectResizeStart      | `{ target: HTMLElement, width: number, height: number, origin: string }`                                                                | Fired when an object (such as an image) is about to be resized.                                                                                                                    |
-| SwitchMode             | `{ mode: string }`                                                                                                      | Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {{ site.productname }} API ['tinymce.activeEditor.mode.register()']({{ site.baseurl }}/api/tinymce/tinymce.editormode/#register). |
+| SwitchMode             | `{ mode: string }`                                                                                                      | Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {{ site.productname }} API ['tinymce.activeEditor.mode.register()']({{ site.baseurl }}/apis/tinymce/tinymce.editormode/#register). |
 | ScrollWindow           | (Same data as the native [scroll event](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event))         | Fired when the window has scrolled.                                                                                                                                   |
 | ResizeWindow           | (Same data as the native [resize event](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event))          | Fired when the window is resized.                                                                                                                                          |
 | BeforeExecCommand      | `{ command: string, ui?: boolean, value?: any }`                                                                        | Fired before a command is executed.                                                                                                                                        |
@@ -131,14 +131,14 @@ The following events are provided by the {{ site.productname }} editor.
 | Undo                   | `{ level: UndoLevel }`                                                                                                  | Fired when a change has been undone.                                                                                                                                       |
 | BeforeAddUndo          | `{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }`                                                      | Fired before a new undo level is created.                                                                                                                                  |
 | AddUndo                | `{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }`                                                      | Fired after a new undo level has been created.                                                                                                                             |
-| Dirty                  | N/A                                                                                                                     | Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when [an undo level]({{site.baseurl}}/api/tinymce/tinymce.undomanager/) has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the [`editor.isDirty` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#isdirty).                                                                                                |
+| Dirty                  | N/A                                                                                                                     | Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when [an undo level]({{site.baseurl}}/apis/tinymce/tinymce.undomanager/) has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the [`editor.isDirty` API]({{site.baseurl}}/apis/tinymce/tinymce.editor/#isdirty).                                                                                                |
 | CloseWindow            | `{ dialog: DialogApi }`                                                                                                 | Fired when a dialog has been closed.                                                                                                                                       |
 | OpenWindow             | `{ dialog: DialogApi }`                                                                                                 | Fired when a dialog has been opened.                                                                                                                                       |
-| ProgressState          | `{ state: boolean, time?: number }`                                                                                     | Fired when a change to the editor progress state is scheduled using the {{ site.productname }} API [`tinymce.activeEditor.setProgressState()`]({{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate).                                                                                              |
+| ProgressState          | `{ state: boolean, time?: number }`                                                                                     | Fired when a change to the editor progress state is scheduled using the {{ site.productname }} API [`tinymce.activeEditor.setProgressState()`]({{ site.baseurl }}/apis/tinymce/tinymce.editor/#setprogressstate).                                                                                              |
 | AfterProgressState     | `{ state: boolean }`                                                                                                    | Fired after the editor progress state is changed, and the new progress state is in effect.<br>                                                         |
 | PreProcess             | `{ node: Element, format: string }`                                                                                     | Fired before serializing a DOM node to HTML content.                                                                                                                       |
 | PostProcess            | `{ node: Element, format: string }`                                                                                     | Fired after serializing a DOM node to HTML content.                                                                                                                        |
-| SetAttrib              | `{ attrElm: Element, attrName: string, attrValue: string }`                                                             | Fired when an attribute is updated using the editor [DOMUtils API]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.domutils/).                                                                                                          |
+| SetAttrib              | `{ attrElm: Element, attrName: string, attrValue: string }`                                                             | Fired when an attribute is updated using the editor [DOMUtils API]({{ site.baseurl }}/apis/tinymce.dom/tinymce.dom.domutils/).                                                                                                          |
 | ResizeEditor           | N/A                                                                                                                     | Fired when the editor is resized, either by the resize handles or the auto-resize plugin.                                                                                  |
 | SkinLoaded             | N/A                                                                                                                     | Fired when the editor skin has been loaded.                                                                                                                                |
 | SkinLoadError          | `{ message: string }`                                                                                                   | Fired when the editor skin fails to load.                                                                                                            |
@@ -153,8 +153,8 @@ The following events are provided by the {{ site.productname }} editor.
 | ResizeContent          | (Same data as the native [resize event](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event))          | (iframe mode only) Fired when the iframe window is resized.                                                                                                                |
 | Load                   | N/A                                                                                                                     | (iframe mode only) Fired when the editor iframe content has finished loading.                                                                                              |
 | ResolveName            | `{ name: string, target: Element }`                                                                                     | (iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.                                                            |
-| BeforeOpenNotification | `{ notification: NotificationSpec }`                                                                                    | Fired before a notification is displayed. For information on the Notifications Specification (`NotificationSpec`), see: [Create custom notifications]({{site.baseurl}}/advanced/creating-custom-notifications/).                        |
-| OpenNotification       | `{ notification: NotificationApi }`                                                                                    | Fired after a notification is displayed. For information on the Notifications API (`NotificationApi`), see: [Create custom notifications]({{site.baseurl}}/advanced/creating-custom-notifications/).                         |
+| BeforeOpenNotification | `{ notification: NotificationSpec }`                                                                                    | Fired before a notification is displayed. For information on the Notifications Specification (`NotificationSpec`), see: [Create custom notifications]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/creating-custom-notifications/).                        |
+| OpenNotification       | `{ notification: NotificationApi }`                                                                                    | Fired after a notification is displayed. For information on the Notifications API (`NotificationApi`), see: [Create custom notifications]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/creating-custom-notifications/).                         |
 
 ## Plugin events
 
@@ -187,7 +187,7 @@ For events applicable to the Advanced Tables plugin, see: [Table events](#tablee
 
 ### Autosave events
 
-The following events are provided by the [Autosave plugin]({{site.baseurl}}/plugins/opensource/autosave/).
+The following events are provided by the [Autosave plugin]({{site.baseurl}}/plugins-ref/opensource/autosave/).
 
 | Name         | Data | Description                                      |
 | ------------ | ---- | ------------------------------------------------ |
@@ -197,7 +197,7 @@ The following events are provided by the [Autosave plugin]({{site.baseurl}}/plug
 
 ### Character Map events
 
-The following event is provided by the [Character Map plugin]({{site.baseurl}}/plugins/opensource/charmap/).
+The following event is provided by the [Character Map plugin]({{site.baseurl}}/plugins-ref/opensource/charmap/).
 
 | Name             | Data              | Description                                                   |
 | ---------------- | ----------------- | ------------------------------------------------------------- |
@@ -205,7 +205,7 @@ The following event is provided by the [Character Map plugin]({{site.baseurl}}/p
 
 ### Comments events
 
-The following event is provided by the [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
+The following event is provided by the [Comments plugin]({{site.baseurl}}/plugins-ref/premium/comments/).
 
 | Name                    | Data | Description                      |
 | ----------------------- | ---- | -------------------------------- |
@@ -217,7 +217,7 @@ The following event is provided by the [Comments plugin]({{site.baseurl}}/plugin
 
 ### Format Painter events
 
-The following event is provided by the [Format Painter plugin]({{site.baseurl}}/plugins/premium/formatpainter/).
+The following event is provided by the [Format Painter plugin]({{site.baseurl}}/plugins-ref/premium/formatpainter/).
 
 | Name                | Data                 | Description                                  |
 | ------------------- | -------------------- | -------------------------------------------- |
@@ -225,7 +225,7 @@ The following event is provided by the [Format Painter plugin]({{site.baseurl}}/
 
 ### Fullscreen events
 
-The following event is provided by the [Fullscreen plugin]({{site.baseurl}}/plugins/opensource/fullscreen/).
+The following event is provided by the [Fullscreen plugin]({{site.baseurl}}/plugins-ref/opensource/fullscreen/).
 
 | Name                   | Data                 | Description                              |
 | ---------------------- | -------------------- | ---------------------------------------- |
@@ -233,7 +233,7 @@ The following event is provided by the [Fullscreen plugin]({{site.baseurl}}/plug
 
 ### Import CSS events
 
-The following event is provided by the [Import CSS plugin]({{site.baseurl}}/plugins/opensource/importcss/).
+The following event is provided by the [Import CSS plugin]({{site.baseurl}}/plugins-ref/opensource/importcss/).
 
 | Name                  | Data                                       | Description                                                        |
 | --------------------- | ------------------------------------------ | ------------------------------------------------------------------ |
@@ -241,7 +241,7 @@ The following event is provided by the [Import CSS plugin]({{site.baseurl}}/plug
 
 ### Link checker events
 
-The following event is provided by the [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
+The following event is provided by the [Link Checker plugin]({{site.baseurl}}/plugins-ref/premium/linkchecker/).
 
 | Name             | Data                  | Description                                                                    |
 | ---------------- | --------------------- | ------------------------------------------------------------------------------ |
@@ -249,7 +249,7 @@ The following event is provided by the [Link Checker plugin]({{site.baseurl}}/pl
 
 ### Lists events
 
-The following event is provided by the [Lists plugin]({{site.baseurl}}/plugins/opensource/lists/).
+The following event is provided by the [Lists plugin]({{site.baseurl}}/plugins-ref/opensource/lists/).
 
 | Name         | Data                                   | Description                          |
 | ------------ | -------------------------------------- | ------------------------------------ |
@@ -257,7 +257,7 @@ The following event is provided by the [Lists plugin]({{site.baseurl}}/plugins/o
 
 ### Media Embed events
 
-The following event is provided by the [Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
+The following event is provided by the [Media Embed plugin]({{site.baseurl}}/plugins-ref/premium/mediaembed/).
 
 | Name            | Data                  | Description                                                                   |
 | --------------- | --------------------- | ----------------------------------------------------------------------------- |
@@ -265,7 +265,7 @@ The following event is provided by the [Media Embed plugin]({{site.baseurl}}/plu
 
 ### Paste events
 
-The following events are provided by the [Paste plugin]({{site.baseurl}}/plugins/opensource/paste/).
+The following events are provided by the [Paste plugin]({{site.baseurl}}/plugins-ref/opensource/paste/).
 
 | Name                 | Data                                        | Description                                                                                      |
 | -------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -275,7 +275,7 @@ The following events are provided by the [Paste plugin]({{site.baseurl}}/plugins
 
 ### Permanent Pen events
 
-The following events are provided by the [Permanent Pen plugin]({{site.baseurl}}/plugins/premium/permanentpen/).
+The following events are provided by the [Permanent Pen plugin]({{site.baseurl}}/plugins-ref/premium/permanentpen/).
 
 | Name                   | Data                                                                                                                                                         | Description                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
@@ -284,7 +284,7 @@ The following events are provided by the [Permanent Pen plugin]({{site.baseurl}}
 
 ### PowerPaste events
 
-The following events are provided by the [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+The following events are provided by the [PowerPaste plugin]({{site.baseurl}}/plugins-ref/premium/powerpaste/).
 
 | Name                 | Data                                                | Description                                                                                      |
 | -------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -294,7 +294,7 @@ The following events are provided by the [PowerPaste plugin]({{site.baseurl}}/pl
 
 ### Spell Checker events
 
-The following events are provided by the [Spell Checker plugin]({{site.baseurl}}/plugins/opensource/spellchecker/).
+The following events are provided by the [Spell Checker plugin]({{site.baseurl}}/plugins-ref/opensource/spellchecker/).
 
 {% include DEPRECATED/spellchecker.md %}
 
@@ -313,7 +313,7 @@ The following events are provided by the [Spell Checker plugin]({{site.baseurl}}
 
 ### Visual Blocks events
 
-The following event is provided by the [Visual Blocks plugin]({{site.baseurl}}/plugins/opensource/visualblocks/).
+The following event is provided by the [Visual Blocks plugin]({{site.baseurl}}/plugins-ref/opensource/visualblocks/).
 
 | Name         | Data                 | Description                                 |
 | ------------ | -------------------- | ------------------------------------------- |
@@ -321,7 +321,7 @@ The following event is provided by the [Visual Blocks plugin]({{site.baseurl}}/p
 
 ### Visual Characters events
 
-The following event is provided by the [Visual Characters plugin]({{site.baseurl}}/plugins/opensource/visualchars/).
+The following event is provided by the [Visual Characters plugin]({{site.baseurl}}/plugins-ref/opensource/visualchars/).
 
 | Name        | Data                 | Description                                |
 | ----------- | -------------------- | ------------------------------------------ |
@@ -329,7 +329,7 @@ The following event is provided by the [Visual Characters plugin]({{site.baseurl
 
 ### Word Count events
 
-The following event is provided by the [Word Count plugin]({{site.baseurl}}/plugins/opensource/wordcount/).
+The following event is provided by the [Word Count plugin]({{site.baseurl}}/plugins-ref/opensource/wordcount/).
 
 | Name            | Data                                                                                    | Description                                  |
 | --------------- | --------------------------------------------------------------------------------------- | -------------------------------------------- |

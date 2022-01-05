@@ -22,6 +22,7 @@ RUN \
     ruby-dev \
     rubygems \
     patch \
+    sed \
     ssh \
     unzip \
     zlib1g-dev \

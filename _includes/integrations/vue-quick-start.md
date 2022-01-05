@@ -159,8 +159,6 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
 
         To use an independent deployment of {{site.productname}} with the example create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
 
-        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
-
     <a id="bundle" class="anchor"></a>
     * Bundle {{site.productname}} with the Vue.js application using a module loader (such as Webpack).
 
@@ -184,5 +182,5 @@ The application will require further configuration before it can be deployed to 
 * For examples of the {{site.productname}} integration, see: [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
 * For information on customizing:
   * {{site.productname}} integration, see: [Vue.js framework Technical Reference]({{site.baseurl}}/how-to-guides/environment-setup/vue/vue-ref/).
-  * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+  * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/).
   * The Vue.js application, see: [Vue.js Documentation](https://vuejs.org/v2/guide/).

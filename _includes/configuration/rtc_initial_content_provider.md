@@ -1,14 +1,14 @@
 ### `rtc_initial_content_provider`
 
-By default, the initial editor content is retrieved from the element targeted using the {{site.productname}} [`selector` option]({{site.baseurl}}/configure/integration-and-setup/#selector).
+By default, the initial editor content is retrieved from the element targeted using the {{site.productname}} [`selector` option]({{site.baseurl}}/initial-configuration/editor-important-options/#selector).
 
-The `rtc_initial_content_provider` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {{site.productname}} [integrations]({{site.baseurl}}/integrations/)) that don't provide access to the target element directly. If the target element contains content and a `rtc_initial_content_provider` has been provided, the content from the `rtc_initial_content_provider` will be used as the initial editor content.
+The `rtc_initial_content_provider` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {{site.productname}} [integrations]({{site.baseurl}}/getting-started/introduction-to-tinymce/#gettingstartedguides)) that don't provide access to the target element directly. If the target element contains content and a `rtc_initial_content_provider` has been provided, the content from the `rtc_initial_content_provider` will be used as the initial editor content.
 
 The `rtc_initial_content_provider` is used for new documents (`documentId`) and is not for opening or reopening existing documents. If the document already exists, the content on the RTC Server with the provided `documentId` will be loaded into the editor when it is intitalized.
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins-ref/premium/rtc/)
 {% endif %}
 
 Type

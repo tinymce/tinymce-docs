@@ -32,9 +32,9 @@ The demonstration editor below is a distraction-free editor with some customizat
 
 For information on:
 
-* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: [Quick Toolbar plugin]({{site.baseurl}}/plugins/opensource/quickbars/).
-* Configuring a contextual toolbar, see: [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
-* Configuring a contextual menu, see: [Context Menu]({{site.baseurl}}/ui-components/contextmenu/).
-* Disabling the {{site.productname}} menubar, see: [Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
-* The `inline` setting, see: [inline]({{ site.baseurl }}/configure/editor-appearance/#inline).
+* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: [Quick Toolbar plugin]({{site.baseurl}}/plugins-ref/opensource/quickbars/).
+* Configuring a contextual toolbar, see: [Context Toolbar]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/contexttoolbar/).
+* Configuring a contextual menu, see: [Context Menu]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/contextmenu/).
+* Disabling the {{site.productname}} menubar, see: [Menubar]({{site.baseurl}}/interface/menus/menus-configuration-options/#menubar).
+* The `inline` setting, see: [inline]({{ site.baseurl }}/interface/editor-mode/inline-editor-options/#inline).
 

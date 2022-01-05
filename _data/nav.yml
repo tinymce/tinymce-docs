@@ -10,6 +10,8 @@
       - url: "angular-cloud"
       - url: "vue-cloud"
       - url: "blazor-cloud"
+      - url: "svelte-cloud"
+      - url: "webcomponent-cloud"
       - url: "laravel-tiny-cloud"
     - url: "self-hosted"
       pages:
@@ -29,6 +31,15 @@
         pages:
         - url: "blazor-pm"
         - url: "blazor-zip"
+      - url: "svelte"
+        pages:
+        - url: "svelte-pm"
+        - url: "svelte-zip"
+      - url: "swing"
+      - url: "webcomponent"
+        pages:
+        - url: "webcomponent-pm"
+        - url: "webcomponent-zip"
       - url: "laravel"
         pages:
         - url: "laravel-composer-install"
@@ -38,11 +49,8 @@
       - url: "jquery"
       - url: "expressjs"
       - url: "rails"
-      - url: "svelte"
-      - url: "swing"
-      - url: "vue"
-      - url: "webcomponent"
       - url: "wordpress"
+      - url: "other-installs"
   - url: "upgrading"
 
 - url: "how-to-guides"
@@ -82,6 +90,18 @@
       - url: "blazor-pm"
       - url: "blazor-zip"
       - url: "blazor-ref"
+    - url: "svelte"
+      pages:
+      - url: "svelte-cloud"
+      - url: "svelte-pm"
+      - url: "svelte-zip"
+      - url: "svelte-ref"
+    - url: "webcomponent"
+      pages:
+      - url: "webcomponent-cloud"
+      - url: "webcomponent-pm"
+      - url: "webcomponent-zip"
+      - url: "webcomponent-ref"
     - url: "laravel"
       pages:
       - url: "laravel-tiny-cloud"
@@ -185,6 +205,7 @@
       - url: "#Context toolbar priority"
       - url: "#Positioning context toolbars"
       - url: "#Example configuration"
+    - url: "shortcuts"
     - url: "making-plugins"
       pages:
       - url: "creating-a-plugin"

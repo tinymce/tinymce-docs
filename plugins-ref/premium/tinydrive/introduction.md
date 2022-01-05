@@ -44,7 +44,7 @@ If a file is moved or renamed, it will still have the same unique URL, so the re
 
 ## JSON Web Token (JWT) based authentication
 
-Some {{site.companyname}} services require setting up JSON Web Token (JWT) authentication. This allows the {{site.cloudname}} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the [JWT authentication section]({{site.baseurl}}/tinydrive/jwt-authentication/).
+Some {{site.companyname}} services require setting up JSON Web Token (JWT) authentication. This allows the {{site.cloudname}} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the [JWT authentication section]({{site.baseurl}}/plugins-ref/premium/tinydrive/jwt-authentication/).
 
 ## User specific file access
 

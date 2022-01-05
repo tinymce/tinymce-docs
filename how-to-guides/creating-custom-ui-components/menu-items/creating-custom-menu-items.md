@@ -46,7 +46,7 @@ tinymce.init({
 });
 ```
 
-> **Note**: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
+> **Note**: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/interface/menus/menus-configuration-options/#menu) option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
 ## Interactive example
 

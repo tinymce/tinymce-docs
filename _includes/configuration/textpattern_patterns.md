@@ -7,8 +7,8 @@ There are three types of patterns: `inline`, `block`, and `replacement` patterns
 > **Important**: Any formats or commands used by `textpatterns` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `lists` plugin.
 > For information on:
 >
-> * Registering formats for {{site.productname}}, see: [Content formatting options - `formats`]({{site.baseurl}}/configure/content-formatting/#formats).
-> * Registering commands for {{site.productname}}, see: [{{site.productname}} APIs - EditorCommands]({{site.baseurl}}/api/tinymce/tinymce.editorcommands/).
+> * Registering formats for {{site.productname}}, see: [Content formatting options - `formats`]({{site.baseurl}}/content/content-formatting/#formats).
+> * Registering commands for {{site.productname}}, see: [{{site.productname}} APIs - EditorCommands]({{site.baseurl}}/apis/tinymce/tinymce.editorcommands/).
 
 #### The default patterns for the `textpattern` plugin
 

@@ -12,7 +12,7 @@
     /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
     ```
 
-    For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+    For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/).
 
 {% elsif include.depth == "2" %}
 
@@ -28,7 +28,7 @@
         /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
         ```
 
-        For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+        For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/).
 
 {% else %}
 
@@ -44,6 +44,6 @@ import { Editor } from '@tinymce/{{include.package}}';
 /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
 ```
 
-For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+For instructions on bundling {{site.productname}}, see: [Bundling {{site.productname}}]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/).
 
 {% endif %}

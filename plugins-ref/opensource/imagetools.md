@@ -21,7 +21,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 
 ## Cloud Installation
 
-The Image Tools plugin is provided with all subscriptions to [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy.
+The Image Tools plugin is provided with all subscriptions to [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy.
 Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
 ### Basic setup using Tiny Cloud

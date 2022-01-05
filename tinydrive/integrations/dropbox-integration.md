@@ -29,14 +29,14 @@ You can get Dropbox integration up and running by following the steps below.
 
 ### 2. Get the Dropbox app key and add domains
 
-1. Copy the key from `App key` this will then be used as the key for the [tinydrive_dropbox_app_key]({{site.baseurl}}/tinydrive/configuration/#tinydrive_dropbox_app_key).
+1. Copy the key from `App key` this will then be used as the key for the [tinydrive_dropbox_app_key]({{site.baseurl}}/tinydrive/apis/tinydrive-browse/#tinydrive_dropbox_app_key).
 2. Configure the domains that are serving your application in `Chooser/Saver domains`.
 
 <img src="{{site.baseurl}}/images/tinydrive-dropbox-dump2.png" style="border: 1px solid #BBB">
 
 ### 3. Configure tinydrive to use the new Dropbox app key
 
-You configure the Dropbox API key by setting the [tinydrive_dropbox_app_key]({{site.baseurl}}/tinydrive/configuration/#tinydrive_dropbox_app_key) like in the example below.
+You configure the Dropbox API key by setting the [tinydrive_dropbox_app_key]({{site.baseurl}}/tinydrive/apis/tinydrive-browse/#tinydrive_dropbox_app_key) like in the example below.
 
 ```js
 (function () {
@@ -49,7 +49,7 @@ You configure the Dropbox API key by setting the [tinydrive_dropbox_app_key]({{s
 })();
 ```
 
-For information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox) section of this document.
+For information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/apis/tinydrive-browse/) section of this document.
 
 ### 4. Tiny Drive UI
 

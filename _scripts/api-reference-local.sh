@@ -16,6 +16,8 @@ rm -rf "$API_TMPDIR"
 mkdir "$API_TMPDIR"
 moxiedoc "$1/modules/tinymce/src/core/main/ts" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
-rm _data/nav_api.json
+rm -rf apis/
+mv api/ apis
+sed -i "s;^- url: api;- url: apis;" _data/nav_api.yml
 
 echo ""

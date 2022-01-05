@@ -10,7 +10,7 @@
   <a class="anchor" id="extends"></a>
   <h2><a class="anchorable" href="#extends">Extends</a></h2>
   {% for item in include.data.borrows %}
-    <a href="{{ site.baseurl }}/api/{{ item | api_url }}">{{ item }}</a>
+    <a href="{{ site.baseurl }}/apis/{{ item | api_url }}">{{ item }}</a>
   {% endfor %}
 {% endif %}
 
@@ -41,14 +41,14 @@
           <td>{{ item.name }}</td>
           <td>
             {% if item.dataTypes[0] contains 'tinymce' %}
-              <a href="{{ site.baseurl }}/api/{{ item.dataTypes[0] | api_url }}"><span class="param-type">{{ item.dataTypes[0] }}</span></a>
+              <a href="{{ site.baseurl }}/apis/{{ item.dataTypes[0] | api_url }}"><span class="param-type">{{ item.dataTypes[0] }}</span></a>
             {% else %}
               <span class="param-type">{{ item.dataTypes[0] }}</span>
             {% endif %}
           </td>
           <td>{{ item.desc | no_nl }}</td>
           <td class="defined-by">
-            <a href="{{ site.baseurl }}/api/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
+            <a href="{{ site.baseurl }}/apis/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
           </td>
         </tr>
       {% endfor %}
@@ -75,14 +75,14 @@
           <td>{{ item.name }}</td>
           <td>
             {% if item.dataTypes[0] contains 'tinymce' %}
-              <a href="{{ site.baseurl }}/api/{{ item.dataTypes[0] | api_url }}"><span class="param-type">{{ item.dataTypes[0] }}</span></a>
+              <a href="{{ site.baseurl }}/apis/{{ item.dataTypes[0] | api_url }}"><span class="param-type">{{ item.dataTypes[0] }}</span></a>
             {% else %}
               <span class="param-type">{{ item.dataTypes[0] }}</span>
             {% endif %}
           </td>
           <td>{{ item.desc | no_nl }}</td>
           <td class="defined-by">
-            <a href="{{ site.baseurl }}/api/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
+            <a href="{{ site.baseurl }}/apis/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
           </td>
         </tr>
       {% endfor %}
@@ -108,7 +108,7 @@
           <td><a href="#{{ item.name | anchor }}">{{ item.name }}()</a></td>
           <td>{{ item.desc | no_nl }}</td>
           <td class="defined-by">
-            <a href="{{ site.baseurl }}/api/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
+            <a href="{{ site.baseurl }}/apis/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
           </td>
         </tr>
       {% endfor %}
@@ -134,7 +134,7 @@
           <td><a href="#{{ item.name | anchor }}">{{ item.name }}()</a></td>
           <td>{{ item.desc | no_nl }}</td>
           <td class="defined-by">
-            <a href="{{ site.baseurl }}/api/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
+            <a href="{{ site.baseurl }}/apis/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
           </td>
         </tr>
       {% endfor %}
@@ -160,7 +160,7 @@
           <td><a href="#{{ item.name | anchor }}">{{ item.name }}</a></td>
           <td>{{ item.desc | no_nl }}</td>
           <td class="defined-by">
-            <a href="{{ site.baseurl }}/api/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
+            <a href="{{ site.baseurl }}/apis/{{ item.definedBy | api_url }}">{{ item.definedBy }}</a>
           </td>
         </tr>
       {% endfor %}
@@ -194,7 +194,7 @@
             <li>
               <span class="param-name">{{ param.name }}</span>
               {% if param.types[0] contains 'tinymce' %}
-                <a href="{{ site.baseurl }}/api/{{ param.types[0] | api_url }}"><span class="param-type">({{ param.types[0] }})</span></a>
+                <a href="{{ site.baseurl }}/apis/{{ param.types[0] | api_url }}"><span class="param-type">({{ param.types[0] }})</span></a>
               {% else %}
                 <span class="param-type">({{ param.types[0] }})</span>
               {% endif %}
@@ -211,7 +211,7 @@
         {% for type in item.return.types %}
             <li>
               {% if type contains 'tinymce' %}
-                <a href="{{ site.baseurl }}/api/{{ type | api_url }}"><span class="return-type">{{ type }}</span></a>
+                <a href="{{ site.baseurl }}/apis/{{ type | api_url }}"><span class="return-type">{{ type }}</span></a>
               {% else %}
                 <span class="return-type">{{ type }}</span>
               {% endif %}
@@ -249,7 +249,7 @@
             <li>
               <span class="param-name">{{ param.name }}</span>
               {% if param.types[0] contains 'tinymce' %}
-                <a href="{{ site.baseurl }}/api/{{ param.types[0] | api_url }}"><span class="param-type">({{ param.types[0] }})</span></a>
+                <a href="{{ site.baseurl }}/apis/{{ param.types[0] | api_url }}"><span class="param-type">({{ param.types[0] }})</span></a>
               {% else %}
                 <span class="param-type">({{ param.types[0] }})</span>
               {% endif %}
@@ -266,7 +266,7 @@
         {% for type in item.return.types %}
             <li>
               {% if type contains 'tinymce' %}
-                <a href="{{ site.baseurl }}/api/{{ type | api_url }}"><span class="return-type">{{ type }}</span></a>
+                <a href="{{ site.baseurl }}/apis/{{ type | api_url }}"><span class="return-type">{{ type }}</span></a>
               {% else %}
                 <span class="return-type">{{ type }}</span>
               {% endif %}
@@ -294,7 +294,7 @@
             <li>
               <span class="param-name">{{ param.name }}</span>
               {% if param.types[0] contains 'tinymce' %}
-                <a href="{{ site.baseurl }}/api/{{ param.types[0] | api_url }}"><span class="param-type">({{ param.types[0] }})</span></a>
+                <a href="{{ site.baseurl }}/apis/{{ param.types[0] | api_url }}"><span class="param-type">({{ param.types[0] }})</span></a>
               {% else %}
                 <span class="param-type">({{ param.types[0] }})</span>
               {% endif %}

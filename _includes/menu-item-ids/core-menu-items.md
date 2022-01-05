@@ -1,4 +1,4 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                    |
+| Menu item identifier | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                                                                    |
 | -------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | `align`              | Format                                                                                                   | Changes alignment to the current block or selection.                           |
 | `backcolor`          | Format                                                                                                   | Applies background color to selection.                                         |
@@ -13,7 +13,7 @@
 | `fontsizes`          | Format                                                                                                   | Dropdown list with font sizes to apply to selection.                           |
 | `hr`                 | Insert                                                                                                   | Inserts a horizontal rule into the editor. |
 | `italic`             | Format                                                                                                   | Applies italic format to current selection.                                    |
-| `language`           | Format                                                                                                   | Dropdown list with languages to apply to the selection. This item requires the [`content_langs` option]({{site.baseurl}}/configure/localization/#content_langs).<br /> |
+| `language`           | Format                                                                                                   | Dropdown list with languages to apply to the selection. This item requires the [`content_langs` option]({{site.baseurl}}/content/content-localization/#content_langs).<br /> |
 | `lineheight`         | Format                                                                                                   | Dropdown list with line heights to apply to selection.  |
 | `newdocument`        | File                                                                                                     | Creates a new document.                                                        |
 | `paste`              | Edit                                                                                                     | Pastes the current clipboard contents into editor.                             |

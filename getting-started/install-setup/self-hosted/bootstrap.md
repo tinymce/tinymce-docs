@@ -10,9 +10,9 @@ keywords: integration integrate bootstrap
 
 Using {{site.productname}} with bootstrap does not require any special configuration.
 
-The {{site.productname}} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: [jQuery integration]({{site.baseurl}}/integrations/jquery/)
+The {{site.productname}} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: [jQuery integration]({{site.baseurl}}/getting-started/install-setup/self-hosted/jquery/)
 
-This procedure creates a basic Bootstrap integration containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a basic Bootstrap integration containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).
 
 ### Procedure
 
@@ -29,7 +29,7 @@ This procedure creates a basic Bootstrap integration containing a {{site.product
         ```
         Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
 
-        Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins/premium/).
+        Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins-ref/premium/).
 
     * **{{site.productname}} self-hosted**
 
@@ -37,8 +37,6 @@ This procedure creates a basic Bootstrap integration containing a {{site.product
         ```html
         <script src="/path/to/tinymce.min.js"></script>
         ```
-
-        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 3. Add an initialization point for {{site.productname}}, such as:
 

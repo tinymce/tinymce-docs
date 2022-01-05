@@ -88,5 +88,5 @@ This procedure requires:
 
 For information on customizing the integration, see:
 
-* [{{site.productname}} basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
-* [The {{site.productname}} Blazor integration technical reference]({{site.baseurl}}/integrations/blazor/#tinymceblazorintegrationtechnicalreference).
+* [{{site.productname}} basic setup]({{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/).
+* [The {{site.productname}} Blazor integration technical reference]({{site.baseurl}}/how-to-guides/environment-setup/blazor/blazor-ref/).

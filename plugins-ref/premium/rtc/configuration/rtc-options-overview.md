@@ -19,25 +19,25 @@ The Real-Time Collaboration (RTC) plugin uses promise-based "provider" functions
 
 These options are _required_ when using the Real-Time Collaboration (RTC) plugin.
 
-[`rtc_document_id`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-required/#rtc_document_id)
+[`rtc_document_id`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id)
 : Provide a unique identifier for current document (editor content).
 
-[`rtc_encryption_provider`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-required/#rtc_encryption_provider)
+[`rtc_encryption_provider`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_encryption_provider)
 : Provide the editor with encryption details for encrypting the content before it is shared between collaborators.
 
-[`rtc_token_provider`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-required/#rtc_token_provider)
+[`rtc_token_provider`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_token_provider)
 : Provide the editor with a JSON Web Token (JWT) for verifying that the user has access to edit the current document.
 
 ### Recommended configuration options
 
 These options are assist with improving the user experience. They are not required, but are recommended.
 
-[`rtc_server_disconnected`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_server_disconnected)
+[`rtc_server_disconnected`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_server_disconnected)
 : Assists with communitcating to the end-user that either:
 - They have been unsuccessful in connecting to the collaboration session.
 - They have lost their connection to the collaboration session.
 
-[`rtc_user_details_provider`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_user_details_provider)
+[`rtc_user_details_provider`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_user_details_provider)
 : This option:
 - Allows the user's name or an alias to be shown on user "carets" in collaborative sessions, and
 - Assists with providing data for:
@@ -48,22 +48,22 @@ These options are assist with improving the user experience. They are not requir
 
 The following options assist with integrating Real-Time Collaboration and improving the user experience.
 
-[`rtc_snapshot`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_snapshot)
+[`rtc_snapshot`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_snapshot)
 : Assists with autosaving the editor content during a RTC session.
 
-[`rtc_initial_content_provider`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_initial_content_provider)
+[`rtc_initial_content_provider`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_initial_content_provider)
 : Assists with adding _initial_ content for a newly created (initialized) editor.
 
-[`rtc_client_info`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_client_info)
+[`rtc_client_info`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_client_info)
 : Allows additional user details to be provided for:
 - The `rtc_client_connected` and `rtc_client_disconnected` options.
 - The `RtcClientConnected` and `RtcClientDisconnected` events.
 
-[`rtc_client_connected`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_client_connected)
+[`rtc_client_connected`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_client_connected)
 : Assists with notifying users that collaborators have joined a RTC session and can be used to maintain a list of connected users.
 
-[`rtc_client_disconnected`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_client_disconnected)
+[`rtc_client_disconnected`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_client_disconnected)
 : Assists with notifying users that collaborators have left a RTC session and can be used to update a list of connected users.
 
-[`rtc_unsupported_content_notification`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-optional/#rtc_unsupported_content_notification)
+[`rtc_unsupported_content_notification`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-optional/#rtc_unsupported_content_notification)
 : Allows integrators (developers) to disable the unsupported content notification.

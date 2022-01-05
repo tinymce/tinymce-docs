@@ -100,4 +100,4 @@ If the `tiny_pageembed_classes` setting is left undefined, the default classes w
 {% include css-codeblock/pageembed-plugin-css.md %}
 ```
 
-For more information on configuring CSS, refer to the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) section.
+For more information on configuring CSS, refer to the [content_css]({{site.baseurl}}/content/add-css-options/#content_css) section.

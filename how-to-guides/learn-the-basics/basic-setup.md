@@ -62,7 +62,7 @@ tinymce.init({
 Providing a {{site.productname}} editor with the default configuration, such as:
 {% include live-demo.html id="default" %}
 
-The selector can target most block elements when the editor is used in [inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
+The selector can target most block elements when the editor is used in [inline editing mode]({{site.baseurl}}/interface/editor-mode/use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
 
 The following example uses the `selector` in inline editing mode on a `div` element with `id` `'editable'`:
 
@@ -73,7 +73,7 @@ tinymce.init({
 });
 ```
 
-For information on the differences between the classic and inline editing modes, see: [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
+For information on the differences between the classic and inline editing modes, see: [Setup inline editing mode]({{site.baseurl}}/interface/editor-mode/use-tinymce-inline/).
 
 ## Plugin configuration
 
@@ -88,7 +88,7 @@ tinymce.init({
 });
 ```
 
-For a full list of plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
+For a full list of plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins-ref/).
 
 ## Toolbar configuration
 
@@ -118,8 +118,8 @@ Use a space-separated list to specify the toolbar buttons for {{site.productname
 
 #### Additional information
 
-* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-* For a list of all available toolbar items, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: [User interface options - toolbar]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar).
+* For a list of all available toolbar items, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/interface/toolbars/available-toolbar-buttons/).
 
 ## Menu and Menu bar configuration
 
@@ -180,9 +180,9 @@ The default menus are as follows:
 
 #### Additional information
 
-* For information on the `menu` setting, see: [User interface options - menu]({{site.baseurl}}/configure/editor-appearance/#menu).
-* For information on the `menubar` setting, see: [User interface options - menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
-* For a list of all available menu items, see: [Menu Items Available for {{site.productname}}]({{site.baseurl}}/advanced/available-menu-items/).
+* For information on the `menu` setting, see: [User interface options - menu]({{site.baseurl}}/interface/menus/menus-configuration-options/#menu).
+* For information on the `menubar` setting, see: [User interface options - menubar]({{site.baseurl}}/interface/menus/menus-configuration-options/#menubar).
+* For a list of all available menu items, see: [Menu Items Available for {{site.productname}}]({{site.baseurl}}/interface/menus/available-menu-items/).
 
 ## Basic configuration example
 
@@ -277,7 +277,10 @@ content_css: 'css/content.css',
 
 ### Additional information
 
-* For a full list of configuration options, see: the [Configuration options reference]({{ site.baseurl }}/configure/).
-* For a full list of Plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
-* For information on the UI elements, see: [User interface components]({{ site.baseurl }}/ui-components/).
-* For information on the CSS required to render some {{site.productname}} elements outside of the editor, see: [Boilerplate content CSS]({{site.baseurl}}/general-configuration-guide/boilerplate-content-css/).
+* For a full list of configuration options, see:
+  * [Initial configuration]({{site.baseurl}}/initial-configuration/)
+  * [Customizing the TinyMCE User Interface]({{site.baseurl}}/interface/)
+  * [Customizing TinyMCE Content]({{site.baseurl}}/content/).
+* For a full list of Plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins-ref/).
+* For information on the UI elements, see: [User interface components]({{ site.baseurl }}/how-to-guides/creating-custom-ui-components/).
+* For information on the CSS required to render some {{site.productname}} elements outside of the editor, see: [Boilerplate content CSS]({{site.baseurl}}/how-to-guides/learn-the-basics/editor-content-css/).

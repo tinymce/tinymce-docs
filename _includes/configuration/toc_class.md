@@ -1,6 +1,6 @@
 ### `toc_class`
 
-With `toc_class` you can change the class name that gets assigned to the wrapper `div`. Please note that you will have to alter [Boilerplate Content CSS]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/)) accordingly.
+With `toc_class` you can change the class name that gets assigned to the wrapper `div`. Please note that you will have to alter [Boilerplate Content CSS]({{ site.baseurl }}/how-to-guides/learn-the-basics/editor-content-css/)) accordingly.
 
 Type
 : `String`

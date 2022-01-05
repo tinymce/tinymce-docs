@@ -58,7 +58,7 @@ $ npm install
     * Hyphens ( `-` ).
     * Underscores ( `_` ).
 
-The icon pack name will be used with the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option to apply the icons in {{site.productname}}.
+The icon pack name will be used with the [icons]({{site.baseurl}}/interface/editor-appearance/editor-icons/#icons) option to apply the icons in {{site.productname}}.
 
 ### Add the SVG files
 
@@ -82,9 +82,9 @@ tinymce.init({
 });
 ```
 
-For a list of the icon identifiers, see: [Available icons]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+For a list of the icon identifiers, see: [Available icons]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/).
 
-{{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a [custom skin]({{site.baseurl}}/advanced/creating-a-skin/) is required.
+{{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a [custom skin]({{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/) is required.
 
 > **Note**: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 

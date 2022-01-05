@@ -10,7 +10,7 @@ keywords: internationalization localization languages
 
 This section demonstrates how to change {{site.productname}}'s user interface to the user's language preference. These settings change the language in the toolbar, menu items, buttons, and tooltips.
 
-> **Note**: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality plugin]({{site.baseurl}}/plugins/opensource/directionality/) that adds a toolbar button to control `ltr-rtl` behavior.
+> **Note**: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/content/content-localization/#directionality), [language]({{ site.baseurl }}/interface/ui-localization/#language) and  [language_url]({{ site.baseurl }}/interface/ui-localization/#language_url). There is also a [Directionality plugin]({{site.baseurl}}/plugins-ref/opensource/directionality/) that adds a toolbar button to control `ltr-rtl` behavior.
 
 ## Step 1
 
@@ -24,11 +24,11 @@ Click the download link on the far right of the table for a single language. Che
 
 Unpack the language `js` file(s) into the `path/to/tinymce/langs/` folder.
 
-> **Important**: The language settings will not work unless the language pack is placed in `langs/` directory. The [language_url]({{ site.baseurl }}/configure/localization/#language_url) configuration option is another method to enable additional language settings.
+> **Important**: The language settings will not work unless the language pack is placed in `langs/` directory. The [language_url]({{ site.baseurl }}/interface/ui-localization/#language_url) configuration option is another method to enable additional language settings.
 
 ## Step 3
 
-Set the language option in {{site.productname}}'s configuration to the language code in the list on [this page]({{ site.baseurl }}/configure/localization/#language).
+Set the language option in {{site.productname}}'s configuration to the language code in the list on [this page]({{ site.baseurl }}/interface/ui-localization/#language).
 
 ## Step 4
 
@@ -38,7 +38,7 @@ Load {{site.productname}} to confirm that the language is set correctly.
 
 The following code snippet sets {{site.productname}}'s language to Chinese and the text directionality from right to left.
 
-[Download the Chinese language]({{site.gettiny}}/language-packages/) pack to test this functionality. Install a *local instance* of {{site.productname}} from the [downloads page]({{site.gettiny}}). Follow the [self-hosted install instructions]({{ site.baseurl }}/general-configuration-guide/advanced-install/#self-hostedinstall).
+[Download the Chinese language]({{site.gettiny}}/language-packages/) pack to test this functionality. Install a *local instance* of {{site.productname}} from the [downloads page]({{site.gettiny}}). Follow the [self-hosted install instructions]({{ site.baseurl }}/getting-started/install-setup/self-hosted/expressjs/).
 
 ```html
 <!DOCTYPE html>

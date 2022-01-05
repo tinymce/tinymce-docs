@@ -9,7 +9,7 @@ keywords: tinymce script textarea
 
 ## Getting started guides
 
-Select from one of the following frameworks, CMSs, or package managers for a guide to getting start with {{site.productname}}. If you are not sure which guide to select, or your framework is not listed, try [Adding {{site.productname}} to a webpage using {{site.cloudname}}]({{site.baseurl}}/getting-started/cloud-quick-start/).
+Select from one of the following frameworks, CMSs, or package managers for a guide to getting start with {{site.productname}}. If you are not sure which guide to select, or your framework is not listed, try [Adding {{site.productname}} to a webpage using {{site.cloudname}}]({{site.baseurl}}/getting-started/install-setup/cloud/cloud-quick-start/).
 
 {% assign navigation = site.data.nav %}
 

@@ -14,6 +14,6 @@ The [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/) page provide
 When generating a key pair locally, use one of the supported algorithms.
 {% include auth/jwt-supported-algorithms.md %}
 
-For instructions on generating a key pair locally, see: [Creating a private/public key pair for Tiny Cloud]({{site.baseurl}}/advanced/generate-rsa-key-pairs/).
+For instructions on generating a key pair locally, see: [Creating a private/public key pair for Tiny Cloud]({{site.baseurl}}/how-to-guides/generate-rsa-key-pairs/).
 
 Once a public key has been generated, add the public key to the {{site.cloudname}} API key at: [{{site.accountpage}} - JWT Keys]({{site.accountpageurl}}/jwt/).

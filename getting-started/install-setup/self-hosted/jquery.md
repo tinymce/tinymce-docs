@@ -9,7 +9,7 @@ keywords: integration integrate jquery javascript
 ## TinyMCE jQuery integration quick start guide
 
 The [Official {{site.productname}} jQuery component](https://github.com/tinymce/tinymce/blob/master/modules/tinymce/src/core/main/js/JqueryIntegration.js) integrates TinyMCE into jQuery projects.
-This procedure creates a basic jQuery integration containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a basic jQuery integration containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).
 
 ### Procedure
 
@@ -30,7 +30,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 
         Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
 
-        Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins/premium/).
+        Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins-ref/premium/).
 
     * **{{site.productname}} self-hosted**
 
@@ -40,8 +40,6 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 <script src="/path/to/tinymce.min.js"></script>
 <script src="/path/to/jquery.tinymce.min.js"></script>
         ```
-
-        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 3. Add an initialization point for {{site.productname}}, such as:
 
@@ -61,7 +59,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 
 ### Example jQuery integration
 
-To load a TinyMCE editor similar to the [Basic example]({{site.baseurl}}/demo/basic-example/), add the following code to an empty HTML file.
+To load a TinyMCE editor similar to the [Basic example]({{site.baseurl}}/demos/basic-example/), add the following code to an empty HTML file.
 
 ```js
 <!DOCTYPE html>

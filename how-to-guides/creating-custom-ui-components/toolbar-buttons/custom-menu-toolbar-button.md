@@ -37,6 +37,4 @@ This example configures a toolbar menu button with the label `My Button` that op
 
 The `fetch` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
 
-Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for help using the menu toolbar button.
-
 {% include misc/onSetup.md %}

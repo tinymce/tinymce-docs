@@ -10,7 +10,7 @@ Setting `a11y_advanced_options` to `true`:
 - Adds the **Image is decorative** option to the _Insert/Edit Image_ dialog, allowing users to specify that an image is decorative and does not require alternative text for accessibility purposes.
 - Adds the **Image is decorative** option to the _Accessibility Checker error_ dialog for images without alternative text or the `role="presentation"` attribute.
 
-> **Important**: When `a11y_advanced_options` is set to `true`, [`a11ychecker_allow_decorative_images`]({{site.baseurl}}/plugins/premium/a11ychecker/#a11ychecker_allow_decorative_images) will default to `true`.
+> **Important**: When `a11y_advanced_options` is set to `true`, [`a11ychecker_allow_decorative_images`]({{site.baseurl}}/plugins-ref/premium/a11ychecker/#a11ychecker_allow_decorative_images) will default to `true`.
 
 Type
 : `Boolean`

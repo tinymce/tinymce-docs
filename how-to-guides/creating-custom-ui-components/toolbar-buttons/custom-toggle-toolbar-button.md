@@ -33,7 +33,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 
 {% include live-demo.html id="custom-toolbar-toggle-button" tab="js" %}
 
-The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for [formats]({{site.baseurl}}/configure/content-formatting/#formats) that are already registered with the editor. In this example, `strikethrough` is the registered format.
+The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for [formats]({{site.baseurl}}/content/content-formatting/#formats) that are already registered with the editor. In this example, `strikethrough` is the registered format.
 
 The first button applies and removes strikethrough formatting, and its state toggles on click using `api.setActive(!api.isActive())`. However, the expected behavior is that the button's state will reflect whether the selected content has strikethrough formatting. For example, if the cursor is moved into editor content that has strikethrough formatting the button will become **active** and if it is moved into content that does not have strikethrough formatting the button will become **inactive**. The first button in the example does not do this, since its state only toggles when the button is clicked.
 

@@ -11,7 +11,7 @@ Default Value
 Possible Values
 : `'oxide'`, `'oxide-dark'`
 
-If the `tinydrive_skin` option is not specified, {{site.cloudfilemanager}} will try and use the skin specified by the [{{site.productname}} `skin` option]({{ site.baseurl }}/configure/editor-appearance/#skin) before falling back to the default "oxide" skin.
+If the `tinydrive_skin` option is not specified, {{site.cloudfilemanager}} will try and use the skin specified by the [{{site.productname}} `skin` option]({{ site.baseurl }}/interface/editor-appearance/editor-skin/#skin) before falling back to the default "oxide" skin.
 
 ### Example: Using `tinydrive_skin`
 

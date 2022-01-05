@@ -7,7 +7,7 @@ description: How to use the Yeoman generator to bootstrap a new TinyMCE plugin u
 keywords: webpack yeoman generator plugin tinymce
 ---
 
-{{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
+{{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/how-to-guides/creating-custom-ui-components/making-plugins/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
 
 ## Install the generator
 

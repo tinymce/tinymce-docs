@@ -63,12 +63,13 @@ To remove the notice:
 
 Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
 
-Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins/premium/).
+Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins-ref/premium/).
 
 ## Step 4: Save the content with a form POST
+
 Process the content with a form handler.
 
 When the `<form>` is submitted, {{site.productname}} {{site.productmajorversion}} will `POST` the content in the same way as a normal HTML `<textarea>`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.
 
 {% include misc/quickstart-next-steps.md %}
-* Self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+* Self-hosting {{site.productname}}, see: [Getting started with {{ site.productname }} Self-hosted]({{site.baseurl}}/getting-started/install-setup/self-hosted/).

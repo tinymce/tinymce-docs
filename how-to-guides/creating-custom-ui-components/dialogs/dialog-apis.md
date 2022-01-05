@@ -14,7 +14,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 
 All dialogs have an internal data store, which is used to track the value and/or state of the dialog's panel components.
 
-This data store takes the form of a JavaScript object, where the object's keys are the `name`s of the configured panel components. For example, if a dialog contains a [checkbox]({{site.baseurl}}/ui-components/dialogcomponents/#checkbox) component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
+This data store takes the form of a JavaScript object, where the object's keys are the `name`s of the configured panel components. For example, if a dialog contains a [checkbox]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#checkbox) component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
 
 The current value of a dialog's data store can be accessed using the dialog instance API's `getData()` function. It can also be set using `setData()` which will automatically update the relevant components. For example, if you call `setData({ myCheckbox: true })` with the previous example, the checkbox would be toggled to checked.
 
@@ -33,7 +33,7 @@ To set initial values for components when the dialog is opened, use the `initial
 | `unblock() => void` | Calling `unblock()` will unblock the dialog restoring functionality. |
 | `close() => void` | Calling the `close()` method will close the dialog. When closing the dialog, all DOM elements and dialog data are destroyed.  When `windowManager.open(config)` is called again, all DOM elements and data are recreated from the config. |
 | `redial(config) => void` | Calling `redial()` and passing a dialog body configuration will destroy and recreate the body of the dialog. See the [Redial](#redial) documentation. |
-| `showTab(name: string) => void` | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab. |
+| `showTab(name: string) => void` | **This method only applies to [tab panel]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel) dialogs.** Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab. |
 
 ## Redial
 

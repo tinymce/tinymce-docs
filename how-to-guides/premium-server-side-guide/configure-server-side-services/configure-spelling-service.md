@@ -20,7 +20,7 @@ The Spelling service has these configurable settings:
 
 ### `custom-dictionaries-path` (optional)
 
-For information on creating custom dictionaries, see: [Adding custom dictionaries - Creating custom dictionary files]({{site.baseurl}}/plugins/premium/tinymcespellchecker/custom-dictionaries-for-tiny-spellchecker/#creatingcustomdictionaryfiles).
+For information on creating custom dictionaries, see: [Adding custom dictionaries - Creating custom dictionary files]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/custom-dictionaries-for-tiny-spellchecker/#creatingcustomdictionaryfiles).
 
 {% include misc/custom-dictionaries-path.md %}
 

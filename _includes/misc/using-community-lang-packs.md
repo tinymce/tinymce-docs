@@ -12,7 +12,7 @@ To use change the user interface language using a community language pack:
 {% else %}
 1. Unpack the language file into the `tinymce/langs` folder.
 {% endif %}
-1. Set the [`language`]({{ site.baseurl }}/configure/localization/#language) option in your {{site.productname}} configuration to the language code, matching the filename on the language pack. For example: If the language pack has the filename `sv_SE.js`, then set `language: 'sv_SE',`
+1. Set the [`language`]({{ site.baseurl }}/interface/ui-localization/#language) option in your {{site.productname}} configuration to the language code, matching the filename on the language pack. For example: If the language pack has the filename `sv_SE.js`, then set `language: 'sv_SE',`
 1. Confirm that the language has been set successfully by loading {{site.productname}}.
 
 > **Note**: The language code set in the {{site.productname}} configuration must match the filename of the language file. If the language file is not found, {{site.productname}} will not load.

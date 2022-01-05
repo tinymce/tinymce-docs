@@ -15,11 +15,11 @@ Want to try it for yourself? [Get started with TinyMCE now on Cloud]({{site.acco
 
 The following plugins are excluded from this example:
 
-* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/premium/moxiemanager) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins/premium/tinydrive) included instead.
-* [Autoresize]({{site.baseurl}}/plugins/opensource/autoresize) — Resizes the editor to fit the content.
-* [BBCode]({{site.baseurl}}/plugins/opensource/bbcode) — Changes the markup used for the content.
-* [Code]({{site.baseurl}}/plugins/opensource/code) — [**Advanced Code Editor**]({{site.baseurl}}/plugins/premium/advcode) included instead.
-* [Full Page]({{site.baseurl}}/plugins/opensource/fullpage) — Used for modifying HTML `<head>` elements.
-* [Paste]({{site.baseurl}}/plugins/opensource/paste) — [**PowerPaste**]({{site.baseurl}}/plugins/premium/powerpaste) included instead.
-* [Spellchecker]({{site.baseurl}}/plugins/opensource/spellchecker) — [**Spell Checker Pro**]({{site.baseurl}}/plugins/premium/tinymcespellchecker) included instead.
-* [Tab Focus]({{site.baseurl}}/plugins/opensource/tabfocus) — Changes the behavior of the TAB-key within the editor.
+* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins-ref/premium/moxiemanager/) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins-ref/premium/tinydrive/) included instead.
+* [Autoresize]({{site.baseurl}}/plugins-ref/opensource/autoresize/) — Resizes the editor to fit the content.
+* [BBCode]({{site.baseurl}}/plugins-ref/opensource/bbcode/) — Changes the markup used for the content.
+* [Code]({{site.baseurl}}/plugins-ref/opensource/code/) — [**Advanced Code Editor**]({{site.baseurl}}/plugins-ref/premium/advcode/) included instead.
+* [Full Page]({{site.baseurl}}/plugins-ref/opensource/fullpage/) — Used for modifying HTML `<head>` elements.
+* [Paste]({{site.baseurl}}/plugins-ref/opensource/paste/) — [**PowerPaste**]({{site.baseurl}}/plugins-ref/premium/powerpaste/) included instead.
+* [Spellchecker]({{site.baseurl}}/plugins-ref/opensource/spellchecker/) — [**Spell Checker Pro**]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/) included instead.
+* [Tab Focus]({{site.baseurl}}/plugins-ref/opensource/tabfocus/) — Changes the behavior of the TAB-key within the editor.

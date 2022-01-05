@@ -38,6 +38,6 @@ tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numeric
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| name | `string` | Required |  Specifies the series to toggle. Series and their associated names are configured using the [`advtable_value_series` option]({{site.baseurl}}/plugins/premium/advtable/#advtable_value_series). |
+| name | `string` | Required |  Specifies the series to toggle. Series and their associated names are configured using the [`advtable_value_series` option]({{site.baseurl}}/plugins-ref/premium/advtable/#advtable_value_series). |
 
 If the table already has a series column that uses the series specified in `name`, the series column will be removed from the table. Otherwise, a new series column will be created, replacing any other series column that may already be in the table.

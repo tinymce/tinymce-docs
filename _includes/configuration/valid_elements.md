@@ -3,15 +3,15 @@
 
 The valid_elements option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
 
-This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is a mixture of the full [HTML5](https://html.spec.whatwg.org/) and [HTML4](http://www.w3.org/TR/REC-html40/) specification or the HTML5 or HTML4 specification depending on the configured [schema]({{ site.baseurl }}/configure/content-filtering/#schema).
+This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is a mixture of the full [HTML5](https://html.spec.whatwg.org/) and [HTML4](http://www.w3.org/TR/REC-html40/) specification or the HTML5 or HTML4 specification depending on the configured [schema]({{ site.baseurl }}/content/content-filtering/#schema).
 
-If you just want to add or change some behavior for a few items, use the [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements) option
+If you just want to add or change some behavior for a few items, use the [extended_valid_elements]({{ site.baseurl }}/content/content-filtering/#extended_valid_elements) option
 
 ### Control characters
 
 | Name     | Summary          |
 |----------|------------------|
-| @        | Rules with this name will be applied to all elements defined after this rule. So `@[attr1&#124;attr2]` will enable `attr1` and `attr2` for all elements, but `element1,@[attr1&#124;attr2],element2,element3` will enable `attr1` and `attr2` only for `element2` and `element3`. If applied in [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements), it is only effective for the elements in the extended_valid_elements list. |
+| @        | Rules with this name will be applied to all elements defined after this rule. So `@[attr1&#124;attr2]` will enable `attr1` and `attr2` for all elements, but `element1,@[attr1&#124;attr2],element2,element3` will enable `attr1` and `attr2` only for `element2` and `element3`. If applied in [extended_valid_elements]({{ site.baseurl }}/content/content-filtering/#extended_valid_elements), it is only effective for the elements in the extended_valid_elements list. |
 | ,   | Separates element chunk definitions. |
 | /   | Separates element synonyms. The first element is the one that will be output. |
 | &#124; | Separates attribute definitions. |
@@ -35,7 +35,7 @@ Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 |----------|-----------------|
 | {$uid}   |Results in a unique ID. For example, `'p[id:{$uid}]'`. |
 
-Use `*[*]` to include all elements and all attributes. This can be very useful when used with the [invalid_elements]({{ site.baseurl }}/configure/content-filtering/#invalid_elements) option.
+Use `*[*]` to include all elements and all attributes. This can be very useful when used with the [invalid_elements]({{ site.baseurl }}/content/content-filtering/#invalid_elements) option.
 
 Type
 : `String`

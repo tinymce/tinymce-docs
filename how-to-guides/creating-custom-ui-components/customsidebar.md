@@ -15,7 +15,7 @@ The sidebar API allows developers to add sidebars on editor instances in a simil
 
 This is the syntax for the addSidebar function: `editor.ui.registry.addSidebar(name:String, spec:Object)`
 
-When a new sidebar is registered, a corresponding toolbar button for toggling the sidebar open and close is also created using the same name. This button can then be included in the toolbar by adding the sidebar name to the [`toolbar`]({{site.baseurl}}/configure/editor-appearance/#toolbar/) option.
+When a new sidebar is registered, a corresponding toolbar button for toggling the sidebar open and close is also created using the same name. This button can then be included in the toolbar by adding the sidebar name to the [`toolbar`]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar/) option.
 
 ### Specification object
 
@@ -28,7 +28,7 @@ Type
 
 #### `icon`
 
-The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {{site.productname}} skin or a [custom icon]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon/).
+The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {{site.productname}} skin or a [custom icon]({{site.baseurl}}/apis/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon/).
 
 Type
 : `String`

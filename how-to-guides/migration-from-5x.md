@@ -32,7 +32,7 @@ To use TinyMCE 6 from the {{site.cloudname}}, include this script in your HTML p
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
-For information on using the latest development and testing builds, see: [Cloud deployment guide - Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
+For information on using the latest development and testing builds, see: [Cloud deployment guide - Specify editor & plugin versions]({{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/).
 
 ### Option/Setting changes
 

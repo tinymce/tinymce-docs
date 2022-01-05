@@ -35,7 +35,7 @@ The {{site.productname}} vnumtxt release includes an accompanying release of the
 
 - <Description>
 
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins-ref/<<Premium Plugin Name>>/).
 
 ## Accompanying Premium Skins and Icon Packs changes
 
@@ -77,11 +77,11 @@ The Java server-side components have been updated to the following versions:
 
 For information on:
 
-- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
-- The Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/premium/export/).
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
-- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
-- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins-ref/premium/mediaembed/).
+- The Export plugin, see: [Export plugin]({{site.baseurl}}/plugins-ref/premium/export/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins-ref/opensource/imagetools/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins-ref/premium/linkchecker/).
+- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/how-to-guides/premium-server-side-guide/).
 
 ### Updating the self-hosted server-side components

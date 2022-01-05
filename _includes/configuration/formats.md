@@ -4,7 +4,7 @@ This option is used to override default {{site.productname}} **formats** or add 
 
 {{site.productname}} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named **format**. For example, the `bold` format is the style that is applied to text when the bold button is clicked.
 
-Check out the [custom formats example]({{ site.baseurl }}/demo/format-custom/) for a demonstration of this option.
+Check out the [custom formats example]({{ site.baseurl }}/content/user-formatting-options/#style_formats/) for a demonstration of this option.
 
 The `formats` configuration option takes an object of format name and format specification pairs. Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
 
@@ -38,7 +38,7 @@ There are three types of formats:
 * Inline format
 * Selector format
 
-All three format types can be used with the `formats` configuration option. They can also be used to specify a new format item in the [`style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option. However, a format that is specified using `formats` is then registered with the editor, and can be referred to by name in `style_formats` rather than needing to specify the format again.
+All three format types can be used with the `formats` configuration option. They can also be used to specify a new format item in the [`style_formats`]({{ site.baseurl }}/content/user-formatting-options/#style_formats) configuration option. However, a format that is specified using `formats` is then registered with the editor, and can be referred to by name in `style_formats` rather than needing to specify the format again.
 
 For example, these two configurations are equivalent:
 
@@ -66,7 +66,7 @@ tinymce.init({
 });
 ```
 
-A registered format can also be used by name with the built-in [formatter]({{ site.baseurl }}/api/tinymce/tinymce.formatter) methods. See [/configure/content-formatting/#usingcustomformats]({{ site.baseurl }}/configure/content-formatting/#usingcustomformats) for an example.
+A registered format can also be used by name with the built-in [formatter]({{ site.baseurl }}/apis/tinymce/tinymce.formatter) methods. See [/content/content-formatting/#usingcustomformats]({{ site.baseurl }}/content/content-formatting/#usingcustomformats) for an example.
 
 #### `block`
 

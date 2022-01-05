@@ -15,10 +15,10 @@ The starter projects have their own procedures to get {{site.cloudfilemanager}} 
             <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter"><img src="{{site.baseurl}}/images/java.png" height="120"></a></td>
         </tr>
         <tr>
-            <td><a href="{{site.baseurl}}/plugins/premium/tinydrive/starter-projects/dotnet/">.NET Core</a></td>
-            <td><a href="{{site.baseurl}}/plugins/premium/tinydrive/starter-projects/nodejs/">Node.js</a></td>
-            <td><a href="{{site.baseurl}}/plugins/premium/tinydrive/starter-projects/php/">PHP</a></td>
-            <td><a href="{{site.baseurl}}/plugins/premium/tinydrive/starter-projects/java/">Java Spring</a></td>
+            <td><a href="{{site.baseurl}}/plugins-ref/premium/tinydrive/starter-projects/dotnet/">.NET Core</a></td>
+            <td><a href="{{site.baseurl}}/plugins-ref/premium/tinydrive/starter-projects/nodejs/">Node.js</a></td>
+            <td><a href="{{site.baseurl}}/plugins-ref/premium/tinydrive/starter-projects/php/">PHP</a></td>
+            <td><a href="{{site.baseurl}}/plugins-ref/premium/tinydrive/starter-projects/java/">Java Spring</a></td>
         </tr>
           <tr>
             <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter">GitHub Project</a></td>

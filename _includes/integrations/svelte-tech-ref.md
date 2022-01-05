@@ -1,12 +1,10 @@
-## TinyMCE Svelte integration technical reference
-
 Covered in this section:
 
 * [Configuring the TinyMCE Svelte integration](#configuringthetinymcesvelteintegration)
 * [Component binding](#componentbinding)
 * [Event binding](#eventbinding)
 
-### Configuring the TinyMCE Svelte integration
+## Configuring the TinyMCE Svelte integration
 
 The `tinymce-svelte` `Editor` component accepts the following properties:
 
@@ -25,7 +23,7 @@ The `tinymce-svelte` `Editor` component accepts the following properties:
 />
 ```
 
-#### apiKey
+### apiKey
 
 {{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
@@ -35,7 +33,7 @@ Default value
 Type
 : String
 
-##### Example using apiKey
+#### Example using apiKey
 
 ```jsx
 <Editor
@@ -43,9 +41,9 @@ Type
 />
 ```
 
-#### channel
+### channel
 
-Specifies the {{site.cloudname}} channel to use. For information on {{site.cloudname}} deployment channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
+Specifies the {{site.cloudname}} channel to use. For information on {{site.cloudname}} deployment channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud]({{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/).
 
 Default value
 : `"5"`
@@ -53,7 +51,7 @@ Default value
 Type
 : String
 
-##### Example using channel
+#### Example using channel
 
 ```jsx
 <Editor
@@ -61,7 +59,7 @@ Type
 />
 ```
 
-#### id
+### id
 
 Specified an Id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method.
 
@@ -71,7 +69,7 @@ Default value
 Type
 : String
 
-##### Example using id
+#### Example using id
 
 ```jsx
 <Editor
@@ -79,7 +77,7 @@ Type
 />
 ```
 
-#### inline
+### inline
 
 Set the editor to inline mode.
 
@@ -89,7 +87,7 @@ Default value
 Type
 : Boolean
 
-##### Example using inline
+#### Example using inline
 
 ```jsx
 <Editor
@@ -97,7 +95,7 @@ Type
 />
 ```
 
-#### disabled
+### disabled
 
 Set the editor to readonly mode.
 
@@ -107,7 +105,7 @@ Default value
 Type
 : Boolean
 
-##### Example using disabled
+#### Example using disabled
 
 ```jsx
 <Editor
@@ -115,14 +113,14 @@ Type
 />
 ```
 
-#### scriptSrc
+### scriptSrc
 
 Use the `scriptSrc` property to specify the location of {{site.productname}} to lazy load when the application is not using {{site.cloudname}}. This setting is required if the application uses a self-hosted version of {{site.productname}}, such as the {{site.productname}} npm package or a .zip package of {{site.productname}}.
 
 Type
 : String
 
-##### Example using scriptSrc
+#### Example using scriptSrc
 
 ```jsx
 <Editor
@@ -130,7 +128,7 @@ Type
 />
 ```
 
-#### conf
+### conf
 
 Specify a set of properties for the `Tinymce.init` method to initialize the editor.
 
@@ -140,7 +138,7 @@ Default value
 Type
 : Object
 
-##### Example using conf
+#### Example using conf
 
 ```jsx
 <script>
@@ -156,13 +154,13 @@ Type
 </main>
 ```
 
-### Component binding
+## Component binding
 
-#### Input binding
+### Input binding
 
 The editor component allows developers to bind the contents of editor to a variable. By specifying the `bind:value`, developers can create a two-way binding on a selected variable.
 
-#### Example of input binding
+### Example of input binding
 
 ```jsx
 <script>
@@ -175,11 +173,11 @@ let value = 'some content';
 </main>
 ```
 
-#### Binding text output
+### Binding text output
 
 The editor exposes the `text` property, which developers can `bind` to retrieve a read-only value of the editor content as text. Changes will not propagate up to the editor if the `text` bound variable changes. It will only propagate changes from the editor.
 
-#### Example of text binding
+### Example of text binding
 
 ```jsx
 <script>
@@ -191,7 +189,7 @@ let text = '';
 </main>
 ```
 
-### Event binding
+## Event binding
 
 Functions can be bound to editor events, such as:
 

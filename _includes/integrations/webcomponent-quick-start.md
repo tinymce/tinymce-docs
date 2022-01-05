@@ -1,9 +1,7 @@
-## TinyMCE Web Component quick start guide
-
 The [Official {{site.productname}} Web Component](https://github.com/tinymce/tinymce-webcomponent) integrates {{site.productname}} into Web Component projects.
-This procedure creates an HTML page containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates an HTML page containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).
 
-### Procedure
+## Procedure
 
 To add a {{site.productname}} editor to a web page using the {{site.productname}} Web Component:
 
@@ -26,6 +24,14 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
 
     The second `meta` element is required for the editor to function correctly on mobile devices. For information on the viewport `meta` element, see: [MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_basics).
 
+{% if productSource == "package-manager" %}
+1. Install the `tinymce-webcomponent` editor component and `tinymce`, such as:
+
+    ```sh
+    npm install tinymce @tinymce/tinymce-webcomponent
+    ```
+
+{% endif %}
 3. Add a `script` element sourcing the {{site.productname}} Web Component (`tinymce-webcomponent.js`), such as:
 
     ```html
@@ -34,13 +40,15 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
 
     The `tinymce-webcomponent` can also be sourced from [npmjs](https://www.npmjs.com/package/@tinymce/tinymce-webcomponent).
 
-4. (optional) Add a `script` element sourcing {{site.productname}}, such as:
+{% if productSource != "cloud" %}
+4. Add a `script` element sourcing {{site.productname}}, such as:
 
     ```html
     <script src="/path/to/tinymce.min.js"></script>
     ```
 
     If a `script` element sourcing {{site.productname}} is not provided, the {{site.productname}} Web Component will load {{site.productname}} from the {{site.cloudname}}. For information on the available options for sourcing {{site.productname}}, see: [Loading {{site.productname}}](#loadingtinymce).
+{% endif %}
 
 5. Add a `tinymce-editor` element where the editor should appear.
 
@@ -50,7 +58,7 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
 
     The default {{site.productname}} editor will load at this location if the page is opened in a web browser.
 
-### Example: Adding the TinyMCE Web Component to an HTML page
+## Example: Adding the TinyMCE Web Component to an HTML page
 
 The following example shows the {{site.productname}} Web Component in an HTML page, with:
 

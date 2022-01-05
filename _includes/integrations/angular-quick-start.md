@@ -139,8 +139,6 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
 
       To use an independent deployment of {{site.productname}} with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
 
-      For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
-
     <a id="bundle" class="anchor"></a>
     * Bundling {{site.productname}} with the Angular application using a module loader (such as Webpack).
 
@@ -184,5 +182,5 @@ The application has now been deployed on the web server.
 * For examples of the {{site.productname}} integration, see: [the tinymce-angular storybook](https://tinymce.github.io/tinymce-angular/).
 * For information on customizing:
   * {{site.productname}} integration, see: [Angular framework Technical Reference]({{site.baseurl}}/how-to-guides/environment-setup/angular/angular-ref/).
-  * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+  * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/).
   * The Angular application, see: [the Angular documentation](https://angular.io/docs).

@@ -37,7 +37,7 @@ tinymce.init({
 
 | Name | Arguments | Description |
 |------| ------| ----------- |
-| addTab | tabSpec: [TabPanel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) | Register a tab for the Help dialog |
+| addTab | tabSpec: [TabPanel]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel) | Register a tab for the Help dialog |
 
 ### Example: Using the `addTab` API
 
@@ -56,7 +56,7 @@ tinymce.activeEditor.plugins.help.addTab({
 
 ## Exposing metadata for the help plugin
 
-For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  [Creating a Plugin page]({{ site.baseurl }}/advanced/creating-a-plugin/#exposingmetadata).
+For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  [Creating a Plugin page]({{ site.baseurl }}/how-to-guides/creating-custom-ui-components/making-plugins/creating-a-plugin/#exposingmetadata).
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

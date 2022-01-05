@@ -47,9 +47,9 @@ The `hr` toolbar button and menu item will now work by default, without needing 
 Integrators can remove `hr` from the `plugins` section of their {{site.productname}} configuration.
 
 For information about horizontal rule-related functionality, see:
-- [Core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons)
-- [Core menu items]({{site.baseurl}}/advanced/available-menu-items/#thecoremenuitems)
-- [Core commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands)
+- [Core toolbar buttons]({{site.baseurl}}/interface/toolbars/available-toolbar-buttons/#thecoretoolbarbuttons)
+- [Core menu items]({{site.baseurl}}/interface/menus/available-menu-items/#thecoremenuitems)
+- [Core commands]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/editor-command-identifiers/#coreeditorcommands)
 
 ### Additional changes
 

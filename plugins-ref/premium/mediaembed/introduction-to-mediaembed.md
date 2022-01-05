@@ -22,14 +22,14 @@ The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin]({
 
 ## Installation
 
-For the moment the **Enhanced Media Embed** plugin has to be used in conjunction with the [media]({{site.baseurl}}/plugins/opensource/media/) plugin, so:
+For the moment the **Enhanced Media Embed** plugin has to be used in conjunction with the [media]({{site.baseurl}}/plugins-ref/opensource/media/) plugin, so:
 
 1. Make sure you have the `media` plugin added to the `plugins` list.
 2. Add the `mediaembed` plugin to the `plugins` list.
 
 ### Example Cloud Configuration
 
-The service URL is already configured with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
+The service URL is already configured with [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/).
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
 ```js

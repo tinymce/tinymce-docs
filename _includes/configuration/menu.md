@@ -1,6 +1,6 @@
 ## menu
 
-This option allows you to specify which menus should appear on {{site.productname}}'s menu bar and the [items]({{ site.baseurl }}/advanced/available-menu-items/) that should appear within the menus themselves.
+This option allows you to specify which menus should appear on {{site.productname}}'s menu bar and the [items]({{ site.baseurl }}/interface/menus/available-menu-items/) that should appear within the menus themselves.
 
 To specify the menus that should appear on {{site.productname}}'s menu bar, the menu option should be provided with a JavaScript object containing a property for each menu. These properties should contain a JavaScript object themselves with properties `title` and `items`.
 

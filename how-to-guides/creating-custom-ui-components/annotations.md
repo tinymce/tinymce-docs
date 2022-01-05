@@ -32,8 +32,6 @@ setup: function(ed) {
 }
 ```
 
-See [Configure {{site.productname}}]({{ site.baseurl }}/configure/) for more information on how to configure {{site.productname}} core.
-
 ### 2. Registering the Annotator
 
 The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator (`editor.annotator`).

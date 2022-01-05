@@ -15,7 +15,7 @@ This configuration file will require you to enter *at least* the following  info
 
 - `allowed-origins` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
 
-The Enhanced Media Embed server-side component require additional configuration, which can be found on the [Enhanced Media Embed page]({{ site.baseurl }}/plugins/premium/mediaembed/mediaembed-server-config/).
+The Enhanced Media Embed server-side component require additional configuration, which can be found on the [Enhanced Media Embed page]({{ site.baseurl }}/plugins-ref/premium/mediaembed/mediaembed-server-config/).
 
 ## `allowed-origins` (required)
 

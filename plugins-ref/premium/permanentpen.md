@@ -31,7 +31,7 @@ underline: false,
 strikethrough: false
 ```
 
-For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/content/content-formatting/#formats) section.
 
 ## Try our Permanent Pen demo
 
@@ -62,7 +62,7 @@ There are two ways to access the Permanent Pen properties:
 
 #### From the menubar
 
-Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/configure/editor-appearance/#menu) configuration.
+Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/interface/menus/menus-configuration-options/#menu) configuration.
 
 ```js
 tinymce.init({

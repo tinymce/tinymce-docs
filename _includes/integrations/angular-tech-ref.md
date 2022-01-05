@@ -140,7 +140,7 @@ Such as:
   cloudChannel="{{site.productmajorversion}}-dev"
 ></editor>
 ```
-For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels).
+For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/#{{site.productmajorversion}}{{site.productmajorversion}}-testingand{{site.productmajorversion}}-devreleasechannels).
 
 ### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -179,7 +179,7 @@ Type
 ### `init`
 Object sent to the `tinymce.init` method used to initialize the editor.
 
-For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/).
 
 Default value
 : `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
@@ -220,7 +220,7 @@ Type
 ### `inline`
 Used to set the editor to inline mode. Using `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the {{site.productname}} selector (`tinymce.init`).
 
-For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
+For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/interface/editor-mode/inline-editor-options/#inline) and [Setup inline editing mode]({{site.baseurl}}/interface/editor-mode/use-tinymce-inline/).
 
 Default value
 : `false`
@@ -239,7 +239,7 @@ Possible values
 ### `plugins`
 Used to include plugins for the editor. Using `<editor plugins="lists code"></editor>` is the same as setting `{plugins: 'lists code'}` in the {{site.productname}} selector (`tinymce.init`).
 
-For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
+For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins-ref/).
 
 Type
 : `String` or `Array`
@@ -294,10 +294,10 @@ Type
 ### `toolbar`
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></editor>` is the same as setting `{toolbar: 'bold italic'}` in the {{site.productname}} selector (`tinymce.init`).
 
-For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
+For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar).
 
 Possible values
-: See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
+: See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/interface/toolbars/available-toolbar-buttons/).
 
 Type
 : `String`

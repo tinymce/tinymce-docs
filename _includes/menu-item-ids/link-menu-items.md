@@ -1,4 +1,4 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                   |
+| Menu item identifier | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                                   |
 |----------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | `link`               | Insert                                                                                                   | Opens the link dialog.                        |
 | `openlink`           | _Not Applicable_                                                                                         | Opens the selected link in a new tab.         |

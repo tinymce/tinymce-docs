@@ -1,1 +1,1 @@
-> **Note**: The plugin language files (such as `./plugins/plugin/langs/sv_SE.js`) are required where the editor user interface is localized using the [`language` option](/configure/localization/#language).
+> **Note**: The plugin language files (such as `./plugins/plugin/langs/sv_SE.js`) are required where the editor user interface is localized using the [`language` option](/interface/ui-localization/#language).

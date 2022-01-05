@@ -15,7 +15,7 @@ keywords: integration integrate rails
 ## TinyMCE in Ruby on Rails using the Tiny Cloud
 
 The {{site.cloudname}} can be used to integrate {{site.productname}} into Ruby on Rails projects.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -57,7 +57,7 @@ The page containing the {{site.productname}} will be accessible at `http://local
 ## TinyMCE in Ruby on Rails using TinyMCE self-hosted
 
 Self-hosted instances of {{site.productname}} can be integrated into Ruby on Rails projects.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).
 
 {% include integrations/rails-basic-proj.md %}
 
@@ -97,14 +97,12 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
 
 The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: http://localhost:3000/).
 
-For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
-
 ## The third-party TinyMCE Ruby on Rails gem
 
 {{site.thirdPartyInteg}}
 
 Sam Pohlenz maintains the [{{site.productname}} Ruby on Rails gem](https://github.com/spohlenz/tinymce-rails) for integrating {{site.productname}} into the Ruby on Rails asset pipeline.
-This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).
 
 {% include integrations/rails-basic-proj.md %}
 

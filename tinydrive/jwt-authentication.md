@@ -16,8 +16,6 @@ A JSON Web Token (JWT) endpoint is a service for generating and providing author
 
 JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for {{site.cloudfilemanager}}.
 
-> If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/#starterprojects)  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
-
 ## Overview
 
 - [Setting up JWT authentication for Tiny Drive](#settingupjwtauthenticationfortinydrive)

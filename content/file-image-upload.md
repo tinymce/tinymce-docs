@@ -21,7 +21,7 @@ description: These settings affect TinyMCE's image and file handling capabilitie
 
 {% include configuration/images_upload_handler.md %}
 
-{% include configuration/images_uploads_url.md %}
+{% include configuration/images_upload_url.md %}
 
 ## Options for improving custom file handling
 
@@ -31,6 +31,6 @@ description: These settings affect TinyMCE's image and file handling capabilitie
 
 {% include configuration/images_upload_credentials.md %}
 
-{% include configuration/images_upload_reuse_filename.md %}
+{% include configuration/images_reuse_filename.md %}
 
 {% include configuration/images_dataimg_filter.md %}

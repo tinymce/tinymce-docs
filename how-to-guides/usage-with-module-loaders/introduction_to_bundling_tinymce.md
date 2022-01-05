@@ -11,26 +11,26 @@ The following guides and reference pages assist with bundling {{site.productname
 
 ## Webpack
 
-* [ES6 and npm]({{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_es6_npm/)
-* [CommonJS and npm]({{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_cjs_npm/)
-* [ES6 and a .zip archive]({{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_es6_download/)
-* [CommonJS and a .zip archive]({{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_cjs_download/)
+* [ES6 and npm]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/webpack/webpack_es6_npm/)
+* [CommonJS and npm]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/webpack/webpack_cjs_npm/)
+* [ES6 and a .zip archive]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/webpack/webpack_es6_download/)
+* [CommonJS and a .zip archive]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/webpack/webpack_cjs_download/)
 
 ## Rollup.js
 
-* [ES6 and npm]({{site.baseurl}}/advanced/usage-with-module-loaders/rollup/rollup_es6_npm/)
-* [ES6 and a .zip archive]({{site.baseurl}}/advanced/usage-with-module-loaders/rollup/rollup_es6_download/)
+* [ES6 and npm]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/rollup/rollup_es6_npm/)
+* [ES6 and a .zip archive]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/rollup/rollup_es6_download/)
 
 ## Browserify
 
-* [CommonJS and npm]({{site.baseurl}}/advanced/usage-with-module-loaders/browserify/browserify_cjs_npm/)
-* [CommonJS and a .zip archive]({{site.baseurl}}/advanced/usage-with-module-loaders/browserify/browserify_cjs_download/)
+* [CommonJS and npm]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/browserify/browserify_cjs_npm/)
+* [CommonJS and a .zip archive]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/browserify/browserify_cjs_download/)
 
 ## Reference
 
-* [Plugins]({{site.baseurl}}/advanced/usage-with-module-loaders/reference/plugins/)
-* [Content CSS]({{site.baseurl}}/advanced/usage-with-module-loaders/reference/content-css/)
-* [Skins]({{site.baseurl}}/advanced/usage-with-module-loaders/reference/skins/)
-* [Icons]({{site.baseurl}}/advanced/usage-with-module-loaders/reference/icons/)
-* [UI localizations]({{site.baseurl}}/advanced/usage-with-module-loaders/reference/localization/)
-* [Themes]({{site.baseurl}}/advanced/usage-with-module-loaders/reference/themes/)
+* [Plugins]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/reference/plugins/)
+* [Content CSS]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/reference/content-css/)
+* [Skins]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/reference/skins/)
+* [Icons]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/reference/icons/)
+* [UI localizations]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/reference/localization/)
+* [Themes]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/reference/themes/)

@@ -8,9 +8,9 @@ keywords: tinymce cloud script textarea apiKey
 
 {{site.cloudname}} is the easiest way to integrate {{site.productname}} and upgrade to premium plugins.
 
-{{site.cloudname}} can be used without an API key. Refer to the [Introduction & getting started ]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
+{{site.cloudname}} can be used without an API key. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All {{site.cloudname}} accounts include a free, pre-configured {{site.cloudname}} image proxy service. This setup uses the [Image tools]({{site.baseurl}}/plugins/opensource/imagetools/) plugin.
+All {{site.cloudname}} accounts include a free, pre-configured {{site.cloudname}} image proxy service. This setup uses the [Image tools]({{site.baseurl}}/plugins-ref/opensource/imagetools/) plugin.
 
 ## Integrating TinyMCE for the first time
 
@@ -39,32 +39,32 @@ The following example adds a script tag into the application that inserts the co
 
 ### Step 2: Load, customize and interact with TinyMCE
 
-There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on {{site.cloudname}}. A range of [simple examples]({{ site.baseurl }}/demo/basic-example/) are available. Refer to the [Quick start]({{ site.baseurl }}/quick-start) section for more information.
+There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on {{site.cloudname}}. A range of [simple examples]({{ site.baseurl }}/demos/basic-example/) are available. Refer to the [Quick start]({{ site.baseurl }}/getting-started/install-setup/cloud/cloud-quick-start/) section for more information.
 
 ### Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 
-Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the [{{site.productname}} configuration]({{ site.baseurl }}/how-to-guides/learn-the-basics/basic-setup/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* [Mentions]({{site.baseurl}}/plugins/premium/mentions/)
-* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/premium/tinydrive/)
-* [Comments]({{site.baseurl}}/plugins/premium/comments/)
-* [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)
-* [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)
-* [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/)
-* [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/)
-* [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/)
+* [Mentions]({{site.baseurl}}/plugins-ref/premium/mentions/)
+* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins-ref/premium/tinydrive/)
+* [Comments]({{site.baseurl}}/plugins-ref/premium/comments/)
+* [Page Embed]({{site.baseurl}}/plugins-ref/premium/pageembed/)
+* [Permanent Pen]({{site.baseurl}}/plugins-ref/premium/permanentpen/)
+* [Format Painter]({{site.baseurl}}/plugins-ref/premium/formatpainter/)
+* [PowerPaste]({{site.baseurl}}/plugins-ref/premium/powerpaste/)
+* [Spell Checker Pro]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/)
 
-> **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
+> **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/).
 
-* [Image Tools (with configured image proxy)]({{site.baseurl}}/plugins/opensource/imagetools/)
+* [Image Tools (with configured image proxy)]({{site.baseurl}}/plugins-ref/opensource/imagetools/)
 
 > **Note**: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* [Moxie Manager]({{site.baseurl}}/plugins/premium/moxiemanager/)
-* [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker/)
-* [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/)
-* [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/)
-* [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/)
+* [Moxie Manager]({{site.baseurl}}/plugins-ref/premium/moxiemanager/)
+* [Accessibility Checker]({{site.baseurl}}/plugins-ref/premium/a11ychecker/)
+* [Advanced Code Editor]({{site.baseurl}}/plugins-ref/premium/advcode/)
+* [Enhanced Media Embed]({{site.baseurl}}/plugins-ref/premium/mediaembed/)
+* [Link Checker]({{site.baseurl}}/plugins-ref/premium/linkchecker/)
 
 > **Note**: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
 
@@ -82,9 +82,9 @@ Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while reque
 
 ### Step 5: Specifying a translation
 
-To change the user interface language with a language pack, use the [language configuration option]({{ site.baseurl }}/configure/localization/#language).
+To change the user interface language with a language pack, use the [language configuration option]({{ site.baseurl }}/interface/ui-localization/#language).
 
-Alternatively, [download a language pack]({{site.gettiny}}/language-packages/) to enable a language other than English (US). [Specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
+Alternatively, [download a language pack]({{site.gettiny}}/language-packages/) to enable a language other than English (US). [Specify its location]({{ site.baseurl }}/interface/ui-localization/#language_url) with the `language_url` configuration option.
 
 ## Migrating from a self-hosted environment to Tiny Cloud
 
@@ -102,31 +102,31 @@ Replace the script tag with the following:
 
 ### Step 2: Update custom plugin paths
 
-Reference [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) to ensure custom plugins or modified plugins continue to function in the {{site.cloudname}} deployment.
+Reference [external_plugins]({{ site.baseurl }}/initial-configuration/editor-important-options/#external_plugins) to ensure custom plugins or modified plugins continue to function in the {{site.cloudname}} deployment.
 
-> **Warning**: Do not use the regular [plugins]({{ site.baseurl }}/general-configuration-guide/work-with-plugins/) configuration element.
+> **Warning**: Do not use the regular [plugins]({{ site.baseurl }}/how-to-guides/learn-the-basics/work-with-plugins/) configuration element.
 
 ### Step 3: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the [{{site.productname}} configuration]({{ site.baseurl }}/how-to-guides/learn-the-basics/basic-setup/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* [Mentions]({{site.baseurl}}/plugins/premium/mentions/)
-* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/premium/tinydrive/)
-* [Comments]({{site.baseurl}}/plugins/premium/comments/)
-* [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)
-* [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)
-* [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/)
-* [Powerpaste]({{site.baseurl}}/plugins/premium/powerpaste/)
-* [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/)
+* [Mentions]({{site.baseurl}}/plugins-ref/premium/mentions/)
+* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins-ref/premium/tinydrive/)
+* [Comments]({{site.baseurl}}/plugins-ref/premium/comments/)
+* [Page Embed]({{site.baseurl}}/plugins-ref/premium/pageembed/)
+* [Permanent Pen]({{site.baseurl}}/plugins-ref/premium/permanentpen/)
+* [Format Painter]({{site.baseurl}}/plugins-ref/premium/formatpainter/)
+* [Powerpaste]({{site.baseurl}}/plugins-ref/premium/powerpaste/)
+* [Spell Checker Pro]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/)
 
-> **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
+> **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/).
 
-* [Image tools (with configured image proxy)]({{site.baseurl}}/plugins/opensource/imagetools/)
+* [Image tools (with configured image proxy)]({{site.baseurl}}/plugins-ref/opensource/imagetools/)
 
 > **Note**: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* [Moxie Manager]({{site.baseurl}}/plugins/premium/moxiemanager/)
-* [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker/)
-* [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/)
-* [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/)
-* [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/)
+* [Moxie Manager]({{site.baseurl}}/plugins-ref/premium/moxiemanager/)
+* [Accessibility Checker]({{site.baseurl}}/plugins-ref/premium/a11ychecker/)
+* [Advanced Code Editor]({{site.baseurl}}/plugins-ref/premium/advcode/)
+* [Enhanced Media Embed]({{site.baseurl}}/plugins-ref/premium/mediaembed/)
+* [Link Checker]({{site.baseurl}}/plugins-ref/premium/linkchecker/)

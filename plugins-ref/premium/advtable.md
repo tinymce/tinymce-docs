@@ -12,7 +12,7 @@ keywords: sort rownumbering series tables advanced advtable premium
 <br/>
 {{site.premiumplugin}}
 
-The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding the following advanced functionality:
+The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins-ref/opensource/table/) by adding the following advanced functionality:
 
 - Sort options for rows and columns.
 - Row numbering column for tables.
@@ -83,4 +83,4 @@ The Advanced Tables plugin provides the following JavaScript commands.
 
 ## Events
 
-For events applicable to the Advanced Tables plugin, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).
+For events applicable to the Advanced Tables plugin, see: [Table plugin - Events]({{ site.baseurl }}/plugins-ref/opensource/table/#events).

@@ -32,11 +32,11 @@ This is a list of available keyboard shortcuts within the editor body.
 | Focus to toolbar            | Alt+F10               | Option+F10                  | core                                                       |
 | Focus to element path       | Alt+F11               | Option+F11                  | core                                                       |
 | Focus to contextual toolbar | Ctrl+F9               | Ctrl+F9                     | core                                                       |
-| Open the help dialog        | Alt+0                 | Option+0                    | [help]({{site.baseurl}}/plugins/opensource/help/)                   |
-| Insert link                 | Ctrl+K                | Command+K                   | [link]({{site.baseurl}}/plugins/opensource/link/)                   |
-| Toggle Fullscreen           | Ctrl+Shift+F          | Command+Shift+F             | [fullscreen]({{site.baseurl}}/plugins/opensource/fullscreen/)       |
-| Save                        | Ctrl+S                | Command+S                   | [save]({{site.baseurl}}/plugins/opensource/save/)                   |
-| Find                        | Ctrl+F                | Command+F                   | [searchreplace]({{site.baseurl}}/plugins/opensource/searchreplace/) |
+| Open the help dialog        | Alt+0                 | Option+0                    | [help]({{site.baseurl}}/plugins-ref/opensource/help/)                   |
+| Insert link                 | Ctrl+K                | Command+K                   | [link]({{site.baseurl}}/plugins-ref/opensource/link/)                   |
+| Toggle Fullscreen           | Ctrl+Shift+F          | Command+Shift+F             | [fullscreen]({{site.baseurl}}/plugins-ref/opensource/fullscreen/)       |
+| Save                        | Ctrl+S                | Command+S                   | [save]({{site.baseurl}}/plugins-ref/opensource/save/)                   |
+| Find                        | Ctrl+F                | Command+F                   | [searchreplace]({{site.baseurl}}/plugins-ref/opensource/searchreplace/) |
 
 ## Accessibility keyboard shortcuts
 
@@ -62,24 +62,3 @@ This is a list of available keyboard shortcuts within the editor user interface.
 > **Note**: Browsers and Screen Readers provide additional shortcuts within the editor context.
 
 {% include misc/advcode-shortcuts.md %}
-
-## Add custom shortcuts to TinyMCE
-
-> **Important**: Adding a custom shortcut with a keyboard combination that conflicts with an existing {{site.productname}} or browser shortcut will override the existing shortcut.
-
-To add a custom keyboard shortcut to {{site.productname}}, use either:
-
-* [The `tinymce.Editor.addShortcut` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#addshortcut).
-* [The `tinymce.Shortcuts.add` API]({{site.baseurl}}/api/tinymce/tinymce.shortcuts/).
-
-#{% include misc/shortcut-os-mappings.md %}
-
-### Example: Custom keyboard shortcut
-
-{% include live-demo.html id="custom-shortcut" tab="js" %}
-
-### Example: Adding a custom shortcut for a menu item
-
-When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `shortcut` configuration option when creating the menu item.
-
-{% include live-demo.html id="custom-shortcut-2" tab="js" %}

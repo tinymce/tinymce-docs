@@ -50,5 +50,5 @@ The following demonstration is using four {{site.productname}} editors in inline
 
 {% include live-demo.html id="inline" %}
 
-For information on inline mode and the `inline` setting, see: [User interface options - inline]({{site.baseurl}}/configure/editor-appearance/#inline).
+For information on inline mode and the `inline` setting, see: [User interface options - inline]({{site.baseurl}}/interface/editor-mode/inline-editor-options/#inline).
 

@@ -24,7 +24,7 @@ The Link Checker plugin relies on HTTP response status codes to determine if a l
 
 ## Cloud Instructions
 
-If you are using [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), add `"linkchecker"` to your plugins list, and the service will be automatically configured.
+If you are using [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/), add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
 ### Basic setup using Tiny Cloud
 

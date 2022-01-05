@@ -7,7 +7,7 @@ This option could take one of the following two forms:
   * The success callback accepts an object with a `token` property containing the JWT
   * The failure callback accepts a string to present as an error message if the token could not be produced.
 
-For information on how to create these tokens, refer to the [JWT authentication guide]({{site.baseurl}}/plugins/premium/tinydrive/jwt-authentication/).
+For information on how to create these tokens, refer to the [JWT authentication guide]({{site.baseurl}}/plugins-ref/premium/tinydrive/jwt-authentication/).
 
 Type
 : `String` or `Function`

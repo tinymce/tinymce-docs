@@ -70,7 +70,7 @@ If you wish to align the image, you can also use the text align buttons while im
 
 #{% include configuration/images_upload_handler.md %}
 
-#{% include configuration/images_uploads_url.md %}
+#{% include configuration/images_upload_url.md %}
 
 #{% include configuration/object_resizing.md %}
 

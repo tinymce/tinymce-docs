@@ -1,6 +1,6 @@
-This quick start guide walks through creating a [basic Express JS application](https://expressjs.com/en/starter/generator.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+This quick start guide walks through creating a [basic Express JS application](https://expressjs.com/en/starter/generator.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).
 
-> **NOTE**: {{site.cloudname}} users should use the [{{site.cloudname}} quick start guide]({{site.baseurl}}/quick-start/).
+> **NOTE**: {{site.cloudname}} users should use the [{{site.cloudname}} quick start guide]({{site.baseurl}}/getting-started/install-setup/cloud/cloud-quick-start/).
 
 ### Prerequisites
 
@@ -144,5 +144,5 @@ This procedure requires:
 ### Next Steps
 
 * For information on customizing:
-    * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+    * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/).
     * The Express JS application, see: [the Express JS Documentation](https://expressjs.com/).

@@ -13,7 +13,7 @@ Default Value
 Possible Values
 : `true`, `false`, or `string` of menus
 
-{{site.differs_for_mobile}}
+{% include /misc/admon_different_default_for_mobile.md %}
 
 ### Example: Customizing the menu bar
 

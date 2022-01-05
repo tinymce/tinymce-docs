@@ -13,7 +13,7 @@ keywords: tinydrive introduction overview
 
 For documentation on using {{site.cloudfilemanager}} outside {{site.productname}}, visit: [{{site.cloudfilemanager}} documentation]({{site.baseurl}}/tinydrive/).
 
-> **Note**: This plugin is only available for [{{site.cloudname}} users]({{site.pricingpage}}).
+> **Note**: This plugin is only available for [{{site.cloudname}} users]({{site.pricingpage}}/).
 
 ## Tiny Drive features
 
@@ -28,7 +28,7 @@ For documentation on using {{site.cloudfilemanager}} outside {{site.productname}
 | Preview | Preview images and video before you select which content to use |
 | Integrations | Integrations with Google Drive and Dropbox allows you to import file from these systems through {{site.cloudfilemanager}} |
 
-The storage and bandwidth quota varies based upon your [{{site.cloudname}} Plan]({{site.pricingpage}}).
+The storage and bandwidth quota varies based upon your [{{site.cloudname}} Plan]({{site.pricingpage}}/).
 
 ## Interactive example
 

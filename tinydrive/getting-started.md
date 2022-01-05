@@ -15,7 +15,7 @@ The steps required for setting up {{site.cloudfilemanager}} are:
 
 ## 1. Register for a Tiny Cloud API key
 
-If you do not have a {{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}).
+If you do not have a {{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}/).
 
 ## 2. Add a public key to the {{site.cloudname}} API key
 

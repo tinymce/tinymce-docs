@@ -9,7 +9,7 @@ keywords: form inline edit stylesheet
 
 {{site.productname}} has three main integration modes: a _classic_ full editor mode, an _inline_ editing mode, and a distraction-free mode.
 
-{{site.notonmobile}}
+{% include /misc/admon_not_on_mobile.md %}
 
 The inline editing mode is used for merging the editing and reading views of the page for a seamless editing experience and true WYSIWYG behavior.
 

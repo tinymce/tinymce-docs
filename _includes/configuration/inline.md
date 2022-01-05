@@ -1,7 +1,7 @@
 
 ## `inline`
 
-{{site.notonmobile}}
+{% include /misc/admon_not_on_mobile.md %}
 
 The **inline** option allows you to specify whether {{site.productname}} should run in inline mode.
 

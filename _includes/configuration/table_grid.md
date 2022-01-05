@@ -15,7 +15,7 @@ Default Value
 Possible Values
 : `true`, `false`
 
-{{site.differs_for_mobile}}
+{% include /misc/admon_different_default_for_mobile.md %}
 
 #### Example: Using `table_grid`
 

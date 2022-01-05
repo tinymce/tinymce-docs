@@ -50,7 +50,7 @@ The following plugins are currently supported:
 
 ## Integration considerations
 
-When planning to integrate Real-Time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to [contact us]({{site.contactpage}}) and discuss your requirements.
+When planning to integrate Real-Time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to [contact us]({{site.contactpage}}/) and discuss your requirements.
 
 * Do not load content into {{site.productname}} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's no longer recognized by the plugin.
 * If content is created in an RTC session, then updated outside of an _RTC-enabled_ {{site.productname}} editor, a new document ID (`documentId`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.

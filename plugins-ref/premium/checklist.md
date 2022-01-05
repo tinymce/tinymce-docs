@@ -10,7 +10,7 @@ controls: toolbar button
 {% assign pluginname = "Checklist" %}
 {% assign plugincode = "checklist" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The **Checklist** plugin allows the user to add checkbox lists to their content for creating checklists.
 

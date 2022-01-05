@@ -60,7 +60,7 @@ The following procedure covers downloading, configuring, building and testing th
     ```
 
 {% elsif shbundledockerfiles == false %}
-1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads
+1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}/) > My Downloads
 and download either:
 
   * _Tiny Enhanced Media Embed_, or

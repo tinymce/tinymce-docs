@@ -10,7 +10,7 @@ controls: toolbar button
 {% assign pluginname = "Format Painter" %}
 {% assign plugincode = "formatpainter" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 

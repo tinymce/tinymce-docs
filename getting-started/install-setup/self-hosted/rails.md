@@ -99,7 +99,7 @@ The page containing the {{site.productname}} will be accessible at `http://local
 
 ## The third-party TinyMCE Ruby on Rails gem
 
-{{site.thirdPartyInteg}}
+{% include /misc/admon_third_party_integration.md %}
 
 Sam Pohlenz maintains the [{{site.productname}} Ruby on Rails gem](https://github.com/spohlenz/tinymce-rails) for integrating {{site.productname}} into the Ruby on Rails asset pipeline.
 This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demos/basic-example/).

@@ -9,7 +9,7 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 {% assign pluginname = "Spell Checker Pro" %}
 {% assign plugincode = "tinymcespellchecker" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 **Spell Checker Pro** adds spell checking as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/#spellchecker_language) section.
 
@@ -22,7 +22,7 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 
 ## Cloud Installation
 
-To enable the {{site.productname}} Enterprise Spellchecking plugin with [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features):
+To enable the {{site.productname}} Enterprise Spellchecking plugin with [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/):
 
 1. If configured, disable the `spellchecker` plugin provided with {{site.productname}}, by removing it from the `plugins` list.
 2. Add `tinymcespellchecker` to the `plugins` list.

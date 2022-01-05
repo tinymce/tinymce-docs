@@ -8,7 +8,7 @@ keywords: Mode inlite distraction-free
 
 The **Distraction-free** mode renders the editor in inline mode without the menu bar or toolbar. Most of the editor functionality is accessed using: keyboard shortcuts, contextual menus, contextual toolbars, and toolbar functions provided by the `quickbars` plugin.
 
-{{site.notonmobile}}
+{% include /misc/admon_not_on_mobile.md %}
 
 ## Enabling distraction-free mode
 

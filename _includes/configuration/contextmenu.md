@@ -19,7 +19,7 @@ Type
 Default Value
 : `'link linkchecker image imagetools table spellchecker configurepermanentpen'`
 
-{{site.ctrl_right_click}}
+{% include /misc/admon_ctrl_right_click.md %}
 
 ### Example: Using `contextmenu`
 

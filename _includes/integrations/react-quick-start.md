@@ -63,7 +63,7 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
 
     This JavaScript file will create a component "`App`" containing a {{site.productname}} editor configured with basic features.
 {% if productSource == "cloud" %}
-5. Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
+5. Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}/).
 
     Such as:
 

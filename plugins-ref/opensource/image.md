@@ -29,7 +29,7 @@ tinymce.init({
 
 > **Note**: This is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 
-{{site.svgsNotSupported}}
+{% include /misc/admon_svg_not_supported.md %}
 
 ## Options
 

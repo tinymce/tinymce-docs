@@ -27,7 +27,7 @@ This procedure creates a basic Bootstrap integration containing a {{site.product
         ```html
         <script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
         ```
-        Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
+        Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}/).
 
         Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins-ref/premium/).
 
@@ -72,4 +72,4 @@ This code is required because Bootstrap blocks all `focusin` calls from elements
 
 ## A note about integrations
 
-{{site.thirdPartyInteg}}
+{% include /misc/admon_third_party_integration.md %}

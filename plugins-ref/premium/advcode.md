@@ -9,7 +9,7 @@ controls: toolbar button, menu item
 
 {% assign pluginname = "Advanced Code Editor" %}
 {% assign plugincode = "advcode" %}
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The [Advanced Code Editor]({{site.baseurl}}/plugins-ref/premium/advcode/) plugin (`advcode`) brings a more advanced code editor to {{site.productname}}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
 

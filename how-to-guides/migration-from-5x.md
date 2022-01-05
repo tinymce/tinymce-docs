@@ -26,7 +26,7 @@ To migrate the core TinyMCE editor to TinyMCE 6, review the following sections:
 
 ### Cloud Delivery
 
-To use TinyMCE 6 from the {{site.cloudname}}, include this script in your HTML page. Replace 'no-api-key' with [your API key]({{site.accountsignup}}).
+To use TinyMCE 6 from the {{site.cloudname}}, include this script in your HTML page. Replace 'no-api-key' with [your API key]({{site.accountsignup}}/).
 
 ```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>

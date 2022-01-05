@@ -6,7 +6,7 @@ description: Connect to Tiny Cloud within a hybrid deployment.
 keywords: tinymce cloud script textarea apiKey hybrid
 ---
 
-A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the [{{site.productname}} Community edition]({{site.gettiny}}) to get started.
+A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the [{{site.productname}} Community edition]({{site.gettiny}}/) to get started.
 
 Sign up for a free API key provides entitlements to premium [Image Tools]({{site.baseurl}}/plugins-ref/opensource/imagetools/) plugin. A {{site.cloudname}} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 

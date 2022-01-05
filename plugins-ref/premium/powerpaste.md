@@ -8,7 +8,7 @@ keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import
 {% assign pluginname = "PowerPaste" %}
 {% assign plugincode = "powerpaste" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word, Microsoft Excel, and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 

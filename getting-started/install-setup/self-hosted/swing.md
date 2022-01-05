@@ -12,7 +12,7 @@ Users can easily configure the {{site.productname}} editor in Swing through the 
 
 To start using {{site.productname}} for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**.
 
-Contact [{{site.supportname}}]({{site.supporturl}}) to discuss how to get started with our latest release.
+Contact [{{site.supportname}}]({{site.supporturl}}/) to discuss how to get started with our latest release.
 
 ## Get started with our TinyMCE in Swing integration
 

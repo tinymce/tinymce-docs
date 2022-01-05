@@ -10,7 +10,7 @@ controls: toolbar button, contextmenu, menu item
 {% assign pluginname = "Permanent Pen" %}
 {% assign plugincode = "permanentpen" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
 

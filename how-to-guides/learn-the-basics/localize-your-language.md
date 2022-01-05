@@ -38,7 +38,7 @@ Load {{site.productname}} to confirm that the language is set correctly.
 
 The following code snippet sets {{site.productname}}'s language to Chinese and the text directionality from right to left.
 
-[Download the Chinese language]({{site.gettiny}}/language-packages/) pack to test this functionality. Install a *local instance* of {{site.productname}} from the [downloads page]({{site.gettiny}}). Follow the [self-hosted install instructions]({{ site.baseurl }}/getting-started/install-setup/self-hosted/expressjs/).
+[Download the Chinese language]({{site.gettiny}}/language-packages/) pack to test this functionality. Install a *local instance* of {{site.productname}} from the [downloads page]({{site.gettiny}}/). Follow the [self-hosted install instructions]({{ site.baseurl }}/getting-started/install-setup/self-hosted/expressjs/).
 
 ```html
 <!DOCTYPE html>

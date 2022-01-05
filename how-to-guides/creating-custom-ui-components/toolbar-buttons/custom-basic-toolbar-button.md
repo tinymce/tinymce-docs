@@ -13,7 +13,7 @@ A basic button triggers its `onAction` function when clicked.
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | {{site.predefinedIconsOnly}} |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} |
 | tooltip | string | optional | Text for button tooltip.  |
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |

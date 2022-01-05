@@ -15,7 +15,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | {{site.predefinedIconsOnly}} |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} |
 | tooltip | string | optional | Text for button tooltip. |
 | items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#addingtoolbargrouplabels). |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. For details, see: [Using `onSetup`](#usingonsetup). |

@@ -407,7 +407,7 @@ The following command requires the [Template (`template`)]({{site.baseurl}}/plug
 
 #### Table of Contents
 
-The following commands require the [Table of Contents (`toc`)]({{site.baseurl}}/plugins-ref/opensource/toc) plugin.
+The following commands require the [Table of Contents (`toc`)]({{site.baseurl}}/plugins-ref/opensource/toc/) plugin.
 
 {% include commands/toc-cmds.md %}
 

@@ -10,7 +10,7 @@ controls: toolbar button, menu item
 {% assign pluginname = "Page Embed" %}
 {% assign plugincode = "pageembed" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The **Page Embed** plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for:
 

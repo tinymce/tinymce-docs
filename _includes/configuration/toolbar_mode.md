@@ -32,7 +32,7 @@ Default Value
 Possible Values
 : `'floating'`, `'sliding'`, `'scrolling'`, or `'wrap'`
 
-{{site.differs_for_mobile}}
+{% include /misc/admon_different_default_for_mobile.md %}
 
 ### Settings
 

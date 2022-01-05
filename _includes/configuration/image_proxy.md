@@ -8,7 +8,7 @@
 
 This option can be used as a way of getting images across domains using a local server-side proxy. A proxy is basically a script, that will retrieve a remote image and pipe it back to {{site.productname}}, as if it was a local image. An example of such a proxy (written in PHP) can be found below.
 
-[Paid TinyMCE subscriptions]({{site.pricingpage}}) also includes a proxy service written in Java. Check the [Install Server-side Components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/) guide for details.
+[Paid TinyMCE subscriptions]({{site.pricingpage}}/) also includes a proxy service written in Java. Check the [Install Server-side Components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/) guide for details.
 
 > **Note**: `{{proxy_setting_name}}` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/).
 

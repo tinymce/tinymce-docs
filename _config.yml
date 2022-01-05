@@ -55,19 +55,6 @@ newline: '<br>'
 virt_ellps: '&#8942;'
 ellps: '&#133;'
 
-ctrl_right_click: "> **Note**: When the TinyMCE context menu is _enabled_, users can still access the browser context menu, including the browser spellchecker, using the `Ctrl+Right click` shortcut. However if the `contextmenu_never_use_native` option is enabled, holding the `Ctrl` key will have no effect."
-notonmobile: "> **Note**: This option is not supported on mobile devices."
-premiumplugin: "> **Note**: This plugin is only available for [paid TinyMCE subscriptions](https://www.tiny.cloud/pricing)."
-differs_for_mobile: "> **Note**: The default option for this setting is different for mobile devices. For information on the default mobile setting, see: [TinyMCE Mobile - Configuration settings with mobile defaults](https://www.tiny.cloud/docs/interface/editor-mode/tinymce-for-mobile/#mobiledefaultsforselectedsettings)."
-releasenotes_for_stable: "> **Note**: This is the Tiny Cloud and TinyMCE Enterprise release notes. For information on the latest community version of TinyMCE, see: [TinyMCE Changelog](https://www.tiny.cloud/docs/release-information/changelog/)."
-thirdPartyInteg: "> **Important**: This Integration is maintained by a third-party developer. Tiny Technologies, Inc. bears no responsibility for this integration, which is not covered by the Tiny Self-Hosted Software License Agreement. For issues related to the integration, contact the third-party project directly."
-
-moxieMNotOnCloud: "> **Note**: The MoxieManager plugin is _not_ provided on the Tiny Cloud, and is provided as a self-hosted solution only."
-
-svgsNotSupported: "> **Note**: SVGs (Scalable Vector Graphics) are not supported in TinyMCE to protect our users and their end-users. SVGs can be used to perform both client-side and server-side attacks."
-
-predefinedIconsOnly: "Name of the icon to be displayed. Must correspond to an icon: in the [icon pack](https://www.tiny.cloud/docs/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/), in a [custom icon pack](https://www.tiny.cloud/docs/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/), or added using the [`addIcon` API](https://www.tiny.cloud/docs/apis/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon)."
-
 liveDemoIframeCSSStyles: "'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'"
 
 logoForDemos: "https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png"

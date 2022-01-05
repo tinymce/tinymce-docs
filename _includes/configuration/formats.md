@@ -66,7 +66,7 @@ tinymce.init({
 });
 ```
 
-A registered format can also be used by name with the built-in [formatter]({{ site.baseurl }}/apis/tinymce/tinymce.formatter) methods. See [/content/content-formatting/#usingcustomformats]({{ site.baseurl }}/content/content-formatting/#usingcustomformats) for an example.
+A registered format can also be used by name with the built-in [formatter]({{ site.baseurl }}/apis/tinymce/tinymce.formatter/) methods. See [Using custom formats]({{ site.baseurl }}/content/content-formatting/#usingcustomformats) for an example.
 
 #### `block`
 

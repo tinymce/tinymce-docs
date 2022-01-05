@@ -13,7 +13,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display. |
-| icon | string | optional | {{site.predefinedIconsOnly}} |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} |
 | value | string | optional | A value to associate with the menu item. |
 | active | boolean | optional | Initial state value for the toggle menu item |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |

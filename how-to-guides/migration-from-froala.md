@@ -39,7 +39,7 @@ For example:
     ```html
     <script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
     ```
-    Replace `your-api-key` with your [{{site.cloudname}} API key]({{site.accountpageurl}}).
+    Replace `your-api-key` with your [{{site.cloudname}} API key]({{site.accountpageurl}}/).
 
   * For Self-hosted {{site.productname}} deployments:
     ```html

@@ -16,7 +16,7 @@ For example: The table plugin's `table` toolbar button opens a menu similar to t
 |------| ------| ------------| ----------- |
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | {{site.predefinedIconsOnly}} |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} |
 | tooltip | string | optional | Text for button tooltip. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. For details, see: [Using `onSetup`](#usingonsetup). |
 

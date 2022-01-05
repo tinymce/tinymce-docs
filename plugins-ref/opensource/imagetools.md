@@ -17,7 +17,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 
 {% include live-demo.html id="image-tools" %}
 
-{{site.svgsNotSupported}}
+{% include /misc/admon_svg_not_supported.md %}
 
 ## Cloud Installation
 

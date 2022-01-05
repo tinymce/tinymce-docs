@@ -17,7 +17,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | type | `'submit'` or `'cancel'` or `'custom'` or `'menu'` | required | Must be `'submit'`, `'cancel'`, `'custom'` or `'menu'` based on the type of callback function that should be invoked when the button is clicked. |
 | text | string | required | Text to display in the button if `icon` is not specified. Also used for the button's `title` attribute. |
 | name | string | optional | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
-| icon | string | optional | {{site.predefinedIconsOnly}} **When configured, the button will display the icon instead of text.** |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} **When configured, the button will display the icon instead of text.** |
 | primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
 | disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
 | align | `'end'` or `'start'` | optional | default: `'end'` - When set to `'end'` the button will display on the right-hand side of the dialog. When set to `'start'` the button will display on the left-hand side. |
@@ -69,7 +69,7 @@ The following options can be specified for a dialog menu button:
 | items    | array   | required    | An array of [dialog menu items](#dialogmenuitems).                                                                                                    |
 | name     | string  | optional    | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.                                              |
 | text     | string  | optional    | Text to display if no icon is found.                                                                                                                  |
-| icon     | string  | optional    | {{site.predefinedIconsOnly}}                                                                        |
+| icon     | string  | optional    | {% include /misc/admon_predefined_icons_only.md %}                                                                        |
 | tooltip  | string  | optional    | Text for button tooltip.                                                                                                                              |
 
 #### Dialog menu items

@@ -103,7 +103,7 @@ A **bar** is a layout component that creates a single row of items in the dialog
 
 ### collection
 
-A **collection** is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the [`charmap`]({{site.baseurl}}/plugins-ref/opensource/charmap) and [`emoticons`]({{site.baseurl}}/plugins-ref/opensource/emoticons) plugins.
+A **collection** is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the [`charmap`]({{site.baseurl}}/plugins-ref/opensource/charmap/) and [`emoticons`]({{site.baseurl}}/plugins-ref/opensource/emoticons/) plugins.
 
 ```js
 {
@@ -170,7 +170,7 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 | type | `'alertbanner'` | required | The component type. Must be `'alertbanner'`. |
 | text | string | required | HTML text to display in the alertbanner. |
 | level | `'info'`, `'warn'`, `'error'` or `'success'` | required | The alertbanner's level, which determines its styling.  |
-| icon | string | required | {{site.predefinedIconsOnly}} |
+| icon | string | required | {% include /misc/admon_predefined_icons_only.md %} |
 | url | string | optional | A URL that is passed to `onAction` when the icon button is clicked. |
 
 ```js
@@ -196,7 +196,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | type | `'button'` | required | The component type. Must be `'button'`. |
 | text | string | required | Text to display in the button **if icon is not specified**. Also used for the button's `title` attribute. |
 | name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated name.  |
-| icon | string | optional | {{site.predefinedIconsOnly}} **When configured, the button will display the icon instead of text.** |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} **When configured, the button will display the icon instead of text.** |
 | primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
 | borderless | boolean | optional | default: `false` - Whether to style the button without a border and background color. |
 

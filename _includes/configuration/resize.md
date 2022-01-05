@@ -18,7 +18,7 @@ Default Value
 Possible Values
 : `true`, `false`, `'both'`
 
-{{site.differs_for_mobile}}
+{% include /misc/admon_different_default_for_mobile.md %}
 
 #### Example: Disabling editor resizing
 

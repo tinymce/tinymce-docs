@@ -6,7 +6,7 @@ description: Django TinyMCE component.
 keywords: integration integrate Django django django-tinymce python
 ---
 
-{{site.thirdPartyInteg}}
+{% include /misc/admon_third_party_integration.md %}
 
 For information on adding {{site.productname}} to a Django project, try using the Python-based `django-tinymce` package. For information on setting up `django-tinymce`, see: [the django-tinymce Documentation](https://django-tinymce.readthedocs.io/en/latest/index.html).
 To use an newer version of {{site.productname}}, use the {{site.cloudname}} or statically host a manually downloaded copy of {{site.productname}}.
@@ -29,7 +29,7 @@ TINYMCE_COMPRESSOR = False
 
 If you'd rather download and install the script manually:
 
-1. Get the package from [{{site.productname}} Downloads]({{site.gettiny}}).
+1. Get the package from [{{site.productname}} Downloads]({{site.gettiny}}/).
 1. Unzip the package and move the `'path/to/{{site.prodnamecode}}/'` directory into the django project.
 1. Add a URL path to the `{{site.prodnamecode}}` directory.
 1. Add the relevant configuration setting:

@@ -37,7 +37,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ```
 
-{{site.svgsNotSupported}}
+{% include /misc/admon_svg_not_supported.md %}
 
 ## Image Uploader requirements
 

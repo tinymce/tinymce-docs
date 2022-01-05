@@ -71,7 +71,7 @@ If {{site.productname}} is not available for {{site.productname}} Web Component,
 
 To use {{site.productname}} Web Component with a self-hosted copy of {{site.productname}}, ensure that the self-hosted copy of {{site.productname}} can be loaded in the same location as the {{site.productname}} Web Component (such as the same web page).
 
-To use {{site.productname}} from the {{site.cloudname}}, add the `api-key` attribute to the `tinymce-editor` element with an API from [{{site.accountpage}}]({{site.accountpageurl}}).
+To use {{site.productname}} from the {{site.cloudname}}, add the `api-key` attribute to the `tinymce-editor` element with an API from [{{site.accountpage}}]({{site.accountpageurl}}/).
 
 ## Configuring the editor
 

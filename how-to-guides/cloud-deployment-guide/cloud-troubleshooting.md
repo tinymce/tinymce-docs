@@ -33,7 +33,7 @@ Update the `src` URL to include your (website or application developer's) {{site
 <script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 ```
 
-To retrieve your API key, or to sign up for an API key, visit: [{{site.cloudname}}]({{site.accountsignup}}).
+To retrieve your API key, or to sign up for an API key, visit: [{{site.cloudname}}]({{site.accountsignup}}/).
 
 ## "The API key you have entered is invalid. Please review your API key."
 
@@ -45,7 +45,7 @@ The `apiKey` must be:
 
 - An exact length,
 - comprised of certain characters, and
-- created with a {{site.cloudname}} account on the [{{site.accountpage}} page]({{site.accountsignup}}).
+- created with a {{site.cloudname}} account on the [{{site.accountpage}} page]({{site.accountsignup}}/).
 
 ### Solution
 
@@ -59,7 +59,7 @@ Check the `apiKey` provided in the script tag:
 
 ### Cause
 
-This notification is shown when the [**Referer**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) of the page does not match the list of approved domains stored against your `apiKey`. {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain portion of the **Referer** header in the network request. You can view a list of your approved domains on your [{{site.accountpage}}]({{site.accountpageurl}}).
+This notification is shown when the [**Referer**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) of the page does not match the list of approved domains stored against your `apiKey`. {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the domain portion of the **Referer** header in the network request. You can view a list of your approved domains on your [{{site.accountpage}}]({{site.accountpageurl}}/).
 
 Sometimes the domain in the **Referer** header does not match with the URL in the browser's address bar. To check the **Referer** header:
 1. Open your browser's _Developer's Tools_.
@@ -67,11 +67,11 @@ Sometimes the domain in the **Referer** header does not match with the URL in th
 1. Find and select the request being made to load {{site.productname}} from {{site.cloudname}} with your API key.
 1. Click on the **Headers** tab.
 
-In the section called **Request Headers** there should be a field for **Referer**. This is the value that {{site.productname}} is checking against your approved domains. It must match one of your approved domains listed on your [{{site.accountpage}}]({{site.accountpageurl}}).
+In the section called **Request Headers** there should be a field for **Referer**. This is the value that {{site.productname}} is checking against your approved domains. It must match one of your approved domains listed on your [{{site.accountpage}}]({{site.accountpageurl}}/).
 
 ### Solution
 
-If the `Referer` is correct for the site, ensure that the domain is included in your list of approved domains on [{{site.accountpage}}]({{site.accountpageurl}}). If the `Referer` is not what you are expecting, you may need to adjust your application's [**Referer** header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) settings.
+If the `Referer` is correct for the site, ensure that the domain is included in your list of approved domains on [{{site.accountpage}}]({{site.accountpageurl}}/). If the `Referer` is not what you are expecting, you may need to adjust your application's [**Referer** header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) settings.
 
 ## "We’re unable to check your domain because the referer header is missing. Please read the Guide on how to ensure your referer header is present, so we can then customize your editor experience."
 

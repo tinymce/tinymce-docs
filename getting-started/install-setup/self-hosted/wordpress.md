@@ -5,7 +5,7 @@ title_nav: WordPress
 keywords: integration integrate wordpress advanced
 ---
 
-{{site.thirdPartyInteg}}
+{% include /misc/admon_third_party_integration.md %}
 
 ## Default Visual Editor in Wordpress
 

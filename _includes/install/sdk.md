@@ -1,6 +1,6 @@
 ### Step 1: Download the Self-hosted package
 
-If you'd rather download and install the script manually, get the package from [{{site.productname}} Downloads]({{site.gettiny}}).
+If you'd rather download and install the script manually, get the package from [{{site.productname}} Downloads]({{site.gettiny}}/).
 
 Unzip the package and move the `'path/to/{{site.prodnamecode}}/'` directory into a web accessible location on your web server (for example, `localhost`).
 

@@ -15,6 +15,6 @@ Type
 
 {% include configuration/defaultmenuitems.md %}
 
-{{site.differs_for_mobile}}
+{% include /misc/admon_different_default_for_mobile.md %}
 
 If all you need is to control which menus are available and/or in what order, see the [menubar parameter](#menubar).

@@ -67,7 +67,7 @@ The following procedure covers downloading, configuring, building and testing th
 
     {% elsif shbundledockerfiles == false %}
 
-8.  Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download _Tiny Spell Checker Pro_.
+8.  Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}/) > My Downloads** and download _Tiny Spell Checker Pro_.
 9.  Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
 10. Extract the contents of `ephox-spelling_<version>.zip`, such as:
 

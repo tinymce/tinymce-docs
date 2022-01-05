@@ -9,7 +9,7 @@ keywords: url urls link linkchecker_service_url linkchecker_content_css
 {% assign pluginname = 'Link Checker' %}
 {% assign plugincode = 'linkchecker' %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The `linkchecker` plugin validates URLs, as you type. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
 

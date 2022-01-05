@@ -73,7 +73,7 @@ tinymce.init({
 });
 ```
 
-For information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/plugins-ref/premium/tinydrive/configuration) section of this document.
+For information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/plugins-ref/premium/tinydrive/configuration/) section of this document.
 
 ### 7. Tiny Drive UI
 

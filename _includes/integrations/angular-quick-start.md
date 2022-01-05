@@ -73,7 +73,7 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
     ```
 
 {% if productSource == "cloud" %}
-7. Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
+7. Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}/).
 
     Such as:
 

@@ -10,7 +10,7 @@ keywords: sort rownumbering series tables advanced advtable premium
 {% assign plugincode = "advtable" %}
 {% assign plugincategory = "premium" %}
 <br/>
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins-ref/opensource/table/) by adding the following advanced functionality:
 

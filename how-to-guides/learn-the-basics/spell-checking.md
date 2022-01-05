@@ -18,7 +18,7 @@ tinymce.init({
 });
 ```
 
-{{site.ctrl_right_click}}
+{% include /misc/admon_ctrl_right_click.md %}
 
 ## PHP Spellchecker component
 

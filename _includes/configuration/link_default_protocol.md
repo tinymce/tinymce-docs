@@ -2,7 +2,7 @@
 
 This option allows you to set a default protocol for links when inserting/editing a link via the link dialog. The protocol will apply to any links where the protocol has not been specified and the prefix prompt has been accepted.
 
-> **Note**: This option also applies to the [autolink]({{site.baseurl}}/plugins-ref/opensource/autolink) plugin.
+> **Note**: This option also applies to the [autolink]({{site.baseurl}}/plugins-ref/opensource/autolink/) plugin.
 
 Type
 : `String`

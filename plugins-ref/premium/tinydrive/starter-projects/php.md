@@ -65,5 +65,5 @@ Go through the following additional resources to figure out how to configure {{s
 
 ## Need help? ##
 
-We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page]({{site.baseurl}}/support/) or please contact [{{site.supportname}}]({{site.supporturl}}).
+We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page]({{site.baseurl}}/support/) or please contact [{{site.supportname}}]({{site.supporturl}}/).
 

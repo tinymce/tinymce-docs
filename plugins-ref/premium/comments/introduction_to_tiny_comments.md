@@ -17,7 +17,7 @@ keywords: comments commenting tinycomments
 
 ## Overview
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The Comments plugin provides the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor.
 

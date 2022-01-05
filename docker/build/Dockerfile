@@ -33,4 +33,4 @@ RUN \
   apt-get autoremove -y && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-RUN gem install bundle
+RUN gem install bundler

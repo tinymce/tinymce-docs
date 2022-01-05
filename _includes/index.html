@@ -2,7 +2,7 @@
   {% capture url %}{{page.url}}{{link.url}}/{% endcapture %}
   {% capture path %}{{url}}index.html{% endcapture %}
   {% assign_page link_data = path %}
-  {% if page.url contains "/api/tinymce" %}
+  {% if page.url contains "/apis/tinymce" %}
     {% assign sectionPrefix = include.sectionTitle | append: "." %}
     {% assign titleName = link_data.title_nav | or:link_data.title | replace:sectionPrefix.,"" %}
   {% else %}

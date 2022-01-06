@@ -71,6 +71,8 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 {% include configuration/table_resize_bars.md %}
 
+#{% include configuration/object_resizing.md %}
+
 {% include configuration/table_style_by_css.md %}
 
 {% include configuration/table_header_type.md %}

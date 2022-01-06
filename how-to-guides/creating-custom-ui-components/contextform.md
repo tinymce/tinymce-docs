@@ -44,7 +44,7 @@ This relates to the form itself. The form specifications are:
 | `initValue` | This is the initial value the input will have in the form. |
 | `predicate` | This controls when the context toolbar will appear. |
 | `position` | This controls where the context toolbar will appear with regards to the current cursor. |
-| `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See context toolbar proirity for more details. |
+| `scope` | This controls whether the predicate (condition) is a `node`-based predicate, or an `editor`-based predicate. See context toolbar priority for more details. |
 | `commands` | This is a list of the items to show in the context form. They can be either `contextformbutton` or `contextformtogglebutton`. |
 
 {% include context/positioning.md %}

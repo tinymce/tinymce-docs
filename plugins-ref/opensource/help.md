@@ -64,6 +64,6 @@ For information on how to expose metadata from you custom plugin to add it to th
 
 ## Commands
 
-The Help plugin provides the following JavaScript command.
+The Help plugin provides the following {{site.productname}} command.
 
 {% include commands/help-cmds.md %}

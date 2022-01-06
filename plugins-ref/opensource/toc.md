@@ -47,6 +47,6 @@ Internally plugin doesn't apply any inline styles. Basic formatting can be added
 
 ## Commands
 
-The Table of Contents plugin provides the following JavaScript commands.
+The Table of Contents plugin provides the following {{site.productname}} commands.
 
 {% include commands/toc-cmds.md %}

@@ -29,6 +29,6 @@ tinymce.init({
 
 ## Commands
 
-The Search and Replace plugin provides the following JavaScript command.
+The Search and Replace plugin provides the following {{site.productname}} command.
 
 {% include commands/searchreplace-cmds.md %}

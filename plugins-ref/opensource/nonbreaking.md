@@ -35,6 +35,6 @@ tinymce.init({
 
 ## Commands
 
-The Nonbreaking Space plugin provides the following JavaScript command.
+The Nonbreaking Space plugin provides the following {{site.productname}} command.
 
 {% include commands/nbsp-cmds.md %}

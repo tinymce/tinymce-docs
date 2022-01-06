@@ -126,6 +126,6 @@ tinymce.init({
 
 ## Commands
 
-The Permanent Pen plugin provides the following JavaScript commands.
+The Permanent Pen plugin provides the following {{site.productname}} commands.
 
 {% include commands/permanentpen-cmds.md %}

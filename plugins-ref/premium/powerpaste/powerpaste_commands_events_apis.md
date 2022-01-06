@@ -11,10 +11,10 @@ keywords: enterprise powerpaste power paste microsoft word excel google docs
 
 ## Commands
 
-The PowerPaste plugin provides the following JavaScript commands.
+The PowerPaste plugin provides the following {{site.productname}} command.
 
 {% include commands/powerpaste-cmds.md %}
 
-## Event Listeners 
+## Event Listeners
 
 {% include events/powerpaste-events.md %}

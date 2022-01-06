@@ -134,6 +134,6 @@ This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 
 ## Commands
 
-The Template plugin provides the following JavaScript command.
+The Template plugin provides the following {{site.productname}} command.
 
 {% include commands/template-cmds.md %}

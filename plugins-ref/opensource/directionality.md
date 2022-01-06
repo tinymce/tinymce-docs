@@ -26,6 +26,6 @@ tinymce.init({
 
 ## Commands
 
-The Directionality plugin provides the following JavaScript commands.
+The Directionality plugin provides the following {{site.productname}} commands.
 
 {% include commands/directionality-cmds.md %}

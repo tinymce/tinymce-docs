@@ -138,7 +138,7 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 
 ## Commands
 
-The Table plugin provides the following JavaScript commands.
+The Table plugin provides the following {{site.productname}} commands.
 
 {% include commands/table-cmds.md %}
 

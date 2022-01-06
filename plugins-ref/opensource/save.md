@@ -52,6 +52,6 @@ These settings affect the execution of the `save` plugin. Callbacks that will ex
 
 ## Commands
 
-The Save plugin provides the following JavaScript commands.
+The Save plugin provides the following {{site.productname}} commands.
 
 {% include commands/save-cmds.md %}

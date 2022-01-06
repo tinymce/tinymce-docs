@@ -2,29 +2,16 @@
 layout: default
 title: Options for the PowerPaste plugin
 title_nav: Options
-description: Information on the options provided with the PowerPaste plugin.
+description: Information on the options provided by the PowerPaste plugin.
 keywords: enterprise powerpaste power paste microsoft word excel google docs
 ---
 
+{% assign pluginname = 'PowerPaste' %}
+{% assign plugincode = "powerpaste" %}
+
 ## Configuration Options
 
-### paste_as_text
-
-This option controls the default state of the **Paste as text** menu item, which is added by the `powerpaste` plugin under the `Edit` menu drop-down.
-
-The supported values are `true` and `false`. The default is `false`.
-
-#### Example: paste_as_text
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  menubar: 'edit',
-  toolbar: 'pastetext',
-  paste_as_text: true
-});
-```
+{% include configuration/paste_as_text.md %}
 
 {% include configuration/paste_merge_formats.md %}
 

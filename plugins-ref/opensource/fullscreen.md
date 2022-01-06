@@ -40,6 +40,6 @@ The following configuration options affect the behavior of the {{pluginname}} pl
 
 ## Commands
 
-The Full Screen plugin provides the following JavaScript command.
+The Full Screen plugin provides the following {{site.productname}} command.
 
 {% include commands/fullscreen-cmds.md %}

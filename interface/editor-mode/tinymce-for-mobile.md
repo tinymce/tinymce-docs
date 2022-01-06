@@ -34,7 +34,7 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-To set mobile specific settings, add the setting to the [`mobile`]({{site.baseurl}}/configure/editor-appearance/#mobile) configuration, such as:
+To set mobile specific options, add the option to [the `mobile` option](#themobileoption) configuration, such as:
 
 ```js
 tinymce.init({
@@ -69,3 +69,5 @@ The following settings are not supported on mobile devices:
 * [`table_grid`]({{site.baseurl}}/plugins/opensource/table/#table_grid).
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize).
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing).
+
+{% include configuration/mobile.md %}

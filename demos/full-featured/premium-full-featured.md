@@ -22,4 +22,3 @@ The following plugins are excluded from this example:
 * [Full Page]({{site.baseurl}}/plugins/opensource/fullpage) — Used for modifying HTML `<head>` elements.
 * [Paste]({{site.baseurl}}/plugins/opensource/paste) — [**PowerPaste**]({{site.baseurl}}/plugins/premium/powerpaste) included instead.
 * [Spellchecker]({{site.baseurl}}/plugins/opensource/spellchecker) — [**Spell Checker Pro**]({{site.baseurl}}/plugins/premium/tinymcespellchecker) included instead.
-* [Tab Focus]({{site.baseurl}}/plugins/opensource/tabfocus) — Changes the behavior of the TAB-key within the editor.

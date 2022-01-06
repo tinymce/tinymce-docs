@@ -15,6 +15,7 @@ This chapter describes the migration process and workarounds for customers using
 ## Contents
 
 * [Editor-Core](#editor-core)
+* [Plugin Changes](#pluginchanges)
 
 ## Editor-Core
 
@@ -38,9 +39,12 @@ For information on using the latest development and testing builds, see: [Cloud 
 
 #### Renamed Options
 
-* The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
-* The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
-* The `target_list` option has been renamed to `link_target_list` for the `link` plugin.
+The following options have been renamed in {{site.productname}} 6.0:
+- The `default_link_target` option has been renamed to `link_default_target` for both `link` and `autolink` plugins.
+- The `rel_list` option has been renamed to `link_rel_list` for the `link` plugin.
+- The `target_list` option has been renamed to `link_target_list` for the `link` plugin.
+- The `noneditable_editable_class` option has been renamed to `editable_class`.
+- The `noneditable_noneditable_class` option has been renamed to `noneditable_class`.
 
 ### Plugin Changes
 
@@ -51,3 +55,19 @@ The Horizontal rule (`hr`) plugin has been moved to Core in {{site.productname}}
 The `hr` toolbar button and menu item will now work by default, without needing to specify `hr` as a plugin.
 
 Integrators can remove `hr` from the `plugins` section of their {{site.productname}} configuration.
+
+#### Noneditable plugin moved to TinyMCE Core
+
+The Noneditable (`noneditable`) plugin has been moved to Core in {{site.productname}} 6.0.
+
+Integrators can remove `noneditable` from the `plugins` section of their {{site.productname}} configuration.
+
+The `noneditable_editable_class` and `nonedtiable_noneditable_class` options have been renamed, see: [Renamed Options](#renamedoptions).
+
+#### Print plugin moved to TinyMCE Core
+
+The Print plugin has been moved to Core in {{site.productname}} 6.0.
+
+The toolbar button, menu item, shortcut, and command for printing content are now available by default, without needing to specify `print` as a plugin.
+
+Integrators can remove `print` from the `plugins` section of their {{site.productname}} configuration.

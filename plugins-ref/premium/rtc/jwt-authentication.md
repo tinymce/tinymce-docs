@@ -123,7 +123,7 @@ tinymce.init({
       body: JSON.stringify({ documentId }),
     })
     .then((response) => response.json())
-    .then(({ jwt })) => ({ token: jwt })
+    .then(({ jwt }) => ({ token: jwt }))
     .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
 ```
@@ -189,7 +189,7 @@ tinymce.init({
       body: JSON.stringify({ documentId }),
     })
     .then((response) => response.json())
-    .then(({ jwt })) => ({ token: jwt })
+    .then(({ jwt }) => ({ token: jwt }))
     .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
 ```

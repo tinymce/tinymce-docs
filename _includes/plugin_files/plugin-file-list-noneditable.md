@@ -1,3 +1,0 @@
-```
-./plugins/noneditable/plugin.js
-```

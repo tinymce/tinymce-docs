@@ -41,7 +41,6 @@ The following plugins are currently supported:
 * [Lists (`lists`)]({{site.baseurl}}/plugins/opensource/lists/)
 * [MoxieManager (`moxiemanager`)]({{site.baseurl}}/plugins/premium/moxiemanager/)
 * [PowerPaste (`powerpaste`)]({{site.baseurl}}/plugins/premium/powerpaste/)
-* [Print (`print`)]({{site.baseurl}}/plugins/opensource/print/)
 * [Save (`save`)]({{site.baseurl}}/plugins/opensource/save/)
 * [Tab Focus (`tabfocus`)]({{site.baseurl}}/plugins/opensource/tabfocus/)
 * [Tiny Drive (`tinydrive`)]({{site.baseurl}}/plugins/premium/tinydrive/)

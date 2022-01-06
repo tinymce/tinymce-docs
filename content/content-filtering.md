@@ -20,6 +20,8 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/doctype.md %}
 
+{% include configuration/editable_class.md %}
+
 {% include configuration/element_format.md %}
 
 {% include configuration/encoding.md %}

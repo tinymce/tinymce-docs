@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Context menu
-title_nav: Context menu
-description: Context menu overview
+title: Context menus
+title_nav: Context menus
+description: Creating custom context menus for TinyMCE 6
 keywords: contextmenu context menu contextmenuapi
 ---
 

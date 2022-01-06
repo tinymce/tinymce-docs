@@ -13,6 +13,10 @@ description: Options for changing the behavior of editor content.
 
 {% include configuration/keep_styles.md %}
 
+{% include configuration/noneditable_class.md %}
+
+{% include configuration/noneditable_regexp.md %}
+
 {% include configuration/object_resizing.md %}
 
 {% include configuration/resize_img_proportional.md %}

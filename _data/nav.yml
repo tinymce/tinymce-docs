@@ -513,6 +513,7 @@
     - url: "#convert_fonts_to_spans"
     - url: "#custom_elements"
     - url: "#doctype"
+    - url: "#editable_class"
     - url: "#element_format"
     - url: "#encoding"
     - url: "#entities"
@@ -524,6 +525,8 @@
     - url: "#invalid_elements"
     - url: "#invalid_styles"
     - url: "#keep_styles"
+    - url: "#noneditable_class"
+    - url: "#noneditable_regexp"
     - url: "#protect"
     - url: "#remove_trailing_brs"
     - url: "#schema"
@@ -883,12 +886,6 @@
       pages:
       - url: "#nonbreaking_force_tab"
       - url: "#nonbreaking_wrap"
-    - url: "noneditable"
-      pages:
-      - url: "#noneditable_editable_class"
-      - url: "#noneditable_noneditable_class"
-      - url: "#noneditable_regexp"
-      - url: "#Making Content Non-editable"
     - url: "pagebreak"
       pages:
       - url: "#pagebreak_separator"

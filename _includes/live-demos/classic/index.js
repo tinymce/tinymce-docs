@@ -55,7 +55,7 @@ var demoBaseConfig = {
   powerpaste_allow_local_images: true,
   plugins: [
     'a11ychecker advcode advlist anchor autolink codesample fullscreen help image imagetools tinydrive',
-    ' lists link media noneditable powerpaste preview',
+    ' lists link media powerpaste preview',
     ' searchreplace table template tinymcespellchecker visualblocks wordcount'
   ],
   templates: [

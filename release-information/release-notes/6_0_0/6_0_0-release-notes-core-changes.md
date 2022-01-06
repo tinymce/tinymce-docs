@@ -9,6 +9,7 @@ keywords: releasenotes bugfixes
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
 - [Functionality changes](#functionalitychanges)
+- [Removed functionality](#removedfunctionality)
 
 ## New features
 
@@ -26,6 +27,10 @@ The following new features were added for the {{site.productname}} 6.0 release.
 ## Enhancements
 
 The following enhancements were made for the {{site.productname}} 6.0 release.
+
+### `tabindex` improvement
+
+In iframe (classic editor) mode, {{site.productname}} now copies the [`tabindex` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) from the target element to the editor's iframe. This accessibility improvement allows integrators to rely on the browser behavior for specifying tab order, instead of specially configuring {{site.productname}}. It also replaces the [Tabfocus plugin](#tabfocusplugin).
 
 ### Enhancement name
 
@@ -86,8 +91,8 @@ The following options have been renamed in {{site.productname}} 6.0:
 - The `noneditable_editable_class` option has been renamed to `editable_class`.
 - The `noneditable_noneditable_class` option has been renamed to `noneditable_class`.
 
-### Additional changes
+## Removed functionality
 
-{{site.productname}} 6.0 introduces the following minor changes:
+### Tabfocus plugin
 
-- changelog
+The `tabfocus` plugin has been removed in {{site.productname}} 6.0. The tab order of the elements in a page, including {{site.productname}}, should now be specified using the [`tabindex` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex). For information about configuring tab order, see: [Tab order]({{site.baseurl}}/configure/accessibility#taborder).

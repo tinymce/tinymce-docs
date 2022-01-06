@@ -5,6 +5,7 @@
     pages:
     - url: "cloud"
       pages:
+      # Official integrations
       - url: "cloud-quick-start"
       - url: "react-cloud"
       - url: "angular-cloud"
@@ -12,9 +13,14 @@
       - url: "blazor-cloud"
       - url: "svelte-cloud"
       - url: "webcomponent-cloud"
+      # Third-party integrations
+      - url: "bootstrap-cloud"
+      - url: "django-cloud"
       - url: "laravel-tiny-cloud"
+      - url: "rails-cloud"
     - url: "self-hosted"
       pages:
+      # Official integrations
       - url: "react"
         pages:
         - url: "react-pm"
@@ -40,17 +46,25 @@
         pages:
         - url: "webcomponent-pm"
         - url: "webcomponent-zip"
+      # Third-party integrations
+      - url: "bootstrap-zip"
+      - url: "django-zip"
+      - url: "expressjs-pm"
       - url: "laravel"
         pages:
         - url: "laravel-composer-install"
         - url: "laravel-zip-install"
-      - url: "bootstrap"
-      - url: "django"
-      - url: "jquery"
-      - url: "expressjs"
       - url: "rails"
+        pages:
+        - url: "rails-third-party"
+        - url: "rails-zip"
       - url: "wordpress"
-      - url: "other-installs"
+      # Non-specific installs
+      - url: "npm-projects"
+      - url: "php-projects"
+      - url: "dotnet-projects"
+      - url: "bower-projects"
+      - url: "zip-install"
   - url: "upgrading"
 
 - url: "how-to-guides"
@@ -66,6 +80,7 @@
     - url: "editor-content-css"
   - url: "environment-setup"
     pages:
+      # Official integrations
     - url: "react"
       pages:
       - url: "react-cloud"
@@ -90,6 +105,7 @@
       - url: "blazor-pm"
       - url: "blazor-zip"
       - url: "blazor-ref"
+    - url: "swing"
     - url: "svelte"
       pages:
       - url: "svelte-cloud"
@@ -102,11 +118,33 @@
       - url: "webcomponent-pm"
       - url: "webcomponent-zip"
       - url: "webcomponent-ref"
+    # Third-party integrations
+    - url: "bootstrap"
+      pages:
+      - url: "bootstrap-cloud"
+      - url: "bootstrap-zip"
+    - url: "django"
+      pages:
+      - url: "django-cloud"
+      - url: "django-zip"
+    - url: "expressjs-pm"
     - url: "laravel"
       pages:
       - url: "laravel-tiny-cloud"
       - url: "laravel-composer-install"
       - url: "laravel-zip-install"
+    - url: "rails"
+      pages:
+      - url: "rails-cloud"
+      - url: "rails-third-party"
+      - url: "rails-zip"
+    - url: "wordpress"
+    # Non-specific installs
+    - url: "npm-projects"
+    - url: "php-projects"
+    - url: "dotnet-projects"
+    - url: "bower-projects"
+    - url: "zip-install"
   - url: "cloud-deployment-guide"
     pages:
     - url: "editor-and-features"
@@ -340,7 +378,6 @@
       - url: "#Permanent Pen plugin"
       - url: "#PowerPaste plugin"
       - url: "#Preview plugin"
-      - url: "#Print plugin"
       - url: "#Search and Replace plugin"
       - url: "#Spell Checker Pro plugin"
       - url: "#Table plugin"
@@ -386,7 +423,6 @@
       - url: "#Permanent Pen plugin"
       - url: "#PowerPaste plugin"
       - url: "#Preview plugin"
-      - url: "#Print plugin"
       - url: "#Quick Toolbars plugin"
       - url: "#Save plugin"
       - url: "#Search and Replace plugin"
@@ -507,20 +543,26 @@
       - url: "#Changing the Permanent Pen properties"
     - url: "powerpaste"
       pages:
-      - url: "#paste_as_text"
-      - url: "#paste_merge_formats"
-      - url: "#paste_tab_spaces"
-      - url: "#powerpaste_word_import"
-      - url: "#powerpaste_googledocs_import"
-      - url: "#powerpaste_html_import"
-      - url: "#powerpaste_allow_local_images"
-      - url: "#powerpaste_block_drop"
-      - url: "#powerpaste_clean_filtered_inline_elements"
-      - url: "#powerpaste_keep_unsupported_src"
-      - url: "#smart_paste"
-      - url: "#paste_preprocess"
-      - url: "#paste_postprocess"
-
+      - url: "introduction_to_powerpaste"
+      - url: "powerpaste_options"
+        pages:
+        - url: "#paste_as_text"
+        - url: "#paste_merge_formats"
+        - url: "#paste_tab_spaces"
+        - url: "#powerpaste_word_import"
+        - url: "#powerpaste_googledocs_import"
+        - url: "#powerpaste_html_import"
+        - url: "#powerpaste_allow_local_images"
+        - url: "#powerpaste_block_drop"
+        - url: "#powerpaste_clean_filtered_inline_elements"
+        - url: "#powerpaste_keep_unsupported_src"
+        - url: "#smart_paste"
+        - url: "#paste_preprocess"
+        - url: "#paste_postprocess"
+      - url: "powerpaste_toolbars_menus"
+      - url: "powerpaste_commands_events_apis"
+      - url: "powerpaste_support"
+      - url: "powerpaste_troubleshooting"
     - url: "rtc"
       pages:
         - url: "introduction"
@@ -729,12 +771,6 @@
       pages:
       - url: "#nonbreaking_force_tab"
       - url: "#nonbreaking_wrap"
-    - url: "noneditable"
-      pages:
-      - url: "#noneditable_editable_class"
-      - url: "#noneditable_noneditable_class"
-      - url: "#noneditable_regexp"
-      - url: "#Making Content Non-editable"
     - url: "pagebreak"
       pages:
       - url: "#pagebreak_separator"
@@ -757,7 +793,6 @@
       - url: "#paste_remove_styles_if_webkit"
       - url: "#smart_paste"
     - url: "preview"
-    - url: "print"
     - url: "quickbars"
       pages:
       - url: "#Plugin-specific toolbar buttons"
@@ -768,9 +803,6 @@
       - url: "#save_oncancelcallback"
       - url: "#save_onsavecallback"
     - url: "searchreplace"
-    - url: "tabfocus"
-      pages:
-      - url: "#tabfocus_elements"
     - url: "table"
       pages:
       - url: "#table_toolbar"

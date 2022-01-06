@@ -29,6 +29,6 @@ tinymce.init({
 
 ## Commands
 
-The Preview plugin provides the following JavaScript command.
+The Preview plugin provides the following {{site.productname}} command.
 
 {% include commands/preview-cmds.md %}

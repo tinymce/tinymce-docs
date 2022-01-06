@@ -33,6 +33,6 @@ These settings affect the execution of the `lists` plugin.
 
 ## Commands
 
-The Lists plugin provides the following JavaScript commands.
+The Lists plugin provides the following {{site.productname}} commands.
 
 {% include commands/lists-cmds.md %}

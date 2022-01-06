@@ -42,15 +42,12 @@
   - [Lists (lists)](#listslists)
   - [Media (media)](#mediamedia)
   - [Nonbreaking Space (nonbreaking)](#nonbreakingspacenonbreaking)
-  - [Noneditable (noneditable)](#noneditablenoneditable)
   - [Page Break (pagebreak)](#pagebreakpagebreak)
   - [Paste (paste)](#pastepaste)
   - [Preview (preview)](#previewpreview)
-  - [Print (print)](#printprint)
   - [Quick Toolbar (quickbars)](#quicktoolbarquickbars)
   - [Save (save)](#savesave)
   - [Search and Replace (searchreplace)](#searchandreplacesearchreplace)
-  - [Tab Focus (tabfocus)](#tabfocustabfocus)
   - [Table (table)](#tabletable)
   - [Template (template)](#templatetemplate)
   - [Text Pattern (textpattern)](#textpatterntextpattern)
@@ -213,10 +210,6 @@
 
 {% include plugin_files/plugin-file-list-nonbreaking.md %}
 
-### Noneditable (`noneditable`)
-
-{% include plugin_files/plugin-file-list-noneditable.md %}
-
 ### Page Break (`pagebreak`)
 
 {% include plugin_files/plugin-file-list-pagebreak.md %}
@@ -229,10 +222,6 @@
 
 {% include plugin_files/plugin-file-list-preview.md %}
 
-### Print (`print`)
-
-{% include plugin_files/plugin-file-list-print.md %}
-
 ### Quick Toolbar (`quickbars`)
 
 {% include plugin_files/plugin-file-list-quickbars.md %}
@@ -244,10 +233,6 @@
 ### Search and Replace (`searchreplace`)
 
 {% include plugin_files/plugin-file-list-searchreplace.md %}
-
-### Tab Focus (`tabfocus`)
-
-{% include plugin_files/plugin-file-list-tabfocus.md %}
 
 ### Table (`table`)
 

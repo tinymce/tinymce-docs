@@ -68,6 +68,6 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 
 ## Commands
 
-The {{pluginname}} plugin provides the following JavaScript command.
+The {{pluginname}} plugin provides the following {{site.productname}} command.
 
 {% include commands/{{plugincode}}-cmds.md %}

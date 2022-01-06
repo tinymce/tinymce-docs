@@ -1,10 +1,11 @@
 ---
 layout: default
-title: Using the TinyMCE Webcomponent integration with Tiny Cloud
-title_nav: Using Tiny Cloud
-description: Using the TinyMCE Webcomponent integration with Tiny Cloud
-keywords: integration integrate webcomponent webcomponentapp
+title_nav: Using the Tiny Cloud
+title: Using TinyMCE from the Tiny Cloud CDN with the Web Component
+description: A guide on integrating TinyMCE from the Tiny Cloud into the Web Component.
+keywords: integration integrate web-component
 ---
 
 {% assign productSource = "cloud" %}
+
 {% include integrations/webcomponent-quick-start.md %}

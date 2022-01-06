@@ -1,8 +1,8 @@
 ---
 layout: default
-title: TinyMCE Webcomponent framework integration guide
-title_nav: Webcomponent framework
-description: The Webcomponent framework integration guide for TinyMCE
+title: TinyMCE Web Component guide
+title_nav: Web Component
+description: The Web Component guide for TinyMCE
 type: folder
 ---
 

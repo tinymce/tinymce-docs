@@ -2,8 +2,7 @@
 layout: default
 title: Tiny Comments
 title_nav: Comments
-description_short: The TinyMCE Comments plugin
-description: This section lists the premium plugins provided by Tiny.
+description: The TinyMCE Comments plugin
 type: folder
 ---
 

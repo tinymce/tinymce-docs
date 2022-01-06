@@ -69,6 +69,6 @@ tinymce.init({
 
 ## Commands
 
-The Image Tools plugin provides the following JavaScript commands.
+The Image Tools plugin provides the following {{site.productname}} commands.
 
 {% include commands/imagetools-cmds.md %}

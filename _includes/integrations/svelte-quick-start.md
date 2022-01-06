@@ -17,15 +17,12 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
     ```
 
 {% if productSource == "package-manager" %}
-
-1. Install the `tinymce-svelte` editor component and `tinymce`, such as:
+1. Install the `tinymce` and the `tinymce-svelte` editor component, such as:
 
     ```sh
-    npm install @tinymce/tinymce-svelte tinymce
+    npm install tinymce @tinymce/tinymce-svelte
     ```
-
 {% else %}
-
 1. Install the `tinymce-svelte` editor component, such as:
 
     ```sh
@@ -34,9 +31,7 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
 
 {% endif %}
 {% if productSource == "cloud" %}
-
 1. Open `src/App.svelte` and add:
-
     * An `import` statement for the {{site.productname}} component.
     * The `<Editor />` as a placeholder for the editor.
 
@@ -50,7 +45,9 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
     </script>
     <main>
       <h1>Hello Tiny</h1>
-      <Editor />
+      <Editor
+        apiKey="your-tiny-cloud-api-key"
+      />
     </main>
     ```
 
@@ -124,11 +121,10 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
     <main>
       <h1>Hello Tiny</h1>
       <Editor
-        scriptSrc="/path/to/tinymce.min.js"
+        scriptSrc="/path/or/url/to/tinymce.min.js"
       />
     </main>
     ```
-
 {% endif %}
 
 1. Test the application using the Node.js development server.

@@ -1,4 +1,4 @@
-### Prerequisites
+## Prerequisites
 
 This procedure requires the following programs:
 * [Node.js](https://nodejs.org/)
@@ -7,7 +7,7 @@ This procedure requires the following programs:
 * [SQLite 3+](https://sqlite.org/index.html)
 * [Ruby on Rails](https://rubyonrails.org/)
 
-### Procedure
+## Procedure
 On a command line or command prompt:
 
 1. Create a new Ruby on Rails project.

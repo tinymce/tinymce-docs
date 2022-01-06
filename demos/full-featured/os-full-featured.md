@@ -18,4 +18,3 @@ The following plugins are excluded from this example:
 * [BBCode]({{site.baseurl}}/plugins-ref/opensource/bbcode/) — Changes the markup used for the content.
 * [Full Page]({{site.baseurl}}/plugins-ref/opensource/fullpage/) — Used for modifying HTML `<head>` elements.
 * [Spellchecker]({{site.baseurl}}/plugins-ref/opensource/spellchecker/) — Requires Server-Side components, see: [Check spelling in {{site.productname}}]({{site.baseurl}}/how-to-guides/learn-the-basics/spell-checking/).
-* [Tab Focus]({{site.baseurl}}/plugins-ref/opensource/tabfocus/) — Changes the behavior of the TAB-key within the editor.

@@ -29,6 +29,6 @@ These settings affect the execution of the `advlist` plugin by providing more gr
 
 ## Commands
 
-The Advanced Lists plugin provides the following JavaScript commands.
+The Advanced Lists plugin provides the following {{site.productname}} commands.
 
 {% include commands/advlist-cmds.md %}

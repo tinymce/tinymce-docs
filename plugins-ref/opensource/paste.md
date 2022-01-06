@@ -71,6 +71,6 @@ These settings affect the way content is eliminated or preserved when being past
 
 ## Commands
 
-The Paste plugin provides the following JavaScript command.
+The Paste plugin provides the following {{site.productname}} command.
 
 {% include commands/paste-cmds.md %}

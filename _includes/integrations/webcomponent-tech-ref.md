@@ -97,7 +97,7 @@ The editor will load the text content in the `tinymce-editor` element as the ini
 To add plugins and extend the functionality of the editor, add a string of plugin identifiers using the `plugins` attribute, such as:
 
 ```html
-<tinymce-editor plugins="advlist autolink link image lists charmap print preview"></tinymce-editor>
+<tinymce-editor plugins="advlist autolink link image lists charmap preview"></tinymce-editor>
 ```
 
 For a list of available plugins, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins-ref/).
@@ -475,7 +475,7 @@ window.myConfig = {
   config="myConfig"
   width="50%"
   toolbar="undo redo | bold italic | forecolor backcolor | template | alignleft aligncenter alignright alignjustify | bullist numlist | link | spellchecker"
-  plugins="lists link noneditable searchreplace table template tinymcespellchecker wordcount"
+  plugins="lists link searchreplace table template tinymcespellchecker wordcount"
 ></tinymce-editor>
 ```
 

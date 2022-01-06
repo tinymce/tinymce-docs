@@ -29,6 +29,6 @@ tinymce.init({
 
 ## Commands
 
-The Code plugin provides the following JavaScript command.
+The Code plugin provides the following {{site.productname}} command.
 
 {% include commands/code-cmds.md %}

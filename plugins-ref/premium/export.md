@@ -87,7 +87,7 @@ The following configuration options affect the behavior of the {{pluginname}} pl
 
 ## Commands
 
-The {{pluginname}} plugin provides the following JavaScript commands.
+The {{pluginname}} plugin provides the following {{site.productname}} commands.
 
 {% include commands/{{plugincode}}-cmds.md %}
 

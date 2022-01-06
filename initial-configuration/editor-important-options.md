@@ -18,8 +18,9 @@ keywords:
 
 ## Focusing on the editor
 
-{% include configuration/auto_focus.md %}
+{% include configuration/taborder.md %}
 
+{% include configuration/auto_focus.md %}
 
 {% include configuration/custom_ui_selector.md %}
 

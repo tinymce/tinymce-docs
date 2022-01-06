@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Using TinyMCE with the Webcomponent framework
-title_nav: Webcomponent
-description_short: A guide to using TinyMCE with the Webcomponent framework.
-description: A guide to using TinyMCE with the Webcomponent framework.
+title: Using TinyMCE with the Web Component
+title_nav: Web Component
+description_short: A guide to using TinyMCE with the Web Component.
+description: A guide to using TinyMCE with the Web Component.
 type: folder
 ---
 

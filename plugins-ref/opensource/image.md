@@ -76,6 +76,10 @@ If you wish to align the image, you can also use the text align buttons while im
 
 #{% include configuration/resize_img_proportional.md %}
 
+#{% include configuration/object_resizing.md %}
+
+#{% include configuration/resize_img_proportional.md %}
+
 #{% include configuration/type_ahead_urls.md %}
 
 ## Q: Where are the advanced image options?
@@ -101,6 +105,6 @@ style_formats: [
 
 ## Commands
 
-The Image plugin provides the following JavaScript command.
+The Image plugin provides the following {{site.productname}} command.
 
 {% include commands/image-cmds.md %}

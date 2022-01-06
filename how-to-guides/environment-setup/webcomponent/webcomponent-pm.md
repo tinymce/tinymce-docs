@@ -1,10 +1,11 @@
 ---
 layout: default
-title: Using the TinyMCE Webcomponent integration with a package manager
+title: Using the TinyMCE package with the Web Component
 title_nav: Using a package manager
-description: Using the TinyMCE Webcomponent integration with a package manager
-keywords: integration integrate webcomponent webcomponentapp
+description: A guide on integrating the TinyMCE package into the Web Component.
+keywords: integration integrate web-component
 ---
 
 {% assign productSource = "package-manager" %}
+
 {% include integrations/webcomponent-quick-start.md %}

@@ -11,6 +11,6 @@ keywords: comments commenting tinycomments
 
 ## Commands
 
-The Comments plugin provides the following JavaScript commands.
+The Comments plugin provides the following {{site.productname}} commands.
 
 {% include commands/comments-cmds.md %}

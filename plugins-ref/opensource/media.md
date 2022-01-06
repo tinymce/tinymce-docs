@@ -51,6 +51,6 @@ These settings affect the execution of the `media` plugin. Namely the ability to
 
 ## Commands
 
-The Media plugin provides the following JavaScript command.
+The Media plugin provides the following {{site.productname}} command.
 
 {% include commands/media-cmds.md %}

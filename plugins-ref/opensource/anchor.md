@@ -34,6 +34,6 @@ tinymce.init({
 
 ## Commands
 
-The Anchor plugin provides the following JavaScript command.
+The Anchor plugin provides the following {{site.productname}} command.
 
 {% include commands/anchor-cmds.md %}

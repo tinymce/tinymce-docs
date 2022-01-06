@@ -35,6 +35,6 @@ This setting affects the execution of the `visualchars` plugin. Characters can b
 
 ## Commands
 
-The Visual Blocks plugin provides the following JavaScript command.
+The Visual Blocks plugin provides the following {{site.productname}} command.
 
 {% include commands/visualchars-cmds.md %}

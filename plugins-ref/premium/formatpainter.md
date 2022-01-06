@@ -72,6 +72,6 @@ The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/conten
 
 ## Commands
 
-The Format Painter plugin provides the following JavaScript commands.
+The Format Painter plugin provides the following {{site.productname}} commands.
 
 {% include commands/formatpainter-cmds.md %}

@@ -51,6 +51,6 @@ Internally, character map is defined by the array of arrays, where each sub-arra
 
 ## Commands
 
-The Character Map plugin provides the following JavaScript command.
+The Character Map plugin provides the following {{site.productname}} command.
 
 {% include commands/charmap-cmds.md %}

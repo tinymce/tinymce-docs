@@ -57,6 +57,6 @@ These settings affect the execution of the `link` plugin. Predefined links, targ
 
 ## Commands
 
-The Link plugin provides the following JavaScript command.
+The Link plugin provides the following {{site.productname}} command.
 
 {% include commands/link-cmds.md %}

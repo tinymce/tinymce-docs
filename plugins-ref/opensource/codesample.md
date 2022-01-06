@@ -54,6 +54,6 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 ## Commands
 
-The Code Sample plugin provides the following JavaScript command.
+The Code Sample plugin provides the following {{site.productname}} command.
 
 {% include commands/codesample-cmds.md %}

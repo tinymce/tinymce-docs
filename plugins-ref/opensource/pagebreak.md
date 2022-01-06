@@ -39,6 +39,6 @@ These settings affect the execution of the `pagebreak` plugin. They enable you t
 
 ## Commands
 
-The Page Break plugin provides the following JavaScript command.
+The Page Break plugin provides the following {{site.productname}} command.
 
 {% include commands/pagebreak-cmds.md %}

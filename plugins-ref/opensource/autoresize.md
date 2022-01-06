@@ -36,6 +36,6 @@ These settings affect the execution of the Autoresize plugin, including changes 
 
 ## Commands
 
-The Autoresize plugin provides the following JavaScript command.
+The Autoresize plugin provides the following {{site.productname}} command.
 
 {% include commands/autoresize-cmds.md %}

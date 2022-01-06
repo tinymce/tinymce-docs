@@ -101,6 +101,6 @@ style_formats: [
 
 ## Commands
 
-The Image plugin provides the following JavaScript command.
+The Image plugin provides the following {{site.productname}} command.
 
 {% include commands/image-cmds.md %}

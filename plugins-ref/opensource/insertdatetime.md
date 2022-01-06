@@ -43,6 +43,6 @@ These settings affect the execution of the `insertdatetime` plugin. Formats for 
 
 ## Commands
 
-The Insert Date/Time plugin provides the following JavaScript commands.
+The Insert Date/Time plugin provides the following {{site.productname}} commands.
 
 {% include commands/insertdatetime-cmds.md %}

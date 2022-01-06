@@ -46,6 +46,6 @@ tinymce.init({
 
 ## Commands
 
-The Advanced Code plugin provides the following JavaScript command.
+The Advanced Code plugin provides the following {{site.productname}} command.
 
 {% include commands/code-cmds.md %}

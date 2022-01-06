@@ -29,7 +29,7 @@ The two arguments this method take are:
 | fetch | `(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleteItem[] | CardMenuItem[]>` | Required | A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a Promise containing matching results. |
 | onAction | `(api, rng: Range, value: string) => void` | Required | A function invoked when a fetched item is selected. |
 | columns | number or 'auto' | Optional | default: auto - The number of columns to show. If set to `1` column, then icons and text are displayed, otherwise only icons are displayed. |
-| matches | `(rng: Range, text: string, pattern: string) => boolean` | Optional | default: `isStartOfWord` - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
+| matches | `(rng: Range, text: string, pattern: string) => boolean` | Optional | default: `isStartOfWord` - A condition (predicate) function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
 | maxResults | number | Optional | default: 10 - The maximum number of results that should be fetched. |
 | minChars | number | Optional | default: 1 - The minimum number of characters that must be typed before the autocompleter will trigger (excluding the trigger char). |
 | highlight | array | Optional | When using [CardMenuItems](#cardmenuitem), use the highlight option to specify which [CardText](#cardtext) items to highlight the matched text pattern on. |
@@ -38,7 +38,7 @@ The two arguments this method take are:
 
 ### Usage of fetch
 
-The `fetch` function is called when the trigger `char` is pressed and the `matches` predicate returns `true`. The `fetch` function is passed the matched text pattern and returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing matching results, specified as either [AutocompleteItems](#autocompleteitem) or [CardMenuItems](#cardmenuitem). This allows for asynchronous fetching of the items. The `fetchOptions` parameter passed to the `fetch` function is by default an empty object, however using the [reload](#api) API, additional options can be passed to fetch a different set of results.
+The `fetch` function is called when the trigger `char` is pressed and the `matches` predicate (condition function) returns `true`. The `fetch` function is passed the matched text pattern and returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing matching results, specified as either [AutocompleteItems](#autocompleteitem) or [CardMenuItems](#cardmenuitem). This allows for asynchronous fetching of the items. The `fetchOptions` parameter passed to the `fetch` function is by default an empty object, however using the [reload](#api) API, additional options can be passed to fetch a different set of results.
 
 There are two types of items:
 

@@ -24,6 +24,10 @@ tinymce.init({
 });
 ```
 
+## Related configuration options
+
+{% include configuration/allow_html_in_named_anchor.md %}
+
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}

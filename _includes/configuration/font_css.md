@@ -1,7 +1,10 @@
 ## font_css
+
 The `font_css` option loads the specified font CSS files into both the editable area and the webpage {{site.productname}} is rendered in.
 
 Font CSS files should only contain CSS for specifying custom fonts using the `@font-face` and related CSS rules.
+
+> **Note**: To allow users to apply the fonts added though `font_css`, update the fonts list using the [`font_formats` option]({{site.baseurl}}/content/user-formatting-options/#font_formats).
 
 Type
 : `String`, `Array`

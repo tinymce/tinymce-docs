@@ -33,8 +33,6 @@ To set up JSON Web Token (JWT) authentication for {{site.productname}} {{pluginn
 1. Set up a JSON Web Token (JWT) Provider endpoint.
 1. Configure {{site.productname}} to use the JWT endpoint.
 
-## Add a public key to the {{site.cloudname}} API key
-
 {% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
 ## Set up a JSON Web Token (JWT) endpoint

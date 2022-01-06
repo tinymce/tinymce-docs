@@ -25,9 +25,7 @@ The steps required for setting up Real-Time Collaboration for {{site.productname
 
 If you do not have a {{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the [{{site.companyname}} pricing page]({{site.pricingpage}}/).
 
-## 2. Add a public key to the {{site.cloudname}} API key
-
-{% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
+{% include auth/private-public-key-pairs-for-tiny-cloud-services.md numberedHeading=true %}
 
 ## 3. Set up an Encryption endpoint
 

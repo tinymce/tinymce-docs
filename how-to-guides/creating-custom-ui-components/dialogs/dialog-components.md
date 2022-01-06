@@ -49,7 +49,7 @@ Each tab panel is defined using the following configuration options:
 
 ### Dialog instance API methods
 
-The [dialog instance API]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapi) contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
+The [dialog instance API]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods) contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
 
 ### Dialog configuration event callbacks
 
@@ -113,7 +113,7 @@ A **collection** is a layout component that creates a panel containing a collect
 }
 ```
 
-To populate the collection with collection items, specify an array of items in the dialog's [`initialData`]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate) property. To update the items in the collection, use the [dialog API's]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapi) `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's [`initialData`]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate) property. To update the items in the collection, use the [dialog API's]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods) `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
 
 ```js
 [
@@ -300,7 +300,7 @@ An **iframe** component takes an HTML document as a string and displays it in th
 }
 ```
 
-To set the iframe's content on dialog open, specify document HTML as a string in the dialog's [`initialData`]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate) property. To update the iframe's content, use the [dialog API's]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapi) `setData()` method. For example:
+To set the iframe's content on dialog open, specify document HTML as a string in the dialog's [`initialData`]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate) property. To update the iframe's content, use the [dialog API's]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods) `setData()` method. For example:
 
 ```js
 dialogApi.setData({

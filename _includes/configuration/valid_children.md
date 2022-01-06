@@ -27,4 +27,4 @@ tinymce.init({
 });
 ```
 
-This is an option you shouldn't have to fiddle with. The default rule set for this follows the HTML5 specification and some legacy elements from HTML4. You can switch between these defaults by configuring the [`schema`](#scheme) option.
+This is an option you shouldn't have to fiddle with. The default rule set for this follows the HTML5 specification and some legacy elements from HTML4. You can switch between these defaults by configuring the [`schema`](#schema) option.

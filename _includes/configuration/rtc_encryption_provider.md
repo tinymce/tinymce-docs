@@ -19,7 +19,7 @@ Type
 Input data
 : | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option. |
+| `documentId` | `string` | The document ID from the [`rtc_document_id`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id) option. |
 | `keyHint` | `string` or `null` | Key hint returned by the editor when connecting to an existing session. The `keyHint` is retrieved from the RTC server using the `documentId` for existing documents. |
 
 Return data

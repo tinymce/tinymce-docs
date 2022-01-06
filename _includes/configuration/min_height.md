@@ -18,4 +18,4 @@ tinymce.init({
 });
 ```
 
-> **Note**: If you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.
+> **Note**: If you set the option [`resize`]({{site.baseurl}}/initial-configuration/editor-size-options/#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.

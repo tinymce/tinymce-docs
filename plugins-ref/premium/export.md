@@ -45,7 +45,7 @@ tinymce.init({
 
 The {{pluginname}} plugin provides the following exporters:
 
-- [Client-side PDF (`clientpdf`)](#client-side-pdf)
+- [Client-side PDF (`clientpdf`)](#client-sidepdfclientpdf)
 
 ### Client-side PDF (`clientpdf`)
 

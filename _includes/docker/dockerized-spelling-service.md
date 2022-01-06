@@ -28,7 +28,7 @@ The TinyMCE spelling service server-side component can be deployed using Docker 
 The following procedure covers downloading, configuring, building and testing the {{site.productname}} Spelling Service Docker image.
 {% if shbundledockerfiles == true %}
 
-> **Note**: This procedure assumes that a {{ site.productname }} self-hosted enterprise bundle has been extracted as described in [Download and extract the TinyMCE Self-hosted Bundle](#downloadandextractthetinymceself-hostedbundle).
+> **Note**: This procedure assumes that a {{ site.productname }} self-hosted enterprise bundle has been extracted as described in [Download and extract the {{site.productname}} Self-hosted Bundle]({{site.baseurl}}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-intro-setup/#downloadandextractthetinymceself-hostedbundle).
 
 4.  Navigate into the `tinymce-services` folder.
 

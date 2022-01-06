@@ -188,7 +188,7 @@ Commands are available for the following plugins:
 - [Media](#media)
 - [Nonbreaking Space](#nonbreakingspace)
 - [Page Break](#pagebreak)
-- [Paste](#pasteorpowerpaste)
+- [Paste](#paste)
 - [Permanent Pen](#permanentpen)
 - [PowerPaste](#powerpaste)
 - [Preview](#preview)

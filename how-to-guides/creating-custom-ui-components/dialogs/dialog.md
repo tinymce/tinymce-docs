@@ -69,7 +69,7 @@ See the [tab panel component reference]({{site.baseurl}}/how-to-guides/creating-
 }
 ```
 
-The `name` of the panel can be used with the [`dialogApi.showTab('tabName')`](#dialogapimethods) method to programmatically switch tabs. It is also passed to [`onTabChange`](#configurationoptions) as part of the `details` object.
+The `name` of the panel can be used with the [`dialogApi.showTab('tabName')`]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogapimethods) method to programmatically switch tabs. It is also passed to [`onTabChange`]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions) as part of the `details` object.
 
 #### Example tab panel
 

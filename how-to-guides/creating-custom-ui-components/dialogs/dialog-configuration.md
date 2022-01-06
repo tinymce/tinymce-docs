@@ -10,9 +10,9 @@ A dialog configuration has three main parts to match the three main parts of the
 
 * **Title:** The title of the dialog. This will display in the header of the dialog.
 
-* **Body:** The body of the dialog. The body component can be a [panel](#panel) or a [tab panel](#tabpanel), which can contain an array of [panel components]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panelcomponents) such as buttons, inputs and text.
+* **Body:** The body of the dialog. The body component can be a [panel]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panel) or a [tab panel]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel), which can contain an array of [panel components]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panelcomponents) such as buttons, inputs and text.
 
-* **Buttons:** An array of [footer buttons](#footerbuttons) that are displayed in the dialog's footer.
+* **Buttons:** An array of [footer buttons]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-footer-buttons/) that are displayed in the dialog's footer.
 
 ## Basic example
 
@@ -44,8 +44,8 @@ tinymce.activeEditor.windowManager.open({
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | title | string | required | The title of the dialog. This will display in the header of the dialog. |
-| body | `panel` or `tabpanel` component | required | The specification for the [body component](#bodycomponents). |
-| buttons | `FooterButton[]` | required | An array of [footer buttons](#footerbuttons) to render in the footer of the dialog. |
+| body | `panel` or `tabpanel` component | required | The specification for the [body component]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/). |
+| buttons | `FooterButton[]` | required | An array of [footer buttons]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-footer-buttons/) to render in the footer of the dialog. |
 | size | `'normal'`, `'medium'` or `'large'` | optional | default: `normal` - Dialog size options. |
 | initialData | object | optional | An object containing initial values for the dialog's panel components. |
 | onAction | `(dialogApi, details) => void` | optional | Function invoked when a user interacts with a `button` type panel component, clicks a **Custom** type footer button, or clicks an item in a **Menu** type footer button. |
@@ -55,7 +55,7 @@ tinymce.activeEditor.windowManager.open({
 | onClose | `() => void` | optional | Function invoked when the dialog is closed. The dialog header's close button, a **Cancel** type footer button and the dialog instance API's `close()` method invoke this function. |
 | onTabChange | `(dialogApi, details) => void` | optional | **This method only applies to [tab panel]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
 
-For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialoginstanceapi) documentation.
+For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods) documentation.
 
 ### Event callback functions
 

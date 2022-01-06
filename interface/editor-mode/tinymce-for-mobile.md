@@ -52,7 +52,7 @@ These mobile-specific default values have been set to disable unsupported settin
 The following settings have mobile-specific default values:
 
 * [`menubar`]({{site.baseurl}}/interface/menus/menus-configuration-options/#menubar) - defaults to `false` on mobile phones.
-* [`toolbar_mode`]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_mode) - defaults to `scrolling` on mobile devices. The toolbar will [side-scroll by default](#sidescrollingtoolbarsonmobile).
+* [`toolbar_mode`]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_mode) - defaults to `scrolling` on mobile devices. The toolbar will side-scroll by default.
 * [`toolbar_sticky`]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_sticky) - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
 * [`table_grid`]({{site.baseurl}}/plugins-ref/opensource/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * [`resize`]({{site.baseurl}}/initial-configuration/editor-size-options/#resize) - Resizing is not supported on mobile devices and defaults to `false`.

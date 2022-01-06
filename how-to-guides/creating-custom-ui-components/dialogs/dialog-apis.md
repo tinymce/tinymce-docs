@@ -6,7 +6,7 @@ description: APIs for custom TinyMCE dialogs
 keywords: dialog dialogapi api
 ---
 
-When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the [dialog configuration options](#configurationoptions).
+When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the [dialog configuration options]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions).
 
 The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
@@ -18,7 +18,7 @@ This data store takes the form of a JavaScript object, where the object's keys a
 
 The current value of a dialog's data store can be accessed using the dialog instance API's `getData()` function. It can also be set using `setData()` which will automatically update the relevant components. For example, if you call `setData({ myCheckbox: true })` with the previous example, the checkbox would be toggled to checked.
 
-To set initial values for components when the dialog is opened, use the `initialData` [dialog configuration option](#configurationoptions). For example, you could set the checkbox in the previous example to be checked when the dialog opens by including `initialData: { myCheckbox: true }` in the dialog's configuration.
+To set initial values for components when the dialog is opened, use the `initialData` [dialog configuration option]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions). For example, you could set the checkbox in the previous example to be checked when the dialog opens by including `initialData: { myCheckbox: true }` in the dialog's configuration.
 
 ## Dialog API methods
 
@@ -43,8 +43,8 @@ To set initial values for components when the dialog is opened, use the `initial
 * Changing panel components on user action. For example, updating the options in a `selectbox` component based on user input to another interactive component.
 * Creating a multipage form where a button leads to the next page.
 
-To redial a dialog, pass a new dialog configuration to the `redial()` method from the [dialog instance API](#dialoginstanceapi).
+To redial a dialog, pass a new dialog configuration to the `redial()` method from the [dialog instance API]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods).
 
 > Note: At the moment, Redial does not support partial dialog replacement or the replacement of specific components. Redial must be passed an entire dialog configuration.
 
-See the [redial example](#interactiveexampleusingredial) for more information on how to use Redial.
+See the [redial example]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-examples/#interactiveexampleusingredial) for more information on how to use Redial.

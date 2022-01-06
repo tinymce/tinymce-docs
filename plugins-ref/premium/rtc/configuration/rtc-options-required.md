@@ -11,7 +11,7 @@ keywords: rtc configuration
 
 The following options are required to use the Real-Time Collaboration (RTC) plugin:
 
-* [`rtc_document_id`](#rtc_document_id)
+* [`rtc_document_id`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id)
 * [`rtc_encryption_provider`](#rtc_encryption_provider)
 * [`rtc_token_provider`](#rtc_token_provider)
 

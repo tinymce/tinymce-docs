@@ -17,7 +17,7 @@ Type
 Input parameters
 : | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option. |
+| `documentId` | `string` | The document ID from the [`rtc_document_id`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id) option. |
 | `version` | `integer` | An increasing version number, specific to the current document ID, between 0 and 2147483648 (2<sup>31</sup>). |
 | `getContent` | `Function` | Render the content for this specific version to HTML. |
 

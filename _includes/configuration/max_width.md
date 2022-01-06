@@ -16,4 +16,4 @@ tinymce.init({
 });
 ```
 
-> **Note**: by default the [`resize`](#resize) handle does not allow horizontal dragging and giving this key a value will not result in an observable behavior.
+> **Note**: by default the [`resize`]({{site.baseurl}}/initial-configuration/editor-size-options/#resize) handle does not allow horizontal dragging and giving this key a value will not result in an observable behavior.

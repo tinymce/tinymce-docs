@@ -64,7 +64,7 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
     <script src="/path/to/tinymce.min.js"></script>
     ```
 
-    If a `script` element sourcing {{site.productname}} is not provided, the {{site.productname}} Web Component will load {{site.productname}} from the {{site.cloudname}}. For information on the available options for sourcing {{site.productname}}, see: [Loading {{site.productname}}](#loadingtinymce).
+    If a `script` element sourcing {{site.productname}} is not provided, the {{site.productname}} Web Component will load {{site.productname}} from the {{site.cloudname}}. For information on the available options for sourcing {{site.productname}}, see: [Loading {{site.productname}}]({{site.baseurl}}/how-to-guides/environment-setup/webcomponent/webcomponent-ref/#loadingtinymce).
 {% endif %}
 {% if productSource == "cloud" %}
 4. Add a `tinymce-editor` element where the editor should appear and include your {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountpageurl}}/).

@@ -100,7 +100,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| items | array | required | An array of [CardItems](#carditem) |
+| items | array | required | An array of [CardItems](#carditems) |
 | direction | `'vertical'` or `'horizontal'` | optional | default: `horizontal` - directionality of subitems |
 | align | `'left'` or `'right'` | optional | default: `left` - horizontal alignment of subitems |
 | valign | `'top'`, `'middle'` or `'bottom'` | optional | default: `middle` - vertical alignment of subitems |

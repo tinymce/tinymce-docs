@@ -26,7 +26,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 ## Disabling and enabling buttons
 
-To toggle between a button's disabled and enabled states, use `enable(name)` or `disable(name)` from the [dialog instance API](#dialoginstanceapi), where `name` is the identifier the button was configured with.
+To toggle between a button's disabled and enabled states, use `enable(name)` or `disable(name)` from the [dialog instance API]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods), where `name` is the identifier the button was configured with.
 
 ## Button types and event callbacks
 
@@ -34,10 +34,10 @@ The different footer button types will invoke different callbacks when clicked:
 
 * A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration.
 * A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
-* A **Custom** type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this.
-* A **Menu** type button will fetch a list of options and display them in a drop-down menu. When a menu button item is clicked, the item `name` is passed to the [_dialog `onAction` callback_](#configurationoptions).  For details, see: [Dialog menu buttons](#dialogmenubuttons).
+* A **Custom** type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-examples/#interactiveexampleusingredial) for an example of how to use this.
+* A **Menu** type button will fetch a list of options and display them in a drop-down menu. When a menu button item is clicked, the item `name` is passed to the [_dialog `onAction` callback_]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions).  For details, see: [Dialog menu buttons](#dialogmenubuttons).
 
-See the [dialog configuration options](#configurationoptions) documentation for more information.
+See the [dialog configuration options]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions) documentation for more information.
 
 ### Example: Dialog footer button
 
@@ -57,7 +57,7 @@ See the [dialog configuration options](#configurationoptions) documentation for 
 
 A dialog menu button is a drop-down button that can be used to provide a drop-down list of items in a dialog footer.
 
-When dialog menu items are clicked, a [_dialog `onAction` callback_](#configurationoptions) is triggered. The `name` of the menu item is passed into the onAction callback.
+When dialog menu items are clicked, a [_dialog `onAction` callback_]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions) is triggered. The `name` of the menu item is passed into the onAction callback.
 Clicking on the menu footer button won't trigger any callbacks and will only open the menu of specified items.
 
 #### Dialog menu button
@@ -78,7 +78,7 @@ The following options can be specified for a dialog menu button _item_:
 
 | Name     | Value   | Requirement | Description                                                                                                                                                                                              |
 | -------- | ------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name     | string  | required    | Identifier for the dialog menu item which is passed to the [_dialog `onAction` callback_](#configurationoptions). `name` can be used with [initialData](#configurationoptions) to set the initial state. |
+| name     | string  | required    | Identifier for the dialog menu item which is passed to the [_dialog `onAction` callback_]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions). `name` can be used with [initialData]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions) to set the initial state. |
 | type     | string  | required    | The type `togglemenuitem` should be used.                                                                                                                                                                |
 | text     | string  | optional    | Text to display if no icon is found.                                                                                                                                                                     |
 | value    | string  | optional    | A value to associate with the menu item.                                                                                                                                                                 |

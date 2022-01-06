@@ -4,7 +4,7 @@
   {% assign pagePathArray = page.url | split: "/" %}
   {% assign currentPage = pagePathArray[-1] | append: "/" %}
   {% assign currentDir = page.url | remove: currentPage %}
-  {% capture url %}{{currentDir}}{{link.url}}/{% endcapture %}
+  {% capture url %}{{currentDir}}{{include.urlPrefix}}{{link.url}}/{% endcapture %}
   {% capture path %}{{url}}index.html{% endcapture %}
   {% assign_page link_data = path %}
   {% assign titleName = link_data.title_nav | or:link_data.title %}

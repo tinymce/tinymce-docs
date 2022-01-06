@@ -35,6 +35,18 @@ To use TinyMCE 6 from the {{site.cloudname}}, include this script in your HTML p
 
 For information on using the latest development and testing builds, see: [Cloud deployment guide - Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
 
+## Plugin Changes
+
+### Tabfocus plugin removed
+
+The Tabfocus plugin has been removed in {{site.productname}} 6.0. This includes the `tabfocus_elements` option.
+
+Instead, tab order should be configured by specifying the [`tabindex` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) on the target element for the editor, or the equivalent if using a framework. This allows the tab order to be handled by the browser. In inline mode, this works as in {{site.productname}} 5.x. In iframe (classic editor) mode, {{site.productname}} now copies the `tabindex` attribute from the target element to the editor's iframe, to allow this to work correctly.
+
+This allows integrators to define the tab order of the page using standard HTML attributes, without needing to specially configure {{site.productname}}.
+
+For information on specifying tab order, see: [Tab order]({{site.baseurl}}/configure/accessibility#taborder).
+
 ### Option/Setting changes
 
 #### Renamed Options

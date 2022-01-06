@@ -48,7 +48,6 @@
   - [Quick Toolbar (quickbars)](#quicktoolbarquickbars)
   - [Save (save)](#savesave)
   - [Search and Replace (searchreplace)](#searchandreplacesearchreplace)
-  - [Tab Focus (tabfocus)](#tabfocustabfocus)
   - [Table (table)](#tabletable)
   - [Template (template)](#templatetemplate)
   - [Text Pattern (textpattern)](#textpatterntextpattern)
@@ -234,10 +233,6 @@
 ### Search and Replace (`searchreplace`)
 
 {% include plugin_files/plugin-file-list-searchreplace.md %}
-
-### Tab Focus (`tabfocus`)
-
-{% include plugin_files/plugin-file-list-tabfocus.md %}
 
 ### Table (`table`)
 

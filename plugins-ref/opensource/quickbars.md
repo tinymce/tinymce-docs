@@ -21,8 +21,6 @@ This plugin also adds three new toolbar buttons:
 * **Quick Image** - Prompts the user to select a local image to upload.
 * **Quick Table** - Inserts a 2x2 table without prompting the user to select the number of rows and columns.
 
-> **Note**: The Quick Toolbars plugin provides the contextual toolbars found in the `inlite` theme from TinyMCE 4 and earlier.
-
 ## Interactive example
 
 {% include live-demo.html id="quickbars" %}

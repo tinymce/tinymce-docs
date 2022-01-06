@@ -1,3 +1,0 @@
-```
-./plugins/tabfocus/plugin.js
-```

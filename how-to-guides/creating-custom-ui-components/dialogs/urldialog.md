@@ -8,7 +8,7 @@ keywords: dialog urldialog api
 
 A URL dialog is a special {{site.productname}} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {{site.productname}}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {{site.productname}} dialog would probably require a URL dialog.
 
-> **Note**: [Standard {{site.productname}} dialogs]({{site.baseurl}}/ui-components/dialog/) should suffice for most use cases, and may be simpler to configure.
+> **Note**: [Standard {{site.productname}} dialogs]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog/) should suffice for most use cases, and may be simpler to configure.
 
 ## Basic example
 
@@ -49,7 +49,7 @@ For more information on the `dialogApi` object that is passed to some of the con
 
 ## Footer buttons
 
-A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
+A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/customize-ui/#skins).
 
 ### Configuration
 
@@ -58,7 +58,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | type | `'cancel'` or `'custom'` | required | Must be `'cancel'` or `'custom'` based on the type of callback function that should be invoked when the button is clicked. |
 | text | string | required | Text to display in the button if `icon` is not specified. Also used for the button's `title` attribute. |
 | name | string | optional | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
-| icon | string | optional | {{site.predefinedIconsOnly}} **When configured, the button will display the icon instead of text.** |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} **When configured, the button will display the icon instead of text.** |
 | primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
 | disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
 | align | `'end'` or `'start'` | optional | default: `'end'` - When set to `'end'` the button will display on the right-hand side of the dialog. When set to `'start'` the button will display on the left-hand side. |
@@ -70,9 +70,9 @@ A **button** is a clickable component that can contain text or an icon. There ar
 The different footer button types will invoke different callbacks when clicked:
 
 * A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
-* A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this with standard dialogs.
+* A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-examples/#interactiveexampleusingredialconfigvoid) for an example of how to use this with standard dialogs.
 
-> **Note**: Unlike [standard dialogs]({{site.baseurl}}/ui-components/dialog/), URL dialogs do not have a **Submit** type footer button, and therefore do not have an `onSubmit` callback.
+> **Note**: Unlike [standard dialogs]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog/), URL dialogs do not have a **Submit** type footer button, and therefore do not have an `onSubmit` callback.
 
 See the [URL dialog configuration options](#configurationoptions) documentation for more information on event callbacks.
 

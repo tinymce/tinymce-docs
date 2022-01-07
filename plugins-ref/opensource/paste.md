@@ -10,7 +10,7 @@ controls: toolbar button, menu item
 {% assign pluginname = "Paste" %}
 {% assign plugincode = "paste" %}
 
-> Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/) plugin.
+> Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste]({{site.baseurl}}/plugins-ref/premium/powerpaste/) plugin.
 
 This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
 

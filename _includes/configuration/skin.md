@@ -20,4 +20,4 @@ tinymce.init({
 });
 ```
 
-If you would like to create your own skin, please see the guide [here]({{ site.baseurl }}/advanced/creating-a-skin/).
+If you would like to create your own skin, please see the guide [here]({{ site.baseurl }}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/).

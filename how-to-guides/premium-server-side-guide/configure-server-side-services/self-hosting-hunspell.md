@@ -26,7 +26,7 @@ To add Hunspell dictionaries to a self-hosted {{site.productname}}:
 `hunspell-dictionaries-all.zip`
 : This package contains all the Hunspell dictionaries that the spelling service supports. You will need to ensure that their license matches your requirements.
 
-Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in [Hunspell dictionary storage for Spell Checker Pro](#hunspelldictionarystorageforspellcheckerpro). Not all Hunspell dictionary languages work with Spell Checker Pro, for a list of supported languages, see: [Spell Checker Pro plugin - Supported languages]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#supportedlanguages).
+Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in [Hunspell dictionary storage for Spell Checker Pro](#hunspelldictionarystorageforspellcheckerpro). Not all Hunspell dictionary languages work with Spell Checker Pro, for a list of supported languages, see: [Spell Checker Pro plugin - Supported languages]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/#supportedlanguages).
 
 ## Configuring the spelling service to use Hunspell dictionaries
 
@@ -125,4 +125,4 @@ You can remove unwanted dictionaries and their associated directories, but the f
 
 ### Missing Dictionaries
 
-Where a Hunspell dictionary has not been provided, the spelling service will fallback to the built-in dictionaries for supported languages. For a list of supported Spell Checker languages, see: [Spell Checker Pro plugin - Supported languages]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#supportedlanguages).
+Where a Hunspell dictionary has not been provided, the spelling service will fallback to the built-in dictionaries for supported languages. For a list of supported Spell Checker languages, see: [Spell Checker Pro plugin - Supported languages]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/#supportedlanguages).

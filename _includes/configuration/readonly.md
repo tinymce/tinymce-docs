@@ -1,6 +1,6 @@
 ## `readonly`
 
-Setting the `readonly` option to `true` will initialize the editor in `"readonly"` mode instead of editing (`"design"`) mode. Once initialized, the editor can be set to editing (`"design"`) mode using the [`tinymce.editor.mode.set` API]({{site.baseurl}}/api/tinymce/tinymce.editormode/#set).
+Setting the `readonly` option to `true` will initialize the editor in `"readonly"` mode instead of editing (`"design"`) mode. Once initialized, the editor can be set to editing (`"design"`) mode using the [`tinymce.editor.mode.set` API]({{site.baseurl}}/apis/tinymce/tinymce.editormode/#set).
 
 Type
 : `Boolean`

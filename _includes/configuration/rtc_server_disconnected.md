@@ -1,6 +1,6 @@
 ### `rtc_server_disconnected`
 
-If the RTC session fails to connect, or is disconnected due to an error, the user will be blocked from editing (using [setProgressState]({{site.baseurl}}/api/tinymce/tinymce.editor/#setprogressstate)) along with an error notification:
+If the RTC session fails to connect, or is disconnected due to an error, the user will be blocked from editing (using [setProgressState]({{site.baseurl}}/apis/tinymce/tinymce.editor/#setprogressstate)) along with an error notification:
 
 <img alt="warning icon" src="{{ site.baseurl }}/images/icons/warning.svg" style="vertical-align:middle;"/>**RTC has lost connection to the server, please reload the page. More information may be available in the console.**
 
@@ -10,7 +10,7 @@ The `rtc_server_disconnected` callback can be used to provide an alternative res
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins-ref/premium/rtc/)
 {% endif %}
 
 Type

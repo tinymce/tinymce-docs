@@ -22,7 +22,7 @@ The TinyMCE hyperlinking server-side component can be deployed using Docker or a
 
 The following procedure covers downloading, configuring, building and testing the {{site.productname}} Hyperlinking Docker image.
 {% if shbundledockerfiles == true %}
-> **Note**: This procedure assumes that a {{ site.productname }} self-hosted enterprise bundle has been extracted as described in [Download and extract the TinyMCE Self-hosted Bundle](#downloadandextractthetinymceself-hostedbundle).
+> **Note**: This procedure assumes that a {{ site.productname }} self-hosted enterprise bundle has been extracted as described in [Download and extract the {{site.productname}} Self-hosted Bundle]({{site.baseurl}}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-intro-setup/#downloadandextractthetinymceself-hostedbundle).
 
 4. Navigate into the `tinymce-services` folder.
 
@@ -60,7 +60,7 @@ The following procedure covers downloading, configuring, building and testing th
     ```
 
 {% elsif shbundledockerfiles == false %}
-1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads
+1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}/) > My Downloads
 and download either:
 
   * _Tiny Enhanced Media Embed_, or
@@ -127,7 +127,7 @@ and download either:
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#httpoptional).
 
 1. _Optional_: Update the link-checking cache configuration, as described in [Link Checker self-hosted quick setup]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#hyperlinkingservicesettings).
-1. _Optional_: Configure the Enhanced Media Embed Service, as described in [Configure Enhanced Media Embed Server]({{site.baseurl}}/plugins/premium/mediaembed/mediaembed-server-config/).
+1. _Optional_: Configure the Enhanced Media Embed Service, as described in [Configure Enhanced Media Embed Server]({{site.baseurl}}/plugins-ref/premium/mediaembed/mediaembed-server-config/).
 1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See: [Configure server-side components - proxy]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#proxyoptional).
 1. Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-hyperlinking-docker-env.conf`.
 

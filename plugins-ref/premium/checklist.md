@@ -10,7 +10,7 @@ controls: toolbar button
 {% assign pluginname = "Checklist" %}
 {% assign plugincode = "checklist" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The **Checklist** plugin allows the user to add checkbox lists to their content for creating checklists.
 
@@ -52,7 +52,7 @@ tinymce.init({
 });
 ```
 
-> **Note**: The **Checklist** plugin has to be used together with the [Lists]({{site.baseurl}}/plugins/opensource/lists/) plugin to work.
+> **Note**: The **Checklist** plugin has to be used together with the [Lists]({{site.baseurl}}/plugins-ref/opensource/lists/) plugin to work.
 
 ## CSS
 

@@ -1,7 +1,7 @@
 
 ## `inline`
 
-{{site.notonmobile}}
+{% include /misc/admon_not_on_mobile.md %}
 
 The **inline** option allows you to specify whether {{site.productname}} should run in inline mode.
 
@@ -27,7 +27,7 @@ tinymce.init({
 
 > **Note**: {{site.productname}} in inline mode will not initialize on the following elements: `area`, `base`, `basefont`, `br`, `col`, `frame`, `hr`, `img`, `input`, `isindex`, `link`, `meta`, `param`, `embed`, `source`, `wbr`, `track`, `colgroup`, `option`, `table`, `tbody`, `tfoot`, `thead`, `tr`, `th`, `td`, `script`, `noscript`, `style`, `textarea`, `video`, `audio`, `iframe`, `object`, and `menu`.
 
-For more information on the differences between the editing modes, please see this page [here]({{ site.baseurl }}/general-configuration-guide/use-tinymce-inline/).
+For more information on the differences between the editing modes, please see this page [here]({{ site.baseurl }}/interface/editor-mode/use-tinymce-inline/).
 
 ### CSS stylesheets and inline editor content
 

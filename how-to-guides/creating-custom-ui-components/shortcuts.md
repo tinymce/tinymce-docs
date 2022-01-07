@@ -10,8 +10,8 @@ keywords: shortcuts shortcut custom keyboard
 
 To add a custom keyboard shortcut to {{site.productname}}, use either:
 
-* [The `tinymce.Editor.addShortcut` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#addshortcut).
-* [The `tinymce.Shortcuts.add` API]({{site.baseurl}}/api/tinymce/tinymce.shortcuts/).
+* [The `tinymce.Editor.addShortcut` API]({{site.baseurl}}/apis/tinymce/tinymce.editor/#addshortcut).
+* [The `tinymce.Shortcuts.add` API]({{site.baseurl}}/apis/tinymce/tinymce.shortcuts/).
 
 {% include misc/shortcut-os-mappings.md %}
 

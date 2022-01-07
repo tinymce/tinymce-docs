@@ -8,7 +8,7 @@ The procedure for upgrading to the latest version of {{site.productname}} {{site
 
 ### Upgrading Tiny Cloud
 
-{{site.cloudname}} provides the latest enterprise version of {{site.productname}}. For information on configuring {{site.cloudname}}, see: [the Cloud deployment guide]({{site.baseurl}}/cloud-deployment-guide/).
+{{site.cloudname}} provides the latest enterprise version of {{site.productname}}. For information on configuring {{site.cloudname}}, see: [the Cloud deployment guide]({{site.baseurl}}/how-to-guides/cloud-deployment-guide/).
 
 {% if enterprise != true %}
 
@@ -103,9 +103,9 @@ To upgrade to {{site.productname}} {{site.productminorversion}} using a manually
 >1. Host the {{site.productname}} customizations outside of the `{{site.prodnamecode}}/` directory.
 >1. Update your {{site.productname}} configuration as required:
 >
->    * Set the location of content CSS customizations using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).
->    * Set the location of custom plugins using [`external_plugins`]({{site.baseurl}}/configure/integration-and-setup/#external_plugins).
->    * Set the location of custom icon packages using [`icons_url`]({{site.baseurl}}/configure/editor-appearance/#icons_url) instead of `icons`.
->    * Set the location of custom localization packages using [`language_url`]({{site.baseurl}}/configure/localization/#language_url) instead of `language`.
->    * Set the location of custom skin packages using [`skin_url`]({{site.baseurl}}/configure/editor-appearance/#skin_url) instead of `skin`.
->    * Set the location of custom themes using [`theme_url`]({{site.baseurl}}/configure/editor-appearance/#theme_url) instead of `theme`.
+>    * Set the location of content CSS customizations using [`content_css`]({{site.baseurl}}/content/add-css-options/#content_css).
+>    * Set the location of custom plugins using [`external_plugins`]({{site.baseurl}}/initial-configuration/editor-important-options/#external_plugins).
+>    * Set the location of custom icon packages using [`icons_url`]({{site.baseurl}}/interface/editor-appearance/editor-icons/#icons_url) instead of `icons`.
+>    * Set the location of custom localization packages using [`language_url`]({{site.baseurl}}/interface/ui-localization/#language_url) instead of `language`.
+>    * Set the location of custom skin packages using [`skin_url`]({{site.baseurl}}/interface/editor-appearance/editor-skin/#skin_url) instead of `skin`.
+>    * Set the location of custom themes using [`theme_url`]({{site.baseurl}}/interface/editor-appearance/editor-theme/#theme_url) instead of `theme`.

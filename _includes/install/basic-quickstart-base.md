@@ -151,14 +151,14 @@ To remove the notice:
 
 <img alt="warning icon" src="{{ site.baseurl }}/images/icons/warning.svg" style="vertical-align:middle;"/>**This domain is not registered with {{site.cloudname}}. Please see the quick start guide or create an account.**
 
-Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
+Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}/).
 
-Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins/premium/).
+Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/plugins-ref/premium/).
 {% endif %}
 
 ## Save the content from the editor
 
-To retrieve content from the editor, either process the content with a form handler or use the [getContent API]({{site.baseurl}}/api/tinymce/tinymce.editor/#getcontent).
+To retrieve content from the editor, either process the content with a form handler or use the [getContent API]({{site.baseurl}}/apis/tinymce/tinymce.editor/#getcontent).
 
 If you use a form handler, once the `<form>` is submitted, {{site.productname}} {{site.productmajorversion}} will `POST` the content in the same way as a normal HTML `<textarea>`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.
 

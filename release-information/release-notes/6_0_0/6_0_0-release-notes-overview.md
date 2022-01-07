@@ -6,7 +6,7 @@ description: Release notes overview for TinyMCE 6.0
 keywords: releasenotes new changes bugfixes
 ---
 
-{{site.releasenotes_for_stable}}
+{% include /misc/admon_releasenotes_for_stable.md %}
 
 ## Overview
 

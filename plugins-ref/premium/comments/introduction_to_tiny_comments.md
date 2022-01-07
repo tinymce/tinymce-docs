@@ -11,13 +11,13 @@ keywords: comments commenting tinycomments
 
 ## Contents
 
-* For help using comments in TinyMCE, see: [Using comments]({{site.baseurl}}/plugins/premium/comments/comments_using_comments/).
+* For help using comments in TinyMCE, see: [Using comments]({{site.baseurl}}/plugins-ref/premium/comments/comments_using_comments/).
 * For an overview of the TinyMCE Comments plugin, see: [Overview](#overview).
 * For information on adding and configuring the comments plugin for TinyMCE, see: [Getting started with the Comments plugin - Selecting a mode](#gettingstartedwiththecommentsplugin-selectingamode).
 
 ## Overview
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The Comments plugin provides the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor.
 
@@ -54,8 +54,8 @@ The Comments plugin is available in two _modes_: **Callback mode** and **Embedde
 
 Callback Mode
 : This is the default mode for the Comments plugin. This mode is used to store the comments outside the content on a server, such as a database. This mode requires a number of callback functions to handle comment data.
-: For instructions on configuring the Comments plugin  in callback mode, see: [Configuring the Comments plugin in callback mode]({{site.baseurl}}/plugins/premium/comments/comments_callback_mode/)
+: For instructions on configuring the Comments plugin  in callback mode, see: [Configuring the Comments plugin in callback mode]({{site.baseurl}}/plugins-ref/premium/comments/comments_callback_mode/)
 
 Embedded Mode
 : This mode stores the comments within the content. No callbacks need to be configured for this mode.
-: For instructions on configuring the Comments plugin in embedded mode, see: [Configuring the Comments plugin Comments in embedded mode]({{site.baseurl}}/plugins/premium/comments/comments_embedded_mode/)
+: For instructions on configuring the Comments plugin in embedded mode, see: [Configuring the Comments plugin Comments in embedded mode]({{site.baseurl}}/plugins-ref/premium/comments/comments_embedded_mode/)

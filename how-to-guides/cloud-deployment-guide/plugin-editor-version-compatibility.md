@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 Specific versions of {{site.productname}} are compatible with premium plugins.
 
-Use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/cloud-deployment-guide/editor-plugin-version) to ensure compatibility.
+Use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-plugin-version/) to ensure compatibility.
 
 > **Note**: On June 4, 2019 the URL to access tiny.cloud changed from:
 >```js
@@ -25,4 +25,4 @@ Use the following matrix in conjunction with the optional parameters for specify
 
 {% include misc/plugin_support_table.md %}
 
-> **Important**: Ensure the plugins are supported in your editor version when deploying premium plugins only using [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
+> **Important**: Ensure the plugins are supported in your editor version when deploying premium plugins only using [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/features-only/).

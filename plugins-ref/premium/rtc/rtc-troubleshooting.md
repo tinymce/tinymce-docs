@@ -16,7 +16,7 @@ This documentation is in progress. Please contact us with any suggestions you th
 
 ## What happens if two clients attempt to establish a session at the same time? What impact does that have on encryption key generation?
 
-As noted in the [Document ID configuration option]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-required/#rtc_document_id), if a document ID is not known to the server, new initial data will be uploaded. If two users manage to do this at the same time, one will be forced to wait for the other to establish the session. This has implications for configurations using a dynamic [`rtc_encryption_provider`]({{site.baseurl}}/plugins/premium/rtc/configuration/rtc-options-required/#rtc_encryption_provider).
+As noted in the [Document ID configuration option]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id), if a document ID is not known to the server, new initial data will be uploaded. If two users manage to do this at the same time, one will be forced to wait for the other to establish the session. This has implications for configurations using a dynamic [`rtc_encryption_provider`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_encryption_provider).
 
 If the situation occurs, the connection process for the RTC plugin will be as follows:
 
@@ -43,7 +43,7 @@ If the below error descriptions do not solve the problem, try pasting the token 
 
 RTC requires an _asymmetric signing algorithm_ for JWT identity tokens. Asymmetric signatures use separate private and public keys; the public key stored on the {{site.cloudname}} server can only be used to verify signatures, not create new ones. The private key, used to create new signatures, remains private.
 
-For a list of supported algorithms, see: [RTC JWT Authentication - Supported algorithms]({{site.baseurl}}/plugins/premium/rtc/jwt-authentication/#supportedalgorithms).
+For a list of supported algorithms, see: [RTC JWT Authentication - Supported algorithms]({{site.baseurl}}/plugins-ref/premium/rtc/jwt-authentication/#supportedalgorithms).
 
 ### Time-based error messages
 
@@ -59,7 +59,7 @@ To resolve this issue ensure all computer clocks are synchronised using [NTP](ht
 
 ### Unable to retrieve JWK set
 
-A "JWK set" is a structure that contains public keys for validating JWT signatures. At least one public key in the set must match the private key used to sign the provided identity token for RTC. This error means a public key could not be found in the {{site.cloudname}} account of the {{site.companyname}} API key used to load the RTC plugin. For information on creating public/private key pairs, see: [JWT Authentication]({{site.baseurl}}/plugins/premium/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices).
+A "JWK set" is a structure that contains public keys for validating JWT signatures. At least one public key in the set must match the private key used to sign the provided identity token for RTC. This error means a public key could not be found in the {{site.cloudname}} account of the {{site.companyname}} API key used to load the RTC plugin. For information on creating public/private key pairs, see: [JWT Authentication]({{site.baseurl}}/plugins-ref/premium/rtc/jwt-authentication/#privatepublickeypairsfortinycloudservices).
 
 ### Errors related to "parts"
 
@@ -69,4 +69,4 @@ A number of part-related errors can be raised if the JWT fails to decode:
 * A part was not correctly base64 encoded
 * A part was not valid JSON
 * The header part does not specify an algorithm
-* The payload part does not contain all [required claims]({{site.baseurl}}/plugins/premium/rtc/jwt-authentication/#claims)
+* The payload part does not contain all [required claims]({{site.baseurl}}/plugins-ref/premium/rtc/jwt-authentication/#claims)

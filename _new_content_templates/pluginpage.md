@@ -11,7 +11,7 @@ keywords: plugin <plugincode> etc.
 {% assign plugincode = "<plugincode>" %} {% comment %} The plugin identifier used to add the plugin to an editor using the `plugin` option. Provide as a string. Can be used in content using the {plugincode} variable {% endcomment %}
 {% assign plugincategory = "premium"|"opensource" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 {% comment %}
   Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.

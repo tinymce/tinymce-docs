@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey hybrid
 
 ## Specifying the TinyMCE editor version deployed from Cloud
 
-Use the URL provided to specify the {{site.productname}} version when deploying via {{site.cloudname}}. Refer to the [{{site.productname}} editor via the {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
+Use the URL provided to specify the {{site.productname}} version when deploying via {{site.cloudname}}. Refer to the [{{site.productname}} editor via the {{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/) for more information.
 
 The following example is the default for loading {{site.productname}} {{site.productmajorversion}} via {{site.cloudname}}. Substitute 'no-api-key' with your api key in the examples below.
 
@@ -60,32 +60,32 @@ This channel deploys nightly builds of {{site.productname}}. This channel includ
 
 ## Specifying the version of premium plugins deployed from Tiny Cloud
 
-Each {{site.productname}} version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with {{site.productname}}. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the [{{site.productname}} editor and premium plugins deployment via {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or just the [premium plugins deployment from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
+Each {{site.productname}} version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with {{site.productname}}. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the [{{site.productname}} editor and premium plugins deployment via {{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/) or just the [premium plugins deployment from {{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/features-only/).
 
 The `identifier` of the plugin is used as a query parameter. This table summarises the possible options.
 
-| Plugin | Identifier |  Supported Versions |
-| ---- | ------------------|  ------------------ |
-| [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker) | `a11ychecker` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions) |
-| [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/) |  `advcode` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions) |
-| [Advanced Tables]({{site.baseurl}}/plugins/premium/advtable/) | `advtable` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions) |
-| [Case Change]({{site.baseurl}}/plugins/premium/casechange/) | `casechange` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions) |
-| [Checklist]({{site.baseurl}}/docs/plugins/premium/checklist/) | `checklist` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions) |
-| [Comments]({{site.baseurl}}/plugins/premium/comments/) | `comments` |   [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions) |
-| [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/) | `mediaembed` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions) |
-| [Export]({{site.baseurl}}/plugins/premium/export/) | `export` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions) |
-| [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/) | `formatpainter` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions) |
-| [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/) | `linkchecker` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions) |
-| [Mentions]({{site.baseurl}}/plugins/premium/mentions/) | `mentions`   |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions) |
-| [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/) | `pageembed` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions) |
-| [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/) | `permanentpen` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions) |
-| [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste) | `powerpaste` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions) |
-| [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker) | `tinymcespellchecker` |  [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions) |
-| [Tiny Drive]({{site.baseurl}}/plugins/premium/tinydrive/) | `tinydrive` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions) |
+| Plugin                                                                         | Identifier            | Supported Versions                                                                                    |
+|--------------------------------------------------------------------------------|-----------------------|-------------------------------------------------------------------------------------------------------|
+| [Accessibility Checker]({{site.baseurl}}/plugins-ref/premium/a11ychecker/)     | `a11ychecker`         | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions)         |
+| [Advanced Code Editor]({{site.baseurl}}/plugins-ref/premium/advcode/)          | `advcode`             | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions)             |
+| [Advanced Tables]({{site.baseurl}}/plugins-ref/premium/advtable/)              | `advtable`            | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions)            |
+| [Case Change]({{site.baseurl}}/plugins-ref/premium/casechange/)                | `casechange`          | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions)          |
+| [Checklist]({{site.baseurl}}/docs/plugins/premium/checklist/)                  | `checklist`           | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions)           |
+| [Comments]({{site.baseurl}}/plugins-ref/premium/comments/)                     | `comments`            | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions)        |
+| [Enhanced Media Embed]({{site.baseurl}}/plugins-ref/premium/mediaembed/)       | `mediaembed`          | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions)          |
+| [Export]({{site.baseurl}}/plugins-ref/premium/export/)                         | `export`              | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions)              |
+| [Format Painter]({{site.baseurl}}/plugins-ref/premium/formatpainter/)          | `formatpainter`       | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions)       |
+| [Link Checker]({{site.baseurl}}/plugins-ref/premium/linkchecker/)              | `linkchecker`         | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions)         |
+| [Mentions]({{site.baseurl}}/plugins-ref/premium/mentions/)                     | `mentions`            | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions)            |
+| [Page Embed]({{site.baseurl}}/plugins-ref/premium/pageembed/)                  | `pageembed`           | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions)           |
+| [Permanent Pen]({{site.baseurl}}/plugins-ref/premium/permanentpen/)            | `permanentpen`        | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions)        |
+| [PowerPaste]({{site.baseurl}}/plugins-ref/premium/powerpaste/)                 | `powerpaste`          | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions)          |
+| [Spell Checker Pro]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/) | `tinymcespellchecker` | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions) |
+| [Tiny Drive]({{site.baseurl}}/plugins-ref/premium/tinydrive/)                  | `tinydrive`           | [Versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions)           |
 
 ### Specifying versions for the editor and premium plugin deployment
 
-When deploying [both the editor and premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features), {{site.productname}} will load the premium plugins bundled with that version of the editor. To load a different version of a premium plugin, append the name of the plugin and the version to load as query parameters. The version must match one of the versions listed in the `Supported Versions` link for the relevant plugin.
+When deploying [both the editor and premium plugins from {{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/), {{site.productname}} will load the premium plugins bundled with that version of the editor. To load a different version of a premium plugin, append the name of the plugin and the version to load as query parameters. The version must match one of the versions listed in the `Supported Versions` link for the relevant plugin.
 
 Combine multiple plugin specifications using `&` in your query string. For example, to load:
 
@@ -101,7 +101,7 @@ Append `?mentions=2.2&powerpaste=5.5`, such as:
 
 ### Specifying a self-hosted deployment of features/plugins
 
-When deploying [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only), some features are served from {{site.cloudname}} and some features served from a self-hosted installation. There are two ways to achieve this: `plugins.min.js` and `cloud-plugins.min.js`.
+When deploying [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/features-only/), some features are served from {{site.cloudname}} and some features served from a self-hosted installation. There are two ways to achieve this: `plugins.min.js` and `cloud-plugins.min.js`.
 
 #### plugins.min.js
 

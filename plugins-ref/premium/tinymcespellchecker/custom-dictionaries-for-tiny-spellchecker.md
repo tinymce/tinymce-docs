@@ -7,10 +7,10 @@ keywords: enterprise tinymcespellchecker spell check checker pro
 
 ## Creating custom dictionary files
 
-One custom dictionary can be created for each language supported by the spell checker (see [supported languages]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/introduction-to-tiny-spellchecker/#supportedlanguages)), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
+One custom dictionary can be created for each language supported by the spell checker (see [supported languages]({{ site.baseurl }}/plugins-ref/premium/tinymcespellchecker/introduction-to-tiny-spellchecker/#supportedlanguages)), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
 A dictionary file for a particular language must be named with the language code of the language (see
-[supported languages]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/introduction-to-tiny-spellchecker/#supportedlanguages) for language codes), plus the suffix `.txt`:
+[supported languages]({{ site.baseurl }}/plugins-ref/premium/tinymcespellchecker/introduction-to-tiny-spellchecker/#supportedlanguages) for language codes), plus the suffix `.txt`:
 E.g. `en.txt`, `en_gb.txt`, `fr.txt`, `de.txt` etc.
 
 The "global" dictionary file for language-independent words must be called "global.txt".

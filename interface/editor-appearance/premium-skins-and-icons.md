@@ -10,9 +10,9 @@ The {{site.prem_skins_icons}} lets you quickly give {{site.productname}} a new l
 
 ## How to use a premium skin
 
-Use the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option, in combination with the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option and the values listed below.
+Use the [skin]({{site.baseurl}}/interface/editor-appearance/editor-skin/#skin) option, in combination with the [content_css]({{site.baseurl}}/content/add-css-options/#content_css) option and the values listed below.
 
-Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin):
+Available values for [skins]({{site.baseurl}}/interface/editor-appearance/editor-skin/#skin):
 
 - material-classic
 - material-outline
@@ -26,7 +26,7 @@ Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin)
 - outside
 - snow
 
-Available values for [content_css]({{site.baseurl}}/configure/content-appearance/#content_css):
+Available values for [content_css]({{site.baseurl}}/content/add-css-options/#content_css):
 
 - material-classic
 - material-outline
@@ -45,9 +45,9 @@ tinymce.init({
 
 ## How to use an icon pack
 
-Use the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option with any of the values listed below.
+Use the [icons]({{site.baseurl}}/interface/editor-appearance/editor-icons/#icons) option with any of the values listed below.
 
-Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons) packs:
+Available values for [icon]({{site.baseurl}}/interface/editor-appearance/editor-icons/#icons) packs:
 
 - bootstrap
 - material
@@ -64,7 +64,7 @@ tinymce.init({
 });
 ```
 
-For information on using the `icons` option, see: [User interface options - `icons`]({{site.baseurl}}/configure/editor-appearance/#icons).
+For information on using the `icons` option, see: [User interface options - `icons`]({{site.baseurl}}/interface/editor-appearance/editor-icons/#icons).
 
 ### Icon pack compatibility matrix
 
@@ -88,17 +88,17 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 Below are some recommended combinations of skins and icon packs:
 
-* [Bootstrap skin]({{site.baseurl}}/demo/premium-skins-and-icons/bootstrap-demo/)
-* [Material Outline skin with Material icon pack]({{site.baseurl}}/demo/premium-skins-and-icons/material-outline-demo/)
-* [Material Classic skin with Material icon pack]({{site.baseurl}}/demo/premium-skins-and-icons/material-classic-demo/)
-* [Microsoft Fabric skin]({{site.baseurl}}/demo/premium-skins-and-icons/fabric-demo/)
-* [Microsoft Fluent skin]({{site.baseurl}}/demo/premium-skins-and-icons/fluent-demo/)
-* [Small skin with Small icon pack]({{site.baseurl}}/demo/premium-skins-and-icons/small-demo/)
-* [Small skin with Jam icon pack]({{site.baseurl}}/demo/premium-skins-and-icons/jam-demo/)
-* [Borderless editor]({{site.baseurl}}/demo/premium-skins-and-icons/borderless-demo/)
-* [Naked editor]({{site.baseurl}}/demo/premium-skins-and-icons/naked-demo/)
-* [Outside editor]({{site.baseurl}}/demo/premium-skins-and-icons/outside-demo/)
-* [Snow editor]({{site.baseurl}}/demo/premium-skins-and-icons/snow-demo/)
+* [Bootstrap skin]({{site.baseurl}}/demos/premium-skins-and-icons/bootstrap-demo/)
+* [Material Outline skin with Material icon pack]({{site.baseurl}}/demos/premium-skins-and-icons/material-outline-demo/)
+* [Material Classic skin with Material icon pack]({{site.baseurl}}/demos/premium-skins-and-icons/material-classic-demo/)
+* [Microsoft Fabric skin]({{site.baseurl}}/demos/premium-skins-and-icons/fabric-demo/)
+* [Microsoft Fluent skin]({{site.baseurl}}/demos/premium-skins-and-icons/fluent-demo/)
+* [Small skin with Small icon pack]({{site.baseurl}}/demos/premium-skins-and-icons/small-demo/)
+* [Small skin with Jam icon pack]({{site.baseurl}}/demos/premium-skins-and-icons/jam-demo/)
+* [Borderless editor]({{site.baseurl}}/demos/premium-skins-and-icons/borderless-demo/)
+* [Naked editor]({{site.baseurl}}/demos/premium-skins-and-icons/naked-demo/)
+* [Outside editor]({{site.baseurl}}/demos/premium-skins-and-icons/outside-demo/)
+* [Snow editor]({{site.baseurl}}/demos/premium-skins-and-icons/snow-demo/)
 
 {% assign pluginname = 'Tiny Skins and Icon' %}
 {% assign pluginminimumplan = 'tiertwo' %}

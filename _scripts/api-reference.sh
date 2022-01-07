@@ -15,6 +15,7 @@ mkdir "$API_TMPDIR"
 curl -s "$TARBALL_URL" | tar xzf - -C "$API_TMPDIR" --strip-components 1
 moxiedoc "$API_TMPDIR/modules/tinymce/src/core/main/ts" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
+rm -rf apis/
 mv api/ apis
 sed -i "s;^- url: api;- url: apis;" _data/nav_api.yml
 

@@ -11,13 +11,13 @@ keywords: plugin plugin.js plugin.min.js tinymce.js
 
 ## Requirements
 
-To be recognized as a plugin by {{site.productname}}, the code for a custom plugin must have a JavaScript file with a single entry point that registers the plugin with {{site.productname}} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {{site.productname}} also has various APIs for loading [scripts]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.scriptloader/) and [stylesheets]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.stylesheetloader/).
+To be recognized as a plugin by {{site.productname}}, the code for a custom plugin must have a JavaScript file with a single entry point that registers the plugin with {{site.productname}} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {{site.productname}} also has various APIs for loading [scripts]({{ site.baseurl }}/apis/tinymce.dom/tinymce.dom.scriptloader/) and [stylesheets]({{ site.baseurl }}/apis/tinymce.dom/tinymce.dom.stylesheetloader/).
 
 {{site.productname}} does not require any special file structure or tooling apart from these requirements, so custom plugins can be developed using most frameworks and tools.
 
 ### Yeoman Generator
 
-{{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
+{{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/how-to-guides/creating-custom-ui-components/making-plugins/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
 
 ## Registering a custom plugin with {{site.productname}}
 
@@ -31,7 +31,7 @@ The plugin identifier passed to `PluginManager.add()` is used by {{site.productn
 
 If multiple plugins have the same identifier, one will override the others.
 
-Optionally, the function passed to `PluginManager.add()` can return an object that contains data that {{ site.productname }} or other plugins can use. {{ site.companyname }} recommends including a `getMetadata` callback that returns an object containing data that can be used to populate the list of plugins in the [Help plugin]({{ site.baseurl }}/plugins/opensource/help) dialog. The metadata object should contain the following values:
+Optionally, the function passed to `PluginManager.add()` can return an object that contains data that {{ site.productname }} or other plugins can use. {{ site.companyname }} recommends including a `getMetadata` callback that returns an object containing data that can be used to populate the list of plugins in the [Help plugin]({{ site.baseurl }}/plugins-ref/opensource/help/) dialog. The metadata object should contain the following values:
 
 - `name`: A string that contains the plugin's name, usually in a human-readable format.
 - `url`: A string that contains a URL, usually used to link to help documentation.
@@ -57,8 +57,8 @@ tinymce.PluginManager.add('pluginId', function(editor, url) {
 
 Custom plugins can be added to a {{site.productname}} instance by either:
 
-- **Using `external_plugins`**: Use the [`external_plugins` option]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) to specify the URL-based location of the entry point file for the plugin.
-- **Copy code into `plugins` folder**: Copy the entry point file (and any other files) into the `plugins` folder of the distributed {{site.productname}} code. The plugin can then be used by including it in the list of plugins specified by the [`plugins` option]({{ site.baseurl }}/configure/integration-and-setup/#plugins).
+- **Using `external_plugins`**: Use the [`external_plugins` option]({{ site.baseurl }}/initial-configuration/editor-important-options/#external_plugins) to specify the URL-based location of the entry point file for the plugin.
+- **Copy code into `plugins` folder**: Copy the entry point file (and any other files) into the `plugins` folder of the distributed {{site.productname}} code. The plugin can then be used by including it in the list of plugins specified by the [`plugins` option]({{ site.baseurl }}/initial-configuration/editor-important-options/#plugins).
 
 > **Note:** {{ site.companyname }} recommends using the `external_plugins` option for custom plugins.
 
@@ -89,16 +89,16 @@ Due to the range of browser APIs used by {{site.productname}}; when testing {{si
 
 ## Language localization
 
-If a custom plugin includes any custom UI created using {{site.productname}}'s [UI APIs]({{site.baseurl}}/ui-components), then it may require localization.
+If a custom plugin includes any custom UI created using {{site.productname}}'s [UI APIs]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/, then it may require localization.
 
 {{site.productname}} comes with translations for many strings in many languages. To add additional strings to a supported language for a custom plugin, use the following procedure.
 
 1. Create a "`langs`" directory in the custom plugin's root directory for custom translations.
 2. For each language that the plugin supports, create a translation file.
 
-    The files should be JavaScript files and use the relevant language code as the file name. For example: {{site.productname}} will search for a Spanish translation file at `'<your plugin>/langs/es_ES.js'`, where `<your plugin>` is to the directory that contains the plugin's entry point file. For a list of supported languages, see: [Supported languages]({{ site.baseurl }}/configure/localization/#supportedlanguages).
+    The files should be JavaScript files and use the relevant language code as the file name. For example: {{site.productname}} will search for a Spanish translation file at `'<your plugin>/langs/es_ES.js'`, where `<your plugin>` is to the directory that contains the plugin's entry point file. For a list of supported languages, see: [Supported languages]({{ site.baseurl }}/interface/ui-localization/#supportedlanguages).
 
-2. In each translation file, add translation strings by passing an object containing key-value pairs of source strings and translation strings to the [`tinymce.addI18n()` API]({{site.baseurl}}/api/tinymce/root_tinymce/#addi18n).
+2. In each translation file, add translation strings by passing an object containing key-value pairs of source strings and translation strings to the [`tinymce.addI18n()` API]({{site.baseurl}}/apis/tinymce/root_tinymce/#addi18n).
 3. In the plugin's entry point file, call `tinymce.PluginManager.requireLangPack()` and pass it the plugin identifier and a comma-delimitated string of the language codes to load.
 
 ### Example: The content of a translation file for additional Spanish translations

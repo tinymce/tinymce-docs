@@ -11,7 +11,7 @@ keywords: browser compatibility explorer ie safari firefox chrome edge mobile su
 
 ### Premium support
 
-Paid premium support is available as part of [{{site.enterpriseversion}} and {{site.cloudname}} subscriptions]({{site.pricingpage}}). {{site.productname}} Enterprise customers can [submit a case support request]({{site.supporturl}}).
+Paid premium support is available as part of [{{site.enterpriseversion}} and {{site.cloudname}} subscriptions]({{site.pricingpage}}/). {{site.productname}} Enterprise customers can [submit a case support request]({{site.supporturl}}/).
 
 ### Community support
 

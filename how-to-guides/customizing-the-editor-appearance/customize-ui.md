@@ -34,7 +34,7 @@ tinymce.init({
 });
 ```
 
-To create a skin interactively, visit [the {{site.productname}} 6 Skin Tool](http://skin.tiny.cloud/t5/). For information on manually creating skins for {{site.productname}}, see [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/).
+To create a skin interactively, visit [the {{site.productname}} 6 Skin Tool](http://skin.tiny.cloud/t5/). For information on manually creating skins for {{site.productname}}, see [Creating a skin]({{ site.baseurl }}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/).
 
 > **Note**: Developers often confuse the difference between {{site.productname}} "themes" and "skins". A **Skin** in {{site.productname}} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
@@ -53,7 +53,7 @@ tinymce.init({
 });
 ```
 
-See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) for customization details.
+See the [height option]({{ site.baseurl }}/initial-configuration/editor-size-options/#height) for customization details.
 
 ### Set the editable area width
 
@@ -64,7 +64,7 @@ tinymce.init({
 });
 ```
 
-See the [width option]({{ site.baseurl }}/configure/editor-appearance/#width) for customization details.
+See the [width option]({{ site.baseurl }}/initial-configuration/editor-size-options/#width) for customization details.
 
 ### Set maximum and minimum heights and widths
 
@@ -80,13 +80,13 @@ tinymce.init({
 });
 ```
 
-See the [max_height]({{ site.baseurl }}/configure/editor-appearance/#max_height), [max_width]({{ site.baseurl }}/configure/editor-appearance/#max_width), [min_height]({{ site.baseurl }}/configure/editor-appearance/#min_height), and [min_width]({{ site.baseurl }}/configure/editor-appearance/#min_width) documentation pages to learn more about these customization options.
+See the [max_height]({{ site.baseurl }}/initial-configuration/editor-size-options/#max_height), [max_width]({{ site.baseurl }}/initial-configuration/editor-size-options/#max_width), [min_height]({{ site.baseurl }}/initial-configuration/editor-size-options/#min_height), and [min_width]({{ site.baseurl }}/initial-configuration/editor-size-options/#min_width) documentation pages to learn more about these customization options.
 
-The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize plugin]({{site.baseurl}}/plugins/opensource/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
+The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize plugin]({{site.baseurl}}/plugins-ref/opensource/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/initial-configuration/editor-size-options/#resize) configuration option.
 
 ## Customizing the editable area with content_css
 
-Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that {{site.productname}}'s editable area has the same styling as the surrounding content.
+Use the [`content_css`]({{ site.baseurl }}/content/add-css-options/#content_css) customization option to ensure that {{site.productname}}'s editable area has the same styling as the surrounding content.
 
 {% include misc/shipped-content-css.md %}
 
@@ -103,7 +103,7 @@ tinymce.init({
 });
 ```
 
-See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
+See the [content_css]({{ site.baseurl }}/content/add-css-options/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
 ## Hiding the status bar
 
@@ -136,7 +136,7 @@ tinymce.init({
 });
 ```
 
-All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See [this page]({{ site.baseurl }}/quick-start/) for a basic HTML code block.)
+All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See [this page]({{ site.baseurl }}/getting-started/install-setup/cloud/cloud-quick-start/) for a basic HTML code block.)
 
 ### Example: Adding the code toolbar button
 

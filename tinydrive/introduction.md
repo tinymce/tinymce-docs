@@ -8,9 +8,9 @@ keywords: tinydrive introduction overview
 
 {{site.cloudfilemanager}} is a premium cloud-based asset management and storage solution. {{site.cloudfilemanager}} allows your users to upload, manage, and use files in your web application.
 
-For documentation on the {{site.cloudfilemanager}} {{site.productname}} plugin, visit: [Premium plugins - {{site.cloudfilemanager}}]({{site.baseurl}}/plugins/premium/tinydrive/).
+For documentation on the {{site.cloudfilemanager}} {{site.productname}} plugin, visit: [Premium plugins - {{site.cloudfilemanager}}]({{site.baseurl}}/plugins-ref/premium/tinydrive/).
 
-> **Note**: {{site.cloudfilemanager}} is only available through the [{{site.cloudname}}]({{site.pricingpage}}).
+> **Note**: {{site.cloudfilemanager}} is only available through the [{{site.cloudname}}]({{site.pricingpage}}/).
 
 ## Tiny Drive features
 
@@ -25,7 +25,7 @@ For documentation on the {{site.cloudfilemanager}} {{site.productname}} plugin, 
 | Preview | Preview images and video before you select which content to use |
 | Integrations | Integrations with Google Drive and Dropbox allows you to import files from these systems through {{site.cloudfilemanager}} |
 
-The storage and bandwidth quota varies based upon your [{{site.cloudname}} Plan]({{site.pricingpage}}).
+The storage and bandwidth quota varies based upon your [{{site.cloudname}} Plan]({{site.pricingpage}}/).
 
 ## Interactive example
 

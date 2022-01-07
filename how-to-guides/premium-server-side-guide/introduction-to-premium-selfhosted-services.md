@@ -13,9 +13,9 @@ The following server-side components are included in the {{site.productname}} Se
 
 |Component                      | File              | Description |
 |:-----------------------------  |:------- |:----------- |
-| [Spellchecking]({{site.baseurl}}/plugins/premium/tinymcespellchecker/)         | ephox-spelling.war    |Spell checking service for {{site.productname}} Enterprise.|
-| [Export]({{site.baseurl}}/plugins/premium/export/), [Image Tools Proxy]({{site.baseurl}}/plugins/opensource/imagetools/)        | ephox-image-proxy.war    |Image proxy service for the Export and Image Tools plugins.|
-| [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/), [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/)        | ephox-hyperlinking.war    |Link Checker and Enhanced Media Embed service for {{site.productname}} Enterprise.|
+| [Spellchecking]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/)         | ephox-spelling.war    |Spell checking service for {{site.productname}} Enterprise.|
+| [Export]({{site.baseurl}}/plugins-ref/premium/export/), [Image Tools Proxy]({{site.baseurl}}/plugins-ref/opensource/imagetools/)        | ephox-image-proxy.war    |Image proxy service for the Export and Image Tools plugins.|
+| [Enhanced Media Embed]({{site.baseurl}}/plugins-ref/premium/mediaembed/), [Link Checker]({{site.baseurl}}/plugins-ref/premium/linkchecker/)        | ephox-hyperlinking.war    |Link Checker and Enhanced Media Embed service for {{site.productname}} Enterprise.|
 
 > **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains should now be specified directly in the configuration file.
 

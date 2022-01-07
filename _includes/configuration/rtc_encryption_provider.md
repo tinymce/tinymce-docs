@@ -6,11 +6,11 @@ A key is required when the client needs to:
 1. Encrypt new data in the collaboration session.
 2. Read previously written data from the collaboration session.
 
-For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/plugins/premium/rtc/encryption/).
+For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: [Real-Time Collaboration (RTC) Encryption Setup]({{site.baseurl}}/plugins-ref/premium/rtc/encryption/).
 
 {% if plugincode != "rtc" %}
 Required plugin
-: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins/premium/rtc/)
+: [Real-Time Collaboration (`rtc`)]({{site.baseurl}}/plugins-ref/premium/rtc/)
 {% endif %}
 
 Type
@@ -19,7 +19,7 @@ Type
 Input data
 : | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | `string` | The document ID from the [`rtc_document_id`](#rtc_document_id) option. |
+| `documentId` | `string` | The document ID from the [`rtc_document_id`]({{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id) option. |
 | `keyHint` | `string` or `null` | Key hint returned by the editor when connecting to an existing session. The `keyHint` is retrieved from the RTC server using the `documentId` for existing documents. |
 
 Return data

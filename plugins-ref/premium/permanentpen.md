@@ -10,7 +10,7 @@ controls: toolbar button, contextmenu, menu item
 {% assign pluginname = "Permanent Pen" %}
 {% assign plugincode = "permanentpen" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
 
@@ -31,7 +31,7 @@ underline: false,
 strikethrough: false
 ```
 
-For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/content/content-formatting/#formats) section.
 
 ## Try our Permanent Pen demo
 
@@ -62,7 +62,7 @@ There are two ways to access the Permanent Pen properties:
 
 #### From the menubar
 
-Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/configure/editor-appearance/#menu) configuration.
+Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/interface/menus/menus-configuration-options/#menu) configuration.
 
 ```js
 tinymce.init({

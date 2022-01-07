@@ -9,9 +9,9 @@ keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
 {% assign pluginname = 'Enhanced Media Embed' %}
 {% assign plugincode = 'mediaembed' %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
-The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin]({{site.pricingpage}}) that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
+The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin]({{site.pricingpage}}/) that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
 
 ## Interactive example
 
@@ -22,14 +22,14 @@ The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin]({
 
 ## Installation
 
-For the moment the **Enhanced Media Embed** plugin has to be used in conjunction with the [media]({{site.baseurl}}/plugins/opensource/media/) plugin, so:
+For the moment the **Enhanced Media Embed** plugin has to be used in conjunction with the [media]({{site.baseurl}}/plugins-ref/opensource/media/) plugin, so:
 
 1. Make sure you have the `media` plugin added to the `plugins` list.
 2. Add the `mediaembed` plugin to the `plugins` list.
 
 ### Example Cloud Configuration
 
-The service URL is already configured with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
+The service URL is already configured with [{{site.cloudname}}]({{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/).
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
 ```js
@@ -75,4 +75,4 @@ The plugin can be used in two ways, either by simply entering a URL on an empty 
 
 ## Downloading Enhanced Media Embed plugin
 
-A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) includes the ability to download and install the **Media Embed** plugin and a **WAR** file to access the service backend. Please follow these [instructions]({{site.baseurl}}/how-to-guides/premium-server-side-guide/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file.
+A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}/) includes the ability to download and install the **Media Embed** plugin and a **WAR** file to access the service backend. Please follow these [instructions]({{site.baseurl}}/how-to-guides/premium-server-side-guide/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file.

@@ -21,4 +21,4 @@ tinymce.init({
 });
 ```
 
-For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/content/content-formatting/#formats) section.

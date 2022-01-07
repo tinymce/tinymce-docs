@@ -29,7 +29,7 @@ keywords: editorcommands editorcommand execcommand Bold Italic Underline Striket
 
 ## Executable commands
 
-The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
+The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/apis/tinymce/tinymce.editorcommands/#execcommand) function.
 
 ### Listing core and plugin editor commands
 
@@ -53,7 +53,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | Subscript            | Toggles subscript formatting to selection.                                                                                                                                                                                                                                                  |
 | Cut                  | Cuts the selected contents and puts in into users clipboard.                                                                                                                                                                                                                                |
 | Copy                 | Copies the selected contents and puts in into users clipboard.                                                                                                                                                                                                                              |
-| Lang                 | Sets the language of the current selection. The value passed in should be a language spec described in [Content appearance options - `content_langs`]({{site.baseurl}}/configure/localization/#content_langs).                                                                              |
+| Lang                 | Sets the language of the current selection. The value passed in should be a language spec described in [Content appearance options - `content_langs`]({{site.baseurl}}/content/content-localization/#content_langs).                                                                              |
 | Paste                | Pastes the current clipboard contents into the editor.                                                                                                                                                                                                                                      |
 | mceInsertLink        | Inserts a link at the current selection. The value is the URL to add to the link(s).                                                                                                                                                                                                        |
 | Unlink               | Removes any links from the current selection.                                                                                                                                                                                                                                               |
@@ -71,13 +71,13 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceRemoveTextcolor   | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                                                                                                                                                     |
 | RemoveFormat         | Removes any formats from the current selection.                                                                                                                                                                                                                                             |
 | mceBlockQuote        | Wraps the selected text blocks into a block quote.                                                                                                                                                                                                                                          |
-| FormatBlock          | Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<`p`>) format will be toggled. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats). |
+| FormatBlock          | Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<`p`>) format will be toggled. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/content/content-formatting/#built-informats). |
 | mceInsertContent     | Inserts contents at the current selection. The value passed in should be the contents to be inserted.                                                                                                                                                                                       |
 | mceReplaceContent    | Replaces the current selection. The value passed in should be the new content.                                                                                                                                                                                                              |
 | mceSetContent        | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                                                                                                                                                   |
-| mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats).                                                                               |
+| mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/content/content-formatting/#built-informats).                                                                               |
 | ToggleSidebar        | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                                                                                                                                                        |
-| ToggleToolbarDrawer  | Toggles the Toolbar Drawer. For information on toolbars, see: [User interface options - Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).                                                                                                              |
+| ToggleToolbarDrawer  | Toggles the Toolbar Drawer. For information on toolbars, see: [User interface options - Toolbar]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar).                                                                                                              |
 | Indent               | Indents the current selection.                                                                                                                                                                                                                                                              |
 | Outdent              | Outdents the current selection.                                                                                                                                                                                                                                                             |
 | InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection.                                                                                                                                                                                                       |
@@ -188,7 +188,7 @@ Commands are available for the following plugins:
 - [Media](#media)
 - [Nonbreaking Space](#nonbreakingspace)
 - [Page Break](#pagebreak)
-- [Paste](#pasteorpowerpaste)
+- [Paste](#paste)
 - [Permanent Pen](#permanentpen)
 - [PowerPaste](#powerpaste)
 - [Preview](#preview)
@@ -204,223 +204,223 @@ Commands are available for the following plugins:
 
 #### Advanced Code
 
-The following command requires the [Advanced Code (`advcode`)]({{site.baseurl}}/plugins/premium/advcode/) plugin.
+The following command requires the [Advanced Code (`advcode`)]({{site.baseurl}}/plugins-ref/premium/advcode/) plugin.
 
 {% include commands/code-cmds.md %}
 
 #### Advanced Lists
 
-The following commands require the [Advanced Lists (`advlist`)]({{site.baseurl}}/plugins/opensource/advlist/) plugin.
+The following commands require the [Advanced Lists (`advlist`)]({{site.baseurl}}/plugins-ref/opensource/advlist/) plugin.
 
 {% include commands/advlist-cmds.md %}
 
 #### Advanced Tables
 
-The following commands require the [Advanced Tables (`advtable`)]({{site.baseurl}}/plugins/premium/advtable/) plugin.
+The following commands require the [Advanced Tables (`advtable`)]({{site.baseurl}}/plugins-ref/premium/advtable/) plugin.
 
 {% include commands/advtable-cmds.md %}
 
 #### Anchor
 
-The following command requires the [Anchor (`anchor`)]({{site.baseurl}}/plugins/opensource/anchor/) plugin.
+The following command requires the [Anchor (`anchor`)]({{site.baseurl}}/plugins-ref/opensource/anchor/) plugin.
 
 {% include commands/anchor-cmds.md %}
 
 #### Autoresize
 
-The following command requires the [Autoresize (`autoresize`)]({{site.baseurl}}/plugins/opensource/autoresize/) plugin.
+The following command requires the [Autoresize (`autoresize`)]({{site.baseurl}}/plugins-ref/opensource/autoresize/) plugin.
 
 {% include commands/autoresize-cmds.md %}
 
 #### Case Change
 
-The following commands require the [Case Change (`casechange`)]({{site.baseurl}}/plugins/premium/casechange/) plugin.
+The following commands require the [Case Change (`casechange`)]({{site.baseurl}}/plugins-ref/premium/casechange/) plugin.
 
 {% include commands/casechange-cmds.md %}
 
 #### Character Map
 
-The following command requires the [Character Map (`charmap`)]({{site.baseurl}}/plugins/opensource/charmap/) plugin.
+The following command requires the [Character Map (`charmap`)]({{site.baseurl}}/plugins-ref/opensource/charmap/) plugin.
 
 {% include commands/charmap-cmds.md %}
 
 #### Code
 
-The following command requires the [Code (`code`)]({{site.baseurl}}/plugins/opensource/code/) plugin.
+The following command requires the [Code (`code`)]({{site.baseurl}}/plugins-ref/opensource/code/) plugin.
 
 {% include commands/code-cmds.md %}
 
 #### Code Sample
 
-The following command requires the [Code Sample (`codesample`)]({{site.baseurl}}/plugins/opensource/codesample/) plugin.
+The following command requires the [Code Sample (`codesample`)]({{site.baseurl}}/plugins-ref/opensource/codesample/) plugin.
 
 {% include commands/codesample-cmds.md %}
 
 #### Comments
 
-The following commands require the [Comments (`tinycomments`)]({{site.baseurl}}/plugins/premium/comments/) plugin.
+The following commands require the [Comments (`tinycomments`)]({{site.baseurl}}/plugins-ref/premium/comments/) plugin.
 
 {% include commands/comments-cmds.md %}
 
 #### Directionality
 
-The following commands require the [Directionality (`directionality`)]({{site.baseurl}}/plugins/opensource/directionality/) plugin.
+The following commands require the [Directionality (`directionality`)]({{site.baseurl}}/plugins-ref/opensource/directionality/) plugin.
 
 {% include commands/directionality-cmds.md %}
 
 #### Emoticons
 
-The following commands require the [Emoticons (`emoticons`)]({{site.baseurl}}/plugins/opensource/emoticons/) plugin.
+The following commands require the [Emoticons (`emoticons`)]({{site.baseurl}}/plugins-ref/opensource/emoticons/) plugin.
 
 {% include commands/emoticons-cmds.md %}
 
 #### Export
 
-The following commands require the [Export (`export`)]({{site.baseurl}}/plugins/premium/export/) plugin.
+The following commands require the [Export (`export`)]({{site.baseurl}}/plugins-ref/premium/export/) plugin.
 
 {% include commands/export-cmds.md %}
 
 #### Format Painter
 
-The following commands require the [Format Painter (`formatpainter`)]({{site.baseurl}}/plugins/premium/formatpainter/) plugin.
+The following commands require the [Format Painter (`formatpainter`)]({{site.baseurl}}/plugins-ref/premium/formatpainter/) plugin.
 
 {% include commands/formatpainter-cmds.md %}
 
 #### Full Screen
 
-The following command requires the [Full Screen (`fullscreen`)]({{site.baseurl}}/plugins/opensource/fullscreen/) plugin.
+The following command requires the [Full Screen (`fullscreen`)]({{site.baseurl}}/plugins-ref/opensource/fullscreen/) plugin.
 
 {% include commands/fullscreen-cmds.md %}
 
 #### Help
 
-The following command requires the [Help (`help`)]({{site.baseurl}}/plugins/opensource/help/) plugin.
+The following command requires the [Help (`help`)]({{site.baseurl}}/plugins-ref/opensource/help/) plugin.
 
 {% include commands/help-cmds.md %}
 
 #### Image
 
-The following command requires the [Image (`image`)]({{site.baseurl}}/plugins/opensource/image/) plugin.
+The following command requires the [Image (`image`)]({{site.baseurl}}/plugins-ref/opensource/image/) plugin.
 
 {% include commands/image-cmds.md %}
 
 #### Image Tools
 
-The following commands require the [Image Tools (`imagetools`)]({{site.baseurl}}/plugins/opensource/imagetools/) plugin.
+The following commands require the [Image Tools (`imagetools`)]({{site.baseurl}}/plugins-ref/opensource/imagetools/) plugin.
 
 {% include commands/imagetools-cmds.md %}
 
 #### Insert Date/Time
 
-The following commands require the [Insert Date/Time (`insertdatetime`)]({{site.baseurl}}/plugins/opensource/insertdatetime/) plugin.
+The following commands require the [Insert Date/Time (`insertdatetime`)]({{site.baseurl}}/plugins-ref/opensource/insertdatetime/) plugin.
 
 {% include commands/insertdatetime-cmds.md %}
 
 #### Link
 
-The following command requires the [Link (`link`)]({{site.baseurl}}/plugins/opensource/link/) plugin.
+The following command requires the [Link (`link`)]({{site.baseurl}}/plugins-ref/opensource/link/) plugin.
 
 {% include commands/link-cmds.md %}
 
 #### Lists
 
-The following commands require the [Lists (`lists`)]({{site.baseurl}}/plugins/opensource/lists/) plugin.
+The following commands require the [Lists (`lists`)]({{site.baseurl}}/plugins-ref/opensource/lists/) plugin.
 
 {% include commands/lists-cmds.md %}
 
 #### Media
 
-The following command requires the [Media (`media`)]({{site.baseurl}}/plugins/opensource/media/) plugin.
+The following command requires the [Media (`media`)]({{site.baseurl}}/plugins-ref/opensource/media/) plugin.
 
 {% include commands/media-cmds.md %}
 
 #### Nonbreaking Space
 
-The following command requires the [Nonbreaking Space (`nonbreaking`)]({{site.baseurl}}/plugins/opensource/nonbreaking/) plugin.
+The following command requires the [Nonbreaking Space (`nonbreaking`)]({{site.baseurl}}/plugins-ref/opensource/nonbreaking/) plugin.
 
 {% include commands/nbsp-cmds.md %}
 
 #### Page Break
 
-The following command requires the [Page Break (`pagebreak`)]({{site.baseurl}}/plugins/opensource/pagebreak/) plugin.
+The following command requires the [Page Break (`pagebreak`)]({{site.baseurl}}/plugins-ref/opensource/pagebreak/) plugin.
 
 {% include commands/pagebreak-cmds.md %}
 
 #### Paste
 
-The following commands require the [Paste (`paste`)]({{site.baseurl}}/plugins/opensource/paste/) plugin.
+The following commands require the [Paste (`paste`)]({{site.baseurl}}/plugins-ref/opensource/paste/) plugin.
 
 {% include commands/paste-cmds.md %}
 
 #### Permanent Pen
 
-The following commands require the [Permanent Pen (`permanentpen`)]({{site.baseurl}}/plugins/premium/permanentpen/) plugin.
+The following commands require the [Permanent Pen (`permanentpen`)]({{site.baseurl}}/plugins-ref/premium/permanentpen/) plugin.
 
 {% include commands/permanentpen-cmds.md %}
 
 #### PowerPaste
 
-The following command requires the [PowerPaste (`powerpaste`)]({{site.baseurl}}/plugins/premium/powerpaste/) plugin.
+The following command requires the [PowerPaste (`powerpaste`)]({{site.baseurl}}/plugins-ref/premium/powerpaste/) plugin.
 
 {% include commands/powerpaste-cmds.md %}
 
 #### Preview
 
-The following command requires the [Preview (`preview`)]({{site.baseurl}}/plugins/opensource/preview/) plugin.
+The following command requires the [Preview (`preview`)]({{site.baseurl}}/plugins-ref/opensource/preview/) plugin.
 
 {% include commands/preview-cmds.md %}
 
 #### Save
 
-The following commands require the [Save (`save`)]({{site.baseurl}}/plugins/opensource/save/) plugin.
+The following commands require the [Save (`save`)]({{site.baseurl}}/plugins-ref/opensource/save/) plugin.
 
 {% include commands/save-cmds.md %}
 
 #### Search and Replace
 
-The following command requires the [Search and Replace (`searchreplace`)]({{site.baseurl}}/plugins/opensource/searchreplace/) plugin.
+The following command requires the [Search and Replace (`searchreplace`)]({{site.baseurl}}/plugins-ref/opensource/searchreplace/) plugin.
 
 {% include commands/searchreplace-cmds.md %}
 
 #### Spell Checker Pro
 
-The following commands require the [Spell Checker Pro (`tinymcespellchecker`)]({{site.baseurl}}/plugins/premium/tinymcespellchecker/) plugin.
+The following commands require the [Spell Checker Pro (`tinymcespellchecker`)]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/) plugin.
 
 {% include commands/tinymcespellchecker-cmds.md %}
 
 #### Table
 
-The following commands require the [Table (`table`)]({{site.baseurl}}/plugins/opensource/table/) plugin.
+The following commands require the [Table (`table`)]({{site.baseurl}}/plugins-ref/opensource/table/) plugin.
 
 {% include commands/table-cmds.md %}
 
 #### Template
 
-The following command requires the [Template (`template`)]({{site.baseurl}}/plugins/opensource/template/) plugin.
+The following command requires the [Template (`template`)]({{site.baseurl}}/plugins-ref/opensource/template/) plugin.
 
 {% include commands/template-cmds.md %}
 
 #### Table of Contents
 
-The following commands require the [Table of Contents (`toc`)]({{site.baseurl}}/plugins/opensource/toc) plugin.
+The following commands require the [Table of Contents (`toc`)]({{site.baseurl}}/plugins-ref/opensource/toc/) plugin.
 
 {% include commands/toc-cmds.md %}
 
 #### Visual Blocks
 
-The following command requires the [Visual Blocks (`visualblocks`)]({{site.baseurl}}/plugins/opensource/visualblocks/) plugin.
+The following command requires the [Visual Blocks (`visualblocks`)]({{site.baseurl}}/plugins-ref/opensource/visualblocks/) plugin.
 
 {% include commands/visualblocks-cmds.md %}
 
 #### Visual Characters
 
-The following command requires the [Visual Characters (`visualchars`)]({{site.baseurl}}/plugins/opensource/visualchars/) plugin.
+The following command requires the [Visual Characters (`visualchars`)]({{site.baseurl}}/plugins-ref/opensource/visualchars/) plugin.
 
 {% include commands/visualchars-cmds.md %}
 
 #### Word Count
 
-The following command requires the [Word Count (`wordcount`)]({{site.baseurl}}/plugins/opensource/visualchars/) plugin.
+The following command requires the [Word Count (`wordcount`)]({{site.baseurl}}/plugins-ref/opensource/visualchars/) plugin.
 
 {% include commands/wordcount-cmds.md %}
 
@@ -440,7 +440,7 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mceAddEditor    | Converts the specified HTML or DOM element into an editor instance with the specified ID.                                                                                                                                                                               |
 | mceRemoveEditor | Removes an editor instance with the specified ID.                                                                                                                                                                                                                       |
-| mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |
+| mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/apis/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/apis/tinymce/tinymce.editor/#show) if it is not visible. |
 
 ## Query command states
 
@@ -456,7 +456,7 @@ tinymce.activeEditor.editorCommands.commands.state;
 
 ### Available query command states
 
-The following command states can be queried using the [queryCommandState]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandstate) API.
+The following command states can be queried using the [queryCommandState]({{ site.baseurl }}/apis/tinymce/tinymce.editorcommands/#querycommandstate) API.
 
 | Command              | Description                                                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -512,7 +512,7 @@ tinymce.activeEditor.editorCommands.commands.value;
 
 ### Available query command values
 
-The following command values can be queried using the [queryCommandValue]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue) API.
+The following command values can be queried using the [queryCommandValue]({{ site.baseurl }}/apis/tinymce/tinymce.editorcommands/#querycommandvalue) API.
 
 | Command       | Description                                                                |
 | --------------| -------------------------------------------------------------------------- |

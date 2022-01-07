@@ -29,7 +29,7 @@ tinymce.init({
 
 > **Note**: This is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 
-{{site.svgsNotSupported}}
+{% include /misc/admon_svg_not_supported.md %}
 
 ## Options
 
@@ -70,7 +70,11 @@ If you wish to align the image, you can also use the text align buttons while im
 
 #{% include configuration/images_upload_handler.md %}
 
-#{% include configuration/images_uploads_url.md %}
+#{% include configuration/images_upload_url.md %}
+
+#{% include configuration/object_resizing.md %}
+
+#{% include configuration/resize_img_proportional.md %}
 
 #{% include configuration/object_resizing.md %}
 

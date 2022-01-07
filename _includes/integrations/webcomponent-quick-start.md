@@ -50,16 +50,24 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
 
     If a `script` element sourcing {{site.productname}} is not provided, the {{site.productname}} Web Component will load {{site.productname}} from the {{site.cloudname}}.
 {% else %}
+3. Add a `script` element sourcing the {{site.productname}} Web Component (`tinymce-webcomponent.js`), such as:
+
+    ```html
+    <script src="{{site.webcomponent_url}}"></script>
+    ```
+
+    The `tinymce-webcomponent` can also be sourced from [npmjs](https://www.npmjs.com/package/@tinymce/tinymce-webcomponent).
+
 3. Add a `script` element sourcing {{site.productname}}, such as:
 
     ```html
     <script src="/path/to/tinymce.min.js"></script>
     ```
 
-    If a `script` element sourcing {{site.productname}} is not provided, the {{site.productname}} Web Component will load {{site.productname}} from the {{site.cloudname}}. For information on the available options for sourcing {{site.productname}}, see: [Loading {{site.productname}}](#loadingtinymce).
+    If a `script` element sourcing {{site.productname}} is not provided, the {{site.productname}} Web Component will load {{site.productname}} from the {{site.cloudname}}. For information on the available options for sourcing {{site.productname}}, see: [Loading {{site.productname}}]({{site.baseurl}}/how-to-guides/environment-setup/webcomponent/webcomponent-ref/#loadingtinymce).
 {% endif %}
 {% if productSource == "cloud" %}
-4. Add a `tinymce-editor` element where the editor should appear and include your {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountpageurl}}).
+4. Add a `tinymce-editor` element where the editor should appear and include your {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountpageurl}}/).
 
     ```html
     <tinymce-editor
@@ -88,4 +96,4 @@ The following example shows the {{site.productname}} Web Component in an HTML pa
 
 - For information on customizing, see:
   - The {{site.productname}} Web Component, see: [The {{site.productname}} Web Component Technical Reference]({{site.baseurl}}/how-to-guides/environment-setup/webcomponent/webcomponent-ref/).
-  - [{{site.productname}} basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+  - [{{site.productname}} basic setup]({{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/).

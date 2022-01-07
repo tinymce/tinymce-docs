@@ -8,19 +8,19 @@ keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the **Bold** button that is highlighted when the cursor is in a word with bold formatting.
 
-### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | {{site.predefinedIconsOnly}} |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} |
 | tooltip | string | optional | Text for button tooltip.  |
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | active | boolean | optional | default: false - Represents the button's state. When true, button is highlighted. Toggled by the button's API. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. For details, see: [Using `onSetup`](#usingonsetup). |
 
-### API
+## API
 
 | Name | Value | Description |
 |------| ------| ------------|
@@ -29,11 +29,11 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | isActive | ( ) => boolean | Checks if the button is `on`. |
 | setActive | (state: boolean) => void | Sets the button's toggle state. |
 
-### Toggle button example and explanation
+## Toggle button example and explanation
 
 {% include live-demo.html id="custom-toolbar-toggle-button" tab="js" %}
 
-The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for [formats]({{site.baseurl}}/configure/content-formatting/#formats) that are already registered with the editor. In this example, `strikethrough` is the registered format.
+The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for [formats]({{site.baseurl}}/content/content-formatting/#formats) that are already registered with the editor. In this example, `strikethrough` is the registered format.
 
 The first button applies and removes strikethrough formatting, and its state toggles on click using `api.setActive(!api.isActive())`. However, the expected behavior is that the button's state will reflect whether the selected content has strikethrough formatting. For example, if the cursor is moved into editor content that has strikethrough formatting the button will become **active** and if it is moved into content that does not have strikethrough formatting the button will become **inactive**. The first button in the example does not do this, since its state only toggles when the button is clicked.
 

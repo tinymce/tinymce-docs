@@ -22,7 +22,7 @@ The following **Alt+key** and **Option+key** shortcuts can only be used when the
 | Return to the editor content area        | Esc                    | Esc                    |
 | Navigate left/right through menu/toolbar | Tab and the Arrow Keys | Tab and the Arrow Keys |
 
-For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: [Keyboard shortcuts]({{site.baseurl}}/advanced/keyboard-shortcuts/).
+For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: [Keyboard shortcuts]({{site.baseurl}}/accessibility/keyboard-shortcuts/).
 
 ## How to work with the editor
 
@@ -48,4 +48,4 @@ Dialogs such as **Insert/Edit Image** are opened from either a menu item or a to
 
 ## Accessibility options
 
-{{site.productname}} has accessibility options that can be set when initializing the editor, see: [Accessibility options]({{site.baseurl}}/configure/accessibility/).
+{{site.productname}} has accessibility options that can be set when initializing the editor, see: [Accessibility options]({{site.baseurl}}/interface/accessibility/).

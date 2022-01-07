@@ -43,7 +43,7 @@ Type
 
 ### channel
 
-Specifies the {{site.cloudname}} channel to use. For information on {{site.cloudname}} deployment channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
+Specifies the {{site.cloudname}} channel to use. For information on {{site.cloudname}} deployment channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud]({{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/).
 
 Default value
 : `"5"`

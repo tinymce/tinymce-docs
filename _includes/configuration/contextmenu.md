@@ -19,7 +19,7 @@ Type
 Default Value
 : `'link linkchecker image imagetools table spellchecker configurepermanentpen'`
 
-{{site.ctrl_right_click}}
+{% include /misc/admon_ctrl_right_click.md %}
 
 ### Example: Using `contextmenu`
 
@@ -32,5 +32,5 @@ tinymce.init({
 ```
 
 {% if page.title != "Context menu" %}
-For information on configuring the `contextmenu` option and creating custom context menu items [context menu examples]({{site.baseurl}}/ui-components/contextmenu/).
+For information on configuring the `contextmenu` option and creating custom context menu items [context menu examples]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/contextmenu/).
 {% endif %}

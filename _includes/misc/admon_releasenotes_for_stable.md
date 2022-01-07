@@ -1,0 +1,1 @@
+> **Note**: This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/release-information/changelog/).

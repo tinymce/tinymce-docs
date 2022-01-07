@@ -8,21 +8,21 @@ keywords:
 
 ## Initial dimensions
 
-{% include configuration/height.md %}
+#{% include configuration/height.md %}
 
-{% include configuration/width.md %}
+#{% include configuration/width.md %}
 
 ## Controlling user editor resizing
 
-{% include configuration/resize.md %}
+#{% include configuration/resize.md %}
 
-{% include configuration/min_height.md %}
+#{% include configuration/min_height.md %}
 
-{% include configuration/max_height.md %}
+#{% include configuration/max_height.md %}
 
-{% include configuration/min_width.md %}
+#{% include configuration/min_width.md %}
 
-{% include configuration/max_width.md %}
+#{% include configuration/max_width.md %}
 
 ## Auto-resizing the editor
 

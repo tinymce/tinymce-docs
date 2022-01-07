@@ -63,7 +63,7 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/).
 
     This JavaScript file will create a component "`App`" containing a {{site.productname}} editor configured with basic features.
 {% if productSource == "cloud" %}
-5. Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
+5. Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}/).
 
     Such as:
 
@@ -148,5 +148,5 @@ The application has now been deployed on the web server.
 * For examples of the {{site.productname}} integration, see: [the tinymce-react storybook](https://tinymce.github.io/tinymce-react/).
 * For information on customizing:
   * {{site.productname}} integration, see: [React framework Technical Reference]({{site.baseurl}}/how-to-guides/environment-setup/react/react-ref/).
-  * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+  * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/).
   * The React application, see: [Create React App](https://create-react-app.dev/docs/getting-started) or [the React documentation](https://reactjs.org/docs/getting-started.html).

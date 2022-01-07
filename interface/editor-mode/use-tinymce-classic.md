@@ -35,7 +35,7 @@ tinymce.init({
 
 ### Related configuration options
 
-* For information on using editor customization options, see: [Customizing the editor UI]({{site.baseurl}}/general-configuration-guide/customize-ui/).
-* For information on localizing {{site.productname}}, see: [Localize TinyMCE]({{site.baseurl}}/general-configuration-guide/localize-your-language/).
-* For information on all {{site.productname}} configuration settings, see: [Configuration options reference]({{site.baseurl}}/configure/).
+* For information on using editor customization options, see: [Customizing the editor UI]({{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/customize-ui/).
+* For information on localizing {{site.productname}}, see: [Localize TinyMCE]({{site.baseurl}}/how-to-guides/learn-the-basics/localize-your-language/).
+* For information on all {{site.productname}} configuration settings, see: [Configuration options reference]({{site.baseurl}}/interface/editor-appearance/).
 

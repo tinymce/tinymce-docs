@@ -1,6 +1,6 @@
 ## `draggable_modal`
 
-Use the `draggable_modal` option to enable dragging for [modal dialogs]({{site.baseurl}}/ui-components/dialog/).
+Use the `draggable_modal` option to enable dragging for [modal dialogs]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog/).
 
 Type
 : `Boolean`

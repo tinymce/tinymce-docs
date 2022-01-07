@@ -53,7 +53,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 | ---- | ----- | ----------- | ----------- |
 | value | string | optional | Value of the item. This will be passed to the `onAction` callback when selected. |
 | text | string | optional | Text to display for the item. |
-| icon | string | optional | Name of the icon to be displayed. Must be a either single unicode character or an icon from: the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/), a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/), or an icon added using the [`addIcon` API]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon). |
+| icon | string | optional | Name of the icon to be displayed. Must be a either single unicode character or an icon from: the [icon pack]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/), a [custom icon pack]({{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/), or an icon added using the [`addIcon` API]({{site.baseurl}}/apis/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon). |
 
 ```js
 {
@@ -100,7 +100,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| items | array | required | An array of [CardItems](#carditem) |
+| items | array | required | An array of [CardItems](#carditems) |
 | direction | `'vertical'` or `'horizontal'` | optional | default: `horizontal` - directionality of subitems |
 | align | `'left'` or `'right'` | optional | default: `left` - horizontal alignment of subitems |
 | valign | `'top'`, `'middle'` or `'bottom'` | optional | default: `middle` - vertical alignment of subitems |

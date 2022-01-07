@@ -8,9 +8,7 @@ keywords: plugin export pdf
 
 {% assign pluginname = "Export" %}
 {% assign plugincode = "export" %}
-
-<br/>
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The {{pluginname}} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the [Exporters section](#exporters).
 
@@ -45,7 +43,7 @@ tinymce.init({
 
 The {{pluginname}} plugin provides the following exporters:
 
-- [Client-side PDF (`clientpdf`)](#client-side-pdf)
+- [Client-side PDF (`clientpdf`)](#client-sidepdfclientpdf)
 
 ### Client-side PDF (`clientpdf`)
 
@@ -58,18 +56,18 @@ This exporter has a few limitations or known issues that should be noted:
 - Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
 - Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the [export_image_proxy](#export_image_proxy) option.
 - Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
-- The [Checklist plugin]({{site.baseurl}}/plugins/premium/checklist/) icons will not render for Internet Explorer 11 users due to browser limitations.
+- The [Checklist plugin]({{site.baseurl}}/plugins-ref/premium/checklist/) icons will not render for Internet Explorer 11 users due to browser limitations.
 
 The following plugins are not supported:
 
-- [BBCode]({{site.baseurl}}/plugins/opensource/bbcode/)
-- [Comments]({{site.baseurl}}/plugins/premium/comments/)
-- [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/)
-- [Fullpage]({{site.baseurl}}/plugins/opensource/fullpage/)
-- [Legacy Output]({{site.baseurl}}/plugins/opensource/legacyoutput/)
-- [Media]({{site.baseurl}}/plugins/opensource/media/)
-- [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)
-- [Table of Contents]({{site.baseurl}}/plugins/opensource/toc/)
+- [BBCode]({{site.baseurl}}/plugins-ref/opensource/bbcode/)
+- [Comments]({{site.baseurl}}/plugins-ref/premium/comments/)
+- [Enhanced Media Embed]({{site.baseurl}}/plugins-ref/premium/mediaembed/)
+- [Fullpage]({{site.baseurl}}/plugins-ref/opensource/fullpage/)
+- [Legacy Output]({{site.baseurl}}/plugins-ref/opensource/legacyoutput/)
+- [Media]({{site.baseurl}}/plugins-ref/opensource/media/)
+- [Page Embed]({{site.baseurl}}/plugins-ref/premium/pageembed/)
+- [Table of Contents]({{site.baseurl}}/plugins-ref/opensource/toc/)
 
 ## Configuration Options
 

@@ -6,7 +6,7 @@ description: Add TinyMCE to WordPress
 keywords: integration integrate wordpress advanced
 ---
 
-{{site.thirdPartyInteg}}
+{% include /misc/admon_third_party_integration.md %}
 
 To use {{site.productname}} in WordPress, Advanced Editor Tools is a great option.
 

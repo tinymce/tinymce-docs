@@ -1,0 +1,1 @@
+> **Note**: This plugin is only available for [paid TinyMCE subscriptions]({{site.pricingpage}}/).

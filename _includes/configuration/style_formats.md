@@ -5,12 +5,12 @@ This option allows you to define custom items for the `styleselect` dropdown too
 
 There are four types of items the array can contain:
 
-* **Style:** The item must have a `title` and the necessary fields to [specify a new format]({{ site.baseurl }}/configure/content-formatting/#formattype). An optional `name` can be provided for the style, which will be prefixed with `custom-` to ensure that it does not override the default editor formats. If given a unique `name`, the style can be used with the formatting API. The item will be rendered in the UI as a clickable item that applies the given format.
-* **Style reference:** The item must have a `title` and a `format` which refers to a pre-registered editor [format]({{ site.baseurl }}/configure/content-formatting/#formats). The item will be rendered in the UI as a clickable item that applies the given format.
+* **Style:** The item must have a `title` and the necessary fields to [specify a new format]({{ site.baseurl }}/content/content-formatting/#formattype). An optional `name` can be provided for the style, which will be prefixed with `custom-` to ensure that it does not override the default editor formats. If given a unique `name`, the style can be used with the formatting API. The item will be rendered in the UI as a clickable item that applies the given format.
+* **Style reference:** The item must have a `title` and a `format` which refers to a pre-registered editor [format]({{ site.baseurl }}/content/content-formatting/#formats). The item will be rendered in the UI as a clickable item that applies the given format.
 * **Nested menu:** The item must have a `title` and an `items` array that contains other items that will be rendered as a sub-menu.
 * **Group heading:** The item must only have a `title` and will be rendered as a non-clickable heading within the menu. This is useful for grouping items without using nested menus.
 
-To merge custom styles with the default `styles_format` values, set [`style_formats_merge`]({{ site.baseurl }}/configure/editor-appearance/#style_formats_merge) to `true`.
+To merge custom styles with the default `styles_format` values, set [`style_formats_merge`]({{ site.baseurl }}/content/user-formatting-options/#style_formats_merge) to `true`.
 
 Type
 : `Array`
@@ -52,7 +52,7 @@ style_formats: [
 ]
 ```
 
-## Example: Using `style_formats`
+### Example: Using `style_formats`
 
 This example shows how to append 3 new style formats.
 
@@ -69,12 +69,12 @@ tinymce.init({
 });
 ```
 
-## Interactive examples
+### Interactive examples
 
 This example shows you how to:
 
-- Override the built-in [formats]({{ site.baseurl }}/configure/content-formatting/#formats).
-- Add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option.
+- Override the built-in [formats]({{ site.baseurl }}/content/content-formatting/#formats).
+- Add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the [style_formats]({{ site.baseurl }}/content/user-formatting-options/#style_formats) configuration option.
 
 {% include live-demo.html id="format-custom" tab="js" %}
 

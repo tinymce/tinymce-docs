@@ -6,7 +6,7 @@ This option lets you specify a URL for the server-side upload handler. Upload wi
 { "location": "folder/sub-folder/new-location.png" }
 ```
 
-Be sure to checkout a demo implementation of the server-side upload handler [here]({{ site.baseurl }}/advanced/php-upload-handler/) (written in PHP).
+Be sure to checkout a demo implementation of the server-side upload handler [here]({{ site.baseurl }}/how-to-guides/image-handling-guide/php-upload-handler/) (written in PHP).
 
 Type
 : `String`

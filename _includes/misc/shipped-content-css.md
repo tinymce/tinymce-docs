@@ -5,7 +5,7 @@
 - `document`
 - `writer`
 
-These content CSS files can be enabled in the editor using the [`content_css` configuration option]({{site.baseurl}}/configure/content-appearance/#content_css).
+These content CSS files can be enabled in the editor using the [`content_css` configuration option]({{site.baseurl}}/content/add-css-options/#content_css).
 
 For example:
 

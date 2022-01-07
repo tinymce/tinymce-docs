@@ -10,24 +10,24 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 
 For example: The table plugin's `table` toolbar button opens a menu similar to the menubar Table menu.
 
-### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | {{site.predefinedIconsOnly}} |
+| icon | string | optional | {% include /misc/admon_predefined_icons_only.md %} |
 | tooltip | string | optional | Text for button tooltip. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. For details, see: [Using `onSetup`](#usingonsetup). |
 
-### API
+## API
 
 | Name | Value | Description |
 |------| ------| ------------|
 | isDisabled | ( ) => boolean | Checks if the button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
-### Menu button example and explanation
+## Menu button example and explanation
 
 The following is a simple toolbar menu button example:
 
@@ -36,7 +36,5 @@ The following is a simple toolbar menu button example:
 This example configures a toolbar menu button with the label `My Button` that opens the specified menu when clicked. The top-level menu contains two items. The first menu item inserts content when clicked and the second menu item opens a submenu containing two menu items which insert content when clicked.
 
 The `fetch` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
-
-Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for help using the menu toolbar button.
 
 {% include misc/onSetup.md %}

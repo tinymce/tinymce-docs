@@ -1,10 +1,10 @@
 ## `toolbar`
 
-This option allows you to specify the [buttons]({{ site.baseurl }}/advanced/available-toolbar-buttons/) and the order that they will appear on {{site.productname}}'s toolbar.
+This option allows you to specify the [buttons]({{ site.baseurl }}/interface/toolbars/available-toolbar-buttons/) and the order that they will appear on {{site.productname}}'s toolbar.
 
 ### Grouping toolbar buttons
 
-To specify the buttons that should appear on {{site.productname}}'s toolbar, the `toolbar` option should be provided with a space separated list of [toolbar buttons]({{ site.baseurl }}/advanced/available-toolbar-buttons/). To create groups within this list, please add `|` pipe characters between the groups of buttons that you would like to create.
+To specify the buttons that should appear on {{site.productname}}'s toolbar, the `toolbar` option should be provided with a space separated list of [toolbar buttons]({{ site.baseurl }}/interface/toolbars/available-toolbar-buttons/). To create groups within this list, please add `|` pipe characters between the groups of buttons that you would like to create.
 
 Type
 : `String`
@@ -18,7 +18,7 @@ tinymce.init({
 });
 ```
 
-> **Note**: The size of toolbar groups affects the behavior of the toolbar drawer when the `toolbar_mode` is set to `'floating'` (default value) or `'sliding'`. For more information, see: [the `toolbar_mode` setting]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
+> **Note**: The size of toolbar groups affects the behavior of the toolbar drawer when the `toolbar_mode` is set to `'floating'` (default value) or `'sliding'`. For more information, see: [the `toolbar_mode` setting]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_mode).
 
 #### Adding toolbar group labels
 

@@ -9,7 +9,7 @@ keywords: mentions atmentions
 {% assign pluginname = 'Mentions' %}
 {% assign plugincode = 'mentions' %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The mentions plugin will present a list of users when a user types the "@" symbol followed by the beginnings of a username after it. It will then query your server using the `mentions_fetch` callback.
 

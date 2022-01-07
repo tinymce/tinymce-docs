@@ -1,4 +1,4 @@
-| Menu item identifier      | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                               |
+| Menu item identifier      | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                                                               |
 |---------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | `inserttable`             | Table                                                                                                    | Inserts table grid menu.                                                  |
 | `inserttabledialog`       | _Not Applicable_                                                                                         | Opens the table properties dialog for creating a new table.               |

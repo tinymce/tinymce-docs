@@ -8,7 +8,7 @@ keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 
 ## Browser-based spell checking
 
-Assign the [`browser_spellcheck`]({{ site.baseurl }}/configure/spelling/#browser_spellcheck) configuration option the value of `true` to utilize the browser's native spell check functionality. Disabling the [`contextmenu`]({{ site.baseurl }}/configure/editor-appearance/#contextmenu) option _may_ be required depending on the right-click or context usability requirement.
+Assign the [`browser_spellcheck`]({{ site.baseurl }}/content/spelling/#browser_spellcheck) configuration option the value of `true` to utilize the browser's native spell check functionality. Disabling the [`contextmenu`]({{ site.baseurl }}/interface/menus/menus-configuration-options/#contextmenu) option _may_ be required depending on the right-click or context usability requirement.
 
 ```js
 tinymce.init({
@@ -18,7 +18,7 @@ tinymce.init({
 });
 ```
 
-{{site.ctrl_right_click}}
+{% include /misc/admon_ctrl_right_click.md %}
 
 ## PHP Spellchecker component
 
@@ -48,8 +48,8 @@ tinymce.init({
 });
 ```
 
-Review the [Spell Checker plugin]({{site.baseurl}}/plugins/opensource/spellchecker/) for advanced configuration options.
+Review the [Spell Checker plugin]({{site.baseurl}}/plugins-ref/opensource/spellchecker/) for advanced configuration options.
 
 ## TinyMCE Spell Checker Pro plugin
 
-Use the [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/) for scalable enterprise-grade spell check as-you-type functionality. **Spell Checker Pro** requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Use the [Spell Checker Pro plugin]({{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/) for scalable enterprise-grade spell check as-you-type functionality. **Spell Checker Pro** requires both a client-side plugin to be configured and a server-side component to be installed and configured.

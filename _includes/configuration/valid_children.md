@@ -2,7 +2,7 @@
 
 The valid_children enables you to control what child elements can exists within specified parent elements.
 
-{{site.productname}} will remove/split any non HTML5 or HTML transitional contents by default. So for example a `p` can't be a child of another `p` element. The default value for this option is controlled by the current [schema]({{ site.baseurl }}/configure/content-filtering/#schema).
+{{site.productname}} will remove/split any non HTML5 or HTML transitional contents by default. So for example a `p` can't be a child of another `p` element. The default value for this option is controlled by the current [schema]({{ site.baseurl }}/content/content-filtering/#schema).
 
 The syntax for this option is a comma separated list of parents with elements that should be added/removed as valid children for that element. So for example `'+body[style]'` would add style as a valid child of body.
 
@@ -27,4 +27,4 @@ tinymce.init({
 });
 ```
 
-This is an option you shouldn't have to fiddle with. The default rule set for this follows the HTML5 specification and some legacy elements from HTML4. You can switch between these defaults by configuring the [`schema`](#scheme) option.
+This is an option you shouldn't have to fiddle with. The default rule set for this follows the HTML5 specification and some legacy elements from HTML4. You can switch between these defaults by configuring the [`schema`](#schema) option.

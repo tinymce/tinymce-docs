@@ -35,7 +35,7 @@ The following formats will work on most content.
 | `fontsize`       | Font size. Such as `'30px'`.          |
 | `fontsize_class` | Font size (1-7).                      |
 
-> **Note**: The `mceToggleFormat` and `FormatBlock` [commands]({{ site.baseurl }}/advanced/editor-command-identifiers/) do not accept the following formats:
+> **Note**: The `mceToggleFormat` and `FormatBlock` [commands]({{ site.baseurl }}/how-to-guides/creating-custom-ui-components/editor-command-identifiers/) do not accept the following formats:
 > * `forecolor`
 > * `hilitecolor`
 > * `fontname`

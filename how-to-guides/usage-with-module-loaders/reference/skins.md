@@ -85,7 +85,7 @@ Example syntax for including the example icon pack in a bundle:
 </tbody>
 </table>
 
-> **Important**: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at [Bundling {{site.productname}} with a module loader]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+> **Important**: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at [Bundling {{site.productname}} with a module loader]({{site.baseurl}}/how-to-guides/usage-with-module-loaders/).
 
 {% comment %}
 ```js

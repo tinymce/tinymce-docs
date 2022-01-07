@@ -1,4 +1,4 @@
-The following event are provided by the [Export plugin]({{site.baseurl}}/plugins/premium/export/).
+The following event are provided by the [Export plugin]({{site.baseurl}}/plugins-ref/premium/export/).
 
 | Name                  | Data                  | Description                                                                    |
 | --------------------- | --------------------- | ------------------------------------------------------------------------------ |

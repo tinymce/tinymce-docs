@@ -10,7 +10,7 @@ controls: toolbar button, menu item
 {% assign pluginname = "Case Change" %}
 {% assign plugincode = "casechange" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The **Case Change** plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
 

@@ -1,6 +1,6 @@
 ### `image_uploadtab`
 
-This option adds an "Upload" tab to the image dialog allowing you to upload local images, when the [`images_upload_url`]({{site.baseurl}}/configure/file-image-upload/#images_upload_url) is also configured.
+This option adds an "Upload" tab to the image dialog allowing you to upload local images, when the [`images_upload_url`]({{site.baseurl}}/content/file-image-upload/#images_upload_url) is also configured.
 
 Type
 : `Boolean`

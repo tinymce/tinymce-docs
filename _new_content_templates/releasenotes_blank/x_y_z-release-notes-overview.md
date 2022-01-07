@@ -21,7 +21,7 @@ The following "list" should be added to `data/nav.yml`
   - url: "vnumsnake-release-notes-known-issues"
 {% endcomment %}
 
-{{site.releasenotes_for_stable}}
+{% include /misc/admon_releasenotes_for_stable.md %}
 
 ## Overview
 

@@ -181,7 +181,7 @@
     <main class="modern-main-container">
         <div class="heading modern-heading">
             <h1 class="light">{{ page.title }}</h1>
-            <h2 class="light">{{ page.description }}</h2>
+            <p class="light">{{ page.description }}</p>
             {% if page.url contains '/api/' %}
             <!-- Disabled since there is no git link -->
             {% else %}
@@ -232,6 +232,32 @@
 </script>
 <script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/common.min.js"></script>
 <script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/docs.min.js"></script>
+
+<script>
+(function () {
+var headings = document.getElementsByClassName('content modern-content')[0].querySelectorAll('h2,h3');
+var plevel = 2;
+var upDownStay = 0;
+var level2 = [];
+var level3 = [];
+headings.forEach(heading => {
+	switch (heading.tagName) {
+    case "H2":
+			level2.push('- url: "#' + heading.firstChild.innerText + '"\n');
+      break;
+    case "H3":
+      level3.push('- url: "#' + heading.firstChild.innerText + '"\n');
+      break;
+    default:
+      break;
+  }});
+level2 = level2.join('');
+level3 = level3.join('');
+console.log('Level 2\npages:\n' + level2);
+console.log('Level 3\npages:\n' + level3);
+})()
+
+</script>
 
 <script>
     {% include js/polyfill/promise-polyfill/polyfill.js %}

@@ -67,7 +67,7 @@ The definition of a context form button is very similar to the definition of a n
 | disabled | boolean | Optional | default: false - Represents button state. Is toggled by the button's API |
 | tooltip | string | Optional | Text for button tooltip. |
 | text | string | Optional | Text to display if no icon is found. |
-| icon | string | Optional | {{site.predefinedIconsOnly}} |
+| icon | string | Optional | {% include /misc/admon_predefined_icons_only.md %} |
 | onSetup | `(togglebuttonApi) => (togglebuttonApi) => void` | Optional | default: `() => () => {}` - Function that's invoked when the button is rendered. |
 
 Where the `buttonApi` is the same as a regular toolbar button and `FormApi` has (getValue: () => string, hide: () => void)
@@ -86,7 +86,7 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 | disabled | boolean | Optional | default: false - Represents button state. Is toggled by the button's API |
 | tooltip | string | Optional | Text for button tooltip. |
 | text | string | Optional | Text to display if no icon is found. |
-| icon | string | Optional | {{site.predefinedIconsOnly}} |
+| icon | string | Optional | {% include /misc/admon_predefined_icons_only.md %} |
 | onSetup | `(togglebuttonApi) => (togglebuttonApi) => void` | Optional | default: `() => () => {}` - Function that's invoked when the button is rendered. |
 
 Where the `toggleButtonApi` is the same as a regular toolbar toggle button.

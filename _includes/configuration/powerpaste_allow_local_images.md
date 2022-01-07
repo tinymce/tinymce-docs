@@ -8,4 +8,4 @@ Default value
 Possible values
 : `true`, `false`
 
-> **Note:** If you configure ***PowerPaste*** to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documentation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
+> **Note:** If you configure ***PowerPaste*** to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documentation]({{ site.baseurl }}/how-to-guides/image-handling-guide/upload-images/).

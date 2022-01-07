@@ -30,9 +30,9 @@ These settings affect the execution of the Autoresize plugin, including changes 
 
 {% include configuration/autoresize_overflow_padding.md %}
 
-{% include configuration/max_height.md %}
+#{% include configuration/max_height.md %}
 
-{% include configuration/min_height.md %}
+#{% include configuration/min_height.md %}
 
 ## Commands
 

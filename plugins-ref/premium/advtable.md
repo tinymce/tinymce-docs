@@ -10,9 +10,9 @@ keywords: sort rownumbering series tables advanced advtable premium
 {% assign plugincode = "advtable" %}
 {% assign plugincategory = "premium" %}
 <br/>
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
-The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding the following advanced functionality:
+The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins-ref/opensource/table/) by adding the following advanced functionality:
 
 - Sort options for rows and columns.
 - Row numbering column for tables.
@@ -69,7 +69,7 @@ A numeric and alpha value series are available by default. The available value s
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.
 
-{% include configuration/advtable_value_series.md %}
+#{% include configuration/advtable_value_series.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
@@ -83,4 +83,4 @@ The Advanced Tables plugin provides the following {{site.productname}} commands.
 
 ## Events
 
-For events applicable to the Advanced Tables plugin, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).
+For events applicable to the Advanced Tables plugin, see: [Table plugin - Events]({{ site.baseurl }}/plugins-ref/opensource/table/#events).

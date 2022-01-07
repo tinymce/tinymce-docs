@@ -11,7 +11,7 @@ It should be noted, that we only provide a hook. It is up to you to implement sp
 Type
 : `JavaScript Function`
 
-> **Note**: The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check [Basic Local File Picker]({{ site.baseurl }}/demo/file-picker) demo for a more functional example.
+> **Note**: The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check the [Interactive example](#interactiveexample) for a more functional example.
 
 ### Example: Using `file_picker_callback`
 

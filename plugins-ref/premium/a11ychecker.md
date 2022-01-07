@@ -9,7 +9,7 @@ keywords: a11y accessibility WCAG
 {% assign pluginname = 'Accessibility Checker' %}
 {% assign plugincode = "a11ychecker" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The `a11ychecker` premium plugin allows you to check the HTML in the editor for various WCAG & Section 508 accessibility problems. It has an auto-repair feature that lets the user fix identified problems.
 
@@ -438,7 +438,7 @@ editor.plugins.a11ychecker.toggleaudit();
 Conducts an accessibility audit and reports the results without opening the dialog. The report produced is an array of objects, where each object represents an issue and contains the following details:
 
 id
-: The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Accessibility Rules](#accessiblityrules).
+: The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Accessibility Rules](#accessibilityrules).
 
 description
 : A description of the issue.

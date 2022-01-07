@@ -10,7 +10,7 @@ controls: toolbar button
 {% assign pluginname = "Format Painter" %}
 {% assign plugincode = "formatpainter" %}
 
-{{site.premiumplugin}}
+{% include /misc/admon_premium_plugin.md %}
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
@@ -62,7 +62,7 @@ The format painter operates in two modes, one for retrieval and one for applicat
 
 ## Options
 
-The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formatting, it will treat **lists** as a block format whenever the [`lists plugin`]({{site.baseurl}}/plugins/opensource/lists/) is made available.
+The format painter acts upon all [`formats`]({{ site.baseurl }}/content/content-formatting/#formats) registered in the editor. In addition to any standard formatting, it will treat **lists** as a block format whenever the [`lists plugin`]({{site.baseurl}}/plugins-ref/opensource/lists/) is made available.
 
 {% include configuration/formatpainter_formats.md %}
 

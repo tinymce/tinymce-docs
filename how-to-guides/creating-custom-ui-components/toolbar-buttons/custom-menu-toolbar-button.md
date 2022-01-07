@@ -10,7 +10,7 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 
 For example: The table plugin's `table` toolbar button opens a menu similar to the menubar Table menu.
 
-### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -20,14 +20,14 @@ For example: The table plugin's `table` toolbar button opens a menu similar to t
 | tooltip | string | optional | Text for button tooltip. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. For details, see: [Using `onSetup`](#usingonsetup). |
 
-### API
+## API
 
 | Name | Value | Description |
 |------| ------| ------------|
 | isDisabled | ( ) => boolean | Checks if the button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
-### Menu button example and explanation
+## Menu button example and explanation
 
 The following is a simple toolbar menu button example:
 

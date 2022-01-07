@@ -8,7 +8,7 @@ keywords: menu menuitem menuitems
 
 A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the right of the menu item's text when it is `on`.
 
-#### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -20,7 +20,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | onSetup | `(api) => (api) => void` | optional | default: `() => () => {}` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: [Using `onSetup`](#usingonsetup). |
 | onAction | `(api) => void` | required | Function invoked when the menu item is clicked. |
 
-#### API
+## API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
@@ -29,7 +29,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | isDisabled | `() => boolean` | Checks if the menu item is disabled. |
 | setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
-#### Example: Creating a toggle menu item
+## Example: Creating a toggle menu item
 
 ```js
 // Menu items are recreated when the menu is closed and opened, so we need

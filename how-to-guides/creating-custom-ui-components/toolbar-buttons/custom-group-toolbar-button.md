@@ -10,7 +10,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 
 > **Note:** The group toolbar button is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
 
-### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -20,14 +20,14 @@ A group toolbar button is a toolbar button that contains a collection of other t
 | items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#addingtoolbargrouplabels). |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. For details, see: [Using `onSetup`](#usingonsetup). |
 
-### API
+## API
 
 | Name | Value | Description |
 |------| ------| ------------|
 | isDisabled | ( ) => boolean | Checks if the button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
-### Group toolbar button example and explanation
+## Group toolbar button example and explanation
 
 The following is a simple group toolbar button example:
 

@@ -7,11 +7,11 @@ description: Configure the appearance of content inside TinyMCE's editable area.
 
 ## Showing for "hidden" elements
 
-{% include configuration/visual.md %}
+#{% include configuration/visual.md %}
 
-{% include configuration/visual_anchor_class.md %}
+#{% include configuration/visual_anchor_class.md %}
 
-{% include configuration/visual_table_class.md %}
+#{% include configuration/visual_table_class.md %}
 
 ## Showing "hidden" characters
 

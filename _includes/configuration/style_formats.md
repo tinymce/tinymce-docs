@@ -52,7 +52,7 @@ style_formats: [
 ]
 ```
 
-## Example: Using `style_formats`
+### Example: Using `style_formats`
 
 This example shows how to append 3 new style formats.
 
@@ -69,7 +69,7 @@ tinymce.init({
 });
 ```
 
-## Interactive examples
+### Interactive examples
 
 This example shows you how to:
 

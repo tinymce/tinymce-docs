@@ -8,7 +8,7 @@ keywords: menu menuitem menuitems
 
 A basic menu item triggers its `onAction` function when clicked.
 
-#### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -20,14 +20,14 @@ A basic menu item triggers its `onAction` function when clicked.
 | onAction | `(api) => void` | required | Function invoked when the menu item is clicked. |
 | shortcut | string | optional | Text to display in the shortcut label. To register a shortcut, see: [Add custom shortcuts to TinyMCE]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/shortcuts/). |
 
-#### API
+## API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
 | isDisabled | `() => boolean` | Checks if the menu item is disabled. |
 | setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
-#### Example: Creating a basic menu item
+## Example: Creating a basic menu item
 
 ```js
 tinymce.init({

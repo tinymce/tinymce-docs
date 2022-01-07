@@ -8,7 +8,7 @@ keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A basic button triggers its `onAction` function when clicked.
 
-### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -19,14 +19,14 @@ A basic button triggers its `onAction` function when clicked.
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. For details, see: [Using `onSetup`](#usingonsetup). |
 
-### API
+## API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
 | isDisabled | () => boolean | Checks if the button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
-### Basic button example and explanation
+## Basic button example and explanation
 
 The following example adds two buttons to the toolbar:
 

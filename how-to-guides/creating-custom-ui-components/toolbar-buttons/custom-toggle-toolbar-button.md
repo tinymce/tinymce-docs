@@ -8,7 +8,7 @@ keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the **Bold** button that is highlighted when the cursor is in a word with bold formatting.
 
-### Config options
+## Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -20,7 +20,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. For details, see: [Using `onSetup`](#usingonsetup). |
 
-### API
+## API
 
 | Name | Value | Description |
 |------| ------| ------------|
@@ -29,7 +29,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | isActive | ( ) => boolean | Checks if the button is `on`. |
 | setActive | (state: boolean) => void | Sets the button's toggle state. |
 
-### Toggle button example and explanation
+## Toggle button example and explanation
 
 {% include live-demo.html id="custom-toolbar-toggle-button" tab="js" %}
 

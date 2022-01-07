@@ -8,7 +8,7 @@ description: These settings configure TinyMCE's language capabilities, including
 
 ## Setting the language on content
 
-{% include configuration/content_langs.md %}
+#{% include configuration/content_langs.md %}
 
 ## Setting the language options for Spell Checker Pro
 
@@ -18,7 +18,7 @@ To customize the list of spell checking languages available to your users throug
 
 ## Changing the default text direction of content
 
-{% include configuration/directionality.md %}
+#{% include configuration/directionality.md %}
 
 ## Allow users to change the text direction of content
 

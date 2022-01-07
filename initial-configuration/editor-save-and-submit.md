@@ -8,7 +8,7 @@ keywords:
 
 ## HTML forms options
 
-{% include configuration/hidden_input.md %}
+#{% include configuration/hidden_input.md %}
 
 {% comment %}
 These are undocumented...

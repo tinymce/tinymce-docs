@@ -13,7 +13,7 @@ Select from one of the following frameworks, CMSs, or package managers for a gui
 
 {% assign navigation = site.data.nav %}
 
-## {{site.productname}} from the {{site.cloudname}}
+### {{site.productname}} from the {{site.cloudname}}
 
 {% for entry in navigation %}
   {% if entry.url == "getting-started" %}
@@ -31,7 +31,7 @@ Select from one of the following frameworks, CMSs, or package managers for a gui
 
 {% include sub-level-toc.html links=links urlPrefix="install-setup/cloud/" %}
 
-## Using {{site.productname}} from a package manager or a .zip archive
+### Using {{site.productname}} from a package manager or a .zip archive
 
 {% for entry in navigation %}
   {% if entry.url == "getting-started" %}

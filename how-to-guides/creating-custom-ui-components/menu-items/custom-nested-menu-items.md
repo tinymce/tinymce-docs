@@ -17,14 +17,14 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | getSubmenuItems | `() => string` or `MenuItem[]` | required | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications. |
 | shortcut | string | optional | Text to display in the shortcut label. To register a shortcut, see: [Add custom shortcuts to TinyMCE]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/shortcuts/). |
 
-#### API
+## API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
 | isDisabled | `() => boolean` | Checks if the menu item is disabled. |
 | setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
-#### Example: Creating a nested menu item
+## Example: Creating a nested menu item
 
 ```js
 tinymce.init({

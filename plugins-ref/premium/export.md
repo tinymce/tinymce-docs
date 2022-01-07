@@ -8,8 +8,6 @@ keywords: plugin export pdf
 
 {% assign pluginname = "Export" %}
 {% assign plugincode = "export" %}
-
-<br/>
 {% include /misc/admon_premium_plugin.md %}
 
 The {{pluginname}} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the [Exporters section](#exporters).

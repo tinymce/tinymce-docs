@@ -7,21 +7,21 @@ description: Options for changing the editor content CSS.
 
 ## Add CSS and styles to the editor
 
-{% include configuration/content_css.md %}
+#{% include configuration/content_css.md %}
 
-{% include configuration/content_css_cors.md %}
+#{% include configuration/content_css_cors.md %}
 
-{% include configuration/content_style.md %}
+#{% include configuration/content_style.md %}
 
 ## Add fonts to the editor
 
-{% include configuration/font_css.md %}
+#{% include configuration/font_css.md %}
 
 ## Add attributes to the editor body
 
-{% include configuration/body_class.md %}
+#{% include configuration/body_class.md %}
 
-{% include configuration/body_id.md %}
+#{% include configuration/body_id.md %}
 
 ## Importing complex CSS
 

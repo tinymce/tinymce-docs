@@ -1,24 +1,26 @@
-{% if extensionType != 'Packs' %}
+ifeval::[{extensionType} != 'Packs']
 :extensionType: plugin
-{% endif %}
-{% if pluralExtensionType == true %}
+endif::[]
+ifeval::[{pluralExtensionType} == true]
 :isAre: are
-{% else %}
+endif::[]
+ifeval::[{pluralExtensionType} == false]
 :isAre: is
-{% endif %}
-== Getting started with {% if pluginname != 'Tiny Drive' %}{productname}{% endif %} {pluginname}
+endif::[]
+== Getting started with {pluginname}
 
 === Creating an account
 
 Try the *{pluginname} {extensionType}* and the {cloudname} with a free link:{accountsignup}[{accountpage}]. New accounts receive a 30-day trial of the {companyname} link:{plugindirectory}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
 
-=== Get {% if pluginname != 'Tiny Drive' %}{productname}{% endif %} {pluginname}
+=== Get {pluginname}
 
-{% if pluginminimumplan != 'enterprise' %}
+ifeval::[{pluginminimumplan} != 'enterprise']
 The *{pluginname} {extensionType}* {isAre} included in the following {cloudname} plans:
-{% else %}
+endif::[]
+ifeval::[{pluginminimumplan} == 'enterprise']
 The *{pluginname} {extensionType}* {isAre} included in link:{pricingpage}[{enterpriseplan}].
-{% endif %}
+endif::[]
 
 {% case pluginminimumplan %}
 {% when 'tierone' %}- The link:{pricingpage}[{tieroneplan}].

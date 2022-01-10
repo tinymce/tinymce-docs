@@ -8,11 +8,11 @@ A key is required when the client needs to:
 
 For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: link:{baseurl}/rtc/encryption/[Real-time Collaboration (RTC) Encryption Setup].
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 

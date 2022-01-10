@@ -20,7 +20,7 @@ IMPORTANT: When `a11y_advanced_options` is set to `true`, link:{baseurl}/plugins
 
 === Example: Using `a11y_advanced_options`
 
-{% if includedSection == 'imagePlugin' %}
+ifeval::[{includedSection} == 'imagePlugin']
 [source, js]
 ----
 tinymce.init({
@@ -29,7 +29,8 @@ tinymce.init({
   a11y_advanced_options: true
 });
 ----
-{% elsif includedSection == 'a11yPlugin' %}
+endif::[]
+ifeval::[{includedSection} == 'a11yPlugin']
 [source, js]
 ----
 tinymce.init({
@@ -38,7 +39,8 @@ tinymce.init({
   a11y_advanced_options: true
 });
 ----
-{% else %}
+endif::[]
+ifeval::[{includedSection} != 'imagePlugin' && {includedSection} != 'a11yPlugin']
 [source, js]
 ----
 tinymce.init({
@@ -47,4 +49,4 @@ tinymce.init({
   a11y_advanced_options: true
 });
 ----
-{% endif %}
+endif::[]

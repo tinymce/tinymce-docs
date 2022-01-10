@@ -2,9 +2,8 @@
 
 include::partial$misc/requires_5_5v.adoc[]
 
-{% if page.dir != "/plugins/opensource/table/" %}
-> *Note*: The `table_column_resizing` option requires the `table` plugin.
-{% endif %}
+ifeval::[{plugincode} != "table"]
+NOTE: The `table_column_resizing` option requires the `table` plugin.
 
 The `table_column_resizing` option sets whether a table or other columns are resized when a user resizes, inserts, or deletes a table column.
 

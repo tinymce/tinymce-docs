@@ -1,9 +1,10 @@
-{% if page.title == "Paste plugin" %}
-  :plugin: paste
-{% else %}
-  :plugin: powerpaste
-{% endif %}
-### `paste_as_text`
+ifeval::[{plugincode} == "paste"]
+:plugin: paste
+endif::[]
+ifeval::[{plugincode} != "paste"]
+:plugin: powerpaste
+endif::[]
+=== `paste_as_text`
 
 This option enables you to set the default state of the `Paste as text` menu item, which is added by the `+{plugin}+` plugin under the `Edit` menu dropdown. It's disabled by default.
 
@@ -15,7 +16,7 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 ==== Example: Using `paste_as_text`
 
-[source, js]
+[source, js, subs='attributes+']
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

@@ -6,11 +6,11 @@ Only one `rtc_client_connected` event will be fired per client connection. Conne
 
 To help with generating a user interface for connected users, an object for user details is provided by the <<rtc_user_details_provider,`rtc_user_details_provider`>> option.
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function
 

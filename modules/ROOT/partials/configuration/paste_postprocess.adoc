@@ -1,5 +1,6 @@
-{% if page.title == "Paste plugin" %}
-### `paste_postprocess`
+ifeval::[{plugincode} == "paste"]
+
+=== `paste_postprocess`
 
 This option enables you to modify the pasted content before it gets inserted into the editor but after it's been parsed into a DOM structure.
 
@@ -20,8 +21,11 @@ tinymce.init({
   }
 });
 ----
-{% else %}
-### `paste_postprocess`
+
+endif::[]
+ifeval::[{plugincode} != "paste"]
+
+=== `paste_postprocess`
 
 This option allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
@@ -50,4 +54,4 @@ tinymce.init({
   }
 });
 ----
-{% endif %}
+endif::[]

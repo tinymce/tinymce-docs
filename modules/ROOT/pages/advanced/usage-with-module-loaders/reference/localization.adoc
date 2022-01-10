@@ -24,42 +24,42 @@ The following table shows examples of the syntax used to bundle the following ex
 
 ----
 ./langs/sv_SE.js
-`+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
-+++<th>+++Source+++</th>+++
-+++<th>+++Example+++</th>++++++</tr>++++++</thead>+++
-+++<tbody>++++++<tr>++++++<td rowspan="2">+++ES6++++</td>+++
-+++<td>+++npm+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'tinymce/langs/sv_SE'##[.p]#[.pun]#;##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'../tinymce/langs/sv_SE'##[.p]#[.pun]#;##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
-+++<tr>++++++<td rowspan="2">+++Common JS+++</td>+++
-+++<td>+++npm+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'tinymce/langs/sv_SE'##[.p]#[.pun]#);##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'../tinymce/langs/sv_SE.js'##[.p]#[.pun]#);##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+----
 
-{% comment %}
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
 [source, js]
 ----
 import 'tinymce/langs/sv_SE';
 ----
+
+|`.zip`
+a|
 [source, js]
 ----
 import '../tinymce/langs/sv_SE';
 ----
+
+.2+|Common JS
+|npm
+a|
 [source, js]
 ----
 require('tinymce/langs/sv_SE');
 ----
+
+|`.zip`
+a|
 [source, js]
 ----
 require('../tinymce/langs/sv_SE.js');
 ----
-{% endcomment %}
+|===
 
 :forModuleLoaders: true
 include::partial$misc/ui-languages.adoc[]

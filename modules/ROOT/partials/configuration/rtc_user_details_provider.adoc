@@ -8,11 +8,11 @@ Only the `fullName` is required, but the whole object will be stored within the 
 
 This provider function is called once for each connecting client. Clients that reconnect may trigger a new call to the provider function rather than using cached data.
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 

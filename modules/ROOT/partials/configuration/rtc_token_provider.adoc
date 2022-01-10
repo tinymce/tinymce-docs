@@ -9,11 +9,11 @@ The `rtc_token_provider` function will be called one or more times to refresh th
 
 For information on generating and serving JWTs for {productname} RTC, see: link:{baseurl}/rtc/jwt-authentication/[Real-time Collaboration (RTC) JWT Authentication Setup].
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 

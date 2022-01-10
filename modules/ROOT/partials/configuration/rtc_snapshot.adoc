@@ -6,11 +6,11 @@ For any given document ID, the server guarantees the version number will only in
 
 The snapshot callback will be executed in response to local changes, with access to the serialized editor content. The content is retrieved through a `getContent` function to reduce CPU load if the callback decides to not use the editor content.
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function
 

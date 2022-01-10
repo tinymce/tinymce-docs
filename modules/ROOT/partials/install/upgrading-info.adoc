@@ -2,15 +2,17 @@
 
 The procedure for upgrading to the latest version of {productname} {productmajorversion} depends on the deployment type.
 
-* <<upgradingtinycloud,Upgrading Tiny Cloud>>.{% if enterprise != true %}
-* <<#upgradingtinymceself-hostedusingapackagemanager,Upgrading TinyMCE Self-hosted using a package manager>>.{% endif %}
+* <<upgradingtinycloud,Upgrading Tiny Cloud>>.
+ifeval::[{enterprise} != true]
+* <<#upgradingtinymceself-hostedusingapackagemanager,Upgrading TinyMCE Self-hosted using a package manager>>.
+endif::[]
 * <<upgradingtinymceself-hostedmanually,Upgrading TinyMCE Self-hosted manually>>.
 
 === Upgrading Tiny Cloud
 
 {cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: link:{baseurl}/cloud-deployment-guide/[the Cloud deployment guide].
 
-{% if enterprise != true %}
+ifeval::[{enterprise} != true]
 
 === Upgrading TinyMCE Self-hosted using a package manager
 
@@ -62,7 +64,7 @@ To upgrade to {productname} {productminorversion} using Bower, run:
 $ bower install {prodnamecode}#{productminorversion} --save
 ----
 
-{% endif %}
+endif::[]
 
 === Upgrading TinyMCE Self-hosted manually
 

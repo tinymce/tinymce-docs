@@ -3,7 +3,7 @@
 :keywords: releasenotes bugfixes
 :title_nav: TinyMCE vnumtxt
 
-{% comment %}
+////
 Replace vnumtxt with the version number such as: X.Y.Z
 Replace vnumcode with the version number without points, such as XYZ
 The following "list" should be added to `data/nav.yml`
@@ -21,7 +21,7 @@ The following "list" should be added to `data/nav.yml`
   - url: "#Deprecated features"
   - url: "#Known issues"
   - url: "#Upgrading to the latest version of TinyMCE 5"
-{% endcomment %}
+////
 
 == Overview
 
@@ -99,9 +99,9 @@ The {productname} vnumtxt release includes an accompanying release of the *Premi
 
 === Premium Skins and Icon Packs - New features
 
-{% comment %}
+////
 Add description here.
-{% endcomment %}
+////
 
 For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
 
@@ -109,9 +109,9 @@ For information on using premium skins and icon packs, see: link:{baseurl}/enter
 
 The *Premium Skins and Icon Packs* release includes the following bug fixes:
 
-{% comment %}
+////
 Add description here.
-{% endcomment %}
+////
 
 For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
 
@@ -185,7 +185,7 @@ This section describes issues that users of {productname} vnumtxt may encounter 
 
 * <<,>>
 
-###
+=== ,
 
 Issue:: This issue affects ....
 

@@ -16,9 +16,10 @@ This guide assists with adding {productname} from the {packageSource} to pages o
 This procedure assumes the following prerequisites have been installed:
 
 * https://www.php.net/[PHP]
-* https://getcomposer.org/[Composer]{% if productSource != "cloud" %}
+* https://getcomposer.org/[Composer]
+ifeval::[{productSource} != "cloud"]
 * https://nodejs.org/[Node.js]
-{% endif %}
+endif::[]
 
 == Procedure
 
@@ -36,20 +37,22 @@ This procedure assumes the following prerequisites have been installed:
  cd my-example-app
 ----
 
-{% if productSource != "cloud" %}
-1. Install the required Node.js components, including https://laravel.com/docs/8.x/mix[Laravel Mix]:
+ifeval::[{productSource} != "cloud"]
+. Install the required Node.js components, including https://laravel.com/docs/8.x/mix[Laravel Mix]:
++
+[source,sh]
+----
+npm install
+----
 
- ```sh
- npm install
- ```
-
-{% endif %}
-{% if productSource == "composer" %}
-1. Add {productname} to the project using Composer:
-
- ```sh
- composer require tinymce/tinymce
- ```
+endif::[]
+ifeval::[{productSource} == "composer"]
+. Add {productname} to the project using Composer:
++
+[source,sh]
+----
+composer require tinymce/tinymce
+----
 
 . Add a Laravel Mix task to copy {productname} to the public files when Mix is run, such as:
 +
@@ -59,10 +62,10 @@ This procedure assumes the following prerequisites have been installed:
  mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
 ----
 
-{% endif %}
-{% if productSource == "zip" %}
-1. Download {productname}.
-
+endif::[]
+ifeval::[{productSource} == "zip"]
+. Download {productname}.
++
 * For Self-hosted Enterprise customers, visit [{companyname} - Self-hosted releases]({download-community})
 * For the self-hosted {productname} community edition, visit [{accountpage} - Downloads]({download-enterprise})
 
@@ -81,17 +84,17 @@ This procedure assumes the following prerequisites have been installed:
  mix.copyDirectory('resources/js/tinymce/js/tinymce', 'public/js/tinymce');
 ----
 
-{% endif %}
-{% if productSource != "cloud" %}
-1. Run Laravel Mix to copy {productname} to the `public/js/` directory:
+endif::[]
+ifeval::[{productSource} != "cloud"]
+. Run Laravel Mix to copy {productname} to the `public/js/` directory:
 +
 [source,sh]
 ----
 npx mix
 ----
 
-{% endif %}
-1. Create a new reusable https://laravel.com/docs/8.x/blade#components[component (`blade.php`)] for the {productname} configuration, such as:
+endif::[]
+. Create a new reusable https://laravel.com/docs/8.x/blade#components[component (`blade.php`)] for the {productname} configuration, such as:
 
 [source,sh]
 ----
@@ -103,10 +106,8 @@ This will create the blade `resources/views/components/head/tinymce-config.blade
 . Open the newly created `.blade.php` file in a text editor and replace the contents with:
  ** The {productname} source script.
  ** A {productname} configuration.
-
 +
 For example:
-+
 +
 [source, html]
 .`resources/views/components/head/tinymce-config.blade.php`
@@ -121,10 +122,11 @@ For example:
  </script>
 ----
 
-{% if productSource == "cloud" %}
+ifeval::[{productSource} == "cloud"]
 1. Replace `no-api-key` in the {productname} source script with your {cloudname} API Key.
 
- include::partial$misc/get-an-api-key.adoc[] {% endif %}
+include::partial$misc/get-an-api-key.adoc[]
+endif::[]
 
 . Create a second blade containing a placeholder HTML element for {productname}, such as:
 +

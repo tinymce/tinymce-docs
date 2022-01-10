@@ -8,11 +8,11 @@ image::{baseurl}/images/rtc-error-example.png[RTC disconnected error example]
 
 The `rtc_server_disconnected` callback can be used to provide an alternative response to this condition.
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function
 

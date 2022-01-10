@@ -7,7 +7,7 @@ The TinyMCE hyperlinking server-side component can be deployed using Docker or a
 
 include::partial$misc/admon_dont-push-docker-images.adoc[]
 
-{% if shbundledockerfiles == false %}
+ifeval::[{shbundledockerfiles} == false ]
 
 ==== Prerequisites
 
@@ -16,7 +16,7 @@ include::partial$misc/admon_dont-push-docker-images.adoc[]
 * The user is either:
  ** Using a Linux, Unix or macOS operating system.
  ** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux].
-{% endif %}
+endif::[]
 
 ==== Procedure
 

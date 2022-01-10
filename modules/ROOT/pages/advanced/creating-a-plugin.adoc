@@ -125,4 +125,4 @@ tinymce.PluginManager.requireLangPack('pluginId', 'es_ES,de_AT');
 
 This example plugin demonstrates how to add a simple toolbar button and menu item. This button opens a dialog that allows a title to be entered into the editor. The menu item will open the same dialog as the button.
 
-{% include live-demo.html tab="js" id="custom-plugin" %}
+liveDemo::custom-plugin[tab=js]

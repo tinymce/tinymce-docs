@@ -4,11 +4,11 @@ The `rtc_client_info` option allows status flags from the local editor environme
 
 This option accepts an object that must be serializable (`JSON.stringify` will be used to transmit it between clients). Other clients receive a copy of this object in their <<rtc_client_connected,`rtc_client_connected`>> events.
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Object
 

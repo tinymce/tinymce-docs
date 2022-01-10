@@ -1,13 +1,13 @@
-{% if customIconPack != true %}
-## `icons_url`
+ifeval::[{customIconPack} != true]
+== `icons_url`
 
 The *icons_url* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: link:{baseurl}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
-{% endif %}
+endif::[]
 
 On initialization, {productname} will try to load any icon pack specified by the *icons_url* option. The icons in the icon pack will be merged with link:{baseurl}/advanced/editor-icon-identifiers/[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
 
 `icons_url` is used to specify the location of an icon pack when {productname} and the icon pack are loaded from different locations. For example: When loading {productname} from {cloudname}, the icon pack can be loaded from a different web server.
-{% if customIconPack == true %}
+ifeval::[{customIconPack} == true]
 Such as:
 
 [source, js]
@@ -18,7 +18,8 @@ tinymce.init({
   icons: 'my_icon_pack'      // use icon pack
 });
 ----
-{% else %}
+endif::[]
+ifeval::[{customIconPack} != true]
 *Type:*  `String`
 
 === Example: Using `icons_url`
@@ -31,4 +32,4 @@ tinymce.init({
   icons: 'material'      // use icon pack
 });
 ----
-{% endif %}
+endif::[]

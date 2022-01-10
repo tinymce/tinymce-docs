@@ -2,11 +2,11 @@
 
 The `rtc_client_disconnected` option can be used with the <<rtc_client_connected,`rtc_client_connected`>> option to maintain a list of connected users.
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function
 

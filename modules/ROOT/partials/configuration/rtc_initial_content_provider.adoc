@@ -6,11 +6,11 @@ The `rtc_initial_content_provider` option allows alternative initial content be 
 
 The `rtc_initial_content_provider` is used for new documents (`documentId`) and is not for opening or reopening existing documents. If the document already exists, the content on the RTC Server with the provided `documentId` will be loaded into the editor when it is intitalized.
 
-{% if plugincode != "rtc" %}::
+ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
 link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
-{% endif %}
+endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 

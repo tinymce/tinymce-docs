@@ -13,42 +13,41 @@ The following table shows examples of the syntax used to bundle the silver theme
 ./themes/silver/theme.js
 ----
 
-Example syntax for including the silver theme in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
-+++<th>+++Source+++</th>+++
-+++<th>+++Example+++</th>++++++</tr>++++++</thead>+++
-+++<tbody>++++++<tr>++++++<td rowspan="2">+++ES6++++</td>+++
-+++<td>+++npm+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'tinymce/themes/silver'##[.p]#[.pun]#;##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'../tinymce/themes/silver/theme'##[.p]#[.pun]#;##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
-+++<tr>++++++<td rowspan="2">+++Common JS+++</td>+++
-+++<td>+++npm+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'tinymce/themes/silver'##[.p]#[.pun]#);##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
-+++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'../tinymce/themes/silver/theme.js'##[.p]#[.pun]#);##
-+++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+Example syntax for including the silver theme in a bundle:
 
-{% comment %}
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
 [source, js]
 ----
 import 'tinymce/themes/silver';
 ----
+
+|`.zip`
+a|
 [source, js]
 ----
 import '../tinymce/themes/silver/theme';
 ----
+
+.2+|Common JS
+|npm
+a|
 [source, js]
 ----
 require('tinymce/themes/silver');
 ----
+
+|`.zip`
+a|
 [source, js]
 ----
 require('../tinymce/themes/silver/theme.js');
 ----
-
-{% endcomment %}
+|===
 
 include::partial$module-loading/bundling-theme-files.adoc[]

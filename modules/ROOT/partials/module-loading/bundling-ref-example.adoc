@@ -1,6 +1,6 @@
-{% if editorcomponent.size < 1 %}
+ifeval::[{editorcomponent} < 1]
 :editorcomponent: component
-{% endif %}
+endif::[]
 
 == Overview
 

@@ -69,9 +69,7 @@ include::partial$misc/spellchecker-languages.adoc[]
 
 include::partial$configuration/spellchecker_languages.adoc[]
 
-{% if site.productmajorversion < 6 %}
 include::partial$configuration/spellchecker_on_load.adoc[]
-{% endif %}
 
 include::partial$configuration/spellchecker_rpc_url.adoc[]
 

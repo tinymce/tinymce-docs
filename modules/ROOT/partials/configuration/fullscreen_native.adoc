@@ -2,9 +2,9 @@
 
 include::partial$misc/requires_5_5v.adoc[]
 
-{% if pluginname != "fullscreen" %}
-> *Note*: The `fullscreen_native` option requires the Fullscreen plugin.
-{% endif %}
+ifeval::[{pluginname} != "fullscreen"]
+NOTE: The `fullscreen_native` option requires the Fullscreen plugin.
+endif::[]
 
 The `fullscreen_native` option allows the editor to use the browser full screen mode, rather than only filling the https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts#What_is_a_viewport[browser window] when full screen mode is enabled. This functionality is the same as full screen mode for online videos.
 

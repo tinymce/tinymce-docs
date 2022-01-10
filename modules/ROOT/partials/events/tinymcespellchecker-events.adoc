@@ -9,7 +9,9 @@ The following events are provided by the link:{baseurl}/plugins/premium/tinymces
 
 | SpellcheckerIgnoreAll
 | `{ word: string, language: string }`
-| Fired when all instances of a word (in a certain language) have been marked as ignored.{% if site.productmajorversion < 6 %} *Note:* The `language` property is available for {productname} 5.10 and later.{% endif %}
+a| Fired when all instances of a word (in a certain language) have been marked as ignored.
+
+NOTE: The `language` property is available for {productname} 5.10 and later.
 
 | SpellcheckError
 | `{ message: string }`

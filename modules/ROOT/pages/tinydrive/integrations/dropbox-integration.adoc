@@ -5,11 +5,11 @@
 
 == Overview
 
-{{site.cloudfilemanager}} enables you to import files from any Dropbox account if you set up the Dropbox integration by providing a Dropbox app key. When the user selects a file from Dropbox, it will instantly be uploaded or imported into the {{site.cloudfilemanager}} storage so that it can be viewed online and shared through {{site.cloudfilemanager}}.
+{cloudfilemanager} enables you to import files from any Dropbox account if you set up the Dropbox integration by providing a Dropbox app key. When the user selects a file from Dropbox, it will instantly be uploaded or imported into the {cloudfilemanager} storage so that it can be viewed online and shared through {cloudfilemanager}.
 
 == Prerequisites
 
-A valid Dropbox user account is required for integrating Dropbox with {{site.cloudfilemanager}}. Refer to https://help.dropbox.com/account/create-account[this] link for more information on creating a Dropbox user account.
+A valid Dropbox user account is required for integrating Dropbox with {cloudfilemanager}. Refer to https://help.dropbox.com/account/create-account[this] link for more information on creating a Dropbox user account.
 
 == Obtaining the Dropbox app key
 
@@ -22,18 +22,18 @@ You can get Dropbox integration up and running by following the steps below.
 . Select `Full Dropbox` from the `Choose the type of access you need`.
 . Name your app with something company unique `acmeinc-tinydrive` for example.
 
-image::{{site.baseurl}}/images/tinydrive-dropbox-dump1.png[]
+image::{baseurl}/images/tinydrive-dropbox-dump1.png[]
 
 === 2. Get the Dropbox app key and add domains
 
-. Copy the key from `App key` this will then be used as the key for the link:{{site.baseurl}}/tinydrive/configuration/#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key].
+. Copy the key from `App key` this will then be used as the key for the link:{baseurl}/tinydrive/configuration/#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key].
 . Configure the domains that are serving your application in `Chooser/Saver domains`.
 
-image::{{site.baseurl}}/images/tinydrive-dropbox-dump2.png[]
+image::{baseurl}/images/tinydrive-dropbox-dump2.png[]
 
 === 3. Configure tinydrive to use the new Dropbox app key
 
-You configure the Dropbox API key by setting the link:{{site.baseurl}}/tinydrive/configuration/#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key] like in the example below.
+You configure the Dropbox API key by setting the link:{baseurl}/tinydrive/configuration/#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key] like in the example below.
 
 `js
 tinymce.init({
@@ -43,21 +43,21 @@ tinymce.init({
 });
 `
 
-For more information on other {{site.cloudfilemanager}} config options refer to the link:{{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox[configuration] section of this document.
+For more information on other {cloudfilemanager} config options refer to the link:{baseurl}/tinydrive/configuration/#configuringwithdropbox[configuration] section of this document.
 
 === 4. Tiny Drive UI
 
-. From the {{site.productname}} user interface, click on the image:{{site.baseurl}}/images/insertimage.png[Insert/edit image] button to access the {{site.cloudfilemanager}} user interface.
-. Click on the image:{{site.baseurl}}/images/upload.png[Upload/Create] button to select Dropbox from the list of storages.
+. From the {productname} user interface, click on the image:{baseurl}/images/insertimage.png[Insert/edit image] button to access the {cloudfilemanager} user interface.
+. Click on the image:{baseurl}/images/upload.png[Upload/Create] button to select Dropbox from the list of storages.
 . Select the file to upload/import from Dropbox by clicking on the radio button next to it and click the *Choose* button to upload or *Cancel* to abort the operation.
 . Alternatively, files from your local browser can be uploaded to the Dropbox by clicking on the *Upload files* option and selecting the files to upload.
 
-*Result:* You should be able to view the selected files in your {{site.cloudfilemanager}} storage.
+*Result:* You should be able to view the selected files in your {cloudfilemanager} storage.
 
 Read more about more Dropbox options https://www.dropbox.com/guide/business[here].
 
 == Interactive example
 
-Here is an interactive example of Dropbox-enabled on {{site.cloudfilemanager}}.
+Here is an interactive example of Dropbox-enabled on {cloudfilemanager}.
 
-{% include live-demo.html id="drive-demo-dropbox" %}
+liveDemo::drive-demo-dropbox[]

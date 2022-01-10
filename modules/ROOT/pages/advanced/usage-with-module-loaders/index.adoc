@@ -4,12 +4,12 @@
 :title_nav: Bundling TinyMCE
 :type: folder
 
-{% assign navigation = site.data.nav %}
+:navigation: site.data.nav
 {% for entry in navigation %}
   {% if entry.url == "advanced" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "usage-with-module-loaders" %}
-        {% assign links = subentry.pages %}
+        :links: subentry.pages
       {% endif %}
     {% endfor %}
   {% endif %}

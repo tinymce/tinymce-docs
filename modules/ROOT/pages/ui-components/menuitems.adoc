@@ -21,7 +21,7 @@ The two arguments these methods take are:
 * `identifier` - a unique name for the button
 * `configuration` - an object containing your configuration for that button.
 
-Define the custom toolbar button with the `setup` callback of the {{site.productname}} configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI registry API occurs when the callback receives a reference to the editor instance as its argument.
+Define the custom toolbar button with the `setup` callback of the {productname} configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI registry API occurs when the callback receives a reference to the editor instance as its argument.
 
 === Example of adding a custom menu item
 
@@ -43,17 +43,17 @@ tinymce.init({
 });
 `
 
-NOTE: The identifier used to create the menu item must be included in the link:{{site.baseurl}}/configure/editor-appearance/#menu[`menu`] option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
+NOTE: The identifier used to create the menu item must be included in the link:{baseurl}/configure/editor-appearance/#menu[`menu`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
 == Interactive example
 
 This example shows you how to add some simple menu items to a new "custom" menu.
 
-{% include live-demo.html id="custom-menu-item" %}
+liveDemo::custom-menu-item[]
 
 == Types of menu items
 
-There are three types of menu items in {{site.productname}} {{site.productmajorversion}}:
+There are three types of menu items in {productname} {productmajorversion}:
 
 * Basic menu items
 * Nested menu items
@@ -76,7 +76,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}}
+| include::partial$misc/predefinedIconsOnly.adoc[]
 
 | value
 | string
@@ -101,7 +101,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | shortcut
 | string
 | optional
-| Text to display in the shortcut label. To register a shortcut, see: link:{{site.baseurl}}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
+| Text to display in the shortcut label. To register a shortcut, see: link:{baseurl}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
 |===
 
 ==== API
@@ -155,7 +155,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}}
+| include::partial$misc/predefinedIconsOnly.adoc[]
 
 | value
 | string
@@ -175,7 +175,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | shortcut
 | string
 | optional
-| Text to display in the shortcut label. To register a shortcut, see: link:{{site.baseurl}}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
+| Text to display in the shortcut label. To register a shortcut, see: link:{baseurl}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
 |===
 
 ==== API
@@ -237,7 +237,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}}
+| include::partial$misc/predefinedIconsOnly.adoc[]
 
 | value
 | string
@@ -265,7 +265,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | Function invoked when the menu item is clicked.
 |===
 
-NOTE: The `icon` option for Toggle menu items was added in {{site.productname}} 5.3.
+NOTE: The `icon` option for Toggle menu items was added in {productname} 5.3.
 
 ==== API
 

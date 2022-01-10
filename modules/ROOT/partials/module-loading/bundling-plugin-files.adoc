@@ -1,6 +1,6 @@
 == Contents
 
-{% include module-loading/bundling-plugins-that-cant-bundle.md %}
+include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 
 * <<premiumplugins,Premium plugins>>
  ** <<accessibilitycheckera11ychecker,Accessibility Checker (a11ychecker)>>
@@ -65,236 +65,236 @@
 
 === Accessibility Checker (`a11ychecker`)
 
-{% include module-loading/admon-bundling-plugin-langs.md %}
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
-{% include plugin_files/plugin-file-list-a11ychecker.md %}
+include::partial$plugin_files/plugin-file-list-a11ychecker.adoc[]
 
 === Advanced Code (`advcode`)
 
-{% include plugin_files/plugin-file-list-advcode.md %}
+include::partial$plugin_files/plugin-file-list-advcode.adoc[]
 
 === Advanced Tables (`advtable`)
 
-{% include plugin_files/plugin-file-list-advtable.md %}
+include::partial$plugin_files/plugin-file-list-advtable.adoc[]
 
 === Case Change (`casechange`)
 
-{% include plugin_files/plugin-file-list-casechange.md %}
+include::partial$plugin_files/plugin-file-list-casechange.adoc[]
 
 === Checklist (`checklist`)
 
-{% include plugin_files/plugin-file-list-checklist.md %}
+include::partial$plugin_files/plugin-file-list-checklist.adoc[]
 
 === Comments (`tinycomments`)
 
-{% include module-loading/admon-bundling-plugin-langs.md %}
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
-{% include plugin_files/plugin-file-list-tinycomments.md %}
+include::partial$plugin_files/plugin-file-list-tinycomments.adoc[]
 
 === Enhanced Media Embed (`mediaembed`)
 
-{% include plugin_files/plugin-file-list-mediaembed.md %}
+include::partial$plugin_files/plugin-file-list-mediaembed.adoc[]
 
 === Export (`export`)
 
-{% include module-loading/admon-bundling-plugin-langs.md %}
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
-{% include plugin_files/plugin-file-list-export.md %}
+include::partial$plugin_files/plugin-file-list-export.adoc[]
 
 === Format Painter (`formatpainter`)
 
-{% include plugin_files/plugin-file-list-formatpainter.md %}
+include::partial$plugin_files/plugin-file-list-formatpainter.adoc[]
 
 === Link Checker (`linkchecker`)
 
-{% include plugin_files/plugin-file-list-linkchecker.md %}
+include::partial$plugin_files/plugin-file-list-linkchecker.adoc[]
 
 === Mentions (`mentions`)
 
-{% include plugin_files/plugin-file-list-mentions.md %}
+include::partial$plugin_files/plugin-file-list-mentions.adoc[]
 
 === Page Embed (`pageembed`)
 
-{% include plugin_files/plugin-file-list-pageembed.md %}
+include::partial$plugin_files/plugin-file-list-pageembed.adoc[]
 
 === Permanent Pen (`permanentpen`)
 
-{% include plugin_files/plugin-file-list-permanentpen.md %}
+include::partial$plugin_files/plugin-file-list-permanentpen.adoc[]
 
 === PowerPaste (`powerpaste`)
 
-{% include module-loading/admon-bundling-plugin-langs.md %}
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
-{% include plugin_files/plugin-file-list-powerpaste.md %}
+include::partial$plugin_files/plugin-file-list-powerpaste.adoc[]
 
 === Spell Checker Pro (`tinymcespellchecker`)
 
-{% include module-loading/admon-bundling-plugin-langs.md %}
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
-{% include plugin_files/plugin-file-list-tinymcespellchecker.md %}
+include::partial$plugin_files/plugin-file-list-tinymcespellchecker.adoc[]
 
 == Community plugins
 
 === Advanced List (`advlist`)
 
-{% include plugin_files/plugin-file-list-advlist.md %}
+include::partial$plugin_files/plugin-file-list-advlist.adoc[]
 
 === Anchor (`anchor`)
 
-{% include plugin_files/plugin-file-list-anchor.md %}
+include::partial$plugin_files/plugin-file-list-anchor.adoc[]
 
 === Autolink (`autolink`)
 
-{% include plugin_files/plugin-file-list-autolink.md %}
+include::partial$plugin_files/plugin-file-list-autolink.adoc[]
 
 === Autoresize (`autoresize`)
 
-{% include plugin_files/plugin-file-list-autoresize.md %}
+include::partial$plugin_files/plugin-file-list-autoresize.adoc[]
 
 === Autosave (`autosave`)
 
-{% include plugin_files/plugin-file-list-autosave.md %}
+include::partial$plugin_files/plugin-file-list-autosave.adoc[]
 
 === BBCode (`bbcode`)
 
-{% include plugin_files/plugin-file-list-bbcode.md %}
+include::partial$plugin_files/plugin-file-list-bbcode.adoc[]
 
 === Character Map (`charmap`)
 
-{% include plugin_files/plugin-file-list-charmap.md %}
+include::partial$plugin_files/plugin-file-list-charmap.adoc[]
 
 === Code (`code`)
 
-{% include plugin_files/plugin-file-list-code.md %}
+include::partial$plugin_files/plugin-file-list-code.adoc[]
 
 === Code Sample (`codesample`)
 
-{% include plugin_files/plugin-file-list-codesample.md %}
+include::partial$plugin_files/plugin-file-list-codesample.adoc[]
 
 === Directionality (`directionality`)
 
-{% include plugin_files/plugin-file-list-directionality.md %}
+include::partial$plugin_files/plugin-file-list-directionality.adoc[]
 
 === Emoticons (`emoticons`)
 
-{% include plugin_files/plugin-file-list-emoticons.md %}
+include::partial$plugin_files/plugin-file-list-emoticons.adoc[]
 
 === Full Page (`fullpage`)
 
-{% include plugin_files/plugin-file-list-fullpage.md %}
+include::partial$plugin_files/plugin-file-list-fullpage.adoc[]
 
 === Full Screen (`fullscreen`)
 
-{% include plugin_files/plugin-file-list-fullscreen.md %}
+include::partial$plugin_files/plugin-file-list-fullscreen.adoc[]
 
 === Help (`help`)
 
-{% include plugin_files/plugin-file-list-help.md %}
+include::partial$plugin_files/plugin-file-list-help.adoc[]
 
 === Horizontal Rule (`hr`)
 
-{% include plugin_files/plugin-file-list-hr.md %}
+include::partial$plugin_files/plugin-file-list-hr.adoc[]
 
 === Image (`image`)
 
-{% include plugin_files/plugin-file-list-image.md %}
+include::partial$plugin_files/plugin-file-list-image.adoc[]
 
 === Image Tools (`imagetools`)
 
-{% include plugin_files/plugin-file-list-imagetools.md %}
+include::partial$plugin_files/plugin-file-list-imagetools.adoc[]
 
 === Import CSS (`importcss`)
 
-{% include plugin_files/plugin-file-list-importcss.md %}
+include::partial$plugin_files/plugin-file-list-importcss.adoc[]
 
 === Insert Date/Time (`insertdatetime`)
 
-{% include plugin_files/plugin-file-list-insertdatetime.md %}
+include::partial$plugin_files/plugin-file-list-insertdatetime.adoc[]
 
 === Legacy Output (`legacyoutput`)
 
-{% include plugin_files/plugin-file-list-legacyoutput.md %}
+include::partial$plugin_files/plugin-file-list-legacyoutput.adoc[]
 
 === Link (`link`)
 
-{% include plugin_files/plugin-file-list-link.md %}
+include::partial$plugin_files/plugin-file-list-link.adoc[]
 
 === Lists (`lists`)
 
-{% include plugin_files/plugin-file-list-lists.md %}
+include::partial$plugin_files/plugin-file-list-lists.adoc[]
 
 === Media (`media`)
 
-{% include plugin_files/plugin-file-list-media.md %}
+include::partial$plugin_files/plugin-file-list-media.adoc[]
 
 === Nonbreaking Space (`nonbreaking`)
 
-{% include plugin_files/plugin-file-list-nonbreaking.md %}
+include::partial$plugin_files/plugin-file-list-nonbreaking.adoc[]
 
 === Noneditable (`noneditable`)
 
-{% include plugin_files/plugin-file-list-noneditable.md %}
+include::partial$plugin_files/plugin-file-list-noneditable.adoc[]
 
 === Page Break (`pagebreak`)
 
-{% include plugin_files/plugin-file-list-pagebreak.md %}
+include::partial$plugin_files/plugin-file-list-pagebreak.adoc[]
 
 === Paste (`paste`)
 
-{% include plugin_files/plugin-file-list-paste.md %}
+include::partial$plugin_files/plugin-file-list-paste.adoc[]
 
 === Preview (`preview`)
 
-{% include plugin_files/plugin-file-list-preview.md %}
+include::partial$plugin_files/plugin-file-list-preview.adoc[]
 
 === Print (`print`)
 
-{% include plugin_files/plugin-file-list-print.md %}
+include::partial$plugin_files/plugin-file-list-print.adoc[]
 
 === Quick Toolbar (`quickbars`)
 
-{% include plugin_files/plugin-file-list-quickbars.md %}
+include::partial$plugin_files/plugin-file-list-quickbars.adoc[]
 
 === Save (`save`)
 
-{% include plugin_files/plugin-file-list-save.md %}
+include::partial$plugin_files/plugin-file-list-save.adoc[]
 
 === Search and Replace (`searchreplace`)
 
-{% include plugin_files/plugin-file-list-searchreplace.md %}
+include::partial$plugin_files/plugin-file-list-searchreplace.adoc[]
 
 === Spell Checker (`spellchecker`)
 
-{% include plugin_files/plugin-file-list-spellchecker.md %}
+include::partial$plugin_files/plugin-file-list-spellchecker.adoc[]
 
 === Tab Focus (`tabfocus`)
 
-{% include plugin_files/plugin-file-list-tabfocus.md %}
+include::partial$plugin_files/plugin-file-list-tabfocus.adoc[]
 
 === Table (`table`)
 
-{% include plugin_files/plugin-file-list-table.md %}
+include::partial$plugin_files/plugin-file-list-table.adoc[]
 
 === Template (`template`)
 
-{% include plugin_files/plugin-file-list-template.md %}
+include::partial$plugin_files/plugin-file-list-template.adoc[]
 
 === Text Pattern (`textpattern`)
 
-{% include plugin_files/plugin-file-list-textpattern.md %}
+include::partial$plugin_files/plugin-file-list-textpattern.adoc[]
 
 === Table of Contents (`toc`)
 
-{% include plugin_files/plugin-file-list-toc.md %}
+include::partial$plugin_files/plugin-file-list-toc.adoc[]
 
 === Visual Block (`visualblocks`)
 
-{% include plugin_files/plugin-file-list-visualblocks.md %}
+include::partial$plugin_files/plugin-file-list-visualblocks.adoc[]
 
 === Visual Characters (`visualchars`)
 
-{% include plugin_files/plugin-file-list-visualchars.md %}
+include::partial$plugin_files/plugin-file-list-visualchars.adoc[]
 
 === Word Count (`wordcount`)
 
-{% include plugin_files/plugin-file-list-wordcount.md %}
+include::partial$plugin_files/plugin-file-list-wordcount.adoc[]

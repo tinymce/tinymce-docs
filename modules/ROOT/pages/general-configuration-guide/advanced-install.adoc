@@ -4,16 +4,16 @@
 :keywords: npm bower composer nuget
 :title_nav: Options for installing TinyMCE
 
-There are multiple ways to instantiate {{site.productname}}. Accessing {{site.productname}} through {{site.cloudname}} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
+There are multiple ways to instantiate {productname}. Accessing {productname} through {cloudname} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
 
-* <<cloudinstall,{{site.cloudname}}>>
+* <<cloudinstall,{cloudname}>>
 * <<packagemanagerinstalloptions,Package Managers>>
 * <<self-hostedinstall,Self-Hosted Download / Install>>
 * <<custombuildinstall,Custom Build>>
 
 == Cloud Install
 
-{% include install/cloud.md %}
+include::partial$install/cloud.adoc[]
 
 == Package Manager Install Options
 
@@ -24,27 +24,27 @@ There are multiple ways to instantiate {{site.productname}}. Accessing {{site.pr
 
 == NPM
 
-{% include install/npm.md %}
+include::partial$install/npm.adoc[]
 
 == Bower
 
-{% include install/bower.md %}
+include::partial$install/bower.adoc[]
 
 == Composer
 
-{% include install/composer.md %}
+include::partial$install/composer.adoc[]
 
 == NuGet
 
-{% include install/nuget.md %}
+include::partial$install/nuget.adoc[]
 
 == Self-Hosted Install
 
-{% include install/sdk.md %}
+include::partial$install/sdk.adoc[]
 
 == Custom Build Install
 
-{% include install/custom.md %}
+include::partial$install/custom.adoc[]
 
 {% assign_page next_page = "/general-configuration-guide/work-with-plugins/index.html" %}
 {% include next-step.html next=next_page %}

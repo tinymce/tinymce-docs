@@ -4,6 +4,6 @@
 :keywords: contextmenu
 :title_nav: Available Context Menu Items
 
-{% include misc/available-context-menu-sections.md %}
+include::partial$misc/available-context-menu-sections.adoc[]
 
-For information on customizing the context menu and adding custom context menu sections, see: link:{{site.baseurl}}/ui-components/contextmenu/#availablecontextmenusections[Context menu].
+For information on customizing the context menu and adding custom context menu sections, see: link:{baseurl}/ui-components/contextmenu/#availablecontextmenusections[Context menu].

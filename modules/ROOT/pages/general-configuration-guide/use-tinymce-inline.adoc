@@ -4,9 +4,9 @@
 :keywords: form inline edit stylesheet
 :title_nav: Inline editing mode
 
-{{site.productname}} has three main integration modes: a _classic_ full editor mode, an _inline_ editing mode, and a distraction-free mode.
+{productname} has three main integration modes: a _classic_ full editor mode, an _inline_ editing mode, and a distraction-free mode.
 
-{{site.notonmobile}}
+include::partial$misc/notonmobile.adoc[]
 
 The inline editing mode is used for merging the editing and reading views of the page for a seamless editing experience and true WYSIWYG behavior.
 
@@ -26,7 +26,7 @@ To enable inline mode, set the `inline` option to `true`. For example:
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+  <script src="{cdnurl}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#myeditablediv',
@@ -36,7 +36,7 @@ To enable inline mode, set the `inline` option to `true`. For example:
 </head>
 
 <body>
-  <h1>{{site.productname}} Inline Editing Mode Guide</h1>
+  <h1>{productname} Inline Editing Mode Guide</h1>
   <form method="post">
     <div id="myeditablediv">Click here to edit!</div>
   </form>
@@ -44,11 +44,11 @@ To enable inline mode, set the `inline` option to `true`. For example:
 </html>
 ----
 
-The following demonstration is using four {{site.productname}} editors in inline mode, two for the headings, and two for the body text.
+The following demonstration is using four {productname} editors in inline mode, two for the headings, and two for the body text.
 
-{% include live-demo.html id="inline" %}
+liveDemo::inline[]
 
-For information on inline mode and the `inline` setting, see: link:{{site.baseurl}}/configure/editor-appearance/#inline[User interface options - inline].
+For information on inline mode and the `inline` setting, see: link:{baseurl}/configure/editor-appearance/#inline[User interface options - inline].
 
 {% assign_page next_page = "/general-configuration-guide/use-tinymce-distraction-free/index.html" %}
 {% include next-step.html next=next_page %}

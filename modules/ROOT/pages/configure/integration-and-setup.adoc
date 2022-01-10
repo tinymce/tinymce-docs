@@ -3,30 +3,30 @@
 :description_short:
 :title_nav: Integration options
 
-{% include configuration/auto_focus.md %}
+include::partial$configuration/auto_focus.adoc[]
 
-{% include configuration/base_url.md %}
+include::partial$configuration/base_url.adoc[]
 
-{% include configuration/cache_suffix.md %}
+include::partial$configuration/cache_suffix.adoc[]
 
-{% include configuration/content_security_policy.md %}
+include::partial$configuration/content_security_policy.adoc[]
 
-{% include configuration/external_plugins.md %}
+include::partial$configuration/external_plugins.adoc[]
 
-{% include configuration/hidden_input.md %}
+include::partial$configuration/hidden_input.adoc[]
 
-{% include configuration/init_instance_callback.md %}
+include::partial$configuration/init_instance_callback.adoc[]
 
-{% include configuration/plugins.md %}
+include::partial$configuration/plugins.adoc[]
 
-{% include configuration/readonly.md %}
+include::partial$configuration/readonly.adoc[]
 
-{% include configuration/referrer_policy.md %}
+include::partial$configuration/referrer_policy.adoc[]
 
-{% include configuration/selector.md %}
+include::partial$configuration/selector.adoc[]
 
-{% include configuration/setup.md %}
+include::partial$configuration/setup.adoc[]
 
-{% include configuration/suffix.md %}
+include::partial$configuration/suffix.adoc[]
 
-{% include configuration/target.md %}
+include::partial$configuration/target.adoc[]

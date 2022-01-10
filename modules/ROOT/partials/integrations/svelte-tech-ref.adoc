@@ -27,7 +27,7 @@ The `tinymce-svelte` `Editor` component accepts the following properties:
 
 ==== apiKey
 
-{{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
+{cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
 
 Default value:: `"no-api-key"`
 
@@ -41,7 +41,7 @@ Type:: String
 
 ==== channel
 
-Specifies the {{site.cloudname}} channel to use. For information on {{site.cloudname}} deployment channels, see: link:{{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/[Specifying the {{site.productname}} editor version deployed from Cloud].
+Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: link:{baseurl}/cloud-deployment-guide/editor-plugin-version/[Specifying the {productname} editor version deployed from Cloud].
 
 Default value:: `"5"`
 
@@ -97,7 +97,7 @@ Type:: Boolean
 
 ==== scriptSrc
 
-Use the `scriptSrc` property to specify the location of {{site.productname}} to lazy load when the application is not using {{site.cloudname}}. This setting is required if the application uses a self-hosted version of {{site.productname}}, such as the {{site.productname}} npm package or a .zip package of {{site.productname}}.
+Use the `scriptSrc` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the {productname} npm package or a .zip package of {productname}.
 
 Type:: String
 
@@ -160,7 +160,7 @@ Functions can be bound to editor events, such as:
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 
-`event`:: The {{site.productname}} event object.
+`event`:: The {productname} event object.
 
 `editor`:: A reference to the editor.
 

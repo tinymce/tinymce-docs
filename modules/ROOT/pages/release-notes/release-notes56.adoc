@@ -5,7 +5,7 @@
 
 == Overview
 
-{{site.productname}} 5.6 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Tuesday, December 8^th^, 2020. It includes {{site.productname}} 5.6.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.6, including:
+{productname} 5.6 was released for {enterpriseversion} and {cloudname} on Tuesday, December 8^th^, 2020. It includes {productname} 5.6.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.6, including:
 
 * <<newfeatures,New features>>
 * <<enhancements,Enhancements>>
@@ -14,11 +14,11 @@
 * <<securityfixes,Security fixes>>
 * <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
 
-{{site.releasenotes_for_stable}}
+include::partial$misc/releasenotes_for_stable.adoc[]
 
 == New features
 
-The following new features were added for the {{site.productname}} 5.6 release.
+The following new features were added for the {productname} 5.6 release.
 
 === New `images_file_types` option for customizing recognized image file extensions
 
@@ -27,58 +27,58 @@ The new `images_file_types` option allows different image file extensions to be 
 * Smart Paste's image URL to embedded image functionality.
 * Allowed file extensions for the Image plugin.
 
-For information on the `images_file_types` option, see: link:{{site.baseurl}}/configure/file-image-upload/#images_file_types[Image & file options - images_file_types].
+For information on the `images_file_types` option, see: link:{baseurl}/configure/file-image-upload/#images_file_types[Image & file options - images_file_types].
 
 === New image emoji database for the Emoticons plugin
 
 A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.
 
-{% assign feature = "``emojiimages`` database" %}
-{% assign third_party_product = "Twitter Emoji (Twemoji) graphics" %}
-{% assign license_agreement_name = "CC-BY 4.0" %}
-{% include misc/under-license.md %}
+:feature: ``emojiimages`` database
+:third_party_product: Twitter Emoji (Twemoji) graphics
+:license_agreement_name: CC-BY 4.0
+include::partial$misc/under-license.adoc[]
 
 A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.
 
 For information on:
 
-* The `emojiimages` database and `emoticons_database` option, see: link:{{ site.baseurl }}/plugins/opensource/emoticons/#emoticons_database[Emoticons plugin - `emoticons_database`].
-* The `emoticons_images_url` option, see: link:{{ site.baseurl }}/plugins/opensource/emoticons/#emoticons_images_url[Emoticons plugin - `emoticons_images_url`].
+* The `emojiimages` database and `emoticons_database` option, see: link:{baseurl}/plugins/opensource/emoticons/#emoticons_database[Emoticons plugin - `emoticons_database`].
+* The `emoticons_images_url` option, see: link:{baseurl}/plugins/opensource/emoticons/#emoticons_images_url[Emoticons plugin - `emoticons_images_url`].
 
 === New `format_empty_lines` option for content formatting
 
 A new `format_empty_lines` option allows empty lines to be formatted for multi-line selections when applying an "inline" format such as bold (`<strong>`).
 
-For information on the `format_empty_lines` option, see: link:{{ site.baseurl }}/configure/content-formatting/#format_empty_lines[Content Formatting - `format_empty_lines`].
+For information on the `format_empty_lines` option, see: link:{baseurl}/configure/content-formatting/#format_empty_lines[Content Formatting - `format_empty_lines`].
 
 === New editor events
 
-{{site.productname}} 5.6 introduces several new events that integrators can use for custom functionality:
+{productname} 5.6 introduces several new events that integrators can use for custom functionality:
 
 * A new `TableModified` event which is fired when a style or structural change is made to a table.
 * Two new core events which are fired before and after displaying notifications.
 
 For information on:
 
-* The `TableModified` event, see: link:{{ site.baseurl }}/plugins/opensource/table/#events[Table plugin - `events`].
-* Core editor events, see: link:{{ site.baseurl }}/advanced/events/#editorcoreevents[Editor core events].
+* The `TableModified` event, see: link:{baseurl}/plugins/opensource/table/#events[Table plugin - `events`].
+* Core editor events, see: link:{baseurl}/advanced/events/#editorcoreevents[Editor core events].
 
 === New card menu item for the autocompleter
 
 A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
 
-For information on customizing autocompleter results with `CardMenuItem`, see: link:{{ site.baseurl }}/ui-components/autocompleter/#cardmenuitem[UI components - Autocompleter - `CardMenuItem`].
+For information on customizing autocompleter results with `CardMenuItem`, see: link:{baseurl}/ui-components/autocompleter/#cardmenuitem[UI components - Autocompleter - `CardMenuItem`].
 
 === Additional new features
 
-{{site.productname}} 5.6 introduces the following minor new features:
+{productname} 5.6 introduces the following minor new features:
 
 * Added new user interface `enable`, `disable`, and `isDisabled` methods.
 * Added new `closest` formatter API to get the closest matching selection format from a set of formats.
 
 == Enhancements
 
-The following enhancements were made for the {{site.productname}} 5.6 release.
+The following enhancements were made for the {productname} 5.6 release.
 
 === Clicking a link in `readonly` mode now opens the URL
 
@@ -88,23 +88,23 @@ Clicking links when the editor is in `readonly` mode will open the URL in a new 
 
 A new optional `name` field that sets a specific name to the format when it's being registered using the `style_formats` option.
 
-For information on the `name` field, see: link:{{ site.baseurl }}/configure/editor-appearance/#style_formats[User interface - `style_formats`].
+For information on the `name` field, see: link:{baseurl}/configure/editor-appearance/#style_formats[User interface - `style_formats`].
 
 == Accompanying Premium Plugin changes
 
-The following premium plugin updates were released alongside {{site.productname}} 5.6.
+The following premium plugin updates were released alongside {productname} 5.6.
 
 === Accessibility Checker 2.3.1
 
-The {{site.productname}} 5.6 release includes an accompanying release of the *Accessibility Checker* premium plugin.
+The {productname} 5.6 release includes an accompanying release of the *Accessibility Checker* premium plugin.
 
-*Accessibility Checker* 2.3.1 fixes an issue where internal {{site.productname}} elements were not ignored.
+*Accessibility Checker* 2.3.1 fixes an issue where internal {productname} elements were not ignored.
 
-For information on the Accessibility Checker plugin, see: link:{{site.baseurl}}/plugins/premium/a11ychecker/[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: link:{baseurl}/plugins/premium/a11ychecker/[Accessibility Checker plugin].
 
 === Advanced Code Editor 2.3.0
 
-The {{site.productname}} 5.6 release includes an accompanying release of the *Advanced Code Editor* premium plugin.
+The {productname} 5.6 release includes an accompanying release of the *Advanced Code Editor* premium plugin.
 
 *Advanced Code Editor* 2.3.0 adds the following new feature:
 
@@ -115,11 +115,11 @@ The {{site.productname}} 5.6 release includes an accompanying release of the *Ad
 * Fixed the code view not using monospace fonts.
 * Fixed an issue where non-breaking spaces were inserted instead of regular spaces on Safari.
 
-For information on the Advanced Code Editor plugin, see: link:{{site.baseurl}}/plugins/premium/advcode/[Advanced Code Editor plugin].
+For information on the Advanced Code Editor plugin, see: link:{baseurl}/plugins/premium/advcode/[Advanced Code Editor plugin].
 
 === Comments 2.3.0
 
-The {{site.productname}} 5.6 release includes an accompanying release of the *Comments* premium plugin.
+The {productname} 5.6 release includes an accompanying release of the *Comments* premium plugin.
 
 *Comments* 2.3.0 provides the following enhancement:
 
@@ -131,11 +131,11 @@ The {{site.productname}} 5.6 release includes an accompanying release of the *Co
 * Fixed long comments getting cut off.
 * Fixed a scrollbar appearing in the textarea when writing a comment.
 
-For information on the Comments plugin, see: link:{{site.baseurl}}/plugins/premium/comments/[Comments plugin].
+For information on the Comments plugin, see: link:{baseurl}/plugins/premium/comments/[Comments plugin].
 
 === Mentions 2.2.0
 
-The {{site.productname}} 5.6 release includes an accompanying release of the *Mentions* premium plugin.
+The {productname} 5.6 release includes an accompanying release of the *Mentions* premium plugin.
 
 *Mentions* 2.2.0 provides the following new features:
 
@@ -147,11 +147,11 @@ The {{site.productname}} 5.6 release includes an accompanying release of the *Me
 
 * Fixed mentions not converted to `contenteditable=false` elements when set using `editor.setContent()`
 
-For information on the Mentions plugin, see: link:{{site.baseurl}}/plugins/premium/mentions/[Mentions plugin].
+For information on the Mentions plugin, see: link:{baseurl}/plugins/premium/mentions/[Mentions plugin].
 
 === PowerPaste 5.4.0
 
-The {{site.productname}} 5.6 release includes an accompanying release of the *PowerPaste* premium plugin.
+The {productname} 5.6 release includes an accompanying release of the *PowerPaste* premium plugin.
 
 *PowerPaste* 5.4.0 provides the following enhancement:
 
@@ -162,11 +162,11 @@ The {{site.productname}} 5.6 release includes an accompanying release of the *Po
 * Fixed the `Cut` menu item not working in the latest version of Firefox.
 * Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: <<security-fixes,Security fixes>>.
 
-For information on the PowerPaste plugin, see: link:{{site.baseurl}}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
 
 === Spell Checker Pro 2.2.0
 
-The {{site.productname}} 5.6 release includes an accompanying release of the *Spell Checker Pro* premium plugin.
+The {productname} 5.6 release includes an accompanying release of the *Spell Checker Pro* premium plugin.
 
 *Spell Checker Pro* 2.2.0 provides the following enhancements:
 
@@ -179,11 +179,11 @@ The {{site.productname}} 5.6 release includes an accompanying release of the *Sp
 * Fixed the spellchecker dialog not checking incorrect words outside of the window viewport.
 * Fixed the spellchecker as-you-type functionality interfering with the dialog.
 
-For information on the Spell Checker Pro plugin, see: link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
 
 == General bug fixes
 
-{{site.productname}} 5.6 provides fixes for the following bugs:
+{productname} 5.6 provides fixes for the following bugs:
 
 * Fixed the `block` and `unblock` dialog APIs not working for inline dialogs.
 * Fixed the `change` event not firing after a successful image upload.
@@ -218,7 +218,7 @@ For information on the Spell Checker Pro plugin, see: link:{{site.baseurl}}/plug
 
 == Security fixes
 
-{{site.productname}} 5.6 provides fixes for the following security issues:
+{productname} 5.6 provides fixes for the following security issues:
 
 * Fixed a security issue where URLs in attributes weren't correctly sanitized.
 * Fixed a security issue in the `codesample` plugin by upgrading dependencies.
@@ -228,8 +228,8 @@ PowerPaste 5.4.0 provides fixes for the following security issues:
 * Fixed a Cross-Site Scripting (XSS) vulnerability where internal HTML content wasn't sanitized in some cases.
 * Fixed a Cross-Site Scripting (XSS) vulnerability where specific HTML comments weren't sanitized in some cases.
 
-{% assign enterprise = true %}
+:enterprise: true
 
-{% include install/upgrading-info.md %}
+include::partial$install/upgrading-info.adoc[]
 
-{% assign enterprise = false %}
+:enterprise: false

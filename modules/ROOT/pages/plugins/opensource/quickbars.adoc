@@ -3,8 +3,8 @@
 :keywords: plugin inlite quickbar
 :title_nav: Quick Toolbars
 
-{% assign pluginname = "Quick Toolbars" %}
-{% assign plugincode = "quickbars" %}
+:pluginname: Quick Toolbars
+:plugincode: quickbars
 
 The Quick Toolbar plugin adds three context toolbars:
 
@@ -22,7 +22,7 @@ NOTE: The Quick Toolbars plugin provides the contextual toolbars found in the `i
 
 == Interactive example
 
-{% include live-demo.html id="quickbars" %}
+liveDemo::quickbars[]
 
 == Basic setup
 
@@ -59,7 +59,7 @@ tinymce.init({
 
 ==== Example: Disabling the Quick Image context toolbar
 
-{{ site.requires_5_2v }}
+include::partial$misc/requires_5_2v.adoc[]
 
 `js
 tinymce.init({
@@ -97,7 +97,7 @@ tinymce.init({
 
 The Quick Image (`quickimage`) toolbar button allows users to quickly insert images from their computer into the editor. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
-NOTE: To enable automatic upload of images on insertion, link:{{ site.baseurl }}/advanced/handle-async-image-uploads/[image upload] must be configured.
+NOTE: To enable automatic upload of images on insertion, link:{baseurl}/advanced/handle-async-image-uploads/[image upload] must be configured.
 
 ==== Example: Using quickimage in the editor toolbar
 
@@ -125,10 +125,10 @@ tinymce.init({
 
 == Configuration options
 
-{% include configuration/selection_toolbar.md %}
+include::partial$configuration/selection_toolbar.adoc[]
 
-{% include configuration/insert_toolbar.md %}
+include::partial$configuration/insert_toolbar.adoc[]
 
-{% include configuration/image_toolbar.md %}
+include::partial$configuration/image_toolbar.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]

@@ -25,7 +25,7 @@ The following "list" should be added to `data/nav.yml`
 
 == Overview
 
-{{site.productname}} vnumtxt was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`^`st|nd|th`^, `YYYY`>>. It includes {{site.productname}} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} vnumtxt, including:
+{productname} vnumtxt was released for {enterpriseversion} and {cloudname} on <<`WEEKDAY`, `MMM` `D`^`st|nd|th`^, `YYYY`>>. It includes {productname} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} vnumtxt, including:
 
 * <<newfeatures,New features>>
 * <<enhancements,Enhancements>>
@@ -39,45 +39,45 @@ The following "list" should be added to `data/nav.yml`
 * <<knownissues,Known issues>>
 * <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
 
-{{site.releasenotes_for_stable}}
+include::partial$misc/releasenotes_for_stable.adoc[]
 
 == New features
 
-The following new features were added for the {{site.productname}} vnumtxt release.
+The following new features were added for the {productname} vnumtxt release.
 
 === Feature name
 
 === Additional new features
 
-{{site.productname}} vnumtxt introduces the following minor new features:
+{productname} vnumtxt introduces the following minor new features:
 
 * changelog
 
 == Enhancements
 
-The following enhancements were made for the {{site.productname}} vnumtxt release.
+The following enhancements were made for the {productname} vnumtxt release.
 
 === Enhancement name
 
 === Additional enhancements
 
-{{site.productname}} vnumtxt introduces the following minor enhancements:
+{productname} vnumtxt introduces the following minor enhancements:
 
 * changelog
 
 == Functionality changes
 
-The following functionality changes were made for the {{site.productname}} vnumtxt release:
+The following functionality changes were made for the {productname} vnumtxt release:
 
 * changelog
 
 == Accompanying Premium Plugin changes
 
-The following premium plugin updates were released alongside {{site.productname}} vnumtxt.
+The following premium plugin updates were released alongside {productname} vnumtxt.
 
 === Premium Plugin Name X.Y.Z
 
-The {{site.productname}} vnumtxt release includes an accompanying release of the *<<Premium Plugin Name>>* premium plugin.
+The {productname} vnumtxt release includes an accompanying release of the *<<Premium Plugin Name>>* premium plugin.
 
 *<<Premium Plugin Name>>* X.Y.Z adds the following new features:
 
@@ -91,11 +91,11 @@ The {{site.productname}} vnumtxt release includes an accompanying release of the
 
 * {blank}+++<Description>++++++</Description>+++
 
-For information on the <<Premium Plugin Name>> plugin, see: link:{{site.baseurl}}/plugins/<<Premium Plugin Name>>/[<<Premium Plugin Name>> plugin].
+For information on the <<Premium Plugin Name>> plugin, see: link:{baseurl}/plugins/<<Premium Plugin Name>>/[<<Premium Plugin Name>> plugin].
 
 == Accompanying Premium Skins and Icon Packs changes
 
-The {{site.productname}} vnumtxt release includes an accompanying release of the *Premium Skins and Icon Packs*.
+The {productname} vnumtxt release includes an accompanying release of the *Premium Skins and Icon Packs*.
 
 === Premium Skins and Icon Packs - New features
 
@@ -103,7 +103,7 @@ The {{site.productname}} vnumtxt release includes an accompanying release of the
 Add description here.
 {% endcomment %}
 
-For information on using premium skins and icon packs, see: link:{{site.baseurl}}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
 
 === Premium Skins and Icon Packs - Bug fixes
 
@@ -113,11 +113,11 @@ The *Premium Skins and Icon Packs* release includes the following bug fixes:
 Add description here.
 {% endcomment %}
 
-For information on using premium skins and icon packs, see: link:{{site.baseurl}}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
 
 == Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} vnumtxt release includes accompanying changes affecting the {{site.productname}} *self-hosted* services for the following plugins:
+The {productname} vnumtxt release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
 
 * The Enhanced Media Embed plugin (`mediaembed`)
 * The Export plugin (`export`)
@@ -131,15 +131,15 @@ The Java server-side components have been updated to the following versions:
 * `ephox-hyperlinking.war`: X.Y.Z
 * `ephox-image-proxy.war`: X.Y.Z
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{{site.baseurl}}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{baseurl}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
 
 For information on:
 
-* The Spell Checker Pro plugin, see: link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
-* The Link Checker plugin, see: link:{{site.baseurl}}/plugins/premium/linkchecker/[Link Checker plugin].
-* The Image Tools plugin, see: link:{{site.baseurl}}/plugins/opensource/imagetools/[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: link:{{site.baseurl}}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: link:{{site.baseurl}}/enterprise/server/[Server-side component installation].
+* The Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+* The Link Checker plugin, see: link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
+* The Image Tools plugin, see: link:{baseurl}/plugins/opensource/imagetools/[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
 
 === Updating the self-hosted server-side components
 
@@ -152,28 +152,28 @@ The new versions of the server-side services provide updates for the Java-based 
   *** 8.5.12+
   *** 8.0.42+
   *** 7.0.76+
-. Replace the existing server-side `.war` files with the `.war` files bundled with {{site.productname}} vnumtxt or later.
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} vnumtxt or later.
 
 For information on:
 
-* Deploying the server-side components, see: link:{{site.baseurl}}/enterprise/server/[Server-side component installation].
-* Deploying the server-side components using Docker, see: link:{{site.baseurl}}/enterprise/server/dockerservices/[Containerized service deployments].
+* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
+* Deploying the server-side components using Docker, see: link:{baseurl}/enterprise/server/dockerservices/[Containerized service deployments].
 
 == General bug fixes
 
-{{site.productname}} vnumtxt provides fixes for the following bugs:
+{productname} vnumtxt provides fixes for the following bugs:
 
 * changelog
 
 == Security fixes
 
-{{site.productname}} vnumtxt provides fixes for the following security issues:
+{productname} vnumtxt provides fixes for the following security issues:
 
 * changelog
 
 == Deprecated features
 
-The following features have been deprecated with the release of {{site.productname}} vnumtxt:
+The following features have been deprecated with the release of {productname} vnumtxt:
 
 * <<,>>.
 
@@ -181,7 +181,7 @@ The following features have been deprecated with the release of {{site.productna
 
 == Known issues
 
-This section describes issues that users of {{site.productname}} vnumtxt may encounter and possible workarounds for these issues.
+This section describes issues that users of {productname} vnumtxt may encounter and possible workarounds for these issues.
 
 * <<,>>
 
@@ -191,8 +191,8 @@ Issue:: This issue affects ....
 
 Workaround:: There was no known workaround at the time of the release.
 
-{% assign enterprise = true %}
+:enterprise: true
 
-{% include install/upgrading-info.md %}
+include::partial$install/upgrading-info.adoc[]
 
-{% assign enterprise = false %}
+:enterprise: false

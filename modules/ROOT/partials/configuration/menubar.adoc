@@ -1,8 +1,8 @@
 == `menubar`
 
-This option allows you to specify which menus should appear and the order that they appear in the menu bar at the top of {{site.productname}}.
+This option allows you to specify which menus should appear and the order that they appear in the menu bar at the top of {productname}.
 
-To specify the menus that should appear on {{site.productname}}'s menu bar, the menubar option should be provided with a space separated list of menus.
+To specify the menus that should appear on {productname}'s menu bar, the menubar option should be provided with a space separated list of menus.
 
 *Type:* `String` _or_ `Boolean`
 
@@ -10,7 +10,7 @@ To specify the menus that should appear on {{site.productname}}'s menu bar, the 
 
 *Possible Values:* `true`, `false`, or `string` of menus
 
-{{site.differs_for_mobile}}
+include::partial$misc/differs_for_mobile.adoc[]
 
 === Example: Customizing the menu bar
 

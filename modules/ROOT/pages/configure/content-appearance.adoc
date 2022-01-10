@@ -3,26 +3,26 @@
 :description_short:
 :title_nav: Content appearance options
 
-{% include configuration/body_class.md %}
+include::partial$configuration/body_class.adoc[]
 
-{% include configuration/body_id.md %}
+include::partial$configuration/body_id.adoc[]
 
-{% include configuration/content_css.md %}
+include::partial$configuration/content_css.adoc[]
 
-{% include configuration/content_css_cors.md %}
+include::partial$configuration/content_css_cors.adoc[]
 
-{% include configuration/content_style.md %}
+include::partial$configuration/content_style.adoc[]
 
-{% include configuration/font_css.md %}
+include::partial$configuration/font_css.adoc[]
 
-{% include configuration/inline_boundaries.md %}
+include::partial$configuration/inline_boundaries.adoc[]
 
-{% include configuration/inline_boundaries_selector.md %}
+include::partial$configuration/inline_boundaries_selector.adoc[]
 
-{% include configuration/text_color.md %}
+include::partial$configuration/text_color.adoc[]
 
-{% include configuration/visual.md %}
+include::partial$configuration/visual.adoc[]
 
-{% include configuration/visual_anchor_class.md %}
+include::partial$configuration/visual_anchor_class.adoc[]
 
-{% include configuration/visual_table_class.md %}
+include::partial$configuration/visual_table_class.adoc[]

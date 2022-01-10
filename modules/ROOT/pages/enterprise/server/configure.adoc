@@ -34,61 +34,61 @@
 
 NOTE: Use a plain text editor (such as gedit, vim, emacs or notepad) when creating or editing the `application.conf` file. Do not use word processors like Microsoft Word or Evernote as these can insert extra characters which make the file unreadable to the server-side components.
 
-The {{site.productname}} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`.
+The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`.
 
 This configuration file will require you to enter _at least_ the following  information:
 
 * `allowed-origins` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
 
-The Enhanced Media Embed server-side component require additional configuration, which can be found on the link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/[Enhanced Media Embed page].
+The Enhanced Media Embed server-side component require additional configuration, which can be found on the link:{baseurl}/enterprise/embed-media/mediaembed-server-config/[Enhanced Media Embed page].
 
 == General service settings
 
 === `allowed-origins` (required)
 
-{{site.productname}} editor instances make use of the server-side components by performing a cross-origin HTTP request. These requests are subject to a form of HTTP access control called Cross-Origin Resource Sharing (CORS). CORS is built into web browsers and is not a feature of {{site.productname}}'s server side components. A detailed explanation of CORS can be found on the https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[Mozilla Developer Network].
+{productname} editor instances make use of the server-side components by performing a cross-origin HTTP request. These requests are subject to a form of HTTP access control called Cross-Origin Resource Sharing (CORS). CORS is built into web browsers and is not a feature of {productname}'s server side components. A detailed explanation of CORS can be found on the https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[Mozilla Developer Network].
 
-The `allowed-origins` element configures a list of *all* values that can be expected by the server-side components in a HTTP Origin header from your {{site.productname}} instances (see the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin[Mozilla Developer Network] for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {{site.productname}} instances will be served from without the path information.
+The `allowed-origins` element configures a list of *all* values that can be expected by the server-side components in a HTTP Origin header from your {productname} instances (see the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin[Mozilla Developer Network] for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {productname} instances will be served from without the path information.
 
 IMPORTANT: When the services are matching against the `allowed-origins` list, the `scheme` (e.g. http) and the `port` (e.g. 800) are *ignored* by default. Customize this using <<allowed-originsignore-portoptional,`ephox.allowed-origins.ignore-port`>> option.
 
 This is best illustrated with some examples:
 
-If users load {{site.productname}} from the following URLs:
+If users load {productname} from the following URLs:
 
 * `+http://server.example.com/editor.php+`
 * `+http://server.example.com/subpage/editor.php+`
 
 Add `server.example.com` to the `allowed-origins` list.
 
-If users load {{site.productname}} from the following URLs:
+If users load {productname} from the following URLs:
 
 * `+https://server.example.com/editor.php+`
 * `+http://server.example.com/subpage/editor.php+`
 
 Add `server.example.com` to the `allowed-origins` list because the scheme is ignored.
 
-If users load {{site.productname}} from the following URLs:
+If users load {productname} from the following URLs:
 
 * `+https://server.example.com/editor.php+`
 * `+https://server.example.com/+`
 
 Add `server.example.com` to the `allowed-origins` list.
 
-If users load {{site.productname}} from the following URLs:
+If users load {productname} from the following URLs:
 
 * `+http://oneserver.example.com/editor.php+`
 * `+http://twoserver.example.com/subpage/editor.php+`
 
 Add `oneserver.example.com` and `twoserver.example.com` to the``allowed-origins`` list.
 
-If users load {{site.productname}} from the following URLs:
+If users load {productname} from the following URLs:
 
 * `+http://server.example.com:8080/editor.php+`
 
 Add `server.example.com` to the `allowed-origins` list because the port is ignored.
 
-If users load {{site.productname}} from the following URLs:
+If users load {productname} from the following URLs:
 
 * `+https://server.example.com:9000/editor.php+`
 
@@ -136,7 +136,7 @@ ephox {
 
 ==== Regular Expressions support
 
-{{site.requires_jsscwar_230v}}
+include::partial$misc/requires_jsscwar_230v.adoc[]
 
 Regular expressions can be used alongside <<wildcardsupport,wildcards>> for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
 
@@ -154,7 +154,7 @@ For a list of valid constructs, see: https://docs.oracle.com/javase/8/docs/api/j
 
 ==== `allowed-origins.same-origin` (optional)
 
-{{site.requires_jsscwar_230v}}
+include::partial$misc/requires_jsscwar_230v.adoc[]
 
 Enabling `same-origin` removes the need to specify the domain origin accessing the service if the service is deployed from the same server.
 
@@ -174,7 +174,7 @@ ephox {
 
 ==== `allowed-origins.ignore-port` (optional)
 
-{% include misc/list_ignore_port_service_versions.md %}
+include::partial$misc/list_ignore_port_service_versions.adoc[]
 
 To enforce a port check for the service's `allowed-origins`, set `ignore-port` to `false`. When `ignore-port` is set to false, all `allowed-origins` *must* include the port of the origin.
 
@@ -193,7 +193,7 @@ ephox {
 
 ==== Troubleshooting Origins
 
-If you missed an Origin or specified an Origin incorrectly, {{site.productname}} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
+If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{baseurl}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
 
 === `proxy` (optional)
 
@@ -301,7 +301,7 @@ ephox {
 
 ==== Alternative http timeout settings
 
-{{site.requires_jsscwar_230v}}
+include::partial$misc/requires_jsscwar_230v.adoc[]
 
 When greater control over timeout settings is needed, the following three settings can be used instead of the `request-timeout-seconds` setting:
 
@@ -327,7 +327,7 @@ ephox {
 
 === `image-proxy` (optional)
 
-The link:{{site.baseurl}}/plugins/opensource/imagetools/[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+The link:{baseurl}/plugins/opensource/imagetools/[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
 [cols="^,,"]
 |===
@@ -378,7 +378,7 @@ ephox {
 
 ==== `fallback-to-get` (optional)
 
-{{site.requires_jsscwar_230v}}
+include::partial$misc/requires_jsscwar_230v.adoc[]
 
 The Link-checker normally relies on the `HEAD` response. If `fallback-to-get` is `true`, the link-checker may issue a `GET` request after receiving a non-standard `HEAD` response to verify a link. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. Enabling the `fallback-to-get` setting can lead to server performance issues and is set to `false` by default.
 
@@ -428,30 +428,30 @@ The Spelling service has these configurable settings:
 
 ==== `hunspell-dictionaries-path` (optional)
 
-{{site.requires_5_9v}}
+include::partial$misc/requires_5_9v.adoc[]
 
-{% include misc/hunspell-dictionaries-path.md %}
+include::partial$misc/hunspell-dictionaries-path.adoc[]
 
 ==== `custom-dictionaries-path` (optional)
 
-For information on creating custom dictionaries, see: link:{{site.baseurl}}/enterprise/check-spelling/custom/#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
+For information on creating custom dictionaries, see: link:{baseurl}/enterprise/check-spelling/custom/#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
 
-{% include misc/custom-dictionaries-path.md %}
+include::partial$misc/custom-dictionaries-path.adoc[]
 
 ==== `dynamic-custom-dictionaries` (optional)
 
-{% include misc/dynamic-custom-dictionaries.md %}
+include::partial$misc/dynamic-custom-dictionaries.adoc[]
 
 ==== `num-incorrect-words-in-suggestions-request-limit` (optional)
 
-{% include misc/num-incorrect-words-in-suggestions-request-limit.md %}
+include::partial$misc/num-incorrect-words-in-suggestions-request-limit.adoc[]
 
 +++<a class="anchor" id="logging">++++++</a>+++
 ## Logging service activity
 
-It may be useful to make the {{site.productname}} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
+It may be useful to make the {productname} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
-The {{site.productname}} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
+The {productname} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
 
 To write the logs to a specific file:
 +++<a class="anchor" id="step1createaloggingconfigurationxmlfile">++++++</a>+++
@@ -474,7 +474,7 @@ To write the logs to a specific file:
     </encoder>
   </appender>
 
-  <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
+  <!-- The name "com.ephox" refers to all {productname} server-side components. -->
   <logger name="com.ephox" level="INFO"/>
 
   <root level="INFO">
@@ -485,7 +485,7 @@ To write the logs to a specific file:
   </root>
 
 </configuration>
-``` <a class="anchor" id="step2passtheconfigurationfiletothejavaapplicationserver"></a> 1. Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow [step 4]({{ site.baseurl }}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5]({{ site.baseurl }}/enterprise/server/#step5restartthejavaapplicationserver) on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
+``` <a class="anchor" id="step2passtheconfigurationfiletothejavaapplicationserver"></a> 1. Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow [step 4]({baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5]({baseurl}/enterprise/server/#step5restartthejavaapplicationserver) on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
 
 ```
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml

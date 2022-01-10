@@ -1,4 +1,4 @@
-{{site.requires_5_7v}}
+include::partial$misc/requires_5_7v.adoc[]
 
 |===
 | Name | Arguments | Description
@@ -13,7 +13,7 @@
 
 | setLanguage
 | language: `string`
-| Set the current language for spellchecking. This must be a supported language code (case-sensitive). For a list of supported languages, see: link:{{ site.baseurl }}/plugins/premium/tinymcespellchecker/#supportedlanguages[Spell Checker Pro - `Supported languages`].
+| Set the current language for spellchecking. This must be a supported language code (case-sensitive). For a list of supported languages, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#supportedlanguages[Spell Checker Pro - `Supported languages`].
 |===
 
 *Examples*

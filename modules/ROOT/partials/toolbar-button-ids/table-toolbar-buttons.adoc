@@ -8,10 +8,10 @@
 | Opens the Cell properties dialog.
 
 | `tablecopyrow`
-| Copies the current row to the clipboard. {{site.requires_5_4v}}
+| Copies the current row to the clipboard. include::partial$misc/requires_5_4v.adoc[]
 
 | `tablecutrow`
-| Cuts the current row to the clipboard. {{site.requires_5_4v}}
+| Cuts the current row to the clipboard. include::partial$misc/requires_5_4v.adoc[]
 
 | `tabledelete`
 | Deletes table.
@@ -41,10 +41,10 @@
 | Merges the selected cells.
 
 | `tablepasterowafter`
-| Pastes the row in the clipboard after the current row. {{site.requires_5_4v}}
+| Pastes the row in the clipboard after the current row. include::partial$misc/requires_5_4v.adoc[]
 
 | `tablepasterowbefore`
-| Pastes the row in the clipboard before the current row. {{site.requires_5_4v}}
+| Pastes the row in the clipboard before the current row. include::partial$misc/requires_5_4v.adoc[]
 
 | `tableprops`
 | Opens the table properties dialog.
@@ -56,32 +56,32 @@
 | Splits the current merged cell.
 
 | `tableclass`
-| Adds or removes pre-defined classes to the selected table. {{site.requires_5_9v}}
+| Adds or removes pre-defined classes to the selected table. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecellclass`
-| Adds or removes pre-defined classes to selected cells in the table. {{site.requires_5_9v}}
+| Adds or removes pre-defined classes to selected cells in the table. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecellvalign`
-| Sets the vertical alignment of the selected cells. {{site.requires_5_9v}}
+| Sets the vertical alignment of the selected cells. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecellborderwidth`
-| Sets the border width of all selected cells. {{site.requires_5_9v}}
+| Sets the border width of all selected cells. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecellborderstyle`
-| Sets the style of border for all selected cells. {{site.requires_5_9v}}
+| Sets the style of border for all selected cells. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecaption`
-| Toggles the caption on the selected table. {{site.requires_5_9v}}
+| Toggles the caption on the selected table. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecellbackgroundcolor`
-| Sets the background color of the selected cells. {{site.requires_5_9v}}
+| Sets the background color of the selected cells. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecellbordercolor`
-| Sets the border color of the selected cells. {{site.requires_5_9v}}
+| Sets the border color of the selected cells. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablerowheader`
-| Toggle a row between being a table header row or a table body row. {{site.requires_5_9v}}
+| Toggle a row between being a table header row or a table body row. include::partial$misc/requires_5_9v.adoc[]
 
 | `tablecolheader`
-| Toggle a column between being a table header column and a table body column. {{site.requires_5_9v}}
+| Toggle a column between being a table header column and a table body column. include::partial$misc/requires_5_9v.adoc[]
 |===

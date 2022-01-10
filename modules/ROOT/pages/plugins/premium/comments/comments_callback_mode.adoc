@@ -3,8 +3,8 @@
 :keywords: comments commenting tinycomments callback
 :title_nav: Callback mode
 
-{% assign pluginname = "Comments" %}
-{% assign plugincode = "comments" %}
+:pluginname: Comments
+:plugincode: comments
 
 *Callback mode* is the default mode for the Comments plugin. In the callback mode, callback functions are required to save user comments on a server. The Comments functions (create, reply, edit, delete comment, delete all conversations, resolve, and lookup) are configured differently depending upon the server-side storage configuration.
 
@@ -12,7 +12,7 @@
 
 The following example uses a simulated server (provided by https://netflix.github.io/pollyjs/[Polly.js]) which has been hidden from the example javascript to keep the example code concise. The interactions between TinyMCE and Polly.js are visible in the browser console.
 
-{% include live-demo.html id="comments-callback" %}
+liveDemo::comments-callback[]
 
 === How the comments plugin works in callback mode
 
@@ -43,22 +43,22 @@ When using callback mode, the Comments plugin requires callback functions for th
 
 The <<tinycomments_resolve,`tinycomments_resolve`>> option is _optional_.
 
-{% include configuration/tinycomments_create.md %}
+include::partial$configuration/tinycomments_create.adoc[]
 
-{% include configuration/tinycomments_reply.md %}
+include::partial$configuration/tinycomments_reply.adoc[]
 
-{% include configuration/tinycomments_edit_comment.md %}
+include::partial$configuration/tinycomments_edit_comment.adoc[]
 
-{% include configuration/tinycomments_resolve.md %}
+include::partial$configuration/tinycomments_resolve.adoc[]
 
-{% include configuration/tinycomments_delete_comment.md %}
+include::partial$configuration/tinycomments_delete_comment.adoc[]
 
-{% include configuration/tinycomments_delete.md %}
+include::partial$configuration/tinycomments_delete.adoc[]
 
-{% include configuration/tinycomments_delete_all.md %}
+include::partial$configuration/tinycomments_delete_all.adoc[]
 
-{% include configuration/tinycomments_lookup.md %}
+include::partial$configuration/tinycomments_lookup.adoc[]
 
-{% include plugins/comments_open_sidebar.md %}
+include::partial$plugins/comments_open_sidebar.adoc[]
 
-{% include plugins/comments_highlighting_css.md %}
+include::partial$plugins/comments_highlighting_css.adoc[]

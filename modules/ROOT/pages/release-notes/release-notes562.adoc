@@ -5,36 +5,36 @@
 
 == Overview
 
-{{site.productname}} 5.6.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 9^th^, 2020. It includes {{site.productname}} 5.6.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.6.2, including:
+{productname} 5.6.2 was released for {enterpriseversion} and {cloudname} on Wednesday, December 9^th^, 2020. It includes {productname} 5.6.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.6.2, including:
 
 * <<accompanyingpremiumchanges,Accompanying Premium changes>>
 * <<generalbugfixes,General bug fixes>>
 * <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
 
-{{site.releasenotes_for_stable}}
+include::partial$misc/releasenotes_for_stable.adoc[]
 
 == Accompanying Premium changes
 
-The following premium updates were released alongside {{site.productname}} 5.6.2.
+The following premium updates were released alongside {productname} 5.6.2.
 
 === Enterprise language packs
 
-The {{site.productname}} 5.6.2 release includes an accompanying release of the *Enterprise language packs*.
+The {productname} 5.6.2 release includes an accompanying release of the *Enterprise language packs*.
 
 The *Enterprise language packs* include the following bug fix:
 
 * Fixes Swedish translations (`sv_SE`).
 
-For information on the Enterprise language packs, see: link:{{site.baseurl}}/configure/localization/#language[Localization options - `language`].
+For information on the Enterprise language packs, see: link:{baseurl}/configure/localization/#language[Localization options - `language`].
 
 == General bug fixes
 
-{{site.productname}} 5.6.2 provides fixes for the following bugs:
+{productname} 5.6.2 provides fixes for the following bugs:
 
 * Fixed a UI rendering regression when the document body is using `display: flex`.
 
-{% assign enterprise = true %}
+:enterprise: true
 
-{% include install/upgrading-info.md %}
+include::partial$install/upgrading-info.adoc[]
 
-{% assign enterprise = false %}
+:enterprise: false

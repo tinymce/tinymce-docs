@@ -95,7 +95,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 | icon
 | string
 | optional
-| Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:{{site.baseurl}}/advanced/editor-icon-identifiers/[icon pack], a link:{{site.baseurl}}/advanced/creating-an-icon-pack/[custom icon pack], or an icon added using the link:{{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[`addIcon` API].
+| Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:{baseurl}/advanced/editor-icon-identifiers/[icon pack], a link:{baseurl}/advanced/creating-an-icon-pack/[custom icon pack], or an icon added using the link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[`addIcon` API].
 |===
 
 `js
@@ -111,7 +111,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 
 ==== CardMenuItem
 
-{{site.requires_5_6v}}
+include::partial$misc/requires_5_6v.adoc[]
 
 The `CardMenuItem` allows customization of layout and content. This is done by constructing an array of subcomponent specifications which will determine the structure of the final item. A classical example of this would be the need to display a "user" item containing a profile picture, a user name, and a description.
 
@@ -276,10 +276,10 @@ The following examples show how to create a special characters autocompleters.
 
 This example uses the standard autocompleter item and will show when user types the colon (`:`) character and at least one additional character.
 
-{% include live-demo.html id="autocompleter-autocompleteitem" height="300" tab="js" %}
+liveDemo::autocompleter-autocompleteitem[height="300" tab="js" ]
 
 === Example: Using `CardMenuItems` in the Autocompleter
 
 This example uses <<cardmenuitem,CardMenuItems>> and will show when a user types a hyphen (`-`) character and at least one additional character.
 
-{% include live-demo.html id="autocompleter-cardmenuitem" height="300" tab="js" %}
+liveDemo::autocompleter-cardmenuitem[height="300" tab="js" ]

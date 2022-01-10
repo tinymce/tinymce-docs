@@ -1,6 +1,6 @@
 === `table_column_resizing`
 
-{{ site.requires_5_5v }}
+include::partial$misc/requires_5_5v.adoc[]
 
 {% if page.dir != "/plugins/opensource/table/" %}
 > *Note*: The `table_column_resizing` option requires the `table` plugin.

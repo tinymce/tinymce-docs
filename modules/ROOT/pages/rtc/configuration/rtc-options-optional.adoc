@@ -3,25 +3,25 @@
 :keywords: rtc configuration
 :title_nav: Recommended and optional configuration options
 
-{% assign pluginname = "Real-time Collaboration (RTC)" %}
-{% assign plugincode = "rtc" %}
+:pluginname: Real-time Collaboration (RTC)
+:plugincode: rtc
 
-This section covers the recommended and optional configuration options for the RTC plugin. None of these options are required but assist with creating a consistent user experience between your application and {{site.productname}} {\{pluginname}}.
+This section covers the recommended and optional configuration options for the RTC plugin. None of these options are required but assist with creating a consistent user experience between your application and {productname} {pluginname}.
 
 == Recommended configuration options
 
-For the best user experience, {{site.companyname}} recommends including these configuration options:
+For the best user experience, {companyname} recommends including these configuration options:
 
 * <<rtc_server_disconnected,`rtc_server_disconnected`>>
 * <<rtc_user_details_provider,`rtc_user_details_provider`>>
 
-{% include configuration/rtc_server_disconnected.md %}
+include::partial$configuration/rtc_server_disconnected.adoc[]
 
-{% include configuration/rtc_user_details_provider.md %}
+include::partial$configuration/rtc_user_details_provider.adoc[]
 
 == Optional configuration options
 
-The following configuration options have been provide to assist with integrating {\{pluginname}} into webpages and applications:
+The following configuration options have been provide to assist with integrating {pluginname} into webpages and applications:
 
 * <<rtc_snapshot,`rtc_snapshot`>>
 * <<rtc_initial_content_provider,`rtc_initial_content_provider`>>
@@ -30,14 +30,14 @@ The following configuration options have been provide to assist with integrating
 * <<rtc_client_disconnected,`rtc_client_disconnected`>>
 * <<rtc_unsupported_content_notification,`rtc_unsupported_content_notification`>>
 
-{% include configuration/rtc_snapshot.md %}
+include::partial$configuration/rtc_snapshot.adoc[]
 
-{% include configuration/rtc_initial_content_provider.md %}
+include::partial$configuration/rtc_initial_content_provider.adoc[]
 
-{% include configuration/rtc_client_info.md %}
+include::partial$configuration/rtc_client_info.adoc[]
 
-{% include configuration/rtc_client_connected.md %}
+include::partial$configuration/rtc_client_connected.adoc[]
 
-{% include configuration/rtc_client_disconnected.md %}
+include::partial$configuration/rtc_client_disconnected.adoc[]
 
-{% include configuration/rtc_unsupported_content_notification.md %}
+include::partial$configuration/rtc_unsupported_content_notification.adoc[]

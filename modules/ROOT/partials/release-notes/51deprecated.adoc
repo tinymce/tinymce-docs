@@ -1,49 +1,49 @@
-Some API properties have been deprecated in {{site.productname}} 5.1 to provide an improved solution, or they are no longer required.
+Some API properties have been deprecated in {productname} 5.1 to provide an improved solution, or they are no longer required.
 
 === Deprecated API Properties - `tinymce.Env`
 
-New platform detection functions have been added to the link:{{site.baseurl}}/api/tinymce/tinymce.env/[`Env` API], allowing for some older detection properties to be deprecated.
+New platform detection functions have been added to the link:{baseurl}/api/tinymce/tinymce.env/[`Env` API], allowing for some older detection properties to be deprecated.
 
 |===
 | Deprecated Property | Alternative Property / Reason for Deprecation | Type | Original Description
 
 | `opera`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#browserisopera[`browser.isOpera()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#browserisopera[`browser.isOpera()`] instead.
 | Boolean
 | Constant that is `true` if the browser is Opera.
 
 | `webKit`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#browserissafari[`browser.isSafari()`] or link:{{site.baseurl}}/api/tinymce/tinymce.env/#browserischrome[`browser.isChrome()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#browserissafari[`browser.isSafari()`] or link:{baseurl}/api/tinymce/tinymce.env/#browserischrome[`browser.isChrome()`] instead.
 | Boolean
 | Constant that is `true` if the browser is WebKit (Safari/Chrome).
 
 | `ie`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#browserversionmajor[`browser.version.major`] and link:{{site.baseurl}}/api/tinymce/tinymce.env/#browserisie[`browser.isIE()`] or link:{{site.baseurl}}/api/tinymce/tinymce.env/#browserisedge[`browser.isEdge()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#browserversionmajor[`browser.version.major`] and link:{baseurl}/api/tinymce/tinymce.env/#browserisie[`browser.isIE()`] or link:{baseurl}/api/tinymce/tinymce.env/#browserisedge[`browser.isEdge()`] instead.
 | Number
 | Constant that is greater than zero if the browser is IE.
 
 | `gecko`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#browserisfirefox[`browser.isFirefox()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#browserisfirefox[`browser.isFirefox()`] instead.
 | Boolean
 | Constant that is `true` if the browser is Gecko.
 
 | `mac`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#osisosx[`os.isOSX()`] or link:{{site.baseurl}}/api/tinymce/tinymce.env/#osisios[`os.isiOS()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#osisosx[`os.isOSX()`] or link:{baseurl}/api/tinymce/tinymce.env/#osisios[`os.isiOS()`] instead.
 | Boolean
 | Constant that is `true` if the operating system is Mac OS.
 
 | `iOS`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#osisios[`os.isiOS()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#osisios[`os.isiOS()`] instead.
 | Boolean
 | Constant that is `true` if the operating system is iOS.
 
 | `android`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#osisandroid[`os.isAndroid()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#osisandroid[`os.isAndroid()`] instead.
 | Boolean
 | Constant that is `true` if the operating system is android.
 
 | `desktop`
-| Use link:{{site.baseurl}}/api/tinymce/tinymce.env/#devicetypeisdesktop[`deviceType.isDesktop()`] instead.
+| Use link:{baseurl}/api/tinymce/tinymce.env/#devicetypeisdesktop[`deviceType.isDesktop()`] instead.
 | Boolean
 | Constant that is `true` if the browser is running on a desktop device
 

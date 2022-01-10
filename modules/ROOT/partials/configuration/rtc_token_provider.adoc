@@ -5,14 +5,14 @@ The RTC plugin and the RTC service uses https://jwt.io/introduction/[JSON Web To
 * A unique user ID (`sub`).
 * A relative expiration time (`exp`).
 
-The `rtc_token_provider` function will be called one or more times to refresh the token before it expires. For production usage, {{site.companyname}} recommends a token provider with a dynamic request that produces a new JWT token with an updated `exp` claim.
+The `rtc_token_provider` function will be called one or more times to refresh the token before it expires. For production usage, {companyname} recommends a token provider with a dynamic request that produces a new JWT token with an updated `exp` claim.
 
-For information on generating and serving JWTs for {{site.productname}} RTC, see: link:{{site.baseurl}}/rtc/jwt-authentication/[Real-time Collaboration (RTC) JWT Authentication Setup].
+For information on generating and serving JWTs for {productname} RTC, see: link:{baseurl}/rtc/jwt-authentication/[Real-time Collaboration (RTC) JWT Authentication Setup].
 
 {% if plugincode != "rtc" %}::
 
 Required plugin::
-link:{{site.baseurl}}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
+link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
 {% endif %}
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
@@ -36,7 +36,7 @@ Return data::
 
 | `token`
 | `string`
-| A generated JWT token. This token should be signed with a private key as described in link:{{site.baseurl}}/rtc/jwt-authentication/#jwtendpointrequirements[JWT authentication].
+| A generated JWT token. This token should be signed with a private key as described in link:{baseurl}/rtc/jwt-authentication/#jwtendpointrequirements[JWT authentication].
 |===
 
 === Required JWT claims

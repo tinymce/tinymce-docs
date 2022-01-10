@@ -1,4 +1,4 @@
-{{site.requires_jsspelling_war_2_118_0v}}
+include::partial$misc/requires_jsspelling_war_2_118_0v.adoc[]
 
 Adding the `num-incorrect-words-in-suggestions-request-limit` element and setting it to a number instructs the spelling service to reject any requests for `/2/` suggestions where the number of *incorrect* words exceeds the specified limit. The default is to have no limit.
 

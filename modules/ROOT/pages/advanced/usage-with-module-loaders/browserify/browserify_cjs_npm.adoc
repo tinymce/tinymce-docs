@@ -4,10 +4,10 @@
 :keywords: browserify commonjs cjs npm modules tinymce
 :title_nav: CommonJS and npm
 
-{% assign installtype = "an npm" %}
-{% assign bundler = "https://browserify.org/[Browserify]" %}
-{% assign syntax = "http://www.commonjs.org/specs/modules/1.0/[CommonJS syntax]" %}
-{% include module-loading/bundling-procedure-intro.md %}
+:installtype: an npm
+:bundler: https://browserify.org/[Browserify]
+:syntax: http://www.commonjs.org/specs/modules/1.0/[CommonJS syntax]
+include::partial$module-loading/bundling-procedure-intro.adoc[]
 
 == Requirements
 
@@ -19,13 +19,13 @@ This guide requires the following:
 
 == Procedure
 
-{% assign is_zip_install = false %}
+:is_zip_install: false
 
-{% include module-loading/browserify-dev-dependencies.md %}
+include::partial$module-loading/browserify-dev-dependencies.adoc[]
 
-{% include module-loading/bundling-browserify-cjs-npm_editor.md %}
+include::partial$module-loading/bundling-browserify-cjs-npm_editor.adoc[]
 
-{% include module-loading/bundling-browserify-cjs-main.md %}
+include::partial$module-loading/bundling-browserify-cjs-main.adoc[]
 
 . Run Browserify to test the bundle, such as:
 +
@@ -34,8 +34,8 @@ This guide requires the following:
 `
 +
 If Browserify runs successfully, check that the editor loads in the application.
- If Browserify fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {{site.productname}} into an existing project.
+ If Browserify fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {productname} into an existing project.
 
-{% assign is_zip_install = nil %}
+:is_zip_install: nil
 
-{% include module-loading/bundling-next-steps.md %}
+include::partial$module-loading/bundling-next-steps.adoc[]

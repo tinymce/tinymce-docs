@@ -71,7 +71,7 @@ To create a private/public key pair:
 +
 Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
-{% include auth/passphrase-step-jwt.md %}
+include::partial$auth/passphrase-step-jwt.adoc[]
 
 Two files will be created in the current directory:
 
@@ -108,7 +108,7 @@ To create a private/public key pair:
 +
 Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
-{% include auth/passphrase-step-jwt.md %}
+include::partial$auth/passphrase-step-jwt.adoc[]
 
 Two files will be created in the current directory:
 
@@ -157,7 +157,7 @@ To create a private/public key pair:
 +
 Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
-{% include auth/passphrase-step-jwt.md %}
+include::partial$auth/passphrase-step-jwt.adoc[]
 
 Two files will be created in the current directory:
 

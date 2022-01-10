@@ -1,4 +1,4 @@
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced. Refer to the link:{{site.baseurl}}/migration-from-4x/[Migration Guide], for more information.
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced. Refer to the link:{baseurl}/migration-from-4x/[Migration Guide], for more information.
 
 === Editor-Core removed settings
 
@@ -9,13 +9,13 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 | Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
 
 | https://www.tiny.cloud/docs-4x/configure/editor-appearance/#insert_button_items[`insert_button_items`]
-| Owing to the changes in the menus and removal of the `context` property, `insert_button_items` is not required in TinyMCE 5.0. Refer to the link:{{site.baseurl}}/migration-from-4x/#removedsettings[Migration guide] for a workaround.
+| Owing to the changes in the menus and removal of the `context` property, `insert_button_items` is not required in TinyMCE 5.0. Refer to the link:{baseurl}/migration-from-4x/#removedsettings[Migration guide] for a workaround.
 |===
 
 === Removed themes
 
-* link:{{site.baseurl}}/migration-from-4x/#inlite[Inlite]
-* link:{{site.baseurl}}/migration-from-4x/#modern[Modern]
+* link:{baseurl}/migration-from-4x/#inlite[Inlite]
+* link:{baseurl}/migration-from-4x/#modern[Modern]
 
 === Removed events
 
@@ -34,13 +34,13 @@ https://www.tiny.cloud/docs-4x/demo/custom-toolbar-listbox/[Listbox] is no longe
 
 The following plugins from TinyMCE 4.x do not require height or width options to be specified in TinyMCE 5.0:
 
-* link:{{site.baseurl}}/plugins/opensource/code/[Code]
-* link:{{site.baseurl}}/plugins/opensource/codesample/[Codesample]
-* link:{{site.baseurl}}/plugins/opensource/preview/[Preview]
-* link:{{site.baseurl}}/plugins/opensource/template/[Template]
+* link:{baseurl}/plugins/opensource/code/[Code]
+* link:{baseurl}/plugins/opensource/codesample/[Codesample]
+* link:{baseurl}/plugins/opensource/preview/[Preview]
+* link:{baseurl}/plugins/opensource/template/[Template]
 
-Refer to the link:{{site.baseurl}}/migration-from-4x/[Migration Guide], for more information.
+Refer to the link:{baseurl}/migration-from-4x/[Migration Guide], for more information.
 
 === Other removed component configuration settings
 
-Some UI configurations in TinyMCE 5.0 have changed due to an updated UI engine. Please see this link:{{site.baseurl}}/migration-from-4x/#otherremovedcomponentconfigurationsettings[section] of the Migration Guide for more information.
+Some UI configurations in TinyMCE 5.0 have changed due to an updated UI engine. Please see this link:{baseurl}/migration-from-4x/#otherremovedcomponentconfigurationsettings[section] of the Migration Guide for more information.

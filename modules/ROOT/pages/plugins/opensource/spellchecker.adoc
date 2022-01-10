@@ -4,14 +4,14 @@
 :keywords: spellchecker spellchecker_callback spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_wordchar_pattern
 :title_nav: Spell Checker
 
-{% assign pluginname = "Spell Checker" %}
-{% assign plugincode = "spellchecker" %}
+:pluginname: Spell Checker
+:plugincode: spellchecker
 
-{% include DEPRECATED/spellchecker.md %}
+include::partial$DEPRECATED/spellchecker.adoc[]
 
-NOTE: The Spell Checker plugin is self-hosted _only_. The Spell Checker Pro plugin is provided for some {{site.cloudname}} plans. For information on the Spell Checker Pro plugin, see: link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+NOTE: The Spell Checker plugin is self-hosted _only_. The Spell Checker Pro plugin is provided for some {cloudname} plans. For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
 
-This plugin enables {{site.productname}}'s spellcheck functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.
+This plugin enables {productname}'s spellcheck functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.
 
 == Basic setup
 
@@ -27,7 +27,7 @@ tinymce.init({
 
 == Options
 
-These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with {{site.productname}} please link:{{ site.baseurl }}/general-configuration-guide/spell-checking/[refer to this section] in the General Configuration Guide.
+These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with {productname} please link:{baseurl}/general-configuration-guide/spell-checking/[refer to this section] in the General Configuration Guide.
 
 === `spellchecker_callback`
 
@@ -136,7 +136,7 @@ tinymce.init({
 
 === `spellchecker_rpc_url`
 
-This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` URL provided by the {{site.productname}} `spellchecker` packages or a URL to a page that you have in your system. The URL is *relative* to the `spellchecker` plugin.
+This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` URL provided by the {productname} `spellchecker` packages or a URL to a page that you have in your system. The URL is *relative* to the `spellchecker` plugin.
 
 *Type:* `String`
 
@@ -208,12 +208,12 @@ tinymce.init({
 });
 +`
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Spell Checker plugin provides the following JavaScript command.
 
-{% include commands/spellchecker-cmds.md %}
+include::partial$commands/spellchecker-cmds.adoc[]

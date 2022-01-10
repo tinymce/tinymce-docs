@@ -3,22 +3,22 @@
 :description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
 :keywords: tinymce cloud script textarea apiKey
 
-{{site.cloudname}} is the easiest way to integrate {{site.productname}} and upgrade to premium plugins.
+{cloudname} is the easiest way to integrate {productname} and upgrade to premium plugins.
 
-{{site.cloudname}} can be used without an API key. Refer to the link:{{site.baseurl}}/general-configuration-guide[Introduction & getting started] guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
+{cloudname} can be used without an API key. Refer to the link:{baseurl}/general-configuration-guide[Introduction & getting started] guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All {{site.cloudname}} accounts include a free, pre-configured {{site.cloudname}} image proxy service. This setup uses the link:{{site.baseurl}}/plugins/opensource/imagetools/[Image tools] plugin.
+All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the link:{baseurl}/plugins/opensource/imagetools/[Image tools] plugin.
 
 == Integrating TinyMCE for the first time
 
 === Step 1: Insert the Tiny Cloud script tag into the webpage
 
-Insert the {{site.productname}} editor code into the application to load {{site.productname}} for the first time. The code inserting is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
+Insert the {productname} editor code into the application to load {productname} for the first time. The code inserting is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
 The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page. Be sure to substitute 'no-api-key' with your api key.
 
 `html
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 `
 
 |===
@@ -30,49 +30,49 @@ The following example adds a script tag into the application that inserts the co
 
 | 2
 | origin=
-| A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the {{site.productname}} editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting {{site.cloudname}} resources.
+| A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the {productname} editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting {cloudname} resources.
 |===
 
-image::{{ site.baseurl }}/images/scripttag.png[Script Tag Description]
+image::{baseurl}/images/scripttag.png[Script Tag Description]
 
 +++<a class="anchor" id="referer-troubleshooting">++++++</a>+++
 
 ____
-IMPORTANT: {{site.cloudname}} verifies the domain {{site.productname}} is loading from by checking the *Referer* header in the network request. Sometimes the domains in the *Referer* header does not match with the URL in the browser's address bar.
+IMPORTANT: {cloudname} verifies the domain {productname} is loading from by checking the *Referer* header in the network request. Sometimes the domains in the *Referer* header does not match with the URL in the browser's address bar.
 
-To check the *Referer* header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {{site.productname}} with your API key, and click on the *Headers* tab.  In the section called *Request Headers* there should be a field for *Referer*. If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's *Refer* header settings.
+To check the *Referer* header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {productname} with your API key, and click on the *Headers* tab.  In the section called *Request Headers* there should be a field for *Referer*. If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's *Refer* header settings.
 ____
 
 === Step 2: Load, customize and interact with TinyMCE
 
-There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on {{site.cloudname}}. A range of link:{{ site.baseurl }}/demo/basic-example/[simple examples] are available. Refer to the link:{{ site.baseurl }}/quick-start[Quick start] section for more information.
+There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on {cloudname}. A range of link:{baseurl}/demo/basic-example/[simple examples] are available. Refer to the link:{baseurl}/quick-start[Quick start] section for more information.
 
 === Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 
-Extend the link:{{ site.baseurl }}/configure/[{{site.productname}} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the link:{baseurl}/configure/[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* link:{{site.baseurl}}/plugins/premium/mentions/[Mentions]
-* link:{{ site.baseurl }}/plugins/premium/tinydrive/[{{site.cloudfilemanager}}]
-* link:{{site.baseurl}}/plugins/premium/comments/[Comments]
-* link:{{site.baseurl}}/plugins/premium/pageembed/[Page Embed]
-* link:{{site.baseurl}}/plugins/premium/permanentpen/[Permanent Pen]
-* link:{{site.baseurl}}/plugins/premium/formatpainter/[Format Painter]
-* link:{{site.baseurl}}/plugins/premium/powerpaste/[PowerPaste]
-* link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro]
+* link:{baseurl}/plugins/premium/mentions/[Mentions]
+* link:{baseurl}/plugins/premium/tinydrive/[{cloudfilemanager}]
+* link:{baseurl}/plugins/premium/comments/[Comments]
+* link:{baseurl}/plugins/premium/pageembed/[Page Embed]
+* link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen]
+* link:{baseurl}/plugins/premium/formatpainter/[Format Painter]
+* link:{baseurl}/plugins/premium/powerpaste/[PowerPaste]
+* link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{{ site.baseurl }}/cloud-deployment-guide/[{{site.cloudname}}].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/[{cloudname}].
 
-* link:{{site.baseurl}}/plugins/opensource/imagetools/[Image Tools (with configured image proxy)]
+* link:{baseurl}/plugins/opensource/imagetools/[Image Tools (with configured image proxy)]
 
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* link:{{site.baseurl}}/plugins/premium/moxiemanager/[Moxie Manager]
-* link:{{site.baseurl}}/plugins/premium/a11ychecker/[Accessibility Checker]
-* link:{{site.baseurl}}/plugins/premium/advcode/[Advanced Code Editor]
-* link:{{site.baseurl}}/plugins/premium/mediaembed/[Enhanced Media Embed]
-* link:{{site.baseurl}}/plugins/premium/linkchecker/[Link Checker]
+* link:{baseurl}/plugins/premium/moxiemanager/[Moxie Manager]
+* link:{baseurl}/plugins/premium/a11ychecker/[Accessibility Checker]
+* link:{baseurl}/plugins/premium/advcode/[Advanced Code Editor]
+* link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed]
+* link:{baseurl}/plugins/premium/linkchecker/[Link Checker]
 
-NOTE: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
+NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
 === Step 4: Forward proxy configuration
 
@@ -88,51 +88,51 @@ Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while reque
 
 === Step 5: Specifying a translation
 
-To change the user interface language with a language pack, use the link:{{ site.baseurl }}/configure/localization/#language[language configuration option].
+To change the user interface language with a language pack, use the link:{baseurl}/configure/localization/#language[language configuration option].
 
-Alternatively, link:{{site.gettiny}}/language-packages/[download a language pack] to enable a language other than English (US). link:{{ site.baseurl }}/configure/localization/#language_url[Specify its location] with the `language_url` configuration option.
+Alternatively, link:{gettiny}/language-packages/[download a language pack] to enable a language other than English (US). link:{baseurl}/configure/localization/#language_url[Specify its location] with the `language_url` configuration option.
 
 == Migrating from a self-hosted environment to Tiny Cloud
 
 === Step 1: Replace existing reference to tinymce.min.js
 
-Migrating from a self-hosted environment to {{site.cloudname}} is easy. Remove the existing script tag that loads {{site.productname}}`'s JavaScript.
+Migrating from a self-hosted environment to {cloudname} is easy. Remove the existing script tag that loads {productname}`'s JavaScript.
 
 NOTE: The script tag typically references `tinymce.min.js` hosted within the application or available at a legacy CDN.
 
 Replace the script tag with the following:
 
 `html
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 `
 
 === Step 2: Update custom plugin paths
 
-Reference link:{{ site.baseurl }}/configure/integration-and-setup/#external_plugins[external_plugins] to ensure custom plugins or modified plugins continue to function in the {{site.cloudname}} deployment.
+Reference link:{baseurl}/configure/integration-and-setup/#external_plugins[external_plugins] to ensure custom plugins or modified plugins continue to function in the {cloudname} deployment.
 
-WARNING: Do not use the regular link:{{ site.baseurl }}/general-configuration-guide/work-with-plugins/[plugins] configuration element.
+WARNING: Do not use the regular link:{baseurl}/general-configuration-guide/work-with-plugins/[plugins] configuration element.
 
 === Step 3: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the link:{{ site.baseurl }}/configure/[{{site.productname}} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the link:{baseurl}/configure/[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* link:{{site.baseurl}}/plugins/premium/mentions/[Mentions]
-* link:{{ site.baseurl }}/plugins/premium/tinydrive/[{{site.cloudfilemanager}}]
-* link:{{site.baseurl}}/plugins/premium/comments/[Comments]
-* link:{{site.baseurl}}/plugins/premium/pageembed/[Page Embed]
-* link:{{site.baseurl}}/plugins/premium/permanentpen/[Permanent Pen]
-* link:{{site.baseurl}}/plugins/premium/formatpainter/[Format Painter]
-* link:{{site.baseurl}}/plugins/premium/powerpaste/[Powerpaste]
-* link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro]
+* link:{baseurl}/plugins/premium/mentions/[Mentions]
+* link:{baseurl}/plugins/premium/tinydrive/[{cloudfilemanager}]
+* link:{baseurl}/plugins/premium/comments/[Comments]
+* link:{baseurl}/plugins/premium/pageembed/[Page Embed]
+* link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen]
+* link:{baseurl}/plugins/premium/formatpainter/[Format Painter]
+* link:{baseurl}/plugins/premium/powerpaste/[Powerpaste]
+* link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{{ site.baseurl }}/cloud-deployment-guide/[{{site.cloudname}}].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/[{cloudname}].
 
-* link:{{site.baseurl}}/plugins/opensource/imagetools/[Image tools (with configured image proxy)]
+* link:{baseurl}/plugins/opensource/imagetools/[Image tools (with configured image proxy)]
 
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* link:{{site.baseurl}}/plugins/premium/moxiemanager/[Moxie Manager]
-* link:{{site.baseurl}}/plugins/premium/a11ychecker/[Accessibility Checker]
-* link:{{site.baseurl}}/plugins/premium/advcode/[Advanced Code Editor]
-* link:{{site.baseurl}}/plugins/premium/mediaembed/[Enhanced Media Embed]
-* link:{{site.baseurl}}/plugins/premium/linkchecker/[Link Checker]
+* link:{baseurl}/plugins/premium/moxiemanager/[Moxie Manager]
+* link:{baseurl}/plugins/premium/a11ychecker/[Accessibility Checker]
+* link:{baseurl}/plugins/premium/advcode/[Advanced Code Editor]
+* link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed]
+* link:{baseurl}/plugins/premium/linkchecker/[Link Checker]

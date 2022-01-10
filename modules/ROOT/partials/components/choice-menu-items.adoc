@@ -1,6 +1,6 @@
 === Choice menu items
 
-Choice menu items are a special type of menu item used for split toolbar button menu items. For information on split buttons, see: link:{{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton[Split toolbar buttons].
+Choice menu items are a special type of menu item used for split toolbar button menu items. For information on split buttons, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[Split toolbar buttons].
 
 ==== Config options
 
@@ -20,7 +20,7 @@ Choice menu items are a special type of menu item used for split toolbar button 
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}}
+| include::partial$misc/predefinedIconsOnly.adoc[]
 
 | disabled
 | boolean
@@ -30,9 +30,9 @@ Choice menu items are a special type of menu item used for split toolbar button 
 | shortcut
 | string
 | optional
-| Text to display in the shortcut label. To register a shortcut, see: link:{{site.baseurl}}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
+| Text to display in the shortcut label. To register a shortcut, see: link:{baseurl}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
 |===
 
-NOTE: The `icon` option for choice menu items was added in {{site.productname}} 5.3.
+NOTE: The `icon` option for choice menu items was added in {productname} 5.3.
 
-For an example of how choice menu items are used in split toolbar buttons, see: link:{{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbuttonexampleandexplanation[Split button example and explanation].
+For an example of how choice menu items are used in split toolbar buttons, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbuttonexampleandexplanation[Split button example and explanation].

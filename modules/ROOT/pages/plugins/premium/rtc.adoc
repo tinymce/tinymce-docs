@@ -3,11 +3,11 @@
 :keywords: rtc
 :title_nav: Real-time Collaboration
 
-{% assign pluginname = "Real-time Collaboration (RTC)" %}
-{% assign plugincode = "rtc" %}
+:pluginname: Real-time Collaboration (RTC)
+:plugincode: rtc
 
-{{site.premiumplugin}}
+include::partial$misc/premiumplugin.adoc[]
 
-{% include rtc/rtc-description.md %}
+include::partial$rtc/rtc-description.adoc[]
 
-For information on the Real-time Collaboration plugin, see link:{{site.baseurl}}/rtc/[Real-time Collaboration (RTC)].
+For information on the Real-time Collaboration plugin, see link:{baseurl}/rtc/[Real-time Collaboration (RTC)].

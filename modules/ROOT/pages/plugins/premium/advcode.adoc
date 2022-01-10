@@ -4,11 +4,11 @@
 :keywords: code advcode codemirror
 :title_nav: Advanced Code Editor
 
-{% assign pluginname = "Advanced Code Editor" %}
-{% assign plugincode = "advcode" %}
-{{site.premiumplugin}}
+:pluginname: Advanced Code Editor
+:plugincode: advcode
+include::partial$misc/premiumplugin.adoc[]
 
-This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{{ site.baseurl }}/enterprise/advcode/[code editor] than the default textarea.
+This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{baseurl}/enterprise/advcode/[code editor] than the default textarea.
 
 If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code (`code`) plugin.
 
@@ -24,18 +24,18 @@ tinymce.init({
 
 == The difference between the Code and Advanced Code Editor plugins
 
-{% include live-demo.html id="advcode" %}
+liveDemo::advcode[]
 
-{% include misc/advcode-shortcuts.md %}
+include::partial$misc/advcode-shortcuts.adoc[]
 
-{% assign altplugincode = "code" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:altplugincode: code
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign altplugincode = "code" %}
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+:altplugincode: code
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Advanced Code plugin provides the following JavaScript command.
 
-{% include commands/code-cmds.md %}
+include::partial$commands/code-cmds.adoc[]

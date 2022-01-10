@@ -6,7 +6,7 @@ This option controls how content pasted from Microsoft Word is filtered.
 
 *Default Value:* `prompt`
 
-{% include plugins/powerpaste_import_types.md %}
+include::partial$plugins/powerpaste_import_types.adoc[]
 
 NOTE: When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 

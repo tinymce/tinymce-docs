@@ -9,15 +9,15 @@ The context menu supports both individual menu items and dynamic context menu se
 
 == Interactive example
 
-{% include live-demo.html id="context-menu" %}
+liveDemo::context-menu[]
 
 == Options
 
-{% include configuration/contextmenu.md %}
+include::partial$configuration/contextmenu.adoc[]
 
-{% include configuration/contextmenu_never_use_native.md %}
+include::partial$configuration/contextmenu_never_use_native.adoc[]
 
-{% include misc/available-context-menu-sections.md %}
+include::partial$misc/available-context-menu-sections.adoc[]
 
 == Registering context menu sections
 
@@ -88,4 +88,4 @@ tinymce.init({
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 
-{% include live-demo.html id="contextmenu-section" height="600" tab="js" %}
+liveDemo::contextmenu-section[height="600" tab="js" ]

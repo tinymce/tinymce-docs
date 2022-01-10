@@ -12,9 +12,9 @@ The ability to reuse existing formatting saves the user time and ensures consist
 
 == Try our Format Painter plugin demo
 
-{% include live-demo.html id="format-painter" %}
+liveDemo::format-painter[]
 
-{% assign pluginname = 'Format Painter' %}
-{% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'formatpainter' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Format Painter
+:pluginminimumplan: tiertwo
+:plugindocspage: formatpainter
+include::partial$misc/purchase-premium-plugins.adoc[]

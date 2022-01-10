@@ -1,14 +1,14 @@
 NOTE: Table row and table column cut, copy, and paste commands work with
-{{site.productname}}'s internal table clipboard, not the user's system clipboard.
+{productname}'s internal table clipboard, not the user's system clipboard.
 
 |===
 | Command | Description
 
 | mceTableSizingMode
-| When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: link:{{site.baseurl}}/plugins/opensource/table/#table_sizing_mode[Table plugin - `table_sizing_mode`]. {{site.requires_5_4v}}
+| When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: link:{baseurl}/plugins/opensource/table/#table_sizing_mode[Table plugin - `table_sizing_mode`]. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableApplyCellStyle
-| Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ 'background-color': '' }`. {{site.requires_5_4v}}
+| Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ 'background-color': '' }`. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableSplitCells
 | Splits the current merged table cell.
@@ -35,40 +35,40 @@ NOTE: Table row and table column cut, copy, and paste commands work with
 | Deletes the current row.
 
 | mceTableCutRow
-| Cuts the current row to the {{site.productname}} clipboard.
+| Cuts the current row to the {productname} clipboard.
 
 | mceTableCutCol
-| Cuts the current column to the {{site.productname}} clipboard. {{site.requires_5_4v}}
+| Cuts the current column to the {productname} clipboard. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableCopyRow
-| Copies the current row to the {{site.productname}} clipboard.
+| Copies the current row to the {productname} clipboard.
 
 | mceTableCopyCol
-| Copies the current column to the {{site.productname}} clipboard. {{site.requires_5_4v}}
+| Copies the current column to the {productname} clipboard. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTablePasteRowBefore
-| Paste the {{site.productname}} clipboard row before the current row.
+| Paste the {productname} clipboard row before the current row.
 
 | mceTablePasteRowAfter
-| Paste the {{site.productname}} clipboard row after the current row.
+| Paste the {productname} clipboard row after the current row.
 
 | mceTablePasteColBefore
-| Paste the {{site.productname}} clipboard column before the current row. {{site.requires_5_4v}}
+| Paste the {productname} clipboard column before the current row. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTablePasteColAfter
-| Paste the {{site.productname}} clipboard column after the current row. {{site.requires_5_4v}}
+| Paste the {productname} clipboard column after the current row. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableDelete
 | Deletes the current table.
 
 | mceTableCellToggleClass
-| Adds a class to all selected cells that do not have it, or removes the class if all of them have it. {{site.requires_5_9v}}
+| Adds a class to all selected cells that do not have it, or removes the class if all of them have it. include::partial$misc/requires_5_9v.adoc[]
 
 | mceTableToggleClass
-| Adds a class to the selected table, or removes the class if it already exists. {{site.requires_5_9v}}
+| Adds a class to the selected table, or removes the class if it already exists. include::partial$misc/requires_5_9v.adoc[]
 
 | mceTableToggleCaption
-| Adds a caption to the selected table, or removes the caption if it already exists. {{site.requires_5_9v}}.
+| Adds a caption to the selected table, or removes the caption if it already exists. include::partial$misc/requires_5_9v.adoc[].
 
 | mceInsertTable
 | Opens the insert/edit table dialog or inserts a table without using a dialog if additional arguments are provided (see examples below).
@@ -83,13 +83,13 @@ NOTE: Table row and table column cut, copy, and paste commands work with
 | Opens the table cell properties dialog.
 
 | mceTableRowType
-| Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the link:{{site.baseurl}}/plugins/opensource/table/#table_header_type[`table_header_type` option]. {{site.requires_5_4v}}
+| Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the link:{baseurl}/plugins/opensource/table/#table_header_type[`table_header_type` option]. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableColType
-| Changes all cells in the current column or columns to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}}
+| Changes all cells in the current column or columns to the specified type, either: `'td'` or `'th'`. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableCellType
-| Changes the current cell or cells to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}}
+| Changes the current cell or cells to the specified type, either: `'td'` or `'th'`. include::partial$misc/requires_5_4v.adoc[]
 |===
 
 *Examples*

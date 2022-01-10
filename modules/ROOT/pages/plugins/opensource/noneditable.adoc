@@ -4,7 +4,7 @@
 :title_nav: Noneditable
 
 ____
-The `noneditable` plugin has been rewritten from scratch to use stability improvements to the {{site.productname}} core. It is now more reliable and has fewer browser-specific quirks.
+The `noneditable` plugin has been rewritten from scratch to use stability improvements to the {productname} core. It is now more reliable and has fewer browser-specific quirks.
 ____
 
 This plugin enables you to prevent users from being able to edit content within elements assigned the `mceNonEditable` class.
@@ -40,11 +40,11 @@ Contents
 
 These settings affect the execution of the `noneditable` plugin. These settings help determine which areas of the editor's editable area will remain editable and which will be converted to non-editable status.
 
-{% include configuration/noneditable_editable_class.md %}
+include::partial$configuration/noneditable_editable_class.adoc[]
 
-{% include configuration/noneditable_noneditable_class.md %}
+include::partial$configuration/noneditable_noneditable_class.adoc[]
 
-{% include configuration/noneditable_regexp.md %}
+include::partial$configuration/noneditable_regexp.adoc[]
 
 == Making Content Non-editable
 

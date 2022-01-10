@@ -110,27 +110,27 @@ This is a list of available keyboard shortcuts within the editor body.
 | Open the help dialog
 | Alt+0
 | Option+0
-| link:{{site.baseurl}}/plugins/opensource/help/[help]
+| link:{baseurl}/plugins/opensource/help/[help]
 
 | Insert link
 | Ctrl+K
 | Command+K
-| link:{{site.baseurl}}/plugins/opensource/link/[link]
+| link:{baseurl}/plugins/opensource/link/[link]
 
 | Toggle Fullscreen
 | Ctrl+Shift+F
 | Command+Shift+F
-| link:{{site.baseurl}}/plugins/opensource/fullscreen/[fullscreen]
+| link:{baseurl}/plugins/opensource/fullscreen/[fullscreen]
 
 | Save
 | Ctrl+S
 | Command+S
-| link:{{site.baseurl}}/plugins/opensource/save/[save]
+| link:{baseurl}/plugins/opensource/save/[save]
 
 | Find
 | Ctrl+F
 | Command+F
-| link:{{site.baseurl}}/plugins/opensource/searchreplace/[searchreplace]
+| link:{baseurl}/plugins/opensource/searchreplace/[searchreplace]
 |===
 
 == Accessibility keyboard shortcuts
@@ -203,27 +203,27 @@ This is a list of available keyboard shortcuts within the editor user interface.
 
 NOTE: Browsers and Screen Readers provide additional shortcuts within the editor context.
 
-{% include misc/advcode-shortcuts.md %}
+include::partial$misc/advcode-shortcuts.adoc[]
 
 == Add custom shortcuts to TinyMCE
 
-IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts with an existing {{site.productname}} or browser shortcut will override the existing shortcut.
+IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts with an existing {productname} or browser shortcut will override the existing shortcut.
 
-To add a custom keyboard shortcut to {{site.productname}}, use either:
+To add a custom keyboard shortcut to {productname}, use either:
 
-* link:{{site.baseurl}}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
-* link:{{site.baseurl}}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
+* link:{baseurl}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
+* link:{baseurl}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
 
-= {% include misc/shortcut-os-mappings.md %}
+= include::partial$misc/shortcut-os-mappings.adoc[]
 
 [discrete]
 === Example: Custom keyboard shortcut
 
-{% include live-demo.html id="custom-shortcut" tab="js" %}
+liveDemo::custom-shortcut[tab="js" ]
 
 [discrete]
 === Example: Adding a custom shortcut for a menu item
 
 When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `shortcut` configuration option when creating the menu item.
 
-{% include live-demo.html id="custom-shortcut-2" tab="js" %}
+liveDemo::custom-shortcut-2[tab="js" ]

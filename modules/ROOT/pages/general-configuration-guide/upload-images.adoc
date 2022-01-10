@@ -4,13 +4,13 @@
 :keywords: uploader uploadImages image handler asynchronous async paste_data_images image cors
 :title_nav: Image uploads
 
-{{site.productname}} uploads edited images with the image uploader. This complements {{site.productname}}'s image editing functionality.
+{productname} uploads edited images with the image uploader. This complements {productname}'s image editing functionality.
 
-Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the link:{{site.baseurl}}/plugins/opensource/paste/#paste_data_images[`paste_data_images`] configuration property, or using the {{site.companyname}} link:{{site.baseurl}}/plugins/premium/powerpaste/[*PowerPaste* plugin].
+Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the link:{baseurl}/plugins/opensource/paste/#paste_data_images[`paste_data_images`] configuration property, or using the {companyname} link:{baseurl}/plugins/premium/powerpaste/[*PowerPaste* plugin].
 
-{{site.productname}} automatically updates the `<img>` src attribute with the new path to the remote image.
+{productname} automatically updates the `<img>` src attribute with the new path to the remote image.
 
-Local images are uploaded to {{site.productname}} using the `editor.uploadImages()` function.  This functionality makes it possible for users to save their content _before_ all images have completed uploading. If this occurs and no server path to the remote image is available, the images are saved as `Base64`.
+Local images are uploaded to {productname} using the `editor.uploadImages()` function.  This functionality makes it possible for users to save their content _before_ all images have completed uploading. If this occurs and no server path to the remote image is available, the images are saved as `Base64`.
 
 NOTE: Execute the `editor.uploadImages()` function _before_ submitting the editor contents to the server to avoid storing the images as Base64. Use a success callback to execute code once all the images are uploaded. This success callback can save the editor's content to the server through a `POST`.
 
@@ -34,7 +34,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 `
 
-{{site.svgsNotSupported}}
+include::partial$misc/svgsNotSupported.adoc[]
 
 == Image Uploader requirements
 
@@ -44,7 +44,7 @@ A server-side upload handler script uploads local images to a remote server. The
 * Store images appropriately
 * Return a JSON object containing the image's upload location
 
-An example PHP upload handler implementation is available link:{{ site.baseurl }}/advanced/php-upload-handler/[here].
+An example PHP upload handler implementation is available link:{baseurl}/advanced/php-upload-handler/[here].
 
 Images are sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` must "store" the image in the application. Some examples include:
 
@@ -83,17 +83,17 @@ Optional:
 * <<images_upload_credentials,`images_upload_credentials`>>
 * <<images_reuse_filename,`images_reuse_filename`>>
 
-{% include configuration/images_uploads_url.md %}
+include::partial$configuration/images_uploads_url.adoc[]
 
-{% include configuration/images_upload_handler.md %}
+include::partial$configuration/images_upload_handler.adoc[]
 
-{% include configuration/images_upload_base_path.md %}
+include::partial$configuration/images_upload_base_path.adoc[]
 
-{% include configuration/images_upload_credentials.md %}
+include::partial$configuration/images_upload_credentials.adoc[]
 
-{% include configuration/images_upload_reuse_filename.md %}
+include::partial$configuration/images_upload_reuse_filename.adoc[]
 
-{% include configuration/images_dataimg_filter.md %}
+include::partial$configuration/images_dataimg_filter.adoc[]
 
 == CORS considerations
 
@@ -109,7 +109,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers print messages to the JavaScript console if there is a CORS error.
 
-The link:{{ site.baseurl }}/advanced/php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
+The link:{baseurl}/advanced/php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
 
 === Further reading on CORS
 

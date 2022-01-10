@@ -18,61 +18,61 @@ Real-time Collaboration is currently not supported on mobile devices.
 
 == TinyMCE features (plugins) support when using RTC
 
-The Real-time Collaboration (RTC) plugin supports a subset of the features that {{site.productname}} provides.
+The Real-time Collaboration (RTC) plugin supports a subset of the features that {productname} provides.
 
 WARNING: Enabling plugins not shown here is not supported and may lead to unexpected behavior.
 
 The following plugins are currently supported:
 
-* link:{{site.baseurl}}/plugins/opensource/advlist/[Advanced List (`advlist`)]
-* link:{{site.baseurl}}/plugins/opensource/autoresize/[Autoresize (`autoresize`)]
-* link:{{site.baseurl}}/plugins/opensource/charmap/[Character Map (`charmap`)]
-* link:{{site.baseurl}}/plugins/opensource/emoticons/[Emoticons (`emoticons`)]
-* link:{{site.baseurl}}/plugins/opensource/help/[Help (`help`)]
-* link:{{site.baseurl}}/plugins/opensource/hr/[Horizontal Rule (`hr`)]
-* link:{{site.baseurl}}/plugins/opensource/image/[Image (`image`)]
+* link:{baseurl}/plugins/opensource/advlist/[Advanced List (`advlist`)]
+* link:{baseurl}/plugins/opensource/autoresize/[Autoresize (`autoresize`)]
+* link:{baseurl}/plugins/opensource/charmap/[Character Map (`charmap`)]
+* link:{baseurl}/plugins/opensource/emoticons/[Emoticons (`emoticons`)]
+* link:{baseurl}/plugins/opensource/help/[Help (`help`)]
+* link:{baseurl}/plugins/opensource/hr/[Horizontal Rule (`hr`)]
+* link:{baseurl}/plugins/opensource/image/[Image (`image`)]
  ** Captioned images are not yet supported.
- ** The link:{{site.baseurl}}/plugins/opensource/image/#image_caption[`image_caption`] option is not supported.
-* link:{{site.baseurl}}/plugins/opensource/insertdatetime/[Insert Date/Time (`insertdatetime`)]
-* link:{{site.baseurl}}/plugins/opensource/link/[Link (`link`)]
- ** The link:{{site.baseurl}}/plugins/opensource/link/#rel_list[`rel_list`] option is not supported.
-* link:{{site.baseurl}}/plugins/opensource/lists/[Lists (`lists`)]
-* link:{{site.baseurl}}/plugins/premium/moxiemanager/[MoxieManager (`moxiemanager`)]
-* link:{{site.baseurl}}/plugins/premium/powerpaste/[PowerPaste (`powerpaste`)]
-* link:{{site.baseurl}}/plugins/opensource/print/[Print (`print`)]
-* link:{{site.baseurl}}/plugins/opensource/save/[Save (`save`)]
-* link:{{site.baseurl}}/plugins/opensource/tabfocus/[Tab Focus (`tabfocus`)]
-* link:{{site.baseurl}}/plugins/premium/tinydrive/[Tiny Drive (`tinydrive`)]
-* link:{{site.baseurl}}/plugins/opensource/visualblocks/[Visual Blocks (`visualblocks`)]
-* link:{{site.baseurl}}/plugins/opensource/wordcount/[Word Count (`wordcount`)]
+ ** The link:{baseurl}/plugins/opensource/image/#image_caption[`image_caption`] option is not supported.
+* link:{baseurl}/plugins/opensource/insertdatetime/[Insert Date/Time (`insertdatetime`)]
+* link:{baseurl}/plugins/opensource/link/[Link (`link`)]
+ ** The link:{baseurl}/plugins/opensource/link/#rel_list[`rel_list`] option is not supported.
+* link:{baseurl}/plugins/opensource/lists/[Lists (`lists`)]
+* link:{baseurl}/plugins/premium/moxiemanager/[MoxieManager (`moxiemanager`)]
+* link:{baseurl}/plugins/premium/powerpaste/[PowerPaste (`powerpaste`)]
+* link:{baseurl}/plugins/opensource/print/[Print (`print`)]
+* link:{baseurl}/plugins/opensource/save/[Save (`save`)]
+* link:{baseurl}/plugins/opensource/tabfocus/[Tab Focus (`tabfocus`)]
+* link:{baseurl}/plugins/premium/tinydrive/[Tiny Drive (`tinydrive`)]
+* link:{baseurl}/plugins/opensource/visualblocks/[Visual Blocks (`visualblocks`)]
+* link:{baseurl}/plugins/opensource/wordcount/[Word Count (`wordcount`)]
 
 == Integration considerations
 
-When planning to integrate Real-time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to link:{{site.contactpage}}[contact us] and discuss your requirements.
+When planning to integrate Real-time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to link:{contactpage}[contact us] and discuss your requirements.
 
-* Do not load content into {{site.productname}} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's no longer recognized by the plugin.
-* If content is created in an RTC session, then updated outside of an _RTC-enabled_ {{site.productname}} editor, a new document ID (`documentId`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.
-* Using the RTC plugin in hybrid mode is not supported and not recommended. Self-hosted versions of {{site.productname}} should not be used with the cloud version of the RTC plugin. The RTC plugin is dependent on the {{site.productname}} version it is released with. When using {{site.productname}} for the {{site.cloudname}}, {{site.productname}} will use the linked version of the RTC plugin.
+* Do not load content into {productname} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's no longer recognized by the plugin.
+* If content is created in an RTC session, then updated outside of an _RTC-enabled_ {productname} editor, a new document ID (`documentId`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.
+* Using the RTC plugin in hybrid mode is not supported and not recommended. Self-hosted versions of {productname} should not be used with the cloud version of the RTC plugin. The RTC plugin is dependent on the {productname} version it is released with. When using {productname} for the {cloudname}, {productname} will use the linked version of the RTC plugin.
 
 == Options that are not available when RTC is enabled
 
-* link:{{site.baseurl}}/configure/content-filtering/#allow_unsafe_link_target[`allow_unsafe_link_target`]
-* link:{{site.baseurl}}/configure/advanced-editing-behavior/#br_in_pre[`br_in_pre`]
-* link:{{site.baseurl}}/configure/content-filtering/#custom_elements[`custom_elements`]
-* link:{{site.baseurl}}/configure/advanced-editing-behavior/#end_container_on_empty_block[`end_container_on_empty_block`]
-* link:{{site.baseurl}}/configure/content-filtering/#extended_valid_elements[`extended_valid_elements`]
-* link:{{site.baseurl}}/configure/content-filtering/#forced_root_block[`forced_root_block`]
-* link:{{site.baseurl}}/configure/content-filtering/#forced_root_block_attrs[`forced_root_block_attrs`]
-* link:{{site.baseurl}}/configure/content-formatting/#format_empty_lines[`format_empty_lines`]
-* link:{{site.baseurl}}/configure/spelling/#gecko_spellcheck[`gecko_spellcheck`]
-* link:{{site.baseurl}}/plugins/opensource/image/#image_caption[`image_caption`]
-* link:{{site.baseurl}}/configure/file-image-upload/#images_dataimg_filter[`images_dataimg_filter`]
-* link:{{site.baseurl}}/configure/content-formatting/#indent_use_margin[`indent_use_margin`]
-* link:{{site.baseurl}}/configure/content-appearance/#inline_boundaries[`inline_boundaries`]
-* link:{{site.baseurl}}/configure/content-appearance/#inline_boundaries_selector[`inline_boundaries_selector`]
-* link:{{site.baseurl}}/configure/content-filtering/#keep_styles[`keep_styles`]
-* link:{{site.baseurl}}/configure/editor-appearance/#placeholder[`placeholder`]
-* link:{{site.baseurl}}/configure/content-filtering/#protect[`protect`]
-* link:{{site.baseurl}}/plugins/opensource/link/#rel_list[`rel_list`]
-* link:{{site.baseurl}}/configure/content-filtering/#valid_children[`valid_children`]
-* link:{{site.baseurl}}/configure/content-filtering/#valid_elements[`valid_elements`]
+* link:{baseurl}/configure/content-filtering/#allow_unsafe_link_target[`allow_unsafe_link_target`]
+* link:{baseurl}/configure/advanced-editing-behavior/#br_in_pre[`br_in_pre`]
+* link:{baseurl}/configure/content-filtering/#custom_elements[`custom_elements`]
+* link:{baseurl}/configure/advanced-editing-behavior/#end_container_on_empty_block[`end_container_on_empty_block`]
+* link:{baseurl}/configure/content-filtering/#extended_valid_elements[`extended_valid_elements`]
+* link:{baseurl}/configure/content-filtering/#forced_root_block[`forced_root_block`]
+* link:{baseurl}/configure/content-filtering/#forced_root_block_attrs[`forced_root_block_attrs`]
+* link:{baseurl}/configure/content-formatting/#format_empty_lines[`format_empty_lines`]
+* link:{baseurl}/configure/spelling/#gecko_spellcheck[`gecko_spellcheck`]
+* link:{baseurl}/plugins/opensource/image/#image_caption[`image_caption`]
+* link:{baseurl}/configure/file-image-upload/#images_dataimg_filter[`images_dataimg_filter`]
+* link:{baseurl}/configure/content-formatting/#indent_use_margin[`indent_use_margin`]
+* link:{baseurl}/configure/content-appearance/#inline_boundaries[`inline_boundaries`]
+* link:{baseurl}/configure/content-appearance/#inline_boundaries_selector[`inline_boundaries_selector`]
+* link:{baseurl}/configure/content-filtering/#keep_styles[`keep_styles`]
+* link:{baseurl}/configure/editor-appearance/#placeholder[`placeholder`]
+* link:{baseurl}/configure/content-filtering/#protect[`protect`]
+* link:{baseurl}/plugins/opensource/link/#rel_list[`rel_list`]
+* link:{baseurl}/configure/content-filtering/#valid_children[`valid_children`]
+* link:{baseurl}/configure/content-filtering/#valid_elements[`valid_elements`]

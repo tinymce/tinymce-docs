@@ -1,8 +1,8 @@
 === `content_langs`
 
-{{ site.requires_5_9v }} The `content_langs` option replaces the `spellchecker_select_languages` option. The value of the `spellchecker_select_languages` option, or its default, are used as a fallback for `content_langs`.
+include::partial$misc/requires_5_9v.adoc[] The `content_langs` option replaces the `spellchecker_select_languages` option. The value of the `spellchecker_select_languages` option, or its default, are used as a fallback for `content_langs`.
 
-{% include configuration/content_langs_base.md %}
+include::partial$configuration/content_langs_base.adoc[]
 
 *Type:* `Array`
 

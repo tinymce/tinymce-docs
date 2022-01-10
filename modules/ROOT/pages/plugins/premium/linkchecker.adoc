@@ -3,7 +3,7 @@
 :keywords: url urls link linkchecker_service_url linkchecker_content_css
 :title_nav: Link Checker
 
-{{site.premiumplugin}}
+include::partial$misc/premiumplugin.adoc[]
 
 The `linkchecker` plugin does what it says &ndash; validates URLs, as you type them. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
 
@@ -11,7 +11,7 @@ The Link Checker plugin relies on HTTP response status codes to determine if a l
 
 == Cloud Instructions
 
-If you are using link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features/[{{site.cloudname}}], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
+If you are using link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
 === Basic setup using Tiny Cloud
 
@@ -40,8 +40,8 @@ tinymce.init({
 
 Link Checker has the following settings.
 
-{% include configuration/linkchecker_content_css.md %}
+include::partial$configuration/linkchecker_content_css.adoc[]
 
-{% include configuration/linkchecker_preprocess.md %}
+include::partial$configuration/linkchecker_preprocess.adoc[]
 
-{% include configuration/linkchecker_service_url.md %}
+include::partial$configuration/linkchecker_service_url.adoc[]

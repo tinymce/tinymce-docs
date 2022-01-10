@@ -1,11 +1,11 @@
 == TinyMCE Web Component quick start guide
 
-The https://github.com/tinymce/tinymce-webcomponent[Official {{site.productname}} Web Component] integrates {{site.productname}} into Web Component projects.
-This procedure creates a HTML page containing a {{site.productname}} editor based on our link:{{site.baseurl}}/demo/basic-example/[Basic example].
+The https://github.com/tinymce/tinymce-webcomponent[Official {productname} Web Component] integrates {productname} into Web Component projects.
+This procedure creates a HTML page containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
 
 === Procedure
 
-To add a {{site.productname}} editor to a web page using the {{site.productname}} Web Component:
+To add a {productname} editor to a web page using the {productname} Web Component:
 
 . Add the `DOCTYPE` element to the target page, such as:
 +
@@ -23,21 +23,21 @@ The `DOCTYPE` declaration is required for the editor to function correctly.
 +
 The second `meta` element is required for the editor to function correctly on mobile devices. For information on the viewport `meta` element, see: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_basics[MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers].
 
-. Add a `script` element sourcing the {{site.productname}} Web Component (`tinymce-webcomponent.js`), such as:
+. Add a `script` element sourcing the {productname} Web Component (`tinymce-webcomponent.js`), such as:
 +
 `html
- <script src="{{site.webcomponent_url}}"></script>
+ <script src="{webcomponent_url}"></script>
 `
 +
 The `tinymce-webcomponent` can also be sourced from https://www.npmjs.com/package/@tinymce/tinymce-webcomponent[npmjs].
 
-. (optional) Add a `script` element sourcing {{site.productname}}, such as:
+. (optional) Add a `script` element sourcing {productname}, such as:
 +
 `html
  <script src="/path/to/tinymce.min.js"></script>
 `
 +
-If a `script` element sourcing {{site.productname}} is not provided, the {{site.productname}} Web Component will load {{site.productname}} from the {{site.cloudname}}. For information on the available options for sourcing {{site.productname}}, see: <<loadingtinymce,Loading {{site.productname}}>>.
+If a `script` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: <<loadingtinymce,Loading {productname}>>.
 
 . Add a `tinymce-editor` element where the editor should appear.
 +
@@ -45,13 +45,13 @@ If a `script` element sourcing {{site.productname}} is not provided, the {{site.
 +
 ```
 +
-The default {{site.productname}} editor will load at this location if the page is opened in a web browser.
+The default {productname} editor will load at this location if the page is opened in a web browser.
 
 === Example: Adding the TinyMCE Web Component to a HTML page
 
-The following example shows the {{site.productname}} Web Component in a HTML page, with:
+The following example shows the {productname} Web Component in a HTML page, with:
 
-* Various {{site.productname}} configuration options set using attributes.
-* {{site.productname}} sourced from the {{site.cloudname}}.
+* Various {productname} configuration options set using attributes.
+* {productname} sourced from the {cloudname}.
 
-{% include live-demo.html id="web-component" tab="html" %}
+liveDemo::web-component[tab="html" ]

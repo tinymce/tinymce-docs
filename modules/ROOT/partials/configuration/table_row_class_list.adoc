@@ -24,7 +24,7 @@ tinymce.init({
 
 ==== Example of a nested list of table row classes
 
-{{site.requires_5_5v}}
+include::partial$misc/requires_5_5v.adoc[]
 
 To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
 

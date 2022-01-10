@@ -1,6 +1,6 @@
 === quickbars_insert_toolbar
 
-The *quickbars_insert_toolbar* option configures the Quick Insert toolbar provided by the link:{{site.baseurl}}/plugins/opensource/quickbars[quickbars plugin]. To change the buttons on the Quick Insert toolbar, provide a space-separated string of link:{{ site.baseurl }}/advanced/available-toolbar-buttons/[toolbar button names]. The Quick Insert toolbar is intended for buttons related to inserting content, but any link:{{ site.baseurl }}/advanced/available-toolbar-buttons/[{{site.productname}} toolbar buttons] or link:{{ site.baseurl }}/ui-components/toolbarbuttons[custom toolbar buttons] are allowed.
+The *quickbars_insert_toolbar* option configures the Quick Insert toolbar provided by the link:{baseurl}/plugins/opensource/quickbars[quickbars plugin]. To change the buttons on the Quick Insert toolbar, provide a space-separated string of link:{baseurl}/advanced/available-toolbar-buttons/[toolbar button names]. The Quick Insert toolbar is intended for buttons related to inserting content, but any link:{baseurl}/advanced/available-toolbar-buttons/[{productname} toolbar buttons] or link:{baseurl}/ui-components/toolbarbuttons[custom toolbar buttons] are allowed.
 
 To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.
 

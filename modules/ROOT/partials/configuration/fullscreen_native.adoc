@@ -1,6 +1,6 @@
 == `fullscreen_native`
 
-{{ site.requires_5_5v }}
+include::partial$misc/requires_5_5v.adoc[]
 
 {% if pluginname != "fullscreen" %}
 > *Note*: The `fullscreen_native` option requires the Fullscreen plugin.
@@ -16,7 +16,7 @@ The `fullscreen_native` option allows the editor to use the browser full screen 
 
 === Example: Using `fullscreen_native`
 
-To use the browser-native full screen mode for the {{site.productname}} editor, set `fullscreen_native` to `true`. For example:
+To use the browser-native full screen mode for the {productname} editor, set `fullscreen_native` to `true`. For example:
 
 `js
 tinymce.init({

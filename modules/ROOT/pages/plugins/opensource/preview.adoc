@@ -4,8 +4,8 @@
 :keywords: view preview
 :title_nav: Preview
 
-{% assign pluginname = "Preview" %}
-{% assign plugincode = "preview" %}
+:pluginname: Preview
+:plugincode: preview
 
 This plugin adds a preview button to the toolbar. Pressing the button opens a dialog box showing the current content in a preview mode. It also adds a menu item `Preview` under the `File` and `View` menu dropdowns.
 
@@ -20,12 +20,12 @@ tinymce.init({
 });
 `
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Preview plugin provides the following JavaScript command.
 
-{% include commands/preview-cmds.md %}
+include::partial$commands/preview-cmds.adoc[]

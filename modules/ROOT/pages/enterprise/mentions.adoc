@@ -6,19 +6,19 @@ It is now possible for users to send notifications to other users using the Ment
 
 Users can communicate every day using `@username` on social networks and can expect to be able to use them when creating content too.
 
-There are two deployment options. One is with {{site.cloudname}}, the other is the more traditional Self-hosted route, requiring an additional link:{{ site.baseurl }}/enterprise/server/[server-side component] to be installed and configured.
+There are two deployment options. One is with {cloudname}, the other is the more traditional Self-hosted route, requiring an additional link:{baseurl}/enterprise/server/[server-side component] to be installed and configured.
 
-Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this link:{{site.baseurl}}/plugins/premium/mentions/#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
+Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this link:{baseurl}/plugins/premium/mentions/#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
 
 == Mentions cloud setup
 
-Mentions is available for download through link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features/[{{site.cloudname}}]. Include the `mentions` parameter in the `tinymce.init` script. Refer to the link:{{site.baseurl}}/plugins/premium/mentions/[Mentions documentation], for more information on setup and configuration.
+Mentions is available for download through link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}]. Include the `mentions` parameter in the `tinymce.init` script. Refer to the link:{baseurl}/plugins/premium/mentions/[Mentions documentation], for more information on setup and configuration.
 
 == Try our Mentions plugin demo
 
-{% include live-demo.html id="mentions" height="400" %}
+liveDemo::mentions[height="400" ]
 
-{% assign pluginname = 'Mentions' %}
-{% assign pluginminimumplan = 'enterprise' %}
-{% assign plugindocspage = 'mentions' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Mentions
+:pluginminimumplan: enterprise
+:plugindocspage: mentions
+include::partial$misc/purchase-premium-plugins.adoc[]

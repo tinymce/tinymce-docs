@@ -4,8 +4,8 @@
 :keywords: visualblocks wysiwyg hidden view visualblocks_default_state
 :title_nav: Visual Blocks
 
-{% assign pluginname = "Visual Blocks" %}
-{% assign plugincode = "visualblocks" %}
+:pluginname: Visual Blocks
+:plugincode: visualblocks
 
 This plugin allows a user to see block level elements in the editable area. It is similar to WYSIWYG hidden character functionality, but at block level. It also adds a toolbar button and a menu item `Show blocks` under the `View` menu dropdown.
 
@@ -24,14 +24,14 @@ tinymce.init({
 
 This setting affects the execution of the `visualblocks` plugin. You may specify whether blocks are visible by default here.
 
-{% include configuration/visualblocks_default_state.md %}
+include::partial$configuration/visualblocks_default_state.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Visual Blocks plugin provides the following JavaScript command.
 
-{% include commands/visualblocks-cmds.md %}
+include::partial$commands/visualblocks-cmds.adoc[]

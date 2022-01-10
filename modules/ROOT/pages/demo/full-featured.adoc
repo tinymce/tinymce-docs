@@ -6,34 +6,34 @@
 
 == Full Featured: Including Premium Plugins
 
-This example includes most of the available {{site.productname}} plugins, including plugins available on {{site.cloudname}} premium subscriptions. Please note, it includes link:{{site.plugindirectory}}[premium plugins].
+This example includes most of the available {productname} plugins, including plugins available on {cloudname} premium subscriptions. Please note, it includes link:{plugindirectory}[premium plugins].
 
-Want to try it for yourself ? link:{{site.accountsignup}}[Get started with TinyMCE now on Cloud].
+Want to try it for yourself ? link:{accountsignup}[Get started with TinyMCE now on Cloud].
 
-{% include live-demo.html id="full-featured" %}
+liveDemo::full-featured[]
 
 The following plugins are excluded from this example:
 
-* link:{{site.baseurl}}/plugins/premium/moxiemanager[MoxieManager (Premium Plugin)] -- link:{{site.baseurl}}/plugins/premium/tinydrive[*{{site.cloudfilemanager}}*] included instead.
-* link:{{site.baseurl}}/plugins/opensource/autoresize[Autoresize] -- Resizes the editor to fit the content.
-* link:{{site.baseurl}}/plugins/opensource/bbcode[BBCode] -- Changes the markup used for the content.
-* link:{{site.baseurl}}/plugins/opensource/code[Code] -- link:{{site.baseurl}}/plugins/premium/advcode[*Advanced Code Editor*] included instead.
-* link:{{site.baseurl}}/plugins/opensource/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
-* link:{{site.baseurl}}/plugins/opensource/paste[Paste] -- link:{{site.baseurl}}/plugins/premium/powerpaste[*PowerPaste*] included instead.
-* link:{{site.baseurl}}/plugins/opensource/spellchecker[Spellchecker] -- link:{{site.baseurl}}/plugins/premium/tinymcespellchecker[*Spell Checker Pro*] included instead.
-* link:{{site.baseurl}}/plugins/opensource/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
+* link:{baseurl}/plugins/premium/moxiemanager[MoxieManager (Premium Plugin)] -- link:{baseurl}/plugins/premium/tinydrive[*{cloudfilemanager}*] included instead.
+* link:{baseurl}/plugins/opensource/autoresize[Autoresize] -- Resizes the editor to fit the content.
+* link:{baseurl}/plugins/opensource/bbcode[BBCode] -- Changes the markup used for the content.
+* link:{baseurl}/plugins/opensource/code[Code] -- link:{baseurl}/plugins/premium/advcode[*Advanced Code Editor*] included instead.
+* link:{baseurl}/plugins/opensource/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
+* link:{baseurl}/plugins/opensource/paste[Paste] -- link:{baseurl}/plugins/premium/powerpaste[*PowerPaste*] included instead.
+* link:{baseurl}/plugins/opensource/spellchecker[Spellchecker] -- link:{baseurl}/plugins/premium/tinymcespellchecker[*Spell Checker Pro*] included instead.
+* link:{baseurl}/plugins/opensource/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
 
 == Full Featured: Non-Premium Plugins
 
 This example includes only non-premium plugins. These plugins are also used in the <<fullfeaturedincludingpremiumplugins,Full Featured: Including Premium Plugins Demo above>>.
 
-{% include live-demo.html id="open-source-plugins" %}
+liveDemo::open-source-plugins[]
 
 The following plugins are excluded from this example:
 
-* link:{{site.plugindirectory}}[All premium plugins].
-* link:{{site.baseurl}}/plugins/opensource/autoresize[Autoresize] -- Resizes the editor to fit the content.
-* link:{{site.baseurl}}/plugins/opensource/bbcode[BBCode] -- Changes the markup used for the content.
-* link:{{site.baseurl}}/plugins/opensource/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
-* link:{{site.baseurl}}/plugins/opensource/spellchecker[Spellchecker] -- Requires Server-Side components, see: link:{{site.baseurl}}/general-configuration-guide/spell-checking/[Check spelling in {{site.productname}}].
-* link:{{site.baseurl}}/plugins/opensource/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
+* link:{plugindirectory}[All premium plugins].
+* link:{baseurl}/plugins/opensource/autoresize[Autoresize] -- Resizes the editor to fit the content.
+* link:{baseurl}/plugins/opensource/bbcode[BBCode] -- Changes the markup used for the content.
+* link:{baseurl}/plugins/opensource/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
+* link:{baseurl}/plugins/opensource/spellchecker[Spellchecker] -- Requires Server-Side components, see: link:{baseurl}/general-configuration-guide/spell-checking/[Check spelling in {productname}].
+* link:{baseurl}/plugins/opensource/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.

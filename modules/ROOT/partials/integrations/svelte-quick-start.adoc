@@ -2,10 +2,10 @@
 
 == TinyMCE Svelte integration quick start guide
 
-The https://github.com/tinymce/tinymce-svelte[Official {{site.productname}} Svelte component] integrates {{site.productname}} into https://svelte.dev/[Svelte applications].
-This procedure creates a basic Svelte application using the https://github.com/sveltejs/template[`sveltejs/template` project] adds a {{site.productname}} editor based using the {{site.productname}} Svelte integration.
+The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications].
+This procedure creates a basic Svelte application using the https://github.com/sveltejs/template[`sveltejs/template` project] adds a {productname} editor based using the {productname} Svelte integration.
 
-For examples of the {{site.productname}} integration, visit https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
+For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 
 === Prerequisites
 
@@ -29,7 +29,7 @@ This procedure requires:
 `
 
 . Open `src/App.svelte` and add:
- ** An `import` statement for the {{site.productname}} component.
+ ** An `import` statement for the {productname} component.
  ** The `<Editor />` as a placeholder for the editor.
 
 +
@@ -55,7 +55,7 @@ This will start a local development server, accessible at \http://localhost:5000
 [discrete]
 === Next Steps
 
-* For examples of the {{site.productname}} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
+* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 * For information on customizing, see:
- ** link:{{site.baseurl}}/general-configuration-guide/basic-setup/[{{site.productname}} basic setup].
- ** link:{{site.baseurl}}/integrations/svelte/#tinymcesvelteintegrationtechnicalreference[The {{site.productname}} Svelte integration technical reference].
+ ** link:{baseurl}/general-configuration-guide/basic-setup/[{productname} basic setup].
+ ** link:{baseurl}/integrations/svelte/#tinymcesvelteintegrationtechnicalreference[The {productname} Svelte integration technical reference].

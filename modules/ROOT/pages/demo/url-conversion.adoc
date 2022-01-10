@@ -4,24 +4,24 @@
 :keywords: example demo custom url conversion absolute relative url urls
 :title_nav: URL conversion
 
-This example shows you how to setup {{site.productname}} to produce different results for its URLs in images and links. You can read more about these config options in the link:{{ site.baseurl }}/general-configuration-guide/get-support/[{{site.productname}} FAQ].
+This example shows you how to setup {productname} to produce different results for its URLs in images and links. You can read more about these config options in the link:{baseurl}/general-configuration-guide/get-support/[{productname} FAQ].
 
 == Absolute URLs on links and images
 
-{% include live-demo.html id="url-conversion-absolute-1" %}
+liveDemo::url-conversion-absolute-1[]
 
 == Absolute URLs and including domain on links and images
 
-{% include live-demo.html id="url-conversion-absolute-2" %}
+liveDemo::url-conversion-absolute-2[]
 
 == Relative URLs on links and images
 
-{% include live-demo.html id="url-conversion-relative-1" %}
+liveDemo::url-conversion-relative-1[]
 
 == Relative URLs on links and images to a specific page
 
-{% include live-demo.html id="url-conversion-relative-2" %}
+liveDemo::url-conversion-relative-2[]
 
 == No URL conversion
 
-{% include live-demo.html id="url-conversion-none" %}
+liveDemo::url-conversion-none[]

@@ -3,6 +3,6 @@
 :keywords: integration integrate laravel php composer
 :title_nav: Using Tiny Cloud
 
-{% assign productSource = "cloud" %}
+:productSource: cloud
 
-{% include integrations/laravel-quick-start.md %}
+include::partial$integrations/laravel-quick-start.adoc[]

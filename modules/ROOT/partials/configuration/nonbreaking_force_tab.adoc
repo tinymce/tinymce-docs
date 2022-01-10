@@ -1,6 +1,6 @@
 === `nonbreaking_force_tab`
 
-This option allows you to force {{site.productname}} to insert three `+&nbsp;+` entities when the user presses the keyboard `tab` key.
+This option allows you to force {productname} to insert three `+&nbsp;+` entities when the user presses the keyboard `tab` key.
 
 It's important to note that this does not change the behavior of the menu and toolbar controls, which will continue to insert a single `&nbsp` entity when `nonbreaking_force_tab` value is `true`.
 

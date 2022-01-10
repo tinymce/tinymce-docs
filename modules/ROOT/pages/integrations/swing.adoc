@@ -3,17 +3,17 @@
 :keywords: integration integrate swing
 :title_nav: Swing
 
-Users can easily configure the {{site.productname}} editor in Swing through the *{{site.productname}} for Swing* integration.
+Users can easily configure the {productname} editor in Swing through the *{productname} for Swing* integration.
 
 == Getting the TinyMCE for Swing integration
 
-To start using {{site.productname}} for Swing as your new rich text editor, the first step is to obtain a copy of the *Integration*.
+To start using {productname} for Swing as your new rich text editor, the first step is to obtain a copy of the *Integration*.
 
-Contact link:{{site.supporturl}}[{{site.supportname}}] to discuss how to get started with our latest release.
+Contact link:{supporturl}[{supportname}] to discuss how to get started with our latest release.
 
 == Get started with our TinyMCE in Swing integration
 
-To include our {{site.productname}} in Swing integration in your Java project just follow the steps below:
+To include our {productname} in Swing integration in your Java project just follow the steps below:
 
 === 1. Copy TinyMCE in Swing libraries
 
@@ -21,21 +21,21 @@ From the release `zip` file, select all the Java libraries under the `lib` folde
 
 === 2. Select a deployment and create a configuration
 
-The Swing integration allows the user to select the origin of the {{site.productname}} code: *embedded* (recommended), *cloud*, or *external*.
+The Swing integration allows the user to select the origin of the {productname} code: *embedded* (recommended), *cloud*, or *external*.
 
-* Embedded deployments use the version of {{site.productname}} prepackaged with the current release of the integration. This is guaranteed to be compatible with the integration specific plugins.
+* Embedded deployments use the version of {productname} prepackaged with the current release of the integration. This is guaranteed to be compatible with the integration specific plugins.
 +
 `java
 final Config myTinyConfiguration = Config.embedded();
 `
 
-* Cloud deployments pull {{site.productname}} from the {{site.cloudname}}. Use this option by passing your API key and link:{{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#specifyingthetinymceeditorversiondeployedfromcloud[specifying the {{site.cloudname}} version].
+* Cloud deployments pull {productname} from the {cloudname}. Use this option by passing your API key and link:{baseurl}/cloud-deployment-guide/editor-plugin-version/#specifyingthetinymceeditorversiondeployedfromcloud[specifying the {cloudname} version].
 +
 `java
-final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productmajorversion}}-stable");
+final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{productmajorversion}-stable");
 `
 
-* External deployments allow to use a local version of {{site.productname}} by giving the address of the location where {{site.productname}} is being served.
+* External deployments allow to use a local version of {productname} by giving the address of the location where {productname} is being served.
 +
 `java
 final Config myTinyConfiguration = Config.external("http://<my_server>/<path>/tinymce.min.js");
@@ -61,7 +61,7 @@ final Config myConfig = Config.embedded()
     .putProperty("images_reuse_filename", true);
 `
 
-Or by passing Javascript that returns a {{site.productname}} configuration object.
+Or by passing Javascript that returns a {productname} configuration object.
 
 *config.js*:
 `js
@@ -112,11 +112,11 @@ For more examples check the https://github.com/tinymce/tinymce-swing-codesamples
 
 == Explore other resources
 
-* https://github.com/tinymce/tinymce-swing-codesamples[GitHub repository] - Refer to this link for examples on how to use {{site.productname}} for Swing.
+* https://github.com/tinymce/tinymce-swing-codesamples[GitHub repository] - Refer to this link for examples on how to use {productname} for Swing.
 * An additional set of documentation is shipped with the integration in a `zip` file containing a library of `Javadocs` and API reference guides which help in understanding and applying the concepts. The `zip` file includes the following documents:
- ** `readme.txt` - This file has general information about {{site.productname}} for Swing integration.
- ** `license.txt` - This file has all the license details about {{site.productname}} for Swing as a commercial software.
- ** `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in {{site.productname}} for Swing integration.
- ** `change-log.md` - This file lists all user impacting and major changes for every release of {{site.productname}} for Swing integration.
+ ** `readme.txt` - This file has general information about {productname} for Swing integration.
+ ** `license.txt` - This file has all the license details about {productname} for Swing as a commercial software.
+ ** `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in {productname} for Swing integration.
+ ** `change-log.md` - This file lists all user impacting and major changes for every release of {productname} for Swing integration.
  ** `jar` files - The `jar` files that implement the integration can be found under `lib/`
  ** `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`.

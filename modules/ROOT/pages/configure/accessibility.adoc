@@ -3,6 +3,6 @@
 :description_short: Configure the accessibility of TinyMCE.
 :title_nav: Accessibility options
 
-{% include configuration/a11y_advanced_options.md %}
+include::partial$configuration/a11y_advanced_options.adoc[]
 
-{% include configuration/iframe_aria_text.md %}
+include::partial$configuration/iframe_aria_text.adoc[]

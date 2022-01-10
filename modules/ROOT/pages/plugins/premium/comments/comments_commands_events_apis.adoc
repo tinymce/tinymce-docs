@@ -3,11 +3,11 @@
 :keywords: comments commenting tinycomments
 :title_nav: Commands
 
-{% assign pluginname = "Comments" %}
-{% assign plugincode = "comments" %}
+:pluginname: Comments
+:plugincode: comments
 
 == Commands
 
 The Comments plugin provides the following JavaScript commands.
 
-{% include commands/comments-cmds.md %}
+include::partial$commands/comments-cmds.adoc[]

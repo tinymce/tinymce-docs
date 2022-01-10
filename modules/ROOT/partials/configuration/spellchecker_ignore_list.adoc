@@ -2,7 +2,7 @@
 
 This option specifies which words should be ignored by the spell checker. If an array of words is provided, the specified words will be ignored for all languages. If an object containing an array of words per language is provided, the specified words will be ignored for the specified languages.
 
-NOTE: Languages specified as keys in the `spellchecker_ignore_list` object must match the configured link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_languages[Spellchecker Languages].
+NOTE: Languages specified as keys in the `spellchecker_ignore_list` object must match the configured link:{baseurl}/plugins/premium/tinymcespellchecker/#spellchecker_languages[Spellchecker Languages].
 
 *Type:* `String[]` or `Object`
 
@@ -18,7 +18,7 @@ tinymce.init({
 
 ==== Example: Using `spellchecker_ignore_list` for specific languages
 
-{{site.requires_5_7v}}
+include::partial$misc/requires_5_7v.adoc[]
 
 `js
 tinymce.init({

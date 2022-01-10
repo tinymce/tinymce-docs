@@ -4,14 +4,14 @@
 :title_nav: Webpack
 :type: folder
 
-{% assign navigation = site.data.nav %}
+:navigation: site.data.nav
 {% for entry in navigation %}
   {% if entry.url == "advanced" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "usage-with-module-loaders" %}
         {% for subsubentry in subentry.pages %}
           {% if subsubentry.url == "webpack" %}
-            {% assign links = subsubentry.pages %}
+            :links: subsubentry.pages
           {% endif %}
         {% endfor %}
       {% endif %}

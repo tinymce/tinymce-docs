@@ -5,11 +5,11 @@
 
 == Premium support
 
-Paid premium support is available as part of link:{{site.pricingpage}}[{{site.enterpriseversion}} and {{site.cloudname}} subscriptions]. {{site.productname}} Enterprise customers can link:{{ site.baseurl }}/enterprise/support/[submit a case support request].
+Paid premium support is available as part of link:{pricingpage}[{enterpriseversion} and {cloudname} subscriptions]. {productname} Enterprise customers can link:{baseurl}/enterprise/support/[submit a case support request].
 
 == Community support
 
-Open Source Community Edition users can get free help from Stack Overflow using the link:{{site.communitysupporturl}}[`{{site.prodnamecode}}` tag].
+Open Source Community Edition users can get free help from Stack Overflow using the link:{communitysupporturl}[`{prodnamecode}` tag].
 
 == FAQ & troubleshooting
 
@@ -26,11 +26,11 @@ Some web servers do not support the mime types needed for the font file extensio
 
 === Q: Why do buttons/select boxes have the incorrect size?
 
-You are probably using an old `DOCTYPE`. As of {{site.productname}} 4, a proper HTML5 doctype is required. All web developers should use a standard rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the {{site.productname}} UI.
+You are probably using an old `DOCTYPE`. As of {productname} 4, a proper HTML5 doctype is required. All web developers should use a standard rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the {productname} UI.
 
 === Q: Is TinyMCE protected against XSS vulnerabilities?
 
-The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using {{site.productname}} one could as easily disable all JavaScript and therefore bypass {{site.productname}} filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like http://htmlpurifier.org/[HTML Purifier].
+The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using {productname} one could as easily disable all JavaScript and therefore bypass {productname} filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like http://htmlpurifier.org/[HTML Purifier].
 
 === Q: How do I convert my URLs to relative, absolute, or absolute with the domain?
 
@@ -52,11 +52,11 @@ tinymce.init({
 
 ===== Example: Relative URLs on links and images
 
-{% include live-demo.html id="url-conversion-relative-1" %}
+liveDemo::url-conversion-relative-1[]
 
 ===== Example: Relative URLs on links and images to a specific page
 
-{% include live-demo.html id="url-conversion-relative-2" %}
+liveDemo::url-conversion-relative-2[]
 
 ==== Absolute URLs
 
@@ -77,11 +77,11 @@ tinymce.init({
 
 ===== Example: Absolute URLs on links and images
 
-{% include live-demo.html id="url-conversion-absolute-1" %}
+liveDemo::url-conversion-absolute-1[]
 
 ===== Example: Absolute URLs and including domain on links and images
 
-{% include live-demo.html id="url-conversion-absolute-2" %}
+liveDemo::url-conversion-absolute-2[]
 
 ==== Domain absolute URLs
 

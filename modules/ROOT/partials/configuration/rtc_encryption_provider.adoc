@@ -1,17 +1,17 @@
 == `rtc_encryption_provider`
 
-The RTC plugin requires an encryption key for end-to-end encryption. This key is not sent to the RTC server; the {{site.productname}} RTC service cannot read the editor content. The encryption key is used by the https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto[SubtleCrypto] browser API to encrypt and decrypt the editor content in the user's browser.
+The RTC plugin requires an encryption key for end-to-end encryption. This key is not sent to the RTC server; the {productname} RTC service cannot read the editor content. The encryption key is used by the https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto[SubtleCrypto] browser API to encrypt and decrypt the editor content in the user's browser.
 
 A key is required when the client needs to:
 1. Encrypt new data in the collaboration session.
 2. Read previously written data from the collaboration session.
 
-For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: link:{{site.baseurl}}/rtc/encryption/[Real-time Collaboration (RTC) Encryption Setup].
+For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: link:{baseurl}/rtc/encryption/[Real-time Collaboration (RTC) Encryption Setup].
 
 {% if plugincode != "rtc" %}::
 
 Required plugin::
-link:{{site.baseurl}}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
+link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
 {% endif %}
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])

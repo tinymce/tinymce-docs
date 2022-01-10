@@ -4,10 +4,10 @@
 :keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_default_font_size fullpage_default_font_family fullpage_default_title fullpage_default_text_color fullpage_default_xml_pi fullpage_hide_in_source_view
 :title_nav: Full Page
 
-{% include DEPRECATED/fullpage.md %}
+include::partial$DEPRECATED/fullpage.adoc[]
 
-{% assign pluginname = "Full Page" %}
-{% assign plugincode = "fullpage" %}
+:pluginname: Full Page
+:plugincode: fullpage
 
 This plugin allows user to edit certain metadata and document properties such as `title`, `keywords`, and `description`. This is done via a dialog box which appears after pressing a control added to the toolbar. If the `code` plugin is enabled `fullpage` exposes `<head>`, `<body>` and various `meta` tags in source code view.
 
@@ -144,7 +144,7 @@ tinymce.init({
 
 === `fullpage_hide_in_source_view`
 
-This option allows you to specify whether {{site.productname}} should hide the non `body` content from source view.
+This option allows you to specify whether {productname} should hide the non `body` content from source view.
 
 *Type:* `Boolean`
 
@@ -160,12 +160,12 @@ tinymce.init({
 });
 `
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Full Page plugin provides the following JavaScript command.
 
-{% include commands/fullpage-cmds.md %}
+include::partial$commands/fullpage-cmds.adoc[]

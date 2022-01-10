@@ -3,8 +3,8 @@
 :description: Insert anchors (sometimes referred to as a bookmarks).
 :title_nav: Anchor
 
-{% assign pluginname = "Anchor" %}
-{% assign plugincode = "anchor" %}
+:pluginname: Anchor
+:plugincode: anchor
 
 This plugin adds an anchor/bookmark button to the toolbar that inserts an anchor at the editor's cursor insertion point. It also adds the menu item `anchor` under the `Insert` menu.
 
@@ -21,12 +21,12 @@ tinymce.init({
 });
 `
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Anchor plugin provides the following JavaScript command.
 
-{% include commands/anchor-cmds.md %}
+include::partial$commands/anchor-cmds.adoc[]

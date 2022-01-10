@@ -1,14 +1,14 @@
 === `table_background_color_map`
 
-{{site.requires_5_9v}}
+include::partial$misc/requires_5_9v.adoc[]
 
-This option is used to specify the default values for the table cell background color picker, which can be opened with the `tablecellbackgroundcolor` toolbar button or menu item. If no values are defined, the toolbar button and menu item will use the values or default values of the link:{{site.baseurl}}/configure/content-appearance/#color_map[`color_map` option]. This option does not modify the background color picker in the table dialogs. This option accepts Hex, RGB and HSL color values.
+This option is used to specify the default values for the table cell background color picker, which can be opened with the `tablecellbackgroundcolor` toolbar button or menu item. If no values are defined, the toolbar button and menu item will use the values or default values of the link:{baseurl}/configure/content-appearance/#color_map[`color_map` option]. This option does not modify the background color picker in the table dialogs. This option accepts Hex, RGB and HSL color values.
 
-The link:{{site.baseurl}}/configure/content-appearance/#custom_colors[custom color picker] is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
+The link:{baseurl}/configure/content-appearance/#custom_colors[custom color picker] is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
 
 *Type:* `Array`
 
-*Default Value:* See link:{{site.baseurl}}/configure/content-appearance/#color_map[`color_map` option]
+*Default Value:* See link:{baseurl}/configure/content-appearance/#color_map[`color_map` option]
 
 ==== Example: Using `table_background_color_map`
 

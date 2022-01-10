@@ -3,18 +3,18 @@
 :keywords: sort rownumbering series tables advanced advtable premium
 :title_nav: Advanced Tables
 
-{{site.requires_5_1v}}
+include::partial$misc/requires_5_1v.adoc[]
 
-Advanced Tables adds advanced functionality to tables in {{site.productname}}, including:
+Advanced Tables adds advanced functionality to tables in {productname}, including:
 
 * sorting rows and columns.
-* inserting a row numbering column to identify rows. {{site.requires_5_9v}}
+* inserting a row numbering column to identify rows. include::partial$misc/requires_5_9v.adoc[]
 
 == Try our Advanced Tables Demo
 
-{% include live-demo.html id="advtable" %}
+liveDemo::advtable[]
 
-{% assign pluginname = 'Advanced Tables' %}
-{% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'advtable' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Advanced Tables
+:pluginminimumplan: tiertwo
+:plugindocspage: advtable
+include::partial$misc/purchase-premium-plugins.adoc[]

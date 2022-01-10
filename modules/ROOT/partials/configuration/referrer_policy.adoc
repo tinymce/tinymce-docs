@@ -1,11 +1,11 @@
 == `referrer_policy`
 
-{{site.requires_5_1v}}
+include::partial$misc/requires_5_1v.adoc[]
 
 Used for setting the level of referrer information sent when loading plugins and CSS. Referrer policies can be used to:
 
 * Improve the privacy of end-users.
-* Assist with server-side filtering of cross-origin requests for {{site.productname}} resources.
+* Assist with server-side filtering of cross-origin requests for {productname} resources.
 
 *Type:* `String`
 

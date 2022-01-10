@@ -8,7 +8,7 @@ There are three options for enhancing the embeds created for private content by 
 
 * Annotate content with http://ogp.me/[Open Graph] or other meta tags
 * Develop your own custom endpoint that returns JSON in the oEmbed format
-* Develop your own custom endpoint that returns JSON in the {{site.productname}} Enhanced Media Embed format
+* Develop your own custom endpoint that returns JSON in the {productname} Enhanced Media Embed format
 
 == A note on cookies & authentication
 
@@ -70,13 +70,13 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 
 == Custom API
 
-As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or {{site.productname}} Enhanced Media Embed formats.
+As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or {productname} Enhanced Media Embed formats.
 
-See the docs on link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint[configuring a custom endpoint] for details on getting the Enhanced Media Embed server to utilize your custom API.
+See the docs on link:{baseurl}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint[configuring a custom endpoint] for details on getting the Enhanced Media Embed server to utilize your custom API.
 
 === OEmbed endpoint
 
-This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Enhanced Media Embed server will embed a link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#summarycards[summary card].
+This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Enhanced Media Embed server will embed a link:{baseurl}/enterprise/embed-media/mediaembed-server-config/#summarycards[summary card].
 
 ==== Pros
 
@@ -91,7 +91,7 @@ This is a popular choice and many CMSs have existing plugins that support oEmbed
 
 === TinyMCE Enhanced Media Embed endpoint
 
-The other option for developing a custom API endpoint is to return JSON in the link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat[{{site.productname}} Enhanced Media Embed format].
+The other option for developing a custom API endpoint is to return JSON in the link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat[{productname} Enhanced Media Embed format].
 
 ==== Pros
 
@@ -103,22 +103,22 @@ The other option for developing a custom API endpoint is to return JSON in the l
 
 * Must be a separate API rather than just metadata embedded in the content
 * No support from existing plugins
-* The {{site.productname}} editor does not fully take advantage of this format yet
+* The {productname} editor does not fully take advantage of this format yet
 
 === TinyMCE Enhanced Media Embed format
 
 ==== HTTP response status codes
 
-* HTTP 200 (OK): link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxembedobj[`EphoxEmbedObj`]
-* HTTP 400 (User Error): link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#errorobj[`ErrorObj`]
-* HTTP 503 (Upstream Error): link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#errorobj[`ErrorObj`]
-* HTTP 500 (Unexpected Error): link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#errorobj[`ErrorObj`]
+* HTTP 200 (OK): link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#ephoxembedobj[`EphoxEmbedObj`]
+* HTTP 400 (User Error): link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#errorobj[`ErrorObj`]
+* HTTP 503 (Upstream Error): link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#errorobj[`ErrorObj`]
+* HTTP 500 (Unexpected Error): link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#errorobj[`ErrorObj`]
 
 ==== JSON response objects
 
 ===== `EphoxEmbedObj`
 
-`rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the {{site.productname}} editor) can look for alternative representations in `links`.
+`rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the {productname} editor) can look for alternative representations in `links`.
 
 * `title` (optional)
  ** String containing the document title.
@@ -141,24 +141,24 @@ The other option for developing a custom API endpoint is to return JSON in the l
 * `date ` (optional)
  ** String containing the date of the document in the format *YYYY-MM-DD*.
 * `links` (required)
- ** link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linksobj[LinksObj]
+ ** link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linksobj[LinksObj]
 * `rel` (optional)
- ** link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#relobj[RelObj]
+ ** link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#relobj[RelObj]
 * `media` (optional)
- ** link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#mediaobj[MediaObj]
+ ** link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#mediaobj[MediaObj]
 * `html` (optional)
- ** String containing the HTML snippet to be embedded by {{site.productname}}.
+ ** String containing the HTML snippet to be embedded by {productname}.
 
 ===== `RelObj`
 
 An array of tags describing the primary type of an embed, where it came from and whether there are any technical attributes that you may want to know about (autoplay, ssl, file format (flash, html5, etc)).
 
 * `primary` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#primaryrel[PrimaryRel]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#primaryrel[PrimaryRel]s
 * `technical` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#technicalrel[TechnicalRel]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#technicalrel[TechnicalRel]s
 * `source` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#sourcerel[SourceRel]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#sourcerel[SourceRel]s
 
 ===== `PrimaryRel`
 
@@ -205,36 +205,36 @@ A string describing the source of an embed containing one of the following value
 Represents all of the possible representations of this resource.
 
 * `players` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `thumbnails` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `apps` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `readers` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `surveys` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `summary_cards` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `icons` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `logos` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `promos` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `images` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 * `files` (required)
- ** Array of link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
+ ** Array of link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#linkobj[LinkObj]s
 
 ===== `LinkObj`
 
 This represents a representation that you could link to / embed.
 
 * `media` (optional)
- ** link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#mediaobj[MediaObj]
+ ** link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#mediaobj[MediaObj]
 * `rels ` (required)
- ** link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#relobj[RelObj]
+ ** link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#relobj[RelObj]
 * `href` (optional)
  ** String containing the URL of the resource.
 * `mime_type` (required)
@@ -265,9 +265,9 @@ Fields when `type` is `responsive`:
 * `paddingBottom` (optional)
  ** Integer
 * `width` (required)
- ** link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#dimensionboundobj[DimensionBoundObj]
+ ** link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#dimensionboundobj[DimensionBoundObj]
 * `height` (required)
- ** link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#dimensionboundobj[DimensionBoundObj]
+ ** link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/#dimensionboundobj[DimensionBoundObj]
 
 ===== `DimensionBoundObj`
 
@@ -328,5 +328,5 @@ http://www.imdb.com/title/tt0117500/[image:https://images-na.ssl-images-amazon.c
 === Recommended CSS
 
 `css
-{% include css-codeblock/mediaembed-plugin-css.md %}
+include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
 `

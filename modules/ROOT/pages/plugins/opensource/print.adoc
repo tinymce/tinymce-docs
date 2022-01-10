@@ -4,8 +4,8 @@
 :keywords: file
 :title_nav: Print
 
-{% assign pluginname = "Print" %}
-{% assign plugincode = "print" %}
+:pluginname: Print
+:plugincode: print
 
 This plugin adds a print button to the toolbar. It also adds a `Print` item to the `File` menu dropdown.
 
@@ -20,12 +20,12 @@ tinymce.init({
 });
 `
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Print plugin provides the following JavaScript command.
 
-{% include commands/print-cmds.md %}
+include::partial$commands/print-cmds.adoc[]

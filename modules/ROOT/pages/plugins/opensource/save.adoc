@@ -4,10 +4,10 @@
 :keywords: submit save_enablewhendirty save_oncancelcallback save_onsavecallback
 :title_nav: Save
 
-{% assign pluginname = "Save" %}
-{% assign plugincode = "save" %}
+:pluginname: Save
+:plugincode: save
 
-This plugin adds a save button to the {{site.productname}} toolbar, which will submit the form that the editor is within.
+This plugin adds a save button to the {productname} toolbar, which will submit the form that the editor is within.
 
 == Basic setup
 
@@ -39,16 +39,16 @@ With this:
 
 These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or canceling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
-{% include configuration/save_enablewhendirty.md %}
+include::partial$configuration/save_enablewhendirty.adoc[]
 
-{% include configuration/save_oncancelcallback.md %}
+include::partial$configuration/save_oncancelcallback.adoc[]
 
-{% include configuration/save_onsavecallback.md %}
+include::partial$configuration/save_onsavecallback.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
 The Save plugin provides the following JavaScript commands.
 
-{% include commands/save-cmds.md %}
+include::partial$commands/save-cmds.adoc[]

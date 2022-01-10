@@ -4,8 +4,8 @@
 :keywords: video youtube vimeo mp3 mp4 mov movie clip film media_live_embeds audio_template_callback media_alt_source media_poster media_dimensions media_filter_html media_scripts video_template_callback
 :title_nav: Media
 
-{% assign pluginname = "Media" %}
-{% assign plugincode = "media" %}
+:pluginname: Media
+:plugincode: media
 
 The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the item `Insert/edit video` under the `Insert` menu as well as a toolbar button.
 
@@ -24,30 +24,30 @@ tinymce.init({
 
 These settings affect the execution of the `media` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
-{% include configuration/audio_template_callback.md %}
+include::partial$configuration/audio_template_callback.adoc[]
 
-{% include configuration/media_alt_source.md %}
+include::partial$configuration/media_alt_source.adoc[]
 
-{% include configuration/media_dimensions.md %}
+include::partial$configuration/media_dimensions.adoc[]
 
-{% include configuration/media_filter_html.md %}
+include::partial$configuration/media_filter_html.adoc[]
 
-{% include configuration/media_live_embeds.md %}
+include::partial$configuration/media_live_embeds.adoc[]
 
-{% include configuration/media_poster.md %}
+include::partial$configuration/media_poster.adoc[]
 
-{% include configuration/media_scripts.md %}
+include::partial$configuration/media_scripts.adoc[]
 
-{% include configuration/media_url_resolver.md %}
+include::partial$configuration/media_url_resolver.adoc[]
 
-{% include configuration/video_template_callback.md %}
+include::partial$configuration/video_template_callback.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Media plugin provides the following JavaScript command.
 
-{% include commands/media-cmds.md %}
+include::partial$commands/media-cmds.adoc[]

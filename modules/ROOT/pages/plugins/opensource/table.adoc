@@ -4,10 +4,10 @@
 :keywords: row cell column table_appearance_options table_clone_elements table_grid table_tab_navigation table_default_attributes table_default_styles table_class_list table_cell_class_list table_row_class_list table_advtab table_cell_advtab table_row_advtab
 :title_nav: Table
 
-{% assign pluginname = "Table" %}
-{% assign plugincode = "table" %}
+:pluginname: Table
+:plugincode: table
 
-The `table` plugin adds table management functionality to {{site.productname}}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
+The `table` plugin adds table management functionality to {productname}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 == Basic setup
 
@@ -24,53 +24,53 @@ tinymce.init({
 
 These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
 
-{% include configuration/table_toolbar.md %}
+include::partial$configuration/table_toolbar.adoc[]
 
-{% include configuration/table_appearance_options.md %}
+include::partial$configuration/table_appearance_options.adoc[]
 
-{% include configuration/table_use_colgroups.md %}
+include::partial$configuration/table_use_colgroups.adoc[]
 
-{% include configuration/table_clone_elements.md %}
+include::partial$configuration/table_clone_elements.adoc[]
 
-{% include configuration/table_grid.md %}
+include::partial$configuration/table_grid.adoc[]
 
-{% include configuration/table_tab_navigation.md %}
+include::partial$configuration/table_tab_navigation.adoc[]
 
-{% include configuration/table_default_attributes.md %}
+include::partial$configuration/table_default_attributes.adoc[]
 
-{% include configuration/table_default_styles.md %}
+include::partial$configuration/table_default_styles.adoc[]
 
-{% include configuration/table_responsive_width.md %}
+include::partial$configuration/table_responsive_width.adoc[]
 
-{% include configuration/table_sizing_mode.md %}
+include::partial$configuration/table_sizing_mode.adoc[]
 
-{% include configuration/table_column_resizing.md %}
+include::partial$configuration/table_column_resizing.adoc[]
 
-{% include configuration/table_class_list.md %}
+include::partial$configuration/table_class_list.adoc[]
 
-{% include configuration/table_cell_class_list.md %}
+include::partial$configuration/table_cell_class_list.adoc[]
 
-{% include configuration/table_row_class_list.md %}
+include::partial$configuration/table_row_class_list.adoc[]
 
-{% include configuration/table_border_widths.md %}
+include::partial$configuration/table_border_widths.adoc[]
 
-{% include configuration/table_border_styles.md %}
+include::partial$configuration/table_border_styles.adoc[]
 
-{% include configuration/table_background_color_map.md %}
+include::partial$configuration/table_background_color_map.adoc[]
 
-{% include configuration/table_border_color_map.md %}
+include::partial$configuration/table_border_color_map.adoc[]
 
-{% include configuration/table_advtab.md %}
+include::partial$configuration/table_advtab.adoc[]
 
-{% include configuration/table_cell_advtab.md %}
+include::partial$configuration/table_cell_advtab.adoc[]
 
-{% include configuration/table_row_advtab.md %}
+include::partial$configuration/table_row_advtab.adoc[]
 
-{% include configuration/table_resize_bars.md %}
+include::partial$configuration/table_resize_bars.adoc[]
 
-{% include configuration/table_style_by_css.md %}
+include::partial$configuration/table_style_by_css.adoc[]
 
-{% include configuration/table_header_type.md %}
+include::partial$configuration/table_header_type.adoc[]
 
 === Examples of various table setups
 
@@ -107,11 +107,11 @@ tinymce.init({
 });
 `
 
-NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{{site.baseurl}}/configure/content-appearance/#textcoloroptions[colorpicker].
+NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{baseurl}/configure/content-appearance/#textcoloroptions[colorpicker].
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == API
 
@@ -124,11 +124,11 @@ NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `
 
 | getClipboardCols
 |
-| Returns the data for any columns cut or copied using `mceTableCutCol` or `mceTableCopyCol`. {{site.requires_5_4v}}
+| Returns the data for any columns cut or copied using `mceTableCutCol` or `mceTableCopyCol`. include::partial$misc/requires_5_4v.adoc[]
 
 | setClipboardCols
 | cols: HTMLTableRowElement[]
-| Set the data to be used by `mceTablePasteColBefore` or `mceTablePasteColAfter` for pasting columns into a table. (A column as a series of cells. One or more cells from each row in the selection). {{site.requires_5_4v}}
+| Set the data to be used by `mceTablePasteColBefore` or `mceTablePasteColAfter` for pasting columns into a table. (A column as a series of cells. One or more cells from each row in the selection). include::partial$misc/requires_5_4v.adoc[]
 
 | getClipboardRows
 |
@@ -147,14 +147,14 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 
 == Events
 
-{% include events/table-events.md %}
+include::partial$events/table-events.adoc[]
 
 == Commands
 
 The Table plugin provides the following JavaScript commands.
 
-{% include commands/table-cmds.md %}
+include::partial$commands/table-cmds.adoc[]
 
 == Query command values
 
-{% include commands/table-query-cmd-values.md %}
+include::partial$commands/table-query-cmd-values.adoc[]

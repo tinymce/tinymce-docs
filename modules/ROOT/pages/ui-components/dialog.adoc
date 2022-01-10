@@ -5,36 +5,36 @@
 
 A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 
-NOTE: {{site.productname}} also supports link:{{site.baseurl}}/ui-components/urldialog/[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
+NOTE: {productname} also supports link:{baseurl}/ui-components/urldialog/[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 
 == Use cases
 
 === Display simple information
 
-The link:{{site.baseurl}}/plugins/opensource/code[`code`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
+The link:{baseurl}/plugins/opensource/code[`code`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
-image::{{site.baseurl}}/images/sourcecode.png[Source Code]
+image::{baseurl}/images/sourcecode.png[Source Code]
 
 === Display complex information
 
-More complex dialogs can use link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[tab panels] and various link:{{site.baseurl}}/ui-components/dialogcomponents/#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the link:{{site.baseurl}}/plugins/opensource/help[`help`] and link:{{site.baseurl}}/plugins/opensource/charmap[`character map`] plugins use dialogs with tabbed panels to categorise and separate information.
+More complex dialogs can use link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panels] and various link:{baseurl}/ui-components/dialogcomponents/#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the link:{baseurl}/plugins/opensource/help[`help`] and link:{baseurl}/plugins/opensource/charmap[`character map`] plugins use dialogs with tabbed panels to categorise and separate information.
 
-image::{{site.baseurl}}/images/specialchars.png[Special Characters]
+image::{baseurl}/images/specialchars.png[Special Characters]
 
 === Interactive dialogs
 
-{{site.productname}} dialogs can also contain link:{{site.baseurl}}/ui-components/dialogcomponents/#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
+{productname} dialogs can also contain link:{baseurl}/ui-components/dialogcomponents/#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
 
-For example, the link:{{site.baseurl}}/plugins/opensource/image[`image`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
+For example, the link:{baseurl}/plugins/opensource/image[`image`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
-image::{{site.baseurl}}/images/interactive.png[Insert/Edit images]
+image::{baseurl}/images/interactive.png[Insert/Edit images]
 
 == Dialog configuration
 
 A dialog configuration has three main parts to match the three main parts of the dialog's UI:
 
 * *Title:* The title of the dialog. This will display in the header of the dialog.
-* *Body:* The body of the dialog. The body component can be a <<panel,panel>> or a <<tabpanel,tab panel>>, which can contain an array of link:{{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents[panel components] such as buttons, inputs and text.
+* *Body:* The body of the dialog. The body component can be a <<panel,panel>> or a <<tabpanel,tab panel>>, which can contain an array of link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components] such as buttons, inputs and text.
 * *Buttons:* An array of <<footerbuttons,footer buttons>> that are displayed in the dialog's footer.
 
 === Basic example
@@ -120,7 +120,7 @@ tinymce.activeEditor.windowManager.open({
 | onTabChange
 | `+(dialogApi, details) => void+`
 | optional
-| *This method only applies to link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`.
+| *This method only applies to link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`.
 |===
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the <<dialoginstanceapi,dialog instance API>> documentation.
@@ -129,17 +129,17 @@ For more information on the `dialogApi` object that is passed to some of the con
 
 Each of the event callback functions - `onAction`, `onSubmit`, `onCancel`, `onChange`, `onClose` and `onTabChange` - are shared between all dialog components that may trigger them. For example, *Custom* type footer buttons and dialog panel buttons all trigger `onAction`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `details` above) that contains the `name` of the component that triggered the event.
 
-Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a *Submit* type footer button, and {{site.productname}} assumes that a dialog will only have one *Submit* type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a *Cancel* type footer button. These two buttons have the same functionality, and therefore {{site.productname}} does not differentiate between them.
+Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a *Submit* type footer button, and {productname} assumes that a dialog will only have one *Submit* type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a *Cancel* type footer button. These two buttons have the same functionality, and therefore {productname} does not differentiate between them.
 
 === Body components
 
-The body of a dialog must be either a link:{{site.baseurl}}/ui-components/dialogcomponents/#panel[`panel`] (a single panel) or a link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[`tabpanel`] (a collection of panels). Each panel can contain link:{{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents[panel components] such as inputs, buttons and text.
+The body of a dialog must be either a link:{baseurl}/ui-components/dialogcomponents/#panel[`panel`] (a single panel) or a link:{baseurl}/ui-components/dialogcomponents/#tabpanel[`tabpanel`] (a collection of panels). Each panel can contain link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components] such as inputs, buttons and text.
 
-NOTE: {{site.productname}} also supports link:{{site.baseurl}}/ui-components/urldialog/[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
+NOTE: {productname} also supports link:{baseurl}/ui-components/urldialog/[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 
 ==== Panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for link:{{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents[panel components]. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components]. A panel type dialog only has one panel.
 
 `+js
 {
@@ -150,9 +150,9 @@ The basic dialog type is a *panel* dialog. A panel is a container for link:{{sit
 
 ==== TabPanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different link:{{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents[panel components], allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components], allowing for complex dialogs.
 
-See the link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[tab panel component reference] for tab panel configuration options.
+See the link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel component reference] for tab panel configuration options.
 
 `+js
 {
@@ -174,13 +174,13 @@ The `name` of the panel can be used with the <<dialogapimethods,`dialogApi.showT
 
 The Help plugin's dialog is an example of a tab panel dialog.
 
-image::{{site.baseurl}}/images/help.png[Help Button]
+image::{baseurl}/images/help.png[Help Button]
 
 === Footer buttons
 
-A *button* is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{{site.baseurl}}/general-configuration-guide/customize-ui/#skins[skin]. Menu buttons will open a menu with more options when clicked, instead of performing an action.
+A *button* is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{baseurl}/general-configuration-guide/customize-ui/#skins[skin]. Menu buttons will open a menu with more options when clicked, instead of performing an action.
 
-NOTE: Dialog footer buttons are different to link:{{site.baseurl}}/ui-components/dialogcomponents/#button[dialog panel buttons].
+NOTE: Dialog footer buttons are different to link:{baseurl}/ui-components/dialogcomponents/#button[dialog panel buttons].
 
 ==== Configuration
 
@@ -205,7 +205,7 @@ NOTE: Dialog footer buttons are different to link:{{site.baseurl}}/ui-components
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}} *When configured, the button will display the icon instead of text.*
+| include::partial$misc/predefinedIconsOnly.adoc[] *When configured, the button will display the icon instead of text.*
 
 | primary
 | boolean
@@ -286,7 +286,7 @@ The following options can be specified for a dialog menu button:
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}}
+| include::partial$misc/predefinedIconsOnly.adoc[]
 
 | tooltip
 | string
@@ -389,14 +389,14 @@ The instance API is a JavaScript object containing methods attached to the dialo
 | Calling `redial()` and passing a dialog body configuration will destroy and recreate the body of the dialog. See the <<redial,Redial>> documentation.
 
 | `+showTab(name: string) => void+`
-| *This method only applies to link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[tab panel] dialogs.* Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab.
+| *This method only applies to link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel] dialogs.* Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab.
 |===
 
 == Dialog data and state
 
 All dialogs have an internal data store, which is used to track the value and/or state of the dialog's panel components.
 
-This data store takes the form of a JavaScript object, where the object's keys are the ``name``s of the configured panel components. For example, if a dialog contains a link:{{site.baseurl}}/ui-components/dialogcomponents/#checkbox[checkbox] component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
+This data store takes the form of a JavaScript object, where the object's keys are the ``name``s of the configured panel components. For example, if a dialog contains a link:{baseurl}/ui-components/dialogcomponents/#checkbox[checkbox] component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
 
 The current value of a dialog's data store can be accessed using the dialog instance API's `getData()` function. It can also be set using `setData()` which will automatically update the relevant components. For example, if you call `setData({ myCheckbox: true })` with the previous example, the checkbox would be toggled to checked.
 
@@ -422,7 +422,7 @@ See the <<interactiveexampleusingredial,redial example>> for more information on
 
 The following example demonstrates how data flows through the dialog and how buttons are configured. This is an interactive dialog that inserts the name of a cat into the editor content on submit.
 
-{% include live-demo.html id="dialog-pet-machine" height="150" tab="js" %}
+liveDemo::dialog-pet-machine[height="150" tab="js" ]
 
 The dialog in this example contains two interactive components - an input component named `catdata` and a checkbox component named `isdog`. These names are used in the `initialdata` configuration property to set the initial values for these components. In this case, when the dialog loads the input will contain the text _initial Cat_ and the checkbox will not be checked.
 
@@ -436,11 +436,11 @@ Redial can be used to change information that is displayed in the dialog, create
 
 The following example demonstrates one way of implementing a multipage form dialog using the `redial()` method. Custom buttons are used to switch between the two pages of the form by calling `redial()` with the appropriate dialog configuration.
 
-To see the output of the code, click on the {{site.productname}} tab on the fiddle below.
+To see the output of the code, click on the {productname} tab on the fiddle below.
 
-{% include live-demo.html id="redial-demo" height="900" tab="js" %}
+liveDemo::redial-demo[height="900" tab="js" ]
 
-The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The {{site.productname}} initialization code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
+The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The {productname} initialization code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
 
 The configuration for the first page of the multipage form contains a description of the form and a checkbox. The checkbox, via the dialog's `onChange()` callback function, toggles whether the `next` button is disabled or enabled. The `next` button when clicked fires the `onAction()` callback function, which in turn triggers `redial()` which will replace the `page1Config` dialog with the `page2Config` dialog.
 

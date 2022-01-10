@@ -3,9 +3,9 @@
 :keywords: dialog urldialog api
 :title_nav: URL dialog
 
-A URL dialog is a special {{site.productname}} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {{site.productname}}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {{site.productname}} dialog would probably require a URL dialog.
+A URL dialog is a special {productname} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {productname}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {productname} dialog would probably require a URL dialog.
 
-NOTE: link:{{site.baseurl}}/ui-components/dialog/[Standard {{site.productname}} dialogs] should suffice for most use cases, and may be simpler to configure.
+NOTE: link:{baseurl}/ui-components/dialog/[Standard {productname} dialogs] should suffice for most use cases, and may be simpler to configure.
 
 == Basic example
 
@@ -81,7 +81,7 @@ For more information on the `dialogApi` object that is passed to some of the con
 
 == Footer buttons
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{{site.baseurl}}/general-configuration-guide/customize-ui/#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{baseurl}/general-configuration-guide/customize-ui/#skins[skin].
 
 === Configuration
 
@@ -106,7 +106,7 @@ A *button* is a clickable component that can contain text or an icon. There are 
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}} *When configured, the button will display the icon instead of text.*
+| include::partial$misc/predefinedIconsOnly.adoc[] *When configured, the button will display the icon instead of text.*
 
 | primary
 | boolean
@@ -131,9 +131,9 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 The different footer button types will invoke different callbacks when clicked:
 
 * A *Cancel* type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
-* A *Custom* type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the link:{{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid[Redial example] for an example of how to use this with standard dialogs.
+* A *Custom* type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the link:{baseurl}/ui-components/dialog/#interactiveexampleusingredialconfigvoid[Redial example] for an example of how to use this with standard dialogs.
 
-NOTE: Unlike link:{{site.baseurl}}/ui-components/dialog/[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `onSubmit` callback.
+NOTE: Unlike link:{baseurl}/ui-components/dialog/[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `onSubmit` callback.
 
 See the <<configurationoptions,URL dialog configuration options>> documentation for more information on event callbacks.
 
@@ -163,7 +163,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 
 == URL dialog messaging
 
-When using a URL dialog, there needs to be a way to communicate between {{site.productname}} and the external page, as the two components are no longer running in the same window. To allow this, {{site.productname}} makes use of the browsers https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage[`window.postMessage()`] API to allow sending data across different origins. The following is an example of how to send messages back to {{site.productname}} from within an external page:
+When using a URL dialog, there needs to be a way to communicate between {productname} and the external page, as the two components are no longer running in the same window. To allow this, {productname} makes use of the browsers https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage[`window.postMessage()`] API to allow sending data across different origins. The following is an example of how to send messages back to {productname} from within an external page:
 
 `js
 window.parent.postMessage({
@@ -172,7 +172,7 @@ window.parent.postMessage({
 }, '*');
 `
 
-Similarly, to send messages from {{site.productname}} back to the external page, the `sendMessage()` function from the <<urldialoginstanceapi,URL dialog instance API>> can be used to send messages, and then in the external page an event listener can be added to receive the messages:
+Similarly, to send messages from {productname} back to the external page, the `sendMessage()` function from the <<urldialoginstanceapi,URL dialog instance API>> can be used to send messages, and then in the external page an event listener can be added to receive the messages:
 
 ```js
 window.addEventListener('message', function (event) {
@@ -184,7 +184,7 @@ window.addEventListener('message', function (event) {
 
 ```
 
-NOTE: When sending a message it is recommended to specify the target origin of where {{site.productname}} is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where {{site.productname}} is running. For example, if {{site.productname}} is running on _\http://mysite.com/tinymce.html_, then if `event.origin` doesn't match `+http://mysite.com+` the message should be ignored.
+NOTE: When sending a message it is recommended to specify the target origin of where {productname} is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where {productname} is running. For example, if {productname} is running on _\http://mysite.com/tinymce.html_, then if `event.origin` doesn't match `+http://mysite.com+` the message should be ignored.
 
 === Supported message actions
 
@@ -261,7 +261,7 @@ This action unblocks the window/dialog. This is the same as using the `api.unblo
 
 === Custom message actions
 
-A custom message is one that contains a `mceAction` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to {{site.productname}} and then be processed via the `onMessage` callback to perform custom actions inside {{site.productname}}.
+A custom message is one that contains a `mceAction` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to {productname} and then be processed via the `onMessage` callback to perform custom actions inside {productname}.
 
 `js
 {
@@ -272,10 +272,10 @@ A custom message is one that contains a `mceAction` not listed in the above-supp
 }
 `
 
-NOTE: {{site.productname}} will ignore all messages received that don't contain a `mceAction` property.
+NOTE: {productname} will ignore all messages received that don't contain a `mceAction` property.
 
 == Interactive example
 
 This example shows a toolbar button that opens an external URL inside a 640px by 640px dialog without any footer buttons. The dialog can be opened by clicking the `{;}` toolbar button.
 
-{% include live-demo.html id="url-dialog" height="300" tab="js" %}
+liveDemo::url-dialog[height="300" tab="js" ]

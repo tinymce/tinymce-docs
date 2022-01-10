@@ -3,6 +3,6 @@
 :keywords: integration integrate laravel php composer
 :title_nav: Using a .zip package
 
-{% assign productSource = "zip" %}
+:productSource: zip
 
-{% include integrations/laravel-quick-start.md %}
+include::partial$integrations/laravel-quick-start.adoc[]

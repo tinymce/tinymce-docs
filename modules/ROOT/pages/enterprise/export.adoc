@@ -3,15 +3,15 @@
 :keywords: export pdf premium
 :title_nav: Export
 
-{{site.requires_5_5v}}
+include::partial$misc/requires_5_5v.adoc[]
 
 The Export plugin provides the ability to export content from the editor to a user's local machine as a PDF.
 
 === Try our Export Demo
 
-{% include live-demo.html id="export" %}
+liveDemo::export[]
 
-{% assign pluginname = 'Export' %}
-{% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'export' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Export
+:pluginminimumplan: tiertwo
+:plugindocspage: export
+include::partial$misc/purchase-premium-plugins.adoc[]

@@ -1,7 +1,7 @@
-{% include DEPRECATED/fullpage.md %}
+include::partial$DEPRECATED/fullpage.adoc[]
 
 |===
-| Menu item identifier | link:{{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
+| Menu item identifier | link:{baseurl}/configure/editor-appearance/#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
 
 | `fullpage`
 | _Not Applicable_

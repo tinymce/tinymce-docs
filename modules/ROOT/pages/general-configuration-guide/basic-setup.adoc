@@ -56,7 +56,7 @@ tinymce.init({
 });
 ----
 
-Providing a \{\{site.productname}} editor with the default configuration, such as: \{% include live-demo.html id="default" %}
+Providing a \{\{site.productname}} editor with the default configuration, such as: \liveDemo::default[]
 
 The selector can target most block elements when the editor is used in link:../use-tinymce-inline/[inline editing mode]. Inline mode edits the content in place, instead of replacing the element with an `+iframe+`.
 
@@ -110,8 +110,8 @@ Use a space-separated list to specify the toolbar buttons for \{\{site.productna
 
 ==== Additional information
 
-* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: link:{{site.baseurl}}/configure/editor-appearance/#toolbar[User interface options - toolbar].
-* For a list of all available toolbar items, see: link:{{site.baseurl}}/advanced/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
+* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: link:{baseurl}/configure/editor-appearance/#toolbar[User interface options - toolbar].
+* For a list of all available toolbar items, see: link:{baseurl}/advanced/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
 
 == Menu and Menu bar configuration
 
@@ -129,7 +129,7 @@ tinymce.init({
 });
 ----
 
-\{% include live-demo.html id="menubar" %}
+\liveDemo::menubar[]
 
 To create an `+Edit+` menu that only contains the _Undo_, _Redo_, and _Select all_ items.
 
@@ -143,7 +143,7 @@ tinymce.init({
 });
 ----
 
-\{% include live-demo.html id="menu1" %}
+\liveDemo::menu1[]
 
 To create a menu titled "Happy", provide an identifier for the menu and an object with the `+title+` and `+items+` for the menu.
 
@@ -161,21 +161,21 @@ tinymce.init({
 });
 ----
 
-\{% include live-demo.html id="menu2" %}
+\liveDemo::menu2[]
 
 === Default menu controls
 
 The default menus are as follows:
 
-\{% include configuration/defaultmenuitems.md %}
+\include::partial$configuration/defaultmenuitems.adoc[]
 
 NOTE: Some menu items require a plugin, such as the `+table+` menu and items requires the `table` plugin.
 
 ==== Additional information
 
-* For information on the `+menu+` setting, see: link:{{site.baseurl}}/configure/editor-appearance/#menu[User interface options - menu].
-* For information on the `+menubar+` setting, see: link:{{site.baseurl}}/configure/editor-appearance/#menubar[User interface options - menubar].
-* For a list of all available menu items, see: link:{{site.baseurl}}/advanced/available-menu-items/[Menu Items Available for \{\{site.productname}}].
+* For information on the `+menu+` setting, see: link:{baseurl}/configure/editor-appearance/#menu[User interface options - menu].
+* For information on the `+menubar+` setting, see: link:{baseurl}/configure/editor-appearance/#menubar[User interface options - menubar].
+* For a list of all available menu items, see: link:{baseurl}/advanced/available-menu-items/[Menu Items Available for \{\{site.productname}}].
 
 == Basic configuration example
 
@@ -188,7 +188,7 @@ The following example is a basic \{\{site.productname}} configuration.
 <head>
   <script
     type="text/javascript"
-    src='{{ site.cdnurl }}'
+    src='{cdnurl}'
     referrerpolicy="origin">
   </script>
   <script type="text/javascript">
@@ -273,11 +273,11 @@ Sets the styling of the editable area using `+content_css+`.
 content_css: 'css/content.css',
 ----
 
-\{% include live-demo.html id="basic-conf" %}
+\liveDemo::basic-conf[]
 
 === Additional information
 
 * For a full list of configuration options, see: the [Configuration options reference](\{\{ site.baseurl }}/configure/).
 * For a full list of Plugins and their options, see: [Add plugins to TinyMCE](\{\{ site.baseurl }}/plugins/).
 * For information on the UI elements, see: [User interface components](\{\{ site.baseurl }}/ui-components/).
-* For information on the CSS required to render some \{\{site.productname}} elements outside of the editor, see: link:{{site.baseurl}}/general-configuration-guide/boilerplate-content-css/[Boilerplate content CSS].
+* For information on the CSS required to render some \{\{site.productname}} elements outside of the editor, see: link:{baseurl}/general-configuration-guide/boilerplate-content-css/[Boilerplate content CSS].

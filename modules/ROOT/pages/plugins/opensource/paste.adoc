@@ -4,11 +4,11 @@
 :keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit
 :title_nav: Paste
 
-{% assign pluginname = "Paste" %}
-{% assign plugincode = "paste" %}
+:pluginname: Paste
+:plugincode: paste
 
 ____
-Looking for more advanced Microsoft Word importing and pasting? Try the link:{{site.baseurl}}/plugins/premium/powerpaste/[PowerPaste] plugin.
+Looking for more advanced Microsoft Word importing and pasting? Try the link:{baseurl}/plugins/premium/powerpaste/[PowerPaste] plugin.
 ____
 
 This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
@@ -32,44 +32,44 @@ tinymce.init({
 
 These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
-{% include configuration/paste_block_drop.md %}
+include::partial$configuration/paste_block_drop.adoc[]
 
-{% include configuration/paste_data_images.md %}
+include::partial$configuration/paste_data_images.adoc[]
 
-{% include configuration/paste_as_text.md %}
+include::partial$configuration/paste_as_text.adoc[]
 
-{% include configuration/paste_enable_default_filters.md %}
+include::partial$configuration/paste_enable_default_filters.adoc[]
 
-{% include configuration/paste_filter_drop.md %}
+include::partial$configuration/paste_filter_drop.adoc[]
 
-{% include configuration/paste_preprocess.md %}
+include::partial$configuration/paste_preprocess.adoc[]
 
-{% include configuration/paste_postprocess.md %}
+include::partial$configuration/paste_postprocess.adoc[]
 
-{% include configuration/paste_word_valid_elements.md %}
+include::partial$configuration/paste_word_valid_elements.adoc[]
 
-{% include configuration/paste_webkit_styles.md %}
+include::partial$configuration/paste_webkit_styles.adoc[]
 
-{% include configuration/paste_retain_style_properties.md %}
+include::partial$configuration/paste_retain_style_properties.adoc[]
 
-{% include configuration/paste_merge_formats.md %}
+include::partial$configuration/paste_merge_formats.adoc[]
 
-{% include configuration/paste_tab_spaces.md %}
+include::partial$configuration/paste_tab_spaces.adoc[]
 
-{% include configuration/paste_convert_word_fake_lists.md %}
+include::partial$configuration/paste_convert_word_fake_lists.adoc[]
 
-{% include configuration/paste_remove_styles_if_webkit.md %}
+include::partial$configuration/paste_remove_styles_if_webkit.adoc[]
 
-{% include configuration/smart_paste.md %}
+include::partial$configuration/smart_paste.adoc[]
 
-{% include configuration/image_file_types.md %}
+include::partial$configuration/image_file_types.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Paste plugin provides the following JavaScript command.
 
-{% include commands/paste-cmds.md %}
+include::partial$commands/paste-cmds.adoc[]

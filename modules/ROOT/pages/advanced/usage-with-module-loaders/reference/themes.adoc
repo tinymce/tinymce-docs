@@ -3,9 +3,9 @@
 :description_short: Information on bundling themes
 :title_nav: Themes
 
-{% assign editorcomponent = "theme" %}
-{% include module-loading/bundling-ref-example.md %}
-{% assign editorcomponent = nil %}
+:editorcomponent: theme
+include::partial$module-loading/bundling-ref-example.adoc[]
+:editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the silver theme:
 
@@ -47,4 +47,4 @@ require('../tinymce/themes/silver/theme.js');
 
 {% endcomment %}
 
-{% include module-loading/bundling-theme-files.md %}
+include::partial$module-loading/bundling-theme-files.adoc[]

@@ -3,9 +3,9 @@
 :keywords: comments commenting tinycomments
 :title_nav: Toolbar buttons and menu items
 
-{% assign pluginname = "Comments" %}
-{% assign plugincode = "comments" %}
+:pluginname: Comments
+:plugincode: comments
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

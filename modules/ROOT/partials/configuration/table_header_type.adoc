@@ -1,6 +1,6 @@
 === `table_header_type`
 
-{{site.requires_5_4v}}
+include::partial$misc/requires_5_4v.adoc[]
 
 The `table_header_type` option affects how tables are structured when a table row is set as a header row. Note that this setting does not affect header columns.
 

@@ -1,16 +1,16 @@
-The following table-related values can be queried using the link:{{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue[queryCommandValue] API.
+The following table-related values can be queried using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#querycommandvalue[queryCommandValue] API.
 
 |===
 | Value | Description
 
 | mceTableRowType
-| Returns the row type of the current table row, either: `"header"`, `"body"`, or `"footer"`. {{site.requires_5_4v}}
+| Returns the row type of the current table row, either: `"header"`, `"body"`, or `"footer"`. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableColType
-| Returns the column type of the current table column, either: `"td"` or `"th"`. {{site.requires_5_4v}}
+| Returns the column type of the current table column, either: `"td"` or `"th"`. include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableCellType
-| Returns the cell type of the current table cell, either: `"td"` or `"th"`. {{site.requires_5_4v}}
+| Returns the cell type of the current table cell, either: `"td"` or `"th"`. include::partial$misc/requires_5_4v.adoc[]
 |===
 
 *Examples*

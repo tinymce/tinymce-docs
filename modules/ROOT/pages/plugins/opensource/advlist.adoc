@@ -20,12 +20,12 @@ tinymce.init({
 
 These settings affect the execution of the `advlist` plugin by providing more granular control of list styles.
 
-{% include configuration/advlist_bullet_styles.md %}
+include::partial$configuration/advlist_bullet_styles.adoc[]
 
-{% include configuration/advlist_number_styles.md %}
+include::partial$configuration/advlist_number_styles.adoc[]
 
 == Commands
 
 The Advanced Lists plugin provides the following JavaScript commands.
 
-{% include commands/advlist-cmds.md %}
+include::partial$commands/advlist-cmds.adoc[]

@@ -3,22 +3,22 @@
 :keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
 :title_nav: Image Tools
 
-{% assign pluginname = "Image Tools" %}
-{% assign plugincode = "imagetools" %}
+:pluginname: Image Tools
+:plugincode: imagetools
 
-{% include DEPRECATED/imagetools.md %}
+include::partial$DEPRECATED/imagetools.adoc[]
 
 Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
 
 == Interactive example
 
-{% include live-demo.html id="image-tools" %}
+liveDemo::image-tools[]
 
-{{site.svgsNotSupported}}
+include::partial$misc/svgsNotSupported.adoc[]
 
 == Cloud Installation
 
-The Image Tools plugin is provided with all subscriptions to link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features/[{{site.cloudname}}], including an automatically configured image proxy.
+The Image Tools plugin is provided with all subscriptions to link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}], including an automatically configured image proxy.
 Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
 === Basic setup using Tiny Cloud
@@ -33,7 +33,7 @@ tinymce.init({
 
 == Self-hosted Installation
 
-To enable the {{site.productname}} Image Tools plugin:
+To enable the {productname} Image Tools plugin:
 
 . Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
 . Enable `imagetools_cors_hosts` and `imagetools_proxy` options as needed
@@ -52,20 +52,20 @@ tinymce.init({
 
 == Options
 
-{% include configuration/image_cors_hosts.md %}
+include::partial$configuration/image_cors_hosts.adoc[]
 
-{% include configuration/imagetools_credentials_hosts.md %}
+include::partial$configuration/imagetools_credentials_hosts.adoc[]
 
-{% include configuration/imagetools_fetch_image.md %}
+include::partial$configuration/imagetools_fetch_image.adoc[]
 
-{% include configuration/image_proxy.md %}
+include::partial$configuration/image_proxy.adoc[]
 
-{% include configuration/imagetools_toolbar.md %}
+include::partial$configuration/imagetools_toolbar.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
 The Image Tools plugin provides the following JavaScript commands.
 
-{% include commands/imagetools-cmds.md %}
+include::partial$commands/imagetools-cmds.adoc[]

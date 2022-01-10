@@ -4,6 +4,6 @@
 :keywords: example demo custom format formats
 :title_nav: Custom formats
 
-This example shows you how to override the built in link:{{ site.baseurl }}/configure/content-formatting/#formats[formats] and add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the link:{{ site.baseurl }}/configure/editor-appearance/#style_formats[style_formats] configuration option.
+This example shows you how to override the built in link:{baseurl}/configure/content-formatting/#formats[formats] and add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the link:{baseurl}/configure/editor-appearance/#style_formats[style_formats] configuration option.
 
-{% include live-demo.html id="format-custom" %}
+liveDemo::format-custom[]

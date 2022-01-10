@@ -4,16 +4,16 @@
 
 == Overview
 
-{% include release-notes/overview.md %}
+include::partial$release-notes/overview.adoc[]
 
 == New features
 
-{% include release-notes/new-features.md %}
+include::partial$release-notes/new-features.adoc[]
 
 == Removed & deprecated features
 
-{% include release-notes/deleted.md %}
+include::partial$release-notes/deleted.adoc[]
 
 == Known issues
 
-{% include release-notes/known-issues.md %}
+include::partial$release-notes/known-issues.adoc[]

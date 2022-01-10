@@ -4,8 +4,8 @@
 :keywords: hr insert
 :title_nav: Horizontal Rule
 
-{% assign pluginname = "Horizontal Rule" %}
-{% assign plugincode = "hr" %}
+:pluginname: Horizontal Rule
+:plugincode: hr
 
 The Horizontal Rule (`hr`) plugin allows a user to insert a horizontal rule on the page at the cursor insertion point. It also adds a toolbar button and a menu item `Horizontal line` under the `Insert` menu.
 
@@ -19,6 +19,6 @@ tinymce.init({
 });
 `
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

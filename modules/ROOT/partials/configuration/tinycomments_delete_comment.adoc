@@ -1,6 +1,6 @@
 === `tinycomments_delete_comment`
 
-The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment or comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
+The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment or comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {productname} by calling the `fail` callback instead.
 
 The `tinycomments_delete_comment` function is given a request (req) object as the first parameter, which has these fields:
 

@@ -1,58 +1,58 @@
 == PowerPaste support (Copy and Paste)
 
-This section details supported use of the {{site.companyname}} PowerPaste plugin.
+This section details supported use of the {companyname} PowerPaste plugin.
 
 === Pasting from Microsoft Word
 
-{{site.companynameformal}} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
+{companynameformal} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
 
 * Covered by Microsoft Mainstream Support based on the https://support.microsoft.com/en-us/help/14085/fixed-lifecycle-policy[Microsoft Fixed Lifecycle Policy].
 * Provided by Microsoft Office 365.
 
 === Pasting from Google Docs
 
-{{site.companynameformal}} tests and supports using the PowerPaste plugin for copying content from https://www.google.com/docs/about/[Google Docs] for:
+{companynameformal} tests and supports using the PowerPaste plugin for copying content from https://www.google.com/docs/about/[Google Docs] for:
 
 * Copying content from the latest version of Google Docs.
-* Pasting into any supported version of {{site.productname}} using PowerPaste 5.5.0 or later.
+* Pasting into any supported version of {productname} using PowerPaste 5.5.0 or later.
 
 The following may work, but is _not officially supported_:
 
-* Pasting Google Docs content into {{site.productname}} on Microsoft Internet Explorer 11.
-* Copying content from other Google suite applications such as Google Sheets into {{site.productname}}.
+* Pasting Google Docs content into {productname} on Microsoft Internet Explorer 11.
+* Copying content from other Google suite applications such as Google Sheets into {productname}.
 
 === PowerPaste Feature and Browser Support
 
-PowerPaste (Copy and Paste) is supported on all the browsers supported by {{site.productname}} Enterprise. There are some variances of functionality for different browsers.
+PowerPaste (Copy and Paste) is supported on all the browsers supported by {productname} Enterprise. There are some variances of functionality for different browsers.
 
 [cols=",^,^,^"]
 |===
 |  | HTML Cleaning | Improved HTML Cleaning | Image Import
 
 | Internet Explorer 11
-| {{site.tick}}
-| {{site.cross}}
-| {{site.cross}}
+| {tick}
+| {cross}
+| {cross}
 
 | Microsoft Edge Latest
-| {{site.tick}}
-| {{site.tick}}
-| {{site.tick}}
+| {tick}
+| {tick}
+| {tick}
 
 | Chrome Latest
-| {{site.tick}}
-| {{site.tick}}
-| {{site.tick}}
+| {tick}
+| {tick}
+| {tick}
 
 | Firefox Latest
-| {{site.tick}}
-| {{site.tick}}
-| {{site.tick}}
+| {tick}
+| {tick}
+| {tick}
 
 | Safari Latest
-| {{site.tick}}
-| {{site.tick}}
-| {{site.tick}}
+| {tick}
+| {tick}
+| {tick}
 |===
 
 ==== HTML Cleaning

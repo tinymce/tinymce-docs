@@ -2,10 +2,10 @@
 :description: These settings configure TinyMCE's language capabilities, including right-to-left support and language Localization.
 :description_short: Localize TinyMCE for your language, including directionality.
 
-{% include configuration/content_langs.md %}
+include::partial$configuration/content_langs.adoc[]
 
-{% include configuration/directionality.md %}
+include::partial$configuration/directionality.adoc[]
 
-{% include configuration/language.md %}
+include::partial$configuration/language.adoc[]
 
-{% include configuration/language_url.md %}
+include::partial$configuration/language_url.adoc[]

@@ -3,6 +3,6 @@
 :keywords: integration integrate laravel php composer
 :title_nav: Using the Composer package
 
-{% assign productSource = "composer" %}
+:productSource: composer
 
-{% include integrations/laravel-quick-start.md %}
+include::partial$integrations/laravel-quick-start.adoc[]

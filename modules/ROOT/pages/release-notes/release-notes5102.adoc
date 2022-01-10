@@ -5,7 +5,7 @@
 
 == Overview
 
-{{site.productname}} 5.10.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Monday, November 22^nd^, 2021. It includes {{site.productname}} 5.10.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.10.2, including:
+{productname} 5.10.2 was released for {enterpriseversion} and {cloudname} on Monday, November 22^nd^, 2021. It includes {productname} 5.10.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.2, including:
 
 * <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
 * <<accompanyingpremiumself-hostedserver-sidecomponentchanges,Accompanying Premium self-hosted server-side component changes>>
@@ -13,31 +13,31 @@
 * <<securityfixes,Security fixes>>
 * <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
 
-{{site.releasenotes_for_stable}}
+include::partial$misc/releasenotes_for_stable.adoc[]
 
 == Accompanying Premium Plugin changes
 
-The following premium plugin updates were released alongside {{site.productname}} 5.10.2.
+The following premium plugin updates were released alongside {productname} 5.10.2.
 
 === Enhanced Media Embed 2.2.6
 
-The {{site.productname}} 5.10.2 release includes an accompanying release of the *Enhanced Media Embed* premium plugin.
+The {productname} 5.10.2 release includes an accompanying release of the *Enhanced Media Embed* premium plugin.
 
 *Enhanced Media Embed* 2.2.6 fixes the `mediaembed` content CSS loading incorrectly, which caused it to not display in previews.
 
-For information on the Enhanced Media Embed plugin, see: link:{{site.baseurl}}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
+For information on the Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
 
 === Page Embed 1.1.1
 
-The {{site.productname}} 5.10.2 release includes an accompanying release of the *Page Embed* premium plugin.
+The {productname} 5.10.2 release includes an accompanying release of the *Page Embed* premium plugin.
 
 *Page Embed* 1.1.1 fixes a bug where the wrong media type was used in the source URL dialog field.
 
-For information on the Page Embed plugin, see: link:{{site.baseurl}}/plugins/premium/pageembed/[Page Embed plugin].
+For information on the Page Embed plugin, see: link:{baseurl}/plugins/premium/pageembed/[Page Embed plugin].
 
 == Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} 5.10.2 release includes accompanying changes affecting the {{site.productname}} *self-hosted* services for the following plugins:
+The {productname} 5.10.2 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
 
 * The Enhanced Media Embed plugin (`mediaembed`)
 * The Export plugin (`export`)
@@ -51,15 +51,15 @@ The Java server-side components have been updated to the following versions:
 * `ephox-hyperlinking.war`: 2.105.7
 * `ephox-image-proxy.war`: 2.105.6
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{{site.baseurl}}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{baseurl}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
 
 For information on:
 
-* The Spell Checker Pro plugin, see: link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
-* The Link Checker plugin, see: link:{{site.baseurl}}/plugins/premium/linkchecker/[Link Checker plugin].
-* The Image Tools plugin, see: link:{{site.baseurl}}/plugins/opensource/imagetools/[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: link:{{site.baseurl}}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: link:{{site.baseurl}}/enterprise/server/[Server-side component installation].
+* The Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+* The Link Checker plugin, see: link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
+* The Image Tools plugin, see: link:{baseurl}/plugins/opensource/imagetools/[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
 
 === Security related dependency update for all 3 server-side services
 
@@ -76,29 +76,29 @@ The new versions of the server-side services provide updates for the Java-based 
   *** 8.5.12+
   *** 8.0.42+
   *** 7.0.76+
-. Replace the existing server-side `.war` files with the `.war` files bundled with {{site.productname}} 5.10.2 or later.
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 5.10.2 or later.
 
 For information on:
 
-* Deploying the server-side components, see: link:{{site.baseurl}}/enterprise/server/[Server-side component installation].
-* Deploying the server-side components using Docker, see: link:{{site.baseurl}}/enterprise/server/dockerservices/[Containerized service deployments].
+* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
+* Deploying the server-side components using Docker, see: link:{baseurl}/enterprise/server/dockerservices/[Containerized service deployments].
 
 == General bug fixes
 
-{{site.productname}} 5.10.2 provides fixes for the following bugs:
+{productname} 5.10.2 provides fixes for the following bugs:
 
 * Internal selectors were appearing in the style list when using the `importcss` plugin.
 
 == Security fixes
 
-{{site.productname}} 5.10.2 provides fixes for the following security issues:
+{productname} 5.10.2 provides fixes for the following security issues:
 
 All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
 
 For information on the server-side components updates, see: <<accompanyingpremiumself-hostedserver-sidecomponentchanges,Accompanying Premium self-hosted server-side component changes>>.
 
-{% assign enterprise = true %}
+:enterprise: true
 
-{% include install/upgrading-info.md %}
+include::partial$install/upgrading-info.adoc[]
 
-{% assign enterprise = false %}
+:enterprise: false

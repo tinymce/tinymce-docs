@@ -1,6 +1,6 @@
 == `advtable_value_series`
 
-{{ site.requires_5_9v }}
+include::partial$misc/requires_5_9v.adoc[]
 
 The `advtable_value_series` option configures one or more series of values for populating cells in a table. This option can be used to create row identifiers.
 

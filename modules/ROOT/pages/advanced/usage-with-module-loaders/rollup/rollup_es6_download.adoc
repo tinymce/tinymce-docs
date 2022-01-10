@@ -4,10 +4,10 @@
 :keywords: rollupjs es6 es2015 zip modules tinymce
 :title_nav: ES6 and a .zip archive
 
-{% assign installtype = "a ``.zip``" %}
-{% assign bundler = "https://www.rollupjs.org/[Rollup.js]" %}
-{% assign syntax = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules[ES6+ syntax]" %}
-{% include module-loading/bundling-procedure-intro.md %}
+:installtype: a ``.zip``
+:bundler: https://www.rollupjs.org/[Rollup.js]
+:syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules[ES6+ syntax]
+include::partial$module-loading/bundling-procedure-intro.adoc[]
 
 == Requirements
 
@@ -18,16 +18,16 @@ This guide requires the following:
 
 == Procedure
 
-{% assign is_zip_install = true %}
-{% include install/download-tinymce.md %}
+:is_zip_install: true
+include::partial$install/download-tinymce.adoc[]
 
-{% include module-loading/webpack-dev-dependencies.md %}
+include::partial$module-loading/webpack-dev-dependencies.adoc[]
 
-{% include module-loading/bundling-rollup-es6-zip_editor.md %}
+include::partial$module-loading/bundling-rollup-es6-zip_editor.adoc[]
 
-{% include module-loading/bundling-rollup-es6-zip_rollup.config.md %}
+include::partial$module-loading/bundling-rollup-es6-zip_rollup.config.adoc[]
 
-{% include module-loading/bundling-rollup-es6-index.md %}
+include::partial$module-loading/bundling-rollup-es6-index.adoc[]
 
 . Run Rollup.js to test the bundle, such as:
 +
@@ -36,8 +36,8 @@ This guide requires the following:
 `
 +
 If Rollup.js runs successfully, check that the editor loads in the application.
- If Rollup.js fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {{site.productname}} into an existing project.
+ If Rollup.js fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {productname} into an existing project.
 
-{% assign is_zip_install = nil %}
+:is_zip_install: nil
 
-{% include module-loading/bundling-next-steps.md %}
+include::partial$module-loading/bundling-next-steps.adoc[]

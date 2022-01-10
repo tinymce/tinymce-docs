@@ -4,8 +4,8 @@
 :keywords: syntax highlight codesample code contenteditable codesample_languages
 :title_nav: Code Sample
 
-{% assign pluginname = "Code Sample" %}
-{% assign plugincode = "codesample" %}
+:pluginname: Code Sample
+:plugincode: codesample
 
 The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
@@ -40,20 +40,20 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 == Interactive example
 
-{% include live-demo.html id="codesample" %}
+liveDemo::codesample[]
 
 == Options
 
-{% include configuration/codesample_global_prismjs.md %}
+include::partial$configuration/codesample_global_prismjs.adoc[]
 
-{% include configuration/codesample_languages.md %}
+include::partial$configuration/codesample_languages.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Code Sample plugin provides the following JavaScript command.
 
-{% include commands/codesample-cmds.md %}
+include::partial$commands/codesample-cmds.adoc[]

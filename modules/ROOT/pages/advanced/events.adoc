@@ -4,11 +4,11 @@
 :keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
 :title_nav: Available Events
 
-{{ site.productname }} supports some browser-native events, and provides additional events for working with the editor and plugins.
+{productname} supports some browser-native events, and provides additional events for working with the editor and plugins.
 
 == Handling Editor events
 
-The following examples illustrate how to use supported native events, editor core events, and plugin events with {{ site.productname }}.
+The following examples illustrate how to use supported native events, editor core events, and plugin events with {productname}.
 
 The following example uses a function to create a console log entry when the editor has initialized. This is also an example of handling an event which does not return any data.
 
@@ -38,7 +38,7 @@ tinymce.init({
 
 == Supported browser-native events
 
-{{ site.productname }} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
+{productname} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
 
 * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforeinput_event[beforeinput]
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event[blur]
@@ -82,7 +82,7 @@ tinymce.init({
 
 == Editor core events
 
-The following events are provided by the {{ site.productname }} editor.
+The following events are provided by the {productname} editor.
 
 |===
 | Name | Data | Description
@@ -113,7 +113,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | AfterScrollIntoView
 | `{ elm: HTMLElement, alignToTop: boolean }`
-| Fired when an element has been scrolled into view. {{site.requires_5_2v}}
+| Fired when an element has been scrolled into view. include::partial$misc/requires_5_2v.adoc[]
 
 | ObjectResized
 | `{ target: HTMLElement, width: number, height: number, origin: string }`
@@ -125,7 +125,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | SwitchMode
 | `{ mode: string }`
-| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {{ site.productname }} API link:{{ site.baseurl }}/api/tinymce/tinymce.editormode/#register['tinymce.activeEditor.mode.register()'].
+| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:{baseurl}/api/tinymce/tinymce.editormode/#register['tinymce.activeEditor.mode.register()'].
 
 | ScrollWindow
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event])
@@ -149,11 +149,11 @@ The following events are provided by the {{ site.productname }} editor.
 
 | FormatApply
 | `{ format: string; vars?: FormatVars; node?: Node \| RangeLikeObject }`
-| Fired after a format is applied. {{site.requires_5_9v}}
+| Fired after a format is applied. include::partial$misc/requires_5_9v.adoc[]
 
 | FormatRemove
 | `{ format: string; vars?: FormatVars; node?: Node \| RangeLikeObject }`
-| Fired after a format is removed. {{site.requires_5_9v}}
+| Fired after a format is removed. include::partial$misc/requires_5_9v.adoc[]
 
 | ShowCaret
 | `{ target: Node, direction: number, before: boolean }`
@@ -257,7 +257,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | Dirty
 | N/A
-| Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when link:{{site.baseurl}}/api/tinymce/tinymce.undomanager/[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the link:{{site.baseurl}}/api/tinymce/tinymce.editor/#isdirty[`editor.isDirty` API].
+| Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when link:{baseurl}/api/tinymce/tinymce.undomanager/[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the link:{baseurl}/api/tinymce/tinymce.editor/#isdirty[`editor.isDirty` API].
 
 | CloseWindow
 | `{ dialog: DialogApi }`
@@ -269,12 +269,12 @@ The following events are provided by the {{ site.productname }} editor.
 
 | ProgressState
 | `{ state: boolean, time?: number }`
-| Fired when a change to the editor progress state is scheduled using the {{ site.productname }} API link:{{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate[`tinymce.activeEditor.setProgressState()`].
+| Fired when a change to the editor progress state is scheduled using the {productname} API link:{baseurl}/api/tinymce/tinymce.editor/#setprogressstate[`tinymce.activeEditor.setProgressState()`].
 
 | AfterProgressState
 | `{ state: boolean }`
 | Fired after the editor progress state is changed, and the new progress state is in effect. +
-{{ site.requires_5_7v}}
+include::partial$misc/requires_5_7v.adoc[]
 
 | PreProcess
 | `{ node: Element, format: string }`
@@ -286,7 +286,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | SetAttrib
 | `{ attrElm: Element, attrName: string, attrValue: string }`
-| Fired when an attribute is updated using the editor link:{{ site.baseurl }}/api/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
+| Fired when an attribute is updated using the editor link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
 
 | ResizeEditor
 | N/A
@@ -298,19 +298,19 @@ The following events are provided by the {{ site.productname }} editor.
 
 | SkinLoadError
 | `{ message: string }`
-| Fired when the editor skin fails to load. {{site.requires_5_2v}}
+| Fired when the editor skin fails to load. include::partial$misc/requires_5_2v.adoc[]
 
 | PluginLoadError
 | `{ message: string }`
-| Fired when an editor plugin fails to load. {{site.requires_5_2v}}
+| Fired when an editor plugin fails to load. include::partial$misc/requires_5_2v.adoc[]
 
 | IconsLoadError
 | `{ message: string }`
-| Fired when the editor icon pack fails to load. {{site.requires_5_2v}}
+| Fired when the editor icon pack fails to load. include::partial$misc/requires_5_2v.adoc[]
 
 | LanguageLoadError
 | `{ message: string }`
-| Fired when the editor language pack fails to load. {{site.requires_5_2v}}
+| Fired when the editor language pack fails to load. include::partial$misc/requires_5_2v.adoc[]
 
 | BeforeRenderUI
 | N/A
@@ -323,12 +323,12 @@ The following events are provided by the {{ site.productname }} editor.
 | longpress
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart event])
 | Fired when a long press occurs on a touch device inside the editor. +
-{{ site.requires_5_1v }}
+include::partial$misc/requires_5_1v.adoc[]
 
 | tap
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Document/touchend_event[touchend event])
 | Fired when a tap occurs on a touch device inside the editor (simulated event similar to click). +
-{{ site.requires_5_1v }}
+include::partial$misc/requires_5_1v.adoc[]
 
 | ScrollContent
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event])
@@ -348,11 +348,11 @@ The following events are provided by the {{ site.productname }} editor.
 
 | BeforeOpenNotification
 | `{ notification: NotificationSpec }`
-| Fired before a notification is displayed. For information on the Notifications Specification (`NotificationSpec`), see: link:{{site.baseurl}}/advanced/creating-custom-notifications/[Create custom notifications]. {{site.requires_5_6v}}
+| Fired before a notification is displayed. For information on the Notifications Specification (`NotificationSpec`), see: link:{baseurl}/advanced/creating-custom-notifications/[Create custom notifications]. include::partial$misc/requires_5_6v.adoc[]
 
 | OpenNotification
 | `{ notification: NotificationApi }`
-| Fired after a notification is displayed. For information on the Notifications API (`NotificationApi`), see: link:{{site.baseurl}}/advanced/creating-custom-notifications/[Create custom notifications]. {{site.requires_5_6v}}
+| Fired after a notification is displayed. For information on the Notifications API (`NotificationApi`), see: link:{baseurl}/advanced/creating-custom-notifications/[Create custom notifications]. include::partial$misc/requires_5_6v.adoc[]
 |===
 
 == Plugin events
@@ -386,7 +386,7 @@ For events applicable to the Advanced Tables plugin, see: <<tableevents,Table ev
 
 === Autosave events
 
-The following events are provided by the link:{{site.baseurl}}/plugins/opensource/autosave/[Autosave plugin].
+The following events are provided by the link:{baseurl}/plugins/opensource/autosave/[Autosave plugin].
 
 |===
 | Name | Data | Description
@@ -406,7 +406,7 @@ The following events are provided by the link:{{site.baseurl}}/plugins/opensourc
 
 === Character Map events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/opensource/charmap/[Character Map plugin].
+The following event is provided by the link:{baseurl}/plugins/opensource/charmap/[Character Map plugin].
 
 |===
 | Name | Data | Description
@@ -418,7 +418,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/opensource/
 
 === Comments events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/premium/comments/[Comments plugin].
+The following event is provided by the link:{baseurl}/plugins/premium/comments/[Comments plugin].
 
 |===
 | Name | Data | Description
@@ -430,11 +430,11 @@ The following event is provided by the link:{{site.baseurl}}/plugins/premium/com
 
 === Export events
 
-{% include events/export-events.md %}
+include::partial$events/export-events.adoc[]
 
 === Format Painter events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/premium/formatpainter/[Format Painter plugin].
+The following event is provided by the link:{baseurl}/plugins/premium/formatpainter/[Format Painter plugin].
 
 |===
 | Name | Data | Description
@@ -446,7 +446,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/premium/for
 
 === Fullscreen events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/opensource/fullscreen/[Fullscreen plugin].
+The following event is provided by the link:{baseurl}/plugins/opensource/fullscreen/[Fullscreen plugin].
 
 |===
 | Name | Data | Description
@@ -458,7 +458,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/opensource/
 
 === Import CSS events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/opensource/importcss/[Import CSS plugin].
+The following event is provided by the link:{baseurl}/plugins/opensource/importcss/[Import CSS plugin].
 
 |===
 | Name | Data | Description
@@ -470,7 +470,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/opensource/
 
 === Link checker events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/premium/linkchecker/[Link Checker plugin].
+The following event is provided by the link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
 
 |===
 | Name | Data | Description
@@ -482,7 +482,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/premium/lin
 
 === Lists events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/opensource/lists/[Lists plugin].
+The following event is provided by the link:{baseurl}/plugins/opensource/lists/[Lists plugin].
 
 |===
 | Name | Data | Description
@@ -494,7 +494,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/opensource/
 
 === Media Embed events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/premium/mediaembed/[Media Embed plugin].
+The following event is provided by the link:{baseurl}/plugins/premium/mediaembed/[Media Embed plugin].
 
 |===
 | Name | Data | Description
@@ -506,7 +506,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/premium/med
 
 === Paste events
 
-The following events are provided by the link:{{site.baseurl}}/plugins/opensource/paste/[Paste plugin].
+The following events are provided by the link:{baseurl}/plugins/opensource/paste/[Paste plugin].
 
 |===
 | Name | Data | Description
@@ -526,7 +526,7 @@ The following events are provided by the link:{{site.baseurl}}/plugins/opensourc
 
 === Permanent Pen events
 
-The following events are provided by the link:{{site.baseurl}}/plugins/premium/permanentpen/[Permanent Pen plugin].
+The following events are provided by the link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen plugin].
 
 |===
 | Name | Data | Description
@@ -542,7 +542,7 @@ The following events are provided by the link:{{site.baseurl}}/plugins/premium/p
 
 === PowerPaste events
 
-The following events are provided by the link:{{site.baseurl}}/plugins/premium/powerpaste/[PowerPaste plugin].
+The following events are provided by the link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
 
 |===
 | Name | Data | Description
@@ -562,9 +562,9 @@ The following events are provided by the link:{{site.baseurl}}/plugins/premium/p
 
 === Spell Checker events
 
-The following events are provided by the link:{{site.baseurl}}/plugins/opensource/spellchecker/[Spell Checker plugin].
+The following events are provided by the link:{baseurl}/plugins/opensource/spellchecker/[Spell Checker plugin].
 
-{% include DEPRECATED/spellchecker.md %}
+include::partial$DEPRECATED/spellchecker.adoc[]
 
 |===
 | Name | Data | Description
@@ -580,15 +580,15 @@ The following events are provided by the link:{{site.baseurl}}/plugins/opensourc
 
 === Spell Checker Pro events
 
-{% include events/tinymcespellchecker-events.md %}
+include::partial$events/tinymcespellchecker-events.adoc[]
 
 === Table events
 
-{% include events/table-events.md %}
+include::partial$events/table-events.adoc[]
 
 === Visual Blocks events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/opensource/visualblocks/[Visual Blocks plugin].
+The following event is provided by the link:{baseurl}/plugins/opensource/visualblocks/[Visual Blocks plugin].
 
 |===
 | Name | Data | Description
@@ -600,7 +600,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/opensource/
 
 === Visual Characters events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/opensource/visualchars/[Visual Characters plugin].
+The following event is provided by the link:{baseurl}/plugins/opensource/visualchars/[Visual Characters plugin].
 
 |===
 | Name | Data | Description
@@ -612,7 +612,7 @@ The following event is provided by the link:{{site.baseurl}}/plugins/opensource/
 
 === Word Count events
 
-The following event is provided by the link:{{site.baseurl}}/plugins/opensource/wordcount/[Word Count plugin].
+The following event is provided by the link:{baseurl}/plugins/opensource/wordcount/[Word Count plugin].
 
 |===
 | Name | Data | Description

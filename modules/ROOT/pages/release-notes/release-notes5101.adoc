@@ -5,7 +5,7 @@
 
 == Overview
 
-{{site.productname}} 5.10.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, November 10^th^, 2021. It includes {{site.productname}} 5.10.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.10.1, including:
+{productname} 5.10.1 was released for {enterpriseversion} and {cloudname} on Wednesday, November 10^th^, 2021. It includes {productname} 5.10.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.1, including:
 
 * <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
 * <<accompanyingpremiumself-hostedserver-sidecomponentchanges,Accompanying Premium self-hosted server-side component changes>>
@@ -13,31 +13,31 @@
 * <<securityfixes,Security fixes>>
 * <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
 
-{{site.releasenotes_for_stable}}
+include::partial$misc/releasenotes_for_stable.adoc[]
 
 == Accompanying Premium Plugin changes
 
-The following premium plugin updates were released alongside {{site.productname}} 5.10.1.
+The following premium plugin updates were released alongside {productname} 5.10.1.
 
 === Advanced Code 2.3.2
 
-The {{site.productname}} 5.10.1 release includes an accompanying release of the *Advanced Code* premium plugin.
+The {productname} 5.10.1 release includes an accompanying release of the *Advanced Code* premium plugin.
 
 *Advanced Code* 2.3.2 fixes an exception getting thrown for hints when the editor was rendered in a shadow root.
 
-For information on the Advanced Code plugin, see: link:{{site.baseurl}}/plugins/premium/advcode/[Advanced Code plugin].
+For information on the Advanced Code plugin, see: link:{baseurl}/plugins/premium/advcode/[Advanced Code plugin].
 
 === PowerPaste 5.6.1
 
-The {{site.productname}} 5.10.1 release includes an accompanying release of the *PowerPaste* premium plugin.
+The {productname} 5.10.1 release includes an accompanying release of the *PowerPaste* premium plugin.
 
 *PowerPaste* 5.6.1 fixes a bug where pasting text content with multiple items on the clipboard did not work.
 
-For information on the PowerPaste plugin, see: link:{{site.baseurl}}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
 
 == Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} 5.10.1 release includes accompanying changes affecting the {{site.productname}} *self-hosted* services for the following plugins:
+The {productname} 5.10.1 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
 
 * The Enhanced Media Embed plugin (`mediaembed`)
 * The Export plugin (`export`)
@@ -51,15 +51,15 @@ The Java server-side components have been updated to the following versions:
 * `ephox-hyperlinking.war`: 2.105.6
 * `ephox-image-proxy.war`: 2.105.5
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{{site.baseurl}}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{baseurl}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
 
 For information on:
 
-* The Spell Checker Pro plugin, see: link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
-* The Link Checker plugin, see: link:{{site.baseurl}}/plugins/premium/linkchecker/[Link Checker plugin].
-* The Image Tools plugin, see: link:{{site.baseurl}}/plugins/opensource/imagetools/[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: link:{{site.baseurl}}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: link:{{site.baseurl}}/enterprise/server/[Server-side component installation].
+* The Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+* The Link Checker plugin, see: link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
+* The Image Tools plugin, see: link:{baseurl}/plugins/opensource/imagetools/[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
 
 === Security related dependency update for all 3 server-side services
 
@@ -82,16 +82,16 @@ The new versions of the server-side services provide updates for the Java-based 
   *** 8.5.12+
   *** 8.0.42+
   *** 7.0.76+
-. Replace the existing server-side `.war` files with the `.war` files bundled with {{site.productname}} 5.10.1 or later.
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 5.10.1 or later.
 
 For information on:
 
-* Deploying the server-side components, see: link:{{site.baseurl}}/enterprise/server/[Server-side component installation].
-* Deploying the server-side components using Docker, see: link:{{site.baseurl}}/enterprise/server/dockerservices/[Containerized service deployments].
+* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
+* Deploying the server-side components using Docker, see: link:{baseurl}/enterprise/server/dockerservices/[Containerized service deployments].
 
 == General bug fixes
 
-{{site.productname}} 5.10.1 provides fixes for the following bugs:
+{productname} 5.10.1 provides fixes for the following bugs:
 
 * The iframe aria help text was not read by some screen readers.
 * Clicking the `forecolor` or `backcolor` toolbar buttons would do nothing until selecting a color.
@@ -106,7 +106,7 @@ For information on:
 
 == Security fixes
 
-{{site.productname}} 5.10.1 provides fixes for the following security issues:
+{productname} 5.10.1 provides fixes for the following security issues:
 
 IMPORTANT: During further scans, some vulnerable dependencies were missed in this release. As such, these security issues have not been resolved in the 5.10.1 release and will be resolved in an upcoming release. Note that no details of the security vulnerabilities have been publicly disclosed at the time of release.
 
@@ -114,8 +114,8 @@ IMPORTANT: During further scans, some vulnerable dependencies were missed in thi
 
 ~~For information on the server-side components updates, see: <<accompanyingpremiumself-hostedserver-sidecomponentchanges,Accompanying Premium self-hosted server-side component changes>>.~~
 
-{% assign enterprise = true %}
+:enterprise: true
 
-{% include install/upgrading-info.md %}
+include::partial$install/upgrading-info.adoc[]
 
-{% assign enterprise = false %}
+:enterprise: false

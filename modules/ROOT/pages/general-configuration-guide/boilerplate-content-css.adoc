@@ -4,7 +4,7 @@
 :keywords: css content_css
 :title_nav: Boilerplate content CSS
 
-Some elements in {{site.productname}} require additional CSS to be added to the page that displays the content produced by the editor. The following CSS styles can be used to style these elements. Add this CSS file to the editor using the link:{{ site.baseurl }}/configure/content-appearance/#content_css[content_css] option and add the styles the page where the saved content is presented.
+Some elements in {productname} require additional CSS to be added to the page that displays the content produced by the editor. The following CSS styles can be used to style these elements. Add this CSS file to the editor using the link:{baseurl}/configure/content-appearance/#content_css[content_css] option and add the styles the page where the saved content is presented.
 
 ```css
 /*
@@ -18,7 +18,7 @@ __/
 * Includes image captions using the HTML5 figure element.
 */
 
-{% include css-codeblock/image-plugin-css.md %}
+include::partial$css-codeblock/image-plugin-css.adoc[]
 
 /*
  Alignment using classes rather than inline styles
@@ -33,7 +33,7 @@ img.align-right {
   float: right;
 }
 
-{% include css-codeblock/toc-plugin-css.md %}
+include::partial$css-codeblock/toc-plugin-css.adoc[]
 
 /*
 * Premium Plugins CSS
@@ -41,13 +41,13 @@ img.align-right {
 
 /* The Checklist Plugin */
 
-{% include css-codeblock/checklist-plugin-css.md %}
+include::partial$css-codeblock/checklist-plugin-css.adoc[]
 
 /* The Page Embed plugin */
 
-{% include css-codeblock/pageembed-plugin-css.md %}
+include::partial$css-codeblock/pageembed-plugin-css.adoc[]
 
 /* The Media Embed plugin */
 
-{% include css-codeblock/mediaembed-plugin-css.md %}
+include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
 ```

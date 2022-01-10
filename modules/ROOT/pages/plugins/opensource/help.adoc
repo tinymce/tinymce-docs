@@ -4,15 +4,15 @@
 :keywords: help
 :title_nav: Help
 
-{% assign pluginname = "Help" %}
-{% assign plugincode = "help" %}
+:pluginname: Help
+:plugincode: help
 
 The help plugin adds a button and/or menu item that opens a dialog showing two tabs:
 
 * Handy shortcuts that explains some nice-to-know keyboard shortcuts
 * Plugin list that shows which plugins that have been installed, with links to the relevant documentation pages if available, and a list of available premium plugins.
 
-In the footer of the dialog you can also see which version of {{site.productname}} you are using.
+In the footer of the dialog you can also see which version of {productname} you are using.
 
 The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 
@@ -28,7 +28,7 @@ tinymce.init({
 
 == Config Options
 
-{% include configuration/help_tabs.md %}
+include::partial$configuration/help_tabs.adoc[]
 
 == API
 
@@ -36,7 +36,7 @@ tinymce.init({
 | Name | Arguments | Description
 
 | addTab
-| tabSpec: link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[TabPanel]
+| tabSpec: link:{baseurl}/ui-components/dialogcomponents/#tabpanel[TabPanel]
 | Register a tab for the Help dialog
 |===
 
@@ -57,14 +57,14 @@ tinymce.activeEditor.plugins.help.addTab({
 
 == Exposing metadata for the help plugin
 
-For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{{ site.baseurl }}/advanced/creating-a-plugin/#exposingmetadata[Creating a Plugin page].
+For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{baseurl}/advanced/creating-a-plugin/#exposingmetadata[Creating a Plugin page].
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Help plugin provides the following JavaScript command.
 
-{% include commands/help-cmds.md %}
+include::partial$commands/help-cmds.adoc[]

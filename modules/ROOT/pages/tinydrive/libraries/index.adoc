@@ -4,12 +4,12 @@
 :title_nav: Starter projects
 :type: folder
 
-{% assign navigaton = site.data.nav %}
+:navigaton: site.data.nav
 {% for entry in navigaton %}
   {% if entry.url == "tinydrive" %}
     {% for subentry in entry.pages %}
       {% if subentry.url == "libraries" %}
-        {% assign links = subentry.pages %}
+        :links: subentry.pages
       {% endif %}
     {% endfor %}
   {% endif %}

@@ -17,7 +17,7 @@ To disable the editor's context menu, set this option to `false`.
 
 *Default Value:* `'link linkchecker image imagetools table spellchecker configurepermanentpen'`
 
-{{site.ctrl_right_click}}
+include::partial$misc/ctrl_right_click.adoc[]
 
 === Example: Using `contextmenu`
 
@@ -30,5 +30,5 @@ tinymce.init({
 `
 
 {% if page.title != "Context menu" %}
-For information on configuring the `contextmenu` option and creating custom context menu items link:{{site.baseurl}}/ui-components/contextmenu/[context menu examples].
+For information on configuring the `contextmenu` option and creating custom context menu items link:{baseurl}/ui-components/contextmenu/[context menu examples].
 {% endif %}

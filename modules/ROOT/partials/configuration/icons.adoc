@@ -1,20 +1,20 @@
 {% if customIconPack != true %}
 ## `icons`
 
-The *icons* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: link:{{site.baseurl}}/advanced/creating-an-icon-pack/[Create an icon pack for {{site.productname}}].
+The *icons* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: link:{baseurl}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
 
 *Type:*  `String`
 {% endif %}
 
-On initialization, {{site.productname}} will try to load any icon pack specified by the *icons* option. The icons in the icon pack will be merged with link:{{site.baseurl}}/advanced/editor-icon-identifiers/[{{site.productname}}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
+On initialization, {productname} will try to load any icon pack specified by the *icons* option. The icons in the icon pack will be merged with link:{baseurl}/advanced/editor-icon-identifiers/[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
 
-{{site.productname}} loads icon packs from the path `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`;
+{productname} loads icon packs from the path `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`;
 where:
 
-* `TINYMCE_BASE` is the {{site.productname}} root directory (the directory containing `tinymce.min.js`).
+* `TINYMCE_BASE` is the {productname} root directory (the directory containing `tinymce.min.js`).
 * `+${iconPackName}+` is the name of the icon pack.
 
-To use a {{site.productname}} icon pack:
+To use a {productname} icon pack:
 
 . If required, create a new `icons` directory in `TINYMCE_BASE`.
 . Copy the icon pack into the `icons` directory.

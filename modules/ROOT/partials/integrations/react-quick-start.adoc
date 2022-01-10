@@ -1,9 +1,9 @@
 == TinyMCE React integration quick start guide
 
-The https://github.com/tinymce/tinymce-react[Official {{site.productname}} React component] integrates {{site.productname}} into React projects.
-This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {{site.productname}} editor based on our link:{{site.baseurl}}/demo/basic-example/[Basic example].
+The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects.
+This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
 
-For examples of the {{site.productname}} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 
 === Prerequisites
 
@@ -11,10 +11,10 @@ This procedure requires:
 
 * https://nodejs.org/[Node.js (and npm)].
 * Access to `tinymce.min.js` on either:
- ** link:{{site.baseurl}}/cloud-deployment-guide/editor-and-features/[{{site.cloudname}}].
- ** {{site.productname}} Self-hosted. See:
-  *** link:{{site.baseurl}}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Installing {{ site.productname }} - Package Managers].
-  *** link:{{site.baseurl}}/general-configuration-guide/advanced-install/#self-hostedinstall[Installing {{ site.productname }} - Self-Hosted Download / Install].
+ ** link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}].
+ ** {productname} Self-hosted. See:
+  *** link:{baseurl}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Installing {productname} - Package Managers].
+  *** link:{baseurl}/general-configuration-guide/advanced-install/#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
 
 === Procedure
 
@@ -54,7 +54,7 @@ export default function App() {
        <Editor
          onInit={(evt, editor) \=> editorRef.current = editor}
          initialValue="<p>This is the initial content of the editor.</p>"
-         init={% raw %}{{{% endraw %}
+         init={{
            height: 500,
            menubar: false,
            plugins: [
@@ -67,45 +67,45 @@ export default function App() {
            'alignright alignjustify | bullist numlist outdent indent | ' +
            'removeformat | help',
            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-         {% raw %}}}{% endraw %}
+         }}
        />
        <button onClick=\{log}>Log editor content</button>
      </>
    );
  }
  ```
- This JavaScript file will create the class `App` containing a {{site.productname}} editor configured to replicate the example on the link:{{site.baseurl}}/demo/basic-example/[Basic example page].
+ This JavaScript file will create the class `App` containing a {productname} editor configured to replicate the example on the link:{baseurl}/demo/basic-example/[Basic example page].
 
-. Provide access to {{site.productname}} using either {{site.cloudname}} or by self-hosting {{site.productname}}.
- ** *{{site.cloudname}}*
+. Provide access to {productname} using either {cloudname} or by self-hosting {productname}.
+ ** *{cloudname}*
 +
-Include the `apiKey` option in the editor element and include your link:{{site.accountsignup}}[{{site.cloudname}} API key].
+Include the `apiKey` option in the editor element and include your link:{accountsignup}[{cloudname} API key].
 +
 Such as:
 +
 `jsx
-  <Editor apiKey='your-api-key' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
+  <Editor apiKey='your-api-key' init={{ /* your other settings */ }} />
  `
 
- ** *{{site.productname}} Self-hosted*
+ ** *{productname} Self-hosted*
 +
-{{site.productname}} can be self-hosted by: deploying {{site.productname}} independent of the React application, or bundling {{site.productname}} with the React application.
+{productname} can be self-hosted by: deploying {productname} independent of the React application, or bundling {productname} with the React application.
 
-  *** *Deploy {{site.productname}} independent of the React application using `tinymceScriptSrc`*
+  *** *Deploy {productname} independent of the React application using `tinymceScriptSrc`*
 +
-To use an independent deployment of {{site.productname}}, add the `tinymceScriptSrc` prop to specify the path to the {{site.productname}} script, such as:
+To use an independent deployment of {productname}, add the `tinymceScriptSrc` prop to specify the path to the {productname} script, such as:
 ```jsx+++<Editor tinymceScriptSrc="/path/to/tinymce.min.js">++++++</Editor>+++
 +
 ```
 +
-To use `tinymceScriptSrc` with the `create-react-app` project, put the {{site.productname}} distribution in `./public` folder
+To use `tinymceScriptSrc` with the `create-react-app` project, put the {productname} distribution in `./public` folder
 and reference the path to the `public` folder using the environment
 variable `process.env.PUBLIC_URL`, such as:
  `jsx
  <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
 `
 
-  *** *Deploy {{site.productname}} independent of the React application with a script tag*
+  *** *Deploy {productname} independent of the React application with a script tag*
 +
 An alternative method is to add a script to either the `<head>` or the
 end of the `<body>` of the HTML file, such as:
@@ -113,7 +113,7 @@ end of the `<body>` of the HTML file, such as:
 <script src="/path/to/tinymce.min.js"></script>
 `
 +
-To use the independently sourced {{site.productname}} with create-react-app, add the script tag to `./public/index.html`.
+To use the independently sourced {productname} with create-react-app, add the script tag to `./public/index.html`.
 +
 Normally the tinymce distribution would be put in the `public` folder
 and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
@@ -121,13 +121,13 @@ and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
 <script src="%PUBLIC_URL%/tinymce/tinymce.min.js"></script>
 `
 +
-For information on self-hosting {{site.productname}}, see: link:{{site.baseurl}}/general-configuration-guide/advanced-install/[Installing {{site.productname}}].
+For information on self-hosting {productname}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing {productname}].
 
-  *** *Bundling {{site.productname}} with the React application using a module loader*
+  *** *Bundling {productname} with the React application using a module loader*
 +
-{{site.companyname}} does not recommend bundling `tinymce` and `tinymce-react` with a module loader. Bundling these packages can be complex and error prone.
+{companyname} does not recommend bundling `tinymce` and `tinymce-react` with a module loader. Bundling these packages can be complex and error prone.
 +
-To bundle {{site.productname}} using a module loader (such as Webpack and Browserify), see: link:{{site.baseurl}}/advanced/usage-with-module-loaders/[Usage with module loaders].
+To bundle {productname} using a module loader (such as Webpack and Browserify), see: link:{baseurl}/advanced/usage-with-module-loaders/[Usage with module loaders].
 +
 Example of bundling:
   ```jsx
@@ -174,11 +174,11 @@ export default function TinyEditorComponent(props) {
     // loading process and is instead loaded as a string via content_style
     return (
       <Editor
-        init={% raw %}{{{% endraw %}
+        init={{
           skin: false,
           content_css: false,
           content_style: [contentCss, contentUiCss].join('\n'),
-        {% raw %}}}{% endraw %}
+        }}
       />
     );
   }
@@ -212,7 +212,7 @@ NOTE: Additional configuration is required to deploy the application outside the
 
 === Next Steps
 
-* For examples of the {{site.productname}} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 * For information on customizing:
- ** {{site.productname}}, see: link:{{site.baseurl}}/general-configuration-guide/basic-setup/[Basic setup].
+ ** {productname}, see: link:{baseurl}/general-configuration-guide/basic-setup/[Basic setup].
  ** The React application, see: https://create-react-app.dev/docs/getting-started[Create React App] or https://reactjs.org/docs/getting-started.html[the React documentation].

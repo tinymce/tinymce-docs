@@ -2,7 +2,7 @@
 
 {% if site.productmajorversion < 6 %}
 +++<a class="anchor" id="toolbar_drawer">++++++</a>+++
-> *Note*: The `toolbar_drawer` option was deprecated with the release of {{site.productname}} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option. The `toolbar_drawer` option will be removed in {{site.productname}} 6.0.
+> *Note*: The `toolbar_drawer` option was deprecated with the release of {productname} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option. The `toolbar_drawer` option will be removed in {productname} 6.0.
 {% endif %}
 
 The `toolbar_mode` option is used to extend the toolbar to accommodate the overflowing toolbar buttons. This option is useful for small screens or small editor frames.
@@ -26,7 +26,7 @@ Two situations to consider when organising the toolbar:
 * When there are two or more toolbar button groups, the main toolbar will show as many complete, sequential toolbar groups as possible within the width of the editor. Any remaining toolbar button groups will be moved to the toolbar drawer.
 * If the first toolbar button group is wider than the editor, the whole toolbar will be shown in the toolbar drawer.
 
-The toolbar modes are not available when using link:{{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars[multiple toolbars] or the link:{{site.baseurl}}/configure/editor-appearance/#toolbarn[toolbar(n)] option.
+The toolbar modes are not available when using link:{baseurl}/configure/editor-appearance/#usingmultipletoolbars[multiple toolbars] or the link:{baseurl}/configure/editor-appearance/#toolbarn[toolbar(n)] option.
 
 *Type:* `String`
 
@@ -34,7 +34,7 @@ The toolbar modes are not available when using link:{{site.baseurl}}/configure/e
 
 *Possible Values:* `'floating'`, `'sliding'`, `'scrolling'`, or `'wrap'`
 
-{{site.differs_for_mobile}}
+include::partial$misc/differs_for_mobile.adoc[]
 
 === Settings
 
@@ -47,9 +47,9 @@ The toolbar mode is specified in the `tinymce.init`. There are four toolbar mode
 
 ==== Floating
 
-If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:{{site.baseurl}}/images/icons/more-drawer.svg[Drawer] is clicked.
+If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:{baseurl}/images/icons/more-drawer.svg[Drawer] is clicked.
 
-image::{{site.baseurl}}/images/floating_toolbar.png[Floating Toolbar]
+image::{baseurl}/images/floating_toolbar.png[Floating Toolbar]
 
 ===== Configuring a Floating toolbar
 
@@ -64,9 +64,9 @@ tinymce.init({
 
 ==== Sliding
 
-If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:{{site.baseurl}}/images/icons/more-drawer.svg[Drawer] is clicked.
+If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:{baseurl}/images/icons/more-drawer.svg[Drawer] is clicked.
 
-image::{{site.baseurl}}/images/sliding_toolbar.png[Sliding Toolbar]
+image::{baseurl}/images/sliding_toolbar.png[Sliding Toolbar]
 
 ===== Configuring a Sliding toolbar
 
@@ -87,7 +87,7 @@ If the `toolbar_mode` is configured to `scrolling`, the overflow toolbar buttons
 
 A scrollbar will be shown on the toolbar on desktop devices and hybrid devices in desktop mode.
 
-image::{{site.baseurl}}/images/scrolling_toolbar.png[Scrolling Toolbar]
+image::{baseurl}/images/scrolling_toolbar.png[Scrolling Toolbar]
 
 ===== Configuring a Scrolling toolbar
 
@@ -104,7 +104,7 @@ tinymce.init({
 
 If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
 
-image::{{site.baseurl}}/images/wrapped_toolbar.png[Wrapped Toolbar]
+image::{baseurl}/images/wrapped_toolbar.png[Wrapped Toolbar]
 
 ===== Configuring a Wrapped toolbar
 

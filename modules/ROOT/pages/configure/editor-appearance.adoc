@@ -3,94 +3,94 @@
 :description_short:
 :title_nav: User interface options
 
-{% include configuration/block_formats.md %}
+include::partial$configuration/block_formats.adoc[]
 
-{% include configuration/branding.md %}
+include::partial$configuration/branding.adoc[]
 
-{% include configuration/contextmenu.md %}
+include::partial$configuration/contextmenu.adoc[]
 
-{% include configuration/contextmenu_avoid_overlap.md %}
+include::partial$configuration/contextmenu_avoid_overlap.adoc[]
 
-{% include configuration/contextmenu_never_use_native.md %}
+include::partial$configuration/contextmenu_never_use_native.adoc[]
 
-{% include configuration/custom_ui_selector.md %}
+include::partial$configuration/custom_ui_selector.adoc[]
 
-{% include configuration/draggable_modal.md %}
+include::partial$configuration/draggable_modal.adoc[]
 
-{% include configuration/elementpath.md %}
+include::partial$configuration/elementpath.adoc[]
 
-{% include configuration/event_root.md %}
+include::partial$configuration/event_root.adoc[]
 
-{% include configuration/fixed_toolbar_container.md %}
+include::partial$configuration/fixed_toolbar_container.adoc[]
 
-{% include configuration/fixed_toolbar_container_target.md %}
+include::partial$configuration/fixed_toolbar_container_target.adoc[]
 
-{% include configuration/font_formats.md %}
+include::partial$configuration/font_formats.adoc[]
 
-{% include configuration/fontsize_formats.md %}
+include::partial$configuration/fontsize_formats.adoc[]
 
-{% include configuration/height.md %}
+include::partial$configuration/height.adoc[]
 
-{% include configuration/icons.md %}
+include::partial$configuration/icons.adoc[]
 
-{% include configuration/icons_url.md %}
+include::partial$configuration/icons_url.adoc[]
 
-{% include configuration/inline.md %}
+include::partial$configuration/inline.adoc[]
 
-{% include configuration/lineheight_formats.md %}
+include::partial$configuration/lineheight_formats.adoc[]
 
-{% include configuration/max_height.md %}
+include::partial$configuration/max_height.adoc[]
 
-{% include configuration/max_width.md %}
+include::partial$configuration/max_width.adoc[]
 
-{% include configuration/menu.md %}
+include::partial$configuration/menu.adoc[]
 
-{% include configuration/menubar.md %}
+include::partial$configuration/menubar.adoc[]
 
-{% include configuration/min_height.md %}
+include::partial$configuration/min_height.adoc[]
 
-{% include configuration/min_width.md %}
+include::partial$configuration/min_width.adoc[]
 
-{% include configuration/mobile.md %}
+include::partial$configuration/mobile.adoc[]
 
-{% include configuration/placeholder.md %}
+include::partial$configuration/placeholder.adoc[]
 
-{% include configuration/preview_styles.md %}
+include::partial$configuration/preview_styles.adoc[]
 
-{% include configuration/removed_menuitems.md %}
+include::partial$configuration/removed_menuitems.adoc[]
 
-{% include configuration/resize.md %}
+include::partial$configuration/resize.adoc[]
 
-{% include configuration/skin.md %}
+include::partial$configuration/skin.adoc[]
 
-{% include configuration/skin_url.md %}
+include::partial$configuration/skin_url.adoc[]
 
-{% include configuration/statusbar.md %}
+include::partial$configuration/statusbar.adoc[]
 
-{% include configuration/style_formats.md %}
+include::partial$configuration/style_formats.adoc[]
 
-{% include configuration/style_formats_autohide.md %}
+include::partial$configuration/style_formats_autohide.adoc[]
 
-{% include configuration/style_formats_merge.md %}
+include::partial$configuration/style_formats_merge.adoc[]
 
-{% include configuration/theme.md %}
+include::partial$configuration/theme.adoc[]
 
-{% include configuration/theme_url.md %}
+include::partial$configuration/theme_url.adoc[]
 
-{% include configuration/toolbar.md %}
+include::partial$configuration/toolbar.adoc[]
 
-{% include configuration/toolbar_n.md %}
+include::partial$configuration/toolbar_n.adoc[]
 
-{% include configuration/toolbar_mode.md %}
+include::partial$configuration/toolbar_mode.adoc[]
 
-{% include configuration/toolbar_groups.md %}
+include::partial$configuration/toolbar_groups.adoc[]
 
-{% include configuration/toolbar_location.md %}
+include::partial$configuration/toolbar_location.adoc[]
 
-{% include configuration/toolbar_persist.md %}
+include::partial$configuration/toolbar_persist.adoc[]
 
-{% include configuration/toolbar_sticky.md %}
+include::partial$configuration/toolbar_sticky.adoc[]
 
-{% include configuration/toolbar_sticky_offset.md %}
+include::partial$configuration/toolbar_sticky_offset.adoc[]
 
-{% include configuration/width.md %}
+include::partial$configuration/width.adoc[]

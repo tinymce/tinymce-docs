@@ -3,17 +3,17 @@
 :keywords: support supported browser browsers windows osx linux ie11 chrome firefox safari mobile premium self-hosted selfhosted
 :title_nav: Supported Premium Versions<br/>&nbsp;&nbsp;&nbsp;&nbsp;and Platforms
 
-{% include misc/supported_versions.md %}
+include::partial$misc/supported_versions.adoc[]
 
-{% include misc/browser_compatibility.md %}
+include::partial$misc/browser_compatibility.adoc[]
 
-{% include misc/mobile_platform_compatibility.md %}
+include::partial$misc/mobile_platform_compatibility.adoc[]
 
-Visit link:{{site.baseurl}}/mobile[{{site.productname}} mobile documentation] for information on {{site.productname}} mobile setup and configuration.
+Visit link:{baseurl}/mobile[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
 
 == Supported Application Servers: Self-hosted Enterprise
 
-The {{site.productname}} spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
+The {productname} spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
 
 === Java Development Kit
 
@@ -45,6 +45,6 @@ IMPORTANT: Tomcat 10 will require WAR files to be placed in the _webapp-javaee_ 
 * RAM: 4 Gigabytes of RAM available for services
 
 +++<a class="anchor" id="premiumpluginsupport">++++++</a>+++
-{% include misc/support-powerpaste.md %}
+include::partial$misc/support-powerpaste.adoc[]
 
-{% include misc/plugin_support_table.md %}
+include::partial$misc/plugin_support_table.adoc[]

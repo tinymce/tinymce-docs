@@ -3,9 +3,9 @@
 :keywords: enterprise pricing comment commenting
 :title_nav: Commenting &amp; collaboration
 
-The Comments plugin provides an ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor.
+The Comments plugin provides an ability to start or join a conversation by adding comments to the content within the {productname} editor.
 
-Users can now add comments to their text from within their {{site.productname}} editor for collaboration, review, and providing feedback.
+Users can now add comments to their text from within their {productname} editor for collaboration, review, and providing feedback.
 
 == Collaborate on your projects within your content
 
@@ -26,9 +26,9 @@ The Comments plugin allows the user to perform the following functions:
 
 == Try our Comments plugin demo
 
-{% include live-demo.html id="comments-embedded" %}
+liveDemo::comments-embedded[]
 
-{% assign pluginname = 'Comments' %}
-{% assign pluginminimumplan = 'enterprise' %}
-{% assign plugindocspage = 'comments' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Comments
+:pluginminimumplan: enterprise
+:plugindocspage: comments
+include::partial$misc/purchase-premium-plugins.adoc[]

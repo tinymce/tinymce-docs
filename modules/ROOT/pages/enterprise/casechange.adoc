@@ -38,9 +38,9 @@ The *Title Case* can be used for the following editor elements:
 
 == Try our Case Change demo
 
-{% include live-demo.html id="casechange" %}
+liveDemo::casechange[]
 
-{% assign pluginname = 'Case Change' %}
-{% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'casechange' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Case Change
+:pluginminimumplan: tiertwo
+:plugindocspage: casechange
+include::partial$misc/purchase-premium-plugins.adoc[]

@@ -3,22 +3,22 @@
 :keywords: integration integrate Django django django-tinymce python
 :title_nav: Django
 
-{{site.thirdPartyInteg}}
+include::partial$misc/thirdPartyInteg.adoc[]
 
-For information on adding {{site.productname}} to a Django project, try using the Python-based `django-tinymce` package. For information on setting up `django-tinymce`, see: https://django-tinymce.readthedocs.io/en/latest/index.html[the django-tinymce Documentation].
-To use an newer version of {{site.productname}}, use the {{site.cloudname}} or statically host a manually downloaded copy of {{site.productname}}.
+For information on adding {productname} to a Django project, try using the Python-based `django-tinymce` package. For information on setting up `django-tinymce`, see: https://django-tinymce.readthedocs.io/en/latest/index.html[the django-tinymce Documentation].
+To use an newer version of {productname}, use the {cloudname} or statically host a manually downloaded copy of {productname}.
 
 == Using the Tiny Cloud with django-tinymce
 
-To load {{site.productname}} from the {{site.cloudname}}, update the project's `settings.py` file:
+To load {productname} from the {cloudname}, update the project's `settings.py` file:
 
-* Set `TINYMCE_JS_URL` to the {{site.cloudname}} CDN.
+* Set `TINYMCE_JS_URL` to the {cloudname} CDN.
 * Ensure `TINYMCE_COMPRESSOR` is set to `False`.
 
 For example:
 
 `py
-TINYMCE_JS_URL = '{{site.cdnurl}}'
+TINYMCE_JS_URL = '{cdnurl}'
 TINYMCE_COMPRESSOR = False
 `
 
@@ -26,9 +26,9 @@ TINYMCE_COMPRESSOR = False
 
 If you'd rather download and install the script manually:
 
-. Get the package from link:{{site.gettiny}}[{{site.productname}} Downloads].
-. Unzip the package and move the `'path/to/{{site.prodnamecode}}/'` directory into the django project.
-. Add a URL path to the `{{site.prodnamecode}}` directory.
+. Get the package from link:{gettiny}[{productname} Downloads].
+. Unzip the package and move the `'path/to/{prodnamecode}/'` directory into the django project.
+. Add a URL path to the `{prodnamecode}` directory.
 . Add the relevant configuration setting:
  ** If you do not need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = False`), add `TINYMCE_JS_URL` to the project's `settings.py` file pointing to `tinymce/tinymce.min.js`.
   Such as:

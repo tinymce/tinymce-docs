@@ -159,7 +159,7 @@ NOTE: The development server does not need to be stopped prior to running the `a
 Live demos can be added to content using the "live-demo.html" include, such as:
 
 `
-{% include live-demo.html id="basic-example" %}
+liveDemo::basic-example[]
 `
 
 There are several options for this include file - please see live-demo.html for details.

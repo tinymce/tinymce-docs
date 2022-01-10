@@ -4,10 +4,10 @@
 :keywords: permanent pen copy text format style
 :title_nav: Permanent Pen
 
-{% assign pluginname = "Permanent Pen" %}
-{% assign plugincode = "permanentpen" %}
+:pluginname: Permanent Pen
+:plugincode: permanentpen
 
-{{site.premiumplugin}}
+include::partial$misc/premiumplugin.adoc[]
 
 The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
 
@@ -28,27 +28,27 @@ underline: false,
 strikethrough: false
 `
 
-For more information on {{site.productname}} formats, refer to the link:{{site.baseurl}}/configure/content-formatting/#formats[formats] section.
+For more information on {productname} formats, refer to the link:{baseurl}/configure/content-formatting/#formats[formats] section.
 
 == Try our Permanent Pen demo
 
-{% include live-demo.html id="permanent-pen" %}
+liveDemo::permanent-pen[]
 
 == Using a Permanent Pen
 
 === To enable Permanent Pen
 
-. Click on the image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
+. Click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
 . Place the cursor in the desired text area and start typing.
 
 *Result*:
-The *Permanent Pen* toolbar button background color changes to _grey_ image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
+The *Permanent Pen* toolbar button background color changes to _grey_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
 
 === To disable Permanent Pen
 
-To exit the Permanent Pen, click on the image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
+To exit the Permanent Pen, click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
 
-The *Permanent Pen* toolbar button background color changes to _white_ image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen].
+The *Permanent Pen* toolbar button background color changes to _white_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen].
 
 === Accessing the Permanent Pen properties
 
@@ -56,7 +56,7 @@ There are two ways to access the Permanent Pen properties:
 
 ==== From the menubar
 
-Add the Permanent pen properties option to the menu bar with the link:{{site.baseurl}}/configure/editor-appearance/#menu[menu] configuration.
+Add the Permanent pen properties option to the menu bar with the link:{baseurl}/configure/editor-appearance/#menu[menu] configuration.
 
 `js
 tinymce.init({
@@ -75,7 +75,7 @@ tinymce.init({
 . Right-click anywhere from inside the text area.
 . Choose the *Permanent Pen* option.
 
-image::{{site.baseurl}}/images/right-click.png[Right-click]
+image::{baseurl}/images/right-click.png[Right-click]
 
 *Result*:
 The *Permanent Pen Properties* dialog box appears.
@@ -87,7 +87,7 @@ NOTE: The Permanent Pen has to be enabled to access the *Permanent Pen Propertie
 === Using the UI
 
 . Open the *Permanent Pen Properties* dialog box using any of the above methods.
-image:{{site.baseurl}}/images/ppprop.png[Permanent pen properties]
+image:{baseurl}/images/ppprop.png[Permanent pen properties]
 . Select the desired settings from the *Font* and *Size* drop-down menus.
 . To select the desired *Styles*, click on the radio button next to *Bold*, *Italic*, *Strikethrough*, or *Underline*.
 . Choose the desired *Text color*.
@@ -112,14 +112,14 @@ tinymce.init({
 
 == Options
 
-{% include configuration/permanentpen_properties.md %}
+include::partial$configuration/permanentpen_properties.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Permanent Pen plugin provides the following JavaScript commands.
 
-{% include commands/permanentpen-cmds.md %}
+include::partial$commands/permanentpen-cmds.adoc[]

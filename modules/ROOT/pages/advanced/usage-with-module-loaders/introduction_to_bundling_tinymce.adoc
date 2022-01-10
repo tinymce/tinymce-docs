@@ -4,30 +4,30 @@
 :keywords: webpack browserify es6 rollup commonjs modules tinymce es2015
 :title_nav: Introduction
 
-The following guides and reference pages assist with bundling {{site.productname}} using a module loader, such as Webpack, Rollup.js, and Browserify. {{site.productname}} is a modular platform that is designed to lazy-load libraries when they are required. This allows developers to only bundle the components of {{site.productname}} that are required and keep the resulting bundle as small as possible.
+The following guides and reference pages assist with bundling {productname} using a module loader, such as Webpack, Rollup.js, and Browserify. {productname} is a modular platform that is designed to lazy-load libraries when they are required. This allows developers to only bundle the components of {productname} that are required and keep the resulting bundle as small as possible.
 
 == Webpack
 
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_es6_npm/[ES6 and npm]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_cjs_npm/[CommonJS and npm]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_es6_download/[ES6 and a .zip archive]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/webpack/webpack_cjs_download/[CommonJS and a .zip archive]
+* link:{baseurl}/advanced/usage-with-module-loaders/webpack/webpack_es6_npm/[ES6 and npm]
+* link:{baseurl}/advanced/usage-with-module-loaders/webpack/webpack_cjs_npm/[CommonJS and npm]
+* link:{baseurl}/advanced/usage-with-module-loaders/webpack/webpack_es6_download/[ES6 and a .zip archive]
+* link:{baseurl}/advanced/usage-with-module-loaders/webpack/webpack_cjs_download/[CommonJS and a .zip archive]
 
 == Rollup.js
 
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/rollup/rollup_es6_npm/[ES6 and npm]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/rollup/rollup_es6_download/[ES6 and a .zip archive]
+* link:{baseurl}/advanced/usage-with-module-loaders/rollup/rollup_es6_npm/[ES6 and npm]
+* link:{baseurl}/advanced/usage-with-module-loaders/rollup/rollup_es6_download/[ES6 and a .zip archive]
 
 == Browserify
 
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/browserify/browserify_cjs_npm/[CommonJS and npm]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/browserify/browserify_cjs_download/[CommonJS and a .zip archive]
+* link:{baseurl}/advanced/usage-with-module-loaders/browserify/browserify_cjs_npm/[CommonJS and npm]
+* link:{baseurl}/advanced/usage-with-module-loaders/browserify/browserify_cjs_download/[CommonJS and a .zip archive]
 
 == Reference
 
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/reference/plugins/[Plugins]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/reference/content-css/[Content CSS]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/reference/skins/[Skins]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/reference/icons/[Icons]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/reference/localization/[UI localizations]
-* link:{{site.baseurl}}/advanced/usage-with-module-loaders/reference/themes/[Themes]
+* link:{baseurl}/advanced/usage-with-module-loaders/reference/plugins/[Plugins]
+* link:{baseurl}/advanced/usage-with-module-loaders/reference/content-css/[Content CSS]
+* link:{baseurl}/advanced/usage-with-module-loaders/reference/skins/[Skins]
+* link:{baseurl}/advanced/usage-with-module-loaders/reference/icons/[Icons]
+* link:{baseurl}/advanced/usage-with-module-loaders/reference/localization/[UI localizations]
+* link:{baseurl}/advanced/usage-with-module-loaders/reference/themes/[Themes]

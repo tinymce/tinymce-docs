@@ -3,24 +3,24 @@
 :description_short:
 :title_nav: Image &amp; file options
 
-{% include configuration/automatic_uploads.md %}
+include::partial$configuration/automatic_uploads.adoc[]
 
-{% include configuration/block_unsupported_drop.md %}
+include::partial$configuration/block_unsupported_drop.adoc[]
 
-{% include configuration/file_picker_callback.md %}
+include::partial$configuration/file_picker_callback.adoc[]
 
-{% include configuration/file_picker_types.md %}
+include::partial$configuration/file_picker_types.adoc[]
 
-{% include configuration/images_dataimg_filter.md %}
+include::partial$configuration/images_dataimg_filter.adoc[]
 
-{% include configuration/images_file_types.md %}
+include::partial$configuration/images_file_types.adoc[]
 
-{% include configuration/images_upload_reuse_filename.md %}
+include::partial$configuration/images_upload_reuse_filename.adoc[]
 
-{% include configuration/images_upload_base_path.md %}
+include::partial$configuration/images_upload_base_path.adoc[]
 
-{% include configuration/images_upload_credentials.md %}
+include::partial$configuration/images_upload_credentials.adoc[]
 
-{% include configuration/images_upload_handler.md %}
+include::partial$configuration/images_upload_handler.adoc[]
 
-{% include configuration/images_uploads_url.md %}
+include::partial$configuration/images_uploads_url.adoc[]

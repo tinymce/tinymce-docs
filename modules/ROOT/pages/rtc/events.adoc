@@ -5,11 +5,11 @@
 
 == `RtcClientConnected`
 
-When a user joins a real-time collaboration session, the `RtcClientConnected` event is fired on existing {{site.productname}} instances in the session and provides the user information of the newly joined user to other editors in the session.
+When a user joins a real-time collaboration session, the `RtcClientConnected` event is fired on existing {productname} instances in the session and provides the user information of the newly joined user to other editors in the session.
 
 === Event fields: `RtcClientConnected`
 
-{% include rtc/rtc-client-connect-inputs.md %}
+include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 === Example of using the RtcClientConnected event
 
@@ -37,7 +37,7 @@ This event is fired when a user leaves the session, and can be used to trigger u
 
 === Event fields: `RtcClientDisconnected`
 
-{% include rtc/rtc-client-connect-inputs.md %}
+include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 === Example of using the RtcClientDisconnected event
 

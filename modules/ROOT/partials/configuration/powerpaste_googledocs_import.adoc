@@ -1,6 +1,6 @@
 === `powerpaste_googledocs_import`
 
-{{site.requires_5_8v}}
+include::partial$misc/requires_5_8v.adoc[]
 
 This option controls how content pasted from Google Docs is filtered.
 
@@ -8,7 +8,7 @@ This option controls how content pasted from Google Docs is filtered.
 
 *Default Value:* `prompt`
 
-{% include plugins/powerpaste_import_types.md %}
+include::partial$plugins/powerpaste_import_types.adoc[]
 
 ==== Example: `powerpaste_googledocs_import` using an asynchronous function
 

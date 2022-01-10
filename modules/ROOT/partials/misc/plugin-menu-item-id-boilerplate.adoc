@@ -1,28 +1,28 @@
 {% if page.name == "available-menu-items.md" %}
-## {\{pluginname}} plugin
+## {pluginname} plugin
 
-The {\{pluginname}} plugin provides the following menu items:
+The {pluginname} plugin provides the following menu items:
 
 {% if altplugincode %}
-{% include menu-item-ids/{\{altplugincode}}-menu-items.md %}
+include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
 {% else %}
-{% include menu-item-ids/{\{plugincode}}-menu-items.md %}
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 {% endif %}
 
-For information on the {\{pluginname}} plugin, see: link:{{site.baseurl}}/plugins/{{plugincategory}}/{{plugincode}}/[Plugins - The {\{pluginname}} plugin]
+For information on the {pluginname} plugin, see: link:{baseurl}/plugins/{plugincategory}/{plugincode}/[Plugins - The {pluginname} plugin]
 
 {% else %}
 ## Menu items
 
-The {\{pluginname}} plugin provides the following menu items:
+The {pluginname} plugin provides the following menu items:
 
 {% if altplugincode %}
-{% include menu-item-ids/{\{altplugincode}}-menu-items.md %}
+include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
 {% else %}
-{% include menu-item-ids/{\{plugincode}}-menu-items.md %}
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 {% endif %}
 
-{% include misc/menu-item-settings.md %}
+include::partial$misc/menu-item-settings.adoc[]
 
 {% endif %}
-{% assign altplugincode = nil %}
+:altplugincode: nil

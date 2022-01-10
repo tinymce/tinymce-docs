@@ -4,10 +4,10 @@
 :keywords: opensource oss contributors lgpl docs dox
 :title_nav: Contribute to documentation
 
-{% assign readabilityGuidelines = "\https://readabilityguidelines.co.uk" %}
-{% assign msStyleGuide = "\https://docs.microsoft.com/en-us/style-guide" %}
+:readabilityGuidelines: \https://readabilityguidelines.co.uk
+:msStyleGuide: \https://docs.microsoft.com/en-us/style-guide
 
-This page outlines how you can provide feedback and contribute to {{site.productname}} documentation.
+This page outlines how you can provide feedback and contribute to {productname} documentation.
 
 == Contributor Code of Conduct
 
@@ -15,11 +15,11 @@ For our Contributor Code of Conduct, visit our https://github.com/tinymce/tinymc
 
 == How to contribute to TinyMCE's documentation
 
-We welcome people with technical writing experience to help make {{site.productname}}'s docs as useful to our community as possible. Although you don't need to be an expert developer to contribute, a basic understanding of software development is helpful.
+We welcome people with technical writing experience to help make {productname}'s docs as useful to our community as possible. Although you don't need to be an expert developer to contribute, a basic understanding of software development is helpful.
 
-What is more important is your ability to articulate complex ideas. Our goal is to help developers understand {{site.productname}}'s functionality as quickly as possible.
+What is more important is your ability to articulate complex ideas. Our goal is to help developers understand {productname}'s functionality as quickly as possible.
 
-Simply branch the https://github.com/tinymce/tinymce-docs[docs GitHub repository] and submit a PR, or reach out to the https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md[{{site.productname}} docs team] if you have a specific question.
+Simply branch the https://github.com/tinymce/tinymce-docs[docs GitHub repository] and submit a PR, or reach out to the https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md[{productname} docs team] if you have a specific question.
 
 == TinyMCE documentation tech stack
 
@@ -33,7 +33,7 @@ The documentation is written in https://kramdown.gettalong.org/[kramdown Flavore
 
 Code language syntax and associated elements are highlighted using an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: `object`.
 
-Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with {{site.productname}}) should have backticks. We cannot cover every use case here and contributors need to use their best judgment. What is more important is your ability to articulate complex ideas.
+Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with {productname}) should have backticks. We cannot cover every use case here and contributors need to use their best judgment. What is more important is your ability to articulate complex ideas.
 
 === Code snippets
 
@@ -74,9 +74,10 @@ hello, [text to link](http://www.example.com) to the URL example.com.
 
 Live demos can be added to content using the "live-demo.html" include, such as:
 
-`liquid
-{% raw %}{%{% endraw %} include live-demo.html id="basic-example" {% raw %}%}{% endraw %}
-`
+[source asciidoc]
+----
+liveDemo::basic-example[]
+----
 
 There are several options for this include file, see https://github.com/tinymce/tinymce-docs/blob/develop/_includes/live-demo.html[`_includes/live-demo.html`] for details.
 
@@ -109,16 +110,16 @@ The following tools are recommended for significant edits to the documentation. 
 
 == Style guide
 
-NOTE: You are not required to know the style guide, *but* changes may be requested on GitHub pull requests to {{site.companyname}} documentation where these guidelines are not met.
+NOTE: You are not required to know the style guide, *but* changes may be requested on GitHub pull requests to {companyname} documentation where these guidelines are not met.
 
-The {{site.companyname}} documentation style guide is based on the Readability Guideline provided by Content Design London. We have chosen this guide because it's:
+The {companyname} documentation style guide is based on the Readability Guideline provided by Content Design London. We have chosen this guide because it's:
 
 * open to the community
 * focused on readability.
 
 The information in the following subsections gives an overview of key points and lists both exceptions and additions. Please follow the guidelines on this page when they differ from the linked information.
 
-For information the Readability Guidelines project, visit link:{{readabilityGuidelines}}/[Content Design London: Readability Guidelines].
+For information the Readability Guidelines project, visit link:{readabilityGuidelines}/[Content Design London: Readability Guidelines].
 
 === Keep it simple
 
@@ -134,13 +135,13 @@ Do not use:
 * Metaphors; such as _cherry picking_ and _nutshell_.
 * Complex or specialist terms; such as _chrome_ (the toolbar, menu bar, status bar) and _upstream_.
 
-For guidelines on using specialist terms, see: link:{{readabilityGuidelines}}/clear-language/specialist-terms/[Content Design London: Readability Guidelines - Specialist terms].
+For guidelines on using specialist terms, see: link:{readabilityGuidelines}/clear-language/specialist-terms/[Content Design London: Readability Guidelines - Specialist terms].
 
 For information on:
 
-* Using simple words, see: link:{{readabilityGuidelines}}/clear-language/plain-english/[Content Design London: Readability Guidelines - Plain English].
-* Short, simple sentences, see: link:{{readabilityGuidelines}}/clear-language/simple-sentences/[Content Design London: Readability Guidelines - Simple sentences].
-* Words to avoid, such as jargon, metaphores, and Latin terms; see: link:{{readabilityGuidelines}}/clear-language/words-to-avoid/[Content Design London: Readability Guidelines - Words to avoid].
+* Using simple words, see: link:{readabilityGuidelines}/clear-language/plain-english/[Content Design London: Readability Guidelines - Plain English].
+* Short, simple sentences, see: link:{readabilityGuidelines}/clear-language/simple-sentences/[Content Design London: Readability Guidelines - Simple sentences].
+* Words to avoid, such as jargon, metaphores, and Latin terms; see: link:{readabilityGuidelines}/clear-language/words-to-avoid/[Content Design London: Readability Guidelines - Words to avoid].
 
 For a short list of some commonly used Latin terms, see: https://www.stylemanual.gov.au/format-writing-and-structure/clear-language-and-writing-style/plain-english-and-word-choice/latin-shortened-forms[Australian Government Style Manual - Latin shortened forms].
 
@@ -196,7 +197,7 @@ Titles and headings should be:
 
 Sentence case capitalization is more comfortable to read in technical documentation.
 
-For guidelines on headings and titles, see: link:{{readabilityGuidelines}}/content-design/headings-titles/[Content Design London: Readability Guidelines - Headings and titles].
+For guidelines on headings and titles, see: link:{readabilityGuidelines}/content-design/headings-titles/[Content Design London: Readability Guidelines - Headings and titles].
 
 === Using abbreviations, acronyms, and intialisms
 
@@ -211,7 +212,7 @@ General points:
 * Provide full text explanations.
 * Consider providing a full explanation each time.
 
-For guidelines on using abbreviations, acronyms, and intialisms; see: link:{{readabilityGuidelines}}/grammar-points/abbreviations-and-acronyms/[Content Design London: Readability Guidelines - Abbreviations and acronyms].
+For guidelines on using abbreviations, acronyms, and intialisms; see: link:{readabilityGuidelines}/grammar-points/abbreviations-and-acronyms/[Content Design London: Readability Guidelines - Abbreviations and acronyms].
 
 === Adverbs
 
@@ -225,7 +226,7 @@ For (casual) information on removing adverbs, see: https://www.quickanddirtytips
 
 Avoid contractions, such as: _can't_, _don't_, _they're_, and _could've_.
 
-For information on contractions, see: link:{{readabilityGuidelines}}/grammar-points/contractions/[Content Design London: Readability Guidelines - Contractions].
+For information on contractions, see: link:{readabilityGuidelines}/grammar-points/contractions/[Content Design London: Readability Guidelines - Contractions].
 
 === Hyphens
 
@@ -235,7 +236,7 @@ Limit use of hyphens. Some general pointers:
 * Make sure your hyphen usage is up to date.
 * Be consistent with hyphen usage.
 
-For guidelines on using hyphens, see: link:{{readabilityGuidelines}}/grammar-points/hyphens-and-dashes/[Content Design London: Readability Guidelines - Hyphens and dashes].
+For guidelines on using hyphens, see: link:{readabilityGuidelines}/grammar-points/hyphens-and-dashes/[Content Design London: Readability Guidelines - Hyphens and dashes].
 
 === Pronouns
 
@@ -243,7 +244,7 @@ Avoid pronouns, such as: _we_, _you_, _their_, and _I_.
 
 For examples and a definition of an pronoun, see: https://dictionary.cambridge.org/grammar/british-grammar/pronouns_1[Cambridge Dictionary: Grammar - Pronouns].
 
-For reasons to avoid pronouns, see: link:{{readabilityGuidelines}}/audiences-devices-channels/we-you-our-your-my/[Content Design London: Readability Guidelines - We, you, our, your, my].
+For reasons to avoid pronouns, see: link:{readabilityGuidelines}/audiences-devices-channels/we-you-our-your-my/[Content Design London: Readability Guidelines - We, you, our, your, my].
 
 === First, Second, or Third Person Perspective
 
@@ -260,7 +261,7 @@ When adding links or cross-references:
 * Match the destination content.
 * Use sentence case.
 
-For guidelines on adding links to the documentation, see: link:{{readabilityGuidelines}}/content-design/links/[Content Design London: Readability Guidelines - Links].
+For guidelines on adding links to the documentation, see: link:{readabilityGuidelines}/content-design/links/[Content Design London: Readability Guidelines - Links].
 
 === Images and icons
 
@@ -274,16 +275,16 @@ For information on providing useful alternative text for images, see: https://ww
 
 === Talking about the user interface
 
-{{site.companyname}} uses the Microsoft Style Guide for describing the user interface and interacting with the user interface. Some exceptions may exist in the glossary at the end of this page.
+{companyname} uses the Microsoft Style Guide for describing the user interface and interacting with the user interface. Some exceptions may exist in the glossary at the end of this page.
 
 For guidelines on:
 
-* Describing _interactions_ with the user interface for a procedure or task, see: link:{{msStyleGuide}}/procedures-instructions/describing-interactions-with-ui[Microsoft Style Guide: Describing interactions with UI].
-* Describing _interactions_ with the user interface for a procedure or task with multiple input methods; for example, procedures that can be performed with a keyboard or a mouse; see: link:{{msStyleGuide}}/procedures-instructions/describing-alternative-input-methods#multiple-input-methods-and-branching-within-procedures[Microsoft Style Guide: Describing alternative input methods - Multiple input methods and branching within procedures].
-* Referring to user interface elements in instructions or procedures, see: link:{{msStyleGuide}}/procedures-instructions/formatting-text-in-instructions[Microsoft Style Guide: Formatting text in instructions].
-* Referring to the mouse and mouse-based interactions, such as "click" and "right mouse button"; see: link:{{msStyleGuide}}/a-z-word-list-term-collections/term-collections/mouse-mouse-interaction-terms[Microsoft Style Guide: Mouse and mouse interaction terms].
-* Referring to keyboard keys and keyboard shortcuts, see: link:{{msStyleGuide}}/a-z-word-list-term-collections/term-collections/keys-keyboard-shortcuts[Microsoft Style Guide: Keys and keyboard shortcuts].
-* Referring to touch interactions, such as "tap" and "swipe"; see: link:{{msStyleGuide}}/procedures-instructions/describing-alternative-input-methods#pen-computing-and-touch-procedures[Microsoft Style Guide: Describing alternative input methods - Pen-computing and touch procedures].
+* Describing _interactions_ with the user interface for a procedure or task, see: link:{msStyleGuide}/procedures-instructions/describing-interactions-with-ui[Microsoft Style Guide: Describing interactions with UI].
+* Describing _interactions_ with the user interface for a procedure or task with multiple input methods; for example, procedures that can be performed with a keyboard or a mouse; see: link:{msStyleGuide}/procedures-instructions/describing-alternative-input-methods#multiple-input-methods-and-branching-within-procedures[Microsoft Style Guide: Describing alternative input methods - Multiple input methods and branching within procedures].
+* Referring to user interface elements in instructions or procedures, see: link:{msStyleGuide}/procedures-instructions/formatting-text-in-instructions[Microsoft Style Guide: Formatting text in instructions].
+* Referring to the mouse and mouse-based interactions, such as "click" and "right mouse button"; see: link:{msStyleGuide}/a-z-word-list-term-collections/term-collections/mouse-mouse-interaction-terms[Microsoft Style Guide: Mouse and mouse interaction terms].
+* Referring to keyboard keys and keyboard shortcuts, see: link:{msStyleGuide}/a-z-word-list-term-collections/term-collections/keys-keyboard-shortcuts[Microsoft Style Guide: Keys and keyboard shortcuts].
+* Referring to touch interactions, such as "tap" and "swipe"; see: link:{msStyleGuide}/procedures-instructions/describing-alternative-input-methods#pen-computing-and-touch-procedures[Microsoft Style Guide: Describing alternative input methods - Pen-computing and touch procedures].
 
 === Adding admonitions or notes
 
@@ -297,7 +298,7 @@ NOTE: This is a note; used for additional, indirectly related information.
 
 IMPORTANT: This is a note that is important for users to read.
 
-{{site.companyname}} documentation uses four levels of admonition:
+{companyname} documentation uses four levels of admonition:
 
 . NOTE: Use for additional, indirectly related information. Do not use where it is possible to reword or rewrite the content to incorporate the information.
 . IMPORTANT: Use when ignoring the notice _may_ or _will_ lead to unexpected behavior.
@@ -318,10 +319,10 @@ IMPORTANT: This is a note that is important for users to read.
 
 The following pages provide advice on writing, including technical writing.
 
-* For a brief overview of how users read (or don't read) content, see: link:{{readabilityGuidelines}}/content-design/how-people-read/[Content Design London: Readability Guidelines - How people read].
-* For points on how to structure content, see: link:{{readabilityGuidelines}}/content-design/page-design/[Content Design London: Readability Guidelines - Page design].
+* For a brief overview of how users read (or don't read) content, see: link:{readabilityGuidelines}/content-design/how-people-read/[Content Design London: Readability Guidelines - How people read].
+* For points on how to structure content, see: link:{readabilityGuidelines}/content-design/page-design/[Content Design London: Readability Guidelines - Page design].
 * For general information on writing, covering a variety of subjects, see: https://plainlanguage.gov/resources/articles/dash-writing-tips/[plainlanguage.gov: Mary Dash's Writing Tips].
 
 == Glossary
 
-{% include misc/glossary.md %}
+include::partial$misc/glossary.adoc[]

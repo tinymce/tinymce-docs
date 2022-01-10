@@ -4,12 +4,12 @@
 :keywords: punbb informer
 :title_nav: BBCode
 
-IMPORTANT: The BBCode plugin (`bbcode`) was deprecated with the release of TinyMCE 5.9. For details, see link:{{site.baseurl}}/release-notes/release-notes59/#thebbcodebbcodeplugin[the BBCode plugin deprecation notice]. The BBCode plugin will be removed in TinyMCE 6.0.
+IMPORTANT: The BBCode plugin (`bbcode`) was deprecated with the release of TinyMCE 5.9. For details, see link:{baseurl}/release-notes/release-notes59/#thebbcodebbcodeplugin[the BBCode plugin deprecation notice]. The BBCode plugin will be removed in TinyMCE 6.0.
 
 This plugin makes it possible to edit BBCode in a WYSIWYG style by converting tags like `[b]` into `<strong>` and then back, when user submits the content.
 
 ____
-You will need to sacrifice quite a lot of {{site.productname}}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.
+You will need to sacrifice quite a lot of {productname}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.
 ____
 
 == Basic setup
@@ -85,4 +85,4 @@ tinymce.init({
 
 == Interactive example
 
-{% include live-demo.html id="bbcode" %}
+liveDemo::bbcode[]

@@ -3,14 +3,14 @@
 :description_short:
 :title_nav: Advanced editing options
 
-{% include configuration/br_in_pre.md %}
+include::partial$configuration/br_in_pre.adoc[]
 
-{% include configuration/custom_undo_redo_levels.md %}
+include::partial$configuration/custom_undo_redo_levels.adoc[]
 
-{% include configuration/end_container_on_empty_block.md %}
+include::partial$configuration/end_container_on_empty_block.adoc[]
 
-{% include configuration/object_resizing.md %}
+include::partial$configuration/object_resizing.adoc[]
 
-{% include configuration/resize_img_proportional.md %}
+include::partial$configuration/resize_img_proportional.adoc[]
 
-{% include configuration/type_ahead_urls.md %}
+include::partial$configuration/type_ahead_urls.adoc[]

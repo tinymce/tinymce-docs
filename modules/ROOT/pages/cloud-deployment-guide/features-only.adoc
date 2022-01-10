@@ -3,13 +3,13 @@
 :description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
 :keywords: tinymce cloud script textarea apiKey hybrid
 
-A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{{site.gettiny}}[{{site.productname}} Community edition] to get started.
+A hybrid deployment of {cloudname} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{gettiny}[{productname} Community edition] to get started.
 
-Sign up for a free API key provides entitlements to premium link:{{site.baseurl}}/plugins/opensource/imagetools/[Image Tools] plugin. A {{site.cloudname}} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Sign up for a free API key provides entitlements to premium link:{baseurl}/plugins/opensource/imagetools/[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 == Step 1: Insert the custom script tag into the webpage
 
-Add the following script in the webpage once the script tag to load {{site.productname}} has been specified. Be sure to substitute 'no-api-key' with your api key.
+Add the following script in the webpage once the script tag to load {productname} has been specified. Be sure to substitute 'no-api-key' with your api key.
 
 [,js]
 ----
@@ -18,37 +18,37 @@ Add the following script in the webpage once the script tag to load {{site.produ
 
 == Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the link:{{ site.baseurl }}/configure/[{{site.productname}} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the link:{baseurl}/configure/[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* link:{{site.baseurl}}/plugins/premium/mentions/[Mentions]
-* link:{{ site.baseurl }}/plugins/premium/tinydrive/[{{site.cloudfilemanager}}]
-* link:{{site.baseurl}}/plugins/premium/comments/[Comments]
-* link:{{site.baseurl}}/plugins/premium/pageembed/[Page Embed]
-* link:{{site.baseurl}}/plugins/premium/permanentpen/[Permanent Pen]
-* link:{{site.baseurl}}/plugins/premium/formatpainter/[Format Painter]
-* link:{{site.baseurl}}/plugins/premium/powerpaste/[PowerPaste]
-* link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro]
+* link:{baseurl}/plugins/premium/mentions/[Mentions]
+* link:{baseurl}/plugins/premium/tinydrive/[{cloudfilemanager}]
+* link:{baseurl}/plugins/premium/comments/[Comments]
+* link:{baseurl}/plugins/premium/pageembed/[Page Embed]
+* link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen]
+* link:{baseurl}/plugins/premium/formatpainter/[Format Painter]
+* link:{baseurl}/plugins/premium/powerpaste/[PowerPaste]
+* link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{{ site.baseurl }}/cloud-deployment-guide/[{{site.cloudname}}].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{baseurl}/cloud-deployment-guide/[{cloudname}].
 
-* link:{{site.baseurl}}/plugins/opensource/imagetools/[Image Tools (with configured image proxy)]
+* link:{baseurl}/plugins/opensource/imagetools/[Image Tools (with configured image proxy)]
 
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
-* link:{{site.baseurl}}/plugins/premium/moxiemanager/[Moxie Manager]
-* link:{{site.baseurl}}/plugins/premium/a11ychecker/[Accessibility Checker]
-* link:{{site.baseurl}}/plugins/premium/advcode/[Advanced Code Editor]
-* link:{{site.baseurl}}/plugins/premium/mediaembed/[Enhanced Media Embed]
-* link:{{site.baseurl}}/plugins/premium/linkchecker/[Link Checker]
+* link:{baseurl}/plugins/premium/moxiemanager/[Moxie Manager]
+* link:{baseurl}/plugins/premium/a11ychecker/[Accessibility Checker]
+* link:{baseurl}/plugins/premium/advcode/[Advanced Code Editor]
+* link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed]
+* link:{baseurl}/plugins/premium/linkchecker/[Link Checker]
 
-NOTE: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
+NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
 The following is a complete example:
 
 The example below has the following:
 
-* The {{site.cloudname}} `API key` has the value `no-api-key`.
-* The {{site.cloudname}} has the link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/[Spell Checker Pro] plugin enabled.
+* The {cloudname} `API key` has the value `no-api-key`.
+* The {cloudname} has the link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro] plugin enabled.
 
 [,js]
 ----

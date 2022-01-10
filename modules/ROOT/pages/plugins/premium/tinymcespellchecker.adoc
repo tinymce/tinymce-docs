@@ -3,23 +3,23 @@
 :keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
 :title_nav: Spell Checker Pro
 
-{% assign pluginname = "Spell Checker Pro" %}
-{% assign plugincode = "tinymcespellchecker" %}
+:pluginname: Spell Checker Pro
+:plugincode: tinymcespellchecker
 
-{{site.premiumplugin}}
+include::partial$misc/premiumplugin.adoc[]
 
-*Spell Checker Pro* adds spell checking as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to link:{{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_language[this] section.
+*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to link:{baseurl}/plugins/premium/tinymcespellchecker/#spellchecker_language[this] section.
 
-{% include live-demo.html id="spellcheckerpro" %}
+liveDemo::spellcheckerpro[]
 
 == Cloud Installation
 
-To enable the {{site.productname}} Enterprise Spellchecking plugin with link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features[{{site.cloudname}}]:
+To enable the {productname} Enterprise Spellchecking plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features[{cloudname}]:
 
-. If configured, disable the `spellchecker` plugin provided with {{site.productname}}, by removing it from the `plugins` list.
+. If configured, disable the `spellchecker` plugin provided with {productname}, by removing it from the `plugins` list.
 . Add `tinymcespellchecker` to the `plugins` list.
 
-With {{site.cloudname}} the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
+With {cloudname} the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
 
 === Example: TinyMCE Cloud Installation
 
@@ -33,12 +33,12 @@ tinymce.init({
 
 == Self-hosted Installation
 
-To enable the {{site.productname}} Enterprise Spellchecking plugin:
+To enable the {productname} Enterprise Spellchecking plugin:
 
-. If configured, disable the `spellchecker` plugin provided with {{site.productname}}, by removing it from the `plugins` list.
+. If configured, disable the `spellchecker` plugin provided with {productname}, by removing it from the `plugins` list.
 . Add `tinymcespellchecker` to the `plugins` list.
 
-For information on installing the server-side component for spell checking, please see the link:{{site.baseurl}}/enterprise/server/[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the link:{baseurl}/enterprise/server/[server-side component installation guide].
 
 === Example: TinyMCE Self-hosted Installation
 
@@ -53,49 +53,49 @@ tinymce.init({
 
 == Usage
 
-The {{site.productname}} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for a misspelled word, right-click the misspelled word to open the contextual menu.
+The {productname} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for a misspelled word, right-click the misspelled word to open the contextual menu.
 
 == Configuration Options
 
-{% include configuration/spellchecker_active.md %}
+include::partial$configuration/spellchecker_active.adoc[]
 
-{% include configuration/spellchecker_dialog.md %}
+include::partial$configuration/spellchecker_dialog.adoc[]
 
-{% include configuration/spellchecker_language.md %}
+include::partial$configuration/spellchecker_language.adoc[]
 
-{% include misc/spellchecker-languages.md %}
+include::partial$misc/spellchecker-languages.adoc[]
 
-{% include configuration/spellchecker_languages.md %}
+include::partial$configuration/spellchecker_languages.adoc[]
 
 {% if site.productmajorversion < 6 %}
-{% include configuration/spellchecker_on_load.md %}
+include::partial$configuration/spellchecker_on_load.adoc[]
 {% endif %}
 
-{% include configuration/spellchecker_rpc_url.md %}
+include::partial$configuration/spellchecker_rpc_url.adoc[]
 
-{% include plugins/tinymcespellchecker-content-langs.md %}
+include::partial$plugins/tinymcespellchecker-content-langs.adoc[]
 
-{% include configuration/spellchecker_select_languages.md %}
+include::partial$configuration/spellchecker_select_languages.adoc[]
 
 // Bookmark for deprecated option name
 
 +++<a class="anchor" id="spellchecker_whitelist">++++++</a>+++
 
-{% include configuration/spellchecker_ignore_list.md %}
+include::partial$configuration/spellchecker_ignore_list.adoc[]
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Spell Checker Pro plugin provides the following commands.
 
-{% include commands/tinymcespellchecker-cmds.md %}
+include::partial$commands/tinymcespellchecker-cmds.adoc[]
 
 == Events
 
-{% include events/tinymcespellchecker-events.md %}
+include::partial$events/tinymcespellchecker-events.adoc[]
 
 === SpellcheckerIgnore event
 
@@ -120,7 +120,7 @@ tinymce.init({
 
 This event triggers when the user selects *Ignore All* on a misspelled word.
 
-NOTE: The `language` property on the event is only available for {{ site.productname }} 5.10 and later.
+NOTE: The `language` property on the event is only available for {productname} 5.10 and later.
 
 ==== Example: The SpellcheckerIgnoreAll event
 
@@ -196,7 +196,7 @@ tinymce.init({
 
 === SpellcheckerLanguageChanged event
 
-{{ site.requires_5_7v }}
+include::partial$misc/requires_5_7v.adoc[]
 
 This event fires when the spellchecking language is changed.
 
@@ -217,6 +217,6 @@ tinymce.init({
 
 == APIs
 
-The {\{pluginname}} plugin provides the following APIs.
+The {pluginname} plugin provides the following APIs.
 
-{% include plugin-apis/{\{plugincode}}-apis.md %}
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

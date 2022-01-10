@@ -5,11 +5,11 @@
 
 == Overview
 
-{{site.cloudfilemanager}} enables you to import files from any Google Drive account if you setup the google drive integration by providing Google credentials. When the user selects a file from Google Drive, it will instantly be uploaded or imported into the {{site.cloudfilemanager}} storage so that it can be viewed online and shared through {{site.cloudfilemanager}}. Documents picked from Google Drive will be converted to PDF Files within {{site.cloudfilemanager}}.
+{cloudfilemanager} enables you to import files from any Google Drive account if you setup the google drive integration by providing Google credentials. When the user selects a file from Google Drive, it will instantly be uploaded or imported into the {cloudfilemanager} storage so that it can be viewed online and shared through {cloudfilemanager}. Documents picked from Google Drive will be converted to PDF Files within {cloudfilemanager}.
 
 == Prerequisites
 
-. A valid Google Drive user account is required for integrating Google Drive with {{site.cloudfilemanager}}. Refer to this https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en[Google Drive] link for more information on creating a Google Drive user account.
+. A valid Google Drive user account is required for integrating Google Drive with {cloudfilemanager}. Refer to this https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en[Google Drive] link for more information on creating a Google Drive user account.
 . The Google Drive API should be enabled. Refer to this https://developers.google.com/drive/api/v3/enable-drive-api[Google Drive] link for more information on enabling the Google Drive API.
 . The Google Picker API should be enabled. Refer to this https://developers.google.com/picker/docs/[Google Drive] link for more information on enabling the Google Picker API.
 
@@ -23,28 +23,28 @@ You can obtain the Google Drive credentials by following the steps below.
 . Click on the `Create credentials` button.
 . Click on the `API key` item.
 
-image::{{site.baseurl}}/images/tinydrive-googledrive-dump1.png[]
+image::{baseurl}/images/tinydrive-googledrive-dump1.png[]
 
 === 2. Copy the new Google API Key
 
-Copy the generated Google API key this will later be used to configure {{site.cloudfilemanager}}:
+Copy the generated Google API key this will later be used to configure {cloudfilemanager}:
 
-image::{{site.baseurl}}/images/tinydrive-googledrive-dump2.png[]
+image::{baseurl}/images/tinydrive-googledrive-dump2.png[]
 
 === 3. Create the OAuth client ID
 
 Click on the `Create credentials` button then on `OAuth client ID` item:
 
-image::{{site.baseurl}}/images/tinydrive-googledrive-dump3.png[]
+image::{baseurl}/images/tinydrive-googledrive-dump3.png[]
 
 === 4. Fill in the OAuth details
 
 . Select `Web application` from `Application type`
 . Add your domains to `Authorized JavaScript origins`.
 . Click `create`.
-. Copy the created `client id` it will be used later to configure {{site.cloudfilemanager}}.
+. Copy the created `client id` it will be used later to configure {cloudfilemanager}.
 
-image::{{site.baseurl}}/images/tinydrive-googledrive-dump4.png[]
+image::{baseurl}/images/tinydrive-googledrive-dump4.png[]
 
 === 5. Restrict Client ID API access
 
@@ -54,11 +54,11 @@ image::{{site.baseurl}}/images/tinydrive-googledrive-dump4.png[]
 . Select `Google Picker API` from the dropdown
 . Click `Save`
 
-image::{{site.baseurl}}/images/tinydrive-googledrive-dump5.png[]
+image::{baseurl}/images/tinydrive-googledrive-dump5.png[]
 
 === 6. Configure tinydrive to use the new Google Drive credentials
 
-The Google Drive API key can be configured by setting the link:{{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the link:{{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
+The Google Drive API key can be configured by setting the link:{baseurl}/tinydrive/configuration/#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the link:{baseurl}/tinydrive/configuration/#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
 
 `js
 tinymce.init({
@@ -69,22 +69,22 @@ tinymce.init({
 });
 `
 
-For more information on other {{site.cloudfilemanager}} config options refer to the link:{{site.baseurl}}/tinydrive/configuration[configuration] section of this document.
+For more information on other {cloudfilemanager} config options refer to the link:{baseurl}/tinydrive/configuration[configuration] section of this document.
 
 === 7. Tiny Drive UI
 
-. From the {{site.productname}} user interface, click on the image:{{site.baseurl}}/images/insertimage.png[Insert/edit image] button to access the {{site.cloudfilemanager}} user interface.
-. Click on the image:{{site.baseurl}}/images/upload.png[Upload/Create] button to select Google Drive from the list of storages.
+. From the {productname} user interface, click on the image:{baseurl}/images/insertimage.png[Insert/edit image] button to access the {cloudfilemanager} user interface.
+. Click on the image:{baseurl}/images/upload.png[Upload/Create] button to select Google Drive from the list of storages.
 . Select the file to upload/import from Google Drive by clicking on the radio button next to it. Alternatively, to directly insert the file into the editor, double-click on it.
-. Choose *Save* to upload/import the selected file/files to {{site.cloudfilemanager}}.
+. Choose *Save* to upload/import the selected file/files to {cloudfilemanager}.
 
-*Result:* You should be able to view the selected files in your {{site.cloudfilemanager}} storage.
+*Result:* You should be able to view the selected files in your {cloudfilemanager} storage.
 
 ==== Other file options
 
 The following other options can be performed to the selected file :
 
-. Follow the steps from 1-3 of the {{site.cloudfilemanager}} UI procedure.
+. Follow the steps from 1-3 of the {cloudfilemanager} UI procedure.
 . Choose from the options below as per the requirement:
  ** Choose *Star* to flag important files and view the starred file under the *Star* tab in the Google Drive Home tab.
  ** Choose *Download* to download the selected file/files.
@@ -94,6 +94,6 @@ Read more about these options https://gsuite.google.com/learning-center/products
 
 == Interactive example
 
-Here is an interactive example of Google Drive enabled on {{site.cloudfilemanager}}.
+Here is an interactive example of Google Drive enabled on {cloudfilemanager}.
 
-{% include live-demo.html id="drive-demo-googledrive" %}
+liveDemo::drive-demo-googledrive[]

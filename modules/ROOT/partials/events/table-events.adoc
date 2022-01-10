@@ -1,4 +1,4 @@
-The following events are provided by the link:{{ site.baseurl }}/plugins/opensource/table/[Table plugin].
+The following events are provided by the link:{baseurl}/plugins/opensource/table/[Table plugin].
 
 |===
 | Name | Data | Description
@@ -22,10 +22,10 @@ The following events are provided by the link:{{ site.baseurl }}/plugins/opensou
 | TableModified
 | `{ table: HTMLTableElement, structure: boolean, style: boolean }`
 | Fired when style or structural changes are made to a table. +
-{{site.requires_5_7v}}
+include::partial$misc/requires_5_7v.adoc[]
 
 | TableSelectionClear
 | N/A
 | Fired when the table selection is cleared. +
-{{ site.requires_5_1v }}
+include::partial$misc/requires_5_1v.adoc[]
 |===

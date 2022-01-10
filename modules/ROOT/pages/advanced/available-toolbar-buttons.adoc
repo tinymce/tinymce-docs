@@ -10,237 +10,237 @@ The following tables show all available toolbar items, including items provided 
 tinyMCE.activeEditor.ui.registry.getAll().buttons
 `
 
-{% include misc/toolbar-button-settings.md %}
+include::partial$misc/toolbar-button-settings.adoc[]
 
 == The core toolbar buttons
 
-The following toolbar buttons are available for all {{site.productname}} instances without enabling any plugins:
+The following toolbar buttons are available for all {productname} instances without enabling any plugins:
 
-{% include toolbar-button-ids/core-toolbar-buttons.md %}
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "A11yChecker" %}
-{% assign plugincode = "a11ychecker" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: A11yChecker
+:plugincode: a11ychecker
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Advanced Code Editor" %}
-{% assign plugincode = "advcode" %}
-{% assign altplugincode = "code" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Advanced Code Editor
+:plugincode: advcode
+:altplugincode: code
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Advanced Tables" %}
-{% assign plugincode = "advtable" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Advanced Tables
+:plugincode: advtable
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Anchor" %}
-{% assign plugincode = "anchor" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Anchor
+:plugincode: anchor
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Autosave" %}
-{% assign plugincode = "autosave" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Autosave
+:plugincode: autosave
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Case Change" %}
-{% assign plugincode = "casechange" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Case Change
+:plugincode: casechange
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Character Map" %}
-{% assign plugincode = "charmap" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Character Map
+:plugincode: charmap
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Checklist" %}
-{% assign plugincode = "checklist" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Checklist
+:plugincode: checklist
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Code" %}
-{% assign plugincode = "code" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Code
+:plugincode: code
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Code Sample" %}
-{% assign plugincode = "codesample" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Code Sample
+:plugincode: codesample
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Comments" %}
-{% assign plugincode = "comments" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Comments
+:plugincode: comments
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Directionality" %}
-{% assign plugincode = "directionality" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Directionality
+:plugincode: directionality
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Emoticons" %}
-{% assign plugincode = "emoticons" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Emoticons
+:plugincode: emoticons
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Export" %}
-{% assign plugincode = "export" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Export
+:plugincode: export
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Format Painter" %}
-{% assign plugincode = "formatpainter" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Format Painter
+:plugincode: formatpainter
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Full Page" %}
-{% assign plugincode = "fullpage" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Full Page
+:plugincode: fullpage
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Full Screen" %}
-{% assign plugincode = "fullscreen" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Full Screen
+:plugincode: fullscreen
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Help" %}
-{% assign plugincode = "help" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Help
+:plugincode: help
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Horizontal Rule" %}
-{% assign plugincode = "hr" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Horizontal Rule
+:plugincode: hr
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Image" %}
-{% assign plugincode = "image" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Image
+:plugincode: image
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Image Tools" %}
-{% assign plugincode = "imagetools" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Image Tools
+:plugincode: imagetools
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Insert Date/Time" %}
-{% assign plugincode = "insertdatetime" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Insert Date/Time
+:plugincode: insertdatetime
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Link" %}
-{% assign plugincode = "link" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Link
+:plugincode: link
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Lists" %}
-{% assign plugincode = "lists" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Lists
+:plugincode: lists
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Media" %}
-{% assign plugincode = "media" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Media
+:plugincode: media
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Nonbreaking Space" %}
-{% assign plugincode = "nonbreaking" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Nonbreaking Space
+:plugincode: nonbreaking
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Page Break" %}
-{% assign plugincode = "pagebreak" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Page Break
+:plugincode: pagebreak
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Page Embed" %}
-{% assign plugincode = "pageembed" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Page Embed
+:plugincode: pageembed
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Paste" %}
-{% assign plugincode = "paste" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Paste
+:plugincode: paste
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Permanent Pen" %}
-{% assign plugincode = "permanentpen" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Permanent Pen
+:plugincode: permanentpen
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "PowerPaste" %}
-{% assign plugincode = "powerpaste" %}
-{% assign altplugincode = "paste" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: PowerPaste
+:plugincode: powerpaste
+:altplugincode: paste
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Preview" %}
-{% assign plugincode = "preview" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Preview
+:plugincode: preview
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Print" %}
-{% assign plugincode = "print" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Print
+:plugincode: print
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Quick Toolbars" %}
-{% assign plugincode = "quickbars" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Quick Toolbars
+:plugincode: quickbars
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Save" %}
-{% assign plugincode = "save" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Save
+:plugincode: save
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Search and Replace" %}
-{% assign plugincode = "searchreplace" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Search and Replace
+:plugincode: searchreplace
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Spell Checker" %}
-{% assign plugincode = "spellchecker" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Spell Checker
+:plugincode: spellchecker
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = "Spell Checker Pro" %}
-{% assign plugincode = "tinymcespellchecker" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: Spell Checker Pro
+:plugincode: tinymcespellchecker
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Table" %}
-{% assign plugincode = "table" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Table
+:plugincode: table
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Template" %}
-{% assign plugincode = "template" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Template
+:plugincode: template
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "premium" %}
-{% assign pluginname = site.cloudfilemanager %}
-{% assign plugincode = "tinydrive" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: premium
+:pluginname: site.cloudfilemanager
+:plugincode: tinydrive
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Table of Contents" %}
-{% assign plugincode = "toc" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Table of Contents
+:plugincode: toc
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Visual Blocks" %}
-{% assign plugincode = "visualblocks" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Visual Blocks
+:plugincode: visualblocks
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Visual Characters" %}
-{% assign plugincode = "visualchars" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Visual Characters
+:plugincode: visualchars
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% assign plugincategory = "opensource" %}
-{% assign pluginname = "Word Count" %}
-{% assign plugincode = "wordcount" %}
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:plugincategory: opensource
+:pluginname: Word Count
+:plugincode: wordcount
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]

@@ -2,16 +2,16 @@
 :description: MoxieManager is a premium plugin to manage files & images.
 :keywords: moxiemanager .net php relative_urls
 
-{{site.moxieMNotOnCloud}}
+include::partial$misc/moxieMNotOnCloud.adoc[]
 
 == File and Image Management Using Moxie Manager
 
-MoxieManager is a premium {{site.productname}} plugin and server system that enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.
+MoxieManager is a premium {productname} plugin and server system that enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.
 
-MoxieManager is an application separate from {{site.productname}} that includes .NET or PHP server components. Being built by the team behind {{site.productname}} it has tight integration with the editor via a toolbar control. It is designed to work with {{site.productname}} configuration settings such as `relative_urls`.
+MoxieManager is an application separate from {productname} that includes .NET or PHP server components. Being built by the team behind {productname} it has tight integration with the editor via a toolbar control. It is designed to work with {productname} configuration settings such as `relative_urls`.
 
-MoxieManager is a paid addition to {{site.productname}}. It is included in link:{{site.pricingpage}}[{{site.enterpriseplan}}].
+MoxieManager is a paid addition to {productname}. It is included in link:{pricingpage}[{enterpriseplan}].
 
-Full documentation on MoxieManager, including how to http://www.moxiemanager.com/documentation/index.php/TinyMCE_Integration[integrate with {{site.productname}}], can be http://www.moxiemanager.com/documentation/[found] on the MoxieManager website.
+Full documentation on MoxieManager, including how to http://www.moxiemanager.com/documentation/index.php/TinyMCE_Integration[integrate with {productname}], can be http://www.moxiemanager.com/documentation/[found] on the MoxieManager website.
 
-// We also have a demo for you to explore the MoxieManager capabilities [here]({{site.baseurl}}/demo/moxie-manager/).
+// We also have a demo for you to explore the MoxieManager capabilities [here]({baseurl}/demo/moxie-manager/).

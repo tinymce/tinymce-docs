@@ -4,10 +4,10 @@
 :keywords: searchreplace edit
 :title_nav: Search and Replace
 
-{% assign pluginname = "Search and Replace" %}
-{% assign plugincode = "searchreplace" %}
+:pluginname: Search and Replace
+:plugincode: searchreplace
 
-This plugin adds search/replace dialogs to {{site.productname}}. It also adds a toolbar button and the menu item `Find and replace` under the `Edit` menu dropdown.
+This plugin adds search/replace dialogs to {productname}. It also adds a toolbar button and the menu item `Find and replace` under the `Edit` menu dropdown.
 
 == Basic setup
 
@@ -20,12 +20,12 @@ tinymce.init({
 });
 `
 
-{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Search and Replace plugin provides the following JavaScript command.
 
-{% include commands/searchreplace-cmds.md %}
+include::partial$commands/searchreplace-cmds.adoc[]

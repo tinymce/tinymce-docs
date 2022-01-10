@@ -4,15 +4,3 @@
 :title_nav: Laravel
 :type: folder
 
-:navigation: site.data.nav
-{% for entry in navigation %}
-  {% if entry.url == "integrations" %}
-    {% for subentry in entry.pages %}
-      {% if subentry.url == "laravel" %}
-        :links: subentry.pages
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

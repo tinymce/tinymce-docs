@@ -3,15 +3,3 @@
 :keywords: tinydrive .net node.js php java
 :title_nav: Starter projects
 :type: folder
-
-:navigaton: site.data.nav
-{% for entry in navigaton %}
-  {% if entry.url == "tinydrive" %}
-    {% for subentry in entry.pages %}
-      {% if subentry.url == "libraries" %}
-        :links: subentry.pages
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-{% include index.html links=links %}

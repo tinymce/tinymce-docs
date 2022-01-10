@@ -3,12 +3,3 @@
 :description_short: This section will help you configure and extend your editor instance.
 :title_nav: Plugins
 :type: folder
-
-:navigaton: site.data.nav
-{% for entry in navigaton %}
-  {% if entry.url == "plugins" %}
-    :links: entry.pages
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

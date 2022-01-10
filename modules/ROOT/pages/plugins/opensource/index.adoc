@@ -3,16 +3,3 @@
 :description_short: TinyMCE open source plugins
 :title_nav: Open source plugins
 :type: folder
-
-:navigaton: site.data.nav
-{% for entry in navigaton %}
-  {% if entry.url == "plugins" %}
-    {% for subentry in entry.pages %}
-      {% if subentry.url == "opensource" %}
-        :links: subentry.pages
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

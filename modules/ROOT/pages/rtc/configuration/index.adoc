@@ -4,15 +4,3 @@
 :title_nav: Configuration options
 :type: folder
 
-:navigation: site.data.nav
-{% for entry in navigation %}
-  {% if entry.url == "rtc" %}
-    {% for subentry in entry.pages %}
-      {% if subentry.url == "configuration" %}
-        :links: subentry.pages
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

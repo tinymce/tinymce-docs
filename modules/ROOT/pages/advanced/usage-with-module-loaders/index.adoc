@@ -4,15 +4,3 @@
 :title_nav: Bundling TinyMCE
 :type: folder
 
-:navigation: site.data.nav
-{% for entry in navigation %}
-  {% if entry.url == "advanced" %}
-    {% for subentry in entry.pages %}
-      {% if subentry.url == "usage-with-module-loaders" %}
-        :links: subentry.pages
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

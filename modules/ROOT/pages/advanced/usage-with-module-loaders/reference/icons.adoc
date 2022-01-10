@@ -1,0 +1,49 @@
+= Bundling TinyMCE icon packs using module loading
+:description: Information on bundling TinyMCE icon packs using module loading
+:description_short: Information on bundling icon packs
+:title_nav: Icons
+
+{% assign editorcomponent = "icon pack" %}
+{% include module-loading/bundling-ref-example.md %}
+{% assign editorcomponent = nil %}
+
+The following table shows examples of the syntax used to bundle the following icon pack:
+
+`
+./icons/example/icons.js
+`
+
+Example syntax for including the example icon pack in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
++++<th>+++Source+++</th>+++
++++<th>+++Example+++</th>++++++</tr>++++++</thead>+++
++++<tbody>++++++<tr>++++++<td rowspan="2">+++ES6++++</td>+++
++++<td>+++npm+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'tinymce/icons/example'##[.p]#[.pun]#;##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'../tinymce/icons/example/icons'##[.p]#[.pun]#;##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td rowspan="2">+++Common JS+++</td>+++
++++<td>+++npm+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'tinymce/icons/example'##[.p]#[.pun]#);##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'../tinymce/icons/example/icons.js'##[.p]#[.pun]#);##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+
+{% comment %}
+`js
+import 'tinymce/icons/example';
+`
+`js
+import '../tinymce/icons/example/icons';
+`
+`js
+require('tinymce/icons/example');
+`
+`js
+require('../tinymce/icons/example/icons.js');
+`
+{% endcomment %}
+
+{% include module-loading/bundling-icon-files.md %}

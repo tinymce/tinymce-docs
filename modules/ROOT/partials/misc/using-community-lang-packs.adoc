@@ -1,0 +1,20 @@
+=== Using the community language packs
+
+{% if forModuleLoaders == false %}
+> *Note*: {{site.companyname}} recommends using the `language_url` for the community language packs, to avoid copying the language pack into the `tinymce/langs` folder every time you upgrade {{site.productname}}.
+{% endif %}
+
+To use change the user interface language using a community language pack:
+
+. Download the language pack from link:{{site.gettiny}}/language-packages/[the {{site. companyname}} Community Language Packages download page].
+{% if forModuleLoaders == true %}
+. Unzip and import/require the language file.
+{% else %}
+. Unpack the language file into the `tinymce/langs` folder.
+{% endif %}
+. Set the link:{{ site.baseurl }}/configure/localization/#language[`language`] option in your {{site.productname}} configuration to the language code, matching the filename on the language pack. For example: If the language pack has the filename `sv_SE.js`, then set `language: 'sv_SE',`
+. Confirm that the language has been set successfully by loading {{site.productname}}.
+
+NOTE: The language code set in the {{site.productname}} configuration must match the filename of the language file. If the language file is not found, {{site.productname}} will not load.
+
+If a language you need is not available, you may wish to translate it yourself. To contribute to translating {{site.productname}}, go to our https://www.transifex.com/projects/p/tinymce/[Transifex translation] page and sign up, then request to join a team or create a new team if your language are not listed.

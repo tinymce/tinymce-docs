@@ -1,0 +1,17 @@
+=== `spellchecker_rpc_url`
+
+This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the link:{{site.baseurl}}/enterprise/server/[server-side component installation guide].
+
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{{site.baseurl}}/cloud-deployment-guide/editor-and-features/[{{site.cloudname}}]
+
+*Type:* `String`
+
+==== Example: Using `spellchecker_rpc_url`
+
+`js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_rpc_url: 'localhost/ephox-spelling'
+});
+`

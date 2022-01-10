@@ -1,3 +1,0 @@
-```
-./plugins/visualchars/plugin.js
-```

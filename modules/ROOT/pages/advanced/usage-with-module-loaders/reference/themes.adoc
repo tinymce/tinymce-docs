@@ -1,0 +1,50 @@
+= Bundling TinyMCE themes using module loading
+:description: Information on bundling TinyMCE themes using module loading
+:description_short: Information on bundling themes
+:title_nav: Themes
+
+{% assign editorcomponent = "theme" %}
+{% include module-loading/bundling-ref-example.md %}
+{% assign editorcomponent = nil %}
+
+The following table shows examples of the syntax used to bundle the silver theme:
+
+`
+./themes/silver/theme.js
+`
+
+Example syntax for including the silver theme in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
++++<th>+++Source+++</th>+++
++++<th>+++Example+++</th>++++++</tr>++++++</thead>+++
++++<tbody>++++++<tr>++++++<td rowspan="2">+++ES6++++</td>+++
++++<td>+++npm+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'tinymce/themes/silver'##[.p]#[.pun]#;##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'../tinymce/themes/silver/theme'##[.p]#[.pun]#;##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td rowspan="2">+++Common JS+++</td>+++
++++<td>+++npm+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'tinymce/themes/silver'##[.p]#[.pun]#);##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'../tinymce/themes/silver/theme.js'##[.p]#[.pun]#);##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+
+{% comment %}
+`js
+import 'tinymce/themes/silver';
+`
+`js
+import '../tinymce/themes/silver/theme';
+`
+`js
+require('tinymce/themes/silver');
+`
+`js
+require('../tinymce/themes/silver/theme.js');
+`
+
+{% endcomment %}
+
+{% include module-loading/bundling-theme-files.md %}

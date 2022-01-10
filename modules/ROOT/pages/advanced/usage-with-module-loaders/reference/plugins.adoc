@@ -1,0 +1,58 @@
+= Bundling TinyMCE plugins using module loading
+:description: Information on bundling TinyMCE plugins using module loading
+:description_short: Information on bundling plugins
+:title_nav: Plugins
+
+{% assign editorcomponent = "plugin" %}
+{% include module-loading/bundling-ref-example.md %}
+{% assign editorcomponent = nil %}
+
+The following table shows examples of the syntax used to bundle the following plugin.
+
+Required files for an example plugin:
+
+`
+./plugins/example/content.css
+./plugins/example/plugin.js
+`
+
+Example syntax for including the example "plugin" in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
++++<th>+++Source+++</th>+++
++++<th>+++Example+++</th>++++++</tr>++++++</thead>+++
++++<tbody>++++++<tr>++++++<td rowspan="2">+++ES6++++</td>+++
++++<td>+++npm+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.nx]#[.pln]#pluginCss##[.pln]##[.k]#[.kwd]#from##[.pln]##[.s1]#[.str]#'tinymce/plugins/example/content.css'##[.p]#[.pun]#;##[.pln]##[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'tinymce/plugins/example'##[.p]#[.pun]#;##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.k]#[.kwd]#import##[.pln]##[.nx]#[.pln]#pluginCss##[.pln]##[.k]#[.kwd]#from##[.pln]##[.s1]#[.str]#'../tinymce/plugins/example/content.css'##[.p]#[.pun]#;##[.pln]##[.k]#[.kwd]#import##[.pln]##[.s1]#[.str]#'../tinymce/plugins/example/plugin'##[.p]#[.pun]#;##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td rowspan="2">+++Common JS+++</td>+++
++++<td>+++npm+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.kd]#[.kwd]#var##[.pln]##[.nx]#[.pln]#pluginCss##[.pln]##[.o]#[.pun]#=##[.pln]##[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'tinymce/plugins/example/content.css'##[.p]#[.pun]#);##[.pln]##[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'tinymce/plugins/example'##[.p]#[.pun]#);##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>+++
++++<tr>++++++<td>++++++<code>+++.zip+++</code>+++&nbsp;+++</td>+++
++++<td>++++++<div class="language-js highlighter-rouge">++++++<div class="highlight">++++++<pre class="prettyprint prettyprinted" style="">++++++<code>+++[.kd]#[.kwd]#var##[.pln]##[.nx]#[.pln]#pluginCss##[.pln]##[.o]#[.pun]#=##[.pln]##[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'../tinymce/plugins/example/content.css'##[.p]#[.pun]#);##[.pln]##[.nx]#[.kwd]#require##[.p]#[.pun]#(##[.s1]#[.str]#'../tinymce/plugins/example/plugin.js'##[.p]#[.pun]#);##
++++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+
+IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at link:{{site.baseurl}}/advanced/usage-with-module-loaders/[Bundling {{site.productname}} with a module loader].
+
+{% comment %}
+`js
+import pluginCss from 'tinymce/plugins/example/content.css';
+import 'tinymce/plugins/example';
+`
+`js
+import pluginCss from '../tinymce/plugins/example/content.css';
+import '../tinymce/plugins/example/plugin';
+`
+`js
+var pluginCss = require('tinymce/plugins/example/content.css');
+require('tinymce/plugins/example');
+`
+`js
+var pluginCss = require('../tinymce/plugins/example/content.css');
+require('../tinymce/plugins/example/plugin.js');
+`
+{% endcomment %}
+
+{% include module-loading/bundling-plugin-files.md %}

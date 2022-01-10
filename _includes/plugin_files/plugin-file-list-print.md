@@ -1,3 +1,0 @@
-```
-./plugins/print/plugin.js
-```

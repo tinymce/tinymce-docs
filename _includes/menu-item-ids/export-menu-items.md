@@ -1,3 +1,0 @@
-| Menu item identifier   | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                   |
-| ---------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| `export`               | File                                                                                                     | Downloads the content from the editor in the selected format. |

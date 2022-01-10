@@ -1,3 +1,0 @@
-```
-./plugins/searchreplace/plugin.js
-```

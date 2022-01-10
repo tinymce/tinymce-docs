@@ -1,0 +1,13 @@
+= Integrate with other projects
+:description: Faster development with integrations of TinyMCE into your favorite framework or CMS.
+:title_nav: Integrations
+:type: folder
+
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "integrations" %}
+    {% assign links = entry.pages %}
+  {% endif %}
+{% endfor %}
+
+{% include index.html links=links %}

@@ -1,4 +1,0 @@
-| Menu item identifier   | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                                               |
-|------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| `spellchecker`         | Tools                                                                                                    | Toggles the spellchecker on/off.                                                                          |
-| `spellcheckerlanguage` | Tools                                                                                                    | Changes the language used for the spell checking process for the document or the currently selected text. |

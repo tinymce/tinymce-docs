@@ -1,0 +1,20 @@
+== `readonly`
+
+Setting the `readonly` option to `true` will initialize the editor in `"readonly"` mode instead of editing (`"design"`) mode. Once initialized, the editor can be set to editing (`"design"`) mode using the link:{{site.baseurl}}/api/tinymce/tinymce.editormode/#set[`tinymce.editor.mode.set` API].
+
+*Type:* `Boolean`
+
+*Default Value:* `false`
+
+*Possible Values:* `true`, `false`
+
+=== Example: Using `readonly`
+
+`js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  readonly: true
+});
+`
+
+{% include live-demo.html id="readonly-demo" %}

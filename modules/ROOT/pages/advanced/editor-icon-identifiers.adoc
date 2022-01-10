@@ -1,0 +1,12 @@
+= Icons Available for TinyMCE
+:description: Complete list of icon identifiers.
+:description_short: Complete list of icon identifiers.
+:keywords: icon icons identifier
+:title_nav: Available Icons
+
+The following table contains the default icons provided with {{site.productname}}. For information on adding custom icons, see:
+
+* link:{{site.baseurl}}/advanced/creating-an-icon-pack/[Create an icon pack for {{site.productname}}].
+* link:{{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[{{site.productname}} API: `tinymce.editor.ui.Registry.addIcon`].
+
+{% include configuration/icon_list.md %}

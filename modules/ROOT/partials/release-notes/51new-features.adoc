@@ -1,0 +1,297 @@
+The following new features and enhancements were added for the {{site.productname}} 5.1 release.
+
+=== Mobile
+
+{{site.productname}} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version of the silver theme.
+
+The new mobile experience comes with a number of user interface changes, building on the {{site.productname}} desktop experience:
+
+* <<mobiledevicesnowusethesilvertheme,Mobile devices now use the `silver` theme>>
+* <<horizontalcontextualmenusonmobile,Horizontal contextual menus on mobile>>
+* <<side-scrollingtoolbarsonmobile,Side-scrolling toolbars on mobile>>
+* <<contextualkeyboardsettings,Contextual keyboard settings>>
+* <<newmobiledefaultsforselectedsettings,New mobile defaults for selected settings>>
+* <<tablecellselectiononmobile,Table cell selection on mobile>>
+* <<touch-friendlysplitbuttons,Touch-friendly split buttons>>
+* <<unsupportedsettingsformobile,Unsupported settings for mobile>>
+
+The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
+
+* link:{{site.baseurl}}/plugins/premium/comments/[Comments]
+* link:{{site.baseurl}}/plugins/opensource/imagetools/[Image tools]
+* link:{{site.baseurl}}/plugins/premium/moxiemanager/[MoxieManager]
+* link:{{site.baseurl}}/plugins/premium/permanentpen/[Permanent Pen]
+
+==== Enabling the mobile editor
+
+To ensure the mobile editor functions as intended, add the following `meta` tag to the `head` of pages using {{site.productname}}.
+
+```html+++<meta name="viewport" content="width=device-width, initial-scale=1">++++++</meta>+++
+
+```
+
+==== Mobile devices now use the `silver` theme
+
+The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
+
+|===
+| *Legacy mobile experience* +
+( {{site.productname}} 4.7 through {{site.productname}} 5.0 ) | *New mobile experience* +
+( {{site.productname}} 5.1 + )
+
+| image:{{site.baseurl}}/images/legacy_mobile_exp.png[{{site.productname}} legacy mobile experience]
+| image:{{site.baseurl}}/images/5_1_mobile_exp.png[{{site.productname}} 5.1+ mobile experience]
+|===
+
+To revert to the legacy mobile theme, add the mobile theme to the {{site.productname}} configuration, such as:
+
+`js
+tinymce.init({
+  mobile: {
+    theme: 'mobile'
+  }
+});
+`
+
+NOTE: No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
+
+For information on:
+* Using the `silver` theme for mobile, see: link:{{site.baseurl}}/mobile/[{{site.productname}} Mobile].
+* Using the legacy `mobile` theme, see: link:{{site.baseurl}}/mobile/#thelegacymobiletheme[{{site.productname}} Mobile - The legacy mobile theme].
+
+==== Horizontal contextual menus on mobile
+
+Contextual menus are now horizontal on mobile devices and open when a long-press is used. They also <<side-scrollingtoolbarsonmobile,side-scroll>> to allow larger lists of items to be available on mobile devices.
+
+For example:
+
+image::{{site.baseurl}}/images/side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
+
+==== Side-scrolling toolbars on mobile
+
+Toolbars and <<horizontalcontextualmenusonmobile,horizontal menus>> side-scroll using "swipe" gestures on mobile devices. This allows longer toolbars to be used without occupying too much screen space. This feature removes the need for a toolbar drawer on mobile devices.
+
+==== Contextual keyboard settings
+
+A new `inputMode` configuration setting for dialog input components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {{site.productname}}, the core {{site.productname}} plugins, and the premium {{site.productname}} plugins have been updated to use `inputMode`.
+
+For information on using `inputMode`, see: link:{{site.baseurl}}/ui-components/dialogcomponents/#inputmode[Dialog components - `inputMode`].
+
+==== New mobile defaults for selected settings
+
+These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
+
+The following settings have mobile-specific default values:
+
+* link:{{site.baseurl}}/configure/editor-appearance/#menubar[`menubar`] - defaults to `false` on mobile phones.
+* link:{{site.baseurl}}/configure/editor-appearance/#toolbar_drawer[`toolbar_drawer`] - defaults to `false` on mobile devices. The toolbar will <<sidescrollingtoolbarsonmobile,side-scroll by default>>.
+* link:{{site.baseurl}}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* link:{{site.baseurl}}/plugins/opensource/table/#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* link:{{site.baseurl}}/configure/editor-appearance/#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
+* link:{{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+
+==== Table cell selection on mobile
+
+The link:{{site.baseurl}}/plugins/opensource/table/[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
+
+For example:
+
+image::{{site.baseurl}}/images/table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
+
+==== Touch-friendly split buttons
+
+The styling on link:{{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
+
+==== Unsupported settings for mobile
+
+The following settings are not supported on mobile devices:
+
+* link:{{site.baseurl}}/general-configuration-guide/use-tinymce-inline/[Inline editing mode].
+* link:{{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/[Distraction-free editing mode].
+* link:{{site.baseurl}}/configure/editor-appearance/#inline[`inline`].
+* link:{{site.baseurl}}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`].
+* link:{{site.baseurl}}/plugins/opensource/table/#table_grid[`table_grid`].
+* link:{{site.baseurl}}/configure/editor-appearance/#resize[`resize`].
+* link:{{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`].
+
+=== Sticky Toolbar
+
+The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
+
+image::{{site.baseurl}}/images/sticky-toolbar.gif[Sticky Toolbar animation]
+
+For information on the Sticky Toolbars, see: link:{{site.baseurl}}/configure/editor-appearance/#toolbar_sticky[Enabling Sticky Toolbars].
+
+=== Changes to the Env API for platform detection
+
+New platform detection functions have been added to the link:{{site.baseurl}}/api/tinymce/tinymce.env/[`Env` API], allowing for some older detection properties to be deprecated.
+
+==== New Env API properties
+
+|===
+| Property | Type | Description
+
+| `browser.current`
+| String
+| Returns the current browser name.
+
+| `browser.version`
+| Object
+| Returns the current browser major and minor version.
+
+| `os.current`
+| String
+| Returns the current operating system name.
+
+| `os.version`
+| Object
+| Returns the current operating system major and minor version.
+|===
+
+==== New Env methods
+
+|===
+| Method | Type | Description
+
+| `browser.isEdge`
+| Boolean
+| Returns `true` if the user's browser is Microsoft Edge.
+
+| `browser.isChrome`
+| Boolean
+| Returns `true` if the user's browser is Google Chrome.
+
+| `browser.isIE`
+| Boolean
+| Returns `true` if the user's browser is Microsoft Internet Explorer.
+
+| `browser.isOpera`
+| Boolean
+| Returns `true` if the user's browser is Opera.
+
+| `browser.isFirefox`
+| Boolean
+| Returns `true` if the user's browser is Firefox.
+
+| `browser.isSafari`
+| Boolean
+| Returns `true` if the user's browser is Safari.
+
+| `os.isWindows`
+| Boolean
+| Returns `true` if the user's operating system is Microsoft Windows.
+
+| `os.isiOS`
+| Boolean
+| Returns `true` if the user's operating system is iOS.
+
+| `os.isAndroid`
+| Boolean
+| Returns `true` if the user's operating system is Android.
+
+| `os.isOSX`
+| Boolean
+| Returns `true` if the user's operating system is Mac OS X.
+
+| `os.isLinux`
+| Boolean
+| Returns `true` if the user's operating system is Linux.
+
+| `os.isSolaris`
+| Boolean
+| Returns `true` if the user's operating system is Solaris.
+
+| `os.isFreeBSD`
+| Boolean
+| Returns `true` if the user's operating system is FreeBSD.
+
+| `deviceType.isDesktop`
+| Boolean
+| Returns `true` if the user's device is a desktop device.
+
+| `deviceType.isiPad`
+| Boolean
+| Returns `true` if the user's device is an iPad.
+
+| `deviceType.isiPhone`
+| Boolean
+| Returns `true` if the user's device is an iPhone.
+
+| `deviceType.isPhone`
+| Boolean
+| Returns `true` if the user's device is a phone.
+
+| `deviceType.isTablet`
+| Boolean
+| Returns `true` if the user's device is a tablet.
+
+| `deviceType.isTouch`
+| Boolean
+| Returns `true` if the user's device is a touch device.
+
+| `deviceType.isWebView`
+| Boolean
+| Returns `true` if the user's device is a WebView device.
+|===
+
+For a list of deprecated `Env` APIs, see: <<deprecatedapiproperties-tinymceenv,Deprecated API Properties - `tinymce.Env`>>.
+
+=== Added new `referrer_policy` setting
+
+Used for setting the level of referrer information sent when loading plugins and CSS. Referrer policies can be used to:
+
+* Improve the privacy of end-users.
+* Assist with server-side filtering of cross-origin requests for {{site.productname}} resources.
+
+For information on using the `referrer_policy` setting, see: link:{{site.baseurl}}/configure/integration-and-setup/#referrer_policy[Integration and setup options - `referrer_policy`].
+
+=== Added a dark content css skin
+
+A dark CSS definition for `content_css` has been added to compliment the dark user interface skin.
+
+For example:
+
+{% include live-demo.html id="dark-mode" %}
+
+For information on using the dark version of the default skin, see: link:{{site.baseurl}}/general-configuration-guide/customize-ui/#skins[Customizing the editor UI - Skins].
+
+=== Added border width to Table cell dialog
+
+The table plugin has been updated to include a *Border width* field in the *Cell Properties* dialog. The field will accept any https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#Lengths[valid CSS units].
+
+For example:
+
+image::{{site.baseurl}}/images/border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
+
+=== Changed the default `toolbar_drawer` to `floating`
+
+The default for the `toolbar_drawer` setting has been changed from `false` to `floating`.
+
+To revert to the {{site.productname}} 5.0 behavior, add `toolbar_drawer: false` to the `tinymce.init`, such as:
+
+`js
+tinymce.init({
+  selection: textarea#myEditor
+  toolbar_drawer: false
+});
+`
+
+For information on the `toolbar_drawer` setting, see: link:{{site.baseurl}}/configure/editor-appearance/#toolbar_drawer[User interface options - `toolbar_drawer`].
+
+=== Icon changes
+
+In {{site.productname}} 5.0, the same icon (`paragraph`) was used for the `visualchars` and `visualblocks` menu items and toolbar buttons.
+
+To improve the user experience:
+
+* The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: image:{{site.baseurl}}/images/icons/visualchars.svg[`paragraph` renamed to `visualchars`]
+* A new `visualblocks` icon is used for the `visualblocks` toolbar button: image:{{site.baseurl}}/images/icons/visualblocks.svg[New visualblocks icon]
+
+For the list of icons included in {{site.productname}}, see: link:{{site.baseurl}}/advanced/editor-icon-identifiers/[Available icons].
+
+=== Fixes to the positioning of inline dialogs and menus
+
+Fixes for inline dialogs and menus have been included to:
+
+* Position inline dialogs correctly when the page is scrolled.
+* Reposition inline dialogs and menus when resizing {{site.productname}}.

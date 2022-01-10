@@ -1,0 +1,13 @@
+= Real-time Collaboration plugin
+:description: The Real-time Collaboration plugin for TinyMCE
+:keywords: rtc
+:title_nav: Real-time Collaboration
+
+{% assign pluginname = "Real-time Collaboration (RTC)" %}
+{% assign plugincode = "rtc" %}
+
+{{site.premiumplugin}}
+
+{% include rtc/rtc-description.md %}
+
+For information on the Real-time Collaboration plugin, see link:{{site.baseurl}}/rtc/[Real-time Collaboration (RTC)].

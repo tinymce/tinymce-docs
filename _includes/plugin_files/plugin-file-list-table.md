@@ -1,3 +1,0 @@
-```
-./plugins/table/plugin.js
-```

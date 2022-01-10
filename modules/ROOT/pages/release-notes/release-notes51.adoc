@@ -1,0 +1,38 @@
+= TinyMCE 5.1
+:description: Release notes for TinyMCE 5.1
+:keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
+:title_nav: TinyMCE 5.1
+
+== Overview
+
+{{site.productname}} 5.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 11^th^, 2019. It includes {{site.productname}} 5.1.3 and additional changes to premium plugins. These release notes provide a high-level coverage of the changes for {{site.productname}} 5.1, including:
+
+* <<newfeaturesandenhancements,New features and enhancements>>
+* <<premiumpluginchanges,Premium Plugin changes>>
+* <<deprecatedfeatures,Deprecated features>>
+* <<knownissues,Known issues>>
+* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+
+{{site.releasenotes_for_stable}}
+
+== New features and enhancements
+
+{% include release-notes/51new-features.md %}
+
+== Premium Plugin changes
+
+{% include release-notes/51premium-plugins.md %}
+
+== Deprecated features
+
+{% include release-notes/51deprecated.md %}
+
+== Known issues
+
+{% include release-notes/51known-issues.md %}
+
+{% assign enterprise = true %}
+
+{% include install/upgrading-info.md %}
+
+{% assign enterprise = false %}

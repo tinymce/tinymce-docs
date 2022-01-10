@@ -1,4 +1,0 @@
-| Menu item identifier    | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                             |
-| ----------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `advtablesort`          | Table                                                                                                    | Advanced tables sort menu item with related controls.                                   |
-| `advtablerownumbering`  | _Not Applicable_                                                                                         | Adds or removes (toggles) a row numbering column on the selected table. {{site.requires_5_9v}} |

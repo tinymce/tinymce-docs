@@ -1,0 +1,18 @@
+= Using TinyMCE with the Laravel framework
+:description: A guide to using TinyMCE with the PHP-based Laravel framework.
+:description_short: A guide to using TinyMCE with the PHP-based Laravel framework.
+:title_nav: Laravel
+:type: folder
+
+{% assign navigation = site.data.nav %}
+{% for entry in navigation %}
+  {% if entry.url == "integrations" %}
+    {% for subentry in entry.pages %}
+      {% if subentry.url == "laravel" %}
+        {% assign links = subentry.pages %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% include index.html links=links %}

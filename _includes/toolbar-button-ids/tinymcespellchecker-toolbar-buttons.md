@@ -1,5 +1,0 @@
-| Toolbar button identifier | Description                                                                                                                                                                            |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `language`                | Sets the spellchecker language for the current selection. <br /> **Note:** For {{site.productname}} 5.9 and later, this is a [core toolbar button]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons). |
-| `spellcheckdialog`        | Opens the spelling checker dialog if `spellchecker_dialog` is `false`, otherwise this button is disabled.                                                                              |
-| `spellchecker`            | Opens the spelling checker dialog if `spellchecker_dialog` is `true`, otherwise this button enables or disables spell checking as-you-type.                                            |

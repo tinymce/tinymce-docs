@@ -1,0 +1,18 @@
+== `draggable_modal`
+
+Use the `draggable_modal` option to enable dragging for link:{{site.baseurl}}/ui-components/dialog/[modal dialogs].
+
+*Type:* `Boolean`
+
+*Default Value:* `false`
+
+*Possible Values:* `true`, `false`
+
+=== Example: Using `draggable_modal`
+
+`js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  draggable_modal: true
+});
+`

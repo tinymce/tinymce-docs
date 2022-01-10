@@ -56,7 +56,8 @@ WARNING: Do not include secret or sensitive information in the key hint. The key
 
 This example shows the minimum required configuration for the Real-time Collaboration plugin, including the `rtc_encryption_provider` option.
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea#rtc-example',
   plugins: 'rtc',
@@ -72,4 +73,4 @@ tinymce.init({
     .catch((error) => console.log('Failed to return encryption key\n' + error)),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' })
 });
-+`
+----

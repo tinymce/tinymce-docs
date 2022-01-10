@@ -18,8 +18,8 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'image',
   image_list: [
-    {title: 'My image 1', value: '\https://www.example.com/my1.gif'},
-    {title: 'My image 2', value: '\http://www.moxiecode.com/my2.gif'}
+    {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
+    {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
   ]
 });
 
@@ -76,7 +76,8 @@ include::partial$configuration/image_uploadtab.adoc[]
 
 Use the `Style Formats` option instead, which is much more powerful.
 
-`js
+[source, js]
+----
 style_formats: [
   {title: 'Image Left', selector: 'img', styles: {
     'float' : 'left',
@@ -87,7 +88,7 @@ style_formats: [
     'margin': '0 10px 0 10px'
   }}
 ]
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

@@ -11,13 +11,14 @@ This plugin adds a save button to the {productname} toolbar, which will submit t
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'save',
   toolbar: 'save'
 });
-`
+----
 
 == Save error messages
 

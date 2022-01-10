@@ -10,7 +10,8 @@ This option adds an "Advanced" tab to the image dialog allowing you to add custo
 
 ==== Example: Using `image_advtab`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'image',
   image_advtab: true
 });
-`
+----

@@ -6,7 +6,8 @@ This option enables a hover card to be presented when a user hovers over a menti
 
 ==== Example: Using `mentions_select`
 
-`js
+[source, js]
+----
 var userRequest = {};
 tinymce.init({
   selector: 'textarea',
@@ -41,7 +42,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 ==== `mentions_select` with predefined templates
 
@@ -51,7 +52,8 @@ If `mentions_select` is resolved with an object specifying the type and user det
 
 ===== Example: Using the `'profile'` template with `mentions_select`
 
-`js
+[source, js]
+----
 var userRequest = {};
 tinymce.init({
   selector: 'textarea',
@@ -77,4 +79,4 @@ tinymce.init({
     });
   }
 });
-`
+----

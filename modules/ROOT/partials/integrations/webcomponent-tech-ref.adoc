@@ -42,9 +42,10 @@ To use a cloud version of Web Component, the integration is accessible from http
 
 For example:
 
-`html
+[source, html]
+----
 <script src="{webcomponent_url}"></script>
-`
+----
 
 === Installing the TinyMCE Web Component integration
 
@@ -52,13 +53,15 @@ To add the {productname} Web Component integration to a JavaScript project, on c
 
 * NPM users:
 +
-`sh
+[source, sh]
+----
   npm i --save @tinymce/tinymce-webcomponent
  `
 
 * Yarn users:
 +
-`sh
+[source, sh]
+----
   yarn add @tinymce/tinymce-webcomponent
  `
 
@@ -361,9 +364,10 @@ To specify the location of a server-side upload handler, use the `images_upload_
 
 The upload handler should return the location of the uploaded file in the following format:
 
-`json
+[source, json]
+----
 { "location": "folder/sub-folder/new-location.png" }
-`
+----
 
 For information on using the `images_upload_url`, see: link:{baseurl}/configure/file-image-upload/#images_upload_url[Image & file options - `images_upload_url`].
 

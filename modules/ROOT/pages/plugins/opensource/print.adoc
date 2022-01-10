@@ -11,14 +11,15 @@ This plugin adds a print button to the toolbar. It also adds a `Print` item to t
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'print',
   menubar: 'file',
   toolbar: 'print'
 });
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

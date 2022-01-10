@@ -21,13 +21,14 @@ include::partial$misc/ctrl_right_click.adoc[]
 
 === Example: Using `contextmenu`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'link image table',
   contextmenu: 'link image table'
 });
-`
+----
 
 {% if page.title != "Context menu" %}
 For information on configuring the `contextmenu` option and creating custom context menu items link:{baseurl}/ui-components/contextmenu/[context menu examples].

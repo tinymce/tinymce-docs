@@ -6,7 +6,8 @@ This option is used in cases where the class attribute should be replaced or mer
 
 ==== Example: Using `importcss_merge_classes`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'importcss',
@@ -14,4 +15,4 @@ tinymce.init({
   menubar: 'format',
   importcss_merge_classes: false
 });
-`
+----

@@ -8,17 +8,19 @@ The function will be passed the results of the <<getreport,`getReport()` API>>. 
 
 *Default Value:*
 
-`js
+[source, js]
+----
 function(issue) {
   return true;
 }
-`
+----
 
 ==== Example: Using `a11ychecker_filter_issue` to filter out the Accessibility Checker T1 rule
 
 The callback function in the following example will return `false` if the issue `id` value is `'T1'`, filtering `'T1'` issues from the Accessibility Checker report.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
@@ -27,13 +29,14 @@ tinymce.init({
     return issue.id !== 'T1';
   }
 });
-`
+----
 
 ==== Example: Using `a11ychecker_filter_issue` to filter out all Accessibility Checker table rules
 
 The callback function in the following example will return `false` if the issue `element` value is `'table'`, filtering all `table` element-related issues from the Accessibility Checker report.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
@@ -42,4 +45,4 @@ tinymce.init({
     return issue.element.nodeName.toLowerCase() !== 'table';
   }
 });
-`
+----

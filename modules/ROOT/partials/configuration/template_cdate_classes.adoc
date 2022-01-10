@@ -10,7 +10,8 @@ A creation date is one that is set if no previous date existed within the elemen
 
 ==== Example: Using `template_cdate_classes`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'template',
   template_cdate_classes: 'cdate creationdate'
 });
-`
+----

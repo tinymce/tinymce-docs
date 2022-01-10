@@ -8,7 +8,8 @@ The `casechange_title_case_minors` option is used to customize the rules while u
 
 ===== Example: Using `casechange_title_case_minors`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'casechange',
@@ -20,4 +21,4 @@ tinymce.init({
     'for', 'and', 'nor', 'but', 'or', 'yet', 'so', 'an', 'a', 'some', 'the'
   ]
 });
-`
+----

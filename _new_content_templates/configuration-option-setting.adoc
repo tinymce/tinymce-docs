@@ -22,23 +22,26 @@ Possible values:: `'string1'`, `'string2'`, `false`
 
 Default value:: `false` `10` `+/^\w{6}/+`
 `'str'`
-`js
+[source, js]
+----
 {
   default: 'object'
 }
-`
-`js
+----
+[source, js]
+----
 [
   'array',
   'default',
   1
 ]
-`
-`+js
+----
+[source, js]
+----
 (editor) => {
   console.log(editor);
 }
-+`
+----
 
 Input parameters::
 +

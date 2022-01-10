@@ -19,34 +19,37 @@ For the moment the *Enhanced Media Embed* plugin has to be used in conjunction w
 The service URL is already configured with link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}].
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'media mediaembed',
   mediaembed_max_width: 450
 });
-`
+----
 
 === Example Self-hosted Configuration
 
 In a Self-hosted installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'media mediaembed',
   mediaembed_service_url: 'SERVICE_URL',
   mediaembed_max_width: 450
 });
-`
+----
 
 === CSS
 
 To make the embeddable snippets display correctly on your site, be sure to add the required summary card CSS.
 
-`css
+[source, css]
+----
 include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
-`
+----
 
 == Usage
 

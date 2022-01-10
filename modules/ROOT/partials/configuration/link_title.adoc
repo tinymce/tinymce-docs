@@ -10,7 +10,8 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 ==== Example: Using `link_title`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'link',
   link_title: false
 });
-`
+----

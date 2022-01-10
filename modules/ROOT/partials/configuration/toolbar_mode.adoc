@@ -14,12 +14,13 @@ When the toolbar_mode is set to `'floating'` or `sliding`, the editor will move 
 
 For example. If the following toolbar configuration is wider than the editor, the items before the separator (`|`) will appear in the main toolbar and the rest will be moved to the toolbar drawer.
 
-`js
+[source, js]
+----
 tinymce.init({
     selector: 'textarea',
     toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
 });
-`
+----
 
 Two situations to consider when organising the toolbar:
 
@@ -55,12 +56,13 @@ image::{baseurl}/images/floating_toolbar.png[Floating Toolbar]
 
 Use the following settings to configure a Floating toolbar:
 
-`js
+[source, js]
+----
 tinymce.init({
     selector: 'textarea',
     toolbar_mode: 'floating'
 });
-`
+----
 
 ==== Sliding
 
@@ -72,12 +74,13 @@ image::{baseurl}/images/sliding_toolbar.png[Sliding Toolbar]
 
 Use the following settings to configure a Sliding toolbar:
 
-`js
+[source, js]
+----
 tinymce.init({
     selector: 'textarea',
     toolbar_mode: 'sliding'
 });
-`
+----
 
 ==== Scrolling
 
@@ -93,12 +96,13 @@ image::{baseurl}/images/scrolling_toolbar.png[Scrolling Toolbar]
 
 Use the following settings to configure a Scrolling toolbar:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   toolbar_mode: 'scrolling'
 });
-`
+----
 
 ==== Wrap
 
@@ -110,9 +114,10 @@ image::{baseurl}/images/wrapped_toolbar.png[Wrapped Toolbar]
 
 Use the following settings to configure a wrapped toolbar:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   toolbar_mode: 'wrap'
 });
-`
+----

@@ -6,7 +6,8 @@ This option enables you to provide a custom CSS selector that should match the e
 
 ==== Example: Using `mentions_selector`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
@@ -19,4 +20,4 @@ tinymce.init({
     return span;
   }
 });
-`
+----

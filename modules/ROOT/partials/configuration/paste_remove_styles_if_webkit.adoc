@@ -10,7 +10,8 @@ This option allows you to disable {productname}'s default paste filters for webk
 
 ==== Example: Using `paste_remove_styles_if_webkit`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'paste',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'paste',
   paste_remove_styles_if_webkit: false
 });
-`
+----

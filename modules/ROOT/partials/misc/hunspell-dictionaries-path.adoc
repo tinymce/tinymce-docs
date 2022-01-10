@@ -9,10 +9,11 @@ Requirements:
 
 Example:
 
-`conf
+[source, conf]
+----
 ephox {
   spelling {
     hunspell-dictionaries-path: "/opt/ephox/hunspell-dictionaries"
   }
 }
-`
+----

@@ -12,7 +12,8 @@ The `tinycomments_create` function is given a request (req) object as the first 
 
 The `done` callback should accept the following object:
 
-`+js
+[source, js]
+----
 {
   conversationUid: string, // the new conversation uid
   // Optional error callback which will be run if the new conversation could not be created
@@ -20,16 +21,17 @@ The `done` callback should accept the following object:
   // Optional success callback which will be run when the new conversation is successfully created
   onSuccess: function (uid) { ... }
 }
-+`
+----
 
 For example:
 
-```js
+[source,js]
+----
 function create_comment(ref, done, fail) {
   let content = ref.content;
   let createdAt = ref.createdAt;
 
-fetch('\https://api.example/conversations/', {
+fetch('https://api.example/conversations/', {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {
@@ -37,17 +39,17 @@ fetch('\https://api.example/conversations/', {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) \=> {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to create comment');
       }
       return response.json();
     })
-    .then((ref2) \=> {
+    .then((ref2) => {
       let conversationUid = ref2.conversationUid;
       done({ conversationUid: conversationUid });
     })
-    .catch((e) \=> {
+    .catch((e) => {
       fail(e);
     });
 }
@@ -64,4 +66,4 @@ tinymce.init({
   tinycomments_delete_comment: delete_comment,
   tinycomments_lookup: lookup_comment
 });
-```
+----

@@ -10,7 +10,8 @@ This options allows you disable the image dimensions input field in the image di
 
 ==== Example: Using `image_dimensions`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'image',
   image_dimensions: false
 });
-`
+----

@@ -10,10 +10,11 @@ This option allows you to disable some of the options available to a user when i
 
 ==== Example: Using `table_appearance_options`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   table_appearance_options: false
 });
-`
+----

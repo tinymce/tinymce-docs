@@ -4,10 +4,11 @@ Adding the `num-incorrect-words-in-suggestions-request-limit` element and settin
 
 Example:
 
-`conf
+[source, conf]
+----
 ephox {
   spelling {
     num-incorrect-words-in-suggestions-limit = 100
   }
 }
-`
+----

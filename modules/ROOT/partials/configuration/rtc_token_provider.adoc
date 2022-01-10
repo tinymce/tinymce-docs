@@ -73,7 +73,8 @@ Return data::
 
 This example shows the minimum required configuration for the Real-time Collaboration plugin, including the `rtc_token_provider` option.
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea#rtc-example',
   plugins: 'rtc',
@@ -89,4 +90,4 @@ tinymce.init({
     .then(({ jwt })) => ({ token: jwt })
     .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
-+`
+----

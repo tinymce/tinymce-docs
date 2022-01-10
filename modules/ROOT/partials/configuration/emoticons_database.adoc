@@ -17,11 +17,12 @@ include::partial$misc/under-license.adoc[]
 
 ==== Example: Using `emoticons_database`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons',
   emoticons_database: 'emojis'
 });
-`
+----

@@ -10,7 +10,8 @@ This option makes it possible to disable the ability to resize table columns and
 
 ==== Example: Using `table_resize_bars`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'table',
   table_resize_bars: false
 });
-`
+----

@@ -23,17 +23,19 @@ For more information on how to create these tokens, refer to the link:{baseurl}/
 
 ==== Example Using a JWT Provider URL
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   tinydrive_token_provider: '/jwt' // this can be a page or endpoint like this
 });
-`
+----
 
 ==== Example Using a JWT Provider Callback
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
@@ -42,7 +44,7 @@ tinymce.init({
      // failure('Could not create a jwt token')
   }
 });
-`
+----
 
 === `tinydrive_upload_path`
 
@@ -54,13 +56,14 @@ This setting enables changing the default upload path for files that get uploade
 
 ==== Example: Using `tinydrive_upload_path`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   tinydrive_upload_path: '/some/other/path'
 });
-`
+----
 
 === `tinydrive_max_image_dimension`
 
@@ -70,13 +73,14 @@ This setting enables constraining the width/height of uploaded images. When this
 
 ==== Example: Using `tinydrive_max_image_dimension`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   tinydrive_max_image_dimension: 1024
 });
-`
+----
 
 == Configuring the Tiny Drive UI
 
@@ -92,13 +96,14 @@ This option sets the skin applied to {cloudfilemanager}. The default skin includ
 
 If the `tinydrive_skin` option is not specified, {cloudfilemanager} will try and use the skin specified by the link:{baseurl}/configure/editor-appearance/#skin[{productname} `skin` option] before falling back to the default "oxide" skin.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   tinydrive_skin: 'oxide-dark'
 });
-`
+----
 
 === Configuring the Insert File toolbar button
 
@@ -110,13 +115,14 @@ The Insert File toolbar button will insert images as `img` elements or other fil
 
 This is an example of configuring the 'insertfile' toolbar button.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   toolbar: 'insertfile'
 });
-`
+----
 
 == Configuring with Dropbox
 
@@ -128,13 +134,14 @@ This setting enables specifying the Dropbox API key for integrating dropbox into
 
 ==== Example: Using `tinydrive_dropbox_app_key`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   tinydrive_dropbox_app_key: '<your dropbox app key>'
 });
-`
+----
 
 == Configuring with Google Drive
 
@@ -146,13 +153,14 @@ This setting enables specifying the Google Drive API key for integrating Google 
 
 ==== Example: Using `tinydrive_google_drive_key`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   tinydrive_google_drive_key: '<your google drive api key>'
 });
-`
+----
 
 === `tinydrive_google_drive_client_id`
 
@@ -162,13 +170,14 @@ This setting enables specifying the Google Drive client ID for integrating Googl
 
 ==== Example: Using `tinydrive_google_drive_client_id`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
   tinydrive_google_drive_client_id: '<your google drive client id>'
 });
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

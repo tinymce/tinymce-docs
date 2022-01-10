@@ -11,9 +11,10 @@ The `contextmenu_avoid_overlap` option prevents the context menu from covering (
 [discrete]
 ==== Example
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   contextmenu_avoid_overlap: '.mce-spelling-word'
 });
-`
+----

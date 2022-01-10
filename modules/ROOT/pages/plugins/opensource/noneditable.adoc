@@ -11,12 +11,13 @@ This plugin enables you to prevent users from being able to edit content within 
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'noneditable'
 });
-`
+----
 
 When you have existing classes that cannot be removed, you may combine MCE classes with the existing class in the following manner:
 
@@ -52,22 +53,24 @@ include::partial$configuration/noneditable_regexp.adoc[]
 
 . Add `noneditable` to `plugins`. For example:
 +
-`js
+[source, js]
+----
  tinymce.init({
    selector: 'textarea',  // change this value according to your HTML
    plugins: 'code noneditable'
  });
-`
+----
 
 . Configure the `noneditable_noneditable_class` option, or the others as necessary in your `tinymce.init`. For example:
 +
-`js
+[source, js]
+----
  tinymce.init({
    selector: 'textarea',  // change this value according to your HTML
    plugins: 'noneditable',
    noneditable_noneditable_class: 'mceNonEditable'
  });
-`
+----
 +
 NOTE: Replace `mceNonEditable` with the class name you want for your non-editable elements.
 

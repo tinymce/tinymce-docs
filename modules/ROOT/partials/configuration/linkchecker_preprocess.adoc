@@ -6,7 +6,8 @@ The `linkchecker_preprocess` function is used for adjusting links before perform
 
 ==== Example: Using `linkchecker_preprocess`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'linkchecker',
@@ -16,4 +17,4 @@ tinymce.init({
     return { url: newUrl };
   }
 });
-`
+----

@@ -6,7 +6,8 @@ This option overrides the default logic for inserting the mention into the edito
 
 ==== Example: Using `mentions_menu_complete`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
@@ -20,4 +21,4 @@ tinymce.init({
     return span;
   }
 });
-`
+----

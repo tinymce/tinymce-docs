@@ -18,13 +18,14 @@ The `fullscreen_native` option allows the editor to use the browser full screen 
 
 To use the browser-native full screen mode for the {productname} editor, set `fullscreen_native` to `true`. For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'fullscreen',
   fullscreen_native: true
 });
-`
+----
 
 === Limitations of the `fullscreen_native` option
 

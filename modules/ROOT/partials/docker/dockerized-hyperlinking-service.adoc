@@ -1,7 +1,7 @@
 {% if shbundledockerfiles == false %}
-### Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)
+=== Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)
 {% elsif shbundledockerfiles == true %}
-### Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)
+=== Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)
 {% endif %}
 The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Hyperlinking Docker image.
 
@@ -26,38 +26,43 @@ The following procedure covers downloading, configuring, building and testing th
 
 . Navigate into the `tinymce-services` folder.
 +
-`sh
+[source, sh]
+----
  cd tinymce-selfhosted/tinymce-services/
-`
+----
 
 . Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
 +
-`sh
+[source, sh]
+----
  unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
-`
+----
 +
 The structure of the extracted files will be:
 +
-`sh
+[source, sh]
+----
  hyperlinking-service-dockerfile/
  ├── config
  │   └── ephox-hyperlinking-docker-env.conf
  ├── docker-entrypoint.sh
  ├── Dockerfile
  └── generate-jetty-start.sh
-`
+----
 
 . Copy `ephox-hyperlinking.war` into the directory containing the extracted files, such as:
 +
-`sh
+[source, sh]
+----
  cp ephox-hyperlinking.war hyperlinking-service-dockerfile/
-`
+----
 
 . Navigate into the `hyperlinking-service-dockerfile` folder.
 +
-`sh
+[source, sh]
+----
  cd hyperlinking-service-dockerfile
-`
+----
 
 {% elsif shbundledockerfiles == false %}
 1. Go to link:{accountpageurl}[{accountpage}] > My Downloads
@@ -69,25 +74,29 @@ and download either:
 . Open a command line and navigate to the directory containing `ephox-hyperlinking_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
 . Extract the contents of `ephox-hyperlinking_<version>.zip`, such as:
 +
-`sh
+[source, sh]
+----
  unzip ephox-hyperlinking_<version>.zip -d tinymce-hyperlinking-service
-`
+----
 
 . Navigate into the extracted folder.
 +
-`sh
+[source, sh]
+----
  cd tinymce-hyperlinking-service
-`
+----
 
 . Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
 +
-`sh
+[source, sh]
+----
  unzip ephox-hyperlinking-docker-starter-kit.zip
-`
+----
 +
 The structure of the current directory (`tinymce-hyperlinking-service/`) will be:
 +
-`sh
+[source, sh]
+----
  tinymce-hyperlinking-service/
  ├── config
  │   └── ephox-hyperlinking-docker-env.conf
@@ -99,18 +108,20 @@ The structure of the current directory (`tinymce-hyperlinking-service/`) will be
  ├── license.txt
  ├── readme.txt
  └── version.txt
-`
+----
 {% endif %}
 
 . Set the permissions on the extracted files to executable.
 +
-`sh
+[source, sh]
+----
  chmod +x *.sh
-`
+----
 
 . _Optional_: Edit the `http` configuration settings in `config/ephox-hyperlinking-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 +
-`conf
+[source, conf]
+----
  http {
    max-connections = 100
    max-connections-per-host = 10
@@ -122,7 +133,7 @@ The structure of the current directory (`tinymce-hyperlinking-service/`) will be
      use-ssl-config = true
    }
  }
-`
+----
 +
 For information on the `http` configuration setting, see: link:{baseurl}/enterprise/server/configure/#httpoptional[Configure server-side components - `http`].
 
@@ -133,25 +144,28 @@ For information on the `http` configuration setting, see: link:{baseurl}/enterpr
 +
 For example:
 +
-`+conf
+[source, conf]
+----
  ORIGIN0=example.net
  ORIGIN1=example
  ORIGIN2=http://example.org
-+`
+----
 +
 For information on `allowed-origins`, see: link:{baseurl}/enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
 
 . As the root user or Administrator, build the {productname} Hyperlinking Docker image using the following command:
 +
-`sh
+[source, sh]
+----
  docker build -t tinymce-hyperlinking-service .
-`
+----
 
 . As the root user or Administrator, deploy the service using the following command:
 +
-`sh
+[source, sh]
+----
  docker run -d -p 8083:8080 --env-file origins.env tinymce-hyperlinking-service
-`
+----
 +
 Where:
 
@@ -160,14 +174,16 @@ Where:
 
 . To verify that the Docker container is deployed and the hyperlinking service is running, execute:
 +
-`+sh
+[source, sh]
+----
 curl http://localhost:8083/ephox-hyperlinking/
-+`
+----
 +
 The response from the `curl` command should be:
 +
-`sh
+[source, sh]
+----
 Link checking and media embedding service is running.
-`
+----
 
 The {productname} Hyperlinking Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].

@@ -6,7 +6,8 @@ This option allows you to specify styles you want to keep when pasting in WebKit
 
 ==== Example: Using `paste_webkit_styles`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'paste',
@@ -14,4 +15,4 @@ tinymce.init({
   toolbar: 'paste',
   paste_webkit_styles: 'color font-size'
 });
-`
+----

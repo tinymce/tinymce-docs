@@ -14,22 +14,24 @@ include::partial$misc/differs_for_mobile.adoc[]
 
 === Example: Customizing the menu bar
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menubar: 'file edit insert view format table tools help'
 });
-`
+----
 
 === Example: Disabling/removing the menu bar
 
 To disable the menu bar, the menubar option should be provided a boolean value of `false`.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menubar: false
 });
-`
+----
 
 If you need more control over the contents of the menus, see the <<menu,menu parameter>>.

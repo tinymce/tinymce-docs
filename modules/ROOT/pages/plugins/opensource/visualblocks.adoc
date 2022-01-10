@@ -11,14 +11,15 @@ This plugin allows a user to see block level elements in the editable area. It i
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'visualblocks',
   menubar: 'view',
   toolbar: 'visualblocks'
 });
-`
+----
 
 == Options
 

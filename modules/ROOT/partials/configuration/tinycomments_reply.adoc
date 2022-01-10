@@ -14,21 +14,23 @@ The `tinycomments_reply` function is given a request (req) object as the first p
 
 The `done` callback should accept the following object:
 
-`js
+[source, js]
+----
 {
   commentUid: string // the value of the new comment uid
 }
-`
+----
 
 For example:
 
-```js
+[source,js]
+----
 function reply_comment(ref, done, fail) {
   let conversationUid = ref.conversationUid;
   let content = ref.content;
   let createdAt = ref.createdAt;
 
-fetch('\https://api.example/conversations/' + conversationUid, {
+fetch('https://api.example/conversations/' + conversationUid, {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {
@@ -36,17 +38,17 @@ fetch('\https://api.example/conversations/' + conversationUid, {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) \=> {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to reply to comment');
       }
       return response.json();
     })
-    .then((ref2) \=> {
+    .then((ref2) => {
       let commentUid = ref2.commentUid;
       done({ commentUid: commentUid });
     })
-    .catch((e) \=> {
+    .catch((e) => {
       fail(e);
     });
 }
@@ -63,4 +65,4 @@ tinymce.init({
   tinycomments_delete_comment: delete_comment,
   tinycomments_lookup: lookup_comment
 });
-```
+----

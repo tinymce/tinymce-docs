@@ -10,10 +10,11 @@ This option enables you to specify if {productname} should automatically restore
 
 ==== Example: Using `autosave_restore_when_empty`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autosave',
   autosave_restore_when_empty: true
 });
-`
+----

@@ -6,7 +6,8 @@ This option enables you to specify a list of classes to present in the table opt
 
 ==== Example: Using `table_class_list`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -20,7 +21,7 @@ tinymce.init({
     {title: 'Green borders', value: 'table_green_borders'}
   ]
 });
-`
+----
 
 ==== Example of a nested list of table classes
 
@@ -30,7 +31,8 @@ To create a nested list, replace `value` with `menu` to add the top level of the
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -48,4 +50,4 @@ tinymce.init({
     }
   ]
 });
-`
+----

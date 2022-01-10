@@ -8,19 +8,21 @@ NOTE: Languages specified as keys in the `spellchecker_ignore_list` object must 
 
 ==== Example: Using `spellchecker_ignore_list` to ignore words in all languages
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_ignore_list: ['tinymce', 'TinyMCE']
 });
-`
+----
 
 ==== Example: Using `spellchecker_ignore_list` for specific languages
 
 include::partial$misc/requires_5_7v.adoc[]
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -29,4 +31,4 @@ tinymce.init({
     es: ['tinymce']
   }
 });
-`
+----

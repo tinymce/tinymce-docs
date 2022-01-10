@@ -9,9 +9,10 @@ To add a {productname} editor to a web page using the {productname} Web Componen
 
 . Add the `DOCTYPE` element to the target page, such as:
 +
-`html
+[source, html]
+----
  <!DOCTYPE html>
-`
+----
 +
 The `DOCTYPE` declaration is required for the editor to function correctly.
 
@@ -25,17 +26,19 @@ The second `meta` element is required for the editor to function correctly on mo
 
 . Add a `script` element sourcing the {productname} Web Component (`tinymce-webcomponent.js`), such as:
 +
-`html
+[source, html]
+----
  <script src="{webcomponent_url}"></script>
-`
+----
 +
 The `tinymce-webcomponent` can also be sourced from https://www.npmjs.com/package/@tinymce/tinymce-webcomponent[npmjs].
 
 . (optional) Add a `script` element sourcing {productname}, such as:
 +
-`html
+[source, html]
+----
  <script src="/path/to/tinymce.min.js"></script>
-`
+----
 +
 If a `script` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: <<loadingtinymce,Loading {productname}>>.
 

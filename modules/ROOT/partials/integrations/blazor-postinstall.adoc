@@ -10,10 +10,11 @@ _File:_ `BlazorApp.csproj`
 
 . Add the `tinymce-blazor.js` script to `Pages/_Host.cshtml`, for example:
 +
-`html
+[source, html]
+----
  <script src="_framework/blazor.server.js"></script>
  <script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
-`
+----
 
 . Add the `Editor` component to a page by either:
  ** Using the `using` directive

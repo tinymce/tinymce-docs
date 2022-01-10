@@ -8,11 +8,12 @@ By default headers in the content will be inspected only three levels deep, so -
 
 ==== Example: Using `toc_depth`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'toc',
   toolbar: 'toc',
   toc_depth: 3
 });
-`
+----

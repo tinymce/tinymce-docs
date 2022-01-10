@@ -10,7 +10,8 @@ There is no default value for the `content_langs` option. If no value is specifi
 
 === Example: Using `content_langs`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this according to your HTML
   toolbar: 'language',
@@ -23,4 +24,4 @@ tinymce.init({
     { title: 'Chinese', code: 'zh' }
   ]
 });
-`
+----

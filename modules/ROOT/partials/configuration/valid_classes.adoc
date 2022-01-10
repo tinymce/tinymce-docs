@@ -6,16 +6,18 @@ This option enables you to restrict the classes that are valid for specific elem
 
 === Example simple global classes
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   valid_classes: 'class1 class2 class3'
 });
-`
+----
 
 === Example element specific classes
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   valid_classes: {
@@ -23,4 +25,4 @@ tinymce.init({
     'a': 'class4 class5' // Link specific classes
   }
 });
-`
+----

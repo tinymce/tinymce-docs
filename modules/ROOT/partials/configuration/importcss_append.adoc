@@ -8,7 +8,8 @@ If set to `true` this option will append the imported styles to the end of the `
 
 ==== Example: Using `importcss_append`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
@@ -16,4 +17,4 @@ tinymce.init({
   content_css: '/my-styles.css',
   importcss_append: true
 });
-`
+----

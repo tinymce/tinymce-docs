@@ -9,9 +9,9 @@ include::partial$module-loading/bundling-ref-example.adoc[]
 
 The following table shows examples of the syntax used to bundle the following content CSS file:
 
-`
+----
 ./skins/content/example/content.css
-`
+----
 
 Example syntax for including the example content CSS in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
 +++<th>+++Source+++</th>+++
@@ -34,18 +34,22 @@ Example syntax for including the example content CSS in a bundle:+++<table>+++++
 IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/advanced/usage-with-module-loaders/[Bundling {productname} with a module loader].
 
 {% comment %}
-`js
+[source, js]
+----
 import contentCSS from 'tinymce/skins/content/example/content.css';
-`
-`js
+----
+[source, js]
+----
 import contentCSS from '../tinymce/skins/content/example/content.css';
-`
-`js
+----
+[source, js]
+----
 var contentCSS = require('tinymce/skins/content/example/content.css');
-`
-`js
+----
+[source, js]
+----
 var contentCSS = require('../tinymce/skins/content/example/content.css');
-`
+----
 {% endcomment %}
 
 include::partial$module-loading/bundling-content-css-files.adoc[]

@@ -29,9 +29,10 @@ include::partial$module-loading/bundling-browserify-cjs-main.adoc[]
 
 . Run Browserify to test the bundle, such as:
 +
-`sh
+[source, sh]
+----
  browserify -t brfs -g browserify-css src/main.js -o dist/main.bundle.js
-`
+----
 +
 If Browserify runs successfully, check that the editor loads in the application.
  If Browserify fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {productname} into an existing project.

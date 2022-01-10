@@ -38,13 +38,14 @@ The server should have protection against XSS attacks implemented. Since if you 
 
 The *Relative URLs* converts all URLs within the same domain to relative URLs. The URLs are relative from the `document_base_url`.
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   relative_urls : true,
   document_base_url : 'http://www.site.com/path1/'
 });
-+`
+----
 
 ===== Example: Relative URLs
 
@@ -62,14 +63,15 @@ liveDemo::url-conversion-relative-2[]
 
 The *Absolute URLs* converts all relative URLs to absolute URLs. The URLs are `absolute` based on the `document_base_url`.
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : true,
   document_base_url : 'http://www.site.com/path1/'
 });
-+`
+----
 
 ===== Example: Absolute URLs
 
@@ -87,14 +89,15 @@ liveDemo::url-conversion-absolute-2[]
 
 The *Domain absolute URLs* converts all relative URLs to absolute URLs. The URLs are `absolute` based on the `document_base_url` with the domain.
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : false,
   document_base_url : 'http://www.site.com/path1/'
 });
-+`
+----
 
 ===== Example: Domain absolute URLs
 

@@ -10,7 +10,8 @@ Covered in this section:
 
 The `tinymce-svelte` `Editor` component accepts the following properties:
 
-`jsx
+[source, jsx]
+----
 <Editor
   apiKey="api-key"
   channel="5"
@@ -23,7 +24,7 @@ The `tinymce-svelte` `Editor` component accepts the following properties:
   value="value"
   text="readonly-text-output"
 />
-`
+----
 
 ==== apiKey
 
@@ -154,9 +155,10 @@ The editor exposes the `text` property, which developers can `bind` to retrieve 
 
 Functions can be bound to editor events, such as:
 
-`jsx
+[source, jsx]
+----
 <Editor on:resizeeditor={this.handlerFunction} />
-`
+----
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 

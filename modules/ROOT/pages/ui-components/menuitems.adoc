@@ -25,7 +25,8 @@ Define the custom toolbar button with the `setup` callback of the {productname} 
 
 === Example of adding a custom menu item
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: '#editor',
   menu: {
@@ -41,7 +42,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 NOTE: The identifier used to create the menu item must be included in the link:{baseurl}/configure/editor-appearance/#menu[`menu`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 

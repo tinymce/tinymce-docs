@@ -12,9 +12,10 @@ When the `block_unsupported_drop` option is set to `true`, the editor blocks uns
 
 === Example: Using `block_unsupported_drop`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   block_unsupported_drop: false
 });
-`
+----

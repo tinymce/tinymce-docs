@@ -16,7 +16,8 @@ The Spell Checker Pro plugin will use the `code` property to determine which dic
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this according to your HTML
   toolbar: 'language',
@@ -33,4 +34,4 @@ tinymce.init({
     { title: 'Chinese', code: 'zh' }
   ]
 });
-`
+----

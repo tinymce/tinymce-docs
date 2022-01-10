@@ -11,7 +11,8 @@ include::partial$misc/notonmobile.adoc[]
 
 To enable a basic distraction-free editor, use the following configuration.
 
-`js
+[source, js]
+----
 tinymce.init({
     selector: 'div.tinymce',
     plugins: [ 'quickbars' ],
@@ -19,7 +20,7 @@ tinymce.init({
     menubar: false,
     inline: true
 });
-`
+----
 
 The demonstration editor below is a distraction-free editor with some customizations.
 

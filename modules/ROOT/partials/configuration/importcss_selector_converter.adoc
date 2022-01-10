@@ -6,7 +6,8 @@ This option allows you to override the default selector to format converter func
 
 ==== Example: Using `importcss_selector_converter`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
@@ -16,4 +17,4 @@ tinymce.init({
     // Custom logic
   }
 });
-`
+----

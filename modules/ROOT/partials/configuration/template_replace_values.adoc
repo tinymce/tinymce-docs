@@ -6,7 +6,8 @@ This is an object containing items that will be replaced with their respective s
 
 ==== Example: Using `template_replace_values`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -17,7 +18,7 @@ tinymce.init({
     staffid: '991234'
   }
 });
-`
+----
 
 This can then be used in a template or snippet that looks like this:
 

@@ -19,7 +19,8 @@ This option accepts the following values:
 
 ==== Example: Using `table_sizing_mode`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -27,4 +28,4 @@ tinymce.init({
   toolbar: 'table',
   table_sizing_mode: 'relative'
 });
-`
+----

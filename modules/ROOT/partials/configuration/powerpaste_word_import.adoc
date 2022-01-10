@@ -12,7 +12,8 @@ NOTE: When using the Windows operating system, copying and pasting content from 
 
 ==== Example: `powerpaste_word_import` using an asynchronous function
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
@@ -27,4 +28,4 @@ tinymce.init({
     });
   }
 });
-`
+----

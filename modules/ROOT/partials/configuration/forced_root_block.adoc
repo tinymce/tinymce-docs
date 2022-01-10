@@ -13,9 +13,10 @@ IMPORTANT: Setting `forced_root_block` to `false` or an empty string has been de
 
 === Example: Using `forced_root_block`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   forced_root_block : 'p'
 });
-`
+----

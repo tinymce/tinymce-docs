@@ -10,12 +10,13 @@ To specify the buttons that should appear on {productname}'s toolbar, the `toolb
 
 ==== Example grouped toolbar
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'undo redo | styleselect | bold italic | link image'
 });
-`
+----
 
 NOTE: The size of toolbar groups affects the behavior of the toolbar drawer when the `toolbar_mode` is set to `'floating'` (default value) or `'sliding'`. For more information, see: link:{baseurl}/configure/editor-appearance/#toolbar_mode[the `toolbar_mode` setting].
 
@@ -27,7 +28,8 @@ To specify labels to the grouped buttons that appear on {productname}'s toolbar,
 
 ===== Example: Adding toolbar group labels
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: [
@@ -48,7 +50,7 @@ tinymce.init({
     }
   ]
 });
-`
+----
 
 === Disabling the toolbar
 
@@ -62,12 +64,13 @@ To disable the toolbar, the toolbar option should be provided a boolean value of
 
 ==== Example: Disabling the toolbar
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
     toolbar: false
 });
-`
+----
 
 === Using multiple toolbars
 
@@ -77,7 +80,8 @@ To specify multiple toolbars, the toolbar option should be provided with an arra
 
 ==== Example: Adding multiple toolbars
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: [
@@ -85,6 +89,6 @@ tinymce.init({
     'alignleft aligncenter alignright'
   ]
 });
-`
+----
 
 Alternatively, you may specify multiple toolbars through the use of the <<toolbarn,toolbar(n)>> option.

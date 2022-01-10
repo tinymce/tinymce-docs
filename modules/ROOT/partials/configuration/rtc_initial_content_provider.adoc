@@ -38,7 +38,8 @@ Return data::
 
 ==== Example of providing static content
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -47,11 +48,12 @@ tinymce.init({
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
   rtc_initial_content_provider: () => Promise.resolve({ content: "<p>Hello world!</p>" })
 })
-+`
+----
 
 ==== Example of providing dynamic content from the server
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -68,4 +70,4 @@ tinymce.init({
     }).then((response) => response.json());
   }
 });
-+`
+----

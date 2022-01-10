@@ -6,9 +6,10 @@ This option enables you to configure a custom class to be added to tables that h
 
 === Example: Using `visual_table_class`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   visual_table_class: 'my-custom-class'
 });
-`
+----

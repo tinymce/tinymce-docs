@@ -6,10 +6,11 @@ This configuration option allows a global Prism.js version to be used when highl
 
 When using this option, ensure that Prism.js and any language add-ons are loaded on the site, alongside the TinyMCE script:
 
-`html
+[source, html]
+----
 <script src="prism.js" data-manual></script>
 <script src="tinymce.js"></script>
-`
+----
 
 *Type:* `Boolean`
 
@@ -19,11 +20,12 @@ When using this option, ensure that Prism.js and any language add-ons are loaded
 
 ==== Example: Using `codesample_global_prismjs`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'codesample',
   toolbar: 'codesample',
   codesample_global_prismjs: true
 });
-`
+----

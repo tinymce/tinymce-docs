@@ -10,7 +10,8 @@ This option allows you to force {productname} to wrap non-breaking space charact
 
 ==== Example: Using `nonbreaking_wrap`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'nonbreaking',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'nonbreaking',
   nonbreaking_wrap: false
 });
-`
+----

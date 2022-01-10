@@ -12,10 +12,11 @@ The *hidden_input* option can be disabled if you don't need these controls.
 
 === Example: Using `hidden_input`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div',  // change this value according to your HTML
   inline: true,
   hidden_input: false
 });
-`
+----

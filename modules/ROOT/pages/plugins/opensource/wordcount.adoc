@@ -10,13 +10,14 @@ The Word Count plugin adds the functionality for counting words to the {productn
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'wordcount',
   toolbar: 'wordcount'
 });
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

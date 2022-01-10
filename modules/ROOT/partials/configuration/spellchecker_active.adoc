@@ -10,10 +10,11 @@ This option enables or disables the spell checker when the editor is loaded. Whe
 
 ==== Example: Using `spellchecker_active`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_active: true
 });
-`
+----

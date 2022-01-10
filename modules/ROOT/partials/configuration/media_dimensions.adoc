@@ -10,7 +10,8 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 
 ==== Example: Using `media_dimensions`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'media',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'media',
   media_dimensions: false
 });
-`
+----

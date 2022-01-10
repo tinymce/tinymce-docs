@@ -10,7 +10,8 @@ When enabled this option makes it easier to split block elements with a page bre
 
 ==== Example: Using `pagebreak_split_block`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pagebreak',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'pagebreak',
   pagebreak_split_block: true
 });
-`
+----

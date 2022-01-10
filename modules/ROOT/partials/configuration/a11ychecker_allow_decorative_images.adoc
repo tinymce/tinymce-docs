@@ -7,9 +7,10 @@ This option sets whether the Accessibility Checker should allow decorative image
 
 For example:
 
-`html
+[source, html]
+----
 <img src="my-image.png" role="presentation" alt="" />
-`
+----
 
 If `a11ychecker_allow_decorative_images` is set to `true`, the Accessibility Checker will present an error when:
 
@@ -33,11 +34,12 @@ NOTE: If <<a11y_advanced_options,`a11y_advanced_options`>> is set to `true`, `a1
 
 ==== Example: Using `a11ychecker_allow_decorative_images`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_allow_decorative_images: true
 });
-`
+----

@@ -5,7 +5,7 @@
 
 :pluginname: site.cloudfilemanager
 :plugincode: tinydrive
-## Introduction
+== Introduction
 
 {cloudfilemanager} requires you to setup JSON Web Token (JWT) authentication. This is to ensure that the security of your files remains in your control.
 
@@ -13,9 +13,7 @@ A JSON Web Token (JWT) endpoint is a service for generating and providing author
 
 JWT is a standard authorization solution for web services and is documented in more detail at the https://jwt.io/[\https://jwt.io/] website. The guide aims to show how to setup JWT authentication for {cloudfilemanager}.
 
-____
 If you haven't tried any of the link:{baseurl}/tinydrive/getting-started/#starterprojects[Starter projects]  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
-____
 
 == Overview
 
@@ -76,7 +74,8 @@ This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] 
 
 ==== jwt.php
 
-```php
+[source,php]
+----
 <?php
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
@@ -85,46 +84,47 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 $privateKey = <<<EOD
-----BEGIN PRIVATE KEY----
-....
-----END PRIVATE KEY----
+-----BEGIN PRIVATE KEY-----
+...
+-----END PRIVATE KEY-----
 EOD;
 
 // NOTE: Before you proceed with the TOKEN, verify your users session or access.
 
 $payload = array(
-  "sub" \=> "123", // unique user id string
-  "name" \=> "John Doe", // full name of user
+  "sub" => "123", // unique user id string
+  "name" => "John Doe", // full name of user
 
-// Optional custom user root path
-  // "\https://claims.tiny.cloud/drive/root" \=> "/johndoe",
+  // Optional custom user root path
+  // "https://claims.tiny.cloud/drive/root" => "/johndoe",
 
-"exp" \=> time() + 60 * 10 // 10 minute expiration
+  "exp" => time() + 60 * 10 // 10 minute expiration
 );
 
 try {
   $token = JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');
-  echo json_encode(array("token" \=> $token));
+  echo json_encode(array("token" => $token));
 } catch (Exception $e) {
   http_response_code(500);
   header('Content-Type: application/json');
-  echo $e\->getMessage();
+  echo $e->getMessage();
 }
 ?>
-```
+----
 
 ==== TinyMCE example using the jwt.php endpoint
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
   tinydrive_token_provider: 'jwt.php',
   toolbar: 'insertfile image link | code'
 });
-`
+----
 
 === Node.js token provider endpoint example
 
@@ -134,7 +134,8 @@ This example shows you how to set up a Node.js express handler that produces the
 
 ==== /jwt
 
-```js
+[source,js]
+----
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
@@ -143,9 +144,9 @@ const app = express();
 app.use(cors());
 
 const privateKey = `
-----BEGIN PRIVATE KEY----
-....
-----END PRIVATE KEY----
+-----BEGIN PRIVATE KEY-----
+...
+-----END PRIVATE KEY-----
 `;
 
 app.post('/jwt', function (req, res) {
@@ -154,14 +155,13 @@ app.post('/jwt', function (req, res) {
     sub: '123', // Unique user id string
     name: 'John Doe', // Full name of user
 
-....
-// Optional custom user root path
-// 'https://claims.tiny.cloud/drive/root': '/johndoe',
+    // Optional custom user root path
+    // 'https://claims.tiny.cloud/drive/root': '/johndoe',
 
-exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration   };
-....
+    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
+  };
 
-try {
+  try {
     const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
     res.set('content-type', 'application/json');
     res.status(200);
@@ -175,18 +175,19 @@ try {
 });
 
 app.listen(3000);
-```
+----
 
 ==== TinyMCE example using the /jwt endpoint
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
   tinydrive_token_provider: '/jwt',
   toolbar: 'insertfile image link | code'
 });
-`
+----
 
 === More configuration
 

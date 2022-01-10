@@ -25,7 +25,8 @@ article, aside, footer, header, main, nav, section {display: block;}
 /* Any other possible styles afterward ... */
 ```
 
-`js
+[source, js]
+----
 var keepSelector = false;
 tinymce.init({
   importcss_selector_converter: function(selector) {
@@ -41,4 +42,4 @@ tinymce.init({
     return this.convertSelectorToFormat(selector);
   }
 });
-`
+----

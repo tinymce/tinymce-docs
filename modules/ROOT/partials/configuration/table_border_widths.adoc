@@ -8,7 +8,7 @@ This option is used to specify a list of pre-defined cell border widths for quic
 
 *Default Value:*
 
-`
+----
 [
   {title: '1px', value: '1px'},
   {title: '2px', value: '2px'},
@@ -16,11 +16,12 @@ This option is used to specify a list of pre-defined cell border widths for quic
   {title: '4px', value: '4px'},
   {title: '5px', value: '5px'}
 ]
-`
+----
 
 ==== Example: Using `table_border_widths`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -32,4 +33,4 @@ tinymce.init({
     {title: 'large', value: '5px'},
   ]
 });
-`
+----

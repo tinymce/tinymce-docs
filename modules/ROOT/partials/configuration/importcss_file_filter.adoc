@@ -6,7 +6,8 @@ This option enables you to add the CSS files that should be used for populating 
 
 ==== Example: Using `importcss_file_filter`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
@@ -14,4 +15,4 @@ tinymce.init({
   content_css: '/my-styles.css',
   importcss_file_filter: '/my-styles.css'
 });
-`
+----

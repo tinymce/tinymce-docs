@@ -37,7 +37,8 @@ You can retrieve the inserted users by calling `getUsers` on the plugin instance
 
 ==== Example: Using the `getUsers` API
 
-`js
+[source, js]
+----
 var users = tinymce.activeEditor.plugins.mentions.getUsers();
 console.log(users);
-`
+----

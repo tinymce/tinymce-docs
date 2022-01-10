@@ -8,9 +8,10 @@ This option enables you to specify what types of file pickers you need by a spac
 
 === Example: Using `file_picker_types`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   file_picker_types: 'file image media'
 });
-`
+----

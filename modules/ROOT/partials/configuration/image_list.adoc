@@ -6,7 +6,8 @@ This option lets you specify a predefined list of sources for images. `image_lis
 
 ==== Example: Using `image_list`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -17,7 +18,7 @@ tinymce.init({
     {title: 'Dog', value: 'dog.jpg'}
   ]
 });
-`
+----
 
 ==== Example of a nested list of images
 
@@ -27,7 +28,8 @@ To create a nested list, replace `value` with `menu` to add the top level of the
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -44,13 +46,14 @@ tinymce.init({
     }
   ]
 });
-`
+----
 
 ==== Example of an external script that returns an JSON array of images
 
 You can also configure a URL with JSON data. The format of that list is the same as above.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -58,11 +61,12 @@ tinymce.init({
   toolbar: 'image',
   image_list: '/mylist.php'
 });
-`
+----
 
 ==== Example of a custom async function
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -75,4 +79,4 @@ tinymce.init({
     ]);
   }
 });
-`
+----

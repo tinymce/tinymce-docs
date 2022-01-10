@@ -16,7 +16,8 @@ NOTE: Review <<usagewithtableorlistsplugin,Usage with `table` or `lists` plugin>
 
 ==== Example: Using `nonbreaking_force_tab`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'nonbreaking',
@@ -24,7 +25,7 @@ tinymce.init({
   toolbar: 'nonbreaking',
   nonbreaking_force_tab: true
 });
-`
+----
 
 ==== Usage with `table` or `lists` plugin
 
@@ -35,20 +36,22 @@ The `nonbreaking_force_tab` setting can break the following functionality:
 
 To retain the Tab key functionality of the `lists` or `table` plugins, add the `table` or `lists` plugins before the `nonbreaking` plugin in the init configuration, such as:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table lists nonbreaking',
   nonbreaking_force_tab: true
 });
-`
+----
 
 To insert a non-breaking space with the Tab key instead of `table` and `lists` Tab functionality, add the `nonbreaking` plugin before the `table` and `lists` plugins in the init configuration, such as:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'nonbreaking table lists',
   nonbreaking_force_tab: true
 });
-`
+----

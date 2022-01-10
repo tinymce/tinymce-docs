@@ -32,13 +32,14 @@ Available values for link:{baseurl}/configure/content-appearance/#content_css[co
 
 === Example: Using a premium skin
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',    // change this value according to your HTML
   skin: 'fabric',       // Name of the skin
   content_css: 'fabric' // Name of the content skin
 });
-`
+----
 
 == How to use an icon pack
 
@@ -54,12 +55,13 @@ Available values for link:{baseurl}/configure/editor-appearance/#icons[icon] pac
 
 === Example: Using a premium icon pack
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons: 'material'      // Name of icon pack
 });
-`
+----
 
 For information on using the `icons` option, see: link:{baseurl}/configure/editor-appearance/#icons[User interface options - `icons`].
 

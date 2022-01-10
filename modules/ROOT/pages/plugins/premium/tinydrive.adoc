@@ -20,13 +20,14 @@ liveDemo::drive[]
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinydrive',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER'
 });
-`
+----
 
 == Configuration
 

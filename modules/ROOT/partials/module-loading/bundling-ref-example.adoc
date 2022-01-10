@@ -6,7 +6,7 @@
 
 This section shows the files required for each {productname} {editorcomponent}. The file paths shown are relative to the root {productname} package directory, where `tinymce.min.js` is stored. For example:
 
-`
+----
 ./
 ├── icons/
 ├── jquery.tinymce.min.js
@@ -20,4 +20,4 @@ This section shows the files required for each {productname} {editorcomponent}. 
 ├── tinymce.js
 ├── tinymce.min.js
 └── version.txt
-`
+----

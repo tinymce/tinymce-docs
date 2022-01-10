@@ -16,13 +16,14 @@ NOTE: The `textcolor_cols` and `textcolor_rows` properties have been removed in 
 
 ==== Example: Using `color_cols`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'forecolor backcolor',
   color_cols: 5
 });
-`
+----
 
 === `color_map`
 
@@ -32,7 +33,8 @@ This option allows specifying a map of the text colors that will appear in the g
 
 ==== Example: Using `color_map`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'forecolor backcolor',
@@ -46,7 +48,7 @@ tinymce.init({
     '0000FF', 'Blue'
   ]
 });
-`
+----
 
 ==== The default color_map
 
@@ -91,10 +93,11 @@ This option allows disabling the custom color picker in all color swatches of th
 
 ==== Example: Using `custom_colors`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'forecolor backcolor',
   custom_colors: false
 });
-`
+----

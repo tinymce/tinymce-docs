@@ -12,11 +12,12 @@ By default, this option loads the required image _assets_ from the Twemoji CDN. 
 
 ==== Example: Using `emoticons_images_url`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons',
   emoticons_images_url: 'http://my.server/images/emoticons/'
 });
-+`
+----

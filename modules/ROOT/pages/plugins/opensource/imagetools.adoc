@@ -23,13 +23,14 @@ Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins`
 
 === Basic setup using Tiny Cloud
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
   plugins: 'image imagetools'
 });
-`
+----
 
 == Self-hosted Installation
 
@@ -40,7 +41,8 @@ To enable the {productname} Image Tools plugin:
 
 === Basic self-hosted setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
@@ -48,7 +50,7 @@ tinymce.init({
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
   imagetools_proxy: 'proxy.php'
 });
-`
+----
 
 == Options
 

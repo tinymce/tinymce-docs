@@ -18,11 +18,12 @@ NOTE: `+{plugincode}_cors_hosts+` is *not* required when enabling this plugin vi
 
 ===== Example: `+{plugincode}_cors_hosts+`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: '{plugincode}',
   plugins: 'image {plugincode}',
   {plugincode}_cors_hosts: [ 'mydomain.com', 'otherdomain.com' ]
 });
-+`
+----

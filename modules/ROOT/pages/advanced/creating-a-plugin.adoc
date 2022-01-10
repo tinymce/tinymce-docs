@@ -43,7 +43,7 @@ return {
     getMetadata: function () {
       return {
         name: 'Custom plugin',
-        url: '\https://example.com/docs/customplugin'
+        url: 'https://example.com/docs/customplugin'
       };
     }
   }
@@ -61,7 +61,8 @@ NOTE: {companyname} recommends using the `external_plugins` option for custom pl
 
 === Example: Using `external_plugins`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
@@ -69,16 +70,17 @@ tinymce.init({
   },
   plugins: ''
 });
-+`
+----
 
 === Example: Copying plugin code into the `plugins` folder
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pluginId'
 });
-`
+----
 
 == Testing {productname}
 
@@ -100,22 +102,24 @@ The files should be JavaScript files and use the relevant language code as the f
 
 === Example: The content of a translation file for additional Spanish translations
 
-`js
+[source, js]
+----
 tinymce.addI18n('es_ES', {
   'Example plugin': 'Complemento de ejemplo'
 });
-`
+----
 
 === Example: Loading additional translation files for a custom plugin
 
-`js
+[source, js]
+----
 // Register the custom plugin
 tinymce.PluginManager.add('pluginId', function(editor, url) {
   // add plugin code here
 });
 // Load the required translation files
 tinymce.PluginManager.requireLangPack('pluginId', 'es_ES,de_AT');
-`
+----
 
 == Example plugin
 

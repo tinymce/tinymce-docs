@@ -23,13 +23,14 @@ With {cloudname} the server-side spellchecking component is automatically config
 
 === Example: TinyMCE Cloud Installation
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_language: 'en'
 });
-`
+----
 
 == Self-hosted Installation
 
@@ -42,14 +43,15 @@ For information on installing the server-side component for spell checking, plea
 
 === Example: TinyMCE Self-hosted Installation
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'
 });
-`
+----
 
 == Usage
 
@@ -103,7 +105,8 @@ This event triggers when the user selects *Ignore* on a misspelled word.
 
 ==== Example: The SpellcheckerIgnore event
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -114,7 +117,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === SpellcheckerIgnoreAll event
 
@@ -124,7 +127,8 @@ NOTE: The `language` property on the event is only available for {productname} 5
 
 ==== Example: The SpellcheckerIgnoreAll event
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -135,7 +139,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === SpellcheckStart event
 
@@ -143,7 +147,8 @@ This event triggers when the user *enables* the `spellchecker`.
 
 ==== Example: The SpellcheckStart event
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -154,7 +159,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === SpellcheckEnd event
 
@@ -162,7 +167,8 @@ This event triggers when the user *disables* the `spellchecker`.
 
 ==== Example: The SpellcheckEnd event
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -173,7 +179,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === SpellcheckError event
 
@@ -181,7 +187,8 @@ This event triggers when a spellchecker error occurs, such as the Spell Checker 
 
 ==== Example: The SpellcheckError event
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -192,7 +199,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === SpellcheckerLanguageChanged event
 
@@ -202,7 +209,8 @@ This event fires when the spellchecking language is changed.
 
 ==== Example: The SpellcheckerLanguageChanged event
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -213,7 +221,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 == APIs
 

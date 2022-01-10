@@ -10,23 +10,25 @@ On initialization, {productname} will try to load any icon pack specified by the
 {% if customIconPack == true %}
 Such as:
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons_url: 'https://www.example.com/icons/my_icon_pack/icons.js', // load icon pack
   icons: 'my_icon_pack'      // use icon pack
 });
-+`
+----
 {% else %}
 *Type:*  `String`
 
 === Example: Using `icons_url`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons_url: 'https://www.example.com/icons/material/icons.js', // load icon pack
   icons: 'material'      // use icon pack
 });
-+`
+----
 {% endif %}

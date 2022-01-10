@@ -10,7 +10,8 @@ NOTE: This option also applies to the link:{baseurl}/plugins/opensource/autolink
 
 ==== Example: Using `link_default_protocol`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'link',
   link_default_protocol: 'https'
 });
-`
+----

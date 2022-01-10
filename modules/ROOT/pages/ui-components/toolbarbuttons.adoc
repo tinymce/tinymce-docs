@@ -29,7 +29,8 @@ To create a custom toolbar button, define and register the button within the `se
 
 == Example of adding a basic button that triggers an alert when clicked
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: '#editor',
   toolbar: 'myCustomToolbarButton',
@@ -42,7 +43,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 == Toolbar Buttons Example
 

@@ -9,12 +9,13 @@ These content CSS files can be enabled in the editor using the link:{baseurl}/co
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css : 'writer'
 });
-`
+----
 
 These content CSS files can also be used as a template for creating a custom content CSS file for the editor. For the CSS files, see: https://github.com/tinymce/tinymce-dist/tree/master/skins/content[{prodnamecode}-dist GitHub Repository - Content CSS files].
 

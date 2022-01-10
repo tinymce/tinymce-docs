@@ -16,7 +16,8 @@ The URLs provided can be:
 
 === Example: Using `external_plugins`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
@@ -24,4 +25,4 @@ tinymce.init({
     'maths': 'http://www.maths.com/plugin.min.js'
   }
 });
-+`
+----

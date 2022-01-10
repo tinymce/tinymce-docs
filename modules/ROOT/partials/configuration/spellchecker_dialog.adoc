@@ -13,11 +13,12 @@ This option specifies the primary spell checking mode.
 
 ==== Example: Using `spellchecker_dialog`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
   spellchecker_dialog: true
 });
-`
+----

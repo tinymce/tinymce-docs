@@ -84,7 +84,8 @@ For information on:
 
 For example:
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -102,7 +103,7 @@ tinymce.init({
     }
   ]
 });
-+`
+----
 
 For information on using:
 
@@ -379,13 +380,14 @@ This section describes issues that users of {productname} 5.5 may encounter, as 
 
 *Workaround*: To improve the visibility of cell selections until this issue is fixed, use the `content_style` option to change the table-related cell selection style. For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'table',
   content_style: '.mce-content-body td[data-mce-selected]::after, .mce-content-body th[data-mce-selected]::after { background-color: rgb(180, 215, 255, .7); }'
 });
-`
+----
 
 {companyname} recommends removing this workaround from the configuration when the issue has been fixed.
 

@@ -15,8 +15,9 @@ The following table-related values can be queried using the link:{baseurl}/api/t
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.queryCommandValue('mceTableCellType');
 tinymce.activeEditor.queryCommandValue('mceTableRowType');
 tinymce.activeEditor.queryCommandValue('mceTableColType');
-`
+----

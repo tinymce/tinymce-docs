@@ -8,11 +8,12 @@ With `toc_class` you can change the class name that gets assigned to the wrapper
 
 ==== Example: Using `toc_class`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'toc',
   toolbar: 'toc',
   toc_class: 'our-toc'
 });
-`
+----

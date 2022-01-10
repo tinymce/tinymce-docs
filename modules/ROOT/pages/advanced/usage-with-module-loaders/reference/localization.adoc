@@ -22,7 +22,7 @@ include::partial$module-loading/bundling-ref-example.adoc[]
 
 The following table shows examples of the syntax used to bundle the following example localization file:
 
-`
+----
 ./langs/sv_SE.js
 `+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
 +++<th>+++Source+++</th>+++
@@ -43,18 +43,22 @@ The following table shows examples of the syntax used to bundle the following ex
 +++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
 
 {% comment %}
-`js
+[source, js]
+----
 import 'tinymce/langs/sv_SE';
-`
-`js
+----
+[source, js]
+----
 import '../tinymce/langs/sv_SE';
-`
-`js
+----
+[source, js]
+----
 require('tinymce/langs/sv_SE');
-`
-`js
+----
+[source, js]
+----
 require('../tinymce/langs/sv_SE.js');
-`
+----
 {% endcomment %}
 
 :forModuleLoaders: true

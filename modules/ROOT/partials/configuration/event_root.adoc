@@ -8,10 +8,11 @@ By default all events gets bound to the editable area. But in some implementatio
 
 === Example: Using `event_root`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div',  // change this value according to your HTML
   inline: true,
   event_root: '#root'
 });
-`
+----

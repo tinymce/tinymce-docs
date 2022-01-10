@@ -8,7 +8,8 @@ There are multiple ways to specify how to get the data for the link list, but al
 
 ==== Example of an array of link items
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -22,7 +23,7 @@ tinymce.init({
     {title: '{productname} GitHub', value: 'https://github.com/tinymce/'}
   ]
 });
-+`
+----
 
 ==== Example of a nested list of link items
 
@@ -32,7 +33,8 @@ To create a nested list, replace `value` with `menu` to add the top level of the
 
 For example:
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -50,13 +52,14 @@ tinymce.init({
     }
   ]
 });
-+`
+----
 
 ==== Example of an external script that returns a JSON array of link items
 
 You can also configure a URL with JSON data. The JSON data must use the same format as above.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -64,7 +67,7 @@ tinymce.init({
   toolbar: 'link',
   link_list: '/mylist.php'
 });
-`
+----
 
 ==== Example of a custom asynchronous callback function
 
@@ -79,8 +82,8 @@ The following is an example of how `link_list` can be used with a callback funct
 ```js
 var fetchLinkLists = function() {
   return [
-    {title: 'My page 1', value: '\https://www.tiny.cloud'},
-    {title: 'My page 2', value: '\https://about.tiny.cloud'}
+    {title: 'My page 1', value: 'https://www.tiny.cloud'},
+    {title: 'My page 2', value: 'https://about.tiny.cloud'}
   ]
 };
 

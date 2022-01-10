@@ -8,7 +8,8 @@ This option allows you to specify which styles you want to retain when pasting c
 
 ==== Example: Using `paste_retain_style_properties`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'paste',
@@ -16,4 +17,4 @@ tinymce.init({
   toolbar: 'paste',
   paste_retain_style_properties: 'color font-size'
 });
-`
+----

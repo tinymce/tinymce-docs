@@ -10,11 +10,12 @@ _Optional_ - This option sets the author's display name to be used when creating
 
 ==== Example: Using `tinycomments_author_name`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: '#textarea',
   tinycomments_author: 'embedded_journalist',
   tinycomments_author_name: 'Embedded Journalist',
   tinycomments_mode: 'embedded'
 })
-`
+----

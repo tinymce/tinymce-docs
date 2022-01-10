@@ -16,14 +16,15 @@ NOTE: `+{proxy_setting_name}+` is *not* required when enabling this plugin via l
 
 ==== Example: Using `+{proxy_setting_name}+`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: '{plugincode}',
   plugins: 'image {plugincode}',
   {proxy_setting_name}: 'proxy.php'
 });
-+`
+----
 
 ==== Example of a PHP script for the image proxy
 

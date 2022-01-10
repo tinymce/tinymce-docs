@@ -18,21 +18,23 @@ Review the examples below:
 
 == Using uploadImages and then posting a form
 
-`js
+[source, js]
+----
 tinymce.activeEditor.uploadImages(function(success) {
   document.forms[0].submit();
 });
-`
+----
 
 == Using uploadImages with jQuery
 
-`js
+[source, js]
+----
 tinymce.activeEditor.uploadImages(function(success) {
   $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
     console.log("Uploaded images and posted content as an ajax request.");
   });
 });
-`
+----
 
 include::partial$misc/svgsNotSupported.adoc[]
 
@@ -61,9 +63,10 @@ WARNING: The files will be overwritten if the file names are *not* unique.
 
 This server-side upload handler script must return a JSON object containing a "location" property. This property represents the remote location and filename of the newly uploaded image.
 
-`js
+[source, js]
+----
 { location : '/uploaded/image/path/image.png' }
-`
+----
 
 == Image upload options
 

@@ -17,10 +17,11 @@ This option enables the merge format feature of the {pluginname} plugin. This me
 
 ==== Example: Using `paste_merge_formats`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugin}',
   paste_merge_formats: false
 });
-+`
+----

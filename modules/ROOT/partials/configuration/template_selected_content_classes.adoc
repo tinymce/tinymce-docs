@@ -8,7 +8,8 @@ When HTML elements in a template are assigned this class, the content of the ele
 
 ==== Example: Using `template_selected_content_classes`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -21,7 +22,7 @@ tinymce.init({
     }
   ]
 });
-`
+----
 
 If the word `world` is selected in the editor and _My Template_ is applied, `world` will be updated to:
 

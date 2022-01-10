@@ -38,13 +38,14 @@ The state of the check marks of checklist items can be toggled to be empty or ch
 
 To use the Checklist plugin, add `checklist` and `lists` to the `plugins` list and `checklist` to the toolbar, such as:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'lists checklist',
   toolbar: 'checklist'
 });
-`
+----
 
 NOTE: The *Checklist* plugin has to be used together with the link:{baseurl}/plugins/opensource/lists/[Lists] plugin to work.
 
@@ -52,9 +53,10 @@ NOTE: The *Checklist* plugin has to be used together with the link:{baseurl}/plu
 
 To make the checklists look correct make sure to include this css on your page:
 
-`css
+[source, css]
+----
 include::partial$css-codeblock/checklist-plugin-css.adoc[]
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

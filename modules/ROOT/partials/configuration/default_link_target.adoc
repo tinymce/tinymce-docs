@@ -8,7 +8,8 @@ NOTE: This option also applies to the link:{baseurl}/plugins/opensource/autolink
 
 ==== Example: Using `default_link_target`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -16,4 +17,4 @@ tinymce.init({
   toolbar: 'link',
   default_link_target: '_blank'
 });
-`
+----

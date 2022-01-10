@@ -40,15 +40,17 @@ To use the {productname} icon pack template project:
  ** Downloading the `.zip` file from the https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
  ** From a terminal or command prompt, use git to clone the GitHub repository, such as:
 +
-`+sh
+[source, sh]
+----
 $ git clone https://github.com/tinymce/oxide-icon-pack-template.git
  +`
 . Open a terminal or command prompt, navigate to the `oxide-icon-pack-template` directory.
 . Install the project dependencies by executing:
 +
-`sh
+[source, sh]
+----
 $ npm install
-`
+----
 
 . When prompted, enter a name for the icon pack. The icon pack name should only contain:
  ** Numbers.
@@ -64,7 +66,8 @@ Each SVG files placed in `/src/svg` will be converted to an icon. The file names
 
 For example: `bold.svg` will have the identifier `bold`. Such as:
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: '#tiny_custom_button',
   toolbar: 'myButton',
@@ -78,7 +81,7 @@ tinymce.init({
     });
   }
 });
-+`
+----
 
 For a list of the icon identifiers, see: link:{baseurl}/advanced/editor-icon-identifiers/[Available icons].
 
@@ -93,9 +96,10 @@ To build the icon pack using Gulp:
 . Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `oxide-icon-pack-template/`).
 . Build the icon pack by executing the `npx gulp` command:
 +
-`sh
+[source, sh]
+----
 $ npx gulp
-`
+----
  A `dist/` directory containing the icon pack will be created.
 
 . Using a web browser, open `dist/html/icons.html` to preview the icons.
@@ -107,12 +111,13 @@ The SVG files are optimized during the build process with https://github.com/svg
 . Using a text editor, open `gulpfile.js`.
 . Add the `svgo` option to the `iconPackager` function, such as:
 +
-`js
+[source, js]
+----
 iconPackager({
   name: 'my-icon-pack',
   svgo: { floatPrecision: 3 } //Increase the rounding precision
 })
-`
+----
 All user defined options, including SVGO options, will merge with the default options. For information on SVGO options, see: https://github.com/svg/svgo[SVGO on GitHub].
 
 == Deploying an icon pack

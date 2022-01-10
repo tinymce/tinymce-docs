@@ -11,14 +11,15 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
   menubar: 'insert',
   toolbar: 'template'
 });
-`
+----
 
 == Interactive example
 
@@ -50,7 +51,8 @@ include::partial$configuration/template_selected_content_classes.adoc[]
 
 === Example: Using the `template` plugin
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -78,18 +80,19 @@ tinymce.init({
       }
   ]
 });
-`
+----
 
 === Example of an external template list
 
 This is the contents your backend page should return if you specify a URL in the templates option. A simple array containing each template to present. This URL can be a backend page, for example a PHP file.
 
-`json
+[source, json]
+----
 [
   {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
   {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
 ]
-`
+----
 
 == Making Templates
 
@@ -111,9 +114,10 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 
 Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on insert. If you wish to preview the replacements before inserting, use `template_preview_replace_values`.
 
-`html
+[source, html]
+----
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
-`
+----
 
 include::partial$configuration/ref_time_date_formats.adoc[]
 

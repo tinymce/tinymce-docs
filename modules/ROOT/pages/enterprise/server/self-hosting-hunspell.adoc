@@ -36,7 +36,7 @@ include::partial$misc/hunspell-dictionaries-path.adoc[]
 
 You can remove unwanted dictionaries and their associated directories, but the file structure must be as follows (including filenames):
 
-`
+----
 ├── af_ZA
 │   ├── af_ZA.aff
 │   ├── af_ZA.dic
@@ -121,7 +121,7 @@ You can remove unwanted dictionaries and their associated directories, but the f
     ├── license
     ├── sv_SE.aff
     └── sv_SE.dic
-`
+----
 
 === Missing Dictionaries
 

@@ -118,7 +118,7 @@ The definition of a context form button is very similar to the definition of a n
 | default: `+() => () => {}+` - Function that's invoked when the button is rendered.
 |===
 
-Where the `buttonApi` is the same as a regular toolbar button and `FormApi` has (getValue: () \=> string, hide: () \=> void)
+Where the `buttonApi` is the same as a regular toolbar button and `FormApi` has (getValue: () => string, hide: () \=> void)
 
 === Context form toggle button
 

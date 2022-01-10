@@ -29,9 +29,10 @@ To migrate the core TinyMCE editor to TinyMCE 5, review the following sections:
 
 To use TinyMCE 5 from the {cloudname}, include this script in your HTML page. Replace 'no-api-key' with link:{accountsignup}[your API key].
 
-`html
+[source, html]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-`
+----
 
 For information on using the latest development and testing builds, see: link:{baseurl}/cloud-deployment-guide/editor-plugin-version/[Cloud deployment guide - Specify editor & plugin versions].
 
@@ -83,7 +84,8 @@ Supports numbers and strings. Assumes strings are a valid CSS value for height.
 * The `file_browser_callback` option has been removed for TinyMCE 5. The link:{url}/docs-4x/configure/file-image-upload/#file_browser_callback[`file_browser_callback`] option was used to add a file or image browser to TinyMCE. This option was deprecated in version 4.1.0 and replaced by link:{baseurl}/configure/file-image-upload/#file_picker_callback[`file_picker_callback`].
 * link:{url}/docs-4x/configure/editor-appearance/#insert_button_items[`insert_button_items`] - the `insert_button_items` option was used to specify the toolbar items to display in the `insert` toolbar button menu. This toolbar button has been removed from TinyMCE 5. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
 
-`+js
+[source, js]
+----
 tinymce.init({
   ...
   toolbar: 'insert',
@@ -97,7 +99,7 @@ tinymce.init({
     });
   }
 });
-+`
+----
 
 ===== Migrating from `file_browser_callback` to `file_picker_callback`
 
@@ -107,7 +109,8 @@ The following example shows the difference between the removed `file_browser_cal
 
 ====== TinyMCE 4 - `file_browser_callback`
 
-`+js
+[source, js]
+----
 tinymce.init({
   ...
   file_browser_callback_types: 'file image media',
@@ -117,11 +120,12 @@ tinymce.init({
     });
   }
 });
-+`
+----
 
 ====== TinyMCE 5 - `file_picker_callback`
 
-`+js
+[source, js]
+----
 tinymce.init({
   ...
   file_picker_types: 'file image media',
@@ -131,7 +135,7 @@ tinymce.init({
     });
   }
 });
-+`
+----
 
 === Browser support: backward compatibility or quirks mode
 
@@ -232,7 +236,8 @@ The link:{url}/docs-4x/themes/inlite/[Inlite] theme has been removed from TinyMC
 The Inlite theme features are provided by the link:{baseurl}/plugins/opensource/quickbars/[Quick Toolbar (`quickbars`)] plugin for TinyMCE 5. The Inlite link:{url}/docs-4x/themes/inlite/#quicklink[`quicklink`] functionality is now provided by link:{baseurl}/ui-components/contextform/[Context Forms].
 
 The following is an example of a TinyMCE 5 quickbars configuration:
-`js
+[source, js]
+----
 {
   theme: 'silver',
   inline: true,
@@ -240,7 +245,7 @@ The following is an example of a TinyMCE 5 quickbars configuration:
   menubar: false,
   plugins: [ 'quickbars' ]
 }
-`
+----
 This will provide a similar but improved link:{baseurl}/general-configuration-guide/use-tinymce-distraction-free/[distraction-free] experience in TinyMCE 5.
 
 === Modern theme removed
@@ -423,25 +428,27 @@ For example:
 
 ====== TinyMCE 4 - `onclick`
 
-`js
+[source, js]
+----
 editor.addButton('mybutton', {
   text: 'My Button',
   onclick: function () {
     alert('My Button clicked!');
   }
 });
-`
+----
 
 ====== TinyMCE 5 - `onAction`
 
-`js
+[source, js]
+----
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
   onAction: function (buttonApi) {
     alert('My Button clicked!');
   }
 });
-`
+----
 
 Each type of toolbar button has a different set of API functions. For information using toolbar buttons, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/[Types of toolbar buttons].
 
@@ -453,23 +460,25 @@ For example:
 
 ====== TinyMCE 4 - `cmd`
 
-`js
+[source, js]
+----
 editor.addButton('mybutton', {
   text: 'My Button',
   cmd: 'mceSave'
 });
-`
+----
 
 ====== TinyMCE 5 - `onAction`
 
-`js
+[source, js]
+----
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
   onAction: function () {
     editor.execCommand('mceSave');
   }
 });
-`
+----
 
 ===== Migrating onpostrender to onSetup
 
@@ -488,7 +497,8 @@ For example:
 
 ====== TinyMCE 4 - `onpostrender`
 
-`js
+[source, js]
+----
 editor.addButton('currentdate', {
   icon: 'insertdatetime',
   tooltip: 'Insert Current Date',
@@ -500,13 +510,14 @@ editor.addButton('currentdate', {
     });
   }
 });
-`
+----
 
 ====== TinyMCE 5 - onSetup
 
 In this example, the button's API contains `+isDisabled: () => boolean+` and `+setDisabled: (state: boolean) => void+`.
 
-`js
+[source, js]
+----
 editor.ui.registry.addButton('customDateButton', {
   icon: 'insert-time',
   tooltip: 'Insert Current Date',
@@ -524,7 +535,7 @@ editor.ui.registry.addButton('customDateButton', {
     }
   }
 });
-`
+----
 
 NOTE: The callback function given to `onSetup` takes a `buttonApi` argument which is an object that contains helper functions.
 
@@ -548,7 +559,8 @@ To add a custom item to a menu, use the `menu` setting. All items in a menu need
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: '#editor',
   plugins: 'help',
@@ -565,7 +577,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 *More information*
 * For information on using the `menu` setting, see: link:{baseurl}/configure/editor-appearance/#menu[User interface options - menu].
@@ -598,7 +610,8 @@ The following examples show custom menu item configurations in TinyMCE 4 and Tin
 
 ==== TinyMCE 4 - example custom menu item
 
-`js
+[source, js]
+----
 editor.addMenuItem('example', {
   text: 'My menu item',
   context: 'tools',
@@ -606,18 +619,19 @@ editor.addMenuItem('example', {
     editor.insertContent('Hello world!!');
   }
 });
-`
+----
 
 ==== TinyMCE 5 - example custom menu item
 
-`js
+[source, js]
+----
 editor.ui.registry.addMenuItem('example', {
   text: 'My menu item',
   onAction: function () {
     editor.insertContent('Hello world!!');
   }
 });
-`
+----
 
 For information on how to use these methods, see: link:{baseurl}/ui-components/menuitems/[Custom menu items].
 
@@ -675,7 +689,8 @@ NOTE: The `onchange` callback function provided within individual components has
 
 ===== TinyMCE 4 - `onchange`
 
-`js
+[source, js]
+----
 const config = {
   title: 'Insert Link',
   body: [
@@ -690,11 +705,12 @@ const config = {
     }
   ]
 };
-`
+----
 
 ===== TinyMCE 5 - `onChange`
 
-`js
+[source, js]
+----
 const config = {
   title: 'Insert Link',
   body: {
@@ -713,7 +729,7 @@ const config = {
     }
   }
 };
-`
+----
 
 For information about the new dialog configuration, see the link:{baseurl}/ui-components/dialog/[Dialog] and link:{baseurl}/ui-components/dialogcomponents/[Dialog components] documentation.
 
@@ -791,21 +807,23 @@ The URL dialogs have moved from the `editor.windowManager.open()` API to the lin
 
 ===== TinyMCE 4 - `windowManager.open()`
 
-`+js
+[source, js]
+----
 editor.windowManager.open({
   title: 'URL Dialog Demo',
   url: 'http://mysite.com/external-page.html'
 });
-+`
+----
 
 ===== TinyMCE 5 - `windowManager.openUrl()`
 
-`+js
+[source, js]
+----
 editor.windowManager.openUrl({
   title: 'URL Dialog Demo',
   url: 'http://mysite.com/external-page.html'
 });
-+`
+----
 
 For information about the new URL dialog configuration, see: link:{baseurl}/ui-components/urldialog/[URL dialog].
 
@@ -888,7 +906,8 @@ include::partial$DEPRECATED/spellchecker.adoc[]
 
 link:{baseurl}/plugins/opensource/spellchecker/#spellchecker_callback[`spellchecker_callback`] has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
 
-`pass:c[js
+[source,js]
+----
 spellchecker_callback: function(method, text, success, failure) {
   var words = text.match(this.getWordCharPattern());
   if (method == "spellcheck") {
@@ -899,11 +918,12 @@ spellchecker_callback: function(method, text, success, failure) {
     success(suggestions);
   }
 }
-]`
+----
 
 The `success` callback now requires the mapping object to be wrapped in an object with the `words` key, such as:
 
-`pass:c[js
+[source,js]
+----
 spellchecker_callback: function(method, text, success, failure) {
   var words = text.match(this.getWordCharPattern());
   if (method == "spellcheck") {
@@ -914,7 +934,7 @@ spellchecker_callback: function(method, text, success, failure) {
     success({ words: suggestions });
   }
 }
-]`
+----
 
 For information on the `spellchecker_callback` setting, see: link:{baseurl}/plugins/opensource/spellchecker/#spellchecker_callback[Spell Checker plugin - spellchecker_callback]
 

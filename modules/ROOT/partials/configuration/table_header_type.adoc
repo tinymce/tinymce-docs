@@ -53,7 +53,8 @@ For example:
 
 ==== Example: Using `table_header_type`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -61,4 +62,4 @@ tinymce.init({
   toolbar: 'table',
   table_header_type: 'sectionCells'
 });
-`
+----

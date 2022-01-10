@@ -14,12 +14,13 @@ include::partial$misc/differs_for_mobile.adoc[]
 
 ==== Example: Disable object resizing
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   object_resizing : false
 });
-`
+----
 
 === Enable resizing on images only
 
@@ -31,9 +32,10 @@ tinymce.init({
 
 ==== Example: Enable object resizing for images
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   object_resizing : 'img'
 });
-`
+----

@@ -8,10 +8,11 @@ This option lets you to specify the duration editor content should remain in loc
 
 ==== Example: Using `autosave_retention`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autosave',
   autosave_retention: '30m'
 });
-`
+----

@@ -12,13 +12,14 @@ The plugin also normalizes list behavior between browsers. Enable it if you have
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'lists',
   toolbar: 'numlist bullist'
 });
-`
+----
 
 == Options
 

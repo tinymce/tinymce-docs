@@ -44,7 +44,8 @@ Return data::
 
 ==== Example of providing static user details
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -53,11 +54,12 @@ tinymce.init({
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
   rtc_user_details_provider: ({ userId }) => Promise.resolve({ fullName: "John Doe" })
 });
-+`
+----
 
 ==== Example of providing user details from your server
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -78,4 +80,4 @@ tinymce.init({
     .then(({ fullnamefromserver })) => ({ fullName: fullnamefromserver })
     .catch((error) => console.log('Failed to retrieve user details\n' + error))
 });
-+`
+----

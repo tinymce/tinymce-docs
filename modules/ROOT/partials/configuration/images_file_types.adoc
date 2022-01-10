@@ -14,10 +14,11 @@ This option configures which image file formats are accepted by the editor. Chan
 
 ==== Example: Using `images_file_types`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image paste',
   images_file_types: 'jpg,svg,webp'
 });
-`
+----

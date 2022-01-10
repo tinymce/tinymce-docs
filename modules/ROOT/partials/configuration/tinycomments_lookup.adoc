@@ -14,7 +14,8 @@ The `tinycomments_lookup` function is passed a (`req`) object as the first param
 
 The `done` callback should accept the following object:
 
-`js
+[source, js]
+----
 {
  conversation: {
    uid: string, // the uid of the conversation,
@@ -38,36 +39,37 @@ The `done` callback should accept the following object:
   ]
  }
 }
-`
+----
 
 NOTE: The dates should use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString[ISO 8601 format]. This can be generated in JavaScript with: `new Date().toISOString()`.
 
 For example:
 
-```js
+[source,js]
+----
 function lookup_comment({ conversationUid }, done, fail) {
   let lookup = async function () {
     let convResp = await fetch(
-      '\https://api.example/conversations/' + conversationUid
+      'https://api.example/conversations/' + conversationUid
     );
     if (!convResp.ok) {
       throw new Error('Failed to get conversation');
     }
     let comments = await convResp.json();
-    let usersResp = await fetch('\https://api.example/users/');
+    let usersResp = await fetch('https://api.example/users/');
     if (!usersResp.ok) {
       throw new Error('Failed to get users');
     }
     let { users } = await usersResp.json();
     let getUser = function (userId) {
-      return users.find((u) \=> {
+      return users.find((u) => {
         return u.id === userId;
       });
     };
     return {
       conversation: {
         uid: conversationUid,
-        comments: comments.map((comment) \=> {
+        comments: comments.map((comment) => {
           return {
             ...comment,
             content: comment.content,
@@ -78,11 +80,11 @@ function lookup_comment({ conversationUid }, done, fail) {
     };
   };
   lookup()
-    .then((data) \=> {
+    .then((data) => {
       console.log('Lookup success ' + conversationUid, data);
       done(data);
     })
-    .catch((err) \=> {
+    .catch((err) => {
       console.error('Lookup failure ' + conversationUid, err);
       fail(err);
     });
@@ -100,4 +102,4 @@ tinymce.init({
   tinycomments_delete_comment: delete_comment,
   tinycomments_lookup: lookup_comment // Add the callback to TinyMCE
 });
-```
+----

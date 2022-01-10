@@ -10,22 +10,24 @@ To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.
 
 ==== Example: Customizing the Quick Insert toolbar
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars hr pagebreak',
   quickbars_insert_toolbar: 'quickimage quicktable | hr pagebreak'
 });
-`
+----
 
 ==== Example: Disabling the Quick Insert toolbar
 
 To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
   quickbars_insert_toolbar: false
 });
-`
+----

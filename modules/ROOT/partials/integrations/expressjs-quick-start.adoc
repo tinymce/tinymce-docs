@@ -14,33 +14,38 @@ This procedure requires:
 
 . On a command line or command prompt, create a basic Express JS application:
 +
-`sh
+[source, sh]
+----
  $ npx express-generator --git --no-view my_{prodnamecode}_app
-`
+----
 
 . Change into the newly created directory.
 +
-`sh
+[source, sh]
+----
  $ cd my_{prodnamecode}_app
-`
+----
 
 . Add the `tinymce` package to your `package.json` with `--save`.
 +
-`sh
+[source, sh]
+----
  $ npm install --save tinymce
-`
+----
 
 . Download and install the {productname} and Express JS Node modules (and their dependencies):
 +
-`sh
+[source, sh]
+----
  $ npm install
-`
+----
 
 . Using a text editor, open `/path/to/my_{prodnamecode}_app/app.js` and add the following route:
 +
-`js
+[source, js]
+----
  app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
-`
+----
 +
 For example:
 +
@@ -74,18 +79,20 @@ module.exports = app;
 +
 Linux/macOS/Unix:
 +
-`sh
+[source, sh]
+----
  $ touch public/javascripts/my-{prodnamecode}-config.js
-`
+----
 +
 Windows:
  `sh
  > type nul >public/javascripts/my-{prodnamecode}-config.js
-`
+----
 
 . Add the {productname} configuration to the newly created javascript file (`my-{prodnamecode}-config.js`):
 +
-`js
+[source, js]
+----
  tinymce.init({
    selector: 'textarea#my-expressjs-{prodnamecode}-app',
    height: 500,
@@ -100,7 +107,7 @@ Windows:
    'alignright alignjustify | bullist numlist outdent indent | ' +
    'removeformat | help'
  });
-`
+----
 
 . Update `public/index.html` to include:
  ** The document type declaration, `<!DOCTYPE html>`.
@@ -123,7 +130,8 @@ For example:
 . Test the application using the Node.js development server.
  ** To start the development server, navigate to the `my_{prodnamecode}_app` directory and run:
 +
-`sh
+[source, sh]
+----
   $ npm start
  `
 

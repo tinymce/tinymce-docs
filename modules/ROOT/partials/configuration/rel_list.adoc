@@ -4,7 +4,8 @@ This option lets you specify a list of `rel` values for the `link` dialog. These
 
 ==== Example: Using `rel_list`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -15,4 +16,4 @@ tinymce.init({
     {title: 'External Link', value: 'external'}
   ]
 });
-`
+----

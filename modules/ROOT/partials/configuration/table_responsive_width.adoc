@@ -9,7 +9,8 @@ will force pixel resizing. The default is to automatically detect what the table
 
 ==== Example: Using `table_responsive_width`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -17,4 +18,4 @@ tinymce.init({
   toolbar: 'table',
   table_responsive_width: false
 });
-`
+----

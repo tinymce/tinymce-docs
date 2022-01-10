@@ -30,15 +30,17 @@
 
 To install the `tinymce-react` package and save it to your `package.json`.
 
-`sh
+[source, sh]
+----
 $ npm install --save @tinymce/tinymce-react
-`
+----
 
 or with Yarn
 
-`sh
+[source, sh]
+----
 $ yarn add @tinymce/tinymce-react
-`
+----
 
 === Using TinyMCE React integration in a Bootstrap dialog
 
@@ -48,7 +50,8 @@ To use the {productname} React integration inside Bootstrap UI dialogs, add the 
 
 NOTE: For Bootstrap 5, the React effect hook contains no JQuery and does not support Microsoft Internet Explorer 11.
 
-`+jsx
+[source, jsx]
+----
 useEffect(() => {
   const handler = (e) => {
     if (e.target.closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root") !== null) {
@@ -58,11 +61,12 @@ useEffect(() => {
   document.addEventListener("focusin", handler);
   return () => document.removeEventListener("focusin", handler);
 }, []);
-+`
+----
 
 ==== Bootstrap 4
 
-`js
+[source, js]
+----
 useEffect(function() {
   var handler = function(e) {
     if ($(e.target).closest(".tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
@@ -74,7 +78,7 @@ useEffect(function() {
     $(document).off('focusin', handler);
   };
 }, []);
-`
+----
 
 === Configuring the editor
 
@@ -180,13 +184,14 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-`jsx
+[source, jsx]
+----
 <Editor
   apiKey='your-api-key'
   cloudChannel='{productmajorversion}-dev'
   init={{ /* your other settings */ }}
 />
-`
+----
 
 For information {productname} development channels, see: link:{baseurl}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
@@ -200,11 +205,12 @@ The `disabled` prop can dynamically switch the editor between a "disabled" (read
 
 ===== Example: Using `disabled`
 
-`+jsx
+[source, jsx]
+----
 <Editor
   disabled={true}
 />
-+`
+----
 
 ==== `id`
 
@@ -236,7 +242,8 @@ When using `tinymce-react`:
 
 ===== Example: Using `init`
 
-`jsx
+[source, jsx]
+----
 <Editor
   init={{
     plugins: [
@@ -245,7 +252,7 @@ When using `tinymce-react`:
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }}
 />
-`
+----
 
 ==== `initialValue`
 
@@ -262,25 +269,27 @@ IMPORTANT: Ensure that this is *not* updated by `onEditorChange` or the editor w
 
 ===== Example: Using static `initialValue`
 
-```jsx+++<Editor initialValue="<p>Once upon a time...</p>">++++++</Editor>+++
-
-```
+[source,jsx]
+----
+<Editor initialValue="<p>Once upon a time...</p>"></Editor>
+----
 
 ===== Example: Using asynchronous `initialValue`
 
-```jsx
+[source,jsx]
+----
 const [initialValue, setInitialValue] = useState(undefined);
-useEffect(() \=> {
+useEffect(() => {
   // a real application might do a fetch request here to get the content
-  setTimeout(() \=> setInitialValue('<p>Once upon a time...</p>'), 500);
+  setTimeout(() => setInitialValue('<p>Once upon a time...</p>'), 500);
 }, []);
 
 return (
   <Editor
-    initialValue=\{initialValue}
+    initialValue={initialValue}
   />
 );
-```
+----
 
 ==== `inline`
 
@@ -294,11 +303,12 @@ For information on inline mode, see: link:{baseurl}/configure/editor-appearance/
 
 ===== Example: Using `inline`
 
-`+jsx
+[source, jsx]
+----
 <Editor
   inline={true}
 />
-+`
+----
 
 ==== `onEditorChange`
 
@@ -335,7 +345,8 @@ correctly than it initially seems.
 
 ===== Example: Using `outputFormat`
 
-`+jsx
+[source, jsx]
+----
 const textToHtml = (text) => {
   const elem = document.createElement('div');
   return text.split(/\n\n+/).map((paragraph) => {
@@ -357,30 +368,31 @@ return (
     <pre>{text}</pre>
   </>
 );
-+`
+----
 
 ===== Example: Replacing usage of `outputFormat`
 
-```jsx
+[source,jsx]
+----
 const [value, setValue] = useState('<p>The quick brown fox jumps over the lazy dog</p>');
 const [text, setText] = useState('');
 
 return (
   <>
     <Editor
-      value=\{value}
-      onInit={(evt, editor) \=> {
+      value={value}
+      onInit={(evt, editor) => {
         setText(editor.getContent({format: 'text'}));
       }}
-      onEditorChange={(newValue, editor) \=> {
+      onEditorChange={(newValue, editor) => {
         setValue(newValue);
         setText(editor.getContent({format: 'text'}));
       }}
     />
-    <pre>\{text}</pre>
+    <pre>{text}</pre>
   </>
 );
-```
+----
 
 ==== `plugins`
 
@@ -392,9 +404,10 @@ For information on adding plugins to {productname}, see: link:{baseurl}/plugins/
 
 ===== Example: Using `plugins`
 
-```jsx+++<Editor plugins="lists code">++++++</Editor>+++
-
-```
+[source,jsx]
+----
+<Editor plugins="lists code"></Editor>
+----
 
 ==== `scriptLoading`
 
@@ -424,25 +437,28 @@ ____
 +
 *Type:* Object
 +
-`ts
+[source, ts]
+----
   {
     async?: boolean;
     defer?: boolean;
     delay?: number;
   }
- `
+----
 
 ===== Example: Loading {productname} asynchronously
 
-`jsx
+[source, jsx]
+----
 <Editor scriptLoading={{ async: true }}>
-`
+----
 
 ===== Example: Delaying load of {productname} for 500 milliseconds
 
-`jsx
+[source, jsx]
+----
 <Editor scriptLoading={{ delay: 500 }}>
-`
+----
 
 ==== `tagName`
 
@@ -454,12 +470,13 @@ Only valid when <<inline,`+<Editor inline={true} />+`>>. Used to define the HTML
 
 ===== Example: Using `tagName`
 
-`+jsx
+[source, jsx]
+----
 <Editor
   inline={true}
   tagName='section'
 />
-+`
+----
 
 ==== `textareaName`
 
@@ -471,11 +488,13 @@ Only valid when the editor is in classic (iframe) mode. Sets the `name` attribut
 
 ===== Example: Using `textareaName`
 
-```jsx+++<form method="post">++++++<Editor textareaName="description">++++++</Editor>+++
-
-+++<button type="submit">+++Submit+++</button>++++++</form>+++
-
-```
+[source,jsx]
+----
+<form method="post">
+  <Editor textareaName="description"></Editor>
+  <button type="submit">Submit</button>
+</form>
+----
 
 ==== `toolbar`
 
@@ -489,9 +508,10 @@ For information setting the toolbar for {productname}, see: link:{baseurl}/confi
 
 ===== Example: Using `toolbar`
 
-```jsx+++<Editor plugins="code" toolbar="bold italic underline code">++++++</Editor>+++
-
-```
+[source,jsx]
+----
+<Editor plugins="code" toolbar="bold italic underline code"></Editor>
+----
 
 ==== `tinymceScriptSrc`
 
@@ -501,9 +521,10 @@ Use the `tinymceScriptSrc` prop to specify an external version of {productname} 
 
 ===== Example: Using `tinymceScriptSrc`
 
-```jsx+++<Editor tinymceScriptSrc="/path/to/tinymce.min.js">++++++</Editor>+++
-
-```
+[source,jsx]
+----
+<Editor tinymceScriptSrc="/path/to/tinymce.min.js"></Editor>
+----
 
 ==== `value`
 
@@ -540,7 +561,8 @@ include::partial$misc/concept-dirty-state.adoc[]
 [discrete]
 ===== Example: Functional uncontrolled component with save button and dirty state
 
-`+jsx
+[source, jsx]
+----
 function MyComponent({initialValue}) {
   const editorRef = useRef(null);
   const [dirty, setDirty] = useState(false);
@@ -566,7 +588,7 @@ function MyComponent({initialValue}) {
     </>
   );
 }
-+`
+----
 
 === Using the {productname} React component as a controlled component
 
@@ -587,7 +609,8 @@ when any change is made to the editor content. Changes to the editor must be app
 [discrete]
 ===== Example: Functional controlled component
 
-`+jsx
+[source, jsx]
+----
 function MyComponent({initialValue}) {
   const [value, setValue] = useState(initialValue ?? '');
   useEffect(() => setValue(initialValue ?? ''), [initialValue]);
@@ -599,12 +622,13 @@ function MyComponent({initialValue}) {
     />
   );
 }
-+`
+----
 
 [discrete]
 ===== Example: Class controlled component
 
-```jsx
+[source,jsx]
+----
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -632,7 +656,7 @@ render() {
     )
   }
 }
-```
+----
 
 When the editor must be restricted to avoid invalid states, such as exceeding a maximum length,
 then a handler for `onBeforeAddUndo` must be added to avoid those states in the undo history.
@@ -640,17 +664,18 @@ then a handler for `onBeforeAddUndo` must be added to avoid those states in the 
 [discrete]
 ===== Example: Limited length controlled component
 
-```jsx
+[source,jsx]
+----
 function MyComponent({initialValue, limit}) {
   const sizeLimit = limit ?? 50;
   const [ value, setValue ] = React.useState(initialValue ?? '');
   const [ length, setLength ] = React.useState(0);
 
-const handleInit = (evt, editor) \=> {
+const handleInit = (evt, editor) => {
     setLength(editor.getContent({ format: 'text' }).length);
   };
 
-const handleUpdate = (value, editor) \=> {
+const handleUpdate = (value, editor) => {
     const length = editor.getContent({ format: 'text' }).length;
     if (length \<= sizeLimit) {
       setValue(value);
@@ -658,7 +683,7 @@ const handleUpdate = (value, editor) \=> {
     }
   };
 
-const handleBeforeAddUndo = (evt, editor) \=> {
+const handleBeforeAddUndo = (evt, editor) => {
     const length = editor.getContent({ format: 'text' }).length;
     // note that this is the opposite test as in handleUpdate
     // because we are determining when to deny adding an undo level
@@ -670,17 +695,17 @@ const handleBeforeAddUndo = (evt, editor) \=> {
 return (
     <>
       <Editor
-        initialValue=\{initialValue}
-        value=\{value}
-        onInit=\{handleInit}
-        onEditorChange=\{handleUpdate}
-        onBeforeAddUndo=\{handleBeforeAddUndo}
+        initialValue={initialValue}
+        value={value}
+        onInit={handleInit}
+        onEditorChange={handleUpdate}
+        onBeforeAddUndo={handleBeforeAddUndo}
       />
       <p>Remaining: {sizeLimit - length}</p>
     </>
   );
 };
-```
+----
 
 For information on controlled components in React, see: https://reactjs.org/docs/forms.html#controlled-components[React Docs - Controlled Components].
 
@@ -688,9 +713,10 @@ For information on controlled components in React, see: https://reactjs.org/docs
 
 Functions can be bound to editor events, such as:
 
-`jsx
+[source, jsx]
+----
 <Editor onSelectionChange={this.handlerFunction} />
-`
+----
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 

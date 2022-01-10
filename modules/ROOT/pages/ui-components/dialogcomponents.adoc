@@ -13,12 +13,13 @@ The body of a dialog must be either a `panel` (a single panel) or a `tabpanel` (
 
 The basic dialog type is a *panel* dialog. A panel is a container for <<panelcomponents,interactive panel components>>. A panel type dialog only has one panel.
 
-`+js
+[source, js]
+----
 {
   type: 'panel',
   items: [ ... ] // array of panel components
 }
-+`
+----
 
 === tabpanel
 
@@ -47,7 +48,8 @@ Each tab panel is defined using the following configuration options:
 
 NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{baseurl}/ui-components/dialog/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
-`+js
+[source, js]
+----
 {
   type: 'tabpanel',
   tabs: [ // array of tab panel configurations
@@ -59,7 +61,7 @@ NOTE: Panel components in different tabs with the same `name` will use the same 
     ... // more panel configurations
   ]
 }
-+`
+----
 
 ==== Dialog instance API methods
 
@@ -105,28 +107,31 @@ Some panel components can be used to apply a layout to an array of other panel c
 
 A *bar* is a layout component that creates a single row of items in the dialog body.
 
-`+js
+[source, js]
+----
 {
   type: 'bar', // component type
   items: [ ... ] // array of panel components
 }
-+`
+----
 
 ==== collection
 
 A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:{baseurl}/plugins/opensource/charmap[`charmap`] and link:{baseurl}/plugins/opensource/emoticons[`emoticons`] plugins.
 
-`js
+[source, js]
+----
 {
   type: 'collection', // component type
   name: 'collection-1', // identifier
   label: 'Collection Label'
 }
-`
+----
 
 To populate the collection with collection items, specify an array of items in the dialog's link:{baseurl}/ui-components/dialog/#dialogdataandstate[`initialData`] property. To update the items in the collection, use the link:{baseurl}/ui-components/dialog/#dialoginstanceapi[dialog API's] `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
 
-`+js
+[source, js]
+----
 [
   {
     text: 'Bold',
@@ -135,31 +140,33 @@ To populate the collection with collection items, specify an array of items in t
   },
   ... // more item configurations
 ]
-+`
+----
 
 ==== grid
 
 A *grid* is a layout component that creates columns in the dialog body.
 
-`+js
+[source, js]
+----
 {
   type: 'grid', // component type
   columns: 2, // number of columns
   items: [ ... ] // array of panel components
 }
-+`
+----
 
 ==== label
 
 A *label* is a layout component that wraps other components and adds a label above the group of components.
 
-`+js
+[source, js]
+----
 {
   type: 'label', // component type
   label: 'Caption', // text for the group label
   items: [ ... ] // array of panel components
 }
-+`
+----
 
 === Basic components
 
@@ -205,7 +212,8 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 | A URL that is passed to `onAction` when the icon button is clicked.
 |===
 
-`+js
+[source, js]
+----
 {
   type: 'alertbanner', // component type
   level: 'info',
@@ -213,7 +221,7 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
   url: 'http://my.url',
   icon: 'question'
 }
-+`
+----
 
 ==== button
 
@@ -259,7 +267,8 @@ NOTE: Panel buttons are different to link:{baseurl}/ui-components/dialog/#footer
 
 NOTE: Buttons do not support mixing icons and text at the moment.
 
-`js
+[source, js]
+----
 {
   type: 'button', // component type
   text: 'Alpha',
@@ -268,7 +277,7 @@ NOTE: Buttons do not support mixing icons and text at the moment.
   disabled: true,
   borderless: false
 }
-`
+----
 
 ==== checkbox
 
@@ -276,37 +285,40 @@ A *checkbox* is a composite component with a checkbox and a label, and with `on`
 
 *Events:* Interacting with a *checkbox* component will fire the `onChange` function in the dialog's configuration.
 
-`js
+[source, js]
+----
 {
   type: 'checkbox', // component type
   name: 'checkbox-1', // identifier
   label: 'Checkbox Label', // text for the label
   disabled: true // disabled state
 }
-`
+----
 
 ==== colorinput
 
 A *colorinput* is a specialized composite component with a label, an input field and button which opens a color swatch popup on click. Users can either type a hex color code into the input, or use the color swatch to choose a color. The color swatch button will change color to reflect the selected color.
 
-`js
+[source, js]
+----
 {
   type: 'colorinput', // component type
   name: 'colorinput', // identifier
   label: 'Color Label' // text for the label
 }
-`
+----
 
 ==== colorpicker
 
 A *colorpicker* component is an intuitive color picker tool similar to that found in modern image editors. It allows for a color to be chosen using a RGB colour slider, or for a color to be entered as either an RGB or hex color value.
 
-`js
+[source, js]
+----
 {
   type: 'colorpicker', // component type
   name: 'colorpicker', // identifier
 }
-`
+----
 
 ==== dropzone
 
@@ -314,13 +326,14 @@ A *dropzone* is a composite component that catches drag and drops items or lets 
 
 *Events:* Interacting with a *dropzone* component will fire the `onChange` function in the dialog's configuration.
 
-`js
+[source, js]
+----
 {
   type: 'dropzone', // component type
   name: 'dropzone', // identifier
   label: 'Dropzone' // text for the label
 }
-`
+----
 
 ==== htmlpanel
 
@@ -328,12 +341,13 @@ A *htmlpanel* component takes any valid HTML and renders it in the dialog.
 
 NOTE: Despite the name a htmlpanel can not be used as a body component like `panel` and `tabpanel`.
 
-`js
+[source, js]
+----
 {
   type: 'htmlpanel', // component type
   html: '<div>Html goes here</div>'
 }
-`
+----
 
 ==== iframe
 
@@ -365,18 +379,20 @@ NOTE: To replace the entire dialog body with an iframe that loads its content fr
 | default: `true` - When true, sets the iframe's `sandbox` attribute to `"allow-scripts allow-same-origin"`.
 |===
 
-`js
+[source, js]
+----
 {
   type: 'iframe', // component type
   name: 'iframe', // identifier
   label: 'Description of iframe', // text for the iframe's title attribute
   sandboxed: true
 }
-`
+----
 
 To set the iframe's content on dialog open, specify document HTML as a string in the dialog's link:{baseurl}/ui-components/dialog/#dialogdataandstate[`initialData`] property. To update the iframe's content, use the link:{baseurl}/ui-components/dialog/#dialoginstanceapi[dialog API's] `setData()` method. For example:
 
-`js
+[source, js]
+----
 dialogApi.setData({
   iframe: '<!DOCTYPE html>' +
           '<html>' +
@@ -384,7 +400,7 @@ dialogApi.setData({
           '<body><p>Content here.</p></body>' +
           '</html>'
 })
-`
+----
 
 ==== input
 
@@ -426,7 +442,8 @@ An *input* is a composite component that renders a label and a single line text 
 | Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices.
 |===
 
-`js
+[source, js]
+----
 {
   type: 'input', // component type
   name: 'inputA', // identifier
@@ -436,7 +453,7 @@ An *input* is a composite component that renders a label and a single line text 
   disabled: true, // disabled state
   maximized: false // grow width to take as much space as possible
 }
-`
+----
 
 ===== inputMode
 
@@ -456,7 +473,8 @@ A *listbox* is a composite component with a label and a dropdown list of options
 
 *Events:* Interacting with a *listbox* component will fire the `onChange` function in the dialog's configuration.
 
-`js
+[source, js]
+----
 {
   type: 'listbox', // component type
   name: 'ListBoxA', // identifier
@@ -470,7 +488,7 @@ A *listbox* is a composite component with a label and a dropdown list of options
     ]}
   ]
 }
-`
+----
 
 ==== selectbox
 
@@ -478,7 +496,8 @@ A *selectbox* is a composite component with a label and a single dropdown list o
 
 *Events:* Interacting with a *selectbox* component will fire the `onChange` function in the dialog's configuration.
 
-`js
+[source, js]
+----
 {
   type: 'selectbox', // component type
   name: 'SelectA', // identifier
@@ -490,7 +509,7 @@ A *selectbox* is a composite component with a label and a single dropdown list o
     { value: 'two', text: 'Two' }
   ]
 }
-`
+----
 
 ==== sizeinput
 
@@ -498,20 +517,22 @@ A *sizeinput* is a specialized composite component with two input fields labelle
 
 *Events:* Interacting with the input fields of a *sizeinput* component will fire the `onChange` function in the dialog's configuration *when the user clicks away from the component*.
 
-`js
+[source, js]
+----
 {
   type: 'sizeinput', // component type
   name: 'size', // identifier
   label: 'Dimensions',
   disabled: true // disabled state
 }
-`
+----
 
 ==== table
 
 A *table* is a layout component that renders a simple table.
 
-`js
+[source, js]
+----
 {
   type: 'table', // component type
   header: [ 'Heading 1', 'Heading 2', 'Heading 3' ],
@@ -520,7 +541,7 @@ A *table* is a layout component that renders a simple table.
     [ 'Cell 4', 'Cell 5', 'Cell 6' ]
   ]
 }
-`
+----
 
 ==== textarea
 
@@ -528,7 +549,8 @@ A *textarea* is a multiline text field.
 
 *Events:* Interacting with a *textbox* component will fire the `onChange` function in the dialog's configuration.
 
-`js
+[source, js]
+----
 {
   type: 'textarea', // component type
   name: 'text-a', // identifier
@@ -537,7 +559,7 @@ A *textarea* is a multiline text field.
   disabled: true, // disabled state
   maximized: false // grow width to take as much space as possible
 }
-`
+----
 
 ==== urlinput
 
@@ -582,7 +604,8 @@ NOTE: The filepicker button will only appear if link:{baseurl}/configure/file-im
 
 The filepicker will accept any file type and the typeahead will include 5 previously entered URLs plus all anchor targets and headings in the document.
 
-`js
+[source, js]
+----
 {
   type: 'urlinput', // component type
   name: 'url', // identifier
@@ -590,13 +613,14 @@ The filepicker will accept any file type and the typeahead will include 5 previo
   label: 'Url', // text for component label
   disabled: true // disabled state
 }
-`
+----
 
 *urlinput for image upload*
 
 The filepicker will only accept images and the typeahead will include 5 previously entered image URLs.
 
-`js
+[source, js]
+----
 {
   type: 'urlinput', // component type
   name: 'src', // identifier
@@ -604,4 +628,4 @@ The filepicker will only accept images and the typeahead will include 5 previous
   label: 'Source', // text for component label
   disabled: true // disabled state
 }
-`
+----

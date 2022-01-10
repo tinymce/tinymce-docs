@@ -4,7 +4,8 @@ This option allows you to override the default formatting rule for times inserte
 
 ==== Example: Using `insertdatetime_timeformat`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
@@ -12,4 +13,4 @@ tinymce.init({
   toolbar: 'insertdatetime',
   insertdatetime_timeformat: '%H:%M:%S'
 });
-`
+----

@@ -10,7 +10,8 @@ The `a11ychecker_issue_url_callback` option is used to change the target URL for
 
 This example shows how to change the link for the "Click for more info" button (image:{baseurl}/images/icons/help.svg[help icon - a question mark inside a circle]) on the Accessibility Checker dialog to point to anchors at `www.example.com/tinymce/a11ychecker/more_info`.
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
@@ -19,4 +20,4 @@ tinymce.init({
     return `https://www.example.com/tinymce/a11ychecker/more_info#${ruleId}`
   };
 });
-+`
+----

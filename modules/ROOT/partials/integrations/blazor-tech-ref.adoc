@@ -75,9 +75,10 @@ Setting a static class name:
 
 Setting a dynamic class name:
 
-`cs
+[source, cs]
+----
 <Editor ClassName="@((isEditorActive) ? "active-editor-div" : "default-editor-div")" />
-`
+----
 
 ==== Inline
 
@@ -103,12 +104,13 @@ Type:: Boolean
 
 ===== Example using Disable
 
-`+cs
+[source, cs]
+----
 <Editor
   Disable=@disable
 />
 <button @onclick="@(() => disable = !disable)">Toggle</button>
-+`
+----
 
 ==== JsConfSrc
 
@@ -122,12 +124,13 @@ Type:: String
 
 In your `_Host.cshtml`:
 
-`cs
+[source, cs]
+----
 window.sample = {
   height: 300,
   toolbar: 'undo redo | bold italic'
 }
-`
+----
 
 In your component:
 

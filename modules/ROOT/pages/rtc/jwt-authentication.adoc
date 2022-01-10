@@ -5,7 +5,7 @@
 
 :pluginname: Real-time Collaboration (RTC)
 :plugincode: rtc
-## Introduction
+== Introduction
 
 Real-time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
@@ -81,7 +81,8 @@ This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] 
 
 ==== jwt.php
 
-```php
+[source,php]
+----
 <?php
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
@@ -90,34 +91,35 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 $privateKey = <<<EOD
-----BEGIN PRIVATE KEY----
-....
-----END PRIVATE KEY----
+-----BEGIN PRIVATE KEY-----
+...
+-----END PRIVATE KEY-----
 EOD;
 
 // NOTE: Before you proceed with the TOKEN, verify your users session or access.
 
 $payload = array(
-  "sub" \=> "123", // unique user ID string
-  "exp" \=> time() + 60 * 10 // 10 minute expiration
+  "sub" => "123", // unique user ID string
+  "exp" => time() + 60 * 10 // 10 minute expiration
 );
 
 try {
   $token = JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');
-  echo json_encode(array("token" \=> $token));
+  echo json_encode(array("token" => $token));
 } catch (Exception $e) {
   http_response_code(500);
   header('Content-Type: application/json');
-  echo $e\->getMessage();
+  echo $e->getMessage();
 }
 ?>
-```
+----
 
 ==== TinyMCE example using the jwt.php endpoint
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -133,7 +135,7 @@ tinymce.init({
     .then(({ jwt })) => ({ token: jwt })
     .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
-+`
+----
 
 === Node.js token provider endpoint example
 
@@ -143,7 +145,8 @@ This example shows how to set up a Node.js express handler that produces the tok
 
 ==== /jwt
 
-```js
+[source,js]
+----
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
@@ -153,7 +156,7 @@ app.use(cors());
 
 const privateKey = `
 ----BEGIN PRIVATE KEY----
-....
+...
 ----END PRIVATE KEY----
 `;
 
@@ -178,25 +181,26 @@ try {
 });
 
 app.listen(3000);
-```
+----
 
 ==== TinyMCE example using the /jwt endpoint
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
   rtc_document_id: 'unique-document-id',
-  rtc_encryption_provider: () \=> Promise.resolve({ key: 'a secret key' }),
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
 
-rtc_token_provider: ({ documentId }) \=>
+rtc_token_provider: ({ documentId }) =>
     fetch('/jwt', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify({ documentId }),
     })
-    .then((response) \=> response.json())
-    .then(({ jwt }) \=> ({ token: jwt }))
-    .catch((error) \=> console.log('Failed to return a JWT\n' + error))
+    .then((response) => response.json())
+    .then(({ jwt }) => ({ token: jwt }))
+    .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
-```
+----

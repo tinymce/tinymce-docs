@@ -9,12 +9,13 @@ IMPORTANT: The link:../lists[Lists] (`lists`) plugin must be activated for the `
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'lists advlist'
 });
-`
+----
 
 == Options
 

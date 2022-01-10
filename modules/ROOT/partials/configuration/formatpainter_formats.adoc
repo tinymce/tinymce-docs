@@ -8,7 +8,8 @@ The example below showcases the formats registered automatically by the plugin u
 
 ==== Example: Using `formats`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'formatpainter',
@@ -28,4 +29,4 @@ tinymce.init({
     ]
   }
 });
-`
+----

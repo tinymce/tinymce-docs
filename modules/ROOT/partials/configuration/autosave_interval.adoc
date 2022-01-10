@@ -8,9 +8,10 @@ This option enables you to specify the time the editor should wait between takin
 
 ==== Example: Using `autosave_interval`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   autosave_interval: '20s'
 });
-`
+----

@@ -10,9 +10,10 @@ CAUTION: Using this option may result in unexpected behavior when right-clicking
 
 === Example: Using `contextmenu_never_use_native`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   contextmenu_never_use_native: true
 });
-`
+----

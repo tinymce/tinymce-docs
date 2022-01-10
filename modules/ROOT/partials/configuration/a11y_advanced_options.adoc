@@ -21,27 +21,30 @@ IMPORTANT: When `a11y_advanced_options` is set to `true`, link:{baseurl}/plugins
 === Example: Using `a11y_advanced_options`
 
 {% if includedSection == 'imagePlugin' %}
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
   a11y_advanced_options: true
 });
-`
+----
 {% elsif includedSection == 'a11yPlugin' %}
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   a11y_advanced_options: true
 });
-`
+----
 {% else %}
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker image',
   a11y_advanced_options: true
 });
-`
+----
 {% endif %}

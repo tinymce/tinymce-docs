@@ -83,7 +83,7 @@ If there are any matching *context toolbars*, the editor will prioritize the con
  ** The root node of the editor is reached.
 
 {% if site.productmajorversion < 6 %}
-### Determining the display priority of context toolbars and context forms (Legacy behavior)
+=== Determining the display priority of context toolbars and context forms (Legacy behavior)
 
 There are two settings that determine determine the priority: `predicate` and `scope`. The priority system mirrors the old link:{url}/docs-4x/themes/inlite/#quicklink[inlite] theme from TinyMCE 4. The `predicate` is a function that takes in the current context position and returns a boolean. The `scope` is either `node` or `editor`. The whole priority process works as follows:
 

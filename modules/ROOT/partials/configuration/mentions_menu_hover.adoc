@@ -6,7 +6,8 @@ This option enables you to provide an element to present next to the menu item b
 
 ==== Example: Using `mentions_menu_hover`
 
-```js
+[source, js]
+----
 var userRequest = {};
 tinymce.init({
   selector: 'textarea',
@@ -19,19 +20,20 @@ tinymce.init({
     userRequest[userInfo.id].then(function(userDetail) {
       var div = document.createElement('div');
 
-....
-  div.innerHTML = (
-  '<div>' +
-    '<h1>' + userDetail.fullName + '</h1>' +
-    '<img src="' + userDetail.image + '" ' +
-        'style="width: 50px; height: 50px; float: left;"/>' +
-    '<p>' + userDetail.description + '</p>' +
-  '</div>'
-  );
+      div.innerHTML = (
+      '<div>' +
+        '<h1>' + userDetail.fullName + '</h1>' +
+        '<img src="' + userDetail.image + '" ' +
+            'style="width: 50px; height: 50px; float: left;"/>' +
+        '<p>' + userDetail.description + '</p>' +
+      '</div>'
+      );
 
-  success(div);
-});   } }); ```
-....
+      success(div);
+    });
+  }
+});
+----
 
 ==== `mentions_menu_hover` with predefined templates
 
@@ -41,7 +43,8 @@ If `mentions_menu_hover` is resolved with an object specifying the type and user
 
 ===== Example: Using the `'profile'` template with `mentions_menu_hover`
 
-`js
+[source, js]
+----
 var userRequest = {};
 tinymce.init({
   selector: 'textarea',
@@ -56,4 +59,4 @@ tinymce.init({
     });
   }
 });
-`
+----

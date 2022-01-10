@@ -28,15 +28,17 @@ To set up the skin development environment, begin with the following steps:
 . Open the terminal and navigate to the folder you just downloaded.
 . Install dependencies with the command:
 +
-`sh
+[source, sh]
+----
 yarn install
-`
+----
 
 . Launch the web server to preview the skins using the command:
 +
-`sh
+[source, sh]
+----
 yarn oxide-start
-`
+----
 
 You should now be able to open a web browser and point it to the url displayed in the terminal, usually `+http://localhost:3000+`.
 
@@ -46,9 +48,10 @@ image::{baseurl}/images/SDKforsilver.png[{productname} skin SDK for Silver theme
 
 If you just need to build the skins without launching a web server, run:
 
-`sh
+[source, sh]
+----
 yarn oxide-build
-`
+----
 
 == Making or editing a skin
 

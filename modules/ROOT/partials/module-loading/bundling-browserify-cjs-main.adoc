@@ -2,7 +2,8 @@
 +
 Example `src/main.js`
 +
-`js
+[source, js]
+----
  var editor = require('./editor.js');
  /* Create a parent element for the textarea */
  var parent = document.createElement('p');
@@ -17,7 +18,7 @@ Example `src/main.js`
  document.body.appendChild(parent);
  /* Initialize TinyMCE */
  editor.render();
-`
+----
 +
 Example `demo.html`
 +

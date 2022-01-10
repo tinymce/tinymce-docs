@@ -22,7 +22,7 @@ To use your own Iframely account, provide the following configuration items:
 
 Example with Iframely enabled (replace `xxx` with your Iframely API key):
 
-`+
+----
 ephox {
   embed {
     iframely {
@@ -32,11 +32,11 @@ ephox {
     }
   }
 }
-+`
+----
 
 Example with Iframely disabled:
 
-`
+----
 ephox {
   embed {
     iframely {
@@ -44,7 +44,7 @@ ephox {
     }
   }
 }
-`
+----
 
 == Configure a custom endpoint
 
@@ -294,7 +294,7 @@ ephox {
   embed {
     iframely {
       enabled = true
-      base-url = "\https://iframe.ly/api/iframely"
+      base-url = "https://iframe.ly/api/iframely"
       api-key = "xxx" // change this to your own Iframely API key
     },
 

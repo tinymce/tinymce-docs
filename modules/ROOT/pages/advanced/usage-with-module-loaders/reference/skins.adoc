@@ -11,21 +11,23 @@ The following table shows examples of the syntax used to bundle the following sk
 
 Required files for the example skin:
 
-`js
+[source, js]
+----
 ./skins/ui/example/content.css
 ./skins/ui/example/skin.css
-`
+----
 
 Optional files for the example skin:
 
-`js
+[source, js]
+----
 /* Only required for inline editors */
 ./skins/ui/example/content.inline.css
 /* Only required when using the deprecated mobile theme */
 ./skins/ui/example/skin.mobile.css
 ./skins/ui/example/content.mobile.css
 ./skins/ui/example/fonts/tinymce-mobile.woff
-`
+----
 
 Example syntax for including the example icon pack in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
 +++<th>+++Source+++</th>+++
@@ -48,30 +50,34 @@ Example syntax for including the example icon pack in a bundle:+++<table>++++++<
 IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/advanced/usage-with-module-loaders/[Bundling {productname} with a module loader].
 
 {% comment %}
-`js
+[source, js]
+----
 import contentUiCss from 'tinymce/skins/ui/example/content.css';
 import 'tinymce/skins/ui/example/skin.css';
 /* Only required for inline editors */
 import contentUiInlineCss from 'tinymce/skins/ui/example/content.inline.css';
-`
-`js
+----
+[source, js]
+----
 import contentUiCss from '../tinymce/skins/ui/example/content.css';
 import '../tinymce/skins/ui/example/skin.css';
 /* Only required for inline editors */
 import contentUiInlineCss from '../tinymce/skins/ui/example/content.inline.css'
-`
-`js
+----
+[source, js]
+----
 var contentUiCss = require('tinymce/skins/ui/example/content.css');
 require('tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
 var contentUiInlineCss = require('tinymce/skins/ui/example/content.inline.css');
-`
-`js
+----
+[source, js]
+----
 var contentUiCss = require('../tinymce/skins/ui/example/content.css');
 require('../tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
 var contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css');
-`
+----
 {% endcomment %}
 
 include::partial$module-loading/bundling-skin-files.adoc[]

@@ -9,7 +9,8 @@ _This setting will only encode characters higher than \u007E (126 in unicode)._
 *Type:* `String`
 
 *Default Value:*
-`js
+[source, js]
+----
 '160,nbsp,161,iexcl,162,cent,163,pound,164,curren,165,yen,166,brvbar,' +
 '167,sect,168,uml,169,copy,170,ordf,171,laquo,172,not,173,shy,174,' +
 'reg,175,macr,176,deg,177,plusmn,178,sup2,179,sup3,180,acute,181,' +
@@ -48,13 +49,14 @@ _This setting will only encode characters higher than \u007E (126 in unicode)._
 'lrm,8207,rlm,8211,ndash,8212,mdash,8216,lsquo,8217,rsquo,8218,sbquo,' +
 '8220,ldquo,8221,rdquo,8222,bdquo,8224,dagger,8225,Dagger,8240,' +
 'permil,8249,lsaquo,8250,rsaquo,8364,euro'
-`
+----
 
 === Example: Using `entities`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   entities : '160,nbsp,162,cent,8364,euro,163,pound'
 });
-`
+----

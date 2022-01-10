@@ -6,7 +6,8 @@ This option can be used to define a custom fetch function, which provides anothe
 
 ==== Example: Using `imagetools_fetch_image`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
@@ -19,4 +20,4 @@ tinymce.init({
     });
   }
 });
-+`
+----

@@ -6,9 +6,10 @@
 
 The following tables show all available toolbar items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
 
-`js
+[source, js]
+----
 tinyMCE.activeEditor.ui.registry.getAll().buttons
-`
+----
 
 include::partial$misc/toolbar-button-settings.adoc[]
 

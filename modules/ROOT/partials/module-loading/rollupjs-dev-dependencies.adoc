@@ -1,7 +1,6 @@
 {% if is_zip_install == true %}
 1. Add the following development dependencies to the project.
 
-....
 - [`postcss`](https://www.npmjs.com/package/postcss)
 - [`rollup`](https://www.npmjs.com/package/rollup)
 - [`@rollup/plugin-commonjs`](https://www.npmjs.com/package/@rollup/plugin-commonjs)
@@ -11,7 +10,8 @@
 
 For example:
 
-```sh
+[source,sh]
+----
 npm install --save-dev \
   postcss \
   rollup \
@@ -19,7 +19,9 @@ npm install --save-dev \
   rollup-plugin-css-bundle \
   rollup-plugin-postcss \
   rollup-plugin-string
-``` {% else %} 1. Add `tinymce` and the following development dependencies to the project.
+----
+{% else %}
+1. Add `tinymce` and the following development dependencies to the project.
 
 - [`postcss`](https://www.npmjs.com/package/postcss)
 - [`rollup`](https://www.npmjs.com/package/rollup)
@@ -31,7 +33,8 @@ npm install --save-dev \
 
 For example:
 
-```sh
+[source,sh]
+----
 npm install tinymce &&
 npm install --save-dev \
   postcss \
@@ -41,5 +44,5 @@ npm install --save-dev \
   rollup-plugin-css-bundle \
   rollup-plugin-postcss \
   rollup-plugin-string
-``` {% endif %}
-....
+----
+{% endif %}

@@ -8,10 +8,11 @@ NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via lin
 
 ==== Example: Using `spellchecker_rpc_url`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_rpc_url: 'localhost/ephox-spelling'
 });
-`
+----

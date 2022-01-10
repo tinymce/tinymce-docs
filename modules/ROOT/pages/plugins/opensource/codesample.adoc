@@ -11,13 +11,14 @@ The Code Sample plugin (`codesample`) lets a user insert and embed syntax color 
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'codesample',
   toolbar: 'codesample'
 });
-`
+----
 
 By default, `codesample` uses `+http://prismjs.com/+` to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
 

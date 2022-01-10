@@ -27,9 +27,10 @@ The following tables show the existing editor commands. These commands are provi
 
 To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
 
-`js
+[source, js]
+----
 tinymce.activeEditor.editorCommands.commands.exec;
-`
+----
 
 === Core Editor commands
 
@@ -200,7 +201,8 @@ The commands on the following table are provided by the {productname} editor and
 
 *Examples*
 
-`+js
+[source, js]
+----
 tinymce.activeEditor.execCommand('Bold');
 tinymce.activeEditor.execCommand('Italic');
 tinymce.activeEditor.execCommand('Underline');
@@ -255,7 +257,7 @@ tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nod
 tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceFocus');
-+`
+----
 
 === Plugin Commands
 
@@ -552,11 +554,12 @@ The following commands are used to manage editor instances.
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.execCommand('mceAddEditor', false, '<editor_id>');
 tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
 tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
-`
+----
 
 |===
 | Command | Description
@@ -579,9 +582,10 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 
 To retrieve a list of avaliable queryable states from the active editor, run the following command from the browser console:
 
-`js
+[source, js]
+----
 tinymce.activeEditor.editorCommands.commands.state;
-`
+----
 
 === Available query command states
 
@@ -641,7 +645,8 @@ The following command states can be queried using the link:{baseurl}/api/tinymce
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.queryCommandState('Bold');
 tinymce.activeEditor.queryCommandState('InsertDefinitionList');
 tinymce.activeEditor.queryCommandState('InsertOrderedList');
@@ -658,7 +663,7 @@ tinymce.activeEditor.queryCommandState('Subscript');
 tinymce.activeEditor.queryCommandState('Superscript');
 tinymce.activeEditor.queryCommandState('ToggleToolbarDrawer');
 tinymce.activeEditor.queryCommandState('Underline');
-`
+----
 
 == Query command values
 
@@ -668,9 +673,10 @@ tinymce.activeEditor.queryCommandState('Underline');
 
 To retrieve a list of avaliable queryable command values from the active editor, run the following command from the browser console:
 
-`js
+[source, js]
+----
 tinymce.activeEditor.editorCommands.commands.value;
-`
+----
 
 === Available query command values
 
@@ -694,12 +700,13 @@ The following command values can be queried using the link:{baseurl}/api/tinymce
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.queryCommandValue('FontName');
 tinymce.activeEditor.queryCommandValue('FontSize');
 tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
-`
+----
 
 === Query command values: Table plugin
 

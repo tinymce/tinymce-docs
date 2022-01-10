@@ -6,18 +6,20 @@ This option enables you to specify an element `ID` to focus when the user presse
 
 ==== Example: Using `tabfocus_elements`
 
-`js
+[source, js]
+----
 // Move focus to specific element
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   tabfocus_elements: 'somebutton'
 });
-`
+----
 
-`js
+[source, js]
+----
 // Move focus to next element in DOM
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   tabfocus_elements: ':prev,:next'
 });
-`
+----

@@ -8,23 +8,25 @@ The `tinycomments_delete` function is passed a (`req`) object as the first param
 
 The `done` callback should accept the following object:
 
-`js
+[source]
+----
 {
   canDelete: boolean // whether or not the conversation can be deleted
   reason: string? // an optional string explaining why the delete was not allowed (if canDelete is false)
 }
-`
+----
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
 For example:
 
-```js
+[source,js]
+----
 function delete_comment_thread(ref, done, fail) {
   let conversationUid = ref.conversationUid;
-  fetch('\https://api.example/conversations/' + conversationUid, {
+  fetch('https://api.example/conversations/' + conversationUid, {
     method: 'DELETE',
-  }).then((response) \=> {
+  }).then((response) => {
     if (response.ok) {
       done({ canDelete: true });
     } else if (response.status === 403) {
@@ -47,4 +49,4 @@ tinymce.init({
   tinycomments_delete_comment: delete_comment,
   tinycomments_lookup: lookup_comment
 });
-```
+----

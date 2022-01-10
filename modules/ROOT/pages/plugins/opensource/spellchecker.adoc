@@ -15,7 +15,8 @@ This plugin enables {productname}'s spellcheck functionality. It also adds a too
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
@@ -23,7 +24,7 @@ tinymce.init({
   toolbar: 'spellchecker',
   spellchecker_rpc_url: 'spellchecker.php'
 });
-`
+----
 
 == Options
 
@@ -35,7 +36,8 @@ This option lets you override the default server side request/communication logi
 
 ==== Example of a basic override without using a server
 
-`pass:c[js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
@@ -55,11 +57,12 @@ tinymce.init({
     }
   }
 });
-]`
+----
 
 ==== Example of fallback for the older JSON-RPC based format
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
@@ -86,7 +89,7 @@ tinymce.init({
     }
   }
 });
-`
+----
 
 === `spellchecker_language`
 
@@ -98,7 +101,8 @@ This configuration option lets you set the default language code for the spellch
 
 ==== Example: Using `spellchecker_language`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
@@ -106,7 +110,7 @@ tinymce.init({
   toolbar: 'spellchecker',
   spellchecker_language: 'sv_SE'
 });
-`
+----
 
 === `spellchecker_languages`
 
@@ -116,14 +120,16 @@ This option lets you specify a list of languages for the user to select from. Th
 
 *Default Value:*
 
-`js
+[source, js]
+----
 'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
 'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
-`
+----
 
 ==== Example: Using `spellchecker_languages`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'spellchecker',
@@ -132,7 +138,7 @@ tinymce.init({
   spellchecker_languages: 'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
     'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
 });
-`
+----
 
 === `spellchecker_rpc_url`
 
@@ -142,7 +148,8 @@ This options enables you to specify a custom URL to be used for the spellchecker
 
 ==== Example: Using `spellchecker_rpc_url`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
@@ -150,7 +157,7 @@ tinymce.init({
   toolbar: 'spellchecker',
   spellchecker_rpc_url: 'spellchecker.php'
 });
-`
+----
 
 ==== Spellchecker request format
 
@@ -173,22 +180,24 @@ The request is a HTTP POST with URL encoded parameters described below.
 
 The response of a successful spellcheck request should like this:
 
-`json
+[source, json]
+----
 {
   "words": {
      "misspelled1": ["suggestion1", "suggestion2"],
      "misspelled2": ["suggestion1", "suggestion2"]
   }
 }
-`
+----
 
 And if there was an error:
 
-`json
+[source, json]
+----
 {
   "error": "Error message"
 }
-`
+----
 
 === `spellchecker_wordchar_pattern`
 
@@ -198,7 +207,8 @@ This option enables you to override the matching of characters that are parts of
 
 ==== Example: Using `spellchecker_wordchar_pattern`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
@@ -206,7 +216,7 @@ tinymce.init({
   toolbar: 'spellchecker',
   spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
-+`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

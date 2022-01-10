@@ -17,13 +17,14 @@ For information on the properties required for the user object provided to <<men
 
 ==== Example: Using `mentions_item_type`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
   mentions_item_type: 'name'
 });
-`
+----
 
 ==== User properties
 

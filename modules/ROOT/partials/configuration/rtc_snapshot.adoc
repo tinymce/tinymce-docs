@@ -35,7 +35,8 @@ Input parameters::
 
 ==== Example of getting content snapshots
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -47,4 +48,4 @@ tinymce.init({
     console.log('HTML', getContent());
   }
 });
-+`
+----

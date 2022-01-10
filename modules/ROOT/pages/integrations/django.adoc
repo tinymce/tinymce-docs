@@ -17,10 +17,11 @@ To load {productname} from the {cloudname}, update the project's `settings.py` f
 
 For example:
 
-`py
+[source, py]
+----
 TINYMCE_JS_URL = '{cdnurl}'
 TINYMCE_COMPRESSOR = False
-`
+----
 
 == Using self-hosted TinyMCE with django-tinymce
 
@@ -33,7 +34,8 @@ If you'd rather download and install the script manually:
  ** If you do not need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = False`), add `TINYMCE_JS_URL` to the project's `settings.py` file pointing to `tinymce/tinymce.min.js`.
   Such as:
 +
-`py
+[source, py]
+----
   TINYMCE_JS_URL = os.path.join(MEDIA_URL, "path/to/tinymce/tinymce.min.js")
   TINYMCE_COMPRESSOR = False
  `
@@ -41,7 +43,8 @@ If you'd rather download and install the script manually:
  ** If you do need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = TRUE`), add `TINYMCE_JS_ROOT` to the project's `settings.py` file pointing to the `tinymce/` root directory.
  Such as:
 +
-`py
+[source, py]
+----
  TINYMCE_JS_ROOT = os.path.join(MEDIA_URL, "path/to/tinymce")
  TINYMCE_COMPRESSOR = True
-`
+----

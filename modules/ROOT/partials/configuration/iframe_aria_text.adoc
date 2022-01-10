@@ -16,9 +16,10 @@ The `title` attribute is read by screen-readers to help users identify the edito
 
 === Example: Using `iframe_aria_text`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   iframe_aria_text: 'Text Editor'
 });
-`
+----

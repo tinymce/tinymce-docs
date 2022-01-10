@@ -12,47 +12,54 @@ NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle 
 
 . Navigate into the `tinymce-services` folder.
 +
-`sh
+[source, sh]
+----
  cd tinymce-selfhosted/tinymce-services/
-`
+----
 
 . Extract the contents of `ephox-image-proxy-docker-starter-kit.zip`, such as:
 +
-`sh
+[source, sh]
+----
  unzip ephox-image-proxy-docker-starter-kit.zip -d image-proxy-service-dockerfile
-`
+----
 
 . Copy `ephox-image-proxy.war` into the directory containing the extracted files, such as:
 +
-`sh
+[source, sh]
+----
  cp ephox-image-proxy.war image-proxy-service-dockerfile/
-`
+----
 
 . Navigate into the `image-proxy-service-dockerfile` folder.
 +
-`sh
+[source, sh]
+----
  cd image-proxy-service-dockerfile
-`
+----
 
 . Set the permissions on the extracted files to executable.
 +
-`sh
+[source, sh]
+----
  chmod +x *.sh
-`
+----
 
 . _Optional_: Edit the `image-proxy` configuration setting in `config/ephox-image-proxy-docker-env.conf`. The configurable setting is in the `image-proxy` section of the file. For example:
 +
-`conf
+[source, conf]
+----
  image-proxy {
    image-size = 10000000 // 10MB in bytes
  }
-`
+----
 +
 For information on the `image-proxy` configuration setting, see: link:{baseurl}/enterprise/server/configure/#image-proxyoptional[Configure server-side components - `image-proxy`].
 
 . _Optional_: Edit the `http` configuration settings in `config/ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 +
-`conf
+[source, conf]
+----
  http {
    max-connections = 100
    max-connections-per-host = 10
@@ -64,7 +71,7 @@ For information on the `image-proxy` configuration setting, see: link:{baseurl}/
      use-ssl-config = true
    }
  }
-`
+----
 +
 For information on the `http` configuration setting, see: link:{baseurl}/enterprise/server/configure/#httpoptional[Configure server-side components - `http`].
 
@@ -73,25 +80,28 @@ For information on the `http` configuration setting, see: link:{baseurl}/enterpr
 +
 For example:
 +
-`+conf
+[source, conf]
+----
  ORIGIN0=example.net
  ORIGIN1=example
  ORIGIN2=http://example.org
-+`
+----
 +
 For information on `allowed-origins`, see: link:{baseurl}/enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
 
 . As the root user or Administrator, build the {productname} Image Proxy Docker image using the following command:
 +
-`sh
+[source, sh]
+----
  docker build -t tinymce-image-proxy-service .
-`
+----
 
 . As the root user or Administrator, deploy the service using the following command:
 +
-`sh
+[source, sh]
+----
  docker run -d -p 8081:8080 --env-file origins.env tinymce-image-proxy-service
-`
+----
 +
 Where:
  * `-p 8081:8080` maps the container port `8080` to local port `8081`.
@@ -99,14 +109,16 @@ Where:
 
 . To verify that the Docker container is deployed and the image proxy is running, execute:
 +
-`+sh
+[source, sh]
+----
 curl http://localhost:8081/ephox-image-proxy/
-+`
+----
 +
 The response from the `curl` command should be:
 +
-`sh
+[source, sh]
+----
 Image proxy service is running.
-`
+----
 
 The {productname} Image Proxy Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].

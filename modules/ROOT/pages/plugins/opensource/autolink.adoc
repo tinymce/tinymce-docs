@@ -11,12 +11,13 @@ NOTE: Pasted URLs are automatically converted to `a` elements by {productname}'s
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autolink'
 });
-`
+----
 
 == Options
 

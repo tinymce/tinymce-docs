@@ -17,16 +17,18 @@ This procedure requires:
 
 . Create a Svelte application using the https://github.com/sveltejs/template[Svelte template project], for example:
 +
-`sh
+[source, sh]
+----
  npx degit sveltejs/template my-tiny-app
  cd my-tiny-app
-`
+----
 
 . Install the `tinymce-svelte` editor component, such as:
 +
-`sh
+[source, sh]
+----
  npm install @tinymce/tinymce-svelte
-`
+----
 
 . Open `src/App.svelte` and add:
  ** An `import` statement for the {productname} component.
@@ -44,7 +46,8 @@ _File:_ `src/App.svelte`
 . Test the application using the Node.js development server.
  ** To start the development server, in the project's root directory, run:
 +
-`sh
+[source, sh]
+----
   npm run dev
  `
 +

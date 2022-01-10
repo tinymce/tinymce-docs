@@ -9,9 +9,9 @@ include::partial$module-loading/bundling-ref-example.adoc[]
 
 The following table shows examples of the syntax used to bundle the silver theme:
 
-`
+----
 ./themes/silver/theme.js
-`
+----
 
 Example syntax for including the silver theme in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
 +++<th>+++Source+++</th>+++
@@ -32,18 +32,22 @@ Example syntax for including the silver theme in a bundle:+++<table>++++++<thead
 +++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
 
 {% comment %}
-`js
+[source, js]
+----
 import 'tinymce/themes/silver';
-`
-`js
+----
+[source, js]
+----
 import '../tinymce/themes/silver/theme';
-`
-`js
+----
+[source, js]
+----
 require('tinymce/themes/silver');
-`
-`js
+----
+[source, js]
+----
 require('../tinymce/themes/silver/theme.js');
-`
+----
 
 {% endcomment %}
 

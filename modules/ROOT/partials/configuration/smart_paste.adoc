@@ -15,7 +15,8 @@ To disable the `smart_paste` functionality, set `smart_paste` to `false`. To con
 
 ==== Example: Using `smart_paste`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
@@ -23,4 +24,4 @@ tinymce.init({
   toolbar: 'paste',
   smart_paste: false
 });
-+`
+----

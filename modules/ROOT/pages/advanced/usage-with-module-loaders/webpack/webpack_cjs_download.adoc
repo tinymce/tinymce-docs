@@ -32,9 +32,10 @@ include::partial$module-loading/bundling-webpack-cjs_index.adoc[]
 
 . Run Webpack to test the bundle, such as:
 +
-`sh
+[source, sh]
+----
  webpack --config webpack.config.js
-`
+----
 +
 If Webpack runs successfully, check that the editor loads in the application.
  If Webpack fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {productname} into an existing project.

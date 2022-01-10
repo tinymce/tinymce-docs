@@ -17,7 +17,8 @@ The Permanent Pen can also be used to create user notes and other useful comment
 
 The default properties of Permanent Pen are:
 
-`js
+[source, js]
+----
 fontname: 'arial,helvetica,sans-serif',
 forecolor: '#E74C3C',
 fontsize: '12pt',
@@ -26,7 +27,7 @@ bold: true,
 italic: false,
 underline: false,
 strikethrough: false
-`
+----
 
 For more information on {productname} formats, refer to the link:{baseurl}/configure/content-formatting/#formats[formats] section.
 
@@ -58,7 +59,8 @@ There are two ways to access the Permanent Pen properties:
 
 Add the Permanent pen properties option to the menu bar with the link:{baseurl}/configure/editor-appearance/#menu[menu] configuration.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
@@ -67,7 +69,7 @@ tinymce.init({
     format: { title: 'Format', items: 'configurepermanentpen' }
   }
 });
-`
+----
 
 ==== Inline
 
@@ -101,14 +103,15 @@ When the Permanent Pen is enabled, it will apply the new settings to the entered
 
 The following example shows how to add the Permanent Pen toolbar button:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen'
 });
-`
+----
 
 == Options
 

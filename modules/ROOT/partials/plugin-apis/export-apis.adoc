@@ -14,7 +14,8 @@ NOTE: There are no settings available when using the 'clientpdf' format.
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.plugins.export.convert('clientpdf', {});
 tinymce.activeEditor.plugins.export.download('clientpdf', {});
-`
+----

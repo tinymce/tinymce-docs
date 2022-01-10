@@ -8,7 +8,8 @@ Each item in the list can either be inline using a `content` property or a whole
 
 ==== Example using templates object
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -19,11 +20,12 @@ tinymce.init({
     {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
   ]
 });
-`
+----
 
 ==== Example using templates URL
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -31,13 +33,14 @@ tinymce.init({
   toolbar: 'template',
   templates: '/dir/templates.php'
 });
-`
+----
 
 ==== Example JSON output of templates.php
 
-`json
+[source, json]
+----
 [
   {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
   {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
 ]
-`
+----

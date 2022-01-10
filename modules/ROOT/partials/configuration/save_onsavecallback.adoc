@@ -6,11 +6,12 @@ This option allows you to specify the function that will be executed when the sa
 
 ==== Example: Using `save_onsavecallback`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'save',
   toolbar: 'save',
   save_onsavecallback: function () { console.log('Saved'); }
 });
-`
+----

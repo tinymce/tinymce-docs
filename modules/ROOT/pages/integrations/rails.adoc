@@ -18,7 +18,8 @@ include::partial$integrations/rails-basic-proj.adoc[]
 
 . Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {productname} on pages using the `application` layout:
 +
-`html
+[source, html]
+----
  <script src="{cdnurl}" referrerpolicy="origin"></script>
  <script>
    tinymce.init({
@@ -36,18 +37,19 @@ include::partial$integrations/rails-basic-proj.adoc[]
        ' removeformat | help'
    });
  </script>
-`
+----
 
 . Create a `<textarea>` with the initial content `Hello, World!` for {productname} by adding the following lines to `app/views/welcome/index.html.erb`:
 +
-`+html
+[source, html]
+----
  <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
-+`
+----
 
 . On a command line, from the project's root directory, start the Ruby on Rails server.
  `sh
  rails server
-`
+----
 
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: \http://localhost:3000/).
 
@@ -60,7 +62,8 @@ include::partial$integrations/rails-basic-proj.adoc[]
 
 . Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {productname} on pages using the `application` layout:
 +
-`html
+[source, html]
+----
  <script src="/path/to/tinymce.min.js"></script>
  <script>
    tinymce.init({
@@ -78,19 +81,21 @@ include::partial$integrations/rails-basic-proj.adoc[]
        ' removeformat | help'
    });
  </script>
-`
+----
 
 . Create a `<textarea>` with the initial content `Hello, World!` for {productname} by adding the following lines to `app/views/welcome/index.html.erb`:
 +
-`+html
+[source, html]
+----
  <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
-+`
+----
 
 . On a command line, from the project's root directory, start the Ruby on Rails server.
 +
-`sh
+[source, sh]
+----
  rails server
-`
+----
 
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: \http://localhost:3000/).
 
@@ -107,28 +112,32 @@ include::partial$integrations/rails-basic-proj.adoc[]
 
 . Using a text editor, open the project `Gemfile` and add the line:
 +
-`sh
+[source, sh]
+----
  gem 'tinymce-rails'
-`
+----
 +
 Do not add this line within a `group` - `end` element.
 
 . Install the `tinymce-rails` gem using `bundle`:
 +
-`sh
+[source, sh]
+----
  bundle install
-`
+----
 
 . Create a {productname} configuration file.
  .. Create the `config/tinymce.yml` file:
 +
-`sh
+[source, sh]
+----
 touch config/tinymce.yml
-`
+----
 
  .. Add a {productname} configuration. The configuration must be in the https://yaml.org/spec/1.2/spec.html[YAML format], such as:
 +
-`yml
+[source, yml]
+----
 height: 500
 menubar: false
 toolbar:
@@ -137,26 +146,29 @@ plugins:
   - advlist autolink lists link image charmap print preview anchor
   - searchreplace visualblocks code fullscreen
   - insertdatetime media table paste code help wordcount
-`
+----
 . Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {productname} on pages using the `application` layout:
 +
-`html
+[source, html]
+----
  <%= tinymce_assets %>
  <script type="text/javascript" src="/assets/tinymce.js"></script>
-`
+----
 
 . Create a `<textarea>` with the initial content `Hello, World!` for {productname} by adding the following lines to `app/views/welcome/index.html.erb`:
 +
-`+html
+[source, html]
+----
  <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
  <%= tinymce %>
-+`
+----
 
 . On a command line, from the project's root directory, start the Ruby on Rails server.
 +
-`sh
+[source, sh]
+----
  rails server
-`
+----
 
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: \http://localhost:3000/).
 

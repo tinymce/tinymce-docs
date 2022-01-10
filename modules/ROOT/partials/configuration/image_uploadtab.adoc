@@ -10,7 +10,8 @@ This option adds an "Upload" tab to the image dialog allowing you to upload loca
 
 ==== Example: Using `image_uploadtab`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'image',
   image_uploadtab: false
 });
-`
+----

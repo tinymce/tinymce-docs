@@ -10,7 +10,8 @@ This option enables you to specify the default state of the Visual Blocks plugin
 
 ==== Example: Using `visualblocks_default_state`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'visualblocks',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'visualblocks',
   visualblocks_default_state: true
 });
-`
+----

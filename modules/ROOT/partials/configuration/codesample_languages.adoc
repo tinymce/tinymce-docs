@@ -4,7 +4,8 @@ This configuration option enables you to set a list of languages to be displayed
 
 ==== Example: Using `codesample_languages`
 
-`pass:c[js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'codesample',
@@ -22,4 +23,4 @@ tinymce.init({
   ],
   toolbar: 'codesample'
 });
-]`
+----

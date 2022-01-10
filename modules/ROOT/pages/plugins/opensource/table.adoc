@@ -11,14 +11,15 @@ The `table` plugin adds table management functionality to {productname}. It also
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   menubar: 'table',
   toolbar: 'table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'
 });
-`
+----
 
 == Config Options
 
@@ -78,34 +79,37 @@ Here are some examples of configuration for common setups.
 
 ==== No default attributes or styles on tables
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   table_default_attributes: {},
   table_default_styles: {}
 });
-`
+----
 
 ==== Pixel based resizing
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   table_sizing_mode: 'fixed'
 });
-`
+----
 
 ==== Percentage based resizing
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   table_sizing_mode: 'relative'
 });
-`
+----
 
 NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{baseurl}/configure/content-appearance/#textcoloroptions[colorpicker].
 
@@ -141,9 +145,10 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 === Example: Using `table` plugin APIs
 
-`js
+[source, js]
+----
 tinymce.activeEditor.plugins.table.insertTable(2, 3);
-`
+----
 
 == Events
 

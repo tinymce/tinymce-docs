@@ -8,18 +8,20 @@ Lets you specify a custom name for the bottom anchor in the url type ahead drop 
 
 === Example of custom value
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   anchor_bottom: '#mybottom'
 });
-`
+----
 
 === Example of disabling
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   anchor_bottom: false
 });
-`
+----

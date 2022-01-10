@@ -8,13 +8,14 @@
 
 Assign the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Disabling the link:{baseurl}/configure/editor-appearance/#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   browser_spellcheck: true,
   contextmenu: false
 });
-`
+----
 
 include::partial$misc/ctrl_right_click.adoc[]
 
@@ -37,14 +38,15 @@ This plugin enables *Enchant* or *PSpell* on the server to spell check content w
 
 ==== Example: Using the PHP spellchecker
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
   toolbar: 'spellchecker',
   spellchecker_rpc_url: 'spellchecker.php'
 });
-`
+----
 
 Review the link:{baseurl}/plugins/opensource/spellchecker/[Spell Checker plugin] for advanced configuration options.
 

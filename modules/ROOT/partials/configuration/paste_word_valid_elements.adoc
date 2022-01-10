@@ -10,7 +10,8 @@ NOTE: To access this feature, you need to set the value of link:{baseurl}/plugin
 
 ==== Example: Using `paste_word_valid_elements`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'paste',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'paste',
   paste_word_valid_elements: 'b,strong,i,em,h1,h2'
 });
-`
+----

@@ -23,9 +23,10 @@ This procedure requires:
 . Select the *Blazor Server App* template.
 . Use the NuGet package manager console to install the `TinyMCE.Blazor` package, such as:
 +
-`sh
+[source, sh]
+----
  Install-Package TinyMCE.Blazor
-`
+----
 
 include::partial$integrations/blazor-postinstall.adoc[]
 
@@ -43,28 +44,32 @@ This procedure requires:
 
 . Create a new Blazor project:
 +
-`sh
+[source, sh]
+----
  dotnet new blazorserver -o BlazorApp --no-https
-`
+----
 
 . Change into the new application directory:
 +
-`sh
+[source, sh]
+----
  cd BlazorApp
-`
+----
 
 . Install the {productname} Blazor integration:
 +
-`sh
+[source, sh]
+----
  dotnet add package TinyMCE.Blazor
-`
+----
 
 include::partial$integrations/blazor-postinstall.adoc[]
 
 . Test the application using the .NET development server.
  ** To start the development server, in the project's root directory, run:
 +
-`sh
+[source, sh]
+----
   dotnet watch run
  `
 +

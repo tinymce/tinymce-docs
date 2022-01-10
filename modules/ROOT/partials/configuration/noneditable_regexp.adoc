@@ -8,10 +8,11 @@ NOTE: If elements are matched by the regular expression, the elements will be re
 
 ==== Example: Using `noneditable_regexp`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'noneditable',
   noneditable_regexp: /\d{3}-\d{3}-\d{3}/g // matches 123-456-789
 });
-+`
+----

@@ -26,14 +26,15 @@ To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `plugi
 
 For example:
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: 'export',
   export_image_proxy: 'proxy.php' // Required for rendering remote images
 });
-+`
+----
 
 == Exporters
 

@@ -8,7 +8,8 @@ The list of inline elements that should be removed on paste can be specified by 
 
 ==== Example: `powerpaste_clean_filtered_inline_elements`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
@@ -16,4 +17,4 @@ tinymce.init({
   powerpaste_html_import: 'clean', // optional
   powerpaste_clean_filtered_inline_elements: 'strong, em, b, i, u, strike, sup, sub, font'
 });
-`
+----

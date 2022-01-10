@@ -12,10 +12,11 @@ NOTE: This option requires the link:{baseurl}/configure/editor-appearance/#toolb
 
 === Example: toolbar_sticky_offset
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar_sticky: true,
   toolbar_sticky_offset: 100
 });
-`
+----

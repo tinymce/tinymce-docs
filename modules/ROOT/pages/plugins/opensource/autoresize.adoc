@@ -10,12 +10,13 @@ This plugin automatically resizes the editor to the content inside it. It is typ
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autoresize'
 });
-`
+----
 
 == Options
 

@@ -6,11 +6,12 @@ This option allows you to disable the save button until modifications have been 
 
 ==== Example: Using `save_enablewhendirty`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'save',
   toolbar: 'save',
   save_enablewhendirty: true
 });
-`
+----

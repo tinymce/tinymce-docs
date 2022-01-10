@@ -94,7 +94,8 @@ NOTE: Table row and table column cut, copy, and paste commands work with
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.execCommand('mceTableSizingMode', false, 'fixed');
 tinymce.activeEditor.execCommand('mceTableSizingMode', false, 'relative');
 tinymce.activeEditor.execCommand('mceTableSizingMode', false, 'responsive');
@@ -130,4 +131,4 @@ tinymce.activeEditor.execCommand('mceTableToggleCaption');
 tinymce.activeEditor.execCommand('mceTableRowType', false, { type: 'header' });
 tinymce.activeEditor.execCommand('mceTableColType', false, { type: 'th' });
 tinymce.activeEditor.execCommand('mceTableCellType', false, { type: 'th' });
-`
+----

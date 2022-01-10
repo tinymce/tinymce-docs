@@ -10,7 +10,8 @@ This options allows you disable the `Alternative source` input field in the medi
 
 ==== Example: Using `media_alt_source`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'media',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'media',
   media_alt_source: false
 });
-`
+----

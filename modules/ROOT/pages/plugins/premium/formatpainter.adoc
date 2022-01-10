@@ -21,13 +21,14 @@ To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `plugi
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'formatpainter',
   toolbar: 'formatpainter'
 });
-`
+----
 
 == Using Format Painter
 

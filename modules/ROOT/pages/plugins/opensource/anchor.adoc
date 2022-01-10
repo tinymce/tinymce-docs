@@ -12,14 +12,15 @@ When a user clicks on the anchor button or menu item they will be prompted via a
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'anchor',
   toolbar: 'anchor',
   menubar: 'insert'
 });
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

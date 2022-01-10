@@ -19,12 +19,13 @@ include::partial$misc/differs_for_mobile.adoc[]
 
 ==== Example: Disabling editor resizing
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   resize: false
 });
-`
+----
 
 === Enabling both vertical and horizontal resize
 
@@ -36,9 +37,10 @@ tinymce.init({
 
 ==== Example: Enabling vertical and horizontal editor resizing
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   resize: 'both'
 });
-`
+----

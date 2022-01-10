@@ -25,37 +25,42 @@ Select from the following package managers.
 ==== Yarn
 
 To upgrade to {productname} {productminorversion} using Yarn, run:
-`sh
+[source, sh]
+----
 $ yarn upgrade {prodnamecode}
-`
+----
 
 ==== npm
 
 To upgrade to {productname} {productminorversion} using npm, run:
-`sh
+[source, sh]
+----
 $ npm install {prodnamecode}@latest --save
-`
+----
 
 ==== Composer
 
 To upgrade to {productname} {productminorversion} using Composer, run:
-`sh
+[source, sh]
+----
 $ composer require tinymce/tinymce
-`
+----
 
 ==== NuGet
 
 To upgrade to {productname} {productminorversion} using NuGet, run:
-`sh
+[source, sh]
+----
 $ Install-Package {productname}
-`
+----
 
 ==== Bower
 
 To upgrade to {productname} {productminorversion} using Bower, run:
-`sh
+[source, sh]
+----
 $ bower install {prodnamecode}#{productminorversion} --save
-`
+----
 
 {% endif %}
 
@@ -67,7 +72,8 @@ To upgrade to {productname} {productminorversion} using a manually downloaded pa
 +
 Customizations for {productname} are typically stored in the following directories:
 +
-`sh
+[source, sh]
+----
  tinymce/
  ├── icons/
  ├── langs/
@@ -76,7 +82,7 @@ Customizations for {productname} are typically stored in the following directori
  │   ├── content/
  │   └── ui/
  └── themes/
-`
+----
 
 . Download the latest version of {productname}.
  ** For the {productname} Community Version, download `{prodnamecode}_<VERSION>.zip` from link:{gettiny}/self-hosted/[Get {productname} - Self-hosted releases], where _`<VERSION>`_ is the latest version of {productname}.

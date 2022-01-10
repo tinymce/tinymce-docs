@@ -6,7 +6,8 @@ This option provides a way to append some additional characters to the default c
 
 ==== Example: Using `charmap_append`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'charmap',
@@ -17,4 +18,4 @@ tinymce.init({
     [0x2601, 'cloud']
   ]
 });
-`
+----

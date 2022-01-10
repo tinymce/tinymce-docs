@@ -6,10 +6,11 @@ A URL of the server-side link validation service. This is required option, witho
 
 ==== Example: Using `linkchecker_service_url`
 
-`+js
+[source, js]
+----
 tinymce.init({
     selector: 'textarea',
     plugins: 'linkchecker',
     linkchecker_service_url: 'http://mydomain.com/linkchecker'
 });
-+`
+----

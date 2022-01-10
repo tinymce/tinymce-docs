@@ -18,9 +18,10 @@ include::partial$misc/differs_for_mobile.adoc[]
 
 === Example: toolbar_sticky
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar_sticky: true
 });
-`
+----

@@ -14,10 +14,11 @@ This option adds `colgroup` and `col` elements to new tables for specifying colu
 
 ==== Example: Enabling `colgroup` support using `table_use_colgroups`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   table_use_colgroups: true
 });
-`
+----

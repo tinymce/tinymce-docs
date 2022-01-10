@@ -10,9 +10,10 @@ This option allows "inline" formats to be applied to empty lines for multi-line 
 
 === Example: Using `format_empty_lines`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   format_empty_lines: true
 });
-`
+----

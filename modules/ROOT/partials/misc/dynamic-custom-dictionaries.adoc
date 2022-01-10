@@ -4,11 +4,12 @@ Adding the `ephox.spelling.dynamic-custom-dictionaries` element and setting it t
 
 Example:
 
-`conf
+[source, conf]
+----
 ephox {
   spelling {
     custom-dictionaries-path = "/opt/ephox/dictionaries"
     dynamic-custom-dictionaries = true
   }
 }
-`
+----

@@ -10,10 +10,11 @@ Note that classes with the `mceItem` prefix are invisible within {productname}.
 
 ==== Example: Using `noneditable_editable_class`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'noneditable',
   noneditable_editable_class: 'mceEditable'
 });
-`
+----

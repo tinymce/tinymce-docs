@@ -109,13 +109,13 @@ Add `server.example.com` to the `allowed-origins` list because the scheme and th
 
 Example:
 
-`
+----
 ephox {
   allowed-origins {
     origins = [ "myserver", "myserver.example.com", "myotherserver", "mysecureserver" ]
   }
 }
-`
+----
 
 ==== Wildcard support
 
@@ -126,13 +126,13 @@ The `*` wildcard character matches any value. Wildcards are supported in the fol
 
 NOTE: Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.
 
-`
+----
 ephox {
   allowed-origins {
     origins = [ "myserver", "*.mydomain.example.com" ]
   }
 }
-`
+----
 
 ==== Regular Expressions support
 
@@ -142,13 +142,13 @@ Regular expressions can be used alongside <<wildcardsupport,wildcards>> for spec
 
 For example:
 
-`
+----
 ephox {
   allowed-origins {
     origins = [ "myserver", "/(myserver|myotherserver\.)?example\.com/" ]
   }
 }
-`
+----
 
 For a list of valid constructs, see: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum[Java 8: `java.util.regex` - Summary of regular-expression constructs].
 
@@ -164,13 +164,13 @@ Setting the `same-origin` setting to `true` will block all HTTP `OPTIONS` reques
 
 For example:
 
-`
+----
 ephox {
   allowed-origins {
     same-origin: true
   }
 }
-`
+----
 
 ==== `allowed-origins.ignore-port` (optional)
 
@@ -182,14 +182,14 @@ This option is set to `true` by default, so ports specified in `allowed-origins`
 
 For example:
 
-`
+----
 ephox {
   allowed-origins {
     origins = ["myserver:8000", "myserver:8001"]
     ignore-port = false
   }
 }
-`
+----
 
 ==== Troubleshooting Origins
 
@@ -242,7 +242,7 @@ This optional proxy element provides an alternative to providing proxy settings 
 
 In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
 
-`
+----
 ephox {
     proxy {
         http.proxyHost = "someproxy.example.com"
@@ -252,7 +252,7 @@ ephox {
         http.nonProxyHosts = "localhost|*.example.com"
     }
 }
-`
+----
 
 === `http` (optional)
 
@@ -279,25 +279,25 @@ This is not recommended for production environments.
 
 Example:
 
-`
+----
 ephox {
     http {
         trust-all-cert = true
     }
 }
-`
+----
 
 The request timeout on outbound HTTP and HTTPS connections can be set. Setting this to a larger value will allow larger files through, but they may take a long time. An example might be if you expect to fetch very large files with the image proxy service.
 
 Example:
 
-`
+----
 ephox {
     http {
         request-timeout-seconds = 15
     }
 }
-`
+----
 
 ==== Alternative http timeout settings
 
@@ -313,7 +313,7 @@ If one of these settings are required, remove `request-timeout-seconds` and spec
 
 For example:
 
-`
+----
 ephox {
     http {
         connection-request-timeout-seconds = 10
@@ -321,7 +321,7 @@ ephox {
         socket-timeout-seconds = 4
     }
 }
-`
+----
 
 == Image proxy service settings
 
@@ -344,13 +344,13 @@ The link:{baseurl}/plugins/opensource/imagetools/[image proxy service] has some 
 
 Example:
 
-`
+----
 ephox {
     image-proxy {
         size-limit = 10000000 // 10MB in bytes
     }
 }
-`
+----
 
 == Hyperlinking service settings
 
@@ -368,13 +368,13 @@ Used to enable (`true`) or disable (`false`) the Link-checking service. This set
 
 For example:
 
-`
+----
 ephox {
   link-checking {
     enabled = true
   }
 }
-`
+----
 
 ==== `fallback-to-get` (optional)
 
@@ -384,13 +384,13 @@ The Link-checker normally relies on the `HEAD` response. If `fallback-to-get` is
 
 For example:
 
-`
+----
 ephox {
   link-checking {
     fallback-to-get = true
   }
 }
-`
+----
 
 ==== `cache` (optional)
 
@@ -404,7 +404,7 @@ Default settings are automatically configured, meaning these settings are option
 
 Example:
 
-`
+----
 ephox {
   link-checking {
     cache {
@@ -414,7 +414,7 @@ ephox {
     }
   }
 }
-`
+----
 
 == Spelling service settings
 
@@ -447,18 +447,18 @@ include::partial$misc/dynamic-custom-dictionaries.adoc[]
 include::partial$misc/num-incorrect-words-in-suggestions-request-limit.adoc[]
 
 +++<a class="anchor" id="logging">++++++</a>+++
-## Logging service activity
+== Logging service activity
 
 It may be useful to make the {productname} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
 The {productname} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
 
 To write the logs to a specific file:
-+++<a class="anchor" id="step1createaloggingconfigurationxmlfile">++++++</a>+++
-1. Create a logging configuration XML file. Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
+[[step1createaloggingconfigurationxmlfile]]
+1. Create a logging configuration XML file. Save the snippet below as `logback.xml` after replacing pass:[{$LOG_LOCATION}] with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 
-....
-```xml
+[source, xml]
+----
 <configuration>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -485,9 +485,11 @@ To write the logs to a specific file:
   </root>
 
 </configuration>
-``` <a class="anchor" id="step2passtheconfigurationfiletothejavaapplicationserver"></a> 1. Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow [step 4]({baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5]({baseurl}/enterprise/server/#step5restartthejavaapplicationserver) on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
+----
+[[step2passtheconfigurationfiletothejavaapplicationserver]]
+1. Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow [step 4]({baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5]({baseurl}/enterprise/server/#step5restartthejavaapplicationserver) on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
 
-```
+[source]
+----
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml
-```
-....
+----

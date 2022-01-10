@@ -93,7 +93,8 @@ The table of format parameters below explores some more advanced topics.
 
 This example overrides some of the built-in formats and tells {productname} to apply classes instead of inline styles. It includes a custom format that produces `h1` elements with a title attribute and a `red` `css` style.
 
-`js
+[source, js]
+----
 // Output elements in HTML style
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
@@ -111,7 +112,7 @@ tinymce.init({
     custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : 'red'}}
   }
 });
-`
+----
 
 {% assign_page next_page = "/general-configuration-guide/localize-your-language/index.html" %}
 {% include next-step.html next=next_page %}

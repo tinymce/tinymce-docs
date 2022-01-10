@@ -11,14 +11,15 @@ This plugin adds a toolbar button that allows a user to edit the HTML code hidde
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'code',
   toolbar: 'code',
   menubar: 'tools'
 });
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

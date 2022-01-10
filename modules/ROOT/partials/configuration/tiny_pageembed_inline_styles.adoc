@@ -12,10 +12,11 @@ The `tiny_pageembed_inline_styles` option will inline all styles, while also kee
 
 To inline page embed styles:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pageembed',
   tiny_pageembed_inline_styles: true
 });
-`
+----

@@ -12,9 +12,10 @@ IMPORTANT: Product attribution is required for free and open source users. For i
 
 === Example: Using `branding`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   branding: false
 });
-`
+----

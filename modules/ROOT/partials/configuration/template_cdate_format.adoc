@@ -8,7 +8,8 @@ This option allows you to provide a date format that all 'creation' date templat
 
 ==== Example: Using `template_cdate_format`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -19,7 +20,7 @@ tinymce.init({
     {title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>'}
   ]
 });
-`
+----
 
 If the creation date is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
 

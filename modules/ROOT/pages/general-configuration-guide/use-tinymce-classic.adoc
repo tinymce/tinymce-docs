@@ -24,11 +24,12 @@ liveDemo::default[]
 
 A basic TinyMCE editor can be added to a `textarea` element with the id `mytextarea` using:
 
-`js
+[source, js]
+----
 tinymce.init({
     selector: 'textarea#mytextarea'
 });
-`
+----
 
 === Related configuration options
 

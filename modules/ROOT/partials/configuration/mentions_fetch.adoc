@@ -6,7 +6,8 @@ This option lets you request a list of users from your server that match a searc
 
 ==== Example: Using `mentions_fetch`
 
-```js
+[source, js]
+----
 var usersRequest = null;
 tinymce.init({
   selector: 'textarea',
@@ -22,14 +23,16 @@ tinymce.init({
         return user.name.indexOf(query.term.toLowerCase()) !== -1;
       });
 
-....
-  users = users.slice(0, 10);
+      ...
+      users = users.slice(0, 10);
 
-  // Where the user object must contain the properties `id` and `name`
-  // but you could additionally include anything else you deem useful.
-  success(users);
-});   } }); ```
-....
+      // Where the user object must contain the properties `id` and `name`
+      // but you could additionally include anything else you deem useful.
+      success(users);
+    });
+  }
+});
+----
 
 The `success` callback can be passed an optional array of extra items. When clicked, the menu reloads and passes additional query parameters to the fetch function. The extra items can be used to search with different queries or show additional results, such as a full text search (which is slower to fetch). Each extra item should contain:
 
@@ -38,7 +41,8 @@ The `success` callback can be passed an optional array of extra items. When clic
 
 ==== Example with extras
 
-```js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
@@ -50,19 +54,21 @@ tinymce.init({
       url += '&full=true'
     }
 
-....
-// Extras are shown at the end of the list and will reload the menu
-// by passing the meta to the fetch function
-var extras = isFullTextSearch ? [ ] : [
-  {
-    text: 'Full user search...',
-    meta: { fullTextSearch: true }
-  }
-];
+    ...
+    // Extras are shown at the end of the list and will reload the menu
+    // by passing the meta to the fetch function
+    var extras = isFullTextSearch ? [ ] : [
+      {
+        text: 'Full user search...',
+        meta: { fullTextSearch: true }
+      }
+    ];
 
-fetch(url).then(function(users) {
-  // Where the user object must contain the properties `id` and `name`
-  // but you could additionally include anything else you deem useful.
-  success(users, extras);
-});   } }); ```
-....
+    fetch(url).then(function(users) {
+      // Where the user object must contain the properties `id` and `name`
+      // but you could additionally include anything else you deem useful.
+      success(users, extras);
+    });
+  }
+});
+----

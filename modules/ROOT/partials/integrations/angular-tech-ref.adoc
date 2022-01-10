@@ -48,20 +48,23 @@ The following table shows the supported versions of Angular and the required ver
 
 To install the `tinymce-angular` package and save it to your `package.json`.
 
-`sh
+[source, sh]
+----
 $ npm install --save @tinymce/tinymce-angular
-`
+----
 
 === Using the TinyMCE Angular integration
 
 . Import the `EditorModule` from the npm package using:
 +
-`js
+[source, js]
+----
  import { EditorModule } from '@tinymce/tinymce-angular';
-`
+----
  Add the `EditorModule` to `+@NgModule({imports})+`:
 +
-`+js
+[source, js]
+----
  // This might look different depending on how you have set up your app
  // but the important part is the imports array
  @NgModule({
@@ -75,19 +78,21 @@ $ npm install --save @tinymce/tinymce-angular
    providers: [],
    bootstrap: [AppComponent]
  })
-+`
+----
 
 . Add the editor to the Angular application template, such as:
 +
-`html
+[source, html]
+----
  <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
-`
+----
 
 === Configuring the editor
 
 The editor accepts the following properties:
 
-`html
+[source, html]
+----
 <editor
   apiKey="no-api-key"
   cloudChannel="{productmajorversion}"
@@ -100,7 +105,7 @@ The editor accepts the following properties:
   tagName="div"
   toolbar=""
 ></editor>
-`
+----
 
 None of the configuration properties are *required* for `tinymce-angular` to work. Specify a {cloudname} API key using `apiKey` to remove the `+This domain is not registered...+` warning message.
 
@@ -149,11 +154,12 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 ===== Example: Using `disabled`
 
-`html
+[source, html]
+----
 <editor
   [disabled]="true"
 ></editor>
-`
+----
 
 ==== `id`
 
@@ -181,7 +187,8 @@ For information on the {productname} selector (`tinymce.init`), see: link:{baseu
 
 ===== Example: Using `init`
 
-`html
+[source, html]
+----
 <editor
   [init]="{
     plugins: [
@@ -190,7 +197,7 @@ For information on the {productname} selector (`tinymce.init`), see: link:{baseu
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }"
 ></editor>
-`
+----
 
 ==== `initialValue`
 
@@ -218,11 +225,12 @@ For information on inline mode, see: link:{baseurl}/configure/editor-appearance/
 
 ===== Example: Using `inline`
 
-`html
+[source, html]
+----
 <editor
   [inline]="true"
 ></editor>
-`
+----
 
 ==== `plugins`
 
@@ -264,12 +272,13 @@ Only valid when <<inline,`<editor [inline]="true"></editor>`>>. Used to define t
 
 ===== Example: Using `tagName`
 
-`html
+[source, html]
+----
 <editor
   [inline]="true"
   tagName="my-custom-tag"
 ></editor>
-`
+----
 
 ==== `toolbar`
 
@@ -291,9 +300,10 @@ For information setting the toolbar for {productname}, see: link:{baseurl}/confi
 
 The `ngModel` directive can be added to use the editor in a form:
 
-`html
+[source, html]
+----
 <editor [(ngModel)]="dataModel"></editor>
-`
+----
 
 For information on using `NgModel`, see: https://angular.io/api/forms/NgModel[Angular documentation - NgModel].
 
@@ -322,9 +332,10 @@ To use {productname} Angular component with reactive forms:
 . Include the `<editor>` configuration within the `formGroup`.
 . Add the `formControlName` directive to the editor configuration. For example:
 +
-`html
+[source, html]
+----
  <editor [formControlName]="schema.key" [init]="{plugins: 'link'}"></editor>
-`
+----
 
 For information on using reactive forms, see: https://angular.io/guide/reactive-forms[Angular documentation - Reactive Forms].
 
@@ -332,9 +343,10 @@ For information on using reactive forms, see: https://angular.io/guide/reactive-
 
 Functions can be bound to editor events, such as:
 
-`html
+[source, html]
+----
 <editor (onSelectionChange)="handleEvent($event)"></editor>
-`
+----
 
 When the handler is called (`handleEvent` in this example), it is called with an event containing two properties:
 

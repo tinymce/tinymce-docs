@@ -6,7 +6,8 @@ This option provides the default location to load the emoji database from. The d
 
 *Default:* `+${pluginUrl}/js/emojis.js+`
 
-`js
+[source, js]
+----
 tinymce.Resource.add('tinymce.plugins.emoticons', {
   robot: {
     keywords: ['computer', 'machine', 'bot'],
@@ -14,15 +15,16 @@ tinymce.Resource.add('tinymce.plugins.emoticons', {
     category: 'people'
   }
 });
-`
+----
 
 ==== Example: Using `emoticons_database_url`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons',
   emoticons_database_url: '/emojis.js'
 });
-`
+----

@@ -10,7 +10,8 @@
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.execCommand('mceInsertToc');
 tinymce.activeEditor.execCommand('mceUpdateToc');
-`
+----

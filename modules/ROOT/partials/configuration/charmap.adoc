@@ -6,7 +6,8 @@ With this option it is possible to fully override the default character map. Thi
 
 ==== Example: Using `charmap`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'charmap',
@@ -16,4 +17,4 @@ tinymce.init({
     [0x2615, 'morning coffee']
   ]
 });
-`
+----

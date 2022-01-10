@@ -8,7 +8,8 @@ This option enables you to specify the default styles for inserted tables.
 
 ==== Example: Using `table_default_styles`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -18,4 +19,4 @@ tinymce.init({
     width: '50%'
   }
 });
-`
+----

@@ -12,7 +12,8 @@ include::partial$plugins/powerpaste_import_types.adoc[]
 
 ==== Example: `powerpaste_googledocs_import` using an asynchronous function
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
@@ -27,4 +28,4 @@ tinymce.init({
     });
   }
 });
-`
+----

@@ -8,10 +8,11 @@ This option allows you to set the prefix that is used for local storage keys.
 
 ==== Example: Using `autosave_prefix`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autosave',
   autosave_prefix: 'tinymce-autosave-{path}{query}-{id}-'
 });
-+`
+----

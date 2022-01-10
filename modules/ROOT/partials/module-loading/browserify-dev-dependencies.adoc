@@ -1,7 +1,6 @@
 {% if is_zip_install == true %}
 1. Add the following development dependencies to the project.
 
-....
 - [`promise-polyfill`](https://www.npmjs.com/package/promise-polyfill)
 - [`browserify`](https://www.npmjs.com/package/browserify)
 - [`browserify-css`](https://www.npmjs.com/package/browserify-css)
@@ -9,13 +8,16 @@
 
 For example:
 
-```sh
+[source,sh]
+----
 npm install --save-dev \
   promise-polyfill \
   browserify \
   browserify-css \
   brfs
-``` {% else %} 1. Add `tinymce` and the following development dependencies to the project.
+----
+{% else %}
+1. Add `tinymce` and the following development dependencies to the project.
 
 - [`promise-polyfill`](https://www.npmjs.com/package/promise-polyfill)
 - [`browserify`](https://www.npmjs.com/package/browserify)
@@ -24,12 +26,13 @@ npm install --save-dev \
 
 For example:
 
-```sh
+[source,sh]
+----
 npm install tinymce &&
 npm install --save-dev \
   promise-polyfill \
   browserify \
   browserify-css \
   brfs
-``` {% endif %}
-....
+----
+{% endif %}

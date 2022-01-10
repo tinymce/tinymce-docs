@@ -10,7 +10,8 @@
 
 *Example*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.execCommand('mceInsertTemplate', false, '<p>This is my template text.</p>');
 tinymce.activeEditor.execCommand('mceTemplate');
-`
+----

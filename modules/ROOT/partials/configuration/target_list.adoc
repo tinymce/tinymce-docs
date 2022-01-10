@@ -6,16 +6,18 @@ If <<default_link_target,`default_link_target`>> is also configured and its valu
 
 *Default Value:*
 
-`js
+[source, js]
+----
 [
   { text: 'Current window', value: '' },
   { text: 'New window', value: '_blank' }
 ]
-`
+----
 
 ==== Example: Adding a `_parent` target to the dropdown list
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -28,13 +30,14 @@ tinymce.init({
     {title: 'Parent frame', value: '_parent'}
   ]
 });
-`
+----
 
 To disable the option dialog, set `target_list` to `false`.
 
 ==== Example: Turning off the target list dialog
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -42,4 +45,4 @@ tinymce.init({
   toolbar: 'link',
   target_list: false
 });
-`
+----

@@ -6,7 +6,8 @@ This option enables you specify attributes for the <<forced_root_block,forced_ro
 
 === Example: Using `forced_root_block_attrs`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   forced_root_block_attrs: {
@@ -14,4 +15,4 @@ tinymce.init({
     'data-something': 'my data'
   }
 });
-`
+----

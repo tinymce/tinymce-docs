@@ -14,12 +14,13 @@ ____
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'bbcode'
 });
-`
+----
 
 == Options
 
@@ -75,13 +76,14 @@ When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[co
 
 ==== Example: Using `bbcode_dialect`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'bbcode',
   bbcode_dialect: 'punbb'
 });
-`
+----
 
 == Interactive example
 

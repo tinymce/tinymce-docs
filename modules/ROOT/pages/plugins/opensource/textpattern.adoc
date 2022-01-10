@@ -9,12 +9,13 @@ The default pattern is similar to markdown syntax, so the user can type `# text`
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'textpattern'
 });
-`
+----
 
 == Options
 

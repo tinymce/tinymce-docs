@@ -8,18 +8,20 @@ Lets you specify a custom name for the top anchor in the url type ahead drop dow
 
 === Example of custom value
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   anchor_top: '#mytop'
 });
-`
+----
 
 === Example of disabling
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   anchor_top: false
 });
-`
+----

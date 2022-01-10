@@ -10,10 +10,11 @@ This option allows you to set whether the editor should prompt the user to advis
 
 ==== Example: Using `autosave_ask_before_unload`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autosave',
   autosave_ask_before_unload: false
 });
-`
+----

@@ -21,10 +21,11 @@ There are two settings:
 
 ==== Example: Using `table_column_resizing`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'table',
   table_column_resizing: 'resizetable'
 });
-`
+----

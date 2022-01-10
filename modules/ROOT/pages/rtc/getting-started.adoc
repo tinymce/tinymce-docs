@@ -52,7 +52,8 @@ include::partial$rtc/rtc-min-configuration-example.adoc[]
 
 This example is a minimal production setup, where the document ID, encryption secret, and JSON Web Token are dynamically retrieved from a server.
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea#rtc-example',
   plugins: 'rtc',
@@ -85,6 +86,6 @@ tinymce.init({
     .then(({ jwt }) => ({ token: jwt }))
     .catch((error) => console.log('Failed to return a JWT\n' + error))
 });
-+`
+----
 
 For details on the available configuration options, see: link:{baseurl}/rtc/configuration/[Configuration Options].

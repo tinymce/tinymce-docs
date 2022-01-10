@@ -33,9 +33,10 @@ Gets converted into this valid list:
 
 === Example: Using `fix_list_elements`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   fix_list_elements : true
 });
-`
+----

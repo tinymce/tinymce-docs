@@ -17,13 +17,14 @@ The `advtable` plugin is a premium plugin that extends the core link:{baseurl}/p
 
 To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table advtable',
   menubar: 'table'
 });
-`
+----
 
 == Sorting table rows and columns
 

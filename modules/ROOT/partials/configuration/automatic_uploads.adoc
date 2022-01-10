@@ -12,10 +12,11 @@ NOTE: This option will do nothing if `images_upload_url` is not specified.
 
 === Example: Using `automatic_uploads`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_url: 'postAcceptor.php',
   automatic_uploads: false
 });
-`
+----

@@ -19,14 +19,15 @@ NOTE: The toolbar button won't work in browsers that don't support direct access
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste pastetext'
 });
-`
+----
 
 == Options
 

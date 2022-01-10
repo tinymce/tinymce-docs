@@ -22,12 +22,13 @@ For information on:
 
 In this example we will set the editor language to Swedish.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   language: 'sv_SE'
 });
-`
+----
 
 === Using the premium language packs
 

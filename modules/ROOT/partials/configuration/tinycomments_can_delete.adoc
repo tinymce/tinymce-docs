@@ -6,7 +6,8 @@ _Optional_ - This option sets the author permissions for _deleting comment conve
 
 *Default Function:*
 
-`js
+[source, js]
+----
 function (req, done, fail) {
   var allowed = req.comments.length > 0 &&
                 req.comments[0].author === <Current_tinycomments_author>;
@@ -14,7 +15,7 @@ function (req, done, fail) {
     canDelete: allowed
   });
 }
-`
+----
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comment conversations by adding `|| currentAuthor === '<Admin user>'`.
 

@@ -10,7 +10,8 @@ This options allows you enable the image title input field in the image dialog.
 
 ==== Example: Using `image_title`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'image',
   image_title: true
 });
-`
+----

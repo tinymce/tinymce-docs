@@ -45,13 +45,14 @@ The mobile experience provided for {productname} 4.7 through {productname} 5.0 h
 
 To revert to the legacy mobile theme, add the mobile theme to the {productname} configuration, such as:
 
-`js
+[source, js]
+----
 tinymce.init({
   mobile: {
     theme: 'mobile'
   }
 });
-`
+----
 
 NOTE: No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
@@ -269,12 +270,13 @@ The default for the `toolbar_drawer` setting has been changed from `false` to `f
 
 To revert to the {productname} 5.0 behavior, add `toolbar_drawer: false` to the `tinymce.init`, such as:
 
-`js
+[source, js]
+----
 tinymce.init({
   selection: textarea#myEditor
   toolbar_drawer: false
 });
-`
+----
 
 For information on the `toolbar_drawer` setting, see: link:{baseurl}/configure/editor-appearance/#toolbar_drawer[User interface options - `toolbar_drawer`].
 

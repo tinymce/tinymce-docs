@@ -9,11 +9,12 @@ The *min_height* option has two kinds of behaviors depending on the state of the
 
 === Example: Using `min_height`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   min_height: 100
 });
-`
+----
 
 NOTE: If you set the option <<resize,`resize`>> to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.

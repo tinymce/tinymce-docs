@@ -4,7 +4,8 @@ The `link_class_list` option allows you to specify a list of classes for the lin
 
 ==== Example: Using `link_class_list`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -18,7 +19,7 @@ tinymce.init({
     {title: 'Other Internal Link', value: 'int_other_link'}
   ]
 });
-`
+----
 
 ==== Example of a nested list of link classes
 
@@ -28,7 +29,8 @@ To create a nested list, replace `value` with `menu` to add the top level of the
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -46,4 +48,4 @@ tinymce.init({
     }
   ]
 });
-`
+----

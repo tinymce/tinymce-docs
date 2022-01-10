@@ -14,9 +14,10 @@ This option allows you to disable https://en.wikipedia.org/wiki/Gecko_(software)
 
 === Example: Using `gecko_spellcheck`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   gecko_spellcheck: false
 });
-`
+----

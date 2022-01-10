@@ -16,12 +16,13 @@ The inline editing mode is useful when creating user experiences where you want 
 
 === Example: Using `inline`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: '#myeditablediv',  // change this value according to your HTML
   inline: true
 });
-`
+----
 
 NOTE: {productname} in inline mode will not initialize on the following elements: `area`, `base`, `basefont`, `br`, `col`, `frame`, `hr`, `img`, `input`, `isindex`, `link`, `meta`, `param`, `embed`, `source`, `wbr`, `track`, `colgroup`, `option`, `table`, `tbody`, `tfoot`, `thead`, `tr`, `th`, `td`, `script`, `noscript`, `style`, `textarea`, `video`, `audio`, `iframe`, `object`, and `menu`.
 
@@ -33,11 +34,12 @@ When using {productname} in inline mode, the editor inherits the CSS stylesheet 
 
 If the editor is used in inline mode, care should be taken when using styling that depends on structures within the editor. For example, if there's a class like this:
 
-`css
+[source, css]
+----
 h1 strong {
   color: orange;
 }
-`
+----
 
 This would make the phrase "bold text" bold and orange in the content:
 

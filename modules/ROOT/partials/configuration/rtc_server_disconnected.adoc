@@ -51,7 +51,8 @@ The `reason` field will have one of the following values.
 
 ==== Example of handling server disconnection
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -66,4 +67,4 @@ tinymce.init({
     });
   }
 });
-+`
+----

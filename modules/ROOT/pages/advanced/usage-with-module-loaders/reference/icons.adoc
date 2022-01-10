@@ -9,9 +9,9 @@ include::partial$module-loading/bundling-ref-example.adoc[]
 
 The following table shows examples of the syntax used to bundle the following icon pack:
 
-`
+----
 ./icons/example/icons.js
-`
+----
 
 Example syntax for including the example icon pack in a bundle:+++<table>++++++<thead>++++++<tr>++++++<th>+++Module Syntax+++</th>+++
 +++<th>+++Source+++</th>+++
@@ -32,18 +32,22 @@ Example syntax for including the example icon pack in a bundle:+++<table>++++++<
 +++</code>++++++</pre>++++++</div>++++++</div>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
 
 {% comment %}
-`js
+[source, js]
+----
 import 'tinymce/icons/example';
-`
-`js
+----
+[source, js]
+----
 import '../tinymce/icons/example/icons';
-`
-`js
+----
+[source, js]
+----
 require('tinymce/icons/example');
-`
-`js
+----
+[source, js]
+----
 require('../tinymce/icons/example/icons.js');
-`
+----
 {% endcomment %}
 
 include::partial$module-loading/bundling-icon-files.adoc[]

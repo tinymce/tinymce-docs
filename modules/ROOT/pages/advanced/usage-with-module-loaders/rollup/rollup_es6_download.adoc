@@ -31,9 +31,10 @@ include::partial$module-loading/bundling-rollup-es6-index.adoc[]
 
 . Run Rollup.js to test the bundle, such as:
 +
-`sh
+[source, sh]
+----
  rollup --config
-`
+----
 +
 If Rollup.js runs successfully, check that the editor loads in the application.
  If Rollup.js fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {productname} into an existing project.

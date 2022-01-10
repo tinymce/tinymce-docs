@@ -12,22 +12,24 @@ To disable the table toolbar, set the value to an empty string.
 
 ==== Example: Default table_toolbar configuration
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   table_toolbar: 'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'
 });
-`
+----
 
 ==== Example: Disable the table toolbar
 
 To disable or remove the contextual table toolbar, set `table_toolbar` to an empty string.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
   table_toolbar: ''
 });
-`
+----

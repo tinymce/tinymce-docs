@@ -12,7 +12,8 @@ The following examples illustrate how to use supported native events, editor cor
 
 The following example uses a function to create a console log entry when the editor has initialized. This is also an example of handling an event which does not return any data.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   setup: function(editor) {
@@ -21,11 +22,12 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 The following example uses a function to create a console log entry when a command is executed in the editor. This is also an example of handling an event that returns data.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function(editor) {
@@ -34,7 +36,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 == Supported browser-native events
 
@@ -646,16 +648,18 @@ The following events are used for editor management. These events are handled us
 
 *AddEditor*
 
-`js
+[source, js]
+----
 tinymce.on('AddEditor', function(e) {
   console.log('Added editor with id: ' + e.editor.id);
 });
-`
+----
 
 *RemoveEditor*
 
-`js
+[source, js]
+----
 tinymce.on('RemoveEditor', function(e) {
   console.log('Removed editor with id: ' + e.editor.id);
 });
-`
+----

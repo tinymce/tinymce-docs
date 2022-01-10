@@ -10,10 +10,11 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 
 ==== Example: powerpaste_keep_unsupported_src
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
   powerpaste_keep_unsupported_src: true
 });
-`
+----

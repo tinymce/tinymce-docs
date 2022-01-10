@@ -10,7 +10,8 @@
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.execCommand('tc-delete-conversation-at-cursor');
 tinymce.activeEditor.execCommand('tc-try-delete-all-conversations');
-`
+----

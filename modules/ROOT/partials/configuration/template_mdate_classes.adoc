@@ -10,7 +10,8 @@ A modified date is one that is updated with each edit.
 
 ==== Example: Using `template_mdate_classes`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'template',
   template_mdate_classes: 'mdate modifieddate'
 });
-`
+----

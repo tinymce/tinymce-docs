@@ -19,14 +19,15 @@ liveDemo::page-embed[]
 
 Use the following script to create a Page Embed toolbar button:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pageembed',
   menubar: 'view',
   toolbar: 'pageembed'
 });
-`
+----
 
 *Result*: The image:{baseurl}/images/icons/embed-page.svg[Page Embed](*Page Embed*) button appears in the toolbar menu.
 
@@ -79,8 +80,9 @@ If the `tiny_pageembed_classes` setting is left undefined, the default classes w
 
 IMPORTANT: The following CSS script must be added to the webpage for the default CSS to work correctly.
 
-`css
+[source, css]
+----
 include::partial$css-codeblock/pageembed-plugin-css.adoc[]
-`
+----
 
 For more information on configuring CSS, refer to the link:{baseurl}/configure/content-appearance/#content_css[content_css] section.

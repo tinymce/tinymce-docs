@@ -18,9 +18,10 @@ include::partial$misc/requires_5_7v.adoc[]
 
 *Example*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.execCommand('mceSpellcheckEnable');
 tinymce.activeEditor.execCommand('mceSpellcheckDisable');
 tinymce.activeEditor.execCommand('mceSpellcheckDialog');
 tinymce.activeEditor.execCommand('mceSpellcheckDialogClose');
-`
+----

@@ -9,9 +9,10 @@ NOTE: There are no settings available when using the 'clientpdf' format.
 
 *Examples*
 
-`js
+[source, js]
+----
 tinymce.activeEditor.execCommand('mceExportDownload', false, {
   format: 'clientpdf',
   settings: {}
 });
-`
+----

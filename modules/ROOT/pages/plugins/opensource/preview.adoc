@@ -11,14 +11,15 @@ This plugin adds a preview button to the toolbar. Pressing the button opens a di
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'preview',
   menubar: 'view',
   toolbar: 'preview'
 });
-`
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

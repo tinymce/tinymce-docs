@@ -13,22 +13,24 @@ The `toc` plugin will generate basic _Table of Contents_ and insert it into the 
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'toc',
   toolbar: 'toc',
   menubar: 'insert'
 });
-`
+----
 
 The _Table of Contents_ will have a simple HTML structure - a wrapper `div` element, a header with _editable_ title and unordered nested list with navigation links. Nesting depth is customizable.
 
 Internally plugin doesn't apply any inline styles. Basic formatting can be added via link:{baseurl}/general-configuration-guide/boilerplate-content-css/[Boilerplate Content CSS], that can be customized to your needs.
 
-`css
+[source, css]
+----
 include::partial$css-codeblock/toc-plugin-css.adoc[]
-`
+----
 
 == Options
 

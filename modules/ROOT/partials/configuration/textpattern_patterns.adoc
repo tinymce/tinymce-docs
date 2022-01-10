@@ -14,7 +14,8 @@ ____
 
 ==== The default patterns for the `textpattern` plugin
 
-`+js
+[source, js]
+----
 [
   {start: '*', end: '*', format: 'italic'},
   {start: '**', end: '**', format: 'bold'},
@@ -29,7 +30,7 @@ ____
   {start: '* ', cmd: 'InsertUnorderedList'},
   {start: '- ', cmd: 'InsertUnorderedList' }
 ]
-+`
+----
 
 ==== Inline patterns
 
@@ -45,7 +46,8 @@ NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Ent
 
 ===== Example: Using `textpattern` inline patterns
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   // The `link` plugin is required for the `createLink` command
@@ -56,7 +58,7 @@ tinymce.init({
     {start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}
   ]
 });
-+`
+----
 
 Using the configuration in this example:
 
@@ -78,7 +80,8 @@ NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spaceb
 
 ===== Example: Using `textpattern` block patterns
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   // The `lists` plugin is required for list-related text patterns
@@ -100,7 +103,7 @@ tinymce.init({
     {start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }}
   ]
 });
-`
+----
 
 Using the configuration in this example:
 
@@ -120,7 +123,8 @@ NOTE: Replacement patterns are executed on either pressing the *spacebar* or the
 
 ===== Example: Using `textpattern` replacement patterns
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugin: 'textpattern',
@@ -133,7 +137,7 @@ tinymce.init({
     {start: '//heading', replacement: '<h1 style="color: blue">Heading here</h1> <h2>Author: Name here</h2> <p><em>Date: 01/01/2000</em></p> <hr />'},
   ]
 });
-`
+----
 
 Using the configuration in this example:
 

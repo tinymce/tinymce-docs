@@ -12,11 +12,12 @@ For example: Setting the version to HTML 4 will enable the rule "Complex tables 
 
 ==== Example: Using `a11ychecker_html_version`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_html_version: 'html5'
 });
-`
+----

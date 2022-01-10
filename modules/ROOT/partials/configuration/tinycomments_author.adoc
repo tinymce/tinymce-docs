@@ -8,10 +8,11 @@ This option sets the author id to be used when creating or replying to comments.
 
 ==== Example: Using `tinycomments_author`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: '#textarea',
   tinycomments_author: 'embedded_journalist',
   tinycomments_mode: 'embedded'
 })
-`
+----

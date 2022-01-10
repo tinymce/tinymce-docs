@@ -8,7 +8,7 @@ This option is used to specify a list of pre-defined cell border widths for quic
 
 *Default Value:*
 
-`
+----
 [
   {title: 'Solid', value: 'solid'},
   {title: 'Dotted', value: 'dotted'},
@@ -21,11 +21,12 @@ This option is used to specify a list of pre-defined cell border widths for quic
   {title: 'None', value: 'none'},
   {title: 'Hidden', value: 'hidden'}
 ]
-`
+----
 
 ==== Example: Using `table_border_styles`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -37,4 +38,4 @@ tinymce.init({
     {title: 'Dashed', value: 'dashed'}
   ]
 });
-`
+----

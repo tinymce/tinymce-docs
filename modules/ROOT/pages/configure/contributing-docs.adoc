@@ -4,8 +4,8 @@
 :keywords: opensource oss contributors lgpl docs dox
 :title_nav: Contribute to documentation
 
-:readabilityGuidelines: \https://readabilityguidelines.co.uk
-:msStyleGuide: \https://docs.microsoft.com/en-us/style-guide
+:readabilityGuidelines: https://readabilityguidelines.co.uk
+:msStyleGuide: https://docs.microsoft.com/en-us/style-guide
 
 This page outlines how you can provide feedback and contribute to {productname} documentation.
 
@@ -43,32 +43,35 @@ Include any key values pairs and method options that are required to enable a us
 
 For example, this is good:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'codesample',
   toolbar: 'codesample',
 });
-`
+----
 
 This is not:
 
-`+js
+[source, js]
+----
 tinymce.init({
   ...
   plugins: 'codesample',
   toolbar: 'codesample'
   ...
 });
-+`
+----
 
 === URLs and links
 
 Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
 
-`+md
+[source, md]
+----
 hello, [text to link](http://www.example.com) to the URL example.com.
-+`
+----
 
 === Live demos
 
@@ -87,7 +90,8 @@ The source for each live-demo is store in the https://github.com/tinymce/tinymce
 
 Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
 
-`md
+[source, md]
+----
 ---                // Three dashes at the start and end of the meta section, must be included.
 layout: default    // In most cases leave this as 'default'.
 title:             // The nav.yml references this so it must be included and it should be brief.
@@ -96,7 +100,7 @@ description_short: // Short description for the grid layouts.
 description:       // Detailed description at page level for the header section under the title.
 keywords:          // Space-separated list of keywords in the content.
 ---
-`
+----
 
 == Recommended tools
 

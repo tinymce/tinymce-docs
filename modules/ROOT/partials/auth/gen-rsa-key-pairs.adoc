@@ -23,10 +23,11 @@ On a command line, run the following commands to install OpenSSL on:
 * Red Hat Enterprise Linux 6 or 7.
 * CentOS 6 or 7.
 
-`sh
+[source, sh]
+----
 sudo yum check-update
 sudo yum install openssl
-`
+----
 
 ==== Red Hat Enterprise Linux 8+, Fedora, or CentOS 8+
 
@@ -36,28 +37,31 @@ On a command line, run the following commands to install OpenSSL on:
 * CentOS 8 or later.
 * Fedora 18 or later.
 
-`sh
+[source, sh]
+----
 sudo dnf check-update
 sudo dnf install openssl
-`
+----
 
 ==== Debian, Ubuntu, Linux Mint, or other Debian-based distributions
 
 On a command line, run the following commands to install OpenSSL on Debian-based operating systems (such as: Debian, Ubuntu, and Linux Mint).
 
-`sh
+[source, sh]
+----
 sudo apt update
 sudo apt install openssl
-`
+----
 
 ==== SUSE Linux Enterprise Server or openSUSE
 
 On a command line, run the following commands to install OpenSSL on openSUSE-based operating systems (such as: openSUSE and SUSE Linux Enterprise Server).
 
-`sh
+[source, sh]
+----
 sudo zypper refresh
 sudo zypper install openssl
-`
+----
 
 === Create a private/public key pair on Linux
 
@@ -65,9 +69,10 @@ To create a private/public key pair:
 
 . On a command line, run:
 +
-`sh
+[source, sh]
+----
  ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
-`
+----
 +
 Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
@@ -82,9 +87,10 @@ Two files will be created in the current directory:
 
 To retrieve the public key, on a command line, run:
 
-`sh
+[source, sh]
+----
 openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -w0
-`
+----
 
 The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the command line with base64 encoding.
 
@@ -102,9 +108,10 @@ To create a private/public key pair:
 . Using *Finder*, open a *Terminal*.
 . On a terminal, run:
 +
-`sh
+[source, sh]
+----
  ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
-`
+----
 +
 Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
@@ -119,9 +126,10 @@ Two files will be created in the current directory:
 
 To retrieve the public key, on a terminal, run:
 
-`sh
+[source, sh]
+----
 openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -
-`
+----
 
 The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the terminal with base64 encoding.
 
@@ -151,9 +159,10 @@ To create a private/public key pair:
 . Open the *Start* menu (or _Windows_ menu) and open *Git Bash*.
 . On the _Git bash_ command line, run:
 +
-`sh
+[source, sh]
+----
  ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
-`
+----
 +
 Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
@@ -168,8 +177,9 @@ Two files will be created in the current directory:
 
 To retrieve the public key, on a _Git bash_ command line, run:
 
-`sh
+[source, sh]
+----
 openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -w0
-`
+----
 
 The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the command line with base64 encoding.

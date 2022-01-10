@@ -7,7 +7,8 @@ This option enables you to modify the pasted content before it gets inserted int
 
 ==== Example: Using `paste_postprocess`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'paste',
@@ -18,7 +19,7 @@ tinymce.init({
     args.node.setAttribute('id', '42');
   }
 });
-`
+----
 {% else %}
 ### `paste_postprocess`
 
@@ -35,7 +36,8 @@ NOTE: The mode 'auto' is used when the content source does not have formatting t
 
 Example {productname} configuration:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
@@ -47,5 +49,5 @@ tinymce.init({
     data.node.insertBefore(additionalNode, data.node.firstElementChild);
   }
 });
-`
+----
 {% endif %}

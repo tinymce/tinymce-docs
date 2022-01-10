@@ -8,7 +8,8 @@ The `advtable_value_series` option configures one or more series of values for p
 
 *Default Value:*
 
-`js
+[source, js]
+----
 {
   // Natural number series
   numeric: {
@@ -25,13 +26,14 @@ The `advtable_value_series` option configures one or more series of values for p
     generator: `GeneratorFunction` // For details, see: 'Creating a value series generator'
   },
 }
-`
+----
 
 Both default series are configured to update on table changes and not resize when using the resize bars.
 
 Each top-level properties of the `advtable_value_series` object are used as the name of the value series and its configuration. In the following example, there are two value series named "[.code]``numbers``" and "[.code]``letters``":
 
-`js
+[source, js]
+----
 {
   numbers: {
     title: 'Numbered',
@@ -42,7 +44,7 @@ Each top-level properties of the `advtable_value_series` object are used as the 
     generator: `GeneratorFunction`
   },
 }
-`
+----
 
 === Series configuration
 
@@ -133,7 +135,8 @@ The generator callback function should return an object with the following prope
 
 === Example: Using `advtable_value_series`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'table advtable',
@@ -152,4 +155,4 @@ tinymce.init({
     },
   }
 });
-`
+----

@@ -34,38 +34,43 @@ NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle 
 
 . Navigate into the `tinymce-services` folder.
 +
-`sh
+[source, sh]
+----
 cd tinymce-selfhosted/tinymce-services/
-`
+----
 
 . Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
 +
-`sh
+[source, sh]
+----
 unzip ephox-spelling-docker-starter-kit.zip -d spelling-service-dockerfile
-`
+----
 +
 The structure of the extracted files will be:
 +
-`sh
+[source, sh]
+----
 spelling-service-dockerfile/
 ├── config
 │   └── ephox-spelling-docker-env.conf
 ├── docker-entrypoint.sh
 ├── Dockerfile
 └── generate-jetty-start.sh
-`
+----
 
 . Copy `ephox-spelling.war` into the directory containing the extracted files, such as:
 +
-`sh
+[source, sh]
+----
 cp ephox-spelling.war spelling-service-dockerfile/
-`
+----
 
 . Navigate into the `spelling-service-dockerfile` folder.
 +
-`sh
+[source, sh]
+----
 cd spelling-service-dockerfile
-`
+----
 +
 {% elsif shbundledockerfiles == false %}
 
@@ -73,25 +78,29 @@ cd spelling-service-dockerfile
 . Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
 . Extract the contents of `ephox-spelling_<version>.zip`, such as:
 +
-`sh
+[source, sh]
+----
 unzip ephox-spelling_<version>.zip -d tinymce-spelling-service
-`
+----
 
 . Navigate into the extracted folder.
 +
-`sh
+[source, sh]
+----
 cd tinymce-spelling-service
-`
+----
 
 . Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
 +
-`sh
+[source, sh]
+----
 unzip ephox-spelling-docker-starter-kit.zip
-`
+----
 +
 The structure of the current directory (`tinymce-spelling-service/`) will be:
 +
-`sh
+[source, sh]
+----
 tinymce-spelling-service/
 ├── config
 │   └── ephox-spelling-docker-env.conf
@@ -103,19 +112,21 @@ tinymce-spelling-service/
 ├── license.txt
 ├── readme.txt
 └── version.txt
-`
+----
 +
 {% endif %}
 
 . Set the permissions on the extracted files to executable.
 +
-`sh
+[source, sh]
+----
 chmod +x *.sh
-`
+----
 
 . _Optional_: Edit the `http` configuration settings in `config/ephox-spelling-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 +
-`conf
+[source, conf]
+----
 http {
   max-connections = 100
   max-connections-per-host = 10
@@ -127,7 +138,7 @@ http {
     use-ssl-config = true
   }
 }
-`
+----
 +
 For information on the `http` configuration setting, see: link:{baseurl}/enterprise/server/configure/#httpoptional[Configure server-side components - `http`].
 
@@ -138,25 +149,28 @@ link:{baseurl}/enterprise/server/configure/[Configure server-side components].
 +
 For example:
 +
-`+conf
+[source, conf]
+----
 ORIGIN0=example.net
 ORIGIN1=example
 ORIGIN2=http://example.org
-+`
+----
 +
 For information on `allowed-origins`, see: link:{baseurl}/enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
 
 . As the root user or Administrator, build the {productname} Spelling Service Docker image using the following command:
 +
-`sh
+[source, sh]
+----
 docker build -t tinymce-spelling-service .
-`
+----
 
 . As the root user or Administrator, deploy the service using the following command:
 +
-`sh
+[source, sh]
+----
 docker run -d -p 8082:8080 --env-file origins.env tinymce-spelling-service
-`
+----
 +
 Where:
 
@@ -165,14 +179,16 @@ Where:
 
 . To verify that the Docker container is deployed and the spelling service is running, execute:
 +
-`+sh
+[source, sh]
+----
 curl http://localhost:8082/ephox-spelling/
-+`
+----
 +
 The response from the `curl` command should be:
 +
-`sh
+[source, sh]
+----
 Spelling service is running.
-`
+----
 
 The {productname} Spelling Service Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].

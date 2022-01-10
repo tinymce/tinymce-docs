@@ -227,12 +227,13 @@ To disable all autocomplete/typeahead URLs in the link dialog, set the `typeahea
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   typeahead_urls: false
 });
-`
+----
 
 For information on the `typeahead_urls` option, see: link:{baseurl}/configure/advanced-editing-behavior/#typeahead_urls[Advanced editing behaviors - `typeahead_urls`].
 

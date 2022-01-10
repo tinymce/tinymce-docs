@@ -14,7 +14,8 @@ Type:: Object
 
 ==== Example of client status information
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'rtc',
@@ -23,4 +24,4 @@ tinymce.init({
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' }),
   rtc_client_info: { onMobile: true, region: 'us' }
 });
-+`
+----

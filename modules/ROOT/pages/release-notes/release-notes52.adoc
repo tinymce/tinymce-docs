@@ -265,23 +265,25 @@ NOTE: This issue will be resolved with the release of {productname} 5.2.1.
 
 If the editor is set to `inline: true`, and `toolbar_drawer` or `toolbar_mode` is set to `'floating'`, such as:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div',
   inline: true,
   toolbar_drawer: 'floating'
 });
-`
+----
 
 or
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div',
   inline: true,
   toolbar_mode: 'floating'
 });
-`
+----
 
 The floating component of the toolbar will disconnect from the primary toolbar when additional content is added to the editor, causing the content area to resize (such as adding new lines).
 
@@ -307,13 +309,14 @@ No known workaround at the time of release.
 
 Inline dialogs, such as the _Search and Replace dialog_ and the _Accessibility Checker dialog_, will be positioned incorrectly when sticky toolbar and the bottom toolbar are used together. For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   toolbar_sticky: true,
   toolbar_location: 'bottom'
 });
-`
+----
 
 Custom inline dialogs are also affected.
 

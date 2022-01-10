@@ -12,22 +12,24 @@ To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
 ==== Example: Customizing the Quick Image toolbar
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars image imagetools',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions'
 });
-`
+----
 
 ==== Example: Disabling the Quick Image toolbar
 
 To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
   quickbars_image_toolbar: false
 });
-`
+----

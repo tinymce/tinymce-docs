@@ -11,14 +11,15 @@ This plugin adds a button for inserting nonbreaking space entities `+&nbsp;+` at
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'nonbreaking',
   menubar: 'insert',
   toolbar: 'nonbreaking'
 });
-`
+----
 
 == Options
 

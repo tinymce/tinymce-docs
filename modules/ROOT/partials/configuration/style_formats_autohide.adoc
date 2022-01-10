@@ -7,7 +7,8 @@ This option enables auto hiding of styles that can't be applied to the current c
 
 === Example: Using `style_formats_autohide`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   style_formats: [
@@ -16,4 +17,4 @@ tinymce.init({
   ],
   style_formats_autohide: true
 });
-`
+----

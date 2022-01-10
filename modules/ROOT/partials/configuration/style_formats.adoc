@@ -17,7 +17,8 @@ To merge custom styles with the default `styles_format` values, set link:{baseur
 
 The following is the default value for `style_formats` where it is using references to existing formats:
 
-`js
+[source, js]
+----
 style_formats: [
   { title: 'Headings', items: [
     { title: 'Heading 1', format: 'h1' },
@@ -49,13 +50,14 @@ style_formats: [
     { title: 'Justify', format: 'alignjustify' }
   ]}
 ]
-`
+----
 
 == Example: Using `style_formats`
 
 This example shows how to append 3 new style formats.
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   style_formats: [
@@ -66,7 +68,7 @@ tinymce.init({
   // The following option is used to append style formats rather than overwrite the default style formats.
   style_formats_merge: true
 });
-`
+----
 
 == Interactive examples
 

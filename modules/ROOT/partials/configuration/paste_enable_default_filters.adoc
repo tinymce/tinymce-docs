@@ -10,7 +10,8 @@ This option allows you to disable {productname}'s default paste filters when set
 
 ==== Example: Using `paste_enable_default_filters`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'paste',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'paste',
   paste_enable_default_filters: false
 });
-`
+----

@@ -19,13 +19,14 @@ The autosave plugin adds:
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autosave',
   toolbar: 'restoredraft'
 });
-`
+----
 
 == Options
 

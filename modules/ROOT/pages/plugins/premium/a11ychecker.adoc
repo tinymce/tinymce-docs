@@ -20,13 +20,14 @@ To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `plugi
 
 For example:
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck'
 });
-`
+----
 
 == Accessibility Rules
 
@@ -305,9 +306,10 @@ Opens and closes the accessibility checker dialog with the results of the audit 
 
 ==== Example: Using `toggleaudit()`
 
-`js
+[source, js]
+----
 editor.plugins.a11ychecker.toggleaudit();
-`
+----
 
 === `getReport()`
 
@@ -331,14 +333,14 @@ console.log(issues);
   {
     "id": "D2",
     "severity": "error",
-    "url": "\http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
+    "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
     "description": "Headings must be applied in sequential order. For example: Heading 1 should be followed by Heading 2, not Heading 3.",
     "element": {}  // The element value contains the DOM element (such as <h4>).
   },
   {
     "id": "T1",
     "severity": "error",
-    "url": "\http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
+    "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
     "description": "Tables must have captions",
     "element": {}  // The element value contains the DOM element (such as <table>).
   }

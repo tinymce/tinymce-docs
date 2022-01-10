@@ -16,11 +16,12 @@ This examples shows how to ignore the following checks (rules):
 * I2 - Image `alt` text is not the image filename
 * T4B - Table headers
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_ignored_rules: 'D2, I2, T4B'
 });
-`
+----

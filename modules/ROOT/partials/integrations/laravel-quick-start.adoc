@@ -24,15 +24,17 @@ This procedure assumes the following prerequisites have been installed:
 
 . On a command line (or command prompt), create a new Laravel project named `my-example-app` by running the following command:
 +
-`sh
+[source, sh]
+----
  composer create-project laravel/laravel my-example-app
-`
+----
 
 . Change into the root directory of the Laravel application, such as:
 +
-`sh
+[source, sh]
+----
  cd my-example-app
-`
+----
 
 {% if productSource != "cloud" %}
 1. Install the required Node.js components, including https://laravel.com/docs/8.x/mix[Laravel Mix]:
@@ -51,51 +53,52 @@ This procedure assumes the following prerequisites have been installed:
 
 . Add a Laravel Mix task to copy {productname} to the public files when Mix is run, such as:
 +
-_File:_ `webpack.mix.js`
- `js
+[source,js]
+.`webpack.mix.js`
+----
  mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
-`
+----
 
 {% endif %}
 {% if productSource == "zip" %}
 1. Download {productname}.
 
-....
 * For Self-hosted Enterprise customers, visit [{companyname} - Self-hosted releases]({download-community})
 * For the self-hosted {productname} community edition, visit [{accountpage} - Downloads]({download-enterprise})
-....
 
 . Extract (or unzip) the downloaded {productname} `.zip` file into the `resources/js/` directory of the Laravel project, such as:
 +
-`sh
+[source, sh]
+----
  unzip ../tinymce_latest.zip -d resources/js
-`
+----
 
 . Add a Laravel Mix task to copy {productname} to the public files when Mix is run, such as:
 +
-_File:_ `webpack.mix.js`
- `js
+[source,js]
+.`webpack.mix.js`
+----
  mix.copyDirectory('resources/js/tinymce/js/tinymce', 'public/js/tinymce');
-`
+----
 
 {% endif %}
 {% if productSource != "cloud" %}
 1. Run Laravel Mix to copy {productname} to the `public/js/` directory:
-
- ```sh
- npx mix
- ```
++
+[source,sh]
+----
+npx mix
+----
 
 {% endif %}
 1. Create a new reusable https://laravel.com/docs/8.x/blade#components[component (`blade.php`)] for the {productname} configuration, such as:
 
-....
-```sh
+[source,sh]
+----
 php artisan make:component Head/tinymceConfig
-```
+----
 
 This will create the blade `resources/views/components/head/tinymce-config.blade.php`.
-....
 
 . Open the newly created `.blade.php` file in a text editor and replace the contents with:
  ** The {productname} source script.
@@ -104,9 +107,10 @@ This will create the blade `resources/views/components/head/tinymce-config.blade
 +
 For example:
 +
-_File:_ `resources/views/components/head/tinymce-config.blade.php`
 +
-`html
+[source, html]
+.`resources/views/components/head/tinymce-config.blade.php`
+----
  <script src="{scriptSource}" referrerpolicy="origin"></script>
  <script>
    tinymce.init({
@@ -115,7 +119,7 @@ _File:_ `resources/views/components/head/tinymce-config.blade.php`
      toolbar: 'undo redo | formatselect| bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
    });
  </script>
-`
+----
 
 {% if productSource == "cloud" %}
 1. Replace `no-api-key` in the {productname} source script with your {cloudname} API Key.
@@ -124,9 +128,10 @@ _File:_ `resources/views/components/head/tinymce-config.blade.php`
 
 . Create a second blade containing a placeholder HTML element for {productname}, such as:
 +
-`sh
+[source, sh]
+----
  php artisan make:component Forms/tinymceEditor
-`
+----
 +
 This will create the blade `resources/views/components/forms/tinymce-editor.blade.php`.
 
@@ -134,29 +139,43 @@ This will create the blade `resources/views/components/forms/tinymce-editor.blad
 +
 For example:
 +
-_File:_ `resources/views/components/forms/tinymce-editor.blade.php`
-+
-```html+++<form method="post">++++++<textarea id="myeditorinstance">+++Hello, World!+++</textarea>++++++</form>+++
-+
-```
+[source,html]
+.`resources/views/components/forms/tinymce-editor.blade.php`
+----
+<form method="post">
+  <textarea id="myeditorinstance">Hello, World!</textarea>
+</form>
+----
 
 . Add the blade components on the pages or views where {productname} is needed. The configuration blade (`Head/tinymceConfig` in this example) can be added to the `<head>` or at the end of the `<body>` on the target page or view. The placeholder blade (`Forms/tinymceEditor`) should be added where {productname} is required on the page.
 +
 For example:
 +
-_File:_ `resources/views/welcome.blade.php`
-+
-```html
- <!DOCTYPE html>+++<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">++++++<head>++++++<meta charset="utf-8">++++++</meta>++++++<meta name="viewport" content="width=device-width, initial-scale=1">++++++</meta>++++++<title>+++TinyMCE in Laravel+++</title>+++
-
-// Insert the blade containing the TinyMCE configuration and source script+++<x-head.tinymce-config>++++++</x-head.tinymce-config>++++++</head>++++++<body>+++// Insert the blade containing the TinyMCE placeholder HTML element+++<x-forms.tinymce-editor>++++++</x-forms.tinymce-editor>++++++</body>++++++</html>+++
-+
-```
+[source,html]
+.`resources/views/welcome.blade.php`
+----
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TinyMCE in Laravel</title>
+    <!-- Insert the blade containing the TinyMCE configuration and source script -->
+    <x-head.tinymce-config/>
+  </head>
+  <body>
+    <h1>TinyMCE in Laravel</h1>
+    <!-- Insert the blade containing the TinyMCE placeholder HTML element -->
+    <x-forms.tinymce-editor/>
+  </body>
+</html>
+----
 
 . Start the Laravel development server to verify that {productname} loads on the page or view, such as running the following command and opening the page on the localhost.
 +
-`sh
+[source, sh]
+----
  php artisan serve
-`
+----
 
 include::partial$misc/quickstart-next-steps.adoc[]

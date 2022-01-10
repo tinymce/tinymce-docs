@@ -72,15 +72,17 @@ ____
 IMPORTANT: These directives will prevent all content loading from external sources.
 To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
 
-`html
+[source, html]
+----
 media-src 'self' *.youtube.com;
-`
+----
 
 To allow content from any source, use the (*) wildcard. Allowing all sources (using *) negates the security policy for the source type. For example:
 
-`html
+[source, html]
+----
 media-src *;
-`
+----
 
 For information on Content Security Policies, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP[MDN Web Docs - Content Security Policy (CSP)].
 ____

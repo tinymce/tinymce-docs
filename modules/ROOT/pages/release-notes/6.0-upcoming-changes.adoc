@@ -21,12 +21,13 @@ NOTE: {companyname} recommends switching to a newer option or API where possible
 
 === Example: Using `deprecation_warnings`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   deprecation_warnings: false
 });
-`
+----
 
 == Themes
 

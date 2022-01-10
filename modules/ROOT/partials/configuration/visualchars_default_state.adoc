@@ -10,7 +10,8 @@ This option enables specifying the default state of the Visual Characters plugin
 
 ==== Example: Using `visualchars_default_state`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
   plugins: 'visualchars',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'visualchars',
   visualchars_default_state: true
 });
-`
+----

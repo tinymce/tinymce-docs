@@ -95,7 +95,8 @@ JAVA_OPTS=" -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.enc
 
 Edit the start.ini file to read as follows:
 
-`+sh
+[source, sh]
+----
 #===========================================================
 # Jetty start.jar arguments
 # Each line of this file is prepended to the command line
@@ -103,7 +104,7 @@ Edit the start.ini file to read as follows:
 # java -jar start.jar [arg...]
 #===========================================================
 -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dephox.config.file=/config/file/location/application.conf
-+`
+----
 
 Restart the service and confirm the settings have been applied like so:
 

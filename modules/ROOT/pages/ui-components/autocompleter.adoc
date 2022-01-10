@@ -98,14 +98,15 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 | Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:{baseurl}/advanced/editor-icon-identifiers/[icon pack], a link:{baseurl}/advanced/creating-an-icon-pack/[custom icon pack], or an icon added using the link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[`addIcon` API].
 |===
 
-`js
+[source, js]
+----
 {
   type: 'autocompleteitem',
   value: 'John Doe',
   text: 'John Doe',
   icon: 'my_icon'
 }
-`
+----
 
 {% comment %} TODO: DOC-719 and TINY-6593: Move CardMenuItem/subitems specification to menuitems.md {% endcomment %}
 
@@ -134,14 +135,15 @@ The `CardMenuItem` allows customization of layout and content. This is done by c
 | Label of the item. Will be used for https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA[accessibility purposes].
 |===
 
-`js
+[source, js]
+----
 {
   type: 'cardmenuitem',
   value: 'John Doe',
   label: 'John Doe',
   items: [ ] // array of card items
 }
-`
+----
 
 ==== CardItems
 
@@ -180,7 +182,8 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | default: `middle` - vertical alignment of subitems
 |===
 
-`+js
+[source, js]
+----
 {
   type: 'cardcontainer',
   direction: 'horizontal',
@@ -188,7 +191,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
   valign: 'middle',
   items: [ ... ]
 }
-+`
+----
 
 ===== CardText
 
@@ -213,14 +216,15 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `font-style`.
 |===
 
-`js
+[source, js]
+----
 {
   type: 'cardtext',
   text: 'John Doe',
   name: 'my_autocompleter_cardtext',
   classes: ['my-cardtext-class']
 }
-`
+----
 
 ===== CardImage
 
@@ -245,14 +249,15 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `border-radius`.
 |===
 
-`js
+[source, js]
+----
 {
   type: 'cardimage',
   src: 'profile-picture.jpeg',
   alt: 'My alt text',
   classes: ['my-cardimage-class']
 }
-`
+----
 
 == API
 

@@ -13,7 +13,8 @@ include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 === Example of using the RtcClientConnected event
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
@@ -29,7 +30,7 @@ tinymce.init({
     });
   }
 })
-+`
+----
 
 == `RtcClientDisconnected`
 
@@ -41,7 +42,8 @@ include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 === Example of using the RtcClientDisconnected event
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'rtc',
@@ -57,4 +59,4 @@ tinymce.init({
     });
   }
 })
-+`
+----

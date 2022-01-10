@@ -10,7 +10,8 @@ This option enables you to force the Table Properties dialog to use HTML5/CSS3 s
 
 ==== Example: Using `table_style_by_css`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'table',
   table_style_by_css: false
 });
-`
+----

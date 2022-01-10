@@ -14,9 +14,10 @@ Also note that all event attributes are excluded by default since it's a bad pra
 
 === Example: Using `schema`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   schema: 'html5'
 });
-`
+----

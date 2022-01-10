@@ -10,7 +10,8 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 
 ==== Example: Using `media_filter_html`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'media',
@@ -18,4 +19,4 @@ tinymce.init({
   toolbar: 'media',
   media_filter_html: false
 });
-`
+----

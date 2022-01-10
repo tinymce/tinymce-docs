@@ -12,10 +12,11 @@ This option runs the spellchecker when the contents of the editor is loaded.
 
 ==== Example: Using `spellchecker_on_load`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_on_load: true
 });
-`
+----

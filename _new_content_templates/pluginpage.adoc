@@ -28,14 +28,15 @@ To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `plugi
 
 For example:
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: '<toolbar-button(s)>',
   an_essential_option: false
 });
-+`
+----
 
 {% comment %} Delete everything not require/relevant from this point on. {% endcomment%}
 

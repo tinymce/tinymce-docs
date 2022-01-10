@@ -9,19 +9,19 @@ Integration with AngularJS is currently done through https://github.com/angular-
 
 First, we create a directory for the project called "tinymce-angular-demo". After that, we run "bower init"in the new directory, this will set up a new empty bower project.
 
-`
+----
 $ mkdir tinymce-angular-demo
 $ cd tinymce-angular-demo
 $ bower init
-`
+----
 
 == 2. Installation of angular, ui-tinymce and tinymce
 
 We now install the angular-ui-tinymce package this will automatically install angular and {productname}.
 
-`
+----
 $ bower install angular-ui-tinymce --save
-`
+----
 
 == 3. Creating the demo.html file
 

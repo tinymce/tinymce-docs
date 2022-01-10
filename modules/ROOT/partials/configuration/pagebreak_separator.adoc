@@ -6,7 +6,8 @@
 
 ==== Example: Using `pagebreak_separator`
 
-`+js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pagebreak',
@@ -14,4 +15,4 @@ tinymce.init({
   toolbar: 'pagebreak',
   pagebreak_separator: '<!-- my page break -->'
 });
-+`
+----

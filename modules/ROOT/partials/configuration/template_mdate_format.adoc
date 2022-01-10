@@ -8,7 +8,8 @@ This option allows you to provide {productname} with a date/time format that all
 
 ==== Example: Using `template_mdate_format`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
@@ -19,7 +20,7 @@ tinymce.init({
     {title: 'Mdate', description: 'Mdate example', content: '<p class="mdate">This will be replaced with the date modified</p>'}
   ]
 });
-`
+----
 
 If the date modified is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
 

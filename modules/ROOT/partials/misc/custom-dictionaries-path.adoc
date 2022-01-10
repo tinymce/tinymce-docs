@@ -9,10 +9,11 @@ Requirements:
 
 Example:
 
-`conf
+[source, conf]
+----
 ephox {
   spelling {
     custom-dictionaries-path = "/opt/ephox/dictionaries"
   }
 }
-`
+----

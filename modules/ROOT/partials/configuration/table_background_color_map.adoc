@@ -12,7 +12,8 @@ The link:{baseurl}/configure/content-appearance/#custom_colors[custom color pick
 
 ==== Example: Using `table_background_color_map`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
@@ -24,4 +25,4 @@ tinymce.init({
     {title: 'Yellow', value: 'F1C40F'}
   ]
 });
-`
+----

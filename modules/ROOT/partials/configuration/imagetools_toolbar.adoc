@@ -17,11 +17,12 @@ The exact selection of buttons that will appear on the contextual toolbar can be
 
 ==== Example: Using `imagetools_toolbar`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
   plugins: 'image imagetools',
   imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions'
 });
-`
+----

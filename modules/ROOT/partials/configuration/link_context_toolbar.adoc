@@ -12,7 +12,8 @@ NOTE: This context toolbar is the same as the context toolbar mentioned in the <
 
 ==== Example: Using `link_context_toolbar`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
@@ -20,4 +21,4 @@ tinymce.init({
   toolbar: 'link',
   link_context_toolbar: true
 });
-`
+----

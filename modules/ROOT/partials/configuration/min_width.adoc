@@ -8,11 +8,12 @@ NOTE: This behavior is different from the link:{baseurl}/plugins/opensource/auto
 
 === Example: Using `min_width`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   min_width: 400
 });
-`
+----
 
 NOTE: By default the <<resize,`resize`>> handle does not allow horizontal dragging and giving this key a value will not result in an observable behavior.

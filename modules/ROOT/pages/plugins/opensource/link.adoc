@@ -15,14 +15,15 @@ The *link* plugin also includes a context menu and context toolbar. The context 
 
 == Basic setup
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
   menubar: 'insert',
   toolbar: 'link'
 });
-`
+----
 
 == Options
 

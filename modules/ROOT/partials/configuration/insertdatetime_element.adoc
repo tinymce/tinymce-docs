@@ -8,7 +8,8 @@ When this option is enabled HTML5 time elements gets generated when you insert d
 
 ==== Example: Using `insertdatetime_element`
 
-`js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
@@ -16,4 +17,4 @@ tinymce.init({
   toolbar: 'insertdatetime',
   insertdatetime_element: true
 });
-`
+----

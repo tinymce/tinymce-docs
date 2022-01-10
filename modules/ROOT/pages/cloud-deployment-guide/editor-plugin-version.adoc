@@ -9,9 +9,10 @@ Use the URL provided to specify the {productname} version when deploying via {cl
 
 The following example is the default for loading {productname} {productmajorversion} via {cloudname}. Substitute 'no-api-key' with your api key in the examples below.
 
-`html
+[source, html]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-`
+----
 
 This URL specifies the latest and quality assured release of {productname}.
 
@@ -33,9 +34,10 @@ This channel deploys the latest release of {productname} that has passed our qua
 
 ===== Example: Using the `{productmajorversion}` release channel
 
-`html
+[source, html]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-`
+----
 
 ==== {productmajorversion}-testing release channel
 
@@ -43,9 +45,10 @@ This channel deploys the current *release candidate* for the `{productmajorversi
 
 ===== Example: Using the `{productmajorversion}-testing` release channel
 
-`+html
+[source, html]
+----
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/tinymce.min.js" referrerpolicy="origin"></script>
-+`
+----
 
 ==== {productmajorversion}-dev release channel
 
@@ -53,9 +56,10 @@ This channel deploys nightly builds of {productname}. This channel includes the 
 
 ===== Example: Using the `{productmajorversion}-dev` release channel
 
-`+html
+[source, html]
+----
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin"></script>
-+`
+----
 
 == Specifying the version of premium plugins deployed from Tiny Cloud
 
@@ -143,9 +147,10 @@ Combine multiple plugin specifications using `&` in your query string. For examp
 
 Append `?mentions=2.2&powerpaste=5.5`, such as:
 
-`+html
+[source, html]
+----
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js?mentions=2.2&powerpaste=5.5" referrerpolicy="origin"></script>
-+`
+----
 
 === Specifying a self-hosted deployment of features/plugins
 
@@ -162,9 +167,10 @@ The following example:
 * Attempts to load `advcode` from the self-hosted installation.
 * Attempts to load all other premium plugins from those bundled with version `{productmajorversion}` of {productname}.
 
-`+html
+[source, html]
+----
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=2.2&powerpaste=5.5&advcode=sdk" referrerpolicy="origin"></script>
-+`
+----
 
 The disadvantage of `plugins.min.js`: to load only one plugin from the {cloudname} and the rest from a self-hosted deployment, *ALL* other plugins need to be added as query parameter with the version as `sdk`. When {cloudname} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from a self-hosted deployment, use `cloud-plugins.min.js`.
 
@@ -181,8 +187,9 @@ The following example:
 * Attempts to load `advcode` from the version bundled with version `{productmajorversion}` of {productname} because it doesn't specify a version.
 * Attempts to load all other premium plugins from the self-hosted installation.
 
-`+html
+[source, html]
+----
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions=2.2&powerpaste=5.5&advcode" referrerpolicy="origin"></script>
-+`
+----
 
 The disadvantage of `cloud-plugins.min.js`: every plugin to be loaded from {cloudname} must be added to the query parameter. When {cloudname} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from {cloudname}, use `plugins.min.js`.

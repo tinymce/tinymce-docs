@@ -1,10 +1,7 @@
----
-layout: default
-title: Getting started with Real-Time Collaboration (RTC)
-title_nav: Getting started with RTC
-description: Getting started with RTC
-keywords: rtc
----
+# Getting started with Real-Time Collaboration (RTC)
+:title_nav: Getting started with RTC
+:description: Getting started with RTC
+:keywords: rtc
 
 {% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}

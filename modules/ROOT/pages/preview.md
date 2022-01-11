@@ -1,11 +1,8 @@
----
-layout: default
-title: Preview plugin
-title_nav: Preview
-description: Shows a popup of the current content in read-only format.
-keywords: view preview
-controls: toolbar button, menu item
----
+# Preview plugin
+:title_nav: Preview
+:description: Shows a popup of the current content in read-only format.
+:keywords: view preview
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Preview" %}
 {% assign plugincode = "preview" %}

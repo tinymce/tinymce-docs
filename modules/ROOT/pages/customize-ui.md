@@ -1,10 +1,7 @@
----
-layout: default
-title: Customizing the editor UI
-title_nav: Customizing the UI
-description: Learn how to change the appearance of TinyMCE.
-keywords: themes skins statusbar
----
+# Customizing the editor UI
+:title_nav: Customizing the UI
+:description: Learn how to change the appearance of TinyMCE.
+:keywords: themes skins statusbar
 
 This section is about customizing {{site.productname}}'s user interface with skins, toolbar buttons, and manipulating the status bar.
 

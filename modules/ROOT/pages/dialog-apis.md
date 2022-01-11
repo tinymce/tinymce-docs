@@ -1,10 +1,7 @@
----
-layout: default
-title: APIs for custom dialogs
-title_nav: APIs
-description: APIs for custom TinyMCE dialogs
-keywords: dialog dialogapi api
----
+# APIs for custom dialogs
+:title_nav: APIs
+:description: APIs for custom TinyMCE dialogs
+:keywords: dialog dialogapi api
 
 When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the [dialog configuration options]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions).
 

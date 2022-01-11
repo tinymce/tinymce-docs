@@ -1,11 +1,8 @@
----
-layout: default
-title: Link plugin
-title_nav: Link
-description: Add hyperlinks to content.
-keywords: url urls insert edit link_default_target link_assume_external_targets link_class_list link_list link_target_list link_rel_list link_title
-controls: toolbar button, menu item
----
+# Link plugin
+:title_nav: Link
+:description: Add hyperlinks to content.
+:keywords: url urls insert edit link_default_target link_assume_external_targets link_class_list link_list link_target_list link_rel_list link_title
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Link" %}
 {% assign plugincode = "link" %}

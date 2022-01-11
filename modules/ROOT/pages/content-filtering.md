@@ -1,10 +1,7 @@
----
-layout: default
-title: Content filtering options
-title_nav: Content filtering
-description_short: Learn how to create clean, maintainable and readable content.
-description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
----
+# Content filtering options
+:title_nav: Content filtering
+:description_short: Learn how to create clean, maintainable and readable content.
+:description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
 
 {% include configuration/allow_conditional_comments.md %}
 

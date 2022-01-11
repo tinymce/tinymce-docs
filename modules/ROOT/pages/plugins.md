@@ -1,10 +1,7 @@
----
-layout: default
-title: Bundling TinyMCE plugins using module loading
-title_nav: Plugins
-description_short: Information on bundling plugins
-description: Information on bundling TinyMCE plugins using module loading
----
+# Bundling TinyMCE plugins using module loading
+:title_nav: Plugins
+:description_short: Information on bundling plugins
+:description: Information on bundling TinyMCE plugins using module loading
 {% assign editorcomponent = "plugin" %}
 {% include module-loading/bundling-ref-example.md %}
 {% assign editorcomponent = nil %}

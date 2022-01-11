@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom Group toolbar buttons
-title_nav: Group toolbar button
-description: Creating custom Group toolbar buttons for TinyMCE
-keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
----
+# Creating custom Group toolbar buttons
+:title_nav: Group toolbar button
+:description: Creating custom Group toolbar buttons for TinyMCE
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current [toolbar mode]({{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbarmode). For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
 

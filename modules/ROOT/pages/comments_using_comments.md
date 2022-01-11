@@ -1,10 +1,7 @@
----
-layout: default
-title: Using TinyMCE Comments
-title_nav: Using Comments
-description: How to add, edit, resolve, and remove comments in TinyMCE
-keywords: comments commenting tinycomments
----
+# Using TinyMCE Comments
+:title_nav: Using Comments
+:description: How to add, edit, resolve, and remove comments in TinyMCE
+:keywords: comments commenting tinycomments
 
 {% assign pluginname = "Comments" %}
 {% assign plugincode = "comments" %}

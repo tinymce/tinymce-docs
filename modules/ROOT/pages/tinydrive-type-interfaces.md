@@ -1,10 +1,7 @@
----
-layout: default
-title: Tiny Drive TypeScript interfaces
-title_nav: TypeScript interfaces
-description: List of all available Tiny Drive API interfaces.
-keywords: tinydrive configuration typescript
----
+# Tiny Drive TypeScript interfaces
+:title_nav: TypeScript interfaces
+:description: List of all available Tiny Drive API interfaces.
+:keywords: tinydrive configuration typescript
 
 {% assign pluginname = "Tiny Drive" %}
 {% assign plugincode = "tinydrive" %}

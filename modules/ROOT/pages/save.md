@@ -1,11 +1,8 @@
----
-layout: default
-title: Save plugin
-title_nav: Save
-description: Adds a save button to the TinyMCE toolbar.
-keywords: submit save_enablewhendirty save_oncancelcallback save_onsavecallback
-controls: toolbar button
----
+# Save plugin
+:title_nav: Save
+:description: Adds a save button to the TinyMCE toolbar.
+:keywords: submit save_enablewhendirty save_oncancelcallback save_onsavecallback
+:controls: toolbar button
 
 {% assign pluginname = "Save" %}
 {% assign plugincode = "save" %}

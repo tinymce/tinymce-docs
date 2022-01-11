@@ -1,10 +1,7 @@
----
-layout: default
-title: The TinyMCE Cross-Origin Resource Sharing guide
-title_nav: Cross-Origin Resource Sharing (CORS)
-description: Information and options related to using TinyMCE with Cross-Origin Resource Sharing (CORS)
-keywords: security cors
----
+# The TinyMCE Cross-Origin Resource Sharing guide
+:title_nav: Cross-Origin Resource Sharing (CORS)
+:description: Information and options related to using TinyMCE with Cross-Origin Resource Sharing (CORS)
+:keywords: security cors
 
 ## Cross-Origin Resource Sharing related options
 

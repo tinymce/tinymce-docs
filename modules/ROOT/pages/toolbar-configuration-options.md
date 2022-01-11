@@ -1,9 +1,6 @@
----
-layout: default
-title: Options for customizing the editor's toolbars
-title_nav: Options
-description: Information on options for customizing TinyMCE's toolbars
----
+# Options for customizing the editor's toolbars
+:title_nav: Options
+:description: Information on options for customizing TinyMCE's toolbars
 
 ## Basic toolbar configuration options
 

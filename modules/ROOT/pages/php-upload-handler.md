@@ -1,11 +1,8 @@
----
-layout: default
-title: PHP image upload handler
-title_nav: PHP image upload handler
-description_short: A server-side upload handler PHP script.
-description: A server-side upload handler PHP script suitable for TinyMCE.
-keywords: php_upload_handler php async image upload
----
+# PHP image upload handler
+:title_nav: PHP image upload handler
+:description_short: A server-side upload handler PHP script.
+:description: A server-side upload handler PHP script suitable for TinyMCE.
+:keywords: php_upload_handler php async image upload
 
 The following PHP script creates a server-side upload handler suitable for {{site.productname}}.
 

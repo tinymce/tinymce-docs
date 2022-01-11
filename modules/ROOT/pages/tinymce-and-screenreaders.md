@@ -1,11 +1,8 @@
----
-layout: default
-title: Accessible navigation guide
-title_nav: Accessibility Guide
-description_short: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
-description: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
-keywords: accessibility wai aria jaws nvda
----
+# Accessible navigation guide
+:title_nav: Accessibility Guide
+:description_short: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
+:description: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
+:keywords: accessibility wai aria jaws nvda
 
 {{site.productname}} is compatible with screen readers such as JAWS and NVDA as it follows the WAI-ARIA specification. Use [NVDA](http://www.nvaccess.org/) together with [Firefox](https://www.mozilla.org/en-US/firefox/products/) for the best Accessibility experience.
 

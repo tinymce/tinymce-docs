@@ -1,10 +1,7 @@
----
-layout: default
-title: Custom Nested menu items
-title_nav: Custom Nested menu items
-description: How to create custom Nested menu items.
-keywords: menu menuitem menuitems
----
+# Custom Nested menu items
+:title_nav: Custom Nested menu items
+:description: How to create custom Nested menu items.
+:keywords: menu menuitem menuitems
 
 A nested menu item is a menu item with a submenu. Registering a submenu this way allows it to be reused in menubar menus and toolbar button menus without having to define the submenu twice. The submenu can contain any combination of basic menu items and toggle menu items.
 

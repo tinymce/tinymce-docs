@@ -1,10 +1,7 @@
----
-layout: default
-title: Node.js
-title_nav: Node.js
-description: Node.js
-keywords: tinydrive node.js
----
+# Node.js
+:title_nav: Node.js
+:description: Node.js
+:keywords: tinydrive node.js
 
 ## Tiny Drive Node.js Starter Project
 

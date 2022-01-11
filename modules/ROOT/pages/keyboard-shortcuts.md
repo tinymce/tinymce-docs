@@ -1,11 +1,8 @@
----
-layout: default
-title: TinyMCE Keyboard shortcuts
-title_nav: TinyMCE Keyboard shortcuts
-description_short: Complete list of keyboard shortcuts.
-description: Complete list of keyboard shortcuts.
-keywords: keyboard shortcuts
----
+# TinyMCE Keyboard shortcuts
+:title_nav: TinyMCE Keyboard shortcuts
+:description_short: Complete list of keyboard shortcuts.
+:description: Complete list of keyboard shortcuts.
+:keywords: keyboard shortcuts
 
 ## Editor keyboard shortcuts
 

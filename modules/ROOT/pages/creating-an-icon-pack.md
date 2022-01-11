@@ -1,11 +1,8 @@
----
-layout: default
-title: Create an icon pack for TinyMCE
-title_nav: Create an icon pack
-description_short: Introducing icon pack creation.
-description: How to make your own icon pack.
-keywords: create creator skin icon
----
+# Create an icon pack for TinyMCE
+:title_nav: Create an icon pack
+:description_short: Introducing icon pack creation.
+:description: How to make your own icon pack.
+:keywords: create creator skin icon
 
 TinyMCE 6 introduced icon packs for customizing the editor icons.
 

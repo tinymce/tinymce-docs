@@ -1,10 +1,7 @@
----
-layout: default
-title: Specify editor & plugin versions
-description_short: Specifying editor and plugin versions for Tiny Cloud deployments.
-description: Specifying editor and plugin versions for Tiny Cloud deployments.
-keywords: tinymce cloud script textarea apiKey hybrid
----
+# Specify editor & plugin versions
+:description_short: Specifying editor and plugin versions for Tiny Cloud deployments.
+:description: Specifying editor and plugin versions for Tiny Cloud deployments.
+:keywords: tinymce cloud script textarea apiKey hybrid
 
 ## Specifying the TinyMCE editor version deployed from Cloud
 

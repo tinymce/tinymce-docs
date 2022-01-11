@@ -1,10 +1,7 @@
----
-layout: default
-title: Real-Time Collaboration (RTC) JWT Authentication Setup
-title_nav: JWT Authentication Setup
-description: Guide on how to setup JWT Authentication for RTC
-keywords: jwt authentication
----
+# Real-Time Collaboration (RTC) JWT Authentication Setup
+:title_nav: JWT Authentication Setup
+:description: Guide on how to setup JWT Authentication for RTC
+:keywords: jwt authentication
 
 {% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}

@@ -1,10 +1,7 @@
----
-layout: default
-title: Cloud deployment of editor & plugins
-description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
-description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
-keywords: tinymce cloud script textarea apiKey
----
+# Cloud deployment of editor & plugins
+:description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
+:description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
+:keywords: tinymce cloud script textarea apiKey
 
 {{site.cloudname}} is the easiest way to integrate {{site.productname}} and upgrade to premium plugins.
 

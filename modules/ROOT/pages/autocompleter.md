@@ -1,10 +1,7 @@
----
-layout: default
-title: Autocompleter
-title_nav: Autocompleter
-description: Add a custom autocompleter to TinyMCE 6.
-keywords: autocomplete
----
+# Autocompleter
+:title_nav: Autocompleter
+:description: Add a custom autocompleter to TinyMCE 6.
+:keywords: autocomplete
 
 ## Overview
 

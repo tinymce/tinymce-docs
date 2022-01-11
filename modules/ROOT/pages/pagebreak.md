@@ -1,11 +1,8 @@
----
-layout: default
-title: Page Break plugin
-title_nav: Page Break
-description: Add a page break.
-keywords: pagebreak insert pagebreak_separator pagebreak_split_block
-controls: toolbar button, menu item
----
+# Page Break plugin
+:title_nav: Page Break
+:description: Add a page break.
+:keywords: pagebreak insert pagebreak_separator pagebreak_split_block
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Page Break" %}
 {% assign plugincode = "pagebreak" %}

@@ -1,11 +1,8 @@
----
-layout: default
-title: Case Change
-title_nav: Case Change
-description: Change the case of text.
-keywords: case capitalization capitalize lowercase uppercase
-controls: toolbar button, menu item
----
+# Case Change
+:title_nav: Case Change
+:description: Change the case of text.
+:keywords: case capitalization capitalize lowercase uppercase
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Case Change" %}
 {% assign plugincode = "casechange" %}

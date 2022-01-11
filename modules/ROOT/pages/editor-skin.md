@@ -1,9 +1,6 @@
----
-layout: default
-title: TinyMCE Skin options
-title_nav: Skins
-description: Configure the editor's overall appearance.
----
+# TinyMCE Skin options
+:title_nav: Skins
+:description: Configure the editor's overall appearance.
 
 {% include misc/skin-or-skin_url.md %}
 

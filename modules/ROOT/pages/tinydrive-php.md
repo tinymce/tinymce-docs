@@ -1,10 +1,7 @@
----
-layout: default
-title: PHP
-title_nav: PHP
-description: PHP
-keywords: tinydrive PHP
----
+# PHP
+:title_nav: PHP
+:description: PHP
+:keywords: tinydrive PHP
 
 ## Tiny Drive PHP Starter Project
 

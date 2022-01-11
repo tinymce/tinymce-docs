@@ -1,10 +1,7 @@
----
-layout: default
-title: TinyMCE for touch-enabled and mobile devices
-title_nav: TinyMCE for mobile
-description: The TinyMCE rich text editing experience for mobile devices.
-keywords: mobile tablet
----
+# TinyMCE for touch-enabled and mobile devices
+:title_nav: TinyMCE for mobile
+:description: The TinyMCE rich text editing experience for mobile devices.
+:keywords: mobile tablet
 
 The mobile experience for {{site.productname}} is enabled by default and has the following differences when compared to the "desktop" experience:
 

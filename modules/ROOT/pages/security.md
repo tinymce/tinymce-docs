@@ -1,11 +1,8 @@
----
-layout: default
-title: Security guide
-title_nav: Security guide
-description_short: Security information for TinyMCE.
-description: Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users.
-keywords: security xss scripting vulnerability hack hacker csp mitigation protection protect
----
+# Security guide
+:title_nav: Security guide
+:description_short: Security information for TinyMCE.
+:description: Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users.
+:keywords: security xss scripting vulnerability hack hacker csp mitigation protection protect
 
 > **Note**: The following is _general_ security advice that may be relevant to a website or application using {{site.productname}}.
 

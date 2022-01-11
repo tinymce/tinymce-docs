@@ -1,10 +1,7 @@
----
-layout: default
-title: Custom Keyboard Shortcuts
-title_nav: Keyboard Shortcuts
-description: How-to add custom keyboard shortcuts to TinyMCE 6.
-keywords: shortcuts shortcut custom keyboard
----
+# Custom Keyboard Shortcuts
+:title_nav: Keyboard Shortcuts
+:description: How-to add custom keyboard shortcuts to TinyMCE 6.
+:keywords: shortcuts shortcut custom keyboard
 
 > **Important**: Adding a custom shortcut with a keyboard combination that conflicts with an existing {{site.productname}} or browser shortcut will override the existing shortcut.
 

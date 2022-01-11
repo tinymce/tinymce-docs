@@ -1,10 +1,7 @@
----
-layout: default
-title: Toolbar buttons
-title_nav: Toolbar buttons
-description: Add a custom buttons to the TinyMCE 6 toolbar.
-keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
----
+# Toolbar buttons
+:title_nav: Toolbar buttons
+:description: Add a custom buttons to the TinyMCE 6 toolbar.
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 ## Use cases
 

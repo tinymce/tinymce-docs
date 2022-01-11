@@ -1,10 +1,7 @@
----
-layout: default
-title: Context toolbar
-title_nav: Context toolbar
-description: Creating custom context toolbars for TinyMCE 6
-keywords: contexttoolbar context toolbar contexttoolbarapi
----
+# Context toolbar
+:title_nav: Context toolbar
+:description: Creating custom context toolbars for TinyMCE 6
+:keywords: contexttoolbar context toolbar contexttoolbarapi
 
 A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a [ContextForm]({{site.baseurl}}/how-to-guides/creating-custom-ui-components/contextform/). The buttons comes as a list of strings, where each string is a registered name of a button.
 

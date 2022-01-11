@@ -1,11 +1,8 @@
----
-layout: default
-title: Toolbar Buttons Available for TinyMCE
-title_nav: Available Toolbar Buttons
-description_short: Complete list of toolbar buttons available for the toolbar and quick toolbars.
-description: Complete list of toolbar buttons available for the toolbar and quick toolbars.
-keywords: toolbar button tool bar
----
+# Toolbar Buttons Available for TinyMCE
+:title_nav: Available Toolbar Buttons
+:description_short: Complete list of toolbar buttons available for the toolbar and quick toolbars.
+:description: Complete list of toolbar buttons available for the toolbar and quick toolbars.
+:keywords: toolbar button tool bar
 
 The following tables show all available toolbar items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
 

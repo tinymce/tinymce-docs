@@ -1,11 +1,8 @@
----
-layout: default
-title: Context Menu Items Available for TinyMCE
-title_nav: Available Context Menu Items
-description_short: Complete list of available context menu sections.
-description: Complete list of available context menu sections.
-keywords: contextmenu
----
+# Context Menu Items Available for TinyMCE
+:title_nav: Available Context Menu Items
+:description_short: Complete list of available context menu sections.
+:description: Complete list of available context menu sections.
+:keywords: contextmenu
 
 {% include misc/available-context-menu-sections.md %}
 

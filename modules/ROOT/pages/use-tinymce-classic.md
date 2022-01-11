@@ -1,10 +1,7 @@
----
-layout: default
-title: TinyMCE classic editing mode
-title_nav: Classic editing mode
-description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
-keywords: theme classic
----
+# TinyMCE classic editing mode
+:title_nav: Classic editing mode
+:description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
+:keywords: theme classic
 
 {{site.productname}} has three main integration modes:
 

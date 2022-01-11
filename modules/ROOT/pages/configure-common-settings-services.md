@@ -1,9 +1,6 @@
----
-layout: default
-title: Common server-side component settings
-title_nav: Optional common settings
-description: Settings that affect all premium server-side components.
----
+# Common server-side component settings
+:title_nav: Optional common settings
+:description: Settings that affect all premium server-side components.
 
 The following settings for the premium server-side components are optional and will apply to all services using the configuration file. These settings should be added to the `application.conf` file described in [Required configuration for the server-side components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure-server-side-services/configure-required-services/).
 

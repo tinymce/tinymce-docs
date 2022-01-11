@@ -1,10 +1,7 @@
----
-layout: default
-title: Word Count plugin
-title_nav: Word Count
-description: Show a word count in the TinyMCE status bar.
-keywords: wordcount
----
+# Word Count plugin
+:title_nav: Word Count
+:description: Show a word count in the TinyMCE status bar.
+:keywords: wordcount
 
 {% assign pluginname = "Word Count" %}
 {% assign plugincode = "wordcount" %}

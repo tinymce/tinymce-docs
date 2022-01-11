@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom dialogs
-title_nav: Creating custom dialogs
-description: An overview of TinyMCE dialogs and how to create custom dialogs.
-keywords: dialog dialogapi api
----
+# Creating custom dialogs
+:title_nav: Creating custom dialogs
+:description: An overview of TinyMCE dialogs and how to create custom dialogs.
+:keywords: dialog dialogapi api
 
 A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 

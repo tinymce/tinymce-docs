@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom Toggle toolbar buttons
-title_nav: Toggle toolbar button
-description: Creating custom Toggle toolbar buttons for TinyMCE
-keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
----
+# Creating custom Toggle toolbar buttons
+:title_nav: Toggle toolbar button
+:description: Creating custom Toggle toolbar buttons for TinyMCE
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the **Bold** button that is highlighted when the cursor is in a word with bold formatting.
 

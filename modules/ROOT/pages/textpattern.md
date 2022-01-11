@@ -1,10 +1,7 @@
----
-layout: default
-title: Text Pattern plugin
-title_nav: Text Pattern
-description: Matches special patterns in the text and applies formats or executed commands on these patterns.
-keywords: textpattern textpattern_patterns format cmd
----
+# Text Pattern plugin
+:title_nav: Text Pattern
+:description: Matches special patterns in the text and applies formats or executed commands on these patterns.
+:keywords: textpattern textpattern_patterns format cmd
 
 The Text Pattern plugin matches special patterns in the text and applies formats, replaces text, or executes commands on these patterns.
 

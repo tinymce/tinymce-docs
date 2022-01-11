@@ -1,10 +1,7 @@
----
-layout: default
-title: Getting started
-title_nav: Getting started
-description: Getting started with Tiny Drive
-keywords: tinydrive starter projects
----
+# Getting started
+:title_nav: Getting started
+:description: Getting started with Tiny Drive
+:keywords: tinydrive starter projects
 
 To get started with {{site.cloudfilemanager}}, try one of the starter projects below, or follow our guide on [Implementing Tiny Drive with your system](#implementingtinydrivewithyoursystem).
 

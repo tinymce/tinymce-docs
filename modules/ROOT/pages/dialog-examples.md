@@ -1,10 +1,7 @@
----
-layout: default
-title: Interactive examples of custom dialogs
-title_nav: Interactive examples
-description: Interactive examples of custom dialogs for TinyMCE.
-keywords: dialog dialogapi api
----
+# Interactive examples of custom dialogs
+:title_nav: Interactive examples
+:description: Interactive examples of custom dialogs for TinyMCE.
+:keywords: dialog dialogapi api
 
 ## Basic interactive dialog
 

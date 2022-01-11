@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom URL dialogs
-title_nav: URL dialogs
-description: URL dialogs are a TinyMCE UI component used to display an external page.
-keywords: dialog urldialog api
----
+# Creating custom URL dialogs
+:title_nav: URL dialogs
+:description: URL dialogs are a TinyMCE UI component used to display an external page.
+:keywords: dialog urldialog api
 
 A URL dialog is a special {{site.productname}} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {{site.productname}}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {{site.productname}} dialog would probably require a URL dialog.
 

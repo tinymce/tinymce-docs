@@ -1,9 +1,6 @@
----
-layout: default
-title: Use multiple TinyMCE instances in a single page
-title_nav: Multiple editors in a page
-keywords:
----
+# Use multiple TinyMCE instances in a single page
+:title_nav: Multiple editors in a page
+:keywords:
 
 This section is about adding multiple editor instances to a single page. This is a common use case when using {{site.productname}}'s `inline` mode. Breaking content into sections (e.g., titles, paragraphs) allows users to edit them individually.
 

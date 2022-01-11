@@ -1,10 +1,7 @@
----
-layout: default
-title: Bundling the User Interface localizations for TinyMCE
-title_nav: UI localizations
-description_short: Information on bundling User Interface localizations
-description: Information on bundling User Interface localizations
----
+# Bundling the User Interface localizations for TinyMCE
+:title_nav: UI localizations
+:description_short: Information on bundling User Interface localizations
+:description: Information on bundling User Interface localizations
 
 ## Overview
 

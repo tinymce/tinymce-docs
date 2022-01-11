@@ -1,10 +1,7 @@
----
-layout: default
-title: Supported TinyMCE functionality for Real-Time Collaboration
-title_nav: Supported Functionality
-description: Information on what TinyMCE functionality is, and is not, supported in Real-Time Collaboration
-keywords: rtc support functionality
----
+# Supported TinyMCE functionality for Real-Time Collaboration
+:title_nav: Supported Functionality
+:description: Information on what TinyMCE functionality is, and is not, supported in Real-Time Collaboration
+:keywords: rtc support functionality
 
 ## Browser support
 

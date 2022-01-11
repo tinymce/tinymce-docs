@@ -1,10 +1,7 @@
----
-layout: default
-title: Custom Basic menu items
-title_nav: Custom Basic menu items
-description: How to create custom basic menu items.
-keywords: menu menuitem menuitems
----
+# Custom Basic menu items
+:title_nav: Custom Basic menu items
+:description: How to create custom basic menu items.
+:keywords: menu menuitem menuitems
 
 A basic menu item triggers its `onAction` function when clicked.
 

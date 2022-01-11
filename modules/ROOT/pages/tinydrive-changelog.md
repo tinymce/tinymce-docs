@@ -1,11 +1,8 @@
----
-layout: default
-title: Tiny Drive Changelog
-title_nav: Changelog
-description: The history of Tiny Drive releases.
-keywords: changelog
+# Tiny Drive Changelog
+:title_nav: Changelog
+:description: The history of Tiny Drive releases.
+:keywords: changelog
 class: changelog
----
 
 ## 1.4.1 - 2021-05-26
 

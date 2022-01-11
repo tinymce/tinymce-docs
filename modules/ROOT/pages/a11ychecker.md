@@ -1,10 +1,7 @@
----
-layout: default
-title: Accessibility Checker plugin
-title_nav: Accessibility Checker
-description: Checks the contents of the editor for WCAG & Section 508 accessibility problems.
-keywords: a11y accessibility WCAG
----
+# Accessibility Checker plugin
+:title_nav: Accessibility Checker
+:description: Checks the contents of the editor for WCAG & Section 508 accessibility problems.
+:keywords: a11y accessibility WCAG
 
 {% assign pluginname = 'Accessibility Checker' %}
 {% assign plugincode = "a11ychecker" %}

@@ -1,11 +1,8 @@
----
-layout: default
-title: Create a plugin for TinyMCE
-title_nav: Create a plugin
-description_short: Introducing plugin creation, with an example.
-description: A short introduction to creating plugins for TinyMCE along with an example plugin.
-keywords: plugin plugin.js plugin.min.js tinymce.js
----
+# Create a plugin for TinyMCE
+:title_nav: Create a plugin
+:description_short: Introducing plugin creation, with an example.
+:description: A short introduction to creating plugins for TinyMCE along with an example plugin.
+:keywords: plugin plugin.js plugin.min.js tinymce.js
 
 {{site.productname}} is designed to be easily extended by custom plugins; with APIs for registering custom plugins, and creating and localizing custom UI.
 

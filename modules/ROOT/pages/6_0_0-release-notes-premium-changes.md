@@ -1,10 +1,7 @@
----
-layout: default
-title: Accompanying premium feature changes
-title_nav: Premium Features
-description: Premium feature changes accompanying TinyMCE 6.0
-keywords: releasenotes premium bugfixes
----
+# Accompanying premium feature changes
+:title_nav: Premium Features
+:description: Premium feature changes accompanying TinyMCE 6.0
+:keywords: releasenotes premium bugfixes
 
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)

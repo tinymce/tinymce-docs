@@ -1,11 +1,8 @@
----
-layout: default
-title: Nonbreaking Space plugin
-title_nav: Nonbreaking Space
-description: Insert a nonbreaking space.
-keywords: nonbreaking nonbreaking_force_tab insert
-controls: toolbar button, menu item
----
+# Nonbreaking Space plugin
+:title_nav: Nonbreaking Space
+:description: Insert a nonbreaking space.
+:keywords: nonbreaking nonbreaking_force_tab insert
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Nonbreaking Space" %}
 {% assign plugincode = "nonbreaking" %}

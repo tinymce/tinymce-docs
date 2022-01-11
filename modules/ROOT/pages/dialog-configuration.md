@@ -1,10 +1,7 @@
----
-layout: default
-title: Configuring custom dialogs
-title_nav: Basic configuration
-description: How to create a basic dialog for TinyMCE.
-keywords: dialog dialogapi api
----
+# Configuring custom dialogs
+:title_nav: Basic configuration
+:description: How to create a basic dialog for TinyMCE.
+:keywords: dialog dialogapi api
 
 A dialog configuration has three main parts to match the three main parts of the dialog's UI:
 

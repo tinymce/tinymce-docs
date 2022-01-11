@@ -1,10 +1,7 @@
----
-layout: default
-title: Overview
-title_nav: Overview
-description: Release notes overview for TinyMCE 6.0
-keywords: releasenotes new changes bugfixes
----
+# Overview
+:title_nav: Overview
+:description: Release notes overview for TinyMCE 6.0
+:keywords: releasenotes new changes bugfixes
 
 {% include /misc/admon_releasenotes_for_stable.md %}
 

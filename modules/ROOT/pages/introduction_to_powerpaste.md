@@ -1,10 +1,7 @@
----
-layout: default
-title: Introduction to PowerPaste
-title_nav: Introduction
-description: The PowerPaste plugin automatically cleans up content from Microsoft Word, Microsoft Excel, Google Docs, and HTML sources.
-keywords: enterprise powerpaste power microsoft word excel google docs
----
+# Introduction to PowerPaste
+:title_nav: Introduction
+:description: The PowerPaste plugin automatically cleans up content from Microsoft Word, Microsoft Excel, Google Docs, and HTML sources.
+:keywords: enterprise powerpaste power microsoft word excel google docs
 
 {% assign pluginname = "PowerPaste" %}
 {% assign plugincode = "powerpaste" %}

@@ -1,10 +1,7 @@
----
-layout: default
-title: New features, enhancements, and changes for TinyMCE 6.0 core and core plugins
-title_nav: Core improvements
-description: New features, enhancements, and functionality changes for TinyMCE 6.0
-keywords: releasenotes bugfixes
----
+# New features, enhancements, and changes for TinyMCE 6.0 core and core plugins
+:title_nav: Core improvements
+:description: New features, enhancements, and functionality changes for TinyMCE 6.0
+:keywords: releasenotes bugfixes
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)

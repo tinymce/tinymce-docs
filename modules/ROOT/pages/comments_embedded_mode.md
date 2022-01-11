@@ -1,10 +1,7 @@
----
-layout: default
-title: Configuring the Comments plugin in embedded mode
-title_nav: Embedded mode
-description: Information on configuring the Comments plugin in embedded mode
-keywords: comments commenting tinycomments embedded mode
----
+# Configuring the Comments plugin in embedded mode
+:title_nav: Embedded mode
+:description: Information on configuring the Comments plugin in embedded mode
+:keywords: comments commenting tinycomments embedded mode
 
 {% assign pluginname = "Comments" %}
 {% assign plugincode = "comments" %}

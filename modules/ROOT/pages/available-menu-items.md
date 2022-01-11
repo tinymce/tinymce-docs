@@ -1,11 +1,8 @@
----
-layout: default
-title: Menu Items Available for TinyMCE
-title_nav: Available Menu Items
-description_short: Complete list of menu items available for the menu bar and context menus.
-description: Complete list of menu items available for the menu bar and context menus.
-keywords: menuitems menu menubar
----
+# Menu Items Available for TinyMCE
+:title_nav: Available Menu Items
+:description_short: Complete list of menu items available for the menu bar and context menus.
+:description: Complete list of menu items available for the menu bar and context menus.
+:keywords: menuitems menu menubar
 
 The following tables show all available menu items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
 

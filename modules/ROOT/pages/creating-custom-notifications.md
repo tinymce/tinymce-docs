@@ -1,11 +1,8 @@
----
-layout: default
-title: Create custom notifications
-title_nav: Notifications
-description_short: Learn how to make custom notifications.
-description: Learn how to make custom dialogs with NotificationManager.
-keywords: custom notification notifications cdn notificationmanager
----
+# Create custom notifications
+:title_nav: Notifications
+:description_short: Learn how to make custom notifications.
+:description: Learn how to make custom dialogs with NotificationManager.
+:keywords: custom notification notifications cdn notificationmanager
 
 {{site.productname}} can display customized notifications.
 

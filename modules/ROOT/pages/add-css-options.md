@@ -1,9 +1,6 @@
----
-layout: default
-title: Adding or changing the editor content CSS
-title_nav: Add CSS
-description: Options for changing the editor content CSS.
----
+# Adding or changing the editor content CSS
+:title_nav: Add CSS
+:description: Options for changing the editor content CSS.
 
 ## Add CSS and styles to the editor
 

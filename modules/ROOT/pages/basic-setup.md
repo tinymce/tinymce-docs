@@ -1,11 +1,8 @@
----
-layout: default
-title: Basic setup
-title_nav: Basic setup
-description_short: The three most important configuration settings, with examples.
-description: TinyMCE provides a range of configuration options that allow you to integrate it into your application.
-keywords: selector plugin toolbar configuration configure
----
+# Basic setup
+:title_nav: Basic setup
+:description_short: The three most important configuration settings, with examples.
+:description: TinyMCE provides a range of configuration options that allow you to integrate it into your application.
+:keywords: selector plugin toolbar configuration configure
 
 This introduction to {{site.productname}} details the options used in traditional form-based layouts, useful information for creating streamlined user experiences, and examples of using {{site.productname}} as an inline editor.
 

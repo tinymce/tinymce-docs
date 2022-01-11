@@ -1,10 +1,7 @@
----
-layout: default
-title: The TinyMCE Content Security Policy guide
-title_nav: Content Security Policies (CSP)
-description: Information and options related to using TinyMCE with a Content Security Policy (CSP)
-keywords: security csp
----
+# The TinyMCE Content Security Policy guide
+:title_nav: Content Security Policies (CSP)
+:description: Information and options related to using TinyMCE with a Content Security Policy (CSP)
+:keywords: security csp
 
 {% include misc/general-csp.md %}
 

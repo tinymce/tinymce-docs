@@ -1,9 +1,6 @@
----
-layout: default
-title: Check spelling in TinyMCE
-title_nav: Spell checking
-keywords: spell checker spelling browser_spellcheck gecko_spellcheck
----
+# Check spelling in TinyMCE
+:title_nav: Spell checking
+:keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 {{site.productname}} provides several options to bring spell checking capabilities to your users.
 
 ## Browser-based spell checking

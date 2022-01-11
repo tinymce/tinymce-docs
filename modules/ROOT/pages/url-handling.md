@@ -1,10 +1,7 @@
----
-layout: default
-title: URL handling options
-title_nav: URL handling options
-description: These settings affect the way URLs are handled by the editor.
-keywords: url urls relative absolute domain document_base_url
----
+# URL handling options
+:title_nav: URL handling options
+:description: These settings affect the way URLs are handled by the editor.
+:keywords: url urls relative absolute domain document_base_url
 
 {% include misc/url-handling.md %}
 

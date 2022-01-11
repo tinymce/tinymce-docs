@@ -1,9 +1,6 @@
----
-layout: default
-title: Options for customizing the editor's menus
-title_nav: Options
-description: Information on options for customizing TinyMCE's menus
----
+# Options for customizing the editor's menus
+:title_nav: Options
+:description: Information on options for customizing TinyMCE's menus
 
 ## Basic menu configuration options
 

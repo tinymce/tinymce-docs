@@ -1,10 +1,7 @@
----
-layout: default
-title: Autolink plugin
-title_nav: Autolink
-description: Automatically create hyperlinks.
-keywords: link url urls
----
+# Autolink plugin
+:title_nav: Autolink
+:description: Automatically create hyperlinks.
+:keywords: link url urls
 
 The Autolink plugin automatically creates hyperlinks when a user types a valid, complete URL. For example `www.example.com` is converted to `http://www.example.com`.
 

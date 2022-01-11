@@ -1,11 +1,8 @@
----
-layout: default
-title: Autoresize plugin
-title_nav: Autoresize
-description_short:
-description: Automatically resize TinyMCE to fit content.
-keywords: height width max_height min_height autoresize_on_init autoresize_overflow_padding autoresize_overflow_padding
----
+# Autoresize plugin
+:title_nav: Autoresize
+:description_short:
+:description: Automatically resize TinyMCE to fit content.
+:keywords: height width max_height min_height autoresize_on_init autoresize_overflow_padding autoresize_overflow_padding
 
 {% assign pluginname = "Autoresize" %}
 

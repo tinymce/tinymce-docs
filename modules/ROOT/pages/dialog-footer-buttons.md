@@ -1,10 +1,7 @@
----
-layout: default
-title: Custom dialog footer buttons
-title_nav: Footer buttons
-description: Reference for adding footer buttons to custom TinyMCE dialogs.
-keywords: dialog dialogapi
----
+# Custom dialog footer buttons
+:title_nav: Footer buttons
+:description: Reference for adding footer buttons to custom TinyMCE dialogs.
+:keywords: dialog dialogapi
 
 A **button** is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/customize-ui/#skins). Menu buttons will open a menu with more options when clicked, instead of performing an action.
 

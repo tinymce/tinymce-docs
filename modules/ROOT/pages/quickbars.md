@@ -1,10 +1,7 @@
----
-layout: default
-title: Quick Toolbars plugin
-title_nav: Quick Toolbars
-description: User interface controls to create content faster.
-keywords: plugin inlite quickbar
----
+# Quick Toolbars plugin
+:title_nav: Quick Toolbars
+:description: User interface controls to create content faster.
+:keywords: plugin inlite quickbar
 
 {% assign pluginname = "Quick Toolbars" %}
 {% assign plugincode = "quickbars" %}

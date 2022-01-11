@@ -1,10 +1,7 @@
----
-layout: default
-title: Introduction to the Tiny Drive plugin APIs
-title_nav: Introduction to the plugin APIs
-description: Overview of the Tiny Drive plugin APIs
-keywords: rtc configuration
----
+# Introduction to the Tiny Drive plugin APIs
+:title_nav: Introduction to the plugin APIs
+:description: Overview of the Tiny Drive plugin APIs
+:keywords: rtc configuration
 
 The {{site.cloudfilemanager}} {{site.productname}} plugin includes APIs to provide access to {{site.cloudfilemanager}} from your custom plugins or {{site.productname}} specific integration code. These APIs are available though the `editor.plugins.tinydrive` property.
 

@@ -1,10 +1,7 @@
----
-layout: default
-title: Anchor plugin
-title_nav: Anchor
-description: Insert anchors (sometimes referred to as a bookmarks).
-controls: toolbar button, menu item
----
+# Anchor plugin
+:title_nav: Anchor
+:description: Insert anchors (sometimes referred to as a bookmarks).
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Anchor" %}
 {% assign plugincode = "anchor" %}

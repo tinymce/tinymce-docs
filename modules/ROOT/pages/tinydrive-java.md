@@ -1,10 +1,7 @@
----
-layout: default
-title: Java Spring
-title_nav: Java Spring
-description: Java Spring
-keywords: tinydrive java spring
----
+# Java Spring
+:title_nav: Java Spring
+:description: Java Spring
+:keywords: tinydrive java spring
 
 ## Tiny Drive Java Spring Starter Project
 

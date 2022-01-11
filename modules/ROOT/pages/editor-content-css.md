@@ -1,10 +1,7 @@
----
-layout: default
-title: CSS for rendering TinyMCE content outside the editor
-title_nav: CSS for rendering content
-description: CSS for rendering TinyMCE content outside the editor, such as on a webpage.
-keywords: css content_css
----
+# CSS for rendering TinyMCE content outside the editor
+:title_nav: CSS for rendering content
+:description: CSS for rendering TinyMCE content outside the editor, such as on a webpage.
+:keywords: css content_css
 
 The following content styles (CSS) are added to the editor when the relevent plugins are enabled. These are in addition to the styles added by the `default` content CSS. For details on the default CSS, see: [the `content_css` option]({{site.baseurl}}/content/add-css-options/#content_css).
 

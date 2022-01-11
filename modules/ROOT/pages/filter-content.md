@@ -1,9 +1,6 @@
----
-layout: default
-title: Filtering TinyMCE content
-title_nav: Content filtering
-description: Learn how to create clean, maintainable and readable content.
----
+# Filtering TinyMCE content
+:title_nav: Content filtering
+:description: Learn how to create clean, maintainable and readable content.
 
 {{site.productname}} has comprehensive content filtering capabilities that change the way the editor handles the input and output of content. This capability ensures content is clean, maintainable, and readable.
 

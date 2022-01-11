@@ -1,9 +1,6 @@
----
-layout: default
-title: Server-side component installation
-description: Server-side components for premium plugins like spelling as-you-type.
-keywords: enterprise tinymcespellchecker spell check checker pro imagetools server
----
+# Server-side component installation
+:description: Server-side components for premium plugins like spelling as-you-type.
+:keywords: enterprise tinymcespellchecker spell check checker pro imagetools server
 
 Some {{site.productname}} Enterprise features require a server-side component. If you're using the {{site.cloudname}} solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 

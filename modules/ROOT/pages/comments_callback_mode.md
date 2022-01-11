@@ -1,10 +1,7 @@
----
-layout: default
-title: Configuring the Comments plugin in callback mode
-title_nav: Callback mode
-description: Information on configuring the Comments plugin in callback mode
-keywords: comments commenting tinycomments callback
----
+# Configuring the Comments plugin in callback mode
+:title_nav: Callback mode
+:description: Information on configuring the Comments plugin in callback mode
+:keywords: comments commenting tinycomments callback
 
 {% assign pluginname = "Comments" %}
 {% assign plugincode = "comments" %}

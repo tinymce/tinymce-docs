@@ -1,10 +1,7 @@
----
-layout: default
-title: Export plugin
-title_nav: Export
-description: Export content from TinyMCE, into various formats.
-keywords: plugin export pdf
----
+# Export plugin
+:title_nav: Export
+:description: Export content from TinyMCE, into various formats.
+:keywords: plugin export pdf
 
 {% assign pluginname = "Export" %}
 {% assign plugincode = "export" %}

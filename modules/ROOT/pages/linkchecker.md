@@ -1,10 +1,7 @@
----
-layout: default
-title: Link Checker plugin
-title_nav: Link Checker
-description: Validate links, as you type.
-keywords: url urls link linkchecker_service_url linkchecker_content_css
----
+# Link Checker plugin
+:title_nav: Link Checker
+:description: Validate links, as you type.
+:keywords: url urls link linkchecker_service_url linkchecker_content_css
 
 {% assign pluginname = 'Link Checker' %}
 {% assign plugincode = 'linkchecker' %}

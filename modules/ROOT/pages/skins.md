@@ -1,10 +1,7 @@
----
-layout: default
-title: Bundling TinyMCE skins using module loading
-title_nav: Skins
-description_short: Information on bundling TinyMCE skins
-description: Information on bundling TinyMCE skins using module loading
----
+# Bundling TinyMCE skins using module loading
+:title_nav: Skins
+:description_short: Information on bundling TinyMCE skins
+:description: Information on bundling TinyMCE skins using module loading
 {% assign editorcomponent = "skin" %}
 {% include module-loading/bundling-ref-example.md %}
 {% assign editorcomponent = nil %}

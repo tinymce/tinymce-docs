@@ -1,10 +1,7 @@
----
-layout: default
-title: Required Real-Time Collaboration configuration options
-title_nav: Required configuration options
-description: List of all required RTC configuration options.
-keywords: rtc configuration
----
+# Required Real-Time Collaboration configuration options
+:title_nav: Required configuration options
+:description: List of all required RTC configuration options.
+:keywords: rtc configuration
 
 {% assign pluginname = "Real-Time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}

@@ -1,11 +1,8 @@
----
-layout: default
-title: Autosave plugin
-title_nav: Autosave
-description: Automatically save content in your local browser.
-controls: toolbar button, menu item
-keywords: autosave_ask_before_unload autosave_interval autosave_prefix autosave_prefix autosave_restore_when_empty autosave_retention
----
+# Autosave plugin
+:title_nav: Autosave
+:description: Automatically save content in your local browser.
+:controls: toolbar button, menu item
+:keywords: autosave_ask_before_unload autosave_interval autosave_prefix autosave_prefix autosave_restore_when_empty autosave_retention
 
 {% assign pluginname = "Autosave" %}
 {% assign plugincode = "autosave" %}

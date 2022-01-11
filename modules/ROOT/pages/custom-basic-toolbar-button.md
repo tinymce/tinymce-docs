@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom Basic toolbar buttons
-title_nav: Basic toolbar button
-description: Creating custom Basic toolbar buttons for TinyMCE
-keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
----
+# Creating custom Basic toolbar buttons
+:title_nav: Basic toolbar button
+:description: Creating custom Basic toolbar buttons for TinyMCE
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A basic button triggers its `onAction` function when clicked.
 

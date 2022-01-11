@@ -1,10 +1,7 @@
----
-layout: default
-title: Key editor options for adding TinyMCE to an application
-title_nav: Integration options
-description: Key editor options for integrating TinyMCE to an application
-keywords:
----
+# Key editor options for adding TinyMCE to an application
+:title_nav: Integration options
+:description: Key editor options for integrating TinyMCE to an application
+:keywords:
 
 ## Target location for {{site.productname}}
 

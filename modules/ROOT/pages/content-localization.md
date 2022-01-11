@@ -1,10 +1,7 @@
----
-layout: default
-title: Content localization options
-title_nav: Localization
-description_short: Localize TinyMCE for your language, including directionality.
-description: These settings configure TinyMCE's language capabilities, including right-to-left support.
----
+# Content localization options
+:title_nav: Localization
+:description_short: Localize TinyMCE for your language, including directionality.
+:description: These settings configure TinyMCE's language capabilities, including right-to-left support.
 
 ## Setting the language on content
 

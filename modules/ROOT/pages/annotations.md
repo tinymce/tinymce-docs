@@ -1,9 +1,6 @@
----
-layout: default
-title: Using the Annotations API
-description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
-keywords: annotation annotations annotator
----
+# Using the Annotations API
+:description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
+:keywords: annotation annotations annotator
 
 The {{site.productname}} Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the {{site.productname}} core and functions in the same way as the formatting APIs in {{site.productname}} core.
 

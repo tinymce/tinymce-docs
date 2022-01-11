@@ -1,10 +1,7 @@
----
-layout: default
-title: WordPress integration
-title_nav: WordPress
-description: Add TinyMCE to WordPress
-keywords: integration integrate wordpress advanced
----
+# WordPress integration
+:title_nav: WordPress
+:description: Add TinyMCE to WordPress
+:keywords: integration integrate wordpress advanced
 
 {% include /misc/admon_third_party_integration.md %}
 

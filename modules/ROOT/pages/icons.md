@@ -1,10 +1,7 @@
----
-layout: default
-title: Bundling TinyMCE icon packs using module loading
-title_nav: Icons
-description_short: Information on bundling icon packs
-description: Information on bundling TinyMCE icon packs using module loading
----
+# Bundling TinyMCE icon packs using module loading
+:title_nav: Icons
+:description_short: Information on bundling icon packs
+:description: Information on bundling TinyMCE icon packs using module loading
 
 {% assign editorcomponent = "icon pack" %}
 {% include module-loading/bundling-ref-example.md %}

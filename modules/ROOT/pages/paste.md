@@ -1,11 +1,8 @@
----
-layout: default
-title: Paste plugin
-title_nav: Paste
-description: Standard version of features for copying-and-pasting content from Microsoft Word.
-keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit
-controls: toolbar button, menu item
----
+# Paste plugin
+:title_nav: Paste
+:description: Standard version of features for copying-and-pasting content from Microsoft Word.
+:keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Paste" %}
 {% assign plugincode = "paste" %}

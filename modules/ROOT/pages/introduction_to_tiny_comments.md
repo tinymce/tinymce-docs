@@ -1,10 +1,7 @@
----
-layout: default
-title: Introduction to Tiny Comments
-title_nav: Introduction
-description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
-keywords: comments commenting tinycomments
----
+# Introduction to Tiny Comments
+:title_nav: Introduction
+:description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
+:keywords: comments commenting tinycomments
 
 {% assign pluginname = "Comments" %}
 {% assign plugincode = "comments" %}

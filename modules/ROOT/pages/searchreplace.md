@@ -1,11 +1,8 @@
----
-layout: default
-title: Search and Replace plugin
-title_nav: Search and Replace
-description: Find and replace content in TinyMCE.
-keywords: searchreplace edit
-controls: toolbar button, menu item
----
+# Search and Replace plugin
+:title_nav: Search and Replace
+:description: Find and replace content in TinyMCE.
+:keywords: searchreplace edit
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Search and Replace" %}
 {% assign plugincode = "searchreplace" %}

@@ -1,10 +1,7 @@
----
-layout: default
-title: Add Hunspell dictionaries to Spell Checker Pro
-title_nav: Spelling service - Using Hunspell dictionaries
-description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker Pro.
-keywords: enterprise tinymcespellchecker hunspell spell check checker pro server configuration configure
----
+# Add Hunspell dictionaries to Spell Checker Pro
+:title_nav: Spelling service - Using Hunspell dictionaries
+:description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker Pro.
+:keywords: enterprise tinymcespellchecker hunspell spell check checker pro server configuration configure
 
 Spell Checker Pro for {{site.productname}} includes support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {{site.productname}} Spell Checker Pro. {{site.companyname}} provides downloadable bundles that have the required structure.
 

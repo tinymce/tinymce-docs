@@ -1,11 +1,8 @@
----
-layout: default
-title: Work with plugins to extend TinyMCE
-title_nav: Using plugins to extend TinyMCE
-description_short: Learn about TinyMCE's plugin functionality.
-description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
-keywords: plugin
----
+# Work with plugins to extend TinyMCE
+:title_nav: Using plugins to extend TinyMCE
+:description_short: Learn about TinyMCE's plugin functionality.
+:description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
+:keywords: plugin
 
 For most developers, the real power of {{site.productname}}'s functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins-ref/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{site.baseurl}}/plugins-ref/opensource/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{site.baseurl}}/plugins-ref/opensource/code/) plugin adds entirely new functionality.
 

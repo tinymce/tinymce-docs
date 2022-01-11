@@ -1,11 +1,8 @@
----
-layout: default
-title: Code Sample plugin
-title_nav: Code Sample
-description: Insert and embed syntax highlighted code snippets.
-keywords: syntax highlight codesample code contenteditable codesample_languages
-controls: toolbar button
----
+# Code Sample plugin
+:title_nav: Code Sample
+:description: Insert and embed syntax highlighted code snippets.
+:keywords: syntax highlight codesample code contenteditable codesample_languages
+:controls: toolbar button
 
 {% assign pluginname = "Code Sample" %}
 {% assign plugincode = "codesample" %}

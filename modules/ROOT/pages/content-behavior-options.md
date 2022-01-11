@@ -1,9 +1,6 @@
----
-layout: default
-title: Editor content behaviors
-title_nav: Behaviors
-description: Options for changing the behavior of editor content.
----
+# Editor content behaviors
+:title_nav: Behaviors
+:description: Options for changing the behavior of editor content.
 
 {% include configuration/custom_undo_redo_levels.md %}
 

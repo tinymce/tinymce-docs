@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom Split toolbar buttons
-title_nav: Split toolbar button
-description: Creating custom Split toolbar buttons for TinyMCE
-keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
----
+# Creating custom Split toolbar buttons
+:title_nav: Split toolbar button
+:description: Creating custom Split toolbar buttons for TinyMCE
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A split button contains a basic button and a menu button, wrapped up into one toolbar item. Clicking the menu button section opens a dropdown list. The basic button section and the menu items can be configured to trigger different actions when clicked.
 

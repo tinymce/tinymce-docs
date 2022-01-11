@@ -1,9 +1,6 @@
----
-layout: default
-title: Required configuration for the server-side components
-title_nav: Required configuration
-description: Configuration options for premium server-side components.
----
+# Required configuration for the server-side components
+:title_nav: Required configuration
+:description: Configuration options for premium server-side components.
 
 ## Creating a configuration file
 

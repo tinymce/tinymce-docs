@@ -1,10 +1,7 @@
----
-layout: default
-title: Tiny Skins and Icon Packs
-title_nav: Tiny Skins and Icon Packs
-description: Quickly give TinyMCE a new look.
-keywords: skin skins icon icons material bootstrap customize theme
----
+# Tiny Skins and Icon Packs
+:title_nav: Tiny Skins and Icon Packs
+:description: Quickly give TinyMCE a new look.
+:keywords: skin skins icon icons material bootstrap customize theme
 
 The {{site.prem_skins_icons}} lets you quickly give {{site.productname}} a new look. Just choose one of our pre-made skins and icon packs.
 

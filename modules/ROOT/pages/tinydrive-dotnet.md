@@ -1,10 +1,7 @@
----
-layout: default
-title: .Net Core
-title_nav: .Net Core
-description: .Net Core
-keywords: tinydrive .Net Core
----
+# .Net Core
+:title_nav: .Net Core
+:description: .Net Core
+:keywords: tinydrive .Net Core
 
 ## Tiny Drive .NET MVC Starter Project
 

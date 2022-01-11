@@ -1,10 +1,7 @@
----
-layout: default
-title: Tiny Drive Introduction
-title_nav: Introduction
-description: Introduction of what Tiny Drive is and its capabilities
-keywords: tinydrive introduction overview
----
+# Tiny Drive Introduction
+:title_nav: Introduction
+:description: Introduction of what Tiny Drive is and its capabilities
+:keywords: tinydrive introduction overview
 
 {% assign pluginname = "Tiny Drive" %}
 {% assign plugincode = "tinydrive" %}

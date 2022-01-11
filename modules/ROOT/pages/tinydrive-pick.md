@@ -1,10 +1,7 @@
----
-layout: default
-title: Tiny Drive Pick API
-title_nav: The Pick API
-description: Using the Tiny Drive Pick API
-keywords: tinydrive api pick
----
+# Tiny Drive Pick API
+:title_nav: The Pick API
+:description: Using the Tiny Drive Pick API
+:keywords: tinydrive api pick
 
 The `tinydrive.pick` method allows users to pick files from {{site.cloudfilemanager}} and get the metadata of those files returned in a promise. This metadata can be used to insert or retrieve the file or files if needed.
 

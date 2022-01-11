@@ -1,10 +1,7 @@
----
-layout: default
-title: Troubleshooting the PowerPaste plugin
-title_nav: Troubleshooting
-description: Information on troubleshooting PowerPaste behavior.
-keywords: enterprise powerpaste power paste microsoft word excel google docs
----
+# Troubleshooting the PowerPaste plugin
+:title_nav: Troubleshooting
+:description: Information on troubleshooting PowerPaste behavior.
+:keywords: enterprise powerpaste power paste microsoft word excel google docs
 
 ## What happens when copy and pasting from Microsoft Word?
 

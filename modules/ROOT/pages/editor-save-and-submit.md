@@ -1,10 +1,7 @@
----
-layout: default
-title: Editor save and submit options
-title_nav: Save and submit
-description: Editor options related to saving or submitting editor content
-keywords:
----
+# Editor save and submit options
+:title_nav: Save and submit
+:description: Editor options related to saving or submitting editor content
+:keywords:
 
 ## HTML forms options
 

@@ -1,9 +1,6 @@
----
-layout: default
-title: Changing user formatting controls
-title_nav: User formatting
-description: Options for changing menu and toolbar dropdown formatting options available to users.
----
+# Changing user formatting controls
+:title_nav: User formatting
+:description: Options for changing menu and toolbar dropdown formatting options available to users.
 
 {% include configuration/block_formats.md %}
 

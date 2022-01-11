@@ -1,10 +1,7 @@
----
-layout: default
-title: Migrating from TinyMCE 5 to TinyMCE 6.
-title_nav: Migrating from TinyMCE 5
-description: Guidance for migrating from TinyMCE 5 to TinyMCE 6.
-keywords: migration considerations premigration pre-migration
----
+# Migrating from TinyMCE 5 to TinyMCE 6.
+:title_nav: Migrating from TinyMCE 5
+:description: Guidance for migrating from TinyMCE 5 to TinyMCE 6.
+:keywords: migration considerations premigration pre-migration
 
 Most configuration changes in TinyMCE 6 only affect complex use cases, such as customized user interface components. The process for setting up a basic TinyMCE 6 instance is the same as TinyMCE 5.
 

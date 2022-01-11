@@ -1,11 +1,8 @@
----
-layout: default
-title: Format Painter
-title_nav: Format Painter
-description: Quickly apply formats to multiple pieces of text.
-keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats format painter configuration
-controls: toolbar button
----
+# Format Painter
+:title_nav: Format Painter
+:description: Quickly apply formats to multiple pieces of text.
+:keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats format painter configuration
+:controls: toolbar button
 
 {% assign pluginname = "Format Painter" %}
 {% assign plugincode = "formatpainter" %}

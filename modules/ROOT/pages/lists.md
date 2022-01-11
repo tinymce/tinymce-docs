@@ -1,10 +1,7 @@
----
-layout: default
-title: Lists plugin
-title_nav: Lists
-description: Normalizes list behavior between browsers.
-keywords: list lists browser normalize
----
+# Lists plugin
+:title_nav: Lists
+:description: Normalizes list behavior between browsers.
+:keywords: list lists browser normalize
 
 {% assign pluginname = "Lists" %}
 {% assign plugincode = "lists" %}

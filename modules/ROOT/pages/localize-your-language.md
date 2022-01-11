@@ -1,10 +1,7 @@
----
-layout: default
-title: Localize TinyMCE
-title_nav: Localization
-description: Localize TinyMCE with global language capabilities.
-keywords: internationalization localization languages
----
+# Localize TinyMCE
+:title_nav: Localization
+:description: Localize TinyMCE with global language capabilities.
+:keywords: internationalization localization languages
 
 {{site.productname}} makes your project accessible to the world through its simple localization framework.
 

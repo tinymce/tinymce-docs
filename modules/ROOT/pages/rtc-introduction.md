@@ -1,10 +1,7 @@
----
-layout: default
-title: Introduction to Real-Time Collaboration (RTC)
-title_nav: Introduction
-description: What is RTC and what can it do
-keywords: rtc introduction overview
----
+# Introduction to Real-Time Collaboration (RTC)
+:title_nav: Introduction
+:description: What is RTC and what can it do
+:keywords: rtc introduction overview
 
 {% include rtc/rtc-description.md %}
 

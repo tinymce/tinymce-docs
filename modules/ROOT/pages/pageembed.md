@@ -1,11 +1,8 @@
----
-layout: default
-title: Page Embed plugin
-title_nav: Page Embed
-description: Easily inserts iframe into the content.
-keywords: view Page Embed insert iframe
-controls: toolbar button, menu item
----
+# Page Embed plugin
+:title_nav: Page Embed
+:description: Easily inserts iframe into the content.
+:keywords: view Page Embed insert iframe
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Page Embed" %}
 {% assign plugincode = "pageembed" %}

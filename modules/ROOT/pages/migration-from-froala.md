@@ -1,10 +1,7 @@
----
-layout: default
-title: Migrating from Froala to TinyMCE
-title_nav: Migrating from Froala
-description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 6.
-keywords: migration considerations premigration pre-migration froala
----
+# Migrating from Froala to TinyMCE
+:title_nav: Migrating from Froala
+:description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 6.
+:keywords: migration considerations premigration pre-migration froala
 
 This page covers the basic steps for migrating from Froala Editor 3 to {{site.productname}} {{site.productmajorversion}}.
 Procedures and links to our documentation have been included to assist with your migration to {{site.productname}}.

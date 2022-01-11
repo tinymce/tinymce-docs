@@ -1,11 +1,8 @@
----
-layout: default
-title: Full featured demo&#58; Including Premium Plugins
-title_nav: Including premium features
-description_short: Every TinyMCE plugin in action.
-description: These examples display all of the plugins available with TinyMCE Cloud premium subscriptions.
-keywords: example demo custom wysiwyg full-featured plugins non-premium
----
+# Full featured demo&#58; Including Premium Plugins
+:title_nav: Including premium features
+:description_short: Every TinyMCE plugin in action.
+:description: These examples display all of the plugins available with TinyMCE Cloud premium subscriptions.
+:keywords: example demo custom wysiwyg full-featured plugins non-premium
 
 This example includes most of the available {{site.productname}} plugins, including plugins available on {{site.cloudname}} premium subscriptions. Please note, it includes [premium plugins]({{site.plugindirectory}}).
 

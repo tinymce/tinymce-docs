@@ -1,10 +1,7 @@
----
-layout: default
-title: Cloud deployment of plugins Only
-description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
-description: Connect to Tiny Cloud within a hybrid deployment.
-keywords: tinymce cloud script textarea apiKey hybrid
----
+# Cloud deployment of plugins Only
+:description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
+:description: Connect to Tiny Cloud within a hybrid deployment.
+:keywords: tinymce cloud script textarea apiKey hybrid
 
 A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the [{{site.productname}} Community edition]({{site.gettiny}}/) to get started.
 

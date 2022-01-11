@@ -1,10 +1,7 @@
----
-layout: default
-title: Cloud Troubleshooting
-description_short: Troubleshooting errors shown by the Tiny Cloud
-description: Causes and solutions to common issues when using Tiny Cloud
-keywords: tinymce cloud script textarea apiKey troubleshooting banners domain referer
----
+# Cloud Troubleshooting
+:description_short: Troubleshooting errors shown by the Tiny Cloud
+:description: Causes and solutions to common issues when using Tiny Cloud
+:keywords: tinymce cloud script textarea apiKey troubleshooting banners domain referer
 
 When {{site.cloudname}} detects a problem, it will show an editor notification containing information about the problem. This page describes the cause and solution for common {{site.cloudname}} error notifications.
 

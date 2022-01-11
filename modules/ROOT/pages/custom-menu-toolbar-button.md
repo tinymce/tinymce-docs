@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom Menu toolbar buttons
-title_nav: Menu toolbar button
-description: Creating custom Menu toolbar buttons for TinyMCE
-keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
----
+# Creating custom Menu toolbar buttons
+:title_nav: Menu toolbar button
+:description: Creating custom Menu toolbar buttons for TinyMCE
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain submenus. This is useful for grouping together actions that would otherwise be several buttons on the toolbar. It can also be used to reduce visual clutter and save UI space, as menubar menu items and some toolbar buttons could be moved into a toolbar menu button. Potentially, all menubar menu items could be moved into toolbar menu buttons, allowing for the editor to be used without a menubar at all.
 

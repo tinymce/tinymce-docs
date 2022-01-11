@@ -1,9 +1,6 @@
----
-layout: default
-title: Spelling options
-title_nav: Spelling options
-description: TinyMCE spell checking
----
+# Spelling options
+:title_nav: Spelling options
+:description: TinyMCE spell checking
 
 {% include misc/spell-checker-pro.md %}
 

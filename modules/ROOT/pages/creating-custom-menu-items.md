@@ -1,10 +1,7 @@
----
-layout: default
-title: Creating custom menu items
-title_nav: Creating custom menu items
-description: This section demonstrates different types of menu items.
-keywords: menu menuitem menuitems
----
+# Creating custom menu items
+:title_nav: Creating custom menu items
+:description: This section demonstrates different types of menu items.
+:keywords: menu menuitem menuitems
 
 ## Use Cases
 

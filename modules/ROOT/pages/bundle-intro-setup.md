@@ -1,9 +1,6 @@
----
-layout: default
-title: Introduction and initial setup for containerized server-side services from the premium self-hosted bundle
-title_nav: Introduction and initial setup
-description: The containerized server-side components for premium plugins.
----
+# Introduction and initial setup for containerized server-side services from the premium self-hosted bundle
+:title_nav: Introduction and initial setup
+:description: The containerized server-side components for premium plugins.
 
 The {{site.enterpriseversion}} server-side components can be deployed on Docker orchestration applications such as [Kubernetes](https://kubernetes.io/), [Docker Swarm](https://docs.docker.com/engine/swarm/), or [OpenShift](https://www.openshift.com/). {{site.companyname}} provides packages containing pre-configured [`Dockerfiles`](https://docs.docker.com/engine/reference/builder/) for building and deploying the {{site.enterpriseversion}} server-side components using Docker.
 

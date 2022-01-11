@@ -1,10 +1,7 @@
----
-layout: default
-title: Mentions plugin
-title_nav: Mentions
-description: Enables @mention functionality.
-keywords: mentions atmentions
----
+# Mentions plugin
+:title_nav: Mentions
+:description: Enables @mention functionality.
+:keywords: mentions atmentions
 
 {% assign pluginname = 'Mentions' %}
 {% assign plugincode = 'mentions' %}

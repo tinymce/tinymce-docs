@@ -1,10 +1,7 @@
----
-layout: default
-title: Custom Toggle menu items
-title_nav: Custom Toggle menu items
-description: How to create custom Toggle menu items.
-keywords: menu menuitem menuitems
----
+# Custom Toggle menu items
+:title_nav: Custom Toggle menu items
+:description: How to create custom Toggle menu items.
+:keywords: menu menuitem menuitems
 
 A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the right of the menu item's text when it is `on`.
 

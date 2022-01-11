@@ -1,10 +1,7 @@
----
-layout: default
-title: Set up Tiny Drive JWT Authentication
-title_nav: JWT Authentication setup
-description: Guide on how to setup JWT Authentication for Tiny Drive
-keywords: jwt authentication
----
+# Set up Tiny Drive JWT Authentication
+:title_nav: JWT Authentication setup
+:description: Guide on how to setup JWT Authentication for Tiny Drive
+:keywords: jwt authentication
 
 {% assign pluginname = site.cloudfilemanager %}
 {% assign plugincode = "tinydrive" %}

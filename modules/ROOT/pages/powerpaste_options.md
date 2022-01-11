@@ -1,10 +1,7 @@
----
-layout: default
-title: Options for the PowerPaste plugin
-title_nav: Options
-description: Information on the options provided by the PowerPaste plugin.
-keywords: enterprise powerpaste power paste microsoft word excel google docs
----
+# Options for the PowerPaste plugin
+:title_nav: Options
+:description: Information on the options provided by the PowerPaste plugin.
+:keywords: enterprise powerpaste power paste microsoft word excel google docs
 
 {% assign pluginname = 'PowerPaste' %}
 {% assign plugincode = "powerpaste" %}

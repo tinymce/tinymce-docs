@@ -1,10 +1,7 @@
----
-layout: default
-title: Configuring the Tiny Drive UI
-title_nav: UI options
-description: List of Tiny Drive user interface configuration options.
-keywords: tinydrive configuration
----
+# Configuring the Tiny Drive UI
+:title_nav: UI options
+:description: List of Tiny Drive user interface configuration options.
+:keywords: tinydrive configuration
 
 {% assign pluginname = "Tiny Drive" %}
 {% assign plugincode = "tinydrive" %}

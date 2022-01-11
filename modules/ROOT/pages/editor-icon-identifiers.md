@@ -1,11 +1,8 @@
----
-layout: default
-title: Icons Available for TinyMCE
-title_nav: Available Icons
-description_short: Complete list of icon identifiers.
-description: Complete list of icon identifiers.
-keywords: icon icons identifier
----
+# Icons Available for TinyMCE
+:title_nav: Available Icons
+:description_short: Complete list of icon identifiers.
+:description: Complete list of icon identifiers.
+:keywords: icon icons identifier
 
 The following table contains the default icons provided with {{site.productname}}. For information on adding custom icons, see:
 

@@ -1,11 +1,8 @@
----
-layout: default
-title: Full featured demo&#58; Non-Premium Plugins only
-title_nav: Excluding premium features
-description_short: Open source TinyMCE in action.
-description: An example with all of the non-premium features.
-keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
----
+# Full featured demo&#58; Non-Premium Plugins only
+:title_nav: Excluding premium features
+:description_short: Open source TinyMCE in action.
+:description: An example with all of the non-premium features.
+:keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
 
 This example includes only non-premium plugins. These plugins are also used in the [Full featured demo: Including Premium Plugins]({{site.baseurl}}/demos/full-featured/premium-full-featured/).
 

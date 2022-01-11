@@ -1,9 +1,6 @@
----
-layout: default
-title: Options for customizing the editor's statusbar
-title_nav: Statusbar
-description: Information on options for customizing TinyMCE's statusbar
----
+# Options for customizing the editor's statusbar
+:title_nav: Statusbar
+:description: Information on options for customizing TinyMCE's statusbar
 
 The options listed on this page affect the {{site.productname}} statusbar. The [`statusbar` option](#statusbar) can be used to remove the statusbar from the editor.
 

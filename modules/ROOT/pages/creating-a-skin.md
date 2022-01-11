@@ -1,11 +1,8 @@
----
-layout: default
-title: Create a skin for TinyMCE
-title_nav: Create a skin
-description_short: Introducing skin creation.
-description: Introducing skin creation, less and icon modification.
-keywords: create creator skin icon
----
+# Create a skin for TinyMCE
+:title_nav: Create a skin
+:description_short: Introducing skin creation.
+:description: Introducing skin creation, less and icon modification.
+:keywords: create creator skin icon
 
 This section provides information on how to manually create a new skin to customize the appearance of {{site.productname}} {{site.productmajorversion}}.
 

@@ -1,10 +1,7 @@
----
-layout: default
-title: Commands and Events for the PowerPaste plugin
-title_nav: Commands and Events
-description: Information on the commands, events and API methods provided with the PowerPaste plugin.
-keywords: enterprise powerpaste power paste microsoft word excel google docs
----
+# Commands and Events for the PowerPaste plugin
+:title_nav: Commands and Events
+:description: Information on the commands, events and API methods provided with the PowerPaste plugin.
+:keywords: enterprise powerpaste power paste microsoft word excel google docs
 
 {% assign pluginname = "PowerPaste" %}
 {% assign plugincode = "PowerPaste" %}

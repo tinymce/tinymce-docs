@@ -1,11 +1,8 @@
----
-layout: default
-title: Bundling an npm version of TinyMCE with CommonJS and Browserify
-title_nav: CommonJS and npm
-description_short: Bundling an npm version of TinyMCE in a project using CommonJS and Browserify
-description: Bundling an npm version of TinyMCE in a project using CommonJS and Browserify
-keywords: browserify commonjs cjs npm modules tinymce
----
+# Bundling an npm version of TinyMCE with CommonJS and Browserify
+:title_nav: CommonJS and npm
+:description_short: Bundling an npm version of TinyMCE in a project using CommonJS and Browserify
+:description: Bundling an npm version of TinyMCE in a project using CommonJS and Browserify
+:keywords: browserify commonjs cjs npm modules tinymce
 
 {% assign installtype = "an npm" %}
 {% assign bundler = "[Browserify](https://browserify.org/)" %}

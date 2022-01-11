@@ -1,10 +1,7 @@
----
-layout: default
-title: Advanced Tables plugin
-title_nav: Advanced Tables
-description: Add advanced functionality to tables.
-keywords: sort rownumbering series tables advanced advtable premium
----
+# Advanced Tables plugin
+:title_nav: Advanced Tables
+:description: Add advanced functionality to tables.
+:keywords: sort rownumbering series tables advanced advtable premium
 
 {% assign pluginname = "Advanced Tables" %}
 {% assign plugincode = "advtable" %}

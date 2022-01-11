@@ -1,11 +1,8 @@
----
-layout: default
-title: Visual Blocks plugin
-title_nav: Visual Blocks
-description: Allows a user to see block level elements such as paragraphs.
-keywords: visualblocks wysiwyg hidden view visualblocks_default_state
-controls: toolbar button, menu item
----
+# Visual Blocks plugin
+:title_nav: Visual Blocks
+:description: Allows a user to see block level elements such as paragraphs.
+:keywords: visualblocks wysiwyg hidden view visualblocks_default_state
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Visual Blocks" %}
 {% assign plugincode = "visualblocks" %}

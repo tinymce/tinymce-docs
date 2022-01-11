@@ -1,10 +1,7 @@
----
-layout: default
-title: Version compatibility reference
-description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins.
-description: Premium plugins compatibility with TinyMCE editor versions.
-keywords: tinymce cloud script textarea apiKey
----
+# Version compatibility reference
+:description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins.
+:description: Premium plugins compatibility with TinyMCE editor versions.
+:keywords: tinymce cloud script textarea apiKey
 
 Specific versions of {{site.productname}} are compatible with premium plugins.
 

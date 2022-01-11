@@ -1,10 +1,7 @@
----
-layout: default
-title: Editor size and resize options
-title_nav: Size
-description: Options for setting the size of the editor and controling editor resizing
-keywords:
----
+# Editor size and resize options
+:title_nav: Size
+:description: Options for setting the size of the editor and controling editor resizing
+:keywords:
 
 ## Initial dimensions
 

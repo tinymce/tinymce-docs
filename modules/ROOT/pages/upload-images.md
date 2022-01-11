@@ -1,11 +1,8 @@
----
-layout: default
-title: Handling image uploads
-title_nav: Image uploads
-description_short: How to manage asynchronous image uploads.
-description: How to manage asynchronous image uploads.
-keywords: uploader uploadImages image handler asynchronous async paste_data_images image cors
----
+# Handling image uploads
+:title_nav: Image uploads
+:description_short: How to manage asynchronous image uploads.
+:description: How to manage asynchronous image uploads.
+:keywords: uploader uploadImages image handler asynchronous async paste_data_images image cors
 
 {{site.productname}} uploads edited images with the image uploader. This complements {{site.productname}}'s image editing functionality.
 

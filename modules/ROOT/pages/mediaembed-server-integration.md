@@ -1,9 +1,6 @@
----
-layout: default
-title: Integrate Enhanced Media Embed Server
-description: Using the Enhanced Media Embed server with non-public content such as a corporate CMS.
-keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
----
+# Integrate Enhanced Media Embed Server
+:description: Using the Enhanced Media Embed server with non-public content such as a corporate CMS.
+:keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 
 Websites like [Facebook](https://developers.facebook.com/docs/plugins/oembed-endpoints) and [Instagram](https://www.instagram.com/developer/embedding/) expose an [oEmbed](http://oembed.com/) endpoint for developers to utilize. The [Iframely](https://iframely.com/) service creates embeds from websites on the public Internet. For content on private networks, such as a corporate CMS, this document outlines how to enrich the content or build an API that the Enhanced Media Embed server can utilize to create rich hyperlinks. We'll also provide some information about the Enhanced Media Embed server's summary cards.
 

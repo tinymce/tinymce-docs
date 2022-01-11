@@ -1,10 +1,7 @@
----
-layout: default
-title: Tiny Drive plugin setup options
-title_nav: Setup options
-description: List of Tiny Drive plugin configuration options for integrating with TinyMCE.
-keywords: tinydrive configuration
----
+# Tiny Drive plugin setup options
+:title_nav: Setup options
+:description: List of Tiny Drive plugin configuration options for integrating with TinyMCE.
+:keywords: tinydrive configuration
 
 {% assign pluginname = "Tiny Drive" %}
 {% assign plugincode = "tinydrive" %}

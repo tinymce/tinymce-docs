@@ -1,11 +1,8 @@
----
-layout: default
-title: Support
-title_nav: Support
-description: Getting support and supported platforms
-description_short: Getting support and supported platforms
-keywords: browser compatibility explorer ie safari firefox chrome edge mobile support supported browsers windows osx linux ie11 premium self-hosted selfhosted
----
+# Support
+:title_nav: Support
+:description: Getting support and supported platforms
+:description_short: Getting support and supported platforms
+:keywords: browser compatibility explorer ie safari firefox chrome edge mobile support supported browsers windows osx linux ie11 premium self-hosted selfhosted
 
 ## Getting support
 

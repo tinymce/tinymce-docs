@@ -1,9 +1,6 @@
----
-layout: default
-title: Dropbox and Google Drive integration options
-description: List of Tiny Drive options for integrating with Dropbox and Google Drive.
-keywords: tinydrive configuration
----
+# Dropbox and Google Drive integration options
+:description: List of Tiny Drive options for integrating with Dropbox and Google Drive.
+:keywords: tinydrive configuration
 
 ## Configuring with Dropbox
 

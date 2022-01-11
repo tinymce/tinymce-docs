@@ -1,10 +1,7 @@
----
-layout: default
-title: Image Tools plugin
-title_nav: Image Tools
-description: Image editing features for TinyMCE.
-keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
----
+# Image Tools plugin
+:title_nav: Image Tools
+:description: Image editing features for TinyMCE.
+:keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
 
 {% assign pluginname = "Image Tools" %}
 {% assign plugincode = "imagetools" %}

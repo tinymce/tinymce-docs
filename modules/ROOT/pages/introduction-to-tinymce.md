@@ -1,9 +1,6 @@
----
-layout: default
-title: What is TinyMCE?
-description: What is TinyMCE and how do I add it to my project.
-keywords: tinymce script textarea
----
+# What is TinyMCE?
+:description: What is TinyMCE and how do I add it to my project.
+:keywords: tinymce script textarea
 
 {% include what-is-tinymce.md %}
 

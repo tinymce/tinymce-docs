@@ -1,11 +1,8 @@
----
-layout: default
-title: Checklist plugin
-title_nav: Checklist
-description: Add checklists to your content.
-keywords: lists todo checklist
-controls: toolbar button
----
+# Checklist plugin
+:title_nav: Checklist
+:description: Add checklists to your content.
+:keywords: lists todo checklist
+:controls: toolbar button
 
 {% assign pluginname = "Checklist" %}
 {% assign plugincode = "checklist" %}

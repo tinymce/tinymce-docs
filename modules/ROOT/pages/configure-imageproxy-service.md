@@ -1,8 +1,5 @@
----
-layout: default
-title: Image Proxy service settings
-description: Configuration options for the Image Proxy premium server-side component.
----
+# Image Proxy service settings
+:description: Configuration options for the Image Proxy premium server-side component.
 
 The following settings for the Image Proxy premium server-side component are optional. These settings should be added to the `application.conf` file described in [Required configuration for the server-side components]({{site.baseurl}}/how-to-guides/premium-server-side-guide/configure-server-side-services/configure-required-services/).
 

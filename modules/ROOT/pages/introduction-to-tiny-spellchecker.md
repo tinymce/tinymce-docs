@@ -1,10 +1,7 @@
----
-layout: default
-title: Spell Checker Pro plugin
-title_nav: Spell Checker Pro
-description: Check spelling as-you-type in TinyMCE.
-keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox
----
+# Spell Checker Pro plugin
+:title_nav: Spell Checker Pro
+:description: Check spelling as-you-type in TinyMCE.
+:keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox
 
 {% assign pluginname = "Spell Checker Pro" %}
 {% assign plugincode = "tinymcespellchecker" %}

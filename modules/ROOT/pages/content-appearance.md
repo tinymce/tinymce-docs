@@ -1,9 +1,6 @@
----
-layout: default
-title: Content appearance options
-title_nav: Content appearance
-description: Configure the appearance of content inside TinyMCE's editable area.
----
+# Content appearance options
+:title_nav: Content appearance
+:description: Configure the appearance of content inside TinyMCE's editable area.
 
 ## Showing for "hidden" elements
 

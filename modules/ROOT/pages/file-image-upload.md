@@ -1,9 +1,6 @@
----
-layout: default
-title: Image and file options
-title_nav: Images and files
-description: These settings affect TinyMCE's image and file handling capabilities.
----
+# Image and file options
+:title_nav: Images and files
+:description: These settings affect TinyMCE's image and file handling capabilities.
 
 ## Controlling or adjusting allowed image and file formats
 

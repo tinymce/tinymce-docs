@@ -1,11 +1,8 @@
----
-layout: default
-title: Visual Characters plugin
-title_nav: Visual Characters
-description: See invisible characters like non-breaking spaces.
-keywords: visualchars
-controls: toolbar button, menu item
----
+# Visual Characters plugin
+:title_nav: Visual Characters
+:description: See invisible characters like non-breaking spaces.
+:keywords: visualchars
+:controls: toolbar button, menu item
 
 {% assign pluginname = "Visual Characters" %}
 {% assign plugincode = "visualchars" %}

@@ -1,0 +1,18 @@
+---
+layout: default
+title: "tinymce.util"
+description: "Browser related APIs."
+type: folder
+---
+
+{% assign navigation = site.data.nav_api %}
+{% for entry in navigation %}
+  {% if entry.url == "api" %}
+    {% for subentry in entry.pages %}
+      {% if subentry.url == "tinymce.util" %}
+        {% assign links = subentry.pages %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% include index.html links=links sectionTitle="tinymce.util" %}

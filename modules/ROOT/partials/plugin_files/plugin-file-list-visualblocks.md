@@ -1,3 +1,0 @@
-```
-./plugins/visualblocks/plugin.js
-```

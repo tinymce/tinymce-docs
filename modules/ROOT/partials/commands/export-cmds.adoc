@@ -1,0 +1,19 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceExportDownload |Converts the editor content using the specified exporter format and downloads the converted content.
+|===
+
+____
+*Note:* There are no settings available when using the 'clientpdf' format.
+____
+
+*Examples*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceExportDownload', false, {
+  format: 'clientpdf',
+  settings: {}
+});
+----

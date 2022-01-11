@@ -1,1 +1,0 @@
-> **Important:** This option has been deprecated in {{site.productname}} 5.10 and will be removed in {{site.productname}} 6.0.

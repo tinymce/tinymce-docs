@@ -1,3 +1,0 @@
-```
-./plugins/casechange/plugin.js
-```

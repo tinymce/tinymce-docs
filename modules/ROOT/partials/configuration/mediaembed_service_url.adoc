@@ -1,0 +1,5 @@
+== `+mediaembed_service_url+`
+
+This option specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/[instructions] to configure the *WAR* file that you will get as a part of your link:{{site.pricingpage}}/[\{\{site.enterpriseversion}} subscription]. This option is not required for link:{{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-and-features/[\{\{site.cloudname}}].
+
+Type : `+String+`

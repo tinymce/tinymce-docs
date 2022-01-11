@@ -1,0 +1,19 @@
+= Full featured demo: Including Premium Plugins
+
+:title_nav: Including premium features :description_short: Every TinyMCE plugin in action. :description: These examples display all of the plugins available with TinyMCE Cloud premium subscriptions. :keywords: example demo custom wysiwyg full-featured plugins non-premium
+
+This example includes most of the available \{\{site.productname}} plugins, including plugins available on \{\{site.cloudname}} premium subscriptions. Please note, it includes link:{{site.plugindirectory}}[premium plugins].
+
+Want to try it for yourself? link:{{site.accountsignup}}/[Get started with TinyMCE now on Cloud].
+
+\{% include live-demo.html id="full-featured" %}
+
+The following plugins are excluded from this example:
+
+* link:{{site.baseurl}}/plugins-ref/premium/moxiemanager/[MoxieManager (Premium Plugin)] — link:{{site.baseurl}}/plugins-ref/premium/tinydrive/[*\{\{site.cloudfilemanager}}*] included instead.
+* link:{{site.baseurl}}/plugins-ref/opensource/autoresize/[Autoresize] — Resizes the editor to fit the content.
+* link:{{site.baseurl}}/plugins-ref/opensource/bbcode/[BBCode] — Changes the markup used for the content.
+* link:{{site.baseurl}}/plugins-ref/opensource/code/[Code] — link:{{site.baseurl}}/plugins-ref/premium/advcode/[*Advanced Code Editor*] included instead.
+* link:{{site.baseurl}}/plugins-ref/opensource/fullpage/[Full Page] — Used for modifying HTML `+<head>+` elements.
+* link:{{site.baseurl}}/plugins-ref/opensource/paste/[Paste] — link:{{site.baseurl}}/plugins-ref/premium/powerpaste/[*PowerPaste*] included instead.
+* link:{{site.baseurl}}/plugins-ref/opensource/spellchecker/[Spellchecker] — link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[*Spell Checker Pro*] included instead.

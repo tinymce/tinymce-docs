@@ -1,0 +1,48 @@
+= Bundling TinyMCE plugins using module loading
+
+:title_nav: Plugins :description_short: Information on bundling plugins :description: Information on bundling TinyMCE plugins using module loading \{% assign editorcomponent = "plugin" %} \{% include module-loading/bundling-ref-example.md %} \{% assign editorcomponent = nil %}
+
+The following table shows examples of the syntax used to bundle the following plugin.
+
+Required files for an example plugin:
+
+....
+./plugins/example/content.css
+./plugins/example/plugin.js
+....
+
+Example syntax for including the example "plugin" in a bundle:
+
+____
+*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:{{site.baseurl}}/how-to-guides/usage-with-module-loaders/[Bundling \{\{site.productname}} with a module loader].
+____
+
+\{% comment %}
+
+[source,js]
+----
+import pluginCss from 'tinymce/plugins/example/content.css';
+import 'tinymce/plugins/example';
+----
+
+[source,js]
+----
+import pluginCss from '../tinymce/plugins/example/content.css';
+import '../tinymce/plugins/example/plugin';
+----
+
+[source,js]
+----
+var pluginCss = require('tinymce/plugins/example/content.css');
+require('tinymce/plugins/example');
+----
+
+[source,js]
+----
+var pluginCss = require('../tinymce/plugins/example/content.css');
+require('../tinymce/plugins/example/plugin.js');
+----
+
+\{% endcomment %}
+
+\{% include module-loading/bundling-plugin-files.md %}

@@ -1,3 +1,0 @@
-```
-./plugins/autosave/plugin.js
-```

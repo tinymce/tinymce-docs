@@ -1,3 +1,0 @@
-```
-./plugins/anchor/plugin.js
-```

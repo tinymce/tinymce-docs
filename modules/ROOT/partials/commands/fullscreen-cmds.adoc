@@ -1,0 +1,12 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceFullScreen |Toggles full screen mode.
+|===
+
+*Example*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceFullScreen');
+----

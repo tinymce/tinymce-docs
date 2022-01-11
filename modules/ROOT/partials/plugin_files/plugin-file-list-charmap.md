@@ -1,3 +1,0 @@
-```
-./plugins/charmap/plugin.js
-```

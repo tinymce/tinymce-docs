@@ -1,3 +1,0 @@
-```
-./plugins/advlist/plugin.js
-```

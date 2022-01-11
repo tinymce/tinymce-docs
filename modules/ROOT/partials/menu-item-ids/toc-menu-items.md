@@ -1,3 +1,0 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                                  |
-|----------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| `toc`                | Insert                                                                                                   | Inserts a Table of Contents into the editor. |

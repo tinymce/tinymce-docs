@@ -1,0 +1,191 @@
+The https://github.com/tinymce/tinymce-vue[Official \{\{site.productname}} Vue.js component] integrates \{\{site.productname}} into Vue.js projects. This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a \{\{site.productname}} editor.
+
+Version 4 of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
+
+[[tinymce-vuejs-integration-live-examples]]
+== TinyMCE Vue.js integration live examples
+
+For examples of the \{\{site.productname}} Vue.js 2.x integration, visit: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
+
+For examples of the \{\{site.productname}} Vue.js 3.x integration:
+
+[arabic]
+. Clone the `+tinymce/tinymce-vue+` GitHub repository. For example:
++
+[source,sh]
+----
+git clone https://github.com/tinymce/tinymce-vue.git
+----
+. Install the required packages using `+yarn+`. For example:
++
+[source,sh]
+----
+yarn install
+----
+. To start the demo server, run:
++
+[source,sh]
+----
+yarn demo
+----
+
+The `+tinymce-vue+` demo is now running. Visit: http://localhost:3001.
+
+== Prerequisites
+
+This procedure requires https://nodejs.org/[Node.js (and npm)].
+
+== Procedure
+
+[arabic]
+. On a command line or command prompt, install the https://cli.vuejs.org/#getting-started[Vue CLI Tool] package.
++
+[source,sh]
+----
+npm install -g @vue/cli
+----
+. Create a new Vue.js project named `+tinymce-vue-demo+`.
+* To use the interactive prompt, run:
++
+[source,sh]
+----
+vue create tinymce-vue-demo
+----
+* To skip the interactive prompt:
+** For Vue.js 3.x users:
++
+[source,sh]
+----
+vue create --inlinePreset '{ "vueVersion": "3", "plugins": {} }' tinymce-vue-demo
+----
+** For Vue.js 2.x users:
++
+[source,sh]
+----
+vue create --inlinePreset '{ "vueVersion": "2", "plugins": {} }' tinymce-vue-demo
+----
+. Change into the newly created directory.
++
+[source,sh]
+----
+cd tinymce-vue-demo
+----
+
+\{% if productSource == "package-manager" %} 3. Install the `+tinymce+` and `+tinymce-vue+` packages and save them to your `+package.json+` with `+--save+`.
+
+....
+* For Vue.js 3.x users:
+
+  ```sh
+  npm install --save tinymce "@tinymce/tinymce-vue@^4"
+  ```
+
+* For Vue.js 2.x users:
+
+  ```sh
+  npm install --save tinymce "@tinymce/tinymce-vue@^3"
+  ```
+....
+
+\{% else %}
+
+[arabic, start=4]
+. Install the `+tinymce-vue+` package and save it to your `+package.json+` with `+--save+`.
+* For Vue.js 3.x users:
++
+[source,sh]
+----
+npm install --save "@tinymce/tinymce-vue@^4"
+----
+* For Vue.js 2.x users:
++
+[source,sh]
+----
+npm install --save "@tinymce/tinymce-vue@^3"
+----
+
+\{% endif %}
+
+[arabic, start=5]
+. Using a text editor, open `+/path/to/tinymce-vue-demo/src/App.vue+`.
+[arabic]
+.. Add a \{\{site.productname}} configuration to the `+<template>+` using the `+<editor>+` tag.
+.. Add `+import Editor from '@tinymce/tinymce-vue'+` to the start of the `+<script>+`.
+.. Add `+editor: Editor+` to the `+default {components}+`.
++
+For example:
++
+[source,jsx]
+----
+<template>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <editor
+      api-key="no-api-key"
+      :init="{% raw %}{{% endraw %}
+        plugins: 'lists link image table code help wordcount'
+      {% raw %}}{% endraw %}"
+    />
+  </div>
+</template>
+
+<script>
+import Editor from '@tinymce/tinymce-vue'
+
+export default {
+  name: 'app',
+  components: {
+    'editor': Editor
+  }
+}
+</script>
+----
+
+\{% if productSource == "cloud" %} 6. Include the `+api-key+` option in the editor element and include your link:{{site.accountsignup}}/[\{\{site.cloudname}} API key].
+
+....
+Such as:
+
+```html
+<editor api-key='your-api-key' :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
+```
+....
+
+\{% elsif productSource == "package-manager" %} 6. Bundle \{\{site.productname}} with the Vue.js application using a module loader (such as Webpack).
+
+\{% include integrations/bundling-integration.md package="tinymce-vue" depth='1' %} \{% else %} 6. \{\{site.productname}} can be self-hosted by either: link:#deployingtinymceindependent[Deploying \{\{site.productname}} independent of the Vue.js application], or link:#bundle[Bundling \{\{site.productname}} with the Vue.js application]. * Deploying \{\{site.productname}} independent of the Vue.js application. To use a \{\{site.productname}} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
+
+....
+    To use an independent deployment of {{site.productname}}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+
+    ```html
+    <script src="/path/to/tinymce.min.js"></script>
+    ```
+
+    To use an independent deployment of {{site.productname}} with the example create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
+
+<a id="bundle" class="anchor"></a>
+* Bundle {{site.productname}} with the Vue.js application using a module loader (such as Webpack).
+....
+
+\{% include integrations/bundling-integration.md package="tinymce-vue" depth='2' %} \{% endif %} 7. Test the application using the Node.js development server. * To start the development server, navigate to the `+tinymce-vue-demo+` directory and run:
+
+....
+    ```sh
+    npm run serve
+    ```
+
+* To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
+....
+
+== Deploying the application to a HTTP server
+
+The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://vuejs.org/v2/guide/deployment.html[Vue.js - Production Deployment].
+
+== Next Steps
+
+* For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
+* For information on customizing:
+** \{\{site.productname}} integration, see: link:{{site.baseurl}}/how-to-guides/environment-setup/vue/vue-ref/[Vue.js framework Technical Reference].
+** \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** The Vue.js application, see: https://vuejs.org/v2/guide/[Vue.js Documentation].

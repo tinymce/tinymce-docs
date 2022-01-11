@@ -1,0 +1,15 @@
+= MoxieManager plugin
+
+:title_nav: MoxieManager :description: File and image management plugin and service :keywords: amazon azure premium pro enterprise tiny relative_urls
+
+\{% include /misc/admon_moxiemanager_not_on_cloud.md %}
+
+MoxieManager is a premium \{\{site.productname}} plugin and server system that enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.
+
+MoxieManager is an application separate from \{\{site.productname}} that includes .NET or PHP server components. Being built by the team behind \{\{site.productname}} it has tight integration with the editor via a toolbar control. It is designed to work with \{\{site.productname}} configuration settings such as `+relative_urls+`.
+
+MoxieManager is a paid addition to \{\{site.productname}}. It is included in link:{{site.pricingpage}}/[\{\{enterpriseversion}} subscriptions].
+
+Full documentation on MoxieManager, including how to http://www.moxiemanager.com/documentation/index.php/TinyMCE_Integration[integrate with \{\{site.productname}}], can be http://www.moxiemanager.com/documentation/[found] on the MoxieManager website.
+
+Documentation is archived for the deprecated http://archive.tinymce.com/wiki.php/MCImageManager[MCImageManager] and http://archive.tinymce.com/wiki.php/MCFileManager[MCFileManager].

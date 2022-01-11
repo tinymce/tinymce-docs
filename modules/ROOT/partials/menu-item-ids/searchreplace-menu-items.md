@@ -1,3 +1,0 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                      |
-|----------------------|----------------------------------------------------------------------------------------------------------|----------------------------------|
-| `searchreplace`      | Edit                                                                                                     | Opens the search/replace dialog. |

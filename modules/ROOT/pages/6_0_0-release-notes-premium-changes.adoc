@@ -1,0 +1,93 @@
+= Accompanying premium feature changes
+
+:title_nav: Premium Features :description: Premium feature changes accompanying TinyMCE 6.0 :keywords: releasenotes premium bugfixes
+
+* link:#accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* link:#accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
+* link:#accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
+
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside \{\{site.productname}} 6.0.
+
+[[premium-plugin-name-xyz]]
+=== Premium Plugin Name X.Y.Z
+
+The \{\{site.productname}} 6.0 release includes an accompanying release of the *<>* premium plugin.
+
+*<>* X.Y.Z adds the following new features:
+
+* {blank}
++
+
+*<>* X.Y.Z introduces the following enhancements:
+
+* {blank}
++
+
+*<>* X.Y.Z provides the following bug fixes:
+
+* {blank}
++
+
+For information on the <> plugin, see: [<> plugin](\{\{site.baseurl}}/plugins-ref/<>/).
+
+== Accompanying Premium Skins and Icon Packs changes
+
+The \{\{site.productname}} 6.0 release includes an accompanying release of the *Premium Skins and Icon Packs*.
+
+=== Premium Skins and Icon Packs - New features
+
+\{% comment %} Add description here. \{% endcomment %}
+
+For information on using premium skins and icon packs, see: link:{{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/[Premium Skins and Icon Packs].
+
+=== Premium Skins and Icon Packs - Bug fixes
+
+The *Premium Skins and Icon Packs* release includes the following bug fixes:
+
+\{% comment %} Add description here. \{% endcomment %}
+
+For information on using premium skins and icon packs, see: link:{{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/[Premium Skins and Icon Packs].
+
+== Accompanying Premium self-hosted server-side component changes
+
+The \{\{site.productname}} 6.0 release includes accompanying changes affecting the \{\{site.productname}} *self-hosted* services for the following plugins:
+
+* The Enhanced Media Embed plugin (`+mediaembed+`)
+* The Export plugin (`+export+`)
+* The Image Tools plugin (`+imagetools+`)
+* The Link Checker plugin (`+linkchecker+`)
+* The Spell Checker Pro plugin (`+tinymcespellchecker+`)
+
+The Java server-side components have been updated to the following versions:
+
+* `+ephox-hyperlinking.war+`: a.b.c
+* `+ephox-image-proxy.war+`: a.b.c
+* `+ephox-spelling.war+`: a.b.c
+
+For information on:
+
+* The Enhanced Media Embed plugin, see: link:{{site.baseurl}}/plugins-ref/premium/mediaembed/[Enhanced Media Embed plugin].
+* The Export plugin, see: link:{{site.baseurl}}/plugins-ref/premium/export/[Export plugin].
+* The Image Tools plugin, see: link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image Tools plugin].
+* The Link Checker plugin, see: link:{{site.baseurl}}/plugins-ref/premium/linkchecker/[Link Checker plugin].
+* The Spell Checker Pro plugin, see: link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+* Deploying the server-side components, see: link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/[Server-side component installation].
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+[arabic]
+. Update your Java Application Server to the minimum required version:
+
+\{% include misc/supported-application-servers.md %}
+
+[arabic, start=2]
+. Replace the existing server-side `+.war+` files with the `+.war+` files bundled with \{\{site.productname}} 6.0 or later.
+
+For information on:
+
+* Deploying the server-side components, see: link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/[Server-side component installation].
+* Deploying the server-side components using Docker, see: link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/dockerservices/[Containerized service deployments].

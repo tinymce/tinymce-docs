@@ -1,0 +1,19 @@
+== `+placeholder+`
+
+This option adds placeholder content that will be shown when the editor is empty.
+
+____
+*Note:* If the editor is initialized on a `+textarea+` element, the placeholder attribute can be used instead.
+____
+
+Type : `+String+`
+
+=== Example: Using `+placeholder+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  placeholder: 'Type here...'
+});
+----

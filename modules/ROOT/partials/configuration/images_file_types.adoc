@@ -1,0 +1,23 @@
+== `+images_file_types+`
+
+This option configures which image file formats are accepted by the editor. Changing this option will adjust the following editor behaviour:
+
+* Which image file formats are allowed to be uploaded in the link:{{site.baseurl}}/plugins-ref/opensource/image/[Image] dialog.
+* Which image file formats are recognized and placed in an `+img+` element by the link:{{site.baseurl}}/plugins-ref/opensource/paste/[Paste] and link:{{site.baseurl}}/plugins-ref/premium/powerpaste/[PowerPaste] `+smart_paste+` functionality.
+
+Type : `+String+`
+
+Default Value : `+'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp'+`
+
+Possible Values : A list of valid web image file extensions. For a list of possible values see: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types[MDN Web Docs - Image file type and format guide].
+
+=== Example: Using `+images_file_types+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image paste',
+  images_file_types: 'jpg,svg,webp'
+});
+----

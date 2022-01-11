@@ -1,0 +1,37 @@
+= Bundling TinyMCE themes using module loading
+
+:title_nav: Themes :description_short: Information on bundling themes :description: Information on bundling TinyMCE themes using module loading \{% assign editorcomponent = "theme" %} \{% include module-loading/bundling-ref-example.md %} \{% assign editorcomponent = nil %}
+
+The following table shows examples of the syntax used to bundle the silver theme:
+
+....
+./themes/silver/theme.js
+....
+
+Example syntax for including the silver theme in a bundle:
+
+\{% comment %}
+
+[source,js]
+----
+import 'tinymce/themes/silver';
+----
+
+[source,js]
+----
+import '../tinymce/themes/silver/theme';
+----
+
+[source,js]
+----
+require('tinymce/themes/silver');
+----
+
+[source,js]
+----
+require('../tinymce/themes/silver/theme.js');
+----
+
+\{% endcomment %}
+
+\{% include module-loading/bundling-theme-files.md %}

@@ -1,3 +1,0 @@
-```
-./plugins/help/plugin.js
-```

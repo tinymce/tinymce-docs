@@ -1,0 +1,12 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceHelp |Opens the editor Help dialog.
+|===
+
+*Example*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceHelp');
+----

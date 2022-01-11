@@ -1,0 +1,16 @@
+== `+tinydrive_dropbox_app_key+`
+
+This option is used to specify the Dropbox API key for integrating Dropbox into \{\{site.cloudfilemanager}}. For information on how to generate a Dropbox API key, refer to the link:{{site.baseurl}}/plugins-ref/premium/tinydrive/integrations/dropbox-integration/[Dropbox integration guide].
+
+Type : `+string+`
+
+=== Example: Using `+tinydrive_dropbox_app_key+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
+  tinydrive_dropbox_app_key: '<your dropbox app key>'
+});
+----

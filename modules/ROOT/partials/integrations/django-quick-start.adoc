@@ -1,0 +1,40 @@
+\{% include /misc/admon_third_party_integration.md %}
+
+For information on adding \{\{site.productname}} to a Django project, try using the Python-based `+django-tinymce+` package. For information on setting up `+django-tinymce+`, see: https://django-tinymce.readthedocs.io/en/latest/index.html[the django-tinymce Documentation].
+
+\{% if productSource == "cloud" %} To load \{\{site.productname}} from the \{\{site.cloudname}}, update the project’s `+settings.py+` file:
+
+* Set `+TINYMCE_JS_URL+` to the \{\{site.cloudname}} CDN.
+* Ensure `+TINYMCE_COMPRESSOR+` is set to `+False+`.
+
+For example:
+
+[source,py]
+----
+TINYMCE_JS_URL = '{{site.cdnurl}}'
+TINYMCE_COMPRESSOR = False
+----
+
+\{% else %} To download \{\{site.productname}} and use it with the `+django-tinymce+` package:
+
+[arabic]
+. Get the package from link:{{site.gettiny}}/[\{\{site.productname}} Downloads].
+. Unzip the package and move the `+'path/to/{{site.prodnamecode}}/'+` directory into the django project.
+. Add a URL path to the `+{{site.prodnamecode}}+` directory.
+. Add the relevant configuration setting:
+* If you do not need the `+TINYMCE_COMPRESSOR+` (`+TINYMCE_COMPRESSOR = False+`), add `+TINYMCE_JS_URL+` to the project’s `+settings.py+` file pointing to `+tinymce/tinymce.min.js+`. Such as:
++
+[source,py]
+----
+TINYMCE_JS_URL = os.path.join(MEDIA_URL, "path/to/tinymce/tinymce.min.js")
+TINYMCE_COMPRESSOR = False
+----
+* If you do need the `+TINYMCE_COMPRESSOR+` (`+TINYMCE_COMPRESSOR = TRUE+`), add `+TINYMCE_JS_ROOT+` to the project’s `+settings.py+` file pointing to the `+tinymce/+` root directory. Such as:
++
+[source,py]
+----
+TINYMCE_JS_ROOT = os.path.join(MEDIA_URL, "path/to/tinymce")
+TINYMCE_COMPRESSOR = True
+----
+
+\{% endif %}

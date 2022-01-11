@@ -1,3 +1,0 @@
-```
-./plugins/advtable/plugin.js
-```

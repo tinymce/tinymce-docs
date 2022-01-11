@@ -1,0 +1,39 @@
+= Bundling TinyMCE icon packs using module loading
+
+:title_nav: Icons :description_short: Information on bundling icon packs :description: Information on bundling TinyMCE icon packs using module loading
+
+\{% assign editorcomponent = "icon pack" %} \{% include module-loading/bundling-ref-example.md %} \{% assign editorcomponent = nil %}
+
+The following table shows examples of the syntax used to bundle the following icon pack:
+
+....
+./icons/example/icons.js
+....
+
+Example syntax for including the example icon pack in a bundle:
+
+\{% comment %}
+
+[source,js]
+----
+import 'tinymce/icons/example';
+----
+
+[source,js]
+----
+import '../tinymce/icons/example/icons';
+----
+
+[source,js]
+----
+require('tinymce/icons/example');
+----
+
+[source,js]
+----
+require('../tinymce/icons/example/icons.js');
+----
+
+\{% endcomment %}
+
+\{% include module-loading/bundling-icon-files.md %}

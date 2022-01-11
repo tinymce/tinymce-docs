@@ -1,3 +1,0 @@
-```
-./plugins/wordcount/plugin.js
-```

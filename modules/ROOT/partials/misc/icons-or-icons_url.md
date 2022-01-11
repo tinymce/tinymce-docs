@@ -1,1 +1,0 @@
-There are two options for replacing the icons in {{site.productname}}: `icons` and `icons_url`. {{site.companyname}} recommends using the `icons` option for icon packs bundled with the product or included in your cloud subscription. Custom or third-party icons should be included using the `icons_url` option to simplify updating and upgrading {{site.productname}}.

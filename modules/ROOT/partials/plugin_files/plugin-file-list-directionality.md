@@ -1,3 +1,0 @@
-```
-./plugins/directionality/plugin.js
-```

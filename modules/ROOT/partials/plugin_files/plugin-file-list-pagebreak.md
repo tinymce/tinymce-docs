@@ -1,3 +1,0 @@
-```
-./plugins/pagebreak/plugin.js
-```

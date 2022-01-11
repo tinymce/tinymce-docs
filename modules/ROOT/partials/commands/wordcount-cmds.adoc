@@ -1,0 +1,12 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceWordCount |Opens the Word Count summary dialog.
+|===
+
+*Example*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceWordCount');
+----

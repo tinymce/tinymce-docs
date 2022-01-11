@@ -1,3 +1,0 @@
-```
-./plugins/autolink/plugin.js
-```

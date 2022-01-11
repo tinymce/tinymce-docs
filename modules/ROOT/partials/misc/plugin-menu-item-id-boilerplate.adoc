@@ -1,0 +1,21 @@
+\{% if page.name == "available-menu-items.md" %}
+
+== \{\{pluginname}} plugin
+
+The \{\{pluginname}} plugin provides the following menu items:
+
+\{% if altplugincode %} \{% include menu-item-ids/\{\{altplugincode}}-menu-items.md %} \{% else %} \{% include menu-item-ids/\{\{plugincode}}-menu-items.md %} \{% endif %}
+
+For information on the \{\{pluginname}} plugin, see: link:{{site.baseurl}}/plugins-ref/{{plugincategory}}/{{plugincode}}/[Plugins - The \{\{pluginname}} plugin]
+
+\{% else %}
+
+== Menu items
+
+The \{\{pluginname}} plugin provides the following menu items:
+
+\{% if altplugincode %} \{% include menu-item-ids/\{\{altplugincode}}-menu-items.md %} \{% else %} \{% include menu-item-ids/\{\{plugincode}}-menu-items.md %} \{% endif %}
+
+\{% include misc/menu-item-settings.md %}
+
+\{% endif %} \{% assign altplugincode = nil %}

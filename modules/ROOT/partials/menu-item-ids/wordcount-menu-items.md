@@ -1,3 +1,0 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                                                  |
-|----------------------|----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| `wordcount`          | Tools                                                                                                    | Opens a word count dialog showing word and character counts. |

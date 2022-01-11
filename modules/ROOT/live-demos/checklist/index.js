@@ -9,5 +9,5 @@ tinymce.init({
       items: 'checklist | bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat'
     }
   },
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

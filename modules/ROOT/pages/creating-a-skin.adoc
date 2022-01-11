@@ -48,7 +48,7 @@ You should now be able to open a web browser and point it to the url displayed i
 
 The development environment is set up and ready to work.
 
-image:{baseurl}/images/SDKforsilver.png[\{\{site.productname}} skin SDK for Silver theme]
+image:SDKforsilver.png[\{\{site.productname}} skin SDK for Silver theme]
 
 If you just need to build the skins without launching a web server, run:
 
@@ -106,7 +106,7 @@ Your skin.less file should now look like this:
 
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
-image:{baseurl}/images/SDKforsilverCustomExample.png[\{\{site.productname}} skin SDK for Silver theme]
+image:SDKforsilverCustomExample.png[\{\{site.productname}} skin SDK for Silver theme]
 
 This is how you skin \{\{site.productname}}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 

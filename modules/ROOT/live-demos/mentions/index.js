@@ -153,7 +153,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     selector: 'textarea#mentions',
     plugins: 'mentions',
     content_style: '.mymention{ color: gray; }' +
-    {{site.liveDemoIframeCSSStyles}},
+    'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
 
     mentions_selector: '.mymention',
     mentions_fetch: mentions_fetch,

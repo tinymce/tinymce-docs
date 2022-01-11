@@ -11,5 +11,5 @@ tinymce.init({
   powerpaste_allow_local_images: true,
   powerpaste_word_import: 'prompt',
   powerpaste_html_import: 'prompt',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

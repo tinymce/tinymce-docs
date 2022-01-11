@@ -2,7 +2,7 @@ tinymce.init({
   selector: 'textarea#iframe',
   plugins: 'quickbars table image link lists media autoresize help',
   toolbar: 'undo redo | formatselect | bold italic | alignleft aligncentre alignright alignjustify | indent outdent | bullist numlist',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });
 
 tinymce.init({

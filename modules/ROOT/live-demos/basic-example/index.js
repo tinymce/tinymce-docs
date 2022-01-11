@@ -11,5 +11,5 @@ tinymce.init({
   'bold italic backcolor | alignleft aligncenter ' +
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

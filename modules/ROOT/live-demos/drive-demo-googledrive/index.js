@@ -11,5 +11,5 @@ tinymce.init({
   },
   tinydrive_demo_files_url: '{{ site.baseurl }}/images/tiny-drive-demo/demo_files.json',
   toolbar: 'insertfile image link | code',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

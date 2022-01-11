@@ -4,5 +4,5 @@ tinymce.init({
   plugins: 'link image code',
   relative_urls: true,
   document_base_url: '//www.tiny.cloud/docs/demo',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

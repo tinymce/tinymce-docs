@@ -13,5 +13,5 @@ tinymce.init({
       success('http://moxiecode.cachefly.net/tinymce/v9/images/logo.png');
     }, 2000);
   },
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

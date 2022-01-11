@@ -21,7 +21,7 @@ tinymce.init({
       canResolve: allowed || currentAuthor === userAllowedToResolve
     });
   },
-  content_style: {{site.liveDemoIframeCSSStyles}},
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   /* The following setup callback opens the comments sidebar when the editor loads */
   setup: function (editor) {
     editor.on('SkinLoaded', function () {

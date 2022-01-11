@@ -5,5 +5,5 @@ tinymce.init({
   a11y_advanced_options: true,
   a11ychecker_html_version: 'html5',
   a11ychecker_level: 'aaa',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

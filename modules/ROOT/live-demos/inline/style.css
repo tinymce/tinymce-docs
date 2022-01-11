@@ -18,14 +18,14 @@
   margin: 0 0;
 }
 .demo-inline h1 {
-  color: {{site.primaryColor}};
+  color: #1976D2;
   text-align: center;
   font-size: 2em;
   font-weight: bold;
   margin: 0 0;
 }
 .demo-inline h2 {
-  color: {{site.primaryColor}};
+  color: #1976D2;
   font-size: 2em;
   margin-bottom: 0;
   margin-top: 0;
@@ -62,5 +62,5 @@
 }
 .demo-inline *[contentEditable="true"]:focus,
 .demo-inline *[contentEditable="true"]:hover {
-  outline: 2px solid {{site.primaryColor}};
+  outline: 2px solid #1976D2;
 }

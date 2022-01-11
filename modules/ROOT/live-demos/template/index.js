@@ -39,5 +39,5 @@ tinymce.init({
       content: '<p>Name: {$inboth_username}, StaffID: {$inboth_staffid}</p>'
     }
   ],
-  content_style: {{ site.liveDemoIframeCSSStyles }}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

@@ -208,7 +208,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
     tinycomments_mode: 'embedded',
     content_style: '.mymention{ color: gray; }' +
-    {{site.liveDemoIframeCSSStyles}},
+    'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
     contextmenu: 'link image imagetools table spellchecker configurepermanentpen',
     a11y_advanced_options: true,
     skin: useDarkMode ? 'oxide-dark' : 'oxide',

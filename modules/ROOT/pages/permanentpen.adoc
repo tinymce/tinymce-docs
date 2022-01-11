@@ -49,16 +49,16 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 === To enable Permanent Pen
 
 [arabic]
-. Click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
+. Click on the image:icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
 . Place the cursor in the desired text area and start typing.
 
-*Result*: The *Permanent Pen* toolbar button background color changes to _grey_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
+*Result*: The *Permanent Pen* toolbar button background color changes to _grey_ image:icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
 
 === To disable Permanent Pen
 
-To exit the Permanent Pen, click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
+To exit the Permanent Pen, click on the image:icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
 
-The *Permanent Pen* toolbar button background color changes to _white_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen].
+The *Permanent Pen* toolbar button background color changes to _white_ image:icons/permanent-pen.svg[Permanent Pen].
 
 === Accessing the Permanent Pen properties
 
@@ -87,7 +87,7 @@ tinymce.init({
 . Right-click anywhere from inside the text area.
 . Choose the *Permanent Pen* option.
 
-image:{baseurl}/images/right-click.png[Right-click]
+image:right-click.png[Right-click]
 
 *Result*: The *Permanent Pen Properties* dialog box appears.
 
@@ -100,7 +100,7 @@ ____
 === Using the UI
 
 [arabic]
-. Open the *Permanent Pen Properties* dialog box using any of the above methods. image:{baseurl}/images/ppprop.png[Permanent pen properties]
+. Open the *Permanent Pen Properties* dialog box using any of the above methods. image:ppprop.png[Permanent pen properties]
 . Select the desired settings from the *Font* and *Size* drop-down menus.
 . To select the desired *Styles*, click on the radio button next to *Bold*, *Italic*, *Strikethrough*, or *Underline*.
 . Choose the desired *Text color*.

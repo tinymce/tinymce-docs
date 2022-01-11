@@ -14,5 +14,5 @@ tinymce.init({
     favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
   },
   menubar: 'favs file edit view insert format tools table help',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

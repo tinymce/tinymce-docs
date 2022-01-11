@@ -5,5 +5,5 @@ tinymce.init({
     'link ' + /* Allows users to add/remove hyperlinks using a dialog */
     'code',
   toolbar: 'link code',
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

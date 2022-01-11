@@ -12,5 +12,5 @@ tinymce.init({
   menu: {
     insert: { title: 'Insert', items: 'image link media insertfile' },
   },
-  content_style: {{site.liveDemoIframeCSSStyles}}
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

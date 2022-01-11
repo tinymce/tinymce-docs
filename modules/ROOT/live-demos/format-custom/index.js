@@ -18,7 +18,7 @@ tinymce.init({
     '.italic { font-style: italic; } ' +
     '.underline { text-decoration: underline; } ' +
     '.example1 {} ' +
-    {{site.liveDemoIframeCSSStyles}} +
+    'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }' +
     '.tablerow1 { background-color: #D3D3D3; }',
   formats: {
     alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'left' },

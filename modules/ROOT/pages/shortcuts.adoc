@@ -6,13 +6,13 @@
 :keywords: shortcuts shortcut custom keyboard
 
 ____
-*Important*: Adding a custom shortcut with a keyboard combination that conflicts with an existing \{\{site.productname}} or browser shortcut will override the existing shortcut.
+*Important*: Adding a custom shortcut with a keyboard combination that conflicts with an existing {productname} or browser shortcut will override the existing shortcut.
 ____
 
-To add a custom keyboard shortcut to \{\{site.productname}}, use either:
+To add a custom keyboard shortcut to {productname}, use either:
 
-* link:{baseurl}/apis/tinymce/tinymce.editor/#addshortcut[The `+tinymce.Editor.addShortcut+` API].
-* link:{baseurl}/apis/tinymce/tinymce.shortcuts/[The `+tinymce.Shortcuts.add+` API].
+* link:tinymce.editor.html#addshortcut[The `+tinymce.Editor.addShortcut+` API].
+* link:tinymce.shortcuts.html[The `+tinymce.Shortcuts.add+` API].
 
 include::partial$misc/shortcut-os-mappings.adoc[]
 

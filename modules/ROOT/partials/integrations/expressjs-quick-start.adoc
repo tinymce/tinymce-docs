@@ -1,7 +1,7 @@
-This quick start guide walks through creating a https://expressjs.com/en/starter/generator.html[basic Express JS application] containing a \{\{site.productname}} editor.
+This quick start guide walks through creating a https://expressjs.com/en/starter/generator.html[basic Express JS application] containing a {productname} editor.
 
 ____
-*NOTE*: \{\{site.cloudname}} users should use the link:{baseurl}/getting-started/install-setup/cloud/cloud-quick-start/[\{\{site.cloudname}} quick start guide].
+*NOTE*: {cloudname} users should use the link:cloud-quick-start.html[{cloudname} quick start guide].
 ____
 
 == Prerequisites
@@ -29,7 +29,7 @@ cd my_{prodnamecode}_app
 ----
 npm install --save tinymce
 ----
-. Download and install the \{\{site.productname}} and Express JS Node modules (and their dependencies):
+. Download and install the {productname} and Express JS Node modules (and their dependencies):
 +
 [source,sh]
 ----
@@ -70,7 +70,7 @@ app.use('/users', usersRouter);
 
 module.exports = app;
 ----
-. Create a new javascript file containing the \{\{site.productname}} configuration (`+tinymce.init+`), such as:
+. Create a new javascript file containing the {productname} configuration (`+tinymce.init+`), such as:
 +
 Linux/macOS/Unix:
 +
@@ -85,7 +85,7 @@ Windows:
 ----
 > type nul >public/javascripts/my-{prodnamecode}-config.js
 ----
-. Add the \{\{site.productname}} configuration to the newly created javascript file (`+my-{prodnamecode}-config.js+`):
+. Add the {productname} configuration to the newly created javascript file (`+my-{prodnamecode}-config.js+`):
 +
 [source,js]
 ----
@@ -97,8 +97,8 @@ tinymce.init({
 . Update `+public/index.html+` to include:
 * The document type declaration, `+<!DOCTYPE html>+`.
 * A `+<script>+` element sourcing `+tinymce.min.js+`.
-* A `+<script>+` element sourcing the \{\{site.productname}} configuration (`+my-{prodnamecode}-config.js+`).
-* A `+<textarea>+` element with an `+id+` attribute matching the `+selector+` option in the \{\{site.productname}} configuration (`+my-expressjs-{prodnamecode}-app+`).
+* A `+<script>+` element sourcing the {productname} configuration (`+my-{prodnamecode}-config.js+`).
+* A `+<textarea>+` element with an `+id+` attribute matching the `+selector+` option in the {productname} configuration (`+my-expressjs-{prodnamecode}-app+`).
 +
 For example:
 +
@@ -137,5 +137,5 @@ npm start
 == Next Steps
 
 * For information on customizing:
-** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** {productname}, see: link:basic-setup.html[Basic setup].
 ** The Express JS application, see: https://expressjs.com/[the Express JS Documentation].

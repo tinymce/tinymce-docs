@@ -6,7 +6,7 @@
 
 == Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)
 
-\{% endif %} The TinyMCE spelling service server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. \{\{site.companyname}} provides a pre-configured package for creating a Spelling Service Docker image.
+\{% endif %} The TinyMCE spelling service server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Spelling Service Docker image.
 
 include::partial$misc/admon_dont-push-docker-images.adoc[]
 
@@ -24,10 +24,11 @@ include::partial$misc/admon_dont-push-docker-images.adoc[]
 
 === Procedure
 
-The following procedure covers downloading, configuring, building and testing the \{\{site.productname}} Spelling Service Docker image. \{% if shbundledockerfiles == true %}
+The following procedure covers downloading, configuring, building and testing the {productname} Spelling Service Docker image.
+\{% if shbundledockerfiles == true %}
 
 ____
-*Note*: This procedure assumes that a \{\{ site.productname }} self-hosted enterprise bundle has been extracted as described in link:{baseurl}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-intro-setup/#downloadandextractthetinymceself-hostedbundle[Download and extract the \{\{site.productname}} Self-hosted Bundle].
+*Note*: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in link:bundle-intro-setup.html#downloadandextractthetinymceself-hostedbundle[Download and extract the {productname} Self-hosted Bundle].
 ____
 
 [arabic, start=4]
@@ -69,7 +70,7 @@ cd spelling-service-dockerfile
 ----
 +
 \{% elsif shbundledockerfiles == false %}
-. Go to *[\{\{ site.accountpage }}](\{\{ site.accountpageurl }}/) > My Downloads* and download _Tiny Spell Checker Pro_.
+. Go to *[{accountpage}]({accountpageurl}/) > My Downloads* and download _Tiny Spell Checker Pro_.
 . Open a command line and navigate to the directory containing `+ephox-spelling_<version>.zip+`. Windows Users should open a Bash command line as the Administrator User.
 . Extract the contents of `+ephox-spelling_<version>.zip+`, such as:
 +
@@ -131,9 +132,9 @@ http {
 }
 ----
 +
-For information on the `+http+` configuration setting, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#httpoptional[Configure server-side components - `+http+`].
-. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-spelling-docker-env.conf+`. See: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/[Configure server-side components].
-. _Optional_: Add a custom dictionary, as described in link:{baseurl}/plugins-ref/premium/tinymcespellchecker/custom-dictionaries-for-tiny-spellchecker/[Adding custom dictionaries].
+For information on the `+http+` configuration setting, see: link:configure.html#httpoptional[Configure server-side components - `+http+`].
+. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-spelling-docker-env.conf+`. See: link:configure.html[Configure server-side components].
+. _Optional_: Add a custom dictionary, as described in link:custom-dictionaries-for-tiny-spellchecker.html[Adding custom dictionaries].
 . Create an `+origins.env+` file in the same directory as the `+Dockerfile+`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`+allowed-origins+`). Up to 99 origins can be added without editing `+config/ephox-spelling-docker-env.conf+`.
 +
 For example:
@@ -145,8 +146,8 @@ ORIGIN1=example
 ORIGIN2=http://example.org
 ----
 +
-For information on `+allowed-origins+`, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
-. As the root user or Administrator, build the \{\{site.productname}} Spelling Service Docker image using the following command:
+For information on `+allowed-origins+`, see: link:configure.html#allowed-originsrequired[Configure server-side components - allowed-origins].
+. As the root user or Administrator, build the {productname} Spelling Service Docker image using the following command:
 +
 [source,sh]
 ----
@@ -176,4 +177,4 @@ The response from the `+curl+` command should be:
 Spelling service is running.
 ----
 
-The \{\{site.productname}} Spelling Service Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].
+The {productname} Spelling Service Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].

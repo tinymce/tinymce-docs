@@ -1,4 +1,4 @@
-The https://github.com/tinymce/tinymce-blazor[Official \{\{site.productname}} Blazor component] integrates \{\{site.productname}} into https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor[Blazor applications]. This procedure creates a basic Blazor application and adds a \{\{site.productname}} editor using the \{\{site.productname}} Blazor integration. The basic Blazor application is based on the following tutorial: https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/[Microsoft .NET Blazor Tutorial - Build your first Blazor app].
+The https://github.com/tinymce/tinymce-blazor[Official {productname} Blazor component] integrates {productname} into https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor[Blazor applications]. This procedure creates a basic Blazor application and adds a {productname} editor using the {productname} Blazor integration. The basic Blazor application is based on the following tutorial: https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/[Microsoft .NET Blazor Tutorial - Build your first Blazor app].
 
 Select from the following guides:
 
@@ -65,7 +65,7 @@ dotnet new blazorserver -o BlazorApp --no-https
 ----
 cd BlazorApp
 ----
-. Install the \{\{site.productname}} Blazor integration:
+. Install the {productname} Blazor integration:
 +
 [source,sh]
 ----
@@ -101,5 +101,5 @@ This will start a local development server, accessible at http://localhost:5000.
 
 For information on customizing the integration, see:
 
-* link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[\{\{site.productname}} basic setup].
-* link:{baseurl}/how-to-guides/environment-setup/blazor/blazor-ref/[The \{\{site.productname}} Blazor integration technical reference].
+* link:basic-setup.html[{productname} basic setup].
+* link:blazor-ref.html[The {productname} Blazor integration technical reference].

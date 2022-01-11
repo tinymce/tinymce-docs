@@ -10,30 +10,30 @@
 :plugincode: tinydrive
 
 
-\{\{site.cloudfilemanager}} is a premium \{\{site.productname}} plugin for cloud-based asset management and storage. \{\{site.cloudfilemanager}} allows your users to upload, manage, and use files in \{\{site.productname}}.
+{cloudfilemanager} is a premium {productname} plugin for cloud-based asset management and storage. {cloudfilemanager} allows your users to upload, manage, and use files in {productname}.
 
-For documentation on using \{\{site.cloudfilemanager}} outside \{\{site.productname}}, visit: link:{baseurl}/tinydrive/[\{\{site.cloudfilemanager}} documentation].
+For documentation on using {cloudfilemanager} outside {productname}, visit: link:https://www.tiny.cloud/docs/tinydrive/[{cloudfilemanager} documentation].
 
 ____
-*Note*: This plugin is only available for link:{pricingpage}/[\{\{site.cloudname}} users].
+*Note*: This plugin is only available for link:{pricingpage}/[{cloudname} users].
 ____
 
 == Tiny Drive features
 
-\{\{site.cloudfilemanager}} allows the following file formats, extensions, and storage options:
+{cloudfilemanager} allows the following file formats, extensions, and storage options:
 
 [cols=",",options="header",]
 |===
 |Feature |Value
-|File upload |Upload files through drag and drop or using the upload button. If integrated with \{\{site.productname}}, files added using drag and drop or copy and paste in \{\{site.productname}} will be uploaded using \{\{site.cloudfilemanager}}
+|File upload |Upload files through drag and drop or using the upload button. If integrated with {productname}, files added using drag and drop or copy and paste in {productname} will be uploaded using {cloudfilemanager}
 |CDN |Files are stored in S3 and accessed through Amazons CDN for fast delivery anywhere in the world
 |File management |Move, copy, delete and organize your online file storage
 |Search |Search your library of files, star the ones you use often for quick access
 |Preview |Preview images and video before you select which content to use
-|Integrations |Integrations with Google Drive and Dropbox allows you to import file from these systems through \{\{site.cloudfilemanager}}
+|Integrations |Integrations with Google Drive and Dropbox allows you to import file from these systems through {cloudfilemanager}
 |===
 
-The storage and bandwidth quota varies based upon your link:{pricingpage}/[\{\{site.cloudname}} Plan].
+The storage and bandwidth quota varies based upon your link:{pricingpage}/[{cloudname} Plan].
 
 == Interactive example
 
@@ -46,19 +46,19 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Upload files URL
 
-The URL format for each file is `+https://drive.tiny.cloud/1/{your-api-key}/{uuid}+`, and is generated when a file is uploaded. If a file is moved or renamed, it will still have the same unique URL, so the restructuring of the files using \{\{site.cloudfilemanager}} won't affect the URL. Deleting a file will mark the URL as being unused, and the URL will not continue to work.
+The URL format for each file is `+https://drive.tiny.cloud/1/{your-api-key}/{uuid}+`, and is generated when a file is uploaded. If a file is moved or renamed, it will still have the same unique URL, so the restructuring of the files using {cloudfilemanager} won't affect the URL. Deleting a file will mark the URL as being unused, and the URL will not continue to work.
 
 == JSON Web Token (JWT) based authentication
 
-Some \{\{site.companyname}} services require setting up JSON Web Token (JWT) authentication. This allows the \{\{site.cloudname}} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the link:{baseurl}/plugins-ref/premium/tinydrive/jwt-authentication/[JWT authentication section].
+Some {companyname} services require setting up JSON Web Token (JWT) authentication. This allows the {cloudname} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the link:jwt-authentication.html[JWT authentication section].
 
 == User specific file access
 
-\{\{site.cloudfilemanager}} allows developers to set user-specific directories, so users can only see their own files. This can be done by setting the `+https://claims.tiny.cloud/drive/root+` custom JSON Web Token (JWT) claim to a path within \{\{site.accountpage}}. This path will automatically be constructed when the user is accessing \{\{site.cloudfilemanager}} using a JWT key with that claim. The user can only see and manage files within that directory.
+{cloudfilemanager} allows developers to set user-specific directories, so users can only see their own files. This can be done by setting the `+https://claims.tiny.cloud/drive/root+` custom JSON Web Token (JWT) claim to a path within {accountpage}. This path will automatically be constructed when the user is accessing {cloudfilemanager} using a JWT key with that claim. The user can only see and manage files within that directory.
 
 == Security and performance
 
-\{\{site.companyname}} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed between \{\{site.cloudfilemanager}} and the \{\{site.cloudname}}, \{\{site.cloudfilemanager}} uses the \{\{site.accountname}} API key and a JSON Web Token (JWT) to authenticate each data transaction.
+{companyname} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed between {cloudfilemanager} and the {cloudname}, {cloudfilemanager} uses the {accountpage} API key and a JSON Web Token (JWT) to authenticate each data transaction.
 
 == File types
 
@@ -66,4 +66,4 @@ There is a fixed set of file extensions (formats) that can be uploaded, and thes
 
 include::partial$plugins/tinydrive-filetypeslist.adoc[]
 
-include::tinydrive-starter-projects[]
+include::partial$tinydrive-starter-projects.adoc[]

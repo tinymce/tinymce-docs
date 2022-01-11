@@ -5,7 +5,8 @@
 :description_short: Information on bundling TinyMCE skins
 :description: Information on bundling TinyMCE skins using module loading
 :editorcomponent: skin
-include::partial$module-loading/bundling-ref-example.adoc[] :editorcomponent: nil
+include::partial$module-loading/bundling-ref-example.adoc[]
+:editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following skin:
 
@@ -32,7 +33,7 @@ Optional files for the example skin:
 Example syntax for including the example icon pack in a bundle:
 
 ____
-*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/how-to-guides/usage-with-module-loaders/[Bundling \{\{site.productname}} with a module loader].
+*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:usage-with-module-loaders.html[Bundling {productname} with a module loader].
 ____
 
 \{% comment %}

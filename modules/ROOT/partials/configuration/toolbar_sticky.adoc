@@ -4,7 +4,7 @@ A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top
 
 To enable Sticky Toolbars, set `+toolbar_sticky+` as `+true+` in the `+tinymce.init+` script. To disable Sticky Toolbars, set `+toolbar_sticky+` as `+false+`
 
-To see a demo of sticky toolbar, see the https://codepen.io/tinymce/full/qBWLLMP[\{\{site.productname}} Sticky Toolbar Demo].
+To see a demo of sticky toolbar, see the https://codepen.io/tinymce/full/qBWLLMP[{productname} Sticky Toolbar Demo].
 
 Type : `+Boolean+`
 
@@ -12,7 +12,7 @@ Default Value : `+false+`
 
 Possible Values : `+true+`, `+false+`
 
-include::partial$misc/admon_different_default_for_mobile[]
+include::partial$misc/admon_different_default_for_mobile.adoc[]
 
 === Example: toolbar_sticky
 

@@ -5,7 +5,7 @@
 :description: Useful information for setting up encryption for RTC
 :keywords: rtc encrypt decrypt key rotate signature
 
-\{\{site.productname}} Real-Time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption. This is different from the use of JWTs for RTC, which are used to verify that your servers have allowed the user to access and collaborate on the content.
+{productname} Real-Time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption. This is different from the use of JWTs for RTC, which are used to verify that your servers have allowed the user to access and collaborate on the content.
 
 ____
 *Caution*: The advice on this page does not guarantee a secure connection. If data secrecy is important for your users, please consult a security professional.
@@ -13,18 +13,18 @@ ____
 
 == Setting up an encryption endpoint
 
-\{\{site.companyname}} is committed to protecting customer and end-user privacy through end-to-end encryption.
+{companyname} is committed to protecting customer and end-user privacy through end-to-end encryption.
 
-\{\{site.productname}} Real-Time Collaboration requires an encryption key:
+{productname} Real-Time Collaboration requires an encryption key:
 
-* To encrypt content before a client sends it to the \{\{site.cloudname}} server.
-* To decrypt content clients receive from the \{\{site.cloudname}} server.
+* To encrypt content before a client sends it to the {cloudname} server.
+* To decrypt content clients receive from the {cloudname} server.
 
-\{\{site.productname}} clients use the encryption key, but do not transmit it to the \{\{site.cloudname}} servers.
+{productname} clients use the encryption key, but do not transmit it to the {cloudname} servers.
 
 === Encryption endpoint requirements
 
-An encryption endpoint for \{\{pluginname}} is required to:
+An encryption endpoint for {pluginname} is required to:
 
 * Accept a JSON HTTP POST request.
 * Accept the `+documentId+` and `+keyHint+`.
@@ -35,7 +35,7 @@ An encryption endpoint for \{\{pluginname}} is required to:
 
 === Encryption key and keyHint requirements
 
-The encryption `+key+`s and `+keyHint+`s for \{\{pluginname}}:
+The encryption `+key+`s and `+keyHint+`s for {pluginname}:
 
 * Must both be strings.
 * Can include any unicode characters.
@@ -47,7 +47,7 @@ When setting up the encryption endpoint, ensure that:
 * The `+key+`, `+keyHint+`, and the `+documentId+` should not contain personal or confidential information.
 
 ____
-*Warning*: Fixed keys are not secure. Fixed keys can be useful in development, but if a fixed key is disclosed it can be used to decrypt _every_ document uploaded to the \{\{site.cloudname}} server with that key.
+*Warning*: Fixed keys are not secure. Fixed keys can be useful in development, but if a fixed key is disclosed it can be used to decrypt _every_ document uploaded to the {cloudname} server with that key.
 ____
 
 == General advice on generating a secure encryption key
@@ -66,10 +66,10 @@ Methods to generate keys include (in descending order of safety):
 == Encryption key rotation and key hints
 
 ____
-*Important*: The Real-Time Collaboration (RTC) configuration API is designed to support key rotation, but _keys cannot be rotated on demand_ at this time. If this is important to you, please contact \{\{site.companyname}} to discuss how we can best provide on-demand key rotation support.
+*Important*: The Real-Time Collaboration (RTC) configuration API is designed to support key rotation, but _keys cannot be rotated on demand_ at this time. If this is important to you, please contact {companyname} to discuss how we can best provide on-demand key rotation support.
 ____
 
-Document collaboration may be performed in multiple sessions. For example, when a new version of \{\{site.productname}} is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be discarded when a new key is requested.
+Document collaboration may be performed in multiple sessions. For example, when a new version of {productname} is deployed it may be incompatible with existing sessions. Only one session will be active at a time but older sessions may still be used to bootstrap new sessions. As such, old keys cannot be discarded when a new key is requested.
 
 To allow for key rotation, a key hint is supplied so the encryption provider may tell the difference between these two cases and act accordingly. If the key hint is `+null+`, then the RTC protocol needs a new key and this is the opportunity for key rotation. If the key hint is not null, the protocol is requesting a previously issued key so that it can read the session history.
 

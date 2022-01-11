@@ -57,7 +57,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 |Name |Value |Requirement |Description
 |value |string |optional |Value of the item. This will be passed to the `+onAction+` callback when selected.
 |text |string |optional |Text to display for the item.
-|icon |string |optional |Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:{baseurl}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[icon pack], a link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[custom icon pack], or an icon added using the link:{baseurl}/apis/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[`+addIcon+` API].
+|icon |string |optional |Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:editor-icon-identifiers.html[icon pack], a link:creating-an-icon-pack.html[custom icon pack], or an icon added using the link:tinymce.editor.ui.registry.html#addicon[`+addIcon+` API].
 |===
 
 [source,js]
@@ -70,7 +70,8 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 }
 ----
 
-\{% comment %} TODO: DOC-719 and TINY-6593: Move CardMenuItem/subitems specification to menuitems.md \{% endcomment %}
+\{% comment %} TODO: DOC-719 and TINY-6593: Move CardMenuItem/subitems specification to menuitems.md
+\{% endcomment %}
 
 ==== CardMenuItem
 

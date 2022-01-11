@@ -9,7 +9,8 @@
 :installtype: a `+.zip+`
 
 :bundler: https
-://webpack.js.org/[Webpack] :syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules[ES6+ syntax]
+://webpack.js.org/[Webpack]
+:syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules[ES6+ syntax]
 include::partial$module-loading/bundling-procedure-intro.adoc[]
 
 == Requirements
@@ -42,7 +43,7 @@ include::partial$module-loading/bundling-webpack-es6_index.adoc[]
 webpack --config webpack.config.js
 ----
 +
-If Webpack runs successfully, check that the editor loads in the application. If Webpack fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling \{\{site.productname}} into an existing project.
+If Webpack runs successfully, check that the editor loads in the application. If Webpack fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {productname} into an existing project.
 
 :is_zip_install: nil
 

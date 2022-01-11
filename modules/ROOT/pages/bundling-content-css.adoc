@@ -5,7 +5,8 @@
 :description_short: Information on bundling the editor content CSS
 :description: Information on bundling the editor content CSS using module loading
 :editorcomponent: content CSS
-include::partial$module-loading/bundling-ref-example.adoc[] :editorcomponent: nil
+include::partial$module-loading/bundling-ref-example.adoc[]
+:editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following content CSS file:
 
@@ -15,32 +16,42 @@ The following table shows examples of the syntax used to bundle the following co
 
 Example syntax for including the example content CSS in a bundle:
 
-____
-*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/how-to-guides/usage-with-module-loaders/[Bundling \{\{site.productname}} with a module loader].
-____
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
 
-\{% comment %}
-
-[source,js]
+.2+|ES6+
+|npm
+a|
+[source, js]
 ----
 import contentCSS from 'tinymce/skins/content/example/content.css';
 ----
 
-[source,js]
+|`.zip`
+a|
+[source, js]
 ----
 import contentCSS from '../tinymce/skins/content/example/content.css';
 ----
 
-[source,js]
+.2+|Common JS
+|npm
+a|
+[source, js]
 ----
 var contentCSS = require('tinymce/skins/content/example/content.css');
 ----
 
-[source,js]
+|`.zip`
+a|
+[source, js]
 ----
 var contentCSS = require('../tinymce/skins/content/example/content.css');
 ----
-
-\{% endcomment %}
+|===
+____
+*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:usage-with-module-loaders.html[Bundling {productname} with a module loader].
+____
 
 include::partial$module-loading/bundling-content-css-files.adoc[]

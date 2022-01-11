@@ -6,9 +6,9 @@
 :description: Introducing skin creation, less and icon modification.
 :keywords: create creator skin icon
 
-This section provides information on how to manually create a new skin to customize the appearance of \{\{site.productname}} \{\{site.productmajorversion}}.
+This section provides information on how to manually create a new skin to customize the appearance of {productname} {productmajorversion}.
 
-The \{\{site.productname}} Skin Tool provides an interactive method for designing and creating a skin for \{\{site.productname}}, visit: http://skin.tiny.cloud/[http://skin.tiny.cloud/].
+The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[http://skin.tiny.cloud/].
 
 == Prerequisites
 
@@ -20,7 +20,7 @@ This guide assumes:
 
 == Preparation
 
-The CSS that goes with a theme is called a skin. The default skin for \{\{site.productname}} \{\{site.productmajorversion}} is named Oxide and is written in http://lesscss.org[Less], a popular CSS preprocessor. With Oxide we introduced a concept we call the *Style API*. This API consists of around 300 variables which you use to modify the appearance of \{\{site.productname}}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
+The CSS that goes with a theme is called a skin. The default skin for {productname} {productmajorversion} is named Oxide and is written in http://lesscss.org[Less], a popular CSS preprocessor. With Oxide we introduced a concept we call the *Style API*. This API consists of around 300 variables which you use to modify the appearance of {productname}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
 ____
 *Important*: We do not recommend modifying or overriding CSS rules directly.
@@ -29,7 +29,7 @@ ____
 To set up the skin development environment, begin with the following steps:
 
 [arabic]
-. Download (or `+git clone+`) the https://github.com/tinymce/tinymce[\{\{site.productname}} source code].
+. Download (or `+git clone+`) the https://github.com/tinymce/tinymce[{productname} source code].
 . Open the terminal and navigate to the folder you just downloaded.
 . Install dependencies with the command:
 +
@@ -48,7 +48,7 @@ You should now be able to open a web browser and point it to the url displayed i
 
 The development environment is set up and ready to work.
 
-image:SDKforsilver.png[\{\{site.productname}} skin SDK for Silver theme]
+image:SDKforsilver.png[{productname} skin SDK for Silver theme]
 
 If you just need to build the skins without launching a web server, run:
 
@@ -73,7 +73,7 @@ The folder `+modules/oxide/src/less/theme/+` contains the Less files. At the top
 The general workflow is that you look inside the less files within the theme folder and copy the variables you like to change into your skin's `+skin.less+` file.
 
 ____
-Note: The skin *only* changes the visual presentation of the UI and *not* the placement of elements. Placement of elements is done by the \{\{site.productname}} UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
+Note: The skin *only* changes the visual presentation of the UI and *not* the placement of elements. Placement of elements is done by the {productname} UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 ____
 
 === Creating a skin
@@ -106,12 +106,12 @@ Your skin.less file should now look like this:
 
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
-image:SDKforsilverCustomExample.png[\{\{site.productname}} skin SDK for Silver theme]
+image:SDKforsilverCustomExample.png[{productname} skin SDK for Silver theme]
 
-This is how you skin \{\{site.productname}}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
+This is how you skin {productname}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
 ____
-*Tip*: You can change the \{\{site.productname}} config in `+modules/oxide/src/demo/index.html+` to suit your particular use case.
+*Tip*: You can change the {productname} config in `+modules/oxide/src/demo/index.html+` to suit your particular use case.
 ____
 
 == Creating a content CSS file
@@ -126,11 +126,11 @@ To update the appearance of the content within the editor, such as headings, quo
 == Moving the skin into TinyMCE
 
 [arabic]
-. Copy the skin and/or content CSS from `+modules/oxide/build/skins/+` to the corresponding folders in your production \{\{site.productname}} folder.
-. Update the \{\{site.productname}} init function with the link:{baseurl}/interface/editor-appearance/editor-skin/#skin[skin] option and/or the link:{baseurl}/content/add-css-options/#content_css[content_css] option.
+. Copy the skin and/or content CSS from `+modules/oxide/build/skins/+` to the corresponding folders in your production {productname} folder.
+. Update the {productname} init function with the link:editor-skin.html#skin[skin] option and/or the link:add-css-options.html#content_css[content_css] option.
 
-For more information on how to specify the location of the skin file, see link:{baseurl}/interface/editor-appearance/editor-skin/#skin_url[this] section.
+For more information on how to specify the location of the skin file, see link:editor-skin.html#skin_url[this] section.
 
 == Modifying the icons
 
-For information on adding custom icons, see: link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[Create an icon pack for \{\{site.productname}}].
+For information on adding custom icons, see: link:creating-an-icon-pack.html[Create an icon pack for {productname}].

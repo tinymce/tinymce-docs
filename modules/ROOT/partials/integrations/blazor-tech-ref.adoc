@@ -27,7 +27,7 @@ None of the configuration properties are required for the TinyMCE Blazor integra
 
 === ApiKey
 
-\{\{site.cloudname}} API key. Required for deployments using the \{\{site.cloudname}} to provide the \{\{site.productname}} editor.
+{cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
 
 Default value : `+"no-api-key"+`
 
@@ -44,7 +44,7 @@ Type : String
 
 === CloudChannel
 
-Specifies the \{\{site.cloudname}} channel to use. For information on \{\{site.productname}} development channels, see: link:{baseurl}/how-to-guides/cloud-deployment-guide/editor-plugin-version/[Specifying the \{\{site.productname}} editor version deployed from Cloud].
+Specifies the {cloudname} channel to use. For information on {productname} development channels, see: link:editor-plugin-version.html[Specifying the {productname} editor version deployed from Cloud].
 
 Default value : `+"5"+`
 
@@ -166,7 +166,7 @@ In your component:
 
 === ScriptSrc
 
-Use the `+ScriptSrc+` property to specify the location of \{\{site.productname}} to lazy load when the application is not using \{\{site.cloudname}}. This setting is required if the application uses a self-hosted version of \{\{site.productname}}, such as the https://www.nuget.org/packages/TinyMCE/[\{\{site.productname}} NuGet package] or a .zip package of \{\{site.productname}}.
+Use the `+ScriptSrc+` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the https://www.nuget.org/packages/TinyMCE/[{productname} NuGet package] or a .zip package of {productname}.
 
 Type : String
 

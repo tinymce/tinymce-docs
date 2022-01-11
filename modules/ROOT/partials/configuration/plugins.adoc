@@ -1,6 +1,6 @@
 == `+plugins+`
 
-This option allows you to specify which plugins \{\{site.productname}} will attempt to load when starting up. By default, \{\{site.productname}} will not load any plugins.
+This option allows you to specify which plugins {productname} will attempt to load when starting up. By default, {productname} will not load any plugins.
 
 Type : `+String+`
 
@@ -18,4 +18,4 @@ ____
 *Note*: Each plugin entry should be separated by a blank space.
 ____
 
-[Check this documentation page for a list of available plugins](\{\{ site.baseurl }}/plugins-ref/).
+link:/plugins-ref/[Check this documentation page for a list of available plugins].

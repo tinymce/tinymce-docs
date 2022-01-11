@@ -22,7 +22,7 @@ Two situations to consider when organising the toolbar:
 * When there are two or more toolbar button groups, the main toolbar will show as many complete, sequential toolbar groups as possible within the width of the editor. Any remaining toolbar button groups will be moved to the toolbar drawer.
 * If the first toolbar button group is wider than the editor, the whole toolbar will be shown in the toolbar drawer.
 
-The toolbar modes are not available when using link:{baseurl}/interface/toolbars/toolbar-configuration-options/#usingmultipletoolbars[multiple toolbars] or the link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbarn[toolbar(n)] option.
+The toolbar modes are not available when using link:toolbar-configuration-options.html#usingmultipletoolbars[multiple toolbars] or the link:toolbar-configuration-options.html#toolbarn[toolbar(n)] option.
 
 Type : `+String+`
 
@@ -30,7 +30,7 @@ Default Value : `+'floating'+`
 
 Possible Values : `+'floating'+`, `+'sliding'+`, `+'scrolling'+`, or `+'wrap'+`
 
-include::partial$misc/admon_different_default_for_mobile[]
+include::partial$misc/admon_different_default_for_mobile.adoc[]
 
 === Settings
 

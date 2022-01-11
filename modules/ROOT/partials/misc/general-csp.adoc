@@ -1,13 +1,13 @@
 == Configuring Content Security Policy (CSP) for TinyMCE
 
-\{\{site.productname}} can be used with a https://content-security-policy.com/[CSP] header. When using a CSP, the following directives are *required* for \{\{site.productname}} to function:
+{productname} can be used with a https://content-security-policy.com/[CSP] header. When using a CSP, the following directives are *required* for {productname} to function:
 
 [cols=",",options="header",]
 |===
 |Policy directives |Reason
 |`+script-src 'self' *.tinymce.com *.tiny.cloud;+` |Scripts are sometimes loaded as script element with an src attribute.
 |`+connect-src 'self' *.tinymce.com *.tiny.cloud blob:;+` |XMLHttpRequest is required by some services such as spellchecking and PowerPaste.
-|`+img-src 'self' *.tinymce.com *.tiny.cloud data: blob:;+` |Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the \{\{site.cloudname}} service.
+|`+img-src 'self' *.tinymce.com *.tiny.cloud data: blob:;+` |Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the {cloudname} service.
 |`+style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud;+` |Styles are used for inline formatting (such as underline, font colors, etc.) and the positioning of user interface elements.
 |`+font-src 'self' *.tinymce.com *.tiny.cloud;+` |Fonts are used for icons in the UI and is loaded from external files.
 |===
@@ -30,7 +30,7 @@ media-src *;
 For information on Content Security Policies, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP[MDN Web Docs - Content Security Policy (CSP)].
 ____
 
-When using the \{\{site.cloudname}}, use this CSP header :
+When using the {cloudname}, use this CSP header :
 
 [source,html]
 ----
@@ -40,7 +40,7 @@ When using the \{\{site.cloudname}}, use this CSP header :
 />
 ----
 
-When self-hosting \{\{site.productname}} from a local domain, use this CSP header (excludes the *.tiny.cloud domain):
+When self-hosting {productname} from a local domain, use this CSP header (excludes the *.tiny.cloud domain):
 
 [source,html]
 ----

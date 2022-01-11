@@ -12,7 +12,7 @@ Default Value : `+[]+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
+  plugins: '{plugincode}',
   toolbar: 'export',
   export_ignore_elements: [ 'iframe', 'video', 'audio' ]
 });

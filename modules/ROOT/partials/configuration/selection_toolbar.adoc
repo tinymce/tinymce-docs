@@ -1,6 +1,6 @@
 == quickbars_selection_toolbar
 
-The *quickbars_selection_toolbar* option configures the Quick Selection toolbar provided by the link:{baseurl}/plugins-ref/opensource/quickbars/[quickbars plugin]. To change the buttons on the Quick Selection toolbar, provide a space-separated string of [toolbar button names](\{\{ site.baseurl }}/interface/toolbars/available-toolbar-buttons/). The Quick Selection toolbar is intended for buttons related to formatting content, but any [\{\{site.productname}} toolbar buttons](\{\{ site.baseurl }}/interface/toolbars/available-toolbar-buttons/) or [custom toolbar buttons](\{\{ site.baseurl }}/how-to-guides/creating-custom-ui-components/toolbar-buttons/custom-toolbarbuttons/) are allowed.
+The *quickbars_selection_toolbar* option configures the Quick Selection toolbar provided by the link:quickbars.html[quickbars plugin]. To change the buttons on the Quick Selection toolbar, provide a space-separated string of link:/interface/toolbars/available-toolbar-buttons/[toolbar button names]. The Quick Selection toolbar is intended for buttons related to formatting content, but any link:/interface/toolbars/available-toolbar-buttons/[{productname} toolbar buttons] or link:/how-to-guides/creating-custom-ui-components/toolbar-buttons/custom-toolbarbuttons/[custom toolbar buttons] are allowed.
 
 To disable the Quick Selection toolbar, set `+quickbars_selection_toolbar+` to `+false+`.
 

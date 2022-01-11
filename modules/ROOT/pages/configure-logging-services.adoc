@@ -4,9 +4,9 @@
 
 
 
-It may be useful to make the \{\{site.productname}} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
+It may be useful to make the {productname} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
-The \{\{site.productname}} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
+The {productname} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
 
 To write the logs to a specific file:
 
@@ -42,7 +42,7 @@ To write the logs to a specific file:
 
 </configuration>
 ----
-. Pass the configuration file to the Java application server. Assuming you've saved your `+logback.xml+` file in `+/etc/opt/tinymce+`, follow [step 4](\{\{ site.baseurl }}/how-to-guides/premium-server-side-guide/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5](\{\{ site.baseurl }}/how-to-guides/premium-server-side-guide/#step5restartthejavaapplicationserver) on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
+. Pass the configuration file to the Java application server. Assuming you've saved your `+logback.xml+` file in `+/etc/opt/tinymce+`, follow link:premium-server-side-guide.html#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:premium-server-side-guide.html#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
 +
 ....
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml

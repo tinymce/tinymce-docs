@@ -1,6 +1,6 @@
-The https://github.com/tinymce/tinymce-svelte[Official \{\{site.productname}} Svelte component] integrates \{\{site.productname}} into https://svelte.dev/[Svelte applications]. This procedure creates a basic Svelte application using the https://github.com/sveltejs/template[`+sveltejs/template+` project] adds a \{\{site.productname}} editor based using the \{\{site.productname}} Svelte integration.
+The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications]. This procedure creates a basic Svelte application using the https://github.com/sveltejs/template[`+sveltejs/template+` project] adds a {productname} editor based using the {productname} Svelte integration.
 
-For examples of the \{\{site.productname}} integration, visit https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
+For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 
 == Prerequisites
 
@@ -41,7 +41,7 @@ npm install @tinymce/tinymce-svelte
 
 [arabic]
 . Open `+src/App.svelte+` and add:
-* An `+import+` statement for the \{\{site.productname}} component.
+* An `+import+` statement for the {productname} component.
 * The `+<Editor />+` as a placeholder for the editor.
 +
 For example:
@@ -70,7 +70,7 @@ import Editor from '@tinymce/tinymce-svelte';
 ----
 npm install rollup-plugin-copy -D
 ----
-. Open `+rollup.config.js+` and configure the rollup copy plugin `+rollup-plugin-copy+` to copy \{\{site.productname}} to the `+public/+` directory, such as:
+. Open `+rollup.config.js+` and configure the rollup copy plugin `+rollup-plugin-copy+` to copy {productname} to the `+public/+` directory, such as:
 +
 [source,js]
 ----
@@ -91,9 +91,9 @@ plugins: [
 }
 ----
 . Open `+src/App.svelte+` and add:
-* An `+import+` statement for the \{\{site.productname}} component.
+* An `+import+` statement for the {productname} component.
 * The `+<Editor />+` as a placeholder for the editor.
-* The link:{baseurl}/how-to-guides/environment-setup/svelte/svelte-ref/#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
+* The link:svelte-ref.html#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
 +
 For example:
 +
@@ -116,9 +116,9 @@ import Editor from '@tinymce/tinymce-svelte';
 
 [arabic]
 . Open `+src/App.svelte+` and add:
-* An `+import+` statement for the \{\{site.productname}} component.
+* An `+import+` statement for the {productname} component.
 * The `+<Editor />+` as a placeholder for the editor.
-* The link:{baseurl}/how-to-guides/environment-setup/svelte/svelte-ref/#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
+* The link:svelte-ref.html#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
 +
 For example:
 +
@@ -153,7 +153,7 @@ This will start a local development server, accessible at http://localhost:5000.
 
 == Next Steps
 
-* For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
+* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 * For information on customizing, see:
-** link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[\{\{site.productname}} basic setup].
-** link:{baseurl}/how-to-guides/environment-setup/svelte/svelte-ref/[The \{\{site.productname}} Svelte integration technical reference].
+** link:basic-setup.html[{productname} basic setup].
+** link:svelte-ref.html[The {productname} Svelte integration technical reference].

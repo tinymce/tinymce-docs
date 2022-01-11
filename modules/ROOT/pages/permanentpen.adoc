@@ -11,7 +11,7 @@
 :plugincode: permanentpen
 
 
-include::partial$misc/admon_premium_plugin[]
+include::partial$misc/admon_premium_plugin.adoc[]
 
 The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
 
@@ -33,7 +33,7 @@ underline: false,
 strikethrough: false
 ----
 
-For more information on \{\{site.productname}} formats, refer to the link:{baseurl}/content/content-formatting/#formats[formats] section.
+For more information on {productname} formats, refer to the link:content-formatting.html#formats[formats] section.
 
 == Try our Permanent Pen demo
 
@@ -66,7 +66,7 @@ There are two ways to access the Permanent Pen properties:
 
 ==== From the menubar
 
-Add the Permanent pen properties option to the menu bar with the link:{baseurl}/interface/menus/menus-configuration-options/#menu[menu] configuration.
+Add the Permanent pen properties option to the menu bar with the link:menus-configuration-options.html#menu[menu] configuration.
 
 [source,js]
 ----
@@ -133,6 +133,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Permanent Pen plugin provides the following \{\{site.productname}} commands.
+The Permanent Pen plugin provides the following {productname} commands.
 
 include::partial$commands/permanentpen-cmds.adoc[]

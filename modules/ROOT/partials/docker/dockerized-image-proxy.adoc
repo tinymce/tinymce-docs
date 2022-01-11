@@ -1,15 +1,15 @@
 == Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)
 
-The TinyMCE image proxy server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. \{\{site.companyname}} provides a pre-configured package for creating a Image Proxy Docker image.
+The TinyMCE image proxy server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Image Proxy Docker image.
 
 include::partial$misc/admon_dont-push-docker-images.adoc[]
 
 === Procedure
 
-The following procedure covers downloading, configuring, building and testing the \{\{site.productname}} Image Proxy Docker image.
+The following procedure covers downloading, configuring, building and testing the {productname} Image Proxy Docker image.
 
 ____
-*Note*: This procedure assumes that a \{\{ site.productname }} self-hosted enterprise bundle has been extracted as described in link:{baseurl}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-intro-setup/#downloadandextractthetinymceself-hostedbundle[Download and extract the \{\{site.productname}} Self-hosted Bundle].
+*Note*: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in link:bundle-intro-setup.html#downloadandextractthetinymceself-hostedbundle[Download and extract the {productname} Self-hosted Bundle].
 ____
 
 [arabic, start=4]
@@ -52,7 +52,7 @@ image-proxy {
 }
 ----
 +
-For information on the `+image-proxy+` configuration setting, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#image-proxyoptional[Configure server-side components - `+image-proxy+`].
+For information on the `+image-proxy+` configuration setting, see: link:configure.html#image-proxyoptional[Configure server-side components - `+image-proxy+`].
 . _Optional_: Edit the `+http+` configuration settings in `+config/ephox-image-proxy-docker-env.conf+`. The configurable settings are in the `+http+` section of the file. For example:
 +
 [source,conf]
@@ -70,8 +70,8 @@ http {
 }
 ----
 +
-For information on the `+http+` configuration setting, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#httpoptional[Configure server-side components - `+http+`].
-. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-image-proxy-docker-env.conf+`. See: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/[Configure server-side components].
+For information on the `+http+` configuration setting, see: link:configure.html#httpoptional[Configure server-side components - `+http+`].
+. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-image-proxy-docker-env.conf+`. See: link:configure.html[Configure server-side components].
 . Create an `+origins.env+` file in the same directory as the `+Dockerfile+`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`+allowed-origins+`). Up to 99 origins can be added without editing `+config/ephox-image-proxy-docker-env.conf+`.
 +
 For example:
@@ -83,8 +83,8 @@ ORIGIN1=example
 ORIGIN2=http://example.org
 ----
 +
-For information on `+allowed-origins+`, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
-. As the root user or Administrator, build the \{\{site.productname}} Image Proxy Docker image using the following command:
+For information on `+allowed-origins+`, see: link:configure.html#allowed-originsrequired[Configure server-side components - allowed-origins].
+. As the root user or Administrator, build the {productname} Image Proxy Docker image using the following command:
 +
 [source,sh]
 ----
@@ -114,4 +114,4 @@ The response from the `+curl+` command should be:
 Image proxy service is running.
 ----
 
-The \{\{site.productname}} Image Proxy Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].
+The {productname} Image Proxy Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].

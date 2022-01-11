@@ -11,7 +11,7 @@
 :plugincode: save
 
 
-This plugin adds a save button to the \{\{site.productname}} toolbar, which will submit the form that the editor is within.
+This plugin adds a save button to the {productname} toolbar, which will submit the form that the editor is within.
 
 == Basic setup
 
@@ -56,6 +56,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
-The Save plugin provides the following \{\{site.productname}} commands.
+The Save plugin provides the following {productname} commands.
 
 include::partial$commands/save-cmds.adoc[]

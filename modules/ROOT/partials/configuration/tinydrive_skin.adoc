@@ -1,6 +1,6 @@
 == tinydrive_skin
 
-This option sets the skin applied to \{\{site.cloudfilemanager}}. The default skin included with \{\{site.cloudfilemanager}} is named "oxide".
+This option sets the skin applied to {cloudfilemanager}. The default skin included with {cloudfilemanager} is named "oxide".
 
 Type : `+String+`
 
@@ -8,7 +8,7 @@ Default Value : `+'oxide'+`
 
 Possible Values : `+'oxide'+`, `+'oxide-dark'+`
 
-If the `+tinydrive_skin+` option is not specified, \{\{site.cloudfilemanager}} will try and use the skin specified by the [\{\{site.productname}} `+skin+` option](\{\{ site.baseurl }}/interface/editor-appearance/editor-skin/#skin) before falling back to the default "oxide" skin.
+If the `+tinydrive_skin+` option is not specified, {cloudfilemanager} will try and use the skin specified by the link:editor-skin.html#skin[{productname} `+skin+` option] before falling back to the default "oxide" skin.
 
 === Example: Using `+tinydrive_skin+`
 

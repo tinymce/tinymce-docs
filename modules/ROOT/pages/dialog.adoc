@@ -8,42 +8,42 @@
 A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 
 ____
-*Note*: \{\{site.productname}} also supports link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/urldialog/[URL dialogs]. Configuring a URL dialog is different to configuring a standard \{\{site.productname}} dialog.
+*Note*: {productname} also supports link:urldialog.html[URL dialogs]. Configuring a URL dialog is different to configuring a standard {productname} dialog.
 ____
 
 == Use cases
 
 === Display basic information
 
-The link:{baseurl}/plugins-ref/opensource/code/[`+code+`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
+The link:code.html[`+code+`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
 image:sourcecode.png[Source Code]
 
 === Display complex information
 
-More complex dialogs can use link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel[tab panels] and various link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the link:{baseurl}/plugins-ref/opensource/help/[`+help+`] and link:{baseurl}/plugins-ref/opensource/charmap/[`+character map+`] plugins use dialogs with tabbed panels to categorise and separate information.
+More complex dialogs can use link:dialog-components.html#tabpanel[tab panels] and various link:dialog-components.html#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the link:help.html[`+help+`] and link:charmap.html[`+character map+`] plugins use dialogs with tabbed panels to categorise and separate information.
 
 image:specialchars.png[Special Characters]
 
 === Interactive dialogs
 
-\{\{site.productname}} dialogs can also contain link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
+{productname} dialogs can also contain link:dialog-components.html#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
 
-For example, the link:{baseurl}/plugins-ref/opensource/image/[`+image+`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
+For example, the link:image.html[`+image+`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
 image:interactive.png[Insert/Edit images]
 
 == Body components
 
-The body of a dialog must be either a link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panel[`+panel+`] (a single panel) or a link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel[`+tabpanel+`] (a collection of panels). Each panel can contain link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panelcomponents[panel components] such as inputs, buttons and text.
+The body of a dialog must be either a link:dialog-components.html#panel[`+panel+`] (a single panel) or a link:dialog-components.html#tabpanel[`+tabpanel+`] (a collection of panels). Each panel can contain link:dialog-components.html#panelcomponents[panel components] such as inputs, buttons and text.
 
 ____
-*Note*: \{\{site.productname}} also supports link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/urldialog/[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard \{\{site.productname}} dialog.
+*Note*: {productname} also supports link:urldialog.html[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 ____
 
 === Panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panelcomponents[panel components]. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for link:dialog-components.html#panelcomponents[panel components]. A panel type dialog only has one panel.
 
 [source,js]
 ----
@@ -55,9 +55,9 @@ The basic dialog type is a *panel* dialog. A panel is a container for link:{base
 
 === TabPanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#panelcomponents[panel components], allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different link:dialog-components.html#panelcomponents[panel components], allowing for complex dialogs.
 
-See the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel[tab panel component reference] for tab panel configuration options.
+See the link:dialog-components.html#tabpanel[tab panel component reference] for tab panel configuration options.
 
 [source,js]
 ----
@@ -74,7 +74,7 @@ See the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialo
 }
 ----
 
-The `+name+` of the panel can be used with the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogapimethods[`+dialogApi.showTab('tabName')+`] method to programmatically switch tabs. It is also passed to link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions[`+onTabChange+`] as part of the `+details+` object.
+The `+name+` of the panel can be used with the link:dialog-apis.html#dialogapimethods[`+dialogApi.showTab('tabName')+`] method to programmatically switch tabs. It is also passed to link:dialog-configuration.html#configurationoptions[`+onTabChange+`] as part of the `+details+` object.
 
 ==== Example tab panel
 

@@ -5,9 +5,9 @@
 :description: Premium plugins compatibility with TinyMCE editor versions.
 :keywords: tinymce cloud script textarea apiKey
 
-Specific versions of \{\{site.productname}} are compatible with premium plugins.
+Specific versions of {productname} are compatible with premium plugins.
 
-Use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-plugin-version/) to ensure compatibility.
+Use the following matrix in conjunction with the optional parameters for specifying editor version and link:/how-to-guides/cloud-deployment-guide/editor-plugin-version/[plugin version] to ensure compatibility.
 
 ____
 *Note*: On June 4, 2019 the URL to access tiny.cloud changed from:
@@ -33,5 +33,5 @@ ____
 include::partial$misc/plugin_support_table.adoc[]
 
 ____
-*Important*: Ensure the plugins are supported in your editor version when deploying premium plugins only using [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/features-only/).
+*Important*: Ensure the plugins are supported in your editor version when deploying premium plugins only using link:/how-to-guides/cloud-deployment-guide/features-only/[{cloudname}].
 ____

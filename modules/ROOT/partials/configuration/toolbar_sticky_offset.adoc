@@ -1,9 +1,9 @@
 == toolbar_sticky_offset
 
-This option allows the toolbar to stick or dock at the specified offset from the top or bottom of the https://developer.mozilla.org/en-US/docs/Glossary/Viewport[viewport] depending on the link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar_location}}[toolbar location (`+toolbar_location+`)]. This can be useful when a site has a sticky header navigation bar, allowing the \{\{site.productname}} toolbar to "stick" below the site's navigation bar. This option accepts a height in pixels.
+This option allows the toolbar to stick or dock at the specified offset from the top or bottom of the https://developer.mozilla.org/en-US/docs/Glossary/Viewport[viewport] depending on the link:toolbar-configuration-options.html#toolbar_location}}[toolbar location (`+toolbar_location+`)]. This can be useful when a site has a sticky header navigation bar, allowing the {productname} toolbar to "stick" below the site's navigation bar. This option accepts a height in pixels.
 
 ____
-*Note:* This option requires the link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar_sticky}}[`+toolbar_sticky+`] option be set to `+true+` to take effect.
+*Note:* This option requires the link:toolbar-configuration-options.html#toolbar_sticky}}[`+toolbar_sticky+`] option be set to `+true+` to take effect.
 ____
 
 Type : `+Number+`

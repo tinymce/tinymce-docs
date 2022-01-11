@@ -11,7 +11,7 @@
 :plugincode: formatpainter
 
 
-include::partial$misc/admon_premium_plugin[]
+include::partial$misc/admon_premium_plugin.adoc[]
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
@@ -28,7 +28,7 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Basic setup
 
-To add the \{\{pluginname}} plugin to the editor, add `+{{plugincode}}+` to the `+plugins+` option in the editor configuration.
+To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `+plugins+` option in the editor configuration.
 
 For example:
 
@@ -70,7 +70,7 @@ ____
 
 == Options
 
-The format painter acts upon all [`+formats+`](\{\{ site.baseurl }}/content/content-formatting/#formats) registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{baseurl}/plugins-ref/opensource/lists/[`+lists plugin+`] is made available.
+The format painter acts upon all link:content-formatting.html#formats[`+formats+`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:lists.html[`+lists plugin+`] is made available.
 
 include::partial$configuration/formatpainter_formats.adoc[]
 
@@ -80,6 +80,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
-The Format Painter plugin provides the following \{\{site.productname}} commands.
+The Format Painter plugin provides the following {productname} commands.
 
 include::partial$commands/formatpainter-cmds.adoc[]

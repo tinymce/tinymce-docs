@@ -16,7 +16,7 @@ The help plugin adds a button and/or menu item that opens a dialog showing two t
 * Handy shortcuts that explains some nice-to-know keyboard shortcuts
 * Plugin list that shows which plugins that have been installed, with links to the relevant documentation pages if available, and a list of available premium plugins.
 
-In the footer of the dialog you can also see which version of \{\{site.productname}} you are using.
+In the footer of the dialog you can also see which version of {productname} you are using.
 
 The help dialog can also be shown by pressing the keyboard shortcut `+Alt + 0+`.
 
@@ -40,7 +40,7 @@ include::partial$configuration/help_tabs.adoc[]
 [cols=",,",options="header",]
 |===
 |Name |Arguments |Description
-|addTab |tabSpec: link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel[TabPanel] |Register a tab for the Help dialog
+|addTab |tabSpec: link:dialog-components.html#tabpanel[TabPanel] |Register a tab for the Help dialog
 |===
 
 === Example: Using the `+addTab+` API
@@ -61,7 +61,7 @@ tinymce.activeEditor.plugins.help.addTab({
 
 == Exposing metadata for the help plugin
 
-For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the [Creating a Plugin page](\{\{ site.baseurl }}/how-to-guides/creating-custom-ui-components/making-plugins/creating-a-plugin/#exposingmetadata).
+For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the link:creating-a-plugin.html#exposingmetadata[Creating a Plugin page].
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -69,6 +69,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Help plugin provides the following \{\{site.productname}} command.
+The Help plugin provides the following {productname} command.
 
 include::partial$commands/help-cmds.adoc[]

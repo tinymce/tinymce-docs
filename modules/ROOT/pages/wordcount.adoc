@@ -10,7 +10,7 @@
 :plugincode: wordcount
 
 
-The Word Count plugin adds the functionality for counting words to the \{\{site.productname}} editor by placing a counter on the right edge of the status bar. Clicking *Word Count* in the status bar switches between counting words and characters. A dialog box with both word and character counts can be opened using the menu item situated in the *Tools* drop-down, or the toolbar button.
+The Word Count plugin adds the functionality for counting words to the {productname} editor by placing a counter on the right edge of the status bar. Clicking *Word Count* in the status bar switches between counting words and characters. A dialog box with both word and character counts can be opened using the menu item situated in the *Tools* drop-down, or the toolbar button.
 
 == Basic setup
 
@@ -29,9 +29,9 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The \{\{pluginname}} plugin provides the following \{\{site.productname}} command.
+The {pluginname} plugin provides the following {productname} command.
 
-include::partial$commands/\{\{plugincode}}-cmds.adoc[]
+include::partial$commands/{plugincode}-cmds.adoc[]
 
 == API
 

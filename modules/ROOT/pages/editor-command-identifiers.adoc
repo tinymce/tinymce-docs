@@ -23,7 +23,7 @@
 
 == Executable commands
 
-The following tables show the existing editor commands. These commands are provided by `+tinymce+` and not by the browser's internal commands. These commands can be executed using the [execCommand](\{\{ site.baseurl }}/apis/tinymce/tinymce.editorcommands/#execcommand) function.
+The following tables show the existing editor commands. These commands are provided by `+tinymce+` and not by the browser's internal commands. These commands can be executed using the link:tinymce.editorcommands.html#execcommand[execCommand] function.
 
 === Listing core and plugin editor commands
 
@@ -36,7 +36,7 @@ tinymce.activeEditor.editorCommands.commands.exec;
 
 === Core Editor commands
 
-The commands on the following table are provided by the \{\{site.productname}} editor and do not require any plugins to be enabled.
+The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
 
 [cols=",",options="header",]
 |===
@@ -49,7 +49,7 @@ The commands on the following table are provided by the \{\{site.productname}} e
 |Subscript |Toggles subscript formatting to selection.
 |Cut |Cuts the selected contents and puts in into users clipboard.
 |Copy |Copies the selected contents and puts in into users clipboard.
-|Lang |Sets the language of the current selection. The value passed in should be a language spec described in link:{baseurl}/content/content-localization/#content_langs[Content appearance options - `+content_langs+`].
+|Lang |Sets the language of the current selection. The value passed in should be a language spec described in link:content-localization.html#content_langs[Content appearance options - `+content_langs+`].
 |Paste |Pastes the current clipboard contents into the editor.
 |mceInsertLink |Inserts a link at the current selection. The value is the URL to add to the link(s).
 |Unlink |Removes any links from the current selection.
@@ -67,13 +67,13 @@ The commands on the following table are provided by the \{\{site.productname}} e
 |mceRemoveTextcolor |Removes the text color or background color from the current selection. Requires an argument of either `+'hilitecolor'+` or `+'forecolor'+`.
 |RemoveFormat |Removes any formats from the current selection.
 |mceBlockQuote |Wraps the selected text blocks into a block quote.
-|FormatBlock |Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<`+p+`>) format will be toggled. For a list of options, see: [Content formatting options - Built-in formats](\{\{ site.baseurl }}/content/content-formatting/#built-informats).
+|FormatBlock |Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<`+p+`>) format will be toggled. For a list of options, see: link:content-formatting.html#built-informats[Content formatting options - Built-in formats].
 |mceInsertContent |Inserts contents at the current selection. The value passed in should be the contents to be inserted.
 |mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
 |mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
-|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats](\{\{ site.baseurl }}/content/content-formatting/#built-informats).
+|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: link:content-formatting.html#built-informats[Content formatting options - Built-in formats].
 |ToggleSidebar |Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`+<sidebar-name>+`_).
-|ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar[User interface options - Toolbar].
+|ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: link:toolbar-configuration-options.html#toolbar[User interface options - Toolbar].
 |Indent |Indents the current selection.
 |Outdent |Outdents the current selection.
 |InsertHorizontalRule |Inserts a horizontal rule at the cursor location or inplace of the current selection.
@@ -202,223 +202,223 @@ Commands are available for the following plugins:
 
 ==== Advanced Code
 
-The following command requires the link:{baseurl}/plugins-ref/premium/advcode/[Advanced Code (`+advcode+`)] plugin.
+The following command requires the link:advcode.html[Advanced Code (`+advcode+`)] plugin.
 
 include::partial$commands/code-cmds.adoc[]
 
 ==== Advanced Lists
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/advlist/[Advanced Lists (`+advlist+`)] plugin.
+The following commands require the link:advlist.html[Advanced Lists (`+advlist+`)] plugin.
 
 include::partial$commands/advlist-cmds.adoc[]
 
 ==== Advanced Tables
 
-The following commands require the link:{baseurl}/plugins-ref/premium/advtable/[Advanced Tables (`+advtable+`)] plugin.
+The following commands require the link:advtable.html[Advanced Tables (`+advtable+`)] plugin.
 
 include::partial$commands/advtable-cmds.adoc[]
 
 ==== Anchor
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/anchor/[Anchor (`+anchor+`)] plugin.
+The following command requires the link:anchor.html[Anchor (`+anchor+`)] plugin.
 
 include::partial$commands/anchor-cmds.adoc[]
 
 ==== Autoresize
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/autoresize/[Autoresize (`+autoresize+`)] plugin.
+The following command requires the link:autoresize.html[Autoresize (`+autoresize+`)] plugin.
 
 include::partial$commands/autoresize-cmds.adoc[]
 
 ==== Case Change
 
-The following commands require the link:{baseurl}/plugins-ref/premium/casechange/[Case Change (`+casechange+`)] plugin.
+The following commands require the link:casechange.html[Case Change (`+casechange+`)] plugin.
 
 include::partial$commands/casechange-cmds.adoc[]
 
 ==== Character Map
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/charmap/[Character Map (`+charmap+`)] plugin.
+The following command requires the link:charmap.html[Character Map (`+charmap+`)] plugin.
 
 include::partial$commands/charmap-cmds.adoc[]
 
 ==== Code
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/code/[Code (`+code+`)] plugin.
+The following command requires the link:code.html[Code (`+code+`)] plugin.
 
 include::partial$commands/code-cmds.adoc[]
 
 ==== Code Sample
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/codesample/[Code Sample (`+codesample+`)] plugin.
+The following command requires the link:codesample.html[Code Sample (`+codesample+`)] plugin.
 
 include::partial$commands/codesample-cmds.adoc[]
 
 ==== Comments
 
-The following commands require the link:{baseurl}/plugins-ref/premium/comments/[Comments (`+tinycomments+`)] plugin.
+The following commands require the link:comments.html[Comments (`+tinycomments+`)] plugin.
 
 include::partial$commands/comments-cmds.adoc[]
 
 ==== Directionality
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/directionality/[Directionality (`+directionality+`)] plugin.
+The following commands require the link:directionality.html[Directionality (`+directionality+`)] plugin.
 
 include::partial$commands/directionality-cmds.adoc[]
 
 ==== Emoticons
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/emoticons/[Emoticons (`+emoticons+`)] plugin.
+The following commands require the link:emoticons.html[Emoticons (`+emoticons+`)] plugin.
 
 include::partial$commands/emoticons-cmds.adoc[]
 
 ==== Export
 
-The following commands require the link:{baseurl}/plugins-ref/premium/export/[Export (`+export+`)] plugin.
+The following commands require the link:export.html[Export (`+export+`)] plugin.
 
 include::partial$commands/export-cmds.adoc[]
 
 ==== Format Painter
 
-The following commands require the link:{baseurl}/plugins-ref/premium/formatpainter/[Format Painter (`+formatpainter+`)] plugin.
+The following commands require the link:formatpainter.html[Format Painter (`+formatpainter+`)] plugin.
 
 include::partial$commands/formatpainter-cmds.adoc[]
 
 ==== Full Screen
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/fullscreen/[Full Screen (`+fullscreen+`)] plugin.
+The following command requires the link:fullscreen.html[Full Screen (`+fullscreen+`)] plugin.
 
 include::partial$commands/fullscreen-cmds.adoc[]
 
 ==== Help
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/help/[Help (`+help+`)] plugin.
+The following command requires the link:help.html[Help (`+help+`)] plugin.
 
 include::partial$commands/help-cmds.adoc[]
 
 ==== Image
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/image/[Image (`+image+`)] plugin.
+The following command requires the link:image.html[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[]
 
 ==== Image Tools
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/imagetools/[Image Tools (`+imagetools+`)] plugin.
+The following commands require the link:imagetools.html[Image Tools (`+imagetools+`)] plugin.
 
 include::partial$commands/imagetools-cmds.adoc[]
 
 ==== Insert Date/Time
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/insertdatetime/[Insert Date/Time (`+insertdatetime+`)] plugin.
+The following commands require the link:insertdatetime.html[Insert Date/Time (`+insertdatetime+`)] plugin.
 
 include::partial$commands/insertdatetime-cmds.adoc[]
 
 ==== Link
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/link/[Link (`+link+`)] plugin.
+The following command requires the link:link.html[Link (`+link+`)] plugin.
 
 include::partial$commands/link-cmds.adoc[]
 
 ==== Lists
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/lists/[Lists (`+lists+`)] plugin.
+The following commands require the link:lists.html[Lists (`+lists+`)] plugin.
 
 include::partial$commands/lists-cmds.adoc[]
 
 ==== Media
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/media/[Media (`+media+`)] plugin.
+The following command requires the link:media.html[Media (`+media+`)] plugin.
 
 include::partial$commands/media-cmds.adoc[]
 
 ==== Nonbreaking Space
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/nonbreaking/[Nonbreaking Space (`+nonbreaking+`)] plugin.
+The following command requires the link:nonbreaking.html[Nonbreaking Space (`+nonbreaking+`)] plugin.
 
 include::partial$commands/nbsp-cmds.adoc[]
 
 ==== Page Break
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/pagebreak/[Page Break (`+pagebreak+`)] plugin.
+The following command requires the link:pagebreak.html[Page Break (`+pagebreak+`)] plugin.
 
 include::partial$commands/pagebreak-cmds.adoc[]
 
 ==== Paste
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/paste/[Paste (`+paste+`)] plugin.
+The following commands require the link:paste.html[Paste (`+paste+`)] plugin.
 
 include::partial$commands/paste-cmds.adoc[]
 
 ==== Permanent Pen
 
-The following commands require the link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen (`+permanentpen+`)] plugin.
+The following commands require the link:permanentpen.html[Permanent Pen (`+permanentpen+`)] plugin.
 
 include::partial$commands/permanentpen-cmds.adoc[]
 
 ==== PowerPaste
 
-The following command requires the link:{baseurl}/plugins-ref/premium/powerpaste/[PowerPaste (`+powerpaste+`)] plugin.
+The following command requires the link:powerpaste.html[PowerPaste (`+powerpaste+`)] plugin.
 
 include::partial$commands/powerpaste-cmds.adoc[]
 
 ==== Preview
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/preview/[Preview (`+preview+`)] plugin.
+The following command requires the link:preview.html[Preview (`+preview+`)] plugin.
 
 include::partial$commands/preview-cmds.adoc[]
 
 ==== Save
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/save/[Save (`+save+`)] plugin.
+The following commands require the link:save.html[Save (`+save+`)] plugin.
 
 include::partial$commands/save-cmds.adoc[]
 
 ==== Search and Replace
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/searchreplace/[Search and Replace (`+searchreplace+`)] plugin.
+The following command requires the link:searchreplace.html[Search and Replace (`+searchreplace+`)] plugin.
 
 include::partial$commands/searchreplace-cmds.adoc[]
 
 ==== Spell Checker Pro
 
-The following commands require the link:{baseurl}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
+The following commands require the link:tinymcespellchecker.html[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[]
 
 ==== Table
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/table/[Table (`+table+`)] plugin.
+The following commands require the link:table.html[Table (`+table+`)] plugin.
 
 include::partial$commands/table-cmds.adoc[]
 
 ==== Template
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/template/[Template (`+template+`)] plugin.
+The following command requires the link:template.html[Template (`+template+`)] plugin.
 
 include::partial$commands/template-cmds.adoc[]
 
 ==== Table of Contents
 
-The following commands require the link:{baseurl}/plugins-ref/opensource/toc/[Table of Contents (`+toc+`)] plugin.
+The following commands require the link:toc.html[Table of Contents (`+toc+`)] plugin.
 
 include::partial$commands/toc-cmds.adoc[]
 
 ==== Visual Blocks
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/visualblocks/[Visual Blocks (`+visualblocks+`)] plugin.
+The following command requires the link:visualblocks.html[Visual Blocks (`+visualblocks+`)] plugin.
 
 include::partial$commands/visualblocks-cmds.adoc[]
 
 ==== Visual Characters
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/visualchars/[Visual Characters (`+visualchars+`)] plugin.
+The following command requires the link:visualchars.html[Visual Characters (`+visualchars+`)] plugin.
 
 include::partial$commands/visualchars-cmds.adoc[]
 
 ==== Word Count
 
-The following command requires the link:{baseurl}/plugins-ref/opensource/visualchars/[Word Count (`+wordcount+`)] plugin.
+The following command requires the link:visualchars.html[Word Count (`+wordcount+`)] plugin.
 
 include::partial$commands/wordcount-cmds.adoc[]
 
@@ -440,12 +440,12 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 |Command |Description
 |mceAddEditor |Converts the specified HTML or DOM element into an editor instance with the specified ID.
 |mceRemoveEditor |Removes an editor instance with the specified ID.
-|mceToggleEditor |Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide](\{\{ site.baseurl }}/apis/tinymce/tinymce.editor/#hide) if the editor is visible or [show](\{\{ site.baseurl }}/apis/tinymce/tinymce.editor/#show) if it is not visible.
+|mceToggleEditor |Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either link:tinymce.editor.html#hide[hide] if the editor is visible or link:tinymce.editor.html#show[show] if it is not visible.
 |===
 
 == Query command states
 
-\{\{site.productname}} provides the `+queryCommandState+` API to allow developers to determine the current state of selected content. The query will return `+true+` if the content is formatted using the same CSS styles and elements used by the corresponding command.
+{productname} provides the `+queryCommandState+` API to allow developers to determine the current state of selected content. The query will return `+true+` if the content is formatted using the same CSS styles and elements used by the corresponding command.
 
 === Listing core and plugin query command states
 
@@ -458,27 +458,27 @@ tinymce.activeEditor.editorCommands.commands.state;
 
 === Available query command states
 
-The following command states can be queried using the [queryCommandState](\{\{ site.baseurl }}/apis/tinymce/tinymce.editorcommands/#querycommandstate) API.
+The following command states can be queried using the link:tinymce.editorcommands.html#querycommandstate[queryCommandState] API.
 
 [cols=",",options="header",]
 |===
 |Command |Description
-|Bold |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+Bold+` command.
-|InsertDefinitionList |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+InsertDefinitionList+` command.
-|InsertOrderedList |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+InsertOrderedList+` command.
-|InsertUnorderedList |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+InsertUnorderedList+` command.
-|Italic |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+Italic+` command.
-|JustifyCenter |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+JustifyCenter+` command.
-|JustifyFull |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+JustifyFull+` command.
-|JustifyLeft |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+JustifyLeft+` command.
-|JustifyRight |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+JustifyRight+` command.
-|mceBlockQuote |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+mceBlockQuote+` command.
-|Outdent |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+Outdent+` command.
-|Strikethrough |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+Strikethrough+` command.
-|Subscript |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+Subscript+` command.
-|Superscript |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+Superscript+` command.
-|ToggleToolbarDrawer |Returns `+true+` if the Toolbar Drawer is open. The state can be controlled by the \{\{site.productname}} `+ToggleToolbarDrawer+` command.
-|Underline |Returns `+true+` if the content is formatted using the same markup as the \{\{site.productname}} `+Underline+` command.
+|Bold |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Bold+` command.
+|InsertDefinitionList |Returns `+true+` if the content is formatted using the same markup as the {productname} `+InsertDefinitionList+` command.
+|InsertOrderedList |Returns `+true+` if the content is formatted using the same markup as the {productname} `+InsertOrderedList+` command.
+|InsertUnorderedList |Returns `+true+` if the content is formatted using the same markup as the {productname} `+InsertUnorderedList+` command.
+|Italic |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Italic+` command.
+|JustifyCenter |Returns `+true+` if the content is formatted using the same markup as the {productname} `+JustifyCenter+` command.
+|JustifyFull |Returns `+true+` if the content is formatted using the same markup as the {productname} `+JustifyFull+` command.
+|JustifyLeft |Returns `+true+` if the content is formatted using the same markup as the {productname} `+JustifyLeft+` command.
+|JustifyRight |Returns `+true+` if the content is formatted using the same markup as the {productname} `+JustifyRight+` command.
+|mceBlockQuote |Returns `+true+` if the content is formatted using the same markup as the {productname} `+mceBlockQuote+` command.
+|Outdent |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Outdent+` command.
+|Strikethrough |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Strikethrough+` command.
+|Subscript |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Subscript+` command.
+|Superscript |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Superscript+` command.
+|ToggleToolbarDrawer |Returns `+true+` if the Toolbar Drawer is open. The state can be controlled by the {productname} `+ToggleToolbarDrawer+` command.
+|Underline |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Underline+` command.
 |===
 
 *Examples*
@@ -505,7 +505,7 @@ tinymce.activeEditor.queryCommandState('Underline');
 
 == Query command values
 
-\{\{site.productname}} provides the `+queryCommandValue+` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
+{productname} provides the `+queryCommandValue+` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
 
 === Listing core and plugin query command values
 
@@ -518,7 +518,7 @@ tinymce.activeEditor.editorCommands.commands.value;
 
 === Available query command values
 
-The following command values can be queried using the [queryCommandValue](\{\{ site.baseurl }}/apis/tinymce/tinymce.editorcommands/#querycommandvalue) API.
+The following command values can be queried using the link:tinymce.editorcommands.html#querycommandvalue[queryCommandValue] API.
 
 [cols=",",options="header",]
 |===

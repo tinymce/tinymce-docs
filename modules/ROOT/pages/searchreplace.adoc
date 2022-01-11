@@ -11,7 +11,7 @@
 :plugincode: searchreplace
 
 
-This plugin adds search/replace dialogs to \{\{site.productname}}. It also adds a toolbar button and the menu item `+Find and replace+` under the `+Edit+` menu dropdown.
+This plugin adds search/replace dialogs to {productname}. It also adds a toolbar button and the menu item `+Find and replace+` under the `+Edit+` menu dropdown.
 
 == Basic setup
 
@@ -31,6 +31,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Search and Replace plugin provides the following \{\{site.productname}} command.
+The Search and Replace plugin provides the following {productname} command.
 
 include::partial$commands/searchreplace-cmds.adoc[]

@@ -15,14 +15,16 @@
 :forModuleLoaders: true
 
 
-include::partial$misc/using-community-lang-packs.adoc[] :forModuleLoaders: false
+include::partial$misc/using-community-lang-packs.adoc[]
+:forModuleLoaders: false
 
 == Using premium self-hosted localizations
 
 :editorcomponent: localization
 
 
-include::partial$module-loading/bundling-ref-example.adoc[] :editorcomponent: nil
+include::partial$module-loading/bundling-ref-example.adoc[]
+:editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following example localization file:
 
@@ -30,31 +32,43 @@ The following table shows examples of the syntax used to bundle the following ex
 ./langs/sv_SE.js
 ....
 
-\{% comment %}
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
 
-[source,js]
+.2+|ES6+
+|npm
+a|
+[source, js]
 ----
 import 'tinymce/langs/sv_SE';
 ----
 
-[source,js]
+|`.zip`
+a|
+[source, js]
 ----
 import '../tinymce/langs/sv_SE';
 ----
 
-[source,js]
+.2+|Common JS
+|npm
+a|
+[source, js]
 ----
 require('tinymce/langs/sv_SE');
 ----
 
-[source,js]
+|`.zip`
+a|
+[source, js]
 ----
 require('../tinymce/langs/sv_SE.js');
 ----
-
-\{% endcomment %}
+|===
 
 :forModuleLoaders: true
 
 
-include::partial$misc/ui-languages.adoc[] :forModuleLoaders: false
+include::partial$misc/ui-languages.adoc[]
+:forModuleLoaders: false

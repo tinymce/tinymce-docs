@@ -8,30 +8,30 @@
 
 \{% endif %}
 
-The \{\{pluginname}} plugin cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[HTTP access control]).
+The {pluginname} plugin cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[HTTP access control]).
 
-An array of supported domains for the images (with CORS enabled on them) can be supplied to \{\{site.productname}} via the `+{{plugincode}}_cors_hosts+` option.
+An array of supported domains for the images (with CORS enabled on them) can be supplied to {productname} via the `+{plugincode}_cors_hosts+` option.
 
 ____
 *Note*: Each string in the array _must_ be in the format of `+mydomain.com+`. Do not include protocols (`+http://, https://+`) or any trailing slashes in your domains.
 ____
 
 ____
-*Note*: `+{{plugincode}}_cors_hosts+` is *not* required when enabling this plugin via [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/).
+*Note*: `+{plugincode}_cors_hosts+` is *not* required when enabling this plugin via link:/how-to-guides/cloud-deployment-guide/editor-and-features/[{cloudname}].
 ____
 
 Type : `+String[]+`
 
 Default Value : `+[]+`
 
-=== Example: `+{{plugincode}}_cors_hosts+`
+=== Example: `+{plugincode}_cors_hosts+`
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  toolbar: '{{plugincode}}',
-  plugins: 'image {{plugincode}}',
-  {{plugincode}}_cors_hosts: [ 'mydomain.com', 'otherdomain.com' ]
+  toolbar: '{plugincode}',
+  plugins: 'image {plugincode}',
+  {plugincode}_cors_hosts: [ 'mydomain.com', 'otherdomain.com' ]
 });
 ----

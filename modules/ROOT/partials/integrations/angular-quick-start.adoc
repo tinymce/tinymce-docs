@@ -1,6 +1,6 @@
-The https://github.com/tinymce/tinymce-angular[Official \{\{site.productname}} Angular component] integrates \{\{site.productname}} into Angular projects. This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a \{\{site.productname}} editor.
+The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a {productname} editor.
 
-For examples of the \{\{site.productname}} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
+For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
 == Prerequisites
 
@@ -78,7 +78,7 @@ export class AppModule { }
 ></editor>
 ----
 
-\{% if productSource == "cloud" %} 7. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[\{\{site.cloudname}} API key].
+\{% if productSource == "cloud" %} 7. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
 
 ....
 Such as:
@@ -88,7 +88,7 @@ Such as:
 ```
 ....
 
-\{% elsif productSource == "package-manager" %} 2. Using a text editor; open `+angular.json+` and add \{\{site.productname}} to the `+assets+` property.
+\{% elsif productSource == "package-manager" %} 2. Using a text editor; open `+angular.json+` and add {productname} to the `+assets+` property.
 
 ....
 ```json
@@ -118,7 +118,7 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 ----
 * To load TinyMCE when the page or application is loaded:
 [arabic]
-.. Open `+angular.json+` and add \{\{site.productname}} to the _global scripts_ tag.
+.. Open `+angular.json+` and add {productname} to the _global scripts_ tag.
 +
 [source,json]
 ----
@@ -139,19 +139,19 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 \{% else %}
 
 [arabic]
-. Add the `+tinymce+` global to the application by: Deploying \{\{site.productname}} independent of the Angular application, or bundling \{\{site.productname}} with the Angular application.
-* Deploy \{\{site.productname}} independent of the Angular application
+. Add the `+tinymce+` global to the application by: Deploying {productname} independent of the Angular application, or bundling {productname} with the Angular application.
+* Deploy {productname} independent of the Angular application
 +
-To use an independent deployment of \{\{site.productname}}, add a script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:
+To use an independent deployment of {productname}, add a script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:
 +
 [source,html]
 ----
 <script src="/path/to/tinymce.min.js"></script>
 ----
 +
-To use an independent deployment of \{\{site.productname}} with the create a Angular application, add the script to `+/path/to/tinymce-angular-demo/src/app/app.component.html+`.
+To use an independent deployment of {productname} with the create a Angular application, add the script to `+/path/to/tinymce-angular-demo/src/app/app.component.html+`.
 +
-* Bundling \{\{site.productname}} with the Angular application using a module loader (such as Webpack).
+* Bundling {productname} with the Angular application using a module loader (such as Webpack).
 
 \{% include integrations/bundling-integration.md package="tinymce-angular" depth='2' %} \{% endif %} 8. Test the application using the Angular development server. * To start the development server, navigate to the `+tinymce-angular-demo+` directory and run:
 
@@ -166,7 +166,7 @@ To use an independent deployment of \{\{site.productname}} with the create a Ang
 \{% if productSource == "package-manager" %}
 
 [[bunding-siteproductname-with-an-angular-application]]
-== Bunding \{\{site.productname}} with an Angular application
+== Bunding {productname} with an Angular application
 
 \{% include integrations/bundling-integration.md package="tinymce-angular" %} \{% endif %}
 
@@ -193,8 +193,8 @@ ____
 
 == Next Steps
 
-* For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
+* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 * For information on customizing:
-** \{\{site.productname}} integration, see: link:{baseurl}/how-to-guides/environment-setup/angular/angular-ref/[Angular framework Technical Reference].
-** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** {productname} integration, see: link:angular-ref.html[Angular framework Technical Reference].
+** {productname}, see: link:basic-setup.html[Basic setup].
 ** The Angular application, see: https://angular.io/docs[the Angular documentation].

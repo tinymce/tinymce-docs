@@ -11,7 +11,7 @@
 :plugincode: directionality
 
 
-This plugin adds directionality controls to the toolbar, enabling \{\{site.productname}} to better handle languages written from right to left. It also adds a toolbar button for each of its values, `+ltr+` for left-to-right text and `+rtl+` for right-to-left text.
+This plugin adds directionality controls to the toolbar, enabling {productname} to better handle languages written from right to left. It also adds a toolbar button for each of its values, `+ltr+` for left-to-right text and `+rtl+` for right-to-left text.
 
 == Basic setup
 
@@ -28,6 +28,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
-The Directionality plugin provides the following \{\{site.productname}} commands.
+The Directionality plugin provides the following {productname} commands.
 
 include::partial$commands/directionality-cmds.adoc[]

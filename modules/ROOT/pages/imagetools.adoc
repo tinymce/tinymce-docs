@@ -18,11 +18,11 @@ Image Tools (`+imagetools+`) plugin adds a contextual editing toolbar to the ima
 
 liveDemo::image-tools[ ]
 
-include::partial$misc/admon_svg_not_supported[]
+include::partial$misc/admon_svg_not_supported.adoc[]
 
 == Cloud Installation
 
-The Image Tools plugin is provided with all subscriptions to [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy. Simply add `+image+` to the `+toolbar+` list and `+image imagetools+` to the `+plugins+` list.
+The Image Tools plugin is provided with all subscriptions to link:/how-to-guides/cloud-deployment-guide/editor-and-features/[{cloudname}], including an automatically configured image proxy. Simply add `+image+` to the `+toolbar+` list and `+image imagetools+` to the `+plugins+` list.
 
 === Basic setup using Tiny Cloud
 
@@ -37,7 +37,7 @@ tinymce.init({
 
 == Self-hosted Installation
 
-To enable the \{\{site.productname}} Image Tools plugin:
+To enable the {productname} Image Tools plugin:
 
 [arabic]
 . Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
@@ -72,6 +72,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
-The Image Tools plugin provides the following \{\{site.productname}} commands.
+The Image Tools plugin provides the following {productname} commands.
 
 include::partial$commands/imagetools-cmds.adoc[]

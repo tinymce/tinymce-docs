@@ -12,14 +12,14 @@ The identifier below will add a context menu _section_ containing one or more it
 [cols=",,",options="header",]
 |===
 |identifier |Core/Plugin |Description
-|image |link:{baseurl}/plugins-ref/opensource/image/[Image] |Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
-|imagetools |link:{baseurl}/plugins-ref/opensource/imagetools/[Image Tools] |Adds the _Edit image_ item for opening the *Edit Image* dialog.
-|link |link:{baseurl}/plugins-ref/opensource/link/[Link] |Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
-|linkchecker |link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker] |Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
-|lists |link:{baseurl}/plugins-ref/opensource/lists/[Lists] |Adds the _List properties..._ item for opening the *List Properties* dialog.
-|configurepermanentpen |link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen] |Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
-|spellchecker |link:{baseurl}/plugins-ref/opensource/spellchecker/[Spell Checker] |Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
-|table |link:{baseurl}/plugins-ref/opensource/table/[Table] |Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled).
+|image |link:image.html[Image] |Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
+|imagetools |link:imagetools.html[Image Tools] |Adds the _Edit image_ item for opening the *Edit Image* dialog.
+|link |link:link.html[Link] |Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
+|linkchecker |link:linkchecker.html[Link Checker] |Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
+|lists |link:lists.html[Lists] |Adds the _List properties..._ item for opening the *List Properties* dialog.
+|configurepermanentpen |link:permanentpen.html[Permanent Pen] |Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
+|spellchecker |link:spellchecker.html[Spell Checker] |Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
+|table |link:table.html[Table] |Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled).
 |===
 
-For a list of available menu items that can be added to the context menu, see: link:{baseurl}/interface/menus/available-menu-items/[Menu Items Available for \{\{site.productname}}].
+For a list of available menu items that can be added to the context menu, see: link:available-menu-items.html[Menu Items Available for {productname}].

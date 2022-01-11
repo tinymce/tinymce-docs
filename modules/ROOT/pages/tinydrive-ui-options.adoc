@@ -14,7 +14,7 @@ include::partial$configuration/tinydrive_skin.adoc[]
 
 == Configuring the Insert File toolbar button
 
-\{\{site.cloudfilemanager}} will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `+insertfile+` button. To enable this button, add it to the toolbar editor setting.
+{cloudfilemanager} will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `+insertfile+` button. To enable this button, add it to the toolbar editor setting.
 
 The Insert File toolbar button will insert images as `+img+` elements or other files as links to that file.
 

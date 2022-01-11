@@ -1,6 +1,6 @@
 == skin
 
-This option allows you to specify the skin that \{\{site.productname}} should use, or `+false+` to not load a skin. The default skin included with \{\{site.productname}} is named "oxide".
+This option allows you to specify the skin that {productname} should use, or `+false+` to not load a skin. The default skin included with {productname} is named "oxide".
 
 Type : `+String+` or `+Boolean+`
 
@@ -8,7 +8,7 @@ Default value : `+'oxide'+`
 
 Possible Values : the name of a skin or `+false+`
 
-The name of the skin should match the name of the folder within the skins directory of \{\{site.productname}}. If the specified skin is not found, \{\{site.productname}} will not load.
+The name of the skin should match the name of the folder within the skins directory of {productname}. If the specified skin is not found, {productname} will not load.
 
 [source,js]
 ----
@@ -18,4 +18,4 @@ tinymce.init({
 });
 ----
 
-If you would like to create your own skin, please see the guide [here](\{\{ site.baseurl }}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/).
+If you would like to create your own skin, please see the guide link:/how-to-guides/customizing-the-editor-appearance/creating-a-skin/[here].

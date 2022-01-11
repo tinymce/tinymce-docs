@@ -16,9 +16,9 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'link',
   link_list: [
-    {title: '{companyname} Home Page', value: '{url}'},
-    {title: '{companyname} Blog', value: '{url}/blog'},
-    {title: '{productname} Documentation', value: '{url}/docs/'},
+    {title: '{companyname} Home Page', value: '{companyurl}'},
+    {title: '{companyname} Blog', value: '{companyurl}/blog'},
+    {title: '{productname} Documentation', value: '{companyurl}/docs/'},
     {title: '{productname} on Stack Overflow', value: '{communitysupporturl}'},
     {title: '{productname} GitHub', value: 'https://github.com/tinymce/'}
   ]
@@ -39,11 +39,11 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'link',
   link_list: [
-    {title: '{companyname} Home Page', value: '{url}'},
-    {title: '{companyname} Blog', value: '{url}/blog'},
+    {title: '{companyname} Home Page', value: '{companyurl}'},
+    {title: '{companyname} Blog', value: '{companyurl}/blog'},
     {title: '{productname} Support resources',
       menu: [
-        {title: '{productname} Documentation', value: '{url}/docs/'},
+        {title: '{productname} Documentation', value: '{companyurl}/docs/'},
         {title: '{productname} on Stack Overflow', value: '{communitysupporturl}'},
         {title: '{productname} GitHub', value: 'https://github.com/tinymce/'}
       ]
@@ -69,7 +69,7 @@ tinymce.init({
 
 === Example of a custom asynchronous callback function
 
-`+link_list+` can also take a function that is called when the link dialog is opened. \{\{site.productname}} passes this function a `+success+` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
+`+link_list+` can also take a function that is called when the link dialog is opened. {productname} passes this function a `+success+` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
 
 The following is an example of how `+link_list+` can be used with a callback function. `+fetchLinkLists+` could be replaced with any function that returns an array of link items. It can be used to generate a list of link items based on:
 

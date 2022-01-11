@@ -1,34 +1,37 @@
-Using \{\{site.productname}} with bootstrap does not require any special configuration.
+Using {productname} with bootstrap does not require any special configuration.
 
-The \{\{site.productname}} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:{baseurl}/integrations/jquery/[jQuery integration]
+The {productname} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:jquery.html[jQuery integration]
 
-This procedure creates a basic Bootstrap integration containing a \{\{site.productname}} editor.
+This procedure creates a basic Bootstrap integration containing a {productname} editor.
 
 == Setup
 
 [arabic]
 . In an HTML file, add a source script for Bootstrap JS.
 +
-If the project loads Bootstrap from https://www.bootstrapcdn.com/, use the script provided by the https://www.bootstrapcdn.com/[Bootstrap CDN], which includes the `+integrity+` and `+crossorigin+` attributes. \{% if productSource == "cloud" %}
-. To source \{\{site.productname}} from the \{\{site.cloudname}}, add the following `+script+` element to the `+<head>+` of the document:
+If the project loads Bootstrap from https://www.bootstrapcdn.com/, use the script provided by the https://www.bootstrapcdn.com/[Bootstrap CDN], which includes the `+integrity+` and `+crossorigin+` attributes.
+\{% if productSource == "cloud" %}
+. To source {productname} from the {cloudname}, add the following `+script+` element to the `+<head>+` of the document:
 +
 [source,html]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 +
-Replace `+no-api-key+` in the source script (`+<script src=...+`) with a \{\{site.cloudname}} API key, which is created when signing up to the link:{accountsignup}[\{\{site.cloudname}}].
+Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
-Signing up for a \{\{site.cloudname}} API key will also provide a trial of the link:{baseurl}/plugins/premium/[Premium Plugins]. \{% else %}
-. To source an independent deployment of \{\{site.productname}}, add the following source script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:
+Signing up for a {cloudname} API key will also provide a trial of the link:premium.html[Premium Plugins].
+\{% else %}
+. To source an independent deployment of {productname}, add the following source script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:
 +
 [source,html]
 ----
 <script src="/path/to/tinymce.min.js"></script>
 ----
 +
-For information on self-hosting \{\{site.productname}}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing \{\{ site.productname }}]. \{% endif %}
-. Add an initialization point for \{\{site.productname}}, such as:
+For information on self-hosting {productname}, see: link:advanced-install.html[Installing {productname}].
+\{% endif %}
+. Add an initialization point for {productname}, such as:
 +
 [source,html]
 ----
@@ -36,7 +39,7 @@ For information on self-hosting \{\{site.productname}}, see: link:{baseurl}/gene
   <textarea id="tiny"></textarea>
 </div>
 ----
-. Add the \{\{site.productname}} init script.
+. Add the {productname} init script.
 +
 [source,html]
 ----
@@ -49,7 +52,7 @@ For information on self-hosting \{\{site.productname}}, see: link:{baseurl}/gene
 
 == Using TinyMCE in a Bootstrap dialog
 
-To render \{\{site.productname}} instances inside Bootstrap UI dialogs, add the following code:
+To render {productname} instances inside Bootstrap UI dialogs, add the following code:
 
 *Bootstrap 4 or below*
 
@@ -75,4 +78,4 @@ document.addEventListener('focusin', (e) => {
 });
 ----
 
-This code is required because Bootstrap blocks all `+focusin+` calls from elements outside the dialog. For a working example, http://fiddle.tiny.cloud/gRgaab[try this \{\{site.productname}} fiddle].
+This code is required because Bootstrap blocks all `+focusin+` calls from elements outside the dialog. For a working example, http://fiddle.tiny.cloud/gRgaab[try this {productname} fiddle].

@@ -5,7 +5,7 @@
 :description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
 :keywords: theme classic
 
-\{\{site.productname}} has three main integration modes:
+{productname} has three main integration modes:
 
 * "classic" full editor mode
 * inline editing mode
@@ -18,7 +18,7 @@ There are a few important differences between these modes:
 * The lack of sandboxing for the inline editor allows page scripts and styles to be used in the editor.
 * Distraction-free mode is an inline editor with additional configuration to provide greater functionality.
 
-*Classic* mode refers to the standard \{\{site.productname}} integration. Such as:
+*Classic* mode refers to the standard {productname} integration. Such as:
 
 liveDemo::default[ ]
 
@@ -35,6 +35,6 @@ tinymce.init({
 
 === Related configuration options
 
-* For information on using editor customization options, see: link:{baseurl}/how-to-guides/customizing-the-editor-appearance/customize-ui/[Customizing the editor UI].
-* For information on localizing \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/localize-your-language/[Localize TinyMCE].
-* For information on all \{\{site.productname}} configuration settings, see: link:{baseurl}/interface/editor-appearance/[Configuration options reference].
+* For information on using editor customization options, see: link:customize-ui.html[Customizing the editor UI].
+* For information on localizing {productname}, see: link:localize-your-language.html[Localize TinyMCE].
+* For information on all {productname} configuration settings, see: link:editor-appearance.html[Configuration options reference].

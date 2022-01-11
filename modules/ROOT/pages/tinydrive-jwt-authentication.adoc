@@ -12,14 +12,14 @@
 
 == Introduction
 
-\{\{site.cloudfilemanager}} requires you to setup JSON Web Token (JWT) authentication. This is to ensure that the security of your files remains in your control.
+{cloudfilemanager} requires you to setup JSON Web Token (JWT) authentication. This is to ensure that the security of your files remains in your control.
 
 A JSON Web Token (JWT) endpoint is a service for generating and providing authorization tokens to users. These tokens can then be used to verify that submitted content was sent by an authorized user and to prevent unauthorized access.
 
-JWT is a standard authorization solution for web services and is documented in more detail at the https://jwt.io/[https://jwt.io/] website. The guide aims to show how to setup JWT authentication for \{\{site.cloudfilemanager}}.
+JWT is a standard authorization solution for web services and is documented in more detail at the https://jwt.io/[https://jwt.io/] website. The guide aims to show how to setup JWT authentication for {cloudfilemanager}.
 
 ____
-If you haven't tried any of the link:{baseurl}/plugins-ref/premium/tinydrive/getting-started/#starterprojects[Starter projects] yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
+If you haven't tried any of the link:getting-started.html#starterprojects[Starter projects] yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 ____
 
 == Overview
@@ -31,12 +31,12 @@ ____
 
 == Setting up JWT authentication for Tiny Drive
 
-To set up JSON Web Token (JWT) authentication for \{\{site.productname}} \{\{pluginname}}:
+To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
 
 [arabic]
-. Add a public key to your \{\{site.accountpage}}.
+. Add a public key to your {accountpage}.
 . Set up a JSON Web Token (JWT) Provider endpoint.
-. Configure \{\{site.productname}} to use the JWT endpoint.
+. Configure {productname} to use the JWT endpoint.
 
 include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
@@ -46,22 +46,22 @@ include::partial$auth/how-jwts-are-used.adoc[]
 
 === JWT endpoint requirements
 
-A JSON Web Token (JWT) endpoint for \{\{pluginname}} requires:
+A JSON Web Token (JWT) endpoint for {pluginname} requires:
 
 * The endpoint or server accepts a JSON HTTP POST request.
-* User authentication - A method of verifying the user, and that they should have access to the \{\{site.cloudfilemanager}}.
-* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key provided to link:{accountpageurl}/jwt/[\{\{site.accountpage}} - JWT Keys].
-* The endpoint or server produces a JSON response with the token. \{\{site.cloudfilemanager}} will submit the token with requests to the \{\{site.cloudfilemanager}} Server.
+* User authentication - A method of verifying the user, and that they should have access to the {cloudfilemanager}.
+* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key provided to link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
+* The endpoint or server produces a JSON response with the token. {cloudfilemanager} will submit the token with requests to the {cloudfilemanager} Server.
 
-=== Required JWT claims for \{\{pluginname}}
+=== Required JWT claims for {pluginname}
 
 JSON Web Tokens produced by the JWT endpoint must include the following claims:
 
 `+sub+` _(required)_ : *Type*: `+string+` or `+URI+` : Unique string or URI to identify the user. This can be a database ID, hashed email address, or similar identifier.
 
-`+name+` _(required)_ : *Type*: `+string+` : Full name of the user that will be used for presentation inside \{\{site.cloudfilemanager}}. When the user uploads a file, this name is presented as the creator of that file.
+`+name+` _(required)_ : *Type*: `+string+` : Full name of the user that will be used for presentation inside {cloudfilemanager}. When the user uploads a file, this name is presented as the creator of that file.
 
-`+https://claims.tiny.cloud/drive/root+` _(optional)_ : *Type*: `+string+` : Full path to a \{\{site.cloudfilemanager}} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
+`+https://claims.tiny.cloud/drive/root+` _(optional)_ : *Type*: `+string+` : Full path to a {cloudfilemanager} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
 
 ____
 *Note*: The "`+sub+`" claim is a case-sensitive string containing a *String* or *URI* value. The `+sub+` claim cannot have a `+:+` _unless_ it is a valid URI or else the callback will fail.
@@ -69,7 +69,7 @@ ____
 
 == JWT endpoint examples
 
-The following examples show a minimal JWT endpoint and how to configure \{\{site.productname}} to use them.
+The following examples show a minimal JWT endpoint and how to configure {productname} to use them.
 
 * <<phptokenproviderendpointexample, PHP token provider endpoint example>>
 * <<nodejstokenproviderendpointexample, Node.js token provider endpoint example>>
@@ -78,7 +78,7 @@ The following examples show a minimal JWT endpoint and how to configure \{\{site
 
 This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] provided through the Composer dependency manager.
 
-`+$privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[\{\{site.accountpage}} - JWT Keys].
+`+$privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 
 [[jwtphp]]
 ==== jwt.php
@@ -139,9 +139,9 @@ tinymce.init({
 [[nodejs-token-provider-endpoint-example]]
 === Node.js token provider endpoint example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `+jsonwebtoken+` Node modules. For instructions on setting up a basic Node.js Express server and adding \{\{site.productname}}, see: link:{baseurl}/getting-started/install-setup/self-hosted/expressjs/[Integrating TinyMCE into an Express JS App].
+This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `+jsonwebtoken+` Node modules. For instructions on setting up a basic Node.js Express server and adding {productname}, see: link:expressjs.html[Integrating TinyMCE into an Express JS App].
 
-`+privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[\{\{site.accountpage}} - JWT Keys].
+`+privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 
 ==== /jwt
 

@@ -48,7 +48,7 @@ Welcome to your new app.
 \{% if productSource != "cloud" %}
 
 [arabic]
-. To load \{\{site.productname}} from the self-hosted package instead of the \{\{site.cloudname}}, configure the `+ScriptSrc+` property:
+. To load {productname} from the self-hosted package instead of the {cloudname}, configure the `+ScriptSrc+` property:
 +
 [source,cs]
 ----

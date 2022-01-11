@@ -1,6 +1,6 @@
-The https://github.com/tinymce/tinymce-react[Official \{\{site.productname}} React component] integrates \{\{site.productname}} into React projects. This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a \{\{site.productname}} editor.
+The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {productname} editor.
 
-For examples of the \{\{site.productname}} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 
 == Prerequisites
 
@@ -68,8 +68,9 @@ export default function App() {
 }
 ----
 +
-This JavaScript file will create a component "`+App+`" containing a \{\{site.productname}} editor configured with basic features. \{% if productSource == "cloud" %}
-. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[\{\{site.cloudname}} API key].
+This JavaScript file will create a component "`+App+`" containing a {productname} editor configured with basic features.
+\{% if productSource == "cloud" %}
+. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
 +
 Such as:
 +
@@ -78,9 +79,9 @@ Such as:
 <Editor apiKey='your-api-key' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
 ----
 
-\{% elsif productSource == "package-manager" %} 5. Bundle \{\{site.productname}} with the React application using a module loader (such as Webpack).
+\{% elsif productSource == "package-manager" %} 5. Bundle {productname} with the React application using a module loader (such as Webpack).
 
-\{% include integrations/bundling-integration.md package='tinymce-react' depth='1' %} \{% else %} 5. \{\{site.productname}} can be self-hosted by either: <<deployingtinymceindependent, Deploying \{\{site.productname}} independent of the React application>>, or <<bundle, Bundling \{\{site.productname}} with the React application>>. * Deploying \{\{site.productname}} independent of the React application. To use a \{\{site.productname}} instance that has been deployed independent of the React application, use: <<usingthetinyscriptsrcprop, the `+tinymceScriptSrc+` prop>>, or <<usinganhtmlscripttag, an HTML `+<script>+` tag>>. * Using the `+tinymceScriptSrc+` prop:
+\{% include integrations/bundling-integration.md package='tinymce-react' depth='1' %} \{% else %} 5. {productname} can be self-hosted by either: <<deployingtinymceindependent, Deploying {productname} independent of the React application>>, or <<bundle, Bundling {productname} with the React application>>. * Deploying {productname} independent of the React application. To use a {productname} instance that has been deployed independent of the React application, use: <<usingthetinyscriptsrcprop, the `+tinymceScriptSrc+` prop>>, or <<usinganhtmlscripttag, an HTML `+<script>+` tag>>. * Using the `+tinymceScriptSrc+` prop:
 
 ....
         1. To use an independent deployment of {productname}, add the `tinymceScriptSrc` prop to specify the path to the {productname} script, such as:
@@ -149,8 +150,8 @@ ____
 
 == Next Steps
 
-* For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 * For information on customizing:
-** \{\{site.productname}} integration, see: link:{baseurl}/how-to-guides/environment-setup/react/react-ref/[React framework Technical Reference].
-** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** {productname} integration, see: link:react-ref.html[React framework Technical Reference].
+** {productname}, see: link:basic-setup.html[Basic setup].
 ** The React application, see: https://create-react-app.dev/docs/getting-started[Create React App] or https://reactjs.org/docs/getting-started.html[the React documentation].

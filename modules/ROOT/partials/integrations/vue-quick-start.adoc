@@ -1,13 +1,13 @@
-The https://github.com/tinymce/tinymce-vue[Official \{\{site.productname}} Vue.js component] integrates \{\{site.productname}} into Vue.js projects. This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a \{\{site.productname}} editor.
+The https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects. This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a {productname} editor.
 
 Version 4 of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
 
 [[tinymce-vuejs-integration-live-examples]]
 == TinyMCE Vue.js integration live examples
 
-For examples of the \{\{site.productname}} Vue.js 2.x integration, visit: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
+For examples of the {productname} Vue.js 2.x integration, visit: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
 
-For examples of the \{\{site.productname}} Vue.js 3.x integration:
+For examples of the {productname} Vue.js 3.x integration:
 
 [arabic]
 . Clone the `+tinymce/tinymce-vue+` GitHub repository. For example:
@@ -109,7 +109,7 @@ npm install --save "@tinymce/tinymce-vue@^3"
 [arabic, start=5]
 . Using a text editor, open `+/path/to/tinymce-vue-demo/src/App.vue+`.
 [arabic]
-.. Add a \{\{site.productname}} configuration to the `+<template>+` using the `+<editor>+` tag.
+.. Add a {productname} configuration to the `+<template>+` using the `+<editor>+` tag.
 .. Add `+import Editor from '@tinymce/tinymce-vue'+` to the start of the `+<script>+`.
 .. Add `+editor: Editor+` to the `+default {components}+`.
 +
@@ -141,7 +141,7 @@ export default {
 </script>
 ----
 
-\{% if productSource == "cloud" %} 6. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[\{\{site.cloudname}} API key].
+\{% if productSource == "cloud" %} 6. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
 
 ....
 Such as:
@@ -151,9 +151,9 @@ Such as:
 ```
 ....
 
-\{% elsif productSource == "package-manager" %} 6. Bundle \{\{site.productname}} with the Vue.js application using a module loader (such as Webpack).
+\{% elsif productSource == "package-manager" %} 6. Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
 
-\{% include integrations/bundling-integration.md package="tinymce-vue" depth='1' %} \{% else %} 6. \{\{site.productname}} can be self-hosted by either: <<deployingtinymceindependent, Deploying \{\{site.productname}} independent of the Vue.js application>>, or <<bundle, Bundling \{\{site.productname}} with the Vue.js application>>. * Deploying \{\{site.productname}} independent of the Vue.js application. To use a \{\{site.productname}} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
+\{% include integrations/bundling-integration.md package="tinymce-vue" depth='1' %} \{% else %} 6. {productname} can be self-hosted by either: <<deployingtinymceindependent, Deploying {productname} independent of the Vue.js application>>, or <<bundle, Bundling {productname} with the Vue.js application>>. * Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
 
 ....
     To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
@@ -184,8 +184,8 @@ The application will require further configuration before it can be deployed to 
 
 == Next Steps
 
-* For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
+* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
 * For information on customizing:
-** \{\{site.productname}} integration, see: link:{baseurl}/how-to-guides/environment-setup/vue/vue-ref/[Vue.js framework Technical Reference].
-** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** {productname} integration, see: link:vue-ref.html[Vue.js framework Technical Reference].
+** {productname}, see: link:basic-setup.html[Basic setup].
 ** The Vue.js application, see: https://vuejs.org/v2/guide/[Vue.js Documentation].

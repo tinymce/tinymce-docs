@@ -27,12 +27,12 @@ JWT is a standard authorization solution for web services and is documented in d
 
 == Setting up JWT authentication for Real-Time Collaboration
 
-To set up JSON Web Token (JWT) authentication for \{\{site.productname}} \{\{pluginname}}:
+To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
 
 [arabic]
-. Add a public key to your \{\{site.accountpage}}.
+. Add a public key to your {accountpage}.
 . Set up a JSON Web Token (JWT) Provider endpoint.
-. Configure \{\{site.productname}} to use the JWT endpoint.
+. Configure {productname} to use the JWT endpoint.
 
 include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
@@ -42,11 +42,11 @@ include::partial$auth/how-jwts-are-used.adoc[]
 
 === JWT endpoint requirements
 
-A JSON Web Token (JWT) endpoint for \{\{pluginname}} requires:
+A JSON Web Token (JWT) endpoint for {pluginname} requires:
 
 * The endpoint or server accepts a JSON HTTP POST request.
 * User authentication - A method of verifying the user, and that they should have access to the document.
-* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[\{\{site.accountpage}} - JWT Keys].
+* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 * The endpoint or server produces a JSON response with the token. The RTC plugin will submit the token with requests to the RTC Server.
 
 === Required JWT claims for Real-Time Collaboration
@@ -60,7 +60,7 @@ JSON Web Tokens produced by the JWT endpoint must include the following claims:
 |`+exp+` |required |`+number+` |The unix timestamp for when the token expires.
 |===
 
-The `+sub+` field is used to identify users to avoid sending sensitive or identity information to \{\{site.companyname}} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
+The `+sub+` field is used to identify users to avoid sending sensitive or identity information to {companyname} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
 
 ____
 *Caution*: The RTC plugin does not request a new JWT if user's JWT expires during a session. To avoid user disconnections from expired JWTs, ensure the `+exp+` claim allows for a reasonable
@@ -68,7 +68,7 @@ ____
 
 == JWT endpoint examples
 
-The following examples show a minimal JWT endpoint and how to configure \{\{site.productname}} to use them.
+The following examples show a minimal JWT endpoint and how to configure {productname} to use them.
 
 * <<phptokenproviderendpointexample, PHP token provider endpoint example>>
 * <<nodejstokenproviderendpointexample, Node.js token provider endpoint example>>
@@ -77,7 +77,7 @@ The following examples show a minimal JWT endpoint and how to configure \{\{site
 
 This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] provided through the Composer dependency manager.
 
-`+$privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[\{\{site.accountpage}} - JWT Keys].
+`+$privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 
 [[jwtphp]]
 ==== jwt.php
@@ -142,9 +142,9 @@ tinymce.init({
 [[nodejs-token-provider-endpoint-example]]
 === Node.js token provider endpoint example
 
-This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `+jsonwebtoken+` Node module. For instructions on setting up a basic Node.js Express server and adding \{\{site.productname}}, see: link:{baseurl}/getting-started/install-setup/self-hosted/expressjs/[Integrating TinyMCE into an Express JS App].
+This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `+jsonwebtoken+` Node module. For instructions on setting up a basic Node.js Express server and adding {productname}, see: link:expressjs.html[Integrating TinyMCE into an Express JS App].
 
-`+privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[\{\{site.accountpage}} - JWT Keys].
+`+privateKey+` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 
 ==== /jwt
 

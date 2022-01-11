@@ -5,7 +5,7 @@ The `+smart_paste+` function will:
 * Detect text that resembles a URL and change the text to a hyperlink.
 * Detect text that resembles the URL for an image and will try to replace the text with the image.
 
-To disable the `+smart_paste+` functionality, set `+smart_paste+` to `+false+`. To configure which image file types are recognised, see link:{baseurl}/content/file-image-upload/#images_file_types[Image & file options - images_file_types].
+To disable the `+smart_paste+` functionality, set `+smart_paste+` to `+false+`. To configure which image file types are recognised, see link:file-image-upload.html#images_file_types[Image & file options - images_file_types].
 
 Type : `+Boolean+`
 
@@ -15,11 +15,11 @@ Possible Values : `+true+`, `+false+`
 
 === Example: Using `+smart_paste+`
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
+  plugins: '{plugincode}',
   menubar: 'edit',
   toolbar: 'paste',
   smart_paste: false

@@ -6,7 +6,7 @@
 :description: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
 :keywords: accessibility wai aria jaws nvda
 
-\{\{site.productname}} is compatible with screen readers such as JAWS and NVDA as it follows the WAI-ARIA specification. Use http://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox] for the best Accessibility experience.
+{productname} is compatible with screen readers such as JAWS and NVDA as it follows the WAI-ARIA specification. Use http://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox] for the best Accessibility experience.
 
 == Keyboard shortcuts
 
@@ -23,7 +23,7 @@ The following *Alt+key* and *Option+key* shortcuts can only be used when the con
 |Navigate left/right through menu/toolbar |Tab and the Arrow Keys |Tab and the Arrow Keys
 |===
 
-For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: link:{baseurl}/accessibility/keyboard-shortcuts/[Keyboard shortcuts].
+For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: link:keyboard-shortcuts.html[Keyboard shortcuts].
 
 == How to work with the editor
 
@@ -49,4 +49,4 @@ Dialogs such as *Insert/Edit Image* are opened from either a menu item or a tool
 
 == Accessibility options
 
-\{\{site.productname}} has accessibility options that can be set when initializing the editor, see: link:{baseurl}/interface/accessibility/[Accessibility options].
+{productname} has accessibility options that can be set when initializing the editor, see: link:accessibility.html[Accessibility options].

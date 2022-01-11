@@ -1,6 +1,14 @@
-\{% if productSource == "cloud" %} :scriptSource: site.cdnurl  :packageSource: site.cloudname  \{% elsif productSource == "composer" %} \{% assign scriptSource = "\{\{ asset('js/tinymce/tinymce.min.js') }}" %} :packageSource: https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package] \{% else %} \{% assign scriptSource = "\{\{ asset('js/tinymce/tinymce.min.js') }}" %} :packageSource: TinyMCE .zip package \{% endif %}
+\{% if productSource == "cloud" %}
+:scriptsource: site.cdnurl  :packageSource: site.cloudname
+\{% elsif productSource == "composer" %}
+:scriptsource: { asset('js/tinymce/tinymce.min.js') }
+:packageSource: https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package]
+\{% else %}
+:scriptsource: { asset('js/tinymce/tinymce.min.js') }
+:packageSource: TinyMCE .zip package
+\{% endif %}
 
-https://laravel.com/[Laravel] is a scaleable web application framework built on PHP. This guide assists with adding \{\{site.productname}} from the \{\{packageSource}} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/8.x/installation#installation-via-composer[Installation Via Composer]. The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how \{\{site.productname}} should be used in production environments.
+https://laravel.com/[Laravel] is a scaleable web application framework built on PHP. This guide assists with adding {productname} from the {packageSource} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/8.x/installation#installation-via-composer[Installation Via Composer]. The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {productname} should be used in production environments.
 
 == Requirements
 
@@ -39,13 +47,13 @@ npm install
 \{% endif %} \{% if productSource == "composer" %}
 
 [arabic]
-. Add \{\{site.productname}} to the project using Composer:
+. Add {productname} to the project using Composer:
 +
 [source,sh]
 ----
 composer require tinymce/tinymce
 ----
-. Add a Laravel Mix task to copy \{\{site.productname}} to the public files when Mix is run, such as:
+. Add a Laravel Mix task to copy {productname} to the public files when Mix is run, such as:
 +
 _File:_ `+webpack.mix.js+`
 +
@@ -58,13 +66,13 @@ mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
 include::partial$integrations/download-tinymce-zip.adoc[]
 
 [arabic]
-. Extract (or unzip) the downloaded \{\{site.productname}} `+.zip+` file into the `+resources/js/+` directory of the Laravel project, such as:
+. Extract (or unzip) the downloaded {productname} `+.zip+` file into the `+resources/js/+` directory of the Laravel project, such as:
 +
 [source,sh]
 ----
 unzip ../tinymce_latest.zip -d resources/js
 ----
-. Add a Laravel Mix task to copy \{\{site.productname}} to the public files when Mix is run, such as:
+. Add a Laravel Mix task to copy {productname} to the public files when Mix is run, such as:
 +
 _File:_ `+webpack.mix.js+`
 +
@@ -76,7 +84,7 @@ mix.copyDirectory('resources/js/tinymce/js/tinymce', 'public/js/tinymce');
 \{% endif %} \{% if productSource != "cloud" %}
 
 [arabic]
-. Run Laravel Mix to copy \{\{site.productname}} to the `+public/js/+` directory:
+. Run Laravel Mix to copy {productname} to the `+public/js/+` directory:
 +
 [source,sh]
 ----
@@ -86,7 +94,7 @@ npx mix
 \{% endif %}
 
 [arabic]
-. Create a new reusable https://laravel.com/docs/8.x/blade#components[component (`+blade.php+`)] for the \{\{site.productname}} configuration, such as:
+. Create a new reusable https://laravel.com/docs/8.x/blade#components[component (`+blade.php+`)] for the {productname} configuration, such as:
 +
 [source,sh]
 ----
@@ -95,16 +103,16 @@ php artisan make:component Head/tinymceConfig
 +
 This will create the blade `+resources/views/components/head/tinymce-config.blade.php+`.
 . Open the newly created `+.blade.php+` file in a text editor and replace the contents with:
-* The \{\{site.productname}} source script.
-* A \{\{site.productname}} configuration.
+* The {productname} source script.
+* A {productname} configuration.
 +
 For example:
 +
 _File:_ `+resources/views/components/head/tinymce-config.blade.php+`
 +
-[source,html]
+[source,html,subs="attributes+"]
 ----
-<script src="{{ scriptSource }}" referrerpolicy="origin"></script>
+<script src="{scriptsource}" referrerpolicy="origin"></script>
 <script>
   tinymce.init({
     selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
@@ -117,10 +125,10 @@ _File:_ `+resources/views/components/head/tinymce-config.blade.php+`
 \{% if productSource == "cloud" %}
 
 [arabic]
-. Replace `+no-api-key+` in the \{\{site.productname}} source script with your \{\{site.cloudname}} API Key.
+. Replace `+no-api-key+` in the {productname} source script with your {cloudname} API Key.
 +
 include::partial$misc/get-an-api-key.adoc[] \{% endif %}
-. Create a second blade containing a placeholder HTML element for \{\{site.productname}}, such as:
+. Create a second blade containing a placeholder HTML element for {productname}, such as:
 +
 [source,sh]
 ----
@@ -140,7 +148,7 @@ _File:_ `+resources/views/components/forms/tinymce-editor.blade.php+`
   <textarea id="myeditorinstance">Hello, World!</textarea>
 </form>
 ----
-. Add the blade components on the pages or views where \{\{site.productname}} is needed. The configuration blade (`+Head/tinymceConfig+` in this example) can be added to the `+<head>+` or at the end of the `+<body>+` on the target page or view. The placeholder blade (`+Forms/tinymceEditor+`) should be added where \{\{site.productname}} is required on the page.
+. Add the blade components on the pages or views where {productname} is needed. The configuration blade (`+Head/tinymceConfig+` in this example) can be added to the `+<head>+` or at the end of the `+<body>+` on the target page or view. The placeholder blade (`+Forms/tinymceEditor+`) should be added where {productname} is required on the page.
 +
 For example:
 +
@@ -164,7 +172,7 @@ _File:_ `+resources/views/welcome.blade.php+`
   </body>
 </html>
 ----
-. Start the Laravel development server to verify that \{\{site.productname}} loads on the page or view, such as running the following command and opening the page on the localhost.
+. Start the Laravel development server to verify that {productname} loads on the page or view, such as running the following command and opening the page on the localhost.
 +
 [source,sh]
 ----

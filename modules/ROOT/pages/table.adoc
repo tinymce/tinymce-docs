@@ -11,7 +11,7 @@
 :plugincode: table
 
 
-The `+table+` plugin adds table management functionality to \{\{site.productname}}. It also adds a new menubar item `+Table+` with various options in its dropdown including `+Insert table+` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
+The `+table+` plugin adds table management functionality to {productname}. It also adds a new menubar item `+Table+` with various options in its dropdown including `+Insert table+` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 == Basic setup
 
@@ -118,7 +118,7 @@ tinymce.init({
 ----
 
 ____
-*Note*: The advanced tabs of the table, row, and cell properties dialogs use the `+colorpicker+` to allow for border and background colors to be applied. See docs to use and configure a custom link:{baseurl}/content/user-formatting-options/#textcoloroptions[colorpicker].
+*Note*: The advanced tabs of the table, row, and cell properties dialogs use the `+colorpicker+` to allow for border and background colors to be applied. See docs to use and configure a custom link:user-formatting-options.html#textcoloroptions[colorpicker].
 ____
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
@@ -150,7 +150,7 @@ include::partial$events/table-events.adoc[]
 
 == Commands
 
-The Table plugin provides the following \{\{site.productname}} commands.
+The Table plugin provides the following {productname} commands.
 
 include::partial$commands/table-cmds.adoc[]
 

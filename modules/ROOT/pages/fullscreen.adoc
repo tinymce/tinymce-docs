@@ -11,7 +11,7 @@
 :plugincode: fullscreen
 
 
-This plugin adds full screen editing capabilities to \{\{site.productname}}. When the toolbar button is pressed the editable area will fill the browser's viewport. The plugin adds a toolbar button and a menu item `+Fullscreen+` under the `+View+` menu.
+This plugin adds full screen editing capabilities to {productname}. When the toolbar button is pressed the editable area will fill the browser's viewport. The plugin adds a toolbar button and a menu item `+Fullscreen+` under the `+View+` menu.
 
 Full screen mode can be toggled using the following keyboard shortcuts:
 
@@ -32,7 +32,7 @@ tinymce.init({
 
 == Configuration options
 
-The following configuration options affect the behavior of the \{\{pluginname}} plugin.
+The following configuration options affect the behavior of the {pluginname} plugin.
 
 include::partial$configuration/fullscreen_native.adoc[]
 
@@ -42,6 +42,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Full Screen plugin provides the following \{\{site.productname}} command.
+The Full Screen plugin provides the following {productname} command.
 
 include::partial$commands/fullscreen-cmds.adoc[]

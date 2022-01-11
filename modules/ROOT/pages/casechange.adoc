@@ -11,7 +11,7 @@
 :plugincode: casechange
 
 
-include::partial$misc/admon_premium_plugin[]
+include::partial$misc/admon_premium_plugin.adoc[]
 
 The *Case Change* plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
 
@@ -65,6 +65,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Case Change plugin provides the following \{\{site.productname}} commands.
+The Case Change plugin provides the following {productname} commands.
 
 include::partial$commands/casechange-cmds.adoc[]

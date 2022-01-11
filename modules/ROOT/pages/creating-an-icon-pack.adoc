@@ -18,12 +18,12 @@ This guide assumes:
 
 == How icons work in TinyMCE
 
-A \{\{site.productname}} icon pack is a `+.js+` file containing strings of https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. An icon pack can be used: to include one or more custom icons; or to replace some or all of the default \{\{site.productname}} icons.
+A {productname} icon pack is a `+.js+` file containing strings of https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. An icon pack can be used: to include one or more custom icons; or to replace some or all of the default {productname} icons.
 
-An icon pack only requires the custom icons to be included; the default \{\{site.productname}} icons are used as a fallback for icons missing from the custom icon pack.
+An icon pack only requires the custom icons to be included; the default {productname} icons are used as a fallback for icons missing from the custom icon pack.
 
 ____
-Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{plugindirectory}/skins-and-icon-packs/[\{\{site.prem_skins_icons}}].
+Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{plugindirectory}/skins-and-icon-packs/[{prem_skins_icons}].
 ____
 
 == Creating a TinyMCE icon pack
@@ -36,10 +36,10 @@ To create a custom icon pack:
 
 === Download and setup the icon pack template
 
-To use the \{\{site.productname}} icon pack template project:
+To use the {productname} icon pack template project:
 
 [arabic]
-. Download the https://github.com/tinymce/oxide-icon-pack-template[\{\{site.productname}} Oxide Icon Pack Template] by either:
+. Download the https://github.com/tinymce/oxide-icon-pack-template[{productname} Oxide Icon Pack Template] by either:
 * Downloading the `+.zip+` file from the https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
 * From a terminal or command prompt, use git to clone the GitHub repository, such as:
 +
@@ -62,11 +62,11 @@ $ npm install ``` 4. When prompted, enter a name for the icon pack. The icon pac
 * Underscores ( `_` ).
 ....
 
-The icon pack name will be used with the link:{baseurl}/interface/editor-appearance/editor-icons/#icons[icons] option to apply the icons in \{\{site.productname}}.
+The icon pack name will be used with the link:editor-icons.html#icons[icons] option to apply the icons in {productname}.
 
 === Add the SVG files
 
-Each SVG files placed in `+/src/svg+` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by \{\{site.productname}}.
+Each SVG files placed in `+/src/svg+` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
 
 For example: `+bold.svg+` will have the identifier `+bold+`. Such as:
 
@@ -87,9 +87,9 @@ tinymce.init({
 });
 ----
 
-For a list of the icon identifiers, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[Available icons].
+For a list of the icon identifiers, see: link:editor-icon-identifiers.html[Available icons].
 
-\{\{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/[custom skin] is required.
+{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:creating-a-skin.html[custom skin] is required.
 
 ____
 *Note*: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
@@ -127,8 +127,8 @@ iconPackager(\{ name: 'my-icon-pack', svgo: \{ floatPrecision: 3 } //Increase th
 
 An icon pack can be served either:
 
-* <<deploytheiconpackwithtinymce, With \{\{site.productname}}>>
-* <<deploytheiconpackandtinymceseparately, Separate from \{\{site.productname}}>>
+* <<deploytheiconpackwithtinymce, With {productname}>>
+* <<deploytheiconpackandtinymceseparately, Separate from {productname}>>
 
 === Deploy the icon pack with TinyMCE
 
@@ -139,4 +139,5 @@ include::partial$configuration/icons.adoc[]
 
 === Deploy the icon pack and TinyMCE separately
 
-include::partial$configuration/icons_url.adoc[] :customIconPack: false
+include::partial$configuration/icons_url.adoc[]
+:customIconPack: false

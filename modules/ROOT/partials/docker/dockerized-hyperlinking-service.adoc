@@ -6,7 +6,7 @@
 
 == Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)
 
-\{% endif %} The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. \{\{site.companyname}} provides a pre-configured package for creating a Hyperlinking Docker image.
+\{% endif %} The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Hyperlinking Docker image.
 
 include::partial$misc/admon_dont-push-docker-images.adoc[]
 
@@ -18,14 +18,16 @@ include::partial$misc/admon_dont-push-docker-images.adoc[]
 * The user has Administrative or Root user access.
 * The user is either:
 ** Using a Linux, Unix or macOS operating system.
-** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux]. \{% endif %}
+** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux].
+\{% endif %}
 
 === Procedure
 
-The following procedure covers downloading, configuring, building and testing the \{\{site.productname}} Hyperlinking Docker image. \{% if shbundledockerfiles == true %}
+The following procedure covers downloading, configuring, building and testing the {productname} Hyperlinking Docker image.
+\{% if shbundledockerfiles == true %}
 
 ____
-*Note*: This procedure assumes that a \{\{ site.productname }} self-hosted enterprise bundle has been extracted as described in link:{baseurl}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-intro-setup/#downloadandextractthetinymceself-hostedbundle[Download and extract the \{\{site.productname}} Self-hosted Bundle].
+*Note*: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in link:bundle-intro-setup.html#downloadandextractthetinymceself-hostedbundle[Download and extract the {productname} Self-hosted Bundle].
 ____
 
 [arabic, start=4]
@@ -69,7 +71,7 @@ cd hyperlinking-service-dockerfile
 \{% elsif shbundledockerfiles == false %}
 
 [arabic]
-. Go to [\{\{ site.accountpage }}](\{\{ site.accountpageurl }}/) > My Downloads and download either:
+. Go to [{accountpage}]({accountpageurl}/) > My Downloads and download either:
 
 * _Tiny Enhanced Media Embed_, or
 * _Tiny Link Checker_.
@@ -138,10 +140,10 @@ http {
 }
 ----
 +
-For information on the `+http+` configuration setting, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#httpoptional[Configure server-side components - `+http+`].
-. _Optional_: Update the link-checking cache configuration, as described in link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#hyperlinkingservicesettings[Link Checker self-hosted quick setup].
-. _Optional_: Configure the Enhanced Media Embed Service, as described in link:{baseurl}/plugins-ref/premium/mediaembed/mediaembed-server-config/[Configure Enhanced Media Embed Server].
-. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-hyperlinking-docker-env.conf+`. See: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#proxyoptional[Configure server-side components - proxy].
+For information on the `+http+` configuration setting, see: link:configure.html#httpoptional[Configure server-side components - `+http+`].
+. _Optional_: Update the link-checking cache configuration, as described in link:configure.html#hyperlinkingservicesettings[Link Checker self-hosted quick setup].
+. _Optional_: Configure the Enhanced Media Embed Service, as described in link:mediaembed-server-config.html[Configure Enhanced Media Embed Server].
+. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-hyperlinking-docker-env.conf+`. See: link:configure.html#proxyoptional[Configure server-side components - proxy].
 . Create an `+origins.env+` file in the same directory as the `+Dockerfile+`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`+allowed-origins+`). Up to 99 origins can be added without editing `+config/ephox-hyperlinking-docker-env.conf+`.
 +
 For example:
@@ -153,8 +155,8 @@ ORIGIN1=example
 ORIGIN2=http://example.org
 ----
 +
-For information on `+allowed-origins+`, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
-. As the root user or Administrator, build the \{\{site.productname}} Hyperlinking Docker image using the following command:
+For information on `+allowed-origins+`, see: link:configure.html#allowed-originsrequired[Configure server-side components - allowed-origins].
+. As the root user or Administrator, build the {productname} Hyperlinking Docker image using the following command:
 +
 [source,sh]
 ----
@@ -184,4 +186,4 @@ The response from the `+curl+` command should be:
 Link checking and media embedding service is running.
 ----
 
-The \{\{site.productname}} Hyperlinking Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].
+The {productname} Hyperlinking Docker image can now be pushed to a private container registry for deployment on https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm] or https://www.openshift.com/[OpenShift].

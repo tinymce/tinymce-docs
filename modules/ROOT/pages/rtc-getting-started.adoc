@@ -10,42 +10,42 @@
 :plugincode: rtc
 
 
-This procedure will assist with setting up \{\{site.productname}} with real-time collaboration.
+This procedure will assist with setting up {productname} with real-time collaboration.
 
 ____
 *Important*:
 include::partial$misc/secure-context.adoc[]
 ____
 
-The steps required for setting up Real-Time Collaboration for \{\{site.productname}} are:
+The steps required for setting up Real-Time Collaboration for {productname} are:
 
 [arabic]
-. Register for a \{\{site.cloudname}} API key.
-. Add a public key to the \{\{site.cloudname}} API key.
+. Register for a {cloudname} API key.
+. Add a public key to the {cloudname} API key.
 . Set up an Encryption Provider endpoint (or server).
 . Set up a JSON Web Token (JWT) Provider endpoint (or server).
-. Configure the required \{\{site.productname}} options.
+. Configure the required {productname} options.
 
 [[1-register-for-a-tiny-cloud-api-key]]
 == 1. Register for a Tiny Cloud API key
 
-If you do not have a \{\{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the link:{pricingpage}/[\{\{site.companyname}} pricing page].
+If you do not have a {cloudname} API key, you can sign up for a trial or purchase a subscription on the link:{pricingpage}/[{companyname} pricing page].
 
 \{% include auth/private-public-key-pairs-for-tiny-cloud-services.md numberedHeading=true %}
 
 [[3-set-up-an-encryption-endpoint]]
 == 3. Set up an Encryption endpoint
 
-\{\{site.productname}} Real-Time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption.
+{productname} Real-Time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption.
 
-For information on setting up an Encryption Provider endpoint, see: link:{baseurl}/plugins-ref/premium/rtc/encryption/[Real-Time Collaboration (RTC) Encryption Setup].
+For information on setting up an Encryption Provider endpoint, see: link:encryption.html[Real-Time Collaboration (RTC) Encryption Setup].
 
 [[4-set-up-a-json-web-token-jwt-provider-endpoint]]
 == 4. Set up a JSON Web Token (JWT) Provider endpoint
 
 Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
-For information on setting up a JSON Web Token Provider endpoint, see: link:{baseurl}/plugins-ref/premium/rtc/jwt-authentication/[Real-Time Collaboration (RTC) JWT Authentication Setup].
+For information on setting up a JSON Web Token Provider endpoint, see: link:jwt-authentication.html[Real-Time Collaboration (RTC) JWT Authentication Setup].
 
 [[5-configure-the-required-tinymce-rtc-options]]
 == 5. Configure the required TinyMCE RTC options
@@ -96,4 +96,4 @@ tinymce.init({
 });
 ----
 
-For details on the available configuration options, see: link:{baseurl}/plugins-ref/premium/rtc/configuration/[Configuration Options].
+For details on the available configuration options, see: link:configuration.html[Configuration Options].

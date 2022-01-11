@@ -1,10 +1,10 @@
 == formats
 
-This option is used to override default \{\{site.productname}} *formats* or add custom *formats* to the editor.
+This option is used to override default {productname} *formats* or add custom *formats* to the editor.
 
-\{\{site.productname}} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named *format*. For example, the `+bold+` format is the style that is applied to text when the bold button is clicked.
+{productname} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named *format*. For example, the `+bold+` format is the style that is applied to text when the bold button is clicked.
 
-Check out the [custom formats example](\{\{ site.baseurl }}/content/user-formatting-options/#style_formats/) for a demonstration of this option.
+Check out the link:user-formatting-options.html#style_formats/[custom formats example] for a demonstration of this option.
 
 The `+formats+` configuration option takes an object of format name and format specification pairs. Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
 
@@ -39,7 +39,7 @@ There are three types of formats:
 * Inline format
 * Selector format
 
-All three format types can be used with the `+formats+` configuration option. They can also be used to specify a new format item in the [`+style_formats+`](\{\{ site.baseurl }}/content/user-formatting-options/#style_formats) configuration option. However, a format that is specified using `+formats+` is then registered with the editor, and can be referred to by name in `+style_formats+` rather than needing to specify the format again.
+All three format types can be used with the `+formats+` configuration option. They can also be used to specify a new format item in the link:user-formatting-options.html#style_formats[`+style_formats+`] configuration option. However, a format that is specified using `+formats+` is then registered with the editor, and can be referred to by name in `+style_formats+` rather than needing to specify the format again.
 
 For example, these two configurations are equivalent:
 
@@ -69,7 +69,7 @@ tinymce.init({
 });
 ----
 
-A registered format can also be used by name with the built-in [formatter](\{\{ site.baseurl }}/apis/tinymce/tinymce.formatter/) methods. See [Using custom formats](\{\{ site.baseurl }}/content/content-formatting/#usingcustomformats) for an example.
+A registered format can also be used by name with the built-in link:content-formatting.html#usingcustomformats[Using custom formats] for an example.
 
 ==== `+block+`
 
@@ -392,7 +392,7 @@ tinymce.init({
 
 === Example of usage of the formats option
 
-This example overrides some of the built-in formats and tells \{\{site.productname}} to apply classes instead of inline styles. It also includes a custom format that produced `+h1+` elements with a title attribute and a `+red+` CSS style.
+This example overrides some of the built-in formats and tells {productname} to apply classes instead of inline styles. It also includes a custom format that produced `+h1+` elements with a title attribute and a `+red+` CSS style.
 
 Type : `+Object+`
 
@@ -421,7 +421,7 @@ tinymce.init({
 
 === Using custom formats
 
-Custom formats can be handled through the \{\{site.productname}} API. Here is a basic example of usage for the custom format defined above.
+Custom formats can be handled through the {productname} API. Here is a basic example of usage for the custom format defined above.
 
 [source,js]
 ----

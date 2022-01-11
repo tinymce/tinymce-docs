@@ -9,17 +9,19 @@
 
 include::partial$configuration/hidden_input.adoc[leveloffset=+1]
 
-\{% comment %} These are undocumented...
+////
+These are undocumented...
 include::partial$configuration/add_form_submit_trigger.adoc[]
 
 include::partial$configuration/add_unload_trigger.adoc[]
 
-include::partial$configuration/submit_patch.adoc[] \{% endcomment %}
+include::partial$configuration/submit_patch.adoc[]
+////
 
 == Adding save functionality to the editor
 
-\{\{site.productname}} can be configured to allow users to save the editor content. For information on configuring the user saving, see: link:{baseurl}/plugins-ref/opensource/save/[The Save plugin].
+{productname} can be configured to allow users to save the editor content. For information on configuring the user saving, see: link:save.html[The Save plugin].
 
 == Autosaving the editor content
 
-\{\{site.productname}} can be configured to automatically save the editor content. For information on configuring the automatic saving, see: link:{baseurl}/plugins-ref/opensource/autosave/[The Autosave plugin].
+{productname} can be configured to automatically save the editor content. For information on configuring the automatic saving, see: link:autosave.html[The Autosave plugin].

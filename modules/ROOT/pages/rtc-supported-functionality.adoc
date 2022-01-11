@@ -20,7 +20,7 @@ Real-Time Collaboration is currently not supported on mobile devices.
 
 == TinyMCE features (plugins) support when using RTC
 
-The Real-Time Collaboration (RTC) plugin supports a subset of the features that \{\{site.productname}} provides.
+The Real-Time Collaboration (RTC) plugin supports a subset of the features that {productname} provides.
 
 ____
 *Warning*: Enabling plugins not shown here is not supported and may lead to unexpected behavior.
@@ -28,52 +28,52 @@ ____
 
 The following plugins are currently supported:
 
-* link:{baseurl}/plugins-ref/opensource/advlist/[Advanced List (`+advlist+`)]
-* link:{baseurl}/plugins-ref/opensource/autoresize/[Autoresize (`+autoresize+`)]
-* link:{baseurl}/plugins-ref/opensource/charmap/[Character Map (`+charmap+`)]
-* link:{baseurl}/plugins-ref/opensource/emoticons/[Emoticons (`+emoticons+`)]
-* link:{baseurl}/plugins-ref/opensource/help/[Help (`+help+`)]
-* link:{baseurl}/plugins-ref/opensource/image/[Image (`+image+`)]
+* link:advlist.html[Advanced List (`+advlist+`)]
+* link:autoresize.html[Autoresize (`+autoresize+`)]
+* link:charmap.html[Character Map (`+charmap+`)]
+* link:emoticons.html[Emoticons (`+emoticons+`)]
+* link:help.html[Help (`+help+`)]
+* link:image.html[Image (`+image+`)]
 ** Captioned images are not yet supported.
-** The link:{baseurl}/plugins-ref/opensource/image/#image_caption[`+image_caption+`] option is not supported.
-* link:{baseurl}/plugins-ref/opensource/insertdatetime/[Insert Date/Time (`+insertdatetime+`)]
-* link:{baseurl}/plugins-ref/opensource/link/[Link (`+link+`)]
-** The link:{baseurl}/plugins-ref/opensource/link/#link_rel_list[`+link_rel_list+`] option is not supported.
-* link:{baseurl}/plugins-ref/opensource/lists/[Lists (`+lists+`)]
-* link:{baseurl}/plugins-ref/premium/moxiemanager/[MoxieManager (`+moxiemanager+`)]
-* link:{baseurl}/plugins-ref/premium/powerpaste/[PowerPaste (`+powerpaste+`)]
-* link:{baseurl}/plugins-ref/opensource/save/[Save (`+save+`)]
-* link:{baseurl}/plugins-ref/premium/tinydrive/[Tiny Drive (`+tinydrive+`)]
-* link:{baseurl}/plugins-ref/opensource/visualblocks/[Visual Blocks (`+visualblocks+`)]
-* link:{baseurl}/plugins-ref/opensource/wordcount/[Word Count (`+wordcount+`)]
+** The link:image.html#image_caption[`+image_caption+`] option is not supported.
+* link:insertdatetime.html[Insert Date/Time (`+insertdatetime+`)]
+* link:link.html[Link (`+link+`)]
+** The link:link.html#link_rel_list[`+link_rel_list+`] option is not supported.
+* link:lists.html[Lists (`+lists+`)]
+* link:moxiemanager.html[MoxieManager (`+moxiemanager+`)]
+* link:powerpaste.html[PowerPaste (`+powerpaste+`)]
+* link:save.html[Save (`+save+`)]
+* link:tinydrive.html[Tiny Drive (`+tinydrive+`)]
+* link:visualblocks.html[Visual Blocks (`+visualblocks+`)]
+* link:wordcount.html[Word Count (`+wordcount+`)]
 
 == Integration considerations
 
 When planning to integrate Real-Time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to link:{contactpage}/[contact us] and discuss your requirements.
 
-* Do not load content into \{\{site.productname}} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's no longer recognized by the plugin.
-* If content is created in an RTC session, then updated outside of an _RTC-enabled_ \{\{site.productname}} editor, a new document ID (`+documentId+`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.
-* Using the RTC plugin in hybrid mode is not supported and not recommended. Self-hosted versions of \{\{site.productname}} should not be used with the cloud version of the RTC plugin. The RTC plugin is dependent on the \{\{site.productname}} version it is released with. When using \{\{site.productname}} for the \{\{site.cloudname}}, \{\{site.productname}} will use the linked version of the RTC plugin.
+* Do not load content into {productname} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's no longer recognized by the plugin.
+* If content is created in an RTC session, then updated outside of an _RTC-enabled_ {productname} editor, a new document ID (`+documentId+`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.
+* Using the RTC plugin in hybrid mode is not supported and not recommended. Self-hosted versions of {productname} should not be used with the cloud version of the RTC plugin. The RTC plugin is dependent on the {productname} version it is released with. When using {productname} for the {cloudname}, {productname} will use the linked version of the RTC plugin.
 
 == Options that are not available when RTC is enabled
 
-* link:{baseurl}/content/content-filtering/#allow_unsafe_link_target[`+allow_unsafe_link_target+`]
-* link:{baseurl}/content/content-filtering/#br_in_pre[`+br_in_pre+`]
-* link:{baseurl}/content/content-filtering/#custom_elements[`+custom_elements+`]
-* link:{baseurl}/content/content-behavior-options/#end_container_on_empty_block[`+end_container_on_empty_block+`]
-* link:{baseurl}/content/content-filtering/#extended_valid_elements[`+extended_valid_elements+`]
-* link:{baseurl}/content/content-filtering/#forced_root_block[`+forced_root_block+`]
-* link:{baseurl}/content/content-filtering/#forced_root_block_attrs[`+forced_root_block_attrs+`]
-* link:{baseurl}/content/content-formatting/#format_empty_lines[`+format_empty_lines+`]
-* link:{baseurl}/content/spelling/#gecko_spellcheck[`+gecko_spellcheck+`]
-* link:{baseurl}/plugins-ref/opensource/image/#image_caption[`+image_caption+`]
-* link:{baseurl}/content/file-image-upload/#images_dataimg_filter[`+images_dataimg_filter+`]
-* link:{baseurl}/content/user-formatting-options/#indent_use_margin[`+indent_use_margin+`]
-* link:{baseurl}/content/content-behavior-options/#inline_boundaries[`+inline_boundaries+`]
-* link:{baseurl}/content/content-behavior-options/#inline_boundaries_selector[`+inline_boundaries_selector+`]
-* link:{baseurl}/content/content-behavior-options/#keep_styles[`+keep_styles+`]
-* link:{baseurl}/initial-configuration/editor-important-options/#placeholder[`+placeholder+`]
-* link:{baseurl}/content/content-filtering/#protect[`+protect+`]
-* link:{baseurl}/plugins-ref/opensource/link/#link_rel_list[`+link_rel_list+`]
-* link:{baseurl}/content/content-filtering/#valid_children[`+valid_children+`]
-* link:{baseurl}/content/content-filtering/#valid_elements[`+valid_elements+`]
+* link:content-filtering.html#allow_unsafe_link_target[`+allow_unsafe_link_target+`]
+* link:content-filtering.html#br_in_pre[`+br_in_pre+`]
+* link:content-filtering.html#custom_elements[`+custom_elements+`]
+* link:content-behavior-options.html#end_container_on_empty_block[`+end_container_on_empty_block+`]
+* link:content-filtering.html#extended_valid_elements[`+extended_valid_elements+`]
+* link:content-filtering.html#forced_root_block[`+forced_root_block+`]
+* link:content-filtering.html#forced_root_block_attrs[`+forced_root_block_attrs+`]
+* link:content-formatting.html#format_empty_lines[`+format_empty_lines+`]
+* link:spelling.html#gecko_spellcheck[`+gecko_spellcheck+`]
+* link:image.html#image_caption[`+image_caption+`]
+* link:file-image-upload.html#images_dataimg_filter[`+images_dataimg_filter+`]
+* link:user-formatting-options.html#indent_use_margin[`+indent_use_margin+`]
+* link:content-behavior-options.html#inline_boundaries[`+inline_boundaries+`]
+* link:content-behavior-options.html#inline_boundaries_selector[`+inline_boundaries_selector+`]
+* link:content-behavior-options.html#keep_styles[`+keep_styles+`]
+* link:editor-important-options.html#placeholder[`+placeholder+`]
+* link:content-filtering.html#protect[`+protect+`]
+* link:link.html#link_rel_list[`+link_rel_list+`]
+* link:content-filtering.html#valid_children[`+valid_children+`]
+* link:content-filtering.html#valid_elements[`+valid_elements+`]

@@ -9,9 +9,9 @@
 
 :plugincode: export
 
-include::partial$misc/admon_premium_plugin[]
+include::partial$misc/admon_premium_plugin.adoc[]
 
-The \{\{pluginname}} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the <<exporters, Exporters section>>.
+The {pluginname} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the <<exporters, Exporters section>>.
 
 == Interactive example
 
@@ -29,7 +29,7 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Basic setup
 
-To add the \{\{pluginname}} plugin to the editor, add `+{{plugincode}}+` to the `+plugins+` option in the editor configuration.
+To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `+plugins+` option in the editor configuration.
 
 For example:
 
@@ -37,7 +37,7 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
+  plugins: 'export',
   toolbar: 'export',
   export_image_proxy: 'proxy.php' // Required for rendering remote images
 });
@@ -45,7 +45,7 @@ tinymce.init({
 
 == Exporters
 
-The \{\{pluginname}} plugin provides the following exporters:
+The {pluginname} plugin provides the following exporters:
 
 * <<client-sidepdfclientpdf, Client-side PDF (`+clientpdf+`)>>
 
@@ -60,22 +60,22 @@ This exporter has a few limitations or known issues that should be noted:
 * Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
 * Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the <<export_image_proxy, export_image_proxy>> option.
 * Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
-* The link:{baseurl}/plugins-ref/premium/checklist/[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
+* The link:checklist.html[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
 
 The following plugins are not supported:
 
-* link:{baseurl}/plugins-ref/opensource/bbcode/[BBCode]
-* link:{baseurl}/plugins-ref/premium/comments/[Comments]
-* link:{baseurl}/plugins-ref/premium/mediaembed/[Enhanced Media Embed]
-* link:{baseurl}/plugins-ref/opensource/fullpage/[Fullpage]
-* link:{baseurl}/plugins-ref/opensource/legacyoutput/[Legacy Output]
-* link:{baseurl}/plugins-ref/opensource/media/[Media]
-* link:{baseurl}/plugins-ref/premium/pageembed/[Page Embed]
-* link:{baseurl}/plugins-ref/opensource/toc/[Table of Contents]
+* link:bbcode.html[BBCode]
+* link:comments.html[Comments]
+* link:mediaembed.html[Enhanced Media Embed]
+* link:fullpage.html[Fullpage]
+* link:legacyoutput.html[Legacy Output]
+* link:media.html[Media]
+* link:pageembed.html[Page Embed]
+* link:toc.html[Table of Contents]
 
 == Configuration Options
 
-The following configuration options affect the behavior of the \{\{pluginname}} plugin.
+The following configuration options affect the behavior of the {pluginname} plugin.
 
 include::partial$configuration/image_cors_hosts.adoc[]
 
@@ -89,18 +89,18 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The \{\{pluginname}} plugin provides the following \{\{site.productname}} commands.
+The {pluginname} plugin provides the following {productname} commands.
 
-include::partial$commands/\{\{plugincode}}-cmds.adoc[]
+include::partial$commands/{plugincode}-cmds.adoc[]
 
 == Events
 
-The \{\{pluginname}} plugin provides the following events.
+The {pluginname} plugin provides the following events.
 
-include::partial$events/\{\{plugincode}}-events.adoc[]
+include::partial$events/{plugincode}-events.adoc[]
 
 == APIs
 
-The \{\{pluginname}} plugin provides the following APIs.
+The {pluginname} plugin provides the following APIs.
 
-include::partial$plugin-apis/\{\{plugincode}}-apis.adoc[]
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

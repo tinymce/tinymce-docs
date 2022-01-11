@@ -9,7 +9,8 @@
 :installtype: an npm
 
 :bundler: https
-://www.rollupjs.org/[Rollup.js] :syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules[ES6+ syntax]
+://www.rollupjs.org/[Rollup.js]
+:syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules[ES6+ syntax]
 include::partial$module-loading/bundling-procedure-intro.adoc[]
 
 == Requirements
@@ -41,7 +42,7 @@ include::partial$module-loading/bundling-rollup-es6-index.adoc[]
 rollup --config
 ----
 +
-If Rollup.js runs successfully, check that the editor loads in the application. If Rollup.js fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling \{\{site.productname}} into an existing project.
+If Rollup.js runs successfully, check that the editor loads in the application. If Rollup.js fails, review any errors and review the configuration changes in this procedure; you may need to adjust for conflicts or other issues when bundling {productname} into an existing project.
 
 :is_zip_install: nil
 

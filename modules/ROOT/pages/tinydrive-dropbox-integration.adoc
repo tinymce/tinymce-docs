@@ -7,11 +7,11 @@
 
 == Overview
 
-\{\{site.cloudfilemanager}} enables you to import files from any Dropbox account if you set up the Dropbox integration by providing a Dropbox app key. When the user selects a file from Dropbox, it will instantly be uploaded or imported into the \{\{site.cloudfilemanager}} storage so that it can be viewed online and shared through \{\{site.cloudfilemanager}}.
+{cloudfilemanager} enables you to import files from any Dropbox account if you set up the Dropbox integration by providing a Dropbox app key. When the user selects a file from Dropbox, it will instantly be uploaded or imported into the {cloudfilemanager} storage so that it can be viewed online and shared through {cloudfilemanager}.
 
 == Prerequisites
 
-A valid Dropbox user account is required for integrating Dropbox with \{\{site.cloudfilemanager}}. Refer to https://help.dropbox.com/account/create-account[this] link for more information on creating a Dropbox user account.
+A valid Dropbox user account is required for integrating Dropbox with {cloudfilemanager}. Refer to https://help.dropbox.com/account/create-account[this] link for more information on creating a Dropbox user account.
 
 == Obtaining the Dropbox app key
 
@@ -30,13 +30,13 @@ You can get Dropbox integration up and running by following the steps below.
 === 2. Get the Dropbox app key and add domains
 
 [arabic]
-. Copy the key from `+App key+` this will then be used as the key for the link:{baseurl}/plugins-ref/premium/tinydrive/configuration/dropbox-and-google-drive/#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key].
+. Copy the key from `+App key+` this will then be used as the key for the link:dropbox-and-google-drive.html#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key].
 . Configure the domains that are serving your application in `+Chooser/Saver domains+`.
 
 [[3-configure-tinydrive-to-use-the-new-dropbox-app-key]]
 === 3. Configure tinydrive to use the new Dropbox app key
 
-You configure the Dropbox API key by setting the link:{baseurl}/plugins-ref/premium/tinydrive/configuration/dropbox-and-google-drive/#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key] like in the example below.
+You configure the Dropbox API key by setting the link:dropbox-and-google-drive.html#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key] like in the example below.
 
 [source,js]
 ----
@@ -48,23 +48,23 @@ tinymce.init({
 });
 ----
 
-For information on other \{\{site.cloudfilemanager}} config options refer to the link:{baseurl}/plugins-ref/premium/tinydrive/configuration/dropbox-and-google-drive/#configuringwithdropbox[configuration] section of this document.
+For information on other {cloudfilemanager} config options refer to the link:dropbox-and-google-drive.html#configuringwithdropbox[configuration] section of this document.
 
 [[4-tiny-drive-ui]]
 === 4. Tiny Drive UI
 
 [arabic]
-. From the \{\{site.productname}} user interface, click on the image:insertimage.png[Insert/edit image] button to access the \{\{site.cloudfilemanager}} user interface.
+. From the {productname} user interface, click on the image:insertimage.png[Insert/edit image] button to access the {cloudfilemanager} user interface.
 . Click on the image:upload.png[Upload/Create] button to select Dropbox from the list of storages.
 . Select the file to upload/import from Dropbox by clicking on the radio button next to it and click the *Choose* button to upload or *Cancel* to abort the operation.
 . Alternatively, files from your local browser can be uploaded to the Dropbox by clicking on the *Upload files* option and selecting the files to upload.
 
-*Result:* You should be able to view the selected files in your \{\{site.cloudfilemanager}} storage.
+*Result:* You should be able to view the selected files in your {cloudfilemanager} storage.
 
 Read about other Dropbox options https://www.dropbox.com/guide/business[here].
 
 == Interactive example
 
-Here is an interactive example of Dropbox-enabled on \{\{site.cloudfilemanager}}.
+Here is an interactive example of Dropbox-enabled on {cloudfilemanager}.
 
 liveDemo::drive-demo-dropbox[ ]

@@ -6,9 +6,9 @@
 :description: Understand the difference between traditional forms-based editing and advanced inline editing.
 :keywords: form inline edit stylesheet
 
-\{\{site.productname}} has three main integration modes: a _classic_ full editor mode, an _inline_ editing mode, and a distraction-free mode.
+{productname} has three main integration modes: a _classic_ full editor mode, an _inline_ editing mode, and a distraction-free mode.
 
-include::partial$misc/admon_not_on_mobile[]
+include::partial$misc/admon_not_on_mobile.adoc[]
 
 The inline editing mode is used for merging the editing and reading views of the page for a seamless editing experience and true WYSIWYG behavior.
 
@@ -45,8 +45,8 @@ Inline mode only works on content within a block element (such as: `+div+` or `+
 </html>
 ----
 
-The following demonstration is using four \{\{site.productname}} editors in inline mode, two for the headings, and two for the body text.
+The following demonstration is using four {productname} editors in inline mode, two for the headings, and two for the body text.
 
 liveDemo::inline[ ]
 
-For information on inline mode and the `+inline+` setting, see: link:{baseurl}/interface/editor-mode/inline-editor-options/#inline[User interface options - inline].
+For information on inline mode and the `+inline+` setting, see: link:inline-editor-options.html#inline[User interface options - inline].

@@ -23,11 +23,11 @@ Redial can be used to change information that is displayed in the dialog, create
 
 The following example demonstrates one way of implementing a multipage form dialog using the `+redial()+` method. Custom buttons are used to switch between the two pages of the form by calling `+redial()+` with the appropriate dialog configuration.
 
-To see the output of the code, click on the \{\{site.productname}} tab on the fiddle below.
+To see the output of the code, click on the {productname} tab on the fiddle below.
 
 liveDemo::redial-demo[ height="900" tab="js" ]
 
-The example JavaScript code contains two dialog configurations - `+page1Config+` and `+page2Config+`. The \{\{site.productname}} initialization code adds a button to the editor that when clicked calls `+editor.windowManager.open(page1Config)+` to open a dialog using the first configuration.
+The example JavaScript code contains two dialog configurations - `+page1Config+` and `+page2Config+`. The {productname} initialization code adds a button to the editor that when clicked calls `+editor.windowManager.open(page1Config)+` to open a dialog using the first configuration.
 
 The configuration for the first page of the multipage form contains a description of the form and a checkbox. The checkbox, via the dialog's `+onChange()+` callback function, toggles whether the `+next+` button is disabled or enabled. The `+next+` button when clicked fires the `+onAction()+` callback function, which in turn triggers `+redial()+` which will replace the `+page1Config+` dialog with the `+page2Config+` dialog.
 

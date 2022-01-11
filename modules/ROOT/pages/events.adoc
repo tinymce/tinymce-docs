@@ -6,11 +6,11 @@
 :description: List of common editor events
 :keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
 
-\{\{ site.productname }} supports some browser-native events, and provides additional events for working with the editor and plugins.
+{productname} supports some browser-native events, and provides additional events for working with the editor and plugins.
 
 == Handling Editor events
 
-The following examples illustrate how to use supported native events, editor core events, and plugin events with \{\{ site.productname }}.
+The following examples illustrate how to use supported native events, editor core events, and plugin events with {productname}.
 
 The following example uses a function to create a console log entry when the editor has initialized. This is also an example of handling an event which does not return any data.
 
@@ -42,7 +42,7 @@ tinymce.init({
 
 == Supported browser-native events
 
-\{\{ site.productname }} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
+{productname} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
 
 * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforeinput_event[beforeinput]
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event[blur]
@@ -86,7 +86,7 @@ tinymce.init({
 
 == Editor core events
 
-The following events are provided by the \{\{ site.productname }} editor.
+The following events are provided by the {productname} editor.
 
 [cols=",,",options="header",]
 |===
@@ -100,7 +100,7 @@ The following events are provided by the \{\{ site.productname }} editor.
 |AfterScrollIntoView |`+{ elm: HTMLElement, alignToTop: boolean }+` |Fired when an element has been scrolled into view.
 |ObjectResized |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) has finished being resized.
 |ObjectResizeStart |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) is about to be resized.
-|SwitchMode |`+{ mode: string }+` |Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using \{\{ site.productname }} API ['tinymce.activeEditor.mode.register()'](\{\{ site.baseurl }}/apis/tinymce/tinymce.editormode/#register).
+|SwitchMode |`+{ mode: string }+` |Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:tinymce.editormode.html#register['tinymce.activeEditor.mode.register()'].
 |ScrollWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event]) |Fired when the window has scrolled.
 |ResizeWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event[resize event]) |Fired when the window is resized.
 |BeforeExecCommand |`+{ command: string, ui?: boolean, value?: any }+` |Fired before a command is executed.
@@ -133,14 +133,14 @@ The following events are provided by the \{\{ site.productname }} editor.
 |Undo |`+{ level: UndoLevel }+` |Fired when a change has been undone.
 |BeforeAddUndo |`+{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }+` |Fired before a new undo level is created.
 |AddUndo |`+{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }+` |Fired after a new undo level has been created.
-|Dirty |N/A |Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when link:{baseurl}/apis/tinymce/tinymce.undomanager/[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the link:{baseurl}/apis/tinymce/tinymce.editor/#isdirty[`+editor.isDirty+` API].
+|Dirty |N/A |Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when link:tinymce.undomanager.html[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the link:tinymce.editor.html#isdirty[`+editor.isDirty+` API].
 |CloseWindow |`+{ dialog: DialogApi }+` |Fired when a dialog has been closed.
 |OpenWindow |`+{ dialog: DialogApi }+` |Fired when a dialog has been opened.
-|ProgressState |`+{ state: boolean, time?: number }+` |Fired when a change to the editor progress state is scheduled using the \{\{ site.productname }} API [`+tinymce.activeEditor.setProgressState()+`](\{\{ site.baseurl }}/apis/tinymce/tinymce.editor/#setprogressstate).
+|ProgressState |`+{ state: boolean, time?: number }+` |Fired when a change to the editor progress state is scheduled using the {productname} API link:tinymce.editor.html#setprogressstate[`+tinymce.activeEditor.setProgressState()+`].
 |AfterProgressState |`+{ state: boolean }+` |Fired after the editor progress state is changed, and the new progress state is in effect.
 |PreProcess |`+{ node: Element, format: string }+` |Fired before serializing a DOM node to HTML content.
 |PostProcess |`+{ node: Element, format: string }+` |Fired after serializing a DOM node to HTML content.
-|SetAttrib |`+{ attrElm: Element, attrName: string, attrValue: string }+` |Fired when an attribute is updated using the editor [DOMUtils API](\{\{ site.baseurl }}/apis/tinymce.dom/tinymce.dom.domutils/).
+|SetAttrib |`+{ attrElm: Element, attrName: string, attrValue: string }+` |Fired when an attribute is updated using the editor link:/apis/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
 |ResizeEditor |N/A |Fired when the editor is resized, either by the resize handles or the auto-resize plugin.
 |SkinLoaded |N/A |Fired when the editor skin has been loaded.
 |SkinLoadError |`+{ message: string }+` |Fired when the editor skin fails to load.
@@ -155,8 +155,8 @@ The following events are provided by the \{\{ site.productname }} editor.
 |ResizeContent |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event[resize event]) |(iframe mode only) Fired when the iframe window is resized.
 |Load |N/A |(iframe mode only) Fired when the editor iframe content has finished loading.
 |ResolveName |`+{ name: string, target: Element }+` |(iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.
-|BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: link:{baseurl}/how-to-guides/creating-custom-ui-components/creating-custom-notifications/[Create custom notifications].
-|OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: link:{baseurl}/how-to-guides/creating-custom-ui-components/creating-custom-notifications/[Create custom notifications].
+|BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: link:creating-custom-notifications.html[Create custom notifications].
+|OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: link:creating-custom-notifications.html[Create custom notifications].
 |===
 
 == Plugin events
@@ -190,7 +190,7 @@ For events applicable to the Advanced Tables plugin, see: <<tableevents, Table e
 
 === Autosave events
 
-The following events are provided by the link:{baseurl}/plugins-ref/opensource/autosave/[Autosave plugin].
+The following events are provided by the link:autosave.html[Autosave plugin].
 
 [cols=",,",options="header",]
 |===
@@ -202,7 +202,7 @@ The following events are provided by the link:{baseurl}/plugins-ref/opensource/a
 
 === Character Map events
 
-The following event is provided by the link:{baseurl}/plugins-ref/opensource/charmap/[Character Map plugin].
+The following event is provided by the link:charmap.html[Character Map plugin].
 
 [cols=",,",options="header",]
 |===
@@ -212,7 +212,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/opensource/cha
 
 === Comments events
 
-The following event is provided by the link:{baseurl}/plugins-ref/premium/comments/[Comments plugin].
+The following event is provided by the link:comments.html[Comments plugin].
 
 [cols=",,",options="header",]
 |===
@@ -226,7 +226,7 @@ include::partial$events/export-events.adoc[]
 
 === Format Painter events
 
-The following event is provided by the link:{baseurl}/plugins-ref/premium/formatpainter/[Format Painter plugin].
+The following event is provided by the link:formatpainter.html[Format Painter plugin].
 
 [cols=",,",options="header",]
 |===
@@ -236,7 +236,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/premium/format
 
 === Fullscreen events
 
-The following event is provided by the link:{baseurl}/plugins-ref/opensource/fullscreen/[Fullscreen plugin].
+The following event is provided by the link:fullscreen.html[Fullscreen plugin].
 
 [cols=",,",options="header",]
 |===
@@ -246,7 +246,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/opensource/ful
 
 === Import CSS events
 
-The following event is provided by the link:{baseurl}/plugins-ref/opensource/importcss/[Import CSS plugin].
+The following event is provided by the link:importcss.html[Import CSS plugin].
 
 [cols=",,",options="header",]
 |===
@@ -256,7 +256,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/opensource/imp
 
 === Link checker events
 
-The following event is provided by the link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker plugin].
+The following event is provided by the link:linkchecker.html[Link Checker plugin].
 
 [cols=",,",options="header",]
 |===
@@ -266,7 +266,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/premium/linkch
 
 === Lists events
 
-The following event is provided by the link:{baseurl}/plugins-ref/opensource/lists/[Lists plugin].
+The following event is provided by the link:lists.html[Lists plugin].
 
 [cols=",,",options="header",]
 |===
@@ -276,7 +276,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/opensource/lis
 
 === Media Embed events
 
-The following event is provided by the link:{baseurl}/plugins-ref/premium/mediaembed/[Media Embed plugin].
+The following event is provided by the link:mediaembed.html[Media Embed plugin].
 
 [cols=",,",options="header",]
 |===
@@ -286,7 +286,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/premium/mediae
 
 === Paste events
 
-The following events are provided by the link:{baseurl}/plugins-ref/opensource/paste/[Paste plugin].
+The following events are provided by the link:paste.html[Paste plugin].
 
 [cols=",,",options="header",]
 |===
@@ -298,7 +298,7 @@ The following events are provided by the link:{baseurl}/plugins-ref/opensource/p
 
 === Permanent Pen events
 
-The following events are provided by the link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen plugin].
+The following events are provided by the link:permanentpen.html[Permanent Pen plugin].
 
 [cols=",,",options="header",]
 |===
@@ -309,7 +309,7 @@ The following events are provided by the link:{baseurl}/plugins-ref/premium/perm
 
 === PowerPaste events
 
-The following events are provided by the link:{baseurl}/plugins-ref/premium/powerpaste/[PowerPaste plugin].
+The following events are provided by the link:powerpaste.html[PowerPaste plugin].
 
 [cols=",,",options="header",]
 |===
@@ -321,7 +321,7 @@ The following events are provided by the link:{baseurl}/plugins-ref/premium/powe
 
 === Spell Checker events
 
-The following events are provided by the link:{baseurl}/plugins-ref/opensource/spellchecker/[Spell Checker plugin].
+The following events are provided by the link:spellchecker.html[Spell Checker plugin].
 
 include::partial$DEPRECATED/spellchecker.adoc[]
 
@@ -342,7 +342,7 @@ include::partial$events/table-events.adoc[]
 
 === Visual Blocks events
 
-The following event is provided by the link:{baseurl}/plugins-ref/opensource/visualblocks/[Visual Blocks plugin].
+The following event is provided by the link:visualblocks.html[Visual Blocks plugin].
 
 [cols=",,",options="header",]
 |===
@@ -352,7 +352,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/opensource/vis
 
 === Visual Characters events
 
-The following event is provided by the link:{baseurl}/plugins-ref/opensource/visualchars/[Visual Characters plugin].
+The following event is provided by the link:visualchars.html[Visual Characters plugin].
 
 [cols=",,",options="header",]
 |===
@@ -362,7 +362,7 @@ The following event is provided by the link:{baseurl}/plugins-ref/opensource/vis
 
 === Word Count events
 
-The following event is provided by the link:{baseurl}/plugins-ref/opensource/wordcount/[Word Count plugin].
+The following event is provided by the link:wordcount.html[Word Count plugin].
 
 [cols=",,",options="header",]
 |===

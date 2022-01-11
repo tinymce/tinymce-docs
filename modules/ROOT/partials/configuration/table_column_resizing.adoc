@@ -3,7 +3,8 @@
 \{% if page.dir != "/plugins/opensource/table/" %}
 
 ____
-*Note*: The `+table_column_resizing+` option requires the `+table+` plugin. \{% endif %}
+*Note*: The `+table_column_resizing+` option requires the `+table+` plugin.
+\{% endif %}
 ____
 
 The `+table_column_resizing+` option sets whether a table or other columns are resized when a user resizes, inserts, or deletes a table column.

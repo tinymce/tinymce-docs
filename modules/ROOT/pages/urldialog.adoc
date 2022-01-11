@@ -5,10 +5,10 @@
 :description: URL dialogs are a TinyMCE UI component used to display an external page.
 :keywords: dialog urldialog api
 
-A URL dialog is a special \{\{site.productname}} UI component which loads an external web page inside a dialog (sometimes referred to as `+modals+`). URL dialogs are useful for very complex use cases, where the supported components for \{\{site.productname}}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a \{\{site.productname}} dialog would probably require a URL dialog.
+A URL dialog is a special {productname} UI component which loads an external web page inside a dialog (sometimes referred to as `+modals+`). URL dialogs are useful for very complex use cases, where the supported components for {productname}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {productname} dialog would probably require a URL dialog.
 
 ____
-*Note*: link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog/[Standard \{\{site.productname}} dialogs] should suffice for most use cases, and may be simpler to configure.
+*Note*: link:dialog.html[Standard {productname} dialogs] should suffice for most use cases, and may be simpler to configure.
 ____
 
 == Basic example
@@ -51,7 +51,7 @@ For more information on the `+dialogApi+` object that is passed to some of the c
 
 == Footer buttons
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{baseurl}/how-to-guides/customizing-the-editor-appearance/customize-ui/#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:customize-ui.html#skins[skin].
 
 === Configuration
 
@@ -62,7 +62,7 @@ A *button* is a clickable component that can contain text or an icon. There are 
 |text |string |required |Text to display in the button if `+icon+` is not specified. Also used for the button's `+title+` attribute.
 |name |string |optional |An identifier for the button. If not specified, the button will be assigned a randomly generated `+name+`.
 |icon |string |optional |
-include::partial$misc/admon_predefined_icons_only[] *When configured, the button will display the icon instead of text.*
+include::partial$misc/admon_predefined_icons_only.adoc[] *When configured, the button will display the icon instead of text.*
 |primary |boolean |optional |default: `+false+` - Whether to style the button as a primary or secondary button.
 |disabled |boolean |optional |default: `+false+` - When `+true+`, the button will be disabled when the dialog loads.
 |align |`+'end'+` or `+'start'+` |optional |default: `+'end'+` - When set to `+'end'+` the button will display on the right-hand side of the dialog. When set to `+'start'+` the button will display on the left-hand side.
@@ -77,10 +77,10 @@ ____
 The different footer button types will invoke different callbacks when clicked:
 
 * A *Cancel* type button will invoke the `+onCancel+` and `+onClose+` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `+X+` button in the top right of the dialog.
-* A *Custom* type button will invoke the `+onAction+` callback function provided in the dialog configuration, and pass it the button's `+name+` in the `+details+` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-examples/#interactiveexampleusingredialconfigvoid[Redial example] for an example of how to use this with standard dialogs.
+* A *Custom* type button will invoke the `+onAction+` callback function provided in the dialog configuration, and pass it the button's `+name+` in the `+details+` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the link:dialog-examples.html#interactiveexampleusingredialconfigvoid[Redial example] for an example of how to use this with standard dialogs.
 
 ____
-*Note*: Unlike link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog/[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `+onSubmit+` callback.
+*Note*: Unlike link:dialog.html[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `+onSubmit+` callback.
 ____
 
 See the <<configurationoptions, URL dialog configuration options>> documentation for more information on event callbacks.
@@ -104,7 +104,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 
 == URL dialog messaging
 
-When using a URL dialog, there needs to be a way to communicate between \{\{site.productname}} and the external page, as the two components are no longer running in the same window. To allow this, \{\{site.productname}} makes use of the browsers https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage[`+window.postMessage()+`] API to allow sending data across different origins. The following is an example of how to send messages back to \{\{site.productname}} from within an external page:
+When using a URL dialog, there needs to be a way to communicate between {productname} and the external page, as the two components are no longer running in the same window. To allow this, {productname} makes use of the browsers https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage[`+window.postMessage()+`] API to allow sending data across different origins. The following is an example of how to send messages back to {productname} from within an external page:
 
 [source,js]
 ----
@@ -114,7 +114,7 @@ window.parent.postMessage({
 }, '*');
 ----
 
-Similarly, to send messages from \{\{site.productname}} back to the external page, the `+sendMessage()+` function from the <<urldialoginstanceapi, URL dialog instance API>> can be used to send messages, and then in the external page an event listener can be added to receive the messages:
+Similarly, to send messages from {productname} back to the external page, the `+sendMessage()+` function from the <<urldialoginstanceapi, URL dialog instance API>> can be used to send messages, and then in the external page an event listener can be added to receive the messages:
 
 [source,js]
 ----
@@ -127,7 +127,7 @@ window.addEventListener('message', function (event) {
 ----
 
 ____
-*Note*: When sending a message it is recommended to specify the target origin of where \{\{site.productname}} is running, instead of using a wildcard (`+'*'+`). Similarly, when receiving messages, check that `+event.origin+` matches the origin of where \{\{site.productname}} is running. For example, if \{\{site.productname}} is running on _http://mysite.com/tinymce.html_, then if `+event.origin+` doesn't match `+http://mysite.com+` the message should be ignored.
+*Note*: When sending a message it is recommended to specify the target origin of where {productname} is running, instead of using a wildcard (`+'*'+`). Similarly, when receiving messages, check that `+event.origin+` matches the origin of where {productname} is running. For example, if {productname} is running on _http://mysite.com/tinymce.html_, then if `+event.origin+` doesn't match `+http://mysite.com+` the message should be ignored.
 ____
 
 === Supported message actions
@@ -211,7 +211,7 @@ This action unblocks the window/dialog. This is the same as using the `+api.unbl
 
 === Custom message actions
 
-A custom message is one that contains a `+mceAction+` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to \{\{site.productname}} and then be processed via the `+onMessage+` callback to perform custom actions inside \{\{site.productname}}.
+A custom message is one that contains a `+mceAction+` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to {productname} and then be processed via the `+onMessage+` callback to perform custom actions inside {productname}.
 
 [source,js]
 ----
@@ -224,7 +224,7 @@ A custom message is one that contains a `+mceAction+` not listed in the above-su
 ----
 
 ____
-*Note*: \{\{site.productname}} will ignore all messages received that don't contain a `+mceAction+` property.
+*Note*: {productname} will ignore all messages received that don't contain a `+mceAction+` property.
 ____
 
 == Interactive example

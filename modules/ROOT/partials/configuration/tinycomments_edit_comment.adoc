@@ -2,7 +2,7 @@
 
 The Comments plugin uses the `+tinycomments_edit_comment+` function to edit a comment.
 
-The `+tinycomments_edit_comment+` function allows updating or changing existing comments and returns via the `+done+` callback once successful. Unrecoverable errors are communicated to \{\{site.productname}} by calling the `+fail+` callback instead.
+The `+tinycomments_edit_comment+` function allows updating or changing existing comments and returns via the `+done+` callback once successful. Unrecoverable errors are communicated to {productname} by calling the `+fail+` callback instead.
 
 The `+tinycomments_edit_comment+` function is given a request (req) object as the first parameter, which has these fields:
 

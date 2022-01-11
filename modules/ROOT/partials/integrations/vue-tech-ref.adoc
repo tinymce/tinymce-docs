@@ -102,11 +102,11 @@ The editor accepts the following properties:
 />
 ----
 
-None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a \{\{site.cloudname}} API key using `+api-key+` to remove the `+This domain is not registered...+` warning message.
+None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a {cloudname} API key using `+api-key+` to remove the `+This domain is not registered...+` warning message.
 
 === `+api-key+`
 
-\{\{site.cloudname}} API key. Required for deployments using the \{\{site.cloudname}} to provide the \{\{site.productname}} editor.
+{cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
 
 include::partial$misc/get-an-api-key.adoc[]
 
@@ -129,11 +129,11 @@ Default value : `+'{productmajorversion}'+`
 
 Possible values : `+'{productmajorversion}-stable'+`, `+'{productmajorversion}-testing'+`, `+'{productmajorversion}-dev'+`
 
-Changes the \{\{site.productname}} build used for the editor to one of the following \{\{site.cloudname}} channels:
+Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
-* `+{productmajorversion}+`, `+{productmajorversion}-stable+` (*Default*): The current enterprise release of \{\{site.productname}}.
-* `+{productmajorversion}-testing+`: The current release candidate for the next enterprise release of \{\{site.productname}}.
-* `+{productmajorversion}-dev+`: The nightly-build version of \{\{site.productname}}.
+* `+{productmajorversion}+`, `+{productmajorversion}-stable+` (*Default*): The current enterprise release of {productname}.
+* `+{productmajorversion}-testing+`: The current release candidate for the next enterprise release of {productname}.
+* `+{productmajorversion}-dev+`: The nightly-build version of {productname}.
 
 Such as:
 
@@ -146,7 +146,7 @@ Such as:
 />
 ----
 
-For information \{\{site.productname}} development channels, see: link:{baseurl}/how-to-guides/cloud-deployment-guide/editor-plugin-version/#{productmajorversion}{productmajorversion}-testingand{productmajorversion}-devreleasechannels[Specifying the \{\{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases].
+For information {productname} development channels, see: link:editor-plugin-version.html#{productmajorversion}{productmajorversion}-testingand{productmajorversion}-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
 === `+disabled+`
 
@@ -186,7 +186,7 @@ Type : `+String+`
 
 Object sent to the `+tinymce.init+` method used to initialize the editor.
 
-For information on the \{\{site.productname}} selector (`+tinymce.init+`), see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+For information on the {productname} selector (`+tinymce.init+`), see: link:basic-setup.html[Basic setup].
 
 Default value : `+"{% raw %}{{% endraw %} {% raw %}}{% endraw %}"+`
 
@@ -225,9 +225,9 @@ Type : `+String+`
 
 === `+inline+`
 
-Used to set the editor to inline mode. Using `+<editor :inline=true />+` is the same as setting `+{inline: true}+` in the \{\{site.productname}} selector (`+tinymce.init+`).
+Used to set the editor to inline mode. Using `+<editor :inline=true />+` is the same as setting `+{inline: true}+` in the {productname} selector (`+tinymce.init+`).
 
-For information on inline mode, see: link:{baseurl}/interface/editor-mode/inline-editor-options/#inline[User interface options - `+inline+`] and link:{baseurl}/interface/editor-mode/use-tinymce-inline/[Setup inline editing mode].
+For information on inline mode, see: link:inline-editor-options.html#inline[User interface options - `+inline+`] and link:use-tinymce-inline.html[Setup inline editing mode].
 
 Default value : `+false+`
 
@@ -246,7 +246,7 @@ Possible values : `+true+`, `+false+`
 
 Sets the trigger events for <<forminputbindingsv-model, v-model events>>.
 
-For a list of available \{\{site.productname}} events, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/events/#editorcoreevents[Available Events - Editor events].
+For a list of available {productname} events, see: link:events.html#editorcoreevents[Available Events - Editor events].
 
 Default value : `+'change keyup undo redo'+`.
 
@@ -282,9 +282,9 @@ Possible values : `+'html'+`, `+'text'+`
 
 === `+plugins+`
 
-Used to include plugins for the editor. Using `+<editor plugins="lists code" />+` is the same as setting `+{plugins: 'lists code'}+` in the \{\{site.productname}} selector (`+tinymce.init+`).
+Used to include plugins for the editor. Using `+<editor plugins="lists code" />+` is the same as setting `+{plugins: 'lists code'}+` in the {productname} selector (`+tinymce.init+`).
 
-For information on adding plugins to \{\{site.productname}}, see: link:{baseurl}/plugins-ref/[Add plugins to \{\{site.productname}}].
+For information on adding plugins to {productname}, see: link:work-with-plugins.html[Add plugins to {productname}].
 
 Type : `+String+` or `+Array+`
 
@@ -317,11 +317,11 @@ Type : `+String+`
 
 === `+toolbar+`
 
-Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic" />+` is the same as setting `+{toolbar: 'bold italic'}+` in the \{\{site.productname}} selector (`+tinymce.init+`).
+Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic" />+` is the same as setting `+{toolbar: 'bold italic'}+` in the {productname} selector (`+tinymce.init+`).
 
-For information setting the toolbar for \{\{site.productname}}, see: link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar[User interface options - toolbar].
+For information setting the toolbar for {productname}, see: link:toolbar-configuration-options.html#toolbar[User interface options - toolbar].
 
-Possible values : See link:{baseurl}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
+Possible values : See link:available-toolbar-buttons.html[Toolbar Buttons Available for {productname}].
 
 Type : `+String+`
 

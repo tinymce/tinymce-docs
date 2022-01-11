@@ -1,9 +1,9 @@
-\{% if productSource == 'cloud' %} The \{\{site.cloudname}} can be used to integrate \{\{site.productname}} into Ruby on Rails projects. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a \{\{site.productname}} editor.
+\{% if productSource == 'cloud' %} The {cloudname} can be used to integrate {productname} into Ruby on Rails projects. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor.
 
 include::partial$integrations/rails-basic-proj.adoc[]
 
 [arabic, start=3]
-. Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include \{\{site.productname}} on pages using the `+application+` layout:
+. Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include {productname} on pages using the `+application+` layout:
 +
 [source,html]
 ----
@@ -15,7 +15,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
   });
 </script>
 ----
-. Create a `+<textarea>+` with the initial content `+Hello, World!+` for \{\{site.productname}} by adding the following lines to `+app/views/welcome/index.html.erb+`:
+. Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
 [source,html]
 ----
@@ -28,12 +28,13 @@ include::partial$integrations/rails-basic-proj.adoc[]
 rails server
 ----
 
-The page containing the \{\{site.productname}} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/). \{% elsif productSource == 'zip' %} Self-hosted instances of \{\{site.productname}} can be integrated into Ruby on Rails projects. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a \{\{site.productname}} editor.
+The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/).
+\{% elsif productSource == 'zip' %} Self-hosted instances of {productname} can be integrated into Ruby on Rails projects. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor.
 
 include::partial$integrations/rails-basic-proj.adoc[]
 
 [arabic, start=3]
-. Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include \{\{site.productname}} on pages using the `+application+` layout:
+. Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include {productname} on pages using the `+application+` layout:
 +
 [source,html]
 ----
@@ -45,7 +46,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
   });
 </script>
 ----
-. Create a `+<textarea>+` with the initial content `+Hello, World!+` for \{\{site.productname}} by adding the following lines to `+app/views/welcome/index.html.erb+`:
+. Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
 [source,html]
 ----
@@ -58,13 +59,13 @@ include::partial$integrations/rails-basic-proj.adoc[]
 rails server
 ----
 
-The page containing the \{\{site.productname}} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/).
+The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/).
 
 \{% else %}
 
-include::partial$misc/admon_third_party_integration[]
+include::partial$misc/admon_third_party_integration.adoc[]
 
-Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[\{\{site.productname}} Ruby on Rails gem] for integrating \{\{site.productname}} into the Ruby on Rails asset pipeline. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a \{\{site.productname}} editor based on our link:{baseurl}/demos/basic-example/[Basic example].
+Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{productname} Ruby on Rails gem] for integrating {productname} into the Ruby on Rails asset pipeline. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:basic-example.html[Basic example].
 
 include::partial$integrations/rails-basic-proj.adoc[]
 
@@ -83,7 +84,7 @@ Do not add this line within a `+group+` - `+end+` element.
 ----
 bundle install
 ----
-. Create a \{\{site.productname}} configuration file.
+. Create a {productname} configuration file.
 [arabic]
 .. Create the `+config/tinymce.yml+` file:
 +
@@ -91,7 +92,7 @@ bundle install
 ----
 touch config/tinymce.yml
 ----
-.. Add a \{\{site.productname}} configuration. The configuration must be in the https://yaml.org/spec/1.2/spec.html[YAML format], such as:
+.. Add a {productname} configuration. The configuration must be in the https://yaml.org/spec/1.2/spec.html[YAML format], such as:
 +
 [source,yml]
 ----
@@ -103,14 +104,14 @@ plugins:
   - insertdatetime media
   - table paste code help wordcount
 ----
-. Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include \{\{site.productname}} on pages using the `+application+` layout:
+. Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include {productname} on pages using the `+application+` layout:
 +
 [source,html]
 ----
 <%= tinymce_assets %>
 <script type="text/javascript" src="/assets/tinymce.js"></script>
 ----
-. Create a `+<textarea>+` with the initial content `+Hello, World!+` for \{\{site.productname}} by adding the following lines to `+app/views/welcome/index.html.erb+`:
+. Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
 [source,html]
 ----
@@ -124,6 +125,7 @@ plugins:
 rails server
 ----
 
-The page containing the \{\{site.productname}} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/).
+The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/).
 
-For information on creating advanced configurations for the third-party TinyMCE Ruby on Rails integration, visit the project on GitHub: https://github.com/spohlenz/tinymce-rails[Rails Integration for TinyMCE]. \{% endif %}
+For information on creating advanced configurations for the third-party TinyMCE Ruby on Rails integration, visit the project on GitHub: https://github.com/spohlenz/tinymce-rails[Rails Integration for TinyMCE].
+\{% endif %}

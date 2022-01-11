@@ -25,10 +25,10 @@ include::partial$configuration/relative_urls.adoc[leveloffset=+1]
 
 include::partial$configuration/remove_script_host.adoc[leveloffset=+1]
 
-\{% comment %}
+////
 include::partial$configuration/url_converter.adoc[]
-include::partial$configuration/url_converter_scope.adoc[] \{% endcomment %}
-
+include::partial$configuration/url_converter_scope.adoc[]
+////
 include::partial$configuration/urlconverter_callback.adoc[leveloffset=+1]
 
 == Hyperlink (link) related URL handling options

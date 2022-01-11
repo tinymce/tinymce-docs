@@ -10,11 +10,11 @@ Possible Values : A list of valid web image file extensions. For a list of possi
 
 === Example: Using `+image_file_types+`
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
+  plugins: '{plugincode}',
   smart_paste: true,  // note: default value for smart_paste is true
   image_file_types: 'jpg,svg,webp'
 });

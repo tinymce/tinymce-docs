@@ -6,9 +6,9 @@
 :description: TinyMCE provides a range of configuration options that allow you to integrate it into your application.
 :keywords: selector plugin toolbar configuration configure
 
-This introduction to \{\{site.productname}} details the options used in traditional form-based layouts, useful information for creating streamlined user experiences, and examples of using \{\{site.productname}} as an inline editor.
+This introduction to {productname} details the options used in traditional form-based layouts, useful information for creating streamlined user experiences, and examples of using {productname} as an inline editor.
 
-The four most common configuration options for \{\{site.productname}} are:
+The four most common configuration options for {productname} are:
 
 [arabic]
 . <<selectorconfiguration, _(Required)_ The Selector configuration>>
@@ -18,7 +18,7 @@ The four most common configuration options for \{\{site.productname}} are:
 
 == A note about code snippet examples
 
-Code snippets are provided as example implementations throughout the \{\{ site.productname }} documentation.
+Code snippets are provided as example implementations throughout the {productname} documentation.
 
 Example code snippet:
 
@@ -38,11 +38,11 @@ Insert the snippet into an HTML document between the `+<script>+` tags and updat
 
 == Selector configuration
 
-Selector configuration is required for \{\{site.productname}} integration. Selector configuration uses https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS `+selector+` syntax] to determine which elements on the page are editable through \{\{site.productname}}.
+Selector configuration is required for {productname} integration. Selector configuration uses https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS `+selector+` syntax] to determine which elements on the page are editable through {productname}.
 
-\{\{site.productname}} visually replaces the selected element with an `+iframe+` (the editable content area) and the UI elements (such as toolbar, menu bar, and status bar).
+{productname} visually replaces the selected element with an `+iframe+` (the editable content area) and the UI elements (such as toolbar, menu bar, and status bar).
 
-The following example replaces all `+textarea+` elements on the page with \{\{site.productname}} instances:
+The following example replaces all `+textarea+` elements on the page with {productname} instances:
 
 [source,js]
 ----
@@ -51,7 +51,7 @@ tinymce.init({
 });
 ----
 
-\{\{site.productname}} can also match an `+id+` attribute.
+{productname} can also match an `+id+` attribute.
 
 The following example replaces a `+textarea+` element with the `+id+` `+"default"+` on the page:
 
@@ -62,9 +62,9 @@ tinymce.init({
 });
 ----
 
-Providing a \{\{site.productname}} editor with the default configuration, such as: liveDemo::default[ ]
+Providing a {productname} editor with the default configuration, such as: liveDemo::default[ ]
 
-The selector can target most block elements when the editor is used in link:{baseurl}/interface/editor-mode/use-tinymce-inline/[inline editing mode]. Inline mode edits the content in place, instead of replacing the element with an `+iframe+`.
+The selector can target most block elements when the editor is used in link:use-tinymce-inline.html[inline editing mode]. Inline mode edits the content in place, instead of replacing the element with an `+iframe+`.
 
 The following example uses the `+selector+` in inline editing mode on a `+div+` element with `+id+` `+'editable'+`:
 
@@ -76,11 +76,11 @@ tinymce.init({
 });
 ----
 
-For information on the differences between the classic and inline editing modes, see: link:{baseurl}/interface/editor-mode/use-tinymce-inline/[Setup inline editing mode].
+For information on the differences between the classic and inline editing modes, see: link:use-tinymce-inline.html[Setup inline editing mode].
 
 == Plugin configuration
 
-The functionality of \{\{site.productname}} is extended by using plugins, which are enabled using the `+plugins+` option.
+The functionality of {productname} is extended by using plugins, which are enabled using the `+plugins+` option.
 
 The following example enables the lists (`+lists+`), Advanced Lists (`+advlist+`), Link (`+link+`), and Image (`+image+`) plugins.
 
@@ -92,15 +92,15 @@ tinymce.init({
 });
 ----
 
-For a full list of plugins and their options, see: [Add plugins to TinyMCE](\{\{ site.baseurl }}/plugins-ref/).
+For a full list of plugins and their options, see: link:/plugins-ref/[Add plugins to TinyMCE].
 
 == Toolbar configuration
 
-\{\{site.productname}} provides a default set of toolbar controls, which can be overridden using the `+toolbar+` option.
+{productname} provides a default set of toolbar controls, which can be overridden using the `+toolbar+` option.
 
 === Default toolbar controls
 
-The \{\{site.productname}} default toolbar contains the following buttons:
+The {productname} default toolbar contains the following buttons:
 
 [source,js]
 ----
@@ -112,12 +112,12 @@ tinymce.init({
 
 The `+toolbar+` option defines the presence, order, and grouping of toolbar buttons.
 
-Use a space-separated list to specify the toolbar buttons for \{\{site.productname}}. Create toolbar groups by using the "`+|+`" pipe character between button names.
+Use a space-separated list to specify the toolbar buttons for {productname}. Create toolbar groups by using the "`+|+`" pipe character between button names.
 
 ==== Additional information
 
-* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar[User interface options - toolbar].
-* For a list of all available toolbar items, see: link:{baseurl}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
+* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: link:toolbar-configuration-options.html#toolbar[User interface options - toolbar].
+* For a list of all available toolbar items, see: link:available-toolbar-buttons.html[Toolbar Buttons Available for {productname}].
 
 == Menu and Menu bar configuration
 
@@ -181,13 +181,13 @@ ____
 
 ==== Additional information
 
-* For information on the `+menu+` setting, see: link:{baseurl}/interface/menus/menus-configuration-options/#menu[User interface options - menu].
-* For information on the `+menubar+` setting, see: link:{baseurl}/interface/menus/menus-configuration-options/#menubar[User interface options - menubar].
-* For a list of all available menu items, see: link:{baseurl}/interface/menus/available-menu-items/[Menu Items Available for \{\{site.productname}}].
+* For information on the `+menu+` setting, see: link:menus-configuration-options.html#menu[User interface options - menu].
+* For information on the `+menubar+` setting, see: link:menus-configuration-options.html#menubar[User interface options - menubar].
+* For a list of all available menu items, see: link:available-menu-items.html[Menu Items Available for {productname}].
 
 == Basic configuration example
 
-The following example is a basic \{\{site.productname}} configuration.
+The following example is a basic {productname} configuration.
 
 [source,html]
 ----
@@ -285,10 +285,9 @@ liveDemo::basic-conf[ ]
 
 === Additional information
 
-* For a full list of configuration options, see:
-** link:{baseurl}/initial-configuration/[Initial configuration]
-** link:{baseurl}/interface/[Customizing the TinyMCE User Interface]
-** link:{baseurl}/content/[Customizing TinyMCE Content].
-* For a full list of Plugins and their options, see: [Add plugins to TinyMCE](\{\{ site.baseurl }}/plugins-ref/).
-* For information on the UI elements, see: [User interface components](\{\{ site.baseurl }}/how-to-guides/creating-custom-ui-components/).
-* For information on the CSS required to render some \{\{site.productname}} elements outside of the editor, see: link:{baseurl}/how-to-guides/learn-the-basics/editor-content-css/[Boilerplate content CSS].
+* For a full list of configuration options, review the following pages in the side navigation:
+** Initial configuration - For initial configuration and important settings.
+** Interface - For customizing the look and feel of the editor.
+** Content - For customizing the allowed content and the associated behaviors.
+* For information on Plugins and their options, see: link:work-with-plugins.html[Add plugins to TinyMCE].
+* For information on the CSS required to render some {productname} elements outside of the editor, see: link:editor-content-css.html[Boilerplate content CSS].

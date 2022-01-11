@@ -10,9 +10,9 @@
 :plugincode: tinymcespellchecker
 
 
-include::partial$misc/admon_premium_plugin[]
+include::partial$misc/admon_premium_plugin.adoc[]
 
-*Spell Checker Pro* adds spell checking as-you-type capabilities to \{\{site.productname}}. For information on the supported languages, refer to link:{baseurl}/plugins-ref/premium/tinymcespellchecker/#spellchecker_language[this] section.
+*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to link:tinymcespellchecker.html#spellchecker_language[this] section.
 
 == Interactive example
 
@@ -25,13 +25,13 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Cloud Installation
 
-To enable the \{\{site.productname}} Enterprise Spellchecking plugin with [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/):
+To enable the {productname} Enterprise Spellchecking plugin with link:/how-to-guides/cloud-deployment-guide/editor-and-features/[{cloudname}]:
 
 [arabic]
-. If configured, disable the `+spellchecker+` plugin provided with \{\{site.productname}}, by removing it from the `+plugins+` list.
+. If configured, disable the `+spellchecker+` plugin provided with {productname}, by removing it from the `+plugins+` list.
 . Add `+tinymcespellchecker+` to the `+plugins+` list.
 
-With \{\{site.cloudname}} the server-side spellchecking component is automatically configured, so the `+spellchecker_rpc_url+` parameter does not need to be set.
+With {cloudname} the server-side spellchecking component is automatically configured, so the `+spellchecker_rpc_url+` parameter does not need to be set.
 
 === Example: TinyMCE Cloud Installation
 
@@ -46,13 +46,13 @@ tinymce.init({
 
 == Self-hosted Installation
 
-To enable the \{\{site.productname}} Enterprise Spellchecking plugin:
+To enable the {productname} Enterprise Spellchecking plugin:
 
 [arabic]
-. If configured, disable the `+spellchecker+` plugin provided with \{\{site.productname}}, by removing it from the `+plugins+` list.
+. If configured, disable the `+spellchecker+` plugin provided with {productname}, by removing it from the `+plugins+` list.
 . Add `+tinymcespellchecker+` to the `+plugins+` list.
 
-For information on installing the server-side component for spell checking, please see the link:{baseurl}/how-to-guides/premium-server-side-guide/[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the link:premium-server-side-guide.html[server-side component installation guide].
 
 === Example: TinyMCE Self-hosted Installation
 
@@ -68,7 +68,7 @@ tinymce.init({
 
 == Usage
 
-The \{\{site.productname}} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for a misspelled word, right-click the misspelled word to open the contextual menu.
+The {productname} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for a misspelled word, right-click the misspelled word to open the contextual menu.
 
 == Configuration Options
 
@@ -229,6 +229,6 @@ tinymce.init({
 
 == APIs
 
-The \{\{pluginname}} plugin provides the following APIs.
+The {pluginname} plugin provides the following APIs.
 
-include::partial$plugin-apis/\{\{plugincode}}-apis.adoc[]
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

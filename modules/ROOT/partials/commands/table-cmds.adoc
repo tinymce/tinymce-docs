@@ -1,11 +1,11 @@
 ____
-*Note*: Table row and table column cut, copy, and paste commands work with \{\{site.productname}}'s internal table clipboard, not the user's system clipboard.
+*Note*: Table row and table column cut, copy, and paste commands work with {productname}'s internal table clipboard, not the user's system clipboard.
 ____
 
 [cols=",",options="header",]
 |===
 |Command |Description
-|mceTableSizingMode |When `+table_sizing_mode+` is set to `+'auto'+`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: link:{baseurl}/plugins-ref/opensource/table/#table_sizing_mode[Table plugin - `+table_sizing_mode+`].
+|mceTableSizingMode |When `+table_sizing_mode+` is set to `+'auto'+`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: link:table.html#table_sizing_mode[Table plugin - `+table_sizing_mode+`].
 |mceTableApplyCellStyle |Applies the specified styles to the selected cells. The following styles can be changed with this command: `+background-color+`, `+border-color+`, `+border-style+`, and `+border-width+`. Providing an empty value for a style will remove the style, such as `+{ 'background-color': '' }+`.
 |mceTableSplitCells |Splits the current merged table cell.
 |mceTableMergeCells |Merges the selected cells.
@@ -15,14 +15,14 @@ ____
 |mceTableInsertColAfter |Inserts a column after the current column.
 |mceTableDeleteCol |Deletes the current column.
 |mceTableDeleteRow |Deletes the current row.
-|mceTableCutRow |Cuts the current row to the \{\{site.productname}} clipboard.
-|mceTableCutCol |Cuts the current column to the \{\{site.productname}} clipboard.
-|mceTableCopyRow |Copies the current row to the \{\{site.productname}} clipboard.
-|mceTableCopyCol |Copies the current column to the \{\{site.productname}} clipboard.
-|mceTablePasteRowBefore |Paste the \{\{site.productname}} clipboard row before the current row.
-|mceTablePasteRowAfter |Paste the \{\{site.productname}} clipboard row after the current row.
-|mceTablePasteColBefore |Paste the \{\{site.productname}} clipboard column before the current row.
-|mceTablePasteColAfter |Paste the \{\{site.productname}} clipboard column after the current row.
+|mceTableCutRow |Cuts the current row to the {productname} clipboard.
+|mceTableCutCol |Cuts the current column to the {productname} clipboard.
+|mceTableCopyRow |Copies the current row to the {productname} clipboard.
+|mceTableCopyCol |Copies the current column to the {productname} clipboard.
+|mceTablePasteRowBefore |Paste the {productname} clipboard row before the current row.
+|mceTablePasteRowAfter |Paste the {productname} clipboard row after the current row.
+|mceTablePasteColBefore |Paste the {productname} clipboard column before the current row.
+|mceTablePasteColAfter |Paste the {productname} clipboard column after the current row.
 |mceTableDelete |Deletes the current table.
 |mceTableCellToggleClass |Adds a class to all selected cells that do not have it, or removes the class if all of them have it.
 |mceTableToggleClass |Adds a class to the selected table, or removes the class if it already exists.
@@ -31,7 +31,7 @@ ____
 |mceTableProps |Opens the Table Properties dialog.
 |mceTableRowProps |Opens the table row properties dialog.
 |mceTableCellProps |Opens the table cell properties dialog.
-|mceTableRowType |Changes the current row or rows to the specified type, either: `+'header'+`, `+'body'+`, or `+'footer'+`. The structure of header rows is dependent on the link:{baseurl}/plugins-ref/opensource/table/#table_header_type[`+table_header_type+` option].
+|mceTableRowType |Changes the current row or rows to the specified type, either: `+'header'+`, `+'body'+`, or `+'footer'+`. The structure of header rows is dependent on the link:table.html#table_header_type[`+table_header_type+` option].
 |mceTableColType |Changes all cells in the current column or columns to the specified type, either: `+'td'+` or `+'th'+`.
 |mceTableCellType |Changes the current cell or cells to the specified type, either: `+'td'+` or `+'th'+`.
 |===

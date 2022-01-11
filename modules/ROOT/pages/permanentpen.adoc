@@ -1,10 +1,17 @@
 = Permanent Pen Plugin
 
-:title_nav: Permanent Pen :description: Apply formats while typing. :keywords: permanent pen copy text format style :controls: toolbar button, contextmenu, menu item
+:title_nav: Permanent Pen
 
-\{% assign pluginname = "Permanent Pen" %} \{% assign plugincode = "permanentpen" %}
+:description: Apply formats while typing.
+:keywords: permanent pen copy text format style
+:controls: toolbar button, contextmenu, menu item
 
-\{% include /misc/admon_premium_plugin.md %}
+:pluginname: Permanent Pen
+
+:plugincode: permanentpen
+
+
+include::partial$misc/admon_premium_plugin[]
 
 The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
 
@@ -26,29 +33,32 @@ underline: false,
 strikethrough: false
 ----
 
-For more information on \{\{site.productname}} formats, refer to the link:{{site.baseurl}}/content/content-formatting/#formats[formats] section.
+For more information on \{\{site.productname}} formats, refer to the link:{baseurl}/content/content-formatting/#formats[formats] section.
 
 == Try our Permanent Pen demo
 
-\{% include live-demo.html id="permanent-pen" %}
+liveDemo::permanent-pen[ ]
 
-\{% assign pluginminimumplan = 'tiertwo' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Using a Permanent Pen
 
 === To enable Permanent Pen
 
 [arabic]
-. Click on the image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
+. Click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
 . Place the cursor in the desired text area and start typing.
 
-*Result*: The *Permanent Pen* toolbar button background color changes to _grey_ image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
+*Result*: The *Permanent Pen* toolbar button background color changes to _grey_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
 
 === To disable Permanent Pen
 
-To exit the Permanent Pen, click on the image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
+To exit the Permanent Pen, click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
 
-The *Permanent Pen* toolbar button background color changes to _white_ image:{{site.baseurl}}/images/icons/permanent-pen.svg[Permanent Pen].
+The *Permanent Pen* toolbar button background color changes to _white_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen].
 
 === Accessing the Permanent Pen properties
 
@@ -56,7 +66,7 @@ There are two ways to access the Permanent Pen properties:
 
 ==== From the menubar
 
-Add the Permanent pen properties option to the menu bar with the link:{{site.baseurl}}/interface/menus/menus-configuration-options/#menu[menu] configuration.
+Add the Permanent pen properties option to the menu bar with the link:{baseurl}/interface/menus/menus-configuration-options/#menu[menu] configuration.
 
 [source,js]
 ----
@@ -77,7 +87,7 @@ tinymce.init({
 . Right-click anywhere from inside the text area.
 . Choose the *Permanent Pen* option.
 
-image:{{site.baseurl}}/images/right-click.png[Right-click]
+image:{baseurl}/images/right-click.png[Right-click]
 
 *Result*: The *Permanent Pen Properties* dialog box appears.
 
@@ -90,7 +100,7 @@ ____
 === Using the UI
 
 [arabic]
-. Open the *Permanent Pen Properties* dialog box using any of the above methods. image:{{site.baseurl}}/images/ppprop.png[Permanent pen properties]
+. Open the *Permanent Pen Properties* dialog box using any of the above methods. image:{baseurl}/images/ppprop.png[Permanent pen properties]
 . Select the desired settings from the *Font* and *Size* drop-down menus.
 . To select the desired *Styles*, click on the radio button next to *Bold*, *Italic*, *Strikethrough*, or *Underline*.
 . Choose the desired *Text color*.
@@ -115,14 +125,14 @@ tinymce.init({
 
 == Options
 
-\{% include configuration/permanentpen_properties.md %}
+include::partial$configuration/permanentpen_properties.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Permanent Pen plugin provides the following \{\{site.productname}} commands.
 
-\{% include commands/permanentpen-cmds.md %}
+include::partial$commands/permanentpen-cmds.adoc[]

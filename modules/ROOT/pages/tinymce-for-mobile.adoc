@@ -1,20 +1,23 @@
 = TinyMCE for touch-enabled and mobile devices
 
-:title_nav: TinyMCE for mobile :description: The TinyMCE rich text editing experience for mobile devices. :keywords: mobile tablet
+:title_nav: TinyMCE for mobile
+
+:description: The TinyMCE rich text editing experience for mobile devices.
+:keywords: mobile tablet
 
 The mobile experience for \{\{site.productname}} is enabled by default and has the following differences when compared to the "desktop" experience:
 
 * Horizontal contextual menus on mobile.
 * Side-scrolling toolbars and contextual menus on mobile.
-* Contextual keyboard settings for dialogs using link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#inputmode[`+inputMode+`].
-* link:#mobiledefaultsforselectedsettings[Mobile defaults for selected settings].
+* Contextual keyboard settings for dialogs using link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#inputmode[`+inputMode+`].
+* <<mobiledefaultsforselectedsettings, Mobile defaults for selected settings>>.
 
 The mobile experience allows most of the \{\{site.productname}} plugins to work on mobile devices, except for:
 
-* link:{{site.baseurl}}/plugins-ref/premium/comments/[Comments].
-* link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image tools].
-* link:{{site.baseurl}}/plugins-ref/premium/moxiemanager/[MoxieManager].
-* link:{{site.baseurl}}/plugins-ref/premium/permanentpen/[Permanent Pen].
+* link:{baseurl}/plugins-ref/premium/comments/[Comments].
+* link:{baseurl}/plugins-ref/opensource/imagetools/[Image tools].
+* link:{baseurl}/plugins-ref/premium/moxiemanager/[MoxieManager].
+* link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen].
 
 \{\{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
@@ -22,7 +25,7 @@ ____
 *Note*: iPads do not use the `+mobile+` part of the \{\{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPad users will receive the other changes to touch functionality, such as context toolbars and context menus.
 ____
 
-\{% include misc/mobile_platform_compatibility.md %}
+include::partial$misc/mobile_platform_compatibility.adoc[]
 
 == Configuring mobile
 
@@ -33,7 +36,7 @@ Add the following `+meta+` tag to the `+head+` of pages using \{\{site.productna
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ----
 
-To set mobile specific options, add the option to link:#themobileoption[the `+mobile+` option] configuration, such as:
+To set mobile specific options, add the option to <<themobileoption, the `+mobile+` option>> configuration, such as:
 
 [source,js]
 ----
@@ -51,23 +54,23 @@ These mobile-specific default values have been set to disable unsupported settin
 
 The following settings have mobile-specific default values:
 
-* link:{{site.baseurl}}/interface/menus/menus-configuration-options/#menubar[`+menubar+`] - defaults to `+false+` on mobile phones.
-* link:{{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_mode[`+toolbar_mode+`] - defaults to `+scrolling+` on mobile devices. The toolbar will side-scroll by default.
-* link:{{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_sticky[`+toolbar_sticky+`] - Sticky Toolbar is not supported on mobile devices and defaults to `+false+`.
-* link:{{site.baseurl}}/plugins-ref/opensource/table/#table_grid[`+table_grid+`] - Table grid is not supported on mobile devices and defaults to `+false+`. When creating tables on mobile, a dialog is shown instead of the table grid.
-* link:{{site.baseurl}}/initial-configuration/editor-size-options/#resize[`+resize+`] - Resizing is not supported on mobile devices and defaults to `+false+`.
-* link:{{site.baseurl}}/content/content-behavior-options/#object_resizing[`+object_resizing+`] - Object resizing is not supported on mobile devices and defaults to `+false+`.
+* link:{baseurl}/interface/menus/menus-configuration-options/#menubar[`+menubar+`] - defaults to `+false+` on mobile phones.
+* link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar_mode[`+toolbar_mode+`] - defaults to `+scrolling+` on mobile devices. The toolbar will side-scroll by default.
+* link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar_sticky[`+toolbar_sticky+`] - Sticky Toolbar is not supported on mobile devices and defaults to `+false+`.
+* link:{baseurl}/plugins-ref/opensource/table/#table_grid[`+table_grid+`] - Table grid is not supported on mobile devices and defaults to `+false+`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* link:{baseurl}/initial-configuration/editor-size-options/#resize[`+resize+`] - Resizing is not supported on mobile devices and defaults to `+false+`.
+* link:{baseurl}/content/content-behavior-options/#object_resizing[`+object_resizing+`] - Object resizing is not supported on mobile devices and defaults to `+false+`.
 
 === Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
 
-* link:{{site.baseurl}}/interface/editor-mode/use-tinymce-inline/[Inline editing mode].
-* link:{{site.baseurl}}/interface/editor-mode/use-tinymce-distraction-free/[Distraction-free editing mode].
-* link:{{site.baseurl}}/interface/editor-mode/inline-editor-options/#inline[`+inline+`].
-* link:{{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_sticky[`+toolbar_sticky+`].
-* link:{{site.baseurl}}/plugins-ref/opensource/table/#table_grid[`+table_grid+`].
-* link:{{site.baseurl}}/initial-configuration/editor-size-options/#resize[`+resize+`].
-* link:{{site.baseurl}}/content/content-behavior-options/#object_resizing[`+object_resizing+`].
+* link:{baseurl}/interface/editor-mode/use-tinymce-inline/[Inline editing mode].
+* link:{baseurl}/interface/editor-mode/use-tinymce-distraction-free/[Distraction-free editing mode].
+* link:{baseurl}/interface/editor-mode/inline-editor-options/#inline[`+inline+`].
+* link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar_sticky[`+toolbar_sticky+`].
+* link:{baseurl}/plugins-ref/opensource/table/#table_grid[`+table_grid+`].
+* link:{baseurl}/initial-configuration/editor-size-options/#resize[`+resize+`].
+* link:{baseurl}/content/content-behavior-options/#object_resizing[`+object_resizing+`].
 
-\{% include configuration/mobile.md %}
+include::partial$configuration/mobile.adoc[]

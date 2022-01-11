@@ -1,6 +1,9 @@
 = Context menus
 
-:title_nav: Context menus :description: Creating custom context menus for TinyMCE 6 :keywords: contextmenu context menu contextmenuapi
+:title_nav: Context menus
+
+:description: Creating custom context menus for TinyMCE 6
+:keywords: contextmenu context menu contextmenuapi
 
 The context menu is a configurable component that appears when the user right clicks in the editable area. By default it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown.
 
@@ -8,15 +11,15 @@ The context menu supports both individual menu items and dynamic context menu se
 
 == Interactive example
 
-\{% include live-demo.html id="context-menu" %}
+liveDemo::context-menu[ ]
 
 == Options
 
-\{% include configuration/contextmenu.md %}
+include::partial$configuration/contextmenu.adoc[]
 
-\{% include configuration/contextmenu_never_use_native.md %}
+include::partial$configuration/contextmenu_never_use_native.adoc[]
 
-\{% include misc/available-context-menu-sections.md %}
+include::partial$misc/available-context-menu-sections.adoc[]
 
 == Registering context menu sections
 
@@ -75,4 +78,4 @@ When creating a dynamic menu, the structure `+type+` properties are used in orde
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 
-\{% include live-demo.html id="contextmenu-section" height="600" tab="js" %}
+liveDemo::contextmenu-section[ height="600" tab="js" ]

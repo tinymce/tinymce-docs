@@ -1,25 +1,28 @@
 = Editor size and resize options
 
-:title_nav: Size :description: Options for setting the size of the editor and controling editor resizing :keywords:
+:title_nav: Size
+
+:description: Options for setting the size of the editor and controling editor resizing
+:keywords:
 
 == Initial dimensions
 
-#\{% include configuration/height.md %}
+include::partial$configuration/height.adoc[leveloffset=+1]
 
-#\{% include configuration/width.md %}
+include::partial$configuration/width.adoc[leveloffset=+1]
 
 == Controlling user editor resizing
 
-#\{% include configuration/resize.md %}
+include::partial$configuration/resize.adoc[leveloffset=+1]
 
-#\{% include configuration/min_height.md %}
+include::partial$configuration/min_height.adoc[leveloffset=+1]
 
-#\{% include configuration/max_height.md %}
+include::partial$configuration/max_height.adoc[leveloffset=+1]
 
-#\{% include configuration/min_width.md %}
+include::partial$configuration/min_width.adoc[leveloffset=+1]
 
-#\{% include configuration/max_width.md %}
+include::partial$configuration/max_width.adoc[leveloffset=+1]
 
 == Auto-resizing the editor
 
-\{\{site.productname}} can be configured to automatically resize based on the editor content. For information on configuring the automatic resizing, see: link:{{site.baseurl}}/plugins-ref/opensource/autoresize/[The Autoresize plugin].
+\{\{site.productname}} can be configured to automatically resize based on the editor content. For information on configuring the automatic resizing, see: link:{baseurl}/plugins-ref/opensource/autoresize/[The Autoresize plugin].

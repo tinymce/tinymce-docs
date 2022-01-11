@@ -1,6 +1,9 @@
 = Specify editor & plugin versions
 
-:description_short: Specifying editor and plugin versions for Tiny Cloud deployments. :description: Specifying editor and plugin versions for Tiny Cloud deployments. :keywords: tinymce cloud script textarea apiKey hybrid
+:description_short: Specifying editor and plugin versions for Tiny Cloud deployments.
+
+:description: Specifying editor and plugin versions for Tiny Cloud deployments.
+:keywords: tinymce cloud script textarea apiKey hybrid
 
 == Specifying the TinyMCE editor version deployed from Cloud
 
@@ -10,7 +13,7 @@ The following example is the default for loading \{\{site.productname}} \{\{site
 
 [source,html]
 ----
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
 This URL specifies the latest and quality assured release of \{\{site.productname}}.
@@ -18,53 +21,53 @@ This URL specifies the latest and quality assured release of \{\{site.productnam
 === Selecting specific version numbers
 
 ____
-All \{\{site.cloudname}} channels are based on the \{\{site.enterpriseversion}} version. For information on the latest version of the \{\{site.cloudname}} `+{{site.productmajorversion}}+` release channel, see: link:{{site.baseurl}}/release-information/release-notes/[\{\{site.productname}} Release Notes]. For a list of changes that *may* be present in the \{\{site.cloudname}} testing channel, see: link:{{site.baseurl}}/release-information/changelog/[\{\{site.productname}} Changelog].
+All \{\{site.cloudname}} channels are based on the \{\{site.enterpriseversion}} version. For information on the latest version of the \{\{site.cloudname}} `+{productmajorversion}+` release channel, see: link:{baseurl}/release-information/release-notes/[\{\{site.productname}} Release Notes]. For a list of changes that *may* be present in the \{\{site.cloudname}} testing channel, see: link:{baseurl}/release-information/changelog/[\{\{site.productname}} Changelog].
 ____
 
 [[siteproductmajorversion-siteproductmajorversion-testing-and-siteproductmajorversion-dev-release-channels]]
 === \{\{site.productmajorversion}}, \{\{site.productmajorversion}}-testing, and \{\{site.productmajorversion}}-dev release channels
 
-Choose from the `+{{site.productmajorversion}}+`, `+{{site.productmajorversion}}-testing+`, or `+{{site.productmajorversion}}-dev+` release channels to load the latest version of \{\{site.productname}} from \{\{site.cloudname}}.
+Choose from the `+{productmajorversion}+`, `+{productmajorversion}-testing+`, or `+{productmajorversion}-dev+` release channels to load the latest version of \{\{site.productname}} from \{\{site.cloudname}}.
 
 These channels are updated automatically and provide the latest \{\{site.productname}} version that matches the criteria below.
 
 [[siteproductmajorversion-release-channel]]
 ==== \{\{site.productmajorversion}} release channel
 
-This channel deploys the latest release of \{\{site.productname}} that has passed our quality assurance process. The current version of \{\{site.productname}} available through the `+/{{site.productmajorversion}}+` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}/version.txt[\{\{site.cloudname}} \{\{site.productname}} \{\{site.productmajorversion}} version page]. The \{\{site.productname}} \{\{site.productmajorversion}} channel can be loaded from `+{{ site.cdnurl }}+`.
+This channel deploys the latest release of \{\{site.productname}} that has passed our quality assurance process. The current version of \{\{site.productname}} available through the `+/{productmajorversion}+` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[\{\{site.cloudname}} \{\{site.productname}} \{\{site.productmajorversion}} version page]. The \{\{site.productname}} \{\{site.productmajorversion}} channel can be loaded from `+{cdnurl}+`.
 
 [[example-using-the-siteproductmajorversion-release-channel]]
-===== Example: Using the `+{{site.productmajorversion}}+` release channel
+===== Example: Using the `+{productmajorversion}+` release channel
 
 [source,html]
 ----
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
 [[siteproductmajorversion-testing-release-channel]]
 ==== \{\{site.productmajorversion}}-testing release channel
 
-This channel deploys the current *release candidate* for the `+{{site.productmajorversion}}+` channel. The \{\{site.productname}} release candidate is undergoing quality assurance. The current version of \{\{site.productname}} available through the `+{{site.productmajorversion}}-testing+` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}-testing/version.txt[\{\{site.cloudname}} \{\{site.productname}} \{\{site.productmajorversion}}-testing version page].
+This channel deploys the current *release candidate* for the `+{productmajorversion}+` channel. The \{\{site.productname}} release candidate is undergoing quality assurance. The current version of \{\{site.productname}} available through the `+{productmajorversion}-testing+` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/version.txt[\{\{site.cloudname}} \{\{site.productname}} \{\{site.productmajorversion}}-testing version page].
 
 [[example-using-the-siteproductmajorversion-testing-release-channel]]
-===== Example: Using the `+{{site.productmajorversion}}-testing+` release channel
+===== Example: Using the `+{productmajorversion}-testing+` release channel
 
 [source,html]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}-testing/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
 [[siteproductmajorversion-dev-release-channel]]
 ==== \{\{site.productmajorversion}}-dev release channel
 
-This channel deploys nightly builds of \{\{site.productname}}. This channel includes the unreleased changes documented in the https://github.com/tinymce/tinymce/blob/develop/modules/tinymce/CHANGELOG.md[\{\{site.productname}} changelog]. The current version of \{\{site.productname}} available through the `+{{site.productmajorversion}}-dev+` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}-dev/version.txt[\{\{site.cloudname}} \{\{site.productname}} \{\{site.productmajorversion}}-dev version page].
+This channel deploys nightly builds of \{\{site.productname}}. This channel includes the unreleased changes documented in the https://github.com/tinymce/tinymce/blob/develop/modules/tinymce/CHANGELOG.md[\{\{site.productname}} changelog]. The current version of \{\{site.productname}} available through the `+{productmajorversion}-dev+` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[\{\{site.cloudname}} \{\{site.productname}} \{\{site.productmajorversion}}-dev version page].
 
 [[example-using-the-siteproductmajorversion-dev-release-channel]]
-===== Example: Using the `+{{site.productmajorversion}}-dev+` release channel
+===== Example: Using the `+{productmajorversion}-dev+` release channel
 
 [source,html]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}-dev/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
 == Specifying the version of premium plugins deployed from Tiny Cloud
@@ -76,22 +79,22 @@ The `+identifier+` of the plugin is used as a query parameter. This table summar
 [cols=",,",options="header",]
 |===
 |Plugin |Identifier |Supported Versions
-|link:{{site.baseurl}}/plugins-ref/premium/a11ychecker/[Accessibility Checker] |`+a11ychecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/advcode/[Advanced Code Editor] |`+advcode+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/advtable/[Advanced Tables] |`+advtable+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/casechange/[Case Change] |`+casechange+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions[Versions]
-|link:{{site.baseurl}}/docs/plugins/premium/checklist/[Checklist] |`+checklist+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/comments/[Comments] |`+comments+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/mediaembed/[Enhanced Media Embed] |`+mediaembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/export/[Export] |`+export+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/formatpainter/[Format Painter] |`+formatpainter+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/linkchecker/[Link Checker] |`+linkchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/mentions/[Mentions] |`+mentions+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/pageembed/[Page Embed] |`+pageembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/permanentpen/[Permanent Pen] |`+permanentpen+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/powerpaste/[PowerPaste] |`+powerpaste+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro] |`+tinymcespellchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions[Versions]
-|link:{{site.baseurl}}/plugins-ref/premium/tinydrive/[Tiny Drive] |`+tinydrive+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/a11ychecker/[Accessibility Checker] |`+a11ychecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/advcode/[Advanced Code Editor] |`+advcode+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/advtable/[Advanced Tables] |`+advtable+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/casechange/[Case Change] |`+casechange+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions[Versions]
+|link:{baseurl}/docs/plugins/premium/checklist/[Checklist] |`+checklist+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/comments/[Comments] |`+comments+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/mediaembed/[Enhanced Media Embed] |`+mediaembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/export/[Export] |`+export+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/formatpainter/[Format Painter] |`+formatpainter+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker] |`+linkchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/mentions/[Mentions] |`+mentions+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/pageembed/[Page Embed] |`+pageembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen] |`+permanentpen+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/powerpaste/[PowerPaste] |`+powerpaste+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro] |`+tinymcespellchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions[Versions]
+|link:{baseurl}/plugins-ref/premium/tinydrive/[Tiny Drive] |`+tinydrive+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions[Versions]
 |===
 
 === Specifying versions for the editor and premium plugin deployment
@@ -102,13 +105,13 @@ Combine multiple plugin specifications using `+&+` in your query string. For exa
 
 * mentions v2.2
 * powerpaste v5.5
-* all other premium plugins from those bundled with `+{{site.productmajorversion}}+`
+* all other premium plugins from those bundled with `+{productmajorversion}+`
 
 Append `+?mentions=2.2&powerpaste=5.5+`, such as:
 
 [source,html]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}/tinymce.min.js?mentions=2.2&powerpaste=5.5" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js?mentions=2.2&powerpaste=5.5" referrerpolicy="origin"></script>
 ----
 
 === Specifying a self-hosted deployment of features/plugins
@@ -125,11 +128,11 @@ The following example:
 * Assumes \{\{site.productname}} has already been loaded by another script on the page.
 * Attempts to load `+mentions+` `+v2.2+` and `+powerpaste+` `+v5.5+` from \{\{site.cloudname}}.
 * Attempts to load `+advcode+` from the self-hosted installation.
-* Attempts to load all other premium plugins from those bundled with version `+{{site.productmajorversion}}+` of \{\{site.productname}}.
+* Attempts to load all other premium plugins from those bundled with version `+{productmajorversion}+` of \{\{site.productname}}.
 
 [source,html]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}/plugins.min.js?mentions=2.2&powerpaste=5.5&advcode=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=2.2&powerpaste=5.5&advcode=sdk" referrerpolicy="origin"></script>
 ----
 
 The disadvantage of `+plugins.min.js+`: to load only one plugin from the \{\{site.cloudname}} and the rest from a self-hosted deployment, *ALL* other plugins need to be added as query parameter with the version as `+sdk+`. When \{\{site.cloudname}} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from a self-hosted deployment, use `+cloud-plugins.min.js+`.
@@ -145,12 +148,12 @@ The following example:
 
 * Assumes \{\{site.productname}} has already been loaded by another script on the page.
 * Attempts to load `+mentions+` `+v2.2+` and `+powerpaste+` `+v5.5+` from \{\{site.cloudname}}.
-* Attempts to load `+advcode+` from the version bundled with version `+{{site.productmajorversion}}+` of \{\{site.productname}} because it doesn't specify a version.
+* Attempts to load `+advcode+` from the version bundled with version `+{productmajorversion}+` of \{\{site.productname}} because it doesn't specify a version.
 * Attempts to load all other premium plugins from the self-hosted installation.
 
 [source,html]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{{site.productmajorversion}}/cloud-plugins.min.js?mentions=2.2&powerpaste=5.5&advcode" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions=2.2&powerpaste=5.5&advcode" referrerpolicy="origin"></script>
 ----
 
 The disadvantage of `+cloud-plugins.min.js+`: every plugin to be loaded from \{\{site.cloudname}} must be added to the query parameter. When \{\{site.cloudname}} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from \{\{site.cloudname}}, use `+plugins.min.js+`.

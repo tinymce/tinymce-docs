@@ -1,4 +1,4 @@
-\{% if page.title == "Paste plugin" %} \{% assign plugin = "paste" %} \{% assign pluginname = "Paste" %} \{% else %} \{% assign plugin = "powerpaste" %} \{% assign pluginname = "PowerPaste" %} \{% endif %}
+\{% if page.title == "Paste plugin" %} :plugin: paste :pluginname: Paste \{% else %} :plugin: powerpaste :pluginname: PowerPaste \{% endif %}
 
 == `+paste_tab_spaces+`
 

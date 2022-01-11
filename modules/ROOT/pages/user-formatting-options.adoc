@@ -1,23 +1,26 @@
 = Changing user formatting controls
 
-:title_nav: User formatting :description: Options for changing menu and toolbar dropdown formatting options available to users.
+:title_nav: User formatting
 
-\{% include configuration/block_formats.md %}
+:description: Options for changing menu and toolbar dropdown formatting options available to users.
 
-\{% include configuration/font_formats.md %}
 
-\{% include configuration/fontsize_formats.md %}
+include::partial$configuration/block_formats.adoc[]
 
-\{% include configuration/lineheight_formats.md %}
+include::partial$configuration/font_formats.adoc[]
 
-\{% include configuration/indentation.md %}
+include::partial$configuration/fontsize_formats.adoc[]
 
-\{% include configuration/preview_styles.md %}
+include::partial$configuration/lineheight_formats.adoc[]
 
-\{% include configuration/style_formats.md %}
+include::partial$configuration/indentation.adoc[]
 
-\{% include configuration/style_formats_autohide.md %}
+include::partial$configuration/preview_styles.adoc[]
 
-\{% include configuration/style_formats_merge.md %}
+include::partial$configuration/style_formats.adoc[]
 
-\{% include configuration/text_color.md %}
+include::partial$configuration/style_formats_autohide.adoc[]
+
+include::partial$configuration/style_formats_merge.adoc[]
+
+include::partial$configuration/text_color.adoc[]

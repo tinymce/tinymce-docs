@@ -1,6 +1,9 @@
 = Version compatibility reference
 
-:description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins. :description: Premium plugins compatibility with TinyMCE editor versions. :keywords: tinymce cloud script textarea apiKey
+:description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins.
+
+:description: Premium plugins compatibility with TinyMCE editor versions.
+:keywords: tinymce cloud script textarea apiKey
 
 Specific versions of \{\{site.productname}} are compatible with premium plugins.
 
@@ -27,7 +30,7 @@ to:
 Ensure the application uses the latest script tag and substitute 'no-api-key' with your api key.
 ____
 
-\{% include misc/plugin_support_table.md %}
+include::partial$misc/plugin_support_table.adoc[]
 
 ____
 *Important*: Ensure the plugins are supported in your editor version when deploying premium plugins only using [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/features-only/).

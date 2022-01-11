@@ -1,28 +1,28 @@
 *Covered in this section:*
 
-* link:#installingthetinymcereactintegrationusingnpmoryarn[Installing the TinyMCE React integration using NPM or Yarn]
-* link:#usingtinymcereactintegrationinabootstrapdialog[Using TinyMCE React integration in a Bootstrap dialog]
-* link:#configuringtheeditor[Configuring the editor]
-* link:#availableprops[Available props]
-** link:#apikey[`+apiKey+`]
-** link:#cloudchannel[`+cloudChannel+`]
-** link:#disabled[`+disabled+`]
-** link:#id[`+id+`]
-** link:#init[`+init+`]
-** link:#initialvalue[`+initialValue+`]
-** link:#inline[`+inline+`]
-** link:#oneditorchange[`+onEditorChange+`]
-** link:#outputformat[`+outputFormat+` (_deprecated_)]
-** link:#plugins[`+plugins+`]
-** link:#scriptloading[`+scriptLoading+`]
-** link:#tagname[`+tagName+`]
-** link:#textareaname[`+textareaName+`]
-** link:#toolbar[`+toolbar+`]
-** link:#tinymcescriptsrc[`+tinymceScriptSrc+`]
-** link:#value[`+value+`]
-* link:#usingthetinymcereactcomponentasauncontrolledcomponent[Using the TinyMCE React component as a uncontrolled component]
-* link:#usingthetinymcereactcomponentasacontrolledcomponent[Using the TinyMCE React component as a controlled component]
-* link:#eventbinding[Event binding]
+* <<installingthetinymcereactintegrationusingnpmoryarn, Installing the TinyMCE React integration using NPM or Yarn>>
+* <<usingtinymcereactintegrationinabootstrapdialog, Using TinyMCE React integration in a Bootstrap dialog>>
+* <<configuringtheeditor, Configuring the editor>>
+* <<availableprops, Available props>>
+** <<apikey, `+apiKey+`>>
+** <<cloudchannel, `+cloudChannel+`>>
+** <<disabled, `+disabled+`>>
+** <<id, `+id+`>>
+** <<init, `+init+`>>
+** <<initialvalue, `+initialValue+`>>
+** <<inline, `+inline+`>>
+** <<oneditorchange, `+onEditorChange+`>>
+** <<outputformat, `+outputFormat+` (_deprecated_)>>
+** <<plugins, `+plugins+`>>
+** <<scriptloading, `+scriptLoading+`>>
+** <<tagname, `+tagName+`>>
+** <<textareaname, `+textareaName+`>>
+** <<toolbar, `+toolbar+`>>
+** <<tinymcescriptsrc, `+tinymceScriptSrc+`>>
+** <<value, `+value+`>>
+* <<usingthetinymcereactcomponentasauncontrolledcomponent, Using the TinyMCE React component as a uncontrolled component>>
+* <<usingthetinymcereactcomponentasacontrolledcomponent, Using the TinyMCE React component as a controlled component>>
+* <<eventbinding, Event binding>>
 
 == Installing the TinyMCE React integration using NPM or Yarn
 
@@ -84,10 +84,10 @@ useEffect(function() {
 
 The `+tinymce-react+` component provides props for:
 
-* link:#configuringeditorsource[Configuring editor source]
-* link:#configuringpageelements[Configuring page elements]
-* link:#configuringeditorsettings[Configuring editor settings]
-* link:#managingtheeditor[Managing the editor]
+* <<configuringeditorsource, Configuring editor source>>
+* <<configuringpageelements, Configuring page elements>>
+* <<configuringeditorsettings, Configuring editor settings>>
+* <<managingtheeditor, Managing the editor>>
 
 === Configuring editor source
 
@@ -100,55 +100,55 @@ The `+tinymce-react+` integration will try to source \{\{site.productname}} in t
 
 These props are used to configure how the editor is sourced:
 
-link:#apikey[apiKey] : The \{\{site.cloudname}} API key. When loading from \{\{site.cloudname}}, use this prop to remove the "This domain is not registered..." warning message.
+<<apikey, apiKey>> : The \{\{site.cloudname}} API key. When loading from \{\{site.cloudname}}, use this prop to remove the "This domain is not registered..." warning message.
 
-link:#cloudchannel[`+cloudChannel+`] : The channel of \{\{site.productname}} used when loading from \{\{site.cloudname}}.
+<<cloudchannel, `+cloudChannel+`>> : The channel of \{\{site.productname}} used when loading from \{\{site.cloudname}}.
 
-link:#scriptloading[`+scriptLoading+`] : The script loading behavior prop. Allows setting of the `+async+` and `+defer+` attributes, as well as adding an additional delay in milliseconds.
+<<scriptloading, `+scriptLoading+`>> : The script loading behavior prop. Allows setting of the `+async+` and `+defer+` attributes, as well as adding an additional delay in milliseconds.
 
-link:#tinymcescriptsrc[`+tinymceScriptSrc+`] : The URL to use for sourcing \{\{site.productname}}, when loading a self-hosted version of \{\{site.productname}}.
+<<tinymcescriptsrc, `+tinymceScriptSrc+`>> : The URL to use for sourcing \{\{site.productname}}, when loading a self-hosted version of \{\{site.productname}}.
 
 === Configuring page elements
 
 These props provide some control over the page elements that the integration creates:
 
-link:#id[`+id+`] : The id attribute of the element that the editor is initialized on.
+<<id, `+id+`>> : The id attribute of the element that the editor is initialized on.
 
-link:#inline[`+inline+`] : Load the editor as part of the page; sharing the page styles and selection.
+<<inline, `+inline+`>> : Load the editor as part of the page; sharing the page styles and selection.
 
-link:#tagname[`+tagName+`] : The tag used for creating an inline editor. Ignored for a classic (iframe) editor.
+<<tagname, `+tagName+`>> : The tag used for creating an inline editor. Ignored for a classic (iframe) editor.
 
-link:#textareaname[`+textareaName+`] : The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.
+<<textareaname, `+textareaName+`>> : The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.
 
 === Configuring editor settings
 
 These props are read when the editor is initialized. Changes after the editor has launched are ignored.
 
-link:#init[`+init+`] : Additional options passed to \{\{site.productname}} when it is initialized.
+<<init, `+init+`>> : Additional options passed to \{\{site.productname}} when it is initialized.
 
-link:#plugins[`+plugins+`] : Specify the editor plugins. This will be _combined_ with `+plugins+` in the `+init+` prop.
+<<plugins, `+plugins+`>> : Specify the editor plugins. This will be _combined_ with `+plugins+` in the `+init+` prop.
 
-link:#toolbar[`+toolbar+`] : Specify the editor toolbar. This will *override* the `+toolbar+` in the `+init+` prop.
+<<toolbar, `+toolbar+`>> : Specify the editor toolbar. This will *override* the `+toolbar+` in the `+init+` prop.
 
 === Managing the editor
 
-These props can be updated after the editor is initialized. Note that there are link:#eventbinding[other events] not mentioned here.
+These props can be updated after the editor is initialized. Note that there are <<eventbinding, other events>> not mentioned here.
 
-link:#disabled[`+disabled+`] : Should the editor be in read-only mode.
+<<disabled, `+disabled+`>> : Should the editor be in read-only mode.
 
-link:#initialvalue[`+initialValue+`] : The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).
+<<initialvalue, `+initialValue+`>> : The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).
 
-link:#eventbinding[`+onBeforeAddUndo+`] : An event handler for notifying when the editor is about to create an undo level, and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.
+<<eventbinding, `+onBeforeAddUndo+`>> : An event handler for notifying when the editor is about to create an undo level, and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.
 
-link:#oneditorchange[`+onEditorChange+`] : An event handler for detecting editor changes. Useful when implementing \{\{site.productname}} as a controlled component.
+<<oneditorchange, `+onEditorChange+`>> : An event handler for detecting editor changes. Useful when implementing \{\{site.productname}} as a controlled component.
 
-link:#eventbinding[`+onInit+`] : An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.
+<<eventbinding, `+onInit+`>> : An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.
 
-link:#value[`+value+`] : Sets and enforces the value of the editor. Only used for a controlled component.
+<<value, `+value+`>> : Sets and enforces the value of the editor. Only used for a controlled component.
 
 == Available props
 
-None of the configuration props are *required* for the \{\{site.productname}} React component; however, if the `+apiKey+` prop is not configured when loading from \{\{site.cloudname}}, a warning message will be shown in the editor. For guidance about which props to use, see: link:#configuringtheeditor[Configuring the editor].
+None of the configuration props are *required* for the \{\{site.productname}} React component; however, if the `+apiKey+` prop is not configured when loading from \{\{site.cloudname}}, a warning message will be shown in the editor. For guidance about which props to use, see: <<configuringtheeditor, Configuring the editor>>.
 
 === `+apiKey+`
 
@@ -156,7 +156,7 @@ None of the configuration props are *required* for the \{\{site.productname}} Re
 
 Required for deployments using the \{\{site.cloudname}} to provide the \{\{site.productname}} editor without the warning message "This domain is not registered...".
 
-\{% include misc/get-an-api-key.md %}
+include::partial$misc/get-an-api-key.adoc[]
 
 Default value : `+no-api-key+`
 
@@ -175,16 +175,16 @@ Type : `+String+`
 
 Changes the \{\{site.productname}} build used for the editor to either a specific version or a channel indicating a stability level.
 
-Default value : `+'{{site.productmajorversion}}-stable'+`
+Default value : `+'{productmajorversion}-stable'+`
 
-Possible values : `+'{{site.productmajorversion}}-stable'+`, `+'{{site.productmajorversion}}-testing'+`, `+'{{site.productmajorversion}}-dev'+`, `+'{{site.productminorversion}}'+`
+Possible values : `+'{productmajorversion}-stable'+`, `+'{productmajorversion}-testing'+`, `+'{productmajorversion}-dev'+`, `+'{productminorversion}'+`
 
 Changes the \{\{site.productname}} build used for the editor to one of the following \{\{site.cloudname}} channels:
 
-* `+{{site.productmajorversion}}-stable+` (*Default*): The current enterprise release of \{\{site.productname}}.
-* `+{{site.productmajorversion}}-testing+`: The current release candidate for the next enterprise release of \{\{site.productname}}.
-* `+{{site.productmajorversion}}-dev+`: The nightly-build version of \{\{site.productname}}.
-* A version number such as `+{{site.productminorversion}}+`: The specific enterprise release version of \{\{site.productname}}.
+* `+{productmajorversion}-stable+` (*Default*): The current enterprise release of \{\{site.productname}}.
+* `+{productmajorversion}-testing+`: The current release candidate for the next enterprise release of \{\{site.productname}}.
+* `+{productmajorversion}-dev+`: The nightly-build version of \{\{site.productname}}.
+* A version number such as `+{productminorversion}+`: The specific enterprise release version of \{\{site.productname}}.
 
 Such as:
 
@@ -192,12 +192,12 @@ Such as:
 ----
 <Editor
   apiKey='your-api-key'
-  cloudChannel='{{site.productmajorversion}}-dev'
+  cloudChannel='{productmajorversion}-dev'
   init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %}
 />
 ----
 
-For information \{\{site.productname}} development channels, see: link:{{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/#{{site.productmajorversion}}{{site.productmajorversion}}-testingand{{site.productmajorversion}}-devreleasechannels[Specifying the \{\{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases].
+For information \{\{site.productname}} development channels, see: link:{baseurl}/how-to-guides/cloud-deployment-guide/editor-plugin-version/#{productmajorversion}{productmajorversion}-testingand{productmajorversion}-devreleasechannels[Specifying the \{\{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases].
 
 === `+disabled+`
 
@@ -237,7 +237,7 @@ Type : `+String+`
 
 Additional settings passed to the `+tinymce.init({...})+` method used to initialize the editor.
 
-For information on the \{\{site.productname}} `+tinymce.init({...})+` method, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+For information on the \{\{site.productname}} `+tinymce.init({...})+` method, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
 
 When using `+tinymce-react+`:
 
@@ -306,7 +306,7 @@ return (
 
 Used to set the editor to inline mode. Using `+<Editor inline={true} />+` is the same as setting `+{inline: true}+` in the \{\{site.productname}} `+tinymce.init({...})+` method.
 
-For information on inline mode, see: link:{{site.baseurl}}/interface/editor-mode/inline-editor-options/#inline[User interface options - `+inline+`] and link:{{site.baseurl}}/interface/editor-mode/use-tinymce-inline/[Setup inline editing mode].
+For information on inline mode, see: link:{baseurl}/interface/editor-mode/inline-editor-options/#inline[User interface options - `+inline+`] and link:{baseurl}/interface/editor-mode/use-tinymce-inline/[Setup inline editing mode].
 
 Default value : `+false+`
 
@@ -327,11 +327,11 @@ Used to store the state of the editor outside the \{\{site.productname}} React c
 
 It is called with two arguments:
 
-`+value+` : The current value of the editor. This is normally HTML but can be text if the deprecated link:#outputformat[`+outputFormat+`] prop is used.
+`+value+` : The current value of the editor. This is normally HTML but can be text if the deprecated <<outputformat, `+outputFormat+`>> prop is used.
 
 `+editor+` : A reference to the editor.
 
-For detailed information on using `+onEditorChange+`, see: link:#usingthetinymcereactcomponentasacontrolledcomponent[Using the \{\{site.productname}} React component as a controlled component].
+For detailed information on using `+onEditorChange+`, see: <<usingthetinymcereactcomponentasacontrolledcomponent, Using the \{\{site.productname}} React component as a controlled component>>.
 
 Type : `+EventHandler+`
 
@@ -341,7 +341,7 @@ ____
 *Important*: This option was deprecated with the release of the \{\{site.productname}} React component 3.11.0. The `+outputFormat+` option will be removed in a future release of the \{\{site.productname}} React component.
 ____
 
-Used to specify the format of the content produced by the link:#oneditorchange[`+onEditorChange+`] event.
+Used to specify the format of the content produced by the <<oneditorchange, `+onEditorChange+`>> event.
 
 This does not change the input format, so the editor must still be supplied HTML in the `+value+` or `+initialValue+`, which makes this prop much harder to use correctly than it initially seems.
 
@@ -406,7 +406,7 @@ return (
 
 Used to include plugins for the editor. Using `+<Editor plugins='lists' />+` is the same as setting `+{plugins: 'lists'}+` in the \{\{site.productname}} `+tinymce.init({...})+` method.
 
-For information on adding plugins to \{\{site.productname}}, see: link:{{site.baseurl}}/plugins-ref/[Add plugins to \{\{site.productname}}].
+For information on adding plugins to \{\{site.productname}}, see: link:{baseurl}/plugins-ref/[Add plugins to \{\{site.productname}}].
 
 Type : `+String+` or `+Array+`
 
@@ -475,7 +475,7 @@ Contains 3 settings:
 
 === `+tagName+`
 
-Only valid when link:#inline[`+<Editor inline={true} />+`]. Used to define the HTML element for the editor in inline mode.
+Only valid when <<inline, `+<Editor inline={true} />+`>>. Used to define the HTML element for the editor in inline mode.
 
 Default value : `+'div'+`
 
@@ -515,9 +515,9 @@ Type : `+String+`
 
 Used to set the toolbar for the editor. Using `+<Editor toolbar='bold' />+` is the same as setting `+{toolbar: 'bold'}+` in the \{\{site.productname}} method `+tinymce.init({...})+`.
 
-For information setting the toolbar for \{\{site.productname}}, see: link:{{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar[User interface options - toolbar].
+For information setting the toolbar for \{\{site.productname}}, see: link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar[User interface options - toolbar].
 
-Possible values : See link:{{site.baseurl}}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
+Possible values : See link:{baseurl}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
 
 Type : `+String+`
 
@@ -554,7 +554,7 @@ When this prop is different to the current editor content, the editor content wi
 
 This prop allows the editor to be used as a controlled component by setting the `+value+` prop and using the `+onEditorChange+` event to update the `+value+`.
 
-For detailed information on using the `+value+` prop, see: link:#usingthetinymcereactcomponentasacontrolledcomponent[Using the \{\{site.productname}} React component as a controlled component].
+For detailed information on using the `+value+` prop, see: <<usingthetinymcereactcomponentasacontrolledcomponent, Using the \{\{site.productname}} React component as a controlled component>>.
 
 Type : `+String+`
 
@@ -567,7 +567,7 @@ When using the editor as an uncontrolled component, avoid using the `+value+` an
 
 To provide visual feedback to the user when the content is ready to be saved, use the `+onDirty+` event handler; combined with clearing the editor's "dirty" state when saving the editor content.
 
-\{% include misc/concept-dirty-state.md %}
+include::partial$misc/concept-dirty-state.adoc[]
 
 === Example: Functional uncontrolled component with save button and dirty state
 

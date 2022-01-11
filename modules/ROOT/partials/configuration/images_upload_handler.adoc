@@ -22,7 +22,7 @@ Type : `+JavaScript Function+`
 
 [source,js]
 ----
-{% include misc/images-upload-handler-function.md %}
+include::partial$misc/images-upload-handler-function.adoc[]
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

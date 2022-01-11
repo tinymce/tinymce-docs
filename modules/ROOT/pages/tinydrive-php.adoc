@@ -1,6 +1,9 @@
 = PHP
 
-:title_nav: PHP :description: PHP :keywords: tinydrive PHP
+:title_nav: PHP
+
+:description: PHP
+:keywords: tinydrive PHP
 
 == Tiny Drive PHP Starter Project
 
@@ -11,9 +14,9 @@ This project will help you get started with \{\{site.cloudfilemanager}} and allo
 Before you start your journey with \{\{site.cloudfilemanager}}, it will go a lot smoother if you have done these steps:
 
 [arabic]
-. Login/register to link:{{site.accountpageurl}}/[\{\{site.accountpage}}]
-. Get a link:{{site.accountpageurl}}/key-manager/[\{\{site.cloudname}} API Key]
-. Get a link:{{site.accountpageurl}}/jwt/[JWT Key]
+. Login/register to link:{accountpageurl}/[\{\{site.accountpage}}]
+. Get a link:{accountpageurl}/key-manager/[\{\{site.cloudname}} API Key]
+. Get a link:{accountpageurl}/jwt/[JWT Key]
 
 Store the keys temporarily somewhere as you will need to copy & paste them later.
 
@@ -55,17 +58,17 @@ $ php -S localhost:3000
 
 == Implementing with your system
 
-If your specific use case has not been covered by any of the sample link:{{site.baseurl}}/plugins-ref/premium/tinydrive/starter-projects/[starter projects], some customizations might be required to be applied to implement \{\{site.cloudfilemanager}} in the specific system. The link:{{site.baseurl}}/plugins-ref/premium/tinydrive/jwt-authentication/[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to \{\{site.cloudfilemanager}} and your system.
+If your specific use case has not been covered by any of the sample link:{baseurl}/plugins-ref/premium/tinydrive/starter-projects/[starter projects], some customizations might be required to be applied to implement \{\{site.cloudfilemanager}} in the specific system. The link:{baseurl}/plugins-ref/premium/tinydrive/jwt-authentication/[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to \{\{site.cloudfilemanager}} and your system.
 
 === Additional resources
 
 Go through the following additional resources to figure out how to configure \{\{site.cloudfilemanager}} with your system.
 
-* We recommend reading up and trying to understand how link:{{site.baseurl}}/plugins-ref/premium/tinydrive/jwt-authentication/[JWT authentication] works. In order to implement \{\{site.cloudfilemanager}} you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
-* link:{{site.baseurl}}/plugins-ref/premium/tinydrive/starter-projects/[Starter projects]
-* link:{{site.baseurl}}/plugins-ref/premium/tinydrive/configuration/[Configuration Options]
-* link:{{site.baseurl}}/plugins-ref/premium/tinydrive/integrations/[Integrations]
+* We recommend reading up and trying to understand how link:{baseurl}/plugins-ref/premium/tinydrive/jwt-authentication/[JWT authentication] works. In order to implement \{\{site.cloudfilemanager}} you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
+* link:{baseurl}/plugins-ref/premium/tinydrive/starter-projects/[Starter projects]
+* link:{baseurl}/plugins-ref/premium/tinydrive/configuration/[Configuration Options]
+* link:{baseurl}/plugins-ref/premium/tinydrive/integrations/[Integrations]
 
 == Need help?
 
-We are striving to make \{\{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing \{\{site.cloudfilemanager}}, check our link:{{site.baseurl}}/support/[help page] or please contact link:{{site.supporturl}}/[\{\{site.supportname}}].
+We are striving to make \{\{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing \{\{site.cloudfilemanager}}, check our link:{baseurl}/support/[help page] or please contact link:{supporturl}/[\{\{site.supportname}}].

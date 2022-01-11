@@ -1,9 +1,15 @@
 = Toolbar buttons and menu items for the Tiny Drive plugin
 
-:title_nav: Toolbar buttons and menu items :description: Details of the toolbar buttons and menu items provided for the Tiny Drive plugin. :keywords: drive tinydrive
+:title_nav: Toolbar buttons and menu items
 
-\{% assign pluginname = "Tiny Drive" %} \{% assign plugincode = "tinydrive" %}
+:description: Details of the toolbar buttons and menu items provided for the Tiny Drive plugin.
+:keywords: drive tinydrive
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:pluginname: Tiny Drive
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+:plugincode: tinydrive
+
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

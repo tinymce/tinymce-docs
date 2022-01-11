@@ -1,7 +1,12 @@
 = Using the TinyMCE package with the React framework
 
-:title_nav: Using a package manager :description: A guide on integrating the TinyMCE package into the React framework. :keywords: integration integrate react reactjs create-react-app tinymce-react
+:title_nav: Using a package manager
 
-\{% assign productSource = "package-manager" %}
+:description: A guide on integrating the TinyMCE package into the React framework.
+:keywords: integration integrate react reactjs create-react-app tinymce-react
 
-\{% include integrations/react-quick-start.md %}
+:productSource: package-manager
+
+
+
+include::partial$integrations/react-quick-start.adoc[]

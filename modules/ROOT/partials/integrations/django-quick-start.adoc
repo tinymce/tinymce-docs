@@ -1,4 +1,4 @@
-\{% include /misc/admon_third_party_integration.md %}
+include::partial$misc/admon_third_party_integration[]
 
 For information on adding \{\{site.productname}} to a Django project, try using the Python-based `+django-tinymce+` package. For information on setting up `+django-tinymce+`, see: https://django-tinymce.readthedocs.io/en/latest/index.html[the django-tinymce Documentation].
 
@@ -11,16 +11,16 @@ For example:
 
 [source,py]
 ----
-TINYMCE_JS_URL = '{{site.cdnurl}}'
+TINYMCE_JS_URL = '{cdnurl}'
 TINYMCE_COMPRESSOR = False
 ----
 
 \{% else %} To download \{\{site.productname}} and use it with the `+django-tinymce+` package:
 
 [arabic]
-. Get the package from link:{{site.gettiny}}/[\{\{site.productname}} Downloads].
-. Unzip the package and move the `+'path/to/{{site.prodnamecode}}/'+` directory into the django project.
-. Add a URL path to the `+{{site.prodnamecode}}+` directory.
+. Get the package from link:{gettiny}/[\{\{site.productname}} Downloads].
+. Unzip the package and move the `+'path/to/{prodnamecode}/'+` directory into the django project.
+. Add a URL path to the `+{prodnamecode}+` directory.
 . Add the relevant configuration setting:
 * If you do not need the `+TINYMCE_COMPRESSOR+` (`+TINYMCE_COMPRESSOR = False+`), add `+TINYMCE_JS_URL+` to the project’s `+settings.py+` file pointing to `+tinymce/tinymce.min.js+`. Such as:
 +

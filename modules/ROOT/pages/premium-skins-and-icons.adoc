@@ -1,14 +1,17 @@
 = Tiny Skins and Icon Packs
 
-:title_nav: Tiny Skins and Icon Packs :description: Quickly give TinyMCE a new look. :keywords: skin skins icon icons material bootstrap customize theme
+:title_nav: Tiny Skins and Icon Packs
+
+:description: Quickly give TinyMCE a new look.
+:keywords: skin skins icon icons material bootstrap customize theme
 
 The \{\{site.prem_skins_icons}} lets you quickly give \{\{site.productname}} a new look. Just choose one of our pre-made skins and icon packs.
 
 == How to use a premium skin
 
-Use the link:{{site.baseurl}}/interface/editor-appearance/editor-skin/#skin[skin] option, in combination with the link:{{site.baseurl}}/content/add-css-options/#content_css[content_css] option and the values listed below.
+Use the link:{baseurl}/interface/editor-appearance/editor-skin/#skin[skin] option, in combination with the link:{baseurl}/content/add-css-options/#content_css[content_css] option and the values listed below.
 
-Available values for link:{{site.baseurl}}/interface/editor-appearance/editor-skin/#skin[skins]:
+Available values for link:{baseurl}/interface/editor-appearance/editor-skin/#skin[skins]:
 
 * material-classic
 * material-outline
@@ -22,7 +25,7 @@ Available values for link:{{site.baseurl}}/interface/editor-appearance/editor-sk
 * outside
 * snow
 
-Available values for link:{{site.baseurl}}/content/add-css-options/#content_css[content_css]:
+Available values for link:{baseurl}/content/add-css-options/#content_css[content_css]:
 
 * material-classic
 * material-outline
@@ -42,9 +45,9 @@ tinymce.init({
 
 == How to use an icon pack
 
-Use the link:{{site.baseurl}}/interface/editor-appearance/editor-icons/#icons[icons] option with any of the values listed below.
+Use the link:{baseurl}/interface/editor-appearance/editor-icons/#icons[icons] option with any of the values listed below.
 
-Available values for link:{{site.baseurl}}/interface/editor-appearance/editor-icons/#icons[icon] packs:
+Available values for link:{baseurl}/interface/editor-appearance/editor-icons/#icons[icon] packs:
 
 * bootstrap
 * material
@@ -62,7 +65,7 @@ tinymce.init({
 });
 ----
 
-For information on using the `+icons+` option, see: link:{{site.baseurl}}/interface/editor-appearance/editor-icons/#icons[User interface options - `+icons+`].
+For information on using the `+icons+` option, see: link:{baseurl}/interface/editor-appearance/editor-icons/#icons[User interface options - `+icons+`].
 
 === Icon pack compatibility matrix
 
@@ -88,16 +91,21 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 Below are some recommended combinations of skins and icon packs:
 
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/bootstrap-demo/[Bootstrap skin]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/material-outline-demo/[Material Outline skin with Material icon pack]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/material-classic-demo/[Material Classic skin with Material icon pack]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/fabric-demo/[Microsoft Fabric skin]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/fluent-demo/[Microsoft Fluent skin]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/small-demo/[Small skin with Small icon pack]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/jam-demo/[Small skin with Jam icon pack]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/borderless-demo/[Borderless editor]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/naked-demo/[Naked editor]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/outside-demo/[Outside editor]
-* link:{{site.baseurl}}/demos/premium-skins-and-icons/snow-demo/[Snow editor]
+* link:{baseurl}/demos/premium-skins-and-icons/bootstrap-demo/[Bootstrap skin]
+* link:{baseurl}/demos/premium-skins-and-icons/material-outline-demo/[Material Outline skin with Material icon pack]
+* link:{baseurl}/demos/premium-skins-and-icons/material-classic-demo/[Material Classic skin with Material icon pack]
+* link:{baseurl}/demos/premium-skins-and-icons/fabric-demo/[Microsoft Fabric skin]
+* link:{baseurl}/demos/premium-skins-and-icons/fluent-demo/[Microsoft Fluent skin]
+* link:{baseurl}/demos/premium-skins-and-icons/small-demo/[Small skin with Small icon pack]
+* link:{baseurl}/demos/premium-skins-and-icons/jam-demo/[Small skin with Jam icon pack]
+* link:{baseurl}/demos/premium-skins-and-icons/borderless-demo/[Borderless editor]
+* link:{baseurl}/demos/premium-skins-and-icons/naked-demo/[Naked editor]
+* link:{baseurl}/demos/premium-skins-and-icons/outside-demo/[Outside editor]
+* link:{baseurl}/demos/premium-skins-and-icons/snow-demo/[Snow editor]
 
-\{% assign pluginname = 'Tiny Skins and Icon' %} \{% assign pluginminimumplan = 'tiertwo' %} \{% assign extensionType = 'Packs' %} \{% assign pluralExtensionType = true %} \{% include misc/purchase-premium-plugins.md %} \{% assign extensionType = false %} \{% assign pluralExtensionType = false %}
+:pluginname: Tiny Skins and Icon
+
+:pluginminimumplan: tiertwo
+:extensionType: Packs
+:pluralExtensionType: true
+include::partial$misc/purchase-premium-plugins.adoc[] :extensionType: false  :pluralExtensionType: false

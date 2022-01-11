@@ -1,8 +1,15 @@
 = Directionality plugin
 
-:title_nav: Directionality :description: Toolbar buttons for setting the left-to-right or right-to-left direction of content. :keywords: rtl, ltr, internationalization, internationalisation, localization, localisation, international :controls: toolbar button
+:title_nav: Directionality
 
-\{% assign pluginname = "Directionality" %} \{% assign plugincode = "directionality" %}
+:description: Toolbar buttons for setting the left-to-right or right-to-left direction of content.
+:keywords: rtl, ltr, internationalization, internationalisation, localization, localisation, international
+:controls: toolbar button
+
+:pluginname: Directionality
+
+:plugincode: directionality
+
 
 This plugin adds directionality controls to the toolbar, enabling \{\{site.productname}} to better handle languages written from right to left. It also adds a toolbar button for each of its values, `+ltr+` for left-to-right text and `+rtl+` for right-to-left text.
 
@@ -17,10 +24,10 @@ tinymce.init({
 });
 ----
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
 The Directionality plugin provides the following \{\{site.productname}} commands.
 
-\{% include commands/directionality-cmds.md %}
+include::partial$commands/directionality-cmds.adoc[]

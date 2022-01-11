@@ -1,6 +1,9 @@
 = Custom Nested menu items
 
-:title_nav: Custom Nested menu items :description: How to create custom Nested menu items. :keywords: menu menuitem menuitems
+:title_nav: Custom Nested menu items
+
+:description: How to create custom Nested menu items.
+:keywords: menu menuitem menuitems
 
 A nested menu item is a menu item with a submenu. Registering a submenu this way allows it to be reused in menubar menus and toolbar button menus without having to define the submenu twice. The submenu can contain any combination of basic menu items and toggle menu items.
 
@@ -8,11 +11,12 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 |===
 |Name |Value |Requirement |Description
 |text |string |optional |Text to display if no icon is found.
-|icon |string |optional |\{% include /misc/admon_predefined_icons_only.md %}
+|icon |string |optional |
+include::partial$misc/admon_predefined_icons_only[]
 |value |string |optional |A value to associate with the menu item.
-|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: link:#usingonsetup[Using `+onSetup+`].
+|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: <<usingonsetup, Using `+onSetup+`>>.
 |getSubmenuItems |`+() => string+` or `+MenuItem[]+` |required |Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications.
-|shortcut |string |optional |Text to display in the shortcut label. To register a shortcut, see: link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/shortcuts/[Add custom shortcuts to TinyMCE].
+|shortcut |string |optional |Text to display in the shortcut label. To register a shortcut, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/shortcuts/[Add custom shortcuts to TinyMCE].
 |===
 
 == API
@@ -53,4 +57,4 @@ tinymce.init({
 });
 ----
 
-\{% include misc/onSetup.md %}
+include::partial$misc/onSetup.adoc[]

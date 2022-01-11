@@ -2,8 +2,8 @@ The https://github.com/tinymce/tinymce-blazor[Official \{\{site.productname}} Bl
 
 Select from the following guides:
 
-* link:#usingvisualstudio[Using Visual Studio]
-* link:#usingacommandpromptorterminal[Using a command prompt or terminal]
+* <<usingvisualstudio, Using Visual Studio>>
+* <<usingacommandpromptorterminal, Using a command prompt or terminal>>
 
 == Using Visual Studio
 
@@ -29,14 +29,15 @@ Install-Package TinyMCE.Blazor
 \{% if productSource == "package-manager" %}
 
 [arabic]
-. Use the NuGet package manager console to install the `+{{site.productname}}+` package, such as:
+. Use the NuGet package manager console to install the `+{productname}+` package, such as:
 +
 [source,sh]
 ----
 Install-Package TinyMCE
 ----
 
-\{% endif %} \{% include integrations/blazor-postinstall.md %}
+\{% endif %}
+include::partial$integrations/blazor-postinstall.adoc[]
 
 [arabic]
 . To test the application, run the application by pressing *Ctrl+F5*.
@@ -74,14 +75,15 @@ dotnet add package TinyMCE.Blazor
 \{% if productSource == "package-manager" %}
 
 [arabic]
-. Install the `+{{site.productname}}+` package, such as:
+. Install the `+{productname}+` package, such as:
 +
 [source,sh]
 ----
 dotnet add package TinyMCE
 ----
 
-\{% endif %} \{% include integrations/blazor-postinstall.md %}
+\{% endif %}
+include::partial$integrations/blazor-postinstall.adoc[]
 
 [arabic]
 . Test the application using the .NET development server.
@@ -99,5 +101,5 @@ This will start a local development server, accessible at http://localhost:5000.
 
 For information on customizing the integration, see:
 
-* link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[\{\{site.productname}} basic setup].
-* link:{{site.baseurl}}/how-to-guides/environment-setup/blazor/blazor-ref/[The \{\{site.productname}} Blazor integration technical reference].
+* link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[\{\{site.productname}} basic setup].
+* link:{baseurl}/how-to-guides/environment-setup/blazor/blazor-ref/[The \{\{site.productname}} Blazor integration technical reference].

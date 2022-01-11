@@ -1,4 +1,4 @@
-\{% if editorcomponent.size < 1 %} \{% assign editorcomponent = "component" %} \{% endif %}
+\{% if editorcomponent.size < 1 %} :editorcomponent: component \{% endif %}
 
 == Overview
 

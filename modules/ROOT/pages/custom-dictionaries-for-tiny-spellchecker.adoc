@@ -1,6 +1,9 @@
 = Adding custom dictionaries
 
-:description: Custom dictionaries can be added to Spell Checker Pro :keywords: enterprise tinymcespellchecker spell check checker pro
+:description: Custom dictionaries can be added to Spell Checker Pro
+
+:keywords: enterprise tinymcespellchecker spell check checker pro
+
 
 == Creating custom dictionary files
 
@@ -31,11 +34,11 @@ ____
 
 Additional configuration to your `+application.conf+` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
-\{% include misc/custom-dictionaries-path.md %}
+include::partial$misc/custom-dictionaries-path.adoc[]
 
 === Dynamic Custom Dictionaries
 
-\{% include misc/dynamic-custom-dictionaries.md %}
+include::partial$misc/dynamic-custom-dictionaries.adoc[]
 
 == Verifying custom dictionary functionality
 

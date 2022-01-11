@@ -1,10 +1,14 @@
 = Work with plugins to extend TinyMCE
 
-:title_nav: Using plugins to extend TinyMCE :description_short: Learn about TinyMCE's plugin functionality. :description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples. :keywords: plugin
+:title_nav: Using plugins to extend TinyMCE
 
-For most developers, the real power of \{\{site.productname}}'s functionality is found in its plugins. [Plugins](\{\{ site.baseurl }}/plugins-ref/) either extend default editor functionality or add new functionality. For example, the link:{{site.baseurl}}/plugins-ref/opensource/advlist/[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{{site.baseurl}}/plugins-ref/opensource/code/[Code] plugin adds entirely new functionality.
+:description_short: Learn about TinyMCE's plugin functionality.
+:description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
+:keywords: plugin
 
-Because most people install \{\{site.productname}} via \{\{site.cloudname}} or by downloading a package, they mistakenly think plugins are part of the \{\{site.productname}} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{{site.gettiny}}/custom-builds/[custom package] download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the \{\{site.productname}} team.
+For most developers, the real power of \{\{site.productname}}'s functionality is found in its plugins. [Plugins](\{\{ site.baseurl }}/plugins-ref/) either extend default editor functionality or add new functionality. For example, the link:{baseurl}/plugins-ref/opensource/advlist/[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{baseurl}/plugins-ref/opensource/code/[Code] plugin adds entirely new functionality.
+
+Because most people install \{\{site.productname}} via \{\{site.cloudname}} or by downloading a package, they mistakenly think plugins are part of the \{\{site.productname}} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{gettiny}/custom-builds/[custom package] download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the \{\{site.productname}} team.
 
 In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins.
 
@@ -19,7 +23,7 @@ Let's start with a simple code snippet you can paste into an empty `+html+` file
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+  <script src="{cdnurl}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: 'textarea'
@@ -41,7 +45,7 @@ The code we want to work with is in the second `+<script>+` element. Specificall
 
 === Code plugin
 
-The link:{{site.baseurl}}/plugins-ref/opensource/code/[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `+html+` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
+The link:{baseurl}/plugins-ref/opensource/code/[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `+html+` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
 
 The first thing we need to do is include the actual `+plugins+` key and assign it a value. Since we're starting with the `+code+` plugin that value is going to be `+'code'+`for this example.
 
@@ -66,7 +70,7 @@ tinymce.init({
 });
 ----
 
-Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup], so if this behavior surprises you, please re-read that section.
+Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup], so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
@@ -86,7 +90,7 @@ Even if you found the above example quite easy, hang with us we'll show you how 
 
 === Advanced List
 
-The link:{{site.baseurl}}/plugins-ref/opensource/advlist/[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `+list-style-type+` styled number formats and bullet types to the controls.
+The link:{baseurl}/plugins-ref/opensource/advlist/[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `+list-style-type+` styled number formats and bullet types to the controls.
 
 As before, let's start by adding the `+plugins+` key and giving it the Advanced List value of `+'advlist'+`.
 

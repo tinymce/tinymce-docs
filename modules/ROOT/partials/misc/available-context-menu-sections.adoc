@@ -12,14 +12,14 @@ The identifier below will add a context menu _section_ containing one or more it
 [cols=",,",options="header",]
 |===
 |identifier |Core/Plugin |Description
-|image |link:{{site.baseurl}}/plugins-ref/opensource/image/[Image] |Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
-|imagetools |link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image Tools] |Adds the _Edit image_ item for opening the *Edit Image* dialog.
-|link |link:{{site.baseurl}}/plugins-ref/opensource/link/[Link] |Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
-|linkchecker |link:{{site.baseurl}}/plugins-ref/premium/linkchecker/[Link Checker] |Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
-|lists |link:{{site.baseurl}}/plugins-ref/opensource/lists/[Lists] |Adds the _List properties..._ item for opening the *List Properties* dialog.
-|configurepermanentpen |link:{{site.baseurl}}/plugins-ref/premium/permanentpen/[Permanent Pen] |Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
-|spellchecker |link:{{site.baseurl}}/plugins-ref/opensource/spellchecker/[Spell Checker] |Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
-|table |link:{{site.baseurl}}/plugins-ref/opensource/table/[Table] |Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled).
+|image |link:{baseurl}/plugins-ref/opensource/image/[Image] |Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
+|imagetools |link:{baseurl}/plugins-ref/opensource/imagetools/[Image Tools] |Adds the _Edit image_ item for opening the *Edit Image* dialog.
+|link |link:{baseurl}/plugins-ref/opensource/link/[Link] |Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
+|linkchecker |link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker] |Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
+|lists |link:{baseurl}/plugins-ref/opensource/lists/[Lists] |Adds the _List properties..._ item for opening the *List Properties* dialog.
+|configurepermanentpen |link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen] |Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
+|spellchecker |link:{baseurl}/plugins-ref/opensource/spellchecker/[Spell Checker] |Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
+|table |link:{baseurl}/plugins-ref/opensource/table/[Table] |Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled).
 |===
 
-For a list of available menu items that can be added to the context menu, see: link:{{site.baseurl}}/interface/menus/available-menu-items/[Menu Items Available for \{\{site.productname}}].
+For a list of available menu items that can be added to the context menu, see: link:{baseurl}/interface/menus/available-menu-items/[Menu Items Available for \{\{site.productname}}].

@@ -1,25 +1,28 @@
 = Editor content behaviors
 
-:title_nav: Behaviors :description: Options for changing the behavior of editor content.
+:title_nav: Behaviors
 
-\{% include configuration/custom_undo_redo_levels.md %}
+:description: Options for changing the behavior of editor content.
 
-\{% include configuration/end_container_on_empty_block.md %}
 
-\{% include configuration/draggable_modal.md %}
+include::partial$configuration/custom_undo_redo_levels.adoc[]
 
-\{% include configuration/keep_styles.md %}
+include::partial$configuration/end_container_on_empty_block.adoc[]
 
-\{% include configuration/noneditable_class.md %}
+include::partial$configuration/draggable_modal.adoc[]
 
-\{% include configuration/noneditable_regexp.md %}
+include::partial$configuration/keep_styles.adoc[]
 
-\{% include configuration/object_resizing.md %}
+include::partial$configuration/noneditable_class.adoc[]
 
-\{% include configuration/resize_img_proportional.md %}
+include::partial$configuration/noneditable_regexp.adoc[]
 
-\{% include configuration/inline_boundaries.md %}
+include::partial$configuration/object_resizing.adoc[]
 
-\{% include configuration/inline_boundaries_selector.md %}
+include::partial$configuration/resize_img_proportional.adoc[]
 
-\{% include configuration/type_ahead_urls.md %}
+include::partial$configuration/inline_boundaries.adoc[]
+
+include::partial$configuration/inline_boundaries_selector.adoc[]
+
+include::partial$configuration/type_ahead_urls.adoc[]

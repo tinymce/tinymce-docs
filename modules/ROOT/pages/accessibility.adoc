@@ -1,9 +1,12 @@
 = Accessibility options
 
-:title_nav: Accessibility :description_short: Configure the accessibility of TinyMCE. :description: Configure the accessibility of TinyMCE.
+:title_nav: Accessibility
 
-\{% include configuration/a11y_advanced_options.md %}
+:description_short: Configure the accessibility of TinyMCE.
+:description: Configure the accessibility of TinyMCE.
 
-\{% include configuration/iframe_aria_text.md %}
+include::partial$configuration/a11y_advanced_options.adoc[]
 
-\{% include configuration/taborder.md %}
+include::partial$configuration/iframe_aria_text.adoc[]
+
+include::partial$configuration/taborder.adoc[]

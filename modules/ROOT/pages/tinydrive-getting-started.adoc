@@ -1,10 +1,13 @@
 = Getting started
 
-:title_nav: Getting started :description: Getting started with Tiny Drive :keywords: tinydrive starter projects
+:title_nav: Getting started
 
-To get started with \{\{site.cloudfilemanager}}, try one of the starter projects below, or follow our guide on link:#implementingtinydrivewithyoursystem[Implementing Tiny Drive with your system].
+:description: Getting started with Tiny Drive
+:keywords: tinydrive starter projects
 
-\{% include tinydrive-starter-projects.md %}
+To get started with \{\{site.cloudfilemanager}}, try one of the starter projects below, or follow our guide on <<implementingtinydrivewithyoursystem, Implementing Tiny Drive with your system>>.
+
+include::tinydrive-starter-projects[]
 
 == Implementing Tiny Drive with your system
 
@@ -19,7 +22,7 @@ The steps required for setting up \{\{site.cloudfilemanager}} are:
 [[1-register-for-a-tiny-cloud-api-key]]
 == 1. Register for a Tiny Cloud API key
 
-If you do not have a \{\{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the link:{{site.pricingpage}}/[\{\{site.companyname}} pricing page].
+If you do not have a \{\{site.cloudname}} API key, you can sign up for a trial or purchase a subscription on the link:{pricingpage}/[\{\{site.companyname}} pricing page].
 
 \{% include auth/private-public-key-pairs-for-tiny-cloud-services.md numberedHeading=true %}
 
@@ -28,7 +31,7 @@ If you do not have a \{\{site.cloudname}} API key, you can sign up for a trial o
 
 \{\{site.cloudfilemanager}} requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access \{\{site.cloudfilemanager}}.
 
-For information on setting up a JSON Web Token Provider endpoint, see: link:{{site.baseurl}}/plugins-ref/premium/tinydrive/jwt-authentication/[\{\{site.cloudfilemanager}} JWT Authentication Setup].
+For information on setting up a JSON Web Token Provider endpoint, see: link:{baseurl}/plugins-ref/premium/tinydrive/jwt-authentication/[\{\{site.cloudfilemanager}} JWT Authentication Setup].
 
 [[4-configure-the-required-siteproductname-options]]
 == 4. Configure the required \{\{site.productname}} options
@@ -36,7 +39,7 @@ For information on setting up a JSON Web Token Provider endpoint, see: link:{{si
 To enable the \{\{site.cloudfilemanager}} plugin:
 
 * Add `+tinydrive+` to the plugins list
-* Configure the link:{{site.baseurl}}/plugins-ref/premium/tinydrive/configuration/#tinydrive_token_provider[`+tinydrive_token_provider+`]
+* Configure the link:{baseurl}/plugins-ref/premium/tinydrive/configuration/#tinydrive_token_provider[`+tinydrive_token_provider+`]
 
 For example:
 
@@ -54,8 +57,8 @@ tinymce.init({
 
 For information on:
 
-* Setting up a JWT endpoint for authentication, see: link:{{site.baseurl}}/plugins-ref/premium/tinydrive/jwt-authentication/[JWT Authentication Setup].
-* Configuring the \{\{site.cloudfilemanager}} plugin, see: link:{{site.baseurl}}/plugins-ref/premium/tinydrive/configuration/[Tiny Drive configuration].
-* The included \{\{site.cloudfilemanager}} toolbar buttons and menu items, see: link:{{site.baseurl}}/plugins-ref/premium/tinydrive/tinydrive_toolbars_menus/[Toolbar buttons and menu items for the Tiny Drive plugin].
-* Creating custom UI elements or behaviors using the \{\{site.cloudfilemanager}} APIs, see: link:{{site.baseurl}}/plugins-ref/premium/tinydrive/apis/[\{\{site.cloudfilemanager}} APIs].
-* The \{\{site.cloudfilemanager}} Google Drive and Dropbox integrations, see: link:{{site.baseurl}}/plugins-ref/premium/tinydrive/integrations/[\{\{site.cloudfilemanager}} integrations].
+* Setting up a JWT endpoint for authentication, see: link:{baseurl}/plugins-ref/premium/tinydrive/jwt-authentication/[JWT Authentication Setup].
+* Configuring the \{\{site.cloudfilemanager}} plugin, see: link:{baseurl}/plugins-ref/premium/tinydrive/configuration/[Tiny Drive configuration].
+* The included \{\{site.cloudfilemanager}} toolbar buttons and menu items, see: link:{baseurl}/plugins-ref/premium/tinydrive/tinydrive_toolbars_menus/[Toolbar buttons and menu items for the Tiny Drive plugin].
+* Creating custom UI elements or behaviors using the \{\{site.cloudfilemanager}} APIs, see: link:{baseurl}/plugins-ref/premium/tinydrive/apis/[\{\{site.cloudfilemanager}} APIs].
+* The \{\{site.cloudfilemanager}} Google Drive and Dropbox integrations, see: link:{baseurl}/plugins-ref/premium/tinydrive/integrations/[\{\{site.cloudfilemanager}} integrations].

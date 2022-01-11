@@ -1,8 +1,11 @@
 = Context toolbar
 
-:title_nav: Context toolbar :description: Creating custom context toolbars for TinyMCE 6 :keywords: contexttoolbar context toolbar contexttoolbarapi
+:title_nav: Context toolbar
 
-A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/contextform/[ContextForm]. The buttons comes as a list of strings, where each string is a registered name of a button.
+:description: Creating custom context toolbars for TinyMCE 6
+:keywords: contexttoolbar context toolbar contexttoolbarapi
+
+A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a link:{baseurl}/how-to-guides/creating-custom-ui-components/contextform/[ContextForm]. The buttons comes as a list of strings, where each string is a registered name of a button.
 
 == Registering a context toolbar
 
@@ -17,16 +20,16 @@ A context toolbar is registered by calling the `+addContextToolbar+` API in the 
 |`+items+` |A list of strings which represent either a registered toolbar button, or a registered context form launcher.
 |===
 
-\{% include context/positioning.md %}
+include::partial$context/positioning.adoc[]
 
 == Example configuration
 
 This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
-\{% include live-demo.html id="context-toolbar" height="600" tab="js" %}
+liveDemo::context-toolbar[ height="600" tab="js" ]
 
 == Launching a context toolbar programmatically
 
 There is an `+editor+` event called `+contexttoolbar-show+` that can be fired to show a context toolbar at the current selection. The event takes a parameter `+toolbarKey+` which specifies the name of the registered context form or context toolbar to show.
 
-\{% include context/priority.md %}
+include::partial$context/priority.adoc[]

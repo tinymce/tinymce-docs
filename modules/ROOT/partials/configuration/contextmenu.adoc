@@ -18,7 +18,7 @@ Type : `+String+` or `+false+`
 
 Default Value : `+'link linkchecker image imagetools table spellchecker configurepermanentpen'+`
 
-\{% include /misc/admon_ctrl_right_click.md %}
+include::partial$misc/admon_ctrl_right_click[]
 
 === Example: Using `+contextmenu+`
 
@@ -31,4 +31,4 @@ tinymce.init({
 });
 ----
 
-\{% if page.title != "Context menu" %} For information on configuring the `+contextmenu+` option and creating custom context menu items link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/contextmenu/[context menu examples]. \{% endif %}
+\{% if page.title != "Context menu" %} For information on configuring the `+contextmenu+` option and creating custom context menu items link:{baseurl}/how-to-guides/creating-custom-ui-components/contextmenu/[context menu examples]. \{% endif %}

@@ -1,7 +1,12 @@
 = Installing TinyMCE for .NET
 
-:title_nav: .NET projects :description: Learn how to install TinyMCE from NuGet. :keywords: nuget .net install
+:title_nav: .NET projects
 
-\{% assign productSource = 'nuget' %}
+:description: Learn how to install TinyMCE from NuGet.
+:keywords: nuget .net install
 
-\{% include install/basic-quickstart-base.md %}
+:productSource: nuget
+
+
+
+include::partial$install/basic-quickstart-base.adoc[]

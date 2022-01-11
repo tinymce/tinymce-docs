@@ -1,10 +1,18 @@
 = Advanced Code Editor plugin
 
-:title_nav: Advanced Code Editor :description: How to setup TinyMCE's Advanced Code Editor plugin. :keywords: code advcode codemirror :controls: toolbar button, menu item
+:title_nav: Advanced Code Editor
 
-\{% assign pluginname = "Advanced Code Editor" %} \{% assign plugincode = "advcode" %} \{% include /misc/admon_premium_plugin.md %}
+:description: How to setup TinyMCE's Advanced Code Editor plugin.
+:keywords: code advcode codemirror
+:controls: toolbar button, menu item
 
-The link:{{site.baseurl}}/plugins-ref/premium/advcode/[Advanced Code Editor] plugin (`+advcode+`) brings a more advanced code editor to \{\{site.productname}}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
+:pluginname: Advanced Code Editor
+
+:plugincode: advcode
+
+include::partial$misc/admon_premium_plugin[]
+
+The link:{baseurl}/plugins-ref/premium/advcode/[Advanced Code Editor] plugin (`+advcode+`) brings a more advanced code editor to \{\{site.productname}}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
 
 * Syntax color highlighting
 * Bracket matching
@@ -14,9 +22,12 @@ The link:{{site.baseurl}}/plugins-ref/premium/advcode/[Advanced Code Editor] plu
 
 == The difference between the Code and Advanced Code Editor plugins
 
-\{% include live-demo.html id="advcode" %}
+liveDemo::advcode[ ]
 
-\{% assign pluginminimumplan = 'tiertwo' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Example: Basic setup
 
@@ -29,14 +40,20 @@ tinymce.init({
 });
 ----
 
-\{% include misc/advcode-shortcuts.md %}
+include::partial$misc/advcode-shortcuts.adoc[]
 
-\{% assign altplugincode = "code" %} \{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:altplugincode: code
 
-\{% assign altplugincode = "code" %} \{% include misc/plugin-menu-item-id-boilerplate.md %}
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:altplugincode: code
+
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Advanced Code plugin provides the following \{\{site.productname}} command.
 
-\{% include commands/code-cmds.md %}
+include::partial$commands/code-cmds.adoc[]

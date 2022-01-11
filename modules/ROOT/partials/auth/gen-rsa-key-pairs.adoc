@@ -1,17 +1,17 @@
 The procedure for creating a key pair depends on the operating system of the host machine.
 
-* link:#linux[Linux procedure].
-* link:#applemacos[Apple macOS procedure].
-* link:#microsoftwindows[Microsoft Windows procedure].
+* <<linux, Linux procedure>>.
+* <<applemacos, Apple macOS procedure>>.
+* <<microsoftwindows, Microsoft Windows procedure>>.
 
 == Linux
 
 To create a private/public key pair on a Linux operating system:
 
 [arabic]
-. link:#installingopensslonlinux[Install OpenSSL].
-. link:#createaprivatepublickeypaironlinux[Create a private/public key pair].
-. link:#retrievethepublickeyonlinux[Retrieve the public key].
+. <<installingopensslonlinux, Install OpenSSL>>.
+. <<createaprivatepublickeypaironlinux, Create a private/public key pair>>.
+. <<retrievethepublickeyonlinux, Retrieve the public key>>.
 
 === Installing OpenSSL on Linux
 
@@ -78,7 +78,7 @@ ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
 +
 Where _`+<MY_KEY_PAIR_NAME>+`_ should be replaced with a name for the key pair.
 
-\{% include auth/passphrase-step-jwt.md %}
+include::partial$auth/passphrase-step-jwt.adoc[]
 
 Two files will be created in the current directory:
 
@@ -101,8 +101,8 @@ The public key for the `+<MY_KEY_PAIR_NAME>+` key pair will be printed on the co
 To create a private/public key pair on a macOS operating system:
 
 [arabic]
-. link:#createaprivatepublickeypaironmacos[Create a private/public key pair].
-. link:#retrievethepublickeyonmacos[Retrieve the public key].
+. <<createaprivatepublickeypaironmacos, Create a private/public key pair>>.
+. <<retrievethepublickeyonmacos, Retrieve the public key>>.
 
 === Create a private/public key pair on macOS
 
@@ -119,7 +119,7 @@ ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
 +
 Where _`+<MY_KEY_PAIR_NAME>+`_ should be replaced with a name for the key pair.
 
-\{% include auth/passphrase-step-jwt.md %}
+include::partial$auth/passphrase-step-jwt.adoc[]
 
 Two files will be created in the current directory:
 
@@ -142,9 +142,9 @@ The public key for the `+<MY_KEY_PAIR_NAME>+` key pair will be printed on the te
 To create a private/public key pair on a Microsoft Windows operating system:
 
 [arabic]
-. link:#installingopensslonmicrosoftwindows[Install OpenSSL].
-. link:#createaprivatepublickeypaironwindows[Create a private/public key pair].
-. link:#retrievethepublickeyonwindows[Retrieve the public key].
+. <<installingopensslonmicrosoftwindows, Install OpenSSL>>.
+. <<createaprivatepublickeypaironwindows, Create a private/public key pair>>.
+. <<retrievethepublickeyonwindows, Retrieve the public key>>.
 
 === Installing OpenSSL on Microsoft Windows
 
@@ -173,7 +173,7 @@ ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
 +
 Where _`+<MY_KEY_PAIR_NAME>+`_ should be replaced with a name for the key pair.
 
-\{% include auth/passphrase-step-jwt.md %}
+include::partial$auth/passphrase-step-jwt.adoc[]
 
 Two files will be created in the current directory:
 

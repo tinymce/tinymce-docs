@@ -1,6 +1,9 @@
 = Server-side component installation
 
-:description: Server-side components for premium plugins like spelling as-you-type. :keywords: enterprise tinymcespellchecker spell check checker pro imagetools server
+:description: Server-side components for premium plugins like spelling as-you-type.
+
+:keywords: enterprise tinymcespellchecker spell check checker pro imagetools server
+
 
 Some \{\{site.productname}} Enterprise features require a server-side component. If you're using the \{\{site.cloudname}} solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
@@ -11,9 +14,9 @@ The following server-side components are included in the \{\{site.productname}} 
 [cols="<,<,<",options="header",]
 |===
 |Component |File |Description
-|link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[Spellchecking] |ephox-spelling.war |Spell checking service for \{\{site.productname}} Enterprise.
-|link:{{site.baseurl}}/plugins-ref/premium/export/[Export], link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image Tools Proxy] |ephox-image-proxy.war |Image proxy service for the Export and Image Tools plugins.
-|link:{{site.baseurl}}/plugins-ref/premium/mediaembed/[Enhanced Media Embed], link:{{site.baseurl}}/plugins-ref/premium/linkchecker/[Link Checker] |ephox-hyperlinking.war |Link Checker and Enhanced Media Embed service for \{\{site.productname}} Enterprise.
+|link:{baseurl}/plugins-ref/premium/tinymcespellchecker/[Spellchecking] |ephox-spelling.war |Spell checking service for \{\{site.productname}} Enterprise.
+|link:{baseurl}/plugins-ref/premium/export/[Export], link:{baseurl}/plugins-ref/opensource/imagetools/[Image Tools Proxy] |ephox-image-proxy.war |Image proxy service for the Export and Image Tools plugins.
+|link:{baseurl}/plugins-ref/premium/mediaembed/[Enhanced Media Embed], link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker] |ephox-hyperlinking.war |Link Checker and Enhanced Media Embed service for \{\{site.productname}} Enterprise.
 |===
 
 ____

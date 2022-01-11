@@ -1,7 +1,12 @@
 = Installing TinyMCE from NPM
 
-:title_nav: NPM projects :description: Learn how to install TinyMCE from NPM using npm and Yarn. :keywords: yarn npm javascript install
+:title_nav: NPM projects
 
-\{% assign productSource = 'npm' %}
+:description: Learn how to install TinyMCE from NPM using npm and Yarn.
+:keywords: yarn npm javascript install
 
-\{% include install/basic-quickstart-base.md %}
+:productSource: npm
+
+
+
+include::partial$install/basic-quickstart-base.adoc[]

@@ -7,8 +7,8 @@ There are three types of patterns: `+inline+`, `+block+`, and `+replacement+` pa
 ____
 *Important*: Any formats or commands used by `+textpatterns+` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `+lists+` plugin. For information on:
 
-* Registering formats for \{\{site.productname}}, see: link:{{site.baseurl}}/content/content-formatting/#formats[Content formatting options - `+formats+`].
-* Registering commands for \{\{site.productname}}, see: link:{{site.baseurl}}/apis/tinymce/tinymce.editorcommands/[\{\{site.productname}} APIs - EditorCommands].
+* Registering formats for \{\{site.productname}}, see: link:{baseurl}/content/content-formatting/#formats[Content formatting options - `+formats+`].
+* Registering commands for \{\{site.productname}}, see: link:{baseurl}/apis/tinymce/tinymce.editorcommands/[\{\{site.productname}} APIs - EditorCommands].
 ____
 
 === The default patterns for the `+textpattern+` plugin

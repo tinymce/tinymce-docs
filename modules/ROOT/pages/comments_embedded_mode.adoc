@@ -1,8 +1,14 @@
 = Configuring the Comments plugin in embedded mode
 
-:title_nav: Embedded mode :description: Information on configuring the Comments plugin in embedded mode :keywords: comments commenting tinycomments embedded mode
+:title_nav: Embedded mode
 
-\{% assign pluginname = "Comments" %} \{% assign plugincode = "comments" %}
+:description: Information on configuring the Comments plugin in embedded mode
+:keywords: comments commenting tinycomments embedded mode
+
+:pluginname: Comments
+
+:plugincode: comments
+
 
 == Add the Comments plugin in embeddded mode
 
@@ -23,24 +29,24 @@ This is the minimum recommended setup for the Comments plugin in embedded mode. 
 
 == Interactive example
 
-\{% include live-demo.html id="comments-embedded" %}
+liveDemo::comments-embedded[ ]
 
 == Configuration options
 
-\{% include configuration/tinycomments_author.md %}
+include::partial$configuration/tinycomments_author.adoc[]
 
-\{% include configuration/tinycomments_author_name.md %}
+include::partial$configuration/tinycomments_author_name.adoc[]
 
-\{% include configuration/tinycomments_can_delete.md %}
+include::partial$configuration/tinycomments_can_delete.adoc[]
 
-\{% include configuration/tinycomments_can_resolve.md %}
+include::partial$configuration/tinycomments_can_resolve.adoc[]
 
-\{% include configuration/tinycomments_can_delete_comment.md %}
+include::partial$configuration/tinycomments_can_delete_comment.adoc[]
 
-\{% include configuration/tinycomments_can_edit_comment.md %}
+include::partial$configuration/tinycomments_can_edit_comment.adoc[]
 
-\{% include plugins/comments_open_sidebar.md %}
+include::partial$plugins/comments_open_sidebar.adoc[]
 
-\{% include plugins/comments_embed_fullpage_issues.md %}
+include::partial$plugins/comments_embed_fullpage_issues.adoc[]
 
-\{% include plugins/comments_highlighting_css.md %}
+include::partial$plugins/comments_highlighting_css.adoc[]

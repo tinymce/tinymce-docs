@@ -1,7 +1,13 @@
 = Quick start
 
-:title_nav: Quick start :description_short: Setup a basic TinyMCE 6 editor using the Tiny Cloud. :description: Get an instance of TinyMCE 6 up and running using the Tiny Cloud. :keywords: tinymce script textarea
+:title_nav: Quick start
 
-\{% assign productSource = 'cloud' %}
+:description_short: Setup a basic TinyMCE 6 editor using the Tiny Cloud.
+:description: Get an instance of TinyMCE 6 up and running using the Tiny Cloud.
+:keywords: tinymce script textarea
 
-\{% include install/basic-quickstart-base.md %}
+:productSource: cloud
+
+
+
+include::partial$install/basic-quickstart-base.adoc[]

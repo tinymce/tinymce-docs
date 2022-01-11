@@ -1,7 +1,7 @@
 [arabic]
 . Create a new source file for importing the required components from \{\{site.productname}} and configuring the editor.
 +
-\{% include module-loading/bundling-required-components.md %}
+include::partial$module-loading/bundling-required-components.adoc[]
 +
 Example `+src/editor.js+`
 +

@@ -1,7 +1,7 @@
 This quick start guide walks through creating a https://expressjs.com/en/starter/generator.html[basic Express JS application] containing a \{\{site.productname}} editor.
 
 ____
-*NOTE*: \{\{site.cloudname}} users should use the link:{{site.baseurl}}/getting-started/install-setup/cloud/cloud-quick-start/[\{\{site.cloudname}} quick start guide].
+*NOTE*: \{\{site.cloudname}} users should use the link:{baseurl}/getting-started/install-setup/cloud/cloud-quick-start/[\{\{site.cloudname}} quick start guide].
 ____
 
 == Prerequisites
@@ -15,13 +15,13 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 +
 [source,sh]
 ----
-npx express-generator --git --no-view my_{{site.prodnamecode}}_app
+npx express-generator --git --no-view my_{prodnamecode}_app
 ----
 . Change into the newly created directory.
 +
 [source,sh]
 ----
-cd my_{{site.prodnamecode}}_app
+cd my_{prodnamecode}_app
 ----
 . Add the `+tinymce+` package to your `+package.json+` with `+--save+`.
 +
@@ -35,7 +35,7 @@ npm install --save tinymce
 ----
 npm install
 ----
-. Using a text editor, open `+/path/to/my_{{site.prodnamecode}}_app/app.js+` and add the following route:
+. Using a text editor, open `+/path/to/my_{prodnamecode}_app/app.js+` and add the following route:
 +
 [source,js]
 ----
@@ -62,7 +62,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/* New Route to the {{site.productname}} Node module */
+/* New Route to the {productname} Node module */
 app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 app.use('/', indexRouter);
@@ -76,29 +76,29 @@ Linux/macOS/Unix:
 +
 [source,sh]
 ----
-touch public/javascripts/my-{{site.prodnamecode}}-config.js
+touch public/javascripts/my-{prodnamecode}-config.js
 ----
 +
 Windows:
 +
 [source,sh]
 ----
-> type nul >public/javascripts/my-{{site.prodnamecode}}-config.js
+> type nul >public/javascripts/my-{prodnamecode}-config.js
 ----
-. Add the \{\{site.productname}} configuration to the newly created javascript file (`+my-{{site.prodnamecode}}-config.js+`):
+. Add the \{\{site.productname}} configuration to the newly created javascript file (`+my-{prodnamecode}-config.js+`):
 +
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#my-expressjs-{{site.prodnamecode}}-app',
+  selector: 'textarea#my-expressjs-{prodnamecode}-app',
   plugins: 'lists link image table code help wordcount'
 });
 ----
 . Update `+public/index.html+` to include:
 * The document type declaration, `+<!DOCTYPE html>+`.
 * A `+<script>+` element sourcing `+tinymce.min.js+`.
-* A `+<script>+` element sourcing the \{\{site.productname}} configuration (`+my-{{site.prodnamecode}}-config.js+`).
-* A `+<textarea>+` element with an `+id+` attribute matching the `+selector+` option in the \{\{site.productname}} configuration (`+my-expressjs-{{site.prodnamecode}}-app+`).
+* A `+<script>+` element sourcing the \{\{site.productname}} configuration (`+my-{prodnamecode}-config.js+`).
+* A `+<textarea>+` element with an `+id+` attribute matching the `+selector+` option in the \{\{site.productname}} configuration (`+my-expressjs-{prodnamecode}-app+`).
 +
 For example:
 +
@@ -108,24 +108,24 @@ For example:
 <html>
 
   <head>
-    <title>{{site.productname}} Demo</title>
+    <title>{productname} Demo</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
 
   <body>
-    <h1>{{site.productname}} Demo</h1>
+    <h1>{productname} Demo</h1>
     <!-- Text area matching the selector specified in the TinyMCE configuration -->
-    <textarea id="my-expressjs-{{site.prodnamecode}}-app">Hello, World!</textarea>
+    <textarea id="my-expressjs-{prodnamecode}-app">Hello, World!</textarea>
   </body>
 
   <!-- Script element sourcing TinyMCE -->
   <script type="application/javascript" src= "/tinymce/tinymce.min.js"></script>
   <!-- Script element sourcing the TinyMCE configuration -->
-  <script type="application/javascript" src= "/javascripts/my-{{site.prodnamecode}}-config.js"></script>
+  <script type="application/javascript" src= "/javascripts/my-{prodnamecode}-config.js"></script>
 </html>
 ----
 . Test the application using the Node.js development server.
-* To start the development server, navigate to the `+my_{{site.prodnamecode}}_app+` directory and run:
+* To start the development server, navigate to the `+my_{prodnamecode}_app+` directory and run:
 +
 [source,sh]
 ----
@@ -137,5 +137,5 @@ npm start
 == Next Steps
 
 * For information on customizing:
-** \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
 ** The Express JS application, see: https://expressjs.com/[the Express JS Documentation].

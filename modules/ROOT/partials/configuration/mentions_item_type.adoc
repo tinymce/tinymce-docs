@@ -5,7 +5,7 @@ This option sets which user interface item type to use when displaying the list 
 * The `+name+` item will only display the user's name.
 * The `+profile+` item will display the user's name and can display an optional image and description.
 
-For information on the properties required for the user object provided to link:#mentions_fetch[`+mentions_fetch+`], see: link:#userproperties[User properties].
+For information on the properties required for the user object provided to <<mentions_fetch, `+mentions_fetch+`>>, see: <<userproperties, User properties>>.
 
 Type : `+String+`
 
@@ -26,7 +26,7 @@ tinymce.init({
 
 === User properties
 
-The following table describes the properties available for user objects provided to the link:#mentions_fetch[`+mentions_fetch+` callback]. Properties may be required, optional, or not available; depending on the link:#mentions_item_type[`+mentions_item_type+`] and link:#mentions_select[`+mentions_select+`] options.
+The following table describes the properties available for user objects provided to the <<mentions_fetch, `+mentions_fetch+` callback>>. Properties may be required, optional, or not available; depending on the <<mentions_item_type, `+mentions_item_type+`>> and <<mentions_select, `+mentions_select+`>> options.
 
 [cols=",,,,",options="header",]
 |===

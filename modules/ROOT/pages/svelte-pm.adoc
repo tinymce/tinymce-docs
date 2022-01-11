@@ -1,5 +1,11 @@
 = Using the TinyMCE package with the Svelte framework
 
-:title_nav: Using a package manager :description: A guide on integrating the TinyMCE package into the Svelte framework. :keywords: integration integrate svelte svelteapp
+:title_nav: Using a package manager
 
-\{% assign productSource = "package-manager" %} \{% include integrations/svelte-quick-start.md %}
+:description: A guide on integrating the TinyMCE package into the Svelte framework.
+:keywords: integration integrate svelte svelteapp
+
+:productSource: package-manager
+
+
+include::partial$integrations/svelte-quick-start.adoc[]

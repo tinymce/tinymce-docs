@@ -1,9 +1,12 @@
 = TinyMCE Skin options
 
-:title_nav: Skins :description: Configure the editor's overall appearance.
+:title_nav: Skins
 
-\{% include misc/skin-or-skin_url.md %}
+:description: Configure the editor's overall appearance.
 
-\{% include configuration/skin.md %}
 
-\{% include configuration/skin_url.md %}
+include::partial$misc/skin-or-skin_url.adoc[]
+
+include::partial$configuration/skin.adoc[]
+
+include::partial$configuration/skin_url.adoc[]

@@ -69,7 +69,7 @@ export default function App() {
 ----
 +
 This JavaScript file will create a component "`+App+`" containing a \{\{site.productname}} editor configured with basic features. \{% if productSource == "cloud" %}
-. Include the `+apiKey+` option in the editor element and include your link:{{site.accountsignup}}/[\{\{site.cloudname}} API key].
+. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[\{\{site.cloudname}} API key].
 +
 Such as:
 +
@@ -80,16 +80,16 @@ Such as:
 
 \{% elsif productSource == "package-manager" %} 5. Bundle \{\{site.productname}} with the React application using a module loader (such as Webpack).
 
-\{% include integrations/bundling-integration.md package='tinymce-react' depth='1' %} \{% else %} 5. \{\{site.productname}} can be self-hosted by either: link:#deployingtinymceindependent[Deploying \{\{site.productname}} independent of the React application], or link:#bundle[Bundling \{\{site.productname}} with the React application]. * Deploying \{\{site.productname}} independent of the React application. To use a \{\{site.productname}} instance that has been deployed independent of the React application, use: link:#usingthetinyscriptsrcprop[the `+tinymceScriptSrc+` prop], or link:#usinganhtmlscripttag[an HTML `+<script>+` tag]. * Using the `+tinymceScriptSrc+` prop:
+\{% include integrations/bundling-integration.md package='tinymce-react' depth='1' %} \{% else %} 5. \{\{site.productname}} can be self-hosted by either: <<deployingtinymceindependent, Deploying \{\{site.productname}} independent of the React application>>, or <<bundle, Bundling \{\{site.productname}} with the React application>>. * Deploying \{\{site.productname}} independent of the React application. To use a \{\{site.productname}} instance that has been deployed independent of the React application, use: <<usingthetinyscriptsrcprop, the `+tinymceScriptSrc+` prop>>, or <<usinganhtmlscripttag, an HTML `+<script>+` tag>>. * Using the `+tinymceScriptSrc+` prop:
 
 ....
-        1. To use an independent deployment of {{site.productname}}, add the `tinymceScriptSrc` prop to specify the path to the {{site.productname}} script, such as:
+        1. To use an independent deployment of {productname}, add the `tinymceScriptSrc` prop to specify the path to the {productname} script, such as:
 
             ```jsx
             <Editor tinymceScriptSrc="/path/to/tinymce.min.js" />
             ```
 
-        1. To use `tinymceScriptSrc` with the `create-react-app` project, put the {{site.productname}} distribution in `./public` folder and reference the path to the `public` folder using the environment variable `process.env.PUBLIC_URL`, such as:
+        1. To use `tinymceScriptSrc` with the `create-react-app` project, put the {productname} distribution in `./public` folder and reference the path to the `public` folder using the environment variable `process.env.PUBLIC_URL`, such as:
 
             ```jsx
             <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
@@ -104,7 +104,7 @@ Such as:
             <script src="/path/to/tinymce.min.js"></script>
             ```
 
-        1. To use the independently sourced {{site.productname}} with create-react-app, add the script tag to `./public/index.html`.
+        1. To use the independently sourced {productname} with create-react-app, add the script tag to `./public/index.html`.
 
             Normally the `tinymce` distribution would be put in the `public` folder and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
 
@@ -113,7 +113,7 @@ Such as:
             ```
 
 <a id="bundle" class="anchor"></a>
-* Bundle {{site.productname}} with the React application using a module loader (such as Webpack).
+* Bundle {productname} with the React application using a module loader (such as Webpack).
 ....
 
 \{% include integrations/bundling-integration.md package='tinymce-react' depth='2' %} \{% endif %} 6. Test the application using the Node.js development server. * To start the development server, navigate to the `+tinymce-react-demo+` directory and run:
@@ -151,6 +151,6 @@ ____
 
 * For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 * For information on customizing:
-** \{\{site.productname}} integration, see: link:{{site.baseurl}}/how-to-guides/environment-setup/react/react-ref/[React framework Technical Reference].
-** \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** \{\{site.productname}} integration, see: link:{baseurl}/how-to-guides/environment-setup/react/react-ref/[React framework Technical Reference].
+** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
 ** The React application, see: https://create-react-app.dev/docs/getting-started[Create React App] or https://reactjs.org/docs/getting-started.html[the React documentation].

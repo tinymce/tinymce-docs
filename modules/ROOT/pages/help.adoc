@@ -1,8 +1,15 @@
 = Help plugin
 
-:title_nav: Help :description: Shows the help dialog. :keywords: help :controls: toolbar button, menu item
+:title_nav: Help
 
-\{% assign pluginname = "Help" %} \{% assign plugincode = "help" %}
+:description: Shows the help dialog.
+:keywords: help
+:controls: toolbar button, menu item
+
+:pluginname: Help
+
+:plugincode: help
+
 
 The help plugin adds a button and/or menu item that opens a dialog showing two tabs:
 
@@ -26,14 +33,14 @@ tinymce.init({
 
 == Config Options
 
-\{% include configuration/help_tabs.md %}
+include::partial$configuration/help_tabs.adoc[]
 
 == API
 
 [cols=",,",options="header",]
 |===
 |Name |Arguments |Description
-|addTab |tabSpec: link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel[TabPanel] |Register a tab for the Help dialog
+|addTab |tabSpec: link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#tabpanel[TabPanel] |Register a tab for the Help dialog
 |===
 
 === Example: Using the `+addTab+` API
@@ -56,12 +63,12 @@ tinymce.activeEditor.plugins.help.addTab({
 
 For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the [Creating a Plugin page](\{\{ site.baseurl }}/how-to-guides/creating-custom-ui-components/making-plugins/creating-a-plugin/#exposingmetadata).
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Help plugin provides the following \{\{site.productname}} command.
 
-\{% include commands/help-cmds.md %}
+include::partial$commands/help-cmds.adoc[]

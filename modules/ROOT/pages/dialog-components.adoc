@@ -1,12 +1,15 @@
 = Custom dialog body components
 
-:title_nav: Body components :description: A reference list of all TinyMCE dialog components. :keywords: dialog dialogapi
+:title_nav: Body components
 
-The body of a dialog must be either a `+panel+` (a single panel) or a `+tabpanel+` (a collection of panels). Each panel can contain panel components, which are either link:#layoutcomponents[layout components] or link:#basiccomponents[basic components] such as inputs, buttons and text.
+:description: A reference list of all TinyMCE dialog components.
+:keywords: dialog dialogapi
+
+The body of a dialog must be either a `+panel+` (a single panel) or a `+tabpanel+` (a collection of panels). Each panel can contain panel components, which are either <<layoutcomponents, layout components>> or <<basiccomponents, basic components>> such as inputs, buttons and text.
 
 == panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for link:#panelcomponents[interactive panel components]. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for <<panelcomponents, interactive panel components>>. A panel type dialog only has one panel.
 
 [source,js]
 ----
@@ -18,7 +21,7 @@ The basic dialog type is a *panel* dialog. A panel is a container for link:#pane
 
 == tabpanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different link:#panelcomponents[panel components], allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different <<panelcomponents, panel components>>, allowing for complex dialogs.
 
 Each tab panel is defined using the following configuration options:
 
@@ -27,11 +30,11 @@ Each tab panel is defined using the following configuration options:
 |Name |Type |Requirement |Description
 |name |string |optional |A identifier for the tab. If not specified, the tab will be assigned a randomly generated name.
 |title |string |required |The title of the tab for the navigation menu.
-|items |array |required |An array of link:#panelcomponents[panel components] to display inside the panel.
+|items |array |required |An array of <<panelcomponents, panel components>> to display inside the panel.
 |===
 
 ____
-*Note*: Panel components in different tabs with the same `+name+` will use the same value in the link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+*Note*: Panel components in different tabs with the same `+name+` will use the same value in the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 ____
 
 [source,js]
@@ -51,11 +54,11 @@ ____
 
 === Dialog instance API methods
 
-The link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods[dialog instance API] contains the `+showTab("tabName")+` method, which allows for programmatic tab switching using the registered `+name+` of a tab.
+The link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods[dialog instance API] contains the `+showTab("tabName")+` method, which allows for programmatic tab switching using the registered `+name+` of a tab.
 
 === Dialog configuration event callbacks
 
-A dialog can be configured with an link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
+A dialog can be configured with an link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-configuration/#configurationoptions[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
 
 As an example of when this is useful, the `+charmap+` and `+emoticons+` plugin dialogs use `+newTabName+` to change search results to match the character or emoticon category represented by the current tab.
 
@@ -85,10 +88,10 @@ const dialogConfig = {
 
 == Panel components
 
-Panels can contain link:#layoutcomponents[layout components] and link:#basiccomponents[basic components], which include components for displaying information and user interaction and input.
+Panels can contain <<layoutcomponents, layout components>> and <<basiccomponents, basic components>>, which include components for displaying information and user interaction and input.
 
 ____
-*Note*: Panel components in different tabs with the same `+name+` will use the same value in the link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+*Note*: Panel components in different tabs with the same `+name+` will use the same value in the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 ____
 
 == Layout components
@@ -109,7 +112,7 @@ A *bar* is a layout component that creates a single row of items in the dialog b
 
 === collection
 
-A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:{{site.baseurl}}/plugins-ref/opensource/charmap/[`+charmap+`] and link:{{site.baseurl}}/plugins-ref/opensource/emoticons/[`+emoticons+`] plugins.
+A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:{baseurl}/plugins-ref/opensource/charmap/[`+charmap+`] and link:{baseurl}/plugins-ref/opensource/emoticons/[`+emoticons+`] plugins.
 
 [source,js]
 ----
@@ -120,7 +123,7 @@ A *collection* is a layout component that creates a panel containing a collectio
 }
 ----
 
-To populate the collection with collection items, specify an array of items in the dialog's link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[`+initialData+`] property. To update the items in the collection, use the link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[`+initialData+`] property. To update the items in the collection, use the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
 
 [source,js]
 ----
@@ -181,7 +184,8 @@ Clicking the icon in the alert banner will fire the `+onAction+` function in the
 |type |`+'alertbanner'+` |required |The component type. Must be `+'alertbanner'+`.
 |text |string |required |HTML text to display in the alertbanner.
 |level |`+'info'+`, `+'warn'+`, `+'error'+` or `+'success'+` |required |The alertbanner's level, which determines its styling.
-|icon |string |required |\{% include /misc/admon_predefined_icons_only.md %}
+|icon |string |required |
+include::partial$misc/admon_predefined_icons_only[]
 |url |string |optional |A URL that is passed to `+onAction+` when the icon button is clicked.
 |===
 
@@ -198,10 +202,10 @@ Clicking the icon in the alert banner will fire the `+onAction+` function in the
 
 === button
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/customize-ui/#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{baseurl}/how-to-guides/customizing-the-editor-appearance/customize-ui/#skins[skin].
 
 ____
-*Note*: Panel buttons are different to link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-footer-buttons/[dialog footer buttons].
+*Note*: Panel buttons are different to link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-footer-buttons/[dialog footer buttons].
 ____
 
 *Events:* Interacting with a *button* component will fire the `+onAction+` function in the dialog's configuration, and pass it the button's `+name+` in the `+details+` object. This allows developers to create a click handler for each button.
@@ -212,7 +216,8 @@ ____
 |type |`+'button'+` |required |The component type. Must be `+'button'+`.
 |text |string |required |Text to display in the button *if icon is not specified*. Also used for the button's `+title+` attribute.
 |name |string |optional |A identifier for the button. If not specified, the button will be assigned a randomly generated name.
-|icon |string |optional |\{% include /misc/admon_predefined_icons_only.md %} *When configured, the button will display the icon instead of text.*
+|icon |string |optional |
+include::partial$misc/admon_predefined_icons_only[] *When configured, the button will display the icon instead of text.*
 |primary |boolean |optional |default: `+false+` - Whether to style the button as a primary or secondary button.
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.
 |===
@@ -310,7 +315,7 @@ ____
 An *iframe* component takes an HTML document as a string and displays it in the dialog within an iframe.
 
 ____
-*Note*: To replace the entire dialog body with an iframe that loads its content from a URL, use a link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/urldialog/[URL dialog].
+*Note*: To replace the entire dialog body with an iframe that loads its content from a URL, use a link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/urldialog/[URL dialog].
 ____
 
 [cols=",,,",options="header",]
@@ -332,7 +337,7 @@ ____
 }
 ----
 
-To set the iframe's content on dialog open, specify document HTML as a string in the dialog's link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[`+initialData+`] property. To update the iframe's content, use the link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods[dialog API's] `+setData()+` method. For example:
+To set the iframe's content on dialog open, specify document HTML as a string in the dialog's link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-apis/#dialogdataandstate[`+initialData+`] property. To update the iframe's content, use the link:{baseurl}/how-to-guides/creating-custom-ui-components/dialogs/dialog-components/#dialoginstanceapimethods[dialog API's] `+setData()+` method. For example:
 
 [source,js]
 ----
@@ -482,7 +487,7 @@ A *textarea* is a multiline text field.
 A *urlinput* is a specialized composite component for URL input or file upload. It has a label, a text input field and an optional filepicker button. The urlinput component also includes a *typeahead* dropdown that will display previously-entered URLs that match the current input text and update as the user types.
 
 ____
-*Note*: The filepicker button will only appear if link:{{site.baseurl}}/content/file-image-upload/#file_picker_callback[`+file_picker_callback+`] is configured.
+*Note*: The filepicker button will only appear if link:{baseurl}/content/file-image-upload/#file_picker_callback[`+file_picker_callback+`] is configured.
 ____
 
 *Events:* Interacting with a *selectbox* component will fire the `+onChange+` function in the dialog's configuration *when the user clicks away from the component*.

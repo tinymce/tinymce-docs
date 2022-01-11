@@ -1,6 +1,9 @@
 = Required configuration for the server-side components
 
-:title_nav: Required configuration :description: Configuration options for premium server-side components.
+:title_nav: Required configuration
+
+:description: Configuration options for premium server-side components.
+
 
 == Creating a configuration file
 
@@ -23,7 +26,7 @@ The Enhanced Media Embed server-side component require additional configuration,
 The `+allowed-origins+` element configures a list of *all* values that can be expected by the server-side components in a HTTP Origin header from your \{\{site.productname}} instances (see the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin[Mozilla Developer Network] for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your \{\{site.productname}} instances will be served from without the path information.
 
 ____
-*Important:* When the services are matching against the `+allowed-origins+` list, the `+scheme+` (e.g. http) and the `+port+` (e.g. 800) are *ignored* by default. Customize this using link:#allowed-originsignore-portoptional[`+ephox.allowed-origins.ignore-port+`] option.
+*Important:* When the services are matching against the `+allowed-origins+` list, the `+scheme+` (e.g. http) and the `+port+` (e.g. 800) are *ignored* by default. Customize this using <<allowed-originsignore-portoptional, `+ephox.allowed-origins.ignore-port+`>> option.
 ____
 
 This is best illustrated with some examples:
@@ -109,7 +112,7 @@ ephox {
 
 === Regular Expressions support
 
-Regular expressions can be used alongside link:#wildcardsupport[wildcards] for specifying `+allowed-origins.origins+`. To use a regular expression, start and end the expression with the forward-slash `+'/'+` character.
+Regular expressions can be used alongside <<wildcardsupport, wildcards>> for specifying `+allowed-origins.origins+`. To use a regular expression, start and end the expression with the forward-slash `+'/'+` character.
 
 For example:
 

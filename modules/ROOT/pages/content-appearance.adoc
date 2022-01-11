@@ -1,19 +1,22 @@
 = Content appearance options
 
-:title_nav: Content appearance :description: Configure the appearance of content inside TinyMCE's editable area.
+:title_nav: Content appearance
+
+:description: Configure the appearance of content inside TinyMCE's editable area.
+
 
 == Showing for "hidden" elements
 
-#\{% include configuration/visual.md %}
+include::partial$configuration/visual.adoc[leveloffset=+1]
 
-#\{% include configuration/visual_anchor_class.md %}
+include::partial$configuration/visual_anchor_class.adoc[leveloffset=+1]
 
-#\{% include configuration/visual_table_class.md %}
+include::partial$configuration/visual_table_class.adoc[leveloffset=+1]
 
 == Showing "hidden" characters
 
-To enable visual aids for "hidden" characters, see: link:{{site.baseurl}}/plugins-ref/opensource/visualchars/[The Visual Characters plugin]
+To enable visual aids for "hidden" characters, see: link:{baseurl}/plugins-ref/opensource/visualchars/[The Visual Characters plugin]
 
 == Outlining block elements
 
-To enable outlines for block elements, see: link:{{site.baseurl}}/plugins-ref/opensource/visualblocks/[The Visual Blocks plugin].
+To enable outlines for block elements, see: link:{baseurl}/plugins-ref/opensource/visualblocks/[The Visual Blocks plugin].

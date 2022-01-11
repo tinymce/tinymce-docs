@@ -72,13 +72,13 @@ export class AppModule { }
 +
 [source,jsx]
 ----
-<h1>{{site.productname}} {{site.productmajorversion}} Angular Demo</h1>
+<h1>{productname} {productmajorversion} Angular Demo</h1>
 <editor
   [init]="{ plugins: 'lists link image table code help wordcount' }"
 ></editor>
 ----
 
-\{% if productSource == "cloud" %} 7. Include the `+apiKey+` option in the editor element and include your link:{{site.accountsignup}}/[\{\{site.cloudname}} API key].
+\{% if productSource == "cloud" %} 7. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[\{\{site.cloudname}} API key].
 
 ....
 Such as:
@@ -195,6 +195,6 @@ ____
 
 * For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 * For information on customizing:
-** \{\{site.productname}} integration, see: link:{{site.baseurl}}/how-to-guides/environment-setup/angular/angular-ref/[Angular framework Technical Reference].
-** \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** \{\{site.productname}} integration, see: link:{baseurl}/how-to-guides/environment-setup/angular/angular-ref/[Angular framework Technical Reference].
+** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
 ** The Angular application, see: https://angular.io/docs[the Angular documentation].

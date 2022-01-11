@@ -1,7 +1,12 @@
 = Using the TinyMCE package with the Angular framework
 
-:title_nav: Using a package manager :description: A guide on integrating the TinyMCE package into the Angular framework. :keywords: integration integrate angular
+:title_nav: Using a package manager
 
-\{% assign productSource = "package-manager" %}
+:description: A guide on integrating the TinyMCE package into the Angular framework.
+:keywords: integration integrate angular
 
-\{% include integrations/angular-quick-start.md %}
+:productSource: package-manager
+
+
+
+include::partial$integrations/angular-quick-start.adoc[]

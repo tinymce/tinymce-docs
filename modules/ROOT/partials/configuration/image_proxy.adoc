@@ -1,8 +1,8 @@
-\{% if plugincode == "export" %} \{% assign proxy_setting_name = "export_image_proxy" %}
+\{% if plugincode == "export" %} :proxy_setting_name: export_image_proxy
 
 == `+export_image_proxy+`
 
-\{% else %} \{% assign proxy_setting_name = "imagetools_proxy" %}
+\{% else %} :proxy_setting_name: imagetools_proxy
 
 == `+imagetools_proxy+`
 
@@ -10,7 +10,7 @@
 
 This option can be used as a way of getting images across domains using a local server-side proxy. A proxy is basically a script, that will retrieve a remote image and pipe it back to \{\{site.productname}}, as if it was a local image. An example of such a proxy (written in PHP) can be found below.
 
-link:{{site.pricingpage}}/[Paid TinyMCE subscriptions] also includes a proxy service written in Java. Check the link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/[Install Server-side Components] guide for details.
+link:{pricingpage}/[Paid TinyMCE subscriptions] also includes a proxy service written in Java. Check the link:{baseurl}/how-to-guides/premium-server-side-guide/[Install Server-side Components] guide for details.
 
 ____
 *Note*: `+{{proxy_setting_name}}+` is *not* required when enabling this plugin via [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/editor-and-features/).

@@ -1,8 +1,15 @@
 = Character Map plugin
 
-:title_nav: Character Map :description: Insert special characters into TinyMCE. :keywords: charmap symbols :controls: toolbar button, menu item
+:title_nav: Character Map
 
-\{% assign pluginname = "Character Map" %} \{% assign plugincode = "charmap" %}
+:description: Insert special characters into TinyMCE.
+:keywords: charmap symbols
+:controls: toolbar button, menu item
+
+:pluginname: Character Map
+
+:plugincode: charmap
+
 
 This plugin adds a dialog to the editor with a map of special unicode characters, which cannot be added directly from the keyboard. The dialog can be invoked via a toolbar button - `+charmap+` - or a dedicated menu item added as `+Insert > Special character+`.
 
@@ -37,16 +44,16 @@ Internally, character map is defined by the array of arrays, where each sub-arra
 ];
 ----
 
-\{% include configuration/charmap.md %}
+include::partial$configuration/charmap.adoc[]
 
-\{% include configuration/charmap_append.md %}
+include::partial$configuration/charmap_append.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Character Map plugin provides the following \{\{site.productname}} command.
 
-\{% include commands/charmap-cmds.md %}
+include::partial$commands/charmap-cmds.adoc[]

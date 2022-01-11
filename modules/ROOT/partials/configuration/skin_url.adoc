@@ -10,6 +10,6 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  skin_url: '/css/my{{site.prodnamecode}}skin'
+  skin_url: '/css/my{prodnamecode}skin'
 });
 ----

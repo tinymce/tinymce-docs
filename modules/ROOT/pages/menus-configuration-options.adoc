@@ -1,39 +1,42 @@
 = Options for customizing the editor's menus
 
-:title_nav: Options :description: Information on options for customizing TinyMCE's menus
+:title_nav: Options
+
+:description: Information on options for customizing TinyMCE's menus
+
 
 == Basic menu configuration options
 
-#\{% include configuration/menubar.md %}
+include::partial$configuration/menubar.adoc[leveloffset=+1]
 
-#\{% include configuration/menu.md %}
+include::partial$configuration/menu.adoc[leveloffset=+1]
 
-#\{% include configuration/removed_menuitems.md %}
+include::partial$configuration/removed_menuitems.adoc[leveloffset=+1]
 
 == Main editor menubar behavior
 
 The following "toolbar" options also affect the behavior of the menubar.
 
-#\{% include configuration/toolbar_location.md %}
+include::partial$configuration/toolbar_location.adoc[leveloffset=+1]
 
-#\{% include configuration/toolbar_sticky.md %}
+include::partial$configuration/toolbar_sticky.adoc[leveloffset=+1]
 
-#\{% include configuration/toolbar_sticky_offset.md %}
+include::partial$configuration/toolbar_sticky_offset.adoc[leveloffset=+1]
 
 == Persistent inline editor menubar options
 
 The following persistant "toolbar" options also provide a persistant menubar unless the menubar is disabled.
 
-#\{% include configuration/toolbar_persist.md %}
+include::partial$configuration/toolbar_persist.adoc[leveloffset=+1]
 
-#\{% include configuration/fixed_toolbar_container.md %}
+include::partial$configuration/fixed_toolbar_container.adoc[leveloffset=+1]
 
-#\{% include configuration/fixed_toolbar_container_target.md %}
+include::partial$configuration/fixed_toolbar_container_target.adoc[leveloffset=+1]
 
 == Contextual (content-specific) menus
 
-#\{% include configuration/contextmenu.md %}
+include::partial$configuration/contextmenu.adoc[leveloffset=+1]
 
-#\{% include configuration/contextmenu_avoid_overlap.md %}
+include::partial$configuration/contextmenu_avoid_overlap.adoc[leveloffset=+1]
 
-#\{% include configuration/contextmenu_never_use_native.md %}
+include::partial$configuration/contextmenu_never_use_native.adoc[leveloffset=+1]

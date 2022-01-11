@@ -1,6 +1,9 @@
 = Google Drive integration
 
-:title_nav: Google Drive :description: Guide for setting up Tiny Drive with Google Drive. :keywords: google drive
+:title_nav: Google Drive
+
+:description: Guide for setting up Tiny Drive with Google Drive.
+:keywords: google drive
 
 == Overview
 
@@ -57,7 +60,7 @@ Click on the `+Create credentials+` button then on `+OAuth client ID+` item:
 [[6-configure-tinydrive-to-use-the-new-google-drive-credentials]]
 === 6. Configure tinydrive to use the new Google Drive credentials
 
-The Google Drive API key can be configured by setting the link:{{site.baseurl}}/plugins-ref/premium/tinydrive/configuration/dropbox-and-google-drive/#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the link:{{site.baseurl}}/plugins-ref/premium/tinydrive/configuration/dropbox-and-google-drive/#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
+The Google Drive API key can be configured by setting the link:{baseurl}/plugins-ref/premium/tinydrive/configuration/dropbox-and-google-drive/#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the link:{baseurl}/plugins-ref/premium/tinydrive/configuration/dropbox-and-google-drive/#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
 
 [source,js]
 ----
@@ -70,14 +73,14 @@ tinymce.init({
 });
 ----
 
-For information on other \{\{site.cloudfilemanager}} config options refer to the link:{{site.baseurl}}/plugins-ref/premium/tinydrive/configuration/[configuration] section of this document.
+For information on other \{\{site.cloudfilemanager}} config options refer to the link:{baseurl}/plugins-ref/premium/tinydrive/configuration/[configuration] section of this document.
 
 [[7-tiny-drive-ui]]
 === 7. Tiny Drive UI
 
 [arabic]
-. From the \{\{site.productname}} user interface, click on the image:{{site.baseurl}}/images/insertimage.png[Insert/edit image] button to access the \{\{site.cloudfilemanager}} user interface.
-. Click on the image:{{site.baseurl}}/images/upload.png[Upload/Create] button to select Google Drive from the list of storages.
+. From the \{\{site.productname}} user interface, click on the image:{baseurl}/images/insertimage.png[Insert/edit image] button to access the \{\{site.cloudfilemanager}} user interface.
+. Click on the image:{baseurl}/images/upload.png[Upload/Create] button to select Google Drive from the list of storages.
 . Select the file to upload/import from Google Drive by clicking on the radio button next to it. Alternatively, to directly insert the file into the editor, double-click on it.
 . Choose *Save* to upload/import the selected file/files to \{\{site.cloudfilemanager}}.
 
@@ -100,4 +103,4 @@ Read more about these options https://gsuite.google.com/learning-center/products
 
 Here is an interactive example of Google Drive enabled on \{\{site.cloudfilemanager}}.
 
-\{% include live-demo.html id="drive-demo-googledrive" %}
+liveDemo::drive-demo-googledrive[ ]

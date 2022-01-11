@@ -1,6 +1,9 @@
 = Cloud Troubleshooting
 
-:description_short: Troubleshooting errors shown by the Tiny Cloud :description: Causes and solutions to common issues when using Tiny Cloud :keywords: tinymce cloud script textarea apiKey troubleshooting banners domain referer
+:description_short: Troubleshooting errors shown by the Tiny Cloud
+
+:description: Causes and solutions to common issues when using Tiny Cloud
+:keywords: tinymce cloud script textarea apiKey troubleshooting banners domain referer
 
 When \{\{site.cloudname}} detects a problem, it will show an editor notification containing information about the problem. This page describes the cause and solution for common \{\{site.cloudname}} error notifications.
 
@@ -22,7 +25,7 @@ Such as:
 
 [source,html]
 ----
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
 === Solution
@@ -34,7 +37,7 @@ Update the `+src+` URL to include your (website or application developer's) \{\{
 <script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
-To retrieve your API key, or to sign up for an API key, visit: link:{{site.accountsignup}}/[\{\{site.cloudname}}].
+To retrieve your API key, or to sign up for an API key, visit: link:{accountsignup}/[\{\{site.cloudname}}].
 
 [[the-api-key-you-have-entered-is-invalid-please-review-your-api-key]]
 == "The API key you have entered is invalid. Please review your API key."
@@ -47,7 +50,7 @@ The `+apiKey+` must be:
 
 * An exact length,
 * comprised of certain characters, and
-* created with a \{\{site.cloudname}} account on the link:{{site.accountsignup}}/[\{\{site.accountpage}} page].
+* created with a \{\{site.cloudname}} account on the link:{accountsignup}/[\{\{site.accountpage}} page].
 
 === Solution
 
@@ -62,7 +65,7 @@ Check the `+apiKey+` provided in the script tag:
 
 === Cause
 
-This notification is shown when the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer[*Referer*] of the page does not match the list of approved domains stored against your `+apiKey+`. \{\{site.cloudname}} verifies the domain \{\{site.productname}} is loading from by checking the domain portion of the *Referer* header in the network request. You can view a list of your approved domains on your link:{{site.accountpageurl}}/[\{\{site.accountpage}}].
+This notification is shown when the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer[*Referer*] of the page does not match the list of approved domains stored against your `+apiKey+`. \{\{site.cloudname}} verifies the domain \{\{site.productname}} is loading from by checking the domain portion of the *Referer* header in the network request. You can view a list of your approved domains on your link:{accountpageurl}/[\{\{site.accountpage}}].
 
 Sometimes the domain in the *Referer* header does not match with the URL in the browser's address bar. To check the *Referer* header:
 
@@ -72,11 +75,11 @@ Sometimes the domain in the *Referer* header does not match with the URL in the 
 . Find and select the request being made to load \{\{site.productname}} from \{\{site.cloudname}} with your API key.
 . Click on the *Headers* tab.
 
-In the section called *Request Headers* there should be a field for *Referer*. This is the value that \{\{site.productname}} is checking against your approved domains. It must match one of your approved domains listed on your link:{{site.accountpageurl}}/[\{\{site.accountpage}}].
+In the section called *Request Headers* there should be a field for *Referer*. This is the value that \{\{site.productname}} is checking against your approved domains. It must match one of your approved domains listed on your link:{accountpageurl}/[\{\{site.accountpage}}].
 
 === Solution
 
-If the `+Referer+` is correct for the site, ensure that the domain is included in your list of approved domains on link:{{site.accountpageurl}}/[\{\{site.accountpage}}]. If the `+Referer+` is not what you are expecting, you may need to adjust your application's https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer[*Referer* header] settings.
+If the `+Referer+` is correct for the site, ensure that the domain is included in your list of approved domains on link:{accountpageurl}/[\{\{site.accountpage}}]. If the `+Referer+` is not what you are expecting, you may need to adjust your application's https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer[*Referer* header] settings.
 
 [[were-unable-to-check-your-domain-because-the-referer-header-is-missing-please-read-the-guide-on-how-to-ensure-your-referer-header-is-present-so-we-can-then-customize-your-editor-experience]]
 == "We’re unable to check your domain because the referer header is missing. Please read the Guide on how to ensure your referer header is present, so we can then customize your editor experience."

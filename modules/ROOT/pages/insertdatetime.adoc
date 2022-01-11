@@ -1,8 +1,15 @@
 = Insert Date/Time plugin
 
-:title_nav: Insert Date/Time :description: Insert the current date and/or time into TinyMCE. :keywords: insertdatetime insertdatetime_dateformat insertdatetime_formats insertdatetime_timeformat insertdatetime_element dateformats :controls: toolbar button, menu item
+:title_nav: Insert Date/Time
 
-\{% assign pluginname = "Insert Date/Time" %} \{% assign plugincode = "insertdatetime" %}
+:description: Insert the current date and/or time into TinyMCE.
+:keywords: insertdatetime insertdatetime_dateformat insertdatetime_formats insertdatetime_timeformat insertdatetime_element dateformats
+:controls: toolbar button, menu item
+
+:pluginname: Insert Date/Time
+
+:plugincode: insertdatetime
+
 
 The `+insertdatetime+` plugin provides a toolbar control and menu item `+Insert date/time+` (under the `+Insert+` menu) that lets a user easily insert the current date and/or time into the editable area at the cursor insertion point.
 
@@ -22,22 +29,22 @@ tinymce.init({
 
 These settings affect the execution of the `+insertdatetime+` plugin. Formats for both dates and times can be set in these configuration options.
 
-\{% include configuration/insertdatetime_dateformat.md %}
+include::partial$configuration/insertdatetime_dateformat.adoc[]
 
-\{% include configuration/insertdatetime_formats.md %}
+include::partial$configuration/insertdatetime_formats.adoc[]
 
-\{% include configuration/insertdatetime_timeformat.md %}
+include::partial$configuration/insertdatetime_timeformat.adoc[]
 
-\{% include configuration/insertdatetime_element.md %}
+include::partial$configuration/insertdatetime_element.adoc[]
 
-\{% include configuration/ref_time_date_formats.md %}
+include::partial$configuration/ref_time_date_formats.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Insert Date/Time plugin provides the following \{\{site.productname}} commands.
 
-\{% include commands/insertdatetime-cmds.md %}
+include::partial$commands/insertdatetime-cmds.adoc[]

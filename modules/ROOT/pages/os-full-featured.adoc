@@ -1,15 +1,19 @@
 = Full featured demo: Non-Premium Plugins only
 
-:title_nav: Excluding premium features :description_short: Open source TinyMCE in action. :description: An example with all of the non-premium features. :keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
+:title_nav: Excluding premium features
 
-This example includes only non-premium plugins. These plugins are also used in the link:{{site.baseurl}}/demos/full-featured/premium-full-featured/[Full featured demo: Including Premium Plugins].
+:description_short: Open source TinyMCE in action.
+:description: An example with all of the non-premium features.
+:keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
 
-\{% include live-demo.html id="open-source-plugins" %}
+This example includes only non-premium plugins. These plugins are also used in the link:{baseurl}/demos/full-featured/premium-full-featured/[Full featured demo: Including Premium Plugins].
+
+liveDemo::open-source-plugins[ ]
 
 The following plugins are excluded from this example:
 
-* link:{{site.plugindirectory}}[All premium plugins].
-* link:{{site.baseurl}}/plugins-ref/opensource/autoresize/[Autoresize] — Resizes the editor to fit the content.
-* link:{{site.baseurl}}/plugins-ref/opensource/bbcode/[BBCode] — Changes the markup used for the content.
-* link:{{site.baseurl}}/plugins-ref/opensource/fullpage/[Full Page] — Used for modifying HTML `+<head>+` elements.
-* link:{{site.baseurl}}/plugins-ref/opensource/spellchecker/[Spellchecker] — Requires Server-Side components, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/spell-checking/[Check spelling in \{\{site.productname}}].
+* link:{plugindirectory}[All premium plugins].
+* link:{baseurl}/plugins-ref/opensource/autoresize/[Autoresize] — Resizes the editor to fit the content.
+* link:{baseurl}/plugins-ref/opensource/bbcode/[BBCode] — Changes the markup used for the content.
+* link:{baseurl}/plugins-ref/opensource/fullpage/[Full Page] — Used for modifying HTML `+<head>+` elements.
+* link:{baseurl}/plugins-ref/opensource/spellchecker/[Spellchecker] — Requires Server-Side components, see: link:{baseurl}/how-to-guides/learn-the-basics/spell-checking/[Check spelling in \{\{site.productname}}].

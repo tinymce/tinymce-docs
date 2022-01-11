@@ -1,6 +1,9 @@
 = Toolbar buttons
 
-:title_nav: Toolbar buttons :description: Add a custom buttons to the TinyMCE 6 toolbar. :keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
+:title_nav: Toolbar buttons
+
+:description: Add a custom buttons to the TinyMCE 6 toolbar.
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 == Use cases
 
@@ -50,4 +53,4 @@ tinymce.init({
 
 The following example creates different types of toolbar buttons.
 
-\{% include live-demo.html id="toolbar-button" height="400" %}
+liveDemo::toolbar-button[ height="400" ]

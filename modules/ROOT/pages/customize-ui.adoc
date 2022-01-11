@@ -1,6 +1,9 @@
 = Customizing the editor UI
 
-:title_nav: Customizing the UI :description: Learn how to change the appearance of TinyMCE. :keywords: themes skins statusbar
+:title_nav: Customizing the UI
+
+:description: Learn how to change the appearance of TinyMCE.
+:keywords: themes skins statusbar
 
 This section is about customizing \{\{site.productname}}'s user interface with skins, toolbar buttons, and manipulating the status bar.
 
@@ -87,13 +90,13 @@ tinymce.init({
 
 See the [max_height](\{\{ site.baseurl }}/initial-configuration/editor-size-options/#max_height), [max_width](\{\{ site.baseurl }}/initial-configuration/editor-size-options/#max_width), [min_height](\{\{ site.baseurl }}/initial-configuration/editor-size-options/#min_height), and [min_width](\{\{ site.baseurl }}/initial-configuration/editor-size-options/#min_width) documentation pages to learn more about these customization options.
 
-The editable area can also automatically resize itself as the user enters content into the iframe with the link:{{site.baseurl}}/plugins-ref/opensource/autoresize/[Autoresize plugin]. Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize](\{\{ site.baseurl }}/initial-configuration/editor-size-options/#resize) configuration option.
+The editable area can also automatically resize itself as the user enters content into the iframe with the link:{baseurl}/plugins-ref/opensource/autoresize/[Autoresize plugin]. Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize](\{\{ site.baseurl }}/initial-configuration/editor-size-options/#resize) configuration option.
 
 == Customizing the editable area with content_css
 
 Use the [`+content_css+`](\{\{ site.baseurl }}/content/add-css-options/#content_css) customization option to ensure that \{\{site.productname}}'s editable area has the same styling as the surrounding content.
 
-\{% include misc/shipped-content-css.md %}
+include::partial$misc/shipped-content-css.adoc[]
 
 The following example includes the file `+mycontent.css+` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
 

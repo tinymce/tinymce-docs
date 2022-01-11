@@ -1,7 +1,16 @@
 = Toolbar buttons and menu items for the PowerPaste plugin
 
-:title_nav: Toolbar buttons and menu items :description: Details of the toolbar buttons and menu items provided for the PowerPaste plugin. :keywords: enterprise powerpaste power paste microsoft word excel google docs
+:title_nav: Toolbar buttons and menu items
 
-\{% assign altplugincode = "paste" %} \{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+:description: Details of the toolbar buttons and menu items provided for the PowerPaste plugin.
+:keywords: enterprise powerpaste power paste microsoft word excel google docs
 
-\{% assign altplugincode = "paste" %} \{% include misc/plugin-menu-item-id-boilerplate.md %}
+:altplugincode: paste
+
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:altplugincode: paste
+
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

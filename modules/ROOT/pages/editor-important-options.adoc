@@ -1,55 +1,59 @@
 = Key editor options for adding TinyMCE to an application
 
-:title_nav: Integration options :description: Key editor options for integrating TinyMCE to an application :keywords:
+:title_nav: Integration options
+
+:description: Key editor options for integrating TinyMCE to an application
+:keywords:
 
 [[target-location-for-siteproductname]]
 == Target location for \{\{site.productname}}
 
-#\{% include configuration/selector.md %}
+include::partial$configuration/selector.adoc[leveloffset=+1]
 
-#\{% include configuration/target.md %}
+include::partial$configuration/target.adoc[leveloffset=+1]
 
 == Adding placeholder content to the editor
 
-#\{% include configuration/placeholder.md %}
+include::partial$configuration/placeholder.adoc[leveloffset=+1]
 
 == Focusing on the editor
 
-#\{% include configuration/taborder.md %}
+include::partial$configuration/taborder.adoc[leveloffset=+1]
 
-#\{% include configuration/auto_focus.md %}
+include::partial$configuration/auto_focus.adoc[leveloffset=+1]
 
-#\{% include configuration/custom_ui_selector.md %}
+include::partial$configuration/custom_ui_selector.adoc[leveloffset=+1]
 
 [[extend-siteproductname-with-plugins]]
 == Extend \{\{site.productname}} with plugins
 
-#\{% include misc/plugins-or-external_plugins.md %}
+include::partial$misc/plugins-or-external_plugins.adoc[leveloffset=+1]
 
-#\{% include configuration/plugins.md %}
+include::partial$configuration/plugins.adoc[leveloffset=+1]
 
-#\{% include configuration/external_plugins.md %}
+include::partial$configuration/external_plugins.adoc[leveloffset=+1]
 
 == Starting the editor in a read-only state
 
-#\{% include configuration/readonly.md %}
+include::partial$configuration/readonly.adoc[leveloffset=+1]
 
 == Executing custom functions while the editor starts (initializes)
 
-#\{% include configuration/setup.md %}
+include::partial$configuration/setup.adoc[leveloffset=+1]
 
-#\{% include configuration/init_instance_callback.md %}
+include::partial$configuration/init_instance_callback.adoc[leveloffset=+1]
 
 == Changing URL used to load the editor
 
-#\{% include configuration/base_url.md %}
+include::partial$configuration/base_url.adoc[leveloffset=+1]
 
-#\{% include configuration/cache_suffix.md %}
+include::partial$configuration/cache_suffix.adoc[leveloffset=+1]
 
-#\{% include configuration/content_security_policy.md %}
+include::partial$configuration/content_security_policy.adoc[leveloffset=+1]
 
-#\{% include configuration/referrer_policy.md %}
+include::partial$configuration/referrer_policy.adoc[leveloffset=+1]
 
-#\{% include configuration/suffix.md %}
+include::partial$configuration/suffix.adoc[leveloffset=+1]
 
-\{% comment %} Not documented, but probably belongs in a new section here somewhere. \{% include configuration/iframe_attrs.md %} \{% endcomment %}
+\{% comment %} Not documented, but probably belongs in a new section here somewhere.
+include::partial$configuration/iframe_attrs.adoc[] \{% endcomment %}

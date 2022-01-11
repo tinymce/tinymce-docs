@@ -4,9 +4,11 @@
 
 The \{\{pluginname}} plugin provides the following toolbar buttons:
 
-\{% if altplugincode %} \{% include toolbar-button-ids/\{\{altplugincode}}-toolbar-buttons.md %} \{% else %} \{% include toolbar-button-ids/\{\{plugincode}}-toolbar-buttons.md %} \{% endif %}
+\{% if altplugincode %}
+include::partial$toolbar-button-ids/\{\{altplugincode}}-toolbar-buttons.adoc[] \{% else %}
+include::partial$toolbar-button-ids/\{\{plugincode}}-toolbar-buttons.adoc[] \{% endif %}
 
-For information on the \{\{pluginname}} plugin, see: link:{{site.baseurl}}/plugins-ref/{{plugincategory}}/{{plugincode}}/[Plugins - The \{\{pluginname}} plugin]
+For information on the \{\{pluginname}} plugin, see: link:{baseurl}/plugins-ref/{{plugincategory}}/{{plugincode}}/[Plugins - The \{\{pluginname}} plugin]
 
 \{% else %}
 
@@ -14,8 +16,10 @@ For information on the \{\{pluginname}} plugin, see: link:{{site.baseurl}}/plugi
 
 The \{\{pluginname}} plugin provides the following toolbar buttons:
 
-\{% if altplugincode %} \{% include toolbar-button-ids/\{\{altplugincode}}-toolbar-buttons.md %} \{% else %} \{% include toolbar-button-ids/\{\{plugincode}}-toolbar-buttons.md %} \{% endif %}
+\{% if altplugincode %}
+include::partial$toolbar-button-ids/\{\{altplugincode}}-toolbar-buttons.adoc[] \{% else %}
+include::partial$toolbar-button-ids/\{\{plugincode}}-toolbar-buttons.adoc[] \{% endif %}
 
-\{% include misc/toolbar-button-settings.md %}
+include::partial$misc/toolbar-button-settings.adoc[]
 
-\{% endif %} \{% assign altplugincode = nil %}
+\{% endif %} :altplugincode: nil

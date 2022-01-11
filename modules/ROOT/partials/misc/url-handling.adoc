@@ -2,7 +2,7 @@
 
 === Relative URLs
 
-This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the link:#document_base_url[document_base_url].
+This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the <<document_base_url, document_base_url>>.
 
 [source,js]
 ----
@@ -17,15 +17,15 @@ Example: `+http://www.example.com/path1/path2/file.htm+` >> `+path2/file.htm+`
 
 ==== Example: Relative URLs on links and images
 
-\{% include live-demo.html id="url-conversion-relative-1" %}
+liveDemo::url-conversion-relative-1[ ]
 
 ==== Example: Relative URLs on links and images to a specific page
 
-\{% include live-demo.html id="url-conversion-relative-2" %}
+liveDemo::url-conversion-relative-2[ ]
 
 === Absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the link:#document_base_url[document_base_url].
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the <<document_base_url, document_base_url>>.
 
 [source,js]
 ----
@@ -41,15 +41,15 @@ Example: `+path2/file.htm+` >> `+/path1/path2/file.htm+`
 
 ==== Example: Absolute URLs on links and images
 
-\{% include live-demo.html id="url-conversion-absolute-1" %}
+liveDemo::url-conversion-absolute-1[ ]
 
 ==== Example: Absolute URLs and including domain on links and images
 
-\{% include live-demo.html id="url-conversion-absolute-2" %}
+liveDemo::url-conversion-absolute-2[ ]
 
 === Domain absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the link:#document_base_url[document_base_url] with domain.
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the <<document_base_url, document_base_url>> with domain.
 
 [source,js]
 ----

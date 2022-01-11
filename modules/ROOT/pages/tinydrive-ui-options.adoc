@@ -1,10 +1,16 @@
 = Configuring the Tiny Drive UI
 
-:title_nav: UI options :description: List of Tiny Drive user interface configuration options. :keywords: tinydrive configuration
+:title_nav: UI options
 
-\{% assign pluginname = "Tiny Drive" %} \{% assign plugincode = "tinydrive" %}
+:description: List of Tiny Drive user interface configuration options.
+:keywords: tinydrive configuration
 
-\{% include configuration/tinydrive_skin.md %}
+:pluginname: Tiny Drive
+
+:plugincode: tinydrive
+
+
+include::partial$configuration/tinydrive_skin.adoc[]
 
 == Configuring the Insert File toolbar button
 
@@ -25,6 +31,6 @@ tinymce.init({
 });
 ----
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

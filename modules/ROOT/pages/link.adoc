@@ -1,14 +1,21 @@
 = Link plugin
 
-:title_nav: Link :description: Add hyperlinks to content. :keywords: url urls insert edit link_default_target link_assume_external_targets link_class_list link_list link_target_list link_rel_list link_title :controls: toolbar button, menu item
+:title_nav: Link
 
-\{% assign pluginname = "Link" %} \{% assign plugincode = "link" %}
+:description: Add hyperlinks to content.
+:keywords: url urls insert edit link_default_target link_assume_external_targets link_class_list link_list link_target_list link_rel_list link_title
+:controls: toolbar button, menu item
+
+:pluginname: Link
+
+:plugincode: link
+
 
 The *link* plugin allows a user to link external resources such as website URLs, to selected text in their document.
 
 It adds two toolbar buttons called `+link+` and `+unlink+` and three menu items called `+link+`, `+unlink+` and `+openlink+`. The toolbar button and menu item called `+link+` are included in \{\{site.productname}}'s default configuration. The `+link+` menu item can be found in the `+Insert+` menu.
 
-The *link* plugin also includes a context menu and context toolbar. The context toolbar can be configured using the link:#link_context_toolbar[`+link_context_toolbar+`] and link:#link_quicklink[`+link_quicklink+`] options documented below.
+The *link* plugin also includes a context menu and context toolbar. The context toolbar can be configured using the <<link_context_toolbar, `+link_context_toolbar+`>> and <<link_quicklink, `+link_quicklink+`>> options documented below.
 
 == Basic setup
 
@@ -26,32 +33,32 @@ tinymce.init({
 
 These settings affect the execution of the `+link+` plugin. Predefined links, targets, and more can be specified here.
 
-\{% include configuration/link_default_target.md %}
+include::partial$configuration/link_default_target.adoc[]
 
-\{% include configuration/link_assume_external_targets.md %}
+include::partial$configuration/link_assume_external_targets.adoc[]
 
-\{% include configuration/link_class_list.md %}
+include::partial$configuration/link_class_list.adoc[]
 
-\{% include configuration/link_context_toolbar.md %}
+include::partial$configuration/link_context_toolbar.adoc[]
 
-\{% include configuration/link_default_protocol.md %}
+include::partial$configuration/link_default_protocol.adoc[]
 
-\{% include configuration/link_list.md %}
+include::partial$configuration/link_list.adoc[]
 
-\{% include configuration/link_title.md %}
+include::partial$configuration/link_title.adoc[]
 
-\{% include configuration/link_quicklink.md %}
+include::partial$configuration/link_quicklink.adoc[]
 
-\{% include configuration/link_rel_list.md %}
+include::partial$configuration/link_rel_list.adoc[]
 
-\{% include configuration/link_target_list.md %}
+include::partial$configuration/link_target_list.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Link plugin provides the following \{\{site.productname}} command.
 
-\{% include commands/link-cmds.md %}
+include::partial$commands/link-cmds.adoc[]

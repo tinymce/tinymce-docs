@@ -1,7 +1,12 @@
 = Installing TinyMCE with Bower
 
-:title_nav: Bower projects :description: Learn how to install TinyMCE using Bower. :keywords: bower javascript install
+:title_nav: Bower projects
 
-\{% assign productSource = 'bower' %}
+:description: Learn how to install TinyMCE using Bower.
+:keywords: bower javascript install
 
-\{% include install/basic-quickstart-base.md %}
+:productSource: bower
+
+
+
+include::partial$install/basic-quickstart-base.adoc[]

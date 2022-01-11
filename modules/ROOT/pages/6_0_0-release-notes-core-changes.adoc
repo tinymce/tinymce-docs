@@ -1,11 +1,14 @@
 = New features, enhancements, and changes for TinyMCE 6.0 core and core plugins
 
-:title_nav: Core improvements :description: New features, enhancements, and functionality changes for TinyMCE 6.0 :keywords: releasenotes bugfixes
+:title_nav: Core improvements
 
-* link:#newfeatures[New features]
-* link:#enhancements[Enhancements]
-* link:#functionalitychanges[Functionality changes]
-* link:#removedfunctionality[Removed functionality]
+:description: New features, enhancements, and functionality changes for TinyMCE 6.0
+:keywords: releasenotes bugfixes
+
+* <<newfeatures, New features>>
+* <<enhancements, Enhancements>>
+* <<functionalitychanges, Functionality changes>>
+* <<removedfunctionality, Removed functionality>>
 
 == New features
 
@@ -25,7 +28,7 @@ The following enhancements were made for the \{\{site.productname}} 6.0 release.
 
 === `+tabindex+` improvement
 
-In iframe (classic editor) mode, \{\{site.productname}} now copies the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute] from the target element to the editor's iframe. This accessibility improvement allows integrators to rely on the browser behavior for specifying tab order, instead of specially configuring \{\{site.productname}}. It also replaces the link:#tabfocusplugin[Tabfocus plugin].
+In iframe (classic editor) mode, \{\{site.productname}} now copies the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute] from the target element to the editor's iframe. This accessibility improvement allows integrators to rely on the browser behavior for specifying tab order, instead of specially configuring \{\{site.productname}}. It also replaces the <<tabfocusplugin, Tabfocus plugin>>.
 
 === Enhancement name
 
@@ -49,9 +52,9 @@ Integrators can remove `+hr+` from the `+plugins+` section of their \{\{site.pro
 
 For information about horizontal rule-related functionality, see:
 
-* link:{{site.baseurl}}/interface/toolbars/available-toolbar-buttons/#thecoretoolbarbuttons[Core toolbar buttons]
-* link:{{site.baseurl}}/interface/menus/available-menu-items/#thecoremenuitems[Core menu items]
-* link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/editor-command-identifiers/#coreeditorcommands[Core commands]
+* link:{baseurl}/interface/toolbars/available-toolbar-buttons/#thecoretoolbarbuttons[Core toolbar buttons]
+* link:{baseurl}/interface/menus/available-menu-items/#thecoremenuitems[Core menu items]
+* link:{baseurl}/how-to-guides/creating-custom-ui-components/editor-command-identifiers/#coreeditorcommands[Core commands]
 
 === Noneditable plugin moved to TinyMCE Core
 
@@ -61,9 +64,9 @@ Integrators can remove `+noneditable+` from the `+plugins+` section of their \{\
 
 For information about noneditable-related functionality, see:
 
-* link:{{site.baseurl}}/configure/content-filtering/#editable_class[Content filtering options - editable_class]
-* link:{{site.baseurl}}/configure/content-filtering/#noneditable_class[Content filtering options - noneditable_class]
-* link:{{site.baseurl}}/configure/content-filtering/#noneditable_regexp[Content filtering options - noneditable_regexp]
+* link:{baseurl}/configure/content-filtering/#editable_class[Content filtering options - editable_class]
+* link:{baseurl}/configure/content-filtering/#noneditable_class[Content filtering options - noneditable_class]
+* link:{baseurl}/configure/content-filtering/#noneditable_regexp[Content filtering options - noneditable_regexp]
 
 === Print plugin moved to TinyMCE Core
 
@@ -75,10 +78,10 @@ Integrators can remove `+print+` from the `+plugins+` section of their \{\{site.
 
 For information about print-related functionality, see:
 
-* link:{{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons[Core toolbar buttons]
-* link:{{site.baseurl}}/advanced/available-menu-items/#thecoremenuitems[Core menu items]
-* link:{{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands[Core commands]
-* link:{{site.baseurl}}/advanced/keyboard-shortcuts/#editorkeyboardshortcuts[Shortcuts]
+* link:{baseurl}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons[Core toolbar buttons]
+* link:{baseurl}/advanced/available-menu-items/#thecoremenuitems[Core menu items]
+* link:{baseurl}/advanced/editor-command-identifiers/#coreeditorcommands[Core commands]
+* link:{baseurl}/advanced/keyboard-shortcuts/#editorkeyboardshortcuts[Shortcuts]
 
 === Renamed Options
 
@@ -94,4 +97,4 @@ The following options have been renamed in \{\{site.productname}} 6.0:
 
 === Tabfocus plugin
 
-The `+tabfocus+` plugin has been removed in \{\{site.productname}} 6.0. The tab order of the elements in a page, including \{\{site.productname}}, should now be specified using the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute]. For information about configuring tab order, see: link:{{site.baseurl}}/configure/accessibility#taborder[Tab order].
+The `+tabfocus+` plugin has been removed in \{\{site.productname}} 6.0. The tab order of the elements in a page, including \{\{site.productname}}, should now be specified using the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute]. For information about configuring tab order, see: link:{baseurl}/configure/accessibility#taborder[Tab order].

@@ -1,7 +1,12 @@
 = Premium self-hosted bundle - Hyperlinking service container
 
-:title_nav: Hyperlinking service :description: How-to deploy the Hyperlinking service from the self-hosted bundle as a docker image.
+:title_nav: Hyperlinking service
 
-\{% assign shbundledockerfiles = true %}
+:description: How-to deploy the Hyperlinking service from the self-hosted bundle as a docker image.
 
-\{% include docker/dockerized-hyperlinking-service.md %}
+
+:shbundledockerfiles: true
+
+
+
+include::partial$docker/dockerized-hyperlinking-service.adoc[]

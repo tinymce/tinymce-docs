@@ -1,7 +1,11 @@
 = Context Menu Items Available for TinyMCE
 
-:title_nav: Available Context Menu Items :description_short: Complete list of available context menu sections. :description: Complete list of available context menu sections. :keywords: contextmenu
+:title_nav: Available Context Menu Items
 
-\{% include misc/available-context-menu-sections.md %}
+:description_short: Complete list of available context menu sections.
+:description: Complete list of available context menu sections.
+:keywords: contextmenu
 
-For information on customizing the context menu and adding custom context menu sections, see: link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/contextmenu/#availablecontextmenusections[Context menu].
+include::partial$misc/available-context-menu-sections.adoc[]
+
+For information on customizing the context menu and adding custom context menu sections, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/contextmenu/#availablecontextmenusections[Context menu].

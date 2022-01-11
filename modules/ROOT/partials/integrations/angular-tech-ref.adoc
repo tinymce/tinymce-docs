@@ -1,28 +1,28 @@
 *Covered in this section:*
 
-* link:#supportedangularversions[Supported Angular versions]
-* link:#installingthetinymceangularintegrationusingnpm[Installing the TinyMCE Angular integration using NPM]
-* link:#usingthetinymceangularintegration[Using the TinyMCE Angular integration]
-* link:#configuringtheeditor[Configuring the editor]
-** link:#apikey[`+apiKey+`]
-** link:#cloudchannel[`+cloudChannel+`]
-** link:#disabled[`+disabled+`]
-** link:#id[`+id+`]
-** link:#init[`+init+`]
-** link:#initialvalue[`+initialValue+`]
-** link:#inline[`+inline+`]
-** link:#outputformat[`+outputFormat+`]
-** link:#plugins[`+plugins+`]
-** link:#tagname[`+tagName+`]
-** link:#toolbar[`+toolbar+`]
-* link:#usingthengmodeldirective[Using the `+ngModel+` directive]
-** link:#modelevents[`+modelEvents+`]
-* link:#usingwithreactiveforms[Using with reactive forms]
-* link:#eventbinding[Event binding]
-** link:#supportedbrowserevents[Supported browser events]
-** link:#supportedtinymceevents[Supported TinyMCE events]
-** link:#allowedevents[`+allowedEvents+`]
-** link:#ignoreevents[`+ignoreEvents+`]
+* <<supportedangularversions, Supported Angular versions>>
+* <<installingthetinymceangularintegrationusingnpm, Installing the TinyMCE Angular integration using NPM>>
+* <<usingthetinymceangularintegration, Using the TinyMCE Angular integration>>
+* <<configuringtheeditor, Configuring the editor>>
+** <<apikey, `+apiKey+`>>
+** <<cloudchannel, `+cloudChannel+`>>
+** <<disabled, `+disabled+`>>
+** <<id, `+id+`>>
+** <<init, `+init+`>>
+** <<initialvalue, `+initialValue+`>>
+** <<inline, `+inline+`>>
+** <<outputformat, `+outputFormat+`>>
+** <<plugins, `+plugins+`>>
+** <<tagname, `+tagName+`>>
+** <<toolbar, `+toolbar+`>>
+* <<usingthengmodeldirective, Using the `+ngModel+` directive>>
+** <<modelevents, `+modelEvents+`>>
+* <<usingwithreactiveforms, Using with reactive forms>>
+* <<eventbinding, Event binding>>
+** <<supportedbrowserevents, Supported browser events>>
+** <<supportedtinymceevents, Supported TinyMCE events>>
+** <<allowedevents, `+allowedEvents+`>>
+** <<ignoreevents, `+ignoreEvents+`>>
 
 == Supported Angular versions
 
@@ -88,7 +88,7 @@ The editor accepts the following properties:
 ----
 <editor
   apiKey="no-api-key"
-  cloudChannel="{{site.productmajorversion}}"
+  cloudChannel="{productmajorversion}"
   [disabled]="false"
   id=""
   [init]="{% raw %}{{% endraw %}  {% raw %}}{% endraw %}"
@@ -106,7 +106,7 @@ None of the configuration properties are *required* for `+tinymce-angular+` to w
 
 \{\{site.cloudname}} API key. Required for deployments using the \{\{site.cloudname}} to provide the \{\{site.productname}} editor.
 
-\{% include misc/get-an-api-key.md %}
+include::partial$misc/get-an-api-key.adoc[]
 
 Default value : `+no-api-key+`
 
@@ -123,15 +123,15 @@ Type : `+String+`
 
 === `+cloudChannel+`
 
-Default value : `+{{site.productmajorversion}}+`
+Default value : `+{productmajorversion}+`
 
-Possible values : `+{{site.productmajorversion}}-stable+`, `+{{site.productmajorversion}}-testing+`, `+{{site.productmajorversion}}-dev+`
+Possible values : `+{productmajorversion}-stable+`, `+{productmajorversion}-testing+`, `+{productmajorversion}-dev+`
 
 Changes the \{\{site.productname}} build used for the editor to one of the following \{\{site.cloudname}} channels:
 
-* `+{{site.productmajorversion}}-stable+` (*Default*): The current enterprise release of \{\{site.productname}}.
-* `+{{site.productmajorversion}}-testing+`: The current release candidate for the next enterprise release of \{\{site.productname}}.
-* `+{{site.productmajorversion}}-dev+`: The nightly-build version of \{\{site.productname}}.
+* `+{productmajorversion}-stable+` (*Default*): The current enterprise release of \{\{site.productname}}.
+* `+{productmajorversion}-testing+`: The current release candidate for the next enterprise release of \{\{site.productname}}.
+* `+{productmajorversion}-dev+`: The nightly-build version of \{\{site.productname}}.
 
 Such as:
 
@@ -139,11 +139,11 @@ Such as:
 ----
 <editor
   apiKey="your-api-key"
-  cloudChannel="{{site.productmajorversion}}-dev"
+  cloudChannel="{productmajorversion}-dev"
 ></editor>
 ----
 
-For information \{\{site.productname}} development channels, see: link:{{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/#{{site.productmajorversion}}{{site.productmajorversion}}-testingand{{site.productmajorversion}}-devreleasechannels[Specifying the \{\{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases].
+For information \{\{site.productname}} development channels, see: link:{baseurl}/how-to-guides/cloud-deployment-guide/editor-plugin-version/#{productmajorversion}{productmajorversion}-testingand{productmajorversion}-devreleasechannels[Specifying the \{\{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases].
 
 === `+disabled+`
 
@@ -183,7 +183,7 @@ Type : `+String+`
 
 Object sent to the `+tinymce.init+` method used to initialize the editor.
 
-For information on the \{\{site.productname}} selector (`+tinymce.init+`), see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+For information on the \{\{site.productname}} selector (`+tinymce.init+`), see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
 
 Default value : `+{% raw %}{{% endraw %} {% raw %}}{% endraw %}+`
 
@@ -224,7 +224,7 @@ Type : `+String+`
 
 Used to set the editor to inline mode. Using `+<editor [inline]="true"></editor>+` is the same as setting `+{inline: true}+` in the \{\{site.productname}} selector (`+tinymce.init+`).
 
-For information on inline mode, see: link:{{site.baseurl}}/interface/editor-mode/inline-editor-options/#inline[User interface options - `+inline+`] and link:{{site.baseurl}}/interface/editor-mode/use-tinymce-inline/[Setup inline editing mode].
+For information on inline mode, see: link:{baseurl}/interface/editor-mode/inline-editor-options/#inline[User interface options - `+inline+`] and link:{baseurl}/interface/editor-mode/use-tinymce-inline/[Setup inline editing mode].
 
 Default value : `+false+`
 
@@ -243,7 +243,7 @@ Possible values : `+true+`, `+false+`
 
 Used to include plugins for the editor. Using `+<editor plugins="lists code"></editor>+` is the same as setting `+{plugins: 'lists code'}+` in the \{\{site.productname}} selector (`+tinymce.init+`).
 
-For information on adding plugins to \{\{site.productname}}, see: link:{{site.baseurl}}/plugins-ref/[Add plugins to \{\{site.productname}}].
+For information on adding plugins to \{\{site.productname}}, see: link:{baseurl}/plugins-ref/[Add plugins to \{\{site.productname}}].
 
 Type : `+String+` or `+Array+`
 
@@ -297,9 +297,9 @@ Type : `+String+`
 
 Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic"></editor>+` is the same as setting `+{toolbar: 'bold italic'}+` in the \{\{site.productname}} selector (`+tinymce.init+`).
 
-For information setting the toolbar for \{\{site.productname}}, see: link:{{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar[User interface options - toolbar].
+For information setting the toolbar for \{\{site.productname}}, see: link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar[User interface options - toolbar].
 
-Possible values : See link:{{site.baseurl}}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
+Possible values : See link:{baseurl}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
 
 Type : `+String+`
 
@@ -456,7 +456,7 @@ ____
 *Note*: This property requires `+tinymce-angular+` 4.2.0 or newer
 ____
 
-Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the link:#eventbinding[Event binding section].
+Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the <<eventbinding, Event binding section>>.
 
 Possible values : A comma separated list of events to allow.
 

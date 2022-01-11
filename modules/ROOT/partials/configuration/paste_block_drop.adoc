@@ -1,8 +1,8 @@
-\{% if page.title == "Paste plugin" %} \{% assign plugin = "paste" %}
+\{% if page.title == "Paste plugin" %} :plugin: paste
 
 == paste_block_drop
 
-\{% else %} \{% assign plugin = "powerpaste" %}
+\{% else %} :plugin: powerpaste
 
 == powerpaste_block_drop
 

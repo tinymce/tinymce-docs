@@ -10,7 +10,7 @@ Default Value : `+true+`
 
 Possible Values : `+true+`, `+false+`, or `+string+` of menus
 
-\{% include /misc/admon_different_default_for_mobile.md %}
+include::partial$misc/admon_different_default_for_mobile[]
 
 === Example: Customizing the menu bar
 
@@ -34,4 +34,4 @@ tinymce.init({
 });
 ----
 
-If you need more control over the contents of the menus, see the link:#menu[menu parameter].
+If you need more control over the contents of the menus, see the <<menu, menu parameter>>.

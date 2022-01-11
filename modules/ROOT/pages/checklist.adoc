@@ -1,10 +1,17 @@
 = Checklist plugin
 
-:title_nav: Checklist :description: Add checklists to your content. :keywords: lists todo checklist :controls: toolbar button
+:title_nav: Checklist
 
-\{% assign pluginname = "Checklist" %} \{% assign plugincode = "checklist" %}
+:description: Add checklists to your content.
+:keywords: lists todo checklist
+:controls: toolbar button
 
-\{% include /misc/admon_premium_plugin.md %}
+:pluginname: Checklist
+
+:plugincode: checklist
+
+
+include::partial$misc/admon_premium_plugin[]
 
 The *Checklist* plugin allows the user to add checkbox lists to their content for creating checklists.
 
@@ -12,9 +19,12 @@ The *Checklist* plugin allows the user to add checkbox lists to their content fo
 
 In the \{\{site.productname}} editor, checklists are presented as lists with small checkboxes beside the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 
-\{% include live-demo.html id="checklist" %}
+liveDemo::checklist[ ]
 
-\{% assign pluginminimumplan = 'tiertwo' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Creating a Checklist
 
@@ -22,7 +32,7 @@ Perform the following steps to create a checklist:
 
 [arabic]
 . Place the cursor in the desired location within the \{\{site.productname}} editor.
-. Click the image:{{site.baseurl}}/images/icons/checklist.svg[Checklist icon](*Checklist icon*) on the toolbar or the checklist menu item. A checkbox will be added in the desired location.
+. Click the image:{baseurl}/images/icons/checklist.svg[Checklist icon](*Checklist icon*) on the toolbar or the checklist menu item. A checkbox will be added in the desired location.
 . Type in the first item and press `+Enter+` to add another item in the list.
 . To check items by adding a check mark to them, click on the checkbox next to the desired item from this list.
 
@@ -48,7 +58,7 @@ tinymce.init({
 ----
 
 ____
-*Note*: The *Checklist* plugin has to be used together with the link:{{site.baseurl}}/plugins-ref/opensource/lists/[Lists] plugin to work.
+*Note*: The *Checklist* plugin has to be used together with the link:{baseurl}/plugins-ref/opensource/lists/[Lists] plugin to work.
 ____
 
 == CSS
@@ -57,9 +67,9 @@ To make the checklists look correct make sure to include this css on your page:
 
 [source,css]
 ----
-{% include css-codeblock/checklist-plugin-css.md %}
+include::partial$css-codeblock/checklist-plugin-css.adoc[]
 ----
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

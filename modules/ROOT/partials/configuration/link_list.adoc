@@ -16,11 +16,11 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'link',
   link_list: [
-    {title: '{{site.companyname}} Home Page', value: '{{site.url}}'},
-    {title: '{{site.companyname}} Blog', value: '{{site.url}}/blog'},
-    {title: '{{site.productname}} Documentation', value: '{{site.url}}/docs/'},
-    {title: '{{site.productname}} on Stack Overflow', value: '{{site.communitysupporturl}}'},
-    {title: '{{site.productname}} GitHub', value: 'https://github.com/tinymce/'}
+    {title: '{companyname} Home Page', value: '{url}'},
+    {title: '{companyname} Blog', value: '{url}/blog'},
+    {title: '{productname} Documentation', value: '{url}/docs/'},
+    {title: '{productname} on Stack Overflow', value: '{communitysupporturl}'},
+    {title: '{productname} GitHub', value: 'https://github.com/tinymce/'}
   ]
 });
 ----
@@ -39,13 +39,13 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'link',
   link_list: [
-    {title: '{{site.companyname}} Home Page', value: '{{site.url}}'},
-    {title: '{{site.companyname}} Blog', value: '{{site.url}}/blog'},
-    {title: '{{site.productname}} Support resources',
+    {title: '{companyname} Home Page', value: '{url}'},
+    {title: '{companyname} Blog', value: '{url}/blog'},
+    {title: '{productname} Support resources',
       menu: [
-        {title: '{{site.productname}} Documentation', value: '{{site.url}}/docs/'},
-        {title: '{{site.productname}} on Stack Overflow', value: '{{site.communitysupporturl}}'},
-        {title: '{{site.productname}} GitHub', value: 'https://github.com/tinymce/'}
+        {title: '{productname} Documentation', value: '{url}/docs/'},
+        {title: '{productname} on Stack Overflow', value: '{communitysupporturl}'},
+        {title: '{productname} GitHub', value: 'https://github.com/tinymce/'}
       ]
     }
   ]
@@ -93,7 +93,7 @@ tinymce.init({
   toolbar: 'link',
   link_list: function(success) { // called on link dialog open
     var links = fetchLinkList(); // get link_list data
-    success(links); // pass link_list data to {{site.productname}}
+    success(links); // pass link_list data to {productname}
   }
 });
 ----

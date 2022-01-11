@@ -1,10 +1,17 @@
 = Page Embed plugin
 
-:title_nav: Page Embed :description: Easily inserts iframe into the content. :keywords: view Page Embed insert iframe :controls: toolbar button, menu item
+:title_nav: Page Embed
 
-\{% assign pluginname = "Page Embed" %} \{% assign plugincode = "pageembed" %}
+:description: Easily inserts iframe into the content.
+:keywords: view Page Embed insert iframe
+:controls: toolbar button, menu item
 
-\{% include /misc/admon_premium_plugin.md %}
+:pluginname: Page Embed
+
+:plugincode: pageembed
+
+
+include::partial$misc/admon_premium_plugin[]
 
 The *Page Embed* plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for:
 
@@ -14,9 +21,12 @@ The *Page Embed* plugin embeds a page in the content using an iframe (Inline fra
 
 == Try our Page Embed plugin demo
 
-\{% include live-demo.html id="page-embed" %}
+liveDemo::page-embed[ ]
 
-\{% assign pluginminimumplan = 'tiertwo' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Creating a Page Embed toolbar button
 
@@ -32,19 +42,19 @@ tinymce.init({
 });
 ----
 
-*Result*: The image:{{site.baseurl}}/images/icons/embed-page.svg[Page Embed](*Page Embed*) button appears in the toolbar menu.
+*Result*: The image:{baseurl}/images/icons/embed-page.svg[Page Embed](*Page Embed*) button appears in the toolbar menu.
 
 == Using Page Embed
 
 Use the following procedure for embedding an iframe into the content:
 
 [arabic]
-. Click on the image:{{site.baseurl}}/images/icons/embed-page.svg[Page Embed](*Page Embed*) toolbar button.
-. The *InsertEdit Iframe* dialog box appears. image:{{site.baseurl}}/images/insert-iframes.png[InsertEdit Iframe]
-. In the *General* tab, enter the url in the *Source* field, or click on the image:{{site.baseurl}}/images/icons/browse.svg[Source](*Source*) icon to upload a file.
+. Click on the image:{baseurl}/images/icons/embed-page.svg[Page Embed](*Page Embed*) toolbar button.
+. The *InsertEdit Iframe* dialog box appears. image:{baseurl}/images/insert-iframes.png[InsertEdit Iframe]
+. In the *General* tab, enter the url in the *Source* field, or click on the image:{baseurl}/images/icons/browse.svg[Source](*Source*) icon to upload a file.
 . For setting the iframe size, select the preferred option from the *Size* drop-down menu.
 * *Inline Value* is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the *Width* and *Height* input box.
-** The default values are *Width* `+350px+` and *Height* `+260px+`. Click the image:{{site.baseurl}}/images/icons/lock.svg[Constrain Proportions](*Constrain Proportions*) lock icon to change the default values.
+** The default values are *Width* `+350px+` and *Height* `+260px+`. Click the image:{baseurl}/images/icons/lock.svg[Constrain Proportions](*Constrain Proportions*) lock icon to change the default values.
 +
 ____
 Note: The *Width* and *Height* fields are only available if the *Inline Value* value option is selected.
@@ -60,7 +70,7 @@ Note: The *Responsive* option has pre-defined width and height values. The *Widt
 ____
 . In the *Advanced* tab, provide a name and title for the iframe in the *Name* and *Title* fields.
 . The *Long description URL* field can be used to describe an iframe by including text in a separate resource when a short text alternative does not adequately convey the function or information provided in the iframe.
-* Click on the image:{{site.baseurl}}/images/icons/browse.svg[Source](*Long description URL*) icon to upload a description file.
+* Click on the image:{baseurl}/images/icons/browse.svg[Source](*Long description URL*) icon to upload a description file.
 . Click on the *Show iframe border* radio button to display iframe borders.
 . Click on the *Scrollbar* radio button to add scrollbars to the iframe.
 . Click *Save* to save and exit or *Cancel* to dismiss and exit.
@@ -73,13 +83,13 @@ ____
 
 == Options to configure the Page Embed properties
 
-\{% include configuration/tiny_pageembed_classes.md %}
+include::partial$configuration/tiny_pageembed_classes.adoc[]
 
-\{% include configuration/tiny_pageembed_inline_styles.md %}
+include::partial$configuration/tiny_pageembed_inline_styles.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Default CSS
 
@@ -91,7 +101,7 @@ ____
 
 [source,css]
 ----
-{% include css-codeblock/pageembed-plugin-css.md %}
+include::partial$css-codeblock/pageembed-plugin-css.adoc[]
 ----
 
-For more information on configuring CSS, refer to the link:{{site.baseurl}}/content/add-css-options/#content_css[content_css] section.
+For more information on configuring CSS, refer to the link:{baseurl}/content/add-css-options/#content_css[content_css] section.

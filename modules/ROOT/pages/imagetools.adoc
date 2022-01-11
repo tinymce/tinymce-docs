@@ -1,18 +1,24 @@
 = Image Tools plugin
 
-:title_nav: Image Tools :description: Image editing features for TinyMCE. :keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
+:title_nav: Image Tools
 
-\{% assign pluginname = "Image Tools" %} \{% assign plugincode = "imagetools" %}
+:description: Image editing features for TinyMCE.
+:keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
 
-\{% include DEPRECATED/imagetools.md %}
+:pluginname: Image Tools
+
+:plugincode: imagetools
+
+
+include::partial$DEPRECATED/imagetools.adoc[]
 
 Image Tools (`+imagetools+`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+imagetools_cors_hosts+` or `+imagetools_proxy+` (see below).
 
 == Interactive example
 
-\{% include live-demo.html id="image-tools" %}
+liveDemo::image-tools[ ]
 
-\{% include /misc/admon_svg_not_supported.md %}
+include::partial$misc/admon_svg_not_supported[]
 
 == Cloud Installation
 
@@ -52,20 +58,20 @@ tinymce.init({
 
 == Options
 
-\{% include configuration/image_cors_hosts.md %}
+include::partial$configuration/image_cors_hosts.adoc[]
 
-\{% include configuration/imagetools_credentials_hosts.md %}
+include::partial$configuration/imagetools_credentials_hosts.adoc[]
 
-\{% include configuration/imagetools_fetch_image.md %}
+include::partial$configuration/imagetools_fetch_image.adoc[]
 
-\{% include configuration/image_proxy.md %}
+include::partial$configuration/image_proxy.adoc[]
 
-\{% include configuration/imagetools_toolbar.md %}
+include::partial$configuration/imagetools_toolbar.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 == Commands
 
 The Image Tools plugin provides the following \{\{site.productname}} commands.
 
-\{% include commands/imagetools-cmds.md %}
+include::partial$commands/imagetools-cmds.adoc[]

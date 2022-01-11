@@ -1,7 +1,15 @@
-:title_nav: Bootstrap = Using TinyMCE from the Tiny Cloud CDN with the Bootstrap framework
+:title_nav: Bootstrap
 
-:description: A guide on integrating TinyMCE from the Tiny Cloud into the Bootstrap framework. :keywords: integration integrate bootstrap
 
-\{% assign productSource = "cloud" %}
+= Using TinyMCE from the Tiny Cloud CDN with the Bootstrap framework
 
-\{% include integrations/bootstrap-quick-start.md %}
+:description: A guide on integrating TinyMCE from the Tiny Cloud into the Bootstrap framework.
+
+:keywords: integration integrate bootstrap
+
+
+:productSource: cloud
+
+
+
+include::partial$integrations/bootstrap-quick-start.adoc[]

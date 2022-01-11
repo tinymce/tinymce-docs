@@ -4,7 +4,7 @@ Users can easily configure the \{\{site.productname}} editor in Swing through th
 
 To start using \{\{site.productname}} for Swing as your new rich text editor, the first step is to obtain a copy of the *Integration*.
 
-Contact link:{{site.supporturl}}[\{\{site.supportname}}] to discuss how to get started with our latest release.
+Contact link:{supporturl}[\{\{site.supportname}}] to discuss how to get started with our latest release.
 
 == Get started with our TinyMCE in Swing integration
 
@@ -26,11 +26,11 @@ The Swing integration allows the user to select the origin of the \{\{site.produ
 ----
 final Config myTinyConfiguration = Config.embedded();
 ----
-* Cloud deployments pull \{\{site.productname}} from the \{\{site.cloudname}}. Use this option by passing your API key and link:{{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#specifyingthetinymceeditorversiondeployedfromcloud[specifying the \{\{site.cloudname}} version].
+* Cloud deployments pull \{\{site.productname}} from the \{\{site.cloudname}}. Use this option by passing your API key and link:{baseurl}/cloud-deployment-guide/editor-plugin-version/#specifyingthetinymceeditorversiondeployedfromcloud[specifying the \{\{site.cloudname}} version].
 +
 [source,java]
 ----
-final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productmajorversion}}-stable");
+final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{productmajorversion}-stable");
 ----
 * External deployments allow to use a local version of \{\{site.productname}} by giving the address of the location where \{\{site.productname}} is being served.
 +

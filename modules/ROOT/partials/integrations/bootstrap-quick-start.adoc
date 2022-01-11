@@ -1,6 +1,6 @@
 Using \{\{site.productname}} with bootstrap does not require any special configuration.
 
-The \{\{site.productname}} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:{{site.baseurl}}/integrations/jquery/[jQuery integration]
+The \{\{site.productname}} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:{baseurl}/integrations/jquery/[jQuery integration]
 
 This procedure creates a basic Bootstrap integration containing a \{\{site.productname}} editor.
 
@@ -14,12 +14,12 @@ If the project loads Bootstrap from https://www.bootstrapcdn.com/, use the scrip
 +
 [source,html]
 ----
-<script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 +
-Replace `+no-api-key+` in the source script (`+<script src=...+`) with a \{\{site.cloudname}} API key, which is created when signing up to the link:{{site.accountsignup}}[\{\{site.cloudname}}].
+Replace `+no-api-key+` in the source script (`+<script src=...+`) with a \{\{site.cloudname}} API key, which is created when signing up to the link:{accountsignup}[\{\{site.cloudname}}].
 +
-Signing up for a \{\{site.cloudname}} API key will also provide a trial of the link:{{site.baseurl}}/plugins/premium/[Premium Plugins]. \{% else %}
+Signing up for a \{\{site.cloudname}} API key will also provide a trial of the link:{baseurl}/plugins/premium/[Premium Plugins]. \{% else %}
 . To source an independent deployment of \{\{site.productname}}, add the following source script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:
 +
 [source,html]
@@ -27,7 +27,7 @@ Signing up for a \{\{site.cloudname}} API key will also provide a trial of the l
 <script src="/path/to/tinymce.min.js"></script>
 ----
 +
-For information on self-hosting \{\{site.productname}}, see: link:{{site.baseurl}}/general-configuration-guide/advanced-install/[Installing \{\{ site.productname }}]. \{% endif %}
+For information on self-hosting \{\{site.productname}}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing \{\{ site.productname }}]. \{% endif %}
 . Add an initialization point for \{\{site.productname}}, such as:
 +
 [source,html]

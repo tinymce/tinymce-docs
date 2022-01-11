@@ -1,4 +1,4 @@
-\{% if productSource == "cloud" %} \{% assign scriptSource = site.cdnurl %} \{% assign packageSource = site.cloudname %} \{% elsif productSource == "composer" %} \{% assign scriptSource = "\{\{ asset('js/tinymce/tinymce.min.js') }}" %} \{% assign packageSource = "https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package]" %} \{% else %} \{% assign scriptSource = "\{\{ asset('js/tinymce/tinymce.min.js') }}" %} \{% assign packageSource = "TinyMCE .zip package" %} \{% endif %}
+\{% if productSource == "cloud" %} :scriptSource: site.cdnurl  :packageSource: site.cloudname  \{% elsif productSource == "composer" %} \{% assign scriptSource = "\{\{ asset('js/tinymce/tinymce.min.js') }}" %} :packageSource: https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package] \{% else %} \{% assign scriptSource = "\{\{ asset('js/tinymce/tinymce.min.js') }}" %} :packageSource: TinyMCE .zip package \{% endif %}
 
 https://laravel.com/[Laravel] is a scaleable web application framework built on PHP. This guide assists with adding \{\{site.productname}} from the \{\{packageSource}} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/8.x/installation#installation-via-composer[Installation Via Composer]. The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how \{\{site.productname}} should be used in production environments.
 
@@ -54,7 +54,8 @@ _File:_ `+webpack.mix.js+`
 mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
 ----
 
-\{% endif %} \{% if productSource == "zip" %} \{% include integrations/download-tinymce-zip.md %}
+\{% endif %} \{% if productSource == "zip" %}
+include::partial$integrations/download-tinymce-zip.adoc[]
 
 [arabic]
 . Extract (or unzip) the downloaded \{\{site.productname}} `+.zip+` file into the `+resources/js/+` directory of the Laravel project, such as:
@@ -118,7 +119,7 @@ _File:_ `+resources/views/components/head/tinymce-config.blade.php+`
 [arabic]
 . Replace `+no-api-key+` in the \{\{site.productname}} source script with your \{\{site.cloudname}} API Key.
 +
-\{% include misc/get-an-api-key.md %} \{% endif %}
+include::partial$misc/get-an-api-key.adoc[] \{% endif %}
 . Create a second blade containing a placeholder HTML element for \{\{site.productname}}, such as:
 +
 [source,sh]
@@ -170,4 +171,4 @@ _File:_ `+resources/views/welcome.blade.php+`
 php artisan serve
 ----
 
-\{% include misc/quickstart-next-steps.md %}
+include::partial$misc/quickstart-next-steps.adoc[]

@@ -1,7 +1,15 @@
-:title_nav: React = Using TinyMCE from the Tiny Cloud CDN with the React framework
+:title_nav: React
 
-:description: A guide on integrating TinyMCE from the Tiny Cloud into the React framework. :keywords: integration integrate react reactjs create-react-app tinymce-react
 
-\{% assign productSource = "cloud" %}
+= Using TinyMCE from the Tiny Cloud CDN with the React framework
 
-\{% include integrations/react-quick-start.md %}
+:description: A guide on integrating TinyMCE from the Tiny Cloud into the React framework.
+
+:keywords: integration integrate react reactjs create-react-app tinymce-react
+
+
+:productSource: cloud
+
+
+
+include::partial$integrations/react-quick-start.adoc[]

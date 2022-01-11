@@ -1,6 +1,10 @@
 = Create an icon pack for TinyMCE
 
-:title_nav: Create an icon pack :description_short: Introducing icon pack creation. :description: How to make your own icon pack. :keywords: create creator skin icon
+:title_nav: Create an icon pack
+
+:description_short: Introducing icon pack creation.
+:description: How to make your own icon pack.
+:keywords: create creator skin icon
 
 TinyMCE 6 introduced icon packs for customizing the editor icons.
 
@@ -19,16 +23,16 @@ A \{\{site.productname}} icon pack is a `+.js+` file containing strings of https
 An icon pack only requires the custom icons to be included; the default \{\{site.productname}} icons are used as a fallback for icons missing from the custom icon pack.
 
 ____
-Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{{site.plugindirectory}}/skins-and-icon-packs/[\{\{site.prem_skins_icons}}].
+Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{plugindirectory}/skins-and-icon-packs/[\{\{site.prem_skins_icons}}].
 ____
 
 == Creating a TinyMCE icon pack
 
 To create a custom icon pack:
 
-* link:#downloadandsetuptheiconpacktemplate[Download and setup the icon pack template]
-* link:#addthesvgfiles[Add the SVG files]
-* link:#buildtheiconpack[Build the icon pack]
+* <<downloadandsetuptheiconpacktemplate, Download and setup the icon pack template>>
+* <<addthesvgfiles, Add the SVG files>>
+* <<buildtheiconpack, Build the icon pack>>
 
 === Download and setup the icon pack template
 
@@ -58,7 +62,7 @@ $ npm install ``` 4. When prompted, enter a name for the icon pack. The icon pac
 * Underscores ( `_` ).
 ....
 
-The icon pack name will be used with the link:{{site.baseurl}}/interface/editor-appearance/editor-icons/#icons[icons] option to apply the icons in \{\{site.productname}}.
+The icon pack name will be used with the link:{baseurl}/interface/editor-appearance/editor-icons/#icons[icons] option to apply the icons in \{\{site.productname}}.
 
 === Add the SVG files
 
@@ -83,9 +87,9 @@ tinymce.init({
 });
 ----
 
-For a list of the icon identifiers, see: link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[Available icons].
+For a list of the icon identifiers, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[Available icons].
 
-\{\{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/[custom skin] is required.
+\{\{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/[custom skin] is required.
 
 ____
 *Note*: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
@@ -123,13 +127,16 @@ iconPackager(\{ name: 'my-icon-pack', svgo: \{ floatPrecision: 3 } //Increase th
 
 An icon pack can be served either:
 
-* link:#deploytheiconpackwithtinymce[With \{\{site.productname}}]
-* link:#deploytheiconpackandtinymceseparately[Separate from \{\{site.productname}}]
+* <<deploytheiconpackwithtinymce, With \{\{site.productname}}>>
+* <<deploytheiconpackandtinymceseparately, Separate from \{\{site.productname}}>>
 
 === Deploy the icon pack with TinyMCE
 
-\{% assign customIconPack = true %} \{% include configuration/icons.md %}
+:customIconPack: true
+
+
+include::partial$configuration/icons.adoc[]
 
 === Deploy the icon pack and TinyMCE separately
 
-\{% include configuration/icons_url.md %} \{% assign customIconPack = false %}
+include::partial$configuration/icons_url.adoc[] :customIconPack: false

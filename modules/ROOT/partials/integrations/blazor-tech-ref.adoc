@@ -1,7 +1,7 @@
 Covered in this section:
 
-* link:#configuringthetinymceblazorintegration[Configuring the TinyMCE Blazor integration]
-* link:#componentbinding[Component binding]
+* <<configuringthetinymceblazorintegration, Configuring the TinyMCE Blazor integration>>
+* <<componentbinding, Component binding>>
 
 == Configuring the TinyMCE Blazor integration
 
@@ -44,7 +44,7 @@ Type : String
 
 === CloudChannel
 
-Specifies the \{\{site.cloudname}} channel to use. For information on \{\{site.productname}} development channels, see: link:{{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/[Specifying the \{\{site.productname}} editor version deployed from Cloud].
+Specifies the \{\{site.cloudname}} channel to use. For information on \{\{site.productname}} development channels, see: link:{baseurl}/how-to-guides/cloud-deployment-guide/editor-plugin-version/[Specifying the \{\{site.productname}} editor version deployed from Cloud].
 
 Default value : `+"5"+`
 

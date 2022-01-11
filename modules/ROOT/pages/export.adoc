@@ -1,21 +1,31 @@
 = Export plugin
 
-:title_nav: Export :description: Export content from TinyMCE, into various formats. :keywords: plugin export pdf
+:title_nav: Export
 
-\{% assign pluginname = "Export" %} \{% assign plugincode = "export" %} \{% include /misc/admon_premium_plugin.md %}
+:description: Export content from TinyMCE, into various formats.
+:keywords: plugin export pdf
 
-The \{\{pluginname}} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the link:#exporters[Exporters section].
+:pluginname: Export
+
+:plugincode: export
+
+include::partial$misc/admon_premium_plugin[]
+
+The \{\{pluginname}} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the <<exporters, Exporters section>>.
 
 == Interactive example
 
 To export the editor content, either:
 
 * From the _File_ menu, click _Export_ and select _PDF_.
-* Click the Export toolbar button (image:{{site.baseurl}}/images/icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) and select _PDF_.
+* Click the Export toolbar button (image:{baseurl}/images/icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) and select _PDF_.
 
-\{% include live-demo.html id="export" %}
+liveDemo::export[ ]
 
-\{% assign pluginminimumplan = 'tiertwo' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Basic setup
 
@@ -37,7 +47,7 @@ tinymce.init({
 
 The \{\{pluginname}} plugin provides the following exporters:
 
-* link:#client-sidepdfclientpdf[Client-side PDF (`+clientpdf+`)]
+* <<client-sidepdfclientpdf, Client-side PDF (`+clientpdf+`)>>
 
 === Client-side PDF (`+clientpdf+`)
 
@@ -48,49 +58,49 @@ This exporter has a few limitations or known issues that should be noted:
 * The text content in the PDF cannot be selected or copied.
 * A single line of content sliced horizontally and distributed across separate pages.
 * Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
-* Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the link:#export_image_proxy[export_image_proxy] option.
+* Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the <<export_image_proxy, export_image_proxy>> option.
 * Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
-* The link:{{site.baseurl}}/plugins-ref/premium/checklist/[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
+* The link:{baseurl}/plugins-ref/premium/checklist/[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
 
 The following plugins are not supported:
 
-* link:{{site.baseurl}}/plugins-ref/opensource/bbcode/[BBCode]
-* link:{{site.baseurl}}/plugins-ref/premium/comments/[Comments]
-* link:{{site.baseurl}}/plugins-ref/premium/mediaembed/[Enhanced Media Embed]
-* link:{{site.baseurl}}/plugins-ref/opensource/fullpage/[Fullpage]
-* link:{{site.baseurl}}/plugins-ref/opensource/legacyoutput/[Legacy Output]
-* link:{{site.baseurl}}/plugins-ref/opensource/media/[Media]
-* link:{{site.baseurl}}/plugins-ref/premium/pageembed/[Page Embed]
-* link:{{site.baseurl}}/plugins-ref/opensource/toc/[Table of Contents]
+* link:{baseurl}/plugins-ref/opensource/bbcode/[BBCode]
+* link:{baseurl}/plugins-ref/premium/comments/[Comments]
+* link:{baseurl}/plugins-ref/premium/mediaembed/[Enhanced Media Embed]
+* link:{baseurl}/plugins-ref/opensource/fullpage/[Fullpage]
+* link:{baseurl}/plugins-ref/opensource/legacyoutput/[Legacy Output]
+* link:{baseurl}/plugins-ref/opensource/media/[Media]
+* link:{baseurl}/plugins-ref/premium/pageembed/[Page Embed]
+* link:{baseurl}/plugins-ref/opensource/toc/[Table of Contents]
 
 == Configuration Options
 
 The following configuration options affect the behavior of the \{\{pluginname}} plugin.
 
-\{% include configuration/image_cors_hosts.md %}
+include::partial$configuration/image_cors_hosts.adoc[]
 
-\{% include configuration/export_ignore_elements.md %}
+include::partial$configuration/export_ignore_elements.adoc[]
 
-\{% include configuration/image_proxy.md %}
+include::partial$configuration/image_proxy.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The \{\{pluginname}} plugin provides the following \{\{site.productname}} commands.
 
-\{% include commands/\{\{plugincode}}-cmds.md %}
+include::partial$commands/\{\{plugincode}}-cmds.adoc[]
 
 == Events
 
 The \{\{pluginname}} plugin provides the following events.
 
-\{% include events/\{\{plugincode}}-events.md %}
+include::partial$events/\{\{plugincode}}-events.adoc[]
 
 == APIs
 
 The \{\{pluginname}} plugin provides the following APIs.
 
-\{% include plugin-apis/\{\{plugincode}}-apis.md %}
+include::partial$plugin-apis/\{\{plugincode}}-apis.adoc[]

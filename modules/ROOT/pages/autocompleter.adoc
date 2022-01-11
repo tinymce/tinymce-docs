@@ -1,6 +1,9 @@
 = Autocompleter
 
-:title_nav: Autocompleter :description: Add a custom autocompleter to TinyMCE 6. :keywords: autocomplete
+:title_nav: Autocompleter
+
+:description: Add a custom autocompleter to TinyMCE 6.
+:keywords: autocomplete
 
 == Overview
 
@@ -29,7 +32,7 @@ The two arguments this method take are:
 |matches |`+(rng: Range, text: string, pattern: string) => boolean+` |Optional |default: `+isStartOfWord+` - A condition (predicate) function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger.
 |maxResults |number |Optional |default: 10 - The maximum number of results that should be fetched.
 |minChars |number |Optional |default: 1 - The minimum number of characters that must be typed before the autocompleter will trigger (excluding the trigger char).
-|highlight |array |Optional |When using link:#cardmenuitem[CardMenuItems], use the highlight option to specify which link:#cardtext[CardText] items to highlight the matched text pattern on.
+|highlight |array |Optional |When using <<cardmenuitem, CardMenuItems>>, use the highlight option to specify which <<cardtext, CardText>> items to highlight the matched text pattern on.
 |===
 
 ____
@@ -38,12 +41,12 @@ ____
 
 === Usage of fetch
 
-The `+fetch+` function is called when the trigger `+char+` is pressed and the `+matches+` predicate (condition function) returns `+true+`. The `+fetch+` function is passed the matched text pattern and returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] containing matching results, specified as either link:#autocompleteitem[AutocompleteItems] or link:#cardmenuitem[CardMenuItems]. This allows for asynchronous fetching of the items. The `+fetchOptions+` parameter passed to the `+fetch+` function is by default an empty object, however using the link:#api[reload] API, additional options can be passed to fetch a different set of results.
+The `+fetch+` function is called when the trigger `+char+` is pressed and the `+matches+` predicate (condition function) returns `+true+`. The `+fetch+` function is passed the matched text pattern and returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] containing matching results, specified as either <<autocompleteitem, AutocompleteItems>> or <<cardmenuitem, CardMenuItems>>. This allows for asynchronous fetching of the items. The `+fetchOptions+` parameter passed to the `+fetch+` function is by default an empty object, however using the <<api, reload>> API, additional options can be passed to fetch a different set of results.
 
 There are two types of items:
 
-* link:#autocompleteitem[AutocompleteItem]
-* link:#cardmenuitem[CardMenuItem]
+* <<autocompleteitem, AutocompleteItem>>
+* <<cardmenuitem, CardMenuItem>>
 
 ==== AutocompleteItem
 
@@ -54,7 +57,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 |Name |Value |Requirement |Description
 |value |string |optional |Value of the item. This will be passed to the `+onAction+` callback when selected.
 |text |string |optional |Text to display for the item.
-|icon |string |optional |Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[icon pack], a link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[custom icon pack], or an icon added using the link:{{site.baseurl}}/apis/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[`+addIcon+` API].
+|icon |string |optional |Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:{baseurl}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[icon pack], a link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[custom icon pack], or an icon added using the link:{baseurl}/apis/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[`+addIcon+` API].
 |===
 
 [source,js]
@@ -76,7 +79,7 @@ The `+CardMenuItem+` allows customization of layout and content. This is done by
 [cols=",,,",options="header",]
 |===
 |Name |Value |Requirement |Description
-|items |array |required |An array of link:#carditems[CardItems]
+|items |array |required |An array of <<carditems, CardItems>>
 |value |string |optional |Value of the item. This will be passed to the `+onAction+` callback when selected.
 |label |string |optional |Label of the item. Will be used for https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA[accessibility purposes].
 |===
@@ -97,9 +100,9 @@ The `+CardMenuItem+` allows customization of layout and content. This is done by
 
 There are three types of card items:
 
-* link:#cardcontainer[CardContainer]
-* link:#cardtext[CardText]
-* link:#cardimage[CardImage]
+* <<cardcontainer, CardContainer>>
+* <<cardtext, CardText>>
+* <<cardimage, CardImage>>
 
 ===== CardContainer
 
@@ -108,7 +111,7 @@ A `+CardContainer+` is a layout component used to apply a layout to an array of 
 [cols=",,,",options="header",]
 |===
 |Name |Value |Requirement |Description
-|items |array |required |An array of link:#carditems[CardItems]
+|items |array |required |An array of <<carditems, CardItems>>
 |direction |`+'vertical'+` or `+'horizontal'+` |optional |default: `+horizontal+` - directionality of subitems
 |align |`+'left'+` or `+'right'+` |optional |default: `+left+` - horizontal alignment of subitems
 |valign |`+'top'+`, `+'middle'+` or `+'bottom'+` |optional |default: `+middle+` - vertical alignment of subitems
@@ -186,10 +189,10 @@ The following examples show how to create a special characters autocompleters.
 
 This example uses the standard autocompleter item and will show when user types the colon (`+:+`) character and at least one additional character.
 
-\{% include live-demo.html id="autocompleter-autocompleteitem" height="300" tab="js" %}
+liveDemo::autocompleter-autocompleteitem[ height="300" tab="js" ]
 
 === Example: Using `+CardMenuItems+` in the Autocompleter
 
-This example uses link:#cardmenuitem[CardMenuItems] and will show when a user types a hyphen (`+-+`) character and at least one additional character.
+This example uses <<cardmenuitem, CardMenuItems>> and will show when a user types a hyphen (`+-+`) character and at least one additional character.
 
-\{% include live-demo.html id="autocompleter-cardmenuitem" height="300" tab="js" %}
+liveDemo::autocompleter-cardmenuitem[ height="300" tab="js" ]

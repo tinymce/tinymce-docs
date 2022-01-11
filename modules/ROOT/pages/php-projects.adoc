@@ -1,7 +1,12 @@
 = Installing TinyMCE with Composer
 
-:title_nav: PHP projects :description: Learn how to install TinyMCE from Packagist using Composer. :keywords: php composer packagist install
+:title_nav: PHP projects
 
-\{% assign productSource = 'composer' %}
+:description: Learn how to install TinyMCE from Packagist using Composer.
+:keywords: php composer packagist install
 
-\{% include install/basic-quickstart-base.md %}
+:productSource: composer
+
+
+
+include::partial$install/basic-quickstart-base.adoc[]

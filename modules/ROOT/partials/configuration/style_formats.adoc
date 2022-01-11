@@ -75,8 +75,8 @@ This example shows you how to:
 * Override the built-in [formats](\{\{ site.baseurl }}/content/content-formatting/#formats).
 * Add some custom styles to the `+styleselect+` dropdown toolbar button and the `+formats+` menu item using the [style_formats](\{\{ site.baseurl }}/content/user-formatting-options/#style_formats) configuration option.
 
-\{% include live-demo.html id="format-custom" tab="js" %}
+liveDemo::format-custom[ tab="js" ]
 
 This example shows you how to edit HTML5 content such as sections and articles.
 
-\{% include live-demo.html id="format-html5" tab="js" %}
+liveDemo::format-html5[ tab="js" ]

@@ -1,8 +1,14 @@
 = Configuring the Comments plugin in callback mode
 
-:title_nav: Callback mode :description: Information on configuring the Comments plugin in callback mode :keywords: comments commenting tinycomments callback
+:title_nav: Callback mode
 
-\{% assign pluginname = "Comments" %} \{% assign plugincode = "comments" %}
+:description: Information on configuring the Comments plugin in callback mode
+:keywords: comments commenting tinycomments callback
+
+:pluginname: Comments
+
+:plugincode: comments
+
 
 *Callback mode* is the default mode for the Comments plugin. In the callback mode, callback functions are required to save user comments on a server. The Comments functions (create, reply, edit, delete comment, delete all conversations, resolve, and lookup) are configured differently depending upon the server-side storage configuration.
 
@@ -10,7 +16,7 @@
 
 The following example uses a simulated server (provided by https://netflix.github.io/pollyjs/[Polly.js]) which has been hidden from the example javascript to keep the example code concise. The interactions between TinyMCE and Polly.js are visible in the browser console.
 
-\{% include live-demo.html id="comments-callback" %}
+liveDemo::comments-callback[ ]
 
 === How the comments plugin works in callback mode
 
@@ -31,32 +37,32 @@ After a user comments (triggering `+tinycomments_create+` for the first comment,
 
 When using callback mode, the Comments plugin requires callback functions for the following options:
 
-* link:#tinycomments_create[`+tinycomments_create+`]
-* link:#tinycomments_reply[`+tinycomments_reply+`]
-* link:#tinycomments_edit_comment[`+tinycomments_edit_comment+`]
-* link:#tinycomments_delete_comment[`+tinycomments_delete_comment+`]
-* link:#tinycomments_delete[`+tinycomments_delete+`]
-* link:#tinycomments_delete_all[`+tinycomments_delete_all+`]
-* link:#tinycomments_lookup[`+tinycomments_lookup+`]
+* <<tinycomments_create, `+tinycomments_create+`>>
+* <<tinycomments_reply, `+tinycomments_reply+`>>
+* <<tinycomments_edit_comment, `+tinycomments_edit_comment+`>>
+* <<tinycomments_delete_comment, `+tinycomments_delete_comment+`>>
+* <<tinycomments_delete, `+tinycomments_delete+`>>
+* <<tinycomments_delete_all, `+tinycomments_delete_all+`>>
+* <<tinycomments_lookup, `+tinycomments_lookup+`>>
 
-The link:#tinycomments_resolve[`+tinycomments_resolve+`] option is _optional_.
+The <<tinycomments_resolve, `+tinycomments_resolve+`>> option is _optional_.
 
-\{% include configuration/tinycomments_create.md %}
+include::partial$configuration/tinycomments_create.adoc[]
 
-\{% include configuration/tinycomments_reply.md %}
+include::partial$configuration/tinycomments_reply.adoc[]
 
-\{% include configuration/tinycomments_edit_comment.md %}
+include::partial$configuration/tinycomments_edit_comment.adoc[]
 
-\{% include configuration/tinycomments_resolve.md %}
+include::partial$configuration/tinycomments_resolve.adoc[]
 
-\{% include configuration/tinycomments_delete_comment.md %}
+include::partial$configuration/tinycomments_delete_comment.adoc[]
 
-\{% include configuration/tinycomments_delete.md %}
+include::partial$configuration/tinycomments_delete.adoc[]
 
-\{% include configuration/tinycomments_delete_all.md %}
+include::partial$configuration/tinycomments_delete_all.adoc[]
 
-\{% include configuration/tinycomments_lookup.md %}
+include::partial$configuration/tinycomments_lookup.adoc[]
 
-\{% include plugins/comments_open_sidebar.md %}
+include::partial$plugins/comments_open_sidebar.adoc[]
 
-\{% include plugins/comments_highlighting_css.md %}
+include::partial$plugins/comments_highlighting_css.adoc[]

@@ -1,25 +1,30 @@
 = What is TinyMCE?
 
-:description: What is TinyMCE and how do I add it to my project. :keywords: tinymce script textarea
+:description: What is TinyMCE and how do I add it to my project.
 
-\{% include what-is-tinymce.md %}
+:keywords: tinymce script textarea
+
+
+include::what-is-tinymce[]
 
 == Getting started guides
 
-Select from one of the following frameworks, CMSs, or package managers for a guide to getting start with \{\{site.productname}}. If you are not sure which guide to select, or your framework is not listed, try link:{{site.baseurl}}/getting-started/install-setup/cloud/cloud-quick-start/[Adding \{\{site.productname}} to a webpage using \{\{site.cloudname}}].
+Select from one of the following frameworks, CMSs, or package managers for a guide to getting start with \{\{site.productname}}. If you are not sure which guide to select, or your framework is not listed, try link:{baseurl}/getting-started/install-setup/cloud/cloud-quick-start/[Adding \{\{site.productname}} to a webpage using \{\{site.cloudname}}].
 
-\{% assign navigation = site.data.nav %}
+:navigation: site.data.nav
+
+
 
 [[siteproductname-from-the-sitecloudname]]
 === \{\{site.productname}} from the \{\{site.cloudname}}
 
-\{% for entry in navigation %} \{% if entry.url == "getting-started" %} \{% for subentry in entry.pages %} \{% if subentry.url == "install-setup" %} \{% for subsubentry in subentry.pages %} \{% if subsubentry.url == "cloud" %} \{% assign links = subsubentry.pages %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %}
+\{% for entry in navigation %} \{% if entry.url == "getting-started" %} \{% for subentry in entry.pages %} \{% if subentry.url == "install-setup" %} \{% for subsubentry in subentry.pages %} \{% if subsubentry.url == "cloud" %} :links: subsubentry.pages  \{% endif %} \{% endfor %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %}
 
 \{% include sub-level-toc.html links=links urlPrefix="install-setup/cloud/" %}
 
 [[using-siteproductname-from-a-package-manager-or-a-zip-archive]]
 === Using \{\{site.productname}} from a package manager or a .zip archive
 
-\{% for entry in navigation %} \{% if entry.url == "getting-started" %} \{% for subentry in entry.pages %} \{% if subentry.url == "install-setup" %} \{% for subsubentry in subentry.pages %} \{% if subsubentry.url == "self-hosted" %} \{% assign links = subsubentry.pages %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %}
+\{% for entry in navigation %} \{% if entry.url == "getting-started" %} \{% for subentry in entry.pages %} \{% if subentry.url == "install-setup" %} \{% for subsubentry in subentry.pages %} \{% if subsubentry.url == "self-hosted" %} :links: subsubentry.pages  \{% endif %} \{% endfor %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %}
 
 \{% include sub-level-toc.html links=links urlPrefix="install-setup/self-hosted/" %}

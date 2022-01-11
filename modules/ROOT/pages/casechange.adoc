@@ -1,18 +1,28 @@
 = Case Change
 
-:title_nav: Case Change :description: Change the case of text. :keywords: case capitalization capitalize lowercase uppercase :controls: toolbar button, menu item
+:title_nav: Case Change
 
-\{% assign pluginname = "Case Change" %} \{% assign plugincode = "casechange" %}
+:description: Change the case of text.
+:keywords: case capitalization capitalize lowercase uppercase
+:controls: toolbar button, menu item
 
-\{% include /misc/admon_premium_plugin.md %}
+:pluginname: Case Change
+
+:plugincode: casechange
+
+
+include::partial$misc/admon_premium_plugin[]
 
 The *Case Change* plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
 
 == Try our Case Change demo
 
-\{% include live-demo.html id="casechange" %}
+liveDemo::casechange[ ]
 
-\{% assign pluginminimumplan = 'tiertwo' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Changing the case of selected text
 
@@ -20,7 +30,7 @@ Perform the following steps to change the case of selected text in a document to
 
 [arabic]
 . Select the desired text to change the case.
-. Click on the image:{{site.baseurl}}/images/casechangeicon.png[Case Change] icon in the toolbar.
+. Click on the image:{baseurl}/images/casechangeicon.png[Case Change] icon in the toolbar.
 . From the drop-down menu, choose the desired format by clicking on either *lowercase*, *UPPERCASE*, or *Title Case*.
 
 ____
@@ -47,14 +57,14 @@ The *Title Case* option changes anything other than articles, coordinating conju
 
 *Title Case* can be customized to create user defined rule sets by using the following options:
 
-\{% include configuration/casechange_title_case_minors.md %}
+include::partial$configuration/casechange_title_case_minors.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Case Change plugin provides the following \{\{site.productname}} commands.
 
-\{% include commands/casechange-cmds.md %}
+include::partial$commands/casechange-cmds.adoc[]

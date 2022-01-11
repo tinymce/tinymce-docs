@@ -1,6 +1,11 @@
 = Bundling TinyMCE skins using module loading
 
-:title_nav: Skins :description_short: Information on bundling TinyMCE skins :description: Information on bundling TinyMCE skins using module loading \{% assign editorcomponent = "skin" %} \{% include module-loading/bundling-ref-example.md %} \{% assign editorcomponent = nil %}
+:title_nav: Skins
+
+:description_short: Information on bundling TinyMCE skins
+:description: Information on bundling TinyMCE skins using module loading
+:editorcomponent: skin
+include::partial$module-loading/bundling-ref-example.adoc[] :editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following skin:
 
@@ -27,7 +32,7 @@ Optional files for the example skin:
 Example syntax for including the example icon pack in a bundle:
 
 ____
-*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:{{site.baseurl}}/how-to-guides/usage-with-module-loaders/[Bundling \{\{site.productname}} with a module loader].
+*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/how-to-guides/usage-with-module-loaders/[Bundling \{\{site.productname}} with a module loader].
 ____
 
 \{% comment %}
@@ -66,4 +71,4 @@ var contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css
 
 \{% endcomment %}
 
-\{% include module-loading/bundling-skin-files.md %}
+include::partial$module-loading/bundling-skin-files.adoc[]

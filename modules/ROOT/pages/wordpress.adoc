@@ -1,8 +1,11 @@
 = WordPress integration
 
-:title_nav: WordPress :description: Add TinyMCE to WordPress :keywords: integration integrate wordpress advanced
+:title_nav: WordPress
 
-\{% include /misc/admon_third_party_integration.md %}
+:description: Add TinyMCE to WordPress
+:keywords: integration integrate wordpress advanced
+
+include::partial$misc/admon_third_party_integration[]
 
 To use \{\{site.productname}} in WordPress, Advanced Editor Tools is a great option.
 
@@ -20,4 +23,4 @@ https://wordpress.org/plugins/tinymce-advanced/[Advanced Editor Tools] is a Word
 For details, visit:
 
 * https://wordpress.org/plugins/tinymce-advanced/[WordPress.org Plugins - Advanced Editor Tools].
-* link:{{site.blogurl}}/how-to-use-tinymce-premium-plugins-in-wordpress-5[\{\{site.companyname}} Blog - How to use TinyMCE premium plugins in WordPress 5].
+* link:{blogurl}/how-to-use-tinymce-premium-plugins-in-wordpress-5[\{\{site.companyname}} Blog - How to use TinyMCE premium plugins in WordPress 5].

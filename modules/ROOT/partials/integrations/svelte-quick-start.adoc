@@ -93,7 +93,7 @@ plugins: [
 . Open `+src/App.svelte+` and add:
 * An `+import+` statement for the \{\{site.productname}} component.
 * The `+<Editor />+` as a placeholder for the editor.
-* The link:{{site.baseurl}}/how-to-guides/environment-setup/svelte/svelte-ref/#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
+* The link:{baseurl}/how-to-guides/environment-setup/svelte/svelte-ref/#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
 +
 For example:
 +
@@ -118,7 +118,7 @@ import Editor from '@tinymce/tinymce-svelte';
 . Open `+src/App.svelte+` and add:
 * An `+import+` statement for the \{\{site.productname}} component.
 * The `+<Editor />+` as a placeholder for the editor.
-* The link:{{site.baseurl}}/how-to-guides/environment-setup/svelte/svelte-ref/#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
+* The link:{baseurl}/how-to-guides/environment-setup/svelte/svelte-ref/#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
 +
 For example:
 +
@@ -155,5 +155,5 @@ This will start a local development server, accessible at http://localhost:5000.
 
 * For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 * For information on customizing, see:
-** link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[\{\{site.productname}} basic setup].
-** link:{{site.baseurl}}/how-to-guides/environment-setup/svelte/svelte-ref/[The \{\{site.productname}} Svelte integration technical reference].
+** link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[\{\{site.productname}} basic setup].
+** link:{baseurl}/how-to-guides/environment-setup/svelte/svelte-ref/[The \{\{site.productname}} Svelte integration technical reference].

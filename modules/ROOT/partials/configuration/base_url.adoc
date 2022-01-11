@@ -12,6 +12,6 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  base_url: '/my/{{site.prodnamecode}}/dir'
+  base_url: '/my/{prodnamecode}/dir'
 });
 ----

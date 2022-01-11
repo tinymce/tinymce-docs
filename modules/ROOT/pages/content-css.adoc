@@ -1,6 +1,11 @@
 = Bundling TinyMCE content CSS using module loading
 
-:title_nav: Content CSS :description_short: Information on bundling the editor content CSS :description: Information on bundling the editor content CSS using module loading \{% assign editorcomponent = "content CSS" %} \{% include module-loading/bundling-ref-example.md %} \{% assign editorcomponent = nil %}
+:title_nav: Content CSS
+
+:description_short: Information on bundling the editor content CSS
+:description: Information on bundling the editor content CSS using module loading
+:editorcomponent: content CSS
+include::partial$module-loading/bundling-ref-example.adoc[] :editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following content CSS file:
 
@@ -11,7 +16,7 @@ The following table shows examples of the syntax used to bundle the following co
 Example syntax for including the example content CSS in a bundle:
 
 ____
-*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:{{site.baseurl}}/how-to-guides/usage-with-module-loaders/[Bundling \{\{site.productname}} with a module loader].
+*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/how-to-guides/usage-with-module-loaders/[Bundling \{\{site.productname}} with a module loader].
 ____
 
 \{% comment %}
@@ -38,4 +43,4 @@ var contentCSS = require('../tinymce/skins/content/example/content.css');
 
 \{% endcomment %}
 
-\{% include module-loading/bundling-content-css-files.md %}
+include::partial$module-loading/bundling-content-css-files.adoc[]

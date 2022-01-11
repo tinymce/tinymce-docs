@@ -2,7 +2,7 @@
 
 This option specifies the base URL for all relative URLs in the document. The default value is the directory of the current document. If a value is provided, it must specify a directory (not a document) and must end with a `+/+`.
 
-This option also interacts with the link:#relative_urls[relative_urls], link:#remove_script_host[remove_script_host], and link:#convert_urls[convert_urls] options to determine whether \{\{site.productname}} returns relative or absolute URLs. The link:{{site.baseurl}}/content/url-handling/[URL handling options page] contains a thorough description and examples of working with relative and absolute URLs.
+This option also interacts with the <<relative_urls, relative_urls>>, <<remove_script_host, remove_script_host>>, and <<convert_urls, convert_urls>> options to determine whether \{\{site.productname}} returns relative or absolute URLs. The link:{baseurl}/content/url-handling/[URL handling options page] contains a thorough description and examples of working with relative and absolute URLs.
 
 Type : `+String+`
 

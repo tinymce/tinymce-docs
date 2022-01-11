@@ -1,15 +1,21 @@
 = Tiny Drive Introduction
 
-:title_nav: Introduction :description: Introduction of what Tiny Drive is and its capabilities :keywords: tinydrive introduction overview
+:title_nav: Introduction
 
-\{% assign pluginname = "Tiny Drive" %} \{% assign plugincode = "tinydrive" %}
+:description: Introduction of what Tiny Drive is and its capabilities
+:keywords: tinydrive introduction overview
+
+:pluginname: Tiny Drive
+
+:plugincode: tinydrive
+
 
 \{\{site.cloudfilemanager}} is a premium \{\{site.productname}} plugin for cloud-based asset management and storage. \{\{site.cloudfilemanager}} allows your users to upload, manage, and use files in \{\{site.productname}}.
 
-For documentation on using \{\{site.cloudfilemanager}} outside \{\{site.productname}}, visit: link:{{site.baseurl}}/tinydrive/[\{\{site.cloudfilemanager}} documentation].
+For documentation on using \{\{site.cloudfilemanager}} outside \{\{site.productname}}, visit: link:{baseurl}/tinydrive/[\{\{site.cloudfilemanager}} documentation].
 
 ____
-*Note*: This plugin is only available for link:{{site.pricingpage}}/[\{\{site.cloudname}} users].
+*Note*: This plugin is only available for link:{pricingpage}/[\{\{site.cloudname}} users].
 ____
 
 == Tiny Drive features
@@ -27,13 +33,16 @@ ____
 |Integrations |Integrations with Google Drive and Dropbox allows you to import file from these systems through \{\{site.cloudfilemanager}}
 |===
 
-The storage and bandwidth quota varies based upon your link:{{site.pricingpage}}/[\{\{site.cloudname}} Plan].
+The storage and bandwidth quota varies based upon your link:{pricingpage}/[\{\{site.cloudname}} Plan].
 
 == Interactive example
 
-\{% include live-demo.html id="drive" %}
+liveDemo::drive[ ]
 
-\{% assign pluginminimumplan = 'tierone' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tierone
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Upload files URL
 
@@ -41,7 +50,7 @@ The URL format for each file is `+https://drive.tiny.cloud/1/{your-api-key}/{uui
 
 == JSON Web Token (JWT) based authentication
 
-Some \{\{site.companyname}} services require setting up JSON Web Token (JWT) authentication. This allows the \{\{site.cloudname}} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the link:{{site.baseurl}}/plugins-ref/premium/tinydrive/jwt-authentication/[JWT authentication section].
+Some \{\{site.companyname}} services require setting up JSON Web Token (JWT) authentication. This allows the \{\{site.cloudname}} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the link:{baseurl}/plugins-ref/premium/tinydrive/jwt-authentication/[JWT authentication section].
 
 == User specific file access
 
@@ -55,6 +64,6 @@ Some \{\{site.companyname}} services require setting up JSON Web Token (JWT) aut
 
 There is a fixed set of file extensions (formats) that can be uploaded, and these are placed in the file type categories below. Some file formats are blocked as they can be a security issue.
 
-\{% include plugins/tinydrive-filetypeslist.md %}
+include::partial$plugins/tinydrive-filetypeslist.adoc[]
 
-\{% include tinydrive-starter-projects.md %}
+include::tinydrive-starter-projects[]

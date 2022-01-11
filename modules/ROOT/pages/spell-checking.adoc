@@ -1,6 +1,9 @@
 = Check spelling in TinyMCE
 
-:title_nav: Spell checking :keywords: spell checker spelling browser_spellcheck gecko_spellcheck \{\{site.productname}} provides several options to bring spell checking capabilities to your users.
+:title_nav: Spell checking
+
+:keywords: spell checker spelling browser_spellcheck gecko_spellcheck \{\{site.productname}} provides several options to bring spell checking capabilities to your users.
+
 
 == Browser-based spell checking
 
@@ -15,11 +18,11 @@ tinymce.init({
 });
 ----
 
-\{% include /misc/admon_ctrl_right_click.md %}
+include::partial$misc/admon_ctrl_right_click[]
 
 == PHP Spellchecker component
 
-\{% include DEPRECATED/spellchecker.md %}
+include::partial$DEPRECATED/spellchecker.adoc[]
 
 You can also use \{\{site.productname}}'s PHP _Spellchecker_ component, that you can http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this http://archive.tinymce.com/develop/changelog/?type=phpspell[`+txt+`] file. The \{\{site.productname}}'s PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
 
@@ -47,8 +50,8 @@ tinymce.init({
 });
 ----
 
-Review the link:{{site.baseurl}}/plugins-ref/opensource/spellchecker/[Spell Checker plugin] for advanced configuration options.
+Review the link:{baseurl}/plugins-ref/opensource/spellchecker/[Spell Checker plugin] for advanced configuration options.
 
 == TinyMCE Spell Checker Pro plugin
 
-Use the link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Use the link:{baseurl}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.

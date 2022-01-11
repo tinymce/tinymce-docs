@@ -1,8 +1,8 @@
 Covered in this section:
 
-* link:#configuringthetinymcesvelteintegration[Configuring the TinyMCE Svelte integration]
-* link:#componentbinding[Component binding]
-* link:#eventbinding[Event binding]
+* <<configuringthetinymcesvelteintegration, Configuring the TinyMCE Svelte integration>>
+* <<componentbinding, Component binding>>
+* <<eventbinding, Event binding>>
 
 == Configuring the TinyMCE Svelte integration
 
@@ -43,7 +43,7 @@ Type : String
 
 === channel
 
-Specifies the \{\{site.cloudname}} channel to use. For information on \{\{site.cloudname}} deployment channels, see: link:{{site.baseurl}}/how-to-guides/cloud-deployment-guide/editor-plugin-version/[Specifying the \{\{site.productname}} editor version deployed from Cloud].
+Specifies the \{\{site.cloudname}} channel to use. For information on \{\{site.cloudname}} deployment channels, see: link:{baseurl}/how-to-guides/cloud-deployment-guide/editor-plugin-version/[Specifying the \{\{site.productname}} editor version deployed from Cloud].
 
 Default value : `+"5"+`
 

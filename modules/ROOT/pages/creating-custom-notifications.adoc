@@ -1,12 +1,16 @@
 = Create custom notifications
 
-:title_nav: Notifications :description_short: Learn how to make custom notifications. :description: Learn how to make custom dialogs with NotificationManager. :keywords: custom notification notifications cdn notificationmanager
+:title_nav: Notifications
+
+:description_short: Learn how to make custom notifications.
+:description: Learn how to make custom dialogs with NotificationManager.
+:keywords: custom notification notifications cdn notificationmanager
 
 \{\{site.productname}} can display customized notifications.
 
 == Interactive example
 
-\{% include live-demo.html id="notifications" %}
+liveDemo::notifications[ ]
 
 == Text
 
@@ -75,7 +79,7 @@ editor.notificationManager.open({
 });
 ----
 
-For a list of the icon identifiers, see: link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[Available icons].
+For a list of the icon identifiers, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/editor-icon-identifiers/[Available icons].
 
 == Progress Bar
 

@@ -2,6 +2,8 @@
 
 :description: Setting up logging for the premium server-side components.
 
+
+
 It may be useful to make the \{\{site.productname}} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
 The \{\{site.productname}} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
@@ -28,7 +30,7 @@ To write the logs to a specific file:
     </encoder>
   </appender>
 
-  <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
+  <!-- The name "com.ephox" refers to all {productname} server-side components. -->
   <logger name="com.ephox" level="INFO"/>
 
   <root level="INFO">

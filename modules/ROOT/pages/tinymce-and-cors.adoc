@@ -1,13 +1,22 @@
 = The TinyMCE Cross-Origin Resource Sharing guide
 
-:title_nav: Cross-Origin Resource Sharing (CORS) :description: Information and options related to using TinyMCE with Cross-Origin Resource Sharing (CORS) :keywords: security cors
+:title_nav: Cross-Origin Resource Sharing (CORS)
+
+:description: Information and options related to using TinyMCE with Cross-Origin Resource Sharing (CORS)
+:keywords: security cors
 
 == Cross-Origin Resource Sharing related options
 
-\{% include configuration/referrer_policy.md %}
+include::partial$configuration/referrer_policy.adoc[]
 
-\{% include configuration/content_css_cors.md %}
+include::partial$configuration/content_css_cors.adoc[]
 
-\{% assign plugincode = "export" %} \{% include configuration/image_cors_hosts.md %}
+:plugincode: export
 
-\{% assign plugincode = "imagetools" %} \{% include configuration/image_cors_hosts.md %}
+
+include::partial$configuration/image_cors_hosts.adoc[]
+
+:plugincode: imagetools
+
+
+include::partial$configuration/image_cors_hosts.adoc[]

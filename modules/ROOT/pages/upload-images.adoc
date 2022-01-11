@@ -1,10 +1,14 @@
 = Handling image uploads
 
-:title_nav: Image uploads :description_short: How to manage asynchronous image uploads. :description: How to manage asynchronous image uploads. :keywords: uploader uploadImages image handler asynchronous async paste_data_images image cors
+:title_nav: Image uploads
+
+:description_short: How to manage asynchronous image uploads.
+:description: How to manage asynchronous image uploads.
+:keywords: uploader uploadImages image handler asynchronous async paste_data_images image cors
 
 \{\{site.productname}} uploads edited images with the image uploader. This complements \{\{site.productname}}'s image editing functionality.
 
-Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the link:{{site.baseurl}}/plugins-ref/opensource/paste/#paste_data_images[`+paste_data_images+`] configuration property, or using the \{\{site.companyname}} link:{{site.baseurl}}/plugins-ref/premium/powerpaste/[*PowerPaste* plugin].
+Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the link:{baseurl}/plugins-ref/opensource/paste/#paste_data_images[`+paste_data_images+`] configuration property, or using the \{\{site.companyname}} link:{baseurl}/plugins-ref/premium/powerpaste/[*PowerPaste* plugin].
 
 \{\{site.productname}} automatically updates the `+<img>+` src attribute with the new path to the remote image.
 
@@ -36,7 +40,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ----
 
-\{% include /misc/admon_svg_not_supported.md %}
+include::partial$misc/admon_svg_not_supported[]
 
 == Image Uploader requirements
 
@@ -78,29 +82,29 @@ Set the `+images_upload_url+` _or_ `+images_upload_handler+` option for image up
 
 Required:
 
-* link:#images_upload_url[`+images_upload_url+`]
+* <<images_upload_url, `+images_upload_url+`>>
 
 _Or_
 
-* link:#images_upload_handler[`+images_upload_handler+`]
+* <<images_upload_handler, `+images_upload_handler+`>>
 
 Optional:
 
-* link:#images_upload_base_path[`+images_upload_base_path+`]
-* link:#images_upload_credentials[`+images_upload_credentials+`]
-* link:#images_reuse_filename[`+images_reuse_filename+`]
+* <<images_upload_base_path, `+images_upload_base_path+`>>
+* <<images_upload_credentials, `+images_upload_credentials+`>>
+* <<images_reuse_filename, `+images_reuse_filename+`>>
 
-\{% include configuration/images_upload_url.md %}
+include::partial$configuration/images_upload_url.adoc[]
 
-\{% include configuration/images_upload_handler.md %}
+include::partial$configuration/images_upload_handler.adoc[]
 
-\{% include configuration/images_upload_base_path.md %}
+include::partial$configuration/images_upload_base_path.adoc[]
 
-\{% include configuration/images_upload_credentials.md %}
+include::partial$configuration/images_upload_credentials.adoc[]
 
-\{% include configuration/images_reuse_filename.md %}
+include::partial$configuration/images_reuse_filename.adoc[]
 
-\{% include configuration/images_dataimg_filter.md %}
+include::partial$configuration/images_dataimg_filter.adoc[]
 
 == CORS considerations
 

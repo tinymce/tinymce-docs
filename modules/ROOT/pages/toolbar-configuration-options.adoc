@@ -1,45 +1,48 @@
 = Options for customizing the editor's toolbars
 
-:title_nav: Options :description: Information on options for customizing TinyMCE's toolbars
+:title_nav: Options
+
+:description: Information on options for customizing TinyMCE's toolbars
+
 
 == Basic toolbar configuration options
 
-#\{% include configuration/toolbar.md %}
+include::partial$configuration/toolbar.adoc[leveloffset=+1]
 
-#\{% include configuration/toolbar_n.md %}
+include::partial$configuration/toolbar_n.adoc[leveloffset=+1]
 
-#\{% include configuration/toolbar_groups.md %}
+include::partial$configuration/toolbar_groups.adoc[leveloffset=+1]
 
 == Main editor toolbar behavior
 
-#\{% include configuration/toolbar_mode.md %}
+include::partial$configuration/toolbar_mode.adoc[leveloffset=+1]
 
-#\{% include configuration/toolbar_location.md %}
+include::partial$configuration/toolbar_location.adoc[leveloffset=+1]
 
-#\{% include configuration/toolbar_sticky.md %}
+include::partial$configuration/toolbar_sticky.adoc[leveloffset=+1]
 
-#\{% include configuration/toolbar_sticky_offset.md %}
+include::partial$configuration/toolbar_sticky_offset.adoc[leveloffset=+1]
 
 == Persistent inline editor toolbar options
 
-#\{% include configuration/toolbar_persist.md %}
+include::partial$configuration/toolbar_persist.adoc[leveloffset=+1]
 
-#\{% include configuration/fixed_toolbar_container.md %}
+include::partial$configuration/fixed_toolbar_container.adoc[leveloffset=+1]
 
-#\{% include configuration/fixed_toolbar_container_target.md %}
+include::partial$configuration/fixed_toolbar_container_target.adoc[leveloffset=+1]
 
 == Contextual (content-specific) toolbars
 
-#\{% include configuration/selection_toolbar.md %}
+include::partial$configuration/selection_toolbar.adoc[leveloffset=+1]
 
-#\{% include configuration/insert_toolbar.md %}
+include::partial$configuration/insert_toolbar.adoc[leveloffset=+1]
 
 == Contextual (content-specific) plugin toolbars
 
-#\{% include configuration/image_toolbar.md %}
+include::partial$configuration/image_toolbar.adoc[leveloffset=+1]
 
-#\{% include configuration/imagetools_toolbar.md %}
+include::partial$configuration/imagetools_toolbar.adoc[leveloffset=+1]
 
-#\{% include configuration/link_context_toolbar.md %}
+include::partial$configuration/link_context_toolbar.adoc[leveloffset=+1]
 
-#\{% include configuration/table_toolbar.md %}
+include::partial$configuration/table_toolbar.adoc[leveloffset=+1]

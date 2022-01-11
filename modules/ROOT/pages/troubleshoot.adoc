@@ -1,6 +1,9 @@
 = Troubleshoot server-side components
 
-:description: Debug problems with the Enterprise server-side components. :keywords: enterprise tinymcespellchecker spell check checker pro pricing troubleshoot
+:description: Debug problems with the Enterprise server-side components.
+
+:keywords: enterprise tinymcespellchecker spell check checker pro pricing troubleshoot
+
 
 == General troubleshooting advice
 
@@ -16,7 +19,7 @@ If a service does not appear to be working, this is generally caused by one of t
 [arabic]
 . The `+application.conf+` file is incorrect. Please go back and follow the steps listed in the [installation guide](\{\{ site.baseurl }}/how-to-guides/premium-server-side-guide/#step3createaconfigurationfile). This is the most common problem - often the origins are specified without the port numbers and this can cause things to fail, eg: use `+http://localhost:8080+` instead of `+http://localhost+`. After making changes to the `+application.conf+` file, please restart your Java web server (e.g. Jetty or Tomcat).
 . The `+application.conf+` file is correct, but something is wrong with one of the services. See the section below to debug the services.
-. The `+application.conf+` file is correct, and the services are working, but the server-side component URLs that the editor uses are not quite right. Refer to the link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro], link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image Tools], link:{{site.baseurl}}/plugins-ref/premium/mediaembed/[Enhanced Media Embed] and link:{{site.baseurl}}/plugins-ref/premium/linkchecker/[Link Checker] plugin pages for help.
+. The `+application.conf+` file is correct, and the services are working, but the server-side component URLs that the editor uses are not quite right. Refer to the link:{baseurl}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro], link:{baseurl}/plugins-ref/opensource/imagetools/[Image Tools], link:{baseurl}/plugins-ref/premium/mediaembed/[Enhanced Media Embed] and link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker] plugin pages for help.
 . The browser is sending a different origin than expected (and configured in `+application.conf+`). Refer to step 6 of [Using browser tooling to investigate services issues](\{\{ site.baseurl }}/how-to-guides/premium-server-side-guide/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues)
 
 == Browser-specific issues
@@ -161,4 +164,4 @@ Once downloaded:
 
 == Need more help?
 
-If you are still experiencing problems, please contact link:{{site.supporturl}}/[\{\{site.supportname}}].
+If you are still experiencing problems, please contact link:{supporturl}/[\{\{site.supportname}}].

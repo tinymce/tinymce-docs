@@ -3,7 +3,7 @@
 This option allows you to set the maximum width that a user can stretch the entire \{\{site.productname}} interface (by grabbing the dragable area in the bottom right of the editor interface) when using the modern theme.
 
 ____
-*Note*: This behavior is different than the link:{{site.baseurl}}/plugins-ref/opensource/autoresize/[`+autoresize+`] plugin, which controls the resizing of the editable area only, not the entire editor.
+*Note*: This behavior is different than the link:{baseurl}/plugins-ref/opensource/autoresize/[`+autoresize+`] plugin, which controls the resizing of the editable area only, not the entire editor.
 ____
 
 Type : `+Number+`
@@ -19,5 +19,5 @@ tinymce.init({
 ----
 
 ____
-*Note*: by default the link:{{site.baseurl}}/initial-configuration/editor-size-options/#resize[`+resize+`] handle does not allow horizontal dragging and giving this key a value will not result in an observable behavior.
+*Note*: by default the link:{baseurl}/initial-configuration/editor-size-options/#resize[`+resize+`] handle does not allow horizontal dragging and giving this key a value will not result in an observable behavior.
 ____

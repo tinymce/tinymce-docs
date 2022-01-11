@@ -1,6 +1,10 @@
 = Security guide
 
-:title_nav: Security guide :description_short: Security information for TinyMCE. :description: Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users. :keywords: security xss scripting vulnerability hack hacker csp mitigation protection protect
+:title_nav: Security guide
+
+:description_short: Security information for TinyMCE.
+:description: Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users.
+:keywords: security xss scripting vulnerability hack hacker csp mitigation protection protect
 
 ____
 *Note*: The following is _general_ security advice that may be relevant to a website or application using \{\{site.productname}}.
@@ -8,18 +12,18 @@ ____
 
 == Overview
 
-* link:#reportingtinymcesecurityissues[Reporting TinyMCE security issues]
-* link:#whatwedotomaintainsecurityfortinymce[What we do to maintain security for TinyMCE]
-** link:#scriptsandxssvulnerabilities[Scripts and XSS vulnerabilities]
-** link:#keepingdependenciesup-to-date[Keeping dependencies up-to-date]
-* link:#configuringcontentsecuritypolicycspfortinymce[Configuring Content Security Policy (CSP) for TinyMCE]
-* link:#generalsecurityrisksforuserinputelements[General security risks for user input elements]
-** link:#cross-sitescriptingxss[Cross-Site Scripting (XSS)]
-** link:#injection[Injection]
-** link:#insecuretransmissionandstorageofdata[Insecure Transmission and Storage of data]
-** link:#brokenauthenticationandsessionmanagement[Broken Authentication and Session Management]
-** link:#usingcomponentswithknownvulnerabilities[Using Components with Known Vulnerabilities]
-** link:#furthersecurityinformation[Further security information]
+* <<reportingtinymcesecurityissues, Reporting TinyMCE security issues>>
+* <<whatwedotomaintainsecurityfortinymce, What we do to maintain security for TinyMCE>>
+** <<scriptsandxssvulnerabilities, Scripts and XSS vulnerabilities>>
+** <<keepingdependenciesup-to-date, Keeping dependencies up-to-date>>
+* <<configuringcontentsecuritypolicycspfortinymce, Configuring Content Security Policy (CSP) for TinyMCE>>
+* <<generalsecurityrisksforuserinputelements, General security risks for user input elements>>
+** <<cross-sitescriptingxss, Cross-Site Scripting (XSS)>>
+** <<injection, Injection>>
+** <<insecuretransmissionandstorageofdata, Insecure Transmission and Storage of data>>
+** <<brokenauthenticationandsessionmanagement, Broken Authentication and Session Management>>
+** <<usingcomponentswithknownvulnerabilities, Using Components with Known Vulnerabilities>>
+** <<furthersecurityinformation, Further security information>>
 
 == Reporting TinyMCE security issues
 
@@ -45,7 +49,7 @@ From the 1st of January 2020, Security Advisories for patched XSS vulnerabilitie
 
 To protect our users, \{\{site.companyname}} ensures that the TinyMCE dependencies are updated before the next version (major or minor) is released.
 
-\{% include misc/general-csp.md %}
+include::partial$misc/general-csp.adoc[]
 
 == General security risks for user input elements
 

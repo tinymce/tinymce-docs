@@ -4,7 +4,7 @@ ____
 *Important*: This option was deprecated with the release of \{\{site.productname}} 5.3. `+images_dataimg_filter+` will be removed in \{\{site.productname}} 6.0.
 ____
 
-The *images_dataimg_filter* option is used to filter `+<img>+` elements before they are passed to link:{{site.baseurl}}/content/file-image-upload/#images_upload_handler[`+image_upload_handler+`] or link:{{site.baseurl}}/content/file-image-upload/#images_upload_url[`+images_upload_url+`]. If the callback function provided returns `+false+` for an image, the image will not be uploaded.
+The *images_dataimg_filter* option is used to filter `+<img>+` elements before they are passed to link:{baseurl}/content/file-image-upload/#images_upload_handler[`+image_upload_handler+`] or link:{baseurl}/content/file-image-upload/#images_upload_url[`+images_upload_url+`]. If the callback function provided returns `+false+` for an image, the image will not be uploaded.
 
 Type : `+JavaScript Function+`
 

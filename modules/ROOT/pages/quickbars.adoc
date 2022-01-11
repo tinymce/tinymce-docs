@@ -1,8 +1,14 @@
 = Quick Toolbars plugin
 
-:title_nav: Quick Toolbars :description: User interface controls to create content faster. :keywords: plugin inlite quickbar
+:title_nav: Quick Toolbars
 
-\{% assign pluginname = "Quick Toolbars" %} \{% assign plugincode = "quickbars" %}
+:description: User interface controls to create content faster.
+:keywords: plugin inlite quickbar
+
+:pluginname: Quick Toolbars
+
+:plugincode: quickbars
+
 
 The Quick Toolbar plugin adds three context toolbars:
 
@@ -18,7 +24,7 @@ This plugin also adds three new toolbar buttons:
 
 == Interactive example
 
-\{% include live-demo.html id="quickbars" %}
+liveDemo::quickbars[ ]
 
 == Basic setup
 
@@ -128,10 +134,10 @@ tinymce.init({
 
 == Configuration options
 
-\{% include configuration/selection_toolbar.md %}
+include::partial$configuration/selection_toolbar.adoc[]
 
-\{% include configuration/insert_toolbar.md %}
+include::partial$configuration/insert_toolbar.adoc[]
 
-\{% include configuration/image_toolbar.md %}
+include::partial$configuration/image_toolbar.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]

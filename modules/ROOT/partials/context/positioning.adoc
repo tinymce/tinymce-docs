@@ -1,4 +1,4 @@
-\{% case page.title %} \{% when "Context toolbar" %} \{% assign contextItemType = "toolbar" %} \{% when "Context forms" %} \{% assign contextItemType = "form" %} \{% endcase %}
+\{% case page.title %} \{% when "Context toolbar" %} :contextItemType: toolbar \{% when "Context forms" %} :contextItemType: form \{% endcase %}
 
 == Positioning of context \{\{contextItemType}}s
 

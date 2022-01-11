@@ -1,12 +1,15 @@
 = Cloud deployment of editor & plugins
 
-:description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment. :description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment. :keywords: tinymce cloud script textarea apiKey
+:description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
+
+:description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
+:keywords: tinymce cloud script textarea apiKey
 
 \{\{site.cloudname}} is the easiest way to integrate \{\{site.productname}} and upgrade to premium plugins.
 
 \{\{site.cloudname}} can be used without an API key. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All \{\{site.cloudname}} accounts include a free, pre-configured \{\{site.cloudname}} image proxy service. This setup uses the link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image tools] plugin.
+All \{\{site.cloudname}} accounts include a free, pre-configured \{\{site.cloudname}} image proxy service. This setup uses the link:{baseurl}/plugins-ref/opensource/imagetools/[Image tools] plugin.
 
 == Integrating TinyMCE for the first time
 
@@ -18,7 +21,7 @@ The following example adds a script tag into the application that inserts the co
 
 [source,html]
 ----
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
 [cols=",,",options="header",]
@@ -44,30 +47,30 @@ There are more than 40 open source plugins that enhance the editing experience i
 
 Extend the [\{\{site.productname}} configuration](\{\{ site.baseurl }}/how-to-guides/learn-the-basics/basic-setup/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* link:{{site.baseurl}}/plugins-ref/premium/mentions/[Mentions]
+* link:{baseurl}/plugins-ref/premium/mentions/[Mentions]
 * [\{\{site.cloudfilemanager}}](\{\{ site.baseurl }}/plugins-ref/premium/tinydrive/)
-* link:{{site.baseurl}}/plugins-ref/premium/comments/[Comments]
-* link:{{site.baseurl}}/plugins-ref/premium/pageembed/[Page Embed]
-* link:{{site.baseurl}}/plugins-ref/premium/permanentpen/[Permanent Pen]
-* link:{{site.baseurl}}/plugins-ref/premium/formatpainter/[Format Painter]
-* link:{{site.baseurl}}/plugins-ref/premium/powerpaste/[PowerPaste]
-* link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro]
+* link:{baseurl}/plugins-ref/premium/comments/[Comments]
+* link:{baseurl}/plugins-ref/premium/pageembed/[Page Embed]
+* link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen]
+* link:{baseurl}/plugins-ref/premium/formatpainter/[Format Painter]
+* link:{baseurl}/plugins-ref/premium/powerpaste/[PowerPaste]
+* link:{baseurl}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro]
 
 ____
 *Note*: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/).
 ____
 
-* link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image Tools (with configured image proxy)]
+* link:{baseurl}/plugins-ref/opensource/imagetools/[Image Tools (with configured image proxy)]
 
 ____
 *Note*: Configuration of the `+imagetools_cors_hosts+` and `+imagetools_proxy+` properties occurs automatically.
 ____
 
-* link:{{site.baseurl}}/plugins-ref/premium/moxiemanager/[Moxie Manager]
-* link:{{site.baseurl}}/plugins-ref/premium/a11ychecker/[Accessibility Checker]
-* link:{{site.baseurl}}/plugins-ref/premium/advcode/[Advanced Code Editor]
-* link:{{site.baseurl}}/plugins-ref/premium/mediaembed/[Enhanced Media Embed]
-* link:{{site.baseurl}}/plugins-ref/premium/linkchecker/[Link Checker]
+* link:{baseurl}/plugins-ref/premium/moxiemanager/[Moxie Manager]
+* link:{baseurl}/plugins-ref/premium/a11ychecker/[Accessibility Checker]
+* link:{baseurl}/plugins-ref/premium/advcode/[Advanced Code Editor]
+* link:{baseurl}/plugins-ref/premium/mediaembed/[Enhanced Media Embed]
+* link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker]
 
 ____
 *Note*: It may take up to 30 minutes for the purchased plugin to be available to \{\{site.productname}}. Clear the browser's cache.
@@ -89,7 +92,7 @@ Ensure the `+tiny-api-key+` and `+tinymce-api-key+` headers are retained while r
 
 To change the user interface language with a language pack, use the [language configuration option](\{\{ site.baseurl }}/interface/ui-localization/#language).
 
-Alternatively, link:{{site.gettiny}}/language-packages/[download a language pack] to enable a language other than English (US). [Specify its location](\{\{ site.baseurl }}/interface/ui-localization/#language_url) with the `+language_url+` configuration option.
+Alternatively, link:{gettiny}/language-packages/[download a language pack] to enable a language other than English (US). [Specify its location](\{\{ site.baseurl }}/interface/ui-localization/#language_url) with the `+language_url+` configuration option.
 
 == Migrating from a self-hosted environment to Tiny Cloud
 
@@ -106,7 +109,7 @@ Replace the script tag with the following:
 
 [source,html]
 ----
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
 === Step 2: Update custom plugin paths
@@ -121,27 +124,27 @@ ____
 
 Extend the [\{\{site.productname}} configuration](\{\{ site.baseurl }}/how-to-guides/learn-the-basics/basic-setup/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* link:{{site.baseurl}}/plugins-ref/premium/mentions/[Mentions]
+* link:{baseurl}/plugins-ref/premium/mentions/[Mentions]
 * [\{\{site.cloudfilemanager}}](\{\{ site.baseurl }}/plugins-ref/premium/tinydrive/)
-* link:{{site.baseurl}}/plugins-ref/premium/comments/[Comments]
-* link:{{site.baseurl}}/plugins-ref/premium/pageembed/[Page Embed]
-* link:{{site.baseurl}}/plugins-ref/premium/permanentpen/[Permanent Pen]
-* link:{{site.baseurl}}/plugins-ref/premium/formatpainter/[Format Painter]
-* link:{{site.baseurl}}/plugins-ref/premium/powerpaste/[Powerpaste]
-* link:{{site.baseurl}}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro]
+* link:{baseurl}/plugins-ref/premium/comments/[Comments]
+* link:{baseurl}/plugins-ref/premium/pageembed/[Page Embed]
+* link:{baseurl}/plugins-ref/premium/permanentpen/[Permanent Pen]
+* link:{baseurl}/plugins-ref/premium/formatpainter/[Format Painter]
+* link:{baseurl}/plugins-ref/premium/powerpaste/[Powerpaste]
+* link:{baseurl}/plugins-ref/premium/tinymcespellchecker/[Spell Checker Pro]
 
 ____
 *Note*: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via [\{\{site.cloudname}}](\{\{ site.baseurl }}/how-to-guides/cloud-deployment-guide/).
 ____
 
-* link:{{site.baseurl}}/plugins-ref/opensource/imagetools/[Image tools (with configured image proxy)]
+* link:{baseurl}/plugins-ref/opensource/imagetools/[Image tools (with configured image proxy)]
 
 ____
 *Note*: Configuration of the `+imagetools_cors_hosts+` and `+imagetools_proxy+` properties occurs automatically.
 ____
 
-* link:{{site.baseurl}}/plugins-ref/premium/moxiemanager/[Moxie Manager]
-* link:{{site.baseurl}}/plugins-ref/premium/a11ychecker/[Accessibility Checker]
-* link:{{site.baseurl}}/plugins-ref/premium/advcode/[Advanced Code Editor]
-* link:{{site.baseurl}}/plugins-ref/premium/mediaembed/[Enhanced Media Embed]
-* link:{{site.baseurl}}/plugins-ref/premium/linkchecker/[Link Checker]
+* link:{baseurl}/plugins-ref/premium/moxiemanager/[Moxie Manager]
+* link:{baseurl}/plugins-ref/premium/a11ychecker/[Accessibility Checker]
+* link:{baseurl}/plugins-ref/premium/advcode/[Advanced Code Editor]
+* link:{baseurl}/plugins-ref/premium/mediaembed/[Enhanced Media Embed]
+* link:{baseurl}/plugins-ref/premium/linkchecker/[Link Checker]

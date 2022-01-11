@@ -8,7 +8,7 @@
 
 \{% endif %} The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. \{\{site.companyname}} provides a pre-configured package for creating a Hyperlinking Docker image.
 
-\{% include misc/admon_dont-push-docker-images.md %}
+include::partial$misc/admon_dont-push-docker-images.adoc[]
 
 \{% if shbundledockerfiles == false %}
 
@@ -25,7 +25,7 @@
 The following procedure covers downloading, configuring, building and testing the \{\{site.productname}} Hyperlinking Docker image. \{% if shbundledockerfiles == true %}
 
 ____
-*Note*: This procedure assumes that a \{\{ site.productname }} self-hosted enterprise bundle has been extracted as described in link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-intro-setup/#downloadandextractthetinymceself-hostedbundle[Download and extract the \{\{site.productname}} Self-hosted Bundle].
+*Note*: This procedure assumes that a \{\{ site.productname }} self-hosted enterprise bundle has been extracted as described in link:{baseurl}/how-to-guides/premium-server-side-guide/docker/bundle/bundle-intro-setup/#downloadandextractthetinymceself-hostedbundle[Download and extract the \{\{site.productname}} Self-hosted Bundle].
 ____
 
 [arabic, start=4]
@@ -138,10 +138,10 @@ http {
 }
 ----
 +
-For information on the `+http+` configuration setting, see: link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#httpoptional[Configure server-side components - `+http+`].
-. _Optional_: Update the link-checking cache configuration, as described in link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#hyperlinkingservicesettings[Link Checker self-hosted quick setup].
-. _Optional_: Configure the Enhanced Media Embed Service, as described in link:{{site.baseurl}}/plugins-ref/premium/mediaembed/mediaembed-server-config/[Configure Enhanced Media Embed Server].
-. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-hyperlinking-docker-env.conf+`. See: link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#proxyoptional[Configure server-side components - proxy].
+For information on the `+http+` configuration setting, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#httpoptional[Configure server-side components - `+http+`].
+. _Optional_: Update the link-checking cache configuration, as described in link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#hyperlinkingservicesettings[Link Checker self-hosted quick setup].
+. _Optional_: Configure the Enhanced Media Embed Service, as described in link:{baseurl}/plugins-ref/premium/mediaembed/mediaembed-server-config/[Configure Enhanced Media Embed Server].
+. _Optional_: Configure the service to use a HTTP proxy by updating `+config/ephox-hyperlinking-docker-env.conf+`. See: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#proxyoptional[Configure server-side components - proxy].
 . Create an `+origins.env+` file in the same directory as the `+Dockerfile+`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`+allowed-origins+`). Up to 99 origins can be added without editing `+config/ephox-hyperlinking-docker-env.conf+`.
 +
 For example:
@@ -153,7 +153,7 @@ ORIGIN1=example
 ORIGIN2=http://example.org
 ----
 +
-For information on `+allowed-origins+`, see: link:{{site.baseurl}}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
+For information on `+allowed-origins+`, see: link:{baseurl}/how-to-guides/premium-server-side-guide/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
 . As the root user or Administrator, build the \{\{site.productname}} Hyperlinking Docker image using the following command:
 +
 [source,sh]

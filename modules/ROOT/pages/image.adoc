@@ -1,8 +1,14 @@
 = Image plugin
 
-:title_nav: Image :description: Insert an image into TinyMCE. :keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
+:title_nav: Image
 
-\{% assign pluginname = "Image" %} \{% assign plugincode = "image" %}
+:description: Insert an image into TinyMCE.
+:keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
+
+:pluginname: Image
+
+:plugincode: image
+
 
 This plugin enables the user to insert an image into \{\{site.productname}}'s editable area. The plugin also adds a toolbar button and an `+Insert/edit image+` menu item under the `+Insert+` menu.
 
@@ -26,7 +32,7 @@ ____
 *Note*: This is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 ____
 
-\{% include /misc/admon_svg_not_supported.md %}
+include::partial$misc/admon_svg_not_supported[]
 
 == Options
 
@@ -34,47 +40,51 @@ These configuration options affect the execution of the `+image+` plugin. Many o
 
 If you wish to align the image, you can also use the text align buttons while images are selected.
 
-\{% assign includedSection = 'imagePlugin' %} #\{% include configuration/a11y_advanced_options.md %} \{% assign includedSection = false %} #\{% include configuration/file_picker_callback.md %}
+:includedSection: imagePlugin
 
-#\{% include configuration/file_picker_types.md %}
 
-\{% include configuration/image_caption.md %}
+include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1] :includedSection: false
+include::partial$configuration/file_picker_callback.adoc[leveloffset=+1]
 
-\{% include configuration/image_list.md %}
+include::partial$configuration/file_picker_types.adoc[leveloffset=+1]
 
-\{% include configuration/image_advtab.md %}
+include::partial$configuration/image_caption.adoc[]
 
-\{% include configuration/image_class_list.md %}
+include::partial$configuration/image_list.adoc[]
 
-\{% include configuration/image_description.md %}
+include::partial$configuration/image_advtab.adoc[]
 
-\{% include configuration/image_dimensions.md %}
+include::partial$configuration/image_class_list.adoc[]
 
-\{% include configuration/image_prepend_url.md %}
+include::partial$configuration/image_description.adoc[]
 
-\{% include configuration/image_title.md %}
+include::partial$configuration/image_dimensions.adoc[]
 
-\{% include configuration/image_uploadtab.md %}
+include::partial$configuration/image_prepend_url.adoc[]
 
-#\{% include configuration/images_file_types.md %}
+include::partial$configuration/image_title.adoc[]
 
-#\{% include configuration/images_upload_base_path.md %}
+include::partial$configuration/image_uploadtab.adoc[]
 
-#\{% include configuration/images_upload_credentials.md %}
+include::partial$configuration/images_file_types.adoc[leveloffset=+1]
 
-#\{% include configuration/images_upload_handler.md %}
+include::partial$configuration/images_upload_base_path.adoc[leveloffset=+1]
 
-#\{% include configuration/images_upload_url.md %}
+include::partial$configuration/images_upload_credentials.adoc[leveloffset=+1]
 
-#\{% include configuration/object_resizing.md %}
+include::partial$configuration/images_upload_handler.adoc[leveloffset=+1]
 
-#\{% include configuration/resize_img_proportional.md %}
+include::partial$configuration/images_upload_url.adoc[leveloffset=+1]
 
-#\{% include configuration/object_resizing.md %}
+include::partial$configuration/object_resizing.adoc[leveloffset=+1]
 
-#\{% include configuration/resize_img_proportional.md %}
+include::partial$configuration/resize_img_proportional.adoc[leveloffset=+1]
 
-#\{% include configuration/type_ahead_urls.md %}
+include::partial$configuration/object_resizing.adoc[leveloffset=+1]
+
+include::partial$configuration/resize_img_proportional.adoc[leveloffset=+1]
+
+include::partial$configuration/type_ahead_urls.adoc[leveloffset=+1]
 
 == Q: Where are the advanced image options?
 
@@ -94,12 +104,12 @@ style_formats: [
 ]
 ----
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Image plugin provides the following \{\{site.productname}} command.
 
-\{% include commands/image-cmds.md %}
+include::partial$commands/image-cmds.adoc[]

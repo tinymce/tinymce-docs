@@ -1,6 +1,9 @@
 = Real-Time Collaboration (RTC) events
 
-:title_nav: RTC Events :description: List of all available RTC specific events. :keywords: rtc events
+:title_nav: RTC Events
+
+:description: List of all available RTC specific events.
+:keywords: rtc events
 
 == `+RtcClientConnected+`
 
@@ -8,7 +11,7 @@ When a user joins a real-time collaboration session, the `+RtcClientConnected+` 
 
 === Event fields: `+RtcClientConnected+`
 
-\{% include rtc/rtc-client-connect-inputs.md %}
+include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 === Example of using the RtcClientConnected event
 
@@ -37,7 +40,7 @@ This event is fired when a user leaves the session, and can be used to trigger u
 
 === Event fields: `+RtcClientDisconnected+`
 
-\{% include rtc/rtc-client-connect-inputs.md %}
+include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 === Example of using the RtcClientDisconnected event
 

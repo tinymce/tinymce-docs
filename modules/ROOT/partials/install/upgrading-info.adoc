@@ -2,13 +2,13 @@
 
 The procedure for upgrading to the latest version of \{\{site.productname}} \{\{site.productmajorversion}} depends on the deployment type.
 
-* link:#upgradingtinycloud[Upgrading Tiny Cloud].\{% if enterprise != true %}
-* link:#upgradingtinymceself-hostedusingapackagemanager[Upgrading TinyMCE Self-hosted using a package manager].\{% endif %}
-* link:#upgradingtinymceself-hostedmanually[Upgrading TinyMCE Self-hosted manually].
+* <<upgradingtinycloud, Upgrading Tiny Cloud>>.\{% if enterprise != true %}
+* <<upgradingtinymceself-hostedusingapackagemanager, Upgrading TinyMCE Self-hosted using a package manager>>.\{% endif %}
+* <<upgradingtinymceself-hostedmanually, Upgrading TinyMCE Self-hosted manually>>.
 
 === Upgrading Tiny Cloud
 
-\{\{site.cloudname}} provides the latest enterprise version of \{\{site.productname}}. For information on configuring \{\{site.cloudname}}, see: link:{{site.baseurl}}/how-to-guides/cloud-deployment-guide/[the Cloud deployment guide].
+\{\{site.cloudname}} provides the latest enterprise version of \{\{site.productname}}. For information on configuring \{\{site.cloudname}}, see: link:{baseurl}/how-to-guides/cloud-deployment-guide/[the Cloud deployment guide].
 
 \{% if enterprise != true %}
 
@@ -16,11 +16,11 @@ The procedure for upgrading to the latest version of \{\{site.productname}} \{\{
 
 Select from the following package managers.
 
-* link:#yarn[Yarn]
-* link:#npm[npm]
-* link:#composer[Composer]
-* link:#nuget[NuGet]
-* link:#bower[Bower]
+* <<yarn, Yarn>>
+* <<npm, npm>>
+* <<composer, Composer>>
+* <<nuget, NuGet>>
+* <<bower, Bower>>
 
 ==== Yarn
 
@@ -28,7 +28,7 @@ To upgrade to \{\{site.productname}} \{\{site.productminorversion}} using Yarn, 
 
 [source,sh]
 ----
-$ yarn upgrade {{site.prodnamecode}}
+$ yarn upgrade {prodnamecode}
 ----
 
 ==== npm
@@ -37,7 +37,7 @@ To upgrade to \{\{site.productname}} \{\{site.productminorversion}} using npm, r
 
 [source,sh]
 ----
-$ npm install {{site.prodnamecode}}@latest --save
+$ npm install {prodnamecode}@latest --save
 ----
 
 ==== Composer
@@ -55,7 +55,7 @@ To upgrade to \{\{site.productname}} \{\{site.productminorversion}} using NuGet,
 
 [source,sh]
 ----
-$ Install-Package {{site.productname}}
+$ Install-Package {productname}
 ----
 
 ==== Bower
@@ -64,7 +64,7 @@ To upgrade to \{\{site.productname}} \{\{site.productminorversion}} using Bower,
 
 [source,sh]
 ----
-$ bower install {{site.prodnamecode}}#{{site.productminorversion}} --save
+$ bower install {prodnamecode}#{productminorversion} --save
 ----
 
 \{% endif %}
@@ -74,7 +74,7 @@ $ bower install {{site.prodnamecode}}#{{site.productminorversion}} --save
 To upgrade to \{\{site.productname}} \{\{site.productminorversion}} using a manually downloaded package:
 
 [arabic]
-. Backup the `+{{site.prodnamecode}}/+` directory so any customizations can be restored after the upgrade.
+. Backup the `+{prodnamecode}/+` directory so any customizations can be restored after the upgrade.
 +
 Customizations for \{\{site.productname}} are typically stored in the following directories:
 +
@@ -90,27 +90,27 @@ tinymce/
 └── themes/
 ----
 . Download the latest version of \{\{site.productname}}.
-* For the \{\{site.productname}} Community Version, download `+{{site.prodnamecode}}_<VERSION>.zip+` from link:{{site.gettiny}}/self-hosted/[Get \{\{site.productname}} - Self-hosted releases], where _`+<VERSION>+`_ is the latest version of \{\{site.productname}}.
-* For the \{\{site.productname}} Enterprise Version, download the *\{\{site.productname}} Enterprise Bundle* from link:{{site.accountpageurl}}/downloads/[\{\{site.accountpage}} > Downloads]. The downloaded file will be named `+enterprise_latest.zip+`.
+* For the \{\{site.productname}} Community Version, download `+{prodnamecode}_<VERSION>.zip+` from link:{gettiny}/self-hosted/[Get \{\{site.productname}} - Self-hosted releases], where _`+<VERSION>+`_ is the latest version of \{\{site.productname}}.
+* For the \{\{site.productname}} Enterprise Version, download the *\{\{site.productname}} Enterprise Bundle* from link:{accountpageurl}/downloads/[\{\{site.accountpage}} > Downloads]. The downloaded file will be named `+enterprise_latest.zip+`.
 . Extract the downloaded `+.zip+` file to a temporary location.
-. (If required) Install the latest language packs from link:{{site.gettiny}}/language-packages/[Get \{\{site.productname}} - Language Packages].
-. Copy customizations to the new `+{{site.prodnamecode}}/+` directory. Ensure that _only custom changes_ are added the new `+{{site.prodnamecode}}/+` directory, such as:
+. (If required) Install the latest language packs from link:{gettiny}/language-packages/[Get \{\{site.productname}} - Language Packages].
+. Copy customizations to the new `+{prodnamecode}/+` directory. Ensure that _only custom changes_ are added the new `+{prodnamecode}/+` directory, such as:
 * Custom icons packs
 * Custom plugins
 * Custom skins
 * Custom themes
-. Delete the existing `+{{site.prodnamecode}}/+` directory and replace with the new `+{{site.prodnamecode}}/+`.
+. Delete the existing `+{prodnamecode}/+` directory and replace with the new `+{prodnamecode}/+`.
 
 ____
 *Note*: To simplify the upgrade process to future versions of \{\{site.productname}}:
 
 [arabic]
-. Host the \{\{site.productname}} customizations outside of the `+{{site.prodnamecode}}/+` directory.
+. Host the \{\{site.productname}} customizations outside of the `+{prodnamecode}/+` directory.
 . Update your \{\{site.productname}} configuration as required:
-* Set the location of content CSS customizations using link:{{site.baseurl}}/content/add-css-options/#content_css[`+content_css+`].
-* Set the location of custom plugins using link:{{site.baseurl}}/initial-configuration/editor-important-options/#external_plugins[`+external_plugins+`].
-* Set the location of custom icon packages using link:{{site.baseurl}}/interface/editor-appearance/editor-icons/#icons_url[`+icons_url+`] instead of `+icons+`.
-* Set the location of custom localization packages using link:{{site.baseurl}}/interface/ui-localization/#language_url[`+language_url+`] instead of `+language+`.
-* Set the location of custom skin packages using link:{{site.baseurl}}/interface/editor-appearance/editor-skin/#skin_url[`+skin_url+`] instead of `+skin+`.
-* Set the location of custom themes using link:{{site.baseurl}}/interface/editor-appearance/editor-theme/#theme_url[`+theme_url+`] instead of `+theme+`.
+* Set the location of content CSS customizations using link:{baseurl}/content/add-css-options/#content_css[`+content_css+`].
+* Set the location of custom plugins using link:{baseurl}/initial-configuration/editor-important-options/#external_plugins[`+external_plugins+`].
+* Set the location of custom icon packages using link:{baseurl}/interface/editor-appearance/editor-icons/#icons_url[`+icons_url+`] instead of `+icons+`.
+* Set the location of custom localization packages using link:{baseurl}/interface/ui-localization/#language_url[`+language_url+`] instead of `+language+`.
+* Set the location of custom skin packages using link:{baseurl}/interface/editor-appearance/editor-skin/#skin_url[`+skin_url+`] instead of `+skin+`.
+* Set the location of custom themes using link:{baseurl}/interface/editor-appearance/editor-theme/#theme_url[`+theme_url+`] instead of `+theme+`.
 ____

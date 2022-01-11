@@ -4,9 +4,11 @@
 
 The \{\{pluginname}} plugin provides the following menu items:
 
-\{% if altplugincode %} \{% include menu-item-ids/\{\{altplugincode}}-menu-items.md %} \{% else %} \{% include menu-item-ids/\{\{plugincode}}-menu-items.md %} \{% endif %}
+\{% if altplugincode %}
+include::partial$menu-item-ids/\{\{altplugincode}}-menu-items.adoc[] \{% else %}
+include::partial$menu-item-ids/\{\{plugincode}}-menu-items.adoc[] \{% endif %}
 
-For information on the \{\{pluginname}} plugin, see: link:{{site.baseurl}}/plugins-ref/{{plugincategory}}/{{plugincode}}/[Plugins - The \{\{pluginname}} plugin]
+For information on the \{\{pluginname}} plugin, see: link:{baseurl}/plugins-ref/{{plugincategory}}/{{plugincode}}/[Plugins - The \{\{pluginname}} plugin]
 
 \{% else %}
 
@@ -14,8 +16,10 @@ For information on the \{\{pluginname}} plugin, see: link:{{site.baseurl}}/plugi
 
 The \{\{pluginname}} plugin provides the following menu items:
 
-\{% if altplugincode %} \{% include menu-item-ids/\{\{altplugincode}}-menu-items.md %} \{% else %} \{% include menu-item-ids/\{\{plugincode}}-menu-items.md %} \{% endif %}
+\{% if altplugincode %}
+include::partial$menu-item-ids/\{\{altplugincode}}-menu-items.adoc[] \{% else %}
+include::partial$menu-item-ids/\{\{plugincode}}-menu-items.adoc[] \{% endif %}
 
-\{% include misc/menu-item-settings.md %}
+include::partial$misc/menu-item-settings.adoc[]
 
-\{% endif %} \{% assign altplugincode = nil %}
+\{% endif %} :altplugincode: nil

@@ -12,8 +12,8 @@ Type : `+Object+`
 
 === Example: The TinyMCE Default Menu Items
 
-\{% include configuration/defaultmenuitems.md %}
+include::partial$configuration/defaultmenuitems.adoc[]
 
-\{% include /misc/admon_different_default_for_mobile.md %}
+include::partial$misc/admon_different_default_for_mobile[]
 
-If all you need is to control which menus are available and/or in what order, see the link:#menubar[menubar parameter].
+If all you need is to control which menus are available and/or in what order, see the <<menubar, menubar parameter>>.

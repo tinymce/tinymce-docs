@@ -1,38 +1,38 @@
 *Covered in this section:*
 
-* link:#useacloudversionofthetinymcewebcomponentintegration[Use a cloud version of the TinyMCE Web Component integration]
-* link:#installingthetinymcewebcomponentintegration[Installing the TinyMCE Web Component integration]
-* link:#loadingtinymce[Loading TinyMCE]
-* link:#configuringtheeditor[Configuring the editor]
-** link:#settingtheinitialcontent[Setting the initial content]
-** link:#loadingplugins[Loading plugins]
-** link:#settingtheeditorwidth[Setting the editor width]
-** link:#settingtheeditorheight[Setting the editor height]
-** link:#settingthetoolbar[Setting the toolbar]
-** link:#settingthetoolbarmode[Setting the toolbar mode]
-** link:#settingthemenubar[Setting the menu bar]
-** link:#settingcontextmenu[Setting context menu]
-** link:#settingthequick-inserttoolbar[Setting the quick-insert toolbar]
-** link:#settingthequick-selectiontoolbar[Setting the quick-selection toolbar]
-** link:#settingcontentstylesheets[Setting content stylesheets]
-** link:#settingcontentstyling[Setting content styling]
-** link:#settingpowerpasteswordimportmethod[Setting PowerPaste’s word import method]
-** link:#settingpowerpasteshtmlimportmethod[Setting PowerPaste’s html import method]
-** link:#settingpowerpastetoallowlocalimages[Setting PowerPaste to allow local images]
-** link:#showingresizehandles[Showing resize handles]
-** link:#settingtheeditorsetupfunction[Setting the editor setup function]
-** link:#settingtheeditorskin[Setting the editor skin]
-** link:#settingtheimagesuploadurl[Setting the images upload URL]
-** link:#settingtheimagesuploadhandler[Setting the images upload handler]
-** link:#settingtheimagesuploadbasepath[Setting the images upload base path]
-** link:#settingtheimagesuploadtohavecredentials[Setting the images upload to have credentials]
-** link:#settingtheimagesuploadtoreusefilenames[Setting the images upload to reuse filenames]
-** link:#settingtheiconpack[Setting the icon pack]
-** link:#settingtheiconpackurl[Setting the icon pack URL]
-** link:#settingadditionalconfigurationoptions[Setting additional configuration options]
-* link:#eventbinding[Event binding]
-** link:#supportedbrowserevents[Supported browser events]
-** link:#supportedtinymceevents[Supported TinyMCE events]
+* <<useacloudversionofthetinymcewebcomponentintegration, Use a cloud version of the TinyMCE Web Component integration>>
+* <<installingthetinymcewebcomponentintegration, Installing the TinyMCE Web Component integration>>
+* <<loadingtinymce, Loading TinyMCE>>
+* <<configuringtheeditor, Configuring the editor>>
+** <<settingtheinitialcontent, Setting the initial content>>
+** <<loadingplugins, Loading plugins>>
+** <<settingtheeditorwidth, Setting the editor width>>
+** <<settingtheeditorheight, Setting the editor height>>
+** <<settingthetoolbar, Setting the toolbar>>
+** <<settingthetoolbarmode, Setting the toolbar mode>>
+** <<settingthemenubar, Setting the menu bar>>
+** <<settingcontextmenu, Setting context menu>>
+** <<settingthequick-inserttoolbar, Setting the quick-insert toolbar>>
+** <<settingthequick-selectiontoolbar, Setting the quick-selection toolbar>>
+** <<settingcontentstylesheets, Setting content stylesheets>>
+** <<settingcontentstyling, Setting content styling>>
+** <<settingpowerpasteswordimportmethod, Setting PowerPaste’s word import method>>
+** <<settingpowerpasteshtmlimportmethod, Setting PowerPaste’s html import method>>
+** <<settingpowerpastetoallowlocalimages, Setting PowerPaste to allow local images>>
+** <<showingresizehandles, Showing resize handles>>
+** <<settingtheeditorsetupfunction, Setting the editor setup function>>
+** <<settingtheeditorskin, Setting the editor skin>>
+** <<settingtheimagesuploadurl, Setting the images upload URL>>
+** <<settingtheimagesuploadhandler, Setting the images upload handler>>
+** <<settingtheimagesuploadbasepath, Setting the images upload base path>>
+** <<settingtheimagesuploadtohavecredentials, Setting the images upload to have credentials>>
+** <<settingtheimagesuploadtoreusefilenames, Setting the images upload to reuse filenames>>
+** <<settingtheiconpack, Setting the icon pack>>
+** <<settingtheiconpackurl, Setting the icon pack URL>>
+** <<settingadditionalconfigurationoptions, Setting additional configuration options>>
+* <<eventbinding, Event binding>>
+** <<supportedbrowserevents, Supported browser events>>
+** <<supportedtinymceevents, Supported TinyMCE events>>
 
 == Use a cloud version of the TinyMCE Web Component integration
 
@@ -42,7 +42,7 @@ For example:
 
 [source,html]
 ----
-<script src="{{site.webcomponent_url}}"></script>
+<script src="{webcomponent_url}"></script>
 ----
 
 == Installing the TinyMCE Web Component integration
@@ -70,7 +70,7 @@ If \{\{site.productname}} is not available for \{\{site.productname}} Web Compon
 
 To use \{\{site.productname}} Web Component with a self-hosted copy of \{\{site.productname}}, ensure that the self-hosted copy of \{\{site.productname}} can be loaded in the same location as the \{\{site.productname}} Web Component (such as the same web page).
 
-To use \{\{site.productname}} from the \{\{site.cloudname}}, add the `+api-key+` attribute to the `+tinymce-editor+` element with an API from link:{{site.accountpageurl}}/[\{\{site.accountpage}}].
+To use \{\{site.productname}} from the \{\{site.cloudname}}, add the `+api-key+` attribute to the `+tinymce-editor+` element with an API from link:{accountpageurl}/[\{\{site.accountpage}}].
 
 == Configuring the editor
 
@@ -102,7 +102,7 @@ To add plugins and extend the functionality of the editor, add a string of plugi
 <tinymce-editor plugins="advlist autolink link image lists charmap preview"></tinymce-editor>
 ----
 
-For a list of available plugins, see: link:{{site.baseurl}}/plugins-ref/[Add plugins to \{\{site.productname}}].
+For a list of available plugins, see: link:{baseurl}/plugins-ref/[Add plugins to \{\{site.productname}}].
 
 === Setting the editor width
 
@@ -149,7 +149,7 @@ To set the editor toolbar buttons, use the `+toolbar+` attribute. For example:
 <tinymce-editor toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent"></tinymce-editor>
 ----
 
-The `+toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: link:{{site.baseurl}}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
+The `+toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: link:{baseurl}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
 
 ==== Disabling the toolbar
 
@@ -169,7 +169,7 @@ To control the behavior of the toolbar, set the `+toolbar_mode+` attribute. For 
 <tinymce-editor toolbar_mode="floating"></tinymce-editor>
 ----
 
-For information on the available toolbar modes, see: link:{{site.baseurl}}/interface/toolbars/toolbar-configuration-options/#toolbar_mode[User interface options - `+toolbar_mode+`].
+For information on the available toolbar modes, see: link:{baseurl}/interface/toolbars/toolbar-configuration-options/#toolbar_mode[User interface options - `+toolbar_mode+`].
 
 === Setting the menu bar
 
@@ -191,9 +191,9 @@ To change the menu items shown in the menus, or define custom menus, set the `+m
 
 For information on:
 
-* The `+menubar+` configuration option, see: link:{{site.baseurl}}/interface/menus/menus-configuration-options/#menubar[User interface options - `+menubar+`].
-* The `+menu+` configuration option, see: link:{{site.baseurl}}/interface/menus/menus-configuration-options/#menu[User interface options - `+menu+`].
-* The `+config+` attribute, see: link:#settingadditionalconfigurationoptions[Setting additional configuration options].
+* The `+menubar+` configuration option, see: link:{baseurl}/interface/menus/menus-configuration-options/#menubar[User interface options - `+menubar+`].
+* The `+menu+` configuration option, see: link:{baseurl}/interface/menus/menus-configuration-options/#menu[User interface options - `+menu+`].
+* The `+config+` attribute, see: <<settingadditionalconfigurationoptions, Setting additional configuration options>>.
 
 === Setting context menu
 
@@ -211,7 +211,7 @@ To disable the context menu, set the `+contextmenu+` attribute to `+"false"+`. F
 <tinymce-editor contextmenu="false"></tinymce-editor>
 ----
 
-For a list of available context menu sections, see: link:{{site.baseurl}}/interface/menus/editor-context-menu-identifiers/[Available context menu sections]. For information on context menus, see: link:{{site.baseurl}}/interface/menus/menus-configuration-options/#contextmenu[User interface options - `+contextmenu+`].
+For a list of available context menu sections, see: link:{baseurl}/interface/menus/editor-context-menu-identifiers/[Available context menu sections]. For information on context menus, see: link:{baseurl}/interface/menus/menus-configuration-options/#contextmenu[User interface options - `+contextmenu+`].
 
 === Setting the quick-insert toolbar
 
@@ -224,7 +224,7 @@ To add a quick-insert toolbar, add `+"quickbars"+` to the `+plugins+` attribute.
 <tinymce-editor plugins="quickbars pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
 ----
 
-The `+quickbars_insert_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: link:{{site.baseurl}}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
+The `+quickbars_insert_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: link:{baseurl}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
 
 To disable the quick-insert toolbar, set the `+quickbars_insert_toolbar+` attribute to `+"false"+`. For example:
 
@@ -244,7 +244,7 @@ To add a quick-selection toolbar, add `+"quickbars"+` to the `+plugins+` attribu
 <tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | formatselect | quicklink blockquote"></tinymce-editor>
 ----
 
-The `+quickbars_selection_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: link:{{site.baseurl}}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
+The `+quickbars_selection_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: link:{baseurl}/interface/toolbars/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
 
 To disable the quick-selection toolbar, set the `+quickbars_selection_toolbar+` attribute to `+"false"+`. For example:
 
@@ -276,7 +276,7 @@ To use a custom CSS file, provide a relative or abolute path to the css file, su
 * The `+content_style+` option to apply a small set of CSS styles.
 * The `+content_css+` option for applying large or complex CSS configurations.
 
-For information on the `+content_css+` option, see: link:{{site.baseurl}}/content/add-css-options/#content_css[Content appearance options - `+content_css+`].
+For information on the `+content_css+` option, see: link:{baseurl}/content/add-css-options/#content_css[Content appearance options - `+content_css+`].
 
 === Setting content styling
 
@@ -292,7 +292,7 @@ To apply a small set of CSS styles to the editor, use the `+content_style+` attr
 * The `+content_style+` option to apply a small set of CSS styles.
 * The `+content_css+` option for applying large or complex CSS configurations.
 
-For information on the `+content_style+` option, see: link:{{site.baseurl}}/content/add-css-options/#content_style[Content appearance options - `+content_style+`].
+For information on the `+content_style+` option, see: link:{baseurl}/content/add-css-options/#content_style[Content appearance options - `+content_style+`].
 
 === Setting PowerPaste's word import method
 
@@ -305,7 +305,7 @@ To control how content pasted from Microsoft Word is filtered, use the `+powerpa
 <tinymce-editor powerpaste_word_import="merge"></tinymce-editor>
 ----
 
-For information on the `+powerpaste_word_import+` option, including supported values, see: link:{{site.baseurl}}/plugins-ref/premium/powerpaste/#powerpaste_word_import[The PowerPaste plugin - `+powerpaste_word_import+`].
+For information on the `+powerpaste_word_import+` option, including supported values, see: link:{baseurl}/plugins-ref/premium/powerpaste/#powerpaste_word_import[The PowerPaste plugin - `+powerpaste_word_import+`].
 
 === Setting PowerPaste's html import method
 
@@ -318,7 +318,7 @@ To control how content pasted from sources other than Microsoft Word is filtered
 <tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
 ----
 
-For information on the `+powerpaste_html_import+` option, including supported values, see: link:{{site.baseurl}}/plugins-ref/premium/powerpaste/#powerpaste_html_import[The PowerPaste plugin - `+powerpaste_html_import+`].
+For information on the `+powerpaste_html_import+` option, including supported values, see: link:{baseurl}/plugins-ref/premium/powerpaste/#powerpaste_html_import[The PowerPaste plugin - `+powerpaste_html_import+`].
 
 === Setting PowerPaste to allow local images
 
@@ -331,7 +331,7 @@ To prevent Base64 encoded images with a data URI from being pasted into the edit
 <tinymce-editor powerpaste_allow_local_images="false"></tinymce-editor>
 ----
 
-For information on the `+powerpaste_allow_local_images+` option, including supported values, see: link:{{site.baseurl}}/plugins-ref/premium/powerpaste/#powerpaste_allow_local_images[The PowerPaste plugin - `+powerpaste_allow_local_images+`].
+For information on the `+powerpaste_allow_local_images+` option, including supported values, see: link:{baseurl}/plugins-ref/premium/powerpaste/#powerpaste_allow_local_images[The PowerPaste plugin - `+powerpaste_allow_local_images+`].
 
 === Showing resize handles
 
@@ -351,7 +351,7 @@ To allow the user to resize the editor both horizontally and vertically, set the
 <tinymce-editor resize="both"></tinymce-editor>
 ----
 
-For information on the `+resize+` option, see: link:{{site.baseurl}}/initial-configuration/editor-size-options/#resize[User interface options - `+resize+`].
+For information on the `+resize+` option, see: link:{baseurl}/initial-configuration/editor-size-options/#resize[User interface options - `+resize+`].
 
 === Setting the editor setup function
 
@@ -369,7 +369,7 @@ function setupEditor(editor) {
 <tinymce-editor setup="setupEditor"></tinymce-editor>
 ----
 
-For information on the `+setup+` option, see: link:{{site.baseurl}}/initial-configuration/editor-important-options/#setup[Integration and setup options - `+setup+`].
+For information on the `+setup+` option, see: link:{baseurl}/initial-configuration/editor-important-options/#setup[Integration and setup options - `+setup+`].
 
 === Setting the editor skin
 
@@ -382,9 +382,9 @@ To apply a custom skin to the editor, use the `+skin+` attribute. For example:
 
 For information on:
 
-* Using the `+skin+` option, see: link:{{site.baseurl}}/interface/editor-appearance/editor-skin/#skin[User interface options - `+skin+`].
-* \{\{site.companyname}} premium skins, see: link:{{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/[Tiny Skins and Icon Packs].
-* Creating a custom skin for \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/[Create a skin for \{\{site.productname}}].
+* Using the `+skin+` option, see: link:{baseurl}/interface/editor-appearance/editor-skin/#skin[User interface options - `+skin+`].
+* \{\{site.companyname}} premium skins, see: link:{baseurl}/interface/editor-appearance/premium-skins-and-icons/[Tiny Skins and Icon Packs].
+* Creating a custom skin for \{\{site.productname}}, see: link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-a-skin/[Create a skin for \{\{site.productname}}].
 
 === Setting the images upload URL
 
@@ -402,7 +402,7 @@ The upload handler should return the location of the uploaded file in the follow
 { "location": "folder/sub-folder/new-location.png" }
 ----
 
-For information on using the `+images_upload_url+`, see: link:{{site.baseurl}}/content/file-image-upload/#images_upload_url[Image & file options - `+images_upload_url+`].
+For information on using the `+images_upload_url+`, see: link:{baseurl}/content/file-image-upload/#images_upload_url[Image & file options - `+images_upload_url+`].
 
 === Setting the images upload handler
 
@@ -411,12 +411,12 @@ To specify custom image upload handler callback function, use the `+images_uploa
 [source,html]
 ----
 <script>
-{% include misc/images-upload-handler-function.md %}
+include::partial$misc/images-upload-handler-function.adoc[]
 </script>
 <tinymce-editor images_upload_handler="example_image_upload_handler"></tinymce-editor>
 ----
 
-For information on using the `+images_upload_handler+` option, see: link:{{site.baseurl}}/content/file-image-upload/#images_upload_handler[Image & file options - `+images_upload_handler+`].
+For information on using the `+images_upload_handler+` option, see: link:{baseurl}/content/file-image-upload/#images_upload_handler[Image & file options - `+images_upload_handler+`].
 
 === Setting the images upload base path
 
@@ -427,7 +427,7 @@ To specify the basepath to prepend to URLs returned from the configured `+images
 <tinymce-editor images_upload_url="postAcceptor.php" images_upload_base_path="/some/basepath"></tinymce-editor>
 ----
 
-For information on using the `+images_upload_base_path+` option, see: link:{{site.baseurl}}/content/file-image-upload/#images_upload_base_path[Image & file options - `+images_upload_base_path+`].
+For information on using the `+images_upload_base_path+` option, see: link:{baseurl}/content/file-image-upload/#images_upload_base_path[Image & file options - `+images_upload_base_path+`].
 
 === Setting the images upload to have credentials
 
@@ -438,7 +438,7 @@ To receive credentials (such as cookies, authorization headers, or TLS client ce
 <tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials="true"></tinymce-editor>
 ----
 
-For information on using the `+images_upload_credentials+` option, see: link:{{site.baseurl}}/content/file-image-upload/#images_upload_credentials[Image & file options - `+images_upload_credentials+`].
+For information on using the `+images_upload_credentials+` option, see: link:{baseurl}/content/file-image-upload/#images_upload_credentials[Image & file options - `+images_upload_credentials+`].
 
 === Setting the images upload to reuse filenames
 
@@ -449,7 +449,7 @@ To force the editor to use the same filename for a given image, regardless of th
 <tinymce-editor images_upload_url="postAcceptor.php" images_reuse_filename="true"></tinymce-editor>
 ----
 
-For information on using the `+images_reuse_filename+` option, see: link:{{site.baseurl}}/content/file-image-upload/#images_reuse_filename[Image & file options - `+images_reuse_filename+`].
+For information on using the `+images_reuse_filename+` option, see: link:{baseurl}/content/file-image-upload/#images_reuse_filename[Image & file options - `+images_reuse_filename+`].
 
 === Setting the icon pack
 
@@ -460,13 +460,13 @@ To apply a bundled set of custom or premium icons to the editor, use the `+icons
 <tinymce-editor icons="material"></tinymce-editor>
 ----
 
-Use this attribute if the icon pack is bundled with \{\{site.productname}} (including custom icon packs). If the icon pack is hosted on a web site, use the link:#settingtheiconpackurl[`+icons_url+` attribute].
+Use this attribute if the icon pack is bundled with \{\{site.productname}} (including custom icon packs). If the icon pack is hosted on a web site, use the <<settingtheiconpackurl, `+icons_url+` attribute>>.
 
 For information on:
 
-* Using the `+icons+` option, see: link:{{site.baseurl}}/interface/editor-appearance/editor-icons/#icons[User interface options - `+icons+`].
-* \{\{site.companyname}} premium icon packs, see: link:{{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/[Tiny Skins and Icon Packs].
-* Creating a custom icon pack for \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[Create an icon pack for \{\{site.productname}}].
+* Using the `+icons+` option, see: link:{baseurl}/interface/editor-appearance/editor-icons/#icons[User interface options - `+icons+`].
+* \{\{site.companyname}} premium icon packs, see: link:{baseurl}/interface/editor-appearance/premium-skins-and-icons/[Tiny Skins and Icon Packs].
+* Creating a custom icon pack for \{\{site.productname}}, see: link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[Create an icon pack for \{\{site.productname}}].
 
 === Setting the icon pack URL
 
@@ -477,13 +477,13 @@ To apply a hosted set of custom or premium icons to the editor, use the `+icons_
 <tinymce-editor icons_url="https://www.example.com/icons/material/icons.js"></tinymce-editor>
 ----
 
-Use this attribute if the icon pack is hosted on a web site. If the icon pack is bundled with \{\{site.productname}} (including custom icon packs), use the link:#settingtheiconpack[`+icons+` attribute].
+Use this attribute if the icon pack is hosted on a web site. If the icon pack is bundled with \{\{site.productname}} (including custom icon packs), use the <<settingtheiconpack, `+icons+` attribute>>.
 
 For information on:
 
-* Using the `+icons_url+` option, see: link:{{site.baseurl}}/interface/editor-appearance/editor-icons/#icons_url[User interface options - `+icons_url+`].
-* \{\{site.companyname}} premium icon packs, see: link:{{site.baseurl}}/interface/editor-appearance/premium-skins-and-icons/[Tiny Skins and Icon Packs].
-* Creating a custom icon pack for \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[Create an icon pack for \{\{site.productname}}].
+* Using the `+icons_url+` option, see: link:{baseurl}/interface/editor-appearance/editor-icons/#icons_url[User interface options - `+icons_url+`].
+* \{\{site.companyname}} premium icon packs, see: link:{baseurl}/interface/editor-appearance/premium-skins-and-icons/[Tiny Skins and Icon Packs].
+* Creating a custom icon pack for \{\{site.productname}}, see: link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[Create an icon pack for \{\{site.productname}}].
 
 === Setting additional configuration options
 
@@ -520,7 +520,7 @@ Configuration options that have an attribute can also be passed to the `+config+
 
 There are two methods to bind events for the TinyMCE Web Component.
 
-* The `+setup+` attribute, as described in link:#settingtheeditorsetupfunction[Setting the editor setup function]. For example:
+* The `+setup+` attribute, as described in <<settingtheeditorsetupfunction, Setting the editor setup function>>. For example:
 +
 [source,html]
 ----
@@ -545,7 +545,7 @@ function changeHandler(evt) {
 <tinymce-editor on-Change="changeHandler"/>
 ----
 +
-If these attributes are later removed, the event will be automatically unbound. For the full list of supported `+on-+` attributes, see: link:#supportedbrowserevents[Supported browser events] and link:#supportedtinymceevents[Supported TinyMCE events].
+If these attributes are later removed, the event will be automatically unbound. For the full list of supported `+on-+` attributes, see: <<supportedbrowserevents, Supported browser events>> and <<supportedtinymceevents, Supported TinyMCE events>>.
 
 === Supported browser events
 

@@ -1,10 +1,16 @@
 = Introduction to PowerPaste
 
-:title_nav: Introduction :description: The PowerPaste plugin automatically cleans up content from Microsoft Word, Microsoft Excel, Google Docs, and HTML sources. :keywords: enterprise powerpaste power microsoft word excel google docs
+:title_nav: Introduction
 
-\{% assign pluginname = "PowerPaste" %} \{% assign plugincode = "powerpaste" %}
+:description: The PowerPaste plugin automatically cleans up content from Microsoft Word, Microsoft Excel, Google Docs, and HTML sources.
+:keywords: enterprise powerpaste power microsoft word excel google docs
 
-\{% include /misc/admon_premium_plugin.md %}
+:pluginname: PowerPaste
+
+:plugincode: powerpaste
+
+
+include::partial$misc/admon_premium_plugin[]
 
 The \{\{site.productname}} *PowerPaste* plugin automatically cleans up content from Microsoft Word, Microsoft Excel, Google Docs, and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
@@ -14,9 +20,12 @@ ____
 
 == Try our PowerPaste plugin demo
 
-\{% include live-demo.html id="paste-from-word" %}
+liveDemo::paste-from-word[ ]
 
-\{% assign pluginminimumplan = 'tiertwo' %} \{% include misc/purchase-premium-plugins.md %}
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Usage
 
@@ -24,7 +33,7 @@ The *PowerPaste* plugin activates automatically when users paste content into th
 
 To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The \{\{site.productname}} *PowerPaste* plugin will convert the HTML on the clipboard into plain text.
 
-If you configure *PowerPaste* to allow local images (see the link:{{site.baseurl}}/plugins-ref/premium/powerpaste/powerpaste_options/#powerpaste_allow_local_images[`+powerpaste_allow_local_images+`] setting below), then images copied from Microsoft Word and other sources will appear in \{\{site.productname}} as Base64 encoded images. You can have \{\{site.productname}} automatically upload Base64 encoded images for reverting back to a standard image as described in the link:{{site.baseurl}}/advanced/handle-async-image-uploads/[image upload documentation].
+If you configure *PowerPaste* to allow local images (see the link:{baseurl}/plugins-ref/premium/powerpaste/powerpaste_options/#powerpaste_allow_local_images[`+powerpaste_allow_local_images+`] setting below), then images copied from Microsoft Word and other sources will appear in \{\{site.productname}} as Base64 encoded images. You can have \{\{site.productname}} automatically upload Base64 encoded images for reverting back to a standard image as described in the link:{baseurl}/advanced/handle-async-image-uploads/[image upload documentation].
 
 ____
 *Note:* PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word and Microsoft Excel content. When doing this, *PowerPaste* extracts Base64 encoded images from the clipboard. Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.

@@ -1,6 +1,10 @@
 = Create a skin for TinyMCE
 
-:title_nav: Create a skin :description_short: Introducing skin creation. :description: Introducing skin creation, less and icon modification. :keywords: create creator skin icon
+:title_nav: Create a skin
+
+:description_short: Introducing skin creation.
+:description: Introducing skin creation, less and icon modification.
+:keywords: create creator skin icon
 
 This section provides information on how to manually create a new skin to customize the appearance of \{\{site.productname}} \{\{site.productmajorversion}}.
 
@@ -44,7 +48,7 @@ You should now be able to open a web browser and point it to the url displayed i
 
 The development environment is set up and ready to work.
 
-image:{{site.baseurl}}/images/SDKforsilver.png[\{\{site.productname}} skin SDK for Silver theme]
+image:{baseurl}/images/SDKforsilver.png[\{\{site.productname}} skin SDK for Silver theme]
 
 If you just need to build the skins without launching a web server, run:
 
@@ -102,7 +106,7 @@ Your skin.less file should now look like this:
 
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
-image:{{site.baseurl}}/images/SDKforsilverCustomExample.png[\{\{site.productname}} skin SDK for Silver theme]
+image:{baseurl}/images/SDKforsilverCustomExample.png[\{\{site.productname}} skin SDK for Silver theme]
 
 This is how you skin \{\{site.productname}}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
@@ -123,10 +127,10 @@ To update the appearance of the content within the editor, such as headings, quo
 
 [arabic]
 . Copy the skin and/or content CSS from `+modules/oxide/build/skins/+` to the corresponding folders in your production \{\{site.productname}} folder.
-. Update the \{\{site.productname}} init function with the link:{{site.baseurl}}/interface/editor-appearance/editor-skin/#skin[skin] option and/or the link:{{site.baseurl}}/content/add-css-options/#content_css[content_css] option.
+. Update the \{\{site.productname}} init function with the link:{baseurl}/interface/editor-appearance/editor-skin/#skin[skin] option and/or the link:{baseurl}/content/add-css-options/#content_css[content_css] option.
 
-For more information on how to specify the location of the skin file, see link:{{site.baseurl}}/interface/editor-appearance/editor-skin/#skin_url[this] section.
+For more information on how to specify the location of the skin file, see link:{baseurl}/interface/editor-appearance/editor-skin/#skin_url[this] section.
 
 == Modifying the icons
 
-For information on adding custom icons, see: link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[Create an icon pack for \{\{site.productname}}].
+For information on adding custom icons, see: link:{baseurl}/how-to-guides/customizing-the-editor-appearance/creating-an-icon-pack/[Create an icon pack for \{\{site.productname}}].

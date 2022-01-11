@@ -9,7 +9,7 @@ ____
 To use change the user interface language using a community language pack:
 
 [arabic]
-. Download the language pack from link:{{site.gettiny}}/language-packages/[the \{\{site. companyname}} Community Language Packages download page]. \{% if forModuleLoaders == true %}
+. Download the language pack from link:{gettiny}/language-packages/[the \{\{site. companyname}} Community Language Packages download page]. \{% if forModuleLoaders == true %}
 . Unzip and import/require the language file. \{% else %}
 . Unpack the language file into the `+tinymce/langs+` folder. \{% endif %}
 . Set the [`+language+`](\{\{ site.baseurl }}/interface/ui-localization/#language) option in your \{\{site.productname}} configuration to the language code, matching the filename on the language pack. For example: If the language pack has the filename `+sv_SE.js+`, then set `+language: 'sv_SE',+`

@@ -1,8 +1,14 @@
 = Bundling TinyMCE icon packs using module loading
 
-:title_nav: Icons :description_short: Information on bundling icon packs :description: Information on bundling TinyMCE icon packs using module loading
+:title_nav: Icons
 
-\{% assign editorcomponent = "icon pack" %} \{% include module-loading/bundling-ref-example.md %} \{% assign editorcomponent = nil %}
+:description_short: Information on bundling icon packs
+:description: Information on bundling TinyMCE icon packs using module loading
+
+:editorcomponent: icon pack
+
+
+include::partial$module-loading/bundling-ref-example.adoc[] :editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following icon pack:
 
@@ -36,4 +42,4 @@ require('../tinymce/icons/example/icons.js');
 
 \{% endcomment %}
 
-\{% include module-loading/bundling-icon-files.md %}
+include::partial$module-loading/bundling-icon-files.adoc[]

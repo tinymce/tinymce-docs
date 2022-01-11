@@ -141,7 +141,7 @@ export default {
 </script>
 ----
 
-\{% if productSource == "cloud" %} 6. Include the `+api-key+` option in the editor element and include your link:{{site.accountsignup}}/[\{\{site.cloudname}} API key].
+\{% if productSource == "cloud" %} 6. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[\{\{site.cloudname}} API key].
 
 ....
 Such as:
@@ -153,19 +153,19 @@ Such as:
 
 \{% elsif productSource == "package-manager" %} 6. Bundle \{\{site.productname}} with the Vue.js application using a module loader (such as Webpack).
 
-\{% include integrations/bundling-integration.md package="tinymce-vue" depth='1' %} \{% else %} 6. \{\{site.productname}} can be self-hosted by either: link:#deployingtinymceindependent[Deploying \{\{site.productname}} independent of the Vue.js application], or link:#bundle[Bundling \{\{site.productname}} with the Vue.js application]. * Deploying \{\{site.productname}} independent of the Vue.js application. To use a \{\{site.productname}} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
+\{% include integrations/bundling-integration.md package="tinymce-vue" depth='1' %} \{% else %} 6. \{\{site.productname}} can be self-hosted by either: <<deployingtinymceindependent, Deploying \{\{site.productname}} independent of the Vue.js application>>, or <<bundle, Bundling \{\{site.productname}} with the Vue.js application>>. * Deploying \{\{site.productname}} independent of the Vue.js application. To use a \{\{site.productname}} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
 
 ....
-    To use an independent deployment of {{site.productname}}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+    To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 
     ```html
     <script src="/path/to/tinymce.min.js"></script>
     ```
 
-    To use an independent deployment of {{site.productname}} with the example create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
+    To use an independent deployment of {productname} with the example create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
 
 <a id="bundle" class="anchor"></a>
-* Bundle {{site.productname}} with the Vue.js application using a module loader (such as Webpack).
+* Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
 ....
 
 \{% include integrations/bundling-integration.md package="tinymce-vue" depth='2' %} \{% endif %} 7. Test the application using the Node.js development server. * To start the development server, navigate to the `+tinymce-vue-demo+` directory and run:
@@ -186,6 +186,6 @@ The application will require further configuration before it can be deployed to 
 
 * For examples of the \{\{site.productname}} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
 * For information on customizing:
-** \{\{site.productname}} integration, see: link:{{site.baseurl}}/how-to-guides/environment-setup/vue/vue-ref/[Vue.js framework Technical Reference].
-** \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
+** \{\{site.productname}} integration, see: link:{baseurl}/how-to-guides/environment-setup/vue/vue-ref/[Vue.js framework Technical Reference].
+** \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup].
 ** The Vue.js application, see: https://vuejs.org/v2/guide/[Vue.js Documentation].

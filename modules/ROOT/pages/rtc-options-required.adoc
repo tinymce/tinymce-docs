@@ -1,19 +1,25 @@
 = Required Real-Time Collaboration configuration options
 
-:title_nav: Required configuration options :description: List of all required RTC configuration options. :keywords: rtc configuration
+:title_nav: Required configuration options
 
-\{% assign pluginname = "Real-Time Collaboration (RTC)" %} \{% assign plugincode = "rtc" %}
+:description: List of all required RTC configuration options.
+:keywords: rtc configuration
+
+:pluginname: Real-Time Collaboration (RTC)
+
+:plugincode: rtc
+
 
 The following options are required to use the Real-Time Collaboration (RTC) plugin:
 
-* link:{{site.baseurl}}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id[`+rtc_document_id+`]
-* link:#rtc_encryption_provider[`+rtc_encryption_provider+`]
-* link:#rtc_token_provider[`+rtc_token_provider+`]
+* link:{baseurl}/plugins-ref/premium/rtc/configuration/rtc-options-required/#rtc_document_id[`+rtc_document_id+`]
+* <<rtc_encryption_provider, `+rtc_encryption_provider+`>>
+* <<rtc_token_provider, `+rtc_token_provider+`>>
 
-For an example showing the minimum required configuration for RTC, see: link:{{site.baseurl}}/plugins-ref/premium/rtc/getting-started/#5configuretherequiredtinymcertcoptions[Getting started with RTC - Configure the required TinyMCE RTC options].
+For an example showing the minimum required configuration for RTC, see: link:{baseurl}/plugins-ref/premium/rtc/getting-started/#5configuretherequiredtinymcertcoptions[Getting started with RTC - Configure the required TinyMCE RTC options].
 
-\{% include configuration/rtc_document_id.md %}
+include::partial$configuration/rtc_document_id.adoc[]
 
-\{% include configuration/rtc_encryption_provider.md %}
+include::partial$configuration/rtc_encryption_provider.adoc[]
 
-\{% include configuration/rtc_token_provider.md %}
+include::partial$configuration/rtc_token_provider.adoc[]

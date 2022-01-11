@@ -5,7 +5,7 @@ The `+font_css+` option loads the specified font CSS files into both the editabl
 Font CSS files should only contain CSS for specifying custom fonts using the `+@font-face+` and related CSS rules.
 
 ____
-*Note*: To allow users to apply the fonts added though `+font_css+`, update the fonts list using the link:{{site.baseurl}}/content/user-formatting-options/#font_formats[`+font_formats+` option].
+*Note*: To allow users to apply the fonts added though `+font_css+`, update the fonts list using the link:{baseurl}/content/user-formatting-options/#font_formats[`+font_formats+` option].
 ____
 
 Type : `+String+`, `+Array+`

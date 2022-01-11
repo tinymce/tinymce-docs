@@ -1,7 +1,12 @@
 = Using the TinyMCE package with the Web Component
 
-:title_nav: Using a package manager :description: A guide on integrating the TinyMCE package into the Web Component. :keywords: integration integrate web-component
+:title_nav: Using a package manager
 
-\{% assign productSource = "package-manager" %}
+:description: A guide on integrating the TinyMCE package into the Web Component.
+:keywords: integration integrate web-component
 
-\{% include integrations/webcomponent-quick-start.md %}
+:productSource: package-manager
+
+
+
+include::partial$integrations/webcomponent-quick-start.adoc[]

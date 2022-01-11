@@ -1,6 +1,9 @@
 = TinyMCE classic editing mode
 
-:title_nav: Classic editing mode :description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework. :keywords: theme classic
+:title_nav: Classic editing mode
+
+:description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
+:keywords: theme classic
 
 \{\{site.productname}} has three main integration modes:
 
@@ -17,7 +20,7 @@ There are a few important differences between these modes:
 
 *Classic* mode refers to the standard \{\{site.productname}} integration. Such as:
 
-\{% include live-demo.html id="default" %}
+liveDemo::default[ ]
 
 == Example: Replacing a textarea with the default editor
 
@@ -32,6 +35,6 @@ tinymce.init({
 
 === Related configuration options
 
-* For information on using editor customization options, see: link:{{site.baseurl}}/how-to-guides/customizing-the-editor-appearance/customize-ui/[Customizing the editor UI].
-* For information on localizing \{\{site.productname}}, see: link:{{site.baseurl}}/how-to-guides/learn-the-basics/localize-your-language/[Localize TinyMCE].
-* For information on all \{\{site.productname}} configuration settings, see: link:{{site.baseurl}}/interface/editor-appearance/[Configuration options reference].
+* For information on using editor customization options, see: link:{baseurl}/how-to-guides/customizing-the-editor-appearance/customize-ui/[Customizing the editor UI].
+* For information on localizing \{\{site.productname}}, see: link:{baseurl}/how-to-guides/learn-the-basics/localize-your-language/[Localize TinyMCE].
+* For information on all \{\{site.productname}} configuration settings, see: link:{baseurl}/interface/editor-appearance/[Configuration options reference].

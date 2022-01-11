@@ -1,8 +1,15 @@
 = Full Screen plugin
 
-:title_nav: Full Screen :description: Zoom TinyMCE up to the whole screen. :keywords: fullscreen view :controls: toolbar button, menu item
+:title_nav: Full Screen
 
-\{% assign pluginname = "Full Screen" %} \{% assign plugincode = "fullscreen" %}
+:description: Zoom TinyMCE up to the whole screen.
+:keywords: fullscreen view
+:controls: toolbar button, menu item
+
+:pluginname: Full Screen
+
+:plugincode: fullscreen
+
 
 This plugin adds full screen editing capabilities to \{\{site.productname}}. When the toolbar button is pressed the editable area will fill the browser's viewport. The plugin adds a toolbar button and a menu item `+Fullscreen+` under the `+View+` menu.
 
@@ -27,14 +34,14 @@ tinymce.init({
 
 The following configuration options affect the behavior of the \{\{pluginname}} plugin.
 
-\{% include configuration/fullscreen_native.md %}
+include::partial$configuration/fullscreen_native.adoc[]
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Full Screen plugin provides the following \{\{site.productname}} command.
 
-\{% include commands/fullscreen-cmds.md %}
+include::partial$commands/fullscreen-cmds.adoc[]

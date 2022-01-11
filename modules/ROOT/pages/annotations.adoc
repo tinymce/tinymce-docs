@@ -1,6 +1,9 @@
 = Using the Annotations API
 
-:description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation. :keywords: annotation annotations annotator
+:description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
+
+:keywords: annotation annotations annotator
+
 
 The \{\{site.productname}} Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the \{\{site.productname}} core and functions in the same way as the formatting APIs in \{\{site.productname}} core.
 
@@ -138,7 +141,7 @@ annotationChanged: (name: string, callback): void
 
 Use the following example to create the Annotate API:
 
-\{% include live-demo.html id="annotations" height="750" %}
+liveDemo::annotations[ height="750" ]
 
 == Retrieving All Annotations for a Particular Annotation Name
 

@@ -1,8 +1,15 @@
 = Code plugin
 
-:title_nav: Code :description: Edit your content's HTML source. :keywords: wysiwyg source html edit :controls: toolbar button, menu item
+:title_nav: Code
 
-\{% assign pluginname = "Code" %} \{% assign plugincode = "code" %}
+:description: Edit your content's HTML source.
+:keywords: wysiwyg source html edit
+:controls: toolbar button, menu item
+
+:pluginname: Code
+
+:plugincode: code
+
 
 This plugin adds a toolbar button that allows a user to edit the HTML code hidden by the WYSIWYG view. It also adds the menu item `+Source code+` under the `+Tools+` menu.
 
@@ -18,12 +25,12 @@ tinymce.init({
 });
 ----
 
-\{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-\{% include misc/plugin-menu-item-id-boilerplate.md %}
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
 The Code plugin provides the following \{\{site.productname}} command.
 
-\{% include commands/code-cmds.md %}
+include::partial$commands/code-cmds.adoc[]

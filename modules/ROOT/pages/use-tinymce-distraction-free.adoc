@@ -1,10 +1,13 @@
 = TinyMCE distraction-free editing mode
 
-:title_nav: Distraction-free editing mode :description: Mode that renders a lightweight UI for inline editing. :keywords: Mode inlite distraction-free
+:title_nav: Distraction-free editing mode
+
+:description: Mode that renders a lightweight UI for inline editing.
+:keywords: Mode inlite distraction-free
 
 The *Distraction-free* mode renders the editor in inline mode without the menu bar or toolbar. Most of the editor functionality is accessed using: keyboard shortcuts, contextual menus, contextual toolbars, and toolbar functions provided by the `+quickbars+` plugin.
 
-\{% include /misc/admon_not_on_mobile.md %}
+include::partial$misc/admon_not_on_mobile[]
 
 == Enabling distraction-free mode
 
@@ -23,14 +26,14 @@ tinymce.init({
 
 The demonstration editor below is a distraction-free editor with some customizations.
 
-\{% include live-demo.html id="editor-dfree" %}
+liveDemo::editor-dfree[ ]
 
 == Related configuration options
 
 For information on:
 
-* Configuring a Quick Toolbar; including `+quicklink+`, `+quickimage+`, and `+quicktable+`; see: link:{{site.baseurl}}/plugins-ref/opensource/quickbars/[Quick Toolbar plugin].
-* Configuring a contextual toolbar, see: link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/contexttoolbar/[Context Toolbar].
-* Configuring a contextual menu, see: link:{{site.baseurl}}/how-to-guides/creating-custom-ui-components/contextmenu/[Context Menu].
-* Disabling the \{\{site.productname}} menubar, see: link:{{site.baseurl}}/interface/menus/menus-configuration-options/#menubar[Menubar].
+* Configuring a Quick Toolbar; including `+quicklink+`, `+quickimage+`, and `+quicktable+`; see: link:{baseurl}/plugins-ref/opensource/quickbars/[Quick Toolbar plugin].
+* Configuring a contextual toolbar, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/contexttoolbar/[Context Toolbar].
+* Configuring a contextual menu, see: link:{baseurl}/how-to-guides/creating-custom-ui-components/contextmenu/[Context Menu].
+* Disabling the \{\{site.productname}} menubar, see: link:{baseurl}/interface/menus/menus-configuration-options/#menubar[Menubar].
 * The `+inline+` setting, see: [inline](\{\{ site.baseurl }}/interface/editor-mode/inline-editor-options/#inline).

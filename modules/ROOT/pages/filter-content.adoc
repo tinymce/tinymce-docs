@@ -1,6 +1,9 @@
 = Filtering TinyMCE content
 
-:title_nav: Content filtering :description: Learn how to create clean, maintainable and readable content.
+:title_nav: Content filtering
+
+:description: Learn how to create clean, maintainable and readable content.
+
 
 \{\{site.productname}} has comprehensive content filtering capabilities that change the way the editor handles the input and output of content. This capability ensures content is clean, maintainable, and readable.
 
@@ -20,7 +23,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 === Built-in formats
 
-\{\{site.productname}} contains built-in formats that can be overridden. More information about these default controls is in the link:{{site.baseurl}}/how-to-guides/learn-the-basics/basic-setup/[Basic setup] part of this guide.
+\{\{site.productname}} contains built-in formats that can be overridden. More information about these default controls is in the link:{baseurl}/how-to-guides/learn-the-basics/basic-setup/[Basic setup] part of this guide.
 
 * alignleft
 * aligncenter

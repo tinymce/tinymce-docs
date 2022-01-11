@@ -1,19 +1,28 @@
 = Bundling the User Interface localizations for TinyMCE
 
-:title_nav: UI localizations :description_short: Information on bundling User Interface localizations :description: Information on bundling User Interface localizations
+:title_nav: UI localizations
+
+:description_short: Information on bundling User Interface localizations
+:description: Information on bundling User Interface localizations
 
 == Overview
 
-* link:#usingcommunitylocalizations[Using community localizations]
-* link:#usingpremiumself-hostedlocalizations[Using premium self-hosted localizations]
+* <<usingcommunitylocalizations, Using community localizations>>
+* <<usingpremiumself-hostedlocalizations, Using premium self-hosted localizations>>
 
 == Using community localizations
 
-\{% assign forModuleLoaders = true %} \{% include misc/using-community-lang-packs.md %} \{% assign forModuleLoaders = false %}
+:forModuleLoaders: true
+
+
+include::partial$misc/using-community-lang-packs.adoc[] :forModuleLoaders: false
 
 == Using premium self-hosted localizations
 
-\{% assign editorcomponent = "localization" %} \{% include module-loading/bundling-ref-example.md %} \{% assign editorcomponent = nil %}
+:editorcomponent: localization
+
+
+include::partial$module-loading/bundling-ref-example.adoc[] :editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following example localization file:
 
@@ -45,4 +54,7 @@ require('../tinymce/langs/sv_SE.js');
 
 \{% endcomment %}
 
-\{% assign forModuleLoaders = true %} \{% include misc/ui-languages.md %} \{% assign forModuleLoaders = false %}
+:forModuleLoaders: true
+
+
+include::partial$misc/ui-languages.adoc[] :forModuleLoaders: false

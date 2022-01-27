@@ -1,0 +1,16 @@
+= "tinymce.editor.ui"
+
+:description: "APIs for registering User Interface components."
+:type: folder
+
+{% assign navigation = site.data.nav_api %}
+{% for entry in navigation %}
+  {% if entry.url == "api" %}
+    {% for subentry in entry.pages %}
+      {% if subentry.url == "tinymce.editor.ui" %}
+        {% assign links = subentry.pages %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% include index.html links=links sectionTitle="tinymce.editor.ui" %}

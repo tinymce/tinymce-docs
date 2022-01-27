@@ -1,0 +1,270 @@
+= Toolbar Buttons Available for TinyMCE
+
+:title_nav: Available Toolbar Buttons
+
+:description_short: Complete list of toolbar buttons available for the toolbar and quick toolbars.
+:description: Complete list of toolbar buttons available for the toolbar and quick toolbars.
+:keywords: toolbar button tool bar
+
+The following tables show all available toolbar items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
+
+[source,js]
+----
+tinyMCE.activeEditor.ui.registry.getAll().buttons
+----
+
+include::partial$misc/toolbar-button-settings.adoc[]
+
+== The core toolbar buttons
+
+The following toolbar buttons are available for all {productname} instances without enabling any plugins:
+
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[]
+
+:plugincategory: premium
+
+:pluginname: A11yChecker
+:plugincode: a11ychecker
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Advanced Code Editor
+:plugincode: advcode
+:altplugincode: code
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Advanced Tables
+:plugincode: advtable
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Anchor
+:plugincode: anchor
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Autosave
+:plugincode: autosave
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Case Change
+:plugincode: casechange
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Character Map
+:plugincode: charmap
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Checklist
+:plugincode: checklist
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Code
+:plugincode: code
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Code Sample
+:plugincode: codesample
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Comments
+:plugincode: comments
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Directionality
+:plugincode: directionality
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Emoticons
+:plugincode: emoticons
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Export
+:plugincode: export
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Format Painter
+:plugincode: formatpainter
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Full Screen
+:plugincode: fullscreen
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Help
+:plugincode: help
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Image
+:plugincode: image
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Image Tools
+:plugincode: imagetools
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Insert Date/Time
+:plugincode: insertdatetime
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Link
+:plugincode: link
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Lists
+:plugincode: lists
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Media
+:plugincode: media
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Nonbreaking Space
+:plugincode: nonbreaking
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Page Break
+:plugincode: pagebreak
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Page Embed
+:plugincode: pageembed
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Paste
+:plugincode: paste
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Permanent Pen
+:plugincode: permanentpen
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: PowerPaste
+:plugincode: powerpaste
+:altplugincode: paste
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Preview
+:plugincode: preview
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Quick Toolbars
+:plugincode: quickbars
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Save
+:plugincode: save
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Search and Replace
+:plugincode: searchreplace
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: Spell Checker Pro
+:plugincode: tinymcespellchecker
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Table
+:plugincode: table
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Template
+:plugincode: template
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+
+:pluginname: site.cloudfilemanager
+:plugincode: tinydrive
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Table of Contents
+:plugincode: toc
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Visual Blocks
+:plugincode: visualblocks
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Visual Characters
+:plugincode: visualchars
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+
+:pluginname: Word Count
+:plugincode: wordcount
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]

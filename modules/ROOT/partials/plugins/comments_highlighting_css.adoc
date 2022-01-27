@@ -1,0 +1,9 @@
+== Configuring the commented text properties
+
+The highlight styles are now a part of the overall content skin and are changed through customizing the skin.
+
+{productname} open source project https://github.com/tinymce/oxide/blob/master/src/less/theme/content/comments/comments.less[oxide] (default skin), defines the variables used for changing the annotation colours.
+
+Refer to the link:creating-a-skin.html#creatingaskin[documentation] for building a skin using this repo.
+
+For more information on configuring {productname} formats, refer to the link:content-formatting.html#formats[formats] section.

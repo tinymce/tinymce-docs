@@ -1,0 +1,12 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceEmoticons |Opens the Emoticons dialog.
+|===
+
+*Example*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceEmoticons');
+----

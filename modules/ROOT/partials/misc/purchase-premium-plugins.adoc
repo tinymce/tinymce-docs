@@ -1,0 +1,34 @@
+\{% if extensionType != 'Packs' %}
+:extensionType: plugin
+\{% endif %} \{% if pluralExtensionType == true %}
+:isAre: are
+\{% else %}
+:isAre: is
+\{% endif %}
+
+[[getting-started-with--if-pluginname--tiny-drive-siteproductname-endif--pluginname]]
+== Getting started with
+\{% if pluginname != 'Tiny Drive' %}{productname}\{% endif %} {pluginname}
+
+[[creating-a-sitecloudname-account]]
+=== Creating a {cloudname} account
+
+Try the *{pluginname} {extensionType}* and the {cloudname} with a free link:{accountsignup}/[{accountpage}]. New accounts receive a 30-day trial of the {companyname} link:{plugindirectory}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
+
+[[get--if-pluginname--tiny-drive-siteproductname-endif--pluginname]]
+=== Get
+\{% if pluginname != 'Tiny Drive' %}{productname}\{% endif %} {pluginname}
+
+\{% if pluginminimumplan != 'enterprise' %} The *{pluginname} {extensionType}* {isAre} included in the following {cloudname} plans: \{% else %} The *{pluginname} {extensionType}* {isAre} included in link:{pricingpage}/[{enterpriseplan}].
+\{% endif %}
+
+\{% case pluginminimumplan %} \{% when 'tierone' %}- The link:{pricingpage}/[{tieroneplan}].
+\{% when 'tierone' or 'tiertwo' %}- The link:{pricingpage}/[{tiertwoplan}].
+\{% when 'tierone' or 'tiertwo' or 'tierthree' %}- The link:{pricingpage}/[{tierthreeplan}].
+
+* link:{pricingpage}/[{enterpriseplan}].
+\{% endcase %}
+
+\{% if pluginminimumplan == 'tiertwo' or pluginminimumplan == 'tierthree' %} A 14-day free trial is also available for the {tiertwoplan} and the {tierthreeplan}.
+\{% elsif pluginminimumplan == 'tierthree' %} A 14-day free trial is available for the {tierthreeplan}.
+\{% endif %}

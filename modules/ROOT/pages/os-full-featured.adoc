@@ -1,0 +1,19 @@
+= Full featured demo: Non-Premium Plugins only
+
+:title_nav: Excluding premium features
+
+:description_short: Open source TinyMCE in action.
+:description: An example with all of the non-premium features.
+:keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
+
+This example includes only non-premium plugins. These plugins are also used in the link:premium-full-featured.html[Full featured demo: Including Premium Plugins].
+
+liveDemo::open-source-plugins[ ]
+
+The following plugins are excluded from this example:
+
+* link:{plugindirectory}[All premium plugins].
+* link:autoresize.html[Autoresize] — Resizes the editor to fit the content.
+* link:bbcode.html[BBCode] — Changes the markup used for the content.
+* link:fullpage.html[Full Page] — Used for modifying HTML `+<head>+` elements.
+* link:spellchecker.html[Spellchecker] — Requires Server-Side components, see: link:spell-checking.html[Check spelling in {productname}].

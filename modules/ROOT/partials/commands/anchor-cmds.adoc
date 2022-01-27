@@ -1,0 +1,12 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceAnchor |Opens the insert/edit anchor dialog.
+|===
+
+*Example*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceAnchor');
+----

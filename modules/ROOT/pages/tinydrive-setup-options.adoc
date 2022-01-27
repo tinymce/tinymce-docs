@@ -1,0 +1,17 @@
+= Tiny Drive plugin setup options
+
+:title_nav: Setup options
+
+:description: List of Tiny Drive plugin configuration options for integrating with TinyMCE.
+:keywords: tinydrive configuration
+
+:pluginname: Tiny Drive
+
+:plugincode: tinydrive
+
+
+include::partial$configuration/tinydrive_token_provider.adoc[]
+
+include::partial$configuration/tinydrive_upload_path.adoc[]
+
+include::partial$configuration/tinydrive_max_image_dimension.adoc[]

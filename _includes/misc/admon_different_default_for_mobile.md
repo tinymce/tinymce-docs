@@ -1,1 +1,0 @@
-> **Note**: The default option for this setting is different for mobile devices. For information on the default mobile setting, see: [{{site.productname}} Mobile - Configuration settings with mobile defaults]({{site.baseurl}}/interface/editor-mode/tinymce-for-mobile/#mobiledefaultsforselectedsettings).

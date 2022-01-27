@@ -1,1 +1,0 @@
-To register for a {{site.cloudname}} API key, visit the [{{site.accountpage}} sign-up page]({{site.accountsignup}}/). To retrieve the {{site.cloudname}} API key for an existing {{site.accountpage}}, login and visit the [{{site.accountpage}} Dashboard]({{site.accountpageurl}}/).

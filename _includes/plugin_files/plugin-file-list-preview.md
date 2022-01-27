@@ -1,3 +1,0 @@
-```
-./plugins/preview/plugin.js
-```

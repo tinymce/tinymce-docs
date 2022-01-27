@@ -1,0 +1,74 @@
+= Bundling the User Interface localizations for TinyMCE
+
+:title_nav: UI localizations
+
+:description_short: Information on bundling User Interface localizations
+:description: Information on bundling User Interface localizations
+
+== Overview
+
+* <<usingcommunitylocalizations, Using community localizations>>
+* <<usingpremiumself-hostedlocalizations, Using premium self-hosted localizations>>
+
+== Using community localizations
+
+:forModuleLoaders: true
+
+
+include::partial$misc/using-community-lang-packs.adoc[]
+:forModuleLoaders: false
+
+== Using premium self-hosted localizations
+
+:editorcomponent: localization
+
+
+include::partial$module-loading/bundling-ref-example.adoc[]
+:editorcomponent: nil
+
+The following table shows examples of the syntax used to bundle the following example localization file:
+
+....
+./langs/sv_SE.js
+....
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import 'tinymce/langs/sv_SE';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../tinymce/langs/sv_SE';
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+require('tinymce/langs/sv_SE');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('../tinymce/langs/sv_SE.js');
+----
+|===
+
+:forModuleLoaders: true
+
+
+include::partial$misc/ui-languages.adoc[]
+:forModuleLoaders: false

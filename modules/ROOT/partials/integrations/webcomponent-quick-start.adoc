@@ -1,0 +1,111 @@
+The https://github.com/tinymce/tinymce-webcomponent[Official {productname} Web Component] integrates {productname} into Web Component projects. This procedure creates an HTML page containing a {productname} editor.
+
+== Procedure
+
+To add a {productname} editor to a web page using the {productname} Web Component:
+
+[arabic]
+. Add the `+DOCTYPE+` element to the target page, such as:
++
+[source,html]
+----
+<!DOCTYPE html>
+----
++
+The `+DOCTYPE+` declaration is required for the editor to function correctly.
+. Add the following `+meta+` elements to the head of page:
++
+[source,html]
+----
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+----
++
+The second `+meta+` element is required for the editor to function correctly on mobile devices. For information on the viewport `+meta+` element, see: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_basics[MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers].
+
+\{% if productSource == "cloud" %} 3. Add a `+script+` element sourcing the {productname} Web Component (`+tinymce-webcomponent.js+`), such as:
+
+....
+```html
+<script src="{webcomponent_url}"></script>
+```
+
+The `tinymce-webcomponent` can also be sourced from [npmjs](https://www.npmjs.com/package/@tinymce/tinymce-webcomponent).
+....
+
+\{% elsif productSource == "package-manager" %} 3. Add the `+tinymce+` and `+tinymce-webcomponent+` packages, such as:
+
+....
+```sh
+npm install tinymce @tinymce/tinymce-webcomponent
+```
+....
+
+[arabic, start=4]
+. Bundle {productname} with the Web Component application using a module loader (such as Webpack).
+
+\{% include integrations/bundling-integration.md package='tinymce-webcomponent' depth='1' %} 3. Add a `+script+` element sourcing {productname}, such as:
+
+....
+```html
+<script src="/path/to/bundle.js"></script>
+```
+
+If a `script` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}.
+....
+
+\{% else %} 3. Add a `+script+` element sourcing the {productname} Web Component (`+tinymce-webcomponent.js+`), such as:
+
+....
+```html
+<script src="{webcomponent_url}"></script>
+```
+
+The `tinymce-webcomponent` can also be sourced from [npmjs](https://www.npmjs.com/package/@tinymce/tinymce-webcomponent).
+....
+
+[arabic, start=3]
+. Add a `+script+` element sourcing {productname}, such as:
++
+[source,html]
+----
+<script src="/path/to/tinymce.min.js"></script>
+----
++
+If a `+script+` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: link:webcomponent-ref.html#loadingtinymce[Loading {productname}].
+\{% endif %} \{% if productSource == "cloud" %}
+. Add a `+tinymce-editor+` element where the editor should appear and include your {cloudname} API key from link:{accountpageurl}/[{accountpage}].
++
+[source,html]
+----
+<tinymce-editor
+  api-key="your-tiny-cloud-api-key"
+  ></tinymce-editor>
+----
+
+\{% else %} 4. Add a `+tinymce-editor+` element where the editor should appear.
+
+....
+```html
+<tinymce-editor></tinymce-editor>
+```
+....
+
+\{% endif %} The default {productname} editor will load at this location if the page is opened in a web browser.
+
+== Example: Adding the TinyMCE Web Component to an HTML page
+
+The following example shows the {productname} Web Component in an HTML page, with:
+
+* Various {productname} configuration options set using attributes.
+* {productname} sourced from the {cloudname}.
+
+liveDemo::web-component[ tab="html" ]
+
+== Next Steps
+
+* For information on customizing, see:
+** The {productname} Web Component, see: link:webcomponent-ref.html[The {productname} Web Component Technical Reference].
+** link:basic-setup.html[{productname} basic setup].

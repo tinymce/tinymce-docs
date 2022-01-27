@@ -1,1 +1,0 @@
-> **Note**: SVGs (Scalable Vector Graphics) are not supported in {{site.productname}} to protect our users and their end-users. SVGs can be used to perform both client-side and server-side attacks.

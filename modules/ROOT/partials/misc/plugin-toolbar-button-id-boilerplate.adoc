@@ -1,0 +1,26 @@
+\{% if page.name == "available-toolbar-buttons.md" %}
+
+== {pluginname} plugin
+
+The {pluginname} plugin provides the following toolbar buttons:
+
+\{% if altplugincode %}
+include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[] \{% else %}
+include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[] \{% endif %}
+
+For information on the {pluginname} plugin, see: link:{plugincode}.html[Plugins - The {pluginname} plugin]
+
+\{% else %}
+
+== Toolbar buttons
+
+The {pluginname} plugin provides the following toolbar buttons:
+
+\{% if altplugincode %}
+include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[] \{% else %}
+include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[] \{% endif %}
+
+include::partial$misc/toolbar-button-settings.adoc[]
+
+\{% endif %}
+:altplugincode: nil

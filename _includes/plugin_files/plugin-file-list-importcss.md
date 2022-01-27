@@ -1,3 +1,0 @@
-```
-./plugins/importcss/plugin.js
-```

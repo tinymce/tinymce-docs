@@ -1,0 +1,12 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceNonBreaking |Inserts a non breaking space at the cursor location or overwrites the current selection.
+|===
+
+*Example*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceNonBreaking');
+----

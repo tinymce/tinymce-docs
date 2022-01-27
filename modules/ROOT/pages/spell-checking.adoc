@@ -1,0 +1,57 @@
+= Check spelling in TinyMCE
+
+:title_nav: Spell checking
+
+:keywords: spell checker spelling browser_spellcheck gecko_spellcheck {productname} provides several options to bring spell checking capabilities to your users.
+
+
+== Browser-based spell checking
+
+Assign the link:spelling.html#browser_spellcheck[`+browser_spellcheck+`] configuration option the value of `+true+` to utilize the browser's native spell check functionality. Disabling the link:menus-configuration-options.html#contextmenu[`+contextmenu+`] option _may_ be required depending on the right-click or context usability requirement.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  browser_spellcheck: true,
+  contextmenu: false
+});
+----
+
+include::partial$misc/admon_ctrl_right_click.adoc[]
+
+== PHP Spellchecker component
+
+include::partial$DEPRECATED/spellchecker.adoc[]
+
+You can also use {productname}'s PHP _Spellchecker_ component, that you can http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this http://archive.tinymce.com/develop/changelog/?type=phpspell[`+txt+`] file. The {productname}'s PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
+
+This plugin enables *Enchant* or *PSpell* on the server to spell check content within the {productname} editor.
+
+=== Installation steps for the default Enchant engine
+
+[arabic]
+. Enable *Enchant* in PHP.
+. Download the *{productname} Spellchecker* for PHP package. http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[(Direct download)].
+. Unpack the package in the `+/path/to/tinymce/plugins/spellchecker+` directory.
+. Configure {productname} to use the spell checker by enabling the `+spellchecker+` plugin.
+. Configure the `+spellchecker_rpc_url+` to `+'spellchecker.php'+`.
+. Download word lists and place them in the `+/dicts+` directory for example "es_ES.dic, es_ES.aff".
+
+==== Example: Using the PHP spellchecker
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  toolbar: 'spellchecker',
+  spellchecker_rpc_url: 'spellchecker.php'
+});
+----
+
+Review the link:spellchecker.html[Spell Checker plugin] for advanced configuration options.
+
+== TinyMCE Spell Checker Pro plugin
+
+Use the link:tinymcespellchecker.html[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.

@@ -1,1 +1,0 @@
-> **Important**: This Integration is maintained by a third-party developer. {{site.companynameformal}} bears no responsibility for this integration, which is not covered by the {{site.companyname}} Self-Hosted Software License Agreement. For issues related to the integration, contact the third-party project directly.

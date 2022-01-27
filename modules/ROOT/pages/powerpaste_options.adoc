@@ -1,0 +1,51 @@
+= Options for the PowerPaste plugin
+
+:title_nav: Options
+
+:description: Information on the options provided by the PowerPaste plugin.
+:keywords: enterprise powerpaste power paste microsoft word excel google docs
+
+:pluginname: PowerPaste
+
+:plugincode: powerpaste
+
+
+== Configuration Options
+
+include::partial$configuration/paste_as_text.adoc[]
+
+include::partial$configuration/paste_merge_formats.adoc[]
+
+include::partial$configuration/paste_tab_spaces.adoc[]
+
+include::partial$configuration/powerpaste_word_import.adoc[]
+
+include::partial$configuration/powerpaste_googledocs_import.adoc[]
+
+include::partial$configuration/powerpaste_html_import.adoc[]
+
+include::partial$configuration/powerpaste_allow_local_images.adoc[]
+
+include::partial$configuration/paste_block_drop.adoc[]
+
+include::partial$configuration/powerpaste_clean_filtered_inline_elements.adoc[]
+
+include::partial$configuration/powerpaste_keep_unsupported_src.adoc[]
+
+include::partial$configuration/smart_paste.adoc[]
+
+include::partial$configuration/image_file_types.adoc[]
+
+== Advanced Config Options
+
+=== Pre-filtering and post-filtering callbacks
+
+Developers can add custom filtering before and after *PowerPaste*'s filters are run using the pre-filtering and post-filtering callbacks. These can be added as init options or at runtime using event listeners.
+
+____
+*Note*: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
+____
+
+include::partial$configuration/paste_preprocess.adoc[]
+
+include::partial$configuration/paste_postprocess.adoc[]

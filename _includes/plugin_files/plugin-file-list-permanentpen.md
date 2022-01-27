@@ -1,3 +1,0 @@
-```
-./plugins/permanentpen/plugin.js
-```

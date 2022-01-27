@@ -1,3 +1,0 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                              |
-| -------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `restoredraft`       | File                                                                                                     | Restores to the latest auto saved draft. |

@@ -1,0 +1,21 @@
+== browser_spellcheck
+
+This option configures {productname} to use the browser's native spell checker.
+
+`+browser_spellcheck+` is not available in either Internet Explorer 8 or 9, as neither browser has native spell checker functionality. For more complete browser support, we recommend using link:tinymcespellchecker.html[Spell Checker Pro].
+
+Type : `+Boolean+`
+
+Default Value : `+false+`
+
+Possible Values : `+true+`, `+false+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  browser_spellcheck: true
+});
+----
+
+For more information about spell checking in {productname}, see link:/how-to-guides/learn-the-basics/spell-checking/[this page] in the General-configuration-guide/ guide.

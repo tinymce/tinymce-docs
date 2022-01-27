@@ -1,3 +1,0 @@
-```
-./plugins/media/plugin.js
-```

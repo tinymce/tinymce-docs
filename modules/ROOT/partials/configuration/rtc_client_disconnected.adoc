@@ -1,0 +1,12 @@
+== `+rtc_client_disconnected+`
+
+The `+rtc_client_disconnected+` option can be used with the <<rtc_client_connected, `+rtc_client_connected+`>> option to maintain a list of connected users.
+
+\{% if plugincode != "rtc" %} Required plugin : link:rtc.html[Real-Time Collaboration (`+rtc+`)] \{% endif %}
+
+Type : Function
+
+Input parameters :
+include::partial$rtc/rtc-client-connect-inputs.adoc[]
+
+include::partial$rtc/rtc-client-connect-disconnect-example.adoc[]

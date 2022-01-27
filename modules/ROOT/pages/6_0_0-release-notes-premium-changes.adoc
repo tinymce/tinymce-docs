@@ -1,0 +1,98 @@
+= Accompanying premium feature changes
+
+:title_nav: Premium Features
+
+:description: Premium feature changes accompanying TinyMCE 6.0
+:keywords: releasenotes premium bugfixes
+
+* <<accompanyingpremiumpluginchanges, Accompanying Premium Plugin changes>>
+* <<accompanyingpremiumskinsandiconpackschanges, Accompanying Premium Skins and Icon Packs changes>>
+* <<accompanyingpremiumself-hostedserver-sidecomponentchanges, Accompanying Premium self-hosted server-side component changes>>
+
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.0.
+
+[[premium-plugin-name-xyz]]
+=== Premium Plugin Name X.Y.Z
+
+The {productname} 6.0 release includes an accompanying release of the *<>* premium plugin.
+
+*<>* X.Y.Z adds the following new features:
+
+* {blank}
++
+
+*<>* X.Y.Z introduces the following enhancements:
+
+* {blank}
++
+
+*<>* X.Y.Z provides the following bug fixes:
+
+* {blank}
++
+
+For information on the <> plugin, see: link:/plugins-ref/<>/[<> plugin].
+
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} 6.0 release includes an accompanying release of the *Premium Skins and Icon Packs*.
+
+=== Premium Skins and Icon Packs - New features
+
+\{% comment %} Add description here.
+\{% endcomment %}
+
+For information on using premium skins and icon packs, see: link:premium-skins-and-icons.html[Premium Skins and Icon Packs].
+
+=== Premium Skins and Icon Packs - Bug fixes
+
+The *Premium Skins and Icon Packs* release includes the following bug fixes:
+
+\{% comment %} Add description here.
+\{% endcomment %}
+
+For information on using premium skins and icon packs, see: link:premium-skins-and-icons.html[Premium Skins and Icon Packs].
+
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 6.0 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
+
+* The Enhanced Media Embed plugin (`+mediaembed+`)
+* The Export plugin (`+export+`)
+* The Image Tools plugin (`+imagetools+`)
+* The Link Checker plugin (`+linkchecker+`)
+* The Spell Checker Pro plugin (`+tinymcespellchecker+`)
+
+The Java server-side components have been updated to the following versions:
+
+* `+ephox-hyperlinking.war+`: a.b.c
+* `+ephox-image-proxy.war+`: a.b.c
+* `+ephox-spelling.war+`: a.b.c
+
+For information on:
+
+* The Enhanced Media Embed plugin, see: link:mediaembed.html[Enhanced Media Embed plugin].
+* The Export plugin, see: link:export.html[Export plugin].
+* The Image Tools plugin, see: link:imagetools.html[Image Tools plugin].
+* The Link Checker plugin, see: link:linkchecker.html[Link Checker plugin].
+* The Spell Checker Pro plugin, see: link:tinymcespellchecker.html[Spell Checker Pro plugin].
+* Deploying the server-side components, see: link:premium-server-side-guide.html[Server-side component installation].
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+[arabic]
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+[arabic, start=2]
+. Replace the existing server-side `+.war+` files with the `+.war+` files bundled with {productname} 6.0 or later.
+
+For information on:
+
+* Deploying the server-side components, see: link:premium-server-side-guide.html[Server-side component installation].
+* Deploying the server-side components using Docker, see: link:dockerservices.html[Containerized service deployments].

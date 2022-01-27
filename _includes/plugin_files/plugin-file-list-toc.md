@@ -1,3 +1,0 @@
-```
-./plugins/toc/plugin.js
-```

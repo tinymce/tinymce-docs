@@ -1,0 +1,16 @@
+= "tinymce.dom"
+
+:description: "APIs for working with the DOM from within the editor."
+:type: folder
+
+{% assign navigation = site.data.nav_api %}
+{% for entry in navigation %}
+  {% if entry.url == "api" %}
+    {% for subentry in entry.pages %}
+      {% if subentry.url == "tinymce.dom" %}
+        {% assign links = subentry.pages %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% include index.html links=links sectionTitle="tinymce.dom" %}

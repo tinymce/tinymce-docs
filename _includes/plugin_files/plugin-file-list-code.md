@@ -1,3 +1,0 @@
-```
-./plugins/code/plugin.js
-```

@@ -1,0 +1,14 @@
+/* Add a border around the editor */
+.my-custom-editor-container {
+    border: 1px solid #CBCBCB;
+    border-top: 0; /* Remove top border because of the dummy header */
+}
+
+.dummy-header {
+    background-color: #1976D2;
+    color: #fff;
+    display: flex;
+    font-size: 20px;
+    line-height: 50px;
+    padding: 0 1rem;
+}

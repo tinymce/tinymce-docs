@@ -1,0 +1,234 @@
+= Spell Checker Pro plugin
+
+:title_nav: Spell Checker Pro
+
+:description: Check spelling as-you-type in TinyMCE.
+:keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox
+
+:pluginname: Spell Checker Pro
+
+:plugincode: tinymcespellchecker
+
+
+include::partial$misc/admon_premium_plugin.adoc[]
+
+*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to link:tinymcespellchecker.html#spellchecker_language[this] section.
+
+== Interactive example
+
+liveDemo::spellcheckerpro[ ]
+
+:pluginminimumplan: tierthree
+
+
+include::partial$misc/purchase-premium-plugins.adoc[]
+
+== Cloud Installation
+
+To enable the {productname} Enterprise Spellchecking plugin with link:/how-to-guides/cloud-deployment-guide/editor-and-features/[{cloudname}]:
+
+[arabic]
+. If configured, disable the `+spellchecker+` plugin provided with {productname}, by removing it from the `+plugins+` list.
+. Add `+tinymcespellchecker+` to the `+plugins+` list.
+
+With {cloudname} the server-side spellchecking component is automatically configured, so the `+spellchecker_rpc_url+` parameter does not need to be set.
+
+=== Example: TinyMCE Cloud Installation
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_language: 'en'
+});
+----
+
+== Self-hosted Installation
+
+To enable the {productname} Enterprise Spellchecking plugin:
+
+[arabic]
+. If configured, disable the `+spellchecker+` plugin provided with {productname}, by removing it from the `+plugins+` list.
+. Add `+tinymcespellchecker+` to the `+plugins+` list.
+
+For information on installing the server-side component for spell checking, please see the link:premium-server-side-guide.html[server-side component installation guide].
+
+=== Example: TinyMCE Self-hosted Installation
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_rpc_url: 'localhost/ephox-spelling',
+  spellchecker_language: 'en'
+});
+----
+
+== Usage
+
+The {productname} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for a misspelled word, right-click the misspelled word to open the contextual menu.
+
+== Configuration Options
+
+include::partial$configuration/spellchecker_active.adoc[]
+
+include::partial$configuration/spellchecker_dialog.adoc[]
+
+include::partial$configuration/spellchecker_language.adoc[]
+
+include::partial$misc/spellchecker-languages.adoc[]
+
+include::partial$configuration/spellchecker_languages.adoc[]
+
+\{% if site.productmajorversion < 6 %}
+include::partial$configuration/spellchecker_on_load.adoc[] \{% endif %}
+
+include::partial$configuration/spellchecker_rpc_url.adoc[]
+
+include::partial$plugins/tinymcespellchecker-content-langs.adoc[]
+
+include::partial$configuration/spellchecker_select_languages.adoc[]
+
+include::partial$configuration/spellchecker_ignore_list.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The Spell Checker Pro plugin provides the following commands.
+
+include::partial$commands/tinymcespellchecker-cmds.adoc[]
+
+== Events
+
+include::partial$events/tinymcespellchecker-events.adoc[]
+
+=== SpellcheckerIgnore event
+
+This event triggers when the user selects *Ignore* on a misspelled word.
+
+==== Example: The SpellcheckerIgnore event
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckerIgnore', function (e) {
+      console.log('Ignore word', e.word);
+    });
+  }
+});
+----
+
+=== SpellcheckerIgnoreAll event
+
+This event triggers when the user selects *Ignore All* on a misspelled word.
+
+==== Example: The SpellcheckerIgnoreAll event
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckerIgnoreAll', function (e) {
+      console.log('Ignore word (all)', e.word);
+    });
+  }
+});
+----
+
+=== SpellcheckStart event
+
+This event triggers when the user *enables* the `+spellchecker+`.
+
+==== Example: The SpellcheckStart event
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckStart', function (e) {
+      console.log('Started spellchecking');
+    });
+  }
+});
+----
+
+=== SpellcheckEnd event
+
+This event triggers when the user *disables* the `+spellchecker+`.
+
+==== Example: The SpellcheckEnd event
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckEnd', function (e) {
+      console.log('Stopped spellchecking');
+    });
+  }
+});
+----
+
+=== SpellcheckError event
+
+This event triggers when a spellchecker error occurs, such as the Spell Checker Pro service can’t be reached.
+
+==== Example: The SpellcheckError event
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckError', function (e) {
+      console.log('Spelling service error: ' + e.message);
+    });
+  }
+});
+----
+
+=== SpellcheckerLanguageChanged event
+
+This event fires when the spellchecking language is changed.
+
+==== Example: The SpellcheckerLanguageChanged event
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckerLanguageChanged', function (e) {
+      console.log('Spelling language changed: ' + e.language + '. Previous language: ' + e.prevLanguage);
+    });
+  }
+});
+----
+
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

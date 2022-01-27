@@ -1,3 +1,0 @@
-```
-./plugins/autoresize/plugin.js
-```

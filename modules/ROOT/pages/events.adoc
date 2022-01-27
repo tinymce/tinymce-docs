@@ -1,0 +1,403 @@
+= Events Available for TinyMCE
+
+:title_nav: Available Events
+
+:description_short: List of common editor events
+:description: List of common editor events
+:keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
+
+{productname} supports some browser-native events, and provides additional events for working with the editor and plugins.
+
+== Handling Editor events
+
+The following examples illustrate how to use supported native events, editor core events, and plugin events with {productname}.
+
+The following example uses a function to create a console log entry when the editor has initialized. This is also an example of handling an event which does not return any data.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  setup: function(editor) {
+    editor.on('init', function(e) {
+      console.log('The Editor has initialized.');
+    });
+  }
+});
+----
+
+The following example uses a function to create a console log entry when a command is executed in the editor. This is also an example of handling an event that returns data.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  init_instance_callback: function(editor) {
+    editor.on('ExecCommand', function(e) {
+      console.log('The ' + e.command + ' command was fired.');
+    });
+  }
+});
+----
+
+== Supported browser-native events
+
+{productname} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
+
+* https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforeinput_event[beforeinput]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event[blur]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event[click]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionend_event[compositionend]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionstart_event[compositionstart]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionupdate_event[compositionupdate]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event[contextmenu]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event[copy]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/cut_event[cut]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event[dblclick]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event[drag]
+* https://developer.mozilla.org/en-US/docs/Web/Events#Non-standard_events[dragdrop]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/dragend_event[dragend]
+* https://developer.mozilla.org/en-US/docs/Web/Events#Non-standard_events[draggesture]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event[dragover]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/dragstart_event[dragstart]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event[drop]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event[focus]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/focusin_event[focusin]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/focusout_event[focusout]
+* https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event[input]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event[keydown]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event[keypress]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event[keyup]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event[mousedown]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event[mouseenter]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event[mouseleave]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event[mousemove]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event[mouseout]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event[mouseover]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event[mouseup]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event[paste]
+* https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset_event[reset]
+* https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event[submit]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event[touchcancel]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/touchend_event[touchend]
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/touchmove_event[touchmove]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart]
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event[wheel]
+
+== Editor core events
+
+The following events are provided by the {productname} editor.
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|activate |`+{ relatedTarget: Editor }+` |Fired when the editor is activated.
+|deactivate |`+{ relatedTarget: Editor }+` |Fired when the editor is deactivated.
+|remove |N/A |Fired before the editor is removed/destroyed.
+|detach |N/A |Fired after the remove event, before the editor container is detached from the DOM.
+|init |N/A |Fired when the editor is fully initialized.
+|ScrollIntoView |`+{ elm: HTMLElement, alignToTop: boolean }+` |Fired when an element is about to be scrolled into view.
+|AfterScrollIntoView |`+{ elm: HTMLElement, alignToTop: boolean }+` |Fired when an element has been scrolled into view.
+|ObjectResized |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) has finished being resized.
+|ObjectResizeStart |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) is about to be resized.
+|SwitchMode |`+{ mode: string }+` |Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:tinymce.editormode.html#register['tinymce.activeEditor.mode.register()'].
+|ScrollWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event]) |Fired when the window has scrolled.
+|ResizeWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event[resize event]) |Fired when the window is resized.
+|BeforeExecCommand |`+{ command: string, ui?: boolean, value?: any }+` |Fired before a command is executed.
+|ExecCommand |`+{ command: string, ui?: boolean, value?: any }+` |Fired after a command has executed.
+|NodeChange |`+{ element: Element, parents: Node[], selectionChange?: boolean }+` |Fired when the selected node inside the editor content has changed.
+|FormatApply |`\{ format: string; vars?: FormatVars; node?: Node |RangeLikeObject }`
+|FormatRemove |`\{ format: string; vars?: FormatVars; node?: Node |RangeLikeObject }`
+|ShowCaret |`+{ target: Node, direction: number, before: boolean }+` |Fired before a fake caret element is shown in the editor. The fake caret will appear where the cursor is normally not shown, such as at the start or end of tables and non-editable content.
+|SelectionChange |N/A |Fired when the content selection in the editor changes.
+|ObjectSelected |`+{ target: Node, targetClone?: Node }+` |Fired when an object (such as an image) is selected in the editor and the selection elements have rendered.
+|BeforeObjectSelected |`+{ target: Node, targetClone?: Node }+` |Fired when an object (such as an image) is selected in the editor, before it is rendered as selected.
+|GetSelectionRange |`+{ range: Range }+` |Fired when the selection range is being fetched from the editor.
+|SetSelectionRange |`+{ range: Range, forward: boolean }+` |Fired before the selection range is set in the editor.
+|AfterSetSelectionRange |`+{ range: Range, forward: boolean }+` |Fired after the selection range is set in the editor.
+|BeforeGetContent |`+{ format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired before the content is serialized from the editor.
+|GetContent |`+{ content: string, format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired after the content is serialized from the editor.
+|BeforeSetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired before the content is parsed and rendered in the editor.
+|SetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired after the content is parsed and rendered in the editor.
+|LoadContent |N/A |Fired after the initial content has loaded into the editor.
+|PreviewFormats |N/A |Fired before a formats CSS is generated when the format is being previewed in the editor.
+|AfterPreviewFormats |N/A |Fired after a formats CSS is generated when the format is being previewed in the editor.
+|ScriptsLoaded |N/A |Fired when all the scripts required for the editor to run (such as plugins and theme) have loaded.
+|PreInit |N/A |Fired after loading the editor and before starting to load the editor content.
+|PostRender |N/A |Fired after the theme has rendered.
+|NewBlock |`+{ newBlock: Element }+` |Fired when a new block is created in the editor, such as when the user presses the enter key.
+|ClearUndos |N/A |Fired when the undo levels have been cleared.
+|TypingUndo |N/A |Fired when a new undo level is created by typing content into the editor.
+|Change |`+{ level: UndoLevel }+` |Fired when the editor content changes have been committed, such as when moving focus away from the editor.
+|Redo |`+{ level: UndoLevel }+` |Fired when a change is been re-applied.
+|Undo |`+{ level: UndoLevel }+` |Fired when a change has been undone.
+|BeforeAddUndo |`+{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }+` |Fired before a new undo level is created.
+|AddUndo |`+{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }+` |Fired after a new undo level has been created.
+|Dirty |N/A |Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when link:tinymce.undomanager.html[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the link:tinymce.editor.html#isdirty[`+editor.isDirty+` API].
+|CloseWindow |`+{ dialog: DialogApi }+` |Fired when a dialog has been closed.
+|OpenWindow |`+{ dialog: DialogApi }+` |Fired when a dialog has been opened.
+|ProgressState |`+{ state: boolean, time?: number }+` |Fired when a change to the editor progress state is scheduled using the {productname} API link:tinymce.editor.html#setprogressstate[`+tinymce.activeEditor.setProgressState()+`].
+|AfterProgressState |`+{ state: boolean }+` |Fired after the editor progress state is changed, and the new progress state is in effect.
+|PreProcess |`+{ node: Element, format: string }+` |Fired before serializing a DOM node to HTML content.
+|PostProcess |`+{ node: Element, format: string }+` |Fired after serializing a DOM node to HTML content.
+|SetAttrib |`+{ attrElm: Element, attrName: string, attrValue: string }+` |Fired when an attribute is updated using the editor link:/apis/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
+|ResizeEditor |N/A |Fired when the editor is resized, either by the resize handles or the auto-resize plugin.
+|SkinLoaded |N/A |Fired when the editor skin has been loaded.
+|SkinLoadError |`+{ message: string }+` |Fired when the editor skin fails to load.
+|PluginLoadError |`+{ message: string }+` |Fired when an editor plugin fails to load.
+|IconsLoadError |`+{ message: string }+` |Fired when the editor icon pack fails to load.
+|LanguageLoadError |`+{ message: string }+` |Fired when the editor language pack fails to load.
+|BeforeRenderUI |N/A |Fired before the theme UI is rendered.
+|ToggleSidebar |N/A |Fired when a sidebar is toggled opened/closed.
+|longpress |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart event]) |Fired when a long press occurs on a touch device inside the editor.
+|tap |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Document/touchend_event[touchend event]) |Fired when a tap occurs on a touch device inside the editor (simulated event similar to click).
+|ScrollContent |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event]) |(iframe mode only) Fired when the content inside an iframe window has been scrolled.
+|ResizeContent |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event[resize event]) |(iframe mode only) Fired when the iframe window is resized.
+|Load |N/A |(iframe mode only) Fired when the editor iframe content has finished loading.
+|ResolveName |`+{ name: string, target: Element }+` |(iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.
+|BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: link:creating-custom-notifications.html[Create custom notifications].
+|OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: link:creating-custom-notifications.html[Create custom notifications].
+|===
+
+== Plugin events
+
+The following plugins provide events.
+
+* <<advancedtablesevents, Advanced Tables events>>
+* <<autosaveevents, Autosave events>>
+* <<charactermapevents, Character Map events>>
+* <<commentsevents, Comments events>>
+* <<exportevents, Export events>>
+* <<formatpainterevents, Format Painter events>>
+* <<fullscreenevents, Fullscreen events>>
+* <<importcssevents, Import CSS events>>
+* <<linkcheckerevents, Link checker events>>
+* <<listsevents, Lists events>>
+* <<mediaembedevents, Media Embed events>>
+* <<pasteevents, Paste events>>
+* <<permanentpenevents, Permanent Pen events>>
+* <<powerpasteevents, PowerPaste events>>
+* <<spellcheckerevents, Spell Checker events>>
+* <<spellcheckerproevents, Spell Checker Pro events>>
+* <<tableevents, Table events>>
+* <<visualblocksevents, Visual Blocks events>>
+* <<visualcharactersevents, Visual Characters events>>
+* <<wordcountevents, Word Count events>>
+
+=== Advanced Tables events
+
+For events applicable to the Advanced Tables plugin, see: <<tableevents, Table events>>.
+
+=== Autosave events
+
+The following events are provided by the link:autosave.html[Autosave plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|RestoreDraft |N/A |Fired when a draft has been restored.
+|StoreDraft |N/A |Fired when a draft is saved.
+|RemoveDraft |N/A |Fired when a draft has been removed from memory.
+|===
+
+=== Character Map events
+
+The following event is provided by the link:charmap.html[Character Map plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|InsertCustomChar |`+{ chr: string }+` |Fired before a special character is inserted into the editor.
+|===
+
+=== Comments events
+
+The following event is provided by the link:comments.html[Comments plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|mce-tinycomments-update |N/A |Fired when the comments sidebar is opened or closed.
+|===
+
+=== Export events
+
+include::partial$events/export-events.adoc[]
+
+=== Format Painter events
+
+The following event is provided by the link:formatpainter.html[Format Painter plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|FormatPainterToggle |`+{ state: boolean }+` |Fired when the format painter state changes.
+|===
+
+=== Fullscreen events
+
+The following event is provided by the link:fullscreen.html[Fullscreen plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|FullscreenStateChanged |`+{ state: boolean }+` |Fired when the fullscreen state changes.
+|===
+
+=== Import CSS events
+
+The following event is provided by the link:importcss.html[Import CSS plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|AddStyleModifications |`+{ items: StyleItem[], replace: boolean }+` |Fired during editor initialization when the style modifications are parsed from the CSS.
+|===
+
+=== Link checker events
+
+The following event is provided by the link:linkchecker.html[Link Checker plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|LinkCheckerError |`+{ message: string }+` |Fired when a link checker error occurs, such as the Link Checker service can't be reached.
+|===
+
+=== Lists events
+
+The following event is provided by the link:lists.html[Lists plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|ListMutation |`+{ action: string, element: Element }+` |Fired when a list is toggled on/off.
+|===
+
+=== Media Embed events
+
+The following event is provided by the link:mediaembed.html[Media Embed plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|MediaEmbedError |`+{ message: string }+` |Fired when a media embed error occurs, such as the Media Embed service can't be reached.
+|===
+
+=== Paste events
+
+The following events are provided by the link:paste.html[Paste plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|PastePreProcess |`+{ content: string, wordContent: boolean }+` |Fired before the content is parsed from the clipboard.
+|PastePostProcess |`+{ node: Element, wordContent: boolean }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
+|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
+|===
+
+=== Permanent Pen events
+
+The following events are provided by the link:permanentpen.html[Permanent Pen plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|PermanentPenToggle |`+{ state: boolean }+` |Fired when the permanent pen state changes.
+|PermanentPenProperties |`+{ fontname: string, fontcolor: string, fontsize: string, hilitecolor: string, bold: boolean, italic: boolean, underline: boolean, strikethrough: boolean }+` |Fired when the permanent pen properties are changed.
+|===
+
+=== PowerPaste events
+
+The following events are provided by the link:powerpaste.html[PowerPaste plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|PastePreProcess |`+{ content: string, mode: string, source: string }+` |Fired before the content is parsed from the clipboard.
+|PastePostProcess |`+{ node: Element, mode: string, source: string }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
+|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
+|===
+
+=== Spell Checker events
+
+The following events are provided by the link:spellchecker.html[Spell Checker plugin].
+
+include::partial$DEPRECATED/spellchecker.adoc[]
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|SpellcheckStart |N/A |Fired when spellchecking is enabled.
+|SpellcheckEnd |N/A |Fired when spellchecking is disabled.
+|===
+
+=== Spell Checker Pro events
+
+include::partial$events/tinymcespellchecker-events.adoc[]
+
+=== Table events
+
+include::partial$events/table-events.adoc[]
+
+=== Visual Blocks events
+
+The following event is provided by the link:visualblocks.html[Visual Blocks plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|VisualBlocks |`+{ state: boolean }+` |Fired when the Visual Blocks state changes.
+|===
+
+=== Visual Characters events
+
+The following event is provided by the link:visualchars.html[Visual Characters plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|VisualChars |`+{ state: boolean }+` |Fired when the Visual Characters state changes.
+|===
+
+=== Word Count events
+
+The following event is provided by the link:wordcount.html[Word Count plugin].
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|WordCountUpdate |`+{ wordCount: { words: number, characters: number, charactersWithoutSpaces: number } }+` |Fired when the editor word count is updated.
+|===
+
+== Editor Manager events
+
+The following events are used for editor management. These events are handled using `+tinymce.on+`, rather than `+editor.on+` or `+editor.fire+`, as shown in <<exampleshandlingeditormanagerevents, Examples: Handling Editor Manager events>>.
+
+[cols=",,",options="header",]
+|===
+|Name |Data |Description
+|AddEditor |`+{ editor: Editor}+` |Fired when a new editor is created.
+|RemoveEditor |`+{ editor: Editor}+` |Fired when an editor is removed/destroyed.
+|BeforeUnload |N/A |Fired before the browser window is closed (same as native https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event[`+beforeunload+` event]).
+|===
+
+=== Examples: Handling Editor Manager events
+
+*AddEditor*
+
+[source,js]
+----
+tinymce.on('AddEditor', function(e) {
+  console.log('Added editor with id: ' + e.editor.id);
+});
+----
+
+*RemoveEditor*
+
+[source,js]
+----
+tinymce.on('RemoveEditor', function(e) {
+  console.log('Removed editor with id: ' + e.editor.id);
+});
+----

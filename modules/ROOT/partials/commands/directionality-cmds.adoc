@@ -1,0 +1,14 @@
+[cols=",",options="header",]
+|===
+|Command |Description
+|mceDirectionLTR |Changes the directionality to LTR.
+|mceDirectionRTL |Changes the directionality to RTL.
+|===
+
+*Examples*
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceDirectionLTR');
+tinymce.activeEditor.execCommand('mceDirectionRTL');
+----

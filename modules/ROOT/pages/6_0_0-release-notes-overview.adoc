@@ -1,0 +1,21 @@
+= Overview
+
+:title_nav: Overview
+
+:description: Release notes overview for TinyMCE 6.0
+:keywords: releasenotes new changes bugfixes
+
+include::partial$misc/admon_releasenotes_for_stable.adoc[]
+
+== Overview
+
+{productname} 6.0 was released for {enterpriseversion} and {cloudname} on <<`+WEEKDAY+`, `+MMM+` `+D+``+st|nd|th+`, `+YYYY+`>>. It includes {productname} 6.0 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 6.0, including:
+
+:navigation: site.data.nav
+\{% for entry in navigation %} \{% if entry.url == "release-information" %} \{% for subentry in entry.pages %} \{% if subentry.url == "release-notes" %} \{% for sub2entry in subentry.pages %} \{% if sub2entry.url == "6_0_0" %}
+
+:links: sub2entry.pages
+\{% endif %} \{% endfor %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %}
+
+
+\{% include sub-level-toc.html links=links %}

@@ -1,3 +1,0 @@
-| Menu item identifier | [Default Menu Location]({{site.baseurl}}/interface/menus/menus-configuration-options/#examplethetinymcedefaultmenuitems) | Description                             |
-|----------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------|
-| `pageembed`          | Insert                                                                                                   | Opens the insert or edit iframe dialog. |

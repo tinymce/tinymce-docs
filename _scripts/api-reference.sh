@@ -2,7 +2,8 @@
 
 set -e
 
-API_VERSION="$(cat .api-version)"
+# API_VERSION="$(cat .api-version)"
+API_VERSION="5.10.2"
 TARBALL_URL="https://codeload.github.com/tinymce/tinymce/tar.gz/$API_VERSION"
 API_TMPDIR="/tmp/tinymce-$API_VERSION"
 
@@ -13,10 +14,9 @@ rm -rf "$API_TMPDIR"
 
 mkdir "$API_TMPDIR"
 curl -s "$TARBALL_URL" | tar xzf - -C "$API_TMPDIR" --strip-components 1
-moxiedoc "$API_TMPDIR/modules/tinymce/src/core/main/ts" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
+moxiedoc "$API_TMPDIR/modules/tinymce/src/core/main/ts" -t antora -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
-rm -rf apis/
-mv api/ apis
+
 sed -i "s;^- url: api;- url: apis;" _data/nav_api.yml
 
 echo ""

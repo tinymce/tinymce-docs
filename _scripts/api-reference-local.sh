@@ -14,10 +14,9 @@ echo -e "\n > importing data files for tinymce api reference: local from $1\n"
 
 rm -rf "$API_TMPDIR"
 mkdir "$API_TMPDIR"
-moxiedoc "$1/modules/tinymce/src/core/main/ts" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
+moxiedoc "$1/modules/tinymce/src/core/main/ts" -t antora -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
-rm -rf apis/
-mv api/ apis
+
 sed -i "s;^- url: api;- url: apis;" _data/nav_api.yml
 
 echo ""

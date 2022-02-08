@@ -8,6 +8,12 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.3 - 2022-02-09
+
+### Fixed
+- Alignment would sometimes be removed on parent elements when changing alignment on certain inline nodes, such as images.
+- The `fullscreen` plugin would reset the scroll position when exiting fullscreen mode.
+
 ## 5.10.2 - 2021-11-17
 
 ### Fixed

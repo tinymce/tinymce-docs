@@ -26,5 +26,10 @@ rm -rf build/site/_/tinymce/6.0/apis/
 # move newly generated adoc pages, antora will then generate new static html pages
 mv _data/antora modules/root/pages/apis
 
+# move api navigation
+mv _data/moxiedoc_nav.adoc modules/root/moxiedoc_nav.adoc
+
+# cleanup moxiedoc tmp _data folder
+rm -rf _data
 
 echo "donesky"

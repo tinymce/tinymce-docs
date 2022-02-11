@@ -10,7 +10,9 @@
   "scripts": {
     "watch": "nodemon --exec antora antora-playbook.yml",
     "server": "http-server build/site/ --port 4000",
-    "serve": "npm-run-all -p watch server"
+    "serve": "npm-run-all -p watch server",
+    "build": "./_scripts/api-reference.sh",
+    "build-local": "./_scripts/api-reference-local.sh"
   },
   "author": "Tiny Technologies Inc",
   "license": "CC-BY-NC-SA-3.0",
@@ -31,6 +33,7 @@
     "http-server": "^0.12.3",
     "liquidjs": "~9.25.0",
     "nodemon": "^2.0.7",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "moxiedoc": "git://github.com/tinymce/moxiedoc.git#feature/antora"
   }
 }

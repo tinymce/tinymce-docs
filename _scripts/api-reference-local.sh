@@ -17,6 +17,19 @@ mkdir "$API_TMPDIR"
 moxiedoc "$1/modules/tinymce/src/core/main/ts" -t antora -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
 
-sed -i "s;^- url: api;- url: apis;" _data/nav_api.yml
+# remove old api adoc pages
+rm -rf modules/root/pages/apis/
 
-echo ""
+# removed old static api html pages (clear cache), it can corrupt the build 
+rm -rf build/site/_/tinymce/6.0/apis/
+
+# move newly generated adoc pages, antora will then generate new static html pages
+mv _data/antora modules/root/pages/apis
+
+# move api navigation
+mv _data/moxiedoc_nav.adoc modules/root/moxiedoc_nav.adoc
+
+# cleanup moxiedoc tmp _data folder
+rm -rf _data
+
+echo "donesky - using local build of tinymce"

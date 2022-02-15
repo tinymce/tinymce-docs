@@ -19,7 +19,7 @@ keywords: releasenotes bugfixes
 
 ## Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} 5.10.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+The {{site.productname}} 5.10.3 release includes changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
 - The Enhanced Media Embed plugin (`mediaembed`)
 - The Image Tools plugin (`imagetools`)
@@ -66,8 +66,8 @@ For information on:
 
 {{site.productname}} 5.10.3 provides fixes for the following bugs:
 
-- Fixed alignment would sometimes be removed on parent elements when changing alignment on certain inline nodes, such as images.
-- Fixed the `fullscreen` plugin would incorrectly reset the scroll position when exiting fullscreen mode.
+- Alignment would sometimes be removed on parent elements when changing alignment on certain inline nodes, such as images.
+- The `fullscreen` plugin would incorrectly reset the scroll position when exiting fullscreen mode.
 
 ## Security fixes
 

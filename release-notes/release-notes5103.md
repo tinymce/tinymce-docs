@@ -66,8 +66,8 @@ For information on:
 
 {{site.productname}} 5.10.3 provides fixes for the following bugs:
 
-- Fixed changing the alignment of an inline image removes the alignment of the parent.
-- Fixed when toggling back from fullscreen mode, the scrollbar position is incorrect.
+- Fixed alignment would sometimes be removed on parent elements when changing alignment on certain inline nodes, such as images.
+- Fixed the `fullscreen` plugin would incorrectly reset the scroll position when exiting fullscreen mode.
 
 ## Security fixes
 

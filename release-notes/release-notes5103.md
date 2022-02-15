@@ -19,7 +19,7 @@ keywords: releasenotes bugfixes
 
 ## Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} 5103 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+The {{site.productname}} 5.10.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
 - The Enhanced Media Embed plugin (`mediaembed`)
 - The Image Tools plugin (`imagetools`)

@@ -3,6 +3,7 @@
 :description_short: Complete list of menu items available for the menu bar and context menus.
 :keywords: menuitems menu menubar
 :title_nav: Available Menu Items
+:avail-menu: avail-menu
 
 The following tables show all available menu items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
 
@@ -22,196 +23,196 @@ include::partial$menu-item-ids/core-menu-items.adoc[]
 :plugincategory: premium
 :pluginname: A11yChecker
 :plugincode: a11ychecker
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Advanced Code Editor
 :plugincode: advcode
 :altplugincode: code
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Advanced Tables
 :plugincode: advtable
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Anchor
 :plugincode: anchor
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Autosave
 :plugincode: autosave
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Case Change
 :plugincode: casechange
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Character Map
 :plugincode: charmap
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Checklist
 :plugincode: checklist
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Code
 :plugincode: code
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Code Sample
 :plugincode: codesample
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Comments
 :plugincode: comments
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Emoticons
 :plugincode: emoticons
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Export
 :plugincode: export
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Full Page
 :plugincode: fullpage
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Full Screen
 :plugincode: fullscreen
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Help
 :plugincode: help
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Horizontal Rule
 :plugincode: hr
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Image
 :plugincode: image
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Insert Date/Time
 :plugincode: insertdatetime
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Link
 :plugincode: link
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Media
 :plugincode: media
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Nonbreaking Space
 :plugincode: nonbreaking
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Page Break
 :plugincode: pagebreak
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Page Embed
 :plugincode: pageembed
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Paste
 :plugincode: paste
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Permanent Pen
 :plugincode: permanentpen
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: PowerPaste
 :plugincode: powerpaste
 :altplugincode: paste
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Preview
 :plugincode: preview
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Print
 :plugincode: print
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Search and Replace
 :plugincode: searchreplace
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Spell Checker
 :plugincode: spellchecker
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: Spell Checker Pro
 :plugincode: tinymcespellchecker
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Table
 :plugincode: table
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Template
 :plugincode: template
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: premium
 :pluginname: site.cloudfilemanager
 :plugincode: tinydrive
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Table of Contents
 :plugincode: toc
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Visual Blocks
 :plugincode: visualblocks
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Visual Characters
 :plugincode: visualchars
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]
 
 :plugincategory: opensource
 :pluginname: Word Count
 :plugincode: wordcount
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+include::partial$misc/plugin-menu-item-id-switch.adoc[]

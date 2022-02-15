@@ -1,4 +1,5 @@
 = Full featured examples
+:page-loadtinymce: true
 :description: These examples display all of the plugins available with TinyMCE Cloud premium subscriptions.
 :description_short: Every TinyMCE plugin in action.
 :keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
@@ -10,7 +11,40 @@ This example includes most of the available {productname} plugins, including plu
 
 Want to try it for yourself ? link:{accountsignup}[Get started with TinyMCE now on Cloud].
 
-liveDemo::full-featured[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/full-featured/index.js[]
+</script>
+include::example$live-demos/full-featured/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/full-featured/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/full-featured/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====
 
 The following plugins are excluded from this example:
 
@@ -27,7 +61,37 @@ The following plugins are excluded from this example:
 
 This example includes only non-premium plugins. These plugins are also used in the <<fullfeaturedincludingpremiumplugins,Full Featured: Including Premium Plugins Demo above>>.
 
-liveDemo::open-source-plugins[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+include::example$live-demos/open-source-plugins/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/open-source-plugins/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/open-source-plugins/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====
 
 The following plugins are excluded from this example:
 

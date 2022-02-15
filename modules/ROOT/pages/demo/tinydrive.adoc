@@ -3,9 +3,43 @@
 :description_short: Tiny Drive
 :keywords: tinydrive .net php relative_urls
 :title_nav: Tiny Drive
+:page-loadtinymce: true
 
 == Interactive example
 
 This example shows you how to use {cloudfilemanager} for your file and image management. For more information on {cloudfilemanager}, see the link:{baseurl}/tinydrive/[docs].
 
-liveDemo::drive-demo[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/drive-demo/index.js[]
+</script>
+include::example$live-demos/drive-demo/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/drive-demo/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/drive-demo/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

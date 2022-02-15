@@ -3,7 +3,41 @@
 :description_short: Explore how valid_elements cleans up raw HTML output.
 :keywords: example demo custom valid elements valid_elements
 :title_nav: Valid elements
+:page-loadtinymce: true
 
 This example shows you how to use the link:{baseurl}/configure/content-filtering/#extended_valid_elements[extended_valid_elements] option. This option enables you to specify valid elements and attributes.
 
-liveDemo::valid-elements[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/valid-elements/index.js[]
+</script>
+include::example$live-demos/valid-elements/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/valid-elements/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/valid-elements/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

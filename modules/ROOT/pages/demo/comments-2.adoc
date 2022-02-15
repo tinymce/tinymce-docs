@@ -1,4 +1,5 @@
 = The Comments plugin Demo
+:page-loadtinymce: true
 :controls: toolbar button
 :description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
 :keywords: comments commenting tinycomments
@@ -12,4 +13,38 @@ In this example, the features in the Comments plugin are highlighted, including 
 
 For information on the other Comments plugin configuration options, see: link:{baseurl}/plugins/premium/comments/[The Comments plugin].
 
-liveDemo::comments-embedded[]
+
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/comments-embedded/index.js[]
+</script>
+include::example$live-demos/comments-embedded/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/comments-embedded/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/comments-embedded/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

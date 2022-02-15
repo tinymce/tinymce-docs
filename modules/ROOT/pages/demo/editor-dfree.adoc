@@ -1,4 +1,5 @@
 = Distraction-free editor example
+:page-loadtinymce: true
 :description: Distraction-free editor
 :description_short: Distraction-free editor.
 :keywords: example distraction-free editor
@@ -8,4 +9,37 @@
 
 This example shows you how to use {productname}'s Distraction-free editor.
 
-liveDemo::editor-dfree[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/editor-dfree/index.js[]
+</script>
+include::example$live-demos/editor-dfree/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/editor-dfree/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/editor-dfree/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

@@ -1,4 +1,5 @@
-= Classic editor example
+= classic editor example
+:page-loadtinymce: true
 :description: This example shows you how to use TinyMCE classic editor.
 :description_short: Configure TinyMCE classic editor.
 :keywords: example demo classic editor
@@ -8,4 +9,37 @@
 
 This example shows you how to use {productname} Classic Editor.
 
-liveDemo::classic[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/classic/index.js[]
+</script>
+include::example$live-demos/classic/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/classic/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/classic/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

@@ -1,0 +1,138 @@
+++++
+{% comment %} Add cloud script(s) {% endcomment %}
+{%- if liveDemo.script.include -%}
+<script src="{{ liveDemo.script.url }}" referrerpolicy="origin"></script>
+{%- if liveDemo.type == 'tinydrive' -%}
+<style>
+{% include 'tinydrive.css' %}
+</style>
+{%- endif -%}
+{%- endif -%}
+
+{% comment %} Creates the live-demo tabs {% endcomment %}
+<div id="live-demo_{{ liveDemo.id }}" class="live-demo" {% if liveDemo.height %}style="min-height:{{ liveDemo.height }}px;"{% endif %}>
+    <div class="live-demo_tabs">
+        {% for tab in liveDemo.tabs %}
+        <a href="#" id="live-demo_tab_{{ tab.name }}_{{ liveDemo.id }}" class="{{ tab.class }}">{{ tab.text }}</a>
+        {% endfor %}
+    </div>
+
+    {% comment %} Adds style.css to page if provided {% endcomment %}
+    <div id="live-demo_pane_run_{{ liveDemo.id }}" {% if "run" != liveDemo.initialTab %}style="display:none;"{% endif %}>
+        {% if liveDemo.content.hasCss %}
+            <style type="text/css">
+                {{ liveDemo.content.css }}
+            </style>
+        {% endif %}
+        {{ liveDemo.content.html }}
+    </div>
+
+    {% comment %} Adds HTML tab content {% endcomment %}
+    <div id="live-demo_pane_html_{{ liveDemo.id }}" {% if "html" != liveDemo.initialTab %}style="display:none;"{% endif %}>
+++++
+[source,html]
+----
+{{ liveDemo.content.examplehtml }}
+----
+++++
+    </div>
+
+    {% comment %} If style.css exists, add CSS tab content {% endcomment %}
+    {% if liveDemo.content.hasCss %}
+    <div id="live-demo_pane_css_{{ liveDemo.id }}" {% if "css" != liveDemo.initialTab %}style="display:none;"{% endif %}>
+++++
+[source,css]
+----
+{{ liveDemo.content.css }}
+----
+++++
+    </div>
+    {% endif %}
+
+    {% comment %} Add content to JS tab from index.js or example.js {% endcomment %}
+    <div id="live-demo_pane_js_{{ liveDemo.id }}" {% if "js" != liveDemo.initialTab %}style="display:none;"{% endif %}>
+++++
+[source,js]
+----
+{{ liveDemo.content.examplejs }}
+----
+++++
+    </div>
+</div>
+
+{% comment %} Changes initial tab where tab is specified {% endcomment %}
+<form action="https://codepen.io/pen/define" method="POST" target="_blank" id="live-demo_form_{{ liveDemo.id }}">
+<input type="hidden" name="data" id="live-demo_data_{{ liveDemo.id }}" />
+</form>
+
+<script>
+(function() {
+  // Add the ie11_optional class if running IE
+  var isIE = !!window.MSInputMethodContext && !!document.documentMode;
+  if (isIE && document.getElementsByClassName("ie11_optional")[0] !== undefined) {
+    document.getElementsByClassName("ie11_optional")[0].style.display = 'none';
+  }
+})();
+
+{% comment %} Add index.js to the page (primary tab content) {% endcomment %}
+(function() {
+{{ liveDemo.content.js }}
+})();
+
+(function() {
+  var id = "{{ liveDemo.id }}";
+
+  {% comment %} Add index.js and HTML to variables {% endcomment %}
+  var html = decodeURIComponent("{{ liveDemo.content.html | uri_escape }}");
+  var js = decodeURIComponent("{{ liveDemo.content.js | uri_escape }}");
+
+  {% comment %} If style.css provided, add to variable {% endcomment %}
+  {% comment %} set which tabz are shown in on live-demo site {% endcomment %}
+  {% if liveDemo.content.hasCss %}
+  var css = decodeURIComponent("{{ live-demo_css | uri_escape }}");
+  var tabNames = ["run","html","css","js"];
+  {% else %}
+  var css = "";
+  var tabNames = ["run","html","js"];
+  {% endif %}
+
+  {% comment %} Data to send to codepen dot io via form input {% endcomment %}
+  /* Note: there are some other fields we could populate here to polish this. */
+  /* See: https://blog.codepen.io/documentation/api/prefill/ */
+  var data = {
+    title: "{{ liveDemo.runText }} Example",
+    description: '',
+    html: html,
+    css: css,
+    css_external: '',
+    js: js,
+    js_external: '{{ liveDemo.script.url }}'
+  };
+  document.getElementById("live-demo_data_{{ liveDemo.id }}").value = JSON.stringify(data);
+
+  {% comment %} Below is just tab selection/change logic {% endcomment %}
+  var tabs = tabNames.map(function(t) {
+    return {
+      tab: document.getElementById("live-demo_tab_" + t + "_" + id),
+      pane: document.getElementById("live-demo_pane_" + t + "_" + id)
+    };
+  });
+
+  tabs.forEach(function(t) {
+    t.tab.onclick = function(e) {
+      tabs.forEach(function(tt) {
+        tt.pane.style.display = t === tt ? 'block' : 'none';
+        tt.tab.className = t === tt ? 'live-demo_tab_selected' : 'live-demo_tab_deselected';
+      });
+      e.preventDefault();
+    };
+  });
+
+  if (document.getElementById("live-demo_tab_codepen_" + id) !== null) {
+    document.getElementById("live-demo_tab_codepen_" + id).onclick = function() {
+      document.getElementById("live-demo_form_" + id).submit();
+    };
+  }
+})();
+</script>
+++++

@@ -1,4 +1,5 @@
 = Custom toolbar menu button
+:page-loadtinymce: true
 :description: This example shows you how to add a simple menu button to TinyMCE's toolbar.
 :description_short: Add a custom menu button to the toolbar.
 :keywords: example demo custom toolbar menu button
@@ -6,4 +7,37 @@
 
 This example shows you how to add a simple menu button to {productname}'s toolbar. This demo inserts text at the cursor. The live demo's *JS* tab also shows you how to add sub-menus to a menu item.
 
-liveDemo::custom-toolbar-menu-button[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/custom-toolbar-menu-button/index.js[]
+</script>
+include::example$live-demos/custom-toolbar-menu-button/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/custom-toolbar-menu-button/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/custom-toolbar-menu-button/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

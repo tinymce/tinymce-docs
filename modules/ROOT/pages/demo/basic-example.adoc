@@ -1,4 +1,5 @@
 = Basic example
+:page-loadtinymce: true
 :description: This example contains the plugins needed for the most common use cases.
 :description_short: See how we built a commonly used TinyMCE instance.
 :keywords: example demo custom common standard normal typical
@@ -8,4 +9,37 @@
 
 This example contains the plugins needed for the most common use cases.
 
-liveDemo::basic-example[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/basic-example/index.js[]
+</script>
+include::example$live-demos/basic-example/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/basic-example/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/basic-example/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

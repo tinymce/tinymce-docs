@@ -3,25 +3,191 @@
 :description_short: Examples of absolute, relative urls and urls with no conversion.
 :keywords: example demo custom url conversion absolute relative url urls
 :title_nav: URL conversion
+:page-loadtinymce: true
 
 This example shows you how to setup {productname} to produce different results for its URLs in images and links. You can read more about these config options in the link:{baseurl}/general-configuration-guide/get-support/[{productname} FAQ].
 
 == Absolute URLs on links and images
 
-liveDemo::url-conversion-absolute-1[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/url-conversion-absolute-1/index.js[]
+</script>
+include::example$live-demos/url-conversion-absolute-1/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/url-conversion-absolute-1/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/url-conversion-absolute-1/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====
 
 == Absolute URLs and including domain on links and images
 
-liveDemo::url-conversion-absolute-2[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/url-conversion-absolute-2/index.js[]
+</script>
+include::example$live-demos/url-conversion-absolute-2/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/url-conversion-absolute-2/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/url-conversion-absolute-2/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====
 
 == Relative URLs on links and images
 
-liveDemo::url-conversion-relative-1[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/url-conversion-relative-1/index.js[]
+</script>
+include::example$live-demos/url-conversion-relative-1/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/url-conversion-relative-1/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/url-url-conversion-absolute-relative-1/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====
 
 == Relative URLs on links and images to a specific page
 
-liveDemo::url-conversion-relative-2[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/url-conversion-relative-2/index.js[]
+</script>
+include::example$live-demos/url-conversion-relative-2/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/url-conversion-relative-2/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/url-conversion-relative-2/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====
 
 == No URL conversion
 
-liveDemo::url-conversion-none[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/url-conversion-none/index.js[]
+</script>
+include::example$live-demos/url-conversion-none/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/url-conversion-none/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/url-conversion-none/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

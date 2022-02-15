@@ -3,9 +3,44 @@
 :description: Apply formats while typing.
 :keywords: permanent pen copy text format style
 :title_nav: Permanent Pen
+:page-loadtinymce: true
 
 == Interactive example
 
 This example shows how to use Permanent Pen to apply a pre-defined format (color, typeface and type style, or font) to a desired section of content overriding the default values set for that content area. For more information on the Permanent Pen plugin, see the link:{baseurl}/plugins/premium/permanentpen/[docs].
 
 liveDemo::permanent-pen[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/permanent-pen/index.js[]
+</script>
+include::example$live-demos/permanent-pen/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/permanent-pen/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/permanent-pen/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

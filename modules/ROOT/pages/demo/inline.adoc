@@ -3,7 +3,41 @@
 :description_short: See how inline editor works.
 :keywords: example demo custom inline
 :title_nav: Inline editor
+:page-loadtinymce: true
 
 This example shows you the inline editing capabilities of {productname}.
 
-liveDemo::inline[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/inline/index.js[]
+</script>
+include::example$live-demos/inline/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/inline/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/inline/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

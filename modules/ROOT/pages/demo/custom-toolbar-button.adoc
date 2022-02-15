@@ -1,4 +1,5 @@
 = Custom toolbar button
+:page-loadtinymce: true
 :description: This example shows you how to add a custom button to the toolbar.
 :description_short: Add a custom button to the toolbar.
 :keywords: example demo custom toolbar button
@@ -6,4 +7,35 @@
 
 This example shows you how to add a custom button to the toolbar in {productname} {productmajorversion}.
 
-liveDemo::custom-toolbar-button[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/custom-toolbar-button/index.js[]
+</script>
+include::example$live-demos/custom-toolbar-button/index.html[]
+++++
+--
+--
+[source,html]
+----
+include::example$live-demos/custom-toolbar-button/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/custom-toolbar-button/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

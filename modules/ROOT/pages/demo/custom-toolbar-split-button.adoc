@@ -1,4 +1,5 @@
 = Custom toolbar split button
+:page-loadtinymce: true
 :description: This example shows you how to add a simple split menu button to TinyMCE's toolbar.
 :description_short: Add a custom menu button to the toolbar.
 :keywords: example demo custom toolbar menu button
@@ -6,4 +7,37 @@
 
 This example shows you how to add a simple "split" menu button to {productname}'s toolbar.
 
-liveDemo::custom-toolbar-split-button[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/custom-toolbar-split-button/index.js[]
+</script>
+include::example$live-demos/custom-toolbar-split-button/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/custom-toolbar-split-button/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/custom-toolbar-split-button/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

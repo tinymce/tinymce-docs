@@ -1,4 +1,5 @@
 = HTML5 formats example
+:page-loadtinymce: true
 :description: This example shows you how to edit HTML5 contents such as sections and articles. It also highlights use of visualblocks and content_css options.
 :description_short: HTML5, visualblocks and content_css features on display.
 :keywords: example custom format formats html5
@@ -6,4 +7,37 @@
 
 This example shows you how to edit HTML5 content such as sections and articles.
 
-liveDemo::format-html5[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/format-html5/index.js[]
+</script>
+include::example$live-demos/format-html5/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/format-html5/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/format-html5/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

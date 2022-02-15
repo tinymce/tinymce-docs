@@ -1,4 +1,5 @@
 = Custom menu item
+:page-loadtinymce: true
 :description: This example shows you how to add simple menu items to a new custom menu.
 :description_short: Add simple menu items to a new custom menu.
 :keywords: example demo custom toolbar menu button
@@ -6,4 +7,35 @@
 
 This example shows you how to add some simple menu items to a new "custom" menu.
 
-liveDemo::custom-menu-item[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/custom-menu-item/index.js[]
+</script>
+include::example$live-demos/custom-menu-item/index.html[]
+++++
+--
+--
+[source,html]
+----
+include::example$live-demos/custom-menu-item/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/custom-menu-item/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

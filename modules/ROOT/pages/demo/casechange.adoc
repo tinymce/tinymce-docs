@@ -1,4 +1,5 @@
 = Case Change
+:page-loadtinymce: true
 :controls: toolbar button, menu item
 :description: Change the case of text.
 :keywords: case capitalization capitalize lowercase uppercase
@@ -8,4 +9,37 @@
 
 This example shows how to use the *Case Change* plugin to change the case of text in block selection to uppercase, lowercase, or title case. For more information on the *Case Change* plugin, see the link:{baseurl}/plugins/premium/casechange/[docs].
 
-liveDemo::casechange[]
+[tabs]
+====
+TinyMCE::
++
+--
+++++
+<script>
+include::example$live-demos/casechange/index.js[]
+</script>
+include::example$live-demos/casechange/index.html[]
+++++
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/casechange/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/casechange/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

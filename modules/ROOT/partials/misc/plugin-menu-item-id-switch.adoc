@@ -1,0 +1,24 @@
+ifdef::plugincode[]
+
+ifdef::altplugincode[]
+== {pluginname} plugin
+The {pluginname} plugin provides the following toolbar buttons:
+include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
+For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+
+ifndef::altplugincode[]
+== {pluginname} plugin
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
+For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+
+endif::[]
+
+
+:!altplugincode:
+:!plugincode:
+
+
+
+

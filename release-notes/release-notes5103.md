@@ -6,26 +6,6 @@ description: Release notes for TinyMCE 5.10.3
 keywords: releasenotes bugfixes
 ---
 
-{% comment %}
-Replace 5.10.3 with the version number such as: X.Y.Z
-Replace 5102 with the version number without points, such as XYZ
-The following "list" should be added to `data/nav.yml`
-- url: "release-notes5102"
-  pages:
-  - url: "#Overview"
-  - url: "#New features"
-  - url: "#Enhancements"
-  - url: "#Functionality changes"
-  - url: "#Accompanying Premium Plugin changes"
-  - url: "#Accompanying Premium Skins and Icon Packs changes"
-  - url: "#Accompanying Premium self-hosted server-side component changes"
-  - url: "#General bug fixes"
-  - url: "#Security fixes"
-  - url: "#Deprecated features"
-  - url: "#Known issues"
-  - url: "#Upgrading to the latest version of TinyMCE 5"
-{% endcomment %}
-
 ## Overview
 
 {{site.productname}} 5.10.3 was released for {{site.enterpriseversion}} and {{site.cloudname}} Tuesday, February 15<sup>th</sup>, 2022. It includes {{site.productname}} 5.10.3 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.10.3, including:
@@ -93,7 +73,7 @@ For information on:
 
 {{site.productname}} 5.10.3 provides fixes for the following security issues:
 
-All 3 server-side components have been updated to include dependency updates addressing security issues. This includes High severity vulnerability fixes.
+All 3 server-side components have been updated to include dependency updates addressing security issues. This includes Medium severity vulnerability fixes.
 
 For information on the server-side components updates, see: [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 

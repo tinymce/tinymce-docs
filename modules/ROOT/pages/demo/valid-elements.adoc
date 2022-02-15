@@ -7,37 +7,6 @@
 
 This example shows you how to use the link:{baseurl}/configure/content-filtering/#extended_valid_elements[extended_valid_elements] option. This option enables you to specify valid elements and attributes.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/valid-elements/index.js[]
-</script>
-include::example$live-demos/valid-elements/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/valid-elements/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/valid-elements/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: valid-elements
+include::partial$demos/demo-tab.adoc[]
+

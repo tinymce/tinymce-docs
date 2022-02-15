@@ -6,39 +6,7 @@
 
 While we demonstrate how you can add local file picker to the _Image_ dialog, in order for it to be useful in the real-world scenario, you should also enable link:{baseurl}/general-configuration-guide/upload-images[image uploading functionality] - as a way to transport those local images to a server.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-include::example$live-demos/file-picker/index.html[]
-<script>
-include::example$live-demos/file-picker/index.js[]
-</script>
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/file-picker/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/file-picker/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: file-picker
+include::partial$demos/demo-tab.adoc[]
 
 You might also consider our link:{baseurl}/plugins/premium/moxiemanager/[MoxieManager] module, which can hook onto `file_picker_callback` and provide feature-rich file manager UI right in the popup (check a demo http://www.moxiemanager.com/demos/tinymce.php[here]). With accompanying plugins it is possible to pick files from Dropbox, Google Drive http://www.moxiemanager.com/documentation/index.php/Plugins[and much more].

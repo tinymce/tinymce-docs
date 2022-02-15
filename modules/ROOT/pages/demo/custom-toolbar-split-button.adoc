@@ -7,37 +7,5 @@
 
 This example shows you how to add a simple "split" menu button to {productname}'s toolbar.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/custom-toolbar-split-button/index.js[]
-</script>
-include::example$live-demos/custom-toolbar-split-button/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/custom-toolbar-split-button/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/custom-toolbar-split-button/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: custom-toolbar-split-button
+include::partial$demos/demo-tab.adoc[]

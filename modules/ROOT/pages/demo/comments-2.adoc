@@ -13,38 +13,5 @@ In this example, the features in the Comments plugin are highlighted, including 
 
 For information on the other Comments plugin configuration options, see: link:{baseurl}/plugins/premium/comments/[The Comments plugin].
 
-
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/comments-embedded/index.js[]
-</script>
-include::example$live-demos/comments-embedded/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/comments-embedded/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/comments-embedded/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: comments-embedded
+include::partial$demos/demo-tab.adoc[]

@@ -7,37 +7,5 @@
 
 This example shows you how to edit HTML5 content such as sections and articles.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/format-html5/index.js[]
-</script>
-include::example$live-demos/format-html5/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/format-html5/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/format-html5/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: format-html5
+include::partial$demos/demo-tab.adoc[]

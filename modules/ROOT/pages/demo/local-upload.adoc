@@ -12,40 +12,8 @@ image::{baseurl}/images/demo_local-upload_01.png[Upload tab]
 
 So a setup like this displays a friendly UI simplifying image upload either by picking it up or by dropping it in, directly from the desktop:
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/local-upload/index.js[]
-</script>
-include::example$live-demos/local-upload/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/local-upload/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/local-upload/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: local-upload
+include::partial$demos/demo-tab.adoc[]
 
 All link:{baseurl}/general-configuration-guide/upload-images/#imageuploaderoptions[image uploading options] are supported, including `images_upload_handler` (a way to define custom file uploader) and `images_upload_credentials`.
 

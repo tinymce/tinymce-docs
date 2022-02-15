@@ -9,37 +9,5 @@
 
 This example shows how to use the Page Embed plugin to embed a page in the content in a responsive or exactly sized iframe. For more information on the Page Embed plugin, see the link:{baseurl}/plugins/premium/pageembed/[docs].
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/page-embed/index.js[]
-</script>
-include::example$live-demos/page-embed/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/page-embed/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/page-embed/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: page-embed
+include::partial$demos/demo-tab.adoc[]

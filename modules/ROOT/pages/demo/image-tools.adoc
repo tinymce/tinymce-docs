@@ -9,37 +9,5 @@ This example contains the plugins needed for the most common use cases as well a
 
 include::partial$DEPRECATED/imagetools.adoc[]
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/image-tools/index.js[]
-</script>
-include::example$live-demos/image-tools/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/image-tools/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/image-tools/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: image-tools
+include::partial$demos/demo-tab.adoc[]

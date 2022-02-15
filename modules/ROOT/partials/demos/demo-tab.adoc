@@ -1,0 +1,30 @@
+[tabs]
+====
+TinyMCE::
++
+--
+:demo-type: {demo-type}
+include::partial$demos/live-demo.adoc[]
+--
+HTML::
++
+--
+[source,html]
+----
+include::example$live-demos/{demo-type}/index.html[]
+----
+--
+JS::
++
+--
+[source,js]
+----
+include::example$live-demos/{demo-type}/index.js[]
+----
+--
+Edit on Codepen::
++
+--
+Codepen item goes here
+--
+====

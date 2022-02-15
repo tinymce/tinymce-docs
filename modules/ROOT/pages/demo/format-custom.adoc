@@ -7,37 +7,5 @@
 
 This example shows you how to override the built in link:{baseurl}/configure/content-formatting/#formats[formats] and add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the link:{baseurl}/configure/editor-appearance/#style_formats[style_formats] configuration option.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/format-custom/index.js[]
-</script>
-include::example$live-demos/format-custom/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/format-custom/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/format-custom/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: format-custom
+include::partial$demos/demo-tab.adoc[]

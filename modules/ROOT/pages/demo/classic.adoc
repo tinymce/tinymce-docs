@@ -9,37 +9,5 @@
 
 This example shows you how to use {productname} Classic Editor.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/classic/index.js[]
-</script>
-include::example$live-demos/classic/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/classic/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/classic/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: classic
+include::partial$demos/demo-tab.adoc[]

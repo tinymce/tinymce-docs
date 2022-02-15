@@ -9,37 +9,5 @@
 
 This example shows you how to use {productname}'s Distraction-free editor.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/editor-dfree/index.js[]
-</script>
-include::example$live-demos/editor-dfree/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/editor-dfree/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/editor-dfree/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: ditor-dfree
+include::partial$demos/demo-tab.adoc[]

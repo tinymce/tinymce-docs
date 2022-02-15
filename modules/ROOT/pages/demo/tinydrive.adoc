@@ -9,37 +9,5 @@
 
 This example shows you how to use {cloudfilemanager} for your file and image management. For more information on {cloudfilemanager}, see the link:{baseurl}/tinydrive/[docs].
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/drive-demo/index.js[]
-</script>
-include::example$live-demos/drive-demo/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/drive-demo/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/drive-demo/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: drive-demo
+include::partial$demos/demo-tab.adoc[]

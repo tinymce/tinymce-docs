@@ -9,185 +9,25 @@ This example shows you how to setup {productname} to produce different results f
 
 == Absolute URLs on links and images
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/url-conversion-absolute-1/index.js[]
-</script>
-include::example$live-demos/url-conversion-absolute-1/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/url-conversion-absolute-1/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/url-conversion-absolute-1/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: url-conversion-absolute-1
+include::partial$demos/demo-tab.adoc[]
 
 == Absolute URLs and including domain on links and images
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/url-conversion-absolute-2/index.js[]
-</script>
-include::example$live-demos/url-conversion-absolute-2/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/url-conversion-absolute-2/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/url-conversion-absolute-2/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: url-conversion-absolute-2
+include::partial$demos/demo-tab.adoc[]
 
 == Relative URLs on links and images
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/url-conversion-relative-1/index.js[]
-</script>
-include::example$live-demos/url-conversion-relative-1/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/url-conversion-relative-1/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/url-url-conversion-absolute-relative-1/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: url-conversion-relative-1
+include::partial$demos/demo-tab.adoc[]
 
 == Relative URLs on links and images to a specific page
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/url-conversion-relative-2/index.js[]
-</script>
-include::example$live-demos/url-conversion-relative-2/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/url-conversion-relative-2/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/url-conversion-relative-2/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: url-conversion-relative-2
+include::partial$demos/demo-tab.adoc[]
 
 == No URL conversion
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/url-conversion-none/index.js[]
-</script>
-include::example$live-demos/url-conversion-none/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/url-conversion-none/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/url-conversion-none/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: url-conversion-none
+include::partial$demos/demo-tab.adoc[]

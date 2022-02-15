@@ -7,35 +7,5 @@
 
 This example shows you how to add some simple menu items to a new "custom" menu.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/custom-menu-item/index.js[]
-</script>
-include::example$live-demos/custom-menu-item/index.html[]
-++++
---
---
-[source,html]
-----
-include::example$live-demos/custom-menu-item/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/custom-menu-item/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: custom-menu-item
+include::partial$demos/demo-tab.adoc[]

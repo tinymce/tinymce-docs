@@ -9,37 +9,5 @@
 
 This example shows how to use the *Checklist* plugin to add interactive checklists to your content. For more information on the *Checklist* plugin, see the link:{baseurl}/plugins/premium/checklist/[docs].
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/checklist/index.js[]
-</script>
-include::example$live-demos/checklist/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/checklist/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/checklist/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: checklist
+include::partial$demos/demo-tab.adoc[]

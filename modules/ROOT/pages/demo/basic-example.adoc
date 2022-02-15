@@ -9,37 +9,5 @@
 
 This example contains the plugins needed for the most common use cases.
 
-[tabs]
-====
-TinyMCE::
-+
---
-++++
-<script>
-include::example$live-demos/basic-example/index.js[]
-</script>
-include::example$live-demos/basic-example/index.html[]
-++++
---
-HTML::
-+
---
-[source,html]
-----
-include::example$live-demos/basic-example/index.html[]
-----
---
-JS::
-+
---
-[source,js]
-----
-include::example$live-demos/basic-example/index.js[]
-----
---
-Edit on Codepen::
-+
---
-Codepen item goes here
---
-====
+:demo-type: basic-example
+include::partial$demos/demo-tab.adoc[]

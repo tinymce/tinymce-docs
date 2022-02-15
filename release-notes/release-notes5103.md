@@ -71,9 +71,9 @@ For information on:
 
 ## Security fixes
 
-{{site.productname}} 5.10.3 provides fixes for the following security issues:
+{{site.productname}} 5.10.3 fixes the following security issues:
 
-All 3 server-side components have been updated to include dependency updates addressing security issues. This includes Low severity vulnerability fixes.
+All 3 server-side components updates include dependency updates that address security issues. This includes Low severity vulnerability fixes.
 
 For information on the server-side components updates, see: [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 

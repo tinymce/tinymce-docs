@@ -128,4 +128,4 @@ Write in a [third person perspective](https://www.grammarly.com/blog/first-secon
 
 ### Keep it simple
 
-Use short, simple words where possible. Use formal language, do not use: slang, acronyms, initialisms, abbreviations, and [ambiguous contractions (such as _there'd_, or _it'll_)](https://docs.microsoft.com/en-us/style-guide/word-choice/use-contractions).
+Use short, simple words where possible. Use formal language. Do not use: slang, acronyms, initialisms, abbreviations, and [ambiguous contractions (such as _there'd_, or _it'll_)](https://docs.microsoft.com/en-us/style-guide/word-choice/use-contractions).

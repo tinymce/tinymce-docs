@@ -1,9 +1,7 @@
-hello {includePackage}
-
 ifeval::[{depth} == 1]
-
+____
 **Important**: {companyname} does not recommend bundling `tinymce` and `{includePackage}` with a module loader. Bundling these packages can be complex and error prone.
-
+____
 To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{includePackage}` package, then the other required {productname}-related imports.
 
 Example of bundling:
@@ -20,9 +18,9 @@ For instructions on bundling {productname}, see: link:/how-to-guides/usage-with-
 
 endif::[]
 ifeval::[{depth} == 2]
-
+____
 **Important**: {companyname} does not recommend bundling `tinymce` and `{includePackage}` with a module loader. Bundling these packages can be complex and error prone.
-
+____
 To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{includePackage}` package, then the other required {productname}-related imports.
 
 Example of bundling:

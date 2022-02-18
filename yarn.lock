@@ -163,6 +163,18 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tinymce/moxiedoc@^0.2.0-feature.20220218023639432.sha18493e1":
+  version "0.2.0-feature.20220218023639432.sha18493e1"
+  resolved "https://registry.yarnpkg.com/@tinymce/moxiedoc/-/moxiedoc-0.2.0-feature.20220218023639432.sha18493e1.tgz#ad4f13b75d91b5a20d13591cdd88bad0bae7ffaf"
+  integrity sha512-VjNnVQkQku/RNcK1H7CfBc97hf7ae3qoAr7JsWCIQhzYa0x6OTFKnR88kMaKit1VmBKniJT/OSyxRVyaGqbJ9w==
+  dependencies:
+    cli-color "^2.0.0"
+    commander "^7.0.0"
+    handlebars "^4.0.0"
+    js-yaml "^4.0.0"
+    matcher "^3.0.0"
+    moxie-zip ">= 0.0.4"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz"
@@ -1661,17 +1673,6 @@ mkdirp@^0.5.5:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/moxie-zip/-/moxie-zip-0.0.4.tgz#072a34b0faeffc901b01ebaa4039be5a21de7c3c"
   integrity sha1-Byo0sPrv/JAbAeuqQDm+WiHefDw=
-
-"moxiedoc@git://github.com/tinymce/moxiedoc.git#feature/antora":
-  version "0.1.0"
-  resolved "git://github.com/tinymce/moxiedoc.git#6309a1e44dbaae5ee72f501f6843d7a7a206ccde"
-  dependencies:
-    cli-color "^2.0.0"
-    commander "^7.0.0"
-    handlebars "^4.0.0"
-    js-yaml "^4.0.0"
-    matcher "^3.0.0"
-    moxie-zip ">= 0.0.4"
 
 ms@^2.1.1:
   version "2.1.3"

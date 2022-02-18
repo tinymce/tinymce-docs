@@ -14,13 +14,13 @@ echo -e "\n > importing data files for tinymce api reference: local from $1\n"
 
 rm -rf "$API_TMPDIR"
 mkdir "$API_TMPDIR"
-moxiedoc "$1/modules/tinymce/src/core/main/ts" -t antora -o "$API_TMPDIR/tinymce-api-reference.zip"
+npx moxiedoc "$1/modules/tinymce/src/core/main/ts" -t antora -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
 
 # remove old api adoc pages
 rm -rf modules/ROOT/pages/apis/
 
-# removed old static api html pages (clear cache), it can corrupt the build 
+# removed old static api html pages (clear cache), it can corrupt the build
 rm -rf build/site/_/tinymce/6.0/apis/
 
 # move newly generated adoc pages, antora will then generate new static html pages

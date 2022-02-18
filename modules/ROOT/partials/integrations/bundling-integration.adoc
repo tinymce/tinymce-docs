@@ -1,56 +1,59 @@
-\{% if include.depth == "1" %}
+hello {includePackage}
 
-....
-> **Important**: {companyname} does not recommend bundling `tinymce` and `{include.package}` with a module loader. Bundling these packages can be complex and error prone.
+ifeval::[{depth} == 1]
 
-To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{include.package}` package, then the other required {productname}-related imports.
+**Important**: {companyname} does not recommend bundling `tinymce` and `{includePackage}` with a module loader. Bundling these packages can be complex and error prone.
+
+To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{includePackage}` package, then the other required {productname}-related imports.
 
 Example of bundling:
 
-```js
-/* Add the {include.package} wrapper to the bundle */
-import { Editor } from '@tinymce/{include.package}';
+[source,js,subs="attributes+"]
+----
+/* Add the {includePackage} wrapper to the bundle */
+import { Editor } from '@tinymce/{includePackage}';
 /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
-```
+----
 
 For instructions on bundling {productname}, see: link:/how-to-guides/usage-with-module-loaders/[Bundling {productname}].
-....
 
-\{% elsif include.depth == "2" %}
 
-....
-    > **Important**: {companyname} does not recommend bundling `tinymce` and `{include.package}` with a module loader. Bundling these packages can be complex and error prone.
+endif::[]
+ifeval::[{depth} == 2]
 
-    To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{include.package}` package, then the other required {productname}-related imports.
+**Important**: {companyname} does not recommend bundling `tinymce` and `{includePackage}` with a module loader. Bundling these packages can be complex and error prone.
 
-    Example of bundling:
-
-    ```js
-    /* Add the {include.package} wrapper to the bundle */
-    import { Editor } from '@tinymce/{include.package}';
-    /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
-    ```
-
-    For instructions on bundling {productname}, see: link:/how-to-guides/usage-with-module-loaders/[Bundling {productname}].
-....
-
-\{% else %}
-
-____
-*Important*: {companyname} does not recommend bundling `+tinymce+` and `+{include.package}+` with a module loader. Bundling these packages can be complex and error prone.
-____
-
-To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `+tinymce+` package, followed by the `+{include.package}+` package, then the other required {productname}-related imports.
+To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `tinymce` package, followed by the `{includePackage}` package, then the other required {productname}-related imports.
 
 Example of bundling:
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
-/* Add the {include.package} wrapper to the bundle */
-import { Editor } from '@tinymce/{include.package}';
+/* Add the {includePackage} wrapper to the bundle */
+import { Editor } from '@tinymce/{includePackage}';
+/* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
+----
+
+For instructions on bundling {productname}, see: link:/how-to-guides/usage-with-module-loaders/[Bundling {productname}].
+
+endif::[]
+ifndef::depth[]
+
+____
+*Important*: {companyname} does not recommend bundling `+tinymce+` and `+{includePackage}+` with a module loader. Bundling these packages can be complex and error prone.
+____
+
+To bundle {productname} using a module loader (such as Webpack, Rollup, or Browserify), import or require the `+tinymce+` package, followed by the `+{includePackage}+` package, then the other required {productname}-related imports.
+
+Example of bundling:
+
+[source,js,subs="attributes+"]
+----
+/* Add the {includePackage} wrapper to the bundle */
+import { Editor } from '@tinymce/{includePackage}';
 /* For instructions on bundling TinyMCE, see the Bundling TinyMCE documentation. */
 ----
 
 For instructions on bundling {productname}, see: link:usage-with-module-loaders.html[Bundling {productname}].
 
-\{% endif %}
+endif::[]

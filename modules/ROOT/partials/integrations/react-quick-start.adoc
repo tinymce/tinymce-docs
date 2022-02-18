@@ -22,24 +22,24 @@ npx create-react-app tinymce-react-demo
 cd tinymce-react-demo
 ----
 
-\{% if productSource == "package-manager" %} 3. Install the `+tinymce+` and `+tinymce-react+` packages and save them to your `+package.json+` with `+--save+`.
-
-....
-```sh
+ifeval::["{productSource}" == "package-manager"]
+[arabic, start=3]
+. Install the `+tinymce+` and `+tinymce-react+` packages and save them to your `+package.json+` with `+--save+`.
++
+[source,sh]
+----
 npm install --save tinymce @tinymce/tinymce-react
-```
-....
-
-\{% else %} 3. Install the `+tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
-
-....
-```sh
+----
+endif::[]
+ifeval::["{productSource}" != "package-manager"]
+[arabic, start=3]
+. Install the `+tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
++
+[source,sh]
+----
 npm install --save @tinymce/tinymce-react
-```
-....
-
-\{% endif %}
-
+----
+endif::[]
 [arabic, start=4]
 . Using a text editor, open `+./src/App.js+` and replace the contents with:
 +
@@ -60,7 +60,20 @@ export default function App() {
       <Editor
         onInit={(evt, editor) => editorRef.current = editor}
         initialValue="<p>This is the initial content of the editor.</p>"
-        init={% raw %}{{{% endraw %} plugins: 'lists link image table code help wordcount' {% raw %}}}{% endraw %}
+        init={{
+          height: 500,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+          toolbar: 'undo redo | formatselect | ' +
+          'bold italic backcolor | alignleft aligncenter ' +
+          'alignright alignjustify | bullist numlist outdent indent | ' +
+          'removeformat | help',
+          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        }}        
       />
       <button onClick={log}>Log editor content</button>
     </>
@@ -69,63 +82,74 @@ export default function App() {
 ----
 +
 This JavaScript file will create a component "`+App+`" containing a {productname} editor configured with basic features.
-\{% if productSource == "cloud" %}
+ifeval::["{productSource}" == "cloud"]
 . Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
 +
 Such as:
 +
 [source,jsx]
 ----
-<Editor apiKey='your-api-key' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
+<Editor apiKey='your-api-key' init={{ /* your other settings */ }} />
 ----
 
-\{% elsif productSource == "package-manager" %} 5. Bundle {productname} with the React application using a module loader (such as Webpack).
+endif::[]
+ifeval::["{productSource}" == "package-manager"]
+. Bundle {productname} with the React application using a module loader (such as Webpack).
 
-\{% include integrations/bundling-integration.md package='tinymce-react' depth='1' %} \{% else %} 5. {productname} can be self-hosted by either: <<deployingtinymceindependent, Deploying {productname} independent of the React application>>, or <<bundle, Bundling {productname} with the React application>>. * Deploying {productname} independent of the React application. To use a {productname} instance that has been deployed independent of the React application, use: <<usingthetinyscriptsrcprop, the `+tinymceScriptSrc+` prop>>, or <<usinganhtmlscripttag, an HTML `+<script>+` tag>>. * Using the `+tinymceScriptSrc+` prop:
+:depth: 1
+include::partial$integrations/bundling-integration.adoc[depth, includePackage]
 
-....
-        1. To use an independent deployment of {productname}, add the `tinymceScriptSrc` prop to specify the path to the {productname} script, such as:
+endif::[]
+ifeval::["{productSource}" != "package-manager"]
+. {productname} can be self-hosted by either: <<deployingtinymceindependent, Deploying {productname} independent of the React application>>, or <<bundle, Bundling {productname} with the React application>>. 
++
+[[deployingtinymceindependent]]
+* Deploying {productname} independent of the React application. To use a {productname} instance that has been deployed independent of the React application, use: xref:usingthetinyscriptsrcprop[the `+tinymceScriptSrc+` prop], or xref:usinganhtmlscripttag[an HTML `+<script>+` tag]. 
 
-            ```jsx
-            <Editor tinymceScriptSrc="/path/to/tinymce.min.js" />
-            ```
-
-        1. To use `tinymceScriptSrc` with the `create-react-app` project, put the {productname} distribution in `./public` folder and reference the path to the `public` folder using the environment variable `process.env.PUBLIC_URL`, such as:
-
-            ```jsx
-            <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
-            ```
-
-    <a id="usinganhtmlscripttag" class="anchor"></a>
-    * Using an HTML `<script>` tag:
-
-        1. Add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
-
-            ```html
-            <script src="/path/to/tinymce.min.js"></script>
-            ```
-
-        1. To use the independently sourced {productname} with create-react-app, add the script tag to `./public/index.html`.
-
-            Normally the `tinymce` distribution would be put in the `public` folder and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
-
-            ```html
-            <script src="%PUBLIC_URL%/tinymce/tinymce.min.js"></script>
-            ```
-
-<a id="bundle" class="anchor"></a>
+[[usingthetinyscriptsrcprop]]
+* Using the `+tinymceScriptSrc+` prop:
+** To use an independent deployment of {productname}, add the `tinymceScriptSrc` prop to specify the path to the {productname} script, such as:
++
+[source,jsx]
+----
+<Editor tinymceScriptSrc="/path/to/tinymce.min.js" />
+----
+** To use `tinymceScriptSrc` with the `create-react-app` project, put the {productname} distribution in `./public` folder and reference the path to the `public` folder using the environment variable `process.env.PUBLIC_URL`, such as:
++
+[source,jsx]
+----
+<Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
+----
+[[usinganhtmlscripttag]]
+* Using an HTML `<script>` tag:
+** Add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
++
+[source,html]
+----
+<script src="/path/to/tinymce.min.js"></script>
+----
+** To use the independently sourced {productname} with create-react-app, add the script tag to `./public/index.html`.
+Normally the `tinymce` distribution would be put in the `public` folder and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
++
+[source,html]
+----
+<script src="%PUBLIC_URL%/tinymce/tinymce.min.js"></script>
+----
+[[bundle]]
 * Bundle {productname} with the React application using a module loader (such as Webpack).
-....
 
-\{% include integrations/bundling-integration.md package='tinymce-react' depth='2' %} \{% endif %} 6. Test the application using the Node.js development server. * To start the development server, navigate to the `+tinymce-react-demo+` directory and run:
-
-....
-    ```sh
-    npm run start
-    ```
+:depth: 2
+include::partial$integrations/bundling-integration.adoc[depth, includePackage]
+[arabic, start=7]
+. Test the application using the Node.js development server. * To start the development server, navigate to the `+tinymce-react-demo+` directory and run:
++
+[source,sh]
+----
+npm run start
+----
 
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
-....
+
 
 == Deploying the application to a HTTP server
 

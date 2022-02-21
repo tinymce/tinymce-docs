@@ -1,17 +1,19 @@
 .bundle
 .jekyll-metadata
 _data/*
-_site
-_config-prod.yml
-_config-local.yml
-_config-environment.yml
+_report/
 node_modules
-api
 build/
 vendor
 .idea
 .DS_Store
 .vscode
 .*.swp
-/_config-local-override.yml
 .wercker/*
+
+# Antora tmp files
+_site/
+
+# Moxiedoc files
+moxiedoc_nav.adoc
+modules/ROOT/pages/apis/

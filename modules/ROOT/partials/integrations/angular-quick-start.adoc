@@ -26,26 +26,23 @@ ng new --defaults --skip-git tinymce-angular-demo
 ----
 cd tinymce-angular-demo
 ----
-
-\{% if productSource == "package-manager" %} 3. Install the `+tinymce+` and `+tinymce-angular+` packages and save them to your `+package.json+` with `+--save+`.
-
-....
-```sh
+ifeval::["{productSource}" == "package-manager"]
+. Install the `+tinymce+` and `+tinymce-angular+` packages and save them to your `+package.json+` with `+--save+`.
++
+[source,sh]
+----
 npm install --save tinymce @tinymce/tinymce-angular
-```
-....
+----
 
-\{% else %} 4. Install the `+tinymce-angular+` package and save it to your `+package.json+` with `+--save+`.
-
-....
-```sh
+endif::[] 
+ifeval::["{productSource}" != "package-manager"]
+. Install the `+tinymce-angular+` package and save it to your `+package.json+` with `+--save+`.
++
+[source,sh]
+----
 npm install --save @tinymce/tinymce-angular
-```
-....
-
-\{% endif %}
-
-[arabic, start=5]
+----
+endif::[]
 . Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.module.ts+` and replace the contents with:
 +
 [source,js]
@@ -78,7 +75,8 @@ export class AppModule { }
 ></editor>
 ----
 
-\{% if productSource == "cloud" %} 7. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
+ifeval::["{productSource}" == "cloud"]
+. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
 
 ....
 Such as:
@@ -87,7 +85,8 @@ Such as:
 <editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} ></editor>
 ```
 ....
-
+endif::[]
+ifeval::["{productSource}" == "package-manager"]
 \{% elsif productSource == "package-manager" %} 2. Using a text editor; open `+angular.json+` and add {productname} to the `+assets+` property.
 
 ....
@@ -135,8 +134,8 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
   suffix: '.min'        // Suffix to use when loading resources
 }"></editor>
 ----
-
-\{% else %}
+ifeval::["{productSource}" != "package-manager"]
+endif::[]
 
 [arabic]
 . Add the `+tinymce+` global to the application by: Deploying {productname} independent of the Angular application, or bundling {productname} with the Angular application.
@@ -153,7 +152,10 @@ To use an independent deployment of {productname} with the create a Angular appl
 +
 * Bundling {productname} with the Angular application using a module loader (such as Webpack).
 
-\{% include integrations/bundling-integration.md package="tinymce-angular" depth='2' %} \{% endif %} 8. Test the application using the Angular development server. * To start the development server, navigate to the `+tinymce-angular-demo+` directory and run:
+\{% include integrations/bundling-integration.md package="tinymce-angular" depth='2' %}
+endif::[]
+
+. Test the application using the Angular development server. * To start the development server, navigate to the `+tinymce-angular-demo+` directory and run:
 
 ....
     ```sh

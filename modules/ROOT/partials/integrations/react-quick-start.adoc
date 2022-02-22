@@ -101,14 +101,12 @@ include::partial$integrations/bundling-integration.adoc[]
 
 endif::[]
 ifeval::["{productSource}" == "zip"]
-. {productname} can be self-hosted by either: xref::deployingtinymceindependent[Deploying {productname} independent of the React application], or xref:bundle[Bundling {productname} with the React application].
-+
-[[deployingtinymceindependent]]
-* Deploying {productname} independent of the React application. To use a {productname} instance that has been deployed independent of the React application, use: xref:usingthetinyscriptsrcprop[the `+tinymceScriptSrc+` prop], or xref:usinganhtmlscripttag[an HTML `+<script>+` tag].
+. {productname} can be self-hosted by either: xref:deployingtinymceindependent[Deploying {productname} independent of the React application], or xref:bundle[Bundling {productname} with the React application].
+
+* [[deployingtinymceindependent]] Deploying {productname} independent of the React application. To use a {productname} instance that has been deployed independent of the React application, use: xref:usingthetinyscriptsrcprop[the `+tinymceScriptSrc+` prop], or xref:usinganhtmlscripttag[an HTML `+<script>+` tag].
 +
 --
-[[usingthetinyscriptsrcprop]]
-* Using the `+tinymceScriptSrc+` prop:
+* [[usingthetinyscriptsrcprop]] Using the `+tinymceScriptSrc+` prop:
 ** To use an independent deployment of {productname}, add the `tinymceScriptSrc` prop to specify the path to the {productname} script, such as:
 +
 [source,jsx]
@@ -121,8 +119,7 @@ ifeval::["{productSource}" == "zip"]
 ----
 <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
 ----
-[[usinganhtmlscripttag]]
-* Using an HTML `<script>` tag:
+* [[usinganhtmlscripttag]] Using an HTML `<script>` tag:
 ** Add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
 [source,html]
@@ -137,9 +134,8 @@ Normally the `tinymce` distribution would be put in the `public` folder and refe
 <script src="%PUBLIC_URL%/tinymce/tinymce.min.js"></script>
 ----
 --
-+
-[[bundle]]
-* Bundle {productname} with the React application using a module loader (such as Webpack).
+
+* [[bundle]] Bundle {productname} with the React application using a module loader (such as Webpack).
 +
 --
 :depth: 2

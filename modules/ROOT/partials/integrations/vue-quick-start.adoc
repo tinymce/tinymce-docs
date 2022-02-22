@@ -1,3 +1,5 @@
+:packageName: tinymce-vue
+
 The https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects. This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a {productname} editor.
 
 Version 4 of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
@@ -71,25 +73,26 @@ vue create --inlinePreset '{ "vueVersion": "2", "plugins": {} }' tinymce-vue-dem
 cd tinymce-vue-demo
 ----
 
-\{% if productSource == "package-manager" %} 3. Install the `+tinymce+` and `+tinymce-vue+` packages and save them to your `+package.json+` with `+--save+`.
+ifeval::["{productSource}" == "package-manager"]
+. Install the `+tinymce+` and `+tinymce-vue+` packages and save them to your `+package.json+` with `+--save+`.
 
-....
 * For Vue.js 3.x users:
-
-  ```sh
-  npm install --save tinymce "@tinymce/tinymce-vue@^4"
-  ```
++
+[source,sh]
+----
+npm install --save tinymce "@tinymce/tinymce-vue@^4"
+----
 
 * For Vue.js 2.x users:
++
+[source,sh]
+----
+npm install --save tinymce "@tinymce/tinymce-vue@^3"
+----
 
-  ```sh
-  npm install --save tinymce "@tinymce/tinymce-vue@^3"
-  ```
-....
+endif::[]
+ifeval::["{productSource}" != "package-manager"]
 
-\{% else %}
-
-[arabic, start=4]
 . Install the `+tinymce-vue+` package and save it to your `+package.json+` with `+--save+`.
 * For Vue.js 3.x users:
 +
@@ -104,9 +107,8 @@ npm install --save "@tinymce/tinymce-vue@^4"
 npm install --save "@tinymce/tinymce-vue@^3"
 ----
 
-\{% endif %}
+endif::[]
 
-[arabic, start=5]
 . Using a text editor, open `+/path/to/tinymce-vue-demo/src/App.vue+`.
 [arabic]
 .. Add a {productname} configuration to the `+<template>+` using the `+<editor>+` tag.
@@ -141,42 +143,55 @@ export default {
 </script>
 ----
 
-\{% if productSource == "cloud" %} 6. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
-
-....
+ifeval::["{productSource}" == "cloud"]
+. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
++
 Such as:
-
-```html
++
+[source,html]
+----
 <editor api-key='your-api-key' :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
-```
-....
+----
+endif::[]
+ifeval::["{productSource}" == "package-manager"]
+. Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
++
+--
+:depth: 1
+include::partial$integrations/bundling-integration.adoc[]
+--
+endif::[]
+ifeval::["{productSource}" == "zip"]
+. {productname} can be self-hosted by either: xref:deployingtinymceindependent[Deploying {productname} independent of the Vue.js application], or xref:bundle[Bundling {productname} with the Vue.js application].
 
-\{% elsif productSource == "package-manager" %} 6. Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
+* [[deployingtinymceindependent]] Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
++
+To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
++
+[source,html]
+----
+<script src="/path/to/tinymce.min.js"></script>
+----
++
+To use an independent deployment of {productname} with the example create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
 
-\{% include integrations/bundling-integration.md package="tinymce-vue" depth='1' %} \{% else %} 6. {productname} can be self-hosted by either: <<deployingtinymceindependent, Deploying {productname} independent of the Vue.js application>>, or <<bundle, Bundling {productname} with the Vue.js application>>. * Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
+* [[bundle]] Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
++
+--
+:depth: 2
+include::partial$integrations/bundling-integration.adoc[]
+--
+endif::[]
 
-....
-    To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
-
-    ```html
-    <script src="/path/to/tinymce.min.js"></script>
-    ```
-
-    To use an independent deployment of {productname} with the example create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
-
-<a id="bundle" class="anchor"></a>
-* Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
-....
-
-\{% include integrations/bundling-integration.md package="tinymce-vue" depth='2' %} \{% endif %} 7. Test the application using the Node.js development server. * To start the development server, navigate to the `+tinymce-vue-demo+` directory and run:
-
-....
-    ```sh
-    npm run serve
-    ```
+. Test the application using the Node.js development server.
+* To start the development server, navigate to the `+tinymce-vue-demo+` directory and run:
++
+[source,sh]
+----
+npm run serve
+----
 
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
-....
 
 == Deploying the application to a HTTP server
 

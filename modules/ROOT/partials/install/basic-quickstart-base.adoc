@@ -104,7 +104,7 @@ Ensure the `+tinymce+` directory containing the `+tinymce.min.js+` file is acces
 * Using a webserver route, or
 * Copying the `+tinymce+` directory to a public folder using a build tool.
 endif::[]
-ifeval::["{productSource}" == "composer"] 
+ifeval::["{productSource}" == "composer"]
 
 To deploy {productname} from a .zip archive:
 
@@ -188,4 +188,4 @@ To retrieve content from the editor, either process the content with a form hand
 
 If you use a form handler, once the `+<form>+` is submitted, {productname} {productmajorversion} will `+POST+` the content in the same way as a normal HTML `+<textarea>+`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `+<textarea>+`.
 
-include::partial$misc/quickstart-next-steps.adoc[productSource]
+include::partial$misc/quickstart-next-steps.adoc[]

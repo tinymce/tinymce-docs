@@ -1,4 +1,3 @@
-[arabic]
 . Verify the installation by checking the `+ItemGroup+` references in `+BlazorApp.csproj+`, such as:
 +
 _File:_ `+BlazorApp.csproj+`
@@ -45,9 +44,8 @@ Welcome to your new app.
 <Editor />
 ----
 
-\{% if productSource != "cloud" %}
+ifeval::["{productSource}" != "cloud"]
 
-[arabic]
 . To load {productname} from the self-hosted package instead of the {cloudname}, configure the `+ScriptSrc+` property:
 +
 [source,cs]
@@ -57,4 +55,4 @@ Welcome to your new app.
 />
 ----
 
-\{% endif %}
+endif::[]

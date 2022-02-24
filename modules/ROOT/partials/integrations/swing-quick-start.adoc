@@ -10,12 +10,12 @@ Contact link:{supporturl}[{supportname}] to discuss how to get started with our 
 
 To include our {productname} in Swing integration in your Java project just follow the steps below:
 
-[[1-copy-tinymce-in-swing-libraries]]
+[[copy-tinymce-in-swing-libraries]]
 === 1. Copy TinyMCE in Swing libraries
 
 From the release `+zip+` file, select all the Java libraries under the `+lib+` folder and import them into your project. This libraries contain everything needed to run our integration.
 
-[[2-select-a-deployment-and-create-a-configuration]]
+[[select-a-deployment-and-create-a-configuration]]
 === 2. Select a deployment and create a configuration
 
 The Swing integration allows the user to select the origin of the {productname} code: *embedded* (recommended), *cloud*, or *external*.
@@ -96,7 +96,7 @@ final Config myConfig = Config.embedded()
     .setInitConf(Edit.class, "config.js"); // load config.js using class loader
 ----
 
-[[3-create-the-editor-and-add-it-to-your-view]]
+[[create-the-editor-and-add-it-to-your-view]]
 === 3. Create the editor and add it to your view
 
 Create the editor by passing a configuration object. The editor initialization is asynchronous so starting a new editor will return a future value that can be accessed as a normal future value.

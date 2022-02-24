@@ -1,8 +1,9 @@
 Covered in this section:
 
-* <<configuringthetinymceblazorintegration, Configuring the TinyMCE Blazor integration>>
-* <<componentbinding, Component binding>>
+* xref:configuringthetinymceblazorintegration[Configuring the TinyMCE Blazor integration]
+* xref:componentbinding[Component binding]
 
+[[configuringthetinymceblazorintegration]]
 == Configuring the TinyMCE Blazor integration
 
 The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
@@ -203,6 +204,7 @@ Type : Dictionary<string, object>
 }
 ----
 
+[[componentbinding]]
 == Component binding
 
 === Input binding

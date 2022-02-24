@@ -124,9 +124,9 @@ For example:
     <img alt="Vue logo" src="./assets/logo.png">
     <editor
       api-key="no-api-key"
-      :init="{% raw %}{{% endraw %}
+      :init="{
         plugins: 'lists link image table code help wordcount'
-      {% raw %}}{% endraw %}"
+      }"
     />
   </div>
 </template>
@@ -150,7 +150,7 @@ Such as:
 +
 [source,html]
 ----
-<editor api-key='your-api-key' :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
+<editor api-key='your-api-key' :init="{ /* your other settings */ }" />
 ----
 endif::[]
 ifeval::["{productSource}" == "package-manager"]

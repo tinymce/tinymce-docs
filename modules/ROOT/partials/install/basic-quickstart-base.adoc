@@ -54,13 +54,13 @@ To add {productname} to a project:
 
 * Using npm, run the following on a command line:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 npm install tinymce@^{productmajorversion}
 ----
 * Using Yarn, run the following on a command line:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 yarn add tinymce@^{productmajorversion}
 ----
@@ -74,7 +74,7 @@ ifeval::["{productSource}" == "bower"]
 
 To add {productname} to a Bower project, run the following on a command line:
 
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 bower install tinymce#^{productmajorversion}
 ----
@@ -86,12 +86,14 @@ The location of the main {productname} script will be: `+bower_components/tinymc
 endif::[]
 ifeval::["{productSource}" == "nuget"]
 To add {productname} to a .NET project, run the following on a command line:
+
 * Using the NuGet package manager console, run the following:
 +
 [source,sh]
 ----
 Install-Package TinyMCE
 ----
+
 * Using the `+dotnet+` CLI, run the following:
 +
 [source,sh]
@@ -110,7 +112,6 @@ To deploy {productname} from a .zip archive:
 
 include::partial$integrations/download-tinymce-zip.adoc[]
 
-[arabic]
 . Unzip the archive into a public folder of your webserver, such as:
 +
 [source,sh]

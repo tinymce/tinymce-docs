@@ -1,10 +1,10 @@
-\{% if page.title == "Paste plugin" %}
+ifeval::["{plugincode}" == "paste"]
 
 == `+paste_preprocess+`
 
 This option enables you to modify the pasted content before it gets inserted into the editor.
 
-Type : `+Function+`
+Type: `+Function+`
 
 === Example: Using `+paste_preprocess+`
 
@@ -22,7 +22,8 @@ tinymce.init({
 });
 ----
 
-\{% else %}
+endif::[]
+ifeval::["{plugincode}" != "paste"]
 
 == `+paste_preprocess+`
 
@@ -33,9 +34,7 @@ This option allows you to run custom filtering on the content from the clipboard
 * `+mode+` - A string indicating whether PowerPaste is in `+clean+`, `+merge+`, or `+auto+` mode.
 * `+source+` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `+html+`, `+msoffice+`, `+googledocs+`, `+image+`, `+imagedrop+`, `+plaintext+`, `+text+`, or `+invalid+`.
 
-____
-*Note*: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
-____
+NOTE: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
 
 Example {productname} configuration:
 
@@ -60,4 +59,4 @@ tinymce.init({
 });
 ----
 
-\{% endif %}
+endif::[]

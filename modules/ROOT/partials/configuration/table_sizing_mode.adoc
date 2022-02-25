@@ -9,11 +9,11 @@ This option accepts the following values:
 * `+responsive+` - Use no specified widths. *Note*: If a `+responsive+` table is resized, it will be converted to a `+relative+` table (a table cannot be resized without widths).
 * `+auto+` - Detects the table sizing based on the width style or attribute and attempts to keep the current sizing mode.
 
-Type : `+String+`
+Type: `+String+`
 
-Default Value : `+'auto'+`
+Default Value: `+'auto'+`
 
-Possible Values : `+'fixed'+`, `+'relative'+`, `+'responsive'+`, `+'auto'+`
+Possible Values: `+'fixed'+`, `+'relative'+`, `+'responsive'+`, `+'auto'+`
 
 === Example: Using `+table_sizing_mode+`
 

@@ -1,13 +1,10 @@
 = Code Sample plugin
 
 :title_nav: Code Sample
-
 :description: Insert and embed syntax highlighted code snippets.
 :keywords: syntax highlight codesample code contenteditable codesample_languages
 :controls: toolbar button
-
 :pluginname: Code Sample
-
 :plugincode: codesample
 
 
@@ -26,9 +23,7 @@ tinymce.init({
 
 By default, `+codesample+` uses `+http://prismjs.com/+` to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
 
-____
-*Note*: Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
-____
+NOTE: Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
 
 [[using-prismjs-on-your-web-page]]
 == Using Prism.js on your web page

@@ -1,23 +1,17 @@
 = Emoticons plugin
 
 :title_nav: Emoticons
-
 :description: Bring a smiley to your content.
 :keywords: smiley happy smiling emoji
 :controls: toolbar button
-
 :pluginname: Emoticons
-
 :plugincode: emoticons
-
 
 This plugin adds a dialog to the editor lets users insert emoji into {productname}'s editable area. The dialog can be invoked via a toolbar button - `+emoticons+` - or a dedicated menu item added as `+Insert > Emoticons+`.
 
 The emoticons plugin provides an autocompleter for adding emoji without using the toolbar button or menu item. Adding a colon `+:+`, followed by at least two characters will open the emoticon picker showing matching emoji.
 
-____
-*Note*: The emoticons plugin does not automatically convert text emoticons into graphical emoji.
-____
+NOTE: The emoticons plugin does not automatically convert text emoticons into graphical emoji.
 
 == Basic setup
 
@@ -74,4 +68,4 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 The {pluginname} plugin provides the following {productname} command.
 
-include::partial$commands/{plugincode}-cmds.adoc[]
+include::partial$commands/emoticons-cmds.adoc[]

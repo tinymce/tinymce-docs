@@ -1,17 +1,14 @@
 == `+fullscreen_native+`
 
-\{% if pluginname != "fullscreen" %}
-
-____
-*Note*: The `+fullscreen_native+` option requires the Fullscreen plugin.
-\{% endif %}
-____
+ifeval::["{plugincode}" != "fullscreen"]
+NOTE: The `+fullscreen_native+` option requires the Fullscreen plugin.
+endif::[]
 
 The `+fullscreen_native+` option allows the editor to use the browser full screen mode, rather than only filling the https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts#What_is_a_viewport[browser window] when full screen mode is enabled. This functionality is the same as full screen mode for online videos.
 
-Type : `+Boolean+`
+Type: `+Boolean+`
 
-Default Value : `+false+`
+Default Value: `+false+`
 
 Possible values : `+true+`, `+false+`
 

@@ -17,9 +17,8 @@ npx degit sveltejs/template my-tiny-app
 cd my-tiny-app
 ----
 
-\{% if productSource == "package-manager" %}
+ifeval::["{productSource}" == "package-manager"]
 
-[arabic]
 . Install the `+tinymce+` and the `+tinymce-svelte+` editor component, such as:
 +
 [source,sh]
@@ -27,9 +26,9 @@ cd my-tiny-app
 npm install tinymce @tinymce/tinymce-svelte
 ----
 
-\{% else %}
+endif::[]
+ifeval::["{productSource}" != "package-manager"]
 
-[arabic]
 . Install the `+tinymce-svelte+` editor component, such as:
 +
 [source,sh]
@@ -37,9 +36,9 @@ npm install tinymce @tinymce/tinymce-svelte
 npm install @tinymce/tinymce-svelte
 ----
 
-\{% endif %} \{% if productSource == "cloud" %}
+endif::[]
+ifeval::["{productSource}" == "cloud"]
 
-[arabic]
 . Open `+src/App.svelte+` and add:
 * An `+import+` statement for the {productname} component.
 * The `+<Editor />+` as a placeholder for the editor.
@@ -61,9 +60,9 @@ import Editor from '@tinymce/tinymce-svelte';
 </main>
 ----
 
-\{% elsif productSource == "package-manager" %}
+endif::[]
+ifeval::["{productSource}" == "package-manager"]
 
-[arabic]
 . Install the `+rollup-plugin-copy+` development dependency, such as:
 +
 [source,sh]
@@ -79,15 +78,15 @@ import copy from 'rollup-plugin-copy'
 
 /* Skip to the export statement, `plugins` item and add `copy`*/
 export default {
-/* Existing key: values... */
-plugins: [
+  /* Existing key: values... */
+  plugins: [
     copy({
       targets: [
         { src: 'node_modules/tinymce/*', dest: 'public/tinymce'}
       ]
     }),
     /* More existing configuration... */
-]
+  ]
 }
 ----
 . Open `+src/App.svelte+` and add:
@@ -112,9 +111,9 @@ import Editor from '@tinymce/tinymce-svelte';
 </main>
 ----
 
-\{% else %}
+endif::[]
+ifeval::["{productSource}" == "zip"]
 
-[arabic]
 . Open `+src/App.svelte+` and add:
 * An `+import+` statement for the {productname} component.
 * The `+<Editor />+` as a placeholder for the editor.
@@ -137,9 +136,8 @@ import Editor from '@tinymce/tinymce-svelte';
 </main>
 ----
 
-\{% endif %}
+endif::[]
 
-[arabic]
 . Test the application using the Node.js development server.
 * To start the development server, in the project's root directory, run:
 +

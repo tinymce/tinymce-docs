@@ -5,11 +5,12 @@
 :description: New features, enhancements, and functionality changes for TinyMCE 6.0
 :keywords: releasenotes bugfixes
 
-* <<newfeatures, New features>>
-* <<enhancements, Enhancements>>
-* <<functionalitychanges, Functionality changes>>
-* <<removedfunctionality, Removed functionality>>
+* xref:newfeatures[New features]
+* xref:enhancements[Enhancements]
+* xref:functionalitychanges[Functionality changes]
+* xref:removedfunctionality[Removed functionality]
 
+[[newfeatures]]
 == New features
 
 The following new features were added for the {productname} 6.0 release.
@@ -22,6 +23,7 @@ The following new features were added for the {productname} 6.0 release.
 
 * changelog
 
+[[enhancements]]
 == Enhancements
 
 The following enhancements were made for the {productname} 6.0 release.
@@ -38,6 +40,7 @@ In iframe (classic editor) mode, {productname} now copies the https://developer.
 
 * changelog
 
+[[functionalitychanges]]
 == Functionality changes
 
 The following changes were made for the {productname} 6.0 release.
@@ -93,6 +96,7 @@ The following options have been renamed in {productname} 6.0:
 * The `+noneditable_editable_class+` option has been renamed to `+editable_class+`.
 * The `+noneditable_noneditable_class+` option has been renamed to `+noneditable_class+`.
 
+[[removedfunctionality]]
 == Removed functionality
 
 === Tabfocus plugin

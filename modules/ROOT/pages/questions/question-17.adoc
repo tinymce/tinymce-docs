@@ -1,0 +1,13 @@
+17. https://ephocks.atlassian.net/browse/TINY-4603[TINY-4603] notes
+    the re-naming of three options in the `link` (and `autolink`)
+    plugins is _something_ we need to document in the _Migration
+    Guide_ but not what or why.
+
+   TINY-4603 does notes that
+
+   > we won’t bother with fallbacks or anything else — just rename the
+   > setting. We can add a fallback later if people complain.
+
+   I presume this is something of a clue as to what someone upgrading
+   to {productname} 6.0 needs to do to cater to this change. More
+   clues would be handy.

@@ -9,9 +9,9 @@ Replace vnumcode with the version number without points, such as XYZ
 :description: Premium feature changes accompanying TinyMCE vnumtxt
 :keywords: releasenotes premium bugfixes
 
-- xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
-- xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
-- xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
 
 [[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
@@ -24,15 +24,15 @@ The {productname} vnumtxt release includes an accompanying release of the **<<Pr
 
 **<<Premium Plugin Name>>** X.Y.Z adds the following new features:
 
-- <Description>
+* <Description>
 
 **<<Premium Plugin Name>>** X.Y.Z introduces the following enhancements:
 
-- <Description>
+* <Description>
 
 **<<Premium Plugin Name>>** X.Y.Z provides the following bug fixes:
 
-- <Description>
+* <Description>
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({baseurl}/plugins-ref/<<Premium Plugin Name>>/).
 
@@ -97,5 +97,5 @@ include::partial$misc/supported-application-servers.adoc[]
 
 For information on:
 
-- Deploying the server-side components, see: link:premium-server-side-guide.html[Server-side component installation].
-- Deploying the server-side components using Docker, see: link:dockerservices.html[Containerized service deployments].
+* Deploying the server-side components, see: link:premium-server-side-guide.html[Server-side component installation].
+* Deploying the server-side components using Docker, see: link:dockerservices.html[Containerized service deployments].

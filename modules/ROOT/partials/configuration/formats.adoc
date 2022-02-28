@@ -1,10 +1,11 @@
+[[formats]]
 == formats
 
 This option is used to override default {productname} *formats* or add custom *formats* to the editor.
 
 {productname} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named *format*. For example, the `+bold+` format is the style that is applied to text when the bold button is clicked.
 
-Check out the link:user-formatting-options.html#style_formats/[custom formats example] for a demonstration of this option.
+Check out the xref:user-formatting-options.adoc#style_formats[custom formats example] for a demonstration of this option.
 
 The `+formats+` configuration option takes an object of format name and format specification pairs. Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
 
@@ -31,6 +32,7 @@ include::partial$configuration/builtinformats.adoc[]
 
 Some built-in formats `+fontsize+`, `+fontname+`, `+forecolor+`, `+hilitecolor+` use a variable in their definition named `+%value+`. This gets replaced with the user selected item such as a `+color+` value. Check the variable substitution section below for details.
 
+[[formattype]]
 === Format Type
 
 There are three types of formats:
@@ -39,7 +41,7 @@ There are three types of formats:
 * Inline format
 * Selector format
 
-All three format types can be used with the `+formats+` configuration option. They can also be used to specify a new format item in the link:user-formatting-options.html#style_formats[`+style_formats+`] configuration option. However, a format that is specified using `+formats+` is then registered with the editor, and can be referred to by name in `+style_formats+` rather than needing to specify the format again.
+All three format types can be used with the `+formats+` configuration option. They can also be used to specify a new format item in the xref:user-formatting-options.adoc#style_formats[`+style_formats+`] configuration option. However, a format that is specified using `+formats+` is then registered with the editor, and can be referred to by name in `+style_formats+` rather than needing to specify the format again.
 
 For example, these two configurations are equivalent:
 

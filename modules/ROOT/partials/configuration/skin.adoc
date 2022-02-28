@@ -1,3 +1,4 @@
+[[skin]]
 == skin
 
 This option allows you to specify the skin that {productname} should use, or `+false+` to not load a skin. The default skin included with {productname} is named "oxide".
@@ -18,4 +19,4 @@ tinymce.init({
 });
 ----
 
-If you would like to create your own skin, please see the guide link:/how-to-guides/customizing-the-editor-appearance/creating-a-skin/[here].
+If you would like to create your own skin, please see the guide xref:creating-a-skin.adoc[here].

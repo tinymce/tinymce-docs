@@ -1,3 +1,4 @@
+[[toolbar]]
 == `+toolbar+`
 
 This option allows you to specify the link:/interface/toolbars/available-toolbar-buttons/[buttons] and the order that they will appear on {productname}'s toolbar.
@@ -18,10 +19,9 @@ tinymce.init({
 });
 ----
 
-____
-*Note*: The size of toolbar groups affects the behavior of the toolbar drawer when the `+toolbar_mode+` is set to `+'floating'+` (default value) or `+'sliding'+`. For more information, see: link:toolbar-configuration-options.html#toolbar_mode[the `+toolbar_mode+` setting].
-____
+NOTE: The size of toolbar groups affects the behavior of the toolbar drawer when the `+toolbar_mode+` is set to `+'floating'+` (default value) or `+'sliding'+`. For more information, see: xref:toolbar-configuration-options.adoc#toolbar_mode[the `+toolbar_mode+` setting].
 
+[[addingtoolbargrouplabels]]
 ==== Adding toolbar group labels
 
 To specify labels to the grouped buttons that appear on {productname}'s toolbar, the `+toolbar+` option should be provided with an array of objects with `+name+` and `+items+` as object properties. The `+name+` should be a string value that will be set as the `+title+` attribute on the `+div+` containing the toolbar group. The `+items+` should be an array of strings that indicate the buttons that should appear within the particular toolbar group.
@@ -74,6 +74,7 @@ tinymce.init({
 });
 ----
 
+[[usingmultipletoolbars]]
 === Using multiple toolbars
 
 To specify multiple toolbars, the toolbar option should be provided with an array of space separated strings.
@@ -93,4 +94,4 @@ tinymce.init({
 });
 ----
 
-Alternatively, you may specify multiple toolbars through the use of the <<toolbarn, toolbar(n)>> option.
+Alternatively, you may specify multiple toolbars through the use of the xref:toolbar-configuration-options.adoc#toolbarn[toolbar(n)] option.

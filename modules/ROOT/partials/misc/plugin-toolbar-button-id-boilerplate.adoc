@@ -11,7 +11,7 @@ ifeval::["{altplugincode}" == "nil"]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
 endif::[]
 
-For information on the {pluginname} plugin, see: link:{plugincode}.html[Plugins - The {pluginname} plugin]
+For information on the {pluginname} plugin, see: xref:{plugincode}.adoc[Plugins - The {pluginname} plugin]
 
 endif::[]
 ifeval::["{docname}" != "available-toolbar-buttons"]

@@ -1,3 +1,4 @@
+[[table_toolbar]]
 == `+table_toolbar+`
 
 This option allows you to specify the toolbar buttons shown on the contextual toolbar for tables. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `+|+` pipe character to add a separator between toolbar buttons.
@@ -8,7 +9,7 @@ Type: `+String+`
 
 Default Value: `+'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'+`
 
-Possible Values: Any toolbar button. For a list of predefined toolbar buttons, see: link:available-toolbar-buttons.html[Toolbar Buttons Available for {productname}].
+Possible Values: Any toolbar button. For a list of predefined toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 === Example: Default table_toolbar configuration
 

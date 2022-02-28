@@ -1,4 +1,4 @@
-ifeval::["{page.title}" == "Paste plugin"]
+ifeval::["{pluginname}" == "Paste"]
 
 == `+paste_postprocess+`
 
@@ -23,7 +23,7 @@ tinymce.init({
 ----
 
 endif::[]
-ifeval::["{page.title}" != "Paste plugin"]
+ifeval::["{pluginname}" != "Paste"]
 
 == `+paste_postprocess+`
 

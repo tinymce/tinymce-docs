@@ -1,9 +1,9 @@
-ifeval::["{plugincode}" == "paste"]
+ifeval::["{pluginname}" == "Paste"]
 :plugin: paste
 
 == paste_block_drop
 endif::[]
-ifeval::["{plugincode}" != "paste"]
+ifeval::["{pluginname}" != "Paste"]
 :plugin: powerpaste
 
 == powerpaste_block_drop
@@ -15,11 +15,11 @@ Default value : `+false+`
 
 Possible values : `+true+`, `+false+`
 
-ifeval::["{plugincode}" == "paste"]
+ifeval::["{pluginname}" == "Paste"]
 
 === Example: Using `+paste_block_drop+`
 endif::[]
-ifeval::["{plugincode}" != "paste"]
+ifeval::["{pluginname}" != "Paste"]
 
 === Example: Using `+powerpaste_block_drop+`
 endif::[]

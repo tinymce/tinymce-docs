@@ -44,8 +44,7 @@ tinymce.init({
 ----
 
 endif::[]
-// TODO: This isn't work for some reason
-ifeval::[{includedSection} == false]
+ifndef::includedSection[]
 
 [source,js]
 ----

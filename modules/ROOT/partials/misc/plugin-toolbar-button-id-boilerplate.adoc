@@ -1,28 +1,28 @@
-ifeval::["{page.name}" == "available-toolbar-buttons.adoc"]
+ifeval::["{docname}" == "available-toolbar-buttons"]
 
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-ifeval::[altplugincode != nil]
+ifeval::["{altplugincode}" != "nil"]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
 endif::[]
-ifeval::[altplugincode == nil]
+ifeval::["{altplugincode}" == "nil"]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
 endif::[]
 
 For information on the {pluginname} plugin, see: link:{plugincode}.html[Plugins - The {pluginname} plugin]
 
 endif::[]
-ifeval::["{page.name}" != "available-toolbar-buttons.adoc"]
+ifeval::["{docname}" != "available-toolbar-buttons"]
 == Toolbar buttons
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-ifeval::[altplugincode != nil]
+ifeval::["{altplugincode}" != "nil"]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
 endif::[]
-ifeval::[altplugincode == nil]
+ifeval::["{altplugincode}" == "nil"]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
 endif::[]
 

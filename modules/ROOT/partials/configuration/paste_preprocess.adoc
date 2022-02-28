@@ -1,4 +1,4 @@
-ifeval::["{plugincode}" == "paste"]
+ifeval::["{pluginname}" == "Paste"]
 
 == `+paste_preprocess+`
 
@@ -23,7 +23,7 @@ tinymce.init({
 ----
 
 endif::[]
-ifeval::["{plugincode}" != "paste"]
+ifeval::["{pluginname}" != "Paste"]
 
 == `+paste_preprocess+`
 

@@ -1,0 +1,25 @@
+20. I’ve documented the https://ephocks.atlassian.net/browse/TINY-8104[TINY-8104]
+    bug-fix as follows:
+
+    * If the selected cells in the `tfoot` section of a table were
+      header elements (ie were `th` elements), pressing the `table`
+      row header toolbar button (which invokes the `mceTableRowType`
+      command) returned the row as a header row.
+
+      This was incorrect: the section takes precedence and cells in
+      the `tfoot` section of a table should be declared as a footer
+      row.
+
+      In {productname} 6.0, selecting cells in the `tfoot` section of
+      a table and pressing the row header toolbar button returns the
+      row as a footer row, as expected.
+
+
+    Two questions:
+
+    a. is this correct?
+
+    b. I’ve assumed, because this concerns the _row header toolbar
+       button_, this is a fix for the now-only-concerned-with-UI
+       `table` plugin, and not the now-in-the-Core table creation
+       ‘engine’ code. Is this also a correct assumption?

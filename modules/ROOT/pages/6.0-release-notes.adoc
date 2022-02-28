@@ -1,0 +1,337 @@
+= TinyMCE 6.0 Release Notes
+
+== Things we renamed
+
+| element       | old name                        | new name               | why                                                                                              | for more information                  |
+| ------------- | ------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------- |
+|               | old 2                           | new 2                  | explanation                                                                                      | see <<in-document-id>>                |
+| APIs          | old 1                           | new 1                  | explanation                                                                                      | see <<in-document-id>>                |
+|               | old n                           | new n                  | explanation                                                                                      | see <<in-document-id>>                |
+| Formatting UI | old 1                           | new 1                  | explanation                                                                                      | see <<in-document-id>>                |
+|               | old 2                           | new 2                  | explanation                                                                                      | see <<in-document-id>>                |
+|               | old n                           | new n                  | explanation                                                                                      | see <<in-document-id>>                |
+| Functions     | `noneditable_noneditable_class` | `noneditable_class`    | Consequent to `noneditable` being changed from a Plugin to being part of the {productname} Core. | see <<changed plugins > noneditable>> |
+|               | `noneditable_editable_class`    | `editable_class`       | Consequent to `noneditable` being changed from a Plugin to being part of the {productname} Core. | see <<changed plugins>>               |
+|               | `textpattern_patterns`          | `text_patterns`        | Consequent to `textpattern` being changed from a Plugin to being part of the {productname} Core. | see <<changed plugins>>               |
+|               | `default_link_target`           | `link_default_target`  | explanation NOTE: applies to both `link` and `autolink` plugins                                  | see <<in-document-id>>                |
+|               | `rel_list`                      | `link_rel_list`        | explanation                                                                                      | see <<in-document-id>>                |
+|               | `target_list`                   | `link_target_list`     | explanation                                                                                      | see <<in-document-id>>                |
+| Commands      | mceInsertTable                  | `mceInsertTableDialog` | `mceInsertTableDialog` is both a new command and a more accurate command name.                   | see <<changed plugins > table>>       |
+|               | old 2                           | new 2                  | explanation                                                                                      | see <<in-document-id>>                |
+|               | old n                           | new n                  | explanation                                                                                      | see <<in-document-id>>                |
+
+
+// the in-document links above and below are incorrectly expressed as of this writing.
+// time to learn the proper AsciiDoc syntax
+
+== Default value changes
+
+| element               | old value | new value | why         | for more information                  |
+| --------------------- | --------- | --------- | ----------- | ------------------------------------- |
+| `table_style_by_css`  | `false`   | `true`    |             | see <<changed plugins > table>>       |
+| `table_use_colgroups` | `false`   | `true`    |             | see <<changed plugins > table>>       |
+
+
+== APIs
+
+- new and improved
+- changed
+- fixed
+- added
+=== Removed or deprecated APIs
+
+==== Table
+
+* The `table` plugin’s functionality is, as of {productname} 6.0, entirely focussed on the user interface (UI) for creating and editing tables.
+
+  The code that generates tables is now a Core part of {productname} 6.0.
+
+  Since the `table` plugin API was entirely concerned with generating tables, it has been removed.
+
+// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
+
+== Commands and queries
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== Events
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== Formatting
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== Functions
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== Options
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== Parsing and serialisation
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== Plugins
+
+=== New and improved plugins
+
+==== Emoticons
+
+* The `emoticon` plugin now uses the more accurate word, _Emoji_, in its tool bar, menu item and dialogue box.
+
+   In previous versions, the word presented in these parts of the plugin’s user-interface was _Emoticon_.
+
+   NOTE: The plugin, itself, is still called Emoticons. And the plugin description and the plugin’s configuration and Help dialogues reflect this.
+
+
+==== ImageTools
+
+* The `imagetools` plugin now shows updates of the image being edited in real-time.
+
+  NOTE: this new version of the `imagetools` plugin is no longer part of the Core open source editor. ImageTools is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+
+==== Table of contents
+
+* the `toc` plugin has modernised its output. It now uses the ES2020 library and targets ES2018. As well, it now uses https://terser.org[terser] to improve performance.
+
+  NOTE: this new version of the `toc` plugin is no longer part of the Core open source editor. Table of Contents is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+
+
+=== Changed plugins
+
+==== Autoresize
+
+* Previously, the `autoresize` plugin offered an `autoresize_on_init` option.
+
+  This setting does not do anything meaningful, and had been previously deprecated.
+  
+  As of {productname} 6.0, it has been removed from the `autoresize` plugin.
+
+==== Media
+
+* In {productname} 5.x, the `media` plugin used SaxParser to validate elements for parsing.
+
+  As of {productname} 6.0, SaxParser is no longer used.
+  
+  As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as ‘special’. Instead their contents are simply validated against the schema.
+
+* The `media` plugin’s `media_scripts` option was deprecated in {productname} 5.10.
+
+  As of this release, {productname} 6.0, this option has been removed completely.
+
+==== Noneditable
+
+* The `noneditable` plugin is no longer a plugin. It is now  a Core part of {productname} 6.0.
+
+   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+
+==== Paste
+
+* The `paste` plugin’s functionality is now  a Core part of {productname} 6.0.
+
+   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+
+* The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
+
+==== Print
+
+* `print` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+
+   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+
+==== Table
+
+* The `table` plugin’s functionality is, as of {productname} 6.0, entirely focussed on the user interface (UI) for creating and editing tables.
+
+  The code that generates tables is now a Core part of {productname} 6.0.
+
+* If the selected cells in the `tfoot` section of a table were header elements (ie were `th` elements), pressing the `table` row header toolbar button (which invokes the `mceTableRowType` command) returned the row as a header row.
+
+  This was incorrect: the section takes precedence and cells in the `tfoot` section of a table should be declared as a footer row.
+
+  In {productname} 6.0, selecting cells in the `tfoot` section of a table and pressing the row header toolbar button returns the row as a footer row, as expected.
+
+* `mceInsertTableDialog` is the new command for invoking an insert table dialogue box.
+
+   The previous command, `mceInsertTable`, no longer works: use the `mceInsertTableDialog` command instead.
+
+* The default values for the `table_style_by_css` and the `table_use_colgroups` options have both been changed.
+
+  Previously, these options defaulted to `false`. As of {productname} 6.0, both options now default to `true`.
+
+  This is in line with modern web practice.
+
+* the `table_responsive_width` option was previously deprecated and superseded by `table_sizing_mode`.
+
+  In {productname} 6.0, the `table_responsive_width` option has been removed.
+
+
+
+
+==== TextPattern
+
+* the `textpattern` plugin is no longer a plugin. It is now  a Core part of {productname} 6.0.
+
+   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+
+   Also, the API that called `textpattern` has been removed.
+
+   Finally, text patterns are now on by default. `text_patterns: false` or `text_patterns: []` turns the functionality off.
+
+
+
+
+=== Fixed plugins
+
+=== Added plugins
+
+=== Removed or deprecated plugins
+
+==== BBCode
+
+* the `bbcode` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+==== Color Picker
+
+* the `colorpicker` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+==== Context Menu
+
+* the `contextmenu` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+==== Full Page
+
+* the `fullpage` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+==== HR
+
+* The `hr` (horizontal rule) functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+
+  In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+
+==== ImageTools
+
+* The `imagetools` plugin is no longer part of the Core open source editor. _ImageTools_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+
+   NOTE: the new Premium plugin version of `imagetools` shows real-time updates of the image being edited.
+
+==== Legacy Output
+
+* the `legacyoutput` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+==== Paste
+
+* The `paste` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+
+* Because the functionality was unmaintained, `paste` no longer supports input from Microsoft Word.
+
+  There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin.
+
+  NOTE: the Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received text before pasting it into place.
+
+==== Print
+
+* `print` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+
+   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+
+==== Spellchecker
+
+* the `spellchecker` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+==== TabFocus
+
+* The `tabfocus` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+  The `tabfocus_elements` option, which relied on the `tabfocus` plugin, no longer functions.
+
+  As well, the `tab_focus` option was previously deprecated by `tabfocus_elements`. With this release, the `tab_focus` option has been removed completely.
+
+  As per standard web practice, the `tabindex` attribute should be used instead of the `tabfocus` plugin or any of the `tabfocus` plugin’s options.
+
+  As per that standard web practice, the `tabindex` attribute is copied from the target element to the iframe.
+
+
+
+==== Table of contents
+
+* The `toc` plugin is no longer part of the Core open source editor. _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+
+   NOTE: the new Premium plugin version of `toc` has modernised its output. It uses the ES2020 library and targets ES2018. It also uses https://terser.org[terser] to improve performance.
+
+==== Text color
+
+* the `textcolor` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+==== TextPattern
+
+* The `textpattern` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+
+  In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+
+  Also, the API that called `textpattern` has been removed.
+
+
+
+// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
+== Properties
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== Schema
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+
+== UI elements and components
+
+- new and improved
+- changed
+- fixed
+- added
+- removed or deprecated
+    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things

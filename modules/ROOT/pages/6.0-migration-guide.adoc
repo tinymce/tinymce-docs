@@ -1,0 +1,15 @@
+= TinyMCE 5.x -> 6.0 Migration Guide
+
+== Plugins
+
+=== ImageTools
+
+1. The `imagetools` plugin is no longer included as part of the Core open source editor. ImageTools is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+
+If you are 1) using the Free version of {productname} and 2) rely on the `imagetools` plugin, upgrading to {productname} 6.0 is not recommended.
+
+=== Paste
+
+1. The `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
+
+   As a core feature of {productname} 6.0, one `paste` default has changed. The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.

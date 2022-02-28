@@ -1,0 +1,31 @@
+19. A state of gentle confusion as much as a question.
+
+    According to https://ephocks.atlassian.net/browse/TINY-7820[TINY-7820]
+
+    > tab_focus [part of the `tabfocus` plugin] is superseded by
+    > `tabfocus_elements`
+
+    According to
+    https://notion.so/tinycloud/6-0-Docs-Notes-94ee2ecf10ff440b9246a22f8cc54828#23efdaf60a994e35bb014d0353f4e3ea[TabFocus block in Notion article on 6.0 Changes], however:
+
+    > the `tabfocus_elements` option no longer does anything
+
+    Is the below the sequence of events?
+
+    a. `tabfocus` option re-named: if you used `tab_focus`, use
+       `tabfocus_elements` now.
+
+    b. `tabfocus` plugin now gone: its functionality is now part of
+       Core {productname}. If you used `tabfocus_elements`, use the
+       `tabindex` attribute now.
+
+    c. Oops, also, we’ve now actually removing the whole `tabfocus`
+       plugin, which removes the renamed/deprecated `tab_focus` option
+       _and_ its re-named replacement: `tabfocus_elements`.
+
+    d. Everyone use the `tabindex` attribute now. It’s part of
+       {productname} Core.
+
+    FYI: I’ve added documentation to my _Release Notes_
+    work-in-progress on the assumption my intuited sequence of events
+    above is basically accurate.

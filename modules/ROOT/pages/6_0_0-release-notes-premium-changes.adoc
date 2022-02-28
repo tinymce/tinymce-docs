@@ -5,10 +5,11 @@
 :description: Premium feature changes accompanying TinyMCE 6.0
 :keywords: releasenotes premium bugfixes
 
-* <<accompanyingpremiumpluginchanges, Accompanying Premium Plugin changes>>
-* <<accompanyingpremiumskinsandiconpackschanges, Accompanying Premium Skins and Icon Packs changes>>
-* <<accompanyingpremiumself-hostedserver-sidecomponentchanges, Accompanying Premium self-hosted server-side component changes>>
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 6.0.
@@ -35,14 +36,15 @@ The {productname} 6.0 release includes an accompanying release of the *<>* premi
 
 For information on the <> plugin, see: link:/plugins-ref/<>/[<> plugin].
 
+[[accompanyingpremiumskinsandiconpackschanges]]
 == Accompanying Premium Skins and Icon Packs changes
 
 The {productname} 6.0 release includes an accompanying release of the *Premium Skins and Icon Packs*.
 
 === Premium Skins and Icon Packs - New features
 
-\{% comment %} Add description here.
-\{% endcomment %}
+// Add description here.
+
 
 For information on using premium skins and icon packs, see: link:premium-skins-and-icons.html[Premium Skins and Icon Packs].
 
@@ -50,11 +52,11 @@ For information on using premium skins and icon packs, see: link:premium-skins-a
 
 The *Premium Skins and Icon Packs* release includes the following bug fixes:
 
-\{% comment %} Add description here.
-\{% endcomment %}
+// Add description here.
 
 For information on using premium skins and icon packs, see: link:premium-skins-and-icons.html[Premium Skins and Icon Packs].
 
+[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 6.0 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -67,18 +69,18 @@ The {productname} 6.0 release includes accompanying changes affecting the {produ
 
 The Java server-side components have been updated to the following versions:
 
-* `+ephox-hyperlinking.war+`: a.b.c
-* `+ephox-image-proxy.war+`: a.b.c
-* `+ephox-spelling.war+`: a.b.c
+* `+ephox-hyperlinking.war+`: 2.105.9
+* `+ephox-image-proxy.war+`: 2.106.1
+* `+ephox-spelling.war+`: 2.118.4
 
 For information on:
 
-* The Enhanced Media Embed plugin, see: link:mediaembed.html[Enhanced Media Embed plugin].
+* The Enhanced Media Embed plugin, see: link:media.html[Enhanced Media Embed plugin].
 * The Export plugin, see: link:export.html[Export plugin].
 * The Image Tools plugin, see: link:imagetools.html[Image Tools plugin].
 * The Link Checker plugin, see: link:linkchecker.html[Link Checker plugin].
-* The Spell Checker Pro plugin, see: link:tinymcespellchecker.html[Spell Checker Pro plugin].
-* Deploying the server-side components, see: link:premium-server-side-guide.html[Server-side component installation].
+* The Spell Checker Pro plugin, see: link:spelling.html[Spell Checker Pro plugin].
+* Deploying the server-side components, see: link:introduction-to-premium-selfhosted-services.html[Server-side component installation].
 
 === Updating the self-hosted server-side components
 
@@ -94,5 +96,5 @@ include::partial$misc/supported-application-servers.adoc[]
 
 For information on:
 
-* Deploying the server-side components, see: link:premium-server-side-guide.html[Server-side component installation].
-* Deploying the server-side components using Docker, see: link:dockerservices.html[Containerized service deployments].
+* Deploying the server-side components, see: link:introduction-to-premium-selfhosted-services.html[Server-side component installation].
+* Deploying the server-side components using Docker, see: link:bundle-intro-setup.html[Containerized service deployments].

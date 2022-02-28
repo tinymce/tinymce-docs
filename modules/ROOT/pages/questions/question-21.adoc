@@ -1,0 +1,23 @@
+21. `mceInsertTable`` -> `mceInsertTableDialog`
+
+    `mceInsertTableDialog` is documented as a new command
+
+    But, from a user-POV, is it sensible to document this as a
+    re-naming?
+
+    _We changed the name of the `mceInsertTable` command to
+    `mceInsertTableDialog`._
+
+    _To invoke an insert table dialogue box, use the new command
+    name._
+
+    Or, are there other changes that a user should be aware of?
+
+    Also, is the name change just to ensure there isn’t a name-space
+    conflict or is the new command name also an effort to make the
+    command better reflect what it does. That is the command never
+    inserted a table, it always invoked a table-creation dialogue box,
+    and now the command name accurately reflects this?
+
+    Also also, I’m assuming this is a change that needs to be noted in
+    the _Migration Guide_. A useful assumption?

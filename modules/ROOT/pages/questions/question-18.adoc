@@ -1,0 +1,12 @@
+18. https://ephocks.atlassian.net/browse/TINY-4603[TINY-4603] notes
+    the re-naming of `default_link_target` to `link_default_target`
+    _also applies to `autolink`_.
+
+    Should this be documented entirely separately or is it safe to
+    just note the re-naming also applies to `autolink`?
+
+    For, example, if users interact with the `autolink` plugin
+    separately to the `link` plugin (by, for example, setting
+    user-adjustable options separately for each plugin), the change to
+    `autolink` should be explicitly documented, in case there are
+    users who’ve tweaked one plugin and not the other.

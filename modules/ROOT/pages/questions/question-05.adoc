@@ -1,0 +1,12 @@
+5. In *TinyMCE 5.x*, the `paste_data_images` option was set to `false`
+   by default. In *TinyMCE 6.0* it is set to `true`.
+
+   When the default was set to `false`, this prevented images being
+   pasted from the local machine.
+
+   When upgrading to 6.0, `paste` goes from being a plugin to being
+   Core functionality. Does this, as a consequence, cause the default
+   to be changed?
+
+   And, if so, should this change in the `paste_data_images` default
+   be included in the *Migration Guide*?

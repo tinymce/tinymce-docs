@@ -1,3 +1,4 @@
+[[taborder]]
 == Tab order
 
 The tab order of the elements in a page, including {productname}, should be configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute] on the relevant HTML elements. The browser will then natively handle the tab order.

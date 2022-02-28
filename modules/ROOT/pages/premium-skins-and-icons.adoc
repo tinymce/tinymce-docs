@@ -1,7 +1,6 @@
 = Tiny Skins and Icon Packs
 
 :title_nav: Tiny Skins and Icon Packs
-
 :description: Quickly give TinyMCE a new look.
 :keywords: skin skins icon icons material bootstrap customize theme
 
@@ -9,7 +8,7 @@ The {prem_skins_icons} lets you quickly give {productname} a new look. Just choo
 
 == How to use a premium skin
 
-Use the link:editor-skin.html#skin[skin] option, in combination with the link:add-css-options.html#content_css[content_css] option and the values listed below.
+Use the link:editor-skin.html#skin[skin] option, in combination with the xref:add-css-options.adoc#content_css[content_css] option and the values listed below.
 
 Available values for link:editor-skin.html#skin[skins]:
 
@@ -25,7 +24,7 @@ Available values for link:editor-skin.html#skin[skins]:
 * outside
 * snow
 
-Available values for link:add-css-options.html#content_css[content_css]:
+Available values for xref:add-css-options.adoc#content_css[content_css]:
 
 * material-classic
 * material-outline
@@ -45,9 +44,9 @@ tinymce.init({
 
 == How to use an icon pack
 
-Use the link:editor-icons.html#icons[icons] option with any of the values listed below.
+Use the xref:editor-icons.adoc#icons[icons] option with any of the values listed below.
 
-Available values for link:editor-icons.html#icons[icon] packs:
+Available values for xref:editor-icons.adoc#icons[icon] packs:
 
 * bootstrap
 * material
@@ -65,7 +64,7 @@ tinymce.init({
 });
 ----
 
-For information on using the `+icons+` option, see: link:editor-icons.html#icons[User interface options - `+icons+`].
+For information on using the `+icons+` option, see: xref:editor-icons.adoc#icons[User interface options - `+icons+`].
 
 === Icon pack compatibility matrix
 
@@ -91,20 +90,19 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 Below are some recommended combinations of skins and icon packs:
 
-* link:bootstrap-demo.html[Bootstrap skin]
-* link:material-outline-demo.html[Material Outline skin with Material icon pack]
-* link:material-classic-demo.html[Material Classic skin with Material icon pack]
-* link:fabric-demo.html[Microsoft Fabric skin]
-* link:fluent-demo.html[Microsoft Fluent skin]
-* link:small-demo.html[Small skin with Small icon pack]
-* link:jam-demo.html[Small skin with Jam icon pack]
-* link:borderless-demo.html[Borderless editor]
-* link:naked-demo.html[Naked editor]
-* link:outside-demo.html[Outside editor]
-* link:snow-demo.html[Snow editor]
+* xref:bootstrap-demo.adoc[Bootstrap skin]
+* xref:material-outline-demo.adoc[Material Outline skin with Material icon pack]
+* xref:material-classic-demo.adoc[Material Classic skin with Material icon pack]
+* xref:fabric-demo.adoc[Microsoft Fabric skin]
+* xref:fluent-demo.adoc[Microsoft Fluent skin]
+* xref:small-demo.adoc[Small skin with Small icon pack]
+* xref:jam-demo.adoc[Small skin with Jam icon pack]
+* xref:borderless-demo.adoc[Borderless editor]
+* xref:naked-demo.adoc[Naked editor]
+* xref:outside-demo.adoc[Outside editor]
+* xref:snow-demo.adoc[Snow editor]
 
 :pluginname: Tiny Skins and Icon
-
 :pluginminimumplan: tiertwo
 :extensionType: Packs
 :pluralExtensionType: true

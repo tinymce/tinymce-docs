@@ -1,3 +1,4 @@
+[[language]]
 == `+language+`
 
 This option specifies the language used for the {productname} user interface, such as menu items, dialogs, and tooltips. By default, {productname} user interface is set to US English.
@@ -5,12 +6,12 @@ This option specifies the language used for the {productname} user interface, su
 Before changing the language option, ensure that the language pack is available to the {productname} instance. {companyname} provides two collections of language packs:
 
 * _Premium_ language packs - Professionally localized language packs provided on {cloudname} and bundled with premium self-hosted bundles.
-* _Community_ language packs - Localizations provided by {productname} users through Transifex, which need to be downloaded prior to use, from link:{gettiny}/language-packages/[the {site. companyname} Downloads Page - Language Packages].
+* _Community_ language packs - Localizations provided by {productname} users through Transifex, which need to be downloaded prior to use, from link:{gettiny}/language-packages/[the {companyname} Downloads Page - Language Packages].
 
 For information on:
 
-* Using the premium language packs, see: <<usingthepremiumlanguagepacks, Using the premium language packs>>.
-* Using the community language packs, see: <<usingthecommunitylanguagepacks, Using the community language packs>>.
+* Using the premium language packs, see: xref:usingthepremiumlanguagepacks[Using the premium language packs].
+* Using the community language packs, see: xref:usingthecommunitylanguagepacks[Using the community language packs].
 
 Option : `+language+`
 
@@ -30,10 +31,11 @@ tinymce.init({
 });
 ----
 
+[[usingthepremiumlanguagepacks]]
 === Using the premium language packs
 
 The following professionally localized language packs are provided to paid {cloudname} and premium self-hosted deployments. To use these language packs, set the `+language+` option to the corresponding language code. No additional configuration is required.
 
-include::partial$misc/ui-languages.adoc[]
+include::partial$misc/ui-languages.adoc[leveloffset=+2]
 
-include::partial$misc/using-community-lang-packs.adoc[]
+include::partial$misc/using-community-lang-packs.adoc[leveloffset=+1]

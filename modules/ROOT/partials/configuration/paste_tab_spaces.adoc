@@ -1,16 +1,17 @@
-\{% if page.title == "Paste plugin" %}
+ifeval::["{page.title}" == "Paste plugin"]
 :plugin: paste :pluginname: Paste
-\{% else %}
+endif::[]
+ifeval::["{page.title}" != "Paste plugin"]
 :plugin: powerpaste :pluginname: PowerPaste
-\{% endif %}
+endif::[]
 
 == `+paste_tab_spaces+`
 
 This option controls how many spaces are used to represent a tab character in HTML when pasting plain text content. By default, the {pluginname} plugin will convert each tab character into 4 sequential space characters.
 
-Type : `+Number+`
+Type: `+Number+`
 
-Default Value : `+4+`
+Default Value: `+4+`
 
 === Example: Using `+paste_tab_spaces+`
 

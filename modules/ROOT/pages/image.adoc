@@ -1,14 +1,11 @@
 = Image plugin
 
 :title_nav: Image
-
 :description: Insert an image into TinyMCE.
 :keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
-
 :pluginname: Image
-
 :plugincode: image
-
+:altplugincode: nil
 
 This plugin enables the user to insert an image into {productname}'s editable area. The plugin also adds a toolbar button and an `+Insert/edit image+` menu item under the `+Insert+` menu.
 
@@ -28,9 +25,7 @@ tinymce.init({
 });
 ----
 
-____
-*Note*: This is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
-____
+NOTE: This is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 
 include::partial$misc/admon_svg_not_supported.adoc[]
 
@@ -41,8 +36,6 @@ These configuration options affect the execution of the `+image+` plugin. Many o
 If you wish to align the image, you can also use the text align buttons while images are selected.
 
 :includedSection: imagePlugin
-
-
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
 :includedSection: false
 include::partial$configuration/file_picker_callback.adoc[leveloffset=+1]

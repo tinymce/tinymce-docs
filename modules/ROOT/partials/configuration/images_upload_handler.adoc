@@ -12,11 +12,9 @@ The upload handler function takes four arguments:
 
 When this option is not set, {productname} utilizes an `+XMLHttpRequest+` to upload images one at a time to the server and calls the success callback with the location of the remote image.
 
-____
-*Note*: To replace the `+<img>+` tag's `+src+` attribute with the remote location, please use the success callback defined in the `+images_upload_handler+` function with the returned JSON object's location property.
-____
+NOTE: To replace the `+<img>+` tag's `+src+` attribute with the remote location, please use the success callback defined in the `+images_upload_handler+` function with the returned JSON object's location property.
 
-Type : `+JavaScript Function+`
+Type: `+JavaScript Function+`
 
 === Example: Using `+images_upload_handler+`
 

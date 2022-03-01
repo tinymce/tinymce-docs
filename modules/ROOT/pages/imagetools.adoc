@@ -1,14 +1,11 @@
 = Image Tools plugin
 
 :title_nav: Image Tools
-
 :description: Image editing features for TinyMCE.
 :keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
-
 :pluginname: Image Tools
-
 :plugincode: imagetools
-
+:altplugincode: nil
 
 include::partial$DEPRECATED/imagetools.adoc[]
 
@@ -39,7 +36,6 @@ tinymce.init({
 
 To enable the {productname} Image Tools plugin:
 
-[arabic]
 . Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
 . Enable `+imagetools_cors_hosts+` and `+imagetools_proxy+` options as needed
 

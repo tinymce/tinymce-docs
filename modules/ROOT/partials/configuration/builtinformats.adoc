@@ -37,15 +37,16 @@ The following formats will work on most content.
 |`+fontsize_class+` |Font size (1-7).
 |===
 
-____
-*Note*: The `+mceToggleFormat+` and `+FormatBlock+` link:/how-to-guides/creating-custom-ui-components/editor-command-identifiers/[commands] do not accept the following formats:
+[NOTE]
+--
+The `+mceToggleFormat+` and `+FormatBlock+` xref:editor-command-identifiers.adoc[commands] do not accept the following formats:
 
 * `+forecolor+`
 * `+hilitecolor+`
 * `+fontname+`
 * `+fontsize+`
 * `+fontsize_class+`
-____
+--
 
 == Definition list related formats
 

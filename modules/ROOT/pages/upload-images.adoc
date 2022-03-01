@@ -8,7 +8,7 @@
 
 {productname} uploads edited images with the image uploader. This complements {productname}'s image editing functionality.
 
-Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the link:paste.html#paste_data_images[`+paste_data_images+`] configuration property, or using the {companyname} link:powerpaste.html[*PowerPaste* plugin].
+Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the xref:paste.adoc#paste_data_images[`+paste_data_images+`] configuration property, or using the {companyname} link:powerpaste.html[*PowerPaste* plugin].
 
 {productname} automatically updates the `+<img>+` src attribute with the new path to the remote image.
 
@@ -42,6 +42,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 include::partial$misc/admon_svg_not_supported.adoc[]
 
+[[imageuploaderrequirements]]
 == Image Uploader requirements
 
 A server-side upload handler script uploads local images to a remote server. The script must:

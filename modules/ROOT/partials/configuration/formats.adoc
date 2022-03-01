@@ -22,10 +22,12 @@ bold: [
 ],
 ----
 
+[[stylemerging]]
 === Style merging
 
 Similar elements and styles are merged by default to reduce the output HTML size. So for example, if a font size and font face are selected for a word, it merges these two styles into one `+span+` element instead of one `+span+` for *each format type*.
 
+[[built-informats]]
 === Built-in formats
 
 include::partial$configuration/builtinformats.adoc[]

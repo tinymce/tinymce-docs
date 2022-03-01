@@ -1,7 +1,6 @@
 = The TinyMCE Content Security Policy guide
 
 :title_nav: Content Security Policies (CSP)
-
 :description: Information and options related to using TinyMCE with a Content Security Policy (CSP)
 :keywords: security csp
 
@@ -9,4 +8,4 @@ include::partial$misc/general-csp.adoc[]
 
 == Content Security Policy related options
 
-include::partial$configuration/content_security_policy.adoc[]
+include::partial$configuration/content_security_policy.adoc[leveloffset=+1]

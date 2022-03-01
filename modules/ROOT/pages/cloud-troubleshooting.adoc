@@ -1,15 +1,12 @@
 = Cloud Troubleshooting
 
 :description_short: Troubleshooting errors shown by the Tiny Cloud
-
 :description: Causes and solutions to common issues when using Tiny Cloud
 :keywords: tinymce cloud script textarea apiKey troubleshooting banners domain referer
 
 When {cloudname} detects a problem, it will show an editor notification containing information about the problem. This page describes the cause and solution for common {cloudname} error notifications.
 
-____
-*NOTE*: The wording of the notifications shown here may differ from the actual notifications from {cloudname}.
-____
+NOTE: The wording of the notifications shown here may differ from the actual notifications from {cloudname}.
 
 [[this-domain-is-not-registered-with-tiny-cloud-please-see-the-quick-start-guide-or-create-an-account]]
 == "This domain is not registered with Tiny Cloud. Please see the quick start guide or create an account."
@@ -23,7 +20,7 @@ This notification is *only shown* when either:
 
 Such as:
 
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
@@ -32,9 +29,9 @@ Such as:
 
 Update the `+src+` URL to include your (website or application developer's) {cloudname} API Key. Your API key should replace the string `+no-api-key+`. For example, if your API is `+abcd1234+`:
 
-[source,html]
+[source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/{productmajorversion}/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
 To retrieve your API key, or to sign up for an API key, visit: link:{accountsignup}/[{cloudname}].

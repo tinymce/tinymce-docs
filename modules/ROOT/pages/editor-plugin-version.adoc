@@ -20,7 +20,7 @@ This URL specifies the latest and quality assured release of {productname}.
 
 === Selecting specific version numbers
 
-NOTE: All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes.adoc[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
+NOTE: All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: link:release-notes.html[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
 
 [#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels]
 === {productmajorversion}, {productmajorversion}-testing, and {productmajorversion}-dev release channels
@@ -82,7 +82,7 @@ The `+identifier+` of the plugin is used as a query parameter. This table summar
 |xref:advtable.adoc[Advanced Tables] |`+advtable+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions[Versions]
 |xref:casechange.adoc[Case Change] |`+casechange+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions[Versions]
 |xref:checklist.adoc[Checklist] |`+checklist+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions[Versions]
-|xref:introduction_to_tiny_comments.adoc[Comments] |`+comments+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Versions]
+|xref:introduction-to-tiny-comments.adoc[Comments] |`+comments+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Versions]
 |xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] |`+mediaembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions[Versions]
 |xref:export.adoc[Export] |`+export+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions[Versions]
 |xref:formatpainter.adoc[Format Painter] |`+formatpainter+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions[Versions]
@@ -90,7 +90,7 @@ The `+identifier+` of the plugin is used as a query parameter. This table summar
 |xref:mentions.adoc[Mentions] |`+mentions+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions[Versions]
 |xref:pageembed.adoc[Page Embed] |`+pageembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions[Versions]
 |xref:permanentpen.adoc[Permanent Pen] |`+permanentpen+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions[Versions]
-|xref:introduction_to_powerpaste.adoc[PowerPaste] |`+powerpaste+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Versions]
+|xref:introduction-to-powerpaste.adoc[PowerPaste] |`+powerpaste+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Versions]
 |xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] |`+tinymcespellchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions[Versions]
 |xref:tinydrive-introduction.adoc[Tiny Drive] |`+tinydrive+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions[Versions]
 |===

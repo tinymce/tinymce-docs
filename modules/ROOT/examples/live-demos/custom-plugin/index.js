@@ -1,7 +1,7 @@
 /*
   Note: We have included the plugin in the same JavaScript file as the TinyMCE
   instance for display purposes only. Tiny recommends not maintaining the plugin
-  with the TinyMCE instance and using the `external_plugins` option.
+  with the TinyMCE instance and using the 'external_plugins' option.
 */
 tinymce.PluginManager.add('example', function(editor, url) {
   var openDialog = function () {

@@ -246,7 +246,7 @@ tinymce.ScriptLoader.loadScripts(
       });
     }); /* server.host */
 
-    /* Connect using the `connectTo` API */
+    /* Connect using the 'connectTo' API */
     polly.connectTo('fetch');
 
     /************************************************
@@ -461,7 +461,7 @@ tinymce.ScriptLoader.loadScripts(
      * Conversation "delete" function. Deletes an entire conversation.
      * Returns asynchronously whether the conversation was deleted.
      * Failure to delete due to permissions or business rules is indicated
-     * by `{canDelete: false}`, while unexpected errors should be indicated using the
+     * by '{canDelete: false}', while unexpected errors should be indicated using the
      * "fail" callback.
      * @param {TinyCommentsDeleteReq} req
      * @param {done<TinyCommentsDeleteResp>} done
@@ -499,7 +499,7 @@ tinymce.ScriptLoader.loadScripts(
      * All conversations "delete_all" function. Deletes all conversations.
      * Returns asynchronously whether all conversations were deleted.
      * Failure to delete due to permissions or business rules is indicated
-     * by `{canDelete: false}`, while unexpected errors should be indicated using the
+     * by '{canDelete: false}', while unexpected errors should be indicated using the
      * "fail" callback.
      * @param {TinyCommentsDeleteAllReq} _req - no options
      * @param {done<TinyCommentsDeleteAllResp>} done

@@ -1,30 +1,90 @@
+[comment]
+--
+Usage > 
+
+:page-tinymce: true (if set, alter the page header to inject tinymce cdn, you need these top of page to load tinymce)
+
+:default-tab: TinyMCE - (default selection for tab, insert name of tab for example TinyMCE or HTML)
+:demo-type: casechange - (folder for demo to get files from in examples/live-demos/{demo-type})
+:tinymce: tinymce.adoc - (file name for tinymce demo config in Tab in examples/live-demos/{demo-type}/tinymce.adoc)
+
+:html: index.html - (file name for HTML Tab in examples/live-demos/{demo-type}/index.html)
+:js: index.js - (file name for JS Tab in examples/live-demos/{demo-type}/index.js)
+:css: style.css - (file name for CSS Tab config in examples/live-demos/{demo-type}/style.css)
+
+:codepen: true - (if set with any value, creates the codepen tab)
+:codepen-html: index.html - (if set adds HTML from examples/live-demos/{demo-type}/index.html to codepen demo)
+:codepen-js: index.js - (if set adds JS from examples/live-demos/{demo-type}/index.js to codepen demo)
+:codepen-css: index.css - (if set adds CSS from examples/live-demos/{demo-type}/index.css to codepen demo)
+
+include::partial$demos/demo-tab.adoc[] - (include demo tabs partial to the page)
+
+author: Amit <amit.saini@tiny.cloud>
+--
+
 [tabs]
 ====
+
+ifdef::tinymce[]
 TinyMCE::
 +
 --
 :demo-type: {demo-type}
-include::partial$demos/live-demo.adoc[]
+include::example$live-demos/{demo-type}/{tinymce}[]
 --
+endif::tinymce[]
+
+ifdef::html[]
 HTML::
 +
 --
 [source,html]
 ----
-include::example$live-demos/{demo-type}/index.html[]
+include::example$live-demos/{demo-type}/{html}[]
 ----
 --
+endif::html[]
+
+ifdef::js[]
 JS::
 +
 --
 [source,js]
 ----
-include::example$live-demos/{demo-type}/index.js[]
+include::example$live-demos/{demo-type}/{js}[]
 ----
 --
+endif::js[]
+
+ifdef::css[]
+CSS::
++
+--
+[source,]
+----
+include::example$live-demos/{demo-type}/{css}[]
+----
+--
+endif::css[]
+
+
+ifdef::codepen[]
 Edit on Codepen::
 +
 --
-Codepen item goes here
+Edit this example on codepen.io
+
+:demo-type: {demo-type}
+include::example$live-demos/{demo-type}/{codepen}[]
 --
+endif::codepen[]
 ====
+
+// reset all the attributes
+:!tinymce:
+:!html:
+:!css:
+:!js:
+:!codepen:
+:!default-tab:
+:!demo-type:

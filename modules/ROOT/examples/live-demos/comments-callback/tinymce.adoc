@@ -1,0 +1,20 @@
+// Add the requried config files to run demo here
+// the demo is included from examples/live-demo/demo-type-provided-on-page/filename[]
+//
+// - <script>include::example$live-demos/{demo-type}/filename.js[]</script> to run JS for demo
+// - <style>include::example$live-demos/{demo-type}/filename.css[]</style> to run CSS for demo
+// - include::example$live-demos/{demo-type}/filename.html[] to inject raw HTMl to demo
+//
+// the items are included from top to bottom in linear way, just like HTML rnedering
+
+++++
+<script>
+include::example$live-demos/{demo-type}/index.js[]
+</script>
+
+<script>
+include::example$live-demos/{demo-type}/example.js[]
+</script>
+
+include::example$live-demos/{demo-type}/index.html[]
+++++

@@ -25,7 +25,7 @@ function randomString() {
 
 /*
  * Initial content for the editor, to be loaded into the editor using the
- * optional `rtc_initial_content_provider` option. This could pulled from
+ * optional 'rtc_initial_content_provider' option. This could pulled from
  * a database when using the editor in production.
  */
 const initialEditorContent = '<p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128" /></p><h2 style="text-align: center;">Welcome to the TinyMCE Real-time Collaboration demo!</h2><p>This editor is collaborating with the other editor on the page. Try editing the content by adding images, lists, or any other currently supported content, it should appear in the other editor too!</p><p>All network requests made by this demo, fake or real, are logged in the browser console using <a href="https://netflix.github.io/pollyjs" target="_blank" rel="noopener">Polly.js</a> (the browser console is typically accessed using the F12 key).</p><h2>Got questions or need help?</h2><ul><li>Our <a class="mceNonEditable" href="../../">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li></ul><h2>Found a bug?</h2><p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p><h2>Finally,</h2><p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br />All the best from the TinyMCE team.</p>';
@@ -184,7 +184,7 @@ tinymce.ScriptLoader.loadScripts(
       });
     }); /* server.host */
 
-    /* Connect using the `connectTo` API */
+    /* Connect using the 'connectTo' API */
     polly.connectTo('fetch');
 
     /*
@@ -285,7 +285,7 @@ tinymce.ScriptLoader.loadScripts(
           document.getElementById(collaboratorUsernameElem).innerText =
             userDetails.fullName;
           console.log(
-            `Fake user ${userDetails.fullName} (${userDetails.email}) connected with caret number ${caretNumber}`
+            'Fake user '+ userDetails.fullName + " "+ userDetails.email + ' connected with caret number '+ caretNumber
           );
         },
         rtc_client_disconnected: ({ clientId, userDetails }) => {
@@ -294,7 +294,7 @@ tinymce.ScriptLoader.loadScripts(
           document.getElementById(collaboratorUsernameElem).innerText =
             userDetails.fullName;
           console.log(
-            `Fake user ${userDetails.fullName} (${userDetails.email}) disconnected`
+            'Fake user '+ userDetails.fullName + " "+ userDetails.email + ' disconnected'
           );
         },
       });

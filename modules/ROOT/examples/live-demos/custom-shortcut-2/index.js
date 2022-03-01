@@ -5,7 +5,7 @@ tinymce.init({
   toolbar: 'undo redo | bold italic link bullist | insertUsername',
   setup: function (editor) {
     var insertUsername = function () {
-      editor.insertContent(`@username`);
+      editor.insertContent('@username');
     };
 
     editor.addShortcut('meta+alt+U', 'Insert username', function () {

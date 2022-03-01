@@ -8,7 +8,8 @@ _Spell Checker Pro_ adds spell checking as-you-type capabilities to {productname
 * Inline spell checking.
 * A spell checking dialog that steps the user through each error, offering a list of suggested corrections.
 
-liveDemo::spellcheckerpro[]
+:demo-type: spellcheckerpro
+include::example$live-demos/{demo-type}/tinymce.adoc[]
 
 include::partial$misc/spellchecker-languages.adoc[]
 

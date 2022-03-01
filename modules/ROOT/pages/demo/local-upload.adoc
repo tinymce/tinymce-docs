@@ -13,6 +13,9 @@ image::{baseurl}/images/demo_local-upload_01.png[Upload tab]
 So a setup like this displays a friendly UI simplifying image upload either by picking it up or by dropping it in, directly from the desktop:
 
 :demo-type: local-upload
+:tinymce: tinymce.adoc
+:js: index.js
+:html: index.html
 include::partial$demos/demo-tab.adoc[]
 
 All link:{baseurl}/general-configuration-guide/upload-images/#imageuploaderoptions[image uploading options] are supported, including `images_upload_handler` (a way to define custom file uploader) and `images_upload_credentials`.

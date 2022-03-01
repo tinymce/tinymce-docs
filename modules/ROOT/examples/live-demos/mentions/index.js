@@ -87,14 +87,14 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       usersRequest = fakeServer.fetchUsers();
     }
     usersRequest.then(function(users) {
-      /* `query.term` is the text the user typed after the '@' */
+      /* 'query.term' is the text the user typed after the '@' */
       users = users.filter(function (user) {
         return user.name.indexOf(query.term.toLowerCase()) !== -1;
       });
 
       users = users.slice(0, 10);
 
-      /* Where the user object must contain the properties `id` and `name`
+      /* Where the user object must contain the properties 'id' and 'name'
         but you could additionally include anything else you deem useful. */
       success(users);
     });
@@ -129,7 +129,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
   };
 
   var mentions_select = function (mention, success) {
-    /* `mention` is the element we previously created with `mentions_menu_complete`
+    /* 'mention' is the element we previously created with 'mentions_menu_complete'
       in this case we have chosen to store the id as an attribute */
     var id = mention.getAttribute('data-mention-id');
     /* Request more information about the user from the server and cache it locally */

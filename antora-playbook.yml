@@ -1,6 +1,6 @@
 site:
   title: TinyMCE Documentation
-  url: https://tiny.cloud/docs
+  url: /docs
   start_page: tinymce::index.adoc
 content:
   sources:
@@ -11,6 +11,3 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
-asciidoc:
-  extensions:
-    - ./plugins/live-demo.js

@@ -1,4 +1,5 @@
 = Accessibility Checker plugin
+:page-loadtinymce: true
 :description: Checks the contents of the editor for WCAG & Section 508 accessibility problems.
 :keywords: a11y accessibility WCAG
 :title_nav: Accessibility Checker
@@ -12,7 +13,8 @@ The `a11ychecker` premium plugin allows you to check the HTML in the editor for 
 
 == Interactive example
 
-liveDemo::a11ychecker[]
+:demo-type: a11ychecker
+include::example$live-demos/{demo-type}/tinymce.adoc[]
 
 == Basic setup
 

@@ -1,0 +1,38 @@
+////
+Usage >, use htmlFile, cssFile and jsFile in bottom script tag
+respectively to be used in codepen.
+
+const jsFile = String.raw`
+include::example$live-demos/{demo-type}/index.js[] 
+`;
+
+const htmlFile = String.raw`
+include::example$live-demos/{demo-type}/index.html[]
+`;
+
+const cssFile =  String.raw`
+include::example$live-demos/{demo-type}/style.css[]
+`;
+////
+
+Edit this demo on codepen.io
+
+[subs=attributes]
+++++
+include::partial$demos/codepen-config/codepen-form.html[]
+++++
+
+[subs=attributes]
+++++
+<script>
+const jsFile = String.raw`
+include::example$live-demos/{demo-type}/index.js[] 
+`;
+
+const htmlFile = String.raw`
+include::example$live-demos/{demo-type}/index.html[]
+`;
+
+include::partial$demos/codepen-config/codepen-config.js[]
+</script>
+++++

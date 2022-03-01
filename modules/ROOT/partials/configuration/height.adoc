@@ -1,10 +1,9 @@
+[[height]]
 == `+height+`
 
 `+height+` sets the height of the entire editor, including the menu bar, toolbars, and status bar.
 
-____
-*Note*: If a number is provided, {productname} sets the height in pixels. If a string is provided, {productname} assumes the value is valid CSS and sets the editor's height as the string value. This allows for alternate units such as `+%+`, `+em+`, and `+vh+`.
-____
+NOTE: If a number is provided, {productname} sets the height in pixels. If a string is provided, {productname} assumes the value is valid CSS and sets the editor's height as the string value. This allows for alternate units such as `+%+`, `+em+`, and `+vh+`.
 
 Type : `+Number+` or `+String+`
 

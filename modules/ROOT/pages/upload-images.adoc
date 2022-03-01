@@ -105,8 +105,6 @@ include::partial$configuration/images_upload_credentials.adoc[]
 
 include::partial$configuration/images_reuse_filename.adoc[]
 
-include::partial$configuration/images_dataimg_filter.adoc[]
-
 == CORS considerations
 
 Configure http://en.wikipedia.org/wiki/Cross-origin_resource_sharing[Cross-origin resource sharing (CORS)] to upload image data to a separate domain and to comply with JavaScript "same origin" restrictions.

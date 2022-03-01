@@ -92,7 +92,7 @@ export default {
 . Open `+src/App.svelte+` and add:
 * An `+import+` statement for the {productname} component.
 * The `+<Editor />+` as a placeholder for the editor.
-* The link:svelte-ref.html#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
+* The xref:svelte-ref.adoc#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
 +
 For example:
 +
@@ -117,7 +117,7 @@ ifeval::["{productSource}" == "zip"]
 . Open `+src/App.svelte+` and add:
 * An `+import+` statement for the {productname} component.
 * The `+<Editor />+` as a placeholder for the editor.
-* The link:svelte-ref.html#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
+* The xref:svelte-ref.adoc#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
 +
 For example:
 +
@@ -153,5 +153,5 @@ This will start a local development server, accessible at http://localhost:5000.
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 * For information on customizing, see:
-** link:basic-setup.html[{productname} basic setup].
-** link:svelte-ref.html[The {productname} Svelte integration technical reference].
+** xref:basic-setup.adoc[{productname} basic setup].
+** xref:svelte-ref.adoc[The {productname} Svelte integration technical reference].

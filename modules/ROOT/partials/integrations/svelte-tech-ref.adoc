@@ -25,6 +25,7 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 />
 ----
 
+[[apikey]]
 === apiKey
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
@@ -42,9 +43,10 @@ Type : String
 />
 ----
 
+[[channel]]
 === channel
 
-Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: link:editor-plugin-version.html[Specifying the {productname} editor version deployed from Cloud].
+Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: xref:editor-plugin-version.adoc[Specifying the {productname} editor version deployed from Cloud].
 
 Default value : `+"5"+`
 
@@ -59,6 +61,7 @@ Type : String
 />
 ----
 
+[[id]]
 === id
 
 Specified an Id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
@@ -76,6 +79,7 @@ Type : String
 />
 ----
 
+[[inline]]
 === inline
 
 Set the editor to inline mode.
@@ -93,6 +97,7 @@ Type : Boolean
 />
 ----
 
+[[disabled]]
 === disabled
 
 Set the editor to readonly mode.
@@ -110,6 +115,7 @@ Type : Boolean
 />
 ----
 
+[[scriptsrc]]
 === scriptSrc
 
 Use the `+scriptSrc+` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the {productname} npm package or a .zip package of {productname}.
@@ -125,6 +131,7 @@ Type : String
 />
 ----
 
+[[conf]]
 === conf
 
 Specify a set of properties for the `+Tinymce.init+` method to initialize the editor.

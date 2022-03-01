@@ -1,7 +1,6 @@
 = Events Available for TinyMCE
 
 :title_nav: Available Events
-
 :description_short: List of common editor events
 :description: List of common editor events
 :keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
@@ -84,6 +83,7 @@ tinymce.init({
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart]
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event[wheel]
 
+[[editorcoreevents]]
 == Editor core events
 
 The following events are provided by the {productname} editor.
@@ -100,7 +100,7 @@ The following events are provided by the {productname} editor.
 |AfterScrollIntoView |`+{ elm: HTMLElement, alignToTop: boolean }+` |Fired when an element has been scrolled into view.
 |ObjectResized |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) has finished being resized.
 |ObjectResizeStart |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) is about to be resized.
-|SwitchMode |`+{ mode: string }+` |Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:tinymce.editormode.html#register['tinymce.activeEditor.mode.register()'].
+|SwitchMode |`+{ mode: string }+` |Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API xref:apis/tinymce.editormode.adoc#register['tinymce.activeEditor.mode.register()'].
 |ScrollWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event]) |Fired when the window has scrolled.
 |ResizeWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event[resize event]) |Fired when the window is resized.
 |BeforeExecCommand |`+{ command: string, ui?: boolean, value?: any }+` |Fired before a command is executed.
@@ -133,10 +133,10 @@ The following events are provided by the {productname} editor.
 |Undo |`+{ level: UndoLevel }+` |Fired when a change has been undone.
 |BeforeAddUndo |`+{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }+` |Fired before a new undo level is created.
 |AddUndo |`+{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }+` |Fired after a new undo level has been created.
-|Dirty |N/A |Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when link:tinymce.undomanager.html[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the link:tinymce.editor.html#isdirty[`+editor.isDirty+` API].
+|Dirty |N/A |Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when xref:apis/tinymce.undomanager.adoc[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the xref:apis/tinymce.editor.adoc#isDirty[`+editor.isDirty+` API].
 |CloseWindow |`+{ dialog: DialogApi }+` |Fired when a dialog has been closed.
 |OpenWindow |`+{ dialog: DialogApi }+` |Fired when a dialog has been opened.
-|ProgressState |`+{ state: boolean, time?: number }+` |Fired when a change to the editor progress state is scheduled using the {productname} API link:tinymce.editor.html#setprogressstate[`+tinymce.activeEditor.setProgressState()+`].
+|ProgressState |`+{ state: boolean, time?: number }+` |Fired when a change to the editor progress state is scheduled using the {productname} API xref:apis/tinymce.editor.adoc#setProgressState[`+tinymce.activeEditor.setProgressState()+`].
 |AfterProgressState |`+{ state: boolean }+` |Fired after the editor progress state is changed, and the new progress state is in effect.
 |PreProcess |`+{ node: Element, format: string }+` |Fired before serializing a DOM node to HTML content.
 |PostProcess |`+{ node: Element, format: string }+` |Fired after serializing a DOM node to HTML content.

@@ -1,8 +1,6 @@
 This quick start guide walks through creating a https://expressjs.com/en/starter/generator.html[basic Express JS application] containing a {productname} editor.
 
-____
-*NOTE*: {cloudname} users should use the link:cloud-quick-start.html[{cloudname} quick start guide].
-____
+NOTE: {cloudname} users should use the xref:cloud-quick-start.adoc[{cloudname} quick start guide].
 
 == Prerequisites
 
@@ -13,13 +11,13 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 [arabic]
 . On a command line or command prompt, create a basic Express JS application:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 npx express-generator --git --no-view my_{prodnamecode}_app
 ----
 . Change into the newly created directory.
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 cd my_{prodnamecode}_app
 ----
@@ -35,7 +33,7 @@ npm install --save tinymce
 ----
 npm install
 ----
-. Using a text editor, open `+/path/to/my_{prodnamecode}_app/app.js+` and add the following route:
+. Using a text editor, open `/path/to/my_{prodnamecode}_app/app.js` and add the following route:
 +
 [source,js]
 ----
@@ -74,20 +72,20 @@ module.exports = app;
 +
 Linux/macOS/Unix:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 touch public/javascripts/my-{prodnamecode}-config.js
 ----
 +
 Windows:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 > type nul >public/javascripts/my-{prodnamecode}-config.js
 ----
-. Add the {productname} configuration to the newly created javascript file (`+my-{prodnamecode}-config.js+`):
+. Add the {productname} configuration to the newly created javascript file (`my-{prodnamecode}-config.js`):
 +
-[source,js]
+[source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea#my-expressjs-{prodnamecode}-app',
@@ -97,12 +95,12 @@ tinymce.init({
 . Update `+public/index.html+` to include:
 * The document type declaration, `+<!DOCTYPE html>+`.
 * A `+<script>+` element sourcing `+tinymce.min.js+`.
-* A `+<script>+` element sourcing the {productname} configuration (`+my-{prodnamecode}-config.js+`).
-* A `+<textarea>+` element with an `+id+` attribute matching the `+selector+` option in the {productname} configuration (`+my-expressjs-{prodnamecode}-app+`).
+* A `+<script>+` element sourcing the {productname} configuration (`my-{prodnamecode}-config.js`).
+* A `+<textarea>+` element with an `+id+` attribute matching the `+selector+` option in the {productname} configuration (`my-expressjs-{prodnamecode}-app`).
 +
 For example:
 +
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <!DOCTYPE html> <!-- Required for TinyMCE to function as intended -->
 <html>
@@ -125,7 +123,7 @@ For example:
 </html>
 ----
 . Test the application using the Node.js development server.
-* To start the development server, navigate to the `+my_{prodnamecode}_app+` directory and run:
+* To start the development server, navigate to the `my_{prodnamecode}_app` directory and run:
 +
 [source,sh]
 ----
@@ -137,5 +135,5 @@ npm start
 == Next Steps
 
 * For information on customizing:
-** {productname}, see: link:basic-setup.html[Basic setup].
+** {productname}, see: xref:basic-setup.adoc[Basic setup].
 ** The Express JS application, see: https://expressjs.com/[the Express JS Documentation].

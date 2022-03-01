@@ -1,7 +1,6 @@
 = Accessible navigation guide
 
 :title_nav: Accessibility Guide
-
 :description_short: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
 :description: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
 :keywords: accessibility wai aria jaws nvda
@@ -23,7 +22,7 @@ The following *Alt+key* and *Option+key* shortcuts can only be used when the con
 |Navigate left/right through menu/toolbar |Tab and the Arrow Keys |Tab and the Arrow Keys
 |===
 
-For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: link:keyboard-shortcuts.html[Keyboard shortcuts].
+For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: xref:keyboard-shortcuts.adoc[Keyboard shortcuts].
 
 == How to work with the editor
 
@@ -49,4 +48,4 @@ Dialogs such as *Insert/Edit Image* are opened from either a menu item or a tool
 
 == Accessibility options
 
-{productname} has accessibility options that can be set when initializing the editor, see: link:accessibility.html[Accessibility options].
+{productname} has accessibility options that can be set when initializing the editor, see: xref:accessibility.adoc[Accessibility options].

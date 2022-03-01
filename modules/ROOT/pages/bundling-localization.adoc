@@ -1,30 +1,27 @@
 = Bundling the User Interface localizations for TinyMCE
 
 :title_nav: UI localizations
-
 :description_short: Information on bundling User Interface localizations
 :description: Information on bundling User Interface localizations
 
 == Overview
 
-* <<usingcommunitylocalizations, Using community localizations>>
-* <<usingpremiumself-hostedlocalizations, Using premium self-hosted localizations>>
+* xref:usingcommunitylocalizations[Using community localizations]
+* xref:usingpremiumself-hostedlocalizations[Using premium self-hosted localizations]
 
+[[usingcommunitylocalizations]]
 == Using community localizations
 
 :forModuleLoaders: true
-
-
-include::partial$misc/using-community-lang-packs.adoc[]
+include::partial$misc/using-community-lang-packs.adoc[leveloffset=+1]
 :forModuleLoaders: false
 
+[[usingpremiumself-hostedlocalizations]]
 == Using premium self-hosted localizations
 
 :editorcomponent: localization
-
-
-include::partial$module-loading/bundling-ref-example.adoc[]
-:editorcomponent: nil
+include::partial$module-loading/bundling-ref-example.adoc[leveloffset=+1]
+:!editorcomponent:
 
 The following table shows examples of the syntax used to bundle the following example localization file:
 
@@ -68,7 +65,5 @@ require('../tinymce/langs/sv_SE.js');
 |===
 
 :forModuleLoaders: true
-
-
-include::partial$misc/ui-languages.adoc[]
+include::partial$misc/ui-languages.adoc[leveloffset=+1]
 :forModuleLoaders: false

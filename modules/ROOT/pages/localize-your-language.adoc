@@ -1,7 +1,6 @@
 = Localize TinyMCE
 
 :title_nav: Localization
-
 :description: Localize TinyMCE with global language capabilities.
 :keywords: internationalization localization languages
 
@@ -9,9 +8,7 @@
 
 This section demonstrates how to change {productname}'s user interface to the user's language preference. These settings change the language in the toolbar, menu items, buttons, and tooltips.
 
-____
-*Note*: Language settings can be controlled in these configuration options: link:content-localization.html#directionality[directionality], link:ui-localization.html#language[language] and link:ui-localization.html#language_url[language_url]. There is also a link:directionality.html[Directionality plugin] that adds a toolbar button to control `+ltr-rtl+` behavior.
-____
+NOTE: Language settings can be controlled in these configuration options: xref:content-localization.adoc#directionality[directionality], xref:ui-localization.adoc#language[language] and xref:ui-localization.adoc#language_url[language_url]. There is also a xref:directionality.adoc[Directionality plugin] that adds a toolbar button to control `+ltr-rtl+` behavior.
 
 == Step 1
 
@@ -19,21 +16,17 @@ Go to the link:{gettiny}/language-packages/[language download page] to review a 
 
 Click the download link on the far right of the table for a single language. Check the box beside each language and then click the download button at the bottom of the table for multiple languages.
 
-____
-*Important*: The {productname} community translation project provides the language packs on our language download page.
-____
+IMPORTANT: The {productname} community translation project provides the language packs on our language download page.
 
 == Step 2
 
 Unpack the language `+js+` file(s) into the `+path/to/tinymce/langs/+` folder.
 
-____
-*Important*: The language settings will not work unless the language pack is placed in `+langs/+` directory. The link:ui-localization.html#language_url[language_url] configuration option is another method to enable additional language settings.
-____
+IMPORTANT: The language settings will not work unless the language pack is placed in `+langs/+` directory. The xref:ui-localization.adoc#language_url[language_url] configuration option is another method to enable additional language settings.
 
 == Step 3
 
-Set the language option in {productname}'s configuration to the language code in the list on link:ui-localization.html#language[this page].
+Set the language option in {productname}'s configuration to the language code in the list on xref:ui-localization.adoc#language[this page].
 
 == Step 4
 
@@ -43,7 +36,7 @@ Load {productname} to confirm that the language is set correctly.
 
 The following code snippet sets {productname}'s language to Chinese and the text directionality from right to left.
 
-link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}/[downloads page]. Follow the link:/getting-started/install-setup/self-hosted/expressjs/[self-hosted install instructions].
+link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}/[downloads page]. Follow the xref:zip-install.adoc[self-hosted install instructions].
 
 [source,html]
 ----

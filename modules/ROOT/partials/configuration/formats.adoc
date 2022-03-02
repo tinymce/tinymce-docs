@@ -30,7 +30,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 [[built-informats]]
 === Built-in formats
 
-include::partial$configuration/builtinformats.adoc[]
+include::partial$configuration/builtinformats.adoc[leveloffset=+2]
 
 Some built-in formats `+fontsize+`, `+fontname+`, `+forecolor+`, `+hilitecolor+` use a variable in their definition named `+%value+`. This gets replaced with the user selected item such as a `+color+` value. Check the variable substitution section below for details.
 
@@ -139,6 +139,7 @@ tinymce.init({
 
 For each format some additional parameters can be specified:
 
+[[classes]]
 ==== `+classes+`
 
 Space-separated list of classes that are:
@@ -163,6 +164,7 @@ tinymce.init({
 });
 ----
 
+[[styles]]
 ==== `+styles+`
 
 Key/value object with CSS styles to apply to the selected or newly created inline/block element (e.g. `+color+`, `+backgroundColor+`, `+textDecoration+`, etc).
@@ -182,6 +184,7 @@ tinymce.init({
 });
 ----
 
+[[attributes]]
 ==== `+attributes+`
 
 Key/value object with attributes to apply to the selected or newly created inline/block element.
@@ -219,6 +222,7 @@ tinymce.init({
 });
 ----
 
+[[exact]]
 ==== `+exact+`
 
 Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for `+underline+` and `+strikethrough+` formats.
@@ -241,6 +245,7 @@ tinymce.init({
 });
 ----
 
+[[wrapper]]
 ==== `+wrapper+`
 
 States that the format is a container format for block elements. For example, a `+div+` wrapper or `+blockquote+`.
@@ -262,6 +267,7 @@ tinymce.init({
 });
 ----
 
+[[remove]]
 ==== `+remove+`
 
 Specifies what the remove behavior of the element should be when the format is removed.
@@ -298,6 +304,7 @@ tinymce.init({
 });
 ----
 
+[[block_expand]]
 ==== `+block_expand+`
 
 This option controls if the selection should expand upwards to the closest matching block element. This can be useful when configuring `+removeformat+` to remove block elements. So if the selection start is at the beginning of a matching block, then that matching block will be included as well. If the end of the selection is at the end of a matching block element then that parent element will be included as well.
@@ -336,6 +343,7 @@ tinymce.init({
 });
 ----
 
+[[deep]]
 ==== `+deep+`
 
 Enables control for removing the child elements of the matching format. This is set to `+false+` by default on selector formats. As a result, when a class is removed from a selected table class, disabling `+deep+` retains the class in the child elements within the other nested tables.
@@ -357,6 +365,7 @@ tinymce.init({
 });
 ----
 
+[[merge_siblings]]
 ==== `+merge_siblings+`
 
 When the `+merge_siblings+` parameter is set to `+false+`, two or more similar inline elements will not automatically merge.

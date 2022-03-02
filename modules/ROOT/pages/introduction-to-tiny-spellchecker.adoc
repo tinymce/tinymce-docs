@@ -12,7 +12,7 @@
 
 include::partial$misc/admon_premium_plugin.adoc[]
 
-*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to link:tinymcespellchecker.html#spellchecker_language[this] section.
+*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to xref:spellchecker_language[this] section.
 
 == Interactive example
 
@@ -52,7 +52,7 @@ To enable the {productname} Enterprise Spellchecking plugin:
 . If configured, disable the `+spellchecker+` plugin provided with {productname}, by removing it from the `+plugins+` list.
 . Add `+tinymcespellchecker+` to the `+plugins+` list.
 
-For information on installing the server-side component for spell checking, please see the link:premium-server-side-guide.html[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the xref:introduction-to-premium-selfhosted-services.adoc[server-side component installation guide].
 
 === Example: TinyMCE Self-hosted Installation
 

@@ -308,10 +308,8 @@ WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html[
 The following configuration options affect the behavior of the {pluginname} plugin.
 
 :includedSection: a11yPlugin
-
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
-
-:includedSection: false
+:!includedSection:
 
 include::partial$configuration/a11ychecker_allow_decorative_images.adoc[]
 

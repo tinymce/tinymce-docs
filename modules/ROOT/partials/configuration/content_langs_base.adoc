@@ -1,6 +1,6 @@
 This option sets the languages displayed in the `+language+` toolbar button and the `+language+` menu item. The option accepts an array of language specs. Each language spec is a JavaScript object defined using the following properties.
 
-[cols=",,,",options="header",]
+[cols="1,1,1,4",options="header",]
 |===
 |Name |Type |Requirement |Description
 |`+title+` |String |required |The name shown for this language in the UI.

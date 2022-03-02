@@ -37,7 +37,8 @@ If you wish to align the image, you can also use the text align buttons while im
 
 :includedSection: imagePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
-:includedSection: false
+:!includedSection:
+
 include::partial$configuration/file_picker_callback.adoc[leveloffset=+1]
 
 include::partial$configuration/file_picker_types.adoc[leveloffset=+1]
@@ -69,10 +70,6 @@ include::partial$configuration/images_upload_credentials.adoc[leveloffset=+1]
 include::partial$configuration/images_upload_handler.adoc[leveloffset=+1]
 
 include::partial$configuration/images_upload_url.adoc[leveloffset=+1]
-
-include::partial$configuration/object_resizing.adoc[leveloffset=+1]
-
-include::partial$configuration/resize_img_proportional.adoc[leveloffset=+1]
 
 include::partial$configuration/object_resizing.adoc[leveloffset=+1]
 

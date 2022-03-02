@@ -114,7 +114,7 @@ A *bar* is a layout component that creates a single row of items in the dialog b
 [[collection]]
 === collection
 
-A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:charmap.html[`+charmap+`] and link:emoticons.html[`+emoticons+`] plugins.
+A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the xref:charmap.adoc[`+charmap+`] and xref:emoticons.adoc[`+emoticons+`] plugins.
 
 [source,js]
 ----
@@ -125,7 +125,7 @@ A *collection* is a layout component that creates a panel containing a collectio
 }
 ----
 
-To populate the collection with collection items, specify an array of items in the dialog's link:dialog-apis.html#dialogdataandstate[`+initialData+`] property. To update the items in the collection, use the link:dialog-components.html#dialoginstanceapimethods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's xref:dialog-apis.adoc#dialogdataandstate[`+initialData+`] property. To update the items in the collection, use the xref:dialog-components.adoc#dialoginstanceapimethods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
 
 [source,js]
 ----
@@ -209,9 +209,9 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 [[button]]
 === button
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:customize-ui.html#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen xref:customize-ui.adoc#skins[skin].
 
-NOTE: Panel buttons are different to link:dialog-footer-buttons.html[dialog footer buttons].
+NOTE: Panel buttons are different to xref:dialog-footer-buttons.adoc[dialog footer buttons].
 
 *Events:* Interacting with a *button* component will fire the `+onAction+` function in the dialog's configuration, and pass it the button's `+name+` in the `+details+` object. This allows developers to create a click handler for each button.
 

@@ -6,7 +6,7 @@
 :plugincode: importcss
 :altplugincode: nil
 
-The `+importcss+` plugin adds the ability to automatically import CSS classes from the CSS file specified in the link:add-css-options.html#content_css[`+content_css+`] configuration setting.
+The `+importcss+` plugin adds the ability to automatically import CSS classes from the CSS file specified in the xref:add-css-options.adoc#content_css[`+content_css+`] configuration setting.
 
 By default selectors like `+".my-class"+`, `+".my-class1.my-class2"+` and `+"p.my-class"+` get imported as format rules.
 

@@ -33,7 +33,7 @@ The *PowerPaste* plugin activates automatically when users paste content into th
 
 To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The {productname} *PowerPaste* plugin will convert the HTML on the clipboard into plain text.
 
-If you configure *PowerPaste* to allow local images (see the link:powerpaste_options.html#powerpaste_allow_local_images[`+powerpaste_allow_local_images+`] setting below), then images copied from Microsoft Word and other sources will appear in {productname} as Base64 encoded images. You can have {productname} automatically upload Base64 encoded images for reverting back to a standard image as described in the link:handle-async-image-uploads.html[image upload documentation].
+If you configure *PowerPaste* to allow local images (see the xref:powerpaste_options.adoc#powerpaste_allow_local_images[`+powerpaste_allow_local_images+`] setting below), then images copied from Microsoft Word and other sources will appear in {productname} as Base64 encoded images. You can have {productname} automatically upload Base64 encoded images for reverting back to a standard image as described in the link:handle-async-image-uploads.html[image upload documentation].
 
 ____
 *Note:* PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word and Microsoft Excel content. When doing this, *PowerPaste* extracts Base64 encoded images from the clipboard. Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.

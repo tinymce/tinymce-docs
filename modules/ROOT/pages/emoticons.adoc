@@ -27,7 +27,7 @@ tinymce.init({
 
 == Browser emoji support
 
-By default, the emoticon plugin inserts Unicode character codes, such as `+\ud83d\ude03+` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render. To ensure emoji render consistently across browsers and operating systems, {companyname} recommends adding an emoji-compatible web font to the default font-family using link:add-css-options.html#content_css[`+content_css+`].
+By default, the emoticon plugin inserts Unicode character codes, such as `+\ud83d\ude03+` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render. To ensure emoji render consistently across browsers and operating systems, {companyname} recommends adding an emoji-compatible web font to the default font-family using xref:add-css-options.adoc#content_css[`+content_css+`].
 
 liveDemo::emoticons[ ]
 

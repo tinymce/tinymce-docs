@@ -34,7 +34,7 @@ image:interactive.png[Insert/Edit images]
 
 The body of a dialog must be either a xref:dialog-components.adoc#panel[`+panel+`] (a single panel) or a xref:dialog-components.adoc#tabpanel[`+tabpanel+`] (a collection of panels). Each panel can contain xref:dialog-components.adoc#panelcomponents[panel components] such as inputs, buttons and text.
 
-NOTE: {productname} also supports link:urldialog.html[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
+NOTE: {productname} also supports xref:urldialog.adoc[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 
 [[panel]]
 === Panel

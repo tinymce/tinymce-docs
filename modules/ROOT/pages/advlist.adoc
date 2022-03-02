@@ -24,9 +24,9 @@ tinymce.init({
 
 These settings affect the execution of the `+advlist+` plugin by providing more granular control of list styles.
 
-include::partial$configuration/advlist_bullet_styles.adoc[]
+include::partial$configuration/advlist_bullet_styles.adoc[leveloffset=+1]
 
-include::partial$configuration/advlist_number_styles.adoc[]
+include::partial$configuration/advlist_number_styles.adoc[leveloffset=+1]
 
 == Commands
 

@@ -53,13 +53,13 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 }
 ----
 
-include::partial$configuration/emoticons_append.adoc[]
+include::partial$configuration/emoticons_append.adoc[leveloffset=+1]
 
-include::partial$configuration/emoticons_database.adoc[]
+include::partial$configuration/emoticons_database.adoc[leveloffset=+1]
 
-include::partial$configuration/emoticons_database_url.adoc[]
+include::partial$configuration/emoticons_database_url.adoc[leveloffset=+1]
 
-include::partial$configuration/emoticons_images_url.adoc[]
+include::partial$configuration/emoticons_images_url.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

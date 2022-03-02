@@ -34,15 +34,15 @@ tinymce.init({
 
 These settings affect the execution of the `+autosave+` plugin. The settings described here will affect the interval, duration and behavior of locally stored drafts of the current editor instance.
 
-include::partial$configuration/autosave_ask_before_unload.adoc[]
+include::partial$configuration/autosave_ask_before_unload.adoc[leveloffset=+1]
 
-include::partial$configuration/autosave_interval.adoc[]
+include::partial$configuration/autosave_interval.adoc[leveloffset=+1]
 
-include::partial$configuration/autosave_prefix.adoc[]
+include::partial$configuration/autosave_prefix.adoc[leveloffset=+1]
 
-include::partial$configuration/autosave_restore_when_empty.adoc[]
+include::partial$configuration/autosave_restore_when_empty.adoc[leveloffset=+1]
 
-include::partial$configuration/autosave_retention.adoc[]
+include::partial$configuration/autosave_retention.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

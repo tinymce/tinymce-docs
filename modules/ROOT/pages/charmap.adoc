@@ -44,9 +44,9 @@ Internally, character map is defined by the array of arrays, where each sub-arra
 ];
 ----
 
-include::partial$configuration/charmap.adoc[]
+include::partial$configuration/charmap.adoc[leveloffset=+1]
 
-include::partial$configuration/charmap_append.adoc[]
+include::partial$configuration/charmap_append.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

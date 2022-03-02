@@ -89,9 +89,9 @@ tinymce.init({
 });
 ----
 
-For a list of the icon identifiers, see: link:editor-icon-identifiers.html[Available icons].
+For a list of the icon identifiers, see: xref:editor-icon-identifiers.adoc[Available icons].
 
-{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:creating-a-skin.html[custom skin] is required.
+{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a xref:creating-a-skin.adoc[custom skin] is required.
 
 NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 

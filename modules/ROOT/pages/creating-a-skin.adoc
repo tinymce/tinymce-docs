@@ -1,7 +1,6 @@
 = Create a skin for TinyMCE
 
 :title_nav: Create a skin
-
 :description_short: Introducing skin creation.
 :description: Introducing skin creation, less and icon modification.
 :keywords: create creator skin icon
@@ -22,9 +21,7 @@ This guide assumes:
 
 The CSS that goes with a theme is called a skin. The default skin for {productname} {productmajorversion} is named Oxide and is written in http://lesscss.org[Less], a popular CSS preprocessor. With Oxide we introduced a concept we call the *Style API*. This API consists of around 300 variables which you use to modify the appearance of {productname}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
-____
-*Important*: We do not recommend modifying or overriding CSS rules directly.
-____
+IMPORTANT: We do not recommend modifying or overriding CSS rules directly.
 
 To set up the skin development environment, begin with the following steps:
 
@@ -72,9 +69,7 @@ The folder `+modules/oxide/src/less/theme/+` contains the Less files. At the top
 
 The general workflow is that you look inside the less files within the theme folder and copy the variables you like to change into your skin's `+skin.less+` file.
 
-____
-Note: The skin *only* changes the visual presentation of the UI and *not* the placement of elements. Placement of elements is done by the {productname} UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
-____
+NOTE: The skin *only* changes the visual presentation of the UI and *not* the placement of elements. Placement of elements is done by the {productname} UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 
 === Creating a skin
 
@@ -87,7 +82,8 @@ ____
 
 Your skin.less file should now look like this:
 
-....
+[source,less]
+----
 /**
  * Copyright (c) Tiny Technologies, Inc. All rights reserved.
  * Licensed under the LGPL or a commercial license.
@@ -102,7 +98,7 @@ Your skin.less file should now look like this:
 //
 
 @background-color: red;
-....
+----
 
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
@@ -110,16 +106,14 @@ image:SDKforsilverCustomExample.png[{productname} skin SDK for Silver theme]
 
 This is how you skin {productname}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
-____
-*Tip*: You can change the {productname} config in `+modules/oxide/src/demo/index.html+` to suit your particular use case.
-____
+TIP: You can change the {productname} config in `+modules/oxide/src/demo/index.html+` to suit your particular use case.
 
 == Creating a content CSS file
 
 To update the appearance of the content within the editor, such as headings, quotes, lists, etc... you create a content css. These are located in `+modules/oxide/src/less/skin/content/+`
 
 [arabic]
-. Create a folder in `+modules/oxide/src/less/skins/content/+` and create a `+content.less+` file in it. Alternatively, you can duplicate any of the existing content css.
+. Create a folder in `+modules/oxide/src/less/skins/content/+` and create a `+content.less+` file in it. Alternatively, you can duplicate any of the existing content css.
 . Start the development server using the terminal command yarn oxide-start. If you already have the server running, you need to restart it to make it recognize your new skin using ctrl-c and then start it again.
 . Add the relevant element selectors for the desired use case such as `+h1+` to `+h6+`, `+a+`, `+blockquote+`, `+code+`, `+table+`, etc...
 
@@ -127,10 +121,10 @@ To update the appearance of the content within the editor, such as headings, quo
 
 [arabic]
 . Copy the skin and/or content CSS from `+modules/oxide/build/skins/+` to the corresponding folders in your production {productname} folder.
-. Update the {productname} init function with the link:editor-skin.html#skin[skin] option and/or the link:add-css-options.html#content_css[content_css] option.
+. Update the {productname} init function with the xref:editor-skin.adoc#skin[skin] option and/or the xref:add-css-options.adoc#content_css[content_css] option.
 
-For more information on how to specify the location of the skin file, see link:editor-skin.html#skin_url[this] section.
+For more information on how to specify the location of the skin file, see xref:editor-skin.adoc#skin_url[this] section.
 
 == Modifying the icons
 
-For information on adding custom icons, see: link:creating-an-icon-pack.html[Create an icon pack for {productname}].
+For information on adding custom icons, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].

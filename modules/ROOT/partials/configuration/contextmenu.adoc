@@ -32,6 +32,6 @@ tinymce.init({
 });
 ----
 
-ifeval::["{docname}" != "Context menus"]
+ifeval::["{docname}" != "contextmenu"]
 For information on configuring the `+contextmenu+` option and creating custom context menu items xref:contextmenu.adoc[context menu examples].
 endif::[]

@@ -9,8 +9,7 @@ ____
 *Note:* There are no settings available when using the 'clientpdf' format.
 ____
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.plugins.export.convert('clientpdf', {});

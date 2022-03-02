@@ -88,7 +88,7 @@ tinymce.init({
 
 The following events are provided by the {productname} editor.
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |activate |`+{ relatedTarget: Editor }+` |Fired when the editor is activated.
@@ -106,8 +106,8 @@ The following events are provided by the {productname} editor.
 |BeforeExecCommand |`+{ command: string, ui?: boolean, value?: any }+` |Fired before a command is executed.
 |ExecCommand |`+{ command: string, ui?: boolean, value?: any }+` |Fired after a command has executed.
 |NodeChange |`+{ element: Element, parents: Node[], selectionChange?: boolean }+` |Fired when the selected node inside the editor content has changed.
-|FormatApply |`\{ format: string; vars?: FormatVars; node?: Node |RangeLikeObject }`
-|FormatRemove |`\{ format: string; vars?: FormatVars; node?: Node |RangeLikeObject }`
+|FormatApply |`+{ format: string; vars?: FormatVars; node?: Node \| RangeLikeObject }+` |Fired after a format is applied.
+|FormatRemove |`+{ format: string; vars?: FormatVars; node?: Node \| RangeLikeObject }+` |Fired after a format is removed.
 |ShowCaret |`+{ target: Node, direction: number, before: boolean }+` |Fired before a fake caret element is shown in the editor. The fake caret will appear where the cursor is normally not shown, such as at the start or end of tables and non-editable content.
 |SelectionChange |N/A |Fired when the content selection in the editor changes.
 |ObjectSelected |`+{ target: Node, targetClone?: Node }+` |Fired when an object (such as an image) is selected in the editor and the selection elements have rendered.
@@ -155,44 +155,46 @@ The following events are provided by the {productname} editor.
 |ResizeContent |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event[resize event]) |(iframe mode only) Fired when the iframe window is resized.
 |Load |N/A |(iframe mode only) Fired when the editor iframe content has finished loading.
 |ResolveName |`+{ name: string, target: Element }+` |(iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.
-|BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: link:creating-custom-notifications.html[Create custom notifications].
-|OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: link:creating-custom-notifications.html[Create custom notifications].
+|BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
+|OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
 |===
 
 == Plugin events
 
 The following plugins provide events.
 
-* <<advancedtablesevents, Advanced Tables events>>
-* <<autosaveevents, Autosave events>>
-* <<charactermapevents, Character Map events>>
-* <<commentsevents, Comments events>>
-* <<exportevents, Export events>>
-* <<formatpainterevents, Format Painter events>>
-* <<fullscreenevents, Fullscreen events>>
-* <<importcssevents, Import CSS events>>
-* <<linkcheckerevents, Link checker events>>
-* <<listsevents, Lists events>>
-* <<mediaembedevents, Media Embed events>>
-* <<pasteevents, Paste events>>
-* <<permanentpenevents, Permanent Pen events>>
-* <<powerpasteevents, PowerPaste events>>
-* <<spellcheckerevents, Spell Checker events>>
-* <<spellcheckerproevents, Spell Checker Pro events>>
-* <<tableevents, Table events>>
-* <<visualblocksevents, Visual Blocks events>>
-* <<visualcharactersevents, Visual Characters events>>
-* <<wordcountevents, Word Count events>>
+* xref:advancedtablesevents[Advanced Tables events]
+* xref:autosaveevents[Autosave events]
+* xref:charactermapevents[Character Map events]
+* xref:commentsevents[Comments events]
+* xref:exportevents[Export events]
+* xref:formatpainterevents[Format Painter events]
+* xref:fullscreenevents[Fullscreen events]
+* xref:importcssevents[Import CSS events]
+* xref:linkcheckerevents[Link checker events]
+* xref:listsevents[Lists events]
+* xref:mediaembedevents[Media Embed events]
+* xref:pasteevents[Paste events]
+* xref:permanentpenevents[Permanent Pen events]
+* xref:powerpasteevents[PowerPaste events]
+* xref:spellcheckerevents[Spell Checker events]
+* xref:spellcheckerproevents[Spell Checker Pro events]
+* xref:tableevents[Table events]
+* xref:visualblocksevents[Visual Blocks events]
+* xref:visualcharactersevents[Visual Characters events]
+* xref:wordcountevents[Word Count events]
 
+[[advancedtablesevents]]
 === Advanced Tables events
 
-For events applicable to the Advanced Tables plugin, see: <<tableevents, Table events>>.
+For events applicable to the Advanced Tables plugin, see: xref:tableevents[Table events].
 
+[[autosaveevents]]
 === Autosave events
 
 The following events are provided by the link:autosave.html[Autosave plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |RestoreDraft |N/A |Fired when a draft has been restored.
@@ -200,95 +202,105 @@ The following events are provided by the link:autosave.html[Autosave plugin].
 |RemoveDraft |N/A |Fired when a draft has been removed from memory.
 |===
 
+[[charactermapevents]]
 === Character Map events
 
 The following event is provided by the link:charmap.html[Character Map plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |InsertCustomChar |`+{ chr: string }+` |Fired before a special character is inserted into the editor.
 |===
 
+[[commentsevents]]
 === Comments events
 
-The following event is provided by the link:comments.html[Comments plugin].
+The following event is provided by the xref:introduction-to-tiny-comments.adoc[Comments plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |mce-tinycomments-update |N/A |Fired when the comments sidebar is opened or closed.
 |===
 
+[[exportevents]]
 === Export events
 
 include::partial$events/export-events.adoc[]
 
+[[formatpainterevents]]
 === Format Painter events
 
 The following event is provided by the link:formatpainter.html[Format Painter plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |FormatPainterToggle |`+{ state: boolean }+` |Fired when the format painter state changes.
 |===
 
+[[fullscreenevents]]
 === Fullscreen events
 
 The following event is provided by the link:fullscreen.html[Fullscreen plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |FullscreenStateChanged |`+{ state: boolean }+` |Fired when the fullscreen state changes.
 |===
 
+[[importcssevents]]
 === Import CSS events
 
 The following event is provided by the link:importcss.html[Import CSS plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |AddStyleModifications |`+{ items: StyleItem[], replace: boolean }+` |Fired during editor initialization when the style modifications are parsed from the CSS.
 |===
 
+[[linkcheckerevents]]
 === Link checker events
 
 The following event is provided by the link:linkchecker.html[Link Checker plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |LinkCheckerError |`+{ message: string }+` |Fired when a link checker error occurs, such as the Link Checker service can't be reached.
 |===
 
+[[listsevents]]
 === Lists events
 
 The following event is provided by the link:lists.html[Lists plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |ListMutation |`+{ action: string, element: Element }+` |Fired when a list is toggled on/off.
 |===
 
+[[mediaembedevents]]
 === Media Embed events
 
-The following event is provided by the link:mediaembed.html[Media Embed plugin].
+The following event is provided by the xref:introduction-to-mediaembed.adoc[Media Embed plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |MediaEmbedError |`+{ message: string }+` |Fired when a media embed error occurs, such as the Media Embed service can't be reached.
 |===
 
+[[pasteevents]]
 === Paste events
 
 The following events are provided by the link:paste.html[Paste plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |PastePreProcess |`+{ content: string, wordContent: boolean }+` |Fired before the content is parsed from the clipboard.
@@ -296,22 +308,24 @@ The following events are provided by the link:paste.html[Paste plugin].
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
+[[permanentpenevents]]
 === Permanent Pen events
 
 The following events are provided by the link:permanentpen.html[Permanent Pen plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |PermanentPenToggle |`+{ state: boolean }+` |Fired when the permanent pen state changes.
 |PermanentPenProperties |`+{ fontname: string, fontcolor: string, fontsize: string, hilitecolor: string, bold: boolean, italic: boolean, underline: boolean, strikethrough: boolean }+` |Fired when the permanent pen properties are changed.
 |===
 
+[[powerpasteevents]]
 === PowerPaste events
 
-The following events are provided by the link:powerpaste.html[PowerPaste plugin].
+The following events are provided by the xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |PastePreProcess |`+{ content: string, mode: string, source: string }+` |Fired before the content is parsed from the clipboard.
@@ -319,62 +333,69 @@ The following events are provided by the link:powerpaste.html[PowerPaste plugin]
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
+[[spellcheckerevents]]
 === Spell Checker events
 
 The following events are provided by the link:spellchecker.html[Spell Checker plugin].
 
 include::partial$DEPRECATED/spellchecker.adoc[]
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |SpellcheckStart |N/A |Fired when spellchecking is enabled.
 |SpellcheckEnd |N/A |Fired when spellchecking is disabled.
 |===
 
+[[spellcheckerproevents]]
 === Spell Checker Pro events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
 
+[[tableevents]]
 === Table events
 
 include::partial$events/table-events.adoc[]
 
+[[visualblocksevents]]
 === Visual Blocks events
 
 The following event is provided by the link:visualblocks.html[Visual Blocks plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |VisualBlocks |`+{ state: boolean }+` |Fired when the Visual Blocks state changes.
 |===
 
+[[visualcharactersevents]]
 === Visual Characters events
 
 The following event is provided by the link:visualchars.html[Visual Characters plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |VisualChars |`+{ state: boolean }+` |Fired when the Visual Characters state changes.
 |===
 
+[[wordcountevents]]
 === Word Count events
 
 The following event is provided by the link:wordcount.html[Word Count plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |WordCountUpdate |`+{ wordCount: { words: number, characters: number, charactersWithoutSpaces: number } }+` |Fired when the editor word count is updated.
 |===
 
+[[editormanagerevents]]
 == Editor Manager events
 
-The following events are used for editor management. These events are handled using `+tinymce.on+`, rather than `+editor.on+` or `+editor.fire+`, as shown in <<exampleshandlingeditormanagerevents, Examples: Handling Editor Manager events>>.
+The following events are used for editor management. These events are handled using `+tinymce.on+`, rather than `+editor.on+` or `+editor.fire+`, as shown in xref:exampleshandlingeditormanagerevents[Examples: Handling Editor Manager events].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |AddEditor |`+{ editor: Editor}+` |Fired when a new editor is created.
@@ -382,10 +403,10 @@ The following events are used for editor management. These events are handled us
 |BeforeUnload |N/A |Fired before the browser window is closed (same as native https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event[`+beforeunload+` event]).
 |===
 
+[[exampleshandlingeditormanagerevents]]
 === Examples: Handling Editor Manager events
 
-*AddEditor*
-
+.AddEditor
 [source,js]
 ----
 tinymce.on('AddEditor', function(e) {
@@ -393,8 +414,7 @@ tinymce.on('AddEditor', function(e) {
 });
 ----
 
-*RemoveEditor*
-
+.RemoveEditor
 [source,js]
 ----
 tinymce.on('RemoveEditor', function(e) {

@@ -88,17 +88,17 @@ Optional:
 * xref:images_upload_credentials[`+images_upload_credentials+`]
 * xref:images_reuse_filename[`+images_reuse_filename+`]
 
-include::partial$configuration/images_upload_url.adoc[]
+include::partial$configuration/images_upload_url.adoc[leveloffset=+1]
 
-include::partial$configuration/images_upload_handler.adoc[]
+include::partial$configuration/images_upload_handler.adoc[leveloffset=+1]
 
-include::partial$configuration/images_upload_base_path.adoc[]
+include::partial$configuration/images_upload_base_path.adoc[leveloffset=+1]
 
-include::partial$configuration/images_upload_credentials.adoc[]
+include::partial$configuration/images_upload_credentials.adoc[leveloffset=+1]
 
-include::partial$configuration/images_reuse_filename.adoc[]
+include::partial$configuration/images_reuse_filename.adoc[leveloffset=+1]
 
-include::partial$configuration/images_dataimg_filter.adoc[]
+include::partial$configuration/images_dataimg_filter.adoc[leveloffset=+1]
 
 == CORS considerations
 

@@ -73,7 +73,7 @@ tinymce.init({
 });
 ----
 
-A registered format can also be used by name with the built-in link:content-formatting.html#usingcustomformats[Using custom formats] for an example.
+A registered format can also be used by name with the built-in xref:usingcustomformats[Using custom formats] for an example.
 
 ==== `+block+`
 
@@ -423,6 +423,7 @@ tinymce.init({
 });
 ----
 
+[[usingcustomformats]]
 === Using custom formats
 
 Custom formats can be handled through the {productname} API. Here is a basic example of usage for the custom format defined above.

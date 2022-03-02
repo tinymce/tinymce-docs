@@ -2,10 +2,9 @@
 
 :description: Configuration options for the Spelling premium server-side component.
 
-
-
 The following settings for the Spelling premium server-side component are optional. These settings should be added to the `+application.conf+` file described in link:configure-required-services.html[Required configuration for the server-side components].
 
+[[spelling]]
 == `+spelling+` (optional)
 
 The Spelling service has these configurable settings:
@@ -14,16 +13,18 @@ The Spelling service has these configurable settings:
 * `+custom-dictionaries-path+`
 * `+dynamic-custom-dictionaries+`
 
+[[hunspell-dictionaries-path]]
 === `+hunspell-dictionaries-path+` (optional)
 
 include::partial$misc/hunspell-dictionaries-path.adoc[]
 
 === `+custom-dictionaries-path+` (optional)
 
-For information on creating custom dictionaries, see: link:custom-dictionaries-for-tiny-spellchecker.html#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
+For information on creating custom dictionaries, see: xref:custom-dictionaries-for-tiny-spellchecker.adoc#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
 
 include::partial$misc/custom-dictionaries-path.adoc[]
 
+[[dynamic-custom-dictionaries]]
 === `+dynamic-custom-dictionaries+` (optional)
 
 include::partial$misc/dynamic-custom-dictionaries.adoc[]

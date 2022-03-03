@@ -3,8 +3,8 @@ ifeval::["{plugincode}" == "export"]
 [[export_image_proxy]]
 endif::[]
 ifeval::["{plugincode}" != "export"]
-:proxy_setting_name: imagetools_proxy
-[[imagetools_proxy]]
+:proxy_setting_name: editimage_proxy
+[[editimage_proxy]]
 endif::[]
 
 == `{proxy_setting_name}`

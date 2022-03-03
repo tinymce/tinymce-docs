@@ -1,0 +1,71 @@
+= Edit Image
+
+:title_nav: Edit Image
+:description: Image editing features for TinyMCE.
+:keywords: edit image rotate rotateleft rotateright flip flipv fliph editimage Edit Image options
+:pluginname: Edit Image
+:plugincode: editimage
+:altplugincode: nil
+
+Edit Image (`+editimage+`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+editimage_cors_hosts+` or `+editimage_proxy+` (see below).
+
+== Interactive example
+
+liveDemo::edit-image[ ]
+
+include::partial$misc/admon_svg_not_supported.adoc[]
+
+== Cloud Installation
+
+The Edit Image plugin is provided with all subscriptions to xref:editor-and-features.adoc[{cloudname}], including an automatically configured image proxy. Simply add `+image+` to the `+toolbar+` list and `+image editimage+` to the `+plugins+` list.
+
+=== Basic setup using Tiny Cloud
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image editimage'
+});
+----
+
+== Self-hosted Installation
+
+To enable the {productname} Edit Image plugin:
+
+. Add 'image' to the 'toolbar' list and 'image editimage' to the 'plugins' list
+. Enable `+editimage_cors_hosts+` and `+editimage_proxy+` options as needed
+
+=== Basic self-hosted setup
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image editimage',
+  editimage_cors_hosts: ['mydomain.com', 'otherdomain.com'],
+  editimage_proxy: 'proxy.php'
+});
+----
+
+== Options
+
+include::partial$configuration/image_cors_hosts.adoc[]
+
+include::partial$configuration/editimage_credentials_hosts.adoc[]
+
+include::partial$configuration/editimage_fetch_image.adoc[]
+
+include::partial$configuration/image_proxy.adoc[]
+
+include::partial$configuration/editimage_toolbar.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+== Commands
+
+The Edit Image plugin provides the following {productname} commands.
+
+include::partial$commands/editimage-cmds.adoc[]

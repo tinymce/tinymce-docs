@@ -1,0 +1,17 @@
+== `+editimage_upload_timeout+`
+
+Placeholder
+
+Type: `+Option+` <--- placeholder
+
+=== Example: Using `+editimage_upload_timeout+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image editimage',
+  editimage_upload_timeout: // TODO TODO placeholder//
+});
+----

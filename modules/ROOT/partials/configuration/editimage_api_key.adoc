@@ -1,0 +1,17 @@
+== `+editimage_api_key+`
+
+Placeholder
+
+Type: `+Option+` <--- placeholder
+
+=== Example: Using `+editimage_api_key+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image editimage',
+  editimage_api_key: // TODO TODO placeholder//
+});
+----

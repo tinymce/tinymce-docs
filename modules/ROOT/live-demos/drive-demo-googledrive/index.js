@@ -1,9 +1,9 @@
 tinymce.init({
   selector: 'textarea#drive-demo',
-  plugins: 'image media link tinydrive code imagetools',
+  plugins: 'image media link tinydrive code editimage',
   api_key: 'fake-key',
   height: 600,
-  imagetools_cors_hosts: ['picsum.photos'],
+  editimage_cors_hosts: ['picsum.photos'],
   tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
   tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
   tinydrive_token_provider: function (success, failure) {

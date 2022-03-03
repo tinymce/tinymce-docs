@@ -181,7 +181,7 @@ Commands are available for the following plugins:
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
-* xref:imagetools[Image Tools]
+* xref:editimage[Edit Image]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
@@ -321,12 +321,12 @@ The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
 
-[[imagetools]]
-==== Image Tools
+[[editimage]]
+==== Edit Image
 
-The following commands require the xref:imagetools.adoc[Image Tools (`+imagetools+`)] plugin.
+The following commands require the xref:editimage-old.adoc[Edit Image (`+editimage+`)] plugin.
 
-include::partial$commands/imagetools-cmds.adoc[leveloffset=+3]
+include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
 
 [[insertdatetime]]
 ==== Insert Date/Time

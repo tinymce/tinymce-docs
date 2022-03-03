@@ -32,7 +32,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:fullscreenfullscreen[Full Screen (fullscreen)]
 ** xref:helphelp[Help (help)]
 ** xref:imageimage[Image (image)]
-** xref:imagetoolsimagetools[Image Tools (imagetools)]
+** xref:editimageeditimage[Edit Image (editimage)]
 ** xref:importcssimportcss[Import CSS (importcss)]
 ** xref:insertdatetimeinsertdatetime[Insert Date/Time (insertdatetime)]
 ** xref:linklink[Link (link)]
@@ -189,6 +189,11 @@ include::partial$plugin-files/plugin-file-list-codesample.adoc[]
 
 include::partial$plugin-files/plugin-file-list-directionality.adoc[]
 
+[[editimageeditimage]]
+=== Edit Image (`+editimage+`)
+
+include::partial$plugin-files/plugin-file-list-editimage.adoc[]
+
 [[emoticonsemoticons]]
 === Emoticons (`+emoticons+`)
 
@@ -208,11 +213,6 @@ include::partial$plugin-files/plugin-file-list-help.adoc[]
 === Image (`+image+`)
 
 include::partial$plugin-files/plugin-file-list-image.adoc[]
-
-[[imagetoolsimagetools]]
-=== Image Tools (`+imagetools+`)
-
-include::partial$plugin-files/plugin-file-list-imagetools.adoc[]
 
 [[importcssimportcss]]
 === Import CSS (`+importcss+`)

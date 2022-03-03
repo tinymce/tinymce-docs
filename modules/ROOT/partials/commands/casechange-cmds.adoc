@@ -1,4 +1,4 @@
-[cols=",",options="header",]
+[cols="1,3",options="header",]
 |===
 |Command |Description
 |mceLowerCase |Converts selected text to lower-case.
@@ -6,8 +6,7 @@
 |mceUpperCase |Converts selected text to upper-case.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.execCommand('mceLowerCase');

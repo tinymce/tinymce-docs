@@ -1,6 +1,6 @@
-[cols=",,",options="header",]
+[cols="1,1,2",options="header",]
 |===
-|Menu item identifier |link:menus-configuration-options.html#examplethetinymcedefaultmenuitems[Default Menu Location] |Description
+|Menu item identifier |xref:menus-configuration-options.adoc#examplethetinymcedefaultmenuitems[Default Menu Location] |Description
 |`+align+` |Format |Changes alignment to the current block or selection.
 |`+backcolor+` |Format |Applies background color to selection.
 |`+blockformats+` |Format |Applies block formats to current selection.
@@ -14,7 +14,7 @@
 |`+fontsizes+` |Format |Dropdown list with font sizes to apply to selection.
 |`+hr+` |Insert |Inserts a horizontal rule into the editor.
 |`+italic+` |Format |Applies italic format to current selection.
-|`+language+` |Format |Dropdown list with languages to apply to the selection. This item requires the link:content-localization.html#content_langs[`+content_langs+` option].
+|`+language+` |Format |Dropdown list with languages to apply to the selection. This item requires the xref:content-localization.adoc#content_langs[`+content_langs+` option].
 |`+lineheight+` |Format |Dropdown list with line heights to apply to selection.
 |`+newdocument+` |File |Creates a new document.
 |`+paste+` |Edit |Pastes the current clipboard contents into editor.

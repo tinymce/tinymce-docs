@@ -8,7 +8,7 @@
 :altplugincode: nil
 
 
-The `+lists+` plugin allows you to add numbered and bulleted lists to {productname}. To enable advanced lists (e.g. alpha numbered lists, square bullets) you should also enable the link:advlist.html[Advanced List] (`+advlist+`) plugin.
+The `+lists+` plugin allows you to add numbered and bulleted lists to {productname}. To enable advanced lists (e.g. alpha numbered lists, square bullets) you should also enable the xref:advlist.adoc[Advanced List] (`+advlist+`) plugin.
 
 The plugin also normalizes list behavior between browsers. Enable it if you have problems with consistency making lists.
 
@@ -27,7 +27,7 @@ tinymce.init({
 
 These settings affect the execution of the `+lists+` plugin.
 
-include::partial$configuration/lists_indent_on_tab.adoc[]
+include::partial$configuration/lists_indent_on_tab.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

@@ -1,7 +1,6 @@
 = Introduction to bundling TinyMCE
 
 :title_nav: Introduction
-
 :description_short: Introduction to bundling TinyMCE using a module loader.
 :description: Introduction to bundling TinyMCE with Webpack, Rollup.js, or Browserify.
 :keywords: webpack browserify es6 rollup commonjs modules tinymce es2015
@@ -10,27 +9,27 @@ The following guides and reference pages assist with bundling {productname} usin
 
 == Webpack
 
-* link:webpack_es6_npm.html[ES6 and npm]
-* link:webpack_cjs_npm.html[CommonJS and npm]
-* link:webpack_es6_download.html[ES6 and a .zip archive]
-* link:webpack_cjs_download.html[CommonJS and a .zip archive]
+* xref:webpack-es6-npm.adoc[ES6 and npm]
+* xref:webpack-cjs-npm.adoc[CommonJS and npm]
+* xref:webpack-es6-download.adoc[ES6 and a .zip archive]
+* xref:webpack-cjs-download.adoc[CommonJS and a .zip archive]
 
 [[rollupjs]]
 == Rollup.js
 
-* link:rollup_es6_npm.html[ES6 and npm]
-* link:rollup_es6_download.html[ES6 and a .zip archive]
+* xref:rollup-es6-npm.adoc[ES6 and npm]
+* xref:rollup-es6-download.adoc[ES6 and a .zip archive]
 
 == Browserify
 
-* link:browserify_cjs_npm.html[CommonJS and npm]
-* link:browserify_cjs_download.html[CommonJS and a .zip archive]
+* xref:browserify-cjs-npm.adoc[CommonJS and npm]
+* xref:browserify-cjs-download.adoc[CommonJS and a .zip archive]
 
 == Reference
 
-* link:bundling-plugins.html[Plugins]
-* link:bundling-content-css.html[Content CSS]
-* link:bundling-skins.html[Skins]
-* link:bundling-icons.html[Icons]
-* link:bundling-localization.html[UI localizations]
-* link:bundling-themes.html[Themes]
+* xref:bundling-plugins.adoc[Plugins]
+* xref:bundling-content-css.adoc[Content CSS]
+* xref:bundling-skins.adoc[Skins]
+* xref:bundling-icons.adoc[Icons]
+* xref:bundling-localization.adoc[UI localizations]
+* xref:bundling-themes.adoc[Themes]

@@ -1,11 +1,13 @@
 ifeval::["{pluginname}" == "Paste"]
 :plugin: paste
 
+[[paste_block_drop]]
 == paste_block_drop
 endif::[]
 ifeval::["{pluginname}" != "Paste"]
 :plugin: powerpaste
 
+[[powerpaste_block_drop]]
 == powerpaste_block_drop
 endif::[]
 

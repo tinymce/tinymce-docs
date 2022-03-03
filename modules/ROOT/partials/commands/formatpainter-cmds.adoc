@@ -1,4 +1,4 @@
-[cols=",",options="header",]
+[cols="1,3",options="header",]
 |===
 |Command |Description
 |mceRetrieveFormats |Retrieves the formats from the current selection.
@@ -6,8 +6,7 @@
 |mceToggleFormatPainter |Toggles the Format Painter.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.execCommand('mceRetrieveFormats');

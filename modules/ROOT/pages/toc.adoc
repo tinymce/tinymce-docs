@@ -35,11 +35,11 @@ include::partial$css-codeblock/toc-plugin-css.adoc[]
 
 == Options
 
-include::partial$configuration/toc_depth.adoc[]
+include::partial$configuration/toc_depth.adoc[leveloffset=+1]
 
-include::partial$configuration/toc_header.adoc[]
+include::partial$configuration/toc_header.adoc[leveloffset=+1]
 
-include::partial$configuration/toc_class.adoc[]
+include::partial$configuration/toc_class.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

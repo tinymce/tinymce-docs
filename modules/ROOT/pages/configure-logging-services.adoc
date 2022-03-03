@@ -2,8 +2,6 @@
 
 :description: Setting up logging for the premium server-side components.
 
-
-
 It may be useful to make the {productname} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
 The {productname} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
@@ -42,7 +40,7 @@ To write the logs to a specific file:
 
 </configuration>
 ----
-. Pass the configuration file to the Java application server. Assuming you've saved your `+logback.xml+` file in `+/etc/opt/tinymce+`, follow link:premium-server-side-guide.html#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:premium-server-side-guide.html#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
+. Pass the configuration file to the Java application server. Assuming you've saved your `+logback.xml+` file in `+/etc/opt/tinymce+`, follow xref:introduction-to-premium-selfhosted-services.adoc#pass-the-configuration-file-to-the-java-application-server[step 4] and xref:introduction-to-premium-selfhosted-services.adoc#restart-the-java-application-server[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
 +
 ....
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml

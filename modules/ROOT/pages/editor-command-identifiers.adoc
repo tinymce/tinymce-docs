@@ -1,7 +1,6 @@
 = Commands Available for TinyMCE
 
 :title_nav: Available Commands
-
 :description_short: Complete list of editor commands.
 :description: The complete list of exposed editor commands.
 :keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
@@ -24,7 +23,7 @@
 [[executablecommands]]
 == Executable commands
 
-The following tables show the existing editor commands. These commands are provided by `+tinymce+` and not by the browser's internal commands. These commands can be executed using the link:apis/tinymce.editorcommands.html#execcommand[execCommand] function.
+The following tables show the existing editor commands. These commands are provided by `+tinymce+` and not by the browser's internal commands. These commands can be executed using the xref:apis/tinymce.editor.adoc#execCommand[execCommand] function.
 
 [[listingcoreandplugineditorcommands]]
 === Listing core and plugin editor commands
@@ -41,7 +40,7 @@ tinymce.activeEditor.editorCommands.commands.exec;
 
 The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |Bold |Toggles bold formatting to selection.
@@ -100,8 +99,7 @@ The commands on the following table are provided by the {productname} editor and
 |mcePrint |Opens the browser's print dialog for the current page.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.execCommand('Bold');
@@ -270,7 +268,7 @@ include::partial$commands/codesample-cmds.adoc[leveloffset=+3]
 [[comments]]
 ==== Comments
 
-The following commands require the link:comments.html[Comments (`+tinycomments+`)] plugin.
+The following commands require the xref:introduction-to-tiny-comments.adoc[Comments (`+tinycomments+`)] plugin.
 
 include::partial$commands/comments-cmds.adoc[leveloffset=+3]
 
@@ -389,7 +387,7 @@ include::partial$commands/permanentpen-cmds.adoc[leveloffset=+3]
 [[powerpaste]]
 ==== PowerPaste
 
-The following command requires the link:powerpaste.html[PowerPaste (`+powerpaste+`)] plugin.
+The following command requires the xref:introduction-to-powerpaste.adoc[PowerPaste (`+powerpaste+`)] plugin.
 
 include::partial$commands/powerpaste-cmds.adoc[leveloffset=+3]
 
@@ -417,7 +415,7 @@ include::partial$commands/searchreplace-cmds.adoc[leveloffset=+3]
 [[spellcheckerpro]]
 ==== Spell Checker Pro
 
-The following commands require the link:tinymcespellchecker.html[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
+The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[leveloffset=+3]
 
@@ -477,7 +475,7 @@ tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
 tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 ----
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |mceAddEditor |Converts the specified HTML or DOM element into an editor instance with the specified ID.
@@ -505,7 +503,7 @@ tinymce.activeEditor.editorCommands.commands.state;
 
 The following command states can be queried using the xref:apis/tinymce.editor.adoc#queryCommandState[queryCommandState] API.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |Bold |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Bold+` command.
@@ -526,8 +524,7 @@ The following command states can be queried using the xref:apis/tinymce.editor.a
 |Underline |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Underline+` command.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.queryCommandState('Bold');
@@ -568,7 +565,7 @@ tinymce.activeEditor.editorCommands.commands.value;
 
 The following command values can be queried using the xref:apis/tinymce.editor.adoc#queryCommandValue[queryCommandValue] API.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |FontName |Returns the font name of the current selection.
@@ -577,8 +574,7 @@ The following command values can be queried using the xref:apis/tinymce.editor.a
 |ToggleSidebar |Returns the current state of sidebar (open or closed).
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.queryCommandValue('FontName');

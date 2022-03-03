@@ -21,7 +21,7 @@ NOTE: The "Allowed Origins" service (ephox-allowed-origins.war) has been depreca
 
 This guide will help you get these server-side components up and running.
 
-[[step-1-install-a-java-application-server]]
+[[install-a-java-application-server]]
 == Step 1. Install a Java application server
 
 If you've already got a Java application server like Jetty or Tomcat installed, skip to Step 2.
@@ -34,7 +34,7 @@ If you don't, pick either http://tomcat.apache.org/[Tomcat] or https://www.eclip
 Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:troubleshoot.adoc#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 ====
 
-[[step-2-deploy-server-side-components]]
+[[deploy-server-side-components]]
 == Step 2. Deploy server-side components
 
 Deploy all the WAR files that came packaged with the {productname} Enterprise Self-hosted package to your newly installed Java application server:
@@ -52,12 +52,12 @@ More information can be found in the documentation of your chosen application se
 * https://tomcat.apache.org/tomcat-9.0-doc/deployer-howto.html[Deploying applications with Tomcat 9.0]
 * https://www.eclipse.org/jetty/documentation/current/#configuring-deployment[Deploying applications with Jetty]
 
-[[step-3-create-a-configuration-file]]
+[[create-a-configuration-file]]
 == Step 3. Create a configuration file
 
 Refer to the link:/how-to-guides/premium-server-side-guide/configure/[Configure] page for the details and come back here when you're done.
 
-[[step-4-pass-the-configuration-file-to-the-java-application-server]]
+[[pass-the-configuration-file-to-the-java-application-server]]
 == Step 4. Pass the configuration file to the Java application server
 
 [IMPORTANT]
@@ -210,10 +210,12 @@ JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"
 
 There should only be a single line in this file defining the `+JETTY_ARGS+` variable.
 
+[[restart-the-java-application-server]]
 == Step 5: Restart the Java application server
 
-After you've completed the steps on this page to xref:step-2-deploy-server-side-components[Deploy server-side components], xref:step-3-create-a-configuration-file[Create a configuration file] and xref:step-4-pass-the-configuration-file-to-the-java-application-server[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
+After you've completed the steps on this page to xref:deploy-server-side-components[Deploy server-side components], xref:create-a-configuration-file[Create a configuration file] and xref:pass-the-configuration-file-to-the-java-application-server[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
 
+[[set-up-editor-client-instances-to-use-the-server-side-functionality]]
 == Step 6: Set up editor client instances to use the server-side functionality
 
 Now that the server-side components deployed and running, you'll need to tell your {productname} instances where to find them:

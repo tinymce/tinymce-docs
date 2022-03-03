@@ -27,15 +27,15 @@ tinymce.init({
 
 These settings affect the execution of the `+insertdatetime+` plugin. Formats for both dates and times can be set in these configuration options.
 
-include::partial$configuration/insertdatetime_dateformat.adoc[]
+include::partial$configuration/insertdatetime_dateformat.adoc[leveloffset=+1]
 
-include::partial$configuration/insertdatetime_formats.adoc[]
+include::partial$configuration/insertdatetime_formats.adoc[leveloffset=+1]
 
-include::partial$configuration/insertdatetime_timeformat.adoc[]
+include::partial$configuration/insertdatetime_timeformat.adoc[leveloffset=+1]
 
-include::partial$configuration/insertdatetime_element.adoc[]
+include::partial$configuration/insertdatetime_element.adoc[leveloffset=+1]
 
-include::partial$configuration/ref_time_date_formats.adoc[]
+include::partial$configuration/ref_time_date_formats.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

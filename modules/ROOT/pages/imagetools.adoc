@@ -54,15 +54,15 @@ tinymce.init({
 
 == Options
 
-include::partial$configuration/image_cors_hosts.adoc[]
+include::partial$configuration/image_cors_hosts.adoc[leveloffset=+1]
 
-include::partial$configuration/imagetools_credentials_hosts.adoc[]
+include::partial$configuration/imagetools_credentials_hosts.adoc[leveloffset=+1]
 
-include::partial$configuration/imagetools_fetch_image.adoc[]
+include::partial$configuration/imagetools_fetch_image.adoc[leveloffset=+1]
 
-include::partial$configuration/image_proxy.adoc[]
+include::partial$configuration/image_proxy.adoc[leveloffset=+1]
 
-include::partial$configuration/imagetools_toolbar.adoc[]
+include::partial$configuration/imagetools_toolbar.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

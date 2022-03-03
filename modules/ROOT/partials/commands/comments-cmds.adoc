@@ -1,12 +1,11 @@
-[cols=",",options="header",]
+[cols="1,3",options="header",]
 |===
 |Command |Description
 |tc-delete-conversation-at-cursor |Attempts to delete the comment at the current cursor position. A confirmation dialog will be shown prior to deletion.
 |tc-try-delete-all-conversations |Attempts to delete all comments in the editor. A confirmation dialog will be shown prior to deletion.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.execCommand('tc-delete-conversation-at-cursor');

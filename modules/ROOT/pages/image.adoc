@@ -37,28 +37,29 @@ If you wish to align the image, you can also use the text align buttons while im
 
 :includedSection: imagePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
-:includedSection: false
+:!includedSection:
+
 include::partial$configuration/file_picker_callback.adoc[leveloffset=+1]
 
 include::partial$configuration/file_picker_types.adoc[leveloffset=+1]
 
-include::partial$configuration/image_caption.adoc[]
+include::partial$configuration/image_caption.adoc[leveloffset=+1]
 
-include::partial$configuration/image_list.adoc[]
+include::partial$configuration/image_list.adoc[leveloffset=+1]
 
-include::partial$configuration/image_advtab.adoc[]
+include::partial$configuration/image_advtab.adoc[leveloffset=+1]
 
-include::partial$configuration/image_class_list.adoc[]
+include::partial$configuration/image_class_list.adoc[leveloffset=+1]
 
-include::partial$configuration/image_description.adoc[]
+include::partial$configuration/image_description.adoc[leveloffset=+1]
 
-include::partial$configuration/image_dimensions.adoc[]
+include::partial$configuration/image_dimensions.adoc[leveloffset=+1]
 
-include::partial$configuration/image_prepend_url.adoc[]
+include::partial$configuration/image_prepend_url.adoc[leveloffset=+1]
 
-include::partial$configuration/image_title.adoc[]
+include::partial$configuration/image_title.adoc[leveloffset=+1]
 
-include::partial$configuration/image_uploadtab.adoc[]
+include::partial$configuration/image_uploadtab.adoc[leveloffset=+1]
 
 include::partial$configuration/images_file_types.adoc[leveloffset=+1]
 
@@ -69,10 +70,6 @@ include::partial$configuration/images_upload_credentials.adoc[leveloffset=+1]
 include::partial$configuration/images_upload_handler.adoc[leveloffset=+1]
 
 include::partial$configuration/images_upload_url.adoc[leveloffset=+1]
-
-include::partial$configuration/object_resizing.adoc[leveloffset=+1]
-
-include::partial$configuration/resize_img_proportional.adoc[leveloffset=+1]
 
 include::partial$configuration/object_resizing.adoc[leveloffset=+1]
 

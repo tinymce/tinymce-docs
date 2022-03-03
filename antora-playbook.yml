@@ -7,7 +7,12 @@ content:
   - url: ./
     branches: HEAD
     start_path: ./
+asciidoc: 
+  attributes: 
+    tabs: "tabs"
+  extensions: 
+    - "./extensions/tabset-extension"
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    url: http://docs-feature-wsrf-609.staging.tiny.cloud/ui-bundle.zip
     snapshot: true

@@ -65,18 +65,50 @@ Resources to be linked take the form of placing the linked text between brackets
 hello, [text to link](http://www.example.com) to the URL example.com.
 ----
 
+=== Live Demo Tabset
+
+Live Demo tabset can be included to the page by using code snippet below. 
+
+* `demo-type` : is the name of folder present `examples/live-demos/demo-type` where the source items for demo is present.
+* `tinymce` *(optional)* : is the name of config file present in examples/live-demos/`demo-type/filename.adoc`
+* `js` *(optional)* : is the name of JS file present in  examples/live-demos/`demo-type/filename.js`, this will create a tab called *_TinyMCE_* in tabset
+* `html` *(optional)* : is the name of HTML file present in  examples/live-demos/`demo-type/filename.html`, this will create a tab called *_HTML_* in tabset
+* `css` *(optional)* : is the name of CSS file present in  examples/live-demos/`demo-type/filename.css`, this will create a tab called *_CSS_* in tabset
+* `codepen` *(optional)* : is the name of codepen config file present in  examples/live-demos/`demo-type/filename.adoc`, this will create a tab called *_Edit in Codepen_* in tabset.
+* `default-tab` *(optional)* : sets the default tab to be selected on render, it accepts `TinyMCE`/`HTML`/`CSS`/`Edit on Codepen` as valid values. If not set it will automatically default to first tab present.
+
+[IMPORTANT] 
+==== 
+- Please ensure the files mentioned are present in the examples/live-demos/demo-type/ folder.
+- Add page attribute `:page-loadtinymce: true` on top of the page where you will be using tinymce editor, to ensure editor is loaded via page headers in advance. 
+====
+----
+:demo-type: folder-name
+:tinymce: tinymce.adoc
+:js: index.js
+:html: index.html
+:css: style.css
+:codepen: codepen.adoc
+:default-tab: HTML
+\include::partial$demos/demo-tab.adoc[]
+----
+
 === Live Demos
 
-Live demos can be added to content using the "live-demos.html" include, such as:
+Live Demos can be included to the page by using code snippet below. This loads the cofiguration present for the TinyMCE editor in tinymcce.adoc file present in the `examples/live-demos/demo-type` folder.
 
-[source, asciidoc]
+* `demo-type` : is the name of folder present `examples/live-demos/demo-type` where the source items for demo is present.
+
+
+[IMPORTANT] 
+==== 
+- Please ensure the files mentioned are present in the examples/live-demos/demo-type/ folder.
+- Add page attribute `:page-loadtinymce: true` on top of the page where you will be using tinymce editor, to ensure editor is loaded via page headers in advance. 
+====
 ----
-liveDemo::basic-example[]
+:demo-type: folder-name
+\include::example$live-demos/demo-type/tinymce.adoc
 ----
-
-There are several options for this include file - please see `_includes/live-demos.html` for details.
-
-The source for each live demo is store in the `_includes/live-demos/` directory.
 
 === Adding metadata to a page
 

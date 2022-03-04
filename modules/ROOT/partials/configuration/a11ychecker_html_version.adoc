@@ -19,6 +19,6 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11ychecker_html_version: 'html5'
+  a11ychecker_html_version: 'html4'
 });
 ----

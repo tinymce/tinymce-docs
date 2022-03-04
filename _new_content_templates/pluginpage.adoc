@@ -10,6 +10,7 @@
 :pluginname: <Plugin Name>
 // The plugin identifier used to add the plugin to an editor using the `plugin` option. Provide as a string. Can be used in content using the {plugincode} variable
 :plugincode: <plugincode>
+:altplugincode: nil
 :plugincategory: premium|opensource
 
 include::partial$misc/admon_premium_plugin.adoc[]

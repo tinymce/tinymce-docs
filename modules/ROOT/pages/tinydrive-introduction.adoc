@@ -1,22 +1,18 @@
 = Tiny Drive Introduction
 
 :title_nav: Introduction
-
 :description: Introduction of what Tiny Drive is and its capabilities
 :keywords: tinydrive introduction overview
-
 :pluginname: Tiny Drive
-
 :plugincode: tinydrive
-
+:altplugincode: nil
+:pluginminimumplan: tierone
 
 {cloudfilemanager} is a premium {productname} plugin for cloud-based asset management and storage. {cloudfilemanager} allows your users to upload, manage, and use files in {productname}.
 
-For documentation on using {cloudfilemanager} outside {productname}, visit: link:https://www.tiny.cloud/docs/tinydrive/[{cloudfilemanager} documentation].
+For documentation on using {cloudfilemanager} outside {productname}, visit: xref:tinydrive-dropbox-and-google-drive.adoc[{cloudfilemanager} documentation].
 
-____
-*Note*: This plugin is only available for link:{pricingpage}/[{cloudname} users].
-____
+NOTE: This plugin is only available for link:{pricingpage}/[{cloudname} users].
 
 == Tiny Drive features
 
@@ -39,9 +35,6 @@ The storage and bandwidth quota varies based upon your link:{pricingpage}/[{clou
 
 liveDemo::drive[ ]
 
-:pluginminimumplan: tierone
-
-
 include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Upload files URL
@@ -50,7 +43,7 @@ The URL format for each file is `+https://drive.tiny.cloud/1/{your-api-key}/{uui
 
 == JSON Web Token (JWT) based authentication
 
-Some {companyname} services require setting up JSON Web Token (JWT) authentication. This allows the {cloudname} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the link:jwt-authentication.html[JWT authentication section].
+Some {companyname} services require setting up JSON Web Token (JWT) authentication. This allows the {cloudname} to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in detail on the https://jwt.io/ website. For information on setting up JWT authentication, see the xref:tinydrive-jwt-authentication.adoc[JWT authentication section].
 
 == User specific file access
 
@@ -66,4 +59,4 @@ There is a fixed set of file extensions (formats) that can be uploaded, and thes
 
 include::partial$plugins/tinydrive-filetypeslist.adoc[]
 
-include::partial$tinydrive-starter-projects.adoc[]
+include::partial$plugins/tinydrive-starter-projects.adoc[]

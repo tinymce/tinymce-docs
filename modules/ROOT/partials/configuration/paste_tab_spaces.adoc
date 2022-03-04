@@ -1,10 +1,3 @@
-ifeval::["{page.title}" == "Paste plugin"]
-:plugin: paste :pluginname: Paste
-endif::[]
-ifeval::["{page.title}" != "Paste plugin"]
-:plugin: powerpaste :pluginname: PowerPaste
-endif::[]
-
 [[paste_tab_spaces]]
 == `+paste_tab_spaces+`
 
@@ -20,7 +13,7 @@ Default Value: `+4+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{plugin}',
+  plugins: '{plugincode}',
   paste_tab_spaces: 2
 });
 ----

@@ -1,3 +1,4 @@
+[[tinycomments_resolve]]
 == `+tinycomments_resolve+`
 
 This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation.
@@ -18,9 +19,7 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-____
-*Note*: Failure to resolve due to permissions or business rules should be indicated by `+canResolve: false+`, while unexpected errors should be indicated using the `+fail+` callback.
-____
+NOTE: Failure to resolve due to permissions or business rules should be indicated by `+canResolve: false+`, while unexpected errors should be indicated using the `+fail+` callback.
 
 For example:
 

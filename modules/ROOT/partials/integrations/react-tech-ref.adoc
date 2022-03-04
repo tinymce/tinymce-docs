@@ -618,9 +618,7 @@ function MyComponent({initialValue}) {
 [[usingthetinymcereactcomponentasacontrolledcomponent]]
 == Using the {productname} React component as a controlled component
 
-____
-*Caution*: The controlled component can have performance problems on large documents as it requires converting the entire document to a string on each keystroke or modification.
-____
+CAUTION: The controlled component can have performance problems on large documents as it requires converting the entire document to a string on each keystroke or modification.
 
 To use the editor as a https://reactjs.org/docs/forms.html#controlled-components[controlled component], both the `+value+` and `+onEditorChange+` props are required.
 

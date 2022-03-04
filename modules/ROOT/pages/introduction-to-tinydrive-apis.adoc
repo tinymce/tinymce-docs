@@ -1,18 +1,19 @@
 = Introduction to the Tiny Drive plugin APIs
 
 :title_nav: Introduction to the plugin APIs
-
 :description: Overview of the Tiny Drive plugin APIs
-:keywords: rtc configuration
+:keywords: tinydrive configuration
 
 The {cloudfilemanager} {productname} plugin includes APIs to provide access to {cloudfilemanager} from your custom plugins or {productname} specific integration code. These APIs are available though the `+editor.plugins.tinydrive+` property.
 
 The {cloudfilemanager} plugin provides the following APIs:
 
-* The Upload API
-* The Browse API
-* The Pick API
+* xref:tinydrive-upload.adoc[The Upload API]
+* xref:tinydrive-browse.adoc[The Browse API]
+* xref:tinydrive-pick.adoc[The Pick API]
 
+// TODO Needs to be removed/fixed. Links have been added above for now
+////
 Select one of the following pages for details on using the {cloudfilemanager} plugin APIs:
 
 :navigation: site.data.nav
@@ -21,5 +22,6 @@ Select one of the following pages for details on using the {cloudfilemanager} pl
 :links: sub3entry.pages
 \{% endif %} \{% endfor %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %} \{% endif %} \{% endfor %}
 
+include::sub-level-toc.html[] links=links %}
+////
 
-\{% include sub-level-toc.html links=links %}

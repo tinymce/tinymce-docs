@@ -1,3 +1,4 @@
+[[powerpaste_keep_unsupported_src]]
 == `+powerpaste_keep_unsupported_src+`
 
 Due to browser limitations, PowerPaste is not able to support all image types supported by Microsoft Word and Microsoft Excel. When `+powerpaste_keep_unsupported_src+` is set to `+true+`, PowerPaste will store the original `+src+` of unsupported images in a `+data-image-src+` attribute on the pasted image element. This enables developers to add further image support via post-processing.

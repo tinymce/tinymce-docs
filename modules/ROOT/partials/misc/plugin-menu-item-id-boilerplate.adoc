@@ -11,10 +11,11 @@ ifeval::["{altplugincode}" == "nil"]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 endif::[]
 
-For information on the {pluginname} plugin, see: link:{plugincode}.html[Plugins - The {pluginname} plugin]
+For information on the {pluginname} plugin, see: xref:{plugincode}.adoc[Plugins - The {pluginname} plugin]
 
 endif::[]
 ifeval::["{docname}" != "available-menu-items"]
+[[menu-items]]
 == Menu items
 
 The {pluginname} plugin provides the following menu items:

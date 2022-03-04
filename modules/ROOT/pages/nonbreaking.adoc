@@ -1,7 +1,6 @@
 = Nonbreaking Space plugin
 
 :title_nav: Nonbreaking Space
-
 :description: Insert a nonbreaking space.
 :keywords: nonbreaking nonbreaking_force_tab insert
 :controls: toolbar button, menu item
@@ -25,9 +24,9 @@ tinymce.init({
 
 == Options
 
-include::partial$configuration/nonbreaking_force_tab.adoc[]
+include::partial$configuration/nonbreaking_force_tab.adoc[leveloffset=+1]
 
-include::partial$configuration/nonbreaking_wrap.adoc[]
+include::partial$configuration/nonbreaking_wrap.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

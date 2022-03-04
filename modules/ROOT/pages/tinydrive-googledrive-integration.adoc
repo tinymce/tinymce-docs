@@ -1,7 +1,6 @@
 = Google Drive integration
 
 :title_nav: Google Drive
-
 :description: Guide for setting up Tiny Drive with Google Drive.
 :keywords: google drive
 
@@ -11,7 +10,6 @@
 
 == Prerequisites
 
-[arabic]
 . A valid Google Drive user account is required for integrating Google Drive with {cloudfilemanager}. Refer to this https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en[Google Drive] link for more information on creating a Google Drive user account.
 . The Google Drive API should be enabled. Refer to this https://developers.google.com/drive/api/v3/enable-drive-api[Google Drive] link for more information on enabling the Google Drive API.
 . The Google Picker API should be enabled. Refer to this https://developers.google.com/picker/docs/[Google Drive] link for more information on enabling the Google Picker API.
@@ -20,47 +18,44 @@
 
 You can obtain the Google Drive credentials by following the steps below.
 
-[[1-create-the-google-api-key]]
+[[create-the-google-api-key]]
 === 1. Create the Google API Key
 
-[arabic]
 . Open the https://console.developers.google.com/apis/credentials[Google Console Credentials] page
 . Click on the `+Create credentials+` button.
 . Click on the `+API key+` item.
 
-[[2-copy-the-new-google-api-key]]
+[[copy-the-new-google-api-key]]
 === 2. Copy the new Google API Key
 
 Copy the generated Google API key this will later be used to configure {cloudfilemanager}:
 
-[[3-create-the-oauth-client-id]]
+[[create-the-oauth-client-id]]
 === 3. Create the OAuth client ID
 
 Click on the `+Create credentials+` button then on `+OAuth client ID+` item:
 
-[[4-fill-in-the-oauth-details]]
+[[fill-in-the-oauth-details]]
 === 4. Fill in the OAuth details
 
-[arabic]
 . Select `+Web application+` from `+Application type+`
 . Add your domains to `+Authorized JavaScript origins+`.
 . Click `+create+`.
 . Copy the created `+client id+` it will be used later to configure {cloudfilemanager}.
 
-[[5-restrict-client-id-api-access]]
+[[restrict-client-id-api-access]]
 === 5. Restrict Client ID API access
 
-[arabic]
 . Click the edit icons for the Client ID you created
 . Click on the `+API restrictions+` tab
 . Click on the `+Select API+` dropdown
 . Select `+Google Picker API+` from the dropdown
 . Click `+Save+`
 
-[[6-configure-tinydrive-to-use-the-new-google-drive-credentials]]
+[[configure-tinydrive-to-use-the-new-google-drive-credentials]]
 === 6. Configure tinydrive to use the new Google Drive credentials
 
-The Google Drive API key can be configured by setting the link:dropbox-and-google-drive.html#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the link:dropbox-and-google-drive.html#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
+The Google Drive API key can be configured by setting the xref:tinydrive-dropbox-and-google-drive.adoc#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the xref:tinydrive-dropbox-and-google-drive.adoc#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
 
 [source,js]
 ----
@@ -73,12 +68,11 @@ tinymce.init({
 });
 ----
 
-For information on other {cloudfilemanager} config options refer to the link:configuration.html[configuration] section of this document.
+For information on other {cloudfilemanager} config options refer to the xref:tinydrive-dropbox-and-google-drive.adoc#configuring-with-google-drive[configuration] section of this document.
 
-[[7-tiny-drive-ui]]
+[[tiny-drive-ui]]
 === 7. Tiny Drive UI
 
-[arabic]
 . From the {productname} user interface, click on the image:insertimage.png[Insert/edit image] button to access the {cloudfilemanager} user interface.
 . Click on the image:upload.png[Upload/Create] button to select Google Drive from the list of storages.
 . Select the file to upload/import from Google Drive by clicking on the radio button next to it. Alternatively, to directly insert the file into the editor, double-click on it.
@@ -90,7 +84,6 @@ For information on other {cloudfilemanager} config options refer to the link:con
 
 The following other options can be performed to the selected file :
 
-[arabic]
 . Follow the steps from 1-3 of the {cloudfilemanager} UI procedure.
 . Choose from the options below as per the requirement:
 * Choose *Star* to flag important files and view the starred file under the *Star* tab in the Google Drive Home tab.

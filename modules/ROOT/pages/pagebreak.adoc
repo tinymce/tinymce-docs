@@ -28,9 +28,9 @@ tinymce.init({
 
 These settings affect the execution of the `+pagebreak+` plugin. They enable you to specify how the page break should be generated in the HTML source code and determine whether the page break element(s) should be wrapped in `+<p>+`tags`+</p>+`.
 
-include::partial$configuration/pagebreak_separator.adoc[]
+include::partial$configuration/pagebreak_separator.adoc[leveloffset=+1]
 
-include::partial$configuration/pagebreak_split_block.adoc[]
+include::partial$configuration/pagebreak_split_block.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

@@ -6,7 +6,6 @@ The https://github.com/tinymce/tinymce-webcomponent[Official {productname} Web C
 
 To add a {productname} editor to a web page using the {productname} Web Component:
 
-[arabic]
 . Add the `+DOCTYPE+` element to the target page, such as:
 +
 [source,html]
@@ -80,7 +79,7 @@ The `tinymce-webcomponent` can also be sourced from link:https://www.npmjs.com/p
 <script src="/path/to/tinymce.min.js"></script>
 ----
 +
-If a `+script+` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: link:webcomponent-ref.html#loadingtinymce[Loading {productname}].
+If a `+script+` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: xref:webcomponent-ref.adoc#loadingtinymce[Loading {productname}].
 endif::[]
 ifeval::["{productSource}" == "cloud"]
 . Add a `+tinymce-editor+` element where the editor should appear and include your {cloudname} API key from link:{accountpageurl}/[{accountpage}].
@@ -115,5 +114,5 @@ liveDemo::web-component[ tab="html" ]
 == Next Steps
 
 * For information on customizing, see:
-** The {productname} Web Component, see: link:webcomponent-ref.html[The {productname} Web Component Technical Reference].
-** link:basic-setup.html[{productname} basic setup].
+** The {productname} Web Component, see: xref:webcomponent-ref.adoc[The {productname} Web Component Technical Reference].
+** xref:basic-setup.adoc[{productname} basic setup].

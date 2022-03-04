@@ -1,8 +1,7 @@
+[[gecko_spellcheck]]
 == `+gecko_spellcheck+`
 
-____
-Gecko Spell Check was deprecated in TinyMCE v4.3 (consider using #browser_spellcheck). This option will be removed in {productname} 6.0.
-____
+NOTE: Gecko Spell Check was deprecated in TinyMCE v4.3 (consider using xref:spelling.adoc#browser_spellcheck[`browser_spellcheck`]). This option will be removed in {productname} 6.0.
 
 This option allows you to disable https://en.wikipedia.org/wiki/Gecko_(software)[Gecko] based browsers' internal spell checker from being used in {productname}.
 

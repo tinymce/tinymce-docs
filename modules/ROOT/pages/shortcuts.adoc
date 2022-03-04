@@ -1,18 +1,15 @@
 = Custom Keyboard Shortcuts
 
 :title_nav: Keyboard Shortcuts
-
 :description: How-to add custom keyboard shortcuts to TinyMCE 6.
 :keywords: shortcuts shortcut custom keyboard
 
-____
-*Important*: Adding a custom shortcut with a keyboard combination that conflicts with an existing {productname} or browser shortcut will override the existing shortcut.
-____
+IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts with an existing {productname} or browser shortcut will override the existing shortcut.
 
 To add a custom keyboard shortcut to {productname}, use either:
 
-* link:tinymce.editor.html#addshortcut[The `+tinymce.Editor.addShortcut+` API].
-* link:tinymce.shortcuts.html[The `+tinymce.Shortcuts.add+` API].
+* xref:apis/tinymce.editor.adoc#addShortcut[The `+tinymce.Editor.addShortcut+` API].
+* xref:apis/tinymce.shortcuts.adoc[The `+tinymce.Shortcuts.add+` API].
 
 include::partial$misc/shortcut-os-mappings.adoc[]
 

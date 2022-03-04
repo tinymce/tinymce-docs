@@ -185,7 +185,7 @@ endif::[]
 
 == Save the content from the editor
 
-To retrieve content from the editor, either process the content with a form handler or use the link:tinymce.editor.html#getcontent[getContent API].
+To retrieve content from the editor, either process the content with a form handler or use the xref:apis/tinymce.editor.adoc#getContent[getContent API].
 
 If you use a form handler, once the `+<form>+` is submitted, {productname} {productmajorversion} will `+POST+` the content in the same way as a normal HTML `+<textarea>+`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `+<textarea>+`.
 

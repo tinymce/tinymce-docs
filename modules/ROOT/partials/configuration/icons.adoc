@@ -17,7 +17,6 @@ On initialization, {productname} will try to load any icon pack specified by the
 
 To use a {productname} icon pack:
 
-[arabic]
 . If required, create a new `+icons+` directory in `+TINYMCE_BASE+`.
 . Copy the icon pack into the `+icons+` directory.
 ifeval::[{customIconPack} == true]

@@ -8,9 +8,9 @@ The {prem_skins_icons} lets you quickly give {productname} a new look. Just choo
 
 == How to use a premium skin
 
-Use the link:editor-skin.html#skin[skin] option, in combination with the xref:add-css-options.adoc#content_css[content_css] option and the values listed below.
+Use the xref:editor-skin.adoc#skin[skin] option, in combination with the xref:add-css-options.adoc#content_css[content_css] option and the values listed below.
 
-Available values for link:editor-skin.html#skin[skins]:
+Available values for xref:editor-skin.adoc#skin[skins]:
 
 * material-classic
 * material-outline
@@ -70,7 +70,7 @@ For information on using the `+icons+` option, see: xref:editor-icons.adoc#icons
 
 Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Skin |Compatible Icon pack
 |material-classic |bootstrap, material, jam, small, thin
@@ -107,5 +107,5 @@ Below are some recommended combinations of skins and icon packs:
 :extensionType: Packs
 :pluralExtensionType: true
 include::partial$misc/purchase-premium-plugins.adoc[]
-:extensionType: false
-:pluralExtensionType: false
+:!extensionType:
+:!pluralExtensionType:

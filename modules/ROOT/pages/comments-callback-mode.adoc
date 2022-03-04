@@ -1,14 +1,11 @@
 = Configuring the Comments plugin in callback mode
 
 :title_nav: Callback mode
-
 :description: Information on configuring the Comments plugin in callback mode
 :keywords: comments commenting tinycomments callback
-
 :pluginname: Comments
-
 :plugincode: comments
-
+:commentsMode: callback
 
 *Callback mode* is the default mode for the Comments plugin. In the callback mode, callback functions are required to save user comments on a server. The Comments functions (create, reply, edit, delete comment, delete all conversations, resolve, and lookup) are configured differently depending upon the server-side storage configuration.
 
@@ -37,32 +34,32 @@ After a user comments (triggering `+tinycomments_create+` for the first comment,
 
 When using callback mode, the Comments plugin requires callback functions for the following options:
 
-* <<tinycomments_create, `+tinycomments_create+`>>
-* <<tinycomments_reply, `+tinycomments_reply+`>>
-* <<tinycomments_edit_comment, `+tinycomments_edit_comment+`>>
-* <<tinycomments_delete_comment, `+tinycomments_delete_comment+`>>
-* <<tinycomments_delete, `+tinycomments_delete+`>>
-* <<tinycomments_delete_all, `+tinycomments_delete_all+`>>
-* <<tinycomments_lookup, `+tinycomments_lookup+`>>
+* xref:tinycomments_create[`+tinycomments_create+`]
+* xref:tinycomments_reply[`+tinycomments_reply+`]
+* xref:tinycomments_edit_comment[`+tinycomments_edit_comment+`]
+* xref:tinycomments_delete_comment[`+tinycomments_delete_comment+`]
+* xref:tinycomments_delete[`+tinycomments_delete+`]
+* xref:tinycomments_delete_all[`+tinycomments_delete_all+`]
+* xref:tinycomments_lookup[`+tinycomments_lookup+`]
 
-The <<tinycomments_resolve, `+tinycomments_resolve+`>> option is _optional_.
+The xref:tinycomments_resolve[`+tinycomments_resolve+`] option is _optional_.
 
-include::partial$configuration/tinycomments_create.adoc[]
+include::partial$configuration/tinycomments_create.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_reply.adoc[]
+include::partial$configuration/tinycomments_reply.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_edit_comment.adoc[]
+include::partial$configuration/tinycomments_edit_comment.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_resolve.adoc[]
+include::partial$configuration/tinycomments_resolve.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_delete_comment.adoc[]
+include::partial$configuration/tinycomments_delete_comment.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_delete.adoc[]
+include::partial$configuration/tinycomments_delete.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_delete_all.adoc[]
+include::partial$configuration/tinycomments_delete_all.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_lookup.adoc[]
+include::partial$configuration/tinycomments_lookup.adoc[leveloffset=+1]
 
-include::partial$plugins/comments_open_sidebar.adoc[]
+include::partial$plugins/comments-open-sidebar.adoc[]
 
-include::partial$plugins/comments_highlighting_css.adoc[]
+include::partial$plugins/comments-highlighting-css.adoc[]

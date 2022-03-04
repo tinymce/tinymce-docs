@@ -19,7 +19,7 @@ include::partial$misc/admon_svg_not_supported.adoc[]
 
 == Cloud Installation
 
-The Image Tools plugin is provided with all subscriptions to link:/how-to-guides/cloud-deployment-guide/editor-and-features/[{cloudname}], including an automatically configured image proxy. Simply add `+image+` to the `+toolbar+` list and `+image imagetools+` to the `+plugins+` list.
+The Image Tools plugin is provided with all subscriptions to xref:editor-and-features.adoc[{cloudname}], including an automatically configured image proxy. Simply add `+image+` to the `+toolbar+` list and `+image imagetools+` to the `+plugins+` list.
 
 === Basic setup using Tiny Cloud
 
@@ -54,15 +54,15 @@ tinymce.init({
 
 == Options
 
-include::partial$configuration/image_cors_hosts.adoc[]
+include::partial$configuration/image_cors_hosts.adoc[leveloffset=+1]
 
-include::partial$configuration/imagetools_credentials_hosts.adoc[]
+include::partial$configuration/imagetools_credentials_hosts.adoc[leveloffset=+1]
 
-include::partial$configuration/imagetools_fetch_image.adoc[]
+include::partial$configuration/imagetools_fetch_image.adoc[leveloffset=+1]
 
-include::partial$configuration/image_proxy.adoc[]
+include::partial$configuration/image_proxy.adoc[leveloffset=+1]
 
-include::partial$configuration/imagetools_toolbar.adoc[]
+include::partial$configuration/imagetools_toolbar.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

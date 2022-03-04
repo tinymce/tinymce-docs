@@ -4,7 +4,7 @@ The following formats are provided by {productname}.
 
 The following formats will work on most content.
 
-[cols=",",options="header",]
+[cols="1,2",options="header"]
 |===
 |Format option |Description
 |`+alignleft+` |Left alignment.
@@ -37,21 +37,22 @@ The following formats will work on most content.
 |`+fontsize_class+` |Font size (1-7).
 |===
 
-____
-*Note*: The `+mceToggleFormat+` and `+FormatBlock+` link:/how-to-guides/creating-custom-ui-components/editor-command-identifiers/[commands] do not accept the following formats:
+[NOTE]
+--
+The `+mceToggleFormat+` and `+FormatBlock+` xref:editor-command-identifiers.adoc[commands] do not accept the following formats:
 
 * `+forecolor+`
 * `+hilitecolor+`
 * `+fontname+`
 * `+fontsize+`
 * `+fontsize_class+`
-____
+--
 
 == Definition list related formats
 
 The following formats work within definition lists (`+<dl>+`).
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Format option |Description
 |`+dt+` |Definition title (`+<dt>+`) elements.
@@ -62,7 +63,7 @@ The following formats work within definition lists (`+<dl>+`).
 
 The following formats will work on links (`+<a>+`).
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Format option |Description
 |`+link+` |Link (`+<a>+`) elements.
@@ -72,7 +73,7 @@ The following formats will work on links (`+<a>+`).
 
 The following formats will work within tables on `+<td>+` and `+<th>+` elements.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Format option |Description
 |`+valigntop+` |Aligns the cell content to the top of the cell.

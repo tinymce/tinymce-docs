@@ -10,7 +10,7 @@
 
 {productname} may not function as expected on unlisted browsers. Try out the {productname} examples on {companyurl} to determine any functional limitations of an unlisted browser.
 
-[cols=",^,^,^",options="header",]
+[cols=",^,^,^",options="header"]
 |===
 |Browser |Windows |Mac |GNU/Linux
 |Chrome |{tick} |{tick} |{tick}
@@ -19,8 +19,6 @@
 |Safari |- |{tick} |-
 |===
 
-____
-Note: {productname} does not support browsers running in Quirks or backward compatibility modes.
-____
+NOTE: {productname} does not support browsers running in Quirks or backward compatibility modes.
 
 {productname} supports the most recent version of all browsers listed above. {productname} also supports the latest Extended Support Release (ESR) from each vendor (e.g. Firefox). {productname} provides support for the prior major version for 60 days after the release has been superseded by a new major version (e.g. Chrome 98 vs. Chrome 97).

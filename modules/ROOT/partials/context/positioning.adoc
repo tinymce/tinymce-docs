@@ -1,9 +1,3 @@
-\{% case page.title %} \{% when "Context toolbar" %}
-:contextItemType: toolbar
-\{% when "Context forms" %}
-:contextItemType: form
-\{% endcase %}
-
 == Positioning of context {contextItemType}s
 
 There are three options for positioning context {contextItemType}s: `+selection+`, `+node+`, or `+line+`.

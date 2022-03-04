@@ -1,3 +1,4 @@
+[[textpattern_patterns]]
 == `+textpattern_patterns+`
 
 This option allows configuring the text patterns that get matched by the `+textpattern+` plugin. By default, it has basic markdown patterns.
@@ -8,8 +9,8 @@ There are three types of patterns: `+inline+`, `+block+`, and `+replacement+` pa
 ====
 Any formats or commands used by `+textpatterns+` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `+lists+` plugin. For information on:
 
-* Registering formats for {productname}, see: link:content-formatting.html#formats[Content formatting options - `+formats+`].
-* Registering commands for {productname}, see: link:tinymce.editorcommands.html[{productname} APIs - EditorCommands].
+* Registering formats for {productname}, see: xref:content-formatting.adoc#formats[Content formatting options - `+formats+`].
+* Registering commands for {productname}, see: xref:apis/tinymce.editor.adoc#addCommand[{productname} APIs - addCommand].
 ====
 
 === The default patterns for the `+textpattern+` plugin

@@ -1,3 +1,4 @@
+[[powerpaste_word_import]]
 == `+powerpaste_word_import+`
 
 This option controls how content pasted from Microsoft Word is filtered.
@@ -8,9 +9,7 @@ Default Value : `+'prompt'+`
 
 include::partial$plugins/powerpaste_import_types.adoc[]
 
-____
-*Note:* When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
-____
+NOTE: When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
 === Example: `+powerpaste_word_import+` using an asynchronous function
 

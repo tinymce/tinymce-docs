@@ -36,7 +36,6 @@ To create a custom icon pack:
 
 To use the {productname} icon pack template project:
 
-[arabic]
 . Download the https://github.com/tinymce/oxide-icon-pack-template[{productname} Oxide Icon Pack Template] by either:
 * Downloading the `+.zip+` file from the https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
 * From a terminal or command prompt, use git to clone the GitHub repository, such as:
@@ -89,9 +88,9 @@ tinymce.init({
 });
 ----
 
-For a list of the icon identifiers, see: link:editor-icon-identifiers.html[Available icons].
+For a list of the icon identifiers, see: xref:editor-icon-identifiers.adoc[Available icons].
 
-{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:creating-a-skin.html[custom skin] is required.
+{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a xref:creating-a-skin.adoc[custom skin] is required.
 
 NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 
@@ -100,7 +99,6 @@ NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will 
 
 To build the icon pack using Gulp:
 
-[arabic]
 . Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `+oxide-icon-pack-template/+`).
 . Build the icon pack by executing the `+npx gulp+` command:
 +
@@ -117,7 +115,6 @@ A `+dist/+` directory containing the icon pack will be created.
 
 The SVG files are optimized during the build process with https://github.com/svg/svgo[SVGO]. The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
 
-[arabic]
 . Using a text editor, open `+gulpfile.js+`.
 . Add the `+svgo+` option to the `+iconPackager+` function, such as:
 +

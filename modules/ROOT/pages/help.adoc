@@ -30,15 +30,15 @@ tinymce.init({
 
 == Config Options
 
-include::partial$configuration/help_tabs.adoc[]
+include::partial$configuration/help_tabs.adoc[leveloffset=+1]
 
 [[tabapi]]
 == API
 
-[cols=",,",options="header",]
+[cols="1,2,3",options="header"]
 |===
 |Name |Arguments |Description
-|addTab |tabSpec: link:dialog-components.html#tabpanel[TabPanel] |Register a tab for the Help dialog
+|addTab |tabSpec: xref:dialog-components.adoc#tabpanel[TabPanel] |Register a tab for the Help dialog
 |===
 
 === Example: Using the `+addTab+` API
@@ -59,7 +59,7 @@ tinymce.activeEditor.plugins.help.addTab({
 
 == Exposing metadata for the help plugin
 
-For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the link:creating-a-plugin.html#exposingmetadata[Creating a Plugin page].
+For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the xref:creating-a-plugin.adoc[Creating a Plugin page].
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

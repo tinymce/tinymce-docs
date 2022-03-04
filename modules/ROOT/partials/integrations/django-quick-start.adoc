@@ -20,7 +20,6 @@ endif::[]
 ifeval::["{productSource}" != "cloud"]
 To download {productname} and use it with the `+django-tinymce+` package:
 
-[arabic]
 . Get the package from link:{gettiny}/[{productname} Downloads].
 . Unzip the package and move the `'path/to/{prodnamecode}/'` directory into the django project.
 . Add a URL path to the `{prodnamecode}` directory.

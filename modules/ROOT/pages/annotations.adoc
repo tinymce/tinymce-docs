@@ -1,7 +1,6 @@
 = Using the Annotations API
 
 :description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
-
 :keywords: annotation annotations annotator
 
 
@@ -13,7 +12,7 @@ The primary value that the Annotations API provides is that it tags each annotat
 
 Perform the following procedure to set up the {productname} Annotations feature:
 
-[[1-configure-the-annotate-button]]
+[[configure-the-annotate-button]]
 === 1. Configure the Annotate Button
 
 To configure the annotate button on your toolbar:
@@ -34,7 +33,7 @@ setup: function(ed) {
 }
 ----
 
-[[2-registering-the-annotator]]
+[[registering-the-annotator]]
 === 2. Registering the Annotator
 
 The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator (`+editor.annotator+`).
@@ -58,11 +57,9 @@ ed.on('init', function() {
 
 This will register an annotation with the name `+alpha+`. In our example, when an `+alpha+` is being added to the document, a span marker will be created with class `+alpha+` and a data attribute for the author.
 
-____
-*Note*: The data passed through here is the same as the data specified when calling the annotate API. `+decorate+` is used to turn the annotation data into a document object model (DOM) representation. The uid passed through to `+decorate+` is either the uid field in the data object (if it exists), or a randomly generated uid if it does not. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
-____
+NOTE: The data passed through here is the same as the data specified when calling the annotate API. `+decorate+` is used to turn the annotation data into a document object model (DOM) representation. The uid passed through to `+decorate+` is either the uid field in the data object (if it exists), or a randomly generated uid if it does not. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
-[[3-making-the-annotator-available]]
+[[making-the-annotator-available]]
 === 3. Making the Annotator Available
 
 For adding the annotate tool to the toolbar that is registered with `+alpha+` set the value of the toolbar to:
@@ -72,14 +69,12 @@ For adding the annotate tool to the toolbar that is registered with `+alpha+` se
 toolbar: 'annotate-alpha'
 ----
 
-[[4-applying-annotations]]
+[[applying-annotations]]
 === 4. Applying Annotations
 
 After registering an annotation, use it by applying it to the current selection.
 
-____
-*Note*: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection. The API to apply an annotation is `+annotate+`. Annotations can be programmatically applied to selected text using:
-____
+NOTE: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection. The API to apply an annotation is `+annotate+`. Annotations can be programmatically applied to selected text using:
 
 [source,js]
 ----
@@ -100,7 +95,7 @@ Example of specifying your own `+uid+`:
   });
 ----
 
-[[5-listening-to-selection-events]]
+[[listening-to-selection-events]]
 === 5. Listening to Selection Events
 
 The Annotator API notifies the user when the selection cursor moves in or out of a specified annotation. For example, for the `+alpha+` scenario:

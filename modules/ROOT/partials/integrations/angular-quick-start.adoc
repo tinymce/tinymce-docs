@@ -10,7 +10,6 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-[arabic]
 . On a command line or command prompt, install the https://angular.io/cli[Angular CLI Tool] package.
 +
 [source,sh]
@@ -179,7 +178,6 @@ The application will require further configuration before it can be deployed to 
 
 To deploy the application to a local HTTP Server:
 
-[arabic]
 . Navigate to the `+tinymce-angular-demo+` directory and run:
 +
 [source,sh]
@@ -196,6 +194,6 @@ NOTE: Additional configuration is required to deploy the application outside the
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 * For information on customizing:
-** {productname} integration, see: link:angular-ref.html[Angular framework Technical Reference].
-** {productname}, see: link:basic-setup.html[Basic setup].
+** {productname} integration, see: xref:angular-ref.adoc[Angular framework Technical Reference].
+** {productname}, see: xref:basic-setup.adoc[Basic setup].
 ** The Angular application, see: https://angular.io/docs[the Angular documentation].

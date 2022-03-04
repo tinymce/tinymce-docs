@@ -1,32 +1,32 @@
 = Configure Enhanced Media Embed Server
 
 :description: Instructions for getting the Enhanced Media Embed server configured.
-
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 
 
-Once you have the link:/how-to-guides/premium-server-side-guide/[server-side component] installed, additional configuration to your `+application.conf+` file is required. (Don't forget to restart the Java application server after updating the configuration.)
+Once you have the xref:introduction-to-premium-selfhosted-services.adoc[server-side component] installed, additional configuration to your `+application.conf+` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
 The Enhanced Media Embed service allows you to choose between using your own https://iframely.com/[Iframely] account, configuring custom http://oembed.com/[oEmbed] endpoints or using a combination of both.
 
 When you insert media into your content, the service will do the following (in order):
 
-[arabic]
 . Check if the URL matches any custom oEmbed configuration. If that fails,
 . If Iframely is configured, query the Iframely API. If Iframely is not configured,
 . Create a summary card.
 
+[[use-your-own-iframely-account]]
 == Use your own Iframely account
 
 To use your own Iframely account, provide the following configuration items:
 
-* `+enabled+` - set to `+true+` to use Iframely. If set to `+false+`, you don't need to prvide the `+base-url+` or `+api-key+` configuration items.
+* `+enabled+` - set to `+true+` to use Iframely. If set to `+false+`, you don't need to provide the `+base-url+` or `+api-key+` configuration items.
 * `+base-url+` - the base URL of the Iframely API. Check their https://iframely.com/docs/iframely-api[docs] if you're unsure.
 * `+api-key+` - your Iframely API key. This is provided by Iframely after setting up an account with them.
 
 Example with Iframely enabled (replace `+xxx+` with your Iframely API key):
 
-....
+[source,conf]
+----
 ephox {
   embed {
     iframely {
@@ -36,11 +36,12 @@ ephox {
     }
   }
 }
-....
+----
 
 Example with Iframely disabled:
 
-....
+[source,conf]
+----
 ephox {
   embed {
     iframely {
@@ -48,8 +49,9 @@ ephox {
     }
   }
 }
-....
+----
 
+[[configure-a-custom-endpoint]]
 == Configure a custom endpoint
 
 The service can be configured to hit a specific oEmbed endpoint when media from a URL matching a provided pattern is inserted into your content.
@@ -61,7 +63,8 @@ The service can be configured to hit a specific oEmbed endpoint when media from 
 
 Example:
 
-....
+[source,conf]
+----
 ephox {
   embed {
     custom = [
@@ -288,15 +291,17 @@ ephox {
     ]
   }
 }
-....
+----
 
+[[combining-iframely-and-custom-endpoints]]
 == Combining Iframely and custom endpoints
 
 It is also possible to configure Iframely with custom oEmbed endpoints. For example, you may want to use Iframely to embed media from the Internet and an internal oEmbed server to embed media from an Intranet.
 
 Example (replace `+xxx+` with your Iframely API key):
 
-....
+[source,conf]
+----
 ephox {
   embed {
     iframely {
@@ -315,10 +320,11 @@ ephox {
     ]
   }
 }
-....
+----
 
+[[summary-cards]]
 == Summary cards
 
 If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.
 
-A summary card is an embeddable snippet of code which is generated based on what the Enhanced Media Embed service can work out about the content at the URL. See the integration docs for link:/plugins-ref/premium/mediaembed/mediaembed-server-integration/[Enhanced Media Embed Server] for further details.
+A summary card is an embeddable snippet of code which is generated based on what the Enhanced Media Embed service can work out about the content at the URL. See the integration docs for xref:mediaembed-server-integration.adoc#summary-cards[Enhanced Media Embed Server] for further details.

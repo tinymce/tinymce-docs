@@ -17,7 +17,6 @@ This procedure requires:
 
 === Procedure
 
-[arabic]
 . On the Visual Studio toolbar, click the https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project[*New Project* button].
 . Select the *Blazor Server App* template.
 . Use the NuGet package manager console to install the `+TinyMCE.Blazor+` package, such as:
@@ -52,7 +51,6 @@ This procedure requires:
 
 === Procedure
 
-[arabic]
 . Create a new Blazor project:
 +
 [source,sh]
@@ -99,5 +97,5 @@ This will start a local development server, accessible at http://localhost:5000.
 
 For information on customizing the integration, see:
 
-* link:basic-setup.html[{productname} basic setup].
-* link:blazor-ref.html[The {productname} Blazor integration technical reference].
+* xref:basic-setup.adoc[{productname} basic setup].
+* xref:blazor-ref.adoc[The {productname} Blazor integration technical reference].

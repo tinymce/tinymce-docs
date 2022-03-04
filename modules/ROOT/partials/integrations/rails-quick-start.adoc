@@ -67,7 +67,7 @@ ifeval::["{productSource}" == "package-manager"]
 
 include::partial$misc/admon_third_party_integration.adoc[]
 
-Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{productname} Ruby on Rails gem] for integrating {productname} into the Ruby on Rails asset pipeline. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:basic-example.html[Basic example].
+Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{productname} Ruby on Rails gem] for integrating {productname} into the Ruby on Rails asset pipeline. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our xref:basic-example.adoc[Basic example].
 
 include::partial$integrations/rails-basic-proj.adoc[]
 
@@ -86,7 +86,6 @@ Do not add this line within a `+group+` - `+end+` element.
 bundle install
 ----
 . Create a {productname} configuration file.
-[arabic]
 .. Create the `+config/tinymce.yml+` file:
 +
 [source,sh]

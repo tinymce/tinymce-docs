@@ -22,11 +22,11 @@ tinymce.init({
 
 These settings affect the execution of the Autoresize plugin, including changes to the minimum width, height, bottom margin, and default initialization state.
 
-include::partial$configuration/autoresize_bottom_margin.adoc[]
+include::partial$configuration/autoresize_bottom_margin.adoc[leveloffset=+1]
 
-include::partial$configuration/autoresize_on_init.adoc[]
+include::partial$configuration/autoresize_on_init.adoc[leveloffset=+1]
 
-include::partial$configuration/autoresize_overflow_padding.adoc[]
+include::partial$configuration/autoresize_overflow_padding.adoc[leveloffset=+1]
 
 include::partial$configuration/max_height.adoc[leveloffset=+1]
 

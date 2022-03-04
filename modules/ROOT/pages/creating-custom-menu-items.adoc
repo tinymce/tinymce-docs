@@ -1,7 +1,6 @@
 = Creating custom menu items
 
 :title_nav: Creating custom menu items
-
 :description: This section demonstrates different types of menu items.
 :keywords: menu menuitem menuitems
 
@@ -46,9 +45,7 @@ tinymce.init({
 });
 ----
 
-____
-*Note*: The identifier used to create the menu item must be included in the link:menus-configuration-options.html#menu[`+menu+`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `+menu+` is not configured correctly.
-____
+NOTE: The identifier used to create the menu item must be included in the xref:menus-configuration-options.adoc#menu[`+menu+`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `+menu+` is not configured correctly.
 
 == Interactive example
 

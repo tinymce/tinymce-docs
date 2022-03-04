@@ -1,10 +1,4 @@
-ifeval::["{page.title}" == "Paste plugin"]
-:plugin: paste :pluginname: Paste
-endif::[]
-ifeval::["{page.title}" != "Paste plugin"]
-:plugin: powerpaste :pluginname: PowerPaste
-endif::[]
-
+[[paste_tab_spaces]]
 == `+paste_tab_spaces+`
 
 This option controls how many spaces are used to represent a tab character in HTML when pasting plain text content. By default, the {pluginname} plugin will convert each tab character into 4 sequential space characters.
@@ -19,7 +13,7 @@ Default Value: `+4+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{plugin}',
+  plugins: '{plugincode}',
   paste_tab_spaces: 2
 });
 ----

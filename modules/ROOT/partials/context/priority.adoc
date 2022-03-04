@@ -3,7 +3,7 @@
 There are situations where custom context toolbars or custom context forms may conflict with:
 
 * Context toolbars or context forms provided by the editor,
-* Context toolbars or context forms provided by the link:quickbars.html[Quick Toolbars (`+quickbars+`) plugin],
+* Context toolbars or context forms provided by the xref:quickbars.adoc[Quick Toolbars (`+quickbars+`) plugin],
 * Other custom context toolbars or custom context forms.
 
 === Determining the display priority of context toolbars and context forms
@@ -33,7 +33,6 @@ The following description can be used for troubleshooting the behavior of contex
 
 The editor will determine which context toolbars or context form will be shown using following process:
 
-[arabic]
 . Find all *context forms* with both:
 * `+scope: 'node'+`
 * A predicate (condition) matching the current selection or cursor position.

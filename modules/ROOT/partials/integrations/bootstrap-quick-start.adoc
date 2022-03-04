@@ -6,10 +6,10 @@ This procedure creates a basic Bootstrap integration containing a {productname} 
 
 == Setup
 
-[arabic]
 . In an HTML file, add a source script for Bootstrap JS.
 +
 If the project loads Bootstrap from https://www.bootstrapcdn.com/, use the script provided by the https://www.bootstrapcdn.com/[Bootstrap CDN], which includes the `+integrity+` and `+crossorigin+` attributes.
+
 ifeval::["{productSource}" == "cloud"]
 . To source {productname} from the {cloudname}, add the following `+script+` element to the `+<head>+` of the document:
 +

@@ -1,69 +1,62 @@
 = Cloud deployment of plugins Only
 
 :description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
-
 :description: Connect to Tiny Cloud within a hybrid deployment.
 :keywords: tinymce cloud script textarea apiKey hybrid
 
 A hybrid deployment of {cloudname} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{gettiny}/[{productname} Community edition] to get started.
 
-Sign up for a free API key provides entitlements to premium link:imagetools.html[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Sign up for a free API key provides entitlements to premium xref:imagetools.adoc[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 == Step 1: Insert the custom script tag into the webpage
 
 Add the following script in the webpage once the script tag to load {productname} has been specified. Be sure to substitute 'no-api-key' with your api key.
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js" referrerpolicy="origin"></script>
 ----
 
 == Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the link:/how-to-guides/learn-the-basics/basic-setup/[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the xref:basic-setup.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* link:mentions.html[Mentions]
-* link:/plugins-ref/premium/tinydrive/[{cloudfilemanager}]
-* link:comments.html[Comments]
-* link:pageembed.html[Page Embed]
-* link:permanentpen.html[Permanent Pen]
-* link:formatpainter.html[Format Painter]
-* link:powerpaste.html[PowerPaste]
-* link:tinymcespellchecker.html[Spell Checker Pro]
+* xref:mentions.adoc[Mentions]
+* xref:tinydrive-introduction.adoc[{cloudfilemanager}]
+* xref:introduction-to-tiny-comments.adoc[Comments]
+* xref:pageembed.adoc[Page Embed]
+* xref:permanentpen.adoc[Permanent Pen]
+* xref:formatpainter.adoc[Format Painter]
+* xref:introduction-to-powerpaste.adoc[PowerPaste]
+* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
++
+NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:/how-to-guides/cloud-deployment-guide/[{cloudname}].
 
-____
-Note: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:/how-to-guides/cloud-deployment-guide/[{cloudname}].
-____
+* xref:imagetools.adoc[Image Tools (with configured image proxy)]
++
+NOTE: Configuration of the `+imagetools_cors_hosts+` and `+imagetools_proxy+` properties occurs automatically.
 
-* link:imagetools.html[Image Tools (with configured image proxy)]
-
-____
-Note: Configuration of the `+imagetools_cors_hosts+` and `+imagetools_proxy+` properties occurrs automatically.
-____
-
-* link:moxiemanager.html[Moxie Manager]
-* link:a11ychecker.html[Accessibility Checker]
-* link:advcode.html[Advanced Code Editor]
-* link:mediaembed.html[Enhanced Media Embed]
-* link:linkchecker.html[Link Checker]
-
-____
-Note: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
-____
+* xref:moxiemanager.adoc[Moxie Manager]
+* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:advcode.adoc[Advanced Code Editor]
+* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
+* xref:linkchecker.adoc[Link Checker]
++
+NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
 The following is a complete example:
 
 The example below has the following:
 
 * The {cloudname} `+API key+` has the value `+no-api-key+`.
-* The {cloudname} has the link:tinymcespellchecker.html[Spell Checker Pro] plugin enabled.
+* The {cloudname} has the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] plugin enabled.
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
 <html>
    <head>
       <script src="https://your_server/tinymce.min.js"></script>
-      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js" referrerpolicy="origin"></script>
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js" referrerpolicy="origin"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>
@@ -73,7 +66,8 @@ The example below has the following:
             height: 500,
             plugins: [
                'advlist autolink lists link image charmap preview anchor pagebreak',
-               'tinymcespellchecker']
+               'tinymcespellchecker'
+            ]
          });
       </script>
    </body>

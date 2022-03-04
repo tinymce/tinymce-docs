@@ -50,6 +50,6 @@ a|
 var contentCSS = require('../tinymce/skins/content/example/content.css');
 ----
 |===
-IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:usage-with-module-loaders.html[Bundling {productname} with a module loader].
+IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].
 
 include::partial$module-loading/bundling-content-css-files.adoc[]

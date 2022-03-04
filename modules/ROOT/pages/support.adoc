@@ -1,10 +1,9 @@
 = Support
 
 :title_nav: Support
-
 :description: Getting support and supported platforms
 :description_short: Getting support and supported platforms
-:keywords: browser compatibility explorer ie safari firefox chrome edge mobile support supported browsers windows osx linux ie11 premium self-hosted selfhosted
+:keywords: browser compatibility safari firefox chrome edge mobile support supported browsers windows osx linux premium self-hosted selfhosted
 
 == Getting support
 
@@ -14,39 +13,40 @@ Paid premium support is available as part of link:{pricingpage}/[{enterprisevers
 
 === Community support
 
-Open Source Community Edition users can get free help from Stack Overflow using the link:{communitysupporturl}[`+{prodnamecode}+` tag].
+Open Source Community Edition users can get free help from Stack Overflow using the link:{communitysupporturl}[`{prodnamecode}` tag].
 
 [[supportedversionsandplatforms]]
 == Supported Versions and Platforms
 
-include::partial$misc/supported_versions.adoc[]
+include::partial$misc/supported_versions.adoc[leveloffset=+1]
 
-include::partial$misc/browser_compatibility.adoc[]
+include::partial$misc/browser_compatibility.adoc[leveloffset=+1]
 
-include::partial$misc/mobile_platform_compatibility.adoc[]
+include::partial$misc/mobile_platform_compatibility.adoc[leveloffset=+1]
 
-Visit link:tinymce-for-mobile.html[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
+Visit xref:tinymce-for-mobile.adoc[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
 
 == Premium plugin support information
 
-include::partial$misc/plugin_support_table.adoc[]
+include::partial$misc/plugin_support_table.adoc[leveloffset=+1]
 
-include::partial$misc/support-powerpaste.adoc[]
+include::partial$misc/support-powerpaste.adoc[leveloffset=+1]
 
 === Supported Application Servers: Self-hosted Enterprise
 
 The {productname} spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
 
-Java Development Kit : JDK 8
+Java Development Kit::
+* JDK 8
 
-Java (J2EE) Application Servers :
+Java (J2EE) Application Servers::
 include::partial$misc/supported-application-servers.adoc[]
 
-Operating Systems : * Windows Server 2008 SP2
-
+Operating Systems::
+* Windows Server 2008 SP2
 * Red Hat Enterprise Linux v6
 * Red Hat Enterprise Linux v5
 
-Minimum Hardware Requirements : * CPU: Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
-
+Minimum Hardware Requirements::
+* CPU: Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
 * RAM: 4 Gigabytes of RAM available for services

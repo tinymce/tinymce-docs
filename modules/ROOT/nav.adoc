@@ -14,9 +14,6 @@
 **** xref:laravel-tiny-cloud.adoc[Laravel]
 **** xref:rails-cloud.adoc[Ruby on Rails]
 *** Self-hosted
-**** JavaScript
-***** xref:javascript-pm.adoc[Using a package manager]
-***** xref:javascript-zip.adoc[Using a .zip package]
 **** React
 ***** xref:react-pm.adoc[Using a package manager]
 ***** xref:react-zip.adoc[Using a .zip package]
@@ -51,7 +48,6 @@
 **** xref:dotnet-projects.adoc[.NET projects]
 **** xref:bower-projects.adoc[Bower projects]
 **** xref:zip-install.adoc[TinyMCE .zip deployments]
-** xref:integrations.adoc[TinyMCE Integrations]
 ** xref:upgrading.adoc[Upgrading TinyMCE]
 * How-to guides
 ** Learn the basics
@@ -147,7 +143,7 @@
 ** Images Guide
 *** xref:upload-images.adoc[Image uploads]
 *** xref:php-upload-handler.adoc[PHP image upload handler]
-** xref:custom-ui-components.adoc[Creating custom UI components]
+** Creating custom UI components
 *** Toolbar Buttons
 **** xref:custom-toolbarbuttons.adoc[Toolbar buttons]
 **** xref:custom-basic-toolbar-button.adoc[Basic toolbar button]
@@ -183,18 +179,18 @@
 *** xref:editor-icon-identifiers.adoc[Available Icons]
 *** xref:annotations.adoc[Using the Annotations API]
 ** Bundling TinyMCE
-*** xref:introduction_to_bundling_tinymce.adoc[Introduction]
+*** xref:introduction-to-bundling-tinymce.adoc[Introduction]
 *** Webpack
-**** xref:webpack_es6_npm.adoc[ES6 and npm]
-**** xref:webpack_cjs_npm.adoc[CommonJS and npm]
-**** xref:webpack_es6_download.adoc[ES6 and a .zip archive]
-**** xref:webpack_cjs_download.adoc[CommonJS and a .zip archive]
+**** xref:webpack-es6-npm.adoc[ES6 and npm]
+**** xref:webpack-cjs-npm.adoc[CommonJS and npm]
+**** xref:webpack-es6-download.adoc[ES6 and a .zip archive]
+**** xref:webpack-cjs-download.adoc[CommonJS and a .zip archive]
 *** Rollup.js
-**** xref:rollup_es6_npm.adoc[ES6 and npm]
-**** xref:rollup_es6_download.adoc[ES6 and a .zip archive]
+**** xref:rollup-es6-npm.adoc[ES6 and npm]
+**** xref:rollup-es6-download.adoc[ES6 and a .zip archive]
 *** Browserify
-**** xref:browserify_cjs_npm.adoc[CommonJS and npm]
-**** xref:browserify_cjs_download.adoc[CommonJS and a .zip archive]
+**** xref:browserify-cjs-npm.adoc[CommonJS and npm]
+**** xref:browserify-cjs-download.adoc[CommonJS and a .zip archive]
 *** Reference
 **** xref:bundling-plugins.adoc[Plugins]
 **** xref:bundling-content-css.adoc[Content CSS]
@@ -272,12 +268,12 @@
 *** xref:casechange.adoc[Case Change]
 *** xref:checklist.adoc[Checklist]
 *** Comments
-**** xref:introduction_to_tiny_comments.adoc[Introduction]
-**** xref:comments_using_comments.adoc[Using Comments]
-**** xref:comments_callback_mode.adoc[Callback mode]
-**** xref:comments_embedded_mode.adoc[Embedded mode]
-**** xref:comments_toolbars_menus.adoc[Toolbar buttons and menu items]
-**** xref:comments_commands_events_apis.adoc[Commands]
+**** xref:introduction-to-tiny-comments.adoc[Introduction]
+**** xref:comments-using-comments.adoc[Using Comments]
+**** xref:comments-callback-mode.adoc[Callback mode]
+**** xref:comments-embedded-mode.adoc[Embedded mode]
+**** xref:comments-toolbars-menus.adoc[Toolbar buttons and menu items]
+**** xref:comments-commands-events-apis.adoc[Commands]
 *** Enhanced Media Embed
 **** xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
 **** xref:mediaembed-server-config.adoc[Configure Enhanced Media Embed Server]
@@ -290,12 +286,12 @@
 *** xref:pageembed.adoc[Page Embed]
 *** xref:permanentpen.adoc[Permanent Pen]
 *** PowerPaste
-**** xref:introduction_to_powerpaste.adoc[Introduction]
-**** xref:powerpaste_options.adoc[Options]
-**** xref:powerpaste_toolbars_menus.adoc[Toolbar buttons and menu items]
-**** xref:powerpaste_commands_events_apis.adoc[Commands and Events]
-**** xref:powerpaste_support.adoc[Supported functionality]
-**** xref:powerpaste_troubleshooting.adoc[Troubleshooting]
+**** xref:introduction-to-powerpaste.adoc[Introduction]
+**** xref:powerpaste-options.adoc[Options]
+**** xref:powerpaste-toolbars-menus.adoc[Toolbar buttons and menu items]
+**** xref:powerpaste-commands-events-apis.adoc[Commands and Events]
+**** xref:powerpaste-support.adoc[Supported functionality]
+**** xref:powerpaste-troubleshooting.adoc[Troubleshooting]
 *** Real-Time Collaboration (RTC)
 **** xref:rtc-introduction.adoc[Introduction]
 **** xref:rtc-supported-functionality.adoc[Supported Functionality]
@@ -328,7 +324,7 @@
 **** Integrations
 ***** xref:tinydrive-dropbox-integration.adoc[Dropbox]
 ***** xref:tinydrive-googledrive-integration.adoc[Google Drive]
-**** xref:tinydrive_toolbars_menus.adoc[Toolbar buttons and menu items]
+**** xref:tinydrive-toolbars-menus.adoc[Toolbar buttons and menu items]
 **** APIs
 ***** xref:introduction-to-tinydrive-apis.adoc[Introduction to the plugin APIs]
 ***** xref:tinydrive-upload.adoc[The Upload API]
@@ -388,4 +384,4 @@
 **** xref:6_0_0-release-notes-deprecated-features.adoc[Deprecated features]
 **** xref:6_0_0-release-notes-known-issues.adoc[Known issues]
 ** xref:changelog.adoc[Changelog]
-* xref:/support.adoc[Support]
+* xref:support.adoc[Support]

@@ -27,23 +27,23 @@ tinymce.init({
 
 These settings affect the execution of the `+media+` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
-include::partial$configuration/audio_template_callback.adoc[]
+include::partial$configuration/audio_template_callback.adoc[leveloffset=+1]
 
-include::partial$configuration/media_alt_source.adoc[]
+include::partial$configuration/media_alt_source.adoc[leveloffset=+1]
 
-include::partial$configuration/media_dimensions.adoc[]
+include::partial$configuration/media_dimensions.adoc[leveloffset=+1]
 
-include::partial$configuration/media_filter_html.adoc[]
+include::partial$configuration/media_filter_html.adoc[leveloffset=+1]
 
-include::partial$configuration/media_live_embeds.adoc[]
+include::partial$configuration/media_live_embeds.adoc[leveloffset=+1]
 
-include::partial$configuration/media_poster.adoc[]
+include::partial$configuration/media_poster.adoc[leveloffset=+1]
 
-include::partial$configuration/media_scripts.adoc[]
+include::partial$configuration/media_scripts.adoc[leveloffset=+1]
 
-include::partial$configuration/media_url_resolver.adoc[]
+include::partial$configuration/media_url_resolver.adoc[leveloffset=+1]
 
-include::partial$configuration/video_template_callback.adoc[]
+include::partial$configuration/video_template_callback.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

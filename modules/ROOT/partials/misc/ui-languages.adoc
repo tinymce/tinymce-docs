@@ -2,10 +2,9 @@
 == Supported Languages
 
 ifeval::[{forModuleLoaders} == true]
-[cols="<2,^1,^2"]
+[cols="<2,^1,^2",options="header"]
 |===
 | Language | Code | Filename
-
 | Arabic | ar | `+./langs/ar.js+`
 | Basque | eu | `+./langs/eu.js+`
 | Bulgarian (Bulgaria) | bg_BG | `+./langs/bg_BG.js+`
@@ -44,10 +43,9 @@ ifeval::[{forModuleLoaders} == true]
 |===
 endif::[]
 ifeval::[{forModuleLoaders} != true]
-[cols="<2,^1"]
+[cols="<2,^1",options="header"]
 |===
 | Language | Code
-
 | Arabic | ar
 | Basque | eu
 | Bulgarian (Bulgaria) | bg_BG

@@ -26,7 +26,7 @@ tinymce.init({
 
 The _Table of Contents_ will have a simple HTML structure - a wrapper `+div+` element, a header with _editable_ title and unordered nested list with navigation links. Nesting depth is customizable.
 
-Internally plugin doesn't apply any inline styles. Basic formatting can be added via link:/how-to-guides/learn-the-basics/editor-content-css/[Boilerplate Content CSS], that can be customized to your needs.
+Internally plugin doesn't apply any inline styles. Basic formatting can be added via xref:editor-content-css.adoc[Boilerplate Content CSS], that can be customized to your needs.
 
 [source,css]
 ----
@@ -35,11 +35,11 @@ include::partial$css-codeblock/toc-plugin-css.adoc[]
 
 == Options
 
-include::partial$configuration/toc_depth.adoc[]
+include::partial$configuration/toc_depth.adoc[leveloffset=+1]
 
-include::partial$configuration/toc_header.adoc[]
+include::partial$configuration/toc_header.adoc[leveloffset=+1]
 
-include::partial$configuration/toc_class.adoc[]
+include::partial$configuration/toc_class.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

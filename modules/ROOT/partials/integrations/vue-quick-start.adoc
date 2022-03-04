@@ -11,7 +11,6 @@ For examples of the {productname} Vue.js 2.x integration, visit: https://tinymce
 
 For examples of the {productname} Vue.js 3.x integration:
 
-[arabic]
 . Clone the `+tinymce/tinymce-vue+` GitHub repository. For example:
 +
 [source,sh]
@@ -39,7 +38,6 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-[arabic]
 . On a command line or command prompt, install the https://cli.vuejs.org/#getting-started[Vue CLI Tool] package.
 +
 [source,sh]
@@ -110,7 +108,6 @@ npm install --save "@tinymce/tinymce-vue@^3"
 endif::[]
 
 . Using a text editor, open `+/path/to/tinymce-vue-demo/src/App.vue+`.
-[arabic]
 .. Add a {productname} configuration to the `+<template>+` using the `+<editor>+` tag.
 .. Add `+import Editor from '@tinymce/tinymce-vue'+` to the start of the `+<script>+`.
 .. Add `+editor: Editor+` to the `+default {components}+`.
@@ -201,6 +198,6 @@ The application will require further configuration before it can be deployed to 
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
 * For information on customizing:
-** {productname} integration, see: link:vue-ref.html[Vue.js framework Technical Reference].
-** {productname}, see: link:basic-setup.html[Basic setup].
+** {productname} integration, see: xref:vue-ref.adoc[Vue.js framework Technical Reference].
+** {productname}, see: xref:basic-setup.adoc[Basic setup].
 ** The Vue.js application, see: https://vuejs.org/v2/guide/[Vue.js Documentation].

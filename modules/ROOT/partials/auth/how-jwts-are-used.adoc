@@ -4,16 +4,18 @@ The following diagram shows how JWTs are used:
 
 image:JWT_Flow.svg[JSON Web Token Call Flow,title="JSON Web Token Call Flow"]
 
-\{% if plugincode == 'tinydrive' %} When a user opens {pluginname}:
+When a user opens {pluginname}:
 
-[arabic]
+ifeval::["{plugincode}" == "tinydrive"]
 . {pluginname} requests a signed JWT on behalf of the user.
 . If your JWT endpoint authorizes the user, your JWT endpoint will send a JWT to {pluginname}, certifying the user.
 . When the user makes a request (such as adding or deleting a file), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the {cloudname} Server.
 . The {cloudname} Server sends a response, indicating that content submission was successful (or unauthorized if necessary).
-\{% else %} When a user starts a {pluginname} session:
+endif::[]
+
+ifeval::["{plugincode}" == "rtc"]
 . The {pluginname} plugin requests a signed JWT on behalf of the user.
 . If your JWT endpoint authorizes the user, your JWT endpoint will send a JWT to the {pluginname} plugin, certifying the user.
 . When the user makes a request (such as adding or deleting content), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the RTC Server.
 . The RTC Server sends the verified content to collaborating editors.
-\{% endif %}
+endif::[]

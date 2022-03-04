@@ -1,14 +1,12 @@
 = Mentions plugin
 
 :title_nav: Mentions
-
 :description: Enables @mention functionality.
 :keywords: mentions atmentions
-
 :pluginname: Mentions
-
 :plugincode: mentions
-
+:altplugincode: nil
+:pluginminimumplan: enterprise
 
 include::partial$misc/admon_premium_plugin.adoc[]
 
@@ -18,28 +16,25 @@ The mentions plugin will present a list of users when a user types the "@" symbo
 
 liveDemo::mentions[ height="400" ]
 
-:pluginminimumplan: enterprise
-
-
 include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Options
 
 These configuration options affect the execution of the `+mentions+` plugin. The main option that needs to be implemented is the `+mentions_fetch+` callback.
 
-include::partial$configuration/mentions_fetch.adoc[]
+include::partial$configuration/mentions_fetch.adoc[leveloffset=+1]
 
-include::partial$configuration/mentions_item_type.adoc[]
+include::partial$configuration/mentions_item_type.adoc[leveloffset=+1]
 
-include::partial$configuration/mentions_min_chars.adoc[]
+include::partial$configuration/mentions_min_chars.adoc[leveloffset=+1]
 
-include::partial$configuration/mentions_menu_complete.adoc[]
+include::partial$configuration/mentions_menu_complete.adoc[leveloffset=+1]
 
-include::partial$configuration/mentions_menu_hover.adoc[]
+include::partial$configuration/mentions_menu_hover.adoc[leveloffset=+1]
 
-include::partial$configuration/mentions_selector.adoc[]
+include::partial$configuration/mentions_selector.adoc[leveloffset=+1]
 
-include::partial$configuration/mentions_select.adoc[]
+include::partial$configuration/mentions_select.adoc[leveloffset=+1]
 
 == API
 

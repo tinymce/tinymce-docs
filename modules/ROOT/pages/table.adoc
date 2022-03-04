@@ -26,55 +26,55 @@ tinymce.init({
 
 These settings affect the execution of the `+table+` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
 
-include::partial$configuration/table_toolbar.adoc[]
+include::partial$configuration/table_toolbar.adoc[leveloffset=+1]
 
-include::partial$configuration/table_appearance_options.adoc[]
+include::partial$configuration/table_appearance_options.adoc[leveloffset=+1]
 
-include::partial$configuration/table_use_colgroups.adoc[]
+include::partial$configuration/table_use_colgroups.adoc[leveloffset=+1]
 
-include::partial$configuration/table_clone_elements.adoc[]
+include::partial$configuration/table_clone_elements.adoc[leveloffset=+1]
 
-include::partial$configuration/table_grid.adoc[]
+include::partial$configuration/table_grid.adoc[leveloffset=+1]
 
-include::partial$configuration/table_tab_navigation.adoc[]
+include::partial$configuration/table_tab_navigation.adoc[leveloffset=+1]
 
-include::partial$configuration/table_default_attributes.adoc[]
+include::partial$configuration/table_default_attributes.adoc[leveloffset=+1]
 
-include::partial$configuration/table_default_styles.adoc[]
+include::partial$configuration/table_default_styles.adoc[leveloffset=+1]
 
-include::partial$configuration/table_responsive_width.adoc[]
+include::partial$configuration/table_responsive_width.adoc[leveloffset=+1]
 
-include::partial$configuration/table_sizing_mode.adoc[]
+include::partial$configuration/table_sizing_mode.adoc[leveloffset=+1]
 
-include::partial$configuration/table_column_resizing.adoc[]
+include::partial$configuration/table_column_resizing.adoc[leveloffset=+1]
 
-include::partial$configuration/table_class_list.adoc[]
+include::partial$configuration/table_class_list.adoc[leveloffset=+1]
 
-include::partial$configuration/table_cell_class_list.adoc[]
+include::partial$configuration/table_cell_class_list.adoc[leveloffset=+1]
 
-include::partial$configuration/table_row_class_list.adoc[]
+include::partial$configuration/table_row_class_list.adoc[leveloffset=+1]
 
-include::partial$configuration/table_border_widths.adoc[]
+include::partial$configuration/table_border_widths.adoc[leveloffset=+1]
 
-include::partial$configuration/table_border_styles.adoc[]
+include::partial$configuration/table_border_styles.adoc[leveloffset=+1]
 
-include::partial$configuration/table_background_color_map.adoc[]
+include::partial$configuration/table_background_color_map.adoc[leveloffset=+1]
 
-include::partial$configuration/table_border_color_map.adoc[]
+include::partial$configuration/table_border_color_map.adoc[leveloffset=+1]
 
-include::partial$configuration/table_advtab.adoc[]
+include::partial$configuration/table_advtab.adoc[leveloffset=+1]
 
-include::partial$configuration/table_cell_advtab.adoc[]
+include::partial$configuration/table_cell_advtab.adoc[leveloffset=+1]
 
-include::partial$configuration/table_row_advtab.adoc[]
+include::partial$configuration/table_row_advtab.adoc[leveloffset=+1]
 
-include::partial$configuration/table_resize_bars.adoc[]
+include::partial$configuration/table_resize_bars.adoc[leveloffset=+1]
 
 include::partial$configuration/object_resizing.adoc[leveloffset=+1]
 
-include::partial$configuration/table_style_by_css.adoc[]
+include::partial$configuration/table_style_by_css.adoc[leveloffset=+1]
 
-include::partial$configuration/table_header_type.adoc[]
+include::partial$configuration/table_header_type.adoc[leveloffset=+1]
 
 === Examples of various table setups
 
@@ -114,7 +114,7 @@ tinymce.init({
 });
 ----
 
-NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `+colorpicker+` to allow for border and background colors to be applied. See docs to use and configure a custom link:user-formatting-options.html#textcoloroptions[colorpicker].
+NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `+colorpicker+` to allow for border and background colors to be applied. See docs to use and configure a custom xref:user-formatting-options.adoc#text_color_options[colorpicker].
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -122,7 +122,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == API
 
-[cols=",,",options="header",]
+[cols="1,2,3",options="header"]
 |===
 |Name |Arguments |Description
 |insertTable |columns: number, rows: number |Insert a table with the given number of columns and rows at the current cursor location
@@ -139,6 +139,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 tinymce.activeEditor.plugins.table.insertTable(2, 3);
 ----
 
+[[events]]
 == Events
 
 include::partial$events/table-events.adoc[]

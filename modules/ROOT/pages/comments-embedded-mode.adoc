@@ -1,16 +1,14 @@
 = Configuring the Comments plugin in embedded mode
 
 :title_nav: Embedded mode
-
 :description: Information on configuring the Comments plugin in embedded mode
 :keywords: comments commenting tinycomments embedded mode
-
 :pluginname: Comments
-
 :plugincode: comments
+:altplugincode: nil
 
 
-== Add the Comments plugin in embeddded mode
+== Add the Comments plugin in embedded mode
 
 To add the Comments plugin in embedded mode to the {productname}, configure the following options:
 
@@ -33,20 +31,20 @@ liveDemo::comments-embedded[ ]
 
 == Configuration options
 
-include::partial$configuration/tinycomments_author.adoc[]
+include::partial$configuration/tinycomments_author.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_author_name.adoc[]
+include::partial$configuration/tinycomments_author_name.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_can_delete.adoc[]
+include::partial$configuration/tinycomments_can_delete.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_can_resolve.adoc[]
+include::partial$configuration/tinycomments_can_resolve.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_can_delete_comment.adoc[]
+include::partial$configuration/tinycomments_can_delete_comment.adoc[leveloffset=+1]
 
-include::partial$configuration/tinycomments_can_edit_comment.adoc[]
+include::partial$configuration/tinycomments_can_edit_comment.adoc[leveloffset=+1]
 
-include::partial$plugins/comments_open_sidebar.adoc[]
+include::partial$plugins/comments-open-sidebar.adoc[]
 
-include::partial$plugins/comments_embed_fullpage_issues.adoc[]
+include::partial$plugins/comments-embed-fullpage-issues.adoc[]
 
-include::partial$plugins/comments_highlighting_css.adoc[]
+include::partial$plugins/comments-highlighting-css.adoc[]

@@ -7,7 +7,7 @@
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
 == Specifying the TinyMCE editor version deployed from Cloud
 
-Use the URL provided to specify the {productname} version when deploying via {cloudname}. Refer to the link:/how-to-guides/cloud-deployment-guide/editor-and-features/[{productname} editor via the {cloudname}] for more information.
+Use the URL provided to specify the {productname} version when deploying via {cloudname}. Refer to the xref:editor-and-features.adoc[{productname} editor via the {cloudname}] for more information.
 
 The following example is the default for loading {productname} {productmajorversion} via {cloudname}. Substitute 'no-api-key' with your api key in the examples below.
 
@@ -74,7 +74,7 @@ Each {productname} version is bundled with a set of premium plugins, but it is p
 
 The `+identifier+` of the plugin is used as a query parameter. This table summarises the possible options.
 
-[cols=",,",options="header",]
+[cols=",,",options="header"]
 |===
 |Plugin |Identifier |Supported Versions
 |xref:a11ychecker.adoc[Accessibility Checker] |`+a11ychecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions[Versions]

@@ -1,7 +1,7 @@
 [[insertdatetime_timeformat]]
 == `+insertdatetime_timeformat+`
 
-This option allows you to override the default formatting rule for times inserted by the `+mceInsertTime+` command. This defaults to `+%H:%M:%S+` and where the different `+%+` variables get replaced with various xref:referencedatetimeformats[date format options].
+This option allows you to override the default formatting rule for times inserted by the `+mceInsertTime+` command. This defaults to `+%H:%M:%S+` and where the different `+%+` variables get replaced with various xref:insertdatetime.adoc#referencedatetimeformats[date format options].
 
 === Example: Using `+insertdatetime_timeformat+`
 

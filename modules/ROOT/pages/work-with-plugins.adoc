@@ -5,7 +5,7 @@
 :description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
 :keywords: plugin
 
-For most developers, the real power of {productname}'s functionality is found in its plugins. link:/plugins-ref/[Plugins] either extend default editor functionality or add new functionality. For example, the xref:advlist.adoc[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the xref:code.adoc[Code] plugin adds entirely new functionality.
+For most developers, the real power of {productname}'s functionality is found in its plugins. link:plugins.html[Plugins] either extend default editor functionality or add new functionality. For example, the xref:advlist.adoc[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the xref:code.adoc[Code] plugin adds entirely new functionality.
 
 Because most people install {productname} via {cloudname} or by downloading a package, they mistakenly think plugins are part of the {productname} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{gettiny}/custom-builds/[custom package] download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {productname} team.
 
@@ -109,7 +109,7 @@ The `+advlist+` plugin has two options which provide more granular control of li
 
 Many plugin options have more than one possible value. The `+advlist_bullet_styles+` option has possible values of `+circle+`, `+disc+`, and `+square+`. While the `+advlist_number_styles+` has possible values of `+lower-alpha+`, `+lower-greek+`, `+lower-roman+`, `+upper-alpha+`, and `+upper-roman+`.
 
-Don't worry if you can't remember all these values. The link:/plugins-ref/[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
+Don't worry if you can't remember all these values. The link:plugins.html[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
 
 Let's add the Advanced List options and give them some of the available options.
 

@@ -29,7 +29,7 @@
 
 The following table shows the supported versions of Angular and the required version of the `+tinymce-angular+` integration package.
 
-[cols="^,^",options="header",]
+[cols="^,^",options="header"]
 |===
 |Angular Version |`+tinymce-angular+` version
 |9+ |4.x
@@ -50,7 +50,6 @@ $ npm install --save @tinymce/tinymce-angular
 [[usingthetinymceangularintegration]]
 == Using the TinyMCE Angular integration
 
-[arabic]
 . Import the `+EditorModule+` from the npm package using:
 +
 [source,js]
@@ -367,7 +366,6 @@ Type : `+String+`
 
 To use {productname} Angular component with reactive forms:
 
-[arabic]
 . Include the `+<editor>+` configuration within the `+formGroup+`.
 . Add the `+formControlName+` directive to the editor configuration. For example:
 +

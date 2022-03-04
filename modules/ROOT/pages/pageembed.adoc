@@ -1,14 +1,13 @@
 = Page Embed plugin
 
 :title_nav: Page Embed
-
 :description: Easily inserts iframe into the content.
 :keywords: view Page Embed insert iframe
 :controls: toolbar button, menu item
-
 :pluginname: Page Embed
-
 :plugincode: pageembed
+:altplugincode: nil
+:pluginminimumplan: tiertwo
 
 
 include::partial$misc/admon_premium_plugin.adoc[]
@@ -22,9 +21,6 @@ The *Page Embed* plugin embeds a page in the content using an iframe (Inline fra
 == Try our Page Embed plugin demo
 
 liveDemo::page-embed[ ]
-
-:pluginminimumplan: tiertwo
-
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -48,7 +44,6 @@ tinymce.init({
 
 Use the following procedure for embedding an iframe into the content:
 
-[arabic]
 . Click on the image:icons/embed-page.svg[Page Embed](*Page Embed*) toolbar button.
 . The *InsertEdit Iframe* dialog box appears. image:insert-iframes.png[InsertEdit Iframe]
 . In the *General* tab, enter the url in the *Source* field, or click on the image:icons/browse.svg[Source](*Source*) icon to upload a file.
@@ -56,18 +51,14 @@ Use the following procedure for embedding an iframe into the content:
 * *Inline Value* is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the *Width* and *Height* input box.
 ** The default values are *Width* `+350px+` and *Height* `+260px+`. Click the image:icons/lock.svg[Constrain Proportions](*Constrain Proportions*) lock icon to change the default values.
 +
-____
-Note: The *Width* and *Height* fields are only available if the *Inline Value* value option is selected.
-____
+NOTE: The *Width* and *Height* fields are only available if the *Inline Value* value option is selected.
 * *Responsive* is used to make embedded content responsive using CSS, so that content such as video and calendars resize with the browser’s viewport. There are four options provided to set the responsive iframe size.
 ** *Responsive-21X9*
 ** *Responsive-16X9*
 ** *Responsive-4X3*
 ** *Responsive-1X1*
 +
-____
-Note: The *Responsive* option has pre-defined width and height values. The *Width* and *Height* fields are not available if one of the *Responsive* values are selected.
-____
+NOTE: The *Responsive* option has pre-defined width and height values. The *Width* and *Height* fields are not available if one of the *Responsive* values are selected.
 . In the *Advanced* tab, provide a name and title for the iframe in the *Name* and *Title* fields.
 . The *Long description URL* field can be used to describe an iframe by including text in a separate resource when a short text alternative does not adequately convey the function or information provided in the iframe.
 * Click on the image:icons/browse.svg[Source](*Long description URL*) icon to upload a description file.
@@ -77,15 +68,13 @@ ____
 
 *Result*: An iframe of the configured size is inserted in the desired location within the content.
 
-____
-*Note*: Not all pages allow embedding, as the X-Frame-Options header can be set to block embedding. See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options[this page] for more information.
-____
+NOTE: Not all pages allow embedding, as the X-Frame-Options header can be set to block embedding. See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options[this page] for more information.
 
 == Options to configure the Page Embed properties
 
-include::partial$configuration/tiny_pageembed_classes.adoc[]
+include::partial$configuration/tiny_pageembed_classes.adoc[leveloffset=+1]
 
-include::partial$configuration/tiny_pageembed_inline_styles.adoc[]
+include::partial$configuration/tiny_pageembed_inline_styles.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -95,9 +84,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 If the `+tiny_pageembed_classes+` setting is left undefined, the default classes will be used. As a result, a responsive size option can be selected.
 
-____
-*Important*: The following CSS script must be added to the webpage for the default CSS to work correctly.
-____
+IMPORTANT: The following CSS script must be added to the webpage for the default CSS to work correctly.
 
 [source,css]
 ----

@@ -25,7 +25,6 @@ IMPORTANT: We do not recommend modifying or overriding CSS rules directly.
 
 To set up the skin development environment, begin with the following steps:
 
-[arabic]
 . Download (or `+git clone+`) the https://github.com/tinymce/tinymce[{productname} source code].
 . Open the terminal and navigate to the folder you just downloaded.
 . Install dependencies with the command:
@@ -74,7 +73,6 @@ NOTE: The skin *only* changes the visual presentation of the UI and *not* the pl
 [[creatingaskin]]
 === Creating a skin
 
-[arabic]
 . Begin by duplicating the `+default+` folder located in `+modules/oxide/src/less/skins/ui/+` and rename it to the name of your skin.
 . Start the development server using the terminal command `+yarn oxide-start+`. If you already have the server running, you need to restart it to make it recognize your new skin using `+ctrl-c+` and then start it again.
 . Open the file `+modules/oxide/src/less/skin/ui/<your-skin-name>/skin.less+`.
@@ -113,14 +111,12 @@ TIP: You can change the {productname} config in `+modules/oxide/src/demo/index.h
 
 To update the appearance of the content within the editor, such as headings, quotes, lists, etc... you create a content css. These are located in `+modules/oxide/src/less/skin/content/+`
 
-[arabic]
 . Create a folder in `+modules/oxide/src/less/skins/content/+` and create a `+content.less+` file in it. Alternatively, you can duplicate any of the existing content css.
 . Start the development server using the terminal command yarn oxide-start. If you already have the server running, you need to restart it to make it recognize your new skin using ctrl-c and then start it again.
 . Add the relevant element selectors for the desired use case such as `+h1+` to `+h6+`, `+a+`, `+blockquote+`, `+code+`, `+table+`, etc...
 
 == Moving the skin into TinyMCE
 
-[arabic]
 . Copy the skin and/or content CSS from `+modules/oxide/build/skins/+` to the corresponding folders in your production {productname} folder.
 . Update the {productname} init function with the xref:editor-skin.adoc#skin[skin] option and/or the xref:add-css-options.adoc#content_css[content_css] option.
 

@@ -30,7 +30,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 [[built-informats]]
 === Built-in formats
 
-include::partial$configuration/builtinformats.adoc[leveloffset=+2]
+include::partial$configuration/builtinformats.adoc[]
 
 Some built-in formats `+fontsize+`, `+fontname+`, `+forecolor+`, `+hilitecolor+` use a variable in their definition named `+%value+`. This gets replaced with the user selected item such as a `+color+` value. Check the variable substitution section below for details.
 
@@ -73,8 +73,9 @@ tinymce.init({
 });
 ----
 
-A registered format can also be used by name with the built-in xref:usingcustomformats[Using custom formats] for an example.
+A registered format can also be used by name with the built-in xref:user-formatting-options.adoc#using-custom-formats[Using custom formats] for an example.
 
+[[block]]
 ==== `+block+`
 
 Tag name of the block element to use as a wrapper, for example, `+h1+`. Existing block elements within the selection are replaced with this block element.
@@ -94,6 +95,7 @@ tinymce.init({
 });
 ----
 
+[[inline]]
 ==== `+inline+`
 
 Tag name of the inline element to use as a wrapper, for example, `+span+` is used to wrap the current selection.
@@ -113,6 +115,7 @@ tinymce.init({
 });
 ----
 
+[[selector]]
 ==== `+selector+`
 
 CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table.
@@ -135,6 +138,7 @@ tinymce.init({
 });
 ----
 
+[[format_parameters]]
 === Format parameters
 
 For each format some additional parameters can be specified:
@@ -403,6 +407,7 @@ tinymce.init({
 });
 ----
 
+[[example-of-usage-of-the-formats-option]]
 === Example of usage of the formats option
 
 This example overrides some of the built-in formats and tells {productname} to apply classes instead of inline styles. It also includes a custom format that produced `+h1+` elements with a title attribute and a `+red+` CSS style.
@@ -432,7 +437,7 @@ tinymce.init({
 });
 ----
 
-[[usingcustomformats]]
+[[using-custom-formats]]
 === Using custom formats
 
 Custom formats can be handled through the {productname} API. Here is a basic example of usage for the custom format defined above.
@@ -446,6 +451,7 @@ tinymce.activeEditor.formatter.apply('custom_format');
 tinymce.activeEditor.formatter.remove('custom_format');
 ----
 
+[[variable-substitution]]
 === Variable substitution
 
 Variables can be used in the format definition. These variables are then replaced with the ones specified in the call to the apply function. Here is an example of how to use variables within formats.
@@ -459,6 +465,7 @@ tinymce.activeEditor.formatter.register('custom_format', { inline: 'span', style
 tinymce.activeEditor.formatter.apply('custom_format', { value: 'red' });
 ----
 
+[[removing-a-format]]
 === Removing a format
 
 Use the `+removeformat+` option to specify how the `+clear formatting+` feature should work in the editor.

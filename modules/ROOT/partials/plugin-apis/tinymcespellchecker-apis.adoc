@@ -1,4 +1,4 @@
-[cols="1,1,4",options="header",]
+[cols="1,1,4",options="header"]
 |===
 |Name |Arguments |Description
 |addIgnoredWords |words: `+string[]+`, lang?: `+string+` |Add an array of words to the `+spellchecker_ignore_list+` for a specific language. Add the array of words to all languages by omitting the `+lang+` parameter.

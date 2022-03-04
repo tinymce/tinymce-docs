@@ -30,7 +30,7 @@ A URL Dialog configuration has three main parts to match the three main parts of
 
 == Configuration options
 
-[cols="1,1,1,3",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Value |Requirement |Description
 |title |string |required |The title of the dialog.
@@ -54,7 +54,7 @@ A *button* is a clickable component that can contain text or an icon. There are 
 [[configuration]]
 === Configuration
 
-[cols="1,1,1,3",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Type |Requirement |Description
 |type |`+'cancel'+` or `+'custom'+` |required |Must be `+'cancel'+` or `+'custom'+` based on the type of callback function that should be invoked when the button is clicked.
@@ -89,7 +89,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 [[urldialoginstanceapi]]
 === Instance API methods
 
-[cols="1,2",options="header",]
+[cols="1,2",options="header"]
 |===
 |Methods |Description
 |`+block(message: string) => void+` |Calling `+block()+` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `+unblock()+` to unlock the dialog.

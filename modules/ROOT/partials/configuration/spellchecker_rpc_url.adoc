@@ -1,11 +1,9 @@
 [[spellchecker_rpc_url]]
 == `+spellchecker_rpc_url+`
 
-This option specifies the URL of the server-side `+ephox-spelling+` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the link:premium-server-side-guide.html[server-side component installation guide].
+This option specifies the URL of the server-side `+ephox-spelling+` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the xref:introduction-to-premium-selfhosted-services.adoc[server-side component installation guide].
 
-____
-*Note:* `+spellchecker_rpc_url+` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}]
-____
+NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}]
 
 Type : `+String+`
 

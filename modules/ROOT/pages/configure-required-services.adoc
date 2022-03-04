@@ -66,7 +66,7 @@ If users load {productname} from the following URLs:
 
 Add `+server.example.com+` to the `+allowed-origins+` list because the scheme and the port are ignored.
 
-[cols="^,,",options="header",]
+[cols="^,,",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+allowed-origins+` |Stores CORS setup information
@@ -89,7 +89,6 @@ ephox {
 
 The `+*+` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `+allowed-origin+` list:
 
-[arabic]
 . As a prefix of the domain (e.g. `+*.mydomain.com+`).
 . As the only character (e.g. `+*+`). This will allow *any* Origin to access the server-side components.
 

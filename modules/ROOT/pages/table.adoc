@@ -122,7 +122,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == API
 
-[cols=",,",options="header",]
+[cols="1,2,3",options="header"]
 |===
 |Name |Arguments |Description
 |insertTable |columns: number, rows: number |Insert a table with the given number of columns and rows at the current cursor location
@@ -139,6 +139,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 tinymce.activeEditor.plugins.table.insertTable(2, 3);
 ----
 
+[[events]]
 == Events
 
 include::partial$events/table-events.adoc[]

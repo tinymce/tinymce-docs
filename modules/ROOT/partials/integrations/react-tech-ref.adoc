@@ -95,7 +95,6 @@ The `+tinymce-react+` component provides props for:
 
 The `+tinymce-react+` integration will try to source {productname} in the following order:
 
-[arabic]
 . The global `+tinymce+` will be used, if it is present on the page.
 . If the `+tinymceScriptSrc+` prop is provided, then a script tag will be added to the page to load {productname} from the given URL.
 . If none of the above conditions apply, then a script tag will be added to the page to load {productname} from {cloudname}.
@@ -618,9 +617,7 @@ function MyComponent({initialValue}) {
 [[usingthetinymcereactcomponentasacontrolledcomponent]]
 == Using the {productname} React component as a controlled component
 
-____
-*Caution*: The controlled component can have performance problems on large documents as it requires converting the entire document to a string on each keystroke or modification.
-____
+CAUTION: The controlled component can have performance problems on large documents as it requires converting the entire document to a string on each keystroke or modification.
 
 To use the editor as a https://reactjs.org/docs/forms.html#controlled-components[controlled component], both the `+value+` and `+onEditorChange+` props are required.
 

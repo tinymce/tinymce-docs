@@ -1,15 +1,12 @@
 = Character Map plugin
 
 :title_nav: Character Map
-
 :description: Insert special characters into TinyMCE.
 :keywords: charmap symbols
 :controls: toolbar button, menu item
-
 :pluginname: Character Map
-
 :plugincode: charmap
-
+:altplugincode: nil
 
 This plugin adds a dialog to the editor with a map of special unicode characters, which cannot be added directly from the keyboard. The dialog can be invoked via a toolbar button - `+charmap+` - or a dedicated menu item added as `+Insert > Special character+`.
 

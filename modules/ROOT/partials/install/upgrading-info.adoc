@@ -11,7 +11,7 @@ endif::[]
 [[upgradingtinycloud]]
 === Upgrading Tiny Cloud
 
-{cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: link:cloud-deployment-guide.html[the Cloud deployment guide].
+{cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see:  link:cloud-deployment-guide.html[the Cloud deployment guide].
 
 ifeval::[{enterprise} != true]
 
@@ -83,7 +83,6 @@ endif::[]
 
 To upgrade to {productname} {productminorversion} using a manually downloaded package:
 
-[arabic]
 . Backup the `{prodnamecode}/` directory so any customizations can be restored after the upgrade.
 +
 Customizations for {productname} are typically stored in the following directories:
@@ -115,7 +114,6 @@ tinymce/
 --
 To simplify the upgrade process to future versions of {productname}:
 
-[arabic]
 . Host the {productname} customizations outside of the `{prodnamecode}/` directory.
 . Update your {productname} configuration as required:
 * Set the location of content CSS customizations using xref:add-css-options.adoc#content_css[`+content_css+`].

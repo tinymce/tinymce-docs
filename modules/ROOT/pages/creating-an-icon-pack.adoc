@@ -36,7 +36,6 @@ To create a custom icon pack:
 
 To use the {productname} icon pack template project:
 
-[arabic]
 . Download the https://github.com/tinymce/oxide-icon-pack-template[{productname} Oxide Icon Pack Template] by either:
 * Downloading the `+.zip+` file from the https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
 * From a terminal or command prompt, use git to clone the GitHub repository, such as:
@@ -100,7 +99,6 @@ NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will 
 
 To build the icon pack using Gulp:
 
-[arabic]
 . Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `+oxide-icon-pack-template/+`).
 . Build the icon pack by executing the `+npx gulp+` command:
 +
@@ -117,7 +115,6 @@ A `+dist/+` directory containing the icon pack will be created.
 
 The SVG files are optimized during the build process with https://github.com/svg/svgo[SVGO]. The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
 
-[arabic]
 . Using a text editor, open `+gulpfile.js+`.
 . Add the `+svgo+` option to the `+iconPackager+` function, such as:
 +

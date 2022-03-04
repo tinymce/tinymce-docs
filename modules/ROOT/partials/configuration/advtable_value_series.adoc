@@ -5,14 +5,33 @@ The `+advtable_value_series+` option configures one or more series of values for
 
 Type : `+Object+`
 
-Default Value : ```js \{ // Natural number series numeric: \{ title: 'Numeric', update: true, resizable: false, generator: `+GeneratorFunction+` // For details, see: 'Creating a value series generator' }, // English alphabetic series alpha: \{ title: 'Alpha', update: true, resizable: false, generator: `+GeneratorFunction+` // For details, see: 'Creating a value series generator' }, }
+Default Value :
+[source,js]
+----
+{
+  // Natural number series
+  numeric: {
+    title: 'Numeric',
+    update: true,
+    resizable: false,
+    generator: `GeneratorFunction` // For details, see: 'Creating a value series generator'
+  },
+  // English alphabetic series
+  alpha: {
+    title: 'Alpha',
+    update: true,
+    resizable: false,
+    generator: `GeneratorFunction` // For details, see: 'Creating a value series generator'
+  },
+}
+----
 
-....
 Both default series are configured to update on table changes and not resize when using the resize bars.
 
-Each top-level properties of the `advtable_value_series` object are used as the name of the value series and its configuration. In the following example, there are two value series named "`numbers`" and "`letters`":
+Each top-level properties of the `advtable_value_series` object are used as the name of the value series and its configuration. In the following example, there are two value series named `"numbers"` and `"letters"`:
 
-```js
+[source,js]
+----
 {
   numbers: {
     title: 'Numbered',
@@ -23,30 +42,32 @@ Each top-level properties of the `advtable_value_series` object are used as the 
     generator: `GeneratorFunction`
   },
 }
-....
+----
 
 === Series configuration
 
-[cols=",,,",options="header",]
+[cols="1,2,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
 |title |`+string+` |Required |The text shown in the UI for the series.
 |update |`+boolean+` |Optional |default: `+false+` - When `+true+`, the series values will be updated when changes are made to the table.
 |resizable |`+boolean+` |Optional |default: `+true+` - When `+true+`, table cells containing the series values can be resized using a mouse or touch device.
-|generator |`+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+` |Required |For details on creating a value series generator, see: <<creatingavalueseriesgenerator, Creating a value series generator>>.
+|generator |`+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+` |Required |For details on creating a value series generator, see: xref:advtable.adoc#creating_a_value_series_generator[Creating a value series generator].
 |===
 
+[[creating_a_value_series_generator]]
 ==== Creating a value series generator
 
-The `+generator+` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to: the generator and table cell, the row index, and column index of the table cell. For details, see: <<generatorinfo, GeneratorInfo>>. The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: <<generatorresult, GeneratorResult>>.
+The `+generator+` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to: the generator and table cell, the row index, and column index of the table cell. For details, see: xref:advtable.adoc#generatorinfo[GeneratorInfo]. The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: xref:generatorresult[GeneratorResult].
 
-If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `+prev+` property of the `+info+` parameter. For details, see: <<generatorinfo, GeneratorInfo>>.
+If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `+prev+` property of the `+info+` parameter. For details, see: xref:advtable.adoc#generatorinfo[GeneratorInfo].
 
+[[generatorinfo]]
 ===== GeneratorInfo
 
 An object with the following properties is passed to the generator callback function as the `+info+` parameter.
 
-[cols=",,",options="header",]
+[cols="1,2,4",options="header"]
 |===
 |Name |Value |Description
 |sectionType |`+'thead'+`, `+'tbody'+` or `+'tfoot'+` |The section of the table cell.
@@ -56,11 +77,12 @@ An object with the following properties is passed to the generator callback func
 |prev |`+GeneratorResult+` |The generator result from the previous iteration.
 |===
 
+[[generatorresult]]
 ===== GeneratorResult
 
 The generator callback function should return an object with the following properties.
 
-[cols=",,,",options="header",]
+[cols="1,1,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
 |classes |`+string[]+` |Optional |The classes to be applied to the table cell.

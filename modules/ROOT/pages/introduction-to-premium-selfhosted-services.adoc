@@ -9,7 +9,7 @@ Server-side components must be deployed onto a Java Servlet 3.0 compatible appli
 
 The following server-side components are included in the {productname} Self-hosted package:
 
-[cols="<,<,<",options="header",]
+[cols="<,<,<",options="header"]
 |===
 |Component |File |Description
 |xref:introduction-to-tiny-spellchecker.adoc[Spellchecking] |ephox-spelling.war |Spell checking service for {productname} Enterprise.
@@ -55,7 +55,7 @@ More information can be found in the documentation of your chosen application se
 [[create-a-configuration-file]]
 == Step 3. Create a configuration file
 
-Refer to the link:/how-to-guides/premium-server-side-guide/configure/[Configure] page for the details and come back here when you're done.
+Refer to the xref:configure-required-services.adoc[Configure] page for the details and come back here when you're done.
 
 [[pass-the-configuration-file-to-the-java-application-server]]
 == Step 4. Pass the configuration file to the Java application server

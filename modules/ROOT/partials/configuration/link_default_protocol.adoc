@@ -7,7 +7,7 @@ NOTE: This option also applies to the xref:autolink.adoc[autolink] plugin.
 
 Type: `+String+`
 
-Default Value: `+'http'+`
+Default Value: `+'https'+`
 
 === Example: Using `+link_default_protocol+`
 
@@ -18,6 +18,6 @@ tinymce.init({
   plugins: 'link',
   menubar: 'insert',
   toolbar: 'link',
-  link_default_protocol: 'https'
+  link_default_protocol: 'http'
 });
 ----

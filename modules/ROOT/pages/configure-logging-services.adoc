@@ -8,7 +8,6 @@ The {productname} server-side components use the http://logback.qos.ch/manual/co
 
 To write the logs to a specific file:
 
-[arabic]
 . Create a logging configuration XML file. Save the snippet below as `+logback.xml+` after replacing `+{$LOG_LOCATION}+` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 +
 [source,xml]

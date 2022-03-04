@@ -66,7 +66,6 @@ This notification is shown when the https://developer.mozilla.org/en-US/docs/Web
 
 Sometimes the domain in the *Referer* header does not match with the URL in the browser's address bar. To check the *Referer* header:
 
-[arabic]
 . Open your browser's _Developer's Tools_.
 . Open the _Network_ tab.
 . Find and select the request being made to load {productname} from {cloudname} with your API key.

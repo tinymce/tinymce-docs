@@ -12,7 +12,6 @@ This procedure requires the following programs:
 
 On a command line or command prompt:
 
-[arabic]
 . Create a new Ruby on Rails project.
 +
 [source,sh]
@@ -34,7 +33,6 @@ rails generate controller Welcome index
 +
 This creates a controller named `+Welcome+` with an action named `+index+`.
 . Set the project home page to `+index+`.
-[arabic]
 .. Using a text editor, open `+config/routes.rb+`, such as:
 +
 [source,sh]

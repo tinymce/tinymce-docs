@@ -33,7 +33,6 @@ The following description can be used for troubleshooting the behavior of contex
 
 The editor will determine which context toolbars or context form will be shown using following process:
 
-[arabic]
 . Find all *context forms* with both:
 * `+scope: 'node'+`
 * A predicate (condition) matching the current selection or cursor position.

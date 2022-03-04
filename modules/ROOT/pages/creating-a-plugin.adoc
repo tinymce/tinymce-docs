@@ -97,7 +97,6 @@ If a custom plugin includes any custom UI created using {productname}'s xref:cus
 
 {productname} comes with translations for many strings in many languages. To add additional strings to a supported language for a custom plugin, use the following procedure.
 
-[arabic]
 . Create a "`+langs+`" directory in the custom plugin's root directory for custom translations.
 . For each language that the plugin supports, create a translation file.
 +

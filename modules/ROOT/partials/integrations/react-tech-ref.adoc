@@ -95,7 +95,6 @@ The `+tinymce-react+` component provides props for:
 
 The `+tinymce-react+` integration will try to source {productname} in the following order:
 
-[arabic]
 . The global `+tinymce+` will be used, if it is present on the page.
 . If the `+tinymceScriptSrc+` prop is provided, then a script tag will be added to the page to load {productname} from the given URL.
 . If none of the above conditions apply, then a script tag will be added to the page to load {productname} from {cloudname}.

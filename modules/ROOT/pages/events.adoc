@@ -140,7 +140,7 @@ The following events are provided by the {productname} editor.
 |AfterProgressState |`+{ state: boolean }+` |Fired after the editor progress state is changed, and the new progress state is in effect.
 |PreProcess |`+{ node: Element, format: string }+` |Fired before serializing a DOM node to HTML content.
 |PostProcess |`+{ node: Element, format: string }+` |Fired after serializing a DOM node to HTML content.
-|SetAttrib |`+{ attrElm: Element, attrName: string, attrValue: string }+` |Fired when an attribute is updated using the editor link:/apis/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
+|SetAttrib |`+{ attrElm: Element, attrName: string, attrValue: string }+` |Fired when an attribute is updated using the editor xref:apis/tinymce.dom.domutils.adoc[DOMUtils API].
 |ResizeEditor |N/A |Fired when the editor is resized, either by the resize handles or the auto-resize plugin.
 |SkinLoaded |N/A |Fired when the editor skin has been loaded.
 |SkinLoadError |`+{ message: string }+` |Fired when the editor skin fails to load.

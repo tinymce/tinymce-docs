@@ -1,11 +1,11 @@
 [[toolbar]]
 == `+toolbar+`
 
-This option allows you to specify the link:/interface/toolbars/available-toolbar-buttons/[buttons] and the order that they will appear on {productname}'s toolbar.
+This option allows you to specify the xref:available-toolbar-buttons.adoc[buttons] and the order that they will appear on {productname}'s toolbar.
 
 === Grouping toolbar buttons
 
-To specify the buttons that should appear on {productname}'s toolbar, the `+toolbar+` option should be provided with a space separated list of link:/interface/toolbars/available-toolbar-buttons/[toolbar buttons]. To create groups within this list, please add `+|+` pipe characters between the groups of buttons that you would like to create.
+To specify the buttons that should appear on {productname}'s toolbar, the `+toolbar+` option should be provided with a space separated list of xref:available-toolbar-buttons.adoc[toolbar buttons]. To create groups within this list, please add `+|+` pipe characters between the groups of buttons that you would like to create.
 
 Type : `+String+`
 

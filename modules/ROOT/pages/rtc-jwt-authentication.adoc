@@ -53,7 +53,7 @@ A JSON Web Token (JWT) endpoint for {pluginname} requires:
 
 JSON Web Tokens produced by the JWT endpoint must include the following claims:
 
-[cols=",^,^,",options="header",]
+[cols="1,^1,^1,2",options="header"]
 |===
 |Data |Optional or required |Type |Description
 |`+sub+` |required |`+string+` or `+URI+` |The _unique_ user ID string or URI.

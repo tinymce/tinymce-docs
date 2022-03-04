@@ -14,7 +14,7 @@ Default proxy settings are picked up from JVM system properties, usually provide
 
 This optional proxy element provides an alternative to providing proxy settings as JVM system properties, or to override system properties.
 
-[cols="^,,",options="header",]
+[cols="^,,",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+proxy+` |Stores HTTP outgoing proxy settings for the server-side components.
@@ -49,7 +49,7 @@ Some server-side components make outbound HTTP and HTTPS connections. These incl
 
 This is not recommended for production environments.
 
-[cols="^,,",options="header",]
+[cols="^,,",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+http+` |Configures HTTP client behavior.

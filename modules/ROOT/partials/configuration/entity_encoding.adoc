@@ -7,7 +7,7 @@ The base entities `+<+`, `+>+`, `+&+`, `+'+`, and `+"+` will always be entity en
 
 === Encoding types
 
-[cols="1,3",options="header",]
+[cols="1,3",options="header"]
 |===
 |Name |Summary
 |named |Characters will be converted into named entities based on the entities option. For example, a non-breaking space could be encoded as `+&nbsp;+`. This value is default.

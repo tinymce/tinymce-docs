@@ -46,7 +46,7 @@ Each top-level properties of the `advtable_value_series` object are used as the 
 
 === Series configuration
 
-[cols=",,,",options="header",]
+[cols="1,2,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
 |title |`+string+` |Required |The text shown in the UI for the series.
@@ -67,7 +67,7 @@ If the "state" of the series needs to be kept between generator iterations, addi
 
 An object with the following properties is passed to the generator callback function as the `+info+` parameter.
 
-[cols=",,",options="header",]
+[cols="1,2,4",options="header"]
 |===
 |Name |Value |Description
 |sectionType |`+'thead'+`, `+'tbody'+` or `+'tfoot'+` |The section of the table cell.
@@ -82,7 +82,7 @@ An object with the following properties is passed to the generator callback func
 
 The generator callback function should return an object with the following properties.
 
-[cols=",,,",options="header",]
+[cols="1,1,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
 |classes |`+string[]+` |Optional |The classes to be applied to the table cell.

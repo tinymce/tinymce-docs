@@ -3,7 +3,7 @@
 
 {productname} can be used with a https://content-security-policy.com/[CSP] header. When using a CSP, the following directives are *required* for {productname} to function:
 
-[cols=",",options="header",]
+[cols=",",options="header"]
 |===
 |Policy directives |Reason
 |`+script-src 'self' *.tinymce.com *.tiny.cloud;+` |Scripts are sometimes loaded as script element with an src attribute.

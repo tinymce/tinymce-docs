@@ -16,14 +16,14 @@ endif::[]
 Type : `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
 Input parameters :
-[cols=",,",options="header",]
+[cols="1,1,3",options="header"]
 |===
 |Field |Type |Description
 |`+userId+` | `+string+` | User ID to resolve into user details.
 |===
 
 Return data :
-[cols=",,",options="header",]
+[cols="1,1,3",options="header"]
 |===
 |Field |Type |Description
 |`+fullName+` | `+string+` | The full display name of user. For example: `+"John Doe"+`.

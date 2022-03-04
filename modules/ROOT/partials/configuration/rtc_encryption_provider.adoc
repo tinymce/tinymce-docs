@@ -17,7 +17,7 @@ endif::[]
 Type : `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
 Input parameters :
-[cols=",,",options="header",]
+[cols="1,1,4",options="header"]
 |===
 |Field |Type |Description
 |`+documentId+` |`+string+` | The document ID from the xref:rtc-options-required.adoc#rtc_document_id[`+rtc_document_id+`] option.
@@ -25,7 +25,7 @@ Input parameters :
 |===
 
 Return data :
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
 |`+key+` | `+string+` |required | The encryption key that is used to locally encrypt and decrypt content for the current session. This key needs to be the same for all users connecting to a document (`+documentId+`).

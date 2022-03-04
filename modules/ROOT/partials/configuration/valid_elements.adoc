@@ -9,7 +9,7 @@ If you just want to add or change some behavior for a few items, use the xref:co
 
 === Control characters
 
-[cols="1,5",options="header",]
+[cols="1,5",options="header"]
 |===
 |Name |Summary
 |@ |Rules with this name will be applied to all elements defined after this rule. So `+@[attr1\|attr2]+` will enable `+attr1+` and `+attr2+` for all elements, but `+element1,@[attr1\|attr2],element2,element3+` will enable `+attr1+` and `+attr2+` only for `+element2+` and `+element3+`. If applied in xref:content-filtering.html#extended_valid_elements[extended_valid_elements], it is only effective for the elements in the extended_valid_elements list.
@@ -33,7 +33,7 @@ Wildcards such as `+*+`,`+++`,`+?+` may be used in element or attribute name mat
 
 === Variables
 
-[cols="1,5",options="header",]
+[cols="1,5",options="header"]
 |===
 |Name |Summary
 |`+{$uid}+` |Results in a unique ID. For example, `+'p[id:{$uid}]'+`.

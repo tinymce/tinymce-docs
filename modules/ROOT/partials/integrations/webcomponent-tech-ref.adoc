@@ -581,7 +581,7 @@ If these attributes are later removed, the event will be automatically unbound. 
 
 Bind the following browser events using the corresponding {productname} Web Component attribute.
 
-[cols=",",options="header",]
+[cols=",",options="header"]
 |===
 |Browser event |Attribute
 |`+BeforePaste+` |`+on-BeforePaste+`
@@ -619,7 +619,7 @@ Bind the following browser events using the corresponding {productname} Web Comp
 
 Bind the following {productname} events using the corresponding {productname} Web Component attribute.
 
-[cols=",",options="header",]
+[cols=",",options="header"]
 |===
 |{productname} event |Attribute
 |`+Activate+` |`+on-Activate+`

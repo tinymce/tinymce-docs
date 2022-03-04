@@ -1,6 +1,6 @@
 NOTE: Table row and table column cut, copy, and paste commands work with {productname}'s internal table clipboard, not the user's system clipboard.
 
-[cols="1,3",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |mceTableSizingMode |When `+table_sizing_mode+` is set to `+'auto'+`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: xref:table.adoc#table_sizing_mode[Table plugin - `+table_sizing_mode+`].

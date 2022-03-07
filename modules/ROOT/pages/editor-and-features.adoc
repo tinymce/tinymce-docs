@@ -8,7 +8,7 @@
 
 {cloudname} can be used without an API key. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:editimage-old.adoc[Edit Image] plugin.
+All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:editimage.adoc[Edit Image] plugin.
 
 == Integrating TinyMCE for the first time
 
@@ -58,7 +58,7 @@ Extend the xref:basic-setup.adoc[{productname} configuration] to include any add
 +
 NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:cloud-deployment-guide.html[{cloudname}].
 
-* xref:editimage-old.adoc[Edit Image (with configured image proxy)]
+* xref:editimage.adoc[Edit Image (with configured image proxy)]
 +
 NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy+` properties occurs automatically.
 
@@ -124,7 +124,7 @@ Extend the xref:basic-setup.adoc[{productname} configuration] to include any add
 +
 NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:cloud-deployment-guide.html[{cloudname}].
 
-* xref:editimage-old.adoc[Edit Image (with configured image proxy)]
+* xref:editimage.adoc[Edit Image (with configured image proxy)]
 +
 NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy+` properties occurs automatically.
 

@@ -2,7 +2,7 @@ var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 tinymce.init({
   selector: 'textarea#full-featured',
-  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker imagetools textpattern help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export',
+  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage textpattern help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
   tinydrive_dropbox_app_key: 'YOUR_DROPBOX_APP_KEY',
   tinydrive_google_drive_key: 'YOUR_GOOGLE_DRIVE_KEY',
@@ -52,7 +52,7 @@ tinymce.init({
   spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
   tinycomments_mode: 'embedded',
   content_style: '.mymention{ color: gray; }',
-  contextmenu: 'link image imagetools table configurepermanentpen',
+  contextmenu: 'link image editimage table configurepermanentpen',
   a11y_advanced_options: true,
   skin: useDarkMode ? 'oxide-dark' : 'oxide',
   content_css: useDarkMode ? 'dark' : 'default',

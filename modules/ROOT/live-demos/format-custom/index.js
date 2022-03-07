@@ -3,17 +3,17 @@ tinymce.init({
   height: 500,
   plugins: 'table wordcount',
   content_style: '.left { text-align: left; } ' +
-    'img.left { float: left; } ' +
-    'table.left { float: left; } ' +
+    'img.left, audio.left, video.left { float: left; } ' +
+    'table.left { margin-left: 0px; margin-right: auto; } ' +
     '.right { text-align: right; } ' +
-    'img.right { float: right; } ' +
-    'table.right { float: right; } ' +
+    'img.right, audio.right, video.right { float: right; } ' +
+    'table.right { margin-left: auto; margin-right: 0px; } ' +
     '.center { text-align: center; } ' +
-    'img.center { display: block; margin: 0 auto; } ' +
-    'table.center { display: block; margin: 0 auto; } ' +
+    'img.center, audio.center, video.center { display: block; margin: 0 auto; } ' +
+    'table.center { margin: 0 auto; } ' +
     '.full { text-align: justify; } ' +
-    'img.full { display: block; margin: 0 auto; } ' +
-    'table.full { display: block; margin: 0 auto; } ' +
+    'img.full, audio.full, video.full { display: block; margin: 0 auto; } ' +
+    'table.full { margin: 0 auto; } ' +
     '.bold { font-weight: bold; } ' +
     '.italic { font-style: italic; } ' +
     '.underline { text-decoration: underline; } ' +

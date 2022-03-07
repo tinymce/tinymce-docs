@@ -470,17 +470,18 @@ For example:
 
 [source,js]
 ----
-tinymce.execCommand('mceAddEditor', false, '<editor_id>');
+tinymce.execCommand('mceAddEditor', false, { id: '<editor_id>', options: {} });
 tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
-tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
+tinymce.execCommand('mceToggleEditor', false, { id: '<editor_id>' });
+tinymce.execCommand('mceToggleEditor', false, { index: '<editor_index>' });
 ----
 
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|mceAddEditor |Converts the specified HTML or DOM element into an editor instance with the specified ID.
+|mceAddEditor |Converts an HTML or DOM element with the specified ID into an editor instance that uses the specified editor configuration options. For information on configuring the editor, see: xref:basic-setup.adoc[Basic Setup].
 |mceRemoveEditor |Removes an editor instance with the specified ID.
-|mceToggleEditor |Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
+|mceToggleEditor |Runs `mceAddEditor` if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
 |===
 
 [[querycommandstates]]

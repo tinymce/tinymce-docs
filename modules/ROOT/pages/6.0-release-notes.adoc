@@ -1,29 +1,44 @@
 = TinyMCE 6.0 Release Notes
 
+[id=things-we-renamed]
 == Things we renamed
 
-| element       | old name                        | new name               | why                                                                                              | for more information                  |
-| ------------- | ------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------- |
-|               | old 2                           | new 2                  | explanation                                                                                      | see <<in-document-id>>                |
-| APIs          | old 1                           | new 1                  | explanation                                                                                      | see <<in-document-id>>                |
-|               | old n                           | new n                  | explanation                                                                                      | see <<in-document-id>>                |
-| Formatting UI | old 1                           | new 1                  | explanation                                                                                      | see <<in-document-id>>                |
-|               | old 2                           | new 2                  | explanation                                                                                      | see <<in-document-id>>                |
-|               | old n                           | new n                  | explanation                                                                                      | see <<in-document-id>>                |
-| Functions     | `noneditable_noneditable_class` | `noneditable_class`    | Consequent to `noneditable` being changed from a Plugin to being part of the {productname} Core. | see <<changed plugins > noneditable>> |
-|               | `noneditable_editable_class`    | `editable_class`       | Consequent to `noneditable` being changed from a Plugin to being part of the {productname} Core. | see <<changed plugins>>               |
-|               | `textpattern_patterns`          | `text_patterns`        | Consequent to `textpattern` being changed from a Plugin to being part of the {productname} Core. | see <<changed plugins>>               |
-|               | `default_link_target`           | `link_default_target`  | explanation NOTE: applies to both `link` and `autolink` plugins                                  | see <<in-document-id>>                |
-|               | `rel_list`                      | `link_rel_list`        | explanation                                                                                      | see <<in-document-id>>                |
-|               | `target_list`                   | `link_target_list`     | explanation                                                                                      | see <<in-document-id>>                |
-| Commands      | mceInsertTable                  | `mceInsertTableDialog` | `mceInsertTableDialog` is both a new command and a more accurate command name.                   | see <<changed plugins > table>>       |
-|               | old 2                           | new 2                  | explanation                                                                                      | see <<in-document-id>>                |
-|               | old n                           | new n                  | explanation                                                                                      | see <<in-document-id>>                |
+| element       | old name                         | new name                      | notes                                                                                                                                                                               | for more information                               |
+| ------------- | -------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+|               | `old 2`                          | `new 2`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+| APIs          | `old 1`                          | `new 1`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+|               | `old n`                          | `new n`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+| Formatting UI | `old 1`                          | `new 1`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+|               | `old 2`                          | `new 2`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+|               | `old n`                          | `new n`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+| Functions     | `noneditable_noneditable_class`  | `noneditable_class`           | Consequent to `noneditable` being changed from a Plugin to being part of the {productname} Core.                                                                                    | see <<changed-plugins-noneditable>>                |
+|               | `noneditable_editable_class`     | `editable_class`              | Consequent to `noneditable` being changed from a Plugin to being part of the {productname} Core.                                                                                    | see <<changed-plugins-noneditable>>                |
+|               | `textpattern_patterns`           | `text_patterns`               | Consequent to `textpattern` being changed from a Plugin to being part of the {productname} Core.                                                                                    | see <<changed-plugins-textpattern>>                |
+|               | `default_link_target`            | `link_default_target`         | This applies to both `link` and `autolink` plugins.                                                                                                                                 | see <<in-document-id>>                             |
+|               | `rel_list`                       | `link_rel_list`               | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+|               | `target_list`                    | `link_target_list`            | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+| Commands      | `mceInsertTable`                 | `mceInsertTableDialog`        | `mceInsertTableDialog` is both a new command and a more accurate command name.                                                                                                      | see <<changed-plugins-table>>                      |
+|               | `imagetools`                     | `editimage`                   | This presents in both the contextual menu and the toolbar’s tooltip text. NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin]. | see <<in-document-id>>                             |
+|               | `imagetools_toolbar`             | `editimage_toolbar`           | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                           | see <<in-document-id>>                             |
+|               | `imagetools_proxy`               | `editimage_proxy`             | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                           | see <<in-document-id>>                             |
+|               | `imagetools_cors_hosts`          | `editimage_cors_hosts`        | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                           | see <<in-document-id>>                             |
+|               | `imagetools_credentials_hosts`   | `editimage_credentials_hosts` | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                           | see <<in-document-id>>                             |
+|               | `imagetools_fetch_image`         | `editimage_fetch_iamge`       | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                           | see <<in-document-id>>                             |
+|               | `imagetools_api_key`             | `editimage_api_key`           | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                           | see <<in-document-id>>                             |
+|               | `images_upload_timeout`          | `editimage_upload_timeout`    | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                           | see <<in-document-id>>                             |
+|               | `toc`                            | `tableofcontents`             | This presents in both the menu item and the toolbar’s tooltip text. NB: Table of Contents is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].               | see <<new-and-improved-plugins-table-of-contents>> |
+|               | `tocupdate`                      | `tableofcontentsupdate`       | This presents in the toolbar’s tooltip text. NB: Table of Contents is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                      | see <<new-and-improved-plugins-table-of-contents>> |
+|               | `toc_class`                      | `tableofcontents_class`       | NB: Table of Contents is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                   | see <<new-and-improved-plugins-table-of-contents>> |
+|               | `toc_depth`                      | `tableofcontents_depth`       | NB: Table of Contents is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                   | see <<new-and-improved-plugins-table-of-contents>> |
+|               | `toc_header`                     | `tableofcontents_header`      | NB: Table of Contents is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                   | see <<new-and-improved-plugins-table-of-contents>> |
+|               | `old 2`                          | `new 2`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
+|               | `old n`                          | `new n`                       | notes                                                                                                                                                                               | see <<in-document-id>>                             |
 
 
 // the in-document links above and below are incorrectly expressed as of this writing.
 // time to learn the proper AsciiDoc syntax
 
+[id=default-value-changes]
 == Default value changes
 
 | element               | old value | new value | why         | for more information                  |
@@ -32,14 +47,25 @@
 | `table_use_colgroups` | `false`   | `true`    |             | see <<changed plugins > table>>       |
 
 
+[id=apis]
 == APIs
 
-- new and improved
+[id=new-and-improved-apis]
+=== new and improved APIs
+
+[id=new-and-improved-apis-editor-options]
+==== editor.options
+
+* The new `editor.options` API replaces both `editor.settings` and `editor.getParam`.
+
 - changed
 - fixed
 - added
+
+[id=removed-or-deprecated-apis]
 === Removed or deprecated APIs
 
+[id=removed-or-deprecated-apis-tables]
 ==== Table
 
 * The `table` plugin’s functionality is, as of {productname} 6.0, entirely focussed on the user interface (UI) for creating and editing tables.
@@ -105,25 +131,42 @@
 - removed or deprecated
     - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
 
+[id=plugins]
 == Plugins
 
+[id=new-and-improved-plugins]
 === New and improved plugins
 
+[id=new-and-improved-plugins-imagetools]
+==== EditImage
+
+NOTE: _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
+
+* The `editimage` plugin shows real-time updates of images as they are edited.
+
+* `editimage` also offers two new options:
+
+   1. `editimage_proxy_service_url` and
+
+   2. `export_image_proxy_service_url`.
+
+  These new options provide access to Tiny-specific services.
+  
+NOTE: `editimage_proxy` (the re-named equivalent to the previous `imagetools_proxy`) still works. It is the fallback option should the Tiny-specific services not be available.
+
+
+
+[id=new-and-improved-plugins-emoticons]
 ==== Emoticons
 
 * The `emoticon` plugin now uses the more accurate word, _Emoji_, in its tool bar, menu item and dialogue box.
 
    In previous versions, the word presented in these parts of the plugin’s user-interface was _Emoticon_.
 
-   NOTE: The plugin, itself, is still called Emoticons. And the plugin description and the plugin’s configuration and Help dialogues reflect this.
+   NOTE: The plugin, itself, is still called Emoticons. And the plugin description and the plugin’s configuration and Help dialogues still reflect this.
 
 
-==== ImageTools
-
-* The `imagetools` plugin now shows updates of the image being edited in real-time.
-
-  NOTE: this new version of the `imagetools` plugin is no longer part of the Core open source editor. ImageTools is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
-
+[id=new-and-improved-plugins-table-of-contents]
 ==== Table of contents
 
 * the `toc` plugin has modernised its output. It now uses the ES2020 library and targets ES2018. As well, it now uses https://terser.org[terser] to improve performance.
@@ -131,8 +174,10 @@
   NOTE: this new version of the `toc` plugin is no longer part of the Core open source editor. Table of Contents is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
 
+[id=changed-plugins]
 === Changed plugins
 
+[id=changed-plugins-autoresize]
 ==== Autoresize
 
 * Previously, the `autoresize` plugin offered an `autoresize_on_init` option.
@@ -141,24 +186,27 @@
   
   As of {productname} 6.0, it has been removed from the `autoresize` plugin.
 
+[id=changed-plugins-media]
 ==== Media
 
 * In {productname} 5.x, the `media` plugin used SaxParser to validate elements for parsing.
 
   As of {productname} 6.0, SaxParser is no longer used.
   
-  As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as ‘special’. Instead their contents are simply validated against the schema.
+  As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as _special_. Instead their contents are simply validated against the schema.
 
 * The `media` plugin’s `media_scripts` option was deprecated in {productname} 5.10.
 
   As of this release, {productname} 6.0, this option has been removed completely.
 
+[id=changed-plugins-noneditable]
 ==== Noneditable
 
 * The `noneditable` plugin is no longer a plugin. It is now  a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
 
+[id=changed-plugins-paste]
 ==== Paste
 
 * The `paste` plugin’s functionality is now  a Core part of {productname} 6.0.
@@ -167,12 +215,14 @@
 
 * The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
 
+[id=changed-plugins-print]
 ==== Print
 
 * `print` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
 
+[id=changed-plugins-table]
 ==== Table
 
 * The `table` plugin’s functionality is, as of {productname} 6.0, entirely focussed on the user interface (UI) for creating and editing tables.
@@ -199,60 +249,69 @@
 
   In {productname} 6.0, the `table_responsive_width` option has been removed.
 
-
-
-
+[id=changed-plugins-textpattern]
 ==== TextPattern
 
-* the `textpattern` plugin is no longer a plugin. It is now  a Core part of {productname} 6.0.
+* the `textpattern_patterns` plugin is no longer a plugin. It is has been re-named, to `text_patterns` and is now  a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
 
-   Also, the API that called `textpattern` has been removed.
+   Also, the API called `textpattern` has been removed.
 
    Finally, text patterns are now on by default. `text_patterns: false` or `text_patterns: []` turns the functionality off.
 
 
 
 
+[id=fixed-plugins]
 === Fixed plugins
 
+[id-added-plugins]
 === Added plugins
 
+[id=removed-or-deprecated-plugins]
 === Removed or deprecated plugins
 
+[id=removed-or-deprecated-plugins-bbcode]
 ==== BBCode
 
 * the `bbcode` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
+[id=removed-or-deprecated-plugins-color-picker]
 ==== Color Picker
 
 * the `colorpicker` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
+[id=removed-or-deprecated-plugins-context-menu]
 ==== Context Menu
 
 * the `contextmenu` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
+[id=removed-or-deprecated-plugins-full-page]
 ==== Full Page
 
 * the `fullpage` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
+[id=removed-or-deprecated-plugins-hr]
 ==== HR
 
 * The `hr` (horizontal rule) functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
 
   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
 
+[id=removed-or-deprecated-plugins-imagetools]
 ==== ImageTools
 
-* The `imagetools` plugin is no longer part of the Core open source editor. _ImageTools_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+* The `imagetools` plugin is no longer part of the Core open source editor. _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
-   NOTE: the new Premium plugin version of `imagetools` shows real-time updates of the image being edited.
+   NOTE: the new Premium plugin `editimage` shows real-time updates of the image being edited.
 
+[id=removed-or-deprecated-plugins-legacy-output]
 ==== Legacy Output
 
 * the `legacyoutput` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
+[id=removed-or-deprecated-plugins-paste]
 ==== Paste
 
 * The `paste` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
@@ -263,16 +322,19 @@
 
   NOTE: the Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received text before pasting it into place.
 
+[id=removed-or-deprecated-plugins-print]
 ==== Print
 
 * `print` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
 
+[id=removed-or-deprecated-plugins-spellchecker]
 ==== Spellchecker
 
 * the `spellchecker` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
+[id=removed-or-deprecated-plugins-tabfocus]
 ==== TabFocus
 
 * The `tabfocus` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
@@ -285,18 +347,19 @@
 
   As per that standard web practice, the `tabindex` attribute is copied from the target element to the iframe.
 
-
-
+[id=removed-or-deprecated-plugins-table-of-contents]
 ==== Table of contents
 
 * The `toc` plugin is no longer part of the Core open source editor. _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
    NOTE: the new Premium plugin version of `toc` has modernised its output. It uses the ES2020 library and targets ES2018. It also uses https://terser.org[terser] to improve performance.
 
+[id=removed-or-deprecated-plugins-text-color]
 ==== Text color
 
 * the `textcolor` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
+[id=removed-or-deprecated-plugins-text-pattern]
 ==== TextPattern
 
 * The `textpattern` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.

@@ -7,7 +7,7 @@ When adding a new attribute by specifying an existing element rule (e.g. `+img+`
 
 The below example replaces the current `+img+` rule (including the global element rules).
 
-Type : `+String+`
+Type: `+String+`
 
 === Example: Using `+extended_valid_elements+`
 
@@ -28,7 +28,7 @@ WARNING: Allowing script elements (`+<script>+`) in {productname} exposes users 
 To allow script elements in the editor, include the following in the {productname} configuration:
 
 ....
-extended_valid_elements : 'script[src|async|defer|type|charset]'
+extended_valid_elements: 'script[src|async|defer|type|charset]'
 ....
 
 === Interactive example

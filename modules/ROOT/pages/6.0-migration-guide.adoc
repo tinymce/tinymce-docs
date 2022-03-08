@@ -1,5 +1,11 @@
 = TinyMCE 5.x -> 6.0 Migration Guide
 
+== Things we renamed
+
+The xref:6.0-release-notes.adoc#things-we-renamed[_{productname} 6.0 Release Notes_] includes a table of every re-named API, Function, Command, Option, and User Interface element.
+
+The table also includes notes regarding what, if any, actions are necessary consequent to upgrading. 
+
 == Plugins
 
 === ImageTools
@@ -24,15 +30,34 @@ Users of the Free version of {productname} 5.x who rely on the, now deprecated a
 
 As noted in the xref:6.0-release-notes.adoc#changed-plugins-media[_{productname} 6.0 Release Notes_], the `media` plugin no longer uses the SaxParser.
 
-As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as _special_. Instead their contents are simply validated against the schema.
+As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as _special_, and cannot be marked as such. Put another way, the DomParser does not preserve embedded content.
 
-As of this release, there are no known cases of this change causing media objects to not work as expected. But, also as of this release, not every potential or possible use-case has been tested.
+Instead these elements, and their contents, are validated against the {productname} schema.
 
+This validation is generally done by the `valid_elements`, `valid_children` or `extended_valid_elements` config.
+
+The schema must, therefore, be configured to allow usage of the media elements, and the media element attributes.
+
+NOTE: as of this release, there are no known cases of this change causing media objects to not work as expected. But, also as of this release, not every potential or possible use-case has been tested.
+
+[id=plugins-paste]
 === Paste
 
 As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
 
-As a core feature of {productname} 6.0, one `paste` default has changed. The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
+In conjunction with this change, two changes have been made:
+
+1. A `paste` default has changed. The `paste_data_images` option now defaults to `true`.
+
+   When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
+
+2. The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
+
+   There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin.
+
+   If a community-maintained version of the `paste` plugin becomes available, we will link to it from here.
+
+NOTE: the Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
 === Table of Contents
 
@@ -54,6 +79,12 @@ As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-text-p
 As well, the `textpattern` API has been removed.
 
 Finally, and unlike in previous versions of {productname}, text patterns are now on by default. `text_patterns: false` or `text_patterns: []` turns the functionality off.
+
+After upgrading:
+
+* rename any options in your {productname} init configuration to match the new name. 
+
+* remove `textpattern` from your plugins list.
 
 
 // everything below here needs to be put into the structure above, once said structure is put into place.

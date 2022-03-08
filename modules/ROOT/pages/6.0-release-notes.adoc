@@ -23,7 +23,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 |               | `default_link_target`            | `link_default_target`         | Changed for consistency with other `link` and `autolink` options. Their functionality, and the values they can take remain unchanged. This change applies to both `link` and `autolink` plugins.                                                                            |                                                    |
 |               | `rel_list`                       | `link_rel_list`               | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                        |                                                    |
 |               | `target_list`                    | `link_target_list`            | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                        |                                                    |
-| Commands      | `mceInsertTable`                 | `mceInsertTableDialog`        | `mceInsertTableDialog` is both a new command and a more accurate command name.                                                                                                                                                                                              | see <<changed-plugins-table>>                      |
+| Commands      | `mceInsertTable`                 | `mceInsertTableDialog`        | Use `mceInsertTableDialog` to open the _Insert Table_ dialogue box. NB: `mceInsertTable` (with appropriate arguments) still works to insert a table directly into an existing document. `mceInsertTable` can no longer be used to invoke the _Table_ dialogue box, however. | see <<changed-plugins-table>>                      |
 |               | `imagetools`                     | `editimage`                   | This presents in both the contextual menu and the toolbar’s tooltip text. NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                         | see <<new-and-improved-plugins-imagetools>>        |
 |               | `imagetools_toolbar`             | `editimage_toolbar`           | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>        |
 |               | `imagetools_proxy`               | `editimage_proxy`             | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>        |
@@ -242,9 +242,11 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
   In {productname} 6.0, selecting cells in the `tfoot` section of a table and pressing the row header toolbar button returns the row as a footer row, as expected.
 
-* `mceInsertTableDialog` is the new command for invoking an insert table dialogue box.
+* `mceInsertTableDialog` is the new command for invoking an *Insert Table* dialogue box.
 
-   The previous command, `mceInsertTable`, no longer works: use the `mceInsertTableDialog` command instead.
+   The previous command, `mceInsertTable`, no longer works to invoke an *Insert Table* dialogue box: use the `mceInsertTableDialog` command instead.
+
+   The `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input.
 
 * The default values for the `table_style_by_css` and the `table_use_colgroups` options have both been changed.
 

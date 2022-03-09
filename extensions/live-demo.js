@@ -90,15 +90,13 @@ const getTabs = (type, contentData, initialTab) => {
     return d.name === 'run' || contentData.hasOwnProperty(d.name);
   }).map((d) => ({
     ...d,
-    text: d.name === 'run' ? getDemoTitle(type) : d.text,
-    class: initialTab === d.name ? 'live-demo_tab_selected' : 'live-demo_tab_deselected'
+    text: d.name === 'run' ? getDemoTitle(type) : d.text
   }));
 
   if (!contentData.hasExamplejs) {
     tabs.push({
       name: 'codepen',
-      text: 'Edit on CodePen',
-      class: 'codepen_tab_deselected ie11_optional'
+      text: 'Edit on CodePen'
     })
   }
 

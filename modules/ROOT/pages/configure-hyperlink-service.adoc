@@ -2,10 +2,9 @@
 
 :description: Configuration options for the hyperlinking premium server-side component.
 
+The following settings for the Hyperlinking premium server-side component are optional. These settings should be added to the `+application.conf+` file described in xref:configure-required-services.adoc[Required configuration for the server-side components].
 
-
-The following settings for the Hyperlinking premium server-side component are optional. These settings should be added to the `+application.conf+` file described in link:configure-required-services.html[Required configuration for the server-side components].
-
+[[link-checking]]
 == `+link-checking+` (optional)
 
 The Link checker has three configurable settings:
@@ -14,6 +13,7 @@ The Link checker has three configurable settings:
 * `+fallback-to-get+`
 * `+link-checking.cache+`
 
+[[enabled]]
 === `+enabled+` (optional)
 
 Used to enable (`+true+`) or disable (`+false+`) the Link-checking service. This setting is `+true+` by default.
@@ -29,6 +29,7 @@ ephox {
 }
 ----
 
+[[fallback-to-get]]
 === `+fallback-to-get+` (optional)
 
 The Link-checker normally relies on the `+HEAD+` response. If `+fallback-to-get+` is `+true+`, the link-checker may issue a `+GET+` request after receiving a non-standard `+HEAD+` response to verify a link. When `+true+`, the Link checker can correctly identify working URLs that return non-standard `+HEAD+` replies. Enabling the `+fallback-to-get+` setting can lead to server performance issues and is set to `+false+` by default.
@@ -44,6 +45,7 @@ ephox {
 }
 ----
 
+[[cache]]
 === `+cache+` (optional)
 
 This element configures the Link Checker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.

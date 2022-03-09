@@ -1,30 +1,31 @@
 = Commands Available for TinyMCE
 
 :title_nav: Available Commands
-
 :description_short: Complete list of editor commands.
 :description: The complete list of exposed editor commands.
 :keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
 
 == Overview
 
-* <<executablecommands, Executable commands>>
-** <<listingcoreandplugineditorcommands, Listing core and plugin editor commands>>
-** <<coreeditorcommands, Core Editor commands>>
-** <<plugincommands, Plugin Commands>>
-** <<editormanagementcommands, Editor Management Commands>>
-* <<querycommandstates, Query command states>>
-** <<listingcoreandpluginquerycommandstates, Listing core and plugin query command states>>
-** <<availablequerycommandstates, Available query command states>>
-* <<querycommandvalues, Query command values>>
-** <<listingcoreandpluginquerycommandvalues, Listing core and plugin Query command values>>
-** <<availablequerycommandvalues, Available Query command values>>
-** <<querycommandvaluestableplugin, Query command values: Table plugin>>
+* xref:executablecommands[Executable commands]
+** xref:listingcoreandplugineditorcommands[Listing core and plugin editor commands]
+** xref:coreeditorcommands[Core Editor commands]
+** xref:plugincommands[Plugin Commands]
+** xref:editormanagementcommands[Editor Management Commands]
+* xref:querycommandstates[Query command states]
+** xref:listingcoreandpluginquerycommandstates[Listing core and plugin query command states]
+** xref:availablequerycommandstates[Available query command states]
+* xref:querycommandvalues[Query command values]
+** xref:listingcoreandpluginquerycommandvalues[Listing core and plugin Query command values]
+** xref:availablequerycommandvalues[Available Query command values]
+** xref:querycommandvaluestableplugin[Query command values: Table plugin]
 
+[[executablecommands]]
 == Executable commands
 
-The following tables show the existing editor commands. These commands are provided by `+tinymce+` and not by the browser's internal commands. These commands can be executed using the link:tinymce.editorcommands.html#execcommand[execCommand] function.
+The following tables show the existing editor commands. These commands are provided by `+tinymce+` and not by the browser's internal commands. These commands can be executed using the xref:apis/tinymce.editor.adoc#execCommand[execCommand] function.
 
+[[listingcoreandplugineditorcommands]]
 === Listing core and plugin editor commands
 
 To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
@@ -34,11 +35,12 @@ To retrieve a list of avaliable commands from the active editor, run the followi
 tinymce.activeEditor.editorCommands.commands.exec;
 ----
 
+[[coreeditorcommands]]
 === Core Editor commands
 
 The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |Bold |Toggles bold formatting to selection.
@@ -49,7 +51,7 @@ The commands on the following table are provided by the {productname} editor and
 |Subscript |Toggles subscript formatting to selection.
 |Cut |Cuts the selected contents and puts in into users clipboard.
 |Copy |Copies the selected contents and puts in into users clipboard.
-|Lang |Sets the language of the current selection. The value passed in should be a language spec described in link:content-localization.html#content_langs[Content appearance options - `+content_langs+`].
+|Lang |Sets the language of the current selection. The value passed in should be a language spec described in xref:content-localization.adoc#content_langs[Content appearance options - `+content_langs+`].
 |Paste |Pastes the current clipboard contents into the editor.
 |mceInsertLink |Inserts a link at the current selection. The value is the URL to add to the link(s).
 |Unlink |Removes any links from the current selection.
@@ -67,13 +69,13 @@ The commands on the following table are provided by the {productname} editor and
 |mceRemoveTextcolor |Removes the text color or background color from the current selection. Requires an argument of either `+'hilitecolor'+` or `+'forecolor'+`.
 |RemoveFormat |Removes any formats from the current selection.
 |mceBlockQuote |Wraps the selected text blocks into a block quote.
-|FormatBlock |Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<`+p+`>) format will be toggled. For a list of options, see: link:content-formatting.html#built-informats[Content formatting options - Built-in formats].
+|FormatBlock |Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<`+p+`>) format will be toggled. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
 |mceInsertContent |Inserts contents at the current selection. The value passed in should be the contents to be inserted.
 |mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
 |mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
-|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: link:content-formatting.html#built-informats[Content formatting options - Built-in formats].
+|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
 |ToggleSidebar |Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`+<sidebar-name>+`_).
-|ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: link:toolbar-configuration-options.html#toolbar[User interface options - Toolbar].
+|ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |Indent |Indents the current selection.
 |Outdent |Outdents the current selection.
 |InsertHorizontalRule |Inserts a horizontal rule at the cursor location or inplace of the current selection.
@@ -97,8 +99,7 @@ The commands on the following table are provided by the {productname} editor and
 |mcePrint |Opens the browser's print dialog for the current page.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.execCommand('Bold');
@@ -158,270 +159,309 @@ tinymce.activeEditor.execCommand('mceFocus');
 tinymce.activeEditor.execCommand('mcePrint');
 ----
 
+[[plugincommands]]
 === Plugin Commands
 
 Commands are available for the following plugins:
 
-* <<advancedcode, Advanced Code>>
-* <<advancedlists, Advanced Lists>>
-* <<advancedtables, Advanced Tables>>
-* <<anchor, Anchor>>
-* <<autoresize, Autoresize>>
-* <<casechange, Case Change>>
-* <<charactermap, Character Map>>
-* <<code, Code>>
-* <<codesample, Code Sample>>
-* <<comments, Comments>>
-* <<directionality, Directionality>>
-* <<emoticons, Emoticons>>
-* <<export, Export>>
-* <<formatpainter, Format Painter>>
-* <<fullscreen, Full Screen>>
-* <<help, Help>>
-* <<image, Image>>
-* <<imagetools, Image Tools>>
-* <<insertdatetime, Insert Date/Time>>
-* <<link, Link>>
-* <<lists, Lists>>
-* <<media, Media>>
-* <<nonbreakingspace, Nonbreaking Space>>
-* <<pagebreak, Page Break>>
-* <<paste, Paste>>
-* <<permanentpen, Permanent Pen>>
-* <<powerpaste, PowerPaste>>
-* <<preview, Preview>>
-* <<save, Save>>
-* <<searchandreplace, Search and Replace>>
-* <<spellcheckerpro, Spell Checker Pro>>
-* <<table, Table>>
-* <<template, Template>>
-* <<tableofcontents, Table of Contents>>
-* <<visualblocks, Visual Blocks>>
-* <<visualcharacters, Visual Characters>>
-* <<wordcount, Word Count>>
+* xref:advancedcode[Advanced Code]
+* xref:advancedlists[Advanced Lists]
+* xref:advancedtables[Advanced Tables]
+* xref:anchor[Anchor]
+* xref:autoresize[Autoresize]
+* xref:casechange[Case Change]
+* xref:charactermap[Character Map]
+* xref:code[Code]
+* xref:codesample[Code Sample]
+* xref:comments[Comments]
+* xref:directionality[Directionality]
+* xref:emoticons[Emoticons]
+* xref:export[Export]
+* xref:formatpainter[Format Painter]
+* xref:fullscreen[Full Screen]
+* xref:help[Help]
+* xref:image[Image]
+* xref:imagetools[Image Tools]
+* xref:insertdatetime[Insert Date/Time]
+* xref:link[Link]
+* xref:lists[Lists]
+* xref:media[Media]
+* xref:nonbreakingspace[Nonbreaking Space]
+* xref:pagebreak[Page Break]
+* xref:paste[Paste]
+* xref:permanentpen[Permanent Pen]
+* xref:powerpaste[PowerPaste]
+* xref:preview[Preview]
+* xref:save[Save]
+* xref:searchandreplace[Search and Replace]
+* xref:spellcheckerpro[Spell Checker Pro]
+* xref:table[Table]
+* xref:template[Template]
+* xref:tableofcontents[Table of Contents]
+* xref:visualblocks[Visual Blocks]
+* xref:visualcharacters[Visual Characters]
+* xref:wordcount[Word Count]
 
+[[advancedcode]]
 ==== Advanced Code
 
-The following command requires the link:advcode.html[Advanced Code (`+advcode+`)] plugin.
+The following command requires the xref:advcode.adoc[Advanced Code (`+advcode+`)] plugin.
 
-include::partial$commands/code-cmds.adoc[]
+include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
+[[advancedlists]]
 ==== Advanced Lists
 
-The following commands require the link:advlist.html[Advanced Lists (`+advlist+`)] plugin.
+The following commands require the xref:advlist.adoc[Advanced Lists (`+advlist+`)] plugin.
 
-include::partial$commands/advlist-cmds.adoc[]
+include::partial$commands/advlist-cmds.adoc[leveloffset=+3]
 
+[[advancedtables]]
 ==== Advanced Tables
 
-The following commands require the link:advtable.html[Advanced Tables (`+advtable+`)] plugin.
+The following commands require the xref:advtable.adoc[Advanced Tables (`+advtable+`)] plugin.
 
-include::partial$commands/advtable-cmds.adoc[]
+include::partial$commands/advtable-cmds.adoc[leveloffset=+3]
 
+[[anchor]]
 ==== Anchor
 
-The following command requires the link:anchor.html[Anchor (`+anchor+`)] plugin.
+The following command requires the xref:anchor.adoc[Anchor (`+anchor+`)] plugin.
 
-include::partial$commands/anchor-cmds.adoc[]
+include::partial$commands/anchor-cmds.adoc[leveloffset=+3]
 
+[[autoresize]]
 ==== Autoresize
 
-The following command requires the link:autoresize.html[Autoresize (`+autoresize+`)] plugin.
+The following command requires the xref:autoresize.adoc[Autoresize (`+autoresize+`)] plugin.
 
-include::partial$commands/autoresize-cmds.adoc[]
+include::partial$commands/autoresize-cmds.adoc[leveloffset=+3]
 
+[[casechange]]
 ==== Case Change
 
-The following commands require the link:casechange.html[Case Change (`+casechange+`)] plugin.
+The following commands require the xref:casechange.adoc[Case Change (`+casechange+`)] plugin.
 
-include::partial$commands/casechange-cmds.adoc[]
+include::partial$commands/casechange-cmds.adoc[leveloffset=+3]
 
+[[charactermap]]
 ==== Character Map
 
-The following command requires the link:charmap.html[Character Map (`+charmap+`)] plugin.
+The following command requires the xref:charmap.adoc[Character Map (`+charmap+`)] plugin.
 
-include::partial$commands/charmap-cmds.adoc[]
+include::partial$commands/charmap-cmds.adoc[leveloffset=+3]
 
+[[code]]
 ==== Code
 
-The following command requires the link:code.html[Code (`+code+`)] plugin.
+The following command requires the xref:code.adoc[Code (`+code+`)] plugin.
 
-include::partial$commands/code-cmds.adoc[]
+include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
+[[codesample]]
 ==== Code Sample
 
-The following command requires the link:codesample.html[Code Sample (`+codesample+`)] plugin.
+The following command requires the xref:codesample.adoc[Code Sample (`+codesample+`)] plugin.
 
-include::partial$commands/codesample-cmds.adoc[]
+include::partial$commands/codesample-cmds.adoc[leveloffset=+3]
 
+[[comments]]
 ==== Comments
 
-The following commands require the link:comments.html[Comments (`+tinycomments+`)] plugin.
+The following commands require the xref:introduction-to-tiny-comments.adoc[Comments (`+tinycomments+`)] plugin.
 
-include::partial$commands/comments-cmds.adoc[]
+include::partial$commands/comments-cmds.adoc[leveloffset=+3]
 
+[[directionality]]
 ==== Directionality
 
-The following commands require the link:directionality.html[Directionality (`+directionality+`)] plugin.
+The following commands require the xref:directionality.adoc[Directionality (`+directionality+`)] plugin.
 
-include::partial$commands/directionality-cmds.adoc[]
+include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 
+[[emoticons]]
 ==== Emoticons
 
-The following commands require the link:emoticons.html[Emoticons (`+emoticons+`)] plugin.
+The following commands require the xref:emoticons.adoc[Emoticons (`+emoticons+`)] plugin.
 
-include::partial$commands/emoticons-cmds.adoc[]
+include::partial$commands/emoticons-cmds.adoc[leveloffset=+3]
 
+[[export]]
 ==== Export
 
-The following commands require the link:export.html[Export (`+export+`)] plugin.
+The following commands require the xref:export.adoc[Export (`+export+`)] plugin.
 
-include::partial$commands/export-cmds.adoc[]
+include::partial$commands/export-cmds.adoc[leveloffset=+3]
 
+[[formatpainter]]
 ==== Format Painter
 
-The following commands require the link:formatpainter.html[Format Painter (`+formatpainter+`)] plugin.
+The following commands require the xref:formatpainter.adoc[Format Painter (`+formatpainter+`)] plugin.
 
-include::partial$commands/formatpainter-cmds.adoc[]
+include::partial$commands/formatpainter-cmds.adoc[leveloffset=+3]
 
+[[fullscreen]]
 ==== Full Screen
 
-The following command requires the link:fullscreen.html[Full Screen (`+fullscreen+`)] plugin.
+The following command requires the xref:fullscreen.adoc[Full Screen (`+fullscreen+`)] plugin.
 
-include::partial$commands/fullscreen-cmds.adoc[]
+include::partial$commands/fullscreen-cmds.adoc[leveloffset=+3]
 
+[[help]]
 ==== Help
 
-The following command requires the link:help.html[Help (`+help+`)] plugin.
+The following command requires the xref:help.adoc[Help (`+help+`)] plugin.
 
-include::partial$commands/help-cmds.adoc[]
+include::partial$commands/help-cmds.adoc[leveloffset=+3]
 
+[[image]]
 ==== Image
 
-The following command requires the link:image.html[Image (`+image+`)] plugin.
+The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
-include::partial$commands/image-cmds.adoc[]
+include::partial$commands/image-cmds.adoc[leveloffset=+3]
 
+[[imagetools]]
 ==== Image Tools
 
-The following commands require the link:imagetools.html[Image Tools (`+imagetools+`)] plugin.
+The following commands require the xref:imagetools.adoc[Image Tools (`+imagetools+`)] plugin.
 
-include::partial$commands/imagetools-cmds.adoc[]
+include::partial$commands/imagetools-cmds.adoc[leveloffset=+3]
 
+[[insertdatetime]]
 ==== Insert Date/Time
 
-The following commands require the link:insertdatetime.html[Insert Date/Time (`+insertdatetime+`)] plugin.
+The following commands require the xref:insertdatetime.adoc[Insert Date/Time (`+insertdatetime+`)] plugin.
 
-include::partial$commands/insertdatetime-cmds.adoc[]
+include::partial$commands/insertdatetime-cmds.adoc[leveloffset=+3]
 
+[[link]]
 ==== Link
 
-The following command requires the link:link.html[Link (`+link+`)] plugin.
+The following command requires the xref:link.adoc[Link (`+link+`)] plugin.
 
-include::partial$commands/link-cmds.adoc[]
+include::partial$commands/link-cmds.adoc[leveloffset=+3]
 
+[[lists]]
 ==== Lists
 
-The following commands require the link:lists.html[Lists (`+lists+`)] plugin.
+The following commands require the xref:lists.adoc[Lists (`+lists+`)] plugin.
 
-include::partial$commands/lists-cmds.adoc[]
+include::partial$commands/lists-cmds.adoc[leveloffset=+3]
 
+[[media]]
 ==== Media
 
-The following command requires the link:media.html[Media (`+media+`)] plugin.
+The following command requires the xref:media.adoc[Media (`+media+`)] plugin.
 
-include::partial$commands/media-cmds.adoc[]
+include::partial$commands/media-cmds.adoc[leveloffset=+3]
 
+[[nonbreakingspace]]
 ==== Nonbreaking Space
 
-The following command requires the link:nonbreaking.html[Nonbreaking Space (`+nonbreaking+`)] plugin.
+The following command requires the xref:nonbreaking.adoc[Nonbreaking Space (`+nonbreaking+`)] plugin.
 
-include::partial$commands/nbsp-cmds.adoc[]
+include::partial$commands/nbsp-cmds.adoc[leveloffset=+3]
 
+[[pagebreak]]
 ==== Page Break
 
-The following command requires the link:pagebreak.html[Page Break (`+pagebreak+`)] plugin.
+The following command requires the xref:pagebreak.adoc[Page Break (`+pagebreak+`)] plugin.
 
-include::partial$commands/pagebreak-cmds.adoc[]
+include::partial$commands/pagebreak-cmds.adoc[leveloffset=+3]
 
+[[paste]]
 ==== Paste
 
-The following commands require the link:paste.html[Paste (`+paste+`)] plugin.
+The following commands require the xref:paste.adoc[Paste (`+paste+`)] plugin.
 
-include::partial$commands/paste-cmds.adoc[]
+include::partial$commands/paste-cmds.adoc[leveloffset=+3]
 
+[[permanentpen]]
 ==== Permanent Pen
 
-The following commands require the link:permanentpen.html[Permanent Pen (`+permanentpen+`)] plugin.
+The following commands require the xref:permanentpen.adoc[Permanent Pen (`+permanentpen+`)] plugin.
 
-include::partial$commands/permanentpen-cmds.adoc[]
+include::partial$commands/permanentpen-cmds.adoc[leveloffset=+3]
 
+[[powerpaste]]
 ==== PowerPaste
 
-The following command requires the link:powerpaste.html[PowerPaste (`+powerpaste+`)] plugin.
+The following command requires the xref:introduction-to-powerpaste.adoc[PowerPaste (`+powerpaste+`)] plugin.
 
-include::partial$commands/powerpaste-cmds.adoc[]
+include::partial$commands/powerpaste-cmds.adoc[leveloffset=+3]
 
+[[preview]]
 ==== Preview
 
-The following command requires the link:preview.html[Preview (`+preview+`)] plugin.
+The following command requires the xref:preview.adoc[Preview (`+preview+`)] plugin.
 
-include::partial$commands/preview-cmds.adoc[]
+include::partial$commands/preview-cmds.adoc[leveloffset=+3]
 
+[[save]]
 ==== Save
 
-The following commands require the link:save.html[Save (`+save+`)] plugin.
+The following commands require the xref:save.adoc[Save (`+save+`)] plugin.
 
-include::partial$commands/save-cmds.adoc[]
+include::partial$commands/save-cmds.adoc[leveloffset=+3]
 
+[[searchandreplace]]
 ==== Search and Replace
 
-The following command requires the link:searchreplace.html[Search and Replace (`+searchreplace+`)] plugin.
+The following command requires the xref:searchreplace.adoc[Search and Replace (`+searchreplace+`)] plugin.
 
-include::partial$commands/searchreplace-cmds.adoc[]
+include::partial$commands/searchreplace-cmds.adoc[leveloffset=+3]
 
+[[spellcheckerpro]]
 ==== Spell Checker Pro
 
-The following commands require the link:tinymcespellchecker.html[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
+The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
 
-include::partial$commands/tinymcespellchecker-cmds.adoc[]
+include::partial$commands/tinymcespellchecker-cmds.adoc[leveloffset=+3]
 
+[[table]]
 ==== Table
 
-The following commands require the link:table.html[Table (`+table+`)] plugin.
+The following commands require the xref:table.adoc[Table (`+table+`)] plugin.
 
-include::partial$commands/table-cmds.adoc[]
+include::partial$commands/table-cmds.adoc[leveloffset=+3]
 
+[[template]]
 ==== Template
 
-The following command requires the link:template.html[Template (`+template+`)] plugin.
+The following command requires the xref:template.adoc[Template (`+template+`)] plugin.
 
-include::partial$commands/template-cmds.adoc[]
+include::partial$commands/template-cmds.adoc[leveloffset=+3]
 
+[[tableofcontents]]
 ==== Table of Contents
 
-The following commands require the link:toc.html[Table of Contents (`+toc+`)] plugin.
+The following commands require the xref:toc.adoc[Table of Contents (`+toc+`)] plugin.
 
-include::partial$commands/toc-cmds.adoc[]
+include::partial$commands/toc-cmds.adoc[leveloffset=+3]
 
+[[visualblocks]]
 ==== Visual Blocks
 
-The following command requires the link:visualblocks.html[Visual Blocks (`+visualblocks+`)] plugin.
+The following command requires the xref:visualblocks.adoc[Visual Blocks (`+visualblocks+`)] plugin.
 
-include::partial$commands/visualblocks-cmds.adoc[]
+include::partial$commands/visualblocks-cmds.adoc[leveloffset=+3]
 
+[[visualcharacters]]
 ==== Visual Characters
 
-The following command requires the link:visualchars.html[Visual Characters (`+visualchars+`)] plugin.
+The following command requires the xref:visualchars.adoc[Visual Characters (`+visualchars+`)] plugin.
 
-include::partial$commands/visualchars-cmds.adoc[]
+include::partial$commands/visualchars-cmds.adoc[leveloffset=+3]
 
+[[wordcount]]
 ==== Word Count
 
-The following command requires the link:visualchars.html[Word Count (`+wordcount+`)] plugin.
+The following command requires the xref:visualchars.adoc[Word Count (`+wordcount+`)] plugin.
 
-include::partial$commands/wordcount-cmds.adoc[]
+include::partial$commands/wordcount-cmds.adoc[leveloffset=+3]
 
+[[editormanagementcommands]]
 === Editor Management Commands
 
 The following commands are used to manage editor instances.
@@ -430,23 +470,26 @@ For example:
 
 [source,js]
 ----
-tinymce.execCommand('mceAddEditor', false, '<editor_id>');
+tinymce.execCommand('mceAddEditor', false, { id: '<editor_id>', options: {} });
 tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
-tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
+tinymce.execCommand('mceToggleEditor', false, { id: '<editor_id>' });
+tinymce.execCommand('mceToggleEditor', false, { index: '<editor_index>' });
 ----
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
-|mceAddEditor |Converts the specified HTML or DOM element into an editor instance with the specified ID.
+|mceAddEditor |Converts an HTML or DOM element with the specified ID into an editor instance that uses the specified editor configuration options. For information on configuring the editor, see: xref:basic-setup.adoc[Basic Setup].
 |mceRemoveEditor |Removes an editor instance with the specified ID.
-|mceToggleEditor |Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either link:tinymce.editor.html#hide[hide] if the editor is visible or link:tinymce.editor.html#show[show] if it is not visible.
+|mceToggleEditor |Runs `mceAddEditor` if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
 |===
 
+[[querycommandstates]]
 == Query command states
 
 {productname} provides the `+queryCommandState+` API to allow developers to determine the current state of selected content. The query will return `+true+` if the content is formatted using the same CSS styles and elements used by the corresponding command.
 
+[[listingcoreandpluginquerycommandstates]]
 === Listing core and plugin query command states
 
 To retrieve a list of avaliable queryable states from the active editor, run the following command from the browser console:
@@ -456,11 +499,12 @@ To retrieve a list of avaliable queryable states from the active editor, run the
 tinymce.activeEditor.editorCommands.commands.state;
 ----
 
+[[availablequerycommandstates]]
 === Available query command states
 
-The following command states can be queried using the link:tinymce.editorcommands.html#querycommandstate[queryCommandState] API.
+The following command states can be queried using the xref:apis/tinymce.editor.adoc#queryCommandState[queryCommandState] API.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |Bold |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Bold+` command.
@@ -481,8 +525,7 @@ The following command states can be queried using the link:tinymce.editorcommand
 |Underline |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Underline+` command.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.queryCommandState('Bold');
@@ -503,24 +546,27 @@ tinymce.activeEditor.queryCommandState('ToggleToolbarDrawer');
 tinymce.activeEditor.queryCommandState('Underline');
 ----
 
+[[querycommandvalues]]
 == Query command values
 
 {productname} provides the `+queryCommandValue+` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
 
+[[listingcoreandpluginquerycommandvalues]]
 === Listing core and plugin query command values
 
-To retrieve a list of avaliable queryable command values from the active editor, run the following command from the browser console:
+To retrieve a list of available queryable command values from the active editor, run the following command from the browser console:
 
 [source,js]
 ----
 tinymce.activeEditor.editorCommands.commands.value;
 ----
 
+[[availablequerycommandvalues]]
 === Available query command values
 
-The following command values can be queried using the link:tinymce.editorcommands.html#querycommandvalue[queryCommandValue] API.
+The following command values can be queried using the xref:apis/tinymce.editor.adoc#queryCommandValue[queryCommandValue] API.
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |FontName |Returns the font name of the current selection.
@@ -529,8 +575,7 @@ The following command values can be queried using the link:tinymce.editorcommand
 |ToggleSidebar |Returns the current state of sidebar (open or closed).
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.queryCommandValue('FontName');
@@ -539,6 +584,7 @@ tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ----
 
+[[querycommandvaluestableplugin]]
 === Query command values: Table plugin
 
-include::partial$commands/table-query-cmd-values.adoc[]
+include::partial$commands/table-query-cmd-values.adoc[leveloffset=+3]

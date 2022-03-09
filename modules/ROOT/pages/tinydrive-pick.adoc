@@ -1,9 +1,9 @@
 = Tiny Drive Pick API
 
 :title_nav: The Pick API
-
 :description: Using the Tiny Drive Pick API
 :keywords: tinydrive api pick
+:apiname: pick
 
 The `+tinydrive.pick+` method allows users to pick files from {cloudfilemanager} and get the metadata of those files returned in a promise. This metadata can be used to insert or retrieve the file or files if needed.
 
@@ -41,10 +41,6 @@ liveDemo::drive-plugin-pick[ ]
 
 == Configuration options
 
-:apiname: pick
+include::partial$configuration/filetypes.adoc[leveloffset=+1]
 
-
-
-include::partial$configuration/filetypes.adoc[]
-
-include::partial$configuration/max_image_dimension.adoc[]
+include::partial$configuration/max_image_dimension.adoc[leveloffset=+1]

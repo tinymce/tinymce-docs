@@ -1,26 +1,32 @@
-\{% if page.name == "available-toolbar-buttons.md" %}
+ifeval::["{docname}" == "available-toolbar-buttons"]
 
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-\{% if altplugincode %}
-include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[] \{% else %}
-include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[] \{% endif %}
+ifeval::["{altplugincode}" != "nil"]
+include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
+endif::[]
+ifeval::["{altplugincode}" == "nil"]
+include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
+endif::[]
 
-For information on the {pluginname} plugin, see: link:{plugincode}.html[Plugins - The {pluginname} plugin]
+For information on the {pluginname} plugin, see: xref:{plugincode}.adoc[Plugins - The {pluginname} plugin]
 
-\{% else %}
-
+endif::[]
+ifeval::["{docname}" != "available-toolbar-buttons"]
+[[toolbar-buttons]]
 == Toolbar buttons
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-\{% if altplugincode %}
-include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[] \{% else %}
-include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[] \{% endif %}
+ifeval::["{altplugincode}" != "nil"]
+include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
+endif::[]
+ifeval::["{altplugincode}" == "nil"]
+include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
+endif::[]
 
 include::partial$misc/toolbar-button-settings.adoc[]
 
-\{% endif %}
-:altplugincode: nil
+endif::[]

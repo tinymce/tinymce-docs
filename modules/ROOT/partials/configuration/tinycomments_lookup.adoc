@@ -1,3 +1,4 @@
+[[tinycomments_lookup]]
 == `+tinycomments_lookup+`
 
 The Comments plugin uses the `+tinycomments_lookup+` function to retrieve an existing conversation using a conversation's unique ID.
@@ -41,9 +42,7 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-____
-*Note*: The dates should use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString[ISO 8601 format]. This can be generated in JavaScript with: `+new Date().toISOString()+`.
-____
+NOTE: The dates should use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString[ISO 8601 format]. This can be generated in JavaScript with: `+new Date().toISOString()+`.
 
 For example:
 

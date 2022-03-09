@@ -1,10 +1,11 @@
+[[formats]]
 == formats
 
 This option is used to override default {productname} *formats* or add custom *formats* to the editor.
 
 {productname} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named *format*. For example, the `+bold+` format is the style that is applied to text when the bold button is clicked.
 
-Check out the link:user-formatting-options.html#style_formats/[custom formats example] for a demonstration of this option.
+Check out the xref:user-formatting-options.adoc#style_formats[custom formats example] for a demonstration of this option.
 
 The `+formats+` configuration option takes an object of format name and format specification pairs. Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
 
@@ -21,16 +22,19 @@ bold: [
 ],
 ----
 
+[[stylemerging]]
 === Style merging
 
 Similar elements and styles are merged by default to reduce the output HTML size. So for example, if a font size and font face are selected for a word, it merges these two styles into one `+span+` element instead of one `+span+` for *each format type*.
 
+[[built-informats]]
 === Built-in formats
 
 include::partial$configuration/builtinformats.adoc[]
 
 Some built-in formats `+fontsize+`, `+fontname+`, `+forecolor+`, `+hilitecolor+` use a variable in their definition named `+%value+`. This gets replaced with the user selected item such as a `+color+` value. Check the variable substitution section below for details.
 
+[[formattype]]
 === Format Type
 
 There are three types of formats:
@@ -39,7 +43,7 @@ There are three types of formats:
 * Inline format
 * Selector format
 
-All three format types can be used with the `+formats+` configuration option. They can also be used to specify a new format item in the link:user-formatting-options.html#style_formats[`+style_formats+`] configuration option. However, a format that is specified using `+formats+` is then registered with the editor, and can be referred to by name in `+style_formats+` rather than needing to specify the format again.
+All three format types can be used with the `+formats+` configuration option. They can also be used to specify a new format item in the xref:user-formatting-options.adoc#style_formats[`+style_formats+`] configuration option. However, a format that is specified using `+formats+` is then registered with the editor, and can be referred to by name in `+style_formats+` rather than needing to specify the format again.
 
 For example, these two configurations are equivalent:
 
@@ -69,8 +73,9 @@ tinymce.init({
 });
 ----
 
-A registered format can also be used by name with the built-in link:content-formatting.html#usingcustomformats[Using custom formats] for an example.
+A registered format can also be used by name with the built-in xref:user-formatting-options.adoc#using-custom-formats[Using custom formats] for an example.
 
+[[block]]
 ==== `+block+`
 
 Tag name of the block element to use as a wrapper, for example, `+h1+`. Existing block elements within the selection are replaced with this block element.
@@ -90,6 +95,7 @@ tinymce.init({
 });
 ----
 
+[[inline]]
 ==== `+inline+`
 
 Tag name of the inline element to use as a wrapper, for example, `+span+` is used to wrap the current selection.
@@ -109,6 +115,7 @@ tinymce.init({
 });
 ----
 
+[[selector]]
 ==== `+selector+`
 
 CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table.
@@ -131,10 +138,12 @@ tinymce.init({
 });
 ----
 
+[[format_parameters]]
 === Format parameters
 
 For each format some additional parameters can be specified:
 
+[[classes]]
 ==== `+classes+`
 
 Space-separated list of classes that are:
@@ -159,6 +168,7 @@ tinymce.init({
 });
 ----
 
+[[styles]]
 ==== `+styles+`
 
 Key/value object with CSS styles to apply to the selected or newly created inline/block element (e.g. `+color+`, `+backgroundColor+`, `+textDecoration+`, etc).
@@ -178,6 +188,7 @@ tinymce.init({
 });
 ----
 
+[[attributes]]
 ==== `+attributes+`
 
 Key/value object with attributes to apply to the selected or newly created inline/block element.
@@ -215,6 +226,7 @@ tinymce.init({
 });
 ----
 
+[[exact]]
 ==== `+exact+`
 
 Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for `+underline+` and `+strikethrough+` formats.
@@ -237,6 +249,7 @@ tinymce.init({
 });
 ----
 
+[[wrapper]]
 ==== `+wrapper+`
 
 States that the format is a container format for block elements. For example, a `+div+` wrapper or `+blockquote+`.
@@ -258,6 +271,7 @@ tinymce.init({
 });
 ----
 
+[[remove]]
 ==== `+remove+`
 
 Specifies what the remove behavior of the element should be when the format is removed.
@@ -294,6 +308,7 @@ tinymce.init({
 });
 ----
 
+[[block_expand]]
 ==== `+block_expand+`
 
 This option controls if the selection should expand upwards to the closest matching block element. This can be useful when configuring `+removeformat+` to remove block elements. So if the selection start is at the beginning of a matching block, then that matching block will be included as well. If the end of the selection is at the end of a matching block element then that parent element will be included as well.
@@ -332,6 +347,7 @@ tinymce.init({
 });
 ----
 
+[[deep]]
 ==== `+deep+`
 
 Enables control for removing the child elements of the matching format. This is set to `+false+` by default on selector formats. As a result, when a class is removed from a selected table class, disabling `+deep+` retains the class in the child elements within the other nested tables.
@@ -353,6 +369,7 @@ tinymce.init({
 });
 ----
 
+[[merge_siblings]]
 ==== `+merge_siblings+`
 
 When the `+merge_siblings+` parameter is set to `+false+`, two or more similar inline elements will not automatically merge.
@@ -390,6 +407,7 @@ tinymce.init({
 });
 ----
 
+[[example-of-usage-of-the-formats-option]]
 === Example of usage of the formats option
 
 This example overrides some of the built-in formats and tells {productname} to apply classes instead of inline styles. It also includes a custom format that produced `+h1+` elements with a title attribute and a `+red+` CSS style.
@@ -419,6 +437,7 @@ tinymce.init({
 });
 ----
 
+[[using-custom-formats]]
 === Using custom formats
 
 Custom formats can be handled through the {productname} API. Here is a basic example of usage for the custom format defined above.
@@ -432,6 +451,7 @@ tinymce.activeEditor.formatter.apply('custom_format');
 tinymce.activeEditor.formatter.remove('custom_format');
 ----
 
+[[variable-substitution]]
 === Variable substitution
 
 Variables can be used in the format definition. These variables are then replaced with the ones specified in the call to the apply function. Here is an example of how to use variables within formats.
@@ -445,6 +465,7 @@ tinymce.activeEditor.formatter.register('custom_format', { inline: 'span', style
 tinymce.activeEditor.formatter.apply('custom_format', { value: 'red' });
 ----
 
+[[removing-a-format]]
 === Removing a format
 
 Use the `+removeformat+` option to specify how the `+clear formatting+` feature should work in the editor.

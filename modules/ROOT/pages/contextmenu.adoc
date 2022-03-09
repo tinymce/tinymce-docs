@@ -1,7 +1,6 @@
 = Context menus
 
 :title_nav: Context menus
-
 :description: Creating custom context menus for TinyMCE 6
 :keywords: contextmenu context menu contextmenuapi
 
@@ -15,9 +14,9 @@ liveDemo::context-menu[ ]
 
 == Options
 
-include::partial$configuration/contextmenu.adoc[]
+include::partial$configuration/contextmenu.adoc[leveloffset=+1]
 
-include::partial$configuration/contextmenu_never_use_native.adoc[]
+include::partial$configuration/contextmenu_never_use_native.adoc[leveloffset=+1]
 
 include::partial$misc/available-context-menu-sections.adoc[]
 

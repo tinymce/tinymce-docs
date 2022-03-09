@@ -1,7 +1,6 @@
 = New features, enhancements, and changes for TinyMCE 6.0 core and core plugins
 
 :title_nav: Core improvements
-
 :description: New features, enhancements, and functionality changes for TinyMCE 6.0
 :keywords: releasenotes bugfixes
 
@@ -30,7 +29,7 @@ The following enhancements were made for the {productname} 6.0 release.
 
 === `+tabindex+` improvement
 
-In iframe (classic editor) mode, {productname} now copies the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute] from the target element to the editor's iframe. This accessibility improvement allows integrators to rely on the browser behavior for specifying tab order, instead of specially configuring {productname}. It also replaces the <<tabfocusplugin, Tabfocus plugin>>.
+In iframe (classic editor) mode, {productname} now copies the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute] from the target element to the editor's iframe. This accessibility improvement allows integrators to rely on the browser behavior for specifying tab order, instead of specially configuring {productname}. It also replaces the Tabfocus plugin.
 
 === Enhancement name
 
@@ -55,9 +54,9 @@ Integrators can remove `+hr+` from the `+plugins+` section of their {productname
 
 For information about horizontal rule-related functionality, see:
 
-* link:available-toolbar-buttons.html#thecoretoolbarbuttons[Core toolbar buttons]
-* link:available-menu-items.html#thecoremenuitems[Core menu items]
-* link:editor-command-identifiers.html#coreeditorcommands[Core commands]
+* xref:available-toolbar-buttons.adoc#thecoretoolbarbuttons[Core toolbar buttons]
+* xref:available-menu-items.adoc#thecoremenuitems[Core menu items]
+* xref:editor-command-identifiers.adoc#coreeditorcommands[Core commands]
 
 === Noneditable plugin moved to TinyMCE Core
 
@@ -67,9 +66,9 @@ Integrators can remove `+noneditable+` from the `+plugins+` section of their {pr
 
 For information about noneditable-related functionality, see:
 
-* link:content-filtering.html#editable_class[Content filtering options - editable_class]
-* link:content-filtering.html#noneditable_class[Content filtering options - noneditable_class]
-* link:content-filtering.html#noneditable_regexp[Content filtering options - noneditable_regexp]
+* xref:content-filtering.adoc#editable_class[Content filtering options - editable_class]
+* xref:content-filtering.adoc#noneditable_class[Content filtering options - noneditable_class]
+* xref:content-filtering.adoc#noneditable_regexp[Content filtering options - noneditable_regexp]
 
 === Print plugin moved to TinyMCE Core
 
@@ -81,10 +80,10 @@ Integrators can remove `+print+` from the `+plugins+` section of their {productn
 
 For information about print-related functionality, see:
 
-* link:available-toolbar-buttons.html#thecoretoolbarbuttons[Core toolbar buttons]
-* link:available-menu-items.html#thecoremenuitems[Core menu items]
-* link:editor-command-identifiers.html#coreeditorcommands[Core commands]
-* link:keyboard-shortcuts.html#editorkeyboardshortcuts[Shortcuts]
+* xref:available-toolbar-buttons.adoc#thecoretoolbarbuttons[Core toolbar buttons]
+* xref:available-menu-items.adoc#thecoremenuitems[Core menu items]
+* xref:editor-command-identifiers.adoc#coreeditorcommands[Core commands]
+* xref:keyboard-shortcuts.adoc#editorkeyboardshortcuts[Shortcuts]
 
 === Renamed Options
 
@@ -101,4 +100,4 @@ The following options have been renamed in {productname} 6.0:
 
 === Tabfocus plugin
 
-The `+tabfocus+` plugin has been removed in {productname} 6.0. The tab order of the elements in a page, including {productname}, should now be specified using the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute]. For information about configuring tab order, see: link:accessibility.html#taborder[Tab order].
+The `+tabfocus+` plugin has been removed in {productname} 6.0. The tab order of the elements in a page, including {productname}, should now be specified using the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`+tabindex+` attribute]. For information about configuring tab order, see: xref:accessibility.adoc#taborder[Tab order].

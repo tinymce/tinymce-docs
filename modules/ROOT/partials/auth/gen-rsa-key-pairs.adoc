@@ -1,18 +1,19 @@
 The procedure for creating a key pair depends on the operating system of the host machine.
 
-* <<linux, Linux procedure>>.
-* <<applemacos, Apple macOS procedure>>.
-* <<microsoftwindows, Microsoft Windows procedure>>.
+* xref:linux[Linux procedure].
+* xref:applemacos[Apple macOS procedure].
+* xref:microsoftwindows[Microsoft Windows procedure].
 
+[[linux]]
 == Linux
 
 To create a private/public key pair on a Linux operating system:
 
-[arabic]
-. <<installingopensslonlinux, Install OpenSSL>>.
-. <<createaprivatepublickeypaironlinux, Create a private/public key pair>>.
-. <<retrievethepublickeyonlinux, Retrieve the public key>>.
+. xref:installingopensslonlinux[Install OpenSSL].
+. xref:createaprivatepublickeypaironlinux[Create a private/public key pair].
+. xref:retrievethepublickeyonlinux[Retrieve the public key].
 
+[[installingopensslonlinux]]
 === Installing OpenSSL on Linux
 
 The procedure for installing OpenSSL on Linux distributions varies. The installation commands for common Linux distributions have been provided here.
@@ -64,11 +65,11 @@ sudo zypper refresh
 sudo zypper install openssl
 ----
 
+[[createaprivatepublickeypaironlinux]]
 === Create a private/public key pair on Linux
 
 To create a private/public key pair:
 
-[arabic]
 . On a command line, run:
 +
 [source,sh]
@@ -85,6 +86,7 @@ Two files will be created in the current directory:
 * `+<MY_KEY_PAIR_NAME>+` - The private key.
 * `+<MY_KEY_PAIR_NAME>.pub+` - The public key.
 
+[[retrievethepublickeyonlinux]]
 === Retrieve the public key on Linux
 
 To retrieve the public key, on a command line, run:
@@ -96,19 +98,19 @@ openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -w0
 
 The public key for the `+<MY_KEY_PAIR_NAME>+` key pair will be printed on the command line with base64 encoding.
 
+[[applemacos]]
 == Apple macOS
 
 To create a private/public key pair on a macOS operating system:
 
-[arabic]
-. <<createaprivatepublickeypaironmacos, Create a private/public key pair>>.
-. <<retrievethepublickeyonmacos, Retrieve the public key>>.
+. xref:createaprivatepublickeypaironmacos[Create a private/public key pair].
+. xref:retrievethepublickeyonmacos[Retrieve the public key].
 
+[[createaprivatepublickeypaironmacos]]
 === Create a private/public key pair on macOS
 
 To create a private/public key pair:
 
-[arabic]
 . Using *Finder*, open a *Terminal*.
 . On a terminal, run:
 +
@@ -126,6 +128,7 @@ Two files will be created in the current directory:
 * `+<MY_KEY_PAIR_NAME>+` - The private key.
 * `+<MY_KEY_PAIR_NAME>.pub+` - The public key.
 
+[[retrievethepublickeyonmacos]]
 === Retrieve the public key on macOS
 
 To retrieve the public key, on a terminal, run:
@@ -137,20 +140,20 @@ openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -
 
 The public key for the `+<MY_KEY_PAIR_NAME>+` key pair will be printed on the terminal with base64 encoding.
 
+[[microsoftwindows]]
 == Microsoft Windows
 
 To create a private/public key pair on a Microsoft Windows operating system:
 
-[arabic]
-. <<installingopensslonmicrosoftwindows, Install OpenSSL>>.
-. <<createaprivatepublickeypaironwindows, Create a private/public key pair>>.
-. <<retrievethepublickeyonwindows, Retrieve the public key>>.
+. xref:installingopensslonmicrosoftwindows[Install OpenSSL].
+. xref:createaprivatepublickeypaironwindows[Create a private/public key pair].
+. xref:retrievethepublickeyonwindows[Retrieve the public key].
 
+[[installingopensslonmicrosoftwindows]]
 === Installing OpenSSL on Microsoft Windows
 
 To install OpenSSL with _Git for Windows_:
 
-[arabic]
 . Download the _Windows_ package from https://git-scm.com/downloads[the Git Downloads page].
 . Open the downloaded file `+Git-<VERSION>-<ARCH>-bit.exe+`, where _`+<VERSION>+`_ is the latest version of _Git for Windows_ and _`+<ARCH>+`_ is the architecture, such as _32-bit_ or _64-bit_.
 . Click *Next* on the _Information_ and _Select Destination Location_ screens.
@@ -158,11 +161,11 @@ To install OpenSSL with _Git for Windows_:
 . Click *Next* on the remaining screens to accept the default settings.
 . Once the installation is complete, click *Finish*.
 
+[[createaprivatepublickeypaironwindows]]
 === Create a private/public key pair on Windows
 
 To create a private/public key pair:
 
-[arabic]
 . Open the *Start* menu (or _Windows_ menu) and open *Git Bash*.
 . On the _Git bash_ command line, run:
 +
@@ -180,6 +183,7 @@ Two files will be created in the current directory:
 * `+<MY_KEY_PAIR_NAME>+` - The private key.
 * `+<MY_KEY_PAIR_NAME>.pub+` - The public key.
 
+[[retrievethepublickeyonwindows]]
 === Retrieve the public key on Windows
 
 To retrieve the public key, on a _Git bash_ command line, run:

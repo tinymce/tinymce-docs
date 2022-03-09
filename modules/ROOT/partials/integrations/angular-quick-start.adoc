@@ -1,3 +1,5 @@
+:packageName: tinymce-angular
+
 The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a {productname} editor.
 
 For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
@@ -8,7 +10,6 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-[arabic]
 . On a command line or command prompt, install the https://angular.io/cli[Angular CLI Tool] package.
 +
 [source,sh]
@@ -17,35 +18,33 @@ npm install -g @angular/cli
 ----
 . Create a new Angular project named `+tinymce-angular-demo+`.
 +
-....
+[source,sh]
+----
 ng new --defaults --skip-git tinymce-angular-demo
-....
+----
 . Change into the newly created directory.
 +
 [source,sh]
 ----
 cd tinymce-angular-demo
 ----
-
-\{% if productSource == "package-manager" %} 3. Install the `+tinymce+` and `+tinymce-angular+` packages and save them to your `+package.json+` with `+--save+`.
-
-....
-```sh
+ifeval::["{productSource}" == "package-manager"]
+. Install the `+tinymce+` and `+tinymce-angular+` packages and save them to your `+package.json+` with `+--save+`.
++
+[source,sh]
+----
 npm install --save tinymce @tinymce/tinymce-angular
-```
-....
+----
 
-\{% else %} 4. Install the `+tinymce-angular+` package and save it to your `+package.json+` with `+--save+`.
-
-....
-```sh
+endif::[]
+ifeval::["{productSource}" != "package-manager"]
+. Install the `+tinymce-angular+` package and save it to your `+package.json+` with `+--save+`.
++
+[source,sh]
+----
 npm install --save @tinymce/tinymce-angular
-```
-....
-
-\{% endif %}
-
-[arabic, start=5]
+----
+endif::[]
 . Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.module.ts+` and replace the contents with:
 +
 [source,js]
@@ -70,7 +69,7 @@ export class AppModule { }
 ----
 . Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.component.html+` and replace the contents with:
 +
-[source,jsx]
+[source,jsx,subs="attributes+"]
 ----
 <h1>{productname} {productmajorversion} Angular Demo</h1>
 <editor
@@ -78,27 +77,24 @@ export class AppModule { }
 ></editor>
 ----
 
-\{% if productSource == "cloud" %} 7. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
-
-....
-Such as:
-
-```jsx
-<editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} ></editor>
-```
-....
-
-\{% elsif productSource == "package-manager" %} 2. Using a text editor; open `+angular.json+` and add {productname} to the `+assets+` property.
-
-....
-```json
+ifeval::["{productSource}" == "cloud"]
+. Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key]. Such as:
++
+[source,jsx]
+----
+<editor apiKey="your-api-key" [init]={ /* your other settings */ } ></editor>
+----
+endif::[]
+ifeval::["{productSource}" == "package-manager"]
+. Using a text editor; open `+angular.json+` and add {productname} to the `+assets+` property.
++
+[source,json]
+----
 "assets": [
   { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
 ]
-```
-....
+----
 
-[arabic, start=3]
 . Load TinyMCE.
 * To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `+TINYMCE_SCRIPT_SRC+` token.
 +
@@ -117,7 +113,6 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 })
 ----
 * To load TinyMCE when the page or application is loaded:
-[arabic]
 .. Open `+angular.json+` and add {productname} to the _global scripts_ tag.
 +
 [source,json]
@@ -135,10 +130,9 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
   suffix: '.min'        // Suffix to use when loading resources
 }"></editor>
 ----
+endif::[]
+ifeval::["{productSource}" == "zip"]
 
-\{% else %}
-
-[arabic]
 . Add the `+tinymce+` global to the application by: Deploying {productname} independent of the Angular application, or bundling {productname} with the Angular application.
 * Deploy {productname} independent of the Angular application
 +
@@ -152,23 +146,31 @@ To use an independent deployment of {productname}, add a script to either the `+
 To use an independent deployment of {productname} with the create a Angular application, add the script to `+/path/to/tinymce-angular-demo/src/app/app.component.html+`.
 +
 * Bundling {productname} with the Angular application using a module loader (such as Webpack).
++
+--
+:depth: 2
+include::partial$integrations/bundling-integration.adoc[]
+--
+endif::[]
 
-\{% include integrations/bundling-integration.md package="tinymce-angular" depth='2' %} \{% endif %} 8. Test the application using the Angular development server. * To start the development server, navigate to the `+tinymce-angular-demo+` directory and run:
-
-....
-    ```sh
-    ng serve --open
-    ```
+. Test the application using the Angular development server.
++
+* To start the development server, navigate to the `+tinymce-angular-demo+` directory and run:
++
+[source,sh]
+----
+ng serve --open
+----
 
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
-....
 
-\{% if productSource == "package-manager" %}
+ifeval::["{productSource}" == "package-manager"]
 
 [[bunding-siteproductname-with-an-angular-application]]
-== Bunding {productname} with an Angular application
+== Bundling {productname} with an Angular application
 
-\{% include integrations/bundling-integration.md package="tinymce-angular" %} \{% endif %}
+include::partial$integrations/bundling-integration.adoc[]
+endif::[]
 
 == Deploying the application to a HTTP server
 
@@ -176,7 +178,6 @@ The application will require further configuration before it can be deployed to 
 
 To deploy the application to a local HTTP Server:
 
-[arabic]
 . Navigate to the `+tinymce-angular-demo+` directory and run:
 +
 [source,sh]
@@ -187,14 +188,12 @@ ng build
 
 The application has now been deployed on the web server.
 
-____
-*Note:* Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:<port>/my_angular_application.
-____
+NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:<port>/my_angular_application.
 
 == Next Steps
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 * For information on customizing:
-** {productname} integration, see: link:angular-ref.html[Angular framework Technical Reference].
-** {productname}, see: link:basic-setup.html[Basic setup].
+** {productname} integration, see: xref:angular-ref.adoc[Angular framework Technical Reference].
+** {productname}, see: xref:basic-setup.adoc[Basic setup].
 ** The Angular application, see: https://angular.io/docs[the Angular documentation].

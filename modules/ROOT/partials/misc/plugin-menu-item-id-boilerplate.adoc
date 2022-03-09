@@ -1,26 +1,32 @@
-\{% if page.name == "available-menu-items.md" %}
+ifeval::["{docname}" == "available-menu-items"]
 
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following menu items:
 
-\{% if altplugincode %}
-include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[] \{% else %}
-include::partial$menu-item-ids/{plugincode}-menu-items.adoc[] \{% endif %}
+ifeval::["{altplugincode}" != "nil"]
+include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
+endif::[]
+ifeval::["{altplugincode}" == "nil"]
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
+endif::[]
 
-For information on the {pluginname} plugin, see: link:{plugincode}.html[Plugins - The {pluginname} plugin]
+For information on the {pluginname} plugin, see: xref:{plugincode}.adoc[Plugins - The {pluginname} plugin]
 
-\{% else %}
-
+endif::[]
+ifeval::["{docname}" != "available-menu-items"]
+[[menu-items]]
 == Menu items
 
 The {pluginname} plugin provides the following menu items:
 
-\{% if altplugincode %}
-include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[] \{% else %}
-include::partial$menu-item-ids/{plugincode}-menu-items.adoc[] \{% endif %}
+ifeval::["{altplugincode}" != "nil"]
+include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
+endif::[]
+ifeval::["{altplugincode}" == "nil"]
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
+endif::[]
 
 include::partial$misc/menu-item-settings.adoc[]
 
-\{% endif %}
-:altplugincode: nil
+endif::[]

@@ -1,7 +1,6 @@
 = Creating custom Menu toolbar buttons
 
 :title_nav: Menu toolbar button
-
 :description: Creating custom Menu toolbar buttons for TinyMCE
 :keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
@@ -11,24 +10,24 @@ For example: The table plugin's `+table+` toolbar button opens a menu similar to
 
 == Config options
 
-[cols=",,,",options="header",]
+[cols="1,2,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
-|fetch |(success: (menu) => void) => void |required |Function that takes a callback which must be passed the list of options for the button's dropdown.
+|fetch |`+(success: (menu) => void) => void+` |required |Function that takes a callback which must be passed the list of options for the button's dropdown.
 |text |string |optional |Text to display if no icon is found.
 |icon |string |optional |
 include::partial$misc/admon_predefined_icons_only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
-|onSetup |(api) => (api) => void |optional |default: () => () => \{} - Function that's invoked when the button is rendered. For details, see: <<usingonsetup, Using `+onSetup+`>>.
+|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered. For details, see: xref:usingonsetup[Using `+onSetup+`].
 |===
 
 == API
 
-[cols=",,",options="header",]
+[cols="1,3,4",options="header"]
 |===
 |Name |Value |Description
-|isDisabled |( ) => boolean |Checks if the button is disabled.
-|setDisabled |(state: boolean) => void |Sets the button's disabled state.
+|isDisabled |`+( ) => boolean+` |Checks if the button is disabled.
+|setDisabled |`+(state: boolean) => void+` |Sets the button's disabled state.
 |===
 
 == Menu button example and explanation

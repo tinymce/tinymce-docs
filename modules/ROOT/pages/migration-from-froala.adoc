@@ -1,7 +1,6 @@
 = Migrating from Froala to TinyMCE
 
 :title_nav: Migrating from Froala
-
 :description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 6.
 :keywords: migration considerations premigration pre-migration froala
 
@@ -9,24 +8,23 @@ This page covers the basic steps for migrating from Froala Editor 3 to {productn
 
 *Covered in this section:*
 
-* link:migration-from-froala.html#migratingabasicfroalaconfigurationtotinymce[Migrating a Basic Froala Configuration to {productname}]
-* link:migration-from-froala.html#updatingthelistofplugins[Updating the list of Plugins]
-* link:migration-from-froala.html#migratingacustomtoolbarlayout[Migrating a Custom Toolbar Layout]
-* link:migration-from-froala.html#configuringinlinemode[Configuring Inline Mode]
-* link:migration-from-froala.html#migratingcustombuttons[Migrating Custom Buttons]
-* link:migration-from-froala.html#migratingcustomdrop-downtoolbarbuttons[Migrating Custom Drop-down Toolbar Buttons]
+* xref:migratingabasicfroalaconfigurationtotinymce[Migrating a Basic Froala Configuration to {productname}]
+* xref:updatingthelistofplugins[Updating the list of Plugins]
+* xref:migratingacustomtoolbarlayout[Migrating a Custom Toolbar Layout]
+* xref:configuringinlinemode[Configuring Inline Mode]
+* xref:migratingcustombuttons[Migrating Custom Buttons]
+* xref:migratingcustomdrop-downtoolbarbuttons[Migrating Custom Drop-down Toolbar Buttons]
 
+[[migratingabasicfroalaconfigurationtotinymce]]
 == Migrating a Basic Froala Configuration to TinyMCE
 
 To migrate from a basic Froala 3 configuration to a basic {productname} {productmajorversion} configuration, you need to:
 
-[arabic]
 . Replace the Froala links and source scripts with a {productname} source script.
 . Replace the Froala editor variable assignment with the `+tinymce.init+` function.
 
 === Replace Froala links and source script with a TinyMCE source script
 
-[arabic]
 . Remove the Froala links and source script, located in the `+<head>+` of the target HTML page. For example:
 +
 [source,html]
@@ -68,7 +66,6 @@ To insert an editor in the body of the page for a `+<textarea>+` element such as
 </form>
 ----
 
-[arabic]
 . Remove the Froala editor variable assignment script.
 +
 [source,html]
@@ -86,7 +83,7 @@ To insert an editor in the body of the page for a `+<textarea>+` element such as
 </script>
 ----
 
-For information on configuring the `+selector+` setting, see: link:basic-setup.html[Basic Setup].
+For information on configuring the `+selector+` setting, see: xref:basic-setup.adoc[Basic Setup].
 
 === Examples: Basic Configuration
 
@@ -140,19 +137,20 @@ The following examples show an initial Froala configuration and the migrated {pr
 
 For information on:
 
-* Getting started with {productname}, see: link:cloud-quick-start.html[{productname} Quick Start].
+* Getting started with {productname}, see: xref:cloud-quick-start.adoc[{productname} Quick Start].
 * Installing {productname}, see: link:install-setup.html[Installing {productname}].
 
+[[updatingthelistofplugins]]
 == Updating the list of Plugins
 
-Some _Froala core functionality_ is implemented by link:work-with-plugins.html[plugins for {productname}]; and some _Froala plugin-provided functionality_ is {productname} core functionality.
+Some _Froala core functionality_ is implemented by xref:work-with-plugins.adoc[plugins for {productname}]; and some _Froala plugin-provided functionality_ is {productname} core functionality.
 
 For Example:
 
 * Froala includes ordered lists as part of the core functionality, but the `+lists+` plugin provides ordered lists for {productname}.
 * Adding a font size option in Froala requires a plugin, but `+fontsize+` is core functionality for {productname}.
 
-To include a plugin for a {productname} editor, add a `+plugins+` option and provide a link:editor-important-options.html#plugins[space-delimited list of the plugins to include], as shown below. You should delete any Froala sourcing scripts and Froala links from the page.
+To include a plugin for a {productname} editor, add a `+plugins+` option and provide a xref:editor-important-options.adoc#plugins[space-delimited list of the plugins to include], as shown below. You should delete any Froala sourcing scripts and Froala links from the page.
 
 === Examples: Enabling Plugins
 
@@ -198,9 +196,10 @@ The following examples show how plugins are included or enabled in the Froala an
 
 === Additional Information on Plugins
 
-* For information on enabling plugins for {productname}, see: link:editor-important-options.html#plugins[Integration and setup options: plugins].
-* For a list of {productname} plugins, see: link:work-with-plugins.html/[Add plugins to {productname}].
+* For information on enabling plugins for {productname}, see: xref:editor-important-options.adoc#plugins[Integration and setup options: plugins].
+* For a list of {productname} plugins, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
+[[migratingacustomtoolbarlayout]]
 == Migrating a Custom Toolbar Layout
 
 To migrate a Custom Toolbar Layout from Froala to {productname}:
@@ -230,14 +229,12 @@ toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
 
 [source,js]
 ----
-toolbar: 'undo redo | formatselect | bold italic
-| alignleft aligncenter alignright alignjustify
-| numlist bullist | outdent indent'
+toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist | outdent indent'
 ----
 
 Replace the names of toolbar items with the {productname} names. For example:
 
-[cols=",,",options="header",]
+[cols=",,",options="header"]
 |===
 |Toolbar Button |Froala |{productname}
 |Format/Style Selector |`+paragraphFormat+` |`+formatselect+`
@@ -247,9 +244,9 @@ Replace the names of toolbar items with the {productname} names. For example:
 
 === Update the `+plugin+` option as required
 
-The list of plugins may need updating, as indicated in link:migration-from-froala.html#updatingthelistofplugins[Updating the list of Plugins]. For example, the {productname} toolbar items; `+numlist+` and `+bullist+`, require the `+lists+` plugin.
+The list of plugins may need updating, as indicated in xref:updatingthelistofplugins[Updating the list of Plugins]. For example, the {productname} toolbar items; `+numlist+` and `+bullist+`, require the `+lists+` plugin.
 
-For a list of toolbar items with the required plugins, see: link:available-toolbar-buttons.html[Toolbar Buttons Available for {productname}].
+For a list of toolbar items with the required plugins, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 === Examples: Custom Toolbar Layouts
 
@@ -275,7 +272,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 
 ==== TinyMCE 6 - Creating a Custom Toolbar Layout
 
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <h2>{productname} Custom Toolbar</h2>
   <form method='post'>
@@ -294,17 +291,18 @@ The following examples show a custom toolbar layout in Froala and the same layou
 
 === Additional Information on Customizing Toolbars
 
-* For information on customizing the {productname} Toolbar, see: link:toolbar-configuration-options.html#toolbar[User interface options: Toolbar].
-* For a list of toolbar items, see: link:available-toolbar-buttons.html[Toolbar Buttons Available for {productname}].
+* For information on customizing the {productname} Toolbar, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options: Toolbar].
+* For a list of toolbar items, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
+[[configuringinlinemode]]
 == Configuring Inline Mode
 
 When migrating from Froala to {productname}, the `+toolbarInline+` option changes to `+inline+`. Some additional settings you should consider include:
 
-* link:quickbars.html[The Quick Toolbar plugin].
-* link:contexttoolbar.html[Context Toolbars].
-* link:contextmenu.html[Context Menus].
-* link:menus-configuration-options.html#menubar[Disabling the {productname} menubar].
+* xref:quickbars.adoc[The Quick Toolbar plugin].
+* xref:contexttoolbar.adoc[Context Toolbars].
+* xref:contextmenu.adoc[Context Menus].
+* xref:menus-configuration-options.adoc#menubar[Disabling the {productname} menubar].
 
 === Examples: Enabling Inline Mode
 
@@ -346,18 +344,19 @@ The following examples show Froala and {productname} configured for inline mode.
 
 For information on:
 
-* The inline editing mode, see: link:use-tinymce-inline.html[Setup inline editing mode].
-* Configuring a Quick Toolbar, see: link:quickbars.html[Quick Toolbar plugin].
-* Configuring a contextual toolbar, see: link:contexttoolbar.html[Context Toolbar].
-* Configuring a contextual menu, see: link:contextmenu.html[Context Menu].
-* Disabling the {productname} menubar, see: link:menus-configuration-options.html#menubar[User interface options: Menubar].
-* The {productname} distraction-free editing mode, see: link:use-tinymce-distraction-free.html[{productname} distraction-free editing mode].
+* The inline editing mode, see: xref:use-tinymce-inline.adoc[Setup inline editing mode].
+* Configuring a Quick Toolbar, see: xref:quickbars.adoc[Quick Toolbar plugin].
+* Configuring a contextual toolbar, see: xref:contexttoolbar.adoc[Context Toolbar].
+* Configuring a contextual menu, see: xref:contextmenu.adoc[Context Menu].
+* Disabling the {productname} menubar, see: xref:menus-configuration-options.adoc#menubar[User interface options: Menubar].
+* The {productname} distraction-free editing mode, see: xref:use-tinymce-distraction-free.adoc[{productname} distraction-free editing mode].
 
+[[migratingcustombuttons]]
 == Migrating Custom Buttons
 
 The {productname} `+addButton+` option is used in place of the Froala `+RegisterCommand+` option.
 
-For information on getting started with the `+addButton+` option, see: link:custom-toolbarbuttons.html#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+For information on getting started with the `+addButton+` option, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
 
 === Examples: Custom Toolbar Buttons
 
@@ -401,7 +400,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 ==== TinyMCE 6 - Creating a Custom Toolbar Button
 
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <h2>{productname} Custom Button</h2>
   <form method='post'>
@@ -432,14 +431,15 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 === Additional Information on Custom Toolbar Buttons
 
-* For an overview on creating custom toolbar buttons, see: link:custom-toolbarbuttons.html#howtocreatecustomtoolbarbuttons[Toolbar buttons].
-* For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: link:custom-toolbarbuttons.html[Types of toolbar buttons].
+* For an overview on creating custom toolbar buttons, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+* For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: xref:custom-toolbarbuttons.adoc[Types of toolbar buttons].
 
+[[migratingcustomdrop-downtoolbarbuttons]]
 == Migrating Custom Drop-down Toolbar Buttons
 
 The {productname} `+addMenuButton+` option is used in place of the Froala `+RegisterCommand+` `+type: dropdown+` option.
 
-For information on getting started with the `+addMenuButton+` option, see: link:custom-toolbarbuttons.html#howtocreatecustomtoolbarbuttons[Toolbar buttons] and link:custom-menu-toolbar-button.html[Types of toolbar buttons: Menu button].
+For information on getting started with the `+addMenuButton+` option, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons] and xref:custom-menu-toolbar-button.adoc[Types of toolbar buttons: Menu button].
 
 === Examples: Custom Drop-down Buttons
 
@@ -481,7 +481,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 ==== TinyMCE 6 - Creating a Custom Drop-down Button
 
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <h2>{productname} Custom Drop-down Button</h2>
   <form method='post'>
@@ -524,4 +524,4 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 === Additional Information on Drop-down Buttons
 
-For information on creating drop-down buttons, see: link:custom-menu-toolbar-button.html[Types of toolbar buttons: Menu button].
+For information on creating drop-down buttons, see: xref:custom-menu-toolbar-button.adoc[Types of toolbar buttons: Menu button].

@@ -1,13 +1,11 @@
 = Check spelling in TinyMCE
 
 :title_nav: Spell checking
-
 :keywords: spell checker spelling browser_spellcheck gecko_spellcheck {productname} provides several options to bring spell checking capabilities to your users.
-
 
 == Browser-based spell checking
 
-Assign the link:spelling.html#browser_spellcheck[`+browser_spellcheck+`] configuration option the value of `+true+` to utilize the browser's native spell check functionality. Disabling the link:menus-configuration-options.html#contextmenu[`+contextmenu+`] option _may_ be required depending on the right-click or context usability requirement.
+Assign the xref:spelling.adoc#browser_spellcheck[`+browser_spellcheck+`] configuration option the value of `+true+` to utilize the browser's native spell check functionality. Disabling the xref:menus-configuration-options.adoc#contextmenu[`+contextmenu+`] option _may_ be required depending on the right-click or context usability requirement.
 
 [source,js]
 ----
@@ -30,7 +28,6 @@ This plugin enables *Enchant* or *PSpell* on the server to spell check content w
 
 === Installation steps for the default Enchant engine
 
-[arabic]
 . Enable *Enchant* in PHP.
 . Download the *{productname} Spellchecker* for PHP package. http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[(Direct download)].
 . Unpack the package in the `+/path/to/tinymce/plugins/spellchecker+` directory.
@@ -54,4 +51,4 @@ Review the link:spellchecker.html[Spell Checker plugin] for advanced configurati
 
 == TinyMCE Spell Checker Pro plugin
 
-Use the link:tinymcespellchecker.html[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Use the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.

@@ -1,30 +1,40 @@
-\{% if productSource == 'cloud' %}
+ifeval::["{productSource}" == "cloud"]
 :sourcename: the {cloudname}
-\{% elsif productSource == 'composer' %}
+endif::[]
+
+ifeval::["{productSource}" == "composer"]
 :sourcename: the Composer package manager
-\{% elsif productSource == 'npm' %}
+endif::[]
+
+ifeval::["{productSource}" == "npm"]
 :sourcename: npm or Yarn
-\{% elsif productSource == 'bower' %}
+endif::[]
+
+ifeval::["{productSource}" == "bower"]
 :sourcename: Bower
-\{% elsif productSource == 'nuget' %}
+endif::[]
+
+ifeval::["{productSource}" == "nuget"]
 :sourcename: Nuget
-\{% elsif productSource == 'zip' %}
+endif::[]
+
+ifeval::["{productSource}" == "zip"]
 :sourcename: a {productname} .zip package
-\{% endif %}
+endif::[]
 
-\{% if productSource == 'cloud' %}
-:scriptsource: site.cdnurl
-\{% else %}
+ifeval::["{productSource}" == "cloud"]
+:scriptsource: {cdnurl}
+endif::[]
+
+ifeval::["{productSource}" != "cloud"]
 :scriptsource: /path/or/uri/to/tinymce.min.js
-\{% endif %}
-
-{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using {sourcename}.
-\{% if productSource != 'cloud' %}
+endif::[]
 
 == Install TinyMCE using {sourcename}
 
-\{% endif %}
-\{% if productSource == 'composer' %}
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using {sourcename}.
+
+ifeval::["{productSource}" == "composer"]
 
 To add {productname} to a PHP project using Composer, run the following on a command line:
 
@@ -37,19 +47,20 @@ The location of the main {productname} script will be: `+vendor/tinymce/tinymce/
 
 * Using a webserver route, or
 * Copying the `+tinymce+` directory to a public folder using a build tool.
-\{% elsif productSource == 'npm' %}
+endif::[]
+ifeval::["{productSource}" == "npm"]
 
 To add {productname} to a project:
 
 * Using npm, run the following on a command line:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 npm install tinymce@^{productmajorversion}
 ----
 * Using Yarn, run the following on a command line:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 yarn add tinymce@^{productmajorversion}
 ----
@@ -58,10 +69,12 @@ The location of the main {productname} script will be: `+node_modules/tinymce/ti
 
 * Using a webserver route, or
 * Copying the `+tinymce+` directory to a public folder using a build tool such as Gulp or Webpack.
-\{% elsif productSource == 'bower' %}
+endif::[]
+ifeval::["{productSource}" == "bower"]
+
 To add {productname} to a Bower project, run the following on a command line:
 
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 bower install tinymce#^{productmajorversion}
 ----
@@ -70,14 +83,17 @@ The location of the main {productname} script will be: `+bower_components/tinymc
 
 * Using a webserver route, or
 * Copying the `+tinymce+` directory to a public folder using a build tool such as Gulp or Webpack.
-\{% elsif productSource == 'nuget' %}
+endif::[]
+ifeval::["{productSource}" == "nuget"]
 To add {productname} to a .NET project, run the following on a command line:
+
 * Using the NuGet package manager console, run the following:
 +
 [source,sh]
 ----
 Install-Package TinyMCE
 ----
+
 * Using the `+dotnet+` CLI, run the following:
 +
 [source,sh]
@@ -89,11 +105,13 @@ Ensure the `+tinymce+` directory containing the `+tinymce.min.js+` file is acces
 
 * Using a webserver route, or
 * Copying the `+tinymce+` directory to a public folder using a build tool.
-\{% elsif productSource == 'zip' %} To deploy {productname} from a .zip archive:
+endif::[]
+ifeval::["{productSource}" == "composer"]
+
+To deploy {productname} from a .zip archive:
 
 include::partial$integrations/download-tinymce-zip.adoc[]
 
-[arabic]
 . Unzip the archive into a public folder of your webserver, such as:
 +
 [source,sh]
@@ -103,7 +121,7 @@ unzip tinymce_latest.zip -d /path/to/webserver/public/
 +
 The location of the main {productname} script will be: `+/path/to/webserver/public/tinymce/js/tinymce/tinymce.min.js+`.
 
-\{% endif %}
+endif::[]
 
 == Include the TinyMCE script
 
@@ -152,7 +170,7 @@ For example:
 Adding this content to an HTML file and opening it in a web browser will load a TinyMCE editor, such as:
 
 liveDemo::default[ ]
-\{% if productSource == 'cloud' %}
+ifeval::["{productSource}" == "cloud"]
 
 == Add your API key
 
@@ -163,11 +181,11 @@ To remove the notice:
 Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}].
 
 Signing up for a {cloudname} API key will also provide a trial of the link:premium.html[Premium Plugins].
-\{% endif %}
+endif::[]
 
 == Save the content from the editor
 
-To retrieve content from the editor, either process the content with a form handler or use the link:tinymce.editor.html#getcontent[getContent API].
+To retrieve content from the editor, either process the content with a form handler or use the xref:apis/tinymce.editor.adoc#getContent[getContent API].
 
 If you use a form handler, once the `+<form>+` is submitted, {productname} {productmajorversion} will `+POST+` the content in the same way as a normal HTML `+<textarea>+`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `+<textarea>+`.
 

@@ -1,8 +1,9 @@
+[[configuringcontentsecuritypolicycspfortinymce]]
 == Configuring Content Security Policy (CSP) for TinyMCE
 
 {productname} can be used with a https://content-security-policy.com/[CSP] header. When using a CSP, the following directives are *required* for {productname} to function:
 
-[cols=",",options="header",]
+[cols=",",options="header"]
 |===
 |Policy directives |Reason
 |`+script-src 'self' *.tinymce.com *.tiny.cloud;+` |Scripts are sometimes loaded as script element with an src attribute.
@@ -12,8 +13,9 @@
 |`+font-src 'self' *.tinymce.com *.tiny.cloud;+` |Fonts are used for icons in the UI and is loaded from external files.
 |===
 
-____
-*Important*: These directives will prevent all content loading from external sources. To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
+[IMPORTANT]
+====
+These directives will prevent all content loading from external sources. To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
 
 [source,html]
 ----
@@ -28,9 +30,9 @@ media-src *;
 ----
 
 For information on Content Security Policies, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP[MDN Web Docs - Content Security Policy (CSP)].
-____
+====
 
-When using the {cloudname}, use this CSP header :
+When using the {cloudname}, use this CSP header:
 
 [source,html]
 ----

@@ -1,4 +1,4 @@
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |mceEditImage |Opens the image tools editing dialog.
@@ -8,8 +8,7 @@
 |mceImageFlipHorizontal |Flips selected image horizontally.
 |===
 
-*Examples*
-
+.Examples
 [source,js]
 ----
 tinymce.activeEditor.execCommand('mceEditImage');

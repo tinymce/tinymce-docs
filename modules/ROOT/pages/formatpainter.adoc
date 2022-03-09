@@ -1,14 +1,13 @@
 = Format Painter
 
 :title_nav: Format Painter
-
 :description: Quickly apply formats to multiple pieces of text.
 :keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats format painter configuration
 :controls: toolbar button
-
 :pluginname: Format Painter
-
 :plugincode: formatpainter
+:altplugincode: nil
+:pluginminimumplan: tiertwo
 
 
 include::partial$misc/admon_premium_plugin.adoc[]
@@ -21,14 +20,11 @@ The format painter retains the formatting after application making it possible t
 
 liveDemo::format-painter[ ]
 
-:pluginminimumplan: tiertwo
-
-
 include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Basic setup
 
-To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `+plugins+` option in the editor configuration.
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `+plugins+` option in the editor configuration.
 
 For example:
 
@@ -49,7 +45,6 @@ The format painter operates in two modes, one for retrieval and one for applicat
 
 *Usage with toolbar button*
 
-[arabic]
 . Position the cursor at the source content to retrieve the formatting.
 . Enable the *Format Painter* button to copy the formatting. The *Format Painter* toolbar button background color changes to _grey_ image:icons/format-painter.svg[the Format Painter toolbar button icon].
 . Select the goal content to apply the formatting.
@@ -58,23 +53,20 @@ The format painter operates in two modes, one for retrieval and one for applicat
 
 *Usage with keyboard*
 
-[arabic]
 . Position the cursor at the source content to retrieve formatting.
 . Press the `+Ctrl+Alt+C+` keys to read the formatting.
 . Select the goal content to apply the formatting.
 . Press the `+Ctrl+Alt+V+` keys to apply the formatting.
 
-____
-The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `+Ctrl+Alt+V+` keyboard shortcut.
-____
+TIP: The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `+Ctrl+Alt+V+` keyboard shortcut.
 
 == Options
 
-The format painter acts upon all link:content-formatting.html#formats[`+formats+`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:lists.html[`+lists plugin+`] is made available.
+The format painter acts upon all xref:content-formatting.adoc#formats[`+formats+`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the xref:lists.adoc[`+lists plugin+`] is made available.
 
-include::partial$configuration/formatpainter_formats.adoc[]
+include::partial$configuration/formatpainter_formats.adoc[leveloffset=+1]
 
-include::partial$configuration/formatpainter_blacklisted_formats.adoc[]
+include::partial$configuration/formatpainter_blacklisted_formats.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

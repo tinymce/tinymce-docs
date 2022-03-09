@@ -1,15 +1,17 @@
+[[textpattern_patterns]]
 == `+textpattern_patterns+`
 
 This option allows configuring the text patterns that get matched by the `+textpattern+` plugin. By default, it has basic markdown patterns.
 
 There are three types of patterns: `+inline+`, `+block+`, and `+replacement+` patterns. Inline patterns have a `+start+` and an `+end+` text pattern whereas the block and replacement patterns only have a `+start+`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
-____
-*Important*: Any formats or commands used by `+textpatterns+` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `+lists+` plugin. For information on:
+[IMPORTANT]
+====
+Any formats or commands used by `+textpatterns+` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `+lists+` plugin. For information on:
 
-* Registering formats for {productname}, see: link:content-formatting.html#formats[Content formatting options - `+formats+`].
-* Registering commands for {productname}, see: link:tinymce.editorcommands.html[{productname} APIs - EditorCommands].
-____
+* Registering formats for {productname}, see: xref:content-formatting.adoc#formats[Content formatting options - `+formats+`].
+* Registering commands for {productname}, see: xref:apis/tinymce.editor.adoc#addCommand[{productname} APIs - addCommand].
+====
 
 === The default patterns for the `+textpattern+` plugin
 
@@ -41,9 +43,7 @@ Inline patterns must have the following:
 
 This allows for patterns to be used to either apply a format or execute a command, optionally with the given value.
 
-____
-*Note*: Inline patterns are executed on either pressing the *spacebar* or the *Enter* key.
-____
+NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Enter* key.
 
 ==== Example: Using `+textpattern+` inline patterns
 
@@ -77,9 +77,7 @@ Block patterns must have the following:
 
 The block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-____
-*Note*: Block patterns are only executed on *Enter*, *not* on pressing the *spacebar*.
-____
+NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spacebar*.
 
 ==== Example: Using `+textpattern+` block patterns
 
@@ -122,9 +120,7 @@ Replacement patterns must have the following:
 
 Whether a replacement pattern inserts a block or inline element depends on what the `+replacement+` string is.
 
-____
-*Note*: Replacement patterns are executed on either pressing the *spacebar* or the *Enter* key.
-____
+NOTE: Replacement patterns are executed on either pressing the *spacebar* or the *Enter* key.
 
 ==== Example: Using `+textpattern+` replacement patterns
 

@@ -1,24 +1,21 @@
 = Work with plugins to extend TinyMCE
 
 :title_nav: Using plugins to extend TinyMCE
-
 :description_short: Learn about TinyMCE's plugin functionality.
 :description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
 :keywords: plugin
 
-For most developers, the real power of {productname}'s functionality is found in its plugins. link:/plugins-ref/[Plugins] either extend default editor functionality or add new functionality. For example, the link:advlist.html[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:code.html[Code] plugin adds entirely new functionality.
+For most developers, the real power of {productname}'s functionality is found in its plugins. link:plugins.html[Plugins] either extend default editor functionality or add new functionality. For example, the xref:advlist.adoc[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the xref:code.adoc[Code] plugin adds entirely new functionality.
 
 Because most people install {productname} via {cloudname} or by downloading a package, they mistakenly think plugins are part of the {productname} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{gettiny}/custom-builds/[custom package] download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {productname} team.
 
 In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins.
 
-____
-*Note*: You must include the plugin in your download options to activate it.
-____
+NOTE: You must include the plugin in your download options to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `+html+` file (call it whatever you like, `+tinymce.html+` works). Save the file locally, open it with your web browser and you'll have a basic, local {productname} instance up and running.
 
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -45,7 +42,7 @@ The code we want to work with is in the second `+<script>+` element. Specificall
 
 === Code plugin
 
-The link:code.html[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `+html+` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
+The xref:code.adoc[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `+html+` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
 
 The first thing we need to do is include the actual `+plugins+` key and assign it a value. Since we're starting with the `+code+` plugin that value is going to be `+'code'+`for this example.
 
@@ -70,7 +67,7 @@ tinymce.init({
 });
 ----
 
-Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the link:basic-setup.html[Basic setup], so if this behavior surprises you, please re-read that section.
+Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the xref:basic-setup.adoc[Basic setup], so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
@@ -90,7 +87,7 @@ Even if you found the above example quite easy, hang with us we'll show you how 
 
 === Advanced List
 
-The link:advlist.html[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `+list-style-type+` styled number formats and bullet types to the controls.
+The xref:advlist.adoc[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `+list-style-type+` styled number formats and bullet types to the controls.
 
 As before, let's start by adding the `+plugins+` key and giving it the Advanced List value of `+'advlist'+`.
 
@@ -112,7 +109,7 @@ The `+advlist+` plugin has two options which provide more granular control of li
 
 Many plugin options have more than one possible value. The `+advlist_bullet_styles+` option has possible values of `+circle+`, `+disc+`, and `+square+`. While the `+advlist_number_styles+` has possible values of `+lower-alpha+`, `+lower-greek+`, `+lower-roman+`, `+upper-alpha+`, and `+upper-roman+`.
 
-Don't worry if you can't remember all these values. The link:/plugins-ref/[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
+Don't worry if you can't remember all these values. The link:plugins.html[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
 
 Let's add the Advanced List options and give them some of the available options.
 

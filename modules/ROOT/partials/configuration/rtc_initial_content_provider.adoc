@@ -1,12 +1,16 @@
+[[rtc_initial_content_provider]]
 == `+rtc_initial_content_provider+`
 
-By default, the initial editor content is retrieved from the element targeted using the {productname} link:editor-important-options.html#selector[`+selector+` option].
+// TODO broken link to integrations reference page, redirect to cloud installation for now
+By default, the initial editor content is retrieved from the element targeted using the {productname} xref:editor-important-options.adoc#selector[`+selector+` option].
 
-The `+rtc_initial_content_provider+` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {productname} link:introduction-to-tinymce.html#gettingstartedguides[integrations]) that don't provide access to the target element directly. If the target element contains content and a `+rtc_initial_content_provider+` has been provided, the content from the `+rtc_initial_content_provider+` will be used as the initial editor content.
+The `+rtc_initial_content_provider+` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {productname} xref:cloud-quick-start.adoc[integrations]) that don't provide access to the target element directly. If the target element contains content and a `+rtc_initial_content_provider+` has been provided, the content from the `+rtc_initial_content_provider+` will be used as the initial editor content.
 
 The `+rtc_initial_content_provider+` is used for new documents (`+documentId+`) and is not for opening or reopening existing documents. If the document already exists, the content on the RTC Server with the provided `+documentId+` will be loaded into the editor when it is intitalized.
 
-\{% if plugincode != "rtc" %} Required plugin : link:rtc.html[Real-Time Collaboration (`+rtc+`)] \{% endif %}
+ifeval::["{plugincode}" != "rtc"]
+Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
+endif::[]
 
 Type : Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 

@@ -1,12 +1,12 @@
 = Autoresize plugin
 
 :title_nav: Autoresize
-
-:description_short: :description: Automatically resize TinyMCE to fit content. :keywords: height width max_height min_height autoresize_on_init autoresize_overflow_padding autoresize_overflow_padding
-
+:description_short:
+:description: Automatically resize TinyMCE to fit content.
+:keywords: height width max_height min_height autoresize_overflow_padding autoresize_overflow_padding
 :pluginname: Autoresize
-
-
+:plugincode: autoresize
+:altplugincode: nil
 
 This plugin automatically resizes the editor to the content inside it. It is typically used to prevent the editor from expanding infinitely as a user types into the editable area. For example, by giving the `+max_height+` option a value the editor will stop resizing when the set value is reached.
 
@@ -24,11 +24,9 @@ tinymce.init({
 
 These settings affect the execution of the Autoresize plugin, including changes to the minimum width, height, bottom margin, and default initialization state.
 
-include::partial$configuration/autoresize_bottom_margin.adoc[]
+include::partial$configuration/autoresize_bottom_margin.adoc[leveloffset=+1]
 
-include::partial$configuration/autoresize_on_init.adoc[]
-
-include::partial$configuration/autoresize_overflow_padding.adoc[]
+include::partial$configuration/autoresize_overflow_padding.adoc[leveloffset=+1]
 
 include::partial$configuration/max_height.adoc[leveloffset=+1]
 

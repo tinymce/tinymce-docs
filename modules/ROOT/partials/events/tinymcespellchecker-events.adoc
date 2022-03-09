@@ -1,6 +1,6 @@
-The following events are provided by the link:tinymcespellchecker.html[Spell Checker Pro plugin].
+The following events are provided by the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
-[cols=",,",options="header",]
+[cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
 |SpellcheckerIgnore |`+{ word: string }+` |Fired when a single instance of a word has been marked as ignored.

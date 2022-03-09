@@ -1,3 +1,4 @@
+[[contextmenu]]
 == `+contextmenu+`
 
 The `+contextmenu+` option allows you to specify which items appear on the context menu. The format of this option is a space separated list of items in a string.
@@ -31,5 +32,6 @@ tinymce.init({
 });
 ----
 
-\{% if page.title != "Context menu" %} For information on configuring the `+contextmenu+` option and creating custom context menu items link:contextmenu.html[context menu examples].
-\{% endif %}
+ifeval::["{docname}" != "contextmenu"]
+For information on configuring the `+contextmenu+` option and creating custom context menu items xref:contextmenu.adoc[context menu examples].
+endif::[]

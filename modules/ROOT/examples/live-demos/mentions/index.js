@@ -34,7 +34,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
         name: fullName,
         fullName: fullName,
         description: faker.name.jobTitle(),
-        image: '{{baseurl}}/images/unsplash/uifaces-unsplash-portrait-' + images[Math.floor(images.length * Math.random())] + '.jpg'
+        image: '{{baseimagesurl}}/unsplash/uifaces-unsplash-portrait-' + images[Math.floor(images.length * Math.random())] + '.jpg'
       };
     }).forEach(function(user) {
       userDb[user.id] = user;

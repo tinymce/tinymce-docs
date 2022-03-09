@@ -74,7 +74,7 @@ var demoBaseConfig = {
     'insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image tinydrive',
   spellchecker_dialog: true,
   spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
-  tinydrive_demo_files_url: '{{baseurl}}/images/tiny-drive-demo/demo_files.json',
+  tinydrive_demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
   tinydrive_token_provider: function (success, failure) {
     success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
   },

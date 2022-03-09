@@ -35,7 +35,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
         name: fullName,
         fullName: fullName,
         description: faker.name.jobTitle(),
-        image: '{{baseurl}}/images/unsplash/uifaces-unsplash-portrait-' + images[Math.floor(images.length * Math.random())] + '.jpg'
+        image: '{{baseimagesurl}}/unsplash/uifaces-unsplash-portrait-' + images[Math.floor(images.length * Math.random())] + '.jpg'
       };
     }).forEach(function(user) {
       userDb[user.id] = user;
@@ -159,7 +159,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     tinydrive_token_provider: function (success, failure) {
       success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
     },
-    tinydrive_demo_files_url: '{{baseurl}}/images/tiny-drive-demo/demo_files.json',
+    tinydrive_demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
     tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
     tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
     tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',

@@ -1,7 +1,7 @@
 [[style_formats]]
 == style_formats
 
-This option allows you to define custom items for the `+styleselect+` dropdown toolbar button and the `+formats+` menu item.
+This option allows you to define custom items for the `+styles+` dropdown toolbar button and the `+formats+` menu item.
 
 There are four types of items the array can contain:
 
@@ -74,7 +74,7 @@ tinymce.init({
 This example shows you how to:
 
 * Override the built-in xref:content-formatting.adoc#formats[formats].
-* Add some custom styles to the `+styleselect+` dropdown toolbar button and the `+formats+` menu item using the xref:user-formatting-options.adoc#style_formats[style_formats] configuration option.
+* Add some custom styles to the `+styles+` dropdown toolbar button and the `+formats+` menu item using the xref:user-formatting-options.adoc#style_formats[style_formats] configuration option.
 
 liveDemo::format-custom[ tab="js" ]
 

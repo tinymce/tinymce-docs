@@ -175,13 +175,13 @@ Commands are available for the following plugins:
 * xref:codesample[Code Sample]
 * xref:comments[Comments]
 * xref:directionality[Directionality]
+* xref:editimage[Edit Image]
 * xref:emoticons[Emoticons]
 * xref:export[Export]
 * xref:formatpainter[Format Painter]
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
-* xref:editimage[Edit Image]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
@@ -196,8 +196,8 @@ Commands are available for the following plugins:
 * xref:searchandreplace[Search and Replace]
 * xref:spellcheckerpro[Spell Checker Pro]
 * xref:table[Table]
-* xref:template[Template]
 * xref:tableofcontents[Table of Contents]
+* xref:template[Template]
 * xref:visualblocks[Visual Blocks]
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
@@ -279,6 +279,14 @@ The following commands require the xref:directionality.adoc[Directionality (`+di
 
 include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 
+
+[[editimage]]
+==== Edit Image
+
+The following commands require the xref:editimage.adoc[Edit Image (`+editimage+`)] plugin.
+
+include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
+
 [[emoticons]]
 ==== Emoticons
 
@@ -320,13 +328,6 @@ include::partial$commands/help-cmds.adoc[leveloffset=+3]
 The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
-
-[[editimage]]
-==== Edit Image
-
-The following commands require the xref:editimage.adoc[Edit Image (`+editimage+`)] plugin.
-
-include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
 
 [[insertdatetime]]
 ==== Insert Date/Time
@@ -426,19 +427,19 @@ The following commands require the xref:table.adoc[Table (`+table+`)] plugin.
 
 include::partial$commands/table-cmds.adoc[leveloffset=+3]
 
-[[template]]
-==== Template
-
-The following command requires the xref:template.adoc[Template (`+template+`)] plugin.
-
-include::partial$commands/template-cmds.adoc[leveloffset=+3]
-
 [[tableofcontents]]
 ==== Table of Contents
 
 The following commands require the xref:tableofcontents.adoc[Table of Contents (`+tableofcontents+`)] plugin.
 
 include::partial$commands/tableofcontents-cmds.adoc[leveloffset=+3]
+
+[[template]]
+==== Template
+
+The following command requires the xref:template.adoc[Template (`+template+`)] plugin.
+
+include::partial$commands/template-cmds.adoc[leveloffset=+3]
 
 [[visualblocks]]
 ==== Visual Blocks

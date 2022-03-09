@@ -3,7 +3,7 @@
 
   button.addEventListener('click', function () {
     tinydrive.browse({
-      demo_files_url: '{{baseurl}}/images/tiny-drive-demo/demo_files.json',
+      demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
       token_provider: function (success) { success({ token: 'fake-token' }); },
     }).then(function () {
       console.log('Dialog closed');

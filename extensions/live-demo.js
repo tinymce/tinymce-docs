@@ -117,7 +117,11 @@ const loadContent = (engine, catalog, id, docAttrs) => {
     // If the file exists, then render the content
     const catalogFile = catalog.resolveResource(`live-demos/${id}/${file}`, ctx, 'example', [ 'example' ]);
     if (catalogFile !== undefined) {
-      data[type] = engine.renderFileSync(catalogFile.path, docAttrs);
+      data[type] = engine.renderFileSync(catalogFile.path, {
+        baseurl: `${docAttrs['site-url']}/${ctx.component}/${ctx.version}`,
+        baseimagesurl: `${docAttrs['site-url']}/${ctx.component}/${ctx.version}/${docAttrs['imagesdir']}`,
+        ...docAttrs
+      });
       data[hasKey] = true;
     } else {
       data[hasKey] = false;

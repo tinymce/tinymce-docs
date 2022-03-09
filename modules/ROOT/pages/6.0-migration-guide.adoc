@@ -1,10 +1,30 @@
 = TinyMCE 5.x -> 6.0 Migration Guide
 
-== Things we renamed
+== Renamed things
 
 The xref:6.0-release-notes.adoc#things-we-renamed[_{productname} 6.0 Release Notes_] includes a table of every re-named API, Function, Command, Option, and User Interface element.
 
-The table also includes notes regarding what, if any, actions are necessary consequent to upgrading. 
+The table also includes notes regarding what, if any, actions are necessary consequent to upgrading.
+
+NOTE: editing configurations to cater to re-named items is a persistent necessary action.
+
+== Removed plugins
+
+Five `plugins` were removed because their functionality is now a Core part of {productname} 6.0. These five plugins were:
+
+* `noneditable`
+
+* `paste`
+
+* `print`
+
+* `textpattern_patterns`
+
+* `hr`
+
+All references to any of these plugins should be removed from your plugin configuration.
+
+See below for other potential issues with these, now Core, functions.
 
 == Plugins
 

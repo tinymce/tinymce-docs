@@ -209,25 +209,31 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 [id=changed-plugins-noneditable]
 ==== Noneditable
 
-* The `noneditable` plugin is no longer a plugin. It is now  a Core part of {productname} 6.0.
+* The `noneditable` plugin is no longer a plugin. It is now a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+   
+   All references to `noneditable` should be removed from your plugin configuration.
 
 [id=changed-plugins-paste]
 ==== Paste
 
-* The `paste` plugin’s functionality is now  a Core part of {productname} 6.0.
+* The `paste` plugin’s functionality is now a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+   
+   All references to `paste` should be removed from your plugin configuration.
 
 * The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
 
 [id=changed-plugins-print]
 ==== Print
 
-* `print` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+* `print` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+   
+   All references to `print` should be removed from your plugin configuration.
 
 [id=changed-plugins-table]
 ==== Table
@@ -261,13 +267,15 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 [id=changed-plugins-textpattern]
 ==== TextPattern
 
-* the `textpattern_patterns` plugin is no longer a plugin. It is has been re-named, to `text_patterns` and is now  a Core part of {productname} 6.0.
+* the `textpattern_patterns` plugin is no longer a plugin. It is has been re-named, to `text_patterns` and is now a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+   
+   All references to `textpattern_patterns` (and `text_patterns`) should be removed from your plugin configuration.
 
-   Also, the API called `textpattern` has been removed.
+*  Also, the API called `textpattern` has been removed.
 
-   Finally, text patterns are now on by default. `text_patterns: false` or `text_patterns: []` turns the functionality off.
+*  Finally, text patterns are now on by default. `text_patterns: false` or `text_patterns: []` turns the functionality off.
 
 
 
@@ -308,9 +316,11 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 [id=removed-or-deprecated-plugins-hr]
 ==== HR
 
-* The `hr` (horizontal rule) functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+* The `hr` (horizontal rule) functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
 
   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+  
+  All references to `hr` should be removed from your plugin configuration.
 
 [id=removed-or-deprecated-plugins-imagetools]
 ==== ImageTools
@@ -327,7 +337,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 [id=removed-or-deprecated-plugins-paste]
 ==== Paste
 
-* The `paste` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+* The `paste` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
 
 * Because the functionality was unmaintained, `paste` no longer supports input from Microsoft Word.
 
@@ -340,9 +350,11 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 [id=removed-or-deprecated-plugins-print]
 ==== Print
 
-* `print` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+* `print` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+   
+   All references to `print` should be removed from your plugin configuration.
 
 [id=removed-or-deprecated-plugins-spellchecker]
 ==== Spellchecker
@@ -381,11 +393,13 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 [id=removed-or-deprecated-plugins-text-pattern]
 ==== TextPattern
 
-* The `textpattern` functionality is no longer a plugin. It is now  a Core part of {productname} 6.0.
+* The `textpattern` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
 
   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+  
+  All references to `textpattern` should be removed from your plugin configuration.
 
-  Also, the API that called `textpattern` has been removed.
+* Also, the API that called `textpattern` has been removed.
 
 
 

@@ -1,3 +1,4 @@
+[[rtc_server_disconnected]]
 === `rtc_server_disconnected`
 
 If the RTC session fails to connect, or is disconnected due to an error, the user will be blocked from editing (using link:{baseurl}/api/tinymce/tinymce.editor/#setprogressstate[setProgressState]) along with an error notification:

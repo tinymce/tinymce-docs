@@ -1,3 +1,4 @@
+[[rtc_encryption_provider]]
 == `rtc_encryption_provider`
 
 The RTC plugin requires an encryption key for end-to-end encryption. This key is not sent to the RTC server; the {productname} RTC service cannot read the editor content. The encryption key is used by the https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto[SubtleCrypto] browser API to encrypt and decrypt the editor content in the user's browser.

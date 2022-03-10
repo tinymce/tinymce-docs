@@ -11,15 +11,15 @@ Real-time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentic
 
 A JSON Web Token (JWT) endpoint is a service for generating and providing authorization tokens to users. These tokens are used to verify that submitted content was sent by an authorized user and to prevent submissions by unauthorized collaborators.
 
-JWT is a standard authorization solution for web services and is documented in detail at https://jwt.io/[\https://jwt.io/]. This guide aims to show how to setup JWT authentication for RTC.
+JWT is a standard authorization solution for web services and is documented in detail at https://jwt.io/[https://jwt.io/]. This guide aims to show how to setup JWT authentication for RTC.
 
 == Overview
 
 * <<settingupjwtauthenticationforreal-timecollaboration,Setting up JWT authentication for Real-time Collaboration>>
-* <<addapublickeytothetinycloudapikey,Add a public key to the Tiny Cloud API key>>
 * <<setupajsonwebtokenjwtendpoint,Set up a JSON Web Token (JWT) endpoint>>
 * <<jwtendpointexamples,JWT endpoint examples>>
 
+[[settingupjwtauthenticationforreal-timecollaboration]]
 == Setting up JWT authentication for Real-time Collaboration
 
 To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
@@ -30,6 +30,7 @@ To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
 
 include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
+[[setupajsonwebtokenjwtendpoint]]
 == Set up a JSON Web Token (JWT) endpoint
 
 include::partial$auth/how-jwts-are-used.adoc[]
@@ -66,6 +67,7 @@ The `sub` field is used to identify users to avoid sending sensitive or identity
 
 CAUTION: The RTC plugin does not request a new JWT if user's JWT expires during a session. To avoid user disconnections from expired JWTs, ensure the `exp` claim allows for a reasonable
 
+[[jwtendpointexamples]]
 == JWT endpoint examples
 
 The following examples show a minimal JWT endpoint and how to configure {productname} to use them.
@@ -139,7 +141,7 @@ tinymce.init({
 
 === Node.js token provider endpoint example
 
-This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic Node.js Express server and adding {productname}, see: link:{baseurl}/integrations/expressjs/[Integrating TinyMCE into an Express JS App].
+This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:/integrations/expressjs.adoc[Integrating TinyMCE into an Express JS App].
 
 `privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 

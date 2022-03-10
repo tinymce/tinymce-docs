@@ -11,10 +11,10 @@
 |`+bold+` |Applies the bold format to the current selection.
 |`+copy+` |Copies the current selection into clipboard.
 |`+cut+` |Cuts the current selection into clipboard.
-|`+fontselect+` |Dropdown list with font families to apply to selection.
-|`+fontsizeselect+` |Dropdown list with font sizes to apply to selection.
+|`+fontfamily+` |Dropdown list with font families to apply to selection.
+|`+fontsize+` |Dropdown list with font sizes to apply to selection.
 |`+forecolor+` |Applies foreground/text color to selection.
-|`+formatselect+` |Dropdown list with block formats to apply to selection.
+|`+blocks+` |Dropdown list with block formats to apply to selection.
 |`+h1+` |Changes current line to the "Heading 1" style.
 |`+h2+` |Changes current line to the "Heading 2" style.
 |`+h3+` |Changes current line to the "Heading 3" style.
@@ -35,7 +35,7 @@
 |`+removeformat+` |Removes the formatting from the current selection.
 |`+selectall+` |Selects all content in the editor.
 |`+strikethrough+` |Applies strike though format to the current selection.
-|`+styleselect+` |Dropdown list with styles to apply to selection.
+|`+styles+` |Dropdown list with styles to apply to selection.
 |`+subscript+` |Applies subscript format to the current selection.
 |`+superscript+` |Applies superscript format to the current selection.
 |`+underline+` |Applies the underline format to the current selection.

@@ -28,7 +28,7 @@ var emailBodyConfig = {
     'tinymcespellchecker'
   ],
   toolbar: [
-    'undo redo | bold italic underline | fontselect fontsizeselect',
+    'undo redo | bold italic underline | fontfamily fontsize',
     'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
   ],
   valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',

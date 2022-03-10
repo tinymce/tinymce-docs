@@ -8,8 +8,8 @@ tinymce.init({
     format: {
       title: 'Format',
       items: 'configurepermanentpen | bold italic underline strikethrough ' +
-        'superscript subscript codeformat | formats blockformats fontformats ' +
-        'fontsizes align | forecolor backcolor | removeformat'
+        'superscript subscript codeformat | formats blocks fontfamily ' +
+        'fontsize align | forecolor backcolor | removeformat'
     }
   },
   permanentpen_properties: {

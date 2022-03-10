@@ -187,7 +187,7 @@ tinymce.init({
   height: 800,
   plugins: 'paste code tinycomments help lists',
   toolbar:
-    'undo redo | formatselect | ' +
+    'undo redo | blocks | ' +
     'bold italic backcolor | alignleft aligncenter ' +
     'alignright alignjustify | bullist numlist outdent indent | ' +
     'removeformat | addcomment showcomments | help',

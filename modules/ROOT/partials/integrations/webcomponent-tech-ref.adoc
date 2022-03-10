@@ -153,7 +153,7 @@ To set the editor toolbar buttons, use the `+toolbar+` attribute. For example:
 
 [source,html]
 ----
-<tinymce-editor toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent"></tinymce-editor>
+<tinymce-editor toolbar="undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent"></tinymce-editor>
 ----
 
 The `+toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
@@ -253,7 +253,7 @@ To add a quick-selection toolbar, add `+"quickbars"+` to the `+plugins+` attribu
 
 [source,html]
 ----
-<tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | formatselect | quicklink blockquote"></tinymce-editor>
+<tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | blocks | quicklink blockquote"></tinymce-editor>
 ----
 
 The `+quickbars_selection_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].

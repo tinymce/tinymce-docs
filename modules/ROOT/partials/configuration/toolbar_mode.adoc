@@ -14,7 +14,7 @@ For example. If the following toolbar configuration is wider than the editor, th
 ----
 tinymce.init({
     selector: 'textarea',
-    toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
+    toolbar: 'undo redo styles bold italic alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
 });
 ----
 

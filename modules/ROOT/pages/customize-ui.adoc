@@ -154,7 +154,7 @@ The following example displays the default toolbar in addition to the `+code+` f
 ----
 tinymce.init({
   selector: 'textarea',
-  toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code',
+  toolbar: 'undo redo styles bold italic alignleft aligncenter alignright bullist numlist outdent indent code',
   plugins: 'code'
 });
 ----

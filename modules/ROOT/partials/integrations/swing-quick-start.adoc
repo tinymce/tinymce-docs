@@ -54,7 +54,7 @@ final Config myConfig = Config.embedded()
     .putProperty("height", 600)
     .putProperty("menubar", false)
     .putProperty("toolbar",
-      "undo redo | formatselect | bold italic backcolor | " +
+      "undo redo | blocks | bold italic backcolor | " +
       "alignleft aligncenter alignright alignjustify | " +
       "bullist numlist outdent indent | removeformat | link image | help")
     .putProperty("images_reuse_filename", true);
@@ -76,7 +76,7 @@ Or by passing Javascript that returns a {productname} configuration object.
     ],
     menubar: false,
     toolbar: [
-      'undo redo | formatselect | bold italic backcolor | alignleft aligncenter ',
+      'undo redo | blocks | bold italic backcolor | alignleft aligncenter ',
       'alignright alignjustify | bullist numlist outdent indent | removeformat | ',
       'link image | help'
     ].join(''),

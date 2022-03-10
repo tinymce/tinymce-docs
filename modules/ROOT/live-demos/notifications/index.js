@@ -33,7 +33,7 @@ tinymce.init({
   plugins: [
     'lists link image fullscreen table help'
   ],
-  toolbar: 'undo redo | formatselect | ' +
+  toolbar: 'undo redo | blocks | ' +
   'bold italic backcolor | alignleft aligncenter ' +
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',

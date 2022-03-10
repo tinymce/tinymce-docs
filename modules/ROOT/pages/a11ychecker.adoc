@@ -49,6 +49,7 @@ Each rule has a severity level, which will be one of the following, listed in or
 * Warning
 * Error
 
+[[D1]]
 === D1 - Usage of paragraphs as headings
 
 *Rule description:* This rule checks that `+h1+`-`+h6+` tags are used for heading content, not `+p+` tags. Not using correct heading markup will make it difficult for assistive technologies to represent and navigate through your content.
@@ -65,6 +66,7 @@ WCAG 2.1 specifications : * https://www.w3.org/WAI/WCAG21/Techniques/html/H42.ht
 
 * https://www.w3.org/WAI/WCAG21/Techniques/html/H69.html[H69 - Providing heading elements at the beginning of each section of content].
 
+[[D2]]
 === D2 - Sequential headings
 
 *Rule description:* This rule checks that headings tags are used sequentially.
@@ -81,6 +83,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html[G141 - Organizing a page using headings].
 
+[[D3]]
 === D3 - Adjacent links
 
 *Rule description:* This rule checks that links next to other links do not have the same `+href+` attribute.
@@ -97,6 +100,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html[H2 - Combining adjacent image and text links for the same resource].
 
+[[D4O]]
 === D4O - Ordered list structure
 
 *Rule description:* This rule checks that an `+ol+` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
@@ -111,6 +115,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
 
+[[D4U]]
 === D4U - Unordered list structure
 
 *Rule description:* This rule checks that a `+ul+` element is used for unordered lists. Do not use paragraphs beginning with `+*+` or `+-+` or some similar character instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
@@ -125,6 +130,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
 
+[[D5]]
 === D5 - Contrast ratio of the text (D5A, D5B, and D5C)
 
 *Rule description:* This rule checks that the contrast ratio of the text is above the following values:
@@ -137,6 +143,7 @@ WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[
 
 Text with a low contrast ratio is hard to read for users with impaired vision.
 
+[[D5A]]
 ==== {pluginname} rule details - D5A
 
 Notification level (severity) : Error
@@ -147,6 +154,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html[G145 - Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text].
 
+[[D5B]]
 ==== {pluginname} rule details - D5B
 
 Notification level (severity) : Error
@@ -157,6 +165,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html[G18 - Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text].
 
+[[D5C]]
 ==== {pluginname} rule details - D5C
 
 Notification level (severity) : Error
@@ -167,6 +176,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/general/G17.html[G17 - Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text].
 
+[[H93]]
 === H93 - IDs must be unique
 
 *Rule description:* This rule checks that all `+id+` attributes are unique in the editor. Duplicate `+id+` attributes are known to cause problems for assistive technologies when parsing the content.
@@ -181,6 +191,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html[H93 - Ensuring that id attributes are unique on a Web page].
 
+[[I1]]
 === I1 - Image `+alt+` text
 
 *Rule description:* This rule checks that all images have alternative (`+alt+`) text for screen readers and other assistive technologies.
@@ -195,6 +206,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
 
+[[I2]]
 === I2 - Image `+alt+` text is not the image filename
 
 *Rule description:* This rule checks that the `+alt+` attribute text of the image is not the same as the filename of the image.
@@ -209,6 +221,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
 
+[[T1]]
 === T1 - Table caption
 
 *Rule description:* This rule checks that all `+table+` elements have a `+caption+` element describing the data inside the table to simplify parsing and navigation of the content for users of assistive technologies.
@@ -223,6 +236,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html[H39 - Using caption elements to associate data table captions with data tables].
 
+[[T2]]
 === T2 - Complex table summary
 
 *Rule description:* This rule checks that all complex tables must have a `+summary+` attribute explaining to users of assistive technologies how to navigate through the data inside of the table.
@@ -239,6 +253,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
 
+[[T3]]
 === T3 - Table caption and summary
 
 *Rule description:* This rule checks that the table caption and summary does not have the same text content. The caption should explain *what* the table is about while the summary should explain *how* to navigate the data inside of the table.
@@ -255,6 +270,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
 
+[[T4A]]
 === T4A - Table markup
 
 *Rule description:* This rule checks that all `+tables+` contain both `+td+` and `+th+` elements.
@@ -269,6 +285,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
 
+[[T4B]]
 === T4B - Table headers
 
 *Rule description:* This rule checks that all `+table+` elements contain at least one table header (`+th+`) element.
@@ -283,6 +300,7 @@ xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
 WCAG 2.1 specification : https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
 
+[[T4C]]
 === T4C - Table heading scope
 
 *Rule description:* This rule checks that all table header (`+th+`) elements have a `+scope+` attribute clarifying what scope the heading has inside of the `+table+`. The allowed values are `+row+`, `+col+`, `+rowgroup+`, and `+colgroup+`. This is important for users of assistive technologies to be able to parse table data.

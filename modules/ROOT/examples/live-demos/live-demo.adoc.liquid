@@ -1,0 +1,149 @@
+++++
+{% comment %} Add cloud script(s) {% endcomment %}
+{%- if liveDemo.script.include -%}
+<script src="{{ liveDemo.script.url }}" referrerpolicy="origin"></script>
+{%- if liveDemo.type == 'tinydrive' -%}
+<style>
+{% include 'tinydrive.css' %}
+</style>
+{%- endif -%}
+{%- endif -%}
+
+{% comment %} Creates the live-demo tabs {% endcomment %}
+<div id="live-demo_{{ liveDemo.id }}" class="live-demo tabset is-loading" {% if liveDemo.height %}style="min-height:{{ liveDemo.height }}px;"{% endif %}>
+    <div class="ulist tabs">
+      <ul>
+        {% for tab in liveDemo.tabs %}
+        <li {% if tab.name == liveDemo.initialTab %}class="is-active"{% endif %} id="live-demo_tab_{{ tab.name }}_{{ liveDemo.id }}">
+          <p>{{ tab.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="content">
+        {% comment %} Adds style.css to page if provided {% endcomment %}
+        <div id="live-demo_pane_run_{{ liveDemo.id }}" class="tab-pane" aria-labelledby="live-demo_tab_run_{{ liveDemo.id }}">
+            {% if liveDemo.content.hasCss %}
+                <style type="text/css">
+                    {{ liveDemo.content.css }}
+                </style>
+            {% endif %}
+            {{ liveDemo.content.html }}
+        </div>
+
+        {% comment %} Adds HTML tab content {% endcomment %}
+        <div id="live-demo_pane_html_{{ liveDemo.id }}" class="tab-pane" aria-labelledby="live-demo_tab_html_{{ liveDemo.id }}">
+++++
+[source,html]
+----
+{{ liveDemo.content.examplehtml }}
+----
+++++
+        </div>
+
+        {% comment %} If style.css exists, add CSS tab content {% endcomment %}
+        {% if liveDemo.content.hasCss %}
+        <div id="live-demo_pane_css_{{ liveDemo.id }}" class="tab-pane" aria-labelledby="live-demo_tab_css_{{ liveDemo.id }}">
+++++
+[source,css]
+----
+{{ liveDemo.content.css }}
+----
+++++
+        </div>
+        {% endif %}
+
+        {% comment %} Add content to JS tab from index.js or example.js {% endcomment %}
+        <div id="live-demo_pane_js_{{ liveDemo.id }}" class="tab-pane" aria-labelledby="live-demo_tab_js_{{ liveDemo.id }}">
+++++
+[source,js]
+----
+{{ liveDemo.content.examplejs }}
+----
+++++
+        </div>
+    </div>
+</div>
+
+{% comment %} Changes initial tab where tab is specified {% endcomment %}
+<form action="https://codepen.io/pen/define" method="POST" target="_blank" id="live-demo_form_{{ liveDemo.id }}">
+<input type="hidden" name="data" id="live-demo_data_{{ liveDemo.id }}" />
+</form>
+
+<script>
+{% comment %} Add index.js to the page (primary tab content) {% endcomment %}
+(function() {
+{{ liveDemo.content.js }}
+})();
+
+(function() {
+  var demoId = "{{ liveDemo.id }}";
+
+  {% comment %} Add index.js and HTML to variables {% endcomment %}
+  var html = decodeURIComponent("{{ liveDemo.content.html | uri_escape }}");
+  var js = decodeURIComponent("{{ liveDemo.content.js | uri_escape }}");
+
+  {% comment %} If style.css provided, add to variable {% endcomment %}
+  {% comment %} set which tabz are shown in on live-demo site {% endcomment %}
+  {% if liveDemo.content.hasCss %}
+  var css = decodeURIComponent("{{ liveDemo.content.css | uri_escape }}");
+  var tabNames = ["run","html","css","js"];
+  {% else %}
+  var css = "";
+  var tabNames = ["run","html","js"];
+  {% endif %}
+
+  {% comment %} Data to send to codepen dot io via form input {% endcomment %}
+  /* Note: there are some other fields we could populate here to polish this. */
+  /* See: https://blog.codepen.io/documentation/api/prefill/ */
+  var data = {
+    title: "{{ liveDemo.runText }} Example",
+    description: '',
+    html: html,
+    css: css,
+    css_external: '',
+    js: js,
+    js_external: '{{ liveDemo.script.url }}'
+  };
+  document.getElementById("live-demo_data_{{ liveDemo.id }}").value = JSON.stringify(data);
+
+  {% comment %} Below is just tab change logic {% endcomment %}
+  var tabs = tabNames.map(function(t) {
+    return {
+      name: t,
+      tab: document.getElementById("live-demo_tab_" + t + "_" + demoId),
+    };
+  });
+
+  var codepenTab = document.getElementById("live-demo_tab_codepen_" + demoId);
+  if (codepenTab !== null) {
+    codepenTab.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      document.getElementById("live-demo_form_" + demoId).submit();
+    });
+  }
+
+  var lastTabName = '{{ liveDemo.initialTab }}';
+  tabs.forEach(function(t) {
+    t.tab.addEventListener('click', function() {
+      if (lastTabName !== t.name) {
+        {% if liveDemo.type == 'tinymce' %}
+        var editor = tinymce.get(demoId);
+        if (editor) {
+          if (t.name === 'run') {
+            editor.show();
+          } else if (lastTabName === 'run') {
+            editor.hide();
+          }
+        }
+        {% endif %}
+
+        lastTabName = t.name;
+      }
+    });
+  });
+})();
+</script>
+++++

@@ -20,9 +20,7 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Cloud Installation
 
-To enable the {productname} Enterprise Spellchecking plugin with xref:editor-and-features.adoc[{cloudname}]:
-
-. Add `+tinymcespellchecker+` to the `+plugins+` list.
+To enable the {productname} Enterprise Spellchecking plugin with xref:editor-and-features.adoc[{cloudname}], add `+tinymcespellchecker+` to the `+plugins+` list.
 
 With {cloudname} the server-side spellchecking component is automatically configured, so the `+spellchecker_rpc_url+` parameter does not need to be set.
 
@@ -39,9 +37,7 @@ tinymce.init({
 
 == Self-hosted Installation
 
-To enable the {productname} Enterprise Spellchecking plugin:
-
-. Add `+tinymcespellchecker+` to the `+plugins+` list.
+To enable the {productname} Enterprise Spellchecking plugin, add `+tinymcespellchecker+` to the `+plugins+` list.
 
 For information on installing the server-side component for spell checking, please see the xref:introduction-to-premium-selfhosted-services.adoc[server-side component installation guide].
 

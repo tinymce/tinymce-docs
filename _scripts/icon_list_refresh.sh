@@ -7,10 +7,10 @@ then
 else
   tinymce_root=$1
 fi
-# Output markdown file
-list_file='_includes/configuration/icon_list.md'
+# Output AsciiDoc file
+list_file='modules/ROOT/partials/configuration/icon_list.adoc'
 # Input directory containing the icon SVGs
-icon_svg_dir='images/icons/'
+icon_svg_dir='modules/ROOT/images/icons/'
 rm -rf $icon_svg_dir*
 cp $tinymce_root/modules/oxide-icons-default/src/svg/* $icon_svg_dir
 
@@ -25,7 +25,7 @@ if [ -e $list_file ]
   then
     echo ""
   else
-    echo "please execute from the TinyMCE documentation root directory (such as './_scripts/icon_list_refresh.sh') and ensure '_includes/configuration/icon_list.md' exists"
+    echo "please execute from the TinyMCE documentation root directory (such as './_scripts/icon_list_refresh.sh') and ensure '$list_file' exists"
     exit 1
 fi
 
@@ -37,14 +37,16 @@ icon_list=$(ls $icon_svg_dir)
 * Create the output table header in the output markdown file.
 COMMENT
 
-echo -e "|Identifier|Preview|Filename|\n|:-----:|:-----:|:-----:|" > $list_file
+echo -e "[cols=\"^,^,^\",options=\"header\"]\n|===\n|Identifier |Preview |Filename" > $list_file
 
 # Loop to populate the table using the input information
 for svgName in $icon_list
 do
   iconID=${svgName%%.*} # strip the file extension
-  echo -e "| \`$iconID\` | ![$svgName]({baseurl}/images/icons/$svgName) | \`$svgName\` |" >> $list_file
+  echo -e "| \`+$iconID+\` | image:icons/$svgName[$svgName] | \`+$svgName+\`" >> $list_file
 done
+
+echo -e "|===" >> $list_file
 
 echo "completed"
 exit 0

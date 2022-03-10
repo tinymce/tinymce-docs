@@ -1,3 +1,4 @@
+[[forced_root_block]]
 == `forced_root_block`
 
 This option enables you to make sure that any non block elements or text nodes are wrapped in block elements. For example `<strong>something</strong>` will result in output like: `<p><strong>something</strong></p>`. This option is enabled by default as of version 3.0.

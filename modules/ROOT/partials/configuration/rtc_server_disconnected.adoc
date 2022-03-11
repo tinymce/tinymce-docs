@@ -1,6 +1,6 @@
 === `rtc_server_disconnected`
 
-If the RTC session fails to connect, or is disconnected due to an error, the user will be blocked from editing (using link:{baseurl}/api/tinymce/tinymce.editor/#setprogressstate[setProgressState]) along with an error notification:
+If the RTC session fails to connect, or is disconnected due to an error, the user will be blocked from editing (using xref:apis/tinymce.editor.adoc#setProgressState[setProgressState]) along with an error notification:
 
 image:{baseurl}/images/icons/warning.svg[warning icon]*RTC has lost connection to the server, please reload the page. More information may be available in the console.*
 

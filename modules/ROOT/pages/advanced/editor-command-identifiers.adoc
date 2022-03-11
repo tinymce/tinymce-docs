@@ -21,7 +21,7 @@
 
 == Executable commands
 
-The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#execcommand[execCommand] function.
+The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the xref:apis/tinymce.editor.adoc#execCommand[execCommand] function.
 
 === Listing core and plugin editor commands
 
@@ -571,7 +571,7 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | Removes an editor instance with the specified ID.
 
 | mceToggleEditor
-| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either link:{baseurl}/api/tinymce/tinymce.editor/#hide[hide] if the editor is visible or link:{baseurl}/api/tinymce/tinymce.editor/#show[show] if it is not visible.
+| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
 |===
 
 == Query command states
@@ -589,7 +589,7 @@ tinymce.activeEditor.editorCommands.commands.state;
 
 === Available query command states
 
-The following command states can be queried using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#querycommandstate[queryCommandState] API.
+The following command states can be queried using the xref:apis/tinymce.editor.adoc#queryCommandState[queryCommandState] API.
 
 |===
 | Command | Description
@@ -680,7 +680,7 @@ tinymce.activeEditor.editorCommands.commands.value;
 
 === Available query command values
 
-The following command values can be queried using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#querycommandvalue[queryCommandValue] API.
+The following command values can be queried using the xref:apis/tinymce.editor.adoc#queryCommandValue[queryCommandValue] API.
 
 |===
 | Command | Description

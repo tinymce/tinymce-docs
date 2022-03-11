@@ -127,7 +127,7 @@ The following events are provided by the {productname} editor.
 
 | SwitchMode
 | `{ mode: string }`
-| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:{baseurl}/api/tinymce/tinymce.editormode/#register['tinymce.activeEditor.mode.register()'].
+| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API xref:apis/tinymce.editormode.adoc#register['tinymce.activeEditor.mode.register()'].
 
 | ScrollWindow
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event])
@@ -259,7 +259,7 @@ The following events are provided by the {productname} editor.
 
 | Dirty
 | N/A
-| Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when link:{baseurl}/api/tinymce/tinymce.undomanager/[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the link:{baseurl}/api/tinymce/tinymce.editor/#isdirty[`editor.isDirty` API].
+| Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when xref:apis/tinymce.undomanager.adoc[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the xref:apis/tinymce.editor.adoc#isDirty[`editor.isDirty` API].
 
 | CloseWindow
 | `{ dialog: DialogApi }`
@@ -271,7 +271,7 @@ The following events are provided by the {productname} editor.
 
 | ProgressState
 | `{ state: boolean, time?: number }`
-| Fired when a change to the editor progress state is scheduled using the {productname} API link:{baseurl}/api/tinymce/tinymce.editor/#setprogressstate[`tinymce.activeEditor.setProgressState()`].
+| Fired when a change to the editor progress state is scheduled using the {productname} API xref:apis/tinymce.editor.adoc#setProgressState[`tinymce.activeEditor.setProgressState()`].
 
 | AfterProgressState
 | `{ state: boolean }`
@@ -288,7 +288,7 @@ include::partial$misc/requires_5_7v.adoc[]
 
 | SetAttrib
 | `{ attrElm: Element, attrName: string, attrValue: string }`
-| Fired when an attribute is updated using the editor link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
+| Fired when an attribute is updated using the editor xref:apis/tinymce.dom.domutils.adoc[DOMUtils API].
 
 | ResizeEditor
 | N/A

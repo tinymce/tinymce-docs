@@ -8,7 +8,7 @@
 
 == Requirements
 
-To be recognised as a plugin by {productname}, the code for a custom plugin must have a JavaScript file with a single entry point that registers the plugin with {productname} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {productname} also has various APIs for loading link:{baseurl}/api/tinymce.dom/tinymce.dom.scriptloader/[scripts] and link:{baseurl}/api/tinymce.dom/tinymce.dom.stylesheetloader/[stylesheets].
+To be recognised as a plugin by {productname}, the code for a custom plugin must have a JavaScript file with a single entry point that registers the plugin with {productname} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {productname} also has various APIs for loading xref:apis/tinymce.dom.scriptloader.adoc[scripts] and xref:apis/tinymce.dom.stylesheetloader.adoc[stylesheets].
 
 {productname} does not require any special file structure or tooling apart from these requirements, so custom plugins can be developed using most frameworks and tools.
 

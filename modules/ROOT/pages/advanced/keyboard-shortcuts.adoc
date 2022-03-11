@@ -211,8 +211,8 @@ IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts w
 
 To add a custom keyboard shortcut to {productname}, use either:
 
-* link:{baseurl}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
-* link:{baseurl}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
+* xref:apis/tinymce.editor.adoc#addShortcut[The `tinymce.Editor.addShortcut` API].
+* xref:apis/tinymce.shortcuts.adoc[The `tinymce.Shortcuts.add` API].
 
 = include::partial$misc/shortcut-os-mappings.adoc[]
 

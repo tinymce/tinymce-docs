@@ -93,6 +93,12 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :altplugincode: nil
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
+:plugincategory: premium
+:pluginname: Edit Image
+:plugincode: editimage
+:altplugincode: nil
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
 :plugincategory: opensource
 :pluginname: Emoticons
 :plugincode: emoticons
@@ -126,12 +132,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Image
 :plugincode: image
-:altplugincode: nil
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-:plugincategory: opensource
-:pluginname: Image Tools
-:plugincode: imagetools
 :altplugincode: nil
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -231,6 +231,12 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :altplugincode: nil
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
+:plugincategory: premium
+:pluginname: Table of Contents
+:plugincode: tableofcontents
+:altplugincode: nil
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
 :plugincategory: opensource
 :pluginname: Template
 :plugincode: template
@@ -244,19 +250,12 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
-:pluginname: Table of Contents
-:plugincode: toc
-:altplugincode: nil
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-:plugincategory: opensource
 :pluginname: Visual Blocks
 :plugincode: visualblocks
 :altplugincode: nil
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
-
 :pluginname: Visual Characters
 :plugincode: visualchars
 :altplugincode: nil

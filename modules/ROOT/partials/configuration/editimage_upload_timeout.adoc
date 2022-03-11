@@ -1,9 +1,11 @@
 [[editimage_upload_timeout]]
 == `+editimage_upload_timeout+`
 
-Placeholder
+This option can be used to configure how long an image upload should be allowed to take before timing out after editing an image.
 
-Type: `+Option+` <--- placeholder
+Type : `+Number+`
+
+Default Value : `+30000+`
 
 === Example: Using `+editimage_upload_timeout+`
 
@@ -13,6 +15,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
   plugins: 'image editimage',
-  editimage_upload_timeout: // TODO TODO placeholder//
+  editimage_upload_timeout: 60000
 });
 ----

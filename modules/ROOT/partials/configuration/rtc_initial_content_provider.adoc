@@ -1,7 +1,7 @@
 [[rtc_initial_content_provider]]
 === `rtc_initial_content_provider`
 
-By default, the initial editor content is retrieved from the element targeted using the {productname} link:{baseurl}/configure/integration-and-setup/#selector[`selector` option].
+By default, the initial editor content is retrieved from the element targeted using the {productname} xref:/configure/integration-and-setup.adoc#selector[`selector` option].
 
 The `rtc_initial_content_provider` option allows alternative initial content be retrieved for a new RTC session. This option works with frameworks and integrations (such as the {productname} link:{baseurl}/integrations/[integrations]) that don't provide access to the target element directly. If the target element contains content and a `rtc_initial_content_provider` has been provided, the content from the `rtc_initial_content_provider` will be used as the initial editor content.
 
@@ -10,7 +10,7 @@ The `rtc_initial_content_provider` is used for new documents (`documentId`) and 
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
+xref:/plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])

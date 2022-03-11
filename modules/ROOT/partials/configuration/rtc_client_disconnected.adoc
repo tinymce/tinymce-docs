@@ -6,11 +6,12 @@ The `rtc_client_disconnected` option can be used with the <<rtc_client_connected
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
+xref:/plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: Function
 
-Input parameters:: include::partial$rtc/rtc-client-connect-inputs.adoc[]
+Input parameters::
+include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 include::partial$rtc/rtc-client-connect-disconnect-example.adoc[]

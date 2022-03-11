@@ -20,7 +20,7 @@ If you just want to add or change some behavior for a few items, use the xref:co
 |] |Ends an attribute list for an element definition.
 |! |Makes attributes required. If none of the required attributes are set, the element will be removed. For example, `+'!href'+`.
 |= |Makes the attribute default to the specified value. For example, `+'target=_blank'+`
-|: |Forces the attribute to the specified value. For example, `+'border:0'+`
+|~ |Forces the attribute to the specified value. For example, `+'border~0'+`
 |< |Verifies the value of an attribute (only the listed values are allowed). For example, `+'target<_blank?_self'+`
 |? |Separates attribute verification values. See above.
 |+ |Makes the element open if no child nodes exists. For example, `+'+a'+`.
@@ -36,7 +36,7 @@ Wildcards such as `+*+`,`+++`,`+?+` may be used in element or attribute name mat
 [cols="1,5",options="header"]
 |===
 |Name |Summary
-|`+{$uid}+` |Results in a unique ID. For example, `+'p[id:{$uid}]'+`.
+|`+{$uid}+` |Results in a unique ID. For example, `+'p[id~{$uid}]'+`.
 |===
 
 Use `+*[*]+` to include all elements and all attributes. This can be very useful when used with the xref:content-filtering.adoc#invalid_elements[invalid_elements] option.
@@ -49,7 +49,7 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  valid_elements : 'a[href|target=_blank],strong/b,div[align],br'
+  valid_elements: 'a[href|target=_blank],strong/b,div[align],br'
 });
 ----
 

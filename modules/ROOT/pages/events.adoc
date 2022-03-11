@@ -177,7 +177,6 @@ The following plugins provide events.
 * xref:pasteevents[Paste events]
 * xref:permanentpenevents[Permanent Pen events]
 * xref:powerpasteevents[PowerPaste events]
-* xref:spellcheckerevents[Spell Checker events]
 * xref:spellcheckerproevents[Spell Checker Pro events]
 * xref:tableevents[Table events]
 * xref:visualblocksevents[Visual Blocks events]
@@ -331,20 +330,6 @@ The following events are provided by the xref:introduction-to-powerpaste.adoc[Po
 |PastePreProcess |`+{ content: string, mode: string, source: string }+` |Fired before the content is parsed from the clipboard.
 |PastePostProcess |`+{ node: Element, mode: string, source: string }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
-|===
-
-[[spellcheckerevents]]
-=== Spell Checker events
-
-The following events are provided by the link:spellchecker.html[Spell Checker plugin].
-
-include::partial$DEPRECATED/spellchecker.adoc[]
-
-[cols="1,1,2",options="header"]
-|===
-|Name |Data |Description
-|SpellcheckStart |N/A |Fired when spellchecking is enabled.
-|SpellcheckEnd |N/A |Fired when spellchecking is disabled.
 |===
 
 [[spellcheckerproevents]]

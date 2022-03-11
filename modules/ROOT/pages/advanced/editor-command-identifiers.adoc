@@ -19,10 +19,12 @@
  ** <<availablequerycommandvalues,Available Query command values>>
  ** <<querycommandvaluestableplugin,Query command values: Table plugin>>
 
+[[executablecommands]]
 == Executable commands
 
 The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#execcommand[execCommand] function.
 
+[[listingcoreandplugineditorcommands]]
 === Listing core and plugin editor commands
 
 To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
@@ -32,6 +34,7 @@ To retrieve a list of avaliable commands from the active editor, run the followi
 tinymce.activeEditor.editorCommands.commands.exec;
 ----
 
+[[coreeditorcommands]]
 === Core Editor commands
 
 The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
@@ -64,7 +67,7 @@ The commands on the following table are provided by the {productname} editor and
 | Copies the selected contents and puts in into users clipboard.
 
 | Lang
-| Sets the language of the current selection. The value passed in should be a language spec described in link:{baseurl}/configure/localization/#content_langs[Content appearance options - `content_langs`].
+| Sets the language of the current selection. The value passed in should be a language spec described in xref:configure/localization.adoc#content_langs[Content appearance options - `content_langs`].
 
 | Paste
 | Pastes the current clipboard contents into the editor.
@@ -103,7 +106,8 @@ The commands on the following table are provided by the {productname} editor and
 | Font size of the text. The value passed in should be a valid CSS font size.
 
 | LineHeight
-| Sets the line height of the text. The value passed in should be a valid CSS line height. include::partial$misc/requires_5_5v.adoc[]
+| Sets the line height of the text. The value passed in should be a valid CSS line height.
+include::partial$misc/requires_5_5v.adoc[]
 
 | mceApplyTextcolor
 | Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.
@@ -118,7 +122,7 @@ The commands on the following table are provided by the {productname} editor and
 | Wraps the selected text blocks into a block quote.
 
 | FormatBlock
-| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<``p``>) format will be toggled. For a list of options, see: link:{baseurl}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
+| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<``p``>) format will be toggled. For a list of options, see: xref:configure/content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
 
 | mceInsertContent
 | Inserts contents at the current selection. The value passed in should be the contents to be inserted.
@@ -130,13 +134,14 @@ The commands on the following table are provided by the {productname} editor and
 | Sets the contents of the editor. The value is the contents to set as the editor contents.
 
 | mceToggleFormat
-| Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: link:{baseurl}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
+| Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:configure/content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
 
 | ToggleSidebar
 | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).
 
 | ToggleToolbarDrawer
-| Toggles the Toolbar Drawer. For information on toolbars, see: link:{baseurl}/configure/editor-appearance/#toolbar[User interface options - Toolbar]. include::partial$misc/requires_5_5v.adoc[]
+| Toggles the Toolbar Drawer. For information on toolbars, see: xref:configure/editor-appearance.adoc#toolbar[User interface options - Toolbar].
+include::partial$misc/requires_5_5v.adoc[]
 
 | Indent
 | Indents the current selection.
@@ -260,6 +265,7 @@ tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceFocus');
 ----
 
+[[plugincommands]]
 === Plugin Commands
 
 Commands are available for the following plugins:
@@ -305,250 +311,291 @@ Commands are available for the following plugins:
 * <<visualcharacters,Visual Characters>>
 * <<wordcount,Word Count>>
 
+[[advancedcode]]
 ==== Advanced Code
 
-The following command requires the link:{baseurl}/plugins/premium/advcode/[Advanced Code (`advcode`)] plugin.
+The following command requires the xref:plugins/premium/advcode.adoc[Advanced Code (`advcode`)] plugin.
 
 include::partial$commands/code-cmds.adoc[]
 
+[[advancedlists]]
 ==== Advanced Lists
 
-The following commands require the link:{baseurl}/plugins/opensource/advlist/[Advanced Lists (`advlist`)] plugin.
+The following commands require the xref:plugins/opensource/advlist.adoc[Advanced Lists (`advlist`)] plugin.
 
 include::partial$commands/advlist-cmds.adoc[]
 
+[[advancedtables]]
 ==== Advanced Tables
 
-The following commands require the link:{baseurl}/plugins/premium/advtable/[Advanced Tables (`advtable`)] plugin.
+The following commands require the xref:plugins/premium/advtable.adoc[Advanced Tables (`advtable`)] plugin.
 
 include::partial$commands/advtable-cmds.adoc[]
 
+[[anchor]]
 ==== Anchor
 
-The following command requires the link:{baseurl}/plugins/opensource/anchor/[Anchor (`anchor`)] plugin.
+The following command requires the xref:plugins/opensource/anchor.adoc[Anchor (`anchor`)] plugin.
 
 include::partial$commands/anchor-cmds.adoc[]
 
+[[autoresize]]
 ==== Autoresize
 
-The following command requires the link:{baseurl}/plugins/opensource/autoresize/[Autoresize (`autoresize`)] plugin.
+The following command requires the xref:plugins/opensource/autoresize.adoc[Autoresize (`autoresize`)] plugin.
 
 include::partial$commands/autoresize-cmds.adoc[]
 
+[[casechange]]
 ==== Case Change
 
-The following commands require the link:{baseurl}/plugins/premium/casechange/[Case Change (`casechange`)] plugin.
+The following commands require the xref:plugins/premium/casechange.adoc[Case Change (`casechange`)] plugin.
 
 include::partial$commands/casechange-cmds.adoc[]
 
+[[charactermap]]
 ==== Character Map
 
-The following command requires the link:{baseurl}/plugins/opensource/charmap/[Character Map (`charmap`)] plugin.
+The following command requires the xref:plugins/opensource/charmap.adoc[Character Map (`charmap`)] plugin.
 
 include::partial$commands/charmap-cmds.adoc[]
 
+[[code]]
 ==== Code
 
-The following command requires the link:{baseurl}/plugins/opensource/code/[Code (`code`)] plugin.
+The following command requires the xref:plugins/opensource/code.adoc[Code (`code`)] plugin.
 
 include::partial$commands/code-cmds.adoc[]
 
+[[codesample]]
 ==== Code Sample
 
-The following command requires the link:{baseurl}/plugins/opensource/codesample/[Code Sample (`codesample`)] plugin.
+The following command requires the xref:plugins/opensource/codesample.adoc[Code Sample (`codesample`)] plugin.
 
 include::partial$commands/codesample-cmds.adoc[]
 
+[[comments]]
 ==== Comments
 
-The following commands require the link:{baseurl}/plugins/premium/comments/[Comments (`tinycomments`)] plugin.
+The following commands require the xref:plugins/premium/comments.adoc[Comments (`tinycomments`)] plugin.
 
 include::partial$commands/comments-cmds.adoc[]
 
+[[directionality]]
 ==== Directionality
 
-The following commands require the link:{baseurl}/plugins/opensource/directionality/[Directionality (`directionality`)] plugin.
+The following commands require the xref:plugins/opensource/directionality.adoc[Directionality (`directionality`)] plugin.
 
 include::partial$commands/directionality-cmds.adoc[]
 
+[[emoticons]]
 ==== Emoticons
 
-The following commands require the link:{baseurl}/plugins/opensource/emoticons/[Emoticons (`emoticons`)] plugin.
+The following commands require the xref:plugins/opensource/emoticons.adoc[Emoticons (`emoticons`)] plugin.
 
 include::partial$commands/emoticons-cmds.adoc[]
 
+[[export]]
 ==== Export
 
-The following commands require the link:{baseurl}/plugins/premium/export/[Export (`export`)] plugin.
+The following commands require the xref:plugins/premium/export.adoc[Export (`export`)] plugin.
 
 include::partial$commands/export-cmds.adoc[]
 
+[[formatpainter]]
 ==== Format Painter
 
-The following commands require the link:{baseurl}/plugins/premium/formatpainter/[Format Painter (`formatpainter`)] plugin.
+The following commands require the xref:plugins/premium/formatpainter.adoc[Format Painter (`formatpainter`)] plugin.
 
 include::partial$commands/formatpainter-cmds.adoc[]
 
+[[fullpage]]
 ==== Full Page
 
 include::partial$DEPRECATED/fullpage.adoc[]
 
-The following command requires the link:{baseurl}/plugins/opensource/fullpage/[Full Page (`fullpage`)] plugin.
+The following command requires the xref:plugins/opensource/fullpage.adoc[Full Page (`fullpage`)] plugin.
 
 include::partial$commands/fullpage-cmds.adoc[]
 
+[[fullscreen]]
 ==== Full Screen
 
-The following command requires the link:{baseurl}/plugins/opensource/fullscreen/[Full Screen (`fullscreen`)] plugin.
+The following command requires the xref:plugins/opensource/fullscreen.adoc[Full Screen (`fullscreen`)] plugin.
 
 include::partial$commands/fullscreen-cmds.adoc[]
 
+[[help]]
 ==== Help
 
-The following command requires the link:{baseurl}/plugins/opensource/help/[Help (`help`)] plugin.
+The following command requires the xref:plugins/opensource/help.adoc[Help (`help`)] plugin.
 
 include::partial$commands/help-cmds.adoc[]
 
+[[image]]
 ==== Image
 
-The following command requires the link:{baseurl}/plugins/opensource/image/[Image (`image`)] plugin.
+The following command requires the xref:plugins/opensource/image.adoc[Image (`image`)] plugin.
 
 include::partial$commands/image-cmds.adoc[]
 
+[[imagetools]]
 ==== Image Tools
 
-The following commands require the link:{baseurl}/plugins/opensource/imagetools/[Image Tools (`imagetools`)] plugin.
+The following commands require the xref:plugins/opensource/imagetools.adoc[Image Tools (`imagetools`)] plugin.
 
 include::partial$commands/imagetools-cmds.adoc[]
 
+[[insertdatetime]]
 ==== Insert Date/Time
 
-The following commands require the link:{baseurl}/plugins/opensource/insertdatetime/[Insert Date/Time (`insertdatetime`)] plugin.
+The following commands require the xref:plugins/opensource/insertdatetime.adoc[Insert Date/Time (`insertdatetime`)] plugin.
 
 include::partial$commands/insertdatetime-cmds.adoc[]
 
+[[link]]
 ==== Link
 
-The following command requires the link:{baseurl}/plugins/opensource/link/[Link (`link`)] plugin.
+The following command requires the xref:plugins/opensource/link.adoc[Link (`link`)] plugin.
 
 include::partial$commands/link-cmds.adoc[]
 
+[[lists]]
 ==== Lists
 
-The following commands require the link:{baseurl}/plugins/opensource/lists/[Lists (`lists`)] plugin.
+The following commands require the xref:plugins/opensource/lists.adoc[Lists (`lists`)] plugin.
 
 include::partial$commands/lists-cmds.adoc[]
 
+[[media]]
 ==== Media
 
-The following command requires the link:{baseurl}/plugins/opensource/media/[Media (`media`)] plugin.
+The following command requires the xref:plugins/opensource/media.adoc[Media (`media`)] plugin.
 
 include::partial$commands/media-cmds.adoc[]
 
+[[nonbreakingspace]]
 ==== Nonbreaking Space
 
-The following command requires the link:{baseurl}/plugins/opensource/nonbreaking/[Nonbreaking Space (`nonbreaking`)] plugin.
+The following command requires the xref:plugins/opensource/nonbreaking.adoc[Nonbreaking Space (`nonbreaking`)] plugin.
 
 include::partial$commands/nbsp-cmds.adoc[]
 
+[[pagebreak]]
 ==== Page Break
 
-The following command requires the link:{baseurl}/plugins/opensource/pagebreak/[Page Break (`pagebreak`)] plugin.
+The following command requires the xref:plugins/opensource/pagebreak.adoc[Page Break (`pagebreak`)] plugin.
 
 include::partial$commands/pagebreak-cmds.adoc[]
 
+[[pasteorpowerpaste]]
 ==== Paste
 
-The following commands require the link:{baseurl}/plugins/opensource/paste/[Paste (`paste`)] plugin.
+The following commands require the xref:plugins/opensource/paste.adoc[Paste (`paste`)] plugin.
 
 include::partial$commands/paste-cmds.adoc[]
 
+[[permanentpen]]
 ==== Permanent Pen
 
-The following commands require the link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen (`permanentpen`)] plugin.
+The following commands require the xref:plugins/premium/permanentpen.adoc[Permanent Pen (`permanentpen`)] plugin.
 
 include::partial$commands/permanentpen-cmds.adoc[]
 
+[[powerpaste]]
 ==== PowerPaste
 
-The following command requires the link:{baseurl}/plugins/premium/powerpaste/[PowerPaste (`powerpaste`)] plugin.
+The following command requires the xref:plugins/premium/powerpaste.adoc[PowerPaste (`powerpaste`)] plugin.
 
 include::partial$commands/powerpaste-cmds.adoc[]
 
+[[preview]]
 ==== Preview
 
-The following command requires the link:{baseurl}/plugins/opensource/preview/[Preview (`preview`)] plugin.
+The following command requires the xref:plugins/opensource/preview.adoc[Preview (`preview`)] plugin.
 
 include::partial$commands/preview-cmds.adoc[]
 
+[[print]]
 ==== Print
 
-The following command requires the link:{baseurl}/plugins/opensource/print/[Print (`print`)] plugin.
+The following command requires the xref:plugins/opensource/print.adoc[Print (`print`)] plugin.
 
 include::partial$commands/print-cmds.adoc[]
 
+[[save]]
 ==== Save
 
-The following commands require the link:{baseurl}/plugins/opensource/save/[Save (`save`)] plugin.
+The following commands require the xref:plugins/opensource/save.adoc[Save (`save`)] plugin.
 
 include::partial$commands/save-cmds.adoc[]
 
+[[searchandreplace]]
 ==== Search and Replace
 
-The following command requires the link:{baseurl}/plugins/opensource/searchreplace/[Search and Replace (`searchreplace`)] plugin.
+The following command requires the xref:plugins/opensource/searchreplace.adoc[Search and Replace (`searchreplace`)] plugin.
 
 include::partial$commands/searchreplace-cmds.adoc[]
 
+[[spellchecker]]
 ==== Spell Checker
 
-The following command requires the link:{baseurl}/plugins/opensource/spellchecker/[Spell Checker (`spellchecker`)] plugin.
+The following command requires the xref:plugins/opensource/spellchecker.adoc[Spell Checker (`spellchecker`)] plugin.
 
 include::partial$DEPRECATED/spellchecker.adoc[]
 
 include::partial$commands/spellchecker-cmds.adoc[]
 
+[[spellcheckerpro]]
 ==== Spell Checker Pro
 
-The following commands require the link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro (`tinymcespellchecker`)] plugin.
+The following commands require the xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro (`tinymcespellchecker`)] plugin.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[]
 
+[[table]]
 ==== Table
 
-The following commands require the link:{baseurl}/plugins/opensource/table/[Table (`table`)] plugin.
+The following commands require the xref:plugins/opensource/table.adoc[Table (`table`)] plugin.
 
 include::partial$commands/table-cmds.adoc[]
 
+[[template]]
 ==== Template
 
-The following command requires the link:{baseurl}/plugins/opensource/template/[Template (`template`)] plugin.
+The following command requires the xref:plugins/opensource/template.adoc[Template (`template`)] plugin.
 
 include::partial$commands/template-cmds.adoc[]
 
+[[tableofcontents]]
 ==== Table of Contents
 
-The following commands require the link:{baseurl}/plugins/opensource/toc[Table of Contents (`toc`)] plugin.
+The following commands require the xref:plugins/opensource/toc.adoc[Table of Contents (`toc`)] plugin.
 
 include::partial$commands/toc-cmds.adoc[]
 
+[[visualblocks]]
 ==== Visual Blocks
 
-The following command requires the link:{baseurl}/plugins/opensource/visualblocks/[Visual Blocks (`visualblocks`)] plugin.
+The following command requires the xref:plugins/opensource/visualblocks.adoc[Visual Blocks (`visualblocks`)] plugin.
 
 include::partial$commands/visualblocks-cmds.adoc[]
 
+[[visualcharacters]]
 ==== Visual Characters
 
-The following command requires the link:{baseurl}/plugins/opensource/visualchars/[Visual Characters (`visualchars`)] plugin.
+The following command requires the xref:plugins/opensource/visualchars.adoc[Visual Characters (`visualchars`)] plugin.
 
 include::partial$commands/visualchars-cmds.adoc[]
 
+[[wordcount]]
 ==== Word Count
 
-The following command requires the link:{baseurl}/plugins/opensource/visualchars/[Word Count (`wordcount`)] plugin.
+The following command requires the xref:plugins/opensource/visualchars.adoc[Word Count (`wordcount`)] plugin.
 
 include::partial$commands/wordcount-cmds.adoc[]
 
+[[editormanagementcommands]]
 === Editor Management Commands
 
 The following commands are used to manage editor instances.
@@ -575,10 +622,12 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either link:{baseurl}/api/tinymce/tinymce.editor/#hide[hide] if the editor is visible or link:{baseurl}/api/tinymce/tinymce.editor/#show[show] if it is not visible.
 |===
 
+[[querycommandstates]]
 == Query command states
 
 {productname} provides the `queryCommandState` API to allow developers to determine the current state of selected content. The query will return `true` if the content is formatted using the same CSS styles and elements used by the corresponding command.
 
+[[listingcoreandpluginquerycommandstates]]
 === Listing core and plugin query command states
 
 To retrieve a list of avaliable queryable states from the active editor, run the following command from the browser console:
@@ -588,6 +637,7 @@ To retrieve a list of avaliable queryable states from the active editor, run the
 tinymce.activeEditor.editorCommands.commands.state;
 ----
 
+[[availablequerycommandstates]]
 === Available query command states
 
 The following command states can be queried using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#querycommandstate[queryCommandState] API.
@@ -638,7 +688,8 @@ The following command states can be queried using the link:{baseurl}/api/tinymce
 | Returns `true` if the content is formatted using the same markup as the {productname} `Superscript` command.
 
 | ToggleToolbarDrawer
-| Returns `true` if the Toolbar Drawer is open. The state can be controlled by the {productname} `ToggleToolbarDrawer` command. include::partial$misc/requires_5_5v.adoc[]
+| Returns `true` if the Toolbar Drawer is open. The state can be controlled by the {productname} `ToggleToolbarDrawer` command.
+include::partial$misc/requires_5_5v.adoc[]
 
 | Underline
 | Returns `true` if the content is formatted using the same markup as the {productname} `Underline` command.
@@ -666,10 +717,12 @@ tinymce.activeEditor.queryCommandState('ToggleToolbarDrawer');
 tinymce.activeEditor.queryCommandState('Underline');
 ----
 
+[[querycommandvalues]]
 == Query command values
 
 {productname} provides the `queryCommandValue` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
 
+[[listingcoreandpluginquerycommandvalues]]
 === Listing core and plugin query command values
 
 To retrieve a list of avaliable queryable command values from the active editor, run the following command from the browser console:
@@ -679,6 +732,7 @@ To retrieve a list of avaliable queryable command values from the active editor,
 tinymce.activeEditor.editorCommands.commands.value;
 ----
 
+[[availablequerycommandvalues]]
 === Available query command values
 
 The following command values can be queried using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#querycommandvalue[queryCommandValue] API.
@@ -693,7 +747,8 @@ The following command values can be queried using the link:{baseurl}/api/tinymce
 | Returns the font size of the current selection.
 
 | LineHeight
-| Returns the line height of the current selection. include::partial$misc/requires_5_5v.adoc[]
+| Returns the line height of the current selection.
+include::partial$misc/requires_5_5v.adoc[]
 
 | ToggleSidebar
 | Returns the current state of sidebar (open or closed).
@@ -709,6 +764,7 @@ tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ----
 
+[[querycommandvaluestableplugin]]
 === Query command values: Table plugin
 
 include::partial$commands/table-query-cmd-values.adoc[]

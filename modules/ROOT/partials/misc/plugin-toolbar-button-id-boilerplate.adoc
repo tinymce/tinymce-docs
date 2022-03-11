@@ -1,28 +1,30 @@
-{% if page.name == "available-toolbar-buttons.md" %}
+ifeval::[{pagename} == available-toolbar-buttons]
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-{% if altplugincode %}
+ifdef::altplugincode[]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
-{% else %}
+endif::altplugincode[]
+ifndef::altplugincode[]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
-{% endif %}
+endif::altplugincode[]
 
-For information on the {pluginname} plugin, see: link:{baseurl}/plugins/{plugincategory}/{plugincode}/[Plugins - The {pluginname} plugin]
-
-{% else %}
+For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+ifeval::[{pagename} != available-toolbar-buttons]
 == Toolbar buttons
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-{% if altplugincode %}
+ifdef::altplugincode[]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
-{% else %}
+endif::altplugincode[]
+ifndef::altplugincode[]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
-{% endif %}
+endif::altplugincode[]
 
 include::partial$misc/toolbar-button-settings.adoc[]
 
-{% endif %}
-:altplugincode: nil
+endif::[]
+:!altplugincode:

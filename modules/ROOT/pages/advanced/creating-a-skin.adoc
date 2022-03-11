@@ -6,7 +6,7 @@
 
 This section provides information on how to manually create a new skin to customize the appearance of {productname} {productmajorversion}.
 
-The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[\http://skin.tiny.cloud/].
+The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[http://skin.tiny.cloud/].
 
 == Prerequisites
 
@@ -114,10 +114,10 @@ To update the appearance of the content within the editor, such as headings, quo
 == Moving the skin into TinyMCE
 
 . Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production {productname} folder.
-. Update the {productname} init function with the link:{baseurl}/configure/editor-appearance/#skin[skin] option and/or the link:{baseurl}/configure/content-appearance/#content_css[content_css] option.
+. Update the {productname} init function with the xref:configure/editor-appearance.adoc#skin[skin] option and/or the xref:configure/content-appearance.adoc#content_css[content_css] option.
 
-For more information on how to specify the location of the skin file, see link:{baseurl}/configure/editor-appearance/#skin_url[this] section.
+For more information on how to specify the location of the skin file, see xref:configure/editor-appearance.adoc#skin_url[this] section.
 
 == Modifying the icons
 
-For information on adding custom icons, see: link:{baseurl}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
+For information on adding custom icons, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].

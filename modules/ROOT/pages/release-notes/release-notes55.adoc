@@ -167,7 +167,7 @@ For information on the listbox dialog component, see: link:{baseurl}/ui-componen
 
 The new `hasPlugin` API method can be used to detect if a plugin is present in the editor configuration or if the plugin has been loaded. This API is useful if custom functionality such as a custom plugin, is dependent on the APIs of a plugin.
 
-For information on the `editor.hasPlugin()` API, see: link:{baseurl}/api/tinymce/tinymce.editor/#hasplugin[tinymce.Editor APIs - `hasPlugin`].
+For information on the `editor.hasPlugin()` API, see: xref:apis/tinymce.editor.adoc#hasPlugin[tinymce.Editor APIs - `hasPlugin`].
 
 === New StyleSheetLoader `unload` and `unloadAll` APIs
 
@@ -176,7 +176,7 @@ Two new APIs have been added for unloading CSS files:
 * `unload` - Unloads the specified CSS file if it is not in use.
 * `unloadAll` - Accepts a list of URLs and unloads any CSS files not in use.
 
-For information on the `unload` and `unloadAll` APIs, see: link:{baseurl}/api/tinymce.dom/tinymce.dom.stylesheetloader/[tinymce.dom.StyleSheetLoader].
+For information on the `unload` and `unloadAll` APIs, see: xref:apis/tinymce.dom.stylesheetloader.adoc[tinymce.dom.StyleSheetLoader].
 
 === Leading and trailing whitespace now retained by the `insert` and `setContent` APIs
 
@@ -187,8 +187,8 @@ The following APIs for setting or adding to the editor content have been updated
 
 For information on:
 
-* The `editor.insertContent()` API, see: link:{baseurl}/api/tinymce/tinymce.editor/#insertcontent[tinymce.Editor APIs - `insertContent`].
-* The `editor.selection.setContent()` API, see: link:{baseurl}/api/tinymce.dom/tinymce.dom.selection/#setcontent[tinymce.dom.Selection APIs - `setContent`].
+* The `editor.insertContent()` API, see: xref:apis/tinymce.editor.adoc#insertContent[tinymce.Editor APIs - `insertContent`].
+* The `editor.selection.setContent()` API, see: xref:apis/tinymce.dom.selection.adoc#setContent[tinymce.dom.Selection APIs - `setContent`].
 
 === Changed the Image Tools context toolbar icon
 

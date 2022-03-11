@@ -161,21 +161,21 @@ tinymce.Env API properties:: The following legacy properties were deprecated in 
 * `webKit`
 
 +
-For information on these properties, see: link:{baseurl}/api/tinymce/tinymce.env/#properties[tinymce.Env - properties].
+For information on these properties, see: xref:apis/tinymce.env.adoc#properties[tinymce.Env - properties].
 
-The tinymce.dom.DomQuery API class:: The `tinymce.dom.DomQuery` class has been deprecated in {productname} 5.10. For information on the deprecated class, see: link:{baseurl}/api/tinymce.dom/tinymce.dom.domquery/[tinymce.dom.DomQuery].
+The tinymce.dom.DomQuery API class:: The `tinymce.dom.DomQuery` class has been deprecated in {productname} 5.10. For information on the deprecated class, see: xref:apis/tinymce.dom.domquery.adoc[tinymce.dom.DomQuery].
 
 The tinymce.dom.Sizzle API class:: The `tinymce.dom.Sizzle` class has been deprecated in {productname} 5.10. This API class is undocumented and can be found in the {productname} source code: https://github.com/tinymce/tinymce/blob/5.9.2/modules/tinymce/src/core/main/ts/api/dom/Sizzle.ts[GitHub - `tinymce/tinymce` - Sizzle.ts].
 
-tinymce.html.Schema API methods:: The `getSpecialElements` method has been deprecated in {productname} 5.10. For information on the `getSpecialElements` method, see: link:{baseurl}/api/tinymce.html/tinymce.html.schema/#getspecialelements[tinymce.html.Schema - getSpecialElements].
+tinymce.html.Schema API methods:: The `getSpecialElements` method has been deprecated in {productname} 5.10. For information on the `getSpecialElements` method, see: xref:apis/tinymce.html.schema.adoc#getSpecialElements[tinymce.html.Schema - getSpecialElements].
 
-tinymce.html.Styles API methods:: The `toHex` method has been deprecated in {productname} 5.10. For information on the `toHex` method, see: link:{baseurl}/api/tinymce.html/tinymce.html.styles/#tohex[tinymce.html.Styles - tohex].
+tinymce.html.Styles API methods:: The `toHex` method has been deprecated in {productname} 5.10. For information on the `toHex` method, see: xref:apis/tinymce.html.styles.adoc#toHex[tinymce.html.Styles - tohex].
 
 tinymce API properties:: The `editors` and `settings` (undocumented) properties have been deprecated in {productname} 5.10. For information on the deprecated properties, see: link:{baseurl}/api/tinymce/root_tinymce/#properties[tinymce - properties].
 
-tinymce.AddOnManager API methods:: The `addComponents` and `dependencies` (undocumented) methods have been deprecated in {productname} 5.10. For information on the deprecated methods, see: link:{baseurl}/api/tinymce/tinymce.addonmanager/[tinymce.AddOnManager].
+tinymce.AddOnManager API methods:: The `addComponents` and `dependencies` (undocumented) methods have been deprecated in {productname} 5.10. For information on the deprecated methods, see: xref:apis/tinymce.addonmanager.adoc[tinymce.AddOnManager].
 
-tinymce.Editor API methods:: The `execCallback` and `setMode` methods and `validate` (undocumented) property have been deprecated in {productname} 5.10. For information on the deprecated methods, see: link:{baseurl}/api/tinymce/tinymce.editor/#methods[tinymce.Editor - methods].
+tinymce.Editor API methods:: The `execCallback` and `setMode` methods and `validate` (undocumented) property have been deprecated in {productname} 5.10. For information on the deprecated methods, see: xref:apis/tinymce.editor.adoc#methods[tinymce.Editor - methods].
 
 The tinymce.util.Color API class:: The undocumented `tinymce.util.Color` API class has been deprecated in {productname} 5.10. Details of this class can be found in the https://github.com/tinymce/tinymce/blob/5.9.2/modules/tinymce/src/core/main/ts/api/util/Color.ts[tinymce.util.Color source code].
 
@@ -190,12 +190,12 @@ tinymce.util.Delay API methods:: The following API methods were deprecated in {p
 * `throttle`
 
 +
-For all methods except `debounce` and `throttle`, use the native APIs instead. For information on these methods, see: link:{baseurl}/api/tinymce.util/tinymce.util.delay/#methods[tinymce.util.Delay - methods].
+For all methods except `debounce` and `throttle`, use the native APIs instead. For information on these methods, see: xref:apis/tinymce.util.delay.adoc#methods[tinymce.util.Delay - methods].
 
-The tinymce.util.JSON API class:: The `tinymce.util.JSON` class has been deprecated in {productname} 5.10. Use the native https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON[`JSON` API] instead. For information on the deprecated class, see: link:{baseurl}/api/tinymce.util/tinymce.util.json/[tinymce.util.JSON].
+The tinymce.util.JSON API class:: The `tinymce.util.JSON` class has been deprecated in {productname} 5.10. Use the native https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON[`JSON` API] instead. For information on the deprecated class, see: xref:apis/tinymce.util.json.adoc[tinymce.util.JSON].
 
-The tinymce.util.JSONRequest API class:: The `tinymce.util.JSONRequest` class has been deprecated in {productname} 5.10. For information on the deprecated class, see: link:{baseurl}/api/tinymce.util/tinymce.util.jsonrequest/[tinymce.util.JSONRequest].
+The tinymce.util.JSONRequest API class:: The `tinymce.util.JSONRequest` class has been deprecated in {productname} 5.10. For information on the deprecated class, see: xref:apis/tinymce.util.jsonrequest.adoc[tinymce.util.JSONRequest].
 
-tinymce.util.Tools API methods:: The `create` and `createNS` methods have been deprecated in {productname} 5.10. For information on the deprecated methods, see: link:{baseurl}/api/tinymce.util/tinymce.util.tools/[tinymce.util.Tools method]
+tinymce.util.Tools API methods:: The `create` and `createNS` methods have been deprecated in {productname} 5.10. For information on the deprecated methods, see: xref:apis/tinymce.util.tools.adoc[tinymce.util.Tools method]
 
-The tinymce.util.XHR API class:: The `tinymce.util.XHR` class has been deprecated in {productname} 5.10. Use the native https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API[Fetch API] instead. For information on the deprecated class, see: link:{baseurl}/api/tinymce.util/tinymce.util.xhr/[tinymce.util.XHR].
+The tinymce.util.XHR API class:: The `tinymce.util.XHR` class has been deprecated in {productname} 5.10. Use the native https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API[Fetch API] instead. For information on the deprecated class, see: xref:apis/tinymce.util.xhr.adoc[tinymce.util.XHR].

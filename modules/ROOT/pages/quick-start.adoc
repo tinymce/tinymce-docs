@@ -62,6 +62,7 @@ image:{baseurl}/images/icons/warning.svg[warning icon]*This domain is not regist
 
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 
+// The link in the next line is broken and does not have a corresponding adoc file to be linked to
 Signing up for a {cloudname} API key will also provide a trial of the link:{baseurl}/enterprise/[Premium Plugins].
 
 == Step 4: Save the content with a form POST
@@ -72,4 +73,4 @@ When the `<form>` is submitted, {productname} {productmajorversion} will `POST` 
 
 include::partial$misc/quickstart-next-steps.adoc[]
 
-* Self-hosting {productname}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing {productname}].
+* Self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].

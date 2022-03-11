@@ -9,7 +9,7 @@ include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 {% endif %}
 
-For information on the {pluginname} plugin, see: link:{baseurl}/plugins/{plugincategory}/{plugincode}/[Plugins - The {pluginname} plugin]
+For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
 
 {% else %}
 == Menu items

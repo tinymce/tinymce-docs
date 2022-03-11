@@ -23,7 +23,7 @@ If the project loads jQuery from https://code.jquery.com/, use the script provid
 +
 To source {productname} from the {cloudname} and the {productname} jQuery integration from a CDN, add the following `script` elements:
 +
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
@@ -74,7 +74,7 @@ For information on self-hosting {productname}, see: link:advanced-install.html[I
 == Example jQuery integration
 
 To load a TinyMCE editor similar to the xref:basic-example.adoc[Basic example], add the following code to an empty HTML file.
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html lang="en">

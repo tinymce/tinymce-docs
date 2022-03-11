@@ -45,6 +45,7 @@ A JSON Web Token (JWT) endpoint for {pluginname} requires:
 * The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 * The endpoint or server produces a JSON response with the token. The RTC plugin will submit the token with requests to the RTC Server.
 
+[[requiredjwtclaimsforreal-timecollaboration]]
 === Required JWT claims for Real-time Collaboration
 
 JSON Web Tokens produced by the JWT endpoint must include the following claims:

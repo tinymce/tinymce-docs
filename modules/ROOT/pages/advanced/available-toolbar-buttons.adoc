@@ -3,6 +3,7 @@
 :description_short: Complete list of toolbar buttons available for the toolbar and quick toolbars.
 :keywords: toolbar button tool bar
 :title_nav: Available Toolbar Buttons
+:pagename: available-toolbar-buttons
 
 The following tables show all available toolbar items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
 
@@ -245,3 +246,5 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :pluginname: Word Count
 :plugincode: wordcount
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:!pagename:

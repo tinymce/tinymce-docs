@@ -12,6 +12,8 @@ Type: `+String+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_clone_elements: 'strong em a'
 });
 ----

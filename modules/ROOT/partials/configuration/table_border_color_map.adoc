@@ -19,9 +19,9 @@ tinymce.init({
   menubar: 'table',
   toolbar: 'table',
   table_border_color_map: [
-    {title: 'Red', value: 'FF0000'},
-    {title: 'White', value: 'FFFFFF'},
-    {title: 'Yellow', value: 'F1C40F'}
+    { title: 'Red', value: 'FF0000' },
+    { title: 'White', value: 'FFFFFF' },
+    { title: 'Yellow', value: 'F1C40F' }
   ]
 });
 ----

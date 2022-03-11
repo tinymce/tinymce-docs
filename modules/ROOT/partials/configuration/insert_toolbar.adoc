@@ -14,7 +14,7 @@ Defaults : `+'quickimage quicktable'+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'quickbars pagebreak',
   quickbars_insert_toolbar: 'quickimage quicktable | hr pagebreak'
 });
@@ -27,7 +27,7 @@ To disable the Quick Insert toolbar, set `+quickbars_insert_toolbar+` to `+false
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'quickbars',
   quickbars_insert_toolbar: false
 });

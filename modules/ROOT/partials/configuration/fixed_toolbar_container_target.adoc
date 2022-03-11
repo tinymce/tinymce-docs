@@ -11,7 +11,7 @@ Type : `+HTMLElement+`
 
 [source,js]
 ----
-var el = document.createElement('div');
+const el = document.createElement('div');
 document.body.appendChild(el);
 
 tinymce.init({

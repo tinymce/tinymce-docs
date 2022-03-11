@@ -9,13 +9,15 @@ Type : `+Function+`
 
 [source,js]
 ----
-var currentAuthor = 'embedded_journalist';
+const currentAuthor = 'embedded_journalist';
 
 tinymce.init({
-  selector: '#textarea',
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'tinycomments',
+  tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
-  tinycomments_can_resolve: function (req, done, fail) {
-    var allowed = req.comments.length > 0 &&
+  tinycomments_can_resolve: (req, done, fail) => {
+    const allowed = req.comments.length > 0 &&
                   req.comments[0].author === currentAuthor;
     done({
       canResolve: allowed || currentAuthor === '<Admin user>'

@@ -26,6 +26,8 @@ Possible values : `+'preservetable'+`, `+'resizetable'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_column_resizing: 'resizetable'
 });
 ----

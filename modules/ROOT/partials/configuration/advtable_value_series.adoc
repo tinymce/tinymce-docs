@@ -104,7 +104,7 @@ tinymce.init({
       title: 'Numeric',
       update: true,
       resizable: false,
-      generator: function (info, rowIndex, columnIndex) {
+      generator: (info, rowIndex, columnIndex) => {
         return {
           value: rowIndex + 1
         };

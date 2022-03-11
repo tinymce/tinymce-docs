@@ -18,6 +18,8 @@ Possible Values: `+true+`, `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_use_colgroups: false
 });
 ----

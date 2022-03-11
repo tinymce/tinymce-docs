@@ -21,7 +21,7 @@ Review the examples below:
 
 [source,js]
 ----
-tinymce.activeEditor.uploadImages(function(success) {
+tinymce.activeEditor.uploadImages((success) => {
   document.forms[0].submit();
 });
 ----
@@ -30,8 +30,8 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 [source,js]
 ----
-tinymce.activeEditor.uploadImages(function(success) {
-  $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
+tinymce.activeEditor.uploadImages((success) => {
+  $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(() => {
     console.log("Uploaded images and posted content as an ajax request.");
   });
 });
@@ -67,7 +67,7 @@ This server-side upload handler script must return a JSON object containing a "l
 
 [source,js]
 ----
-{ location : '/uploaded/image/path/image.png' }
+{ location: '/uploaded/image/path/image.png' }
 ----
 
 == Image upload options

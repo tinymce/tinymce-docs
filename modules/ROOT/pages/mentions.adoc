@@ -36,6 +36,7 @@ include::partial$configuration/mentions_selector.adoc[leveloffset=+1]
 
 include::partial$configuration/mentions_select.adoc[leveloffset=+1]
 
+// TODO: This looks to no longer exist
 == API
 
 === `+getUsers+`
@@ -46,6 +47,6 @@ You can retrieve the inserted users by calling `+getUsers+` on the plugin instan
 
 [source,js]
 ----
-var users = tinymce.activeEditor.plugins.mentions.getUsers();
+const users = tinymce.activeEditor.plugins.mentions.getUsers();
 console.log(users);
 ----

@@ -1,3 +1,4 @@
+// TODO: This needs to be converted to a Promise and should probably use fetch
 function example_image_upload_handler (blobInfo, success, failure, progress) {
   var xhr, formData;
 

@@ -12,9 +12,10 @@ Type : `+String+`
 [source,js]
 ----
 tinymce.init({
-  selector: '#textarea',
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'tinycomments',
+  tinycomments_mode: 'embedded',
   tinycomments_author: 'embedded_journalist',
   tinycomments_author_name: 'Embedded Journalist',
-  tinycomments_mode: 'embedded'
-})
+});
 ----

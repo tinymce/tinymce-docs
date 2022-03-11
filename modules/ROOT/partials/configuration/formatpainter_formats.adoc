@@ -14,6 +14,7 @@ Type : `+Object+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'formatpainter',
+  toolbar: 'formatpainter',
   formats: {
     formatpainter_checklist: { selector: 'ul', classes: 'tox-checklist' },
     formatpainter_liststyletype: { selector: 'ul,ol', styles: { listStyleType: '%value' } },
@@ -25,8 +26,8 @@ tinymce.init({
         selector: 'b,strong,em,i,font,u,strike,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins',
         remove: 'all', split: true, expand: false, block_expand: true, deep: true
       },
-      { selector: 'span', attributes: ['style', 'class'], remove: 'empty', split: true, expand: false, deep: true },
-      { selector: '*:not(tr,td,th,table)', attributes: ['style', 'class'], split: false, expand: false, deep: true }
+      { selector: 'span', attributes: [ 'style', 'class' ], remove: 'empty', split: true, expand: false, deep: true },
+      { selector: '*:not(tr,td,th,table)', attributes: [ 'style', 'class' ], split: false, expand: false, deep: true }
     ]
   }
 });

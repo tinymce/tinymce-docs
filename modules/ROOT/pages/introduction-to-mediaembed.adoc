@@ -33,7 +33,7 @@ The service URL is already configured with xref:editor-and-features.adoc[{cloudn
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'media mediaembed',
   mediaembed_max_width: 450
 });
@@ -46,7 +46,7 @@ In a Self-hosted installation, please ensure you configure the URL to the servic
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'media mediaembed',
   mediaembed_service_url: 'SERVICE_URL',
   mediaembed_max_width: 450

@@ -11,7 +11,7 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  invalid_elements : 'strong,em'
+  invalid_elements: 'strong,em'
 });
 ----
 

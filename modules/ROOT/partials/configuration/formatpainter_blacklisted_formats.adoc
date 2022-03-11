@@ -1,3 +1,4 @@
+// TODO: This needs to be changed to formatpainter_ignored_formats
 [[formatpainter_blacklisted_formats]]
 == `+formatpainter_blacklisted_formats+`
 
@@ -14,6 +15,7 @@ Default : `+'link,address,removeformat,formatpainter_removeformat'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'formatpainter',
+  toolbar: 'formatpainter',
   formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
 });
 ----

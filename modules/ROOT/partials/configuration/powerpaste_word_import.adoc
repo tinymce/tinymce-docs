@@ -18,9 +18,9 @@ NOTE: When using the Windows operating system, copying and pasting content from 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
-  powerpaste_word_import: function() {
+  powerpaste_word_import: () => {
     // use a native confirm dialog to prompt the user to choose between clean and merge
-    return new Promise(function (resolve) {
+    return new Promise((resolve) => {
       if (confirm('Would you like to keep formatting?')) {
         resolve('merge');
       } else {

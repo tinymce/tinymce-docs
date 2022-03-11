@@ -12,6 +12,7 @@ Default Value : `+100+`
 
 === Example: Using `+min_height+`
 
+ifeval::["{plugincode}" != "autoresize"]
 [source,js]
 ----
 tinymce.init({
@@ -19,5 +20,16 @@ tinymce.init({
   min_height: 200
 });
 ----
+endif::[]
+ifeval::["{plugincode}" == "autoresize"]
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autoresize',
+  min_height: 100
+});
+----
+endif::[]
 
 NOTE: If the xref:editor-size-options.adoc#resize[`+resize+`] option is set to `+false+` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `+resize+` defaults to `+false+` when the `+autoresize+` plugin is enabled.

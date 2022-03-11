@@ -21,7 +21,7 @@ If a relative path is specified, it will be resolved in relation to the URL of t
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css : '/myFont.css'  // resolved to http://domain.mine/myFont.css
+  font_css: '/myFont.css'  // resolved to http://domain.mine/myFont.css
 });
 ----
 
@@ -33,7 +33,7 @@ tinymce.init({
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css : 'myFont.css'  // resolved to http://domain.mine/mysite/myFont.css
+  font_css: 'myFont.css'  // resolved to http://domain.mine/mysite/myFont.css
 });
 ----
 
@@ -45,7 +45,7 @@ To load multiple font CSS files, provide the paths as either a array of strings 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css : 'myFont.css,myFont2.css'  // includes both font CSS files in header
+  font_css: 'myFont.css,myFont2.css'  // includes both font CSS files in header
 });
 ----
 
@@ -55,6 +55,6 @@ tinymce.init({
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css: ['myFont.css', 'myFont2.css']  // includes both font CSS files in header, ability to have CSS with `,` in URL
+  font_css: [ 'myFont.css', 'myFont2.css' ]  // includes both font CSS files in header, ability to have CSS with `,` in URL
 });
 ----

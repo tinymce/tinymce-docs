@@ -15,6 +15,8 @@ Possible Values : `+true+`, `+false+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  plugins: 'anchor',
+  toolbar: 'anchor',
   allow_html_in_named_anchor: true
 });
 ----

@@ -25,12 +25,12 @@ For example:
 
 [source,js]
 ----
-function delete_comment(ref, done, fail) {
+const delete_comment = (ref, done, fail) => {
   let conversationUid = ref.conversationUid;
   let commentUid = ref.commentUid;
 
   fetch(
-    'https://api.example/conversations/' + conversationUid + '/' + commentUid,
+    `https://api.example/conversations/${conversationUid}/${commentUid}`,
     {
       method: 'DELETE',
     }
@@ -46,7 +46,7 @@ function delete_comment(ref, done, fail) {
 }
 
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create: create_comment,

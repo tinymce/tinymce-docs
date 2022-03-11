@@ -25,7 +25,7 @@ For example:
 ----
 function delete_comment_thread(ref, done, fail) {
   let conversationUid = ref.conversationUid;
-  fetch('https://api.example/conversations/' + conversationUid, {
+  fetch(`https://api.example/conversations/${conversationUid}`, {
     method: 'DELETE',
   }).then((response) => {
     if (response.ok) {

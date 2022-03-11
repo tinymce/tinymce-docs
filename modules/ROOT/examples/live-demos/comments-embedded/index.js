@@ -1,8 +1,9 @@
-var currentAuthor = 'A Tiny User';
-var userAllowedToResolve = 'Admin1';
+const currentAuthor = 'A Tiny User';
+const userAllowedToResolve = 'Admin1';
 
 tinymce.init({
   selector: 'textarea#comments-embedded',
+  plugins: 'code tinycomments',
   toolbar: 'bold italic underline | addcomment showcomments',
   menubar: 'file edit view insert format tools tc',
   menu: {
@@ -11,11 +12,10 @@ tinymce.init({
       items: 'addcomment showcomments deleteallconversations'
     }
   },
-  plugins: 'code tinycomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
-  tinycomments_can_resolve: function (req, done, fail) {
-    var allowed = req.comments.length > 0 &&
+  tinycomments_can_resolve: (req, done, fail) => {
+    const allowed = req.comments.length > 0 &&
                   req.comments[0].author === currentAuthor;
     done({
       canResolve: allowed || currentAuthor === userAllowedToResolve
@@ -23,8 +23,8 @@ tinymce.init({
   },
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: function (editor) {
-    editor.on('SkinLoaded', function () {
+  setup: (editor) => {
+    editor.on('SkinLoaded', () => {
       editor.execCommand("ToggleSidebar", false, "showcomments", { skip_focus: true });
     })
   }

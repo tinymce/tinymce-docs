@@ -18,6 +18,6 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  forced_root_block : 'p'
+  forced_root_block: 'p'
 });
 ----

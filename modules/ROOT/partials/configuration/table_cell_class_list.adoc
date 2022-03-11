@@ -15,11 +15,11 @@ tinymce.init({
   menubar: 'table',
   toolbar: 'table',
   table_cell_class_list: [
-    {title: 'None', value: ''},
-    {title: 'No Border', value: 'table_cell_no_border'},
-    {title: 'Red border', value: 'table_cell_red_border'},
-    {title: 'Blue border', value: 'table_cell_blue_border'},
-    {title: 'Green border', value: 'table_cell_green_border'}
+    { title: 'None', value: '' },
+    { title: 'No Border', value: 'table_cell_no_border' },
+    { title: 'Red border', value: 'table_cell_red_border' },
+    { title: 'Blue border', value: 'table_cell_blue_border' },
+    { title: 'Green border', value: 'table_cell_green_border' }
   ]
 });
 ----
@@ -38,13 +38,13 @@ tinymce.init({
   menubar: 'table',
   toolbar: 'table',
   table_cell_class_list: [
-    {title: 'None', value: ''},
-    {title: 'No Border', value: 'table_cell_no_border'},
-    {title: 'Border',
+    { title: 'None', value: '' },
+    { title: 'No Border', value: 'table_cell_no_border' },
+    { title: 'Border',
       menu: [
-        {title: 'Red border', value: 'table_cell_red_border'},
-        {title: 'Blue border', value: 'table_cell_blue_border'},
-        {title: 'Green border', value: 'table_cell_green_border'}
+        { title: 'Red border', value: 'table_cell_red_border' },
+        { title: 'Blue border', value: 'table_cell_blue_border' },
+        { title: 'Green border', value: 'table_cell_green_border' }
       ]
     }
   ]

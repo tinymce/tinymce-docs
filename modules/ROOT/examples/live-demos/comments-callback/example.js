@@ -3,7 +3,7 @@
  * (must call "done" or "fail") *
  ********************************/
 
-function tinycomments_create(req, done, fail) {
+const tinycomments_create = (req, done, fail) => {
   let content = req.content;
   let createdAt = req.createdAt;
 
@@ -30,7 +30,7 @@ function tinycomments_create(req, done, fail) {
     });
 }
 
-function tinycomments_reply(req, done, fail) {
+const tinycomments_reply = (req, done, fail) => {
   let conversationUid = req.conversationUid;
   let content = req.content;
   let createdAt = req.createdAt;
@@ -58,7 +58,7 @@ function tinycomments_reply(req, done, fail) {
     });
 }
 
-function tinycomments_edit_comment(req, done, fail) {
+const tinycomments_edit_comment = (req, done, fail) => {
   let conversationUid = req.conversationUid;
   let commentUid = req.commentUid;
   let content = req.content;
@@ -90,7 +90,7 @@ function tinycomments_edit_comment(req, done, fail) {
     });
 }
 
-function tinycomments_delete(req, done, fail) {
+const tinycomments_delete = (req, done, fail) => {
   let conversationUid = req.conversationUid;
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'DELETE',
@@ -105,7 +105,7 @@ function tinycomments_delete(req, done, fail) {
   });
 }
 
-function tinycomments_delete_all(_req, done, fail) {
+const tinycomments_delete_all = (_req, done, fail) => {
   fetch('https://api.example/conversations', {
     method: 'DELETE',
   }).then((response) => {
@@ -119,7 +119,7 @@ function tinycomments_delete_all(_req, done, fail) {
   });
 }
 
-function tinycomments_delete_comment(req, done, fail) {
+const tinycomments_delete_comment = (req, done, fail) => {
   let conversationUid = req.conversationUid;
   let commentUid = req.commentUid;
 
@@ -139,8 +139,8 @@ function tinycomments_delete_comment(req, done, fail) {
   });
 }
 
-function tinycomments_lookup({ conversationUid }, done, fail) {
-  let lookup = async function () {
+const tinycomments_lookup = ({ conversationUid }, done, fail) => {
+  let lookup = async () => {
     let convResp = await fetch(
       'https://api.example/conversations/' + conversationUid
     );
@@ -153,7 +153,7 @@ function tinycomments_lookup({ conversationUid }, done, fail) {
       throw new Error('Failed to get users');
     }
     let { users } = await usersResp.json();
-    let getUser = function (userId) {
+    let getUser = (userId) => {
       return users.find((u) => {
         return u.id === userId;
       });
@@ -206,7 +206,7 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_lookup,
   /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: function (editor) {
+  setup: (editor) => {
     editor.on('SkinLoaded', () => {
       editor.execCommand('ToggleSidebar', false, 'showcomments');
     });

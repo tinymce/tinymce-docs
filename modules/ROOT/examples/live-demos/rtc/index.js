@@ -1,11 +1,11 @@
 /* The following functions are used for randomizing data in this demo */
-function getRandomInt(max) {
+const getRandomInt = (max) => {
   /* Random number generator */
   return Math.floor(Math.random() * max);
 }
 
 /* Used for selecting two users at random */
-function getTwoRandomInt(max) {
+const getTwoRandomInt = (max) => {
   /* Generates two random numbers (with removal). */
   let tempArray = [...Array(max).keys()];
   const valueOne = getRandomInt(tempArray.length);
@@ -14,7 +14,7 @@ function getTwoRandomInt(max) {
   return [valueOne, valueTwo];
 }
 
-function randomString() {
+const randomString = () => {
   /*
    * Generating a random string to use as a document ID, Encryption key, and
    * Encryption keyHint (randomized for demonstration purposes only).
@@ -191,12 +191,12 @@ tinymce.ScriptLoader.loadScripts(
      * TinyMCE init function. Wrapped in a function to allow the same
      * configuration to be used for two 'independent' editors on the same page.
      */
-    function createTinyMCEInstance(
+    const createTinyMCEInstance = (
       parent_attr,
       editorID,
       userID,
       collaboratorUsernameElem
-    ) {
+    ) => {
       tinymce.init({
         selector: editorID,
         plugins:
@@ -214,8 +214,8 @@ tinymce.ScriptLoader.loadScripts(
             items: 'link | charmap emoticons | image | insertdatetime',
           },
         },
-        setup: function (editor) {
-          editor.on('init', function (e) {
+        setup: (editor) => {
+          editor.on('init', (e) => {
             /*
              * Set the editor to visible once external scripts used for fake
              * server-side components have loaded (such as polly.js).

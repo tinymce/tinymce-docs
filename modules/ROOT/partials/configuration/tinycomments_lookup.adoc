@@ -48,10 +48,10 @@ For example:
 
 [source,js]
 ----
-function lookup_comment({ conversationUid }, done, fail) {
-  let lookup = async function () {
+const lookup_comment = ({ conversationUid }, done, fail) => {
+  let lookup = async () => {
     let convResp = await fetch(
-      'https://api.example/conversations/' + conversationUid
+      `https://api.example/conversations${conversationUid}`
     );
     if (!convResp.ok) {
       throw new Error('Failed to get conversation');
@@ -62,7 +62,7 @@ function lookup_comment({ conversationUid }, done, fail) {
       throw new Error('Failed to get users');
     }
     let { users } = await usersResp.json();
-    let getUser = function (userId) {
+    let getUser = (userId) => {
       return users.find((u) => {
         return u.id === userId;
       });

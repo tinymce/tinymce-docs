@@ -1,18 +1,18 @@
-(function () {
-  var button = document.querySelector('.tinydrive-standalone-demo-upload');
-  var percent = document.querySelector('.live_demo_progress');
+(() => {
+  const button = document.querySelector('.tinydrive-standalone-demo-upload');
+  const percent = document.querySelector('.live_demo_progress');
 
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     tinydrive.upload({
       demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
-      token_provider: function (success) { success({ token: 'fake-token' }); },
+      token_provider: (success) => success({ token: 'fake-token' }),
       path: '/hello',
       name: 'hello.txt',
       blob: new Blob(['Hello world!']),
-      onprogress: function (progress) {
+      onprogress: (progress) => {
         percent.innerHTML = Math.round(progress.loaded / progress.total * 100) + '%';
       }
-    }).then(function () {
+    }).then(() => {
       console.log('File is uploaded.');
     });
   }, false);

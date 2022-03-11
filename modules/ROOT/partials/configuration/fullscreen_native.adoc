@@ -22,6 +22,7 @@ To use the browser-native full screen mode for the {productname} editor, set `+f
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'fullscreen',
+  toolbar: 'fullscreen',
   fullscreen_native: true
 });
 ----

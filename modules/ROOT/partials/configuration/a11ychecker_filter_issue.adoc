@@ -10,7 +10,7 @@ Type : `+Function+`
 Default Value :
 [source,js]
 ----
-function(issue) {
+(issue) => {
   return true;
 }
 ----
@@ -25,7 +25,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11ychecker_filter_issue: function(issue) {
+  a11ychecker_filter_issue: (issue) => {
     return issue.id !== 'T1';
   }
 });
@@ -41,7 +41,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11ychecker_filter_issue: function(issue) {
+  a11ychecker_filter_issue: (issue) => {
     return issue.element.nodeName.toLowerCase() !== 'table';
   }
 });

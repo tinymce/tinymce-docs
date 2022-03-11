@@ -25,6 +25,7 @@ include::partial$misc/images-upload-handler-function.adoc[]
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
   images_upload_handler: example_image_upload_handler
 });
 ----

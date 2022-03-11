@@ -26,12 +26,12 @@ For example:
 
 [source,js]
 ----
-function reply_comment(ref, done, fail) {
+const reply_comment = (ref, done, fail) => {
   let conversationUid = ref.conversationUid;
   let content = ref.content;
   let createdAt = ref.createdAt;
 
-  fetch('https://api.example/conversations/' + conversationUid, {
+  fetch(`https://api.example/conversations/${conversationUid}`, {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {
@@ -55,7 +55,7 @@ function reply_comment(ref, done, fail) {
 }
 
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create: create_comment,

@@ -1,7 +1,7 @@
 = Server-side component installation
 
 :description: Server-side components for premium plugins like spelling as-you-type.
-:keywords: enterprise tinymcespellchecker spell check checker pro imagetools server
+:keywords: enterprise tinymcespellchecker spell check checker pro editimage server
 
 Some {productname} Enterprise features require a server-side component. If you're using the {cloudname} solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
@@ -13,7 +13,7 @@ The following server-side components are included in the {productname} Self-host
 |===
 |Component |File |Description
 |xref:introduction-to-tiny-spellchecker.adoc[Spellchecking] |ephox-spelling.war |Spell checking service for {productname} Enterprise.
-|xref:export.adoc[Export], xref:imagetools.adoc[Image Tools Proxy] |ephox-image-proxy.war |Image proxy service for the Export and Image Tools plugins.
+|xref:export.adoc[Export], xref:editimage.adoc[Edit Image Proxy] |ephox-image-proxy.war |Image proxy service for the Export and Edit Image plugins.
 |xref:introduction-to-mediaembed.adoc[Enhanced Media Embed], xref:linkchecker.adoc[Link Checker] |ephox-hyperlinking.war |Link Checker and Enhanced Media Embed service for {productname} Enterprise.
 |===
 
@@ -221,7 +221,7 @@ After you've completed the steps on this page to xref:deploy-server-side-compone
 Now that the server-side components deployed and running, you'll need to tell your {productname} instances where to find them:
 
 * Set the {productname} `+spellchecker_rpc_url+` configuration property to the URL of the deployed server-side spelling component.
-* Set the {productname} `+imagetools_proxy+` configuration property to the URL of the deployed server-side image proxy component.
+* Set the {productname} `+editimage_proxy+` configuration property to the URL of the deployed server-side image proxy component.
 * Set the {productname} `+mediaembed_service_url+` and `+linkchecker_service_url+` configuration properties to the URL of the deployed server-side linkchecker and media embed component.
 
 This example assume your Java application server is running on port 80 (http) on `+yourserver.example.com+` and that all the server-side components are deployed to the same Java application server. Replace `+yourserver.example.com+` with the actual domain name or IP address of your server.
@@ -233,9 +233,9 @@ Example of {productname} client configuration:
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   toolbar: 'image',
-  plugins: 'tinymcespellchecker image imagetools media mediaembed',
+  plugins: 'tinymcespellchecker image editimage media mediaembed',
   spellchecker_rpc_url: 'http://yourserver.example.com/ephox-spelling/',
-  imagetools_proxy: 'http://yourserver.example.com/ephox-image-proxy/1/image',
+  editimage_proxy: 'http://yourserver.example.com/ephox-image-proxy/1/image',
   mediaembed_service_url: 'http://yourserver.example.com/ephox-hyperlinking/',
   linkchecker_service_url: 'http://yourserver.example.com/ephox-hyperlinking/'
 });

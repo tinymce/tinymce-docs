@@ -1,28 +1,29 @@
-{% if page.name == "available-menu-items.md" %}
+ifeval::[{pagename} == available-menu-items]
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following menu items:
 
-{% if altplugincode %}
+ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
-{% else %}
+endif::altplugincode[]
+ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
-{% endif %}
+endif::altplugincode[]
 
 For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
-
-{% else %}
+endif::[]
+ifeval::[{pagename} != available-menu-items]
 == Menu items
 
 The {pluginname} plugin provides the following menu items:
 
-{% if altplugincode %}
+ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
-{% else %}
+endif::altplugincode[]
+ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
-{% endif %}
+endif::altplugincode[]
 
 include::partial$misc/menu-item-settings.adoc[]
-
-{% endif %}
+endif::[]
 :altplugincode: nil

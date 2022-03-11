@@ -23,11 +23,29 @@ liveDemo::export[ ]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
-== Basic setup
+== Cloud Installation
 
-To add the {pluginname} plugin to the editor, add `{plugincode}` to the `+plugins+` option in the editor configuration.
+The {pluginname} plugin is provided with all subscriptions to xref:editor-and-features.adoc[{cloudname}], including an automatically configured image proxy. To add the {pluginname} plugin to the editor, add `{plugincode}` to the `+plugins+` option in the editor configuration.
 
-For example:
+=== Basic setup using Tiny Cloud
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'export',
+  toolbar: 'export'
+});
+----
+
+== Self-hosted Installation
+
+To add the {pluginname} plugin to the editor:
+
+. Add `{plugincode}` to the `+plugins+` option in the editor configuration.
+. Enable the xref:export_image_proxy[`+export_image_proxy+`] or xref:export_image_proxy_service_url[`+export_image_proxy_service_url+`] options as required.
+
+=== Basic self-hosted setup
 
 [source,js]
 ----
@@ -35,7 +53,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'export',
   toolbar: 'export',
-  export_image_proxy: 'proxy.php' // Required for rendering remote images
+  export_image_proxy_service_url: 'http://mydomain.com/imageproxy' // Required for rendering remote images
 });
 ----
 
@@ -56,7 +74,7 @@ This exporter has a few limitations or known issues that should be noted:
 * The text content in the PDF cannot be selected or copied.
 * A single line of content sliced horizontally and distributed across separate pages.
 * Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
-* Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the xref:export_image_proxy[export_image_proxy] option.
+* Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the xref:export_image_proxy[export_image_proxy] or xref:export_image_proxy_service_url[export_image_proxy_service_url] options.
 * Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
 * The xref:checklist.adoc[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
 
@@ -81,6 +99,8 @@ include::partial$configuration/image_cors_hosts.adoc[leveloffset=+1]
 include::partial$configuration/export_ignore_elements.adoc[leveloffset=+1]
 
 include::partial$configuration/image_proxy.adoc[leveloffset=+1]
+
+include::partial$configuration/image_proxy_service_url.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

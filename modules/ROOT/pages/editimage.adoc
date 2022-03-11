@@ -6,14 +6,17 @@
 :pluginname: Edit Image
 :plugincode: editimage
 :altplugincode: nil
+:pluginminimumplan: tierone
 
-Edit Image (`+editimage+`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+editimage_cors_hosts+` or `+editimage_proxy+` (see below).
+Edit Image (`+editimage+`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+editimage_cors_hosts+` or `+editimage_proxy_service_url+` (see below).
 
 == Interactive example
 
 liveDemo::edit-image[ ]
 
 include::partial$misc/admon_svg_not_supported.adoc[]
+
+include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Cloud Installation
 
@@ -34,8 +37,8 @@ tinymce.init({
 
 To enable the {productname} Edit Image plugin:
 
-. Add 'image' to the 'toolbar' list and 'image editimage' to the 'plugins' list
-. Enable `+editimage_cors_hosts+` and `+editimage_proxy+` options as needed
+. Add `image` to the `toolbar` list and `image editimage` to the `plugins` list.
+. Enable xref:editimage_cors_hosts[`+editimage_cors_hosts+`] and xref:editimage_proxy_service_url[`+editimage_proxy_service_url+`] options as required.
 
 === Basic self-hosted setup
 
@@ -46,25 +49,27 @@ tinymce.init({
   toolbar: 'image',
   plugins: 'image editimage',
   editimage_cors_hosts: ['mydomain.com', 'otherdomain.com'],
-  editimage_proxy: 'proxy.php'
+  editimage_proxy_service_url: 'http://mydomain.com/imageproxy'
 });
 ----
 
 == Options
 
-include::partial$configuration/image_cors_hosts.adoc[]
+include::partial$configuration/image_cors_hosts.adoc[leveloffset=+1]
 
-include::partial$configuration/editimage_credentials_hosts.adoc[]
+include::partial$configuration/editimage_credentials_hosts.adoc[leveloffset=+1]
 
-include::partial$configuration/editimage_fetch_image.adoc[]
+include::partial$configuration/editimage_fetch_image.adoc[leveloffset=+1]
 
-include::partial$configuration/image_proxy.adoc[]
+include::partial$configuration/image_proxy.adoc[leveloffset=+1]
 
-include::partial$configuration/editimage_toolbar.adoc[]
+include::partial$configuration/image_proxy_service_url.adoc[leveloffset=+1]
 
-include::partial$configuration/editimage_upload_timeout.adoc[]
+include::partial$configuration/editimage_toolbar.adoc[leveloffset=+1]
 
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+include::partial$configuration/editimage_upload_timeout.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[leveloffset=+1]
 
 == Commands
 

@@ -85,7 +85,9 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :pluginname: Comments
 :plugincode: comments
 :altplugincode: nil
+:pluginpage: introduction-to-tiny-comments.adoc
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+:!pluginpage:
 
 :plugincategory: opensource
 :pluginname: Emoticons
@@ -169,7 +171,9 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :pluginname: PowerPaste
 :plugincode: powerpaste
 :altplugincode: paste
+:pluginpage: introduction-to-powerpaste.adoc
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+:!pluginpage:
 
 :plugincategory: opensource
 :pluginname: Preview
@@ -187,7 +191,9 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :pluginname: Spell Checker Pro
 :plugincode: tinymcespellchecker
 :altplugincode: nil
+:pluginpage: introduction-to-tiny-spellchecker.adoc
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+:!pluginpage:
 
 :plugincategory: opensource
 :pluginname: Table
@@ -205,7 +211,9 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :pluginname: {cloudfilemanager}
 :plugincode: tinydrive
 :altplugincode: nil
+:pluginpage: tinydrive-introduction.adoc
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+:!pluginpage:
 
 :plugincategory: opensource
 :pluginname: Table of Contents

@@ -21,10 +21,12 @@ NOTE: The following is _general_ security advice that may be relevant to a websi
  ** <<usingcomponentswithknownvulnerabilities,Using Components with Known Vulnerabilities>>
  ** <<furthersecurityinformation,Further security information>>
 
+[[reportingtinymcesecurityissues]]
 == Reporting TinyMCE security issues
 
 {companyname} values the work of security researchers in improving the security of technology products worldwide. We welcome researchers who wish to responsibly disclose vulnerabilities in our products or systems. Note that we do not offer any "`bug bounty`" program or any form of payment for disclosed vulnerabilities. If you would like to report a vulnerability, please email `infosec@tiny.cloud`.
 
+[[whatwedotomaintainsecurityfortinymce]]
 == What we do to maintain security for TinyMCE
 
 To protect {productname} users, {companyname}:
@@ -33,6 +35,7 @@ To protect {productname} users, {companyname}:
 * Keeps {productname} dependencies up to date, and
 * Provides information about how to configure a Content Security Policy that works with {productname}.
 
+[[scriptsandxssvulnerabilities]]
 === Scripts and XSS vulnerabilities
 
 {productname} filters content such as scripts from the editor content, however, client-side applications can be by-passed by attackers. {companyname} recommends processing received editor content through server-side filters.
@@ -41,10 +44,12 @@ SVGs (Scalable Vector Graphics) are not supported in {productname} to protect ou
 
 From the 1st of January 2020, Security Advisories for patched XSS vulnerabilities will be published on the https://github.com/tinymce/tinymce/security/advisories?state=published[{productname} GitHub repository Security page].
 
+[[keepingdependenciesup-to-date]]
 === Keeping dependencies up-to-date
 
 To protect our users, {companyname} ensures that the TinyMCE dependencies are updated before the next version (major or minor) is released.
 
+[[configuringcontentsecuritypolicycspfortinymce]]
 == Configuring Content Security Policy (CSP) for TinyMCE
 
 {productname} can be used with a https://content-security-policy.com/[CSP] header. When using a CSP, the following directives are *required* for {productname} to function:
@@ -89,22 +94,30 @@ ____
 
 When using the {cloudname}, use this CSP header :
 
-```html+++<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud blob:; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;">++++++</meta>+++
-
+```html
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud blob:; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;"
+/>
 ```
 
 When self-hosting {productname} from a local domain, use this CSP header (excludes the *.tiny.cloud domain):
 
-```html+++<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';">++++++</meta>+++
-
+```html
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'none'; script-src 'self'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';"
+/>
 ```
 
+[[generalsecurityrisksforuserinputelements]]
 == General security risks for user input elements
 
 The following security risks are not {productname} specific, but are the main security risks associated with websites or applications which allow user inputs. Protecting your services and users from these risks requires server-side handling. Note that attackers will likely bypass any editor and attack the server directly, rather than use the text editor as a vector.
 
 For information on mitigating these risks, see the provided links in each section.
 
+[[cross-sitescriptingxss]]
 === Cross-Site Scripting (XSS)
 
 Cross-Site Scripting (XSS) involves using website or application inputs to inject malicious, client-side code. This code can then be used to attack your users.
@@ -113,6 +126,7 @@ Although {productname} filters content such as scripts from the editor content, 
 
 For information on Cross-Site Scripting and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)[OWASP Top Ten 2017 -- Cross-Site Scripting (XSS)].
 
+[[injection]]
 === Injection
 
 Injection attacks involve attackers using website or application inputs to run server-side code, such as SQL, NoSQL, or LDAP scripts.
@@ -121,6 +135,7 @@ If user inputs are not properly sanitized server-side, host devices and user dat
 
 For information on Injection-related security issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection[OWASP Top Ten 2017 -- Injection].
 
+[[insecuretransmissionandstorageofdata]]
 === Insecure Transmission and Storage of data
 
 The transmission or storage of data without strong cryptographic protection leaves this content exposed to attackers.
@@ -129,6 +144,7 @@ Loading insecure content into the editor, or submitting content from the editor 
 
 For information on Sensitive Data Exposure issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure[OWASP Top Ten 2017 -- Sensitive Data Exposure].
 
+[[brokenauthenticationandsessionmanagement]]
 === Broken Authentication and Session Management
 
 Broken or incorrectly implemented authentication and session management exposes both user data and the server to attackers, allowing them to impersonate users, including administrators.
@@ -137,6 +153,7 @@ Broken Authentication or session management may allow attackers to change or sub
 
 For information on Broken Authentication issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication[OWASP Top Ten 2017 -- Broken Authentication].
 
+[[usingcomponentswithknownvulnerabilities]]
 === Using Components with Known Vulnerabilities
 
 Using outdated components on your website or application allows attackers to exploit known vulnerabilities.
@@ -145,6 +162,7 @@ Using outdated components on your website or application allows attackers to exp
 
 For information on issues related to using components with known issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities.html[OWASP Top Ten 2017 -- Using Components with Known Vulnerabilities].
 
+[[furthersecurityinformation]]
 === Further security information
 
 For general security advice about securing your website or application, visit the https://owasp.org/[Open Web Application Security Project (OWASP)].

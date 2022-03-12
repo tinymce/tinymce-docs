@@ -2,70 +2,79 @@
 
 The procedure for upgrading to the latest version of {productname} {productmajorversion} depends on the deployment type.
 
-* <<upgradingtinycloud,Upgrading Tiny Cloud>>.
+* xref:upgradingtinycloud[Upgrading Tiny Cloud].
 ifeval::[{enterprise} != true]
-* <<#upgradingtinymceself-hostedusingapackagemanager,Upgrading TinyMCE Self-hosted using a package manager>>.
+* xref:upgradingtinymceself-hostedusingapackagemanager[Upgrading TinyMCE Self-hosted using a package manager].
 endif::[]
-* <<upgradingtinymceself-hostedmanually,Upgrading TinyMCE Self-hosted manually>>.
+* xref:upgradingtinymceself-hostedmanually[Upgrading TinyMCE Self-hosted manually].
 
+[[upgradingtinycloud]]
 === Upgrading Tiny Cloud
 
+// TODO: the next line contains a broken link as it has no adoc file counterpart
 {cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: link:{baseurl}/cloud-deployment-guide/[the Cloud deployment guide].
 
 ifeval::[{enterprise} != true]
 
+[[upgradingtinymceself-hostedusingapackagemanager]]
 === Upgrading TinyMCE Self-hosted using a package manager
 
 Select from the following package managers.
 
-* <<yarn,Yarn>>
-* <<npm,npm>>
-* <<composer,Composer>>
-* <<nuget,NuGet>>
-* <<bower,Bower>>
+* xref:yarn[Yarn]
+* xref:npm[npm]
+* xref:composer[Composer]
+* xref:nuget[NuGet]
+* xref:bower[Bower]
 
+[[yarn]]
 ==== Yarn
 
 To upgrade to {productname} {productminorversion} using Yarn, run:
-[source, sh]
+[source, sh, subs="attributes"]
 ----
 $ yarn upgrade {prodnamecode}
 ----
 
+[[npm]]
 ==== npm
 
 To upgrade to {productname} {productminorversion} using npm, run:
-[source, sh]
+[source, sh, subs="attributes"]
 ----
 $ npm install {prodnamecode}@latest --save
 ----
 
+[[composer]]
 ==== Composer
 
 To upgrade to {productname} {productminorversion} using Composer, run:
-[source, sh]
+[source, sh, subs="attributes"]
 ----
 $ composer require tinymce/tinymce
 ----
 
+[[nuget]]
 ==== NuGet
 
 To upgrade to {productname} {productminorversion} using NuGet, run:
-[source, sh]
+[source, sh, subs="attributes"]
 ----
 $ Install-Package {productname}
 ----
 
+[[bower]]
 ==== Bower
 
 To upgrade to {productname} {productminorversion} using Bower, run:
-[source, sh]
+[source, sh, subs="attributes"]
 ----
 $ bower install {prodnamecode}#{productminorversion} --save
 ----
 
 endif::[]
 
+[[upgradingtinymceself-hostedmanually]]
 === Upgrading TinyMCE Self-hosted manually
 
 To upgrade to {productname} {productminorversion} using a manually downloaded package:

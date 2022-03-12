@@ -6,42 +6,50 @@
 
 There are multiple ways to instantiate {productname}. Accessing {productname} through {cloudname} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
 
-* <<cloudinstall,{cloudname}>>
-* <<packagemanagerinstalloptions,Package Managers>>
-* <<self-hostedinstall,Self-Hosted Download / Install>>
-* <<custombuildinstall,Custom Build>>
+* xref:cloudinstall[{cloudname}]
+* xref:packagemanagerinstalloptions[Package Managers]
+* xref:self-hostedinstall[Self-Hosted Download / Install]
+* xref:custombuildinstall[Custom Build]
 
+[[cloudinstall]]
 == Cloud Install
 
 include::partial$install/cloud.adoc[]
 
+[[packagemanagerinstalloptions]]
 == Package Manager Install Options
 
-* <<npm,NPM>>
-* <<bower,Bower>>
-* <<composer,Composer>>
-* <<nuget,NuGet>>
+* xref:npm[NPM]
+* xref:bower[Bower]
+* xref:composer[Composer]
+* xref:nuget[NuGet]
 
+[[npm]]
 == NPM
 
 include::partial$install/npm.adoc[]
 
+[[bower]]
 == Bower
 
 include::partial$install/bower.adoc[]
 
+[[composer]]
 == Composer
 
 include::partial$install/composer.adoc[]
 
+[[nuget]]
 == NuGet
 
 include::partial$install/nuget.adoc[]
 
+[[self-hostedinstall]]
 == Self-Hosted Install
 
 include::partial$install/sdk.adoc[]
 
+[[custombuildinstall]]
 == Custom Build Install
 
 include::partial$install/custom.adoc[]

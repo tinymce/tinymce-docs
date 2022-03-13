@@ -6,7 +6,7 @@
 
 == Browser-based spell checking
 
-Assign the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Disabling the link:{baseurl}/configure/editor-appearance/#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
+Assign the xref:configure/spelling.adoc#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Disabling the xref:configure/editor-appearance.adoc#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
 
 [source, js]
 ----
@@ -48,11 +48,12 @@ tinymce.init({
 });
 ----
 
-Review the link:{baseurl}/plugins/opensource/spellchecker/[Spell Checker plugin] for advanced configuration options.
+Review the xref:plugins/opensource/spellchecker.adoc[Spell Checker plugin] for advanced configuration options.
 
 == TinyMCE Spell Checker Pro plugin
 
-Use the link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Use the xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
-Review the {productname} Premium Features link:{baseurl}/enterprise/check-spelling/[documentation for Spelling]. Learn more about link:{pricingpage}[{productname} Premium Products here].
+// TODO: the next line contains a broken link (check-spelling.adoc does not exist) as it needs an adoc file counterpart
+Review the {productname} Premium Features xref:enterprise/check-spelling.adoc[documentation for Spelling]. Learn more about link:{pricingpage}[{productname} Premium Products here].
 

@@ -1,3 +1,4 @@
+[[extended_valid_elements]]
 == `extended_valid_elements`
 
 This option is very similar to link:{baseurl}/configure/content-filtering/#valid_elements[`valid_elements`]. The only difference between this option and `valid_elements` is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid. The default rule set is controlled by the link:{baseurl}/configure/content-filtering/#schema[`schema`] option.

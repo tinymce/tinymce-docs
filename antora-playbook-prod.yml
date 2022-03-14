@@ -9,7 +9,7 @@ content:
     start_path: ./
 ui:
   bundle:
-    url: http://staging.tiny.cloud/docs/ui-bundle.zip
+    url: https://tiny-cloud-docs-antora-themes-production.s3.amazonaws.com/ui-bundle.zip
 asciidoc:
   extensions:
     - ./extensions/live-demo.js

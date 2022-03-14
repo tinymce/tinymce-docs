@@ -63,7 +63,7 @@ This channel deploys nightly builds of {productname}. This channel includes the 
 
 == Specifying the version of premium plugins deployed from Tiny Cloud
 
-Each {productname} version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with {productname}. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the xref:cloud-deployment-guide/editor-and-features[{productname} editor and premium plugins deployment via {cloudname}] or just the link:{baseurl}/cloud-deployment-guide/features-only.adoc[premium plugins deployment from {cloudname}].
+Each {productname} version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with {productname}. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the xref:cloud-deployment-guide/editor-and-features.adoc[{productname} editor and premium plugins deployment via {cloudname}] or just the xref:cloud-deployment-guide/features-only.adoc[premium plugins deployment from {cloudname}].
 
 The `identifier` of the plugin is used as a query parameter. This table summarises the possible options.
 

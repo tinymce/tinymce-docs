@@ -1,4 +1,4 @@
-{% if is_zip_install == true %}
+ifeval::[{is_zip_install} == true]
 1. Add the following development dependencies to the project.
 
 - [`webpack`](https://www.npmjs.com/package/webpack)
@@ -18,7 +18,8 @@ npm install --save-dev \
   html-webpack-plugin \
   css-loader
 ----
-{% else %}
+ifeval::[{is_zip_install} == false]
+endif::[]
 1. Add `tinymce` and the following development dependencies to the project.
 
 - [`webpack`](https://www.npmjs.com/package/webpack)
@@ -39,4 +40,4 @@ npm install --save-dev \
   html-webpack-plugin \
   css-loader
 ----
-{% endif %}
+endif::[]

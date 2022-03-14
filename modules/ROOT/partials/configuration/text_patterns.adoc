@@ -57,7 +57,7 @@ tinymce.init({
   text_patterns: [
     { start: '*', end: '*', format: 'italic' },
     { start: '**', end: '**', format: 'bold' },
-    { start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}
+    { start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud' }
   ]
 });
 ----
@@ -97,12 +97,12 @@ tinymce.init({
     { start: '######', format: 'h6' },
     { start: '* ', cmd: 'InsertUnorderedList' },
     { start: '- ', cmd: 'InsertUnorderedList' },
-    { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' }},
-    { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' }},
-    { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }},
-    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }},
-    { start: 'i. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }},
-    { start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }}
+    { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
+    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
+    { start: 'i. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } },
+    { start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } }
   ]
 });
 ----
@@ -135,7 +135,7 @@ tinymce.init({
     { start: '-', replacement: '—' },
     { start: '(c)', replacement: '©' },
     { start: '//brb', replacement: 'Be Right Back' },
-    { start: '//heading', replacement: '<h1 style="color: blue">Heading here</h1> <h2>Author: Name here</h2> <p><em>Date: 01/01/2000</em></p> <hr />' },
+    { start: '//heading', replacement: '<h1 style="color: blue">Heading here</h1> <h2>Author: Name here</h2> <p><em>Date: 01/01/2000</em></p> <hr />' }
   ]
 });
 ----

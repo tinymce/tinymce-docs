@@ -62,8 +62,7 @@ image:icons/warning.svg[warning icon]*This domain is not registered with {cloudn
 
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 
-// TODO: The link in the next line is broken and does not have a corresponding adoc file to be linked to
-Signing up for a {cloudname} API key will also provide a trial of the link:{baseurl}/enterprise/[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the xref:enterprise/index.adoc[Premium Plugins].
 
 == Step 4: Save the content with a form POST
 

@@ -69,6 +69,7 @@ This server-side upload handler script must return a JSON object containing a "l
 { location : '/uploaded/image/path/image.png' }
 ----
 
+[[imageuploaderoptions]]
 == Image upload options
 
 Set the `images_upload_url` _or_ `images_upload_handler` option for image uploads to function. The other options shown here are optional.

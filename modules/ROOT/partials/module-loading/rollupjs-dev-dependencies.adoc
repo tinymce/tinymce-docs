@@ -1,4 +1,4 @@
-{% if is_zip_install == true %}
+ifeval::[{is_zip_install} == true]
 1. Add the following development dependencies to the project.
 
 - [`postcss`](https://www.npmjs.com/package/postcss)
@@ -20,7 +20,8 @@ npm install --save-dev \
   rollup-plugin-postcss \
   rollup-plugin-string
 ----
-{% else %}
+ifeval::[{is_zip_install} == false]
+endif::[]
 1. Add `tinymce` and the following development dependencies to the project.
 
 - [`postcss`](https://www.npmjs.com/package/postcss)
@@ -45,4 +46,4 @@ npm install --save-dev \
   rollup-plugin-postcss \
   rollup-plugin-string
 ----
-{% endif %}
+endif::[]

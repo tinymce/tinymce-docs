@@ -1,4 +1,4 @@
-ifeval::[{pagename} == available-toolbar-buttons]
+ifeval::[{docname} == available-toolbar-buttons]
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following toolbar buttons:
@@ -12,7 +12,7 @@ endif::altplugincode[]
 
 For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
 endif::[]
-ifeval::[{pagename} != available-toolbar-buttons]
+ifeval::[{docname} != available-toolbar-buttons]
 == Toolbar buttons
 
 The {pluginname} plugin provides the following toolbar buttons:

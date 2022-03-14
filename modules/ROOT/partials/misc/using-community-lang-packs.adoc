@@ -1,17 +1,18 @@
 === Using the community language packs
 
-{% if forModuleLoaders == false %}
+ifeval::[{forModuleLoaders} == false]
 > *Note*: {companyname} recommends using the `language_url` for the community language packs, to avoid copying the language pack into the `tinymce/langs` folder every time you upgrade {productname}.
-{% endif %}
+endif::[]
 
 To use change the user interface language using a community language pack:
 
 . Download the language pack from link:{gettiny}/language-packages/[the {companyname} Community Language Packages download page].
-{% if forModuleLoaders == true %}
+ifeval::[{forModuleLoaders} == true]
 . Unzip and import/require the language file.
-{% else %}
+endif::[]
+ifeval::[{forModuleLoaders} == false]
 . Unpack the language file into the `tinymce/langs` folder.
-{% endif %}
+endif::[]
 . Set the link:{baseurl}/configure/localization/#language[`language`] option in your {productname} configuration to the language code, matching the filename on the language pack. For example: If the language pack has the filename `sv_SE.js`, then set `language: 'sv_SE',`
 . Confirm that the language has been set successfully by loading {productname}.
 

@@ -34,7 +34,7 @@ The following example adds a script tag into the application that inserts the co
 | A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the {productname} editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting {cloudname} resources.
 |===
 
-image:scripttag.png[Script Tag Description]
+image::scripttag.png[Script Tag Description]
 
 +++<a class="anchor" id="referer-troubleshooting">++++++</a>+++
 

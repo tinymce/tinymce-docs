@@ -15,6 +15,7 @@ There are multiple ways to instantiate {productname}. Accessing {productname} th
 
 include::partial$install/cloud.adoc[]
 
+[[packagemanagerinstalloptions]]
 == Package Manager Install Options
 
 * <<npm,NPM>>
@@ -38,6 +39,7 @@ include::partial$install/composer.adoc[]
 
 include::partial$install/nuget.adoc[]
 
+[[self-hostedinstall]]
 == Self-Hosted Install
 
 include::partial$install/sdk.adoc[]

@@ -4,8 +4,7 @@
 :keywords: plugin
 :title_nav: Using plugins to extend TinyMCE
 
-// TODO: the next line contains a broken link as it has no adoc file counterpart 
-For most developers, the real power of {productname}'s functionality is found in its plugins. link:{baseurl}/plugins/[Plugins] either extend default editor functionality or add new functionality. For example, the xref:plugins/opensource/advlist.adoc[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the xref:plugins/opensource/code.adoc[Code] plugin adds entirely new functionality.
+For most developers, the real power of {productname}'s functionality is found in its plugins. xref:plugins/index.adoc[Plugins] either extend default editor functionality or add new functionality. For example, the xref:plugins/opensource/advlist.adoc[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the xref:plugins/opensource/code.adoc[Code] plugin adds entirely new functionality.
 
 Because most people install {productname} via {cloudname} or by downloading a package, they mistakenly think plugins are part of the {productname} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{gettiny}/custom-builds/[custom package] download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {productname} team.
 
@@ -109,8 +108,7 @@ The `advlist` plugin has two options which provide more granular control of list
 
 Many plugin options have more than one possible value. The `advlist_bullet_styles` option has possible values of `circle`, `disc`, and `square`. While the `advlist_number_styles` has possible values of `lower-alpha`, `lower-greek`, `lower-roman`, `upper-alpha`, and `upper-roman`.
 
-// TODO: the next line contains a broken link as it has no adoc file counterpart
-Don't worry if you can't remember all these values. The link:{baseurl}/plugins/[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
+Don't worry if you can't remember all these values. The xref:plugins/index.adoc[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
 
 Let's add the Advanced List options and give them some of the available options.
 
@@ -128,8 +126,7 @@ tinymce.init({
 
 In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for {productname} to work).
 
-// TODO: the next line contains two broken links as they have no adoc file counterpart
-As we noted at the start {productname} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the link:{baseurl}/plugins/[plugins] and link:{baseurl}/configure/[configuration options].
+As we noted at the start {productname} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the xref:plugins/index.adoc[plugins] and xref:configure/index.adoc[configuration options].
 
 == Top 10 plugins
 

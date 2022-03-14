@@ -19,8 +19,7 @@ This URL specifies the latest and quality assured release of {productname}.
 === Selecting specific version numbers
 
 ____
-// TODO: the next line contains a broken link (to release notes) as it has no adoc file counterpart
-All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes.adoc[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
+All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes/index.adoc[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
 ____
 
 === {productmajorversion}, {productmajorversion}-testing, and {productmajorversion}-dev release channels
@@ -91,8 +90,7 @@ The `identifier` of the plugin is used as a query parameter. This table summaris
 | `checklist`
 | http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions[Versions]
 
-// TODO: the next line contains a broken link as it has no adoc file counterpart
-| xref:plugins/premium/comments.adoc[Comments]
+| xref:plugins/premium/comments/index.adoc[Comments]
 | `comments`
 | http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Versions]
 

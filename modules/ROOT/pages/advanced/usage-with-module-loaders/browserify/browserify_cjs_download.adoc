@@ -30,7 +30,7 @@ include::partial$module-loading/bundling-browserify-cjs-main.adoc[]
 +
 [source, sh]
 ----
- browserify -t brfs -g browserify-css src/main.js -o dist/main.bundle.js
+browserify -t brfs -g browserify-css src/main.js -o dist/main.bundle.js
 ----
 +
 If Browserify runs successfully, check that the editor loads in the application.

@@ -1,6 +1,7 @@
 === Prerequisites
 
 This procedure requires the following programs:
+
 * https://nodejs.org/[Node.js]
 * https://yarnpkg.com/[Yarn]
 * https://www.ruby-lang.org/[Ruby]
@@ -46,7 +47,7 @@ nano config/routes.rb
 ```ruby
 Rails.application.routes.draw do
   get 'welcome/index'
-+
-root 'welcome#index'
+
+  root 'welcome#index'
 end
 ```

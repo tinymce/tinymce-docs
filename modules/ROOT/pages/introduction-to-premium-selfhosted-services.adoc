@@ -221,7 +221,7 @@ After you've completed the steps on this page to xref:deploy-server-side-compone
 Now that the server-side components deployed and running, you'll need to tell your {productname} instances where to find them:
 
 * Set the {productname} `+spellchecker_rpc_url+` configuration property to the URL of the deployed server-side spelling component.
-* Set the {productname} `+editimage_proxy+` configuration property to the URL of the deployed server-side image proxy component.
+* Set the {productname} `+editimage_proxy_service_url+` and `+export_image_proxy_service_url+` configuration properties to the URL of the deployed server-side image proxy component.
 * Set the {productname} `+mediaembed_service_url+` and `+linkchecker_service_url+` configuration properties to the URL of the deployed server-side linkchecker and media embed component.
 
 This example assume your Java application server is running on port 80 (http) on `+yourserver.example.com+` and that all the server-side components are deployed to the same Java application server. Replace `+yourserver.example.com+` with the actual domain name or IP address of your server.
@@ -235,7 +235,8 @@ tinymce.init({
   toolbar: 'image',
   plugins: 'tinymcespellchecker image editimage media mediaembed',
   spellchecker_rpc_url: 'http://yourserver.example.com/ephox-spelling/',
-  editimage_proxy: 'http://yourserver.example.com/ephox-image-proxy/1/image',
+  editimage_proxy_service_url: 'http://yourserver.example.com/ephox-image-proxy/',
+  export_image_proxy_service_url: 'http://yourserver.example.com/ephox-image-proxy/',
   mediaembed_service_url: 'http://yourserver.example.com/ephox-hyperlinking/',
   linkchecker_service_url: 'http://yourserver.example.com/ephox-hyperlinking/'
 });

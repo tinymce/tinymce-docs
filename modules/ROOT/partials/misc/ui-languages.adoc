@@ -1,9 +1,11 @@
 [[supportedlanguages]]
 === Supported Languages
 
-{% if forModuleLoaders == true %}
+ifeval::[{forModuleLoaders} == true]
+[cols='76,7,20,0']
+|===
 | Language                                                                   | Code  |      Filename      |
-|---------------------------------------------------|:----:|:------------:|
+
 | Arabic                                                                     |  ar   |  `./langs/ar.js`   |
 | Basque                                                                     |  eu   |  `./langs/eu.js`   |
 | Bulgarian (Bulgaria)                                                       | bg_BG | `./langs/bg_BG.js` |
@@ -42,9 +44,13 @@
 | Thai (Thailand)                                                            | th_TH | `./langs/th_TH.js` |
 | Turkish                                                                    |  tr   |  `./langs/tr.js`   |
 | Ukrainian                                                                  |  uk   |  `./langs/uk.js`   |
-{% else %}
+|===
+endif::[]
+ifeval::[{forModuleLoaders} == false]
+[cols='76,7,0']
+|===
 | Language                                                                   | Code  |
-|---------------------------------------------------|:----:|
+
 | Arabic                                                                     |  ar   |
 | Basque                                                                     |  eu   |
 | Bulgarian (Bulgaria)                                                       | bg_BG |
@@ -83,4 +89,5 @@
 | Thai (Thailand)                                                            | th_TH |
 | Turkish                                                                    |  tr   |
 | Ukrainian                                                                  |  uk   |
-{% endif %}
+|===
+endif::[]

@@ -28,7 +28,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: (Release - Docs 6.0) Install dependencies
-      run: yarn install
+      run: yarn install -g
 
     - name: (Release - Docs 6.0) Build API References
       run: yarn build

@@ -1,15 +1,15 @@
 ifeval::[{is_zip_install} == true]
-1. Add the following development dependencies to the project.
+. Add the following development dependencies to the project.
 
-- [`webpack`](https://www.npmjs.com/package/webpack)
-- [`webpack-cli`](https://www.npmjs.com/package/webpack-cli)
-- [`mini-css-extract-plugin`](https://www.npmjs.com/package/mini-css-extract-plugin)
-- [`html-webpack-plugin`](https://www.npmjs.com/package/html-webpack-plugin)
-- [`css-loader`](https://www.npmjs.com/package/css-loader)
-
+* [`webpack`](https://www.npmjs.com/package/webpack)
+* [`webpack-cli`](https://www.npmjs.com/package/webpack-cli)
+* [`mini-css-extract-plugin`](https://www.npmjs.com/package/mini-css-extract-plugin)
+* [`html-webpack-plugin`](https://www.npmjs.com/package/html-webpack-plugin)
+* [`css-loader`](https://www.npmjs.com/package/css-loader)
++
 For example:
-
-[source,sh]
++
+[source,sh,indent=0]
 ----
 npm install --save-dev \
   webpack \
@@ -18,19 +18,19 @@ npm install --save-dev \
   html-webpack-plugin \
   css-loader
 ----
-ifeval::[{is_zip_install} == false]
 endif::[]
-1. Add `tinymce` and the following development dependencies to the project.
+ifeval::[{is_zip_install} == false]
+. Add `tinymce` and the following development dependencies to the project.
 
-- [`webpack`](https://www.npmjs.com/package/webpack)
-- [`webpack-cli`](https://www.npmjs.com/package/webpack-cli)
-- [`mini-css-extract-plugin`](https://www.npmjs.com/package/mini-css-extract-plugin)
-- [`html-webpack-plugin`](https://www.npmjs.com/package/html-webpack-plugin)
-- [`css-loader`](https://www.npmjs.com/package/css-loader)
-
+* [`webpack`](https://www.npmjs.com/package/webpack)
+* [`webpack-cli`](https://www.npmjs.com/package/webpack-cli)
+* [`mini-css-extract-plugin`](https://www.npmjs.com/package/mini-css-extract-plugin)
+* [`html-webpack-plugin`](https://www.npmjs.com/package/html-webpack-plugin)
+* [`css-loader`](https://www.npmjs.com/package/css-loader)
++
 For example:
-
-[source,sh]
++
+[source,sh,indent=0]
 ----
 npm install tinymce &&
 npm install --save-dev \

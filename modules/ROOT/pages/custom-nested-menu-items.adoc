@@ -37,22 +37,16 @@ tinymce.init({
     custom: { title: 'Custom Menu', items: 'undo redo nesteditem' }
   },
   menubar: 'file edit custom',
-
-  setup: function(editor) {
+  setup: (editor) => {
     editor.ui.registry.addNestedMenuItem('nesteditem', {
       text: 'My nested menu item',
-      getSubmenuItems: function() {
-        return [{
-          type: 'menuitem',
-          text: 'My submenu item',
-          onAction: function() {
-            alert('Submenu item clicked');
-          }
-        }];
-      }
+      getSubmenuItems: () => [{
+        type: 'menuitem',
+        text: 'My submenu item',
+        onAction: () => alert('Submenu item clicked')
+      }]
     });
   }
-
 });
 ----
 

@@ -86,7 +86,7 @@ Set the `+progressBar+` property type to `+True+` to display a progress bar to t
 
 [source,js]
 ----
-var notification = editor.notificationManager.open({
+const notification = editor.notificationManager.open({
   text: 'A test notification that contains a progress bar.',
   progressBar: true
 });
@@ -104,5 +104,5 @@ To close the last shown notification, `+call+` the following method:
 [source,js]
 ----
 // Close the last shown notification.
-top.tinymce.activeEditor.notificationManager.close();
+editor.notificationManager.close();
 ----

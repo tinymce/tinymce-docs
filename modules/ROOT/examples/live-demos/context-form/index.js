@@ -1,13 +1,13 @@
 tinymce.init({
   selector: 'textarea#context-form',
   height: 300,
-  setup: function (editor) {
-    var isAnchorElement = function (node) {
+  setup: (editor) => {
+    const isAnchorElement = (node) => {
       return node.nodeName.toLowerCase() === 'a' && node.href;
-    };
+    }
 
-    var getAnchorElement = function () {
-      var node = editor.selection.getNode();
+    const getAnchorElement = () => {
+      const node = editor.selection.getNode();
       return isAnchorElement(node) ? node : null;
     };
 
@@ -18,8 +18,8 @@ tinymce.init({
       },
       label: 'Link',
       predicate: isAnchorElement,
-      initValue: function () {
-        var elm = getAnchorElement();
+      initValue: () => {
+        const elm = getAnchorElement();
         return !!elm ? elm.href : '';
       },
       commands: [
@@ -28,18 +28,16 @@ tinymce.init({
           icon: 'link',
           tooltip: 'Link',
           primary: true,
-          onSetup: function (buttonApi) {
+          onSetup: (buttonApi) => {
             buttonApi.setActive(!!getAnchorElement());
-            var nodeChangeHandler = function () {
+            const nodeChangeHandler = () => {
               buttonApi.setActive(!editor.readonly && !!getAnchorElement());
             };
             editor.on('nodechange', nodeChangeHandler);
-            return function () {
-              editor.off('nodechange', nodeChangeHandler);
-            }
+            return () => editor.off('nodechange', nodeChangeHandler)
           },
-          onAction: function (formApi) {
-            var value = formApi.getValue();
+          onAction: (formApi) => {
+            const value = formApi.getValue();
             console.log('Save link clicked with value: ' + value);
             formApi.hide();
           }
@@ -49,7 +47,7 @@ tinymce.init({
           icon: 'unlink',
           tooltip: 'Remove link',
           active: false,
-          onAction: function (formApi) {
+          onAction: (formApi) => {
             console.log('Remove link clicked');
             formApi.hide();
           }

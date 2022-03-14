@@ -17,8 +17,8 @@ The following example uses a function to create a console log entry when the edi
 ----
 tinymce.init({
   selector: 'textarea',
-  setup: function(editor) {
-    editor.on('init', function(e) {
+  setup: (editor) => {
+    editor.on('init', (e) => {
       console.log('The Editor has initialized.');
     });
   }
@@ -31,9 +31,9 @@ The following example uses a function to create a console log entry when a comma
 ----
 tinymce.init({
   selector: 'textarea',
-  init_instance_callback: function(editor) {
-    editor.on('ExecCommand', function(e) {
-      console.log('The ' + e.command + ' command was fired.');
+  init_instance_callback: (editor) => {
+    editor.on('ExecCommand', (e) => {
+      console.log(`The ${e.command} command was fired.`);
     });
   }
 });
@@ -394,7 +394,7 @@ The following events are used for editor management. These events are handled us
 .AddEditor
 [source,js]
 ----
-tinymce.on('AddEditor', function(e) {
+tinymce.on('AddEditor', (e) => {
   console.log('Added editor with id: ' + e.editor.id);
 });
 ----
@@ -402,7 +402,7 @@ tinymce.on('AddEditor', function(e) {
 .RemoveEditor
 [source,js]
 ----
-tinymce.on('RemoveEditor', function(e) {
+tinymce.on('RemoveEditor', (e) => {
   console.log('Removed editor with id: ' + e.editor.id);
 });
 ----

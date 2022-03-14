@@ -69,18 +69,18 @@ The `+element():HTMLElement+` function returns the root element of the sidebar p
 tinymce.init({
   ...
   toolbar: 'mysidebar',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addSidebar('mysidebar', {
       tooltip: 'My sidebar',
       icon: 'comment',
-      onSetup: function (api) {
+      onSetup: (api) => {
         console.log('Render panel', api.element());
       },
-      onShow: function (api) {
+      onShow: (api) => {
         console.log('Show panel', api.element());
         api.element().innerHTML = 'Hello world!';
       },
-      onHide: function (api) {
+      onHide: (api) => {
         console.log('Hide panel', api.element());
       }
     });
@@ -92,18 +92,18 @@ tinymce.init({
 
 [source,js]
 ----
-tinymce.PluginManager.add('myplugin', function (editor) {
+tinymce.PluginManager.add('myplugin', (editor) => {
   editor.ui.registry.addSidebar('mysidebar', {
     tooltip: 'My sidebar',
     icon: 'comment',
-    onSetup: function (api) {
+    onSetup: (api) => {
       console.log('Render panel', api.element());
     },
-    onShow: function (api) {
+    onShow: (api) => {
       console.log('Show panel', api.element());
       api.element().innerHTML = 'Hello world!';
     },
-    onHide: function (api) {
+    onHide: (api) => {
       console.log('Hide panel', api.element());
     }
   });

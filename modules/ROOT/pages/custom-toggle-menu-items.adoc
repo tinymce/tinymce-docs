@@ -38,7 +38,7 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 ----
 // Menu items are recreated when the menu is closed and opened, so we need
 // a variable to store the toggle menu item state.
-var toggleState = false;
+let toggleState = false;
 
 tinymce.init({
   selector: 'textarea',
@@ -46,18 +46,17 @@ tinymce.init({
     custom: { title: 'Custom Menu', items: 'undo redo toggleitem' }
   },
   menubar: 'file edit custom',
-
-  setup: function(editor) {
+  setup: (editor) => {
     editor.ui.registry.addToggleMenuItem('toggleitem', {
       text: 'My toggle menu item',
       icon: 'home',
-      onAction: function() {
+      onAction: () => {
         toggleState = !toggleState;
         alert('Toggle menu item clicked');
       },
-      onSetup: function(api) {
+      onSetup: (api) => {
         api.setActive(toggleState);
-        return function() {};
+        return () => {};
       }
     });
   }

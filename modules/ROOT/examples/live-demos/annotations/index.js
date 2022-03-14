@@ -1,43 +1,39 @@
-var settings = {
+tinymce.init({
   selector: 'textarea#annotations',
-  toolbar: ['annotate-alpha'],
+  toolbar: [ 'annotate-alpha' ],
   menubar: false,
   height: '750px',
-  content_style: '.mce-annotation { background-color: darkgreen; color: white; } ' + 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-
-  setup: function (editor) {
+  content_style: '.mce-annotation { background-color: darkgreen; color: white; } ' +
+    'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  setup: (editor) => {
     editor.ui.registry.addButton('annotate-alpha', {
       text: 'Annotate',
-      onAction: function() {
-        var comment = prompt('Comment with?');
+      onAction: () => {
+        const comment = prompt('Comment with?');
         editor.annotator.annotate('alpha', {
           uid: 'custom-generated-id',
           comment: comment
         });
         editor.focus();
       },
-      onSetup: function (btnApi) {
-        editor.annotator.annotationChanged('alpha', function (state, name, obj) {
+      onSetup: (btnApi) => {
+        editor.annotator.annotationChanged('alpha', (state, name, obj) => {
           console.log('Current selection has an annotation: ', state);
-          btnApi.setDisabled(state);
+          btnApi.setEnabled(!state);
         });
       }
     });
 
-    editor.on('init', function () {
+    editor.on('init', () => {
       editor.annotator.register('alpha', {
         persistent: true,
-        decorate: function (uid, data) {
-          return {
-            attributes: {
-              'data-mce-comment': data.comment ? data.comment : '',
-              'data-mce-author': data.author ? data.author : 'anonymous'
-            }
-          };
-        }
+        decorate: (uid, data) => ({
+          attributes: {
+            'data-mce-comment': data.comment ? data.comment : '',
+            'data-mce-author': data.author ? data.author : 'anonymous'
+          }
+        })
       });
     });
   }
-};
-
-tinymce.init(settings);
+});

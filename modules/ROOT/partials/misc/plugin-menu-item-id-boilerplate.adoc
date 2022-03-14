@@ -1,4 +1,4 @@
-ifeval::[{docname} == available-menu-items]
+ifeval::["{docname}" == "advanced/available-menu-items"]
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following menu items:
@@ -12,7 +12,7 @@ endif::altplugincode[]
 
 For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
 endif::[]
-ifeval::[{docname} != available-menu-items]
+ifeval::["{docname}" != "advanced/available-menu-items"]
 == Menu items
 
 The {pluginname} plugin provides the following menu items:

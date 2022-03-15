@@ -57,6 +57,7 @@ To resolve this issue ensure all computer clocks are synchronised using https://
 === Unable to retrieve JWK set
 
 A "JWK set" is a structure that contains public keys for validating JWT signatures. At least one public key in the set must match the private key used to sign the provided identity token for RTC. This error means a public key could not be found in the {cloudname} account of the {companyname} API key used to load the RTC plugin. For information on creating public/private key pairs, see: xref:rtc/jwt-authentication.adoc#privatepublickeypairsfortinycloudservices[JWT Authentication].
+// TODO: fix this xref, it doesn't seem to work in production either
 
 === Errors related to "parts"
 
@@ -66,4 +67,4 @@ A number of part-related errors can be raised if the JWT fails to decode:
 * A part was not correctly base64 encoded
 * A part was not valid JSON
 * The header part does not specify an algorithm
-* The payload part does not contain all xref:rtc/jwt-authentication.adoc#claims[required claims]
+* The payload part does not contain all xref:rtc/jwt-authentication.adoc#settingupjwtauthenticationforreal-timecollaboration[required claims]

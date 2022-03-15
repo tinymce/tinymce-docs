@@ -57,7 +57,7 @@ These mobile-specific default values have been set to disable unsupported settin
 The following settings have mobile-specific default values:
 
 * xref:configure/editor-appearance.adoc#menubar[`menubar`] - defaults to `false` on mobile phones.
-* xref:configure/editor-appearance.adoc#toolbar_mode[`toolbar_mode`] - defaults to `scrolling` on mobile devices. The toolbar will xref:sidescrollingtoolbarsonmobile[side-scroll by default].
+* xref:configure/editor-appearance.adoc#toolbar_mode[`toolbar_mode`] - defaults to `scrolling` on mobile devices. The toolbar will xref:configure/editor-appearance.adoc#scrolling[side-scroll by default].
 * xref:configure/editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
 * xref:plugins/opensource/table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * xref:configure/editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.

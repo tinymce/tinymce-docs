@@ -20,12 +20,14 @@ ifeval::[{forModuleLoaders} == true]
 | German | de | `+./langs/de.js+`
 | Greek | el | `+./langs/el.js+`
 | Hebrew (Israel) | he_IL | `+./langs/he_IL.js+`
+| Hindi | hi | `+./langs/hi.js+`
 | Hungarian (Hungary) | hu_HU | `+./langs/hu_HU.js+`
 | Indonesian | id | `+./langs/id.js+`
 | Italian | it | `+./langs/it.js+`
 | Japanese | ja | `+./langs/ja.js+`
 | Kazakh | kk | `+./langs/kk.js+`
 | Korean (Korea) | ko_KR | `+./langs/ko_KR.js+`
+| Malay | ms | `+./langs/ms.js+`
 | Norwegian Bokmål (Norway) | nb_NO | `+./langs/nb_NO.js+`
 | Persian | fa | `+./langs/fa.js+`
 | Polish | pl | `+./langs/pl.js+`
@@ -40,6 +42,7 @@ ifeval::[{forModuleLoaders} == true]
 | Thai (Thailand) | th_TH | `+./langs/th_TH.js+`
 | Turkish | tr | `+./langs/tr.js+`
 | Ukrainian | uk | `+./langs/uk.js+`
+| Vietnamese | vi | `+./langs/vi.js+`
 |===
 endif::[]
 ifeval::[{forModuleLoaders} != true]
@@ -61,12 +64,14 @@ ifeval::[{forModuleLoaders} != true]
 | German | de
 | Greek | el
 | Hebrew (Israel) | he_IL
+| Hindi | hi
 | Hungarian (Hungary) | hu_HU
 | Indonesian | id
 | Italian | it
 | Japanese | ja
 | Kazakh | kk
 | Korean (Korea) | ko_KR
+| Malay | ms
 | Norwegian Bokmål (Norway) | nb_NO
 | Persian | fa
 | Polish | pl
@@ -81,5 +86,6 @@ ifeval::[{forModuleLoaders} != true]
 | Thai (Thailand) | th_TH
 | Turkish | tr
 | Ukrainian | uk
+| Vietnamese | vi
 |===
 endif::[]

@@ -125,7 +125,7 @@ try {
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'image media link tinydrive code imagetools',
+  plugins: 'image media link tinydrive code editimage',
   tinydrive_token_provider: 'jwt.php',
   toolbar: 'insertfile image link | code'
 });
@@ -189,7 +189,7 @@ app.listen(3000);
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'image media link tinydrive code imagetools',
+  plugins: 'image media link tinydrive code editimage',
   tinydrive_token_provider: '/jwt',
   toolbar: 'insertfile image link | code'
 });

@@ -28,7 +28,7 @@ WARNING: Allowing script elements (`+<script>+`) in {productname} exposes users 
 To allow script elements in the editor, include the following in the {productname} configuration:
 
 ....
-extended_valid_elements : 'script[src|async|defer|type|charset]'
+extended_valid_elements: 'script[src|async|defer|type|charset]'
 ....
 
 === Interactive example

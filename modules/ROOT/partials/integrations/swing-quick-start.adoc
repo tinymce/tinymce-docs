@@ -48,7 +48,7 @@ final Config myConfig = Config.embedded()
     .setContentPath(contentPath)
     .setImageSaverLocal(contentPath)
     .addPlugins(
-      "advcode advlist autolink lists link image imagetools charmap emoticons " +
+      "advcode advlist autolink lists link image editimage charmap emoticons " +
       "anchor searchreplace insertdatetime media table powerpaste help wordcount")
     .putProperty("width", 800)
     .putProperty("height", 600)
@@ -71,7 +71,7 @@ Or by passing Javascript that returns a {productname} configuration object.
     width: 800,
     height: 600,
     plugins: [
-      'advcode advlist autolink lists link image imagetools charmap emoticons',
+      'advcode advlist autolink lists link image editimage charmap emoticons',
       'anchor searchreplace insertdatetime media table powerpaste help wordcount'
     ],
     menubar: false,

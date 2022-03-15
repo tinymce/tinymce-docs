@@ -3,7 +3,7 @@
 :title_nav: Available Commands
 :description_short: Complete list of editor commands.
 :description: The complete list of exposed editor commands.
-:keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
+:keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
 
 == Overview
 
@@ -175,13 +175,13 @@ Commands are available for the following plugins:
 * xref:codesample[Code Sample]
 * xref:comments[Comments]
 * xref:directionality[Directionality]
+* xref:editimage[Edit Image]
 * xref:emoticons[Emoticons]
 * xref:export[Export]
 * xref:formatpainter[Format Painter]
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
-* xref:imagetools[Image Tools]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
@@ -196,8 +196,8 @@ Commands are available for the following plugins:
 * xref:searchandreplace[Search and Replace]
 * xref:spellcheckerpro[Spell Checker Pro]
 * xref:table[Table]
-* xref:template[Template]
 * xref:tableofcontents[Table of Contents]
+* xref:template[Template]
 * xref:visualblocks[Visual Blocks]
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
@@ -279,6 +279,14 @@ The following commands require the xref:directionality.adoc[Directionality (`+di
 
 include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 
+
+[[editimage]]
+==== Edit Image
+
+The following commands require the xref:editimage.adoc[Edit Image (`+editimage+`)] plugin.
+
+include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
+
 [[emoticons]]
 ==== Emoticons
 
@@ -320,13 +328,6 @@ include::partial$commands/help-cmds.adoc[leveloffset=+3]
 The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
-
-[[imagetools]]
-==== Image Tools
-
-The following commands require the xref:imagetools.adoc[Image Tools (`+imagetools+`)] plugin.
-
-include::partial$commands/imagetools-cmds.adoc[leveloffset=+3]
 
 [[insertdatetime]]
 ==== Insert Date/Time
@@ -426,19 +427,19 @@ The following commands require the xref:table.adoc[Table (`+table+`)] plugin.
 
 include::partial$commands/table-cmds.adoc[leveloffset=+3]
 
+[[tableofcontents]]
+==== Table of Contents
+
+The following commands require the xref:tableofcontents.adoc[Table of Contents (`+tableofcontents+`)] plugin.
+
+include::partial$commands/tableofcontents-cmds.adoc[leveloffset=+3]
+
 [[template]]
 ==== Template
 
 The following command requires the xref:template.adoc[Template (`+template+`)] plugin.
 
 include::partial$commands/template-cmds.adoc[leveloffset=+3]
-
-[[tableofcontents]]
-==== Table of Contents
-
-The following commands require the xref:toc.adoc[Table of Contents (`+toc+`)] plugin.
-
-include::partial$commands/toc-cmds.adoc[leveloffset=+3]
 
 [[visualblocks]]
 ==== Visual Blocks
@@ -470,17 +471,18 @@ For example:
 
 [source,js]
 ----
-tinymce.execCommand('mceAddEditor', false, '<editor_id>');
+tinymce.execCommand('mceAddEditor', false, { id: '<editor_id>', options: {} });
 tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
-tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
+tinymce.execCommand('mceToggleEditor', false, { id: '<editor_id>' });
+tinymce.execCommand('mceToggleEditor', false, { index: '<editor_index>' });
 ----
 
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|mceAddEditor |Converts the specified HTML or DOM element into an editor instance with the specified ID.
+|mceAddEditor |Converts an HTML or DOM element with the specified ID into an editor instance that uses the specified editor configuration options. For information on configuring the editor, see: xref:basic-setup.adoc[Basic Setup].
 |mceRemoveEditor |Removes an editor instance with the specified ID.
-|mceToggleEditor |Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
+|mceToggleEditor |Runs `mceAddEditor` if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
 |===
 
 [[querycommandstates]]

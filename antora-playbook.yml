@@ -9,8 +9,7 @@ content:
     start_path: ./
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    snapshot: true
+    url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip
 asciidoc:
   extensions:
-    - ./plugins/live-demo.js
+    - ./extensions/live-demo.js

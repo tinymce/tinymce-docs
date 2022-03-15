@@ -15,7 +15,7 @@ Defaults : `+'alignleft aligncenter alignright'+`
 ----
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbars image imagetools',
+  plugins: 'quickbars image editimage',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions'
 });
 ----

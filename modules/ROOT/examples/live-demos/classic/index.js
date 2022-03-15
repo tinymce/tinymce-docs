@@ -54,7 +54,7 @@ var demoBaseConfig = {
   autosave_ask_before_unload: false,
   powerpaste_allow_local_images: true,
   plugins: [
-    'a11ychecker advcode advlist anchor autolink codesample fullscreen help image imagetools tinydrive',
+    'a11ychecker advcode advlist anchor autolink codesample fullscreen help image editimage tinydrive',
     ' lists link media powerpaste preview',
     ' searchreplace table template tinymcespellchecker visualblocks wordcount'
   ],

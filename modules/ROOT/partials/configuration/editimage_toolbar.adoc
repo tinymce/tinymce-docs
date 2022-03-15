@@ -1,7 +1,7 @@
-[[imagetools_toolbar]]
-== `+imagetools_toolbar+`
+[[editimage_toolbar]]
+== `+editimage_toolbar+`
 
-The exact selection of buttons that will appear on the contextual toolbar can be controlled via `+imagetools_toolbar+` option.
+The exact selection of buttons that will appear on the contextual toolbar can be controlled via `+editimage_toolbar+` option.
 
 Possible Values:
 
@@ -16,14 +16,14 @@ Type: `+String+`
 
 Default Value: `+'rotateleft rotateright | flipv fliph | editimage imageoptions'+`
 
-=== Example: Using `+imagetools_toolbar+`
+=== Example: Using `+editimage_toolbar+`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
-  plugins: 'image imagetools',
-  imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions'
+  plugins: 'image editimage',
+  editimage_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions'
 });
 ----

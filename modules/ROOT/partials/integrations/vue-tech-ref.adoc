@@ -2,24 +2,24 @@
 
 *Covered in this section:*
 
-* <<installingthetinymcevuejsintegrationusingnpm,Installing the TinyMCE Vue.js integration using NPM>>
-* <<usingthetinymcevuejsintegration,Using the TinyMCE Vue.js integration>>
-* <<configuringtheeditor,Configuring the editor>>
- ** <<api-key,`api-key`>>
- ** <<cloud-channel,`cloud-channel`>>
- ** <<disabled,`disabled`>>
- ** <<id,`id`>>
- ** <<init,`init`>>
- ** <<initial-value,`initial-value`>>
- ** <<inline,`inline`>>
- ** <<model-events,`model-events`>>
- ** <<output-format,`output-format`>>
- ** <<plugins,`plugins`>>
- ** <<tag-name,`tag-name`>>
- ** <<toolbar,`toolbar`>>
- ** <<tinymce-script-src,`tinymce-script-src`>>
-* <<forminputbindingsv-model,Form Input Bindings: `v-model`>>
-* <<eventbinding,Event binding>>
+* xref:installingthetinymcevuejsintegrationusingnpm[Installing the TinyMCE Vue.js integration using NPM]
+* xref:usingthetinymcevuejsintegration[Using the TinyMCE Vue.js integration]
+* xref:configuringtheeditor[Configuring the editor]
+ ** xref:api-key[`api-key`]
+ ** xref:cloud-channel[`cloud-channel`]
+ ** xref:disabled[`disabled`]
+ ** xref:id[`id`]
+ ** xref:init[`init`]
+ ** xref:initial-value[`initial-value`]
+ ** xref:inline[`inline`]
+ ** xref:model-events[`model-events`]
+ ** xref:output-format[`output-format`]
+ ** xref:plugins[`plugins`]
+ ** xref:tag-name[`tag-name`]
+ ** xref:toolbar[`toolbar`]
+ ** xref:tinymce-script-src[`tinymce-script-src`]
+* xref:forminputbindingsv-model[Form Input Bindings: `v-model`]
+* xref:eventbinding[Event binding]
 
 [[installingthetinymcevuejsintegrationusingnpm]]
 === Installing the TinyMCE Vue.js integration using NPM
@@ -122,9 +122,10 @@ include::partial$misc/get-an-api-key.adoc[]
 
 ===== Example: Using `api-key`
 
-```html
+[source, html]
+----
 <editor api-key="your-api-key"></editor>
-```
+----
 
 [[cloud-channel]]
 ==== `cloud-channel`
@@ -180,9 +181,10 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ===== Example: Using `id`
 
-```html
+[source, html]
+----
 <editor id="uuid"></editor>
-```
+----
 
 [[init]]
 ==== `init`
@@ -202,7 +204,7 @@ For information on the {productname} selector (`tinymce.init`), see: xref:genera
 <editor
   :init="{
     plugins: [
-     'lists link image paste help wordcount'
+      'lists link image paste help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }"
@@ -220,9 +222,10 @@ Initial content of the editor when the editor is initialized.
 
 ===== Example: Using `initial-value`
 
-```html
+[source, html]
+----
 <editor initial-value="Once upon a time..."></editor>
-```
+----
 
 [[inline]]
 ==== `inline`
@@ -247,7 +250,7 @@ For information on inline mode, see: xref:configure/editor-appearance.adoc#inlin
 [[model-events]]
 ==== `model-events`
 
-Sets the trigger events for <<forminputbindingsv-model,v-model events>>.
+Sets the trigger events for xref:forminputbindingsv-model[v-model events].
 
 For a list of available {productname} events, see: xref:advanced/events.adoc#editorcoreevents[Available Events - Editor events].
 
@@ -257,9 +260,10 @@ For a list of available {productname} events, see: xref:advanced/events.adoc#edi
 
 ===== Example: Using `model-events`
 
-```html
+[source, html]
+----
   <editor model-events="change keydown blur focus paste"></editor>
-```
+----
 
 [[output-format]]
 ==== `output-format`
@@ -274,9 +278,10 @@ Used to specify the format of the content emitted via the `input` event. This af
 
 ===== Example: Using `output-format`
 
-```html
+[source, html]
+----
 <editor output-format="text"></editor>
-```
+----
 
 [[plugins]]
 ==== `plugins`
@@ -289,14 +294,15 @@ For information on adding plugins to {productname}, see: link:{baseurl}/plugins/
 
 ===== Example: Using `plugins`
 
-```html
+[source, html]
+----
 <editor plugins="lists code"></editor>
-```
+----
 
 [[tag-name]]
 ==== `tag-name`
 
-Only valid when <<inline,`<editor :inline=true />`>>. Used to define the HTML element for the editor in inline mode.
+Only valid when xref:inline[`<editor :inline=true />`]. Used to define the HTML element for the editor in inline mode.
 
 *Default value:* `div`
 
@@ -325,9 +331,10 @@ For information setting the toolbar for {productname}, see: xref:configure/edito
 
 ===== Example: Using `toolbar`
 
-```html
+[source, html]
+----
 <editor plugins="code" toolbar="bold italic underline code"></editor>
-```
+----
 
 [[tinymce-script-src]]
 ==== `tinymce-script-src`
@@ -338,18 +345,20 @@ Use the `tinymce-script-src` prop to specify an external version of TinyMCE to l
 
 ===== Example: Using `tinymce-script-src`
 
-```html
+[source, html]
+----
 <editor tinymce-script-src="/path/to/tinymce.min.js"></editor>
-```
+----
 
 [[forminputbindingsv-model]]
 === Form Input Bindings: `v-model`
 
 The `v-model` directive can be used to create a two-way data binding. For example:
 
-```html
+[source, html]
+----
 <editor v-model="content"></editor>
-```
+----
 
 For information on `v-model` and form input bindings, see: https://vuejs.org/v2/guide/forms.html[Vue.js documentation - Form Input Bindings].
 

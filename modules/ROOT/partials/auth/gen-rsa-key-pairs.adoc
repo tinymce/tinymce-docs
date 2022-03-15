@@ -1,17 +1,17 @@
 The procedure for creating a key pair depends on the operating system of the host machine.
 
-* <<linux,Linux procedure>>.
-* <<applemacos,Apple macOS procedure>>.
-* <<microsoftwindows,Microsoft Windows procedure>>.
+* xref:linux[Linux procedure].
+* xref:applemacos[Apple macOS procedure].
+* xref:microsoftwindows[Microsoft Windows procedure].
 
 [[linux]]
 == Linux
 
 To create a private/public key pair on a Linux operating system:
 
-. <<installingopensslonlinux,Install OpenSSL>>.
-. <<createaprivatepublickeypaironlinux,Create a private/public key pair>>.
-. <<retrievethepublickeyonlinux,Retrieve the public key>>.
+. xref:installingopensslonlinux[Install OpenSSL].
+. xref:createaprivatepublickeypaironlinux[Create a private/public key pair].
+. xref:retrievethepublickeyonlinux[Retrieve the public key].
 
 [[installingopensslonlinux]]
 === Installing OpenSSL on Linux
@@ -103,8 +103,8 @@ The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the comm
 
 To create a private/public key pair on a macOS operating system:
 
-. <<createaprivatepublickeypaironmacos,Create a private/public key pair>>.
-. <<retrievethepublickeyonmacos,Retrieve the public key>>.
+. xref:createaprivatepublickeypaironmacos[Create a private/public key pair].
+. xref:retrievethepublickeyonmacos[Retrieve the public key].
 
 [[createaprivatepublickeypaironmacos]]
 === Create a private/public key pair on macOS
@@ -145,9 +145,9 @@ The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the term
 
 To create a private/public key pair on a Microsoft Windows operating system:
 
-. <<installingopensslonmicrosoftwindows,Install OpenSSL>>.
-. <<createaprivatepublickeypaironwindows,Create a private/public key pair>>.
-. <<retrievethepublickeyonwindows,Retrieve the public key>>.
+. xref:installingopensslonmicrosoftwindows[Install OpenSSL].
+. xref:createaprivatepublickeypaironwindows[Create a private/public key pair].
+. xref:retrievethepublickeyonwindows[Retrieve the public key].
 
 [[installingopensslonmicrosoftwindows]]
 === Installing OpenSSL on Microsoft Windows

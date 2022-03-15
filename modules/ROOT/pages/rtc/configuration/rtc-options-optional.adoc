@@ -12,8 +12,8 @@ This section covers the recommended and optional configuration options for the R
 
 For the best user experience, {companyname} recommends including these configuration options:
 
-* <<rtc_server_disconnected,`rtc_server_disconnected`>>
-* <<rtc_user_details_provider,`rtc_user_details_provider`>>
+* xref:rtc_server_disconnected[`rtc_server_disconnected`]
+* xref:rtc_user_details_provider[`rtc_user_details_provider`]
 
 include::partial$configuration/rtc_server_disconnected.adoc[]
 
@@ -23,12 +23,12 @@ include::partial$configuration/rtc_user_details_provider.adoc[]
 
 The following configuration options have been provide to assist with integrating {pluginname} into webpages and applications:
 
-* <<rtc_snapshot,`rtc_snapshot`>>
-* <<rtc_initial_content_provider,`rtc_initial_content_provider`>>
-* <<rtc_client_info,`rtc_client_info`>>
-* <<rtc_client_connected,`rtc_client_connected`>>
-* <<rtc_client_disconnected,`rtc_client_disconnected`>>
-* <<rtc_unsupported_content_notification,`rtc_unsupported_content_notification`>>
+* xref:rtc_snapshot[`rtc_snapshot`]
+* xref:rtc_initial_content_provider[`rtc_initial_content_provider`]
+* xref:rtc_client_info[`rtc_client_info`]
+* xref:rtc_client_connected[`rtc_client_connected`]
+* xref:rtc_client_disconnected[`rtc_client_disconnected`]
+* xref:rtc_unsupported_content_notification[`rtc_unsupported_content_notification`]
 
 include::partial$configuration/rtc_snapshot.adoc[]
 

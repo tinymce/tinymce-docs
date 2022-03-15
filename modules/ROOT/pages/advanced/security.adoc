@@ -8,18 +8,18 @@ NOTE: The following is _general_ security advice that may be relevant to a websi
 
 == Overview
 
-* <<reportingtinymcesecurityissues,Reporting TinyMCE security issues>>
-* <<whatwedotomaintainsecurityfortinymce,What we do to maintain security for TinyMCE>>
- ** <<scriptsandxssvulnerabilities,Scripts and XSS vulnerabilities>>
- ** <<keepingdependenciesup-to-date,Keeping dependencies up-to-date>>
-* <<configuringcontentsecuritypolicycspfortinymce,Configuring Content Security Policy (CSP) for TinyMCE>>
-* <<generalsecurityrisksforuserinputelements,General security risks for user input elements>>
- ** <<cross-sitescriptingxss,Cross-Site Scripting (XSS)>>
- ** <<injection,Injection>>
- ** <<insecuretransmissionandstorageofdata,Insecure Transmission and Storage of data>>
- ** <<brokenauthenticationandsessionmanagement,Broken Authentication and Session Management>>
- ** <<usingcomponentswithknownvulnerabilities,Using Components with Known Vulnerabilities>>
- ** <<furthersecurityinformation,Further security information>>
+* xref:reportingtinymcesecurityissues[Reporting TinyMCE security issues]
+* xref:whatwedotomaintainsecurityfortinymce[What we do to maintain security for TinyMCE]
+ ** xref:scriptsandxssvulnerabilities[Scripts and XSS vulnerabilities]
+ ** xref:keepingdependenciesup-to-date[Keeping dependencies up-to-date]
+* xref:configuringcontentsecuritypolicycspfortinymce[Configuring Content Security Policy (CSP) for TinyMCE]
+* xref:generalsecurityrisksforuserinputelements[General security risks for user input elements]
+ ** xref:cross-sitescriptingxss[Cross-Site Scripting (XSS)]
+ ** xref:injection[Injection]
+ ** xref:insecuretransmissionandstorageofdata[Insecure Transmission and Storage of data]
+ ** xref:brokenauthenticationandsessionmanagement[Broken Authentication and Session Management]
+ ** xref:usingcomponentswithknownvulnerabilities[Using Components with Known Vulnerabilities]
+ ** xref:furthersecurityinformation[Further security information]
 
 [[reportingtinymcesecurityissues]]
 == Reporting TinyMCE security issues

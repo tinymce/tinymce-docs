@@ -26,6 +26,7 @@
 * <<usingthetinymcereactcomponentasacontrolledcomponent,Using the TinyMCE React component as a controlled component>>
 * <<eventbinding,Event binding>>
 
+[[installingthetinymcereactintegrationusingnpmoryarn]]
 === Installing the TinyMCE React integration using NPM or Yarn
 
 To install the `tinymce-react` package and save it to your `package.json`.
@@ -42,6 +43,7 @@ or with Yarn
 $ yarn add @tinymce/tinymce-react
 ----
 
+[[usingtinymcereactintegrationinabootstrapdialog]]
 === Using TinyMCE React integration in a Bootstrap dialog
 
 To use the {productname} React integration inside Bootstrap UI dialogs, add the following React effect hook to a component that renders with the editor. This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog.
@@ -80,6 +82,7 @@ useEffect(function() {
 }, []);
 ----
 
+[[configuringtheeditor]]
 === Configuring the editor
 
 The `tinymce-react` component provides props for:
@@ -89,6 +92,7 @@ The `tinymce-react` component provides props for:
 * <<configuringeditorsettings,Configuring editor settings>>
 * <<managingtheeditor,Managing the editor>>
 
+[[configuringeditorsource]]
 ==== Configuring editor source
 
 The `tinymce-react` integration will try to source {productname} in the following order:
@@ -107,6 +111,7 @@ These props are used to configure how the editor is sourced:
 
 <<tinymcescriptsrc,`tinymceScriptSrc`>>:: The URL to use for sourcing {productname}, when loading a self-hosted version of {productname}.
 
+[[configuringpageelements]]
 ==== Configuring page elements
 
 These props provide some control over the page elements that the integration creates:
@@ -119,6 +124,7 @@ These props provide some control over the page elements that the integration cre
 
 <<textareaname,`textareaName`>>:: The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.
 
+[[configuringeditorsettings]]
 ==== Configuring editor settings
 
 These props are read when the editor is initialized. Changes after the editor has launched are ignored.
@@ -129,6 +135,7 @@ These props are read when the editor is initialized. Changes after the editor ha
 
 <<toolbar,`toolbar`>>:: Specify the editor toolbar. This will *override* the `toolbar` in the `init` prop.
 
+[[managingtheeditor]]
 ==== Managing the editor
 
 These props can be updated after the editor is initialized. Note that there are <<eventbinding,other events>> not mentioned here.
@@ -145,10 +152,12 @@ These props can be updated after the editor is initialized. Note that there are 
 
 <<value,`value`>>:: Sets and enforces the value of the editor. Only used for a controlled component.
 
+[[availableprops]]
 === Available props
 
 None of the configuration props are *required* for the {productname} React component; however, if the `apiKey` prop is not configured when loading from {cloudname}, a warning message will be shown in the editor. For guidance about which props to use, see: <<configuringtheeditor,Configuring the editor>>.
 
+[[apikey]]
 ==== `apiKey`
 
 {cloudname} API key.
@@ -163,10 +172,11 @@ include::partial$misc/get-an-api-key.adoc[]
 
 ===== Example: Using `apiKey`
 
-```jsx+++<Editor apiKey="your-api-key">++++++</Editor>+++
-
+```jsx
+  <Editor apiKey="your-api-key"></Editor>
 ```
 
+[[cloudchannel]]
 ==== `cloudChannel`
 
 Changes the {productname} build used for the editor to either a specific version or a channel indicating a stability level.
@@ -195,6 +205,7 @@ Such as:
 
 For information {productname} development channels, see: link:{baseurl}/cloud-deployment-guide/editor-plugin-version/#55-testingand5-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
+[[disabled]]
 ==== `disabled`
 
 The `disabled` prop can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -212,6 +223,7 @@ The `disabled` prop can dynamically switch the editor between a "disabled" (read
 />
 ----
 
+[[id]]
 ==== `id`
 
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method.
@@ -222,15 +234,16 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ===== Example: Using `id`
 
-```jsx+++<Editor id="your-id">++++++</Editor>+++
-
+```jsx
+<Editor id="your-id"></Editor>
 ```
 
+[[init]]
 ==== `init`
 
 Additional settings passed to the `+tinymce.init({...})+` method used to initialize the editor.
 
-For information on the {productname} `+tinymce.init({...})+` method, see: link:{baseurl}/general-configuration-guide/basic-setup/[Basic setup].
+For information on the {productname} `+tinymce.init({...})+` method, see: xref:general-configuration-guide/basic-setup.adoc[Basic setup].
 
 When using `tinymce-react`:
 - The `init` prop does not require the `selector` or `target` options
@@ -247,13 +260,14 @@ When using `tinymce-react`:
 <Editor
   init={{
     plugins: [
-     'lists link image paste help wordcount'
+      'lists link image paste help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }}
 />
 ----
 
+[[initialvalue]]
 ==== `initialValue`
 
 The initial HTML content of the editor. This will reset the editor undo state and the cursor position when changed.
@@ -291,11 +305,12 @@ return (
 );
 ----
 
+[[inline]]
 ==== `inline`
 
 Used to set the editor to inline mode. Using `+<Editor inline={true} />+` is the same as setting `{inline: true}` in the {productname} `+tinymce.init({...})+` method.
 
-For information on inline mode, see: link:{baseurl}/configure/editor-appearance/#inline[User interface options - `inline`] and link:{baseurl}/general-configuration-guide/use-tinymce-inline/[Setup inline editing mode].
+For information on inline mode, see: xref:configure/editor-appearance.adoc#inline[User interface options - `inline`] and xref:general-configuration-guide/use-tinymce-inline.adoc[Setup inline editing mode].
 
 *Default value:* `false`
 
@@ -310,6 +325,7 @@ For information on inline mode, see: link:{baseurl}/configure/editor-appearance/
 />
 ----
 
+[[oneditorchange]]
 ==== `onEditorChange`
 
 Used to store the state of the editor outside the {productname} React component.
@@ -325,6 +341,7 @@ For detailed information on using `onEditorChange`, see: <<usingthetinymcereactc
 
 *Type:* EventHandler
 
+[[outputformat]]
 ==== `outputFormat`
 
 IMPORTANT: This option was deprecated with the release of the {productname}
@@ -394,6 +411,7 @@ return (
 );
 ----
 
+[[plugins]]
 ==== `plugins`
 
 Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {productname} `+tinymce.init({...})+` method.
@@ -409,6 +427,7 @@ For information on adding plugins to {productname}, see: link:{baseurl}/plugins/
 <Editor plugins="lists code"></Editor>
 ----
 
+[[scriptloading]]
 ==== `scriptLoading`
 
 Used to configure the script tag created to load {productname}.
@@ -450,16 +469,17 @@ ____
 
 [source, jsx]
 ----
-<Editor scriptLoading={{ async: true }}>
+<Editor scriptLoading={{ async: true }}></Editor>
 ----
 
 ===== Example: Delaying load of {productname} for 500 milliseconds
 
 [source, jsx]
 ----
-<Editor scriptLoading={{ delay: 500 }}>
+<Editor scriptLoading={{ delay: 500 }}></Editor>
 ----
 
+[[tagname]]
 ==== `tagName`
 
 Only valid when <<inline,`+<Editor inline={true} />+`>>. Used to define the HTML element for the editor in inline mode.
@@ -478,6 +498,7 @@ Only valid when <<inline,`+<Editor inline={true} />+`>>. Used to define the HTML
 />
 ----
 
+[[textareaname]]
 ==== `textareaName`
 
 Only valid when the editor is in classic (iframe) mode. Sets the `name` attribute for the `textarea` element used for the editor in forms.
@@ -496,13 +517,14 @@ Only valid when the editor is in classic (iframe) mode. Sets the `name` attribut
 </form>
 ----
 
+[[toolbar]]
 ==== `toolbar`
 
 Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the {productname} method `+tinymce.init({...})+`.
 
-For information setting the toolbar for {productname}, see: link:{baseurl}/configure/editor-appearance/#toolbar[User interface options - toolbar].
+For information setting the toolbar for {productname}, see: xref:configure/editor-appearance.adoc#toolbar[User interface options - toolbar].
 
-*Possible values:*  See link:{baseurl}/advanced/available-toolbar-buttons/[Toolbar Buttons Available for {productname}].
+*Possible values:*  See xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 *Type:* String
 
@@ -513,6 +535,7 @@ For information setting the toolbar for {productname}, see: link:{baseurl}/confi
 <Editor plugins="code" toolbar="bold italic underline code"></Editor>
 ----
 
+[[tinymcescriptsrc]]
 ==== `tinymceScriptSrc`
 
 Use the `tinymceScriptSrc` prop to specify an external version of {productname} to lazy load.
@@ -526,6 +549,7 @@ Use the `tinymceScriptSrc` prop to specify an external version of {productname} 
 <Editor tinymceScriptSrc="/path/to/tinymce.min.js"></Editor>
 ----
 
+[[value]]
 ==== `value`
 
 Sets the HTML content of the editor when operating as a controlled component.
@@ -543,6 +567,7 @@ For detailed information on using the `value` prop, see: <<usingthetinymcereactc
 
 *Type:* String
 
+[[usingthetinymcereactcomponentasauncontrolledcomponent]]
 === Using the {productname} React component as a uncontrolled component
 
 The {productname} React component is designed to be used as an uncontrolled component,
@@ -590,6 +615,7 @@ function MyComponent({initialValue}) {
 }
 ----
 
+[[usingthetinymcereactcomponentasacontrolledcomponent]]
 === Using the {productname} React component as a controlled component
 
 CAUTION: The controlled component can have performance problems on large
@@ -709,6 +735,7 @@ return (
 
 For information on controlled components in React, see: https://reactjs.org/docs/forms.html#controlled-components[React Docs - Controlled Components].
 
+[[eventbinding]]
 === Event binding
 
 Functions can be bound to editor events, such as:

@@ -2,39 +2,39 @@
 
 *Covered in this section:*
 
-* <<useacloudversionofthetinymcewebcomponentintegration,Use a cloud version of the TinyMCE Web Component integration>>
-* <<installingthetinymcewebcomponentintegration,Installing the TinyMCE Web Component integration>>
-* <<loadingtinymce,Loading TinyMCE>>
-* <<configuringtheeditor,Configuring the editor>>
- ** <<settingtheinitialcontent,Setting the initial content>>
- ** <<loadingplugins,Loading plugins>>
- ** <<settingtheeditorwidth,Setting the editor width>>
- ** <<settingtheeditorheight,Setting the editor height>>
- ** <<settingthetoolbar,Setting the toolbar>>
- ** <<settingthetoolbarmode,Setting the toolbar mode>>
- ** <<settingthemenubar,Setting the menu bar>>
- ** <<settingcontextmenu,Setting context menu>>
- ** <<settingthequick-inserttoolbar,Setting the quick-insert toolbar>>
- ** <<settingthequick-selectiontoolbar,Setting the quick-selection toolbar>>
- ** <<settingcontentstylesheets,Setting content stylesheets>>
- ** <<settingcontentstyling,Setting content styling>>
- ** <<settingpowerpasteswordimportmethod,Setting PowerPaste's word import method>>
- ** <<settingpowerpasteshtmlimportmethod,Setting PowerPaste's html import method>>
- ** <<settingpowerpastetoallowlocalimages,Setting PowerPaste to allow local images>>
- ** <<showingresizehandles,Showing resize handles>>
- ** <<settingtheeditorsetupfunction,Setting the editor setup function>>
- ** <<settingtheeditorskin,Setting the editor skin>>
- ** <<settingtheimagesuploadurl,Setting the images upload URL>>
- ** <<settingtheimagesuploadhandler,Setting the images upload handler>>
- ** <<settingtheimagesuploadbasepath,Setting the images upload base path>>
- ** <<settingtheimagesuploadtohavecredentials,Setting the images upload to have credentials>>
- ** <<settingtheimagesuploadtoreusefilenames,Setting the images upload to reuse filenames>>
- ** <<settingtheiconpack,Setting the icon pack>>
- ** <<settingtheiconpackurl,Setting the icon pack URL>>
- ** <<settingadditionalconfigurationoptions,Setting additional configuration options>>
-* <<eventbinding,Event binding>>
- ** <<supportedbrowserevents,Supported browser events>>
- ** <<supportedtinymceevents,Supported TinyMCE events>>
+* xref:useacloudversionofthetinymcewebcomponentintegration[Use a cloud version of the TinyMCE Web Component integration]
+* xref:installingthetinymcewebcomponentintegration[Installing the TinyMCE Web Component integration]
+* xref:loadingtinymce[Loading TinyMCE]
+* xref:configuringtheeditor[Configuring the editor]
+ ** xref:settingtheinitialcontent[Setting the initial content]
+ ** xref:loadingplugins[Loading plugins]
+ ** xref:settingtheeditorwidth[Setting the editor width]
+ ** xref:settingtheeditorheight[Setting the editor height]
+ ** xref:settingthetoolbar[Setting the toolbar]
+ ** xref:settingthetoolbarmode[Setting the toolbar mode]
+ ** xref:settingthemenubar[Setting the menu bar]
+ ** xref:settingcontextmenu[Setting context menu]
+ ** xref:settingthequick-inserttoolbar[Setting the quick-insert toolbar]
+ ** xref:settingthequick-selectiontoolbar[Setting the quick-selection toolbar]
+ ** xref:settingcontentstylesheets[Setting content stylesheets]
+ ** xref:settingcontentstyling[Setting content styling]
+ ** xref:settingpowerpasteswordimportmethod[Setting PowerPaste's word import method]
+ ** xref:settingpowerpasteshtmlimportmethod[Setting PowerPaste's html import method]
+ ** xref:settingpowerpastetoallowlocalimages[Setting PowerPaste to allow local images]
+ ** xref:showingresizehandles[Showing resize handles]
+ ** xref:settingtheeditorsetupfunction[Setting the editor setup function]
+ ** xref:settingtheeditorskin[Setting the editor skin]
+ ** xref:settingtheimagesuploadurl[Setting the images upload URL]
+ ** xref:settingtheimagesuploadhandler[Setting the images upload handler]
+ ** xref:settingtheimagesuploadbasepath[Setting the images upload base path]
+ ** xref:settingtheimagesuploadtohavecredentials[Setting the images upload to have credentials]
+ ** xref:settingtheimagesuploadtoreusefilenames[Setting the images upload to reuse filenames]
+ ** xref:settingtheiconpack[Setting the icon pack]
+ ** xref:settingtheiconpackurl[Setting the icon pack URL]
+ ** xref:settingadditionalconfigurationoptions[Setting additional configuration options]
+* xref:eventbinding[Event binding]
+ ** xref:supportedbrowserevents[Supported browser events]
+ ** xref:supportedtinymceevents[Supported TinyMCE events]
 
 [[useacloudversionofthetinymcewebcomponentintegration]]
 === Use a cloud version of the TinyMCE Web Component integration
@@ -206,7 +206,7 @@ For information on:
 
 * The `menubar` configuration option, see: xref:configure/editor-appearance.adoc#menubar[User interface options - `menubar`].
 * The `menu` configuration option, see: xref:configure/editor-appearance.adoc#menu[User interface options - `menu`].
-* The `config` attribute, see: <<settingadditionalconfigurationoptions,Setting additional configuration options>>.
+* The `config` attribute, see: xref:settingadditionalconfigurationoptions[Setting additional configuration options].
 
 [[settingcontextmenu]]
 ==== Setting context menu
@@ -493,7 +493,7 @@ To apply a bundled set of custom or premium icons to the editor, use the `icons`
 <tinymce-editor icons="material"></tinymce-editor>
 ----
 
-Use this attribute if the icon pack is bundled with {productname} (including custom icon packs). If the icon pack is hosted on a web site, use the <<settingtheiconpackurl,`icons_url` attribute>>.
+Use this attribute if the icon pack is bundled with {productname} (including custom icon packs). If the icon pack is hosted on a web site, use the xref:settingtheiconpackurl[`icons_url` attribute].
 
 For information on:
 
@@ -511,7 +511,7 @@ To apply a hosted set of custom or premium icons to the editor, use the `icons_u
 <tinymce-editor icons_url="https://www.example.com/icons/material/icons.js"></tinymce-editor>
 ----
 
-Use this attribute if the icon pack is hosted on a web site. If the icon pack is bundled with {productname} (including custom icon packs), use the <<settingtheiconpack,`icons` attribute>>.
+Use this attribute if the icon pack is hosted on a web site. If the icon pack is bundled with {productname} (including custom icon packs), use the xref:settingtheiconpack[`icons` attribute].
 
 For information on:
 
@@ -553,7 +553,7 @@ Configuration options that have an attribute can also be passed to the `config` 
 
 There are two methods to bind events for the TinyMCE Web Component.
 
-* The `setup` attribute, as described in <<settingtheeditorsetupfunction,Setting the editor setup function>>. For example:
+* The `setup` attribute, as described in xref:settingtheeditorsetupfunction[Setting the editor setup function]. For example:
 +
 [source, html]
 ----
@@ -579,7 +579,7 @@ There are two methods to bind events for the TinyMCE Web Component.
 <tinymce-editor on-Change="changeHandler"></tinymce-editor>
 ----
 +
-If these attributes are later removed, the event will be automatically unbound. For the full list of supported `on-` attributes, see: <<supportedbrowserevents,Supported browser events>> and <<supportedtinymceevents,Supported TinyMCE events>>.
+If these attributes are later removed, the event will be automatically unbound. For the full list of supported `on-` attributes, see: xref:supportedbrowserevents[Supported browser events] and xref:supportedtinymceevents[Supported TinyMCE events].
 
 [[supportedbrowserevents]]
 ==== Supported browser events

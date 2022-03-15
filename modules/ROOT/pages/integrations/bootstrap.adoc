@@ -23,9 +23,10 @@ If the project loads Bootstrap from \https://www.bootstrapcdn.com/, use the scri
 +
 To source {productname} from the {cloudname}, add the following `script` element to the `<head>` of the document:
 +
-```html
+[source, html]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-```
+----
 +
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
@@ -36,19 +37,21 @@ Signing up for a {cloudname} API key will also provide a trial of the xref:enter
 +
 To use an independent deployment of {productname}, add the following source script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
-```html
+[source, html]
+----
   <script src="/path/to/tinymce.min.js"></script>
-```
+----
 +
 For information on self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].
 
 . Add an initialization point for {productname}, such as:
 +
-```html
+[source, html]
+----
 <div>
   <textarea id="tiny"></textarea>
 </div>
-```
+----
 
 . Add the {productname} init script.
 +

@@ -39,7 +39,7 @@ If the below error descriptions do not solve the problem, try pasting the token 
 === Unsupported JWT signature algorithm
 
 RTC requires an _asymmetric signing algorithm_ for JWT identity tokens. Asymmetric signatures use separate private and public keys; the public key stored on the {cloudname} server can only be used to verify signatures, not create new ones. The private key, used to create new signatures, remains private.
-
+// TODO: fix this xref, it doesn't seem to work in production either
 For a list of supported algorithms, see: xref:rtc/jwt-authentication.adoc#supportedalgorithms[RTC JWT Authentication - Supported algorithms].
 
 === Time-based error messages

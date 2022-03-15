@@ -15,9 +15,9 @@ JWT is a standard authorization solution for web services and is documented in d
 
 == Overview
 
-* <<settingupjwtauthenticationforreal-timecollaboration,Setting up JWT authentication for Real-time Collaboration>>
-* <<setupajsonwebtokenjwtendpoint,Set up a JSON Web Token (JWT) endpoint>>
-* <<jwtendpointexamples,JWT endpoint examples>>
+* xref:settingupjwtauthenticationforreal-timecollaboration[Setting up JWT authentication for Real-time Collaboration]
+* xref:setupajsonwebtokenjwtendpoint[Set up a JSON Web Token (JWT) endpoint]
+* xref:jwtendpointexamples[JWT endpoint examples]
 
 [[settingupjwtauthenticationforreal-timecollaboration]]
 == Setting up JWT authentication for Real-time Collaboration
@@ -74,9 +74,10 @@ CAUTION: The RTC plugin does not request a new JWT if user's JWT expires during 
 
 The following examples show a minimal JWT endpoint and how to configure {productname} to use them.
 
-* <<phptokenproviderendpointexample,PHP token provider endpoint example>>
-* <<nodejstokenproviderendpointexample,Node.js token provider endpoint example>>
+* xref:phptokenproviderendpointexample[PHP token provider endpoint example]
+* xref:nodejstokenproviderendpointexample[Node.js token provider endpoint example]
 
+[[phptokenproviderendpointexample]]
 === PHP token provider endpoint example
 
 This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] provided through the Composer dependency manager.
@@ -141,6 +142,7 @@ tinymce.init({
 });
 ----
 
+[[nodejstokenproviderendpointexample]]
 === Node.js token provider endpoint example
 
 This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:integrations/expressjs.adoc[Integrating TinyMCE into an Express JS App].

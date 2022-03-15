@@ -27,7 +27,8 @@ $ bower install angular-ui-tinymce --save
 
 This *demo.html* file has angular properties and two calls to the controller.
 
-```html
+[source, html]
+----
 <!DOCTYPE html>
 <head>
   <script type="text/javascript" src="bower_components/tinymce/tinymce.js"></script>
@@ -42,13 +43,14 @@ This *demo.html* file has angular properties and two calls to the controller.
     <button ng-click="setContent()">Set content</button>
   </form>
 </body>
-```
+----
 
 == 4. Creating the app.js file
 
 The *app.js* file shows you how to work with the model that automatically updates {productname}.
 
-```js
+[source, js]
+----
 var myAppModule = angular.module('myApp', ['ui.tinymce']);
 
 myAppModule.controller('TinyMceController', function($scope) {
@@ -67,7 +69,7 @@ $scope.tinymceOptions = {
     toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
   };
 });
-```
+----
 
 == 5. Testing the application
 

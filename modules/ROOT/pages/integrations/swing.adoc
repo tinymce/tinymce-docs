@@ -30,7 +30,7 @@ The Swing integration allows the user to select the origin of the {productname} 
 final Config myTinyConfiguration = Config.embedded();
 ----
 
-* Cloud deployments pull {productname} from the {cloudname}. Use this option by passing your API key and link:{baseurl}/cloud-deployment-guide/editor-plugin-version/#specifyingthetinymceeditorversiondeployedfromcloud[specifying the {cloudname} version].
+* Cloud deployments pull {productname} from the {cloudname}. Use this option by passing your API key and xref:cloud-deployment-guide/editor-plugin-version.adoc#specifyingthetinymceeditorversiondeployedfromcloud[specifying the {cloudname} version].
 +
 [source, java]
 ----

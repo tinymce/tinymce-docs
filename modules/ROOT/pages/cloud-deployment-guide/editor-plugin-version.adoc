@@ -62,6 +62,7 @@ This channel deploys nightly builds of {productname}. This channel includes the 
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
+[[specifyingthetinymceeditorversiondeployedfromcloud]]
 == Specifying the version of premium plugins deployed from Tiny Cloud
 
 Each {productname} version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with {productname}. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the link:{baseurl}/cloud-deployment-guide/editor-and-features[{productname} editor and premium plugins deployment via {cloudname}] or just the link:{baseurl}/cloud-deployment-guide/features-only[premium plugins deployment from {cloudname}].

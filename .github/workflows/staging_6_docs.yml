@@ -7,7 +7,7 @@ on:
       - '.github/workflows/**'
       - '*'
     branches:
-      - 'staging/TinyMCE_6.0'
+      - 'staging/docs-6'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
       run: sudo yarn global add @antora/cli@3.0.1
 
     - name: (Staging - Docs 6.0) Install dependencies
-      run: yarn install -g
+      run: yarn install
 
     - name: (Staging - Docs 6.0) Build API References
       run: yarn build

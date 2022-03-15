@@ -7,7 +7,7 @@ on:
       - '.github/workflows/**'
       - '*'
     branches:
-      - 'feature-6/**'
+      - 'feature/6**'
 
 jobs:
   build:
@@ -31,13 +31,13 @@ jobs:
       run: sudo yarn global add @antora/cli@3.0.1
 
     - name: (Feature - Docs 6.0) Install dependencies
-      run: yarn install -g
+      run: yarn install
 
     - name: (Feature - Docs 6.0) Build API References
       run: yarn build
 
     - name: (Feature - Docs 6.0) Build Website
-      run: antora ./antora-playbook-staging.yml
+      run: antora ./antora-playbook-dev.yml
 
     - name: (deploy) Prepare for branch deployments
       shell: bash

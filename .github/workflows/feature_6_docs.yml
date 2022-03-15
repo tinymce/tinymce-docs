@@ -27,9 +27,6 @@ jobs:
         cache: 'yarn'
         node-version: ${{ matrix.node-version }}
 
-    - name: Install Antora@3.0.1
-      run: sudo yarn global add @antora/cli@3.0.1
-
     - name: (Feature - Docs 6.0) Install dependencies
       run: yarn install
 
@@ -37,7 +34,7 @@ jobs:
       run: yarn build
 
     - name: (Feature - Docs 6.0) Build Website
-      run: antora ./antora-playbook-dev.yml
+      run: yarn antora ./antora-playbook-dev.yml
 
     - name: (deploy) Prepare for branch deployments
       shell: bash

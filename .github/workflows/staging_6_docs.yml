@@ -27,9 +27,6 @@ jobs:
         cache: 'yarn'
         node-version: ${{ matrix.node-version }}
 
-    - name: Install Antora@3.0.1
-      run: sudo yarn global add @antora/cli@3.0.1
-
     - name: (Staging - Docs 6.0) Install dependencies
       run: yarn install
 
@@ -37,7 +34,7 @@ jobs:
       run: yarn build
 
     - name: (Staging - Docs 6.0) Build Website
-      run: antora ./antora-playbook-staging.yml
+      run: yarn antora ./antora-playbook-staging.yml
 
     - name: (deploy) Upload to S3
       run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs/tinymce/

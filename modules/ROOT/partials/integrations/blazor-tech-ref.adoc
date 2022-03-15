@@ -3,15 +3,16 @@
 
 Covered in this section:
 
-* <<configuringthetinymceblazorintegration,Configuring the TinyMCE Blazor integration>>
-* <<componentbinding,Component binding>>
+* xref:configuringthetinymceblazorintegration[Configuring the TinyMCE Blazor integration]
+* xref:componentbinding[Component binding]
 
 [[configuringthetinymceblazorintegration]]
 === Configuring the TinyMCE Blazor integration
 
 The `TinyMCE.Blazor` `Editor` component accepts the following properties:
 
-```cs
+[source, cs]
+----
 <Editor
   Id="uuid"
   Inline="false"
@@ -23,7 +24,7 @@ The `TinyMCE.Blazor` `Editor` component accepts the following properties:
   ApiKey="your-api-key"
   ClassName="tinymce-wrapper">
 </Editor>
-```
+----
 
 None of the configuration properties are required for the TinyMCE Blazor integration to work.
 
@@ -37,11 +38,12 @@ Type:: String
 
 ===== Example using ApiKey
 
-```cs
+[source, cs]
+----
 <Editor
   ApiKey="your-api-key"
 ></Editor>
-```
+----
 
 ==== CloudChannel
 
@@ -53,11 +55,12 @@ Type:: String
 
 ===== Example using CloudChannel
 
-```cs
+[source, cs]
+----
 <Editor
   CloudChannel="5-dev"
 ></Editor>
-```
+----
 
 ==== Id
 
@@ -69,11 +72,12 @@ Type:: String
 
 ===== Example using Id
 
-```cs
+[source, cs]
+----
 <Editor
   Id="my-unique-identifier"
 ></Editor>
-```
+----
 
 ==== ClassName
 
@@ -87,11 +91,12 @@ Type:: String
 
 Setting a static class name:
 
-```cs
+[source, cs]
+----
 <Editor
   ClassName="my-editor-container"
 ></Editor>
-```
+----
 
 Setting a dynamic class name:
 
@@ -112,11 +117,12 @@ Type:: Boolean
 
 ===== Example using Inline
 
-```cs
+[source, cs]
+----
 <Editor
   Inline="true"
 ></Editor>
-```
+----
 
 ==== Disable
 
@@ -160,11 +166,12 @@ window.sample = {
 
 In your component:
 
-```cs
+[source, cs]
+----
 <Editor
   JsConfSrc="sample"
 ></Editor>
-```
+----
 
 ==== ScriptSrc
 
@@ -174,11 +181,12 @@ Type:: String
 
 ===== Example using ScriptSrc
 
-```cs
+[source, cs]
+----
 <Editor
   ScriptSrc="/path/to/tinymce.min.js"
 ></Editor>
-```
+----
 
 ==== Conf
 
@@ -190,7 +198,8 @@ Type:: Dictionary<string, object>
 
 ===== Example using Conf
 
-```cs
+[source, cs]
+----
 <Editor
   Conf="@editorConf"
 ></Editor>
@@ -201,7 +210,7 @@ Type:: Dictionary<string, object>
     {"width", 400}
   };
 }
-```
+----
 
 [[componentbinding]]
 === Component binding
@@ -212,7 +221,8 @@ The editor component allows developers to bind the contents of editor to a varia
 
 ===== Example using input binding
 
-```cs
+[source, cs]
+----
 <Editor
   @bind-Value=content
 />
@@ -225,7 +235,7 @@ The editor component allows developers to bind the contents of editor to a varia
 @code {
   private string content = "<p>Hello world</p>";
 }
-```
+----
 
 ==== Binding Text output
 
@@ -233,7 +243,8 @@ Starting from TinyMCE.Blazor v0.0.4, the editor exposes the `@bind-Text` propert
 
 ===== Example using output text binding
 
-```cs
+[source, cs]
+----
 <Editor
   @bind-Text=content
 />
@@ -246,4 +257,4 @@ Starting from TinyMCE.Blazor v0.0.4, the editor exposes the `@bind-Text` propert
 @code {
   private string content = "";
 }
-```
+----

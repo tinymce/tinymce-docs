@@ -2,29 +2,29 @@
 
 *Covered in this section:*
 
-* <<supportedangularversions,Supported Angular versions>>
-* <<installingthetinymceangularintegrationusingnpm,Installing the TinyMCE Angular integration using NPM>>
-* <<usingthetinymceangularintegration,Using the TinyMCE Angular integration>>
-* <<configuringtheeditor,Configuring the editor>>
- ** <<apikey,`apiKey`>>
- ** <<cloudchannel,`cloudChannel`>>
- ** <<disabled,`disabled`>>
- ** <<id,`id`>>
- ** <<init,`init`>>
- ** <<initialvalue,`initialValue`>>
- ** <<inline,`inline`>>
- ** <<outputformat,`outputFormat`>>
- ** <<plugins,`plugins`>>
- ** <<tagname,`tagName`>>
- ** <<toolbar,`toolbar`>>
-* <<usingthengmodeldirective,Using the `ngModel` directive>>
- ** <<modelevents,`modelEvents`>>
-* <<usingwithreactiveforms,Using with reactive forms>>
-* <<eventbinding,Event binding>>
- ** <<supportedbrowserevents,Supported browser events>>
- ** <<supportedtinymceevents,Supported TinyMCE events>>
- ** <<allowedevents,`allowedEvents`>>
- ** <<ignoreevents,`ignoreEvents`>>
+* xref:supportedangularversions[Supported Angular versions]
+* xref:installingthetinymceangularintegrationusingnpm[Installing the TinyMCE Angular integration using NPM]
+* xref:usingthetinymceangularintegration[Using the TinyMCE Angular integration]
+* xref:configuringtheeditor[Configuring the editor]
+ ** xref:apikey[`apiKey`]
+ ** xref:cloudchannel[`cloudChannel`]
+ ** xref:disabled[`disabled`]
+ ** xref:id[`id`]
+ ** xref:init[`init`]
+ ** xref:initialvalue[`initialValue`]
+ ** xref:inline[`inline`]
+ ** xref:outputformat[`outputFormat`]
+ ** xref:plugins[`plugins`]
+ ** xref:tagname[`tagName`]
+ ** xref:toolbar[`toolbar`]
+* xref:usingthengmodeldirective[Using the `ngModel` directive]
+ ** xref:modelevents[`modelEvents`]
+* xref:usingwithreactiveforms[Using with reactive forms]
+* xref:eventbinding[Event binding]
+ ** xref:supportedbrowserevents[Supported browser events]
+ ** xref:supportedtinymceevents[Supported TinyMCE events]
+ ** xref:allowedevents[`allowedEvents`]
+ ** xref:ignoreevents[`ignoreEvents`]
 
 [[supportedangularversions]]
 === Supported Angular versions
@@ -126,11 +126,12 @@ include::partial$misc/get-an-api-key.adoc[]
 
 ===== Example: Using `apiKey`
 
-```html
+[source, html]
+----
 <editor
   apiKey="your-api-key">
 </editor>
-```
+----
 
 [[cloudchannel]]
 ==== `cloudChannel`
@@ -147,12 +148,13 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-```html
+[source, html]
+----
 <editor
   apiKey="your-api-key"
   cloudChannel="{productmajorversion}-dev">
 </editor>
-```
+----
 For information {productname} development channels, see: xref:cloud-deployment-guide/editor-plugin-version.adoc#55-testingand5-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
 [[disabled]]
@@ -184,11 +186,12 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ===== Example: Using `id`
 
-```html
+[source, html]
+----
 <editor
   id="uuid"
 ></editor>
-```
+----
 
 [[init]]
 ==== `init`
@@ -226,11 +229,12 @@ Initial content of the editor when the editor is initialized.
 
 ===== Example: Using `initialValue`
 
-```html
+[source, html]
+----
 <editor
   initialValue="Once upon a time...">
 </editor>
-```
+----
 
 [[inline]]
 ==== `inline`
@@ -263,11 +267,12 @@ For information on adding plugins to {productname}, see: link:{baseurl}/plugins/
 
 ===== Example: Using `plugins`
 
-```html
+[source, html]
+----
 <editor
   plugins="lists code">
 </editor>
-```
+----
 
 [[outputformat]]
 ==== `outputFormat`
@@ -282,11 +287,12 @@ Used to specify the format of the content emitted by the `tinymce-angular` compo
 
 ===== Example: Using `outputFormat`
 
-```html
+[source, html]
+----
 <editor
   outputFormat="text">
 </editor>
-```
+----
 
 [[tagname]]
 ==== `tagName`
@@ -320,12 +326,13 @@ For information setting the toolbar for {productname}, see: xref:configure/edito
 
 ===== Example: Using `toolbar`
 
-```html
+[source, html]
+----
 <editor
   plugins="code"
   toolbar="bold italic underline code"
 ></editor>
-```
+----
 
 [[usingthengmodeldirective]]
 === Using the `ngModel` directive
@@ -354,11 +361,12 @@ Used to specify the events that trigger the `NgModelChange` to emit.
 
 ===== Example: Using `modelEvents`
 
-```html
+[source, html]
+----
 <editor
   modelEvents="change input nodechange undo redo"
 ></editor>
-```
+----
 
 [[usingwithreactiveforms]]
 === Using with reactive forms
@@ -471,7 +479,7 @@ By default, all the available events will trigger from the editor to the `tinymc
 
 NOTE: This property requires `tinymce-angular` 4.2.0 or newer
 
-Used to provide an allow-list of valid events to trigger from the editor to the `tinymce-angular` component. By default, the component will emit all the events listed in the <<eventbinding,Event binding section>>.
+Used to provide an allow-list of valid events to trigger from the editor to the `tinymce-angular` component. By default, the component will emit all the events listed in the xref:eventbinding[Event binding section].
 
 *Possible values:* A comma separated list of events to allow.
 
@@ -479,11 +487,12 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 
 ===== Example: Using `allowedEvents`
 
-```html
+[source, html]
+----
 <editor
   allowedEvents="onMouseDown,onKeyDown"
 ></editor>
-```
+----
 
 [[ignoreevents]]
 ==== `ignoreEvents`
@@ -498,8 +507,9 @@ Used to block a list of events from the `tinymce-angular` component.
 
 ===== Example: Using `ignoreEvents`
 
-```html
+[source, html]
+----
 <editor
   ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove"
 ></editor>
-```
+----

@@ -8,6 +8,7 @@ on:
       - '*'
     branches:
       - 'feature/6**'
+      - 'hotfix/6**'
 
 jobs:
   build:

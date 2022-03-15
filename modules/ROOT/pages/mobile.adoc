@@ -33,9 +33,10 @@ include::partial$misc/mobile_platform_compatibility.adoc[]
 
 Add the following `meta` tag to the `head` of pages using {productname} to ensure the mobile user interface functions as intended.
 
-```html
+[source, html]
+----
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-```
+----
 
 To set mobile specific settings, add the setting to the xref:configure/editor-appearance.adoc#mobile[`mobile`] configuration, such as:
 

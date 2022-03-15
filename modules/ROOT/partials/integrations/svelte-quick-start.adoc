@@ -38,7 +38,8 @@ For example:
 +
 _File:_ `src/App.svelte`
 +
-```html
+[source, html]
+----
 <script lang="ts">
   import Editor from '@tinymce/tinymce-svelte';
 </script>
@@ -46,7 +47,7 @@ _File:_ `src/App.svelte`
   <h1>Hello Tiny</h1>
   <Editor></Editor>
 </main>
-```
+----
 
 . Test the application using the Node.js development server.
 ** To start the development server, in the project's root directory, run:

@@ -3,9 +3,9 @@
 
 Covered in this section:
 
-* <<configuringthetinymcesvelteintegration,Configuring the TinyMCE Svelte integration>>
-* <<componentbinding,Component binding>>
-* <<eventbinding,Event binding>>
+* xref:configuringthetinymcesvelteintegration[Configuring the TinyMCE Svelte integration]
+* xref:componentbinding[Component binding]
+* xref:eventbinding[Event binding]
 
 [[configuringthetinymcesvelteintegration]]
 === Configuring the TinyMCE Svelte integration
@@ -38,9 +38,10 @@ Type:: String
 
 ===== Example using apiKey
 
-```jsx
+[source, jsx]
+----
   <Editor apiKey="your-api-key"></Editor>
-```
+----
 
 ==== channel
 
@@ -52,9 +53,10 @@ Type:: String
 
 ===== Example using channel
 
-```jsx
+[source, jsx]
+----
   <Editor channel="5-dev"></Editor>
-```
+----
 
 ==== id
 
@@ -66,9 +68,10 @@ Type:: String
 
 ===== Example using id
 
-```jsx
+[source, jsx]
+----
   <Editor id="my-unique-identifier"></Editor>
-```
+----
 
 ==== inline
 
@@ -80,9 +83,10 @@ Type:: Boolean
 
 ===== Example using inline
 
-```jsx
+[source, jsx]
+----
   <Editor inline="true"></Editor>
-```
+----
 
 ==== disabled
 
@@ -94,9 +98,10 @@ Type:: Boolean
 
 ===== Example using disabled
 
-```jsx
+[source, jsx]
+----
 <Editor disabled="true"></Editor>
-```
+----
 
 ==== scriptSrc
 
@@ -106,9 +111,10 @@ Type:: String
 
 ===== Example using scriptSrc
 
-```jsx
+[source, jsx]
+----
 <Editor scriptSrc="/path/to/tinymce.min.js"></Editor>
-```
+----
 
 ==== conf
 
@@ -120,7 +126,8 @@ Type:: Object
 
 ===== Example using conf
 
-```jsx
+[source, jsx]
+----
 <script>
   let conf = { toolbar: 'undo redo', menubar: false }
 </script>
@@ -129,7 +136,7 @@ Type:: Object
     {conf}
   />
 </main>
-```
+----
 
 [[componentbinding]]
 === Component binding
@@ -140,7 +147,8 @@ The editor component allows developers to bind the contents of editor to a varia
 
 ==== Example of input binding
 
-```jsx
+[source, jsx]
+----
 <script>
   let value = 'some content';
 </script>
@@ -149,7 +157,7 @@ The editor component allows developers to bind the contents of editor to a varia
   <div>{@html value}</div>
   <textarea bind:value={value}></textarea>
 </main>
-```
+----
 
 ==== Binding text output
 
@@ -157,7 +165,8 @@ The editor exposes the `text` property, which developers can `bind` to retrieve 
 
 ==== Example of text binding
 
-```jsx
+[source, jsx]
+----
 <script>
   let text = '';
 </script>
@@ -165,8 +174,7 @@ The editor exposes the `text` property, which developers can `bind` to retrieve 
   <Editor bind:text={text} />
   <div>{text}</div>
 </main>
-
-```
+----
 
 [[eventbinding]]
 === Event binding

@@ -1,0 +1,49 @@
+name: Staging > Tiny docs 6.0
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/**'
+      - '*'
+    branches:
+      - 'staging/docs-6'
+
+jobs:
+  build:
+    name: Build Docs and Deploy
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [14]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        cache: 'yarn'
+        node-version: ${{ matrix.node-version }}
+
+    - name: (Staging - Docs 6.0) Install dependencies
+      run: yarn install
+
+    - name: (Staging - Docs 6.0) Build API References
+      run: yarn build
+
+    - name: (Staging - Docs 6.0) Build Website
+      run: yarn antora ./antora-playbook-staging.yml
+
+    - name: (deploy) Upload to S3
+      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs/tinymce/
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+
+    - name: (deploy) Invalidate Cache
+      run: aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/docs/*"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

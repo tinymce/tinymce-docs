@@ -28,9 +28,9 @@ ____
 
 To create a custom icon pack:
 
-* <<downloadandsetuptheiconpacktemplate,Download and setup the icon pack template>>
-* <<addthesvgfiles,Add the SVG files>>
-* <<buildtheiconpack,Build the icon pack>>
+* xref:downloadandsetuptheiconpacktemplate[Download and setup the icon pack template]
+* xref:addthesvgfiles[Add the SVG files]
+* xref:buildtheiconpack[Build the icon pack]
 
 [[downloadandsetuptheiconpacktemplate]]
 === Download and setup the icon pack template
@@ -127,8 +127,8 @@ All user defined options, including SVGO options, will merge with the default op
 
 An icon pack can be served either:
 
-* <<deploytheiconpackwithtinymce,With {productname}>>
-* <<deploytheiconpackandtinymceseparately,Separate from {productname}>>
+* xref:deploytheiconpackwithtinymce[With {productname}]
+* xref:deploytheiconpackandtinymceseparately[Separate from {productname}]
 
 [[deploytheiconpackwithtinymce]]
 === Deploy the icon pack with TinyMCE

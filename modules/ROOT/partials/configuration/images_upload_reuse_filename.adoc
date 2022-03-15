@@ -1,3 +1,4 @@
+[[images_reuse_filename]]
 == `images_reuse_filename`
 
 By default {productname} will generate unique filename for each uploaded file (for details refer to link:{baseurl}/general-configuration-guide/upload-images/#imageuploaderrequirements[Upload Images]). Sometimes this might have undesirable side-effects. For example, ,when `automatic_uploads` is enabled, every manipulation on the image done with link:{baseurl}/plugins/opensource/imagetools[Image Tools] plugin, results in file upload and each time under a different filename, despite the fact that the image stays the same.

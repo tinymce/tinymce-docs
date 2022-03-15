@@ -5,9 +5,9 @@
 
 {productname} can be added to a Ruby on Rails project using either:
 
-* <<tinymceinrubyonrailsusingthetinycloud,TinyMCE in Ruby on Rails using the Tiny Cloud>>
-* <<tinymceinrubyonrailsusingtinymceself-hosted,TinyMCE in Ruby on Rails using TinyMCE self-hosted>>
-* <<thethird-partytinymcerubyonrailsgem,The third-party TinyMCE Ruby on Rails gem>>
+* xref:tinymceinrubyonrailsusingthetinycloud[TinyMCE in Ruby on Rails using the Tiny Cloud]
+* xref:tinymceinrubyonrailsusingtinymceself-hosted[TinyMCE in Ruby on Rails using TinyMCE self-hosted]
+* xref:thethird-partytinymcerubyonrailsgem[The third-party TinyMCE Ruby on Rails gem]
 
 [[tinymceinrubyonrailsusingthetinycloud]]
 == TinyMCE in Ruby on Rails using the Tiny Cloud
@@ -49,9 +49,10 @@ include::partial$integrations/rails-basic-proj.adoc[]
 
 . On a command line, from the project's root directory, start the Ruby on Rails server.
 +
-```sh
+[source, sh]
+----
 rails server
-```
+----
 
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: \http://localhost:3000/).
 

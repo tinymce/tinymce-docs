@@ -79,6 +79,7 @@ The `generator` is a callback function used to specify how a table cell of a val
 
 If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: <<generatorinfo,GeneratorInfo>>.
 
+[[generatorinfo]]
 ===== GeneratorInfo
 
 An object with the following properties is passed to the generator callback function as the `info` parameter.

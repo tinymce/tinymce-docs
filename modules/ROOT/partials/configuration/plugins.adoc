@@ -16,7 +16,7 @@ Type : `+String+` or `+Array+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins : 'advlist autolink link image lists charmap preview'
+  plugins: 'advlist autolink link image lists charmap preview'
 });
 ----
 
@@ -26,7 +26,7 @@ tinymce.init({
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins : [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview' ]
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview' ]
 });
 ----
 

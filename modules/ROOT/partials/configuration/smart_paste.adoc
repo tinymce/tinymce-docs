@@ -16,13 +16,24 @@ Possible Values : `+true+`, `+false+`
 
 === Example: Using `+smart_paste+`
 
+ifdef::plugincode[]
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
-  menubar: 'edit',
   toolbar: 'paste',
   smart_paste: false
 });
 ----
+endif::[]
+ifndef::plugincode[]
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'paste',
+  smart_paste: false
+});
+----
+endif::[]

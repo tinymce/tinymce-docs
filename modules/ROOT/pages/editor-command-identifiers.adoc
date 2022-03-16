@@ -74,7 +74,7 @@ The commands on the following table are provided by the {productname} editor and
 |mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
 |mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
 |mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
-|ToggleSidebar |Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`+<sidebar-name>+`_).
+|ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (_`+<sidebar-name>+`_).
 |ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |Indent |Indents the current selection.
 |Outdent |Outdents the current selection.
@@ -92,11 +92,13 @@ The commands on the following table are provided by the {productname} editor and
 |mceAddUndoLevel |Adds an undo level.
 |mceEndUndoLevel |Adds an undo level.
 |mceCleanup |Copies the current editor content and sets the content using the copy.
-|mceSelectNode |Selects a node in the editor. The target node is passed as the value (_`+<DOM_node>+`_).
+|mceSelectNode |Selects a node in the editor. The target node is passed as the value (`_<DOM_node>_`).
 |mceSelectNodeDepth |Selects the parent DOM node 'n' levels above the current node.
-|mceRemoveNode |Removes the current node or the target node passed as the value (_`+<DOM_node>+`_).
+|mceRemoveNode |Removes the current node or the target node passed as the value (`_<DOM_node>_`).
 |mceFocus |Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.
 |mcePrint |Opens the browser's print dialog for the current page.
+|mceInsertClipboardContent |Triggers a paste event at the cursor location or over the current selection. The command requires an object with: `+html+` containing the HTML content, or `+text+` containing plain text.
+|mceTogglePlainTextPaste |Toggles paste as plain text.
 |===
 
 .Examples
@@ -157,6 +159,11 @@ tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceFocus');
 tinymce.activeEditor.execCommand('mcePrint');
+tinymce.activeEditor.execCommand('mceInsertClipboardContent', false, {
+  html: '<p>Hello, World!</p>'
+});
+tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');
+
 ----
 
 [[plugincommands]]
@@ -188,7 +195,6 @@ Commands are available for the following plugins:
 * xref:media[Media]
 * xref:nonbreakingspace[Nonbreaking Space]
 * xref:pagebreak[Page Break]
-* xref:paste[Paste]
 * xref:permanentpen[Permanent Pen]
 * xref:powerpaste[PowerPaste]
 * xref:preview[Preview]
@@ -370,13 +376,6 @@ include::partial$commands/nbsp-cmds.adoc[leveloffset=+3]
 The following command requires the xref:pagebreak.adoc[Page Break (`+pagebreak+`)] plugin.
 
 include::partial$commands/pagebreak-cmds.adoc[leveloffset=+3]
-
-[[paste]]
-==== Paste
-
-The following commands require the xref:paste.adoc[Paste (`+paste+`)] plugin.
-
-include::partial$commands/paste-cmds.adoc[leveloffset=+3]
 
 [[permanentpen]]
 ==== Permanent Pen

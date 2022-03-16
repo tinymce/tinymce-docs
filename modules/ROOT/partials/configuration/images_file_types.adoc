@@ -4,7 +4,7 @@
 This option configures which image file formats are accepted by the editor. Changing this option will adjust the following editor behaviour:
 
 * Which image file formats are allowed to be uploaded in the xref:image.adoc[Image] dialog.
-* Which image file formats are recognized and placed in an `+img+` element by the xref:paste.adoc[Paste] and xref:introduction-to-powerpaste.adoc[PowerPaste] `+smart_paste+` functionality.
+* Which image file formats are recognized and placed in an `+img+` element by the core paste and xref:introduction-to-powerpaste.adoc[PowerPaste] `+smart_paste+` functionality.
 
 Type: `+String+`
 
@@ -18,7 +18,7 @@ Possible Values: A list of valid web image file extensions. For a list of possib
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image paste',
+  plugins: 'image',
   images_file_types: 'jpg,svg,webp'
 });
 ----

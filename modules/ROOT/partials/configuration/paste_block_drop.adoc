@@ -1,14 +1,22 @@
-[#{plugincode}_block_drop]
-== `{plugincode}_block_drop`
+ifdef::plugincode[]
+:pasteblockdropname: {plugincode}_block_drop
+endif::[]
+ifndef::plugincode[]
+:pasteblockdropname: paste_block_drop
+endif::[]
 
-Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When `{plugincode}]_block_drop` is set to true the plugin will disable drag and dropping content into the editor. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
+[#{pasteblockdropname}]
+== `{pasteblockdropname}`
+
+Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When `{pasteblockdropname}` is set to true dragging and dropping content into the editor will be disabled. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
 
 Default value : `+false+`
 
 Possible values : `+true+`, `+false+`
 
-=== Example: Using `{plugincode}_block_drop`
+=== Example: Using `{pasteblockdropname}`
 
+ifdef::plugincode[]
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
@@ -17,3 +25,13 @@ tinymce.init({
   {plugincode}_block_drop: false
 });
 ----
+endif::[]
+ifndef::plugincode[]
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  paste_block_drop: false
+});
+----
+endif::[]

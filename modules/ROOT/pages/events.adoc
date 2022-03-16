@@ -157,6 +157,9 @@ The following events are provided by the {productname} editor.
 |ResolveName |`+{ name: string, target: Element }+` |(iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.
 |BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
 |OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
+|PastePreProcess |`+{ content: string }+` |Fired before the content is parsed from the clipboard.
+|PastePostProcess |`+{ node: Element }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
+|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
 == Plugin events
@@ -174,7 +177,6 @@ The following plugins provide events.
 * xref:linkcheckerevents[Link checker events]
 * xref:listsevents[Lists events]
 * xref:mediaembedevents[Media Embed events]
-* xref:pasteevents[Paste events]
 * xref:permanentpenevents[Permanent Pen events]
 * xref:powerpasteevents[PowerPaste events]
 * xref:spellcheckerproevents[Spell Checker Pro events]
@@ -292,19 +294,6 @@ The following event is provided by the xref:introduction-to-mediaembed.adoc[Medi
 |===
 |Name |Data |Description
 |MediaEmbedError |`+{ message: string }+` |Fired when a media embed error occurs, such as the Media Embed service can't be reached.
-|===
-
-[[pasteevents]]
-=== Paste events
-
-The following events are provided by the xref:paste.adoc[Paste plugin].
-
-[cols="1,1,2",options="header"]
-|===
-|Name |Data |Description
-|PastePreProcess |`+{ content: string, wordContent: boolean }+` |Fired before the content is parsed from the clipboard.
-|PastePostProcess |`+{ node: Element, wordContent: boolean }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
-|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
 [[permanentpenevents]]

@@ -4,6 +4,23 @@ include::6.0-release-notes.adoc#things-we-renamed
 
 include::6.0-release-notes.adoc#default-value-changes
 
+
+== APIs
+
+=== Changed APIs
+
+==== `closeButton` and `timeout`
+
+* Previously, using `closeButton` to disable the close button presented as part of a _Notification_ required a `timeout` value to also be set.
+
+  In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
+
+  Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
+
+NOTE: this does not change the behaviour of existing _Notifications_. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification without a close button that automatically closes after displaying for 5 seconds.
+
+
+
 == Commands and queries
 
 === New and improved commands and queries
@@ -34,7 +51,7 @@ NOTE: the `mceInsertTable` command is still the command for inserting a table wi
 
 Previously, `mceAddEditor` and `mceToggleEditor` used the `editorManager.settings` values to set the `id` and UI and UX options for a new {productname} editor instance.
 
-`editorManager.settings` is no longer used.
+`editorManager.settings` is not used at all in {productname} 6.
 
 Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object created when the command is run.
 
@@ -139,13 +156,22 @@ NOTE: as of this release, there are no known cases of this change causing media 
 
 As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
 
-In conjunction with this change, two changes have been made:
+In conjunction with this change, three changes have been made:
 
 1. A `paste` default has changed. The `paste_data_images` option now defaults to `true`.
 
    When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
 
-2. The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
+2. The `mceInsertClipboardContent` argument, `content`, has been re-named. It is now `html`.
+
+   The new name is a more accurate reflection of what sort of data the argument passes.
+   
+   The `content` argument can no longer be used with `mceInsertClipboardContent`. If it is used [what happens?]
+  
+NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not been changed.
+
+
+3. The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
 
    There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin.
 

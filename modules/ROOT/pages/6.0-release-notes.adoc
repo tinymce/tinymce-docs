@@ -61,16 +61,21 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 [id=new-and-improved-apis]
 === new and improved APIs
 
-==== editor.options
-
-- New `editor.options` API to replace the old `editor.settings` and `editor.getParam` APIs
-
-[id=new-and-improved-apis-editor-options]
-==== editor.options
+==== `Editor.options`
 
 * The new `editor.options` API replaces both `editor.settings` and `editor.getParam`.
 
-- changed
+=== Changed APIs
+
+==== `closeButton` and `timeout`
+
+* Previously, using `closeButton` to disable the close button presented as part of a _Notification_ required a `timeout` value to also be set.
+
+  In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
+
+  Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
+
+
 - fixed
 - added
 
@@ -245,20 +250,27 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
 * The `noneditable` plugin is no longer a plugin. It is now a Core part of {productname} 6.0.
 
-   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+  In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
    
-   All references to `noneditable` should be removed from your plugin configuration.
+  All references to `noneditable` should be removed from your plugin configuration.
 
 [id=changed-plugins-paste]
 ==== Paste
 
 * The `paste` plugin’s functionality is now a Core part of {productname} 6.0.
 
-   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
+  In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
    
-   All references to `paste` should be removed from your plugin configuration.
+  All references to `paste` should be removed from your plugin configuration.
 
 * The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
+
+* The `mceInsertClipboardContent` argument, `content`, has been re-named. It is now `html`.
+
+  The new name is a more accurate reflection of what sort of data the argument passes.
+  
+  NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not been changed.
+
 
 [id=changed-plugins-print]
 ==== Print
@@ -494,7 +506,8 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
 ==== buttonType
 
-// The primary property on dialog buttons has been deprecated. Use the new buttonType property instead #TINY-8304
+// The primary property on dialog buttons has been deprecated. Use the
+// new buttonType property instead #TINY-8304
 //  
 //    Also add this to release notes as
 //  

@@ -1,34 +1,90 @@
 = TinyMCE 5.x -> 6.0 Migration Guide
 
-== Renamed things
+include::6.0-release-notes.adoc#things-we-renamed
 
-The xref:6.0-release-notes.adoc#things-we-renamed[_{productname} 6.0 Release Notes_] includes a table of every re-named API, Function, Command, Option, and User Interface element.
+include::6.0-release-notes.adoc#default-value-changes
 
-The table also includes notes regarding what, if any, actions are necessary consequent to upgrading.
+== Commands and queries
 
-NOTE: editing configurations to cater to re-named items is a persistent necessary action.
+=== New and improved commands and queries
 
-== Removed plugins
+==== `mceInsertTableDialog`
 
-Five `plugins` were removed because their functionality is now a Core part of {productname} 6.0. These five plugins were:
+Previously, the `mceInsertTable` command worked in two modes.
 
-* `noneditable`
+If invoked without arguments —
 
-* `paste`
+`tinymce.activeEditor.execCommand('mceInsertTable');`
 
-* `print`
+— the command opened the *Insert Table* dialogue box.
 
-* `textpattern_patterns`
+If invoked with arguments — 
 
-* `hr`
+`tinymce.activeEditor.execCommand('mceInsertTable', false, { rows: 2, columns: 2 });`
 
-All references to any of these plugins should be removed from your plugin configuration.
+— the command inserted a table, with the specified properties, directly into the document without opening the *Insert Table* dialog box.
 
-See below for other potential issues with these, now Core, functions.
+In {productname} 6.0, the `mceInsertTableDialog` command must be used to invoke the *Insert Table* dialog box.
+
+NOTE: the `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input. However, using the `mceInsertTable` command without arguments now throws a console error: `model.min.js:4 Uncaught TypeError: Cannot read properties of undefined (reading 'rows')`.
+
+
+== Options
+
+=== Changed options
+
+==== link_default_protocol
+
+* The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
+
+  It now defaults to `https`. Previously it defaulted to `http`.
+  
+  NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
+
 
 == Plugins
 
-=== ImageTools
+=== Removed plugins
+
+All references to any of these plugins should be removed from plugin configurations.
+
+See below for specific documentation of potential migration issues, if any, regarding these removed plugins.
+
+* Eight `plugins` were removed because their functionality is now a Core part of {productname} 6.0:
+
+  1. `colorpicker`
+  
+  2. `contextmenu`
+  
+  3. `hr`
+  
+  4. `noneditable`
+
+  5. `paste`
+
+  6. `print`
+
+  7. `textcolor`
+
+  8. `textpattern_patterns`
+
+These plugins were already empty. As of {productname} 6.0, however, they are gone entirely.
+
+* Three plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[announcement]:
+
+  1. `fullpage`
+
+  2. `bbcode`
+  
+  3. `legacyoutput`
+
+* One plugin was removed as no longer supported:
+
+  1. `spellchecker`
+
+NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
+
+=== ImageTools                        
 
 As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Core open source editor.
 
@@ -107,7 +163,70 @@ After upgrading:
 * remove `textpattern` from your plugins list.
 
 
-// everything below here needs to be put into the structure above, once said structure is put into place.
+== Schema
+
+=== New and improved schema
+
+* {productname} 6.0 instances now use HTML 5 as the default schema.
+
+  The previous default was, for practical purposes, also HTML 5, but no specific schema was set. This change formalises and makes explicit what was, previously, only implicit.
+  
+  NOTE: `html5-strict` is still an available schema option and is unchanged from {productname} 5.x.
+
+* The assignment operator character — `:` — has been changed to `~` for the `valid_elements` and `extended_valid_elements` schemata.
+
+  The `:` is also used to assign an [xlink:href] rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
+  
+  This change allows both schemata to set attribute values for the `valid_elements` and `extended_valid_elements` options using the `~` character and assign [xlink:href] rules as expected.
+  
+  Existing configurations using either of these schemata must be edited so the `~` character is used for `valid_elements` and `extended_valid_elements` options configurations. The `:` character should no longer be used to set attribute values in these configurations.
+  
+  Also, when assigning `[xlink:href]` rules, the colon character is no longer escaped. `[xlink\\:href]` can now be written plainly, as `[xlink:href]`.
+  
+  NOTE: existing configurations that included escaped colons will continue to work as expected. Editing such configs to remove the escape characters will improve readability but is not necessary for functionality.
+
+
+  
+
+
+== UI elements and components
+
+[id=ui-elements-and-components-editor-text-entry-height]
+=== Editor text entry height
+
+In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area. In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
+
+The new default can be over-ridden by setting the element’s `height` to a value larger than 400px using CSS. Setting the elmement’s `height` to a value less than 400px using CSS will *not* reduce the height of the text entry area, however.
+
+NOTE: {productname} 6.0 honours the `config.height` setting. To prevent text entry areas from disappearing during re-sizing, however, the `min-height` option of 100px cannot be over-ridden
+
+
+
+// 1. The default height of editor has been increased from 200px to 400px
+//    to improve the usability of the editor #TINY-6860
+// 
+//    Need to preserve the 200px height? _[here’s how?]_
+//    
+//    Also add this to release notes as
+//    
+//    1. Improved UI element
+//    
+//       Both the above change and the related change: The default
+//       minimum height of editor has been changed to 100px to prevent
+//       the UI disappearing while resizing #TINY-6860
+// 
+// === Editor text entry height
+// 
+// In {productname} 5.x, editors without a specified `height` setting
+// defaulted to 200px. In {productname} 6.0, editors without a
+// specified `height` setting default to 400px.
+// 
+// See <<ui-elements-and-components-editor-text-entry-height>> for details
+
+
+
+
+// where does the change in how tables are positioned fit in the above structure?
 
 == Tables
 
@@ -136,24 +255,4 @@ However, when upgrading to {productname} 6.0, there are two things to be aware o
 
 2. If the old behaviour is required, a custom format will need to be
    created.
-
-=== new command: `mceInsertTableDialog`
-
-Previously, the `mceInsertTable` command worked in two modes.
-
-If invoked without arguments —
-
-`tinymce.activeEditor.execCommand('mceInsertTable');`
-
-— the command opened the *Insert Table* dialogue box.
-
-If invoked with arguments — 
-
-`tinymce.activeEditor.execCommand('mceInsertTable', false, { rows: 2, columns: 2 });`
-
-— the command inserted a table, with the specified properties, directly into the document without opening the *Insert Table* dialogue box.
-
-In {productname} 6.0, the `mceInsertTableDialog` command must be used to invoke the *Insert Table* dialogue box.
-
-NOTE: the `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input. However, using the `mceInsertTable` command without arguments [what happens now?]
 

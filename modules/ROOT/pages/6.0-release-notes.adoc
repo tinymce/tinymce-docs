@@ -44,10 +44,15 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 [id=default-value-changes]
 == Default value changes
 
-| element               | old value | new value | notes                                                             | for more information                |
-| --------------------- | --------- | --------- | ----------------------------------------------------------------- | ----------------------------------- |
-| `table_style_by_css`  | `false`   | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>       |
-| `table_use_colgroups` | `false`   | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>       |
+| element                 | old value | new value | notes                                                             | for more information                                               |
+| ----------------------- | --------- | --------- | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `table_style_by_css`    | `false`   | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>                                      |
+| `table_use_colgroups`   | `false`   | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>                                      |
+| `config.height`         | `200px`   | `400px`   | Changed to improve user experience.                               | see <<ui-and-ux-elements-and-components-editor-text-entry-height>> |
+| `link_default_protocol` | `http`    | `https`   | Changed as part of modernising {productname}’s default behaviour. |                                                                    |
+
+
+== Known issues
 
 
 [id=apis]
@@ -55,6 +60,10 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 [id=new-and-improved-apis]
 === new and improved APIs
+
+==== editor.options
+
+- New `editor.options` API to replace the old `editor.settings` and `editor.getParam` APIs
 
 [id=new-and-improved-apis-editor-options]
 ==== editor.options
@@ -82,19 +91,31 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 == Commands and queries
 
-- new and improved
-- changed
-- fixed
-- added
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+=== New and improved commands and queries
+
+==== mceInsertTableDialog
+
+* `mceInsertTableDialog` is the new command for invoking an _Insert Table_ dialogue box.
+
+   The previous command, `mceInsertTable`, no longer works to invoke an _Insert Table_ dialog box: use the `mceInsertTableDialog` command instead.
+
+   The `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user input.
+
+
+=== Changed commands and queries
+
+=== Fixed commands and queries
+
+=== Femoved or deprecated commands and queries
+
+// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
 
 == Events
 
 - new and improved
 - changed
 - fixed
-- added
 - removed or deprecated
     - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
 
@@ -103,7 +124,6 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 - new and improved
 - changed
 - fixed
-- added
 - removed or deprecated
     - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
 
@@ -112,18 +132,32 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 - new and improved
 - changed
 - fixed
-- added
 - removed or deprecated
     - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
 
 == Options
 
-- new and improved
-- changed
-- fixed
-- added
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+=== New and improved options
+
+=== Changed options
+
+==== link_default_protocol
+
+* The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
+
+  It now defaults to `https`. Previously it defaulted to `http`.
+
+  NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
+  
+
+=== Fixed options
+
+=== Added options
+
+=== Removed or deprecated options
+
+// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
 
 == Parsing and serialisation
 
@@ -416,18 +450,52 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
 == Schema
 
-- new and improved
-- changed
-- fixed
-- added
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+=== New and improved schema
 
-== UI elements and components
+* {productname} 6.0 instances now use HTML 5 as the default schema.
 
-- new and improved
-- changed
-- fixed
-- added
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+  The previous default was, for practical purposes, also HTML 5 but no specific schema was set. This change formalises and makes explicit what was, previously, only implicit.
+
+  NOTE: `html5-strict` is still an available schema option and is unchanged from {productname} 5.x.
+
+* The assignment operator character — `:` — has been changed to `~` for the `valid_elements` and `extended_valid_elements` schemata.
+
+  The `:` is also used to assign an [xlink:href] rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
+  
+  This change allows both schemata to set attribute values for the `valid_elements` and `extended_valid_elements` options using the `~` character and assign [xlink:href] rules as expected.
+
+
+
+=== Changed schema
+
+
+
+=== Fixed schema
+
+=== Added schema
+
+=== Removed or deprecated schema
+
+// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
+== UI and UX elements and components
+
+=== new and improved UI and UX elements and components
+
+[id=ui-and-ux-elements-and-components-editor-text-entry-height]
+==== Editor text entry height
+
+* In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area.
+
+  In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
+
+
+=== changed
+
+=== fixed
+
+=== added
+
+=== removed or deprecated
+
+// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.

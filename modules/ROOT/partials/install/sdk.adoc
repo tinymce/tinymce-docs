@@ -21,7 +21,7 @@ Since {productname} lets you identify replaceable elements via a CSS selector, a
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {productname} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-[,html]
+[,html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>

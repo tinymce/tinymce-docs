@@ -264,9 +264,7 @@ Type : `+Object+`
 ----
 <Editor
   init={{
-    plugins: [
-     'lists link image paste help wordcount'
-    ],
+    plugins: 'lists link image paste help wordcount',
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }}
 />

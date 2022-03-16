@@ -21,11 +21,8 @@ var emailBodyConfig = {
   menubar: false,
   inline: true,
   plugins: [
-    'link',
-    'lists',
-    'powerpaste',
-    'autolink',
-    'tinymcespellchecker'
+    'link', 'lists', 'powerpaste',
+    'autolink', 'tinymcespellchecker'
   ],
   toolbar: [
     'undo redo | bold italic underline | fontselect fontsizeselect',

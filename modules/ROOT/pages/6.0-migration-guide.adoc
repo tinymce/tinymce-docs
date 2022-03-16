@@ -28,6 +28,24 @@ In {productname} 6.0, the `mceInsertTableDialog` command must be used to invoke 
 
 NOTE: the `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input. However, using the `mceInsertTable` command without arguments now throws a console error: `model.min.js:4 Uncaught TypeError: Cannot read properties of undefined (reading 'rows')`.
 
+=== Changed commands and queries
+
+==== `mceAddEditor` and `mceToggleEditor`
+
+Previously, `mceAddEditor` and `mceToggleEditor` used the `editorManager.settings` values to set the `id` and UI and UX options for a new {productname} editor instance.
+
+`editorManager.settings` is no longer used.
+
+Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object created when the command is run.
+
+For example —
+
+`tinyMCE.execCommand('mceAddEdit', false, { id: 'ed-1', options: { readonly: false, toolbar: 'bold italic strikethrough' } })`
+
+— finds a `textarea` with id `ed-1` and turns it into a working {productname} editor that displays the _bold_, _italic_, and _strikethrough_ options in the editor toolbar.
+
+
+
 
 == Options
 
@@ -35,11 +53,11 @@ NOTE: the `mceInsertTable` command is still the command for inserting a table wi
 
 ==== link_default_protocol
 
-* The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
+The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
 
-  It now defaults to `https`. Previously it defaulted to `http`.
+It now defaults to `https`. Previously it defaulted to `http`.
   
-  NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
+NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
 
 
 == Plugins
@@ -50,37 +68,37 @@ All references to any of these plugins should be removed from plugin configurati
 
 See below for specific documentation of potential migration issues, if any, regarding these removed plugins.
 
-* Eight `plugins` were removed because their functionality is now a Core part of {productname} 6.0:
+Eight `plugins` were removed because their functionality is now a Core part of {productname} 6.0:
 
-  1. `colorpicker`
+1. `colorpicker`
   
-  2. `contextmenu`
+2. `contextmenu`
+
+3. `hr`
   
-  3. `hr`
-  
-  4. `noneditable`
+4. `noneditable`
 
-  5. `paste`
+5. `paste`
 
-  6. `print`
+6. `print`
 
-  7. `textcolor`
+7. `textcolor`
 
-  8. `textpattern_patterns`
+8. `textpattern_patterns`
 
 These plugins were already empty. As of {productname} 6.0, however, they are gone entirely.
 
-* Three plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[announcement]:
+Three plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[announcement]:
 
-  1. `fullpage`
+1. `fullpage`
 
-  2. `bbcode`
+2. `bbcode`
   
-  3. `legacyoutput`
+3. `legacyoutput`
 
-* One plugin was removed as no longer supported:
+One plugin was removed as no longer supported:
 
-  1. `spellchecker`
+1. `spellchecker`
 
 NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
 
@@ -200,29 +218,16 @@ The new default can be over-ridden by setting the element’s `height` to a valu
 
 NOTE: {productname} 6.0 honours the `config.height` setting. To prevent text entry areas from disappearing during re-sizing, however, the `min-height` option of 100px cannot be over-ridden
 
-
-
-// 1. The default height of editor has been increased from 200px to 400px
-//    to improve the usability of the editor #TINY-6860
-// 
 //    Need to preserve the 200px height? _[here’s how?]_
-//    
-//    Also add this to release notes as
-//    
-//    1. Improved UI element
-//    
-//       Both the above change and the related change: The default
-//       minimum height of editor has been changed to 100px to prevent
-//       the UI disappearing while resizing #TINY-6860
-// 
-// === Editor text entry height
-// 
-// In {productname} 5.x, editors without a specified `height` setting
-// defaulted to 200px. In {productname} 6.0, editors without a
-// specified `height` setting default to 400px.
-// 
-// See <<ui-elements-and-components-editor-text-entry-height>> for details
 
+=== buttonType
+
+// The primary property on dialog buttons has been deprecated. Use the
+// new buttonType property instead #TINY-8304
+//  
+//    Also add this to release notes as
+//  
+//  1. Changed UI element or component
 
 
 

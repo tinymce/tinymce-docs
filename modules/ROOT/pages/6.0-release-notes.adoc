@@ -490,7 +490,15 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
   In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
 
 
-=== changed
+=== Changed UI and UX elements and components
+
+==== buttonType
+
+// The primary property on dialog buttons has been deprecated. Use the new buttonType property instead #TINY-8304
+//  
+//    Also add this to release notes as
+//  
+//  1. Changed UI element or component
 
 === fixed
 

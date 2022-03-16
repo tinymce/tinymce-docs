@@ -37,13 +37,13 @@ jobs:
       run: yarn antora ./antora-playbook-staging.yml
 
     - name: (deploy) Upload to S3
-      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs/tinymce/
+      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
 
     - name: (deploy) Invalidate Cache
-      run: aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/docs/*"
+      run: aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/*"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

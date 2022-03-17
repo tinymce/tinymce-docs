@@ -36,14 +36,19 @@ jobs:
     - name: (Staging - Docs 6.0) Build Website
       run: yarn antora ./antora-playbook-staging.yml
 
+    - name: (Staging - Docs 6.0) Rename sitemap.xml (Temporary solution - Amit)
+      shell: bash
+      run: |
+        mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml
+
     - name: (deploy) Upload to S3
-      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging
+      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
 
     - name: (deploy) Invalidate Cache
-      run: aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/*"
+      run: aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/docs/*"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

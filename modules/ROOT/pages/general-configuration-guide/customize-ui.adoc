@@ -86,6 +86,7 @@ See the xref:configure/editor-appearance.adoc#max_height[max_height], xref:confi
 
 The editable area can also automatically resize itself as the user enters content into the iframe with the xref:plugins/opensource/autoresize.adoc[Autoresize plugin]. Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the xref:configure/editor-appearance.adoc#resize[resize] configuration option.
 
+[[customizingtheeditableareawithcontent_css]]
 == Customizing the editable area with content_css
 
 Use the xref:configure/content-appearance.adoc#content_css[`content_css`] customization option to ensure that {productname}'s editable area has the same styling as the surrounding content.

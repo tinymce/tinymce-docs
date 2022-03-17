@@ -19,15 +19,15 @@ To configure the annotate button on your toolbar:
 
 [source,js]
 ----
-setup: function(ed) {
-  ed.ui.registry.addButton('annotate-alpha', {
+setup: (editor) => {
+  editor.ui.registry.addButton('annotate-alpha', {
     text: 'Annotate',
-    onAction: function() {
-      var comment = prompt('Comment with?');
-      ed.annotator.annotate('alpha', {
+    onAction: () => {
+      const comment = prompt('Comment with?');
+      editor.annotator.annotate('alpha', {
         comment
       });
-      ed.focus();
+      editor.focus();
     }
   })
 }
@@ -40,17 +40,15 @@ The annotator API supports multiple annotation functions. Each annotation functi
 
 [source,js]
 ----
-ed.on('init', function() {
+editor.on('init', () => {
   editor.annotator.register('alpha', {
     persistent: true,
-    decorate: function (uid, data) {
-      return {
-        attributes: {
-          'data-mce-comment': data.comment ? data.comment : '',
-          'data-mce-author': data.author ? data.author : 'anonymous'
-        }
-      };
-    }
+    decorate: (uid, data) => ({
+      attributes: {
+        'data-mce-comment': data.comment ? data.comment : '',
+        'data-mce-author': data.author ? data.author : 'anonymous'
+      }
+    })
   });
 });
 ----
@@ -89,10 +87,10 @@ Example of specifying your own `+uid+`:
 
 [source,js]
 ----
-  editor.annotator.annotate('alpha', {
-    uid: 'use-this-id-instead-of-your-random-one-annotator!',
-    author: 'me'
-  });
+editor.annotator.annotate('alpha', {
+  uid: 'use-this-id-instead-of-your-random-one-annotator!',
+  author: 'me'
+});
 ----
 
 [[listening-to-selection-events]]
@@ -102,12 +100,12 @@ The Annotator API notifies the user when the selection cursor moves in or out of
 
 [source,js]
 ----
-editor.annotator.annotationChanged('alpha', function (state, name, obj) {
+editor.annotator.annotationChanged('alpha', (state, name, obj) => {
   if (state === false) {
     // NOTE: name will be 'alpha' here
-    console.log('We are no longer in a ' + name + ' area');
+    console.log(`We are no longer in a ${name} area`);
   } else {
-    console.log('We are now in comment: ' + obj.uid);
+    console.log(`We are now in comment: ${obj.uid}`);
   }
 });
 ----
@@ -144,8 +142,8 @@ The Annotator API allows retrieving an object of all of the uids for a particula
 
 [source,js]
 ----
-var annotations = editor.annotator.getAll('alpha');
-var nodesInFirstUid = annotations['first-uid'];
+const annotations = editor.annotator.getAll('alpha');
+const nodesInFirstUid = annotations['first-uid'];
 ----
 
 Assuming that there is a uid called `+first-uid+`, the above code shows how to access the nodes used for making that annotation. The full API is:

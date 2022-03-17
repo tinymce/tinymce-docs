@@ -3,8 +3,7 @@ tinymce.init({
   height: 500,
   toolbar_mode: 'floating',
   toolbar: 'alignment',
-
-  setup: function (editor) {
+  setup: (editor) => {
 
     /* example, adding a group toolbar button */
     editor.ui.registry.addGroupToolbarButton('alignment', {

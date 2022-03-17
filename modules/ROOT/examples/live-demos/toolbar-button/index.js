@@ -1,26 +1,18 @@
 tinymce.init({
   selector: 'textarea#toolbar-button',
   toolbar: 'basicDateButton selectiveDateButton toggleDateButton splitDateButton menuDateButton',
-  setup: function (editor) {
+  setup: (editor) => {
 
     /* Helper functions */
-    var toDateHtml = function (date) {
-      return '<time datetime="' + date.toString() + '">' + date.toDateString() + '</time>';
-    };
-    var toGmtHtml = function (date) {
-      return '<time datetime="' + date.toString() + '">' + date.toGMTString() + '</time>';
-    };
-    var toIsoHtml = function (date) {
-      return '<time datetime="' + date.toString() + '">' + date.toISOString() + '</time>';
-    };
+    const toDateHtml = (date) => `<time datetime="${date.toString()}">${date.toDateString()}</time>`;
+    const toGmtHtml = (date) => `<time datetime="${date.toString()}">${date.toGMTString()}</time>`;
+    const toIsoHtml = (date) => `<time datetime="${date.toString()}">${date.toISOString()}</time>`;
 
     /* Basic button that just inserts the date */
     editor.ui.registry.addButton('basicDateButton', {
       text: 'Insert Date',
       tooltip: 'Insert Current Date',
-      onAction: function (_) {
-        editor.insertContent(toDateHtml(new Date()));
-      }
+      onAction: (_) => editor.insertContent(toDateHtml(new Date()))
     });
 
     /* Basic button that inserts the date, but only if the cursor isn't currently in a "time" element */
@@ -28,17 +20,13 @@ tinymce.init({
       icon: 'insert-time',
       tooltip: 'Insert Current Date',
       disabled: true,
-      onAction: function (_) {
-        editor.insertContent(toDateHtml(new Date()));
-      },
-      onSetup: function (buttonApi) {
-        var editorEventCallback = function (eventApi) {
-          buttonApi.setDisabled(eventApi.element.nodeName.toLowerCase() === 'time');
+      onAction: (_) => editor.insertContent(toDateHtml(new Date())),
+      onSetup: (buttonApi) => {
+        const editorEventCallback = (eventApi) => {
+          buttonApi.setEnabled(eventApi.element.nodeName.toLowerCase() !== 'time');
         };
         editor.on('NodeChange', editorEventCallback);
-        return function (buttonApi) {
-          editor.off('NodeChange', editorEventCallback);
-        }
+        return () => editor.off('NodeChange', editorEventCallback);
       }
     });
 
@@ -47,31 +35,23 @@ tinymce.init({
     editor.ui.registry.addToggleButton('toggleDateButton', {
       icon: 'insert-time',
       tooltip: 'Insert Current Date',
-      onAction: function (_) {
-        editor.insertContent(toDateHtml(new Date()));
-      },
-      onSetup: function (buttonApi) {
-        var editorEventCallback = function (eventApi) {
+      onAction: (_) => editor.insertContent(toDateHtml(new Date())),
+      onSetup: (buttonApi) => {
+        const editorEventCallback = (eventApi) => {
           buttonApi.setActive(eventApi.element.nodeName.toLowerCase() === 'time');
         };
         editor.on('NodeChange', editorEventCallback);
-        return function (buttonApi) {
-          editor.off('NodeChange', editorEventCallback);
-        }
+        return () => editor.off('NodeChange', editorEventCallback);
       }
     });
 
     /* Split button that lists 3 formats, and inserts the date in the selected format when clicked */
     editor.ui.registry.addSplitButton('splitDateButton', {
       text: 'Insert Date',
-      onAction: function (_) {
-        editor.insertContent('<p>Its Friday!</p>')
-      },
-      onItemAction: function (buttonApi, value) {
-        editor.insertContent(value);
-      },
-      fetch: function (callback) {
-        var items = [
+      onAction: (_) => editor.insertContent('<p>Its Friday!</p>'),
+      onItemAction: (buttonApi, value) => editor.insertContent(value),
+      fetch: (callback) => {
+        const items = [
           {
             type: 'choiceitem',
             text: 'Insert Date',
@@ -96,36 +76,28 @@ tinymce.init({
     /* Clicking the first menu item or one of the submenu items inserts the date in the selected format. */
     editor.ui.registry.addMenuButton('menuDateButton', {
       text: 'Date',
-      fetch: function (callback) {
-        var items = [
+      fetch: (callback) => {
+        const items = [
           {
             type: 'menuitem',
             text: 'Insert Date',
-            onAction: function (_) {
-              editor.insertContent(toDateHtml(new Date()));
-            }
+            onAction: (_) => editor.insertContent(toDateHtml(new Date()))
           },
           {
             type: 'nestedmenuitem',
             text: 'Other formats',
-            getSubmenuItems: function () {
-              return [
-                {
-                  type: 'menuitem',
-                  text: 'GMT',
-                  onAction: function (_) {
-                    editor.insertContent(toGmtHtml(new Date()));
-                  }
-                },
-                {
-                  type: 'menuitem',
-                  text: 'ISO',
-                  onAction: function (_) {
-                    editor.insertContent(toIsoHtml(new Date()));
-                  }
-                }
-              ];
-            }
+            getSubmenuItems: () => [
+              {
+                type: 'menuitem',
+                text: 'GMT',
+                onAction: (_) => editor.insertContent(toGmtHtml(new Date()))
+              },
+              {
+                type: 'menuitem',
+                text: 'ISO',
+                onAction: (_) => editor.insertContent(toIsoHtml(new Date()))
+              }
+            ]
           }
         ];
         callback(items);

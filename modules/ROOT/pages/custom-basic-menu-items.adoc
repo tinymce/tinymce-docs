@@ -41,12 +41,10 @@ tinymce.init({
   },
   menubar: 'file edit custom',
 
-  setup: function(editor) {
+  setup: (editor) => {
     editor.ui.registry.addMenuItem('basicitem', {
       text: 'My basic menu item',
-      onAction: function() {
-        alert('Menu item clicked');
-      }
+      onAction: () => alert('Menu item clicked')
     });
   }
 });

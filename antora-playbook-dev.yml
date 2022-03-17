@@ -7,6 +7,8 @@ content:
   - url: ./
     branches: HEAD
     start_path: ./
+urls:
+  html_extension_style: indexify
 ui:
   bundle:
     url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip

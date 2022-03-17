@@ -7,18 +7,19 @@
 
 {productname} 5.4 was released for {enterpriseversion} and {cloudname} on Thursday, July 23^rd^, 2020. It includes {productname} 5.4.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.4, including:
 
-* <<tinymce54newfeaturesandenhancements,TinyMCE 5.4 new features and enhancements>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<accompanyingpremiumself-hostedserver-sidecomponentchanges,Accompanying Premium self-hosted server-side component changes>>
-* <<minorchangesfortinymce54,Minor changes for TinyMCE 5.4>>
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:tinymce54newfeaturesandenhancements[TinyMCE 5.4 new features and enhancements]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
+* xref:minorchangesfortinymce54[Minor changes for TinyMCE 5.4]
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[tinymce54newfeaturesandenhancements]]
 == TinyMCE 5.4 new features and enhancements
 
 The following new features and enhancements were added for the {productname} 5.4 release.
@@ -29,38 +30,39 @@ The {productname} 5.4 release includes the following improvements for the table 
 
 * Adds: commands, APIs, and icons for; cut, copy, and paste columns.
 * Adds toolbar button icons for the cut, copy, and paste rows.
-* Adds a new link:{baseurl}/plugins/opensource/table/#commands[`mceTableApplyCellStyle`] command for applying selected styles to table cells.
-* Adds a new link:{baseurl}/plugins/opensource/table/#table_header_type[`table_header_type`] option for setting the HTML structure used for table header rows.
+* Adds a new xref:plugins/opensource/table.adoc#commands[`mceTableApplyCellStyle`] command for applying selected styles to table cells.
+* Adds a new xref:plugins/opensource/table.adoc#table_header_type[`table_header_type`] option for setting the HTML structure used for table header rows.
 * Adds table row, column, and cell type commands and queries.
-* Adds a new link:{baseurl}/plugins/opensource/table/#table_sizing_mode[`table_sizing_mode`] option and a new link:{baseurl}/plugins/opensource/table/#commands[`mceTableSizingMode`] command for setting the method for measuring table cell width: `fixed`, `relative`, or `responsive`.
-* Extends the link:{baseurl}/plugins/opensource/table/#commands[`mceInsertTable`] command for adding tables without the dialog.
+* Adds a new xref:plugins/opensource/table.adoc#table_sizing_mode[`table_sizing_mode`] option and a new xref:plugins/opensource/table.adoc#commands[`mceTableSizingMode`] command for setting the method for measuring table cell width: `fixed`, `relative`, or `responsive`.
+* Extends the xref:plugins/opensource/table.adoc#commands[`mceInsertTable`] command for adding tables without the dialog.
 
-For information on the table plugin, see: link:{baseurl}/plugins/opensource/table/[Table plugin].
+For information on the table plugin, see: xref:plugins/opensource/table.adoc[Table plugin].
 
 For a list of:
 
-* Menu items, including table-related menu items and menu sections, see: link:{baseurl}/advanced/available-menu-items/[Menu Items Available for {productname}].
-* Available icons, including table-related icons, see: link:{baseurl}/advanced/editor-icon-identifiers/[Available icons].
-* Table plugin APIs, see: link:{baseurl}/plugins/opensource/table/#api[Table plugin - APIs].
-* Table plugin commands, see: link:{baseurl}/plugins/opensource/table/#commands[Table plugin - Commands].
+* Menu items, including table-related menu items and menu sections, see: xref:advanced/available-menu-items.adoc[Menu Items Available for {productname}].
+* Available icons, including table-related icons, see: xref:advanced/editor-icon-identifiers.adoc[Available icons].
+* Table plugin APIs, see: xref:plugins/opensource/table.adoc#api[Table plugin - APIs].
+* Table plugin commands, see: xref:plugins/opensource/table.adoc#commands[Table plugin - Commands].
 
 === Icon identifiers are now case-insensitive
 
 To simplify creating custom components and plugins, the icon look-up is now case-insensitive. This will assist with adding icons to custom toolbar buttons, menu sections, and menu items.
 
-For list of icons provided with {productname}, see: link:{baseurl}/advanced/editor-icon-identifiers/[Available icons].
+For list of icons provided with {productname}, see: xref:advanced/editor-icon-identifiers.adoc[Available icons].
 
 For information on:
 
-* Creating custom UI components, see: link:{baseurl}/ui-components/[User interface components].
-* Creating and adding a custom icon pack, see: link:{baseurl}/advanced/creating-an-icon-pack/[Create an icon pack for TinyMCE].
+* Creating custom UI components, see: xref:ui-components/index.adoc[User interface components].
+* Creating and adding a custom icon pack, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for TinyMCE].
 
 === New option for blocking unsupported files from being drag and dropped into the editor
 
 The `block_unsupported_drop` option blocks unsupported images and files from being dropped into the editor. This option is enabled by default. If this option is disabled (`false`), users can drop an unsupported file into the editor, which will cause the browser to navigate away from the page containing the editor.
 
-For information on the `block_unsupported_drop` option, see: link:{baseurl}/configure/file-image-upload/#block_unsupported_drop[Image & file options - `block_unsupported_drop`].
+For information on the `block_unsupported_drop` option, see: xref:configure/file-image-upload.adoc#block_unsupported_drop[Image & file options - `block_unsupported_drop`].
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.4.
@@ -74,7 +76,7 @@ The {productname} 5.4 release includes an accompanying release of the *Advanced 
 * Added search/replace support.
 * Fixed the editor `referrer_policy` option not working when loading additional resources.
 
-For information on the Advanced Code Editor plugin, see: link:{baseurl}/plugins/premium/advcode/[Advanced Code Editor plugin].
+For information on the Advanced Code Editor plugin, see: xref:plugins/premium/advcode.adoc[Advanced Code Editor plugin].
 
 === PowerPaste 5.3.1
 
@@ -85,8 +87,9 @@ The {productname} 5.4 release includes an accompanying release of the *PowerPast
 * Fixed PowerPaste not able to load the `wordimport.js` resource when bundled.
 * Fixed the editor `referrer_policy` option not working when loading additional resources.
 
-For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
+[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.4 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -98,15 +101,15 @@ The {productname} 5.4 release includes accompanying changes affecting the {produ
 
 The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to *version 2.5.0*.
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{baseurl}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: xref:release-notes/release-notes53.adoc#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
 
 For information on:
 
-* The Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
-* The Link Checker plugin, see: link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
-* The Image Tools plugin, see: link:{baseurl}/plugins/opensource/imagetools/[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:plugins/premium/linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:plugins/opensource/imagetools.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:plugins/premium/mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 
 === Security update for self-hosted server-side components
 
@@ -123,9 +126,10 @@ Version 2.5.0 provides security updates for the Java-based server-side component
 
 For information on:
 
-* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
-* Deploying the server-side components using Docker, see: link:{baseurl}/enterprise/server/dockerservices/[Containerized service deployments].
+* Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
 
+[[minorchangesfortinymce54]]
 == Minor changes for TinyMCE 5.4
 
 {productname} 5.4 introduces the following minor changes:
@@ -141,6 +145,7 @@ For information on:
 * Changed the DOM location of menus so that they display correctly when the editor is in a ShadowRoot.
 * Changed the table plugin to correctly detect all valid header row structures.
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.4 provides fixes for the following bugs:
@@ -166,18 +171,20 @@ For information on:
 * Fixed Oxide checklist styles not showing when printing.
 * Fixed bug with `scope` attribute not being added to the cells of header rows.
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.4 provides fixes for the following security issues:
 
 * Fixed content in an iframe element parsing as DOM elements instead of text content.
 
+[[deprecatedfeatures]]
 == Deprecated features
 
 The following features have been deprecated with the release of {productname} 5.4:
 
-* <<thefreetinymcespellcheckerplugin,The free TinyMCE Spell Checker plugin>>.
-* <<thetable_responsive_widthoption,The `table_responsive_width` option in the Table plugin>>.
+* xref:thefreetinymcespellcheckerplugin[The free TinyMCE Spell Checker plugin].
+* xref:thetable_responsive_widthoption[The `table_responsive_width` option in the Table plugin].
 
 [[thefreetinymcespellcheckerplugin]]
 === The free TinyMCE Spell Checker plugin
@@ -186,26 +193,29 @@ The *free* {productname} Spell Checker plugin (`spellchecker`) has been deprecat
 
 This change *_does not_* affect:
 
-* link:{baseurl}/plugins/premium/tinymcespellchecker/[The Spellchecker Pro premium plugin].
-* link:{baseurl}/general-configuration-guide/spell-checking/#browser-basedspellchecking[Browser-based spell checking in {productname}].
+* xref:plugins/premium/tinymcespellchecker.adoc[The Spellchecker Pro premium plugin].
+* xref:general-configuration-guide/spell-checking.adoc#browser-basedspellchecking[Browser-based spell checking in {productname}].
 
 To develop and maintain a new spellchecking plugin based on the free {productname} Spell Checker plugin:
 
 * Fork the PHP backend program from the https://github.com/tinymce/tinymce_spellchecker_php[_tinymce/tinymce_spellchecker_php_ GitHub repository].
 * Extract the Spell Checker user interface from the https://github.com/tinymce/tinymce/tree/develop/modules/tinymce/src/plugins/spellchecker[Spellchecker plugin directory in the _tinymce/tinymce_ GitHub repository].
 
+[[thetable_responsive_widthoption]]
 === The `table_responsive_width` option
 
-The `table_responsive_width` option has been deprecated with the release of {productname} 5.4. This option has been replaced by link:{baseurl}/plugins/opensource/table/#table_sizing_mode[`table_sizing_mode`].
+The `table_responsive_width` option has been deprecated with the release of {productname} 5.4. This option has been replaced by xref:plugins/opensource/table.adoc#table_sizing_mode[`table_sizing_mode`].
 
+[[knownissues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.4 may encounter, as well as possible workarounds for these issues.
 
 *Outline*
 
-* <<topandbottomeditoranchorsappearinlinksautocompletelistwhendisabled,Top and bottom editor anchors appear in links autocomplete list when disabled>>
+* xref:topandbottomeditoranchorsappearinlinksautocompletelistwhendisabled[Top and bottom editor anchors appear in links autocomplete list when disabled]
 
+[[topandbottomeditoranchorsappearinlinksautocompletelistwhendisabled]]
 === Top and bottom editor anchors appear in links autocomplete list when disabled
 
 ==== Issue
@@ -219,8 +229,8 @@ When these options are set to `false`, the relevant anchors should not appear as
 
 For information on:
 
-* The `anchor_top` option, see: link:{baseurl}/configure/url-handling/#anchor_top[URL handling options - `anchor_top`].
-* The `anchor_bottom` option, see: link:{baseurl}/configure/url-handling/#anchor_bottom[URL handling options - `anchor_bottom`].
+* The `anchor_top` option, see: xref:configure/url-handling.adoc#anchor_top[URL handling options - `anchor_top`].
+* The `anchor_bottom` option, see: xref:configure/url-handling.adoc#anchor_bottom[URL handling options - `anchor_bottom`].
 
 ==== Workaround
 
@@ -236,7 +246,7 @@ tinymce.init({
 });
 ----
 
-For information on the `typeahead_urls` option, see: link:{baseurl}/configure/advanced-editing-behavior/#typeahead_urls[Advanced editing behaviors - `typeahead_urls`].
+For information on the `typeahead_urls` option, see: xref:configure/advanced-editing-behavior.adoc#typeahead_urls[Advanced editing behaviors - `typeahead_urls`].
 
 :enterprise: true
 

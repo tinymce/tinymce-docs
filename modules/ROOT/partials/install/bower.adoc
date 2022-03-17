@@ -1,9 +1,11 @@
+[source, sh]
 ----
 bower install tinymce
 ----
 
 If you'd like to install and build the source manually with Bower use these steps. This approach can be used when debugging or building custom plugins.
 
+[source, sh]
 ----
 bower install tinymce-src=git://github.com/tinymce/tinymce
 cd bower_components/tinymce-src
@@ -15,7 +17,7 @@ jake
 
 Include this line of code in the `<head>` of your HTML page:
 
-[,html]
+[source, html]
 ----
 <script src="/path/to/tinymce.min.js"></script>
 ----
@@ -28,7 +30,7 @@ Since {productname} lets you identify replaceable elements via a CSS selector, a
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {productname} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-[,html,subs="attributes+"]
+[source,html,subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -58,7 +60,7 @@ When the `<form>` is submitted the {productname} editor mimics the behavior of a
 
 When using package managers you might have local {productname} add-ons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these configuration options:
 
-[,js]
+[source, js]
 ----
 tinymce.init({
   selector: 'textarea',

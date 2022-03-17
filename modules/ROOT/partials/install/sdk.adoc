@@ -8,7 +8,7 @@ Unzip the package and move the `'path/to/{prodnamecode}/'` directory into a web 
 
 Include this line of code in the `<head>` of your HTML page:
 
-[,html]
+[source,html]
 ----
 <script src="path/to/tinymce/js/tinymce.min.js"></script>
 ----
@@ -21,7 +21,7 @@ Since {productname} lets you identify replaceable elements via a CSS selector, a
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {productname} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-[,html, subs="attributes+"]
+[source,html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>

@@ -14,7 +14,7 @@ NOTE: You must include the plugin in your download options to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local {productname} instance up and running.
 
-[,html]
+[source ,html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -45,7 +45,7 @@ The xref:plugins/opensource/code.adoc[Code] plugin is one of the more popular pl
 
 The first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is going to be ``'code'``for this example.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
@@ -57,7 +57,7 @@ Add `plugins: 'code'` to your `tinymce.html` file, save the file, refresh your b
 
 Let's also add a toolbar control so that our users can more easily activate this functionality.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
@@ -70,7 +70,7 @@ Impressive! We now have a button on the toolbar users can click to get into sour
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
@@ -90,7 +90,7 @@ The xref:plugins/opensource/advlist.adoc[Advanced List] plugin extends the defau
 
 As before, let's start by adding the `plugins` key and giving it the Advanced List value of `'advlist'`.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -112,7 +112,7 @@ Don't worry if you can't remember all these values. The xref:plugins/index.adoc[
 
 Let's add the Advanced List options and give them some of the available options.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

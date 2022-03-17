@@ -34,7 +34,7 @@ jobs:
       run: yarn build
 
     - name: (Release - Docs 6.0) Build Website
-      run: yarn antora ./antora-playbook-staging.yml
+      run: yarn antora ./antora-playbook-production.yml
 
     - name: (Release - Docs 6.0) Rename sitemap.xml (Temporary solution - Amit)
       shell: bash

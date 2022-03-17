@@ -166,9 +166,11 @@ In conjunction with this change, three changes have been made:
 
    The new name is a more accurate reflection of what sort of data the argument passes.
    
-   The `content` argument can no longer be used with `mceInsertClipboardContent`. If it is used [what happens?]
+   The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed. `mceInsertClipboardContent` only attempts to pass data if the `html` or `text` property is used.
   
 NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not been changed.
+
+
 
 
 3. The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
@@ -211,11 +213,21 @@ After upgrading:
 
 === New and improved schema
 
-* {productname} 6.0 instances now use HTML 5 as the default schema.
+* {productname} 6.0 instances now explicitly use HTML 5 as the default schema.
 
   The previous default was, for practical purposes, also HTML 5, but no specific schema was set. This change formalises and makes explicit what was, previously, only implicit.
   
-  NOTE: `html5-strict` is still an available schema option and is unchanged from {productname} 5.x.
+  There is only one functional change consequent to this explicit setting of a default schema.
+
+  Previously, if you did not explicitly set the schema to anything, `b` and `i` elements were automaticlly transformed into `strong` and `em` elements respectively.
+
+  If, however, you explicitly set the schema to `html5`, `b` and `i` elements were preserved.
+
+  With this release, `html5` is explicitly set as the schema by default, _and_ `b` and `i` elements are automatically transformed into `strong` and `em` elements.
+
+  That is, the element transformation persists even though the `html5` schema is now explicitly set.
+
+NOTE: `html5-strict` is still an available schema option and is unchanged from {productname} 5.x.
 
 * The assignment operator character — `:` — has been changed to `~` for the `valid_elements` and `extended_valid_elements` schemata.
 
@@ -227,7 +239,7 @@ After upgrading:
   
   Also, when assigning `[xlink:href]` rules, the colon character is no longer escaped. `[xlink\\:href]` can now be written plainly, as `[xlink:href]`.
   
-  NOTE: existing configurations that included escaped colons will continue to work as expected. Editing such configs to remove the escape characters will improve readability but is not necessary for functionality.
+NOTE: existing configurations that included escaped colons will continue to work as expected. Editing such configs to remove the escape characters will improve readability but is not necessary for functionality.
 
 
   
@@ -238,22 +250,32 @@ After upgrading:
 [id=ui-elements-and-components-editor-text-entry-height]
 === Editor text entry height
 
-In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area. In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
+In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high text entry area. In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high text entry area.
 
-The new default can be over-ridden by setting the element’s `height` to a value larger than 400px using CSS. Setting the elmement’s `height` to a value less than 400px using CSS will *not* reduce the height of the text entry area, however.
+As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
 
-NOTE: {productname} 6.0 honours the `config.height` setting. To prevent text entry areas from disappearing during re-sizing, however, the `min-height` option of 100px cannot be over-ridden
+The new default can be over-ridden by explicitly setting a `height` value in the {productname} configuration. So setting this to `200px` will recreate the previous default presentation.
 
-//    Need to preserve the 200px height? _[here’s how?]_
+Also, setting the element’s CSS `height` to a value larger than 400px will increase the height of the text entry area. Setting the elmement’s CSS `height` to a value less than 400px will *not* reduce the height of the text entry area, however.
+
+NOTE: while {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent text entry areas from disappearing during re-sizing, the `min-height` value (100px) cannot be over-ridden.
 
 === buttonType
 
-// The primary property on dialog buttons has been deprecated. Use the
-// new buttonType property instead #TINY-8304
-//  
-//    Also add this to release notes as
-//  
-//  1. Changed UI element or component
+`buttonType` is a new property available as a basic panel component of `dialogs`. It replaces the, now deprecated property, `primary`.
+
+The `primary` property was boolean, allowing for only two states: `true` and `false`.
+
+The new `buttonType` property can take any of three states: `'primary'`, `'secondary'`, and `'toolbar'`.
+
+Setting `buttonType: 'primary'` is the same as setting `primary: true`.
+
+Setting `buttonType: 'secondary'` is the same as setting `primary: false`.
+
+
+
+
+
 
 
 

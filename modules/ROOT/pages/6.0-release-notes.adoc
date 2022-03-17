@@ -69,7 +69,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 ==== `closeButton` and `timeout`
 
-* Previously, using `closeButton` to disable the close button presented as part of a _Notification_ required a `timeout` value to also be set.
+* Previously, using `closeButton` to disable a _Notification’s_ close button required a `timeout` value to also be set.
 
   In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
 
@@ -494,29 +494,40 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
 === new and improved UI and UX elements and components
 
-[id=ui-and-ux-elements-and-components-editor-text-entry-height]
+[id=new-and-improved-ui-and-ux-elements-and-components-editor-text-entry-height]
 ==== Editor text entry height
 
 * In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area.
 
   In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
 
-
-=== Changed UI and UX elements and components
-
+[id=new-and-improved-ui-and-ux-elements-and-components-buttontype]
 ==== buttonType
 
-// The primary property on dialog buttons has been deprecated. Use the
-// new buttonType property instead #TINY-8304
-//  
-//    Also add this to release notes as
-//  
-//  1. Changed UI element or component
+`buttonType` is a new property available as a basic panel component of `dialogs`. It replaces the, now deprecated property, `primary`.
+
+The `primary` property was boolean, allowing for only two states: `true` and `false`.
+
+The new `buttonType` property can take any of three states: `'primary'`, `'secondary'`, and `'toolbar'`.
+
+Setting `buttonType: 'primary'` is the same as setting `primary: true`.
+
+Setting `buttonType: 'secondary'` is the same as setting `primary: false`.
+
+
+
+=== Changed UI and UX elements and components
 
 === fixed
 
 === added
 
 === removed or deprecated
+
+==== primary
+
+the `primary` property was a boolean property available as a basic panel component of `dialogs`.
+
+It has been deprecated and replaced by the new <<buttonType>> property.
 
 // Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.

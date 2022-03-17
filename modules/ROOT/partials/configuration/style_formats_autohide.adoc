@@ -1,3 +1,4 @@
+[[style_formats_autohide]]
 == `style_formats_autohide`
 
 This option enables auto hiding of styles that can't be applied to the current context. For example: if a style applies only to tables, it wouldn't be visible in the styles drop down when the caret isn't inside a table. By default, irrelevant menu items are disabled
@@ -5,6 +6,7 @@ This option enables auto hiding of styles that can't be applied to the current c
 *Type:* `Boolean`
 *Default:* `false`
 
+[discrete]
 === Example: Using `style_formats_autohide`
 
 [source, js]

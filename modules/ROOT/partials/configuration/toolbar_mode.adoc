@@ -1,11 +1,12 @@
-== toolbar_mode
+[[toolbar_mode]]
+== `toolbar_mode`
 
 [[toolbar_drawer]]
 NOTE: The `toolbar_drawer` option was deprecated with the release of {productname} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option. The `toolbar_drawer` option will be removed in {productname} 6.0.
 
 The `toolbar_mode` option is used to extend the toolbar to accommodate the overflowing toolbar buttons. This option is useful for small screens or small editor frames.
 
-When the toolbar_mode is set to `'floating'` or `sliding`, the editor will move toolbar buttons to the toolbar drawer based on:
+When the toolbar_mode is set to `'floating'` or `'sliding'`, the editor will move toolbar buttons to the toolbar drawer based on:
 
 * The defined toolbar groups.
 * The width of the editor.
@@ -25,7 +26,7 @@ Two situations to consider when organising the toolbar:
 * When there are two or more toolbar button groups, the main toolbar will show as many complete, sequential toolbar groups as possible within the width of the editor. Any remaining toolbar button groups will be moved to the toolbar drawer.
 * If the first toolbar button group is wider than the editor, the whole toolbar will be shown in the toolbar drawer.
 
-The toolbar modes are not available when using link:{baseurl}/configure/editor-appearance/#usingmultipletoolbars[multiple toolbars] or the link:{baseurl}/configure/editor-appearance/#toolbarn[toolbar(n)] option.
+The toolbar modes are not available when using <<usingmultipletoolbars,multiple toolbars>> or the <<toolbar_n,toolbar(n)>> option.
 
 *Type:* `String`
 
@@ -35,6 +36,7 @@ The toolbar modes are not available when using link:{baseurl}/configure/editor-a
 
 include::partial$misc/differs_for_mobile.adoc[]
 
+[discrete]
 === Settings
 
 The toolbar mode is specified in the `tinymce.init`. There are four toolbar modes:
@@ -44,12 +46,14 @@ The toolbar mode is specified in the `tinymce.init`. There are four toolbar mode
 * <<scrolling,Scrolling>>
 * <<wrap,Wrap>>
 
+[[floating]]
 ==== Floating
 
-If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:{baseurl}/images/icons/more-drawer.svg[Drawer] is clicked.
+If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
 
-image::{baseurl}/images/floating_toolbar.png[Floating Toolbar]
+image:floating_toolbar.png[Floating Toolbar]
 
+[discrete]
 ===== Configuring a Floating toolbar
 
 Use the following settings to configure a Floating toolbar:
@@ -62,12 +66,14 @@ tinymce.init({
 });
 ----
 
+[[sliding]]
 ==== Sliding
 
-If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:{baseurl}/images/icons/more-drawer.svg[Drawer] is clicked.
+If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
 
-image::{baseurl}/images/sliding_toolbar.png[Sliding Toolbar]
+image:sliding_toolbar.png[Sliding Toolbar]
 
+[discrete]
 ===== Configuring a Sliding toolbar
 
 Use the following settings to configure a Sliding toolbar:
@@ -80,6 +86,7 @@ tinymce.init({
 });
 ----
 
+[[scrolling]]
 ==== Scrolling
 
 The scrolling toolbar mode is intended for touch screen devices.
@@ -88,8 +95,9 @@ If the `toolbar_mode` is configured to `scrolling`, the overflow toolbar buttons
 
 A scrollbar will be shown on the toolbar on desktop devices and hybrid devices in desktop mode.
 
-image::{baseurl}/images/scrolling_toolbar.png[Scrolling Toolbar]
+image:scrolling_toolbar.png[Scrolling Toolbar]
 
+[discrete]
 ===== Configuring a Scrolling toolbar
 
 Use the following settings to configure a Scrolling toolbar:
@@ -102,12 +110,14 @@ tinymce.init({
 });
 ----
 
+[[wrap]]
 ==== Wrap
 
 If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
 
-image::{baseurl}/images/wrapped_toolbar.png[Wrapped Toolbar]
+image:wrapped_toolbar.png[Wrapped Toolbar]
 
+[discrete]
 ===== Configuring a Wrapped toolbar
 
 Use the following settings to configure a wrapped toolbar:

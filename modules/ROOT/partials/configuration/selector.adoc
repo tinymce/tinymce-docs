@@ -1,3 +1,4 @@
+[[selector]]
 == `selector`
 
 This option allows you to specify a CSS selector for the areas that {productname} should make editable.
@@ -17,10 +18,12 @@ tinymce.init({
 });
 ----
 
+[discrete]
 === Replace a textarea element with id "editable"
 
 *Type:* `String`
 
+[discrete]
 ==== Example: Replace a textarea element with the `id` "editable"
 
 [source, js]
@@ -32,10 +35,12 @@ tinymce.init({
 
 When using this option in {productname}'s inline editing mode, the selector can be used on any block element and will edit the content in place instead of replacing the element with an `iframe`.
 
+[discrete]
 === Inline editing mode on a div element with id "editable"
 
 *Type:* `String`
 
+[discrete]
 ==== Example: Add an inline editor on a div with the `id` "editable"
 
 [source, js]
@@ -46,4 +51,4 @@ tinymce.init({
 });
 ----
 
-For more information on the differences between regular and inline editing modes please see this page link:{baseurl}/general-configuration-guide/use-tinymce-inline/[here].
+For more information on the differences between regular and inline editing modes please see this page xref:general-configuration-guide/use-tinymce-inline.adoc[here].

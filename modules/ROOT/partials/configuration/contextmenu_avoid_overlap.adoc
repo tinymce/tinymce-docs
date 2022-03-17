@@ -1,3 +1,4 @@
+[[contextmenu_avoid_overlap]]
 == `contextmenu_avoid_overlap`
 
 include::partial$misc/requires_5_5v.adoc[]
@@ -9,7 +10,7 @@ The `contextmenu_avoid_overlap` option prevents the context menu from covering (
 *Default Value*: `''`
 
 [discrete]
-==== Example
+=== Example: Using `contextmenu_avoid_overlap`
 
 [source, js]
 ----

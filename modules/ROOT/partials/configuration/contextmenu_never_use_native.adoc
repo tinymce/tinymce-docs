@@ -1,3 +1,4 @@
+[[contextmenu_never_use_native]]
 == `contextmenu_never_use_native`
 
 The `contextmenu_never_use_native` option allows you to prevent the browser context menu from appearing within the editor.
@@ -8,6 +9,7 @@ CAUTION: Using this option may result in unexpected behavior when right-clicking
 
 *Default Value*: `false`
 
+[discrete]
 === Example: Using `contextmenu_never_use_native`
 
 [source, js]

@@ -1,9 +1,11 @@
+[[init_instance_callback]]
 == `init_instance_callback`
 
 The *init_instance_callback* option allows you to specify a function name to be executed each time an editor instance is initialized. The format of this function is `initInstance(editor)` where `editor` is the editor instance object reference.
 
 *Type:* `JavaScript Function`
 
+[discrete]
 === Example: Using `init_instance_callback`
 
 [source, js]
@@ -16,4 +18,4 @@ tinymce.init({
 });
 ----
 
-You may also want to take a look at the <<setup,setup callback option>> as it can be used to bind events before the editor instance is initialized.
+You may also want to take a look at the <<setup,`setup` callback option>> as it can be used to bind events before the editor instance is initialized.

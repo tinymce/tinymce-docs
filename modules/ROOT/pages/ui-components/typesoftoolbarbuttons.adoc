@@ -11,6 +11,7 @@ There are four types of Toolbar Buttons in {productname} {productmajorversion}:
 * <<splitbutton,Split button>>
 * <<grouptoolbarbutton,Group toolbar button>>
 
+[[basicbutton]]
 == Basic button
 
 A basic button triggers its `onAction` function when clicked.
@@ -79,6 +80,7 @@ In this example an icon from the `insertdatetime` plugin is used to demonstrate 
 
 `onSetup` is used to listen to the editor's link:{baseurl}/advanced/events/#editorcoreevents[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
 
+[[togglebutton]]
 == Toggle button
 
 A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the *Bold* button that is highlighted when the cursor is in a word with bold formatting.
@@ -170,6 +172,7 @@ When the `similar` argument is `true`, similar formats will all be treated as th
 
 The `vars` argument controls which variables are used to match the content when determining whether to run the callback. This argument is only used when `similar` is `false`.
 
+[[menubutton]]
 == Menu button
 
 A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain submenus. This is useful for grouping together actions that would otherwise be several buttons on the toolbar. It can also be used to reduce visual clutter and save UI space, as menubar menu items and some toolbar buttons could be moved into a toolbar menu button. Potentially, all menubar menu items could be moved into toolbar menu buttons, allowing for the editor to be used without a menubar at all.
@@ -235,6 +238,7 @@ The `fetch` function is called when the toolbar menu button's menu is opened. It
 
 Use the following demo link:{baseurl}/demo/custom-toolbar-menu-button/[here] for help using the menu toolbar button.
 
+[[splitbutton]]
 == Split button
 
 A split button contains a basic button and a menu button, wrapped up into one toolbar item. Clicking the menu button section opens a dropdown list. The basic button section and the menu items can be configured to trigger different actions when clicked.
@@ -331,6 +335,7 @@ The `fetch` function is called whenever the split button's drop-down menu is ope
 
 include::partial$components/choice-menu-items.adoc[]
 
+[[grouptoolbarbutton]]
 == Group toolbar button
 
 include::partial$misc/requires_5_2v.adoc[]

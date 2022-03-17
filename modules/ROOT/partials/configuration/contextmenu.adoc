@@ -1,8 +1,10 @@
+[[contextmenu]]
 == `contextmenu`
 
 The `contextmenu` option allows you to specify which items appear on the context menu. The format of this option is a space separated list of items in a string.
 
 The context menu option accepts three styles of item:
+
 * Any registered menu item.
 * A `"|"` pipe character to indicate a separator should be added to delineate a group of menu items.
 * Context menu sections defined by a plugin (usually equal to the plugin name). Separators are automatically inserted between context menu sections.
@@ -19,6 +21,7 @@ To disable the editor's context menu, set this option to `false`.
 
 include::partial$misc/ctrl_right_click.adoc[]
 
+[discrete]
 === Example: Using `contextmenu`
 
 [source, js]
@@ -30,4 +33,4 @@ tinymce.init({
 });
 ----
 
-For information on configuring the `contextmenu` option and creating custom context menu items link:{baseurl}/ui-components/contextmenu/[context menu examples].
+For information on configuring the `contextmenu` option and creating custom context menu items xref:ui-components/contextmenu.adoc[context menu examples].

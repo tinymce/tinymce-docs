@@ -1,3 +1,4 @@
+[[formats]]
 == formats
 
 This option is used to override default {productname} *formats* or add custom *formats* to the editor.
@@ -31,6 +32,7 @@ include::partial$configuration/builtinformats.adoc[]
 
 Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
 
+[[formattype]]
 === Format Type
 
 There are three types of formats:

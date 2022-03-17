@@ -1,3 +1,4 @@
+[[branding]]
 == `branding`
 
 Use the `branding` option to disable the "*Powered by Tiny*" link displayed in the status bar for link:{legalpages}/attribution-requirements/[product attribution].
@@ -10,6 +11,7 @@ IMPORTANT: Product attribution is required for free and open source users. For i
 
 *Possible Values:* `true`, `false`
 
+[discrete]
 === Example: Using `branding`
 
 [source, js]

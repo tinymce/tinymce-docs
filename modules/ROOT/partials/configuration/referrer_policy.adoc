@@ -1,3 +1,4 @@
+[[referrer_policy]]
 == `referrer_policy`
 
 include::partial$misc/requires_5_1v.adoc[]
@@ -13,6 +14,7 @@ Used for setting the level of referrer information sent when loading plugins and
 
 For a list of valid referrer policies (directives), see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy[MDN Web Docs - Referrer-Policy].
 
+[discrete]
 === Example: Using `referrer_policy`
 
 [source, js]

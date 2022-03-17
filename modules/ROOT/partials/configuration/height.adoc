@@ -1,3 +1,4 @@
+[[height]]
 == `height`
 
 *height* sets the height of the entire editor, including the menu bar, toolbars, and status bar.
@@ -6,6 +7,7 @@ NOTE: If a number is provided, {productname} sets the height in pixels. If a str
 
 *Type:* `Number` or `String`
 
+[discrete]
 === Example: Using `height`
 
 [source, js]

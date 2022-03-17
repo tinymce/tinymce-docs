@@ -1,3 +1,4 @@
+[[external_plugins]]
 == `external_plugins`
 
 This option allows you to specify a URL based location of plugins outside of the normal {productname} plugins directory.
@@ -10,10 +11,11 @@ The URLs provided can be:
 
 * *Absolute URLs*: Including the protocol, such as `+https://www.example.com/plugin.min.js+`.
 * *Relative to the root directory of the web-server*: Including the leading "[.code]``/``" to indicate that it is relative to the web-server root, such as `/plugin.min.js`.
-* *Relative to the {productname} `base_url`*: A relative path without the leading "[.code]``/``", such as `../../myplugins/plugin.min.js`. By default, the `base_url` is the directory containing {productname} javascript file (such as `tinymce.min.js`). For information on the `base_url` option, see: https://www.tiny.cloud/docs/configure/integration-and-setup/#base_url[Integration and setup options - `base_url`].
+* *Relative to the {productname} `base_url`*: A relative path without the leading "[.code]``/``", such as `../../myplugins/plugin.min.js`. By default, the `base_url` is the directory containing {productname} javascript file (such as `tinymce.min.js`). For information on the `base_url` option, see: <<base_url,Integration and setup options - `base_url`>>.
 
 *Type:* `Object`
 
+[discrete]
 === Example: Using `external_plugins`
 
 [source, js]

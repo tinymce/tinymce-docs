@@ -7,12 +7,13 @@
 
 {productname} 5.2.1 was released for {enterpriseversion} and {cloudname} on Monday, April 6^th^, 2020.  It includes {productname} 5.2.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.2.1, including:
 
-* <<generalbugfixes,General bug fixes>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:generalbugfixes[General bug fixes]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.2.1 provides fixes for the following bugs:
@@ -36,6 +37,7 @@ include::partial$misc/releasenotes_for_stable.adoc[]
 * Fixed an issue where removing the background color of text did not always work.
 * Fixed an issue where new rows and columns in a table did not retain the style of the previous row or column.
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugins updates were released alongside {productname} 5.2.1.

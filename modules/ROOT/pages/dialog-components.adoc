@@ -237,7 +237,7 @@ NOTE: Buttons do not support mixing icons and text at the moment.
   text: 'Alpha',
   buttonType: 'primary',
   name: 'alpha-button',
-  disabled: true,
+  enabled: false,
   borderless: false
 }
 ----
@@ -255,7 +255,7 @@ A *checkbox* is a composite component with a checkbox and a label, and with `+on
   type: 'checkbox', // component type
   name: 'checkbox-1', // identifier
   label: 'Checkbox Label', // text for the label
-  disabled: true // disabled state
+  enabled: false // enabled state
 }
 ----
 
@@ -394,7 +394,7 @@ An *input* is a composite component that renders a label and a single line text 
 |name |string |required |A identifier for the input.
 |label |string |optional |String to use for the input's `+title+` attribute.
 |placeholder |string |optional |String of placeholder text for the input field.
-|disabled |boolean |optional |Allows the field to be disabled. Default is `+false+`.
+|enabled |boolean |optional |Allows the field to be disabled. Default is `+true+`.
 |inputMode |string |optional |Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices.
 |===
 
@@ -406,7 +406,7 @@ An *input* is a composite component that renders a label and a single line text 
   inputMode: 'text',
   label: 'Input Label', // text for the label
   placeholder: 'example', // placeholder text for the input
-  disabled: true, // disabled state
+  enabled: false, // disabled state
   maximized: false // grow width to take as much space as possible
 }
 ----
@@ -433,7 +433,7 @@ A *listbox* is a composite component with a label and a dropdown list of options
   type: 'listbox', // component type
   name: 'ListBoxA', // identifier
   label: 'ListBox Label',
-  disabled: true, // disabled state
+  enabled: false, // enabled state
   items: [
     { text: 'One', value: 'one' },
     { text: 'Two', value: 'two' },
@@ -457,7 +457,7 @@ A *selectbox* is a composite component with a label and a single dropdown list o
   type: 'selectbox', // component type
   name: 'SelectA', // identifier
   label: 'Select Label',
-  disabled: true, // disabled state
+  enabled: false, // enabled state
   size: 1, // number of visible values (optional)
   items: [
     { value: 'one', text: 'One' },
@@ -479,7 +479,7 @@ A *sizeinput* is a specialized composite component with two input fields labelle
   type: 'sizeinput', // component type
   name: 'size', // identifier
   label: 'Dimensions',
-  disabled: true // disabled state
+  enabled: false // enabled state
 }
 ----
 
@@ -532,7 +532,7 @@ A *textarea* is a multiline text field.
   name: 'text-a', // identifier
   label: 'Text: ',
   placeholder: 'example',
-  disabled: true, // disabled state
+  enabled: false, // enabled state
   maximized: false // grow width to take as much space as possible
 }
 ----
@@ -553,7 +553,7 @@ NOTE: The filepicker button will only appear if xref:file-image-upload.adoc#file
 |name |string |required |A identifier for the urlinput.
 |label |string |optional |String to use for the label.
 |filetype |`+'file'+` or `+'image'+` or `+'media'+` |optional |default: `+'file'+` - Restrict the types of files that can be uploaded using the filepicker. `+file+` allows anything, including document links. *Requires `+file_picker_callback+` to be configured.*
-|disabled |boolean |optional |default: `+false+` - Whether the component should initially be disabled.
+|enabled |boolean |optional |default: `+true+` - Whether the component should initially be disabled.
 |===
 
 ==== urlinput examples
@@ -569,7 +569,7 @@ The filepicker will accept any file type and the typeahead will include 5 previo
   name: 'url', // identifier
   filetype: 'file', // allow any file types
   label: 'Url', // text for component label
-  disabled: true // disabled state
+  enabled: false // enabled state
 }
 ----
 
@@ -584,6 +584,6 @@ The filepicker will only accept images and the typeahead will include 5 previous
   name: 'src', // identifier
   filetype: 'image', // restrict file types to image types
   label: 'Source', // text for component label
-  disabled: true // disabled state
+  enabled: false // enabled state
 }
 ----

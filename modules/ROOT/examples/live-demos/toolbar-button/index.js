@@ -19,7 +19,7 @@ tinymce.init({
     editor.ui.registry.addButton('selectiveDateButton', {
       icon: 'insert-time',
       tooltip: 'Insert Current Date',
-      disabled: true,
+      enabled: false,
       onAction: (_) => editor.insertContent(toDateHtml(new Date())),
       onSetup: (buttonApi) => {
         const editorEventCallback = (eventApi) => {

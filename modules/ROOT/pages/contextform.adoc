@@ -66,8 +66,8 @@ The definition of a context form button is very similar to the definition of a n
 |Name |Value |Requirement |Description
 |primary |boolean |Optional |This will activate the button on <enter> in the input form.
 |onAction |`+(formApi, togglebuttonApi) => void+` |Required |This decides what happens when the user clicks the button.
-|active |boolean |Optional |default:false
-|disabled |boolean |Optional |default: false - Represents button state. Is toggled by the button's API
+|active |boolean |Optional |default: `false`
+|enabled |boolean |Optional |default: `true` - Represents button state. Is toggled by the button's API
 |tooltip |string |Optional |Text for button tooltip.
 |text |string |Optional |Text to display if no icon is found.
 |icon |string |Optional |
@@ -88,8 +88,8 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 |Name |Value |Requirement |Description
 |primary |boolean |Optional |This will activate the button on <enter> in the input form.
 |onAction |`+(formApi, togglebuttonApi) => void+` |Required |This decides what happens when the user clicks the button.
-|active |boolean |Optional |default:false
-|disabled |boolean |Optional |default: false - Represents button state. Is toggled by the button's API
+|active |boolean |Optional |default: `false`
+|enabled |boolean |Optional |default: `true` - Represents button state. Is toggled by the button's API
 |tooltip |string |Optional |Text for button tooltip.
 |text |string |Optional |Text to display if no icon is found.
 |icon |string |Optional |

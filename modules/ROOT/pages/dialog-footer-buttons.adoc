@@ -19,7 +19,7 @@ NOTE: Dialog footer buttons are different to xref:dialog-components.adoc#button[
 |icon |string |optional |
 include::partial$misc/admon_predefined_icons_only.adoc[] *When configured, the button will display the icon instead of text.*
 |buttonType |`+'primary'+`, or `+'secondary'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, or secondary button.
-|disabled |boolean |optional |default: `+false+` - When `+true+`, the button will be disabled when the dialog loads.
+|enabled |boolean |optional |default: `+true+` - When `+false+`, the button will be disabled when the dialog loads.
 |align |`+'end'+` or `+'start'+` |optional |default: `+'end'+` - When set to `+'end'+` the button will display on the right-hand side of the dialog. When set to `+'start'+` the button will display on the left-hand side.
 |===
 
@@ -27,7 +27,7 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 
 == Disabling and enabling buttons
 
-To toggle between a button's disabled and enabled states, use `+enable(name)+` or `+disable(name)+` from the xref:dialog-components.adoc#dialoginstanceapimethods[dialog instance API], where `+name+` is the identifier the button was configured with.
+To toggle between a button's disabled and enabled states, use `+setEnabled(name, state)+` function from the xref:dialog-components.adoc#dialoginstanceapimethods[dialog instance API], where `+name+` is the identifier the button was configured with and `+state+` is whether the button should be enabled or disabled.
 
 == Button types and event callbacks
 
@@ -49,7 +49,7 @@ See the xref:dialog-configuration.adoc#configurationoptions[dialog configuration
   name: 'submitButton', // identifying name
   text: 'Submit', // text for the button
   // icon: 'checkmark', // will replace the text if configured
-  disabled: false, // button is active when the dialog opens
+  enabled: true, // button is active when the dialog opens
   buttonType: 'primary', // style the button as a primary button
   align: 'start' // align the button to the left of the dialog footer
 }
@@ -101,7 +101,7 @@ buttons: [
     name: 'myMenuButton', // identifying name
     text: 'My Menu', // text for the button
     // icon: 'user', // will replace the text if configured
-    disabled: false, // button is active when the dialog opens
+    enabled: true, // button is active when the dialog opens
     align: 'start', // align the button to the left of the dialog footer
     tooltip: 'This is "My" button.',
     items: [

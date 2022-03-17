@@ -53,7 +53,7 @@ Previously, `mceAddEditor` and `mceToggleEditor` used the `editorManager.setting
 
 `editorManager.settings` is not used at all in {productname} 6.
 
-Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object created when the command is run.
+Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object passed when the command is run.
 
 For example —
 

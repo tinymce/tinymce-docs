@@ -109,6 +109,15 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 === Changed commands and queries
 
+==== `mceAddEditor` and `mceToggleEditor`
+
+Previously, `mceAddEditor` and `mceToggleEditor` used the `editorManager.settings` values to set the `id` and UI and UX options for a new {productname} editor instance.
+
+`editorManager.settings` is not used at all in {productname} 6.
+
+Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object passed when the command is run.
+
+
 === Fixed commands and queries
 
 === Femoved or deprecated commands and queries
@@ -269,7 +278,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
   The new name is a more accurate reflection of what sort of data the argument passes.
   
-  NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not been changed.
+  NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not changed.
 
 
 [id=changed-plugins-print]

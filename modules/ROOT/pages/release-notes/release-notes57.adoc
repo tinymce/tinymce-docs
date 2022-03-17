@@ -7,18 +7,19 @@
 
 {productname} 5.7 was released for {enterpriseversion} and {cloudname} on Wednesday, February 24 ^th^, 2021. It includes {productname} 5.7 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.7, including:
 
-* <<newfeatures,New features>>
-* <<enhancements,Enhancements>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<accompanyingpremiumskinsandiconpackschanges,Accompanying Premium Skins and Icon Packs changes>>
-* <<accompanyingpremiumself-hostedserver-sidecomponentchanges,Accompanying Premium self-hosted server-side component changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:newfeatures[New features]
+* xref:enhancements[Enhancements]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[newfeatures]]
 == New features
 
 The following new features were added for the {productname} 5.7 release.
@@ -30,14 +31,15 @@ When inserting or deleting table columns, the resizing behavior will now respect
 * `table_column_resizing: 'preservetable'` - The columns will resize to fit the width of the table.
 * `table_column_resizing: 'resizetable'` - The table will resize to fit the width of the columns.
 
-For information on the `table_column_resizing` option, see: link:{baseurl}/plugins/opensource/table/#table_column_resizing[Table plugin - `table_column_resizing`].
+For information on the `table_column_resizing` option, see: xref:plugins/opensource/table.adoc#table_column_resizing[Table plugin - `table_column_resizing`].
 
 === Added new `font_css` option
 
 The `font_css` option loads the specified font CSS files into both the editable area and the webpage {productname} is rendered in. This is useful for ensuring that {productname} UI uses the correct fonts for font family examples and for content that uses those fonts, or for ensuring {productname} content and content outside the editor that should use the same fonts renders correctly.
 
-For information on the `font_css` option, see: link:{baseurl}/configure/content-appearance/#font-css[Content Appearance - `font_css`].
+For information on the `font_css` option, see: xref:configure/content-appearance.adoc#font-css[Content Appearance - `font_css`].
 
+[[enhancements]]
 == Enhancements
 
 The following enhancements were made for the {productname} 5.7 release.
@@ -49,7 +51,7 @@ Notifications opened with the Notifications API will now remain visible when the
 For information on:
 
 * The {productname} `setProgress()` API, see xref:apis/tinymce.editor.adoc#setProgressState[Editor API - `setProgressState`].
-* The Notifications API, see link:{baseurl}/advanced/creating-custom-notifications[Create custom notifications].
+* The Notifications API, see xref:advanced/creating-custom-notifications.adoc[Create custom notifications].
 
 === Table widths are now retained when copying and pasting tables
 
@@ -66,13 +68,13 @@ The `lists` plugin has been updated to improve toggling lists on content contain
 
 The `media_live_embeds` option now supports rendering live embeds of `audio` and `video` elements while editing content. The elements can now also be resized without having to open a dialog to manually change the size.
 
-For information on the `media_live_embeds` option, see: link:{baseurl}/plugins/opensource/media/#media_live_embeds[Media plugin - `media_live_embeds`].
+For information on the `media_live_embeds` option, see: xref:plugins/opensource/media.adoc#media_live_embeds[Media plugin - `media_live_embeds`].
 
 === Enhanced `TableModified` event data
 
 The `TableModified` event now contains additional data which specifies whether the table structure, style, or both were modified.
 
-For information on the `TableModified` event, see: link:{baseurl}/plugins/opensource/table/#events[Table plugin - Events].
+For information on the `TableModified` event, see: xref:plugins/opensource/table.adoc#events[Table plugin - Events].
 
 === Added IPv6 URI parsing support
 
@@ -93,6 +95,7 @@ For information on the `URI` API, see: xref:apis/tinymce.util.uri.adoc[URI].
 * Changed the type signature for `editor.selection.getRng()` incorrectly returning `null`.
 * Changed some `SaxParser` regular expressions to improve performance.
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.7.
@@ -103,7 +106,7 @@ The {productname} 5.7 release includes an accompanying release of the *Advanced 
 
 *Advanced Tables* 1.0.2 fixes an issue where the `TableModified` event was not fired when sorting a table.
 
-For information on the `TableModified` event, see: link:{baseurl}/plugins/opensource/table/#events[Table plugin - Events].
+For information on the `TableModified` event, see: xref:plugins/opensource/table.adoc#events[Table plugin - Events].
 
 === Mentions 2.2.1
 
@@ -114,7 +117,7 @@ The {productname} 5.7 release includes an accompanying release of the *Mentions*
 * Fixed hover cards not being visible in fullscreen mode.
 * Fixed hover card not positioned correctly if the editor has scrolled.
 
-For information on the Mentions plugin, see: link:{baseurl}/plugins/premium/mentions/[Mentions plugin].
+For information on the Mentions plugin, see: xref:plugins/premium/mentions.adoc[Mentions plugin].
 
 === PowerPaste 5.4.1
 
@@ -122,7 +125,7 @@ The {productname} 5.7 release includes an accompanying release of the *PowerPast
 
 *PowerPaste* 5.4.1 fixes an issue where file extensions with uppercase characters were treated as invalid.
 
-For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
 === Spell Checker Pro 2.3.0
 
@@ -140,7 +143,7 @@ The {productname} 5.7 release includes an accompanying release of the *Spell Che
 * `getLanguage`
 * `setLanguage`
 
-For information on the Spell Checker Pro API, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#apis[Spell Checker Pro - APIs].
+For information on the Spell Checker Pro API, see: xref:plugins/premium/tinymcespellchecker.adoc#apis[Spell Checker Pro - APIs].
 
 ===== New Spell Checker Pro Commands
 
@@ -151,13 +154,13 @@ For information on the Spell Checker Pro API, see: link:{baseurl}/plugins/premiu
 * `mceSpellcheckDialog`
 * `mceSpellcheckDialogClose`
 
-For information on the Spell Checker Pro Commands, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#commands[Spell Checker Pro - Commands].
+For information on the Spell Checker Pro Commands, see: xref:plugins/premium/tinymcespellchecker.adoc#commands[Spell Checker Pro - Commands].
 
 ===== New Spell Checker Pro Event
 
 *Spell Checker Pro* introduces a new `SpellcheckerLanguageChanged` event which is fired when the active language is changed.
 
-For information on the Spell Checker Pro Events, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#events[Spell Checker Pro - `Events`].
+For information on the Spell Checker Pro Events, see: xref:plugins/premium/tinymcespellchecker.adoc#events[Spell Checker Pro - `Events`].
 
 ==== Spell Checker Pro - Enhancements
 
@@ -165,9 +168,9 @@ For information on the Spell Checker Pro Events, see: link:{baseurl}/plugins/pre
 
 ===== The `spellchecker_ignore_list` option now accepts arrays of words for specific languages
 
-*Spell Checker Pro* 2.3.0 introduces enhancements to the `spellchecker_ignore_list` (formerly `spellchecker_whitelist`, see: <<thespellchecker_whitelistoptionhasbeenrenamed,The `spellchecker_whitelist` option has been renamed>>).
+*Spell Checker Pro* 2.3.0 introduces enhancements to the `spellchecker_ignore_list` (formerly `spellchecker_whitelist`, see: xref:thespellchecker_whitelistoptionhasbeenrenamed[The `spellchecker_whitelist` option has been renamed]).
 
-It is now possible to specify arrays of words for specific languages to be ignored by the Spell Checker Pro plugin using the `spellchecker_ignore_list` option, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
+It is now possible to specify arrays of words for specific languages to be ignored by the Spell Checker Pro plugin using the `spellchecker_ignore_list` option, see: xref:plugins/premium/tinymcespellchecker.adoc#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
 
 ==== Spell Checker Pro - Bug fixes
 
@@ -177,8 +180,9 @@ It is now possible to specify arrays of words for specific languages to be ignor
 * Fixed a regression that caused errors to be thrown if the editor was destroyed while spellchecking.
 * Fixed an issue where the spellchecker would incorrectly check content inside of special elements such as `style`.
 
-For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro].
+For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro].
 
+[[accompanyingpremiumskinsandiconpackschanges]]
 == Accompanying Premium Skins and Icon Packs changes
 
 The {productname} 5.7 release includes an accompanying release of the *Premium Skins and Icon Packs*.
@@ -187,7 +191,7 @@ The {productname} 5.7 release includes an accompanying release of the *Premium S
 
 A new `bootstrap` icon pack is now available that provides https://icons.getbootstrap.com/[Bootstrap icons] for {productname}.
 
-For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
 === Premium Skins and Icon Packs - Bug fixes
 
@@ -196,8 +200,9 @@ The *Premium Skins and Icon Packs* release includes the following bug fixes:
 * Fixes an issue where the Snow skin had a transparent inline and sticky toolbar, as well as a transparent toolbar in fullscreen mode.
 * Fixes an issue where the Snow skin special characters and emoticons dialog icons disappeared on hover.
 
-For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
+[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.7 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -213,12 +218,13 @@ This version upgraded and replaced internal dependencies to provide upstream bug
 
 For information on:
 
-* The Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
-* The Link Checker plugin, see: link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
-* The Image Tools plugin, see: link:{baseurl}/plugins/opensource/imagetools/[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:plugins/premium/linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:plugins/opensource/imagetools.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:plugins/premium/mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.7 provides fixes for the following bugs:
@@ -249,26 +255,30 @@ For information on:
 * Fixed an issue where file extensions with uppercase characters were treated as invalid.
 * Fixed dialog block messages were not passed through TinyMCE's translation system.
 
+[[deprecatedfeatures]]
 == Deprecated features
 
 The following features have been deprecated with the release of {productname} 5.7:
 
-* <<thespellchecker_whitelistoptionhasbeenrenamed,The `spellchecker_whitelist` option has been renamed>>.
+* xref:thespellchecker_whitelistoptionhasbeenrenamed[The `spellchecker_whitelist` option has been renamed].
 
+[[thespellchecker_whitelistoptionhasbeenrenamed]]
 === The `spellchecker_whitelist` option has been renamed
 
 With the release of {productname} 5.7, the `spellchecker_whitelist` option has been renamed to `spellchecker_ignore_list`.
 
-For information on the `spellchecker_ignore_list` option, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
+For information on the `spellchecker_ignore_list` option, see: xref:plugins/premium/tinymcespellchecker.adoc#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
 
+[[knownissues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.7 may encounter and possible workarounds for these issues.
 
 *Outline*
 
-* <<rowsortingnotworkingfortableswithcolgroupelements,Row sorting not working for tables with `colgroup` elements>>
+* xref:rowsortingnotworkingfortableswithcolgroupelements[Row sorting not working for tables with `colgroup` elements]
 
+[[rowsortingnotworkingfortableswithcolgroupelements]]
 === Row sorting not working for tables with `colgroup` elements
 
 *Issue*: This issue affects the row sorting functionality provided by the *Advanced Tables* plugin. If a row sort is performed on a table containing colgroups, the editor will return invalid HTML.

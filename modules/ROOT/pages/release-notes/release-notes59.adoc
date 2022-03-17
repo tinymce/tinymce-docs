@@ -7,20 +7,21 @@
 
 {productname} 5.9 was released for {enterpriseversion} and {cloudname} on Wednesday, September 15^th^, 2021. It includes {productname} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.9, including:
 
-* <<newfeatures,New features>>
-* <<enhancements,Enhancements>>
-* <<functionalitychanges,Functionality changes>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<accompanyingpremiumskinsandiconpackschanges,Accompanying Premium Skins and Icon Packs changes>>
-* <<accompanyingpremiumself-hostedserver-sidecomponentchanges,Accompanying Premium self-hosted server-side component changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:newfeatures[New features]
+* xref:enhancements[Enhancements]
+* xref:functionalitychanges[Functionality changes]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[newfeatures]]
 == New features
 
 The following new features were added for the {productname} 5.9 release.
@@ -31,10 +32,10 @@ The following new features were added for the {productname} 5.9 release.
 
 For information on:
 
-* The `language` toolbar button, see: link:{baseurl}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons[Available Toolbar Buttons - The core toolbar buttons].
-* The `language` menu item, see: link:{baseurl}/advanced/available-menu-items/#thecoremenuitems[Available Menu Items - The core menu items].
-* The `content_langs` option, see: link:{baseurl}/configure/localization/#content_langs[Content appearance options - `content_langs`].
-* The `Lang` editor command, see: link:{baseurl}/advanced/editor-command-identifiers/#coreeditorcommands[Commands available for {productname} - Core Editor commands].
+* The `language` toolbar button, see: xref:advanced/available-toolbar-buttons.adoc#thecoretoolbarbuttons[Available Toolbar Buttons - The core toolbar buttons].
+* The `language` menu item, see: xref:advanced/available-menu-items.adoc#thecoremenuitems[Available Menu Items - The core menu items].
+* The `content_langs` option, see: xref:configure/localization.adoc#content_langs[Content appearance options - `content_langs`].
+* The `Lang` editor command, see: xref:advanced/editor-command-identifiers.adoc#coreeditorcommands[Commands available for {productname} - Core Editor commands].
 
 === New Table plugin features
 
@@ -48,48 +49,49 @@ The following commands have been added to the table plugin to improve the usabil
 
 `mceTableToggleCaption`:: Allows the user to add or remove a caption from the selected table.
 
-For information on these commands, see: link:{baseurl}/plugins/opensource/table/#commands[Table - Commands]
+For information on these commands, see: xref:plugins/opensource/table.adoc#commands[Table - Commands]
 
+[[newtabletoolbarbuttonsandmenuitems]]
 ==== New table toolbar buttons and menu items
 
 {productname} 5.9 adds new buttons and menu items for the Table plugin to improve the user experience when working with tables. The toolbar buttons and menu item use the same name (identifier). These toolbar buttons and menu items can be added to contextual menus (right-click menus) and contextual toolbars such as the table toolbar. The following toolbar buttons and menu items have been added:
 
-`tableclass`:: Allows the user to add or remove a class from the selected table. Available classes are defined by the link:{baseurl}/plugins/opensource/table/#table_class_list[`table_class_list` option].
+`tableclass`:: Allows the user to add or remove a class from the selected table. Available classes are defined by the xref:plugins/opensource/table.adoc#table_class_list[`table_class_list` option].
 
-`tablecellclass`:: Allows the user to add or remove a class from selected cells. Available classes are defined by the link:{baseurl}/plugins/opensource/table/#table_cell_class_list[`table_cell_class_list` option].
+`tablecellclass`:: Allows the user to add or remove a class from selected cells. Available classes are defined by the xref:plugins/opensource/table.adoc#table_cell_class_list[`table_cell_class_list` option].
 
 `tablecellvalign`:: Allows the user to set the vertical alignment for the content of selected cells.
 
-`tablecellborderwidth`:: Allows the user to set the border width on selected table cells. The available widths are set with the link:{baseurl}/plugins/opensource/table/#table_border_widths[`table_border_widths` option].
+`tablecellborderwidth`:: Allows the user to set the border width on selected table cells. The available widths are set with the xref:plugins/opensource/table.adoc#table_border_widths[`table_border_widths` option].
 
-`tablecellborderstyle`:: Allows the user to set the border style on selected table cells. The available styles are set with the link:{baseurl}/plugins/opensource/table/#table_border_styles[`table_border_styles` option].
+`tablecellborderstyle`:: Allows the user to set the border style on selected table cells. The available styles are set with the xref:plugins/opensource/table.adoc#table_border_styles[`table_border_styles` option].
 
 `tablecaption`:: Toggles the caption on the selected table.
 
-`tablecellbackgroundcolor`:: Allows the user to change the background color of selected cells. The available colors are set by the link:{baseurl}/plugins/opensource/table/#table_background_color_map[`table_background_color_map` option] or link:{baseurl}/configure/content-appearance/#color_map[`color_map` option].
+`tablecellbackgroundcolor`:: Allows the user to change the background color of selected cells. The available colors are set by the xref:plugins/opensource/table.adoc#table_background_color_map[`table_background_color_map` option] or xref:configure/content-appearance.adoc#color_map[`color_map` option].
 
-`tablecellbordercolor`:: Allows the user to change the border color of selected cells. The available colors are set by the link:{baseurl}/plugins/opensource/table/#table_border_color_map[`table_border_color_map` option] or link:{baseurl}/configure/content-appearance/#color_map[`color_map` option].
+`tablecellbordercolor`:: Allows the user to change the border color of selected cells. The available colors are set by the xref:plugins/opensource/table.adoc#table_border_color_map[`table_border_color_map` option] or xref:configure/content-appearance.adoc#color_map[`color_map` option].
 
 `tablerowheader`:: Allows the user to toggle selected rows into headers.
 
 `tablecolheader`:: Allows the user to toggle selected columns into headers.
 
-For information on these buttons, see: link:{baseurl}/advanced/available-toolbar-buttons/#tableplugin[Available toolbar buttons]
-For information on these menu items, see: link:{baseurl}/advanced/available-menu-items/#tableplugin[Available menu items]
+For information on these buttons, see: xref:advanced/available-toolbar-buttons.adoc#tableplugin[Available toolbar buttons]
+For information on these menu items, see: xref:advanced/available-menu-items.adoc#tableplugin[Available menu items]
 
 ==== New table options
 
 {productname} 5.9 adds new options for the Table plugin to improve the user experience when working with tables. These new options are optional, and allows further customization of user experience.
 
-`table_background_color_map`:: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the link:{baseurl}/configure/content-appearance/#color_map[`color_map` option]. For information on this option, see: link:{baseurl}/plugins/opensource/table/#table_background_color_map[Table options - table_background_color_map].
+`table_background_color_map`:: Allows setting a specific set of background colors to be used by the `tablecellbackgroundcolor` toolbar button and menu item, overriding the defaults and the colors provided by the xref:configure/content-appearance.adoc#color_map[`color_map` option]. For information on this option, see: xref:plugins/opensource/table.adoc#table_background_color_map[Table options - table_background_color_map].
 
-`table_border_color_map`:: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the link:{baseurl}/configure/content-appearance/#color_map[`color_map` option]. For information on this option, see: link:{baseurl}/plugins/opensource/table/#table_border_color_map[Table options - table_border_color_map].
+`table_border_color_map`:: Allows setting a specific set of border colors to be used by the `tablecellbordercolor` toolbar button and menu item, overriding the defaults and the colors provided by the xref:configure/content-appearance.adoc#color_map[`color_map` option]. For information on this option, see: xref:plugins/opensource/table.adoc#table_border_color_map[Table options - table_border_color_map].
 
-`table_border_widths`:: Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: link:{baseurl}/plugins/opensource/table/#table_border_widths[Table options - table_border_widths].
+`table_border_widths`:: Allows setting a specific set of widths to be used by the `tablecellborderwidth` toolbar button and menu item. For information on this option, see: xref:plugins/opensource/table.adoc#table_border_widths[Table options - table_border_widths].
 
-`table_border_styles`:: Allows setting a specific set of HTML border styles to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: link:{baseurl}/plugins/opensource/table/#table_border_styles[Table options - table_border_styles].
+`table_border_styles`:: Allows setting a specific set of HTML border styles to be used by the `tablecellborderstyle` toolbar button and menu item. For information on this option, see: xref:plugins/opensource/table.adoc#table_border_styles[Table options - table_border_styles].
 
-For information on the Table plugin, see: link:{baseurl}/plugins/opensource/table/[Table plugin].
+For information on the Table plugin, see: xref:plugins/opensource/table.adoc[Table plugin].
 
 === Additional new features
 
@@ -99,11 +101,12 @@ For information on the Table plugin, see: link:{baseurl}/plugins/opensource/tabl
  ** `mceEmoticons` opens the Emoticons dialog.
  ** `mceWordCount` displays the Word Count summary dialog.
  ** `mceTemplate` shows the Template dialog.
-* A new `iframe_aria_text` option for customizing the `title` attribute on the editor iframe. For details, see: link:{baseurl}/configure/accessibility/#iframe_aria_text[Accessibility options - `iframe_aria_text`].
+* A new `iframe_aria_text` option for customizing the `title` attribute on the editor iframe. For details, see: xref:configure/accessibility.adoc#iframe_aria_text[Accessibility options - `iframe_aria_text`].
 * Added a new `mceFocus` command that focuses the editor. Equivalent to using `editor.focus()`.
 * Added a new `table-row-numbering` icon.
 * Added a new DomParser `Node.children()` API to return all the children of a `Node`.
 
+[[enhancements]]
 == Enhancements
 
 The following enhancements were made for the {productname} 5.9 release.
@@ -114,15 +117,15 @@ The following enhancements were made for the {productname} 5.9 release.
 
 To further enhance the user experience, the context toolbar will now use a short animation when the toolbar transitions between different locations.
 
-image::{baseurl}/images/context-toolbar-improvements.gif[Enchanced context toolbar behavior]
+image:context-toolbar-improvements.gif[Enchanced context toolbar behavior]
 
-For information on context toolbars, see: link:{baseurl}/ui-components/contexttoolbar/[UI components - Context toolbar].
+For information on context toolbars, see: xref:ui-components/contexttoolbar.adoc[UI components - Context toolbar].
 
 === New `toolbar_sticky_offset` option for customizing sticky toolbars
 
-The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the link:{baseurl}/configure/editor-appearance/#toolbar_location[`toolbar_location` option]).
+The new `toolbar_sticky_offset` option allows the main toolbar to "dock" at a specified offset from the top or bottom of the view, depending on the toolbar location (set using the xref:configure/editor-appearance.adoc#toolbar_location[`toolbar_location` option]).
 
-For information on the `toolbar_sticky_offset` option, see: link:{baseurl}/configure/editor-appearance/#toolbar_sticky_offset[User interface options - toolbar_sticky_offset].
+For information on the `toolbar_sticky_offset` option, see: xref:configure/editor-appearance.adoc#toolbar_sticky_offset[User interface options - toolbar_sticky_offset].
 
 === Enhanced UI rendering performance
 
@@ -142,6 +145,7 @@ The User Interface has been profiled to find performance bottlenecks and a numbe
 * The `autolink` plugin link detection now permits custom protocols.
 * The `autolink` plugin valid link detection has been improved.
 
+[[functionalitychanges]]
 == Functionality changes
 
 The following functionality changes were made for the {productname} 5.9 release:
@@ -151,23 +155,25 @@ The following functionality changes were made for the {productname} 5.9 release:
 * The context toolbar will no longer show an arrow when it overlaps the content, such as in table cells.
 * The context toolbar will no longer overlap the statusbar for toolbars using `node` or `selection` positions.
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.9.
 
+[[advancedtables110]]
 === Advanced Tables 1.1.0
 
 The {productname} 5.9 release includes an accompanying release of the *Advanced Tables* premium plugin.
 
 *Advanced Tables* 1.1.0 provides the following new features:
 
-This release adds row numbering functionality, allowing users to add (and remove) row numbering columns on tables. For details, see: link:{baseurl}/plugins/premium/advtable/#addingrownumberingtoatable[Advanced Tables plugin - Adding row numbering to a table]. This includes:
+This release adds row numbering functionality, allowing users to add (and remove) row numbering columns on tables. For details, see: xref:plugins/premium/advtable.adoc#addingrownumberingtoatable[Advanced Tables plugin - Adding row numbering to a table]. This includes:
 
 * Added a new `advtablerownumbering` toolbar button and menu item.
 * Added a new `advtable_value_series` option.
 * Added a new `mceTableToggleSeries` command.
 
-For information on the Advanced Tables plugin, see: link:{baseurl}/plugins/premium/advtable/[Advanced Tables plugin].
+For information on the Advanced Tables plugin, see: xref:plugins/premium/advtable.adoc[Advanced Tables plugin].
 
 === Mentions 2.3.0
 
@@ -177,7 +183,7 @@ The {productname} 5.9 release includes an accompanying release of the *Mentions*
 
 *Mentions* 2.3.0 also fixes the "profile" cards not displaying the `fullName` property when available.
 
-For information on the Mentions plugin, see: link:{baseurl}/plugins/premium/mentions/[Mentions plugin].
+For information on the Mentions plugin, see: xref:plugins/premium/mentions.adoc[Mentions plugin].
 
 === PowerPaste 5.6.0
 
@@ -193,7 +199,7 @@ The {productname} 5.9 release includes an accompanying release of the *PowerPast
 * Word content was incorrectly parsed when copied from a German user interface.
 * Paste incorrectly inserted content when the editor was in readonly mode.
 
-For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
 === Real-time Collaboration 1.0.1
 
@@ -208,7 +214,7 @@ The RTC plugin features:
 * A user presence API to assist with showing a list of connected collaborators.
 * JSON Web Token based authentication.
 
-For information on using the Real-time Collaboration (RTC) plugin, see: link:{baseurl}/rtc/[Real-time Collaboration plugin].
+For information on using the Real-time Collaboration (RTC) plugin, see: xref:rtc/index.adoc[Real-time Collaboration plugin].
 For sales information, visit: link:{plugindirectory}real-time-collaboration[TinyMCE Features - Real-time Collaboration].
 
 === Spell Checker Pro 2.4.1
@@ -217,27 +223,28 @@ The {productname} 5.9 release includes an accompanying release of the *Spell Che
 
 *Spell Checker Pro* 2.4 (2.4.1) adds the following new features:
 
-* The Spelling service now supports a broader range of dictionaries by introducing support for https://hunspell.github.io/[Hunspell dictionaries], see: <<newserver-sidecomponentfeatures,New Server-side component features>>.
+* The Spelling service now supports a broader range of dictionaries by introducing support for https://hunspell.github.io/[Hunspell dictionaries], see: xref:newserver-sidecomponentfeatures[New Server-side component features].
 * The spellchecker dialog now supports navigating to the next and previous misspelled words.
 
 *Spell Checker Pro* 2.4.1 includes the following changes:
 
-* The `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option, see: <<thespellchecker_select_languagesoption,The `spellchecker_select_languages` option>>.
+* The `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option, see: xref:thespellchecker_select_languagesoption[The `spellchecker_select_languages` option].
 * Language code validation has been moved from the client to the server.
 * The Spell Checker Pro plugin has been upgraded to use version 2 of the spelling service API.
 * The "Change" button text in the spellchecker dialog has been changed to "Accept".
 
 *Spell Checker Pro* 2.4.1 introduces the following improvements:
 
-* Improved the error messages shown in the developer console for the `SpellcheckError` event, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#events[Spell Checker Pro - `Events`].
+* Improved the error messages shown in the developer console for the `SpellcheckError` event, see: xref:plugins/premium/tinymcespellchecker.adoc#events[Spell Checker Pro - `Events`].
 
 *Spell Checker Pro* 2.4.1 provides the following bug fixes:
 
 * Links with a URL as the text content were incorrectly spellchecked.
 * Resizing the editor with as-you-type mode enabled wouldn't spellcheck words that came into view.
 
-For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
+[[accompanyingpremiumskinsandiconpackschanges]]
 == Accompanying Premium Skins and Icon Packs changes
 
 The {productname} 5.9 release includes an accompanying release of the *Premium Skins and Icon Packs*.
@@ -246,16 +253,17 @@ The {productname} 5.9 release includes an accompanying release of the *Premium S
 
 The following icons have been added to all premium icon packs:
 
-* New icons for new table toolbar buttons described under <<newtabletoolbarbuttonsandmenuitems,New features - New table toolbar buttons and menu items>>.
-* An icon for the <<advancedtables110,new Advanced Tables row numbering feature>>.
-* A new `language` icon for the <<newlanguagetoolbarbuttonandmenuitemincore,New language toolbar button and menu item in core>>.
+* New icons for new table toolbar buttons described under xref:newtabletoolbarbuttonsandmenuitems[New features - New table toolbar buttons and menu items].
+* An icon for the xref:advancedtables110[new Advanced Tables row numbering feature].
+* A new `language` icon for the xref:newlanguagetoolbarbuttonandmenuitemincore[New language toolbar button and menu item in core].
 
 The *Bootstrap* icon pack has been updated with the latest Bootstrap icons and includes improved `table-cell-properties` and `table-row-properties` icons.
 
 The *Material*, *Small*, and *Thin* icon packs have been updated to include improved table-cell-properties and table-row-properties icons.
 
-For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
+[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.9 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -272,23 +280,24 @@ The Java server-side components have been updated to the following versions:
 * `ephox-hyperlinking.war`: 2.105.4
 * `ephox-image-proxy.war`: 2.105.3
 
-These versions require Java 8 or higher. For information on the removal of Java 7 support, see: link:{baseurl}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+These versions require Java 8 or higher. For information on the removal of Java 7 support, see: xref:release-notes/release-notes53.adoc#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
 
+[[newserver-sidecomponentfeatures]]
 === New Server-side component features
 
 The Spelling service now supports a broader range of dictionaries by introducing support for https://hunspell.github.io/[Hunspell dictionaries].
 
-* For details on enabling Hunspell support, see: link:{baseurl}/enterprise/server/self-hosting-hunspell/[Add Hunspell dictionaries to Spell Checker Pro].
-* For a list of supported Spell Checker Pro languages, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#supportedlanguages[Spell Checker Pro plugin - Supported languages].
+* For details on enabling Hunspell support, see: xref:enterprise/server/self-hosting-hunspell.adoc[Add Hunspell dictionaries to Spell Checker Pro].
+* For a list of supported Spell Checker Pro languages, see: xref:plugins/premium/tinymcespellchecker.adoc#supportedlanguages[Spell Checker Pro plugin - Supported languages].
 
-The Spelling service now includes a new configuration option, allowing custom dictionaries to periodically deploy changes. For details, see: link:{baseurl}/enterprise/server/configure/#dynamic-custom-dictionariesoptional[Configure server-side components: `dynamic-custom-dictionaries`].
+The Spelling service now includes a new configuration option, allowing custom dictionaries to periodically deploy changes. For details, see: xref:enterprise/server/configure.adoc#dynamic-custom-dictionariesoptional[Configure server-side components: `dynamic-custom-dictionaries`].
 
-All the services now include an `ignore-port` port option to allow ports specified in `allowed-origins` to be enforced. For details, see: link:{baseurl}/enterprise/server/configure/#allowed-originsignore-portoptional[Configure server-side components: `allowed-origins.ignore-port` (optional)].
+All the services now include an `ignore-port` port option to allow ports specified in `allowed-origins` to be enforced. For details, see: xref:enterprise/server/configure.adoc#allowed-originsignore-portoptional[Configure server-side components: `allowed-origins.ignore-port` (optional)].
 
 For information on:
 
-* The Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
-* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 
 === Server-side component security fixes
 
@@ -298,7 +307,7 @@ The server-side components (`.war` files) packaged with the {productname} 5.9 re
 
 The pre-configured Dockerfiles for containerizing the server-side components, also known as the Docker starter kits, have been updated to improve stability. Note that the resulting docker image will be larger as a result of these changes.
 
-For information on deploying the server-side components using Docker, see: link:{baseurl}/enterprise/server/dockerservices/[Containerized service deployments].
+For information on deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
 
 === Updating the self-hosted server-side components
 
@@ -315,9 +324,10 @@ The new versions of the server-side services provide updates for the Java-based 
 
 For information on:
 
-* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
-* Deploying the server-side components using Docker, see: link:{baseurl}/enterprise/server/dockerservices/[Containerized service deployments].
+* Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.9 provides fixes for the following bugs:
@@ -362,6 +372,7 @@ For information on:
 * The `formatter.formatChanged` API would sometimes not run the callback the first time the format was removed.
 * Base64 encoded images with spaces or line breaks in the data URI were not displayed correctly. Patch contributed by RoboBurned
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.9 provides fixes for the following security issues:
@@ -369,21 +380,23 @@ For information on:
 * Inserting certain HTML content into the editor could result in invalid HTML once parsed. This caused a medium severity Cross Site Scripting (XSS) vulnerability. Tiny Technologies would like to thank William Bowling for discovering this vulnerability.
 * The `.war` files for the premium self-hosted server-side components have been updated to address various high and medium severity security issues.
 
+[[deprecatedfeatures]]
 == Deprecated features
 
 The following features have been deprecated with the release of {productname} 5.9:
 
-* <<thespellchecker_select_languagesoption,The `spellchecker_select_languages` option>>.
-* <<thebbcodebbcodeplugin,The BBCode (`bbcode`) plugin>>
-* <<thefullpagefullpageplugin,The Full Page (`fullpage`) plugin>>
-* <<thelegacyoutputlegacyoutputplugin,The Legacy Output (`legacyoutput`) plugin>>
-* <<reminderthefreetinymcespellcheckerplugin,Reminder: The free TinyMCE Spell Checker plugin>>
+* xref:thespellchecker_select_languagesoption[The `spellchecker_select_languages` option]
+* xref:thebbcodebbcodeplugin[The BBCode (`bbcode`) plugin]
+* xref:thefullpagefullpageplugin[The Full Page (`fullpage`) plugin]
+* xref:thelegacyoutputlegacyoutputplugin[The Legacy Output (`legacyoutput`) plugin]
+* xref:reminderthefreetinymcespellcheckerplugin[Reminder: The free TinyMCE Spell Checker plugin]
 
+[[thespellchecker_select_languagesoption]]
 === The `spellchecker_select_languages` option
 
 With the release of {productname} 5.9, the `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option.
 
-For information on the `content_langs` option, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#content_langs[Spell Checker Pro - `content_langs`].
+For information on the `content_langs` option, see: xref:plugins/premium/tinymcespellchecker.adoc#content_langs[Spell Checker Pro - `content_langs`].
 
 [[thebbcodebbcodeplugin]]
 === The BBCode (`bbcode`) plugin
@@ -406,20 +419,23 @@ The Legacy Output plugin (`legacyoutput`) has been deprecated and will be remove
 
 To develop and maintain a new Legacy Output plugin based on the {productname} Legacy Output plugin, you can create a fork using the https://github.com/tinymce/tinymce-dist/tree/5.8.2/plugins/legacyoutput[Legacy Output plugin source code in the TinyMCE distribution repository].
 
+[[reminderthefreetinymcespellcheckerplugin]]
 === Reminder: The free TinyMCE Spell Checker plugin
 
 The free TinyMCE Spell Checker plugin (`spellchecker`) was deprecated with the release of TinyMCE 5.4 and will be removed in the 6.0 release of {productname}.
 
-For information on the deprecation of the free TinyMCE Spell Checker plugin, see: link:{baseurl}/release-notes/release-notes54/#thefreetinymcespellcheckerplugin[TinyMCE 5.4 Release notes - Deprecated features].
+For information on the deprecation of the free TinyMCE Spell Checker plugin, see: xref:release-notes/release-notes54.adoc#thefreetinymcespellcheckerplugin[TinyMCE 5.4 Release notes - Deprecated features].
 
+[[knownissues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.9 may encounter and possible workarounds for these issues.
 
-* <<coreknownissues,Core known issues>>
-* <<tablepluginknownissues,Table plugin known issues>>
-* <<real-timecollaborationrtcknownissues,Real-time Collaboration (RTC) known issues>>
+* xref:coreknownissues[Core known issues]
+* xref:tablepluginknownissues[Table plugin known issues]
+* xref:real-timecollaborationrtcknownissues[Real-time Collaboration (RTC) known issues]
 
+[[coreknownissues]]
 === Core known issues
 
 ==== "Right-hand side of 'instanceof' is not callable" or "Event is not a function. (evaluating 'e instanceof Event')" exceptions
@@ -430,6 +446,7 @@ Solution::
 Ensure that the `Event` window or global object is not overridden in your code. The cases reported to {companyname} use something similar to `window.Event = new Vue();`. This should be renamed to something that does not conflict with a browser API, such as `window.EventBus = new Vue();`.
 {companyname} highly recommends against overriding any built-in browser APIs, as the editor relies on built-in browser API behavior to function as expected.
 
+[[tablepluginknownissues]]
 === Table plugin known issues
 
 ==== The new table color map settings do not apply to color pickers in the table dialogs
@@ -444,6 +461,7 @@ Issue:: This issue affects users of the new `tablecolheader` and `tablerowheader
 
 Workaround:: There was no known workaround at the time of the release.
 
+[[real-timecollaborationrtcknownissues]]
 === Real-time Collaboration (RTC) known issues
 
 ==== Users are unable to add content below an Horizontal Rule (`hr`) if inserted on the last line

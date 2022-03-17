@@ -7,16 +7,17 @@
 
 {productname} 5.2 was released for {enterpriseversion} and {cloudname} on Monday, March 9^th^, 2020. It includes {productname} 5.2.0 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.2, including:
 
-* <<tinymce52newfeaturesandenhancements,TinyMCE 5.2 new features and enhancements>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<minorchangesfortinymce52,Minor changes for TinyMCE 5.2>>
-* <<generalbugfixes,General bug fixes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:tinymce52newfeaturesandenhancements[TinyMCE 5.2 new features and enhancements]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:minorchangesfortinymce52[Minor changes for TinyMCE 5.2]
+* xref:generalbugfixes[General bug fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[tinymce52newfeaturesandenhancements]]
 == TinyMCE 5.2 new features and enhancements
 
 The following new features and enhancements were added for the {productname} 5.2 release.
@@ -25,7 +26,7 @@ The following new features and enhancements were added for the {productname} 5.2
 
 The `toolbar_location` option is used to position the toolbar and menu bar. Setting this option to `bottom` positions the toolbar and menu bar below the content area.
 
-For information on using the `toolbar_location` setting, see: link:{baseurl}/configure/editor-appearance/#toolbar_location[User interface options - `toolbar_location`].
+For information on using the `toolbar_location` setting, see: xref:configure/editor-appearance.adoc#toolbar_location[User interface options - `toolbar_location`].
 
 === Changed toolbar_drawer to toolbar_mode
 
@@ -33,29 +34,30 @@ The `toolbar_drawer` option has been deprecated and replaced with the `toolbar_m
 
 The `toolbar_drawer: false` setting has been deprecated; the behavior is now provided by the `toolbar_mode: 'wrap'` setting.
 
-For information on the `toolbar_mode` option, see: link:{baseurl}/configure/editor-appearance/#toolbar_mode[User interface options - `toolbar_mode`].
+For information on the `toolbar_mode` option, see: xref:configure/editor-appearance.adoc#toolbar_mode[User interface options - `toolbar_mode`].
 
 === New group toolbar button
 
 The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
 
-image::{baseurl}/images/toolbar-group-example.png[Group toolbar button example]
+image:toolbar-group-example.png[Group toolbar button example]
 
-For information on using the `toolbar_groups` setting, see: link:{baseurl}/configure/editor-appearance/#toolbar_groups[User interface options - `toolbar_groups`].
-For information on using the `addGroupToolbarButton` API, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton[Types of toolbar buttons - Group button].
+For information on using the `toolbar_groups` setting, see: xref:configure/editor-appearance.adoc#toolbar_groups[User interface options - `toolbar_groups`].
+For information on using the `addGroupToolbarButton` API, see: xref:ui-components/typesoftoolbarbuttons.adoc#grouptoolbarbutton[Types of toolbar buttons - Group button].
 
 === Enterprise-grade user interface translations available on Tiny Cloud
 
 {cloudname} deployments now have access to professionally translated language packs for localizing the {productname} user interface.
 
-For a list of the available user interface languages, see: link:{baseurl}/configure/localization/#language[Localization options - `language`].
+For a list of the available user interface languages, see: xref:configure/localization.adoc#language[Localization options - `language`].
 
 === A new placeholder setting
 
 The new `placeholder` option adds placeholder content that will be shown when the editor is empty.
 
-For information on using the `placeholder` setting, see: link:{baseurl}/configure/editor-appearance/#placeholder[User interface options - `placeholder`].
+For information on using the `placeholder` setting, see: xref:configure/editor-appearance.adoc#placeholder[User interface options - `placeholder`].
 
+[[newoptiontoassistwithmarkingimagesasdecorativeforaccessibilitypurposes]]
 === New option to assist with marking images as decorative for accessibility purposes
 
 The `a11y_advanced_options` setting adds an option to set an image as decorative in the following dialogs:
@@ -65,20 +67,20 @@ The `a11y_advanced_options` setting adds an option to set an image as decorative
 
 For information on the `a11y_advanced_options`, including the impact on the `a11ychecker_allow_decorative_images` setting, see:
 
-* link:{baseurl}/plugins/premium/a11ychecker/#a11y_advanced_options[The Accessibility Checker plugin - `a11y_advanced_options`].
-* link:{baseurl}/plugins/opensource/image/#a11y_advanced_options[The Image plugin - `a11y_advanced_options`].
+* xref:plugins/premium/a11ychecker.adoc#a11y_advanced_options[The Accessibility Checker plugin - `a11y_advanced_options`].
+* xref:plugins/opensource/image.adoc#a11y_advanced_options[The Image plugin - `a11y_advanced_options`].
 
 === Modify the Quick Image toolbar using the `quickbars_image_toolbar` setting
 
-The *quickbars_image_toolbar* option configures the Quick Image toolbar provided by the link:{baseurl}/plugins/opensource/quickbars[quickbars plugin]. To change the buttons on the Quick Image toolbar, provide a space-separated string of link:{baseurl}/advanced/available-toolbar-buttons/[toolbar button names]. To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
+The *quickbars_image_toolbar* option configures the Quick Image toolbar provided by the xref:plugins/opensource/quickbars.adoc[quickbars plugin]. To change the buttons on the Quick Image toolbar, provide a space-separated string of xref:advanced/available-toolbar-buttons.adoc[toolbar button names]. To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
-For information on using the `quickbars_image_toolbar` setting, see: link:{baseurl}/plugins/opensource/quickbars/#quickbars_image_toolbar[Quick Toolbars plugin - `quickbars_image_toolbar`].
+For information on using the `quickbars_image_toolbar` setting, see: xref:plugins/opensource/quickbars.adoc#quickbars_image_toolbar[Quick Toolbars plugin - `quickbars_image_toolbar`].
 
 === Use custom Prism versions and languages when highlighting code samples
 
 The `codesample` plugin now has the ability to use a custom Prism.js version and a custom languages list when highlighting code samples in the editor. This can be enabled by including the custom Prism.js script and language add-ons on the page and setting the new `codesample_global_prismjs` option to `true`.
 
-For information on using the `codesample_global_prismjs` setting, see: link:{baseurl}/plugins/opensource/codesample/#codesample_global_prismjs[Code sample plugin - `codesample_global_prismjs`].
+For information on using the `codesample_global_prismjs` setting, see: xref:plugins/opensource/codesample.adoc#codesample_global_prismjs[Code sample plugin - `codesample_global_prismjs`].
 
 === New `tinymce.dom.TextSeeker` API
 
@@ -92,15 +94,16 @@ The {productname} icons for table-related toolbar buttons have been updated to b
 
 This change applies to the default {productname} icon pack.
 
-For an updated list of {productname} icons, see: link:{baseurl}/advanced/editor-icon-identifiers/[Available icons].
+For an updated list of {productname} icons, see: xref:advanced/editor-icon-identifiers.adoc[Available icons].
 
 === New option for setting the default protocol for the Link and Autolink plugins
 
 A new `link_default_protocol` option has been added to the Autolink and Link plugins. This option allows the default protocol to be set for links where a protocol has not been supplied by the user.
 
-* For information on using this setting with the Autolink plugin, see: link:{baseurl}/plugins/opensource/autolink/#link_default_protocol[Autolink plugin - `link_default_protocol`].
-* For information on using this setting with the Link plugin, see: link:{baseurl}/plugins/opensource/link/#link_default_protocol[Link plugin - `link_default_protocol`].
+* For information on using this setting with the Autolink plugin, see: xref:plugins/opensource/autolink.adoc#link_default_protocol[Autolink plugin - `link_default_protocol`].
+* For information on using this setting with the Link plugin, see: xref:plugins/opensource/link.adoc#link_default_protocol[Link plugin - `link_default_protocol`].
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugins updates were released alongside {productname} 5.2.
@@ -115,15 +118,16 @@ The {productname} 5.2 release includes an accompanying release of the *Accessibi
 * To improve decorative image checks.
 * To accommodate the `a11y_advanced_options` setting added in {productname} 5.2.
 
-For information on the `a11y_advanced_options` setting, see: link:{baseurl}/plugins/premium/a11ychecker/#a11y_advanced_options[Accessibility Checker plugin].
+For information on the `a11y_advanced_options` setting, see: xref:plugins/premium/a11ychecker.adoc#a11y_advanced_options[Accessibility Checker plugin].
 
+[[checklist110]]
 === Checklist 1.1.0
 
 The {productname} 5.2 release includes an accompanying release of the *Checklist* premium plugin.
 
 *Checklist* 1.1.0 adds a new optional checklist menu item.
 
-For information on the checklist plugin, see: link:{baseurl}/plugins/premium/checklist/[Checklist plugin].
+For information on the checklist plugin, see: xref:plugins/premium/checklist.adoc[Checklist plugin].
 
 === Link Checker 2.1.0
 
@@ -131,7 +135,7 @@ The {productname} 5.2 release includes an accompanying release of the *Link Chec
 
 *Link Checker* 2.1.0 adds a new `linkchecker_preprocess` function for adjusting links before link checking.
 
-For information on the `linkchecker_preprocess` option, see: link:{baseurl}/plugins/premium/linkchecker/#linkchecker_preprocess[Link Checker plugin - `linkchecker_preprocess`].
+For information on the `linkchecker_preprocess` option, see: xref:plugins/premium/linkchecker.adoc#linkchecker_preprocess[Link Checker plugin - `linkchecker_preprocess`].
 
 === Page Embed 1.1.0
 
@@ -139,7 +143,7 @@ The {productname} 5.2 release includes an accompanying release of the *Page Embe
 
 *Page Embed* 1.1.0 adds a new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
 
-For information on inlining page embed styles, see: link:{baseurl}/plugins/premium/pageembed/#inlinestylesforpageembeds[Page Embed plugin - Inline styles for page embeds].
+For information on inlining page embed styles, see: xref:plugins/premium/pageembed.adoc#inlinestylesforpageembeds[Page Embed plugin - Inline styles for page embeds].
 
 === Permanent Pen 1.1.0
 
@@ -151,7 +155,7 @@ The {productname} 5.2 release includes an accompanying release of the *Permanent
 
 The {productname} 5.2 release includes an accompanying release of the *PowerPaste* premium plugin.
 
-*PowerPaste* 5.2.1 provides a fix for PowerPaste not respecting the link:{baseurl}/configure/integration-and-setup/#cache_suffix[`cache_suffix` setting].
+*PowerPaste* 5.2.1 provides a fix for PowerPaste not respecting the xref:configure/integration-and-setup.adoc#cache_suffix[`cache_suffix` setting].
 
 === Premium Skins and Icon Packs 1.2
 
@@ -159,10 +163,10 @@ The {productname} 5.2 release includes an accompanying release of the *Premium S
 
 *Premium Skins and Icon Packs* 1.2 includes:
 
-* 3 new skins: link:{baseurl}/enterprise/premium-skins-and-icon-packs/naked-demo/['naked'], link:{baseurl}/enterprise/premium-skins-and-icon-packs/outside-demo/['outside'], and link:{baseurl}/enterprise/premium-skins-and-icon-packs/snow-demo/['snow'].
+* 3 new skins: xref:enterprise/premium-skins-and-icon-packs/naked-demo.adoc['naked'], xref:enterprise/premium-skins-and-icon-packs/outside-demo.adoc['outside'], and xref:enterprise/premium-skins-and-icon-packs/snow-demo.adoc['snow'].
 * 1 new icon pack: 'thin'.
 
-For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
 === Spellchecker Pro 2.0
 
@@ -176,8 +180,9 @@ The {productname} 5.2 release includes an accompanying release of the *Spellchec
 * Includes a new internal engine to improve the document scanning speed.
 * Removes the `spellchecker_on_load` setting.
 
-For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
+[[minorchangesfortinymce52]]
 == Minor changes for TinyMCE 5.2
 
 {productname} 5.2 introduces the following minor changes:
@@ -198,6 +203,7 @@ For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/pre
 * Changes media plugin to use `https` protocol for media urls by default.
 * Improves security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.2 provides fixes for the following bugs:
@@ -227,36 +233,40 @@ For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/pre
 * Fixed keyboard flicker when opening a context menu on mobile.
 * Fixed issue where plus icon svg contained strokes.
 
+[[deprecatedfeatures]]
 == Deprecated features
 
 The `toolbar_drawer` option has been deprecated with the release of {productname} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of new settings available for this option.
 
-For information on the `toolbar_mode` option, see: link:{baseurl}/configure/editor-appearance/#toolbar_mode[User interface options - `toolbar_mode`].
+For information on the `toolbar_mode` option, see: xref:configure/editor-appearance.adoc#toolbar_mode[User interface options - `toolbar_mode`].
 
+[[knownissues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.2 may encounter, as well as possible workarounds for these issues.
 
 *Outline*
 
-* <<translationsmissingfornewuserinterfaceoptions,Translations missing for new user interface options>>
-* <<floatingtoolbardisconnectsfromthetoolbarininlinemode,Floating toolbar disconnects from the toolbar in inline mode>>
-* <<microsoftinternetexplorerwillincorrectlyautofocustheeditorwhentinymceisinitialized,Microsoft Internet Explorer will incorrectly auto focus the editor when TinyMCE is initialized>>
-* <<incorrectpositioningofinlinedialogswhenusingstickytoolbarsandthebottomtoolbar,Incorrect positioning of inline dialogs when using sticky toolbars and the bottom toolbar>>
+* xref:translationsmissingfornewuserinterfaceoptions[Translations missing for new user interface options]
+* xref:floatingtoolbardisconnectsfromthetoolbarininlinemode[Floating toolbar disconnects from the toolbar in inline mode]
+* xref:microsoftinternetexplorerwillincorrectlyautofocustheeditorwhentinymceisinitialized[Microsoft Internet Explorer will incorrectly auto focus the editor when TinyMCE is initialized]
+* xref:incorrectpositioningofinlinedialogswhenusingstickytoolbarsandthebottomtoolbar[Incorrect positioning of inline dialogs when using sticky toolbars and the bottom toolbar]
 
+[[translationsmissingfornewuserinterfaceoptions]]
 === Translations missing for new user interface options
 
 ==== Issue
 
 New user interface features do not have translations to other supported languages at this time. This includes text related to:
 
-* <<newoptiontoassistwithmarkingimagesasdecorativeforaccessibilitypurposes,The new accessibility settings>>.
-* <<checklist110,The new checklist menu item>>.
+* xref:newoptiontoassistwithmarkingimagesasdecorativeforaccessibilitypurposes[The new accessibility settings].
+* xref:checklist110[The new checklist menu item].
 
 ==== Workaround
 
 No known workaround at the time of release.
 
+[[floatingtoolbardisconnectsfromthetoolbarininlinemode]]
 === Floating toolbar disconnects from the toolbar in inline mode
 
 ==== Issue
@@ -289,8 +299,9 @@ The floating component of the toolbar will disconnect from the primary toolbar w
 
 ==== Workaround
 
-Set `toolbar_drawer` or `toolbar_mode` to an alternative mode until the issue is resolved. For a list of alternative toolbar modes, see: link:{baseurl}/configure/editor-appearance/#toolbar_mode[User interface options - `toolbar_mode`].
+Set `toolbar_drawer` or `toolbar_mode` to an alternative mode until the issue is resolved. For a list of alternative toolbar modes, see: xref:configure/editor-appearance.adoc#toolbar_mode[User interface options - `toolbar_mode`].
 
+[[microsoftinternetexplorerwillincorrectlyautofocustheeditorwhentinymceisinitialized]]
 === Microsoft Internet Explorer will incorrectly auto focus the editor when TinyMCE is initialized
 
 ==== Issue
@@ -303,6 +314,7 @@ When a webpage containing {productname} is loaded on Microsoft Internet Explorer
 
 No known workaround at the time of release.
 
+[[incorrectpositioningofinlinedialogswhenusingstickytoolbarsandthebottomtoolbar]]
 === Incorrect positioning of inline dialogs when using sticky toolbars and the bottom toolbar
 
 ==== Issue

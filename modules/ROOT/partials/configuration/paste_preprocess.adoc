@@ -1,4 +1,5 @@
 {% if page.title == "Paste plugin" %}
+[[paste_preprocess]]
 === `paste_preprocess`
 
 This option enables you to modify the pasted content before it gets inserted into the editor.
@@ -21,6 +22,7 @@ tinymce.init({
 });
 ----
 {% else %}
+[[paste_preprocess]]
 === `paste_preprocess`
 
 This option allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:

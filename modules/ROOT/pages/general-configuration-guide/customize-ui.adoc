@@ -96,14 +96,15 @@ The following example includes the file `mycontent.css` in all of the pages to c
 
 === Example using an absolute path
 
-```js
+[source, js]
+----
 // File: http://domain.mine/mysite/index.html
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css : '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
 });
-```
+----
 
 See the xref:configure/content-appearance.adoc#content_css[content_css] customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 

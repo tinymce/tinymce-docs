@@ -19,11 +19,12 @@ NOTE: To replace the `<img>` tag's `src` attribute with the remote location, ple
 
 === Example: Using `images_upload_handler`
 
-```js
+[source, js]
+----
 include::partial$misc/images-upload-handler-function.adoc[]
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_handler: example_image_upload_handler
 });
-```
+----

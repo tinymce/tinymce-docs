@@ -1,4 +1,5 @@
-== convert_fonts_to_spans
+[[convert_fonts_to_spans]]
+== `convert_fonts_to_spans`
 
 include::partial$DEPRECATED/generic-5_10.adoc[]
 
@@ -9,6 +10,9 @@ If you set this option to `true`, {productname} will convert all `font` elements
 *Default Value:* `true`
 
 *Possible Values:* `true`, `false`
+
+[discrete]
+=== Example: Using `convert_fonts_to_spans`
 
 [source, js]
 ----

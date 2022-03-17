@@ -1,3 +1,4 @@
+[[remove_trailing_brs]]
 == `remove_trailing_brs`
 
 This option allows you to disable {productname}'s default behavior of removing `<br>` tags at the end of block elements.
@@ -10,6 +11,7 @@ https://en.wikipedia.org/wiki/Gecko_(software)[Gecko] and https://en.wikipedia.o
 
 *Possible Values:* `true`, `false`
 
+[discrete]
 === Example: Using `remove_trailing_brs`
 
 [source, js]

@@ -1,6 +1,7 @@
+[[keep_styles]]
 == `keep_styles`
 
-The *keep_styles* option will keep the editor's current text style when a user presses `enter/return`.
+The `keep_styles` option will keep the editor's current text style when a user presses `enter/return`.
 
 *Type:* `Boolean`
 
@@ -8,6 +9,7 @@ The *keep_styles* option will keep the editor's current text style when a user p
 
 *Possible Values:* `true`, `false`
 
+[discrete]
 === Example: Using `keep_styles`
 
 [source, js]

@@ -1,10 +1,11 @@
+[[entities]]
 == `entities`
 
 This option contains a comma-separated list of entity names that are used instead of characters. Odd items are the character code, and even items are the names of the character code.
 
 The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into their named equivalents. Though, `'` and `"` will only be encoded within attribute values and `<` and `>` will only be encoded within text nodes. This is correct according to the HTML and XML specifications.
 
-_This setting will only encode characters higher than \u007E (126 in unicode)._
+NOTE: This setting will only encode characters higher than `\u007E` (126 in unicode).
 
 *Type:* `String`
 
@@ -51,6 +52,7 @@ _This setting will only encode characters higher than \u007E (126 in unicode)._
 'permil,8249,lsaquo,8250,rsaquo,8364,euro'
 ----
 
+[discrete]
 === Example: Using `entities`
 
 [source, js]

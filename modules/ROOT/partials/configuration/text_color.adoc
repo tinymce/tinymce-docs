@@ -1,9 +1,9 @@
-<<text_color,>>
-
+[[text_color]]
 == Text color options
 
 These options affect the color selector shown when using the `forecolor` (text color) and `backcolor` (text background) toolbar buttons or menu items. The dimensions and mapping of the grid of text colors can be set here.
 
+[[color_cols]]
 === `color_cols`
 
 This option allows for specifying the number of columns for text color grids. The number of rows is calculated based on the number of text colors supplied divided by the specified number of columns.
@@ -14,6 +14,7 @@ NOTE: The `textcolor_cols` and `textcolor_rows` properties have been removed in 
 
 *Type:* `Integer`
 
+[discrete]
 ==== Example: Using `color_cols`
 
 [source, js]
@@ -25,12 +26,14 @@ tinymce.init({
 });
 ----
 
+[[color_map]]
 === `color_map`
 
 This option allows specifying a map of the text colors that will appear in the grid.
 
 *Type:* `Array`
 
+[discrete]
 ==== Example: Using `color_map`
 
 [source, js]
@@ -50,9 +53,11 @@ tinymce.init({
 });
 ----
 
+[discrete]
 ==== The default color_map
 
-```js
+[source, js]
+----
 color_map: [
   '#BFEDD2', 'Light Green',
   '#FBEEB8', 'Light Yellow',
@@ -81,8 +86,9 @@ color_map: [
 '#000000', 'Black',
   '#ffffff', 'White'
 ]
-```
+----
 
+[[custom_colors]]
 === `custom_colors`
 
 This option allows disabling the custom color picker in all color swatches of the editor.
@@ -91,6 +97,7 @@ This option allows disabling the custom color picker in all color swatches of th
 
 *Default Value:* `true`
 
+[discrete]
 ==== Example: Using `custom_colors`
 
 [source, js]

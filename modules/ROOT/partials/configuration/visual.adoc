@@ -1,3 +1,4 @@
+[[visual]]
 == `visual`
 
 This true/false option gives you the ability to enable or disable the `visual` aid.
@@ -12,12 +13,13 @@ If the border of a table is set to `0`, then {productname} adds a dotted line ar
 
 *Possible Values:* `true`, `false`
 
+[discrete]
 === Example: Using `visual`
 
 [source, js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HRML
+  selector: 'textarea',  // change this value according to your HTML
   visual: false
 });
 ----

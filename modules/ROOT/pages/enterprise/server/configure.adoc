@@ -134,6 +134,7 @@ ephox {
 }
 ----
 
+[[regularexpressionssupport]]
 ==== Regular Expressions support
 
 include::partial$misc/requires_jsscwar_230v.adoc[]
@@ -152,6 +153,7 @@ ephox {
 
 For a list of valid constructs, see: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum[Java 8: `java.util.regex` - Summary of regular-expression constructs].
 
+[[allowed-originssame-originoptional]]
 ==== `allowed-origins.same-origin` (optional)
 
 include::partial$misc/requires_jsscwar_230v.adoc[]
@@ -300,6 +302,7 @@ ephox {
 }
 ----
 
+[[alternativehttptimeoutsettings]]
 ==== Alternative http timeout settings
 
 include::partial$misc/requires_jsscwar_230v.adoc[]
@@ -355,6 +358,7 @@ ephox {
 
 == Hyperlinking service settings
 
+[[link-checkingoptional]]
 === `link-checking` (optional)
 
 The Link checker has three configurable settings:

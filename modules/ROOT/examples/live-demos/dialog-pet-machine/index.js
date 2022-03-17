@@ -26,7 +26,7 @@ const dialogConfig =  {
       type: 'submit',
       name: 'submitButton',
       text: 'Do Cat Thing',
-      primary: true
+      buttonType: 'primary'
     }
   ],
   initialData: {

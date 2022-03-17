@@ -222,8 +222,9 @@ NOTE: Panel buttons are different to xref:dialog-footer-buttons.adoc[dialog foot
 |text |string |required |Text to display in the button *if icon is not specified*. Also used for the button's `+title+` attribute.
 |name |string |optional |A identifier for the button. If not specified, the button will be assigned a randomly generated name.
 |icon |string |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[] *When configured, the button will display the icon instead of text.*
-|primary |boolean |optional |default: `+false+` - Whether to style the button as a primary or secondary button.
+include::partial$misc/admon_predefined_icons_only.adoc[]
+*When configured, the button will display the icon instead of text.*
+|buttonType |`+'primary'+`, `+'secondary'+`, or `+'toolbar'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, secondary, or toolbar button.
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.
 |===
 
@@ -234,7 +235,7 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 {
   type: 'button', // component type
   text: 'Alpha',
-  primary: true,
+  buttonType: 'primary',
   name: 'alpha-button',
   disabled: true,
   borderless: false
@@ -355,6 +356,30 @@ dialogApi.setData({
 })
 ----
 
+[[imagepreview]]
+=== imagepreview
+
+An *imagepreview* is a specialized component that allows for any image to be previewed and zoomed.
+
+[source,js]
+----
+{
+  type: 'imagepreview', // component type
+  name: 'preview', // identifier
+  height: '100px', // optional CSS height to constrain the image preview to
+}
+----
+
+The dialog data for the *imagepreview* component consists of a URL and an optional zoom factor.
+
+[source,js]
+----
+{
+  url: 'https://www.example.com/image.png', // image URL
+  zoom: 1.5 // optional zoom factor
+}
+----
+
 [[input]]
 === input
 
@@ -455,6 +480,24 @@ A *sizeinput* is a specialized composite component with two input fields labelle
   name: 'size', // identifier
   label: 'Dimensions',
   disabled: true // disabled state
+}
+----
+
+[[slider]]
+=== slider
+
+A *slider* is a specialized component with a label and a horizontal sliding bar. It can be used to allow users to select a value within a specified range.
+
+*Events:* Interacting with the *slider* component will fire the `+onChange+` function in the dialog's configuration *when the user releases the slider thumb*.
+
+[source,js]
+----
+{
+  type: 'slider', // component type
+  name: 'vol', // identifier
+  label: 'Volume',
+  min: 0, // minimum value
+  max: 100 // maximum value
 }
 ----
 

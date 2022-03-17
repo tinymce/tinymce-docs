@@ -24,7 +24,7 @@ tinymce.PluginManager.add('example', (editor, url) => {
       {
         type: 'submit',
         text: 'Save',
-        primary: true
+        buttonType: 'primary'
       }
     ],
     onSubmit: (api) => {

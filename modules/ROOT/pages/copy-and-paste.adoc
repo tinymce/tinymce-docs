@@ -9,6 +9,8 @@
 
 For information, see the xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
 
+IMPORTANT: The core paste functionality and PowerPaste share many options, although some have minor differences. The following options apply specifically to the core paste functionality. For example, the `paste_block_drop`, `paste_data_images`, `paste_remove_styles_if_webkit`, and `paste_webkit_styles` options are specific to the core functionality and do not apply to the PowerPaste plugin.
+
 == Controlling how content is pasted
 
 These options affect the way HTML content is processed when pasted in to the editor.

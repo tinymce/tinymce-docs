@@ -7,18 +7,19 @@
 
 {productname} 5.8 was released for {enterpriseversion} and {cloudname} on Wednesday, May 19^th^, 2021. It includes {productname} 5.8 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.8, including:
 
-* <<newfeatures,New features>>
-* <<enhancements,Enhancements>>
-* <<functionalitychanges,Functionality changes>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<accompanyingpremiumskinsandiconpackschanges,Accompanying Premium Skins and Icon Packs changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:newfeatures[New features]
+* xref:enhancements[Enhancements]
+* xref:functionalitychanges[Functionality changes]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[newfeatures]]
 == New features
 
 The following new features were added for the {productname} 5.8 release.
@@ -27,13 +28,13 @@ The following new features were added for the {productname} 5.8 release.
 
 The new `fixed_toolbar_container_target` option allows the inline toolbar to be rendered in a specified `HTMLElement`, similar to the `fixed_toolbar_container` setting. This feature was contributed by https://github.com/pvrobays[pvrobays].
 
-For information on the `fixed_toolbar_container_target` option, see link:{baseurl}/configure/editor-appearance/#fixed_toolbar_container_target[User interface options - `fixed_toolbar_container_target`].
+For information on the `fixed_toolbar_container_target` option, see xref:configure/editor-appearance.adoc#fixed_toolbar_container_target[User interface options - `fixed_toolbar_container_target`].
 
 === Added support for resizing the editor using the keyboard
 
 Keyboard navigation can now be used to select the editor resize handle. Once it is selected, the arrow keys can be used to resize the editor.
 
-For information on editor resizing, see: link:{baseurl}/configure/editor-appearance#resize[User interface options - Resize].
+For information on editor resizing, see: xref:configure/editor-appearance.adoc#resize[User interface options - Resize].
 
 === Additional new features
 
@@ -41,6 +42,7 @@ For information on editor resizing, see: link:{baseurl}/configure/editor-appeara
 
 * Added the `PAGE_UP` and `PAGE_DOWN` key code constants to the `VK` API.
 
+[[enhancements]]
 == Enhancements
 
 The following enhancements were made for the {productname} 5.8 release.
@@ -49,7 +51,7 @@ The following enhancements were made for the {productname} 5.8 release.
 
 Users can now escape inline elements (such as links and comments) using the `Home`, `End`, `PageUp`, and `PageDown` keys. Due to their unique behavior, `PageUp` and `PageDown` are not available in macOS.
 
-For information on inline boundaries, see: link:{baseurl}/configure/content-appearance/#inline_boundaries[Content appearance options - Inline boundaries].
+For information on inline boundaries, see: xref:configure/content-appearance.adoc#inline_boundaries[Content appearance options - Inline boundaries].
 
 === Additional enhancements
 
@@ -59,6 +61,7 @@ For information on inline boundaries, see: link:{baseurl}/configure/content-appe
 * Added HTML5 `audio` and `video` elements to the default alignment formats.
 * Added support for alpha list numbering to the list properties dialog.
 
+[[functionalitychanges]]
 == Functionality changes
 
 The following functionality changes were made for the {productname} 5.8 release:
@@ -66,6 +69,7 @@ The following functionality changes were made for the {productname} 5.8 release:
 * Updated the `image` dialog to display the class list dropdown as full-width if the caption checkbox is not present.
 * Renamed the "H Align" and "V Align" input labels in the Table Cell Properties dialog to "Horizontal align" and "Vertical align" respectively.
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.8.
@@ -82,7 +86,7 @@ The {productname} 5.8 release includes an accompanying release of the *Accessibi
 * Fixed help documentation URLs pointing to old website locations.
 * Fixed dialog button text incorrectly using title-style capitalization.
 
-For information on the Accessibility Checker plugin, see: link:{baseurl}/plugins/premium/a11ychecker/[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:plugins/premium/a11ychecker.adoc[Accessibility Checker plugin].
 
 === Comments 2.4.0
 
@@ -92,10 +96,10 @@ This release adds new resolve conversation functionality, making it is possible 
 
 *Comments* 2.4.0 provides the following new features:
 
-* Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: link:{baseurl}/plugins/premium/comments/comments_callback_mode/#tinycomments_resolve[Configuring comments callbacks - `tinycomments_resolve`].
-* Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: link:{baseurl}/plugins/premium/comments/comments_embedded_mode/#tinycomments_can_resolve[Comments plugin - `tinycomments_can_resolve`].
+* Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: xref:plugins/premium/comments/comments_callback_mode.adoc#tinycomments_resolve[Configuring comments callbacks - `tinycomments_resolve`].
+* Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: xref:plugins/premium/comments/comments_embedded_mode.adoc#tinycomments_can_resolve[Comments plugin - `tinycomments_can_resolve`].
 
-For information on the Comments plugin, see: link:{baseurl}/plugins/premium/comments/[Comments plugin].
+For information on the Comments plugin, see: xref:plugins/premium/comments/index.adoc[Comments plugin].
 
 === Export 1.0.0
 
@@ -110,7 +114,7 @@ The {productname} 5.8 release includes an accompanying release of the *Export* p
 
 * Fixed an issue where internal document links did not navigate within the client-side PDF exporter output.
 
-For information on the Export plugin, see: link:{baseurl}/plugins/premium/export/[Export plugin].
+For information on the Export plugin, see: xref:plugins/premium/export.adoc[Export plugin].
 
 === PowerPaste 5.5.0
 
@@ -120,7 +124,7 @@ This release adds support for copying and pasting content from Google Docs, maki
 
 *PowerPaste* 5.5.0 provides the following new features:
 
-* Added Google Docs paste support which can be controlled using the new link:{baseurl}/plugins/premium/powerpaste/#powerpaste_googledocs_import[`powerpaste_googledocs_import` option].
+* Added Google Docs paste support which can be controlled using the new xref:plugins/premium/powerpaste.adoc#powerpaste_googledocs_import[`powerpaste_googledocs_import` option].
 
 *PowerPaste* 5.5.0 provides the following improvements:
 
@@ -135,8 +139,8 @@ This release adds support for copying and pasting content from Google Docs, maki
 
 For information on:
 
-* The PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
-* PowerPaste support and compatibility, including Google Docs support, see: link:{baseurl}/enterprise/system-requirements/#powerpastesupportcopyandpaste[Supported Premium Versions and Platforms - PowerPaste support].
+* The PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
+* PowerPaste support and compatibility, including Google Docs support, see: xref:enterprise/system-requirements.adoc#powerpastesupportcopyandpaste[Supported Premium Versions and Platforms - PowerPaste support].
 
 === Spell Checker Pro 2.3.1
 
@@ -149,7 +153,7 @@ The {productname} 5.8 release includes an accompanying release of the *Spell Che
 * Fixed `en_UK` and `en_BR` incorrectly spellchecking as US English instead of UK English.
 * Fixed menu items sometimes not rendering as toggled due to language codes using a case sensitive comparison.
 
-For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 === Tiny Drive 1.4.0
 
@@ -157,8 +161,8 @@ The {productname} 5.8 release includes an accompanying release of *Tiny Drive*.
 
 *Tiny Drive* 1.4.0 provides the following new features:
 
-* Added a new link:{baseurl}/tinydrive/configuration/#tinydrive_skin[`tinydrive_skin`] option for applying a skin to the {productname} {cloudfilemanager} plugin.
-* Added a new link:{baseurl}/tinydrive/tinydrive-api/standalone/#skin[`skin`] option for applying a skin to standalone instances of {cloudfilemanager}. Before using this setting with {cloudfilemanager} 1.4.0, see: <<theconfiguredskinisignoredfortinydriveinstandalonemode,Known issues - The configured skin is ignored for Tiny Drive in standalone mode>>.
+* Added a new xref:tinydrive/configuration.adoc#tinydrive_skin[`tinydrive_skin`] option for applying a skin to the {productname} {cloudfilemanager} plugin.
+* Added a new xref:tinydrive/tinydrive-api/standalone.adoc#skin[`skin`] option for applying a skin to standalone instances of {cloudfilemanager}. Before using this setting with {cloudfilemanager} 1.4.0, see: xref:theconfiguredskinisignoredfortinydriveinstandalonemode[Known issues - The configured skin is ignored for Tiny Drive in standalone mode].
 * Added a new `oxide-dark` skin for standalone and plugin mode.
 * Added a new PDF viewer to add previews for PDF files.
 
@@ -168,8 +172,9 @@ The {productname} 5.8 release includes an accompanying release of *Tiny Drive*.
 * Fixed a bug where specifying 'audio' for the `filetype` setting would not list the files in the grid view.
 * Fixed a bug where tabbing though the user interface could throw an error.
 
-For information on Tiny Drive, see: link:{baseurl}/tinydrive/[Tiny Drive].
+For information on Tiny Drive, see: xref:tinydrive/index.adoc[Tiny Drive].
 
+[[accompanyingpremiumskinsandiconpackschanges]]
 == Accompanying Premium Skins and Icon Packs changes
 
 The {productname} 5.8 release includes an accompanying release of the *Premium Skins and Icon Packs*.
@@ -178,8 +183,9 @@ The {productname} 5.8 release includes an accompanying release of the *Premium S
 
 A new Fluent skin and accompanying content css, which follows the Microsoft design language, is now available for {productname}.
 
-For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.8 provides fixes for the following bugs:
@@ -201,41 +207,47 @@ For information on using premium skins and icon packs, see: link:{baseurl}/enter
 * Fixed a regression in the `tinymce.create()` API that caused issues when multiple objects were created.
 * Fixed the `LineHeight` command causing the `change` event to be fired inconsistently.
 
+[[deprecatedfeatures]]
 == Deprecated features
 
 The following features have been deprecated with the release of {productname} 5.8:
 
 The undocumented `setIconStroke` Split Toolbar Button API has been deprecated and will be removed in a future release.
 
+[[knownissues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.8 may encounter and possible workarounds for these issues.
 
 *Outline*
 
-* <<unexpectedbehaviorwhenmovingthecaretusingthepagedownandendkeys,Unexpected behavior when moving the caret using the PageDown and End keys>>
-* <<accessibilitywhenusingkeyboardnavigationtoresizetheeditor,Accessibility when using keyboard navigation to resize the editor>>
-* <<contentpastedfromgoogledocscannotbeoutdented,Content pasted from Google Docs cannot be outdented>>
-* <<theconfiguredskinisignoredfortinydriveinstandalonemode,The configured skin is ignored for Tiny Drive in standalone mode>>
+* xref:unexpectedbehaviorwhenmovingthecaretusingthepagedownandendkeys[Unexpected behavior when moving the caret using the PageDown and End keys]
+* xref:accessibilitywhenusingkeyboardnavigationtoresizetheeditor[Accessibility when using keyboard navigation to resize the editor]
+* xref:contentpastedfromgoogledocscannotbeoutdented[Content pasted from Google Docs cannot be outdented]
+* xref:theconfiguredskinisignoredfortinydriveinstandalonemode[The configured skin is ignored for Tiny Drive in standalone mode]
 
+[[unexpectedbehaviorwhenmovingthecaretusingthepagedownandendkeys]]
 === Unexpected behavior when moving the caret using the PageDown and End keys
 
 *Issue*: This issue affects moving the caret over links using the `Page Down` or `End` keys. If the caret is placed adjacent to a link and the key is pressed, the caret will move inside the link rather than past it.
 
 *Workaround*: There was no known workaround at the time of the release.
 
+[[accessibilitywhenusingkeyboardnavigationtoresizetheeditor]]
 === Accessibility when using keyboard navigation to resize the editor
 
 *Issue*: The editor can now be resized using keyboard navigation, however there is currently no available ARIA specification to indicate the resize state for screen readers or other assistive technology to consume.
 
 *Workaround*: There was no known workaround at the time of the release. We are tracking the relevant https://github.com/w3c/aria/issues/432[ARIA GitHub issue] for a way to support this.
 
+[[contentpastedfromgoogledocscannotbeoutdented]]
 === Content pasted from Google Docs cannot be outdented
 
-*Issue*: This issue affects content pasted in from Google Docs using the link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin]. When content is pasted into the editor that contains indentation, it then cannot be outdented using the available toolbar buttons.
+*Issue*: This issue affects content pasted in from Google Docs using the xref:plugins/premium/powerpaste.adoc[PowerPaste plugin]. When content is pasted into the editor that contains indentation, it then cannot be outdented using the available toolbar buttons.
 
-*Workaround*: The only known workaround is to configure TinyMCE to use margins instead of padding for indentation. This can be enabled by configuring the link:{baseurl}/configure/content-formatting/#indent_use_margin[`indent_use_margin` option].
+*Workaround*: The only known workaround is to configure TinyMCE to use margins instead of padding for indentation. This can be enabled by configuring the xref:configure/content-formatting.adoc#indent_use_margin[`indent_use_margin` option].
 
+[[theconfiguredskinisignoredfortinydriveinstandalonemode]]
 === The configured skin is ignored for Tiny Drive in standalone mode
 
 *Issue*: This issue prevents setting the skin for {cloudfilemanager} in standalone mode using the `skin` option. This issue does not affect the `tinydrive_skin` option for the {productname} {cloudfilemanager} plugin.

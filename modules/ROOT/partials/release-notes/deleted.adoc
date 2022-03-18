@@ -1,4 +1,4 @@
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced. Refer to the link:{baseurl}/migration-from-4x/[Migration Guide], for more information.
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced. Refer to the xref:migration-from-4x.adoc[Migration Guide], for more information.
 
 === Editor-Core removed settings
 
@@ -9,13 +9,13 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 | Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
 
 | https://www.tiny.cloud/docs-4x/configure/editor-appearance/#insert_button_items[`insert_button_items`]
-| Owing to the changes in the menus and removal of the `context` property, `insert_button_items` is not required in TinyMCE 5.0. Refer to the link:{baseurl}/migration-from-4x/#removedsettings[Migration guide] for a workaround.
+| Owing to the changes in the menus and removal of the `context` property, `insert_button_items` is not required in TinyMCE 5.0. Refer to the xref:migration-from-4x.adoc#removedsettings[Migration guide] for a workaround.
 |===
 
 === Removed themes
 
-* link:{baseurl}/migration-from-4x/#inlite[Inlite]
-* link:{baseurl}/migration-from-4x/#modern[Modern]
+* xref:migration-from-4x.adoc#inlite[Inlite]
+* xref:migration-from-4x.adoc#modern[Modern]
 
 === Removed events
 
@@ -34,13 +34,13 @@ https://www.tiny.cloud/docs-4x/demo/custom-toolbar-listbox/[Listbox] is no longe
 
 The following plugins from TinyMCE 4.x do not require height or width options to be specified in TinyMCE 5.0:
 
-* link:{baseurl}/plugins/opensource/code/[Code]
-* link:{baseurl}/plugins/opensource/codesample/[Codesample]
-* link:{baseurl}/plugins/opensource/preview/[Preview]
-* link:{baseurl}/plugins/opensource/template/[Template]
+* xref:plugins/opensource/code.adoc[Code]
+* xref:plugins/opensource/codesample.adoc[Codesample]
+* xref:plugins/opensource/preview.adoc[Preview]
+* xref:plugins/opensource/template.adoc[Template]
 
-Refer to the link:{baseurl}/migration-from-4x/[Migration Guide], for more information.
+Refer to the xref:migration-from-4x.adoc[Migration Guide], for more information.
 
 === Other removed component configuration settings
 
-Some UI configurations in TinyMCE 5.0 have changed due to an updated UI engine. Please see this link:{baseurl}/migration-from-4x/#otherremovedcomponentconfigurationsettings[section] of the Migration Guide for more information.
+Some UI configurations in TinyMCE 5.0 have changed due to an updated UI engine. Please see this xref:migration-from-4x.adoc#otherremovedcomponentconfigurationsettings[section] of the Migration Guide for more information.

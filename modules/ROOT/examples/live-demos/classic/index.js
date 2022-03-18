@@ -1,4 +1,4 @@
-var table = '<p>This table uses features of the non-editable plugin to make the text in the<br /><strong>top row</strong> and <strong>left column</strong> uneditable.</p>' +
+const table = '<p>This table uses features of the non-editable plugin to make the text in the<br /><strong>top row</strong> and <strong>left column</strong> uneditable.</p>' +
 '    <table style="width: 60%; border-collapse: collapse;" border="1"> ' +
 '        <caption class="mceNonEditable">Ephox Sales Analysis</caption> ' +
 '       <tbody> ' +
@@ -22,7 +22,7 @@ var table = '<p>This table uses features of the non-editable plugin to make the 
 '        </tbody> ' +
 '    </table>';
 
-var table2 = '<div> ' +
+const table2 = '<div> ' +
 '        <p>' +
 '            Templates are a great way to help content authors get started creating content.  You can define the HTML for the template and ' +
 '            then when the author inserts the template they have a great start towards creating content! ' +
@@ -46,7 +46,7 @@ var table2 = '<div> ' +
 '        </table> ' +
 '    </div> ';
 
-var demoBaseConfig = {
+const demoBaseConfig = {
   selector: 'textarea#classic',
   width: 755,
   height: 500,
@@ -70,12 +70,11 @@ var demoBaseConfig = {
       content: table2
     }
   ],
-  toolbar:
-    'insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image tinydrive',
+  toolbar: 'insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image insertfile',
   spellchecker_dialog: true,
   spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
-  tinydrive_demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
-  tinydrive_token_provider: function (success, failure) {
+  tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
+  tinydrive_token_provider: (success, failure) => {
     success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
   },
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'

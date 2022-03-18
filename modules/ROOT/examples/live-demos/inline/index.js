@@ -1,4 +1,4 @@
-var emailHeaderConfig = {
+const emailHeaderConfig = {
   selector: '.tinymce-heading',
   menubar: false,
   inline: true,
@@ -16,7 +16,7 @@ var emailHeaderConfig = {
   powerpaste_html_import: 'clean',
 };
 
-var emailBodyConfig = {
+const emailBodyConfig = {
   selector: '.tinymce-body',
   menubar: false,
   inline: true,

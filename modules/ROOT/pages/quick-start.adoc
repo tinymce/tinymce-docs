@@ -10,7 +10,7 @@
 
 Include the following line of code in the `<head>` of an HTML page.
 
-[,html]
+[source,html]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
@@ -23,7 +23,7 @@ For example: To replace `<textarea id="mytextarea">` with a {productname} {produ
 
 For example:
 
-[,html]
+[source,html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html lang="en">

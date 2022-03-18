@@ -17,7 +17,7 @@ Insert the {productname} editor code into the application to load {productname} 
 
 The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page. Be sure to substitute 'no-api-key' with your api key.
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
@@ -36,13 +36,13 @@ The following example adds a script tag into the application that inserts the co
 
 image::scripttag.png[Script Tag Description]
 
-+++<a class="anchor" id="referer-troubleshooting">++++++</a>+++
 
-____
-IMPORTANT: {cloudname} verifies the domain {productname} is loading from by checking the *Referer* header in the network request. Sometimes the domains in the *Referer* header does not match with the URL in the browser's address bar.
+[IMPORTANT, id="referer-troubleshooting"]
+====
+{cloudname} verifies the domain {productname} is loading from by checking the *Referer* header in the network request. Sometimes the domains in the *Referer* header does not match with the URL in the browser's address bar.
 
 To check the *Referer* header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {productname} with your API key, and click on the *Headers* tab.  In the section called *Request Headers* there should be a field for *Referer*. If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's *Refer* header settings.
-____
+====
 
 === Step 2: Load, customize and interact with TinyMCE
 
@@ -103,7 +103,7 @@ NOTE: The script tag typically references `tinymce.min.js` hosted within the app
 
 Replace the script tag with the following:
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----

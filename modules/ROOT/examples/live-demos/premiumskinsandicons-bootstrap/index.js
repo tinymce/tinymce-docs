@@ -3,7 +3,7 @@ tinymce.init({
   skin: 'bootstrap',
   icons: 'bootstrap',
   plugins: 'image lists link anchor charmap',
-  toolbar: 'formatselect | bold italic bullist numlist | link image charmap',
+  toolbar: 'blocks | bold italic bullist numlist | link image charmap',
   menubar: false,
   setup: function (editor) {
     editor.on('init', function () {

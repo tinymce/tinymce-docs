@@ -109,7 +109,7 @@ The {productname} default toolbar contains the following buttons:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
-  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
+  toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
 });
 ----
 
@@ -211,7 +211,7 @@ The following example is a basic {productname} configuration.
       'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
       'media', 'table', 'emoticons', 'template', 'help'
     ],
-    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
       'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
       'forecolor backcolor emoticons | help',
     menu: {
@@ -263,7 +263,7 @@ Selects the toolbar buttons displayed to the user. Use a comma or space as a sep
 
 [source,js]
 ----
-toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+toolbar: 'insertfile undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
 ----
 
 Adds an additional menu named "My Favorites" with `+menu+`, then adds it to the menu bar using `+menubar+`.

@@ -204,7 +204,7 @@ tinymce.ScriptLoader.loadScripts(
           'lists powerpaste save visualblocks wordcount',
         menubar: 'file edit insert view format table tools help',
         toolbar:
-          'undo redo | formatselect | bold italic underline | ' +
+          'undo redo | blocks | bold italic underline | ' +
           'alignleft aligncenter alignright | bullist numlist | insert | help',
         height: 400,
         toolbar_groups: {

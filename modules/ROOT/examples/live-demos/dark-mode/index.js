@@ -9,6 +9,6 @@ tinymce.init({
     'searchreplace', 'visualblocks', 'code', 'fullscreen', 'insertdatetime',
     'media', 'table', 'code', 'help', 'wordcount'
   ],
-  toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help | fullscreen code',
+  toolbar: 'undo redo | blocks | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help | fullscreen code',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

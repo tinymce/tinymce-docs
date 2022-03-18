@@ -15,7 +15,7 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  toolbar: 'undo redo | styleselect | bold italic | link image'
+  toolbar: 'undo redo | styles | bold italic | link image'
 });
 ----
 
@@ -39,7 +39,7 @@ tinymce.init({
       name: 'history', items: [ 'undo', 'redo' ]
     },
     {
-      name: 'styles', items: [ 'styleselect' ]
+      name: 'styles', items: [ 'styles' ]
     },
     {
       name: 'formatting', items: [ 'bold', 'italic']
@@ -88,7 +88,7 @@ Type : `+Array+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: [
-    'undo redo | styleselect | bold italic | link image',
+    'undo redo | styles | bold italic | link image',
     'alignleft aligncenter alignright'
   ]
 });

@@ -16,7 +16,7 @@ Defaults : `+'bold italic | quicklink h2 h3 blockquote'+`
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
-  quickbars_selection_toolbar: 'bold italic | formatselect | quicklink blockquote'
+  quickbars_selection_toolbar: 'bold italic | blocks | quicklink blockquote'
 });
 ----
 

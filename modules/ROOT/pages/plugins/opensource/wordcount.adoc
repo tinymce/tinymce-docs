@@ -29,6 +29,7 @@ The {pluginname} plugin provides the following JavaScript command.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
 
+[[api]]
 == API
 
 The Word Count plugin exposes an API for retrieving the word and character count of either the whole document or the current editor selection. Following is an example of how to retrieve each property.

@@ -57,6 +57,6 @@ require('../tinymce/plugins/example/plugin.js');
 ----
 |===
 
-IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/advanced/usage-with-module-loaders/[Bundling {productname} with a module loader].
+IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at xref:advanced/usage-with-module-loaders/index.adoc[Bundling {productname} with a module loader].
 
 include::partial$module-loading/bundling-plugin-files.adoc[]

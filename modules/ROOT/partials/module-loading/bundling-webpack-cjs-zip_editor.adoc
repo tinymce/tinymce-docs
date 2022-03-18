@@ -4,7 +4,8 @@ include::partial$module-loading/bundling-required-components.adoc[]
 +
 Example `src/editor.js`
 +
-```js
+[source, js]
+----
 /* Import TinyMCE */
 var tinymce = require('../tinymce/js/tinymce/tinymce.js');
 
@@ -44,4 +45,4 @@ exports.render = function () {
     content_style: contentUiCss.toString() + '\n' + contentCss.toString(),
   });
 };
-```
+----

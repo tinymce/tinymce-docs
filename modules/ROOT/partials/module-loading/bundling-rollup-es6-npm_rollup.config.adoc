@@ -2,7 +2,8 @@
 +
 Example `rollup.config.js`
 +
-```js
+[source, js]
+----
 import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -28,4 +29,4 @@ export default {
     format: 'umd'
   }
 };
-```
+----

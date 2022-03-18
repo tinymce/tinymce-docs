@@ -6,30 +6,32 @@ The following new features and enhancements were added for the {productname} 5.1
 
 The new mobile experience comes with a number of user interface changes, building on the {productname} desktop experience:
 
-* <<mobiledevicesnowusethesilvertheme,Mobile devices now use the `silver` theme>>
-* <<horizontalcontextualmenusonmobile,Horizontal contextual menus on mobile>>
-* <<side-scrollingtoolbarsonmobile,Side-scrolling toolbars on mobile>>
-* <<contextualkeyboardsettings,Contextual keyboard settings>>
-* <<newmobiledefaultsforselectedsettings,New mobile defaults for selected settings>>
-* <<tablecellselectiononmobile,Table cell selection on mobile>>
-* <<touch-friendlysplitbuttons,Touch-friendly split buttons>>
-* <<unsupportedsettingsformobile,Unsupported settings for mobile>>
+* xref:mobiledevicesnowusethesilvertheme[Mobile devices now use the `silver` theme]
+* xref:horizontalcontextualmenusonmobile[Horizontal contextual menus on mobile]
+* xref:side-scrollingtoolbarsonmobile[Side-scrolling toolbars on mobile]
+* xref:contextualkeyboardsettings[Contextual keyboard settings]
+* xref:newmobiledefaultsforselectedsettings[New mobile defaults for selected settings]
+* xref:tablecellselectiononmobile[Table cell selection on mobile]
+* xref:touch-friendlysplitbuttons[Touch-friendly split buttons]
+* xref:unsupportedsettingsformobile[Unsupported settings for mobile]
 
 The new mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
 
-* link:{baseurl}/plugins/premium/comments/[Comments]
-* link:{baseurl}/plugins/opensource/imagetools/[Image tools]
-* link:{baseurl}/plugins/premium/moxiemanager/[MoxieManager]
-* link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen]
+* xref:plugins/premium/comments/index.adoc[Comments]
+* xref:plugins/opensource/imagetools.adoc[Image tools]
+* xref:plugins/premium/moxiemanager.adoc[MoxieManager]
+* xref:plugins/premium/permanentpen.adoc[Permanent Pen]
 
 ==== Enabling the mobile editor
 
 To ensure the mobile editor functions as intended, add the following `meta` tag to the `head` of pages using {productname}.
 
-```html+++<meta name="viewport" content="width=device-width, initial-scale=1">++++++</meta>+++
+[source, html]
+----
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+----
 
-```
-
+[[mobiledevicesnowusethesilvertheme]]
 ==== Mobile devices now use the `silver` theme
 
 The mobile experience provided for {productname} 4.7 through {productname} 5.0 has been deprecated in {productname} 5.1.
@@ -39,8 +41,8 @@ The mobile experience provided for {productname} 4.7 through {productname} 5.0 h
 ( {productname} 4.7 through {productname} 5.0 ) | *New mobile experience* +
 ( {productname} 5.1 + )
 
-| image:{baseurl}/images/legacy_mobile_exp.png[{productname} legacy mobile experience]
-| image:{baseurl}/images/5_1_mobile_exp.png[{productname} 5.1+ mobile experience]
+| image:legacy_mobile_exp.png[{productname} legacy mobile experience]
+| image:5_1_mobile_exp.png[{productname} 5.1+ mobile experience]
 |===
 
 To revert to the legacy mobile theme, add the mobile theme to the {productname} configuration, such as:
@@ -57,71 +59,78 @@ tinymce.init({
 NOTE: No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
 For information on:
-* Using the `silver` theme for mobile, see: link:{baseurl}/mobile/[{productname} Mobile].
-* Using the legacy `mobile` theme, see: link:{baseurl}/mobile/#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
+* Using the `silver` theme for mobile, see: xref:mobile.adoc[{productname} Mobile].
+* Using the legacy `mobile` theme, see: xref:mobile.adoc#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 
+[[horizontalcontextualmenusonmobile]]
 ==== Horizontal contextual menus on mobile
 
-Contextual menus are now horizontal on mobile devices and open when a long-press is used. They also <<side-scrollingtoolbarsonmobile,side-scroll>> to allow larger lists of items to be available on mobile devices.
+Contextual menus are now horizontal on mobile devices and open when a long-press is used. They also xref:side-scrollingtoolbarsonmobile[side-scroll] to allow larger lists of items to be available on mobile devices.
 
 For example:
 
-image::{baseurl}/images/side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
+image:side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
 
+[[side-scrollingtoolbarsonmobile]]
 ==== Side-scrolling toolbars on mobile
 
-Toolbars and <<horizontalcontextualmenusonmobile,horizontal menus>> side-scroll using "swipe" gestures on mobile devices. This allows longer toolbars to be used without occupying too much screen space. This feature removes the need for a toolbar drawer on mobile devices.
+Toolbars and xref:horizontalcontextualmenusonmobile[horizontal menus] side-scroll using "swipe" gestures on mobile devices. This allows longer toolbars to be used without occupying too much screen space. This feature removes the need for a toolbar drawer on mobile devices.
 
+[[contextualkeyboardsettings]]
 ==== Contextual keyboard settings
 
 A new `inputMode` configuration setting for dialog input components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {productname}, the core {productname} plugins, and the premium {productname} plugins have been updated to use `inputMode`.
 
-For information on using `inputMode`, see: link:{baseurl}/ui-components/dialogcomponents/#inputmode[Dialog components - `inputMode`].
+For information on using `inputMode`, see: xref:ui-components/dialogcomponents.adoc#inputmode[Dialog components - `inputMode`].
 
+[[newmobiledefaultsforselectedsettings]]
 ==== New mobile defaults for selected settings
 
 These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
 
 The following settings have mobile-specific default values:
 
-* link:{baseurl}/configure/editor-appearance/#menubar[`menubar`] - defaults to `false` on mobile phones.
-* link:{baseurl}/configure/editor-appearance/#toolbar_drawer[`toolbar_drawer`] - defaults to `false` on mobile devices. The toolbar will <<sidescrollingtoolbarsonmobile,side-scroll by default>>.
-* link:{baseurl}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
-* link:{baseurl}/plugins/opensource/table/#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
-* link:{baseurl}/configure/editor-appearance/#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
-* link:{baseurl}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+* xref:configure/editor-appearance.adoc#menubar[`menubar`] - defaults to `false` on mobile phones.
+* xref:configure/editor-appearance.adoc#toolbar_drawer[`toolbar_drawer`] - defaults to `false` on mobile devices. The toolbar will xref:side-scrollingtoolbarsonmobile[side-scroll by default].
+* xref:configure/editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* xref:plugins/opensource/table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* xref:configure/editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
+* xref:configure/advanced-editing-behavior.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
+[[tablecellselectiononmobile]]
 ==== Table cell selection on mobile
 
-The link:{baseurl}/plugins/opensource/table/[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
+The xref:plugins/opensource/table.adoc[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
 
 For example:
 
-image::{baseurl}/images/table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
+image:table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
 
+[[touch-friendlysplitbuttons]]
 ==== Touch-friendly split buttons
 
-The styling on link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
+The styling on xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
 
+[[unsupportedsettingsformobile]]
 ==== Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
 
-* link:{baseurl}/general-configuration-guide/use-tinymce-inline/[Inline editing mode].
-* link:{baseurl}/general-configuration-guide/use-tinymce-distraction-free/[Distraction-free editing mode].
-* link:{baseurl}/configure/editor-appearance/#inline[`inline`].
-* link:{baseurl}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`].
-* link:{baseurl}/plugins/opensource/table/#table_grid[`table_grid`].
-* link:{baseurl}/configure/editor-appearance/#resize[`resize`].
-* link:{baseurl}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`].
+* xref:general-configuration-guide/use-tinymce-inline.adoc[Inline editing mode].
+* xref:general-configuration-guide/use-tinymce-distraction-free.adoc[Distraction-free editing mode].
+* xref:configure/editor-appearance.adoc#inline[`inline`].
+* xref:configure/editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`].
+* xref:plugins/opensource/table.adoc#table_grid[`table_grid`].
+* xref:configure/editor-appearance.adoc#resize[`resize`].
+* xref:configure/advanced-editing-behavior.adoc#object_resizing[`object_resizing`].
 
 === Sticky Toolbar
 
 The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
 
-image::{baseurl}/images/sticky-toolbar.gif[Sticky Toolbar animation]
+image:sticky-toolbar.gif[Sticky Toolbar animation]
 
-For information on the Sticky Toolbars, see: link:{baseurl}/configure/editor-appearance/#toolbar_sticky[Enabling Sticky Toolbars].
+For information on the Sticky Toolbars, see: xref:configure/editor-appearance.adoc#toolbar_sticky[Enabling Sticky Toolbars].
 
 === Changes to the Env API for platform detection
 
@@ -235,7 +244,7 @@ New platform detection functions have been added to the xref:apis/tinymce.env.ad
 | Returns `true` if the user's device is a WebView device.
 |===
 
-For a list of deprecated `Env` APIs, see: <<deprecatedapiproperties-tinymceenv,Deprecated API Properties - `tinymce.Env`>>.
+For a list of deprecated `Env` APIs, see: xref:deprecatedapiproperties-tinymceenv[Deprecated API Properties - `tinymce.Env`].
 
 === Added new `referrer_policy` setting
 
@@ -244,7 +253,7 @@ Used for setting the level of referrer information sent when loading plugins and
 * Improve the privacy of end-users.
 * Assist with server-side filtering of cross-origin requests for {productname} resources.
 
-For information on using the `referrer_policy` setting, see: link:{baseurl}/configure/integration-and-setup/#referrer_policy[Integration and setup options - `referrer_policy`].
+For information on using the `referrer_policy` setting, see: xref:configure/integration-and-setup.adoc#referrer_policy[Integration and setup options - `referrer_policy`].
 
 === Added a dark content css skin
 
@@ -254,7 +263,7 @@ For example:
 
 liveDemo::dark-mode[]
 
-For information on using the dark version of the default skin, see: link:{baseurl}/general-configuration-guide/customize-ui/#skins[Customizing the editor UI - Skins].
+For information on using the dark version of the default skin, see: xref:general-configuration-guide/customize-ui.adoc#skins[Customizing the editor UI - Skins].
 
 === Added border width to Table cell dialog
 
@@ -262,7 +271,7 @@ The table plugin has been updated to include a *Border width* field in the *Cell
 
 For example:
 
-image::{baseurl}/images/border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
+image:border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
 
 === Changed the default `toolbar_drawer` to `floating`
 
@@ -278,7 +287,7 @@ tinymce.init({
 });
 ----
 
-For information on the `toolbar_drawer` setting, see: link:{baseurl}/configure/editor-appearance/#toolbar_drawer[User interface options - `toolbar_drawer`].
+For information on the `toolbar_drawer` setting, see: xref:configure/editor-appearance.adoc#toolbar_drawer[User interface options - `toolbar_drawer`].
 
 === Icon changes
 
@@ -286,10 +295,10 @@ In {productname} 5.0, the same icon (`paragraph`) was used for the `visualchars`
 
 To improve the user experience:
 
-* The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: image:{baseurl}/images/icons/visualchars.svg[`paragraph` renamed to `visualchars`]
-* A new `visualblocks` icon is used for the `visualblocks` toolbar button: image:{baseurl}/images/icons/visualblocks.svg[New visualblocks icon]
+* The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: image:icons/visualchars.svg[`paragraph` renamed to `visualchars`]
+* A new `visualblocks` icon is used for the `visualblocks` toolbar button: image:icons/visualblocks.svg[New visualblocks icon]
 
-For the list of icons included in {productname}, see: link:{baseurl}/advanced/editor-icon-identifiers/[Available icons].
+For the list of icons included in {productname}, see: xref:advanced/editor-icon-identifiers.adoc[Available icons].
 
 === Fixes to the positioning of inline dialogs and menus
 

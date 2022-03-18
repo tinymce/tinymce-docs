@@ -1,3 +1,4 @@
+[[mentions_fetch]]
 === `mentions_fetch`
 
 This option lets you request a list of users from your server that match a search query. The callback gets passed two parameters: one is the search query object, the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users. For information on the user properties to pass the success callback for the available mentions item types (`mentions_item_type`), see: <<userproperties,User properties>>.

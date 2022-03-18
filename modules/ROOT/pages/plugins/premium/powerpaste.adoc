@@ -100,6 +100,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Advanced Config Options
 
+[[pre-filtering-and-post-filtering-callbacks]]
 === Pre-filtering and post-filtering callbacks
 
 Developers can add custom filtering before and after *PowerPaste*'s filters are run using the pre-filtering and post-filtering callbacks. These can be added as init options or at runtime using event listeners.

@@ -73,8 +73,9 @@ To protect our users, {companyname} ensures that the TinyMCE dependencies are up
 | Fonts are used for icons in the UI and is loaded from external files.
 |===
 
-____
-IMPORTANT: These directives will prevent all content loading from external sources.
+[IMPORTANT]
+====
+These directives will prevent all content loading from external sources.
 To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
 
 [source, html]
@@ -90,7 +91,7 @@ media-src *;
 ----
 
 For information on Content Security Policies, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP[MDN Web Docs - Content Security Policy (CSP)].
-____
+====
 
 When using the {cloudname}, use this CSP header :
 

@@ -31,7 +31,7 @@ include::partial$configuration/powerpaste_keep_unsupported_src.adoc[leveloffset=
 
 include::partial$configuration/smart_paste.adoc[leveloffset=+1]
 
-include::partial$configuration/image_file_types.adoc[leveloffset=+1]
+include::partial$configuration/images_file_types.adoc[leveloffset=+1]
 
 == Advanced Config Options
 
@@ -39,7 +39,7 @@ include::partial$configuration/image_file_types.adoc[leveloffset=+1]
 
 Developers can add custom filtering before and after *PowerPaste*'s filters are run using the pre-filtering and post-filtering callbacks. These can be added as init options or at runtime using event listeners.
 
-NOTE: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
+NOTE: These callbacks are also triggered by the core paste functionality, but when triggered by PowerPaste they are passed more data.
 
 include::partial$configuration/paste_preprocess.adoc[leveloffset=+1]
 

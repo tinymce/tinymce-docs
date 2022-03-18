@@ -8,17 +8,17 @@
   },
   "homepage": "https://www.tiny.cloud/docs/",
   "scripts": {
-    "watch": "nodemon --exec antora antora-playbook.yml",
-    "server": "http-server build/site/ --port 4000",
-    "serve": "npm-run-all -p watch server",
+    "nodemon-dev": "nodemon --exec antora ./antora-playbook-dev.yml",
     "build": "./_scripts/api-reference.sh",
-    "build-local": "./_scripts/api-reference-local.sh"
+    "build-local-ref": "./_scripts/api-reference-local.sh",
+    "server": "http-server build/site/ --port 4000",
+    "serve": "npm-run-all -p nodemon-dev server"
   },
   "author": "Tiny Technologies Inc",
   "license": "CC-BY-NC-SA-3.0",
   "nodemonConfig": {
     "execMap": {
-      "build": "antora antora-playbook.yml"
+      "build": "antora ./antora-playbook-dev.yml"
     },
     "watch": [
       "modules/*"

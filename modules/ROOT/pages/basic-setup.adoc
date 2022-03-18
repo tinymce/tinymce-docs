@@ -24,7 +24,7 @@ Example code snippet:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugin: 'a_tinymce_plugin',
+  plugins: 'a_tinymce_plugin',
   a_plugin_option: true,
   a_configuration_option: 400
 });
@@ -207,9 +207,9 @@ The following example is a basic {productname} configuration.
     width: 600,
     height: 300,
     plugins: [
-      'advlist autolink link image lists charmap preview anchor pagebreak',
-      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-      'table emoticons template paste help'
+      'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+      'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+      'media', 'table', 'emoticons', 'template', 'help'
     ],
     toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
       'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
@@ -253,9 +253,9 @@ Selects the plugins to be included on load.
 [source,js]
 ----
 plugins: [
-  'advlist autolink link image lists charmap preview anchor pagebreak',
-  'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-  'table emoticons template paste help'
+  'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+  'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+  'media', 'table', 'emoticons', 'template', 'help'
 ],
 ----
 

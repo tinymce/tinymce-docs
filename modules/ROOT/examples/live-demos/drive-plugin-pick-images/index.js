@@ -4,9 +4,7 @@ tinymce.init({
   selector: 'textarea#drive-pick-images-example',
   height: 200,
   menubar: false,
-  plugins: [
-    'tinydrive link image media'
-  ],
+  plugins: 'tinydrive link image media',
   toolbar: 'custom | insertfile | link image media',
   setup: function (editor) {
     editor.ui.registry.addButton('custom', {

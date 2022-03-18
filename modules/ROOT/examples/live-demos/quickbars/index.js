@@ -10,18 +10,8 @@ tinymce.init({
   menubar: false,
   inline: true,
   plugins: [
-    'autolink',
-    'autoresize',
-    'codesample',
-    'link',
-    'lists',
-    'media',
-    'powerpaste',
-    'table',
-    'image',
-    'quickbars',
-    'codesample',
-    'help'
+    'autolink', 'autoresize', 'codesample', 'link', 'lists', 'media',
+    'powerpaste', 'table', 'image', 'quickbars', 'codesample', 'help'
   ],
   toolbar: false,
   quickbars_insert_toolbar: 'quicktable image media codesample',

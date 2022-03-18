@@ -1,4 +1,4 @@
-var page1Config = {
+const page1Config = {
   title: 'Redial Demo',
   body: {
     type: 'panel',
@@ -31,13 +31,12 @@ var page1Config = {
       disabled: true
     }
   ],
-  onChange: function (dialogApi, details) {
-    var data = dialogApi.getData();
+  onChange: (dialogApi, details) => {
+    const data = dialogApi.getData();
     /* Example of enabling and disabling a button, based on the checkbox state. */
-    var toggle = data.anyterms ? dialogApi.enable : dialogApi.disable;
-    toggle('uniquename');
+    dialogApi.setEnabled('uniquename', data.anyterms);
   },
-  onAction: function (dialogApi, details) {
+  onAction: (dialogApi, details) => {
     if (details.name === 'uniquename') {
       dialogApi.redial(page2Config);
     } else if (details.name === 'doesnothing') {
@@ -46,7 +45,7 @@ var page1Config = {
   }
 };
 
-var page2Config = {
+const page2Config = {
   title: 'Redial Demo - Page 2',
   body: {
     type: 'panel',
@@ -78,12 +77,12 @@ var page2Config = {
   initialData: {
     choosydata: ''
   },
-  onAction: function (dialogApi, details) {
-    var data = dialogApi.getData();
+  onAction: (dialogApi, details) => {
+    const data = dialogApi.getData();
 
-    var result = 'You chose wisely: ' + data.choosydata;
+    const result = 'You chose wisely: ' + data.choosydata;
     console.log(result);
-    tinymce.activeEditor.execCommand('mceInsertContent', false, '<p>' + result + '</p>');
+    tinymce.activeEditor.execCommand('mceInsertContent', false, `<p>${result}</p>`);
 
     dialogApi.close();
   }
@@ -93,12 +92,10 @@ tinymce.init({
   selector: 'textarea#redial-demo',
   toolbar: 'wizardExample',
   height: '900px',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('wizardExample', {
       icon: 'code-sample',
-      onAction: function () {
-        editor.windowManager.open(page1Config)
-      }
+      onAction: () => editor.windowManager.open(page1Config)
     })
   },
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'

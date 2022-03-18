@@ -1,17 +1,15 @@
-tinymce.PluginManager.add('my-example-plugin', function (editor) {
+tinymce.PluginManager.add('my-example-plugin', (editor) => {
   editor.ui.registry.addMenuItem('image', {
     icon: 'image',
     text: 'Image',
-    onAction: function () {
+    onAction: () => {
       console.log('context menu clicked');
       alert('context menu clicked');
     }
   });
 
   editor.ui.registry.addContextMenu('image', {
-    update: function (element) {
-      return !element.src ? '' : 'image';
-    }
+    update: (element) => !element.src ? '' : 'image'
   });
 });
 

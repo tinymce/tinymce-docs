@@ -15,8 +15,8 @@ The configuration for a basic URL dialog might look like this:
 [source,js]
 ----
 tinymce.activeEditor.windowManager.openUrl({
-   title: 'Just a title',
-   url: 'http://www.tiny.cloud/example.html'
+  title: 'Just a title',
+  url: 'http://www.tiny.cloud/example.html'
 });
 ----
 
@@ -114,7 +114,7 @@ Similarly, to send messages from {productname} back to the external page, the `+
 
 [source,js]
 ----
-window.addEventListener('message', function (event) {
+window.addEventListener('message', (event) => {
   var data = event.data;
 
   // Do something with the data received here

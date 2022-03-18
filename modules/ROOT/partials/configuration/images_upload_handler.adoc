@@ -15,7 +15,7 @@ When this option is not set, {productname} utilizes an `+XMLHttpRequest+` to upl
 
 NOTE: To replace the `+<img>+` tag's `+src+` attribute with the remote location, please use the success callback defined in the `+images_upload_handler+` function with the returned JSON object's location property.
 
-Type: `+JavaScript Function+`
+Type: `+Function+`
 
 === Example: Using `+images_upload_handler+`
 

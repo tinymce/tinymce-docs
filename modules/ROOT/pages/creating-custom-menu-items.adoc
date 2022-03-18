@@ -13,9 +13,9 @@
 
 The methods for adding custom menu items are in the UI Registry part of the editor API editor.ui.registry. The API has three methods for adding menu items:
 
-* `+editor.ui.registry.addMenuItem+`(identifier, configuration)
-* `+editor.ui.registry.addNestedMenuItem+`(identifier, configuration)
-* `+editor.ui.registry.addToggleMenuItem+`(identifier, configuration)
+* `+editor.ui.registry.addMenuItem(identifier, configuration)+`
+* `+editor.ui.registry.addNestedMenuItem(identifier, configuration)+`
+* `+editor.ui.registry.addToggleMenuItem(identifier, configuration)+`
 
 The two arguments these methods take are:
 
@@ -34,12 +34,10 @@ tinymce.init({
     custom: { title: 'Custom Menu', items: 'undo redo myCustomMenuItem' }
   },
   menubar: 'file edit custom',
-  setup: function(editor) {
+  setup: (editor) => {
     editor.ui.registry.addMenuItem('myCustomMenuItem', {
       text: 'My Custom Menu Item',
-      onAction: function() {
-        alert('Menu item clicked');
-      }
+      onAction: () => alert('Menu item clicked')
     });
   }
 });

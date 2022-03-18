@@ -1,9 +1,8 @@
 tinymce.init({
   selector: 'textarea#custom-shortcut',
   height: 300,
-  setup: function (editor) {
-    editor.addShortcut(
-      'meta+alt+y', 'Add yellow highlight to selected text.', function () {
+  setup: (editor) => {
+    editor.addShortcut('meta+alt+y', 'Add yellow highlight to selected text.', () => {
       editor.execCommand('hilitecolor', false , '#FFFF00');
     });
   },

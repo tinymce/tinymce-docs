@@ -17,8 +17,8 @@ The following example uses a function to create a console log entry when the edi
 ----
 tinymce.init({
   selector: 'textarea',
-  setup: function(editor) {
-    editor.on('init', function(e) {
+  setup: (editor) => {
+    editor.on('init', (e) => {
       console.log('The Editor has initialized.');
     });
   }
@@ -31,9 +31,9 @@ The following example uses a function to create a console log entry when a comma
 ----
 tinymce.init({
   selector: 'textarea',
-  init_instance_callback: function(editor) {
-    editor.on('ExecCommand', function(e) {
-      console.log('The ' + e.command + ' command was fired.');
+  init_instance_callback: (editor) => {
+    editor.on('ExecCommand', (e) => {
+      console.log(`The ${e.command} command was fired.`);
     });
   }
 });
@@ -157,6 +157,9 @@ The following events are provided by the {productname} editor.
 |ResolveName |`+{ name: string, target: Element }+` |(iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.
 |BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
 |OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
+|PastePreProcess |`+{ content: string }+` |Fired before the content is parsed from the clipboard.
+|PastePostProcess |`+{ node: Element }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
+|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
 == Plugin events
@@ -174,7 +177,6 @@ The following plugins provide events.
 * xref:linkcheckerevents[Link checker events]
 * xref:listsevents[Lists events]
 * xref:mediaembedevents[Media Embed events]
-* xref:pasteevents[Paste events]
 * xref:permanentpenevents[Permanent Pen events]
 * xref:powerpasteevents[PowerPaste events]
 * xref:spellcheckerproevents[Spell Checker Pro events]
@@ -294,19 +296,6 @@ The following event is provided by the xref:introduction-to-mediaembed.adoc[Medi
 |MediaEmbedError |`+{ message: string }+` |Fired when a media embed error occurs, such as the Media Embed service can't be reached.
 |===
 
-[[pasteevents]]
-=== Paste events
-
-The following events are provided by the xref:paste.adoc[Paste plugin].
-
-[cols="1,1,2",options="header"]
-|===
-|Name |Data |Description
-|PastePreProcess |`+{ content: string, wordContent: boolean }+` |Fired before the content is parsed from the clipboard.
-|PastePostProcess |`+{ node: Element, wordContent: boolean }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
-|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
-|===
-
 [[permanentpenevents]]
 === Permanent Pen events
 
@@ -394,7 +383,7 @@ The following events are used for editor management. These events are handled us
 .AddEditor
 [source,js]
 ----
-tinymce.on('AddEditor', function(e) {
+tinymce.on('AddEditor', (e) => {
   console.log('Added editor with id: ' + e.editor.id);
 });
 ----
@@ -402,7 +391,7 @@ tinymce.on('AddEditor', function(e) {
 .RemoveEditor
 [source,js]
 ----
-tinymce.on('RemoveEditor', function(e) {
+tinymce.on('RemoveEditor', (e) => {
   console.log('Removed editor with id: ' + e.editor.id);
 });
 ----

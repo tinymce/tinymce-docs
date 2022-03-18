@@ -71,8 +71,8 @@ Or by passing Javascript that returns a {productname} configuration object.
     width: 800,
     height: 600,
     plugins: [
-      'advcode advlist autolink lists link image editimage charmap emoticons',
-      'anchor searchreplace insertdatetime media table powerpaste help wordcount'
+      'advcode', 'advlist', 'autolink', 'lists', 'link', 'image', 'editimage', 'charmap', 'emoticons',
+      'anchor', 'searchreplace', 'insertdatetime', 'media', 'table', 'powerpaste', 'help', 'wordcount'
     ],
     menubar: false,
     toolbar: [

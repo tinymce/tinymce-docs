@@ -1,44 +1,42 @@
-function createSuccessNotification() {
+const createSuccessNotification = () => {
   tinymce.activeEditor.notificationManager.open({
     text: 'This is an success notification.<br/>TinyMCE loaded Successfully!',
     type: 'success'
   });
-}
+};
 
-function createInformationNotification() {
+const createInformationNotification = () => {
   tinymce.activeEditor.notificationManager.open({
     text: 'This is an informational notification.',
     type: 'info'
   });
-}
+};
 
-function createWarningNotification() {
+const createWarningNotification = () => {
   tinymce.activeEditor.notificationManager.open({
     text: 'This is a warning notification.',
     type: 'warning'
   });
-}
+};
 
-function createErrorNotification() {
+const createErrorNotification = () => {
   tinymce.activeEditor.notificationManager.open({
     text: 'This is an error... notification.',
     type: 'error'
   });
-}
+};
 
 tinymce.init({
   selector: 'textarea#notifications',
   height: 500,
   menubar: false,
-  plugins: [
-    'lists link image fullscreen table help'
-  ],
+  plugins: 'lists link image fullscreen table help',
   toolbar: 'undo redo | blocks | ' +
   'bold italic backcolor | alignleft aligncenter ' +
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',
-  setup: function(editor) {
-    editor.on('skinLoaded', function(e) {
+  setup: (editor) => {
+    editor.on('SkinLoaded', (e) => {
       createSuccessNotification();
       createInformationNotification();
       createWarningNotification();

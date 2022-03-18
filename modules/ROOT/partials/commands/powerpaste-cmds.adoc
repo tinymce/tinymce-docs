@@ -1,7 +1,7 @@
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|mceInsertClipboardContent |Triggers a paste event to detect Word, Google Docs, or standard HTML content in the clipboard, and use the relevant paste path at the cursor location or over the current selection. The command requires an object with: `+html+` containing the HTML content, or `+text+` containing plain text.
+|mceInsertClipboardContent |Triggers a paste event at the cursor location or over the current selection. HTML content will be automatically detected as Word, Google Docs, or standard HTML content and use the relevant paste path. The command requires an object with: `+html+` containing the HTML content, or `+text+` containing plain text.
 |mceTogglePlainTextPaste |Toggles paste as plain text.
 |===
 

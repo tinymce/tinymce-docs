@@ -12,32 +12,32 @@ TinyMCE 5.0.4 release adds improvements to the TinyMCE editor to improve the ove
 
 === Tiny Drive
 
-The new Tiny Drive comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/tinydrive/changelog/[Changelog].
+The new Tiny Drive comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the xref:tinydrive/changelog.adoc[Changelog].
 
 To try out *Tiny Drive* start with this https://www.tiny.cloud/drive/[dedicated product page] or check out the https://www.tiny.cloud/pricing[pricing page] to see all the flexible pricing options.
 
-For more information on *Tiny Drive* refer to the full link:{baseurl}/tinydrive/[documentation].
+For more information on *Tiny Drive* refer to the full xref:tinydrive/index.adoc[documentation].
 
-There is also a demo provided to explore the *Tiny Drive* capabilities link:{baseurl}/tinydrive/introduction/#demo[here].
+There is also a demo provided to explore the *Tiny Drive* capabilities xref:tinydrive/introduction.adoc#demo[here].
 
 ==== Tiny Drive starter projects
 
 To get started quickly and understand how Tiny Drive works, Tiny has created starter projects on Github. The starter projects have their procedures to get Tiny Drive up and running.
 
-For more information on *Tiny Drive starter projects*, refer to the full link:{baseurl}/tinydrive/getting-started/#starterprojects[documentation].
+For more information on *Tiny Drive starter projects*, refer to the full xref:tinydrive/getting-started.adoc#starterprojects[documentation].
 
 === URL dialog UI component
 
 The URL dialog user interface component has been introduced in TinyMCE 5.0.4. A URL dialog is a special TinyMCE UI component which loads an external web page inside a dialog (sometimes referred to as modals). This differs from the regular dialogs that use supported components to render an interactive dialog inside the application. URL dialogs are useful for very complex use cases, where the supported dialog components cannot be used -- for example, a custom file manager that is loaded inside a TinyMCE dialog.
 
-For more information on the *URL dialog*, refer to the link:{baseurl}/ui-components/urldialog/[documentation].
+For more information on the *URL dialog*, refer to the xref:ui-components/urldialog.adoc[documentation].
 
 === Custom sidebar toggle button
 
 In TinyMCE 5.0.4, when a new sidebar is registered, a corresponding toolbar button for toggling the sidebar open and close is also created using the same name. This button can then be included in the `toolbar` settings by adding the sidebar name to the toolbar options.
 
-For more information on custom sidebar, refer to the link:{baseurl}/ui-components/customsidebar/[documentation]
+For more information on custom sidebar, refer to the xref:ui-components/customsidebar.adoc[documentation]
 
 == Updates and enhancements
 
-The new TinyMCE 5.0.4 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/changelog/#version504april232019[Changelog].
+The new TinyMCE 5.0.4 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the xref:changelog.adoc#version504april232019[Changelog].

@@ -59,7 +59,7 @@ tinymce.init({
   /*
   The following settings require more configuration than shown here.
   For information on configuring the mentions plugin, see:
-  https://www.tiny.cloud/docs/plugins/premium/mentions/.
+  https://www.tiny.cloud/docs/tinymce/6/mentions/.
   */
   mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,

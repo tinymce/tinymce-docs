@@ -71,7 +71,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
 
   /* These are "local" caches of the data returned from the fake server */
   let usersRequest = null;
-  let userRequest = {};
+  const userRequest = {};
 
   const mentions_fetch = (query, success) => {
     /* Fetch your full user list from somewhere */
@@ -98,11 +98,11 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       const div = document.createElement('div');
 
       div.innerHTML = (
-      '<div class="card">' +
-        '<img class="avatar" src="' + userDetail.image + '"/>' +
-        '<h1>' + userDetail.fullName + '</h1>' +
-        '<p>' + userDetail.description + '</p>' +
-      '</div>'
+        '<div class="card">' +
+          '<img class="avatar" src="' + userDetail.image + '"/>' +
+          '<h1>' + userDetail.fullName + '</h1>' +
+          '<p>' + userDetail.description + '</p>' +
+        '</div>'
       );
 
       success(div);

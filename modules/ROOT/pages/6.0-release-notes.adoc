@@ -11,7 +11,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 | old name                         | new name                      | element                             | notes                                                                                                                                                                                                                                                                         | for more information                               |
 | -------------------------------- | ----------------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| `imagetools`                     | `editimage`                   | Plugin                              | This presents in both the contextual menu and the toolbar’s tooltip text. NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                           | see <<new-and-improved-plugins-imagetools>>        |
+| `imagetools`                     | `editimage`                   | Plugin                              | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                     | see <<new-and-improved-plugins-imagetools>>        |
 | `imagetools_toolbar`             | `editimage_toolbar`           | Option                              | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                     | see <<new-and-improved-plugins-imagetools>>        |
 | `imagetools_proxy`               | `editimage_proxy`             | Option                              | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                     | see <<new-and-improved-plugins-imagetools>>        |
 | `imagetools_cors_hosts`          | `editimage_cors_hosts`        | Option                              | NB: _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                     | see <<new-and-improved-plugins-imagetools>>        |
@@ -34,7 +34,11 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 - *Commands* are what is passed via the `theeditor.execCommand()` API.
 
+  Where a Command name has change, calls to `theeditor.execCommand()` API must be changed to match the new name.
+
 - Configuration *Options* are what is passed when initialising the {productname} editor via `tinymce.init`.
+
+  Where an Option name has changed, configurations using that option must be changed to match the new name.
 
 - *Menu items* and *Toolbar items* are *Options* from `tinymce.init` for UI and UX features, such as the {productname} Menu, Toolbar and Contextual Menu.
 
@@ -258,7 +262,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
    
-  All references to `noneditable` should be removed from your plugin configuration.
+  All references to `noneditable` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. 
 
 [id=changed-plugins-paste]
 ==== Paste
@@ -267,7 +271,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
    
-  All references to `paste` should be removed from your plugin configuration.
+  All references to `paste` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 * The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
 
@@ -285,7 +289,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
    
-   All references to `print` should be removed from your plugin configuration.
+   All references to `print` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 [id=changed-plugins-table]
 ==== Table
@@ -323,7 +327,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
    
-   All references to `textpattern_patterns` (and `text_patterns`) should be removed from your plugin configuration.
+   All references to `textpattern_patterns` (and `text_patterns`) should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 *  Also, the API called `textpattern` has been removed.
 
@@ -372,7 +376,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
   
-  All references to `hr` should be removed from your plugin configuration.
+  All references to `hr` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 [id=removed-or-deprecated-plugins-imagetools]
 ==== ImageTools
@@ -406,7 +410,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
    In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
    
-   All references to `print` should be removed from your plugin configuration.
+   All references to `print` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 [id=removed-or-deprecated-plugins-spellchecker]
 ==== Spellchecker
@@ -449,7 +453,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
   In {productname} 6.0, there is no setting or specifying this functionality in the `plugins` option.
   
-  All references to `textpattern` should be removed from your plugin configuration.
+  All references to `textpattern` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 * Also, the API that called `textpattern` has been removed.
 

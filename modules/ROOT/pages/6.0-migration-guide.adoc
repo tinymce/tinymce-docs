@@ -83,6 +83,8 @@ NOTE: the `link_default_protocol` value is only applied to an edited or inserted
 
 All references to any of these plugins should be removed from plugin configurations.
 
+NOTE: leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. {productname} 6.0 should, otherwise, work without error. If, however, {productname} 6.0 is ‘installed’ incorrectly — by being unZipped onto an existing {productname} 5.0 instance for example — the old plugin will not be removed, it will load and, since a {productname} 5.x plugin is attempting to work with a {productname} 6.0 instance, error notifications will almost certainly present to the end-user.
+
 See below for specific documentation of potential migration issues, if any, regarding these removed plugins.
 
 Eight `plugins` were removed because their functionality is now a Core part of {productname} 6.0:
@@ -103,8 +105,6 @@ Eight `plugins` were removed because their functionality is now a Core part of {
 
 8. `textpattern_patterns`
 
-These plugins were already empty. As of {productname} 6.0, however, they are gone entirely.
-
 Three plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[announcement]:
 
 1. `fullpage`
@@ -112,6 +112,8 @@ Three plugins were removed as per the previous https://www.tiny.cloud/docs/relea
 2. `bbcode`
   
 3. `legacyoutput`
+
+These plugins were already empty. As of {productname} 6.0, however, they are gone entirely.
 
 One plugin was removed as no longer supported:
 
@@ -125,13 +127,11 @@ As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-imaget
 
 _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin] that offers real-time updates of image as they are edited.
 
-`editimage` also offers two new options:
+`editimage` also offers a new export plugin option: `export_image_proxy_service_url`
 
-1. `editimage_proxy_service_url` and
+As well, the `editimage_proxy` option is now `editimage_proxy_service_url`.
 
-2. `export_image_proxy_service_url`.
-
-These new options provide access to Tiny-specific services.
+The new plugin option, and the re-named option,  new capabilities provide access to Tiny-specific services.
   
 NOTE: `editimage_proxy` (the re-named equivalent to the previous `imagetools_proxy`) still works. It is the fallback option should the Tiny-specific services not be available.
 

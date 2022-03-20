@@ -8,12 +8,12 @@ Specific versions of {productname} are compatible with premium plugins.
 Use the following matrix in conjunction with the optional parameters for specifying editor version and xref:cloud-deployment-guide/editor-plugin-version.adoc[plugin version] to ensure compatibility.
 
 NOTE: On June 4, 2019 the URL to access tiny.cloud changed from:
-[source, js]
+[source, html]
 ----
 <script src='https://cloud.tinymce.com/5/tinymce.min.js?apiKey=your_API_key'></script>
 ----
 to:
-[source, js]
+[source, html]
 ----
 <script
  src='https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js'

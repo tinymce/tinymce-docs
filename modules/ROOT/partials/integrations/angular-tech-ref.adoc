@@ -297,7 +297,7 @@ Used to specify the format of the content emitted by the `tinymce-angular` compo
 [[tagname]]
 ==== `tagName`
 
-Only valid when <<inline,`<editor [inline]="true"></editor>`>>. Used to define the HTML element for the editor in inline mode.
+Only valid when pass:[`<editor [inline]="true"></editor>`]. Used to define the HTML element for the editor in inline mode.
 
 *Default value:* `div`
 

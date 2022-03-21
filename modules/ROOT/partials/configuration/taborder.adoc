@@ -11,9 +11,11 @@ In iframe (classic editor) mode, {productname} will copy the `+tabindex+` attrib
 
 [source,html]
 ----
+<script>
 tinymce.init({
   selector: 'textarea'
 });
+</script>
 ...
 <input tabindex="1">
 <textarea tabindex="2"></textarea>

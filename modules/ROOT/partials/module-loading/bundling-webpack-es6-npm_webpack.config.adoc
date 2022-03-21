@@ -18,18 +18,18 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       title: 'TinyMCE Webpack Demo',
-      meta: {viewport: 'width=device-width, initial-scale=1'}
+      meta: { viewport: 'width=device-width, initial-scale=1' }
     }),
   ],
   module: {
     rules: [
       {
         test: /skin\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
       },
       {
         test: /content\.css$/i,
-        use: ['css-loader'],
+        use: [ 'css-loader' ],
       },
     ],
   },

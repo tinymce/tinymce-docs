@@ -17,7 +17,7 @@ Such as:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons_url: 'https://www.example.com/icons/my_icon_pack/icons.js', // load icon pack
-  icons: 'my_icon_pack'      // use icon pack
+  icons: 'my_icon_pack'  // use icon pack
 });
 ----
 
@@ -32,7 +32,7 @@ Type : `+String+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons_url: 'https://www.example.com/icons/material/icons.js', // load icon pack
-  icons: 'material'      // use icon pack
+  icons: 'material'  // use icon pack
 });
 ----
 

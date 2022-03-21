@@ -101,15 +101,15 @@ When deploying xref:editor-and-features.adoc[both the editor and premium plugins
 
 Combine multiple plugin specifications using `+&+` in your query string. For example, to load:
 
-* mentions v2.2
-* powerpaste v5.5
+* mentions v3.0
+* powerpaste v6.0
 * all other premium plugins from those bundled with `{productmajorversion}`
 
-Append `+?mentions=2.2&powerpaste=5.5+`, such as:
+Append `+?mentions=3.0&powerpaste=6.0+`, such as:
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js?mentions=2.2&powerpaste=5.5" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js?mentions=3.0&powerpaste=6.0" referrerpolicy="origin"></script>
 ----
 
 === Specifying a self-hosted deployment of features/plugins
@@ -124,13 +124,13 @@ Instead of loading `+tinymce.min.js+` from {cloudname}, serve {productname} from
 The following example:
 
 * Assumes {productname} has already been loaded by another script on the page.
-* Attempts to load `+mentions+` `+v2.2+` and `+powerpaste+` `+v5.5+` from {cloudname}.
+* Attempts to load `+mentions+` `+v3.0+` and `+powerpaste+` `+v6.0+` from {cloudname}.
 * Attempts to load `+advcode+` from the self-hosted installation.
 * Attempts to load all other premium plugins from those bundled with version `{productmajorversion}` of {productname}.
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=2.2&powerpaste=5.5&advcode=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=3.0&powerpaste=6.0&advcode=sdk" referrerpolicy="origin"></script>
 ----
 
 The disadvantage of `+plugins.min.js+`: to load only one plugin from the {cloudname} and the rest from a self-hosted deployment, *ALL* other plugins need to be added as query parameter with the version as `+sdk+`. When {cloudname} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from a self-hosted deployment, use `+cloud-plugins.min.js+`.
@@ -145,13 +145,13 @@ With `+cloud-plugins.min.js+`, the plugins listed in the query strings do not re
 The following example:
 
 * Assumes {productname} has already been loaded by another script on the page.
-* Attempts to load `+mentions+` `+v2.2+` and `+powerpaste+` `+v5.5+` from {cloudname}.
+* Attempts to load `+mentions+` `+v3.0+` and `+powerpaste+` `+v6.0+` from {cloudname}.
 * Attempts to load `+advcode+` from the version bundled with version `{productmajorversion}` of {productname} because it doesn't specify a version.
 * Attempts to load all other premium plugins from the self-hosted installation.
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions=2.2&powerpaste=5.5&advcode" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions=3.0&powerpaste=6.0&advcode" referrerpolicy="origin"></script>
 ----
 
 The disadvantage of `+cloud-plugins.min.js+`: every plugin to be loaded from {cloudname} must be added to the query parameter. When {cloudname} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from {cloudname}, use `+plugins.min.js+`.

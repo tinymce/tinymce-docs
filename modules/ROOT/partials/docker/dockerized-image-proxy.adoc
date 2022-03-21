@@ -42,7 +42,7 @@ chmod +x *.sh
 ----
 . _Optional_: Edit the `+image-proxy+` configuration setting in `+config/ephox-image-proxy-docker-env.conf+`. The configurable setting is in the `+image-proxy+` section of the file. For example:
 +
-[source,conf]
+[source,properties]
 ----
 image-proxy {
   image-size = 10000000 // 10MB in bytes
@@ -52,7 +52,7 @@ image-proxy {
 For information on the `+image-proxy+` configuration setting, see: xref:configure-imageproxy-service.adoc#image-proxy[Configure server-side components - `+image-proxy+`].
 . _Optional_: Edit the `+http+` configuration settings in `+config/ephox-image-proxy-docker-env.conf+`. The configurable settings are in the `+http+` section of the file. For example:
 +
-[source,conf]
+[source,properties]
 ----
 http {
   max-connections = 100
@@ -73,7 +73,7 @@ For information on the `+http+` configuration setting, see: xref:configure-commo
 +
 For example:
 +
-[source,conf]
+[source,properties]
 ----
 ORIGIN0=example.net
 ORIGIN1=example

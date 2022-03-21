@@ -1,15 +1,11 @@
 = Required configuration for the server-side components
 
 :title_nav: Required configuration
-
 :description: Configuration options for premium server-side components.
-
 
 == Creating a configuration file
 
-____
-*Note:* Use a plain text editor (such as gedit, vim, emacs, or notepad) when creating or editing the `+application.conf+` file. Do not use word processors like Microsoft Word or Evernote as these can insert extra characters which make the file unreadable to the server-side components.
-____
+NOTE: Use a plain text editor (such as gedit, vim, emacs, or notepad) when creating or editing the `+application.conf+` file. Do not use word processors like Microsoft Word or Evernote as these can insert extra characters which make the file unreadable to the server-side components.
 
 The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `+application.conf+`.
 
@@ -17,17 +13,16 @@ This configuration file will require you to enter _at least_ the following infor
 
 * `+allowed-origins+` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
 
-The Enhanced Media Embed server-side component require additional configuration, which can be found on the link:/plugins-ref/premium/mediaembed/mediaembed-server-config/[Enhanced Media Embed page].
+The Enhanced Media Embed server-side component require additional configuration, which can be found on the xref:mediaembed-server-config.adoc[Enhanced Media Embed page].
 
+[[allowed-origins]]
 == `+allowed-origins+` (required)
 
 {productname} editor instances make use of the server-side components by performing a cross-origin HTTP request. These requests are subject to a form of HTTP access control called Cross-Origin Resource Sharing (CORS). CORS is built into web browsers and is not a feature of {productname}'s server side components. A detailed explanation of CORS can be found on the https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[Mozilla Developer Network].
 
 The `+allowed-origins+` element configures a list of *all* values that can be expected by the server-side components in a HTTP Origin header from your {productname} instances (see the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin[Mozilla Developer Network] for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {productname} instances will be served from without the path information.
 
-____
-*Important:* When the services are matching against the `+allowed-origins+` list, the `+scheme+` (e.g. http) and the `+port+` (e.g. 800) are *ignored* by default. Customize this using <<allowed-originsignore-portoptional, `+ephox.allowed-origins.ignore-port+`>> option.
-____
+IMPORTANT: When the services are matching against the `+allowed-origins+` list, the `+scheme+` (e.g. http) and the `+port+` (e.g. 800) are *ignored* by default. Customize this using xref:allowed-originsignore-port[`+ephox.allowed-origins.ignore-port+`] option.
 
 This is best illustrated with some examples:
 
@@ -71,7 +66,7 @@ If users load {productname} from the following URLs:
 
 Add `+server.example.com+` to the `+allowed-origins+` list because the scheme and the port are ignored.
 
-[cols="^,,",options="header",]
+[cols="^,,",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+allowed-origins+` |Stores CORS setup information
@@ -89,17 +84,15 @@ ephox {
 }
 ----
 
+[[wildcardsupport]]
 === Wildcard support
 
 The `+*+` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `+allowed-origin+` list:
 
-[arabic]
 . As a prefix of the domain (e.g. `+*.mydomain.com+`).
 . As the only character (e.g. `+*+`). This will allow *any* Origin to access the server-side components.
 
-____
-*Note:* Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.
-____
+NOTE: Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.
 
 [source,properties]
 ----
@@ -110,9 +103,10 @@ ephox {
 }
 ----
 
+[[regularexpressionssupport]]
 === Regular Expressions support
 
-Regular expressions can be used alongside <<wildcardsupport, wildcards>> for specifying `+allowed-origins.origins+`. To use a regular expression, start and end the expression with the forward-slash `+'/'+` character.
+Regular expressions can be used alongside xref:wildcardsupport[wildcards] for specifying `+allowed-origins.origins+`. To use a regular expression, start and end the expression with the forward-slash `+'/'+` character.
 
 For example:
 
@@ -127,7 +121,7 @@ ephox {
 
 For a list of valid constructs, see: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum[Java 8: `+java.util.regex+` - Summary of regular-expression constructs].
 
-[[allowed-originssame-origin-optional]]
+[[allowed-originssame-origin]]
 === `+allowed-origins.same-origin+` (optional)
 
 Enabling `+same-origin+` removes the need to specify the domain origin accessing the service if the service is deployed from the same server.
@@ -147,7 +141,7 @@ ephox {
 }
 ----
 
-[[allowed-originsignore-port-optional]]
+[[allowed-originsignore-port]]
 === `+allowed-origins.ignore-port+` (optional)
 
 To enforce a port check for the service's `+allowed-origins+`, set `+ignore-port+` to `+false+`. When `+ignore-port+` is set to false, all `+allowed-origins+` *must* include the port of the origin.
@@ -168,4 +162,4 @@ ephox {
 
 == Troubleshooting Origins
 
-If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:troubleshoot.html#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
+If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about xref:troubleshoot.adoc#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].

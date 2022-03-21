@@ -1,15 +1,14 @@
 = Adding custom dictionaries
 
 :description: Custom dictionaries can be added to Spell Checker Pro
-
 :keywords: enterprise tinymcespellchecker spell check checker pro
 
-
+[[creatingcustomdictionaryfiles]]
 == Creating custom dictionary files
 
-One custom dictionary can be created for each language supported by the spell checker (see link:introduction-to-tiny-spellchecker.html#supportedlanguages[supported languages]), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
+One custom dictionary can be created for each language supported by the spell checker (see xref:introduction-to-tiny-spellchecker.adoc#supportedlanguages[supported languages]), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
-A dictionary file for a particular language must be named with the language code of the language (see link:introduction-to-tiny-spellchecker.html#supportedlanguages[supported languages] for language codes), plus the suffix `+.txt+`: E.g. `+en.txt+`, `+en_gb.txt+`, `+fr.txt+`, `+de.txt+` etc.
+A dictionary file for a particular language must be named with the language code of the language (see xref:introduction-to-tiny-spellchecker.adoc#supportedlanguages[supported languages] for language codes), plus the suffix `+.txt+`: E.g. `+en.txt+`, `+en_gb.txt+`, `+fr.txt+`, `+de.txt+` etc.
 
 The "global" dictionary file for language-independent words must be called "global.txt".
 
@@ -26,9 +25,7 @@ A dictionary file must be a simple text file with:
 
 The last point is important for files created or edited on non-Linux (Windows or Mac) systems, as these will usually encode text files differently. However, Windows or Mac editors such as Windows Notepad can optionally save files in UTF-8 if asked to do so. Please check your editor of choice for this functionality. Failure to chose the correct encoding will result in problems with non-English letters such as umlauts and accents.
 
-____
-*Note*: *German and Finnish languages* - Spell checking in German and Finnish will employ compound word spell checking. Compound words such as "Fußballtennis" will be assumed correct as long as the root words "Fußball" and "Tennis" are individually present in the dictionary. It is not necessary to add "Fußballtennis" separately.
-____
+NOTE: *German and Finnish languages* - Spell checking in German and Finnish will employ compound word spell checking. Compound words such as "Fußballtennis" will be assumed correct as long as the root words "Fußball" and "Tennis" are individually present in the dictionary. It is not necessary to add "Fußballtennis" separately.
 
 == Configuring the custom dictionary feature
 

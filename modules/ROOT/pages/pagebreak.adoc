@@ -1,15 +1,12 @@
 = Page Break plugin
 
 :title_nav: Page Break
-
 :description: Add a page break.
 :keywords: pagebreak insert pagebreak_separator pagebreak_split_block
 :controls: toolbar button, menu item
-
 :pluginname: Page Break
-
 :plugincode: pagebreak
-
+:altplugincode: nil
 
 This plugin adds page break support and enables a user to insert page breaks in the editable area. This is useful where a CMS uses a special separator to break content into pages.
 
@@ -31,9 +28,9 @@ tinymce.init({
 
 These settings affect the execution of the `+pagebreak+` plugin. They enable you to specify how the page break should be generated in the HTML source code and determine whether the page break element(s) should be wrapped in `+<p>+`tags`+</p>+`.
 
-include::partial$configuration/pagebreak_separator.adoc[]
+include::partial$configuration/pagebreak_separator.adoc[leveloffset=+1]
 
-include::partial$configuration/pagebreak_split_block.adoc[]
+include::partial$configuration/pagebreak_split_block.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

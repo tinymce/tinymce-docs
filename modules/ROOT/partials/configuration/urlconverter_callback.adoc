@@ -1,3 +1,4 @@
+[[urlconverter_callback]]
 == `+urlconverter_callback+`
 
 This option enables you to add your own URL converter logic. This option should contain a JavaScript function name.
@@ -9,7 +10,7 @@ The format of the converter function is: `+URLConverter(url, node, on_save)+`, w
 * on_save is always set to true.
 * name = the attribute name that is being set.
 
-This function should return the converted URL as a string. This option is set to an internal {productname} function link:/apis/tinymce/tinymce.editor/[convertURL()] by default. You may call this function from your extension in order to use the built-in convert options.
+This function should return the converted URL as a string. This option is set to an internal {productname} function xref:apis/tinymce.editor.adoc#convertURL[convertURL()] by default. You may call this function from your extension in order to use the built-in convert options.
 
 Type : `+Javascript Function+`
 

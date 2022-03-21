@@ -1,12 +1,11 @@
+[[content_css]]
 == content_css
 
 The `+content_css+` option loads the specified CSS files into the editable area.
 
 Type : `+String+`, `+Array+`
 
-____
-*Note:* This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {productname} is rendered in, not using the `+content_css+` option.
-____
+NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {productname} is rendered in, not using the `+content_css+` option.
 
 include::partial$misc/shipped-content-css.adoc[]
 
@@ -80,8 +79,9 @@ tinymce.init({
 });
 ----
 
-____
-*TIP*: To remove the margins between paragraphs (sometimes requested for using {productname} in email clients), add the following style to the content CSS:
+[TIP]
+--
+To remove the margins between paragraphs (sometimes requested for using {productname} in email clients), add the following style to the content CSS:
 
 [source,css]
 ----
@@ -91,4 +91,4 @@ ____
 */
 p { margin: 0 }
 ----
-____
+--

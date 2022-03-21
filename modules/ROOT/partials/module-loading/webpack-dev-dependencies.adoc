@@ -1,6 +1,4 @@
-\{% if is_zip_install == true %}
-
-[arabic]
+ifeval::[{is_zip_install} == true]
 . Add the following development dependencies to the project.
 * https://www.npmjs.com/package/webpack[`+webpack+`]
 * https://www.npmjs.com/package/webpack-cli[`+webpack-cli+`]
@@ -20,9 +18,8 @@ npm install --save-dev \
   css-loader
 ----
 
-\{% else %}
-
-[arabic]
+endif::[]
+ifeval::[{is_zip_install} != true]
 . Add `+tinymce+` and the following development dependencies to the project.
 * https://www.npmjs.com/package/webpack[`+webpack+`]
 * https://www.npmjs.com/package/webpack-cli[`+webpack-cli+`]
@@ -43,4 +40,4 @@ npm install --save-dev \
   css-loader
 ----
 
-\{% endif %}
+endif::[]

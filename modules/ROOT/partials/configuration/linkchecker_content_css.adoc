@@ -1,3 +1,4 @@
+[[linkchecker_content_css]]
 == `+linkchecker_content_css+`
 
 After a link is checked for validity, a result of the validation is added to it via `+data-mce-linkchecker-status+` attribute. There are three possible outcomes of the validation: `+valid+`, `+invalid+` and `+unknown+`. Link Checker visually reflects `+invalid+` outcome by injecting the following CSS styles into the editor:

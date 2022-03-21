@@ -1,7 +1,6 @@
 = Introduction to Real-Time Collaboration (RTC)
 
 :title_nav: Introduction
-
 :description: What is RTC and what can it do
 :keywords: rtc introduction overview
 
@@ -25,11 +24,11 @@ Some cloud services for {productname} require setting up JSON Web Token (JWT) au
 
 For general information on JWTs, visit: https://jwt.io/[https://jwt.io/].
 
-For information on using JWT authentication with the Real-Time Collaboration (RTC) plugin, see: link:jwt-authentication.html[JWT authentication].
+For information on using JWT authentication with the Real-Time Collaboration (RTC) plugin, see: xref:rtc-jwt-authentication.adoc[JWT authentication].
 
 === User Presence API
 
-The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `+sub+` claim. Other details such as the user's full name are resolved locally so the {cloudname} will never see who is actually connecting. User resolution is performed through the link:rtc-options-optional.html#rtc_user_details_provider[`+rtc_user_details_provider+` option]. Presence events can be received through either link:rtc-options-optional.html#rtc_client_connected[configuration callbacks] or link:events.html#rtcclientconnected[editor events].
+The Real-Time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `+sub+` claim. Other details such as the user's full name are resolved locally so the {cloudname} will never see who is actually connecting. User resolution is performed through the xref:rtc-options-optional.adoc#rtc_user_details_provider[`+rtc_user_details_provider+` option]. Presence events can be received through either xref:rtc-options-optional.adoc#rtc_client_connected[configuration callbacks] or xref:rtc-events.adoc[editor events].
 
 == Overview of how TinyMCE Real-Time Collaboration works
 
@@ -37,8 +36,7 @@ image:RTC_conceptual_diagram.svg[Conceptual diagram showing how {productname} RT
 
 === When a new document is created
 
-[arabic]
-. The initial content is set using the HTML within the element replaced by the editor, or using the link:rtc-options-optional.html#rtc_initial_content_provider[initial content option].
+. The initial content is set using the HTML within the element replaced by the editor, or using the xref:rtc-options-optional.adoc#rtc_initial_content_provider[initial content option].
 . The editor requests and receives the following on behalf of the user:
 * A JSON Web Token (JWT) from your server.
 * The encryption details from your server.
@@ -47,7 +45,6 @@ The JWT and encryption details are stored in the browser until required.
 
 === When the editor content is changed by a user
 
-[arabic]
 . The editor encrypts the content using the encryption details.
 . The encrypted content and the JWT (but not the encryption details) are sent to the RTC server.
 . The RTC server verifies that the JWT was signed by the same private key as _the public key stored on the RTC server_.
@@ -57,4 +54,4 @@ The JWT and encryption details are stored in the browser until required.
 
 == Getting started with Real-Time Collaboration
 
-For instructions for getting started with {productname} Real-Time Collaboration, see: link:getting-started.html[Getting started with Real-Time Collaboration (RTC)].
+For instructions for getting started with {productname} Real-Time Collaboration, see: xref:rtc-getting-started.adoc[Getting started with Real-Time Collaboration (RTC)].

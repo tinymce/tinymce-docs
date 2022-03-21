@@ -1,16 +1,16 @@
 = TinyMCE Keyboard shortcuts
 
 :title_nav: TinyMCE Keyboard shortcuts
-
 :description_short: Complete list of keyboard shortcuts.
 :description: Complete list of keyboard shortcuts.
 :keywords: keyboard shortcuts
 
+[[editorkeyboardshortcuts]]
 == Editor keyboard shortcuts
 
 This is a list of available keyboard shortcuts within the editor body.
 
-[cols=",,,",options="header",]
+[cols=",,,",options="header"]
 |===
 |Action |PC |Mac |Core/Plugin
 |Bold |Ctrl+B |Command+B |core
@@ -33,18 +33,18 @@ This is a list of available keyboard shortcuts within the editor body.
 |Focus to element path |Alt+F11 |Option+F11 |core
 |Focus to contextual toolbar |Ctrl+F9 |Ctrl+F9 |core
 |Print |Ctrl+P |Command+P |core
-|Open the help dialog |Alt+0 |Option+0 |link:help.html[help]
-|Insert link |Ctrl+K |Command+K |link:link.html[link]
-|Toggle Fullscreen |Ctrl+Shift+F |Command+Shift+F |link:fullscreen.html[fullscreen]
-|Save |Ctrl+S |Command+S |link:save.html[save]
-|Find |Ctrl+F |Command+F |link:searchreplace.html[searchreplace]
+|Open the help dialog |Alt+0 |Option+0 |xref:help.adoc[help]
+|Insert link |Ctrl+K |Command+K |xref:link.adoc[link]
+|Toggle Fullscreen |Ctrl+Shift+F |Command+Shift+F |xref:fullscreen.adoc[fullscreen]
+|Save |Ctrl+S |Command+S |xref:save.adoc[save]
+|Find |Ctrl+F |Command+F |xref:searchreplace.adoc[searchreplace]
 |===
 
 == Accessibility keyboard shortcuts
 
 This is a list of available keyboard shortcuts within the editor user interface.
 
-[cols=",,",options="header",]
+[cols=",,",options="header"]
 |===
 |Action |PC |Mac
 |Execute command |Enter / Spacebar |Enter / Spacebar
@@ -63,8 +63,6 @@ This is a list of available keyboard shortcuts within the editor user interface.
 |Move focus back to editor body |Esc |Esc
 |===
 
-____
-*Note*: Browsers and Screen Readers provide additional shortcuts within the editor context.
-____
+NOTE: Browsers and Screen Readers provide additional shortcuts within the editor context.
 
 include::partial$misc/advcode-shortcuts.adoc[]

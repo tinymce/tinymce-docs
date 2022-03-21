@@ -1,12 +1,11 @@
 = Common server-side component settings
 
 :title_nav: Optional common settings
-
 :description: Settings that affect all premium server-side components.
 
+The following settings for the premium server-side components are optional and will apply to all services using the configuration file. These settings should be added to the `+application.conf+` file described in xref:configure-required-services.adoc[Required configuration for the server-side components].
 
-The following settings for the premium server-side components are optional and will apply to all services using the configuration file. These settings should be added to the `+application.conf+` file described in link:configure-required-services.html[Required configuration for the server-side components].
-
+[[proxy]]
 == `+proxy+` (optional)
 
 This element configures use of an HTTP proxy for outgoing HTTP/HTTPS requests made by the server-side components.
@@ -15,13 +14,13 @@ Default proxy settings are picked up from JVM system properties, usually provide
 
 This optional proxy element provides an alternative to providing proxy settings as JVM system properties, or to override system properties.
 
-[cols="^,,",options="header",]
+[cols="^,,",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+proxy+` |Stores HTTP outgoing proxy settings for the server-side components.
 |*attribute* |`+http.proxyHost+` |A string defining the host name of the proxy for plain HTTP (not HTTPS) connections. (Mandatory)
 |*attribute* |`+http.proxyPort+` |An integer defining the port number of the proxy for plain HTTP (not HTTPS) connections. (Mandatory)
-|*attribute* |`+http.nonProxyHosts+` |A list of strings separated by vertical lines ("|") listing hosts and domains to be excluded from proxying, for *both* plain HTTP and HTTPS connections. The strings can contain asterisks ("*") as wildcards. (Optional, defaults to "localhost|127.*|[::1]" if not set.)
+|*attribute* |`+http.nonProxyHosts+` |A list of strings separated by vertical lines ("\|") listing hosts and domains to be excluded from proxying, for *both* plain HTTP and HTTPS connections. The strings can contain asterisks ("\*") as wildcards. (Optional, defaults to "localhost\|127.*\|[::1]" if not set.)
 |*attribute* |`+https.proxyHost+` |A string defining the host name of the proxy for HTTPS connections. (Optional)
 |*attribute* |`+https.proxyPort+` |An integer defining the port number of the proxy for HTTPS connections. (Optional)
 |*attribute* |`+http.proxyUser+` |Username for authenticating to *both* the HTTP and HTTPS proxy. (Optional)
@@ -43,13 +42,14 @@ ephox {
 }
 ----
 
+[[http]]
 == `+http+` (optional)
 
-Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Image Tools Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
+Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Edit Image Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
 
 This is not recommended for production environments.
 
-[cols="^,,",options="header",]
+[cols="^,,",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+http+` |Configures HTTP client behavior.

@@ -1,18 +1,17 @@
 = Advanced Code Editor plugin
 
 :title_nav: Advanced Code Editor
-
 :description: How to setup TinyMCE's Advanced Code Editor plugin.
 :keywords: code advcode codemirror
 :controls: toolbar button, menu item
-
 :pluginname: Advanced Code Editor
-
 :plugincode: advcode
+:altplugincode: code
+:pluginminimumplan: tiertwo
 
 include::partial$misc/admon_premium_plugin.adoc[]
 
-The link:advcode.html[Advanced Code Editor] plugin (`+advcode+`) brings a more advanced code editor to {productname}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
+The xref:advcode.adoc[Advanced Code Editor] plugin (`+advcode+`) brings a more advanced code editor to {productname}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
 
 * Syntax color highlighting
 * Bracket matching
@@ -23,9 +22,6 @@ The link:advcode.html[Advanced Code Editor] plugin (`+advcode+`) brings a more a
 == The difference between the Code and Advanced Code Editor plugins
 
 liveDemo::advcode[ ]
-
-:pluginminimumplan: tiertwo
-
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -42,12 +38,7 @@ tinymce.init({
 
 include::partial$misc/advcode-shortcuts.adoc[]
 
-:altplugincode: code
-
-
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-:altplugincode: code
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 

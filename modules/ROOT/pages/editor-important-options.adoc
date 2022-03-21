@@ -1,7 +1,6 @@
 = Key editor options for adding TinyMCE to an application
 
 :title_nav: Integration options
-
 :description: Key editor options for integrating TinyMCE to an application
 :keywords:
 
@@ -55,5 +54,7 @@ include::partial$configuration/referrer_policy.adoc[leveloffset=+1]
 
 include::partial$configuration/suffix.adoc[leveloffset=+1]
 
-\{% comment %} Not documented, but probably belongs in a new section here somewhere.
-include::partial$configuration/iframe_attrs.adoc[] \{% endcomment %}
+////
+Not documented, but probably belongs in a new section here somewhere.
+include::partial$configuration/iframe_attrs.adoc[]
+////

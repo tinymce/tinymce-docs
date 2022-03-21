@@ -1,8 +1,9 @@
+[[formats]]
 == `+formats+`
 
-The format painter plugin will register many formats upon initialization. To override these formats, use the link:content-formatting.html#exampleofusageoftheformatsoption[`+formats+`] option.
+The format painter plugin will register many formats upon initialization. To override these formats, use the xref:content-formatting.adoc#example-of-usage-of-the-formats-option[`+formats+`] option.
 
-The example below showcases the formats registered automatically by the plugin upon initialization. The `+formatpainter_removeformat+` is used to clear any existing formats before applying the new ones. It is similar to the link:content-formatting.html#removingaformat[`+removeformat+`] format.
+The example below showcases the formats registered automatically by the plugin upon initialization. The `+formatpainter_removeformat+` is used to clear any existing formats before applying the new ones. It is similar to the xref:content-formatting.adoc#removing-a-format[`+removeformat+`] format.
 
 Type : `+Object+`
 

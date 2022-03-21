@@ -1,10 +1,11 @@
+[[quickbars_image_toolbar]]
 == quickbars_image_toolbar
 
-The *quickbars_image_toolbar* option configures the Quick Image toolbar provided by the link:quickbars.html[quickbars plugin]. To change the buttons on the Quick Image toolbar, provide a space-separated string of link:/interface/toolbars/available-toolbar-buttons/[toolbar button names]. The Quick Image toolbar is intended for image-related buttons, but any link:/interface/toolbars/available-toolbar-buttons/[{productname} toolbar buttons] or link:/how-to-guides/creating-custom-ui-components/toolbar-buttons/custom-toolbarbuttons/[custom toolbar buttons] are allowed.
+The *quickbars_image_toolbar* option configures the Quick Image toolbar provided by the xref:quickbars.adoc[quickbars plugin]. To change the buttons on the Quick Image toolbar, provide a space-separated string of xref:available-toolbar-buttons.adoc[toolbar button names]. The Quick Image toolbar is intended for image-related buttons, but any xref:available-toolbar-buttons.adoc[{productname} toolbar buttons] or xref:custom-toolbarbuttons.adoc[custom toolbar buttons] are allowed.
 
 To disable the Quick Image toolbar, set `+quickbars_image_toolbar+` to `+false+`.
 
-Type : `+String+` or `+false+`
+Type: `+String+` or `+false+`
 
 Defaults : `+'alignleft aligncenter alignright'+`
 
@@ -14,7 +15,7 @@ Defaults : `+'alignleft aligncenter alignright'+`
 ----
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbars image imagetools',
+  plugins: 'quickbars image editimage',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions'
 });
 ----

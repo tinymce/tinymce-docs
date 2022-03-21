@@ -1,14 +1,13 @@
 = Permanent Pen Plugin
 
 :title_nav: Permanent Pen
-
 :description: Apply formats while typing.
 :keywords: permanent pen copy text format style
 :controls: toolbar button, contextmenu, menu item
-
 :pluginname: Permanent Pen
-
 :plugincode: permanentpen
+:altplugincode: nil
+:pluginminimumplan: tiertwo
 
 
 include::partial$misc/admon_premium_plugin.adoc[]
@@ -33,14 +32,11 @@ underline: false,
 strikethrough: false
 ----
 
-For more information on {productname} formats, refer to the link:content-formatting.html#formats[formats] section.
+For more information on {productname} formats, refer to the xref:content-formatting.adoc#formats[formats] section.
 
 == Try our Permanent Pen demo
 
 liveDemo::permanent-pen[ ]
-
-:pluginminimumplan: tiertwo
-
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -48,7 +44,6 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 
 === To enable Permanent Pen
 
-[arabic]
 . Click on the image:icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
 . Place the cursor in the desired text area and start typing.
 
@@ -66,7 +61,7 @@ There are two ways to access the Permanent Pen properties:
 
 ==== From the menubar
 
-Add the Permanent pen properties option to the menu bar with the link:menus-configuration-options.html#menu[menu] configuration.
+Add the Permanent pen properties option to the menu bar with the xref:menus-configuration-options.adoc#menu[menu] configuration.
 
 [source,js]
 ----
@@ -82,7 +77,6 @@ tinymce.init({
 
 ==== Inline
 
-[arabic]
 . Place the cursor on the text entered using a Permanent Pen.
 . Right-click anywhere from inside the text area.
 . Choose the *Permanent Pen* option.
@@ -91,15 +85,12 @@ image:right-click.png[Right-click]
 
 *Result*: The *Permanent Pen Properties* dialog box appears.
 
-____
-*Note*: The Permanent Pen has to be enabled to access the *Permanent Pen Properties* dialog box by right-clicking the text. On the other hand, the menubar option can be accessed without enabling the Permanent Pen.
-____
+NOTE: The Permanent Pen has to be enabled to access the *Permanent Pen Properties* dialog box by right-clicking the text. On the other hand, the menubar option can be accessed without enabling the Permanent Pen.
 
 == Changing Permanent Pen properties
 
 === Using the UI
 
-[arabic]
 . Open the *Permanent Pen Properties* dialog box using any of the above methods. image:ppprop.png[Permanent pen properties]
 . Select the desired settings from the *Font* and *Size* drop-down menus.
 . To select the desired *Styles*, click on the radio button next to *Bold*, *Italic*, *Strikethrough*, or *Underline*.
@@ -125,7 +116,7 @@ tinymce.init({
 
 == Options
 
-include::partial$configuration/permanentpen_properties.adoc[]
+include::partial$configuration/permanentpen_properties.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

@@ -1,13 +1,12 @@
 = Link Checker plugin
 
 :title_nav: Link Checker
-
 :description: Validate links, as you type.
 :keywords: url urls link linkchecker_service_url linkchecker_content_css
-
 :pluginname: Link Checker
-
 :plugincode: linkchecker
+:altplugincode: nil
+:pluginminimumplan: tierthree
 
 
 include::partial$misc/admon_premium_plugin.adoc[]
@@ -20,14 +19,11 @@ The Link Checker plugin relies on HTTP response status codes to determine if a l
 
 liveDemo::linkchecker[ ]
 
-:pluginminimumplan: tierthree
-
-
 include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Cloud Instructions
 
-If you are using link:/how-to-guides/cloud-deployment-guide/editor-and-features/[{cloudname}], add `+"linkchecker"+` to your plugins list, and the service will be automatically configured.
+If you are using xref:editor-and-features.adoc[{cloudname}], add `+"linkchecker"+` to your plugins list, and the service will be automatically configured.
 
 === Basic setup using Tiny Cloud
 
@@ -58,8 +54,8 @@ tinymce.init({
 
 Link Checker has the following settings.
 
-include::partial$configuration/linkchecker_content_css.adoc[]
+include::partial$configuration/linkchecker_content_css.adoc[leveloffset=+1]
 
-include::partial$configuration/linkchecker_preprocess.adoc[]
+include::partial$configuration/linkchecker_preprocess.adoc[leveloffset=+1]
 
-include::partial$configuration/linkchecker_service_url.adoc[]
+include::partial$configuration/linkchecker_service_url.adoc[leveloffset=+1]

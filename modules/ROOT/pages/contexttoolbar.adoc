@@ -1,17 +1,17 @@
 = Context toolbar
 
 :title_nav: Context toolbar
-
 :description: Creating custom context toolbars for TinyMCE 6
 :keywords: contexttoolbar context toolbar contexttoolbarapi
+:contextItemType: toolbar
 
-A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a link:contextform.html[ContextForm]. The buttons comes as a list of strings, where each string is a registered name of a button.
+A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a xref:contextform.adoc[ContextForm]. The buttons comes as a list of strings, where each string is a registered name of a button.
 
 == Registering a context toolbar
 
 A context toolbar is registered by calling the `+addContextToolbar+` API in the registry. The specification is as follows:
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Name |Description
 |`+predicate+` |This controls when the context toolbar will appear

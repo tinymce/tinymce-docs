@@ -1,15 +1,12 @@
 = Visual Characters plugin
 
 :title_nav: Visual Characters
-
 :description: See invisible characters like non-breaking spaces.
 :keywords: visualchars
 :controls: toolbar button, menu item
-
 :pluginname: Visual Characters
-
 :plugincode: visualchars
-
+:altplugincode: nil
 
 This plugin adds the ability to see invisible characters like `+&nbsp;+` displayed in the editable area. It also adds a toolbar control and a menu item `+Show invisible characters+` under the `+View+` menu.
 
@@ -29,7 +26,7 @@ tinymce.init({
 
 This setting affects the execution of the `+visualchars+` plugin. Characters can be configured to be visible by default using this option.
 
-include::partial$configuration/visualchars_default_state.adoc[]
+include::partial$configuration/visualchars_default_state.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

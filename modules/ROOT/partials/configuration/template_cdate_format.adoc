@@ -1,8 +1,9 @@
+[[template_cdate_format]]
 == `+template_cdate_format+`
 
 This option allows you to provide a date format that all 'creation' date templates will use.
 
-Type : `+String+`
+Type: `+String+`
 
 Default : `+'%Y-%m-%d'+`
 
@@ -29,4 +30,4 @@ If the creation date is set as 9:00AM on January 15th 2000, then inserting this 
 <p class="cdate">01/15/2000 : 09:00</p>
 ----
 
-For a list of available date and time formats, see: <<referencedatetimeformats, Reference Date/Time formats>>.
+For a list of available date and time formats, see: xref:referencedatetimeformats[Reference Date/Time formats].

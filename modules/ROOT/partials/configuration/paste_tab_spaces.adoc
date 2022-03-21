@@ -1,24 +1,32 @@
-\{% if page.title == "Paste plugin" %}
-:plugin: paste :pluginname: Paste
-\{% else %}
-:plugin: powerpaste :pluginname: PowerPaste
-\{% endif %}
-
+[[paste_tab_spaces]]
 == `+paste_tab_spaces+`
 
-This option controls how many spaces are used to represent a tab character in HTML when pasting plain text content. By default, the {pluginname} plugin will convert each tab character into 4 sequential space characters.
+This option controls how many spaces are used to represent a tab character in HTML when pasting plain text content. By default, when tab characters are pasted they will be converted into 4 sequential space characters.
 
-Type : `+Number+`
+Type: `+Number+`
 
-Default Value : `+4+`
+Default Value: `+4+`
 
 === Example: Using `+paste_tab_spaces+`
 
+ifdef::plugincode[]
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{plugin}',
+  plugins: '{plugincode}',
+  toolbar: 'paste',
   paste_tab_spaces: 2
 });
 ----
+endif::[]
+ifndef::plugincode[]
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'paste',
+  paste_tab_spaces: 2
+});
+----
+endif::[]

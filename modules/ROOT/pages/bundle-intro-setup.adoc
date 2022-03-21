@@ -1,9 +1,7 @@
 = Introduction and initial setup for containerized server-side services from the premium self-hosted bundle
 
 :title_nav: Introduction and initial setup
-
 :description: The containerized server-side components for premium plugins.
-
 
 The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm], or https://www.openshift.com/[OpenShift]. {companyname} provides packages containing pre-configured https://docs.docker.com/engine/reference/builder/[`+Dockerfiles+`] for building and deploying the {enterpriseversion} server-side components using Docker.
 
@@ -23,9 +21,9 @@ The following sections assist with containerizing the {productname} services for
 ** Using a Linux, Unix or macOS operating system.
 ** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux].
 
+[[downloadandextractthetinymceself-hostedbundle]]
 === Download and extract the TinyMCE Self-hosted Bundle
 
-[arabic]
 . Go to *link:{download-enterprise}[{accountpage} Downloads]* and download the {productname} self-hosted bundle `+.zip+` file.
 . Open a command line and navigate to the directory containing the downloaded `+.zip+` file:
 * `+TinyMCE-Essential_latest.zip+` for *Self-hosted Essential* users.
@@ -64,6 +62,6 @@ cd tinymce-selfhosted/tinymce-services/
 
 Proceed to setting up and deploying the containerized services:
 
-* For the Enhanced Media Embed and Link Checker service, see: link:bundle-hyperlinking-container.html[Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)].
-* For the Image Tools plugin service, see: link:bundle-imageproxy-container.html[Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)].
-* For the Spell Checker Pro service, see: link:bundle-spelling-container.html[Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)].
+* For the Enhanced Media Embed and Link Checker service, see: xref:bundle-hyperlinking-container.adoc[Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)].
+* For the Edit Image plugin service, see: xref:bundle-imageproxy-container.adoc[Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)].
+* For the Spell Checker Pro service, see: xref:bundle-spelling-container.adoc[Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)].

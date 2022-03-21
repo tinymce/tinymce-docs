@@ -1,7 +1,6 @@
 = Setup inline editing mode
 
 :title_nav: Inline editing mode
-
 :description_short: Learn about forms-based editing v. inline editing.
 :description: Understand the difference between traditional forms-based editing and advanced inline editing.
 :keywords: form inline edit stylesheet
@@ -22,7 +21,7 @@ Inline editing mode does not replace the selected element with an iframe, but in
 
 Inline mode only works on content within a block element (such as: `+div+` or `+h1+`). To enable inline mode, set the `+inline+` option to `+true+`. For example:
 
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -49,4 +48,4 @@ The following demonstration is using four {productname} editors in inline mode, 
 
 liveDemo::inline[ ]
 
-For information on inline mode and the `+inline+` setting, see: link:inline-editor-options.html#inline[User interface options - inline].
+For information on inline mode and the `+inline+` setting, see: xref:inline-editor-options.adoc#inline[User interface options - inline].

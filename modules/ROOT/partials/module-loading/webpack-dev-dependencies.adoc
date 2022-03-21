@@ -1,15 +1,15 @@
 ifeval::[{is_zip_install} == true]
 . Add the following development dependencies to the project.
 
-* [`webpack`](https://www.npmjs.com/package/webpack)
-* [`webpack-cli`](https://www.npmjs.com/package/webpack-cli)
-* [`mini-css-extract-plugin`](https://www.npmjs.com/package/mini-css-extract-plugin)
-* [`html-webpack-plugin`](https://www.npmjs.com/package/html-webpack-plugin)
-* [`css-loader`](https://www.npmjs.com/package/css-loader)
+* https://www.npmjs.com/package/webpack[`+webpack+`]
+* https://www.npmjs.com/package/webpack-cli[`+webpack-cli+`]
+* https://www.npmjs.com/package/mini-css-extract-plugin[`+mini-css-extract-plugin+`]
+* https://www.npmjs.com/package/html-webpack-plugin[`+html-webpack-plugin+`]
+* https://www.npmjs.com/package/css-loader[`+css-loader+`]
 +
 For example:
 +
-[source,sh,indent=0]
+[source,sh]
 ----
 npm install --save-dev \
   webpack \
@@ -19,18 +19,18 @@ npm install --save-dev \
   css-loader
 ----
 endif::[]
-ifeval::[{is_zip_install} == false]
+ifeval::[{is_zip_install} != true]
 . Add `tinymce` and the following development dependencies to the project.
 
-* [`webpack`](https://www.npmjs.com/package/webpack)
-* [`webpack-cli`](https://www.npmjs.com/package/webpack-cli)
-* [`mini-css-extract-plugin`](https://www.npmjs.com/package/mini-css-extract-plugin)
-* [`html-webpack-plugin`](https://www.npmjs.com/package/html-webpack-plugin)
-* [`css-loader`](https://www.npmjs.com/package/css-loader)
+* https://www.npmjs.com/package/webpack[`+webpack+`]
+* https://www.npmjs.com/package/webpack-cli[`+webpack-cli+`]
+* https://www.npmjs.com/package/mini-css-extract-plugin[`+mini-css-extract-plugin+`]
+* https://www.npmjs.com/package/html-webpack-plugin[`+html-webpack-plugin+`]
+* https://www.npmjs.com/package/css-loader[`+css-loader+`]
 +
 For example:
 +
-[source,sh,indent=0]
+[source,sh]
 ----
 npm install tinymce &&
 npm install --save-dev \

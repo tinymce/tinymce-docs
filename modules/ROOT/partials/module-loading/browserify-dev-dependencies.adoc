@@ -1,10 +1,10 @@
 ifeval::[{is_zip_install} == true]
 . Add the following development dependencies to the project.
 
-* [`promise-polyfill`](https://www.npmjs.com/package/promise-polyfill)
-* [`browserify`](https://www.npmjs.com/package/browserify)
-* [`browserify-css`](https://www.npmjs.com/package/browserify-css)
-* [`brfs`](https://www.npmjs.com/package/brfs)
+* https://www.npmjs.com/package/promise-polyfill[`+promise-polyfill+`]
+* https://www.npmjs.com/package/browserify[`+browserify+`]
+* https://www.npmjs.com/package/browserify-css[`+browserify-css+`]
+* https://www.npmjs.com/package/brfs[`+brfs+`]
 +
 For example:
 +
@@ -17,13 +17,13 @@ npm install --save-dev \
   brfs
 ----
 endif::[]
-ifeval::[{is_zip_install} == false]
+ifeval::[{is_zip_install} != true]
 . Add `tinymce` and the following development dependencies to the project.
 
-* [`promise-polyfill`](https://www.npmjs.com/package/promise-polyfill)
-* [`browserify`](https://www.npmjs.com/package/browserify)
-* [`browserify-css`](https://www.npmjs.com/package/browserify-css)
-* [`brfs`](https://www.npmjs.com/package/brfs)
+* https://www.npmjs.com/package/promise-polyfill[`+promise-polyfill+`]
+* https://www.npmjs.com/package/browserify[`+browserify+`]
+* https://www.npmjs.com/package/browserify-css[`+browserify-css+`]
+* https://www.npmjs.com/package/brfs[`+brfs+`]
 +
 For example:
 +

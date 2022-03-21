@@ -2,7 +2,8 @@
 +
 Example `src/index.js`
 +
-```js
+[source, js]
+----
 import * as editor from './editor';
 
 function heading() {
@@ -25,4 +26,4 @@ document.body.appendChild(heading());
 document.body.appendChild(parent);
 
 editor.render();
-```
+----

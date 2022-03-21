@@ -68,3 +68,4 @@ A number of part-related errors can be raised if the JWT fails to decode:
 * A part was not valid JSON
 * The header part does not specify an algorithm
 * The payload part does not contain all xref:rtc/jwt-authentication.adoc#settingupjwtauthenticationforreal-timecollaboration[required claims]
+// TODO: fix this xref, it doesn't seem to work in production either

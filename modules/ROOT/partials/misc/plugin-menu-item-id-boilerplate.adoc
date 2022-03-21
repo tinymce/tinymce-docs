@@ -5,10 +5,10 @@ The {pluginname} plugin provides the following menu items:
 
 ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
-endif::altplugincode[]
+endif::[]
 ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
-endif::altplugincode[]
+endif::[]
 
 For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
 endif::[]
@@ -19,11 +19,10 @@ The {pluginname} plugin provides the following menu items:
 
 ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
-endif::altplugincode[]
+endif::[]
 ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
-endif::altplugincode[]
+endif::[]
 
 include::partial$misc/menu-item-settings.adoc[]
 endif::[]
-:!altplugincode:

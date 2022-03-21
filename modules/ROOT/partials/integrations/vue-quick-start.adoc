@@ -172,7 +172,7 @@ For information on self-hosting {productname}, see: xref:general-configuration-g
 
   *** *Bundling {productname} with the Vue.js application using a module loader*
 +
-To bundle {productname} using a module loader (such as Webpack and Browserify), see: link:{baseurl}/advanced/usage-with-module-loaders/[Usage with module loaders].
+To bundle {productname} using a module loader (such as Webpack and Browserify), see: xref:advanced/usage-with-module-loaders/index.adoc[Usage with module loaders].
 . Test the application using the Node.js development server.
  ** To start the development server, navigate to the `tinymce-vue-demo` directory and run:
 +

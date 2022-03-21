@@ -288,7 +288,7 @@ Used to specify the format of the content emitted via the `input` event. This af
 
 Used to include plugins for the editor. Using `<editor plugins="lists code" />` is the same as setting `{plugins: 'lists code'}` in the {productname} selector (`tinymce.init`).
 
-For information on adding plugins to {productname}, see: link:{baseurl}/plugins/[Add plugins to {productname}].
+For information on adding plugins to {productname}, see: xref:plugins/index.adoc[Add plugins to {productname}].
 
 *Type:* String or Array
 

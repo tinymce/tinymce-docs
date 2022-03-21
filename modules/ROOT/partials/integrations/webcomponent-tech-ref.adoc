@@ -110,7 +110,7 @@ To add plugins and extend the functionality of the editor, add a string of plugi
 <tinymce-editor plugins="advlist autolink link image lists charmap print preview"></tinymce-editor>
 ----
 
-For a list of available plugins, see: link:{baseurl}/plugins/[Add plugins to {productname}].
+For a list of available plugins, see: xref:plugins/index.adoc[Add plugins to {productname}].
 
 [[settingtheeditorwidth]]
 ==== Setting the editor width
@@ -408,7 +408,7 @@ To apply a custom skin to the editor, use the `skin` attribute. For example:
 For information on:
 
 * Using the `skin` option, see: xref:configure/editor-appearance.adoc#skin[User interface options - `skin`].
-* {companyname} premium skins, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Tiny Skins and Icon Packs].
+* {companyname} premium skins, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
 * Creating a custom skin for {productname}, see: xref:advanced/creating-a-skin.adoc[Create a skin for {productname}].
 
 [[settingtheimagesuploadurl]]
@@ -498,7 +498,7 @@ Use this attribute if the icon pack is bundled with {productname} (including cus
 For information on:
 
 * Using the `icons` option, see: xref:configure/editor-appearance.adoc#icons[User interface options - `icons`].
-* {companyname} premium icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Tiny Skins and Icon Packs].
+* {companyname} premium icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
 * Creating a custom icon pack for {productname}, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
 [[settingtheiconpackurl]]
@@ -516,7 +516,7 @@ Use this attribute if the icon pack is hosted on a web site. If the icon pack is
 For information on:
 
 * Using the `icons_url` option, see: xref:configure/editor-appearance.adoc#icons_url[User interface options - `icons_url`].
-* {companyname} premium icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Tiny Skins and Icon Packs].
+* {companyname} premium icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
 * Creating a custom icon pack for {productname}, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
 [[settingadditionalconfigurationoptions]]

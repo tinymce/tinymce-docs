@@ -293,9 +293,9 @@ The following examples show a custom toolbar layout in Froala and the same layou
   tinymce.init({
     selector: '#tiny_custom_toolbar',
     plugins: 'lists',
-    toolbar: 'undo redo | formatselect | bold italic
+    toolbar: `undo redo | formatselect | bold italic
       | alignleft aligncenter alignright alignjustify
-      | numlist bullist | outdent indent',
+      | numlist bullist | outdent indent`,
   });
 </script>
 ----

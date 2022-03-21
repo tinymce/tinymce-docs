@@ -4,11 +4,12 @@
 +
 _File:_ `BlazorApp.csproj`
 +
-```xml
+[source, xml]
+----
 <ItemGroup>
   <PackageReference Include="TinyMCE.Blazor" Version="X.Y.Z"></PackageReference>
 </ItemGroup>
-```
+----
 
 . Add the `tinymce-blazor.js` script to `Pages/_Host.cshtml`, for example:
 +
@@ -21,17 +22,19 @@ _File:_ `BlazorApp.csproj`
 . Add the `Editor` component to a page by either:
 ** Using the `using` directive
 +
-```cs
+[source, cs]
+----
   @using TinyMCE.Blazor
   <Editor></Editor>
-```
+----
 +
 
 ** Using the full component and package name
 +
-```cs
+[source, cs]
+----
 <TinyMCE.Blazor.Editor></TinyMCE.Blazor.Editor>
-```
+----
 +
 
 +
@@ -39,12 +42,13 @@ For example:
 +
 _File:_ `Pages/Index.razor`
 +
-```cs
+[source, cs]
+----
 @page "/"
 @using TinyMCE.Blazor
 
 <h1>Hello, world!</h1>
 Welcome to your new app.
 <Editor></Editor>
-```
+----
 +

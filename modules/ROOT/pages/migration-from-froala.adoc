@@ -229,7 +229,7 @@ toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
 
 [source,js]
 ----
-toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist | outdent indent'
+toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist | outdent indent'
 ----
 
 Replace the names of toolbar items with the {productname} names. For example:
@@ -237,7 +237,7 @@ Replace the names of toolbar items with the {productname} names. For example:
 [cols=",,",options="header"]
 |===
 |Toolbar Button |Froala |{productname}
-|Format/Style Selector |`+paragraphFormat+` |`+formatselect+`
+|Format/Style Selector |`+paragraphFormat+` |`+blocks+`
 |Ordered list |`+formatOl+` |`+numlist+`
 |Unordered list |`+formatUL+` |`+bullist+`
 |===
@@ -282,7 +282,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
   tinymce.init({
     selector: '#tiny_custom_toolbar',
     plugins: 'lists',
-    toolbar: 'undo redo | formatselect | bold italic
+    toolbar: 'undo redo | blocks | bold italic
       | alignleft aligncenter alignright alignjustify
       | numlist bullist | outdent indent',
   });

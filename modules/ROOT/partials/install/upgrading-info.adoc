@@ -106,8 +106,9 @@ Customizations for {productname} are typically stored in the following directori
  ** Custom themes
 . Delete the existing `{prodnamecode}/` directory and replace with the new `{prodnamecode}/`.
 
-____
-NOTE: To simplify the upgrade process to future versions of {productname}:
+[NOTE]
+====
+To simplify the upgrade process to future versions of {productname}:
 
 . Host the {productname} customizations outside of the `{prodnamecode}/` directory.
 . Update your {productname} configuration as required:
@@ -117,4 +118,4 @@ NOTE: To simplify the upgrade process to future versions of {productname}:
  ** Set the location of custom localization packages using xref:configure/localization.adoc#language_url[`language_url`] instead of `language`.
  ** Set the location of custom skin packages using xref:configure/editor-appearance.adoc#skin_url[`skin_url`] instead of `skin`.
  ** Set the location of custom themes using xref:configure/editor-appearance.adoc#theme_url[`theme_url`] instead of `theme`.
-____
+====

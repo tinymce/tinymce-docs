@@ -9,9 +9,9 @@ tinymce.ScriptLoader.loadScripts(
    * Mock server implementation *
    ******************************/
 
-  let { Polly } = window['@pollyjs/core'];
-  let FetchAdapter = window['@pollyjs/adapter-fetch'];
-  let LocalStoragePersister = window['@pollyjs/persister-local-storage'];
+  const { Polly } = window['@pollyjs/core'];
+  const FetchAdapter = window['@pollyjs/adapter-fetch'];
+  const LocalStoragePersister = window['@pollyjs/persister-local-storage'];
 
   Polly.register(FetchAdapter);
   Polly.register(LocalStoragePersister);
@@ -23,63 +23,60 @@ tinymce.ScriptLoader.loadScripts(
   const server = polly.server;
 
   /* this would be an admin for the file, they're allowed to do all operations */
-  const getOwner = () => {
-    return localStorage.getItem('owner') ?? users[0].id;
-  }
+  const getOwner = () =>
+    localStorage.getItem('owner') ?? users[0].id;
 
   /* Server knows the author, probably by cookie or JWT token */
-  const getAuthor = () => {
-    return localStorage.getItem('author') ?? users[0].id;
-  }
+  const getAuthor = () =>
+    localStorage.getItem('author') ?? users[0].id;
 
   /* this would be an admin for the file, they're allowed to do all operations */
   const setOwner = (user) => {
     localStorage.setItem('owner', user) ?? users[0].id;
-  }
+  };
 
   /* Server knows the author, probably by cookie or JWT token */
   const setAuthor = (user) => {
     localStorage.setItem('author', user) ?? users[0].id;
-  }
+  };
 
   const randomString = () => {
     const randomArray = new Uint32Array(20);
     return window.crypto.getRandomValues(randomArray)[0];
-  }
+  };
 
   /* Our server "database" */
-  const getDB = () => {
-    return JSON.parse(localStorage.getItem('fakedb') ?? '{}');
-  }
+  const getDB = () =>
+    JSON.parse(localStorage.getItem('fakedb') ?? '{}');
   const setDB = (data) => {
     localStorage.setItem('fakedb', JSON.stringify(data));
-  }
+  };
 
   const getConversation = (uid) => {
     const store = getDB();
     console.log('DB get:', uid, store[uid]);
     return store[uid];
-  }
+  };
 
   const setConversation = (uid, conversation) => {
     const store = getDB();
     console.log('DB set:', uid, store[uid], conversation);
     store[uid] = conversation;
     setDB(store);
-  }
+  };
 
   const deleteConversation = (uid) => {
     const store = getDB();
     console.log('DB delete:', uid);
     delete store[uid];
     setDB(store);
-  }
+  };
 
   const deleteAllConversations = () => {
     console.log('DB delete all');
     const store = {};
     setDB(store);
-  }
+  };
 
   server.host('https://api.example', () => {
     /* create new conversation */
@@ -136,16 +133,13 @@ tinymce.ScriptLoader.loadScripts(
     server
       .put('/conversations/:conversationUid/:commentUid')
       .intercept((req, res) => {
-        let author = getAuthor();
-        let { content, modifiedAt } = JSON.parse(req.body);
-        let conversationUid = req.params.conversationUid;
-        let commentUid = req.params.commentUid;
+        const author = getAuthor();
+        const { content, modifiedAt } = JSON.parse(req.body);
+        const { conversationUid, commentUid } = req.params;
 
         try {
           const conversation = getConversation(conversationUid);
-          const commentIndex = conversation.findIndex((comment) => {
-            return comment.uid === commentUid;
-          });
+          const commentIndex = conversation.findIndex((comment) => comment.uid === commentUid);
           const comment = conversation[commentIndex];
           const canEdit = comment.author === author;
           if (canEdit) {
@@ -178,9 +172,7 @@ tinymce.ScriptLoader.loadScripts(
         if (!conversation) {
           res.status(404);
         }
-        const commentIndex = conversation.findIndex((comment) => {
-          return comment.uid === commentUid;
-        });
+        const commentIndex = conversation.findIndex((comment) => comment.uid === commentUid);
         if (commentIndex === -1) {
           res.status(404);
         }
@@ -334,7 +326,7 @@ tinymce.ScriptLoader.loadScripts(
       .catch((e) => {
         fail(e);
       });
-  }
+  };
 
   /**
    *
@@ -383,7 +375,8 @@ tinymce.ScriptLoader.loadScripts(
       .catch((e) => {
         fail(e);
       });
-  }
+  };
+
   /**
    *
    * @typedef {Object} TinyCommentsEditReq
@@ -436,7 +429,7 @@ tinymce.ScriptLoader.loadScripts(
       .catch((e) => {
         fail(e);
       });
-  }
+  };
 
   /**
    *
@@ -474,7 +467,7 @@ tinymce.ScriptLoader.loadScripts(
         fail(new Error('Something has gone wrong...'));
       }
     });
-  }
+  };
 
   /**
    *
@@ -511,7 +504,7 @@ tinymce.ScriptLoader.loadScripts(
         fail(new Error('Something has gone wrong...'));
       }
     });
-  }
+  };
 
   /**
    *
@@ -553,7 +546,7 @@ tinymce.ScriptLoader.loadScripts(
         fail(new Error('Something has gone wrong...'));
       }
     });
-  }
+  };
 
   /**
    * @typedef TinyCommentsLookupReq
@@ -607,21 +600,15 @@ tinymce.ScriptLoader.loadScripts(
         throw new Error('Failed to get users');
       }
       const { users } = await usersResp.json();
-      const getUser = (userId) => {
-        return users.find((u) => {
-          return u.id === userId;
-        });
-      };
+      const getUser = (userId) => users.find((u) => u.id === userId);
       return {
         conversation: {
           uid: conversationUid,
-          comments: comments.map((comment) => {
-            return {
-              ...comment,
-              content: comment.content,
-              authorName: getUser(comment.author)?.displayName,
-            };
-          }),
+          comments: comments.map((comment) => ({
+            ...comment,
+            content: comment.content,
+            authorName: getUser(comment.author)?.displayName,
+          })),
         },
       };
     };
@@ -634,7 +621,7 @@ tinymce.ScriptLoader.loadScripts(
         console.error('Lookup failure ' + conversationUid, err);
         fail(err);
       });
-  }
+  };
 
   tinymce.init({
     selector: 'textarea#comments-callback',

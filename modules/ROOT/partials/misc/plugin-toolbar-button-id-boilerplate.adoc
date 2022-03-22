@@ -6,10 +6,10 @@ The {pluginname} plugin provides the following toolbar buttons:
 
 ifdef::altplugincode[]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
-endif::altplugincode[]
+endif::[]
 ifndef::altplugincode[]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
-endif::altplugincode[]
+endif::[]
 
 For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
 endif::[]
@@ -21,12 +21,11 @@ The {pluginname} plugin provides the following toolbar buttons:
 
 ifdef::altplugincode[]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
-endif::altplugincode[]
+endif::[]
 ifndef::altplugincode[]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
-endif::altplugincode[]
+endif::[]
 
 include::partial$misc/toolbar-button-settings.adoc[]
 
 endif::[]
-:!altplugincode:

@@ -4,7 +4,7 @@
 :title_nav: jQuery
 
 == TinyMCE jQuery integration quick start guide
-+
+
 The https://github.com/tinymce/tinymce/blob/master/modules/tinymce/src/core/main/js/JqueryIntegration.js[Official {productname} jQuery component] integrates TinyMCE into jQuery projects.
 This procedure creates a basic jQuery integration containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
@@ -27,7 +27,7 @@ To source {productname} and the {productname} jQuery integration from the {cloud
 +
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
-Signing up for a {cloudname} API key will also provide a trial of the link:{baseurl}/enterprise/[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the xref:enterprise/index.adoc[Premium Plugins].
 
 ** *{productname} self-hosted*
 +

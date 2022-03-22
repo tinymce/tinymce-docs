@@ -2,7 +2,8 @@
 +
 Example `webpack.config.js`
 +
-```js
+[source, js]
+----
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -49,4 +50,4 @@ module.exports = {
     clean: true,
   },
 };
-```
+----

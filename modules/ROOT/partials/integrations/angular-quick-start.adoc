@@ -49,7 +49,8 @@ $ npm install --save @tinymce/tinymce-angular
 
 . Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.module.ts` and replace the contents with:
 +
-```js
+[source, js]
+----
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { EditorModule } from '@tinymce/tinymce-angular';
@@ -67,7 +68,7 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-```
+----
 
 . Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.component.html` and replace the contents with:
 +
@@ -183,7 +184,7 @@ For information on self-hosting {productname}, see: xref:general-configuration-g
 
   *** *Bundling {productname} with the Angular application using a module loader*
 +
-To bundle {productname} using a module loader (such as Webpack and Browserify), see: link:{baseurl}/advanced/usage-with-module-loaders/[Usage with module loaders].
+To bundle {productname} using a module loader (such as Webpack and Browserify), see: xref:advanced/usage-with-module-loaders/index.adoc[Usage with module loaders].
 . Test the application using the Angular development server.
  ** To start the development server, navigate to the `tinymce-angular-demo` directory and run:
 +

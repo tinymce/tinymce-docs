@@ -316,21 +316,21 @@ The following methods have changed for TinyMCE 5:
 |===
 | *Old method* | *New method* | *Component*
 
-link:{url}/docs-4x/api/tinymce/tinymce.editor/#addButton[`editor.addButton(identifier, configuration)`]
-xref:apis/tinymce.editor.ui.registry.adoc#addButton[`editor.ui.registry.addButton(identifier, configuration)`]
-xref:ui-components/typesoftoolbarbuttons.adoc[Toolbar Buttons]
+| link:{url}/docs-4x/api/tinymce/tinymce.editor/#addButton[`editor.addButton(identifier, configuration)`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addButton[`editor.ui.registry.addButton(identifier, configuration)`]
+| xref:ui-components/typesoftoolbarbuttons.adoc[Toolbar Buttons]
 
-link:{url}/docs-4x/api/tinymce/tinymce.editor/#addcontexttoolbar[`editor.addContextToolbar: (name, spec)`]
-xref:apis/tinymce.editor.ui.registry.adoc#addContextToolbar[`editor.ui.registry.addContextToolbar`]
-xref:ui-components/contexttoolbar.adoc[Context toolbar]
+| link:{url}/docs-4x/api/tinymce/tinymce.editor/#addcontexttoolbar[`editor.addContextToolbar: (name, spec)`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addContextToolbar[`editor.ui.registry.addContextToolbar`]
+| xref:ui-components/contexttoolbar.adoc[Context toolbar]
 
-link:{url}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem[`editor.addMenuItem: (name, spec)`]
-xref:apis/tinymce.editor.ui.registry.adoc#addMenuItem[`editor.ui.registry.addMenuItem`]
-xref:ui-components/menuitems.adoc#basicmenuitems[Menu item]
+| link:{url}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem[`editor.addMenuItem: (name, spec)`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addMenuItem[`editor.ui.registry.addMenuItem`]
+| xref:ui-components/menuitems.adoc#basicmenuitems[Menu item]
 
-link:{url}/docs-4x/api/tinymce/tinymce.editor/#addsidebar[`editor.addSidebar: (name, spec)`]
-xref:apis/tinymce.editor.ui.registry.adoc#addSidebar[`editor.ui.registry.addSidebar: (name, spec)`]
-xref:ui-components/customsidebar.adoc[Sidebar]
+| link:{url}/docs-4x/api/tinymce/tinymce.editor/#addsidebar[`editor.addSidebar: (name, spec)`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addSidebar[`editor.ui.registry.addSidebar: (name, spec)`]
+| xref:ui-components/customsidebar.adoc[Sidebar]
 
 |===
 

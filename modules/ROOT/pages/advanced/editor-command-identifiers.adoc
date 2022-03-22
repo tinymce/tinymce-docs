@@ -122,7 +122,7 @@ include::partial$misc/requires_5_5v.adoc[]
 | Wraps the selected text blocks into a block quote.
 
 | FormatBlock
-| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<``p``>) format will be toggled. For a list of options, see: xref:configure/content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
+| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (`<p>`) format will be toggled. For a list of options, see: xref:configure/content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
 
 | mceInsertContent
 | Inserts contents at the current selection. The value passed in should be the contents to be inserted.
@@ -137,7 +137,7 @@ include::partial$misc/requires_5_5v.adoc[]
 | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:configure/content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
 
 | ToggleSidebar
-| Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).
+| Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
 
 | ToggleToolbarDrawer
 | Toggles the Toolbar Drawer. For information on toolbars, see: xref:configure/editor-appearance.adoc#toolbar[User interface options - Toolbar].
@@ -192,13 +192,13 @@ include::partial$misc/requires_5_5v.adoc[]
 | Copies the current editor content and sets the content using the copy.
 
 | mceSelectNode
-| Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).
+| Selects a node in the editor. The target node is passed as the value (`_<DOM_node>_`).
 
 | mceSelectNodeDepth
 | Selects the parent DOM node 'n' levels above the current node.
 
 | mceRemoveNode
-| Removes the current node or the target node passed as the value (_`<DOM_node>`_).
+| Removes the current node or the target node passed as the value (`_<DOM_node>_`).
 
 | mceFocus
 | Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.

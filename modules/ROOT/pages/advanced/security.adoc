@@ -73,8 +73,9 @@ To protect our users, {companyname} ensures that the TinyMCE dependencies are up
 | Fonts are used for icons in the UI and is loaded from external files.
 |===
 
-____
-IMPORTANT: These directives will prevent all content loading from external sources.
+[IMPORTANT]
+====
+These directives will prevent all content loading from external sources.
 To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
 
 [source, html]
@@ -90,25 +91,27 @@ media-src *;
 ----
 
 For information on Content Security Policies, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP[MDN Web Docs - Content Security Policy (CSP)].
-____
+====
 
 When using the {cloudname}, use this CSP header :
 
-```html
+[source, html]
+----
 <meta
   http-equiv="Content-Security-Policy"
   content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud blob:; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;"
 />
-```
+----
 
 When self-hosting {productname} from a local domain, use this CSP header (excludes the *.tiny.cloud domain):
 
-```html
+[source, html]
+----
 <meta
   http-equiv="Content-Security-Policy"
   content="default-src 'none'; script-src 'self'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';"
 />
-```
+----
 
 [[generalsecurityrisksforuserinputelements]]
 == General security risks for user input elements

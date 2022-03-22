@@ -78,6 +78,6 @@ var contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css
 ----
 |===
 
-IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at link:{baseurl}/advanced/usage-with-module-loaders/[Bundling {productname} with a module loader].
+IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at xref:advanced/usage-with-module-loaders/index.adoc[Bundling {productname} with a module loader].
 
 include::partial$module-loading/bundling-skin-files.adoc[]

@@ -63,6 +63,7 @@ It is common to desire to be able to have user specific paths so that each user 
 
 Some cloud services for {productname} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the \https://jwt.io/ website. For more information, see the xref:tinydrive/jwt-authentication.adoc[JWT authentication] section.
 
+[[filetypes]]
 == File types
 
 There is a fixed set of file extensions that you can upload and these are placed in the file type categories below. We constantly expand these sets with new file extensions. We don't allow any file type to be uploaded since some extensions are problematic from a security perspective.

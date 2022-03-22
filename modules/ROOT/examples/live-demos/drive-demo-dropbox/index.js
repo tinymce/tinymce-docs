@@ -4,7 +4,7 @@ tinymce.init({
   api_key: 'fake-key',
   height: 600,
   editimage_cors_hosts: ['picsum.photos'],
-	tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
+  tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
   tinydrive_token_provider: (success, failure) => {
     success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
   },

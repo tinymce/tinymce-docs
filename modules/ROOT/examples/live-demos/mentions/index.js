@@ -1,5 +1,5 @@
 /* Script to import faker.js for generating random data for demonstration purposes */
-tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js').then(() => {
+tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js']).then(() => {
 
   /*
   ** This is to simulate requesting information from a server.
@@ -38,35 +38,29 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     });
 
     /* This represents getting the complete list of users from the server with the details required for the mentions "profile" item */
-    const fetchUsers = () => {
-      return new Promise((resolve, _reject) => {
-        /* simulate a server delay */
-        setTimeout(() => {
-          const users = Object.keys(userDb).map((id) => {
-            return {
-              id: id,
-              name: userDb[id].name,
-              image: userDb[id].image,
-              description: userDb[id].description
-            };
-          });
-          resolve(users);
-        }, 500);
-      });
-    };
+    const fetchUsers = () => new Promise((resolve, _reject) => {
+      /* simulate a server delay */
+      setTimeout(() => {
+        const users = Object.keys(userDb).map((id) => ({
+          id: id,
+          name: userDb[id].name,
+          image: userDb[id].image,
+          description: userDb[id].description
+        }));
+        resolve(users);
+      }, 500);
+    });
 
     /* This represents requesting all the details of a single user from the server database */
-    const fetchUser = (id) => {
-      return new Promise((resolve, reject) => {
-        /* simulate a server delay */
-        setTimeout(() => {
-          if (Object.prototype.hasOwnProperty.call(userDb, id)) {
-            resolve(userDb[id]);
-          }
-          reject('unknown user id "' + id + '"');
-        }, 300);
-      });
-    };
+    const fetchUser = (id) => new Promise((resolve, reject) => {
+      /* simulate a server delay */
+      setTimeout(() => {
+        if (Object.prototype.hasOwnProperty.call(userDb, id)) {
+          resolve(userDb[id]);
+        }
+        reject('unknown user id "' + id + '"');
+      }, 300);
+    });
 
     return {
       fetchUsers: fetchUsers,
@@ -85,9 +79,7 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     }
     usersRequest.then((users) => {
       /* `query.term` is the text the user typed after the '@' */
-      users = users.filter((user) => {
-        return user.name.indexOf(query.term.toLowerCase()) !== -1;
-      });
+      users = users.filter((user) => user.name.indexOf(query.term.toLowerCase()) !== -1);
 
       users = users.slice(0, 10);
 
@@ -107,9 +99,9 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
 
       div.innerHTML = (
         '<div class="card">' +
-        '<img class="avatar" src="' + userDetail.image + '"/>' +
-        '<h1>' + userDetail.fullName + '</h1>' +
-        '<p>' + userDetail.description + '</p>' +
+          '<img class="avatar" src="' + userDetail.image + '"/>' +
+          '<h1>' + userDetail.fullName + '</h1>' +
+          '<p>' + userDetail.description + '</p>' +
         '</div>'
       );
 

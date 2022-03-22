@@ -83,13 +83,6 @@ Your skin.less file should now look like this:
 
 [source,less]
 ----
-/**
- * Copyright (c) Tiny Technologies, Inc. All rights reserved.
- * Licensed under the LGPL or a commercial license.
- * For LGPL see License.txt in the project root for license information.
- * For commercial licenses see https://www.tiny.cloud/
- */
-
 @import 'src/less/theme/theme';
 
 //
@@ -101,7 +94,7 @@ Your skin.less file should now look like this:
 
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
-image:SDKforsilverCustomExample.png[{productname} skin SDK for Silver theme]
+image::SDKforsilverCustomExample.png[{productname} skin SDK for Silver theme]
 
 This is how you skin {productname}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 

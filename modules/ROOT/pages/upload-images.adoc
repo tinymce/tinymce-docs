@@ -21,7 +21,7 @@ Review the examples below:
 
 [source,js]
 ----
-tinymce.activeEditor.uploadImages((success) => {
+tinymce.activeEditor.uploadImages().then(() => {
   document.forms[0].submit();
 });
 ----
@@ -30,7 +30,7 @@ tinymce.activeEditor.uploadImages((success) => {
 
 [source,js]
 ----
-tinymce.activeEditor.uploadImages((success) => {
+tinymce.activeEditor.uploadImages().then(() => {
   $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(() => {
     console.log("Uploaded images and posted content as an ajax request.");
   });

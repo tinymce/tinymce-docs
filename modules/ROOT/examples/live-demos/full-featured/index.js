@@ -1,5 +1,5 @@
 /* Script to import faker.js for generating random data for demonstration purposes */
-tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js').then(() => {
+tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js']).then(() => {
 
   /*
   ** This is to simulate requesting information from a server.
@@ -20,53 +20,47 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     const userNames = [];
     for (let i = 0; i < 200; i++) {
       userNames.push(faker.name.findName());
-    };
+    }
 
     /* This represents a database of users on the server */
-    let userDb = {};
+    const userDb = {};
     userNames.map((fullName) => {
-      let id = fullName.toLowerCase().replace(/ /g, '');
+      const id = fullName.toLowerCase().replace(/ /g, '');
       return {
         id: id,
         name: fullName,
         fullName: fullName,
         description: faker.name.jobTitle(),
-        image: '{{baseimagesurl}}/unsplash/uifaces-unsplash-portrait-' + images[Math.floor(images.length * Math.random())] + '.jpg'
+        image: '{{imagesdir}}/unsplash/uifaces-unsplash-portrait-' + images[Math.floor(images.length * Math.random())] + '.jpg'
       };
     }).forEach((user) => {
       userDb[user.id] = user;
     });
 
     /* This represents getting the complete list of users from the server with the details required for the mentions "profile" item */
-    const fetchUsers = () => {
-      return new Promise((resolve, _reject) => {
-        /* simulate a server delay */
-        setTimeout(() => {
-          const users = Object.keys(userDb).map((id) => {
-            return {
-              id: id,
-              name: userDb[id].name,
-              image: userDb[id].image,
-              description: userDb[id].description
-            };
-          });
-          resolve(users);
-        }, 500);
-      });
-    };
+    const fetchUsers = () => new Promise((resolve, _reject) => {
+      /* simulate a server delay */
+      setTimeout(() => {
+        const users = Object.keys(userDb).map(id => ({
+          id: id,
+          name: userDb[id].name,
+          image: userDb[id].image,
+          description: userDb[id].description
+        }));
+        resolve(users);
+      }, 500);
+    });
 
     /* This represents requesting all the details of a single user from the server database */
-    const fetchUser = (id) => {
-      return new Promise((resolve, reject) => {
-        /* simulate a server delay */
-        setTimeout(() => {
-          if (Object.prototype.hasOwnProperty.call(userDb, id)) {
-            resolve(userDb[id]);
-          }
-          reject('unknown user id "' + id + '"');
-        }, 300);
-      });
-    };
+    const fetchUser = (id) => new Promise((resolve, reject) => {
+      /* simulate a server delay */
+      setTimeout(() => {
+        if (Object.prototype.hasOwnProperty.call(userDb, id)) {
+          resolve(userDb[id]);
+        }
+        reject(`unknown user id "${id}"`);
+      }, 300);
+    });
 
     return {
       fetchUsers: fetchUsers,
@@ -76,7 +70,7 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
 
   /* These are "local" caches of the data returned from the fake server */
   let usersRequest = null;
-  let userRequest = {};
+  const userRequest = {};
 
   const mentions_fetch = (query, success) => {
     /* Fetch your full user list from somewhere */
@@ -85,10 +79,7 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     }
     usersRequest.then((users) => {
       /* `query.term` is the text the user typed after the '@' */
-      users = users.filter((user) => {
-        return user.name.indexOf(query.term.toLowerCase()) !== -1;
-      });
-
+      users = users.filter((user) => user.name.indexOf(query.term.toLowerCase()) !== -1);
       users = users.slice(0, 10);
 
       /* Where the user object must contain the properties `id` and `name`
@@ -102,15 +93,15 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     if (!userRequest[userInfo.id]) {
       userRequest[userInfo.id] = fakeServer.fetchUser(userInfo.id);
     }
-    userRequest[userInfo.id].then((userDetail) => {
+    userRequest[userInfo.id].then(userDetail => {
       const div = document.createElement('div');
 
       div.innerHTML = (
-      '<div class="card">' +
-        '<img class="avatar" src="' + userDetail.image + '"/>' +
-        '<h1>' + userDetail.fullName + '</h1>' +
-        '<p>' + userDetail.description + '</p>' +
-      '</div>'
+        '<div class="card">' +
+          '<img class="avatar" src="' + userDetail.image + '"/>' +
+          '<h1>' + userDetail.fullName + '</h1>' +
+          '<p>' + userDetail.description + '</p>' +
+        '</div>'
       );
 
       success(div);
@@ -146,7 +137,7 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     });
   };
 
-  var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   tinymce.init({
     selector: 'textarea#full-featured',
@@ -155,7 +146,7 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     tinydrive_token_provider: (success, failure) => {
       success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
     },
-    tinydrive_demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
+    tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
     tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
     tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
     tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
@@ -190,7 +181,7 @@ tinymce.ScriptLoader.loadScript('https://cdn.jsdelivr.net/npm/faker@5/dist/faker
     ],
     importcss_append: true,
     templates: [
-          { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+      { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
       { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
       { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
     ],

@@ -114,7 +114,7 @@ chmod +x *.sh
 ----
 . _Optional_: Edit the `+http+` configuration settings in `+config/ephox-spelling-docker-env.conf+`. The configurable settings are in the `+http+` section of the file. For example:
 +
-[source,conf]
+[source,properties]
 ----
 http {
   max-connections = 100
@@ -136,7 +136,7 @@ For information on the `+http+` configuration setting, see: xref:configure-commo
 +
 For example:
 +
-[source,conf]
+[source,properties]
 ----
 ORIGIN0=example.net
 ORIGIN1=example

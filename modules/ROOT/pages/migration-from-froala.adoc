@@ -37,9 +37,9 @@ To migrate from a basic Froala 3 configuration to a basic {productname} {product
 
 * For {cloudname} deployments:
 +
-[source,html]
+[source,html,subs="attributes+"]
 ----
-<script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
+<script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/{productmajorversion}/tinymce.min.js' referrerpolicy='origin'></script>
 ----
 +
 Replace `+your-api-key+` with your link:{accountpageurl}/[{cloudname} API key].
@@ -71,7 +71,7 @@ To insert an editor in the body of the page for a `+<textarea>+` element such as
 [source,html]
 ----
 <script>
-  var editor = new FroalaEditor('textarea#myeditor')
+  const editor = new FroalaEditor('textarea#myeditor')
 </script>
 ----
 . Add a `+tinymce.init+` function.
@@ -106,7 +106,7 @@ The following examples show an initial Froala configuration and the migrated {pr
       <textarea id='basic_froala'>Hello, World! I'm a froala editor!</textarea>
     </form>
     <script>
-      var editor = new FroalaEditor('textarea#basic_froala')
+      const editor = new FroalaEditor('textarea#basic_froala')
     </script>
   </body>
 </html>
@@ -261,7 +261,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
     <textarea id=froala_custom_toolbar>Hello, World! I'm a froala editor!</textarea>
   </form>
 <script>
-  var editor = new FroalaEditor('textarea#froala_custom_toolbar', {
+  const editor = new FroalaEditor('textarea#froala_custom_toolbar', {
     paragraphFormatSelection: true ,
     toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
     ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify'],
@@ -317,7 +317,7 @@ The following examples show Froala and {productname} configured for inline mode.
     <div id=froala_custom_inline_toolbar>Hello, World! I'm a froala editor!</div>
   </form>
 <script>
-  var editor = new FroalaEditor('div#froala_custom_inline_toolbar', {
+  const editor = new FroalaEditor('div#froala_custom_inline_toolbar', {
     toolbarInline: true,
     charCounterCount: false
   })
@@ -392,7 +392,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
     }
   });
 
-  var editor = new FroalaEditor('textarea#froala_custom_button',{
+  const editor = new FroalaEditor('textarea#froala_custom_button',{
     toolbarButtons: [['mybutton1'],['My&#160;Button']]
   })
 </script>
@@ -410,17 +410,17 @@ The following examples show a Froala editor and a {productname} editor with a ba
   tinymce.init({
     selector: '#tiny_custom_button',
     toolbar: 'myButton1 | myButton2',
-    setup: function (editor) {
+    setup: (editor) => {
       editor.ui.registry.addButton('myButton1', {
         icon: 'user',
-        onAction: function (_) {
+        onAction: (_) => {
           editor.insertContent('&nbsp;<strong>It\'s my icon button!</strong>&nbsp;');
         }
       });
 
       editor.ui.registry.addButton('myButton2', {
         text: 'My Button',
-        onAction: function (_) {
+        onAction: (_) => {
           editor.insertContent('&nbsp;<strong>It\'s my text button!</strong>&nbsp;');
         }
       });
@@ -454,7 +454,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
     <textarea id='froala_custom_button_menu'>Hello, World! I'm a froala editor!</textarea>
   </form>
 <script>
-  var option_values = {
+  const option_values = {
     'Opt1': '<strong>You clicked menu item 1!</strong>',
     'Opt2': '<em>You clicked menu item 2!</em>'
   };
@@ -473,7 +473,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
       this.html.insert(option_values[val]);
     }
   });
-  var editor = new FroalaEditor('textarea#froala_custom_button_menu', {
+  const editor = new FroalaEditor('textarea#froala_custom_button_menu', {
     toolbarButtons: [['mybuttonmenu']]
   })
 </script>
@@ -491,17 +491,16 @@ The following examples show a Froala editor and a {productname} editor with a ba
   tinymce.init({
     selector: '#tiny_custom_button_menu',
     toolbar: 'my_button',
-
-    setup: function (editor) {
+    setup: (editor) => {
       editor.ui.registry.addMenuButton('my_button', {
         text: 'My button menu',
         icon: 'gamma',
-        fetch: function (callback) {
-          var items = [
+        fetch: (callback) => {
+          const items = [
             {
               type: 'menuitem',
               text: 'Menu item 1',
-              onAction: function () {
+              onAction: () => {
                 editor.insertContent('&nbsp;<strong>You clicked menu item 1!</strong>');
               }
             },
@@ -509,7 +508,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
               type: 'menuitem',
               text: 'Menu item 2',
               icon: 'user',
-              onAction: function () {
+              onAction: () => {
                 editor.insertContent('&nbsp;<em>You clicked menu item 2!</em>');
               }
             }

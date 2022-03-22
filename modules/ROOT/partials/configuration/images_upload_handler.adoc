@@ -3,17 +3,17 @@
 
 The *images_upload_handler* option allows you to specify a function that is used to replace {productname}'s default JavaScript upload handler function with custom logic.
 
-The upload handler function takes four arguments:
+The upload handler function takes two arguments:
 
 * `+blobInfo+`
-* A `+success+` callback
-* A `+failure+` callback that takes an error message and an optional object containing:
-** `+remove+` - Removes the image from the document, defaults to `+false+`
-* A `+progress+` callback that takes a value between 1 and 100
+* A `+progress+` callback that takes a value between 1 and 100.
 
-When this option is not set, {productname} utilizes an `+XMLHttpRequest+` to upload images one at a time to the server and calls the success callback with the location of the remote image.
+and returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] that will resolve with the uploaded image URL or reject with an error. The error can be either a string or an object containing the following properties:
 
-NOTE: To replace the `+<img>+` tag's `+src+` attribute with the remote location, please use the success callback defined in the `+images_upload_handler+` function with the returned JSON object's location property.
+* `+message+` - The error message to display in the UI.
+* `+remove+` - A flag to remove the image from the document, defaults to `false` if not set.
+
+When this option is not set, {productname} utilizes an `+XMLHttpRequest+` to upload images one at a time to the server and resolves the `Promise` with the JSON `location` property for the remote image returned by the server.
 
 Type: `+Function+`
 
@@ -21,7 +21,7 @@ Type: `+Function+`
 
 [source,js]
 ----
-include::partial$misc/images-upload-handler-function.adoc[]
+include::example$misc/images-upload-handler-function.js[]
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

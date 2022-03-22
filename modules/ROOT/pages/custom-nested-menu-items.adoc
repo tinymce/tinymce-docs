@@ -23,8 +23,8 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 [cols="1,3,4",options="header"]
 |===
 |Name |Value |Description
-|isDisabled |`+() => boolean+` |Checks if the menu item is disabled.
-|setDisabled |`+(state: boolean) => void+` |Sets the menu item's disabled state.
+|isEnabled |`+() => boolean+` |Checks if the menu item is enabled.
+|setEnabled |`+(state: boolean) => void+` |Sets the menu item's enabled state.
 |===
 
 == Example: Creating a nested menu item

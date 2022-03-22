@@ -27,8 +27,7 @@ To set initial values for components when the dialog is opened, use the `+initia
 |Methods |Description
 |`+getData() => <T>+` |`+getData()+` returns a key-value object matching the structure of the `+initialData+`. The object keys in the returned data object represent a component's `+name+`.
 |`+setData(newConfig: object) => void+` |`+setData(newData)+` updates the data set. This method also works with partial data sets.
-|`+enable(name: string) => void+` |Calling `+enable()+` and passing the component `+name+` will enable a component, allowing users to interact with the component.
-|`+disable(name: string) => void+` |Calling `+disable()+` and passing the component's `+name+` will disable the component.
+|`+setEnabled(name: string, state: string) => void+` |Calling `+setEnabled()+` and passing the component's `+name+` and the `+state+` will either enable or disable the component.
 |`+focus(name: string) => void+` |Calling `+focus()+` and passing the component's `+name+` will set the browser's focus to the component.
 |`+block(message: string) => void+` |Calling `+block()+` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `+unblock()+` to unblock the dialog.
 |`+unblock() => void+` |Calling `+unblock()+` will unblock the dialog restoring functionality.

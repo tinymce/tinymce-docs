@@ -1,4 +1,4 @@
-var dfreeHeaderConfig = {
+const dfreeHeaderConfig = {
   selector: '.dfree-header',
   menubar: false,
   inline: true,
@@ -8,7 +8,7 @@ var dfreeHeaderConfig = {
   quickbars_selection_toolbar: 'italic underline',
 };
 
-var dfreeBodyConfig = {
+const dfreeBodyConfig = {
   selector: '.dfree-body',
   menubar: false,
   inline: true,

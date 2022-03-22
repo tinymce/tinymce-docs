@@ -7,7 +7,7 @@ Example `+src/editor.js+`
 [source,js]
 ----
 /* Import TinyMCE */
-var tinymce = require('tinymce/tinymce');
+const tinymce = require('tinymce/tinymce');
 
 /* Default icons are required. Also import custom icons if applicable */
 require('tinymce/icons/default');
@@ -28,13 +28,13 @@ require('tinymce/plugins/lists');
 require('tinymce/plugins/table');
 
 /* Import content CSS */
-var contentUiCss = require('tinymce/skins/ui/oxide/content.css');
+const contentUiCss = require('tinymce/skins/ui/oxide/content.css');
 
 /* Import the default content CSS, replace with the CSS for the editor content. */
-var contentCss = require('tinymce/skins/content/default/content.css');
+const contentCss = require('tinymce/skins/content/default/content.css');
 
 /* Initialize TinyMCE */
-exports.render = function () {
+exports.render = () => {
   tinymce.init({
     selector: 'textarea#editor',
     /* All plugins need to be imported and added to the plugins option. */

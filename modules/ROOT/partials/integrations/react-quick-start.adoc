@@ -68,9 +68,9 @@ export default function App() {
             'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
           ],
           toolbar: 'undo redo | blocks | ' +
-          'bold italic backcolor | alignleft aligncenter ' +
-          'alignright alignjustify | bullist numlist outdent indent | ' +
-          'removeformat | help',
+            'bold italic forecolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help',
           content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
         }}
       />
@@ -169,7 +169,7 @@ npm run build
 
 The application has now been deployed on the web server.
 
-NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:<port>/my_react_application.
+NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as +http://localhost:<port>/my_react_application+.
 
 == Next Steps
 

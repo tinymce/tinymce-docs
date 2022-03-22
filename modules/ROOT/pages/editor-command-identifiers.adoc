@@ -74,7 +74,7 @@ The commands on the following table are provided by the {productname} editor and
 |mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
 |mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
 |mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
-|ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (_`+<sidebar-name>+`_).
+|ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
 |ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |Indent |Indents the current selection.
 |Outdent |Outdents the current selection.

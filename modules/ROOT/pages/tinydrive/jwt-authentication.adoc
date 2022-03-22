@@ -11,17 +11,18 @@
 
 A JSON Web Token (JWT) endpoint is a service for generating and providing authorization tokens to users. These tokens can then be used to verify that submitted content was sent by an authorized user and to prevent unauthorized access.
 
-JWT is a standard authorization solution for web services and is documented in more detail at the https://jwt.io/[\https://jwt.io/] website. The guide aims to show how to setup JWT authentication for {cloudfilemanager}.
+JWT is a standard authorization solution for web services and is documented in more detail at the https://jwt.io/[https://jwt.io/] website. The guide aims to show how to setup JWT authentication for {cloudfilemanager}.
 
-If you haven't tried any of the link:{baseurl}/tinydrive/getting-started/#starterprojects[Starter projects]  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
+If you haven't tried any of the xref:tinydrive/getting-started.adoc#starterprojects[Starter projects]  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 
 == Overview
 
-* <<settingupjwtauthenticationfortinydrive,Setting up JWT authentication for Tiny Drive>>
-* <<addapublickeytothetinycloudapikey,Add a public key to the Tiny Cloud API key>>
-* <<setupajsonwebtokenjwtendpoint,Set up a JSON Web Token (JWT) endpoint>>
-* <<jwtendpointexamples,JWT endpoint examples>>
+* xref:settingupjwtauthenticationfortinydrive[Setting up JWT authentication for Tiny Drive]
+* xref:addapublickeytothetinycloudapikey[Add a public key to the Tiny Cloud API key]
+* xref:setupajsonwebtokenjwtendpoint[Set up a JSON Web Token (JWT) endpoint]
+* xref:jwtendpointexamples[JWT endpoint examples]
 
+[[settingupjwtauthenticationfortinydrive]]
 == Setting up JWT authentication for Tiny Drive
 
 To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
@@ -30,10 +31,12 @@ To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
 . Set up a JSON Web Token (JWT) Provider endpoint.
 . Configure {productname} to use the JWT endpoint.
 
+[[addapublickeytothetinycloudapikey]]
 == Add a public key to the {cloudname} API key
 
 include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
+[[setupajsonwebtokenjwtendpoint]]
 == Set up a JSON Web Token (JWT) endpoint
 
 include::partial$auth/how-jwts-are-used.adoc[]
@@ -59,13 +62,15 @@ JSON Web Tokens produced by the JWT endpoint must include the following claims:
 
 NOTE: The "[.code]``sub``" claim is a case-sensitive string containing a *String* or *URI* value. The `sub` claim cannot have a `:` _unless_ it is a valid URI or else the callback will fail.
 
+[[jwtendpointexamples]]
 == JWT endpoint examples
 
 The following examples show a minimal JWT endpoint and how to configure {productname} to use them.
 
-* <<phptokenproviderendpointexample,PHP token provider endpoint example>>
-* <<nodejstokenproviderendpointexample,Node.js token provider endpoint example>>
+* xref:phptokenproviderendpointexample[PHP token provider endpoint example]
+* xref:nodejstokenproviderendpointexample[Node.js token provider endpoint example]
 
+[[phptokenproviderendpointexample]]
 === PHP token provider endpoint example
 
 This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] provided through the Composer dependency manager.
@@ -126,9 +131,10 @@ tinymce.init({
 });
 ----
 
+[[nodejstokenproviderendpointexample]]
 === Node.js token provider endpoint example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. For instructions on setting up a basic Node.js Express server and adding {productname}, see: link:{baseurl}/integrations/expressjs/[Integrating TinyMCE into an Express JS App].
+This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:integrations/expressjs.adoc[Integrating TinyMCE into an Express JS App].
 
 `privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 
@@ -191,4 +197,4 @@ tinymce.init({
 
 === More configuration
 
-If you managed to set this up, you should be good to go with checking out the various link:{baseurl}/tinydrive/configuration/[configuration options] for {cloudfilemanager} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+If you managed to set this up, you should be good to go with checking out the various xref:tinydrive/configuration.adoc[configuration options] for {cloudfilemanager} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.

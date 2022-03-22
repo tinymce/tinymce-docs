@@ -42,7 +42,7 @@ To use the {productname} icon pack template project:
 +
 [source,sh]
 ----
-$ git clone https://github.com/tinymce/oxide-icon-pack-template.git
+git clone https://github.com/tinymce/oxide-icon-pack-template.git
 ----
 
 . Open a terminal or command prompt, navigate to the `+oxide-icon-pack-template+` directory.
@@ -50,7 +50,7 @@ $ git clone https://github.com/tinymce/oxide-icon-pack-template.git
 +
 [source,sh]
 ----
-$ npm install
+npm install
 ----
 
 . When prompted, enter a name for the icon pack. The icon pack name should only contain:
@@ -74,13 +74,13 @@ For example: `+bold.svg+` will have the identifier `+bold+`. Such as:
 [source,js]
 ----
 tinymce.init({
-  selector: '#tiny_custom_button',
+  selector: '#tiny_custom_button',  // change this value according to your HTML
   toolbar: 'myButton',
   icons: 'my_icon_pack',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('myButton', {
       icon: 'bold',    // the 'bold' icon  created from 'bold.svg'
-      onAction: function (_) {
+      onAction: (_) => {
         editor.insertContent('&nbsp;<strong>It\'s my icon button!</strong>&nbsp;');
       }
     });
@@ -104,7 +104,7 @@ To build the icon pack using Gulp:
 +
 [source,sh]
 ----
-$ npx gulp
+npx gulp
 ----
 +
 A `+dist/+` directory containing the icon pack will be created.

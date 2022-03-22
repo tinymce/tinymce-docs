@@ -423,7 +423,7 @@ The upload handler should return the location of the uploaded file in the follow
 { "location": "folder/sub-folder/new-location.png" }
 ----
 
-For information on using the `+images_upload_url+`, see: xref:file-image-upload.adoc#images_upload_url[Image & file options - `+images_upload_url+`].
+For information on using the `+images_upload_url+`, see: xref:file-image-upload.adoc#images_upload_url[Image uploads - `+images_upload_url+`].
 
 [[settingtheimagesuploadhandler]]
 === Setting the images upload handler
@@ -433,12 +433,12 @@ To specify custom image upload handler callback function, use the `+images_uploa
 [source,html]
 ----
 <script>
-include::partial$misc/images-upload-handler-function.adoc[]
+include::example$misc/images-upload-handler-function.js[]
 </script>
 <tinymce-editor images_upload_handler="example_image_upload_handler"></tinymce-editor>
 ----
 
-For information on using the `+images_upload_handler+` option, see: xref:file-image-upload.adoc#images_upload_handler[Image & file options - `+images_upload_handler+`].
+For information on using the `+images_upload_handler+` option, see: xref:file-image-upload.adoc#images_upload_handler[Image uploads - `+images_upload_handler+`].
 
 [[settingtheimagesuploadbasepath]]
 === Setting the images upload base path
@@ -450,7 +450,7 @@ To specify the basepath to prepend to URLs returned from the configured `+images
 <tinymce-editor images_upload_url="postAcceptor.php" images_upload_base_path="/some/basepath"></tinymce-editor>
 ----
 
-For information on using the `+images_upload_base_path+` option, see: xref:file-image-upload.adoc#images_upload_base_path[Image & file options - `+images_upload_base_path+`].
+For information on using the `+images_upload_base_path+` option, see: xref:file-image-upload.adoc#images_upload_base_path[Image uploads - `+images_upload_base_path+`].
 
 [[settingtheimagesuploadtohavecredentials]]
 === Setting the images upload to have credentials
@@ -462,7 +462,7 @@ To receive credentials (such as cookies, authorization headers, or TLS client ce
 <tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials="true"></tinymce-editor>
 ----
 
-For information on using the `+images_upload_credentials+` option, see: xref:file-image-upload.adoc#images_upload_credentials[Image & file options - `+images_upload_credentials+`].
+For information on using the `+images_upload_credentials+` option, see: xref:file-image-upload.adoc#images_upload_credentials[Image uploads - `+images_upload_credentials+`].
 
 [[settingtheimagesuploadtoreusefilenames]]
 === Setting the images upload to reuse filenames
@@ -474,7 +474,7 @@ To force the editor to use the same filename for a given image, regardless of th
 <tinymce-editor images_upload_url="postAcceptor.php" images_reuse_filename="true"></tinymce-editor>
 ----
 
-For information on using the `+images_reuse_filename+` option, see: xref:file-image-upload.adoc#images_reuse_filename[Image & file options - `+images_reuse_filename+`].
+For information on using the `+images_reuse_filename+` option, see: xref:file-image-upload.adoc#images_reuse_filename[Image uploads - `+images_reuse_filename+`].
 
 [[settingtheiconpack]]
 === Setting the icon pack

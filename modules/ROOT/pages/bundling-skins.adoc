@@ -24,10 +24,6 @@ Optional files for the example skin:
 ----
 /* Only required for inline editors */
 ./skins/ui/example/content.inline.css
-/* Only required when using the deprecated mobile theme */
-./skins/ui/example/skin.mobile.css
-./skins/ui/example/content.mobile.css
-./skins/ui/example/fonts/tinymce-mobile.woff
 ----
 
 Example syntax for including the example icon pack in a bundle:
@@ -54,18 +50,18 @@ import contentUiInlineCss from '../tinymce/skins/ui/example/content.inline.css'
 
 [source,js]
 ----
-var contentUiCss = require('tinymce/skins/ui/example/content.css');
+const contentUiCss = require('tinymce/skins/ui/example/content.css');
 require('tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
-var contentUiInlineCss = require('tinymce/skins/ui/example/content.inline.css');
+const contentUiInlineCss = require('tinymce/skins/ui/example/content.inline.css');
 ----
 
 [source,js]
 ----
-var contentUiCss = require('../tinymce/skins/ui/example/content.css');
+const contentUiCss = require('../tinymce/skins/ui/example/content.css');
 require('../tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
-var contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css');
+const contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css');
 ----
 
 ////

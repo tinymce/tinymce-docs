@@ -4,21 +4,21 @@ Example `+src/index.js+`
 +
 [source,js]
 ----
-var editor = require('./editor.js');
-/* Create a parent element for the textarea */
-var parent = document.createElement('p');
+const editor = require('./editor.js');
 /* Create a textarea with id="editor" for the TinyMCE `selector` option */
-function heading() {
-  var element = document.createElement('h1');
+const heading = () => {
+  const element = document.createElement('h1');
   element.innerText = 'TinyMCE Webpack demo';
   return element
-}
+};
 /* Create a textarea with id="editor" for the TinyMCE `selector` option */
-function editorArea() {
-  var element = document.createElement('textarea');
+const editorArea = () => {
+  const element = document.createElement('textarea');
   element.id = 'editor';
   return element
-}
+};
+/* Create a parent element for the textarea */
+const parent = document.createElement('p');
 /* Add elements to page */
 parent.appendChild(editorArea());
 document.body.appendChild(heading());

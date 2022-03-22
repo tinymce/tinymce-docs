@@ -101,8 +101,7 @@ menubar: false
 toolbar:
   - undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat | help
 plugins:
-  - insertdatetime media
-  - table paste code help wordcount
+  - insertdatetime lists media table code help wordcount
 ----
 . Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include {productname} on pages using the `+application+` layout:
 +

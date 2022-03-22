@@ -4,15 +4,15 @@ Example `+src/main.js+`
 +
 [source,js]
 ----
-var editor = require('./editor.js');
-/* Create a parent element for the textarea */
-var parent = document.createElement('p');
+const editor = require('./editor.js');
 /* Create a textarea with id="editor" for the TinyMCE `selector` option */
-function editorArea() {
+const editorArea = () => {
   var element = document.createElement('textarea');
   element.id = 'editor';
   return element
-}
+};
+/* Create a parent element for the textarea */
+const parent = document.createElement('p');
 /* Add elements to page */
 parent.appendChild(editorArea());
 document.body.appendChild(parent);

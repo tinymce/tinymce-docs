@@ -15,12 +15,12 @@ tinymce.ScriptLoader.loadScripts(
 
   Polly.register(FetchAdapter);
   Polly.register(LocalStoragePersister);
-  let polly = new Polly('test', {
+  const polly = new Polly('test', {
     adapters: ['fetch'],
     persister: 'local-storage',
     logging: true,
   });
-  let server = polly.server;
+  const server = polly.server;
 
   /* this would be an admin for the file, they're allowed to do all operations */
   const getOwner = () => {
@@ -56,20 +56,20 @@ tinymce.ScriptLoader.loadScripts(
   }
 
   const getConversation = (uid) => {
-    let store = getDB();
+    const store = getDB();
     console.log('DB get:', uid, store[uid]);
     return store[uid];
   }
 
   const setConversation = (uid, conversation) => {
-    let store = getDB();
+    const store = getDB();
     console.log('DB set:', uid, store[uid], conversation);
     store[uid] = conversation;
     setDB(store);
   }
 
   const deleteConversation = (uid) => {
-    let store = getDB();
+    const store = getDB();
     console.log('DB delete:', uid);
     delete store[uid];
     setDB(store);
@@ -77,18 +77,18 @@ tinymce.ScriptLoader.loadScripts(
 
   const deleteAllConversations = () => {
     console.log('DB delete all');
-    let store = {};
+    const store = {};
     setDB(store);
   }
 
   server.host('https://api.example', () => {
     /* create new conversation */
     server.post('/conversations/').intercept((req, res) => {
-      let author = getAuthor();
-      let { content, createdAt } = JSON.parse(req.body);
+      const author = getAuthor();
+      const { content, createdAt } = JSON.parse(req.body);
       console.log(req.body);
       try {
-        let conversationUid = randomString();
+        const conversationUid = randomString();
         setConversation(conversationUid, [
           {
             author,
@@ -107,12 +107,12 @@ tinymce.ScriptLoader.loadScripts(
 
     /* add new comment to conversation */
     server.post('/conversations/:conversationUid').intercept((req, res) => {
-      let author = getAuthor();
-      let { content, createdAt } = JSON.parse(req.body);
-      let conversationUid = req.params.conversationUid;
+      const author = getAuthor();
+      const { content, createdAt } = JSON.parse(req.body);
+      const conversationUid = req.params.conversationUid;
       try {
-        let conversation = getConversation(conversationUid);
-        let commentUid = randomString();
+        const conversation = getConversation(conversationUid);
+        const commentUid = randomString();
         setConversation(
           conversationUid,
           conversation.concat([
@@ -142,12 +142,12 @@ tinymce.ScriptLoader.loadScripts(
         let commentUid = req.params.commentUid;
 
         try {
-          let conversation = getConversation(conversationUid);
-          let commentIndex = conversation.findIndex((comment) => {
+          const conversation = getConversation(conversationUid);
+          const commentIndex = conversation.findIndex((comment) => {
             return comment.uid === commentUid;
           });
-          let comment = conversation[commentIndex];
-          let canEdit = comment.author === author;
+          const comment = conversation[commentIndex];
+          const canEdit = comment.author === author;
           if (canEdit) {
             setConversation(conversationUid, [
               ...conversation.slice(0, commentIndex),
@@ -170,15 +170,15 @@ tinymce.ScriptLoader.loadScripts(
     server
       .delete('/conversations/:conversationUid/:commentUid')
       .intercept((req, res) => {
-        let author = getAuthor();
-        let owner = getOwner();
-        let conversationUid = req.params.conversationUid;
-        let commentUid = req.params.commentUid;
-        let conversation = getConversation(conversationUid);
+        const author = getAuthor();
+        const owner = getOwner();
+        const conversationUid = req.params.conversationUid;
+        const commentUid = req.params.commentUid;
+        const conversation = getConversation(conversationUid);
         if (!conversation) {
           res.status(404);
         }
-        let commentIndex = conversation.findIndex((comment) => {
+        const commentIndex = conversation.findIndex((comment) => {
           return comment.uid === commentUid;
         });
         if (commentIndex === -1) {
@@ -200,10 +200,10 @@ tinymce.ScriptLoader.loadScripts(
 
     /* delete a conversation */
     server.delete('/conversations/:conversationUid').intercept((req, res) => {
-      let author = getAuthor();
-      let owner = getOwner();
-      let conversationUid = req.params.conversationUid;
-      let conversation = getConversation(conversationUid);
+      const author = getAuthor();
+      const owner = getOwner();
+      const conversationUid = req.params.conversationUid;
+      const conversation = getConversation(conversationUid);
       if (conversation) {
         if (conversation[0].author === author || author === owner) {
           deleteConversation(conversationUid);
@@ -218,8 +218,8 @@ tinymce.ScriptLoader.loadScripts(
 
     /* delete all conversations */
     server.delete('/conversations').intercept((req, res) => {
-      let author = getAuthor();
-      let owner = getOwner();
+      const author = getAuthor();
+      const owner = getOwner();
       if (author === owner) {
         deleteAllConversations();
         res.status(204);
@@ -230,7 +230,7 @@ tinymce.ScriptLoader.loadScripts(
 
     /* lookup a conversation */
     server.get('/conversations/:conversationUid').intercept((req, res) => {
-      let conversation = getConversation(req.params.conversationUid);
+      const conversation = getConversation(req.params.conversationUid);
       if (conversation) {
         res.status(200).json(conversation);
       } else {
@@ -311,8 +311,7 @@ tinymce.ScriptLoader.loadScripts(
    * @param {fail} fail - callback to call when something fails
    */
   const tinycomments_create = (req, done, fail) => {
-    let content = req.content;
-    let createdAt = req.createdAt;
+    const { content, createdAt } = req;
 
     fetch('https://api.example/conversations/', {
       method: 'POST',
@@ -329,8 +328,8 @@ tinymce.ScriptLoader.loadScripts(
         return response.json();
       })
       .then((req2) => {
-        let conversationUid = req2.conversationUid;
-        done({ conversationUid: conversationUid });
+        const conversationUid = req2.conversationUid;
+        done({ conversationUid });
       })
       .catch((e) => {
         fail(e);
@@ -361,9 +360,7 @@ tinymce.ScriptLoader.loadScripts(
    * @param {fail} fail - callback to call when something fails
    */
   const tinycomments_reply = (req, done, fail) => {
-    let conversationUid = req.conversationUid;
-    let content = req.content;
-    let createdAt = req.createdAt;
+    const { conversationUid, content, createdAt } = req;
 
     fetch('https://api.example/conversations/' + conversationUid, {
       method: 'POST',
@@ -380,8 +377,8 @@ tinymce.ScriptLoader.loadScripts(
         return response.json();
       })
       .then((req2) => {
-        let commentUid = req2.commentUid;
-        done({ commentUid: commentUid });
+        const commentUid = req2.commentUid;
+        done({ commentUid });
       })
       .catch((e) => {
         fail(e);
@@ -410,10 +407,7 @@ tinymce.ScriptLoader.loadScripts(
    * @param {fail} fail
    */
   const tinycomments_edit_comment = (req, done, fail) => {
-    let conversationUid = req.conversationUid;
-    let commentUid = req.commentUid;
-    let content = req.content;
-    let modifiedAt = req.modifiedAt;
+    const { conversationUid, commentUid, content, modifiedAt } = req;
 
     fetch(
       'https://api.example/conversations/' +
@@ -436,8 +430,8 @@ tinymce.ScriptLoader.loadScripts(
         return response.json();
       })
       .then((req2) => {
-        let canEdit = req2.canEdit;
-        done({ canEdit: canEdit });
+        const canEdit = req2.canEdit;
+        done({ canEdit });
       })
       .catch((e) => {
         fail(e);
@@ -468,7 +462,7 @@ tinymce.ScriptLoader.loadScripts(
    * @param {fail} fail
    */
   const tinycomments_delete = (req, done, fail) => {
-    let conversationUid = req.conversationUid;
+    const conversationUid = req.conversationUid;
     fetch('https://api.example/conversations/' + conversationUid, {
       method: 'DELETE',
     }).then((response) => {
@@ -540,8 +534,7 @@ tinymce.ScriptLoader.loadScripts(
    * @param {fail} fail
    */
   const tinycomments_delete_comment = (req, done, fail) => {
-    let conversationUid = req.conversationUid;
-    let commentUid = req.commentUid;
+    const { conversationUid, commentUid } = req;
 
     fetch(
       'https://api.example/conversations/' +
@@ -601,20 +594,20 @@ tinymce.ScriptLoader.loadScripts(
    * @param {fail} fail
    */
   const tinycomments_lookup = ({ conversationUid }, done, fail) => {
-    let lookup = async () => {
-      let convResp = await fetch(
+    const lookup = async () => {
+      const convResp = await fetch(
         'https://api.example/conversations/' + conversationUid
       );
       if (!convResp.ok) {
         throw new Error('Failed to get conversation');
       }
-      let comments = await convResp.json();
-      let usersResp = await fetch('https://api.example/users/');
+      const comments = await convResp.json();
+      const usersResp = await fetch('https://api.example/users/');
       if (!usersResp.ok) {
         throw new Error('Failed to get users');
       }
-      let { users } = await usersResp.json();
-      let getUser = (userId) => {
+      const { users } = await usersResp.json();
+      const getUser = (userId) => {
         return users.find((u) => {
           return u.id === userId;
         });
@@ -675,5 +668,4 @@ tinymce.ScriptLoader.loadScripts(
       });
     },
   });
-}
-);
+});

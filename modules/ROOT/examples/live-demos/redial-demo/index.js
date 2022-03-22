@@ -22,13 +22,13 @@ const page1Config = {
       type: 'custom',
       name: 'doesnothing',
       text: 'Previous',
-      disabled: true
+      enabled: false
     },
     {
       type: 'custom',
       name: 'uniquename',
       text: 'Next',
-      disabled: true
+      enabled: false
     }
   ],
   onChange: (dialogApi, details) => {
@@ -71,7 +71,7 @@ const page2Config = {
       type: 'custom',
       name: 'lastpage',
       text: 'Done',
-      disabled: false
+      enabled: true
     }
   ],
   initialData: {

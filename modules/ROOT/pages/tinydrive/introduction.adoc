@@ -61,7 +61,7 @@ It is common to desire to be able to have user specific paths so that each user 
 
 == JWT
 
-Some cloud services for {productname} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the \https://jwt.io/ website. For more information, see the link:{baseurl}/tinydrive/jwt-authentication/[JWT authentication] section.
+Some cloud services for {productname} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the \https://jwt.io/ website. For more information, see the xref:tinydrive/jwt-authentication.adoc[JWT authentication] section.
 
 == File types
 
@@ -77,4 +77,4 @@ There is a fixed set of file extensions that you can upload and these are placed
 
 To get started quickly and understand how {cloudfilemanager} works, {companyname} highly recommends trying one of the starter projects on Github to set up a {cloudfilemanager} instance by following a few simple steps.
 
-The starter projects have their procedures to get {cloudfilemanager} up and running. Choose a link:{baseurl}/tinydrive/getting-started/#starterprojects[starter project] of a familiar language and follow the steps to set up {cloudfilemanager}.
+The starter projects have their procedures to get {cloudfilemanager} up and running. Choose a xref:tinydrive/getting-started.adoc#starterprojects[starter project] of a familiar language and follow the steps to set up {cloudfilemanager}.

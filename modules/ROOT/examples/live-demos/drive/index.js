@@ -7,7 +7,7 @@ tinymce.init({
   tinydrive_token_provider: (success, failure) => {
     success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
   },
-  tinydrive_demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
+  tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
   toolbar: 'insertfile image link | code',
   menu: {
     insert: { title: 'Insert', items: 'image link media insertfile' },

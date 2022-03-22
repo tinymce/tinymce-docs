@@ -4,7 +4,7 @@
 
   button.addEventListener('click', () => {
     tinydrive.upload({
-      demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
+      demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
       token_provider: (success) => success({ token: 'fake-token' }),
       path: '/hello',
       name: 'hello.txt',

@@ -7,7 +7,7 @@ const myFakeTokenProvider = (success) => {
  */
 const uploadToTinyDrive = () => {
   tinydrive.upload({
-    demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
+    demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
     token_provider: myFakeTokenProvider,
     path: '/hello',
     name: 'hello.txt',
@@ -32,7 +32,7 @@ const uploadButton = document.querySelector('.drive-standalone-upload');
  */
 const browseTinyDrive = () => {
   tinydrive.browse({
-    demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
+    demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
     token_provider: myFakeTokenProvider,
   }).then(() => {
     console.log('Dialog closed');
@@ -47,7 +47,7 @@ const browseButton = document.querySelector('.drive-standalone-browse');
  */
 const retrieveFromTinyDrive = () => {
   tinydrive.pick({
-    demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
+    demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
     token_provider: myFakeTokenProvider,
     filetypes: ['image'],
   }).then((result) => {
@@ -68,7 +68,7 @@ const insertButton = document.querySelector('.drive-standalone-pick');
  */
 (() => {
   tinydrive.start({
-    demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
+    demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
     target: 'div#drive-standalone-start',
     token_provider: (success) => {
       success({ token: 'fake-token' });

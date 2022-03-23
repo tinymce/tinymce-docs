@@ -46,7 +46,7 @@ ifdef::isTierOne,isTierTwo,isTierThree[]
 * The link:{pricingpage}[{tierthreeplan}].
 endif::[]
 ifndef::isEnterprise[]
-* link:{pricingpage}/[{enterpriseplan}].
+* link:{pricingpage}[{enterpriseplan}].
 endif::[]
 
 ifdef::isTierTwo,isTierThree[]

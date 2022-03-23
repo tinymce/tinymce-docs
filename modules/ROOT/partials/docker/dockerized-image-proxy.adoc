@@ -1,3 +1,4 @@
+[[deploythetinymceimageproxyserver-sidecomponentusingdockerself-hostedenterprisebundles]]
 === Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)
 
 The TinyMCE image proxy server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Image Proxy Docker image.
@@ -8,7 +9,7 @@ include::partial$misc/admon_dont-push-docker-images.adoc[]
 
 The following procedure covers downloading, configuring, building and testing the {productname} Image Proxy Docker image.
 
-NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in <<downloadandextractthetinymceself-hostedbundle,Download and extract the TinyMCE Self-hosted Bundle>>.
+NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in xref:downloadandextractthetinymceself-hostedbundle[Download and extract the TinyMCE Self-hosted Bundle].
 
 . Navigate into the `tinymce-services` folder.
 +
@@ -54,7 +55,7 @@ NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle 
  }
 ----
 +
-For information on the `image-proxy` configuration setting, see: link:{baseurl}/enterprise/server/configure/#image-proxyoptional[Configure server-side components - `image-proxy`].
+For information on the `image-proxy` configuration setting, see: xref:enterprise/server/configure.adoc#image-proxyoptional[Configure server-side components - `image-proxy`].
 
 . _Optional_: Edit the `http` configuration settings in `config/ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 +
@@ -73,9 +74,9 @@ For information on the `image-proxy` configuration setting, see: link:{baseurl}/
  }
 ----
 +
-For information on the `http` configuration setting, see: link:{baseurl}/enterprise/server/configure/#httpoptional[Configure server-side components - `http`].
+For information on the `http` configuration setting, see: xref:enterprise/server/configure.adoc#httpoptional[Configure server-side components - `http`].
 
-. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See: link:{baseurl}/enterprise/server/configure/[Configure server-side components].
+. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See: xref:enterprise/server/configure.adoc[Configure server-side components].
 . Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-image-proxy-docker-env.conf`.
 +
 For example:
@@ -87,7 +88,7 @@ For example:
  ORIGIN2=http://example.org
 ----
 +
-For information on `allowed-origins`, see: link:{baseurl}/enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
+For information on `allowed-origins`, see: xref:enterprise/server/configure.adoc#allowed-originsrequired[Configure server-side components - allowed-origins].
 
 . As the root user or Administrator, build the {productname} Image Proxy Docker image using the following command:
 +
@@ -104,6 +105,7 @@ For information on `allowed-origins`, see: link:{baseurl}/enterprise/server/conf
 ----
 +
 Where:
+
  * `-p 8081:8080` maps the container port `8080` to local port `8081`.
  * `--env-file origins.env` adds the allowed origins to the container.
 

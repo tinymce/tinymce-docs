@@ -1,13 +1,16 @@
-{% if shbundledockerfiles == false %}
+ifeval::[{shbundledockerfiles} != true]
+[[deploythetinymcehyperlinkingserver-sidecomponentusingdockerindividuallylicensed]]
 === Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)
-{% elsif shbundledockerfiles == true %}
+endif::[]
+ifeval::[{shbundledockerfiles} == true]
+[[deploythetinymcehyperlinkingserver-sidecomponentusingdockerself-hostedenterprisebundles]]
 === Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)
-{% endif %}
+endif::[]
 The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Hyperlinking Docker image.
 
 include::partial$misc/admon_dont-push-docker-images.adoc[]
 
-ifeval::[{shbundledockerfiles} == false ]
+ifeval::[{shbundledockerfiles} != true ]
 
 ==== Prerequisites
 
@@ -21,8 +24,9 @@ endif::[]
 ==== Procedure
 
 The following procedure covers downloading, configuring, building and testing the {productname} Hyperlinking Docker image.
-{% if shbundledockerfiles == true %}
-> *Note*: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in <<downloadandextractthetinymceself-hostedbundle,Download and extract the TinyMCE Self-hosted Bundle>>.
+
+ifeval::[{shbundledockerfiles} == true ]
+NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in xref:downloadandextractthetinymceself-hostedbundle[Download and extract the TinyMCE Self-hosted Bundle].
 
 . Navigate into the `tinymce-services` folder.
 +
@@ -64,7 +68,8 @@ The structure of the extracted files will be:
  cd hyperlinking-service-dockerfile
 ----
 
-{% elsif shbundledockerfiles == false %}
+endif::[]
+ifeval::[{shbundledockerfiles} != true ]
 1. Go to link:{accountpageurl}[{accountpage}] > My Downloads
 and download either:
 
@@ -109,7 +114,7 @@ The structure of the current directory (`tinymce-hyperlinking-service/`) will be
  ├── readme.txt
  └── version.txt
 ----
-{% endif %}
+endif::[]
 
 . Set the permissions on the extracted files to executable.
 +
@@ -135,11 +140,11 @@ The structure of the current directory (`tinymce-hyperlinking-service/`) will be
  }
 ----
 +
-For information on the `http` configuration setting, see: link:{baseurl}/enterprise/server/configure/#httpoptional[Configure server-side components - `http`].
+For information on the `http` configuration setting, see: xref:enterprise/server/configure.adoc#httpoptional[Configure server-side components - `http`].
 
-. _Optional_: Update the link-checking cache configuration, as described in link:{baseurl}/enterprise/check-links/#linkcheckerself-hostedquicksetup[Link Checker self-hosted quick setup].
-. _Optional_: Configure the Enhanced Media Embed Service, as described in link:{baseurl}/enterprise/embed-media/mediaembed-server-config/[Configure Enhanced Media Embed Server].
-. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See: link:{baseurl}/enterprise/server/configure/#proxyoptional[Configure server-side components - proxy].
+. _Optional_: Update the link-checking cache configuration, as described in xref:enterprise/check-links.adoc#linkcheckerself-hostedquicksetup[Link Checker self-hosted quick setup].
+. _Optional_: Configure the Enhanced Media Embed Service, as described in xref:enterprise/embed-media/mediaembed-server-config.adoc[Configure Enhanced Media Embed Server].
+. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See: xref:enterprise/server/configure.adoc#proxyoptional[Configure server-side components - proxy].
 . Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-hyperlinking-docker-env.conf`.
 +
 For example:
@@ -151,7 +156,7 @@ For example:
  ORIGIN2=http://example.org
 ----
 +
-For information on `allowed-origins`, see: link:{baseurl}/enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
+For information on `allowed-origins`, see: xref:enterprise/server/configure.adoc#allowed-originsrequired[Configure server-side components - allowed-origins].
 
 . As the root user or Administrator, build the {productname} Hyperlinking Docker image using the following command:
 +

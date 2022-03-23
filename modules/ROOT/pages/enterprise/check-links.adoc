@@ -9,6 +9,7 @@ Think of Link Checker as "spell-checking for URLs". But instead of checking spel
 
 Your have two deployment options. One is super easy with {cloudname}, the other is to go the more traditional Self-hosted route, requiring an additional xref:enterprise/server/index.adoc[server-side component] to be installed and configured.
 
+[[linkcheckerself-hostedquicksetup]]
 == Link Checker self-hosted setup
 
 Once you have the server-side component installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)

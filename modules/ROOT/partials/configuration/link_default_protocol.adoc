@@ -1,9 +1,13 @@
+:plugin_list: link
+ifeval::["{plugincode}" == "autolink"]
+:plugin_list: link autolink
+endif::[]
+
 [[link_default_protocol]]
 == `+link_default_protocol+`
 
 This option allows you to set a default protocol for links when inserting/editing a link via the link dialog. The protocol will apply to any links where the protocol has not been specified and the prefix prompt has been accepted.
 
-// TODO: Should this be shown if already on the autolink page?
 NOTE: This option also applies to the xref:autolink.adoc[autolink] plugin.
 
 Type: `+String+`
@@ -11,11 +15,6 @@ Type: `+String+`
 Default Value: `+'https'+`
 
 === Example: Using `+link_default_protocol+`
-
-:plugin_list: link
-ifeval::["{plugincode}" == "autolink"]
-:plugin_list: link autolink
-endif::[]
 
 [source,js,subs="attributes+"]
 ----

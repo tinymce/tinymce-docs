@@ -80,12 +80,10 @@ The following is an example of how `+link_list+` can be used with a callback fun
 
 [source,js]
 ----
-const fetchLinkList = () => {
-  return [
-    { title: 'My page 1', value: 'https://www.tiny.cloud' },
-    { title: 'My page 2', value: 'https://about.tiny.cloud' }
-  ]
-};
+const fetchLinkList = () => [
+  { title: 'My page 1', value: 'https://www.tiny.cloud' },
+  { title: 'My page 2', value: 'https://about.tiny.cloud' }
+];
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

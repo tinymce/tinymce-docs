@@ -1,12 +1,26 @@
-ifeval::[{extensionType} != 'Packs']
+ifeval::["{extensionType}" != "Packs"]
 :extensionType: plugin
 endif::[]
 ifeval::[{pluralExtensionType} == true]
 :isAre: are
 endif::[]
-ifeval::[{pluralExtensionType} == false]
+ifeval::[{pluralExtensionType} != true]
 :isAre: is
 endif::[]
+
+ifeval::["{pluginminimumplan}" == "tierone"]
+:isTierOne:
+endif::[]
+ifeval::["{pluginminimumplan}" == "tiertwo"]
+:isTierTwo:
+endif::[]
+ifeval::["{pluginminimumplan}" == "tierthree"]
+:isTierThree:
+endif::[]
+ifeval::["{pluginminimumplan}" == "enterprise"]
+:isEnterprise:
+endif::[]
+
 == Getting started with {pluginname}
 
 === Creating an account
@@ -15,32 +29,47 @@ Try the *{pluginname} {extensionType}* and the {cloudname} with a free link:{acc
 
 === Get {pluginname}
 
-ifeval::[{pluginminimumplan} != 'enterprise']
+ifndef::isEnterprise[]
 The *{pluginname} {extensionType}* {isAre} included in the following {cloudname} plans:
 endif::[]
-ifeval::[{pluginminimumplan} == 'enterprise']
+ifdef::isEnterprise[]
 The *{pluginname} {extensionType}* {isAre} included in link:{pricingpage}[{enterpriseplan}].
 endif::[]
 
-{% case pluginminimumplan %}
-{% when 'tierone' %}- The link:{pricingpage}[{tieroneplan}].
-{% when 'tierone' or 'tiertwo' %}- The link:{pricingpage}[{tiertwoplan}].
-{% when 'tierone' or 'tiertwo' or 'tierthree' %}- The link:{pricingpage}[{tierthreeplan}].
-- link:{pricingpage}[{enterpriseplan}].
-{% endcase %}
+ifdef::isTierOne[]
+* The link:{pricingpage}[{tieroneplan}].
+endif::[]
+ifdef::isTierOne,isTierTwo[]
+* The link:{pricingpage}[{tiertwoplan}].
+endif::[]
+ifdef::isTierOne,isTierTwo,isTierThree[]
+* The link:{pricingpage}[{tierthreeplan}].
+endif::[]
+ifndef::isEnterprise[]
+* link:{pricingpage}/[{enterpriseplan}].
+endif::[]
 
-{% if pluginminimumplan == 'tiertwo' or pluginminimumplan == 'tierthree' %}
+ifdef::isTierTwo,isTierThree[]
 A 14-day free trial is also available for the {tiertwoplan} and the {tierthreeplan}.
-{% elsif pluginminimumplan == 'tierthree' %}
+endif::[]
+ifdef::isEnterprise[]
 A 14-day free trial is available for the {tierthreeplan}.
-{% endif %}
+endif::[]
 
 == Further information
 
 For information on:
 
-* {cloudname} plans, see: link:{pricingpage}[{companyname} Pricing Plans].{% if extensionType == 'Packs' %}
-* Enabling premium skins, see: link:{baseurl}/configure/editor-appearance/#skin[The `skin` setting].
-* Enabling premium icon packs, see: link:{baseurl}/configure/editor-appearance/#icons[The `icons` setting].{% else %}
-* Configuring the *{pluginname} {extensionType}*, see: link:{baseurl}/plugins/premium/{plugindocspage}/[The {pluginname} {extensionType} documentation].
-{% endif %}
+* {cloudname} plans, see: link:{pricingpage}[{companyname} Pricing Plans].
+ifeval::["{extensionType}" == "Packs"]
+* Enabling premium skins, see: xref:configure/editor-appearance.adoc#skin[The `skin` setting].
+* Enabling premium icon packs, see: xref:configure/editor-appearance.adoc#icons[The `icons` setting].
+endif::[]
+ifeval::["{extensionType}" != "Packs"]
+* Configuring the *{pluginname} {extensionType}*, see: xref:plugins/premium/{plugindocspage}[The {pluginname} {extensionType} documentation].
+endif::[]
+
+:!isTierOne:
+:!istiertwo:
+:!istierthree:
+:!isEnterprise:

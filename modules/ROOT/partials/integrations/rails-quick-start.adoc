@@ -17,7 +17,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
 ----
 . Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
-[source,html]
+[source,erb]
 ----
 <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
 ----
@@ -49,7 +49,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
 ----
 . Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
-[source,html]
+[source,erb]
 ----
 <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
 ----
@@ -105,14 +105,14 @@ plugins:
 ----
 . Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include {productname} on pages using the `+application+` layout:
 +
-[source,html]
+[source,erb]
 ----
 <%= tinymce_assets %>
 <script type="text/javascript" src="/assets/tinymce.js"></script>
 ----
 . Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
-[source,html]
+[source,erb]
 ----
 <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
 <%= tinymce %>

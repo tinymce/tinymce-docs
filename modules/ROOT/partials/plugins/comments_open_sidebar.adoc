@@ -28,7 +28,7 @@ tinymce.init({
 });
 ----
 endif::[]
-ifeval::["{docname}" != "comments_callback_mode"]
+ifeval::["{docname}" != "plugins/premium/comments/comments_callback_mode"]
 [source, js]
 ----
 tinymce.init({

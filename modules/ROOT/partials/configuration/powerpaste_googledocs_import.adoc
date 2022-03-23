@@ -16,15 +16,13 @@ include::partial$plugins/powerpaste_import_types.adoc[]
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
-  powerpaste_googledocs_imports: () => {
+  powerpaste_googledocs_imports: () => new Promise((resolve) => {
     // use a native confirm dialog to prompt the user to choose between clean and merge
-    return new Promise((resolve) => {
-      if (confirm('Would you like to keep formatting?')) {
-        resolve('merge');
-      } else {
-        resolve('clean');
-      }
-    });
-  }
+    if (confirm('Would you like to keep formatting?')) {
+      resolve('merge');
+    } else {
+      resolve('clean');
+    }
+  })
 });
 ----

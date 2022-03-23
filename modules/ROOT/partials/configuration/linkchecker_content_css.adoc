@@ -26,8 +26,8 @@ Type: `+String+`
 [source,js]
 ----
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'linkchecker',
-    linkchecker_content_css: 'http://mydomain.com/linkchecker_content.css'
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'linkchecker',
+  linkchecker_content_css: 'http://mydomain.com/linkchecker_content.css'
 });
 ----

@@ -13,12 +13,10 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
   plugins: 'image editimage',
-  editimage_fetch_image: (img) => {
-    return new Promise((resolve) => {
-      // Fetch the image and return a blob containing the image content
-      ...
-      resolve(new Blob(...));
-    });
-  }
+  editimage_fetch_image: (img) => new Promise((resolve) => {
+    // Fetch the image and return a blob containing the image content
+    ...
+    resolve(new Blob(...));
+  })
 });
 ----

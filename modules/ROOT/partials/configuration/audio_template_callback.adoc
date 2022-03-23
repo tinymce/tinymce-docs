@@ -14,11 +14,10 @@ tinymce.init({
   plugins: 'media',
   menubar: 'insert',
   toolbar: 'media',
-  audio_template_callback: (data) => {
-   return '<audio controls>\n' +
-   '<source src="' + data.source + '"' + (data.sourcemime ? ' type="' + data.sourcemime + '"' : '') + ' />\n' +
-   (data.altsource ? '<source src="' + data.altsource + '"' + (data.altsourcemime ? ' type="' + data.altsourcemime + '"' : '') + ' />\n' : '') +
-   '</audio>';
- }
+  audio_template_callback: (data) =>
+    '<audio controls>\n' +
+    `<source src="${data.source}"${data.sourcemime ? ` type="${data.sourcemime}"` : ''} />\n` +
+    (data.altsource ? `<source src="${data.altsource}"${data.altsourcemime ? ` type="${data.altsourcemime}"` : ''} />\n` : '') +
+    '</audio>'
 });
 ----

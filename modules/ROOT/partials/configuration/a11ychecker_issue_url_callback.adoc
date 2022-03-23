@@ -17,8 +17,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11ychecker_issue_url_callback: (ruleId) => {
-    return `https://www.example.com/tinymce/a11ychecker/more_info#${ruleId}`
-  }
+  a11ychecker_issue_url_callback: (ruleId) =>
+    `https://www.example.com/tinymce/a11ychecker/more_info#${ruleId}`
 });
 ----

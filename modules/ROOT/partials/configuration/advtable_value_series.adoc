@@ -104,11 +104,9 @@ tinymce.init({
       title: 'Numeric',
       update: true,
       resizable: false,
-      generator: (info, rowIndex, columnIndex) => {
-        return {
-          value: rowIndex + 1
-        };
-      }
+      generator: (info, rowIndex, columnIndex) => ({
+        value: rowIndex + 1
+      })
     },
   }
 });

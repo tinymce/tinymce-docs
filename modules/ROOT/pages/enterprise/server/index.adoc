@@ -61,6 +61,7 @@ More information can be found in the documentation of your chosen application se
 
 Refer to the link:{baseurl}/enterprise/server/configure/[Configure] page for the details and come back here when you're done.
 
+[[step4passtheconfigurationfiletothejavaapplicationserver]]
 === Step 4. Pass the configuration file to the Java application server
 
 ____
@@ -201,6 +202,7 @@ JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"
 
 There should only be a single line in this file defining the `JETTY_ARGS` variable.
 
+[[step5restartthejavaapplicationserver]]
 === Step 5: Restart the Java application server
 
 After you've completed the steps on this page to link:{baseurl}/enterprise/server/#step2deployserver-sidecomponents[Deploy server-side components], link:{baseurl}/enterprise/server/#step3createaconfigurationfile[Create a configuration file] and link:{baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.

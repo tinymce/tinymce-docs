@@ -103,8 +103,9 @@ For example:
 ----
 <!DOCTYPE html> <!-- Required for TinyMCE to function as intended -->
 <html>
-
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{productname} Demo</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
@@ -113,12 +114,12 @@ For example:
     <h1>{productname} Demo</h1>
     <!-- Text area matching the selector specified in the TinyMCE configuration -->
     <textarea id="my-expressjs-{prodnamecode}-app">Hello, World!</textarea>
-  </body>
 
-  <!-- Script element sourcing TinyMCE -->
-  <script type="application/javascript" src= "/tinymce/tinymce.min.js"></script>
-  <!-- Script element sourcing the TinyMCE configuration -->
-  <script type="application/javascript" src= "/javascripts/my-{prodnamecode}-config.js"></script>
+    <!-- Script element sourcing TinyMCE -->
+    <script type="application/javascript" src= "/tinymce/tinymce.min.js"></script>
+    <!-- Script element sourcing the TinyMCE configuration -->
+    <script type="application/javascript" src= "/javascripts/my-{prodnamecode}-config.js"></script>
+  </body>
 </html>
 ----
 . Test the application using the Node.js development server.

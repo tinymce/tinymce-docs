@@ -82,7 +82,7 @@ Or by passing Javascript that returns a {productname} configuration object.
     ].join(''),
     images_reuse_filename: true
   };
-})()
+})();
 ----
 
 Snippet of *Edit.java*:

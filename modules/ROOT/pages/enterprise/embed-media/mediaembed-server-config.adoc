@@ -48,6 +48,7 @@ ephox {
 }
 ----
 
+[[configureacustomendpoint]]
 == Configure a custom endpoint
 
 The service can be configured to hit a specific oEmbed endpoint when media from a URL matching a provided pattern is inserted into your content.
@@ -315,6 +316,7 @@ ephox {
 }
 ----
 
+[[summarycards]]
 == Summary cards
 
 If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.

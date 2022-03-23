@@ -10,7 +10,7 @@ Default Function :
 ----
 (req, done, fail) => {
   const allowed = req.comments.length > 0 &&
-                req.comments[0].author === '<Current_tinycomments_author>';
+                req.comments[0].author === <Current_tinycomments_author>;
   done({
     canDelete: allowed
   });

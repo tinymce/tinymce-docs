@@ -9,7 +9,7 @@ Default Function :
 [source,js]
 ----
 (req, done, fail) => {
-  const allowed = req.comment.author === '<Current_tinycomments_author>';
+  const allowed = req.comment.author === <Current_tinycomments_author>;
   done({
     canDelete: allowed
   });

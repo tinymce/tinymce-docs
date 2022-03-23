@@ -126,7 +126,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Dialog labels and other text-based UI properties did not escape HTML markup.
 * Anchor elements would render incorrectly when using the `allow_html_in_named_anchor` option.
 * The `AstNode` HTML serializer did not serialize `pre` or `textarea` elements correctly when they contained newlines.
-* Fixed sub-menu items not read by screen readers. Patch contributed by westonkd.
 * The Home or End keys would move out of a editable element contained within a noneditable element.
 * Dialogs could not be opened in inline mode before the editor had been rendered.
 * Clicking on menu items could cause an unexpected console warning if the `onAction` function caused the menu to close.

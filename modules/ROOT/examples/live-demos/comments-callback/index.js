@@ -646,9 +646,9 @@ tinymce.ScriptLoader.loadScripts(
     tinymce.init({
       selector: 'textarea#comments-callback',
       height: 800,
-      plugins: 'paste code tinycomments help lists',
+      plugins: 'code tinycomments help lists',
       toolbar:
-        'undo redo | formatselect | ' +
+        'undo redo | blocks | ' +
         'bold italic backcolor | alignleft aligncenter ' +
         'alignright alignjustify | bullist numlist outdent indent | ' +
         'removeformat | addcomment showcomments | help',

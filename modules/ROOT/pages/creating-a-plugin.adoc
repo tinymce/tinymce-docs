@@ -39,16 +39,14 @@ Optionally, the function passed to `+PluginManager.add()+` can return an object 
 
 [source,js]
 ----
-tinymce.PluginManager.add('pluginId', function(editor, url) {
+tinymce.PluginManager.add('pluginId', (editor, url) => {
   // add plugin code here
 
   return {
-    getMetadata: function () {
-      return {
-        name: 'Custom plugin',
-        url: 'https://example.com/docs/customplugin'
-      };
-    }
+    getMetadata: () => ({
+      name: 'Custom plugin',
+      url: 'https://example.com/docs/customplugin'
+    })
   }
 });
 ----
@@ -118,7 +116,7 @@ tinymce.addI18n('es_ES', {
 [source,js]
 ----
 // Register the custom plugin
-tinymce.PluginManager.add('pluginId', function(editor, url) {
+tinymce.PluginManager.add('pluginId', (editor, url) => {
   // add plugin code here
 });
 // Load the required translation files

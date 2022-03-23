@@ -14,7 +14,7 @@ For example. If the following toolbar configuration is wider than the editor, th
 ----
 tinymce.init({
     selector: 'textarea',
-    toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
+    toolbar: 'undo redo styles bold italic alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
 });
 ----
 
@@ -37,11 +37,12 @@ include::partial$misc/admon_different_default_for_mobile.adoc[]
 
 The toolbar mode is specified in the `+tinymce.init+`. There are four toolbar modes:
 
-* <<floating, Floating>>
-* <<sliding, Sliding>>
-* <<scrolling, Scrolling>>
-* <<wrap, Wrap>>
+* xref:floating[Floating]
+* xref:sliding[Sliding]
+* xref:scrolling[Scrolling]
+* xref:wrap[Wrap]
 
+[[floating]]
 ==== Floating
 
 If the `+toolbar_mode+` is configured to `+floating+`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
@@ -60,6 +61,7 @@ tinymce.init({
 });
 ----
 
+[[sliding]]
 ==== Sliding
 
 If the `+toolbar_mode+` is configured to `+sliding+`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
@@ -78,6 +80,7 @@ tinymce.init({
 });
 ----
 
+[[scrolling]]
 ==== Scrolling
 
 The scrolling toolbar mode is intended for touch screen devices.
@@ -100,6 +103,7 @@ tinymce.init({
 });
 ----
 
+[[wrap]]
 ==== Wrap
 
 If the `+toolbar_mode+` is configured to `+wrap+`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.

@@ -1,36 +1,28 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-button',
   toolbar: 'customInsertButton customDateButton',
-  setup: function (editor) {
+  setup: (editor) => {
 
     editor.ui.registry.addButton('customInsertButton', {
       text: 'My Button',
-      onAction: function (_) {
-        editor.insertContent('&nbsp;<strong>It\'s my button!</strong>&nbsp;');
-      }
+      onAction: (_) => editor.insertContent(`&nbsp;<strong>It's my button!</strong>&nbsp;`)
     });
 
-    var toTimeHtml = function (date) {
-      return '<time datetime="' + date.toString() + '">' + date.toDateString() + '</time>';
-    };
+    const toTimeHtml = (date) => `<time datetime="${date.toString()}">${date.toDateString()}</time>`;
 
     editor.ui.registry.addButton('customDateButton', {
       icon: 'insert-time',
       tooltip: 'Insert Current Date',
-      disabled: true,
-      onAction: function (_) {
-        editor.insertContent(toTimeHtml(new Date()));
-      },
-      onSetup: function (buttonApi) {
-        var editorEventCallback = function (eventApi) {
-          buttonApi.setDisabled(eventApi.element.nodeName.toLowerCase() === 'time');
+      enabled: false,
+      onAction: (_) => editor.insertContent(toTimeHtml(new Date())),
+      onSetup: (buttonApi) => {
+        const editorEventCallback = (eventApi) => {
+          buttonApi.setEnabled(eventApi.element.nodeName.toLowerCase() !== 'time');
         };
         editor.on('NodeChange', editorEventCallback);
 
         /* onSetup should always return the unbind handlers */
-        return function (buttonApi) {
-          editor.off('NodeChange', editorEventCallback);
-        };
+        return () => editor.off('NodeChange', editorEventCallback);
       }
     });
   },

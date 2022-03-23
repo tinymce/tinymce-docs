@@ -2,19 +2,15 @@ tinymce.init({
   selector: 'textarea#custom-toolbar-split-button',
   toolbar: 'myButton',
   menubar: false,
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addSplitButton('myButton', {
       text: 'My Button',
       icon: 'info',
       tooltip: 'This is an example split-button',
-      onAction: function () {
-        editor.insertContent('<p>You clicked the main button</p>');
-      },
-      onItemAction: function (api, value) {
-        editor.insertContent(value);
-      },
-      fetch: function (callback) {
-        var items = [
+      onAction: () => editor.insertContent('<p>You clicked the main button</p>'),
+      onItemAction: (api, value) => editor.insertContent(value),
+      fetch: (callback) => {
+        const items = [
           {
             type: 'choiceitem',
             icon: 'notice',

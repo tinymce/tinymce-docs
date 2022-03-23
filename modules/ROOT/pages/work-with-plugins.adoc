@@ -117,9 +117,9 @@ Let's add the Advanced List options and give them some of the available options.
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  menubar: false,
-  toolbar: 'bullist, numlist',
   plugins: 'advlist',
+  menubar: false,
+  toolbar: 'bullist numlist',
   advlist_bullet_styles: 'square',
   advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
 });

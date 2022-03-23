@@ -1,5 +1,5 @@
 /* example dialog that inserts the name of a Pet into the editor content */
-var dialogConfig =  {
+const dialogConfig =  {
   title: 'Pet Name Machine',
   body: {
     type: 'panel',
@@ -26,18 +26,18 @@ var dialogConfig =  {
       type: 'submit',
       name: 'submitButton',
       text: 'Do Cat Thing',
-      primary: true
+      buttonType: 'primary'
     }
   ],
   initialData: {
     catdata: 'initial Cat',
     isdog: false
   },
-  onSubmit: function (api) {
-    var data = api.getData();
-    var pet = data.isdog ? 'dog' : 'cat';
+  onSubmit: (api) => {
+    const data = api.getData();
+    const pet = data.isdog ? 'dog' : 'cat';
 
-    tinymce.activeEditor.execCommand('mceInsertContent', false, '<p>My ' + pet +'\'s name is: <strong>' + data.catdata + '</strong></p>');
+    tinymce.activeEditor.execCommand('mceInsertContent', false, `<p>My ${pet}'s name is: <strong>${data.catdata}</strong></p>`);
     api.close();
   }
 };
@@ -45,12 +45,10 @@ var dialogConfig =  {
 tinymce.init({
   selector: 'textarea#dialog-pet-machine',
   toolbar: 'dialog-example-btn',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('dialog-example-btn', {
       icon: 'code-sample',
-      onAction: function () {
-        editor.windowManager.open(dialogConfig)
-      }
+      onAction: () => editor.windowManager.open(dialogConfig)
     })
   },
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'

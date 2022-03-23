@@ -21,7 +21,7 @@ Skins control the appearance of {productname} such as colors and spacing. The de
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   skin: 'oxide-dark',
-  content_css: 'dark'  //
+  content_css: 'dark'
 });
 ----
 
@@ -52,7 +52,7 @@ NOTE: The links below contain specific details of these customization options.
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  height : 300
+  height: 300
 });
 ----
 
@@ -64,7 +64,7 @@ See the xref:editor-size-options.adoc#height[height option] for customization de
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  width : 300
+  width: 300
 });
 ----
 
@@ -105,7 +105,7 @@ The following example includes the file `+mycontent.css+` in all of the pages to
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
+  content_css: '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
 });
 ----
 
@@ -154,7 +154,7 @@ The following example displays the default toolbar in addition to the `+code+` f
 ----
 tinymce.init({
   selector: 'textarea',
-  toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code',
+  toolbar: 'undo redo styles bold italic alignleft aligncenter alignright outdent indent code',
   plugins: 'code'
 });
 ----

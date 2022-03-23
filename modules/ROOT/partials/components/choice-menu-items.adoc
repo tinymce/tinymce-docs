@@ -12,7 +12,7 @@ Choice menu items are a special type of menu item used for split toolbar button 
 |text |string |optional |Text to display.
 |icon |string |optional |
 include::partial$misc/admon_predefined_icons_only.adoc[]
-|disabled |boolean |optional |default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API.
+|enabled |boolean |optional |default: `true` - Represents the menu item's state. When `false`, the menu item is unclickable. Toggled by the menu item's API.
 |shortcut |string |optional |Text to display in the shortcut label. To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to TinyMCE].
 |===
 

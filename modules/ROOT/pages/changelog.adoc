@@ -5,4 +5,178 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: link:release-notes.html[{productname} Release Notes].
 
-== 6.0.0 - TBD
+== 6.0.1 - 2022-03-23
+
+=== Fixed
+* Fixed the dev ZIP missing the required `bin` scripts to build from the source.
+* Fixed a regression whereby text patterns couldn't be updated at runtime.
+* Fixed an issue where tables with colgroups could be copied incorrectly in some cases.
+* Naked buttons better adapt to various background colors, improved text contrast in notifications.
+* The autocompleter would not fire the `AutocompleterStart` event nor close the menu in some cases.
+* It wasn't possible to select text right after an inline noneditable element.
+* Fixed a double border showing for the `tinymce-5` skin when using `toolbar_location: 'bottom'`.
+* Clipboard content was not generated correctly when cutting and copying `contenteditable="false"` elements.
+* Fixed the box-shadow getting clipped in autocompletor popups.
+* The `buttonType` property did not work for dialog footer buttons.
+* Fix contrast ratio for error messages.
+
+== 6.0.0 - 2022-03-03
+
+=== Added
+* New `editor.options` API to replace the old `editor.settings` and `editor.getParam` APIs.
+* New `editor.annotator.removeAll` API to remove all annotations by name.
+* New `Resource.unload` API to make it possible to unload resources.
+* New `FakeClipboard` API on the `tinymce` global.
+* New `dispatch()` function to replace the now deprecated `fire()` function in various APIs.
+* New `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd` events.
+* New `mceAutocompleterClose`, `mceAutocompleterReload` commands.
+* New `mceInsertTableDialog` command to open the insert table dialog.
+* New `slider` dialog component.
+* New `imagepreview` dialog component, allowing preview and zoom of any image URL.
+* New `buttonType` property on dialog button components, supporting `toolbar` style in addition to `primary` and `secondary`.
+* The `tabindex` attribute is now copied from the target element to the iframe.
+
+=== Improved
+* New default theme styling for TinyMCE 6 facelift with old skin available as `tinymce-5` and `tinymce-5-dark`.
+* The default height of editor has been increased from `200px` to `400px` to improve the usability of the editor.
+* The upload results returned from the `editor.uploadImages()` API now includes a `removed` flag, reflecting if the image was removed after a failed upload.
+* The `ScriptLoader`, `StyleSheetLoader`, `AddOnManager`, `PluginManager` and `ThemeManager` APIs will now return a `Promise` when loading resources instead of using callbacks.
+* A `ThemeLoadError` event is now fired if the theme fails to load.
+* The `BeforeSetContent` event will now include the actual serialized content when passing in an `AstNode` to the `editor.setContent` API.
+* Improved support for placing the caret before or after noneditable elements within the editor.
+* Calls to `editor.selection.setRng` now update the caret position bookmark used when focus is returned to the editor.
+* The `emoticon` plugin dialog, toolbar and menu item has been updated to use the more accurate `Emojis` term.
+* The dialog `redial` API will now only rerender the changed components instead of the whole dialog.
+* The dialog API `setData` method now uses a deep merge algorithm to support partial nested objects.
+* The dialog spec `initialData` type is now `Partial<T>` to match the underlying implementation details.
+* Notifications no longer require a timeout to disable the close button.
+* The editor theme is now fetched in parallel with the icons, language pack and plugins.
+
+=== Changed
+* TinyMCE is now MIT licensed.
+* Moved the `paste` plugin's functionality to TinyMCE core.
+* The `paste_data_images` option now defaults to `true`.
+* Moved the `noneditable` plugin to TinyMCE core.
+* Renamed the `noneditable_noneditable_class` option to `noneditable_class`.
+* Renamed the `noneditable_editable_class` option to `editable_class`.
+* Moved the `textpattern` plugin to TinyMCE core.
+* Renamed the `textpattern_patterns` option to `text_patterns`.
+* Moved the `hr` plugin's functionality to TinyMCE core.
+* Moved the `print` plugin's functionality to TinyMCE core.
+* Moved non-UI table functionality to core.
+* The `DomParser` API no longer uses a custom parser internally and instead uses the native `DOMParser` API.
+* The `editor.getContent()` API can provide custom content by preventing and overriding `content` in the `BeforeGetContent` event. This makes it consistent with the `editor.selection.getContent()` API.
+* The `editor.setContent()` API can now be prevented using the `BeforeSetContent` event. This makes it consistent with the `editor.selection.setContent()` API.
+* Add-ons such as plugins and themes are no longer constructed using the `new` operator.
+* A number of APIs that were not proper classes, are no longer constructed using the `new` operator.
+* The Editor commands APIs will no longer fallback to executing the browsers native command functionality.
+* The Editor query command APIs will now return `false` or an empty string on removed editors.
+* The `mceAddEditor` and `mceToggleEditor` commands now take an object as their value to specify the id and editor options.
+* The `mceInsertTable` command can no longer open the insert table dialog. Use the `mceInsertTableDialog` command instead.
+* The `plugins` option now returns a `string` array instead of a space separated string.
+* The `media` plugin no longer treats `iframe`, `video`, `audio` or `object` elements as "special" and will validate the contents against the schema.
+* The `images_upload_handler` option is no longer passed a `success` or `failure` callback and instead requires a `Promise` to be returned with the upload result.
+* The `tinymce.settings` global property is no longer set upon initialization.
+* The `change` event is no longer fired on first modification.
+* The `GetContent` event will now always pass a `string` for the `content` property.
+* Changed the default tag for the strikethrough format to the `s` tag when using a html 5 schema.
+* The `strike` tag is automatically converted to the `s` tag when using a html 5 schema.
+* Aligning a table to the left or right will now use margin styling instead of float styling.
+* The `:` control character has been changed to `~` for the schema `valid_elements` and `extended_valid_elements` options.
+* The `primary` property on dialog buttons has been deprecated. Use the new `buttonType` property instead.
+* Changed the default statusbar element path delimiter from `»` to `›`.
+* Replaced the `Powered by Tiny` branding text with the Tiny logo.
+* The default minimum height of editor has been changed to 100px to prevent the UI disappearing while resizing.
+* RGB colors are no longer converted to hex values when parsing or serializing content.
+* Replaced the `isDisabled()` function with an `isEnabled()` function for various APIs.
+* Replaced the `enable()` and `disable()` functions with a `setEnabled(state)` function in various APIs.
+* Replaced the `disabled` property with an `enabled` property in various APIs.
+* Replaced the `disable(name)` and `enable(name)` functions with a `setEnabled(name, state)` function in the Dialog APIs.
+* Renamed the `tinymce.Env.os.isOSX` API to `tinymce.Env.os.isMacOS`.
+* Renamed the `tinymce.Env.browser.isChrome` API to `tinymce.Env.browser.isChromium` to better reflect its functionality.
+* Renamed the `getShortEndedElements` Schema API to `getVoidElements`.
+* Renamed the `font_formats` option to `font_family_formats`.
+* Renamed the `fontselect` toolbar button and `fontformats` menu item to `fontfamily`.
+* Renamed the `fontsize_formats` option to `font_size_formats`.
+* Renamed the `fontsizeselect` toolbar button and `fontsizes` menu item to `fontsize`.
+* Renamed the `formatselect` toolbar button and `blockformats` menu item to `blocks`.
+* Renamed the `styleselect` toolbar button and `formats` menu item to `styles`.
+* Renamed the `lineheight_formats` option to `line_height_formats`.
+* Renamed the `getWhiteSpaceElements()` function to `getWhitespaceElements()` in the `Schema` API.
+* Renamed the `mceInsertClipboardContent` command `content` property to `html` to better reflect what data is passed.
+* Renamed the `default_link_target` option to `link_default_target` for both `link` and `autolink` plugins.
+* Renamed the `rel_list` option to `link_rel_list` for the `link` plugin.
+* Renamed the `target_list` option to `link_target_list` for the `link` plugin.
+* The default value for the `link_default_protocol` option has been changed to `https` instead of `http`.
+* The default value for the `element_format` option has been changed to `html`.
+* The default value for the `schema` option has been changed to `html5`.
+* The default value for the `table_style_by_css` option has been changed to `true`.
+* The default value for the `table_use_colgroups` option has been changed to `true`.
+
+=== Fixed
+* The object returned from the `editor.fire()` API was incorrect if the editor had been removed.
+* The `editor.selection.getContent()` API did not respect the `no_events` argument.
+* The `editor.annotator.remove` API did not keep selection when removing the annotation.
+* The `GetContent` event was not fired when getting `tree` or `text` formats using the `editor.selection.getContent()` API.
+* The `beforeinput` and `input` events would sometimes not fire as expected when deleting content.
+* The `table` plugin would sometimes not correctly handle headers in the `tfoot` section.
+* The `silver` theme UI was incorrectly rendered before plugins had initialized.
+* The aria labels for the color picker dialog were not translated.
+* Fixed sub-menu items not read by screen readers. Patch contributed by westonkd.
+* Dialog labels and other text-based UI properties did not escape HTML markup.
+* Anchor elements would render incorrectly when using the `allow_html_in_named_anchor` option.
+* The `AstNode` HTML serializer did not serialize `pre` or `textarea` elements correctly when they contained newlines.
+* The Home or End keys would move out of a editable element contained within a noneditable element.
+* Dialogs could not be opened in inline mode before the editor had been rendered.
+* Clicking on menu items could cause an unexpected console warning if the `onAction` function caused the menu to close.
+* Fixed various color and contrast issues for the dark skins.
+
+=== Removed
+* Removed support for Microsoft Internet Explorer 11.
+* Removed support for Microsoft Word from the opensource paste functionality.
+* Removed support for the `plugins` option allowing a mixture of a string array and of space separated strings.
+* Removed support for the deprecated `false` value for the `forced_root_block` option.
+* Removed the jQuery integration.
+* Removed the `imagetools` plugin, which is now classified as a Premium plugin.
+* Removed the `imagetools` dialog component.
+* Removed the `toc` plugin, which is now classified as a Premium plugin.
+* Removed the `tabfocus` plugin.
+* Removed the `textpattern` plugin's API as part of moving it to core.
+* Removed the `table` plugin's API.
+* Removed the callback for the `EditorUpload` API.
+* Removed the legacy browser detection properties from the `Env` API.
+* Removed the `filterNode` method from the `DomParser` API.
+* Removed the `SaxParser` API.
+* Removed the `tinymce.utils.Promise` API.
+* Removed the `toHex` function for the `DOMUtils` and `Styles` APIs.
+* Removed the `execCommand` handler function from the plugin and theme interfaces.
+* Removed the `editor.settings` property as it has been replaced by the new Options API.
+* Removed the `shortEnded` and `fixed` properties on `tinymce.html.Node` class.
+* Removed the `mceInsertRawHTML` command.
+* Removed the style field from the `image` plugin dialog advanced tab.
+* Removed the `paste_filter_drop` option as native drag and drop handling is no longer supported.
+* Removed the legacy `mobile` theme.
+* Removed the deprecated `$`, `Class`, `DomQuery` and `Sizzle` APIs.
+* Removed the deprecated `Color`, `JSON`, `JSONP` and `JSONRequest`.
+* Removed the deprecated `XHR` API.
+* Removed the deprecated `setIconStroke` Split Toolbar Button API.
+* Removed the deprecated `editors` property from `EditorManager`.
+* Removed the deprecated `execCallback` and `setMode` APIs from `Editor`.
+* Removed the deprecated `addComponents` and `dependencies` APIs from `AddOnManager`.
+* Removed the deprecated `clearInterval`, `clearTimeout`, `debounce`, `requestAnimationFrame`, `setInterval`, `setTimeout` and `throttle` APIs from `Delay`.
+* Removed the deprecated `Schema` options.
+* Removed the deprecated `file_browser_callback_types`, `force_hex_style_colors` and `images_dataimg_filter` options.
+* Removed the deprecated `filepicker_validator_handler`, `force_p_newlines`, `gecko_spellcheck`, `tab_focus`, `table_responsive_width` and `toolbar_drawer` options.
+* Removed the deprecated `media_scripts` option in the `media` plugin.
+* Removed the deprecated `editor_deselector`, `editor_selector`, `elements`, `mode` and `types` legacy TinyMCE init options.
+* Removed the deprecated `content_editable_state` and `padd_empty_with_br` options.
+* Removed the deprecated `autoresize_on_init` option from the `autoresize` plugin.
+* Removed the deprecated `fullpage`, `spellchecker`, `bbcode`, `legacyoutput`, `colorpicker`, `contextmenu` and `textcolor` plugins.
+* Removed the undocumented `editor.editorCommands.hasCustomCommand` API.
+* Removed the undocumented `mceResetDesignMode`, `mceRepaint` and `mceBeginUndoLevel` commands.
+
+=== Deprecated
+* The dialog button component's `primary` property has been deprecated and will be removed in the next major release. Use the new `buttonType` property instead.
+* The `fire()` function of `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been deprecated and will be removed in the next major release. Use the `dispatch()` function instead.
+* The `content` property on the `SetContent` event has been deprecated and will be removed in the next major release.
+* The return value of the `editor.setContent` API has been deprecated and will be removed in the next major release.

@@ -8,7 +8,7 @@
 
 {cloudname} can be used without an API key. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:imagetools.adoc[Image tools] plugin.
+All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:editimage.adoc[Edit Image] plugin.
 
 == Integrating TinyMCE for the first time
 
@@ -30,14 +30,14 @@ The following example adds a script tag into the application that inserts the co
 |2 |origin |A `+referrerpolicy+` specifies how much of the current page's URL is sent in the `+Referer+` header when the browser fetches page resources (for example, the {productname} editor). The use of the `+Referer+` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `+Origin+` header), so for improved performance and privacy always set the `+referrerpolicy+` to `+origin+` when requesting {cloudname} resources.
 |===
 
-image:scripttag.png[Script Tag Description]
+image::scripttag.png[Script Tag Description]
 
 [IMPORTANT]
---
+====
 {cloudname} verifies the domain {productname} is loading from by checking the *Referer* header in the network request. Sometimes the domains in the *Referer* header does not match with the URL in the browser's address bar.
 
 To check the *Referer* header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {productname} with your API key, and click on the *Headers* tab. In the section called *Request Headers* there should be a field for *Referer*. If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's *Refer* header settings.
---
+====
 
 === Step 2: Load, customize and interact with TinyMCE
 
@@ -58,9 +58,9 @@ Extend the xref:basic-setup.adoc[{productname} configuration] to include any add
 +
 NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:cloud-deployment-guide.html[{cloudname}].
 
-* xref:imagetools.adoc[Image Tools (with configured image proxy)]
+* xref:editimage.adoc[Edit Image (with configured image proxy)]
 +
-NOTE: Configuration of the `+imagetools_cors_hosts+` and `+imagetools_proxy+` properties occurs automatically.
+NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy_service_url+` options occurs automatically.
 
 * xref:moxiemanager.adoc[Moxie Manager]
 * xref:a11ychecker.adoc[Accessibility Checker]
@@ -124,9 +124,9 @@ Extend the xref:basic-setup.adoc[{productname} configuration] to include any add
 +
 NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:cloud-deployment-guide.html[{cloudname}].
 
-* xref:imagetools.adoc[Image tools (with configured image proxy)]
+* xref:editimage.adoc[Edit Image (with configured image proxy)]
 +
-NOTE: Configuration of the `+imagetools_cors_hosts+` and `+imagetools_proxy+` properties occurs automatically.
+NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy_service_url+` options occurs automatically.
 
 * xref:moxiemanager.adoc[Moxie Manager]
 * xref:a11ychecker.adoc[Accessibility Checker]

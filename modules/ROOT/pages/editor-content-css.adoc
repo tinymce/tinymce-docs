@@ -15,7 +15,7 @@ These styles can be used to replicate the styles shown in the editor when the co
 * Includes image captions using the HTML5 figure element.
 */
 
-include::partial$css-codeblock/image-plugin-css.adoc[]
+include::example$css-codeblock/image-plugin.css[]
 
 /*
  Alignment using classes rather than inline styles
@@ -36,17 +36,17 @@ img.align-right {
 
 /* The Table of Contents Plugin */
 
-include::partial$css-codeblock/toc-plugin-css.adoc[]
+include::example$css-codeblock/tableofcontents-plugin.css[]
 
 /* The Checklist Plugin */
 
-include::partial$css-codeblock/checklist-plugin-css.adoc[]
+include::example$css-codeblock/checklist-plugin.css[]
 
 /* The Page Embed plugin */
 
-include::partial$css-codeblock/pageembed-plugin-css.adoc[]
+include::example$css-codeblock/pageembed-plugin.css[]
 
 /* The Media Embed plugin */
 
-include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
+include::example$css-codeblock/mediaembed-plugin.css[]
 ----

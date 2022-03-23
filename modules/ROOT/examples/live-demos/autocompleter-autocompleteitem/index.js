@@ -1,4 +1,4 @@
-var specialChars = [
+const specialChars = [
   { text: 'exclamation mark', value: '!' },
   { text: 'at', value: '@' },
   { text: 'hash', value: '#' },
@@ -11,17 +11,15 @@ var specialChars = [
 tinymce.init({
   selector: 'textarea#autocompleter-autocompleteitem',
   height: 250,
-  setup: function (editor) {
-    var onAction = function (autocompleteApi, rng, value) {
+  setup: (editor) => {
+    const onAction = (autocompleteApi, rng, value) => {
       editor.selection.setRng(rng);
       editor.insertContent(value);
       autocompleteApi.hide();
     };
 
-    var getMatchedChars = function (pattern) {
-      return specialChars.filter(function (char) {
-        return char.text.indexOf(pattern) !== -1;
-      });
+    const getMatchedChars = (pattern) => {
+      return specialChars.filter((char) => char.text.indexOf(pattern) !== -1);
     };
 
     /* An autocompleter that allows you to insert special characters */
@@ -30,16 +28,14 @@ tinymce.init({
       minChars: 1,
       columns: 'auto',
       onAction: onAction,
-      fetch: function (pattern) {
-        return new tinymce.util.Promise(function (resolve) {
-          var results = getMatchedChars(pattern).map(function (char) {
-            return {
-              type: 'autocompleteitem',
-              value: char.value,
-              text: char.text,
-              icon: char.value
-            }
-          });
+      fetch: (pattern) => {
+        return new Promise((resolve) => {
+          const results = getMatchedChars(pattern).map((char) => ({
+            type: 'autocompleteitem',
+            value: char.value,
+            text: char.text,
+            icon: char.value
+          }));
           resolve(results);
         });
       }

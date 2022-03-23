@@ -15,8 +15,8 @@ A toggle menu item triggers its `+onAction+` when clicked. It also has a concept
 |icon |string |optional |
 include::partial$misc/admon_predefined_icons_only.adoc[]
 |value |string |optional |A value to associate with the menu item.
-|active |boolean |optional |Initial state value for the toggle menu item
-|disabled |boolean |optional |default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API.
+|active |boolean |optional |default: `false` - Initial state value for the toggle menu item.
+|enabled |boolean |optional |default: `true` - Represents the menu item's state. When `false`, the menu item is unclickable. Toggled by the menu item's API.
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: xref:usingonsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the menu item is clicked.
 |===
@@ -28,8 +28,8 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 |Name |Value |Description
 |isActive |`+() => boolean+` |Checks if the menu item is active.
 |setActive |`+(state: boolean) => void+` |Sets the menu item's active state.
-|isDisabled |`+() => boolean+` |Checks if the menu item is disabled.
-|setDisabled |`+(state: boolean) => void+` |Sets the menu item's disabled state.
+|isEnabled |`+() => boolean+` |Checks if the menu item is enabled.
+|setEnabled |`+(state: boolean) => void+` |Sets the menu item's enabled state.
 |===
 
 == Example: Creating a toggle menu item
@@ -38,7 +38,7 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 ----
 // Menu items are recreated when the menu is closed and opened, so we need
 // a variable to store the toggle menu item state.
-var toggleState = false;
+let toggleState = false;
 
 tinymce.init({
   selector: 'textarea',
@@ -46,18 +46,17 @@ tinymce.init({
     custom: { title: 'Custom Menu', items: 'undo redo toggleitem' }
   },
   menubar: 'file edit custom',
-
-  setup: function(editor) {
+  setup: (editor) => {
     editor.ui.registry.addToggleMenuItem('toggleitem', {
       text: 'My toggle menu item',
       icon: 'home',
-      onAction: function() {
+      onAction: () => {
         toggleState = !toggleState;
         alert('Toggle menu item clicked');
       },
-      onSetup: function(api) {
+      onSetup: (api) => {
         api.setActive(toggleState);
-        return function() {};
+        return () => {};
       }
     });
   }

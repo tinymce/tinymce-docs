@@ -48,13 +48,13 @@ final Config myConfig = Config.embedded()
     .setContentPath(contentPath)
     .setImageSaverLocal(contentPath)
     .addPlugins(
-      "advcode advlist autolink lists link image imagetools charmap emoticons " +
+      "advcode advlist autolink lists link image editimage charmap emoticons " +
       "anchor searchreplace insertdatetime media table powerpaste help wordcount")
     .putProperty("width", 800)
     .putProperty("height", 600)
     .putProperty("menubar", false)
     .putProperty("toolbar",
-      "undo redo | formatselect | bold italic backcolor | " +
+      "undo redo | blocks | bold italic backcolor | " +
       "alignleft aligncenter alignright alignjustify | " +
       "bullist numlist outdent indent | removeformat | link image | help")
     .putProperty("images_reuse_filename", true);
@@ -71,12 +71,12 @@ Or by passing Javascript that returns a {productname} configuration object.
     width: 800,
     height: 600,
     plugins: [
-      'advcode advlist autolink lists link image imagetools charmap emoticons',
-      'anchor searchreplace insertdatetime media table powerpaste help wordcount'
+      'advcode', 'advlist', 'autolink', 'lists', 'link', 'image', 'editimage', 'charmap', 'emoticons',
+      'anchor', 'searchreplace', 'insertdatetime', 'media', 'table', 'powerpaste', 'help', 'wordcount'
     ],
     menubar: false,
     toolbar: [
-      'undo redo | formatselect | bold italic backcolor | alignleft aligncenter ',
+      'undo redo | blocks | bold italic backcolor | alignleft aligncenter ',
       'alignright alignjustify | bullist numlist outdent indent | removeformat | ',
       'link image | help'
     ].join(''),

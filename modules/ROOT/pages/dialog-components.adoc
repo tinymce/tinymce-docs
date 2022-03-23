@@ -75,7 +75,7 @@ const dialogConfig = {
     tabs: [ ... ] // array of panel configurations
   },
   buttons: [],
-  onTabChange: function (dialogApi, details) {
+  onTabChange: (dialogApi, details) => {
     // log the contents of details
     console.log(details.newTabName);
     console.log(details.oldTabName);
@@ -222,8 +222,9 @@ NOTE: Panel buttons are different to xref:dialog-footer-buttons.adoc[dialog foot
 |text |string |required |Text to display in the button *if icon is not specified*. Also used for the button's `+title+` attribute.
 |name |string |optional |A identifier for the button. If not specified, the button will be assigned a randomly generated name.
 |icon |string |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[] *When configured, the button will display the icon instead of text.*
-|primary |boolean |optional |default: `+false+` - Whether to style the button as a primary or secondary button.
+include::partial$misc/admon_predefined_icons_only.adoc[]
+*When configured, the button will display the icon instead of text.*
+|buttonType |`+'primary'+`, `+'secondary'+`, or `+'toolbar'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, secondary, or toolbar button.
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.
 |===
 
@@ -234,9 +235,9 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 {
   type: 'button', // component type
   text: 'Alpha',
-  primary: true,
+  buttonType: 'primary',
   name: 'alpha-button',
-  disabled: true,
+  enabled: false,
   borderless: false
 }
 ----
@@ -254,7 +255,7 @@ A *checkbox* is a composite component with a checkbox and a label, and with `+on
   type: 'checkbox', // component type
   name: 'checkbox-1', // identifier
   label: 'Checkbox Label', // text for the label
-  disabled: true // disabled state
+  enabled: false // enabled state
 }
 ----
 
@@ -355,6 +356,30 @@ dialogApi.setData({
 })
 ----
 
+[[imagepreview]]
+=== imagepreview
+
+An *imagepreview* is a specialized component that allows for any image to be previewed and zoomed.
+
+[source,js]
+----
+{
+  type: 'imagepreview', // component type
+  name: 'preview', // identifier
+  height: '100px', // optional CSS height to constrain the image preview to
+}
+----
+
+The dialog data for the *imagepreview* component consists of a URL and an optional zoom factor.
+
+[source,js]
+----
+{
+  url: 'https://www.example.com/image.png', // image URL
+  zoom: 1.5 // optional zoom factor
+}
+----
+
 [[input]]
 === input
 
@@ -369,7 +394,7 @@ An *input* is a composite component that renders a label and a single line text 
 |name |string |required |A identifier for the input.
 |label |string |optional |String to use for the input's `+title+` attribute.
 |placeholder |string |optional |String of placeholder text for the input field.
-|disabled |boolean |optional |Allows the field to be disabled. Default is `+false+`.
+|enabled |boolean |optional |Allows the field to be disabled. Default is `+true+`.
 |inputMode |string |optional |Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices.
 |===
 
@@ -381,7 +406,7 @@ An *input* is a composite component that renders a label and a single line text 
   inputMode: 'text',
   label: 'Input Label', // text for the label
   placeholder: 'example', // placeholder text for the input
-  disabled: true, // disabled state
+  enabled: false, // disabled state
   maximized: false // grow width to take as much space as possible
 }
 ----
@@ -408,7 +433,7 @@ A *listbox* is a composite component with a label and a dropdown list of options
   type: 'listbox', // component type
   name: 'ListBoxA', // identifier
   label: 'ListBox Label',
-  disabled: true, // disabled state
+  enabled: false, // enabled state
   items: [
     { text: 'One', value: 'one' },
     { text: 'Two', value: 'two' },
@@ -432,7 +457,7 @@ A *selectbox* is a composite component with a label and a single dropdown list o
   type: 'selectbox', // component type
   name: 'SelectA', // identifier
   label: 'Select Label',
-  disabled: true, // disabled state
+  enabled: false, // enabled state
   size: 1, // number of visible values (optional)
   items: [
     { value: 'one', text: 'One' },
@@ -454,7 +479,25 @@ A *sizeinput* is a specialized composite component with two input fields labelle
   type: 'sizeinput', // component type
   name: 'size', // identifier
   label: 'Dimensions',
-  disabled: true // disabled state
+  enabled: false // enabled state
+}
+----
+
+[[slider]]
+=== slider
+
+A *slider* is a specialized component with a label and a horizontal sliding bar. It can be used to allow users to select a value within a specified range.
+
+*Events:* Interacting with the *slider* component will fire the `+onChange+` function in the dialog's configuration *when the user releases the slider thumb*.
+
+[source,js]
+----
+{
+  type: 'slider', // component type
+  name: 'vol', // identifier
+  label: 'Volume',
+  min: 0, // minimum value
+  max: 100 // maximum value
 }
 ----
 
@@ -489,7 +532,7 @@ A *textarea* is a multiline text field.
   name: 'text-a', // identifier
   label: 'Text: ',
   placeholder: 'example',
-  disabled: true, // disabled state
+  enabled: false, // enabled state
   maximized: false // grow width to take as much space as possible
 }
 ----
@@ -510,7 +553,7 @@ NOTE: The filepicker button will only appear if xref:file-image-upload.adoc#file
 |name |string |required |A identifier for the urlinput.
 |label |string |optional |String to use for the label.
 |filetype |`+'file'+` or `+'image'+` or `+'media'+` |optional |default: `+'file'+` - Restrict the types of files that can be uploaded using the filepicker. `+file+` allows anything, including document links. *Requires `+file_picker_callback+` to be configured.*
-|disabled |boolean |optional |default: `+false+` - Whether the component should initially be disabled.
+|enabled |boolean |optional |default: `+true+` - Whether the component should initially be disabled.
 |===
 
 ==== urlinput examples
@@ -526,7 +569,7 @@ The filepicker will accept any file type and the typeahead will include 5 previo
   name: 'url', // identifier
   filetype: 'file', // allow any file types
   label: 'Url', // text for component label
-  disabled: true // disabled state
+  enabled: false // enabled state
 }
 ----
 
@@ -541,6 +584,6 @@ The filepicker will only accept images and the typeahead will include 5 previous
   name: 'src', // identifier
   filetype: 'image', // restrict file types to image types
   label: 'Source', // text for component label
-  disabled: true // disabled state
+  enabled: false // enabled state
 }
 ----

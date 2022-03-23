@@ -3,26 +3,24 @@ tinymce.init({
   height: 300,
   plugins: 'autolink lists link',
   toolbar: 'undo redo | bold italic link bullist | insertUsername',
-  setup: function (editor) {
-    var insertUsername = function () {
+  setup: (editor) => {
+    const insertUsername = () => {
       editor.insertContent(`@username`);
     };
 
-    editor.addShortcut('meta+alt+U', 'Insert username', function () {
+    editor.addShortcut('meta+alt+U', 'Insert username', () => {
       insertUsername();
     });
 
     editor.ui.registry.addMenuButton('insertUsername', {
       icon: 'plus',
-      fetch: function (callback) {
-        var items = [
+      fetch: (callback) => {
+        const items = [
           {
             type: 'menuitem',
             text: 'Insert username',
             shortcut: 'meta+alt+U',
-            onAction: function () {
-              insertUsername();
-            }
+            onAction: () => insertUsername()
           }
         ];
         callback(items);

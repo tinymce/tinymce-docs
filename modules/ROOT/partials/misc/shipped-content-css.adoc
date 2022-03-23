@@ -1,9 +1,11 @@
-{productname} comes with four content CSS files:
+{productname} comes with six content CSS files:
 
 * `+default+`
 * `+dark+`
 * `+document+`
 * `+writer+`
+* `+tinymce-5+`
+* `+tinymce-5-dark+`
 
 These content CSS files can be enabled in the editor using the xref:add-css-options.adoc#content_css[`+content_css+` configuration option].
 
@@ -13,7 +15,7 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : 'writer'
+  content_css: 'writer'
 });
 ----
 

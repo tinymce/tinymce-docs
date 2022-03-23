@@ -9,6 +9,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:casechangecasechange[Case Change (casechange)]
 ** xref:checklistchecklist[Checklist (checklist)]
 ** xref:commentstinycomments[Comments (tinycomments)]
+** xref:editimageeditimage[Edit Image (editimage)]
 ** xref:enhancedmediaembedmediaembed[Enhanced Media Embed (mediaembed)]
 ** xref:exportexport[Export (export)]
 ** xref:formatpainterformatpainter[Format Painter (formatpainter)]
@@ -18,6 +19,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:permanentpenpermanentpen[Permanent Pen (permanentpen)]
 ** xref:powerpastepowerpaste[PowerPaste (powerpaste)]
 ** xref:spellcheckerprotinymcespellchecker[Spell Checker Pro (tinymcespellchecker)]
+** xref:tableofcontentstableofcontents[Table of Contents (tableofcontents)]
 * xref:communityplugins[Community plugins]
 ** xref:advancedlistadvlist[Advanced List (advlist)]
 ** xref:anchoranchor[Anchor (anchor)]
@@ -32,7 +34,6 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:fullscreenfullscreen[Full Screen (fullscreen)]
 ** xref:helphelp[Help (help)]
 ** xref:imageimage[Image (image)]
-** xref:imagetoolsimagetools[Image Tools (imagetools)]
 ** xref:importcssimportcss[Import CSS (importcss)]
 ** xref:insertdatetimeinsertdatetime[Insert Date/Time (insertdatetime)]
 ** xref:linklink[Link (link)]
@@ -40,15 +41,12 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:mediamedia[Media (media)]
 ** xref:nonbreakingspacenonbreaking[Nonbreaking Space (nonbreaking)]
 ** xref:pagebreakpagebreak[Page Break (pagebreak)]
-** xref:pastepaste[Paste (paste)]
 ** xref:previewpreview[Preview (preview)]
 ** xref:quicktoolbarquickbars[Quick Toolbar (quickbars)]
 ** xref:savesave[Save (save)]
 ** xref:searchandreplacesearchreplace[Search and Replace (searchreplace)]
 ** xref:tabletable[Table (table)]
 ** xref:templatetemplate[Template (template)]
-** xref:textpatterntextpattern[Text Pattern (textpattern)]
-** xref:tableofcontentstoc[Table of Contents (toc)]
 ** xref:visualblockvisualblocks[Visual Block (visualblocks)]
 ** xref:visualcharactersvisualchars[Visual Characters (visualchars)]
 ** xref:wordcountwordcount[Word Count (wordcount)]
@@ -71,6 +69,8 @@ include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 [[advancedtablesadvtable]]
 === Advanced Tables (`+advtable+`)
 
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
 include::partial$plugin-files/plugin-file-list-advtable.adoc[]
 
 [[casechangecasechange]]
@@ -89,6 +89,13 @@ include::partial$plugin-files/plugin-file-list-checklist.adoc[]
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
+
+[[editimageeditimage]]
+=== Edit Image (`+editimage+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-editimage.adoc[]
 
 [[enhancedmediaembedmediaembed]]
 === Enhanced Media Embed (`+mediaembed+`)
@@ -140,6 +147,13 @@ include::partial$plugin-files/plugin-file-list-powerpaste.adoc[]
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinymcespellchecker.adoc[]
+
+[[tableofcontentstableofcontents]]
+=== Table of Contents (`+tableofcontents+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-tableofcontents.adoc[]
 
 [[communityplugins]]
 == Community plugins
@@ -209,11 +223,6 @@ include::partial$plugin-files/plugin-file-list-help.adoc[]
 
 include::partial$plugin-files/plugin-file-list-image.adoc[]
 
-[[imagetoolsimagetools]]
-=== Image Tools (`+imagetools+`)
-
-include::partial$plugin-files/plugin-file-list-imagetools.adoc[]
-
 [[importcssimportcss]]
 === Import CSS (`+importcss+`)
 
@@ -249,11 +258,6 @@ include::partial$plugin-files/plugin-file-list-nonbreaking.adoc[]
 
 include::partial$plugin-files/plugin-file-list-pagebreak.adoc[]
 
-[[pastepaste]]
-=== Paste (`+paste+`)
-
-include::partial$plugin-files/plugin-file-list-paste.adoc[]
-
 [[previewpreview]]
 === Preview (`+preview+`)
 
@@ -283,16 +287,6 @@ include::partial$plugin-files/plugin-file-list-table.adoc[]
 === Template (`+template+`)
 
 include::partial$plugin-files/plugin-file-list-template.adoc[]
-
-[[textpatterntextpattern]]
-=== Text Pattern (`+textpattern+`)
-
-include::partial$plugin-files/plugin-file-list-textpattern.adoc[]
-
-[[tableofcontentstoc]]
-=== Table of Contents (`+toc+`)
-
-include::partial$plugin-files/plugin-file-list-toc.adoc[]
 
 [[visualblockvisualblocks]]
 === Visual Block (`+visualblocks+`)

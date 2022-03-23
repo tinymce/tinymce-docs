@@ -203,10 +203,8 @@ Type : `+Object+`
 ----
 <editor
   :init="{
-    plugins: [
-     'lists link image paste help wordcount'
-    ],
-    toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
+    plugins: 'lists link image paste help wordcount',
+    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }"
 />
 ----
@@ -373,7 +371,7 @@ The `+v-model+` directive can be used to create a two-way data binding. For exam
 <editor v-model="content" />
 ----
 
-For information on `+v-model+` and form input bindings, see: https://vuejs.org/v2/guide/forms.html[Vue.js documentation - Form Input Bindings].
+For information on `+v-model+` and form input bindings, see: https://vuejs.org/guide/essentials/forms.html[Vue.js documentation - Form Input Bindings].
 
 [[eventbinding]]
 == Event binding
@@ -384,6 +382,8 @@ Functions can be bound to editor events, such as:
 ----
 <editor @selectionChange="handlerFunction" />
 ----
+
+For older versions of Vue (Vue 2) supported by v3.x, the syntax for event bindings are: `<editor v-on:selectionChange="handlerFunction">` or `<editor @onSelectionChange="handlerFunction">`.
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 

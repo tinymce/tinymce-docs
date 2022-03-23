@@ -11,13 +11,13 @@ The context menu option accepts three styles of item:
 
 If the same name is registered as both a context menu section and a menu item, the context menu section takes preference.
 
-The default configuration includes the context menu sections for the following plugins: `+link+`, `+linkchecker+` , `+image+`, `+imagetools+`, `+permanentpen+`, `+table+`, and `+spellchecker+`.
+The default configuration includes the context menu sections for the following plugins: `+link+`, `+linkchecker+` , `+image+`, `+editimage+`, `+permanentpen+`, `+table+`, and `+tinymcespellchecker+`.
 
 To disable the editor's context menu, set this option to `+false+`.
 
 Type : `+String+` or `+false+`
 
-Default Value : `+'link linkchecker image imagetools table spellchecker configurepermanentpen'+`
+Default Value : `+'link linkchecker image editimage table spellchecker configurepermanentpen'+`
 
 include::partial$misc/admon_ctrl_right_click.adoc[]
 

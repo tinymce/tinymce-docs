@@ -3,7 +3,7 @@ tinymce.init({
   skin: 'outside',
   icons: 'small',
   plugins: 'lists code table codesample link image',
-  toolbar: 'formatselect | bold italic underline strikethrough | image quote bullist link codesample',
+  toolbar: 'blocks | bold italic underline strikethrough | image quote bullist link codesample',
   menubar: false,
   statusbar: false
 });

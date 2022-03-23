@@ -3,7 +3,7 @@
 :title_nav: Available Commands
 :description_short: Complete list of editor commands.
 :description: The complete list of exposed editor commands.
-:keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
+:keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
 
 == Overview
 
@@ -74,7 +74,7 @@ The commands on the following table are provided by the {productname} editor and
 |mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
 |mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
 |mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
-|ToggleSidebar |Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`+<sidebar-name>+`_).
+|ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (_`+<sidebar-name>+`_).
 |ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |Indent |Indents the current selection.
 |Outdent |Outdents the current selection.
@@ -92,11 +92,13 @@ The commands on the following table are provided by the {productname} editor and
 |mceAddUndoLevel |Adds an undo level.
 |mceEndUndoLevel |Adds an undo level.
 |mceCleanup |Copies the current editor content and sets the content using the copy.
-|mceSelectNode |Selects a node in the editor. The target node is passed as the value (_`+<DOM_node>+`_).
+|mceSelectNode |Selects a node in the editor. The target node is passed as the value (`_<DOM_node>_`).
 |mceSelectNodeDepth |Selects the parent DOM node 'n' levels above the current node.
-|mceRemoveNode |Removes the current node or the target node passed as the value (_`+<DOM_node>+`_).
+|mceRemoveNode |Removes the current node or the target node passed as the value (`_<DOM_node>_`).
 |mceFocus |Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.
 |mcePrint |Opens the browser's print dialog for the current page.
+|mceInsertClipboardContent |Triggers a paste event at the cursor location or over the current selection. The command requires an object with: `+html+` containing the HTML content, or `+text+` containing plain text.
+|mceTogglePlainTextPaste |Toggles paste as plain text.
 |===
 
 .Examples
@@ -157,6 +159,11 @@ tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 tinymce.activeEditor.execCommand('mceFocus');
 tinymce.activeEditor.execCommand('mcePrint');
+tinymce.activeEditor.execCommand('mceInsertClipboardContent', false, {
+  html: '<p>Hello, World!</p>'
+});
+tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');
+
 ----
 
 [[plugincommands]]
@@ -175,20 +182,19 @@ Commands are available for the following plugins:
 * xref:codesample[Code Sample]
 * xref:comments[Comments]
 * xref:directionality[Directionality]
+* xref:editimage[Edit Image]
 * xref:emoticons[Emoticons]
 * xref:export[Export]
 * xref:formatpainter[Format Painter]
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
-* xref:imagetools[Image Tools]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
 * xref:media[Media]
 * xref:nonbreakingspace[Nonbreaking Space]
 * xref:pagebreak[Page Break]
-* xref:paste[Paste]
 * xref:permanentpen[Permanent Pen]
 * xref:powerpaste[PowerPaste]
 * xref:preview[Preview]
@@ -196,8 +202,8 @@ Commands are available for the following plugins:
 * xref:searchandreplace[Search and Replace]
 * xref:spellcheckerpro[Spell Checker Pro]
 * xref:table[Table]
-* xref:template[Template]
 * xref:tableofcontents[Table of Contents]
+* xref:template[Template]
 * xref:visualblocks[Visual Blocks]
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
@@ -279,6 +285,14 @@ The following commands require the xref:directionality.adoc[Directionality (`+di
 
 include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 
+
+[[editimage]]
+==== Edit Image
+
+The following commands require the xref:editimage.adoc[Edit Image (`+editimage+`)] plugin.
+
+include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
+
 [[emoticons]]
 ==== Emoticons
 
@@ -321,13 +335,6 @@ The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
 
-[[imagetools]]
-==== Image Tools
-
-The following commands require the xref:imagetools.adoc[Image Tools (`+imagetools+`)] plugin.
-
-include::partial$commands/imagetools-cmds.adoc[leveloffset=+3]
-
 [[insertdatetime]]
 ==== Insert Date/Time
 
@@ -369,13 +376,6 @@ include::partial$commands/nbsp-cmds.adoc[leveloffset=+3]
 The following command requires the xref:pagebreak.adoc[Page Break (`+pagebreak+`)] plugin.
 
 include::partial$commands/pagebreak-cmds.adoc[leveloffset=+3]
-
-[[paste]]
-==== Paste
-
-The following commands require the xref:paste.adoc[Paste (`+paste+`)] plugin.
-
-include::partial$commands/paste-cmds.adoc[leveloffset=+3]
 
 [[permanentpen]]
 ==== Permanent Pen
@@ -426,19 +426,19 @@ The following commands require the xref:table.adoc[Table (`+table+`)] plugin.
 
 include::partial$commands/table-cmds.adoc[leveloffset=+3]
 
+[[tableofcontents]]
+==== Table of Contents
+
+The following commands require the xref:tableofcontents.adoc[Table of Contents (`+tableofcontents+`)] plugin.
+
+include::partial$commands/tableofcontents-cmds.adoc[leveloffset=+3]
+
 [[template]]
 ==== Template
 
 The following command requires the xref:template.adoc[Template (`+template+`)] plugin.
 
 include::partial$commands/template-cmds.adoc[leveloffset=+3]
-
-[[tableofcontents]]
-==== Table of Contents
-
-The following commands require the xref:toc.adoc[Table of Contents (`+toc+`)] plugin.
-
-include::partial$commands/toc-cmds.adoc[leveloffset=+3]
 
 [[visualblocks]]
 ==== Visual Blocks

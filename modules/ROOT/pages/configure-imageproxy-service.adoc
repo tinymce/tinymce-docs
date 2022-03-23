@@ -7,9 +7,9 @@ The following settings for the Image Proxy premium server-side component are opt
 [[image-proxy]]
 == `+image-proxy+` (optional)
 
-The xref:imagetools.adoc[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `+http.request-timeout-seconds+` above also applies to requests made by the image proxy service.
+The xref:editimage.adoc[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `+http.request-timeout-seconds+` above also applies to requests made by the image proxy service.
 
-[cols="^,,",options="header"]
+[cols="^1,1,3",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+image-proxy+` |Configures image proxy behavior.
@@ -21,8 +21,8 @@ Example:
 [source,properties]
 ----
 ephox {
-    image-proxy {
-        size-limit = 10000000 // 10MB in bytes
-    }
+  image-proxy {
+    size-limit = 10000000 // 10MB in bytes
+  }
 }
 ----

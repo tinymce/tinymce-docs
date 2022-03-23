@@ -6,7 +6,7 @@
 
 A hybrid deployment of {cloudname} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{gettiny}/[{productname} Community edition] to get started.
 
-Sign up for a free API key provides entitlements to premium xref:imagetools.adoc[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Sign up for a free API key provides entitlements to premium xref:editimage.adoc[Edit Image] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 == Step 1: Insert the custom script tag into the webpage
 
@@ -32,9 +32,9 @@ Extend the xref:basic-setup.adoc[{productname} configuration] to include any add
 +
 NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:/how-to-guides/cloud-deployment-guide/[{cloudname}].
 
-* xref:imagetools.adoc[Image Tools (with configured image proxy)]
+* xref:editimage.adoc[Edit Image (with configured image proxy)]
 +
-NOTE: Configuration of the `+imagetools_cors_hosts+` and `+imagetools_proxy+` properties occurs automatically.
+NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy_service_url+` options occurs automatically.
 
 * xref:moxiemanager.adoc[Moxie Manager]
 * xref:a11ychecker.adoc[Accessibility Checker]
@@ -65,8 +65,8 @@ The example below has the following:
             selector: 'textarea',
             height: 500,
             plugins: [
-               'advlist autolink lists link image charmap preview anchor pagebreak',
-               'tinymcespellchecker'
+               'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview', 'anchor',
+               'pagebreak', 'tinymcespellchecker'
             ]
          });
       </script>
@@ -80,8 +80,8 @@ Ensure that the following URLs are accessible via this proxy if the network has 
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.
-* https://imageproxy.tiny.cloud
-* https://hyperlinking.tiny.cloud
-* https://spelling.tiny.cloud
+* +https://imageproxy.tiny.cloud+
+* +https://hyperlinking.tiny.cloud+
+* +https://spelling.tiny.cloud+
 
 Ensure the `+tiny-api-key+` and `+tinymce-api-key+` headers are retained while requesting the list of above URLs.

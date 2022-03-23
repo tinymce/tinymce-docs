@@ -24,7 +24,7 @@ Example code snippet:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugin: 'a_tinymce_plugin',
+  plugins: 'a_tinymce_plugin',
   a_plugin_option: true,
   a_configuration_option: 400
 });
@@ -109,7 +109,7 @@ The {productname} default toolbar contains the following buttons:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
-  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
+  toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
 });
 ----
 
@@ -148,7 +148,7 @@ To create an `+Edit+` menu that only contains the _Undo_, _Redo_, and _Select al
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
-    edit: {title: 'Edit', items: 'undo, redo, selectall'}
+    edit: { title: 'Edit', items: 'undo, redo, selectall' }
   }
 });
 ----
@@ -164,7 +164,7 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
-    happy: {title: 'Happy', items: 'code'}
+    happy: { title: 'Happy', items: 'code' }
   },
   plugins: 'code',  // required by the code menu item
   menubar: 'happy'  // adds happy to the menu bar
@@ -207,15 +207,15 @@ The following example is a basic {productname} configuration.
     width: 600,
     height: 300,
     plugins: [
-      'advlist autolink link image lists charmap preview anchor pagebreak',
-      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-      'table emoticons template paste help'
+      'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+      'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+      'media', 'table', 'emoticons', 'template', 'help'
     ],
-    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
       'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
       'forecolor backcolor emoticons | help',
     menu: {
-      favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
+      favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
     },
     menubar: 'favs file edit view insert format tools table help',
     content_css: 'css/content.css'
@@ -253,9 +253,9 @@ Selects the plugins to be included on load.
 [source,js]
 ----
 plugins: [
-  'advlist autolink link image lists charmap preview anchor pagebreak',
-  'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-  'table emoticons template paste help'
+  'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+  'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+  'media', 'table', 'emoticons', 'template', 'help'
 ],
 ----
 
@@ -263,7 +263,7 @@ Selects the toolbar buttons displayed to the user. Use a comma or space as a sep
 
 [source,js]
 ----
-toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+toolbar: 'insertfile undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
 ----
 
 Adds an additional menu named "My Favorites" with `+menu+`, then adds it to the menu bar using `+menubar+`.
@@ -271,7 +271,7 @@ Adds an additional menu named "My Favorites" with `+menu+`, then adds it to the 
 [source,js]
 ----
 menu: {
-  favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
+  favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
 },
 menubar: 'favs file edit view insert format tools table help',
 ----

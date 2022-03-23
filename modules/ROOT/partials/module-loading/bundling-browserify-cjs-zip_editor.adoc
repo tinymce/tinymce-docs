@@ -6,10 +6,10 @@ Example `+src/editor.js+`
 +
 [source,js]
 ----
-var fs = require('fs');
+const fs = require('fs');
 
 /* Import TinyMCE */
-var tinymce = require('../tinymce/js/tinymce/tinymce.js');
+const tinymce = require('../tinymce/js/tinymce/tinymce.js');
 
 /* Default icons are required. Also import custom icons if applicable */
 require('../tinymce/js/tinymce/icons/default/icons.js');
@@ -29,12 +29,12 @@ require('../tinymce/js/tinymce/plugins/lists/plugin.js');
 require('../tinymce/js/tinymce/plugins/table/plugin.js');
 
 /* Import content CSS */
-var contentCssUi = fs.readFileSync('tinymce/js/tinymce/skins/ui/oxide/content.css', {encoding: 'UTF-8'});
+const contentCssUi = fs.readFileSync('tinymce/js/tinymce/skins/ui/oxide/content.css', { encoding: 'UTF-8' });
 /* Import the default content CSS, replace with the CSS for the editor content. */
-var contentCss = fs.readFileSync('tinymce/js/tinymce/skins/content/default/content.css', {encoding: 'UTF-8'});
+const contentCss = fs.readFileSync('tinymce/js/tinymce/skins/content/default/content.css', { encoding: 'UTF-8' });
 
 /* Initialize TinyMCE */
-exports.render = function () {
+exports.render = () => {
   tinymce.init({
     selector: 'textarea#editor',
     /* All plugins need to be imported and added to the plugins option. */

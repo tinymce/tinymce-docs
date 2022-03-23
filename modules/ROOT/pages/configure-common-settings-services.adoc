@@ -14,7 +14,7 @@ Default proxy settings are picked up from JVM system properties, usually provide
 
 This optional proxy element provides an alternative to providing proxy settings as JVM system properties, or to override system properties.
 
-[cols="^,,",options="header"]
+[cols="^1,1,3",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+proxy+` |Stores HTTP outgoing proxy settings for the server-side components.
@@ -32,24 +32,24 @@ In the following example, both HTTP and HTTPS connections (except to localhost a
 [source,properties]
 ----
 ephox {
-    proxy {
-        http.proxyHost = "someproxy.example.com"
-        http.proxyPort = "8080"
-        https.proxyHost = "someproxy.example.com"
-        https.proxyPort = "8080"
-        http.nonProxyHosts = "localhost|*.example.com"
-    }
+  proxy {
+    http.proxyHost = "someproxy.example.com"
+    http.proxyPort = "8080"
+    https.proxyHost = "someproxy.example.com"
+    https.proxyPort = "8080"
+    http.nonProxyHosts = "localhost|*.example.com"
+  }
 }
 ----
 
 [[http]]
 == `+http+` (optional)
 
-Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Image Tools Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
+Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Edit Image Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
 
 This is not recommended for production environments.
 
-[cols="^,,",options="header"]
+[cols="^1,2,3",options="header"]
 |===
 |Type |Setting |Description
 |*element* |`+http+` |Configures HTTP client behavior.
@@ -62,9 +62,9 @@ Example:
 [source,properties]
 ----
 ephox {
-    http {
-        trust-all-cert = true
-    }
+  http {
+    trust-all-cert = true
+  }
 }
 ----
 
@@ -75,9 +75,9 @@ Example:
 [source,properties]
 ----
 ephox {
-    http {
-        request-timeout-seconds = 15
-    }
+  http {
+    request-timeout-seconds = 15
+  }
 }
 ----
 
@@ -96,10 +96,10 @@ For example:
 [source,properties]
 ----
 ephox {
-    http {
-        connection-request-timeout-seconds = 10
-        connect-timeout-seconds = 5
-        socket-timeout-seconds = 4
-    }
+  http {
+    connection-request-timeout-seconds = 10
+    connect-timeout-seconds = 5
+    socket-timeout-seconds = 4
+  }
 }
 ----

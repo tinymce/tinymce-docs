@@ -1,7 +1,7 @@
 [[valid_elements]]
 == `+valid_elements+`
 
-The valid_elements option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
+This option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
 
 This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is a mixture of the full https://html.spec.whatwg.org/[HTML5] and http://www.w3.org/TR/REC-html40/[HTML4] specification or the HTML5 or HTML4 specification depending on the configured xref:content-filtering.adoc#schema[schema].
 
@@ -49,7 +49,7 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  valid_elements: 'a[href|target=_blank],strong/b,div[align],br'
+  valid_elements: 'a[href|target=_blank], strong/b, div[align], br'
 });
 ----
 

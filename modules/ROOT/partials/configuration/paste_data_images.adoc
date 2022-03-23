@@ -5,11 +5,11 @@ This option specifies whether `+data:url+` images (inline images) should be remo
 
 Setting `+paste_data_images+` to `+true+` will allow the pasted images, while setting it to `+false+` will disallow pasted images.
 
-For example, Firefox enables you to paste images directly into any `+contentEditable+` field. This is normally not something people want, so this option is `+false+` by default. For example, a 600kb embedded image would block page loads and prevents it from being cached on multiple pages.
+For example, Firefox enables you to paste images directly into any `+contentEditable+` field. A 600kb embedded image would block page loads and prevents it from being cached on multiple pages. Setting this option to `+false+` would be prevent such case.
 
 Type: `+Boolean+`
 
-Default Value: `+false+`
+Default Value: `+true+`
 
 Possible Values: `+true+`, `+false+`
 
@@ -20,6 +20,6 @@ Possible Values: `+true+`, `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'paste',
-  paste_data_images: true
+  paste_data_images: false
 });
 ----

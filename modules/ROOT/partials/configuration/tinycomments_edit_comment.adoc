@@ -1,3 +1,4 @@
+[[tinycomments_edit_comment]]
 === `tinycomments_edit_comment`
 
 The Comments plugin uses the `tinycomments_edit_comment` function to edit a comment.
@@ -16,7 +17,7 @@ The `tinycomments_edit_comment` function is given a request (req) object as the 
 
 The `done` callback should accept the following object:
 
-[source]
+[source, ts]
 ----
 {
   canEdit: boolean, // whether or not the Edit succeeded

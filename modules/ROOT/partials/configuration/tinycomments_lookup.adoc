@@ -1,3 +1,4 @@
+[[tinycomments_lookup]]
 === `tinycomments_lookup`
 
 The Comments plugin uses the `tinycomments_lookup` function to retrieve an existing conversation using a conversation's unique ID.
@@ -14,7 +15,7 @@ The `tinycomments_lookup` function is passed a (`req`) object as the first param
 
 The `done` callback should accept the following object:
 
-[source, js]
+[source, ts]
 ----
 {
  conversation: {

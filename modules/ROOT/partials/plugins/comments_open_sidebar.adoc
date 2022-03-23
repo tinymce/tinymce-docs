@@ -19,7 +19,7 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_lookup,
 
-/* The following setup callback opens the comments sidebar when the editor loads _/
+  /* The following setup callback opens the comments sidebar when the editor loads */
   setup: function (editor) {
     editor.on('SkinLoaded', function () {
       editor.execCommand("ToggleSidebar", false, "showcomments");

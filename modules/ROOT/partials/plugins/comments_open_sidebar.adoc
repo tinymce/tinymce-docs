@@ -4,7 +4,7 @@ To show the comments sidebar when the editor is loaded or to display the sidebar
 
 For example:
 
-ifeval::["{docname}" == "comments_callback_mode"]
+ifeval::["{docname}" == "plugins/premium/comments/comments_callback_mode"]
 [source, js]
 ----
 tinymce.init({

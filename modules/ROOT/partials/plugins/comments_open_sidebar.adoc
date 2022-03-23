@@ -4,8 +4,9 @@ To show the comments sidebar when the editor is loaded or to display the sidebar
 
 For example:
 
-{% if page.name == "comments_callback_mode.md" %}
-```js
+ifeval::["{docname}" == "comments_callback_mode"]
+[source, js]
+----
 tinymce.init({
   selector: '#editor',
   plugins: 'tinycomments',
@@ -25,9 +26,11 @@ tinymce.init({
     })
   }
 });
-``
-{% else %}
-``js
+----
+endif::[]
+ifeval::["{docname}" != "comments_callback_mode"]
+[source, js]
+----
 tinymce.init({
   selector: '#editor',
   plugins: 'tinycomments',
@@ -41,5 +44,5 @@ tinymce.init({
     })
   }
 });
-```
-{% endif %}
+----
+endif::[]

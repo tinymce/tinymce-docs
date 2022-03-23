@@ -1,5 +1,6 @@
+[cols="d,d,a"]
 |===
-| Menu item identifier | link:{baseurl}/configure/editor-appearance/#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
+| Menu item identifier | xref:configure/editor-appearance.adoc#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
 
 | `advtablesort`
 | Table
@@ -7,5 +8,8 @@
 
 | `advtablerownumbering`
 | _Not Applicable_
-| Adds or removes (toggles) a row numbering column on the selected table. include::partial$misc/requires_5_9v.adoc[]
+| Adds or removes (toggles) a row numbering column on the selected table.
+
+include::partial$misc/requires_5_9v.adoc[]
+
 |===

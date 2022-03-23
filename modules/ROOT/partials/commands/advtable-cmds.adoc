@@ -1,3 +1,4 @@
+[cols="d,a"]
 |===
 | Command | Description
 
@@ -5,7 +6,7 @@
 | Opens the Advanced Table Sort Dialog for the current selection or cursor location.
 
 | mceSortTableAdvanced
-| Performs an Advanced Table Sort. For details, see <<usingmcesorttableadvanced,Using `mceSortTableAdvanced`>>.
+| Performs an Advanced Table Sort. For details, see xref:usingmcesorttableadvanced[Using `mceSortTableAdvanced`].
 
 | mceSortTableByColumnAsc
 | Sorts the current table ascending by column based on the current cursor position or selection.
@@ -20,7 +21,10 @@
 | Sorts the current table descending by row based on the current cursor position or selection.
 
 | mceTableToggleSeries
-| Toggles a series column on the selected table. For details, see <<usingmcetabletoggleseries,Using `mceTableToggleSeries`>>. include::partial$misc/requires_5_9v.adoc[]
+| Toggles a series column on the selected table. For details, see xref:usingmcetabletoggleseries[Using `mceTableToggleSeries`].
+
+include::partial$misc/requires_5_9v.adoc[]
+
 |===
 
 *Examples*
@@ -36,6 +40,7 @@ tinymce.activeEditor.execCommand('mceSortTableByRowDesc')
 tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numeric' })
 ----
 
+[[usingmcesorttableadvanced]]
 === Using `mceSortTableAdvanced`
 
 `mceSortTableAdvanced` accepts an object with the following key-value pairs:
@@ -63,7 +68,7 @@ tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numeric
 | Required
 |
 |===
-
+[[usingmcetabletoggleseries]]
 === Using `mceTableToggleSeries`
 
 `mceTableToggleSeries` accepts an object with the following key-value pairs:
@@ -74,7 +79,7 @@ tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numeric
 | name
 | `string`
 | Required
-| Specifies the series to toggle. Series and their associated names are configured using the link:{baseurl}/plugins/premium/advtable/#advtable_value_series[`advtable_value_series` option].
+| Specifies the series to toggle. Series and their associated names are configured using the xref:plugins/premium/advtable.adoc#advtable_value_series[`advtable_value_series` option].
 |===
 
 If the table already has a series column that uses the series specified in `name`, the series column will be removed from the table. Otherwise, a new series column will be created, replacing any other series column that may already be in the table.

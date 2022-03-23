@@ -20,7 +20,8 @@ The following example extends the default behavior to allow the author `<Admin u
 
 ==== Example: Using `tinycomments_can_delete_comment`
 
-```js
+[source, js]
+----
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
@@ -29,4 +30,8 @@ tinymce.init({
   tinycomments_can_delete_comment: function (req, done, fail) {
     var allowed = req.comment.author === currentAuthor;
     done({
-      canDelete: allowed || currentAuthor === '+++<Admin user="">+++' }); } }); ```+++</Admin>+++
+      canDelete: allowed || currentAuthor === '<Admin user>'
+    });
+  }
+});
+----

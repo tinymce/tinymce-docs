@@ -20,6 +20,8 @@ tinymce.init({
     var allowed = req.comments.length > 0 &&
                   req.comments[0].author === currentAuthor;
     done({
-      canResolve: allowed || currentAuthor === '+++<Admin user="">+++' }); } }); ```+++</Admin>+++
+      canResolve: allowed || currentAuthor === '<Admin user>' });
+ }
+});
 
 ----

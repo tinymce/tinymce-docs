@@ -37,7 +37,7 @@ tinymce.init({
   tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
   tinycomments_can_resolve: canResolveCommentsCallback,
-  /_ The following setup callback opens the comments sidebar when the editor loads */
+  /* The following setup callback opens the comments sidebar when the editor loads */
   setup: function (editor) {
     editor.on('SkinLoaded', function () {
       editor.execCommand("ToggleSidebar", false, "showcomments");

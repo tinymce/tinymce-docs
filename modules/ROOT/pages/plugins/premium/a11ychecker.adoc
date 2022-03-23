@@ -29,7 +29,7 @@ tinymce.init({
 });
 ----
 
-[[accessiblityrules]]
+[[accessibilityrules]]
 == Accessibility Rules
 
 The following checks are available for the {pluginname} plugin. The rules checked depends on:
@@ -302,7 +302,7 @@ editor.plugins.a11ychecker.toggleaudit();
 
 Conducts an accessibility audit and reports the results without opening the dialog. The report produced is an array of objects, where each object represents an issue and contains the following details:
 
-* *id* - The issue identifier used by {productname}, such as D1, T4A. For a description and other details about the issue, see xref:accessiblityrules[Accessibility Rules].
+* *id* - The issue identifier used by {productname}, such as D1, T4A. For a description and other details about the issue, see xref:accessibilityrules[Accessibility Rules].
 * *description* - A description of the issue.
 * *severity* - The severity of the issue, either: `info`, `warning`, or `error`.
 * *element* - The DOM element where the issue was found.

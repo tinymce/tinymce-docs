@@ -13,7 +13,7 @@ The `tinycomments_resolve` function is passed a (`req`) object as the first para
 
 The `done` callback should accept the following object:
 
-[source, js]
+[source, ts]
 ----
 {
   canResolve: boolean // whether or not the conversation can be resolved

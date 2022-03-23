@@ -13,7 +13,7 @@ The `tinycomments_create` function is given a request (req) object as the first 
 
 The `done` callback should accept the following object:
 
-[source, js]
+[source, ts]
 ----
 {
   conversationUid: string, // the new conversation uid

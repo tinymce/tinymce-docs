@@ -16,7 +16,6 @@ Default Value: See xref:user-formatting-options.adoc#color_map[`+color_map+` opt
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_background_color_map: [
     { title: 'Red', value: 'FF0000' },

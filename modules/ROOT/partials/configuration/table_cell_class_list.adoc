@@ -12,7 +12,6 @@ Type: `+Array+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_cell_class_list: [
     { title: 'None', value: '' },
@@ -35,7 +34,6 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_cell_class_list: [
     { title: 'None', value: '' },

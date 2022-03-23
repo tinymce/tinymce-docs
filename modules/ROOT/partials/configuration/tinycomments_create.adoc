@@ -29,8 +29,7 @@ For example:
 [source,js]
 ----
 const create_comment = (ref, done, fail) => {
-  let content = ref.content;
-  let createdAt = ref.createdAt;
+  const { content, createdAt } = ref;
 
   fetch('https://api.example/conversations/', {
     method: 'POST',

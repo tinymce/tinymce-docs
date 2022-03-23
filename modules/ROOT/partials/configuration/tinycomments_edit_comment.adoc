@@ -30,10 +30,7 @@ For example:
 [source,js]
 ----
 const edit_comment = (ref, done, fail) => {
-  let conversationUid = ref.conversationUid;
-  let commentUid = ref.commentUid;
-  let content = ref.content;
-  let modifiedAt = ref.modifiedAt;
+  const { conversationUid, commentUid, content, modifiedAt } = ref;
 
   fetch(
     `https://api.example/conversations/${conversationUid}/${commentUid}`,

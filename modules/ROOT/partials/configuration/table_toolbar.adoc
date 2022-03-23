@@ -18,7 +18,6 @@ Possible Values: Any toolbar button. For a list of predefined toolbar buttons, s
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_toolbar: 'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'
 });
@@ -33,7 +32,6 @@ To disable or remove the contextual table toolbar, set `+table_toolbar+` to an e
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_toolbar: ''
 });

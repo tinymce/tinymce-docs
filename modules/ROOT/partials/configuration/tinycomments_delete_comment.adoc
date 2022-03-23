@@ -26,8 +26,7 @@ For example:
 [source,js]
 ----
 const delete_comment = (ref, done, fail) => {
-  let conversationUid = ref.conversationUid;
-  let commentUid = ref.commentUid;
+  const { conversationUid, commentUid } = ref;
 
   fetch(
     `https://api.example/conversations/${conversationUid}/${commentUid}`,

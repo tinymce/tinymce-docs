@@ -26,7 +26,7 @@ For example:
 [source,js]
 ----
 const resolve_comment_thread = (ref, done, fail) => {
-  let conversationUid = ref.conversationUid;
+  const conversationUid = ref.conversationUid;
   fetch(`https://api.example/conversations/${conversationUid}`, {
     method: 'PUT',
   }).then((response) => {

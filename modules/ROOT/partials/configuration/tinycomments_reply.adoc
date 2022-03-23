@@ -27,9 +27,7 @@ For example:
 [source,js]
 ----
 const reply_comment = (ref, done, fail) => {
-  let conversationUid = ref.conversationUid;
-  let content = ref.content;
-  let createdAt = ref.createdAt;
+  const { conversationUid, content, createdAt } = ref;
 
   fetch(`https://api.example/conversations/${conversationUid}`, {
     method: 'POST',

@@ -24,7 +24,6 @@ Default Value:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_border_widths: [
     { title: 'small', value: '1px' },

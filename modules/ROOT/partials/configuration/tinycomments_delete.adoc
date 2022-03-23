@@ -23,8 +23,8 @@ For example:
 
 [source,js]
 ----
-function delete_comment_thread(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
+const delete_comment_thread = (ref, done, fail) => {
+  const conversationUid = ref.conversationUid;
   fetch(`https://api.example/conversations/${conversationUid}`, {
     method: 'DELETE',
   }).then((response) => {

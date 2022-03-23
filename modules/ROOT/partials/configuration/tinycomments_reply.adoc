@@ -15,7 +15,7 @@ The `tinycomments_reply` function is given a request (req) object as the first p
 
 The `done` callback should accept the following object:
 
-[source, js]
+[source, ts]
 ----
 {
   commentUid: string // the value of the new comment uid

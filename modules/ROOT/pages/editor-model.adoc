@@ -1,0 +1,10 @@
+= TinyMCE Model options
+
+:title_nav: Models
+:description: Configure the editor's model.
+
+WARNING: {productname} model configuration is a future feature. Models provide critical editor functionality. The only supported models are the default (`+dom+`) and the one provided by the the premium https://www.tiny.cloud/tinymce/features/real-time-collaboration/[real-time collaboration] feature. These options exist only for use in scenarios where the `dom` model script file cannot load normally.
+
+include::partial$configuration/model.adoc[]
+
+include::partial$configuration/model_url.adoc[]

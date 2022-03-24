@@ -7,9 +7,9 @@ If this option is a string then it will be requested as a URL that should produc
 
 Each item in the list can either be inline using a `+content+` property or a whole file using the `+url+` property.
 
-Type : `+String+` or `+Array+` or `+Function+`
+Type : `+String+`, `+Array+` or `+Function+`
 
-=== Example using templates object
+=== Example using an array
 
 [source,js]
 ----
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ----
 
-=== Example using templates URL
+=== Example using a URL
 
 [source,js]
 ----
@@ -39,7 +39,7 @@ tinymce.init({
 ----
 
 [[example-json-output-of-templatesphp]]
-=== Example JSON output of templates.php
+==== Example JSON output of templates.php
 
 [source,json]
 ----
@@ -47,4 +47,23 @@ tinymce.init({
   { "title": "Some title 1", "description": "Some desc 1", "content": "My content" },
   { "title": "Some title 2", "description": "Some desc 2", "url": "development.html" }
 ]
+----
+
+=== Example using a custom callback function
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  templates: (callback) => {
+    const templates = [
+      { 'title': 'Some title 1', 'description': 'Some desc 1', 'content': 'My content' },
+      { 'title': 'Some title 2', 'description': 'Some desc 2', 'url': 'development.html' }
+    ];
+    callback(templates);
+  }
+});
 ----

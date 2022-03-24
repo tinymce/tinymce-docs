@@ -3,7 +3,7 @@
 
 This option enables you to only import classes from selectors matching the filter. The filter can be a `+string+`, `+regexp+` or a `+function+`. See the examples below.
 
-Type: `+String+` or `+Regex+` or `+Function+`
+Type: `+String+`, `+Regex+` or `+Function+`
 
 === Example using a string filter with `+importcss_selector_filter+`
 
@@ -40,8 +40,7 @@ tinymce.init({
   plugins: 'importcss',
   menubar: 'format',
   content_css: '/my-styles.css',
-  importcss_selector_filter: (selector) => {
-    return selector.indexOf('myprefix') !== -1;
-  }
+  importcss_selector_filter: (selector) =>
+    selector.indexOf('myprefix') !== -1
 });
 ----

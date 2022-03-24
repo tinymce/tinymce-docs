@@ -11,19 +11,6 @@ Possible Values : `+true+`, `+false+`
 
 === Example: Using `+allow_html_in_named_anchor+`
 
-ifeval::["{plugincode}" == "anchor"]
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'anchor',
-  toolbar: 'anchor',
-  allow_html_in_named_anchor: true
-});
-----
-endif::[]
-
-ifeval::["{plugincode}" != "anchor"]
 [source,js]
 ----
 tinymce.init({
@@ -31,4 +18,3 @@ tinymce.init({
   allow_html_in_named_anchor: true
 });
 ----
-endif::[]

@@ -11,8 +11,6 @@ Type: `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  toolbar: 'image',
   images_upload_url: 'postAcceptor.php',
   images_upload_base_path: '/some/basepath'
 });

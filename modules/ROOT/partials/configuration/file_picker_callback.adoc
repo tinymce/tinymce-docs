@@ -19,7 +19,6 @@ NOTE: The following example demonstrates how you can use `+file_picker_callback+
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
   file_picker_callback: (callback, value, meta) => {
     // Provide file and text for the link dialog
     if (meta.filetype == 'file') {

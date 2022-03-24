@@ -21,7 +21,7 @@ Inline editing mode does not replace the selected element with an iframe, but in
 Inline mode only works on content within a block element (such as: `div` or `h1`).
 To enable inline mode, set the `inline` option to `true`. For example:
 
-[,html]
+[source, html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -48,5 +48,5 @@ The following demonstration is using four {productname} editors in inline mode, 
 
 liveDemo::inline[]
 
-For information on inline mode and the `inline` setting, see: link:{baseurl}/configure/editor-appearance/#inline[User interface options - inline].
+For information on inline mode and the `inline` setting, see: xref:configure/editor-appearance.adoc#inline[User interface options - inline].
 

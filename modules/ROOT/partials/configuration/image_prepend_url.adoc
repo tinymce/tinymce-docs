@@ -12,7 +12,6 @@ Type: `+String+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-
   toolbar: 'image',
   image_prepend_url: 'https://www.example.com/images/'
 });

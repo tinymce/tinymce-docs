@@ -43,7 +43,7 @@ To load multiple stylesheets, provide the paths as either a array of strings or 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : 'mycontent.css, mycontent2.css'  // includes both CSS files in header
+  content_css : 'mycontent.css,mycontent2.css'  // includes both CSS files in header
 });
 ----
 

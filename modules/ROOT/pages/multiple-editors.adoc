@@ -14,6 +14,7 @@ The following example breaks the page into two separate editable areas. Each are
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="{cdnurl}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
@@ -47,6 +48,7 @@ The following example loads each editable area with a unique configuration of {p
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="{cdnurl}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({

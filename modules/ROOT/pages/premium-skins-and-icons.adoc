@@ -36,9 +36,9 @@ Available values for xref:add-css-options.adoc#content_css[content_css]:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',    // change this value according to your HTML
-  skin: 'fabric',       // Name of the skin
-  content_css: 'fabric' // Name of the content skin
+  selector: 'textarea',  // change this value according to your HTML
+  skin: 'fabric',        // Name of the skin
+  content_css: 'fabric'  // Name of the content skin
 });
 ----
 

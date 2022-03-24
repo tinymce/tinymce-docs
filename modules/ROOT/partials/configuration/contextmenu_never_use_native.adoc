@@ -14,7 +14,7 @@ Default Value : `+false+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   contextmenu_never_use_native: true
 });
 ----

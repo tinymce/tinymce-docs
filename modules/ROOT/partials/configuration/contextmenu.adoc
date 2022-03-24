@@ -26,7 +26,7 @@ include::partial$misc/admon_ctrl_right_click.adoc[]
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'link image table',
   contextmenu: 'link image table'
 });

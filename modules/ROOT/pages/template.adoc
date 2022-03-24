@@ -17,7 +17,6 @@ The `+template+` plugin adds support for custom templates. It also adds a menu i
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template'
 });
 ----
@@ -57,7 +56,6 @@ include::partial$configuration/template_selected_content_classes.adoc[leveloffse
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_cdate_classes: 'cdate creationdate',
   template_mdate_classes: 'mdate modifieddate',

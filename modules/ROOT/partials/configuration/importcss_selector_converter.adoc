@@ -13,7 +13,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
   content_css: '/my-styles.css',
-  menubar: 'format',
   importcss_selector_converter: (selector) => {
     // Custom logic
   }

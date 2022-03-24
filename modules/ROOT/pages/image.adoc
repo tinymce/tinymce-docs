@@ -16,7 +16,6 @@ This plugin enables the user to insert an image into {productname}'s editable ar
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: [
     { title: 'My image 1', value: 'https://www.example.com/my1.gif' },

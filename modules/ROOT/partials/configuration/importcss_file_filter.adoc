@@ -12,7 +12,6 @@ Type: `+String+`, `+Regex+` or `+Function+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css',
   importcss_file_filter: '/my-styles.css'
 });
@@ -25,7 +24,6 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css',
   importcss_file_filter: /\/my-styles/
 });
@@ -38,7 +36,6 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css',
   importcss_file_filter: (file) =>
     file.indexOf('my-styles') !== -1

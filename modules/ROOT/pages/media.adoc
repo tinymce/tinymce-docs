@@ -18,7 +18,6 @@ The `+media+` plugin adds the ability for users to be able to add HTML5 video an
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'media',
-  menubar: 'insert',
   toolbar: 'media'
 });
 ----

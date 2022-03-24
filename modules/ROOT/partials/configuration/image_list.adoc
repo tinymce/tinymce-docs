@@ -14,7 +14,6 @@ Default Value : `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: [
     { title: 'Cat', value: 'cat.png' },
@@ -34,7 +33,6 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: [
     { title: 'Cat', value: 'cat.png' },
@@ -58,7 +56,6 @@ You can also configure a URL with JSON data. The format of that list is the same
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: '/mylist.php'
 });
@@ -71,7 +68,6 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: (success) => {
     success([

@@ -23,7 +23,6 @@ Default Value :
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_target_list: [
     { title: 'None', value: '' },
@@ -43,7 +42,6 @@ To disable the option dialog, set `+link_target_list+` to `+false+`.
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_target_list: false
 });

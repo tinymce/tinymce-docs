@@ -16,7 +16,6 @@ Type : `+String+`, `+Array+` or `+Function+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   templates: [
     { title: 'Some title 1', description: 'Some desc 1', content: 'My content' },
@@ -32,7 +31,6 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   templates: '/dir/templates.php'
 });
@@ -56,7 +54,6 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   templates: (callback) => {
     const templates = [

@@ -14,7 +14,6 @@ Default Value : `+'%H:%M:%S'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
-  menubar: 'insert',
   toolbar: 'insertdatetime',
   insertdatetime_timeformat: '%H:%M:%S'
 });

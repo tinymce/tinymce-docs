@@ -14,7 +14,6 @@ Default Value : `+[]+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_class_list: [
     { title: 'None', value: '' },
@@ -37,7 +36,6 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_class_list: [
     { title: 'None', value: '' },

@@ -35,7 +35,6 @@ Default Value:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pageembed',
-  menubar: 'view',
   toolbar: 'pageembed',
   tiny_pageembed_classes: [
     { text: 'Big embed', value: 'my-big-class' },
@@ -53,7 +52,6 @@ When the `+tiny_pageembed_classes+` value is set to an empty array, the size sel
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pageembed',
-  menubar: 'view',
   toolbar: 'pageembed',
   tiny_pageembed_classes: []
 });

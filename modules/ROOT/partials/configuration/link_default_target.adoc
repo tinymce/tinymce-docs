@@ -19,7 +19,6 @@ Type: `+String+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugin_list}',
-  menubar: 'insert',
   toolbar: 'link',
   link_default_target: '_blank'
 });

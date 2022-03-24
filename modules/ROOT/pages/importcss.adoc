@@ -17,7 +17,6 @@ By default selectors like `+".my-class"+`, `+".my-class1.my-class2"+` and `+"p.m
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css'
 });
 ----

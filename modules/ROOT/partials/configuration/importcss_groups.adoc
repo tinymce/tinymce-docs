@@ -12,7 +12,6 @@ Type : `+Array+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css',
   importcss_groups: [
     { title: 'Table styles', filter: /^(td|tr)\./ }, // td.class and tr.class

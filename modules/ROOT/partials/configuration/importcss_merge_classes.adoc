@@ -15,7 +15,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'importcss',
   content_css: '/my-styles.css',
-  menubar: 'format',
   importcss_merge_classes: false
 });
 ----

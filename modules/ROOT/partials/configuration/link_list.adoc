@@ -14,7 +14,6 @@ Type: `+String+`, `+Array+` or `+Function+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_list: [
     { title: '{companyname} Home Page', value: '{companyurl}' },
@@ -37,7 +36,6 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_list: [
     { title: '{companyname} Home Page', value: '{companyurl}' },
@@ -62,7 +60,6 @@ You can also configure a URL with JSON data. The JSON data must use the same for
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_list: '/mylist.php'
 });
@@ -88,7 +85,6 @@ const fetchLinkList = () => [
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_list: (success) => { // called on link dialog open
     const links = fetchLinkList(); // get link_list data

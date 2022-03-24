@@ -14,7 +14,6 @@ Default : `+'%Y-%m-%d'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_cdate_format: '%m/%d/%Y : %H:%M',
   templates: [

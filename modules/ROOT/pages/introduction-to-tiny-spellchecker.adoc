@@ -63,9 +63,11 @@ include::partial$configuration/spellchecker_active.adoc[leveloffset=+1]
 
 include::partial$configuration/spellchecker_dialog.adoc[leveloffset=+1]
 
+include::partial$configuration/spellchecker_ignore_list.adoc[leveloffset=+1]
+
 include::partial$configuration/spellchecker_language.adoc[leveloffset=+1]
 
-include::partial$misc/spellchecker-languages.adoc[]
+include::partial$misc/spellchecker-languages.adoc[leveloffset=+2]
 
 include::partial$configuration/spellchecker_languages.adoc[leveloffset=+1]
 
@@ -75,11 +77,7 @@ endif::[]
 
 include::partial$configuration/spellchecker_rpc_url.adoc[leveloffset=+1]
 
-include::partial$plugins/tinymcespellchecker-content-langs.adoc[leveloffset=+1]
-
-include::partial$configuration/spellchecker_select_languages.adoc[leveloffset=+1]
-
-include::partial$configuration/spellchecker_ignore_list.adoc[leveloffset=+1]
+include::partial$plugins/spellchecker-content_langs.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

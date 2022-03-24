@@ -49,7 +49,7 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  valid_elements: 'a[href|target=_blank], strong/b, div[align], br'
+  valid_elements: 'a[href|target=_blank],strong/b,div[align],br'
 });
 ----
 

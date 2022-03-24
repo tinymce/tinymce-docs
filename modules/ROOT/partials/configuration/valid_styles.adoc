@@ -14,8 +14,8 @@ Type : `+Object+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   valid_styles: {
-    '*': 'border, font-size',
-    'div': 'width, height'
+    '*': 'border,font-size',
+    'div': 'width,height'
   }
 });
 ----

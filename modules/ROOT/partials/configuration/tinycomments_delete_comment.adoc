@@ -29,7 +29,7 @@ function delete_comment(ref, done, fail) {
   let conversationUid = ref.conversationUid;
   let commentUid = ref.commentUid;
 
-fetch(
+  fetch(
     'https://api.example/conversations/' + conversationUid + '/' + commentUid,
     {
       method: 'DELETE',

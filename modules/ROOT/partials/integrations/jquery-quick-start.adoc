@@ -7,8 +7,6 @@ NOTE: We are pleased to provide integrations/code guidance to help you build gre
 This procedure creates a basic jQuery integration containing a {productname} editor based on our xref:basic-example.adoc[Basic example].
 
 . Open a HTML file.
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PACKAGE INSTALL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::["{productSource}" == "package-manager"]
 . Install jQuery, {productname}, the {productname} jQuery integration and the library `fs-extra` from NPM:
 +
@@ -58,8 +56,6 @@ fse.copySync(path.join(nodeModulesDir, '@tinymce', 'tinymce-jquery', 'dist'), pa
 +
 For information on self-hosting {productname}, see: link:advanced-install.html[Installing {productname}].
 endif::[]
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CLOUD INSTALL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::["{productSource}" == "cloud"]
 . Add a `<script>` element to get jQuery with a snippet from the official
 https://code.jquery.com/[jQuery CDN page], which includes the `integrity` and
@@ -82,8 +78,6 @@ API key, which is created when signing up to the link:{accountsignup}/[{cloudnam
 <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
 ----
 endif::[]
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~AFTER INSTALL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 . Add an initialization point for {productname}, such as:
 +
 [source,html]
@@ -107,8 +101,6 @@ the `tinymce` method.
 == Example jQuery integration
 
 To load a TinyMCE editor similar to the xref:basic-example.adoc[Basic example], add the following code to an empty HTML file.
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PACKAGE EXAMPLE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::["{productSource}" == "package-manager"]
 [source,html,subs="attributes+"]
 ----
@@ -142,10 +134,7 @@ ifeval::["{productSource}" == "package-manager"]
   </body>
 </html>
 ----
-
 endif::[]
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CLOUD EXAMPLE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::["{productSource}" == "cloud"]
 [source,html,subs="attributes+"]
 ----
@@ -183,8 +172,6 @@ ifeval::["{productSource}" == "cloud"]
 </html>
 ----
 endif::[]
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~AFTER EXAMPLE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 == TinyMCE in a jQuery UI Dialog
 To render {productname} instances inside jQuery UI dialogs, add the following code:
 [source,js]

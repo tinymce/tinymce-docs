@@ -9,13 +9,14 @@ Example `+src/editor.js+`
 /* Import TinyMCE */
 const tinymce = require('../tinymce/js/tinymce/tinymce.js');
 
-/* Default icons are required. Also import custom icons if applicable */
+/* Default icons are required. After that, import custom icons if applicable */
 require('../tinymce/js/tinymce/icons/default/icons.js');
 
-/* A editor theme (required) - customize the editor appearance by creating a 'skin' */
+/* Required TinyMCE components */
 require('../tinymce/js/tinymce/themes/silver/theme.js');
+require('../tinymce/js/tinymce/models/dom/model.js');
 
-/* Import the editor skin - replace with a custom skin if applicable. */
+/* Import a skin (can be your own instead of the default) */
 require('../tinymce/js/tinymce/skins/ui/oxide/skin.css');
 
 /* Import plugins - include the relevant plugin in the 'plugins' option. */
@@ -27,10 +28,10 @@ require('../tinymce/js/tinymce/plugins/link/plugin.js');
 require('../tinymce/js/tinymce/plugins/lists/plugin.js');
 require('../tinymce/js/tinymce/plugins/table/plugin.js');
 
-/* Import content CSS */
-const contentUiCss = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');
+/* content UI CSS is required */
+const contentUiSkin = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');
 
-/* Import the default content CSS, replace with the CSS for the editor content. */
+/* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
 const contentCss = require('../tinymce/js/tinymce/skins/content/default/content.css');
 
 /* Initialize TinyMCE */
@@ -42,7 +43,7 @@ exports.render = () => {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentUiCss.toString() + '\n' + contentCss.toString(),
+    content_style: contentUiSkin.toString() + '\n' + contentCss.toString(),
   });
 };
 ----

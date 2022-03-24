@@ -9,13 +9,14 @@ Example `+src/editor.js+`
 /* Import TinyMCE */
 import tinymce from '../tinymce/js/tinymce/tinymce';
 
-/* Default icons are required. Also import custom icons if applicable */
+/* Default icons are required. After that, import custom icons if applicable */
 import '../tinymce/js/tinymce/icons/default/icons';
 
-/* A theme is also required */
+/* Required TinyMCE components */
 import '../tinymce/js/tinymce/themes/silver/theme';
+import '../tinymce/js/tinymce/models/dom/model';
 
-/* Import the skin */
+/* Import a skin (can be your own instead of the default) */
 import '../tinymce/js/tinymce/skins/ui/oxide/skin.css';
 
 /* Import plugins */
@@ -33,8 +34,10 @@ import '../tinymce/js/tinymce/plugins/table/plugin';
 /* import './plugins/powerpaste/plugin'; */
 /* import './plugins/powerpaste/js/wordimport'; */
 
-/* Import content css */
-import contentUiCss from '../tinymce/js/tinymce/skins/ui/oxide/content.css';
+/* content UI CSS is required */
+import contentUiSkin from '../tinymce/js/tinymce/skins/ui/oxide/content.css';
+
+/* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
 import contentCss from '../tinymce/js/tinymce/skins/content/default/content.css';
 
 /* Initialize TinyMCE */
@@ -45,7 +48,7 @@ export function render () {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentUiCss.toString() + '\n' + contentCss.toString(),
+    content_style: contentUiSkin.toString() + '\n' + contentCss.toString(),
   });
 };
 ----

@@ -1,10 +1,13 @@
-{% if page.title == "Paste plugin" %}
+ifeval::["{docname}" != "plugins/premium/powerpaste"]
 :plugin: paste
 :pluginname: Paste
-{% else %}
+endif::[]
+
+ifeval::["{docname}" == "plugins/premium/powerpaste"]
 :plugin: powerpaste
 :pluginname: PowerPaste
-{% endif %}
+endif::[]
+
 === `paste_tab_spaces`
 
 include::partial$misc/requires_5_4v.adoc[]
@@ -17,7 +20,7 @@ This option controls how many spaces are used to represent a tab character in HT
 
 ==== Example: Using `paste_tab_spaces`
 
-[source, js]
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

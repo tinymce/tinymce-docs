@@ -1,3 +1,4 @@
+[source, sh]
 ----
 npm install tinymce@^5
 ----
@@ -6,7 +7,7 @@ npm install tinymce@^5
 
 Include this line of code in the `<head>` of your HTML page:
 
-[,html]
+[source ,html]
 ----
 <script src="/path/to/tinymce.min.js"></script>
 ----
@@ -19,7 +20,7 @@ Since {productname} lets you identify replaceable elements via a CSS selector, a
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {productname} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-[,html]
+[source, html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -49,7 +50,7 @@ When the `<form>` is submitted the {productname} editor mimics the behavior of a
 
 When using package managers you might have local {productname} add-ons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these configuration options:
 
-[,js]
+[source, js]
 ----
 tinymce.init({
   selector: 'textarea',
@@ -62,6 +63,4 @@ tinymce.init({
 });
 ----
 
-____
-If you have decided to use this package manager, move on to the next step link:../work-with-plugins/[working with plugins], where you'll start customizing {productname}. If you'd like to learn about other install options please keep reading.
-____
+NOTE: If you have decided to use this package manager, move on to the next step xref:general-configuration-guide/work-with-plugins.adoc[working with plugins], where you'll start customizing {productname}. If you'd like to learn about other install options please keep reading.

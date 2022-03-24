@@ -34,7 +34,7 @@ tinymce.init({
 });
 ----
 
-To create a skin interactively, visit http://skin.tiny.cloud/t5/[the {productname} 5 Skin Tool]. For information on manually creating skins for {productname}, see link:{baseurl}/advanced/creating-a-skin/[Creating a skin].
+To create a skin interactively, visit http://skin.tiny.cloud/t5/[the {productname} 5 Skin Tool]. For information on manually creating skins for {productname}, see xref:advanced/creating-a-skin.adoc[Creating a skin].
 
 NOTE: Developers often confuse the difference between {productname} "themes" and "skins". A *Skin* in {productname} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A *Theme* creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
@@ -54,7 +54,7 @@ tinymce.init({
 });
 ----
 
-See the link:{baseurl}/configure/editor-appearance/#height[height option] for customization details.
+See the xref:configure/editor-appearance.adoc#height[height option] for customization details.
 
 === Set the editable area width
 
@@ -66,7 +66,7 @@ tinymce.init({
 });
 ----
 
-See the link:{baseurl}/configure/editor-appearance/#width[width option] for customization details.
+See the xref:configure/editor-appearance.adoc#width[width option] for customization details.
 
 === Set maximum and minimum heights and widths
 
@@ -83,14 +83,14 @@ tinymce.init({
 });
 ----
 
-See the link:{baseurl}/configure/editor-appearance/#max_height[max_height], link:{baseurl}/configure/editor-appearance/#max_width[max_width], link:{baseurl}/configure/editor-appearance/#min_height[min_height], and link:{baseurl}/configure/editor-appearance/#min_width[min_width] documentation pages to learn more about these customization options.
+See the xref:configure/editor-appearance.adoc#max_height[max_height], xref:configure/editor-appearance.adoc#max_width[max_width], xref:configure/editor-appearance.adoc#min_height[min_height], and xref:configure/editor-appearance.adoc#min_width[min_width] documentation pages to learn more about these customization options.
 
-The editable area can also automatically resize itself as the user enters content into the iframe with the link:{baseurl}/plugins/opensource/autoresize/[Autoresize plugin]. Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the link:{baseurl}/configure/editor-appearance/#resize[resize] configuration option.
+The editable area can also automatically resize itself as the user enters content into the iframe with the xref:plugins/opensource/autoresize.adoc[Autoresize plugin]. Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the xref:configure/editor-appearance.adoc#resize[resize] configuration option.
 
 [[customizingtheeditableareawithcontent_css]]
 == Customizing the editable area with content_css
 
-Use the link:{baseurl}/configure/content-appearance/#content_css[`content_css`] customization option to ensure that {productname}'s editable area has the same styling as the surrounding content.
+Use the xref:configure/content-appearance.adoc#content_css[`content_css`] customization option to ensure that {productname}'s editable area has the same styling as the surrounding content.
 
 include::partial$misc/shipped-content-css.adoc[]
 
@@ -98,16 +98,17 @@ The following example includes the file `mycontent.css` in all of the pages to c
 
 === Example using an absolute path
 
-```js
+[source, js]
+----
 // File: http://domain.mine/mysite/index.html
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css : '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
 });
-```
+----
 
-See the link:{baseurl}/configure/content-appearance/#content_css[content_css] customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
+See the xref:configure/content-appearance.adoc#content_css[content_css] customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
 == Hiding the status bar
 
@@ -142,7 +143,7 @@ tinymce.init({
 });
 ----
 
-All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See link:{baseurl}/quick-start/[this page] for a basic HTML code block.)
+All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See xref:quick-start.adoc[this page] for a basic HTML code block.)
 
 === Example: Adding the code toolbar button
 

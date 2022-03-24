@@ -92,7 +92,8 @@ const dialogConfig = {
     console.log(details.oldTabName);
 
  // switch back to the old tab
- dialogApi.showTab(details.oldTabName);   } }; ```
+ dialogApi.showTab(details.oldTabName);   } }; 
+```
 
 == Panel components
 

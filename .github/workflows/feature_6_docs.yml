@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '.github/workflows/**'
-      - '*'
+      - '**'
     branches:
       - 'feature/6**'
       - 'hotfix/6**'

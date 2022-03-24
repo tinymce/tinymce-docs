@@ -115,7 +115,8 @@ The following events are provided by the {productname} editor.
 
 | AfterScrollIntoView
 | `{ elm: HTMLElement, alignToTop: boolean }`
-| Fired when an element has been scrolled into view. include::partial$misc/requires_5_2v.adoc[]
+| Fired when an element has been scrolled into view.
+include::partial$misc/requires_5_2v.adoc[]
 
 | ObjectResized
 | `{ target: HTMLElement, width: number, height: number, origin: string }`
@@ -151,11 +152,13 @@ The following events are provided by the {productname} editor.
 
 | FormatApply
 | `{ format: string; vars?: FormatVars; node?: Node \| RangeLikeObject }`
-| Fired after a format is applied. include::partial$misc/requires_5_9v.adoc[]
+| Fired after a format is applied.
+include::partial$misc/requires_5_9v.adoc[]
 
 | FormatRemove
 | `{ format: string; vars?: FormatVars; node?: Node \| RangeLikeObject }`
-| Fired after a format is removed. include::partial$misc/requires_5_9v.adoc[]
+| Fired after a format is removed.
+include::partial$misc/requires_5_9v.adoc[]
 
 | ShowCaret
 | `{ target: Node, direction: number, before: boolean }`
@@ -300,19 +303,23 @@ include::partial$misc/requires_5_7v.adoc[]
 
 | SkinLoadError
 | `{ message: string }`
-| Fired when the editor skin fails to load. include::partial$misc/requires_5_2v.adoc[]
+| Fired when the editor skin fails to load.
+include::partial$misc/requires_5_2v.adoc[]
 
 | PluginLoadError
 | `{ message: string }`
-| Fired when an editor plugin fails to load. include::partial$misc/requires_5_2v.adoc[]
+| Fired when an editor plugin fails to load.
+include::partial$misc/requires_5_2v.adoc[]
 
 | IconsLoadError
 | `{ message: string }`
-| Fired when the editor icon pack fails to load. include::partial$misc/requires_5_2v.adoc[]
+| Fired when the editor icon pack fails to load.
+include::partial$misc/requires_5_2v.adoc[]
 
 | LanguageLoadError
 | `{ message: string }`
-| Fired when the editor language pack fails to load. include::partial$misc/requires_5_2v.adoc[]
+| Fired when the editor language pack fails to load.
+include::partial$misc/requires_5_2v.adoc[]
 
 | BeforeRenderUI
 | N/A
@@ -350,45 +357,49 @@ include::partial$misc/requires_5_1v.adoc[]
 
 | BeforeOpenNotification
 | `{ notification: NotificationSpec }`
-| Fired before a notification is displayed. For information on the Notifications Specification (`NotificationSpec`), see: link:{baseurl}/advanced/creating-custom-notifications/[Create custom notifications]. include::partial$misc/requires_5_6v.adoc[]
+| Fired before a notification is displayed. For information on the Notifications Specification (`NotificationSpec`), see: xref:advanced/creating-custom-notifications.adoc[Create custom notifications].
+include::partial$misc/requires_5_6v.adoc[]
 
 | OpenNotification
 | `{ notification: NotificationApi }`
-| Fired after a notification is displayed. For information on the Notifications API (`NotificationApi`), see: link:{baseurl}/advanced/creating-custom-notifications/[Create custom notifications]. include::partial$misc/requires_5_6v.adoc[]
+| Fired after a notification is displayed. For information on the Notifications API (`NotificationApi`), see: xref:advanced/creating-custom-notifications.adoc[Create custom notifications].
+include::partial$misc/requires_5_6v.adoc[]
 |===
 
 == Plugin events
 
 The following plugins provide events.
 
-* <<advancedtablesevents,Advanced Tables events>>
-* <<autosaveevents,Autosave events>>
-* <<charactermapevents,Character Map events>>
-* <<commentsevents,Comments events>>
-* <<exportevents,Export events>>
-* <<formatpainterevents,Format Painter events>>
-* <<fullscreenevents,Fullscreen events>>
-* <<importcssevents,Import CSS events>>
-* <<linkcheckerevents,Link checker events>>
-* <<listsevents,Lists events>>
-* <<mediaembedevents,Media Embed events>>
-* <<pasteevents,Paste events>>
-* <<permanentpenevents,Permanent Pen events>>
-* <<powerpasteevents,PowerPaste events>>
-* <<spellcheckerevents,Spell Checker events>>
-* <<spellcheckerproevents,Spell Checker Pro events>>
-* <<tableevents,Table events>>
-* <<visualblocksevents,Visual Blocks events>>
-* <<visualcharactersevents,Visual Characters events>>
-* <<wordcountevents,Word Count events>>
+* xref:advancedtablesevents[Advanced Tables events]
+* xref:autosaveevents[Autosave events]
+* xref:charactermapevents[Character Map events]
+* xref:commentsevents[Comments events]
+* xref:exportevents[Export events]
+* xref:formatpainterevents[Format Painter events]
+* xref:fullscreenevents[Fullscreen events]
+* xref:importcssevents[Import CSS events]
+* xref:linkcheckerevents[Link checker events]
+* xref:listsevents[Lists events]
+* xref:mediaembedevents[Media Embed events]
+* xref:pasteevents[Paste events]
+* xref:permanentpenevents[Permanent Pen events]
+* xref:powerpasteevents[PowerPaste events]
+* xref:spellcheckerevents[Spell Checker events]
+* xref:spellcheckerproevents[Spell Checker Pro events]
+* xref:tableevents[Table events]
+* xref:visualblocksevents[Visual Blocks events]
+* xref:visualcharactersevents[Visual Characters events]
+* xref:wordcountevents[Word Count events]
 
+[[advancedtablesevents]]
 === Advanced Tables events
 
 For events applicable to the Advanced Tables plugin, see: <<tableevents,Table events>>.
 
+[[autosaveevents]]
 === Autosave events
 
-The following events are provided by the link:{baseurl}/plugins/opensource/autosave/[Autosave plugin].
+The following events are provided by the xref:plugins/opensource/autosave.adoc[Autosave plugin].
 
 |===
 | Name | Data | Description
@@ -406,9 +417,10 @@ The following events are provided by the link:{baseurl}/plugins/opensource/autos
 | Fired when a draft has been removed from memory.
 |===
 
+[[charactermapevents]]
 === Character Map events
 
-The following event is provided by the link:{baseurl}/plugins/opensource/charmap/[Character Map plugin].
+The following event is provided by the xref:plugins/opensource/charmap.adoc[Character Map plugin].
 
 |===
 | Name | Data | Description
@@ -418,9 +430,10 @@ The following event is provided by the link:{baseurl}/plugins/opensource/charmap
 | Fired before a special character is inserted into the editor.
 |===
 
+[[commentsevents]]
 === Comments events
 
-The following event is provided by the link:{baseurl}/plugins/premium/comments/[Comments plugin].
+The following event is provided by the xref:plugins/premium/comments/index.adoc[Comments plugin].
 
 |===
 | Name | Data | Description
@@ -430,13 +443,15 @@ The following event is provided by the link:{baseurl}/plugins/premium/comments/[
 | Fired when the comments sidebar is opened or closed.
 |===
 
+[[exportevents]]
 === Export events
 
 include::partial$events/export-events.adoc[]
 
+[[formatpainterevents]]
 === Format Painter events
 
-The following event is provided by the link:{baseurl}/plugins/premium/formatpainter/[Format Painter plugin].
+The following event is provided by the xref:plugins/premium/formatpainter.adoc[Format Painter plugin].
 
 |===
 | Name | Data | Description
@@ -446,9 +461,10 @@ The following event is provided by the link:{baseurl}/plugins/premium/formatpain
 | Fired when the format painter state changes.
 |===
 
+[[fullscreenevents]]
 === Fullscreen events
 
-The following event is provided by the link:{baseurl}/plugins/opensource/fullscreen/[Fullscreen plugin].
+The following event is provided by the xref:plugins/opensource/fullscreen.adoc[Fullscreen plugin].
 
 |===
 | Name | Data | Description
@@ -458,9 +474,10 @@ The following event is provided by the link:{baseurl}/plugins/opensource/fullscr
 | Fired when the fullscreen state changes.
 |===
 
+[[importcssevents]]
 === Import CSS events
 
-The following event is provided by the link:{baseurl}/plugins/opensource/importcss/[Import CSS plugin].
+The following event is provided by the xref:plugins/opensource/importcss.adoc[Import CSS plugin].
 
 |===
 | Name | Data | Description
@@ -470,9 +487,10 @@ The following event is provided by the link:{baseurl}/plugins/opensource/importc
 | Fired during editor initialization when the style modifications are parsed from the CSS.
 |===
 
+[[linkcheckerevents]]
 === Link checker events
 
-The following event is provided by the link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
+The following event is provided by the xref:plugins/premium/linkchecker.adoc[Link Checker plugin].
 
 |===
 | Name | Data | Description
@@ -482,9 +500,10 @@ The following event is provided by the link:{baseurl}/plugins/premium/linkchecke
 | Fired when a link checker error occurs, such as the Link Checker service can't be reached.
 |===
 
+[[listsevents]]
 === Lists events
 
-The following event is provided by the link:{baseurl}/plugins/opensource/lists/[Lists plugin].
+The following event is provided by the xref:plugins/opensource/lists.adoc[Lists plugin].
 
 |===
 | Name | Data | Description
@@ -494,9 +513,10 @@ The following event is provided by the link:{baseurl}/plugins/opensource/lists/[
 | Fired when a list is toggled on/off.
 |===
 
+[[mediaembedevents]]
 === Media Embed events
 
-The following event is provided by the link:{baseurl}/plugins/premium/mediaembed/[Media Embed plugin].
+The following event is provided by the xref:plugins/premium/mediaembed.adoc[Media Embed plugin].
 
 |===
 | Name | Data | Description
@@ -506,9 +526,10 @@ The following event is provided by the link:{baseurl}/plugins/premium/mediaembed
 | Fired when a media embed error occurs, such as the Media Embed service can't be reached.
 |===
 
+[[pasteevents]]
 === Paste events
 
-The following events are provided by the link:{baseurl}/plugins/opensource/paste/[Paste plugin].
+The following events are provided by the xref:plugins/opensource/paste.adoc[Paste plugin].
 
 |===
 | Name | Data | Description
@@ -526,9 +547,10 @@ The following events are provided by the link:{baseurl}/plugins/opensource/paste
 | Fired when the plain text paste mode state changes.
 |===
 
+[[permanentpenevents]]
 === Permanent Pen events
 
-The following events are provided by the link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen plugin].
+The following events are provided by the xref:plugins/premium/permanentpen.adoc[Permanent Pen plugin].
 
 |===
 | Name | Data | Description
@@ -542,9 +564,10 @@ The following events are provided by the link:{baseurl}/plugins/premium/permanen
 | Fired when the permanent pen properties are changed.
 |===
 
+[[powerpasteevents]]
 === PowerPaste events
 
-The following events are provided by the link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+The following events are provided by the xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
 |===
 | Name | Data | Description
@@ -562,9 +585,10 @@ The following events are provided by the link:{baseurl}/plugins/premium/powerpas
 | Fired when the plain text paste mode state changes.
 |===
 
+[[spellcheckerevents]]
 === Spell Checker events
 
-The following events are provided by the link:{baseurl}/plugins/opensource/spellchecker/[Spell Checker plugin].
+The following events are provided by the xref:plugins/opensource/spellchecker.adoc[Spell Checker plugin].
 
 include::partial$DEPRECATED/spellchecker.adoc[]
 
@@ -580,17 +604,20 @@ include::partial$DEPRECATED/spellchecker.adoc[]
 | Fired when spellchecking is disabled.
 |===
 
+[[spellcheckerproevents]]
 === Spell Checker Pro events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
 
+[[tableevents]]
 === Table events
 
 include::partial$events/table-events.adoc[]
 
+[[visualblocksevents]]
 === Visual Blocks events
 
-The following event is provided by the link:{baseurl}/plugins/opensource/visualblocks/[Visual Blocks plugin].
+The following event is provided by the xref:plugins/opensource/visualblocks.adoc[Visual Blocks plugin].
 
 |===
 | Name | Data | Description
@@ -600,9 +627,10 @@ The following event is provided by the link:{baseurl}/plugins/opensource/visualb
 | Fired when the Visual Blocks state changes.
 |===
 
+[[visualcharactersevents]]
 === Visual Characters events
 
-The following event is provided by the link:{baseurl}/plugins/opensource/visualchars/[Visual Characters plugin].
+The following event is provided by the xref:plugins/opensource/visualchars.adoc[Visual Characters plugin].
 
 |===
 | Name | Data | Description
@@ -612,9 +640,10 @@ The following event is provided by the link:{baseurl}/plugins/opensource/visualc
 | Fired when the Visual Characters state changes.
 |===
 
+[[wordcountevents]]
 === Word Count events
 
-The following event is provided by the link:{baseurl}/plugins/opensource/wordcount/[Word Count plugin].
+The following event is provided by the xref:plugins/opensource/wordcount.adoc[Word Count plugin].
 
 |===
 | Name | Data | Description
@@ -644,6 +673,7 @@ The following events are used for editor management. These events are handled us
 | Fired before the browser window is closed (same as native https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event[`beforeunload` event]).
 |===
 
+[[exampleshandlingeditormanagerevents]]
 === Examples: Handling Editor Manager events
 
 *AddEditor*

@@ -20,18 +20,17 @@ A {productname} icon pack is a `.js` file containing strings of https://develope
 
 An icon pack only requires the custom icons to be included; the default {productname} icons are used as a fallback for icons missing from the custom icon pack.
 
-____
-Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{plugindirectory}skins-and-icon-packs[{prem_skins_icons}].
-____
+NOTE: Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{plugindirectory}skins-and-icon-packs[{prem_skins_icons}].
 
 == Creating a TinyMCE icon pack
 
 To create a custom icon pack:
 
-* <<downloadandsetuptheiconpacktemplate,Download and setup the icon pack template>>
-* <<addthesvgfiles,Add the SVG files>>
-* <<buildtheiconpack,Build the icon pack>>
+* xref:downloadandsetuptheiconpacktemplate[Download and setup the icon pack template]
+* xref:addthesvgfiles[Add the SVG files]
+* xref:buildtheiconpack[Build the icon pack]
 
+[[downloadandsetuptheiconpacktemplate]]
 === Download and setup the icon pack template
 
 To use the {productname} icon pack template project:
@@ -43,7 +42,7 @@ To use the {productname} icon pack template project:
 [source, sh]
 ----
 $ git clone https://github.com/tinymce/oxide-icon-pack-template.git
- +`
+----
 . Open a terminal or command prompt, navigate to the `oxide-icon-pack-template` directory.
 . Install the project dependencies by executing:
 +
@@ -58,8 +57,9 @@ $ npm install
  ** Hyphens ( `-` ).
  ** Underscores ( `_` ).
 
-The icon pack name will be used with the link:{baseurl}/configure/editor-appearance/#icons[icons] option to apply the icons in {productname}.
+The icon pack name will be used with the xref:configure/editor-appearance.adoc#icons[icons] option to apply the icons in {productname}.
 
+[[addthesvgfiles]]
 === Add the SVG files
 
 Each SVG files placed in `/src/svg` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
@@ -83,12 +83,13 @@ tinymce.init({
 });
 ----
 
-For a list of the icon identifiers, see: link:{baseurl}/advanced/editor-icon-identifiers/[Available icons].
+For a list of the icon identifiers, see: xref:advanced/editor-icon-identifiers.adoc[Available icons].
 
-{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{baseurl}/advanced/creating-a-skin/[custom skin] is required.
+{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a xref:advanced/creating-a-skin.adoc[custom skin] is required.
 
 NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 
+[[buildtheiconpack]]
 === Build the icon pack
 
 To build the icon pack using Gulp:
@@ -100,7 +101,7 @@ To build the icon pack using Gulp:
 ----
 $ npx gulp
 ----
- A `dist/` directory containing the icon pack will be created.
+A `dist/` directory containing the icon pack will be created.
 
 . Using a web browser, open `dist/html/icons.html` to preview the icons.
 
@@ -124,14 +125,16 @@ All user defined options, including SVGO options, will merge with the default op
 
 An icon pack can be served either:
 
-* <<deploytheiconpackwithtinymce,With {productname}>>
-* <<deploytheiconpackandtinymceseparately,Separate from {productname}>>
+* xref:deploytheiconpackwithtinymce[With {productname}]
+* xref:deploytheiconpackandtinymceseparately[Separate from {productname}]
 
+[[deploytheiconpackwithtinymce]]
 === Deploy the icon pack with TinyMCE
 
 :customIconPack: true
 include::partial$configuration/icons.adoc[]
 
+[[deploytheiconpackandtinymceseparately]]
 === Deploy the icon pack and TinyMCE separately
 
 include::partial$configuration/icons_url.adoc[]

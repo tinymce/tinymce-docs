@@ -1,3 +1,4 @@
+[[availablecontextmenusections]]
 == Available context menu sections
 
 The following table shows all context menu sections, including sections provided by plugins.
@@ -15,36 +16,36 @@ The identifier below will add a context menu _section_ containing one or more it
 | identifier | Core/Plugin | Description
 
 | image
-| link:{baseurl}/plugins/opensource/image/[Image]
+| xref:plugins/opensource/image.adoc[Image]
 | Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
 
 | imagetools
-| link:{baseurl}/plugins/opensource/imagetools/[Image Tools]
+| xref:plugins/opensource/imagetools.adoc[Image Tools]
 | Adds the _Edit image_ item for opening the *Edit Image* dialog.
 
 | link
-| link:{baseurl}/plugins/opensource/link/[Link]
+| xref:plugins/opensource/link.adoc[Link]
 | Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
 
 | linkchecker
-| link:{baseurl}/plugins/premium/linkchecker/[Link Checker]
+| xref:plugins/premium/linkchecker.adoc[Link Checker]
 | Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
 
 | lists
-| link:{baseurl}/plugins/opensource/lists/[Lists]
+| xref:plugins/opensource/lists.adoc[Lists]
 | Adds the _List properties..._ item for opening the *List Properties* dialog.
 
 | configurepermanentpen
-| link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen]
+| xref:plugins/premium/permanentpen.adoc[Permanent Pen]
 | Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
 
 | spellchecker
-| link:{baseurl}/plugins/opensource/spellchecker/[Spell Checker]
+| xref:plugins/opensource/spellchecker.adoc[Spell Checker]
 | Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
 
 | table
-| link:{baseurl}/plugins/opensource/table/[Table]
+| xref:plugins/opensource/table.adoc[Table]
 | Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled).
 |===
 
-For a list of available menu items that can be added to the context menu, see: link:{baseurl}/advanced/available-menu-items/[Menu Items Available for {productname}].
+For a list of available menu items that can be added to the context menu, see: xref:advanced/available-menu-items.adoc[Menu Items Available for {productname}].

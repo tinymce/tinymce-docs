@@ -10,7 +10,10 @@ include::partial$misc/requires_5_9v.adoc[]
 
 This procedure will assist with setting up {productname} with real-time collaboration.
 
-IMPORTANT: include::partial$misc/secure-context.adoc[]
+[IMPORTANT]
+====
+include::partial$misc/secure-context.adoc[]
+====
 
 The steps required for setting up Real-time Collaboration for {productname} are:
 
@@ -32,14 +35,15 @@ include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
 {productname} Real-time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption.
 
-For information on setting up an Encryption Provider endpoint, see: link:{baseurl}/rtc/encryption/[Real-time Collaboration (RTC) Encryption Setup].
+For information on setting up an Encryption Provider endpoint, see: xref:rtc/encryption.adoc[Real-time Collaboration (RTC) Encryption Setup].
 
 == 4. Set up a JSON Web Token (JWT) Provider endpoint
 
 Real-time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
-For information on setting up a JSON Web Token Provider endpoint, see: link:{baseurl}/rtc/jwt-authentication/[Real-time Collaboration (RTC) JWT Authentication Setup].
+For information on setting up a JSON Web Token Provider endpoint, see: xref:rtc/jwt-authentication.adoc[Real-time Collaboration (RTC) JWT Authentication Setup].
 
+[[configuretherequiredtinymcertcoptions]]
 == 5. Configure the required TinyMCE RTC options
 
 === Basic static Real-time Collaboration (RTC) setup
@@ -88,4 +92,4 @@ tinymce.init({
 });
 ----
 
-For details on the available configuration options, see: link:{baseurl}/rtc/configuration/[Configuration Options].
+For details on the available configuration options, see: xref:rtc/configuration/index.adoc[Configuration Options].

@@ -1,18 +1,17 @@
 = Basic setup
 
-This introduction to \{\{site.productname}} details the options used in traditional form-based layouts, useful information for creating streamlined user experiences, and examples of using \{\{site.productname}} as an inline editor.
+This introduction to {productname} details the options used in traditional form-based layouts, useful information for creating streamlined user experiences, and examples of using {productname} as an inline editor.
 
-The four most common configuration options for \{\{site.productname}} are:
+The four most common configuration options for {productname} are:
 
-[arabic]
-. link:#selectorconfiguration[_(Required)_ The Selector configuration]
-. link:#pluginconfiguration[The Plugin configuration]
-. link:#toolbarconfiguration[The Toolbar configuration]
-. link:#menuandmenubarconfiguration[The Menu and Menu Bar configuration]
+. xref:#selectorconfiguration[_(Required)_ The Selector configuration]
+. xref:#pluginconfiguration[The Plugin configuration]
+. xref:#toolbarconfiguration[The Toolbar configuration]
+. xref:#menuandmenubarconfiguration[The Menu and Menu Bar configuration]
 
 == A note about code snippet examples
 
-Code snippets are provided as example implementations throughout the \{\{ site.productname }} documentation.
+Code snippets are provided as example implementations throughout the {productname} documentation.
 
 Example code snippet:
 
@@ -30,13 +29,14 @@ Snippets include the `+selector+` option, which is described below. Change the v
 
 Insert the snippet into a HTML document between the `+<script>+` tags and update the selector as described below.
 
+[[selectorconfiguration]]
 == Selector configuration
 
-Selector configuration is required for \{\{site.productname}} integration. Selector configuration uses https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS `+selector+` syntax] to determine which elements on the page are editable through \{\{site.productname}}.
+Selector configuration is required for {productname} integration. Selector configuration uses https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS `+selector+` syntax] to determine which elements on the page are editable through {productname}.
 
-\{\{site.productname}} visually replaces the selected element with an `+iframe+` (the editable content area) and the UI elements (such as toolbar, menu bar, and status bar).
+{productname} visually replaces the selected element with an `+iframe+` (the editable content area) and the UI elements (such as toolbar, menu bar, and status bar).
 
-The following example replaces all `+textarea+` elements on the page with \{\{site.productname}} instances:
+The following example replaces all `+textarea+` elements on the page with {productname} instances:
 
 [source,js]
 ----
@@ -45,7 +45,7 @@ tinymce.init({
 });
 ----
 
-\{\{site.productname}} can also match an `+id+` attribute.
+{productname} can also match an `+id+` attribute.
 
 The following example replaces a `+textarea+` element with the `+id+` `+"default"+` on the page:
 
@@ -56,9 +56,11 @@ tinymce.init({
 });
 ----
 
-Providing a \{\{site.productname}} editor with the default configuration, such as: \liveDemo::default[]
+Providing a {productname} editor with the default configuration, such as: 
 
-The selector can target most block elements when the editor is used in link:../use-tinymce-inline/[inline editing mode]. Inline mode edits the content in place, instead of replacing the element with an `+iframe+`.
+liveDemo::default[]
+
+The selector can target most block elements when the editor is used in xref:general-configuration-guide/use-tinymce-inline.adoc[inline editing mode]. Inline mode edits the content in place, instead of replacing the element with an `+iframe+`.
 
 The following example uses the `+selector+` in inline editing mode on a `+div+` element with `+id+` `+'editable'+`:
 
@@ -70,11 +72,12 @@ tinymce.init({
 });
 ----
 
-For information on the differences between the classic and inline editing modes, see: link:../use-tinymce-inline/[Setup inline editing mode].
+For information on the differences between the classic and inline editing modes, see: xref:general-configuration-guide/use-tinymce-inline.adoc[Setup inline editing mode].
 
+[[pluginconfiguration]]
 == Plugin configuration
 
-The functionality of \{\{site.productname}} is extended by using plugins, which are enabled using the `+plugins+` option.
+The functionality of {productname} is extended by using plugins, which are enabled using the `+plugins+` option.
 
 The following example enables the lists (`+lists+`), Advanced Lists (`+advlist+`), Link (`+link+`), and Image (`+image+`) plugins.
 
@@ -86,15 +89,16 @@ tinymce.init({
 });
 ----
 
-For a full list of plugins and their options, see: [Add plugins to TinyMCE](\{\{ site.baseurl }}/plugins/).
+For a full list of plugins and their options, see: xref:plugins/index.adoc[Add plugins to TinyMCE].
 
+[[toolbarconfiguration]]
 == Toolbar configuration
 
-\{\{site.productname}} provides a default set of toolbar controls, which can be overridden using the `+toolbar+` option.
+{productname} provides a default set of toolbar controls, which can be overridden using the `+toolbar+` option.
 
 === Default toolbar controls
 
-The \{\{site.productname}} default toolbar contains the following buttons:
+The {productname} default toolbar contains the following buttons:
 
 [source,js]
 ----
@@ -106,13 +110,14 @@ tinymce.init({
 
 The `+toolbar+` option defines the presence, order, and grouping of toolbar buttons.
 
-Use a space-separated list to specify the toolbar buttons for \{\{site.productname}}. Create toolbar groups by using the "`+|+`" pipe character between button names.
+Use a space-separated list to specify the toolbar buttons for {productname}. Create toolbar groups by using the "`+|+`" pipe character between button names.
 
 ==== Additional information
 
-* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: link:{baseurl}/configure/editor-appearance/#toolbar[User interface options - toolbar].
-* For a list of all available toolbar items, see: link:{baseurl}/advanced/available-toolbar-buttons/[Toolbar Buttons Available for \{\{site.productname}}].
+* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: xref:configure/editor-appearance.adoc#toolbar[User interface options - toolbar].
+* For a list of all available toolbar items, see: xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
+[[menuandmenubarconfiguration]]
 == Menu and Menu bar configuration
 
 There are two menu options: `+menubar+` and `+menu+`. `+menubar+` is used to define the presence and order of _menus_, such as *File*, *Edit*, and *View*. `+menu+` is used to define the presence and order of _menu items_, such as *New Document*, *Select all*, and *Source code*.
@@ -129,7 +134,7 @@ tinymce.init({
 });
 ----
 
-\liveDemo::menubar[]
+liveDemo::menubar[]
 
 To create an `+Edit+` menu that only contains the _Undo_, _Redo_, and _Select all_ items.
 
@@ -143,7 +148,7 @@ tinymce.init({
 });
 ----
 
-\liveDemo::menu1[]
+liveDemo::menu1[]
 
 To create a menu titled "Happy", provide an identifier for the menu and an object with the `+title+` and `+items+` for the menu.
 
@@ -161,27 +166,27 @@ tinymce.init({
 });
 ----
 
-\liveDemo::menu2[]
+liveDemo::menu2[]
 
 === Default menu controls
 
 The default menus are as follows:
 
-\include::partial$configuration/defaultmenuitems.adoc[]
+include::partial$configuration/defaultmenuitems.adoc[]
 
 NOTE: Some menu items require a plugin, such as the `+table+` menu and items requires the `table` plugin.
 
 ==== Additional information
 
-* For information on the `+menu+` setting, see: link:{baseurl}/configure/editor-appearance/#menu[User interface options - menu].
-* For information on the `+menubar+` setting, see: link:{baseurl}/configure/editor-appearance/#menubar[User interface options - menubar].
-* For a list of all available menu items, see: link:{baseurl}/advanced/available-menu-items/[Menu Items Available for \{\{site.productname}}].
+* For information on the `+menu+` setting, see: xref:configure/editor-appearance.adoc#menu[User interface options - menu].
+* For information on the `+menubar+` setting, see: xref:configure/editor-appearance.adoc#menubar[User interface options - menubar].
+* For a list of all available menu items, see: xref:advanced/available-menu-items.adoc[Menu Items Available for {productname}].
 
 == Basic configuration example
 
-The following example is a basic \{\{site.productname}} configuration.
+The following example is a basic {productname} configuration.
 
-[source,html]
+[source,html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -273,11 +278,11 @@ Sets the styling of the editable area using `+content_css+`.
 content_css: 'css/content.css',
 ----
 
-\liveDemo::basic-conf[]
+liveDemo::basic-conf[]
 
 === Additional information
 
-* For a full list of configuration options, see: the [Configuration options reference](\{\{ site.baseurl }}/configure/).
-* For a full list of Plugins and their options, see: [Add plugins to TinyMCE](\{\{ site.baseurl }}/plugins/).
-* For information on the UI elements, see: [User interface components](\{\{ site.baseurl }}/ui-components/).
-* For information on the CSS required to render some \{\{site.productname}} elements outside of the editor, see: link:{baseurl}/general-configuration-guide/boilerplate-content-css/[Boilerplate content CSS].
+* For a full list of configuration options, see: the xref:configure/index.adoc[Configuration options reference].
+* For a full list of Plugins and their options, see: xref:plugins/index.adoc[Add plugins to TinyMCE].
+* For information on the UI elements, see: xref:ui-components/index.adoc[User interface components].
+* For information on the CSS required to render some {productname} elements outside of the editor, see: xref:general-configuration-guide/boilerplate-content-css.adoc[Boilerplate content CSS].

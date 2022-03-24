@@ -3,7 +3,6 @@
 const getRandomInt = (max) =>
   Math.floor(Math.random() * max);
 
-
 /* Used for selecting two users at random */
 const getTwoRandomInt = (max) => {
   /* Generates two random numbers (with removal). */
@@ -28,7 +27,7 @@ const randomString = () =>
  * optional `rtc_initial_content_provider` option. This could pulled from
  * a database when using the editor in production.
  */
-const initialEditorContent = '{{logofordemoshtml}}<h2 style="text-align: center;">Welcome to the TinyMCE Real-Time Collaboration demo!</h2><p>This editor is collaborating with the other editor on the page. Try editing the content by adding images, lists, or any other currently supported content, it should appear in the other editor too!</p><p>All network requests made by this demo, fake or real, are logged in the browser console using <a href="https://netflix.github.io/pollyjs" target="_blank" rel="noopener">Polly.js</a> (the browser console is typically accessed using the F12 key).</p><h2>Got questions or need help?</h2><ul><li>Our <a class="mceNonEditable" href="../../">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li></ul><h2>Found a bug?</h2><p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p><h2>Finally,</h2><p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br />All the best from the TinyMCE team.</p>';
+const initialEditorContent = '{{logofordemoshtml}}<h2 style="text-align: center;">Welcome to the TinyMCE Real-Time Collaboration demo!</h2><p>This editor is collaborating with the other editor on the page. Try editing the content by adding images, lists, or any other currently supported content, it should appear in the other editor too!</p><p>All network requests made by this demo, fake or real, are logged in the browser console using <a href="https://netflix.github.io/pollyjs" target="_blank" rel="noopener">Polly.js</a> (the browser console is typically accessed using the F12 key).</p><h2>Got questions or need help?</h2><ul><li>Our <a class="mceNonEditable" href="{{site-url}}/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li></ul><h2>Found a bug?</h2><p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p><h2>Finally,</h2><p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>';
 
 /*
  * The following JWTs have been pre-generated for demonstration purposes.
@@ -98,17 +97,15 @@ document.getElementById('fakedemouser2').innerText = fakeUsers.find(
 const connectedUsers = {};
 
 /* Script to import polly.js for simulating servers and logging requests to the console */
-tinymce.ScriptLoader.loadScripts(
-  [
-    '//unpkg.com/@pollyjs/core@5.1.1',
-    '//unpkg.com/@pollyjs/adapter-fetch@5.1.1',
-    '//unpkg.com/@pollyjs/persister-local-storage@5.1.1',
-  ],
-  () => {
+tinymce.ScriptLoader.loadScripts([
+  '//unpkg.com/@pollyjs/core@5.1.1',
+  '//unpkg.com/@pollyjs/adapter-fetch@5.1.1',
+  '//unpkg.com/@pollyjs/persister-local-storage@5.1.1',
+]).then(() => {
 
-    /**********************************
-     * Mock web server implementation *
-     **********************************/
+  /**********************************
+   * Mock web server implementation *
+   **********************************/
 
     const { Polly } = window['@pollyjs/core'];
     const FetchAdapter = window['@pollyjs/adapter-fetch'];
@@ -180,8 +177,8 @@ tinymce.ScriptLoader.loadScripts(
       });
     }); /* server.host */
 
-    /* Connect using the `connectTo` API */
-    polly.connectTo('fetch');
+  /* Connect using the `connectTo` API */
+  polly.connectTo('fetch');
 
     /*
      * TinyMCE init function. Wrapped in a function to allow the same
@@ -289,15 +286,16 @@ tinymce.ScriptLoader.loadScripts(
         },
       });
     };
+
     /* Create the two separate editors */
     createTinyMCEInstance(
-      '[rtc-editor-parent]',
+      '[data-rtc-editor-parent]',
       'textarea#rtc-editor-1',
       currentUser1,
       'otherfakeuser1'
     );
     createTinyMCEInstance(
-      '[rtc-editor-parent]',
+      '[data-rtc-editor-parent]',
       'textarea#rtc-editor-2',
       currentUser2,
       'otherfakeuser2'

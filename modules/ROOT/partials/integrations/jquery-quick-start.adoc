@@ -1,7 +1,7 @@
 The https://github.com/tinymce/tinymce-jquery[Official {productname} jQuery component] integrates {productname} into jQuery projects.
 
 
-NOTE: We are pleased to provide integrations/code guidance to help you build great products with {productname}. If you have queries about this integration, post your question on Stack Overflow using the link:{communitysupporturl}[`{prodnamecode}` tag].
+NOTE: {companyname} is pleased to provide integrations/code guidance to help you build great products with {productname}. If you have queries about this integration, post your question on Stack Overflow using the link:{communitysupporturl}[`{prodnamecode}` tag].
 
 == Procedure
 This procedure creates a basic jQuery integration containing a {productname} editor based on our xref:basic-example.adoc[Basic example].
@@ -143,11 +143,15 @@ ifeval::["{productSource}" == "cloud"]
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"></script>
-    <script src="{cdnurl}"
-      referrerpolicy="origin"></script>
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="{cdnurl}"
+      referrerpolicy="origin"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
   </head>
   <body>

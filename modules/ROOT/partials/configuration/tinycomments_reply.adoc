@@ -31,7 +31,7 @@ function reply_comment(ref, done, fail) {
   let content = ref.content;
   let createdAt = ref.createdAt;
 
-fetch('https://api.example/conversations/' + conversationUid, {
+  fetch('https://api.example/conversations/' + conversationUid, {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {
@@ -39,19 +39,19 @@ fetch('https://api.example/conversations/' + conversationUid, {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Failed to reply to comment');
-      }
-      return response.json();
-    })
-    .then((ref2) => {
-      let commentUid = ref2.commentUid;
-      done({ commentUid: commentUid });
-    })
-    .catch((e) => {
-      fail(e);
-    });
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Failed to reply to comment');
+    }
+    return response.json();
+  })
+  .then((ref2) => {
+    let commentUid = ref2.commentUid;
+    done({ commentUid: commentUid });
+  })
+  .catch((e) => {
+    fail(e);
+  });
 }
 
 tinymce.init({

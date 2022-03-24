@@ -32,11 +32,11 @@ Gets converted into this valid list:
 </ol>
 ----
 
-Type : `+Boolean+`
+Type: `+Boolean+`
 
-Default Value : `+false+`
+Default Value: `+false+`
 
-Possible Values : `+true+`, `+false+`
+Possible Values: `+true+`, `+false+`
 
 === Example: Using `+fix_list_elements+`
 
@@ -44,6 +44,6 @@ Possible Values : `+true+`, `+false+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  fix_list_elements : true
+  fix_list_elements: true
 });
 ----

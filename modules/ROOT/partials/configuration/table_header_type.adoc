@@ -81,7 +81,6 @@ Possible Values: `+'section+`', `+'cells'+`, `+'sectionCells'+`, `+'auto'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_header_type: 'sectionCells'
 });

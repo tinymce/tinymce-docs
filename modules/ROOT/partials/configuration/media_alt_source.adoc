@@ -16,7 +16,6 @@ Possible Values: `+true+`, `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'media',
-  menubar: 'insert',
   toolbar: 'media',
   media_alt_source: false
 });

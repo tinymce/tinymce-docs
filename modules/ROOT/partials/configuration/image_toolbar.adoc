@@ -14,7 +14,7 @@ Default Value : `+'alignleft aligncenter alignright'+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'quickbars image editimage',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions'
 });
@@ -27,7 +27,7 @@ To disable the Quick Image toolbar, set `+quickbars_image_toolbar+` to `+false+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'quickbars',
   quickbars_image_toolbar: false
 });

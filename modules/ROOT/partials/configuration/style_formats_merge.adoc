@@ -14,8 +14,8 @@ Default : `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   style_formats: [
-    {title: 'Bold text', inline: 'b'},
-    {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}}
+    { title: 'Bold text', inline: 'b' },
+    { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } }
   ],
   style_formats_merge: true
 });

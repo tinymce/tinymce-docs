@@ -16,6 +16,6 @@ Possible Values : `+'xhtml'+`, `+'html'+`
 // Output elements in XHTML style
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  element_format : 'xhtml'
+  element_format: 'xhtml'
 });
 ----

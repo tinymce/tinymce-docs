@@ -17,6 +17,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons',
+  emoticons_database: 'emojiimages',
   emoticons_images_url: 'http://my.server/images/emoticons/'
 });
 ----

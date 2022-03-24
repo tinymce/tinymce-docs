@@ -28,8 +28,8 @@ liveDemo::quickbars[ ]
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
-  plugins: [ 'quickbars' ]
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'quickbars'
 });
 ----
 
@@ -42,8 +42,8 @@ The following examples show how to disable specific quick toolbars for editors w
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
-  plugins: [ 'quickbars' ],
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'quickbars',
   quickbars_insert_toolbar: false
 });
 ----
@@ -53,8 +53,8 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
-  plugins: [ 'quickbars' ],
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'quickbars',
   quickbars_selection_toolbar: false
 });
 ----
@@ -64,8 +64,8 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
-  plugins: [ 'quickbars' ],
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'quickbars',
   quickbars_image_toolbar: false
 });
 ----
@@ -81,12 +81,12 @@ The Quick Link (`+quicklink+`) toolbar button lets the user quickly insert/edit 
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
-  plugins: [ 'quickbars' ],
-  setup: function(editor) {
-    editor.ui.registry.addContextToolbar('imageselection', {
-      predicate: function(node) {
-        return node.nodeName === 'P';
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'quickbars link',
+  setup: (editor) => {
+    editor.ui.registry.addContextToolbar('paragraphlink', {
+      predicate: (node) => {
+        return node.nodeName.toLowerCase() === 'p';
       },
       items: 'quicklink',
       position: 'node'
@@ -106,8 +106,8 @@ NOTE: To enable automatic upload of images on insertion, xref:upload-images.adoc
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
-  plugins: [ 'quickbars' ],
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'quickbars',
   toolbar: 'quickimage'
 });
 ----
@@ -121,8 +121,8 @@ The Quick Table (`+quicktable+`) toolbar button inserts a 2x2 table with 100% wi
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
-  plugins: [ 'quickbars' ],
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'quickbars',
   toolbar: 'quicktable'
 });
 ----

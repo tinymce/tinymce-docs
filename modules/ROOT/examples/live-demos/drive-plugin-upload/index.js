@@ -1,24 +1,26 @@
 tinymce.init({
-  tinydrive_demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
-  tinydrive_token_provider: function (success) { success({ token: 'fake-token' }); },
+  tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
+  tinydrive_token_provider: (success) => {
+    success({ token: 'fake-token' });
+  },
   selector: 'textarea#drive-upload-example',
   height: 200,
   menubar: false,
   plugins: 'tinydrive link image media',
   toolbar: 'custom | insertfile | link image media',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('custom', {
       text: 'Custom upload',
-      onAction: function () {
+      onAction: () => {
         editor.plugins.tinydrive.upload({
           path: '/hello',
           name: 'hello.txt',
           blob: new Blob(['Hello world!']),
-          onprogress: function (progress) {
+          onprogress: (progress) => {
             console.log('upload progress', progress);
           }
-        }).then(function (result) {
-          var link = editor.dom.createHTML('a', { href: result.file.url }, editor.dom.encode(result.file.name));
+        }).then((result) => {
+          const link = editor.dom.createHTML('a', { href: result.file.url }, editor.dom.encode(result.file.name));
           editor.insertContent(link);
         });
       }

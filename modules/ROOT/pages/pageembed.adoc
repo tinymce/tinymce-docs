@@ -33,7 +33,6 @@ Use the following script to create a Page Embed toolbar button:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pageembed',
-  menubar: 'view',
   toolbar: 'pageembed'
 });
 ----

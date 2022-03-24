@@ -51,9 +51,9 @@ tinymce.init({
       credentials: 'include',
       body: JSON.stringify({ documentId, keyId: keyHint })
     })
-    .then((response) => response.json())
-    .then(({ keyId, secret }) => ({ key: secret, keyHint: keyId }))
-    .catch((error) => console.log('Failed to return encryption key\n' + error)),
+      .then((response) => response.json())
+      .then(({ keyId, secret }) => ({ key: secret, keyHint: keyId }))
+      .catch((error) => console.log('Failed to return encryption key\n' + error)),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' })
 });
 ----

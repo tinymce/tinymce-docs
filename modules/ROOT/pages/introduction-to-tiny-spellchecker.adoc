@@ -105,8 +105,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckerIgnore', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckerIgnore', (e) => {
       console.log('Ignore word', e.word);
     });
   }
@@ -125,8 +125,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckerIgnoreAll', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckerIgnoreAll', (e) => {
       console.log('Ignore word (all)', e.word);
     });
   }
@@ -145,8 +145,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckStart', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckStart', (e) => {
       console.log('Started spellchecking');
     });
   }
@@ -165,8 +165,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckEnd', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckEnd', (e) => {
       console.log('Stopped spellchecking');
     });
   }
@@ -185,8 +185,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckError', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckError', (e) => {
       console.log('Spelling service error: ' + e.message);
     });
   }
@@ -205,9 +205,9 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckerLanguageChanged', function (e) {
-      console.log('Spelling language changed: ' + e.language + '. Previous language: ' + e.prevLanguage);
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckerLanguageChanged', (e) => {
+      console.log(`Spelling language changed: ${e.language}. Previous language: ${e.prevLanguage}`);
     });
   }
 });

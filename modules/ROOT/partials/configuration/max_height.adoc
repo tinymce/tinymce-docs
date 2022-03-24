@@ -10,6 +10,7 @@ Type : `+Number+`
 
 === Example: Using `+max_height+`
 
+ifeval::["{plugincode}" != "autoresize"]
 [source,js]
 ----
 tinymce.init({
@@ -17,5 +18,16 @@ tinymce.init({
   max_height: 500
 });
 ----
+endif::[]
+ifeval::["{plugincode}" == "autoresize"]
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autoresize',
+  max_height: 500
+});
+----
+endif::[]
 
 NOTE: If the xref:editor-size-options.adoc#resize[`+resize+`] option is set to `+false+` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `+resize+` defaults to `+false+` when the `+autoresize+` plugin is enabled.

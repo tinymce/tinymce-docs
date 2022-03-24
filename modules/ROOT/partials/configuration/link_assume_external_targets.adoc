@@ -19,7 +19,6 @@ Possible Values: `+true+`, `+false+`, `+'http'+`, `+'https'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_assume_external_targets: true
 });

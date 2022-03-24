@@ -2,7 +2,7 @@
 
 :title_nav: Format Painter
 :description: Quickly apply formats to multiple pieces of text.
-:keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats format painter configuration
+:keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_ignored_formats format painter configuration
 :controls: toolbar button
 :pluginname: Format Painter
 :plugincode: formatpainter
@@ -66,7 +66,7 @@ The format painter acts upon all xref:content-formatting.adoc#formats[`+formats+
 
 include::partial$configuration/formatpainter_formats.adoc[leveloffset=+1]
 
-include::partial$configuration/formatpainter_blacklisted_formats.adoc[leveloffset=+1]
+include::partial$configuration/formatpainter_ignored_formats.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

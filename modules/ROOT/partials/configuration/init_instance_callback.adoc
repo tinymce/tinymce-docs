@@ -11,8 +11,8 @@ Type : `+Function+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  init_instance_callback : (editor) => {
-    console.log('Editor: ' + editor.id + ' is now initialized.');
+  init_instance_callback: (editor) => {
+    console.log(`Editor: ${editor.id} is now initialized.`);
   }
 });
 ----

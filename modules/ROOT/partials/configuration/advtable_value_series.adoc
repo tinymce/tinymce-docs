@@ -97,18 +97,15 @@ The generator callback function should return an object with the following prope
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'table advtable',
-  menubar: 'table',
   toolbar: 'advtablerownumbering',
   advtable_value_series: {
     numeric: {
       title: 'Numeric',
       update: true,
       resizable: false,
-      generator: function (info, rowIndex, columnIndex) {
-        return {
-          value: rowIndex + 1
-        };
-      }
+      generator: (info, rowIndex, columnIndex) => ({
+        value: rowIndex + 1
+      })
     },
   }
 });

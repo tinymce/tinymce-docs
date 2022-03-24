@@ -23,7 +23,6 @@ Possible Values: `+'fixed'+`, `+'relative'+`, `+'responsive'+`, `+'auto'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_sizing_mode: 'relative'
 });

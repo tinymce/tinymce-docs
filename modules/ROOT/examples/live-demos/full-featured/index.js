@@ -1,4 +1,3 @@
-
 /* Script to import faker.js for generating random data for demonstration purposes */
 tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js']).then(() => {
 

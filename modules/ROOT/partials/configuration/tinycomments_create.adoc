@@ -40,19 +40,19 @@ function create_comment(ref, done, fail) {
       'Content-Type': 'application/json',
     },
   })
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error('Failed to create comment');
-    }
-    return response.json();
-  })
-  .then((ref2) => {
-    let conversationUid = ref2.conversationUid;
-    done({ conversationUid: conversationUid });
-  })
-  .catch((e) => {
-    fail(e);
-  });
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Failed to create comment');
+      }
+      return response.json();
+    })
+    .then((ref2) => {
+      let conversationUid = ref2.conversationUid;
+      done({ conversationUid: conversationUid });
+    })
+    .catch((e) => {
+      fail(e);
+    });
 }
 
 tinymce.init({

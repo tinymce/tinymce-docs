@@ -1,11 +1,11 @@
-(function () {
-  var button = document.querySelector('.tinydrive-standalone-demo-browse');
+(() => {
+  const button = document.querySelector('.tinydrive-standalone-demo-browse');
 
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     tinydrive.browse({
-      demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
-      token_provider: function (success) { success({ token: 'fake-token' }); },
-    }).then(function () {
+      demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
+      token_provider: (success) => success({ token: 'fake-token' }),
+    }).then(() => {
       console.log('Dialog closed');
     });
   }, false);

@@ -14,7 +14,6 @@ Default Value: `+{ 'border-collapse': 'collapse', 'width': '100%' }+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_default_styles: {
     width: '50%'

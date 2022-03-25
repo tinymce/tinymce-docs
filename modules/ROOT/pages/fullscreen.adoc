@@ -22,7 +22,6 @@ Full screen mode can be toggled using the following keyboard shortcuts:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'fullscreen',
-  menubar: 'view',
   toolbar: 'fullscreen'
 });
 ----

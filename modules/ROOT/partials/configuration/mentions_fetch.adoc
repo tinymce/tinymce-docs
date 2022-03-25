@@ -9,18 +9,19 @@ Type : `+Function+`
 
 [source,js]
 ----
-var usersRequest = null;
+let usersRequest = null;
+
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_fetch: function (query, success) {
+  mentions_fetch: (query, success) => {
     // Fetch your full user list from the server and cache locally
     if (usersRequest === null) {
       usersRequest = fetch('/users');
     }
-    usersRequest.then(function(users) {
+    usersRequest.then((users) => {
       // query.term is the text the user typed after the '@'
-      users = users.filter(function (user) {
+      users = users.filter((user) => {
         return user.name.indexOf(query.term.toLowerCase()) !== -1;
       });
 
@@ -46,24 +47,24 @@ The `+success+` callback can be passed an optional array of extra items. When cl
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_fetch: function (query, success) {
+  mentions_fetch: (query, success) => {
     // query.term is the text the user typed after the '@'
-    var url = '/users?query=' + query.term;
-    var isFullTextSearch = query.meta && query.meta.fullTextSearch;
+    let url = '/users?query=' + query.term;
+    const isFullTextSearch = query.meta && query.meta.fullTextSearch;
     if (isFullTextSearch) {
       url += '&full=true'
     }
 
     // Extras are shown at the end of the list and will reload the menu
     // by passing the meta to the fetch function
-    var extras = isFullTextSearch ? [ ] : [
+    const extras = isFullTextSearch ? [ ] : [
       {
         text: 'Full user search...',
         meta: { fullTextSearch: true }
       }
     ];
 
-    fetch(url).then(function(users) {
+    fetch(url).then((users) => {
       // Where the user object must contain the properties `id` and `name`
       // but you could additionally include anything else you deem useful.
       success(users, extras);

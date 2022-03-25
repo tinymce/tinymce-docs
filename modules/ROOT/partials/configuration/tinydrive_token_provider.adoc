@@ -32,7 +32,7 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
-  tinydrive_token_provider: function (success, failure) {
+  tinydrive_token_provider: (success, failure) => {
      success({ token: 'jwt-token' });
      // failure('Could not create a jwt token')
   }

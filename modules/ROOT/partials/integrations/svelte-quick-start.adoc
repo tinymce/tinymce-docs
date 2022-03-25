@@ -81,7 +81,7 @@ export default {
   plugins: [
     copy({
       targets: [
-        { src: 'node_modules/tinymce/*', dest: 'public/tinymce'}
+        { src: 'node_modules/tinymce/*', dest: 'public/tinymce' }
       ]
     }),
     /* More existing configuration... */

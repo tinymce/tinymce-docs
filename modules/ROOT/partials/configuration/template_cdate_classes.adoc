@@ -16,7 +16,6 @@ Default Value: `+'cdate'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_cdate_classes: 'cdate creationdate'
 });

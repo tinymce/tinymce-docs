@@ -41,12 +41,12 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 ----
 {
   robot: {
-    keywords: ['computer', 'machine', 'bot'],
+    keywords: [ 'computer', 'machine', 'bot' ],
     char: '🤖',
     category: 'people'
   },
   dog: {
-    keywords: ['animal', 'friend', 'nature', 'woof', 'puppy', 'pet', 'faithful'],
+    keywords: [ 'animal', 'friend', 'nature', 'woof', 'puppy', 'pet', 'faithful' ],
     char: '🐶',
     category: 'animals_and_nature'
   }

@@ -62,7 +62,7 @@ tinymce.init({
   style_formats: [
     { title: 'Bold text', inline: 'b' },
     { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } },
-    { name: 'my-inline', title: 'My inline', inline: 'span', classes: ['my-inline'] }
+    { name: 'my-inline', title: 'My inline', inline: 'span', classes: [ 'my-inline' ] }
   ],
   // The following option is used to append style formats rather than overwrite the default style formats.
   style_formats_merge: true

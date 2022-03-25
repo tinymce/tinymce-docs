@@ -67,7 +67,7 @@ This server-side upload handler script must return a JSON object containing a "l
 
 [source,js]
 ----
-{ location : '/uploaded/image/path/image.png' }
+{ location: '/uploaded/image/path/image.png' }
 ----
 
 == Image upload options

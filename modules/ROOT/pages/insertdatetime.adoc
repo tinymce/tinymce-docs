@@ -17,7 +17,6 @@ The `+insertdatetime+` plugin provides a toolbar control and menu item `+Insert 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
-  menubar: 'insert',
   toolbar: 'insertdatetime'
 });
 ----

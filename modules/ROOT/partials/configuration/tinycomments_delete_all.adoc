@@ -21,7 +21,7 @@ For example:
 
 [source,js]
 ----
-function delete_all_comment_threads(_req, done, fail) {
+const delete_all_comment_threads = (_req, done, fail) => {
   fetch('https://api.example/conversations', {
     method: 'DELETE',
   }).then((response) => {
@@ -36,7 +36,7 @@ function delete_all_comment_threads(_req, done, fail) {
 }
 
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create: create_comment,

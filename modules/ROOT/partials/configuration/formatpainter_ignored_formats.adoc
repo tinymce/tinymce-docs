@@ -1,5 +1,5 @@
-[[formatpainter_blacklisted_formats]]
-== `+formatpainter_blacklisted_formats+`
+[[formatpainter_ignored_formats]]
+== `+formatpainter_ignored_formats+`
 
 This option makes it possible to block the unwanted formats in the format painter.
 
@@ -7,13 +7,14 @@ Type : `+String+`
 
 Default : `+'link,address,removeformat,formatpainter_removeformat'+`
 
-=== Example: Using `+formatpainter_blacklisted_formats+`
+=== Example: Using `+formatpainter_ignored_formats+`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'formatpainter',
-  formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
+  toolbar: 'formatpainter',
+  formatpainter_ignored_formats: 'link,address,removeformat,formatpainter_removeformat'
 });
 ----

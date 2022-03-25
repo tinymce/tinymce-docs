@@ -8,8 +8,8 @@ Type : `+Function+`
 Default Function :
 [source,js]
 ----
-function (req, done, fail) {
-  var allowed = req.comment.author === <Current_tinycomments_author>;
+(req, done, fail) => {
+  const allowed = req.comment.author === <Current_tinycomments_author>;
   done({
     canDelete: allowed
   });
@@ -22,13 +22,15 @@ The following example extends the default behavior to allow the author `<Admin u
 
 [source,js]
 ----
-var currentAuthor = 'embedded_journalist';
+const currentAuthor = 'embedded_journalist';
 
 tinymce.init({
-  selector: '#textarea',
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'tinycomments',
+  tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
-  tinycomments_can_delete_comment: function (req, done, fail) {
-    var allowed = req.comment.author === currentAuthor;
+  tinycomments_can_delete_comment: (req, done, fail) => {
+    const allowed = req.comment.author === currentAuthor;
     done({
       canDelete: allowed || currentAuthor === '<Admin user>'
     });

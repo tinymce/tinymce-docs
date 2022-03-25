@@ -18,9 +18,9 @@ The `+done+` callback should accept the following object:
 {
   conversationUid: string, // the new conversation uid
   // Optional error callback which will be run if the new conversation could not be created
-  onError: function (err) { ... },
+  onError: (err) => { ... },
   // Optional success callback which will be run when the new conversation is successfully created
-  onSuccess: function (uid) { ... }
+  onSuccess: (uid) => { ... }
 }
 ----
 
@@ -28,9 +28,8 @@ For example:
 
 [source,js]
 ----
-function create_comment(ref, done, fail) {
-  let content = ref.content;
-  let createdAt = ref.createdAt;
+const create_comment = (ref, done, fail) => {
+  const { content, createdAt } = ref;
 
   fetch('https://api.example/conversations/', {
     method: 'POST',
@@ -56,7 +55,7 @@ function create_comment(ref, done, fail) {
 }
 
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create: create_comment, // Add the callback to TinyMCE

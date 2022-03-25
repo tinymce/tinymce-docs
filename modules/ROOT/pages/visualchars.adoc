@@ -17,7 +17,6 @@ This plugin adds the ability to see invisible characters like `+&nbsp;+` display
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'visualchars',
-  menubar: 'view',
   toolbar: 'visualchars'
 });
 ----

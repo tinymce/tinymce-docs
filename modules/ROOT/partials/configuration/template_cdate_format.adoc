@@ -14,11 +14,10 @@ Default : `+'%Y-%m-%d'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_cdate_format: '%m/%d/%Y : %H:%M',
   templates: [
-    {title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>'}
+    { title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>' }
   ]
 });
 ----

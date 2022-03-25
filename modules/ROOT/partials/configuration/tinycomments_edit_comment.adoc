@@ -29,14 +29,11 @@ For example:
 
 [source,js]
 ----
-function edit_comment(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
-  let commentUid = ref.commentUid;
-  let content = ref.content;
-  let modifiedAt = ref.modifiedAt;
+const edit_comment = (ref, done, fail) => {
+  const { conversationUid, commentUid, content, modifiedAt } = ref;
 
   fetch(
-    'https://api.example/conversations/' + conversationUid + '/' + commentUid,
+    `https://api.example/conversations/${conversationUid}/${commentUid}`,
     {
       method: 'PUT',
       body: JSON.stringify({ content: content, modifiedAt: modifiedAt }),
@@ -62,7 +59,7 @@ function edit_comment(ref, done, fail) {
 }
 
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create: create_comment,

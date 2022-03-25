@@ -12,7 +12,7 @@ Default Value : `+''+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   contextmenu_avoid_overlap: '.mce-spelling-word'
 });
 ----

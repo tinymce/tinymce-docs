@@ -7,6 +7,8 @@ Type: `+Boolean+`
 
 Default Value: `+false+`
 
+Possible Values: `+true+`, `+false+`
+
 === Example: Using `+content_css_cors+`
 
 [source,js]
@@ -15,7 +17,7 @@ Default Value: `+false+`
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : 'http://www.somewhere.example/mycontent.css',
+  content_css: 'http://www.somewhere.example/mycontent.css',
   content_css_cors: true
 });
 ----

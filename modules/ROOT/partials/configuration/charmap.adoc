@@ -16,7 +16,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'charmap',
   toolbar: 'charmap',
-  menubar: 'insert',
   charmap: [
     [0x2615, 'morning coffee']
   ]

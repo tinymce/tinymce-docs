@@ -9,39 +9,12 @@ Default Value: `+true+`
 
 === Example: Using `+importcss_exclusive+`
 
-[source,css]
-----
-// Sample compressed stylesheet:
-
-/* Normalize */
-article, aside, footer, header, main, nav, section {display: block;}
-
-/* jQueryUI */
-.ui-helper-hidden { display: none; }
-
-/* Custom Styles */
-.myCustomStyleStart {display:none;}
-       // INCLUDE ALL MY CLASSES HERE IN THE Formats menu!
-.myCustomStyleEnd {display:none;}
-
-/* Any other possible styles afterward ... */
-----
-
 [source,js]
 ----
-var keepSelector = false;
 tinymce.init({
-  importcss_selector_converter: function(selector) {
-    if (selector == '.myCustomStyleStart') {
-      keepSelector = true;
-      return false;
-    } else if (selector == '.myCustomStyleEnd') {
-      keepSelector = false;
-    }
-    if (!keepSelector ) {
-      return false;
-    }
-    return this.convertSelectorToFormat(selector);
-  }
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  content_css: '/my-styles.css',
+  importcss_exclusive: false
 });
 ----

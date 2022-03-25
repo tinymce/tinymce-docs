@@ -1,4 +1,3 @@
-
 /* Script to import faker.js for generating random data for demonstration purposes */
 tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js']).then(() => {
 
@@ -99,7 +98,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
 
       div.innerHTML = (
         '<div class="card">' +
-          '<img class="avatar" src="' + userDetail.image + '"/>' +
+          '<img class="avatar" src="' + userDetail.image + '">' +
           '<h1>' + userDetail.fullName + '</h1>' +
           '<p>' + userDetail.description + '</p>' +
         '</div>'
@@ -129,7 +128,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       const div = document.createElement('div');
       div.innerHTML = (
         '<div class="card">' +
-        '<img class="avatar" src="' + userDetail.image + '"/>' +
+        '<img class="avatar" src="' + userDetail.image + '">' +
         '<h1>' + userDetail.fullName + '</h1>' +
         '<p>' + userDetail.description + '</p>' +
         '</div>'
@@ -184,7 +183,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     templates: [
       { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
       { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
-      { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+      { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
     ],
     template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
     template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',

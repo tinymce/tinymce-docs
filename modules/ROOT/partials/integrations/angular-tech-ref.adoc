@@ -112,7 +112,7 @@ None of the configuration properties are *required* for `+tinymce-angular+` to w
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default value : `+no-api-key+`
+Default Value : `+no-api-key+`
 
 Type : `+String+`
 
@@ -128,7 +128,7 @@ Type : `+String+`
 [[cloudchannel]]
 === `+cloudChannel+`
 
-Default value : `{productmajorversion}`
+Default Value : `{productmajorversion}`
 
 Possible Values : `{productmajorversion}-stable`, `{productmajorversion}-testing`, `{productmajorversion}-dev`
 
@@ -155,7 +155,7 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default value : `+false+`
+Default Value : `+false+`
 
 Possible Values : `+true+`, `+false+`
 
@@ -173,7 +173,7 @@ Possible Values : `+true+`, `+false+`
 
 An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Default value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+Default Value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
 Type : `+String+`
 
@@ -193,7 +193,7 @@ Object sent to the `+tinymce.init+` method used to initialize the editor.
 
 For information on the {productname} selector (`+tinymce.init+`), see: xref:basic-setup.adoc[Basic setup].
 
-Default value : `+{ }+`
+Default Value : `+{ }+`
 
 Type : `+Object+`
 
@@ -214,7 +214,7 @@ Type : `+Object+`
 
 Initial content of the editor when the editor is initialized.
 
-Default value : `+' '+`
+Default Value : `+' '+`
 
 Type : `+String+`
 
@@ -234,7 +234,7 @@ Used to set the editor to inline mode. Using `+<editor [inline]="true"></editor>
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default value : `+false+`
+Default Value : `+false+`
 
 Possible Values : `+true+`, `+false+`
 
@@ -272,7 +272,7 @@ Used to specify the format of the content emitted by the `+tinymce-angular+` com
 
 Type : `+String+`
 
-Default value : `+'html'+`
+Default Value : `+'html'+`
 
 Possible Values : `+'html'+`, `+'text'+`
 
@@ -290,7 +290,7 @@ Possible Values : `+'html'+`, `+'text'+`
 
 Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to define the HTML element for the editor in inline mode.
 
-Default value : `+'div'+`
+Default Value : `+'div'+`
 
 Type : `+String+`
 
@@ -344,7 +344,7 @@ NOTE: This property requires `+tinymce-angular+` 4.0.0 or newer
 
 Used to specify the events that trigger the `+NgModelChange+` to emit.
 
-Default value : `+'change input undo redo'+`.
+Default Value : `+'change input undo redo'+`.
 
 Possible Values : A space separated list of TinyMCE editor events.
 

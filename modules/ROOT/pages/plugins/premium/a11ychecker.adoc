@@ -263,7 +263,7 @@ NOTE: The table `summary` attribute was deprecated in HTML 5, both the *what* an
 The following configuration options affect the behavior of the {pluginname} plugin.
 
 :includedSection: a11yPlugin
-include::partial$configuration/a11y_advanced_options.adoc[]
+include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
 :includedSection: false
 
 include::partial$configuration/a11ychecker_allow_decorative_images.adoc[]

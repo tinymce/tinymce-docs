@@ -1,3 +1,4 @@
+[[a11ychecker_filter_issue]]
 === `a11ychecker_filter_issue`
 
 The `a11ychecker_filter_issue` option allows Accessibility Checker issues to be removed from the Accessibility Checker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option. This option can remove issues from the results shown in the dialog and the `getReport` API.

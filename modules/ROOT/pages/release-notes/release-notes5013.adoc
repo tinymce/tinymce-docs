@@ -52,13 +52,13 @@ Contextual toolbar improvements prevent the toolbar from collapsing and overlapp
 
 *Example:*
 
-image:improved-context-toolbar.png[Improved context toolbar position]
+image::improved-context-toolbar.png[Improved context toolbar position]
 
 ==== Default background and foreground colors
 
 TinyMCE 5.0.13 updates the default colors defined in the xref:configure/content-appearance.adoc#color_map[`color_map`] setting to include colors that are useful for both highlights and regular text.
 
-image:color-map-updated.png[Color map]
+image::color-map-updated.png[Color map]
 
 To use the old default colors instead of the new colors, add the following to your TinyMCE configuration:
 
@@ -117,7 +117,7 @@ The search and replace dialog will now appear inline, instead of as a modal dial
 
 The dialog also comes with a new design that's better suited to an inline dialog.
 
-image:inline-search-replace-dialog.png[New search and replace dialog]
+image::inline-search-replace-dialog.png[New search and replace dialog]
 
 When finding content, the plugin will now cycle through results instead of stopping when it reaches the top or
 bottom of the document.

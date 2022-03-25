@@ -11,7 +11,7 @@ To add a {productname} editor to a web page using the {productname} Web Componen
 +
 [source, html]
 ----
- <!DOCTYPE html>
+<!DOCTYPE html>
 ----
 +
 The `DOCTYPE` declaration is required for the editor to function correctly.
@@ -21,8 +21,8 @@ The `DOCTYPE` declaration is required for the editor to function correctly.
 [source, html]
 ----
 <head>
-  <meta charset="utf-8"></meta>
-  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 ----
 +
@@ -32,7 +32,7 @@ The second `meta` element is required for the editor to function correctly on mo
 +
 [source, html, subs="attributes+"]
 ----
- <script src="{webcomponent_url}"></script>
+<script src="{webcomponent_url}"></script>
 ----
 +
 The `tinymce-webcomponent` can also be sourced from https://www.npmjs.com/package/@tinymce/tinymce-webcomponent[npmjs].
@@ -41,7 +41,7 @@ The `tinymce-webcomponent` can also be sourced from https://www.npmjs.com/packag
 +
 [source, html]
 ----
- <script src="/path/to/tinymce.min.js"></script>
+<script src="/path/to/tinymce.min.js"></script>
 ----
 +
 If a `script` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: xref:loadingtinymce[Loading {productname}].

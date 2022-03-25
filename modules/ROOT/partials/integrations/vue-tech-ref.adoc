@@ -59,29 +59,29 @@ $ npm install --save "@tinymce/tinymce-vue@^3"
 +
 [source, html]
 ----
-  <script src="/path/to/tinymce-vue.min.js"></script>
+<script src="/path/to/tinymce-vue.min.js"></script>
 ----
 . Add the editor to the `components` property of the app:
 +
 [source, js]
 ----
- // This might look different depending on how you have set up your app
- // but the important part is the components property
- var app = new Vue({
-   el: '#app',
-   data: { /* Your data */ },
-   components: {
-     'editor': Editor // <- Important part
-   },
-   methods: { /* Your methods */}
- })
+// This might look different depending on how you have set up your app
+// but the important part is the components property
+var app = new Vue({
+  el: '#app',
+  data: { /* Your data */ },
+  components: {
+    'editor': Editor // <- Important part
+  },
+  methods: { /* Your methods */}
+})
 ----
 
 . Add the `<editor>` tag to the `template`
 +
 [source, html]
 ----
- <editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
+<editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
 ----
 
 [[configuringtheeditor]]
@@ -89,7 +89,7 @@ $ npm install --save "@tinymce/tinymce-vue@^3"
 
 The editor accepts the following properties:
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <editor
   api-key="your-api-key"
@@ -142,7 +142,7 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <editor
   api-key="your-api-key"
@@ -262,7 +262,7 @@ For a list of available {productname} events, see: xref:advanced/events.adoc#edi
 
 [source, html]
 ----
-  <editor model-events="change keydown blur focus paste"></editor>
+<editor model-events="change keydown blur focus paste"></editor>
 ----
 
 [[output-format]]

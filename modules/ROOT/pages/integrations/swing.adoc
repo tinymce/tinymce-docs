@@ -32,7 +32,7 @@ final Config myTinyConfiguration = Config.embedded();
 
 * Cloud deployments pull {productname} from the {cloudname}. Use this option by passing your API key and xref:cloud-deployment-guide/editor-plugin-version.adoc#specifyingthetinymceeditorversiondeployedfromcloud[specifying the {cloudname} version].
 +
-[source, java]
+[source, java, subs="attributes+"]
 ----
 final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{productmajorversion}-stable");
 ----

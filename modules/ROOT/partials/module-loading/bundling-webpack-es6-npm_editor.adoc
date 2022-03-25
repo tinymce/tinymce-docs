@@ -35,7 +35,7 @@ import 'tinymce/plugins/table';
 /* import './plugins/powerpaste/js/wordimport'; */
 
 /* content UI CSS is required */
-import contentUiSkin from 'tinymce/skins/ui/oxide/content.css';
+import contentUiSkinCss from 'tinymce/skins/ui/oxide/content.css';
 
 /* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
 import contentCss from 'tinymce/skins/content/default/content.css';
@@ -48,7 +48,7 @@ export function render () {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentUiSkin.toString() + '\n' + contentCss.toString(),
+    content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
   });
 };
 ----

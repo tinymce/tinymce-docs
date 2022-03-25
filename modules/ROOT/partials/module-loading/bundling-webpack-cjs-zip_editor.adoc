@@ -29,7 +29,7 @@ require('../tinymce/js/tinymce/plugins/lists/plugin.js');
 require('../tinymce/js/tinymce/plugins/table/plugin.js');
 
 /* content UI CSS is required */
-const contentUiSkin = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');
+const contentUiSkinCss = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');
 
 /* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
 const contentCss = require('../tinymce/js/tinymce/skins/content/default/content.css');
@@ -43,7 +43,7 @@ exports.render = () => {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentUiSkin.toString() + '\n' + contentCss.toString(),
+    content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
   });
 };
 ----

@@ -31,7 +31,7 @@ require('tinymce/plugins/lists');
 require('tinymce/plugins/table');
 
 /* content UI CSS is required */
-const contentUiSkin = fs.readFileSync('node_modules/tinymce/skins/ui/oxide/content.css', { encoding: 'UTF-8' });
+const contentUiSkinCss = fs.readFileSync('node_modules/tinymce/skins/ui/oxide/content.css', { encoding: 'UTF-8' });
 
 /* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
 const contentCss = fs.readFileSync('node_modules/tinymce/skins/content/default/content.css', { encoding: 'UTF-8' });
@@ -45,7 +45,7 @@ exports.render = () => {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentUiSkin.toString() + '\n' + contentCss.toString(),
+    content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
   });
 };
 ----

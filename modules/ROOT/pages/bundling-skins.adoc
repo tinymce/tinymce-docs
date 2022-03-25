@@ -34,34 +34,34 @@ IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+conte
 
 [source,js]
 ----
-import contentUiSkin from 'tinymce/skins/ui/example/content.css';
+import contentUiSkinCss from 'tinymce/skins/ui/example/content.css';
 import 'tinymce/skins/ui/example/skin.css';
 /* Only required for inline editors */
-import contentUiInlineCss from 'tinymce/skins/ui/example/content.inline.css';
+import contentUiSkinInlineCss from 'tinymce/skins/ui/example/content.inline.css';
 ----
 
 [source,js]
 ----
-import contentUiSkin from '../tinymce/skins/ui/example/content.css';
+import contentUiSkinCss from '../tinymce/skins/ui/example/content.css';
 import '../tinymce/skins/ui/example/skin.css';
 /* Only required for inline editors */
-import contentUiInlineCss from '../tinymce/skins/ui/example/content.inline.css'
+import contentUiSkinInlineCss from '../tinymce/skins/ui/example/content.inline.css'
 ----
 
 [source,js]
 ----
-const contentUiSkin = require('tinymce/skins/ui/example/content.css');
+const contentUiSkinCss = require('tinymce/skins/ui/example/content.css');
 require('tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
-const contentUiInlineCss = require('tinymce/skins/ui/example/content.inline.css');
+const contentUiSkinInlineCss = require('tinymce/skins/ui/example/content.inline.css');
 ----
 
 [source,js]
 ----
-const contentUiSkin = require('../tinymce/skins/ui/example/content.css');
+const contentUiSkinCss = require('../tinymce/skins/ui/example/content.css');
 require('../tinymce/skins/ui/example/skin.css');
 /* Only required for inline editors */
-const contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css');
+const contentUiSkinInlineCss = require('../tinymce/skins/ui/example/content.inline.css');
 ----
 
 ////

@@ -12,12 +12,14 @@ WARNING: Not using `+p+` elements as the root block will impair the functionalit
 
 Type : `+String+`
 
+Default Value: `+p+`
+
 === Example: Using `+forced_root_block+`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  forced_root_block: 'p'
+  forced_root_block: 'div'
 });
 ----

@@ -1,4 +1,6 @@
-=== `spellchecker_ignore_list`
+// Bookmark for deprecated spellchecker_whitelist option name
+[[spellchecker_ignore_list]]
+=== [[spellchecker_whitelist]] `spellchecker_ignore_list`
 
 This option specifies which words should be ignored by the spell checker. If an array of words is provided, the specified words will be ignored for all languages. If an object containing an array of words per language is provided, the specified words will be ignored for the specified languages.
 

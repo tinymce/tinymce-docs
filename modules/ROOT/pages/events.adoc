@@ -144,6 +144,8 @@ The following events are provided by the {productname} editor.
 |ResizeEditor |N/A |Fired when the editor is resized, either by the resize handles or the auto-resize plugin.
 |SkinLoaded |N/A |Fired when the editor skin has been loaded.
 |SkinLoadError |`+{ message: string }+` |Fired when the editor skin fails to load.
+|ThemeLoadError |`+{ message: string }+` |Fired when the editor theme fails to load.
+|ModelLoadError |`+{ message: string }+` |Fired when the editor model fails to load.
 |PluginLoadError |`+{ message: string }+` |Fired when an editor plugin fails to load.
 |IconsLoadError |`+{ message: string }+` |Fired when the editor icon pack fails to load.
 |LanguageLoadError |`+{ message: string }+` |Fired when the editor language pack fails to load.
@@ -160,6 +162,9 @@ The following events are provided by the {productname} editor.
 |PastePreProcess |`+{ content: string }+` |Fired before the content is parsed from the clipboard.
 |PastePostProcess |`+{ node: Element }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
+|AutocompleterStart |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when an autocompleter is triggered and should show the fetched suggestions.
+|AutocompleterUpdate |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when content is changed and the active autocompleter needs to be update the suggestions shown.
+|AutocompleterEnd |N/A |Fired when the active autocompleter menu has been flagged to close.
 |===
 
 == Plugin events

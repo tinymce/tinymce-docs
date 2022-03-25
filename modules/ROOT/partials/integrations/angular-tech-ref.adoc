@@ -95,7 +95,7 @@ Add the `EditorModule` to `+@NgModule({imports})+`:
 
 The editor accepts the following properties:
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <editor
   apiKey="no-api-key"

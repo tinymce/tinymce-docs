@@ -174,7 +174,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 [source, jsx]
 ----
-  <Editor apiKey="your-api-key"></Editor>
+<Editor apiKey="your-api-key"></Editor>
 ----
 
 [[cloudchannel]]
@@ -195,7 +195,7 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-[source, jsx]
+[source, jsx, subs="attributes+"]
 ----
 <Editor
   apiKey='your-api-key'

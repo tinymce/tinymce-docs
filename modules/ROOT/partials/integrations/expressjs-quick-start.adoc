@@ -14,14 +14,14 @@ This procedure requires:
 
 . On a command line or command prompt, create a basic Express JS application:
 +
-[source, sh, subs='attributes+']
+[source, sh, subs="attributes+"]
 ----
 $ npx express-generator --git --no-view my_{prodnamecode}_app
 ----
 
 . Change into the newly created directory.
 +
-[source, sh, subs='attributes+']
+[source, sh, subs="attributes+"]
 ----
 $ cd my_{prodnamecode}_app
 ----
@@ -49,7 +49,7 @@ app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce
 +
 For example:
 +
-[source, js, subs='attributes+']
+[source, js, subs="attributes+"]
 ----
 var express = require('express');
 var path = require('path');
@@ -79,21 +79,21 @@ module.exports = app;
 +
 Linux/macOS/Unix:
 +
-[source, sh, subs='attributes+']
+[source, sh, subs="attributes+"]
 ----
 $ touch public/javascripts/my-{prodnamecode}-config.js
 ----
 +
 Windows:
 +
-[source, sh, subs='attributes+']
+[source, sh, subs="attributes+"]
 ----
 > type nul >public/javascripts/my-{prodnamecode}-config.js
 ----
 
 . Add the {productname} configuration to the newly created javascript file (`my-{prodnamecode}-config.js`):
 +
-[source, js, subs='attributes+']
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea#my-expressjs-{prodnamecode}-app',
@@ -119,7 +119,7 @@ tinymce.init({
 +
 For example:
 +
-[source, html, subs='attributes+']
+[source, html, subs="attributes+"]
 ----
 <!DOCTYPE html><!-- Required for TinyMCE to function as intended -->
 <html>

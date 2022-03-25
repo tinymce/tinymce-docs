@@ -31,7 +31,7 @@ To migrate the core TinyMCE editor to TinyMCE 5, review the following sections:
 
 To use TinyMCE 5 from the {cloudname}, include this script in your HTML page. Replace 'no-api-key' with link:{accountsignup}[your API key].
 
-[source, html, subs='attributes+']
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----

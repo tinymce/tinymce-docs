@@ -46,7 +46,7 @@ The commands on the following table are provided by the {productname} editor and
 |Bold |Toggles bold formatting to selection.
 |Italic |Toggles italic formatting to selection.
 |Underline |Toggles underline formatting to selection.
-|Strikethrough |Toggles strikethough formatting to selection.
+|Strikethrough |Toggles strikethrough formatting to selection.
 |Superscript |Toggles superscript formatting to selection.
 |Subscript |Toggles subscript formatting to selection.
 |Cut |Cuts the selected contents and puts in into users clipboard.
@@ -54,6 +54,7 @@ The commands on the following table are provided by the {productname} editor and
 |Lang |Sets the language of the current selection. The value passed in should be a language spec described in xref:content-localization.adoc#content_langs[Content appearance options - `+content_langs+`].
 |Paste |Pastes the current clipboard contents into the editor.
 |mceInsertLink |Inserts a link at the current selection. The value is the URL to add to the link(s).
+|createLink |Inserts a link at the current selection. The value is the URL to add to the link(s). NOTE: This is an alias for the `mceInsertLink` command.
 |Unlink |Removes any links from the current selection.
 |JustifyLeft |Left aligns the current text block/image.
 |JustifyCenter |Center aligns the current text block/image.
@@ -62,6 +63,7 @@ The commands on the following table are provided by the {productname} editor and
 |JustifyNone |Removes any alignment to the selected text.
 |ForeColor |Changes the text color of the text. The value passed in should be the color.
 |HiliteColor |Changes the background color of the text. The value passed in should be the color.
+|BackColor |Changes the background color of the text. The value passed in should be the color. NOTE: This is an alias for the `HiliteColor` command.
 |FontName |Font name to apply to the text. The value passed in should be the font family name.
 |FontSize |Font size of the text. The value passed in should be a valid CSS font size.
 |LineHeight |Sets the line height of the text. The value passed in should be a valid CSS line height.
@@ -79,9 +81,12 @@ The commands on the following table are provided by the {productname} editor and
 |Indent |Indents the current selection.
 |Outdent |Outdents the current selection.
 |InsertHorizontalRule |Inserts a horizontal rule at the cursor location or inplace of the current selection.
-|InsertLineBreak |Adds a line break `+<br/>+` at the current cursor or selection.
+|InsertLineBreak |Adds a line break `+<br>+` at the current cursor or selection.
+|InsertParagraph |Inserts a new line at the current cursor or selection.
+|InsertText |Inserts the passed value as plain text at the current cursor or selection.
+|InsertHTML |Inserts the passed value as HTML at the current cursor or selection.
+|InsertImage |Adds an image `+<img src="...">+` at the current cursor or selection.
 |mceInsertNewLine |Adds a new line at the current cursor or selection, such as splitting the current paragraph element.
-|mceInsertRawHTML |Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position. *Warning*: This command allows dangerous `+<script>+` elements to be added to and executed in the editor.
 |mceToggleVisualAid |Toggles the visual aids for: tables without borders and anchors.
 |SelectAll |Selects all content in the editor.
 |Delete |Deletes the current selection from the editor.
@@ -99,6 +104,8 @@ The commands on the following table are provided by the {productname} editor and
 |mcePrint |Opens the browser's print dialog for the current page.
 |mceInsertClipboardContent |Triggers a paste event at the cursor location or over the current selection. The command requires an object with: `+html+` containing the HTML content, or `+text+` containing plain text.
 |mceTogglePlainTextPaste |Toggles paste as plain text.
+|mceAutocompleterClose |Closes any active autocompleter menu.
+|mceAutocompleterReload |Reloads the autocompleter menu with new items. For the data to provide, see the xref:autocompleter.adoc#api[Autocompleter reload API].
 |===
 
 .Examples
@@ -114,6 +121,7 @@ tinymce.activeEditor.execCommand('Cut');
 tinymce.activeEditor.execCommand('Copy');
 tinymce.activeEditor.execCommand('Paste');
 tinymce.activeEditor.execCommand('mceInsertLink', false, 'https://www.tiny.cloud');
+tinymce.activeEditor.execCommand('createLink', false, 'https://www.tiny.cloud');
 tinymce.activeEditor.execCommand('Unlink');
 tinymce.activeEditor.execCommand('JustifyLeft');
 tinymce.activeEditor.execCommand('JustifyCenter');
@@ -122,6 +130,7 @@ tinymce.activeEditor.execCommand('JustifyFull');
 tinymce.activeEditor.execCommand('JustifyNone');
 tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000');
 tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000');
+tinymce.activeEditor.execCommand('BackColor', false, '#FF0000');
 tinymce.activeEditor.execCommand('FontName', false, 'courier new');
 tinymce.activeEditor.execCommand('FontSize', false, '30px');
 tinymce.activeEditor.execCommand('LineHeight', false, '1.4');
@@ -141,8 +150,11 @@ tinymce.activeEditor.execCommand('Indent');
 tinymce.activeEditor.execCommand('Outdent');
 tinymce.activeEditor.execCommand('InsertHorizontalRule');
 tinymce.activeEditor.execCommand('InsertLineBreak');
+tinymce.activeEditor.execCommand('InsertParagraph');
+tinymce.activeEditor.execCommand('InsertText', false, 'My text content');
+tinymce.activeEditor.execCommand('InsertHTML', false, 'My HTML content');
+tinymce.activeEditor.execCommand('InsertImage', false, 'https://www.example.com/image.png');
 tinymce.activeEditor.execCommand('mceInsertNewLine');
-tinymce.activeEditor.execCommand('mceInsertRawHTML', false, '<p>Hello, World!</p>');
 tinymce.activeEditor.execCommand('mceToggleVisualAid');
 tinymce.activeEditor.execCommand('SelectAll');
 tinymce.activeEditor.execCommand('Delete');
@@ -163,7 +175,10 @@ tinymce.activeEditor.execCommand('mceInsertClipboardContent', false, {
   html: '<p>Hello, World!</p>'
 });
 tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');
-
+tinymce.activeEditor.execCommand('mceAutocompleterClose');
+tinymce.activeEditor.execCommand('mceAutocompleterReload', false, {
+  fetchOptions: {}
+});
 ----
 
 [[plugincommands]]

@@ -130,7 +130,7 @@ Type : `+String+`
 
 Default value : `{productmajorversion}`
 
-Possible values : `{productmajorversion}-stable`, `{productmajorversion}-testing`, `{productmajorversion}-dev`
+Possible Values : `{productmajorversion}-stable`, `{productmajorversion}-testing`, `{productmajorversion}-dev`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
@@ -157,7 +157,7 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 
 Default value : `+false+`
 
-Possible values : `+true+`, `+false+`
+Possible Values : `+true+`, `+false+`
 
 ==== Example: Using `+disabled+`
 
@@ -236,7 +236,7 @@ For information on inline mode, see: xref:inline-editor-options.adoc#inline[User
 
 Default value : `+false+`
 
-Possible values : `+true+`, `+false+`
+Possible Values : `+true+`, `+false+`
 
 ==== Example: Using `+inline+`
 
@@ -274,7 +274,7 @@ Type : `+String+`
 
 Default value : `+'html'+`
 
-Possible values : `+'html'+`, `+'text'+`
+Possible Values : `+'html'+`, `+'text'+`
 
 ==== Example: Using `+outputFormat+`
 
@@ -311,7 +311,7 @@ Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic"></
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-Possible values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+Possible Values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 Type : `+String+`
 
@@ -346,7 +346,7 @@ Used to specify the events that trigger the `+NgModelChange+` to emit.
 
 Default value : `+'change input undo redo'+`.
 
-Possible value : A space separated list of TinyMCE editor events.
+Possible Values : A space separated list of TinyMCE editor events.
 
 Type : `+String+`
 
@@ -472,7 +472,7 @@ NOTE: This property requires `+tinymce-angular+` 4.2.0 or newer
 
 Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the xref:eventbinding[Event binding section].
 
-Possible values : A comma separated list of events to allow.
+Possible Values : A comma separated list of events to allow.
 
 Type : `+String+`
 
@@ -492,7 +492,7 @@ NOTE: This property requires `+tinymce-angular+` 4.2.0 or newer
 
 Used to block a list of events from the `+tinymce-angular+` component.
 
-Possible values : A comma separated list of events to ignore.
+Possible Values : A comma separated list of events to ignore.
 
 Type : `+String+`
 

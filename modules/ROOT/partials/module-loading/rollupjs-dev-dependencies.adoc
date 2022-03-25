@@ -1,15 +1,15 @@
-{% if is_zip_install == true %}
-1. Add the following development dependencies to the project.
+ifeval::[{is_zip_install} == true]
+. Add the following development dependencies to the project.
 
-- [`postcss`](https://www.npmjs.com/package/postcss)
-- [`rollup`](https://www.npmjs.com/package/rollup)
-- [`@rollup/plugin-commonjs`](https://www.npmjs.com/package/@rollup/plugin-commonjs)
-- [`rollup-plugin-css-bundle`](https://www.npmjs.com/package/rollup-plugin-css-bundle)
-- [`rollup-plugin-postcss`](https://www.npmjs.com/package/rollup-plugin-postcss)
-- [`rollup-plugin-string`](https://www.npmjs.com/package/rollup-plugin-string)
-
+* https://www.npmjs.com/package/postcss[`+postcss+`]
+* https://www.npmjs.com/package/rollup[`+rollup+`]
+* https://www.npmjs.com/package/@rollup/plugin-commonjs[`+@rollup/plugin-commonjs+`]
+* https://www.npmjs.com/package/rollup-plugin-css-bundle[`+rollup-plugin-css-bundle+`]
+* https://www.npmjs.com/package/rollup-plugin-postcss[`+rollup-plugin-postcss+`]
+* https://www.npmjs.com/package/rollup-plugin-string[`+rollup-plugin-string+`]
++
 For example:
-
++
 [source,sh]
 ----
 npm install --save-dev \
@@ -20,19 +20,20 @@ npm install --save-dev \
   rollup-plugin-postcss \
   rollup-plugin-string
 ----
-{% else %}
-1. Add `tinymce` and the following development dependencies to the project.
+endif::[]
+ifeval::[{is_zip_install} != true]
+. Add `tinymce` and the following development dependencies to the project.
 
-- [`postcss`](https://www.npmjs.com/package/postcss)
-- [`rollup`](https://www.npmjs.com/package/rollup)
-- [`@rollup/plugin-commonjs`](https://www.npmjs.com/package/@rollup/plugin-commonjs)
-- [`@rollup/plugin-node-resolve`](https://www.npmjs.com/package/@rollup/plugin-node-resolve)
-- [`rollup-plugin-css-bundle`](https://www.npmjs.com/package/rollup-plugin-css-bundle)
-- [`rollup-plugin-postcss`](https://www.npmjs.com/package/rollup-plugin-postcss)
-- [`rollup-plugin-string`](https://www.npmjs.com/package/rollup-plugin-string)
-
+* https://www.npmjs.com/package/postcss[`+postcss+`]
+* https://www.npmjs.com/package/rollup[`+rollup+`]
+* https://www.npmjs.com/package/@rollup/plugin-commonjs[`+@rollup/plugin-commonjs+`]
+* https://www.npmjs.com/package/@rollup/plugin-node-resolve[`+@rollup/plugin-node-resolve+`]
+* https://www.npmjs.com/package/rollup-plugin-css-bundle[`+rollup-plugin-css-bundle+`]
+* https://www.npmjs.com/package/rollup-plugin-postcss[`+rollup-plugin-postcss+`]
+* https://www.npmjs.com/package/rollup-plugin-string[`+rollup-plugin-string+`]
++
 For example:
-
++
 [source,sh]
 ----
 npm install tinymce &&
@@ -45,4 +46,4 @@ npm install --save-dev \
   rollup-plugin-postcss \
   rollup-plugin-string
 ----
-{% endif %}
+endif::[]

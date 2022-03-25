@@ -1,3 +1,4 @@
+[[rtc_snapshot]]
 === `rtc_snapshot`
 
 Real-time collaboration integrations regularly store the content, eliminating the need for a save button. The {productname} RTC plugin provides a version number to assist with storing the HTML content snapshots. These snapshots are not stored on the RTC server and must be handled by the integrator.
@@ -9,7 +10,7 @@ The snapshot callback will be executed in response to local changes, with access
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
+xref:plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: Function
@@ -22,7 +23,7 @@ Input parameters::
 
 | `documentId`
 | `string`
-| The document ID from the <<rtc_document_id,`rtc_document_id`>> option.
+| The document ID from the xref:rtc/configuration/rtc-options-required.adoc#rtc_document_id[`rtc_document_id`] option.
 
 | `version`
 | `integer`

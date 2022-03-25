@@ -91,7 +91,8 @@ const dialogConfig = {
     console.log(details.oldTabName);
 
  // switch back to the old tab
- dialogApi.showTab(details.oldTabName);   } }; ```
+ dialogApi.showTab(details.oldTabName);   } }; 
+```
 
 == Panel components
 
@@ -455,6 +456,7 @@ An *input* is a composite component that renders a label and a single line text 
 }
 ----
 
+[[inputmode]]
 ===== inputMode
 
 include::partial$misc/requires_5_1v.adoc[]

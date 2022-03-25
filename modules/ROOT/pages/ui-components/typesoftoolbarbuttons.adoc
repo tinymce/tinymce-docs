@@ -170,6 +170,7 @@ When the `similar` argument is `true`, similar formats will all be treated as th
 
 The `vars` argument controls which variables are used to match the content when determining whether to run the callback. This argument is only used when `similar` is `false`.
 
+[[menubutton]]
 == Menu button
 
 A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain submenus. This is useful for grouping together actions that would otherwise be several buttons on the toolbar. It can also be used to reduce visual clutter and save UI space, as menubar menu items and some toolbar buttons could be moved into a toolbar menu button. Potentially, all menubar menu items could be moved into toolbar menu buttons, allowing for the editor to be used without a menubar at all.

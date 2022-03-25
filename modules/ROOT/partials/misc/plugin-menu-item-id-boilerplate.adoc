@@ -1,28 +1,28 @@
-{% if page.name == "available-menu-items.md" %}
+ifeval::["{docname}" == "advanced/available-menu-items"]
 == {pluginname} plugin
 
 The {pluginname} plugin provides the following menu items:
 
-{% if altplugincode %}
+ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
-{% else %}
+endif::[]
+ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
-{% endif %}
+endif::[]
 
-For information on the {pluginname} plugin, see: link:{baseurl}/plugins/{plugincategory}/{plugincode}/[Plugins - The {pluginname} plugin]
-
-{% else %}
+For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+ifeval::["{docname}" != "advanced/available-menu-items"]
 == Menu items
 
 The {pluginname} plugin provides the following menu items:
 
-{% if altplugincode %}
+ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
-{% else %}
+endif::[]
+ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
-{% endif %}
+endif::[]
 
 include::partial$misc/menu-item-settings.adoc[]
-
-{% endif %}
-:altplugincode: nil
+endif::[]

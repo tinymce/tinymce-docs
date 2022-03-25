@@ -29,6 +29,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :plugincode: advcode
 :altplugincode: code
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+:!altplugincode:
 
 :plugincategory: premium
 :pluginname: Advanced Tables
@@ -155,6 +156,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :plugincode: powerpaste
 :altplugincode: paste
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+:!altplugincode:
 
 :plugincategory: opensource
 :pluginname: Preview
@@ -192,7 +194,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: premium
-:pluginname: site.cloudfilemanager
+:pluginname: {cloudfilemanager}
 :plugincode: tinydrive
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 

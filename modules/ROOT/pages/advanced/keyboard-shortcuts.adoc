@@ -110,27 +110,27 @@ This is a list of available keyboard shortcuts within the editor body.
 | Open the help dialog
 | Alt+0
 | Option+0
-| link:{baseurl}/plugins/opensource/help/[help]
+| xref:plugins/opensource/help.adoc[help]
 
 | Insert link
 | Ctrl+K
 | Command+K
-| link:{baseurl}/plugins/opensource/link/[link]
+| xref:plugins/opensource/link.adoc[link]
 
 | Toggle Fullscreen
 | Ctrl+Shift+F
 | Command+Shift+F
-| link:{baseurl}/plugins/opensource/fullscreen/[fullscreen]
+| xref:plugins/opensource/fullscreen.adoc[fullscreen]
 
 | Save
 | Ctrl+S
 | Command+S
-| link:{baseurl}/plugins/opensource/save/[save]
+| xref:plugins/opensource/save.adoc[save]
 
 | Find
 | Ctrl+F
 | Command+F
-| link:{baseurl}/plugins/opensource/searchreplace/[searchreplace]
+| xref:plugins/opensource/searchreplace.adoc[searchreplace]
 |===
 
 == Accessibility keyboard shortcuts
@@ -211,10 +211,10 @@ IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts w
 
 To add a custom keyboard shortcut to {productname}, use either:
 
-* link:{baseurl}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
-* link:{baseurl}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
+* xref:apis/tinymce.editor.adoc#addShortcut[The `tinymce.Editor.addShortcut` API].
+* xref:apis/tinymce.shortcuts.adoc[The `tinymce.Shortcuts.add` API].
 
-= include::partial$misc/shortcut-os-mappings.adoc[]
+include::partial$misc/shortcut-os-mappings.adoc[]
 
 [discrete]
 === Example: Custom keyboard shortcut

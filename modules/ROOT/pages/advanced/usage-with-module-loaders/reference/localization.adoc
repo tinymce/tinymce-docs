@@ -5,19 +5,22 @@
 
 == Overview
 
-* <<usingcommunitylocalizations,Using community localizations>>
-* <<usingpremiumself-hostedlocalizations,Using premium self-hosted localizations>>
+* xref:usingcommunitylocalizations[Using community localizations]
+* xref:usingpremiumself-hostedlocalizations[Using premium self-hosted localizations]
 
+[[usingcommunitylocalizations]]
 == Using community localizations
 
 :forModuleLoaders: true
 include::partial$misc/using-community-lang-packs.adoc[]
+
 :forModuleLoaders: false
 
+[[usingpremiumself-hostedlocalizations]]
 == Using premium self-hosted localizations
 
 :editorcomponent: localization
-include::partial$module-loading/bundling-ref-example.adoc[]
+include::partial$module-loading/bundling-ref-example.adoc[leveloffset=+1]
 :editorcomponent: nil
 
 The following table shows examples of the syntax used to bundle the following example localization file:

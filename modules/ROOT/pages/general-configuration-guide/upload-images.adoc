@@ -6,7 +6,7 @@
 
 {productname} uploads edited images with the image uploader. This complements {productname}'s image editing functionality.
 
-Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the link:{baseurl}/plugins/opensource/paste/#paste_data_images[`paste_data_images`] configuration property, or using the {companyname} link:{baseurl}/plugins/premium/powerpaste/[*PowerPaste* plugin].
+Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the xref:plugins/opensource/paste.adoc#paste_data_images[`paste_data_images`] configuration property, or using the {companyname} xref:plugins/premium/powerpaste.adoc[*PowerPaste* plugin].
 
 {productname} automatically updates the `<img>` src attribute with the new path to the remote image.
 
@@ -38,6 +38,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 include::partial$misc/svgsNotSupported.adoc[]
 
+[[imageuploaderrequirements]]
 == Image Uploader requirements
 
 A server-side upload handler script uploads local images to a remote server. The script must:
@@ -46,7 +47,7 @@ A server-side upload handler script uploads local images to a remote server. The
 * Store images appropriately
 * Return a JSON object containing the image's upload location
 
-An example PHP upload handler implementation is available link:{baseurl}/advanced/php-upload-handler/[here].
+An example PHP upload handler implementation is available xref:advanced/php-upload-handler.adoc[here].
 
 Images are sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` must "store" the image in the application. Some examples include:
 
@@ -68,23 +69,24 @@ This server-side upload handler script must return a JSON object containing a "l
 { location : '/uploaded/image/path/image.png' }
 ----
 
+[[imageuploaderoptions]]
 == Image upload options
 
 Set the `images_upload_url` _or_ `images_upload_handler` option for image uploads to function. The other options shown here are optional.
 
 Required:
 
-* <<images_upload_url,`images_upload_url`>>
+* xref:images_upload_url[`images_upload_url`]
 
 _Or_
 
-* <<images_upload_handler,`images_upload_handler`>>
+* xref:images_upload_handler[`images_upload_handler`]
 
 Optional:
 
-* <<images_upload_base_path,`images_upload_base_path`>>
-* <<images_upload_credentials,`images_upload_credentials`>>
-* <<images_reuse_filename,`images_reuse_filename`>>
+* xref:images_upload_base_path[`images_upload_base_path`]
+* xref:images_upload_credentials[`images_upload_credentials`]
+* xref:images_reuse_filename[`images_reuse_filename`]
 
 include::partial$configuration/images_uploads_url.adoc[]
 
@@ -112,7 +114,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers print messages to the JavaScript console if there is a CORS error.
 
-The link:{baseurl}/advanced/php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
+The xref:advanced/php-upload-handler.adoc[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
 
 === Further reading on CORS
 

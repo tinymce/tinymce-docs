@@ -30,7 +30,7 @@ tinymce.init({
 [[userproperties]]
 ==== User properties
 
-The following table describes the properties available for user objects provided to the xref:mentions_fetch[`mentions_fetch` callback]. Properties may be required, optional, or not available; depending on the xref:mentions_item_type[`mentions_item_type`] and xref:mentions_select[`mentions_select`] options.
+The following table describes the properties available for user objects provided to the xref:plugins/premium/mentions.adoc#mentions_fetch[`mentions_fetch` callback]. Properties may be required, optional, or not available; depending on the xref:mentions_item_type[`mentions_item_type`] and xref:plugins/premium/mentions.adoc#mentions_select[`mentions_select`] options.
 
 |===
 | Name | Value | `name` | `profile` | Description

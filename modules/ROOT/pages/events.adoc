@@ -118,7 +118,7 @@ The following events are provided by the {productname} editor.
 |BeforeGetContent |`+{ format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired before the content is serialized from the editor.
 |GetContent |`+{ content: string, format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired after the content is serialized from the editor.
 |BeforeSetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired before the content is parsed and rendered in the editor.
-|SetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired after the content is parsed and rendered in the editor.
+|SetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired after the content is parsed and rendered in the editor. *Note*: `+content+` argument has been deprecated and will be removed in the next major release.
 |LoadContent |N/A |Fired after the initial content has loaded into the editor.
 |PreviewFormats |N/A |Fired before a formats CSS is generated when the format is being previewed in the editor.
 |AfterPreviewFormats |N/A |Fired after a formats CSS is generated when the format is being previewed in the editor.

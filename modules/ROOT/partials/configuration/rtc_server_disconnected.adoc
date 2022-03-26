@@ -26,12 +26,12 @@ Input parameters :
 === Reasons for disconnection
 
 [CAUTION]
---
+====
 It is critical to at least handle the `+client_update_required+` reason. This indicates the RTC plugin in the current editor instance is out-of-date compared to other users on the session. The behavior in this scenario depends on the configuration:
 
 * If the `+rtc_server_disconnected+` is set, no message is displayed to the user for this error. It is up to the integrator to manage cleanly reloading the page.
 * If the `+rtc_server_disconnected+` is not set, the suggested error message will be displayed in a notification asking the user to reload the page.
---
+====
 
 The `+reason+` field will have one of the following values.
 

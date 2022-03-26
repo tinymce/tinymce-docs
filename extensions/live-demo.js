@@ -37,6 +37,7 @@ const { Liquid } = require('liquidjs');
  When the example.js file is present, the link to the external codepen site is disabled
  */
 
+const templateCache = {};
 
 const validContent = {
   html: 'index.html',
@@ -67,6 +68,18 @@ const defaultTabs = [
 const loadDemoResource = (catalog, ctx, filePath) => {
   const demoCss = catalog.resolveResource(`live-demos/${filePath}`, ctx, 'example', [ 'example' ]);
   return demoCss ? demoCss.contents.toString() : undefined;
+};
+
+const loadTemplate = (engine, catalog, ctx, filePath) => {
+  const key = `${ctx.component}/${ctx.version}/modules/${ctx.module}/examples/${filePath}`;
+  if (templateCache.hasOwnProperty(key)) {
+    return templateCache[key];
+  } else {
+    const file = loadDemoResource(catalog, ctx, filePath);
+    const template = file !== undefined ? engine.parse(file, key) : undefined;
+    templateCache[key] = template;
+    return template;
+  }
 };
 
 const getDemoTitle = (type) => {
@@ -126,10 +139,10 @@ const loadContent = (engine, catalog, id, docAttrs) => {
   Object.entries(validContent).forEach(([type, file]) => {
     const hasKey = 'has' + type[0].toUpperCase() + type.slice(1);
 
-    // If the file exists, then render the content
-    const catalogFile = loadDemoResource(catalog, ctx, `${id}/${file}`);
-    if (catalogFile !== undefined) {
-      data[type] = engine.parseAndRenderSync(catalogFile, {
+    // If the template file exists then render the content
+    const template = loadTemplate(engine, catalog, ctx, `${id}/${file}`);
+    if (template !== undefined) {
+      data[type] = engine.renderSync(template, {
         baseurl: `${docAttrs['site-url']}/${ctx.component}/${ctx.version}`,
         ...docAttrs
       });
@@ -174,8 +187,8 @@ module.exports.register = (registry, context) => {
         component: docAttrs['page-component-name'],
         version: docAttrs['page-component-version'],
       };
-      const liveDemoFile = loadDemoResource(catalog, rootCtx, 'live-demo.adoc.liquid');
-      const renderedContent = engine.parseAndRenderSync(liveDemoFile, {
+      const template = loadTemplate(engine, catalog, rootCtx, 'live-demo.adoc.liquid');
+      const renderedContent = engine.renderSync(template, {
         liveDemo: {
           ...attrs,
           type: type,

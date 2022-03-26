@@ -9,7 +9,7 @@
 
 The following example demonstrates how data flows through the dialog and how buttons are configured. This is an interactive dialog that inserts the name of a cat into the editor content on submit.
 
-liveDemo::dialog-pet-machine[ height="150" tab="js" ]
+liveDemo::dialog-pet-machine[height="150", tab="js"]
 
 The dialog in this example contains two interactive components - an input component named `+catdata+` and a checkbox component named `+isdog+`. These names are used in the `+initialdata+` configuration property to set the initial values for these components. In this case, when the dialog loads the input will contain the text _initial Cat_ and the checkbox will not be checked.
 
@@ -26,7 +26,7 @@ The following example demonstrates one way of implementing a multipage form dial
 
 To see the output of the code, click on the {productname} tab on the fiddle below.
 
-liveDemo::redial-demo[ height="900" tab="js" ]
+liveDemo::redial-demo[height="900", tab="js"]
 
 The example JavaScript code contains two dialog configurations - `+page1Config+` and `+page2Config+`. The {productname} initialization code adds a button to the editor that when clicked calls `+editor.windowManager.open(page1Config)+` to open a dialog using the first configuration.
 

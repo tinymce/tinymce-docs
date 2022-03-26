@@ -26,7 +26,7 @@ include::partial$context/positioning.adoc[]
 
 This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
-liveDemo::context-toolbar[ height="600" tab="js" ]
+liveDemo::context-toolbar[height="600", tab="js"]
 
 == Launching a context toolbar programmatically
 

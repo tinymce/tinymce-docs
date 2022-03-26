@@ -131,7 +131,6 @@ const loadContent = (engine, catalog, id, docAttrs) => {
     if (catalogFile !== undefined) {
       data[type] = engine.parseAndRenderSync(catalogFile, {
         baseurl: `${docAttrs['site-url']}/${ctx.component}/${ctx.version}`,
-        baseimagesurl: `${docAttrs['site-url']}/${ctx.component}/${ctx.version}/${docAttrs['imagesdir']}`,
         ...docAttrs
       });
       data[hasKey] = true;

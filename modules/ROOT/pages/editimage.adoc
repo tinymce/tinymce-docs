@@ -5,7 +5,6 @@
 :keywords: edit image rotate rotateleft rotateright flip flipv fliph editimage imageoptions
 :pluginname: Edit Image
 :plugincode: editimage
-:altplugincode: nil
 :pluginminimumplan: tierone
 
 Edit Image (`+editimage+`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+editimage_cors_hosts+` or `+editimage_proxy_service_url+` (see below).

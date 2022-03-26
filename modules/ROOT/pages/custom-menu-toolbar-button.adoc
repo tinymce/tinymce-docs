@@ -34,7 +34,7 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 
 The following is a simple toolbar menu button example:
 
-liveDemo::custom-toolbar-menu-button[ tab="js" ]
+liveDemo::custom-toolbar-menu-button[tab="js"]
 
 This example configures a toolbar menu button with the label `+My Button+` that opens the specified menu when clicked. The top-level menu contains two items. The first menu item inserts content when clicked and the second menu item opens a submenu containing two menu items which insert content when clicked.
 

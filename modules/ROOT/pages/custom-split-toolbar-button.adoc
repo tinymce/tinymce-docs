@@ -38,7 +38,7 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 
 The following example sets up a split button with a text label and a static dropdown menu.
 
-liveDemo::custom-toolbar-split-button[ tab="js" ]
+liveDemo::custom-toolbar-split-button[tab="js"]
 
 A split button is similar to a basic button in that they both require an `+onAction+` callback. The `+onAction+` callback function should take the button's API and return nothing. It is called when the basic button section is clicked. In this example, `+onAction+` calls `+editor.insertContent(value)+` which inserts the given content into the editor.
 

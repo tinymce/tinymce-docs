@@ -8,7 +8,7 @@ ifeval::["{commentsMode}" == "callback"]
 [source,js]
 ----
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create,
@@ -20,8 +20,8 @@ tinymce.init({
   tinycomments_lookup,
 
   /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: function (editor) {
-    editor.on('SkinLoaded', function () {
+  setup: (editor) => {
+    editor.on('SkinLoaded', () => {
       editor.execCommand("ToggleSidebar", false, "showcomments");
     })
   }
@@ -33,14 +33,14 @@ ifeval::["{commentsMode}" != "callback"]
 [source,js]
 ----
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
   tinycomments_can_resolve: canResolveCommentsCallback,
   /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: function (editor) {
-    editor.on('SkinLoaded', function () {
+  setup: (editor) => {
+    editor.on('SkinLoaded', () => {
       editor.execCommand("ToggleSidebar", false, "showcomments");
     })
   }

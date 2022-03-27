@@ -3,7 +3,9 @@
 
 This option lets you specify a predefined list of sources for images. `+image_list+` takes the form of an array containing items to add to a list with a corresponding image. Each item has a `+title+` and a `+value+`.
 
-Type: `+String+`
+Type: `+false+`, `+String+`, `+Function+` or `+Array+`
+
+Default Value : `+false+`
 
 === Example: Using `+image_list+`
 
@@ -12,11 +14,10 @@ Type: `+String+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: [
-    {title: 'Cat', value: 'cat.png'},
-    {title: 'Dog', value: 'dog.jpg'}
+    { title: 'Cat', value: 'cat.png' },
+    { title: 'Dog', value: 'dog.jpg' }
   ]
 });
 ----
@@ -32,15 +33,14 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: [
-    {title: 'Cat', value: 'cat.png'},
-    {title: 'Dogs',
+    { title: 'Cat', value: 'cat.png' },
+    { title: 'Dogs',
       menu: [
-        {title: 'Alaskan Husky', value: 'husky.jpg'},
-        {title: 'Dingo', value: 'dingo.png'},
-        {title: 'Swedish Lapphund', value: 'swedish_lapphund.gif'}
+        { title: 'Alaskan Husky', value: 'husky.jpg' },
+        { title: 'Dingo', value: 'dingo.png' },
+        { title: 'Swedish Lapphund', value: 'swedish_lapphund.gif' }
       ]
     }
   ]
@@ -56,7 +56,6 @@ You can also configure a URL with JSON data. The format of that list is the same
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: '/mylist.php'
 });
@@ -69,12 +68,11 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
-  image_list: function(success) {
+  image_list: (success) => {
     success([
-      {title: 'Dog', value: 'mydog.jpg'},
-      {title: 'Cat', value: 'mycat.gif'}
+      { title: 'Dog', value: 'mydog.jpg' },
+      { title: 'Cat', value: 'mycat.gif' }
     ]);
   }
 });

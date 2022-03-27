@@ -12,14 +12,13 @@ Type: `+Array+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_row_class_list: [
-    {title: 'None', value: ''},
-    {title: 'No Border', value: 'table_row_no_border'},
-    {title: 'Red border', value: 'table_row_red_border'},
-    {title: 'Blue border', value: 'table_row_blue_border'},
-    {title: 'Green border', value: 'table_row_green_border'}
+    { title: 'None', value: '' },
+    { title: 'No Border', value: 'table_row_no_border' },
+    { title: 'Red border', value: 'table_row_red_border' },
+    { title: 'Blue border', value: 'table_row_blue_border' },
+    { title: 'Green border', value: 'table_row_green_border' }
   ]
 });
 ----
@@ -35,16 +34,15 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_row_class_list: [
-    {title: 'None', value: ''},
-    {title: 'No Border', value: 'table_row_no_border'},
-    {title: 'Border',
+    { title: 'None', value: '' },
+    { title: 'No Border', value: 'table_row_no_border' },
+    { title: 'Border',
       menu: [
-        {title: 'Red border', value: 'table_row_red_border'},
-        {title: 'Blue border', value: 'table_row_blue_border'},
-        {title: 'Green border', value: 'table_row_green_border'}
+        { title: 'Red border', value: 'table_row_red_border' },
+        { title: 'Blue border', value: 'table_row_blue_border' },
+        { title: 'Green border', value: 'table_row_green_border' }
       ]
     }
   ]

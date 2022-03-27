@@ -15,7 +15,7 @@ tinymce.init({
   toolbar: 'emoticons',
   emoticons_append: {
     custom_mind_explode: {
-      keywords: ['brain', 'mind', 'explode', 'blown'],
+      keywords: [ 'brain', 'mind', 'explode', 'blown' ],
       char: '🤯'
     }
   }

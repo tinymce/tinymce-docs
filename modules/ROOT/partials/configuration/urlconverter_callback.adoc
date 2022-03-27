@@ -20,7 +20,7 @@ Type : `+Javascript Function+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  urlconverter_callback: function(url, node, on_save, name) {
+  urlconverter_callback: (url, node, on_save, name) => {
     // Do some custom URL conversion
     url = url.substring(3);
 

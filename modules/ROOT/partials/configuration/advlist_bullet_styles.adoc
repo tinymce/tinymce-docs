@@ -7,8 +7,9 @@ Type: `+String+`
 
 Default Value: `+'default,circle,disc,square'+`
 
-Possible Values: * `+default+`: your browser's default style
+Possible Values:
 
+* `+default+`: the browser's default style
 * `+circle+`: a hollow circle
 * `+disc+`: a filled circle
 * `+square+`: a filled square
@@ -18,8 +19,9 @@ Possible Values: * `+default+`: your browser's default style
 [source,js]
 ----
 tinymce.init({
-    selector: 'textarea',  // change this value according to your html
-    plugins: 'advlist',
-    advlist_bullet_styles: 'square'  // only include square bullets in list
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'lists advlist',
+  toolbar: 'bullist',
+  advlist_bullet_styles: 'square'  // only include square bullets in list
 });
 ----

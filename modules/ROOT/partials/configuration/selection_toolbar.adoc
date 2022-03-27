@@ -14,7 +14,7 @@ Default Value : `+'bold italic | quicklink h2 h3 blockquote'+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'quickbars',
   quickbars_selection_toolbar: 'bold italic | blocks | quicklink blockquote'
 });
@@ -27,7 +27,7 @@ To disable the Quick Selection toolbar, set `+quickbars_selection_toolbar+` to `
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'quickbars',
   quickbars_selection_toolbar: false
 });

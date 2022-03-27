@@ -12,7 +12,6 @@ Type: `+Object+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_preview_replace_values: {
     username: 'Jack Black',

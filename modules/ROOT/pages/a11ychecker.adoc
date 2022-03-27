@@ -62,8 +62,9 @@ https://www.w3.org/TR/WCAG21/#conformance[WCAG level] : Level A ; Level AA ; Lev
 
 xref:a11ychecker_html_version[HTML version] : HTML4 and HTML5
 
-WCAG 2.1 specifications : * https://www.w3.org/WAI/WCAG21/Techniques/html/H42.html[H42 - Using h1-h6 to identify headings].
+WCAG 2.1 specifications :
 
+* https://www.w3.org/WAI/WCAG21/Techniques/html/H42.html[H42 - Using h1-h6 to identify headings].
 * https://www.w3.org/WAI/WCAG21/Techniques/html/H69.html[H69 - Providing heading elements at the beginning of each section of content].
 
 [[D2]]
@@ -372,7 +373,7 @@ url : A URL to the W3 WCAG technique that needs to be addressed to clear the iss
 
 [source,js]
 ----
-var issues = editor.plugins.a11ychecker.getReport();
+const issues = tinymce.activeEditor.plugins.a11ychecker.getReport();
 
 console.log(issues);
 

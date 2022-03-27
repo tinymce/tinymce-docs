@@ -11,7 +11,7 @@ Default : `+'${pluginUrl}/js/emojis.js'+`
 ----
 tinymce.Resource.add('tinymce.plugins.emoticons', {
   robot: {
-    keywords: ['computer', 'machine', 'bot'],
+    keywords: [ 'computer', 'machine', 'bot' ],
     char: '🤖',
     category: 'people'
   }

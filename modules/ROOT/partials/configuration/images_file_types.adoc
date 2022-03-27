@@ -19,6 +19,7 @@ Possible Values: A list of valid web image file extensions. For a list of possib
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
+  toolbar: 'image',
   images_file_types: 'jpg,svg,webp'
 });
 ----

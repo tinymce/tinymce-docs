@@ -15,13 +15,13 @@ tinymce.init({
   plugins: 'tinydrive image',
   toolbar: 'custombrowse',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('custombrowse', {
       text: 'Custom browse',
-      onAction: function () {
+      onAction: () => {
         editor.plugins.tinydrive.browse({
           max_image_dimension: 1024
-        }).then(function () {
+        }).then(() => {
           console.log('Tiny Drive dialog closed.');
         });
       }

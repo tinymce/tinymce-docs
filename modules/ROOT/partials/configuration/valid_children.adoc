@@ -26,7 +26,7 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  valid_children : '+body[style],-body[div],p[strong|a|#text]'
+  valid_children: '+body[style],-body[div],p[strong|a|#text]'
 });
 ----
 

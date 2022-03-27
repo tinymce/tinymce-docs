@@ -13,6 +13,7 @@ Default Value: `+'30s'+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autosave',
   autosave_interval: '20s'
 });
 ----

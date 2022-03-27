@@ -16,11 +16,10 @@ This plugin enables the user to insert an image into {productname}'s editable ar
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_list: [
-    {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
-    {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
+    { title: 'My image 1', value: 'https://www.example.com/my1.gif' },
+    { title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif' }
   ]
 });
 ----
@@ -84,14 +83,22 @@ Use the `+Style Formats+` option instead, which is much more powerful.
 [source,js]
 ----
 style_formats: [
-  {title: 'Image Left', selector: 'img', styles: {
-    'float' : 'left',
-    'margin': '0 10px 0 10px'
-  }},
-  {title: 'Image Right', selector: 'img', styles: {
-    'float' : 'right',
-    'margin': '0 10px 0 10px'
-  }}
+  {
+    title: 'Image Left',
+    selector: 'img',
+    styles: {
+      float: 'left',
+      margin: '0 10px 0 10px'
+    }
+  },
+  {
+    title: 'Image Right',
+    selector: 'img',
+    styles: {
+      float: 'right',
+      margin: '0 10px 0 10px'
+    }
+  }
 ]
 ----
 

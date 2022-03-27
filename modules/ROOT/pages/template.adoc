@@ -17,7 +17,6 @@ The `+template+` plugin adds support for custom templates. It also adds a menu i
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template'
 });
 ----
@@ -57,7 +56,6 @@ include::partial$configuration/template_selected_content_classes.adoc[leveloffse
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_cdate_classes: 'cdate creationdate',
   template_mdate_classes: 'mdate modifieddate',
@@ -65,20 +63,20 @@ tinymce.init({
   template_cdate_format: '%m/%d/%Y : %H:%M:%S',
   template_mdate_format: '%m/%d/%Y : %H:%M:%S',
   template_replace_values: {
-    username : 'Jack Black',
-    staffid : '991234'
+    username: 'Jack Black',
+    staffid: '991234'
   },
-  templates : [
+  templates: [
     {
       title: 'Editor Details',
-      url: 'editor_details.htm',
+      url: 'editor_details.html',
       description: 'Adds Editor Name and Staff ID'
     },
-      {
-        title: 'Timestamp',
-        url: 'time.htm',
-        description: 'Adds an editing timestamp.'
-      }
+    {
+      title: 'Timestamp',
+      url: 'time.html',
+      description: 'Adds an editing timestamp.'
+    }
   ]
 });
 ----
@@ -109,12 +107,12 @@ Each template needs to be inside of a div with the `+mceTmpl+` class, like this 
 <div class="mceTmpl">
   <table width="98%%"  border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <th scope="col"> </th>
-      <th scope="col"> </th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
     </tr>
     <tr>
-      <td> </td>
-      <td> </td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
   </table>
 </div>

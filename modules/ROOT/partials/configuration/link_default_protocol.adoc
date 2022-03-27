@@ -1,3 +1,8 @@
+:plugin_list: link
+ifeval::["{plugincode}" == "autolink"]
+:plugin_list: link autolink
+endif::[]
+
 [[link_default_protocol]]
 == `+link_default_protocol+`
 
@@ -11,12 +16,11 @@ Default Value: `+'https'+`
 
 === Example: Using `+link_default_protocol+`
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'link',
-  menubar: 'insert',
+  plugins: '{plugin_list}',
   toolbar: 'link',
   link_default_protocol: 'http'
 });

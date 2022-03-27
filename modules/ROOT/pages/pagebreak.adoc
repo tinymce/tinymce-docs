@@ -19,7 +19,6 @@ It also adds a toolbar button and a menu item `+Page break+` under the `+Insert+
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'pagebreak',
-  menubar: 'insert',
   toolbar: 'pagebreak'
 });
 ----

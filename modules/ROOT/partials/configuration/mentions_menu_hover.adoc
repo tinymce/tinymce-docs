@@ -9,17 +9,18 @@ Type : `+Function+`
 
 [source,js]
 ----
-var userRequest = {};
+const userRequest = {};
+
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_menu_hover: function (userInfo, success) {
+  mentions_menu_hover: (userInfo, success) => {
     // request more information about the user from the server and cache it locally
     if (!userRequest[userInfo.id]) {
       userRequest[userInfo.id] = fetch('/user?id=' + userInfo.id);
     }
-    userRequest[userInfo.id].then(function(userDetail) {
-      var div = document.createElement('div');
+    userRequest[userInfo.id].then((userDetail) => {
+      const div = document.createElement('div');
 
       div.innerHTML = (
       '<div>' +
@@ -44,16 +45,16 @@ If `+mentions_menu_hover+` is resolved with an object specifying the type and us
 
 [source,js]
 ----
-var userRequest = {};
+const userRequest = {};
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_menu_hover: function (userInfo, success) {
+  mentions_menu_hover: (userInfo, success) => {
     // request more information about the user from the server and cache it locally
     if (!userRequest[userInfo.id]) {
       userRequest[userInfo.id] = fetch('/user?id=' + userInfo.id);
     }
-    userRequest[userInfo.id].then(function(userDetail) {
+    userRequest[userInfo.id].then((userDetail) => {
       success({ type: 'profile', user: userDetail });
     });
   }

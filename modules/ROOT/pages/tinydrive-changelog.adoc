@@ -1,18 +1,15 @@
 = Tiny Drive Changelog
 
 :title_nav: Changelog
-
 :description: The history of Tiny Drive releases.
 :keywords: changelog class: changelog
 
-[[141---2021-05-26]]
 == 1.4.1 - 2021-05-26
 
 === Fixed
 
 * Fixed an issue where the `+skin+` setting wasn't working in standalone-mode.
 
-[[140---2021-05-19]]
 == 1.4.0 - 2021-05-19
 
 === Added
@@ -28,7 +25,6 @@
 * Fixed an issue where specifying 'audio' for the `+filetype+` setting would not list the files in grid view.
 * Fixed an issue with tab key throwing a max call stack exceeded error.
 
-[[130---2019-06-03]]
 == 1.3.0 - 2019-06-03
 
 === Added
@@ -44,7 +40,6 @@
 
 * Fixed bug where IE 11 would render the toolbar icons at incorrect positions.
 
-[[121---2019-04-24]]
 == 1.2.1 - 2019-04-24
 
 === Added
@@ -58,7 +53,6 @@
 * Fixed various async issues with the ui not being updated correctly.
 * Fixed an issue where it would scroll the file list to top if new files where added while scrolling.
 
-[[120---2019-03-28]]
 == 1.2.0 - 2019-03-28
 
 === Added
@@ -76,7 +70,6 @@
 * Fixed an issue where concurrent async list operations could result in duplicate files.
 * Fixed an issue where it wasn't possible to upload some file extension mp4, m4v, keynote, csv.
 
-[[110---2018-11-26]]
 == 1.1.0 - 2018-11-26
 
 === Added
@@ -87,7 +80,6 @@
 
 * Fixed issue where backdrop wasm't displayed for preview menu.
 
-[[100---2018-09-18]]
 == 1.0.0 - 2018-09-18
 
 === Added

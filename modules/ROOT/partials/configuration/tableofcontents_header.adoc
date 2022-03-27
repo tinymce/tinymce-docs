@@ -1,0 +1,20 @@
+[[tableofcontents_header]]
+== `+tableofcontents_header+`
+
+Table of contents has a header and by default it will be marked up with `+H2+` tag. With the `+tableofcontents_header+` option you can change it to some other tag.
+
+Type: `+String+`
+
+Default Value: `+'h2'+`
+
+=== Example: Using `+tableofcontents_header+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tableofcontents',
+  toolbar: 'tableofcontents',
+  tableofcontents_header: 'div' // case doesn't matter
+});
+----

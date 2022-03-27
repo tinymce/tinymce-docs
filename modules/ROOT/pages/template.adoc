@@ -1,15 +1,12 @@
 = Template plugin
 
 :title_nav: Template
-
 :description: Custom templates for your content.
 :keywords: insert template_cdate_classes template_cdate_format template_mdate_classes template_mdate_format template_replace_values template_selected_content_classes template_preview_replace_values
 :controls: toolbar button, menu item
-
 :pluginname: Template
-
 :plugincode: template
-
+:altplugincode: nil
 
 The `+template+` plugin adds support for custom templates. It also adds a menu item `+Insert template+` under the `+Insert+` menu and a toolbar button.
 
@@ -35,21 +32,21 @@ liveDemo::template[ tab="js" ]
 
 These settings affect the execution of the `+template+` plugin. Predefined templates for items such as created dates and modified dates can be set here.
 
-include::partial$configuration/templates.adoc[]
+include::partial$configuration/templates.adoc[leveloffset=+1]
 
-include::partial$configuration/template_cdate_classes.adoc[]
+include::partial$configuration/template_cdate_classes.adoc[leveloffset=+1]
 
-include::partial$configuration/template_cdate_format.adoc[]
+include::partial$configuration/template_cdate_format.adoc[leveloffset=+1]
 
-include::partial$configuration/template_mdate_classes.adoc[]
+include::partial$configuration/template_mdate_classes.adoc[leveloffset=+1]
 
-include::partial$configuration/template_mdate_format.adoc[]
+include::partial$configuration/template_mdate_format.adoc[leveloffset=+1]
 
-include::partial$configuration/template_replace_values.adoc[]
+include::partial$configuration/template_replace_values.adoc[leveloffset=+1]
 
-include::partial$configuration/template_preview_replace_values.adoc[]
+include::partial$configuration/template_preview_replace_values.adoc[leveloffset=+1]
 
-include::partial$configuration/template_selected_content_classes.adoc[]
+include::partial$configuration/template_selected_content_classes.adoc[leveloffset=+1]
 
 == Template Plugin Examples
 
@@ -132,7 +129,7 @@ Snippets are `+html+` code chunks that can be inserted. Replace variables will o
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ----
 
-include::partial$configuration/ref_time_date_formats.adoc[]
+include::partial$configuration/ref_time_date_formats.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

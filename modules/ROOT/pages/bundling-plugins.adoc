@@ -1,12 +1,12 @@
 = Bundling TinyMCE plugins using module loading
 
 :title_nav: Plugins
-
 :description_short: Information on bundling plugins
 :description: Information on bundling TinyMCE plugins using module loading
+
 :editorcomponent: plugin
 include::partial$module-loading/bundling-ref-example.adoc[]
-:editorcomponent: nil
+:!editorcomponent:
 
 The following table shows examples of the syntax used to bundle the following plugin.
 
@@ -58,8 +58,6 @@ require('../tinymce/plugins/example/plugin.js');
 ----
 |===
 
-____
-*Important*: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at link:usage-with-module-loaders.html[Bundling {productname} with a module loader].
-____
+IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].
 
 include::partial$module-loading/bundling-plugin-files.adoc[]

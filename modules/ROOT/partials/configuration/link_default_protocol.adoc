@@ -1,14 +1,13 @@
+[[link_default_protocol]]
 == `+link_default_protocol+`
 
 This option allows you to set a default protocol for links when inserting/editing a link via the link dialog. The protocol will apply to any links where the protocol has not been specified and the prefix prompt has been accepted.
 
-____
-*Note*: This option also applies to the link:autolink.html[autolink] plugin.
-____
+NOTE: This option also applies to the xref:autolink.adoc[autolink] plugin.
 
-Type : `+String+`
+Type: `+String+`
 
-Default Value : `+'http'+`
+Default Value: `+'https'+`
 
 === Example: Using `+link_default_protocol+`
 
@@ -19,6 +18,6 @@ tinymce.init({
   plugins: 'link',
   menubar: 'insert',
   toolbar: 'link',
-  link_default_protocol: 'https'
+  link_default_protocol: 'http'
 });
 ----

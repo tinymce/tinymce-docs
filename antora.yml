@@ -6,8 +6,8 @@ asciidoc:
     companyurl: https://www.tiny.cloud
     cdnurl: https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js
     tdcdnurl: https://cdn.tiny.cloud/1/_your_api_key_/tinydrive/6-stable/tinydrive.min.js
-    tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5-stable/tinymce.min.js
-    tinydrive_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/5-stable/tinydrive.min.js
+    tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/6-testing/tinymce.min.js
+    tinydrive_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/6-testing/tinydrive.min.js
     webcomponent_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.min.js
     default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor, inline editor, distraction-free editor, classic editor, wysiwyg
     # product variables
@@ -41,6 +41,8 @@ asciidoc:
     download-community: https://www.tiny.cloud/get-tiny/self-hosted/
     download-enterprise: https://www.tiny.cloud/my-account/downloads/
     accountpageurl: https://www.tiny.cloud/my-account
+    accountkeyurl: https://www.tiny.cloud/my-account/key-manager/
+    accountjwturl: https://www.tiny.cloud/my-account/jwt/
     accountsignup: https://www.tiny.cloud/auth/signup
     pricingpage: https://www.tiny.cloud/pricing
     contactpage: https://www.tiny.cloud/contact
@@ -55,6 +57,10 @@ asciidoc:
     newline: '<br>'
     virt_ellps: '&#8942;'
     ellps: '&#133;'
+    # Demo logos
+    logofordemos: 'https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png'
+    logofordemoshtml: '<p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128" /></p>'
+    logofordemoshtmlright: '<p><img style="float: right;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128" /></p>'
 
 nav:
 - modules/ROOT/nav.adoc

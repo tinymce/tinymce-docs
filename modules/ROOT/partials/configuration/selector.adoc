@@ -1,14 +1,15 @@
+[[selector]]
 == `+selector+`
 
-This option allows you to specify a CSS selector for the areas that {productname} should make editable.
+This option allows a CSS selector to be specified for the areas that {productname} should make editable.
 
-When using this option in {productname}'s regular editing mode, the element will be replaced with an `+iframe+` that {productname} will perform all operations within.
+When using this option in {productname}'s regular editing mode, the element will be replaced with an `+iframe+` that {productname} will perform all operations within. When using this option in {productname}'s inline editing mode, the selector can be used on any block element and will edit the content in place instead of replacing the element with an `+iframe+`.
 
-=== Replace all textarea elements on the page
+For more information on the differences between regular and inline editing modes see xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
 Type : `+String+`
 
-==== Example: Replace all textarea elements with TinyMCE
+=== Example: Replace all textarea elements on the page
 
 [source,js]
 ----
@@ -17,33 +18,21 @@ tinymce.init({
 });
 ----
 
-=== Replace a textarea element with id "editable"
-
-Type : `+String+`
-
-==== Example: Replace a textarea element with the `+id+` "editable"
+=== Example: Replace a textarea element with id "editable"
 
 [source,js]
 ----
 tinymce.init({
-    selector: 'textarea#editable'
+  selector: 'textarea#editable'
 });
 ----
 
-When using this option in {productname}'s inline editing mode, the selector can be used on any block element and will edit the content in place instead of replacing the element with an `+iframe+`.
-
-=== Inline editing mode on a div element with id "editable"
-
-Type : `+String+`
-
-==== Example: Add an inline editor on a div with the `+id+` "editable"
+=== Example: Inline editing mode on a div element with id "editable"
 
 [source,js]
 ----
 tinymce.init({
-    selector: 'div#editable',
-    inline: true
+  selector: 'div#editable',
+  inline: true
 });
 ----
-
-For more information on the differences between regular and inline editing modes please see this page link:/interface/editor-mode/use-tinymce-inline/[here].

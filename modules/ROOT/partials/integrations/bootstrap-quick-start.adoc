@@ -6,14 +6,14 @@ This procedure creates a basic Bootstrap integration containing a {productname} 
 
 == Setup
 
-[arabic]
 . In an HTML file, add a source script for Bootstrap JS.
 +
 If the project loads Bootstrap from https://www.bootstrapcdn.com/, use the script provided by the https://www.bootstrapcdn.com/[Bootstrap CDN], which includes the `+integrity+` and `+crossorigin+` attributes.
-\{% if productSource == "cloud" %}
+
+ifeval::["{productSource}" == "cloud"]
 . To source {productname} from the {cloudname}, add the following `+script+` element to the `+<head>+` of the document:
 +
-[source,html]
+[source,html,subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
@@ -21,7 +21,8 @@ If the project loads Bootstrap from https://www.bootstrapcdn.com/, use the scrip
 Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
 Signing up for a {cloudname} API key will also provide a trial of the link:premium.html[Premium Plugins].
-\{% else %}
+endif::[]
+ifeval::["{productSource}" != "cloud"]
 . To source an independent deployment of {productname}, add the following source script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:
 +
 [source,html]
@@ -30,7 +31,7 @@ Signing up for a {cloudname} API key will also provide a trial of the link:premi
 ----
 +
 For information on self-hosting {productname}, see: link:advanced-install.html[Installing {productname}].
-\{% endif %}
+endif::[]
 . Add an initialization point for {productname}, such as:
 +
 [source,html]

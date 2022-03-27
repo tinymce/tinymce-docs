@@ -1,6 +1,7 @@
+[[cache_suffix]]
 == `+cache_suffix+`
 
-This option lets you add a custom cache buster URL part at the end of each request `+{prodnamecode}+` makes to load CSS, scripts, etc. Just add the query string part you want to append to each URL request, for example "?v=4.1.6".
+This option allows a custom cache buster URL part to be added at the end of each request {productname} makes to load CSS, scripts, etc. Just add the query string part that should be appended to each URL request, for example "?v=4.1.6".
 
 Type : `+String+`
 

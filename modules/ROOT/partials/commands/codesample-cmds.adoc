@@ -1,11 +1,10 @@
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |CodeSample |Opens the Code Sample dialog at the cursor position or converts the current selection to a `+<code>+` block.
 |===
 
-*Example*
-
+.Example
 [source,js]
 ----
 tinymce.activeEditor.execCommand('CodeSample');

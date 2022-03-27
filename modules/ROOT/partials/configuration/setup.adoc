@@ -1,12 +1,13 @@
+[[setup]]
 == `+setup+`
 
-This option allows you to specify a callback that will be executed before the {productname} editor instance is rendered.
+This option allows a callback to be provided that will be executed before the {productname} editor instance is rendered.
 
-To specify a setup callback, please provide the `+setup+` option with a JavaScript function. This function should have one argument, which is a reference to the editor that is being set up.
+To specify a setup callback, provide the `+setup+` option with a JavaScript function. This function should have one argument, which is a reference to the editor that is being set up.
 
 A common use case for this setting is to add editor events to {productname}. For instance, if you would like to add a click event to {productname}, you would add it through the setup configuration setting.
 
-Type : `+JavaScript Function+`
+Type : `+Function+`
 
 === Example: Using `+setup+`
 
@@ -14,8 +15,8 @@ Type : `+JavaScript Function+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  setup: function (editor) {
-    editor.on('click', function () {
+  setup: (editor) => {
+    editor.on('click', () => {
       console.log('Editor was clicked');
     });
   }

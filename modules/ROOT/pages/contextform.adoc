@@ -1,11 +1,11 @@
 = Context forms
 
 :title_nav: Context forms
-
 :description: Creating custom context forms for TinyMCE 6
 :keywords: contextforms context forms contextformsbarapi
+:contextItemType: form
 
-A context form consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `+launch+` configuration, a special context toolbar button with name `+form:${name}+` is registered which will launch that particular context form. Context forms are a generalization of the `+Insert Link+` form that existed in the original link:inlite.html#quicklink[inlite] theme from TinyMCE 4.
+A context form consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `+launch+` configuration, a special context toolbar button with name `+form:${name}+` is registered which will launch that particular context form. Context forms are a generalization of the `+Insert Link+` form that existed in the original link:https://www.tiny.cloud/docs-4x/themes/inlite/#quicklink[inlite] theme from TinyMCE 4.
 
 == Registering a context form
 
@@ -15,13 +15,11 @@ A context form is registered by calling the `+addContextForm+` API in the regist
 
 The button strings for launching a context form is `+form:${name}+` where name is the registered name of the context form (e.g. form:link).
 
-____
-*Note*: These buttons will only be present if the `+launch+` setting of the context form is specified.
-____
+NOTE: These buttons will only be present if the `+launch+` setting of the context form is specified.
 
 The Launch specification. This relates to what the button that launches this form will look like.
 
-[cols=",",options="header",]
+[cols="1,4",options="header"]
 |===
 |Name |Details
 |`+launch+` |This is the specification for the launching button that can appear in a context toolbar only. It will be either type: `+contextformbutton+` or `+contextformtogglebutton+`, and will be identical to those definitions below except it will *not* have an `+onAction+`.
@@ -39,7 +37,7 @@ There is an `+editor+` event called `+contexttoolbar-show+` that can be fired to
 
 This relates to the form itself. The form specifications are:
 
-[cols=",",options="header",]
+[cols="1,4",options="header"]
 |===
 |Name |Details
 |`+launch+` |This is the specification for the launching button that can appear in a context toolbar only. It will be either type: `+contextformbutton+` or `+contextformtogglebutton+`, and will be identical to those definitions below except it will *not* have an `+onAction+`.
@@ -51,7 +49,7 @@ This relates to the form itself. The form specifications are:
 |`+commands+` |This is a list of the items to show in the context form. They can be either `+contextformbutton+` or `+contextformtogglebutton+`.
 |===
 
-include::partial$context/positioning.adoc[]
+include::partial$context/positioning.adoc[leveloffset=+1]
 
 == Context form buttons
 
@@ -63,7 +61,7 @@ The definition of a context form button is very similar to the definition of a n
 
 ==== type: 'contextformbutton';
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Value |Requirement |Description
 |primary |boolean |Optional |This will activate the button on <enter> in the input form.
@@ -77,7 +75,7 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 |onSetup |`+(togglebuttonApi) => (togglebuttonApi) => void+` |Optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered.
 |===
 
-Where the `+buttonApi+` is the same as a regular toolbar button and `+FormApi+` has (getValue: () => string, hide: () => void)
+Where the `+buttonApi+` is the same as a regular toolbar button and `+FormApi+` has `+(getValue: () => string, hide: () => void)+`
 
 === Context form toggle button
 
@@ -85,7 +83,7 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 
 ==== type: 'contextformtogglebutton';
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Value |Requirement |Description
 |primary |boolean |Optional |This will activate the button on <enter> in the input form.
@@ -105,7 +103,7 @@ Where the `+toggleButtonApi+` is the same as a regular toolbar toggle button.
 
 Both `+contextformbutton+` and `+contextformtogglebutton+` are passed `+formApi+` in their `+onAction+` callback. The `+formApi+` has two functions:
 
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Functions |Description
 |`+hide+` |This will hide the form. By default, no button hides the form. It is the responsibility of the developer to hide the form in the `+onAction+` handler of buttons that require that the context form close after the action.

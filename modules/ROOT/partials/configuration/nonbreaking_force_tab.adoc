@@ -1,3 +1,4 @@
+[[nonbreaking_force_tab]]
 == `+nonbreaking_force_tab+`
 
 This option allows you to force {productname} to insert three `+&nbsp;+` entities when the user presses the keyboard `+tab+` key.
@@ -6,15 +7,13 @@ It's important to note that this does not change the behavior of the menu and to
 
 However, the `+true+` condition does capture the tab key and contain it within the editable area, whereas when set to its default state of `+false+` a tab keypress will move the cursor to the next editable area (e.g. a browser url bar or form field on the current page).
 
-____
-*Note*: Review <<usagewithtableorlistsplugin, Usage with `+table+` or `+lists+` plugin>> before using this setting.
-____
+NOTE: Review xref:usagewithtableorlistsplugin[Usage with `+table+` or `+lists+` plugin] before using this setting.
 
-Type : `+Boolean+`
+Type: `+Boolean+`
 
-Default Value : `+false+`
+Default Value: `+false+`
 
-Possible Values : `+true+`, `+false+`
+Possible Values: `+true+`, `+false+`
 
 === Example: Using `+nonbreaking_force_tab+`
 
@@ -29,6 +28,7 @@ tinymce.init({
 });
 ----
 
+[[usagewithtableorlistsplugin]]
 === Usage with `+table+` or `+lists+` plugin
 
 The `+nonbreaking_force_tab+` setting can break the following functionality:

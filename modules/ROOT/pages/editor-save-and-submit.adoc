@@ -1,7 +1,6 @@
 = Editor save and submit options
 
 :title_nav: Save and submit
-
 :description: Editor options related to saving or submitting editor content
 :keywords:
 
@@ -20,8 +19,8 @@ include::partial$configuration/submit_patch.adoc[]
 
 == Adding save functionality to the editor
 
-{productname} can be configured to allow users to save the editor content. For information on configuring the user saving, see: link:save.html[The Save plugin].
+{productname} can be configured to allow users to save the editor content. For information on configuring the user saving, see: xref:save.adoc[The Save plugin].
 
 == Autosaving the editor content
 
-{productname} can be configured to automatically save the editor content. For information on configuring the automatic saving, see: link:autosave.html[The Autosave plugin].
+{productname} can be configured to automatically save the editor content. For information on configuring the automatic saving, see: xref:autosave.adoc[The Autosave plugin].

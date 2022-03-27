@@ -1,7 +1,6 @@
 = TinyMCE distraction-free editing mode
 
 :title_nav: Distraction-free editing mode
-
 :description: Mode that renders a lightweight UI for inline editing.
 :keywords: Mode inlite distraction-free
 
@@ -16,11 +15,11 @@ To enable a basic distraction-free editor, use the following configuration.
 [source,js]
 ----
 tinymce.init({
-    selector: 'div.tinymce',
-    plugins: [ 'quickbars' ],
-    toolbar: false,
-    menubar: false,
-    inline: true
+  selector: 'div.tinymce',
+  plugins: [ 'quickbars' ],
+  toolbar: false,
+  menubar: false,
+  inline: true
 });
 ----
 
@@ -32,8 +31,8 @@ liveDemo::editor-dfree[ ]
 
 For information on:
 
-* Configuring a Quick Toolbar; including `+quicklink+`, `+quickimage+`, and `+quicktable+`; see: link:quickbars.html[Quick Toolbar plugin].
-* Configuring a contextual toolbar, see: link:contexttoolbar.html[Context Toolbar].
-* Configuring a contextual menu, see: link:contextmenu.html[Context Menu].
-* Disabling the {productname} menubar, see: link:menus-configuration-options.html#menubar[Menubar].
-* The `+inline+` setting, see: link:inline-editor-options.html#inline[inline].
+* Configuring a Quick Toolbar; including `+quicklink+`, `+quickimage+`, and `+quicktable+`; see: xref:quickbars.adoc[Quick Toolbar plugin].
+* Configuring a contextual toolbar, see: xref:contexttoolbar.adoc[Context Toolbar].
+* Configuring a contextual menu, see: xref:contextmenu.adoc[Context Menu].
+* Disabling the {productname} menubar, see: xref:menus-configuration-options.adoc#menubar[Menubar].
+* The `+inline+` setting, see: xref:inline-editor-options.adoc#inline[inline].

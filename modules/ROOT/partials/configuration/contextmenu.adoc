@@ -1,3 +1,4 @@
+[[contextmenu]]
 == `+contextmenu+`
 
 The `+contextmenu+` option allows you to specify which items appear on the context menu. The format of this option is a space separated list of items in a string.
@@ -10,13 +11,13 @@ The context menu option accepts three styles of item:
 
 If the same name is registered as both a context menu section and a menu item, the context menu section takes preference.
 
-The default configuration includes the context menu sections for the following plugins: `+link+`, `+linkchecker+` , `+image+`, `+imagetools+`, `+permanentpen+`, `+table+`, and `+spellchecker+`.
+The default configuration includes the context menu sections for the following plugins: `+link+`, `+linkchecker+` , `+image+`, `+editimage+`, `+permanentpen+`, `+table+`, and `+tinymcespellchecker+`.
 
 To disable the editor's context menu, set this option to `+false+`.
 
 Type : `+String+` or `+false+`
 
-Default Value : `+'link linkchecker image imagetools table spellchecker configurepermanentpen'+`
+Default Value : `+'link linkchecker image editimage table spellchecker configurepermanentpen'+`
 
 include::partial$misc/admon_ctrl_right_click.adoc[]
 
@@ -31,5 +32,6 @@ tinymce.init({
 });
 ----
 
-\{% if page.title != "Context menu" %} For information on configuring the `+contextmenu+` option and creating custom context menu items link:contextmenu.html[context menu examples].
-\{% endif %}
+ifeval::["{docname}" != "contextmenu"]
+For information on configuring the `+contextmenu+` option and creating custom context menu items xref:contextmenu.adoc[context menu examples].
+endif::[]

@@ -1,15 +1,15 @@
 = Custom dialog body components
 
 :title_nav: Body components
-
 :description: A reference list of all TinyMCE dialog components.
 :keywords: dialog dialogapi
 
-The body of a dialog must be either a `+panel+` (a single panel) or a `+tabpanel+` (a collection of panels). Each panel can contain panel components, which are either <<layoutcomponents, layout components>> or <<basiccomponents, basic components>> such as inputs, buttons and text.
+The body of a dialog must be either a `+panel+` (a single panel) or a `+tabpanel+` (a collection of panels). Each panel can contain panel components, which are either xref:layoutcomponents[layout components] or xref:basiccomponents[basic components] such as inputs, buttons and text.
 
+[[panel]]
 == panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for <<panelcomponents, interactive panel components>>. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for xref:panelcomponents[interactive panel components]. A panel type dialog only has one panel.
 
 [source,js]
 ----
@@ -19,23 +19,22 @@ The basic dialog type is a *panel* dialog. A panel is a container for <<panelcom
 }
 ----
 
+[[tabpanel]]
 == tabpanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different <<panelcomponents, panel components>>, allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:panelcomponents[panel components], allowing for complex dialogs.
 
 Each tab panel is defined using the following configuration options:
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Type |Requirement |Description
 |name |string |optional |A identifier for the tab. If not specified, the tab will be assigned a randomly generated name.
 |title |string |required |The title of the tab for the navigation menu.
-|items |array |required |An array of <<panelcomponents, panel components>> to display inside the panel.
+|items |array |required |An array of xref:panelcomponents[panel components] to display inside the panel.
 |===
 
-____
-*Note*: Panel components in different tabs with the same `+name+` will use the same value in the link:dialog-apis.html#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
-____
+NOTE: Panel components in different tabs with the same `+name+` will use the same value in the xref:dialog-apis.adoc#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 [source,js]
 ----
@@ -52,13 +51,14 @@ ____
 }
 ----
 
+[[dialoginstanceapimethods]]
 === Dialog instance API methods
 
-The link:dialog-components.html#dialoginstanceapimethods[dialog instance API] contains the `+showTab("tabName")+` method, which allows for programmatic tab switching using the registered `+name+` of a tab.
+The xref:dialog-apis.adoc#dialogapimethods[dialog instance API] contains the `+showTab("tabName")+` method, which allows for programmatic tab switching using the registered `+name+` of a tab.
 
 === Dialog configuration event callbacks
 
-A dialog can be configured with an link:dialog-configuration.html#configurationoptions[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
+A dialog can be configured with an xref:dialog-configuration.adoc#configurationoptions[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
 
 As an example of when this is useful, the `+charmap+` and `+emoticons+` plugin dialogs use `+newTabName+` to change search results to match the character or emoticon category represented by the current tab.
 
@@ -75,7 +75,7 @@ const dialogConfig = {
     tabs: [ ... ] // array of panel configurations
   },
   buttons: [],
-  onTabChange: function (dialogApi, details) {
+  onTabChange: (dialogApi, details) => {
     // log the contents of details
     console.log(details.newTabName);
     console.log(details.oldTabName);
@@ -86,18 +86,19 @@ const dialogConfig = {
 };
 ----
 
+[[panelcomponents]]
 == Panel components
 
-Panels can contain <<layoutcomponents, layout components>> and <<basiccomponents, basic components>>, which include components for displaying information and user interaction and input.
+Panels can contain xref:layoutcomponents[layout components] and xref:basiccomponents[basic components], which include components for displaying information and user interaction and input.
 
-____
-*Note*: Panel components in different tabs with the same `+name+` will use the same value in the link:dialog-apis.html#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
-____
+NOTE: Panel components in different tabs with the same `+name+` will use the same value in the xref:dialog-apis.adoc#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
+[[layoutcomponents]]
 == Layout components
 
 Some panel components can be used to apply a layout to an array of other panel components.
 
+[[bar]]
 === bar
 
 A *bar* is a layout component that creates a single row of items in the dialog body.
@@ -110,9 +111,10 @@ A *bar* is a layout component that creates a single row of items in the dialog b
 }
 ----
 
+[[collection]]
 === collection
 
-A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:charmap.html[`+charmap+`] and link:emoticons.html[`+emoticons+`] plugins.
+A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the xref:charmap.adoc[`+charmap+`] and xref:emoticons.adoc[`+emoticons+`] plugins.
 
 [source,js]
 ----
@@ -123,7 +125,7 @@ A *collection* is a layout component that creates a panel containing a collectio
 }
 ----
 
-To populate the collection with collection items, specify an array of items in the dialog's link:dialog-apis.html#dialogdataandstate[`+initialData+`] property. To update the items in the collection, use the link:dialog-components.html#dialoginstanceapimethods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's xref:dialog-apis.adoc#dialogdataandstate[`+initialData+`] property. To update the items in the collection, use the xref:dialog-components.adoc#dialoginstanceapimethods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
 
 [source,js]
 ----
@@ -137,6 +139,7 @@ To populate the collection with collection items, specify an array of items in t
 ]
 ----
 
+[[grid]]
 === grid
 
 A *grid* is a layout component that creates columns in the dialog body.
@@ -150,6 +153,7 @@ A *grid* is a layout component that creates columns in the dialog body.
 }
 ----
 
+[[label]]
 === label
 
 A *label* is a layout component that wraps other components and adds a label above the group of components.
@@ -163,10 +167,12 @@ A *label* is a layout component that wraps other components and adds a label abo
 }
 ----
 
+[[basiccomponents]]
 == Basic components
 
 These panel components are used either to display information or to allow for user interaction and input.
 
+[[alertbanner]]
 === alertbanner
 
 An *alertbanner* is a coloured banner designed to notify users of important information. There are four "levels" of alert banner which each display in a different color. The levels are:
@@ -178,7 +184,7 @@ An *alertbanner* is a coloured banner designed to notify users of important info
 
 Clicking the icon in the alert banner will fire the `+onAction+` function in the dialog's configuration, and pass it an object containing the `+name+` of the alertbanner component and `+value+`. `+value+` is the value of the `+url+` option if it is configured, otherwise it is an empty string.
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Type |Requirement |Description
 |type |`+'alertbanner'+` |required |The component type. Must be `+'alertbanner'+`.
@@ -200,17 +206,16 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 }
 ----
 
+[[button]]
 === button
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:customize-ui.html#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen xref:customize-ui.adoc#skins[skin].
 
-____
-*Note*: Panel buttons are different to link:dialog-footer-buttons.html[dialog footer buttons].
-____
+NOTE: Panel buttons are different to xref:dialog-footer-buttons.adoc[dialog footer buttons].
 
 *Events:* Interacting with a *button* component will fire the `+onAction+` function in the dialog's configuration, and pass it the button's `+name+` in the `+details+` object. This allows developers to create a click handler for each button.
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Type |Requirement |Description
 |type |`+'button'+` |required |The component type. Must be `+'button'+`.
@@ -222,9 +227,7 @@ include::partial$misc/admon_predefined_icons_only.adoc[] *When configured, the b
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.
 |===
 
-____
-*Note*: Buttons do not support mixing icons and text at the moment.
-____
+NOTE: Buttons do not support mixing icons and text at the moment.
 
 [source,js]
 ----
@@ -238,6 +241,7 @@ ____
 }
 ----
 
+[[checkbox]]
 === checkbox
 
 A *checkbox* is a composite component with a checkbox and a label, and with `+on+` and `+off+` states.
@@ -254,6 +258,7 @@ A *checkbox* is a composite component with a checkbox and a label, and with `+on
 }
 ----
 
+[[colorinput]]
 === colorinput
 
 A *colorinput* is a specialized composite component with a label, an input field and button which opens a color swatch popup on click. Users can either type a hex color code into the input, or use the color swatch to choose a color. The color swatch button will change color to reflect the selected color.
@@ -267,6 +272,7 @@ A *colorinput* is a specialized composite component with a label, an input field
 }
 ----
 
+[[colorpicker]]
 === colorpicker
 
 A *colorpicker* component is an intuitive color picker tool similar to that found in modern image editors. It allows for a color to be chosen using a RGB colour slider, or for a color to be entered as either an RGB or hex color value.
@@ -279,6 +285,7 @@ A *colorpicker* component is an intuitive color picker tool similar to that foun
 }
 ----
 
+[[dropzone]]
 === dropzone
 
 A *dropzone* is a composite component that catches drag and drops items or lets the user browse that can send a list of files for processing and receive the result. A text label is also rendered above the dropzone.
@@ -294,13 +301,12 @@ A *dropzone* is a composite component that catches drag and drops items or lets 
 }
 ----
 
+[[htmlpanel]]
 === htmlpanel
 
 A *htmlpanel* component takes any valid HTML and renders it in the dialog.
 
-____
-*Note*: Despite the name an HTMLpanel can not be used as a body component like `+panel+` and `+tabpanel+`.
-____
+NOTE: Despite the name an HTMLpanel can not be used as a body component like `+panel+` and `+tabpanel+`.
 
 [source,js]
 ----
@@ -310,15 +316,14 @@ ____
 }
 ----
 
+[[iframe]]
 === iframe
 
 An *iframe* component takes an HTML document as a string and displays it in the dialog within an iframe.
 
-____
-*Note*: To replace the entire dialog body with an iframe that loads its content from a URL, use a link:urldialog.html[URL dialog].
-____
+NOTE: To replace the entire dialog body with an iframe that loads its content from a URL, use a xref:urldialog.adoc[URL dialog].
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Type |Requirement |Description
 |type |`+'iframe'+` |required |The component type. Must be `+'iframe'+`.
@@ -337,7 +342,7 @@ ____
 }
 ----
 
-To set the iframe's content on dialog open, specify document HTML as a string in the dialog's link:dialog-apis.html#dialogdataandstate[`+initialData+`] property. To update the iframe's content, use the link:dialog-components.html#dialoginstanceapimethods[dialog API's] `+setData()+` method. For example:
+To set the iframe's content on dialog open, specify document HTML as a string in the dialog's xref:dialog-apis.adoc#dialogdataandstate[`+initialData+`] property. To update the iframe's content, use the xref:dialog-apis.adoc#dialogapimethods[dialog API's] `+setData()+` method. For example:
 
 [source,js]
 ----
@@ -350,13 +355,14 @@ dialogApi.setData({
 })
 ----
 
+[[input]]
 === input
 
 An *input* is a composite component that renders a label and a single line text input field.
 
 *Events:* Interacting with an *input* component will fire the `+onChange+` function in the dialog's configuration *as the user types*.
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Property |Type |Requirement |Description
 |type |'`+input+`' |required |The component type. Must be `+'input'+`.
@@ -380,6 +386,7 @@ An *input* is a composite component that renders a label and a single line text 
 }
 ----
 
+[[inputmode]]
 ==== inputMode
 
 `+inputMode+` is a property of `+input+`.
@@ -388,6 +395,7 @@ Use `+inputMode+` to set the type of onscreen keyboard provided on mobile device
 
 For a list of valid input modes, see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode[MDN Web Docs - inputmode].
 
+[[listbox]]
 === listbox
 
 A *listbox* is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
@@ -411,6 +419,7 @@ A *listbox* is a composite component with a label and a dropdown list of options
 }
 ----
 
+[[selectbox]]
 === selectbox
 
 A *selectbox* is a composite component with a label and a single dropdown list of options for users to select from.
@@ -432,6 +441,7 @@ A *selectbox* is a composite component with a label and a single dropdown list o
 }
 ----
 
+[[sizeinput]]
 === sizeinput
 
 A *sizeinput* is a specialized composite component with two input fields labelled "Width" and "Height" and a "ratio lock" button. It should be used for setting dimensions on content elements.
@@ -448,6 +458,7 @@ A *sizeinput* is a specialized composite component with two input fields labelle
 }
 ----
 
+[[table]]
 === table
 
 A *table* is a layout component that renders a simple table.
@@ -464,6 +475,7 @@ A *table* is a layout component that renders a simple table.
 }
 ----
 
+[[textarea]]
 === textarea
 
 A *textarea* is a multiline text field.
@@ -482,17 +494,16 @@ A *textarea* is a multiline text field.
 }
 ----
 
+[[urlinput]]
 === urlinput
 
 A *urlinput* is a specialized composite component for URL input or file upload. It has a label, a text input field and an optional filepicker button. The urlinput component also includes a *typeahead* dropdown that will display previously-entered URLs that match the current input text and update as the user types.
 
-____
-*Note*: The filepicker button will only appear if link:file-image-upload.html#file_picker_callback[`+file_picker_callback+`] is configured.
-____
+NOTE: The filepicker button will only appear if xref:file-image-upload.adoc#file_picker_callback[`+file_picker_callback+`] is configured.
 
 *Events:* Interacting with a *selectbox* component will fire the `+onChange+` function in the dialog's configuration *when the user clicks away from the component*.
 
-[cols=",,,",options="header",]
+[cols="1,1,1,3",options="header"]
 |===
 |Name |Type |Requirement |Description
 |type |`+'urlinput'+` |required |The component type. Must be `+'urlinput'+`.

@@ -1,14 +1,13 @@
 = Checklist plugin
 
 :title_nav: Checklist
-
 :description: Add checklists to your content.
 :keywords: lists todo checklist
 :controls: toolbar button
-
 :pluginname: Checklist
-
 :plugincode: checklist
+:altplugincode: nil
+:pluginminimumplan: tiertwo
 
 
 include::partial$misc/admon_premium_plugin.adoc[]
@@ -21,16 +20,12 @@ In the {productname} editor, checklists are presented as lists with small checkb
 
 liveDemo::checklist[ ]
 
-:pluginminimumplan: tiertwo
-
-
 include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Creating a Checklist
 
 Perform the following steps to create a checklist:
 
-[arabic]
 . Place the cursor in the desired location within the {productname} editor.
 . Click the image:icons/checklist.svg[Checklist icon](*Checklist icon*) on the toolbar or the checklist menu item. A checkbox will be added in the desired location.
 . Type in the first item and press `+Enter+` to add another item in the list.
@@ -57,9 +52,7 @@ tinymce.init({
 });
 ----
 
-____
-*Note*: The *Checklist* plugin has to be used together with the link:lists.html[Lists] plugin to work.
-____
+NOTE: The *Checklist* plugin has to be used together with the xref:lists.adoc[Lists] plugin to work.
 
 == CSS
 

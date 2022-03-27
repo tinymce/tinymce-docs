@@ -2,30 +2,28 @@ The {pluginname} Server requires a _public_ key generated from the same _private
 
 There are two methods for generating and adding a public key to your API key:
 
-[arabic]
-. The secure key pair generator at link:{accountpageurl}/jwt/[{accountpage} - JWT Keys] (recommended).
-. Generate a key pair locally and add the _public_ key to link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
+. The secure key pair generator at link:{accountjwturl}[{accountpage} - JWT Keys] (recommended).
+. Generate a key pair locally and add the _public_ key to link:{accountjwturl}[{accountpage} - JWT Keys].
 
-[[generate-a-key-pair-using-the-siteaccountpage-jwt-keys-page]]
 == Generate a key pair using the {accountpage} JWT Keys page
 
-The link:{accountpageurl}/jwt/[{accountpage} - JWT Keys] page provides a private/public key generator, providing a quick and secure way of generating the required keys. This generator will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {companyname} does not store the _private_ key and the key pair cannot be retrieved later.
+The link:{accountjwturl}[{accountpage} - JWT Keys] page provides a private/public key generator, providing a quick and secure way of generating the required keys. This generator will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {companyname} does not store the _private_ key and the key pair cannot be retrieved later.
 
+[[generate-a-key-pair-locally]]
 == Generate a key pair locally
 
 When generating a key pair locally, use one of the supported algorithms.
 include::partial$auth/jwt-supported-algorithms.adoc[]
 
-For instructions on generating a key pair locally, see: link:generate-rsa-key-pairs.html[Creating a private/public key pair for Tiny Cloud].
+For instructions on generating a key pair locally, see: xref:generate-rsa-key-pairs.adoc[Creating a private/public key pair for Tiny Cloud].
 
-\{% if include.numberedHeading == true %}
+[[add-a-public-key-to-the-tiny-cloud-api-key]]
+ifeval::[{numberedHeading} == true]
+= 2. Add a public key to the {cloudname} API key
+endif::[]
 
-[[2-add-a-public-key-to-the-sitecloudname-api-key]]
-== 2. Add a public key to the {cloudname} API key
-
-\{% else %}
-
-[[add-a-public-key-to-the-sitecloudname-api-key]]
+ifeval::[{numberedHeading} != true]
 == Add a public key to the {cloudname} API key
+endif::[]
 
-\{% endif %} Once a public key has been generated, add the public key to the {cloudname} API key at: link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
+Once a public key has been generated, add the public key to the {cloudname} API key at: link:{accountjwturl}[{accountpage} - JWT Keys].

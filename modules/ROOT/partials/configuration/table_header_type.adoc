@@ -1,3 +1,4 @@
+[[table_header_type]]
 == `+table_header_type+`
 
 The `+table_header_type+` option affects how tables are structured when a table row is set as a header row. Note that this setting does not affect header columns.
@@ -67,11 +68,11 @@ For example:
 ----
 * `+auto+` - Finds the first existing header row in the table and uses the same structure. If no other table header row exists, the `+section+` header type will be applied.
 
-Type : `+String+`
+Type: `+String+`
 
-Default Value : `+'section'+`
+Default Value: `+'section'+`
 
-Possible Values : `+'section+`', `+'cells'+`, `+'sectionCells'+`, `+'auto'+`
+Possible Values: `+'section+`', `+'cells'+`, `+'sectionCells'+`, `+'auto'+`
 
 === Example: Using `+table_header_type+`
 

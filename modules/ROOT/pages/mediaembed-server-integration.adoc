@@ -1,7 +1,6 @@
 = Integrate Enhanced Media Embed Server
 
 :description: Using the Enhanced Media Embed server with non-public content such as a corporate CMS.
-
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 
 
@@ -32,9 +31,7 @@ As an example:
 
 If your content is marked up with Open Graph tags and is accessible with a HTTP GET request from the Enhanced Media Embed server, then business card style embeds will be created based on your content.
 
-____
-*Note:* If Iframely is enabled in the configuration, then the Open Graph look up will be performed by Iframely. Iframely requires that the content be publicly accessible on the Internet.
-____
+NOTE: If Iframely is enabled in the configuration, then the Open Graph look up will be performed by Iframely. Iframely requires that the content be publicly accessible on the Internet.
 
 At a minimum, you’ll need to define these Open Graph tags:
 
@@ -78,11 +75,11 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 
 As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or {productname} Enhanced Media Embed formats.
 
-See the docs on link:mediaembed-server-config.html#configureacustomendpoint[configuring a custom endpoint] for details on getting the Enhanced Media Embed server to utilize your custom API.
+See the docs on xref:mediaembed-server-config.adoc#configure-a-custom-endpoint[configuring a custom endpoint] for details on getting the Enhanced Media Embed server to utilize your custom API.
 
 === OEmbed endpoint
 
-This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Enhanced Media Embed server will embed a link:mediaembed-server-config.html#summarycards[summary card].
+This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Enhanced Media Embed server will embed a xref:mediaembed-server-config.adoc#summary-cards[summary card].
 
 ==== Pros
 
@@ -97,7 +94,7 @@ This is a popular choice and many CMSs have existing plugins that support oEmbed
 
 === TinyMCE Enhanced Media Embed endpoint
 
-The other option for developing a custom API endpoint is to return JSON in the link:mediaembed-server-integration.html#ephoxenhancedmediaembedformat[{productname} Enhanced Media Embed format].
+The other option for developing a custom API endpoint is to return JSON in the xref:tinymce-enhanced-media-embed-format[{productname} Enhanced Media Embed format].
 
 ==== Pros
 
@@ -111,17 +108,19 @@ The other option for developing a custom API endpoint is to return JSON in the l
 * No support from existing plugins
 * The {productname} editor does not fully take advantage of this format yet
 
+[[tinymce-enhanced-media-embed-format]]
 === TinyMCE Enhanced Media Embed format
 
 ==== HTTP response status codes
 
-* HTTP 200 (OK): link:mediaembed-server-integration.html#ephoxembedobj[`+EphoxEmbedObj+`]
-* HTTP 400 (User Error): link:mediaembed-server-integration.html#errorobj[`+ErrorObj+`]
-* HTTP 503 (Upstream Error): link:mediaembed-server-integration.html#errorobj[`+ErrorObj+`]
-* HTTP 500 (Unexpected Error): link:mediaembed-server-integration.html#errorobj[`+ErrorObj+`]
+* HTTP 200 (OK): xref:ephoxembedobj[`+EphoxEmbedObj+`]
+* HTTP 400 (User Error): xref:errorobj[`+ErrorObj+`]
+* HTTP 503 (Upstream Error): xref:errorobj[`+ErrorObj+`]
+* HTTP 500 (Unexpected Error): xref:errorobj[`+ErrorObj+`]
 
 ==== JSON response objects
 
+[[ephoxembedobj]]
 ===== `+EphoxEmbedObj+`
 
 `+rel+`, `+media+` and `+html+` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the {productname} editor) can look for alternative representations in `+links+`.
@@ -147,25 +146,27 @@ The other option for developing a custom API endpoint is to return JSON in the l
 * `+date +` (optional)
 ** String containing the date of the document in the format *YYYY-MM-DD*.
 * `+links+` (required)
-** link:mediaembed-server-integration.html#linksobj[LinksObj]
+** xref:linksobj[LinksObj]
 * `+rel+` (optional)
-** link:mediaembed-server-integration.html#relobj[RelObj]
+** xref:relobj[RelObj]
 * `+media+` (optional)
-** link:mediaembed-server-integration.html#mediaobj[MediaObj]
+** xref:mediaobj[MediaObj]
 * `+html+` (optional)
 ** String containing the HTML snippet to be embedded by {productname}.
 
+[[relobj]]
 ===== `+RelObj+`
 
 An array of tags describing the primary type of an embed, where it came from and whether there are any technical attributes that you may want to know about (autoplay, ssl, file format (flash, html5, etc)).
 
 * `+primary+` (required)
-** Array of link:mediaembed-server-integration.html#primaryrel[PrimaryRel]s
+** Array of xref:primaryrel[PrimaryRel]s
 * `+technical+` (required)
-** Array of link:mediaembed-server-integration.html#technicalrel[TechnicalRel]s
+** Array of xref:technicalrel[TechnicalRel]s
 * `+source+` (required)
-** Array of link:mediaembed-server-integration.html#sourcerel[SourceRel]s
+** Array of xref:sourcerel[SourceRel]s
 
+[[primaryrel]]
 ===== `+PrimaryRel+`
 
 A string describing the primary type of an embed containing one of the following values:
@@ -182,6 +183,7 @@ A string describing the primary type of an embed containing one of the following
 * `+logo+`
 * `+promo+`
 
+[[technicalrel]]
 ===== `+TechnicalRel+`
 
 A string describing technical attributes of an embed containing one of the following values:
@@ -193,6 +195,7 @@ A string describing technical attributes of an embed containing one of the follo
 * `+ssl+`
 * `+autoplay+`
 
+[[sourcerel]]
 ===== `+SourceRel+`
 
 A string describing the source of an embed containing one of the following values:
@@ -206,41 +209,43 @@ A string describing the source of an embed containing one of the following value
 * `+script_censor+` : The original embed (from Iframely or oEmbed) had a script in it and has been converted to a summary card.
 * `+smartframe_censor+` : The original embed had an Iframely smart frame and has been censored into a summary card to avoid a content dependency on Iframely.
 
+[[linksobj]]
 ===== `+LinksObj+`
 
 Represents all of the possible representations of this resource.
 
 * `+players+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+thumbnails+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+apps+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+readers+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+surveys+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+summary_cards+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+icons+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+logos+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+promos+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+images+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 * `+files+` (required)
-** Array of link:mediaembed-server-integration.html#linkobj[LinkObj]s
+** Array of xref:linkobj[LinkObj]s
 
+[[linkobj]]
 ===== `+LinkObj+`
 
 This represents a representation that you could link to / embed.
 
 * `+media+` (optional)
-** link:mediaembed-server-integration.html#mediaobj[MediaObj]
-* `+rels +` (required)
-** link:mediaembed-server-integration.html#relobj[RelObj]
+** xref:mediaobj[MediaObj]
+* `+rels+` (required)
+** xref:relobj[RelObj]
 * `+href+` (optional)
 ** String containing the URL of the resource.
 * `+mime_type+` (required)
@@ -248,6 +253,7 @@ This represents a representation that you could link to / embed.
 * `+html+` (required)
 ** String containing the embeddable HTML snippet.
 
+[[mediaobj]]
 ===== `+MediaObj+`
 
 The media object describes the bounds of the embed. It can either be *responsive* or *fixed*.
@@ -271,10 +277,11 @@ Fields when `+type+` is `+responsive+`:
 * `+paddingBottom+` (optional)
 ** Integer
 * `+width+` (required)
-** link:mediaembed-server-integration.html#dimensionboundobj[DimensionBoundObj]
+** xref:dimensionboundobj[DimensionBoundObj]
 * `+height+` (required)
-** link:mediaembed-server-integration.html#dimensionboundobj[DimensionBoundObj]
+** xref:dimensionboundobj[DimensionBoundObj]
 
+[[dimensionboundobj]]
 ===== `+DimensionBoundObj+`
 
 The dimension bounds define the height or width of a responsive embed.
@@ -296,6 +303,7 @@ Fields when `+type+` is `+constrained+`:
 
 No additional fields when `+type+` is `+unbounded+`.
 
+[[errorobj]]
 ===== `+ErrorObj+`
 
 * `+code+` (required)
@@ -317,6 +325,7 @@ No additional fields when `+type+` is `+unbounded+`.
 * `+msg+` (required)
 ** A string message for developers / support people.
 
+[[summary-cards]]
 == Summary cards
 
 When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns an HTML snippet like the following. You should apply styles to the document style to suit these to your preference.

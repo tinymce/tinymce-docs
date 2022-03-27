@@ -1,7 +1,6 @@
 = TinyMCE classic editing mode
 
 :title_nav: Classic editing mode
-
 :description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
 :keywords: theme classic
 
@@ -29,12 +28,12 @@ A basic TinyMCE editor can be added to a `+textarea+` element with the id `+myte
 [source,js]
 ----
 tinymce.init({
-    selector: 'textarea#mytextarea'
+  selector: 'textarea#mytextarea'
 });
 ----
 
 === Related configuration options
 
-* For information on using editor customization options, see: link:customize-ui.html[Customizing the editor UI].
-* For information on localizing {productname}, see: link:localize-your-language.html[Localize TinyMCE].
+* For information on using editor customization options, see: xref:customize-ui.adoc[Customizing the editor UI].
+* For information on localizing {productname}, see: xref:localize-your-language.adoc[Localize TinyMCE].
 * For information on all {productname} configuration settings, see: link:editor-appearance.html[Configuration options reference].

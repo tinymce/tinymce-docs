@@ -1,12 +1,12 @@
 = Bundling TinyMCE themes using module loading
 
 :title_nav: Themes
-
 :description_short: Information on bundling themes
 :description: Information on bundling TinyMCE themes using module loading
+
 :editorcomponent: theme
 include::partial$module-loading/bundling-ref-example.adoc[]
-:editorcomponent: nil
+:!editorcomponent:
 
 The following table shows examples of the syntax used to bundle the silver theme:
 

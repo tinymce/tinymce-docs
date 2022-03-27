@@ -1,11 +1,10 @@
-[cols=",",options="header",]
+[cols="1,3",options="header"]
 |===
 |Command |Description
 |mceTogglePlainTextPaste |Toggles paste as plain text.
 |===
 
-*Example*
-
+.Example
 [source,js]
 ----
 tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');

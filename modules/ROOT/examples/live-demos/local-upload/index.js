@@ -9,7 +9,7 @@ tinymce.init({
   /* we override default upload handler to simulate successful upload*/
   images_upload_handler: (blobInfo) => {
     return new Promise((resolve) => {
-        /* no matter what you upload, we will turn it into TinyMCE logo :)*/
+      /* no matter what you upload, we will turn it into TinyMCE logo :)*/
       resolve('http://moxiecode.cachefly.net/tinymce/v9/images/logo.png');
     });
   },

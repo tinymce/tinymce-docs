@@ -352,7 +352,7 @@ As of {productname} 6, the `change` event is not fired unless and until
 
 NOTE: it is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
-==== `disabled` properties re-named to `.enabled` in {productname} UI classes
+=== `disabled` properties re-named to `.enabled` in {productname} UI classes
 
 Previously, {productname} UI classes provided a `.disabled` property.
 
@@ -374,6 +374,26 @@ The new default can be over-ridden by explicitly setting a `height` value in the
 Also, setting the element’s CSS `height` to a value larger than 400px will increase the height of the text entry area. Setting the elmement’s CSS `height` to a value less than 400px will *not* reduce the height of the text entry area, however.
 
 NOTE: while {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent text entry areas from disappearing during re-sizing, the `min-height` value (100px) cannot be over-ridden.
+
+=== formatting user interface name changes
+
+The names of the following user-interface and user experience elements were changed.
+
+| ui or ux element | old name             | new name              |
+| ---------------- | -------------------- | --------------------- |
+| Option           | `font_formats`       | `font_family_formats` |
+| Toolbar item     | `fontselect`         | `fontfamily`          |
+| Menu item        | `fontformats`        | `fontfamily`          |
+| Option           | `fontsize_formats`   | `font_size_formats`   |
+| Toolbar item     | `fontsizeselect`     | `fontsize`            |
+| Menu item        | `fontsizes`          | `fontsize`            |
+| Toolbar item     | `formatselect`       | `blocks`              |
+| Menu item        | `blockformats`       | `blocks`              |
+| Toolbar item     | `styleselect`        | `styles`              |
+| Menu item        | `formats`            | `styles`              |
+| Option           | `lineheight_formats` | `line_height_formats` |
+
+NOTE: the behaviour of these elements is unchanged.
 
 === primary
 

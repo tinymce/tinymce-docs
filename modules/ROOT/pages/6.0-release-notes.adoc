@@ -58,6 +58,32 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 [id=known-issues]
 == Known issues
 
+=== Pressing the tab key in tables does not always produce the expected result
+
+In {productname}, three settings control what happens when the _tab_ key is pressed:
+
+| setting                 | default value | other possible value |
+| ----------------------- | ------------- | -------------------- |
+| `nonbreaking_force_tab` | `false`       | `true`               |
+| `lists_indent_on_tab`   | `true`        | `false`              |
+| `table_tab_navigation`  | `true`        | `false`              |
+
+Previously, the setting which took precedence at any given instance of the _tab_ key being pressed was determined by the plugin load order.
+
+As of {productname} 6.0, however, _Tables_  are not provided as a plugin. They are part of the core {productname} editor.
+
+In {productname} 6.0, when the above settings are set to their default values (and when `nonbreaking_force_tab`, in particular, is set to its default value, `false`), and the insertion point is placed in a table cell and the tab key is pressed, the expected result is one of two things.
+
+1. If the insertion point is within anything other than a list item, the insertion point moves to the next cell.
+
+2. If the insertion point is within a list item, the specific list item containing the insertion point ‘indents’ presenting said item as one step ‘lower’ in the list’s visual outline.
+
+This is the expected behaviour.
+
+However, in {productname} 6.0, when `nonbreaking_force_tab` is set to `true`, the first behaviour above does not present. Instead, when the setting is `nonbreaking_force_tab: true` and the insertion point is within a table cell, pressing the tab key causes the string `&nbsp;&nbsp;&nbsp;` to be entered into the cell. `&nbsp;&nbsp;&nbsp;` is three non-breaking space HTML entities, the closest equivalent to a `tab` character supported in HTML.
+
+The proximate cause of this incorrect behaviour is the move of _Tables_ from plugins to core. As of this release, however, the specific cause is still being investigated. And no workaround (other than keeping `nonbreaking_force_tab` set to `false`) is currently available.
+
 
 
 

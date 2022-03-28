@@ -79,6 +79,7 @@ Supports numbers and strings. Assumes strings are a valid CSS value for height.
 `false` by default if the `autoresize` plugin is enabled.
 |===
 
+[[removededitorsettings]]
 ==== Removed Editor settings
 
 * The `file_browser_callback` option has been removed for TinyMCE 5. The link:{url}/docs-4x/configure/file-image-upload/#file_browser_callback[`file_browser_callback`] option was used to add a file or image browser to TinyMCE. This option was deprecated in version 4.1.0 and replaced by link:{baseurl}/configure/file-image-upload/#file_picker_callback[`file_picker_callback`].
@@ -229,6 +230,7 @@ Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now
 | Silver (link:{baseurl}/mobile/[responsive to small screen touch devices])
 |===
 
+[[inlitethemeremoved]]
 === Inlite theme removed
 
 The link:{url}/docs-4x/themes/inlite/[Inlite] theme has been removed from TinyMCE 5.
@@ -248,6 +250,7 @@ The following is an example of a TinyMCE 5 quickbars configuration:
 ----
 This will provide a similar but improved link:{baseurl}/general-configuration-guide/use-tinymce-distraction-free/[distraction-free] experience in TinyMCE 5.
 
+[[modernthemeremoved]]
 === Modern theme removed
 
 The link:{url}/docs-4x/themes/modern/[Modern] theme has been removed from TinyMCE 5.  The Modern theme's UI library link:{url}/docs-4x/api/tinymce.ui/[`tinymce.ui.*`] has also been removed. This change may impact integrations depending upon the level of customization.
@@ -277,6 +280,7 @@ This section covers migrating UI components to TinyMCE 5
 * <<customdialogs,Custom dialogs>>
 * <<customurldialogs,Custom URL dialogs>>
 
+[[removeduiconfigurationsettings]]
 === Removed UI configuration settings
 
 All inline style configurations have been removed in TinyMCE 5 in favor of modern CSS. This affects all TinyMCE 4 UI component configurations.

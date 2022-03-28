@@ -52,7 +52,7 @@ Replace `+your-api-key+` with your link:{accountpageurl}/[{cloudname} API key].
 +
 Replace `+/path/to/tinymce/base/directory+` with the relative path of the `+tinymce/+` directory containing `+tinymce.min.js+`.
 
-For information on {productname} deployment types, see: link:install-setup.html[Installing {productname}].
+For information on {productname} deployment types, see: xref:installation.adoc[Installing {productname}].
 
 [[replace-the-froala-editor-variable-assignment-with-the-tinymceinit-function]]
 === Replace the Froala editor variable assignment with the tinymce.init function
@@ -138,7 +138,7 @@ The following examples show an initial Froala configuration and the migrated {pr
 For information on:
 
 * Getting started with {productname}, see: xref:cloud-quick-start.adoc[{productname} Quick Start].
-* Installing {productname}, see: link:install-setup.html[Installing {productname}].
+* Installing {productname}, see: xref:installation.adoc[Installing {productname}].
 
 [[updatingthelistofplugins]]
 == Updating the list of Plugins

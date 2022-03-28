@@ -1,6 +1,11 @@
 Using {productname} with bootstrap does not require any special configuration.
 
-The {productname} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:jquery.html[jQuery integration]
+ifeval::["{productSource}" == "cloud"]
+The {productname} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: xref:jquery-cloud.adoc[jQuery {cloudname} integration].
+endif::[]
+ifeval::["{productSource}" != "cloud"]
+The {productname} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: xref:jquery-pm.adoc[jQuery self-hosted integration].
+endif::[]
 
 This procedure creates a basic Bootstrap integration containing a {productname} editor.
 
@@ -20,7 +25,7 @@ ifeval::["{productSource}" == "cloud"]
 +
 Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
-Signing up for a {cloudname} API key will also provide a trial of the link:premium.html[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
 endif::[]
 ifeval::["{productSource}" != "cloud"]
 . To source an independent deployment of {productname}, add the following source script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:

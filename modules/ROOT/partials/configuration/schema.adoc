@@ -1,7 +1,7 @@
 [[schema]]
 == `+schema+`
 
-The `+schema+` option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `+html5+`, `+html4+` or `+html5-strict+`.
+This option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `+html5+`, `+html4+` or `+html5-strict+`.
 
 The html5 schema is the full HTML5 specification including the older HTML4 elements for compatibility. The html5-strict will only allow the elements that are in the current HTML5 specification excluding things that where removed. The html4 schema includes the full html4 transitional specification.
 

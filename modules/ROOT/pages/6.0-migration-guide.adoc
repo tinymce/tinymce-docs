@@ -41,6 +41,24 @@ In {productname} 6, these function names have been changed and configuration cha
 
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
+==== `fire` function re-named in all {productname} APIs
+
+The `fire()` function in
+
+* `tinymce.Editor`;
+
+* `tinymce.dom.EventUtils`;
+
+* `tinymce.dom.DOMUtils`;
+
+* `tinymce.util.Observable`; and
+
+* `tinymce.util.EventDispatcher`
+
+has been re-named to `dispatch()`.
+
+`fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
+
 === `new` keyword
 
 {productname} plugins (and themes and some other add-ons) were once classes. And, as such, they could be constructed by:

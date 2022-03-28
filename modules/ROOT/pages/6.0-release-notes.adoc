@@ -22,6 +22,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 | `imagetools_api_key`             | `editimage_api_key`              | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>        |
 | `images_upload_timeout`          | `editimage_upload_timeout`       | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>        |
 | `editimage_proxy`                | `export_image_proxy_service_url` | Option                              | Renamed for easier configuration when used with https://tiny.cloud/docs/enterprise/server/[Tiny services].                                                                                                                                                                                                    |                                                    |
+| `fire()`                         | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                  |                                                    |
 | `font_formats`                   | `font_family_formats`            | Option                              | No behavioural changes, but there are related toolbar and menu items changes.                                                                                                                                                                                                                                 |                                                    |
 | `fontselect`                     | `fontfamily`                     | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                    |
 | `fontformats`                    | `fontfamily`                     | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                    |
@@ -147,7 +148,11 @@ As well, the `.disabled` property is now the `.enabled` property in all {product
 
   These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`.
 
+==== `fire` functions re-named in all {productname} APIs
 
+The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`.
+
+`fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 
 - fixed
 - added

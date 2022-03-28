@@ -311,6 +311,7 @@ Opens and closes the accessibility checker dialog with the results of the audit 
 editor.plugins.a11ychecker.toggleaudit();
 ----
 
+[[getreport]]
 === `getReport()`
 
 Conducts an accessibility audit and reports the results without opening the dialog. The report produced is an array of objects, where each object represents an issue and contains the following details:

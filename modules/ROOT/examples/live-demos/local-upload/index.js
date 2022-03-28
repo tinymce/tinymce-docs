@@ -7,11 +7,9 @@ tinymce.init({
   images_upload_url: 'postAcceptor.php',
 
   /* we override default upload handler to simulate successful upload*/
-  images_upload_handler: (blobInfo) => {
-    return new Promise((resolve) => {
+  images_upload_handler: (blobInfo) => new Promise((resolve) => {
       /* no matter what you upload, we will turn it into TinyMCE logo :)*/
-      resolve('http://moxiecode.cachefly.net/tinymce/v9/images/logo.png');
-    });
-  },
+      setTimeout(() => resolve('http://moxiecode.cachefly.net/tinymce/v9/images/logo.png'), 2000);
+  }),
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

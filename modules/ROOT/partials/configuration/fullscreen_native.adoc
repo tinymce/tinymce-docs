@@ -1,8 +1,9 @@
+[[fullscreen_native]]
 == `fullscreen_native`
 
 include::partial$misc/requires_5_5v.adoc[]
 
-ifeval::[{pluginname} != "fullscreen"]
+ifeval::["{plugincode}" != "fullscreen"]
 NOTE: The `fullscreen_native` option requires the Fullscreen plugin.
 endif::[]
 

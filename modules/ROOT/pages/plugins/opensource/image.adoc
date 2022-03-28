@@ -11,7 +11,8 @@ This plugin enables the user to insert an image into {productname}'s editable ar
 
 == Basic setup
 
-```js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
@@ -22,8 +23,7 @@ tinymce.init({
     {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
   ]
 });
-
-```
+----
 
 NOTE: This is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 
@@ -36,11 +36,11 @@ These configuration options affect the execution of the `image` plugin. Many of 
 If you wish to align the image, you can also use the text align buttons while images are selected.
 
 :includedSection: imagePlugin
-#include::partial$configuration/a11y_advanced_options.adoc[]
+include::partial$configuration/a11y_advanced_options.adoc[]
 :includedSection: false
-#include::partial$configuration/file_picker_callback.adoc[]
+include::partial$configuration/file_picker_callback.adoc[]
 
-= include::partial$configuration/file_picker_types.adoc[]
+include::partial$configuration/file_picker_types.adoc[]
 
 include::partial$configuration/image_caption.adoc[]
 
@@ -60,17 +60,17 @@ include::partial$configuration/image_title.adoc[]
 
 include::partial$configuration/image_uploadtab.adoc[]
 
-= include::partial$configuration/images_file_types.adoc[]
+include::partial$configuration/images_file_types.adoc[]
 
-= include::partial$configuration/images_upload_base_path.adoc[]
+include::partial$configuration/images_upload_base_path.adoc[]
 
-= include::partial$configuration/images_upload_credentials.adoc[]
+include::partial$configuration/images_upload_credentials.adoc[]
 
-= include::partial$configuration/images_upload_handler.adoc[]
+include::partial$configuration/images_upload_handler.adoc[]
 
-= include::partial$configuration/images_uploads_url.adoc[]
+include::partial$configuration/images_uploads_url.adoc[]
 
-= include::partial$configuration/type_ahead_urls.adoc[]
+include::partial$configuration/type_ahead_urls.adoc[]
 
 == Q: Where are the advanced image options?
 

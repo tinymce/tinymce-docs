@@ -28,7 +28,7 @@ To ensure the mobile editor functions as intended, add the following `meta` tag 
 
 [source, html]
 ----
-<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ----
 
 [[mobiledevicesnowusethesilvertheme]]
@@ -59,6 +59,7 @@ tinymce.init({
 NOTE: No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
 For information on:
+
 * Using the `silver` theme for mobile, see: xref:mobile.adoc[{productname} Mobile].
 * Using the legacy `mobile` theme, see: xref:mobile.adoc#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 

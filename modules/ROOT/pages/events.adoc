@@ -164,7 +164,7 @@ The following events are provided by the {productname} editor.
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |AutocompleterStart |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when an autocompleter is triggered and should show the fetched suggestions.
 |AutocompleterUpdate |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when content is changed and the active autocompleter needs to update the suggestions shown.
-|AutocompleterEnd |N/A |Fired when the active autocompleter menu has been flagged to close.
+|AutocompleterEnd |N/A |Fired when the active autocompleter menu is about to be closed.
 |===
 
 == Plugin events

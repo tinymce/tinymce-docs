@@ -40,7 +40,7 @@ tinymce.activeEditor.editorCommands.commands.exec;
 
 ==== Supported browser-native commands
 
-The commands on the following table are provided by the {productname} editor and provide the same or similar functionality to the https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#commands[native browser commands].
+The commands in the following table are provided by the {productname} editor and provide the same or similar functionality to the https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#commands[native browser commands].
 
 [cols="1,3",options="header"]
 |===
@@ -121,7 +121,7 @@ tinymce.activeEditor.execCommand('Undo');
 
 ==== Additional core editor commands
 
-The commands on the following table are provided by the {productname} editor and provide additional functionality that do not require any plugins to be enabled.
+The commands in the following table are provided by the {productname} editor and provide additional functionality that does not require any plugins to be enabled.
 
 [cols="1,3",options="header"]
 |===

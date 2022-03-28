@@ -49,10 +49,10 @@ ifndef::isEnterprise[]
 * link:{pricingpage}[{enterpriseplan}].
 endif::[]
 
-ifdef::isTierTwo,isTierThree[]
+ifdef::isTierTwo[]
 A 14-day free trial is also available for the {tiertwoplan} and the {tierthreeplan}.
 endif::[]
-ifdef::isEnterprise[]
+ifdef::isTierThree[]
 A 14-day free trial is available for the {tierthreeplan}.
 endif::[]
 

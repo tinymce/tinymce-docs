@@ -51,7 +51,7 @@ fse.copySync(path.join(nodeModulesDir, '@tinymce', 'tinymce-jquery', 'dist'), pa
 <script src="/public/tinymce-jquery/tinymce-jquery.min.js"></script>
 ----
 +
-For information on self-hosting {productname}, see: link:advanced-install.html[Installing {productname}].
+For information on self-hosting {productname}, see: xref:installation.adoc[Installing {productname}].
 endif::[]
 ifeval::["{productSource}" == "cloud"]
 . Add a `<script>` element to get jQuery with a snippet from the official

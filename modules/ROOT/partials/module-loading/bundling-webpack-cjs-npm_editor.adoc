@@ -16,7 +16,7 @@ require('tinymce/icons/default');
 require('tinymce/themes/silver');
 require('tinymce/models/dom');
 
-/* Import a skin (can be your own instead of the default) */
+/* Import a skin (can be a custom skin instead of the default) */
 require('tinymce/skins/ui/oxide/skin.css');
 
 /* Import plugins - include the relevant plugin in the 'plugins' option. */

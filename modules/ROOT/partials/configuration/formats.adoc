@@ -233,7 +233,7 @@ Makes sure that the format is not merged with other wrappers having the same for
 
 *Type:* `+Boolean+`
 
-Default : `+false+`
+*Default value:* `+false+`
 
 ===== Example: Using `+exact+` parameter
 
@@ -256,7 +256,7 @@ States that the format is a container format for block elements. For example, a 
 
 *Type:* `+Boolean+`
 
-Default : `+false+`
+*Default value:* `+false+`
 
 ===== Example: Using `+wrapper+`
 
@@ -278,7 +278,7 @@ Specifies what the remove behavior of the element should be when the format is r
 
 *Type:* `+String+`
 
-Default : `+none+` for `+Selector+` formats and `+empty+` for all other format types.
+*Default value:* `+none+` for `+Selector+` formats and `+empty+` for all other format types.
 
 This can be set to three different modes:
 
@@ -354,7 +354,7 @@ Enables control for removing the child elements of the matching format. This is 
 
 *Type:* `+Boolean+`
 
-Default : `+false+` for `+selector+` formats
+*Default value:* `+false+` for `+selector+` formats
 
 ===== Example: Using `+deep+`
 
@@ -392,7 +392,7 @@ After merge:
 
 *Type:* `+Boolean+`
 
-Default : `+true+`
+*Default value:* `+true+`
 
 ===== Example: Using `+merge_siblings+`
 

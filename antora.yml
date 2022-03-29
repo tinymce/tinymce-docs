@@ -3,6 +3,10 @@ title: TinyMCE Documentation
 version: '6'
 asciidoc:
   attributes:
+    # anchor configuration (the @ allows it to be overridden if required)
+    idprefix: '@'
+    idseparator: '-@'
+    # generic variables
     companyurl: https://www.tiny.cloud
     cdnurl: https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js
     tdcdnurl: https://cdn.tiny.cloud/1/_your_api_key_/tinydrive/6-stable/tinydrive.min.js

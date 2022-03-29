@@ -6,27 +6,28 @@
 :pluginname: Export
 :plugincode: export
 
-include::partial$misc/requires_5_5v.adoc[] +
+include::partial$misc/requires_5_5v.adoc[]
+
 include::partial$misc/premiumplugin.adoc[]
 
-The {pluginname} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the <<exporters,Exporters section>>.
+The {pluginname} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the xref:exporters[Exporters section].
 
 == Interactive example
 
 To export the editor content, either:
 
 * From the _File_ menu, click _Export_ and select _PDF_.
-* Click the Export toolbar button (image:{baseurl}/images/icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) and select _PDF_.
+* Click the Export toolbar button (image:icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) and select _PDF_.
 
 liveDemo::export[]
 
 == Basic setup
 
-To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `plugins` option in the editor configuration.
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
 
 For example:
 
-[source, js]
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -36,12 +37,14 @@ tinymce.init({
 });
 ----
 
+[[exporters]]
 == Exporters
 
 The {pluginname} plugin provides the following exporters:
 
-* <<client-side-pdf,Client-side PDF (`clientpdf`)>>
+* xref:client-side-pdf[Client-side PDF (`clientpdf`)]
 
+[[client-side-pdf]]
 === Client-side PDF (`clientpdf`)
 
 The client-side PDF exporter converts the editor content to a PDF without the need for server-side components. This exporter will resize the content to fit on A4 pages, add page breaks, take a snapshot of the HTML, and embed the snapshot image within the exported PDF.
@@ -51,20 +54,20 @@ This exporter has a few limitations or known issues that should be noted:
 * The text content in the PDF cannot be selected or copied.
 * A single line of content sliced horizontally and distributed across separate pages.
 * Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
-* Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the <<export_image_proxy,export_image_proxy>> option.
+* Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the xref:export_image_proxy[export_image_proxy] option.
 * Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
-* The link:{baseurl}/plugins/premium/checklist/[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
+* The xref:plugins/premium/checklist.adoc[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
 
 The following plugins are not supported:
 
-* link:{baseurl}/plugins/opensource/bbcode/[BBCode]
-* link:{baseurl}/plugins/premium/comments/[Comments]
-* link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed]
-* link:{baseurl}/plugins/opensource/fullpage/[Fullpage]
-* link:{baseurl}/plugins/opensource/legacyoutput/[Legacy Output]
-* link:{baseurl}/plugins/opensource/media/[Media]
-* link:{baseurl}/plugins/premium/pageembed/[Page Embed]
-* link:{baseurl}/plugins/opensource/toc/[Table of Contents]
+* xref:plugins/opensource/bbcode.adoc[BBCode]
+* xref:plugins/premium/comments/index.adoc[Comments]
+* xref:plugins/premium/mediaembed.adoc[Enhanced Media Embed]
+* xref:plugins/opensource/fullpage.adoc[Fullpage]
+* xref:plugins/opensource/legacyoutput.adoc[Legacy Output]
+* xref:plugins/opensource/media.adoc[Media]
+* xref:plugins/premium/pageembed.adoc[Page Embed]
+* xref:plugins/opensource/toc.adoc[Table of Contents]
 
 == Configuration Options
 

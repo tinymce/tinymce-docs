@@ -7,15 +7,16 @@
 
 {productname} 5.6 was released for {enterpriseversion} and {cloudname} on Tuesday, December 8^th^, 2020. It includes {productname} 5.6.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.6, including:
 
-* <<newfeatures,New features>>
-* <<enhancements,Enhancements>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:newfeatures[New features]
+* xref:enhancements[Enhancements]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[newfeatures]]
 == New features
 
 The following new features were added for the {productname} 5.6 release.
@@ -27,13 +28,13 @@ The new `images_file_types` option allows different image file extensions to be 
 * Smart Paste's image URL to embedded image functionality.
 * Allowed file extensions for the Image plugin.
 
-For information on the `images_file_types` option, see: link:{baseurl}/configure/file-image-upload/#images_file_types[Image & file options - images_file_types].
+For information on the `images_file_types` option, see: xref:configure/file-image-upload.adoc#images_file_types[Image & file options - images_file_types].
 
 === New image emoji database for the Emoticons plugin
 
 A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.
 
-:feature: ``emojiimages`` database
+:feature: pass:q[``emojiimages`` database]
 :third_party_product: Twitter Emoji (Twemoji) graphics
 :license_agreement_name: CC-BY 4.0
 include::partial$misc/under-license.adoc[]
@@ -42,14 +43,14 @@ A new `emoticons_database` option has been added to specify which built-in emoji
 
 For information on:
 
-* The `emojiimages` database and `emoticons_database` option, see: link:{baseurl}/plugins/opensource/emoticons/#emoticons_database[Emoticons plugin - `emoticons_database`].
-* The `emoticons_images_url` option, see: link:{baseurl}/plugins/opensource/emoticons/#emoticons_images_url[Emoticons plugin - `emoticons_images_url`].
+* The `emojiimages` database and `emoticons_database` option, see: xref:plugins/opensource/emoticons.adoc#emoticons_database[Emoticons plugin - `emoticons_database`].
+* The `emoticons_images_url` option, see: xref:plugins/opensource/emoticons.adoc#emoticons_images_url[Emoticons plugin - `emoticons_images_url`].
 
 === New `format_empty_lines` option for content formatting
 
 A new `format_empty_lines` option allows empty lines to be formatted for multi-line selections when applying an "inline" format such as bold (`<strong>`).
 
-For information on the `format_empty_lines` option, see: link:{baseurl}/configure/content-formatting/#format_empty_lines[Content Formatting - `format_empty_lines`].
+For information on the `format_empty_lines` option, see: xref:configure/content-formatting.adoc#format_empty_lines[Content Formatting - `format_empty_lines`].
 
 === New editor events
 
@@ -60,14 +61,14 @@ For information on the `format_empty_lines` option, see: link:{baseurl}/configur
 
 For information on:
 
-* The `TableModified` event, see: link:{baseurl}/plugins/opensource/table/#events[Table plugin - `events`].
-* Core editor events, see: link:{baseurl}/advanced/events/#editorcoreevents[Editor core events].
+* The `TableModified` event, see: xref:plugins/opensource/table.adoc#events[Table plugin - `events`].
+* Core editor events, see: xref:advanced/events.adoc#editorcoreevents[Editor core events].
 
 === New card menu item for the autocompleter
 
 A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
 
-For information on customizing autocompleter results with `CardMenuItem`, see: link:{baseurl}/ui-components/autocompleter/#cardmenuitem[UI components - Autocompleter - `CardMenuItem`].
+For information on customizing autocompleter results with `CardMenuItem`, see: xref:ui-components/autocompleter.adoc#cardmenuitem[UI components - Autocompleter - `CardMenuItem`].
 
 === Additional new features
 
@@ -76,6 +77,7 @@ For information on customizing autocompleter results with `CardMenuItem`, see: l
 * Added new user interface `enable`, `disable`, and `isDisabled` methods.
 * Added new `closest` formatter API to get the closest matching selection format from a set of formats.
 
+[[enhancements]]
 == Enhancements
 
 The following enhancements were made for the {productname} 5.6 release.
@@ -88,8 +90,9 @@ Clicking links when the editor is in `readonly` mode will open the URL in a new 
 
 A new optional `name` field that sets a specific name to the format when it's being registered using the `style_formats` option.
 
-For information on the `name` field, see: link:{baseurl}/configure/editor-appearance/#style_formats[User interface - `style_formats`].
+For information on the `name` field, see: xref:configure/editor-appearance.adoc#style_formats[User interface - `style_formats`].
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.6.
@@ -100,7 +103,7 @@ The {productname} 5.6 release includes an accompanying release of the *Accessibi
 
 *Accessibility Checker* 2.3.1 fixes an issue where internal {productname} elements were not ignored.
 
-For information on the Accessibility Checker plugin, see: link:{baseurl}/plugins/premium/a11ychecker/[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:plugins/premium/a11ychecker.adoc[Accessibility Checker plugin].
 
 === Advanced Code Editor 2.3.0
 
@@ -115,7 +118,7 @@ The {productname} 5.6 release includes an accompanying release of the *Advanced 
 * Fixed the code view not using monospace fonts.
 * Fixed an issue where non-breaking spaces were inserted instead of regular spaces on Safari.
 
-For information on the Advanced Code Editor plugin, see: link:{baseurl}/plugins/premium/advcode/[Advanced Code Editor plugin].
+For information on the Advanced Code Editor plugin, see: xref:plugins/premium/advcode.adoc[Advanced Code Editor plugin].
 
 === Comments 2.3.0
 
@@ -131,7 +134,7 @@ The {productname} 5.6 release includes an accompanying release of the *Comments*
 * Fixed long comments getting cut off.
 * Fixed a scrollbar appearing in the textarea when writing a comment.
 
-For information on the Comments plugin, see: link:{baseurl}/plugins/premium/comments/[Comments plugin].
+For information on the Comments plugin, see: xref:plugins/premium/comments/index.adoc[Comments plugin].
 
 === Mentions 2.2.0
 
@@ -147,7 +150,7 @@ The {productname} 5.6 release includes an accompanying release of the *Mentions*
 
 * Fixed mentions not converted to `contenteditable=false` elements when set using `editor.setContent()`
 
-For information on the Mentions plugin, see: link:{baseurl}/plugins/premium/mentions/[Mentions plugin].
+For information on the Mentions plugin, see: xref:plugins/premium/mentions.adoc[Mentions plugin].
 
 === PowerPaste 5.4.0
 
@@ -160,9 +163,9 @@ The {productname} 5.6 release includes an accompanying release of the *PowerPast
 *PowerPaste* 5.4.0 also provides the following bug fixes:
 
 * Fixed the `Cut` menu item not working in the latest version of Firefox.
-* Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: <<security-fixes,Security fixes>>.
+* Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: xref:securityfixes[Security fixes].
 
-For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
 === Spell Checker Pro 2.2.0
 
@@ -179,8 +182,9 @@ The {productname} 5.6 release includes an accompanying release of the *Spell Che
 * Fixed the spellchecker dialog not checking incorrect words outside of the window viewport.
 * Fixed the spellchecker as-you-type functionality interfering with the dialog.
 
-For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.6 provides fixes for the following bugs:
@@ -216,6 +220,7 @@ For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/pre
 * Fixed the `mceTableRowType` and `mceTableCellType` commands were not firing the `newCell` event.
 * Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting.
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.6 provides fixes for the following security issues:

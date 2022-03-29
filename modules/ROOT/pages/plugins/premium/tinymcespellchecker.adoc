@@ -83,12 +83,14 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
+[[commands]]
 == Commands
 
 The Spell Checker Pro plugin provides the following commands.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[]
 
+[[events]]
 == Events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
@@ -113,6 +115,7 @@ tinymce.init({
 });
 ----
 
+[[spellcheckerignoreallevent]]
 === SpellcheckerIgnoreAll event
 
 This event triggers when the user selects *Ignore All* on a misspelled word.
@@ -217,6 +220,7 @@ tinymce.init({
 });
 ----
 
+[[apis]]
 == APIs
 
 The {pluginname} plugin provides the following APIs.

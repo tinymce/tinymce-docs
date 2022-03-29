@@ -159,6 +159,7 @@ For information on:
 * The Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
 * Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
 
+[[removalofjava7support]]
 === Removal of Java 7 support
 
 Java 7 support has been removed with this release. The {productname} Java server-side components now require a minimum of Java 8. From the {productname} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:

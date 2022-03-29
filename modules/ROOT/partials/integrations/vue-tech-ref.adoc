@@ -111,9 +111,9 @@ None of the configuration properties are *required* for `+tinymce-vue+` to work.
 
 include::partial$misc/get-an-api-key.adoc[]
 
-*Default value:* `+'no-api-key'+`
-
 *Type:* `+String+`
+
+*Default value:* `+'no-api-key'+`
 
 ==== Example: Using `+api-key+`
 
@@ -127,15 +127,18 @@ include::partial$misc/get-an-api-key.adoc[]
 [[cloud-channel]]
 === `+cloud-channel+`
 
+*Type:* `+String+`
+
 *Default value:* `'{productmajorversion}'`
 
-*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
 * `{productmajorversion}`, `{productmajorversion}-stable` (*Default*): The current enterprise release of {productname}.
 * `{productmajorversion}-testing`: The current release candidate for the next enterprise release of {productname}.
 * `{productmajorversion}-dev`: The nightly-build version of {productname}.
+* A version number such as `{productminorversion}`: The specific enterprise release version of {productname}.
 
 Such as:
 
@@ -155,6 +158,8 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
+*Type:* `+Boolean+`
+
 *Default value:* `+false+`
 
 *Possible values:* `+true+`, `+false+`
@@ -171,11 +176,11 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 [[id]]
 === `+id+`
 
-An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].*
-
-*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
 *Type:* `+String+`
+
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
 ==== Example: Using `+id+`
 
@@ -193,9 +198,9 @@ Object sent to the `+tinymce.init+` method used to initialize the editor.
 
 For information on the {productname} selector (`+tinymce.init+`), see: xref:basic-setup.adoc[Basic setup].
 
-*Default value:* `+'{ }'+`
-
 *Type:* `+Object+`
+
+*Default value:* `+'{ }'+`
 
 ==== Example: Using `+init+`
 
@@ -214,9 +219,9 @@ For information on the {productname} selector (`+tinymce.init+`), see: xref:basi
 
 Initial content of the editor when the editor is initialized.
 
-*Default value:* `+' '+`
-
 *Type:* `+String+`
+
+*Default value:* `+' '+`
 
 ==== Example: Using `+initial-value+`
 
@@ -233,6 +238,8 @@ Initial content of the editor when the editor is initialized.
 Used to set the editor to inline mode. Using `+<editor :inline=true />+` is the same as setting `+{inline: true}+` in the {productname} selector (`+tinymce.init+`).
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
+
+*Type:* `+Boolean+`
 
 *Default value:* `+false+`
 
@@ -254,9 +261,9 @@ Sets the trigger events for xref:forminputbindingsv-model[v-model events].
 
 For a list of available {productname} events, see: xref:events.adoc#editorcoreevents[Available Events - Editor events].
 
-*Default value:* `+'change keyup undo redo'+`.
-
 *Type:* `+String+`
+
+*Default value:* `+'change keyup undo redo'+`.
 
 ==== Example: Using `+model-events+`
 
@@ -310,9 +317,9 @@ For information on adding plugins to {productname}, see: xref:work-with-plugins.
 
 Only valid when xref:inline[`+<editor :inline=true />+`]. Used to define the HTML element for the editor in inline mode.
 
-*Default value:* `+'div'+`
-
 *Type:* `+String+`
+
+*Default value:* `+'div'+`
 
 ==== Example: Using `+tag-name+`
 
@@ -331,9 +338,9 @@ Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic" />
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
-
 *Type:* `+String+`
+
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 ==== Example: Using `+toolbar+`
 

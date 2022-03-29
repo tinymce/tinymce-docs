@@ -95,7 +95,7 @@ Add the `EditorModule` to `+@NgModule({imports})+`:
 
 The editor accepts the following properties:
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <editor
   apiKey="no-api-key"
@@ -148,7 +148,7 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <editor
   apiKey="your-api-key"
@@ -297,7 +297,7 @@ Used to specify the format of the content emitted by the `tinymce-angular` compo
 [[tagname]]
 ==== `tagName`
 
-Only valid when pass:[`<editor [inline]="true"></editor>`]. Used to define the HTML element for the editor in inline mode.
+Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to define the HTML element for the editor in inline mode.
 
 *Default value:* `div`
 

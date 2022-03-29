@@ -28,7 +28,7 @@ To ensure the mobile editor functions as intended, add the following `meta` tag 
 
 [source, html]
 ----
-<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ----
 
 [[mobiledevicesnowusethesilvertheme]]
@@ -59,6 +59,7 @@ tinymce.init({
 NOTE: No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
 For information on:
+
 * Using the `silver` theme for mobile, see: xref:mobile.adoc[{productname} Mobile].
 * Using the legacy `mobile` theme, see: xref:mobile.adoc#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 
@@ -69,7 +70,7 @@ Contextual menus are now horizontal on mobile devices and open when a long-press
 
 For example:
 
-image:side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
+image::side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
 
 [[side-scrollingtoolbarsonmobile]]
 ==== Side-scrolling toolbars on mobile
@@ -104,7 +105,7 @@ The xref:plugins/opensource/table.adoc[table plugin] has been updated to provide
 
 For example:
 
-image:table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
+image::table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
 
 [[touch-friendlysplitbuttons]]
 ==== Touch-friendly split buttons
@@ -128,7 +129,7 @@ The following settings are not supported on mobile devices:
 
 The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
 
-image:sticky-toolbar.gif[Sticky Toolbar animation]
+image::sticky-toolbar.gif[Sticky Toolbar animation]
 
 For information on the Sticky Toolbars, see: xref:configure/editor-appearance.adoc#toolbar_sticky[Enabling Sticky Toolbars].
 
@@ -271,7 +272,7 @@ The table plugin has been updated to include a *Border width* field in the *Cell
 
 For example:
 
-image:border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
+image::border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
 
 === Changed the default `toolbar_drawer` to `floating`
 

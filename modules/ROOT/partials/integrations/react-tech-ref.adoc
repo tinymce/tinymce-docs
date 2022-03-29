@@ -174,7 +174,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 [source, jsx]
 ----
-  <Editor apiKey="your-api-key"></Editor>
+<Editor apiKey="your-api-key"></Editor>
 ----
 
 [[cloudchannel]]
@@ -195,7 +195,7 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-[source, jsx]
+[source, jsx, subs="attributes+"]
 ----
 <Editor
   apiKey='your-api-key'
@@ -438,17 +438,13 @@ Contains 3 settings:
 
 `async`:: Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async[`async`] attribute on the script tag created to load {productname}.
 +
-____
-For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.
-____
+NOTE: For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.
 +
 *Default value:* `false`
 
 `defer`:: Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer[`defer`] attribute on the script tag created to load {productname}.
 +
-____
-This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
-____
+NOTE: This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
 +
 *Default value:* `false`
 

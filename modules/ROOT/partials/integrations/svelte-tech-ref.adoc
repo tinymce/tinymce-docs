@@ -40,7 +40,7 @@ Type:: String
 
 [source, jsx]
 ----
-  <Editor apiKey="your-api-key"></Editor>
+<Editor apiKey="your-api-key"></Editor>
 ----
 
 ==== channel
@@ -55,7 +55,7 @@ Type:: String
 
 [source, jsx]
 ----
-  <Editor channel="5-dev"></Editor>
+<Editor channel="5-dev"></Editor>
 ----
 
 ==== id
@@ -70,7 +70,7 @@ Type:: String
 
 [source, jsx]
 ----
-  <Editor id="my-unique-identifier"></Editor>
+<Editor id="my-unique-identifier"></Editor>
 ----
 
 ==== inline
@@ -85,7 +85,7 @@ Type:: Boolean
 
 [source, jsx]
 ----
-  <Editor inline="true"></Editor>
+<Editor inline="true"></Editor>
 ----
 
 ==== disabled

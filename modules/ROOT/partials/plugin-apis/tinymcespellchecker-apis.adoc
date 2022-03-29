@@ -13,12 +13,13 @@ include::partial$misc/requires_5_7v.adoc[]
 
 | setLanguage
 | language: `string`
-| Set the current language for spellchecking. This must be a supported language code (case-sensitive). For a list of supported languages, see: link:{baseurl}/plugins/premium/tinymcespellchecker/#supportedlanguages[Spell Checker Pro - `Supported languages`].
+| Set the current language for spellchecking. This must be a supported language code (case-sensitive). For a list of supported languages, see: xref:plugins/premium/tinymcespellchecker.adoc#supportedlanguages[Spell Checker Pro - `Supported languages`].
 |===
 
 *Examples*
 
-```js
+[source, js]
+----
 // ignore words for all languages
 tinymce.activeEditor.plugins.tinymcespellchecker.addIgnoredWords(['tinymce']);
 
@@ -30,4 +31,4 @@ tinymce.activeEditor.plugins.tinymcespellchecker.getLanguage();
 
 // set the current language to a specific language
 tinymce.activeEditor.plugins.tinymcespellchecker.setLanguage('sv');  // e.g. Swedish
-```
+----

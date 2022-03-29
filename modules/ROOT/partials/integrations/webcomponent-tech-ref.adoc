@@ -57,14 +57,14 @@ To add the {productname} Web Component integration to a JavaScript project, on c
 +
 [source, sh]
 ----
-  npm i --save @tinymce/tinymce-webcomponent
+npm i --save @tinymce/tinymce-webcomponent
 ----
 
 * Yarn users:
 +
 [source, sh]
 ----
-  yarn add @tinymce/tinymce-webcomponent
+yarn add @tinymce/tinymce-webcomponent
 ----
 
 [[loadingtinymce]]
@@ -435,7 +435,7 @@ For information on using the `images_upload_url`, see: xref:configure/file-image
 
 To specify custom image upload handler callback function, use the `images_upload_handler` attribute.
 
-[source,html,subs="attributes+"]
+[source, html, subs="attributes+"]
 --
 <script>
 include::partial$misc/images-upload-handler-function.adoc[]

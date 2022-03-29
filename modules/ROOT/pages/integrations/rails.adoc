@@ -19,7 +19,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
 
 . Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {productname} on pages using the `application` layout:
 +
-[source, html, subs='attributes+']
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 <script>

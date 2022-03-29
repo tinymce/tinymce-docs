@@ -6,11 +6,9 @@ ifeval::["{productSource}" == "composer"]
 :scriptSource: "{ asset('js/tinymce/tinymce.min.js') }"
 :packageSource: https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package]
 endif::[]
-ifeval::["{productSource}" != "cloud"]
-ifeval::["{productSource}" != "composer"]
+ifeval::["{productSource}" == "zip"]
 :scriptSource: "{ asset('js/tinymce/tinymce.min.js') }"
 :packageSource: TinyMCE .zip package
-endif::[]
 endif::[]
 
 This guide assists with adding {productname} from the {packageSource} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/8.x/installation#installation-via-composer[Installation Via Composer]. The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {productname} should be used in production environments.

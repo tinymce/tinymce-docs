@@ -31,7 +31,7 @@ To migrate the core TinyMCE editor to TinyMCE 5, review the following sections:
 
 To use TinyMCE 5 from the {cloudname}, include this script in your HTML page. Replace 'no-api-key' with link:{accountsignup}[your API key].
 
-[source, html, subs='attributes+']
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
@@ -239,6 +239,7 @@ Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now
 | Silver (xref:mobile.adoc[responsive to small screen touch devices])
 |===
 
+[[inlitethemeremoved]]
 === Inlite theme removed
 
 The link:{url}/docs-4x/themes/inlite/[Inlite] theme has been removed from TinyMCE 5.
@@ -258,9 +259,10 @@ The following is an example of a TinyMCE 5 quickbars configuration:
 ----
 This will provide a similar but improved xref:general-configuration-guide/use-tinymce-distraction-free.adoc[distraction-free] experience in TinyMCE 5.
 
+[[modernthemeremoved]]
 === Modern theme removed
 
-The link:{url}/docs-4x/themes/modern/[Modern] theme has been removed from TinyMCE 5.  The Modern theme's UI library link:{url}/docs-4x/api/tinymce.ui/[`tinymce.ui.*`] has also been removed. This change may impact integrations depending upon the level of customization.
+The link:{url}/docs-4x/themes/modern/[Modern] theme has been removed from TinyMCE 5.  The Modern theme's UI library link:{url}/docs-4x/api/tinymce.ui/[`+tinymce.ui.*+`] has also been removed. This change may impact integrations depending upon the level of customization.
 
 === Themes: Removed events
 
@@ -295,6 +297,7 @@ All inline style configurations have been removed in TinyMCE 5 in favor of moder
 xref:advanced/creating-a-skin.adoc[Skins] should be used for custom styling in TinyMCE 5.
 
 Removed style settings:
+
 * `flex`
 * `border`
 * `layout` - Use the TinyMCE 5 UI component settings to compose a custom layout.
@@ -375,7 +378,7 @@ The following new methods have been added for creating and using new components:
 [[customtoolbarbuttons]]
 === Custom toolbar buttons
 
-The API methods for adding xref:ui-components/toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Custom toolbar buttons] have changed for TinyMCE 5. The methods have been moved from link:{url}/docs-4x/api/tinymce/tinymce.editor/[`editor.*`] to xref:apis/tinymce.editor.ui.registry.adoc[`editor.ui.registry.*`]. The toolbar button type `listbox` has been removed and a toggle button type has been added. The button types available in TinyMCE 5 are:
+The API methods for adding xref:ui-components/toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Custom toolbar buttons] have changed for TinyMCE 5. The methods have been moved from link:{url}/docs-4x/api/tinymce/tinymce.editor/[`+editor.*+`] to xref:apis/tinymce.editor.ui.registry.adoc[`+editor.ui.registry.*+`]. The toolbar button type `listbox` has been removed and a toggle button type has been added. The button types available in TinyMCE 5 are:
 
 * xref:ui-components/typesoftoolbarbuttons.adoc#basicbutton[Basic button]
 * xref:ui-components/typesoftoolbarbuttons.adoc#togglebutton[Toggle button]
@@ -435,7 +438,7 @@ For information on how to use these methods, see: xref:ui-components/typesoftool
 | `onpostrender` has been replaced with `onSetup`. For an example migration, see: xref:migratingonpostrendertoonsetup[Migrating onpostrender to onSetup].
 |===
 
-[[migratingcmdtoonaction]]
+[[migratingonclicktoonaction]]
 ===== Migrating onclick to onAction
 
 link:{url}/docs-4x/advanced/creating-a-custom-button/#basicbutton[`onclick`] is now xref:ui-components/typesoftoolbarbuttons.adoc#basicbutton[`onAction`]. The callback function given to `onAction` takes a `buttonApi` argument which is an object that contains helper functions.
@@ -468,7 +471,7 @@ editor.ui.registry.addButton('myButton', {
 
 Each type of toolbar button has a different set of API functions. For information using toolbar buttons, see: xref:ui-components/typesoftoolbarbuttons.adoc[Types of toolbar buttons].
 
-[[migratingonpostrendertoonsetup]]
+[[migratingcmdtoonaction]]
 ===== Migrating cmd to onAction
 
 `cmd: string` has been removed. Commands should be executed using `onAction` instead.
@@ -497,6 +500,7 @@ editor.ui.registry.addButton('myButton', {
 });
 ----
 
+[[migratingonpostrendertoonsetup]]
 ===== Migrating onpostrender to onSetup
 
 `onpostrender` has been replaced with `onSetup` for menu and toolbar components.
@@ -903,7 +907,7 @@ These features have either changed or have been deleted in TinyMCE 5.
 | Context menus are now part of the {productname} core. For information on adding custom context menus, see: xref:ui-components/contextmenu.adoc[UI components - Context menu].
 
 | link:{url}/docs-4x/plugins/textcolor/[TextColor]
-| The text color functionality is now part of the {productname} core. For information on using and customizing the text color settings, see: xref:configure/content-appearance.adoc#text_color[Content appearance options - `text_color`].
+| The text color functionality is now part of the {productname} core. For information on using and customizing the text color settings, see: xref:configure/content-appearance.adoc#textcoloroptions[Content appearance options - Text color options].
 
 | link:{url}/docs-4x/plugins/colorpicker/[ColorPicker]
 | The color picker is now part of the {productname} core and is enabled by default. For information on disabling the custom color picker, see: xref:configure/content-appearance.adoc#custom_colors[Content appearance options - `custom_colors`].

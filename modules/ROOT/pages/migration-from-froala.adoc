@@ -283,7 +283,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 
 ==== TinyMCE 5 - Creating a Custom Toolbar Layout
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <h2>{productname} Custom Toolbar</h2>
   <form method='post'>
@@ -293,9 +293,9 @@ The following examples show a custom toolbar layout in Froala and the same layou
   tinymce.init({
     selector: '#tiny_custom_toolbar',
     plugins: 'lists',
-    toolbar: `undo redo | formatselect | bold italic
-      | alignleft aligncenter alignright alignjustify
-      | numlist bullist | outdent indent`,
+    toolbar: 'undo redo | formatselect | bold italic' +
+      '| alignleft aligncenter alignright alignjustify' +
+      '| numlist bullist | outdent indent',
   });
 </script>
 ----
@@ -411,7 +411,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 ==== TinyMCE 5 - Creating a Custom Toolbar Button
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <h2>{productname} Custom Button</h2>
   <form method='post'>
@@ -492,7 +492,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 ==== TinyMCE 5 - Creating a Custom Drop-down Button
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <h2>{productname} Custom Drop-down Button</h2>
   <form method='post'>

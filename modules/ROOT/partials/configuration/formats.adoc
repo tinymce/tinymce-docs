@@ -22,19 +22,19 @@ bold: [
 ],
 ----
 
-[[stylemerging]]
+[[style-merging]]
 === Style merging
 
 Similar elements and styles are merged by default to reduce the output HTML size. So for example, if a font size and font face are selected for a word, it merges these two styles into one `+span+` element instead of one `+span+` for *each format type*.
 
-[[built-informats]]
+[[built-in-formats]]
 === Built-in formats
 
 include::partial$configuration/builtinformats.adoc[]
 
 Some built-in formats `+fontsize+`, `+fontname+`, `+forecolor+`, `+hilitecolor+` use a variable in their definition named `+%value+`. This gets replaced with the user selected item such as a `+color+` value. Check the variable substitution section below for details.
 
-[[formattype]]
+[[format-type]]
 === Format Type
 
 There are three types of formats:
@@ -138,7 +138,7 @@ tinymce.init({
 });
 ----
 
-[[format_parameters]]
+[[format-parameters]]
 === Format parameters
 
 For each format some additional parameters can be specified:

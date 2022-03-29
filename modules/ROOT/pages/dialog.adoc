@@ -17,13 +17,13 @@ image:sourcecode.png[Source Code]
 
 === Display complex information
 
-More complex dialogs can use xref:dialog-components.adoc#tabpanel[tab panels] and various xref:dialog-components.adoc#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the xref:help.adoc[`+help+`] and xref:charmap.adoc[`+character map+`] plugins use dialogs with tabbed panels to categorise and separate information.
+More complex dialogs can use xref:dialog-components.adoc#tabpanel[tab panels] and various xref:dialog-components.adoc#layout-components[layouts] to categorise and organise information displayed to the user. For example, the xref:help.adoc[`+help+`] and xref:charmap.adoc[`+character map+`] plugins use dialogs with tabbed panels to categorise and separate information.
 
 image:specialchars.png[Special Characters]
 
 === Interactive dialogs
 
-{productname} dialogs can also contain xref:dialog-components.adoc#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
+{productname} dialogs can also contain xref:dialog-components.adoc#basic-components[interactive components] such as buttons, checkboxes and input fields.
 
 For example, the xref:image.adoc[`+image+`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
@@ -31,14 +31,14 @@ image:interactive.png[Insert/Edit images]
 
 == Body components
 
-The body of a dialog must be either a xref:dialog-components.adoc#panel[`+panel+`] (a single panel) or a xref:dialog-components.adoc#tabpanel[`+tabpanel+`] (a collection of panels). Each panel can contain xref:dialog-components.adoc#panelcomponents[panel components] such as inputs, buttons and text.
+The body of a dialog must be either a xref:dialog-components.adoc#panel[`+panel+`] (a single panel) or a xref:dialog-components.adoc#tabpanel[`+tabpanel+`] (a collection of panels). Each panel can contain xref:dialog-components.adoc#panel-components[panel components] such as inputs, buttons and text.
 
 NOTE: {productname} also supports xref:urldialog.adoc[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 
 [[panel]]
 === Panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for xref:dialog-components.adoc#panelcomponents[panel components]. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for xref:dialog-components.adoc#panel-components[panel components]. A panel type dialog only has one panel.
 
 [source,js]
 ----
@@ -51,7 +51,7 @@ The basic dialog type is a *panel* dialog. A panel is a container for xref:dialo
 [[tabpanel]]
 === TabPanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:dialog-components.adoc#panelcomponents[panel components], allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:dialog-components.adoc#panel-components[panel components], allowing for complex dialogs.
 
 See the xref:dialog-components.adoc#tabpanel[tab panel component reference] for tab panel configuration options.
 
@@ -70,7 +70,7 @@ See the xref:dialog-components.adoc#tabpanel[tab panel component reference] for 
 }
 ----
 
-The `+name+` of the panel can be used with the xref:dialog-apis.adoc#dialogapimethods[`+dialogApi.showTab('tabName')+`] method to programmatically switch tabs. It is also passed to xref:dialog-configuration.adoc#configurationoptions[`+onTabChange+`] as part of the `+details+` object.
+The `+name+` of the panel can be used with the xref:dialog-apis.adoc#dialog-api-methods[`+dialogApi.showTab('tabName')+`] method to programmatically switch tabs. It is also passed to xref:dialog-configuration.adoc#configuration-options[`+onTabChange+`] as part of the `+details+` object.
 
 ==== Example tab panel
 

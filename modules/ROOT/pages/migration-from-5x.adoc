@@ -12,18 +12,18 @@ NOTE: For support related to migration, please contact https://support.tiny.clou
 == Contents
 
 * xref:editor-core[Editor-Core]
-* xref:pluginchanges[Plugin Changes]
+* xref:plugin-changes[Plugin Changes]
 
 [[editor-core]]
 == Editor-Core
 
 To migrate the core TinyMCE editor to TinyMCE 6, review the following sections:
 
-* xref:clouddelivery[Cloud Delivery].
-* xref:optionsettingchanges[Option/setting changes].
-* xref:pluginchanges[Plugin Changes]
+* xref:cloud-delivery[Cloud Delivery].
+* xref:option-setting-changes[Option/setting changes].
+* xref:plugin-changes[Plugin Changes]
 
-[[clouddelivery]]
+[[cloud-delivery]]
 === Cloud Delivery
 
 To use TinyMCE 6 from the {cloudname}, include this script in your HTML page. Replace 'no-api-key' with link:{accountsignup}/[your API key].
@@ -35,7 +35,7 @@ To use TinyMCE 6 from the {cloudname}, include this script in your HTML page. Re
 
 For information on using the latest development and testing builds, see: xref:editor-plugin-version.adoc[Cloud deployment guide - Specify editor & plugin versions].
 
-[[pluginchanges]]
+[[plugin-changes]]
 == Plugin Changes
 
 === Tabfocus plugin removed
@@ -48,10 +48,10 @@ This allows integrators to define the tab order of the page using standard HTML 
 
 For information on specifying tab order, see: xref:accessibility.adoc#taborder[Tab order].
 
-[[optionsettingchanges]]
+[[option-setting-changes]]
 === Option/Setting changes
 
-[[renamedoptions]]
+[[renamed-options]]
 ==== Renamed Options
 
 The following options have been renamed in {productname} 6.0:
@@ -79,7 +79,7 @@ The Noneditable (`+noneditable+`) plugin has been moved to Core in {productname}
 
 Integrators can remove `+noneditable+` from the `+plugins+` section of their {productname} configuration.
 
-The `+noneditable_editable_class+` and `+nonedtiable_noneditable_class+` options have been renamed, see: xref:renamedoptions[Renamed Options].
+The `+noneditable_editable_class+` and `+nonedtiable_noneditable_class+` options have been renamed, see: xref:renamed-options[Renamed Options].
 
 ==== Print plugin moved to TinyMCE Core
 

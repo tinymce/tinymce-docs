@@ -3,12 +3,12 @@
 :description: A reference list of all TinyMCE dialog components.
 :keywords: dialog, dialogapi
 
-The body of a dialog must be either a `+panel+` (a single panel) or a `+tabpanel+` (a collection of panels). Each panel can contain panel components, which are either xref:layoutcomponents[layout components] or xref:basiccomponents[basic components] such as inputs, buttons and text.
+The body of a dialog must be either a `+panel+` (a single panel) or a `+tabpanel+` (a collection of panels). Each panel can contain panel components, which are either xref:layout-components[layout components] or xref:basic-components[basic components] such as inputs, buttons and text.
 
 [[panel]]
 == panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for xref:panelcomponents[interactive panel components]. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for xref:panel-components[interactive panel components]. A panel type dialog only has one panel.
 
 [source,js]
 ----
@@ -21,7 +21,7 @@ The basic dialog type is a *panel* dialog. A panel is a container for xref:panel
 [[tabpanel]]
 == tabpanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:panelcomponents[panel components], allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:panel-components[panel components], allowing for complex dialogs.
 
 Each tab panel is defined using the following configuration options:
 
@@ -30,10 +30,10 @@ Each tab panel is defined using the following configuration options:
 |Name |Type |Requirement |Description
 |name |string |optional |A identifier for the tab. If not specified, the tab will be assigned a randomly generated name.
 |title |string |required |The title of the tab for the navigation menu.
-|items |array |required |An array of xref:panelcomponents[panel components] to display inside the panel.
+|items |array |required |An array of xref:panel-components[panel components] to display inside the panel.
 |===
 
-NOTE: Panel components in different tabs with the same `+name+` will use the same value in the xref:dialog-apis.adoc#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+NOTE: Panel components in different tabs with the same `+name+` will use the same value in the xref:dialog-apis.adoc#dialog-data-and-state[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 [source,js]
 ----
@@ -50,14 +50,14 @@ NOTE: Panel components in different tabs with the same `+name+` will use the sam
 }
 ----
 
-[[dialoginstanceapimethods]]
+[[dialog-instance-api-methods]]
 === Dialog instance API methods
 
-The xref:dialog-apis.adoc#dialogapimethods[dialog instance API] contains the `+showTab("tabName")+` method, which allows for programmatic tab switching using the registered `+name+` of a tab.
+The xref:dialog-apis.adoc#dialog-api-methods[dialog instance API] contains the `+showTab("tabName")+` method, which allows for programmatic tab switching using the registered `+name+` of a tab.
 
 === Dialog configuration event callbacks
 
-A dialog can be configured with an xref:dialog-configuration.adoc#configurationoptions[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
+A dialog can be configured with an xref:dialog-configuration.adoc#configuration-options[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
 
 As an example of when this is useful, the `+charmap+` and `+emoticons+` plugin dialogs use `+newTabName+` to change search results to match the character or emoticon category represented by the current tab.
 
@@ -85,14 +85,14 @@ const dialogConfig = {
 };
 ----
 
-[[panelcomponents]]
+[[panel-components]]
 == Panel components
 
-Panels can contain xref:layoutcomponents[layout components] and xref:basiccomponents[basic components], which include components for displaying information and user interaction and input.
+Panels can contain xref:layout-components[layout components] and xref:basic-components[basic components], which include components for displaying information and user interaction and input.
 
-NOTE: Panel components in different tabs with the same `+name+` will use the same value in the xref:dialog-apis.adoc#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+NOTE: Panel components in different tabs with the same `+name+` will use the same value in the xref:dialog-apis.adoc#dialog-data-and-state[dialog's data object]. This allows for transference of data between tabs. For example, the `+charmap+` and `+emoticons+` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
-[[layoutcomponents]]
+[[layout-components]]
 == Layout components
 
 Some panel components can be used to apply a layout to an array of other panel components.
@@ -124,7 +124,7 @@ A *collection* is a layout component that creates a panel containing a collectio
 }
 ----
 
-To populate the collection with collection items, specify an array of items in the dialog's xref:dialog-apis.adoc#dialogdataandstate[`+initialData+`] property. To update the items in the collection, use the xref:dialog-components.adoc#dialoginstanceapimethods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's xref:dialog-apis.adoc#dialog-data-and-state[`+initialData+`] property. To update the items in the collection, use the xref:dialog-components.adoc#dialog-instance-api-methods[dialog API's] `+setData()+` method. Each item should contain a `+text+`, `+value+`, and `+icon+` property. For example:
 
 [source,js]
 ----
@@ -166,7 +166,7 @@ A *label* is a layout component that wraps other components and adds a label abo
 }
 ----
 
-[[basiccomponents]]
+[[basic-components]]
 == Basic components
 
 These panel components are used either to display information or to allow for user interaction and input.
@@ -342,7 +342,7 @@ NOTE: To replace the entire dialog body with an iframe that loads its content fr
 }
 ----
 
-To set the iframe's content on dialog open, specify document HTML as a string in the dialog's xref:dialog-apis.adoc#dialogdataandstate[`+initialData+`] property. To update the iframe's content, use the xref:dialog-apis.adoc#dialogapimethods[dialog API's] `+setData()+` method. For example:
+To set the iframe's content on dialog open, specify document HTML as a string in the dialog's xref:dialog-apis.adoc#dialog-data-and-state[`+initialData+`] property. To update the iframe's content, use the xref:dialog-apis.adoc#dialog-api-methods[dialog API's] `+setData()+` method. For example:
 
 [source,js]
 ----

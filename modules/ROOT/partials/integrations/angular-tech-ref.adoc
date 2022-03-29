@@ -1,9 +1,9 @@
 *Covered in this section:*
 
-* xref:supportedangularversions[Supported Angular versions]
-* xref:installingthetinymceangularintegrationusingnpm[Installing the TinyMCE Angular integration using NPM]
-* xref:usingthetinymceangularintegration[Using the TinyMCE Angular integration]
-* xref:configuringtheeditor[Configuring the editor]
+* xref:supported-angular-versions[Supported Angular versions]
+* xref:installing-the-tinymce-angular-integration-using-npm[Installing the TinyMCE Angular integration using NPM]
+* xref:using-the-tinymce-angular-integration[Using the TinyMCE Angular integration]
+* xref:configuring-the-editor[Configuring the editor]
 ** xref:apikey[`+apiKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
@@ -15,16 +15,16 @@
 ** xref:plugins[`+plugins+`]
 ** xref:tagname[`+tagName+`]
 ** xref:toolbar[`+toolbar+`]
-* xref:usingthengmodeldirective[Using the `+ngModel+` directive]
+* xref:using-the-ngmodel-directive[Using the `+ngModel+` directive]
 ** xref:modelevents[`+modelEvents+`]
-* xref:usingwithreactiveforms[Using with reactive forms]
-* xref:eventbinding[Event binding]
-** xref:supportedbrowserevents[Supported browser events]
-** xref:supportedtinymceevents[Supported TinyMCE events]
+* xref:using-with-reactive-forms[Using with reactive forms]
+* xref:event-binding[Event binding]
+** xref:supported-browser-events[Supported browser events]
+** xref:supported-tinymce-events[Supported TinyMCE events]
 ** xref:allowedevents[`+allowedEvents+`]
 ** xref:ignoreevents[`+ignoreEvents+`]
 
-[[supportedangularversions]]
+[[supported-angular-versions]]
 == Supported Angular versions
 
 The following table shows the supported versions of Angular and the required version of the `+tinymce-angular+` integration package.
@@ -37,7 +37,7 @@ The following table shows the supported versions of Angular and the required ver
 |4 or older |Not Supported
 |===
 
-[[installingthetinymceangularintegrationusingnpm]]
+[[installing-the-tinymce-angular-integration-using-npm]]
 == Installing the TinyMCE Angular integration using NPM
 
 To install the `+tinymce-angular+` package and save it to your `+package.json+`.
@@ -47,7 +47,7 @@ To install the `+tinymce-angular+` package and save it to your `+package.json+`.
 npm install --save @tinymce/tinymce-angular
 ----
 
-[[usingthetinymceangularintegration]]
+[[using-the-tinymce-angular-integration]]
 == Using the TinyMCE Angular integration
 
 . Import the `+EditorModule+` from the npm package using:
@@ -82,7 +82,7 @@ Add the `+EditorModule+` to `+@NgModule({imports})+`:
 <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
 ----
 
-[[configuringtheeditor]]
+[[configuring-the-editor]]
 == Configuring the editor
 
 The editor accepts the following properties:
@@ -332,7 +332,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 ></editor>
 ----
 
-[[usingthengmodeldirective]]
+[[using-the-ngmodel-directive]]
 == Using the `+ngModel+` directive
 
 The `+ngModel+` directive can be added to use the editor in a form:
@@ -366,7 +366,7 @@ Used to specify the events that trigger the `+NgModelChange+` to emit.
 ></editor>
 ----
 
-[[usingwithreactiveforms]]
+[[using-with-reactive-forms]]
 == Using with reactive forms
 
 To use {productname} Angular component with reactive forms:
@@ -381,7 +381,7 @@ To use {productname} Angular component with reactive forms:
 
 For information on using reactive forms, see: https://angular.io/guide/reactive-forms[Angular documentation - Reactive Forms].
 
-[[eventbinding]]
+[[event-binding]]
 == Event binding
 
 Functions can be bound to editor events, such as:
@@ -398,7 +398,7 @@ When the handler is called (`+handleEvent+` in this example), it is called with 
 
 The following events are available:
 
-[[supportedbrowserevents]]
+[[supported-browser-events]]
 === Supported browser events
 
 * `+onBeforePaste+`
@@ -430,7 +430,7 @@ The following events are available:
 * `+onPaste+`
 * `+onSelectionChange+`
 
-[[supportedtinymceevents]]
+[[supported-tinymce-events]]
 === Supported TinyMCE events
 
 * `+onActivate+`
@@ -477,7 +477,7 @@ By default, all the available events will trigger from the editor to the `+tinym
 
 NOTE: This property requires `+tinymce-angular+` 4.2.0 or newer
 
-Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the xref:eventbinding[Event binding section].
+Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the xref:event-binding[Event binding section].
 
 *Type:* `+String+`
 

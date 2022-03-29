@@ -1,8 +1,8 @@
 *Covered in this section:*
 
-* xref:installingthetinymcevuejsintegrationusingnpm[Installing the TinyMCE Vue.js integration using NPM]
-* xref:usingthetinymcevuejsintegration[Using the TinyMCE Vue.js integration]
-* xref:configuringtheeditor[Configuring the editor]
+* xref:installing-the-tinymce-vuejs-integration-using-npm[Installing the TinyMCE Vue.js integration using NPM]
+* xref:using-the-tinymce-vuejs-integration[Using the TinyMCE Vue.js integration]
+* xref:configuring-the-editor[Configuring the editor]
 ** xref:api-key[`+api-key+`]
 ** xref:cloud-channel[`+cloud-channel+`]
 ** xref:disabled[`+disabled+`]
@@ -16,10 +16,10 @@
 ** xref:tag-name[`+tag-name+`]
 ** xref:toolbar[`+toolbar+`]
 ** xref:tinymce-script-src[`+tinymce-script-src+`]
-* xref:forminputbindingsv-model[Form Input Bindings: `+v-model+`]
-* xref:eventbinding[Event binding]
+* xref:form-input-bindings-v-model[Form Input Bindings: `+v-model+`]
+* xref:event-binding[Event binding]
 
-[[installingthetinymcevuejsintegrationusingnpm]]
+[[installing-the-tinymce-vuejs-integration-using-npm]]
 == Installing the TinyMCE Vue.js integration using NPM
 
 To install the `+tinymce-vue+` package and save it to your `+package.json+`.
@@ -37,7 +37,7 @@ npm install --save "@tinymce/tinymce-vue@^4"
 npm install --save "@tinymce/tinymce-vue@^3"
 ----
 
-[[usingthetinymcevuejsintegration]]
+[[using-the-tinymce-vuejs-integration]]
 == Using the TinyMCE Vue.js integration
 
 . Load the component.
@@ -79,7 +79,7 @@ var app = new Vue({
 <editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
 ----
 
-[[configuringtheeditor]]
+[[configuring-the-editor]]
 == Configuring the editor
 
 The editor accepts the following properties:
@@ -257,9 +257,9 @@ For information on inline mode, see: xref:inline-editor-options.adoc#inline[User
 [[model-events]]
 === `+model-events+`
 
-Sets the trigger events for xref:forminputbindingsv-model[v-model events].
+Sets the trigger events for xref:form-input-bindings-v-model[v-model events].
 
-For a list of available {productname} events, see: xref:events.adoc#editorcoreevents[Available Events - Editor events].
+For a list of available {productname} events, see: xref:events.adoc#editor-core-events[Available Events - Editor events].
 
 *Type:* `+String+`
 
@@ -368,7 +368,7 @@ Use the `+tinymce-script-src+` prop to specify an external version of TinyMCE to
 />
 ----
 
-[[forminputbindingsv-model]]
+[[form-input-bindings-v-model]]
 == Form Input Bindings: `+v-model+`
 
 The `+v-model+` directive can be used to create a two-way data binding. For example:
@@ -380,7 +380,7 @@ The `+v-model+` directive can be used to create a two-way data binding. For exam
 
 For information on `+v-model+` and form input bindings, see: https://vuejs.org/guide/essentials/forms.html[Vue.js documentation - Form Input Bindings].
 
-[[eventbinding]]
+[[event-binding]]
 == Event binding
 
 Functions can be bound to editor events, such as:

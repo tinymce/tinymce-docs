@@ -1,10 +1,10 @@
 Covered in this section:
 
-* xref:configuringthetinymcesvelteintegration[Configuring the TinyMCE Svelte integration]
-* xref:componentbinding[Component binding]
-* xref:eventbinding[Event binding]
+* xref:configuring-the-tinymce-svelte-integration[Configuring the TinyMCE Svelte integration]
+* xref:component-binding[Component binding]
+* xref:event-binding[Event binding]
 
-[[configuringthetinymcesvelteintegration]]
+[[configuring-the-tinymce-svelte-integration]]
 == Configuring the TinyMCE Svelte integration
 
 The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
@@ -159,7 +159,7 @@ Specify a set of properties for the `+Tinymce.init+` method to initialize the ed
 </main>
 ----
 
-[[componentbinding]]
+[[component-binding]]
 == Component binding
 
 === Input binding
@@ -197,7 +197,7 @@ let text = '';
 </main>
 ----
 
-[[eventbinding]]
+[[event-binding]]
 == Event binding
 
 Functions can be bound to editor events, such as:

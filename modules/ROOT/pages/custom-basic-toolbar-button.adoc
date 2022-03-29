@@ -16,7 +16,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
 |enabled |boolean |optional |default: `true` - Represents the button's state. When `false`, the button is unclickable. Toggled by the button's API.
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered.
-|onAction |`+(api) => void+` |required |Function invoked when the button is clicked. For details, see: xref:usingonsetup[Using `+onSetup+`].
+|onAction |`+(api) => void+` |required |Function invoked when the button is clicked. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |===
 
 == API
@@ -38,6 +38,6 @@ The first button inserts "It's my button!" into the editor when clicked. The sec
 
 In this example an icon from the `+insertdatetime+` plugin is used to demonstrate how to use a registered icon. `+disabled+` is set to `+true+` so that the button is disabled when it is first rendered.
 
-`+onSetup+` is used to listen to the editor's xref:events.adoc#editorcoreevents[`+NodeChange+` event] to disable the button when the cursor is inside a `+time+` element (or "node"). This ensures it is not possible to insert a `+time+` element into another `+time+` element.
+`+onSetup+` is used to listen to the editor's xref:events.adoc#editor-core-events[`+NodeChange+` event] to disable the button when the cursor is inside a `+time+` element (or "node"). This ensures it is not possible to insert a `+time+` element into another `+time+` element.
 
 include::partial$misc/onSetup.adoc[]

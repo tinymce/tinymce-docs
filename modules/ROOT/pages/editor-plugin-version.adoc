@@ -115,7 +115,6 @@ Append `+?mentions=3.0&powerpaste=6.0+`, such as:
 
 When deploying xref:features-only.adoc[only premium plugins from {cloudname}], some features are served from {cloudname} and some features served from a self-hosted installation. There are two ways to achieve this: `+plugins.min.js+` and `+cloud-plugins.min.js+`.
 
-[[pluginsminjs]]
 ==== plugins.min.js
 
 Instead of loading `+tinymce.min.js+` from {cloudname}, serve {productname} from a self-hosted server, and load `+plugins.min.js+` from {cloudname}. {productname} which will attempt to load every *premium* plugin from {cloudname}, unless the version of the plugin is specified as the special version `+sdk+`. The query string for `+plugins.min.js+` works the same way as `+tinymce.min.js+`, except for the addition of `+sdk+`. For example, this script tag:
@@ -134,7 +133,6 @@ The following example:
 
 The disadvantage of `+plugins.min.js+`: to load only one plugin from the {cloudname} and the rest from a self-hosted deployment, *ALL* other plugins need to be added as query parameter with the version as `+sdk+`. When {cloudname} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from a self-hosted deployment, use `+cloud-plugins.min.js+`.
 
-[[cloud-pluginsminjs]]
 ==== cloud-plugins.min.js
 
 Instead of loading `+tinymce.min.js+` from {cloudname}, serve {productname} from a self-hosted server, and load `+cloud-plugins.min.js+` from {cloudname}. Unlike `+plugins.min.js+`, `+cloud-plugins.min.js+` defaults to loading every *premium* plugin from the *self-hosted {productname} installation*, not {cloudname}. However, plugins can be loaded from {cloudname} by specifying them as query parameters.

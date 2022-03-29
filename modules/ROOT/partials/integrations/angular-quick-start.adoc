@@ -166,7 +166,7 @@ ng serve --open
 
 ifeval::["{productSource}" == "package-manager"]
 
-[[bunding-siteproductname-with-an-angular-application]]
+[#bunding-{productname}-with-an-angular-application]
 == Bundling {productname} with an Angular application
 
 include::partial$integrations/bundling-integration.adoc[]

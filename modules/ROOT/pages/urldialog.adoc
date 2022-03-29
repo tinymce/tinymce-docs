@@ -25,7 +25,7 @@ A URL Dialog configuration has three main parts to match the three main parts of
 
 * *Title:* The title of the dialog. This will display in the header of the dialog.
 * *URL:* The URL of the external page to load inside the dialog.
-* *Buttons:* (Optional) An array of xref:footerbuttons[footer buttons] that are displayed in the dialog's footer.
+* *Buttons:* (Optional) An array of xref:footer-buttons[footer buttons] that are displayed in the dialog's footer.
 
 == Configuration options
 
@@ -36,16 +36,16 @@ A URL Dialog configuration has three main parts to match the three main parts of
 |url |string |required |The URL to the external page to load.
 |width |number |optional |The width of the dialog in pixels.
 |height |number |optional |The height of the dialog in pixels.
-|buttons |FooterButton[] |optional |An array of xref:footerbuttons[buttons] to render in the footer of the dialog.
+|buttons |FooterButton[] |optional |An array of xref:footer-buttons[buttons] to render in the footer of the dialog.
 |onAction |`+(dialogApi, details) => void+` |optional |Function invoked when a *Custom* type footer button is clicked.
 |onCancel |`+(dialogApi) => void+` |optional |Function invoked when the dialog is cancelled. The dialog header's close button and a *Cancel* type footer button invoke this function.
 |onClose |`+() => void+` |optional |Function invoked when the dialog is closed. The dialog header's close button, a *Cancel* type footer button and the dialog instance API's `+close()+` method invoke this function.
 |onMessage |`+(dialogApi, details) => void+` |optional |Function invoked when a message is received from the external page.
 |===
 
-For more information on the `+dialogApi+` object that is passed to some of the configuration options, see the xref:urldialoginstanceapi[URL dialog instance API] documentation.
+For more information on the `+dialogApi+` object that is passed to some of the configuration options, see the xref:url-dialog-instance-api[URL dialog instance API] documentation.
 
-[[footerbuttons]]
+[[footer-buttons]]
 == Footer buttons
 
 A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen xref:customize-ui.adoc#skins[skin].
@@ -74,19 +74,19 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 The different footer button types will invoke different callbacks when clicked:
 
 * A *Cancel* type button will invoke the `+onCancel+` and `+onClose+` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `+X+` button in the top right of the dialog.
-* A *Custom* type button will invoke the `+onAction+` callback function provided in the dialog configuration, and pass it the button's `+name+` in the `+details+` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the xref:dialog-examples.adoc#interactiveexampleusingredial[Redial example] for an example of how to use this with standard dialogs.
+* A *Custom* type button will invoke the `+onAction+` callback function provided in the dialog configuration, and pass it the button's `+name+` in the `+details+` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the xref:dialog-examples.adoc#interactive-example-using-redial[Redial example] for an example of how to use this with standard dialogs.
 
 NOTE: Unlike xref:dialog.adoc[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `+onSubmit+` callback.
 
 See the xref:configuration[URL dialog configuration options] documentation for more information on event callbacks.
 
+[[url-dialog-instance-api]]
 == URL dialog instance API
 
 When a URL dialog is created, a dialog instance API is returned. For example, `+const instanceApi = editor.windowManager.openUrl(config);+`. The URL dialog API instance is also passed to some of the xref:configuration[dialog configuration options].
 
 The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
-[[urldialoginstanceapi]]
 === Instance API methods
 
 [cols="1,2",options="header"]
@@ -110,7 +110,7 @@ window.parent.postMessage({
 }, '*');
 ----
 
-Similarly, to send messages from {productname} back to the external page, the `+sendMessage()+` function from the xref:urldialoginstanceapi[URL dialog instance API] can be used to send messages, and then in the external page an event listener can be added to receive the messages:
+Similarly, to send messages from {productname} back to the external page, the `+sendMessage()+` function from the xref:url-dialog-instance-api[URL dialog instance API] can be used to send messages, and then in the external page an event listener can be added to receive the messages:
 
 [source,js]
 ----

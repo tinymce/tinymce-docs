@@ -1,9 +1,9 @@
 Covered in this section:
 
-* xref:configuringthetinymceblazorintegration[Configuring the TinyMCE Blazor integration]
-* xref:componentbinding[Component binding]
+* xref:configuring-the-tinymce-blazor-integration[Configuring the TinyMCE Blazor integration]
+* xref:component-binding[Component binding]
 
-[[configuringthetinymceblazorintegration]]
+[[configuring-the-tinymce-blazor-integration]]
 == Configuring the TinyMCE Blazor integration
 
 The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
@@ -206,7 +206,7 @@ Specify a set of properties for the `+Tinymce.init+` method to initialize the ed
 }
 ----
 
-[[componentbinding]]
+[[component-binding]]
 == Component binding
 
 === Input binding

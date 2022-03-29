@@ -2,20 +2,20 @@
 
 The procedure for upgrading to the latest version of {productname} {productmajorversion} depends on the deployment type.
 
-* xref:upgradingtinycloud[Upgrading Tiny Cloud].
+* xref:upgrading-tiny-cloud[Upgrading Tiny Cloud].
 ifeval::[{enterprise} != true]
-* xref:upgradingtinymceself-hostedusingapackagemanager[Upgrading TinyMCE Self-hosted using a package manager].
+* xref:upgrading-tinymce-self-hosted-using-a-package-manager[Upgrading TinyMCE Self-hosted using a package manager].
 endif::[]
-* xref:upgradingtinymceself-hostedmanually[Upgrading TinyMCE Self-hosted manually].
+* xref:upgrading-tinymce-self-hosted-manually[Upgrading TinyMCE Self-hosted manually].
 
-[[upgradingtinycloud]]
+[[upgrading-tiny-cloud]]
 === Upgrading Tiny Cloud
 
 {cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: xref:editor-and-features.adoc[the Cloud deployment guide].
 
 ifeval::[{enterprise} != true]
 
-[[upgradingtinymceself-hostedusingapackagemanager]]
+[[upgrading-tinymce-self-hosted-using-a-package-manager]]
 === Upgrading TinyMCE Self-hosted using a package manager
 
 Select from the following package managers.
@@ -78,7 +78,7 @@ bower install {prodnamecode}#{productminorversion} --save
 
 endif::[]
 
-[[upgradingtinymceself-hostedmanually]]
+[[upgrading-tinymce-self-hosted-manually]]
 === Upgrading TinyMCE Self-hosted manually
 
 To upgrade to {productname} {productminorversion} using a manually downloaded package:

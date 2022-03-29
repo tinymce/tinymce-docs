@@ -22,27 +22,27 @@ ifeval::["{pluginminimumplan}" == "enterprise"]
 endif::[]
 
 ifeval::["{pluginname}" != "Tiny Drive"]
-[[getting-started-with-productname-pluginname]]
+[[getting-started-with-tinymce-pluginname]]
 == Getting started with {productname} {pluginname}
 endif::[]
 ifeval::["{pluginname}" == "Tiny Drive"]
-[[getting-started-with-pluginname]]
+[[getting-started-with-tiny-drive]]
 == Getting started with {pluginname}
 endif::[]
 
 
-[[creating-a-sitecloudname-account]]
+[[creating-a-tiny-cloud-account]]
 === Creating a {cloudname} account
 
 Try the *{pluginname} {extensionType}* and the {cloudname} with a free link:{accountsignup}/[{accountpage}]. New accounts receive a 30-day trial of the {companyname} link:{plugindirectory}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
 
 
 ifeval::["{pluginname}" != "Tiny Drive"]
-[[get-productname-pluginname]]
+[[get-tinymce-pluginname]]
 === Get {productname} {pluginname}
 endif::[]
 ifeval::["{pluginname}" == "Tiny Drive"]
-[[get-pluginname]]
+[[get-tiny-drive]]
 === Get {pluginname}
 endif::[]
 

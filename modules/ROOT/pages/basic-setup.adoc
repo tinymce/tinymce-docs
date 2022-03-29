@@ -8,10 +8,10 @@ This introduction to {productname} details the options used in traditional form-
 
 The four most common configuration options for {productname} are:
 
-. xref:selectorconfiguration[_(Required)_ The Selector configuration]
-. xref:pluginconfiguration[The Plugin configuration]
-. xref:toolbarconfiguration[The Toolbar configuration]
-. xref:menuandmenubarconfiguration[The Menu and Menu Bar configuration]
+. xref:selector-configuration[_(Required)_ The Selector configuration]
+. xref:plugin-configuration[The Plugin configuration]
+. xref:toolbar-configuration[The Toolbar configuration]
+. xref:menu-and-menu-bar-configuration[The Menu and Menu Bar configuration]
 
 == A note about code snippet examples
 
@@ -33,7 +33,7 @@ Snippets include the `+selector+` option, which is described below. Change the v
 
 Insert the snippet into an HTML document between the `+<script>+` tags and update the selector as described below.
 
-[[selectorconfiguration]]
+[[selector-configuration]]
 == Selector configuration
 
 Selector configuration is required for {productname} integration. Selector configuration uses https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS `+selector+` syntax] to determine which elements on the page are editable through {productname}.
@@ -78,7 +78,7 @@ tinymce.init({
 
 For information on the differences between the classic and inline editing modes, see: xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-[[pluginconfiguration]]
+[[plugin-configuration]]
 == Plugin configuration
 
 The functionality of {productname} is extended by using plugins, which are enabled using the `+plugins+` option.
@@ -95,7 +95,7 @@ tinymce.init({
 
 For a full list of plugins and their options, see: xref:plugins.adoc[Add plugins to TinyMCE].
 
-[[toolbarconfiguration]]
+[[toolbar-configuration]]
 == Toolbar configuration
 
 {productname} provides a default set of toolbar controls, which can be overridden using the `+toolbar+` option.
@@ -121,7 +121,7 @@ Use a space-separated list to specify the toolbar buttons for {productname}. Cre
 * For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 * For a list of all available toolbar items, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-[[menuandmenubarconfiguration]]
+[[menu-and-menu-bar-configuration]]
 == Menu and Menu bar configuration
 
 There are two menu options: `+menubar+` and `+menu+`. `+menubar+` is used to define the presence and order of _menus_, such as *File*, *Edit*, and *View*. `+menu+` is used to define the presence and order of _menu items_, such as *New Document*, *Select all*, and *Source code*.

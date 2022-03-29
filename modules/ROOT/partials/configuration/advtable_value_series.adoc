@@ -52,10 +52,10 @@ Each top-level properties of the `advtable_value_series` object are used as the 
 |title |`+string+` |Required |The text shown in the UI for the series.
 |update |`+boolean+` |Optional |default: `+false+` - When `+true+`, the series values will be updated when changes are made to the table.
 |resizable |`+boolean+` |Optional |default: `+true+` - When `+true+`, table cells containing the series values can be resized using a mouse or touch device.
-|generator |`+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+` |Required |For details on creating a value series generator, see: xref:advtable.adoc#creating_a_value_series_generator[Creating a value series generator].
+|generator |`+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+` |Required |For details on creating a value series generator, see: xref:advtable.adoc#creating-a-value-series-generator[Creating a value series generator].
 |===
 
-[[creating_a_value_series_generator]]
+[[creating-a-value-series-generator]]
 ==== Creating a value series generator
 
 The `+generator+` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to: the generator and table cell, the row index, and column index of the table cell. For details, see: xref:advtable.adoc#generatorinfo[GeneratorInfo]. The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: xref:generatorresult[GeneratorResult].

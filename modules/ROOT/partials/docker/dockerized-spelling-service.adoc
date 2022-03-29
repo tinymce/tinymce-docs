@@ -26,7 +26,7 @@ endif::[]
 The following procedure covers downloading, configuring, building and testing the {productname} Spelling Service Docker image.
 ifeval::[{shbundledockerfiles} == true]
 
-NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in xref:bundle-intro-setup.adoc#downloadandextractthetinymceself-hostedbundle[Download and extract the {productname} Self-hosted Bundle].
+NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in xref:bundle-intro-setup.adoc#download-and-extract-the-tinymce-self-hosted-bundle[Download and extract the {productname} Self-hosted Bundle].
 
 . Navigate into the `+tinymce-services+` folder.
 +

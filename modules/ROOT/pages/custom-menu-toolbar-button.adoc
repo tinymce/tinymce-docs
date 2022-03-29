@@ -17,7 +17,7 @@ For example: The table plugin's `+table+` toolbar button opens a menu similar to
 |icon |string |optional |
 include::partial$misc/admon-predefined-icons-only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
-|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered. For details, see: xref:usingonsetup[Using `+onSetup+`].
+|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |===
 
 == API

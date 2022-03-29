@@ -38,7 +38,7 @@ tinymce.activeEditor.uploadImages().then(() => {
 
 include::partial$misc/admon-svg-not-supported.adoc[]
 
-[[imageuploaderrequirements]]
+[[image-uploader-requirements]]
 == Image Uploader requirements
 
 A server-side upload handler script uploads local images to a remote server. The script must:

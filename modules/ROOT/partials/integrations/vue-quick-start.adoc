@@ -159,9 +159,9 @@ include::partial$integrations/bundling-integration.adoc[]
 --
 endif::[]
 ifeval::["{productSource}" == "zip"]
-. {productname} can be self-hosted by either: xref:deployingtinymceindependent[Deploying {productname} independent of the Vue.js application], or xref:bundle[Bundling {productname} with the Vue.js application].
+. {productname} can be self-hosted by either: xref:deploying-tinymce-independent[Deploying {productname} independent of the Vue.js application], or xref:bundle[Bundling {productname} with the Vue.js application].
 
-* [[deployingtinymceindependent]] Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
+* [[deploying-tinymce-independent]] Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
 +
 To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +

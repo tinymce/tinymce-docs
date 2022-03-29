@@ -6,7 +6,7 @@
 A dialog configuration has three main parts to match the three main parts of the dialog's UI:
 
 * *Title:* The title of the dialog. This will display in the header of the dialog.
-* *Body:* The body of the dialog. The body component can be a xref:dialog-components.adoc#panel[panel] or a xref:dialog-components.adoc#tabpanel[tab panel], which can contain an array of xref:dialog-components.adoc#panelcomponents[panel components] such as buttons, inputs and text.
+* *Body:* The body of the dialog. The body component can be a xref:dialog-components.adoc#panel[panel] or a xref:dialog-components.adoc#tabpanel[tab panel], which can contain an array of xref:dialog-components.adoc#panel-components[panel components] such as buttons, inputs and text.
 * *Buttons:* An array of xref:dialog-footer-buttons.adoc[footer buttons] that are displayed in the dialog's footer.
 
 == Basic example
@@ -35,7 +35,7 @@ tinymce.activeEditor.windowManager.open({
 });
 ----
 
-[[configurationoptions]]
+[[configuration-options]]
 == Configuration options
 
 [cols="1,2,1,4",options="header"]
@@ -54,7 +54,7 @@ tinymce.activeEditor.windowManager.open({
 |onTabChange |`+(dialogApi, details) => void+` |optional |*This method only applies to xref:dialog-components.adoc#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `+details+` is an object that contains `+newTabName+` and `+oldTabName+`.
 |===
 
-For more information on the `+dialogApi+` object that is passed to some of the configuration options, see the xref:dialog-components.adoc#dialoginstanceapimethods[dialog instance API] documentation.
+For more information on the `+dialogApi+` object that is passed to some of the configuration options, see the xref:dialog-components.adoc#dialog-instance-api-methods[dialog instance API] documentation.
 
 === Event callback functions
 

@@ -6,25 +6,25 @@
 
 == Overview
 
-* xref:executablecommands[Executable commands]
-** xref:listingcoreandplugineditorcommands[Listing core and plugin editor commands]
-** xref:coreeditorcommands[Core Editor commands]
-** xref:plugincommands[Plugin Commands]
-** xref:editormanagementcommands[Editor Management Commands]
-* xref:querycommandstates[Query command states]
-** xref:listingcoreandpluginquerycommandstates[Listing core and plugin query command states]
-** xref:availablequerycommandstates[Available query command states]
-* xref:querycommandvalues[Query command values]
-** xref:listingcoreandpluginquerycommandvalues[Listing core and plugin Query command values]
-** xref:availablequerycommandvalues[Available Query command values]
-** xref:querycommandvaluestableplugin[Query command values: Table plugin]
+* xref:executable-commands[Executable commands]
+** xref:listing-core-and-plugin-editor-commands[Listing core and plugin editor commands]
+** xref:core-editor-commands[Core Editor commands]
+** xref:plugin-commands[Plugin Commands]
+** xref:editor-management-commands[Editor Management Commands]
+* xref:query-command-states[Query command states]
+** xref:listing-core-and-plugin-query-command-states[Listing core and plugin query command states]
+** xref:available-query-command-states[Available query command states]
+* xref:query-command-values[Query command values]
+** xref:listing-core-and-plugin-query-command-values[Listing core and plugin Query command values]
+** xref:available-query-command-values[Available Query command values]
+** xref:query-command-values-table-plugin[Query command values: Table plugin]
 
-[[executablecommands]]
+[[executable-commands]]
 == Executable commands
 
 The following tables show the existing editor commands. These commands are provided by `+tinymce+` and not by the browser's internal commands. These commands can be executed using the xref:apis/tinymce.editor.adoc#execCommand[execCommand] function.
 
-[[listingcoreandplugineditorcommands]]
+[[listing-core-and-plugin-editor-commands]]
 === Listing core and plugin editor commands
 
 To retrieve a list of available commands from the active editor, run the following command from the browser console:
@@ -34,7 +34,7 @@ To retrieve a list of available commands from the active editor, run the followi
 tinymce.activeEditor.editorCommands.commands.exec;
 ----
 
-[[coreeditorcommands]]
+[[core-editor-commands]]
 === Core Editor commands
 
 ==== Supported browser-native commands
@@ -61,7 +61,7 @@ The commands in the following table are provided by the {productname} editor and
 |JustifyFull |Full aligns the current text block/image.
 |FontName |Font name to apply to the text. The value passed in should be the font family name.
 |FontSize |Font size of the text. The value passed in should be a valid CSS font size.
-|FormatBlock |Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (`+<p>+`) format will be toggled. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
+|FormatBlock |Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (`+<p>+`) format will be toggled. For a list of options, see: xref:content-formatting.adoc#built-in-formats[Content formatting options - Built-in formats].
 |RemoveFormat |Removes any formats from the current selection.
 |Indent |Indents the current selection.
 |Outdent |Outdents the current selection.
@@ -136,7 +136,7 @@ The commands in the following table are provided by the {productname} editor and
 |mceInsertContent |Inserts contents at the current selection. The value passed in should be the contents to be inserted.
 |mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
 |mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
-|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
+|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-in-formats[Content formatting options - Built-in formats].
 |ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
 |ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |InsertLineBreak |Adds a line break `+<br>+` at the current cursor or selection.
@@ -199,7 +199,7 @@ tinymce.activeEditor.execCommand('mceAutocompleterReload', false, {
 });
 ----
 
-[[plugincommands]]
+[[plugin-commands]]
 === Plugin Commands
 
 Commands are available for the following plugins:
@@ -494,7 +494,7 @@ The following command requires the xref:visualchars.adoc[Word Count (`+wordcount
 
 include::partial$commands/wordcount-cmds.adoc[leveloffset=+3]
 
-[[editormanagementcommands]]
+[[editor-management-commands]]
 === Editor Management Commands
 
 The following commands are used to manage editor instances.
@@ -517,12 +517,12 @@ tinymce.execCommand('mceToggleEditor', false, { index: '<editor_index>' });
 |mceToggleEditor |Runs `mceAddEditor` if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
 |===
 
-[[querycommandstates]]
+[[query-command-states]]
 == Query command states
 
 {productname} provides the `+queryCommandState+` API to allow developers to determine the current state of selected content. The query will return `+true+` if the content is formatted using the same CSS styles and elements used by the corresponding command.
 
-[[listingcoreandpluginquerycommandstates]]
+[[listing-core-and-plugin-query-command-states]]
 === Listing core and plugin query command states
 
 To retrieve a list of avaliable queryable states from the active editor, run the following command from the browser console:
@@ -532,7 +532,7 @@ To retrieve a list of avaliable queryable states from the active editor, run the
 tinymce.activeEditor.editorCommands.commands.state;
 ----
 
-[[availablequerycommandstates]]
+[[available-query-command-states]]
 === Available query command states
 
 The following command states can be queried using the xref:apis/tinymce.editor.adoc#queryCommandState[queryCommandState] API.
@@ -579,12 +579,12 @@ tinymce.activeEditor.queryCommandState('ToggleToolbarDrawer');
 tinymce.activeEditor.queryCommandState('Underline');
 ----
 
-[[querycommandvalues]]
+[[query-command-values]]
 == Query command values
 
 {productname} provides the `+queryCommandValue+` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
 
-[[listingcoreandpluginquerycommandvalues]]
+[[listing-core-and-plugin-query-command-values]]
 === Listing core and plugin query command values
 
 To retrieve a list of available queryable command values from the active editor, run the following command from the browser console:
@@ -594,7 +594,7 @@ To retrieve a list of available queryable command values from the active editor,
 tinymce.activeEditor.editorCommands.commands.value;
 ----
 
-[[availablequerycommandvalues]]
+[[available-query-command-values]]
 === Available query command values
 
 The following command values can be queried using the xref:apis/tinymce.editor.adoc#queryCommandValue[queryCommandValue] API.
@@ -617,7 +617,7 @@ tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ----
 
-[[querycommandvaluestableplugin]]
+[[query-command-values-table-plugin]]
 === Query command values: Table plugin
 
 include::partial$commands/table-query-cmd-values.adoc[leveloffset=+3]

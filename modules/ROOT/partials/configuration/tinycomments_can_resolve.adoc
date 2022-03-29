@@ -1,3 +1,4 @@
+[[tinycomments_can_resolve]]
 === `tinycomments_can_resolve`
 
 include::partial$misc/requires_5_8v.adoc[]
@@ -8,7 +9,8 @@ _Optional_ - This option adds a _Resolve Conversation_ item to the dropdown menu
 
 ==== Example: Using `tinycomments_can_resolve`
 
-```js
+[source, js]
+----
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
@@ -18,4 +20,8 @@ tinymce.init({
     var allowed = req.comments.length > 0 &&
                   req.comments[0].author === currentAuthor;
     done({
-      canResolve: allowed || currentAuthor === '+++<Admin user="">+++' }); } }); ```+++</Admin>+++
+      canResolve: allowed || currentAuthor === '<Admin user>' });
+ }
+});
+
+----

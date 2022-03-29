@@ -29,7 +29,7 @@ underline: false,
 strikethrough: false
 ----
 
-For more information on {productname} formats, refer to the link:{baseurl}/configure/content-formatting/#formats[formats] section.
+For more information on {productname} formats, refer to the xref:configure/content-formatting.adoc#formats[formats] section.
 
 == Try our Permanent Pen demo
 
@@ -39,17 +39,17 @@ liveDemo::permanent-pen[]
 
 === To enable Permanent Pen
 
-. Click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
+. Click on the image:icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) toolbar button to enable the Permanent Pen.
 . Place the cursor in the desired text area and start typing.
 
 *Result*:
-The *Permanent Pen* toolbar button background color changes to _grey_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
+The *Permanent Pen* toolbar button background color changes to _grey_ image:icons/permanent-pen.svg[Permanent Pen] and the text is entered using the default settings.
 
 === To disable Permanent Pen
 
-To exit the Permanent Pen, click on the image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
+To exit the Permanent Pen, click on the image:icons/permanent-pen.svg[Permanent Pen](*Permanent Pen*) icon.
 
-The *Permanent Pen* toolbar button background color changes to _white_ image:{baseurl}/images/icons/permanent-pen.svg[Permanent Pen].
+The *Permanent Pen* toolbar button background color changes to _white_ image:icons/permanent-pen.svg[Permanent Pen].
 
 === Accessing the Permanent Pen properties
 
@@ -57,7 +57,7 @@ There are two ways to access the Permanent Pen properties:
 
 ==== From the menubar
 
-Add the Permanent pen properties option to the menu bar with the link:{baseurl}/configure/editor-appearance/#menu[menu] configuration.
+Add the Permanent pen properties option to the menu bar with the xref:configure/editor-appearance.adoc#menu[menu] configuration.
 
 [source, js]
 ----
@@ -77,7 +77,7 @@ tinymce.init({
 . Right-click anywhere from inside the text area.
 . Choose the *Permanent Pen* option.
 
-image::{baseurl}/images/right-click.png[Right-click]
+image::right-click.png[Right-click]
 
 *Result*:
 The *Permanent Pen Properties* dialog box appears.
@@ -89,7 +89,7 @@ NOTE: The Permanent Pen has to be enabled to access the *Permanent Pen Propertie
 === Using the UI
 
 . Open the *Permanent Pen Properties* dialog box using any of the above methods.
-image:{baseurl}/images/ppprop.png[Permanent pen properties]
+image:ppprop.png[Permanent pen properties]
 . Select the desired settings from the *Font* and *Size* drop-down menus.
 . To select the desired *Styles*, click on the radio button next to *Bold*, *Italic*, *Strikethrough*, or *Underline*.
 . Choose the desired *Text color*.

@@ -1,3 +1,4 @@
+[[tinycomments_delete]]
 === `tinycomments_delete`
 
 The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {productname} by calling the `fail` callback instead.
@@ -8,7 +9,7 @@ The `tinycomments_delete` function is passed a (`req`) object as the first param
 
 The `done` callback should accept the following object:
 
-[source]
+[source, ts]
 ----
 {
   canDelete: boolean // whether or not the conversation can be deleted

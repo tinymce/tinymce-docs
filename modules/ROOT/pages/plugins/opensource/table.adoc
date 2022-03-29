@@ -73,11 +73,11 @@ include::partial$configuration/table_style_by_css.adoc[]
 
 include::partial$configuration/table_header_type.adoc[]
 
-=== Examples of various table setups
+== Examples of various table setups
 
 Here are some examples of configuration for common setups.
 
-==== No default attributes or styles on tables
+=== No default attributes or styles on tables
 
 [source, js]
 ----
@@ -89,7 +89,7 @@ tinymce.init({
 });
 ----
 
-==== Pixel based resizing
+=== Pixel based resizing
 
 [source, js]
 ----
@@ -100,7 +100,7 @@ tinymce.init({
 });
 ----
 
-==== Percentage based resizing
+=== Percentage based resizing
 
 [source, js]
 ----

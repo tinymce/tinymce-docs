@@ -5,13 +5,13 @@ The Comments plugin uses the `+tinycomments_lookup+` function to retrieve an exi
 
 The *Display names* configuration must be considered for the `+tinycomments_lookup+` function:
 
-Display names : The Comments plugin uses a simple string for the display name. For the `+lookup+` function, Comments expects each comment to contain the author's display name, not a user ID, as Comments does not know the user identities. The `+lookup+` function should be implemented considering this and resolve user identifiers to an appropriate display name.
+Display names:: The Comments plugin uses a simple string for the display name. For the `+lookup+` function, Comments expects each comment to contain the author's display name, not a user ID, as Comments does not know the user identities. The `+lookup+` function should be implemented considering this and resolve user identifiers to an appropriate display name.
 
 The conventional conversation object structure that should be returned via the `+done+` callback is as follows:
 
 The `+tinycomments_lookup+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-`+conversationUid+` : The uid of the conversation the reply is targeting.
+`+conversationUid+`:: The uid of the conversation the reply is targeting.
 
 The `+done+` callback should accept the following object:
 

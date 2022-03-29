@@ -207,9 +207,9 @@ Functions can be bound to editor events, such as:
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 
-`+event+` : The {productname} event object.
+`+event+`:: The {productname} event object.
 
-`+editor+` : A reference to the editor.
+`+editor+`:: A reference to the editor.
 
 Ensure event names are specified in lower-case (event names are case-sensitive).
 

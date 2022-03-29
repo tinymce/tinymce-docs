@@ -5,9 +5,9 @@ This option allows configuring which model {productname} should use. The default
 
 The name of the model should match the name of the folder within the models directory of {productname}. If the specified model is not found, {productname} will not load.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default Value : `'dom'`
+*Default value:* `'dom'`
 
 === Example: Using `+model+`
 

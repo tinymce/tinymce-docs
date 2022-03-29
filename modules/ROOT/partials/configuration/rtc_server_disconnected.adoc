@@ -10,12 +10,12 @@ image:rtc-error-example.png[RTC disconnected error example,title="RTC disconnect
 The `+rtc_server_disconnected+` callback can be used to provide an alternative response to this condition.
 
 ifeval::["{plugincode}" != "rtc"]
-Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
+*Required plugin:* xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
 endif::[]
 
 *Type:* `+Function+`
 
-Input parameters :
+*Input parameters:*
 [cols="1,1,3",options="header"]
 |===
 |Field |Type |Description
@@ -35,15 +35,15 @@ It is critical to at least handle the `+client_update_required+` reason. This in
 
 The `+reason+` field will have one of the following values.
 
-`+client_update_required+` : This error indicates the RTC plugin is out-of-date and cannot connect to an active session for the supplied `+rtc_document_id+`. This can happen on startup, but is more common at runtime during editor upgrades. The suggested message recommends the user reload the page.
+`+client_update_required+`:: This error indicates the RTC plugin is out-of-date and cannot connect to an active session for the supplied `+rtc_document_id+`. This can happen on startup, but is more common at runtime during editor upgrades. The suggested message recommends the user reload the page.
 
-`+encryption+` : Indicates a failure at startup either: in the cryptography process or the configured `+rtc_encryption_provider+` function. This may be caused by an error in the editor configuration.
+`+encryption+`:: Indicates a failure at startup either: in the cryptography process or the configured `+rtc_encryption_provider+` function. This may be caused by an error in the editor configuration.
 
-`+jwt+` : Indicates a problem with the configured `+rtc_token_provider+` function. Either the provider returned a rejected promise, the returned object structure was incorrect, or the token was invalid.
+`+jwt+`:: Indicates a problem with the configured `+rtc_token_provider+` function. Either the provider returned a rejected promise, the returned object structure was incorrect, or the token was invalid.
 
-`+content+` : Indicates a problem with the configured `+rtc_initial_content_provider+` function. Either the provider returned a rejected promise or the returned object structure was incorrect.
+`+content+`:: Indicates a problem with the configured `+rtc_initial_content_provider+` function. Either the provider returned a rejected promise or the returned object structure was incorrect.
 
-`+general+` : A generic error for reasons that do not yet have a category. Details will be printed to the browser console.
+`+general+`:: A generic error for reasons that do not yet have a category. Details will be printed to the browser console.
 
 === Example of handling server disconnection
 

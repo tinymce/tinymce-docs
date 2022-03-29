@@ -3,8 +3,8 @@
 
 The *min_height* option has two kinds of behaviors depending on the state of the xref:autoresize.adoc[`+autoresize+`] plugin:
 
-* `+autoresize+` OFF (Default) : Without the `+autoresize+` plugin, this option sets the minimum height that a user can shrink the entire {productname} interface (by grabbing the draggable area in the bottom right of the editor interface).
-* `+autoresize+` ON : With the `+autoresize+` plugin, this option sets the minimum height the editor can automatically shrink to.
+* `+autoresize+` OFF (Default): Without the `+autoresize+` plugin, this option sets the minimum height that a user can shrink the entire {productname} interface (by grabbing the draggable area in the bottom right of the editor interface).
+* `+autoresize+` ON: With the `+autoresize+` plugin, this option sets the minimum height the editor can automatically shrink to.
 
 *Type:* `+Number+`
 

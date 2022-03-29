@@ -10,19 +10,19 @@ Only the `+fullName+` is required, but the whole object will be stored within th
 This provider function is called once for each connecting client. Clients that reconnect may trigger a new call to the provider function rather than using cached data.
 
 ifeval::["{plugincode}" != "rtc"]
-Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
+*Required plugin:* xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
 endif::[]
 
 *Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
-Input parameters :
+*Input parameters:*
 [cols="1,1,3",options="header"]
 |===
 |Field |Type |Description
 |`+userId+` | `+string+` | User ID to resolve into user details.
 |===
 
-Return data :
+*Return data:*
 [cols="1,1,3",options="header"]
 |===
 |Field |Type |Description

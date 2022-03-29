@@ -171,14 +171,14 @@ An array of tags describing the primary type of an embed, where it came from and
 
 A string describing the primary type of an embed containing one of the following values:
 
-* `+player+` : A video or audio player
-* `+thumbnail+` : A thumbnail representation of the resource
-* `+image+` : A full sized image for the resource
+* `+player+`: A video or audio player
+* `+thumbnail+`: A thumbnail representation of the resource
+* `+image+`: A full sized image for the resource
 * `+reader+`
-* `+file+` : No HTML provided. Should just be a hyperlink to a downloadable file.
+* `+file+`: No HTML provided. Should just be a hyperlink to a downloadable file.
 * `+survey+`
-* `+app+` : An embed that will switch over to a mobile app if played on a mobile (e.g. soundcloud)
-* `+summary+` : Summary card (scriptless embed)
+* `+app+`: An embed that will switch over to a mobile app if played on a mobile (e.g. soundcloud)
+* `+summary+`: Summary card (scriptless embed)
 * `+icon+`
 * `+logo+`
 * `+promo+`
@@ -200,14 +200,14 @@ A string describing technical attributes of an embed containing one of the follo
 
 A string describing the source of an embed containing one of the following values:
 
-* `+iframely+` : From Iframely
-* `+opengraph+` : Generated from Open Graph tags in a resource
-* `+twitter+` : Retrieved from a https://dev.twitter.com/cards/overview[Twitter Card]
-* `+oembed+` : Retreived from an oEmbed API
+* `+iframely+`: From Iframely
+* `+opengraph+`: Generated from Open Graph tags in a resource
+* `+twitter+`: Retrieved from a https://dev.twitter.com/cards/overview[Twitter Card]
+* `+oembed+`: Retrieved from an oEmbed API
 * `+sm4+`
-* `+fallback+` : Ephox fallback embeds that look at SEO tags and Open Graph tags.
-* `+script_censor+` : The original embed (from Iframely or oEmbed) had a script in it and has been converted to a summary card.
-* `+smartframe_censor+` : The original embed had an Iframely smart frame and has been censored into a summary card to avoid a content dependency on Iframely.
+* `+fallback+`: Ephox fallback embeds that look at SEO tags and Open Graph tags.
+* `+script_censor+`: The original embed (from Iframely or oEmbed) had a script in it and has been converted to a summary card.
+* `+smartframe_censor+`: The original embed had an Iframely smart frame and has been censored into a summary card to avoid a content dependency on Iframely.
 
 [[linksobj]]
 ===== `+LinksObj+`

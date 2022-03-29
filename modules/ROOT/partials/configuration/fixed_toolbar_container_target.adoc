@@ -1,7 +1,7 @@
 [[fixed_toolbar_container_target]]
 == `+fixed_toolbar_container_target+`
 
-include::partial$misc/admon_inline_only.adoc[]
+include::partial$misc/admon-inline-only.adoc[]
 
 Use this option to render the inline toolbar into a fixed-positioned HTML element by passing a `+HTMLElement+` directly to the option. This option is similar to the xref:menus-configuration-options.adoc#fixed_toolbar_container[`+fixed_toolbar_container+` option], which accepts a CSS selector.
 

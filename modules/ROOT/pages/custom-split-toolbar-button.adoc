@@ -12,7 +12,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 |Name |Value |Target component |Requirement |Description
 |text |string |Primary button |optional |Text displayed if no icon is found.
 |icon |string |Primary button |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |onAction |`+(api) => void+` |Primary button |required |Function invoked when the basic button section is clicked.
 |select |`+(value: string) => boolean+` |Choice menu items |optional |default: `false` - Function run on each option when the menu is opened to determine if it should be highlighted as active.
 |columns |number or `+'auto'+` |Drop-down menu |optional |default: `1` - Number of columns for the list of options. When set to more than 1 column, only the icon for each item will be shown.

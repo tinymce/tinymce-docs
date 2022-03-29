@@ -190,7 +190,7 @@ Clicking the icon in the alert banner will fire the `+onAction+` function in the
 |text |string |required |HTML text to display in the alertbanner.
 |level |`+'info'+`, `+'warn'+`, `+'error'+` or `+'success'+` |required |The alertbanner's level, which determines its styling.
 |icon |string |required |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |url |string |optional |A URL that is passed to `+onAction+` when the icon button is clicked.
 |===
 
@@ -221,7 +221,7 @@ NOTE: Panel buttons are different to xref:dialog-footer-buttons.adoc[dialog foot
 |text |string |required |Text to display in the button *if icon is not specified*. Also used for the button's `+title+` attribute.
 |name |string |optional |A identifier for the button. If not specified, the button will be assigned a randomly generated name.
 |icon |string |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 *When configured, the button will display the icon instead of text.*
 |buttonType |`+'primary'+`, `+'secondary'+`, or `+'toolbar'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, secondary, or toolbar button.
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.

@@ -166,7 +166,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Type:* `+String+`
 
-*Default value:* `+"no-api-key"+`
+*Default value:* `+'no-api-key'+`
 
 ==== Example: Using `+apiKey+`
 
@@ -182,7 +182,9 @@ include::partial$misc/get-an-api-key.adoc[]
 
 Changes the {productname} build used for the editor to either a specific version or a channel indicating a stability level.
 
-*Default value:* `'{productmajorversion}-stable'`
+*Type:* `+String+`
+
+*Default value:* `'{productmajorversion}'`
 
 *Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
@@ -211,6 +213,8 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` prop can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
+*Type:* `Boolean`
+
 *Default value:* `+false+`
 
 *Possible values:* `+true+`, `+false+`
@@ -229,9 +233,9 @@ The `+disabled+` prop can dynamically switch the editor between a "disabled" (re
 
 An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
-
 *Type:* `+String+`
+
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
 ==== Example: Using `+id+`
 
@@ -254,9 +258,9 @@ When using `+tinymce-react+`:
 * The `+init+` prop does not require the `+selector+` or `+target+` options
 * If the `+selector+`, `+target+`, or `+readonly+` options are set using the `+init+` prop, they will be _overridden_ by the integration.
 
-*Default value:* `+{ }+`
-
 *Type:* `+Object+`
+
+*Default value:* `+{ }+`
 
 ==== Example: Using `+init+`
 
@@ -279,9 +283,9 @@ This may be set either before the editor loads, or soon afterwards by an asynchr
 
 IMPORTANT: Ensure that this is *not* updated by `+onEditorChange+` or the editor will be unusable.
 
-*Default value:* `+''+`
-
 *Type:* `+String+`
+
+*Default value:* `+''+`
 
 ==== Example: Using static `+initialValue+`
 
@@ -315,6 +319,8 @@ return (
 Used to set the editor to inline mode. Using `+<Editor inline={true} />+` is the same as setting `+{inline: true}+` in the {productname} `+tinymce.init({...})+` method.
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
+
+*Type:* `+Boolean+`
 
 *Default value:* `+false+`
 
@@ -440,6 +446,8 @@ Contains 3 settings:
 [quote, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async]
 For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.
 
+*Type:* `+Boolean+`
+
 *Default value:* `false`
 
 `+defer+`:: Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer[`+defer+`] attribute on the script tag created to load {productname}.
@@ -447,13 +455,15 @@ For classic scripts, if the async attribute is present, then the classic script 
 [quote, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer]
 This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
 
+*Type:* `+Boolean+`
+
 *Default value:* `false`
 
 `+delay+`:: The script tag to load {productname} will be added after the specified delay in milliseconds.
 
-*Default value:* `0`
+*Type:* `+Object+`
 
-**Type:** `Object`
+*Default value:* `0`
 
 [source,ts]
 ----
@@ -485,9 +495,9 @@ This Boolean attribute is set to indicate to a browser that the script is meant 
 
 Only valid when xref:inline[`+<Editor inline={true} />+`]. Used to define the HTML element for the editor in inline mode.
 
-*Default value:* `+'div'+`
-
 *Type:* `+String+`
+
+*Default value:* `+'div'+`
 
 ==== Example: Using `+tagName+`
 
@@ -503,8 +513,6 @@ Only valid when xref:inline[`+<Editor inline={true} />+`]. Used to define the HT
 === `+textareaName+`
 
 Only valid when the editor is in classic (iframe) mode. Sets the `+name+` attribute for the `+textarea+` element used for the editor in forms.
-
-*Default value:* `+'undefined'+`
 
 *Type:* `+String+`
 
@@ -527,9 +535,9 @@ Used to set the toolbar for the editor. Using `+<Editor toolbar='bold' />+` is t
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
-
 *Type:* `+String+`
+
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 ==== Example: Using `+toolbar+`
 

@@ -30,9 +30,9 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
 
-*Default value:* `+'no-api-key'+`
+*Type:* `+String+`
 
-*Type:* String
+*Default value:* `+'no-api-key'+`
 
 ==== Example using apiKey
 
@@ -48,16 +48,18 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 
 Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: xref:editor-plugin-version.adoc[Specifying the {productname} editor version deployed from Cloud].
 
-*Default value:* `+'5'+`
+*Type:* `+String+`
 
-*Type:* String
+*Default value:* `'{productmajorversion}'`
+
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
 ==== Example using channel
 
-[source,jsx]
+[source,jsx,subs="attributes+"]
 ----
 <Editor
-  channel="5-dev"
+  channel="{productmajorversion}-dev"
 />
 ----
 
@@ -66,9 +68,9 @@ Specifies the {cloudname} channel to use. For information on {cloudname} deploym
 
 Specified an Id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-*Default value:* Automatically generated UUID
+*Type:* `+String+`
 
-*Type:* String
+*Default value:* Automatically generated UUID
 
 ==== Example using id
 
@@ -84,9 +86,9 @@ Specified an Id for the editor. Used for retrieving the editor instance using th
 
 Set the editor to inline mode.
 
-*Default value:* `+false+`
+*Type:* `+Boolean+`
 
-*Type:* Boolean
+*Default value:* `+false+`
 
 ==== Example using inline
 
@@ -102,9 +104,9 @@ Set the editor to inline mode.
 
 Set the editor to readonly mode.
 
-*Default value:* `+false+`
+*Type:* `+Boolean+`
 
-*Type:* Boolean
+*Default value:* `+false+`
 
 ==== Example using disabled
 
@@ -120,7 +122,7 @@ Set the editor to readonly mode.
 
 Use the `+scriptSrc+` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the {productname} npm package or a .zip package of {productname}.
 
-*Type:* String
+*Type:* `+String+`
 
 ==== Example using scriptSrc
 
@@ -136,9 +138,9 @@ Use the `+scriptSrc+` property to specify the location of {productname} to lazy 
 
 Specify a set of properties for the `+Tinymce.init+` method to initialize the editor.
 
-*Default value:* `+{}+`
+*Type:* `+Object+`
 
-*Type:* Object
+*Default value:* `+{}+`
 
 ==== Example using conf
 

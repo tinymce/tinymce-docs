@@ -35,8 +35,9 @@ tinymce.activeEditor.windowManager.open({
 });
 ----
 
+// Note: The configurationoptions anchor is needed for older external links
 [[configuration-options]]
-== Configuration options
+== [[configurationoptions]] Configuration options
 
 [cols="1,2,1,4",options="header"]
 |===

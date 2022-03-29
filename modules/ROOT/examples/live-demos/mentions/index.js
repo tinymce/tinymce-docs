@@ -99,7 +99,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
 
       div.innerHTML = (
         '<div class="card">' +
-          '<img class="avatar" src="' + userDetail.image + '"/>' +
+          '<img class="avatar" src="' + userDetail.image + '">' +
           '<h1>' + userDetail.fullName + '</h1>' +
           '<p>' + userDetail.description + '</p>' +
         '</div>'
@@ -129,7 +129,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       const div = document.createElement('div');
       div.innerHTML = (
         '<div class="card">' +
-        '<img class="avatar" src="' + userDetail.image + '"/>' +
+        '<img class="avatar" src="' + userDetail.image + '">' +
         '<h1>' + userDetail.fullName + '</h1>' +
         '<p>' + userDetail.description + '</p>' +
         '</div>'

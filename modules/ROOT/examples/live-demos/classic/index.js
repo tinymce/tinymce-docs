@@ -1,4 +1,4 @@
-const table = '<p>This table uses features of the non-editable plugin to make the text in the<br /><strong>top row</strong> and <strong>left column</strong> uneditable.</p>' +
+const table = '<p>This table uses features of the non-editable plugin to make the text in the<br><strong>top row</strong> and <strong>left column</strong> uneditable.</p>' +
 '    <table style="width: 60%; border-collapse: collapse;" border="1"> ' +
 '        <caption class="mceNonEditable">Ephox Sales Analysis</caption> ' +
 '       <tbody> ' +

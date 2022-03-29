@@ -11,19 +11,20 @@
   margin: 5px;
 }
 </style>
-<script>
-  function dumpEditorContent (editorID, outputElementId) {
-    var editorContent = tinymce.get(editorID).getContent();
-    var outputElement = document.getElementById(outputElementId);
-        outputElement.innerText = editorContent;
-  }
-</script>
 <textarea id="default-editor">
   <p><em>Hello</em>, <span style="text-decoration: underline;"><strong>World!</strong></span></p>
 </textarea>
 <div id="submitContainer">
-  <button id="fake-submit" class="live_demo" onclick="dumpEditorContent('default-editor','output-content')">Submit!</button>
+  <button id="fake-submit" class="live_demo">Submit!</button>
 </div>
 <pre id="output-content" class="contentDumpBox">
   Click the submit button to view the output HTML.
 </pre>
+<script>
+  const btn = document.getElementById('fake-submit');
+  btn.addEventListener('click', () => {
+    const editorContent = tinymce.get('default-editor').getContent();
+    const outputElement = document.getElementById('output-content');
+    outputElement.innerText = editorContent;
+  });
+</script>

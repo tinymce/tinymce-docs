@@ -11,7 +11,7 @@ const page1Config = {
       label: 'I agree to disagree'
     }, {
       type: 'htmlpanel',
-      html: '<p>Pressing the Next button will call redial() to reload the dialog with the next page of the form.</p><br /><p>Press Next to continue.</p>'
+      html: '<p>Pressing the Next button will call redial() to reload the dialog with the next page of the form.</p><br><p>Press Next to continue.</p>'
     }]
   },
   initialData: {

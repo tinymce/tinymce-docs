@@ -18,19 +18,19 @@ TinyMCE's readonly mode has been extended so that it now works with inline edito
 
 TinyMCE 5.0.6 adds a new configuration option `image_uploadtab` that can be used to disable the `Upload` tab in the insert image dialog.
 
-For more information on `image_uploadtab`, refer to the link:{baseurl}/plugins/opensource/image/#image_uploadtab[documentation].
+For more information on `image_uploadtab`, refer to the xref:plugins/opensource/image.adoc#image_uploadtab[documentation].
 
 === Word Count plugin api
 
 TinyMCE 5.0.6 adds a new API for the Word Count plugin. The API exposes the functionality used by the Word Count dialog and allows developers to retrieve details about how many words or characters are used inside the editor content.
 
-For more information on the new API, refer to the link:{baseurl}/plugins/opensource/wordcount/#api[documentation].
+For more information on the new API, refer to the xref:plugins/opensource/wordcount.adoc#api[documentation].
 
 == Updates and enhancements
 
 === TinyMCE
 
-The new TinyMCE 5.0.6 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/changelog/#version506may222019[changelog].
+The new TinyMCE 5.0.6 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the xref:changelog.adoc#version506may222019[changelog].
 
 === PowerPaste
 
@@ -44,4 +44,4 @@ PowerPaste 5.0.0 comes with significant changes to the previous versions. Refer 
 * Improved the `Remove formatting` functionality to also remove inline style elements, such as `strong`, `b`, `em`, `i`, `sup` and `sub`.
 * Fixed an issue where pasting content with external images would lose their image src attribute.
 
-For more information on *PowerPaste* refer to the full link:{baseurl}/plugins/premium/powerpaste/[documentation].
+For more information on *PowerPaste* refer to the full xref:plugins/premium/powerpaste.adoc[documentation].

@@ -1,146 +1,157 @@
-This quick start guide walks through creating a https://expressjs.com/en/starter/generator.html[basic Express JS application] containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
+This quick start guide walks through creating a https://expressjs.com/en/starter/generator.html[basic Express JS application] containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
-____
-*NOTE*: {cloudname} users should use the link:{baseurl}/quick-start/[{cloudname} quick start guide].
-____
+NOTE: {cloudname} users should use the xref:quick-start.adoc[{cloudname} quick start guide].
 
-=== Prerequisites
+== Prerequisites
 
 This procedure requires:
 
 * https://nodejs.org/[Node.js (and npm)].
 
-=== Procedure
+== Procedure
 
 . On a command line or command prompt, create a basic Express JS application:
 +
-[source, sh]
+[source, sh, subs="attributes+"]
 ----
- $ npx express-generator --git --no-view my_{prodnamecode}_app
+$ npx express-generator --git --no-view my_{prodnamecode}_app
 ----
 
 . Change into the newly created directory.
 +
-[source, sh]
+[source, sh, subs="attributes+"]
 ----
- $ cd my_{prodnamecode}_app
+$ cd my_{prodnamecode}_app
 ----
 
 . Add the `tinymce` package to your `package.json` with `--save`.
 +
 [source, sh]
 ----
- $ npm install --save tinymce
+$ npm install --save tinymce
 ----
 
 . Download and install the {productname} and Express JS Node modules (and their dependencies):
 +
 [source, sh]
 ----
- $ npm install
+$ npm install
 ----
 
 . Using a text editor, open `/path/to/my_{prodnamecode}_app/app.js` and add the following route:
 +
 [source, js]
 ----
- app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 ----
 +
 For example:
 +
-```js
- var express = require('express');
- var path = require('path');
- var cookieParser = require('cookie-parser');
- var logger = require('morgan');
-+
-var indexRouter = require('./routes/index');
- var usersRouter = require('./routes/users');
-+
-var app = express();
-+
-app.use(logger('dev'));
- app.use(express.json());
- app.use(express.urlencoded({ extended: false }));
- app.use(cookieParser());
- app.use(express.static(path.join(__dirname, 'public')));
-+
-/* New Route to the {productname} Node module */
- app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
-+
-app.use('/', indexRouter);
- app.use('/users', usersRouter);
-+
-module.exports = app;
- ```
+[source, js, subs="attributes+"]
+----
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+/* New Route to the {productname} Node module */
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+module.exports = app;
+----
 . Create a new javascript file containing the {productname} configuration (`tinymce.init`), such as:
 +
 Linux/macOS/Unix:
 +
-[source, sh]
+[source, sh, subs="attributes+"]
 ----
- $ touch public/javascripts/my-{prodnamecode}-config.js
+$ touch public/javascripts/my-{prodnamecode}-config.js
 ----
 +
 Windows:
- `sh
- > type nul >public/javascripts/my-{prodnamecode}-config.js
++
+[source, sh, subs="attributes+"]
+----
+> type nul >public/javascripts/my-{prodnamecode}-config.js
 ----
 
 . Add the {productname} configuration to the newly created javascript file (`my-{prodnamecode}-config.js`):
 +
-[source, js]
+[source, js, subs="attributes+"]
 ----
- tinymce.init({
-   selector: 'textarea#my-expressjs-{prodnamecode}-app',
-   height: 500,
-   menubar: false,
-   plugins: [
-     'advlist autolink lists link image charmap print preview anchor',
-     'searchreplace visualblocks code fullscreen',
-     'insertdatetime media table paste code help wordcount'
-   ],
-   toolbar: 'undo redo | formatselect | ' +
-   'bold italic backcolor | alignleft aligncenter ' +
-   'alignright alignjustify | bullist numlist outdent indent | ' +
-   'removeformat | help'
- });
+tinymce.init({
+  selector: 'textarea#my-expressjs-{prodnamecode}-app',
+  height: 500,
+  menubar: false,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent | ' +
+  'removeformat | help'
+});
 ----
 
 . Update `public/index.html` to include:
- ** The document type declaration, `<!DOCTYPE html>`.
- ** A `<script>` element sourcing `tinymce.min.js`.
- ** A `<script>` element sourcing the {productname} configuration (`my-{prodnamecode}-config.js`).
- ** A `<textarea>` element with an `id` attribute matching the `selector` option in the {productname} configuration (`my-expressjs-{prodnamecode}-app`).
-
+** The document type declaration, `<!DOCTYPE html>`.
+** A `<script>` element sourcing `tinymce.min.js`.
+** A `<script>` element sourcing the {productname} configuration (`my-{prodnamecode}-config.js`).
+** A `<textarea>` element with an `id` attribute matching the `selector` option in the {productname} configuration (`my-expressjs-{prodnamecode}-app`).
 +
 For example:
 +
-```html
- <!DOCTYPE html>
-// Required for TinyMCE to function as intended+++<html>++++++<head>++++++<title>+++{productname} Demo+++</title>++++++<link rel="stylesheet" href="/stylesheets/style.css">++++++</link>++++++</head>++++++<body>+++// Text area matching the selector specified in the TinyMCE configuration+++<textarea id="my-expressjs-{prodnamecode}-app">+++Hello, World!+++</textarea>++++++</body>+++
+[source, html, subs="attributes+"]
+----
+<!DOCTYPE html><!-- Required for TinyMCE to function as intended -->
+<html>
 
-// Script element sourcing TinyMCE+++<script type="application/javascript" src="/tinymce/tinymce.min.js">++++++</script>+++
+  <head>
+    <title>{productname} Demo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"></link>
+  </head>
 
-// Script element sourcing the TinyMCE configuration+++<script type="application/javascript" src="/javascripts/my-{prodnamecode}-config.js">++++++</script>++++++</html>+++
-+
-```
+  <body>
+    <!-- Text area matching the selector specified in the TinyMCE configuration -->
+    <textarea id="my-expressjs-{prodnamecode}-app">Hello, World!</textarea>
+  </body>
+
+  <!-- Script element sourcing TinyMCE -->
+  <script type="application/javascript" src="/tinymce/tinymce.min.js"></script>
+  <!-- Script element sourcing the TinyMCE configuration -->
+  <script type="application/javascript" src="/javascripts/my-{prodnamecode}-config.js"></script>
+</html>
+----
 . Test the application using the Node.js development server.
- ** To start the development server, navigate to the `my_{prodnamecode}_app` directory and run:
+** To start the development server, navigate to the `my_{prodnamecode}_app` directory and run:
 +
 [source, sh]
 ----
-  $ npm start
- `
+$ npm start
+----
 
- ** Visit \http://localhost:3000 to view the application.
- ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
+** Visit \http://localhost:3000 to view the application.
+** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
 [discrete]
-=== Next Steps
+== Next Steps
 
 * For information on customizing:
- ** {productname}, see: link:{baseurl}/general-configuration-guide/basic-setup/[Basic setup].
- ** The Express JS application, see: https://expressjs.com/[the Express JS Documentation].
+** {productname}, see: xref:general-configuration-guide/basic-setup.adoc[Basic setup].
+** The Express JS application, see: https://expressjs.com/[the Express JS Documentation].

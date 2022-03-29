@@ -1,7 +1,7 @@
 == TinyMCE Web Component quick start guide
 
 The https://github.com/tinymce/tinymce-webcomponent[Official {productname} Web Component] integrates {productname} into Web Component projects.
-This procedure creates a HTML page containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
+This procedure creates a HTML page containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
 === Procedure
 
@@ -11,24 +11,28 @@ To add a {productname} editor to a web page using the {productname} Web Componen
 +
 [source, html]
 ----
- <!DOCTYPE html>
+<!DOCTYPE html>
 ----
 +
 The `DOCTYPE` declaration is required for the editor to function correctly.
 
 . Add the following `meta` elements to the head of page:
 +
-```html+++<head>++++++<meta charset="utf-8">++++++</meta>++++++<meta name="viewport" content="width=device-width, initial-scale=1">++++++</meta>++++++</head>+++
-+
-```
+[source, html]
+----
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+----
 +
 The second `meta` element is required for the editor to function correctly on mobile devices. For information on the viewport `meta` element, see: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_basics[MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers].
 
 . Add a `script` element sourcing the {productname} Web Component (`tinymce-webcomponent.js`), such as:
 +
-[source, html]
+[source, html, subs="attributes+"]
 ----
- <script src="{webcomponent_url}"></script>
+<script src="{webcomponent_url}"></script>
 ----
 +
 The `tinymce-webcomponent` can also be sourced from https://www.npmjs.com/package/@tinymce/tinymce-webcomponent[npmjs].
@@ -37,16 +41,17 @@ The `tinymce-webcomponent` can also be sourced from https://www.npmjs.com/packag
 +
 [source, html]
 ----
- <script src="/path/to/tinymce.min.js"></script>
+<script src="/path/to/tinymce.min.js"></script>
 ----
 +
-If a `script` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: <<loadingtinymce,Loading {productname}>>.
+If a `script` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: xref:loadingtinymce[Loading {productname}].
 
 . Add a `tinymce-editor` element where the editor should appear.
 +
-```html+++<tinymce-editor>++++++</tinymce-editor>+++
-+
-```
+[source, html]
+----
+<tinymce-editor></tinymce-editor>
+----
 +
 The default {productname} editor will load at this location if the page is opened in a web browser.
 

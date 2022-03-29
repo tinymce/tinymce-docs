@@ -3,7 +3,7 @@
 == TinyMCE Angular integration quick start guide
 
 The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects.
-This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic {productname} example].
+This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic {productname} example].
 
 For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
@@ -13,10 +13,10 @@ This procedure requires:
 
 * https://nodejs.org/[Node.js (and npm)].
 * Access to `tinymce.min.js` on either:
- ** link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}].
+ ** xref:cloud-deployment-guide/editor-and-features.adoc[{cloudname}].
  ** {productname} Self-hosted. See:
-  *** link:{baseurl}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Installing {productname} - Package Managers].
-  *** link:{baseurl}/general-configuration-guide/advanced-install/#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
+  *** xref:general-configuration-guide/advanced-install.adoc#packagemanagerinstalloptions[Installing {productname} - Package Managers].
+  *** xref:general-configuration-guide/advanced-install.adoc#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
 
 === Procedure
 
@@ -24,77 +24,78 @@ This procedure requires:
 +
 [source, sh]
 ----
- $ npm install -g @angular/cli
+$ npm install -g @angular/cli
 ----
 
 . Create a new Angular project named `tinymce-angular-demo`.
 +
 ----
- $ ng new --defaults --skip-git tinymce-angular-demo
+$ ng new --defaults --skip-git tinymce-angular-demo
 ----
 
 . Change into the newly created directory.
 +
 [source, sh]
 ----
- $ cd tinymce-angular-demo
+$ cd tinymce-angular-demo
 ----
 
 . Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
 +
 [source, sh]
 ----
- $ npm install --save @tinymce/tinymce-angular
+$ npm install --save @tinymce/tinymce-angular
 ----
 
 . Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.module.ts` and replace the contents with:
 +
-```js
- import { BrowserModule } from '@angular/platform-browser';
- import { NgModule } from '@angular/core';
- import { EditorModule } from '@tinymce/tinymce-angular';
- import { AppComponent } from './app.component';
-+
+[source, js]
+----
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { AppComponent } from './app.component';
+
 @NgModule({
-   declarations: [
-     AppComponent
-   ],
-   imports: [
-     BrowserModule,
-     EditorModule
-   ],
-   providers: [],
-   bootstrap: [AppComponent]
- })
- export class AppModule { }
- ```
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    EditorModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+----
 
 . Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.component.html` and replace the contents with:
 +
-```html
-+
-= {productname} {productmajorversion} Angular Demo
-+
+[source, html, subs="attributes+"]
+----
+<h1>{productname} {productmajorversion} Angular Demo</h1>
 <editor
-   [init]="{
-     height: 500,
-     menubar: false,
-     plugins: [
-       'advlist autolink lists link image charmap print preview anchor',
-       'searchreplace visualblocks code fullscreen',
-       'insertdatetime media table paste code help wordcount'
-     ],
-     toolbar:
-       'undo redo | formatselect | bold italic backcolor | \
-       alignleft aligncenter alignright alignjustify | \
-       bullist numlist outdent indent | removeformat | help'
-   }"
- ></editor>
- ```
- This {productname} editor configuration should replicate the example on the link:{baseurl}/demo/basic-example/[Basic example page].
-
+  [init]="{
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar:
+      'undo redo | formatselect | bold italic backcolor | \
+      alignleft aligncenter alignright alignjustify | \
+      bullist numlist outdent indent | removeformat | help'
+  }"
+></editor>
+----
++
+This {productname} editor configuration should replicate the example on the xref:demo/basic-example.adoc[Basic example page].
++
 . Provide access to {productname} using either {cloudname} or by self-hosting {productname}.
- ** *{cloudname}*
+** *{cloudname}*
 +
 Include the `apiKey` option in the editor element and include your link:{accountsignup}[{cloudname} API key].
 +
@@ -113,23 +114,23 @@ Such as:
 +
 To load {productname} and {productname}-Angular in a project managed by the https://angular.io/cli[Angular CLI Tool]:
 
-   .... Install the `tinymce` package and save it to your `package.json` with `--save`.
+.... Install the `tinymce` package and save it to your `package.json` with `--save`.
 +
 [source, sh]
 ----
- $ npm install --save tinymce
+$ npm install --save tinymce
 ----
 
-   .... Using a text editor; open `angular.json` and add {productname} to the `assets` property.
+.... Using a text editor; open `angular.json` and add {productname} to the `assets` property.
 +
 [source, json]
 ----
- "assets": [
-   { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
- ]
+"assets": [
+  { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
+]
 ----
 
-   .... Load TinyMCE.
+.... Load TinyMCE.
     ***** To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `TINYMCE_SCRIPT_SRC` token.
 +
 NOTE: Lazy loading is available for tinymce-angular 3.5.0 or later.
@@ -158,7 +159,7 @@ NOTE: Lazy loading is available for tinymce-angular 3.5.0 or later.
   ]
 ----
 +
-  Update the editor configuration to include the `base_url` and `suffix` options.
+Update the editor configuration to include the `base_url` and `suffix` options.
 +
 [source, html]
 ----
@@ -166,7 +167,7 @@ NOTE: Lazy loading is available for tinymce-angular 3.5.0 or later.
     base_url: '/tinymce', // Root for resources
     suffix: '.min'        // Suffix to use when loading resources
   }"></editor>
- ----
+----
 
   *** *Deploy {productname} independent of the Angular application*
 +
@@ -179,11 +180,11 @@ To use an independent deployment of {productname}, add a script to either the `<
 +
 To use an independent deployment of {productname} with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
 +
-For information on self-hosting {productname}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].
 
   *** *Bundling {productname} with the Angular application using a module loader*
 +
-To bundle {productname} using a module loader (such as Webpack and Browserify), see: link:{baseurl}/advanced/usage-with-module-loaders/[Usage with module loaders].
+To bundle {productname} using a module loader (such as Webpack and Browserify), see: xref:advanced/usage-with-module-loaders/index.adoc[Usage with module loaders].
 . Test the application using the Angular development server.
  ** To start the development server, navigate to the `tinymce-angular-demo` directory and run:
 +
@@ -219,5 +220,5 @@ NOTE: Additional configuration is required to deploy the application outside the
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 * For information on customizing:
- ** {productname}, see: link:{baseurl}/general-configuration-guide/basic-setup/[Basic setup].
+ ** {productname}, see: xref:general-configuration-guide/basic-setup.adoc[Basic setup].
  ** The Angular application, see: https://angular.io/docs[the Angular documentation].

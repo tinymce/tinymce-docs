@@ -5,58 +5,62 @@
 
 {productname} can be added to a Ruby on Rails project using either:
 
-* <<tinymceinrubyonrailsusingthetinycloud,TinyMCE in Ruby on Rails using the Tiny Cloud>>
-* <<tinymceinrubyonrailsusingtinymceself-hosted,TinyMCE in Ruby on Rails using TinyMCE self-hosted>>
-* <<thethird-partytinymcerubyonrailsgem,The third-party TinyMCE Ruby on Rails gem>>
+* xref:tinymceinrubyonrailsusingthetinycloud[TinyMCE in Ruby on Rails using the Tiny Cloud]
+* xref:tinymceinrubyonrailsusingtinymceself-hosted[TinyMCE in Ruby on Rails using TinyMCE self-hosted]
+* xref:thethird-partytinymcerubyonrailsgem[The third-party TinyMCE Ruby on Rails gem]
 
+[[tinymceinrubyonrailsusingthetinycloud]]
 == TinyMCE in Ruby on Rails using the Tiny Cloud
 
 The {cloudname} can be used to integrate {productname} into Ruby on Rails projects.
-This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
 include::partial$integrations/rails-basic-proj.adoc[]
 
 . Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {productname} on pages using the `application` layout:
 +
-[source, html]
+[source, html, subs="attributes+"]
 ----
- <script src="{cdnurl}" referrerpolicy="origin"></script>
- <script>
-   tinymce.init({
-     selector: '.tinymce',
-     height: 500,
-     menubar: false,
-     plugins: [
-       'advlist autolink lists link image charmap print preview anchor',
-       'searchreplace visualblocks code fullscreen',
-       'insertdatetime media table paste code help wordcount'
-     ],
-       toolbar: 'undo redo | formatselect | ' +
-       ' bold italic backcolor | alignleft aligncenter ' +
-       ' alignright alignjustify | bullist numlist outdent indent | ' +
-       ' removeformat | help'
-   });
- </script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: '.tinymce',
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+    ],
+      toolbar: 'undo redo | formatselect | ' +
+      ' bold italic backcolor | alignleft aligncenter ' +
+      ' alignright alignjustify | bullist numlist outdent indent | ' +
+      ' removeformat | help'
+  });
+</script>
 ----
 
 . Create a `<textarea>` with the initial content `Hello, World!` for {productname} by adding the following lines to `app/views/welcome/index.html.erb`:
 +
 [source, html]
 ----
- <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
+<%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
 ----
 
 . On a command line, from the project's root directory, start the Ruby on Rails server.
- `sh
- rails server
++
+[source, sh]
+----
+rails server
 ----
 
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: \http://localhost:3000/).
 
+[[tinymceinrubyonrailsusingtinymceself-hosted]]
 == TinyMCE in Ruby on Rails using TinyMCE self-hosted
 
 Self-hosted instances of {productname} can be integrated into Ruby on Rails projects.
-This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
 include::partial$integrations/rails-basic-proj.adoc[]
 
@@ -64,23 +68,23 @@ include::partial$integrations/rails-basic-proj.adoc[]
 +
 [source, html]
 ----
- <script src="/path/to/tinymce.min.js"></script>
- <script>
-   tinymce.init({
-     selector: '.tinymce',
-     height: 500,
-     menubar: false,
-     plugins: [
-       'advlist autolink lists link image charmap print preview anchor',
-       'searchreplace visualblocks code fullscreen',
-       'insertdatetime media table paste code help wordcount'
-     ],
-       toolbar: 'undo redo | formatselect | ' +
-       'bold italic backcolor | alignleft aligncenter ' +
-       'alignright alignjustify | bullist numlist outdent indent | ' +
-       ' removeformat | help'
-   });
- </script>
+<script src="/path/to/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+    selector: '.tinymce',
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+    ],
+      toolbar: 'undo redo | formatselect | ' +
+      'bold italic backcolor | alignleft aligncenter ' +
+      'alignright alignjustify | bullist numlist outdent indent | ' +
+      ' removeformat | help'
+  });
+</script>
 ----
 
 . Create a `<textarea>` with the initial content `Hello, World!` for {productname} by adding the following lines to `app/views/welcome/index.html.erb`:
@@ -99,14 +103,15 @@ include::partial$integrations/rails-basic-proj.adoc[]
 
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: \http://localhost:3000/).
 
-For information on self-hosting {productname}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].
 
+[[thethird-partytinymcerubyonrailsgem]]
 == The third-party TinyMCE Ruby on Rails gem
 
 include::partial$misc/thirdPartyInteg.adoc[]
 
 Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{productname} Ruby on Rails gem] for integrating {productname} into the Ruby on Rails asset pipeline.
-This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
 include::partial$integrations/rails-basic-proj.adoc[]
 

@@ -30,6 +30,7 @@ tinymce.init({
 
 These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with {productname} please link:{baseurl}/general-configuration-guide/spell-checking/[refer to this section] in the General Configuration Guide.
 
+[[spellchecker_callback]]
 === `spellchecker_callback`
 
 This option lets you override the default server side request/communication logic for the spellchecker.

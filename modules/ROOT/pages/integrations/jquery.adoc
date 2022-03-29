@@ -6,7 +6,7 @@
 == TinyMCE jQuery integration quick start guide
 
 The https://github.com/tinymce/tinymce/blob/master/modules/tinymce/src/core/main/js/JqueryIntegration.js[Official {productname} jQuery component] integrates TinyMCE into jQuery projects.
-This procedure creates a basic jQuery integration containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
+This procedure creates a basic jQuery integration containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
 === Procedure
 
@@ -15,11 +15,11 @@ This procedure creates a basic jQuery integration containing a {productname} edi
 If the project loads jQuery from \https://code.jquery.com/, use the script provided by the https://code.jquery.com/[jQuery CDN], which includes the `integrity` and `crossorigin` attributes.
 
 . Source {productname} and the {productname} jQuery integration from the {cloudname} or from a self-hosted location.
- ** *{cloudname}*
+** *{cloudname}*
 +
 To source {productname} and the {productname} jQuery integration from the {cloudname}, add the following `script` elements:
 +
-[,html]
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
@@ -27,42 +27,43 @@ To source {productname} and the {productname} jQuery integration from the {cloud
 +
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
-Signing up for a {cloudname} API key will also provide a trial of the link:{baseurl}/enterprise/[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the xref:enterprise/index.adoc[Premium Plugins].
 
- ** *{productname} self-hosted*
+** *{productname} self-hosted*
 +
 To use an independent deployment of {productname}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
-[,html]
+[source, html]
 ----
 <script src="/path/to/tinymce.min.js"></script>
 <script src="/path/to/jquery.tinymce.min.js"></script>
 ----
 +
-For information on self-hosting {productname}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].
+
 . Add an initialization point for {productname}, such as:
 +
-[,html]
+[source, html]
 ----
- <div>
-   <textarea id="tiny"></textarea>
- </div>
+<div>
+  <textarea id="tiny"></textarea>
+</div>
 ----
 
 . Add the {productname} jQuery init script. The {productname} selector is defined in the jQuery prefix, and any other settings are defined within the `tinymce` object.
 +
-[,html]
+[source, html]
 ----
- <script>
-   $('textarea#tiny').tinymce({    });
- </script>
+<script>
+  $('textarea#tiny').tinymce({    });
+</script>
 ----
 
 === Example jQuery integration
 
-To load a TinyMCE editor similar to the link:{baseurl}/demo/basic-example/[Basic example], add the following code to an empty HTML file.
+To load a TinyMCE editor similar to the xref:demo/basic-example.adoc[Basic example], add the following code to an empty HTML file.
 
-[,js]
+[source, html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +98,7 @@ To load a TinyMCE editor similar to the link:{baseurl}/demo/basic-example/[Basic
 
 To render {productname} instances inside jQuery UI dialogs, add the following code:
 
-[,js]
+[source, js]
 ----
 // Prevent jQuery UI dialog from blocking focusin
 $(document).on('focusin', function(e) {

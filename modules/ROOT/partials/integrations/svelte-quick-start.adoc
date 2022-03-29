@@ -31,34 +31,39 @@ This procedure requires:
 ----
 
 . Open `src/App.svelte` and add:
- ** An `import` statement for the {productname} component.
- ** The `<Editor />` as a placeholder for the editor.
-
+** An `import` statement for the {productname} component.
+** The `<Editor />` as a placeholder for the editor.
 +
 For example:
 +
 _File:_ `src/App.svelte`
 +
-```html
- +++<script lang="ts">+++import Editor from '@tinymce/tinymce-svelte';+++</script>++++++<main>+++= Hello Tiny +++<Editor>++++++</Editor>++++++</main>+++
-+
-```
+[source, html]
+----
+<script lang="ts">
+  import Editor from '@tinymce/tinymce-svelte';
+</script>
+<main>
+  <h1>Hello Tiny</h1>
+  <Editor></Editor>
+</main>
+----
+
 . Test the application using the Node.js development server.
- ** To start the development server, in the project's root directory, run:
+** To start the development server, in the project's root directory, run:
 +
 [source, sh]
 ----
   npm run dev
- `
+----
 +
 This will start a local development server, accessible at \http://localhost:5000.
-
- ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
+** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
 [discrete]
 === Next Steps
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 * For information on customizing, see:
- ** link:{baseurl}/general-configuration-guide/basic-setup/[{productname} basic setup].
- ** link:{baseurl}/integrations/svelte/#tinymcesvelteintegrationtechnicalreference[The {productname} Svelte integration technical reference].
+ ** xref:general-configuration-guide/basic-setup.adoc[{productname} basic setup].
+ ** xref:integrations/svelte.adoc#tinymcesvelteintegrationtechnicalreference[The {productname} Svelte integration technical reference].

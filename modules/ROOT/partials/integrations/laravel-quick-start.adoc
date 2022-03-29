@@ -1,13 +1,15 @@
-{% if productSource == "cloud" %}
-  :scriptSource: site.cdnurl
-  :packageSource: site.cloudname
-{% elsif productSource == "composer" %}
-  {% assign scriptSource = "{{ asset('js/tinymce/tinymce.min.js') }}" %}
-  :packageSource: https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package]
-{% else %}
-  {% assign scriptSource = "{{ asset('js/tinymce/tinymce.min.js') }}" %}
-  :packageSource: TinyMCE .zip package
-{% endif %}
+ifeval::["{productSource}" == "cloud"]
+:scriptSource: {cdnurl}
+:packageSource: {cloudname}
+endif::[]
+ifeval::["{productSource}" == "composer"]
+:scriptSource: "{ asset('js/tinymce/tinymce.min.js') }"
+:packageSource: https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package]
+endif::[]
+ifeval::["{productSource}" == "zip"]
+:scriptSource: "{ asset('js/tinymce/tinymce.min.js') }"
+:packageSource: TinyMCE .zip package
+endif::[]
 
 This guide assists with adding {productname} from the {packageSource} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/8.x/installation#installation-via-composer[Installation Via Composer]. The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {productname} should be used in production environments.
 
@@ -17,7 +19,7 @@ This procedure assumes the following prerequisites have been installed:
 
 * https://www.php.net/[PHP]
 * https://getcomposer.org/[Composer]
-ifeval::[{productSource} != "cloud"]
+ifeval::["{productSource}" != "cloud"]
 * https://nodejs.org/[Node.js]
 endif::[]
 
@@ -27,26 +29,25 @@ endif::[]
 +
 [source, sh]
 ----
- composer create-project laravel/laravel my-example-app
+composer create-project laravel/laravel my-example-app
 ----
 
 . Change into the root directory of the Laravel application, such as:
 +
 [source, sh]
 ----
- cd my-example-app
+cd my-example-app
 ----
-
-ifeval::[{productSource} != "cloud"]
++
+ifeval::["{productSource}" != "cloud"]
 . Install the required Node.js components, including https://laravel.com/docs/8.x/mix[Laravel Mix]:
 +
 [source,sh]
 ----
 npm install
 ----
-
 endif::[]
-ifeval::[{productSource} == "composer"]
+ifeval::["{productSource}" == "composer"]
 . Add {productname} to the project using Composer:
 +
 [source,sh]
@@ -59,11 +60,10 @@ composer require tinymce/tinymce
 [source,js]
 .`webpack.mix.js`
 ----
- mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
+mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
 ----
-
 endif::[]
-ifeval::[{productSource} == "zip"]
+ifeval::["{productSource}" == "zip"]
 . Download {productname}.
 +
 * For Self-hosted Enterprise customers, visit [{companyname} - Self-hosted releases]({download-community})
@@ -73,7 +73,7 @@ ifeval::[{productSource} == "zip"]
 +
 [source, sh]
 ----
- unzip ../tinymce_latest.zip -d resources/js
+unzip ../tinymce_latest.zip -d resources/js
 ----
 
 . Add a Laravel Mix task to copy {productname} to the public files when Mix is run, such as:
@@ -81,50 +81,50 @@ ifeval::[{productSource} == "zip"]
 [source,js]
 .`webpack.mix.js`
 ----
- mix.copyDirectory('resources/js/tinymce/js/tinymce', 'public/js/tinymce');
+mix.copyDirectory('resources/js/tinymce/js/tinymce', 'public/js/tinymce');
 ----
-
 endif::[]
-ifeval::[{productSource} != "cloud"]
+
+ifeval::["{productSource}" != "cloud"]
 . Run Laravel Mix to copy {productname} to the `public/js/` directory:
 +
 [source,sh]
 ----
 npx mix
 ----
-
 endif::[]
-. Create a new reusable https://laravel.com/docs/8.x/blade#components[component (`blade.php`)] for the {productname} configuration, such as:
 
+. Create a new reusable https://laravel.com/docs/8.x/blade#components[component (`blade.php`)] for the {productname} configuration, such as:
++
 [source,sh]
 ----
 php artisan make:component Head/tinymceConfig
 ----
-
++
 This will create the blade `resources/views/components/head/tinymce-config.blade.php`.
 
 . Open the newly created `.blade.php` file in a text editor and replace the contents with:
- ** The {productname} source script.
- ** A {productname} configuration.
+** The {productname} source script.
+** A {productname} configuration.
 +
 For example:
 +
-[source, html]
+[source, html, subs="attributes+"]
 .`resources/views/components/head/tinymce-config.blade.php`
 ----
- <script src="{scriptSource}" referrerpolicy="origin"></script>
- <script>
-   tinymce.init({
-     selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
-     plugins: 'code table lists',
-     toolbar: 'undo redo | formatselect| bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
-   });
- </script>
+<script src="{scriptSource}" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
+    plugins: 'code table lists',
+    toolbar: 'undo redo | formatselect| bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+  });
+</script>
 ----
 
-ifeval::[{productSource} == "cloud"]
-1. Replace `no-api-key` in the {productname} source script with your {cloudname} API Key.
-
+ifeval::["{productSource}" == "cloud"]
+. Replace `no-api-key` in the {productname} source script with your {cloudname} API Key.
+-
 include::partial$misc/get-an-api-key.adoc[]
 endif::[]
 
@@ -132,7 +132,7 @@ endif::[]
 +
 [source, sh]
 ----
- php artisan make:component Forms/tinymceEditor
+php artisan make:component Forms/tinymceEditor
 ----
 +
 This will create the blade `resources/views/components/forms/tinymce-editor.blade.php`.
@@ -177,7 +177,7 @@ For example:
 +
 [source, sh]
 ----
- php artisan serve
+php artisan serve
 ----
 
 include::partial$misc/quickstart-next-steps.adoc[]

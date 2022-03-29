@@ -16,19 +16,19 @@ TinyMCE 5.0.7 release adds improvements to the TinyMCE editor to improve the ove
 
 The *Help* plugin includes a new `help_tabs` setting and an API to be able to add tabs from within custom plugins. This allows for the default tabs to be enabled/disabled, change the tab order or to add additional tabs to the help dialog.
 
-For more information on the new `help_tabs` setting and API refer to the link:{baseurl}/plugins/opensource/help/[documentation].
+For more information on the new `help_tabs` setting and API refer to the xref:plugins/opensource/help.adoc[documentation].
 
 ==== Image Tools custom image fetch
 
 The *Image Tools* plugin includes a new `imagetools_fetch_image` setting, which allows a custom function to be used to fetch the image content in complex environments, where extra customization is required, such as authentication.
 
-For more information on `imagetools_fetch_image` refer to the link:{baseurl}/plugins/opensource/imagetools/#imagetools_fetch_image[documentation].
+For more information on `imagetools_fetch_image` refer to the xref:plugins/opensource/imagetools.adoc#imagetools_fetch_image[documentation].
 
 ==== Insert table dialog
 
 A new dedicated toolbar button `tableinsertdialog` and menu item `inserttabledialog` have been added to the *Table* plugin. This adds the ability to show both the insert table grid and dialog options at the same time.
 
-For more information on new toolbar button and menu item refer to the link:{baseurl}/plugins/opensource/table/#table_grid[documentation].
+For more information on new toolbar button and menu item refer to the xref:plugins/opensource/table.adoc#table_grid[documentation].
 
 === Premium Skins and Icon Packs
 
@@ -36,46 +36,46 @@ The new *Premium Skins and Icon Packs* adds an easy way to quickly give TinyMCE 
 
 To try out the *Premium Skins and Icon Packs* start with this link:{plugindirectory}skins-and-icon-packs[dedicated product page] or check out the https://www.tiny.cloud/pricing[pricing page] to see all the flexible pricing options.
 
-For more information and demos on the new *Premium Skins and Icon Packs* refer to the full link:{baseurl}/enterprise/premium-skins-and-icon-packs/[documentation].
+For more information and demos on the new *Premium Skins and Icon Packs* refer to the full xref:enterprise/premium-skins-and-icon-packs/index.adoc[documentation].
 
 === Tiny Drive
 
-*Tiny Drive* 1.3.0 comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/tinydrive/changelog/[changelog].
+*Tiny Drive* 1.3.0 comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the xref:tinydrive/changelog.adoc[changelog].
 
 To try out *Tiny Drive* start with this https://www.tiny.cloud/drive/[dedicated product page] or check out the https://www.tiny.cloud/pricing[pricing page] to see all the flexible pricing options.
 
-For more information on *Tiny Drive* refer to the full link:{baseurl}/tinydrive/[documentation].
+For more information on *Tiny Drive* refer to the full xref:tinydrive/index.adoc[documentation].
 
-There is also a demo provided to explore the *Tiny Drive* capabilities link:{baseurl}/tinydrive/introduction/#demo[here].
+There is also a demo provided to explore the *Tiny Drive* capabilities xref:tinydrive/introduction.adoc#demo[here].
 
 === Enhanced Media Embed
 
 *Enhanced Media Embed* 2.2.0 adds a new `mediaembed_inline_styles` setting allowing styles to be embedded inline, instead of requiring additional content css to be added to your site.
 
-For more information on *Enhanced Media Embed* refer to the full link:{baseurl}/plugins/premium/mediaembed/#mediaembed_inline_styles[documentation].
+For more information on *Enhanced Media Embed* refer to the full xref:plugins/premium/mediaembed.adoc#mediaembed_inline_styles[documentation].
 
 == Updates and enhancements
 
 === TinyMCE
 
-The new TinyMCE 5.0.7 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/changelog/#version507june52019[changelog].
+The new TinyMCE 5.0.7 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the xref:changelog.adoc#version507june52019[changelog].
 
 ==== Autocompleter
 
-The autocompleter functionality builtin to TinyMCE and used by the link:{baseurl}/plugins/premium/mentions/[*Mentions*], link:{baseurl}/plugins/opensource/charmap/[*Charmap*] and link:{baseurl}/plugins/opensource/emoticons/[*Emoticons*] plugins, has been improved to highlight matched text results, search across fragmented text nodes and support matching results that contain one or more spaces.
+The autocompleter functionality builtin to TinyMCE and used by the xref:plugins/premium/mentions.adoc[*Mentions*], xref:plugins/opensource/charmap.adoc[*Charmap*] and xref:plugins/opensource/emoticons.adoc[*Emoticons*] plugins, has been improved to highlight matched text results, search across fragmented text nodes and support matching results that contain one or more spaces.
 
-For more information on the autocompleter refer to the link:{baseurl}/ui-components/autocompleter/[documentation].
+For more information on the autocompleter refer to the xref:ui-components/autocompleter.adoc[documentation].
 
 ==== Link plugin
 
 The *Link* plugin `link_assume_external_targets` setting has been improved to allow two additional values: `http` and `https`. Using one of the new values will automatically set the protocol if not defined when creating a link, instead of asking the user if the protocol should be added.
 
-For more information on the configuration options for `link_assume_external_targets` refer to the link:{baseurl}/plugins/opensource/link/#link_assume_external_targets[documentation].
+For more information on the configuration options for `link_assume_external_targets` refer to the xref:plugins/opensource/link.adoc#link_assume_external_targets[documentation].
 
 == Known issues
 
 === Premium Skins and Icon Packs
 
-Using the cloud hosted premium content skins, in combination with the link:{baseurl}/plugins/opensource/preview/[preview] plugin, will cause nothing to render in the preview dialog. This is because the `Origin` header sent to the server is `null`, due to how the preview dialog is implemented in TinyMCE. This will be fixed in the next release of TinyMCE.
+Using the cloud hosted premium content skins, in combination with the xref:plugins/opensource/preview.adoc[preview] plugin, will cause nothing to render in the preview dialog. This is because the `Origin` header sent to the server is `null`, due to how the preview dialog is implemented in TinyMCE. This will be fixed in the next release of TinyMCE.
 
 NOTE: This issue only impacts cloud and does not impact self-hosted installations.

@@ -2,51 +2,53 @@
 
 *Covered in this section:*
 
-* <<useacloudversionofthetinymcewebcomponentintegration,Use a cloud version of the TinyMCE Web Component integration>>
-* <<installingthetinymcewebcomponentintegration,Installing the TinyMCE Web Component integration>>
-* <<loadingtinymce,Loading TinyMCE>>
-* <<configuringtheeditor,Configuring the editor>>
- ** <<settingtheinitialcontent,Setting the initial content>>
- ** <<loadingplugins,Loading plugins>>
- ** <<settingtheeditorwidth,Setting the editor width>>
- ** <<settingtheeditorheight,Setting the editor height>>
- ** <<settingthetoolbar,Setting the toolbar>>
- ** <<settingthetoolbarmode,Setting the toolbar mode>>
- ** <<settingthemenubar,Setting the menu bar>>
- ** <<settingcontextmenu,Setting context menu>>
- ** <<settingthequick-inserttoolbar,Setting the quick-insert toolbar>>
- ** <<settingthequick-selectiontoolbar,Setting the quick-selection toolbar>>
- ** <<settingcontentstylesheets,Setting content stylesheets>>
- ** <<settingcontentstyling,Setting content styling>>
- ** <<settingpowerpasteswordimportmethod,Setting PowerPaste's word import method>>
- ** <<settingpowerpasteshtmlimportmethod,Setting PowerPaste's html import method>>
- ** <<settingpowerpastetoallowlocalimages,Setting PowerPaste to allow local images>>
- ** <<showingresizehandles,Showing resize handles>>
- ** <<settingtheeditorsetupfunction,Setting the editor setup function>>
- ** <<settingtheeditorskin,Setting the editor skin>>
- ** <<settingtheimagesuploadurl,Setting the images upload URL>>
- ** <<settingtheimagesuploadhandler,Setting the images upload handler>>
- ** <<settingtheimagesuploadbasepath,Setting the images upload base path>>
- ** <<settingtheimagesuploadtohavecredentials,Setting the images upload to have credentials>>
- ** <<settingtheimagesuploadtoreusefilenames,Setting the images upload to reuse filenames>>
- ** <<settingtheiconpack,Setting the icon pack>>
- ** <<settingtheiconpackurl,Setting the icon pack URL>>
- ** <<settingadditionalconfigurationoptions,Setting additional configuration options>>
-* <<eventbinding,Event binding>>
- ** <<supportedbrowserevents,Supported browser events>>
- ** <<supportedtinymceevents,Supported TinyMCE events>>
+* xref:useacloudversionofthetinymcewebcomponentintegration[Use a cloud version of the TinyMCE Web Component integration]
+* xref:installingthetinymcewebcomponentintegration[Installing the TinyMCE Web Component integration]
+* xref:loadingtinymce[Loading TinyMCE]
+* xref:configuringtheeditor[Configuring the editor]
+ ** xref:settingtheinitialcontent[Setting the initial content]
+ ** xref:loadingplugins[Loading plugins]
+ ** xref:settingtheeditorwidth[Setting the editor width]
+ ** xref:settingtheeditorheight[Setting the editor height]
+ ** xref:settingthetoolbar[Setting the toolbar]
+ ** xref:settingthetoolbarmode[Setting the toolbar mode]
+ ** xref:settingthemenubar[Setting the menu bar]
+ ** xref:settingcontextmenu[Setting context menu]
+ ** xref:settingthequick-inserttoolbar[Setting the quick-insert toolbar]
+ ** xref:settingthequick-selectiontoolbar[Setting the quick-selection toolbar]
+ ** xref:settingcontentstylesheets[Setting content stylesheets]
+ ** xref:settingcontentstyling[Setting content styling]
+ ** xref:settingpowerpasteswordimportmethod[Setting PowerPaste's word import method]
+ ** xref:settingpowerpasteshtmlimportmethod[Setting PowerPaste's html import method]
+ ** xref:settingpowerpastetoallowlocalimages[Setting PowerPaste to allow local images]
+ ** xref:showingresizehandles[Showing resize handles]
+ ** xref:settingtheeditorsetupfunction[Setting the editor setup function]
+ ** xref:settingtheeditorskin[Setting the editor skin]
+ ** xref:settingtheimagesuploadurl[Setting the images upload URL]
+ ** xref:settingtheimagesuploadhandler[Setting the images upload handler]
+ ** xref:settingtheimagesuploadbasepath[Setting the images upload base path]
+ ** xref:settingtheimagesuploadtohavecredentials[Setting the images upload to have credentials]
+ ** xref:settingtheimagesuploadtoreusefilenames[Setting the images upload to reuse filenames]
+ ** xref:settingtheiconpack[Setting the icon pack]
+ ** xref:settingtheiconpackurl[Setting the icon pack URL]
+ ** xref:settingadditionalconfigurationoptions[Setting additional configuration options]
+* xref:eventbinding[Event binding]
+ ** xref:supportedbrowserevents[Supported browser events]
+ ** xref:supportedtinymceevents[Supported TinyMCE events]
 
+[[useacloudversionofthetinymcewebcomponentintegration]]
 === Use a cloud version of the TinyMCE Web Component integration
 
 To use a cloud version of Web Component, the integration is accessible from https://www.jsdelivr.com/package/npm/@tinymce/tinymce-webcomponent[JSDelivr].
 
 For example:
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <script src="{webcomponent_url}"></script>
 ----
 
+[[installingthetinymcewebcomponentintegration]]
 === Installing the TinyMCE Web Component integration
 
 To add the {productname} Web Component integration to a JavaScript project, on command line or command prompt, run the following:
@@ -55,16 +57,17 @@ To add the {productname} Web Component integration to a JavaScript project, on c
 +
 [source, sh]
 ----
-  npm i --save @tinymce/tinymce-webcomponent
- `
+npm i --save @tinymce/tinymce-webcomponent
+----
 
 * Yarn users:
 +
 [source, sh]
 ----
-  yarn add @tinymce/tinymce-webcomponent
- `
+yarn add @tinymce/tinymce-webcomponent
+----
 
+[[loadingtinymce]]
 === Loading TinyMCE
 
 The integration requires both the {productname} Web Component (`tinymce-webcomponent.min.js`) and {productname} (`tinymce.min.js`).
@@ -75,292 +78,348 @@ To use {productname} Web Component with a self-hosted copy of {productname}, ens
 
 To use {productname} from the {cloudname}, add the `api-key` attribute to the `tinymce-editor` element with an API from link:{accountpageurl}[{accountpage}].
 
+[[configuringtheeditor]]
 === Configuring the editor
 
 The editor is configured by setting attributes on the `tinymce-editor` custom element.
 All attributes may be represented as strings, however some attributes will accept boolean or number inputs. Where an array, object, or function is a valid input; examples have been provided.
 
+[[settingtheinitialcontent]]
 ==== Setting the initial content
 
 To set the initial editor content, add encoded HTML to the `tinymce-editor` element as content, such as:
 
-```html+++<tinymce-editor>+++<p>This will be the initial content of the editor.</p>+++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor>
+  <p>This will be the initial content of the editor.</p>
+</tinymce-editor>
+----
 
 The editor will load the text content in the `tinymce-editor` element as the initial HTML.
 
 IMPORTANT: The HTML must be encoded as text to prevent injected javascript from running, which may have an unintended impact on the surrounding document.
 
+[[loadingplugins]]
 ==== Loading plugins
 
 To add plugins and extend the functionality of the editor, add a string of plugin identifiers using the `plugins` attribute, such as:
 
-```html+++<tinymce-editor plugins="advlist autolink link image lists charmap print preview">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor plugins="advlist autolink link image lists charmap print preview"></tinymce-editor>
+----
 
-```
+For a list of available plugins, see: xref:plugins/index.adoc[Add plugins to {productname}].
 
-For a list of available plugins, see: link:{baseurl}/plugins/[Add plugins to {productname}].
-
+[[settingtheeditorwidth]]
 ==== Setting the editor width
 
 To set the width of the editor (content area and user interface), use the `width` attribute. For example:
 
 ===== Setting a pixel-based editor width
 
-```html+++<tinymce-editor width="300">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor width="300"></tinymce-editor>
+----
 
 ===== Setting a CSS unit based editor width
 
-```html+++<tinymce-editor width="50%">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor width="50%"></tinymce-editor>
+----
 
-```
-
+[[settingtheeditorheight]]
 ==== Setting the editor height
 
 To set the height of the editor (content area and user interface), use the `height` attribute. For example:
 
 ===== Setting a pixel-based editor height
 
-```html+++<tinymce-editor height="300">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor height="300"></tinymce-editor>
+----
 
 ===== Setting a CSS unit based height
 
-```html+++<tinymce-editor height="15em">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor height="15em"></tinymce-editor>
+----
 
-```
-
+[[settingthetoolbar]]
 ==== Setting the toolbar
 
 To set the editor toolbar buttons, use the `toolbar` attribute. For example:
 
-```html+++<tinymce-editor toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent"></tinymce-editor>
+----
 
-```
-
-The `toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: link:{baseurl}/advanced/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
+The `toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
 
 ===== Disabling the toolbar
 
 To disable the toolbar, set the `toolbar` attribute to `"false"`. For example:
 
-```html+++<tinymce-editor toolbar="false">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor toolbar="false"></tinymce-editor>
+----
 
-```
-
+[[settingthetoolbarmode]]
 ==== Setting the toolbar mode
 
 To control the behavior of the toolbar, set the `toolbar_mode` attribute. For example:
 
-```html+++<tinymce-editor toolbar_mode="floating">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor toolbar_mode="floating"></tinymce-editor>
+----
 
-```
+For information on the available toolbar modes, see: xref:configure/editor-appearance.adoc#toolbar_mode[User interface options - `toolbar_mode`].
 
-For information on the available toolbar modes, see: link:{baseurl}/configure/editor-appearance/#toolbar_mode[User interface options - `toolbar_mode`].
-
+[[settingthemenubar]]
 ==== Setting the menu bar
 
 To set the menus shown on the editor menu bar, add the `menubar` attribute. For example:
 
-```html+++<tinymce-editor menubar="file edit insert view format table tools help">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor menubar="file edit insert view format table tools help"></tinymce-editor>
+----
 
 To disable or remove the menu bar, set the `menubar` attribute to `"false"`. For example:
 
-```html+++<tinymce-editor menubar="false">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor menubar="false"></tinymce-editor>
+----
 
 To change the menu items shown in the menus, or define custom menus, set the `menu` configuration option using the `config` attribute.
 
 For information on:
 
-* The `menubar` configuration option, see: link:{baseurl}/configure/editor-appearance/#menubar[User interface options - `menubar`].
-* The `menu` configuration option, see: link:{baseurl}/configure/editor-appearance/#menu[User interface options - `menu`].
-* The `config` attribute, see: <<settingadditionalconfigurationoptions,Setting additional configuration options>>.
+* The `menubar` configuration option, see: xref:configure/editor-appearance.adoc#menubar[User interface options - `menubar`].
+* The `menu` configuration option, see: xref:configure/editor-appearance.adoc#menu[User interface options - `menu`].
+* The `config` attribute, see: xref:settingadditionalconfigurationoptions[Setting additional configuration options].
 
+[[settingcontextmenu]]
 ==== Setting context menu
 
 To change the context menu sections that can be shown in the editor context menu, use the `contextmenu` attribute. Such as:
 
-```html+++<tinymce-editor plugins="link image table" contextmenu="link image table">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor plugins="link image table" contextmenu="link image table"></tinymce-editor>
+----
 
 To disable the context menu, set the `contextmenu` attribute to `"false"`. For example:
 
-```html+++<tinymce-editor contextmenu="false">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor contextmenu="false"></tinymce-editor>
+----
 
-```
+For a list of available context menu sections, see: xref:advanced/editor-context-menu-identifiers.adoc[Available context menu sections].
+For information on context menus, see: xref:configure/editor-appearance.adoc#contextmenu[User interface options - `contextmenu`].
 
-For a list of available context menu sections, see: link:{baseurl}/advanced/editor-context-menu-identifiers/[Available context menu sections].
-For information on context menus, see: link:{baseurl}/configure/editor-appearance/#contextmenu[User interface options - `contextmenu`].
-
+[[settingthequick-inserttoolbar]]
 ==== Setting the quick-insert toolbar
 
 The quick-insert toolbar is shown when a new line is added, providing buttons for inserting objects such as tables and images.
 
 To add a quick-insert toolbar, add `"quickbars"` to the `plugins` attribute. To change the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute, such as:
 
-```html+++<tinymce-editor plugins="quickbars hr pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor plugins="quickbars hr pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
+----
 
-```
-
-The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: link:{baseurl}/advanced/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
+The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
 
 To disable the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute to `"false"`. For example:
 
-```html+++<tinymce-editor plugins="quickbars" quickbars_insert_toolbar="false">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor plugins="quickbars" quickbars_insert_toolbar="false"></tinymce-editor>
+----
 
-```
-
+[[settingthequick-selectiontoolbar]]
 ==== Setting the quick-selection toolbar
 
 The quick-selection toolbar is shown when text is selected, providing formatting buttons such as: `bold`, `italic`, and `link`.
 
 To add a quick-selection toolbar, add `"quickbars"` to the `plugins` attribute. To change the quick-selection toolbar, set the `quickbars_selection_toolbar` attribute, such as:
 
-```html+++<tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | formatselect | quicklink blockquote">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | formatselect | quicklink blockquote"></tinymce-editor>
+----
 
-```
-
-The `quickbars_selection_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: link:{baseurl}/advanced/available-toolbar-buttons/[Toolbar Buttons Available for TinyMCE].
+The `quickbars_selection_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
 
 To disable the quick-selection toolbar, set the `quickbars_selection_toolbar` attribute to `"false"`. For example:
 
-```html+++<tinymce-editor plugins="quickbars" quickbars_selection_toolbar="false">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor plugins="quickbars" quickbars_selection_toolbar="false"></tinymce-editor>
+----
 
-```
-
+[[settingcontentstylesheets]]
 ==== Setting content stylesheets
 
 To set the CSS for the content area of the editor, use the `content_css` attribute.
 
 For example, to use one of the {productname} CSS configurations:
 
-```html+++<tinymce-editor content_css="writer">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor content_css="writer"></tinymce-editor>
+----
 
 To use a custom CSS file, provide a relative or abolute path to the css file, such as:
 
-```html+++<tinymce-editor content_css="path/to/mycontent.css">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor content_css="path/to/mycontent.css"></tinymce-editor>
+----
 
 {companyname} recommends using:
 
 * The `content_style` option to apply a small set of CSS styles.
 * The `content_css` option for applying large or complex CSS configurations.
 
-For information on the `content_css` option, see: link:{baseurl}/configure/content-appearance/#content_css[Content appearance options - `content_css`].
+For information on the `content_css` option, see: xref:configure/content-appearance.adoc#content_css[Content appearance options - `content_css`].
 
+[[settingcontentstyling]]
 ==== Setting content styling
 
 To apply a small set of CSS styles to the editor, use the `content_style` attribute. For example:
 
-```html+++<tinymce-editor content_style="div { margin: 10px; border: 5px solid red; padding: 3px; }">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor content_style="div { margin: 10px; border: 5px solid red; padding: 3px; }"></tinymce-editor>
+----
 
 {companyname} recommends using:
 
 * The `content_style` option to apply a small set of CSS styles.
 * The `content_css` option for applying large or complex CSS configurations.
 
-For information on the `content_style` option, see: link:{baseurl}/configure/content-appearance/#content_style[Content appearance options - `content_style`].
+For information on the `content_style` option, see: xref:configure/content-appearance.adoc#content_style[Content appearance options - `content_style`].
 
+[[settingpowerpasteswordimportmethod]]
 ==== Setting PowerPaste's word import method
 
 This setting only applies if the PowerPaste plugin (`powerpaste`) is enabled.
 
 To control how content pasted from Microsoft Word is filtered, use the `powerpaste_word_import` attribute. For example:
 
-```html+++<tinymce-editor powerpaste_word_import="merge">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor powerpaste_word_import="merge"></tinymce-editor>
+----
 
-```
+For information on the `powerpaste_word_import` option, including supported values, see: xref:plugins/premium/powerpaste.adoc#powerpaste_word_import[The PowerPaste plugin - `powerpaste_word_import`].
 
-For information on the `powerpaste_word_import` option, including supported values, see: link:{baseurl}/plugins/premium/powerpaste/#powerpaste_word_import[The PowerPaste plugin - `powerpaste_word_import`].
-
+[[settingpowerpasteshtmlimportmethod]]
 ==== Setting PowerPaste's html import method
 
 This setting only applies if the PowerPaste plugin (`powerpaste`) is enabled.
 
 To control how content pasted from sources other than Microsoft Word is filtered, use the `powerpaste_html_import` attribute. For example:
 
-```html+++<tinymce-editor powerpaste_html_import="prompt">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
+----
 
-```
+For information on the `powerpaste_html_import` option, including supported values, see: xref:plugins/premium/powerpaste.adoc#powerpaste_html_import[The PowerPaste plugin - `powerpaste_html_import`].
 
-For information on the `powerpaste_html_import` option, including supported values, see: link:{baseurl}/plugins/premium/powerpaste/#powerpaste_html_import[The PowerPaste plugin - `powerpaste_html_import`].
-
+[[settingpowerpastetoallowlocalimages]]
 ==== Setting PowerPaste to allow local images
 
 This setting only applies if the PowerPaste plugin (`powerpaste`) is enabled.
 
 To prevent Base64 encoded images with a data URI from being pasted into the editor, set `powerpaste_allow_local_images` to `"false"`. For example:
 
-```html+++<tinymce-editor powerpaste_allow_local_images="false">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor powerpaste_allow_local_images="false"></tinymce-editor>
+----
 
-```
+For information on the `powerpaste_allow_local_images` option, including supported values, see: xref:plugins/premium/powerpaste.adoc#powerpaste_allow_local_images[The PowerPaste plugin - `powerpaste_allow_local_images`].
 
-For information on the `powerpaste_allow_local_images` option, including supported values, see: link:{baseurl}/plugins/premium/powerpaste/#powerpaste_allow_local_images[The PowerPaste plugin - `powerpaste_allow_local_images`].
-
+[[showingresizehandles]]
 ==== Showing resize handles
 
 The `resize` attribute gives you the ability to disable the resize handle or set it to resize the editor both horizontal and vertically. By default the editor will resize vertically (`resize="true"`).
 
 To remove the resize handle and disable resizing of the editor, set the `resize` attribute to `"false"`. Such as:
 
-```html+++<tinymce-editor resize="false">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor resize="false"></tinymce-editor>
+----
 
 To allow the user to resize the editor both horizontally and vertically, set the `resize` attribute to `"both"`. For example:
 
-```html+++<tinymce-editor resize="both">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor resize="both"></tinymce-editor>
+----
 
-```
+For information on the `resize` option, see: xref:configure/editor-appearance.adoc#resize[User interface options - `resize`].
 
-For information on the `resize` option, see: link:{baseurl}/configure/editor-appearance/#resize[User interface options - `resize`].
-
+[[settingtheeditorsetupfunction]]
 ==== Setting the editor setup function
 
 To execute a javascript callback before the editor instance is rendered, use the `setup` attribute. For example:
 
-```html
-+++<script>+++function setupEditor(editor) { editor.on('click', function () { console.log('Editor was clicked'); }); }+++</script>++++++<tinymce-editor setup="setupEditor">++++++</tinymce-editor>+++
+[source, html]
+----
+<script>
+  function setupEditor(editor) { 
+    editor.on('click', function () {
+      console.log('Editor was clicked');
+    });
+  }
+</script>
+<tinymce-editor setup="setupEditor"></tinymce-editor>
+----
 
-```
+For information on the `setup` option, see: xref:configure/integration-and-setup.adoc#setup[Integration and setup options - `setup`].
 
-For information on the `setup` option, see: link:{baseurl}/configure/integration-and-setup/#setup[Integration and setup options - `setup`].
-
+[[settingtheeditorskin]]
 ==== Setting the editor skin
 
 To apply a custom skin to the editor, use the `skin` attribute. For example:
 
-```html+++<tinymce-editor skin="borderless">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor skin="borderless"></tinymce-editor>
+----
 
 For information on:
 
-* Using the `skin` option, see: link:{baseurl}/configure/editor-appearance/#skin[User interface options - `skin`].
-* {companyname} premium skins, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Tiny Skins and Icon Packs].
-* Creating a custom skin for {productname}, see: link:{baseurl}/advanced/creating-a-skin/[Create a skin for {productname}].
+* Using the `skin` option, see: xref:configure/editor-appearance.adoc#skin[User interface options - `skin`].
+* {companyname} premium skins, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
+* Creating a custom skin for {productname}, see: xref:advanced/creating-a-skin.adoc[Create a skin for {productname}].
 
+[[settingtheimagesuploadurl]]
 ==== Setting the images upload URL
 
 To specify the location of a server-side upload handler, use the `images_upload_url` attribute. For example:
 
-```html+++<tinymce-editor images_upload_url="postAcceptor.php">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<tinymce-editor images_upload_url="postAcceptor.php"></tinymce-editor>
+----
 
 The upload handler should return the location of the uploaded file in the following format:
 
@@ -369,112 +428,160 @@ The upload handler should return the location of the uploaded file in the follow
 { "location": "folder/sub-folder/new-location.png" }
 ----
 
-For information on using the `images_upload_url`, see: link:{baseurl}/configure/file-image-upload/#images_upload_url[Image & file options - `images_upload_url`].
+For information on using the `images_upload_url`, see: xref:configure/file-image-upload.adoc#images_upload_url[Image & file options - `images_upload_url`].
 
+[[settingtheimagesuploadhandler]]
 ==== Setting the images upload handler
 
 To specify custom image upload handler callback function, use the `images_upload_handler` attribute.
 
-```html
-+++<script>+++include::partial$misc/images-upload-handler-function.adoc[]+++</script>++++++<tinymce-editor images_upload_handler="example_image_upload_handler">++++++</tinymce-editor>+++
+[source, html, subs="attributes+"]
+--
+<script>
+include::partial$misc/images-upload-handler-function.adoc[]
 
-```
+</script>
+<tinymce-editor images_upload_handler="example_image_upload_handler"></tinymce-editor>
+--
 
-For information on using the `images_upload_handler` option, see: link:{baseurl}/configure/file-image-upload/#images_upload_handler[Image & file options - `images_upload_handler`].
 
+For information on using the `images_upload_handler` option, see: xref:configure/file-image-upload.adoc#images_upload_handler[Image & file options - `images_upload_handler`].
+
+[[settingtheimagesuploadbasepath]]
 ==== Setting the images upload base path
 
 To specify the basepath to prepend to URLs returned from the configured `images_upload_url` script, use the `images_upload_base_path` attribute. For example:
 
-```html+++<tinymce-editor images_upload_url="postAcceptor.php" images_upload_base_path="/some/basepath">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor images_upload_url="postAcceptor.php" images_upload_base_path="/some/basepath"></tinymce-editor>
+----
 
-```
+For information on using the `images_upload_base_path` option, see: xref:configure/file-image-upload.adoc#images_upload_base_path[Image & file options - `images_upload_base_path`].
 
-For information on using the `images_upload_base_path` option, see: link:{baseurl}/configure/file-image-upload/#images_upload_base_path[Image & file options - `images_upload_base_path`].
-
+[[settingtheimagesuploadtohavecredentials]]
 ==== Setting the images upload to have credentials
 
 To receive credentials (such as cookies, authorization headers, or TLS client certificates) for cross-domain image uploads, set the `images_upload_credentials` attribute to `"true"`.
 
-```html+++<tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials="true">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials="true"></tinymce-editor>
+----
 
-```
+For information on using the `images_upload_credentials` option, see: xref:configure/file-image-upload.adoc#images_upload_credentials[Image & file options - `images_upload_credentials`].
 
-For information on using the `images_upload_credentials` option, see: link:{baseurl}/configure/file-image-upload/#images_upload_credentials[Image & file options - `images_upload_credentials`].
-
+[[settingtheimagesuploadtoreusefilenames]]
 ==== Setting the images upload to reuse filenames
 
 To force the editor to use the same filename for a given image, regardless of the number of times it is uploaded within a given instance, set the `images_reuse_filename` attribute to `"true"`.
 
-```html+++<tinymce-editor images_upload_url="postAcceptor.php" images_reuse_filename="true">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor images_upload_url="postAcceptor.php" images_reuse_filename="true"></tinymce-editor>
+----
 
-```
+For information on using the `images_reuse_filename` option, see: xref:configure/file-image-upload.adoc#images_reuse_filename[Image & file options - `images_reuse_filename`].
 
-For information on using the `images_reuse_filename` option, see: link:{baseurl}/configure/file-image-upload/#images_reuse_filename[Image & file options - `images_reuse_filename`].
-
+[[settingtheiconpack]]
 ==== Setting the icon pack
 
 To apply a bundled set of custom or premium icons to the editor, use the `icons` attribute. For example:
 
-```html+++<tinymce-editor icons="material">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor icons="material"></tinymce-editor>
+----
 
-```
-
-Use this attribute if the icon pack is bundled with {productname} (including custom icon packs). If the icon pack is hosted on a web site, use the <<settingtheiconpackurl,`icons_url` attribute>>.
+Use this attribute if the icon pack is bundled with {productname} (including custom icon packs). If the icon pack is hosted on a web site, use the xref:settingtheiconpackurl[`icons_url` attribute].
 
 For information on:
 
-* Using the `icons` option, see: link:{baseurl}/configure/editor-appearance/#icons[User interface options - `icons`].
-* {companyname} premium icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Tiny Skins and Icon Packs].
-* Creating a custom icon pack for {productname}, see: link:{baseurl}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
+* Using the `icons` option, see: xref:configure/editor-appearance.adoc#icons[User interface options - `icons`].
+* {companyname} premium icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
+* Creating a custom icon pack for {productname}, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
+[[settingtheiconpackurl]]
 ==== Setting the icon pack URL
 
 To apply a hosted set of custom or premium icons to the editor, use the `icons_url` attribute. For example:
 
-```html+++<tinymce-editor icons_url="https://www.example.com/icons/material/icons.js">++++++</tinymce-editor>+++
+[source, html]
+----
+<tinymce-editor icons_url="https://www.example.com/icons/material/icons.js"></tinymce-editor>
+----
 
-```
-
-Use this attribute if the icon pack is hosted on a web site. If the icon pack is bundled with {productname} (including custom icon packs), use the <<settingtheiconpack,`icons` attribute>>.
+Use this attribute if the icon pack is hosted on a web site. If the icon pack is bundled with {productname} (including custom icon packs), use the xref:settingtheiconpack[`icons` attribute].
 
 For information on:
 
-* Using the `icons_url` option, see: link:{baseurl}/configure/editor-appearance/#icons_url[User interface options - `icons_url`].
-* {companyname} premium icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Tiny Skins and Icon Packs].
-* Creating a custom icon pack for {productname}, see: link:{baseurl}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
+* Using the `icons_url` option, see: xref:configure/editor-appearance.adoc#icons_url[User interface options - `icons_url`].
+* {companyname} premium icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
+* Creating a custom icon pack for {productname}, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
+[[settingadditionalconfigurationoptions]]
 ==== Setting additional configuration options
 
 To configure any {productname} option that does not have a corresponding attribute, use the `config` attribute. For example:
 
-```html
-+++<script>+++window.myConfig = { height: 500, template_selected_content_classes: 'selcontent', templates: [ { title: 'My Template', description: 'This is my template.', content: '<p>Hello, [.selcontent]#this statement will be replaced.#</p>' } ], spellchecker_dialog: true, spellchecker_ignore_list: ['Ephox', 'Moxiecode'] };+++</script>++++++<tinymce-editor config="myConfig" width="50%" toolbar="undo redo | bold italic | forecolor backcolor | template | alignleft aligncenter alignright alignjustify | bullist numlist | link | spellchecker" plugins="lists link noneditable searchreplace table template tinymcespellchecker wordcount">++++++</tinymce-editor>+++
-
-```
+[source, html]
+----
+<script>
+  window.myConfig = {
+    height: 500,
+    template_selected_content_classes: 'selcontent',
+    templates: [ {
+      title: 'My Template', description: 'This is my template.',
+      content: '<p>Hello, [.selcontent]#this statement will be replaced.#</p>'
+    } ],
+    spellchecker_dialog: true,
+    spellchecker_ignore_list: ['Ephox', 'Moxiecode']
+  };
+</script>
+<tinymce-editor
+  config="myConfig"
+  width="50%"
+  toolbar="undo redo | bold italic | forecolor backcolor | template | alignleft aligncenter alignright alignjustify | bullist numlist | link | spellchecker"
+  plugins="lists link noneditable searchreplace table template tinymcespellchecker wordcount">
+</tinymce-editor>
+----
 
 Configuration options that have an attribute can also be passed to the `config` attribute.
 
+[[eventbinding]]
 === Event binding
 
 There are two methods to bind events for the TinyMCE Web Component.
 
-* The `setup` attribute, as described in <<settingtheeditorsetupfunction,Setting the editor setup function>>. For example:
+* The `setup` attribute, as described in xref:settingtheeditorsetupfunction[Setting the editor setup function]. For example:
 +
-```html
-  +++<script>+++function setupEditor(editor) { editor.on('click', function () { console.log('Editor was clicked'); }); }+++</script>++++++<tinymce-editor setup="setupEditor">++++++</tinymce-editor>+++
-+
-```
+[source, html]
+----
+<script>
+  function setupEditor(editor) {
+    editor.on('click', function () {
+      console.log('Editor was clicked');
+    });
+  }
+</script>
+<tinymce-editor setup="setupEditor"></tinymce-editor>
+----
 
 * The `on-` attributes, such as the `on-NodeChange` attribute. For example:
 +
-```html
-  +++<script>+++function changeHandler(evt) { console.log('The ' + evt['type'] + ' event was fired.'); }+++</script>++++++<tinymce-editor on-Change="changeHandler">++++++</tinymce-editor>+++
+[source, html]
+----
+<script>
+  function changeHandler(evt) {
+    console.log('The ' + evt['type'] + ' event was fired.');
+  }
+</script>
+<tinymce-editor on-Change="changeHandler"></tinymce-editor>
+----
 +
-```
-+
-If these attributes are later removed, the event will be automatically unbound. For the full list of supported `on-` attributes, see: <<supportedbrowserevents,Supported browser events>> and <<supportedtinymceevents,Supported TinyMCE events>>.
+If these attributes are later removed, the event will be automatically unbound. For the full list of supported `on-` attributes, see: xref:supportedbrowserevents[Supported browser events] and xref:supportedtinymceevents[Supported TinyMCE events].
 
+[[supportedbrowserevents]]
 ==== Supported browser events
 
 Bind the following browser events using the corresponding {productname} Web Component attribute.
@@ -567,6 +674,7 @@ Bind the following browser events using the corresponding {productname} Web Comp
 | `on-SelectionChange`
 |===
 
+[[supportedtinymceevents]]
 ==== Supported TinyMCE events
 
 Bind the following {productname} events using the corresponding {productname} Web Component attribute.

@@ -5,9 +5,10 @@ This procedure creates a basic Blazor application and adds a {productname} edito
 
 Select from the following guides:
 
-* <<usingvisualstudio,Using Visual Studio>>
-* <<usingacommandpromptorterminal,Using a command prompt or terminal>>
+* xref:usingvisualstudio[Using Visual Studio]
+* xref:usingacommandpromptorterminal[Using a command prompt or terminal]
 
+[[usingvisualstudio]]
 === Using Visual Studio
 
 ==== Prerequisites
@@ -25,13 +26,14 @@ This procedure requires:
 +
 [source, sh]
 ----
- Install-Package TinyMCE.Blazor
+Install-Package TinyMCE.Blazor
 ----
-
++
 include::partial$integrations/blazor-postinstall.adoc[]
 
 . To test the application, run the application by pressing *Ctrl+F5*.
 
+[[usingacommandpromptorterminal]]
 === Using a command prompt or terminal
 
 ==== Prerequisites
@@ -46,23 +48,23 @@ This procedure requires:
 +
 [source, sh]
 ----
- dotnet new blazorserver -o BlazorApp --no-https
+dotnet new blazorserver -o BlazorApp --no-https
 ----
-
++
 . Change into the new application directory:
 +
 [source, sh]
 ----
- cd BlazorApp
+cd BlazorApp
 ----
-
++
 . Install the {productname} Blazor integration:
 +
 [source, sh]
 ----
- dotnet add package TinyMCE.Blazor
+dotnet add package TinyMCE.Blazor
 ----
-
++
 include::partial$integrations/blazor-postinstall.adoc[]
 
 . Test the application using the .NET development server.
@@ -71,7 +73,7 @@ include::partial$integrations/blazor-postinstall.adoc[]
 [source, sh]
 ----
   dotnet watch run
- `
+----
 +
 This will start a local development server, accessible at \http://localhost:5000.
 
@@ -81,5 +83,5 @@ This will start a local development server, accessible at \http://localhost:5000
 
 For information on customizing the integration, see:
 
-* link:{baseurl}/general-configuration-guide/basic-setup/[{productname} basic setup].
-* link:{baseurl}/integrations/blazor/#tinymceblazorintegrationtechnicalreference[The {productname} Blazor integration technical reference].
+* xref:general-configuration-guide/basic-setup.adoc[{productname} basic setup].
+* xref:integrations/blazor.adoc#tinymceblazorintegrationtechnicalreference[The {productname} Blazor integration technical reference].

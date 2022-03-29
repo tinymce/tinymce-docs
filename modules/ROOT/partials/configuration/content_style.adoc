@@ -1,3 +1,4 @@
+[[content_style]]
 == `content_style`
 
 This option allows custom CSS styles to be set as a string. The styles are injected into the `head` of the page containing the editable area. In {productname}'s classic mode, it is injected into the `head` of {productname}'s iframe. In inline mode, it is injected into the `head` of the page {productname} is rendered in.

@@ -7,11 +7,12 @@
 
 {productname} 5.1.4 was released for {enterpriseversion} and {cloudname} on Wednesday, December 18^th^, 2019. These release notes provide an overview of the changes for {productname} 5.1.4, including:
 
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.1.4 provides fixes for the following bugs:
@@ -20,6 +21,7 @@ include::partial$misc/releasenotes_for_stable.adoc[]
 * The `legacyoutput` plugin registering legacy formats after editor initialization, causing legacy content to be stripped on the initial load.
 * The search and replace plugin not cycling through results when searching using special characters.
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.1.4 provides fixes for the following security issues:

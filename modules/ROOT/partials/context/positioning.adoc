@@ -1,12 +1,12 @@
-{% case page.title %}
-  {% when "Context toolbar" %}
-    :contextItemType: toolbar
-  {% when "Context forms" %}
-    :contextItemType: form
-{% endcase %}
-+++<a class="anchor" id="positioningcontexttoolbars">++++++</a>++++++<a class="anchor" id="positioningcontextforms">++++++</a>+++
+ifeval::["{doctitle}" == "Context toolbar"]
+:contextItemType: toolbar
+endif::[]
+ifeval::["{doctitle}" == "Context forms"]
+:contextItemType: form
+endif::[]
 
-=== Positioning of context {contextItemType}s
+
+=== [[positioningcontexttoolbars]][[positioningcontextforms]] Positioning of context {contextItemType}s
 
 There are three options for positioning context {contextItemType}s: `selection`, `node`, or `line`.
 

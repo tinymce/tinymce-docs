@@ -5,12 +5,13 @@
 
 There are four types of Toolbar Buttons in {productname} {productmajorversion}:
 
-* <<basicbutton,Basic button>>
-* <<togglebutton,Toggle button>>
-* <<menubutton,Menu button>>
-* <<splitbutton,Split button>>
-* <<grouptoolbarbutton,Group toolbar button>>
+* xref:basicbutton[Basic button]
+* xref:togglebutton[Toggle button]
+* xref:menubutton[Menu button]
+* xref:splitbutton[Split button]
+* xref:grouptoolbarbutton[Group toolbar button]
 
+[[basicbutton]]
 == Basic button
 
 A basic button triggers its `onAction` function when clicked.
@@ -28,7 +29,8 @@ A basic button triggers its `onAction` function when clicked.
 | icon
 | string
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[]
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
 
 | tooltip
 | string
@@ -51,7 +53,7 @@ A basic button triggers its `onAction` function when clicked.
 | Function invoked when the button is clicked.
 |===
 
-NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`.
+NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
 
 === API
 
@@ -73,12 +75,13 @@ The following example adds two buttons to the toolbar:
 
 liveDemo::custom-toolbar-button[tab="js" ]
 
-The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of {productname}'s link:{baseurl}/plugins/opensource/insertdatetime/[insertdatetime] plugin.
+The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of {productname}'s xref:plugins/opensource/insertdatetime.adoc[insertdatetime] plugin.
 
 In this example an icon from the `insertdatetime` plugin is used to demonstrate how to use a registered icon. `disabled` is set to `true` so that the button is disabled when it is first rendered.
 
-`onSetup` is used to listen to the editor's link:{baseurl}/advanced/events/#editorcoreevents[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
+`onSetup` is used to listen to the editor's xref:advanced/events.adoc#editorcoreevents[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
 
+[[togglebutton]]
 == Toggle button
 
 A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the *Bold* button that is highlighted when the cursor is in a word with bold formatting.
@@ -96,7 +99,8 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | icon
 | string
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[]
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
 
 | tooltip
 | string
@@ -124,7 +128,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | Function invoked when the button is clicked.
 |===
 
-NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`.
+NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
 
 === API
 
@@ -152,7 +156,7 @@ NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`
 
 liveDemo::custom-toolbar-toggle-button[tab="js" ]
 
-The example above adds two custom *strikethrough* buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for link:{baseurl}/configure/content-formatting/#formats[formats] that are already registered with the editor. In this example, `strikethrough` is the registered format.
+The example above adds two custom *strikethrough* buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for xref:configure/content-formatting.adoc#formats[formats] that are already registered with the editor. In this example, `strikethrough` is the registered format.
 
 The first button applies and removes strikethrough formatting, and its state toggles on click using `api.setActive(!api.isActive())`. However, the expected behaviour is that the button's state will reflect whether the selected content has strikethrough formatting. For example, if the cursor is moved into editor content that has strikethrough formatting the button will become *active* and if it is moved into content that does not have strikethrough formatting the button will become *inactive*. The first button in the example does not do this, since its state only toggles when the button is clicked.
 
@@ -195,7 +199,8 @@ For example: The table plugin's `table` toolbar button opens a menu similar to t
 | icon
 | string
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[]
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
 
 | tooltip
 | string
@@ -208,7 +213,7 @@ For example: The table plugin's `table` toolbar button opens a menu similar to t
 | default: () \=> () \=> {} - Function that's invoked when the button is rendered.
 |===
 
-NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`.
+NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
 
 === API
 
@@ -234,8 +239,9 @@ This example configures a toolbar menu button with the label `My Button` that op
 
 The `fetch` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
 
-Use the following demo link:{baseurl}/demo/custom-toolbar-menu-button/[here] for help using the menu toolbar button.
+Use the following demo xref:demo/custom-toolbar-menu-button.adoc[here] for help using the menu toolbar button.
 
+[[splitbutton]]
 == Split button
 
 A split button contains a basic button and a menu button, wrapped up into one toolbar item. Clicking the menu button section opens a dropdown list. The basic button section and the menu items can be configured to trigger different actions when clicked.
@@ -255,7 +261,8 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | string
 | Primary button
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[]
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
 
 | onAction
 | (api) \=> void
@@ -279,7 +286,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | (success: (menu) \=> void) \=> void
 | Drop-down menu
 | required
-| A callback function that should be passed a list of <<choicemenuitems,choice menu items>> for the dropdown menu.
+| A callback function that should be passed a list of xref:choicemenuitems[choice menu items] for the dropdown menu.
 
 | onItemAction
 | (api, value) \=> void
@@ -294,7 +301,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | default: () \=> () \=> {} - Function invoked when the button is rendered.
 |===
 
-NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`.
+NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
 
 === API
 
@@ -318,6 +325,7 @@ NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`
 | Sets the button's toggle state.
 |===
 
+[[splitbuttonexampleandexplanation]]
 === Split button example and explanation
 
 The following example sets up a split button with a text label and a static dropdown menu.
@@ -332,11 +340,12 @@ The `fetch` function is called whenever the split button's drop-down menu is ope
 
 include::partial$components/choice-menu-items.adoc[]
 
+[[grouptoolbarbutton]]
 == Group toolbar button
 
 include::partial$misc/requires_5_2v.adoc[]
 
-A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current link:{baseurl}/configure/editor-appearance/#toolbarmode[toolbar mode]. For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
+A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current xref:configure/editor-appearance.adoc#toolbar_mode[toolbar mode]. For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
 
 NOTE: The group toolbar button is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
 
@@ -353,7 +362,8 @@ NOTE: The group toolbar button is _only_ supported when using the `floating` too
 | icon
 | string
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[]
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
 
 | tooltip
 | string
@@ -363,7 +373,7 @@ NOTE: The group toolbar button is _only_ supported when using the `floating` too
 | items
 | string or LabelledToolbar[]
 | required
-| A string of space separated toolbar button names, or an array of link:{baseurl}/configure/editor-appearance/#addingtoolbargrouplabels[labelled toolbar buttons].
+| A string of space separated toolbar button names, or an array of xref:configure/editor-appearance.adoc#addingtoolbargrouplabels[labelled toolbar buttons].
 
 | onSetup
 | (api) \=> (api) \=> void
@@ -371,7 +381,7 @@ NOTE: The group toolbar button is _only_ supported when using the `floating` too
 | default: () \=> () \=> {} - Function that's invoked when the button is rendered.
 |===
 
-NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`.
+NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
 
 === API
 
@@ -395,6 +405,7 @@ liveDemo::custom-toolbar-group-button[tab="js" ]
 
 The example above configures a custom *alignment* group toolbar button. When clicked the button will show a floating shelf containing the align left, center, right and justify toolbar buttons.
 
+[[onsetupexplanation]]
 == `onSetup` explanation
 
 include::partial$release-notes/onSetup.adoc[]

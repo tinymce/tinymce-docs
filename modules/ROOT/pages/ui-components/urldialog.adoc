@@ -5,7 +5,7 @@
 
 A URL dialog is a special {productname} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {productname}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {productname} dialog would probably require a URL dialog.
 
-NOTE: link:{baseurl}/ui-components/dialog/[Standard {productname} dialogs] should suffice for most use cases, and may be simpler to configure.
+NOTE: xref:ui-components/dialog.adoc[Standard {productname} dialogs] should suffice for most use cases, and may be simpler to configure.
 
 == Basic example
 
@@ -25,8 +25,9 @@ A URL Dialog configuration has three main parts to match the three main parts of
 
 * *Title:* The title of the dialog. This will display in the header of the dialog.
 * *URL:* The URL of the external page to load inside the dialog.
-* *Buttons:* (Optional) An array of <<footerbuttons,footer buttons>> that are displayed in the dialog's footer.
+* *Buttons:* (Optional) An array of xref:footerbuttons[footer buttons] that are displayed in the dialog's footer.
 
+[[configurationoptions]]
 == Configuration options
 
 |===
@@ -55,7 +56,7 @@ A URL Dialog configuration has three main parts to match the three main parts of
 | buttons
 | FooterButton[]
 | optional
-| An array of <<footerbuttons,buttons>> to render in the footer of the dialog.
+| An array of xref:footerbuttons[buttons] to render in the footer of the dialog.
 
 | onAction
 | `+(dialogApi, details) => void+`
@@ -78,11 +79,12 @@ A URL Dialog configuration has three main parts to match the three main parts of
 | Function invoked when a message is received from the external page.
 |===
 
-For more information on the `dialogApi` object that is passed to some of the configuration options, see the <<urldialoginstanceapi,URL dialog instance API>> documentation.
+For more information on the `dialogApi` object that is passed to some of the configuration options, see the xref:urldialoginstanceapi[URL dialog instance API] documentation.
 
+[[footerbuttons]]
 == Footer buttons
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{baseurl}/general-configuration-guide/customize-ui/#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen xref:general-configuration-guide/customize-ui.adoc#skins[skin].
 
 === Configuration
 
@@ -107,7 +109,9 @@ A *button* is a clickable component that can contain text or an icon. There are 
 | icon
 | string
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[] *When configured, the button will display the icon instead of text.*
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
+*When configured, the button will display the icon instead of text.*
 
 | primary
 | boolean
@@ -132,15 +136,16 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 The different footer button types will invoke different callbacks when clicked:
 
 * A *Cancel* type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
-* A *Custom* type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the link:{baseurl}/ui-components/dialog/#interactiveexampleusingredialconfigvoid[Redial example] for an example of how to use this with standard dialogs.
+* A *Custom* type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the xref:ui-components/dialog.adoc#interactiveexampleusingredial[Redial example] for an example of how to use this with standard dialogs.
 
-NOTE: Unlike link:{baseurl}/ui-components/dialog/[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `onSubmit` callback.
+NOTE: Unlike xref:ui-components/dialog.adoc[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `onSubmit` callback.
 
-See the <<configurationoptions,URL dialog configuration options>> documentation for more information on event callbacks.
+See the xref:configurationoptions[URL dialog configuration options] documentation for more information on event callbacks.
 
+[[urldialoginstanceapi]]
 == URL dialog instance API
 
-When a URL dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.openUrl(config);`. The URL dialog API instance is also passed to some of the <<configurationoptions,dialog configuration options>>.
+When a URL dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.openUrl(config);`. The URL dialog API instance is also passed to some of the xref:configurationoptions[dialog configuration options].
 
 The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
@@ -174,17 +179,17 @@ window.parent.postMessage({
 }, '*');
 ----
 
-Similarly, to send messages from {productname} back to the external page, the `sendMessage()` function from the <<urldialoginstanceapi,URL dialog instance API>> can be used to send messages, and then in the external page an event listener can be added to receive the messages:
+Similarly, to send messages from {productname} back to the external page, the `sendMessage()` function from the xref:urldialoginstanceapi[URL dialog instance API] can be used to send messages, and then in the external page an event listener can be added to receive the messages:
 
-```js
+[source, js]
+----
 window.addEventListener('message', function (event) {
   var data = event.data;
 
 // Do something with the data received here
   console.log('message received from TinyMCE', data);
 });
-
-```
+----
 
 NOTE: When sending a message it is recommended to specify the target origin of where {productname} is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where {productname} is running. For example, if {productname} is running on _\http://mysite.com/tinymce.html_, then if `event.origin` doesn't match `+http://mysite.com+` the message should be ignored.
 

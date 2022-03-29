@@ -7,11 +7,12 @@ This chapter is a reference list of all {productname} dialog components.
 
 == Body components
 
-The body of a dialog must be either a `panel` (a single panel) or a `tabpanel` (a collection of panels). Each panel can contain panel components, which are either <<layoutcomponents,layout components>> or <<basiccomponents,basic components>> such as inputs, buttons and text.
+The body of a dialog must be either a `panel` (a single panel) or a `tabpanel` (a collection of panels). Each panel can contain panel components, which are either xref:layoutcomponents[layout components] or xref:basiccomponents[basic components] such as inputs, buttons and text.
 
+[[panel]]
 === panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for <<panelcomponents,interactive panel components>>. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for xref:panelcomponents[interactive panel components]. A panel type dialog only has one panel.
 
 [source, js]
 ----
@@ -21,9 +22,10 @@ The basic dialog type is a *panel* dialog. A panel is a container for <<panelcom
 }
 ----
 
+[[tabpanel]]
 === tabpanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different <<panelcomponents,panel components>>, allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:panelcomponents[panel components], allowing for complex dialogs.
 
 Each tab panel is defined using the following configuration options:
 
@@ -43,10 +45,10 @@ Each tab panel is defined using the following configuration options:
 | items
 | array
 | required
-| An array of <<panelcomponents,panel components>> to display inside the panel.
+| An array of xref:panelcomponents[panel components] to display inside the panel.
 |===
 
-NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{baseurl}/ui-components/dialog/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+NOTE: Panel components in different tabs with the same `name` will use the same value in the xref:ui-components/dialog.adoc#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 [source, js]
 ----
@@ -65,11 +67,11 @@ NOTE: Panel components in different tabs with the same `name` will use the same 
 
 ==== Dialog instance API methods
 
-The link:{baseurl}/ui-components/dialog/#dialoginstanceapi[dialog instance API] contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
+The xref:ui-components/dialog.adoc#dialoginstanceapi[dialog instance API] contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
 
 ==== Dialog configuration event callbacks
 
-A dialog can be configured with an link:{baseurl}/ui-components/dialog/#configurationoptions[`onTabChange`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
+A dialog can be configured with an xref:ui-components/dialog.adoc#configurationoptions[`onTabChange`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
 
 As an example of when this is useful, the `charmap` and `emoticons` plugin dialogs use `newTabName` to change search results to match the character or emoticon category represented by the current tab.
 
@@ -77,7 +79,8 @@ As an example of when this is useful, the `charmap` and `emoticons` plugin dialo
 
 Below is a trivial example of how to use `onTabChange` and `showTab()`.
 
-```js
+[source, js]
+----
 const dialogConfig = {
   title: 'Example Dialog',
   body: {
@@ -90,16 +93,20 @@ const dialogConfig = {
     console.log(details.newTabName);
     console.log(details.oldTabName);
 
- // switch back to the old tab
- dialogApi.showTab(details.oldTabName);   } }; 
-```
+    // switch back to the old tab
+    dialogApi.showTab(details.oldTabName);
+  }
+};
+----
 
+[[panelcomponents]]
 == Panel components
 
-Panels can contain <<layoutcomponents,layout components>> and <<basiccomponents,basic components>>, which include components for displaying information and user interaction and input.
+Panels can contain xref:layoutcomponents[layout components] and xref:basiccomponents[basic components], which include components for displaying information and user interaction and input.
 
-NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{baseurl}/ui-components/dialog/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+NOTE: Panel components in different tabs with the same `name` will use the same value in the xref:ui-components/dialog.adoc#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
+[[layoutcomponents]]
 === Layout components
 
 Some panel components can be used to apply a layout to an array of other panel components.
@@ -118,7 +125,7 @@ A *bar* is a layout component that creates a single row of items in the dialog b
 
 ==== collection
 
-A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:{baseurl}/plugins/opensource/charmap[`charmap`] and link:{baseurl}/plugins/opensource/emoticons[`emoticons`] plugins.
+A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the xref:plugins/opensource/charmap.adoc[`charmap`] and xref:plugins/opensource/emoticons.adoc[`emoticons`] plugins.
 
 [source, js]
 ----
@@ -129,7 +136,7 @@ A *collection* is a layout component that creates a panel containing a collectio
 }
 ----
 
-To populate the collection with collection items, specify an array of items in the dialog's link:{baseurl}/ui-components/dialog/#dialogdataandstate[`initialData`] property. To update the items in the collection, use the link:{baseurl}/ui-components/dialog/#dialoginstanceapi[dialog API's] `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's xref:ui-components/dialog.adoc#dialogdataandstate[`initialData`] property. To update the items in the collection, use the xref:ui-components/dialog.adoc#dialoginstanceapi[dialog API's] `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
 
 [source, js]
 ----
@@ -169,6 +176,7 @@ A *label* is a layout component that wraps other components and adds a label abo
 }
 ----
 
+[[basiccomponents]]
 === Basic components
 
 These panel components are used either to display information or to allow for user interaction and input.
@@ -224,11 +232,12 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 }
 ----
 
+[[button]]
 ==== button
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{baseurl}/general-configuration-guide/customize-ui/#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen xref:general-configuration-guide/customize-ui.adoc#skins[skin].
 
-NOTE: Panel buttons are different to link:{baseurl}/ui-components/dialog/#footerbuttons[dialog footer buttons].
+NOTE: Panel buttons are different to xref:ui-components/dialog.adoc#footerbuttons[dialog footer buttons].
 
 *Events:* Interacting with a *button* component will fire the `onAction` function in the dialog's configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each button.
 
@@ -280,6 +289,7 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 }
 ----
 
+[[checkbox]]
 ==== checkbox
 
 A *checkbox* is a composite component with a checkbox and a label, and with `on` and `off` states.
@@ -354,7 +364,7 @@ NOTE: Despite the name a htmlpanel can not be used as a body component like `pan
 
 An *iframe* component takes a HTML document as a string and displays it in the dialog within an iframe.
 
-NOTE: To replace the entire dialog body with an iframe that loads its content from a URL, use a link:{baseurl}/ui-components/urldialog[URL dialog].
+NOTE: To replace the entire dialog body with an iframe that loads its content from a URL, use a xref:ui-components/urldialog.adoc[URL dialog].
 
 |===
 | Name | Type | Requirement | Description
@@ -390,7 +400,7 @@ NOTE: To replace the entire dialog body with an iframe that loads its content fr
 }
 ----
 
-To set the iframe's content on dialog open, specify document HTML as a string in the dialog's link:{baseurl}/ui-components/dialog/#dialogdataandstate[`initialData`] property. To update the iframe's content, use the link:{baseurl}/ui-components/dialog/#dialoginstanceapi[dialog API's] `setData()` method. For example:
+To set the iframe's content on dialog open, specify document HTML as a string in the dialog's xref:ui-components/dialog.adoc#dialogdataandstate[`initialData`] property. To update the iframe's content, use the xref:ui-components/dialog.adoc#dialoginstanceapi[dialog API's] `setData()` method. For example:
 
 [source, js]
 ----
@@ -566,8 +576,8 @@ A *textarea* is a multiline text field.
 ==== urlinput
 
 A *urlinput* is a specialized composite component for URL input or file upload. It has a label, a text input field and an optional filepicker button. The urlinput component also includes a *typeahead* dropdown that will display previously-entered URLs that match the current input text and update as the user types.
-
-NOTE: The filepicker button will only appear if link:{baseurl}/configure/file-image-upload/#file_picker_callback[`file_picker_callback`] is configured.
+// TODO: the xref in the next line should be fixed once #2328 gets merged
+NOTE: The filepicker button will only appear if xref:configure/file-image-upload.adoc#file_picker_callback[`file_picker_callback`] is configured.
 
 *Events:* Interacting with a *selectbox* component will fire the `onChange` function in the dialog's configuration *when the user clicks away from the component*.
 

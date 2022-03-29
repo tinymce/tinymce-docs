@@ -108,7 +108,7 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `{start: '\#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
+* `+{start: '#', format: 'h1'}+` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
 * Typing `1.` followed by a space, the desired text, and then pressing `Enter`; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
 ==== Replacements patterns

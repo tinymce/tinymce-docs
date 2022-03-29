@@ -4,6 +4,7 @@
 
 {productname} provides several options to bring spell checking capabilities to your users.
 
+[[browser-basedspellchecking]]
 == Browser-based spell checking
 
 Assign the xref:configure/spelling.adoc#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Disabling the xref:configure/editor-appearance.adoc#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.

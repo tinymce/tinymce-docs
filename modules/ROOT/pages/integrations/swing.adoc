@@ -30,9 +30,9 @@ The Swing integration allows the user to select the origin of the {productname} 
 final Config myTinyConfiguration = Config.embedded();
 ----
 
-* Cloud deployments pull {productname} from the {cloudname}. Use this option by passing your API key and link:{baseurl}/cloud-deployment-guide/editor-plugin-version/#specifyingthetinymceeditorversiondeployedfromcloud[specifying the {cloudname} version].
+* Cloud deployments pull {productname} from the {cloudname}. Use this option by passing your API key and xref:cloud-deployment-guide/editor-plugin-version.adoc#specifyingthetinymceeditorversiondeployedfromcloud[specifying the {cloudname} version].
 +
-[source, java]
+[source, java, subs="attributes+"]
 ----
 final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{productmajorversion}-stable");
 ----
@@ -90,14 +90,14 @@ Or by passing Javascript that returns a {productname} configuration object.
 ----
 
 Snippet of *Edit.java*:
-```java
+[source, java]
+----
 final Path contentPath = Paths.get(System.getProperty("user.home"));
 final Config myConfig = Config.embedded()
     .setContentPath(contentPath)
     .setImageSaverLocal(contentPath)
     .setInitConf(Edit.class, "config.js"); // load config.js using class loader
-
-```
+----
 
 === 3. Create the editor and add it to your view
 

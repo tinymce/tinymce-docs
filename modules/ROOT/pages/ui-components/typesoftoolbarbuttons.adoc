@@ -11,6 +11,7 @@ There are four types of Toolbar Buttons in {productname} {productmajorversion}:
 * <<splitbutton,Split button>>
 * <<grouptoolbarbutton,Group toolbar button>>
 
+[[basicbutton]]
 == Basic button
 
 A basic button triggers its `onAction` function when clicked.
@@ -67,6 +68,7 @@ NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`
 | Sets the button's disabled state.
 |===
 
+[[basicbuttonexampleandexplanation]]
 === Basic button example and explanation
 
 The following example adds two buttons to the toolbar:
@@ -79,6 +81,7 @@ In this example an icon from the `insertdatetime` plugin is used to demonstrate 
 
 `onSetup` is used to listen to the editor's link:{baseurl}/advanced/events/#editorcoreevents[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
 
+[[togglebutton]]
 == Toggle button
 
 A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the *Bold* button that is highlighted when the cursor is in a word with bold formatting.
@@ -236,6 +239,7 @@ The `fetch` function is called when the toolbar menu button's menu is opened. It
 
 Use the following demo link:{baseurl}/demo/custom-toolbar-menu-button/[here] for help using the menu toolbar button.
 
+[[splitbutton]]
 == Split button
 
 A split button contains a basic button and a menu button, wrapped up into one toolbar item. Clicking the menu button section opens a dropdown list. The basic button section and the menu items can be configured to trigger different actions when clicked.
@@ -332,6 +336,7 @@ The `fetch` function is called whenever the split button's drop-down menu is ope
 
 include::partial$components/choice-menu-items.adoc[]
 
+[[grouptoolbarbutton]]
 == Group toolbar button
 
 include::partial$misc/requires_5_2v.adoc[]
@@ -395,6 +400,7 @@ liveDemo::custom-toolbar-group-button[tab="js" ]
 
 The example above configures a custom *alignment* group toolbar button. When clicked the button will show a floating shelf containing the align left, center, right and justify toolbar buttons.
 
+[[onsetupexplanation]]
 == `onSetup` explanation
 
 include::partial$release-notes/onSetup.adoc[]

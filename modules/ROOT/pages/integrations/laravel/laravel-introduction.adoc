@@ -7,6 +7,6 @@ https://laravel.com/[Laravel] is a scaleable web application framework built on 
 
 These guides assist with adding {productname} to pages or views in Laravel. The example Laravel projects created in these procedures are based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/8.x/installation#installation-via-composer[Installation Via Composer]. These guides will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {productname} should be used in production environments.
 
-* link:{baseurl}/integrations/laravel/laravel-tiny-cloud/[Using TinyMCE from the Tiny Cloud CDN with the Laravel framework].
-* link:{baseurl}/integrations/laravel/laravel-composer-install/[Using the TinyMCE Composer package with the Laravel framework].
-* link:{baseurl}/integrations/laravel/laravel-zip-install/[Using the TinyMCE .zip package with the Laravel framework].
+* xref:integrations/laravel/laravel-tiny-cloud.adoc[Using TinyMCE from the Tiny Cloud CDN with the Laravel framework].
+* xref:integrations/laravel/laravel-composer-install.adoc[Using the TinyMCE Composer package with the Laravel framework].
+* xref:integrations/laravel/laravel-zip-install.adoc[Using the TinyMCE .zip package with the Laravel framework].

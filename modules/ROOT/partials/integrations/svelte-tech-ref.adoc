@@ -1,11 +1,13 @@
+[[tinymcesvelteintegrationtechnicalreference]]
 == TinyMCE Svelte integration technical reference
 
 Covered in this section:
 
-* <<configuringthetinymcesvelteintegration,Configuring the TinyMCE Svelte integration>>
-* <<componentbinding,Component binding>>
-* <<eventbinding,Event binding>>
+* xref:configuringthetinymcesvelteintegration[Configuring the TinyMCE Svelte integration]
+* xref:componentbinding[Component binding]
+* xref:eventbinding[Event binding]
 
+[[configuringthetinymcesvelteintegration]]
 === Configuring the TinyMCE Svelte integration
 
 The `tinymce-svelte` `Editor` component accepts the following properties:
@@ -36,13 +38,14 @@ Type:: String
 
 ===== Example using apiKey
 
-```jsx+++<Editor apiKey="your-api-key">++++++</Editor>+++
-
-```
+[source, jsx]
+----
+<Editor apiKey="your-api-key"></Editor>
+----
 
 ==== channel
 
-Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: link:{baseurl}/cloud-deployment-guide/editor-plugin-version/[Specifying the {productname} editor version deployed from Cloud].
+Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: xref:cloud-deployment-guide/editor-plugin-version.adoc[Specifying the {productname} editor version deployed from Cloud].
 
 Default value:: `"5"`
 
@@ -50,9 +53,10 @@ Type:: String
 
 ===== Example using channel
 
-```jsx+++<Editor channel="5-dev">++++++</Editor>+++
-
-```
+[source, jsx]
+----
+<Editor channel="5-dev"></Editor>
+----
 
 ==== id
 
@@ -64,9 +68,10 @@ Type:: String
 
 ===== Example using id
 
-```jsx+++<Editor id="my-unique-identifier">++++++</Editor>+++
-
-```
+[source, jsx]
+----
+<Editor id="my-unique-identifier"></Editor>
+----
 
 ==== inline
 
@@ -78,9 +83,10 @@ Type:: Boolean
 
 ===== Example using inline
 
-```jsx+++<Editor inline="true">++++++</Editor>+++
-
-```
+[source, jsx]
+----
+<Editor inline="true"></Editor>
+----
 
 ==== disabled
 
@@ -92,9 +98,10 @@ Type:: Boolean
 
 ===== Example using disabled
 
-```jsx+++<Editor disabled="true">++++++</Editor>+++
-
-```
+[source, jsx]
+----
+<Editor disabled="true"></Editor>
+----
 
 ==== scriptSrc
 
@@ -104,9 +111,10 @@ Type:: String
 
 ===== Example using scriptSrc
 
-```jsx+++<Editor scriptSrc="/path/to/tinymce.min.js">++++++</Editor>+++
-
-```
+[source, jsx]
+----
+<Editor scriptSrc="/path/to/tinymce.min.js"></Editor>
+----
 
 ==== conf
 
@@ -118,11 +126,19 @@ Type:: Object
 
 ===== Example using conf
 
-```jsx
-+++<script>+++let conf = { toolbar: 'undo redo', menubar: false }+++</script>++++++<main>+++<Editor \{conf} />+++</main>+++
+[source, jsx]
+----
+<script>
+  let conf = { toolbar: 'undo redo', menubar: false }
+</script>
+<main>
+  <Editor
+    {conf}
+  />
+</main>
+----
 
-```
-
+[[componentbinding]]
 === Component binding
 
 ==== Input binding
@@ -131,12 +147,17 @@ The editor component allows developers to bind the contents of editor to a varia
 
 ==== Example of input binding
 
-```jsx
-+++<script>+++let value = 'some content';+++</script>++++++<main>+++<Editor bind:value=\{value} />
-
-{@html value} <textarea bind:value=\{value}></textarea>+++</main>+++
-
-```
+[source, jsx]
+----
+<script>
+  let value = 'some content';
+</script>
+<main>
+  <Editor bind:value={value} />
+  <div>{@html value}</div>
+  <textarea bind:value={value}></textarea>
+</main>
+----
 
 ==== Binding text output
 
@@ -144,13 +165,18 @@ The editor exposes the `text` property, which developers can `bind` to retrieve 
 
 ==== Example of text binding
 
-```jsx
-+++<script>+++let text = '';+++</script>++++++<main>+++<Editor bind:text=\{text} />
+[source, jsx]
+----
+<script>
+  let text = '';
+</script>
+<main>
+  <Editor bind:text={text} />
+  <div>{text}</div>
+</main>
+----
 
-\{text}+++</main>+++
-
-```
-
+[[eventbinding]]
 === Event binding
 
 Functions can be bound to editor events, such as:

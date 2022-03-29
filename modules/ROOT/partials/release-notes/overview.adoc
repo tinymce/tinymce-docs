@@ -6,18 +6,18 @@ TinyMCE 5.0 has an ARIA https://www.w3.org/WAI/standards-guidelines/wcag/[WCAG 2
 
 Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file. Substitute 'no-api-key' with your api key.
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
-Signing up for a free API key provides entitlements to all our free plugins. This includes advanced functionality such as the link:{baseurl}/plugins/opensource/imagetools/[Image tools] plugin, which requires a cloud image proxy server to already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Signing up for a free API key provides entitlements to all our free plugins. This includes advanced functionality such as the xref:plugins/opensource/imagetools.adoc[Image tools] plugin, which requires a cloud image proxy server to already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
-Refer to the link:{baseurl}/quick-start[Quick start] docs for more information.
+Refer to the xref:quick-start.adoc[Quick start] docs for more information.
 
 === Upgrade
 
-Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little or no fuss. For instructions on how to migrate, refer to the link:{baseurl}/migration-from-4x/[Migration guide].
+Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little or no fuss. For instructions on how to migrate, refer to the xref:migration-from-4x.adoc[Migration guide].
 
 NOTE:  An instance of TinyMCE with heavy customizations could take longer to upgrade. Please contact https://support.tiny.cloud[Customer Support] if encountering issues with the upgrade.
 

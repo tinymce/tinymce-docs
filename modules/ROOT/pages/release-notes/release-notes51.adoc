@@ -7,26 +7,30 @@
 
 {productname} 5.1 was released for {enterpriseversion} and {cloudname} on Wednesday, December 11^th^, 2019. It includes {productname} 5.1.3 and additional changes to premium plugins. These release notes provide a high-level coverage of the changes for {productname} 5.1, including:
 
-* <<newfeaturesandenhancements,New features and enhancements>>
-* <<premiumpluginchanges,Premium Plugin changes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:newfeaturesandenhancements[New features and enhancements]
+* xref:premiumpluginchanges[Premium Plugin changes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[newfeaturesandenhancements]]
 == New features and enhancements
 
 include::partial$release-notes/51new-features.adoc[]
 
+[[premiumpluginchanges]]
 == Premium Plugin changes
 
 include::partial$release-notes/51premium-plugins.adoc[]
 
+[[deprecatedfeatures]]
 == Deprecated features
 
 include::partial$release-notes/51deprecated.adoc[]
 
+[[knownissues]]
 == Known issues
 
 include::partial$release-notes/51known-issues.adoc[]

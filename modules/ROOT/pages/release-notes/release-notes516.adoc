@@ -7,12 +7,13 @@
 
 {productname} 5.1.6 was released for {enterpriseversion} and {cloudname} on Wednesday, February 5^th^, 2020. It includes {productname} 5.1.6 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.1.6, including:
 
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<premiumpluginchanges,Premium Plugin changes>>
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:premiumpluginchanges[Premium Plugin changes]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.1.6 provides the following bug fixes:
@@ -22,14 +23,16 @@ include::partial$misc/releasenotes_for_stable.adoc[]
 * Changing a tables row type from `Header` to `Body` no-longer incorrectly moves the row to the bottom of the table.
 * Context menus now open correctly on hybrid devices that support both touch and mouse input.
 * Context menus no longer open in the wrong location when the target was the editor body.
-* The `image` plugin now respects the link:{baseurl}/configure/file-image-upload/#automatic_uploads[`automatic_uploads`] setting when uploading local images.
+* The `image` plugin now respects the xref:configure/file-image-upload.adoc#automatic_uploads[`automatic_uploads`] setting when uploading local images.
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.1.6 provides fixes for the following security issues:
 
 * CDATA parsing and sanitization has been improved to address a cross-site scripting (XSS) vulnerability.
 
+[[premiumpluginchanges]]
 == Premium Plugin changes
 
 === Advanced Code Editor
@@ -47,7 +50,7 @@ The {productname} 5.1.6 release includes *Enhanced Media Embed* 2.2.5.
 
 *Enhanced Media Embed* 2.2.5 provides the following bug fixes:
 
-* The link:{baseurl}/plugins/premium/mediaembed/#mediaembed_max_width[`mediaembed_max_width`] setting will now constrain the max width correctly on Internet Explorer 11.
+* The xref:plugins/premium/mediaembed.adoc#mediaembed_max_width[`mediaembed_max_width`] setting will now constrain the max width correctly on Internet Explorer 11.
 
 :enterprise: true
 

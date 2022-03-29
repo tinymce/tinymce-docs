@@ -1,17 +1,30 @@
+[[tinymceblazorintegrationtechnicalreference]]
 == TinyMCE Blazor integration technical reference
 
 Covered in this section:
 
-* <<configuringthetinymceblazorintegration,Configuring the TinyMCE Blazor integration>>
-* <<componentbinding,Component binding>>
+* xref:configuringthetinymceblazorintegration[Configuring the TinyMCE Blazor integration]
+* xref:componentbinding[Component binding]
 
+[[configuringthetinymceblazorintegration]]
 === Configuring the TinyMCE Blazor integration
 
 The `TinyMCE.Blazor` `Editor` component accepts the following properties:
 
-```cs+++<Editor Id="uuid" Inline="false" CloudChannel="5" Value="" Disable="false" JsConfSrc="path_to_jsObj" Conf="@yourConf" ApiKey="your-api-key" ClassName="tinymce-wrapper">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  Id="uuid"
+  Inline="false"
+  CloudChannel="5"
+  Value=""
+  Disable="false"
+  JsConfSrc="path_to_jsObj"
+  Conf="@yourConf"
+  ApiKey="your-api-key"
+  ClassName="tinymce-wrapper">
+</Editor>
+----
 
 None of the configuration properties are required for the TinyMCE Blazor integration to work.
 
@@ -25,13 +38,16 @@ Type:: String
 
 ===== Example using ApiKey
 
-```cs+++<Editor ApiKey="your-api-key">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  ApiKey="your-api-key"
+></Editor>
+----
 
 ==== CloudChannel
 
-Specifies the {cloudname} channel to use. For information on {productname} development channels, see: link:{baseurl}/cloud-deployment-guide/editor-plugin-version/[Specifying the {productname} editor version deployed from Cloud].
+Specifies the {cloudname} channel to use. For information on {productname} development channels, see: xref:cloud-deployment-guide/editor-plugin-version.adoc[Specifying the {productname} editor version deployed from Cloud].
 
 Default value:: `"5"`
 
@@ -39,9 +55,12 @@ Type:: String
 
 ===== Example using CloudChannel
 
-```cs+++<Editor CloudChannel="5-dev">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  CloudChannel="5-dev"
+></Editor>
+----
 
 ==== Id
 
@@ -53,9 +72,12 @@ Type:: String
 
 ===== Example using Id
 
-```cs+++<Editor Id="my-unique-identifier">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  Id="my-unique-identifier"
+></Editor>
+----
 
 ==== ClassName
 
@@ -69,15 +91,20 @@ Type:: String
 
 Setting a static class name:
 
-```cs+++<Editor ClassName="my-editor-container">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  ClassName="my-editor-container"
+></Editor>
+----
 
 Setting a dynamic class name:
 
 [source, cs]
 ----
-<Editor ClassName="@((isEditorActive) ? "active-editor-div" : "default-editor-div")" />
+<Editor
+  ClassName="@((isEditorActive) ? "active-editor-div" : "default-editor-div")"
+/>
 ----
 
 ==== Inline
@@ -90,9 +117,12 @@ Type:: Boolean
 
 ===== Example using Inline
 
-```cs+++<Editor Inline="true">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  Inline="true"
+></Editor>
+----
 
 ==== Disable
 
@@ -109,7 +139,9 @@ Type:: Boolean
 <Editor
   Disable=@disable
 />
-<button @onclick="@(() => disable = !disable)">Toggle</button>
+<button
+  @onclick="@(() => disable = !disable)"
+>Toggle</button>
 ----
 
 ==== JsConfSrc
@@ -134,9 +166,12 @@ window.sample = {
 
 In your component:
 
-```cs+++<Editor JsConfSrc="sample">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  JsConfSrc="sample"
+></Editor>
+----
 
 ==== ScriptSrc
 
@@ -146,9 +181,12 @@ Type:: String
 
 ===== Example using ScriptSrc
 
-```cs+++<Editor ScriptSrc="/path/to/tinymce.min.js">++++++</Editor>+++
-
-```
+[source, cs]
+----
+<Editor
+  ScriptSrc="/path/to/tinymce.min.js"
+></Editor>
+----
 
 ==== Conf
 
@@ -160,7 +198,11 @@ Type:: Dictionary<string, object>
 
 ===== Example using Conf
 
-```cs+++<Editor Conf="@editorConf">++++++</Editor>+++
+[source, cs]
+----
+<Editor
+  Conf="@editorConf"
+></Editor>
 
 @code {
   private Dictionary<string, object> editorConf = new Dictionary<string, object>{
@@ -168,8 +210,9 @@ Type:: Dictionary<string, object>
     {"width", 400}
   };
 }
-```
+----
 
+[[componentbinding]]
 === Component binding
 
 ==== Input binding
@@ -178,17 +221,21 @@ The editor component allows developers to bind the contents of editor to a varia
 
 ===== Example using input binding
 
-```cs
+[source, cs]
+----
 <Editor
   @bind-Value=content
 />
 
-<textarea @bind=content @bind:event="oninput"></textarea>
+<textarea
+  @bind=content
+  @bind:event="oninput"
+></textarea>
 
 @code {
   private string content = "<p>Hello world</p>";
 }
-```
+----
 
 ==== Binding Text output
 
@@ -196,14 +243,18 @@ Starting from TinyMCE.Blazor v0.0.4, the editor exposes the `@bind-Text` propert
 
 ===== Example using output text binding
 
-```cs
+[source, cs]
+----
 <Editor
   @bind-Text=content
 />
 
-<textarea @bind=content @bind:event="oninput"></textarea>
+<textarea
+  @bind=content
+  @bind:event="oninput"
+></textarea>
 
 @code {
   private string content = "";
 }
-```
+----

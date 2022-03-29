@@ -63,6 +63,7 @@ tinymce.activeEditor.windowManager.open({
 });
 ----
 
+[[configurationoptions]]
 === Configuration options
 
 |===
@@ -355,6 +356,7 @@ buttons: [
 ]
 ----
 
+[[dialoginstanceapi]]
 == Dialog instance API
 
 When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the <<configurationoptions,dialog configuration options>>.
@@ -435,6 +437,7 @@ The dialog also contains two footer buttons - a *submit* type button and a *canc
 
 In the `onSubmit` callback, the dialog instance API that is passed into the callback is used to call `getData()`. This function returns the dialog's data store, from which we are able to get the state of the `isdog` checkbox and the value of the `catadata` input. This information is used to construct a sentence which is then inserted into the editor. Finally, `close()` is called to manually close the dialog.
 
+[[interactiveexampleusingredialconfigvoid]]
 === Interactive example using Redial
 
 Redial can be used to change information that is displayed in the dialog, create a multipage form where the next button loads a new form page, or to re-create the dialog with different components or options.

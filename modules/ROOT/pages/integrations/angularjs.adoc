@@ -3,7 +3,7 @@
 :keywords: integration integrate angular angularjs angular1
 :title_nav: AngularJS
 
-Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and link:{baseurl}/demo/basic-example/[{productname}].
+Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and xref:demo/basic-example.adoc[{productname}].
 
 == 1. Setting up the project directory
 
@@ -27,18 +27,30 @@ $ bower install angular-ui-tinymce --save
 
 This *demo.html* file has angular properties and two calls to the controller.
 
-```html
-<!DOCTYPE html>+++<head>++++++<script type="text/javascript" src="bower_components/tinymce/tinymce.js">++++++</script>++++++<script type="text/javascript" src="bower_components/angular/angular.js">++++++</script>++++++<script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js">++++++</script>++++++<script type="text/javascript" src="app.js">++++++</script>++++++</head>++++++<body ng-app="myApp">++++++<form method="post" ng-controller="TinyMceController">++++++<textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel">++++++</textarea>+++
-
-+++<button ng-click="getContent()">+++Get content+++</button>+++ +++<button ng-click="setContent()">+++Set content+++</button>++++++</form>++++++</body>+++
-
-```
+[source, html]
+----
+<!DOCTYPE html>
+<head>
+  <script type="text/javascript" src="bower_components/tinymce/tinymce.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="myApp">
+  <form method="post" ng-controller="TinyMceController">
+    <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+    <button ng-click="getContent()">Get content</button>
+    <button ng-click="setContent()">Set content</button>
+  </form>
+</body>
+----
 
 == 4. Creating the app.js file
 
 The *app.js* file shows you how to work with the model that automatically updates {productname}.
 
-```js
+[source, js]
+----
 var myAppModule = angular.module('myApp', ['ui.tinymce']);
 
 myAppModule.controller('TinyMceController', function($scope) {
@@ -57,7 +69,7 @@ $scope.tinymceOptions = {
     toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
   };
 });
-```
+----
 
 == 5. Testing the application
 

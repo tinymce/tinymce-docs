@@ -13,8 +13,6 @@ This option enables you to specify default attributes for inserted tables.
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table',
-  toolbar: 'table',
   table_default_attributes: {
     border: '1'
   }

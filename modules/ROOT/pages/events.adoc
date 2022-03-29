@@ -164,6 +164,10 @@ The following events are provided by the {productname} editor.
 |AutocompleterStart |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when an autocompleter is triggered and should show the fetched suggestions.
 |AutocompleterUpdate |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when content is changed and the active autocompleter needs to update the suggestions shown.
 |AutocompleterEnd |N/A |Fired when the active autocompleter menu is about to be closed.
+|NewRow |N/A |Fired when a new table row is created.
+|NewCell |N/A |Fired when a new table cell is created.
+|TableModified |`+{ table: HTMLTableElement, structure: boolean, style: boolean }+` |Fired when style or structural changes are made to a table.
+|TableSelectionClear |N/A |Fired when the table selection is cleared.
 |===
 
 == Plugin events

@@ -11,8 +11,6 @@ This option enables you to specify which elements should be cloned as empty chil
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table',
-  toolbar: 'table',
   table_clone_elements: 'strong em a'
 });
 ----

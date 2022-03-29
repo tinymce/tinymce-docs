@@ -1,3 +1,4 @@
+[[tinycomments_create]]
 === `tinycomments_create`
 
 The Comments plugin uses the `tinycomments_create` function to create a comment.
@@ -12,7 +13,7 @@ The `tinycomments_create` function is given a request (req) object as the first 
 
 The `done` callback should accept the following object:
 
-[source, js]
+[source, ts]
 ----
 {
   conversationUid: string, // the new conversation uid
@@ -31,7 +32,7 @@ function create_comment(ref, done, fail) {
   let content = ref.content;
   let createdAt = ref.createdAt;
 
-fetch('https://api.example/conversations/', {
+  fetch('https://api.example/conversations/', {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {

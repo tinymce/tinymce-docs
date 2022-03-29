@@ -1,3 +1,4 @@
+[[a11ychecker_allow_decorative_images]]
 === `a11ychecker_allow_decorative_images`
 
 This option sets whether the Accessibility Checker should allow decorative images. When this option is set to `true`, a decorative image must have *both*:
@@ -24,7 +25,7 @@ If `a11ychecker_allow_decorative_images` is set to `false`, the Accessibility Ch
 * An image has an empty alternative text attribute.
 * An image has the `role="presentation"` attribute.
 
-NOTE: If <<a11y_advanced_options,`a11y_advanced_options`>> is set to `true`, `a11ychecker_allow_decorative_images` will default to `true`.
+NOTE: If xref:a11y_advanced_options[`a11y_advanced_options`] is set to `true`, `a11ychecker_allow_decorative_images` will default to `true`.
 
 *Type:* `Boolean`
 

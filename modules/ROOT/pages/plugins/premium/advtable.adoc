@@ -6,12 +6,16 @@
 :pluginname: Advanced Tables
 :plugincode: advtable
 :plugincategory: premium
-include::partial$misc/requires_5_1v.adoc[] +
+
+include::partial$misc/requires_5_1v.adoc[]
+
 include::partial$misc/premiumplugin.adoc[]
 
-The `advtable` plugin is a premium plugin that extends the core link:{baseurl}/plugins/opensource/table/[`table` plugin] by adding the following advanced functionality:
-- Sort options for rows and columns.
-- Row numbering column for tables. include::partial$misc/requires_5_9v.adoc[]
+The `advtable` plugin is a premium plugin that extends the core xref:plugins/opensource/table.adoc[`table` plugin] by adding the following advanced functionality:
+
+* Sort options for rows and columns.
+* Row numbering column for tables.
+include::partial$misc/requires_5_9v.adoc[]
 
 == Enabling the Advanced Tables plugin
 
@@ -39,8 +43,8 @@ Tables can be sorted by row or column values using:
 |===
 | Sort rows based on the selected column | Advanced Sort Dialog
 
-| image:{baseurl}/images/advtable_context_menu_sort.png[Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).]
-| image:{baseurl}/images/advtable_dialog_sort.png[Advanced Tables sort dialog (Sort > Advanced Sort{ellps}).]
+| image:advtable_context_menu_sort.png[Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).]
+| image:advtable_dialog_sort.png[Advanced Tables sort dialog (Sort > Advanced Sort{ellps}).]
 |===
 
 The plugin is capable of sorting:
@@ -57,9 +61,9 @@ include::partial$misc/requires_5_9v.adoc[]
 
 A row numbering column containing a series of values can be added to a table to help identify rows in a table. To allow row numbering on tables, the `advtablerownumbering` toolbar button and menu item can be used.
 
-A numeric and alpha value series are available by default. The available value series can be configured using the <<advtable_value_series,`advtable_value_series` option>>.
+A numeric and alpha value series are available by default. The available value series can be configured using the xref:advtable_value_series[`advtable_value_series` option].
 
-image::{baseurl}/images/advtable_row_numbering.png[Table with numeric row numbering column and row numbering menu open (Numeric item checked)]
+image::advtable_row_numbering.png[Table with numeric row numbering column and row numbering menu open (Numeric item checked)]
 
 == Configuration options
 
@@ -79,4 +83,4 @@ include::partial$commands/advtable-cmds.adoc[]
 
 == Events
 
-For events applicable to the Advanced Tables plugin, see: link:{baseurl}/plugins/opensource/table/#events[Table plugin - Events].
+For events applicable to the Advanced Tables plugin, see: xref:plugins/opensource/table.adoc#events[Table plugin - Events].

@@ -17,13 +17,13 @@ The *PowerPaste* plugin activates automatically when users paste content into th
 
 To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The {productname} *PowerPaste* plugin will convert the HTML on the clipboard into plain text.
 
-If you configure *PowerPaste* to allow local images (see the <<powerpaste_allow_local_images,`powerpaste_allow_local_images`>> setting below), then images copied from Microsoft Word and other sources will appear in {productname} as Base64 encoded images. You can have {productname} automatically upload Base64 encoded images for reverting back to a standard image as described in the link:{baseurl}/advanced/handle-async-image-uploads/[image upload documentation].
+If you configure *PowerPaste* to allow local images (see the xref:powerpaste_allow_local_images[`powerpaste_allow_local_images`] setting below), then images copied from Microsoft Word and other sources will appear in {productname} as Base64 encoded images. You can have {productname} automatically upload Base64 encoded images for reverting back to a standard image as described in the xref:general-configuration-guide/upload-images.adoc[image upload documentation].
 
 NOTE: PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word and Microsoft Excel content. When doing this, *PowerPaste* extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
 
 == Cloud Installation
 
-To enable the {productname} *PowerPaste* plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}]:
+To enable the {productname} *PowerPaste* plugin with xref:cloud-deployment-guide/editor-and-features.adoc[{cloudname}]:
 
 . If you are currently using the `paste` plugin provided with {productname}, disable it by removing it from the `plugins` list.
 . Add `powerpaste` to the `plugins` list.
@@ -122,7 +122,8 @@ The event listeners are passed the same data objects as their equivalent configu
 
 Example {productname} configuration:
 
-```js
+[source, js]
+----
 const yourCustomFilter = function(content) {
   // Implement your custom filtering and return the filtered content
   return content;
@@ -140,14 +141,17 @@ tinymce.init({
       data.content = newContent;
     });
 
- editor.on('PastePostProcess', function(data) {
-   console.log(data.node, data.mode, data.source);
-   // Apply custom filtering by mutating data.node
-   // For example:
-   const additionalNode = document.createElement('div');
-   additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
-   data.node.insertBefore(additionalNode, data.node.firstElementChild);
- });   } }); ```
+    editor.on('PastePostProcess', function(data) {
+      console.log(data.node, data.mode, data.source);
+      // Apply custom filtering by mutating data.node
+      // For example:
+      const additionalNode = document.createElement('div');
+      additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
+      data.node.insertBefore(additionalNode, data.node.firstElementChild);
+    });
+  }
+});
+----
 
 == Commands
 

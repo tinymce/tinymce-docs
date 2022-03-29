@@ -26,6 +26,7 @@ include::partial$misc/releasenotes_for_stable.adoc[]
 
 The following new features were added for the {productname} 5.9 release.
 
+[[newlanguagetoolbarbuttonandmenuitemincore]]
 === New `language` toolbar button and menu item in core
 
 {productname} 5.9 now supports multilingual content, using the `lang` attribute. There is a new `language` toolbar button, and a new `language` menu item, both configured using the `content_langs` option. There is also a new `Lang` editor command for changing the language of the selection.

@@ -9,7 +9,7 @@ This option takes an array of HTML element names and allows specific HTML elemen
 [discrete]
 ===== Example: `export_ignore_elements`
 
-[source, js]
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

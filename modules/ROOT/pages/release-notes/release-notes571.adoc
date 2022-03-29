@@ -7,13 +7,14 @@
 
 {productname} 5.7.1 was released for {enterpriseversion} and {cloudname} on Wednesday, March 24^th^, 2021. It includes {productname} 5.7.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.7.1, including:
 
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.7.1.
@@ -26,8 +27,9 @@ The {productname} 5.7.1 release includes an accompanying release of the *PowerPa
 
 * Fixed a security issue where dragging and dropping content wasn't correctly sanitized in some cases.
 
-For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.7.1 provides fixes for the following bugs:
@@ -38,6 +40,7 @@ For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/po
 * Fixed context menu items lacking support for the `disabled` and `shortcut` properties.
 * Fixed a regression where the width and height were incorrectly set when embedding content using the `media` dialog.
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.7.1 provides fixes for the following security issues.

@@ -70,15 +70,17 @@ Each top-level properties of the `advtable_value_series` object are used as the 
 | generator
 | `+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+`
 | Required
-| For details on creating a value series generator, see: <<creatingavalueseriesgenerator,Creating a value series generator>>.
+| For details on creating a value series generator, see: xref:creatingavalueseriesgenerator[Creating a value series generator].
 |===
 
+[[creatingavalueseriesgenerator]]
 ==== Creating a value series generator
 
-The `generator` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to: the generator and table cell, the row index, and column index of the table cell. For details, see: <<generatorinfo,GeneratorInfo>>. The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: <<generatorresult,GeneratorResult>>.
+The `generator` is a callback function used to specify how a table cell of a value series will update. The callback is passed information relating to: the generator and table cell, the row index, and column index of the table cell. For details, see: xref:generatorinfo[GeneratorInfo]. The callback should return an object containing the value and optionally, any classes and attributes to be applied to the table cell. For details, see: xref:generatorresult[GeneratorResult].
 
-If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: <<generatorinfo,GeneratorInfo>>.
+If the "state" of the series needs to be kept between generator iterations, additional properties can be added to the generator result. The state can be accessed through the `prev` property of the `info` parameter. For details, see: xref:generatorinfo[GeneratorInfo].
 
+[[generatorinfo]]
 ===== GeneratorInfo
 
 An object with the following properties is passed to the generator callback function as the `info` parameter.
@@ -111,6 +113,7 @@ An object with the following properties is passed to the generator callback func
 | The generator result from the previous iteration.
 |===
 
+[[generatorresult]]
 ===== GeneratorResult
 
 The generator callback function should return an object with the following properties.

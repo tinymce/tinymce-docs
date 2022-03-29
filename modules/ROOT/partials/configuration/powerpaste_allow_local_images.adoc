@@ -1,3 +1,4 @@
+[[powerpaste_allow_local_images]]
 === `powerpaste_allow_local_images`
 
 When set to `true`, Base64 encoded images using a data URI in the copied content will not be removed after pasting.
@@ -6,4 +7,4 @@ When set to `true`, Base64 encoded images using a data URI in the copied content
 
 *Possible values:* `true`, `false`
 
-NOTE: If you configure *_PowerPaste_* to allow local images, you can have {productname} automatically upload Base64 encoded images for conversion back to a standard image as described on the link:{baseurl}/advanced/handle-async-image-uploads/[image upload documentation].
+NOTE: If you configure *_PowerPaste_* to allow local images, you can have {productname} automatically upload Base64 encoded images for conversion back to a standard image as described on the xref:general-configuration-guide/upload-images.adoc[image upload documentation].

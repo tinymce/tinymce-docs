@@ -6,7 +6,7 @@ This option configures which image file formats are accepted by the editor. Chan
 * Which image file formats are allowed to be uploaded in the xref:image.adoc[Image] dialog.
 * Which image file formats are recognized and placed in an `+img+` element by the core paste and xref:introduction-to-powerpaste.adoc[PowerPaste] `+smart_paste+` functionality.
 
-Type: `+String+`
+*Type:* `+String+`
 
 *Default value:* `+'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp'+`
 

@@ -7,7 +7,7 @@ Font CSS files should only contain CSS for specifying custom fonts using the `+@
 
 NOTE: To allow users to apply the fonts added though `+font_css+`, update the fonts list using the xref:user-formatting-options.adoc#font_family_formats[`+font_family_formats+` option].
 
-Type : `+String+`, `+Array+`
+*Type:* `+String+`, `+Array+`
 
 NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant font CSS files should be loaded as part of the webpage {productname} is rendered in, not using the `+font_css+` option.
 

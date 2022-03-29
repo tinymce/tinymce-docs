@@ -32,7 +32,7 @@ None of the configuration properties are required for the TinyMCE Blazor integra
 
 *Default value:* `+'no-api-key'+`
 
-Type : String
+*Type:* String
 
 ==== Example using ApiKey
 
@@ -49,7 +49,7 @@ Specifies the {cloudname} channel to use. For information on {productname} devel
 
 *Default value:* `+'5'+`
 
-Type : String
+*Type:* String
 
 ==== Example using CloudChannel
 
@@ -66,7 +66,7 @@ Specified an Id for the editor. Used for retrieving the editor instance using th
 
 *Default value:* Automatically generated UUID
 
-Type : String
+*Type:* String
 
 ==== Example using Id
 
@@ -83,7 +83,7 @@ Specifies the class of the Editor's container `+div+` in the component. This `+d
 
 *Default value:* `+'tinymce-wrapper'+`
 
-Type : String
+*Type:* String
 
 ==== Examples using ClassName
 
@@ -107,7 +107,7 @@ Set the editor to inline mode.
 
 *Default value:* `+false+`
 
-Type : Boolean
+*Type:* Boolean
 
 ==== Example using Inline
 
@@ -124,7 +124,7 @@ Set the editor to readonly mode.
 
 *Default value:* `+false+`
 
-Type : Boolean
+*Type:* Boolean
 
 ==== Example using Disable
 
@@ -142,7 +142,7 @@ Use a JS object as base configuration for the editor by specifying the path to t
 
 Default : `+null+`
 
-Type : String
+*Type:* String
 
 ==== Example using JsConfSrc
 
@@ -169,7 +169,7 @@ In your component:
 
 Use the `+ScriptSrc+` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the https://www.nuget.org/packages/TinyMCE/[{productname} NuGet package] or a .zip package of {productname}.
 
-Type : String
+*Type:* `+String+`
 
 ==== Example using ScriptSrc
 
@@ -186,7 +186,7 @@ Specify a set of properties for the `+Tinymce.init+` method to initialize the ed
 
 *Default value:* `+null+`
 
-Type : Dictionary<string, object>
+*Type:* Dictionary<string, object>
 
 ==== Example using Conf
 

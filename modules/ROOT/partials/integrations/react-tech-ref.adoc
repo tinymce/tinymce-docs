@@ -166,7 +166,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Default value:* `+"no-api-key"+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+apiKey+`
 
@@ -231,7 +231,7 @@ An id for the editor. Used for retrieving the editor instance using the `+tinymc
 
 *Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+id+`
 
@@ -256,7 +256,7 @@ When using `+tinymce-react+`:
 
 *Default value:* `+{ }+`
 
-Type : `+Object+`
+*Type:* `+Object+`
 
 ==== Example: Using `+init+`
 
@@ -281,7 +281,7 @@ IMPORTANT: Ensure that this is *not* updated by `+onEditorChange+` or the editor
 
 *Default value:* `+''+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using static `+initialValue+`
 
@@ -342,7 +342,7 @@ It is called with two arguments:
 
 For detailed information on using `+onEditorChange+`, see: xref:usingthetinymcereactcomponentasacontrolledcomponent[Using the {productname} React component as a controlled component].
 
-Type : `+EventHandler+`
+*Type:* `+EventHandler+`
 
 [[outputformat]]
 === `+outputFormat+`
@@ -353,7 +353,7 @@ Used to specify the format of the content produced by the xref:oneditorchange[`+
 
 This does not change the input format, so the editor must still be supplied HTML in the `+value+` or `+initialValue+`, which makes this prop much harder to use correctly than it initially seems.
 
-Type : `+String+`
+*Type:* `+String+`
 
 *Default value:* `+'html'+`
 
@@ -417,7 +417,7 @@ Used to include plugins for the editor. Using `+<Editor plugins='lists' />+` is 
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -487,7 +487,7 @@ Only valid when xref:inline[`+<Editor inline={true} />+`]. Used to define the HT
 
 *Default value:* `+'div'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tagName+`
 
@@ -506,7 +506,7 @@ Only valid when the editor is in classic (iframe) mode. Sets the `+name+` attrib
 
 *Default value:* `+'undefined'k+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+textareaName+`
 
@@ -529,7 +529,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 
 *Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+toolbar+`
 
@@ -546,7 +546,7 @@ Type : `+String+`
 
 Use the `+tinymceScriptSrc+` prop to specify an external version of {productname} to lazy load.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tinymceScriptSrc+`
 
@@ -568,7 +568,7 @@ This prop allows the editor to be used as a controlled component by setting the 
 
 For detailed information on using the `+value+` prop, see: xref:usingthetinymcereactcomponentasacontrolledcomponent[Using the {productname} React component as a controlled component].
 
-Type : `+String+`
+*Type:* `+String+`
 
 [[usingthetinymcereactcomponentasauncontrolledcomponent]]
 == Using the {productname} React component as a uncontrolled component

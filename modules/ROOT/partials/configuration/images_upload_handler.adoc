@@ -15,7 +15,7 @@ and returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/
 
 When this option is not set, {productname} utilizes an `+XMLHttpRequest+` to upload images one at a time to the server and resolves the `Promise` with the JSON `location` property for the remote image returned by the server.
 
-Type: `+Function+`
+*Type:* `+Function+`
 
 === Example: Using `+images_upload_handler+`
 

@@ -11,7 +11,7 @@ ifeval::["{plugincode}" != "rtc"]
 Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
 endif::[]
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 Input parameters :
 include::partial$rtc/rtc-client-connect-inputs.adoc[]

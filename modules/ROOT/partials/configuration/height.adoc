@@ -5,7 +5,7 @@
 
 NOTE: If a number is provided, {productname} sets the height in pixels. If a string is provided, {productname} assumes the value is valid CSS and sets the editor's height as the string value. This allows for alternate units such as `+%+`, `+em+`, and `+vh+`.
 
-Type : `+Number+` or `+String+`
+*Type:* `+Number+` or `+String+`
 
 *Default value:* `+400+` or the size of the target element if larger than 400 pixels
 

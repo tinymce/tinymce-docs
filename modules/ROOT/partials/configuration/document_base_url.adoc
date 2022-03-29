@@ -5,7 +5,7 @@ This option specifies the base URL for all relative URLs in the document. The de
 
 This option also interacts with the xref:url-handling.adoc#relative_urls[relative_urls], xref:url-handling.adoc#remove_script_host[remove_script_host], and xref:url-handling.adoc#convert_urls[convert_urls] options to determine whether {productname} returns relative or absolute URLs. The xref:url-handling.adoc[URL handling options page] contains a thorough description and examples of working with relative and absolute URLs.
 
-Type : `+String+`
+*Type:* `+String+`
 
 === Example: Using `+document_base_url+`
 

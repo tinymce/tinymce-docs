@@ -12,7 +12,7 @@ ifeval::["{plugincode}" != "rtc"]
 Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
 endif::[]
 
-Type : Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
+*Type:* Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
 Input parameters : | Field | Type | Description | |-------|:----:|-------------| | `+documentId+` | `+string+` | The document ID configured using the `+rtc_document_id+` option.
 

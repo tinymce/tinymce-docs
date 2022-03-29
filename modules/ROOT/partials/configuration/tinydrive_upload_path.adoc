@@ -9,7 +9,7 @@ This option sets the default upload path for files:
 
 It will produce a date-based structure within this path, such as: `+/uploads/{year}{month}{day}+`. This is to avoid having thousands of files in the same directory.
 
-Type : `+String+`
+*Type:* `+String+`
 
 *Default value:* `+"/uploads"+`
 

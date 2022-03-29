@@ -7,7 +7,7 @@ include::partial$plugins/tinydrive-filetypeslist.adoc[]
 
 For example: If the application is using {cloudfilemanager} to insert images, then set `+['image']+` in the file types array.
 
-Type : `+Array<string>+`
+*Type:* `+Array<string>+`
 
 [[interactive-example-using-filetypes-to-restrict-sitecloudfilemanager-to-image-formats]]
 === Interactive example: Using `+filetypes+` to restrict {cloudfilemanager} to image formats

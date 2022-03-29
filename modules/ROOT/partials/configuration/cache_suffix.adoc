@@ -3,7 +3,7 @@
 
 This option allows a custom cache buster URL part to be added at the end of each request {productname} makes to load CSS, scripts, etc. Just add the query string part that should be appended to each URL request, for example "?v=4.1.6".
 
-Type : `+String+`
+*Type:* `+String+`
 
 === Example: Using `+cache_suffix+`
 

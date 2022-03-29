@@ -114,7 +114,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Default value:* `+'no-api-key'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+apiKey+`
 
@@ -175,7 +175,7 @@ An id for the editor. Used for retrieving the editor instance using the `+tinymc
 
 *Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+id+`
 
@@ -195,7 +195,7 @@ For information on the {productname} selector (`+tinymce.init+`), see: xref:basi
 
 *Default value:* `+{ }+`
 
-Type : `+Object+`
+*Type:* `+Object+`
 
 ==== Example: Using `+init+`
 
@@ -216,7 +216,7 @@ Initial content of the editor when the editor is initialized.
 
 *Default value:* `+' '+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+initialValue+`
 
@@ -254,7 +254,7 @@ Used to include plugins for the editor. Using `+<editor plugins="lists code"></e
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -270,7 +270,7 @@ Type : `+String+` or `+Array+`
 
 Used to specify the format of the content emitted by the `+tinymce-angular+` component when used in conjunction with forms or plain data bindings.
 
-Type : `+String+`
+*Type:* `+String+`
 
 *Default value:* `+'html'+`
 
@@ -292,7 +292,7 @@ Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to defi
 
 *Default value:* `+'div'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tagName+`
 
@@ -313,7 +313,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 
 *Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+toolbar+`
 
@@ -348,7 +348,7 @@ Used to specify the events that trigger the `+NgModelChange+` to emit.
 
 *Possible values:* A space separated list of TinyMCE editor events.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+modelEvents+`
 
@@ -474,7 +474,7 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 
 *Possible values:* A comma separated list of events to allow.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+allowedEvents+`
 
@@ -494,7 +494,7 @@ Used to block a list of events from the `+tinymce-angular+` component.
 
 *Possible values:* A comma separated list of events to ignore.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+ignoreEvents+`
 

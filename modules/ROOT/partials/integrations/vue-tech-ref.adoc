@@ -113,7 +113,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Default value:* `+'no-api-key'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+api-key+`
 
@@ -175,7 +175,7 @@ An id for the editor. Used for retrieving the editor instance using the `+tinymc
 
 *Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+id+`
 
@@ -195,7 +195,7 @@ For information on the {productname} selector (`+tinymce.init+`), see: xref:basi
 
 *Default value:* `+'{ }'+`
 
-Type : `+Object+`
+*Type:* `+Object+`
 
 ==== Example: Using `+init+`
 
@@ -216,7 +216,7 @@ Initial content of the editor when the editor is initialized.
 
 *Default value:* `+' '+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+initial-value+`
 
@@ -256,7 +256,7 @@ For a list of available {productname} events, see: xref:events.adoc#editorcoreev
 
 *Default value:* `+'change keyup undo redo'+`.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+model-events+`
 
@@ -272,7 +272,7 @@ Type : `+String+`
 
 Used to specify the format of the content emitted via the `+input+` event. This affects the format of the content used in conjunction with data binding.
 
-Type : `+String+`
+*Type:* `+String+`
 
 *Default value:* `+'html'+`
 
@@ -294,7 +294,7 @@ Used to include plugins for the editor. Using `+<editor plugins="lists code" />+
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -312,7 +312,7 @@ Only valid when xref:inline[`+<editor :inline=true />+`]. Used to define the HTM
 
 *Default value:* `+'div'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tag-name+`
 
@@ -333,7 +333,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 
 *Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+toolbar+`
 
@@ -350,7 +350,7 @@ Type : `+String+`
 
 Use the `+tinymce-script-src+` prop to specify an external version of TinyMCE to lazy load.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tinymce-script-src+`
 

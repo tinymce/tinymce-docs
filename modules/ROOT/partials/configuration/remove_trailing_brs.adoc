@@ -5,7 +5,7 @@ This option allows you to disable {productname}'s default behavior of removing `
 
 https://en.wikipedia.org/wiki/Gecko_(software)[Gecko] and https://en.wikipedia.org/wiki/WebKit[WebKit] browsers inject these elements to make it possible to place the caret in empty blocks. This logic attempts to remove these elements while also keeping tags that were intentionally placed by the user.
 
-Type : `+Boolean+`
+*Type:* `+Boolean+`
 
 *Default value:* `+true+`
 

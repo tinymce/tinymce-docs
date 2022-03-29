@@ -482,7 +482,7 @@ To write the logs to a specific file:
 [[step1createaloggingconfigurationxmlfile]]
 . Create a logging configuration XML file. Save the snippet below as `logback.xml` after replacing pass:[{$LOG_LOCATION}] with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 +
-[source, xml, subs='attributes+']
+[source, xml, subs="attributes+"]
 ----
 <configuration>
 

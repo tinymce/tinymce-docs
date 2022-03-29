@@ -16,7 +16,7 @@ tinymce.init({
 });
 ----
 
-=== Disable select
+==== Disable select
 
 When the `tiny_pageembed_classes` value is set to an empty array, the size selection fields are not available and only exact sizes can be set. Use the following script to disable `select` using the `tiny_pageembed_classes` option:
 

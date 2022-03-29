@@ -3,9 +3,7 @@
 :description: The history of TinyMCE releases.
 :keywords: changelog
 
-____
-This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes/index.adoc[{productname} Release Notes].
-____
+NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes/index.adoc[{productname} Release Notes].
 
 == 5.10.2 - 2021-11-17
 
@@ -246,10 +244,7 @@ ____
 * Fixed a regression in the `tinymce.create()` API that caused issues when multiple objects were created.
 * Fixed the `LineHeight` command causing the `change` event to be fired inconsistently.
 
-// Note: The below anchor is matches a historical changelog format and is not needed for new versions in the changelog.
-
-+++<a class="anchor" id="version571march172021">++++++</a>+++
-
+[[version571march172021]]
 == 5.7.1 - 2021-03-17
 
 === Fixed
@@ -261,8 +256,7 @@ ____
 * Fixed context menu items lacking support for the `disabled` and `shortcut` properties.
 * Fixed a regression where the width and height were incorrectly set when embedding content using the `media` dialog.
 
-+++<a class="anchor" id="version570february102021">++++++</a>+++
-
+[[version570february102021]]
 == 5.7.0 - 2021-02-10
 
 === Added
@@ -316,16 +310,14 @@ ____
 * Fixed an issue where file extensions with uppercase characters were treated as invalid.
 * Fixed dialog block messages were not passed through TinyMCE's translation system.
 
-+++<a class="anchor" id="version562december82020">++++++</a>+++
-
+[[version562december82020]]
 == 5.6.2 - 2020-12-08
 
 === Fixed
 
 * Fixed a UI rendering regression when the document body is using `display: flex`.
 
-+++<a class="anchor" id="version561november252020">++++++</a>+++
-
+[[version561november252020]]
 == 5.6.1 - 2020-11-25
 
 === Fixed
@@ -335,8 +327,7 @@ ____
 * Fixed an issue where copying and pasting table columns resulted in invalid HTML when using colgroups.
 * Fixed an issue where the toolbar would render with the wrong width for inline editors in some situations.
 
-+++<a class="anchor" id="version560november182020">++++++</a>+++
-
+[[version560november182020]]
 == 5.6.0 - 2020-11-18
 
 === Added
@@ -389,8 +380,7 @@ ____
 * Fixed a regression that caused the selection to be difficult to see in tables with backgrounds.
 * Fixed content pasted multiple times in the editor when using Microsoft Internet Explorer 11. Patch contributed by mattford.
 
-+++<a class="anchor" id="version551october12020">++++++</a>+++
-
+[[version551october12020]]
 == 5.5.1 - 2020-10-01
 
 === Fixed
@@ -398,8 +388,7 @@ ____
 * Fixed pressing the down key near the end of a document incorrectly raising an exception.
 * Fixed incorrect Typescript types for the `Tools` API.
 
-+++<a class="anchor" id="version550september292020">++++++</a>+++
-
+[[version550september292020]]
 == 5.5.0 - 2020-09-29
 
 === Added
@@ -459,8 +448,7 @@ ____
 * Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances.
 * Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false.
 
-+++<a class="anchor" id="version542august172020">++++++</a>+++
-
+[[version542august172020]]
 == 5.4.2 - 2020-08-17
 
 === Fixed
@@ -479,8 +467,7 @@ ____
 * Fixed the list type style not retained when copying list items.
 * Fixed the Paste plugin converting tabs in plain text to a single space character. A `paste_tab_spaces` option has been included for setting the number of spaces used to replace a tab character.
 
-+++<a class="anchor" id="version541july82020">++++++</a>+++
-
+[[version541july82020]]
 == 5.4.1 - 2020-07-08
 
 === Fixed
@@ -492,8 +479,7 @@ ____
 * Fixed Oxide checklist styles not showing when printing.
 * Fixed bug with `scope` attribute not being added to the cells of header rows.
 
-+++<a class="anchor" id="version540june302020">++++++</a>+++
-
+[[version540june302020]]
 == 5.4.0 - 2020-06-30
 
 === Added
@@ -539,16 +525,14 @@ ____
 * Fixed the `link` plugin now suggest `mailto:` when the text contains an '@' and no slashes (`/`).
 * Fixed the `valid_children` check of custom elements now allows a wider range of characters in names.
 
-+++<a class="anchor" id="version532june102020">++++++</a>+++
-
+[[version532june102020]]
 == 5.3.2 - 2020-06-10
 
 === Fixed
 
 * Fixed a regression introduced in 5.3.0, where `images_dataimg_filter` was no-longer called.
 
-+++<a class="anchor" id="version531may272020">++++++</a>+++
-
+[[version531may272020]]
 == 5.3.1 - 2020-05-27
 
 === Fixed
@@ -556,8 +540,7 @@ ____
 * Fixed the image upload error alert also incorrectly closing the image dialog.
 * Fixed editor content scrolling incorrectly on focus in Firefox by reverting default content CSS html and body heights added in 5.3.0.
 
-+++<a class="anchor" id="version530may212020">++++++</a>+++
-
+[[version530may212020]]
 == 5.3.0 - 2020-05-21
 
 === Added
@@ -604,8 +587,7 @@ ____
 * Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting.
 * Fixed an issue where deleting all content in a single cell table would delete the entire table.
 
-+++<a class="anchor" id="version522april232020">++++++</a>+++
-
+[[version522april232020]]
 == 5.2.2 - 2020-04-23
 
 === Fixed
@@ -616,8 +598,7 @@ ____
 * Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
 * Fixed `media` embed content not processing safely in some cases.
 
-+++<a class="anchor" id="version521march252020">++++++</a>+++
-
+[[version521march252020]]
 == 5.2.1 - 2020-03-25
 
 === Fixed
@@ -641,8 +622,7 @@ ____
 * Fixed an issue where removing the background color of text did not always work.
 * Fixed an issue where new rows and columns in a table did not retain the style of the previous row or column.
 
-+++<a class="anchor" id="version520february132020">++++++</a>+++
-
+[[version520february132020]]
 == 5.2.0 - 2020-02-13
 
 === Added
@@ -703,8 +683,7 @@ ____
 * Fixed keyboard flicker when opening a context menu on mobile.
 * Fixed issue where plus icon svg contained strokes.
 
-+++<a class="anchor" id="version516january282020">++++++</a>+++
-
+[[version516january282020]]
 == 5.1.6 - 2020-01-28
 
 === Fixed
@@ -717,8 +696,7 @@ ____
 * Fixed the `image` plugin not respecting the `automatic_uploads` setting when uploading local images.
 * Fixed security issue related to parsing HTML comments and CDATA.
 
-+++<a class="anchor" id="version515december192019">++++++</a>+++
-
+[[version515december192019]]
 == 5.1.5 - 2019-12-19
 
 === Fixed
@@ -728,8 +706,7 @@ ____
 * Fixed an exception being raised when inserting content if the caret was directly before or after a `contenteditable="false"` element.
 * Fixed a bug with pasting image URLs when paste as text is enabled.
 
-+++<a class="anchor" id="version514december112019">++++++</a>+++
-
+[[version514december112019]]
 == 5.1.4 - 2019-12-11
 
 === Fixed
@@ -741,8 +718,7 @@ ____
 * Fixed an issue with the `paste` plugin not sanitizing content in some cases.
 * Fixed HTML comments incorrectly being parsed in certain cases.
 
-+++<a class="anchor" id="version513december42019">++++++</a>+++
-
+[[version513december42019]]
 == 5.1.3 - 2019-12-04
 
 === Fixed
@@ -755,8 +731,7 @@ ____
 * Fixed search and replace dialog disappearing when finding offscreen matches on iOS devices.
 * Fixed performance issues where sticky toolbar was jumping while scrolling on slower browsers.
 
-+++<a class="anchor" id="version512november192019">++++++</a>+++
-
+[[version512november192019]]
 == 5.1.2 - 2019-11-19
 
 === Fixed
@@ -778,8 +753,7 @@ ____
 * Fixed quickbars quickimage picker not working on mobile.
 * Fixed fullscreen not resizing in an iOS WKWebView component.
 
-+++<a class="anchor" id="version511october282019">++++++</a>+++
-
+[[version511october282019]]
 == 5.1.1 - 2019-10-28
 
 === Fixed
@@ -789,8 +763,7 @@ ____
 * Fixed clicking outside a modal dialog focusing on the document body.
 * Fixed the context toolbar not hiding when scrolled out of view.
 
-+++<a class="anchor" id="version510october172019">++++++</a>+++
-
+[[version510october172019]]
 == 5.1.0 - 2019-10-17
 
 === Added
@@ -845,8 +818,7 @@ ____
 * Fixed the autocompleter not activating immediately after a `br` or `contenteditable=false` element.
 * Fixed an issue where the autocompleter would incorrectly close on IE 11 in certain edge cases.
 
-+++<a class="anchor" id="version5016september242019">++++++</a>+++
-
+[[version5016september242019]]
 == 5.0.16 - 2019-09-24
 
 === Added
@@ -864,8 +836,7 @@ ____
 * Fixed notifications appearing on top of the toolbar when scrolled in inline mode.
 * Fixed notifications displaying incorrectly on IE 11.
 
-+++<a class="anchor" id="version5015september22019">++++++</a>+++
-
+[[version5015september22019]]
 == 5.0.15 - 2019-09-02
 
 === Added
@@ -882,8 +853,7 @@ ____
 * Fixed `onChange` callback not firing for the colorinput dialog component.
 * Fixed context toolbars not showing in fullscreen mode.
 
-+++<a class="anchor" id="version5014august192019">++++++</a>+++
-
+[[version5014august192019]]
 == 5.0.14 - 2019-08-19
 
 === Added
@@ -903,8 +873,7 @@ ____
 
 * Removed Oxide variable `@menubar-select-disabled-border-color` and replaced it with `@menubar-select-disabled-border`.
 
-+++<a class="anchor" id="version5013august62019">++++++</a>+++
-
+[[version5013august62019]]
 == 5.0.13 - 2019-08-06
 
 === Changed
@@ -928,8 +897,7 @@ ____
 * Fixed dialogs being able to be dragged outside the window viewport.
 * Fixed inline dialogs appearing above modal dialogs.
 
-+++<a class="anchor" id="version5012july182019">++++++</a>+++
-
+[[version5012july182019]]
 == 5.0.12 - 2019-07-18
 
 === Added
@@ -953,8 +921,7 @@ ____
 * Fixed the context toolbar overlapping the toolbar in various conditions.
 * Fixed IE11 edge case where items were being inserted into the wrong location.
 
-+++<a class="anchor" id="version5011july42019">++++++</a>+++
-
+[[version5011july42019]]
 == 5.0.11 - 2019-07-04
 
 === Fixed
@@ -963,8 +930,7 @@ ____
 * Fixed the customeditor component not able to get data from the dialog api.
 * Fixed collection component tooltips not being translated.
 
-+++<a class="anchor" id="version5010july22019">++++++</a>+++
-
+[[version5010july22019]]
 == 5.0.10 - 2019-07-02
 
 === Added
@@ -996,16 +962,14 @@ ____
 * Fixed exception being thrown when creating relative URIs.
 * Fixed focus is no longer set to the editor content during mode changes unless the editor already had focus.
 
-+++<a class="anchor" id="version509june262019">++++++</a>+++
-
+[[version509june262019]]
 == 5.0.9 - 2019-06-26
 
 === Fixed
 
 * Fixed print plugin not working in Firefox.
 
-+++<a class="anchor" id="version508june182019">++++++</a>+++
-
+[[version508june182019]]
 == 5.0.8 - 2019-06-18
 
 === Added
@@ -1034,8 +998,7 @@ ____
 * Fixed native context menu not showing with images in IE11.
 * Fixed inconsistent browser context menu image selection.
 
-+++<a class="anchor" id="version507june52019">++++++</a>+++
-
+[[version507june52019]]
 == 5.0.7 - 2019-06-05
 
 === Added
@@ -1067,8 +1030,7 @@ ____
 * Fixed the autocompleter menu showing up after a selection had been made.
 * Fixed an exception being thrown when a file or number input has focus during initialization. Patch contributed by t00.
 
-+++<a class="anchor" id="version506may222019">++++++</a>+++
-
+[[version506may222019]]
 == 5.0.6 - 2019-05-22
 
 === Added
@@ -1093,8 +1055,7 @@ ____
 * Fixed `mceInsertLink` command inserting spaces instead of url encoded characters.
 * Fixed text content floating on top of dialogs in IE11.
 
-+++<a class="anchor" id="version505may92019">++++++</a>+++
-
+[[version505may92019]]
 == 5.0.5 - 2019-05-09
 
 === Added
@@ -1113,8 +1074,7 @@ ____
 
 * Removed unused and hidden validation icons to avoid displaying phantom tooltips.
 
-+++<a class="anchor" id="version504april232019">++++++</a>+++
-
+[[version504april232019]]
 == 5.0.4 - 2019-04-23
 
 === Added
@@ -1144,8 +1104,7 @@ ____
 
 * Removed redundant mobile wrapper.
 
-+++<a class="anchor" id="version503march192019">++++++</a>+++
-
+[[version503march192019]]
 == 5.0.3 - 2019-03-19
 
 === Changed
@@ -1169,8 +1128,7 @@ ____
 * Fixed the `link` plugin context toolbar missing the open link button.
 * Fixed inconsistent dialog component spacing.
 
-+++<a class="anchor" id="version502march52019">++++++</a>+++
-
+[[version502march52019]]
 == 5.0.2 - 2019-03-05
 
 === Added
@@ -1202,8 +1160,7 @@ ____
 * Fixed the resize icon floating left when all status bar elements were disabled.
 * Fixed the resize handle to not show in fullscreen mode.
 
-+++<a class="anchor" id="version501february212019">++++++</a>+++
-
+[[version501february212019]]
 == 5.0.1 - 2019-02-21
 
 === Added
@@ -1236,8 +1193,7 @@ ____
 
 * Removed paste as text notification banner and paste_plaintext_inform setting.
 
-+++<a class="anchor" id="version500february42019">++++++</a>+++
-
+[[version500february42019]]
 == 5.0.0 - 2019-02-04
 
 Full documentation for the version 5 features and changes is available at \https://www.tiny.cloud/docs/release-notes/
@@ -1262,8 +1218,7 @@ Full documentation for the version 5 features and changes is available at \https
 * Fixed charmap and emoticons dialogs not having a primary button.
 * Fixed an issue where resizing wouldn't work correctly depending on the box-sizing model.
 
-+++<a class="anchor" id="version500-rc-2january222019">++++++</a>+++
-
+[[version500-rc-2january222019]]
 == 5.0.0-rc-2 - 2019-01-22
 
 === Added
@@ -1289,8 +1244,7 @@ Full documentation for the version 5 features and changes is available at \https
 
 * Removed unnecessary 'flex' and unused 'colspan' properties from the new dialog APIs.
 
-+++<a class="anchor" id="version500-rc-1january82019">++++++</a>+++
-
+[[version500-rc-1january82019]]
 == 5.0.0-rc-1 - 2019-01-08
 
 === Added
@@ -1318,8 +1272,7 @@ Full documentation for the version 5 features and changes is available at \https
 * Fixed an issue where preview wouldn't show anything in Edge under certain circumstances.
 * Fixed the height being incorrectly calculated for the autoresize plugin.
 
-+++<a class="anchor" id="version500-beta-1november302018">++++++</a>+++
-
+[[version500-beta-1november302018]]
 == 5.0.0-beta-1 - 2018-11-30
 
 === Added
@@ -1349,8 +1302,7 @@ Full documentation for the version 5 features and changes is available at \https
 
 * Removed compat3x plugin.
 
-+++<a class="anchor" id="version500-preview-4november122018">++++++</a>+++
-
+[[version500-preview-4november122018]]
 == 5.0.0-preview-4 - 2018-11-12
 
 === Added
@@ -1395,8 +1347,7 @@ Full documentation for the version 5 features and changes is available at \https
 
 * Removed the tox-custom-editor class that was added to the wrapping element of codemirror.
 
-+++<a class="anchor" id="version500-preview-3october182018">++++++</a>+++
-
+[[version500-preview-3october182018]]
 == 5.0.0-preview-3 - 2018-10-18
 
 === Changed
@@ -1416,8 +1367,7 @@ Full documentation for the version 5 features and changes is available at \https
 * Fixed vertical alignment of toolbar icons.
 * Fixed toolbar icons not appearing on IE11.
 
-+++<a class="anchor" id="version500-preview-2october102018">++++++</a>+++
-
+[[version500-preview-2october102018]]
 == 5.0.0-preview-2 - 2018-10-10
 
 === Added
@@ -1445,8 +1395,7 @@ Full documentation for the version 5 features and changes is available at \https
 * Removed `colorpicker` plugin, it is now in the theme.
 * Removed `textcolor` plugin, it is now in the theme.
 
-+++<a class="anchor" id="version500-preview-1october12018">++++++</a>+++
-
+[[version500-preview-1october12018]]
 == 5.0.0-preview-1 - 2018-10-01
 
 Developer preview 1

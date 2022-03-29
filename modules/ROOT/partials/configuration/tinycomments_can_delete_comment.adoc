@@ -1,3 +1,4 @@
+[[tinycomments_can_delete_comment]]
 === `tinycomments_can_delete_comment`
 
 _Optional_ - This option sets the author permissions for _deleting comments_. If the `tinycomments_can_delete_comment` option is not included, the current author (`tinycomments_author`) cannot delete comments added by other authors.
@@ -20,7 +21,8 @@ The following example extends the default behavior to allow the author `<Admin u
 
 ==== Example: Using `tinycomments_can_delete_comment`
 
-```js
+[source, js]
+----
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
@@ -29,4 +31,8 @@ tinymce.init({
   tinycomments_can_delete_comment: function (req, done, fail) {
     var allowed = req.comment.author === currentAuthor;
     done({
-      canDelete: allowed || currentAuthor === '+++<Admin user="">+++' }); } }); ```+++</Admin>+++
+      canDelete: allowed || currentAuthor === '<Admin user>'
+    });
+  }
+});
+----

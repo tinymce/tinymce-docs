@@ -30,7 +30,7 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
 
-Default Value : `+"no-api-key"+`
+*Default value:* `+'no-api-key'+`
 
 Type : String
 
@@ -48,7 +48,7 @@ Type : String
 
 Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: xref:editor-plugin-version.adoc[Specifying the {productname} editor version deployed from Cloud].
 
-Default Value : `+"5"+`
+*Default value:* `+'5'+`
 
 Type : String
 
@@ -66,7 +66,7 @@ Type : String
 
 Specified an Id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-Default Value : Automatically generated UUID
+*Default value: Automatically generated UUID
 
 Type : String
 
@@ -84,7 +84,7 @@ Type : String
 
 Set the editor to inline mode.
 
-Default Value : `+false+`
+*Default value:* `+false+`
 
 Type : Boolean
 
@@ -102,7 +102,7 @@ Type : Boolean
 
 Set the editor to readonly mode.
 
-Default Value : `+false+`
+*Default value:* `+false+`
 
 Type : Boolean
 
@@ -136,7 +136,7 @@ Type : String
 
 Specify a set of properties for the `+Tinymce.init+` method to initialize the editor.
 
-Default Value : `+{}+`
+*Default value:* `+{}+`
 
 Type : Object
 

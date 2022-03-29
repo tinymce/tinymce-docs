@@ -164,7 +164,7 @@ Required for deployments using the {cloudname} to provide the {productname} edit
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default Value : `+no-api-key+`
+*Default value:* `+"no-api-key"+`
 
 Type : `+String+`
 
@@ -182,7 +182,7 @@ Type : `+String+`
 
 Changes the {productname} build used for the editor to either a specific version or a channel indicating a stability level.
 
-Default Value : `'{productmajorversion}-stable'`
+*Default value:* `'{productmajorversion}-stable'`
 
 Possible Values : `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
@@ -211,7 +211,7 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` prop can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default Value : `+false+`
+*Default value:* `+false+`
 
 Possible Values : `+true+`, `+false+`
 
@@ -229,7 +229,7 @@ Possible Values : `+true+`, `+false+`
 
 An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-Default Value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
 Type : `+String+`
 
@@ -254,7 +254,7 @@ When using `+tinymce-react+`:
 * The `+init+` prop does not require the `+selector+` or `+target+` options
 * If the `+selector+`, `+target+`, or `+readonly+` options are set using the `+init+` prop, they will be _overridden_ by the integration.
 
-Default Value : `+{ }+`
+*Default value:* `+{ }+`
 
 Type : `+Object+`
 
@@ -279,7 +279,7 @@ This may be set either before the editor loads, or soon afterwards by an asynchr
 
 IMPORTANT: Ensure that this is *not* updated by `+onEditorChange+` or the editor will be unusable.
 
-Default Value : `+''+`
+*Default value:* `+''+`
 
 Type : `+String+`
 
@@ -316,7 +316,7 @@ Used to set the editor to inline mode. Using `+<Editor inline={true} />+` is the
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default Value : `+false+`
+*Default value:* `+false+`
 
 Possible Values : `+true+`, `+false+`
 
@@ -355,7 +355,7 @@ This does not change the input format, so the editor must still be supplied HTML
 
 Type : `+String+`
 
-Default Value : `+'html'+`
+*Default value:* `+'html'+`
 
 Possible Values : `+'html'+`, `+'text'+`
 
@@ -440,18 +440,18 @@ Contains 3 settings:
 [quote, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async]
 For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.
 
-**Default Value:** `false`
+*Default value:* `false`
 
 `+defer+` : Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer[`+defer+`] attribute on the script tag created to load {productname}.
 
 [quote, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer]
 This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
 
-**Default Value:** `false`
+*Default value:* `false`
 
 `+delay+` : The script tag to load {productname} will be added after the specified delay in milliseconds.
 
-**Default Value:** `0`
+*Default value:* `0`
 
 **Type:** `Object`
 
@@ -485,7 +485,7 @@ This Boolean attribute is set to indicate to a browser that the script is meant 
 
 Only valid when xref:inline[`+<Editor inline={true} />+`]. Used to define the HTML element for the editor in inline mode.
 
-Default Value : `+'div'+`
+*Default value:* `+'div'+`
 
 Type : `+String+`
 
@@ -504,7 +504,7 @@ Type : `+String+`
 
 Only valid when the editor is in classic (iframe) mode. Sets the `+name+` attribute for the `+textarea+` element used for the editor in forms.
 
-Default Value : `+undefined+`
+*Default value:* `+'undefined'k+`
 
 Type : `+String+`
 

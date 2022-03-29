@@ -111,7 +111,7 @@ None of the configuration properties are *required* for `+tinymce-vue+` to work.
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default Value : `+no-api-key+`
+*Default value:* `+'no-api-key'+`
 
 Type : `+String+`
 
@@ -127,7 +127,7 @@ Type : `+String+`
 [[cloud-channel]]
 === `+cloud-channel+`
 
-Default Value : `'{productmajorversion}'`
+*Default value:* `'{productmajorversion}'`
 
 Possible Values : `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`
 
@@ -155,7 +155,7 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default Value : `+false+`
+*Default value:* `+false+`
 
 Possible Values : `+true+`, `+false+`
 
@@ -171,9 +171,9 @@ Possible Values : `+true+`, `+false+`
 [[id]]
 === `+id+`
 
-An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].*
 
-Default Value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
 Type : `+String+`
 
@@ -193,7 +193,7 @@ Object sent to the `+tinymce.init+` method used to initialize the editor.
 
 For information on the {productname} selector (`+tinymce.init+`), see: xref:basic-setup.adoc[Basic setup].
 
-Default Value : `+"{ }"+`
+*Default value:* `+'{ }'+`
 
 Type : `+Object+`
 
@@ -214,7 +214,7 @@ Type : `+Object+`
 
 Initial content of the editor when the editor is initialized.
 
-Default Value : `+" "+`
+*Default value:* `+' '+`
 
 Type : `+String+`
 
@@ -234,7 +234,7 @@ Used to set the editor to inline mode. Using `+<editor :inline=true />+` is the 
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default Value : `+false+`
+*Default value:* `+false+`
 
 Possible Values : `+true+`, `+false+`
 
@@ -254,7 +254,7 @@ Sets the trigger events for xref:forminputbindingsv-model[v-model events].
 
 For a list of available {productname} events, see: xref:events.adoc#editorcoreevents[Available Events - Editor events].
 
-Default Value : `+'change keyup undo redo'+`.
+*Default value:* `+'change keyup undo redo'+`.
 
 Type : `+String+`
 
@@ -274,7 +274,7 @@ Used to specify the format of the content emitted via the `+input+` event. This 
 
 Type : `+String+`
 
-Default Value : `+'html'+`
+*Default value:* `+'html'+`
 
 Possible Values : `+'html'+`, `+'text'+`
 
@@ -310,7 +310,7 @@ Type : `+String+` or `+Array+`
 
 Only valid when xref:inline[`+<editor :inline=true />+`]. Used to define the HTML element for the editor in inline mode.
 
-Default Value : `+'div'+`
+*Default value:* `+'div'+`
 
 Type : `+String+`
 

@@ -8,7 +8,7 @@ Set whether {productname} should prepend a `+http://+` prefix if the supplied UR
 * `+'http'+`: URLs are assumed to be external. URLs without a protocol prefix are prepended a `+http://+` prefix.
 * `+'https'+`: URLs are assumed to be external. URLs without a protocol prefix are prepended a `+https://+` prefix.
 
-Default Value: `+false+`
+*Default value:* `+false+`
 
 Possible Values: `+true+`, `+false+`, `+'http'+`, `+'https'+`
 

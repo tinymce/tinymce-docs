@@ -129,7 +129,7 @@ Type : `+String+`
 
 *Default value:* `'{productmajorversion}'`
 
-Possible Values : `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
@@ -157,7 +157,7 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 
 *Default value:* `+false+`
 
-Possible Values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+disabled+`
 
@@ -236,7 +236,7 @@ For information on inline mode, see: xref:inline-editor-options.adoc#inline[User
 
 *Default value:* `+false+`
 
-Possible Values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+inline+`
 
@@ -276,7 +276,7 @@ Type : `+String+`
 
 *Default value:* `+'html'+`
 
-Possible Values : `+'html'+`, `+'text'+`
+*Possible values:* `+'html'+`, `+'text'+`
 
 ==== Example: Using `+output-format+`
 
@@ -331,7 +331,7 @@ Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic" />
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-Possible Values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 Type : `+String+`
 

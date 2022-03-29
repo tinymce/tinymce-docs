@@ -9,6 +9,7 @@ This section is about customizing {productname}'s user interface with skins, too
 
 *Silver* is {productname}'s default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of {productname}'s API and is beyond the scope of this guide. {productname} skins, however, are easier to make.
 
+[[skins]]
 == Skins
 
 Skins control the appearance of {productname} such as colors and spacing. The default skin is called *Oxide* (`oxide`) and has a `light` and a `dark` version. To initialize the editor with the dark version of the default skin, use the following configuration:

@@ -2,32 +2,38 @@ This section describes issues that users of {productname} 5.1 may encounter, as 
 
 *Outline*
 
-* <<autocompleterandkeypresseventissuesonandroid,Autocompleter and keypress event issues on Android>>
-* <<textpatternspluginlimitedfunctionalityonandroiddevices,Text Patterns plugin: Limited functionality on Android devices>>
-* <<spellcheckerpropluginunexpectedbehavioronandroiddevices,Spell Checker Pro plugin: Unexpected behavior on Android devices>>
-* <<uielementsmayrenderbehindthekeyboardonios12devices,UI elements may render behind the keyboard on iOS 12 devices>>
-* <<uiissuewithsidebarsonmobile,UI issue with sidebars on mobile>>
-* <<findandreplacemovingoutofviewinios,Find and replace moving out of view in iOS>>
-* <<inlinetoolbarplacementissuesonmobiledevices,Inline toolbar placement issues on mobile devices>>
-* <<touchselectionhandleissueonios,Touch selection handle issue on iOS>>
-* <<textselectioncontexttoolbarissueonandroiddevices,Text selection context toolbar issue on Android devices>>
-* <<formatpainterlimitedfunctionalityoniosdevices,FormatPainter: Limited functionality on iOS devices>>
+* xref:autocompleterandkeypresseventissuesonandroid[Autocompleter and keypress event issues on Android]
+* xref:textpatternspluginlimitedfunctionalityonandroiddevices[Text Patterns plugin: Limited functionality on Android devices]
+* xref:spellcheckerpropluginunexpectedbehavioronandroiddevices[Spell Checker Pro plugin: Unexpected behavior on Android devices]
+* xref:uielementsmayrenderbehindthekeyboardonios12devices[UI elements may render behind the keyboard on iOS 12 devices]
+* xref:uiissuewithsidebarsonmobile[UI issue with sidebars on mobile]
+* xref:findandreplacemovingoutofviewinios[Find and replace moving out of view in iOS]
+* xref:inlinetoolbarplacementissuesonmobiledevices[Inline toolbar placement issues on mobile devices]
+* xref:touchselectionhandleissueonios[Touch selection handle issue on iOS]
+* xref:textselectioncontexttoolbarissueonandroiddevices[Text selection context toolbar issue on Android devices]
+* xref:formatpainterlimitedfunctionalityoniosdevices[FormatPainter: Limited functionality on iOS devices]
 
+[[autocompleterandkeypresseventissuesonandroid]]
 === Autocompleter and keypress event issues on Android
 
 ==== Issue
 
-NOTE: This issue affects the following plugins:
-* link:{baseurl}/plugins/premium/mentions/[Mentions].
-* link:{baseurl}/plugins/opensource/emoticons/[Emoticons].
-* link:{baseurl}/plugins/opensource/charmap/[Character Map].
+[NOTE]
+====
+This issue affects the following plugins:
 
-Plugins relying on the link:{baseurl}/ui-components/autocompleter/[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
+* xref:plugins/premium/mentions.adoc[Mentions].
+* xref:plugins/opensource/emoticons.adoc[Emoticons].
+* xref:plugins/opensource/charmap.adoc[Character Map].
+====
+
+Plugins relying on the xref:ui-components/autocompleter.adoc[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
 
 ==== Workaround
 
 The only known workaround for the autocompleter at the moment is to press space and then press backspace to trigger the autocompleter to activate.
 
+[[textpatternspluginlimitedfunctionalityonandroiddevices]]
 === Text Patterns plugin: Limited functionality on Android devices
 
 ==== Issue
@@ -38,6 +44,7 @@ The text pattern plugin will not apply inline patterns if the text pattern is im
 
 Press _Enter_ or _Return_ immediately after entering the text pattern.
 
+[[spellcheckerpropluginunexpectedbehavioronandroiddevices]]
 === Spell Checker Pro plugin: Unexpected behavior on Android devices
 
 ==== Issue
@@ -48,6 +55,7 @@ When selecting a correction, the original word will be duplicated and inserted a
 
 No known workaround at the time of release.
 
+[[uielementsmayrenderbehindthekeyboardonios12devices]]
 === UI elements may render behind the keyboard on iOS 12 devices
 
 ==== Issue
@@ -69,20 +77,22 @@ To workaround this issue, users can either:
 
 *Settings* > *Safari* > *Advanced* > *Experimental Features* > *Visual Viewport API*.
 
+[[uiissuewithsidebarsonmobile]]
 === UI issue with sidebars on mobile
 
 ==== Issue
 
-NOTE: This issue affects the link:{baseurl}/plugins/premium/comments/[Comments plugin].
+NOTE: This issue affects the xref:plugins/premium/comments/index.adoc[Comments plugin].
 
 When opening sidebars on small screens (such as mobile phones), the sidebar may occupy most or all of the text area of the editor.
 
 ==== Workaround
 
-For the comments plugin, the comments sidebar can be collapsed using the `showcomments` toolbar button (image:{baseurl}/images/icons/comment.svg[comment.svg]).
+For the comments plugin, the comments sidebar can be collapsed using the `showcomments` toolbar button (image:icons/comment.svg[comment.svg]).
 
 For other plugins with sidebars, {companyname} recommends ensuring the sidebar's toolbar button is accessible on the toolbar.
 
+[[findandreplacemovingoutofviewinios]]
 === Find and replace moving out of view in iOS
 
 ==== Issue
@@ -93,6 +103,7 @@ The Find and replace dialog moves outside the screen view on iOS when finding a 
 
 No known workaround at the time of release.
 
+[[inlinetoolbarplacementissuesonmobiledevices]]
 === Inline toolbar placement issues on mobile devices
 
 ==== Issue
@@ -103,6 +114,7 @@ On mobile devices, the inline toolbar can intermittently display in the wrong lo
 
 No known workaround at the time of release.
 
+[[touchselectionhandleissueonios]]
 === Touch selection handle issue on iOS
 
 ==== Issue
@@ -113,6 +125,7 @@ The iOS touch selection handles (lollipops) sometimes remain on screen after the
 
 This may be an iOS bug, and the is no known workaround at the time of release. To remove the duplicate or multiple selections, restart the Safari app.
 
+[[textselectioncontexttoolbarissueonandroiddevices]]
 === Text selection context toolbar issue on Android devices
 
 ==== Issue
@@ -123,6 +136,7 @@ TinyMCE text selection context toolbars do not appear on Android.
 
 No known workaround at the time of release.
 
+[[formatpainterlimitedfunctionalityoniosdevices]]
 === Format Painter plugin: Limited functionality on iOS devices
 
 ==== Issue

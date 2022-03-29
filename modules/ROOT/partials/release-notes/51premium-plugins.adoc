@@ -6,9 +6,10 @@ The {productname} 5.1 release includes *Advanced Code Editor* 2.0.2.
 
 === Advanced Tables
 
-A new *Advanced Tables* premium plugin has been released with {productname} 5.1. The *Advanced Tables* plugin extends the core link:{baseurl}/plugins/opensource/table/[`table` plugin] by adding sort options for rows and columns.
+A new *Advanced Tables* premium plugin has been released with {productname} 5.1. The *Advanced Tables* plugin extends the core xref:plugins/opensource/table.adoc[`table` plugin] by adding sort options for rows and columns.
 
 The plugin is capable of sorting:
+
 * Numerical data
 * Text data
 
@@ -17,8 +18,8 @@ NOTE: Currently, the sort function will treat cells with Alphanumeric data as Te
 For information on this plugin, see:
 
 * link:{plugindirectory}advanced-tables[The Advanced Tables product page].
-* link:{baseurl}/enterprise/advanced-tables/[The Advanced Tables Premium features page (including demo)].
-* link:{baseurl}/plugins/premium/advtable/[The Advanced Tables plugin documentation page].
+* xref:enterprise/advanced-tables.adoc[The Advanced Tables Premium features page (including demo)].
+* xref:plugins/premium/advtable.adoc[The Advanced Tables plugin documentation page].
 
 === Checklist
 
@@ -40,13 +41,13 @@ The {productname} 5.1 release includes *Format Painter* 1.2.0.
 
 *Format Painter* 1.2.0 has been updated to support mobile platforms. The *Format Painter* will now function as expected for mobile users.
 
-This version of *Format Painter* includes a fix to work with the link:{baseurl}/plugins/opensource/legacyoutput/[_Legacy Output_ plugin]).
+This version of *Format Painter* includes a fix to work with the xref:plugins/opensource/legacyoutput.adoc[_Legacy Output_ plugin]).
 
 === Mentions
 
 The {productname} 5.1 release includes *Mentions* 2.1.0.
 
-*Mentions* 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: link:{baseurl}/plugins/premium/mentions/#mentions_fetch[Mentions - `mentions_fetch`].
+*Mentions* 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: xref:plugins/premium/mentions.adoc#mentions_fetch[Mentions - `mentions_fetch`].
 
 === Page Embed
 
@@ -70,10 +71,10 @@ To retain the _5.0_ default inline style element filter, add the following setti
 powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
 ----
 
-For information on `powerpaste_clean_filtered_inline_elements`, see: link:{baseurl}/plugins/premium/powerpaste/#powerpaste_clean_filtered_inline_elements[PowerPaste - `powerpaste_clean_filtered_inline_elements`].
+For information on `powerpaste_clean_filtered_inline_elements`, see: xref:plugins/premium/powerpaste.adoc#powerpaste_clean_filtered_inline_elements[PowerPaste - `powerpaste_clean_filtered_inline_elements`].
 
 ==== Pre-filtering and post-filtering callbacks
 
 *PowerPaste* 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.
 
-For information on using the Pre-filtering and Post-filtering callbacks, see: link:{baseurl}/plugins/premium/powerpaste/#pre-filtering-and-post-filtering-callbacks[PowerPaste Plugin - Pre-filtering and post-filtering callbacks]
+For information on using the Pre-filtering and Post-filtering callbacks, see: xref:plugins/premium/powerpaste.adoc#pre-filtering-and-post-filtering-callbacks[PowerPaste Plugin - Pre-filtering and post-filtering callbacks]

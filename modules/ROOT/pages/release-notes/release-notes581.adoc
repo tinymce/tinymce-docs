@@ -7,13 +7,14 @@
 
 {productname} 5.8.1 was released for {enterpriseversion} and {cloudname} on Wednesday, May 26^th^, 2021. It includes {productname} 5.8.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.8.1, including:
 
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.8.1.
@@ -24,7 +25,7 @@ The {productname} 5.8.1 release includes an accompanying release of the *Advance
 
 *Advanced Code* 2.3.1 includes updates to third-party dependencies, fixing a moderate severity ReDoS vulnerability.
 
-For information on the Advanced Code plugin, see: link:{baseurl}/plugins/premium/advcode/[Advanced Code plugin].
+For information on the Advanced Code plugin, see: xref:plugins/premium/advcode.adoc[Advanced Code plugin].
 
 === Export 1.0.1
 
@@ -32,7 +33,7 @@ The {productname} 5.8.1 release includes an accompanying release of the *Export*
 
 *Export* 1.0.1 fixes an issue where content was lost in the PDF output in some cases due to a compiler issue.
 
-For information on the Export plugin, see: link:{baseurl}/plugins/premium/export/[Export plugin].
+For information on the Export plugin, see: xref:plugins/premium/export.adoc[Export plugin].
 
 === Tiny Drive 1.4.1
 
@@ -40,8 +41,9 @@ The {productname} 5.8.1 release includes an accompanying release of *Tiny Drive*
 
 *Tiny Drive* 1.4.1 fixes an issue where the `skin` setting wasn't working in standalone-mode.
 
-For information on Tiny Drive, see: link:{baseurl}/tinydrive/[Tiny Drive].
+For information on Tiny Drive, see: xref:tinydrive/index.adoc[Tiny Drive].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.8.1 provides fixes for the following bugs:
@@ -52,6 +54,7 @@ For information on Tiny Drive, see: link:{baseurl}/tinydrive/[Tiny Drive].
 * URLs were not always detected when pasting over a selection. Patch contributed by jwcooper.
 * Properties on the `OpenNotification` event were incorrectly namespaced.
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.8.1 provides fixes for the following security issues:

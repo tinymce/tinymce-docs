@@ -7,12 +7,13 @@
 
 {productname} 5.6.2 was released for {enterpriseversion} and {cloudname} on Wednesday, December 9^th^, 2020. It includes {productname} 5.6.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.6.2, including:
 
-* <<accompanyingpremiumchanges,Accompanying Premium changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:accompanyingpremiumchanges[Accompanying Premium changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[accompanyingpremiumchanges]]
 == Accompanying Premium changes
 
 The following premium updates were released alongside {productname} 5.6.2.
@@ -25,8 +26,9 @@ The *Enterprise language packs* include the following bug fix:
 
 * Fixes Swedish translations (`sv_SE`).
 
-For information on the Enterprise language packs, see: link:{baseurl}/configure/localization/#language[Localization options - `language`].
+For information on the Enterprise language packs, see: xref:configure/localization.adoc#language[Localization options - `language`].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.6.2 provides fixes for the following bugs:

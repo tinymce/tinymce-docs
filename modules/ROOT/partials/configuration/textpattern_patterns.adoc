@@ -63,8 +63,8 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `+{start: '*', end: '*', format: 'italic'}+` - Entering text between``*`` and then pressing the *spacebar* will result in the `italic` format being applied to the text between the `*` symbols.
-* `+{start: '**', end: '**', format: 'bold'}+` - Entering text between``+**+`` and then pressing the *spacebar* will result in the `bold` format being applied.
+* `+{start: '*', end: '*', format: 'italic'}+` - Entering text between `+*+` and then pressing the *spacebar* will result in the `italic` format being applied to the text between the `+*+` symbols.
+* `+{start: '**', end: '**', format: 'bold'}+` - Entering text between `+**+` and then pressing the *spacebar* will result in the `bold` format being applied.
 * `+{start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}+` - This executes `+editor.execCommand('createLink', false, 'https://tiny.cloud')+`, which will wrap the text between the `~` symbols in a link that points to `+https://tiny.cloud+`.
 
 ==== Block patterns

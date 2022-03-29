@@ -12,34 +12,34 @@ TinyMCE 5.0.5 release adds improvements to the TinyMCE editor to improve the ove
 
 === Text color menu items
 
-In TinyMCE 5.0.5 the `forecolor` and `backcolor` toolbar buttons can now be used in link:{baseurl}/configure/editor-appearance/#menu[menus]. The new menu items have also been added to the default `Formats` menu.
+In TinyMCE 5.0.5 the `forecolor` and `backcolor` toolbar buttons can now be used in xref:configure/editor-appearance.adoc#menu[menus]. The new menu items have also been added to the default `Formats` menu.
 
-For more information on `forecolor` and `backcolor`, refer to the link:{baseurl}/configure/content-appearance/#text_color[documentation].
+For more information on `forecolor` and `backcolor`, refer to the xref:configure/content-appearance.adoc#text_color[documentation].
 
 === Right to left styles
 
 When the editor is configured to use a right to left language, such as Arabic, TinyMCE 5.0.5 will now style the UI to display in right to left mode. Additionally when a right to left language is configured, TinyMCE will now set the default directionality of the editor to match the language directionality.
 
-For more information on configuring the editors `language` and `directionality`, refer to the link:{baseurl}/configure/localization/[documentation].
+For more information on configuring the editors `language` and `directionality`, refer to the xref:configure/localization.adoc[documentation].
 
 == Updates and enhancements
 
 === TinyMCE
 
-The new TinyMCE 5.0.5 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/changelog/#version505may92019[Changelog].
+The new TinyMCE 5.0.5 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the xref:changelog.adoc#version505may92019[Changelog].
 
 === Tiny Drive
 
-*Tiny Drive* 1.2.1 comes with numerous bug fixes to the previous versions. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/tinydrive/changelog/[Changelog].
+*Tiny Drive* 1.2.1 comes with numerous bug fixes to the previous versions. A comprehensive list of the updates and fixed issues is available in the xref:tinydrive/changelog.adoc[Changelog].
 
 To try out *Tiny Drive* start with this https://www.tiny.cloud/drive/[dedicated product page] or check out the https://www.tiny.cloud/pricing[pricing page] to see all the flexible pricing options.
 
-For more information on *Tiny Drive* refer to the full link:{baseurl}/tinydrive/[documentation].
+For more information on *Tiny Drive* refer to the full xref:tinydrive/index.adoc[documentation].
 
-There is also a demo provided to explore the *Tiny Drive* capabilities link:{baseurl}/tinydrive/introduction/#demo[here].
+There is also a demo provided to explore the *Tiny Drive* capabilities xref:tinydrive/introduction.adoc#demo[here].
 
 === Link Checker
 
 *Link Checker* 2.0.2 comes with numerous bug fixes to the previous versions. A number of improvements have been made for accessibility and an issue has been fixed where the linkchecker context menu items weren't appearing in TinyMCE 5.
 
-For more information on *Link Checker* refer to the full link:{baseurl}/plugins/premium/linkchecker/[documentation].
+For more information on *Link Checker* refer to the full xref:plugins/premium/linkchecker.adoc[documentation].

@@ -16,7 +16,7 @@ TinyMCE 5.0.3 introduces the *Case Change* plugin that allows changing the case 
 
 Currently, there are three types of formats available:
 
-image::{baseurl}/images/icons/change-case.svg[Case Change]
+image::icons/change-case.svg[Case Change]
 
 * *lowercase* - The *lowercase* option changes all the selected characters to lowercase.
 * *UPPERCASE* - The *UPPERCASE* option changes all the selected characters to uppercase.
@@ -24,9 +24,9 @@ image::{baseurl}/images/icons/change-case.svg[Case Change]
 
 To try out *Case Change* start with this link:{plugindirectory}case-change[dedicated product page] to see all the flexible pricing options.
 
-For more information on *Case Change* refer to the full link:{baseurl}/plugins/premium/casechange/[documentation].
+For more information on *Case Change* refer to the full xref:plugins/premium/casechange.adoc[documentation].
 
-There is also a demo provided to explore the *Case Change* capabilities link:{baseurl}/demo/casechange/[here].
+There is also a demo provided to explore the *Case Change* capabilities xref:demo/casechange.adoc[here].
 
 === TinyMCE for Swing integration
 
@@ -38,10 +38,10 @@ To start using TinyMCE for Swing as your new rich text editor, the first step is
 
 Contact link:{contactpage}[customer support] to discuss pricing options for a customized TinyMCE for Swing integration for your specific use case.
 
-For more information on *TinyMCE for Swing* refer to the full link:{baseurl}/integrations/swing/[documentation].
+For more information on *TinyMCE for Swing* refer to the full xref:integrations/swing.adoc[documentation].
 
 Refer to this https://github.com/tinymce/tinymce-swing-codesamples[GitHub repo] for examples on how to use TinyMCE for Swing.
 
 == Updates and enhancements
 
-The new TinyMCE 5.0.3 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{baseurl}/changelog/#version503march192019[Changelog].
+The new TinyMCE 5.0.3 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the xref:changelog.adoc#version503march192019[Changelog].

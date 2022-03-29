@@ -576,7 +576,7 @@ A *textarea* is a multiline text field.
 ==== urlinput
 
 A *urlinput* is a specialized composite component for URL input or file upload. It has a label, a text input field and an optional filepicker button. The urlinput component also includes a *typeahead* dropdown that will display previously-entered URLs that match the current input text and update as the user types.
-// TODO: the xref in the next line should be fixed once #2328 gets merged
+// TODO: the xref in the next line should be fixed automatically once #2328 gets merged
 NOTE: The filepicker button will only appear if xref:configure/file-image-upload.adoc#file_picker_callback[`file_picker_callback`] is configured.
 
 *Events:* Interacting with a *selectbox* component will fire the `onChange` function in the dialog's configuration *when the user clicks away from the component*.

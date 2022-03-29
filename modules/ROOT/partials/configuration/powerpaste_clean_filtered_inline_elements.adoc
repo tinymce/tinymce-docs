@@ -5,7 +5,9 @@ This option allows for configuration of PowerPaste's *"clean"* paste filters for
 
 The list of inline elements that should be removed on paste can be specified by setting `+powerpaste_clean_filtered_inline_elements+` to a comma-separated string of inline element tag names.
 
-*Possible values:* A comma-separated string.
+*Type:* A comma-separated string or `+Array+`
+
+*Default value:* `+[]+`
 
 === Example: `+powerpaste_clean_filtered_inline_elements+`
 

@@ -5,7 +5,7 @@ This option specifies which words should be ignored by the spell checker. If an 
 
 NOTE: Languages specified as keys in the `+spellchecker_ignore_list+` object must match the configured xref:introduction-to-tiny-spellchecker.adoc#spellchecker_languages[Spellchecker Languages].
 
-*Type:* `+String[]+` or `+Object+`
+*Type:* `+Array+` or `+Object+`
 
 === Example: Using `+spellchecker_ignore_list+` to ignore words in all languages
 

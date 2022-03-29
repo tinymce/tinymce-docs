@@ -65,7 +65,7 @@ The page containing the {productname} will be accessible at `+http://localhost:<
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 
-include::partial$misc/admon_third_party_integration.adoc[]
+include::partial$misc/admon-third-party-integration.adoc[]
 
 Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{productname} Ruby on Rails gem] for integrating {productname} into the Ruby on Rails asset pipeline. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our xref:basic-example.adoc[Basic example].
 

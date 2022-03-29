@@ -14,7 +14,7 @@ NOTE: The group toolbar button is _only_ supported when using the `+floating+` t
 |Name |Value |Requirement |Description
 |text |string |optional |Text to display if no icon is found.
 |icon |string |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
 |items |string or `+LabelledToolbar[]+` |required |A string of space separated toolbar button names, or an array of xref:toolbar-configuration-options.adoc#addingtoolbargrouplabels[labelled toolbar buttons].
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered. For details, see: xref:usingonsetup[Using `+onSetup+`].

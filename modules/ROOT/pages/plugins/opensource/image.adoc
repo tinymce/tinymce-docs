@@ -38,9 +38,9 @@ If you wish to align the image, you can also use the text align buttons while im
 :includedSection: imagePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
 :includedSection: false
-include::partial$configuration/file_picker_callback.adoc[]
+include::partial$configuration/file_picker_callback.adoc[leveloffset=+1]
 
-include::partial$configuration/file_picker_types.adoc[]
+include::partial$configuration/file_picker_types.adoc[leveloffset=+1]
 
 include::partial$configuration/image_caption.adoc[]
 
@@ -60,17 +60,17 @@ include::partial$configuration/image_title.adoc[]
 
 include::partial$configuration/image_uploadtab.adoc[]
 
-include::partial$configuration/images_file_types.adoc[]
+include::partial$configuration/images_file_types.adoc[leveloffset=+1]
 
-include::partial$configuration/images_upload_base_path.adoc[]
+include::partial$configuration/images_upload_base_path.adoc[leveloffset=+1]
 
-include::partial$configuration/images_upload_credentials.adoc[]
+include::partial$configuration/images_upload_credentials.adoc[leveloffset=+1]
 
-include::partial$configuration/images_upload_handler.adoc[]
+include::partial$configuration/images_upload_handler.adoc[leveloffset=+1]
 
-include::partial$configuration/images_uploads_url.adoc[]
+include::partial$configuration/images_uploads_url.adoc[leveloffset=+1]
 
-include::partial$configuration/type_ahead_urls.adoc[]
+include::partial$configuration/type_ahead_urls.adoc[leveloffset=+1]
 
 == Q: Where are the advanced image options?
 

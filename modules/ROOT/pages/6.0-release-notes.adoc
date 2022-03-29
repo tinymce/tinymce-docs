@@ -73,35 +73,91 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 | `table_style_by_css`    | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>                                      |
 | `table_use_colgroups`   | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>                                      |
 
+[id=previously-deprecated-items-now-removed]
+== Previously deprecated items now removed
+
+The following elements were previously deprecated and have, with this release, been removed entirely from {productname}.
+
+| item                                  | element       | notes                                                      |
+| ------------------------------------- | ------------- | ---------------------------------------------------------- |
+| `$`                                   | API           | `$` was a shorthand function of `DomQuery` and `Sizzle`.   |
+| `addComponents`                       | API           | From `AddOnManager`.                                       |
+| `autoresize_on_init`                  | Option        |                                                            |
+| `block_elements`                      | Schema option |                                                            |
+| `boolean_attributes`                  | Schema option |                                                            |
+| `Class`                               | API           |                                                            |
+| `clearInterval`                       | API           | From `Delay`.                                              |
+| `clearTimeout`                        | API           | From `Delay`.                                              |
+| `Color`                               | API           |                                                            |
+| `content_editable_state`              | Option        |                                                            |
+| `debounce`                            | API           | From `Delay`.                                              |
+| `dependencies`                        | API           | From `AddOnManager`.                                       |
+| `DomQuery`                            | API           |                                                            |
+| `editor_deselector`                   | Option        | From `EditorManager`.                                      |
+| `editors`                             | Property      | From `EditorManager`.                                      |
+| `editor_selector`                     | Option        | From `EditorManager`.                                      |
+| `elements`                            | Option        | From `EditorManager`.                                      |
+| `execCallback`                        | API           |                                                            |
+| `file_browser_callback_types`         | Option        |                                                            |
+| `filepicker_validator_handler`        | Option        | Superseded by `file_picker_validator_handler`.             |
+| `force_hex_style_colors`              | Option        |                                                            |
+| `force_p_newlines`                    | Option        | Superseded by `forced_root_block`.                         |
+| `gecko_spellcheck`                    | Option        | Replaced by `browser_spellcheck`.                          |
+| `images_dataimg_filter`               | Option        |                                                            |
+| `JSON`                                | API           |                                                            |
+| `JSONP`                               | API           |                                                            |
+| `JSONRequest`                         | API           |                                                            |
+| `mode`                                | Option        | From `EditorManager`.                                      |
+| `move_caret_before_on_enter_elements` | Schema option |                                                            |
+| `non_empty_elements`                  | Schema option |                                                            |
+| `padd_empty_with_br`                  | Option        |                                                            |
+| `requestAnimationFrame`               | API           | From `Delay`.                                              |
+| `self_closing_elements`               | Schema option |                                                            |
+| `setIconStroke`                       | API           |                                                            |
+| `setInterval`                         | API           | From `Delay`.                                              |
+| `setMode`                             | API           |                                                            |
+| `setTimeout`                          | API           | From `Delay`.                                              |
+| `short_ended_elements`                | Schema option |                                                            |
+| `Sizzle`                              | API           |                                                            |
+| `special`                             | Schema option |                                                            |
+| `text_block_elements`                 | Schema option |                                                            |
+| `text_inline_elements`                | Schema option |                                                            |
+| `throttle`                            | API           | From `Delay`.                                              |
+| `toolbar_drawer`                      | Option        | Superseded by `toolbar_mode`.                              |
+| `types`                               | Option        | From `EditorManager`.                                      |
+| `whitespace_elements`                 | Schema option |                                                            |
+| `validate`                            | Schema option |                                                            |
+| `XHR`                                 | API           | Any remaining `XHR` users have been replaced with `fetch`. |
+
+[id=previously-undocumented-items-removed-without-prior-deprecation]
+== Previously undocumented items removed without prior deprecation
+
+The following elements were never documented and have never been formally supported. Consequently, they were removed with this release without deprecation notices being provided in earlier releases.
+
+| item                                     | element       |
+| ---------------------------------------- | ------------- |
+| `editor.editorCommands.hasCustomCommand` | API           |
+| `mceResetDesignMode`                     | Command       |
+| `mceRepaint`                             | Command       |
+| `mceBeginUndoLevel`                      | Command       |
+
 
 [id=known-issues]
 == Known issues
 
-=== Pressing the tab key in tables does not always produce the expected result
+=== If `nonbreaking_force_tab: true` pressing the tab key in a table cell produces an unexpected result
 
-In {productname}, three settings control what happens when the _tab_ key is pressed:
+In {productname} 6.0, if `nonbreaking_force_tab` is set to `true`, pressing the _tab_ key when the insertion point is in a table cell produces an unexpected result.
 
-| setting                 | default value | other possible value |
-| ----------------------- | ------------- | -------------------- |
-| `nonbreaking_force_tab` | `false`       | `true`               |
-| `lists_indent_on_tab`   | `true`        | `false`              |
-| `table_tab_navigation`  | `true`        | `false`              |
+The expected result is for the insertion point to move to the next available cell in the table.
 
-Previously, the setting which took precedence at any given instance of the _tab_ key being pressed was determined by the plugin load order.
+In {productname} 6.0, three non-breaking-space entities (`&nbsp;&nbsp;&nbsp;`) are entered into the current cell.
 
-As of {productname} 6.0, however, _Tables_  are not provided as a plugin. They are part of the core {productname} editor.
+The proximate cause of this incorrect behaviour is the move of _Tables_ from plugins to core.
 
-In {productname} 6.0, when the above settings are set to their default values (and when `nonbreaking_force_tab`, in particular, is set to its default value, `false`), and the insertion point is placed in a table cell and the tab key is pressed, the expected result is one of two things.
+As of this release, however, the specific cause is still being investigated.
 
-1. If the insertion point is within anything other than a list item, the insertion point moves to the next cell.
-
-2. If the insertion point is within a list item, the specific list item containing the insertion point ‘indents’ presenting said item as one step ‘lower’ in the list’s visual outline.
-
-This is the expected behaviour.
-
-However, in {productname} 6.0, when `nonbreaking_force_tab` is set to `true`, the first behaviour above does not present. Instead, when the setting is `nonbreaking_force_tab: true` and the insertion point is within a table cell, pressing the tab key causes the string `&nbsp;&nbsp;&nbsp;` to be entered into the cell. `&nbsp;&nbsp;&nbsp;` is three non-breaking space HTML entities, the closest equivalent to a `tab` character supported in HTML.
-
-The proximate cause of this incorrect behaviour is the move of _Tables_ from plugins to core. As of this release, however, the specific cause is still being investigated. And no workaround (other than keeping `nonbreaking_force_tab` set to `false`) is currently available.
+And no workaround (other than keeping `nonbreaking_force_tab` set to `false`) is currently available.
 
 
 
@@ -141,6 +197,9 @@ In {productname} 6, these function names have been changed and configuration cha
 
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
+=== `editor.SetContent`
+
+The `editor.SetContent` event’s `content` property has been deprecated.
 
 ==== success or failure callbacks replaced by `Promise` in multiple APIs
 
@@ -186,6 +245,12 @@ The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.
 
 
 === Changed commands and queries
+
+==== `element_format`
+
+Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
+
+In {productname} 6.0, `element_format` now has an explicit default value: `html`.
 
 ==== `mceAddEditor` and `mceToggleEditor`
 

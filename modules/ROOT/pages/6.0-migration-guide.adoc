@@ -1,9 +1,14 @@
 = TinyMCE 5.x -> 6.0 Migration Guide
 
+include::6.0-release-notes.adoc#core-architectural-change
+
 include::6.0-release-notes.adoc#things-we-renamed
 
 include::6.0-release-notes.adoc#default-value-changes
 
+include::6.0-release-notes.adoc#previously-deprecated-items-now-removed
+
+include::6.0-release-notes.adoc#previously-undocumented-items-removed-without-prior-deprecation
 
 == APIs
 
@@ -41,7 +46,17 @@ In {productname} 6, these function names have been changed and configuration cha
 
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
-==== `fire` function re-named in all {productname} APIs
+=== `editor.SetContent`
+
+The `editor.SetContent` event’s `content` property has been deprecated.
+
+When the `editor.SetContent` event fires, any data in `content` has already been added to the {productname} editor instance and cannot be altered, making `content` essentially moot as an `editor.SetContent` property.
+
+To alter such data before it is added to the {productname} editor, use the `content` property available in the `BeforeSetContent` event.
+
+NOTE: calling the `editor.SetContent` `content` property now returns an empty string.
+
+=== `fire` function re-named in all {productname} APIs
 
 The `fire()` function in
 
@@ -59,20 +74,13 @@ has been re-named to `dispatch()`.
 
 `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 
-=== `new` keyword
+=== `new` keyword no longer used to instantiate plugins
 
-{productname} plugins (and themes and some other add-ons) were once classes. And, as such, they could be constructed by:
+In {productname} 6.0, plugins (and other addons) are no longer initialised with the `new` keyword.
 
-1. taking a function and then;
+As a consequence, the plugin initalizer value passed to `PluginManager.add` must be a function. It cannot be a class. (The plugin initializer value is the second argument passed to `PluginManager.add()`.)
 
-2. initialising the plugin with the `new` keyword (eg `new Plugin(editor)`).
-
-However the `new` keyword cannot be used with arrow functions. Also, it is not necessary to instantiate a plugin with the `new` keyword, since they are not classes, and have not been classes for some time.
-
-In {productname} 6.0 the `new` keyword can no longer be used to create instances of plugins and the like.
-
-This makes it safe to use both older functions and newer arrow functions when instantiating add-ons.
-
+This change makes it safe to use both older functions and newer arrow functions when instantiating add-ons.
 
 === PluginManager
 
@@ -100,6 +108,16 @@ Previously, when loading a requested resource, the `ThemeManager` passed a `succ
 
 
 == Commands and queries
+
+=== `element_format`
+
+Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
+
+In {productname} 6.0, `element_format` now has an explicit default value: `html`.
+
+This new, and explicit default changes how entered material is serialised. In particular, self-closing elements, such as `<hr>`, `<br>`, and `<img>` no longer present in the `xhtml` standard fashion, as `<hr />`, `<br />`, and `</img />` respectively.
+
+NOTE: if `xhtml` standard representation is required, explicitly setting `element_format` to `xhtml` works as before.
 
 === `mceInsertTableDialog`
 
@@ -138,13 +156,14 @@ For example —
 
 
 
+
 == Options
 
 === `image_upload_handler
 
 Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload. In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`, with a value of either `resolve` or `reject`.
 
-=== link_default_protocol
+=== `link_default_protocol`
 
 The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
 

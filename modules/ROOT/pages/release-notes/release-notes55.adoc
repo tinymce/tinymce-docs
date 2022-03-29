@@ -7,17 +7,18 @@
 
 {productname} 5.5 was released for {enterpriseversion} and {cloudname} on Wednesday, October 21^st^, 2020. It includes {productname} 5.5.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.5, including:
 
-* <<tinymce54newfeaturesandenhancements,TinyMCE 5.5 new features and enhancements>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<minorchangesfortinymce54,Minor changes for TinyMCE 5.5>>
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:tinymce54newfeaturesandenhancements[TinyMCE 5.5 new features and enhancements]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:minorchangesfortinymce54[Minor changes for TinyMCE 5.5]
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[tinymce54newfeaturesandenhancements]]
 == TinyMCE 5.5 new features and enhancements
 
 The following new features and enhancements were added for the {productname} 5.5 release.
@@ -34,14 +35,14 @@ For example:
 Microsoft Visual Studio Code | Example of {productname} TypeScript configuration option type error in +
 Microsoft Visual Studio Code
 
-| image:{baseurl}/images/550-release_notes-vscode-tinymce-autocomplete.png[Screenshot of code autocompetion for adding a custom user interface component using {productname} APIs in Microsoft Visual Studio Code]
-| image:{baseurl}/images/550-release_notes-vscode-tinymce-inline-type-error.png[Screenshot of a type error while adding {productname} configuration options in Microsoft Visual Studio Code]
+| image:550-release_notes-vscode-tinymce-autocomplete.png[Screenshot of code autocompetion for adding a custom user interface component using {productname} APIs in Microsoft Visual Studio Code]
+| image:550-release_notes-vscode-tinymce-inline-type-error.png[Screenshot of a type error while adding {productname} configuration options in Microsoft Visual Studio Code]
 |===
 
 For information on:
 
-* Creating custom {productname} user interface components; such as toolbar buttons, menu items, and dialogs; see: link:{baseurl}/ui-components/[User interface components].
-* Creating a plugin for {productname}, see: link:{baseurl}/advanced/creating-a-plugin/[Create a plugin for {productname}].
+* Creating custom {productname} user interface components; such as toolbar buttons, menu items, and dialogs; see: xref:ui-components/index.adoc[User interface components].
+* Creating a plugin for {productname}, see: xref:advanced/creating-a-plugin.adoc[Create a plugin for {productname}].
 * The {productname} APIs, see: link:{baseurl}/api/[The {productname} API Reference].
 
 === New line height support in the editor
@@ -50,16 +51,16 @@ For information on:
 
 For information on:
 
-* The `lineheight` toolbar button, see: link:{baseurl}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons[Available Toolbar Buttons - The core toolbar buttons].
-* The `lineheight` menu item, see: link:{baseurl}/advanced/available-menu-items/#the-core-menu-items[Available Menu Items - The core menu items].
-* The `LineHeight` editor command, see: link:{baseurl}/advanced/editor-command-identifiers/#coreeditorcommands[Commands available for {productname} - Core Editor commands].
-* The `LineHeight` query command value, see: link:{baseurl}/advanced/editor-command-identifiers/#availablequerycommandvalues[Commands available for {productname} - Available query command values].
+* The `lineheight` toolbar button, see: xref:advanced/available-toolbar-buttons.adoc#thecoretoolbarbuttons[Available Toolbar Buttons - The core toolbar buttons].
+* The `lineheight` menu item, see: xref:advanced/available-menu-items.adoc#thecoremenuitems[Available Menu Items - The core menu items].
+* The `LineHeight` editor command, see: xref:advanced/editor-command-identifiers.adoc#coreeditorcommands[Commands available for {productname} - Core Editor commands].
+* The `LineHeight` query command value, see: xref:advanced/editor-command-identifiers.adoc#availablequerycommandvalues[Commands available for {productname} - Available query command values].
 
 === New persistent toolbar option for inline mode
 
 A new `toolbar_persist` option has been added for disabling the automatic show and hide behavior of the toolbar and menu bar for inline editors.
 
-For information on the new persistent toolbar option, see: link:{baseurl}/configure/editor-appearance/#toolbar_persist[User interface options - `toolbar_persist`].
+For information on the new persistent toolbar option, see: xref:configure/editor-appearance.adoc#toolbar_persist[User interface options - `toolbar_persist`].
 
 === The toolbar drawer can now be controlled using commands
 
@@ -67,8 +68,8 @@ A new editor command (`execCommand('ToggleToolbarDrawer')`) and editor state que
 
 For information on:
 
-* The Toolbar Drawer, see: link:{baseurl}/configure/editor-appearance/#toolbar_mode[User interface options - `toolbar_mode`].
-* Commands and query commands available in {productname}, see: link:{baseurl}/advanced/editor-command-identifiers/[Commands Available for TinyMCE].
+* The Toolbar Drawer, see: xref:configure/editor-appearance.adoc#toolbar_mode[User interface options - `toolbar_mode`].
+* Commands and query commands available in {productname}, see: xref:advanced/editor-command-identifiers.adoc[Commands Available for TinyMCE].
 
 === Nested menu items for class list, link list, and image list options
 
@@ -84,7 +85,7 @@ For information on:
 
 For example:
 
-[source, js]
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -107,31 +108,31 @@ tinymce.init({
 
 For information on using:
 
-* The `image_list` option, see: link:{baseurl}/plugins/opensource/image/#image_list[Image plugin - `image_list`].
-* The `image_class_list` option, see: link:{baseurl}/plugins/opensource/image/#image_class_list[Image plugin - `image_class_list`].
-* The `link_class_list` option, see: link:{baseurl}/plugins/opensource/link/#link_class_list[Link plugin - `link_class_list`].
-* The `link_list` option, see: link:{baseurl}/plugins/opensource/link/#link_list[Link plugin - `link_list`].
-* The `table_class_list` option, see: link:{baseurl}/plugins/opensource/table/#table_class_list[Table plugin - `table_class_list`].
-* The `table_cell_class_list` option, see: link:{baseurl}/plugins/opensource/table/#table_cell_class_list[Table plugin - `table_cell_class_list`].
-* The `table_row_class_list` option, see: link:{baseurl}/plugins/opensource/table/#table_row_class_list[Table plugin - `table_row_class_list`].
+* The `image_list` option, see: xref:plugins/opensource/image.adoc#image_list[Image plugin - `image_list`].
+* The `image_class_list` option, see: xref:plugins/opensource/image.adoc#image_class_list[Image plugin - `image_class_list`].
+* The `link_class_list` option, see: xref:plugins/opensource/link.adoc#link_class_list[Link plugin - `link_class_list`].
+* The `link_list` option, see: xref:plugins/opensource/link.adoc#link_list[Link plugin - `link_list`].
+* The `table_class_list` option, see: xref:plugins/opensource/table.adoc#table_class_list[Table plugin - `table_class_list`].
+* The `table_cell_class_list` option, see: xref:plugins/opensource/table.adoc#table_cell_class_list[Table plugin - `table_cell_class_list`].
+* The `table_row_class_list` option, see: xref:plugins/opensource/table.adoc#table_row_class_list[Table plugin - `table_row_class_list`].
 
 === Added the ability to use the browser full screen mode with the `fullscreen` plugin
 
 A new `fullscreen_native` option allows the editor to use the browser's full screen mode instead of only filling the browser viewport. When enabled and the user activates full screen mode, the editor will fill the whole screen, the same as full screen mode for online videos.
 
-For information on the `fullscreen_native` option, see: link:{baseurl}/plugins/opensource/fullscreen/#fullscreen_native[Full Screen Plugin - `fullscreen_native`].
+For information on the `fullscreen_native` option, see: xref:plugins/opensource/fullscreen.adoc#fullscreen_native[Full Screen Plugin - `fullscreen_native`].
 
 === New `contextmenu_avoid_overlap` option for controlling the placement of context menus
 
 The new `contextmenu_avoid_overlap` option can be used to prevent context menus from covering the selected node if the node matches the specified https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS selector].
 
-For information on the `contextmenu_avoid_overlap` option, see: link:{baseurl}/configure/editor-appearance/#contextmenu_avoid_overlap[User interface options - `contextmenu_avoid_overlap`].
+For information on the `contextmenu_avoid_overlap` option, see: xref:configure/editor-appearance.adoc#contextmenu_avoid_overlap[User interface options - `contextmenu_avoid_overlap`].
 
 === Added `colgroup` support for tables
 
 A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
 
-For information on the `table_use_colgroups` option, see: link:{baseurl}/plugins/opensource/table/#table_use_colgroups[Table plugin - `table_use_colgroups`].
+For information on the `table_use_colgroups` option, see: xref:plugins/opensource/table.adoc#table_use_colgroups[Table plugin - `table_use_colgroups`].
 
 === Added cut, copy, and paste table column menu items
 
@@ -142,26 +143,26 @@ Four new menu items have been added to the Table plugin to assist with moving an
 * `tablepastecolumnbefore`
 * `tablepastecolumnafter`
 
-For information on the Table plugin menu items, see: link:{baseurl}/plugins/opensource/table/#menuitems[Table plugin - Menu items].
+For information on the Table plugin menu items, see: xref:plugins/opensource/table.adoc#menuitems[Table plugin - Menu items].
 
 === New `table_column_resizing` option for controlling table column resizing
 
 A new `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.
 
-For information on the `table_column_resizing` option, see: link:{baseurl}/plugins/opensource/table/#table_column_resizing[Table plugin - `table_column_resizing`].
+For information on the `table_column_resizing` option, see: xref:plugins/opensource/table.adoc#table_column_resizing[Table plugin - `table_column_resizing`].
 
 === Changes to the default table CSS
 
 The CSS files bundled with {productname} have been updated to better support the styling options available in the `table` dialog.
 
-* For information on the bundled CSS files, see: link:{baseurl}/general-configuration-guide/customize-ui/#customizingtheeditableareawithcontent_css[Customizing the editable area with `content_css`].
+* For information on the bundled CSS files, see: xref:general-configuration-guide/customize-ui.adoc#customizingtheeditableareawithcontent_css[Customizing the editable area with `content_css`].
 * To view the CSS files, see: https://github.com/tinymce/tinymce-dist/tree/master/skins/content[tinymce-dist GitHub Repository - Content CSS files].
 
 === New listbox component for custom dialogs
 
 The new listbox component for custom dialogs is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
 
-For information on the listbox dialog component, see: link:{baseurl}/ui-components/dialogcomponents/#listbox[Dialog components - listbox].
+For information on the listbox dialog component, see: xref:ui-components/dialogcomponents.adoc#listbox[Dialog components - listbox].
 
 === New `hasPlugin` for detecting the availability of plugins
 
@@ -192,24 +193,25 @@ For information on:
 
 === Changed the Image Tools context toolbar icon
 
-The icon for the Image Tools _image options_ toolbar button has changed from an ellipse icon (image:{baseurl}/images/icons/image-options.svg[Icon consisting of three dots horizontally aligned across the center of the icon]) to match the image icon (image:{baseurl}/images/icons/image.svg[Icon consisting of two hills, a sun above and a border representing a picture frame]).
+The icon for the Image Tools _image options_ toolbar button has changed from an ellipse icon (image:icons/image-options.svg[Icon consisting of three dots horizontally aligned across the center of the icon]) to match the image icon (image:icons/image.svg[Icon consisting of two hills, a sun above and a border representing a picture frame]).
 
 For information on:
 
-* The Image Tools plugin, see: link:{baseurl}/plugins/opensource/imagetools/[Image Tools plugin].
-* The Image Tools context toolbar, see: link:{baseurl}/plugins/opensource/imagetools/#imagetools_toolbar[Image Tools plugin - `imagetools_toolbar`].
+* The Image Tools plugin, see: xref:plugins/opensource/imagetools.adoc[Image Tools plugin].
+* The Image Tools context toolbar, see: xref:plugins/opensource/imagetools.adoc#imagetools_toolbar[Image Tools plugin - `imagetools_toolbar`].
 
 For a list of available:
 
-* Image Tools toolbar buttons, see: link:{baseurl}/plugins/opensource/imagetools/#toolbarbuttons[Image Tools plugin - Toolbar buttons].
-* {productname} icons, see: link:{baseurl}/advanced/editor-icon-identifiers/[Icons Available for TinyMCE].
+* Image Tools toolbar buttons, see: xref:plugins/opensource/imagetools.adoc#toolbarbuttons[Image Tools plugin - Toolbar buttons].
+* {productname} icons, see: xref:advanced/editor-icon-identifiers.adoc[Icons Available for TinyMCE].
 
 === Improved navigation and deletion for media elements without the `media` plugin
 
 `video` and `audio` HTML elements in the editor content no-longer cause navigation issues and can be deleted without the `media` plugin.
 
-For information on the `media` plugin, see: link:{baseurl}/plugins/opensource/media/[Media plugin].
+For information on the `media` plugin, see: xref:plugins/opensource/media.adoc[Media plugin].
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.5.
@@ -220,10 +222,10 @@ The {productname} 5.5 release includes an accompanying release of the *Accessibi
 
 *Accessibility Checker* 2.3.0 adds the following features:
 
-* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: link:{baseurl}/plugins/premium/a11ychecker/#a11ychecker_ignored_rules[Accessibility Checker plugin - `a11ychecker_ignored_rules`].
-* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: link:{baseurl}/plugins/premium/a11ychecker/#a11ychecker_issue_url_callback[Accessibility Checker plugin - `a11ychecker_issue_url_callback`].
-* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: link:{baseurl}/plugins/premium/a11ychecker/#getreport[Accessibility Checker plugin - `getReport()` API method].
-* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: link:{baseurl}/plugins/premium/a11ychecker/#a11ychecker_filter_issue[Accessibility Checker plugin - `a11ychecker_filter_issues`].
+* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: xref:plugins/premium/a11ychecker.adoc#a11ychecker_ignored_rules[Accessibility Checker plugin - `a11ychecker_ignored_rules`].
+* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: xref:plugins/premium/a11ychecker.adoc#a11ychecker_issue_url_callback[Accessibility Checker plugin - `a11ychecker_issue_url_callback`].
+* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: xref:plugins/premium/a11ychecker.adoc#getreport[Accessibility Checker plugin - `getReport()` API method].
+* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: xref:plugins/premium/a11ychecker.adoc#a11ychecker_filter_issue[Accessibility Checker plugin - `a11ychecker_filter_issues`].
 
 *Accessibility Checker* 2.3.0 also provides the following bug fixes:
 
@@ -233,7 +235,7 @@ The {productname} 5.5 release includes an accompanying release of the *Accessibi
 * Fixed the editor content scrolling when calling the `getReport` API.
 * Fixed incorrect strings used for the next/previous button tooltips.
 
-For information on the Accessibility Checker plugin, see: link:{baseurl}/plugins/premium/a11ychecker/[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:plugins/premium/a11ychecker.adoc[Accessibility Checker plugin].
 
 === Advanced Code Editor 2.2.0
 
@@ -241,7 +243,7 @@ The {productname} 5.5 release includes an accompanying release of the *Advanced 
 
 *Advanced Code Editor* 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
 
-For information on the Advanced Code Editor plugin, see: link:{baseurl}/plugins/premium/advcode/[Advanced Code Editor plugin].
+For information on the Advanced Code Editor plugin, see: xref:plugins/premium/advcode.adoc[Advanced Code Editor plugin].
 
 === Advanced Tables 1.0.1
 
@@ -251,7 +253,7 @@ The {productname} 5.5 release includes an accompanying release of the *Advanced 
 
 *Advanced Tables* 1.0.1 is required for TinyMCE 5.5 or higher.
 
-For information on the Advanced Tables plugin, see: link:{baseurl}/plugins/premium/advtable/[Advanced Tables plugin].
+For information on the Advanced Tables plugin, see: xref:plugins/premium/advtable.adoc[Advanced Tables plugin].
 
 === Comments 2.2.0
 
@@ -264,9 +266,9 @@ The {productname} 5.5 release includes an accompanying release of the *Comments*
 * Fixed the editor's `referrer_policy` setting not working when loading additional resources to improve bundling of the plugin and improving load times.
 * Fixed elements incorrectly left in the DOM when the editor was removed.
 
-For a list of supported languages, including professionally translated language packs, see: link:{baseurl}/configure/localization/#language[Localization options - `language`].
+For a list of supported languages, including professionally translated language packs, see: xref:configure/localization.adoc#language[Localization options - `language`].
 
-For information on the Comments plugin, see: link:{baseurl}/plugins/premium/comments/[Comments plugin].
+For information on the Comments plugin, see: xref:plugins/premium/comments/index.adoc[Comments plugin].
 
 === Export 0.1.0
 
@@ -278,7 +280,7 @@ A new *Export* plugin is available for beta testing and allows users to export c
 
 This plugin will be available to all new and existing customers who have purchased a {tiertwoplan}, {tierthreeplan}, or {enterpriseplan}.
 
-For information on the Export plugin, see: link:{baseurl}/plugins/premium/export/[Export plugin].
+For information on the Export plugin, see: xref:plugins/premium/export.adoc[Export plugin].
 
 === PowerPaste 5.3.3
 
@@ -286,7 +288,7 @@ The {productname} 5.5 release includes an accompanying release of the *PowerPast
 
 *PowerPaste* 5.3.3 fixes missing `bg_BG`, `eu`, and `id` translations.
 
-For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
 === Spell Checker Pro 2.1.0
 
@@ -297,21 +299,22 @@ The {productname} 5.5 release includes an accompanying release of the *Spell Che
 * An updated the dialog to allow wider buttons for languages with longer strings by removing the _Close_ button (_Cancel_ button in TinyMCE 4).
 * Fixed the `spellcheck_dialog` button incorrectly rendering as a split button in TinyMCE 4.
 
-For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 === Tiny Skins and Icon Packs
 
 The {productname} 5.5 release includes an accompanying release of the *Tiny Skins and Icon Packs*.
 
-The following icon packs have been updated to include new icons for the line height (image:{baseurl}/images/icons/line-height.svg[Line Height icon: Bidirectional arrow pointing up and down beside four horizontal, stacked lines]) and export (image:{baseurl}/images/icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) toolbar buttons:
+The following icon packs have been updated to include new icons for the line height (image:icons/line-height.svg[Line Height icon: Bidirectional arrow pointing up and down beside four horizontal, stacked lines]) and export (image:icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) toolbar buttons:
 
 * Material
 * Small
 * Jam
 * Thin
 
-For information on using the {productname} premium icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/#howtouseaniconpack[Tiny Skins and Icon Packs - How to use an icon pack].
+For information on using the {productname} premium icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc#howtouseaniconpack[Tiny Skins and Icon Packs - How to use an icon pack].
 
+[[minorchangesfortinymce54]]
 == Minor changes for TinyMCE 5.5
 
 {productname} 5.5 introduces the following minor changes:
@@ -325,6 +328,7 @@ For information on using the {productname} premium icon packs, see: link:{baseur
 * Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Deprecated the `Env.experimentalShadowDom` flag.
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.5 provides fixes for the following bugs:
@@ -348,32 +352,37 @@ For information on using the {productname} premium icon packs, see: link:{baseur
 * Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances.
 * Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false.
 
+[[securityfixes]]
 == Security fixes
 
 Accessibility Checker 2.3.0 provides fixes for the following security issues:
 
 * Fixed a Cross-Site Scripting (XSS) vulnerability in the accessibility issue repair function.
 
+[[deprecatedfeatures]]
 == Deprecated features
 
 The following features have been deprecated with the release of {productname} 5.5:
 
-* <<thepremiumspanishmexicolanguagepackhasbeendeprecated,The premium Spanish (Mexico) language pack has been deprecated>>.
+* xref:thepremiumspanishmexicolanguagepackhasbeendeprecated[The premium Spanish (Mexico) language pack has been deprecated].
 
+[[thepremiumspanishmexicolanguagepackhasbeendeprecated]]
 === The premium Spanish (Mexico) language pack has been deprecated
 
 With the release of {productname} 5.5, the premium Spanish (Mexico) language pack (`es_MX`) has been deprecated and will not be updated in the future. The community-translated Spanish (Mexico) language pack is unaffected.
 
-For information on the community maintained language packs, see: link:{baseurl}/configure/localization/#language[Localization options - `language`].
+For information on the community maintained language packs, see: xref:configure/localization.adoc#language[Localization options - `language`].
 
+[[knownissues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.5 may encounter, as well as possible workarounds for these issues.
 
 *Outline*
 
-* <<difficulttoseetablecellselectionsfortablecellswithabackgroundcolor,Difficult to see table cell selections for table cells with a background color>>
+* xref:difficulttoseetablecellselectionsfortablecellswithabackgroundcolor[Difficult to see table cell selections for table cells with a background color]
 
+[[difficulttoseetablecellselectionsfortablecellswithabackgroundcolor]]
 === Difficult to see table cell selections for table cells with a background color
 
 *Issue*: Due to CSS changes related to table cell selections, it can be difficult to see the which cells are selected if the cells have a background color. This issue is both a usability and an accessibility issue.

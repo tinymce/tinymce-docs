@@ -172,6 +172,7 @@ ephox {
 }
 ----
 
+[[allowed-originsignore-portoptional]]
 ==== `allowed-origins.ignore-port` (optional)
 
 include::partial$misc/list_ignore_port_service_versions.adoc[]
@@ -438,6 +439,7 @@ For information on creating custom dictionaries, see: link:{baseurl}/enterprise/
 
 include::partial$misc/custom-dictionaries-path.adoc[]
 
+[[dynamic-custom-dictionariesoptional]]
 ==== `dynamic-custom-dictionaries` (optional)
 
 include::partial$misc/dynamic-custom-dictionaries.adoc[]

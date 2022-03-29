@@ -7,12 +7,13 @@
 
 {productname} 5.8.2 was released for {enterpriseversion} and {cloudname} on Wednesday, June 30^th^, 2021. It includes {productname} 5.8.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.8.2, including:
 
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<generalbugfixes,General bug fixes>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:generalbugfixes[General bug fixes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.8.2.
@@ -25,7 +26,7 @@ The {productname} 5.8.2 release includes an accompanying release of the *Export*
 
 * The client-side PDF exporter would fail to export when a circular reference was present during JSON serialization.
 
-For information on the Export plugin, see: link:{baseurl}/plugins/premium/export/[Export plugin].
+For information on the Export plugin, see: xref:plugins/premium/export.adoc[Export plugin].
 
 === PowerPaste 5.5.1
 
@@ -37,7 +38,7 @@ The {productname} 5.8.2 release includes an accompanying release of the *PowerPa
 * Fixed indented text pasted from Google Docs unable to be outdented.
 * Pasted images that failed to be converted to a blob would cause an uncaught exception and lock up the editor.
 
-For information on the PowerPaste plugin, see: link:{baseurl}/plugins/premium/powerpaste/[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
 === Spell Checker Pro 2.3.2
 
@@ -47,8 +48,9 @@ The {productname} 5.8.2 release includes an accompanying release of the *Spell C
 
 * Entering `hasOwnProperty` into the editor was throwing exceptions.
 
-For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.8.2 provides fixes for the following bugs:

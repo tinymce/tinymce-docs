@@ -56,13 +56,13 @@ Each rule has a severity level, which will be one of the following, listed in or
 
 ==== {pluginname} rule details - D1
 
-Notification level (severity): Warning
+Notification level (severity):: Warning
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specifications:
+WCAG 2.1 specifications::
 
 * https://www.w3.org/WAI/WCAG21/Techniques/html/H42.html[H42 - Using h1-h6 to identify headings].
 * https://www.w3.org/WAI/WCAG21/Techniques/html/H69.html[H69 - Providing heading elements at the beginning of each section of content].
@@ -76,13 +76,13 @@ For example: A `+h1+` heading should be followed by a `+h2+` heading, not a `+h3
 
 ==== {pluginname} rule details - D2
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html[G141 - Organizing a page using headings].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html[G141 - Organizing a page using headings].
 
 [[D3]]
 === D3 - Adjacent links
@@ -93,13 +93,13 @@ For example: If an image link and a text link have the same `+href+` attribute, 
 
 ==== {pluginname} rule details - D3
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html[H2 - Combining adjacent image and text links for the same resource].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html[H2 - Combining adjacent image and text links for the same resource].
 
 [[D4O]]
 === D4O - Ordered list structure
@@ -108,13 +108,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html[H2
 
 ==== {pluginname} rule details - D4O
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
 
 [[D4U]]
 === D4U - Unordered list structure
@@ -123,13 +123,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H
 
 ==== {pluginname} rule details - D4U
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
 
 [[D5]]
 === D5 - Contrast ratio of the text (D5A, D5B, and D5C)
@@ -147,35 +147,35 @@ Text with a low contrast ratio is hard to read for users with impaired vision.
 [[D5A]]
 ==== {pluginname} rule details - D5A
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level AA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level AA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html[G145 - Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html[G145 - Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text].
 
 [[D5B]]
 ==== {pluginname} rule details - D5B
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level AA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level AA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html[G18 - Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html[G18 - Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text].
 
 [[D5C]]
 ==== {pluginname} rule details - D5C
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G17.html[G17 - Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G17.html[G17 - Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text].
 
 [[H93]]
 === H93 - IDs must be unique
@@ -184,13 +184,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G17.htm
 
 ==== {pluginname} rule details - H93
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html[H93 - Ensuring that id attributes are unique on a Web page].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html[H93 - Ensuring that id attributes are unique on a Web page].
 
 [[I1]]
 === I1 - Image `+alt+` text
@@ -199,13 +199,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html[H
 
 ==== {pluginname} rule details - I1
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
 
 [[I2]]
 === I2 - Image `+alt+` text is not the image filename
@@ -214,13 +214,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.htm
 
 ==== {pluginname} rule details - I2
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
 
 [[T1]]
 === T1 - Table caption
@@ -229,13 +229,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.htm
 
 ==== {pluginname} rule details - T1
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html[H39 - Using caption elements to associate data table captions with data tables].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html[H39 - Using caption elements to associate data table captions with data tables].
 
 [[T2]]
 === T2 - Complex table summary
@@ -246,13 +246,13 @@ NOTE: This rule only applies to HTML 4 content and is not checked when `+a11yche
 
 ==== {pluginname} rule details - T2
 
-Notification level (severity): Warning
+Notification level (severity):: Warning
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4
+xref:a11ychecker_html_version[HTML version]:: HTML4
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
 
 [[T3]]
 === T3 - Table caption and summary
@@ -263,13 +263,13 @@ NOTE: The table `+summary+` attribute was deprecated in HTML 5, both the *what* 
 
 ==== {pluginname} rule details - T3
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
 
 [[T4A]]
 === T4A - Table markup
@@ -278,13 +278,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H
 
 ==== {pluginname} rule details - T4A
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
 
 [[T4B]]
 === T4B - Table headers
@@ -293,13 +293,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H
 
 ==== {pluginname} rule details - T4B
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
 
 [[T4C]]
 === T4C - Table heading scope
@@ -308,13 +308,13 @@ WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H
 
 ==== {pluginname} rule details - T4C
 
-Notification level (severity): Error
+Notification level (severity):: Error
 
-https://www.w3.org/TR/WCAG21/#conformance[WCAG level]: Level A ; Level AA ; Level AAA
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
 
-xref:a11ychecker_html_version[HTML version]: HTML4 and HTML5
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
-WCAG 2.1 specification: https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html[H63 - Using the scope attribute to associate header cells and data cells in data tables].
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html[H63 - Using the scope attribute to associate header cells and data cells in data tables].
 
 == Configuration Options
 

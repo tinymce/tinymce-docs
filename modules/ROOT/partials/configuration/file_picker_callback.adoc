@@ -1,3 +1,4 @@
+[[file_picker_callback]]
 == `file_picker_callback`
 
 This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in _Image_, _Media_ and _Link_ dialogs. This replaces the link:{url}/docs-4x/configure/file-image-upload/#file_browser_callback[`file_browser_callback`] (removed in version {productname} 5) option. The new `file_picker_callback` provides a way to update values of other fields in the dialog.

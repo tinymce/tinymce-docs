@@ -20,6 +20,7 @@ This URL specifies the latest and quality assured release of {productname}.
 
 NOTE: All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes/index.adoc[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
 
+[#{productmajorversion}{productmajorversion}-testingand{productmajorversion}-devreleasechannels]
 === {productmajorversion}, {productmajorversion}-testing, and {productmajorversion}-dev release channels
 
 Choose from the `{productmajorversion}`, `{productmajorversion}-testing`, or `{productmajorversion}-dev` release channels to load the latest version of {productname} from {cloudname}.
@@ -59,6 +60,7 @@ This channel deploys nightly builds of {productname}. This channel includes the 
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
+[[specifyingthetinymceeditorversiondeployedfromcloud]]
 == Specifying the version of premium plugins deployed from Tiny Cloud
 
 Each {productname} version is bundled with a set of premium plugins, but it is possible to specify different versions of each premium plugin to use with {productname}. Use the URL query parameters to specify the version of each premium plugin to load. This approach works with both the xref:cloud-deployment-guide/editor-and-features.adoc[{productname} editor and premium plugins deployment via {cloudname}] or just the xref:cloud-deployment-guide/features-only.adoc[premium plugins deployment from {cloudname}].

@@ -21,7 +21,8 @@ The basic dialog type is a *panel* dialog. A panel is a container for <<panelcom
 }
 ----
 
-=== tabpanel
+[[tabpanel]]
+=== `tabpanel`
 
 A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different <<panelcomponents,panel components>>, allowing for complex dialogs.
 

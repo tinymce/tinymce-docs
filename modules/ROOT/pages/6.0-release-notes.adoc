@@ -391,6 +391,7 @@ The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.
 
 `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 
+
 === Fixed APIs
 
 ==== `editor.annotator.remove`
@@ -465,6 +466,11 @@ The `tinymce.util.Promise` API has been removed.
 
 === New and improved commands and queries
 
+==== `mceAutocompleterClose` and `mceAutocompleterReload`
+
+As part of moving `autocompleter` from the default `silver` theme to the {productname} core, two new commands are now available: `mceAutocompleterClose` and `mceAutocompleterReload`.
+
+
 ==== mceInsertTableDialog
 
 * `mceInsertTableDialog` is the new command for invoking an _Insert Table_ dialog box.
@@ -507,7 +513,14 @@ The `mceInsertRawHTML` command has been removed.
 
 == Events
 
-// New and improved events
+=== New and improved events
+
+==== `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`
+
+As part of moving `autocompleter` from the default `silver` theme to the {productname} core, three new events are now available: `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`.
+
+Themes can act on the `AutocompleterStart` and `AutocompleterUpdate` events and can call `AutocompleterEnd` to cancel the auto completer.
+
 
 // Changed events
 
@@ -968,23 +981,11 @@ With this update, these tool tip labels now present in the expected language.
 
 === new and improved UI and UX elements and components
 
-[id=new-and-improved-ui-and-ux-elements-and-components-editor-text-entry-height]
-==== Editor text entry height
+==== `buttonType`
 
-* In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area.
+`buttonType` is a new property available as a basic panel component of `dialogs`.
 
-  In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
-
-[id=new-and-improved-ui-and-ux-elements-and-components-buttontype]
-=== dialog box re-rendering
-
-Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
-
-In {productname} 6.0, the `redial` API now only re-renders the portions of a dialog that have changed.
-
-==== new property, `buttonType`
-
-`buttonType` is a new property available as a basic panel component of `dialogs`. It replaces the, now deprecated property, `primary`.
+It replaces the, now deprecated property, `primary`.
 
 The `primary` property was boolean, allowing for only two states: `true` and `false`.
 
@@ -995,11 +996,34 @@ Setting `buttonType: 'primary'` is the same as setting `primary: true`.
 Setting `buttonType: 'secondary'` is the same as setting `primary: false`.
 
 
+[id=new-and-improved-ui-and-ux-elements-and-components-buttontype]
+=== dialog box re-rendering
+
+Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
+
+In {productname} 6.0, the `redial` API now only re-renders the portions of a dialog that have changed.
+
+
+[id=new-and-improved-ui-and-ux-elements-and-components-editor-text-entry-height]
+==== Editor text entry height
+
+In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area.
+
+In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
+
+
+==== `slider`
+
+{productname} 6.0 includes a new `slider` dialog component.
+
+
 === Changed UI and UX elements and components
 
 ==== buttonType
 
-`buttonType` is a new property available as a basic panel component of `dialogs`. It replaces the, now deprecated property, `primary`.
+`buttonType` is a new property available as a basic panel component of `dialogs`.
+
+It replaces the, now deprecated property, `primary`.
 
 
 ==== dialog labels now rendering correctly
@@ -1017,6 +1041,7 @@ In {productname} 6, this property has been re-named to `.enabled`.
 
 Also, the Dialog API, which previously offered the `disable(<name>)` and `enable(<name>)` functions, now offers a single `setEnabled(<name>, <state>)` function.
 
+
 ==== Editor text entry height
 
 In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high text entry area.
@@ -1024,6 +1049,11 @@ In {productname} 5.x, editors without a `height` value specified in the {product
 In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high text entry area.
 
 As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
+
+
+==== `imagepreview`
+
+The new `imagepreview` dialog component, allows for previewing and zooming of any image URL.
 
 
 === Fixed UI and UX elements and components

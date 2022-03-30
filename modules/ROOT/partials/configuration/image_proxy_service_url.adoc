@@ -24,6 +24,6 @@ Type: `+String+`
 tinymce.init({
   selector: 'textarea',
   plugins: 'image {plugincode}',
-  {proxy_setting_name}: 'http://mydomain.com/imageproxy'
+  {proxy_setting_name}: 'http://mydomain.com/ephox-image-proxy/'
 });
 ----

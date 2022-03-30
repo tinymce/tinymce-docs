@@ -1,8 +1,7 @@
 = Custom dialog body components
-
 :navtitle: Body components
 :description: A reference list of all TinyMCE dialog components.
-:keywords: dialog dialogapi
+:keywords: dialog, dialogapi
 
 The body of a dialog must be either a `+panel+` (a single panel) or a `+tabpanel+` (a collection of panels). Each panel can contain panel components, which are either xref:layoutcomponents[layout components] or xref:basiccomponents[basic components] such as inputs, buttons and text.
 

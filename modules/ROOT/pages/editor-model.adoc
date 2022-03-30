@@ -1,6 +1,5 @@
 = TinyMCE Model options
-
-:title_nav: Editor content models
+:navtitle: Editor content models
 :description: Configure the editor's content model.
 
 WARNING: {productname} model configuration is a future feature. The only supported models are the default (`+dom+`) and the one provided by the the premium https://www.tiny.cloud/tinymce/features/real-time-collaboration/[Real-time Collaboration] feature. These options exist only for use in scenarios where the `dom` model cannot load automatically.

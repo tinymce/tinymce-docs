@@ -12,7 +12,7 @@ Default Value : `+false+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   format_empty_lines: true
 });
 ----

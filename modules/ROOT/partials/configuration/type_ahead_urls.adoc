@@ -14,7 +14,7 @@ Possible Values : `+true+`, `+false+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   typeahead_urls: false
 });
 ----

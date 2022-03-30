@@ -12,7 +12,7 @@ Default : `+'#top'+`
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   anchor_top: '#mytop'
 });
 ----
@@ -22,7 +22,7 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   anchor_top: false
 });
 ----

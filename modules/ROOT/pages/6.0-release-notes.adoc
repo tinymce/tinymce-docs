@@ -283,9 +283,30 @@ And no workaround (other than keeping `nonbreaking_force_tab` set to `false`) is
 [id=new-and-improved-apis]
 === new and improved APIs
 
-==== `Editor.options`
+==== `editor.annotator.removeAll`
 
-* The new `editor.options` API replaces both `editor.settings` and `editor.getParam`.
+The new `editor.annotator.removeAll` API replaces the `removeAll` function built-in to the comments plugin.
+
+
+==== `editor.options` and `tinymce.activeEditor.options`
+
+The new `editor.options` API replaces two old APIs: `editor.settings` and `editor.getParam`.
+
+Along with this new API, the new `tinymce.activeEditor.options` registry replaces `tinymce.activeeditor.settings`.
+
+
+==== `FakeClipboard`
+
+The new `FakeClipboard` API provides a means for storing state that can be set and accessed by plugins and the core editor.
+
+`FakeClipboard` is implemented on the {productname} global, allowing anything to write to it and read from it.
+
+
+==== `Resource.unload`
+
+The new `Resource.unload` API makes it possible to unload resources in the resource loader.
+
+This allows tests, such as `ImageEmojiTest`, to remove existing databases before loading their own.
 
 
 === Changed APIs

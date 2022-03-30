@@ -18,19 +18,11 @@ tinymce.init({
     input.setAttribute('type', 'file');
     input.setAttribute('accept', 'image/*');
 
-    /*
-      Note: In modern browsers input[type="file"] is functional without
-      even adding it to the DOM, but that might not be the case in some older
-      or quirky browsers like IE, so you might want to add it to the DOM
-      just in case, and visually hide it. And do not forget do remove it
-      once you do not need it anymore.
-    */
-
-    input.onchange = () => {
-      const file = this.files[0];
+    input.addEventListener('change', (e) => {
+      const file = e.target.files[0];
 
       const reader = new FileReader();
-      reader.onload = () => {
+      reader.addEventListener('load', () => {
         /*
           Note: Now we need to register the blob in TinyMCEs image blob
           registry. In the next release this part hopefully won't be
@@ -44,9 +36,9 @@ tinymce.init({
 
         /* call the callback and populate the Title field with the file name */
         cb(blobInfo.blobUri(), { title: file.name });
-      };
+      });
       reader.readAsDataURL(file);
-    };
+    });
 
     input.click();
   },

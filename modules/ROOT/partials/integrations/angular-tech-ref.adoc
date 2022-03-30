@@ -176,11 +176,11 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 [[id]]
 === `+id+`
 
-An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
 *Type:* `+String+`
 
-*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
 
 ==== Example: Using `+id+`
 

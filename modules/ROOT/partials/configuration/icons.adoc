@@ -29,7 +29,7 @@ $ cp -r  dist/icons/my_icon_pack  TINYMCE_BASE/icons/
 
 endif::[]
 
-. Add the `+icons+` option to `+tinymce.init+`
+. Add the `+icons+` option to `+tinymce.init+`.
 ifeval::[{customIconPack} == true]
 +
 [source,js]

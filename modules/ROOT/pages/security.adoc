@@ -65,7 +65,7 @@ Cross-Site Scripting (XSS) involves using website or application inputs to injec
 
 Although {productname} filters content such as scripts from the editor content, precautions should be taken to protect your users, such as enabling a Content Security Policy (CSP) and server-side filtering.
 
-For information on Cross-Site Scripting and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)[OWASP Top Ten 2017 --- Cross-Site Scripting (XSS)].
+For information on Cross-Site Scripting and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)[OWASP Top Ten 2017 -- Cross-Site Scripting (XSS)].
 
 [[injection]]
 === Injection
@@ -74,7 +74,7 @@ Injection attacks involve attackers using website or application inputs to run s
 
 If user inputs are not properly sanitized server-side, host devices and user data can be compromised.
 
-For information on Injection-related security issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection[OWASP Top Ten 2017 --- Injection].
+For information on Injection-related security issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection[OWASP Top Ten 2017 -- Injection].
 
 [[insecuretransmissionandstorageofdata]]
 === Insecure Transmission and Storage of data
@@ -83,7 +83,7 @@ The transmission or storage of data without strong cryptographic protection leav
 
 Loading insecure content into the editor, or submitting content from the editor over an insecure connection exposes the user and the host server to attack.
 
-For information on Sensitive Data Exposure issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure[OWASP Top Ten 2017 --- Sensitive Data Exposure].
+For information on Sensitive Data Exposure issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure[OWASP Top Ten 2017 -- Sensitive Data Exposure].
 
 [[brokenauthenticationandsessionmanagement]]
 === Broken Authentication and Session Management
@@ -92,7 +92,7 @@ Broken or incorrectly implemented authentication and session management exposes 
 
 Broken Authentication or session management may allow attackers to change or submit data through the editor, or any input field, as the compromised user account.
 
-For information on Broken Authentication issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication[OWASP Top Ten 2017 --- Broken Authentication].
+For information on Broken Authentication issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication[OWASP Top Ten 2017 -- Broken Authentication].
 
 [[usingcomponentswithknownvulnerabilities]]
 === Using Components with Known Vulnerabilities
@@ -101,7 +101,7 @@ Using outdated components on your website or application allows attackers to exp
 
 {productname} is patched when vulnerabilities are discovered. Keeping {productname} and your other dependencies up to date will protect you and your users from known vulnerabilities.
 
-For information on issues related to using components with known issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities.html[OWASP Top Ten 2017 --- Using Components with Known Vulnerabilities].
+For information on issues related to using components with known issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities.html[OWASP Top Ten 2017 -- Using Components with Known Vulnerabilities].
 
 [[furthersecurityinformation]]
 === Further security information

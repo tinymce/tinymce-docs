@@ -1,5 +1,5 @@
 [[toolbar_sticky]]
-== toolbar_sticky
+== `+toolbar_sticky+`
 
 A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top of the screen when scrolling down a web page until the editor is no longer visible.
 
@@ -15,7 +15,7 @@ To see a demo of sticky toolbar, see the https://codepen.io/tinymce/full/qBWLLMP
 
 include::partial$misc/admon_different_default_for_mobile.adoc[]
 
-=== Example: toolbar_sticky
+=== Example: Using `+toolbar_sticky+`
 
 [source,js]
 ----

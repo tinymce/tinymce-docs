@@ -1,14 +1,6 @@
 = TinyMCE 5.x -> 6.0 Migration Guide
 
-include::6.0-release-notes.adoc#core-changes
-
-include::6.0-release-notes.adoc#things-we-renamed
-
-include::6.0-release-notes.adoc#default-value-changes
-
-include::6.0-release-notes.adoc#previously-deprecated-items-now-removed
-
-include::6.0-release-notes.adoc#previously-undocumented-items-removed-without-prior-deprecation
+include::6.0-release-notes.adoc[tags=core-changes;things-we-renamed;default-value-changes;previously-deprecated-items-now-removed;previously-undocumented-items-removed-without-prior-deprecation;known-issue]
 
 == APIs
 
@@ -442,53 +434,30 @@ NOTE: while {productname} 6.0 honours the `height` setting in {productname} conf
 
 The names of the following user-interface and user experience elements were changed.
 
-[cols="1,1,1"]
 |===
-| ui or ux element | old name | new name
+|ui or ux element |old name              | new name
 
-|Option
-|`font_formats`
-|`font_family_formats`
+| Option          | `font_formats`       | `font_family_formats`
 
-|Toolbar item
-|`fontselect`
-|`fontfamily`
+| Toolbar item    | `fontselect`         | `fontfamily`
 
-|Menu item
-|`fontformats`
-|`fontfamily`
+| Menu item       | `fontformats`        | `fontfamily`
 
-|Option
-|`fontsize_formats`
-|`font_size_formats`
+| Option          | `fontsize_formats`   | `font_size_formats`
 
-|Toolbar item
-|`fontsizeselect`
-|`fontsize`
+| Toolbar item    | `fontsizeselect`     | `fontsize`
 
-|Menu item
-|`fontsizes`
-|`fontsize`
+| Menu item       | `fontsizes`          | `fontsize`
 
-|Toolbar item
-|`formatselect`
-|`blocks`
+| Toolbar item    | `formatselect`       | `blocks`
 
-|Menu item
-|`blockformats`
-|`blocks`
+| Menu item       | `blockformats`       | `blocks`
 
-|Toolbar item
-|`styleselect`
-|`styles`
+| Toolbar item    | `styleselect`        | `styles`
 
-|Menu item
-|`formats`
-|`styles`
+| Menu item       | `formats`            | `styles`
 
-|Option
-|`lineheight_formats`
-|`line_height_formats`
+| Option          | `lineheight_formats` | `line_height_formats`
 |===
 
 NOTE: the behaviour of these elements is unchanged.

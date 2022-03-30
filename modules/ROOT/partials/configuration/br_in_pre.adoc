@@ -3,13 +3,13 @@
 
 This option allows you to disable {productname}'s default behavior when pressing the enter key within a `+pre+` tag. By default, pressing enter within a `+pre+` tag produces a `+br+` tag at the insertion point. For example:
 
-`+<pre>This is inside+` `+<br>+` `+a pre tag.</pre>+`
+`+<pre>This is inside<br>a pre tag.</pre>+`
 
 However, when `+br_in_pre+` is set to `+false+`, rather than inserting a `+br+` tag {productname} will split the `+pre+` tag. For example:
 
-`+<pre>This is inside </pre>+` `+<pre>a pre tag.</pre>+`
+`+<pre>This is inside</pre><pre>a pre tag.</pre>+`
 
-NOTE: when set to `+false+`, `+shift+enter+` will insert a `+br+` tag.
+NOTE: When this option is set to `+false+`, `+shift+enter+` will insert a `+br+` tag.
 
 *Type:* `+Boolean+`
 

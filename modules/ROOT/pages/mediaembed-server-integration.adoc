@@ -141,7 +141,7 @@ The other option for developing a custom API endpoint is to return JSON in the x
 ** String containing a description of the document.
 * `+cache_age+` (optional)
 ** Integer containing the _suggested_ cache lifetime for this resource, in seconds.
-* `+date +` (optional)
+* `+date+` (optional)
 ** String containing the date of the document in the format *YYYY-MM-DD*.
 * `+links+` (required)
 ** xref:linksobj[LinksObj]

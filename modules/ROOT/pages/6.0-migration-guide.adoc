@@ -442,19 +442,22 @@ NOTE: while {productname} 6.0 honours the `height` setting in {productname} conf
 
 The names of the following user-interface and user experience elements were changed.
 
-| ui or ux element | old name             | new name              |
-| ---------------- | -------------------- | --------------------- |
-| Option           | `font_formats`       | `font_family_formats` |
-| Toolbar item     | `fontselect`         | `fontfamily`          |
-| Menu item        | `fontformats`        | `fontfamily`          |
-| Option           | `fontsize_formats`   | `font_size_formats`   |
-| Toolbar item     | `fontsizeselect`     | `fontsize`            |
-| Menu item        | `fontsizes`          | `fontsize`            |
-| Toolbar item     | `formatselect`       | `blocks`              |
-| Menu item        | `blockformats`       | `blocks`              |
-| Toolbar item     | `styleselect`        | `styles`              |
-| Menu item        | `formats`            | `styles`              |
-| Option           | `lineheight_formats` | `line_height_formats` |
+
+|===
+| ui or ux element | old name             | new name
+
+| Option           , `font_formats`       , `font_family_formats`
+| Toolbar item     , `fontselect`         , `fontfamily`
+| Menu item        , `fontformats`        , `fontfamily`
+| Option           , `fontsize_formats`   , `font_size_formats`
+| Toolbar item     , `fontsizeselect`     , `fontsize`
+| Menu item        , `fontsizes`          , `fontsize`
+| Toolbar item     , `formatselect`       , `blocks`
+| Menu item        , `blockformats`       , `blocks`
+| Toolbar item     , `styleselect`        , `styles`
+| Menu item        , `formats`            , `styles`
+| Option           , `lineheight_formats` , `line_height_formats`
+|===
 
 NOTE: the behaviour of these elements is unchanged.
 

@@ -1,10 +1,13 @@
 = TinyMCE 6.0 Release Notes
 
-== Core architectural change
+[id=core-changes]
+== Core changes
 
 {productname} 6.0 now requires a browser capable of running https://tc39.es/ecma262/2020/[ECMAScript 2020] (ES2020).
 
 NOTE: In particular, this means {productname} 6.0 does not support Internet Explorer 11.
+
+Also, no Premium Plugins being released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 [id=things-we-renamed]
 == Things we renamed
@@ -78,61 +81,64 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 The following elements were previously deprecated and have, with this release, been removed entirely from {productname}.
 
-| item                                  | element       | notes                                                      |
-| ------------------------------------- | ------------- | ---------------------------------------------------------- |
-| `$`                                   | API           | `$` was a shorthand function of `DomQuery` and `Sizzle`.   |
-| `addComponents`                       | API           | From `AddOnManager`.                                       |
-| `autoresize_on_init`                  | Option        |                                                            |
-| `block_elements`                      | Schema option |                                                            |
-| `boolean_attributes`                  | Schema option |                                                            |
-| `Class`                               | API           |                                                            |
-| `clearInterval`                       | API           | From `Delay`.                                              |
-| `clearTimeout`                        | API           | From `Delay`.                                              |
-| `Color`                               | API           |                                                            |
-| `content_editable_state`              | Option        |                                                            |
-| `debounce`                            | API           | From `Delay`.                                              |
-| `dependencies`                        | API           | From `AddOnManager`.                                       |
-| `DomQuery`                            | API           |                                                            |
-| `editor_deselector`                   | Option        | From `EditorManager`.                                      |
-| `editors`                             | Property      | From `EditorManager`.                                      |
-| `editor_selector`                     | Option        | From `EditorManager`.                                      |
-| `elements`                            | Option        | From `EditorManager`.                                      |
-| `execCallback`                        | API           |                                                            |
-| `file_browser_callback_types`         | Option        |                                                            |
-| `filepicker_validator_handler`        | Option        | Superseded by `file_picker_validator_handler`.             |
-| `force_hex_style_colors`              | Option        |                                                            |
-| `force_p_newlines`                    | Option        | Superseded by `forced_root_block`.                         |
-| `gecko_spellcheck`                    | Option        | Replaced by `browser_spellcheck`.                          |
-| `images_dataimg_filter`               | Option        |                                                            |
-| `JSON`                                | API           |                                                            |
-| `JSONP`                               | API           |                                                            |
-| `JSONRequest`                         | API           |                                                            |
-| `mode`                                | Option        | From `EditorManager`.                                      |
-| `move_caret_before_on_enter_elements` | Schema option |                                                            |
-| `non_empty_elements`                  | Schema option |                                                            |
-| `padd_empty_with_br`                  | Option        |                                                            |
-| `requestAnimationFrame`               | API           | From `Delay`.                                              |
-| `self_closing_elements`               | Schema option |                                                            |
-| `setIconStroke`                       | API           |                                                            |
-| `setInterval`                         | API           | From `Delay`.                                              |
-| `setMode`                             | API           |                                                            |
-| `setTimeout`                          | API           | From `Delay`.                                              |
-| `short_ended_elements`                | Schema option |                                                            |
-| `Sizzle`                              | API           |                                                            |
-| `special`                             | Schema option |                                                            |
-| `text_block_elements`                 | Schema option |                                                            |
-| `text_inline_elements`                | Schema option |                                                            |
-| `throttle`                            | API           | From `Delay`.                                              |
-| `toolbar_drawer`                      | Option        | Superseded by `toolbar_mode`.                              |
-| `types`                               | Option        | From `EditorManager`.                                      |
-| `whitespace_elements`                 | Schema option |                                                            |
-| `validate`                            | Schema option |                                                            |
-| `XHR`                                 | API           | Any remaining `XHR` users have been replaced with `fetch`. |
+| item                                  | element       | notes                                                                              |
+| ------------------------------------- | ------------- | ---------------------------------------------------------------------------------- |
+| `$`                                   | API           | `$` was a shorthand function of `DomQuery` and `Sizzle`.                           |
+| `addComponents`                       | API           | From `AddOnManager`.                                                               |
+| `autoresize_on_init`                  | Option        |                                                                                    |
+| `block_elements`                      | Schema option |                                                                                    |
+| `boolean_attributes`                  | Schema option |                                                                                    |
+| `Class`                               | API           |                                                                                    |
+| `clearInterval`                       | API           | From `Delay`.                                                                      |
+| `clearTimeout`                        | API           | From `Delay`.                                                                      |
+| `Color`                               | API           |                                                                                    |
+| `content_editable_state`              | Option        |                                                                                    |
+| `debounce`                            | API           | From `Delay`.                                                                      |
+| `dependencies`                        | API           | From `AddOnManager`.                                                               |
+| `DomQuery`                            | API           |                                                                                    |
+| `editor_deselector`                   | Option        | From `EditorManager`.                                                              |
+| `editors`                             | Property      | From `EditorManager`.                                                              |
+| `editor_selector`                     | Option        | From `EditorManager`.                                                              |
+| `elements`                            | Option        | From `EditorManager`.                                                              |
+| `execCallback`                        | API           |                                                                                    |
+| `file_browser_callback_types`         | Option        |                                                                                    |
+| `filepicker_validator_handler`        | Option        | Superseded by `file_picker_validator_handler`.                                     |
+| `force_hex_style_colors`              | Option        |                                                                                    |
+| `force_p_newlines`                    | Option        | Superseded by `forced_root_block`.                                                 |
+| `forced_root_black: false`            | Option        | `forced_root_black` must be a non-empty string and cannot take a value of `false`. |
+| `gecko_spellcheck`                    | Option        | Replaced by `browser_spellcheck`.                                                  |
+| `images_dataimg_filter`               | Option        |                                                                                    |
+| `JSON`                                | API           |                                                                                    |
+| `JSONP`                               | API           |                                                                                    |
+| `JSONRequest`                         | API           |                                                                                    |
+| `mode`                                | Option        | From `EditorManager`.                                                              |
+| `move_caret_before_on_enter_elements` | Schema option |                                                                                    |
+| `non_empty_elements`                  | Schema option |                                                                                    |
+| `padd_empty_with_br`                  | Option        |                                                                                    |
+| `requestAnimationFrame`               | API           | From `Delay`.                                                                      |
+| `self_closing_elements`               | Schema option |                                                                                    |
+| `setIconStroke`                       | API           |                                                                                    |
+| `setInterval`                         | API           | From `Delay`.                                                                      |
+| `setMode`                             | API           |                                                                                    |
+| `setTimeout`                          | API           | From `Delay`.                                                                      |
+| `short_ended_elements`                | Schema option |                                                                                    |
+| `Sizzle`                              | API           |                                                                                    |
+| `special`                             | Schema option |                                                                                    |
+| `text_block_elements`                 | Schema option |                                                                                    |
+| `text_inline_elements`                | Schema option |                                                                                    |
+| `throttle`                            | API           | From `Delay`.                                                                      |
+| `toolbar_drawer`                      | Option        | Superseded by `toolbar_mode`.                                                      |
+| `types`                               | Option        | From `EditorManager`.                                                              |
+| `whitespace_elements`                 | Schema option |                                                                                    |
+| `validate`                            | Schema option |                                                                                    |
+| `XHR`                                 | API           | Any remaining `XHR` users have been replaced with `fetch`.                         |
 
 [id=previously-undocumented-items-removed-without-prior-deprecation]
 == Previously undocumented items removed without prior deprecation
 
-The following elements were never documented and have never been formally supported. Consequently, they were removed with this release without deprecation notices being provided in earlier releases.
+The following elements were never documented and have never been formally supported.
+
+Consequently, they were removed with this release without deprecation notices being provided in earlier releases.
 
 | item                                     | element       |
 | ---------------------------------------- | ------------- |
@@ -143,7 +149,7 @@ The following elements were never documented and have never been formally suppor
 
 
 [id=known-issues]
-== Known issues
+== Known issue
 
 === If `nonbreaking_force_tab: true` pressing the tab key in a table cell produces an unexpected result
 
@@ -172,6 +178,7 @@ And no workaround (other than keeping `nonbreaking_force_tab` set to `false`) is
 
 * The new `editor.options` API replaces both `editor.settings` and `editor.getParam`.
 
+
 === Changed APIs
 
 ==== `closeButton` and `timeout`
@@ -197,15 +204,56 @@ In {productname} 6, these function names have been changed and configuration cha
 
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
-=== `editor.SetContent`
+
+==== `dom.DOMUtils`
+
+The `toHex` function has been removed from `dom.DOMUtils`.
+
+
+==== `DomParser`
+
+The `filterNode` method has been removed from the `DomParser` API.
+
+
+==== `editor.SetContent`
 
 The `editor.SetContent` event’s `content` property has been deprecated.
 
-==== success or failure callbacks replaced by `Promise` in multiple APIs
 
-* Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs report resource loading status with `success` or `failure` callbacks.
+==== `Env`
 
-  These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`.
+The following methods have been removed from the `Env` API:
+
+* `opera`
+
+* `webKit`
+
+* `ie`
+
+* `gecko`
+
+* `mac`
+
+* `iOS`
+
+* `android`
+
+* `desktop`
+
+* `contentEditable`
+
+* `caretAfter`
+
+* `range`
+
+* `ceFalse`
+
+* `experimentalShadowDom`
+
+* `fileApi`
+
+Note, in particular, the removal of all legacy browser detection methods.
+
 
 ==== `fire` functions re-named in all {productname} APIs
 
@@ -213,11 +261,59 @@ The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.
 
 `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 
-- fixed
-- added
+=== Fixed APIs
+
+==== `editor.annotator.remove`
+
+Previously, `editor.annotator.remove` scrolled to the removed material’s position when removing an annotation.
+
+It did not, as expected, retain the current selection or insertion point position in the {productname} editor.
+
+With this release, `editor.annotator.remove` does not change the change the selection or insertion point position after removing an annotation.
+
+
+==== `editor.fire()`
+
+Previously, if the {productname} editor was removed, the `editor.fire()` API returned an incorrect object.
+
+In {productname} 6.0, `editor.fire()` returns the correct object even when the editor is removed.
+
+
+==== `editor.selection.getContent()`
+
+The `no_events` argument is Boolean. If set to `true`, events should not fire when `getContent` is called. Previously, `editor.selection.getContent()` did not respect this.
+
+In {productname} 6.0, `editor.selection.getContent()` treats the `no_events` setting as expected: when set to `false`, events are fired; when set to `true`, events are not fired.
+
+
+
+// Added APIs
+
+
+==== `html.Styles`
+
+The `toHex` function has been removed from `html.Styles`.
+
+
+==== success or failure callbacks replaced by `Promise` in multiple APIs
+
+* Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs report resource loading status with `success` or `failure` callbacks.
+
+  These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`.
+  
+  Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
+
+
 
 [id=removed-or-deprecated-apis]
 === Removed or deprecated APIs
+
+
+[id=removed-or-deprecated-apis-saxparser]
+==== `SaxParser`
+
+With all filtering moved to the `DomParser` API, the `SaxParser` API has been removed.
+
 
 [id=removed-or-deprecated-apis-tables]
 ==== Table
@@ -228,7 +324,11 @@ The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.
 
   Since the `table` plugin API was entirely concerned with generating tables, it has been removed.
 
-// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
+[id=removed-or-deprecated-apis-tinymce.util.promise]
+==== `tinymce.util.Promise`
+
+The `tinymce.util.Promise` API has been removed.
 
 
 == Commands and queries
@@ -262,18 +362,39 @@ Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options
 
 === Fixed commands and queries
 
-=== Femoved or deprecated commands and queries
+=== Removed or deprecated commands and queries
 
-// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+==== `execCommand`
+
+The `execCommand` handler function has been removed from the `plugin` and `theme` interfaces.
+
+
+==== `mceInsertRawHTML`
+
+The `mceInsertRawHTML` command has been removed.
+
 
 
 == Events
 
-- new and improved
-- changed
-- fixed
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+// New and improved events
+
+// Changed events
+
+=== Fixed events
+
+==== `GetContent`
+
+Previously the `GetContent` event did not fire when the `editor.selection.setContent()` API attempted to get `tree` or `text` formatted data.
+
+With this release, the `GetContent` event fires as expected when `editor.selection.setContent()` attempts this.
+
+NOTE: The `editor.selection.setContent()` API only supports the `html` and `raw` formats. It does not support `tree` or `text` formats. To create a tree to pass in to `editor.selection.setContent()`, use the `new tinymce.html.Node()` API, or parse to a tree using `editor.parser.parse(html)`.
+
+
+
+// removed or deprecated
+
 
 == Formatting
 
@@ -285,11 +406,18 @@ Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options
 
 == Functions
 
-- new and improved
-- changed
-- fixed
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+// new and improved
+
+// changed
+
+// fixed
+
+=== Removed or deprecated functions
+
+==== `execCommand`
+
+
+
 
 == Options
 
@@ -333,7 +461,7 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 
 
 
-// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
 
 
 == Parsing and serialisation
@@ -347,6 +475,27 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 
 [id=plugins]
 == Plugins
+
+=== Plugin loading format change
+
+{productname} 6.0 allows plugin loading in any of three formats:
+
+1. An array of strings:
+
+   `plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
+
+2. A space-separated string:
+
+   `plugins: 'advlist list image help wordcount'`
+   
+3. A comma-separated string:
+
+   `plugins: 'advlist,list,image,help,wordcount'`
+
+Previously, two other formats were allowed: comma-separated strings with spaces and arrays of space-separated strings.
+
+Neither of these formats are allowed in {productname} 6.0.
+
 
 [id=new-and-improved-plugins]
 === New and improved plugins
@@ -599,16 +748,31 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
 
 
-// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
 
 == Properties
 
-- new and improved
-- changed
-- fixed
-- added
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+// new and improved
+// changed
+// fixed
+// added
+
+=== Removed or deprecated properties
+
+==== `editor.settings`
+
+The `editor.settings` property has been replaced by the `Options` API.
+
+It has, consequently, been removed from {productname} 6.0.
+
+==== `fixed`
+
+the `fixed` property has been removed from the `tinymce.html.Node` class.
+
+==== `shortEnded`
+
+the `shortEnded` property has been removed from the `tinymce.html.Node` class.
+
 
 == Schema
 
@@ -638,7 +802,7 @@ NOTE: The {productname} public API, DomParser uses, in turn, the same-named brow
 
 === Removed or deprecated schema
 
-// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
 
 == UI and UX elements and components
 
@@ -714,10 +878,28 @@ Second, if the previous behaviour is required, a custom `format` will need to be
 
 === Removed or deprecated UI and UX elements and components
 
+==== `mobile` theme
+
+The `mobile` theme was deprecated when integrated support for mobile devices was  added to {productname}.
+
+The theme has now been removed.
+
+
 ==== primary
 
 the `primary` property was a boolean property available as a basic panel component of `dialogs`.
 
 It has been deprecated and replaced by the new `buttonType` property.
 
-// Don’t forget to set a visual check mark of some sort to denote the removal or deprecation of any previously undocumented things.
+
+==== style field in the Advanced tab of the Insert/Edit Image dialog box
+
+The _Style_ field, previously presented in the _Advanced_ tab of the _Insert/Edit Image_ dialog box has been removed.
+
+When the _Advanced_ tab in the _Insert/Edit Image_ dialog box was selected, a _Style_ text-entry field (auto-populated with the selected image’s properties and associated values) was one of the fields presented.
+
+A bug in {productname} prevented the field from being edited, however.
+
+Separate from the text-entry bug, supporting edits in this field properly is out-of-scope for this release of {productname}.
+
+An internal feature request to re-implement this feature when it can be done so safely has been logged.

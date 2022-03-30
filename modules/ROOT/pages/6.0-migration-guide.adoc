@@ -1,6 +1,6 @@
 = TinyMCE 5.x -> 6.0 Migration Guide
 
-include::6.0-release-notes.adoc#core-architectural-change
+include::6.0-release-notes.adoc#core-changes
 
 include::6.0-release-notes.adoc#things-we-renamed
 
@@ -203,6 +203,26 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 
 == Plugins
 
+=== Plugin loading format change
+
+{productname} 6.0 allows plugin loading in any of three formats:
+
+1. An array of strings:
+
+   `plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
+
+2. A space-separated string:
+
+   `plugins: 'advlist list image help wordcount'`
+   
+3. A comma-separated string:
+
+   `plugins: 'advlist,list,image,help,wordcount'`
+
+Previously, two other formats were allowed: comma-separated strings with spaces and arrays of space-separated strings.
+
+Neither of these formats are allowed in {productname} 6.0.
+
 === Removed plugins
 
 All references to any of these plugins should be removed from plugin configurations.
@@ -243,6 +263,8 @@ One plugin was removed as no longer supported:
 
 NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
 
+NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
+
 === ImageTools
 
 As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Free editor.
@@ -256,6 +278,8 @@ Finally, `editimage` also offers a new export plugin option: `export_image_proxy
 NOTE: `editimage_proxy` (the re-named equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
 
 Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `imagetools` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as https://tiny.cloud/tinymce/features/#productivity[_EditImage_].
+
+NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 === Media
 
@@ -301,6 +325,7 @@ NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for th
 
 NOTE: the Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
+NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 === Table of Contents
 
@@ -324,6 +349,7 @@ The new Premium `tableofcontents` plugin also changes the names of several comma
 
 Any configurations or logic that use the old command names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
 
+NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 == Schema
 

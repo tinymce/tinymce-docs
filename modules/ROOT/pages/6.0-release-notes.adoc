@@ -295,6 +295,13 @@ The new `editor.options` API replaces two old APIs: `editor.settings` and `edito
 Along with this new API, the new `tinymce.activeEditor.options` registry replaces `tinymce.activeeditor.settings`.
 
 
+==== `editor.uploadImages()`
+
+The `editor.uploadImages()` API now includes a `remove` flag.
+
+The flag returns `true` when an image being uploaded is removed after failing to upload.
+
+
 ==== `FakeClipboard`
 
 The new `FakeClipboard` API provides a means for storing state that can be set and accessed by plugins and the core editor.
@@ -307,6 +314,22 @@ The new `FakeClipboard` API provides a means for storing state that can be set a
 The new `Resource.unload` API makes it possible to unload resources in the resource loader.
 
 This allows tests, such as `ImageEmojiTest`, to remove existing databases before loading their own.
+
+
+==== `setData` method in dialog API
+
+The dialog API’s `setData` method now uses a deep merge algorithm.
+
+Consequently, it now supports partial nested objects.
+
+
+==== success or failure callbacks replaced by `Promise` in multiple APIs
+
+* Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs report resource loading status with `success` or `failure` callbacks.
+
+  These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`.
+  
+  Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
 
 
 === Changed APIs
@@ -343,6 +366,8 @@ The `toHex` function has been removed from `dom.DOMUtils`.
 ==== `DomParser`
 
 The `filterNode` method has been removed from the `DomParser` API.
+
+As well, the `DomParser` API no longer uses a custom parser internally and instead uses the https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[native `DOMParser` API].
 
 
 ==== `editor.SetContent`
@@ -418,26 +443,13 @@ In {productname} 6.0, `editor.selection.getContent()` treats the `no_events` set
 
 
 
-// Added APIs
+[id=removed-or-deprecated-apis]
+=== Removed or deprecated APIs
 
 
 ==== `html.Styles`
 
 The `toHex` function has been removed from `html.Styles`.
-
-
-==== success or failure callbacks replaced by `Promise` in multiple APIs
-
-* Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs report resource loading status with `success` or `failure` callbacks.
-
-  These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`.
-  
-  Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
-
-
-
-[id=removed-or-deprecated-apis]
-=== Removed or deprecated APIs
 
 
 [id=removed-or-deprecated-apis-saxparser]
@@ -522,7 +534,16 @@ As part of moving `autocompleter` from the default `silver` theme to the {produc
 Themes can act on the `AutocompleterStart` and `AutocompleterUpdate` events and can call `AutocompleterEnd` to cancel the auto completer.
 
 
-// Changed events
+==== `BeforeSetContent`
+
+The `BeforeSetContent` event now includes the actual serialized content when passing in an `AstNode` to the `editor.setContent`.
+
+
+==== `ThemeLoadError`
+
+A `ThemeLoadError` event is now fired if the theme fails to load.
+
+// === Changed events
 
 === Fixed events
 
@@ -553,17 +574,22 @@ Previously, however, because of over-rides in the `DeleteBackspaceKeys.ts` modul
 With this release, these over-rides no longer prevent an `input` event firing when multiple lines are deleted, as expected.
 
 
-
-// removed or deprecated
+// === Removed or deprecated events
 
 
 == Formatting
 
-- new and improved
-- changed
-- fixed
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+// === New and improved formatting
+
+
+// === Changed formatting
+
+
+// === Fixed formatting
+
+
+// === Removed or deprecated formatting
+
 
 == Functions
 
@@ -953,15 +979,13 @@ the `shortEnded` property has been removed from the `tinymce.html.Node` class.
 
 
 
-=== Changed schema
+//=== Changed schema
 
+//=== Fixed schema
 
+//=== Added schema
 
-=== Fixed schema
-
-=== Added schema
-
-=== Removed or deprecated schema
+//=== Removed or deprecated schema
 
 
 == Strings and Internationalisation
@@ -997,11 +1021,20 @@ Setting `buttonType: 'secondary'` is the same as setting `primary: false`.
 
 
 [id=new-and-improved-ui-and-ux-elements-and-components-buttontype]
-=== dialog box re-rendering
+==== dialog box re-rendering
 
 Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
 
-In {productname} 6.0, the `redial` API now only re-renders the portions of a dialog that have changed.
+In {productname} 6.0, the `initialData` type is now `Partial<T>`, which matches the underlying implementation.
+
+And, relatedly, the `redial` API now re-renders only the portions of a dialog that have changed.
+
+
+==== `setData` method in dialog API
+
+The dialog API’s `setData` method now uses a deep merge algorithm.
+
+Consequently, it now supports partial nested objects.
 
 
 [id=new-and-improved-ui-and-ux-elements-and-components-editor-text-entry-height]
@@ -1010,6 +1043,25 @@ In {productname} 6.0, the `redial` API now only re-renders the portions of a dia
 In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area.
 
 In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
+
+
+==== editor theme now fetched in parallel with icons, plugins, and language packs
+
+Previously, when a theme was requested, {productname} downloaded it completely before fetching accompanying components, such as icons, plugins, and language packs.
+
+With this release, when a theme is called, related components are downloaded in parallel with the theme.
+
+
+==== `imagepreview`
+
+The new `imagepreview` dialog component allows for previewing and zooming of any image URL.
+
+
+==== Insertion point placement improved when clicking on noneditable elements
+
+Clicking on or near the boundaries between editable and noneditable elements (eg in the `padding` of a noneditable element containing an editable element), there are established and expected norms as to where the insertion point should present after the click.
+
+With this release, {productname} has improved the placing of the insertion point on either side of a noneditable element when clicking on or near these boundaries.
 
 
 ==== `slider`
@@ -1024,13 +1076,6 @@ In {productname} 6.0, editors without a specified `config.height` value default 
 `buttonType` is a new property available as a basic panel component of `dialogs`.
 
 It replaces the, now deprecated property, `primary`.
-
-
-==== dialog labels now rendering correctly
-
-Previously, {productname} dialog labels and other UI elements were rendered with HTML markup.
-
-With this release, the `text` and `label` properties of these elements are now rendered as plain text, as expected.
 
 
 ==== `disabled` properties re-named to `.enabled` in {productname} UI classes
@@ -1051,11 +1096,6 @@ In {productname} 6.0, editors without a `height` value specified in the {product
 As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
 
 
-==== `imagepreview`
-
-The new `imagepreview` dialog component, allows for previewing and zooming of any image URL.
-
-
 === Fixed UI and UX elements and components
 
 ==== Anchor elements now rendering correctly when `allow_html_in_named_anchor: true`
@@ -1072,6 +1112,13 @@ Previously, {productname}’s default UI theme, `silver`, was initialised such t
 This resulted in these UI elements rendering incorrectly.
 
 With this release, `silver` no longer renders these UI elements before plugins get to over-ride or adjust, and these components no longer render incorrectly.
+
+
+==== dialog labels now rendering correctly
+
+Previously, {productname} dialog labels and other UI elements were rendered with HTML markup.
+
+With this release, the `text` and `label` properties of these elements are now rendered as plain text, as expected.
 
 
 ==== sub-menu items now read by screen readers
@@ -1099,7 +1146,16 @@ If an extant {productname} document with an aligned table is opened using {produ
 
 Second, if the previous behaviour is required, a custom `format` will need to be created.
 
-//=== Added UI and UX elements and components
+
+=== Fixed UI and UX elements and components
+
+==== `editor.selection.setRng`
+
+Calls to `editor.selection.setRng` now update the insertion point bookmark when focus is returned to the editor.
+
+For the end-user, this change means content dragged from outside the {productname} editor into the editable area will be placed into the {productname} document where the insertion point appears as the drag is completed.
+
+This is the expected behaviour.
 
 
 === Removed or deprecated UI and UX elements and components

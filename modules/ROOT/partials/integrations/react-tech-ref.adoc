@@ -101,54 +101,54 @@ The `+tinymce-react+` integration will try to source {productname} in the follow
 
 These props are used to configure how the editor is sourced:
 
-xref:apikey[`+apiKey+`] : The {cloudname} API key. When loading from {cloudname}, use this prop to remove the "This domain is not registered..." warning message.
+xref:apikey[`+apiKey+`]:: The {cloudname} API key. When loading from {cloudname}, use this prop to remove the "This domain is not registered..." warning message.
 
-xref:cloudchannel[`+cloudChannel+`] : The channel of {productname} used when loading from {cloudname}.
+xref:cloudchannel[`+cloudChannel+`]:: The channel of {productname} used when loading from {cloudname}.
 
-xref:scriptloading[`+scriptLoading+`] : The script loading behavior prop. Allows setting of the `+async+` and `+defer+` attributes, as well as adding an additional delay in milliseconds.
+xref:scriptloading[`+scriptLoading+`]:: The script loading behavior prop. Allows setting of the `+async+` and `+defer+` attributes, as well as adding an additional delay in milliseconds.
 
-xref:tinymcescriptsrc[`+tinymceScriptSrc+`] : The URL to use for sourcing {productname}, when loading a self-hosted version of {productname}.
+xref:tinymcescriptsrc[`+tinymceScriptSrc+`]:: The URL to use for sourcing {productname}, when loading a self-hosted version of {productname}.
 
 [[configuringpageelements]]
 === Configuring page elements
 
 These props provide some control over the page elements that the integration creates:
 
-xref:id[`+id+`] : The id attribute of the element that the editor is initialized on.
+xref:id[`+id+`]:: The id attribute of the element that the editor is initialized on.
 
-xref:inline[`+inline+`] : Load the editor as part of the page; sharing the page styles and selection.
+xref:inline[`+inline+`]:: Load the editor as part of the page; sharing the page styles and selection.
 
-xref:tagname[`+tagName+`] : The tag used for creating an inline editor. Ignored for a classic (iframe) editor.
+xref:tagname[`+tagName+`]:: The tag used for creating an inline editor. Ignored for a classic (iframe) editor.
 
-xref:textareaname[`+textareaName+`] : The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.
+xref:textareaname[`+textareaName+`]:: The name attribute on the textarea tag (HTML element). Used for creating the classic (iframe) editor. Ignored for an inline editor.
 
 [[configuringeditorsettings]]
 === Configuring editor settings
 
 These props are read when the editor is initialized. Changes after the editor has launched are ignored.
 
-xref:init[`+init+`] : Additional options passed to {productname} when it is initialized.
+xref:init[`+init+`]:: Additional options passed to {productname} when it is initialized.
 
-xref:plugins[`+plugins+`] : Specify the editor plugins. This will be _combined_ with `+plugins+` in the `+init+` prop.
+xref:plugins[`+plugins+`]:: Specify the editor plugins. This will be _combined_ with `+plugins+` in the `+init+` prop.
 
-xref:toolbar[`+toolbar+`] : Specify the editor toolbar. This will *override* the `+toolbar+` in the `+init+` prop.
+xref:toolbar[`+toolbar+`]:: Specify the editor toolbar. This will *override* the `+toolbar+` in the `+init+` prop.
 
 [[managingtheeditor]]
 === Managing the editor
 
 These props can be updated after the editor is initialized. Note that there are xref:eventbinding[other events] not mentioned here.
 
-xref:disabled[`+disabled+`] : Should the editor be in read-only mode.
+xref:disabled[`+disabled+`]:: Should the editor be in read-only mode.
 
-xref:initialvalue[`+initialValue+`] : The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).
+xref:initialvalue[`+initialValue+`]:: The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).
 
-xref:eventbinding[`+onBeforeAddUndo+`] : An event handler for notifying when the editor is about to create an undo level, and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.
+xref:eventbinding[`+onBeforeAddUndo+`]:: An event handler for notifying when the editor is about to create an undo level, and preventing it if required. This is important for controlled components that restrict the allowed values of the editor.
 
-xref:oneditorchange[`+onEditorChange+`] : An event handler for detecting editor changes. Useful when implementing {productname} as a controlled component.
+xref:oneditorchange[`+onEditorChange+`]:: An event handler for detecting editor changes. Useful when implementing {productname} as a controlled component.
 
-xref:eventbinding[`+onInit+`] : An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.
+xref:eventbinding[`+onInit+`]:: An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.
 
-xref:value[`+value+`] : Sets and enforces the value of the editor. Only used for a controlled component.
+xref:value[`+value+`]:: Sets and enforces the value of the editor. Only used for a controlled component.
 
 [[availableprops]]
 == Available props
@@ -164,9 +164,9 @@ Required for deployments using the {cloudname} to provide the {productname} edit
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default value : `+no-api-key+`
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+"no-api-key"+`
 
 ==== Example: Using `+apiKey+`
 
@@ -182,9 +182,9 @@ Type : `+String+`
 
 Changes the {productname} build used for the editor to either a specific version or a channel indicating a stability level.
 
-Default value : `'{productmajorversion}-stable'`
+*Default value:* `'{productmajorversion}-stable'`
 
-Possible values : `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
@@ -211,9 +211,9 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` prop can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default value : `+false+`
+*Default value:* `+false+`
 
-Possible values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+disabled+`
 
@@ -229,9 +229,9 @@ Possible values : `+true+`, `+false+`
 
 An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-Default value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+id+`
 
@@ -254,9 +254,9 @@ When using `+tinymce-react+`:
 * The `+init+` prop does not require the `+selector+` or `+target+` options
 * If the `+selector+`, `+target+`, or `+readonly+` options are set using the `+init+` prop, they will be _overridden_ by the integration.
 
-Default value : `+{ }+`
+*Default value:* `+{ }+`
 
-Type : `+Object+`
+*Type:* `+Object+`
 
 ==== Example: Using `+init+`
 
@@ -279,9 +279,9 @@ This may be set either before the editor loads, or soon afterwards by an asynchr
 
 IMPORTANT: Ensure that this is *not* updated by `+onEditorChange+` or the editor will be unusable.
 
-Default value : `+''+`
+*Default value:* `+''+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using static `+initialValue+`
 
@@ -316,9 +316,9 @@ Used to set the editor to inline mode. Using `+<Editor inline={true} />+` is the
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default value : `+false+`
+*Default value:* `+false+`
 
-Possible values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+inline+`
 
@@ -336,13 +336,13 @@ Used to store the state of the editor outside the {productname} React component.
 
 It is called with two arguments:
 
-`+value+` : The current value of the editor. This is normally HTML but can be text if the deprecated xref:outputformat[`+outputFormat+`] prop is used.
+`+value+`:: The current value of the editor. This is normally HTML but can be text if the deprecated xref:outputformat[`+outputFormat+`] prop is used.
 
-`+editor+` : A reference to the editor.
+`+editor+`:: A reference to the editor.
 
 For detailed information on using `+onEditorChange+`, see: xref:usingthetinymcereactcomponentasacontrolledcomponent[Using the {productname} React component as a controlled component].
 
-Type : `+EventHandler+`
+*Type:* `+EventHandler+`
 
 [[outputformat]]
 === `+outputFormat+`
@@ -353,11 +353,11 @@ Used to specify the format of the content produced by the xref:oneditorchange[`+
 
 This does not change the input format, so the editor must still be supplied HTML in the `+value+` or `+initialValue+`, which makes this prop much harder to use correctly than it initially seems.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default value : `+'html'+`
+*Default value:* `+'html'+`
 
-Possible values : `+'html'+`, `+'text'+`
+*Possible values:* `+'html'+`, `+'text'+`
 
 ==== Example: Using `+outputFormat+`
 
@@ -417,7 +417,7 @@ Used to include plugins for the editor. Using `+<Editor plugins='lists' />+` is 
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -435,23 +435,23 @@ Used to configure the script tag created to load {productname}.
 
 Contains 3 settings:
 
-`+async+` : Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async[`+async+`] attribute on the script tag created to load {productname}.
+`+async+`:: Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async[`+async+`] attribute on the script tag created to load {productname}.
 
 [quote, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async]
 For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.
 
-**Default value:** `false`
+*Default value:* `false`
 
-`+defer+` : Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer[`+defer+`] attribute on the script tag created to load {productname}.
+`+defer+`:: Sets the https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer[`+defer+`] attribute on the script tag created to load {productname}.
 
 [quote, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer]
 This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
 
-**Default value:** `false`
+*Default value:* `false`
 
-`+delay+` : The script tag to load {productname} will be added after the specified delay in milliseconds.
+`+delay+`:: The script tag to load {productname} will be added after the specified delay in milliseconds.
 
-**Default value:** `0`
+*Default value:* `0`
 
 **Type:** `Object`
 
@@ -485,9 +485,9 @@ This Boolean attribute is set to indicate to a browser that the script is meant 
 
 Only valid when xref:inline[`+<Editor inline={true} />+`]. Used to define the HTML element for the editor in inline mode.
 
-Default value : `+'div'+`
+*Default value:* `+'div'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tagName+`
 
@@ -504,9 +504,9 @@ Type : `+String+`
 
 Only valid when the editor is in classic (iframe) mode. Sets the `+name+` attribute for the `+textarea+` element used for the editor in forms.
 
-Default value : `+undefined+`
+*Default value:* `+'undefined'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+textareaName+`
 
@@ -527,9 +527,9 @@ Used to set the toolbar for the editor. Using `+<Editor toolbar='bold' />+` is t
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-Possible values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+toolbar+`
 
@@ -546,7 +546,7 @@ Type : `+String+`
 
 Use the `+tinymceScriptSrc+` prop to specify an external version of {productname} to lazy load.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tinymceScriptSrc+`
 
@@ -568,7 +568,7 @@ This prop allows the editor to be used as a controlled component by setting the 
 
 For detailed information on using the `+value+` prop, see: xref:usingthetinymcereactcomponentasacontrolledcomponent[Using the {productname} React component as a controlled component].
 
-Type : `+String+`
+*Type:* `+String+`
 
 [[usingthetinymcereactcomponentasauncontrolledcomponent]]
 == Using the {productname} React component as a uncontrolled component
@@ -735,9 +735,9 @@ Functions can be bound to editor events, such as:
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 
-`+event+` : The {productname} event object.
+`+event+`:: The {productname} event object.
 
-`+editor+` : A reference to the editor.
+`+editor+`:: A reference to the editor.
 
 The following events are available:
 

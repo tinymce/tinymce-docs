@@ -5,9 +5,9 @@ The `+a11ychecker_filter_issue+` option allows Accessibility Checker issues to b
 
 The function will be passed the results of the xref:a11ychecker.adoc#getreport[`+getReport()+` API]. To filter an issue from the Accessibility Checker report, the callback needs to return `+false+` for that particular issue.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
-Default Value :
+*Default value:*
 [source,js]
 ----
 (issue) => true;

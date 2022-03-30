@@ -24,7 +24,7 @@ All options accept functions incorporating `+done+` and `+fail+` callbacks as pa
 
 Most (create, reply, and edit) functions require an `+id+` identifying the *current author*.
 
-Current author : The Comments plugin does not know the name of the current user. Determining the current user and storing the comment related to that user, has to be configured by the developer.
+Current author:: The Comments plugin does not know the name of the current user. Determining the current user and storing the comment related to that user, has to be configured by the developer.
 
 After a user comments (triggering `+tinycomments_create+` for the first comment, or `+tinycomments_reply+` for subsequent comments), the Comments plugin requests the updated conversation using `+tinycomments_lookup+`, which should now contain the additional comment with the proper author.
 

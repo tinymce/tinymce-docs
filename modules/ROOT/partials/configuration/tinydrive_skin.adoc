@@ -3,11 +3,11 @@
 
 This option sets the skin applied to {cloudfilemanager}. The default skin included with {cloudfilemanager} is named "oxide".
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default Value : `+'oxide'+`
+*Default value:* `+'oxide'+`
 
-Possible Values : `+'oxide'+`, `+'oxide-dark'+`
+*Possible values:* `+'oxide'+`, `+'oxide-dark'+`
 
 If the `+tinydrive_skin+` option is not specified, {cloudfilemanager} will try and use the skin specified by the xref:editor-skin.adoc#skin[{productname} `+skin+` option] before falling back to the default "oxide" skin.
 

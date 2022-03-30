@@ -8,12 +8,12 @@ Only one `+rtc_client_connected+` event will be fired per client connection. Con
 To help with generating a user interface for connected users, an object for user details is provided by the xref:rtc-options-optional.adoc#rtc_user_details_provider[`+rtc_user_details_provider+`] option.
 
 ifeval::["{plugincode}" != "rtc"]
-Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
+*Required plugin:* xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
 endif::[]
 
-Type : `+Function+`
+*Type:* `+Function+`
 
-Input parameters :
+*Input parameters:*
 include::partial$rtc/rtc-client-connect-inputs.adoc[]
 
 CAUTION: {productname} cannot guarantee the accuracy of data which comes from a remote object. {companyname} recommends only using the client information data for status flags. To obtain authentic client information, use the xref:rtc-options-optional.adoc#rtc_user_details_provider[`+rtc_user_details_provider+`] data returned through the `+userDetails+` field.

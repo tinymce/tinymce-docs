@@ -112,9 +112,9 @@ None of the configuration properties are *required* for `+tinymce-angular+` to w
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default value : `+no-api-key+`
+*Default value:* `+'no-api-key'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+apiKey+`
 
@@ -128,9 +128,9 @@ Type : `+String+`
 [[cloudchannel]]
 === `+cloudChannel+`
 
-Default value : `{productmajorversion}`
+*Default value:* `{productmajorversion}`
 
-Possible values : `{productmajorversion}-stable`, `{productmajorversion}-testing`, `{productmajorversion}-dev`
+*Possible values:* `{productmajorversion}-stable`, `{productmajorversion}-testing`, `{productmajorversion}-dev`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
@@ -155,9 +155,9 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default value : `+false+`
+*Default value:* `+false+`
 
-Possible values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+disabled+`
 
@@ -173,9 +173,9 @@ Possible values : `+true+`, `+false+`
 
 An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Default value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+id+`
 
@@ -193,9 +193,9 @@ Object sent to the `+tinymce.init+` method used to initialize the editor.
 
 For information on the {productname} selector (`+tinymce.init+`), see: xref:basic-setup.adoc[Basic setup].
 
-Default value : `+{ }+`
+*Default value:* `+{ }+`
 
-Type : `+Object+`
+*Type:* `+Object+`
 
 ==== Example: Using `+init+`
 
@@ -214,9 +214,9 @@ Type : `+Object+`
 
 Initial content of the editor when the editor is initialized.
 
-Default value : `+' '+`
+*Default value:* `+' '+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+initialValue+`
 
@@ -234,9 +234,9 @@ Used to set the editor to inline mode. Using `+<editor [inline]="true"></editor>
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default value : `+false+`
+*Default value:* `+false+`
 
-Possible values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+inline+`
 
@@ -254,7 +254,7 @@ Used to include plugins for the editor. Using `+<editor plugins="lists code"></e
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -270,11 +270,11 @@ Type : `+String+` or `+Array+`
 
 Used to specify the format of the content emitted by the `+tinymce-angular+` component when used in conjunction with forms or plain data bindings.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default value : `+'html'+`
+*Default value:* `+'html'+`
 
-Possible values : `+'html'+`, `+'text'+`
+*Possible values:* `+'html'+`, `+'text'+`
 
 ==== Example: Using `+outputFormat+`
 
@@ -290,9 +290,9 @@ Possible values : `+'html'+`, `+'text'+`
 
 Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to define the HTML element for the editor in inline mode.
 
-Default value : `+'div'+`
+*Default value:* `+'div'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tagName+`
 
@@ -311,9 +311,9 @@ Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic"></
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-Possible values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+toolbar+`
 
@@ -344,11 +344,11 @@ NOTE: This property requires `+tinymce-angular+` 4.0.0 or newer
 
 Used to specify the events that trigger the `+NgModelChange+` to emit.
 
-Default value : `+'change input undo redo'+`.
+*Default value:* `+'change input undo redo'+`.
 
-Possible value : A space separated list of TinyMCE editor events.
+*Possible values:* A space separated list of TinyMCE editor events.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+modelEvents+`
 
@@ -472,9 +472,9 @@ NOTE: This property requires `+tinymce-angular+` 4.2.0 or newer
 
 Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the xref:eventbinding[Event binding section].
 
-Possible values : A comma separated list of events to allow.
+*Possible values:* A comma separated list of events to allow.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+allowedEvents+`
 
@@ -492,9 +492,9 @@ NOTE: This property requires `+tinymce-angular+` 4.2.0 or newer
 
 Used to block a list of events from the `+tinymce-angular+` component.
 
-Possible values : A comma separated list of events to ignore.
+*Possible values:* A comma separated list of events to ignore.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+ignoreEvents+`
 

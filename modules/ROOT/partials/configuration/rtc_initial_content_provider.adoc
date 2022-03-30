@@ -9,14 +9,14 @@ The `+rtc_initial_content_provider+` option allows alternative initial content b
 The `+rtc_initial_content_provider+` is used for new documents (`+documentId+`) and is not for opening or reopening existing documents. If the document already exists, the content on the RTC Server with the provided `+documentId+` will be loaded into the editor when it is intitalized.
 
 ifeval::["{plugincode}" != "rtc"]
-Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
+*Required plugin:* xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
 endif::[]
 
-Type : Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
+*Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
-Input parameters : | Field | Type | Description | |-------|:----:|-------------| | `+documentId+` | `+string+` | The document ID configured using the `+rtc_document_id+` option.
+*Input parameters:* | Field | Type | Description | |-------|:----:|-------------| | `+documentId+` | `+string+` | The document ID configured using the `+rtc_document_id+` option.
 
-Return data : | Field | Type | Description | |-------|:----:|-------------| | `+content+` | `+string+` | String containing the HTML to be imported into the editor when there is no existing session. |
+*Return data:* | Field | Type | Description | |-------|:----:|-------------| | `+content+` | `+string+` | String containing the HTML to be imported into the editor when there is no existing session. |
 
 === Example of providing static content
 

@@ -12,9 +12,9 @@ There are four types of items the array can contain:
 
 To merge custom styles with the default `+styles_format+` values, set xref:user-formatting-options.adoc#style_formats_merge[`+style_formats_merge+`] to `+true+`.
 
-Type : `+Array+`
+*Type:* `+Array+`
 
-Default : The following is the default value for `+style_formats+` where it is using references to existing formats:
+*Default value:* The following is the default value for `+style_formats+` where it is using references to existing formats:
 
 [source,js]
 ----

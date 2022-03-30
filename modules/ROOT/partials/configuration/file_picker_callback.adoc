@@ -9,7 +9,7 @@ This hook can be used to add custom file picker to those dialogs that have it. O
 
 It should be noted, that we only provide a hook. It is up to you to implement specific functionality.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 NOTE: The following example demonstrates how you can use `+file_picker_callback+` API, but doesn't pick any real files. Check the xref:interactiveexample[Interactive example] for a more functional example.
 

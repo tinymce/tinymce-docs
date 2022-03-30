@@ -5,11 +5,11 @@ This option allows you to specify which menus should appear and the order that t
 
 To specify the menus that should appear on {productname}'s menu bar, the menubar option should be provided with a space separated list of menus.
 
-Type : `+String+` _or_ `+Boolean+`
+*Type:* `+String+` _or_ `+Boolean+`
 
-Default Value : `+true+`
+*Default value:* `+true+`
 
-Possible Values : `+true+`, `+false+`, or `+string+` of menus
+*Possible values:* `+true+`, `+false+`, or `+string+` of menus
 
 include::partial$misc/admon_different_default_for_mobile.adoc[]
 

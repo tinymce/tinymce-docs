@@ -54,11 +54,20 @@ A JSON Web Token (JWT) endpoint for {pluginname} requires:
 
 JSON Web Tokens produced by the JWT endpoint must include the following claims:
 
-`+sub+` _(required)_ : *Type*: `+string+` or `+URI+` : Unique string or URI to identify the user. This can be a database ID, hashed email address, or similar identifier.
+`+sub+` _(required)_::
+*Type:* `+string+` or `+URI+`
++
+Unique string or URI to identify the user. This can be a database ID, hashed email address, or similar identifier.
 
-`+name+` _(required)_ : *Type*: `+string+` : Full name of the user that will be used for presentation inside {pluginname}. When the user uploads a file, this name is presented as the creator of that file.
+`+name+` _(required)_::
+*Type:* `+string+`
++
+Full name of the user that will be used for presentation inside {pluginname}. When the user uploads a file, this name is presented as the creator of that file.
 
-`+https://claims.tiny.cloud/drive/root+` _(optional)_ : *Type*: `+string+` : Full path to a {pluginname} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
+`+https://claims.tiny.cloud/drive/root+` _(optional)_::
+*Type:* `+string+`
++
+Full path to a {pluginname} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
 
 NOTE: The "`+sub+`" claim is a case-sensitive string containing a *String* or *URI* value. The `+sub+` claim cannot have a `+:+` _unless_ it is a valid URI or else the callback will fail.
 

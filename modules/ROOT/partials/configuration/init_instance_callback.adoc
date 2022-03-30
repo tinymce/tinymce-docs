@@ -3,7 +3,7 @@
 
 This option allows a function to be provided that will be executed each time an editor instance is initialized. The format of this function is `+initInstance(editor)+` where `+editor+` is the editor instance object reference.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 === Example: Using `+init_instance_callback+`
 

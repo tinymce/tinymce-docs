@@ -3,11 +3,11 @@
 
 This option controls whether elements are output in the HTML or XHTML mode. `+html+` is the default state for this option. This means that for example `+<br />+` will be `+<br>+` by default.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default Value : `+'html'+`
+*Default value:* `+'html'+`
 
-Possible Values : `+'xhtml'+`, `+'html'+`
+*Possible values:* `+'xhtml'+`, `+'html'+`
 
 === Example: Using `+element_format+`
 

@@ -22,14 +22,14 @@ When a new sidebar is registered, a corresponding toolbar button for toggling th
 
 The `+tooltip+` specifies a tooltip to be displayed when hovering over the sidebar toggle button.
 
-Type : `+String+`
+*Type:* `+String+`
 
 [[icon]]
 ==== `+icon+`
 
 The `+icon+` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {productname} skin or a xref:apis/tinymce.editor.ui.registry.adoc#addIcon[custom icon].
 
-Type : `+String+`
+*Type:* `+String+`
 
 [[onSetup]]
 ==== `+onSetup+`
@@ -38,21 +38,21 @@ The `+onSetup+` specifies a function to be called when the panel is first create
 
 `+onSetup+` is a complex property. It requires a function that takes the sidebar’s API and should return a callback that takes the sidebar's API and returns nothing. This occurs because `+onSetup+` runs whenever the sidebar is rendered, and the returned callback is executed when the sidebar is destroyed. Therefore the returned function is essentially an `+onTeardown+` handler, and can be used to unbind events and callbacks.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 [[onShow]]
 ==== `+onShow+`
 
 The `+onShow+` specifies a function to be called when the panel displayed. It passes in an API object.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 [[onHide]]
 ==== `+onHide+`
 
 The `+onHide+` specifies a function to be called when the panel is hidden. It passes in an API object.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 === API Object
 

@@ -3,7 +3,7 @@
 
 This option enables you to add the CSS files that should be used for populating the styles drop down. This will go through any `+@import+` rules and only target the specified file. This option can be either a `+string+`, `+regexp+` or a `+function+`. This also allows you to import styles form existing files on the currently editable page in inline mode.
 
-Type: `+String+`, `+RegExp+` or `+Function+`
+*Type:* `+String+`, `+RegExp+` or `+Function+`
 
 === Example: Using `+importcss_file_filter+`
 

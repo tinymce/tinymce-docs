@@ -111,9 +111,9 @@ None of the configuration properties are *required* for `+tinymce-vue+` to work.
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default value : `+no-api-key+`
+*Default value:* `+'no-api-key'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+api-key+`
 
@@ -127,9 +127,9 @@ Type : `+String+`
 [[cloud-channel]]
 === `+cloud-channel+`
 
-Default value : `'{productmajorversion}'`
+*Default value:* `'{productmajorversion}'`
 
-Possible values : `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
@@ -155,9 +155,9 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default value : `+false+`
+*Default value:* `+false+`
 
-Possible values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+disabled+`
 
@@ -171,11 +171,11 @@ Possible values : `+true+`, `+false+`
 [[id]]
 === `+id+`
 
-An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].*
 
-Default value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+id+`
 
@@ -193,9 +193,9 @@ Object sent to the `+tinymce.init+` method used to initialize the editor.
 
 For information on the {productname} selector (`+tinymce.init+`), see: xref:basic-setup.adoc[Basic setup].
 
-Default value : `+"{ }"+`
+*Default value:* `+'{ }'+`
 
-Type : `+Object+`
+*Type:* `+Object+`
 
 ==== Example: Using `+init+`
 
@@ -214,9 +214,9 @@ Type : `+Object+`
 
 Initial content of the editor when the editor is initialized.
 
-Default value : `+" "+`
+*Default value:* `+' '+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+initial-value+`
 
@@ -234,9 +234,9 @@ Used to set the editor to inline mode. Using `+<editor :inline=true />+` is the 
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default value : `+false+`
+*Default value:* `+false+`
 
-Possible values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+inline+`
 
@@ -254,9 +254,9 @@ Sets the trigger events for xref:forminputbindingsv-model[v-model events].
 
 For a list of available {productname} events, see: xref:events.adoc#editorcoreevents[Available Events - Editor events].
 
-Default value : `+'change keyup undo redo'+`.
+*Default value:* `+'change keyup undo redo'+`.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+model-events+`
 
@@ -272,11 +272,11 @@ Type : `+String+`
 
 Used to specify the format of the content emitted via the `+input+` event. This affects the format of the content used in conjunction with data binding.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default value : `+'html'+`
+*Default value:* `+'html'+`
 
-Possible values : `+'html'+`, `+'text'+`
+*Possible values:* `+'html'+`, `+'text'+`
 
 ==== Example: Using `+output-format+`
 
@@ -294,7 +294,7 @@ Used to include plugins for the editor. Using `+<editor plugins="lists code" />+
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -310,9 +310,9 @@ Type : `+String+` or `+Array+`
 
 Only valid when xref:inline[`+<editor :inline=true />+`]. Used to define the HTML element for the editor in inline mode.
 
-Default value : `+'div'+`
+*Default value:* `+'div'+`
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tag-name+`
 
@@ -331,9 +331,9 @@ Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic" />
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-Possible values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+toolbar+`
 
@@ -350,7 +350,7 @@ Type : `+String+`
 
 Use the `+tinymce-script-src+` prop to specify an external version of TinyMCE to lazy load.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tinymce-script-src+`
 

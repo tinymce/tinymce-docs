@@ -7,11 +7,11 @@ However, if `+table_grid+` is set to `+false+` the table picker will be replaced
 
 NOTE: To configure the Table menu to include both the table picker and the table dialog menu items, set `+table_grid+` to `+true+` and configure xref:menus-configuration-options.adoc#menu[`+menu+`] to include both the `+inserttable+` and `+inserttabledialog+` menu items.
 
-Type: `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value: `+true+`
+*Default value:* `+true+`
 
-Possible Values: `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 include::partial$misc/admon_different_default_for_mobile.adoc[]
 

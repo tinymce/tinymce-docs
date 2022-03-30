@@ -52,6 +52,6 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 
 The Comments plugin is available in two _modes_: *Callback mode* and *Embedded mode*.
 
-Callback Mode : This is the default mode for the Comments plugin. This mode is used to store the comments outside the content on a server, such as a database. This mode requires a number of callback functions to handle comment data. : For instructions on configuring the Comments plugin in callback mode, see: xref:comments-callback-mode.adoc[Configuring the Comments plugin in callback mode]
+Callback Mode:: This is the default mode for the Comments plugin. This mode is used to store the comments outside the content on a server, such as a database. This mode requires a number of callback functions to handle comment data. For instructions on configuring the Comments plugin in callback mode, see: xref:comments-callback-mode.adoc[Configuring the Comments plugin in callback mode]
 
-Embedded Mode : This mode stores the comments within the content. No callbacks need to be configured for this mode. : For instructions on configuring the Comments plugin in embedded mode, see: xref:comments-embedded-mode.adoc[Configuring the Comments plugin Comments in embedded mode]
+Embedded Mode:: This mode stores the comments within the content. No callbacks need to be configured for this mode. For instructions on configuring the Comments plugin in embedded mode, see: xref:comments-embedded-mode.adoc[Configuring the Comments plugin Comments in embedded mode]

@@ -3,9 +3,9 @@
 
 This option lets you specify a list of `+rel+` values for the `+link+` dialog. These values gets applied to the `+rel+` attribute. Each `+rel+` item must be defined as an object with a `+title+` and a `+value+`. For example: `+{ title: 'No Referrer', value: 'noreferrer' }+`. When the dialog is submitted, the `+value+` of the selected `+rel+` item will be set as the link's `+rel+` attribute.
 
-Type : `+Array+`
+*Type:* `+Array+`
 
-Default Value : `+[]+`
+*Default value:* `+[]+`
 
 === Example: Using `+link_rel_list+`
 

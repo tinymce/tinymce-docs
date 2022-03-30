@@ -5,11 +5,11 @@ This option allows you to specify the toolbar buttons shown on the contextual to
 
 To disable the table toolbar, set the value to an empty string.
 
-Type: `+String+`
+*Type:* `+String+`
 
-Default Value: `+'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'+`
+*Default value:* `+'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'+`
 
-Possible Values: Any toolbar button. For a list of predefined toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Possible values:* Any toolbar button. For a list of predefined toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 === Example: Default table_toolbar configuration
 

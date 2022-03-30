@@ -70,7 +70,7 @@ const demoBaseConfig = {
       content: table2
     }
   ],
-  toolbar: 'insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image insertfile',
+  toolbar: 'insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image',
   spellchecker_dialog: true,
   spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
   tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',

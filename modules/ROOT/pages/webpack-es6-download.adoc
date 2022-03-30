@@ -1,9 +1,8 @@
 = Bundling a .zip version of TinyMCE with ES6 and Webpack
-
 :navtitle: ES6 and a .zip archive
 :description_short: Bundling a .zip archive version of TinyMCE in a project using ES6 and Webpack
 :description: Bundling a .zip archive version of TinyMCE in a project using ES6 and Webpack
-:keywords: webpack es6 es2015 zip modules tinymce
+:keywords: webpack, es6, es2015, zip, modules, tinymce
 :installtype: a `+.zip+`
 :bundler: https://webpack.js.org/[Webpack]
 :syntax: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules[ES6+ syntax]
@@ -22,6 +21,7 @@ This guide requires the following:
 :is_zip_install: true
 
 include::partial$install/download-tinymce.adoc[]
+
 include::partial$module-loading/webpack-dev-dependencies.adoc[]
 
 include::partial$module-loading/bundling-webpack-es6-zip_editor.adoc[]

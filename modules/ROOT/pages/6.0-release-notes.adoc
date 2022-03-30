@@ -608,9 +608,16 @@ With this release, these over-rides no longer prevent an `input` event firing wh
 
 == Options
 
-=== New and improved options
+//=== New and improved options
 
 === Changed options
+
+==== `image_upload_handler
+
+Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload.
+
+In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`, with a value of either `resolve` or `reject`.
+
 
 ==== link_default_protocol
 
@@ -653,12 +660,11 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 
 == Parsing and serialisation
 
-- new and improved
-- changed
-- fixed
-- added
-- removed or deprecated
-    - visual check mark of some sort to denote the removal or deprecation of previously undocumented things
+=== changed parsing and serialisation
+
+==== RGB colors no longer converted to hex values
+
+With the removal of the, now deprecated, `toHex` APIs, RGB colors are no longer converted to hex values when parsing or serializing content.
 
 [id=plugins]
 == Plugins
@@ -1096,6 +1102,23 @@ In {productname} 6.0, editors without a `height` value specified in the {product
 As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
 
 
+==== status bar company ID changed from text string to logo mark
+
+The _Powered by Tiny_ text string set in the {productname} status bar is now the {productname} logo.
+
+NOTE: the logo still responds appropriately when {productname} is used with a screen reader.
+
+
+==== status bar path delimiter character changed.
+
+The default status bar path delimiter character (also known as a breadcrumb separator) has been changed.
+
+It was `»` (the double, right-pointing, angled quotation mark).
+
+It is now `›` (the single, right-pointing, angled quotation mark).
+
+
+
 === Fixed UI and UX elements and components
 
 ==== Anchor elements now rendering correctly when `allow_html_in_named_anchor: true`
@@ -1119,6 +1142,15 @@ With this release, `silver` no longer renders these UI elements before plugins g
 Previously, {productname} dialog labels and other UI elements were rendered with HTML markup.
 
 With this release, the `text` and `label` properties of these elements are now rendered as plain text, as expected.
+
+
+==== `editor.selection.setRng`
+
+Calls to `editor.selection.setRng` now update the insertion point bookmark when focus is returned to the editor.
+
+For the end-user, this change means content dragged from outside the {productname} editor into the editable area will be placed into the {productname} document where the insertion point appears as the drag is completed.
+
+This is the expected behaviour.
 
 
 ==== sub-menu items now read by screen readers
@@ -1145,17 +1177,6 @@ First, {productname} 6.0 does not alter existing documents. Extant {productname}
 If an extant {productname} document with an aligned table is opened using {productname} 6.0 and the *alignment* of the table is re-set, {productname} 6.0 will remove the `float` property and use the `margin` property to set the *alignment*.
 
 Second, if the previous behaviour is required, a custom `format` will need to be created.
-
-
-=== Fixed UI and UX elements and components
-
-==== `editor.selection.setRng`
-
-Calls to `editor.selection.setRng` now update the insertion point bookmark when focus is returned to the editor.
-
-For the end-user, this change means content dragged from outside the {productname} editor into the editable area will be placed into the {productname} document where the insertion point appears as the drag is completed.
-
-This is the expected behaviour.
 
 
 === Removed or deprecated UI and UX elements and components

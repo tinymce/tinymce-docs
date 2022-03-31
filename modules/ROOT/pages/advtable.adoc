@@ -45,7 +45,7 @@ Tables can be sorted by row or column values using:
 [cols=",",options="header"]
 |===
 |Sort rows based on the selected column |Advanced Sort Dialog
-|image:advtable_context_menu_sort.png[Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).] |image:advtable_dialog_sort.png[Advanced Tables sort dialog (Sort > Advanced Sort{ellps}).]
+|image:advtable-context-menu-sort.png[Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).] |image:advtable-dialog-sort.png[Advanced Tables sort dialog (Sort > Advanced Sort{ellps}).]
 |===
 
 The plugin is capable of sorting:
@@ -61,7 +61,7 @@ A row numbering column containing a series of values can be added to a table to 
 
 A numeric and alpha value series are available by default. The available value series can be configured using the xref:advtable_value_series[`+advtable_value_series+` option].
 
-image::advtable_row_numbering.png[Table with numeric row numbering column and row numbering menu open (Numeric item checked)]
+image::advtable-row-numbering.png[Table with numeric row numbering column and row numbering menu open (Numeric item checked)]
 
 == Options
 

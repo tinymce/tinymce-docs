@@ -36,9 +36,7 @@ If you've already got a Java application server like Jetty or Tomcat installed, 
 
 If you don't, pick either http://tomcat.apache.org/[Tomcat] or https://www.eclipse.org/jetty/[Jetty] and install one of these with their default settings using the instructions on their website.
 
-____
-*Memory requirement:* Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:enterprise/server/troubleshoot.adoc#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
-____
+IMPORTANT: *Memory requirement:* Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:enterprise/server/troubleshoot.adoc#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 
 [[step2deployserver-sidecomponents]]
 === Step 2. Deploy server-side components
@@ -66,9 +64,7 @@ Refer to the xref:enterprise/server/configure.adoc[Configure] page for the detai
 [[step4passtheconfigurationfiletothejavaapplicationserver]]
 === Step 4. Pass the configuration file to the Java application server
 
-____
-*HTTP proxy:* If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `ephox.config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html[Networking Properties for Java] for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the xref:enterprise/server/configure.adoc#proxyoptional[Configure] page.
-____
+NOTE: *HTTP proxy:* If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `ephox.config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html[Networking Properties for Java] for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the xref:enterprise/server/configure.adoc#proxyoptional[Configure] page.
 
 Tell the services about the configuration file by setting the `ephox.config.file` JVM system property to the absolute path of the configuration file. The exact method for doing this varies depending on your operating system, application server and whether the application server is being run as a system service. The authoritative reference for configuring any application server is the vendor documentation, but we'll do our best to get you started below.
 

@@ -126,7 +126,7 @@ ephox {
 The `*` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `allowed-origin` list:
 
 . As a prefix of the domain (e.g. `*.mydomain.com`).
-. As the only character (e.g. pass:q[`*`]). This will allow *any* Origin to access the server-side components.
+. As the only character (e.g. `+*+`). This will allow *any* Origin to access the server-side components.
 
 NOTE: Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.
 
@@ -470,17 +470,16 @@ include::partial$misc/dynamic-custom-dictionaries.adoc[]
 
 include::partial$misc/num-incorrect-words-in-suggestions-request-limit.adoc[]
 
-+++<a class="anchor" id="logging">++++++</a>+++
 [[loggingserviceactivity]]
-== Logging service activity
+== [[logging]] Logging service activity
 
 It may be useful to make the {productname} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
 The {productname} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
 
 To write the logs to a specific file:
-[[step1createaloggingconfigurationxmlfile]]
-. Create a logging configuration XML file. Save the snippet below as `logback.xml` after replacing pass:[{$LOG_LOCATION}] with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
+
+. [[step1createaloggingconfigurationxmlfile]] Create a logging configuration XML file. Save the snippet below as `logback.xml` after replacing pass:[{$LOG_LOCATION}] with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 +
 [source, xml, subs="attributes+"]
 ----
@@ -511,8 +510,8 @@ To write the logs to a specific file:
 
 </configuration>
 ----
-[[step2passtheconfigurationfiletothejavaapplicationserver]]
-. Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow xref:enterprise/server/index.adoc#step4passtheconfigurationfiletothejavaapplicationserver[`step 4`] and xref:enterprise/server/index.adoc#step5restartthejavaapplicationserver[`step 5`] on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
+
+. [[step2passtheconfigurationfiletothejavaapplicationserver]] Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow xref:enterprise/server/index.adoc#step4passtheconfigurationfiletothejavaapplicationserver[`step 4`] and xref:enterprise/server/index.adoc#step5restartthejavaapplicationserver[`step 5`] on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
 +
 [source]
 ----

@@ -12,7 +12,7 @@ This option defines the formats to be displayed in the `+blocks+` dropdown toolb
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3'
 });
 ----

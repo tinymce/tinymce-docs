@@ -12,7 +12,7 @@ This option allows "inline" formats to be applied to empty lines for multi-line 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   format_empty_lines: true
 });
 ----

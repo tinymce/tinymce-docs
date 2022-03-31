@@ -20,7 +20,7 @@ When `+remove_script_host+` is set to `+true+`, such as:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   document_base_url: 'http://www.example.com/path1/',
   relative_urls: false,
   remove_script_host: true
@@ -34,7 +34,7 @@ When `+remove_script_host+` is set to `+false+`, such as:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   document_base_url: 'http://www.example.com/path1/',
   relative_urls: false,
   remove_script_host: false

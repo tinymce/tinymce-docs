@@ -12,7 +12,7 @@ This option enables auto hiding of styles that can't be applied to the current c
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   style_formats: [
     { title: 'Red cell', selector: 'td', classes: 'red' },
     { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } }

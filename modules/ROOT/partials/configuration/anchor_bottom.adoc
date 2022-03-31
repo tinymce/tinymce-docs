@@ -12,7 +12,7 @@ Lets you specify a custom name for the bottom anchor in the url type ahead drop 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   anchor_bottom: '#mybottom'
 });
 ----
@@ -22,7 +22,7 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   anchor_bottom: false
 });
 ----

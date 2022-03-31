@@ -50,7 +50,7 @@ For example, these two configurations are equivalent:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the default format for h1 to have a class of heading
     h1: { block: 'h1', classes: 'heading' }
@@ -65,7 +65,7 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   style_formats: [
     // Adds a h1 format to style_formats that applies a class of heading
     { title: 'My heading', block: 'h1', classes: 'heading' }
@@ -87,7 +87,7 @@ Tag name of the block element to use as a wrapper, for example, `+h1+`. Existing
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   formats: {
     // Changes the default format for h1 to have a class of heading
     h1: { block: 'h1', classes: 'heading' }
@@ -107,7 +107,7 @@ Tag name of the inline element to use as a wrapper, for example, `+span+` is use
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the default format for the bold button to produce a span with a bold class
     bold: { inline: 'span', classes: 'bold' }
@@ -127,7 +127,7 @@ CSS3 selector pattern that is used to find elements within the selection. It can
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the alignment buttons to add a class to each of the matching selector elements
     alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'left' },
@@ -160,7 +160,7 @@ To replace existing classes, use the `+class+` attribute.
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the default format for the bold button to produce a span with a bold class
     bold: { inline: 'span', classes: 'bold' }
@@ -180,7 +180,7 @@ Key/value object with CSS styles to apply to the selected or newly created inlin
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the default format for the bold button to produce a span with style with font-width: bold
     bold: { inline: 'span', styles: { 'font-weight': 'bold' } }
@@ -200,7 +200,7 @@ Key/value object with attributes to apply to the selected or newly created inlin
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the default format for the bold button to produce a strong with data-style attribute
     bold: { inline: 'strong', attributes: { 'data-style': 'bold' } }
@@ -215,7 +215,7 @@ To apply a class to new or selected existing elements, add the `+'class'+` attri
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the default format for the bold button to produce a span with a bold class
     bold: {
@@ -240,7 +240,7 @@ Makes sure that the format is not merged with other wrappers having the same for
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // Changes the default format for the underline button to produce a span with a class and not merge that underline into parent spans
     underline: { inline: 'span', styles: { 'text-decoration': 'underline' }, exact: true },
@@ -263,7 +263,7 @@ States that the format is a container format for block elements. For example, a 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // A custom format that wraps blocks into a div with the specified wrapper class
     'custom-wrapper': { block: 'div', classes: 'wrapper', wrapper: true }
@@ -291,7 +291,7 @@ This can be set to three different modes:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   extended_valid_elements: 'span[*]', // Needed to retain spans without attributes these are removed by default
   formats: {
     removeformat: [
@@ -322,7 +322,7 @@ So if the selection is from _a_ to _b_ in this html contents `+<h1><b>[a</b></h1
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     removeformat: [
       {
@@ -361,7 +361,7 @@ Enables control for removing the child elements of the matching format. This is 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // A custom format that wraps blocks into a div with the specified wrapper class
     'custom-deep': { inline: 'span', classes: 'myclass', deep: false }
@@ -399,7 +399,7 @@ After merge:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     // A custom format that wraps blocks into a div with the specified wrapper class
     'custom-format': { inline: 'span', classes: 'myclass', merge_siblings: false }
@@ -420,7 +420,7 @@ This example overrides some of the built-in formats and tells {productname} to a
 ----
 // Output elements in HTML style
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   formats: {
     alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'left' },
     aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,audio,video', classes: 'center' },

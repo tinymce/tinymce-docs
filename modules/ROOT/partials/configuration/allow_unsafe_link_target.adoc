@@ -16,7 +16,7 @@ By default all links with a `+target+` of _{blanktarget}_ will get a `+rel+` att
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   allow_unsafe_link_target: true
 });
 ----

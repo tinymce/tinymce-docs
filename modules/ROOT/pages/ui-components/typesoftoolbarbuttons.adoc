@@ -266,7 +266,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 include::partial$misc/predefinedIconsOnly.adoc[]
 
 | onAction
-| (api) \=> void
+| `(api) => void`
 | Primary button
 | required
 | Function invoked when the basic button section is clicked.

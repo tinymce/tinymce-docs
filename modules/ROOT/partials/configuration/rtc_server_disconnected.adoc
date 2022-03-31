@@ -5,7 +5,7 @@ If the RTC session fails to connect, or is disconnected due to an error, the use
 
 **Lost connection to the server, please reload the page. Download a detailed crash log**
 
-image:rtc-error-example.png[RTC disconnected error example,title="RTC disconnected error example"]
+image::rtc-error-example.png[RTC disconnected error example,title="RTC disconnected error example"]
 
 The `+rtc_server_disconnected+` callback can be used to provide an alternative response to this condition.
 

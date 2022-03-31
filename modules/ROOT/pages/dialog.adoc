@@ -13,13 +13,13 @@ NOTE: {productname} also supports xref:urldialog.adoc[URL dialogs]. Configuring 
 
 The xref:code.adoc[`+code+`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
-image:sourcecode.png[Source Code]
+image::sourcecode.png[Source Code]
 
 === Display complex information
 
 More complex dialogs can use xref:dialog-components.adoc#tabpanel[tab panels] and various xref:dialog-components.adoc#layout-components[layouts] to categorise and organise information displayed to the user. For example, the xref:help.adoc[`+help+`] and xref:charmap.adoc[`+character map+`] plugins use dialogs with tabbed panels to categorise and separate information.
 
-image:specialchars.png[Special Characters]
+image::specialchars.png[Special Characters]
 
 === Interactive dialogs
 
@@ -27,7 +27,7 @@ image:specialchars.png[Special Characters]
 
 For example, the xref:image.adoc[`+image+`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
-image:interactive.png[Insert/Edit images]
+image::interactive.png[Insert/Edit images]
 
 == Body components
 
@@ -76,4 +76,4 @@ The `+name+` of the panel can be used with the xref:dialog-apis.adoc#dialog-api-
 
 The Help plugin's dialog is an example of a tab panel dialog.
 
-image:help.png[Help Button]
+image::help.png[Help Button]

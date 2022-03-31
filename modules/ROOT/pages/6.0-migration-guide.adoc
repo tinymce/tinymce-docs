@@ -151,7 +151,7 @@ For example —
 
 == Options
 
-=== `image_upload_handler
+=== `image_upload_handler`
 
 Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload. In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`, with a value of either `resolve` or `reject`.
 

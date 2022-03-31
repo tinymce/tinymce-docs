@@ -2,6 +2,7 @@
 :description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
 :description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
 :keywords: tinymce, cloud, script, textarea, apiKey
+:productSource: cloud
 
 {cloudname} is the easiest way to integrate {productname} and upgrade to premium plugins.
 
@@ -44,30 +45,13 @@ There are more than 40 open source plugins that enhance the editing experience i
 
 === Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 
+NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
+
 Extend the xref:basic-setup.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* xref:mentions.adoc[Mentions]
-* xref:tinydrive-introduction.adoc[{cloudfilemanager}]
-* xref:introduction-to-tiny-comments.adoc[Comments]
-* xref:pageembed.adoc[Page Embed]
-* xref:permanentpen.adoc[Permanent Pen]
-* xref:formatpainter.adoc[Format Painter]
-* xref:introduction-to-powerpaste.adoc[PowerPaste]
-* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
-+
-NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}].
+include::partial$misc/premium-plugin-list.adoc[]
 
-* xref:editimage.adoc[Edit Image (with configured image proxy)]
-+
-NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy_service_url+` options occurs automatically.
-
-* xref:moxiemanager.adoc[Moxie Manager]
-* xref:a11ychecker.adoc[Accessibility Checker]
-* xref:advcode.adoc[Advanced Code Editor]
-* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
-* xref:linkchecker.adoc[Link Checker]
-+
-NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
+include::partial$misc/admon-cloud-configured-options.adoc[]
 
 === Step 4: Forward proxy configuration
 
@@ -75,9 +59,9 @@ Ensure that the following URLs are accessible via this proxy if the network has 
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.
-* https://imageproxy.tiny.cloud
-* https://hyperlinking.tiny.cloud
-* https://spelling.tiny.cloud
+* +https://imageproxy.tiny.cloud+
+* +https://hyperlinking.tiny.cloud+
+* +https://spelling.tiny.cloud+
 
 Ensure the `+tiny-api-key+` and `+tinymce-api-key+` headers are retained while requesting the list of above URLs.
 
@@ -112,23 +96,6 @@ WARNING: Do not use the regular xref:work-with-plugins.adoc[plugins] configurati
 
 Extend the xref:basic-setup.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* xref:mentions.adoc[Mentions]
-* xref:tinydrive-introduction.adoc[{cloudfilemanager}]
-* xref:introduction-to-tiny-comments.adoc[Comments]
-* xref:pageembed.adoc[Page Embed]
-* xref:permanentpen.adoc[Permanent Pen]
-* xref:formatpainter.adoc[Format Painter]
-* xref:introduction-to-powerpaste.adoc[PowerPaste]
-* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
-+
-NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}].
+include::partial$misc/premium-plugin-list.adoc[]
 
-* xref:editimage.adoc[Edit Image (with configured image proxy)]
-+
-NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy_service_url+` options occurs automatically.
-
-* xref:moxiemanager.adoc[Moxie Manager]
-* xref:a11ychecker.adoc[Accessibility Checker]
-* xref:advcode.adoc[Advanced Code Editor]
-* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
-* xref:linkchecker.adoc[Link Checker]
+include::partial$misc/admon-cloud-configured-options.adoc[]

@@ -72,6 +72,7 @@ When creating a dynamic menu, the structure `type` properties are used in order 
 * type `submenu` must have `getSubmenuItems`, and if it has an `onAction` property it is ignored.
 * type `separator` ignores all other properties.
 
+////
 === Example Usage
 
 This example creates a menu with a mixture of dynamic and static menu items. While `link` is the name of both a context menu section and a menu item, context menu sections take preference (the link context menu is dynamic based on the cursor position).
@@ -85,7 +86,8 @@ tinymce.init({
   contextmenu: 'link bold italic inserttable | cell row column deletetable'
 });
 ----
--
+
+////
 
 == Defining a context menu section
 

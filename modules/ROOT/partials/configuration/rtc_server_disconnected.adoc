@@ -3,7 +3,7 @@
 
 If the RTC session fails to connect, or is disconnected due to an error, the user will be blocked from editing (using xref:apis/tinymce.editor.adoc#setProgressState[setProgressState]) along with an error notification:
 
-**RTC has lost connection to the server, please reload the page. More information may be available in the console.**
+**Lost connection to the server, please reload the page. Download a detailed crash log**
 
 image:rtc-error-example.png[RTC disconnected error example,title="RTC disconnected error example"]
 

@@ -1,7 +1,8 @@
+[[usingthecommunitylanguagepacks]]
 === Using the community language packs
 
 ifeval::[{forModuleLoaders} != true]
-> *Note*: {companyname} recommends using the `language_url` for the community language packs, to avoid copying the language pack into the `tinymce/langs` folder every time you upgrade {productname}.
+NOTE: {companyname} recommends using the `language_url` for the community language packs, to avoid copying the language pack into the `tinymce/langs` folder every time you upgrade {productname}.
 endif::[]
 
 To use change the user interface language using a community language pack:

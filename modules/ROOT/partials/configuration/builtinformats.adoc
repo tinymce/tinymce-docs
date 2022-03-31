@@ -92,12 +92,16 @@ The following formats will work on most content.
 | Font size (1-7).
 |===
 
-NOTE: The `mceToggleFormat` and `FormatBlock` link:{baseurl}/advanced/editor-command-identifiers/[commands] do not accept the following formats:
+[NOTE]
+====
+The `mceToggleFormat` and `FormatBlock` xref:advanced/editor-command-identifiers.adoc[commands] do not accept the following formats:
+
 * `forecolor`
 * `hilitecolor`
 * `fontname`
 * `fontsize`
 * `fontsize_class`
+====
 
 ==== Definition list related formats
 

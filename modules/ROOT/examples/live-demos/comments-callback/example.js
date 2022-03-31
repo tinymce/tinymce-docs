@@ -3,9 +3,8 @@
  * (must call "done" or "fail") *
  ********************************/
 
-function tinycomments_create(req, done, fail) {
-  let content = req.content;
-  let createdAt = req.createdAt;
+const tinycomments_create = (req, done, fail) => {
+  const { content, createdAt } = req;
 
   fetch('https://api.example/conversations/', {
     method: 'POST',
@@ -22,18 +21,16 @@ function tinycomments_create(req, done, fail) {
       return response.json();
     })
     .then((req2) => {
-      let conversationUid = req2.conversationUid;
-      done({ conversationUid: conversationUid });
+      const conversationUid = req2.conversationUid;
+      done({ conversationUid });
     })
     .catch((e) => {
       fail(e);
     });
-}
+};
 
-function tinycomments_reply(req, done, fail) {
-  let conversationUid = req.conversationUid;
-  let content = req.content;
-  let createdAt = req.createdAt;
+const tinycomments_reply = (req, done, fail) => {
+  const { conversationUid, content, createdAt } = req;
 
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'POST',
@@ -50,19 +47,16 @@ function tinycomments_reply(req, done, fail) {
       return response.json();
     })
     .then((req2) => {
-      let commentUid = req2.commentUid;
-      done({ commentUid: commentUid });
+      const commentUid = req2.commentUid;
+      done({ commentUid });
     })
     .catch((e) => {
       fail(e);
     });
-}
+};
 
-function tinycomments_edit_comment(req, done, fail) {
-  let conversationUid = req.conversationUid;
-  let commentUid = req.commentUid;
-  let content = req.content;
-  let modifiedAt = req.modifiedAt;
+const tinycomments_edit_comment = (req, done, fail) => {
+  const { conversationUid, commentUid, content, modifiedAt } = req;
 
   fetch(
     'https://api.example/conversations/' + conversationUid + '/' + commentUid,
@@ -82,16 +76,16 @@ function tinycomments_edit_comment(req, done, fail) {
       return response.json();
     })
     .then((req2) => {
-      let canEdit = req2.canEdit;
-      done({ canEdit: canEdit });
+      const canEdit = req2.canEdit;
+      done({ canEdit });
     })
     .catch((e) => {
       fail(e);
     });
-}
+};
 
-function tinycomments_delete(req, done, fail) {
-  let conversationUid = req.conversationUid;
+const tinycomments_delete = (req, done, fail) => {
+  const conversationUid = req.conversationUid;
   fetch('https://api.example/conversations/' + conversationUid, {
     method: 'DELETE',
   }).then((response) => {
@@ -103,9 +97,9 @@ function tinycomments_delete(req, done, fail) {
       fail(new Error('Something has gone wrong...'));
     }
   });
-}
+};
 
-function tinycomments_delete_all(_req, done, fail) {
+const tinycomments_delete_all = (_req, done, fail) => {
   fetch('https://api.example/conversations', {
     method: 'DELETE',
   }).then((response) => {
@@ -117,11 +111,10 @@ function tinycomments_delete_all(_req, done, fail) {
       fail(new Error('Something has gone wrong...'));
     }
   });
-}
+};
 
-function tinycomments_delete_comment(req, done, fail) {
-  let conversationUid = req.conversationUid;
-  let commentUid = req.commentUid;
+const tinycomments_delete_comment = (req, done, fail) => {
+  const { conversationUid, commentUid } = req;
 
   fetch(
     'https://api.example/conversations/' + conversationUid + '/' + commentUid,
@@ -137,37 +130,31 @@ function tinycomments_delete_comment(req, done, fail) {
       fail(new Error('Something has gone wrong...'));
     }
   });
-}
+};
 
-function tinycomments_lookup({ conversationUid }, done, fail) {
-  let lookup = async function () {
-    let convResp = await fetch(
+const tinycomments_lookup = ({ conversationUid }, done, fail) => {
+  const lookup = async () => {
+    const convResp = await fetch(
       'https://api.example/conversations/' + conversationUid
     );
     if (!convResp.ok) {
       throw new Error('Failed to get conversation');
     }
-    let comments = await convResp.json();
-    let usersResp = await fetch('https://api.example/users/');
+    const comments = await convResp.json();
+    const usersResp = await fetch('https://api.example/users/');
     if (!usersResp.ok) {
       throw new Error('Failed to get users');
     }
-    let { users } = await usersResp.json();
-    let getUser = function (userId) {
-      return users.find((u) => {
-        return u.id === userId;
-      });
-    };
+    const { users } = await usersResp.json();
+    const getUser = (userId) => users.find((u) => u.id === userId);
     return {
       conversation: {
         uid: conversationUid,
-        comments: comments.map((comment) => {
-          return {
-            ...comment,
-            content: comment.content,
-            authorName: getUser(comment.author)?.displayName,
-          };
-        }),
+        comments: comments.map((comment) => ({
+          ...comment,
+          content: comment.content,
+          authorName: getUser(comment.author)?.displayName,
+        })),
       },
     };
   };
@@ -180,14 +167,14 @@ function tinycomments_lookup({ conversationUid }, done, fail) {
       console.error('Lookup failure ' + conversationUid, err);
       fail(err);
     });
-}
+};
 
 tinymce.init({
   selector: 'textarea#comments-callback',
   height: 800,
-  plugins: 'paste code tinycomments help lists',
+  plugins: 'code tinycomments help lists',
   toolbar:
-    'undo redo | formatselect | ' +
+    'undo redo | blocks | ' +
     'bold italic backcolor | alignleft aligncenter ' +
     'alignright alignjustify | bullist numlist outdent indent | ' +
     'removeformat | addcomment showcomments | help',
@@ -206,7 +193,7 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_lookup,
   /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: function (editor) {
+  setup: (editor) => {
     editor.on('SkinLoaded', () => {
       editor.execCommand('ToggleSidebar', false, 'showcomments');
     });

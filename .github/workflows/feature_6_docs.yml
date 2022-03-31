@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '.github/workflows/**'
-      - '*'
+      - '**'
     branches:
       - 'feature/6**'
       - 'hotfix/6**'
@@ -55,7 +54,7 @@ jobs:
         fi
 
     - name: (deploy) Upload website to S3
-      run: aws s3 sync --acl=public-read --delete ./build/site $(cat S3_BUCKET)
+      run: aws s3 sync --acl=public-read --delete ./build/site $(cat S3_BUCKET)/docs
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

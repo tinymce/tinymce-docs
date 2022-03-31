@@ -10,14 +10,12 @@ Before changing the language option, ensure that the language pack is available 
 
 For information on:
 
-* Using the premium language packs, see: xref:usingthepremiumlanguagepacks[Using the premium language packs].
-* Using the community language packs, see: xref:usingthecommunitylanguagepacks[Using the community language packs].
+* Using the premium language packs, see: xref:using-the-premium-language-packs[Using the premium language packs].
+* Using the community language packs, see: xref:using-the-community-language-packs[Using the community language packs].
 
-Option : `+language+`
+*Type:* `+String+`
 
-Type : `+String+`
-
-Default Value : `+'en_US'+`
+*Default value:* `+'en_US'+`
 
 === Example: Using `+language+`
 
@@ -31,7 +29,7 @@ tinymce.init({
 });
 ----
 
-[[usingthepremiumlanguagepacks]]
+[[using-the-premium-language-packs]]
 === Using the premium language packs
 
 The following professionally localized language packs are provided to paid {cloudname} and premium self-hosted deployments. To use these language packs, set the `+language+` option to the corresponding language code. No additional configuration is required.

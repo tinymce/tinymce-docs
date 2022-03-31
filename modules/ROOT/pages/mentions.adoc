@@ -1,20 +1,18 @@
 = Mentions plugin
-
-:title_nav: Mentions
+:navtitle: Mentions
 :description: Enables @mention functionality.
-:keywords: mentions atmentions
+:keywords: mentions, atmentions
 :pluginname: Mentions
 :plugincode: mentions
-:altplugincode: nil
 :pluginminimumplan: enterprise
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The mentions plugin will present a list of users when a user types the "@" symbol followed by the beginnings of a username after it. It will then query your server using the `+mentions_fetch+` callback.
 
 == Interactive example
 
-liveDemo::mentions[ height="400" ]
+liveDemo::mentions[height="400"]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -35,17 +33,3 @@ include::partial$configuration/mentions_menu_hover.adoc[leveloffset=+1]
 include::partial$configuration/mentions_selector.adoc[leveloffset=+1]
 
 include::partial$configuration/mentions_select.adoc[leveloffset=+1]
-
-== API
-
-=== `+getUsers+`
-
-You can retrieve the inserted users by calling `+getUsers+` on the plugin instance object of an editor. This will return an array of users that the author `+@mentioned+` in the content, but only the ones currently present in the content and will exclude any existing before the content was created. It will also exclude duplicate inserts by using the `+userInfo+` objects id property.
-
-==== Example: Using the `+getUsers+` API
-
-[source,js]
-----
-var users = tinymce.activeEditor.plugins.mentions.getUsers();
-console.log(users);
-----

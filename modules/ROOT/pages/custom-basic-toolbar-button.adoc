@@ -1,8 +1,7 @@
 = Creating custom Basic toolbar buttons
-
-:title_nav: Basic toolbar button
+:navtitle: Basic toolbar button
 :description: Creating custom Basic toolbar buttons for TinyMCE
-:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
+:keywords: toolbar, toolbarbuttons, buttons, toolbarbuttonsapi
 
 A basic button triggers its `+onAction+` function when clicked.
 
@@ -13,11 +12,11 @@ A basic button triggers its `+onAction+` function when clicked.
 |Name |Value |Requirement |Description
 |text |string |optional |Text to display if no icon is found.
 |icon |string |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
-|disabled |boolean |optional |default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API.
+|enabled |boolean |optional |default: `true` - Represents the button's state. When `false`, the button is unclickable. Toggled by the button's API.
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered.
-|onAction |`+(api) => void+` |required |Function invoked when the button is clicked. For details, see: xref:usingonsetup[Using `+onSetup+`].
+|onAction |`+(api) => void+` |required |Function invoked when the button is clicked. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |===
 
 == API
@@ -25,20 +24,20 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 [cols="1,3,4",options="header"]
 |===
 |Name |Value |Description
-|isDisabled |`+() => boolean+` |Checks if the button is disabled.
-|setDisabled |`+(state: boolean) => void+` |Sets the button's disabled state.
+|isEnabled |`+() => boolean+` |Checks if the button is enabled.
+|setEnabled |`+(state: boolean) => void+` |Sets the button's enabled state.
 |===
 
 == Basic button example and explanation
 
 The following example adds two buttons to the toolbar:
 
-liveDemo::custom-toolbar-button[ tab="js" ]
+liveDemo::custom-toolbar-button[tab="js"]
 
 The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `+onSetup+` works. This button inserts a `+time+` element containing the current date into the editor using a `+toTimeHtml()+` helper function - a simplified version of {productname}'s xref:insertdatetime.adoc[insertdatetime] plugin.
 
 In this example an icon from the `+insertdatetime+` plugin is used to demonstrate how to use a registered icon. `+disabled+` is set to `+true+` so that the button is disabled when it is first rendered.
 
-`+onSetup+` is used to listen to the editor's xref:events.adoc#editorcoreevents[`+NodeChange+` event] to disable the button when the cursor is inside a `+time+` element (or "node"). This ensures it is not possible to insert a `+time+` element into another `+time+` element.
+`+onSetup+` is used to listen to the editor's xref:events.adoc#editor-core-events[`+NodeChange+` event] to disable the button when the cursor is inside a `+time+` element (or "node"). This ensures it is not possible to insert a `+time+` element into another `+time+` element.
 
 include::partial$misc/onSetup.adoc[]

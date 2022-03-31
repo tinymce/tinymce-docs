@@ -19,7 +19,7 @@ The `+DOCTYPE+` declaration is required for the editor to function correctly.
 [source,html]
 ----
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 ----
@@ -79,7 +79,7 @@ The `tinymce-webcomponent` can also be sourced from link:https://www.npmjs.com/p
 <script src="/path/to/tinymce.min.js"></script>
 ----
 +
-If a `+script+` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: xref:webcomponent-ref.adoc#loadingtinymce[Loading {productname}].
+If a `+script+` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: xref:webcomponent-ref.adoc#loading-tinymce[Loading {productname}].
 endif::[]
 ifeval::["{productSource}" == "cloud"]
 . Add a `+tinymce-editor+` element where the editor should appear and include your {cloudname} API key from link:{accountpageurl}/[{accountpage}].
@@ -88,7 +88,7 @@ ifeval::["{productSource}" == "cloud"]
 ----
 <tinymce-editor
   api-key="your-tiny-cloud-api-key"
-  ></tinymce-editor>
+></tinymce-editor>
 ----
 endif::[]
 ifeval::["{productSource}" != "cloud"]
@@ -109,7 +109,7 @@ The following example shows the {productname} Web Component in an HTML page, wit
 * Various {productname} configuration options set using attributes.
 * {productname} sourced from the {cloudname}.
 
-liveDemo::web-component[ tab="html" ]
+liveDemo::web-component[tab="html"]
 
 == Next Steps
 

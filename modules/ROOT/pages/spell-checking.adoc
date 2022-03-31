@@ -1,7 +1,7 @@
 = Check spelling in TinyMCE
-
-:title_nav: Spell checking
-:keywords: spell checker spelling browser_spellcheck gecko_spellcheck {productname} provides several options to bring spell checking capabilities to your users.
+:navtitle: Spell checking
+:keywords: spell checker, spelling, browser_spellcheck
+:descripton: {productname} provides several options to bring spell checking capabilities to your users.
 
 == Browser-based spell checking
 
@@ -16,7 +16,7 @@ tinymce.init({
 });
 ----
 
-include::partial$misc/admon_ctrl_right_click.adoc[]
+include::partial$misc/admon-ctrl-right-click.adoc[]
 
 == TinyMCE Spell Checker Pro plugin
 

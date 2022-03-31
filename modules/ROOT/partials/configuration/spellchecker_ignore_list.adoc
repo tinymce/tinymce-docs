@@ -5,7 +5,7 @@ This option specifies which words should be ignored by the spell checker. If an 
 
 NOTE: Languages specified as keys in the `+spellchecker_ignore_list+` object must match the configured xref:introduction-to-tiny-spellchecker.adoc#spellchecker_languages[Spellchecker Languages].
 
-Type : `+String[]+` or `+Object+`
+*Type:* `+Array+` or `+Object+`
 
 === Example: Using `+spellchecker_ignore_list+` to ignore words in all languages
 
@@ -14,7 +14,7 @@ Type : `+String[]+` or `+Object+`
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_ignore_list: ['tinymce', 'TinyMCE']
+  spellchecker_ignore_list: [ 'tinymce', 'TinyMCE' ]
 });
 ----
 
@@ -26,8 +26,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_ignore_list: {
-    en_US: ['tinymce', 'TinyMCE'],
-    es: ['tinymce']
+    en_US: [ 'tinymce', 'TinyMCE' ],
+    es: [ 'tinymce' ]
   }
 });
 ----

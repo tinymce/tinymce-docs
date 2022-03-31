@@ -1,15 +1,16 @@
 = Table of Contents plugin
-
-:title_nav: Table of Contents
-:description: Insert a simple Table of Contents into TinyMCE editor
-:keywords: tableofcontents tableofcontents_depth tableofcontents_class tableofcontents_header toc
-:controls: toolbar button, menu item
+:navtitle: Table of Contents
+:description: Insert a simple Table of Contents into the {productname} editor
+:keywords: tableofcontents, tableofcontents_depth, tableofcontents_class, tableofcontents_header, toc
 :pluginname: Table of Contents
 :plugincode: tableofcontents
-:altplugincode: nil
 :pluginminimumplan: tierone
 
 The `+tableofcontents+` plugin will generate basic _Table of Contents_ and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
+
+== Interactive Example
+
+liveDemo::tableofcontents[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -21,7 +22,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tableofcontents',
   toolbar: 'tableofcontents',
-  menubar: 'insert'
 });
 ----
 
@@ -31,7 +31,7 @@ Internally plugin doesn't apply any inline styles. Basic formatting can be added
 
 [source,css]
 ----
-include::partial$css-codeblock/tableofcontents-plugin-css.adoc[]
+include::example$css-codeblock/tableofcontents-plugin.css[]
 ----
 
 == Options

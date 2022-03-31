@@ -1,19 +1,21 @@
 tinymce.init({
-  tinydrive_demo_files_url: '{{baseimagesurl}}/tiny-drive-demo/demo_files.json',
-  tinydrive_token_provider: function (success) { success({ token: 'fake-token' }); },
+  tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
+  tinydrive_token_provider: (success) => {
+    success({ token: 'fake-token' });
+  },
   selector: 'textarea#drive-pick-example',
   height: 200,
   menubar: false,
   plugins: 'tinydrive link image media',
   toolbar: 'custom | insertfile | link image media',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('custom', {
       text: 'Custom pick',
-      onAction: function () {
+      onAction: () => {
         editor.plugins.tinydrive.pick({
-        }).then(function (result) {
-          result.files.forEach(function (file) {
-            var link = editor.dom.createHTML('a', { href: file.url }, editor.dom.encode(file.name));
+        }).then((result) => {
+          result.files.forEach((file) => {
+            const link = editor.dom.createHTML('a', { href: file.url }, editor.dom.encode(file.name));
             editor.insertContent(link);
           });
         });

@@ -3,34 +3,35 @@
 
 This option enables a hover card to be presented when a user hovers over a mention in {productname}. This could include details about the user. A custom hover card HTML element can be provided or a predefined template can be specified.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 === Example: Using `+mentions_select+`
 
 [source,js]
 ----
-var userRequest = {};
+const userRequest = {};
+
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
   mentions_selector: 'span.mymention',
-  mentions_menu_complete: function (editor, userInfo) {
-    var span = editor.getDoc().createElement('span');
+  mentions_menu_complete: (editor, userInfo) => {
+    const span = editor.getDoc().createElement('span');
     span.className = 'mymention';
     span.setAttribute('data-mention-id', userInfo.id);
     span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
     return span;
   },
-  mentions_select: function (mention, success) {
+  mentions_select: (mention, success) => {
     // `mention` is the element we previously created with `mentions_menu_complete`
     // in this case we have chosen to store the id as an attribute
-    var id = mention.getAttribute('data-mention-id');
+    const id = mention.getAttribute('data-mention-id');
     // request more information about the user from the server and cache locally
     if (!userRequest[id]) {
       userRequest[id] = fetch('/user?id=' + id);
     }
-    userRequest[id].then(function(userDetail) {
-      var div = document.createElement('div');
+    userRequest[id].then((userDetail) => {
+      const div = document.createElement('div');
       div.innerHTML = (
         '<div>' +
         '<h1>' + userDetail.fullName + '</h1>' +
@@ -53,27 +54,27 @@ If `+mentions_select+` is resolved with an object specifying the type and user d
 
 [source,js]
 ----
-var userRequest = {};
+const userRequest = {};
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
   mentions_selector: 'span.mymention',
-  mentions_menu_complete: function (editor, userInfo) {
-    var span = editor.getDoc().createElement('span');
+  mentions_menu_complete: (editor, userInfo) => {
+    const span = editor.getDoc().createElement('span');
     span.className = 'mymention';
     span.setAttribute('data-mention-id', userInfo.id);
     span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
     return span;
   },
-  mentions_select: function (mention, success) {
+  mentions_select: (mention, success) => {
     // `mention` is the element we previously created with `mentions_menu_complete`
     // in this case we have chosen to store the id as an attribute
-    var id = mention.getAttribute('data-mention-id');
+    const id = mention.getAttribute('data-mention-id');
     // request more information about the user from the server and cache locally
     if (!userRequest[id]) {
       userRequest[id] = fetch('/user?id=' + id);
     }
-    userRequest[id].then(function(userDetail) {
+    userRequest[id].then((userDetail) => {
       success({ type: 'profile', user: userDetail });
     });
   }

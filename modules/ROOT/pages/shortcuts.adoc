@@ -1,8 +1,7 @@
 = Custom Keyboard Shortcuts
-
-:title_nav: Keyboard Shortcuts
+:navtitle: Keyboard Shortcuts
 :description: How-to add custom keyboard shortcuts to TinyMCE 6.
-:keywords: shortcuts shortcut custom keyboard
+:keywords: shortcuts, shortcut, custom, keyboard
 
 IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts with an existing {productname} or browser shortcut will override the existing shortcut.
 
@@ -15,10 +14,10 @@ include::partial$misc/shortcut-os-mappings.adoc[]
 
 == Example: Custom keyboard shortcut
 
-liveDemo::custom-shortcut[ tab="js" ]
+liveDemo::custom-shortcut[tab="js"]
 
 == Example: Adding a custom shortcut for a menu item
 
 When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `+shortcut+` configuration option when creating the menu item.
 
-liveDemo::custom-shortcut-2[ tab="js" ]
+liveDemo::custom-shortcut-2[tab="js"]

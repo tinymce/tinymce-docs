@@ -5,12 +5,12 @@ tinymce.init({
   plugins: 'tinydrive link image media',
   toolbar: 'custom | insertfile | link image media',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('custom', {
       text: 'Custom browse',
-      onAction: function () {
+      onAction: () => {
         editor.plugins.tinydrive.browse({
-        }).then(function () {
+        }).then(() => {
           console.log('Tiny Drive dialog closed.');
         });
       }

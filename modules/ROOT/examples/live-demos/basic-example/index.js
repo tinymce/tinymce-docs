@@ -7,7 +7,7 @@ tinymce.init({
     'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
     'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
   ],
-  toolbar: 'undo redo | formatselect | ' +
+  toolbar: 'undo redo | blocks | ' +
   'bold italic backcolor | alignleft aligncenter ' +
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',

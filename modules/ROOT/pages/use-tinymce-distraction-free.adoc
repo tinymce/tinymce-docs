@@ -1,12 +1,11 @@
 = TinyMCE distraction-free editing mode
-
-:title_nav: Distraction-free editing mode
+:navtitle: Distraction-free editing mode
 :description: Mode that renders a lightweight UI for inline editing.
-:keywords: Mode inlite distraction-free
+:keywords: mode, distraction-free
 
 The *Distraction-free* mode renders the editor in inline mode without the menu bar or toolbar. Most of the editor functionality is accessed using: keyboard shortcuts, contextual menus, contextual toolbars, and toolbar functions provided by the `+quickbars+` plugin.
 
-include::partial$misc/admon_not_on_mobile.adoc[]
+include::partial$misc/admon-not-on-mobile.adoc[]
 
 == Enabling distraction-free mode
 
@@ -25,7 +24,7 @@ tinymce.init({
 
 The demonstration editor below is a distraction-free editor with some customizations.
 
-liveDemo::editor-dfree[ ]
+liveDemo::editor-dfree[]
 
 == Related configuration options
 

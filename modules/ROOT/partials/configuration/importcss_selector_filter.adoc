@@ -1,9 +1,9 @@
 [[importcss_selector_filter]]
 == `+importcss_selector_filter+`
 
-This option enables you to only import classes from selectors matching the filter. The filter can be a `+string+`, `+regexp+` or a `+function+`. See the examples below.
+This option enables you to only import classes from selectors matching the filter. The filter can be a `+String+`, `+RegExp+` or a `+Function+`. See the examples below.
 
-Type: `+String+`
+*Type:* `+String+`, `+RegExp+` or `+Function+`
 
 === Example using a string filter with `+importcss_selector_filter+`
 
@@ -12,7 +12,6 @@ Type: `+String+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css',
   importcss_selector_filter: '.my-prefix-'
 });
@@ -25,7 +24,6 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css',
   importcss_selector_filter: /\.prefix|\.otherprefix/
 });
@@ -38,10 +36,8 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css',
-  importcss_selector_filter: function(selector) {
-    return selector.indexOf('myprefix') !== -1;
-  }
+  importcss_selector_filter: (selector) =>
+    selector.indexOf('myprefix') !== -1
 });
 ----

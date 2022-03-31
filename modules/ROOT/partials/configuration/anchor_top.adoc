@@ -3,16 +3,16 @@
 
 Lets you specify a custom name for the top anchor in the url type ahead drop down. To disable the to anchor from the drop down set it `+false+`.
 
-Type: `+String+`
+*Type:* `+String+`
 
-Default : `+'#top'+`
+*Default value:* `+'#top'+`
 
 === Example of custom value
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   anchor_top: '#mytop'
 });
 ----
@@ -22,7 +22,7 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   anchor_top: false
 });
 ----

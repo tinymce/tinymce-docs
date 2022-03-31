@@ -5,9 +5,9 @@ When HTML elements in a template are assigned this class, the content of the ele
 
 A modified date is one that is updated with each edit.
 
-Type: `+String+`
+*Type:* `+String+`
 
-Default Value: `+'mdate'+`
+*Default value:* `+'mdate'+`
 
 === Example: Using `+template_mdate_classes+`
 
@@ -16,7 +16,6 @@ Default Value: `+'mdate'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_mdate_classes: 'mdate modifieddate'
 });

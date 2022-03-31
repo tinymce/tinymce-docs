@@ -1,15 +1,13 @@
 = Advanced Tables plugin
-
-:title_nav: Advanced Tables
+:navtitle: Advanced Tables
 :description: Add advanced functionality to tables.
-:keywords: sort rownumbering series tables advanced advtable premium
+:keywords: sort, rownumbering, series, tables, advanced, advtable, premium
 :pluginname: Advanced Tables
 :plugincode: advtable
-:altplugincode: nil
 :plugincategory: premium
 :pluginminimumplan: tierthree
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The `+advtable+` plugin is a premium plugin that extends the core xref:table.adoc[`+table+` plugin] by adding the following advanced functionality:
 
@@ -18,7 +16,7 @@ The `+advtable+` plugin is a premium plugin that extends the core xref:table.ado
 
 == Try our Advanced Tables Demo
 
-liveDemo::advtable[ ]
+liveDemo::advtable[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -31,7 +29,6 @@ To enable the Advanced Tables plugin, add `+advtable+` to the list of plugins. F
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table advtable',
-  menubar: 'table'
 });
 ----
 

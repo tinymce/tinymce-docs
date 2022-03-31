@@ -3,6 +3,10 @@ title: TinyMCE Documentation [BETA]
 version: '6'
 asciidoc:
   attributes:
+    # anchor configuration (the @ allows it to be overridden if required)
+    idprefix: '@'
+    idseparator: '-@'
+    # generic variables
     companyurl: https://www.tiny.cloud
     cdnurl: https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js
     tdcdnurl: https://cdn.tiny.cloud/1/_your_api_key_/tinydrive/6-stable/tinydrive.min.js
@@ -29,7 +33,7 @@ asciidoc:
     #### some plugin names
     prem_skins_icons: Tiny Skins and Icon Packs
     #### Plan names
-    tieroneplan: Tiny Cloud Community Plan
+    tieroneplan: Tiny Cloud Core Plan
     tiertwoplan: Tiny Cloud Essential Plan
     tierthreeplan: Tiny Cloud Professional Plan
     enterpriseplan: Tiny Custom Plans
@@ -59,8 +63,8 @@ asciidoc:
     ellps: '&#133;'
     # Demo logos
     logofordemos: 'https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png'
-    logofordemoshtml: '<p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128" /></p>'
-    logofordemoshtmlright: '<p><img style="float: right;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128" /></p>'
+    logofordemoshtml: '<p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>'
+    logofordemoshtmlright: '<p><img style="float: right;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>'
 
 nav:
 - modules/ROOT/nav.adoc

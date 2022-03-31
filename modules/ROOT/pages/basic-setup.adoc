@@ -1,18 +1,17 @@
 = Basic setup
-
-:title_nav: Basic setup
+:navtitle: Basic setup
 :description_short: The three most important configuration settings, with examples.
 :description: TinyMCE provides a range of configuration options that allow you to integrate it into your application.
-:keywords: selector plugin toolbar configuration configure
+:keywords: selector, plugin, toolbar, configuration, configure
 
 This introduction to {productname} details the options used in traditional form-based layouts, useful information for creating streamlined user experiences, and examples of using {productname} as an inline editor.
 
 The four most common configuration options for {productname} are:
 
-. xref:selectorconfiguration[_(Required)_ The Selector configuration]
-. xref:pluginconfiguration[The Plugin configuration]
-. xref:toolbarconfiguration[The Toolbar configuration]
-. xref:menuandmenubarconfiguration[The Menu and Menu Bar configuration]
+. xref:selector-configuration[_(Required)_ The Selector configuration]
+. xref:plugin-configuration[The Plugin configuration]
+. xref:toolbar-configuration[The Toolbar configuration]
+. xref:menu-and-menu-bar-configuration[The Menu and Menu Bar configuration]
 
 == A note about code snippet examples
 
@@ -34,7 +33,7 @@ Snippets include the `+selector+` option, which is described below. Change the v
 
 Insert the snippet into an HTML document between the `+<script>+` tags and update the selector as described below.
 
-[[selectorconfiguration]]
+[[selector-configuration]]
 == Selector configuration
 
 Selector configuration is required for {productname} integration. Selector configuration uses https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS `+selector+` syntax] to determine which elements on the page are editable through {productname}.
@@ -63,7 +62,7 @@ tinymce.init({
 
 Providing a {productname} editor with the default configuration, such as:
 
-liveDemo::default[ ]
+liveDemo::default[]
 
 The selector can target most block elements when the editor is used in xref:use-tinymce-inline.adoc[inline editing mode]. Inline mode edits the content in place, instead of replacing the element with an `+iframe+`.
 
@@ -79,7 +78,7 @@ tinymce.init({
 
 For information on the differences between the classic and inline editing modes, see: xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-[[pluginconfiguration]]
+[[plugin-configuration]]
 == Plugin configuration
 
 The functionality of {productname} is extended by using plugins, which are enabled using the `+plugins+` option.
@@ -94,9 +93,9 @@ tinymce.init({
 });
 ----
 
-For a full list of plugins and their options, see: link:plugins.html[Add plugins to TinyMCE].
+For a full list of plugins and their options, see: xref:plugins.adoc[Add plugins to TinyMCE].
 
-[[toolbarconfiguration]]
+[[toolbar-configuration]]
 == Toolbar configuration
 
 {productname} provides a default set of toolbar controls, which can be overridden using the `+toolbar+` option.
@@ -109,7 +108,7 @@ The {productname} default toolbar contains the following buttons:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
-  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
+  toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
 });
 ----
 
@@ -122,7 +121,7 @@ Use a space-separated list to specify the toolbar buttons for {productname}. Cre
 * For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 * For a list of all available toolbar items, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-[[menuandmenubarconfiguration]]
+[[menu-and-menu-bar-configuration]]
 == Menu and Menu bar configuration
 
 There are two menu options: `+menubar+` and `+menu+`. `+menubar+` is used to define the presence and order of _menus_, such as *File*, *Edit*, and *View*. `+menu+` is used to define the presence and order of _menu items_, such as *New Document*, *Select all*, and *Source code*.
@@ -139,7 +138,7 @@ tinymce.init({
 });
 ----
 
-liveDemo::menubar[ ]
+liveDemo::menubar[]
 
 To create an `+Edit+` menu that only contains the _Undo_, _Redo_, and _Select all_ items.
 
@@ -148,12 +147,12 @@ To create an `+Edit+` menu that only contains the _Undo_, _Redo_, and _Select al
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
-    edit: {title: 'Edit', items: 'undo, redo, selectall'}
+    edit: { title: 'Edit', items: 'undo, redo, selectall' }
   }
 });
 ----
 
-liveDemo::menu1[ ]
+liveDemo::menu1[]
 
 To create a menu titled "Happy", provide an identifier for the menu and an object with the `+title+` and `+items+` for the menu.
 
@@ -164,14 +163,14 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
-    happy: {title: 'Happy', items: 'code'}
+    happy: { title: 'Happy', items: 'code' }
   },
   plugins: 'code',  // required by the code menu item
   menubar: 'happy'  // adds happy to the menu bar
 });
 ----
 
-liveDemo::menu2[ ]
+liveDemo::menu2[]
 
 === Default menu controls
 
@@ -211,11 +210,11 @@ The following example is a basic {productname} configuration.
       'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
       'media', 'table', 'emoticons', 'template', 'help'
     ],
-    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
       'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
       'forecolor backcolor emoticons | help',
     menu: {
-      favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
+      favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
     },
     menubar: 'favs file edit view insert format tools table help',
     content_css: 'css/content.css'
@@ -263,7 +262,7 @@ Selects the toolbar buttons displayed to the user. Use a comma or space as a sep
 
 [source,js]
 ----
-toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+toolbar: 'insertfile undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
 ----
 
 Adds an additional menu named "My Favorites" with `+menu+`, then adds it to the menu bar using `+menubar+`.
@@ -271,7 +270,7 @@ Adds an additional menu named "My Favorites" with `+menu+`, then adds it to the 
 [source,js]
 ----
 menu: {
-  favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
+  favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
 },
 menubar: 'favs file edit view insert format tools table help',
 ----
@@ -283,7 +282,7 @@ Sets the styling of the editable area using `+content_css+`.
 content_css: 'css/content.css',
 ----
 
-liveDemo::basic-conf[ ]
+liveDemo::basic-conf[]
 
 === Additional information
 

@@ -6,6 +6,6 @@ tinymce.init({
     'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
     'insertdatetime', 'media', 'table', 'editimage', 'wordcount'
   ],
-  toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+  toolbar: 'insertfile undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

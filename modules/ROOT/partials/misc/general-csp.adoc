@@ -1,4 +1,4 @@
-[[configuringcontentsecuritypolicycspfortinymce]]
+[[configuring-content-security-policy-csp-for-tinymce]]
 == Configuring Content Security Policy (CSP) for TinyMCE
 
 {productname} can be used with a https://content-security-policy.com/[CSP] header. When using a CSP, the following directives are *required* for {productname} to function:
@@ -39,7 +39,7 @@ When using the {cloudname}, use this CSP header:
 <meta
   http-equiv="Content-Security-Policy"
   content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud blob:; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;"
-/>
+>
 ----
 
 When self-hosting {productname} from a local domain, use this CSP header (excludes the *.tiny.cloud domain):
@@ -49,5 +49,5 @@ When self-hosting {productname} from a local domain, use this CSP header (exclud
 <meta
   http-equiv="Content-Security-Policy"
   content="default-src 'none'; script-src 'self'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';"
-/>
+>
 ----

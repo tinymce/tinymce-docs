@@ -2,20 +2,20 @@
 
 The procedure for upgrading to the latest version of {productname} {productmajorversion} depends on the deployment type.
 
-* xref:upgradingtinycloud[Upgrading Tiny Cloud].
+* xref:upgrading-tiny-cloud[Upgrading Tiny Cloud].
 ifeval::[{enterprise} != true]
-* xref:upgradingtinymceself-hostedusingapackagemanager[Upgrading TinyMCE Self-hosted using a package manager].
+* xref:upgrading-tinymce-self-hosted-using-a-package-manager[Upgrading TinyMCE Self-hosted using a package manager].
 endif::[]
-* xref:upgradingtinymceself-hostedmanually[Upgrading TinyMCE Self-hosted manually].
+* xref:upgrading-tinymce-self-hosted-manually[Upgrading TinyMCE Self-hosted manually].
 
-[[upgradingtinycloud]]
+[[upgrading-tiny-cloud]]
 === Upgrading Tiny Cloud
 
-{cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see:  link:cloud-deployment-guide.html[the Cloud deployment guide].
+{cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: xref:editor-and-features.adoc[the Cloud deployment guide].
 
 ifeval::[{enterprise} != true]
 
-[[upgradingtinymceself-hostedusingapackagemanager]]
+[[upgrading-tinymce-self-hosted-using-a-package-manager]]
 === Upgrading TinyMCE Self-hosted using a package manager
 
 Select from the following package managers.
@@ -33,7 +33,7 @@ To upgrade to {productname} {productminorversion} using Yarn, run:
 
 [source,sh,subs="attributes+"]
 ----
-$ yarn upgrade {prodnamecode}
+yarn upgrade {prodnamecode}
 ----
 
 [[npm]]
@@ -43,7 +43,7 @@ To upgrade to {productname} {productminorversion} using npm, run:
 
 [source,sh,subs="attributes+"]
 ----
-$ npm install {prodnamecode}@latest --save
+npm install {prodnamecode}@latest --save
 ----
 
 [[composer]]
@@ -53,7 +53,7 @@ To upgrade to {productname} {productminorversion} using Composer, run:
 
 [source,sh]
 ----
-$ composer require tinymce/tinymce
+composer require tinymce/tinymce
 ----
 
 [[nuget]]
@@ -63,7 +63,7 @@ To upgrade to {productname} {productminorversion} using NuGet, run:
 
 [source,sh,subs="attributes+"]
 ----
-$ Install-Package {productname}
+Install-Package {productname}
 ----
 
 [[bower]]
@@ -73,12 +73,12 @@ To upgrade to {productname} {productminorversion} using Bower, run:
 
 [source,sh,subs="attributes+"]
 ----
-$ bower install {prodnamecode}#{productminorversion} --save
+bower install {prodnamecode}#{productminorversion} --save
 ----
 
 endif::[]
 
-[[upgradingtinymceself-hostedmanually]]
+[[upgrading-tinymce-self-hosted-manually]]
 === Upgrading TinyMCE Self-hosted manually
 
 To upgrade to {productname} {productminorversion} using a manually downloaded package:
@@ -92,6 +92,7 @@ Customizations for {productname} are typically stored in the following directori
 tinymce/
 ├── icons/
 ├── langs/
+├── models/
 ├── plugins/
 ├── skins/
 │   ├── content/
@@ -99,7 +100,7 @@ tinymce/
 └── themes/
 ----
 . Download the latest version of {productname}.
-* For the {productname} Community Version, download `{prodnamecode}_<VERSION>.zip` from link:{gettiny}/self-hosted/[Get {productname} - Self-hosted releases], where _`+<VERSION>+`_ is the latest version of {productname}.
+* For the {productname} Community Version, download `{prodnamecode}_<VERSION>.zip` from link:{gettiny}/self-hosted/[Get {productname} - Self-hosted releases], where `_<VERSION>_` is the latest version of {productname}.
 * For the {productname} Enterprise Version, download the *{productname} Enterprise Bundle* from link:{accountpageurl}/downloads/[{accountpage} > Downloads]. The downloaded file will be named `+enterprise_latest.zip+`.
 . Extract the downloaded `+.zip+` file to a temporary location.
 . (If required) Install the latest language packs from link:{gettiny}/language-packages/[Get {productname} - Language Packages].
@@ -111,7 +112,7 @@ tinymce/
 . Delete the existing `{prodnamecode}/` directory and replace with the new `{prodnamecode}/`.
 
 [NOTE]
---
+====
 To simplify the upgrade process to future versions of {productname}:
 
 . Host the {productname} customizations outside of the `{prodnamecode}/` directory.
@@ -122,4 +123,4 @@ To simplify the upgrade process to future versions of {productname}:
 * Set the location of custom localization packages using xref:ui-localization.adoc#language_url[`+language_url+`] instead of `+language+`.
 * Set the location of custom skin packages using xref:editor-skin.adoc#skin_url[`+skin_url+`] instead of `+skin+`.
 * Set the location of custom themes using xref:editor-theme.adoc#theme_url[`+theme_url+`] instead of `+theme+`.
---
+====

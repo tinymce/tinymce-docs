@@ -1,9 +1,8 @@
 = Create a plugin for TinyMCE
-
-:title_nav: Create a plugin
+:navtitle: Create a plugin
 :description_short: Introducing plugin creation, with an example.
 :description: A short introduction to creating plugins for TinyMCE along with an example plugin.
-:keywords: plugin plugin.js plugin.min.js tinymce.js
+:keywords: plugin, plugin.js, plugin.min.js, tinymce.js
 
 {productname} is designed to be easily extended by custom plugins; with APIs for registering custom plugins, and creating and localizing custom UI.
 
@@ -17,7 +16,6 @@ To be recognized as a plugin by {productname}, the code for a custom plugin must
 
 {companyname} maintains a xref:yeoman-generator.adoc[Yeoman generator] to assist with creating plugins for {productname}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
 
-[[registering-a-custom-plugin-with-siteproductname]]
 == Registering a custom plugin with {productname}
 
 Register a custom plugin with {productname} using the PluginManager. `+PluginManager.add()+` takes a string for the plugin identifier and a function that contains the code for initializing the plugin.
@@ -51,7 +49,6 @@ tinymce.PluginManager.add('pluginId', (editor, url) => {
 });
 ----
 
-[[using-custom-plugins-with-siteproductname]]
 == Using custom plugins with {productname}
 
 Custom plugins can be added to a {productname} instance by either:
@@ -84,7 +81,6 @@ tinymce.init({
 });
 ----
 
-[#testing-{productname}]
 == Testing {productname}
 
 Due to the range of browser APIs used by {productname}; when testing {productname} or any custom plugins, {productname} requires a testing framework that runs on a real browser. Testing frameworks that mock the browser will not work.
@@ -98,7 +94,7 @@ If a custom plugin includes any custom UI created using {productname}'s xref:cus
 . Create a "`+langs+`" directory in the custom plugin's root directory for custom translations.
 . For each language that the plugin supports, create a translation file.
 +
-The files should be JavaScript files and use the relevant language code as the file name. For example: {productname} will search for a Spanish translation file at `+<your plugin>/langs/es_ES.js+`, where `+<your plugin>+` is to the directory that contains the plugin's entry point file. For a list of supported languages, see: xref:ui-localization.adoc#supportedlanguages[Supported languages].
+The files should be JavaScript files and use the relevant language code as the file name. For example: {productname} will search for a Spanish translation file at `+<your plugin>/langs/es_ES.js+`, where `+<your plugin>+` is to the directory that contains the plugin's entry point file. For a list of supported languages, see: xref:ui-localization.adoc#supported-languages[Supported languages].
 . In each translation file, add translation strings by passing an object containing key-value pairs of source strings and translation strings to the xref:apis/tinymce.root.adoc#addI18n[`+tinymce.addI18n()+` API].
 . In the plugin's entry point file, call `+tinymce.PluginManager.requireLangPack()+` and pass it the plugin identifier and a comma-delimitated string of the language codes to load.
 
@@ -127,4 +123,4 @@ tinymce.PluginManager.requireLangPack('pluginId', 'es_ES,de_AT');
 
 This example plugin demonstrates how to add a simple toolbar button and menu item. This button opens a dialog that allows a title to be entered into the editor. The menu item will open the same dialog as the button.
 
-liveDemo::custom-plugin[ tab="js" ]
+liveDemo::custom-plugin[tab="js"]

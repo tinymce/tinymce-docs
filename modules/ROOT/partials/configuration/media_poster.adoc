@@ -3,11 +3,11 @@
 
 To remove the `+Poster+` input field in the media dialog, set this option to `+false+`.
 
-Type: `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value: `+true+`
+*Default value:* `+true+`
 
-Possible Values: `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+media_poster+`
 
@@ -16,7 +16,6 @@ Possible Values: `+true+`, `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'media',
-  menubar: 'insert',
   toolbar: 'media',
   media_poster: false
 });

@@ -1,8 +1,7 @@
 = Specify editor & plugin versions
-
 :description_short: Specifying editor and plugin versions for Tiny Cloud deployments.
 :description: Specifying editor and plugin versions for Tiny Cloud deployments.
-:keywords: tinymce cloud script textarea apiKey hybrid
+:keywords: tinymce, cloud, script, textarea, apiKey, hybrid
 
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
 == Specifying the TinyMCE editor version deployed from Cloud
@@ -20,7 +19,7 @@ This URL specifies the latest and quality assured release of {productname}.
 
 === Selecting specific version numbers
 
-NOTE: All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: link:release-notes.html[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
+NOTE: All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes.adoc[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
 
 [#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels]
 === {productmajorversion}, {productmajorversion}-testing, and {productmajorversion}-dev release channels
@@ -84,6 +83,7 @@ The `+identifier+` of the plugin is used as a query parameter. This table summar
 |xref:checklist.adoc[Checklist] |`+checklist+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions[Versions]
 |xref:introduction-to-tiny-comments.adoc[Comments] |`+comments+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Versions]
 |xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] |`+mediaembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions[Versions]
+|xref:editimage.adoc[Edit Image] |`+editimage+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/editimage/available-versions[Versions]
 |xref:export.adoc[Export] |`+export+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/export/available-versions[Versions]
 |xref:formatpainter.adoc[Format Painter] |`+formatpainter+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions[Versions]
 |xref:linkchecker.adoc[Link Checker] |`+linkchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions[Versions]
@@ -92,6 +92,7 @@ The `+identifier+` of the plugin is used as a query parameter. This table summar
 |xref:permanentpen.adoc[Permanent Pen] |`+permanentpen+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions[Versions]
 |xref:introduction-to-powerpaste.adoc[PowerPaste] |`+powerpaste+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Versions]
 |xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] |`+tinymcespellchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions[Versions]
+|xref:tableofcontents.adoc[Table of Contents] |`+tableofcontents+`|http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tableofcontents/available-versions[Versions]
 |xref:tinydrive-introduction.adoc[Tiny Drive] |`+tinydrive+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions[Versions]
 |===
 
@@ -101,22 +102,21 @@ When deploying xref:editor-and-features.adoc[both the editor and premium plugins
 
 Combine multiple plugin specifications using `+&+` in your query string. For example, to load:
 
-* mentions v2.2
-* powerpaste v5.5
+* mentions v3.0
+* powerpaste v6.0
 * all other premium plugins from those bundled with `{productmajorversion}`
 
-Append `+?mentions=2.2&powerpaste=5.5+`, such as:
+Append `+?mentions=3.0&powerpaste=6.0+`, such as:
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js?mentions=2.2&powerpaste=5.5" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js?mentions=3.0&powerpaste=6.0" referrerpolicy="origin"></script>
 ----
 
 === Specifying a self-hosted deployment of features/plugins
 
 When deploying xref:features-only.adoc[only premium plugins from {cloudname}], some features are served from {cloudname} and some features served from a self-hosted installation. There are two ways to achieve this: `+plugins.min.js+` and `+cloud-plugins.min.js+`.
 
-[[pluginsminjs]]
 ==== plugins.min.js
 
 Instead of loading `+tinymce.min.js+` from {cloudname}, serve {productname} from a self-hosted server, and load `+plugins.min.js+` from {cloudname}. {productname} which will attempt to load every *premium* plugin from {cloudname}, unless the version of the plugin is specified as the special version `+sdk+`. The query string for `+plugins.min.js+` works the same way as `+tinymce.min.js+`, except for the addition of `+sdk+`. For example, this script tag:
@@ -124,18 +124,17 @@ Instead of loading `+tinymce.min.js+` from {cloudname}, serve {productname} from
 The following example:
 
 * Assumes {productname} has already been loaded by another script on the page.
-* Attempts to load `+mentions+` `+v2.2+` and `+powerpaste+` `+v5.5+` from {cloudname}.
+* Attempts to load `+mentions+` `+v3.0+` and `+powerpaste+` `+v6.0+` from {cloudname}.
 * Attempts to load `+advcode+` from the self-hosted installation.
 * Attempts to load all other premium plugins from those bundled with version `{productmajorversion}` of {productname}.
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=2.2&powerpaste=5.5&advcode=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=3.0&powerpaste=6.0&advcode=sdk" referrerpolicy="origin"></script>
 ----
 
 The disadvantage of `+plugins.min.js+`: to load only one plugin from the {cloudname} and the rest from a self-hosted deployment, *ALL* other plugins need to be added as query parameter with the version as `+sdk+`. When {cloudname} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from a self-hosted deployment, use `+cloud-plugins.min.js+`.
 
-[[cloud-pluginsminjs]]
 ==== cloud-plugins.min.js
 
 Instead of loading `+tinymce.min.js+` from {cloudname}, serve {productname} from a self-hosted server, and load `+cloud-plugins.min.js+` from {cloudname}. Unlike `+plugins.min.js+`, `+cloud-plugins.min.js+` defaults to loading every *premium* plugin from the *self-hosted {productname} installation*, not {cloudname}. However, plugins can be loaded from {cloudname} by specifying them as query parameters.
@@ -145,13 +144,13 @@ With `+cloud-plugins.min.js+`, the plugins listed in the query strings do not re
 The following example:
 
 * Assumes {productname} has already been loaded by another script on the page.
-* Attempts to load `+mentions+` `+v2.2+` and `+powerpaste+` `+v5.5+` from {cloudname}.
+* Attempts to load `+mentions+` `+v3.0+` and `+powerpaste+` `+v6.0+` from {cloudname}.
 * Attempts to load `+advcode+` from the version bundled with version `{productmajorversion}` of {productname} because it doesn't specify a version.
 * Attempts to load all other premium plugins from the self-hosted installation.
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions=2.2&powerpaste=5.5&advcode" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions=3.0&powerpaste=6.0&advcode" referrerpolicy="origin"></script>
 ----
 
 The disadvantage of `+cloud-plugins.min.js+`: every plugin to be loaded from {cloudname} must be added to the query parameter. When {cloudname} releases a new plugin, this will need to be updated. In situations where most premium plugins need to be loaded from {cloudname}, use `+plugins.min.js+`.

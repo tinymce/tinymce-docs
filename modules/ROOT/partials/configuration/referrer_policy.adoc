@@ -6,9 +6,7 @@ Used for setting the level of referrer information sent when loading plugins and
 * Improve the privacy of end-users.
 * Assist with server-side filtering of cross-origin requests for {productname} resources.
 
-Type: `+String+`
-
-Default Value: `+''+`
+*Type:* `+String+`
 
 For a list of valid referrer policies (directives), see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy[MDN Web Docs - Referrer-Policy].
 
@@ -18,6 +16,6 @@ For a list of valid referrer policies (directives), see: https://developer.mozil
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  referrer_policy: 'strict-origin-when-cross-origin'
+  referrer_policy: 'origin'
 });
 ----

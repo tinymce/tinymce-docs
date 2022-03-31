@@ -15,7 +15,7 @@ The base entities `+<+`, `+>+`, `+&+`, `+'+`, and `+"+` will always be entity en
 |raw |All characters will be stored in non-entity form except these XML default entities: `+&+`, `+<+`, `+>+`, `+'+`, and `+"+`.
 |===
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+entity_encoding+`
 
@@ -23,6 +23,6 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  entity_encoding : 'raw'
+  entity_encoding: 'raw'
 });
 ----

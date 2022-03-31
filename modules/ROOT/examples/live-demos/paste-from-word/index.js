@@ -7,7 +7,7 @@ tinymce.init({
     'anchor', 'searchreplace', 'visualblocks', 'advcode', 'fullscreen',
     'insertdatetime', 'media', 'table', 'powerpaste', 'code'
   ],
-  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code',
+  toolbar: 'undo redo | insert | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code',
   powerpaste_allow_local_images: true,
   powerpaste_word_import: 'prompt',
   powerpaste_html_import: 'prompt',

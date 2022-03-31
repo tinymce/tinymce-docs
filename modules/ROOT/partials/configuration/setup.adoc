@@ -7,7 +7,7 @@ To specify a setup callback, provide the `+setup+` option with a JavaScript func
 
 A common use case for this setting is to add editor events to {productname}. For instance, if you would like to add a click event to {productname}, you would add it through the setup configuration setting.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
 === Example: Using `+setup+`
 

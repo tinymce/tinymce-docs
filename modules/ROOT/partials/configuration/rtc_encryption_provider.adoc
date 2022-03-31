@@ -11,12 +11,12 @@ A key is required when the client needs to:
 For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: xref:rtc-encryption.adoc[Real-Time Collaboration (RTC) Encryption Setup].
 
 ifeval::["{plugincode}" != "rtc"]
-Required plugin : xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
+*Required plugin:* xref:rtc-introduction.adoc[Real-Time Collaboration (`+rtc+`)]
 endif::[]
 
-Type : `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
+*Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
-Input parameters :
+*Input parameters:*
 [cols="1,1,4",options="header"]
 |===
 |Field |Type |Description
@@ -24,7 +24,7 @@ Input parameters :
 |`+keyHint+` |`+string+` or `+null+` | Key hint returned by the editor when connecting to an existing session. The `+keyHint+` is retrieved from the RTC server using the `+documentId+` for existing documents.
 |===
 
-Return data :
+*Return data:*
 [cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
@@ -51,9 +51,9 @@ tinymce.init({
       credentials: 'include',
       body: JSON.stringify({ documentId, keyId: keyHint })
     })
-    .then((response) => response.json())
-    .then(({ keyId, secret }) => ({ key: secret, keyHint: keyId }))
-    .catch((error) => console.log('Failed to return encryption key\n' + error)),
+      .then((response) => response.json())
+      .then(({ keyId, secret }) => ({ key: secret, keyHint: keyId }))
+      .catch((error) => console.log('Failed to return encryption key\n' + error)),
   rtc_token_provider: () => Promise.resolve({ token: 'signed-JWT-token' })
 });
 ----

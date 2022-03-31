@@ -1,12 +1,9 @@
 = Full Screen plugin
-
-:title_nav: Full Screen
+:navtitle: Full Screen
 :description: Zoom TinyMCE up to the whole screen.
-:keywords: fullscreen view
-:controls: toolbar button, menu item
+:keywords: fullscreen, view
 :pluginname: Full Screen
 :plugincode: fullscreen
-:altplugincode: nil
 
 This plugin adds full screen editing capabilities to {productname}. When the toolbar button is pressed the editable area will fill the browser's viewport. The plugin adds a toolbar button and a menu item `+Fullscreen+` under the `+View+` menu.
 
@@ -22,7 +19,6 @@ Full screen mode can be toggled using the following keyboard shortcuts:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'fullscreen',
-  menubar: 'view',
   toolbar: 'fullscreen'
 });
 ----

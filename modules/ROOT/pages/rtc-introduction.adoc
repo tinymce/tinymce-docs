@@ -1,8 +1,7 @@
 = Introduction to Real-Time Collaboration (RTC)
-
-:title_nav: Introduction
+:navtitle: Introduction
 :description: What is RTC and what can it do
-:keywords: rtc introduction overview
+:keywords: rtc, introduction, overview
 
 include::partial$rtc/rtc-description.adoc[]
 
@@ -10,7 +9,7 @@ include::partial$rtc/rtc-description.adoc[]
 
 The following example shows two editors that are collaborating using the {productname} Real-Time Collaboration plugin. All network requests made by these editors, real or simulated, are being logged to the browser console. To view the network requests, open the browser console using the *F12* keyboard key and navigate to the _Console_ tab.
 
-liveDemo::rtc[ ]
+liveDemo::rtc[]
 
 == Features of TinyMCE Real-Time Collaboration
 

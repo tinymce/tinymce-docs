@@ -3,6 +3,10 @@
 
 This option allows you to override the default formatting rule for date formats inserted by the `+mceInsertDate+` command. This defaults to `+%Y-%m-%d+` and where the different `+%+` variables get replaced with various xref:insertdatetime.adoc#referencedatetimeformats[date format options].
 
+*Type:* `+String+`
+
+*Default value:* `+'%Y-%m-%d'+`
+
 === Example: Using `+insertdatetime_dateformat+`
 
 [source,js]
@@ -10,8 +14,7 @@ This option allows you to override the default formatting rule for date formats 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
-  menubar: 'insert',
   toolbar: 'insertdatetime',
-  insertdatetime_dateformat: '%Y-%m-%d'
+  insertdatetime_dateformat: '%d-%m-%Y'
 });
 ----

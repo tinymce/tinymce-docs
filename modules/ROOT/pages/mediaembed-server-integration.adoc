@@ -1,8 +1,6 @@
 = Integrate Enhanced Media Embed Server
-
 :description: Using the Enhanced Media Embed server with non-public content such as a corporate CMS.
-:keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
-
+:keywords: enterprise, pricing, video, youtube, vimeo, mp3, mp4, mov, movie, clip, film, link, linkchecking, linkchecker, mediaembed, media
 
 Websites like https://developers.facebook.com/docs/plugins/oembed-endpoints[Facebook] and https://www.instagram.com/developer/embedding/[Instagram] expose an http://oembed.com/[oEmbed] endpoint for developers to utilize. The https://iframely.com/[Iframely] service creates embeds from websites on the public Internet. For content on private networks, such as a corporate CMS, this document outlines how to enrich the content or build an API that the Enhanced Media Embed server can utilize to create rich hyperlinks. We'll also provide some information about the Enhanced Media Embed server's summary cards.
 
@@ -143,7 +141,7 @@ The other option for developing a custom API endpoint is to return JSON in the x
 ** String containing a description of the document.
 * `+cache_age+` (optional)
 ** Integer containing the _suggested_ cache lifetime for this resource, in seconds.
-* `+date +` (optional)
+* `+date+` (optional)
 ** String containing the date of the document in the format *YYYY-MM-DD*.
 * `+links+` (required)
 ** xref:linksobj[LinksObj]
@@ -171,14 +169,14 @@ An array of tags describing the primary type of an embed, where it came from and
 
 A string describing the primary type of an embed containing one of the following values:
 
-* `+player+` : A video or audio player
-* `+thumbnail+` : A thumbnail representation of the resource
-* `+image+` : A full sized image for the resource
+* `+player+`: A video or audio player
+* `+thumbnail+`: A thumbnail representation of the resource
+* `+image+`: A full sized image for the resource
 * `+reader+`
-* `+file+` : No HTML provided. Should just be a hyperlink to a downloadable file.
+* `+file+`: No HTML provided. Should just be a hyperlink to a downloadable file.
 * `+survey+`
-* `+app+` : An embed that will switch over to a mobile app if played on a mobile (e.g. soundcloud)
-* `+summary+` : Summary card (scriptless embed)
+* `+app+`: An embed that will switch over to a mobile app if played on a mobile (e.g. soundcloud)
+* `+summary+`: Summary card (scriptless embed)
 * `+icon+`
 * `+logo+`
 * `+promo+`
@@ -200,14 +198,14 @@ A string describing technical attributes of an embed containing one of the follo
 
 A string describing the source of an embed containing one of the following values:
 
-* `+iframely+` : From Iframely
-* `+opengraph+` : Generated from Open Graph tags in a resource
-* `+twitter+` : Retrieved from a https://dev.twitter.com/cards/overview[Twitter Card]
-* `+oembed+` : Retreived from an oEmbed API
+* `+iframely+`: From Iframely
+* `+opengraph+`: Generated from Open Graph tags in a resource
+* `+twitter+`: Retrieved from a https://dev.twitter.com/cards/overview[Twitter Card]
+* `+oembed+`: Retrieved from an oEmbed API
 * `+sm4+`
-* `+fallback+` : Ephox fallback embeds that look at SEO tags and Open Graph tags.
-* `+script_censor+` : The original embed (from Iframely or oEmbed) had a script in it and has been converted to a summary card.
-* `+smartframe_censor+` : The original embed had an Iframely smart frame and has been censored into a summary card to avoid a content dependency on Iframely.
+* `+fallback+`: Ephox fallback embeds that look at SEO tags and Open Graph tags.
+* `+script_censor+`: The original embed (from Iframely or oEmbed) had a script in it and has been converted to a summary card.
+* `+smartframe_censor+`: The original embed had an Iframely smart frame and has been censored into a summary card to avoid a content dependency on Iframely.
 
 [[linksobj]]
 ===== `+LinksObj+`
@@ -348,5 +346,5 @@ When the Enhanced Media Embed server generates a summary card of a URL (using th
 
 [source,css]
 ----
-include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
+include::example$css-codeblock/mediaembed-plugin.css[]
 ----

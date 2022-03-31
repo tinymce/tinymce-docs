@@ -1,12 +1,9 @@
 = Nonbreaking Space plugin
-
-:title_nav: Nonbreaking Space
+:navtitle: Nonbreaking Space
 :description: Insert a nonbreaking space.
-:keywords: nonbreaking nonbreaking_force_tab insert
-:controls: toolbar button, menu item
+:keywords: nonbreaking, nonbreaking_force_tab, insert
 :pluginname: Nonbreaking Space
 :plugincode: nonbreaking
-:altplugincode: nil
 
 This plugin adds a button for inserting nonbreaking space entities `+&nbsp;+` at the current caret location (cursor insert point). It also adds a menu item `+Nonbreaking space+` under the `+Insert+` menu dropdown and a toolbar button.
 
@@ -17,7 +14,6 @@ This plugin adds a button for inserting nonbreaking space entities `+&nbsp;+` at
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'nonbreaking',
-  menubar: 'insert',
   toolbar: 'nonbreaking'
 });
 ----

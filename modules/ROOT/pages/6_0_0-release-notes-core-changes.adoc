@@ -1,15 +1,14 @@
 = New features, enhancements, and changes for TinyMCE 6.0 core and core plugins
-
-:title_nav: Core improvements
+:navtitle: Core improvements
 :description: New features, enhancements, and functionality changes for TinyMCE 6.0
-:keywords: releasenotes bugfixes
+:keywords: releasenotes, bugfixes
 
-* xref:newfeatures[New features]
+* xref:new-features[New features]
 * xref:enhancements[Enhancements]
-* xref:functionalitychanges[Functionality changes]
-* xref:removedfunctionality[Removed functionality]
+* xref:functionality-changes[Functionality changes]
+* xref:removed-functionality[Removed functionality]
 
-[[newfeatures]]
+[[new-features]]
 == New features
 
 The following new features were added for the {productname} 6.0 release.
@@ -39,7 +38,7 @@ In iframe (classic editor) mode, {productname} now copies the https://developer.
 
 * changelog
 
-[[functionalitychanges]]
+[[functionality-changes]]
 == Functionality changes
 
 The following changes were made for the {productname} 6.0 release.
@@ -54,9 +53,9 @@ Integrators can remove `+hr+` from the `+plugins+` section of their {productname
 
 For information about horizontal rule-related functionality, see:
 
-* xref:available-toolbar-buttons.adoc#thecoretoolbarbuttons[Core toolbar buttons]
-* xref:available-menu-items.adoc#thecoremenuitems[Core menu items]
-* xref:editor-command-identifiers.adoc#coreeditorcommands[Core commands]
+* xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[Core toolbar buttons]
+* xref:available-menu-items.adoc#the-core-menu-items[Core menu items]
+* xref:editor-command-identifiers.adoc#core-editor-commands[Core commands]
 
 === Noneditable plugin moved to TinyMCE Core
 
@@ -66,9 +65,9 @@ Integrators can remove `+noneditable+` from the `+plugins+` section of their {pr
 
 For information about noneditable-related functionality, see:
 
-* xref:content-filtering.adoc#editable_class[Content filtering options - editable_class]
-* xref:content-filtering.adoc#noneditable_class[Content filtering options - noneditable_class]
-* xref:content-filtering.adoc#noneditable_regexp[Content filtering options - noneditable_regexp]
+* xref:content-behavior-options.adoc#editable_class[Content filtering options - editable_class]
+* xref:content-behavior-options.adoc#noneditable_class[Content filtering options - noneditable_class]
+* xref:content-behavior-options.adoc#noneditable_regexp[Content filtering options - noneditable_regexp]
 
 === Print plugin moved to TinyMCE Core
 
@@ -80,10 +79,10 @@ Integrators can remove `+print+` from the `+plugins+` section of their {productn
 
 For information about print-related functionality, see:
 
-* xref:available-toolbar-buttons.adoc#thecoretoolbarbuttons[Core toolbar buttons]
-* xref:available-menu-items.adoc#thecoremenuitems[Core menu items]
-* xref:editor-command-identifiers.adoc#coreeditorcommands[Core commands]
-* xref:keyboard-shortcuts.adoc#editorkeyboardshortcuts[Shortcuts]
+* xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[Core toolbar buttons]
+* xref:available-menu-items.adoc#the-core-menu-items[Core menu items]
+* xref:editor-command-identifiers.adoc#core-editor-commands[Core commands]
+* xref:keyboard-shortcuts.adoc#editor-keyboard-shortcuts[Shortcuts]
 
 === Renamed Options
 
@@ -95,7 +94,7 @@ The following options have been renamed in {productname} 6.0:
 * The `+noneditable_editable_class+` option has been renamed to `+editable_class+`.
 * The `+noneditable_noneditable_class+` option has been renamed to `+noneditable_class+`.
 
-[[removedfunctionality]]
+[[removed-functionality]]
 == Removed functionality
 
 === Tabfocus plugin

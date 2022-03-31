@@ -1,8 +1,7 @@
 = Context forms
-
-:title_nav: Context forms
+:navtitle: Context forms
 :description: Creating custom context forms for TinyMCE 6
-:keywords: contextforms context forms contextformsbarapi
+:keywords: contextforms, context forms, contextformsbarapi
 :contextItemType: form
 
 A context form consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `+launch+` configuration, a special context toolbar button with name `+form:${name}+` is registered which will launch that particular context form. Context forms are a generalization of the `+Insert Link+` form that existed in the original link:https://www.tiny.cloud/docs-4x/themes/inlite/#quicklink[inlite] theme from TinyMCE 4.
@@ -66,12 +65,12 @@ The definition of a context form button is very similar to the definition of a n
 |Name |Value |Requirement |Description
 |primary |boolean |Optional |This will activate the button on <enter> in the input form.
 |onAction |`+(formApi, togglebuttonApi) => void+` |Required |This decides what happens when the user clicks the button.
-|active |boolean |Optional |default:false
-|disabled |boolean |Optional |default: false - Represents button state. Is toggled by the button's API
+|active |boolean |Optional |default: `false`
+|enabled |boolean |Optional |default: `true` - Represents button state. Is toggled by the button's API
 |tooltip |string |Optional |Text for button tooltip.
 |text |string |Optional |Text to display if no icon is found.
 |icon |string |Optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |onSetup |`+(togglebuttonApi) => (togglebuttonApi) => void+` |Optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered.
 |===
 
@@ -88,12 +87,12 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 |Name |Value |Requirement |Description
 |primary |boolean |Optional |This will activate the button on <enter> in the input form.
 |onAction |`+(formApi, togglebuttonApi) => void+` |Required |This decides what happens when the user clicks the button.
-|active |boolean |Optional |default:false
-|disabled |boolean |Optional |default: false - Represents button state. Is toggled by the button's API
+|active |boolean |Optional |default: `false`
+|enabled |boolean |Optional |default: `true` - Represents button state. Is toggled by the button's API
 |tooltip |string |Optional |Text for button tooltip.
 |text |string |Optional |Text to display if no icon is found.
 |icon |string |Optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |onSetup |`+(togglebuttonApi) => (togglebuttonApi) => void+` |Optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered.
 |===
 
@@ -114,6 +113,6 @@ Both `+contextformbutton+` and `+contextformtogglebutton+` are passed `+formApi+
 
 This example shows how the link plugin adds the standard link context form. The context form will show whenever any content is selected.
 
-liveDemo::context-form[ height="400" tab="js" ]
+liveDemo::context-form[height="400", tab="js"]
 
 include::partial$context/priority.adoc[]

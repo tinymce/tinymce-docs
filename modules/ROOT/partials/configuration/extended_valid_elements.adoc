@@ -7,7 +7,7 @@ When adding a new attribute by specifying an existing element rule (e.g. `+img+`
 
 The below example replaces the current `+img+` rule (including the global element rules).
 
-Type : `+String+`
+*Type:* `+String+`
 
 === Example: Using `+extended_valid_elements+`
 
@@ -15,7 +15,7 @@ Type : `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]'
+  extended_valid_elements: 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]'
 });
 ----
 
@@ -35,4 +35,4 @@ extended_valid_elements: 'script[src|async|defer|type|charset]'
 
 This example shows you how to use the xref:content-filtering.adoc#extended_valid_elements[extended_valid_elements] option. This option is used to add additional valid elements and attributes.
 
-liveDemo::valid-elements[ ]
+liveDemo::valid-elements[]

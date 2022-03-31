@@ -17,7 +17,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
 ----
 . Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
-[source,html]
+[source,erb]
 ----
 <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
 ----
@@ -49,7 +49,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
 ----
 . Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
-[source,html]
+[source,erb]
 ----
 <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
 ----
@@ -65,7 +65,7 @@ The page containing the {productname} will be accessible at `+http://localhost:<
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 
-include::partial$misc/admon_third_party_integration.adoc[]
+include::partial$misc/admon-third-party-integration.adoc[]
 
 Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{productname} Ruby on Rails gem] for integrating {productname} into the Ruby on Rails asset pipeline. This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our xref:basic-example.adoc[Basic example].
 
@@ -99,21 +99,20 @@ touch config/tinymce.yml
 height: 500
 menubar: false
 toolbar:
-  - undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat | help
+  - undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat | help
 plugins:
-  - insertdatetime media
-  - table paste code help wordcount
+  - insertdatetime lists media table code help wordcount
 ----
 . Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include {productname} on pages using the `+application+` layout:
 +
-[source,html]
+[source,erb]
 ----
 <%= tinymce_assets %>
 <script type="text/javascript" src="/assets/tinymce.js"></script>
 ----
 . Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
-[source,html]
+[source,erb]
 ----
 <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
 <%= tinymce %>

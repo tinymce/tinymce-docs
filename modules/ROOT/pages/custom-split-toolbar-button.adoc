@@ -1,8 +1,7 @@
 = Creating custom Split toolbar buttons
-
-:title_nav: Split toolbar button
+:navtitle: Split toolbar button
 :description: Creating custom Split toolbar buttons for TinyMCE
-:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
+:keywords: toolbar, toolbarbuttons, buttons, toolbarbuttonsapi
 
 A split button contains a basic button and a menu button, wrapped up into one toolbar item. Clicking the menu button section opens a dropdown list. The basic button section and the menu items can be configured to trigger different actions when clicked.
 
@@ -13,13 +12,13 @@ A split button contains a basic button and a menu button, wrapped up into one to
 |Name |Value |Target component |Requirement |Description
 |text |string |Primary button |optional |Text displayed if no icon is found.
 |icon |string |Primary button |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |onAction |`+(api) => void+` |Primary button |required |Function invoked when the basic button section is clicked.
-|select |`+(value: string) => boolean+` |Choice menu items |optional |default: false - Function run on each option when the menu is opened to determine if it should be highlighted as active.
-|columns |number or `+'auto'+` |Drop-down menu |optional |default: 1 - Number of columns for the list of options. When set to more than 1 column, only the icon for each item will be shown.
-|fetch |`+(success: (menu) => void) => void+` |Drop-down menu |required |A callback function that should be passed a list of xref:choicemenuitems[choice menu items] for the dropdown menu.
+|select |`+(value: string) => boolean+` |Choice menu items |optional |default: `false` - Function run on each option when the menu is opened to determine if it should be highlighted as active.
+|columns |number or `+'auto'+` |Drop-down menu |optional |default: `1` - Number of columns for the list of options. When set to more than 1 column, only the icon for each item will be shown.
+|fetch |`+(success: (menu) => void) => void+` |Drop-down menu |required |A callback function that should be passed a list of xref:choice-menu-items[choice menu items] for the dropdown menu.
 |onItemAction |`+(api, value) => void+` |Choice menu items |required |Function invoked when a dropdown list option is clicked. The `+value+` is passed from the selected choice menu item.
-|onSetup |`+(api) => (api) => void+` |All |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:usingonsetup[Using `+onSetup+`].
+|onSetup |`+(api) => (api) => void+` |All |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |===
 
 == API
@@ -27,18 +26,18 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 [cols="1,3,4",options="header"]
 |===
 |Name |Value |Description
-|isDisabled |`+() => boolean+` |Checks if button is disabled.
-|setDisabled |`+(state: boolean) => void+` |Sets the button's disabled state.
+|isEnabled |`+() => boolean+` |Checks if the button is enabled.
+|setEnabled |`+(state: boolean) => void+` |Sets the button's enabled state.
 |isActive |`+() => boolean+` |Checks the button's toggle state.
 |setActive |`+(state: boolean) => void+` |Sets the button's toggle state.
 |===
 
-[[splitbuttonexampleandexplanation]]
+[[split-button-example-and-explanation]]
 == Split button example and explanation
 
 The following example sets up a split button with a text label and a static dropdown menu.
 
-liveDemo::custom-toolbar-split-button[ tab="js" ]
+liveDemo::custom-toolbar-split-button[tab="js"]
 
 A split button is similar to a basic button in that they both require an `+onAction+` callback. The `+onAction+` callback function should take the button's API and return nothing. It is called when the basic button section is clicked. In this example, `+onAction+` calls `+editor.insertContent(value)+` which inserts the given content into the editor.
 

@@ -1,14 +1,12 @@
 = Export plugin
-
-:title_nav: Export
+:navtitle: Export
 :description: Export content from TinyMCE, into various formats.
-:keywords: plugin export pdf
+:keywords: plugin, export, pdf
 :pluginname: Export
 :plugincode: export
-:altplugincode: nil
 :pluginminimumplan: tiertwo
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The {pluginname} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the xref:exporters[Exporters section].
 
@@ -19,7 +17,7 @@ To export the editor content, either:
 * From the _File_ menu, click _Export_ and select _PDF_.
 * Click the Export toolbar button (image:icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) and select _PDF_.
 
-liveDemo::export[ ]
+liveDemo::export[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -76,7 +74,6 @@ This exporter has a few limitations or known issues that should be noted:
 * Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
 * Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the xref:export_image_proxy[export_image_proxy] or xref:export_image_proxy_service_url[export_image_proxy_service_url] options.
 * Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
-* The xref:checklist.adoc[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
 
 The following plugins are not supported:
 

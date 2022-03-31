@@ -3,6 +3,10 @@
 
 This option allows you to override the default formatting rule for times inserted by the `+mceInsertTime+` command. This defaults to `+%H:%M:%S+` and where the different `+%+` variables get replaced with various xref:insertdatetime.adoc#referencedatetimeformats[date format options].
 
+*Type:* `+String+`
+
+*Default value:* `+'%H:%M:%S'+`
+
 === Example: Using `+insertdatetime_timeformat+`
 
 [source,js]
@@ -10,7 +14,6 @@ This option allows you to override the default formatting rule for times inserte
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
-  menubar: 'insert',
   toolbar: 'insertdatetime',
   insertdatetime_timeformat: '%H:%M:%S'
 });

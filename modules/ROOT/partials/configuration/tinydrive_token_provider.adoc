@@ -10,9 +10,9 @@ This option could take one of the following two forms:
 
 For information on how to create these tokens, refer to the xref:tinydrive-jwt-authentication.adoc[JWT authentication guide].
 
-Type : `+String+` or `+Function+`
+*Type:* `+String+` or `+Function+`
 
-Required : yes
+*Required:* yes
 
 === Example Using a JWT Provider URL
 
@@ -32,7 +32,7 @@ tinymce.init({
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinydrive',
-  tinydrive_token_provider: function (success, failure) {
+  tinydrive_token_provider: (success, failure) => {
      success({ token: 'jwt-token' });
      // failure('Could not create a jwt token')
   }

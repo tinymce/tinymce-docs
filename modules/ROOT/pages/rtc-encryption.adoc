@@ -1,11 +1,9 @@
 = Real-Time Collaboration (RTC) Encryption Setup
-
-:title_nav: Encryption Setup
+:navtitle: Encryption Setup
 :description: Useful information for setting up encryption for RTC
-:keywords: rtc encrypt decrypt key rotate signature
+:keywords: rtc, encrypt, decrypt, key, rotate, signature
 :pluginname: Real-Time Collaboration (RTC)
 :plugincode: rtc
-:altplugincode: nil
 
 {productname} {pluginname} uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption. This is different from the use of JWTs for RTC, which are used to verify that your servers have allowed the user to access and collaborate on the content.
 
@@ -35,7 +33,7 @@ An encryption endpoint for {pluginname} is required to:
 
 === Encryption key and keyHint requirements
 
-The encryption `+key+`s and `+keyHint+`s for {pluginname}:
+The encryption ``key``s and ``keyHint``s for {pluginname}:
 
 * Must both be strings.
 * Can include any unicode characters.

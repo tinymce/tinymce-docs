@@ -3,9 +3,9 @@
 
 When HTML elements in a template are assigned this class, the content of the element will be replaced with selected content from the editor. This option accepts a list of classes (separated by spaces).
 
-Type: `+String+`
+*Type:* `+String+`
 
-Default Value: `+'selcontent'+`
+*Default value:* `+'selcontent'+`
 
 === Example: Using `+template_selected_content_classes+`
 
@@ -14,6 +14,7 @@ Default Value: `+'selcontent'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
+  toolbar: 'template',
   template_selected_content_classes: 'selcontent selectedcontent',
   templates: [
     {

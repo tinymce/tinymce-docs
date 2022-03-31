@@ -1,13 +1,9 @@
 = Code Sample plugin
-
-:title_nav: Code Sample
+:navtitle: Code Sample
 :description: Insert and embed syntax highlighted code snippets.
-:keywords: syntax highlight codesample code contenteditable codesample_languages
-:controls: toolbar button
+:keywords: syntax, highlight, codesample, code, contenteditable, codesample_global_prismjs, codesample_languages
 :pluginname: Code Sample
 :plugincode: codesample
-:altplugincode: nil
-
 
 The Code Sample plugin (`+codesample+`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
@@ -43,7 +39,7 @@ You need to add `+prism.js+` and `+prism.css+` to your page in order to get the 
 
 == Interactive example
 
-liveDemo::codesample[ ]
+liveDemo::codesample[]
 
 == Options
 

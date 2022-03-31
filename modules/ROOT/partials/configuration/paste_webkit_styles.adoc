@@ -1,9 +1,13 @@
 [[paste_webkit_styles]]
 == `+paste_webkit_styles+`
 
-This option allows you to specify styles you want to keep when pasting in WebKit. WebKit has a bug where it will take all the computed CSS properties for an element and add them to spans within the editor. Since most users don't want random spans added all over their document, we need to manually clean that up until the bug is fixed. This option defaults to `+"none"+` but can be set to `+"all"+` or a specific list of styles to retain.
+This option allows you to specify styles you want to keep when pasting in WebKit. WebKit has a quirk where it will take all the computed CSS properties for an element and add them to spans within the editor. Since most users don't want random spans added all over their document, we need to manually clean that up until the bug is fixed. This option defaults to `+'none'+` but can be set to `+'all'+` or a specific list of styles to retain.
 
-Type: `+String+`
+*Type:* `+String+`
+
+*Default value:* `+'none'+`
+
+*Possible values:* `+'none'+`, `+'all'+` or a space separated list of styles
 
 === Example: Using `+paste_webkit_styles+`
 
@@ -11,8 +15,6 @@ Type: `+String+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
-  menubar: 'edit',
   toolbar: 'paste',
   paste_webkit_styles: 'color font-size'
 });

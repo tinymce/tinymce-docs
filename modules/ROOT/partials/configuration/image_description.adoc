@@ -3,11 +3,11 @@
 
 This options allows you disable the image description input field in the image dialog.
 
-Type: `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value: `+true+`
+*Default value:* `+true+`
 
-Possible Values: `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+image_description+`
 
@@ -16,7 +16,6 @@ Possible Values: `+true+`, `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
-  menubar: 'insert',
   toolbar: 'image',
   image_description: false
 });

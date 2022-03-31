@@ -1,8 +1,7 @@
 = Custom Toggle menu items
-
-:title_nav: Custom Toggle menu items
+:navtitle: Custom Toggle menu items
 :description: How to create custom Toggle menu items.
-:keywords: menu menuitem menuitems
+:keywords: menu, menuitem, menuitems
 
 A toggle menu item triggers its `+onAction+` when clicked. It also has a concept of state. This means it can be toggled `+on+` and `+off+`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the right of the menu item's text when it is `+on+`.
 
@@ -13,11 +12,11 @@ A toggle menu item triggers its `+onAction+` when clicked. It also has a concept
 |Name |Value |Requirement |Description
 |text |string |optional |Text to display.
 |icon |string |optional |
-include::partial$misc/admon_predefined_icons_only.adoc[]
+include::partial$misc/admon-predefined-icons-only.adoc[]
 |value |string |optional |A value to associate with the menu item.
-|active |boolean |optional |Initial state value for the toggle menu item
-|disabled |boolean |optional |default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API.
-|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: xref:usingonsetup[Using `+onSetup+`].
+|active |boolean |optional |default: `false` - Initial state value for the toggle menu item.
+|enabled |boolean |optional |default: `true` - Represents the menu item's state. When `false`, the menu item is unclickable. Toggled by the menu item's API.
+|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the menu item is clicked.
 |===
 
@@ -28,8 +27,8 @@ include::partial$misc/admon_predefined_icons_only.adoc[]
 |Name |Value |Description
 |isActive |`+() => boolean+` |Checks if the menu item is active.
 |setActive |`+(state: boolean) => void+` |Sets the menu item's active state.
-|isDisabled |`+() => boolean+` |Checks if the menu item is disabled.
-|setDisabled |`+(state: boolean) => void+` |Sets the menu item's disabled state.
+|isEnabled |`+() => boolean+` |Checks if the menu item is enabled.
+|setEnabled |`+(state: boolean) => void+` |Sets the menu item's enabled state.
 |===
 
 == Example: Creating a toggle menu item

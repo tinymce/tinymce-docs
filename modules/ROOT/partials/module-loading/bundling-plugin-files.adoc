@@ -2,192 +2,193 @@
 
 include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 
-* xref:premiumplugins[Premium plugins]
-** xref:accessibilitycheckera11ychecker[Accessibility Checker (a11ychecker)]
-** xref:advancedcodeadvcode[Advanced Code (advcode)]
-** xref:advancedtablesadvtable[Advanced Tables (advtable)]
-** xref:casechangecasechange[Case Change (casechange)]
-** xref:checklistchecklist[Checklist (checklist)]
-** xref:commentstinycomments[Comments (tinycomments)]
-** xref:editimageeditimage[Edit Image (editimage)]
-** xref:enhancedmediaembedmediaembed[Enhanced Media Embed (mediaembed)]
-** xref:exportexport[Export (export)]
-** xref:formatpainterformatpainter[Format Painter (formatpainter)]
-** xref:linkcheckerlinkchecker[Link Checker (linkchecker)]
-** xref:mentionsmentions[Mentions (mentions)]
-** xref:pageembedpageembed[Page Embed (pageembed)]
-** xref:permanentpenpermanentpen[Permanent Pen (permanentpen)]
-** xref:powerpastepowerpaste[PowerPaste (powerpaste)]
-** xref:spellcheckerprotinymcespellchecker[Spell Checker Pro (tinymcespellchecker)]
-** xref:tableofcontentstableofcontents[Table of Contents (tableofcontents)]
-* xref:communityplugins[Community plugins]
-** xref:advancedlistadvlist[Advanced List (advlist)]
-** xref:anchoranchor[Anchor (anchor)]
-** xref:autolinkautolink[Autolink (autolink)]
-** xref:autoresizeautoresize[Autoresize (autoresize)]
-** xref:autosaveautosave[Autosave (autosave)]
-** xref:charactermapcharmap[Character Map (charmap)]
-** xref:codecode[Code (code)]
+* xref:premium-plugins[Premium plugins]
+** xref:accessibility-checker[Accessibility Checker (a11ychecker)]
+** xref:advanced-code[Advanced Code (advcode)]
+** xref:advanced-tables[Advanced Tables (advtable)]
+** xref:case-change[Case Change (casechange)]
+** xref:checklist[Checklist (checklist)]
+** xref:comments[Comments (tinycomments)]
+** xref:edit-image[Edit Image (editimage)]
+** xref:enhanced-media-embed[Enhanced Media Embed (mediaembed)]
+** xref:export[Export (export)]
+** xref:format-painter[Format Painter (formatpainter)]
+** xref:link-checker[Link Checker (linkchecker)]
+** xref:mentions[Mentions (mentions)]
+** xref:page-embed[Page Embed (pageembed)]
+** xref:permanent-pen[Permanent Pen (permanentpen)]
+** xref:powerpaste[PowerPaste (powerpaste)]
+** xref:spell-checker-pro[Spell Checker Pro (tinymcespellchecker)]
+** xref:table-of-contents[Table of Contents (tableofcontents)]
+* xref:community-plugins[Community plugins]
+** xref:advanced-list[Advanced List (advlist)]
+** xref:anchor[Anchor (anchor)]
+** xref:autolink[Autolink (autolink)]
+** xref:autoresize[Autoresize (autoresize)]
+** xref:autosave[Autosave (autosave)]
+** xref:character-map[Character Map (charmap)]
+** xref:code[Code (code)]
 ** xref:codesamplecodesample[Code Sample (codesample)]
-** xref:directionalitydirectionality[Directionality (directionality)]
-** xref:emoticonsemoticons[Emoticons (emoticons)]
-** xref:fullscreenfullscreen[Full Screen (fullscreen)]
-** xref:helphelp[Help (help)]
-** xref:imageimage[Image (image)]
-** xref:importcssimportcss[Import CSS (importcss)]
-** xref:insertdatetimeinsertdatetime[Insert Date/Time (insertdatetime)]
-** xref:linklink[Link (link)]
-** xref:listslists[Lists (lists)]
-** xref:mediamedia[Media (media)]
-** xref:nonbreakingspacenonbreaking[Nonbreaking Space (nonbreaking)]
-** xref:pagebreakpagebreak[Page Break (pagebreak)]
-** xref:pastepaste[Paste (paste)]
-** xref:previewpreview[Preview (preview)]
-** xref:quicktoolbarquickbars[Quick Toolbar (quickbars)]
-** xref:savesave[Save (save)]
-** xref:searchandreplacesearchreplace[Search and Replace (searchreplace)]
-** xref:tabletable[Table (table)]
-** xref:templatetemplate[Template (template)]
-** xref:visualblockvisualblocks[Visual Block (visualblocks)]
-** xref:visualcharactersvisualchars[Visual Characters (visualchars)]
-** xref:wordcountwordcount[Word Count (wordcount)]
+** xref:directionality[Directionality (directionality)]
+** xref:emoticons[Emoticons (emoticons)]
+** xref:full-screen[Full Screen (fullscreen)]
+** xref:help[Help (help)]
+** xref:image[Image (image)]
+** xref:import-css[Import CSS (importcss)]
+** xref:insert-datetime[Insert Date/Time (insertdatetime)]
+** xref:link[Link (link)]
+** xref:lists[Lists (lists)]
+** xref:media[Media (media)]
+** xref:nonbreaking-space[Nonbreaking Space (nonbreaking)]
+** xref:page-break[Page Break (pagebreak)]
+** xref:preview[Preview (preview)]
+** xref:quick-toolbar[Quick Toolbar (quickbars)]
+** xref:save[Save (save)]
+** xref:search-and-replace[Search and Replace (searchreplace)]
+** xref:table[Table (table)]
+** xref:template[Template (template)]
+** xref:visual-blocks[Visual Blocks (visualblocks)]
+** xref:visual-characters[Visual Characters (visualchars)]
+** xref:word-count[Word Count (wordcount)]
 
-[[premiumplugins]]
+[[premium-plugins]]
 == Premium plugins
 
-[[accessibilitycheckera11ychecker]]
+[[accessibility-checker]]
 === Accessibility Checker (`+a11ychecker+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-a11ychecker.adoc[]
 
-[[advancedcodeadvcode]]
+[[advanced-code]]
 === Advanced Code (`+advcode+`)
 
 include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 
-[[advancedtablesadvtable]]
+[[advanced-tables]]
 === Advanced Tables (`+advtable+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-advtable.adoc[]
 
-[[casechangecasechange]]
+[[case-change]]
 === Case Change (`+casechange+`)
 
 include::partial$plugin-files/plugin-file-list-casechange.adoc[]
 
-[[checklistchecklist]]
+[[checklist]]
 === Checklist (`+checklist+`)
 
 include::partial$plugin-files/plugin-file-list-checklist.adoc[]
 
-[[commentstinycomments]]
+[[comments]]
 === Comments (`+tinycomments+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
 
-[[editimageeditimage]]
+[[edit-image]]
 === Edit Image (`+editimage+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-editimage.adoc[]
 
-[[enhancedmediaembedmediaembed]]
+[[enhanced-media-embed]]
 === Enhanced Media Embed (`+mediaembed+`)
 
 include::partial$plugin-files/plugin-file-list-mediaembed.adoc[]
 
-[[exportexport]]
+[[export]]
 === Export (`+export+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-export.adoc[]
 
-[[formatpainterformatpainter]]
+[[format-painter]]
 === Format Painter (`+formatpainter+`)
 
 include::partial$plugin-files/plugin-file-list-formatpainter.adoc[]
 
-[[linkcheckerlinkchecker]]
+[[link-checker]]
 === Link Checker (`+linkchecker+`)
 
 include::partial$plugin-files/plugin-file-list-linkchecker.adoc[]
 
-[[mentionsmentions]]
+[[mentions]]
 === Mentions (`+mentions+`)
 
 include::partial$plugin-files/plugin-file-list-mentions.adoc[]
 
-[[pageembedpageembed]]
+[[page-embed]]
 === Page Embed (`+pageembed+`)
 
 include::partial$plugin-files/plugin-file-list-pageembed.adoc[]
 
-[[permanentpenpermanentpen]]
+[[permanent-pen]]
 === Permanent Pen (`+permanentpen+`)
 
 include::partial$plugin-files/plugin-file-list-permanentpen.adoc[]
 
-[[powerpastepowerpaste]]
+[[powerpaste]]
 === PowerPaste (`+powerpaste+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-powerpaste.adoc[]
 
-[[spellcheckerprotinymcespellchecker]]
+[[spell-checker-pro]]
 === Spell Checker Pro (`+tinymcespellchecker+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinymcespellchecker.adoc[]
 
-[[tableofcontentstableofcontents]]
+[[table-of-contents]]
 === Table of Contents (`+tableofcontents+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tableofcontents.adoc[]
 
-[[communityplugins]]
+[[community-plugins]]
 == Community plugins
 
-[[advancedlistadvlist]]
+[[advanced-list]]
 === Advanced List (`+advlist+`)
 
 include::partial$plugin-files/plugin-file-list-advlist.adoc[]
 
-[[anchoranchor]]
+[[anchor]]
 === Anchor (`+anchor+`)
 
 include::partial$plugin-files/plugin-file-list-anchor.adoc[]
 
-[[autolinkautolink]]
+[[autolink]]
 === Autolink (`+autolink+`)
 
 include::partial$plugin-files/plugin-file-list-autolink.adoc[]
 
-[[autoresizeautoresize]]
+[[autoresize]]
 === Autoresize (`+autoresize+`)
 
 include::partial$plugin-files/plugin-file-list-autoresize.adoc[]
 
-[[autosaveautosave]]
+[[autosave]]
 === Autosave (`+autosave+`)
 
 include::partial$plugin-files/plugin-file-list-autosave.adoc[]
 
-[[charactermapcharmap]]
+[[character-map]]
 === Character Map (`+charmap+`)
 
 include::partial$plugin-files/plugin-file-list-charmap.adoc[]
 
-[[codecode]]
+[[code]]
 === Code (`+code+`)
 
 include::partial$plugin-files/plugin-file-list-code.adoc[]
@@ -197,112 +198,107 @@ include::partial$plugin-files/plugin-file-list-code.adoc[]
 
 include::partial$plugin-files/plugin-file-list-codesample.adoc[]
 
-[[directionalitydirectionality]]
+[[directionality]]
 === Directionality (`+directionality+`)
 
 include::partial$plugin-files/plugin-file-list-directionality.adoc[]
 
-[[emoticonsemoticons]]
+[[emoticons]]
 === Emoticons (`+emoticons+`)
 
 include::partial$plugin-files/plugin-file-list-emoticons.adoc[]
 
-[[fullscreenfullscreen]]
+[[full-screen]]
 === Full Screen (`+fullscreen+`)
 
 include::partial$plugin-files/plugin-file-list-fullscreen.adoc[]
 
-[[helphelp]]
+[[help]]
 === Help (`+help+`)
 
 include::partial$plugin-files/plugin-file-list-help.adoc[]
 
-[[imageimage]]
+[[image]]
 === Image (`+image+`)
 
 include::partial$plugin-files/plugin-file-list-image.adoc[]
 
-[[importcssimportcss]]
+[[import-css]]
 === Import CSS (`+importcss+`)
 
 include::partial$plugin-files/plugin-file-list-importcss.adoc[]
 
-[[insertdatetimeinsertdatetime]]
+[[insert-datetime]]
 === Insert Date/Time (`+insertdatetime+`)
 
 include::partial$plugin-files/plugin-file-list-insertdatetime.adoc[]
 
-[[linklink]]
+[[link]]
 === Link (`+link+`)
 
 include::partial$plugin-files/plugin-file-list-link.adoc[]
 
-[[listslists]]
+[[lists]]
 === Lists (`+lists+`)
 
 include::partial$plugin-files/plugin-file-list-lists.adoc[]
 
-[[mediamedia]]
+[[media]]
 === Media (`+media+`)
 
 include::partial$plugin-files/plugin-file-list-media.adoc[]
 
-[[nonbreakingspacenonbreaking]]
+[[nonbreaking-space]]
 === Nonbreaking Space (`+nonbreaking+`)
 
 include::partial$plugin-files/plugin-file-list-nonbreaking.adoc[]
 
-[[pagebreakpagebreak]]
+[[page-break]]
 === Page Break (`+pagebreak+`)
 
 include::partial$plugin-files/plugin-file-list-pagebreak.adoc[]
 
-[[pastepaste]]
-=== Paste (`+paste+`)
-
-include::partial$plugin-files/plugin-file-list-paste.adoc[]
-
-[[previewpreview]]
+[[preview]]
 === Preview (`+preview+`)
 
 include::partial$plugin-files/plugin-file-list-preview.adoc[]
 
-[[quicktoolbarquickbars]]
+[[quick-toolbar]]
 === Quick Toolbar (`+quickbars+`)
 
 include::partial$plugin-files/plugin-file-list-quickbars.adoc[]
 
-[[savesave]]
+[[save]]
 === Save (`+save+`)
 
 include::partial$plugin-files/plugin-file-list-save.adoc[]
 
-[[searchandreplacesearchreplace]]
+[[search-and-replace]]
 === Search and Replace (`+searchreplace+`)
 
 include::partial$plugin-files/plugin-file-list-searchreplace.adoc[]
 
-[[tabletable]]
+[[table]]
 === Table (`+table+`)
 
 include::partial$plugin-files/plugin-file-list-table.adoc[]
 
-[[templatetemplate]]
+[[template]]
 === Template (`+template+`)
 
 include::partial$plugin-files/plugin-file-list-template.adoc[]
 
-[[visualblockvisualblocks]]
-=== Visual Block (`+visualblocks+`)
+[[visual-blocks]]
+=== Visual Blocks (`+visualblocks+`)
 
 include::partial$plugin-files/plugin-file-list-visualblocks.adoc[]
 
-[[visualcharactersvisualchars]]
+[[visual-characters]]
 === Visual Characters (`+visualchars+`)
 
 include::partial$plugin-files/plugin-file-list-visualchars.adoc[]
 
-[[wordcountwordcount]]
+[[word-count]]
 === Word Count (`+wordcount+`)
 
 include::partial$plugin-files/plugin-file-list-wordcount.adoc[]

@@ -3,11 +3,11 @@
 
 This option controls whether elements are output in the HTML or XHTML mode. `+html+` is the default state for this option. This means that for example `+<br />+` will be `+<br>+` by default.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default Value : `+'html'+`
+*Default value:* `+'html'+`
 
-Possible Values : `+'xhtml'+`, `+'html'+`
+*Possible values:* `+'xhtml'+`, `+'html'+`
 
 === Example: Using `+element_format+`
 
@@ -16,6 +16,6 @@ Possible Values : `+'xhtml'+`, `+'html'+`
 // Output elements in XHTML style
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  element_format : 'xhtml'
+  element_format: 'xhtml'
 });
 ----

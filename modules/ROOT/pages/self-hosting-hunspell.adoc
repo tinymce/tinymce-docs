@@ -1,8 +1,7 @@
 = Add Hunspell dictionaries to Spell Checker Pro
-
-:title_nav: Spelling service - Using Hunspell dictionaries
+:navtitle: Spelling service - Using Hunspell dictionaries
 :description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker Pro.
-:keywords: enterprise tinymcespellchecker hunspell spell check checker pro server configuration configure
+:keywords: enterprise, tinymcespellchecker, hunspell, spell check, spell checker pro, server, configuration, configure
 
 Spell Checker Pro for {productname} includes support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {productname} Spell Checker Pro. {companyname} provides downloadable bundles that have the required structure.
 
@@ -16,20 +15,20 @@ To add Hunspell dictionaries to a self-hosted {productname}:
 
 {companyname} provides two downloadable bundles of Hunspell dictionaries.
 
-`+hunspell-dictionaries-approved.zip+` : Does *not* contain dictionaries licensed under:
+`+hunspell-dictionaries-approved.zip+`:: Does *not* contain dictionaries licensed under:
 
 * https://www.gnu.org/licenses/licenses.html#GPL[The GNU General Public License (*GPL*)].
 * https://www.gnu.org/licenses/licenses.html#LGPL[The GNU Lesser General Public License (*LGPL*)].
 
-`+hunspell-dictionaries-all.zip+` : This package contains all the Hunspell dictionaries that the spelling service supports. You will need to ensure that their license matches your requirements.
+`+hunspell-dictionaries-all.zip+`:: This package contains all the Hunspell dictionaries that the spelling service supports. You will need to ensure that their license matches your requirements.
 
-Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in xref:hunspelldictionarystorageforspellcheckerpro[Hunspell dictionary storage for Spell Checker Pro]. Not all Hunspell dictionary languages work with Spell Checker Pro, for a list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supportedlanguages[Spell Checker Pro plugin - Supported languages].
+Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in xref:hunspell-dictionary-storage-for-spell-checker-pro[Hunspell dictionary storage for Spell Checker Pro]. Not all Hunspell dictionary languages work with Spell Checker Pro, for a list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supported-languages[Spell Checker Pro plugin - Supported languages].
 
 == Configuring the spelling service to use Hunspell dictionaries
 
 include::partial$misc/hunspell-dictionaries-path.adoc[]
 
-[[hunspelldictionarystorageforspellcheckerpro]]
+[[hunspell-dictionary-storage-for-spell-checker-pro]]
 == Hunspell dictionary storage for Spell Checker Pro
 
 You can remove unwanted dictionaries and their associated directories, but the file structure must be as follows (including filenames):

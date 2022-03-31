@@ -5,7 +5,7 @@ ifeval::[{customIconPack} != true]
 
 The *icons* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
-Type : `+String+`
+*Type:* `+String+`
 endif::[]
 
 On initialization, {productname} will try to load any icon pack specified by the *icons* option. The icons in the icon pack will be merged with xref:editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
@@ -29,7 +29,7 @@ $ cp -r  dist/icons/my_icon_pack  TINYMCE_BASE/icons/
 
 endif::[]
 
-. Add the `+icons+` option to `+tinymce.init+`
+. Add the `+icons+` option to `+tinymce.init+`.
 ifeval::[{customIconPack} == true]
 +
 [source,js]

@@ -1,21 +1,18 @@
 = Enhanced Media Embed plugin
-
-:title_nav: Enhanced Media Embed
+:navtitle: Enhanced Media Embed
 :description: Add rich media previews inside TinyMCE.
-:keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
+:keywords: video, youtube, vimeo, mp3, mp4, mov, movie, clip, film, spotify
 :pluginname: Enhanced Media Embed
 :plugincode: mediaembed
-:altplugincode: nil
 :pluginminimumplan: tiertwo
 
-
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The *Enhanced Media Embed* plugin is a link:{pricingpage}/[premium {productname} plugin] that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
 
 == Interactive example
 
-liveDemo::mediaembed[ ]
+liveDemo::mediaembed[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -33,7 +30,7 @@ The service URL is already configured with xref:editor-and-features.adoc[{cloudn
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'media mediaembed',
   mediaembed_max_width: 450
 });
@@ -46,7 +43,7 @@ In a Self-hosted installation, please ensure you configure the URL to the servic
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'media mediaembed',
   mediaembed_service_url: 'SERVICE_URL',
   mediaembed_max_width: 450
@@ -59,7 +56,7 @@ To make the embeddable snippets display correctly on your site, be sure to add t
 
 [source,css]
 ----
-include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
+include::example$css-codeblock/mediaembed-plugin.css[]
 ----
 
 == Usage

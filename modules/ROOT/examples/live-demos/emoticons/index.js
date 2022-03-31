@@ -2,7 +2,7 @@ tinymce.init({
   selector: 'textarea#emoticons',
   height: 300,
   plugins: 'lists code emoticons',
-  toolbar: 'undo redo | styleselect | bold italic | ' +
+  toolbar: 'undo redo | styles | bold italic | ' +
     'alignleft aligncenter alignright alignjustify | ' +
     'outdent indent | numlist bullist | emoticons',
   emoticons_append: {

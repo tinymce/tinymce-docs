@@ -3,17 +3,18 @@
 
 This option sets the author id to be used when creating or replying to comments.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default Value : `+'Anon'+`
+*Default value:* `+'Anon'+`
 
 === Example: Using `+tinycomments_author+`
 
 [source,js]
 ----
 tinymce.init({
-  selector: '#textarea',
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'tinycomments',
+  tinycomments_mode: 'embedded',
   tinycomments_author: 'embedded_journalist',
-  tinycomments_mode: 'embedded'
-})
+});
 ----

@@ -1,11 +1,9 @@
 = Tiny Drive Introduction
-
-:title_nav: Introduction
+:navtitle: Introduction
 :description: Introduction of what Tiny Drive is and its capabilities
-:keywords: tinydrive introduction overview
+:keywords: tinydrive, introduction, overview
 :pluginname: Tiny Drive
 :plugincode: tinydrive
-:altplugincode: nil
 :pluginminimumplan: tierone
 
 {cloudfilemanager} is a premium {productname} plugin for cloud-based asset management and storage. {cloudfilemanager} allows your users to upload, manage, and use files in {productname}.
@@ -31,9 +29,10 @@ NOTE: This plugin is only available for link:{pricingpage}/[{cloudname} users].
 
 The storage and bandwidth quota varies based upon your link:{pricingpage}/[{cloudname} Plan].
 
+[[interactive-example]]
 == Interactive example
 
-liveDemo::drive[ ]
+liveDemo::drive[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 

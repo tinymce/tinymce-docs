@@ -1,8 +1,7 @@
 = CSS for rendering TinyMCE content outside the editor
-
-:title_nav: CSS for rendering content
+:navtitle: CSS for rendering content
 :description: CSS for rendering TinyMCE content outside the editor, such as on a webpage.
-:keywords: css content_css
+:keywords: css, content_css
 
 The following content styles (CSS) are added to the editor when the relevent plugins are enabled. These are in addition to the styles added by the `+default+` content CSS. For details on the default CSS, see: xref:add-css-options.adoc#content_css[the `+content_css+` option].
 
@@ -15,7 +14,7 @@ These styles can be used to replicate the styles shown in the editor when the co
 * Includes image captions using the HTML5 figure element.
 */
 
-include::partial$css-codeblock/image-plugin-css.adoc[]
+include::example$css-codeblock/image-plugin.css[]
 
 /*
  Alignment using classes rather than inline styles
@@ -36,17 +35,17 @@ img.align-right {
 
 /* The Table of Contents Plugin */
 
-include::partial$css-codeblock/tableofcontents-plugin-css.adoc[]
+include::example$css-codeblock/tableofcontents-plugin.css[]
 
 /* The Checklist Plugin */
 
-include::partial$css-codeblock/checklist-plugin-css.adoc[]
+include::example$css-codeblock/checklist-plugin.css[]
 
 /* The Page Embed plugin */
 
-include::partial$css-codeblock/pageembed-plugin-css.adoc[]
+include::example$css-codeblock/pageembed-plugin.css[]
 
 /* The Media Embed plugin */
 
-include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
+include::example$css-codeblock/mediaembed-plugin.css[]
 ----

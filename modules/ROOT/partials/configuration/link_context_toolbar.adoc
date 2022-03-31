@@ -5,11 +5,11 @@ By default it is not possible to open links directly from the editor. Setting `+
 
 NOTE: This context toolbar is the same as the context toolbar mentioned in the xref:link.adoc#link_quicklink[Link plugin - `+link_quicklink+`] documentation.
 
-Type: `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value: `+false+`
+*Default value:* `+false+`
 
-Possible Values: `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+link_context_toolbar+`
 
@@ -18,7 +18,6 @@ Possible Values: `+true+`, `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'link',
-  menubar: 'insert',
   toolbar: 'link',
   link_context_toolbar: true
 });

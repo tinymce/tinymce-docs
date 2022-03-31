@@ -6,17 +6,19 @@ Example `+src/editor.js+`
 +
 [source,js]
 ----
-var fs = require('fs');
+const fs = require('fs');
 
 /* Import TinyMCE */
-var tinymce = require('tinymce/tinymce');
+const tinymce = require('tinymce/tinymce');
 
-/* Default icons are required. Also import custom icons if applicable */
+/* Default icons are required. After that, import custom icons if applicable */
 require('tinymce/icons/default');
 
-/* A editor theme (required) - customize the editor appearance by creating a 'skin' */
+/* Required TinyMCE components */
 require('tinymce/themes/silver');
+require('tinymce/models/dom');
 
+/* Import a skin (can be a custom skin instead of the default) */
 require('tinymce/skins/ui/oxide/skin.css');
 
 /* Import plugins - include the relevant plugin in the 'plugins' option. */
@@ -28,13 +30,14 @@ require('tinymce/plugins/link');
 require('tinymce/plugins/lists');
 require('tinymce/plugins/table');
 
-/* Import content CSS */
-var contentCssUi = fs.readFileSync('node_modules/tinymce/skins/ui/oxide/content.css', {encoding: 'UTF-8'});
-/* Import the default content CSS, replace with the CSS for the editor content. */
-var contentCss = fs.readFileSync('node_modules/tinymce/skins/content/default/content.css', {encoding: 'UTF-8'});
+/* content UI CSS is required */
+const contentUiSkinCss = fs.readFileSync('node_modules/tinymce/skins/ui/oxide/content.css', { encoding: 'UTF-8' });
+
+/* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
+const contentCss = fs.readFileSync('node_modules/tinymce/skins/content/default/content.css', { encoding: 'UTF-8' });
 
 /* Initialize TinyMCE */
-exports.render = function () {
+exports.render = () => {
   tinymce.init({
     selector: 'textarea#editor',
     /* All plugins need to be imported and added to the plugins option. */
@@ -42,7 +45,7 @@ exports.render = function () {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentCss.toString() + '\n' + contentCssUi.toString(),
+    content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
   });
 };
 ----

@@ -1,11 +1,11 @@
 [[paste_preprocess]]
 == `+paste_preprocess+`
 
-ifeval::["{pluginname}" == "Paste"]
+ifndef::pluginname[]
 
 This option enables you to modify the pasted content before it gets inserted into the editor.
 
-Type: `+Function+`
+*Type:* `+Function+`
 
 === Example: Using `+paste_preprocess+`
 
@@ -13,10 +13,8 @@ Type: `+Function+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
-  menubar: 'edit',
   toolbar: 'paste',
-  paste_preprocess: function(plugin, args) {
+  paste_preprocess: (editor, args) => {
     console.log(args.content);
     args.content += ' preprocess';
   }
@@ -36,13 +34,13 @@ This option allows you to run custom filtering on the content from the clipboard
 
 NOTE: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
 
-Type: `+Function+`
+*Type:* `+Function+`
 
 === Example {productname} configuration:
 
 [source,js]
 ----
-const yourCustomFilter = function(content) {
+const yourCustomFilter = (content) => {
   // Implement your custom filtering and return the filtered content
   return content;
 };
@@ -50,7 +48,7 @@ const yourCustomFilter = function(content) {
 tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
-  paste_preprocess: function (pluginApi, data) {
+  paste_preprocess: (pluginApi, data) => {
     console.log(data.content, data.mode, data.source);
     // Apply custom filtering by mutating data.content
     // For example:

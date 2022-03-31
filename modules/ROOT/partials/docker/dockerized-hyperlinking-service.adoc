@@ -7,7 +7,7 @@ endif::[]
 
 The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Hyperlinking Docker image.
 
-include::partial$misc/admon_dont-push-docker-images.adoc[]
+include::partial$misc/admon-dont-push-docker-images.adoc[]
 
 ifeval::[{shbundledockerfiles} == false]
 
@@ -25,7 +25,7 @@ endif::[]
 The following procedure covers downloading, configuring, building and testing the {productname} Hyperlinking Docker image.
 ifeval::[{shbundledockerfiles} == true]
 
-NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in xref:bundle-intro-setup.adoc#downloadandextractthetinymceself-hostedbundle[Download and extract the {productname} Self-hosted Bundle].
+NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in xref:bundle-intro-setup.adoc#download-and-extract-the-tinymce-self-hosted-bundle[Download and extract the {productname} Self-hosted Bundle].
 
 . Navigate into the `+tinymce-services+` folder.
 +
@@ -119,7 +119,7 @@ chmod +x *.sh
 ----
 . _Optional_: Edit the `+http+` configuration settings in `+config/ephox-hyperlinking-docker-env.conf+`. The configurable settings are in the `+http+` section of the file. For example:
 +
-[source,conf]
+[source,properties]
 ----
 http {
   max-connections = 100
@@ -142,7 +142,7 @@ For information on the `+http+` configuration setting, see: xref:configure-commo
 +
 For example:
 +
-[source,conf]
+[source,properties]
 ----
 ORIGIN0=example.net
 ORIGIN1=example

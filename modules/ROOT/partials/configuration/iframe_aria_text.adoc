@@ -10,9 +10,9 @@ This option is used to customize the `+title+` attribute on the {productname} `+
 
 The `+title+` attribute is read by screen-readers to help users identify the editor. This option only applies to {productname} classic (iframe) mode and has no effect on xref:inline-editor-options.adoc#inline[`+inline+` editors].
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default Value : `+'Rich Text Area. Press ALT-0 for help.'+`
+*Default value:* `+'Rich Text Area. Press ALT-0 for help.'+`
 
 === Example: Using `+iframe_aria_text+`
 

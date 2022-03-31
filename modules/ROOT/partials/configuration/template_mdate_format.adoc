@@ -3,9 +3,9 @@
 
 This option allows you to provide {productname} with a date/time format that all 'modified' date templates will use.
 
-Type: `+String+`
+*Type:* `+String+`
 
-Default : `+'%Y-%m-%d'+`
+*Default value:* `+'%Y-%m-%d'+`
 
 === Example: Using `+template_mdate_format+`
 
@@ -14,11 +14,10 @@ Default : `+'%Y-%m-%d'+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_mdate_format: '%m/%d/%Y : %H:%M:%S',
   templates: [
-    {title: 'Mdate', description: 'Mdate example', content: '<p class="mdate">This will be replaced with the date modified</p>'}
+    { title: 'Mdate', description: 'Mdate example', content: '<p class="mdate">This will be replaced with the date modified</p>' }
   ]
 });
 ----

@@ -1,14 +1,14 @@
 = Toolbar buttons
-
-:title_nav: Toolbar buttons
+:navtitle: Toolbar buttons
 :description: Add a custom buttons to the TinyMCE 6 toolbar.
-:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
+:keywords: toolbar, toolbarbuttons, buttons, toolbarbuttonsapi
 
 == Use cases
 
 * Create a shortcut for an action or a series of actions that the user repeatedly does.
 * Create a button for custom behavior.
 
+[[how-to-create-custom-toolbar-buttons]]
 == How to create custom toolbar buttons
 
 The methods for adding custom toolbar buttons are in the UI Registry part of the editor API `+editor.ui.registry+`. The API has four methods for adding toolbar buttons, one for each type of toolbar button:
@@ -48,4 +48,4 @@ tinymce.init({
 
 The following example creates different types of toolbar buttons.
 
-liveDemo::toolbar-button[ height="400" ]
+liveDemo::toolbar-button[height="400"]

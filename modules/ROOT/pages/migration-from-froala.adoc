@@ -1,21 +1,20 @@
 = Migrating from Froala to TinyMCE
-
-:title_nav: Migrating from Froala
+:navtitle: Migrating from Froala
 :description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 6.
-:keywords: migration considerations premigration pre-migration froala
+:keywords: migration, considerations, premigration, pre-migration, froala
 
 This page covers the basic steps for migrating from Froala Editor 3 to {productname} {productmajorversion}. Procedures and links to our documentation have been included to assist with your migration to {productname}.
 
 *Covered in this section:*
 
-* xref:migratingabasicfroalaconfigurationtotinymce[Migrating a Basic Froala Configuration to {productname}]
-* xref:updatingthelistofplugins[Updating the list of Plugins]
-* xref:migratingacustomtoolbarlayout[Migrating a Custom Toolbar Layout]
-* xref:configuringinlinemode[Configuring Inline Mode]
-* xref:migratingcustombuttons[Migrating Custom Buttons]
-* xref:migratingcustomdrop-downtoolbarbuttons[Migrating Custom Drop-down Toolbar Buttons]
+* xref:migrating-a-basic-froala-configuration-to-tinymce[Migrating a Basic Froala Configuration to {productname}]
+* xref:updating-the-list-of-plugins[Updating the list of Plugins]
+* xref:migrating-a-custom-toolbar-layout[Migrating a Custom Toolbar Layout]
+* xref:configuring-inline-mode[Configuring Inline Mode]
+* xref:migrating-custom-buttons[Migrating Custom Buttons]
+* xref:migrating-custom-drop-down-toolbar-buttons[Migrating Custom Drop-down Toolbar Buttons]
 
-[[migratingabasicfroalaconfigurationtotinymce]]
+[[migrating-a-basic-froala-configuration-to-tinymce]]
 == Migrating a Basic Froala Configuration to TinyMCE
 
 To migrate from a basic Froala 3 configuration to a basic {productname} {productmajorversion} configuration, you need to:
@@ -37,9 +36,9 @@ To migrate from a basic Froala 3 configuration to a basic {productname} {product
 
 * For {cloudname} deployments:
 +
-[source,html]
+[source,html,subs="attributes+"]
 ----
-<script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
+<script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/{productmajorversion}/tinymce.min.js' referrerpolicy='origin'></script>
 ----
 +
 Replace `+your-api-key+` with your link:{accountpageurl}/[{cloudname} API key].
@@ -52,7 +51,7 @@ Replace `+your-api-key+` with your link:{accountpageurl}/[{cloudname} API key].
 +
 Replace `+/path/to/tinymce/base/directory+` with the relative path of the `+tinymce/+` directory containing `+tinymce.min.js+`.
 
-For information on {productname} deployment types, see: link:install-setup.html[Installing {productname}].
+For information on {productname} deployment types, see: xref:installation.adoc[Installing {productname}].
 
 [[replace-the-froala-editor-variable-assignment-with-the-tinymceinit-function]]
 === Replace the Froala editor variable assignment with the tinymce.init function
@@ -71,7 +70,7 @@ To insert an editor in the body of the page for a `+<textarea>+` element such as
 [source,html]
 ----
 <script>
-  var editor = new FroalaEditor('textarea#myeditor')
+  const editor = new FroalaEditor('textarea#myeditor')
 </script>
 ----
 . Add a `+tinymce.init+` function.
@@ -106,7 +105,7 @@ The following examples show an initial Froala configuration and the migrated {pr
       <textarea id='basic_froala'>Hello, World! I'm a froala editor!</textarea>
     </form>
     <script>
-      var editor = new FroalaEditor('textarea#basic_froala')
+      const editor = new FroalaEditor('textarea#basic_froala')
     </script>
   </body>
 </html>
@@ -138,9 +137,9 @@ The following examples show an initial Froala configuration and the migrated {pr
 For information on:
 
 * Getting started with {productname}, see: xref:cloud-quick-start.adoc[{productname} Quick Start].
-* Installing {productname}, see: link:install-setup.html[Installing {productname}].
+* Installing {productname}, see: xref:installation.adoc[Installing {productname}].
 
-[[updatingthelistofplugins]]
+[[updating-the-list-of-plugins]]
 == Updating the list of Plugins
 
 Some _Froala core functionality_ is implemented by xref:work-with-plugins.adoc[plugins for {productname}]; and some _Froala plugin-provided functionality_ is {productname} core functionality.
@@ -199,7 +198,7 @@ The following examples show how plugins are included or enabled in the Froala an
 * For information on enabling plugins for {productname}, see: xref:editor-important-options.adoc#plugins[Integration and setup options: plugins].
 * For a list of {productname} plugins, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-[[migratingacustomtoolbarlayout]]
+[[migrating-a-custom-toolbar-layout]]
 == Migrating a Custom Toolbar Layout
 
 To migrate a Custom Toolbar Layout from Froala to {productname}:
@@ -229,7 +228,7 @@ toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
 
 [source,js]
 ----
-toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist | outdent indent'
+toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist | outdent indent'
 ----
 
 Replace the names of toolbar items with the {productname} names. For example:
@@ -237,14 +236,14 @@ Replace the names of toolbar items with the {productname} names. For example:
 [cols=",,",options="header"]
 |===
 |Toolbar Button |Froala |{productname}
-|Format/Style Selector |`+paragraphFormat+` |`+formatselect+`
+|Format/Style Selector |`+paragraphFormat+` |`+blocks+`
 |Ordered list |`+formatOl+` |`+numlist+`
 |Unordered list |`+formatUL+` |`+bullist+`
 |===
 
 === Update the `+plugin+` option as required
 
-The list of plugins may need updating, as indicated in xref:updatingthelistofplugins[Updating the list of Plugins]. For example, the {productname} toolbar items; `+numlist+` and `+bullist+`, require the `+lists+` plugin.
+The list of plugins may need updating, as indicated in xref:updating-the-list-of-plugins[Updating the list of Plugins]. For example, the {productname} toolbar items; `+numlist+` and `+bullist+`, require the `+lists+` plugin.
 
 For a list of toolbar items with the required plugins, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
@@ -261,7 +260,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
     <textarea id=froala_custom_toolbar>Hello, World! I'm a froala editor!</textarea>
   </form>
 <script>
-  var editor = new FroalaEditor('textarea#froala_custom_toolbar', {
+  const editor = new FroalaEditor('textarea#froala_custom_toolbar', {
     paragraphFormatSelection: true ,
     toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
     ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify'],
@@ -282,9 +281,9 @@ The following examples show a custom toolbar layout in Froala and the same layou
   tinymce.init({
     selector: '#tiny_custom_toolbar',
     plugins: 'lists',
-    toolbar: 'undo redo | formatselect | bold italic
-      | alignleft aligncenter alignright alignjustify
-      | numlist bullist | outdent indent',
+    toolbar: 'undo redo | blocks | bold italic ' +
+      '| alignleft aligncenter alignright alignjustify ' +
+      '| numlist bullist | outdent indent',
   });
 </script>
 ----
@@ -294,7 +293,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 * For information on customizing the {productname} Toolbar, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options: Toolbar].
 * For a list of toolbar items, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-[[configuringinlinemode]]
+[[configuring-inline-mode]]
 == Configuring Inline Mode
 
 When migrating from Froala to {productname}, the `+toolbarInline+` option changes to `+inline+`. Some additional settings you should consider include:
@@ -317,7 +316,7 @@ The following examples show Froala and {productname} configured for inline mode.
     <div id=froala_custom_inline_toolbar>Hello, World! I'm a froala editor!</div>
   </form>
 <script>
-  var editor = new FroalaEditor('div#froala_custom_inline_toolbar', {
+  const editor = new FroalaEditor('div#froala_custom_inline_toolbar', {
     toolbarInline: true,
     charCounterCount: false
   })
@@ -351,12 +350,12 @@ For information on:
 * Disabling the {productname} menubar, see: xref:menus-configuration-options.adoc#menubar[User interface options: Menubar].
 * The {productname} distraction-free editing mode, see: xref:use-tinymce-distraction-free.adoc[{productname} distraction-free editing mode].
 
-[[migratingcustombuttons]]
+[[migrating-custom-buttons]]
 == Migrating Custom Buttons
 
 The {productname} `+addButton+` option is used in place of the Froala `+RegisterCommand+` option.
 
-For information on getting started with the `+addButton+` option, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+For information on getting started with the `+addButton+` option, see: xref:custom-toolbarbuttons.adoc#how-to-create-custom-toolbar-buttons[Toolbar buttons].
 
 === Examples: Custom Toolbar Buttons
 
@@ -392,7 +391,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
     }
   });
 
-  var editor = new FroalaEditor('textarea#froala_custom_button',{
+  const editor = new FroalaEditor('textarea#froala_custom_button',{
     toolbarButtons: [['mybutton1'],['My&#160;Button']]
   })
 </script>
@@ -410,17 +409,17 @@ The following examples show a Froala editor and a {productname} editor with a ba
   tinymce.init({
     selector: '#tiny_custom_button',
     toolbar: 'myButton1 | myButton2',
-    setup: function (editor) {
+    setup: (editor) => {
       editor.ui.registry.addButton('myButton1', {
         icon: 'user',
-        onAction: function (_) {
+        onAction: (_) => {
           editor.insertContent('&nbsp;<strong>It\'s my icon button!</strong>&nbsp;');
         }
       });
 
       editor.ui.registry.addButton('myButton2', {
         text: 'My Button',
-        onAction: function (_) {
+        onAction: (_) => {
           editor.insertContent('&nbsp;<strong>It\'s my text button!</strong>&nbsp;');
         }
       });
@@ -431,15 +430,15 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 === Additional Information on Custom Toolbar Buttons
 
-* For an overview on creating custom toolbar buttons, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+* For an overview on creating custom toolbar buttons, see: xref:custom-toolbarbuttons.adoc#how-to-create-custom-toolbar-buttons[Toolbar buttons].
 * For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: xref:custom-toolbarbuttons.adoc[Types of toolbar buttons].
 
-[[migratingcustomdrop-downtoolbarbuttons]]
+[[migrating-custom-drop-down-toolbar-buttons]]
 == Migrating Custom Drop-down Toolbar Buttons
 
 The {productname} `+addMenuButton+` option is used in place of the Froala `+RegisterCommand+` `+type: dropdown+` option.
 
-For information on getting started with the `+addMenuButton+` option, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons] and xref:custom-menu-toolbar-button.adoc[Types of toolbar buttons: Menu button].
+For information on getting started with the `+addMenuButton+` option, see: xref:custom-toolbarbuttons.adoc#how-to-create-custom-toolbar-buttons[Toolbar buttons] and xref:custom-menu-toolbar-button.adoc[Types of toolbar buttons: Menu button].
 
 === Examples: Custom Drop-down Buttons
 
@@ -454,7 +453,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
     <textarea id='froala_custom_button_menu'>Hello, World! I'm a froala editor!</textarea>
   </form>
 <script>
-  var option_values = {
+  const option_values = {
     'Opt1': '<strong>You clicked menu item 1!</strong>',
     'Opt2': '<em>You clicked menu item 2!</em>'
   };
@@ -473,7 +472,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
       this.html.insert(option_values[val]);
     }
   });
-  var editor = new FroalaEditor('textarea#froala_custom_button_menu', {
+  const editor = new FroalaEditor('textarea#froala_custom_button_menu', {
     toolbarButtons: [['mybuttonmenu']]
   })
 </script>
@@ -491,17 +490,16 @@ The following examples show a Froala editor and a {productname} editor with a ba
   tinymce.init({
     selector: '#tiny_custom_button_menu',
     toolbar: 'my_button',
-
-    setup: function (editor) {
+    setup: (editor) => {
       editor.ui.registry.addMenuButton('my_button', {
         text: 'My button menu',
         icon: 'gamma',
-        fetch: function (callback) {
-          var items = [
+        fetch: (callback) => {
+          const items = [
             {
               type: 'menuitem',
               text: 'Menu item 1',
-              onAction: function () {
+              onAction: () => {
                 editor.insertContent('&nbsp;<strong>You clicked menu item 1!</strong>');
               }
             },
@@ -509,7 +507,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
               type: 'menuitem',
               text: 'Menu item 2',
               icon: 'user',
-              onAction: function () {
+              onAction: () => {
                 editor.insertContent('&nbsp;<em>You clicked menu item 2!</em>');
               }
             }

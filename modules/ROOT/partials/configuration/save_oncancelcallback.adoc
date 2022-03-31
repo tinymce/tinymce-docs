@@ -3,7 +3,7 @@
 
 This option allows you to specify the function that will be executed when the cancel button/command is invoked.
 
-Type: `+String+`
+*Type:* `+Function+`
 
 === Example: Using `+save_oncancelcallback+`
 
@@ -13,6 +13,8 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'save',
   toolbar: 'save',
-  save_oncancelcallback: function () { console.log('Save canceled'); }
+  save_oncancelcallback: () => {
+    console.log('Save canceled');
+  }
 });
 ----

@@ -1,9 +1,8 @@
 = Events Available for TinyMCE
-
-:title_nav: Available Events
+:navtitle: Available Events
 :description_short: List of common editor events
 :description: List of common editor events
-:keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
+:keywords: Click, DblClick, MouseDown, MouseUp, MouseMove, MouseOver, MouseOut, MouseEnter, MouseLeave, KeyDown, KeyPress, KeyUp, ContextMenu, Paste, Init, Focus, Blur, BeforeSetContent, SetContent, GetContent, PreProcess, PostProcess, NodeChange, Undo, Redo, Change, Dirty, Remove, ExecCommand, PastePreProcess, PastePostProcess, AutocompleterStart, AutocompleterUpdate, AutocompleterEnd
 
 {productname} supports some browser-native events, and provides additional events for working with the editor and plugins.
 
@@ -83,7 +82,7 @@ tinymce.init({
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart]
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event[wheel]
 
-[[editorcoreevents]]
+[[editor-core-events]]
 == Editor core events
 
 The following events are provided by the {productname} editor.
@@ -118,7 +117,7 @@ The following events are provided by the {productname} editor.
 |BeforeGetContent |`+{ format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired before the content is serialized from the editor.
 |GetContent |`+{ content: string, format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired after the content is serialized from the editor.
 |BeforeSetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired before the content is parsed and rendered in the editor.
-|SetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired after the content is parsed and rendered in the editor.
+|SetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired after the content is parsed and rendered in the editor. NOTE: The `+content+` property has been deprecated and will be removed in the next major release.
 |LoadContent |N/A |Fired after the initial content has loaded into the editor.
 |PreviewFormats |N/A |Fired before a formats CSS is generated when the format is being previewed in the editor.
 |AfterPreviewFormats |N/A |Fired after a formats CSS is generated when the format is being previewed in the editor.
@@ -144,6 +143,8 @@ The following events are provided by the {productname} editor.
 |ResizeEditor |N/A |Fired when the editor is resized, either by the resize handles or the auto-resize plugin.
 |SkinLoaded |N/A |Fired when the editor skin has been loaded.
 |SkinLoadError |`+{ message: string }+` |Fired when the editor skin fails to load.
+|ThemeLoadError |`+{ message: string }+` |Fired when the editor theme fails to load.
+|ModelLoadError |`+{ message: string }+` |Fired when the editor model fails to load.
 |PluginLoadError |`+{ message: string }+` |Fired when an editor plugin fails to load.
 |IconsLoadError |`+{ message: string }+` |Fired when the editor icon pack fails to load.
 |LanguageLoadError |`+{ message: string }+` |Fired when the editor language pack fails to load.
@@ -157,38 +158,43 @@ The following events are provided by the {productname} editor.
 |ResolveName |`+{ name: string, target: Element }+` |(iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.
 |BeforeOpenNotification |`+{ notification: NotificationSpec }+` |Fired before a notification is displayed. For information on the Notifications Specification (`+NotificationSpec+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
 |OpenNotification |`+{ notification: NotificationApi }+` |Fired after a notification is displayed. For information on the Notifications API (`+NotificationApi+`), see: xref:creating-custom-notifications.adoc[Create custom notifications].
+|PastePreProcess |`+{ content: string }+` |Fired before the content is parsed from the clipboard.
+|PastePostProcess |`+{ node: Element }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
+|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
+|AutocompleterStart |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when an autocompleter is triggered and should show the fetched suggestions.
+|AutocompleterUpdate |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when content is changed and the active autocompleter needs to update the suggestions shown.
+|AutocompleterEnd |N/A |Fired when the active autocompleter menu is about to be closed.
 |===
 
 == Plugin events
 
 The following plugins provide events.
 
-* xref:advancedtablesevents[Advanced Tables events]
-* xref:autosaveevents[Autosave events]
-* xref:charactermapevents[Character Map events]
-* xref:commentsevents[Comments events]
-* xref:exportevents[Export events]
-* xref:formatpainterevents[Format Painter events]
-* xref:fullscreenevents[Fullscreen events]
-* xref:importcssevents[Import CSS events]
-* xref:linkcheckerevents[Link checker events]
-* xref:listsevents[Lists events]
-* xref:mediaembedevents[Media Embed events]
-* xref:pasteevents[Paste events]
-* xref:permanentpenevents[Permanent Pen events]
-* xref:powerpasteevents[PowerPaste events]
-* xref:spellcheckerproevents[Spell Checker Pro events]
-* xref:tableevents[Table events]
-* xref:visualblocksevents[Visual Blocks events]
-* xref:visualcharactersevents[Visual Characters events]
-* xref:wordcountevents[Word Count events]
+* xref:advanced-tables-events[Advanced Tables events]
+* xref:autosave-events[Autosave events]
+* xref:character-map-events[Character Map events]
+* xref:comments-events[Comments events]
+* xref:export-events[Export events]
+* xref:format-painter-events[Format Painter events]
+* xref:fullscreen-events[Fullscreen events]
+* xref:import-css-events[Import CSS events]
+* xref:linkchecker-events[Link checker events]
+* xref:lists-events[Lists events]
+* xref:media-embed-events[Media Embed events]
+* xref:permanent-pen-events[Permanent Pen events]
+* xref:powerpaste-events[PowerPaste events]
+* xref:spell-checker-pro-events[Spell Checker Pro events]
+* xref:table-events[Table events]
+* xref:visual-blocks-events[Visual Blocks events]
+* xref:visual-characters-events[Visual Characters events]
+* xref:word-count-events[Word Count events]
 
-[[advancedtablesevents]]
+[[advanced-tables-events]]
 === Advanced Tables events
 
-For events applicable to the Advanced Tables plugin, see: xref:tableevents[Table events].
+For events applicable to the Advanced Tables plugin, see: xref:table-events[Table events].
 
-[[autosaveevents]]
+[[autosave-events]]
 === Autosave events
 
 The following events are provided by the xref:autosave.adoc[Autosave plugin].
@@ -201,7 +207,7 @@ The following events are provided by the xref:autosave.adoc[Autosave plugin].
 |RemoveDraft |N/A |Fired when a draft has been removed from memory.
 |===
 
-[[charactermapevents]]
+[[character-map-events]]
 === Character Map events
 
 The following event is provided by the xref:charmap.adoc[Character Map plugin].
@@ -212,7 +218,7 @@ The following event is provided by the xref:charmap.adoc[Character Map plugin].
 |InsertCustomChar |`+{ chr: string }+` |Fired before a special character is inserted into the editor.
 |===
 
-[[commentsevents]]
+[[comments-events]]
 === Comments events
 
 The following event is provided by the xref:introduction-to-tiny-comments.adoc[Comments plugin].
@@ -223,12 +229,12 @@ The following event is provided by the xref:introduction-to-tiny-comments.adoc[C
 |mce-tinycomments-update |N/A |Fired when the comments sidebar is opened or closed.
 |===
 
-[[exportevents]]
+[[export-events]]
 === Export events
 
 include::partial$events/export-events.adoc[]
 
-[[formatpainterevents]]
+[[format-painter-events]]
 === Format Painter events
 
 The following event is provided by the xref:formatpainter.adoc[Format Painter plugin].
@@ -239,7 +245,7 @@ The following event is provided by the xref:formatpainter.adoc[Format Painter pl
 |FormatPainterToggle |`+{ state: boolean }+` |Fired when the format painter state changes.
 |===
 
-[[fullscreenevents]]
+[[fullscreen-events]]
 === Fullscreen events
 
 The following event is provided by the xref:fullscreen.adoc[Fullscreen plugin].
@@ -250,7 +256,7 @@ The following event is provided by the xref:fullscreen.adoc[Fullscreen plugin].
 |FullscreenStateChanged |`+{ state: boolean }+` |Fired when the fullscreen state changes.
 |===
 
-[[importcssevents]]
+[[import-css-events]]
 === Import CSS events
 
 The following event is provided by the xref:importcss.adoc[Import CSS plugin].
@@ -261,7 +267,7 @@ The following event is provided by the xref:importcss.adoc[Import CSS plugin].
 |AddStyleModifications |`+{ items: StyleItem[], replace: boolean }+` |Fired during editor initialization when the style modifications are parsed from the CSS.
 |===
 
-[[linkcheckerevents]]
+[[linkchecker-events]]
 === Link checker events
 
 The following event is provided by the xref:linkchecker.adoc[Link Checker plugin].
@@ -272,7 +278,7 @@ The following event is provided by the xref:linkchecker.adoc[Link Checker plugin
 |LinkCheckerError |`+{ message: string }+` |Fired when a link checker error occurs, such as the Link Checker service can't be reached.
 |===
 
-[[listsevents]]
+[[lists-events]]
 === Lists events
 
 The following event is provided by the xref:lists.adoc[Lists plugin].
@@ -283,7 +289,7 @@ The following event is provided by the xref:lists.adoc[Lists plugin].
 |ListMutation |`+{ action: string, element: Element }+` |Fired when a list is toggled on/off.
 |===
 
-[[mediaembedevents]]
+[[media-embed-events]]
 === Media Embed events
 
 The following event is provided by the xref:introduction-to-mediaembed.adoc[Media Embed plugin].
@@ -294,20 +300,7 @@ The following event is provided by the xref:introduction-to-mediaembed.adoc[Medi
 |MediaEmbedError |`+{ message: string }+` |Fired when a media embed error occurs, such as the Media Embed service can't be reached.
 |===
 
-[[pasteevents]]
-=== Paste events
-
-The following events are provided by the xref:paste.adoc[Paste plugin].
-
-[cols="1,1,2",options="header"]
-|===
-|Name |Data |Description
-|PastePreProcess |`+{ content: string, wordContent: boolean }+` |Fired before the content is parsed from the clipboard.
-|PastePostProcess |`+{ node: Element, wordContent: boolean }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
-|PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
-|===
-
-[[permanentpenevents]]
+[[permanent-pen-events]]
 === Permanent Pen events
 
 The following events are provided by the xref:permanentpen.adoc[Permanent Pen plugin].
@@ -319,7 +312,7 @@ The following events are provided by the xref:permanentpen.adoc[Permanent Pen pl
 |PermanentPenProperties |`+{ fontname: string, fontcolor: string, fontsize: string, hilitecolor: string, bold: boolean, italic: boolean, underline: boolean, strikethrough: boolean }+` |Fired when the permanent pen properties are changed.
 |===
 
-[[powerpasteevents]]
+[[powerpaste-events]]
 === PowerPaste events
 
 The following events are provided by the xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
@@ -332,17 +325,17 @@ The following events are provided by the xref:introduction-to-powerpaste.adoc[Po
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
-[[spellcheckerproevents]]
+[[spell-checker-pro-events]]
 === Spell Checker Pro events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
 
-[[tableevents]]
+[[table-events]]
 === Table events
 
 include::partial$events/table-events.adoc[]
 
-[[visualblocksevents]]
+[[visual-blocks-events]]
 === Visual Blocks events
 
 The following event is provided by the xref:visualblocks.adoc[Visual Blocks plugin].
@@ -353,7 +346,7 @@ The following event is provided by the xref:visualblocks.adoc[Visual Blocks plug
 |VisualBlocks |`+{ state: boolean }+` |Fired when the Visual Blocks state changes.
 |===
 
-[[visualcharactersevents]]
+[[visual-characters-events]]
 === Visual Characters events
 
 The following event is provided by the xref:visualchars.adoc[Visual Characters plugin].
@@ -364,7 +357,7 @@ The following event is provided by the xref:visualchars.adoc[Visual Characters p
 |VisualChars |`+{ state: boolean }+` |Fired when the Visual Characters state changes.
 |===
 
-[[wordcountevents]]
+[[word-count-events]]
 === Word Count events
 
 The following event is provided by the xref:wordcount.adoc[Word Count plugin].
@@ -375,10 +368,10 @@ The following event is provided by the xref:wordcount.adoc[Word Count plugin].
 |WordCountUpdate |`+{ wordCount: { words: number, characters: number, charactersWithoutSpaces: number } }+` |Fired when the editor word count is updated.
 |===
 
-[[editormanagerevents]]
+[[editor-manager-events]]
 == Editor Manager events
 
-The following events are used for editor management. These events are handled using `+tinymce.on+`, rather than `+editor.on+` or `+editor.fire+`, as shown in xref:exampleshandlingeditormanagerevents[Examples: Handling Editor Manager events].
+The following events are used for editor management. These events are handled using `+tinymce.on+`, rather than `+editor.on+` or `+editor.fire+`, as shown in xref:examples-handling-editor-manager-events[Examples: Handling Editor Manager events].
 
 [cols="1,1,2",options="header"]
 |===
@@ -388,7 +381,7 @@ The following events are used for editor management. These events are handled us
 |BeforeUnload |N/A |Fired before the browser window is closed (same as native https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event[`+beforeunload+` event]).
 |===
 
-[[exampleshandlingeditormanagerevents]]
+[[examples-handling-editor-manager-events]]
 === Examples: Handling Editor Manager events
 
 .AddEditor

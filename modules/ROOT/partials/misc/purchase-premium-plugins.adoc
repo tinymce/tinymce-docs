@@ -8,28 +8,41 @@ ifeval::[{pluralExtensionType} != true]
 :isAre: is
 endif::[]
 
+ifeval::["{pluginminimumplan}" == "tierone"]
+:isTierOne:
+endif::[]
+ifeval::["{pluginminimumplan}" == "tiertwo"]
+:isTierTwo:
+endif::[]
+ifeval::["{pluginminimumplan}" == "tierthree"]
+:isTierThree:
+endif::[]
+ifeval::["{pluginminimumplan}" == "enterprise"]
+:isEnterprise:
+endif::[]
+
 ifeval::["{pluginname}" != "Tiny Drive"]
-[[getting-started-with-productname-pluginname]]
+[[getting-started-with-tinymce-pluginname]]
 == Getting started with {productname} {pluginname}
 endif::[]
 ifeval::["{pluginname}" == "Tiny Drive"]
-[[getting-started-with-pluginname]]
+[[getting-started-with-tiny-drive]]
 == Getting started with {pluginname}
 endif::[]
 
 
-[[creating-a-sitecloudname-account]]
+[[creating-a-tiny-cloud-account]]
 === Creating a {cloudname} account
 
 Try the *{pluginname} {extensionType}* and the {cloudname} with a free link:{accountsignup}/[{accountpage}]. New accounts receive a 30-day trial of the {companyname} link:{plugindirectory}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
 
 
 ifeval::["{pluginname}" != "Tiny Drive"]
-[[get-productname-pluginname]]
+[[get-tinymce-pluginname]]
 === Get {productname} {pluginname}
 endif::[]
 ifeval::["{pluginname}" == "Tiny Drive"]
-[[get-pluginname]]
+[[get-tiny-drive]]
 === Get {pluginname}
 endif::[]
 
@@ -40,31 +53,28 @@ ifeval::["{pluginminimumplan}" == "enterprise"]
 The *{pluginname} {extensionType}* {isAre} included in link:{pricingpage}/[{enterpriseplan}].
 endif::[]
 
-ifeval::["{pluginminimumplan}" == "tierone"]
-* The link:{pricingpage}/[{tieroneplan}].
-* The link:{pricingpage}/[{tiertwoplan}].
-* The link:{pricingpage}/[{tierthreeplan}].
+ifdef::isTierOne[]
+* The link:{pricingpage}[{tieroneplan}].
 endif::[]
-ifeval::["{pluginminimumplan}" == "tiertwo"]
-* The link:{pricingpage}/[{tiertwoplan}].
-* The link:{pricingpage}/[{tierthreeplan}].
+ifdef::isTierOne,isTierTwo[]
+* The link:{pricingpage}[{tiertwoplan}].
 endif::[]
-ifeval::["{pluginminimumplan}" == "tierthree"]
-* The link:{pricingpage}/[{tierthreeplan}].
+ifdef::isTierOne,isTierTwo,isTierThree[]
+* The link:{pricingpage}[{tierthreeplan}].
 endif::[]
-ifeval::["{pluginminimumplan}" != "enterprise"]
+ifndef::isEnterprise[]
 * link:{pricingpage}/[{enterpriseplan}].
 endif::[]
 
-ifeval::["{pluginminimumplan}" == "tiertwo"]
+ifdef::isTierTwo[]
 A 14-day free trial is also available for the {tiertwoplan} and the {tierthreeplan}.
 endif::[]
-ifeval::["{pluginminimumplan}" == "tierthree"]
-A 14-day free trial is also available for the {tiertwoplan} and the {tierthreeplan}.
-endif::[]
-ifeval::["{pluginminimumplan}" == "enterprise"]
+ifdef::isTierThree[]
 A 14-day free trial is available for the {tierthreeplan}.
 endif::[]
 
-
-
+:!isAre:
+:!isTierOne:
+:!istiertwo:
+:!istierthree:
+:!isEnterprise:

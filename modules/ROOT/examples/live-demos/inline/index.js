@@ -1,4 +1,4 @@
-var emailHeaderConfig = {
+const emailHeaderConfig = {
   selector: '.tinymce-heading',
   menubar: false,
   inline: true,
@@ -16,7 +16,7 @@ var emailHeaderConfig = {
   powerpaste_html_import: 'clean',
 };
 
-var emailBodyConfig = {
+const emailBodyConfig = {
   selector: '.tinymce-body',
   menubar: false,
   inline: true,
@@ -25,7 +25,7 @@ var emailBodyConfig = {
     'autolink', 'tinymcespellchecker'
   ],
   toolbar: [
-    'undo redo | bold italic underline | fontselect fontsizeselect',
+    'undo redo | bold italic underline | fontfamily fontsize',
     'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
   ],
   valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',

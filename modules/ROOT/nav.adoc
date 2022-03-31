@@ -1,6 +1,6 @@
 * Getting started
 ** xref:introduction-to-tinymce.adoc[What is TinyMCE?]
-** Installation
+** xref:installation.adoc[Installation]
 *** Cloud
 **** xref:cloud-quick-start.adoc[Quick start]
 **** xref:react-cloud.adoc[React]
@@ -9,6 +9,7 @@
 **** xref:blazor-cloud.adoc[Blazor]
 **** xref:svelte-cloud.adoc[Svelte]
 **** xref:webcomponent-cloud.adoc[Web Component]
+**** xref:jquery-cloud.adoc[jQuery]
 **** xref:bootstrap-cloud.adoc[Bootstrap]
 **** xref:django-cloud.adoc[Django]
 **** xref:laravel-tiny-cloud.adoc[Laravel]
@@ -29,10 +30,11 @@
 **** Svelte
 ***** xref:svelte-pm.adoc[Using a package manager]
 ***** xref:svelte-zip.adoc[Using a .zip package]
-**** xref:swing.adoc[Java Swing]
 **** Web Component
 ***** xref:webcomponent-pm.adoc[Using a package manager]
 ***** xref:webcomponent-zip.adoc[Using a .zip package]
+**** xref:swing.adoc[Java Swing]
+**** xref:jquery-pm.adoc[jQuery]
 **** xref:bootstrap-zip.adoc[Bootstrap]
 **** xref:django-zip.adoc[Django]
 **** xref:expressjs-pm.adoc[Node.js + Express]
@@ -78,7 +80,6 @@
 **** xref:blazor-pm.adoc[Using a package manager]
 **** xref:blazor-zip.adoc[Using a .zip package]
 **** xref:blazor-ref.adoc[Technical reference]
-*** xref:swing.adoc[Java Swing]
 *** Svelte framework
 **** xref:svelte-cloud.adoc[Using the Tiny Cloud]
 **** xref:svelte-pm.adoc[Using a package manager]
@@ -89,6 +90,10 @@
 **** xref:webcomponent-pm.adoc[Using a package manager]
 **** xref:webcomponent-zip.adoc[Using a .zip package]
 **** xref:webcomponent-ref.adoc[Technical reference]
+*** xref:swing.adoc[Java Swing]
+*** jQuery
+**** xref:jquery-cloud.adoc[Using the Tiny Cloud]
+**** xref:jquery-pm.adoc[Using a package manager]
 *** Bootstrap framework
 **** xref:bootstrap-cloud.adoc[Using the Tiny Cloud]
 **** xref:bootstrap-zip.adoc[Using a .zip package]
@@ -196,6 +201,7 @@
 **** xref:bundling-content-css.adoc[Content CSS]
 **** xref:bundling-skins.adoc[Skins]
 **** xref:bundling-icons.adoc[Icons]
+**** xref:bundling-models.adoc[Models]
 **** xref:bundling-localization.adoc[UI localizations]
 **** xref:bundling-themes.adoc[Themes]
 ** xref:upgrading.adoc[Upgrading TinyMCE]
@@ -258,9 +264,11 @@
 ** xref:file-image-upload.adoc[Images and files]
 ** xref:content-formatting.adoc[Content formats]
 ** xref:content-appearance.adoc[Content appearance]
+** xref:copy-and-paste.adoc[Copy & paste options]
 ** xref:spelling.adoc[Spelling options]
 ** xref:url-handling.adoc[URL handling options]
-* Plugins
+** xref:editor-model.adoc[Editor content models]
+* xref:plugins.adoc[Plugins]
 ** Premium plugins
 *** xref:a11ychecker.adoc[Accessibility Checker]
 *** xref:advcode.adoc[Advanced Code Editor]
@@ -289,7 +297,6 @@
 *** PowerPaste
 **** xref:introduction-to-powerpaste.adoc[Introduction]
 **** xref:powerpaste-options.adoc[Options]
-**** xref:powerpaste-toolbars-menus.adoc[Toolbar buttons and menu items]
 **** xref:powerpaste-commands-events-apis.adoc[Commands and Events]
 **** xref:powerpaste-support.adoc[Supported functionality]
 **** xref:powerpaste-troubleshooting.adoc[Troubleshooting]
@@ -355,7 +362,6 @@
 *** xref:media.adoc[Media]
 *** xref:nonbreaking.adoc[Nonbreaking Space]
 *** xref:pagebreak.adoc[Page Break]
-*** xref:paste.adoc[Paste]
 *** xref:preview.adoc[Preview]
 *** xref:quickbars.adoc[Quick Toolbars]
 *** xref:save.adoc[Save]
@@ -373,7 +379,7 @@
 ** xref:tinymce-and-csp.adoc[Content Security Policies (CSP)]
 ** xref:tinymce-and-cors.adoc[Cross-Origin Resource Sharing (CORS)]
 * Release information
-** Release notes for TinyMCE 6
+** xref:release-notes.adoc[Release notes for TinyMCE 6]
 *** TinyMCE 6.0
 **** xref:6_0_0-release-notes-overview.adoc[Overview]
 **** xref:6_0_0-release-notes-core-changes.adoc[Core improvements]

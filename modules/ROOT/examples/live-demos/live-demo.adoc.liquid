@@ -2,9 +2,9 @@
 {% comment %} Add cloud script(s) {% endcomment %}
 {%- if liveDemo.script.include -%}
 <script src="{{ liveDemo.script.url }}" referrerpolicy="origin"></script>
-{%- if liveDemo.type == 'tinydrive' -%}
+{%- if liveDemo.css.size > 0 -%}
 <style>
-{% include 'tinydrive.css' %}
+{{ liveDemo.css }}
 </style>
 {%- endif -%}
 {%- endif -%}

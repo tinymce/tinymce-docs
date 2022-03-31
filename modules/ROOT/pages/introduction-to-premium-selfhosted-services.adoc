@@ -1,7 +1,6 @@
 = Server-side component installation
-
 :description: Server-side components for premium plugins like spelling as-you-type.
-:keywords: enterprise tinymcespellchecker spell check checker pro editimage server
+:keywords: enterprise, tinymcespellchecker, spell check, spell checker pro, editimage, server
 
 Some {productname} Enterprise features require a server-side component. If you're using the {cloudname} solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
@@ -31,7 +30,7 @@ If you don't, pick either http://tomcat.apache.org/[Tomcat] or https://www.eclip
 [IMPORTANT]
 .Memory requirement
 ====
-Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:troubleshoot.adoc#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
+Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:troubleshoot.adoc#out-of-memory-errors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 ====
 
 [[deploy-server-side-components]]

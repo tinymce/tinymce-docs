@@ -1,10 +1,10 @@
-var button = document.querySelector('.tinydrive-standalone-demo-pick');
-var input = document.querySelector('.tinydrive-standalone-demo-input');
+const button = document.querySelector('.tinydrive-standalone-demo-pick');
+const input = document.querySelector('.tinydrive-standalone-demo-input');
 
-button.addEventListener('click', function () {
+button.addEventListener('click', () => {
   tinydrive.pick({
     token_provider: '/your-local/jwt-provider'
-  }).then(function(result) {
+  }).then((result) => {
     input.value = result.files[0].url;
   });
 }, false);

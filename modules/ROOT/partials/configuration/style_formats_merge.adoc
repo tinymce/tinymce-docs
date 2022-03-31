@@ -3,9 +3,9 @@
 
 This option allows you to set whether {productname} should append custom styles defined using the xref:user-formatting-options.adoc#style_formats[`+style_formats+`] setting to the default style formats or completely replace them.
 
-Type : `+Boolean+`
+*Type:* `+Boolean+`
 
-Default : `+false+`
+*Default value:* `+false+`
 
 === Example: Using `+style_formats_merge+`
 
@@ -14,8 +14,8 @@ Default : `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   style_formats: [
-    {title: 'Bold text', inline: 'b'},
-    {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}}
+    { title: 'Bold text', inline: 'b' },
+    { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } }
   ],
   style_formats_merge: true
 });

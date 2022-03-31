@@ -1,11 +1,11 @@
 [[paste_postprocess]]
 == `+paste_postprocess+`
 
-ifeval::["{pluginname}" == "Paste"]
+ifndef::pluginname[]
 
 This option enables you to modify the pasted content before it gets inserted into the editor, but after it's been parsed into a DOM structure.
 
-Type: `+Function+`
+*Type:* `+Function+`
 
 === Example: Using `+paste_postprocess+`
 
@@ -13,10 +13,8 @@ Type: `+Function+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
-  menubar: 'edit',
   toolbar: 'paste',
-  paste_postprocess: function(plugin, args) {
+  paste_postprocess: (editor, args) => {
     console.log(args.node);
     args.node.setAttribute('id', '42');
   }
@@ -36,7 +34,7 @@ This option allows you to run custom filtering on the pasted content after it is
 
 NOTE: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
 
-Type: `+Function+`
+*Type:* `+Function+`
 
 === Example {productname} configuration:
 
@@ -45,7 +43,7 @@ Type: `+Function+`
 tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
-  paste_postprocess: function (pluginApi, data) {
+  paste_postprocess: (pluginApi, data) => {
     console.log(data.node, data.mode, data.source);
     // Apply custom filtering by mutating data.node
     const additionalNode = document.createElement('div');

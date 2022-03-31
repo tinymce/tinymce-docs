@@ -8,21 +8,32 @@ The `+smart_paste+` function will:
 
 To disable the `+smart_paste+` functionality, set `+smart_paste+` to `+false+`. To configure which image file types are recognised, see xref:file-image-upload.adoc#images_file_types[Image & file options - images_file_types].
 
-Type : `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value : `+true+`
+*Default value:* `+true+`
 
-Possible Values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+smart_paste+`
 
+ifdef::plugincode[]
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
-  menubar: 'edit',
   toolbar: 'paste',
   smart_paste: false
 });
 ----
+endif::[]
+ifndef::plugincode[]
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'paste',
+  smart_paste: false
+});
+----
+endif::[]

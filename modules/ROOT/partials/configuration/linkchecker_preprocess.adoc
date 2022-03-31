@@ -3,7 +3,7 @@
 
 The `+linkchecker_preprocess+` function is used for adjusting links before performing a link check.
 
-Type: `+Function+`
+*Type:* `+Function+`
 
 === Example: Using `+linkchecker_preprocess+`
 
@@ -12,9 +12,9 @@ Type: `+Function+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'linkchecker',
-  linkchecker_preprocess: function (data) {
+  linkchecker_preprocess: (data) => {
     /* This example will encode or double encode the url */
-    var newUrl = encodeURIComponent(data.url);
+    const newUrl = encodeURIComponent(data.url);
     return { url: newUrl };
   }
 });

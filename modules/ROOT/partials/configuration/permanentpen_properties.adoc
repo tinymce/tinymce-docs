@@ -3,6 +3,25 @@
 
 The default formats for Permanent Pen can be specified in the following configuration.
 
+*Type:* `+Object+`
+
+*Default value:*
+[source,js]
+----
+{
+  fontname: 'arial,helvetica,sans-serif',
+  forecolor: '#E74C3C',
+  fontsize: '12pt',
+  hilitecolor: '',
+  bold: true,
+  italic: false,
+  underline: false,
+  strikethrough: false
+}
+----
+
+=== Example: Using `permanentpen_properties`
+
 [source,js]
 ----
 tinymce.init({

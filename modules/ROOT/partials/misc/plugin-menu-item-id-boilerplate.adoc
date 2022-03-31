@@ -4,10 +4,10 @@ ifeval::["{docname}" == "available-menu-items"]
 
 The {pluginname} plugin provides the following menu items:
 
-ifeval::["{altplugincode}" != "nil"]
+ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
 endif::[]
-ifeval::["{altplugincode}" == "nil"]
+ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 endif::[]
 
@@ -25,10 +25,10 @@ ifeval::["{docname}" != "available-menu-items"]
 
 The {pluginname} plugin provides the following menu items:
 
-ifeval::["{altplugincode}" != "nil"]
+ifdef::altplugincode[]
 include::partial$menu-item-ids/{altplugincode}-menu-items.adoc[]
 endif::[]
-ifeval::["{altplugincode}" == "nil"]
+ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 endif::[]
 

@@ -7,7 +7,7 @@ The `+tinycomments_resolve+` function should asynchronously return a flag indica
 
 The `+tinycomments_resolve+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-`+conversationUid+` : The uid of the conversation the reply is targeting.
+`+conversationUid+`:: The uid of the conversation the reply is targeting.
 
 The `+done+` callback should accept the following object:
 
@@ -25,9 +25,9 @@ For example:
 
 [source,js]
 ----
-function resolve_comment_thread(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
-  fetch('https://api.example/conversations/' + conversationUid, {
+const resolve_comment_thread = (ref, done, fail) => {
+  const conversationUid = ref.conversationUid;
+  fetch(`https://api.example/conversations/${conversationUid}`, {
     method: 'PUT',
   }).then((response) => {
     if (response.ok) {
@@ -41,7 +41,7 @@ function resolve_comment_thread(ref, done, fail) {
 }
 
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create: create_comment,

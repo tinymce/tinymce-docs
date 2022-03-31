@@ -1,20 +1,20 @@
 [[typeahead_urls]]
 == `+typeahead_urls+`
 
-This option allows disable the typeahead url field feature.
+This option controls whether the typeahead url field feature should be enabled or disabled.
 
-Type : `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value : `+true+`
+*Default value:* `+true+`
 
-Possible Values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+typeahead_urls+`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   typeahead_urls: false
 });
 ----

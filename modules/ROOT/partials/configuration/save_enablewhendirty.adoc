@@ -3,7 +3,11 @@
 
 This option allows you to disable the save button until modifications have been made to the content of the editor. This option is enabled by default.
 
-Type: `+Boolean+`
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+save_enablewhendirty+`
 
@@ -13,6 +17,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'save',
   toolbar: 'save',
-  save_enablewhendirty: true
+  save_enablewhendirty: false
 });
 ----

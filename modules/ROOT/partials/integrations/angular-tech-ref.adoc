@@ -1,9 +1,9 @@
 *Covered in this section:*
 
-* xref:supportedangularversions[Supported Angular versions]
-* xref:installingthetinymceangularintegrationusingnpm[Installing the TinyMCE Angular integration using NPM]
-* xref:usingthetinymceangularintegration[Using the TinyMCE Angular integration]
-* xref:configuringtheeditor[Configuring the editor]
+* xref:supported-angular-versions[Supported Angular versions]
+* xref:installing-the-tinymce-angular-integration-using-npm[Installing the TinyMCE Angular integration using NPM]
+* xref:using-the-tinymce-angular-integration[Using the TinyMCE Angular integration]
+* xref:configuring-the-editor[Configuring the editor]
 ** xref:apikey[`+apiKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
@@ -15,16 +15,16 @@
 ** xref:plugins[`+plugins+`]
 ** xref:tagname[`+tagName+`]
 ** xref:toolbar[`+toolbar+`]
-* xref:usingthengmodeldirective[Using the `+ngModel+` directive]
+* xref:using-the-ngmodel-directive[Using the `+ngModel+` directive]
 ** xref:modelevents[`+modelEvents+`]
-* xref:usingwithreactiveforms[Using with reactive forms]
-* xref:eventbinding[Event binding]
-** xref:supportedbrowserevents[Supported browser events]
-** xref:supportedtinymceevents[Supported TinyMCE events]
+* xref:using-with-reactive-forms[Using with reactive forms]
+* xref:event-binding[Event binding]
+** xref:supported-browser-events[Supported browser events]
+** xref:supported-tinymce-events[Supported TinyMCE events]
 ** xref:allowedevents[`+allowedEvents+`]
 ** xref:ignoreevents[`+ignoreEvents+`]
 
-[[supportedangularversions]]
+[[supported-angular-versions]]
 == Supported Angular versions
 
 The following table shows the supported versions of Angular and the required version of the `+tinymce-angular+` integration package.
@@ -32,22 +32,23 @@ The following table shows the supported versions of Angular and the required ver
 [cols="^,^",options="header"]
 |===
 |Angular Version |`+tinymce-angular+` version
-|9+ |4.x
+|13+ |5.x or newer
+|9 to 12 |4.x
 |5 to 8 |3.x
 |4 or older |Not Supported
 |===
 
-[[installingthetinymceangularintegrationusingnpm]]
+[[installing-the-tinymce-angular-integration-using-npm]]
 == Installing the TinyMCE Angular integration using NPM
 
 To install the `+tinymce-angular+` package and save it to your `+package.json+`.
 
 [source,sh]
 ----
-$ npm install --save @tinymce/tinymce-angular
+npm install --save @tinymce/tinymce-angular
 ----
 
-[[usingthetinymceangularintegration]]
+[[using-the-tinymce-angular-integration]]
 == Using the TinyMCE Angular integration
 
 . Import the `+EditorModule+` from the npm package using:
@@ -82,7 +83,7 @@ Add the `+EditorModule+` to `+@NgModule({imports})+`:
 <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
 ----
 
-[[configuringtheeditor]]
+[[configuring-the-editor]]
 == Configuring the editor
 
 The editor accepts the following properties:
@@ -112,9 +113,9 @@ None of the configuration properties are *required* for `+tinymce-angular+` to w
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default value : `+no-api-key+`
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+'no-api-key'+`
 
 ==== Example: Using `+apiKey+`
 
@@ -128,15 +129,18 @@ Type : `+String+`
 [[cloudchannel]]
 === `+cloudChannel+`
 
-Default value : `{productmajorversion}`
+*Type:* `+String+`
 
-Possible values : `{productmajorversion}-stable`, `{productmajorversion}-testing`, `{productmajorversion}-dev`
+*Default value:* `'{productmajorversion}'`
+
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
 * `{productmajorversion}-stable` (*Default*): The current enterprise release of {productname}.
 * `{productmajorversion}-testing`: The current release candidate for the next enterprise release of {productname}.
 * `{productmajorversion}-dev`: The nightly-build version of {productname}.
+* A version number such as `{productminorversion}`: The specific enterprise release version of {productname}.
 
 Such as:
 
@@ -155,9 +159,11 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default value : `+false+`
+*Type:* `+Boolean+`
 
-Possible values : `+true+`, `+false+`
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+disabled+`
 
@@ -171,11 +177,11 @@ Possible values : `+true+`, `+false+`
 [[id]]
 === `+id+`
 
-An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-Default value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
 
 ==== Example: Using `+id+`
 
@@ -193,9 +199,9 @@ Object sent to the `+tinymce.init+` method used to initialize the editor.
 
 For information on the {productname} selector (`+tinymce.init+`), see: xref:basic-setup.adoc[Basic setup].
 
-Default value : `+{ }+`
+*Type:* `+Object+`
 
-Type : `+Object+`
+*Default value:* `+{ }+`
 
 ==== Example: Using `+init+`
 
@@ -214,9 +220,9 @@ Type : `+Object+`
 
 Initial content of the editor when the editor is initialized.
 
-Default value : `+' '+`
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+' '+`
 
 ==== Example: Using `+initialValue+`
 
@@ -234,9 +240,11 @@ Used to set the editor to inline mode. Using `+<editor [inline]="true"></editor>
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default value : `+false+`
+*Type:* `+Boolean+`
 
-Possible values : `+true+`, `+false+`
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+inline+`
 
@@ -254,7 +262,7 @@ Used to include plugins for the editor. Using `+<editor plugins="lists code"></e
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -270,11 +278,11 @@ Type : `+String+` or `+Array+`
 
 Used to specify the format of the content emitted by the `+tinymce-angular+` component when used in conjunction with forms or plain data bindings.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default value : `+'html'+`
+*Default value:* `+'html'+`
 
-Possible values : `+'html'+`, `+'text'+`
+*Possible values:* `+'html'+`, `+'text'+`
 
 ==== Example: Using `+outputFormat+`
 
@@ -290,9 +298,9 @@ Possible values : `+'html'+`, `+'text'+`
 
 Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to define the HTML element for the editor in inline mode.
 
-Default value : `+'div'+`
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+'div'+`
 
 ==== Example: Using `+tagName+`
 
@@ -311,9 +319,9 @@ Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic"></
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-Possible values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Type:* `+String+`
 
-Type : `+String+`
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 ==== Example: Using `+toolbar+`
 
@@ -325,7 +333,7 @@ Type : `+String+`
 ></editor>
 ----
 
-[[usingthengmodeldirective]]
+[[using-the-ngmodel-directive]]
 == Using the `+ngModel+` directive
 
 The `+ngModel+` directive can be added to use the editor in a form:
@@ -344,11 +352,11 @@ NOTE: This property requires `+tinymce-angular+` 4.0.0 or newer
 
 Used to specify the events that trigger the `+NgModelChange+` to emit.
 
-Default value : `+'change input undo redo'+`.
+*Type:* `+String+`
 
-Possible value : A space separated list of TinyMCE editor events.
+*Default value:* `+'change input undo redo'+`.
 
-Type : `+String+`
+*Possible values:* A space separated list of TinyMCE editor events.
 
 ==== Example: Using `+modelEvents+`
 
@@ -359,7 +367,7 @@ Type : `+String+`
 ></editor>
 ----
 
-[[usingwithreactiveforms]]
+[[using-with-reactive-forms]]
 == Using with reactive forms
 
 To use {productname} Angular component with reactive forms:
@@ -374,7 +382,7 @@ To use {productname} Angular component with reactive forms:
 
 For information on using reactive forms, see: https://angular.io/guide/reactive-forms[Angular documentation - Reactive Forms].
 
-[[eventbinding]]
+[[event-binding]]
 == Event binding
 
 Functions can be bound to editor events, such as:
@@ -391,7 +399,7 @@ When the handler is called (`+handleEvent+` in this example), it is called with 
 
 The following events are available:
 
-[[supportedbrowserevents]]
+[[supported-browser-events]]
 === Supported browser events
 
 * `+onBeforePaste+`
@@ -423,7 +431,7 @@ The following events are available:
 * `+onPaste+`
 * `+onSelectionChange+`
 
-[[supportedtinymceevents]]
+[[supported-tinymce-events]]
 === Supported TinyMCE events
 
 * `+onActivate+`
@@ -470,11 +478,11 @@ By default, all the available events will trigger from the editor to the `+tinym
 
 NOTE: This property requires `+tinymce-angular+` 4.2.0 or newer
 
-Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the xref:eventbinding[Event binding section].
+Used to provide an allow-list of valid events to trigger from the editor to the `+tinymce-angular+` component. By default, the component will emit all the events listed in the xref:event-binding[Event binding section].
 
-Possible values : A comma separated list of events to allow.
+*Type:* `+String+`
 
-Type : `+String+`
+*Possible values:* A comma separated list of events to allow.
 
 ==== Example: Using `+allowedEvents+`
 
@@ -492,9 +500,9 @@ NOTE: This property requires `+tinymce-angular+` 4.2.0 or newer
 
 Used to block a list of events from the `+tinymce-angular+` component.
 
-Possible values : A comma separated list of events to ignore.
+*Type:* `+String+`
 
-Type : `+String+`
+*Possible values:* A comma separated list of events to ignore.
 
 ==== Example: Using `+ignoreEvents+`
 

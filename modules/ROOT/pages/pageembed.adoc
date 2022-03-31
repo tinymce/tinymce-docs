@@ -1,16 +1,13 @@
 = Page Embed plugin
-
-:title_nav: Page Embed
+:navtitle: Page Embed
 :description: Easily inserts iframe into the content.
-:keywords: view Page Embed insert iframe
-:controls: toolbar button, menu item
+:keywords: view, Page Embed, insert, iframe
 :pluginname: Page Embed
 :plugincode: pageembed
-:altplugincode: nil
 :pluginminimumplan: tiertwo
 
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The *Page Embed* plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for:
 
@@ -20,7 +17,7 @@ The *Page Embed* plugin embeds a page in the content using an iframe (Inline fra
 
 == Try our Page Embed plugin demo
 
-liveDemo::page-embed[ ]
+liveDemo::page-embed[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -33,7 +30,6 @@ Use the following script to create a Page Embed toolbar button:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pageembed',
-  menubar: 'view',
   toolbar: 'pageembed'
 });
 ----
@@ -88,7 +84,7 @@ IMPORTANT: The following CSS script must be added to the webpage for the default
 
 [source,css]
 ----
-include::partial$css-codeblock/pageembed-plugin-css.adoc[]
+include::example$css-codeblock/pageembed-plugin.css[]
 ----
 
 For more information on configuring CSS, refer to the xref:add-css-options.adoc#content_css[content_css] section.

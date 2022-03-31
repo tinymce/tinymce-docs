@@ -1,8 +1,8 @@
 = Cloud deployment of plugins Only
-
 :description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
 :description: Connect to Tiny Cloud within a hybrid deployment.
-:keywords: tinymce cloud script textarea apiKey hybrid
+:keywords: tinymce, cloud, script, textarea, apiKey, hybrid
+:productSource: cloud
 
 A hybrid deployment of {cloudname} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{gettiny}/[{productname} Community edition] to get started.
 
@@ -19,34 +19,15 @@ Add the following script in the webpage once the script tag to load {productname
 
 == Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the xref:basic-setup.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
-
-* xref:mentions.adoc[Mentions]
-* xref:tinydrive-introduction.adoc[{cloudfilemanager}]
-* xref:introduction-to-tiny-comments.adoc[Comments]
-* xref:pageembed.adoc[Page Embed]
-* xref:permanentpen.adoc[Permanent Pen]
-* xref:formatpainter.adoc[Format Painter]
-* xref:introduction-to-powerpaste.adoc[PowerPaste]
-* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
-+
-NOTE: `+spellchecker_rpc_url+` is *not* required when enabling this plugin via link:/how-to-guides/cloud-deployment-guide/[{cloudname}].
-
-* xref:editimage.adoc[Edit Image (with configured image proxy)]
-+
-NOTE: Configuration of the `+editimage_cors_hosts+` and `+editimage_proxy_service_url+` options occurs automatically.
-
-* xref:moxiemanager.adoc[Moxie Manager]
-* xref:a11ychecker.adoc[Accessibility Checker]
-* xref:advcode.adoc[Advanced Code Editor]
-* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
-* xref:linkchecker.adoc[Link Checker]
-+
 NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
-The following is a complete example:
+Extend the xref:basic-setup.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-The example below has the following:
+include::partial$misc/premium-plugin-list.adoc[]
+
+include::partial$misc/admon-cloud-configured-options.adoc[]
+
+The following is a complete example, where:
 
 * The {cloudname} `+API key+` has the value `+no-api-key+`.
 * The {cloudname} has the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] plugin enabled.
@@ -80,8 +61,8 @@ Ensure that the following URLs are accessible via this proxy if the network has 
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.
-* https://imageproxy.tiny.cloud
-* https://hyperlinking.tiny.cloud
-* https://spelling.tiny.cloud
+* +https://imageproxy.tiny.cloud+
+* +https://hyperlinking.tiny.cloud+
+* +https://spelling.tiny.cloud+
 
 Ensure the `+tiny-api-key+` and `+tinymce-api-key+` headers are retained while requesting the list of above URLs.

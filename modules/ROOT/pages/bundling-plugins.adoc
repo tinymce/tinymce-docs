@@ -1,6 +1,5 @@
 = Bundling TinyMCE plugins using module loading
-
-:title_nav: Plugins
+:navtitle: Plugins
 :description_short: Information on bundling plugins
 :description: Information on bundling TinyMCE plugins using module loading
 
@@ -45,7 +44,7 @@ import '../tinymce/plugins/example/plugin';
 a|
 [source, js]
 ----
-var pluginCss = require('tinymce/plugins/example/content.css');
+const pluginCss = require('tinymce/plugins/example/content.css');
 require('tinymce/plugins/example');
 ----
 
@@ -53,7 +52,7 @@ require('tinymce/plugins/example');
 a|
 [source, js]
 ----
-var pluginCss = require('../tinymce/plugins/example/content.css');
+const pluginCss = require('../tinymce/plugins/example/content.css');
 require('../tinymce/plugins/example/plugin.js');
 ----
 |===

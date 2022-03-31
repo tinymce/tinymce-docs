@@ -9,13 +9,14 @@ Example `+src/editor.js+`
 /* Import TinyMCE */
 import tinymce from 'tinymce';
 
-/* Default icons are required. Also import custom icons if applicable */
+/* Default icons are required. After that, import custom icons if applicable */
 import 'tinymce/icons/default';
 
-/* A theme is also required */
+/* Required TinyMCE components */
 import 'tinymce/themes/silver';
+import 'tinymce/models/dom';
 
-/* Import the skin */
+/* Import a skin (can be a custom skin instead of the default) */
 import 'tinymce/skins/ui/oxide/skin.css';
 
 /* Import plugins */
@@ -33,8 +34,10 @@ import 'tinymce/plugins/table';
 /* import './plugins/powerpaste/plugin'; */
 /* import './plugins/powerpaste/js/wordimport'; */
 
-/* Import content css */
-import contentUiCss from 'tinymce/skins/ui/oxide/content.css';
+/* content UI CSS is required */
+import contentUiSkinCss from 'tinymce/skins/ui/oxide/content.css';
+
+/* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
 import contentCss from 'tinymce/skins/content/default/content.css';
 
 /* Initialize TinyMCE */
@@ -45,7 +48,7 @@ export function render () {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentUiCss.toString() + '\n' + contentCss.toString(),
+    content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
   });
 };
 ----

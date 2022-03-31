@@ -1,9 +1,9 @@
 [[content_css]]
-== content_css
+== `+content_css+`
 
 The `+content_css+` option loads the specified CSS files into the editable area.
 
-Type : `+String+`, `+Array+`
+*Type:* `+String+`, `+Array+`
 
 NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {productname} is rendered in, not using the `+content_css+` option.
 
@@ -19,7 +19,7 @@ If a relative path is specified, it will be resolved in relation to the URL of t
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : '/myLayout.css'  // resolved to http://domain.mine/myLayout.css
+  content_css: '/myLayout.css'  // resolved to http://domain.mine/myLayout.css
 });
 ----
 
@@ -31,7 +31,7 @@ tinymce.init({
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : 'mycontent.css'  // resolved to http://domain.mine/mysite/mycontent.css
+  content_css: 'mycontent.css'  // resolved to http://domain.mine/mysite/mycontent.css
 });
 ----
 
@@ -43,7 +43,7 @@ To load multiple stylesheets, provide the paths as either a array of strings or 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : 'mycontent.css,mycontent2.css'  // includes both CSS files in header
+  content_css: 'mycontent.css,mycontent2.css'  // includes both CSS files in header
 });
 ----
 
@@ -53,7 +53,7 @@ tinymce.init({
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css: ['mycontent.css', 'mycontent2.css']  // includes both CSS files in header, ability to have CSS with `,` in URL
+  content_css: [ 'mycontent.css', 'mycontent2.css' ]  // includes both CSS files in header, ability to have CSS with `,` in URL
 });
 ----
 
@@ -80,7 +80,7 @@ tinymce.init({
 ----
 
 [TIP]
---
+====
 To remove the margins between paragraphs (sometimes requested for using {productname} in email clients), add the following style to the content CSS:
 
 [source,css]
@@ -91,4 +91,4 @@ To remove the margins between paragraphs (sometimes requested for using {product
 */
 p { margin: 0 }
 ----
---
+====

@@ -1,6 +1,5 @@
 = Editor content behaviors
-
-:title_nav: Behaviors
+:navtitle: Behaviors
 :description: Options for changing the behavior of editor content.
 
 include::partial$configuration/custom_undo_redo_levels.adoc[]
@@ -10,6 +9,8 @@ include::partial$configuration/end_container_on_empty_block.adoc[]
 include::partial$configuration/draggable_modal.adoc[]
 
 include::partial$configuration/keep_styles.adoc[]
+
+include::partial$configuration/editable_class.adoc[]
 
 include::partial$configuration/noneditable_class.adoc[]
 

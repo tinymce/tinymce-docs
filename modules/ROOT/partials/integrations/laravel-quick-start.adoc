@@ -162,7 +162,7 @@ _File:_ `+resources/views/welcome.blade.php+`
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TinyMCE in Laravel</title>
     <!-- Insert the blade containing the TinyMCE configuration and source script -->

@@ -68,9 +68,9 @@ export default function App() {
             'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
           ],
           toolbar: 'undo redo | blocks | ' +
-          'bold italic backcolor | alignleft aligncenter ' +
-          'alignright alignjustify | bullist numlist outdent indent | ' +
-          'removeformat | help',
+            'bold italic forecolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help',
           content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
         }}
       />
@@ -100,12 +100,12 @@ include::partial$integrations/bundling-integration.adoc[]
 
 endif::[]
 ifeval::["{productSource}" == "zip"]
-. {productname} can be self-hosted by either: xref:deployingtinymceindependent[Deploying {productname} independent of the React application], or xref:bundle[Bundling {productname} with the React application].
+. {productname} can be self-hosted by either: xref:deploying-tinymce-independent[Deploying {productname} independent of the React application], or xref:bundle[Bundling {productname} with the React application].
 
-* [[deployingtinymceindependent]] Deploying {productname} independent of the React application. To use a {productname} instance that has been deployed independent of the React application, use: xref:usingthetinyscriptsrcprop[the `+tinymceScriptSrc+` prop], or xref:usinganhtmlscripttag[an HTML `+<script>+` tag].
+* [[deploying-tinymce-independent]] Deploying {productname} independent of the React application. To use a {productname} instance that has been deployed independent of the React application, use: xref:using-the-tinymcescriptsrc-prop[the `+tinymceScriptSrc+` prop], or xref:using-an-html-script-tag[an HTML `+<script>+` tag].
 +
 --
-* [[usingthetinyscriptsrcprop]] Using the `+tinymceScriptSrc+` prop:
+* [[using-the-tinymcescriptsrc-prop]] Using the `+tinymceScriptSrc+` prop:
 ** To use an independent deployment of {productname}, add the `tinymceScriptSrc` prop to specify the path to the {productname} script, such as:
 +
 [source,jsx]
@@ -118,7 +118,7 @@ ifeval::["{productSource}" == "zip"]
 ----
 <Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
 ----
-* [[usinganhtmlscripttag]] Using an HTML `<script>` tag:
+* [[using-an-html-script-tag]] Using an HTML `<script>` tag:
 ** Add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
 [source,html]
@@ -169,7 +169,7 @@ npm run build
 
 The application has now been deployed on the web server.
 
-NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:<port>/my_react_application.
+NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as +http://localhost:<port>/my_react_application+.
 
 == Next Steps
 

@@ -2,7 +2,6 @@ tinymce.init({
   selector: 'textarea#template',
   height: 600,
   plugins: 'template',
-  menubar: 'insert',
   toolbar: 'template',
   template_mdate_format: '%m/%d/%Y : %H:%M',
   template_replace_values: {

@@ -1,5 +1,5 @@
 [[font_css]]
-== font_css
+== `+font_css+`
 
 The `+font_css+` option loads the specified font CSS files into both the editable area and the webpage {productname} is rendered in.
 
@@ -7,7 +7,7 @@ Font CSS files should only contain CSS for specifying custom fonts using the `+@
 
 NOTE: To allow users to apply the fonts added though `+font_css+`, update the fonts list using the xref:user-formatting-options.adoc#font_family_formats[`+font_family_formats+` option].
 
-Type : `+String+`, `+Array+`
+*Type:* `+String+`, `+Array+`
 
 NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant font CSS files should be loaded as part of the webpage {productname} is rendered in, not using the `+font_css+` option.
 
@@ -21,7 +21,7 @@ If a relative path is specified, it will be resolved in relation to the URL of t
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css : '/myFont.css'  // resolved to http://domain.mine/myFont.css
+  font_css: '/myFont.css'  // resolved to http://domain.mine/myFont.css
 });
 ----
 
@@ -33,7 +33,7 @@ tinymce.init({
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css : 'myFont.css'  // resolved to http://domain.mine/mysite/myFont.css
+  font_css: 'myFont.css'  // resolved to http://domain.mine/mysite/myFont.css
 });
 ----
 
@@ -45,7 +45,7 @@ To load multiple font CSS files, provide the paths as either a array of strings 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css : 'myFont.css,myFont2.css'  // includes both font CSS files in header
+  font_css: 'myFont.css,myFont2.css'  // includes both font CSS files in header
 });
 ----
 
@@ -55,6 +55,6 @@ tinymce.init({
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  font_css: ['myFont.css', 'myFont2.css']  // includes both font CSS files in header, ability to have CSS with `,` in URL
+  font_css: [ 'myFont.css', 'myFont2.css' ]  // includes both font CSS files in header, ability to have CSS with `,` in URL
 });
 ----

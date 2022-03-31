@@ -1,8 +1,6 @@
 = Configure Enhanced Media Embed Server
-
 :description: Instructions for getting the Enhanced Media Embed server configured.
-:keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
-
+:keywords: enterprise, pricing, video, youtube, vimeo, mp3, mp4, mov, movie, clip, film, link, linkchecking, linkchecker, mediaembed, media
 
 Once you have the xref:introduction-to-premium-selfhosted-services.adoc[server-side component] installed, additional configuration to your `+application.conf+` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
@@ -25,7 +23,7 @@ To use your own Iframely account, provide the following configuration items:
 
 Example with Iframely enabled (replace `+xxx+` with your Iframely API key):
 
-[source,conf]
+[source,properties]
 ----
 ephox {
   embed {
@@ -40,7 +38,7 @@ ephox {
 
 Example with Iframely disabled:
 
-[source,conf]
+[source,properties]
 ----
 ephox {
   embed {
@@ -63,7 +61,7 @@ The service can be configured to hit a specific oEmbed endpoint when media from 
 
 Example:
 
-[source,conf]
+[source,properties]
 ----
 ephox {
   embed {
@@ -300,7 +298,7 @@ It is also possible to configure Iframely with custom oEmbed endpoints. For exam
 
 Example (replace `+xxx+` with your Iframely API key):
 
-[source,conf]
+[source,properties]
 ----
 ephox {
   embed {

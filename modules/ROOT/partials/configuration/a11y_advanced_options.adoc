@@ -13,11 +13,11 @@ Setting `+a11y_advanced_options+` to `+true+`:
 
 IMPORTANT: When `+a11y_advanced_options+` is set to `+true+`, xref:a11ychecker.adoc#a11ychecker_allow_decorative_images[`+a11ychecker_allow_decorative_images+`] will default to `+true+`.
 
-Type : `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value : `+false+`
+*Default value:* `+false+`
 
-Possible Values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+a11y_advanced_options+`
 
@@ -28,6 +28,7 @@ ifeval::["{includedSection}" == "imagePlugin"]
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
+  toolbar: 'image',
   a11y_advanced_options: true
 });
 ----
@@ -40,6 +41,7 @@ ifeval::["{includedSection}" == "a11yPlugin"]
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
   a11y_advanced_options: true
 });
 ----
@@ -52,6 +54,7 @@ ifndef::includedSection[]
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker image',
+  toolbar: 'a11ycheck image',
   a11y_advanced_options: true
 });
 ----

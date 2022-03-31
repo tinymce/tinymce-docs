@@ -1,16 +1,14 @@
 = <Plugin Name> plugin
-
-:title_nav: <Plugin Name>
+:navtitle: <Plugin Name>
 :description: <What does this plugin do? What is the benefit? (One sentence description)>.
 :description_short: <Like description, but shorter (if possible)>.
-:keywords: plugin <plugincode> etc.
+:keywords: plugin, <plugincode>, etc.
 
 // Replace content in angled brackets (<>) and remove my comments before committing!!!
 // Official product name as a string. Can be used in content using the {pluginname} variable
 :pluginname: <Plugin Name>
 // The plugin identifier used to add the plugin to an editor using the `plugin` option. Provide as a string. Can be used in content using the {plugincode} variable
 :plugincode: <plugincode>
-:altplugincode: nil
 :plugincategory: premium|opensource
 
 include::partial$misc/admon_premium_plugin.adoc[]

@@ -6,11 +6,11 @@ This option configures which image file formats are accepted by the editor. Chan
 * Which image file formats are allowed to be uploaded in the xref:image.adoc[Image] dialog.
 * Which image file formats are recognized and placed in an `+img+` element by the core paste and xref:introduction-to-powerpaste.adoc[PowerPaste] `+smart_paste+` functionality.
 
-Type: `+String+`
+*Type:* `+String+`
 
-Default Value: `+'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp'+`
+*Default value:* `+'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp'+`
 
-Possible Values: A list of valid web image file extensions. For a list of possible values see: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types[MDN Web Docs - Image file type and format guide].
+*Possible values:* A list of valid web image file extensions. For a list of possible values see: https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types[MDN Web Docs - Image file type and format guide].
 
 === Example: Using `+images_file_types+`
 
@@ -19,6 +19,7 @@ Possible Values: A list of valid web image file extensions. For a list of possib
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
+  toolbar: 'image',
   images_file_types: 'jpg,svg,webp'
 });
 ----

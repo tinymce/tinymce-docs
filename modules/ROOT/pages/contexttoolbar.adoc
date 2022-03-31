@@ -1,8 +1,7 @@
 = Context toolbar
-
-:title_nav: Context toolbar
+:navtitle: Context toolbar
 :description: Creating custom context toolbars for TinyMCE 6
-:keywords: contexttoolbar context toolbar contexttoolbarapi
+:keywords: contexttoolbar, context toolbar, contexttoolbarapi
 :contextItemType: toolbar
 
 A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a xref:contextform.adoc[ContextForm]. The buttons comes as a list of strings, where each string is a registered name of a button.
@@ -26,7 +25,7 @@ include::partial$context/positioning.adoc[]
 
 This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
-liveDemo::context-toolbar[ height="600" tab="js" ]
+liveDemo::context-toolbar[height="600", tab="js"]
 
 == Launching a context toolbar programmatically
 

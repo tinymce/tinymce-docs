@@ -1,5 +1,4 @@
 = Spelling service settings
-
 :description: Configuration options for the Spelling premium server-side component.
 
 The following settings for the Spelling premium server-side component are optional. These settings should be added to the `+application.conf+` file described in xref:configure-required-services.adoc[Required configuration for the server-side components].
@@ -20,7 +19,7 @@ include::partial$misc/hunspell-dictionaries-path.adoc[]
 
 === `+custom-dictionaries-path+` (optional)
 
-For information on creating custom dictionaries, see: xref:custom-dictionaries-for-tiny-spellchecker.adoc#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
+For information on creating custom dictionaries, see: xref:custom-dictionaries-for-tiny-spellchecker.adoc#creating-custom-dictionary-files[Adding custom dictionaries - Creating custom dictionary files].
 
 include::partial$misc/custom-dictionaries-path.adoc[]
 

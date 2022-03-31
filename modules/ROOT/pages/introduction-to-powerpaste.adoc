@@ -1,15 +1,12 @@
 = Introduction to PowerPaste
-
-:title_nav: Introduction
+:navtitle: Introduction
 :description: The PowerPaste plugin automatically cleans up content from Microsoft Word, Microsoft Excel, Google Docs, and HTML sources.
-:keywords: enterprise powerpaste power microsoft word excel google docs
+:keywords: enterprise, powerpaste, power, microsoft, word, excel, google docs
 :pluginname: PowerPaste
 :plugincode: powerpaste
-:altplugincode: nil
 :pluginminimumplan: tiertwo
 
-
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The {productname} *PowerPaste* plugin automatically cleans up content from Microsoft Word, Microsoft Excel, Google Docs, and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
@@ -17,7 +14,7 @@ NOTE: Due to limitations in Microsoft Excel online (part of Office Live) PowerPa
 
 == Try our PowerPaste plugin demo
 
-liveDemo::paste-from-word[ ]
+liveDemo::paste-from-word[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 

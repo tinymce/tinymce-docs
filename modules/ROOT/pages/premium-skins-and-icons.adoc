@@ -1,8 +1,7 @@
 = Tiny Skins and Icon Packs
-
-:title_nav: Tiny Skins and Icon Packs
+:navtitle: Tiny Skins and Icon Packs
 :description: Quickly give TinyMCE a new look.
-:keywords: skin skins icon icons material bootstrap customize theme
+:keywords: skin, skins, icon, icons, material, bootstrap, customize, theme
 
 The {prem_skins_icons} lets you quickly give {productname} a new look. Just choose one of our pre-made skins and icon packs.
 
@@ -36,9 +35,9 @@ Available values for xref:add-css-options.adoc#content_css[content_css]:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',    // change this value according to your HTML
-  skin: 'fabric',       // Name of the skin
-  content_css: 'fabric' // Name of the content skin
+  selector: 'textarea',  // change this value according to your HTML
+  skin: 'fabric',        // Name of the skin
+  content_css: 'fabric'  // Name of the content skin
 });
 ----
 

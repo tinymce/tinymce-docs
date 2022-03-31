@@ -1,4 +1,3 @@
-const path = require('path');
 const { Liquid } = require('liquidjs');
 
 /**
@@ -38,6 +37,7 @@ const { Liquid } = require('liquidjs');
  When the example.js file is present, the link to the external codepen site is disabled
  */
 
+const templateCache = {};
 
 const validContent = {
   html: 'index.html',
@@ -65,6 +65,23 @@ const defaultTabs = [
   }
 ];
 
+const loadDemoResource = (catalog, ctx, filePath) => {
+  const demoCss = catalog.resolveResource(`live-demos/${filePath}`, ctx, 'example', [ 'example' ]);
+  return demoCss ? demoCss.contents.toString() : undefined;
+};
+
+const loadTemplate = (engine, catalog, ctx, filePath) => {
+  const key = `${ctx.component}/${ctx.version}/modules/${ctx.module}/examples/${filePath}`;
+  if (templateCache.hasOwnProperty(key)) {
+    return templateCache[key];
+  } else {
+    const file = loadDemoResource(catalog, ctx, filePath);
+    const template = file !== undefined ? engine.parse(file, key) : undefined;
+    templateCache[key] = template;
+    return template;
+  }
+};
+
 const getDemoTitle = (type) => {
   switch (type) {
     case 'tinydrive':
@@ -85,7 +102,15 @@ const getScript = (type, docAttrs) => {
   }
 };
 
-const getTabs = (type, contentData, initialTab) => {
+const getDemoCss = (catalog, type, ctx) => {
+  if (type === 'tinydrive') {
+    return loadDemoResource(catalog, ctx, 'tinydrive.css');
+  } else {
+    return '';
+  }
+};
+
+const getTabs = (type, contentData) => {
   const tabs = defaultTabs.filter((d) => {
     return d.name === 'run' || contentData.hasOwnProperty(d.name);
   }).map((d) => ({
@@ -109,17 +134,16 @@ const loadContent = (engine, catalog, id, docAttrs) => {
     module: docAttrs['page-module'],
     component: docAttrs['page-component-name'],
     version: docAttrs['page-component-version'],
-  }
+  };
 
   Object.entries(validContent).forEach(([type, file]) => {
     const hasKey = 'has' + type[0].toUpperCase() + type.slice(1);
 
-    // If the file exists, then render the content
-    const catalogFile = catalog.resolveResource(`live-demos/${id}/${file}`, ctx, 'example', [ 'example' ]);
-    if (catalogFile !== undefined) {
-      data[type] = engine.renderFileSync(catalogFile.path, {
+    // If the template file exists then render the content
+    const template = loadTemplate(engine, catalog, ctx, `${id}/${file}`);
+    if (template !== undefined) {
+      data[type] = engine.renderSync(template, {
         baseurl: `${docAttrs['site-url']}/${ctx.component}/${ctx.version}`,
-        baseimagesurl: `${docAttrs['site-url']}/${ctx.component}/${ctx.version}/${docAttrs['imagesdir']}`,
         ...docAttrs
       });
       data[hasKey] = true;
@@ -158,11 +182,17 @@ module.exports.register = (registry, context) => {
       const scriptUrl = attrs.script_url_override || getScript(type, docAttrs);
 
       // Render the template
-      const rootLiveDemoDir = path.join(docAttrs['page-origin-start-path'], 'modules', 'ROOT', 'examples', 'live-demos');
-      const renderedContent = engine.renderFileSync('live-demo.adoc.liquid', {
+      const rootCtx = {
+        module: 'ROOT',
+        component: docAttrs['page-component-name'],
+        version: docAttrs['page-component-version'],
+      };
+      const template = loadTemplate(engine, catalog, rootCtx, 'live-demo.adoc.liquid');
+      const renderedContent = engine.renderSync(template, {
         liveDemo: {
           ...attrs,
           type: type,
+          css: getDemoCss(catalog, type, rootCtx),
           id: target,
           content: contentData,
           initialTab: initialTab,
@@ -170,9 +200,9 @@ module.exports.register = (registry, context) => {
             include: scriptsLoaded[scriptUrl] !== true,
             url: scriptUrl,
           },
-          tabs: getTabs(type, contentData, initialTab)
+          tabs: getTabs(type, contentData)
         }
-      }, { root: rootLiveDemoDir });
+      });
       scriptsLoaded[scriptUrl] = true;
 
       // Parse the content using AsciiDoctor

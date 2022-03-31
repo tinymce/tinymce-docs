@@ -7,11 +7,11 @@ The `+tinycomments_reply+` function saves the comment as a reply to an existing 
 
 The `+tinycomments_reply+` function is given a request (req) object as the first parameter, which has these fields:
 
-`+conversationUid+` : The uid of the conversation the reply is targeting.
+`+conversationUid+`:: The uid of the conversation the reply is targeting.
 
-`+content+` : The content of the comment to create.
+`+content+`:: The content of the comment to create.
 
-`+createdAt+` : The date the comment was created.
+`+createdAt+`:: The date the comment was created.
 
 The `+done+` callback should accept the following object:
 
@@ -26,12 +26,10 @@ For example:
 
 [source,js]
 ----
-function reply_comment(ref, done, fail) {
-  let conversationUid = ref.conversationUid;
-  let content = ref.content;
-  let createdAt = ref.createdAt;
+const reply_comment = (ref, done, fail) => {
+  const { conversationUid, content, createdAt } = ref;
 
-  fetch('https://api.example/conversations/' + conversationUid, {
+  fetch(`https://api.example/conversations/${conversationUid}`, {
     method: 'POST',
     body: JSON.stringify({ content: content, createdAt: createdAt }),
     headers: {
@@ -55,7 +53,7 @@ function reply_comment(ref, done, fail) {
 }
 
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tinycomments',
   tinycomments_mode: 'callback',
   tinycomments_create: create_comment,

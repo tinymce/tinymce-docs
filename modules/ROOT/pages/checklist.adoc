@@ -1,16 +1,12 @@
 = Checklist plugin
-
-:title_nav: Checklist
+:navtitle: Checklist
 :description: Add checklists to your content.
-:keywords: lists todo checklist
-:controls: toolbar button
+:keywords: lists, todo, checklist
 :pluginname: Checklist
 :plugincode: checklist
-:altplugincode: nil
 :pluginminimumplan: tiertwo
 
-
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The *Checklist* plugin allows the user to add checkbox lists to their content for creating checklists.
 
@@ -18,7 +14,7 @@ The *Checklist* plugin allows the user to add checkbox lists to their content fo
 
 In the {productname} editor, checklists are presented as lists with small checkboxes beside the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 
-liveDemo::checklist[ ]
+liveDemo::checklist[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -60,7 +56,7 @@ To make the checklists look correct make sure to include this css on your page:
 
 [source,css]
 ----
-include::partial$css-codeblock/checklist-plugin-css.adoc[]
+include::example$css-codeblock/checklist-plugin.css[]
 ----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]

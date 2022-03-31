@@ -1,9 +1,9 @@
-var button = document.querySelector('.tinydrive-standalone-demo-browse');
+const button = document.querySelector('.tinydrive-standalone-demo-browse');
 
-button.addEventListener('click', function () {
+button.addEventListener('click', () => {
   tinydrive.browse({
     token_provider: '/your-local/jwt-provider'
-  }).then(function () {
+  }).then(() => {
     console.log('Dialog closed');
   });
 }, false);

@@ -1,17 +1,17 @@
 [[linkchecker_service_url]]
 == `+linkchecker_service_url+`
 
-A URL of the server-side link validation service. This is required option, without it plugin will fail to operate and will throw a corresponding warning on the screen.
+A URL of the server-side link validation service. This is a required option, without it, the plugin will fail to operate and will throw a corresponding warning on the screen.
 
-Type: `+String+`
+*Type:* `+String+`
 
 === Example: Using `+linkchecker_service_url+`
 
 [source,js]
 ----
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'linkchecker',
-    linkchecker_service_url: 'http://mydomain.com/linkchecker'
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'linkchecker',
+  linkchecker_service_url: 'http://mydomain.com/linkchecker'
 });
 ----

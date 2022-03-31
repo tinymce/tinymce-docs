@@ -1,20 +1,20 @@
 [[quickbars_selection_toolbar]]
-== quickbars_selection_toolbar
+== `+quickbars_selection_toolbar+`
 
 The *quickbars_selection_toolbar* option configures the Quick Selection toolbar provided by the xref:quickbars.adoc[quickbars plugin]. To change the buttons on the Quick Selection toolbar, provide a space-separated string of xref:available-toolbar-buttons.adoc[toolbar button names]. The Quick Selection toolbar is intended for buttons related to formatting content, but any xref:available-toolbar-buttons.adoc[{productname} toolbar buttons] or xref:custom-toolbarbuttons.adoc[custom toolbar buttons] are allowed.
 
 To disable the Quick Selection toolbar, set `+quickbars_selection_toolbar+` to `+false+`.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Defaults : `+'bold italic | quicklink h2 h3 blockquote'+`
+*Default value:* `+'bold italic | quicklink h2 h3 blockquote'+`
 
 === Example: Customizing the Quick Selection toolbar
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'quickbars',
   quickbars_selection_toolbar: 'bold italic | blocks | quicklink blockquote'
 });
@@ -27,7 +27,7 @@ To disable the Quick Selection toolbar, set `+quickbars_selection_toolbar+` to `
 [source,js]
 ----
 tinymce.init({
-  selector: 'div.tinymce',
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'quickbars',
   quickbars_selection_toolbar: false
 });

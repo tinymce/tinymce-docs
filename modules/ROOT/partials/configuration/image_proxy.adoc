@@ -15,7 +15,7 @@ This option can be used as a way of editing images across domains using a third-
 
 NOTE: `{proxy_setting_name}` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}]. If using the self-hosted Java proxy service provided as part of Paid {productname} subscriptions, use the xref:{plugincode}.adoc#{proxy_service_setting_name}[`{proxy_service_setting_name}`] option instead.
 
-Type: `+String+`
+*Type:* `+String+`
 
 === Example: Using `{proxy_setting_name}`
 

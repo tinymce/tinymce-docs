@@ -1,6 +1,5 @@
 = Autocompleter
-
-:title_nav: Autocompleter
+:navtitle: Autocompleter
 :description: Add a custom autocompleter to TinyMCE 6.
 :keywords: autocomplete
 
@@ -193,10 +192,10 @@ The following examples show how to create a special characters autocompleters.
 
 This example uses the standard autocompleter item and will show when user types the colon (`+:+`) character and at least one additional character.
 
-liveDemo::autocompleter-autocompleteitem[ height="300" tab="js" ]
+liveDemo::autocompleter-autocompleteitem[height="300", tab="js"]
 
 === Example: Using `+CardMenuItems+` in the Autocompleter
 
 This example uses xref:cardmenuitem[CardMenuItems] and will show when a user types a hyphen (`+-+`) character and at least one additional character.
 
-liveDemo::autocompleter-cardmenuitem[ height="300" tab="js" ]
+liveDemo::autocompleter-cardmenuitem[height="300", tab="js"]

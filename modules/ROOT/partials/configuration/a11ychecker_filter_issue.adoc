@@ -5,14 +5,12 @@ The `+a11ychecker_filter_issue+` option allows Accessibility Checker issues to b
 
 The function will be passed the results of the xref:a11ychecker.adoc#getreport[`+getReport()+` API]. To filter an issue from the Accessibility Checker report, the callback needs to return `+false+` for that particular issue.
 
-Type : `+Function+`
+*Type:* `+Function+`
 
-Default Value :
+*Default value:*
 [source,js]
 ----
-function(issue) {
-  return true;
-}
+(issue) => true;
 ----
 
 === Example: Using `+a11ychecker_filter_issue+` to filter out the Accessibility Checker T1 rule
@@ -25,7 +23,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11ychecker_filter_issue: function(issue) {
+  a11ychecker_filter_issue: (issue) => {
     return issue.id !== 'T1';
   }
 });
@@ -41,7 +39,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11ychecker_filter_issue: function(issue) {
+  a11ychecker_filter_issue: (issue) => {
     return issue.element.nodeName.toLowerCase() !== 'table';
   }
 });

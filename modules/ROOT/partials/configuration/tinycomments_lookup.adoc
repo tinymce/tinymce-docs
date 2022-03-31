@@ -5,13 +5,13 @@ The Comments plugin uses the `+tinycomments_lookup+` function to retrieve an exi
 
 The *Display names* configuration must be considered for the `+tinycomments_lookup+` function:
 
-Display names : The Comments plugin uses a simple string for the display name. For the `+lookup+` function, Comments expects each comment to contain the author's display name, not a user ID, as Comments does not know the user identities. The `+lookup+` function should be implemented considering this and resolve user identifiers to an appropriate display name.
+Display names:: The Comments plugin uses a simple string for the display name. For the `+lookup+` function, Comments expects each comment to contain the author's display name, not a user ID, as Comments does not know the user identities. The `+lookup+` function should be implemented considering this and resolve user identifiers to an appropriate display name.
 
 The conventional conversation object structure that should be returned via the `+done+` callback is as follows:
 
 The `+tinycomments_lookup+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-`+conversationUid+` : The uid of the conversation the reply is targeting.
+`+conversationUid+`:: The uid of the conversation the reply is targeting.
 
 The `+done+` callback should accept the following object:
 
@@ -48,48 +48,43 @@ For example:
 
 [source,js]
 ----
-function lookup_comment({ conversationUid }, done, fail) {
-  let lookup = async function () {
-    let convResp = await fetch(
-      'https://api.example/conversations/' + conversationUid
+const lookup_comment = ({ conversationUid }, done, fail) => {
+  const lookup = async () => {
+    const convResp = await fetch(
+      `https://api.example/conversations${conversationUid}`
     );
     if (!convResp.ok) {
       throw new Error('Failed to get conversation');
     }
-    let comments = await convResp.json();
-    let usersResp = await fetch('https://api.example/users/');
+    const comments = await convResp.json();
+    const usersResp = await fetch('https://api.example/users/');
     if (!usersResp.ok) {
       throw new Error('Failed to get users');
     }
-    let { users } = await usersResp.json();
-    let getUser = function (userId) {
-      return users.find((u) => {
-        return u.id === userId;
-      });
-    };
+    const { users } = await usersResp.json();
+    const getUser = (userId) => users.find((u) => u.id === userId);
     return {
       conversation: {
         uid: conversationUid,
-        comments: comments.map((comment) => {
-          return {
-            ...comment,
-            content: comment.content,
-            authorName: getUser(comment.author)?.displayName,
-          };
-        }),
+        comments: comments.map((comment) => ({
+          ...comment,
+          content: comment.content,
+          authorName: getUser(comment.author)?.displayName,
+        })),
       },
     };
   };
+
   lookup()
     .then((data) => {
-      console.log('Lookup success ' + conversationUid, data);
+      console.log(`Lookup success ${conversationUid}`, data);
       done(data);
     })
     .catch((err) => {
-      console.error('Lookup failure ' + conversationUid, err);
+      console.error(`Lookup failure ${conversationUid}`, err);
       fail(err);
     });
-}
+};
 
 tinymce.init({
   selector: '#editor',

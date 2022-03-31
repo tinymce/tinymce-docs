@@ -1,4 +1,4 @@
-(function () {
+(() => {
   // Configure the Tiny Drive Start API
   tinydrive.start({
     token_provider: '/your-local/jwt-provider',

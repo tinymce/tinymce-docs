@@ -1,10 +1,8 @@
 = Import CSS plugin
-
-:title_nav: Import CSS
+:navtitle: Import CSS
 :description: Automatically populate CSS class names into the Format dropdown.
-:keywords: importcss content_css importcss_append importcss_file_filter importcss_selector_filter importcss_groups importcss_merge_classes importcss_selector_converter importcss_exclusive
+:keywords: importcss, content_css, importcss_append, importcss_file_filter, importcss_selector_filter, importcss_groups, importcss_merge_classes, importcss_selector_converter, importcss_exclusive
 :plugincode: importcss
-:altplugincode: nil
 
 The `+importcss+` plugin adds the ability to automatically import CSS classes from the CSS file specified in the xref:add-css-options.adoc#content_css[`+content_css+`] configuration setting.
 
@@ -17,7 +15,6 @@ By default selectors like `+".my-class"+`, `+".my-class1.my-class2"+` and `+"p.m
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
-  menubar: 'format',
   content_css: '/my-styles.css'
 });
 ----

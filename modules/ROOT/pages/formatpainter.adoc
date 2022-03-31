@@ -1,16 +1,13 @@
 = Format Painter
-
-:title_nav: Format Painter
+:navtitle: Format Painter
 :description: Quickly apply formats to multiple pieces of text.
-:keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats format painter configuration
-:controls: toolbar button
+:keywords: formats, formatting, edit, formatpainter_removeformat, formatpainter_tableformats, formatpainter_ignored_formats, format painter, configuration
 :pluginname: Format Painter
 :plugincode: formatpainter
-:altplugincode: nil
 :pluginminimumplan: tiertwo
 
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
@@ -18,7 +15,7 @@ The Format Painter plugin allows a user to copy and paste formatting from one lo
 
 The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `+Ctrl+Alt+V+` keyboard shortcut.
 
-liveDemo::format-painter[ ]
+liveDemo::format-painter[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -66,7 +63,7 @@ The format painter acts upon all xref:content-formatting.adoc#formats[`+formats+
 
 include::partial$configuration/formatpainter_formats.adoc[leveloffset=+1]
 
-include::partial$configuration/formatpainter_blacklisted_formats.adoc[leveloffset=+1]
+include::partial$configuration/formatpainter_ignored_formats.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

@@ -1,11 +1,9 @@
 = Real-Time Collaboration (RTC) JWT Authentication Setup
-
-:title_nav: JWT Authentication Setup
+:navtitle: JWT Authentication Setup
 :description: Guide on how to setup JWT Authentication for RTC
-:keywords: jwt authentication
+:keywords: jwt, authentication
 :pluginname: Real-Time Collaboration (RTC)
 :plugincode: rtc
-:jwturl: {accountpageurl}/jwt/
 
 == Introduction
 
@@ -161,7 +159,7 @@ const privateKey = `
 -----END PRIVATE KEY-----
 `;
 
-app.post('/jwt', function (req, res) {
+app.post('/jwt', (req, res) => {
   // NOTE: Before you proceed with the TOKEN, verify your users' session or access.
   const payload = {
     sub: '123', // Unique user ID string

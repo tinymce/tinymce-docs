@@ -15,18 +15,18 @@ The default configuration includes the context menu sections for the following p
 
 To disable the editor's context menu, set this option to `+false+`.
 
-Type : `+String+` or `+false+`
+*Type:* `+String+` or `+false+`
 
-Default Value : `+'link linkchecker image editimage table spellchecker configurepermanentpen'+`
+*Default value:* `+'link linkchecker image editimage table spellchecker configurepermanentpen'+`
 
-include::partial$misc/admon_ctrl_right_click.adoc[]
+include::partial$misc/admon-ctrl-right-click.adoc[]
 
 === Example: Using `+contextmenu+`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'link image table',
   contextmenu: 'link image table'
 });

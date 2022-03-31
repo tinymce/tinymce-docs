@@ -4,10 +4,10 @@ ifeval::["{docname}" == "available-toolbar-buttons"]
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-ifeval::["{altplugincode}" != "nil"]
+ifdef::altplugincode[]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
 endif::[]
-ifeval::["{altplugincode}" == "nil"]
+ifndef::altplugincode[]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
 endif::[]
 
@@ -25,10 +25,10 @@ ifeval::["{docname}" != "available-toolbar-buttons"]
 
 The {pluginname} plugin provides the following toolbar buttons:
 
-ifeval::["{altplugincode}" != "nil"]
+ifdef::altplugincode[]
 include::partial$toolbar-button-ids/{altplugincode}-toolbar-buttons.adoc[]
 endif::[]
-ifeval::["{altplugincode}" == "nil"]
+ifndef::altplugincode[]
 include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[]
 endif::[]
 

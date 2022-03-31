@@ -145,21 +145,19 @@ For example:
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="{scriptsource}" referrerpolicy="origin"></script>
-
     <script>
       tinymce.init({
         selector: '#mytextarea'
       });
     </script>
-
   </head>
 
   <body>
-  <h1>{productname} Quick Start Guide</h1>
+    <h1>{productname} Quick Start Guide</h1>
     <form method="post">
       <textarea id="mytextarea">Hello, World!</textarea>
     </form>
@@ -169,7 +167,7 @@ For example:
 
 Adding this content to an HTML file and opening it in a web browser will load a TinyMCE editor, such as:
 
-liveDemo::default[ ]
+liveDemo::default[]
 ifeval::["{productSource}" == "cloud"]
 
 == Add your API key
@@ -180,7 +178,7 @@ To remove the notice:
 
 Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}].
 
-Signing up for a {cloudname} API key will also provide a trial of the link:premium.html[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
 endif::[]
 
 == Save the content from the editor

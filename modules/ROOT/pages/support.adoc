@@ -1,9 +1,8 @@
 = Support
-
-:title_nav: Support
+:navtitle: Support
 :description: Getting support and supported platforms
 :description_short: Getting support and supported platforms
-:keywords: browser compatibility safari firefox chrome edge mobile support supported browsers windows osx linux premium self-hosted selfhosted
+:keywords: browser, compatibility, safari, firefox, chrome, edge, mobile, support, supported, browsers, windows, osx, linux, premium, self-hosted, selfhosted
 
 == Getting support
 
@@ -15,20 +14,21 @@ Paid premium support is available as part of link:{pricingpage}/[{enterprisevers
 
 Open Source Community Edition users can get free help from Stack Overflow using the link:{communitysupporturl}[`{prodnamecode}` tag].
 
-[[supportedversionsandplatforms]]
-== Supported Versions and Platforms
+// Note: The supportedversionsandplatforms anchor is needed for older external links
+[[supported-versions-and-platforms]]
+== [[supportedversionsandplatforms]] Supported Versions and Platforms
 
-include::partial$misc/supported_versions.adoc[leveloffset=+1]
+include::partial$misc/supported-versions.adoc[leveloffset=+1]
 
-include::partial$misc/browser_compatibility.adoc[leveloffset=+1]
+include::partial$misc/browser-compatibility.adoc[leveloffset=+1]
 
-include::partial$misc/mobile_platform_compatibility.adoc[leveloffset=+1]
+include::partial$misc/mobile-platform-compatibility.adoc[leveloffset=+1]
 
 Visit xref:tinymce-for-mobile.adoc[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
 
 == Premium plugin support information
 
-include::partial$misc/plugin_support_table.adoc[leveloffset=+1]
+include::partial$misc/plugin-support-table.adoc[leveloffset=+1]
 
 include::partial$misc/support-powerpaste.adoc[leveloffset=+1]
 

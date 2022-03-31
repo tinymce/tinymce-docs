@@ -8,11 +8,11 @@ This option sets which user interface item type to use when displaying the list 
 
 For information on the properties required for the user object provided to xref:mentions.adoc#mentions_fetch[`+mentions_fetch+`], see: xref:user-properties[User properties].
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default Value : `+'name'+`
+*Default value:* `+'name'+`
 
-Possible Values : `+'name'+`, `+'profile'+`
+*Possible values:* `+'name'+`, `+'profile'+`
 
 === Example: Using `+mentions_item_type+`
 

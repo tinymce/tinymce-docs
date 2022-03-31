@@ -3,6 +3,10 @@
 
 Allows you to specify a list of date/time formats to be used in the date menu or date select box. A complete list of formats is available under xref:insertdatetime.adoc#referencedatetimeformats[date formats] below.
 
+*Type:* `+Array+`
+
+*Default value:* `+[ '%H:%M:%S', '%Y-%m-%d', '%I:%M:%S %p', '%D' ]+`
+
 === Example: Using `+insertdatetime_formats+`
 
 [source,js]
@@ -10,8 +14,7 @@ Allows you to specify a list of date/time formats to be used in the date menu or
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
-  menubar: 'insert',
   toolbar: 'insertdatetime',
-  insertdatetime_formats: ['%H:%M:%S', '%Y-%m-%d', '%I:%M:%S %p', '%D']
+  insertdatetime_formats: [ '%H:%M:%S', '%Y-%m-%d', '%I:%M:%S %p', '%D' ]
 });
 ----

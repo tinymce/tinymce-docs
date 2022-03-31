@@ -8,17 +8,15 @@ When resizing is enabled, the editor can be resized by either:
 * Clicking and dragging the resize handle in the bottom right-hand corner of the editor.
 * Focusing the resize handle, and using the arrow keys. The *Up Arrow* and *Left Arrow* keys will make the editor smaller, and the *Down Arrow* and *Right Arrow* keys will make the editor larger.
 
-=== Disabling the resize
+*Type:* `+Boolean+` or `+String+`
 
-Type : `+Boolean+`
+*Default value:* `+true+`
 
-Default Value : `+true+`
+*Possible values:* `+true+`, `+false+`, `+'both'+`
 
-Possible Values : `+true+`, `+false+`, `+'both'+`
+include::partial$misc/admon-different-default-for-mobile.adoc[]
 
-include::partial$misc/admon_different_default_for_mobile.adoc[]
-
-==== Example: Disabling editor resizing
+=== Example: Disabling editor resizing
 
 [source,js]
 ----
@@ -28,15 +26,7 @@ tinymce.init({
 });
 ----
 
-=== Enabling both vertical and horizontal resize
-
-Type : `+Boolean+`
-
-Default Value : `+true+`
-
-Possible Values : `+true+`, `+false+`, `+'both'+`
-
-==== Example: Enabling vertical and horizontal editor resizing
+=== Example: Enabling vertical and horizontal editor resizing
 
 [source,js]
 ----

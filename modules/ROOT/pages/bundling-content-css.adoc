@@ -1,6 +1,5 @@
 = Bundling TinyMCE content CSS using module loading
-
-:title_nav: Content CSS
+:navtitle: Content CSS
 :description_short: Information on bundling the editor content CSS
 :description: Information on bundling the editor content CSS using module loading
 
@@ -40,14 +39,14 @@ import contentCSS from '../tinymce/skins/content/example/content.css';
 a|
 [source, js]
 ----
-var contentCSS = require('tinymce/skins/content/example/content.css');
+const contentCSS = require('tinymce/skins/content/example/content.css');
 ----
 
 |`.zip`
 a|
 [source, js]
 ----
-var contentCSS = require('../tinymce/skins/content/example/content.css');
+const contentCSS = require('../tinymce/skins/content/example/content.css');
 ----
 |===
 IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].

@@ -1,15 +1,14 @@
 = Tiny Drive Browse API
-
-:title_nav: The Browse API
+:navtitle: The Browse API
 :description: Using the Tiny Drive Browse API
-:keywords: tinydrive api browse
+:keywords: tinydrive, api, browse
 :apiname: browse
 
 The `+tinydrive.browse+` method allows users to browse the files stored in {cloudfilemanager}. The dialog will allow users to manage the files in the {cloudfilemanager}, such as adding, moving, previewing, and deleting files. The API returns a promise that will resolve when the {cloudfilemanager} dialog is closed by using the close button.
 
 == Interactive example: Using `+tinydrive.browse+`
 
-liveDemo::drive-plugin-browse[ ]
+liveDemo::drive-plugin-browse[]
 
 == Configuration options
 

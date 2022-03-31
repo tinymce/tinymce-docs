@@ -3,9 +3,9 @@
 
 This option enables you to specify default attributes for inserted tables.
 
-Type: `+Object+`
+*Type:* `+Object+`
 
-Default Value: `+{ border: '1' }+`
+*Default value:* `+{ border: '1' }+`
 
 === Example: Using `+table_default_attributes+`
 
@@ -14,7 +14,6 @@ Default Value: `+{ border: '1' }+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'table',
-  menubar: 'table',
   toolbar: 'table',
   table_default_attributes: {
     border: '1'

@@ -1,10 +1,10 @@
 Covered in this section:
 
-* xref:configuringthetinymcesvelteintegration[Configuring the TinyMCE Svelte integration]
-* xref:componentbinding[Component binding]
-* xref:eventbinding[Event binding]
+* xref:configuring-the-tinymce-svelte-integration[Configuring the TinyMCE Svelte integration]
+* xref:component-binding[Component binding]
+* xref:event-binding[Event binding]
 
-[[configuringthetinymcesvelteintegration]]
+[[configuring-the-tinymce-svelte-integration]]
 == Configuring the TinyMCE Svelte integration
 
 The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
@@ -26,15 +26,15 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 ----
 
 [[apikey]]
-=== apiKey
+=== `+apiKey+`
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
 
-Default value : `+"no-api-key"+`
+*Type:* `+String+`
 
-Type : String
+*Default value:* `+'no-api-key'+`
 
-==== Example using apiKey
+==== Example using `+apiKey+`
 
 [source,jsx]
 ----
@@ -44,33 +44,35 @@ Type : String
 ----
 
 [[channel]]
-=== channel
+=== `+channel+`
 
 Specifies the {cloudname} channel to use. For information on {cloudname} deployment channels, see: xref:editor-plugin-version.adoc[Specifying the {productname} editor version deployed from Cloud].
 
-Default value : `+"5"+`
+*Type:* `+String+`
 
-Type : String
+*Default value:* `'{productmajorversion}'`
 
-==== Example using channel
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
-[source,jsx]
+==== Example using `+channel+`
+
+[source,jsx,subs="attributes+"]
 ----
 <Editor
-  channel="5-dev"
+  channel="{productmajorversion}-dev"
 />
 ----
 
 [[id]]
-=== id
+=== `+id+`
 
 Specified an Id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-Default value : Automatically generated UUID
+*Type:* `+String+`
 
-Type : String
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
 
-==== Example using id
+==== Example using `+id+`
 
 [source,jsx]
 ----
@@ -80,15 +82,15 @@ Type : String
 ----
 
 [[inline]]
-=== inline
+=== `+inline+`
 
 Set the editor to inline mode.
 
-Default value : `+false+`
+*Type:* `+Boolean+`
 
-Type : Boolean
+*Default value:* `+false+`
 
-==== Example using inline
+==== Example using `+inline+`
 
 [source,jsx]
 ----
@@ -98,15 +100,15 @@ Type : Boolean
 ----
 
 [[disabled]]
-=== disabled
+=== `+disabled+`
 
 Set the editor to readonly mode.
 
-Default value : `+false+`
+*Type:* `+Boolean+`
 
-Type : Boolean
+*Default value:* `+false+`
 
-==== Example using disabled
+==== Example using `+disabled+`
 
 [source,jsx]
 ----
@@ -116,13 +118,13 @@ Type : Boolean
 ----
 
 [[scriptsrc]]
-=== scriptSrc
+=== `+scriptSrc+`
 
 Use the `+scriptSrc+` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the {productname} npm package or a .zip package of {productname}.
 
-Type : String
+*Type:* `+String+`
 
-==== Example using scriptSrc
+==== Example using `+scriptSrc+`
 
 [source,jsx]
 ----
@@ -132,15 +134,15 @@ Type : String
 ----
 
 [[conf]]
-=== conf
+=== `+conf+`
 
 Specify a set of properties for the `+Tinymce.init+` method to initialize the editor.
 
-Default value : `+{}+`
+*Type:* `+Object+`
 
-Type : Object
+*Default value:* `+{}+`
 
-==== Example using conf
+==== Example using `+conf+`
 
 [source,jsx]
 ----
@@ -157,7 +159,7 @@ Type : Object
 </main>
 ----
 
-[[componentbinding]]
+[[component-binding]]
 == Component binding
 
 === Input binding
@@ -195,7 +197,7 @@ let text = '';
 </main>
 ----
 
-[[eventbinding]]
+[[event-binding]]
 == Event binding
 
 Functions can be bound to editor events, such as:
@@ -207,9 +209,9 @@ Functions can be bound to editor events, such as:
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 
-`+event+` : The {productname} event object.
+`+event+`:: The {productname} event object.
 
-`+editor+` : A reference to the editor.
+`+editor+`:: A reference to the editor.
 
 Ensure event names are specified in lower-case (event names are case-sensitive).
 

@@ -1,20 +1,18 @@
 = Spell Checker Pro plugin
-
-:title_nav: Spell Checker Pro
+:navtitle: Spell Checker Pro
 :description: Check spelling as-you-type in TinyMCE.
-:keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox
+:keywords: tinymcespellchecker, spellchecker_language, spellchecker_languages, spellchecker_rpc_url, spellchecker_dialog, ephox
 :pluginname: Spell Checker Pro
 :plugincode: tinymcespellchecker
-:altplugincode: nil
 :pluginminimumplan: tierthree
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 *Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to xref:spellchecker_language[this] section.
 
 == Interactive example
 
-liveDemo::spellcheckerpro[ ]
+liveDemo::spellcheckerpro[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -63,9 +61,11 @@ include::partial$configuration/spellchecker_active.adoc[leveloffset=+1]
 
 include::partial$configuration/spellchecker_dialog.adoc[leveloffset=+1]
 
+include::partial$configuration/spellchecker_ignore_list.adoc[leveloffset=+1]
+
 include::partial$configuration/spellchecker_language.adoc[leveloffset=+1]
 
-include::partial$misc/spellchecker-languages.adoc[]
+include::partial$misc/spellchecker-languages.adoc[leveloffset=+2]
 
 include::partial$configuration/spellchecker_languages.adoc[leveloffset=+1]
 
@@ -75,11 +75,7 @@ endif::[]
 
 include::partial$configuration/spellchecker_rpc_url.adoc[leveloffset=+1]
 
-include::partial$plugins/tinymcespellchecker-content-langs.adoc[leveloffset=+1]
-
-include::partial$configuration/spellchecker_select_languages.adoc[leveloffset=+1]
-
-include::partial$configuration/spellchecker_ignore_list.adoc[leveloffset=+1]
+include::partial$plugins/spellchecker-content_langs.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -107,8 +103,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckerIgnore', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckerIgnore', (e) => {
       console.log('Ignore word', e.word);
     });
   }
@@ -127,8 +123,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckerIgnoreAll', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckerIgnoreAll', (e) => {
       console.log('Ignore word (all)', e.word);
     });
   }
@@ -147,8 +143,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckStart', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckStart', (e) => {
       console.log('Started spellchecking');
     });
   }
@@ -167,8 +163,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckEnd', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckEnd', (e) => {
       console.log('Stopped spellchecking');
     });
   }
@@ -187,8 +183,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckError', function (e) {
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckError', (e) => {
       console.log('Spelling service error: ' + e.message);
     });
   }
@@ -207,9 +203,9 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
-  init_instance_callback: function (editor) {
-    editor.on('SpellcheckerLanguageChanged', function (e) {
-      console.log('Spelling language changed: ' + e.language + '. Previous language: ' + e.prevLanguage);
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckerLanguageChanged', (e) => {
+      console.log(`Spelling language changed: ${e.language}. Previous language: ${e.prevLanguage}`);
     });
   }
 });

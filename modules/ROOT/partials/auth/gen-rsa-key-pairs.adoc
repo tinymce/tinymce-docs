@@ -1,19 +1,19 @@
 The procedure for creating a key pair depends on the operating system of the host machine.
 
 * xref:linux[Linux procedure].
-* xref:applemacos[Apple macOS procedure].
-* xref:microsoftwindows[Microsoft Windows procedure].
+* xref:apple-macos[Apple macOS procedure].
+* xref:microsoft-windows[Microsoft Windows procedure].
 
 [[linux]]
 == Linux
 
 To create a private/public key pair on a Linux operating system:
 
-. xref:installingopensslonlinux[Install OpenSSL].
-. xref:createaprivatepublickeypaironlinux[Create a private/public key pair].
-. xref:retrievethepublickeyonlinux[Retrieve the public key].
+. xref:installing-openssl-on-linux[Install OpenSSL].
+. xref:create-a-private-public-key-pair-on-linux[Create a private/public key pair].
+. xref:retrieve-the-public-key-on-linux[Retrieve the public key].
 
-[[installingopensslonlinux]]
+[[installing-openssl-on-linux]]
 === Installing OpenSSL on Linux
 
 The procedure for installing OpenSSL on Linux distributions varies. The installation commands for common Linux distributions have been provided here.
@@ -65,7 +65,7 @@ sudo zypper refresh
 sudo zypper install openssl
 ----
 
-[[createaprivatepublickeypaironlinux]]
+[[create-a-private-public-key-pair-on-linux]]
 === Create a private/public key pair on Linux
 
 To create a private/public key pair:
@@ -77,7 +77,7 @@ To create a private/public key pair:
 ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
 ----
 +
-Where _`+<MY_KEY_PAIR_NAME>+`_ should be replaced with a name for the key pair.
+Where `_<MY_KEY_PAIR_NAME>_` should be replaced with a name for the key pair.
 
 include::partial$auth/passphrase-step-jwt.adoc[]
 
@@ -86,7 +86,7 @@ Two files will be created in the current directory:
 * `+<MY_KEY_PAIR_NAME>+` - The private key.
 * `+<MY_KEY_PAIR_NAME>.pub+` - The public key.
 
-[[retrievethepublickeyonlinux]]
+[[retrieve-the-public-key-on-linux]]
 === Retrieve the public key on Linux
 
 To retrieve the public key, on a command line, run:
@@ -98,15 +98,15 @@ openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -w0
 
 The public key for the `+<MY_KEY_PAIR_NAME>+` key pair will be printed on the command line with base64 encoding.
 
-[[applemacos]]
+[[apple-macos]]
 == Apple macOS
 
 To create a private/public key pair on a macOS operating system:
 
-. xref:createaprivatepublickeypaironmacos[Create a private/public key pair].
-. xref:retrievethepublickeyonmacos[Retrieve the public key].
+. xref:create-a-private-public-key-pair-on-macos[Create a private/public key pair].
+. xref:retrieve-the-public-key-on-macos[Retrieve the public key].
 
-[[createaprivatepublickeypaironmacos]]
+[[create-a-private-public-key-pair-on-macos]]
 === Create a private/public key pair on macOS
 
 To create a private/public key pair:
@@ -119,7 +119,7 @@ To create a private/public key pair:
 ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
 ----
 +
-Where _`+<MY_KEY_PAIR_NAME>+`_ should be replaced with a name for the key pair.
+Where `_<MY_KEY_PAIR_NAME>_` should be replaced with a name for the key pair.
 
 include::partial$auth/passphrase-step-jwt.adoc[]
 
@@ -128,7 +128,7 @@ Two files will be created in the current directory:
 * `+<MY_KEY_PAIR_NAME>+` - The private key.
 * `+<MY_KEY_PAIR_NAME>.pub+` - The public key.
 
-[[retrievethepublickeyonmacos]]
+[[retrieve-the-public-key-on-macos]]
 === Retrieve the public key on macOS
 
 To retrieve the public key, on a terminal, run:
@@ -140,28 +140,28 @@ openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -
 
 The public key for the `+<MY_KEY_PAIR_NAME>+` key pair will be printed on the terminal with base64 encoding.
 
-[[microsoftwindows]]
+[[microsoft-windows]]
 == Microsoft Windows
 
 To create a private/public key pair on a Microsoft Windows operating system:
 
-. xref:installingopensslonmicrosoftwindows[Install OpenSSL].
-. xref:createaprivatepublickeypaironwindows[Create a private/public key pair].
-. xref:retrievethepublickeyonwindows[Retrieve the public key].
+. xref:installing-openssl-on-microsoft-windows[Install OpenSSL].
+. xref:create-a-private-public-key-pair-on-windows[Create a private/public key pair].
+. xref:retrieve-the-public-key-on-windows[Retrieve the public key].
 
-[[installingopensslonmicrosoftwindows]]
+[[installing-openssl-on-microsoft-windows]]
 === Installing OpenSSL on Microsoft Windows
 
 To install OpenSSL with _Git for Windows_:
 
 . Download the _Windows_ package from https://git-scm.com/downloads[the Git Downloads page].
-. Open the downloaded file `+Git-<VERSION>-<ARCH>-bit.exe+`, where _`+<VERSION>+`_ is the latest version of _Git for Windows_ and _`+<ARCH>+`_ is the architecture, such as _32-bit_ or _64-bit_.
+. Open the downloaded file `+Git-<VERSION>-<ARCH>-bit.exe+`, where `_<VERSION>_` is the latest version of _Git for Windows_ and `_<ARCH>_` is the architecture, such as _32-bit_ or _64-bit_.
 . Click *Next* on the _Information_ and _Select Destination Location_ screens.
 . Select *Check daily for Git for Windows updates* on the _Select Components_ screen, then click *Next*.
 . Click *Next* on the remaining screens to accept the default settings.
 . Once the installation is complete, click *Finish*.
 
-[[createaprivatepublickeypaironwindows]]
+[[create-a-private-public-key-pair-on-windows]]
 === Create a private/public key pair on Windows
 
 To create a private/public key pair:
@@ -174,7 +174,7 @@ To create a private/public key pair:
 ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
 ----
 +
-Where _`+<MY_KEY_PAIR_NAME>+`_ should be replaced with a name for the key pair.
+Where `_<MY_KEY_PAIR_NAME>_` should be replaced with a name for the key pair.
 
 include::partial$auth/passphrase-step-jwt.adoc[]
 
@@ -183,7 +183,7 @@ Two files will be created in the current directory:
 * `+<MY_KEY_PAIR_NAME>+` - The private key.
 * `+<MY_KEY_PAIR_NAME>.pub+` - The public key.
 
-[[retrievethepublickeyonwindows]]
+[[retrieve-the-public-key-on-windows]]
 === Retrieve the public key on Windows
 
 To retrieve the public key, on a _Git bash_ command line, run:

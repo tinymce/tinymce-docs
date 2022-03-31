@@ -1,8 +1,8 @@
 *Covered in this section:*
 
-* xref:installingthetinymcevuejsintegrationusingnpm[Installing the TinyMCE Vue.js integration using NPM]
-* xref:usingthetinymcevuejsintegration[Using the TinyMCE Vue.js integration]
-* xref:configuringtheeditor[Configuring the editor]
+* xref:installing-the-tinymce-vuejs-integration-using-npm[Installing the TinyMCE Vue.js integration using NPM]
+* xref:using-the-tinymce-vuejs-integration[Using the TinyMCE Vue.js integration]
+* xref:configuring-the-editor[Configuring the editor]
 ** xref:api-key[`+api-key+`]
 ** xref:cloud-channel[`+cloud-channel+`]
 ** xref:disabled[`+disabled+`]
@@ -16,10 +16,10 @@
 ** xref:tag-name[`+tag-name+`]
 ** xref:toolbar[`+toolbar+`]
 ** xref:tinymce-script-src[`+tinymce-script-src+`]
-* xref:forminputbindingsv-model[Form Input Bindings: `+v-model+`]
-* xref:eventbinding[Event binding]
+* xref:form-input-bindings-v-model[Form Input Bindings: `+v-model+`]
+* xref:event-binding[Event binding]
 
-[[installingthetinymcevuejsintegrationusingnpm]]
+[[installing-the-tinymce-vuejs-integration-using-npm]]
 == Installing the TinyMCE Vue.js integration using NPM
 
 To install the `+tinymce-vue+` package and save it to your `+package.json+`.
@@ -37,7 +37,7 @@ npm install --save "@tinymce/tinymce-vue@^4"
 npm install --save "@tinymce/tinymce-vue@^3"
 ----
 
-[[usingthetinymcevuejsintegration]]
+[[using-the-tinymce-vuejs-integration]]
 == Using the TinyMCE Vue.js integration
 
 . Load the component.
@@ -79,7 +79,7 @@ var app = new Vue({
 <editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
 ----
 
-[[configuringtheeditor]]
+[[configuring-the-editor]]
 == Configuring the editor
 
 The editor accepts the following properties:
@@ -111,9 +111,9 @@ None of the configuration properties are *required* for `+tinymce-vue+` to work.
 
 include::partial$misc/get-an-api-key.adoc[]
 
-Default value : `+no-api-key+`
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+'no-api-key'+`
 
 ==== Example: Using `+api-key+`
 
@@ -127,15 +127,18 @@ Type : `+String+`
 [[cloud-channel]]
 === `+cloud-channel+`
 
-Default value : `'{productmajorversion}'`
+*Type:* `+String+`
 
-Possible values : `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`
+*Default value:* `'{productmajorversion}'`
+
+*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
 * `{productmajorversion}`, `{productmajorversion}-stable` (*Default*): The current enterprise release of {productname}.
 * `{productmajorversion}-testing`: The current release candidate for the next enterprise release of {productname}.
 * `{productmajorversion}-dev`: The nightly-build version of {productname}.
+* A version number such as `{productminorversion}`: The specific enterprise release version of {productname}.
 
 Such as:
 
@@ -155,9 +158,11 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 
 The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
 
-Default value : `+false+`
+*Type:* `+Boolean+`
 
-Possible values : `+true+`, `+false+`
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+disabled+`
 
@@ -171,11 +176,11 @@ Possible values : `+true+`, `+false+`
 [[id]]
 === `+id+`
 
-An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
-Default value : Automatically generated https://tools.ietf.org/html/rfc4122[UUID].
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
 
 ==== Example: Using `+id+`
 
@@ -193,9 +198,9 @@ Object sent to the `+tinymce.init+` method used to initialize the editor.
 
 For information on the {productname} selector (`+tinymce.init+`), see: xref:basic-setup.adoc[Basic setup].
 
-Default value : `+"{ }"+`
+*Type:* `+Object+`
 
-Type : `+Object+`
+*Default value:* `+'{ }'+`
 
 ==== Example: Using `+init+`
 
@@ -214,9 +219,9 @@ Type : `+Object+`
 
 Initial content of the editor when the editor is initialized.
 
-Default value : `+" "+`
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+' '+`
 
 ==== Example: Using `+initial-value+`
 
@@ -234,9 +239,11 @@ Used to set the editor to inline mode. Using `+<editor :inline=true />+` is the 
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
-Default value : `+false+`
+*Type:* `+Boolean+`
 
-Possible values : `+true+`, `+false+`
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Using `+inline+`
 
@@ -250,13 +257,13 @@ Possible values : `+true+`, `+false+`
 [[model-events]]
 === `+model-events+`
 
-Sets the trigger events for xref:forminputbindingsv-model[v-model events].
+Sets the trigger events for xref:form-input-bindings-v-model[v-model events].
 
-For a list of available {productname} events, see: xref:events.adoc#editorcoreevents[Available Events - Editor events].
+For a list of available {productname} events, see: xref:events.adoc#editor-core-events[Available Events - Editor events].
 
-Default value : `+'change keyup undo redo'+`.
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+'change keyup undo redo'+`.
 
 ==== Example: Using `+model-events+`
 
@@ -272,11 +279,11 @@ Type : `+String+`
 
 Used to specify the format of the content emitted via the `+input+` event. This affects the format of the content used in conjunction with data binding.
 
-Type : `+String+`
+*Type:* `+String+`
 
-Default value : `+'html'+`
+*Default value:* `+'html'+`
 
-Possible values : `+'html'+`, `+'text'+`
+*Possible values:* `+'html'+`, `+'text'+`
 
 ==== Example: Using `+output-format+`
 
@@ -294,7 +301,7 @@ Used to include plugins for the editor. Using `+<editor plugins="lists code" />+
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-Type : `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+`
 
 ==== Example: Using `+plugins+`
 
@@ -310,9 +317,9 @@ Type : `+String+` or `+Array+`
 
 Only valid when xref:inline[`+<editor :inline=true />+`]. Used to define the HTML element for the editor in inline mode.
 
-Default value : `+'div'+`
+*Type:* `+String+`
 
-Type : `+String+`
+*Default value:* `+'div'+`
 
 ==== Example: Using `+tag-name+`
 
@@ -331,9 +338,9 @@ Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic" />
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
-Possible values : See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Type:* `+String+`
 
-Type : `+String+`
+*Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 ==== Example: Using `+toolbar+`
 
@@ -350,7 +357,7 @@ Type : `+String+`
 
 Use the `+tinymce-script-src+` prop to specify an external version of TinyMCE to lazy load.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example: Using `+tinymce-script-src+`
 
@@ -361,7 +368,7 @@ Type : `+String+`
 />
 ----
 
-[[forminputbindingsv-model]]
+[[form-input-bindings-v-model]]
 == Form Input Bindings: `+v-model+`
 
 The `+v-model+` directive can be used to create a two-way data binding. For example:
@@ -371,9 +378,9 @@ The `+v-model+` directive can be used to create a two-way data binding. For exam
 <editor v-model="content" />
 ----
 
-For information on `+v-model+` and form input bindings, see: https://vuejs.org/v2/guide/forms.html[Vue.js documentation - Form Input Bindings].
+For information on `+v-model+` and form input bindings, see: https://vuejs.org/guide/essentials/forms.html[Vue.js documentation - Form Input Bindings].
 
-[[eventbinding]]
+[[event-binding]]
 == Event binding
 
 Functions can be bound to editor events, such as:
@@ -382,6 +389,8 @@ Functions can be bound to editor events, such as:
 ----
 <editor @selectionChange="handlerFunction" />
 ----
+
+For older versions of Vue (Vue 2) supported by v3.x, the syntax for event bindings are: `<editor v-on:selectionChange="handlerFunction">` or `<editor @onSelectionChange="handlerFunction">`.
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 

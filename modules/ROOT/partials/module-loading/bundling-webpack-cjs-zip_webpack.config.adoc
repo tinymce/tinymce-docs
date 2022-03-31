@@ -4,9 +4,9 @@ Example `+webpack.config.js+`
 +
 [source,js]
 ----
-var path = require('path');
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -18,14 +18,14 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       title: 'TinyMCE Webpack Demo',
-      meta: {viewport: 'width=device-width, initial-scale=1'}
+      meta: { viewport: 'width=device-width, initial-scale=1' }
     }),
   ],
   module: {
     rules: [
       {
         test: /skin\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
       },
       {
         test: /content\.css$/i,

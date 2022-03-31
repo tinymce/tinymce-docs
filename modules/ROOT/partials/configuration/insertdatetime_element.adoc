@@ -3,9 +3,11 @@
 
 When this option is enabled HTML5 time elements gets generated when you insert dates/times.
 
-Type: `+Boolean+`
+*Type:* `+Boolean+`
 
-Possible Values: `+true+`, `+false+`
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+insertdatetime_element+`
 
@@ -14,7 +16,6 @@ Possible Values: `+true+`, `+false+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'insertdatetime',
-  menubar: 'insert',
   toolbar: 'insertdatetime',
   insertdatetime_element: true
 });

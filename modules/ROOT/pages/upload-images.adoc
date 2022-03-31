@@ -1,9 +1,8 @@
 = Handling image uploads
-
-:title_nav: Image uploads
+:navtitle: Image uploads
 :description_short: How to manage asynchronous image uploads.
 :description: How to manage asynchronous image uploads.
-:keywords: uploader uploadImages image handler asynchronous async paste_data_images image cors
+:keywords: uploader, uploadImages, image, handler, asynchronous, async, paste_data_images, image, cors
 
 {productname} uploads edited images with the image uploader. This complements {productname}'s image editing functionality.
 
@@ -21,7 +20,7 @@ Review the examples below:
 
 [source,js]
 ----
-tinymce.activeEditor.uploadImages(function(success) {
+tinymce.activeEditor.uploadImages().then(() => {
   document.forms[0].submit();
 });
 ----
@@ -30,16 +29,16 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 [source,js]
 ----
-tinymce.activeEditor.uploadImages(function(success) {
-  $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
+tinymce.activeEditor.uploadImages().then(() => {
+  $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(() => {
     console.log("Uploaded images and posted content as an ajax request.");
   });
 });
 ----
 
-include::partial$misc/admon_svg_not_supported.adoc[]
+include::partial$misc/admon-svg-not-supported.adoc[]
 
-[[imageuploaderrequirements]]
+[[image-uploader-requirements]]
 == Image Uploader requirements
 
 A server-side upload handler script uploads local images to a remote server. The script must:
@@ -67,7 +66,7 @@ This server-side upload handler script must return a JSON object containing a "l
 
 [source,js]
 ----
-{ location : '/uploaded/image/path/image.png' }
+{ location: '/uploaded/image/path/image.png' }
 ----
 
 == Image upload options

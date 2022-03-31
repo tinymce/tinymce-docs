@@ -1,20 +1,18 @@
 = Edit Image
-
-:title_nav: Edit Image
+:navtitle: Edit Image
 :description: Image editing features for TinyMCE.
-:keywords: edit image rotate rotateleft rotateright flip flipv fliph editimage imageoptions
+:keywords: edit, image, rotate, rotateleft, rotateright, flip, flipv, fliph, editimage, imageoptions
 :pluginname: Edit Image
 :plugincode: editimage
-:altplugincode: nil
 :pluginminimumplan: tierone
 
 Edit Image (`+editimage+`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+editimage_cors_hosts+` or `+editimage_proxy_service_url+` (see below).
 
 == Interactive example
 
-liveDemo::edit-image[ ]
+liveDemo::edit-image[]
 
-include::partial$misc/admon_svg_not_supported.adoc[]
+include::partial$misc/admon-svg-not-supported.adoc[]
 
 include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -48,8 +46,8 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
   plugins: 'image editimage',
-  editimage_cors_hosts: ['mydomain.com', 'otherdomain.com'],
-  editimage_proxy_service_url: 'http://mydomain.com/imageproxy'
+  editimage_cors_hosts: [ 'mydomain.com', 'otherdomain.com' ],
+  editimage_proxy_service_url: 'http://mydomain.com/ephox-image-proxy/'
 });
 ----
 

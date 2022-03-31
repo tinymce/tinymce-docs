@@ -3,7 +3,7 @@
 
 This option constrains the width and height of uploaded images. When specified, any images with a greater width or height than the specified amount would be proportionally resized down to the specified maximum dimension.
 
-Type : `+Number+`
+*Type:* `+Number+`
 
 [[example-using-max_image_dimension-with-the-tinydrivebrowse-api]]
 === Example: Using `+max_image_dimension+` with the tinydrive.browse API
@@ -15,13 +15,13 @@ tinymce.init({
   plugins: 'tinydrive image',
   toolbar: 'custombrowse',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
-  setup: function (editor) {
+  setup: (editor) => {
     editor.ui.registry.addButton('custombrowse', {
       text: 'Custom browse',
-      onAction: function () {
+      onAction: () => {
         editor.plugins.tinydrive.browse({
           max_image_dimension: 1024
-        }).then(function () {
+        }).then(() => {
           console.log('Tiny Drive dialog closed.');
         });
       }

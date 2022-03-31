@@ -1,6 +1,5 @@
 = Introduction and initial setup for containerized server-side services from the premium self-hosted bundle
-
-:title_nav: Introduction and initial setup
+:navtitle: Introduction and initial setup
 :description: The containerized server-side components for premium plugins.
 
 The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm], or https://www.openshift.com/[OpenShift]. {companyname} provides packages containing pre-configured https://docs.docker.com/engine/reference/builder/[`+Dockerfiles+`] for building and deploying the {enterpriseversion} server-side components using Docker.
@@ -21,7 +20,7 @@ The following sections assist with containerizing the {productname} services for
 ** Using a Linux, Unix or macOS operating system.
 ** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux].
 
-[[downloadandextractthetinymceself-hostedbundle]]
+[[download-and-extract-the-tinymce-self-hosted-bundle]]
 === Download and extract the TinyMCE Self-hosted Bundle
 
 . Go to *link:{download-enterprise}[{accountpage} Downloads]* and download the {productname} self-hosted bundle `+.zip+` file.

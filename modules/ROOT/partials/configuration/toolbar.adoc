@@ -7,7 +7,7 @@ This option allows you to specify the xref:available-toolbar-buttons.adoc[button
 
 To specify the buttons that should appear on {productname}'s toolbar, the `+toolbar+` option should be provided with a space separated list of xref:available-toolbar-buttons.adoc[toolbar buttons]. To create groups within this list, please add `+|+` pipe characters between the groups of buttons that you would like to create.
 
-Type : `+String+`
+*Type:* `+String+`
 
 ==== Example grouped toolbar
 
@@ -19,14 +19,14 @@ tinymce.init({
 });
 ----
 
-NOTE: The size of toolbar groups affects the behavior of the toolbar drawer when the `+toolbar_mode+` is set to `+'floating'+` (default value) or `+'sliding'+`. For more information, see: xref:toolbar-configuration-options.adoc#toolbar_mode[the `+toolbar_mode+` setting].
+NOTE: The size of toolbar groups affects the behavior of the toolbar drawer when the `+toolbar_mode+` is set to `+'floating'+` (default value) or `+'sliding'+`. For more information, see: xref:toolbar-configuration-options.adoc#toolbar_mode[the `+toolbar_mode+` option].
 
-[[addingtoolbargrouplabels]]
+[[adding-toolbar-group-labels]]
 ==== Adding toolbar group labels
 
 To specify labels to the grouped buttons that appear on {productname}'s toolbar, the `+toolbar+` option should be provided with an array of objects with `+name+` and `+items+` as object properties. The `+name+` should be a string value that will be set as the `+title+` attribute on the `+div+` containing the toolbar group. The `+items+` should be an array of strings that indicate the buttons that should appear within the particular toolbar group.
 
-Type : `+Array+`
+*Type:* `+Array+`
 
 ===== Example: Adding toolbar group labels
 
@@ -35,21 +35,11 @@ Type : `+Array+`
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: [
-    {
-      name: 'history', items: [ 'undo', 'redo' ]
-    },
-    {
-      name: 'styles', items: [ 'styles' ]
-    },
-    {
-      name: 'formatting', items: [ 'bold', 'italic']
-    },
-    {
-      name: 'alignment', items: [ 'alignleft', 'aligncenter', 'alignright', 'alignjustify' ]
-    },
-    {
-      name: 'indentation', items: [ 'outdent', 'indent' ]
-    }
+    { name: 'history', items: [ 'undo', 'redo' ] },
+    { name: 'styles', items: [ 'styles' ] },
+    { name: 'formatting', items: [ 'bold', 'italic' ] },
+    { name: 'alignment', items: [ 'alignleft', 'aligncenter', 'alignright', 'alignjustify' ] },
+    { name: 'indentation', items: [ 'outdent', 'indent' ] }
   ]
 });
 ----
@@ -58,11 +48,11 @@ tinymce.init({
 
 To disable the toolbar, the toolbar option should be provided a boolean value of `+false+`.
 
-Type : `+Boolean+`
+*Type:* `+Boolean+`
 
-Default Value : `+true+`
+*Default value:* `+true+`
 
-Possible Values : `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`
 
 ==== Example: Disabling the toolbar
 
@@ -70,16 +60,16 @@ Possible Values : `+true+`, `+false+`
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-    toolbar: false
+  toolbar: false
 });
 ----
 
-[[usingmultipletoolbars]]
+[[using-multiple-toolbars]]
 === Using multiple toolbars
 
 To specify multiple toolbars, the toolbar option should be provided with an array of space separated strings.
 
-Type : `+Array+`
+*Type:* `+Array+`
 
 ==== Example: Adding multiple toolbars
 

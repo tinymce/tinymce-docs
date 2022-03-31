@@ -39,7 +39,7 @@ Also, no Premium Plugins being released with {productname} 6.0 are backwards com
 
 | `editimage_proxy`                | `export_image_proxy_service_url` | Option                              | Renamed for easier configuration when used with https://tiny.cloud/docs/enterprise/server/[Tiny services].                                                                                                                                                                                                    |                                                    |
 
-| `fire()`                         | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                  |                                                    |
+| `fire()`                         | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                  |                                                    |
 
 | `font_formats`                   | `font_family_formats`            | Option                              | No behavioural changes, but there are related toolbar and menu items changes.                                                                                                                                                                                                                                 |                                                    |
 
@@ -137,7 +137,7 @@ The following elements were previously deprecated and have, with this release, b
 
 | `$`                                   | API           | `$` was a shorthand function of `DomQuery` and `Sizzle`.                           |
 
-| `addComponents`                       | API           | From `AddOnManager`.                                                               |
+| `addComponents`                       | API           | From `AddOnManager`.                                                               |
 
 | `autoresize_on_init`                  | Option        |                                                                                    |
 
@@ -147,17 +147,17 @@ The following elements were previously deprecated and have, with this release, b
 
 | `Class`                               | API           |                                                                                    |
 
-| `clearInterval`                       | API           | From `Delay`.                                                                      |
+| `clearInterval`                       | API           | From `Delay`.                                                                      |
 
-| `clearTimeout`                        | API           | From `Delay`.                                                                      |
+| `clearTimeout`                        | API           | From `Delay`.                                                                      |
 
 | `Color`                               | API           |                                                                                    |
 
 | `content_editable_state`              | Option        |                                                                                    |
 
-| `debounce`                            | API           | From `Delay`.                                                                      |
+| `debounce`                            | API           | From `Delay`.                                                                      |
 
-| `dependencies`                        | API           | From `AddOnManager`.                                                               |
+| `dependencies`                        | API           | From `AddOnManager`.                                                               |
 
 | `DomQuery`                            | API           |                                                                                    |
 
@@ -199,17 +199,17 @@ The following elements were previously deprecated and have, with this release, b
 
 | `padd_empty_with_br`                  | Option        |                                                                                    |
 
-| `requestAnimationFrame`               | API           | From `Delay`.                                                                      |
+| `requestAnimationFrame`               | API           | From `Delay`.                                                                      |
 
 | `self_closing_elements`               | Schema option |                                                                                    |
 
-| `setIconStroke`                       | API           |                                                                                    |
+| `setIconStroke`                       | API           |                                                                                    |
 
-| `setInterval`                         | API           | From `Delay`.                                                                      |
+| `setInterval`                         | API           | From `Delay`.                                                                      |
 
-| `setMode`                             | API           |                                                                                    |
+| `setMode`                             | API           |                                                                                    |
 
-| `setTimeout`                          | API           | From `Delay`.                                                                      |
+| `setTimeout`                          | API           | From `Delay`.                                                                      |
 
 | `short_ended_elements`                | Schema option |                                                                                    |
 
@@ -221,9 +221,9 @@ The following elements were previously deprecated and have, with this release, b
 
 | `text_inline_elements`                | Schema option |                                                                                    |
 
-| `throttle`                            | API           | From `Delay`.                                                                      |
+| `throttle`                            | API           | From `Delay`.                                                                      |
 
-| `toolbar_drawer`                      | Option        | Superseded by `toolbar_mode`.                                                      |
+| `toolbar_drawer`                      | Option        | Superseded by `toolbar_mode`.                                                      |
 
 | `types`                               | Option        | From `EditorManager`.                                                              |
 
@@ -246,13 +246,13 @@ Consequently, they were removed with this release without deprecation notices be
 |===
 | item                                     | element       |
 
-| `editor.editorCommands.hasCustomCommand` | API           |
+| `editor.editorCommands.hasCustomCommand` | API           |
 
-| `mceResetDesignMode`                     | Command       |
+| `mceResetDesignMode`                     | Command       |
 
-| `mceRepaint`                             | Command       |
+| `mceRepaint`                             | Command       |
 
-| `mceBeginUndoLevel`                      | Command       |
+| `mceBeginUndoLevel`                      | Command       |
 |===
 # end::previously-undocumented-items-removed-without-prior-deprecation[]
 
@@ -297,7 +297,7 @@ Along with this new API, the new `tinymce.activeEditor.options` registry replace
 
 ==== `editor.uploadImages()`
 
-The `editor.uploadImages()` API now includes a `remove` flag.
+The `editor.uploadImages()` API now includes a `remove` flag.
 
 The flag returns `true` when an image being uploaded is removed after failing to upload.
 
@@ -318,7 +318,7 @@ This allows tests, such as `ImageEmojiTest`, to remove existing databases before
 
 ==== `setData` method in dialog API
 
-The dialog API’s `setData` method now uses a deep merge algorithm.
+The dialog API’s `setData` method now uses a deep merge algorithm.
 
 Consequently, it now supports partial nested objects.
 
@@ -365,7 +365,7 @@ The `toHex` function has been removed from `dom.DOMUtils`.
 
 ==== `DomParser`
 
-The `filterNode` method has been removed from the `DomParser` API.
+The `filterNode` method has been removed from the `DomParser` API.
 
 As well, the `DomParser` API no longer uses a custom parser internally and instead uses the https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[native `DOMParser` API].
 
@@ -412,7 +412,7 @@ Note, in particular, the removal of all legacy browser detection methods.
 
 ==== `fire` functions re-named in all {productname} APIs
 
-The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`.
+The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`.
 
 `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 
@@ -489,9 +489,9 @@ The `tinymce.util.Promise` API has been removed.
 
 === New and improved commands and queries
 
-==== `mceAutocompleterClose` and `mceAutocompleterReload`
+==== `mceAutocompleterClose` and `mceAutocompleterReload`
 
-As part of moving `autocompleter` from the default `silver` theme to the {productname} core, two new commands are now available: `mceAutocompleterClose` and `mceAutocompleterReload`.
+As part of moving `autocompleter` from the default `silver` theme to the {productname} core, two new commands are now available: `mceAutocompleterClose` and `mceAutocompleterReload`.
 
 
 ==== mceInsertTableDialog
@@ -545,16 +545,16 @@ The `mceInsertRawHTML` command has been removed.
 
 === New and improved events
 
-==== `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`
+==== `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`
 
-As part of moving `autocompleter` from the default `silver` theme to the {productname} core, three new events are now available: `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`.
+As part of moving `autocompleter` from the default `silver` theme to the {productname} core, three new events are now available: `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`.
 
-Themes can act on the `AutocompleterStart` and `AutocompleterUpdate` events and can call `AutocompleterEnd` to cancel the auto completer.
+Themes can act on the `AutocompleterStart` and `AutocompleterUpdate` events and can call `AutocompleterEnd` to cancel the auto completer.
 
 
 ==== `BeforeSetContent`
 
-The `BeforeSetContent` event now includes the actual serialized content when passing in an `AstNode` to the `editor.setContent`.
+The `BeforeSetContent` event now includes the actual serialized content when passing in an `AstNode` to the `editor.setContent`.
 
 
 ==== `GetContent`
@@ -564,7 +564,7 @@ The `GetContent` event now always passes a `string` for the `content` property.
 
 ==== `ThemeLoadError`
 
-A `ThemeLoadError` event is now fired if the theme fails to load.
+A `ThemeLoadError` event is now fired if the theme fails to load.
 
 === Fixed events
 
@@ -1053,7 +1053,7 @@ And, relatedly, the `redial` API now re-renders only the portions of a dialog th
 
 ==== `setData` method in dialog API
 
-The dialog API’s `setData` method now uses a deep merge algorithm.
+The dialog API’s `setData` method now uses a deep merge algorithm.
 
 Consequently, it now supports partial nested objects.
 
@@ -1075,7 +1075,7 @@ With this release, when a theme is called, related components are downloaded in 
 
 ==== `imagepreview`
 
-The new `imagepreview` dialog component allows for previewing and zooming of any image URL.
+The new `imagepreview` dialog component allows for previewing and zooming of any image URL.
 
 
 ==== Insertion point placement improved when clicking on noneditable elements
@@ -1161,7 +1161,7 @@ With this release, the `text` and `label` properties of these elements are now r
 
 ==== `editor.selection.setRng`
 
-Calls to `editor.selection.setRng` now update the insertion point bookmark when focus is returned to the editor.
+Calls to `editor.selection.setRng` now update the insertion point bookmark when focus is returned to the editor.
 
 For the end-user, this change means content dragged from outside the {productname} editor into the editable area will be placed into the {productname} document where the insertion point appears as the drag is completed.
 

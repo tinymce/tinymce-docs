@@ -58,11 +58,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
-[[events]]
-== Events
-
-For available events provided by the core table functionality, see xref:events.adoc#table-events[Table Events].
-
 == Commands
 
 NOTE: For additional commands that are provided by the core table functionality, see xref:editor-command-identifiers.adoc#core-commands-for-tables[Core Table Commands].
@@ -70,7 +65,3 @@ NOTE: For additional commands that are provided by the core table functionality,
 The Table plugin provides the following {productname} commands.
 
 include::partial$commands/table-cmds.adoc[]
-
-== Query command values
-
-For available query command values provided by the core table functionality, see xref:editor-command-identifiers.adoc#query-command-values-tables[Core Table Query Command Values].

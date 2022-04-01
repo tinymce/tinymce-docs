@@ -119,6 +119,8 @@ tinymce.activeEditor.execCommand('Undo');
 
 ==== Additional core editor commands
 
+===== Commands
+
 The commands in the following table are provided by the {productname} editor and provide additional functionality that does not require any plugins to be enabled.
 
 [cols="1,3",options="header"]
@@ -199,7 +201,7 @@ tinymce.activeEditor.execCommand('mceAutocompleterReload', false, {
 ----
 
 [[core-commands-for-tables]]
-===== Core commands for tables
+===== Commands for tables
 
 include::partial$commands/core-table-cmds.adoc[]
 

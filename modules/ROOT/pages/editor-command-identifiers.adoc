@@ -117,9 +117,7 @@ tinymce.activeEditor.execCommand('Redo');
 tinymce.activeEditor.execCommand('Undo');
 ----
 
-==== Additional core editor commands
-
-===== Commands
+==== Miscellaneous Core Commands
 
 The commands in the following table are provided by the {productname} editor and provide additional functionality that does not require any plugins to be enabled.
 
@@ -200,8 +198,8 @@ tinymce.activeEditor.execCommand('mceAutocompleterReload', false, {
 });
 ----
 
-[[core-commands-for-tables]]
-===== Commands for tables
+[[core-table-commands]]
+==== Core Table Commands
 
 include::partial$commands/core-table-cmds.adoc[]
 
@@ -461,7 +459,7 @@ include::partial$commands/tinymcespellchecker-cmds.adoc[leveloffset=+3]
 [[table]]
 ==== Table
 
-For additional commands that are provided by the core table functionality, see xref:core-commands-for-tables[Core Table Commands].
+For additional commands that are provided by the core table functionality, see xref:core-table-commands[Core Table Commands].
 
 The following commands require the xref:table.adoc[Table (`+table+`)] plugin.
 

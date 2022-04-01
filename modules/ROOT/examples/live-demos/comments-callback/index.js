@@ -42,7 +42,7 @@ tinymce.ScriptLoader.loadScripts(
 
   const randomString = () => {
     const randomArray = new Uint32Array(20);
-    return window.crypto.getRandomValues(randomArray)[0];
+    return window.crypto.getRandomValues(randomArray)[0].toString();
   };
 
   /* Our server "database" */
@@ -175,8 +175,7 @@ tinymce.ScriptLoader.loadScripts(
         const commentIndex = conversation.findIndex((comment) => comment.uid === commentUid);
         if (commentIndex === -1) {
           res.status(404);
-        }
-        if (
+        } else if (
           conversation[commentIndex].author === author ||
           author === owner
         ) {

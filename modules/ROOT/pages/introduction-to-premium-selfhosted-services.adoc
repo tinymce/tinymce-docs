@@ -30,7 +30,7 @@ If you don't, pick either http://tomcat.apache.org/[Tomcat] or https://www.eclip
 [IMPORTANT]
 .Memory requirement
 ====
-Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:troubleshoot.adoc#out-of-memory-errors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
+Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:troubleshoot-server.adoc#out-of-memory-errors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 ====
 
 [[deploy-server-side-components]]

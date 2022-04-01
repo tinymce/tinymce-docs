@@ -1,20 +1,18 @@
 = Table options
-
-:navtitle: Table options
 :description: TinyMCE tables
 
 == {productname} Table & Advanced Tables plugins
 
 {productname} has built-in table functionality. However, there are two plugins that provide additional functionality for tables:
 
-* Table is an open-source plugin that provides improved table handling through UI components, including dialogs, context menu, context toolbar, menu items and toolbar buttons. For information, see the xref:table.adoc[Table plugin].
+* Table is an open source plugin that provides improved table handling through UI components, including dialogs, context menus, context toolbars, menu items and toolbar buttons. For information, see the xref:table.adoc[Table plugin].
 * Advanced Tables is a premium plugin that extends the xref:table.adoc[Table plugin] by adding advanced functionality, including sort options for rows and columns, and row numbering column functionality for tables. For information, see the xref:advtable.adoc[Advanced Tables plugin].
 
 IMPORTANT: The following options apply to the core table functionality and may also affect `table` plugin and `advtable` plugin functionality.
 
 == Controlling how tables are inserted
 
-NOTE: Existing tables and tables added using `+setContent+` or paste are not affected by these options.
+NOTE: Existing tables and tables added using xref:apis/tinymce.editor.adoc#setContent[`+setContent+`], xref:apis/tinymce.editor.adoc#insertContent[`+insertContent+`] or paste are not affected by these options.
 
 include::partial$configuration/table_use_colgroups.adoc[leveloffset=+1]
 

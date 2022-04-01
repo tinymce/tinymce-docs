@@ -1,3 +1,4 @@
+[[template_replace_values]]
 === `template_replace_values`
 
 This is an object containing items that will be replaced with their respective string values when a template is inserted into the editor content.
@@ -22,12 +23,14 @@ tinymce.init({
 
 This can then be used in a template or snippet that looks like this:
 
-```html
-
-Name: {$username}, StaffID: {$staffid}```
+[source, html]
+----
+Name: {$username}, StaffID: {$staffid}
+----
 
 And that will be changed to:
 
-```html
-
-Name: Jack Black, StaffID: 991234```
+[source, html]
+----
+Name: Jack Black, StaffID: 991234
+----

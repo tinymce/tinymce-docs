@@ -9,7 +9,7 @@
 
 The help plugin adds a button and/or menu item that opens a dialog showing two tabs:
 
-* Handy shortcuts that explains some nice-to-know keyboard shortcuts
+* Handy shortcuts that explain some nice-to-know keyboard shortcuts
 * Plugin list that shows which plugins that have been installed, with links to the relevant documentation pages if available, and a list of available premium plugins.
 
 In the footer of the dialog you can also see which version of {productname} you are using.
@@ -31,13 +31,14 @@ tinymce.init({
 
 include::partial$configuration/help_tabs.adoc[]
 
+[[api]]
 == API
 
 |===
 | Name | Arguments | Description
 
 | addTab
-| tabSpec: link:{baseurl}/ui-components/dialogcomponents/#tabpanel[TabPanel]
+| tabSpec: xref:ui-components/dialogcomponents.adoc#tabpanel[TabPanel]
 | Register a tab for the Help dialog
 |===
 
@@ -59,7 +60,7 @@ tinymce.activeEditor.plugins.help.addTab({
 
 == Exposing metadata for the help plugin
 
-For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{baseurl}/advanced/creating-a-plugin/#exposingmetadata[Creating a Plugin page].
+For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  xref:advanced/creating-a-plugin.adoc[Creating a Plugin page].
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

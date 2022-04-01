@@ -15,8 +15,6 @@ This option makes it possible to disable the ability to resize table columns and
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table',
-  toolbar: 'table',
   table_resize_bars: false
 });
 ----

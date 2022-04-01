@@ -161,4 +161,4 @@ ephox {
 
 == Troubleshooting Origins
 
-If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about xref:troubleshoot.adoc#using-browser-tooling-to-investigate-services-issues[Using browser tooling to investigate services issues].
+If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about xref:troubleshoot-server.adoc#using-browser-tooling-to-investigate-services-issues[Using browser tooling to investigate services issues].

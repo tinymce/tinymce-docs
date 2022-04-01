@@ -27,7 +27,7 @@ Current author:: The Comments plugin does not know the name of the current user.
 
 After a user comments (triggering `+tinycomments_create+` for the first comment, or `+tinycomments_reply+` for subsequent comments), the Comments plugin requests the updated conversation using `+tinycomments_lookup+`, which should now contain the additional comment with the proper author.
 
-== Configuration options
+== Options
 
 === Required options
 

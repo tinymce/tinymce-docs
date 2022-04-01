@@ -77,8 +77,4 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 The Advanced Tables plugin provides the following {productname} commands.
 
-include::partial$commands/advtable-cmds.adoc[]
-
-== Events
-
-For events applicable to the Advanced Tables plugin, see: xref:table.adoc#events[Table plugin - Events].
+include::partial$commands/advtable-cmds.adoc[leveloffset=+1]

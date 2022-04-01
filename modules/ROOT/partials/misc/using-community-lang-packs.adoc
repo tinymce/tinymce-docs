@@ -5,7 +5,7 @@ ifeval::[{forModuleLoaders} == false]
 NOTE: {companyname} recommends using the `+language_url+` for the community language packs, to avoid copying the language pack into the `+tinymce/langs+` folder every time you upgrade {productname}.
 endif::[]
 
-To use change the user interface language using a community language pack:
+To change the user interface language using a community language pack:
 
 . Download the language pack from link:{gettiny}/language-packages/[the {companyname} Community Language Packages download page].
 ifeval::[{forModuleLoaders} == true]

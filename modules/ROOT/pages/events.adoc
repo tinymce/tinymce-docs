@@ -164,13 +164,16 @@ The following events are provided by the {productname} editor.
 |AutocompleterStart |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when an autocompleter is triggered and should show the fetched suggestions.
 |AutocompleterUpdate |`+{ lookupData: AutocompleteLookupData[] }+` |Fired when content is changed and the active autocompleter needs to update the suggestions shown.
 |AutocompleterEnd |N/A |Fired when the active autocompleter menu is about to be closed.
+|NewRow |N/A |Fired when a new table row is created.
+|NewCell |N/A |Fired when a new table cell is created.
+|TableModified |`+{ table: HTMLTableElement, structure: boolean, style: boolean }+` |Fired when style or structural changes are made to a table.
+|TableSelectionClear |N/A |Fired when the table selection is cleared.
 |===
 
 == Plugin events
 
 The following plugins provide events.
 
-* xref:advanced-tables-events[Advanced Tables events]
 * xref:autosave-events[Autosave events]
 * xref:character-map-events[Character Map events]
 * xref:comments-events[Comments events]
@@ -184,15 +187,9 @@ The following plugins provide events.
 * xref:permanent-pen-events[Permanent Pen events]
 * xref:powerpaste-events[PowerPaste events]
 * xref:spell-checker-pro-events[Spell Checker Pro events]
-* xref:table-events[Table events]
 * xref:visual-blocks-events[Visual Blocks events]
 * xref:visual-characters-events[Visual Characters events]
 * xref:word-count-events[Word Count events]
-
-[[advanced-tables-events]]
-=== Advanced Tables events
-
-For events applicable to the Advanced Tables plugin, see: xref:table-events[Table events].
 
 [[autosave-events]]
 === Autosave events
@@ -329,11 +326,6 @@ The following events are provided by the xref:introduction-to-powerpaste.adoc[Po
 === Spell Checker Pro events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
-
-[[table-events]]
-=== Table events
-
-include::partial$events/table-events.adoc[]
 
 [[visual-blocks-events]]
 === Visual Blocks events

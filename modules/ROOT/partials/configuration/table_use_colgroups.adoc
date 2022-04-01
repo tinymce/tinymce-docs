@@ -1,7 +1,7 @@
 [[table_use_colgroups]]
 == `+table_use_colgroups+`
 
-This option adds `+colgroup+` and `+col+` elements to new tables for specifying column widths. Existing tables and tables added using `+setContent+` or paste are not affected.
+This option adds `+colgroup+` and `+col+` elements to new tables for specifying column widths.
 
 {productname} only supports the `+width+` attribute on `+col+` elements. Other attributes are not supported, such as the `+span+` attribute.
 
@@ -17,8 +17,6 @@ This option adds `+colgroup+` and `+col+` elements to new tables for specifying 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table',
-  toolbar: 'table',
   table_use_colgroups: false
 });
 ----

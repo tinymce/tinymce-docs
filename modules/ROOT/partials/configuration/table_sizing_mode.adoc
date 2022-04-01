@@ -22,8 +22,6 @@ This option accepts the following values:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table',
-  toolbar: 'table',
   table_sizing_mode: 'relative'
 });
 ----

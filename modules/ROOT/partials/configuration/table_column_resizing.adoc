@@ -1,11 +1,6 @@
 [[table_column_resizing]]
 == `+table_column_resizing+`
 
-ifeval::["{pluginname}" != "Table"]
-
-NOTE: The `+table_column_resizing+` option requires the `+table+` plugin.
-endif::[]
-
 The `+table_column_resizing+` option sets whether a table or other columns are resized when a user resizes, inserts, or deletes a table column.
 
 There are two settings:
@@ -25,8 +20,6 @@ There are two settings:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  plugins: 'table',
-  toolbar: 'table',
   table_column_resizing: 'resizetable'
 });
 ----

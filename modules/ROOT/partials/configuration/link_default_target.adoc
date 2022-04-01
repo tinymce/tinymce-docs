@@ -11,7 +11,6 @@ This option allows you to set a default `+target+` value for links when insertin
 ifeval::["{plugincode}" == "link"]
 NOTE: This option also applies to the xref:autolink.adoc[autolink] plugin.
 endif::[]
-
 ifeval::["{plugincode}" == "autolink"]
 NOTE: This option also applies to the xref:link.adoc[link] plugin.
 endif::[]

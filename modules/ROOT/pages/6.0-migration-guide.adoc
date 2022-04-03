@@ -44,7 +44,7 @@ Equivalently, setting a `timeout` value sets how long the notification presents 
 
 NOTE: this does not change the behaviour of existing _Notifications_. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification without a close button that automatically closes after displaying for 5 seconds.
 
-=== `disabled` functions re-named in all {productname} APIs
+=== `disabled` functions renamed in all {productname} APIs
 
 Previously, multiple {productname} APIs and UI classes used `disable` or `disabled` in their function or property names.
 
@@ -74,7 +74,7 @@ To alter such data before it is added to the {productname} editor, use the `cont
 
 NOTE: calling the `editor.SetContent` `content` property now returns an empty string.
 
-=== `fire` function re-named in all {productname} APIs
+=== `fire` function renamed in all {productname} APIs
 
 The `fire()` function in
 
@@ -88,7 +88,7 @@ The `fire()` function in
 
 * `tinymce.util.EventDispatcher`
 
-has been re-named to `dispatch()`.
+has been renamed to `dispatch()`.
 
 `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 
@@ -290,11 +290,11 @@ As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-imaget
 
 _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
-Also, the `editimage_proxy` option has been re-named to `export_image_proxy_service_url`. The option was re-named to make it easier to configure when using https://tiny.cloud/docs/enterprise/server/[Tiny services].
+Also, the `editimage_proxy` option has been renamed to `export_image_proxy_service_url`. The option was renamed to make it easier to configure when using https://tiny.cloud/docs/enterprise/server/[Tiny services].
 
 Finally, `editimage` also offers a new export plugin option: `export_image_proxy_service_url`.
 
-NOTE: `editimage_proxy` (the re-named equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
+NOTE: `editimage_proxy` (the renamed equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
 
 Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `imagetools` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as https://tiny.cloud/tinymce/features/#productivity[_EditImage_].
 
@@ -325,7 +325,7 @@ In conjunction with this change, three changes have been made:
 
    When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
 
-2. The `mceInsertClipboardContent` argument, `content`, has been re-named. It is now `html`.
+2. The `mceInsertClipboardContent` argument, `content`, has been renamed. It is now `html`.
 
    The new name is a more accurate reflection of what sort of data the argument passes.
 
@@ -436,11 +436,11 @@ As of {productname} 6, the `change` event is not fired unless and until
 
 NOTE: it is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
-=== `disabled` properties re-named to `.enabled` in {productname} UI classes
+=== `disabled` properties renamed to `.enabled` in {productname} UI classes
 
 Previously, {productname} UI classes provided a `.disabled` property.
 
-In {productname} 6, this property has been re-named to `.enabled`.
+In {productname} 6, this property has been renamed to `.enabled`.
 
 Configurations that set `.disabled` must now set `.enabled`.
 
@@ -507,7 +507,7 @@ For example, consider a {productname} document that included a table that took u
 
 As another example, consider a {productname} document containing a table that is wider than the viewport. If you selected this table’s contents and set the *alignment* to _right_, the portion of the table that was outside the viewport disappeared to the left, and no scrollbar presented allowing you to bring that portion back into view.
 
-As of {productname} 6.0, tables are positioned using `margins` rather than `float`. This prevents these layout and UX problems occuring.
+As of {productname} 6.0, tables are positioned using `margins` rather than `float`. This prevents these layout and UX problems occurring.
 
 However, when upgrading to {productname} 6.0, there are two things to be aware of:
 

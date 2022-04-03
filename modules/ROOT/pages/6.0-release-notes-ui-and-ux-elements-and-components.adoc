@@ -105,11 +105,11 @@ It replaces the, now deprecated property, `primary`.
 
 
 [[disabled-properties-renamed-to-enabled]]
-==== `disabled` properties re-named to `.enabled` in {productname} UI classes
+==== `disabled` properties renamed to `.enabled` in {productname} UI classes
 
 Previously, {productname} UI classes provided a `.disabled` property.
 
-In {productname} 6, this property has been re-named to `.enabled`.
+In {productname} 6, this property has been renamed to `.enabled`.
 
 Also, the Dialog API, which previously offered the `disable(<name>)` and `enable(<name>)` functions, now offers a single `setEnabled(<name>, <state>)` function.
 
@@ -199,7 +199,7 @@ NOTE: this patch was contributed by community member, https://github.com/westonk
 
 {productname} previously used `float` to position tables to the left or right of the viewport (the working area available to the {productname} editor). This caused multiple layout and UX problems.
 
-As of {productname} 6.0, tables are positioned using `margins` rather than `float`. This prevents these layout and UX problems occuring.
+As of {productname} 6.0, tables are positioned using `margins` rather than `float`. This prevents these layout and UX problems occurring.
 
 However, when upgrading to {productname} 6.0, there are two things to be aware of:
 

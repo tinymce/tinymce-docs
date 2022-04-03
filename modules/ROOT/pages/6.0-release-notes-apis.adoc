@@ -83,7 +83,7 @@ Consequently, it now supports partial nested objects.
   Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
 
 [[disabled]]
-==== `disabled` functions re-named in all {productname} APIs
+==== `disabled` functions renamed in all {productname} APIs
 
 Previously, multiple {productname} APIs and UI classes used `disable` or `disabled` in their function or property names.
 
@@ -150,9 +150,9 @@ The following methods have been removed from the `Env` API:
 Note, in particular, the removal of all legacy browser detection methods.
 
 [[fire]]
-==== `fire` functions re-named in all {productname} APIs
+==== `fire` functions renamed in all {productname} APIs
 
-The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`.
+The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`.
 
 `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 

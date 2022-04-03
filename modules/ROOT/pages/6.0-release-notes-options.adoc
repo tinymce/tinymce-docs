@@ -57,7 +57,7 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 [[textpattern]]
 ==== TextPattern
 
-* the `textpattern_patterns` option is no longer an option. It is has been re-named, to `text_patterns` and is now a Core part of {productname} 6.0.
+* the `textpattern_patterns` option is no longer an option. It is has been renamed, to `text_patterns` and is now a Core part of {productname} 6.0.
 
    All references to `textpattern_patterns` (and `text_patterns`) should be removed from your configurations.
 

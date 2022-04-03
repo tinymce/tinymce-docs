@@ -47,11 +47,11 @@ Neither of these formats are allowed in {productname} 6.0.
 
 _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
 
-An `editimage` options were also re-named: `editimage_proxy` is now `editimage_proxy_service_url`, making it easier to configure when accessing https://tiny.cloud/docs/enterprise/server/[Tiny-specific services].
+An `editimage` options were also renamed: `editimage_proxy` is now `editimage_proxy_service_url`, making it easier to configure when accessing https://tiny.cloud/docs/enterprise/server/[Tiny-specific services].
 
 `editimage` also offers a new export plugin option: `export_image_proxy_service_url`.
 
-NOTE: `editimage_proxy` (the re-named equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
+NOTE: `editimage_proxy` (the renamed equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
 
 
 [[emoticons]]
@@ -134,7 +134,7 @@ All references to `paste` should be removed from your plugin configuration. Leav
 
 The `paste_data_images` option now defaults to `true`. When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
 
-The `mceInsertClipboardContent` argument, `content`, has been re-named. It is now `html`.
+The `mceInsertClipboardContent` argument, `content`, has been renamed. It is now `html`.
 
 The new name is a more accurate reflection of what sort of data the argument passes.
 

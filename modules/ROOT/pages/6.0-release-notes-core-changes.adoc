@@ -7,7 +7,7 @@ This section documents the three core changes made to {productname} 6.0.
 
 This section also includes four tables that set out the:
 
-* re-named APIs, Commands, Plugins, Options, and UI &amp; UX elements
+* renamed APIs, Commands, Plugins, Options, and UI &amp; UX elements
 
 * values changed in a default {productname} 6.0 instance.
 
@@ -68,7 +68,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 | `editimage_proxy`                   | `export_image_proxy_service_url` | Option                              | Renamed for easier configuration when used with https://tiny.cloud/docs/enterprise/server/[Tiny services].                                                                                                                                                                                                    |                                                   
 
-| `fire()`                            | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been re-named to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                  |                                                   
+| `fire()`                            | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                  |                                                   
 
 | `font_formats`                      | `font_family_formats`            | Option                              | No behavioural changes, but there are related toolbar and menu items changes.                                                                                                                                                                                                                                 |                                                   
 
@@ -88,7 +88,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 | `getShortEndedElements`             | `getVoidElements`                | API                                 | `special` and `void` are hard-coded elements defined by the HTML parsing specification. They can not be changed at run-time. The previous API name did not make it clear it was these, hard-coded, elements being called.                                                                                     |                                                   
 
-| `content`                           | `html`                           | Command                             | This `mceInsertClipboardContent` argument was re-named to better reflect what data is passed. NB: The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed.                                                                                     | see <<changed-plugins-paste>>                     
+| `content`                           | `html`                           | Command                             | This `mceInsertClipboardContent` argument was renamed to better reflect what data is passed. NB: The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed.                                                                                     | see <<changed-plugins-paste>>                     
 
 | `linheight_formats`                 | `line_height_formats`            | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
 

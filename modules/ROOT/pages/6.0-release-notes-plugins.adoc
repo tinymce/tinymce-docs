@@ -3,7 +3,9 @@
 :description: TinyMCE 6.0 Plugin changes
 :keywords: releasenotes, plugin
 
-This section describes all {productname} 6.0 Plugin improvements, changes and removals.
+This section documents the improvements, changes, and removals made to {productname} 6.0 Plugins.
+
+It also documents the the plugin loading change introduced in {productname} 6.0.
 
 * xref:plugins[Plugins]
 * xref:plugin-loading-format-change[Plugin loading format change]
@@ -285,4 +287,3 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 All references to `textpattern` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 Also, the API that called `textpattern` has been removed.
-

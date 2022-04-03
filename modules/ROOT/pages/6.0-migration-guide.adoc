@@ -1,7 +1,33 @@
-= TinyMCE 5.x -> 6.0 Migration Guide
+= Migrating from TinyMCE 5 to TinyMCE 6
+:navtitle: Migrating from TinyMCE 5
+:description: Guidance for migrating from TinyMCE 5 to TinyMCE 6
+:keywords: migration, considerations, premigration, pre-migration
 
-include::6.0-release-notes.adoc[tags=core-changes;things-we-renamed;default-value-changes;previously-deprecated-items-now-removed;previously-undocumented-items-removed-without-prior-deprecation;known-issue]
+The process for setting up a basic TinyMCE 6 instance is the same as TinyMCE 5.
 
+Most configuration changes in {productname} 6.0 only affect complex use cases, such as customized user interface components.
+
+This chapter describes the settings that require updating prior to migration; and workaround procedures for deprecated, deleted, and updated features.
+
+It set outs the {productname} 6.0 changes that customers using TinyMCE 5 should be aware of as part of upgrading.
+
+NOTE: For support related to migration, please contact https://support.tiny.cloud/hc/en-us/requests/new[Tiny support].  +
+Open Source users: please report issues in the https://github.com/tinymce/tinymce/[TinyMCE GitHub Repository].
+
+== Contents
+
+* xref:apis[APIs]
+* xref:commands-and-queries[Commands and queries]
+* xref:options[Options]
+* xref:text-patterns[Text patterns]
+* xref:plugins[Plugins]
+* xref:schema[Schema]
+* xref:ui-and-ux-elements-and-component[UI and UX elements and components]
+
+
+include::6.0-release-notes-core-changes.adoc
+
+[[apis]]
 == APIs
 
 === AddOnManager
@@ -98,7 +124,7 @@ Previously, when loading a requested resource, the `ThemeManager` passed a `succ
 
 
 
-
+[[commands-and-queries]]
 == Commands and queries
 
 === `element_format`
@@ -148,7 +174,7 @@ For example —
 
 
 
-
+[[options]]
 == Options
 
 === `image_upload_handler`
@@ -163,6 +189,7 @@ It now defaults to `https`. Previously it defaulted to `http`.
 
 NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
 
+[[text-patterns]]
 == Text Patterns
 
 As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-options-textpattern[_{productname} 6.0 Release Notes_], the `textpattern_patterns` option:
@@ -192,7 +219,7 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 
 
 
-
+[[plugins]]
 == Plugins
 
 === Plugin loading format change
@@ -343,6 +370,8 @@ Any configurations or logic that use the old command names must be updated to th
 
 NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
+
+[[schema]]
 == Schema
 
 === default schema is HTML 5
@@ -378,7 +407,7 @@ NOTE: existing configurations that included escaped colons will continue to work
 
 
 
-
+[[ui-and-ux-elements-and-components]]
 == UI and UX elements and components
 
 === buttonType

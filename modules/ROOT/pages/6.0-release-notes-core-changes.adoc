@@ -3,6 +3,19 @@
 :description: The core changes for TinyMCE 6.0
 :keywords: releasenotes, bugfixes, defaults
 
+This section documents the two core changes made to {productname} 6.0.
+
+This section also includes four tables that set out the:
+
+* re-named APIs, Commands, Plugins, Options, and UI &amp; UX elements
+
+* values changed in a default {productname} 6.0 instance.
+
+* previously deprecated and now removed items.
+
+* never documented, and consequently never supported, items that have now been removed.
+
+
 * xref:core-changes[Core changes]
 * xref:things-we-renamed[Things we renamed]
 * xref:default-value-changes[Default value changes]
@@ -118,19 +131,21 @@ Also, no Premium Plugins being released with {productname} 6.0 are backwards com
 == Default value changes
 
 |===
-| element                 | old value                   | new value | notes                                                             | for more information                                               |
+| element                       | old value                   | new value | notes                                                                  | for more information                                               |
 
-| `config.height`         | `200px`                     | `400px`   | Changed to improve user experience.                               | see <<ui-and-ux-elements-and-components-editor-text-entry-height>> |
+| assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata | 
 
-| `element_format`        | _no default value assigned_ | `html`    | Changed as part of modernising {productname}’s default behaviour. |                                                                    |
+| `config.height`               | `200px`                     | `400px`   | Changed to improve user experience.                                    | see <<ui-and-ux-elements-and-components-editor-text-entry-height>> |
 
-| `link_default_protocol` | `http`                      | `https`   | Changed as part of modernising {productname}’s default behaviour. |                                                                    |
+| `element_format`              | _no default value assigned_ | `html`    | Changed as part of modernising {productname}’s default behaviour.      |                                                                    |
 
-| {productname} `schema`  | _no default value assigned_ | `html5`   | Changed as part of modernising {productname}’s default behaviour. |                                                                    |
+| `link_default_protocol`       | `http`                      | `https`   | Changed as part of modernising {productname}’s default behaviour.      |                                                                    |
 
-| `table_style_by_css`    | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>                                      |
+| {productname} `schema`        | _no default value assigned_ | `html5`   | Changed as part of modernising {productname}’s default behaviour.      |                                                                    |
 
-| `table_use_colgroups`   | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour. | see <<changed-plugins-table>>                                      |
+| `table_style_by_css`          | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>>                                      |
+
+| `table_use_colgroups`         | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>>                                      |
 |===
 
 

@@ -3,12 +3,15 @@
 :description: TinyMCE 6.0 API changes
 :keywords: releasenotes, apis
 
-This section describes all {productname} 6.0 API improvements, changes and fixes.
+This section documents the improvements, changes and fixes made to {productname} 6.0 APIs.
+
+It also documents the {productname} 6.0 APIs that have been removed.
+
 
 * xref:apis[APIs]
 * xref:new-and-improved-apis][New and improved APIs]
 * xref:changed-apis[Changed APIs] 
-* xref:fixed-apis[fixed APIs]
+* xref:fixed-apis[Fixed APIs]
 * xref:removed-or-deprecated-apis[Removed or deprecated APIs]
 
 
@@ -221,5 +224,3 @@ Since the `table` plugin API was entirely concerned with generating tables, it h
 ==== `tinymce.util.Promise`
 
 The `tinymce.util.Promise` API has been removed.
-
-

@@ -1,0 +1,21 @@
+= TinyMCE 6.0 parsing and serialisation changes
+:navtitle: TinyMCE 6.0 parsing and serialisation changes
+:description: TinyMCE 6.0 parsing and serialisation changes
+:keywords: releasenotes, parsing, serialisation
+
+This section documents the single change made to {productname} 6.0 parsing and serialisation.
+
+* xref:parsing-and-serialisation[Parsing and serialisation]
+* xref:changed-parsing-and-serialisation[Changed parsing and serialisation] 
+
+[[parsing-and-serialisation]]
+== Parsing and serialisation
+
+
+[[changed-parsing-and-serialisation]]
+=== Changed parsing and serialisation
+
+[[rgb-colors-no-longer-converted-to-hex-values]]
+==== RGB colors no longer converted to hex values
+
+With the removal of the, now deprecated, `toHex` APIs, RGB colors are no longer converted to hex values when parsing or serializing content.

@@ -1,0 +1,66 @@
+= TinyMCE 6.0 Options changes
+:navtitle: TinyMCE 6.0 Options changes
+:description: TinyMCE 6.0 Options changes
+:keywords: releasenotes, options, configurations
+
+This section documents the changes made to {productname} 6.0 Options.
+
+It also documents the {productname} 6.0 Option that has been removed.
+
+* xref:options[Options]
+* xref:changed-options[Changed Options] 
+* xref:removed-or-deprecated-apis[Removed or deprecated Options]
+
+
+[[options]]
+== Options
+
+
+[[changed-options]]
+=== Changed options
+
+
+[[image-upload-handler]]
+==== `image_upload_handler`
+
+Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload.
+
+In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`, with a value of either `resolve` or `reject`.
+
+
+[[link-default-protocol]]
+==== link_default_protocol
+
+The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
+
+It now defaults to `https`. Previously it defaulted to `http`.
+
+NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
+
+[[tinymce-active-editor-options-get]]
+==== tinymce.activeEditor.options.get
+
+Previously `tinymce.activeEditor.options.get('plugins')` returned the configured plugins as a string.
+
+As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns the configured plugins as an array.
+
+
+
+//=== Fixed options
+
+//=== Added options
+
+[[removed-or-deprecated-options]]
+=== Removed or deprecated options
+
+
+[[textpattern]]
+==== TextPattern
+
+* the `textpattern_patterns` option is no longer an option. It is has been re-named, to `text_patterns` and is now a Core part of {productname} 6.0.
+
+   All references to `textpattern_patterns` (and `text_patterns`) should be removed from your configurations.
+
+*  Also, the API called `textpattern` has been removed.
+
+*  Finally, text patterns are now on by default. `text_patterns: false` turns the functionality off.

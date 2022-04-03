@@ -43,6 +43,11 @@ In {productname} 6.0, the `initialData` type is now `Partial<T>`, which matches 
 
 And, relatedly, the `redial` API now re-renders only the portions of a dialog that have changed.
 
+[[format-painter]]
+==== Format Painter
+
+The *Format Painter* toolbar item now has a matching menu item: *Format › Format Painter*.
+
 
 [[setdata]]
 ==== `setData` method in dialog API
@@ -203,6 +208,15 @@ First, {productname} 6.0 does not alter existing documents. Extant {productname}
 If an extant {productname} document with an aligned table is opened using {productname} 6.0 and the *alignment* of the table is re-set, {productname} 6.0 will remove the `float` property and use the `margin` property to set the *alignment*.
 
 Second, if the previous behaviour is required, a custom `format` will need to be created.
+
+
+[[text-presentation-corrections-on-some-UI-elements]]
+==== Text presentation corrections on some UI elements
+
+The text on some buttons and menu items incorrectly presented in Title Case.
+
+The underlying strings have been corrected and these items now present in sentence case, as expected.
+
 
 [[removed-or-deprecated-ui-and-ux-elements-and-components]]
 === Removed or deprecated UI and UX elements and components

@@ -19,10 +19,6 @@ If a service does not appear to be working, this is generally caused by one of t
 
 == Browser-specific issues
 
-=== Internet Explorer specific troubleshooting tips
-
-If the editor is reporting that the service cannot be found and tracing the network traffic reveals that no request is made at all, check that the server is *not* listed in the `+Trusted Sites+` section of Internet Explorer's security options. If it is, remove it and try again.
-
 === Chrome specific tips
 
 If the server is not running on a standard HTTP or HTTPS port (80 or 443) then Chrome will include the port in the Origin header that is sent to the server. Other browsers do not do this. If you have set `+ignore-port+` to `+false+`, then you will need to include the port in the `+allowed-origins+`. See xref:configure-required-services.adoc#allowed-origins[Additional Information Around Entering Origins] for more details.
@@ -34,7 +30,6 @@ If the server is not running on a standard HTTP or HTTPS port (80 or 443) then C
 * Chrome: View menu -> Developer -> JavaScript Console. Click the Network tab (located between Elements and Sources).
 * Firefox: Tools menu -> Web Developer -> Network.
 * Safari: Develop -> Show Error Console. Click the Timelines link between Resources and Debugger.
-* Internet Explorer: Click the cog icon on the top-right side of the browser. Select F12 Developer Tools. Click the Network link (next to the ‘Profiler’ link).
 . Refresh the webpage featuring an {productname} configured with the spelling service. Enter a misspelled word into the editor.
 . Locate the network results that match the following URLs:
 * `+http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect+`

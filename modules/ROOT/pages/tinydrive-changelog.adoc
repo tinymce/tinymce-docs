@@ -3,6 +3,30 @@
 :description: The history of Tiny Drive releases.
 :keywords: changelog
 
+== 2.0.0 - 2022-03-03
+
+=== Added
+
+* Added `webp`, `avif`, and `apng` extensions to the list of supported file formats.
+* Added more jpeg extensions to the list of supported file formats.
+
+=== Changed
+ 
+* When using Starred filter, move and copy are now removed from the actions menu.
+* Upgraded the third-party PDF viewer to the latest version.
+
+=== Improved
+    
+* Added text to the preview when no preview is available.
+
+=== Fixed
+
+* Fixed an issue where the css file was loaded multiple times.
+* Fixed an issue where some icons would not change color as expected.
+* Fixed an issue where a menu would not close in some situations.
+* Unstarring a file while viewing its preview and filtering on only starred files will now update as expected.
+* Renaming a file while in preview dialog will now update the name as expected. 
+
 == 1.4.1 - 2021-05-26
 
 === Fixed

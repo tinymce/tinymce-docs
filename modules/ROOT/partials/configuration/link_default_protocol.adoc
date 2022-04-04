@@ -8,7 +8,12 @@ endif::[]
 
 This option allows you to set a default protocol for links when inserting/editing a link via the link dialog. The protocol will apply to any links where the protocol has not been specified and the prefix prompt has been accepted.
 
+ifeval::["{plugincode}" == "link"]
 NOTE: This option also applies to the xref:autolink.adoc[autolink] plugin.
+endif::[]
+ifeval::["{plugincode}" == "autolink"]
+NOTE: This option also applies to the xref:link.adoc[link] plugin.
+endif::[]
 
 *Type:* `+String+`
 

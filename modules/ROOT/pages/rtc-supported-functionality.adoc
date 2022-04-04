@@ -36,7 +36,6 @@ The following plugins are currently supported:
 ** The xref:image.adoc#image_caption[`+image_caption+`] option is not supported.
 * xref:insertdatetime.adoc[Insert Date/Time (`+insertdatetime+`)]
 * xref:link.adoc[Link (`+link+`)]
-** The xref:link.adoc#link_rel_list[`+link_rel_list+`] option is not supported.
 * xref:lists.adoc[Lists (`+lists+`)]
 * xref:moxiemanager.adoc[MoxieManager (`+moxiemanager+`)]
 * xref:introduction-to-powerpaste.adoc[PowerPaste (`+powerpaste+`)]
@@ -55,21 +54,14 @@ When planning to integrate Real-Time Collaboration into your application or webs
 
 == Options that are not available when RTC is enabled
 
-* xref:content-filtering.adoc#allow_unsafe_link_target[`+allow_unsafe_link_target+`]
 * xref:content-filtering.adoc#br_in_pre[`+br_in_pre+`]
 * xref:content-filtering.adoc#custom_elements[`+custom_elements+`]
 * xref:content-behavior-options.adoc#end_container_on_empty_block[`+end_container_on_empty_block+`]
-* xref:content-filtering.adoc#extended_valid_elements[`+extended_valid_elements+`]
 * xref:content-filtering.adoc#forced_root_block[`+forced_root_block+`]
 * xref:content-filtering.adoc#forced_root_block_attrs[`+forced_root_block_attrs+`]
 * xref:content-formatting.adoc#format_empty_lines[`+format_empty_lines+`]
 * xref:image.adoc#image_caption[`+image_caption+`]
-* xref:user-formatting-options.adoc#indent_use_margin[`+indent_use_margin+`]
 * xref:content-behavior-options.adoc#inline_boundaries[`+inline_boundaries+`]
-* xref:content-behavior-options.adoc#inline_boundaries_selector[`+inline_boundaries_selector+`]
 * xref:content-behavior-options.adoc#keep_styles[`+keep_styles+`]
 * xref:editor-important-options.adoc#placeholder[`+placeholder+`]
 * xref:content-filtering.adoc#protect[`+protect+`]
-* xref:link.adoc#link_rel_list[`+link_rel_list+`]
-* xref:content-filtering.adoc#valid_children[`+valid_children+`]
-* xref:content-filtering.adoc#valid_elements[`+valid_elements+`]

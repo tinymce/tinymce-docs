@@ -51,7 +51,7 @@ A `ThemeLoadError` event is now fired if the theme fails to load.
 [[before-input]]
 ==== `beforeinput`
 
-The `beforeinput` event is expected to fire whenever material is added to or removed from a {productname} instance. 
+The `beforeinput` event is expected to fire whenever material is added to or removed from a {productname} instance.
 
 Previously, however, because of overrides in the `DeleteBackspaceKeys.ts` module, the `beforeinput` event did not always fire when expected.
 
@@ -73,13 +73,12 @@ Making further modifications and then switching focus away from the editor did t
 
 As of {productname} 6, the `change` event is not fired unless and until
 
-1. focus is switched away from the editor; and
-
-2. changes have been made in the editor since focus was switched to it.
+. focus is switched away from the editor; and
+. changes have been made in the editor since focus was switched to it.
 
 NOTE: it is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
-[[get-content]]
+[[fixed-get-content]]
 ==== `GetContent`
 
 Previously the `GetContent` event did not fire when the `editor.selection.setContent()` API attempted to get `tree` or `text` formatted data.
@@ -92,7 +91,7 @@ NOTE: The `editor.selection.setContent()` API only supports the `html` and `raw`
 [[input]]
 ==== `input`
 
-The `input` event is expected to fire whenever material is deleted from a {productname} instance. 
+The `input` event is expected to fire whenever material is deleted from a {productname} instance.
 
 Previously, however, because of over-rides in the `DeleteBackspaceKeys.ts` module, when more than one line was deleted, the `input` event did not fire.
 

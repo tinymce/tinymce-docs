@@ -8,11 +8,8 @@ This section documents the three core changes made to {productname} 6.0.
 This section also includes four tables that set out the:
 
 * renamed APIs, Commands, Plugins, Options, and UI &amp; UX elements
-
 * values changed in a default {productname} 6.0 instance.
-
 * previously deprecated and now removed items.
-
 * never documented, and consequently never supported, items that have now been removed.
 
 
@@ -26,45 +23,43 @@ This section also includes four tables that set out the:
 [[core-changes]]
 == Core changes
 
-1. {productname} 6.0 now requires a browser capable of running https://tc39.es/ecma262/2020/[ECMAScript 2020] (ES2020).
-
+. {productname} 6.0 now requires a browser capable of running https://tc39.es/ecma262/2020/[ECMAScript 2020] (ES2020).
++
 NOTE: In particular, this means {productname} 6.0 does not support Internet Explorer 11.
-
-2. No Premium Plugins being released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
-
-3. {productname} 6.0 is now available in three further language:
-
-   * Hindi (hi);
-   
-   * Malay (ms); and
-   
-   * Vietnamese (vi)
++
+. No Premium Plugins being released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
+. {productname} 6.0 is now available in three further language:
+* Hindi (hi);
+* Malay (ms); and
+* Vietnamese (vi)
 
 
-[[id=things-we-renamed]]
+[[things-we-renamed]]
 == Things we renamed
+
+[cols="1,1,1,1,1"]
 |===
-| old name                            | new name                         | element                             | notes                                                                                                                                                                                                                                                                                                         | for more information                              
+| old name                            | new name                         | element                             | notes                                                                                                                                                                                                                                                                                                         | for more information
 
 | `blockformats`                      | `blocks`                         | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
 | `formatselect`                      | `blocks`                         | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `imagetools`                        | `editimage`                      | Plugin                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `imagetools`                        | `editimage`                      | Plugin                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
-| `imagetools_toolbar`                | `editimage_toolbar`              | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `imagetools_toolbar`                | `editimage_toolbar`              | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
-| `imagetools_proxy`                  | `editimage_proxy`                | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `imagetools_proxy`                  | `editimage_proxy`                | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
-| `imagetools_cors_hosts`             | `editimage_cors_hosts`           | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `imagetools_cors_hosts`             | `editimage_cors_hosts`           | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
-| `imagetools_credentials_hosts`      | `editimage_credentials_hosts`    | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `imagetools_credentials_hosts`      | `editimage_credentials_hosts`    | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
-| `imagetools_fetch_image`            | `editimage_fetch_iamge`          | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `imagetools_fetch_image`            | `editimage_fetch_iamge`          | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
-| `imagetools_api_key`                | `editimage_api_key`              | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `imagetools_api_key`                | `editimage_api_key`              | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
-| `images_upload_timeout`             | `editimage_upload_timeout`       | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
+| `images_upload_timeout`             | `editimage_upload_timeout`       | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see xref:new-and-improved-plugins-imagetools[EditImage]
 
 | `editimage_proxy`                   | `export_image_proxy_service_url` | Option                              | Renamed for easier configuration when used with https://tiny.cloud/docs/enterprise/server/[Tiny services].                                                                                                                                                                                                    |
 
@@ -88,7 +83,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 | `getShortEndedElements`             | `getVoidElements`                | API                                 | `special` and `void` are hard-coded elements defined by the HTML parsing specification. They can not be changed at run-time. The previous API name did not make it clear it was these, hard-coded, elements being called.                                                                                     |
 
-| `content`                           | `html`                           | Command                             | This `mceInsertClipboardContent` argument was renamed to better reflect what data is passed. NB: The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed.                                                                                      | see <<changed-plugins-paste>>
+| `content`                           | `html`                           | Command                             | This `mceInsertClipboardContent` argument was renamed to better reflect what data is passed. NB: The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed.                                                                                      | see xref:changed-plugins-paste[Paste]
 
 | `linheight_formats`                 | `line_height_formats`            | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
@@ -98,72 +93,74 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 | `target_list`                       | `link_target_list`               |                                     | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                                                          |
 
-| `mceInsertTable`                    | `mceInsertTableDialog`           |                                     | Use `mceInsertTableDialog` to open the _Insert Table_ dialog box. NB: `mceInsertTable` (with appropriate arguments) still works to insert a table directly into an existing document. `mceInsertTable` can no longer be used to invoke the _Table_ dialog box, however.                                       | see <<changed-plugins-table>>                     
+| `mceInsertTable`                    | `mceInsertTableDialog`           |                                     | Use `mceInsertTableDialog` to open the _Insert Table_ dialog box. NB: `mceInsertTable` (with appropriate arguments) still works to insert a table directly into an existing document. `mceInsertTable` can no longer be used to invoke the _Table_ dialog box, however.                                       | see xref:changed-plugins-table[Table]
 
-| `noneditable_noneditable_class`     | `noneditable_class`              |                                     | After upgrading, rename the options in your {productname} init configuration to match the new name. For example, `noneditable_noneditable_class: 'mceNonEditable'` must be renamed `noneditable_class: 'mceNonEditable'`.                                                                                     | see <<changed-plugins-noneditable>>               
+| `noneditable_noneditable_class`     | `noneditable_class`              |                                     | After upgrading, rename the options in your {productname} init configuration to match the new name. For example, `noneditable_noneditable_class: 'mceNonEditable'` must be renamed `noneditable_class: 'mceNonEditable'`.                                                                                     | see xref:changed-plugins-noneditable[Noneditable]
 
-| `noneditable_editable_class`        | `editable_class`                 |                                     | After upgrading, rename the options in your {productname} init configuration to match the new name. For example, `noneditable_editable_class: 'mceEditable'` must be renamed `editable_class: 'mceEditable'`.                                                                                                 | see <<changed-plugins-noneditable>>               
+| `noneditable_editable_class`        | `editable_class`                 |                                     | After upgrading, rename the options in your {productname} init configuration to match the new name. For example, `noneditable_editable_class: 'mceEditable'` must be renamed `editable_class: 'mceEditable'`.                                                                                                 | see xref:changed-plugins-noneditable[Noneditable]
 
 | `styleselect`                       | `styles`                         | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
 | `formats`                           | `styles`                         | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `textpattern_patterns`              | `text_patterns`                  | Option                              | After upgrading, rename the options in your {productname} init configuration to match the new name. Also, remove `textpattern` from your plugins list. This name-change is consequent to `textpattern` being changed from a Plugin to being part of the {productname} Core.                                   | see <<changed-plugins-textpattern>> 
+| `textpattern_patterns`              | `text_patterns`                  | Option                              | After upgrading, rename the options in your {productname} init configuration to match the new name. Also, remove `textpattern` from your plugins list. This name-change is consequent to `textpattern` being changed from a Plugin to being part of the {productname} Core.                                   | see xref:changed-plugins-textpattern[Textpattern]
 
 | `tinymce.Env.browser.isChrome`      | `tinymce.Env.browser.isChromium` | API                                 | Updated so the `Sand` and `Env` APIs better reflect what they are checking for. `isChrome` implies they are checking for _Google Chrome_. They are actually checking for any Chromium-based browser (eg Chromium, Google Chrome, or Chrome Edge) so `isChromium` more accurately reflects what is being done. |
 
 | `tinymce.Env.os.isOSX`              | `tinymce.Env.os.isMacOS`         | API                                 | Updated so the `Sand` and `Env` APIs now use the current name of Apple’s desktop operating system when checking to see if a device’s OS is, in fact, macOS.                                                                                                                                                   |
 
-| `toc`                               | `tableofcontents`                | Plugin, Menu item, and Toolbar item | This presents in both the menu item and the toolbar’s tooltip text. NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                       | see <<new-and-improved-plugins-table-of-contents>>
+| `toc`                               | `tableofcontents`                | Plugin, Menu item, and Toolbar item | This presents in both the menu item and the toolbar’s tooltip text. NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                       | see see xref:new-and-improved-plugins-table-of-contents[Table of Contents]
 
-| `tocupdate`                         | `tableofcontentsupdate`          | Toolbar item                        | This presents in the toolbar’s tooltip text. NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                              | see <<new-and-improved-plugins-table-of-contents>>
+| `tocupdate`                         | `tableofcontentsupdate`          | Toolbar item                        | This presents in the toolbar’s tooltip text. NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                              | see xref:new-and-improved-plugins-table-of-contents[Table of Contents]
 
-| `toc_class`                         | `tableofcontents_class`          | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                           | see <<new-and-improved-plugins-table-of-contents>>
+| `toc_class`                         | `tableofcontents_class`          | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                           | see xref:new-and-improved-plugins-table-of-contents[Table of Contents]
 
-| `toc_depth`                         | `tableofcontents_depth`          | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                           | see <<new-and-improved-plugins-table-of-contents>>
+| `toc_depth`                         | `tableofcontents_depth`          | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                           | see xref:new-and-improved-plugins-table-of-contents[Table of Contents]
 
-| `toc_header`                        | `tableofcontents_header`         | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                           | see <<new-and-improved-plugins-table-of-contents>>
+| `toc_header`                        | `tableofcontents_header`         | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                           | see xref:new-and-improved-plugins-table-of-contents[Table of Contents]
 |===
 
 - *Commands* are what is passed via the `theeditor.execCommand()` API.
-
-  Where a Command name has change, calls to `theeditor.execCommand()` API must be changed to match the new name.
-
++
+Where a Command name has change, calls to `theeditor.execCommand()` API must be changed to match the new name.
++
 - Configuration *Options* are what is passed when initialising the {productname} editor via `tinymce.init`.
-
-  Where an Option name has changed, configurations using that option must be changed to match the new name.
-
++
+Where an Option name has changed, configurations using that option must be changed to match the new name.
++
 - *Menu items* and *Toolbar items* are *Options* from `tinymce.init` for UI and UX features, such as the {productname} Menu, Toolbar and Contextual Menu.
 
 
 [[default-value-changes]]
 == Default value changes
 
+[cols="1,1,1,1"]
 |===
 | element                       | old value                   | new value | notes                                                                  | for more information
 
 | assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata |
 
-| `config.height`               | `200px`                     | `400px`   | Changed to improve user experience.                                    | see <<ui-and-ux-elements-and-components-editor-text-entry-height>>
+| `config.height`               | `200px`                     | `400px`   | Changed to improve user experience.                                    | see xref:ui-and-ux-elements-and-components-editor-text-entry-height[Height]
 
-| `element_format`              | _no default value assigned_ | `html`    | Changed as part of modernising {productname}’s default behaviour.      | 
+| `element_format`              | _no default value assigned_ | `html`    | Changed as part of modernising {productname}’s default behaviour.      |
 
-| `link_default_protocol`       | `http`                      | `https`   | Changed as part of modernising {productname}’s default behaviour.      | 
+| `link_default_protocol`       | `http`                      | `https`   | Changed as part of modernising {productname}’s default behaviour.      |
 
 | {productname} `schema`        | _no default value assigned_ | `html5`   | Changed as part of modernising {productname}’s default behaviour.      |
 
-| `table_style_by_css`          | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>>
+| `table_style_by_css`          | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see xref:changed-plugins-table[Table]
 
-| `table_use_colgroups`         | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>> 
+| `table_use_colgroups`         | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see xref:changed-plugins-table[Table]
 |===
 
 
 
-[id=previously-deprecated-items-now-removed]
+[[previously-deprecated-items-now-removed]]
 == Previously deprecated items now removed
 
 The following elements were previously deprecated and have, with this release, been removed entirely from {productname}.
 
+[cols="1,1,1"]
 |===
 | item                                  | element       | notes
 
@@ -183,9 +180,9 @@ The following elements were previously deprecated and have, with this release, b
 
 | `clearTimeout`                        | API           | From `Delay`.
 
-| `Color`                               | API           | 
+| `Color`                               | API           |
 
-| `content_editable_state`              | Option        | 
+| `content_editable_state`              | Option        |
 
 | `debounce`                            | API           | From `Delay`.
 
@@ -268,13 +265,14 @@ The following elements were previously deprecated and have, with this release, b
 
 
 
-[id=previously-undocumented-items-removed-without-prior-deprecation]
+[[previously-undocumented-items-removed-without-prior-deprecation]]
 == Previously undocumented items removed without prior deprecation
 
 The following elements were never documented and have never been formally supported.
 
 Consequently, they were removed with this release without deprecation notices being provided in earlier releases.
 
+[cols="1,1"]
 |===
 | item                                     | element
 

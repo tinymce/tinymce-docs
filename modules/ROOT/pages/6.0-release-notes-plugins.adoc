@@ -10,7 +10,7 @@ It also documents the the plugin loading change introduced in {productname} 6.0.
 * xref:plugins[Plugins]
 * xref:plugin-loading-format-change[Plugin loading format change]
 * xref:new-and-improved-plugins][New and improved Plugins]
-* xref:changed-apis[Changed APIs] 
+* xref:changed-apis[Changed APIs]
 * xref:removed-or-deprecated-plugins[Removed or deprecated Plugins]
 
 
@@ -22,17 +22,17 @@ It also documents the the plugin loading change introduced in {productname} 6.0.
 
 {productname} 6.0 allows plugin loading in any of three formats:
 
-1. An array of strings:
-
-   `plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
-
-2. A space-separated string:
-
-   `plugins: 'advlist list image help wordcount'`
-   
-3. A comma-separated string:
-
-   `plugins: 'advlist,list,image,help,wordcount'`
+. An array of strings:
++
+`plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
++
+. A space-separated string:
++
+`plugins: 'advlist list image help wordcount'`
++
+. A comma-separated string:
++
+`plugins: 'advlist,list,image,help,wordcount'`
 
 Previously, two other formats were allowed: comma-separated strings with spaces and arrays of space-separated strings.
 
@@ -77,11 +77,8 @@ NOTE: the `tableofcontents` plugin is no longer part of the Core open source edi
 The following four Premium Plugins now present in Hindi, Malay, and Vietnamese:
 
 * Accessibility Checker
-
 * AdvTable
-
 * Comments
-
 * Spellchecker
 
 
@@ -166,27 +163,26 @@ This was incorrect: the section takes precedence and cells in the `tfoot` sectio
 In {productname} 6.0, selecting cells in the `tfoot` section of a table and pressing the row header toolbar button returns the row as a footer row, as expected.
 
 * `mceInsertTableDialog` is the new command for invoking an _Insert Table_ dialog box.
-
-   The previous command, `mceInsertTable`, no longer works to invoke an _Insert Table_ dialog box: use the `mceInsertTableDialog` command instead.
-
-   The `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input.
-
++
+The previous command, `mceInsertTable`, no longer works to invoke an _Insert Table_ dialog box: use the `mceInsertTableDialog` command instead.
++
+The `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input.
++
 * The default values for the `table_style_by_css` and the `table_use_colgroups` options have both been changed.
-
-  Previously, these options defaulted to `false`. As of {productname} 6.0, both options now default to `true`.
-
-  This is in line with modern web practice.
-
++
+Previously, these options defaulted to `false`. As of {productname} 6.0, both options now default to `true`.
++
+This is in line with modern web practice.
++
 * the `table_responsive_width` option was previously deprecated and superseded by `table_sizing_mode`.
-
-  In {productname} 6.0, the `table_responsive_width` option has been removed.
++
+In {productname} 6.0, the `table_responsive_width` option has been removed.
 
 //[[fixed-plugins]]
 //=== Fixed plugins
 //
 //[id-added-plugins]]
 //=== Added plugins
-
 
 [[removed-or-deprecated-plugins]]
 === Removed or deprecated plugins
@@ -224,7 +220,7 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 
 All references to `hr` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
-[[imagetools]]
+[[changed-plugins-imagetools]]
 ==== ImageTools
 
 The `imagetools` plugin is no longer part of the Free {productname} editor. _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
@@ -234,7 +230,7 @@ The `imagetools` plugin is no longer part of the Free {productname} editor. _Ima
 
 As per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[announcement], the `legacyoutput` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
-[[paste]]
+[[changed-plugins-paste]]
 ==== Paste
 
 The `paste` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
@@ -247,7 +243,7 @@ If a community-maintained version of the `paste` plugin becomes available, we wi
 
 NOTE: the Premium plugin, https://tiny.cloud/docs/plugins/premium/powerpaste/[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
-[[print]]
+[[changed-plugins-print]]
 ==== Print
 
 `print` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
@@ -276,7 +272,7 @@ As per standard web practice, the `tabindex` attribute should be used instead of
 
 As per that standard web practice, the `tabindex` attribute is copied from the target element to the iframe.
 
-[[table-of-contents]]
+[[changed-plugins-table-of-contents]]
 ==== Table of contents
 
 The `toc` plugin is no longer part of the Core open source editor. _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].

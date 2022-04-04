@@ -8,7 +8,7 @@ This section documents the changes made to {productname} 6.0 Options.
 It also documents the {productname} 6.0 Option that has been removed.
 
 * xref:options[Options]
-* xref:changed-options[Changed Options] 
+* xref:changed-options[Changed Options]
 * xref:removed-or-deprecated-apis[Removed or deprecated Options]
 
 
@@ -35,7 +35,7 @@ The `link_default_protocol` option sets the link protocol used by links added or
 
 It now defaults to `https`. Previously it defaulted to `http`.
 
-NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
+NOTE: The `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
 
 [[tinymce-active-editor-options-get]]
 ==== tinymce.activeEditor.options.get
@@ -45,10 +45,10 @@ Previously `tinymce.activeEditor.options.get('plugins')` returned the configured
 As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns the configured plugins as an array.
 
 
-
 //=== Fixed options
 
 //=== Added options
+
 
 [[removed-or-deprecated-options]]
 === Removed or deprecated options
@@ -57,10 +57,9 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 [[textpattern]]
 ==== TextPattern
 
-* the `textpattern_patterns` option is no longer an option. It is has been renamed, to `text_patterns` and is now a Core part of {productname} 6.0.
-
-   All references to `textpattern_patterns` (and `text_patterns`) should be removed from your configurations.
-
-*  Also, the API called `textpattern` has been removed.
-
-*  Finally, text patterns are now on by default. `text_patterns: false` turns the functionality off.
+* The `textpattern_patterns` option is no longer an option. It is has been renamed, to `text_patterns` and is now a Core part of {productname} 6.0.
++
+All references to `textpattern_patterns` (and `text_patterns`) should be removed from your configurations.
++
+* Also, the API called `textpattern` has been removed.
+* Finally, text patterns are now on by default. `text_patterns: false` turns the functionality off.

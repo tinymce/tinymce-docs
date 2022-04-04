@@ -10,7 +10,7 @@ It also documents the {productname} 6.0 APIs that have been removed.
 
 * xref:apis[APIs]
 * xref:new-and-improved-apis][New and improved APIs]
-* xref:changed-apis[Changed APIs] 
+* xref:changed-apis[Changed APIs]
 * xref:fixed-apis[Fixed APIs]
 * xref:removed-or-deprecated-apis[Removed or deprecated APIs]
 
@@ -18,7 +18,7 @@ It also documents the {productname} 6.0 APIs that have been removed.
 [[apis]]
 == APIs
 
-[[id=new-and-improved-apis]]
+[[new-and-improved-apis]]
 === New and improved APIs
 
 [[editor-annotator-removeall]]
@@ -65,10 +65,8 @@ Consequently, it now supports partial nested objects.
 ==== success or failure callbacks replaced by `Promise` in multiple APIs
 
 * Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs report resource loading status with `success` or `failure` callbacks.
-
-  These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`.
-  
-  Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
++
+These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`. Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
 
 [[changed-apis]]
 === Changed APIs
@@ -77,10 +75,10 @@ Consequently, it now supports partial nested objects.
 ==== `closeButton` and `timeout`
 
 * Previously, using `closeButton` to disable a _Notification’s_ close button required a `timeout` value to also be set.
-
-  In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
-
-  Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
++
+In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
++
+Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
 
 [[disabled]]
 ==== `disabled` functions renamed in all {productname} APIs
@@ -89,11 +87,9 @@ Previously, multiple {productname} APIs and UI classes used `disable` or `disabl
 
 In {productname} 6, these function names have been changed and configuration changes are required.
 
-1. `isDisabled()` functions are now `isEnabled() functions.
-
-2. The `enable()` and `disable()` functions are now the single `setEnabled(<state>)` function.
-
-3. The `disable(<name>)` and `enable(<name>)` functions are now the single `setEnabled(<name>, <state>)` function in the Dialog APIs.
+. `isDisabled()` functions are now `isEnabled() functions.
+. The `enable()` and `disable()` functions are now the single `setEnabled(<state>)` function.
+. The `disable(<name>)` and `enable(<name>)` functions are now the single `setEnabled(<name>, <state>)` function in the Dialog APIs.
 
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
@@ -120,31 +116,18 @@ The `editor.SetContent` event’s `content` property has been deprecated.
 The following methods have been removed from the `Env` API:
 
 * `opera`
-
 * `webKit`
-
 * `ie`
-
 * `gecko`
-
 * `mac`
-
 * `iOS`
-
 * `android`
-
 * `desktop`
-
 * `contentEditable`
-
 * `caretAfter`
-
 * `range`
-
 * `ceFalse`
-
 * `experimentalShadowDom`
-
 * `fileApi`
 
 Note, in particular, the removal of all legacy browser detection methods.
@@ -192,8 +175,6 @@ This, too, makes it consistent with the `editor.selection.setContent()` API.
 The `no_events` argument is Boolean. If set to `true`, events should not fire when `getContent` is called. Previously, `editor.selection.getContent()` did not respect this.
 
 In {productname} 6.0, `editor.selection.getContent()` treats the `no_events` setting as expected: when set to `false`, events are fired; when set to `true`, events are not fired.
-
-
 
 [[removed-or-deprecated-apis]]
 === Removed or deprecated APIs

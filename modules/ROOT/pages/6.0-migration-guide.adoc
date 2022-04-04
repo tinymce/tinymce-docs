@@ -42,7 +42,7 @@ In {productname} 6, `closeButton` shows or hides the close button regardless of 
 
 Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
 
-NOTE: this does not change the behaviour of existing _Notifications_. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification without a close button that automatically closes after displaying for 5 seconds.
+NOTE: This does not change the behaviour of existing _Notifications_. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification without a close button that automatically closes after displaying for 5 seconds.
 
 === `disabled` functions renamed in all {productname} APIs
 
@@ -50,18 +50,16 @@ Previously, multiple {productname} APIs and UI classes used `disable` or `disabl
 
 In {productname} 6, these function names have been changed and configuration changes are required.
 
-1. `isDisabled()` functions are now `isEnabled() functions.
-
-   Configurations that called `isDisabled`() must now call `isEnabled()`. Also, the returned or set value must be interpreted in terms of the new function name.
-
-   For example, if `isDisabled(false)` was previously called, the equivalent new call is `isEnabled(true)`.
-
-2. The `enable()` and `disable()` functions are now the single `setEnabled(<state>)` function.
-
-   Rather than calling the function to set the desired state, call `setEnabled()` with the `true` or `false` value to set the desired state.
-
-3. The `disable(<name>)` and `enable(<name>)` functions are now the single `setEnabled(<name>, <state>)` function in the Dialog APIs.
-
+. `isDisabled()` functions are now `isEnabled()` functions.
++
+Configurations that called `isDisabled()` must now call `isEnabled()`. Also, the returned or set value must be interpreted in terms of the new function name. For example, if `isDisabled(false)` was previously called, the equivalent new call is `isEnabled(true)`.
++
+. The `enable()` and `disable()` functions are now the single `setEnabled(<state>)` function.
++
+Rather than calling the function to set the desired state, call `setEnabled()` with the `true` or `false` value to set the desired state.
++
+. The `disable(<name>)` and `enable(<name>)` functions are now the single `setEnabled(<name>, <state>)` function in the Dialog APIs.
++
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
 === `editor.SetContent`
@@ -72,20 +70,16 @@ When the `editor.SetContent` event fires, any data in `content` has already been
 
 To alter such data before it is added to the {productname} editor, use the `content` property available in the `BeforeSetContent` event.
 
-NOTE: calling the `editor.SetContent` `content` property now returns an empty string.
+NOTE: Calling the `editor.SetContent` `content` property now returns an empty string.
 
 === `fire` function renamed in all {productname} APIs
 
 The `fire()` function in
 
 * `tinymce.Editor`;
-
 * `tinymce.dom.EventUtils`;
-
 * `tinymce.dom.DOMUtils`;
-
-* `tinymce.util.Observable`; and
-
+* `tinymce.util.Observable`; and
 * `tinymce.util.EventDispatcher`
 
 has been renamed to `dispatch()`.
@@ -123,7 +117,6 @@ Previously, when loading a requested resource, `StyleSheetLoader` passed a `succ
 Previously, when loading a requested resource, the `ThemeManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ThemeManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
 
 
-
 [[commands-and-queries]]
 == Commands and queries
 
@@ -135,7 +128,7 @@ In {productname} 6.0, `element_format` now has an explicit default value: `html`
 
 This new, and explicit default changes how entered material is serialised. In particular, self-closing elements, such as `<hr>`, `<br>`, and `<img>` no longer present in the `xhtml` standard fashion, as `<hr />`, `<br />`, and `</img />` respectively.
 
-NOTE: if `xhtml` standard representation is required, explicitly setting `element_format` to `xhtml` works as before.
+NOTE: If `xhtml` standard representation is required, explicitly setting `element_format` to `xhtml` works as before.
 
 === `mceInsertTableDialog`
 
@@ -155,7 +148,7 @@ If invoked with arguments —
 
 In {productname} 6.0, the `mceInsertTableDialog` command must be used to invoke the *Insert Table* dialog box.
 
-NOTE: the `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input. However, using the `mceInsertTable` command without arguments now throws a console error: `model.min.js:4 Uncaught TypeError: Cannot read properties of undefined (reading 'rows')`.
+NOTE: The `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user-input. However, using the `mceInsertTable` command without arguments now throws a console error: `model.min.js:4 Uncaught TypeError: Cannot read properties of undefined (reading 'rows')`.
 
 === `mceAddEditor` and `mceToggleEditor`
 
@@ -172,8 +165,6 @@ For example —
 — finds a `textarea` with id `ed-1` and turns it into a working {productname} editor that displays the _bold_, _italic_, and _strikethrough_ options in the editor toolbar.
 
 
-
-
 [[options]]
 == Options
 
@@ -187,7 +178,7 @@ The `link_default_protocol` option sets the link protocol used by links added or
 
 It now defaults to `https`. Previously it defaulted to `http`.
 
-NOTE: the `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
+NOTE: The `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
 
 [[text-patterns]]
 == Text Patterns
@@ -195,19 +186,17 @@ NOTE: the `link_default_protocol` value is only applied to an edited or inserted
 As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-options-textpattern[_{productname} 6.0 Release Notes_], the `textpattern_patterns` option:
 
 * was renamed to `text_patterns`;
-
 * and had its functionality moved to the Core of {productname} 6.0.
 
 As well, the `textpattern` API has been removed.
 
 Finally, and unlike in previous versions of {productname}, text patterns are now on by default. `text_patterns: false` turns the functionality off.
 
-NOTE: using `text_patterns: []` to turn `text_patterns` off is not supported. It sets `text_patterns` to an empty array. Having, consequently, no patterns to match, it presents as if `text_patterns` is off. Appearance is not reality, however. Setting `text_patterns: false` is the only supported way of disabling `text_patterns`.
+NOTE: Using `text_patterns: []` to turn `text_patterns` off is not supported. It sets `text_patterns` to an empty array. Having, consequently, no patterns to match, it presents as if `text_patterns` is off. Appearance is not reality, however. Setting `text_patterns: false` is the only supported way of disabling `text_patterns`.
 
 After upgrading:
 
 * rename any options in your {productname} init configuration to match the new name.
-
 * remove `textpattern` from your plugins list.
 
 === tinymce.activeEditor.options.get
@@ -217,8 +206,6 @@ Previously `tinymce.activeEditor.options.get('plugins')` returned the configured
 As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns the configured plugins as an array.
 
 
-
-
 [[plugins]]
 == Plugins
 
@@ -226,17 +213,17 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 
 {productname} 6.0 allows plugin loading in any of three formats:
 
-1. An array of strings:
-
-   `plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
-
-2. A space-separated string:
-
-   `plugins: 'advlist list image help wordcount'`
-   
-3. A comma-separated string:
-
-   `plugins: 'advlist,list,image,help,wordcount'`
+. An array of strings:
++
+`plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
++
+. A space-separated string:
++
+`plugins: 'advlist list image help wordcount'`
++
+. A comma-separated string:
++
+`plugins: 'advlist,list,image,help,wordcount'`
 
 Previously, two other formats were allowed: comma-separated strings with spaces and arrays of space-separated strings.
 
@@ -246,43 +233,35 @@ Neither of these formats are allowed in {productname} 6.0.
 
 All references to any of these plugins should be removed from plugin configurations.
 
-NOTE: leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. {productname} 6.0 should, otherwise, work without error. If, however, {productname} 6.0 is ‘installed’ incorrectly — by being unZipped onto an existing {productname} 5.0 instance for example — the old plugin will not be removed, it will load and, since a {productname} 5.x plugin is attempting to work with a {productname} 6.0 instance, error notifications will almost certainly present to the end-user.
+NOTE: Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. {productname} 6.0 should, otherwise, work without error. If, however, {productname} 6.0 is ‘installed’ incorrectly — by being unZipped onto an existing {productname} 5.0 instance for example — the old plugin will not be removed, it will load and, since a {productname} 5.x plugin is attempting to work with a {productname} 6.0 instance, error notifications will almost certainly present to the end-user.
 
 See below for specific documentation of potential migration issues, if any, regarding these removed plugins.
 
 Seven `plugins` were removed because their functionality is now a Core part of {productname} 6.0:
 
-1. `colorpicker`
-
-2. `contextmenu`
-
-3. `hr`
-
-4. `noneditable`
-
-5. `paste`
-
-6. `print`
-
-7. `textcolor`
+. `colorpicker`
+. `contextmenu`
+. `hr`
+. `noneditable`
+. `paste`
+. `print`
+. `textcolor`
 
 Three plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[announcement]:
 
-1. `fullpage`
-
-2. `bbcode`
-
-3. `legacyoutput`
+. `fullpage`
+. `bbcode`
+. `legacyoutput`
 
 These plugins were already empty. As of {productname} 6.0, however, they are gone entirely.
 
 One plugin was removed as no longer supported:
 
-1. `spellchecker`
+. `spellchecker`
 
 NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
 
-NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
+NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 === ImageTools
 
@@ -298,7 +277,7 @@ NOTE: `editimage_proxy` (the renamed equivalent to the previous `imagetools_prox
 
 Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `imagetools` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as https://tiny.cloud/tinymce/features/#productivity[_EditImage_].
 
-NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
+NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 === Media
 
@@ -312,39 +291,36 @@ This validation is generally done by the `valid_elements`, `valid_children` or `
 
 The schema must, therefore, be configured to allow usage of the media elements, and the media element attributes.
 
-NOTE: as of this release, there are no known cases of this change causing media objects to not work as expected. But, also as of this release, not every potential or possible use-case has been tested.
+NOTE: As of this release, there are no known cases of this change causing media objects to not work as expected. But, also as of this release, not every potential or possible use-case has been tested.
 
-[id=plugins-paste]
+[[plugins-paste]]
 === Paste
 
 As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
 
 In conjunction with this change, three changes have been made:
 
-1. A `paste` default has changed. The `paste_data_images` option now defaults to `true`.
-
-   When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
-
-2. The `mceInsertClipboardContent` argument, `content`, has been renamed. It is now `html`.
-
-   The new name is a more accurate reflection of what sort of data the argument passes.
-
-   The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed. `mceInsertClipboardContent` only attempts to pass data if the `html` or `text` property is used.
-
+. A `paste` default has changed. The `paste_data_images` option now defaults to `true`.
++
+When `paste` was a plugin, this option was, by default, set to `false`, which prevented images being pasted from the local machine.
++
+. The `mceInsertClipboardContent` argument, `content`, has been renamed. It is now `html`.
++
+The new name is a more accurate reflection of what sort of data the argument passes.
++
+The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed. `mceInsertClipboardContent` only attempts to pass data if the `html` or `text` property is used.
++
 NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not been changed.
++
+. The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
++
+There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin.
++
+If a community-maintained version of the `paste` plugin becomes available, we will link to it from here.
 
+NOTE: The Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
-
-
-3. The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
-
-   There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin.
-
-   If a community-maintained version of the `paste` plugin becomes available, we will link to it from here.
-
-NOTE: the Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
-
-NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
+NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 === Table of Contents
 
@@ -356,19 +332,15 @@ Users of the Free version of {productname} 5.x who rely on the, now deprecated a
 
 The new Premium `tableofcontents` plugin also changes the names of several commands.
 
-* `toc`is now `tableofcontents`
-
-* `tocupdate`is now `tableofcontentsupdate`
-
-* `toc_class`is now `tableofcontents_class`
-
-* `toc_depth`is now `tableofcontents_depth`
-
-* `toc_header`is now `tableofcontents_header`
+* `toc` is now `tableofcontents`
+* `tocupdate` is now `tableofcontentsupdate`
+* `toc_class` is now `tableofcontents_class`
+* `toc_depth` is now `tableofcontents_depth`
+* `toc_header` is now `tableofcontents_header`
 
 Any configurations or logic that use the old command names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
 
-NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
+NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
 
 [[schema]]
@@ -377,34 +349,32 @@ NOTE: no Premium Plugins released with {productname} 6.0 are backwards compatibl
 === default schema is HTML 5
 
 * {productname} 6.0 instances now explicitly use HTML 5 as the default schema.
-
-  The previous default was, for practical purposes, also HTML 5, but no specific schema was set. This change formalises and makes explicit what was, previously, only implicit.
-
-  There is only one functional change consequent to this explicit setting of a default schema.
-
-  Previously, if you did not explicitly set the schema to anything, `b` and `i` elements were automaticlly transformed into `strong` and `em` elements respectively.
-
-  If, however, you explicitly set the schema to `html5`, `b` and `i` elements were preserved.
-
-  With this release, `html5` is explicitly set as the schema by default, _and_ `b` and `i` elements are automatically transformed into `strong` and `em` elements.
-
-  That is, the element transformation persists even though the `html5` schema is now explicitly set.
++
+The previous default was, for practical purposes, also HTML 5, but no specific schema was set. This change formalises and makes explicit what was, previously, only implicit.
++
+There is only one functional change consequent to this explicit setting of a default schema.
++
+Previously, if you did not explicitly set the schema to anything, `b` and `i` elements were automaticlly transformed into `strong` and `em` elements respectively.
++
+If, however, you explicitly set the schema to `html5`, `b` and `i` elements were preserved.
++
+With this release, `html5` is explicitly set as the schema by default, _and_ `b` and `i` elements are automatically transformed into `strong` and `em` elements.
++
+That is, the element transformation persists even though the `html5` schema is now explicitly set.
 
 NOTE: `html5-strict` is still an available schema option and is unchanged from {productname} 5.x.
 
 * The assignment operator character — `:` — has been changed to `~` for the `valid_elements` and `extended_valid_elements` schemata.
++
+The `:` is also used to assign an [xlink:href] rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
++
+This change allows both schemata to set attribute values for the `valid_elements` and `extended_valid_elements` options using the `~` character and assign [xlink:href] rules as expected.
++
+Existing configurations using either of these schemata must be edited so the `~` character is used for `valid_elements` and `extended_valid_elements` options configurations. The `:` character should no longer be used to set attribute values in these configurations.
++
+Also, when assigning `[xlink:href]` rules, the colon character is no longer escaped. `[xlink\\:href]` can now be written plainly, as `[xlink:href]`.
 
-  The `:` is also used to assign an [xlink:href] rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
-
-  This change allows both schemata to set attribute values for the `valid_elements` and `extended_valid_elements` options using the `~` character and assign [xlink:href] rules as expected.
-
-  Existing configurations using either of these schemata must be edited so the `~` character is used for `valid_elements` and `extended_valid_elements` options configurations. The `:` character should no longer be used to set attribute values in these configurations.
-
-  Also, when assigning `[xlink:href]` rules, the colon character is no longer escaped. `[xlink\\:href]` can now be written plainly, as `[xlink:href]`.
-
-NOTE: existing configurations that included escaped colons will continue to work as expected. Editing such configs to remove the escape characters will improve readability but is not necessary for functionality.
-
-
+NOTE: Existing configurations that included escaped colons will continue to work as expected. Editing such configs to remove the escape characters will improve readability but is not necessary for functionality.
 
 
 [[ui-and-ux-elements-and-components]]
@@ -430,11 +400,10 @@ For example, typing a single character in to the {productname} editor text-entry
 
 As of {productname} 6, the `change` event is not fired unless and until
 
-1. focus is switched away from the editor; and
+. focus is switched away from the editor; and
+. changes have been made in the editor since focus was switched to it.
 
-2. changes have been made in the editor since focus was switched to it.
-
-NOTE: it is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
+NOTE: It is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
 === `disabled` properties renamed to `.enabled` in {productname} UI classes
 
@@ -446,7 +415,7 @@ Configurations that set `.disabled` must now set `.enabled`.
 
 Also, the Dialog API, which previously offered the `disable(<name>)` and `enable(<name>)` functions, now offers a single `setEnabled(<name>, <state>)` function.
 
-[id=ui-elements-and-components-editor-text-entry-height]
+[[ui-elements-and-components-editor-text-entry-height]]
 === Editor text entry height
 
 In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high text entry area. In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high text entry area.
@@ -457,12 +426,13 @@ The new default can be over-ridden by explicitly setting a `height` value in the
 
 Also, setting the element’s CSS `height` to a value larger than 400px will increase the height of the text entry area. Setting the elmement’s CSS `height` to a value less than 400px will *not* reduce the height of the text entry area, however.
 
-NOTE: while {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent text entry areas from disappearing during re-sizing, the `min-height` value (100px) cannot be over-ridden.
+NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent text entry areas from disappearing during re-sizing, the `min-height` value (100px) cannot be over-ridden.
 
 === formatting user interface name changes
 
 The names of the following user-interface and user experience elements were changed.
 
+[cols="1,1,1"]
 |===
 |ui or ux element |old name              | new name
 
@@ -489,7 +459,7 @@ The names of the following user-interface and user experience elements were chan
 | Option          | `lineheight_formats` | `line_height_formats`
 |===
 
-NOTE: the behaviour of these elements is unchanged.
+NOTE: The behaviour of these elements is unchanged.
 
 === primary
 
@@ -498,7 +468,7 @@ the `primary` property was a boolean property available as a basic panel compone
 It has been deprecated and replaced by the new `buttonType` property.
 
 
-[id=ui-elements-and-components-tables-positioned-using-margins-not-float]
+[[ui-elements-and-components-tables-positioned-using-margins-not-float]]
 === Tables are now positioned using `margins`, not `float`
 
 {productname} previously used `float` to position tables to the left or right of the viewport (the working area available to the {productname} editor). This caused multiple layout and UX problems.
@@ -517,100 +487,101 @@ If an extant {productname} document with an aligned table is opened using {produ
 
 Second, if the previous behaviour is required, a custom `format` will need to be created. Specifically, the following CSS (the https://github.com/tinymce/tinymce/blob/release/5.10/modules/tinymce/src/core/main/ts/fmt/DefaultFormats.ts#L27-L117[table-specific CSS] from {productname} 5.x’s `DefaultFormats.ts`) must be added to the `format` configuration:
 
-```css
-    alignleft: [
-      {
-        selector: 'figure.image',
-        collapsed: false,
-        classes: 'align-left',
-        ceFalseOverride: true,
-        preview: 'font-family font-size'
-      },
-      {
-        selector: 'figure,p,h1,h2,h3,h4,h5,h6,td,th,tr,div,ul,ol,li',
-        styles: {
-          textAlign: 'left'
-        },
-        inherit: false,
-        preview: false,
-        defaultBlock: 'div'
-      },
-      {
-        selector: 'img,table,audio,video',
-        collapsed: false,
-        styles: {
-          float: 'left'
-        },
-        preview: 'font-family font-size'
-      }
-    ],
+[source,css]
+----
+alignleft: [
+  {
+    selector: 'figure.image',
+    collapsed: false,
+    classes: 'align-left',
+    ceFalseOverride: true,
+    preview: 'font-family font-size'
+  },
+  {
+    selector: 'figure,p,h1,h2,h3,h4,h5,h6,td,th,tr,div,ul,ol,li',
+    styles: {
+      textAlign: 'left'
+    },
+    inherit: false,
+    preview: false,
+    defaultBlock: 'div'
+  },
+  {
+    selector: 'img,table,audio,video',
+    collapsed: false,
+    styles: {
+      float: 'left'
+    },
+    preview: 'font-family font-size'
+  }
+],
 
 
-    aligncenter: [
-      {
-        selector: 'figure,p,h1,h2,h3,h4,h5,h6,td,th,tr,div,ul,ol,li',
-        styles: {
-          textAlign: 'center'
-        },
-        inherit: false,
-        preview: 'font-family font-size',
-        defaultBlock: 'div'
-      },
-      {
-        selector: 'figure.image',
-        collapsed: false,
-        classes: 'align-center',
-        ceFalseOverride: true,
-        preview: 'font-family font-size'
-      },
-      {
-        selector: 'img,audio,video',
-        collapsed: false,
-        styles: {
-          display: 'block',
-          marginLeft: 'auto',
-          marginRight: 'auto'
-        },
-        preview: false
-      },
-      {
-        selector: 'table',
-        collapsed: false,
-        styles: {
-          marginLeft: 'auto',
-          marginRight: 'auto'
-        },
-        preview: 'font-family font-size'
-      }
-    ],
+aligncenter: [
+  {
+    selector: 'figure,p,h1,h2,h3,h4,h5,h6,td,th,tr,div,ul,ol,li',
+    styles: {
+      textAlign: 'center'
+    },
+    inherit: false,
+    preview: 'font-family font-size',
+    defaultBlock: 'div'
+  },
+  {
+    selector: 'figure.image',
+    collapsed: false,
+    classes: 'align-center',
+    ceFalseOverride: true,
+    preview: 'font-family font-size'
+  },
+  {
+    selector: 'img,audio,video',
+    collapsed: false,
+    styles: {
+      display: 'block',
+      marginLeft: 'auto',
+      marginRight: 'auto'
+    },
+    preview: false
+  },
+  {
+    selector: 'table',
+    collapsed: false,
+    styles: {
+      marginLeft: 'auto',
+      marginRight: 'auto'
+    },
+    preview: 'font-family font-size'
+  }
+],
 
 
-    alignright: [
-      {
-        selector: 'figure.image',
-        collapsed: false,
-        classes: 'align-right',
-        ceFalseOverride: true,
-        preview: 'font-family font-size'
-      },
-      {
-        selector: 'figure,p,h1,h2,h3,h4,h5,h6,td,th,tr,div,ul,ol,li',
-        styles: {
-          textAlign: 'right'
-        },
-        inherit: false,
-        preview: 'font-family font-size',
-        defaultBlock: 'div'
-      },
-      {
-        selector: 'img,table,audio,video',
-        collapsed: false,
-        styles: {
-          float: 'right'
-        },
-        preview: 'font-family font-size'
-      }
-    ],
-```
+alignright: [
+  {
+    selector: 'figure.image',
+    collapsed: false,
+    classes: 'align-right',
+    ceFalseOverride: true,
+    preview: 'font-family font-size'
+  },
+  {
+    selector: 'figure,p,h1,h2,h3,h4,h5,h6,td,th,tr,div,ul,ol,li',
+    styles: {
+      textAlign: 'right'
+    },
+    inherit: false,
+    preview: 'font-family font-size',
+    defaultBlock: 'div'
+  },
+  {
+    selector: 'img,table,audio,video',
+    collapsed: false,
+    styles: {
+      float: 'right'
+    },
+    preview: 'font-family font-size'
+  }
+],
+----
 
-Alternatively, the https://tiny.cloud/docs/api/tinymce/tinymce.formatter/#register[Formatter API] can be used to register a custom format using `editor.formatter.register(<name>, <format>)`.
+Alternatively, the xref:apis/tinymce.formatter.adoc#register[Formatter API] can be used to register a custom format using `editor.formatter.register(<name>, <format>)`.

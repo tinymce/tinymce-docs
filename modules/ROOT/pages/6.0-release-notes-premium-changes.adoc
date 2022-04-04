@@ -37,31 +37,24 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 The {productname} 6.0 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
 
 * The Enhanced Media Embed plugin (`+mediaembed+`)
-
 * The Export plugin (`+export+`)
 * The Enhanced Image Editing plugin (`+editimage+`)
 * The Link Checker plugin (`+linkchecker+`)
-
 * The Spell Checker Pro plugin (`+tinymcespellchecker+`)
 
 The Java server-side components have been updated to the following versions:
 
 * `+ephox-hyperlinking.war+`: 2.105.9
-
 * `+ephox-image-proxy.war+`: 2.106.1
-
 * `+ephox-spelling.war+`: 2.118.4
 
 For information on:
 
 * The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
-
 * The Export plugin, see: xref:export.adoc[Export plugin].
 * The Enhanced Image Editing plugin, see: xref:editimage.adoc[Enhanced Image Editing plugin].
 * The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
-
 * The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
-
 * Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 
 === Updating the self-hosted server-side components
@@ -78,7 +71,6 @@ include::partial$misc/supported-application-servers.adoc[]
 For information on:
 
 * Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
-
 * Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
 

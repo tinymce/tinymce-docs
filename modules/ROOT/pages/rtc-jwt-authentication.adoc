@@ -60,8 +60,6 @@ JSON Web Tokens produced by the JWT endpoint must include the following claims:
 
 The `+sub+` field is used to identify users to avoid sending sensitive or identity information to {companyname} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
 
-CAUTION: The RTC plugin does not request a new JWT if user's JWT expires during a session. To avoid user disconnections from expired JWTs, ensure the `+exp+` claim allows for a reasonable
-
 [[jwt-endpoint-examples]]
 == JWT endpoint examples
 

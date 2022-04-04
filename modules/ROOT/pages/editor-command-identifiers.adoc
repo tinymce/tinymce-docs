@@ -17,7 +17,6 @@
 * xref:query-command-values[Query command values]
 ** xref:listing-core-and-plugin-query-command-values[Listing core and plugin Query command values]
 ** xref:available-query-command-values[Available Query command values]
-** xref:query-command-values-table-plugin[Query command values: Table plugin]
 
 [[executable-commands]]
 == Executable commands
@@ -118,7 +117,7 @@ tinymce.activeEditor.execCommand('Redo');
 tinymce.activeEditor.execCommand('Undo');
 ----
 
-==== Additional core editor commands
+==== Miscellaneous Core Commands
 
 The commands in the following table are provided by the {productname} editor and provide additional functionality that does not require any plugins to be enabled.
 
@@ -199,6 +198,11 @@ tinymce.activeEditor.execCommand('mceAutocompleterReload', false, {
 });
 ----
 
+[[core-table-commands]]
+==== Core Table Commands
+
+include::partial$commands/core-table-cmds.adoc[]
+
 [[plugin-commands]]
 === Plugin Commands
 
@@ -215,7 +219,7 @@ Commands are available for the following plugins:
 * xref:codesample[Code Sample]
 * xref:comments[Comments]
 * xref:directionality[Directionality]
-* xref:editimage[Edit Image]
+* xref:editimage[Enhanced Image Editing]
 * xref:emoticons[Emoticons]
 * xref:export[Export]
 * xref:formatpainter[Format Painter]
@@ -320,9 +324,9 @@ include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 
 
 [[editimage]]
-==== Edit Image
+==== Enhanced Image Editing
 
-The following commands require the xref:editimage.adoc[Edit Image (`+editimage+`)] plugin.
+The following commands require the xref:editimage.adoc[Enhanced Image Editing (`+editimage+`)] plugin.
 
 include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
 
@@ -454,6 +458,8 @@ include::partial$commands/tinymcespellchecker-cmds.adoc[leveloffset=+3]
 
 [[table]]
 ==== Table
+
+For additional commands that are provided by the core table functionality, see xref:core-table-commands[Core Table Commands].
 
 The following commands require the xref:table.adoc[Table (`+table+`)] plugin.
 
@@ -617,7 +623,7 @@ tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ----
 
-[[query-command-values-table-plugin]]
-=== Query command values: Table plugin
+[[query-command-values-tables]]
+==== Query command values for tables
 
-include::partial$commands/table-query-cmd-values.adoc[leveloffset=+3]
+include::partial$commands/core-table-query-cmd-values.adoc[leveloffset=+3]

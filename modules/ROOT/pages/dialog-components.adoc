@@ -57,7 +57,7 @@ The xref:dialog-apis.adoc#dialog-api-methods[dialog instance API] contains the `
 
 === Dialog configuration event callbacks
 
-A dialog can be configured with an xref:dialog-configuration.adoc#configuration-options[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
+A dialog can be configured with an xref:dialog-configuration.adoc#options[`+onTabChange+`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `+details+` object which contains `+newTabName+` and `+oldTabName+`.
 
 As an example of when this is useful, the `+charmap+` and `+emoticons+` plugin dialogs use `+newTabName+` to change search results to match the character or emoticon category represented by the current tab.
 

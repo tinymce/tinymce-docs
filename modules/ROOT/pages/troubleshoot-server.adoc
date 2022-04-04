@@ -14,14 +14,10 @@ If a service does not appear to be working, this is generally caused by one of t
 
 . The `+application.conf+` file is incorrect. Please go back and follow the steps listed in the xref:introduction-to-premium-selfhosted-services.adoc#create-a-configuration-file[installation guide]. This is the most common problem - often the origins are specified without the port numbers and this can cause things to fail, eg: use `+http://localhost:8080+` instead of `+http://localhost+`. After making changes to the `+application.conf+` file, please restart your Java web server (e.g. Jetty or Tomcat).
 . The `+application.conf+` file is correct, but something is wrong with one of the services. See the section below to debug the services.
-. The `+application.conf+` file is correct, and the services are working, but the server-side component URLs that the editor uses are not quite right. Refer to the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], xref:editimage.adoc[Edit Image], xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] and xref:linkchecker.adoc[Link Checker] plugin pages for help.
+. The `+application.conf+` file is correct, and the services are working, but the server-side component URLs that the editor uses are not quite right. Refer to the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], xref:editimage.adoc[Enhanced Image Editing], xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] and xref:linkchecker.adoc[Link Checker] plugin pages for help.
 . The browser is sending a different origin than expected (and configured in `+application.conf+`). Refer to step 6 of xref:using-browser-tooling-to-investigate-services-issues[Using browser tooling to investigate services issues]
 
 == Browser-specific issues
-
-=== Internet Explorer specific troubleshooting tips
-
-If the editor is reporting that the service cannot be found and tracing the network traffic reveals that no request is made at all, check that the server is *not* listed in the `+Trusted Sites+` section of Internet Explorer's security options. If it is, remove it and try again.
 
 === Chrome specific tips
 
@@ -34,7 +30,6 @@ If the server is not running on a standard HTTP or HTTPS port (80 or 443) then C
 * Chrome: View menu -> Developer -> JavaScript Console. Click the Network tab (located between Elements and Sources).
 * Firefox: Tools menu -> Web Developer -> Network.
 * Safari: Develop -> Show Error Console. Click the Timelines link between Resources and Debugger.
-* Internet Explorer: Click the cog icon on the top-right side of the browser. Select F12 Developer Tools. Click the Network link (next to the ‘Profiler’ link).
 . Refresh the webpage featuring an {productname} configured with the spelling service. Enter a misspelled word into the editor.
 . Locate the network results that match the following URLs:
 * `+http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect+`
@@ -45,7 +40,7 @@ If the server is not running on a standard HTTP or HTTPS port (80 or 443) then C
 . If the response for the version URL is still 404, it means the service has not been started or installed correctly.
 . To check the "Origin" value that the browser uses, open the network tools (Chrome in this screenshot) and refresh the page. Then enter a couple of words in the editor and select one of the requests on the bottom left ('correction' in the screen shot) and select the 'Headers' section. Look for the 'Origin' header value.
 
-image:spell-checking-browser-tools.png[Using browser tools to investigate services issues]
+image::spell-checking-browser-tools.png[Using browser tools to investigate services issues]
 
 NOTE: The value of the Origin header sent by the must match the origin specified in the `+application.conf+` server configuration. If it does not match, you must make the server configuration match the browser.
 
@@ -77,7 +72,7 @@ On a vanilla install this is done by editing the file /tomcat/install/directory/
 
 Then, restart the server and go to a browser and open the default tomcat page `+http://localhost:8080+`. On the top right hand side are three buttons, the first of which should be "Server Status". Click that link, login with the details you set above and you should be able to see the memory consumption (see the figure below for an example).
 
-image:spell-checking-server_status.png[Spell Checking Server Status]
+image::spell-checking-server-status.png[Spell Checking Server Status]
 
 === To increase the amount of memory
 
@@ -113,7 +108,7 @@ Edit the start.ini file to read as follows:
 
 Restart the service and confirm the settings have been applied like so:
 
-image:spell-checking-jetty-settings.png[Spell Checking Server Settings on Jetty]
+image::spell-checking-jetty-settings.png[Spell Checking Server Settings on Jetty]
 
 == Troubleshooting tools: curl
 

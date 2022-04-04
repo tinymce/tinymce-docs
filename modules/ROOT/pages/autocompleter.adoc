@@ -11,14 +11,14 @@ An autocompleter displays suggestions while the user is typing. Suggestions are 
 
 The method for adding a custom autocompleter is in the *UI Registry* part of the editor API `+editor.ui.registry+`:
 
-* `+editor.ui.registry.addAutocompleter(name, configuration)+`
+* `+editor.ui.registry.addAutocompleter(name, options)+`
 
 The two arguments this method take are:
 
-* `+name+` - A unique name for the autocompleter.
-* `+configuration+` - An object containing the user's configuration.
+* `+name+` -- A unique name for the autocompleter.
+* `+options+` -- An object containing the custom autocompleter configuration.
 
-== Configuration options
+== Options
 
 [cols="1,2,1,4",options="header"]
 |===

@@ -15,8 +15,6 @@ This option enables you to disable the default tab between table cells feature. 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'table',
-  toolbar: 'table',
   table_tab_navigation: false
 });
 ----

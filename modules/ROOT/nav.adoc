@@ -140,7 +140,7 @@
 **** Individually licensed plugin services
 ***** xref:individual-hyperlinking-container.adoc[Hyperlinking service]
 ***** xref:individual-spelling-container.adoc[Spelling service]
-*** xref:troubleshoot.adoc[Troubleshoot server-side components]
+*** xref:troubleshoot-server.adoc[Troubleshoot server-side components]
 ** Customizing the editor appearance
 *** xref:customize-ui.adoc[Customizing the UI]
 *** xref:creating-a-skin.adoc[Create a skin]
@@ -211,8 +211,8 @@
 * Examples
 ** xref:basic-example.adoc[Basic example]
 ** Full-Featured demos
-*** xref:premium-full-featured.adoc[Including premium features]
-*** xref:os-full-featured.adoc[Excluding premium features]
+*** xref:full-featured-premium-demo.adoc[Including premium features]
+*** xref:full-featured-open-source-demo.adoc[Excluding premium features]
 ** Tiny Skins and Icon Packs
 *** xref:bootstrap-demo.adoc[Bootstrap Demo]
 *** xref:borderless-demo.adoc[Borderless Demo]
@@ -225,9 +225,9 @@
 *** xref:outside-demo.adoc[Outside Demo]
 *** xref:small-demo.adoc[Small Icons Demo]
 *** xref:snow-demo.adoc[Snow Demo]
-** xref:classic.adoc[Classic editor mode]
-** xref:inline.adoc[Inline editor]
-** xref:editor-dfree.adoc[Distraction-free editor]
+** xref:classic-demo.adoc[Classic editor mode]
+** xref:inline-demo.adoc[Inline editor]
+** xref:distraction-free-demo.adoc[Distraction-free editor]
 * Initial configuration
 ** xref:editor-important-options.adoc[Integration options]
 ** xref:editor-size-options.adoc[Size]
@@ -266,6 +266,7 @@
 ** xref:content-appearance.adoc[Content appearance]
 ** xref:copy-and-paste.adoc[Copy & paste options]
 ** xref:spelling.adoc[Spelling options]
+** xref:table-options.adoc[Table options]
 ** xref:url-handling.adoc[URL handling options]
 ** xref:editor-model.adoc[Editor content models]
 * xref:plugins.adoc[Plugins]
@@ -282,7 +283,7 @@
 **** xref:comments-embedded-mode.adoc[Embedded mode]
 **** xref:comments-toolbars-menus.adoc[Toolbar buttons and menu items]
 **** xref:comments-commands-events-apis.adoc[Commands]
-*** xref:editimage.adoc[Edit Image]
+*** xref:editimage.adoc[Enhanced Image Editing]
 *** Enhanced Media Embed
 **** xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
 **** xref:mediaembed-server-config.adoc[Configure Enhanced Media Embed Server]

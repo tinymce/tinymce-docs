@@ -230,7 +230,7 @@ This optional proxy element provides an alternative to providing proxy settings 
 
 | *attribute*
 | `http.nonProxyHosts`
-| A list of strings separated by vertical lines ("\|") listing hosts and domains to be excluded from proxying, for *both* plain HTTP and HTTPS connections. The strings can contain asterisks ("*") as wildcards. (Optional, defaults to "localhost\|127.*\|[::1]" if not set.)
+| A list of strings separated by vertical lines ("\|") listing hosts and domains to be excluded from proxying, for *both* plain HTTP and HTTPS connections. The strings can contain asterisks ("\*") as wildcards. (Optional, defaults to "localhost\|127.*\|[::1]" if not set.)
 
 | *attribute*
 | `https.proxyHost`

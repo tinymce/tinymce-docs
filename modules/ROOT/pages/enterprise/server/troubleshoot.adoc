@@ -25,15 +25,16 @@ If the editor is reporting that the service cannot be found and tracing the netw
 
 === Chrome specific tips
 
+// TODO: fix this xref, it doesn't seem to work in production either
 If the server is not running on a standard HTTP or HTTPS port (80 or 443) then Chrome will include the port in the Origin header that is sent to the server. Other browsers do not do this. If you have set `ignore-port` to `false`, then you will need to include the port in the `allowed-origins`. See xref:enterprise/server/index.adoc#additionalinformationaroundenteringorigins[Additional Information Around Entering Origins] for more details.
 
 [[usingbrowsertoolingtoinvestigateservicesissues]]
 == Using browser tooling to investigate services issues
 
 . Open your browser's Console/Network tools:
- ** Chrome: View menu \-> Developer \-> JavaScript Console. Click the Network tab (located between Elements and Sources).
- ** Firefox: Tools menu \-> Web Developer \-> Network.
- ** Safari: Develop \-> Show Error Console. Click the Timelines link between Resources and Debugger.
+ ** Chrome: View menu -> Developer -> JavaScript Console. Click the Network tab (located between Elements and Sources).
+ ** Firefox: Tools menu -> Web Developer -> Network.
+ ** Safari: Develop -> Show Error Console. Click the Timelines link between Resources and Debugger.
  ** Internet Explorer: Click the cog icon on the top-right side of the browser. Select F12 Developer Tools. Click the Network link (next to the '`Profiler`' link).
 . Refresh the webpage featuring an {productname} configured with the spelling service. Enter a misspelled word into the editor.
 . Locate the network results that match the following URLs:
@@ -129,26 +130,26 @@ Use your distribution package manager to install curl. See your distribution doc
 
 Download and install the curl package based on your environment:
 
-x64: \http://curl.haxx.se/dlwiz/?type=bin&os=Win64&flav=MinGW64
+x64: http://curl.haxx.se/dlwiz/?type=bin&os=Win64&flav=MinGW64
 
-x86: \http://curl.haxx.se/dlwiz/?type=bin&os=Win32&flav=-&ver=2000%2FXP and select either of the curl version: 7.39.0 - SSL enabled SSH enabled packages
+x86: http://curl.haxx.se/dlwiz/?type=bin&os=Win32&flav=-&ver=2000%2FXP and select either of the curl version: 7.39.0 - SSL enabled SSH enabled packages
 
 Once downloaded:
 
 . Unzip the package like so:
-
++
 image::spell-checking-curl-windows-1.png[Curl on Windows step 1]
 
 . Copy the path of the folder to where the 'curl.exe' is in:
-
++
 image::spell-checking-curl-windows-2.png[Curl on Windows step 2]
 
-. Open a cmd prompt. Start \-> Programs \-> Accessories \-> cmd (or command prompt). Then change to that directory to the folder where the 'curl.exe' is found.Enter 'cd' (without quotes) and then paste in the path from step 2.
-
+. Open a cmd prompt. Start -> Programs -> Accessories -> cmd (or command prompt). Then change to that directory to the folder where the 'curl.exe' is found.Enter 'cd' (without quotes) and then paste in the path from step 2.
++
 image::spell-checking-curl-windows-3.png[Curl on Windows step 3]
 
 . Once in the folder enter 'curl --version' (without quotes) and ensure you get a valid version
-
++
 image::spell-checking-curl-windows-4.png[Curl on Windows step 4]
 
 == Need more help?

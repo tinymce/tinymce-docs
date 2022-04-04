@@ -46,9 +46,9 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 |===
 | old name                            | new name                         | element                             | notes                                                                                                                                                                                                                                                                                                         | for more information                              
 
-| `blockformats`                      | `blocks`                         | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `blockformats`                      | `blocks`                         | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `formatselect`                      | `blocks`                         | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `formatselect`                      | `blocks`                         | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
 | `imagetools`                        | `editimage`                      | Plugin                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
 
@@ -66,37 +66,37 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 | `images_upload_timeout`             | `editimage_upload_timeout`       | Option                              | NB: _Image Tools_ is now _Edit Image_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                   | see <<new-and-improved-plugins-imagetools>>       
 
-| `editimage_proxy`                   | `export_image_proxy_service_url` | Option                              | Renamed for easier configuration when used with https://tiny.cloud/docs/enterprise/server/[Tiny services].                                                                                                                                                                                                    |                                                   
+| `editimage_proxy`                   | `export_image_proxy_service_url` | Option                              | Renamed for easier configuration when used with https://tiny.cloud/docs/enterprise/server/[Tiny services].                                                                                                                                                                                                    |
 
-| `fire()`                            | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                  |                                                   
+| `fire()`                            | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                   |
 
-| `font_formats`                      | `font_family_formats`            | Option                              | No behavioural changes, but there are related toolbar and menu items changes.                                                                                                                                                                                                                                 |                                                   
+| `font_formats`                      | `font_family_formats`            | Option                              | No behavioural changes, but there are related toolbar and menu items changes.                                                                                                                                                                                                                                 |
 
-| `fontselect`                        | `fontfamily`                     | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `fontselect`                        | `fontfamily`                     | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `fontformats`                       | `fontfamily`                     | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `fontformats`                       | `fontfamily`                     | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `fontsize_formats`                  | `font_size_formats`              | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `fontsize_formats`                  | `font_size_formats`              | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `fontsizeselect`                    | `fontsize`                       | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `fontsizeselect`                    | `fontsize`                       | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `fontsizes`                         | `fontsize`                       | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `fontsizes`                         | `fontsize`                       | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `formatpainter_blacklisted_formats` | `formatpainter_ignored_formats`  | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `formatpainter_blacklisted_formats` | `formatpainter_ignored_formats`  | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `getWhiteSpaceElements()`           | `getWhitespaceElements()`        | Function                            | This function is part of the `Schema` API. It was renamed as part of a general renaming that treats _Whitespace_ as a single word. The behaviour of the function has not changed.                                                                                                                             |                                                   
+| `getWhiteSpaceElements()`           | `getWhitespaceElements()`        | Function                            | This function is part of the `Schema` API. It was renamed as part of a general renaming that treats _Whitespace_ as a single word. The behaviour of the function has not changed.                                                                                                                             |
 
-| `getShortEndedElements`             | `getVoidElements`                | API                                 | `special` and `void` are hard-coded elements defined by the HTML parsing specification. They can not be changed at run-time. The previous API name did not make it clear it was these, hard-coded, elements being called.                                                                                     |                                                   
+| `getShortEndedElements`             | `getVoidElements`                | API                                 | `special` and `void` are hard-coded elements defined by the HTML parsing specification. They can not be changed at run-time. The previous API name did not make it clear it was these, hard-coded, elements being called.                                                                                     |
 
-| `content`                           | `html`                           | Command                             | This `mceInsertClipboardContent` argument was renamed to better reflect what data is passed. NB: The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed.                                                                                     | see <<changed-plugins-paste>>                     
+| `content`                           | `html`                           | Command                             | This `mceInsertClipboardContent` argument was renamed to better reflect what data is passed. NB: The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed.                                                                                      | see <<changed-plugins-paste>>
 
-| `linheight_formats`                 | `line_height_formats`            | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `linheight_formats`                 | `line_height_formats`            | Option                              | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `default_link_target`               | `link_default_target`            |                                     | Changed for consistency with other `link` and `autolink` options. Their functionality, and the values they can take remain unchanged. This change applies to both `link` and `autolink` plugins.                                                                                                              |                                                   
+| `default_link_target`               | `link_default_target`            |                                     | Changed for consistency with other `link` and `autolink` options. Their functionality, and the values they can take remain unchanged. This change applies to both `link` and `autolink` plugins.                                                                                                              |
 
-| `rel_list`                          | `link_rel_list`                  |                                     | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                                                          |                                                   
+| `rel_list`                          | `link_rel_list`                  |                                     | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                                                          |
 
-| `target_list`                       | `link_target_list`               |                                     | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                                                          |                                                   
+| `target_list`                       | `link_target_list`               |                                     | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                                                          |
 
 | `mceInsertTable`                    | `mceInsertTableDialog`           |                                     | Use `mceInsertTableDialog` to open the _Insert Table_ dialog box. NB: `mceInsertTable` (with appropriate arguments) still works to insert a table directly into an existing document. `mceInsertTable` can no longer be used to invoke the _Table_ dialog box, however.                                       | see <<changed-plugins-table>>                     
 
@@ -104,15 +104,15 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 | `noneditable_editable_class`        | `editable_class`                 |                                     | After upgrading, rename the options in your {productname} init configuration to match the new name. For example, `noneditable_editable_class: 'mceEditable'` must be renamed `editable_class: 'mceEditable'`.                                                                                                 | see <<changed-plugins-noneditable>>               
 
-| `styleselect`                       | `styles`                         | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `styleselect`                       | `styles`                         | Toolbar item                        | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `formats`                           | `styles`                         | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |                                                   
+| `formats`                           | `styles`                         | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
-| `textpattern_patterns`              | `text_patterns`                  | Option                              | After upgrading, rename the options in your {productname} init configuration to match the new name. Also, remove `textpattern` from your plugins list. This name-change is consequent to `textpattern` being changed from a Plugin to being part of the {productname} Core.                                   | see <<changed-plugins-textpattern>>               
+| `textpattern_patterns`              | `text_patterns`                  | Option                              | After upgrading, rename the options in your {productname} init configuration to match the new name. Also, remove `textpattern` from your plugins list. This name-change is consequent to `textpattern` being changed from a Plugin to being part of the {productname} Core.                                   | see <<changed-plugins-textpattern>> 
 
-| `tinymce.Env.browser.isChrome`      | `tinymce.Env.browser.isChromium` | API                                 | Updated so the `Sand` and `Env` APIs better reflect what they are checking for. `isChrome` implies they are checking for _Google Chrome_. They are actually checking for any Chromium-based browser (eg Chromium, Google Chrome, or Chrome Edge) so `isChromium` more accurately reflects what is being done. |                                                   
+| `tinymce.Env.browser.isChrome`      | `tinymce.Env.browser.isChromium` | API                                 | Updated so the `Sand` and `Env` APIs better reflect what they are checking for. `isChrome` implies they are checking for _Google Chrome_. They are actually checking for any Chromium-based browser (eg Chromium, Google Chrome, or Chrome Edge) so `isChromium` more accurately reflects what is being done. |
 
-| `tinymce.Env.os.isOSX`              | `tinymce.Env.os.isMacOS`         | API                                 | Updated so the `Sand` and `Env` APIs now use the current name of Apple’s desktop operating system when checking to see if a device’s OS is, in fact, macOS.                                                                                                                                                   |                                                   
+| `tinymce.Env.os.isOSX`              | `tinymce.Env.os.isMacOS`         | API                                 | Updated so the `Sand` and `Env` APIs now use the current name of Apple’s desktop operating system when checking to see if a device’s OS is, in fact, macOS.                                                                                                                                                   |
 
 | `toc`                               | `tableofcontents`                | Plugin, Menu item, and Toolbar item | This presents in both the menu item and the toolbar’s tooltip text. NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                       | see <<new-and-improved-plugins-table-of-contents>>
 
@@ -140,21 +140,21 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 == Default value changes
 
 |===
-| element                       | old value                   | new value | notes                                                                  | for more information                                               |
+| element                       | old value                   | new value | notes                                                                  | for more information
 
-| assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata | 
+| assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata |
 
-| `config.height`               | `200px`                     | `400px`   | Changed to improve user experience.                                    | see <<ui-and-ux-elements-and-components-editor-text-entry-height>> |
+| `config.height`               | `200px`                     | `400px`   | Changed to improve user experience.                                    | see <<ui-and-ux-elements-and-components-editor-text-entry-height>>
 
-| `element_format`              | _no default value assigned_ | `html`    | Changed as part of modernising {productname}’s default behaviour.      |                                                                    |
+| `element_format`              | _no default value assigned_ | `html`    | Changed as part of modernising {productname}’s default behaviour.      | 
 
-| `link_default_protocol`       | `http`                      | `https`   | Changed as part of modernising {productname}’s default behaviour.      |                                                                    |
+| `link_default_protocol`       | `http`                      | `https`   | Changed as part of modernising {productname}’s default behaviour.      | 
 
-| {productname} `schema`        | _no default value assigned_ | `html5`   | Changed as part of modernising {productname}’s default behaviour.      |                                                                    |
+| {productname} `schema`        | _no default value assigned_ | `html5`   | Changed as part of modernising {productname}’s default behaviour.      |
 
-| `table_style_by_css`          | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>>                                      |
+| `table_style_by_css`          | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>>
 
-| `table_use_colgroups`         | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>>                                      |
+| `table_use_colgroups`         | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see <<changed-plugins-table>> 
 |===
 
 
@@ -165,105 +165,105 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 The following elements were previously deprecated and have, with this release, been removed entirely from {productname}.
 
 |===
-| item                                  | element       | notes                                                                              |
+| item                                  | element       | notes
 
-| `$`                                   | API           | `$` was a shorthand function of `DomQuery` and `Sizzle`.                           |
+| `$`                                   | API           | `$` was a shorthand function of `DomQuery` and `Sizzle`.
 
-| `addComponents`                       | API           | From `AddOnManager`.                                                               |
+| `addComponents`                       | API           | From `AddOnManager`.
 
-| `autoresize_on_init`                  | Option        |                                                                                    |
+| `autoresize_on_init`                  | Option        |
 
-| `block_elements`                      | Schema option |                                                                                    |
+| `block_elements`                      | Schema option |
 
-| `boolean_attributes`                  | Schema option |                                                                                    |
+| `boolean_attributes`                  | Schema option |
 
-| `Class`                               | API           |                                                                                    |
+| `Class`                               | API           |
 
-| `clearInterval`                       | API           | From `Delay`.                                                                      |
+| `clearInterval`                       | API           | From `Delay`.
 
-| `clearTimeout`                        | API           | From `Delay`.                                                                      |
+| `clearTimeout`                        | API           | From `Delay`.
 
-| `Color`                               | API           |                                                                                    |
+| `Color`                               | API           | 
 
-| `content_editable_state`              | Option        |                                                                                    |
+| `content_editable_state`              | Option        | 
 
-| `debounce`                            | API           | From `Delay`.                                                                      |
+| `debounce`                            | API           | From `Delay`.
 
-| `dependencies`                        | API           | From `AddOnManager`.                                                               |
+| `dependencies`                        | API           | From `AddOnManager`.
 
-| `DomQuery`                            | API           |                                                                                    |
+| `DomQuery`                            | API           |
 
-| `editor_deselector`                   | Option        | From `EditorManager`.                                                              |
+| `editor_deselector`                   | Option        | From `EditorManager`.
 
-| `editors`                             | Property      | From `EditorManager`.                                                              |
+| `editors`                             | Property      | From `EditorManager`.
 
-| `editor_selector`                     | Option        | From `EditorManager`.                                                              |
+| `editor_selector`                     | Option        | From `EditorManager`.
 
-| `elements`                            | Option        | From `EditorManager`.                                                              |
+| `elements`                            | Option        | From `EditorManager`.
 
-| `execCallback`                        | API           |                                                                                    |
+| `execCallback`                        | API           |
 
-| `file_browser_callback_types`         | Option        |                                                                                    |
+| `file_browser_callback_types`         | Option        |
 
-| `filepicker_validator_handler`        | Option        | Superseded by `file_picker_validator_handler`.                                     |
+| `filepicker_validator_handler`        | Option        | Superseded by `file_picker_validator_handler`.
 
-| `force_hex_style_colors`              | Option        |                                                                                    |
+| `force_hex_style_colors`              | Option        |
 
-| `force_p_newlines`                    | Option        | Superseded by `forced_root_block`.                                                 |
+| `force_p_newlines`                    | Option        | Superseded by `forced_root_block`.
 
-| `forced_root_black: false`            | Option        | `forced_root_black` must be a non-empty string and cannot take a value of `false`. |
+| `forced_root_black: false`            | Option        | `forced_root_black` must be a non-empty string and cannot take a value of `false`.
 
-| `gecko_spellcheck`                    | Option        | Replaced by `browser_spellcheck`.                                                  |
+| `gecko_spellcheck`                    | Option        | Replaced by `browser_spellcheck`.
 
-| `images_dataimg_filter`               | Option        |                                                                                    |
+| `images_dataimg_filter`               | Option        |
 
-| `JSON`                                | API           |                                                                                    |
+| `JSON`                                | API           |
 
-| `JSONP`                               | API           |                                                                                    |
+| `JSONP`                               | API           |
 
-| `JSONRequest`                         | API           |                                                                                    |
+| `JSONRequest`                         | API           |
 
-| `mode`                                | Option        | From `EditorManager`.                                                              |
+| `mode`                                | Option        | From `EditorManager`.
 
-| `move_caret_before_on_enter_elements` | Schema option |                                                                                    |
+| `move_caret_before_on_enter_elements` | Schema option |
 
-| `non_empty_elements`                  | Schema option |                                                                                    |
+| `non_empty_elements`                  | Schema option |
 
-| `padd_empty_with_br`                  | Option        |                                                                                    |
+| `padd_empty_with_br`                  | Option        |
 
-| `requestAnimationFrame`               | API           | From `Delay`.                                                                      |
+| `requestAnimationFrame`               | API           | From `Delay`.
 
-| `self_closing_elements`               | Schema option |                                                                                    |
+| `self_closing_elements`               | Schema option |
 
-| `setIconStroke`                       | API           |                                                                                    |
+| `setIconStroke`                       | API           |
 
-| `setInterval`                         | API           | From `Delay`.                                                                      |
+| `setInterval`                         | API           | From `Delay`.
 
-| `setMode`                             | API           |                                                                                    |
+| `setMode`                             | API           |
 
-| `setTimeout`                          | API           | From `Delay`.                                                                      |
+| `setTimeout`                          | API           | From `Delay`.
 
-| `short_ended_elements`                | Schema option |                                                                                    |
+| `short_ended_elements`                | Schema option |
 
-| `Sizzle`                              | API           |                                                                                    |
+| `Sizzle`                              | API           |
 
-| `special`                             | Schema option |                                                                                    |
+| `special`                             | Schema option |
 
-| `text_block_elements`                 | Schema option |                                                                                    |
+| `text_block_elements`                 | Schema option |
 
-| `text_inline_elements`                | Schema option |                                                                                    |
+| `text_inline_elements`                | Schema option |
 
-| `throttle`                            | API           | From `Delay`.                                                                      |
+| `throttle`                            | API           | From `Delay`.
 
-| `toolbar_drawer`                      | Option        | Superseded by `toolbar_mode`.                                                      |
+| `toolbar_drawer`                      | Option        | Superseded by `toolbar_mode`.
 
-| `types`                               | Option        | From `EditorManager`.                                                              |
+| `types`                               | Option        | From `EditorManager`.
 
-| `whitespace_elements`                 | Schema option |                                                                                    |
+| `whitespace_elements`                 | Schema option |
 
-| `validate`                            | Schema option |                                                                                    |
+| `validate`                            | Schema option |
 
-| `XHR`                                 | API           | Any remaining `XHR` users have been replaced with `fetch`.                         |
+| `XHR`                                 | API           | Any remaining `XHR` users have been replaced with `fetch`.
 |===
 
 
@@ -276,13 +276,13 @@ The following elements were never documented and have never been formally suppor
 Consequently, they were removed with this release without deprecation notices being provided in earlier releases.
 
 |===
-| item                                     | element       |
+| item                                     | element
 
-| `editor.editorCommands.hasCustomCommand` | API           |
+| `editor.editorCommands.hasCustomCommand` | API
 
-| `mceResetDesignMode`                     | Command       |
+| `mceResetDesignMode`                     | Command
 
-| `mceRepaint`                             | Command       |
+| `mceRepaint`                             | Command
 
-| `mceBeginUndoLevel`                      | Command       |
+| `mceBeginUndoLevel`                      | Command
 |===

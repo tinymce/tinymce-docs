@@ -69,7 +69,7 @@ export class AppModule { }
 ----
 . Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.component.html+` and replace the contents with:
 +
-[source,jsx,subs="attributes+"]
+[source,tsx,subs="attributes+"]
 ----
 <h1>{productname} {productmajorversion} Angular Demo</h1>
 <editor
@@ -80,7 +80,7 @@ export class AppModule { }
 ifeval::["{productSource}" == "cloud"]
 . Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key]. Such as:
 +
-[source,jsx]
+[source,tsx]
 ----
 <editor apiKey="your-api-key" [init]={ /* your other settings */ } ></editor>
 ----

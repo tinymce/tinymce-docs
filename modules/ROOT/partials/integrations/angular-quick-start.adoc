@@ -47,7 +47,7 @@ npm install --save @tinymce/tinymce-angular
 endif::[]
 . Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.module.ts+` and replace the contents with:
 +
-[source,js]
+[source,ts]
 ----
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -98,7 +98,7 @@ ifeval::["{productSource}" == "package-manager"]
 . Load TinyMCE.
 * To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `+TINYMCE_SCRIPT_SRC+` token.
 +
-[source,js]
+[source,ts]
 ----
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 /* ... */

@@ -3,7 +3,7 @@
 :description: APIs for custom TinyMCE dialogs
 :keywords: dialog, dialogapi, api
 
-When a dialog is created, a dialog instance API is returned. For example, `+const instanceApi = editor.windowManager.open(config);+`. The dialog API instance is also passed to some of the xref:dialog-configuration.adoc#configuration-options[dialog configuration options].
+When a dialog is created, a dialog instance API is returned. For example, `+const instanceApi = editor.windowManager.open(config);+`. The dialog API instance is also passed to some of the xref:dialog-configuration.adoc#options[dialog configuration options].
 
 The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
@@ -16,7 +16,7 @@ This data store takes the form of a JavaScript object, where the object's keys a
 
 The current value of a dialog's data store can be accessed using the dialog instance API's `+getData()+` function. It can also be set using `+setData()+` which will automatically update the relevant components. For example, if you call `+setData({ myCheckbox: true })+` with the previous example, the checkbox would be toggled to checked.
 
-To set initial values for components when the dialog is opened, use the `+initialData+` xref:dialog-configuration.adoc#configuration-options[dialog configuration option]. For example, you could set the checkbox in the previous example to be checked when the dialog opens by including `+initialData: { myCheckbox: true }+` in the dialog's configuration.
+To set initial values for components when the dialog is opened, use the `+initialData+` xref:dialog-configuration.adoc#options[dialog configuration option]. For example, you could set the checkbox in the previous example to be checked when the dialog opens by including `+initialData: { myCheckbox: true }+` in the dialog's configuration.
 
 [[dialog-api-methods]]
 == Dialog API methods

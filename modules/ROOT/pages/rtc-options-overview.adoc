@@ -11,7 +11,7 @@ The {pluginname} plugin uses promise-based "provider" functions to support a var
 
 == Overview of RTC options
 
-=== Required configuration options
+=== Required options
 
 These options are _required_ when using the {pluginname} plugin.
 
@@ -21,7 +21,7 @@ xref:rtc-options-required.adoc#rtc_encryption_provider[`+rtc_encryption_provider
 
 xref:rtc-options-required.adoc#rtc_token_provider[`+rtc_token_provider+`]:: Provide the editor with a JSON Web Token (JWT) for verifying that the user has access to edit the current document.
 
-=== Recommended configuration options
+=== Recommended options
 
 These options are assist with improving the user experience. They are not required, but are recommended.
 
@@ -37,7 +37,7 @@ xref:rtc-options-optional.adoc#rtc_user_details_provider[`+rtc_user_details_prov
 ** The `+rtc_client_connected+` and `+rtc_client_disconnected+` options.
 ** The `+RtcClientConnected+` and `+RtcClientDisconnected+` events.
 
-=== Optional configuration options
+=== Optional options
 
 The following options assist with integrating Real-Time Collaboration and improving the user experience.
 

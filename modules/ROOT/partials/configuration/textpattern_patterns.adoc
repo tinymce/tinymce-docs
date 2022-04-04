@@ -1,16 +1,18 @@
+[[textpattern_patterns]]
 === `textpattern_patterns`
 
 This option allows configuring the text patterns that get matched by the `textpattern` plugin. By default, it has basic markdown patterns.
 
 There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
-____
-IMPORTANT: Any formats or commands used by `textpatterns` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `lists` plugin.
+[IMPORTANT]
+====
+Any formats or commands used by `textpatterns` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `lists` plugin.
 For information on:
 
-* Registering formats for {productname}, see: link:{baseurl}/configure/content-formatting/#formats[Content formatting options - `formats`].
-* Registering commands for {productname}, see: xref:apis/tinymce.editorcommands.adoc[{productname} APIs - EditorCommands].
-____
+* Registering formats for {productname}, see: xref:configure/content-formatting.adoc#formats[Content formatting options - `formats`].
+* Registering commands for {productname}, see: xref:apis/tinymce.editor.adoc#addCommand[{productname} APIs - EditorCommands].
+====
 
 ==== The default patterns for the `textpattern` plugin
 
@@ -62,8 +64,8 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `{start: '*', end: '*', format: 'italic'}` - Entering text between``*`` and then pressing the *spacebar* will result in the `italic` format being applied to the text between the `*` symbols.
-* `+{start: '**', end: '**', format: 'bold'}+` - Entering text between``+**+`` and then pressing the *spacebar* will result in the `bold` format being applied.
+* `+{start: '*', end: '*', format: 'italic'}+` - Entering text between `+*+` and then pressing the *spacebar* will result in the `italic` format being applied to the text between the `+*+` symbols.
+* `+{start: '**', end: '**', format: 'bold'}+` - Entering text between `+**+` and then pressing the *spacebar* will result in the `bold` format being applied.
 * `+{start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}+` - This executes `+editor.execCommand('createLink', false, 'https://tiny.cloud')+`, which will wrap the text between the `~` symbols in a link that points to `+https://tiny.cloud+`.
 
 ==== Block patterns
@@ -107,7 +109,7 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
+* `+{start: '#', format: 'h1'}+` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
 * Typing `1.` followed by a space, the desired text, and then pressing `Enter`; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
 ==== Replacements patterns

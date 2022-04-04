@@ -30,14 +30,12 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 === Example of using the Prism.js script
 
-```html+++<link rel="stylesheet" type="text/css" href="prism.css">++++++</link>++++++<script src="prism.js">++++++</script>+++
-
-[,markup]
+[source, html]
 ----
-...
+<link rel="stylesheet" type="text/css" href="prism.css">
+<script src="prism.js"></script>
+<pre class="language-markup"><code>...</code></pre>
 ----
-
-```
 
 == Interactive example
 

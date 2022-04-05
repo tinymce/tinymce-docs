@@ -41,7 +41,7 @@ app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce
 +
 For example:
 +
-[source,js]
+[source,js,subs="attributes+"]
 ----
 var express = require('express');
 var path = require('path');

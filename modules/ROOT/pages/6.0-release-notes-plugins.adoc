@@ -47,7 +47,7 @@ Neither of these formats are allowed in {productname} 6.0.
 
 _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
 
-An `editimage` options were also renamed: `editimage_proxy` is now `editimage_proxy_service_url`, making it easier to configure when accessing https://tiny.cloud/docs/enterprise/server/[Tiny-specific services].
+An `editimage` option was also renamed: `editimage_proxy` is now `editimage_proxy_service_url`, making it easier to configure when accessing https://tiny.cloud/docs/enterprise/server/[Tiny-specific services].
 
 `editimage` also offers a new export plugin option: `export_image_proxy_service_url`.
 

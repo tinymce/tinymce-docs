@@ -21,7 +21,7 @@ The expected result is for the insertion point to move to the next available cel
 
 In {productname} 6.0, three non-breaking-space entities (`+&nbsp;&nbsp;&nbsp;+`) are entered into the current cell.
 
-The proximate cause of this incorrect behaviour is the move of _Tables_ from plugins to core.
+The proximate cause of this incorrect behavior is the move of _Tables_ from plugins to core.
 
 As of this release, however, the specific cause is still being investigated.
 

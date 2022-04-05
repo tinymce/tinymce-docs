@@ -179,7 +179,7 @@ Calls to `editor.selection.setRng` now update the insertion point bookmark when 
 
 For the end-user, this change means content dragged from outside the {productname} editor into the editable area will be placed into the {productname} document where the insertion point appears as the drag is completed.
 
-This is the expected behaviour.
+This is the expected behavior.
 
 
 [[sub-menu-items-now-read-by-screen-readers]]
@@ -207,7 +207,7 @@ First, {productname} 6.0 does not alter existing documents. Extant {productname}
 
 If an extant {productname} document with an aligned table is opened using {productname} 6.0 and the *alignment* of the table is re-set, {productname} 6.0 will remove the `float` property and use the `margin` property to set the *alignment*.
 
-Second, if the previous behaviour is required, a custom `format` will need to be created.
+Second, if the previous behavior is required, a custom `format` will need to be created.
 
 
 [[text-presentation-corrections-on-some-UI-elements]]

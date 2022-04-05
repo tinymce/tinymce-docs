@@ -24,7 +24,7 @@ The `+DOCTYPE+` declaration is required for the editor to function correctly.
 </head>
 ----
 +
-The second `+meta+` element is required for the editor to function correctly on mobile devices. For information on the viewport `+meta+` element, see: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_basics[MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers].
+The second `+meta+` element is required for the editor to function correctly on mobile devices. For information on the viewport `+meta+` element, see: https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_basics[MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers].
 
 ifeval::["{productSource}" == "cloud"]
 . Add a `+script+` element sourcing the {productname} Web Component (`+tinymce-webcomponent.js+`), such as:

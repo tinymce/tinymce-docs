@@ -53,14 +53,14 @@ npm install --save @tinymce/tinymce-angular
 
 . Import the `+EditorModule+` from the npm package using:
 +
-[source,js]
+[source,ts]
 ----
 import { EditorModule } from '@tinymce/tinymce-angular';
 ----
 +
 Add the `+EditorModule+` to `+@NgModule({imports})+`:
 +
-[source,js]
+[source,ts]
 ----
 // This might look different depending on how you have set up your app
 // but the important part is the imports array

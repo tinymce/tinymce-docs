@@ -3,11 +3,11 @@ ifeval::["{productSource}" == "cloud"]
 :packageSource: {cloudname}
 endif::[]
 ifeval::["{productSource}" == "composer"]
-:scriptsource: { asset('js/tinymce/tinymce.min.js') }
+:scriptsource: {{ asset('js/tinymce/tinymce.min.js') }}
 :packageSource: https://packagist.org/packages/tinymce/tinymce[TinyMCE Composer package]
 endif::[]
 ifeval::["{productSource}" == "zip"]
-:scriptsource: { asset('js/tinymce/tinymce.min.js') }
+:scriptsource: {{ asset('js/tinymce/tinymce.min.js') }}
 :packageSource: TinyMCE .zip package
 endif::[]
 

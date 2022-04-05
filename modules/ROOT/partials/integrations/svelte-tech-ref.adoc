@@ -9,11 +9,11 @@ Covered in this section:
 
 The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 
-[source,jsx]
+[source,jsx,subs="attributes+"]
 ----
 <Editor
   apiKey="api-key"
-  channel="5"
+  channel="{productmajorversion}"
   id="uuid"
   inline=false
   disabled=false
@@ -52,7 +52,7 @@ Specifies the {cloudname} channel to use. For information on {cloudname} deploym
 
 *Default value:* `'{productmajorversion}'`
 
-*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
+*Possible values:* `'{productmajorversion}'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
 ==== Example using `+channel+`
 

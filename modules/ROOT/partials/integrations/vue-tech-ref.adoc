@@ -131,11 +131,11 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Default value:* `'{productmajorversion}'`
 
-*Possible values:* `'{productmajorversion}-stable'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
+*Possible values:* `'{productmajorversion}'`, `'{productmajorversion}-testing'`, `'{productmajorversion}-dev'`, `'{productminorversion}'`
 
 Changes the {productname} build used for the editor to one of the following {cloudname} channels:
 
-* `{productmajorversion}`, `{productmajorversion}-stable` (*Default*): The current enterprise release of {productname}.
+* `{productmajorversion}` (*Default*): The current enterprise release of {productname}.
 * `{productmajorversion}-testing`: The current release candidate for the next enterprise release of {productname}.
 * `{productmajorversion}-dev`: The nightly-build version of {productname}.
 * A version number such as `{productminorversion}`: The specific enterprise release version of {productname}.

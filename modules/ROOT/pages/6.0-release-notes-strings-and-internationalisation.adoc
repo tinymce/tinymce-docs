@@ -8,7 +8,7 @@ This section documents the single fix made to {productname} 6.0 strings and inte
 * xref:strings-and-internationalisation[Strings and internationalisation]
 * xref:fixed-strings-and-internationalisation[Fixed strings and internationalisation]
 
-
+// tag::strings-and-internationalisation[]
 [[strings-and-internationalisation]]
 == Strings and Internationalisation
 
@@ -24,3 +24,5 @@ The {productname} color picker presents tool tip labels (also known as aria labe
 These labels presented these names in English in multiple instances when they should have presented the names in other languages (eg German).
 
 With this update, these tool tip labels now present in the expected language.
+
+// end::strings-and-internationalisation[]

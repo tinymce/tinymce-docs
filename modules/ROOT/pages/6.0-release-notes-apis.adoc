@@ -14,7 +14,7 @@ It also documents the {productname} 6.0 APIs that have been removed.
 * xref:fixed-apis[Fixed APIs]
 * xref:removed-or-deprecated-apis[Removed or deprecated APIs]
 
-
+// tag::apis[]
 [[apis]]
 == APIs
 
@@ -205,3 +205,5 @@ Since the `table` plugin API was entirely concerned with generating tables, it h
 ==== `tinymce.util.Promise`
 
 The `tinymce.util.Promise` API has been removed.
+
+// end::apis[]

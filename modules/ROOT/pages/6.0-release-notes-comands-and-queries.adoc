@@ -14,6 +14,7 @@ It also documents the {productname} 6.0 Commands that have been removed.
 * xref:removed-or-deprecated-commands-and-queries[Removed or deprecated commands and queries]
 
 
+// tag::commands-and-queries[]
 [[commands-and-queries]]
 == Commands and queries
 
@@ -81,3 +82,5 @@ The `execCommand` handler function has been removed from the `plugin` and `theme
 ==== `mceInsertRawHTML`
 
 The `mceInsertRawHTML` command has been removed.
+
+// end::commands-and-queries[]

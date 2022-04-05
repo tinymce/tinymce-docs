@@ -20,6 +20,7 @@ This section also includes four tables that set out the:
 * xref:previously-undocumented-items-removed-without-prior-deprecation[Previously undocumented items removed without prior deprecation]
 
 
+// tag::core-changes[]
 [[core-changes]]
 == Core changes
 
@@ -33,7 +34,10 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 * Malay (ms); and
 * Vietnamese (vi)
 
+// end::core-changes[]
 
+
+// tag::things-we-renamed[]
 [[things-we-renamed]]
 == Things we renamed
 
@@ -130,7 +134,9 @@ Where an Option name has changed, configurations using that option must be chang
 +
 - *Menu items* and *Toolbar items* are *Options* from `tinymce.init` for UI and UX features, such as the {productname} Menu, Toolbar and Contextual Menu.
 
+// end::things-we-renamed[]
 
+// tag::default-value-changes[]
 [[default-value-changes]]
 == Default value changes
 
@@ -153,8 +159,9 @@ Where an Option name has changed, configurations using that option must be chang
 | `table_use_colgroups`         | `false`                     | `true`    | Changed as part of modernising {productname}’s default behaviour.      | see xref:changed-plugins-table[Table]
 |===
 
+// end::default-value-changes[]
 
-
+// tag::previously-deprecated-items-now-removed[]
 [[previously-deprecated-items-now-removed]]
 == Previously deprecated items now removed
 
@@ -263,8 +270,9 @@ The following elements were previously deprecated and have, with this release, b
 | `XHR`                                 | API           | Any remaining `XHR` users have been replaced with `fetch`.
 |===
 
+// end::previously-deprecated-items-now-removed[]
 
-
+// tag::previously-undocumented-items-removed-without-prior-deprecation[]
 [[previously-undocumented-items-removed-without-prior-deprecation]]
 == Previously undocumented items removed without prior deprecation
 
@@ -284,3 +292,5 @@ Consequently, they were removed with this release without deprecation notices be
 
 | `mceBeginUndoLevel`                      | Command
 |===
+
+// end::previously-undocumented-items-removed-without-prior-deprecation[]

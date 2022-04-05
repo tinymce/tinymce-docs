@@ -11,7 +11,7 @@ It also documents the {productname} 6.0 Option that has been removed.
 * xref:changed-options[Changed Options]
 * xref:removed-or-deprecated-apis[Removed or deprecated Options]
 
-
+// tag::options[]
 [[options]]
 == Options
 
@@ -63,3 +63,5 @@ All references to `textpattern_patterns` (and `text_patterns`) should be removed
 +
 * Also, the API called `textpattern` has been removed.
 * Finally, text patterns are now on by default. `text_patterns: false` turns the functionality off.
+
+// end::options[]

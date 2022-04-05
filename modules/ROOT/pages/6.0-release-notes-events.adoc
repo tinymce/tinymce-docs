@@ -9,7 +9,7 @@ This section documents the improvements and fixes made to {productname} 6.0 Even
 * xref:new-and-improved-events][New and improved Events]
 * xref:fixed-events[Fixed Events]
 
-
+// tag::events[]
 [[events]]
 == Events
 
@@ -96,3 +96,5 @@ The `input` event is expected to fire whenever material is deleted from a {produ
 Previously, however, because of over-rides in the `DeleteBackspaceKeys.ts` module, when more than one line was deleted, the `input` event did not fire.
 
 With this release, these over-rides no longer prevent an `input` event firing when multiple lines are deleted, as expected.
+
+// end::events[]

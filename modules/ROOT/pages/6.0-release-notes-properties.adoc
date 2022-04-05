@@ -12,7 +12,7 @@ It also documents the {productname} 6.0 APIs that have been removed.
 * xref:fixed-propertes[Fixed properties]
 * xref:removed-or-deprecated-properties[Removed or deprecated properties]
 
-
+// tag::properties[]
 [[properties]]
 == Properties
 
@@ -51,3 +51,5 @@ the `fixed` property has been removed from the `tinymce.html.Node` class.
 ==== `shortEnded`
 
 the `shortEnded` property has been removed from the `tinymce.html.Node` class.
+
+// end::properties[]

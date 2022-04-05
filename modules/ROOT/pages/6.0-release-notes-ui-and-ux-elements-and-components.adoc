@@ -7,11 +7,11 @@ This section documents the improvements, changes, fixes and removales made to {p
 
 * xref:ui-and-ux-elements-and-components[UI and UX elements and components]
 * xref:new-and-improved-ui-and-ux-elements-and-components][New and improved UI and UX elements and components]
-* xref:changed-ui-and-ux-elements-and-components[Changed UI and UX elements and componen] 
+* xref:changed-ui-and-ux-elements-and-components[Changed UI and UX elements and componen]
 * xref:fixed-ui-and-ux-elements-and-components[Fixed UI and UX elements and components]
 * xref:removed-or-deprecated-ui-and-ux-elements-and-components[Removed or deprecated UI and UX elements and components]
 
-
+// tag::ui-and-ux-elements-and-components[]
 [[ui-and-ux-elements-and-components]]
 == UI and UX elements and components
 
@@ -259,3 +259,5 @@ Pressing the _End_ key when the insertion point is somewhere in a line of editab
 In the previous release of {productname}, pressing this key moved the insertion point outside the element containing the editable text entirely.
 
 As of this {productname} release, pressing the _End_ key when the insertion point is in a line of editable text moves the insertion point to the end of that line, as expected.
+
+// end::ui-and-ux-elements-and-components[]

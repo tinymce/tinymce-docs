@@ -7,6 +7,7 @@ This section documents the single known issue that {productname} 6.0 users may e
 
 * xref:known-issues[Known issues]
 
+// tag::known-issues[]
 [[known-issues]]
 == Known issues
 
@@ -27,3 +28,4 @@ As of this release, however, the specific cause is still being investigated.
 Workaround::
 Other than keeping `nonbreaking_force_tab` set to `false`, no workaround is currently available.
 
+// end::known-issues[]

@@ -43,12 +43,12 @@ include::partial$misc/predefinedIconsOnly.adoc[]
 | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API.
 
 | onSetup
-| (api) \=> (api) \=> void
+| (api) => (api) => void
 | optional
-| default: () \=> () \=> {} - Function invoked when the button is rendered.
+| default: () => () => {} - Function invoked when the button is rendered.
 
 | onAction
-| (api) \=> void
+| (api) => void
 | required
 | Function invoked when the button is clicked.
 |===
@@ -61,11 +61,11 @@ NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetu
 | Name | Value | Description
 
 | isDisabled
-| () \=> boolean
+| () => boolean
 | Checks if the button is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| (state: boolean) => void
 | Sets the button's disabled state.
 |===
 
@@ -119,12 +119,12 @@ include::partial$misc/predefinedIconsOnly.adoc[]
 | default: false - Represents the button's state. When true, button is highlighted. Toggled by the button's API.
 
 | onSetup
-| (api) \=> (api) \=> void
+| (api) => (api) => void
 | optional
-| default: () \=> () \=> {} - Function invoked when the button is rendered.
+| default: () => () => {} - Function invoked when the button is rendered.
 
 | onAction
-| (api) \=> void
+| (api) => void
 | required
 | Function invoked when the button is clicked.
 |===
@@ -137,19 +137,19 @@ NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetu
 | Name | Value | Description
 
 | isDisabled
-| ( ) \=> boolean
+| ( ) => boolean
 | Checks if a button is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| (state: boolean) => void
 | Sets the button's disabled state.
 
 | isActive
-| ( ) \=> boolean
+| ( ) => boolean
 | Checks if the button is `on`.
 
 | setActive
-| (state: boolean) \=> void
+| (state: boolean) => void
 | Sets the button's toggle state.
 |===
 
@@ -188,7 +188,7 @@ For example: The table plugin's `table` toolbar button opens a menu similar to t
 | Name | Value | Requirement | Description
 
 | fetch
-| (success: (menu) \=> void) \=> void
+| (success: (menu) => void) => void
 | required
 | Function that takes a callback which must be passed the list of options for the button's dropdown.
 
@@ -209,9 +209,9 @@ include::partial$misc/predefinedIconsOnly.adoc[]
 | Text for button tooltip.
 
 | onSetup
-| (api) \=> (api) \=> void
+| (api) => (api) => void
 | optional
-| default: () \=> () \=> {} - Function that's invoked when the button is rendered.
+| default: () => () => {} - Function that's invoked when the button is rendered.
 |===
 
 NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
@@ -222,11 +222,11 @@ NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetu
 | Name | Value | Description
 
 | isDisabled
-| ( ) \=> boolean
+| ( ) => boolean
 | Checks if the button is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| (state: boolean) => void
 | Sets the button's disabled state.
 |===
 
@@ -272,7 +272,7 @@ include::partial$misc/predefinedIconsOnly.adoc[]
 | Function invoked when the basic button section is clicked.
 
 | select
-| (value: string) \=> boolean
+| (value: string) => boolean
 | Choice menu items
 | optional
 | default: false - Function run on each option when the menu is opened to determine if it should be highlighted as active.
@@ -284,22 +284,22 @@ include::partial$misc/predefinedIconsOnly.adoc[]
 | default: 1 - Number of columns for the list of options. When set to more than 1 column, only the icon for each item will be shown.
 
 | fetch
-| (success: (menu) \=> void) \=> void
+| (success: (menu) => void) => void
 | Drop-down menu
 | required
 | A callback function that should be passed a list of xref:choicemenuitems[choice menu items] for the dropdown menu.
 
 | onItemAction
-| (api, value) \=> void
+| (api, value) => void
 | Choice menu items
 | required
 | Function invoked when a dropdown list option is clicked. The `value` is passed from the selected choice menu item.
 
 | onSetup
-| (api) \=> (api) \=> void
+| (api) => (api) => void
 | All
 | optional
-| default: () \=> () \=> {} - Function invoked when the button is rendered.
+| default: () => () => {} - Function invoked when the button is rendered.
 |===
 
 NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
@@ -310,19 +310,19 @@ NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetu
 | Name | Value | Description
 
 | isDisabled
-| ( ) \=> boolean
+| ( ) => boolean
 | Checks if button is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| (state: boolean) => void
 | Sets the button's disabled state.
 
 | isActive
-| ( ) \=> boolean
+| ( ) => boolean
 | Checks the button's toggle state.
 
 | setActive
-| (state: boolean) \=> void
+| (state: boolean) => void
 | Sets the button's toggle state.
 |===
 
@@ -377,9 +377,9 @@ include::partial$misc/predefinedIconsOnly.adoc[]
 | A string of space separated toolbar button names, or an array of xref:configure/editor-appearance.adoc#addingtoolbargrouplabels[labelled toolbar buttons].
 
 | onSetup
-| (api) \=> (api) \=> void
+| (api) => (api) => void
 | optional
-| default: () \=> () \=> {} - Function that's invoked when the button is rendered.
+| default: () => () => {} - Function that's invoked when the button is rendered.
 |===
 
 NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetup`.
@@ -390,11 +390,11 @@ NOTE: See xref:onsetupexplanation[below] for details on how to configure `onSetu
 | Name | Value | Description
 
 | isDisabled
-| ( ) \=> boolean
+| ( ) => boolean
 | Checks if the button is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| (state: boolean) => void
 | Sets the button's disabled state.
 |===
 

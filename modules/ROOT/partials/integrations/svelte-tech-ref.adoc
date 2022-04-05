@@ -9,11 +9,11 @@ Covered in this section:
 
 The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 
-[source,jsx]
+[source,jsx,subs="attributes+"]
 ----
 <Editor
   apiKey="api-key"
-  channel="6"
+  channel="{productmajorversion}"
   id="uuid"
   inline=false
   disabled=false

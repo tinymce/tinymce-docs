@@ -2,7 +2,7 @@
 
 set -e
 
-API_VERSION="develop"
+API_VERSION="$(cat .api-version)"
 TARBALL_URL="https://codeload.github.com/tinymce/tinymce/tar.gz/$API_VERSION"
 API_TMPDIR="/tmp/tinymce-$API_VERSION"
 

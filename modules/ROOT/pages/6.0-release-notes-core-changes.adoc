@@ -43,7 +43,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Internet Expl
 
 [cols="1,1,1,1,1"]
 |===
-| old name                            | new name                         | element                             | notes                                                                                                                                                                                                                                                                                                         | for more information
+| Old name                            | New name                         | Element                             | Notes                                                                                                                                                                                                                                                                                                         | for more information
 
 | `blockformats`                      | `blocks`                         | Menu item                           | No behavioural changes.                                                                                                                                                                                                                                                                                       |
 
@@ -142,7 +142,7 @@ Where an Option name has changed, configurations using that option must be chang
 
 [cols="1,1,1,1,1"]
 |===
-| element                       | old value                   | new value | notes                                                                  | for more information
+| Element                       | Old value                   | New value | Notes                                                                  | For more information
 
 | assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata |
 
@@ -169,7 +169,7 @@ The following elements were previously deprecated and have, with this release, b
 
 [cols="1,1,1"]
 |===
-| item                                  | element       | notes
+| Item                                  | Element       | Notes
 
 | `$`                                   | API           | `$` was a shorthand function of `DomQuery` and `Sizzle`.
 
@@ -282,7 +282,7 @@ Consequently, they were removed with this release without deprecation notices be
 
 [cols="1,1"]
 |===
-| item                                     | element
+| Item                                     | Element
 
 | `editor.editorCommands.hasCustomCommand` | API
 

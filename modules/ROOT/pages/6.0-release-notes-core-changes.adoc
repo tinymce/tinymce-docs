@@ -90,7 +90,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 
 | `linheight_formats`                 | `line_height_formats`            | Option                              | No behavioral changes.                                                                                                                                                                                                                                                                                       |
 
-| `default_link_target`               | `link_default_target`            |                                     | Changed for consistency with other `link` and `autolink` options. Their functionality, and the values they can take remain unchanged. This change applies to both `link` and `autolink` plugins.                                                                                                              |
+| `default_link_target`               | `link_default_target`            |                                     | Changed for consistency with other `link` and `autolink` options. The functionality, and the values the option can take remain unchanged. This change applies to both `link` and `autolink` plugins.                                                                                                              |
 
 | `rel_list`                          | `link_rel_list`                  |                                     | Changed for consistency with other options. The functionality, and the values this option can take remain unchanged.                                                                                                                                                                                          |
 

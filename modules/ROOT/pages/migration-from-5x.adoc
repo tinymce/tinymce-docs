@@ -440,7 +440,7 @@ Configurations that set `.disabled` must now set `.enabled`.
 Also, the Dialog API, which previously offered the `disable(<name>)` and `enable(<name>)` functions, now offers a single `setEnabled(<name>, <state>)` function.
 
 [[ui-elements-and-components-editor-text-entry-height]]
-=== Editor text entry height
+=== Editor height
 
 In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high text entry area. In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high text entry area.
 

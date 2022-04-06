@@ -145,7 +145,7 @@ The `fire()` method in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.
 [[editor-annotator-remove]]
 ==== `editor.annotator.remove`
 
-Previously, `editor.annotator.remove` scrolled to the removed material’s position when removing an annotation.
+Previously, `editor.annotator.remove` scrolled to the removed contents position when removing an annotation.
 
 It did not, as expected, retain the current selection or insertion point position in the {productname} editor.
 

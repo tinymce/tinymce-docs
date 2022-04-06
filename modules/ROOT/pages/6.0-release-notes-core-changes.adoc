@@ -66,7 +66,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 
 | `editimage_proxy`                   | `export_image_proxy_service_url` | Option                              | Renamed for easier configuration when used with https://tiny.cloud/docs/enterprise/server/[Tiny services].                                                                                                                                                                                                    |
 
-| `fire()`                            | `dispatch()`                     | Function                            | The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                   |
+| `fire()`                            | `dispatch()`                     | API                                 | `fire()` in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`. `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.                                   |
 
 | `font_formats`                      | `font_family_formats`            | Option                              | No behavioral changes, but there are related toolbar and menu items changes.                                                                                                                                                                                                                                 |
 

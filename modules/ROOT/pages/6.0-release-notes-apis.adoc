@@ -137,7 +137,9 @@ Note, in particular, the removal of all legacy browser detection methods.
 
 The `fire()` method in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`.
 
-`fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
+`fire` has been aliased to `dispatch`, so existing configurations should still work as expected.
+
+`fire` has also, however, been marked as _deprecated_. Editing configurations to use `dispatch()` is recommended.
 
 [[fixed-apis]]
 === Fixed APIs

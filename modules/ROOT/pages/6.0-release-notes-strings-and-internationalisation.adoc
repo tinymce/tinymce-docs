@@ -19,7 +19,7 @@ This section documents the single fix made to {productname} 6.0 strings and inte
 [[color-picker-dialog]]
 ==== color picker dialog
 
-The {productname} color picker presents tool tip labels (also known as aria labels) showing the name of the color the pointer is hovering over.
+The {productname} color picker presents tooltip labels showing the name of the color the pointer is hovering over.
 
 These labels presented these names in English in multiple instances when they should have presented the names in other languages (eg German).
 

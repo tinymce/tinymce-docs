@@ -62,7 +62,7 @@ Rather than calling the function to set the desired state, call `setEnabled()` w
 +
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
-=== `editor.SetContent`
+=== `SetContent` editor event
 
 The `editor.SetContent` event’s `content` property has been deprecated.
 

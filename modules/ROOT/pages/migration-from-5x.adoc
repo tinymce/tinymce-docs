@@ -334,7 +334,8 @@ The tab order of a page’s elements, including {productname}, is configured by 
 
 To configure `tabindex` for the {productname} editor, set the attribute on the target element for the editor. For example:
 
- ```html
+[source, html]
+----
  tinymce.init({
    selector: 'textarea'
  });
@@ -342,7 +343,8 @@ To configure `tabindex` for the {productname} editor, set the attribute on the t
  <input tabindex="1">
  <textarea tabindex="2"></textarea>
  <input tabindex="3">
- ```
+----
+
 In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor’s iframe, to allow this to work correctly. 
 
 

@@ -313,8 +313,6 @@ The new name is a more accurate reflection of what sort of data the argument pas
 +
 The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed. `mceInsertClipboardContent` only attempts to pass data if the `html` or `text` property is used.
 +
-NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not been changed.
-+
 . The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
 +
 There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin.

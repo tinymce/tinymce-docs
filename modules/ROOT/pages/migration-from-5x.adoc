@@ -501,7 +501,7 @@ For example, consider a {productname} document that included a table that took u
 
 As another example, consider a {productname} document containing a table that is wider than the viewport. If you selected this table’s contents and set the *alignment* to _right_, the portion of the table that was outside the viewport disappeared to the left, and no scrollbar presented allowing you to bring that portion back into view.
 
-As of {productname} 6.0, tables are positioned using `margins` rather than `float`. This prevents these layout and UX problems occurring.
+As of {productname} 6.0, tables are positioned using `margin` rather than `float`. This prevents these layout and UX problems occurring.
 
 However, when upgrading to {productname} 6.0, there are two things to be aware of:
 

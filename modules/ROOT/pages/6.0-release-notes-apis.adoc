@@ -133,7 +133,7 @@ The following methods have been removed from the `Env` API:
 Note, in particular, the removal of all legacy browser detection methods.
 
 [[fire]]
-==== `fire` functions renamed in all {productname} APIs
+==== `fire` methods renamed in all {productname} APIs
 
 The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`.
 

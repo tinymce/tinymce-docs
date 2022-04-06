@@ -72,9 +72,9 @@ To alter such data before it is added to the {productname} editor, use the `cont
 
 NOTE: Calling the `editor.SetContent` `content` property now returns an empty string.
 
-=== `fire` function renamed in all {productname} APIs
+=== `fire` method renamed in all {productname} APIs
 
-The `fire()` function in
+The `fire()` method in
 
 * `tinymce.Editor`;
 * `tinymce.dom.EventUtils`;

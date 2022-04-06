@@ -322,6 +322,30 @@ NOTE: The Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerP
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
+== `tabfocus`
+
+The `tabfocus` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
+
+The `tabfocus_elements` option, which relied on the `tabfocus` plugin, no longer functions.
+
+As per standard web practice, the `tabindex` attribute should be used instead of the `tabfocus` plugin or any of the `tabfocus` plugin’s options.
+
+The tab order of a page’s elements, including {productname}, is configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`tabindex` attribute] on the relevant HTML elements. The browser then natively handles the tab order.
+
+To configure `tabindex` for the {productname} editor, set the attribute on the target element for the editor. For example:
+
+ ```html
+ tinymce.init({
+   selector: 'textarea'
+ });
+ ...
+ <input tabindex="1">
+ <textarea tabindex="2"></textarea>
+ <input tabindex="3">
+ ```
+In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor’s iframe, to allow this to work correctly. 
+
+
 === Table of Contents
 
 As noted in the xref:6.0-release-notes.adoc#new-and-improved-plugins-table-of-contents[_{productname} 6.0 Release Notes_], the `toc` plugin is no longer part of the Free editor.

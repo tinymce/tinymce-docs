@@ -29,7 +29,7 @@ Themes can act on the `AutocompleterStart` and `AutocompleterUpdate` events and 
 [[before-set-content]]
 ==== `BeforeSetContent`
 
-The `BeforeSetContent` event now includes the actual serialized content when passing in an `AstNode` to the `editor.setContent`.
+The `BeforeSetContent` event now includes the actual serialized content when passing in an `AstNode` to the `editor.setContent()` API.
 
 
 [[get-content]]

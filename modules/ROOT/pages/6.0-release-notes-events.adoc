@@ -55,7 +55,7 @@ The `beforeinput` event is expected to fire whenever content is added to or remo
 
 Previously, however, because of backspace and delete overrides in {productname} Core, the `beforeinput` event did not always fire when expected.
 
-With this release, these over-rides no longer prevent `beforeinput` events firing when expected.
+With this release, these overrides no longer prevent `beforeinput` events firing when expected.
 
 
 [[change]]
@@ -93,8 +93,8 @@ NOTE: The `editor.selection.setContent()` API only supports the `html` and `raw`
 
 The `input` event is expected to fire whenever content is deleted from a {productname} instance.
 
-Previously, however, because of over-rides in the `DeleteBackspaceKeys.ts` module, when more than one line was deleted, the `input` event did not fire.
+Previously, however, because of overrides in the `DeleteBackspaceKeys.ts` module, when more than one line was deleted, the `input` event did not fire.
 
-With this release, these over-rides no longer prevent an `input` event firing when multiple lines are deleted, as expected.
+With this release, these overrides no longer prevent an `input` event firing when multiple lines are deleted, as expected.
 
 // end::events[]

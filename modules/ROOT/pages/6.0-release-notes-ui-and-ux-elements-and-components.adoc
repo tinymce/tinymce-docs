@@ -157,7 +157,7 @@ With this release, setting `allow_html_in_named_anchor: true` sets characters in
 [[default-ui-theme-silver-renders-correctly]]
 ==== Default UI theme, silver, no longer renders incorrectly as plugins load
 
-Previously, {productname}’s default UI theme, `silver`, was initialised such that it rendered some UI components before plugins that, potentially, would over-ride or adjust the defaults presented by `silver`.
+Previously, {productname}’s default UI theme, `silver`, was initialised such that it rendered some UI components before plugins that, potentially, would override or adjust the defaults presented by `silver`.
 
 This resulted in these UI elements rendering incorrectly.
 

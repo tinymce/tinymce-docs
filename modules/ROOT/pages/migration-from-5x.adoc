@@ -152,7 +152,7 @@ For example —
 
 `tinyMCE.execCommand('mceAddEdit', false, { id: 'ed-1', options: { readonly: false, toolbar: 'bold italic strikethrough' } })`
 
-— finds a `textarea` with id `ed-1` and turns it into a working {productname} editor that displays the _bold_, _italic_, and _strikethrough_ options in the editor toolbar.
+— finds a `textarea` with id `ed-1` and turns it into a working {productname} editor that displays the _bold_, _italic_, and _strikethrough_ buttons in the editor toolbar.
 
 
 [[options]]

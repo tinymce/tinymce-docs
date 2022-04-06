@@ -98,7 +98,7 @@ This change makes it safe to use both older functions and newer arrow functions 
 
 Previously, when loading a requested resource, the `PluginManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `PluginManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
 
-=== redial
+=== Dialog `redial` API
 
 Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
 

@@ -299,6 +299,5 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 
 All references to `textpattern` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
-Also, the API that called `textpattern` has been removed.
 
 // end::plugins[]

@@ -147,7 +147,7 @@ NOTE: The `mceInsertTable` command is still the command for inserting a table wi
 
 Previously, `mceAddEditor` and `mceToggleEditor` used the `editorManager.settings` values to set the `id` and UI and UX options for a new {productname} editor instance.
 
-`editorManager.settings` is not used at all in {productname} 6.
+`editorManager.settings` is not used at all in {productname} 6 and has been removed.
 
 Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object passed when the command is run.
 

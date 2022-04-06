@@ -145,6 +145,8 @@ Where an Option name has changed, configurations using that option must be chang
 |===
 | Element                       | Old value                   | New value | Notes                                                                  | For more information
 
+| `a11ychecker_html_version     | `html4`                     | `html5`   |
+
 | assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata |
 
 | `config.height`               | `200px`                     | `400px`   | Changed to improve user experience.                                    | see xref:ui-and-ux-elements-and-components-editor-text-entry-height[Height]

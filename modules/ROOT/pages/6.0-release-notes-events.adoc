@@ -91,7 +91,7 @@ NOTE: The `editor.selection.setContent()` API only supports the `html` and `raw`
 [[input]]
 ==== `input`
 
-The `input` event is expected to fire whenever material is deleted from a {productname} instance.
+The `input` event is expected to fire whenever content is deleted from a {productname} instance.
 
 Previously, however, because of over-rides in the `DeleteBackspaceKeys.ts` module, when more than one line was deleted, the `input` event did not fire.
 

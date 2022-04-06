@@ -120,16 +120,6 @@ Previously, when loading a requested resource, the `ThemeManager` passed a `succ
 [[commands-and-queries]]
 == Commands and queries
 
-=== `element_format`
-
-Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
-
-In {productname} 6.0, `element_format` now has an explicit default value: `html`.
-
-This new, and explicit default changes how entered material is serialised. In particular, self-closing elements, such as `<hr>`, `<br>`, and `<img>` no longer present in the `xhtml` standard fashion, as `<hr />`, `<br />`, and `</img />` respectively.
-
-NOTE: If `xhtml` standard representation is required, explicitly setting `element_format` to `xhtml` works as before.
-
 === `mceInsertTableDialog`
 
 Previously, the `mceInsertTable` command worked in two modes.
@@ -167,6 +157,16 @@ For example —
 
 [[options]]
 == Options
+
+=== `element_format`
+
+Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
+
+In {productname} 6.0, `element_format` now has an explicit default value: `html`.
+
+This new, and explicit default changes how entered material is serialised. In particular, self-closing elements, such as `<hr>`, `<br>`, and `<img>` no longer present in the `xhtml` standard fashion, as `<hr />`, `<br />`, and `</img />` respectively.
+
+NOTE: If `xhtml` standard representation is required, explicitly setting `element_format` to `xhtml` works as before.
 
 === `image_upload_handler`
 

@@ -8,12 +8,20 @@ _File:_ `+BlazorApp.csproj+`
   <PackageReference Include="TinyMCE.Blazor" Version="X.Y.Z" />
 </ItemGroup>
 ----
-. Add the `+tinymce-blazor.js+` script to `+Pages/_Host.cshtml+`, for example:
+. Add the `+tinymce-blazor.js+` script to the main page.
+* Using Blazor Server add the script in `+Pages/_Host.cshtml+`, for example:
 +
 [source,html]
 ----
 <script src="_framework/blazor.server.js"></script>
 <script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
+----
+* Using WASM add the script in `+wwwroot/index.html+`, for example:
++
+[source,html]
+----
+<script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
+<script src="_framework/blazor.webassembly.js"></script>
 ----
 . Add the `+Editor+` component to a page by either:
 * Using the `+using+` directive

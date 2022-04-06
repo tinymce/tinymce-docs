@@ -76,7 +76,7 @@ As of {productname} 6, the `change` event is not fired unless and until
 . focus is switched away from the editor; and
 . changes have been made in the editor since focus was switched to it.
 
-NOTE: it is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
+NOTE: It is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
 [[fixed-get-content]]
 ==== `GetContent`

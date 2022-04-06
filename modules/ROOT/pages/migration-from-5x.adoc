@@ -450,7 +450,7 @@ The new default can be over-ridden by explicitly setting a `height` value in the
 
 Also, setting the element’s CSS `height` to a value larger than 400px will increase the height of the text entry area. Setting the elmement’s CSS `height` to a value less than 400px will *not* reduce the height of the text entry area, however.
 
-NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent text entry areas from disappearing during re-sizing, the `min-height` value (100px) cannot be over-ridden.
+NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent the editor UI from disappearing during re-sizing, the `min-height` value (100px) cannot be over-ridden. This is to prevent an unrecoverable bug that prevented users being able to interact with the editor.
 
 === formatting user interface name changes
 

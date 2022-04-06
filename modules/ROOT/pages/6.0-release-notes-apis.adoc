@@ -135,7 +135,7 @@ Note, in particular, the removal of all legacy browser detection methods.
 [[fire]]
 ==== `fire` methods renamed in all {productname} APIs
 
-The `fire()` function in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`.
+The `fire()` method in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`.
 
 `fire` has been aliased to `dispatch` but has also been marked as _deprecated_.
 

@@ -156,7 +156,9 @@ With this release, `editor.annotator.remove` does not change the change the sele
 
 Previously, if the {productname} editor was removed, the `editor.fire()` API returned an incorrect object.
 
-In {productname} 6.0, `editor.fire()` returns the correct object even when the editor is removed.
+In {productname} 6.0, `editor.fire()`, which has been renamed `dispatch()`, returns the correct object even when the editor is removed.
+
+
 
 [[editor-getcontent]]
 ==== `editor.getContent()`

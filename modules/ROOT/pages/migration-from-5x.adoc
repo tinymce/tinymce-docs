@@ -202,7 +202,7 @@ After upgrading:
 * rename any options in your {productname} init configuration to match the new name.
 * remove `textpattern` from your plugins list.
 
-=== tinymce.activeEditor.options.get
+=== `tinymce.activeEditor.options.get`
 
 Previously `tinymce.activeEditor.options.get('plugins')` returned the configured plugins as a string.
 

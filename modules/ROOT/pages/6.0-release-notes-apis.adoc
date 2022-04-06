@@ -62,7 +62,7 @@ The dialog API’s `setData` method now uses a deep merge algorithm.
 Consequently, it now supports partial nested objects.
 
 [[promise]]
-==== success or failure callbacks replaced by `Promise` in multiple APIs
+==== `success` and `failure` callbacks replaced by `Promise` in multiple APIs
 
 * Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs report resource loading status with `success` or `failure` callbacks.
 +

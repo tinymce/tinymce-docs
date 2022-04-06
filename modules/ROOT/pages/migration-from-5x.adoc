@@ -409,7 +409,7 @@ NOTE: Existing configurations that included escaped colons will continue to work
 
 === buttonType
 
-`buttonType` is a new property available as a basic panel component of `dialogs`. It replaces the, now deprecated property, `primary`.
+`buttonType` is a new property available for button components used in dialogs. It replaces the, now deprecated property, `primary`.
 
 The `primary` property was boolean, allowing for only two states: `true` and `false`.
 

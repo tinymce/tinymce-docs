@@ -125,7 +125,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 
 - *Commands* are what is passed via the `editor.execCommand()` API.
 +
-Where a Command name has change, calls to `theeditor.execCommand()` API must be changed to match the new name.
+Where a Command name has change, calls to `editor.execCommand()` API must be changed to match the new name.
 +
 - Configuration *Options* are what is passed when initialising the {productname} editor via `tinymce.init`.
 +

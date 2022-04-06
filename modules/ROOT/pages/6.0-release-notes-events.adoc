@@ -21,7 +21,7 @@ This section documents the improvements and fixes made to {productname} 6.0 Even
 [[autocompleter]]
 ==== `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`
 
-As part of moving `autocompleter` from the default `silver` theme to the {productname} core, three new events are now available: `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`.
+As part of moving the core of the autocompleter feature from the default `silver` theme to the {productname} core, three new events are now available: `AutocompleterStart`, `AutocompleterUpdate` and `AutocompleterEnd`.
 
 Themes can act on the `AutocompleterStart` and `AutocompleterUpdate` events and can call `AutocompleterEnd` to cancel the auto completer.
 

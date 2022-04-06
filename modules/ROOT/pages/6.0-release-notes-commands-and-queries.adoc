@@ -50,14 +50,6 @@ The Editor commands APIs no longer fallback to executing the browsers native com
 As well, the Editor query command APIs now return `false` or an empty string on removed {productname} editors.
 
 
-[[element-format]]
-==== `element_format`
-
-Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
-
-In {productname} 6.0, `element_format` now has an explicit default value: `html`.
-
-
 [[mce-add-editor-and-mce-toggle-editor]]
 ==== `mceAddEditor` and `mceToggleEditor`
 

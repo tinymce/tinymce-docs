@@ -20,6 +20,14 @@ It also documents the {productname} 6.0 Option that has been removed.
 === Changed options
 
 
+[[element-format]]
+==== `element_format`
+
+Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
+
+In {productname} 6.0, `element_format` now has an explicit default value: `html`.
+
+
 [[image-upload-handler]]
 ==== `image_upload_handler`
 

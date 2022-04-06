@@ -41,7 +41,7 @@ In {productname} 6, `images_upload_handler` reports upload results by returning 
 
 The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
 
-It now defaults to `https`. Previously it defaulted to `http`.
+It now defaults to `'https'`. Previously it defaulted to `'http'`.
 
 NOTE: The `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
 

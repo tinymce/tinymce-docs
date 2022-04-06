@@ -53,7 +53,7 @@ A `ThemeLoadError` event is now fired if the theme fails to load.
 
 The `beforeinput` event is expected to fire whenever content is added to or removed from a {productname} instance.
 
-Previously, however, because of overrides in the `DeleteBackspaceKeys.ts` module, the `beforeinput` event did not always fire when expected.
+Previously, however, because of backspace and delete overrides in {productname} Core, the `beforeinput` event did not always fire when expected.
 
 With this release, these over-rides no longer prevent `beforeinput` events firing when expected.
 

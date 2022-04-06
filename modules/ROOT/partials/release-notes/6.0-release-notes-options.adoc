@@ -13,15 +13,15 @@ It also documents the {productname} 6.0 Option that has been removed.
 == Changed options
 
 
-[[element-format]]
-==== `element_format`
+[[changed-options-element-format]]
+=== `element_format`
 
 Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
 
 In {productname} 6.0, `element_format` now has an explicit default value: `html`.
 
 
-[[image-upload-handler]]
+[[changed-options-image-upload-handler]]
 === `image_upload_handler`
 
 Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload.
@@ -29,7 +29,7 @@ Previously the `images_upload_handler` option passed `success` or `failure` call
 In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`, with a value of either `resolve` or `reject`.
 
 
-[[link-default-protocol]]
+[[changed-options-link-default-protocol]]
 === link_default_protocol
 
 The `link_default_protocol` option sets the link protocol used by links added or edited using the _link_ dialog.
@@ -51,7 +51,7 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 == Removed or deprecated options
 
 
-[[textpattern]]
+[[removed-or-deprecated-options-textpattern]]
 === TextPattern
 
 The `textpattern_patterns` option is no longer an option. It has been renamed to `text_patterns` and is now a Core part of {productname} 6.0.

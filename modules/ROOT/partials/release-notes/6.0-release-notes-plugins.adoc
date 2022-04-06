@@ -36,7 +36,7 @@ Neither of these formats are allowed in {productname} 6.0.
 [[new-and-improved-plugins]]
 == New and improved plugins
 
-[[imagetools]]
+[[new-and-improved-plugins-imagetools]]
 === Enhanced Image Editor
 
 _Enhanced Image Editor_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
@@ -50,7 +50,7 @@ An `editimage` option was also renamed: `editimage_proxy` is now `editimage_prox
 NOTE: `editimage_proxy` (the renamed equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
 
 
-[[emoticons]]
+[[new-and-improved-plugins-emoticons]]
 === Emoticons
 
 The `emoticon` plugin now uses the more accurate word, _Emoji_, in its toolbar, menu item and dialog.
@@ -60,7 +60,7 @@ In previous versions, the word presented in these parts of the plugin’s user-i
 NOTE: The plugin, itself, is still called Emoticons. And the plugin description and the plugin’s configuration and Help dialogs still reflect this.
 
 
-[[table-of-contents]]
+[[new-and-improved-plugins-table-of-contents]]
 === Table of Contents
 
 There are no end-user facing changes between the previous `toc` plugin and the `tableofcontents` plugin. However, the `tableofcontents` plugin now uses https://terser.org[terser] to improve performance.
@@ -85,7 +85,7 @@ The following Premium Plugins now present in Hindi, Malay, and Vietnamese:
 [[changed-plugins]]
 == Changed plugins
 
-[[autoresize]]
+[[changed-plugins-autoresize]]
 === Autoresize
 
 Previously, the `autoresize` plugin offered an `autoresize_on_init` option.
@@ -94,7 +94,7 @@ This setting does not do anything meaningful, and had been previously deprecated
 
 As of {productname} 6.0, `autoresize_on_init` has been removed from the `autoresize` plugin.
 
-[[media]]
+[[changed-plugins-media]]
 === Media
 
 In {productname} 5.x, the `media` plugin used https://tiny.cloud/docs/api/tinymce.html/tinymce.html.saxparser/[SaxParser] to validate elements for parsing.
@@ -111,7 +111,7 @@ Also, the `media` plugin’s `media_scripts` option was deprecated in {productna
 
 As of the release of {productname} 6.0, this option has been removed completely.
 
-[[noneditable]]
+[[changed-plugins-noneditable]]
 === Noneditable
 
 The `noneditable` plugin is no longer a plugin. It is now a Core part of {productname} 6.0.
@@ -120,7 +120,7 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 
 All references to `noneditable` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
-[[paste]]
+[[changed-plugins-paste]]
 === Paste
 
 The `paste` plugin’s functionality is now a Core part of {productname} 6.0.
@@ -138,7 +138,7 @@ The new name is a more accurate reflection of what sort of data the argument pas
 NOTE: `PastePreProcess` also takes an argument, `content`. This argument, for this command, has not changed.
 
 
-[[print]]
+[[changed-plugins-print]]
 === Print
 
 `print` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
@@ -147,7 +147,7 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 
 All references to `print` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
-[[table]]
+[[changed-plugins-table]]
 === Table
 
 The `table` plugin’s functionality is, as of {productname} 6.0, entirely focussed on the user interface (UI) for creating and editing tables.
@@ -187,31 +187,31 @@ In {productname} 6.0, the `table_responsive_width` option has been removed.
 [[removed-or-deprecated-plugins]]
 == Removed or deprecated plugins
 
-[[bbcode]]
+[[removed-or-deprecated-plugins-bbcode]]
 === BBCode
 
 As per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the `bbcode` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
-[[color-picker]]
+[[removed-or-deprecated-plugins-color-picker]]
 === Color Picker
 
 Color Picker’s functionality has been a built in part of {productname} since version 5.
 
 Consequently, and as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the empty `colorpicker` plugin has been removed.
 
-[[context-menu]]
+[[removed-or-deprecated-plugins-context-menu]]
 === Context Menu
 
 Context Menu’s functionality has been a built in part of {productname} since version 5.
 
 Consequently, and as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the empty `contextmenu` plugin has been removed.
 
-[[full-page]]
+[[removed-or-deprecated-plugins-full-page]]
 === Full Page
 
 As per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the `fullpage` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
-[[hr]]
+[[removed-or-deprecated-plugins-hr]]
 === HR
 
 The `hr` (horizontal rule) functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
@@ -220,17 +220,17 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 
 All references to `hr` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
-[[changed-plugins-imagetools]]
+[[removed-or-deprecated-plugins-imagetools]]
 === ImageTools
 
 The `imagetools` plugin is no longer part of the Free {productname} editor. _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
-[[legacy-output]]
+[[removed-or-deprecated-plugins-legacy-output]]
 === Legacy Output
 
 As per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the `legacyoutput` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
-[[changed-plugins-paste]]
+[[removed-or-deprecated-plugins-paste]]
 === Paste
 
 The `paste` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
@@ -243,7 +243,7 @@ If a community-maintained version of the `paste` plugin becomes available, we wi
 
 NOTE: The Premium plugin, https://tiny.cloud/docs/plugins/premium/powerpaste/[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
-[[changed-plugins-print]]
+[[removed-or-deprecated-plugins-print]]
 === Print
 
 `print` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
@@ -252,14 +252,14 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 
 All references to `print` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
-[[spellchecker]]
+[[removed-or-deprecated-plugins-spellchecker]]
 === Spellchecker
 
 As per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the `spellchecker` plugin has been removed. It is no longer part of {productname} 6.0.
 
 The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
 
-[[tabfocus]]
+[[removed-or-deprecated-plugins-tabfocus]]
 === TabFocus
 
 The `tabfocus` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
@@ -272,21 +272,21 @@ As per standard web practice, the `tabindex` attribute should be used instead of
 
 As per that standard web practice, the `tabindex` attribute is copied from the target element to the iframe.
 
-[[changed-plugins-table-of-contents]]
+[[removed-or-deprecated-plugins-table-of-contents]]
 === Table of contents
 
 The `toc` plugin is no longer part of the Core open source editor. _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
 NOTE: Although there are no end-user facing changes, as part of the general architectural change, the `tableofcontents` Premium plugin has modernised its output. It uses the ES2020 library and targets ES2018. It also uses https://terser.org[terser] to improve performance.
 
-[[text-color]]
+[[removed-or-deprecated-plugins-text-color]]
 === Text color
 
 Text color’s functionality has been a built in part of {productname} since version 5.
 
 Consequently, and as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the empty `textcolor` plugin has now been removed.
 
-[[text-pattern]]
+[[removed-or-deprecated-plugins-text-pattern]]
 === TextPattern
 
 The `textpattern` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.

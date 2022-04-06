@@ -24,8 +24,11 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 * xref:schema[Schema]
 * xref:ui-and-ux-elements-and-component[UI and UX elements and components]
 
+== TinyMCE 6 core changes
 
-include::6.0-release-notes-core-changes.adoc[leveloffset=+1]
+include::partial$release-notes/6.0-release-notes-summary.adoc[leveloffset=+2]
+
+For additional details on {productname} 6.0 changes, see xref:6.0-release-notes-overview.adoc[{productname} 6.0 release notes overview].
 
 [[apis]]
 == APIs
@@ -186,7 +189,7 @@ NOTE: The `link_default_protocol` value is only applied to an edited or inserted
 [[text-patterns]]
 == Text Patterns
 
-As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-options-textpattern[_{productname} 6.0 Release Notes_], the `textpattern_patterns` option:
+As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-options-textpattern[_{productname} 6.0 Release Notes_], the `textpattern_patterns` option:
 
 * was renamed to `text_patterns`;
 * and had its functionality moved to the Core of {productname} 6.0.
@@ -268,7 +271,7 @@ NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatibl
 
 === ImageTools
 
-As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Free editor.
+As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Free editor.
 
 _ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
@@ -284,7 +287,7 @@ NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatibl
 
 === Media
 
-As noted in the xref:6.0-release-notes.adoc#changed-plugins-media[_{productname} 6.0 Release Notes_], the `media` plugin no longer uses the SaxParser.
+As noted in the xref:6.0-release-notes-core-changes.adoc#changed-plugins-media[_{productname} 6.0 Release Notes_], the `media` plugin no longer uses the SaxParser.
 
 As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as _special_, and cannot be marked as such. Put another way, the DomParser does not preserve embedded content.
 
@@ -299,7 +302,7 @@ NOTE: As of this release, there are no known cases of this change causing media 
 [[plugins-paste]]
 === Paste
 
-As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
+As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
 
 In conjunction with this change, three changes have been made:
 
@@ -346,12 +349,12 @@ To configure `tabindex` for the {productname} editor, set the attribute on the t
  <input tabindex="3">
 ----
 
-In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor’s iframe, to allow this to work correctly. 
+In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor’s iframe, to allow this to work correctly.
 
 
 === Table of Contents
 
-As noted in the xref:6.0-release-notes.adoc#new-and-improved-plugins-table-of-contents[_{productname} 6.0 Release Notes_], the `toc` plugin is no longer part of the Free editor.
+As noted in the xref:6.0-release-notes-core-changes.adoc#new-and-improved-plugins-table-of-contents[_{productname} 6.0 Release Notes_], the `toc` plugin is no longer part of the Free editor.
 
 Table of Contents has been updated and is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 

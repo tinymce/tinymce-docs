@@ -55,7 +55,7 @@ The new `Resource.unload` API makes it possible to unload resources in the resou
 This allows tests, such as `ImageEmojiTest`, to remove existing databases before loading their own.
 
 [[setdata]]
-==== `setData` method in dialog API
+==== `setData` method in the Dialog API
 
 The dialog API’s `setData` method now uses a deep merge algorithm.
 

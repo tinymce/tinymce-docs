@@ -39,9 +39,9 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 [[things-we-renamed]]
 == Things we renamed
 
-[cols="1,1,1,1,1"]
+[cols="1,1,1,2,1"]
 |===
-| Old name                            | New name                         | Element                             | Notes                                                                                                                                                                                                                                                                                                         | for more information
+| Old name                            | New name                         | Element                             | Notes                                                                                                                                                                                                                                                                                                         | For more information
 
 | `blockformats`                      | `blocks`                         | Menu item                           | No behavioral changes.                                                                                                                                                                                                                                                                                       |
 
@@ -138,7 +138,7 @@ Where an Option name has changed, configurations using that option must be chang
 [[default-value-changes]]
 == Default value changes
 
-[cols="1,1,1,1,1"]
+[cols="1,1,1,2,1"]
 |===
 | Element                       | Old value                   | New value | Notes                                                                  | For more information
 
@@ -165,7 +165,7 @@ Where an Option name has changed, configurations using that option must be chang
 
 The following elements were previously deprecated and have, with this release, been removed entirely from {productname}.
 
-[cols="1,1,1"]
+[cols="1,1,2"]
 |===
 | Item                                  | Element       | Notes
 

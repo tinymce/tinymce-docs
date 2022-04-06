@@ -1,8 +1,10 @@
-= TinyMCE 6.0: the core changes
+= TinyMCE 6.0: Core changes
 :navtitle: Core changes
-:description: The core changes for TinyMCE 6.0
+:description: The core improvements for TinyMCE 6.0
 :keywords: releasenotes, bugfixes, defaults
 
+[[summary]]
+== Summary
 This section documents the three core changes made to {productname} 6.0.
 
 This section also includes four tables that set out the:
@@ -22,7 +24,7 @@ This section also includes four tables that set out the:
 
 // tag::core-changes[]
 [[core-changes]]
-== Core changes
+=== Core changes
 
 . Browsers supported by {productname} 6.0 have changed. {productname} 6.0 supports the current and previous major versions of Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. {productname] 6.0 also supports the current Long Term Release of each of the above browsers (eg, Mozilla Firefox ESR and Google Chrome ESR).
 
@@ -40,7 +42,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 
 // tag::things-we-renamed[]
 [[things-we-renamed]]
-== Things we renamed
+=== Things we renamed
 
 [cols="1,1,1,1"]
 |===
@@ -137,7 +139,7 @@ Where an Option name has changed, configurations using that option must be chang
 
 // tag::default-value-changes[]
 [[default-value-changes]]
-== Default value changes
+=== Default value changes
 
 [cols="1,1,1,1"]
 |===
@@ -164,7 +166,7 @@ Where an Option name has changed, configurations using that option must be chang
 
 // tag::previously-deprecated-items-now-removed[]
 [[previously-deprecated-items-now-removed]]
-== Previously deprecated items now removed
+=== Previously deprecated items now removed
 
 The following elements were previously deprecated and have, with this release, been removed entirely from {productname}.
 
@@ -275,7 +277,7 @@ The following elements were previously deprecated and have, with this release, b
 
 // tag::previously-undocumented-items-removed-without-prior-deprecation[]
 [[previously-undocumented-items-removed-without-prior-deprecation]]
-== Previously undocumented items removed without prior deprecation
+=== Previously undocumented items removed without prior deprecation
 
 The following elements were never documented and have never been formally supported.
 
@@ -295,3 +297,25 @@ Consequently, they were removed with this release without deprecation notices be
 |===
 
 // end::previously-undocumented-items-removed-without-prior-deprecation[]
+
+include::partial$release-notes/6.0-release-notes-apis.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-commands-and-queries.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-events.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-formatting.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-options.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-parsing-and-serialisation.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-plugins.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-properties.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-schema.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-strings-and-internationalisation.adoc[leveloffset=+1]
+
+include::partial$release-notes/6.0-release-notes-ui-and-ux-elements-and-components.adoc[leveloffset=+1]

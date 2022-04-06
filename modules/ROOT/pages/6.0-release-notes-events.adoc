@@ -51,7 +51,7 @@ A `ThemeLoadError` event is now fired if the theme fails to load.
 [[before-input]]
 ==== `beforeinput`
 
-The `beforeinput` event is expected to fire whenever material is added to or removed from a {productname} instance.
+The `beforeinput` event is expected to fire whenever content is added to or removed from a {productname} instance.
 
 Previously, however, because of overrides in the `DeleteBackspaceKeys.ts` module, the `beforeinput` event did not always fire when expected.
 

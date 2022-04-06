@@ -123,7 +123,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 | `toc_header`                        | `tableofcontents_header`         | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].                                                                                                                                                                                                           | see xref:new-and-improved-plugins-table-of-contents[Table of Contents]
 |===
 
-- *Commands* are what is passed via the `theeditor.execCommand()` API.
+- *Commands* are what is passed via the `editor.execCommand()` API.
 +
 Where a Command name has change, calls to `theeditor.execCommand()` API must be changed to match the new name.
 +

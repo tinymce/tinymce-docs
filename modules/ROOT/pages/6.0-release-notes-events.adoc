@@ -55,7 +55,7 @@ The `beforeinput` event is expected to fire whenever content is added to or remo
 
 Previously, however, because of backspace and delete overrides in {productname} Core, the `beforeinput` event did not always fire when expected.
 
-With this release, these over-rides no longer prevent `beforeinput` events firing when expected.
+With this release, these overrides no longer prevent `beforeinput` events firing when expected.
 
 
 [[change]]

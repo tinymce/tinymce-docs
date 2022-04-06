@@ -62,16 +62,6 @@ Rather than calling the function to set the desired state, call `setEnabled()` w
 +
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
-=== `SetContent` editor event
-
-The `editor.SetContent` event’s `content` property has been deprecated.
-
-When the `editor.SetContent` event fires, any data in `content` has already been added to the {productname} editor instance and cannot be altered, making `content` essentially moot as an `editor.SetContent` property.
-
-To alter such data before it is added to the {productname} editor, use the `content` property available in the `BeforeSetContent` event.
-
-NOTE: Calling the `editor.SetContent` `content` property now returns an empty string.
-
 === `fire` method renamed in all {productname} APIs
 
 The `fire()` method in
@@ -110,6 +100,16 @@ In {productname} 6.0, the `initialData` type in the dialog `redial` API uses obj
 === ScriptLoader
 
 Previously, when loading a requested resource, `ScriptLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ScriptLoader` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+
+=== `SetContent` editor event
+
+The `editor.SetContent` event’s `content` property has been deprecated.
+
+When the `editor.SetContent` event fires, any data in `content` has already been added to the {productname} editor instance and cannot be altered, making `content` essentially moot as an `editor.SetContent` property.
+
+To alter such data before it is added to the {productname} editor, use the `content` property available in the `BeforeSetContent` event.
+
+NOTE: Calling the `editor.SetContent` `content` property now returns an empty string.
 
 === StyleSheetLoader
 

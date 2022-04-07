@@ -3,8 +3,8 @@
 
 This section documents the improvements, changes, fixes and removals made to {productname} 6.0 UI and UX elements and components.
 
-* xref:new-and-improved-ui-and-ux-elements-and-components][New and improved UI and UX elements and components]
-* xref:changed-ui-and-ux-elements-and-components[Changed UI and UX elements and componen]
+* xref:new-and-improved-ui-and-ux-elements-and-components[New and improved UI and UX elements and components]
+* xref:changed-ui-and-ux-elements-and-components[Changed UI and UX elements and component]
 * xref:fixed-ui-and-ux-elements-and-components[Fixed UI and UX elements and components]
 * xref:removed-or-deprecated-ui-and-ux-elements-and-components[Removed or deprecated UI and UX elements and components]
 
@@ -28,10 +28,10 @@ Setting `buttonType: 'primary'` is the same as setting `primary: true`.
 Setting `buttonType: 'secondary'` is the same as setting `primary: false`.
 
 
-[[dialog-box-re-rendering]]
-=== dialog box re-rendering
+[[dialog-re-rendering]]
+=== Dialog re-rendering
 
-Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
+Previously, when a component in a {productname} dialog changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog was re-rendered.
 
 In {productname} 6.0, the `initialData` type is now `Partial<T>`, which matches the underlying implementation.
 
@@ -40,11 +40,11 @@ And, relatedly, the `redial` API now re-renders only the portions of a dialog th
 [[format-painter]]
 === Format Painter
 
-The *Format Painter* toolbar item now has a matching menu item: *Format › Format Painter*.
+The *Format Painter* toolbar item now has a matching menu item.
 
 
 [[setdata]]
-=== `setData` method in dialog API
+=== `setData` method in the dialog API
 
 The dialog API’s `setData` method now uses a deep merge algorithm.
 
@@ -54,13 +54,13 @@ Consequently, it now supports partial nested objects.
 [[editor-text-entry-height]]
 === Editor text entry height
 
-In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area.
+In {productname} 5.x, editors without a specified `height` value defaulted to 200px high.
 
-In {productname} 6.0, editors without a specified `config.height` value default to a 400px high text entry area.
+In {productname} 6.0, editors without a specified `height` value default to 400px high.
 
 
 [[editor-theme-parallel-fetched]]
-=== editor theme now fetched in parallel with icons, plugins, and language packs
+=== Editor theme now fetched in parallel with icons, plugins, and language packs
 
 Previously, when a theme was requested, {productname} downloaded it completely before fetching accompanying components, such as icons, plugins, and language packs.
 
@@ -91,7 +91,7 @@ With this release, {productname} has improved the placing of the insertion point
 == Changed UI and UX elements and components
 
 [[changed-buttontype]]
-=== buttonType
+=== `buttonType`
 
 `buttonType` is a new property available as a basic panel component of `dialogs`.
 
@@ -99,7 +99,7 @@ It replaces the, now deprecated property, `primary`.
 
 
 [[disabled-properties-renamed-to-enabled]]
-=== `disabled` properties renamed to `.enabled` in {productname} UI classes
+=== `.disabled` properties renamed to `.enabled` in {productname} UI classes
 
 Previously, {productname} UI classes provided a `.disabled` property.
 
@@ -119,7 +119,7 @@ As was the case in {productname} 5.x, this new default only applies to editors i
 
 
 [[status-bar-compeny-id-changed-from-text-to-logo]]
-=== status bar company ID changed from text string to logo mark
+=== Status bar company ID changed from text string to logo mark
 
 The _Powered by Tiny_ text string set in the {productname} status bar is now the {productname} logo.
 
@@ -127,7 +127,7 @@ NOTE: The logo still responds appropriately when {productname} is used with a sc
 
 
 [[status-bar-path-delimiter-character-changed]]
-=== status bar path delimiter character changed.
+=== Status bar path delimiter character changed
 
 The default status bar path delimiter character (also known as a breadcrumb separator) has been changed.
 
@@ -158,8 +158,8 @@ This resulted in these UI elements rendering incorrectly.
 With this release, `silver` no longer renders these UI elements before plugins get to override or adjust, and these components no longer render incorrectly.
 
 
-[[dialog-labels-render-correcttly]]
-=== dialog labels now rendering correctly
+[[dialog-labels-render-correctly]]
+=== Dialog labels now rendering correctly
 
 Previously, {productname} dialog labels and other UI elements were rendered with HTML markup.
 
@@ -177,7 +177,7 @@ This is the expected behavior.
 
 
 [[sub-menu-items-now-read-by-screen-readers]]
-=== sub-menu items now read by screen readers when using Google Chrome 93 or later
+=== Sub-menu items now read by screen readers when using Google Chrome 93 or later
 
 Previously, in Google Chrome 93 and later, navigating through {productname} menus using the keyboard did not cause screen readers to read out menu items.
 
@@ -224,7 +224,7 @@ The `mobile` theme has been removed.
 
 
 [[primary]]
-=== primary
+=== `primary`
 
 The `primary` property was a boolean property available for button components used in dialogs
 
@@ -232,11 +232,11 @@ It has been deprecated and replaced by the new `buttonType` property.
 
 
 [[style-field]]
-=== style field in the Advanced tab of the Insert/Enhanced Image Editing dialog box
+=== Style field in the Advanced tab of the Insert/Edit Image dialog
 
-The _Style_ field, previously presented in the _Advanced_ tab of the _Insert/Enhanced Image Editing_ dialog has been removed.
+The _Style_ field, previously presented in the _Advanced_ tab of the _Insert/Edit Image_ dialog has been removed.
 
-When the _Advanced_ tab in the _Insert/Enhanced Image Editing_ dialog was selected, a _Style_ text-entry field (auto-populated with the selected image’s properties and associated values) was one of the fields presented.
+When the _Advanced_ tab in the _Insert/Edit Image_ dialog was selected, a _Style_ text-entry field (auto-populated with the selected image’s properties and associated values) was one of the fields presented.
 
 A bug in {productname} prevented the field from being edited, however.
 

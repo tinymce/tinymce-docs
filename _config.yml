@@ -102,6 +102,9 @@ exclude:
   - .git
   - .github
   - _new_content_templates
+  - nixpin.nix
+  - shell.nix
+  - Makefile
 
 # redcarpet was messing up some of the live demos
 markdown: kramdown

@@ -282,7 +282,7 @@ NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], htt
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
-=== Image Tools
+=== Enhanced Image Editing (was ImageTools)
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Free editor.
 
@@ -371,6 +371,7 @@ Users of the Free version of {productname} 5.x who rely on the, now deprecated a
 
 The new Premium `tableofcontents` plugin also changes the names of several commands.
 
+* `toc` is now `tableofcontents`
 * `tocupdate` is now `tableofcontentsupdate`
 * `toc_class` is now `tableofcontents_class`
 * `toc_depth` is now `tableofcontents_depth`

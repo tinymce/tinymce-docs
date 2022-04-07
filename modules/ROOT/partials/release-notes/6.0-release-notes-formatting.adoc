@@ -12,7 +12,7 @@ This section documents the single change made to {productname} 6.0 formatting.
 [[strikethrough]]
 === strikethrough
 
-When a string is formatted as [.line-through]#strikethrough# {productname} uses the `+<s></s>+` tag when the schema is HTML 5.
+When a string is formatted as [.line-through]#strikethrough#, {productname} uses the `+<s></s>+` tag when the schema is HTML 5.
 
 Also, given {productname} is now setting the HTML 5 schema by default, the default tag for the strikethrough format is the `+<s></s>+`, as is required by the HTML 5 schema.
 

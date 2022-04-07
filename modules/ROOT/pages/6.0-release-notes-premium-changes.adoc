@@ -72,20 +72,20 @@ Users of the Free version of {productname} 5.x who rely on the, now deprecated a
 NOTE: `editimage_proxy` (the renamed equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
 
 
-=== SpellChecker Pro
+=== Spell Checker Pro
 
-The free `spellchecker` plugin was removed as no longer supported:
+The free `spellchecker` plugin was removed as no longer supported.
 
-The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
+The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
 
 
 === PowerPaste
 
-As noted in the xref:6.0-release-notes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
+As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
 
 Because the functionality was unmaintainable, however, `paste` no longer supports input from Microsoft Word.
 
-The Premium plugin, https://tiny.cloud/docs/plugins/premium/powerpaste/[`PowerPaste`] provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
+The Premium plugin, xref:introduction-to-powerpaste.adoc[`PowerPaste`] provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
 For this release, the following fixes and changes were also incorporated into PowerPaste.
 

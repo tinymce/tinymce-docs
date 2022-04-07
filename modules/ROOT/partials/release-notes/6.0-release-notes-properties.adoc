@@ -5,7 +5,7 @@ This section documents the improvements, changes and fixes made to {productname}
 
 It also documents the {productname} 6.0 APIs that have been removed.
 
-* xref:fixed-propertes[Fixed properties]
+* xref:fixed-properties[Fixed properties]
 * xref:removed-or-deprecated-properties[Removed or deprecated properties]
 
 // tag::properties[]
@@ -17,7 +17,7 @@ It also documents the {productname} 6.0 APIs that have been removed.
 
 When a {productname} editor instance was ended, the global setting, `tinymce.settings`, which is set at editor initialisation, retained references to DOM elements from the no-longer extant editor instance.
 
-With this release, `tinymce.settings` is no longer set at editor initialisation and is not otherwise used by {productname}.
+With this release, `tinymce.settings` is no longer set at editor initialisation and has been subsequently been removed.
 
 [[removed-or-deprecated-properties]]
 == Removed or deprecated properties

@@ -76,13 +76,12 @@ Equivalently, setting a `timeout` value sets how long the notification presents 
 
 Previously, multiple {productname} APIs and UI components used `disable` or `disabled` in their method or property names.
 
-In {productname} 6, these method names have been changed and configuration changes are required.
+In {productname} 6, these method and property names have been changed and configuration changes are required.
 
-. `isDisabled()` methods are now `isEnabled() methods.
+. `isDisabled()` methods are now `isEnabled()` methods.
 . The `enable()` and `disable()` methods are now the single `setEnabled(<state>)` method.
 . The `disable(<name>)` and `enable(<name>)` methods are now the single `setEnabled(<name>, <state>)` method in the Dialog APIs.
-
-As well, the `.disabled` property is now the `.enabled` property in all {productname} UI components.
+. The `disabled` property is now the `enabled` property in all {productname} UI components.
 
 [[dom-domutils]]
 === `dom.DOMUtils`

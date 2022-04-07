@@ -23,7 +23,7 @@ NOTE: `html5-strict` is still an available schema option and is unchanged from {
 === Assignment operator character
 The assignment operator character — `:` — has been changed to `~` for the `valid_elements` and `extended_valid_elements` schemata.
 
-The `:` is also used to assign an `[xlink:href]` rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
+The `:` is also used to assign a `[xlink:href]` rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
 
 This change allows both schemata to set attribute values for the `valid_elements` and `extended_valid_elements` options using the `~` character and assign [xlink:href] rules as expected.
 

@@ -54,9 +54,9 @@ Consequently, it now supports partial nested objects.
 [[editor-text-entry-height]]
 === Editor text entry height
 
-In {productname} 5.x, editors without a specified `height` value defaulted to a 200px high text entry area.
+In {productname} 5.x, editors without a specified `height` value defaulted to 200px high.
 
-In {productname} 6.0, editors without a specified `height` value default to a 400px high text entry area.
+In {productname} 6.0, editors without a specified `height` value default to 400px high.
 
 
 [[editor-theme-parallel-fetched]]
@@ -127,7 +127,7 @@ NOTE: The logo still responds appropriately when {productname} is used with a sc
 
 
 [[status-bar-path-delimiter-character-changed]]
-=== Status bar path delimiter character changed.
+=== Status bar path delimiter character changed
 
 The default status bar path delimiter character (also known as a breadcrumb separator) has been changed.
 

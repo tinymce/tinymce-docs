@@ -29,7 +29,7 @@ Along with this new API, the new `tinymce.activeEditor.options` API replaces `ti
 [[editor-uploadImages]]
 === `editor.uploadImages()`
 
-The results returned from `editor.uploadImages()` API now includes a `removed` property.
+The results returned from `editor.uploadImages()` API now include a `removed` property.
 
 The property will be `true` when an image being uploaded is removed after failing to upload.
 

@@ -26,7 +26,7 @@ It also documents the the plugin loading change introduced in {productname} 6.0.
 +
 . A comma-separated string, with or without spaces:
 +
-`plugins: 'advlist,lists,image,help,wordcount'`
+`plugins: 'advlist,lists,image,help,wordcount'` +
 `plugins: 'advlist, lists, image, help, wordcount'`
 
 Previously, one other format was allowed: arrays of space-separated strings. This format is no longer accepted in {productname} 6.0.

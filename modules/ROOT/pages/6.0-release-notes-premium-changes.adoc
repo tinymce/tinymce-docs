@@ -87,7 +87,19 @@ Because the functionality was unmaintainable, however, `paste` no longer support
 
 The Premium plugin, https://tiny.cloud/docs/plugins/premium/powerpaste/[`PowerPaste`], is now available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
-In conjunction with this, three changes were made to `paste`:
+For this release, the following fixes and changes were also incorporated into PowerPaste.
+
+Previously, when dragging content from outside the editor to inside the editor the pointer did not move with the dragged content as expected.
+
+With this update, dragging content behaves correctly: the {productname} editor takes focus when the drag enters a the pointer follows the dragged content.
+
+As well, content dragged and dropped into the {productname} editor is now cleaned or merged using the same logic as when content is pasted in.
+
+Finally, pasting content from Microsoft Word that included a style block ≥ 1.4 Mb previously triggered a stack overflow.
+
+With this release, such content can be pasted in to a {productname} editor with PowerPaste enabled without issue.
+
+In conjunction with these PowerPaste changes, three changes were made to `paste`:
 
 . A `paste` default has changed. The `paste_data_images` option now defaults to `true`.
 +
@@ -124,6 +136,43 @@ The new Premium `tableofcontents` plugin also changes the names of several comma
 Any configurations or logic that use the old command names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
 
 NOTE: Although there are no end-user facing changes, as part of the general architectural change, the `tableofcontents` Premium plugin has modernised its output. It uses the ES2020 library and targets ES2018. It also uses https://terser.org[terser] to improve performance.
+
+
+=== Tiny Drive
+
+The following improvements, changes, and fixes were made to Tiny Drive.
+
+Tiny Drive supports several new file formats:
+
+* https://developers.google.com/speed/webp[WebP] images (`.webp`).
+* https://aomediacodec.github.io/av1-avif/[AV1 Image File Format] (AVIF) files (`.avif`).
+* https://wiki.mozilla.org/APNG_Specification[Animated Portable Network Graphic] files (`.apng`).
+* further JPEG extensions.
+
+When the *Starred* filter is used, _move_ and _copy_ are now removed from the actions menu.
+
+They are not needed and removing them from the menu obviates a file-moving error.
+
+The third-party PDF renderer used by Tiny Drive, https://mozilla.github.io/pdf.js/[PDFjs] has been updated to the most recent version.
+
+When Tiny Drive cannot preview a file, it displays a generic file-type icon.
+
+With this release, a text message — _No preview available_ — is also displayed.
+
+Previously, everytime Tiny Drive was opened, the CSS used to present the Tiny Drive instance was re-loaded.
+
+With this release, a check has been added. Tiny Drive’s CSS is now loaded once, when it is first opened, and uses the already loaded CSS on subsequent openings.
+
+Icons presented in the _Upload file_ and _Upload/Create_ menus were inconsistent: some presenting as black and some presenting as white.
+
+This has been corrected: these icons now all present as black or white
+
+
+//Fixed an issue where a menu would not close in some situations #TD-311
+
+//Unstarring a file while viewing its preview and filtering on only starred files will now update as expected #TD-297
+
+//Renaming a file while in preview dialog will now update the name as expected #TD-297
 
 
 [[accompanying-premium-skins-and-icon-packs-changes]]

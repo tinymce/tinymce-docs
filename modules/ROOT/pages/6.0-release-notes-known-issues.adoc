@@ -1,0 +1,31 @@
+= TinyMCE 6.0 Known issues
+:navtitle: Known issues
+:description: TinyMCE 6.0 known issues
+:keywords: releasenotes, issues
+
+This section documents the single known issue that {productname} 6.0 users may encounter and possible workarounds for this issue.
+
+* xref:known-issues[Known issues]
+
+// tag::known-issues[]
+[[known-issues]]
+== Known issues
+
+There is one known issue affecting {productname} 6.0.
+
+=== If `nonbreaking_force_tab: true` pressing the tab key in a table cell produces an unexpected result
+
+In {productname} 6.0, if `nonbreaking_force_tab` is set to `true`, pressing the _tab_ key when the insertion point is in a table cell produces an unexpected result.
+
+The expected result is for the insertion point to move to the next available cell in the table.
+
+In {productname} 6.0, three non-breaking-space entities (`+&nbsp;&nbsp;&nbsp;+`) are entered into the current cell.
+
+The proximate cause of this incorrect behavior is the move of _Tables_ from plugins to core.
+
+As of this release, however, the specific cause is still being investigated.
+
+Workaround::
+Other than keeping `nonbreaking_force_tab` set to `false`, no workaround is currently available.
+
+// end::known-issues[]

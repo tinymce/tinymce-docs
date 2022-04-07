@@ -21,7 +21,7 @@ This section also includes four tables that set out the:
 [[core-changes]]
 == Core changes
 
-. Browsers supported by {productname} 6.0 have changed. {productname} 6.0 supports the current and previous major versions of Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. {productname] 6.0 also supports the current Long Term Release of each of the above browsers (eg, Mozilla Firefox ESR and Google Chrome ESR).
+. Browsers supported by {productname} 6.0 have changed. {productname} 6.0 supports the current and previous major versions of Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. {productname} 6.0 also supports the current Long Term Release of each of the above browsers (eg, Mozilla Firefox ESR and Google Chrome ESR).
 
 +
 NOTE: In particular, this means {productname} 6.0 does not support Microsoft Internet Explorer 11.
@@ -85,7 +85,7 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 
 | `content`                           | `html`                           | Command                             | This `mceInsertClipboardContent` argument was renamed to better reflect what data is passed. NB: The `content` argument can no longer be used with `mceInsertClipboardContent`. If `content` is used, no data is passed.
 
-| `linheight_formats`                 | `line_height_formats`            | Option                              | No behavioral changes.
+| `lineheight_formats`                 | `line_height_formats`            | Option                              | No behavioral changes.
 
 | `default_link_target`               | `link_default_target`            |                                     | Changed for consistency with other `link` and `autolink` options. The functionality, and the values the option can take remain unchanged. This change applies to both `link` and `autolink` plugins.
 
@@ -140,7 +140,7 @@ Where an Option name has changed, configurations using that option must be chang
 |===
 | Element                       | Old value                   | New value | Notes
 
-| `a11ychecker_html_version     | `html4`                     | `html5`   |
+| `a11ychecker_html_version`     | `html4`                     | `html5`   |
 
 | assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata
 
@@ -214,6 +214,8 @@ The following elements were previously deprecated and have, with this release, b
 | `force_p_newlines`                    | Option        | Superseded by `forced_root_block`.
 
 | `forced_root_black: false`            | Option        | `forced_root_black` must be a non-empty string and cannot take a value of `false`.
+
+| `forced_root_black: ''`               | Option        | `forced_root_black` must be a non-empty string and cannot take a value of `false`.
 
 | `gecko_spellcheck`                    | Option        | Replaced by `browser_spellcheck`.
 

@@ -1,9 +1,9 @@
 [[formatting]]
 = Formatting
 
-This section documents the single change made to {productname} 6.0 Formatting.
+This section documents the single change made to {productname} 6.0 formatting.
 
-* xref:changed-formatting[Changed Formatting]
+* xref:changed-formatting[Changed formatting]
 
 // tag::formatting[]
 [[changed-formatting]]
@@ -12,7 +12,7 @@ This section documents the single change made to {productname} 6.0 Formatting.
 [[strikethrough]]
 === strikethrough
 
-When a string is formatted as [.line-through]#strikethrough# {productname} uses the `+<s></s>+` tag when the schema is HTML 5.
+When a string is formatted as [.line-through]#strikethrough#, {productname} uses the `+<s></s>+` tag when the schema is HTML 5.
 
 Also, given {productname} is now setting the HTML 5 schema by default, the default tag for the strikethrough format is the `+<s></s>+`, as is required by the HTML 5 schema.
 

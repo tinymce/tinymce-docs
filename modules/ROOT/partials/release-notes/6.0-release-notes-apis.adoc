@@ -17,21 +17,21 @@ It also documents the {productname} 6.0 APIs that have been removed.
 [[editor-annotator-removeall]]
 === `editor.annotator.removeAll`
 
-The new `editor.annotator.removeAll` API replaces the `removeAll` function built-in to the Comments plugin.
+The new `editor.annotator.removeAll` API replaces the `removeAll` method built-in to the Comments plugin.
 
 [[editor-options]]
 === `editor.options` and `tinymce.activeEditor.options`
 
 The new `editor.options` API replaces two old APIs: `editor.settings` and `editor.getParam`.
 
-Along with this new API, the new `tinymce.activeEditor.options` registry replaces `tinymce.activeeditor.settings`.
+Along with this new API, the new `tinymce.activeEditor.options` API replaces `tinymce.activeEditor.settings`.
 
 [[editor-uploadImages]]
 === `editor.uploadImages()`
 
-The `editor.uploadImages()` API now includes a `remove` flag.
+The results returned from `editor.uploadImages()` API now include a `removed` property.
 
-The flag returns `true` when an image being uploaded is removed after failing to upload.
+The property will be `true` when an image being uploaded is removed after failing to upload.
 
 [[fakeclipboard]]
 === `FakeClipboard`
@@ -45,8 +45,6 @@ The new `FakeClipboard` API provides a means for storing state that can be set a
 
 The new `Resource.unload` API makes it possible to unload resources in the resource loader.
 
-This allows tests, such as `ImageEmojiTest`, to remove existing databases before loading their own.
-
 [[setdata]]
 === `setData` method in the Dialog API
 
@@ -55,11 +53,11 @@ The dialog API’s `setData` method now uses a deep merge algorithm.
 Consequently, it now supports partial nested objects.
 
 [[promise]]
-==== `success` and `failure` callbacks replaced by `Promise` in multiple APIs
+=== `success` and `failure` callbacks replaced by `Promise` in multiple APIs
 
- Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs report resource loading status with `success` or `failure` callbacks.
+Previously, the `AddOnManager`, `PluginManager`, `ScriptLoader`, `StyleSheetLoader`, and `ThemeManager` APIs reported resource loading status with `success` or `failure` callbacks.
 
-These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`. Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
+These APIs now, instead, return a `Promise`. Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
 
 [[changed-apis]]
 == Changed APIs
@@ -67,29 +65,28 @@ These APIs now, instead, return a `Promise`, with a value of either `resolve` or
 [[closebutton]]
 === `closeButton` and `timeout`
 
-* Previously, using `closeButton` to disable a _Notification’s_ close button required a `timeout` value to also be set.
-+
+Previously, using `closeButton` to disable a _Notification’s_ close button required a `timeout` value to also be set.
+
 In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
-+
+
 Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
 
 [[disabled]]
-=== `disabled` functions renamed in all {productname} APIs
+=== `disabled` methods renamed in all {productname} APIs
 
-Previously, multiple {productname} APIs and UI classes used `disable` or `disabled` in their function or property names.
+Previously, multiple {productname} APIs and UI components used `disable` or `disabled` in their method or property names.
 
-In {productname} 6, these function names have been changed and configuration changes are required.
+In {productname} 6, these method and property names have been changed and configuration changes are required.
 
-. `isDisabled()` functions are now `isEnabled() functions.
-. The `enable()` and `disable()` functions are now the single `setEnabled(<state>)` function.
-. The `disable(<name>)` and `enable(<name>)` functions are now the single `setEnabled(<name>, <state>)` function in the Dialog APIs.
-
-As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
+. `isDisabled()` methods are now `isEnabled()` methods.
+. The `enable()` and `disable()` methods are now the single `setEnabled(<state>)` method.
+. The `disable(<name>)` and `enable(<name>)` methods are now the single `setEnabled(<name>, <state>)` method in the Dialog APIs.
+. The `disabled` property is now the `enabled` property in all {productname} UI components.
 
 [[dom-domutils]]
 === `dom.DOMUtils`
 
-The `toHex` function has been removed from `dom.DOMUtils`.
+The `toHex` method has been removed from `dom.DOMUtils`.
 
 [[domparser]]
 === `DomParser`
@@ -99,9 +96,9 @@ The `filterNode` method has been removed from the `DomParser` API.
 As well, the `DomParser` API no longer uses a custom parser internally and instead uses the https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[native `DOMParser` API].
 
 [[editor-setcontent]]
-=== `editor.SetContent`
+=== `SetContent` editor event
 
-The `SetContent` editor event’s `content` property has been deprecated.
+The `content` property of the `SetContent` editor event has been deprecated.
 
 [[env]]
 === `Env`
@@ -142,9 +139,9 @@ The `fire()` method in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.
 
 Previously, `editor.annotator.remove` scrolled to the removed contents position when removing an annotation.
 
-It did not, as expected, retain the current selection or insertion point position in the {productname} editor.
+It did not, as expected, retain the current selection or insertion position in the {productname} editor.
 
-With this release, `editor.annotator.remove` does not change the change the selection or insertion point position after removing an annotation.
+With this release, `editor.annotator.remove` does not change the selection or insertion position after removing an annotation.
 
 [[editor-fire]]
 === `editor.fire()`
@@ -169,7 +166,7 @@ This, too, makes it consistent with the `editor.selection.setContent()` API.
 [[editor-selection-getcontent]]
 === `editor.selection.getContent()`
 
-The `no_events` argument is Boolean. If set to `true`, events should not fire when `getContent` is called. Previously, `editor.selection.getContent()` did not respect this.
+When the `no_events` argument is set to `true`, events should not fire when `getContent` is called. Previously, `editor.selection.getContent()` did not respect this.
 
 In {productname} 6.0, `editor.selection.getContent()` treats the `no_events` setting as expected: when set to `false`, events are fired; when set to `true`, events are not fired.
 
@@ -185,7 +182,7 @@ The `toHex` method has been removed from `html.Styles`.
 [[removed-or-deprecated-apis-saxparser]]
 === `SaxParser`
 
-With all filtering moved to the `DomParser` API, the `SaxParser` API has been removed.
+With all parsing moved to the `DomParser` API, the `SaxParser` API has been removed.
 
 
 [[removed-or-deprecated-apis-tables]]

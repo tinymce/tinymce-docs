@@ -43,9 +43,11 @@ Neither of these formats are allowed in {productname} 6.0.
 === New and improved plugins
 
 [[imagetools]]
-==== EditImage
+==== Enhanced Image Editor
 
-_EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
+_Enhanced Image Editor_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
+
+// need to explain relationship between Enhanced Image Editor and `editimage`.
 
 An `editimage` option was also renamed: `editimage_proxy` is now `editimage_proxy_service_url`, making it easier to configure when accessing https://tiny.cloud/docs/enterprise/server/[Tiny-specific services].
 

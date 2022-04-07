@@ -158,7 +158,7 @@ This resulted in these UI elements rendering incorrectly.
 With this release, `silver` no longer renders these UI elements before plugins get to override or adjust, and these components no longer render incorrectly.
 
 
-[[dialog-labels-render-correcttly]]
+[[dialog-labels-render-correctly]]
 === Dialog labels now rendering correctly
 
 Previously, {productname} dialog labels and other UI elements were rendered with HTML markup.

@@ -18,16 +18,16 @@ It also documents the the plugin loading change introduced in {productname} 6.0.
 
 . An array of strings:
 +
-`plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
+`plugins: [ 'advlist', 'lists', 'image', 'help', 'wordcount' ]`
 +
 . A space-separated string:
 +
-`plugins: 'advlist list image help wordcount'`
+`plugins: 'advlist lists image help wordcount'`
 +
 . A comma-separated string, with or without spaces:
 +
-`plugins: 'advlist,list,image,help,wordcount'`
-`plugins: 'advlist, list, image, help, wordcount'`
+`plugins: 'advlist,lists,image,help,wordcount'`
+`plugins: 'advlist, lists, image, help, wordcount'`
 
 Previously, one other format was allowed: arrays of space-separated strings. This format is no longer accepted in {productname} 6.0.
 
@@ -35,11 +35,11 @@ Previously, one other format was allowed: arrays of space-separated strings. Thi
 == New and improved plugins
 
 [[new-and-improved-plugins-editimage]]
-=== Enhanced Image Editor
+=== Enhanced Image Editing
 
-_Enhanced Image Editor_, a link:{plugindirectory}#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
+_Enhanced Image Editing_, a link:{plugindirectory}#productivity[Premium plugin], replaces the now-deprecated and removed _ImageTools_ plugin. The `imagetools` plugin is no longer part of the Core open source editor.
 
-// need to explain relationship between Enhanced Image Editor and `editimage`.
+// need to explain relationship between Enhanced Image Editing and `editimage`.
 
 The following `editimage` options replace the old `imagetools` options:
 

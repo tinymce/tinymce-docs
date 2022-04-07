@@ -37,7 +37,7 @@ For additional details on {productname} 6.0 changes, see xref:6.0-release-notes-
 
 Previously, when loading a requested resource, the `AddOnManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `AddOnManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
 
-=== `disabled` functions renamed in all {productname} APIs
+=== `disabled` wording renamed in all {productname} APIs
 
 Previously, multiple {productname} APIs and UI classes used `disable` or `disabled` in their function or property names.
 
@@ -54,6 +54,9 @@ Rather than calling the function to set the desired state, call `setEnabled()` w
 . The `disable(<name>)` and `enable(<name>)` functions are now the single `setEnabled(<name>, <state>)` function in the Dialog APIs.
 +
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
++
+. All defaults have been swapped to retain the same logical API defaults.
+
 
 === `fire` method renamed in all {productname} APIs
 
@@ -219,16 +222,16 @@ As of {productname} 6, the list of configured plugins is retrieved by calling `e
 
 . An array of strings:
 +
-`plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
+`plugins: [ 'advlist', 'lists', 'image', 'help', 'wordcount' ]`
 +
 . A space-separated string:
 +
-`plugins: 'advlist list image help wordcount'`
+`plugins: 'advlist lists image help wordcount'`
 +
 . A comma-separated string, with or without spaces:
 +
-`plugins: 'advlist,list,image,help,wordcount'`
-`plugins: 'advlist, list, image, help, wordcount'`
+`plugins: 'advlist,lists,image,help,wordcount'`
+`plugins: 'advlist, lists, image, help, wordcount'`
 
 Previously, one other format was allowed: arrays of space-separated strings. This format is no longer accepted in {productname} 6.0.
 
@@ -432,7 +435,7 @@ As of {productname} 6, the `change` event is not fired unless and until
 
 NOTE: It is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
-=== `.disabled` properties renamed to `.enabled` in {productname} UI classes
+=== `.disabled` wording renamed to `.enabled` in {productname} UI classes
 
 Previously, {productname} UI classes provided a `.disabled` property.
 

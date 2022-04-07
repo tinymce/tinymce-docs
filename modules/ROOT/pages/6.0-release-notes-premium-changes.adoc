@@ -282,15 +282,24 @@ Table of Contents has been updated and is now a https://tiny.cloud/tinymce/featu
 
 Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `toc` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as https://tiny.cloud/tinymce/features/#productivity[_Table of Contents_].
 
-The new Premium `tableofcontents` plugin also changes the names of several commands.
+The new Premium `tableofcontents` plugin also changes the names of several elements.
 
-* `toc` is now `tableofcontents`
-* `tocupdate` is now `tableofcontentsupdate`
-* `toc_class` is now `tableofcontents_class`
-* `toc_depth` is now `tableofcontents_depth`
-* `toc_header` is now `tableofcontents_header`
+[cols="1,1"]
+|===
+| Old name     | New name
 
-Any configurations or logic that use the old command names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
+| `toc`        | `tableofcontents`
+
+| `tocupdate`  | `tableofcontentsupdate`
+
+| `toc_class`  | `tableofcontents_class`
+
+| `toc_depth`  | `tableofcontents_depth`
+
+| `toc_header` | `tableofcontents_header`
+|===
+
+Any configurations or logic that use the old element names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
 
 
 

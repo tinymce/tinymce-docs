@@ -1,0 +1,26 @@
+= TinyMCE 6.0 Formatting changes
+:navtitle: TinyMCE 6.0 Formatting changes
+:description: TinyMCE 6.0 Formatting changes
+:keywords: releasenotes, apis
+
+This section documents the single change made to {productname} 6.0 Formatting.
+
+* xref:formatting[Formatting]
+* xref:changed-formatting[Changed Formatting]
+
+// tag::formatting[]
+[[formatting]]
+== Formatting
+
+
+[[changed-formatting]]
+=== Changed formatting
+
+[[strikethrough]]
+==== strikethrough
+
+When a string is formatted as [.line-through]#strikethrough# {productname} uses the `+<s></s>+` tag when the schema is HTML 5.
+
+Also, given {productname} is now setting the HTML 5 schema by default, the default tag for the strikethrough format is the `+<s></s>+`, as is required by the HTML 5 schema.
+
+// end::formatting[]

@@ -1,0 +1,28 @@
+= TinyMCE 6.0 strings and internationalisaton changes
+:navtitle: TinyMCE 6.0 strings and internationalisaton changes
+:description: TinyMCE 6.0 strings and internationalisaton changes
+:keywords: releasenotes, strings, internationalisaton
+
+This section documents the single fix made to {productname} 6.0 strings and internationalisaton.
+
+* xref:strings-and-internationalisation[Strings and internationalisation]
+* xref:fixed-strings-and-internationalisation[Fixed strings and internationalisation]
+
+// tag::strings-and-internationalisation[]
+[[strings-and-internationalisation]]
+== Strings and Internationalisation
+
+
+[[fixed-strings-and-internationalisation]]
+=== Fixed strings
+
+[[color-picker-dialog]]
+==== color picker dialog
+
+The {productname} color picker presents tooltip labels showing the name of the color the pointer is hovering over.
+
+These labels presented these names in English in multiple instances when they should have presented the names in other languages (eg German).
+
+With this update, these tooltip labels now present in the expected language.
+
+// end::strings-and-internationalisation[]

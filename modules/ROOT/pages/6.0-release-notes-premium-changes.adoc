@@ -4,6 +4,8 @@
 :keywords: releasenotes, premium, bugfixes
 
 * xref:premium-plugin-components-we-renamed[Premium Plugin components we renamed]
+* xref:title-case-corrected-in-premium-plugin-ui-elements[Title case corrected in Premium Plugin UI elements]
+* xref:hindi-malay-and-vietnamese-translations-added-to-premium-plugins[Hindi, Malay, and Vietnamese translations added to Premium Plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
 * xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
@@ -19,6 +21,8 @@ No Premium Plugins released with {productname} 6.0 are backwards compatible with
 [cols="1,1,1,1"]
 |===
 | Old name                            | New name                         | Element                             | Notes
+
+| `formatpainter_blacklisted_formats` | `formatpainter_ignored_formats`  | Option                              | NB: _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
 | `imagetools`                        | `editimage`                      | Plugin                              | NB: _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
@@ -45,6 +49,33 @@ No Premium Plugins released with {productname} 6.0 are backwards compatible with
 | `toc_header`                        | `tableofcontents_header`         | Option                              | NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 |===
 
+[[hindi-malay-and-vietnamese-translations-added-to-premium-plugins]]
+== Hindi, Malay, and Vietnamese translations added to Premium Plugins
+
+The following Premium Plugins now present in Hindi, Malay, and Vietnamese:
+
+* Accessibility Checker
+* Advanced Tables
+* Comments
+* Enhanced Image Editing
+* Export
+* PowerPaste
+* Real-time Collaboration (RTC)
+* Spell Checker Pro
+* Table of Contents
+
+
+[[title-case-corrected-in-premium-plugin-ui-elements]]
+== Title case corrected in Premium Plugin UI elements
+
+Previously, buttons, dialog fields, and menu items in the following Premium Plugins were presented in title case:
+
+* Accessibility Checker
+* Format Painter
+* Spell Checker Pro
+
+As of this update, these UI elements in these Plugins present in standard sentence case.
+
 
 
 // tag::accompanying-premium-plugin-changes[]
@@ -52,6 +83,39 @@ No Premium Plugins released with {productname} 6.0 are backwards compatible with
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 6.0.
+
+=== Accessibility Checker
+
+The default value for `a11ychecker_html_version` was `html4`.
+
+It is now `html5`.
+
+=== Advanced Table
+
+The `getRowType` function would sometimes incorrectly parse elements in the `tfoot` section of a table.
+
+This led to `mceTableRowType` being incorrectly returned as a header if all cells in the section were `th` elements.
+
+With this update, `getRowType` parses elements in the `tfoot` section correctly and `mceTableRowType` is correctly returned as a footer.
+
+
+=== Comments
+
+The following fixes were applied to the Comments plugin:
+
+
+Because of how a comment’s active state was captured when the comment was made active, this active state was not excluded when capturing editor content from a comment.
+
+With this release, a comment’s active state is captured differently and, consequently, this state is excluded when comment content is captured.
+
+Previously, every time the insertion point was placed within an extant comment and then placed anywhere outside of the comment body, an undo level was added. That is, every time focus was switched either to or from a content, an undo level was added.
+
+With this update, shifting focus to or from a comment no longer adds undo levels, as expected.
+
+Previously, the Comments plugin’s scroll position logic lead to, in some edge cases, the last comment not scrolling into view correctly.
+
+The logic has been corrected and, with this update, all comments scroll into view as expected.
+
 
 === Enhanced Image Editing (was Image Tools)
 
@@ -63,13 +127,32 @@ The `imagetools_proxy` option has been renamed to `editimage_proxy`. However, wh
 
 Users of the Free version of {productname} 5.x who rely on the removed `imagetools` plugin should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to https://tiny.cloud/tinymce/features/#productivity[_Enhanced Image Editing_].
 
-=== Spell Checker Pro
 
-The free `spellchecker` plugin was removed as no longer supported.
+=== Enhanced Media Embed
 
-The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
+In earlier versions of the {productname}, the `forced_root_black` option took the value `false`.
+
+This value was previously deprecated and, with this release, support for `false` as a `forced_root_black` value has been removed from the Enhanced Media Embed plugin.
+
+=== Export
+
+A new `export_image_proxy_service_url` option is available for use with the proxy service provided by https://tiny.cloud/docs/enterprise/server/[Tiny services].
 
 
+=== Format Painter
+
+The following improvements and changes were made to Format Painter.
+
+A `formatpainter` menu item was added to match the toolbar button.
+
+The `formatpainter_blacklisted_formats` option was re-named to `formatpainter_ignored_formats`.
+
+
+=== Mentions
+
+The `getUsers` API was removed.
+
+        
 === PowerPaste
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
@@ -106,6 +189,69 @@ The `content` argument can no longer be used with `mceInsertClipboardContent`. I
 +
 NOTE: There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin. +
 If a community-maintained version of the `paste` plugin becomes available, we will link to it from the xref:migration-from-5x.adoc#plugins-paste[_Migration Guide_].
+
+
+=== Real-time Collaboration
+
+The following improvements, changes, and fixes were made to Real-time Collaboration.
+
+Three additional options are now supported when Real-time Collaboration is active:
+
+* `valid_elements`
+* `valid_children`
+* `extended_valid_elements`
+
+Real-time Collaboration now supports the `autocompleter()` API.
+
+//xref:autocompleter.adoc[`autocompleter()`] ?
+
+Real-time Collaboration now supports the `inline_boundaries` option.
+
+// xref:partial$configuration/inline-boundaries.adoc[`inline_boundaries`] ?
+
+When provider values are incorrect, the returned error messages are now less opaque.
+
+For example, the error message `'key' was not a string` is now the error message `Expected field 'key'`.
+
+Previously, if a {productname} editor instance with Real-time Collaboration loaded contained a Horizontal Rule (ie an `+<hr>+` element), attempting to move the insertion point over the Horizontal Rule using arrow keys threw an exception: `Uncaught Error: Unsupported node type: [object DocumentType]`.
+
+With this update, moving the insertion point through a Horizontal Rule using arrow keys works as expected: the insertion point moves and no exception is thrown.
+
+Previously, attempting to remove failed image uploads with the `images_upload_handler` API failed if Real-time Collaboration was loaded.
+
+With this update, `images_upload_handler` removes failed image uploads and presents the correct alert message.
+
+Keyboard events can now be prevented before the Real-time Collaboration plugin intercepts them.
+
+Previously, selecting linked images when the `link_context_toolbar` option was enabled, caused the Real-time Collaboration editor to enter an endless loop. This loop caused the selected images to flicker.
+
+With this update, the Real-time Collaboration editor no longer enters an endless loop when linked images are selected. Consequenlty, the selected images no longer flicker.
+
+
+=== Spell Checker Pro
+
+The free `spellchecker` plugin was removed as no longer supported.
+
+The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
+
+This update to Spell Checker Pro includes the following fixes.
+
+Previously, Spell Checker Pro treated soft hyphens (ie the `+&shy;+` html entity) as a word boundary. As a consequence words containing soft hyphens were not correctly spellchecked as whole words.
+
+With this update, `+&shy;+` entity is correctly recognised as part of a word, not a word boundary. And words containing soft hyphens are, consequently, spell checked correctly.
+
+As well, one command and one option have been replaced and a, previously deprecated, fallback option has been removed.
+
+[cols="1,1,1"]
+|===
+| Removed item                    | Replacement           | Element type
+
+| `mceSpellcheckDocument`         | `mceSpellcheckDialog` | Command
+
+| `spellchecker_select_languages` | `content_langs`       | Option
+
+| `spellchecker_whitelist`        | No replacement        | Option
+|===
 
 
 === Table of Contents
@@ -165,12 +311,20 @@ Icons presented in the _Upload file_ and _Upload/Create_ menus were inconsistent
 
 This has been corrected: these icons now all present as black or white as expected.
 
+When the {productname} toolbar is visible but the viewport is narrow, the toolbar, or parts of the toolbar, are collapsed into an overflow menu (denoted with a mid-line horizontal ellipsis: `+⋯+`).
 
-//Fixed an issue where a menu would not close in some situations #TD-311
+In some circumstances, when Tiny Drive was loaded and the overflow menu was opened, clicking outside the resulting displayed menu did not close the menu.
 
-//Unstarring a file while viewing its preview and filtering on only starred files will now update as expected #TD-297
+With this update, clicking outside this menu closes it, as expected.
 
-//Renaming a file while in preview dialog will now update the name as expected #TD-297
+When a file available in Tiny Drive both had an attached Star and was presented in the Preview view, choosing *Unstar* from the Preview view’s overflow menu did not change the file’s Star state.
+
+With this update, files with Stars that are Unstarred from the Preview view have the star removed, as expected.
+
+Similarly, when a file available in Tiny Drive was presented in the Preview view, choosing *Rename* from the overflow menu, entering a new name, and clicking *Submit*, did not change the file’s name.  
+
+With this update, files with Stars that are re-named from the Preview view update the filename, as expected.
+
 
 
 [[accompanying-premium-skins-and-icon-packs-changes]]

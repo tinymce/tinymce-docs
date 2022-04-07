@@ -37,16 +37,6 @@ For additional details on {productname} 6.0 changes, see xref:6.0-release-notes-
 
 Previously, when loading a requested resource, the `AddOnManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `AddOnManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
 
-=== `closeButton` and `timeout`
-
-Previously, using `closeButton` to disable the close button presented as part of a _Notification_ required a `timeout` value to also be set.
-
-In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
-
-Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
-
-NOTE: This does not change the behaviour of existing _Notifications_. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification without a close button that automatically closes after displaying for 5 seconds.
-
 === `disabled` functions renamed in all {productname} APIs
 
 Previously, multiple {productname} APIs and UI classes used `disable` or `disabled` in their function or property names.
@@ -89,6 +79,14 @@ In {productname} 6.0, plugins (and other addons) are no longer initialised with 
 As a consequence, the plugin initalizer value passed to `PluginManager.add` must be a function. It cannot be a class. (The plugin initializer value is the second argument passed to `PluginManager.add()`.)
 
 This change makes it safe to use both older functions and newer arrow functions when instantiating add-ons.
+
+=== NotificationManager `closeButton` and `timeout`
+
+Previously, using `closeButton` to disable the close button on a xref:apis/tinymce.notificationmanager.adoc[_Notification_] required a `timeout` value to also be set.
+
+In {productname} 6 this requirement was removed; `closeButton` now shows or hides the close button regardless of whether a `timeout` value is set or not set. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification that automatically closes after displaying for 5 seconds.
+
+NOTE: This does not change the behaviour of existing _Notifications_.
 
 === PluginManager
 
@@ -152,7 +150,7 @@ Previously, `mceAddEditor` and `mceToggleEditor` used the `editorManager.setting
 
 `editorManager.settings` is not used at all in {productname} 6 and has been removed.
 
-Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object passed when the command is run.
+Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object passed in when the command is run.
 
 For example —
 
@@ -191,8 +189,8 @@ NOTE: The `link_default_protocol` value is only applied to an edited or inserted
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-options-textpattern[_{productname} 6.0 Release Notes_], the `textpattern_patterns` option:
 
-* was renamed to `text_patterns`;
-* and had its functionality moved to the Core of {productname} 6.0.
+* Was renamed to `text_patterns`;
+* Had its functionality moved to the Core of {productname} 6.0.
 
 As well, the `textpattern` API has been removed.
 
@@ -202,14 +200,14 @@ NOTE: Using `text_patterns: []` to turn `text_patterns` off is not supported. It
 
 After upgrading:
 
-* rename any options in your {productname} init configuration to match the new name.
-* remove `textpattern` from your plugins list.
+* Rename any options in your {productname} init configuration to match the new name.
+* Remove `textpattern` from your plugins list.
 
 === `tinymce.activeEditor.options.get`
 
-Previously `tinymce.activeEditor.options.get('plugins')` returned the configured plugins as a string.
+Previously, the list of configured plugins could be retrieved by calling `editor.getParam('plugins')` and returned the configured plugins as a string.
 
-As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns the configured plugins as an array.
+As of {productname} 6, the list of configured plugins is retrieved by calling `editor.options.get('plugins')` and now returns the configured plugins as an array.
 
 
 [[plugins]]
@@ -227,13 +225,12 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 +
 `plugins: 'advlist list image help wordcount'`
 +
-. A comma-separated string:
+. A comma-separated string, with or without spaces:
 +
 `plugins: 'advlist,list,image,help,wordcount'`
+`plugins: 'advlist, list, image, help, wordcount'`
 
-Previously, two other formats were allowed: comma-separated strings with spaces and arrays of space-separated strings.
-
-Neither of these formats are allowed in {productname} 6.0.
+Previously, one other format was allowed: arrays of space-separated strings. This format is no longer accepted in {productname} 6.0.
 
 === Removed plugins
 
@@ -243,23 +240,27 @@ NOTE: Leaving references to removed plugins in a plugin configuration will cause
 
 See below for specific documentation of potential migration issues, if any, regarding these removed plugins.
 
-Seven `plugins` were removed because their functionality is now a Core part of {productname} 6.0:
-
-. `colorpicker`
-. `contextmenu`
-. `hr`
-. `noneditable`
-. `paste`
-. `print`
-. `textcolor`
-
-Three plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"]:
+Four plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"]:
 
 . `fullpage`
 . `bbcode`
 . `legacyoutput`
+. `tabfocus`
 
-These plugins were already empty. As of {productname} 6.0, however, they are gone entirely.
+Four plugins were removed because their functionality is now a Core part of {productname} 6.0:
+
+. `hr`
+. `noneditable`
+. `paste`
+. `print`
+
+The functionality from these plugins is now enabled automatically, except for `paste` which as previously announced no longer supports cleaning Microsoft Word content.
+
+Three plugins have been empty stub plugins since {productname} 5.0, and were removed in {productname} 6.0:
+
+. `colorpicker`
+. `contextmenu`
+. `textcolor`
 
 One plugin was removed as no longer supported:
 
@@ -406,7 +407,7 @@ NOTE: Existing configurations that included escaped colons will continue to work
 [[ui-and-ux-elements-and-components]]
 == UI and UX elements and components
 
-=== buttonType
+=== `buttonType`
 
 `buttonType` is a new property available for button components used in dialogs. It replaces the, now deprecated property, `primary`.
 
@@ -431,7 +432,7 @@ As of {productname} 6, the `change` event is not fired unless and until
 
 NOTE: It is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
-=== `disabled` properties renamed to `.enabled` in {productname} UI classes
+=== `.disabled` properties renamed to `.enabled` in {productname} UI classes
 
 Previously, {productname} UI classes provided a `.disabled` property.
 
@@ -450,7 +451,7 @@ As was the case in {productname} 5.x, this new default only applies to editors i
 
 The new default can be overridden by explicitly setting a `height` value in the {productname} configuration. So setting this to `200px` will recreate the previous default presentation.
 
-Also, setting the element’s CSS `height` to a value larger than 400px will increase the height of the text entry area. Setting the elmement’s CSS `height` to a value less than 400px will *not* reduce the height of the text entry area, however.
+Also, setting the CSS `height` of the element replaced by {productname} to a value larger than 400px will increase the editor height. Setting the element's CSS `height` to a value less than 400px will *not* reduce the height of the editor, however.
 
 NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent the editor UI from disappearing during re-sizing, the `min-height` value (100px) cannot be overridden. This obviates an unrecoverable bug, that prevents users being able to interact with the editor, from presenting.
 
@@ -511,9 +512,9 @@ First, {productname} 6.0 does not alter existing documents. Extant {productname}
 
 If an extant {productname} document with an aligned table is opened using {productname} 6.0 and the *alignment* of the table is re-set, {productname} 6.0 will remove the `float` property and use the `margin` property to set the *alignment*.
 
-Second, if the previous behaviour is required, a custom `format` will need to be created. Specifically, the following CSS (the https://github.com/tinymce/tinymce/blob/release/5.10/modules/tinymce/src/core/main/ts/fmt/DefaultFormats.ts#L27-L117[table-specific CSS] from {productname} 5.x’s `DefaultFormats.ts`) must be added to the `format` configuration:
+Second, if the previous behaviour is required, a custom `format` will need to be created. Specifically, the following format (the https://github.com/tinymce/tinymce/blob/release/5.10/modules/tinymce/src/core/main/ts/fmt/DefaultFormats.ts#L27-L117[table-specific code] from {productname} 5.x's `DefaultFormats.ts`) must be added to the `format` configuration:
 
-[source,css]
+[source,js]
 ----
 alignleft: [
   {

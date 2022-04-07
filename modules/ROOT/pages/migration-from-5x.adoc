@@ -22,7 +22,7 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 * xref:text-patterns[Text patterns]
 * xref:plugins[Plugins]
 * xref:schema[Schema]
-* xref:ui-and-ux-elements-and-component[UI and UX elements and components]
+* xref:ui-and-ux-elements-and-components[UI and UX elements and components]
 
 == {productname} {productmajorversion} core changes
 
@@ -35,21 +35,30 @@ For additional details on {productname} 6.0 changes, see xref:6.0-release-notes-
 
 === AddOnManager
 
-Previously, when loading a requested resource, the `AddOnManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `AddOnManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, the `AddOnManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `AddOnManager` reports this status by returning a `Promise`.
 
-=== `closeButton` and `timeout`
+=== `change` editor event
 
-Previously, using `closeButton` to disable the close button presented as part of a _Notification_ required a `timeout` value to also be set.
+Previously, the `change` event was triggered by the first modification made to a {productname} editor instance. However, subsequent changes did not cause the event to fire until focus was switched away from the editor.
 
-In {productname} 6, `closeButton` shows or hides the close button regardless of a `timeout` value being set or not set.
+For example, typing a single character into the {productname} editor text-entry area triggered the `change` event. Subsequent typing, or selecting of the entered character and modifying it by setting it to *bold* or _italic_, did not trigger further `change` events. Making further modifications and then switching focus away from the editor did trigger this event, however.
 
-Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
+As of {productname} 6, the `change` event is not fired unless and until
 
-NOTE: This does not change the behaviour of existing _Notifications_. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification without a close button that automatically closes after displaying for 5 seconds.
+. focus is switched away from the editor; and
+. changes have been made in the editor since focus was switched to it.
 
-=== `disabled` functions renamed in all {productname} APIs
+NOTE: It is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
 
-Previously, multiple {productname} APIs and UI classes used `disable` or `disabled` in their function or property names.
+=== Dialog `redial` API
+
+Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
+
+In {productname} 6.0, the `initialData` type in the dialog `redial` API uses object diffing for the passed spec. As a consequence, the API now only re-renders the portions of a dialog that have changed.
+
+=== `disabled` renamed in all {productname} APIs
+
+Previously, multiple {productname} APIs used `disable` or `disabled` in their function or property names.
 
 In {productname} 6, these function names have been changed and configuration changes are required.
 
@@ -63,7 +72,9 @@ Rather than calling the function to set the desired state, call `setEnabled()` w
 +
 . The `disable(<name>)` and `enable(<name>)` functions are now the single `setEnabled(<name>, <state>)` function in the Dialog APIs.
 +
-As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
+As well, the `.disabled` property is now the `.enabled` property in all {productname} dialog APIs.
++
+. All defaults have been swapped to retain the same logical API defaults.
 
 === `fire` method renamed in all {productname} APIs
 
@@ -84,43 +95,45 @@ has been renamed to `dispatch()`.
 
 === `new` keyword no longer used to instantiate plugins
 
-In {productname} 6.0, plugins (and other addons) are no longer initialised with the `new` keyword.
+In {productname} 6.0, plugins (and other addons) are no longer initialized with the `new` keyword.
 
-As a consequence, the plugin initalizer value passed to `PluginManager.add` must be a function. It cannot be a class. (The plugin initializer value is the second argument passed to `PluginManager.add()`.)
+As a consequence, the plugin initializer value passed to `PluginManager.add` must be a function. It cannot be a class. (The plugin initializer value is the second argument passed to `PluginManager.add()`.)
 
 This change makes it safe to use both older functions and newer arrow functions when instantiating add-ons.
 
+=== NotificationManager `closeButton` and `timeout`
+
+Previously, using `closeButton` to disable the close button on a xref:apis/tinymce.notificationmanager.adoc[_Notification_] required a `timeout` value to also be set.
+
+In {productname} 6 this requirement was removed; `closeButton` now shows or hides the close button regardless of whether a `timeout` value is set or not set. An `editor.notificationManager` with both `timeout: 5000` and `closeButton: false` set will still present a notification that automatically closes after displaying for 5 seconds.
+
+NOTE: This does not change the behaviour of existing _Notifications_.
+
 === PluginManager
 
-Previously, when loading a requested resource, the `PluginManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `PluginManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
-
-=== Dialog `redial` API
-
-Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
-
-In {productname} 6.0, the `initialData` type in the dialog `redial` API uses object diffing for the passed spec. As a consequence, the API now only re-renders the portions of a dialog that have changed.
+Previously, when loading a requested resource, the `PluginManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `PluginManager` reports this status by returning a `Promise`.
 
 === ScriptLoader
 
-Previously, when loading a requested resource, `ScriptLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ScriptLoader` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, `ScriptLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ScriptLoader` reports this status by returning a `Promise`.
 
 === `SetContent` editor event
 
-The `editor.SetContent` event’s `content` property has been deprecated.
+The `SetContent` event's `content` property has been deprecated.
 
-When the `editor.SetContent` event fires, any data in `content` has already been added to the {productname} editor instance and cannot be altered, making `content` essentially moot as an `editor.SetContent` property.
+When the `SetContent` event fires, any data in `content` has already been added to the {productname} editor instance and cannot be altered, making `content` essentially moot as an `SetContent` property.
 
 To alter such data before it is added to the {productname} editor, use the `content` property available in the `BeforeSetContent` event.
 
-NOTE: Calling the `editor.SetContent` `content` property now returns an empty string.
+NOTE: The `SetContent` `content` property now returns an empty string in some cases.
 
 === StyleSheetLoader
 
-Previously, when loading a requested resource, `StyleSheetLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `StyleSheetLoader` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, `StyleSheetLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `StyleSheetLoader` reports this status by returning a `Promise`.
 
 === ThemeManager
 
-Previously, when loading a requested resource, the `ThemeManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ThemeManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, the `ThemeManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ThemeManager` reports this status by returning a `Promise`.
 
 
 [[commands-and-queries]]
@@ -152,7 +165,7 @@ Previously, `mceAddEditor` and `mceToggleEditor` used the `editorManager.setting
 
 `editorManager.settings` is not used at all in {productname} 6 and has been removed.
 
-Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object passed when the command is run.
+Instead, the `mceAddEditor` and `mceToggleEditor` commands use `id` and `options` values from an object passed in when the command is run.
 
 For example —
 
@@ -166,7 +179,7 @@ For example —
 
 === `element_format`
 
-Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
+Previously, `element_format` had no explicit default value. It's implicit value, however, was `xhtml`.
 
 In {productname} 6.0, `element_format` now has an explicit default value: `html`.
 
@@ -176,7 +189,7 @@ NOTE: If `xhtml` standard representation is required, explicitly setting `elemen
 
 === `image_upload_handler`
 
-Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload. In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload. In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`.
 
 === `link_default_protocol`
 
@@ -191,8 +204,8 @@ NOTE: The `link_default_protocol` value is only applied to an edited or inserted
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-options-textpattern[_{productname} 6.0 Release Notes_], the `textpattern_patterns` option:
 
-* was renamed to `text_patterns`;
-* and had its functionality moved to the Core of {productname} 6.0.
+* Was renamed to `text_patterns`;
+* Had its functionality moved to the Core of {productname} 6.0.
 
 As well, the `textpattern` API has been removed.
 
@@ -202,18 +215,18 @@ NOTE: Using `text_patterns: []` to turn `text_patterns` off is not supported. It
 
 After upgrading:
 
-* rename any options in your {productname} init configuration to match the new name.
-* remove `textpattern` from your plugins list.
-
-=== `tinymce.activeEditor.options.get`
-
-Previously `tinymce.activeEditor.options.get('plugins')` returned the configured plugins as a string.
-
-As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns the configured plugins as an array.
-
+* Rename any options in your {productname} init configuration to match the new name.
+* Remove `textpattern` from your plugins list.
 
 [[plugins]]
 == Plugins
+
+=== `plugins` option
+
+Previously, the list of configured plugins could be retrieved by calling `editor.getParam('plugins')` and returned the configured plugins as a string.
+
+As of {productname} 6, the list of configured plugins is retrieved by calling `editor.options.get('plugins')` and now returns the configured plugins as an array.
+
 
 === Plugin loading format change
 
@@ -221,67 +234,63 @@ As of {productname} 6, `tinymce.activeEditor.options.get('plugins')` now returns
 
 . An array of strings:
 +
-`plugins: [ 'advlist', 'list', 'image', 'help', 'wordcount' ]`
+`plugins: [ 'advlist', 'lists', 'image', 'help', 'wordcount' ]`
 +
 . A space-separated string:
 +
-`plugins: 'advlist list image help wordcount'`
+`plugins: 'advlist lists image help wordcount'`
 +
-. A comma-separated string:
+. A comma-separated string, with or without spaces:
 +
-`plugins: 'advlist,list,image,help,wordcount'`
+`plugins: 'advlist,lists,image,help,wordcount'` +
+`plugins: 'advlist, lists, image, help, wordcount'`
 
-Previously, two other formats were allowed: comma-separated strings with spaces and arrays of space-separated strings.
-
-Neither of these formats are allowed in {productname} 6.0.
+Previously, one other format was allowed: arrays of space-separated strings. This format is no longer accepted in {productname} 6.0.
 
 === Removed plugins
 
 All references to any of these plugins should be removed from plugin configurations.
 
-NOTE: Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. {productname} 6.0 should, otherwise, work without error. If, however, {productname} 6.0 is ‘installed’ incorrectly — by being unZipped onto an existing {productname} 5.0 instance for example — the old plugin will not be removed, it will load and, since a {productname} 5.x plugin is attempting to work with a {productname} 6.0 instance, error notifications will almost certainly present to the end-user.
+NOTE: Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. {productname} 6.0 should, otherwise, work without error. If, however, {productname} 6.0 is ‘installed' incorrectly — by being unZipped onto an existing {productname} 5.0 instance for example — the old plugin will not be removed, it will load and, since a {productname} 5.x plugin is attempting to work with a {productname} 6.0 instance, error notifications will almost certainly present to the end-user.
 
 See below for specific documentation of potential migration issues, if any, regarding these removed plugins.
 
-Seven `plugins` were removed because their functionality is now a Core part of {productname} 6.0:
-
-. `colorpicker`
-. `contextmenu`
-. `hr`
-. `noneditable`
-. `paste`
-. `print`
-. `textcolor`
-
-Three plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"]:
+Five plugins were removed as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"]:
 
 . `fullpage`
 . `bbcode`
 . `legacyoutput`
-
-These plugins were already empty. As of {productname} 6.0, however, they are gone entirely.
-
-One plugin was removed as no longer supported:
-
+. `tabfocus`
 . `spellchecker`
+
+Four plugins were removed because their functionality is now a Core part of {productname} 6.0:
+
+. `hr`
+. `noneditable`
+. `paste`
+. `print`
+
+The functionality from these plugins is now enabled automatically, except for `paste` which as previously announced no longer supports cleaning Microsoft Word content.
+
+Three plugins have been empty stub plugins since {productname} 5.0, and were removed in {productname} 6.0:
+
+. `colorpicker`
+. `contextmenu`
+. `textcolor`
 
 NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
-=== ImageTools
+=== Image Tools
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Free editor.
 
-_ImageTools_ is now _EditImage_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+_Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
-Also, the `editimage_proxy` option has been renamed to `export_image_proxy_service_url`. The option was renamed to make it easier to configure when using https://tiny.cloud/docs/enterprise/server/[Tiny services].
+The `imagetools_proxy` option has been renamed to `editimage_proxy`. However, when setting up xref:introduction-to-premium-selfhosted-services.adoc[Tiny services] the recommended configuration is now `editimage_proxy_service_url` and will be used in favour of `editimage_proxy` if both are set.
 
-Finally, `editimage` also offers a new export plugin option: `export_image_proxy_service_url`.
-
-NOTE: `editimage_proxy` (the renamed equivalent to the previous `imagetools_proxy`) is still available as an alternative configuration option for setting up image proxy functionality without using Tiny services.
-
-Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `imagetools` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as https://tiny.cloud/tinymce/features/#productivity[_EditImage_].
+Users of the Free version of {productname} 5.x who rely on the removed `imagetools` plugin should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to https://tiny.cloud/tinymce/features/#productivity[_Enhanced Image Editing_].
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
@@ -289,7 +298,7 @@ NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatibl
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#changed-plugins-media[_{productname} 6.0 Release Notes_], the `media` plugin no longer uses the SaxParser.
 
-As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as _special_, and cannot be marked as such. Put another way, the DomParser does not preserve embedded content.
+As a consequence the `iframe`, `video`, `audio`, and `object` elements are no longer marked as _special_, and cannot be marked as such. Put another way, the DOM parser does not preserve embedded content.
 
 Instead these elements, and their contents, are validated against the {productname} schema.
 
@@ -302,7 +311,7 @@ NOTE: As of this release, there are no known cases of this change causing media 
 [[plugins-paste]]
 === Paste
 
-As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
+As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin's functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
 
 In conjunction with this change, three changes have been made:
 
@@ -326,15 +335,15 @@ NOTE: The Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerP
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
-== `tabfocus`
+=== Tabfocus
 
 The `tabfocus` plugin has been removed. It is no longer part of {productname} 6.0. And it is not otherwise available.
 
 The `tabfocus_elements` option, which relied on the `tabfocus` plugin, no longer functions.
 
-As per standard web practice, the `tabindex` attribute should be used instead of the `tabfocus` plugin or any of the `tabfocus` plugin’s options.
+As per standard web practice, the `tabindex` attribute should be used instead of the `tabfocus` plugin or any of the `tabfocus` plugin's options.
 
-The tab order of a page’s elements, including {productname}, is configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`tabindex` attribute] on the relevant HTML elements. The browser then natively handles the tab order.
+The tab order of a page's elements, including {productname}, is configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`tabindex` attribute] on the relevant HTML elements. The browser then natively handles the tab order.
 
 To configure `tabindex` for the {productname} editor, set the attribute on the target element for the editor. For example:
 
@@ -349,7 +358,7 @@ To configure `tabindex` for the {productname} editor, set the attribute on the t
  <input tabindex="3">
 ----
 
-In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor’s iframe, to allow this to work correctly.
+In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor's iframe, to allow this to work correctly.
 
 
 === Table of Contents
@@ -362,7 +371,6 @@ Users of the Free version of {productname} 5.x who rely on the, now deprecated a
 
 The new Premium `tableofcontents` plugin also changes the names of several commands.
 
-* `toc` is now `tableofcontents`
 * `tocupdate` is now `tableofcontentsupdate`
 * `toc_class` is now `tableofcontents_class`
 * `toc_depth` is now `tableofcontents_depth`
@@ -391,26 +399,26 @@ If, however, you explicitly set the schema to `html5`, `b` and `i` elements were
 With this release, `html5` is explicitly set as the schema by default, _and_ `b` and `i` elements are automatically transformed into `strong` and `em` elements.
 +
 That is, the element transformation persists even though the `html5` schema is now explicitly set.
-
++
 NOTE: `html5-strict` is still an available schema option and is unchanged from {productname} 5.x.
-
++
 * The assignment operator character — `:` — has been changed to `~` for the `valid_elements` and `extended_valid_elements` schemata.
 +
-The `:` is also used to assign an [xlink:href] rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
+The `:` is also used to assign an `[xlink:href]` rule and this was not possible in these schemata because the colon character was acting as an assignment operator.
 +
 This change allows both schemata to set attribute values for the `valid_elements` and `extended_valid_elements` options using the `~` character and assign [xlink:href] rules as expected.
 +
 Existing configurations using either of these schemata must be edited so the `~` character is used for `valid_elements` and `extended_valid_elements` options configurations. The `:` character should no longer be used to set attribute values in these configurations.
 +
 Also, when assigning `[xlink:href]` rules, the colon character is no longer escaped. `[xlink\\:href]` can now be written plainly, as `[xlink:href]`.
-
++
 NOTE: Existing configurations that included escaped colons will continue to work as expected. Editing such configs to remove the escape characters will improve readability but is not necessary for functionality.
 
 
 [[ui-and-ux-elements-and-components]]
 == UI and UX elements and components
 
-=== buttonType
+=== `buttonType`
 
 `buttonType` is a new property available for button components used in dialogs. It replaces the, now deprecated property, `primary`.
 
@@ -422,41 +430,18 @@ Setting `buttonType: 'primary'` is the same as setting `primary: true`.
 
 Setting `buttonType: 'secondary'` is the same as setting `primary: false`.
 
-=== `change` event
-
-Previously, the `change` event was triggered by the first modification made to a {productname} editor instance. However, subsequent changes did not cause the event to fire until focus was switched away from the editor.
-
-For example, typing a single character in to the {productname} editor text-entry area triggered the `change` event. Consequent typing, or selecting of the entered character and modifying it by setting it to *bold* or _italic_, did not trigger further `change` events. Making further modifications and then switching focus away from the editor did trigger this event, however.
-
-As of {productname} 6, the `change` event is not fired unless and until
-
-. focus is switched away from the editor; and
-. changes have been made in the editor since focus was switched to it.
-
-NOTE: It is still possible to listen for modification to a {productname} editor instance before focus is changed. To do this, listen for the `dirty` event, rather than the `change` event.
-
-=== `disabled` properties renamed to `.enabled` in {productname} UI classes
-
-Previously, {productname} UI classes provided a `.disabled` property.
-
-In {productname} 6, this property has been renamed to `.enabled`.
-
-Configurations that set `.disabled` must now set `.enabled`.
-
-Also, the Dialog API, which previously offered the `disable(<name>)` and `enable(<name>)` functions, now offers a single `setEnabled(<name>, <state>)` function.
-
 [[editor-height]]
 === Editor height
 
-In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a height of 200px. In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to 400px.
+In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a height of `200px` In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to `400px`.
 
 As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
 
 The new default can be overridden by explicitly setting a `height` value in the {productname} configuration. So setting this to `200px` will recreate the previous default presentation.
 
-Also, setting the element’s CSS `height` to a value larger than 400px will increase the height of the text entry area. Setting the elmement’s CSS `height` to a value less than 400px will *not* reduce the height of the text entry area, however.
+Also, setting the CSS `height` of the element replaced by {productname} to a value larger than `400px` will increase the editor height. Setting the element's CSS `height` to a value less than `400px` will *not* reduce the height of the editor, however.
 
-NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent the editor UI from disappearing during re-sizing, the `min-height` value (100px) cannot be overridden. This obviates an unrecoverable bug, that prevents users being able to interact with the editor, from presenting.
+NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent the editor UI from disappearing during re-sizing, the `min-height` value (`100px`) cannot be overridden. This obviates an unrecoverable bug, that prevents users being able to interact with the editor, from presenting.
 
 === formatting user interface name changes
 
@@ -505,7 +490,7 @@ It has been deprecated and replaced by the new `buttonType` property.
 
 For example, consider a {productname} document that included a table that took up less than 100% of the viewport and a paragraph of text below that table. If both the table and the paragraph were selected and their *alignment* was changed to _left_ or _right_, the paragraph of text moved up beside the table.
 
-As another example, consider a {productname} document containing a table that is wider than the viewport. If you selected this table’s contents and set the *alignment* to _right_, the portion of the table that was outside the viewport disappeared to the left, and no scrollbar presented allowing you to bring that portion back into view.
+As another example, consider a {productname} document containing a table that is wider than the viewport. If you selected this table's contents and set the *alignment* to _right_, the portion of the table that was outside the viewport disappeared to the left, and no scrollbar presented allowing you to bring that portion back into view.
 
 As of {productname} 6.0, tables are positioned using `margin` rather than `float`. This prevents these layout and UX problems occurring.
 
@@ -515,9 +500,9 @@ First, {productname} 6.0 does not alter existing documents. Extant {productname}
 
 If an extant {productname} document with an aligned table is opened using {productname} 6.0 and the *alignment* of the table is re-set, {productname} 6.0 will remove the `float` property and use the `margin` property to set the *alignment*.
 
-Second, if the previous behaviour is required, a custom `format` will need to be created. Specifically, the following CSS (the https://github.com/tinymce/tinymce/blob/release/5.10/modules/tinymce/src/core/main/ts/fmt/DefaultFormats.ts#L27-L117[table-specific CSS] from {productname} 5.x’s `DefaultFormats.ts`) must be added to the `format` configuration:
+Second, if the previous behavior is required, a custom `format` will need to be created. Specifically, the following format (the https://github.com/tinymce/tinymce/blob/release/5.10/modules/tinymce/src/core/main/ts/fmt/DefaultFormats.ts#L27-L117[table-specific code] from {productname} 5.x's `DefaultFormats.ts`) must be added to the `format` configuration:
 
-[source,css]
+[source,js]
 ----
 alignleft: [
   {

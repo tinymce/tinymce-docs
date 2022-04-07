@@ -1,61 +1,54 @@
-= TinyMCE 6.0 API changes
-:navtitle: TinyMCE 6.0 API changes
-:description: TinyMCE 6.0 API changes
-:keywords: releasenotes, apis
+[[apis]]
+= APIs
 
 This section documents the improvements, changes and fixes made to {productname} 6.0 APIs.
 
 It also documents the {productname} 6.0 APIs that have been removed.
 
-
-* xref:apis[APIs]
 * xref:new-and-improved-apis[New and improved APIs]
 * xref:changed-apis[Changed APIs]
 * xref:fixed-apis[Fixed APIs]
 * xref:removed-or-deprecated-apis[Removed or deprecated APIs]
 
 // tag::apis[]
-[[apis]]
-== APIs
-
 [[new-and-improved-apis]]
-=== New and improved APIs
+== New and improved APIs
 
 [[editor-annotator-removeall]]
-==== `editor.annotator.removeAll`
+=== `editor.annotator.removeAll`
 
 The new `editor.annotator.removeAll` API replaces the `removeAll` function built-in to the Comments plugin.
 
 [[editor-options]]
-==== `editor.options` and `tinymce.activeEditor.options`
+=== `editor.options` and `tinymce.activeEditor.options`
 
 The new `editor.options` API replaces two old APIs: `editor.settings` and `editor.getParam`.
 
 Along with this new API, the new `tinymce.activeEditor.options` registry replaces `tinymce.activeeditor.settings`.
 
 [[editor-uploadImages]]
-==== `editor.uploadImages()`
+=== `editor.uploadImages()`
 
 The `editor.uploadImages()` API now includes a `remove` flag.
 
 The flag returns `true` when an image being uploaded is removed after failing to upload.
 
 [[fakeclipboard]]
-==== `FakeClipboard`
+=== `FakeClipboard`
 
 The new `FakeClipboard` API provides a means for storing state that can be set and accessed by plugins and the core editor.
 
 `FakeClipboard` is implemented on the {productname} global, allowing anything to write to it and read from it.
 
 [[resource-unload]]
-==== `Resource.unload`
+=== `Resource.unload`
 
 The new `Resource.unload` API makes it possible to unload resources in the resource loader.
 
 This allows tests, such as `ImageEmojiTest`, to remove existing databases before loading their own.
 
 [[setdata]]
-==== `setData` method in the Dialog API
+=== `setData` method in the Dialog API
 
 The dialog API’s `setData` method now uses a deep merge algorithm.
 
@@ -69,10 +62,10 @@ Consequently, it now supports partial nested objects.
 These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`. Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
 
 [[changed-apis]]
-=== Changed APIs
+== Changed APIs
 
 [[closebutton]]
-==== `closeButton` and `timeout`
+=== `closeButton` and `timeout`
 
 * Previously, using `closeButton` to disable a _Notification’s_ close button required a `timeout` value to also be set.
 +
@@ -81,7 +74,7 @@ In {productname} 6, `closeButton` shows or hides the close button regardless of 
 Equivalently, setting a `timeout` value sets how long the notification presents before automatically closing, regardless of whether a close button is displayed or not.
 
 [[disabled]]
-==== `disabled` functions renamed in all {productname} APIs
+=== `disabled` functions renamed in all {productname} APIs
 
 Previously, multiple {productname} APIs and UI classes used `disable` or `disabled` in their function or property names.
 
@@ -94,24 +87,24 @@ In {productname} 6, these function names have been changed and configuration cha
 As well, the `.disabled` property is now the `.enabled` property in all {productname} UI classes.
 
 [[dom-domutils]]
-==== `dom.DOMUtils`
+=== `dom.DOMUtils`
 
 The `toHex` function has been removed from `dom.DOMUtils`.
 
 [[domparser]]
-==== `DomParser`
+=== `DomParser`
 
 The `filterNode` method has been removed from the `DomParser` API.
 
 As well, the `DomParser` API no longer uses a custom parser internally and instead uses the https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[native `DOMParser` API].
 
 [[editor-setcontent]]
-==== `editor.SetContent`
+=== `editor.SetContent`
 
 The `SetContent` editor event’s `content` property has been deprecated.
 
 [[env]]
-==== `Env`
+=== `Env`
 
 The following methods have been removed from the `Env` API:
 
@@ -133,7 +126,7 @@ The following methods have been removed from the `Env` API:
 Note, in particular, the removal of all legacy browser detection methods.
 
 [[fire]]
-==== `fire` methods renamed in all {productname} APIs
+=== `fire` methods renamed in all {productname} APIs
 
 The `fire()` method in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been renamed to `dispatch()`.
 
@@ -142,10 +135,10 @@ The `fire()` method in `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.
 `fire` has also, however, been marked as _deprecated_. Using `dispatch()` in place of `fire()` is recommended.
 
 [[fixed-apis]]
-=== Fixed APIs
+== Fixed APIs
 
 [[editor-annotator-remove]]
-==== `editor.annotator.remove`
+=== `editor.annotator.remove`
 
 Previously, `editor.annotator.remove` scrolled to the removed contents position when removing an annotation.
 
@@ -154,7 +147,7 @@ It did not, as expected, retain the current selection or insertion point positio
 With this release, `editor.annotator.remove` does not change the change the selection or insertion point position after removing an annotation.
 
 [[editor-fire]]
-==== `editor.fire()`
+=== `editor.fire()`
 
 Previously, if the {productname} editor was removed, the `editor.fire()` API returned an incorrect object.
 
@@ -163,7 +156,7 @@ In {productname} 6.0, `editor.fire()`, which has been renamed `dispatch()`, retu
 
 
 [[editor-getcontent]]
-==== `editor.getContent()`
+=== `editor.getContent()`
 
 The `editor.getContent()` API can now provide custom content by preventing and overriding `content` in the `BeforeGetContent` event.
 
@@ -174,29 +167,29 @@ The `editor.setContent()` API can also now be prevented from using the `BeforeSe
 This, too, makes it consistent with the `editor.selection.setContent()` API.
 
 [[editor-selection-getcontent]]
-==== `editor.selection.getContent()`
+=== `editor.selection.getContent()`
 
 The `no_events` argument is Boolean. If set to `true`, events should not fire when `getContent` is called. Previously, `editor.selection.getContent()` did not respect this.
 
 In {productname} 6.0, `editor.selection.getContent()` treats the `no_events` setting as expected: when set to `false`, events are fired; when set to `true`, events are not fired.
 
 [[removed-or-deprecated-apis]]
-=== Removed or deprecated APIs
+== Removed or deprecated APIs
 
 [[html-styles]]
-==== `html.Styles`
+=== `html.Styles`
 
 The `toHex` method has been removed from `html.Styles`.
 
 
 [[removed-or-deprecated-apis-saxparser]]
-==== `SaxParser`
+=== `SaxParser`
 
 With all filtering moved to the `DomParser` API, the `SaxParser` API has been removed.
 
 
 [[removed-or-deprecated-apis-tables]]
-==== Table
+=== Table
 
 The `table` plugin’s functionality is, as of {productname} 6.0, entirely focussed on the user interface (UI) for creating and editing tables.
 
@@ -206,7 +199,7 @@ Since the `table` plugin API was entirely concerned with generating tables, it h
 
 
 [[removed-or-deprecated-apis-tinymce-util-promise]]
-==== `tinymce.util.Promise`
+=== `tinymce.util.Promise`
 
 The `tinymce.util.Promise` API has been removed.
 

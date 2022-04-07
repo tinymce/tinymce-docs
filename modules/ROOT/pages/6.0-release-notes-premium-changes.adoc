@@ -32,8 +32,6 @@ No Premium Plugins released with {productname} 6.0 are backwards compatible with
 
 | `imagetools_fetch_image`            | `editimage_fetch_image`          | Option                              | NB: _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
-| `imagetools_api_key`                | `editimage_api_key`              | Option                              | NB: _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
-
 | `images_upload_timeout`             | `editimage_upload_timeout`       | Option                              | NB: _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
 | `toc`                               | `tableofcontents`                | Plugin, Menu item, and Toolbar item | This presents in both the menu item and the toolbar’s tooltip text. NB: _Table of Contents_ is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
@@ -55,7 +53,7 @@ No Premium Plugins released with {productname} 6.0 are backwards compatible with
 
 The following premium plugin updates were released alongside {productname} 6.0.
 
-=== Enhanced Image Editing (was ImageTools)
+=== Enhanced Image Editing (was Image Tools)
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-imagetools[Release Notes], the `imagetools` plugin is no longer included as part of the Free editor.
 

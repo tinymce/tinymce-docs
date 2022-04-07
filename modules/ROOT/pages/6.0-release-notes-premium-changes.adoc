@@ -133,7 +133,6 @@ The new Premium `tableofcontents` plugin also changes the names of several comma
 
 Any configurations or logic that use the old command names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
 
-NOTE: Although there are no end-user facing changes, as part of the general architectural change, the `tableofcontents` Premium plugin has modernised its output. It uses the ES2020 library and targets ES2018. It also uses https://terser.org[terser] to improve performance.
 
 
 === Tiny Drive
@@ -163,7 +162,7 @@ With this release, a check has been added. Tiny Drive’s CSS is now loaded once
 
 Icons presented in the _Upload file_ and _Upload/Create_ menus were inconsistent: some presenting as black and some presenting as white.
 
-This has been corrected: these icons now all present as black or white
+This has been corrected: these icons now all present as black or white as expected.
 
 
 //Fixed an issue where a menu would not close in some situations #TD-311

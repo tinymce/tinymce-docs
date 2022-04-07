@@ -120,7 +120,7 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 
 ## Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} vnumtxt release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+The {{site.productname}} vnumtxt release includes changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
 - The Enhanced Media Embed plugin (`mediaembed`)
 - The Export plugin (`export`)

@@ -35,7 +35,13 @@ For additional details on {productname} 6.0 changes, see xref:6.0-release-notes-
 
 === AddOnManager
 
-Previously, when loading a requested resource, the `AddOnManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `AddOnManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, the `AddOnManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `AddOnManager` reports this status by returning a `Promise`.
+
+=== Dialog `redial` API
+
+Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
+
+In {productname} 6.0, the `initialData` type in the dialog `redial` API uses object diffing for the passed spec. As a consequence, the API now only re-renders the portions of a dialog that have changed.
 
 === `disabled` wording renamed in all {productname} APIs
 
@@ -93,35 +99,29 @@ NOTE: This does not change the behaviour of existing _Notifications_.
 
 === PluginManager
 
-Previously, when loading a requested resource, the `PluginManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `PluginManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
-
-=== Dialog `redial` API
-
-Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
-
-In {productname} 6.0, the `initialData` type in the dialog `redial` API uses object diffing for the passed spec. As a consequence, the API now only re-renders the portions of a dialog that have changed.
+Previously, when loading a requested resource, the `PluginManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `PluginManager` reports this status by returning a `Promise`.
 
 === ScriptLoader
 
-Previously, when loading a requested resource, `ScriptLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ScriptLoader` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, `ScriptLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ScriptLoader` reports this status by returning a `Promise`.
 
 === `SetContent` editor event
 
-The `editor.SetContent` event’s `content` property has been deprecated.
+The `SetContent` event's `content` property has been deprecated.
 
-When the `editor.SetContent` event fires, any data in `content` has already been added to the {productname} editor instance and cannot be altered, making `content` essentially moot as an `editor.SetContent` property.
+When the `SetContent` event fires, any data in `content` has already been added to the {productname} editor instance and cannot be altered, making `content` essentially moot as an `SetContent` property.
 
 To alter such data before it is added to the {productname} editor, use the `content` property available in the `BeforeSetContent` event.
 
-NOTE: Calling the `editor.SetContent` `content` property now returns an empty string.
+NOTE: The `SetContent` `content` property now returns an empty string in some cases.
 
 === StyleSheetLoader
 
-Previously, when loading a requested resource, `StyleSheetLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `StyleSheetLoader` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, `StyleSheetLoader` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `StyleSheetLoader` reports this status by returning a `Promise`.
 
 === ThemeManager
 
-Previously, when loading a requested resource, the `ThemeManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ThemeManager` reports this status by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously, when loading a requested resource, the `ThemeManager` passed a `success` or `failure` callback to report the status of the request. In {productname} 6, `ThemeManager` reports this status by returning a `Promise`.
 
 
 [[commands-and-queries]]
@@ -167,7 +167,7 @@ For example —
 
 === `element_format`
 
-Previously, `element_format` had no explicit default value. It’s implicit value, however, was `xhtml`.
+Previously, `element_format` had no explicit default value. It's implicit value, however, was `xhtml`.
 
 In {productname} 6.0, `element_format` now has an explicit default value: `html`.
 
@@ -177,7 +177,7 @@ NOTE: If `xhtml` standard representation is required, explicitly setting `elemen
 
 === `image_upload_handler`
 
-Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload. In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`, with a value of either `resolve` or `reject`.
+Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload. In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`.
 
 === `link_default_protocol`
 
@@ -206,15 +206,15 @@ After upgrading:
 * Rename any options in your {productname} init configuration to match the new name.
 * Remove `textpattern` from your plugins list.
 
-=== `tinymce.activeEditor.options.get`
+[[plugins]]
+== Plugins
+
+=== `plugins` option
 
 Previously, the list of configured plugins could be retrieved by calling `editor.getParam('plugins')` and returned the configured plugins as a string.
 
 As of {productname} 6, the list of configured plugins is retrieved by calling `editor.options.get('plugins')` and now returns the configured plugins as an array.
 
-
-[[plugins]]
-== Plugins
 
 === Plugin loading format change
 
@@ -230,7 +230,7 @@ As of {productname} 6, the list of configured plugins is retrieved by calling `e
 +
 . A comma-separated string, with or without spaces:
 +
-`plugins: 'advlist,lists,image,help,wordcount'`
+`plugins: 'advlist,lists,image,help,wordcount'` +
 `plugins: 'advlist, lists, image, help, wordcount'`
 
 Previously, one other format was allowed: arrays of space-separated strings. This format is no longer accepted in {productname} 6.0.
@@ -239,7 +239,7 @@ Previously, one other format was allowed: arrays of space-separated strings. Thi
 
 All references to any of these plugins should be removed from plugin configurations.
 
-NOTE: Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. {productname} 6.0 should, otherwise, work without error. If, however, {productname} 6.0 is ‘installed’ incorrectly — by being unZipped onto an existing {productname} 5.0 instance for example — the old plugin will not be removed, it will load and, since a {productname} 5.x plugin is attempting to work with a {productname} 6.0 instance, error notifications will almost certainly present to the end-user.
+NOTE: Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load. {productname} 6.0 should, otherwise, work without error. If, however, {productname} 6.0 is ‘installed' incorrectly — by being unZipped onto an existing {productname} 5.0 instance for example — the old plugin will not be removed, it will load and, since a {productname} 5.x plugin is attempting to work with a {productname} 6.0 instance, error notifications will almost certainly present to the end-user.
 
 See below for specific documentation of potential migration issues, if any, regarding these removed plugins.
 
@@ -249,6 +249,7 @@ Four plugins were removed as per the previous https://www.tiny.cloud/docs/releas
 . `bbcode`
 . `legacyoutput`
 . `tabfocus`
+. `spellchecker`
 
 Four plugins were removed because their functionality is now a Core part of {productname} 6.0:
 
@@ -264,10 +265,6 @@ Three plugins have been empty stub plugins since {productname} 5.0, and were rem
 . `colorpicker`
 . `contextmenu`
 . `textcolor`
-
-One plugin was removed as no longer supported:
-
-. `spellchecker`
 
 NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spellchecker Pro], which offers equivalent functionality and more, is available.
 
@@ -302,7 +299,7 @@ NOTE: As of this release, there are no known cases of this change causing media 
 [[plugins-paste]]
 === Paste
 
-As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin’s functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
+As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-paste[_{productname} 6.0 Release Notes_], the `paste` plugin's functionality is no longer provided as a plugin. It is now a core part of {productname} 6.0.
 
 In conjunction with this change, three changes have been made:
 
@@ -332,9 +329,9 @@ The `tabfocus` plugin has been removed. It is no longer part of {productname} 6.
 
 The `tabfocus_elements` option, which relied on the `tabfocus` plugin, no longer functions.
 
-As per standard web practice, the `tabindex` attribute should be used instead of the `tabfocus` plugin or any of the `tabfocus` plugin’s options.
+As per standard web practice, the `tabindex` attribute should be used instead of the `tabfocus` plugin or any of the `tabfocus` plugin's options.
 
-The tab order of a page’s elements, including {productname}, is configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`tabindex` attribute] on the relevant HTML elements. The browser then natively handles the tab order.
+The tab order of a page's elements, including {productname}, is configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`tabindex` attribute] on the relevant HTML elements. The browser then natively handles the tab order.
 
 To configure `tabindex` for the {productname} editor, set the attribute on the target element for the editor. For example:
 
@@ -349,7 +346,7 @@ To configure `tabindex` for the {productname} editor, set the attribute on the t
  <input tabindex="3">
 ----
 
-In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor’s iframe, to allow this to work correctly.
+In iframe (classic editor) mode, {productname} copies the `tabindex` attribute from the target element to the editor's iframe, to allow this to work correctly.
 
 
 === Table of Contents
@@ -505,7 +502,7 @@ It has been deprecated and replaced by the new `buttonType` property.
 
 For example, consider a {productname} document that included a table that took up less than 100% of the viewport and a paragraph of text below that table. If both the table and the paragraph were selected and their *alignment* was changed to _left_ or _right_, the paragraph of text moved up beside the table.
 
-As another example, consider a {productname} document containing a table that is wider than the viewport. If you selected this table’s contents and set the *alignment* to _right_, the portion of the table that was outside the viewport disappeared to the left, and no scrollbar presented allowing you to bring that portion back into view.
+As another example, consider a {productname} document containing a table that is wider than the viewport. If you selected this table's contents and set the *alignment* to _right_, the portion of the table that was outside the viewport disappeared to the left, and no scrollbar presented allowing you to bring that portion back into view.
 
 As of {productname} 6.0, tables are positioned using `margin` rather than `float`. This prevents these layout and UX problems occurring.
 

@@ -97,7 +97,7 @@ The `filterNode` method has been removed from the `DomParser` API.
 As well, the `DomParser` API no longer uses a custom parser internally and instead uses the https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[native `DOMParser` API].
 
 [[editor-setcontent]]
-=== `editor.SetContent`
+=== `SetContent` editor event
 
 The `content` property of the `SetContent` editor event has been deprecated.
 

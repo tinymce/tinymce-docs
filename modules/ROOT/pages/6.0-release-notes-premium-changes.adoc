@@ -144,7 +144,15 @@ Tiny Drive supports several new file formats:
 * https://developers.google.com/speed/webp[WebP] images (`.webp`).
 * https://aomediacodec.github.io/av1-avif/[AV1 Image File Format] (AVIF) files (`.avif`).
 * https://wiki.mozilla.org/APNG_Specification[Animated Portable Network Graphic] files (`.apng`).
-* further JPEG extensions.
+
+Tiny Drive now recognises files using the following filename extensions as JPEG files:
+
+* `+.jpe+`
+* `+.jfi+`
+* `+.jif+`,
+* `+.jfif+`,
+* `+.pjpeg+`,
+* `+.pjp+`
 
 When the *Starred* filter is used, _move_ and _copy_ are now removed from the actions menu.
 

@@ -8,7 +8,7 @@ This section documents the single known issue that {productname} 6.0 users may e
 // tag::known-issues[]
 There is one known issue affecting {productname} 6.0.
 
-== If `nonbreaking_force_tab: true` pressing the tab key in a table cell produces an unexpected result
+== Unexpected `nonbreaking_force_tab: true` behavior
 
 In {productname} 6.0, if `nonbreaking_force_tab` is set to `true`, pressing the _tab_ key when the insertion point is in a table cell produces an unexpected result.
 

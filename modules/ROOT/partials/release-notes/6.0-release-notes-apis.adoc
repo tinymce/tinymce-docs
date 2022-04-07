@@ -55,7 +55,7 @@ Consequently, it now supports partial nested objects.
 [[promise]]
 === `success` and `failure` callbacks replaced by `Promise` in multiple APIs
 
-Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs reported resource loading status with `success` or `failure` callbacks.
+Previously, the `AddOnManager`, `PluginManager`, `ScriptLoader`, `StyleSheetLoader`, and `ThemeManager` APIs reported resource loading status with `success` or `failure` callbacks.
 
 These APIs now, instead, return a `Promise`. Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
 

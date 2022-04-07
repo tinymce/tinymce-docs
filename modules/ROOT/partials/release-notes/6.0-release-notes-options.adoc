@@ -38,8 +38,8 @@ It now defaults to `'https'`. Previously it defaulted to `'http'`.
 
 NOTE: The `link_default_protocol` value is only applied to an edited or inserted link if the protocol is not explicitly specified.
 
-[[tinymce-active-editor-options-get]]
-=== tinymce.activeEditor.options.get
+[[changed-options-plugins-option]]
+=== `plugins` option
 
 Previously, the list of configured plugins could be retrieved by calling `editor.getParam('plugins')` and returned the configured plugins as a string.
 

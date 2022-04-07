@@ -246,7 +246,7 @@ In {productname} 6.0, there is no setting or specifying this functionality in th
 All references to `print` should be removed from your plugin configuration. Leaving references to removed plugins in a plugin configuration will cause console errors documenting the plugin failing to load.
 
 [[removed-or-deprecated-plugins-spellchecker]]
-=== Spellchecker
+=== Spell Checker
 
 As per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the `spellchecker` plugin has been removed. It is no longer part of {productname} 6.0.
 
@@ -278,7 +278,7 @@ Text color’s functionality has been a built in part of {productname} since ver
 Consequently, and as per the previous https://www.tiny.cloud/docs/release-notes/6.0-upcoming-changes/[{productname} 5 announcement, window="_blank"], the empty `textcolor` plugin has now been removed.
 
 [[removed-or-deprecated-plugins-text-pattern]]
-=== TextPattern
+=== Text Pattern
 
 The `textpattern` functionality is no longer a plugin. It is now a Core part of {productname} 6.0.
 

@@ -1,9 +1,9 @@
 [[commands-and-queries]]
 = Commands and queries
 
-This section documents the improvements and changes made to {productname} 6.0 Commands and queries.
+This section documents the improvements and changes made to {productname} 6.0 commands and queries.
 
-It also documents the {productname} 6.0 Commands that have been removed.
+It also documents the {productname} 6.0 commands that have been removed.
 
 * xref:new-and-improved-commands-and-queries[New and improved commands and queries]
 * xref:changed-commands-and-queries[Changed commands and queries]
@@ -17,14 +17,14 @@ It also documents the {productname} 6.0 Commands that have been removed.
 [[mce-autocompleter-close-and-mce-autocompleter-reload]]
 === `mceAutocompleterClose` and `mceAutocompleterReload`
 
-As part of moving `autocompleter` from the default `silver` theme to the {productname} core, two new commands are now available: `mceAutocompleterClose` and `mceAutocompleterReload`.
+As part of moving core autocompleter feature from the default `silver` theme to the {productname} core, two new commands are now available: `mceAutocompleterClose` and `mceAutocompleterReload`.
 
 [[mce-insert-table-dialog]]
 === mceInsertTableDialog
 
-`mceInsertTableDialog` is the new command for invoking an _Insert Table_ dialog box.
+`mceInsertTableDialog` is the new command for invoking an _Insert Table_ dialog.
 
-The previous command, `mceInsertTable`, no longer works to invoke an _Insert Table_ dialog box: use the `mceInsertTableDialog` command instead.
+The previous command, `mceInsertTable`, no longer works to invoke an _Insert Table_ dialog: use the `mceInsertTableDialog` command instead.
 
 The `mceInsertTable` command is still the command for inserting a table with specified properties directly and without asking for user input.
 

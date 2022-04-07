@@ -57,7 +57,7 @@ Consequently, it now supports partial nested objects.
 
 Previously, the AddOnManager, PluginManager, ScriptLoader, StyleSheetLoader, and ThemeManager APIs reported resource loading status with `success` or `failure` callbacks.
 
-These APIs now, instead, return a `Promise`, with a value of either `resolve` or `reject`. Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
+These APIs now, instead, return a `Promise`. Also, `EditorUpload`, which already returns a `Promise`, had callbacks removed.
 
 [[changed-apis]]
 == Changed APIs

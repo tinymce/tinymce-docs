@@ -1,25 +1,19 @@
-= TinyMCE 6.0 UI and UX elements and components changes
-:navtitle: TinyMCE 6.0 UI and UX elements and components changes
-:description: TinyMCE 6.0 UI and UX elements and components changes
-:keywords: releasenotes, ui, ux
+[[ui-and-ux-elements-and-components]]
+= UI and UX elements and components
 
 This section documents the improvements, changes, fixes and removals made to {productname} 6.0 UI and UX elements and components.
 
-* xref:ui-and-ux-elements-and-components[UI and UX elements and components]
 * xref:new-and-improved-ui-and-ux-elements-and-components][New and improved UI and UX elements and components]
 * xref:changed-ui-and-ux-elements-and-components[Changed UI and UX elements and componen]
 * xref:fixed-ui-and-ux-elements-and-components[Fixed UI and UX elements and components]
 * xref:removed-or-deprecated-ui-and-ux-elements-and-components[Removed or deprecated UI and UX elements and components]
 
 // tag::ui-and-ux-elements-and-components[]
-[[ui-and-ux-elements-and-components]]
-== UI and UX elements and components
-
 [[new-and-improved-ui-and-ux-elements-and-components]]
-=== New and improved UI and UX elements and components
+== New and improved UI and UX elements and components
 
 [[buttontype]]
-==== `buttonType`
+=== `buttonType`
 
 `buttonType` is a new property available for button components used in dialogs.
 
@@ -35,7 +29,7 @@ Setting `buttonType: 'secondary'` is the same as setting `primary: false`.
 
 
 [[dialog-box-re-rendering]]
-==== dialog box re-rendering
+=== dialog box re-rendering
 
 Previously, when a component in a {productname} dialog box changed — for example, when a _next_ or _previous_ button was clicked — the entire dialog box was re-rendered.
 
@@ -44,13 +38,13 @@ In {productname} 6.0, the `initialData` type is now `Partial<T>`, which matches 
 And, relatedly, the `redial` API now re-renders only the portions of a dialog that have changed.
 
 [[format-painter]]
-==== Format Painter
+=== Format Painter
 
 The *Format Painter* toolbar item now has a matching menu item: *Format › Format Painter*.
 
 
 [[setdata]]
-==== `setData` method in dialog API
+=== `setData` method in dialog API
 
 The dialog API’s `setData` method now uses a deep merge algorithm.
 
@@ -58,7 +52,7 @@ Consequently, it now supports partial nested objects.
 
 
 [[editor-text-entry-height]]
-==== Editor text entry height
+=== Editor text entry height
 
 In {productname} 5.x, editors without a specified `config.height` value defaulted to a 200px high text entry area.
 
@@ -66,7 +60,7 @@ In {productname} 6.0, editors without a specified `config.height` value default 
 
 
 [[editor-theme-parallel-fetched]]
-==== editor theme now fetched in parallel with icons, plugins, and language packs
+=== editor theme now fetched in parallel with icons, plugins, and language packs
 
 Previously, when a theme was requested, {productname} downloaded it completely before fetching accompanying components, such as icons, plugins, and language packs.
 
@@ -74,13 +68,13 @@ With this release, when a theme is called, related components are downloaded in 
 
 
 [[imagepreview]]
-==== `imagepreview`
+=== `imagepreview`
 
 The new `imagepreview` dialog component allows for previewing and zooming of any image URL.
 
 
 [[insertion-point-placement-improvement]]
-==== Insertion point placement improved when clicking on noneditable elements
+=== Insertion point placement improved when clicking on noneditable elements
 
 Clicking on or near the boundaries between editable and noneditable elements (eg in the `padding` of a noneditable element containing an editable element), there are established and expected norms as to where the insertion point should present after the click.
 
@@ -88,16 +82,16 @@ With this release, {productname} has improved the placing of the insertion point
 
 
 [[slider]]
-==== `slider`
+=== `slider`
 
 {productname} 6.0 includes a new `slider` dialog component.
 
 
 [[changed-ui-and-ux-elements-and-components]]
-=== Changed UI and UX elements and components
+== Changed UI and UX elements and components
 
-[[buttontype]]
-==== buttonType
+[[changed-buttontype]]
+=== buttonType
 
 `buttonType` is a new property available as a basic panel component of `dialogs`.
 
@@ -105,7 +99,7 @@ It replaces the, now deprecated property, `primary`.
 
 
 [[disabled-properties-renamed-to-enabled]]
-==== `disabled` properties renamed to `.enabled` in {productname} UI classes
+=== `disabled` properties renamed to `.enabled` in {productname} UI classes
 
 Previously, {productname} UI classes provided a `.disabled` property.
 
@@ -114,8 +108,8 @@ In {productname} 6, this property has been renamed to `.enabled`.
 Also, the Dialog API, which previously offered the `disable(<name>)` and `enable(<name>)` functions, now offers a single `setEnabled(<name>, <state>)` function.
 
 
-[[editor-text-entry-height]]
-==== Editor text entry height
+[[changed-editor-text-entry-height]]
+=== Editor text entry height
 
 In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high text entry area.
 
@@ -125,7 +119,7 @@ As was the case in {productname} 5.x, this new default only applies to editors i
 
 
 [[status-bar-compeny-id-changed-from-text-to-logo]]
-==== status bar company ID changed from text string to logo mark
+=== status bar company ID changed from text string to logo mark
 
 The _Powered by Tiny_ text string set in the {productname} status bar is now the {productname} logo.
 
@@ -133,7 +127,7 @@ NOTE: The logo still responds appropriately when {productname} is used with a sc
 
 
 [[status-bar-path-delimiter-character-changed]]
-==== status bar path delimiter character changed.
+=== status bar path delimiter character changed.
 
 The default status bar path delimiter character (also known as a breadcrumb separator) has been changed.
 
@@ -143,11 +137,11 @@ It is now `›` (the single, right-pointing, angled quotation mark).
 
 
 [[fixed-ui-and-ux-elements-and-components]]
-=== Fixed UI and UX elements and components
+== Fixed UI and UX elements and components
 
 
 [[anchor-elements-render-correctly]]
-==== Anchor elements now render correctly when `allow_html_in_named_anchor: true`
+=== Anchor elements now render correctly when `allow_html_in_named_anchor: true`
 
 When `allow_html_in_named_anchor` was set to `true`, content inside the anchor element was wrapped such that each character was set on a new line.
 
@@ -155,7 +149,7 @@ With this release, setting `allow_html_in_named_anchor: true` sets characters in
 
 
 [[default-ui-theme-silver-renders-correctly]]
-==== Default UI theme, silver, no longer renders incorrectly as plugins load
+=== Default UI theme, silver, no longer renders incorrectly as plugins load
 
 Previously, {productname}’s default UI theme, `silver`, was initialised such that it rendered some UI components before plugins that, potentially, would override or adjust the defaults presented by `silver`.
 
@@ -165,7 +159,7 @@ With this release, `silver` no longer renders these UI elements before plugins g
 
 
 [[dialog-labels-render-correcttly]]
-==== dialog labels now rendering correctly
+=== dialog labels now rendering correctly
 
 Previously, {productname} dialog labels and other UI elements were rendered with HTML markup.
 
@@ -173,7 +167,7 @@ With this release, the `text` and `label` properties of these elements are now r
 
 
 [[editor-selection-setring]]
-==== `editor.selection.setRng`
+=== `editor.selection.setRng`
 
 Calls to `editor.selection.setRng` now update the insertion point bookmark when focus is returned to the editor.
 
@@ -183,7 +177,7 @@ This is the expected behavior.
 
 
 [[sub-menu-items-now-read-by-screen-readers]]
-==== sub-menu items now read by screen readers when using Google Chrome 93 or later
+=== sub-menu items now read by screen readers when using Google Chrome 93 or later
 
 Previously, in Google Chrome 93 and later, navigating through {productname} menus using the keyboard did not cause screen readers to read out menu items.
 
@@ -211,7 +205,7 @@ Second, if the previous behavior is required, a custom `format` will need to be 
 
 
 [[text-presentation-corrections-on-some-UI-elements]]
-==== Text presentation corrections on some UI elements
+=== Text presentation corrections on some UI elements
 
 The text on some buttons and menu items incorrectly presented in Title Case.
 
@@ -219,10 +213,10 @@ The underlying strings have been corrected and these items now present in senten
 
 
 [[removed-or-deprecated-ui-and-ux-elements-and-components]]
-=== Removed or deprecated UI and UX elements and components
+== Removed or deprecated UI and UX elements and components
 
 [[mobile-theme]]
-==== `mobile` theme
+=== `mobile` theme
 
 The `mobile` theme was deprecated when integrated support for mobile devices was added to the `silver` theme.
 
@@ -230,7 +224,7 @@ The `mobile` theme has been removed.
 
 
 [[primary]]
-==== primary
+=== primary
 
 The `primary` property was a boolean property available for button components used in dialogs
 
@@ -238,7 +232,7 @@ It has been deprecated and replaced by the new `buttonType` property.
 
 
 [[style-field]]
-==== style field in the Advanced tab of the Insert/Enhanced Image Editing dialog box
+=== style field in the Advanced tab of the Insert/Enhanced Image Editing dialog box
 
 The _Style_ field, previously presented in the _Advanced_ tab of the _Insert/Enhanced Image Editing_ dialog has been removed.
 
@@ -252,7 +246,7 @@ An internal feature request to re-implement this feature when it can be done so 
 
 
 [[typing-end-key]]
-==== Typing the End key no longer causes the insertion point to leave an editable element
+=== Typing the End key no longer causes the insertion point to leave an editable element
 
 Pressing the _End_ key when the insertion point is somewhere in a line of editable text should move the insertion point to the end of that line.
 

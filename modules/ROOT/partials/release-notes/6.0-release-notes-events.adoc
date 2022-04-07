@@ -3,7 +3,7 @@
 
 This section documents the improvements and fixes made to {productname} 6.0 Events.
 
-* xref:new-and-improved-events][New and improved Events]
+* xref:new-and-improved-events[New and improved Events]
 * xref:fixed-events[Fixed Events]
 
 // tag::events[]
@@ -74,11 +74,11 @@ NOTE: It is still possible to listen for modification to a {productname} editor 
 [[fixed-get-content]]
 === `GetContent`
 
-Previously the `GetContent` event did not fire when the `editor.selection.setContent()` API attempted to get `tree` or `text` formatted data.
+Previously the `GetContent` event did not fire when the `editor.selection.getContent()` API attempted to get `tree` or `text` formatted data.
 
 With this release, the `SetContent` event fires as expected when `editor.selection.setContent()` attempts this.
 
-NOTE: The `editor.selection.setContent()` API only supports the `html` and `raw` formats. It does not support `tree` or `text` formats. To create a tree to pass in to `editor.selection.setContent()`, use the `new tinymce.html.Node()` API, or parse to a tree using `editor.parser.parse(html)`.
+NOTE: The `editor.selection.setContent()` API only supports the `html` and `raw` formats.
 
 
 [[input]]

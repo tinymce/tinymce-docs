@@ -45,11 +45,11 @@ jobs:
     - name: (deploy) Upload to S3
       run: aws s3 sync --acl=public-read --delete ./_site s3://tiny-cloud-docs-production/docs
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_LEGACY_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_LEGACY_AWS_SECRET_ACCESS_KEY }}
 
     - name: (deploy) Invalidate Cache
       run: aws cloudfront create-invalidation --distribution-id E3LFU502SQ5UR --paths "/docs/*"
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_LEGACY_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_LEGACY_AWS_SECRET_ACCESS_KEY }}

@@ -63,5 +63,5 @@ jobs:
     - name: (deploy) Upload website to S3
       run: aws s3 sync --acl=public-read --delete ./_site $(cat S3_BUCKET)/docs
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_LEGACY_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_LEGACY_AWS_SECRET_ACCESS_KEY }}

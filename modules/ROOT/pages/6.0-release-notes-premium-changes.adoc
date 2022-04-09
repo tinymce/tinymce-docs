@@ -229,7 +229,7 @@ Real-time Collaboration now supports the `inline_boundaries` option.
 
 // xref:partial$configuration/inline-boundaries.adoc[`inline_boundaries`] ?
 
-When provider values are incorrect, the returned error messages are now less opaque.
+When provided values are incorrect, the returned error messages are now less opaque.
 
 For example, the error message `'key' was not a string` is now the error message `Expected field 'key'`.
 

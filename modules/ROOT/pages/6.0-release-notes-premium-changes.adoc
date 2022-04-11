@@ -223,11 +223,11 @@ Three additional options are now supported when Real-time Collaboration is activ
 
 Real-time Collaboration now supports the `autocompleter()` API.
 
-//xref:autocompleter.adoc[`autocompleter()`] ?
-
 Real-time Collaboration now supports the `inline_boundaries` option.
 
-// xref:partial$configuration/inline-boundaries.adoc[`inline_boundaries`] ?
+//Real-time Collaboration now supports xref:autocompleter.adoc[the `autocompleter` API].
+//
+// Real-time Collaboration now supports xref:content-behavior-options.adoc#inline_boundaries[the `inline_boundaries` option].
 
 When provided values are incorrect, the returned error messages are now less opaque.
 

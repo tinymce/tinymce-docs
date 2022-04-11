@@ -187,7 +187,7 @@ This new, and explicit default changes how entered material is serialised. In pa
 
 NOTE: If `xhtml` standard representation is required, explicitly setting `element_format` to `xhtml` works as before.
 
-=== `image_upload_handler`
+=== `images_upload_handler`
 
 Previously the `images_upload_handler` option passed `success` or `failure` callbacks to report the status of an image upload. In {productname} 6, `images_upload_handler` reports upload results by returning a `Promise`.
 

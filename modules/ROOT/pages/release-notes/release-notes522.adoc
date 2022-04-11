@@ -7,13 +7,14 @@
 
 {productname} 5.2.2 was released for {enterpriseversion} and {cloudname} on Thursday, April 30^th^, 2020.  It includes {productname} 5.2.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.2.2, including:
 
-* <<generalbugfixes,General bug fixes>>
-* <<securityfixes,Security fixes>>
-* <<accompanyingpremiumpluginchanges,Accompanying Premium Plugin changes>>
-* <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
+* xref:generalbugfixes[General bug fixes]
+* xref:securityfixes[Security fixes]
+* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[generalbugfixes]]
 == General bug fixes
 
 {productname} 5.2.2 provides fixes for the following bugs:
@@ -23,12 +24,14 @@ include::partial$misc/releasenotes_for_stable.adoc[]
 * Fixed `format` menu alignment buttons inconsistently applying to images.
 * Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
 
+[[securityfixes]]
 == Security fixes
 
 {productname} 5.2.2 provides fixes for the following security issues:
 
 * Fixed `media` embed content not processing safely in some cases.
 
+[[accompanyingpremiumpluginchanges]]
 == Accompanying Premium Plugin changes
 
 The following premium plugins updates were released alongside {productname} 5.2.2.

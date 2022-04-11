@@ -1,3 +1,4 @@
+[[table_header_type]]
 === `table_header_type`
 
 include::partial$misc/requires_5_4v.adoc[]
@@ -10,38 +11,65 @@ The `table_header_type` option has four different settings: ``'section``', `'cel
 +
 For example:
 +
-```html+++<table>++++++<thead>++++++<tr>++++++<td>+++&nbsp;+++</td>+++
-      +++<th>+++&nbsp;+++</th>++++++</tr>++++++</thead>+++
-  +++<tbody>++++++<tr>++++++<td>+++&nbsp;+++</td>+++
-      +++<td>+++&nbsp;+++</td>++++++</tr>++++++</tbody>++++++</table>+++
-+
-```
+[source,html]
+----
+<table>
+  <thead>
+    <tr>
+      <td>&nbsp;</td>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+----
 
 * `cells` - When a table row is set as a header row, the row (`tr`) moves to the `tbody` element (if in a `thead` element). All table data cell elements (`td`) in the row are changed to table header cell elements (`th`).
 +
 For example:
 +
-```html+++<table>++++++<tbody>++++++<tr>++++++<th>+++&nbsp;+++</th>+++
-      +++<th>+++&nbsp;+++</th>++++++</tr>+++
-    +++<tr>++++++<td>+++&nbsp;+++</td>+++
-      +++<td>+++&nbsp;+++</td>++++++</tr>++++++</tbody>++++++</table>+++
-+
-```
+[source,html]
+----
+<table>
+  <tbody>
+    <tr>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+----
 
 * `sectionCells` - When a table row is set as a header row, the row (`tr`) is moved to the `thead` element. All cells in the row are changed to table header cell elements (`th`).
 +
 For example:
 +
-```html
-+
-|===
-| &nbsp; | &nbsp;
-
-| &nbsp;
-| &nbsp;
-|===
-+
-```
+[source, html]
+----
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+----
 
 * `auto` - Finds the first existing header row in the table and uses the same structure. If no other table header row exists, the `section` header type will be applied.
 

@@ -21,7 +21,8 @@ The basic dialog type is a *panel* dialog. A panel is a container for <<panelcom
 }
 ----
 
-=== tabpanel
+[[tabpanel]]
+=== `tabpanel`
 
 A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different <<panelcomponents,panel components>>, allowing for complex dialogs.
 
@@ -91,7 +92,8 @@ const dialogConfig = {
     console.log(details.oldTabName);
 
  // switch back to the old tab
- dialogApi.showTab(details.oldTabName);   } }; ```
+ dialogApi.showTab(details.oldTabName);   } }; 
+```
 
 == Panel components
 
@@ -455,6 +457,7 @@ An *input* is a composite component that renders a label and a single line text 
 }
 ----
 
+[[inputmode]]
 ===== inputMode
 
 include::partial$misc/requires_5_1v.adoc[]
@@ -465,7 +468,8 @@ Use `inputMode` to set the type of onscreen keyboard provided on mobile devices 
 
 For a list of valid input modes, see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode[MDN Web Docs - inputmode].
 
-==== listbox
+[[listbox]]
+==== `listbox`
 
 include::partial$misc/requires_5_5v.adoc[]
 

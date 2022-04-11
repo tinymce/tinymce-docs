@@ -6,7 +6,7 @@
 
 This section provides information on how to manually create a new skin to customize the appearance of {productname} {productmajorversion}.
 
-The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[\http://skin.tiny.cloud/].
+The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[http://skin.tiny.cloud/].
 
 == Prerequisites
 
@@ -44,7 +44,7 @@ You should now be able to open a web browser and point it to the url displayed i
 
 The development environment is set up and ready to work.
 
-image::{baseurl}/images/SDKforsilver.png[{productname} skin SDK for Silver theme]
+image::SDKforsilver.png[{productname} skin SDK for Silver theme]
 
 If you just need to build the skins without launching a web server, run:
 
@@ -79,12 +79,13 @@ NOTE: The skin *only* changes the visual presentation of the UI and *not* the pl
 
 Your skin.less file should now look like this:
 
-```
+[source, less]
+----
 /**
  * Copyright (c) Tiny Technologies, Inc. All rights reserved.
  * Licensed under the LGPL or a commercial license.
  * For LGPL see License.txt in the project root for license information.
- * For commercial licenses see \https://www.tiny.cloud/
+ * For commercial licenses see https://www.tiny.cloud/
  */
 
 @import 'src/less/theme/theme';
@@ -94,10 +95,10 @@ Your skin.less file should now look like this:
 //
 
 @background-color: red;
-```
+----
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
-image::{baseurl}/images/SDKforsilverCustomExample.png[{productname} skin SDK for Silver theme]
+image::SDKforsilverCustomExample.png[{productname} skin SDK for Silver theme]
 
 This is how you skin {productname}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
@@ -114,10 +115,10 @@ To update the appearance of the content within the editor, such as headings, quo
 == Moving the skin into TinyMCE
 
 . Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production {productname} folder.
-. Update the {productname} init function with the link:{baseurl}/configure/editor-appearance/#skin[skin] option and/or the link:{baseurl}/configure/content-appearance/#content_css[content_css] option.
+. Update the {productname} init function with the xref:configure/editor-appearance.adoc#skin[skin] option and/or the xref:configure/content-appearance.adoc#content_css[content_css] option.
 
-For more information on how to specify the location of the skin file, see link:{baseurl}/configure/editor-appearance/#skin_url[this] section.
+For more information on how to specify the location of the skin file, see xref:configure/editor-appearance.adoc#skin_url[this] section.
 
 == Modifying the icons
 
-For information on adding custom icons, see: link:{baseurl}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
+For information on adding custom icons, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].

@@ -1,12 +1,14 @@
+[[emoticons_database]]
 === `emoticons_database`
 
 include::partial$misc/requires_5_6v.adoc[]
 
 This option provides the ability to specify which built-in emoji database to use when rendering emojis in the editor. The following built-in emoji databases are available:
+
 * `emojis` - This database uses Unicode characters to represent emoji in the editor content.
 * `emojiimages` - This database uses images provided by the Twitter Emoji (twemoji) project to represent emoji in the editor content.
 
-:feature: ``emojiimages`` database
+:feature: pass:q[``emojiimages`` database]
 :third_party_product: Twitter Emoji (twemoji) graphics
 :license_agreement_name: CC-BY 4.0
 include::partial$misc/under-license.adoc[]

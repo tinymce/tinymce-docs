@@ -31,17 +31,17 @@ If you'd rather download and install the script manually:
 . Unzip the package and move the `'path/to/{prodnamecode}/'` directory into the django project.
 . Add a URL path to the `{prodnamecode}` directory.
 . Add the relevant configuration setting:
- ** If you do not need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = False`), add `TINYMCE_JS_URL` to the project's `settings.py` file pointing to `tinymce/tinymce.min.js`.
+** If you do not need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = False`), add `TINYMCE_JS_URL` to the project's `settings.py` file pointing to `tinymce/tinymce.min.js`.
   Such as:
 +
 [source, py]
 ----
   TINYMCE_JS_URL = os.path.join(MEDIA_URL, "path/to/tinymce/tinymce.min.js")
   TINYMCE_COMPRESSOR = False
- `
+----
 
- ** If you do need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = TRUE`), add `TINYMCE_JS_ROOT` to the project's `settings.py` file pointing to the `tinymce/` root directory.
- Such as:
+** If you do need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = TRUE`), add `TINYMCE_JS_ROOT` to the project's `settings.py` file pointing to the `tinymce/` root directory.
+Such as:
 +
 [source, py]
 ----

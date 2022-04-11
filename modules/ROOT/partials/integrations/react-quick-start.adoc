@@ -1,7 +1,7 @@
 == TinyMCE React integration quick start guide
 
 The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects.
-This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {productname} editor based on our link:{baseurl}/demo/basic-example/[Basic example].
+This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
 
 For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 
@@ -11,10 +11,10 @@ This procedure requires:
 
 * https://nodejs.org/[Node.js (and npm)].
 * Access to `tinymce.min.js` on either:
- ** link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}].
+ ** xref:cloud-deployment-guide/editor-and-features.adoc[{cloudname}].
  ** {productname} Self-hosted. See:
-  *** link:{baseurl}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Installing {productname} - Package Managers].
-  *** link:{baseurl}/general-configuration-guide/advanced-install/#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
+  *** xref:general-configuration-guide/advanced-install.adoc#packagemanagerinstalloptions[Installing {productname} - Package Managers].
+  *** xref:general-configuration-guide/advanced-install.adoc#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
 
 === Procedure
 
@@ -47,39 +47,39 @@ import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
 export default function App() {
-   const editorRef = useRef(null);
-   const log = () => {
-     if (editorRef.current) {
-       console.log(editorRef.current.getContent());
-     }
-   };
-   return (
-     <>
-       <Editor
-         onInit={(evt, editor) => editorRef.current = editor}
-         initialValue="<p>This is the initial content of the editor.</p>"
-         init={{
-           height: 500,
-           menubar: false,
-           plugins: [
-             'advlist autolink lists link image charmap print preview anchor',
-             'searchreplace visualblocks code fullscreen',
-             'insertdatetime media table paste code help wordcount'
-           ],
-           toolbar: 'undo redo | formatselect | ' +
-           'bold italic backcolor | alignleft aligncenter ' +
-           'alignright alignjustify | bullist numlist outdent indent | ' +
-           'removeformat | help',
-           content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-         }}
-       />
-       <button onClick={log}>Log editor content</button>
-     </>
-   );
- }
+  const editorRef = useRef(null);
+  const log = () => {
+    if (editorRef.current) {
+      console.log(editorRef.current.getContent());
+    }
+  };
+  return (
+    <>
+      <Editor
+        onInit={(evt, editor) => editorRef.current = editor}
+        initialValue="<p>This is the initial content of the editor.</p>"
+        init={{
+          height: 500,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+          toolbar: 'undo redo | formatselect | ' +
+          'bold italic backcolor | alignleft aligncenter ' +
+          'alignright alignjustify | bullist numlist outdent indent | ' +
+          'removeformat | help',
+          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        }}
+      />
+      <button onClick={log}>Log editor content</button>
+    </>
+  );
+}
 ----
 +
-This JavaScript file will create the class `App` containing a {productname} editor configured to replicate the example on the link:{baseurl}/demo/basic-example/[Basic example page].
+This JavaScript file will create the class `App` containing a {productname} editor configured to replicate the example on the xref:demo/basic-example.adoc[Basic example page].
 
 . Provide access to {productname} using either {cloudname} or by self-hosting {productname}.
  ** *{cloudname}*
@@ -114,10 +114,10 @@ variable `process.env.PUBLIC_URL`, such as:
 +
 [source,jsx]
 ----
-<Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}>
+<Editor tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}></Editor>
 ----
 
-  *** Deploy {productname} independent of the React application with a script tag
+*** Deploy {productname} independent of the React application with a script tag
 +
 An alternative method is to add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
@@ -136,13 +136,13 @@ and referenced using the URL `%PUBLIC_URL%/tinymce/tinymce.min.js`, such as:
 <script src="%PUBLIC_URL%/tinymce/tinymce.min.js"></script>
 ----
 +
-For information on self-hosting {productname}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].
 
-  *** *Bundling {productname} with the React application using a module loader*
+*** *Bundling {productname} with the React application using a module loader*
 +
 {companyname} does not recommend bundling `tinymce` and `tinymce-react` with a module loader. Bundling these packages can be complex and error prone.
 +
-To bundle {productname} using a module loader (such as Webpack and Browserify), see: link:{baseurl}/advanced/usage-with-module-loaders/[Usage with module loaders].
+To bundle {productname} using a module loader (such as Webpack and Browserify), see: xref:advanced/usage-with-module-loaders/index.adoc[Usage with module loaders].
 +
 Example of bundling:
 +
@@ -234,5 +234,5 @@ NOTE: Additional configuration is required to deploy the application outside the
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 * For information on customizing:
- ** {productname}, see: link:{baseurl}/general-configuration-guide/basic-setup/[Basic setup].
+ ** {productname}, see: xref:general-configuration-guide/basic-setup.adoc[Basic setup].
  ** The React application, see: https://create-react-app.dev/docs/getting-started[Create React App] or https://reactjs.org/docs/getting-started.html[the React documentation].

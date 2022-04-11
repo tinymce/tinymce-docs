@@ -4,43 +4,51 @@
 +
 _File:_ `BlazorApp.csproj`
 +
-```xml+++<ItemGroup>++++++<PackageReference Include="TinyMCE.Blazor" Version="X.Y.Z">++++++</PackageReference>++++++</ItemGroup>+++
-+
-```
+[source, xml]
+----
+<ItemGroup>
+  <PackageReference Include="TinyMCE.Blazor" Version="X.Y.Z"></PackageReference>
+</ItemGroup>
+----
 
 . Add the `tinymce-blazor.js` script to `Pages/_Host.cshtml`, for example:
 +
 [source, html]
 ----
- <script src="_framework/blazor.server.js"></script>
- <script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
+<script src="_framework/blazor.server.js"></script>
+<script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
 ----
 
 . Add the `Editor` component to a page by either:
- ** Using the `using` directive
+** Using the `using` directive
 +
-```cs
-  @using TinyMCE.Blazor+++<Editor>++++++</Editor>+++
+[source, cs]
+----
+  @using TinyMCE.Blazor
+  <Editor></Editor>
+----
 +
-```
 
- ** Using the full component and package name
+** Using the full component and package name
 +
-```cs+++<TinyMCE.Blazor.Editor>++++++</TinyMCE.Blazor.Editor>+++
+[source, cs]
+----
+<TinyMCE.Blazor.Editor></TinyMCE.Blazor.Editor>
+----
 +
-```
 
 +
 For example:
 +
 _File:_ `Pages/Index.razor`
 +
-```cs
- @page "/"
- @using TinyMCE.Blazor
+[source, cs]
+----
+@page "/"
+@using TinyMCE.Blazor
+
+<h1>Hello, world!</h1>
+Welcome to your new app.
+<Editor></Editor>
+----
 +
-= Hello, world!
-+
-Welcome to your new app.+++<Editor>++++++</Editor>+++
-+
-```

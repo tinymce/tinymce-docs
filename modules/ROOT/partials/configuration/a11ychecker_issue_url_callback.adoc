@@ -1,6 +1,7 @@
+[[a11ychecker_issue_url_callback]]
 === `a11ychecker_issue_url_callback`
 
-The `a11ychecker_issue_url_callback` option is used to change the target URL for the "Click for more info" button (image:{baseurl}/images/icons/help.svg[help icon - a question mark inside a circle]) in the Accessibility Checker dialog. By default, the "more info" links will point to `{url}/docs/plugins/a11ychecker/#<ruleId>`, such as `{url}/docs/plugins/a11ychecker/#D1`. This option can be used to set the target URL to a page or pages outside {url}/docs/.
+The `a11ychecker_issue_url_callback` option is used to change the target URL for the "Click for more info" button (image:icons/help.svg[help icon - a question mark inside a circle]) in the Accessibility Checker dialog. By default, the "more info" links will point to `{url}/docs/plugins/a11ychecker/#<ruleId>`, such as `{url}/docs/plugins/a11ychecker/#D1`. This option can be used to set the target URL to a page or pages outside {url}/docs/.
 
 *Type:* `Function`
 
@@ -8,7 +9,7 @@ The `a11ychecker_issue_url_callback` option is used to change the target URL for
 
 ==== Example: Using `a11ychecker_issue_url_callback`
 
-This example shows how to change the link for the "Click for more info" button (image:{baseurl}/images/icons/help.svg[help icon - a question mark inside a circle]) on the Accessibility Checker dialog to point to anchors at `www.example.com/tinymce/a11ychecker/more_info`.
+This example shows how to change the link for the "Click for more info" button (image:icons/help.svg[help icon - a question mark inside a circle]) on the Accessibility Checker dialog to point to anchors at `www.example.com/tinymce/a11ychecker/more_info`.
 
 [source, js]
 ----

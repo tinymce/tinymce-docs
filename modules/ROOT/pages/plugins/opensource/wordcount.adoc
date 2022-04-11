@@ -29,13 +29,15 @@ The {pluginname} plugin provides the following JavaScript command.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
 
+[[api]]
 == API
 
 The Word Count plugin exposes an API for retrieving the word and character count of either the whole document or the current editor selection. Following is an example of how to retrieve each property.
 
 === Example: Using the `wordcount` plugin APIs
 
-```js
+[source, js]
+----
 var wordcount = tinymce.activeEditor.plugins.wordcount;
 
 console.log(wordcount.body.getWordCount());
@@ -45,4 +47,4 @@ console.log(wordcount.body.getCharacterCountWithoutSpaces());
 console.log(wordcount.selection.getWordCount());
 console.log(wordcount.selection.getCharacterCount());
 console.log(wordcount.selection.getCharacterCountWithoutSpaces());
-```
+----

@@ -8,13 +8,13 @@
 
 include::partial$misc/premiumplugin.adoc[]
 
-*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to link:{baseurl}/plugins/premium/tinymcespellchecker/#spellchecker_language[this] section.
+*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to xref:plugins/premium/tinymcespellchecker.adoc#spellchecker_language[this] section.
 
 liveDemo::spellcheckerpro[]
 
 == Cloud Installation
 
-To enable the {productname} Enterprise Spellchecking plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features[{cloudname}]:
+To enable the {productname} Enterprise Spellchecking plugin with xref:cloud-deployment-guide/editor-and-features.adoc[{cloudname}]:
 
 . If configured, disable the `spellchecker` plugin provided with {productname}, by removing it from the `plugins` list.
 . Add `tinymcespellchecker` to the `plugins` list.
@@ -39,7 +39,7 @@ To enable the {productname} Enterprise Spellchecking plugin:
 . If configured, disable the `spellchecker` plugin provided with {productname}, by removing it from the `plugins` list.
 . Add `tinymcespellchecker` to the `plugins` list.
 
-For information on installing the server-side component for spell checking, please see the link:{baseurl}/enterprise/server/[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the xref:enterprise/server/index.adoc[server-side component installation guide].
 
 === Example: TinyMCE Self-hosted Installation
 
@@ -65,7 +65,7 @@ include::partial$configuration/spellchecker_dialog.adoc[]
 
 include::partial$configuration/spellchecker_language.adoc[]
 
-include::partial$misc/spellchecker-languages.adoc[]
+include::partial$misc/spellchecker-languages.adoc[leveloffset=+2]
 
 include::partial$configuration/spellchecker_languages.adoc[]
 
@@ -77,22 +77,20 @@ include::partial$plugins/tinymcespellchecker-content-langs.adoc[]
 
 include::partial$configuration/spellchecker_select_languages.adoc[]
 
-// Bookmark for deprecated option name
-
-+++<a class="anchor" id="spellchecker_whitelist">++++++</a>+++
-
 include::partial$configuration/spellchecker_ignore_list.adoc[]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
+[[commands]]
 == Commands
 
 The Spell Checker Pro plugin provides the following commands.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[]
 
+[[events]]
 == Events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
@@ -117,6 +115,7 @@ tinymce.init({
 });
 ----
 
+[[spellcheckerignoreallevent]]
 === SpellcheckerIgnoreAll event
 
 This event triggers when the user selects *Ignore All* on a misspelled word.
@@ -221,6 +220,7 @@ tinymce.init({
 });
 ----
 
+[[apis]]
 == APIs
 
 The {pluginname} plugin provides the following APIs.

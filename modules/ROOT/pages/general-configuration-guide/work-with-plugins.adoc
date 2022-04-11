@@ -4,7 +4,7 @@
 :keywords: plugin
 :title_nav: Using plugins to extend TinyMCE
 
-For most developers, the real power of {productname}'s functionality is found in its plugins. link:{baseurl}/plugins/[Plugins] either extend default editor functionality or add new functionality. For example, the link:{baseurl}/plugins/opensource/advlist/[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{baseurl}/plugins/opensource/code/[Code] plugin adds entirely new functionality.
+For most developers, the real power of {productname}'s functionality is found in its plugins. xref:plugins/index.adoc[Plugins] either extend default editor functionality or add new functionality. For example, the xref:plugins/opensource/advlist.adoc[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the xref:plugins/opensource/code.adoc[Code] plugin adds entirely new functionality.
 
 Because most people install {productname} via {cloudname} or by downloading a package, they mistakenly think plugins are part of the {productname} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{gettiny}/custom-builds/[custom package] download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {productname} team.
 
@@ -14,7 +14,7 @@ NOTE: You must include the plugin in your download options to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local {productname} instance up and running.
 
-[,html]
+[source ,html, subs="attributes+"]
 ----
 <!DOCTYPE html>
 <html>
@@ -41,11 +41,11 @@ The code we want to work with is in the second `<script>` element. Specifically 
 
 === Code plugin
 
-The link:{baseurl}/plugins/opensource/code/[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
+The xref:plugins/opensource/code.adoc[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
 
 The first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is going to be ``'code'``for this example.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
@@ -57,7 +57,7 @@ Add `plugins: 'code'` to your `tinymce.html` file, save the file, refresh your b
 
 Let's also add a toolbar control so that our users can more easily activate this functionality.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
@@ -66,11 +66,11 @@ tinymce.init({
 });
 ----
 
-Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the link:../basic-setup/[Basic setup], so if this behavior surprises you, please re-read that section.
+Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the xref:general-configuration-guide/basic-setup.adoc[Basic setup], so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
@@ -86,11 +86,11 @@ Even if you found the above example quite easy, hang with us we'll show you how 
 
 === Advanced List
 
-The link:{baseurl}/plugins/opensource/advlist/[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
+The xref:plugins/opensource/advlist.adoc[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
 As before, let's start by adding the `plugins` key and giving it the Advanced List value of `'advlist'`.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -108,11 +108,11 @@ The `advlist` plugin has two options which provide more granular control of list
 
 Many plugin options have more than one possible value. The `advlist_bullet_styles` option has possible values of `circle`, `disc`, and `square`. While the `advlist_number_styles` has possible values of `lower-alpha`, `lower-greek`, `lower-roman`, `upper-alpha`, and `upper-roman`.
 
-Don't worry if you can't remember all these values. The link:{baseurl}/plugins/[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
+Don't worry if you can't remember all these values. The xref:plugins/index.adoc[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
 
 Let's add the Advanced List options and give them some of the available options.
 
-[,js]
+[source ,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -126,7 +126,7 @@ tinymce.init({
 
 In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for {productname} to work).
 
-As we noted at the start {productname} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the link:{baseurl}/plugins/[plugins] and link:{baseurl}/configure/[configuration options].
+As we noted at the start {productname} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the xref:plugins/index.adoc[plugins] and xref:configure/index.adoc[configuration options].
 
 == Top 10 plugins
 
@@ -137,42 +137,42 @@ Customizing {productname} with the default plugins is that easy. There are 60 pl
 
 | *1*
 | Image
-| link:{baseurl}/plugins/opensource/image/[image]
+| xref:plugins/opensource/image.adoc[image]
 
 | *2*
 | Paste
-| link:{baseurl}/plugins/opensource/paste/[paste]
+| xref:plugins/opensource/paste.adoc[paste]
 
 | *3*
 | Code
-| link:{baseurl}/plugins/opensource/code/[code]
+| xref:plugins/opensource/code.adoc[code]
 
 | *4*
 | Table
-| link:{baseurl}/plugins/opensource/table/[table]
+| xref:plugins/opensource/table.adoc[table]
 
 | *5*
 | Link
-| link:{baseurl}/plugins/opensource/link/[link]
+| xref:plugins/opensource/link.adoc[link]
 
 | *6*
 | Image Tools
-| link:{baseurl}/plugins/opensource/imagetools/[imagetools]
+| xref:plugins/opensource/imagetools.adoc[imagetools]
 
 | *7*
 | Advanced Code
-| link:{baseurl}/plugins/premium/advcode/[advcode]
+| xref:plugins/premium/advcode.adoc[advcode]
 
 | *8*
 | Media
-| link:{baseurl}/plugins/opensource/media/[media]
+| xref:plugins/opensource/media.adoc[media]
 
 | *9*
 | PowerPaste
-| link:{baseurl}/plugins/premium/powerpaste/[powerpaste]
+| xref:plugins/premium/powerpaste.adoc[powerpaste]
 
 | *10*
 | Code Sample
-| link:{baseurl}/plugins/opensource/codesample/[codesample]
+| xref:plugins/opensource/codesample.adoc[codesample]
 |===
 

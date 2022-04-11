@@ -73,11 +73,11 @@ include::partial$configuration/table_style_by_css.adoc[]
 
 include::partial$configuration/table_header_type.adoc[]
 
-=== Examples of various table setups
+== Examples of various table setups
 
 Here are some examples of configuration for common setups.
 
-==== No default attributes or styles on tables
+=== No default attributes or styles on tables
 
 [source, js]
 ----
@@ -89,7 +89,7 @@ tinymce.init({
 });
 ----
 
-==== Pixel based resizing
+=== Pixel based resizing
 
 [source, js]
 ----
@@ -100,7 +100,7 @@ tinymce.init({
 });
 ----
 
-==== Percentage based resizing
+=== Percentage based resizing
 
 [source, js]
 ----
@@ -111,12 +111,13 @@ tinymce.init({
 });
 ----
 
-NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{baseurl}/configure/content-appearance/#textcoloroptions[colorpicker].
+NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom xref:configure/content-appearance.adoc#text_color[colorpicker].
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
+[[api]]
 == API
 
 |===
@@ -150,10 +151,12 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 tinymce.activeEditor.plugins.table.insertTable(2, 3);
 ----
 
+[[events]]
 == Events
 
 include::partial$events/table-events.adoc[]
 
+[[commands]]
 == Commands
 
 The Table plugin provides the following JavaScript commands.

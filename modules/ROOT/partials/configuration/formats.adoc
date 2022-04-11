@@ -26,6 +26,7 @@ bold: [
 
 Similar elements and styles are merged by default to reduce the output HTML size. So for example, if a font size and font face are selected for a word, it merges these two styles into one `span` element instead of one `span` for *each format type*.
 
+[[built-informats]]
 === Built-in formats
 
 include::partial$configuration/builtinformats.adoc[]
@@ -393,6 +394,7 @@ tinymce.init({
 });
 ----
 
+[[exampleofusageoftheformatsoption]]
 === Example of usage of the formats option
 
 This example overrides some of the built-in formats and tells {productname} to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
@@ -448,6 +450,7 @@ tinymce.activeEditor.formatter.register('custom_format', { inline: 'span', style
 tinymce.activeEditor.formatter.apply('custom_format', { value: 'red' });
 ----
 
+[[removingaformat]]
 === Removing a format
 
 Use the `removeformat` option to specify how the `clear formatting` feature should work in the editor.

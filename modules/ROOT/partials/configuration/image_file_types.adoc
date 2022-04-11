@@ -1,6 +1,7 @@
+[[image_file_types]]
 === `image_file_types`
 
-This option configures which image file formats will be recognized and placed in an `img` element by the <<smart_paste,`smart_paste`>> functionality when content is pasted into the editor.
+This option configures which image file formats will be recognized and placed in an `img` element by the xref:smart_paste[`smart_paste`] functionality when content is pasted into the editor.
 
 *Type:* `String`
 
@@ -10,7 +11,7 @@ This option configures which image file formats will be recognized and placed in
 
 ==== Example: Using `image_file_types`
 
-[source, js]
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

@@ -60,6 +60,7 @@ There are three types of menu items in {productname} {productmajorversion}:
 * Nested menu items
 * Toggle menu items
 
+[[basicmenuitems]]
 === Basic menu items
 
 A basic menu item triggers its `onAction` function when clicked.
@@ -141,6 +142,7 @@ setup: function(editor) {
 });
 ```
 
+[[nestedmenuitems]]
 === Nested menu items
 
 A nested menu item is a menu item with a submenu. Registering a submenu this way allows it to be reused in menubar menus and toolbar button menus without having to define the submenu twice. The submenu can contain any combination of basic menu items and toggle menu items.
@@ -221,6 +223,7 @@ setup: function(editor) {
 });
 ```
 
+[[togglemenuitems]]
 === Toggle menu items
 
 A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the right of the menu item's text when it is `on`.

@@ -134,6 +134,7 @@ ephox {
 }
 ----
 
+[[regularexpressionssupport]]
 ==== Regular Expressions support
 
 include::partial$misc/requires_jsscwar_230v.adoc[]
@@ -152,6 +153,7 @@ ephox {
 
 For a list of valid constructs, see: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum[Java 8: `java.util.regex` - Summary of regular-expression constructs].
 
+[[allowed-originssame-originoptional]]
 ==== `allowed-origins.same-origin` (optional)
 
 include::partial$misc/requires_jsscwar_230v.adoc[]
@@ -172,6 +174,7 @@ ephox {
 }
 ----
 
+[[allowed-originsignore-portoptional]]
 ==== `allowed-origins.ignore-port` (optional)
 
 include::partial$misc/list_ignore_port_service_versions.adoc[]
@@ -299,6 +302,7 @@ ephox {
 }
 ----
 
+[[alternativehttptimeoutsettings]]
 ==== Alternative http timeout settings
 
 include::partial$misc/requires_jsscwar_230v.adoc[]
@@ -354,6 +358,7 @@ ephox {
 
 == Hyperlinking service settings
 
+[[link-checkingoptional]]
 === `link-checking` (optional)
 
 The Link checker has three configurable settings:
@@ -438,10 +443,12 @@ For information on creating custom dictionaries, see: link:{baseurl}/enterprise/
 
 include::partial$misc/custom-dictionaries-path.adoc[]
 
+[[dynamic-custom-dictionariesoptional]]
 ==== `dynamic-custom-dictionaries` (optional)
 
 include::partial$misc/dynamic-custom-dictionaries.adoc[]
 
+[[num-incorrect-words-in-suggestions-request-limitoptional]]
 ==== `num-incorrect-words-in-suggestions-request-limit` (optional)
 
 include::partial$misc/num-incorrect-words-in-suggestions-request-limit.adoc[]

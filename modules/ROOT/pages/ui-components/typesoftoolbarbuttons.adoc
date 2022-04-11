@@ -68,6 +68,7 @@ NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`
 | Sets the button's disabled state.
 |===
 
+[[basicbuttonexampleandexplanation]]
 === Basic button example and explanation
 
 The following example adds two buttons to the toolbar:
@@ -399,6 +400,7 @@ liveDemo::custom-toolbar-group-button[tab="js" ]
 
 The example above configures a custom *alignment* group toolbar button. When clicked the button will show a floating shelf containing the align left, center, right and justify toolbar buttons.
 
+[[onsetupexplanation]]
 == `onSetup` explanation
 
 include::partial$release-notes/onSetup.adoc[]

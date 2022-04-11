@@ -11,77 +11,84 @@ NOTE: For support related to migration, please contact https://support.tiny.clou
 
 == Contents
 
-* <<editor-core,Editor-Core>>
-* <<themes,Themes>>
-* <<userinterfacecomponents,User Interface components>>
-* <<plugins,Plugins>>
+* xref:editor-core[Editor-Core]
+* xref:themes[Themes]
+* xref:userinterfacecomponents[User Interface components]
+* xref:plugins[Plugins]
 
+[[editor-core]]
 == Editor-Core
 
 To migrate the core TinyMCE editor to TinyMCE 5, review the following sections:
 
-* <<clouddelivery,Cloud Delivery>>.
-* <<editorchangestomethods,Editor: Changes to Methods>>.
-* <<editorchangestosettings,Editor: Changes to Settings>>.
-* <<browsersupportbackwardcompatibilityorquirksmode,Browser support: backward compatibility or quirks mode>>.
+* xref:clouddelivery[Cloud Delivery].
+* xref:editorchangestomethods[Editor: Changes to Methods].
+* xref:editorchangestosettings[Editor: Changes to Settings].
+* xref:browsersupportbackwardcompatibilityorquirksmode[Browser support: backward compatibility or quirks mode].
 
+[[clouddelivery]]
 === Cloud Delivery
 
 To use TinyMCE 5 from the {cloudname}, include this script in your HTML page. Replace 'no-api-key' with link:{accountsignup}[your API key].
 
-[source, html]
+[source, html, subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
-For information on using the latest development and testing builds, see: link:{baseurl}/cloud-deployment-guide/editor-plugin-version/[Cloud deployment guide - Specify editor & plugin versions].
+For information on using the latest development and testing builds, see: xref:cloud-deployment-guide/editor-plugin-version.adoc[Cloud deployment guide - Specify editor & plugin versions].
 
+[[editorchangestomethods]]
 === Editor: Changes to API Methods
 
-All TinyMCE 4 API methods for creating UI components have been removed. New methods have been added for TinyMCE 5. For information on creating and customizing UI components, see: link:{baseurl}/ui-components/[User interface components].
+All TinyMCE 4 API methods for creating UI components have been removed. New methods have been added for TinyMCE 5. For information on creating and customizing UI components, see: xref:ui-components/index.adoc[User interface components].
 
+[[editorchangestosettings]]
 === Editor: Changes to Settings
 
 TinyMCE 5 includes the following changes to editor-core settings:
 
-* <<neweditorsettings,New Editor settings>>
-* <<changededitorsettings,Changed Editor settings>>
-* <<removededitorsettings,Removed Editor settings>>
-* <<deprecatededitorsettings,Deprecated Editor settings>>
+* xref:neweditorsettings[New Editor settings]
+* xref:changededitorsettings[Changed Editor settings]
+* xref:removededitorsettings[Removed Editor settings]
+* xref:deprecatededitorsettings[Deprecated Editor settings]
 
+[[neweditorsettings]]
 ==== New Editor settings
 
 |===
 | *Setting* | *Description*
 
-| link:{baseurl}/configure/content-appearance/#custom_colors[`custom_colors`]
+| xref:configure/content-appearance.adoc#custom_colors[`custom_colors`]
 | *custom_colors* is `true` by default. Setting `custom_colors: false` removes the custom color picker in the color swatch.
 |===
 
+[[changededitorsettings]]
 ==== Changed Editor settings
 
 |===
 | *Setting* | *TinyMCE 4* | *TinyMCE 5*
 
-| link:{baseurl}/configure/editor-appearance/#height[`height`]
+| xref:configure/editor-appearance.adoc#height[`height`]
 | Set the height of the editable area of the editor. +
 Supported number values.
 | Sets the overall height of the editor, including the menubar, toolbars, and statusbar. +
 Supports numbers and strings. Assumes strings are a valid CSS value for height.
 
-| link:{baseurl}/configure/editor-appearance/#width[`width`]
+| xref:configure/editor-appearance.adoc#width[`width`]
 | Supported number values.
 | Supports numbers and strings. Assumes strings are a valid CSS value for width.
 
-| link:{baseurl}/configure/editor-appearance/#resize[`resize`]
+| xref:configure/editor-appearance.adoc#resize[`resize`]
 | `true` by default.
 | `true` by default if the `autoresize` plugin is not enabled. +
 `false` by default if the `autoresize` plugin is enabled.
 |===
 
+[[removededitorsettings]]
 ==== Removed Editor settings
 
-* The `file_browser_callback` option has been removed for TinyMCE 5. The link:{url}/docs-4x/configure/file-image-upload/#file_browser_callback[`file_browser_callback`] option was used to add a file or image browser to TinyMCE. This option was deprecated in version 4.1.0 and replaced by link:{baseurl}/configure/file-image-upload/#file_picker_callback[`file_picker_callback`].
+* The `file_browser_callback` option has been removed for TinyMCE 5. The link:{url}/docs-4x/configure/file-image-upload/#file_browser_callback[`file_browser_callback`] option was used to add a file or image browser to TinyMCE. This option was deprecated in version 4.1.0 and replaced by xref:configure/file-image-upload.adoc#file_picker_callback[`file_picker_callback`].
 * link:{url}/docs-4x/configure/editor-appearance/#insert_button_items[`insert_button_items`] - the `insert_button_items` option was used to specify the toolbar items to display in the `insert` toolbar button menu. This toolbar button has been removed from TinyMCE 5. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
 
 [source, js]
@@ -103,7 +110,7 @@ tinymce.init({
 
 ===== Migrating from `file_browser_callback` to `file_picker_callback`
 
-link:{baseurl}/configure/file-image-upload/#file_picker_callback[`file_picker_callback`] provides a callback function, removing the requirement for an additional function to manually find and update the element or fire events. `file_picker_callback` can also update other fields by passing a second argument to update other fields in the dialog. For information on using `file_picker_callback`, see: link:{baseurl}/configure/file-image-upload/#file_picker_callback[Image & file upload options - `file_picker_callback`].
+xref:configure/file-image-upload.adoc#file_picker_callback[`file_picker_callback`] provides a callback function, removing the requirement for an additional function to manually find and update the element or fire events. `file_picker_callback` can also update other fields by passing a second argument to update other fields in the dialog. For information on using `file_picker_callback`, see: xref:configure/file-image-upload.adoc#file_picker_callback[Image & file upload options - `file_picker_callback`].
 
 The following example shows the difference between the removed `file_browser_callback` setting and `file_picker_callback`, assuming that `browseFiles` is a function that opens an external file picker.
 
@@ -137,54 +144,56 @@ tinymce.init({
 });
 ----
 
+[[browsersupportbackwardcompatibilityorquirksmode]]
 === Browser support: backward compatibility or quirks mode
 
 TinyMCE 5 does not support browsers running in Quirks or backward compatibility modes.
 
+[[deprecatededitorsettings]]
 ==== Deprecated Editor settings
 
-New platform detection functions were to the link:{baseurl}/api/tinymce/tinymce.env/[`Env` API] for {productname} 5.1, allowing for some older detection properties to be deprecated.
+New platform detection functions were to the xref:apis/tinymce.env.adoc[`Env` API] for {productname} 5.1, allowing for some older detection properties to be deprecated.
 
 |===
 | Deprecated Property | Alternative Property / Reason for Deprecation | Type | Original Description
 
 | `opera`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#browserisopera[`browser.isOpera()`] instead.
+| Use xref:apis/tinymce.env.adoc#browser.isOpera[`browser.isOpera()`] instead.
 | Boolean
 | Constant that is `true` if the browser is Opera.
 
 | `webKit`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#browserissafari[`browser.isSafari()`] or link:{baseurl}/api/tinymce/tinymce.env/#browserischrome[`browser.isChrome()`] instead.
+| Use xref:apis/tinymce.env.adoc#browser.isSafari[`browser.isSafari()`] or xref:apis/tinymce.env.adoc#browser.isChrome[`browser.isChrome()`] instead.
 | Boolean
 | Constant that is `true` if the browser is WebKit (Safari/Chrome).
 
 | `ie`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#browserversionmajor[`browser.version.major`] and link:{baseurl}/api/tinymce/tinymce.env/#browserisie[`browser.isIE()`] or link:{baseurl}/api/tinymce/tinymce.env/#browserisedge[`browser.isEdge()`] instead.
+| Use xref:apis/tinymce.env.adoc#properties[`browser.version.major`] and xref:apis/tinymce.env.adoc#browser.isIE[`browser.isIE()`] or xref:apis/tinymce.env.adoc#browser.isEdge[`browser.isEdge()`] instead.
 | Number
 | Constant that is greater than zero if the browser is IE.
 
 | `gecko`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#browserisfirefox[`browser.isFirefox()`] instead.
+| Use xref:apis/tinymce.env.adoc#browser.isFirefox[`browser.isFirefox()`] instead.
 | Boolean
 | Constant that is `true` if the browser is Gecko.
 
 | `mac`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#osisosx[`os.isOSX()`] or link:{baseurl}/api/tinymce/tinymce.env/#osisios[`os.isiOS()`] instead.
+| Use xref:apis/tinymce.env.adoc#os.isOSX[`os.isOSX()`] or xref:apis/tinymce.env.adoc#os.isiOS[`os.isiOS()`] instead.
 | Boolean
 | Constant that is `true` if the operating system is Mac OS.
 
 | `iOS`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#osisios[`os.isiOS()`] instead.
+| Use xref:apis/tinymce.env.adoc#os.isiOS[`os.isiOS()`] instead.
 | Boolean
 | Constant that is `true` if the operating system is iOS.
 
 | `android`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#osisandroid[`os.isAndroid()`] instead.
+| Use xref:apis/tinymce.env.adoc#os.isAndroid[`os.isAndroid()`] instead.
 | Boolean
 | Constant that is `true` if the operating system is android.
 
 | `desktop`
-| Use link:{baseurl}/api/tinymce/tinymce.env/#devicetypeisdesktop[`deviceType.isDesktop()`] instead.
+| Use xref:apis/tinymce.env.adoc#deviceType.isDesktop[`deviceType.isDesktop()`] instead.
 | Boolean
 | Constant that is `true` if the browser is running on a desktop device
 
@@ -209,6 +218,7 @@ New platform detection functions were to the link:{baseurl}/api/tinymce/tinymce.
 | Constant that is `true` if the browser supports `contentEditable=false` regions.
 |===
 
+[[themes]]
 == Themes
 
 Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now combined in a new responsive theme called *Silver*. The `Silver` theme is enabled by default and contains a set of configurable UI components that can be used to replace the functionality of the TinyMCE 4 themes: Modern, Inline, and Inlite.
@@ -220,20 +230,21 @@ Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now
 | Silver
 
 | link:{url}/docs-4x/general-configuration-guide/use-tinymce-inline/[Modern inline]
-| Silver link:{baseurl}/general-configuration-guide/use-tinymce-inline/[Inline]
+| Silver xref:general-configuration-guide/use-tinymce-inline.adoc[Inline]
 
 | link:{url}/docs-4x/themes/inlite/[Inlite(Distraction-free Editor)]
-| Silver (link:{baseurl}/general-configuration-guide/use-tinymce-distraction-free/[distraction-free] configuration)
+| Silver (xref:general-configuration-guide/use-tinymce-distraction-free.adoc[distraction-free] configuration)
 
 | link:{url}/docs-4x/themes/mobile/[Mobile]
-| Silver (link:{baseurl}/mobile/[responsive to small screen touch devices])
+| Silver (xref:mobile.adoc[responsive to small screen touch devices])
 |===
 
+[[inlitethemeremoved]]
 === Inlite theme removed
 
 The link:{url}/docs-4x/themes/inlite/[Inlite] theme has been removed from TinyMCE 5.
 
-The Inlite theme features are provided by the link:{baseurl}/plugins/opensource/quickbars/[Quick Toolbar (`quickbars`)] plugin for TinyMCE 5. The Inlite link:{url}/docs-4x/themes/inlite/#quicklink[`quicklink`] functionality is now provided by link:{baseurl}/ui-components/contextform/[Context Forms].
+The Inlite theme features are provided by the xref:plugins/opensource/quickbars.adoc[Quick Toolbar (`quickbars`)] plugin for TinyMCE 5. The Inlite link:{url}/docs-4x/themes/inlite/#quicklink[`quicklink`] functionality is now provided by xref:ui-components/contextform.adoc[Context Forms].
 
 The following is an example of a TinyMCE 5 quickbars configuration:
 [source, js]
@@ -246,11 +257,12 @@ The following is an example of a TinyMCE 5 quickbars configuration:
   plugins: [ 'quickbars' ]
 }
 ----
-This will provide a similar but improved link:{baseurl}/general-configuration-guide/use-tinymce-distraction-free/[distraction-free] experience in TinyMCE 5.
+This will provide a similar but improved xref:general-configuration-guide/use-tinymce-distraction-free.adoc[distraction-free] experience in TinyMCE 5.
 
+[[modernthemeremoved]]
 === Modern theme removed
 
-The link:{url}/docs-4x/themes/modern/[Modern] theme has been removed from TinyMCE 5.  The Modern theme's UI library link:{url}/docs-4x/api/tinymce.ui/[`tinymce.ui.*`] has also been removed. This change may impact integrations depending upon the level of customization.
+The link:{url}/docs-4x/themes/modern/[Modern] theme has been removed from TinyMCE 5.  The Modern theme's UI library link:{url}/docs-4x/api/tinymce.ui/[`+tinymce.ui.*+`] has also been removed. This change may impact integrations depending upon the level of customization.
 
 === Themes: Removed events
 
@@ -263,26 +275,29 @@ The link:{url}/docs-4x/themes/modern/[Modern] theme has been removed from TinyMC
 
 === Mobile theme
 
-The {productname} 4 link:{baseurl}/mobile/#thelegacymobiletheme[Mobile theme] was deprecated in {productname} 5.1. The mobile-optimized editor is loaded on mobile devices. For information on the new mobile experience, see: link:{baseurl}/mobile/[{productname} mobile].
+The {productname} 4 xref:mobile.adoc#thelegacymobiletheme[Mobile theme] was deprecated in {productname} 5.1. The mobile-optimized editor is loaded on mobile devices. For information on the new mobile experience, see: xref:mobile.adoc[{productname} mobile].
 
+[[userinterfacecomponents]]
 == User Interface components
 
 This section covers migrating UI components to TinyMCE 5
 
-* <<removeduiconfigurationsettings,Removed UI configuration settings>>
-* <<changeduiapimethodnamespace,Changed UI API method namespace>>
-* <<customtoolbarbuttons,Custom toolbar buttons>>
-* <<customcontexttoolbars,Custom context toolbars>>
-* <<custommenuitems,Custom menu items>>
-* <<customdialogs,Custom dialogs>>
-* <<customurldialogs,Custom URL dialogs>>
+* xref:removeduiconfigurationsettings[Removed UI configuration settings]
+* xref:changeduiapimethodnamespace[Changed UI API method namespace]
+* xref:customtoolbarbuttons[Custom toolbar buttons]
+* xref:customcontexttoolbars[Custom context toolbars]
+* xref:custommenuitems[Custom menu items]
+* xref:customdialogs[Custom dialogs]
+* xref:customurldialogs[Custom URL dialogs]
 
+[[removeduiconfigurationsettings]]
 === Removed UI configuration settings
 
 All inline style configurations have been removed in TinyMCE 5 in favor of modern CSS. This affects all TinyMCE 4 UI component configurations.
-link:{baseurl}/advanced/creating-a-skin/[Skins] should be used for custom styling in TinyMCE 5.
+xref:advanced/creating-a-skin.adoc[Skins] should be used for custom styling in TinyMCE 5.
 
 Removed style settings:
+
 * `flex`
 * `border`
 * `layout` - Use the TinyMCE 5 UI component settings to compose a custom layout.
@@ -292,9 +307,10 @@ Removed style settings:
 * `pack`
 * `no-wrap`
 
+[[changeduiapimethodnamespace]]
 === Changed UI API method namespace
 
-The API methods for registering UI components have moved. They are now part of link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/[`tinymce.editor.ui.registry`].
+The API methods for registering UI components have moved. They are now part of xref:apis/tinymce.editor.ui.registry.adoc[`tinymce.editor.ui.registry`].
 
 ==== Changed methods
 
@@ -303,21 +319,22 @@ The following methods have changed for TinyMCE 5:
 |===
 | *Old method* | *New method* | *Component*
 
-| link:{url}/docs-4x/api/tinymce/tinymce.editor/#addbutton[`editor.addButton(identifier, configuration)`]
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addbutton[`editor.ui.registry.addButton(identifier, configuration)`]
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/[Toolbar Buttons]
+| link:{url}/docs-4x/api/tinymce/tinymce.editor/#addButton[`editor.addButton(identifier, configuration)`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addButton[`editor.ui.registry.addButton(identifier, configuration)`]
+| xref:ui-components/typesoftoolbarbuttons.adoc[Toolbar Buttons]
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addcontexttoolbar[`editor.addContextToolbar: (name, spec)`]
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addcontexttoolbar[`editor.ui.registry.addContextToolbar`]
-| link:{baseurl}/ui-components/contexttoolbar/[Context toolbar]
+| xref:apis/tinymce.editor.ui.registry.adoc#addContextToolbar[`editor.ui.registry.addContextToolbar`]
+| xref:ui-components/contexttoolbar.adoc[Context toolbar]
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem[`editor.addMenuItem: (name, spec)`]
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addmenuitem[`editor.ui.registry.addMenuItem`]
-| link:{baseurl}/ui-components/menuitems/#basicmenuitems[Menu item]
+| xref:apis/tinymce.editor.ui.registry.adoc#addMenuItem[`editor.ui.registry.addMenuItem`]
+| xref:ui-components/menuitems.adoc#basicmenuitems[Menu item]
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addsidebar[`editor.addSidebar: (name, spec)`]
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addsidebar[`editor.ui.registry.addSidebar: (name, spec)`]
-| link:{baseurl}/ui-components/customsidebar/[Sidebar]
+| xref:apis/tinymce.editor.ui.registry.adoc#addSidebar[`editor.ui.registry.addSidebar: (name, spec)`]
+| xref:ui-components/customsidebar.adoc[Sidebar]
+
 |===
 
 ==== New methods
@@ -328,59 +345,60 @@ The following new methods have been added for creating and using new components:
 | *New method* | *Description*
 
 | `editor.ui.registry.addAutocompleter: (name, spec)`
-| link:{baseurl}/ui-components/autocompleter/[Autocompleter]
+| xref:ui-components/autocompleter.adoc[Autocompleter]
 
 | `editor.ui.registry.addContextForm: (name, spec)`
-| link:{baseurl}/ui-components/contextform/[Context form]
+| xref:ui-components/contextform.adoc[Context form]
 
 | `editor.ui.registry.addContextMenu: (name, spec)`
-| link:{baseurl}/ui-components/contextmenu/[Context menu]
+| xref:ui-components/contextmenu.adoc[Context menu]
 
 | `editor.ui.registry.addMenuButton: (name, spec)`
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#menubutton[Menu Button]
+| xref:ui-components/typesoftoolbarbuttons.adoc#menubutton[Menu Button]
 
 | `editor.ui.registry.addNestedMenuItem: (name, spec)`
-| link:{baseurl}/ui-components/menuitems/#nestedmenuitems[Nested menu item]
+| xref:ui-components/menuitems.adoc#nestedmenuitems[Nested menu item]
 
 | `editor.ui.registry.addSplitButton: (name, spec)`
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[Split Button]
+| xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[Split Button]
 
 | `editor.ui.registry.addToggleButton: (name, spec)`
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#togglebutton[Toggle Button]
+| xref:ui-components/typesoftoolbarbuttons.adoc#togglebutton[Toggle Button]
 
 | `editor.ui.registry.addToggleMenuItem: (name, spec)`
-| link:{baseurl}/ui-components/menuitems/#togglemenuitems[Toggle menu item]
+| xref:ui-components/menuitems.adoc#togglemenuitems[Toggle menu item]
 
 | `editor.ui.registry.addIcon: (name, svgData)`
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[Registers an SVG as an icon]
+| xref:apis/tinymce.editor.ui.registry.adoc#addIcon[Registers an SVG as an icon]
 
 | `editor.ui.registry.getAll: ()`
 | Returns an array of everything in the UI registry
 |===
 
+[[customtoolbarbuttons]]
 === Custom toolbar buttons
 
-The API methods for adding link:{baseurl}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons[Custom toolbar buttons] have changed for TinyMCE 5. The methods have been moved from link:{url}/docs-4x/api/tinymce/tinymce.editor/[`editor.*`] to link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/[`editor.ui.registry.*`]. The toolbar button type `listbox` has been removed and a toggle button type has been added. The button types available in TinyMCE 5 are:
+The API methods for adding xref:ui-components/toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Custom toolbar buttons] have changed for TinyMCE 5. The methods have been moved from link:{url}/docs-4x/api/tinymce/tinymce.editor/[`+editor.*+`] to xref:apis/tinymce.editor.ui.registry.adoc[`+editor.ui.registry.*+`]. The toolbar button type `listbox` has been removed and a toggle button type has been added. The button types available in TinyMCE 5 are:
 
-* link:{baseurl}/ui-components/typesoftoolbarbuttons/#basicbutton[Basic button]
-* link:{baseurl}/ui-components/typesoftoolbarbuttons/#togglebutton[Toggle button]
-* link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[Split button]
-* link:{baseurl}/ui-components/typesoftoolbarbuttons/#menubutton[Menu button]
+* xref:ui-components/typesoftoolbarbuttons.adoc#basicbutton[Basic button]
+* xref:ui-components/typesoftoolbarbuttons.adoc#togglebutton[Toggle button]
+* xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[Split button]
+* xref:ui-components/typesoftoolbarbuttons.adoc#menubutton[Menu button]
 
-link:{url}/docs-4x/demo/custom-toolbar-listbox/[Listbox] toolbar buttons are not supported in TinyMCE 5. The recommended replacement toolbar button type is the link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[*Split* button].
+link:{url}/docs-4x/demo/custom-toolbar-listbox/[Listbox] toolbar buttons are not supported in TinyMCE 5. The recommended replacement toolbar button type is the xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[*Split* button].
 
 ==== Changed toolbar button API methods
 
-The following methods for creating custom toolbar buttons have been moved for TinyMCE 5. For information on how to use the new methods, see: link:{baseurl}/ui-components/toolbarbuttons/[Toolbar buttons].
+The following methods for creating custom toolbar buttons have been moved for TinyMCE 5. For information on how to use the new methods, see: xref:ui-components/toolbarbuttons.adoc[Toolbar buttons].
 
 |===
 | *Old method* | *New method*
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addbutton[`editor.addButton()`]
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addbutton[`editor.ui.registry.addButton()`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addButton[`editor.ui.registry.addButton()`]
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem[`editor.addMenuItem()`]
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addmenuitem[`editor.ui.registry.addMenuItem()`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addMenuItem[`editor.ui.registry.addMenuItem()`]
 |===
 
 ==== New toolbar button API methods
@@ -391,16 +409,16 @@ New methods have been added for creating common types of toolbar buttons.
 | *New method* | *Description*
 
 | `editor.ui.registry.addToggleButton()`
-| link:{baseurl}/ui-components/menuitems/#togglemenuitems[Adds a custom toolbar toggle button].
+| xref:ui-components/menuitems.adoc#togglemenuitems[Adds a custom toolbar toggle button].
 
 | `editor.ui.registry.addSplitButton()`
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[Adds a custom toolbar split button].
+| xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[Adds a custom toolbar split button].
 
 | `editor.ui.registry.addMenuButton()`
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#menubutton[Adds a custom toolbar menu button].
+| xref:ui-components/typesoftoolbarbuttons.adoc#menubutton[Adds a custom toolbar menu button].
 |===
 
-For information on how to use these methods, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/[Types of toolbar buttons].
+For information on how to use these methods, see: xref:ui-components/typesoftoolbarbuttons.adoc[Types of toolbar buttons].
 
 ==== Changed Toolbar API methods
 
@@ -408,21 +426,22 @@ For information on how to use these methods, see: link:{baseurl}/ui-components/t
 | *Old method* | *New method* | *Description*
 
 | link:{url}/docs-4x/advanced/creating-a-custom-button/#basicbutton[`onclick`]
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#basicbutton[`onAction`]
-| `onclick` is now `onAction`. `onAction` now has an API to provide helper functions to the user. For an example migration, see: <<migratingonclicktoonaction,Migrating onclick to onAction>>.
+| xref:ui-components/typesoftoolbarbuttons.adoc#basicbutton[`onAction`]
+| `onclick` is now `onAction`. `onAction` now has an API to provide helper functions to the user. For an example migration, see: xref:migratingonclicktoonaction[Migrating onclick to onAction].
 
 | link:{url}/docs-4x/advanced/creating-a-custom-button/#buttonoptions[`cmd`]
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#basicbutton[`onAction`]
-| `cmd` has been removed as a configuration option. Commands should be executed through `onAction` now. For an example migration, see: <<migratingcmdtoonaction,Migrating cmd to onAction>>.
+| xref:ui-components/typesoftoolbarbuttons.adoc#basicbutton[`onAction`]
+| `cmd` has been removed as a configuration option. Commands should be executed through `onAction` now. For an example migration, see: xref:migratingcmdtoonaction[Migrating cmd to onAction].
 
 | link:{url}/docs-4x/advanced/creating-a-custom-button/#togglebutton[`onpostrender`]
-| link:{baseurl}/ui-components/typesoftoolbarbuttons/#onsetupexplanation[`onSetup`]
-| `onpostrender` has been replaced with `onSetup`. For an example migration, see: <<migratingonpostrendertoonsetup,Migrating onpostrender to onSetup>>.
+| xref:ui-components/typesoftoolbarbuttons.adoc#onsetupexplanation[`onSetup`]
+| `onpostrender` has been replaced with `onSetup`. For an example migration, see: xref:migratingonpostrendertoonsetup[Migrating onpostrender to onSetup].
 |===
 
+[[migratingonclicktoonaction]]
 ===== Migrating onclick to onAction
 
-link:{url}/docs-4x/advanced/creating-a-custom-button/#basicbutton[`onclick`] is now link:{baseurl}/ui-components/typesoftoolbarbuttons/#basicbutton[`onAction`]. The callback function given to `onAction` takes a `buttonApi` argument which is an object that contains helper functions.
+link:{url}/docs-4x/advanced/creating-a-custom-button/#basicbutton[`onclick`] is now xref:ui-components/typesoftoolbarbuttons.adoc#basicbutton[`onAction`]. The callback function given to `onAction` takes a `buttonApi` argument which is an object that contains helper functions.
 
 For example:
 
@@ -450,8 +469,9 @@ editor.ui.registry.addButton('myButton', {
 });
 ----
 
-Each type of toolbar button has a different set of API functions. For information using toolbar buttons, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/[Types of toolbar buttons].
+Each type of toolbar button has a different set of API functions. For information using toolbar buttons, see: xref:ui-components/typesoftoolbarbuttons.adoc[Types of toolbar buttons].
 
+[[migratingcmdtoonaction]]
 ===== Migrating cmd to onAction
 
 `cmd: string` has been removed. Commands should be executed using `onAction` instead.
@@ -480,18 +500,19 @@ editor.ui.registry.addButton('myButton', {
 });
 ----
 
+[[migratingonpostrendertoonsetup]]
 ===== Migrating onpostrender to onSetup
 
 `onpostrender` has been replaced with `onSetup` for menu and toolbar components.
 
 There are 3 major changes:
 
-* link:{url}/docs-4x/advanced/creating-a-custom-button/#togglebutton[`onpostrender`] was only processed when the editor was created, link:{baseurl}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation[`onSetup`] runs every time a component is rendered. For example: `onSetup` for a menu item is processed every time the menu rendered.
-* `onSetup` has an API containing helper functions. Each link:{baseurl}/ui-components/typesoftoolbarbuttons/[type of toolbar button] has a different API.
+* link:{url}/docs-4x/advanced/creating-a-custom-button/#togglebutton[`onpostrender`] was only processed when the editor was created, xref:ui-components/typesoftoolbarbuttons.adoc#basicbuttonexampleandexplanation[`onSetup`] runs every time a component is rendered. For example: `onSetup` for a menu item is processed every time the menu rendered.
+* `onSetup` has an API containing helper functions. Each xref:ui-components/typesoftoolbarbuttons.adoc[type of toolbar button] has a different API.
 * `onSetup` can be configured to return a function, which will be automatically be called on the teardown of the component, such as when a menu item's menu is closed.
  ** If a function should only be executed when the editor is first initialized, use the `editor.on('init', callback)` callback function.
 
-CAUTION: If `onSetup` listens to any events using link:{baseurl}/api/tinymce/tinymce.editor/#on[`editor.on(eventName, callback)`], it should return a link:{baseurl}/api/tinymce/tinymce.editor/#off[`editor.off(eventName, callback)`] callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` returns `function (buttonApi) { ed.off(eventName, callback) }`.
+CAUTION: If `onSetup` listens to any events using xref:apis/tinymce.editor.adoc#on[`editor.on(eventName, callback)`], it should return a xref:apis/tinymce.editor.adoc#off[`editor.off(eventName, callback)`] callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` returns `function (buttonApi) { ed.off(eventName, callback) }`.
 
 For example:
 
@@ -539,21 +560,24 @@ editor.ui.registry.addButton('customDateButton', {
 
 NOTE: The callback function given to `onSetup` takes a `buttonApi` argument which is an object that contains helper functions.
 
+[[customcontexttoolbars]]
 === Custom context toolbars
 
-The Context Toolbar accepts toolbar buttons to the editor using the link:{baseurl}/ui-components/typesoftoolbarbuttons/#basicbutton[`addButton`], link:{baseurl}/ui-components/typesoftoolbarbuttons/#togglebutton[`addToggleButton`], link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[`addSplitButton`], or link:{baseurl}/ui-components/typesoftoolbarbuttons/#menubutton[`addMenuButton`] functions.
+The Context Toolbar accepts toolbar buttons to the editor using the xref:ui-components/typesoftoolbarbuttons.adoc#basicbutton[`addButton`], xref:ui-components/typesoftoolbarbuttons.adoc#togglebutton[`addToggleButton`], xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[`addSplitButton`], or xref:ui-components/typesoftoolbarbuttons.adoc#menubutton[`addMenuButton`] functions.
 
-The API method for creating custom context toolbars in TinyMCE 5 has changed from link:{url}/docs-4x/api/tinymce/tinymce.editor/#addcontexttoolbar[`editor.addContextToolbar()`] to link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addcontexttoolbar[`editor.ui.registry.addContextToolbar()`].
+The API method for creating custom context toolbars in TinyMCE 5 has changed from link:{url}/docs-4x/api/tinymce/tinymce.editor/#addcontexttoolbar[`editor.addContextToolbar()`] to xref:apis/tinymce.editor.ui.registry.adoc#addContextToolbar[`editor.ui.registry.addContextToolbar()`].
 
-For information on Context Toolbars, see: link:{baseurl}/ui-components/contexttoolbar[Context toolbar].
+For information on Context Toolbars, see: xref:ui-components/contexttoolbar.adoc[Context toolbar].
 
+[[custommenuitems]]
 === Custom menu items
 
 The following configuration options have changed in the custom menu items for TinyMCE 5:
-* link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addmenuitem[`addMenuItem`] has a new configuration.
-* A new method, link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addnestedmenuitem[`addNestedMenuItem`] has been added to the options. The `addNestedMenuItem` is a method for creating menu items that have a sub-menu with one or more menu items.
-* A new method, link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addtogglemenuitem[`addToggleMenuItem`] has been added to the options. The `addToggleMenuItem` is a method for creating toggle menu items similar to the link:{baseurl}/ui-components/typesoftoolbarbuttons/#togglebutton[toggle toolbar button].
-* The concept of `context` has been removed from menu item configurations. The link:{baseurl}/configure/editor-appearance/#menu[`menu` setting] provides this functionality for TinyMCE 5.
+
+* xref:apis/tinymce.editor.ui.registry.adoc#addMenuItem[`addMenuItem`] has a new configuration.
+* A new method, xref:apis/tinymce.editor.ui.registry.adoc#addNestedMenuItem[`addNestedMenuItem`] has been added to the options. The `addNestedMenuItem` is a method for creating menu items that have a sub-menu with one or more menu items.
+* A new method, xref:apis/tinymce.editor.ui.registry.adoc#addToggleMenuItem[`addToggleMenuItem`] has been added to the options. The `addToggleMenuItem` is a method for creating toggle menu items similar to the xref:ui-components/typesoftoolbarbuttons.adoc#togglebutton[toggle toolbar button].
+* The concept of `context` has been removed from menu item configurations. The xref:configure/editor-appearance.adoc#menu[`menu` setting] provides this functionality for TinyMCE 5.
 
 To add a custom item to a menu, use the `menu` setting. All items in a menu need to be declared in order to appear.
 
@@ -580,19 +604,19 @@ tinymce.init({
 ----
 
 *More information*
-* For information on using the `menu` setting, see: link:{baseurl}/configure/editor-appearance/#menu[User interface options - menu].
-* For an example of the default menu items, see: link:{baseurl}/configure/editor-appearance/#examplethetinymcedefaultmenuitems[User interface options - Example: The TinyMCE Default Menu Items].
-* For a list of the available menu controls provided by {productname}, see: link:{baseurl}/advanced/available-menu-items/[Menu Items Available for {productname}].
+* For information on using the `menu` setting, see: xref:configure/editor-appearance.adoc#menu[User interface options - menu].
+* For an example of the default menu items, see: xref:configure/editor-appearance.adoc#examplethetinymcedefaultmenuitems[User interface options - Example: The TinyMCE Default Menu Items].
+* For a list of the available menu controls provided by {productname}, see: xref:advanced/available-menu-items.adoc[Menu Items Available for {productname}].
 
 ==== New menu item methods
 
 |===
 | *New method* | *Description*
 
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addnestedmenuitem[`editor.ui.registry.addNestedMenuItem()`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addNestedMenuItem[`editor.ui.registry.addNestedMenuItem()`]
 | Adds a menu item that opens a sub-menu.
 
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addtogglemenuitem[`editor.ui.registry.addToggleMenuItem()`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addToggleMenuItem[`editor.ui.registry.addToggleMenuItem()`]
 | Adds a custom toggle menu item.
 |===
 
@@ -602,7 +626,7 @@ tinymce.init({
 | *Old method* | *New method* | *Description*
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem[`editor.addMenuItem: (name, spec)`]
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addmenuitem[`editor.ui.registry.addMenuItem()`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addMenuItem[`editor.ui.registry.addMenuItem()`]
 | Adds a custom basic menu item.
 |===
 
@@ -633,8 +657,9 @@ editor.ui.registry.addMenuItem('example', {
 });
 ----
 
-For information on how to use these methods, see: link:{baseurl}/ui-components/menuitems/[Custom menu items].
+For information on how to use these methods, see: xref:ui-components/menuitems.adoc[Custom menu items].
 
+[[customdialogs]]
 === Custom dialogs
 
 Dialogs are still opened using the `editor.windowManager.open(config)` api, however a number of configuration options have changed.
@@ -654,10 +679,10 @@ Dialogs are still opened using the `editor.windowManager.open(config)` api, howe
 | `bodyType` has been merged into the `body` setting.
 
 | `onpostrender`
-| `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data. Refer to link:{baseurl}/ui-components/dialog/#interactiveexampleusingredialconfigvoid[this] section for more information on how to configure `initialData`.
+| `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data. Refer to xref:ui-components/dialog.adoc#interactiveexampleusingredialconfigvoid[this] section for more information on how to configure `initialData`.
 
 | link:{url}/docs-4x/advanced/creating-custom-dialogs/[`url`]
-| URL dialogs now have their own API. For more information, see <<customurldialogs,`Custom URL dialogs`>>.
+| URL dialogs now have their own API. For more information, see xref:customurldialogs[`Custom URL dialogs`].
 |===
 
 ==== New dialog settings
@@ -665,14 +690,14 @@ Dialogs are still opened using the `editor.windowManager.open(config)` api, howe
 |===
 | *New setting* | *Description*
 
-| link:{baseurl}/ui-components/dialog/#configurationoptions[`initialData`]
+| xref:ui-components/dialog.adoc#configurationoptions[`initialData`]
 | An object containing the initial value for the dialog components.
 
-| link:{baseurl}/ui-components/dialog/#configurationoptions[`onCancel`]
+| xref:ui-components/dialog.adoc#configurationoptions[`onCancel`]
 | A callback that is called when the dialog is cancelled without submitting any changes.
 
-| link:{baseurl}/ui-components/dialog/#configurationoptions[`onTabChange`]
-| A callback that is called when switching tabs in a link:{baseurl}/ui-components/dialogcomponents/#tabpanel[TabPanel].
+| xref:ui-components/dialog.adoc#configurationoptions[`onTabChange`]
+| A callback that is called when switching tabs in a xref:ui-components/dialogcomponents.adoc#tabpanel[TabPanel].
 |===
 
 ==== Changed dialog settings
@@ -681,7 +706,7 @@ Dialogs are still opened using the `editor.windowManager.open(config)` api, howe
 | *Old setting* | *New setting* | *Description*
 
 | `onchange`
-| link:{baseurl}/ui-components/dialog/#configurationoptions[`onChange`]
+| xref:ui-components/dialog.adoc#configurationoptions[`onChange`]
 | `onChange` now takes a callback function which is passed an API helper function and data.
 |===
 
@@ -731,7 +756,7 @@ const config = {
 };
 ----
 
-For information about the new dialog configuration, see the link:{baseurl}/ui-components/dialog/[Dialog] and link:{baseurl}/ui-components/dialogcomponents/[Dialog components] documentation.
+For information about the new dialog configuration, see the xref:ui-components/dialog.adoc[Dialog] and xref:ui-components/dialogcomponents.adoc[Dialog components] documentation.
 
 ==== Changes to the Custom dialog API
 
@@ -764,24 +789,25 @@ A redesign of the dialog API resulted in the following changes:
 |===
 | Method | Description | Change
 
-| link:{baseurl}/api/tinymce/tinymce.windowmanager/#alert[`tinymce.WindowManager.alert()`]
+| xref:apis/tinymce.windowmanager.adoc#alert[`tinymce.WindowManager.alert()`]
 | Creates an alert dialog.
 | A window object is no-longer returned.
 
-| link:{baseurl}/api/tinymce/tinymce.windowmanager/#confirm[`tinymce.WindowManager.confirm()`]
+| xref:apis/tinymce.windowmanager.adoc#confirm[`tinymce.WindowManager.confirm()`]
 | Creates a "confirm" dialog.
 | A window object is no-longer returned.
 
-| link:{baseurl}/api/tinymce/tinymce.windowmanager/#close[`tinymce.WindowManager.close()`]
+| xref:apis/tinymce.windowmanager.adoc#close[`tinymce.WindowManager.close()`]
 | Closes the top most window.
 | Only closes dialogs created with `open()`.
 |===
 
-For information on the new Dialog API, see: link:{baseurl}/ui-components/dialog/#dialoginstanceapi[UI components - Dialog instance API].
+For information on the new Dialog API, see: xref:ui-components/dialog.adoc#dialoginstanceapi[UI components - Dialog instance API].
 
+[[customurldialogs]]
 === Custom URL dialogs
 
-The URL dialogs have moved from the `editor.windowManager.open()` API to the link:{baseurl}/api/tinymce/tinymce.windowmanager/#openurl[`editor.windowManager.openUrl()`] API. This provides clear separation of the two different types of dialogs in TinyMCE.
+The URL dialogs have moved from the `editor.windowManager.open()` API to the xref:apis/tinymce.windowmanager.adoc#openUrl[`editor.windowManager.openUrl()`] API. This provides clear separation of the two different types of dialogs in TinyMCE.
 
 ==== Removed URL dialog settings
 
@@ -789,7 +815,7 @@ The URL dialogs have moved from the `editor.windowManager.open()` API to the lin
 | *Old setting* | *New setting* | *Description*
 
 | `file`
-| link:{baseurl}/ui-components/urldialog/#configurationoptions[`url`]
+| xref:ui-components/urldialog.adoc#configurationoptions[`url`]
 | The `file` setting has been removed in TinyMCE 5 and replaced with `url`.
 |===
 
@@ -798,10 +824,10 @@ The URL dialogs have moved from the `editor.windowManager.open()` API to the lin
 |===
 | *New setting* | *Description*
 
-| link:{baseurl}/ui-components/urldialog/#configurationoptions[`onCancel`]
+| xref:ui-components/urldialog.adoc#configurationoptions[`onCancel`]
 | A callback that is called when the dialog is cancelled without submitting any changes.
 
-| link:{baseurl}/ui-components/urldialog/#configurationoptions[`onMessage`]
+| xref:ui-components/urldialog.adoc#configurationoptions[`onMessage`]
 | A callback that is called when the dialog receives a message via the browser `window.postMessage` API.
 |===
 
@@ -825,47 +851,51 @@ editor.windowManager.openUrl({
 });
 ----
 
-For information about the new URL dialog configuration, see: link:{baseurl}/ui-components/urldialog/[URL dialog].
+For information about the new URL dialog configuration, see: xref:ui-components/urldialog.adoc[URL dialog].
 
+[[plugins]]
 == Plugins
 
 The following section covers the changed and removed plugin features for TinyMCE 5.
 
-* <<removedpluginsettings,Removed plugin settings>>
-* <<changedpluginsettings,Changed plugin settings>>
-* <<changedplugins,Changed plugins>>
-* <<spellcheckerplugin,Spellchecker plugin>>
-* <<tableplugin,Table plugin>>
+* xref:removedpluginsettings[Removed plugin settings]
+* xref:changedpluginsettings[Changed plugin settings]
+* xref:changedplugins[Changed plugins]
+* xref:spellcheckerplugin[Spellchecker plugin]
+* xref:tableplugin[Table plugin]
 
+[[removedpluginsettings]]
 === Removed plugin settings
 
 The `height` and `width` settings have been removed from plugin dialogs. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
 
 The following plugins from TinyMCE 4 do not require height or width options in TinyMCE 5:
 
-* link:{baseurl}/plugins/opensource/code/[Code]
-* link:{baseurl}/plugins/opensource/codesample/[Codesample]
-* link:{baseurl}/plugins/opensource/preview/[Preview]
-* link:{baseurl}/plugins/opensource/template/[Template]
+* xref:plugins/opensource/code.adoc[Code]
+* xref:plugins/opensource/codesample.adoc[Codesample]
+* xref:plugins/opensource/preview.adoc[Preview]
+* xref:plugins/opensource/template.adoc[Template]
 
+[[changedpluginsettings]]
 === Changed plugin settings
 
 |===
 | *TinyMCE 4* | *TinyMCE 5*
 
 | link:{url}/docs-4x/plugins/autoresize/#autoresize_min_height[`autoresize_min_height`]
-| link:{baseurl}/configure/editor-appearance/#min_height[`min_height`]
+| xref:configure/editor-appearance.adoc#min_height[`min_height`]
 
 | link:{url}/docs-4x/plugins/autoresize/#autoresize_max_height[`autoresize_max_height`]
-| link:{baseurl}/configure/editor-appearance/#max_height[`max_height`]
+| xref:configure/editor-appearance.adoc#max_height[`max_height`]
 
 | link:{url}/docs-4x/plugins/textcolor/#textcolor_cols[`textcolor_cols`]
-| link:{baseurl}/configure/content-appearance/#color_cols[`color_cols`]
+| xref:configure/content-appearance.adoc#color_cols[`color_cols`]
 
 | link:{url}/docs-4x/plugins/textcolor/#textcolor_map[`textcolor_map`]
-| link:{baseurl}/configure/content-appearance/#color_map[`color_map`]
+| xref:configure/content-appearance.adoc#color_map[`color_map`]
 |===
 
+[[changedplugins]]
 === Changed plugins
 
 These features have either changed or have been deleted in TinyMCE 5.
@@ -874,37 +904,38 @@ These features have either changed or have been deleted in TinyMCE 5.
 | *Plugin name* | *Description*
 
 | link:{url}/docs-4x/plugins/contextmenu/[ContextMenu]
-| Context menus are now part of the {productname} core. For information on adding custom context menus, see: link:{baseurl}/ui-components/contextmenu/[UI components - Context menu].
+| Context menus are now part of the {productname} core. For information on adding custom context menus, see: xref:ui-components/contextmenu.adoc[UI components - Context menu].
 
 | link:{url}/docs-4x/plugins/textcolor/[TextColor]
-| The text color functionality is now part of the {productname} core. For information on using and customizing the text color settings, see: link:{baseurl}/configure/content-appearance/#text_color[Content appearance options - `text_color`].
+| The text color functionality is now part of the {productname} core. For information on using and customizing the text color settings, see: xref:configure/content-appearance.adoc#text_color[Content appearance options - Text color options].
 
 | link:{url}/docs-4x/plugins/colorpicker/[ColorPicker]
-| The color picker is now part of the {productname} core and is enabled by default. For information on disabling the custom color picker, see: link:{baseurl}/configure/content-appearance/#custom_colors[Content appearance options - `custom_colors`].
+| The color picker is now part of the {productname} core and is enabled by default. For information on disabling the custom color picker, see: xref:configure/content-appearance.adoc#custom_colors[Content appearance options - `custom_colors`].
 |===
 
 ==== Custom context menus
 
 The link:{url}/docs-4x/plugins/contextmenu/[Context menus] are part of the core and enabled by default in TinyMCE 5. TinyMCE 5 supports adding registered menu items and allows plugins to register "sections" of the context menu. These sections show or hide depending on the cursor position when the context menu is opened.
 
-For information on using context menus and the default context menu configuration, see: link:{baseurl}/ui-components/contextmenu/[UI components - Context menu].
+For information on using context menus and the default context menu configuration, see: xref:ui-components/contextmenu.adoc[UI components - Context menu].
 
 ===== New context menu methods
 
 |===
 | *New method* | *Description*
 
-| link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addcontextmenu[`editor.ui.registry.addContextMenu()`]
+| xref:apis/tinymce.editor.ui.registry.adoc#addContextMenu[`editor.ui.registry.addContextMenu()`]
 | Adds a custom context menu.
 |===
 
-For information on Context Menus, see link:{baseurl}/ui-components/contextmenu[UI components - Context menu].
+For information on Context Menus, see xref:ui-components/contextmenu.adoc[UI components - Context menu].
 
+[[spellcheckerplugin]]
 === Spellchecker plugin
 
 include::partial$DEPRECATED/spellchecker.adoc[]
 
-link:{baseurl}/plugins/opensource/spellchecker/#spellchecker_callback[`spellchecker_callback`] has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
+xref:plugins/opensource/spellchecker.adoc#spellchecker_callback[`spellchecker_callback`] has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
 
 [source,js]
 ----
@@ -936,8 +967,9 @@ spellchecker_callback: function(method, text, success, failure) {
 }
 ----
 
-For information on the `spellchecker_callback` setting, see: link:{baseurl}/plugins/opensource/spellchecker/#spellchecker_callback[Spell Checker plugin - spellchecker_callback]
+For information on the `spellchecker_callback` setting, see: xref:plugins/opensource/spellchecker.adoc#spellchecker_callback[Spell Checker plugin - spellchecker_callback]
 
+[[tableplugin]]
 === Table plugin
 
 Changes between TinyMCE 4 and TinyMCE 5:

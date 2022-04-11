@@ -2,21 +2,21 @@ The following new features were added to the TinyMCE 5.0 RC version.
 
 === Comments 2.0
 
-The link:{baseurl}/enterprise/tiny-comments/[Comments 2.0] is a premium plugin built on the link:{baseurl}/advanced/annotations/[Annotations API] to create comment threads (conversations). Comments 2.0 provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
+The xref:enterprise/tiny-comments.adoc[Comments 2.0] is a premium plugin built on the xref:advanced/annotations.adoc[Annotations API] to create comment threads (conversations). Comments 2.0 provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
 
-Refer to the link:{baseurl}/plugins/premium/comments/[Comments 2.0] documentation, for more information.
+Refer to the xref:plugins/premium/comments/index.adoc[Comments 2.0] documentation, for more information.
 
 === Context menu
 
 The link:{url}/docs-4x/plugins/contextmenu/[Context menu] is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items.
 
-The context menu supports both individual menu items and dynamic context menu sections. Refer to the link:{baseurl}/ui-components/contextmenu/[context menu] documentation, for more information.
+The context menu supports both individual menu items and dynamic context menu sections. Refer to the xref:ui-components/contextmenu.adoc[context menu] documentation, for more information.
 
 === Context toolbars
 
 A context toolbar is a pop-up toolbar that appears when a specific type of content is focused. It contains the toolbar buttons relevant to that content. The context toolbar makes a limited number of suitable choices more visible and readily accessible.
 
-Refer to the link:{baseurl}/ui-components/contexttoolbar/[Context toolbar] documentation, for more information.
+Refer to the xref:ui-components/contexttoolbar.adoc[Context toolbar] documentation, for more information.
 
 === Custom menu items
 
@@ -26,19 +26,19 @@ The Custom Menu items configurations options have changed in TinyMCE 5.0. The `a
 
 Custom sidebars allow developers to add custom tools and widgets to a sidebar within the editor. In TinyMCE 5.0 the configuration has changed slightly. The method for registering custom sidebars is now `editor.ui.registry.addSidebar()` and `onrender` is now `onSetup`.
 
-Refer to the link:{baseurl}/ui-components/customsidebar/[Custom sidebars] documentation for more information.
+Refer to the xref:ui-components/customsidebar.adoc[Custom sidebars] documentation for more information.
 
 === Dialog
 
-The link:{baseurl}/ui-components/dialog/[Dialog] API allows showing dialogs (sometimes referred to as modals) in the user application. For example, the plugin that is used to view the source code is an example of a simple dialog that displays the HTML code from the content.
+The xref:ui-components/dialog.adoc[Dialog] API allows showing dialogs (sometimes referred to as modals) in the user application. For example, the plugin that is used to view the source code is an example of a simple dialog that displays the HTML code from the content.
 
 This API supports the use of dynamic content for all aspects and is easily configurable and overridable. The dialogs can be used to display complex information by using layouts components like tabs or columns to help present information to the user (e.g., help dialog or special characters dialog are tabbed dialogs).
 
 === Format Painter 1.0
 
-The link:{baseurl}/enterprise/formatpainter/[Format Painter] premium plugin allows copying and pasting formatting (such as font style and size) from one location to another. The Format Painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
+The xref:enterprise/formatpainter.adoc[Format Painter] premium plugin allows copying and pasting formatting (such as font style and size) from one location to another. The Format Painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 
-The Format Painter may be used through keyboard shortcuts or a toolbar button. Refer to the link:{baseurl}/plugins/premium/formatpainter/[Format Painter] documentation, for more information.
+The Format Painter may be used through keyboard shortcuts or a toolbar button. Refer to the xref:plugins/premium/formatpainter.adoc[Format Painter] documentation, for more information.
 
 === Keyboard navigation and tooltips improvements
 
@@ -48,9 +48,9 @@ A new experimental feature has been added that allows using the tab across all T
 
 === Mentions
 
-The link:{baseurl}/enterprise/mentions/[Mentions] plugin makes it possible for users to send notifications using *@username* in the document.
+The xref:enterprise/mentions.adoc[Mentions] plugin makes it possible for users to send notifications using *@username* in the document.
 
-Mentions is available for download through link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]. Include the mentions parameter in the tinymce.init script. Refer to the link:{baseurl}/plugins/premium/mentions/[Mentions] documentation, for more information on setup and configuration.
+Mentions is available for download through xref:cloud-deployment-guide/editor-and-features.adoc[TinyMCE Cloud]. Include the mentions parameter in the tinymce.init script. Refer to the xref:plugins/premium/mentions.adoc[Mentions] documentation, for more information on setup and configuration.
 
 === Modern codebase
 
@@ -74,7 +74,7 @@ In TinyMCE 5.0 the *Silver* theme contains a set of configurable UI components t
 
 === Page Embed
 
-The link:{baseurl}/enterprise/pageembed/[Page Embed] premium plugin allows inserting content from another source, such as an advertisement, on a Web page.
+The xref:enterprise/pageembed.adoc[Page Embed] premium plugin allows inserting content from another source, such as an advertisement, on a Web page.
 
 This plugin is used to embed another document within the current HTML document and display this content, including scrollbars and borders.
 
@@ -82,11 +82,11 @@ Using the Page Embed feature can enable including content like Google maps or a 
 
 The embedded content is an independent HTML document, referenced in the `src` attribute of each element. Hence it is a fully independent resource, referenced from the current document.
 
-Refer to the link:{baseurl}/plugins/premium/pageembed/[Page Embed] documentation, for more information.
+Refer to the xref:plugins/premium/pageembed.adoc[Page Embed] documentation, for more information.
 
 === Permanent Pen 1.0
 
-The link:{baseurl}/enterprise/permanentpen/[Permanent Pen] is a premium plugin that allows adding comments or responses in emails or other documents, without having to change the text color or style.
+The xref:enterprise/permanentpen.adoc[Permanent Pen] is a premium plugin that allows adding comments or responses in emails or other documents, without having to change the text color or style.
 
 For collaborative projects, the Permanent Pen enables adding text in a different color, typeface and type style, or font than the default font settings. This allows each user to work in a different colored permanent pen making it easy for everyone to see who contributed to the document by the color of the text.
 
@@ -94,7 +94,7 @@ Permanent Pen works in standard text content.
 
 For premium users, the Permanent Pen function is available in the toolbar. Click anywhere in the text field to use the Permanent Pen function.
 
-Refer to the link:{baseurl}/plugins/premium/permanentpen/[Permanent Pen] documentation, for more information.
+Refer to the xref:plugins/premium/permanentpen.adoc[Permanent Pen] documentation, for more information.
 
 === Tables
 
@@ -102,7 +102,7 @@ Creating and configuring tables in TinyMCE 5.0 is simpler.
 
 This feature has been enhanced by modifying the code to ensure the styles are correct and consistent. The *Styles* text field has been removed from the advanced table properties dialogs. The dialog configuration is now much less confronting and confusing for non-developers.
 
-`Border` input field in the table properties dialog is now called `Border width` for clarity. Refer to the link:{baseurl}/plugins/opensource/table/[Tables] documentation, for more information. Tables are enriched with the following new additions:
+`Border` input field in the table properties dialog is now called `Border width` for clarity. Refer to the xref:plugins/opensource/table.adoc[Tables] documentation, for more information. Tables are enriched with the following new additions:
 
 * *Using CSS for styling* - TinyMCE 5.0 uses CSS more for styling. Thus few legacy and outdated data attributes that were being configured on tables, rows, and cells and no longer adhered to the industry best practices, were removed. HTML is now cleaner and shorter.
 * *Autofill values* - In TinyMCE 5.0, the *Autofill* feature is used while opening a properties dialog with a single table, row, or cell selected. The dialog will fill automatically with the relevant existing values. In TinyMCE 4.x., if multiple rows or cells are selected to open the relevant properties dialog, all the dialog fields are left blank. In TinyMCE 5.0, fields which have the same values for all the selected rows or cells are filled automatically, and the fields which have no existing value or have different values are left empty.
@@ -113,7 +113,7 @@ TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via me
 
 To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 
-Refer to the link:{baseurl}/ui-components/toolbarbuttons/[Toolbar buttons] documentation, for more information.
+Refer to the xref:ui-components/toolbarbuttons.adoc[Toolbar buttons] documentation, for more information.
 
 === Menu items
 

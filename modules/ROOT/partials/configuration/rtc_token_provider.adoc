@@ -1,3 +1,4 @@
+[[rtc_token_provider]]
 == `rtc_token_provider`
 
 The RTC plugin and the RTC service uses https://jwt.io/introduction/[JSON Web Tokens (JWT)] to authenticate the user. The user's token should include:
@@ -7,12 +8,12 @@ The RTC plugin and the RTC service uses https://jwt.io/introduction/[JSON Web To
 
 The `rtc_token_provider` function will be called one or more times to refresh the token before it expires. For production usage, {companyname} recommends a token provider with a dynamic request that produces a new JWT token with an updated `exp` claim.
 
-For information on generating and serving JWTs for {productname} RTC, see: link:{baseurl}/rtc/jwt-authentication/[Real-time Collaboration (RTC) JWT Authentication Setup].
+For information on generating and serving JWTs for {productname} RTC, see: xref:rtc/jwt-authentication.adoc[Real-time Collaboration (RTC) JWT Authentication Setup].
 
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-link:{baseurl}/plugins/premium/rtc/[Real-time Collaboration (`rtc`)]
+xref:plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
@@ -36,7 +37,7 @@ Return data::
 
 | `token`
 | `string`
-| A generated JWT token. This token should be signed with a private key as described in link:{baseurl}/rtc/jwt-authentication/#jwtendpointrequirements[JWT authentication].
+| A generated JWT token. This token should be signed with a private key as described in xref:rtc/jwt-authentication.adoc#jwtendpointrequirements[JWT authentication].
 |===
 
 === Required JWT claims
@@ -54,6 +55,7 @@ Return data::
 | A timestamp indicating the token expiry date and time.
 |===
 
+[[optionaljwtclaims]]
 === Optional JWT claims
 
 [cols=",^,"]

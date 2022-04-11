@@ -19,4 +19,4 @@ tinymce.init({
 });
 ----
 
-NOTE: If you set the option <<resize,`resize`>> to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.
+NOTE: If you set the option xref:configure/editor-appearance.adoc#resize[`resize`] to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.

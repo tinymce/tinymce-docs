@@ -9,7 +9,7 @@
 
 include::partial$DEPRECATED/spellchecker.adoc[]
 
-NOTE: The Spell Checker plugin is self-hosted _only_. The Spell Checker Pro plugin is provided for some {cloudname} plans. For information on the Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+NOTE: The Spell Checker plugin is self-hosted _only_. The Spell Checker Pro plugin is provided for some {cloudname} plans. For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 This plugin enables {productname}'s spellcheck functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.
 
@@ -28,8 +28,9 @@ tinymce.init({
 
 == Options
 
-These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with {productname} please link:{baseurl}/general-configuration-guide/spell-checking/[refer to this section] in the General Configuration Guide.
+These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with {productname} please xref:general-configuration-guide/spell-checking.adoc[refer to this section] in the General Configuration Guide.
 
+[[spellchecker_callback]]
 === `spellchecker_callback`
 
 This option lets you override the default server side request/communication logic for the spellchecker.

@@ -221,13 +221,9 @@ Three additional options are now supported when Real-time Collaboration is activ
 * `valid_children`
 * `extended_valid_elements`
 
-Real-time Collaboration now supports the `autocompleter()` API.
+Real-time Collaboration now supports xref:autocompleter.adoc[the `autocompleter` API].
 
-Real-time Collaboration now supports the `inline_boundaries` option.
-
-//Real-time Collaboration now supports xref:autocompleter.adoc[the `autocompleter` API].
-//
-// Real-time Collaboration now supports xref:content-behavior-options.adoc#inline_boundaries[the `inline_boundaries` option].
+Real-time Collaboration now supports xref:content-behavior-options.adoc#inline_boundaries[the `inline_boundaries` option].
 
 When provided values are incorrect, the returned error messages are now less opaque.
 

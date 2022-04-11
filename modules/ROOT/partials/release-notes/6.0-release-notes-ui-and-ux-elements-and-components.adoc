@@ -60,6 +60,7 @@ In {productname} 6.0, editors without a `height` value specified in the {product
 
 As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
 
+Also, editors now have a `min-height` default value of `100px`. This prevents the editor UI from disappearing during re-sizing, which prevented users from interacting with the editor.
 
 
 

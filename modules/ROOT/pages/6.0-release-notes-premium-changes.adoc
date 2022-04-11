@@ -282,17 +282,17 @@ The new Premium `tableofcontents` plugin also changes the names of several eleme
 
 [cols="1,1"]
 |===
-| Old name     | New name
+| Old name     | New name                 | Element type
 
-| `toc`        | `tableofcontents`
+| `toc`        | `tableofcontents`        | Plugin
 
-| `tocupdate`  | `tableofcontentsupdate`
+| `tocupdate`  | `tableofcontentsupdate`  | 
 
-| `toc_class`  | `tableofcontents_class`
+| `toc_class`  | `tableofcontents_class`  | Command
 
-| `toc_depth`  | `tableofcontents_depth`
+| `toc_depth`  | `tableofcontents_depth`  | Option
 
-| `toc_header` | `tableofcontents_header`
+| `toc_header` | `tableofcontents_header` | Option
 |===
 
 Any configurations or logic that use the old element names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.

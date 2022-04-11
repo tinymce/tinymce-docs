@@ -451,7 +451,12 @@ The new default can be overridden by explicitly setting a `height` value in the 
 
 Also, setting the CSS `height` of the element replaced by {productname} to a value larger than `400px` will increase the editor height. Setting the element's CSS `height` to a value less than `400px` will *not* reduce the height of the editor, however.
 
-NOTE: to prevent the editor UI from disappearing during re-sizing, `min_height` now has a default value: `100px`.
+NOTE: to prevent the editor UI from disappearing during manual, end-user re-sizing, `min_height` now has a default value: `100px`. .
+
+This default can be overridden as part of an initialization configuration. And setting `min_height` to `> 400` will increase the height of the intitial {productname} viewport. .
+
+But setting a value below `100` makes it possible for manual, end-user re-sizing to reduce the {productname} editor to a horizontal sliver (or, potentially, make it disappear entirely). Setting `min_height` to `< 100` is not recommended
+
 
 === formatting user interface name changes
 

@@ -288,12 +288,16 @@ The new Premium `tableofcontents` plugin also changes the names of several eleme
 
 | `tocupdate`  | `tableofcontentsupdate`  | Toolbar item
 
-| `toc_class`  | `tableofcontents_class`  | Command
+| `toc_class`  | `tableofcontents_class`  | Option
 
 | `toc_depth`  | `tableofcontents_depth`  | Option
 
 | `toc_header` | `tableofcontents_header` | Option
 |===
+
+
+
+
 
 
 Any configurations or logic that use the old element names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.

@@ -233,7 +233,7 @@ When provided values are incorrect, the returned error messages are now less opa
 
 For example, the error message `'key' was not a string` is now the error message `Expected field 'key'`.
 
-Previously, if a {productname} editor instance with Real-time Collaboration loaded contained a Horizontal Rule (ie an `+<hr>+` element), attempting to move the insertion point over the Horizontal Rule using arrow keys threw an exception: `Uncaught Error: Unsupported node type: [object DocumentType]`.
+Previously, if a {productname} editor instance with Real-time Collaboration loaded also contained a Horizontal Rule (ie an `+<hr>+` element), attempting to move the insertion point over the Horizontal Rule using arrow keys threw an exception: `Uncaught Error: Unsupported node type: [object DocumentType]`.
 
 With this update, moving the insertion point through a Horizontal Rule using arrow keys works as expected: the insertion point moves and no exception is thrown.
 

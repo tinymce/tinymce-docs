@@ -284,9 +284,9 @@ The new Premium `tableofcontents` plugin also changes the names of several eleme
 |===
 | Old name     | New name                 | Element type
 
-| `toc`        | `tableofcontents`        | Plugin
+| `toc`        | `tableofcontents`        | Plugin, Menu item, and Toolbar item
 
-| `tocupdate`  | `tableofcontentsupdate`  | 
+| `tocupdate`  | `tableofcontentsupdate`  | Toolbar item
 
 | `toc_class`  | `tableofcontents_class`  | Command
 
@@ -294,6 +294,7 @@ The new Premium `tableofcontents` plugin also changes the names of several eleme
 
 | `toc_header` | `tableofcontents_header` | Option
 |===
+
 
 Any configurations or logic that use the old element names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
 

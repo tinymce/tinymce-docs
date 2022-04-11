@@ -451,7 +451,7 @@ The new default can be overridden by explicitly setting a `height` value in the 
 
 Also, setting the CSS `height` of the element replaced by {productname} to a value larger than `400px` will increase the editor height. Setting the element's CSS `height` to a value less than `400px` will *not* reduce the height of the editor, however.
 
-NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent the editor UI from disappearing during re-sizing, the `min-height` value (`100px`) cannot be overridden. This obviates an unrecoverable bug, that prevents users being able to interact with the editor, from presenting.
+NOTE: While {productname} 6.0 honours the `height` setting in {productname} configuration, to prevent the editor UI from disappearing during re-sizing, the `min_height` value (`100px`) cannot be overridden. This obviates an unrecoverable bug, that prevents users being able to interact with the editor, from presenting.
 
 === formatting user interface name changes
 

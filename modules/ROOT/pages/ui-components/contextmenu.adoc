@@ -3,7 +3,7 @@
 :keywords: contextmenu context menu contextmenuapi
 :title_nav: Context menu
 
-The context menu is a configurable component that appears when the user right clicks in the editable area. By default it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown.
+The context menu is a configurable component that appears when the user right clicks in the editable area. By default, it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown.
 
 The context menu supports both individual menu items and dynamic context menu sections.
 
@@ -73,19 +73,20 @@ When creating a dynamic menu, the structure `type` properties are used in order 
 * type `separator` ignores all other properties.
 
 ////
-- ## Example Usage
+=== Example Usage
 
 This example creates a menu with a mixture of dynamic and static menu items. While `link` is the name of both a context menu section and a menu item, context menu sections take preference (the link context menu is dynamic based on the cursor position).
 
 The other item names are all menu items and will appear on the context menu regardless of cursor position. A separator is used to distinguish the table edit features from the table insert feature. As `link` is a context menu section, a separator will automatically be inserted after it so it is not necessary to specify one in the configuration.
 
-```js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   contextmenu: 'link bold italic inserttable | cell row column deletetable'
 });
-```
--
+----
+
 ////
 
 == Defining a context menu section

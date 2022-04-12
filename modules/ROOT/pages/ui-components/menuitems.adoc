@@ -12,9 +12,9 @@
 
 The methods for adding custom menu items are in the UI Registry part of the editor API editor.ui.registry. The API has three methods for adding menu items:
 
-* `editor.ui.registry.addMenuItem`(identifier, configuration)
-* `editor.ui.registry.addNestedMenuItem`(identifier, configuration)
-* `editor.ui.registry.addToggleMenuItem`(identifier, configuration)
+* `editor.ui.registry.addMenuItem(identifier, configuration)`
+* `editor.ui.registry.addNestedMenuItem(identifier, configuration)`
+* `editor.ui.registry.addToggleMenuItem(identifier, configuration)`
 
 The two arguments these methods take are:
 
@@ -44,7 +44,7 @@ tinymce.init({
 });
 ----
 
-NOTE: The identifier used to create the menu item must be included in the link:{baseurl}/configure/editor-appearance/#menu[`menu`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
+NOTE: The identifier used to create the menu item must be included in the xref:configure/editor-appearance.adoc#menu[`menu`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
 == Interactive example
 
@@ -78,7 +78,8 @@ A basic menu item triggers its `onAction` function when clicked.
 | icon
 | string
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[]
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
 
 | value
 | string
@@ -103,7 +104,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | shortcut
 | string
 | optional
-| Text to display in the shortcut label. To register a shortcut, see: link:{baseurl}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
+| Text to display in the shortcut label. To register a shortcut, see: xref:advanced/keyboard-shortcuts.adoc#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
 |===
 
 ==== API
@@ -122,7 +123,8 @@ A basic menu item triggers its `onAction` function when clicked.
 
 ==== Example: Creating a basic menu item
 
-```js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   menu: {
@@ -140,7 +142,7 @@ setup: function(editor) {
   }
 
 });
-```
+----
 
 [[nestedmenuitems]]
 === Nested menu items
@@ -178,7 +180,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | shortcut
 | string
 | optional
-| Text to display in the shortcut label. To register a shortcut, see: link:{baseurl}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
+| Text to display in the shortcut label. To register a shortcut, see: xref:advanced/keyboard-shortcuts.adoc#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
 |===
 
 ==== API
@@ -197,7 +199,8 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 
 ==== Example: Creating a nested menu item
 
-```js
+[source, js]
+----
 tinymce.init({
   selector: 'textarea',
   menu: {
@@ -221,7 +224,7 @@ setup: function(editor) {
   }
 
 });
-```
+----
 
 [[togglemenuitems]]
 === Toggle menu items
@@ -241,7 +244,8 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | icon
 | string
 | optional
-| include::partial$misc/predefinedIconsOnly.adoc[]
+|
+include::partial$misc/predefinedIconsOnly.adoc[]
 
 | value
 | string
@@ -295,7 +299,8 @@ NOTE: The `icon` option for Toggle menu items was added in {productname} 5.3.
 
 ==== Example: Creating a toggle menu item
 
-```js
+[source, js]
+----
 // Menu items are recreated when the menu is closed and opened, so we need
 // a variable to store the toggle menu item state.
 var toggleState = false;
@@ -323,4 +328,4 @@ setup: function(editor) {
   }
 
 });
-```
+----

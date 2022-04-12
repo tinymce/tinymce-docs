@@ -61,20 +61,21 @@ The two arguments this method take are:
 | highlight
 | array
 | Optional
-| When using <<cardmenuitem,CardMenuItems>>, use the highlight option to specify which <<cardtext,CardText>> items to highlight the matched text pattern on.
+| When using xref:cardmenuitem[CardMenuItems], use the highlight option to specify which xref:cardtext[CardText] items to highlight the matched text pattern on.
 |===
 
 NOTE: If two or more autocompleters use the same trigger character, then the fetched results will be merged together before being displayed.
 
 === Usage of fetch
 
-The `fetch` function is called when the trigger `char` is pressed and the `matches` predicate returns `true`. The `fetch` function is passed the matched text pattern and returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] containing matching results, specified as either <<autocompleteitem,AutocompleteItems>> or <<cardmenuitem,CardMenuItems>>. This allows for asynchronous fetching of the items. The `fetchOptions` parameter passed to the `fetch` function is by default an empty object, however using the <<api,reload>> API, additional options can be passed to fetch a different set of results.
+The `fetch` function is called when the trigger `char` is pressed and the `matches` predicate returns `true`. The `fetch` function is passed the matched text pattern and returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] containing matching results, specified as either xref:autocompleteitem[AutocompleteItems] or xref:cardmenuitem[CardMenuItems]. This allows for asynchronous fetching of the items. The `fetchOptions` parameter passed to the `fetch` function is by default an empty object, however using the xref:api[reload] API, additional options can be passed to fetch a different set of results.
 
 There are two types of items:
 
-* <<autocompleteitem,AutocompleteItem>>
-* <<cardmenuitem,CardMenuItem>>
+* xref:autocompleteitem[AutocompleteItem]
+* xref:cardmenuitem[CardMenuItem]
 
+[[autocompleteitem]]
 ==== AutocompleteItem
 
 This is the standard item for the autocompleter. If no type is specified, autocompleter items are assumed to be of type `AutocompleteItem`.
@@ -95,7 +96,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 | icon
 | string
 | optional
-| Name of the icon to be displayed. Must be a either single unicode character or an icon from: the link:{baseurl}/advanced/editor-icon-identifiers/[icon pack], a link:{baseurl}/advanced/creating-an-icon-pack/[custom icon pack], or an icon added using the xref:apis/tinymce.editor.ui.registry.adoc#addIcon[`addIcon` API].
+| Name of the icon to be displayed. Must be a either single unicode character or an icon from: the xref:advanced/editor-icon-identifiers.adoc[icon pack], a xref:advanced/creating-an-icon-pack.adoc[custom icon pack], or an icon added using the xref:apis/tinymce.editor.ui.registry.adoc#addIcon[`addIcon` API].
 |===
 
 [source, js]
@@ -121,7 +122,7 @@ The `CardMenuItem` allows customization of layout and content. This is done by c
 | items
 | array
 | required
-| An array of <<carditems,CardItems>>
+| An array of xref:carditems[CardItems]
 
 | value
 | string
@@ -144,15 +145,18 @@ The `CardMenuItem` allows customization of layout and content. This is done by c
 }
 ----
 
+[[carditems]]
 ==== CardItems
 
 `CardItems` are subcomponents for the `CardMenuItem`. Use these to construct your custom item and display relevant information to the user.
 
 There are three types of card items:
-* <<cardcontainer,CardContainer>>
-* <<cardtext,CardText>>
-* <<cardimage,CardImage>>
 
+* xref:cardcontainer[CardContainer]
+* xref:cardtext[CardText]
+* xref:cardimage[CardImage]
+
+[[cardcontainer]]
 ===== CardContainer
 
 A `CardContainer` is a layout component used to apply a layout to an array of card items.
@@ -163,7 +167,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | items
 | array
 | required
-| An array of <<carditem,CardItems>>
+| An array of xref:carditems[CardItems]
 
 | direction
 | `'vertical'` or `'horizontal'`
@@ -192,6 +196,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 }
 ----
 
+[[cardtext]]
 ===== CardText
 
 `CardText` is a component for displaying text.
@@ -225,6 +230,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 }
 ----
 
+[[cardimage]]
 ===== CardImage
 
 `CardImage` is a component for displaying an image.
@@ -258,6 +264,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 }
 ----
 
+[[api]]
 == API
 
 |===
@@ -284,6 +291,6 @@ liveDemo::autocompleter-autocompleteitem[height="300" tab="js" ]
 
 === Example: Using `CardMenuItems` in the Autocompleter
 
-This example uses <<cardmenuitem,CardMenuItems>> and will show when a user types a hyphen (`-`) character and at least one additional character.
+This example uses xref:cardmenuitem[CardMenuItems] and will show when a user types a hyphen (`-`) character and at least one additional character.
 
 liveDemo::autocompleter-cardmenuitem[height="300" tab="js" ]

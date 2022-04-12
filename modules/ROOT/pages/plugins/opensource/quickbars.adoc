@@ -102,7 +102,7 @@ tinymce.init({
 
 The Quick Image (`quickimage`) toolbar button allows users to quickly insert images from their computer into the editor. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
-NOTE: To enable automatic upload of images on insertion, link:{baseurl}/advanced/handle-async-image-uploads/[image upload] must be configured.
+NOTE: To enable automatic upload of images on insertion, xref:general-configuration-guide/upload-images.adoc[image upload] must be configured.
 
 ==== Example: Using quickimage in the editor toolbar
 

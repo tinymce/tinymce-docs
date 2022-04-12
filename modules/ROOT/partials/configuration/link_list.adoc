@@ -80,7 +80,8 @@ The following is an example of how `link_list` can be used with a callback funct
 * The current editor content.
 * The current user.
 
-```js
+[source, js]
+----
 var fetchLinkLists = function() {
   return [
     {title: 'My page 1', value: 'https://www.tiny.cloud'},
@@ -98,4 +99,4 @@ tinymce.init({
     success(links); // pass link_list data to {productname}
   }
 });
-```
+----

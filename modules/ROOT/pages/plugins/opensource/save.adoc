@@ -26,15 +26,17 @@ The `"Error: Form submit field collision."` error message will appear if you cal
 
 So replace this:
 
-```html+++<form>++++++<button name="submit">++++++</button>++++++</form>+++
-
-```
+[source, html]
+----
+<form><button name="submit"></button></form>
+----
 
 With this:
 
-```html+++<form>++++++<button name="submitbtn">++++++</button>++++++</form>+++
-
-```
+[source, html]
+----
+<form><button name="submitbtn"></button></form>
+----
 
 == Options
 

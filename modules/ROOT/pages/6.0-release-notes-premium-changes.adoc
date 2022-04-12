@@ -110,13 +110,16 @@ The default value for `a11ychecker_html_version` was `html4`.
 
 It is now `html5`.
 
+
 === Advanced Table
 
-The `getRowType` function would sometimes incorrectly parse elements in the `tfoot` section of a table.
+With all table logic, except table UI components, now part of xref:6.0-release-notes-core-changes.adoc#changed-plugins-table[core {productname} editor], the `advtable` plugin now only requires the `table` plugin be enabled to use the Advanced Table-specific toolbar buttons and menu items.
 
-This led to `mceTableRowType` being incorrectly returned as a header if all cells in the section were `th` elements.
+Previously, the `getRowType()` method of the series generator info argument incorrectly returned `header` when a `tfoot` row contained only header cells.
 
-With this update, `getRowType` parses elements in the `tfoot` section correctly and `mceTableRowType` is correctly returned as a footer.
+With this update, `getRowType()` correctly returns `footer` when a `tfoot` row contains only header cells.
+
+Previously tables containing a `colgroup` did not sort correctly. As of this release, this error has been corrected: tables with a `colgroup` now sort correctly, as expected.
 
 
 === Comments

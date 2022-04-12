@@ -106,13 +106,13 @@ The following premium plugin updates were released alongside {productname} 6.0.
 
 === Accessibility Checker
 
-The default value for `a11ychecker_html_version` was `html4`.
+The default value for `a11ychecker_html_version` was `html4`.
 
-It is now `html5`.
+It is now `html5`.
 
 === Advanced Table
 
-The `getRowType` function would sometimes incorrectly parse elements in the `tfoot` section of a table.
+The `getRowType` function would sometimes incorrectly parse elements in the `tfoot` section of a table.
 
 This led to `mceTableRowType` being incorrectly returned as a header if all cells in the section were `th` elements.
 
@@ -156,21 +156,21 @@ This value was previously deprecated and, with this release, support for `false`
 
 === Export
 
-A new `export_image_proxy_service_url` option is available for use with the proxy service provided by https://tiny.cloud/docs/enterprise/server/[Tiny services].
+A new `export_image_proxy_service_url` option is available for use with the proxy service provided by https://tiny.cloud/docs/enterprise/server/[Tiny services].
 
 
 === Format Painter
 
 The following improvements and changes were made to Format Painter.
 
-A `formatpainter` menu item was added to match the toolbar button.
+A `formatpainter` menu item was added to match the toolbar button.
 
-The `formatpainter_blacklisted_formats` option was re-named to `formatpainter_ignored_formats`.
+The `formatpainter_blacklisted_formats` option was re-named to `formatpainter_ignored_formats`.
 
 
 === Mentions
 
-The `getUsers` API was removed.
+The `getUsers` API was removed.
 
         
 === PowerPaste
@@ -189,7 +189,7 @@ With this update, dragging content behaves correctly: the {productname} editor t
 
 As well, content dragged and dropped into the {productname} editor is now cleaned or merged using the same logic as when content is pasted in.
 
-Finally, pasting content from Microsoft Word that included a style block ≥ 1.4 Mb previously triggered a stack overflow.
+Finally, pasting content from Microsoft Word that included a style block ≥ 1.4 Mb previously triggered a stack overflow.
 
 With this release, such content can be pasted in to a {productname} editor with PowerPaste enabled without issue.
 
@@ -252,9 +252,9 @@ The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:intr
 
 This update to Spell Checker Pro includes the following fixes.
 
-Previously, Spell Checker Pro treated soft hyphens (ie the `+&shy;+` html entity) as a word boundary. As a consequence words containing soft hyphens were not correctly spellchecked as whole words.
+Previously, Spell Checker Pro treated soft hyphens (ie the `+&shy;+` html entity) as a word boundary. As a consequence words containing soft hyphens were not correctly spellchecked as whole words.
 
-With this update, `+&shy;+` entity is correctly recognised as part of a word, not a word boundary. And words containing soft hyphens are, consequently, spell checked correctly.
+With this update, `+&shy;+` entity is correctly recognised as part of a word, not a word boundary. And words containing soft hyphens are, consequently, spell checked correctly.
 
 As well, one command and one option have been replaced and a, previously deprecated, fallback option has been removed.
 
@@ -331,7 +331,7 @@ The third-party PDF renderer used by Tiny Drive, https://mozilla.github.io/pdf.j
 
 When Tiny Drive cannot preview a file, it displays a generic file-type icon.
 
-With this release, a text message — _No preview available_ — is also displayed.
+With this release, a text message — _No preview available_ — is also displayed.
 
 Previously, everytime Tiny Drive was opened, the CSS used to present the Tiny Drive instance was re-loaded.
 

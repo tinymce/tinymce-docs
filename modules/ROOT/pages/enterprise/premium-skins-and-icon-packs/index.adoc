@@ -7,9 +7,9 @@ The {prem_skins_icons} lets you quickly give {productname} a new look. Just choo
 
 == How to use a premium skin
 
-Use the link:{baseurl}/configure/editor-appearance/#skin[skin] option, in combination with the link:{baseurl}/configure/content-appearance/#content_css[content_css] option and the values listed below.
+Use the xref:configure/editor-appearance.adoc#skin[skin] option, in combination with the xref:configure/content-appearance.adoc#content_css[content_css] option and the values listed below.
 
-Available values for link:{baseurl}/configure/editor-appearance/#skin[skins]:
+Available values for xref:configure/editor-appearance.adoc#skin[skins]:
 
 * material-classic
 * material-outline
@@ -23,7 +23,7 @@ Available values for link:{baseurl}/configure/editor-appearance/#skin[skins]:
 * outside
 * snow
 
-Available values for link:{baseurl}/configure/content-appearance/#content_css[content_css]:
+Available values for xref:configure/content-appearance.adoc#content_css[content_css]:
 
 * material-classic
 * material-outline
@@ -44,9 +44,9 @@ tinymce.init({
 [[howtouseaniconpack]]
 == How to use an icon pack
 
-Use the link:{baseurl}/configure/editor-appearance/#icons[icons] option with any of the values listed below.
+Use the xref:configure/editor-appearance.adoc#icons[icons] option with any of the values listed below.
 
-Available values for link:{baseurl}/configure/editor-appearance/#icons[icon] packs:
+Available values for xref:configure/editor-appearance.adoc#icons[icon] packs:
 
 * bootstrap
 * material
@@ -64,7 +64,7 @@ tinymce.init({
 });
 ----
 
-For information on using the `icons` option, see: link:{baseurl}/configure/editor-appearance/#icons[User interface options - `icons`].
+For information on using the `icons` option, see: xref:configure/editor-appearance.adoc#icons[User interface options - `icons`].
 
 === Icon pack compatibility matrix
 
@@ -111,21 +111,21 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 Below are some recommended combinations of skins and icon packs:
 
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/bootstrap-demo/[Bootstrap skin]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/material-outline-demo/[Material Outline skin with Material icon pack]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/material-classic-demo/[Material Classic skin with Material icon pack]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/fabric-demo/[Microsoft Fabric skin]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/fluent-demo/[Microsoft Fluent skin]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/small-demo/[Small skin with Small icon pack]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/jam-demo/[Small skin with Jam icon pack]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/borderless-demo/[Borderless editor]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/naked-demo/[Naked editor]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/outside-demo/[Outside editor]
-* link:{baseurl}/enterprise/premium-skins-and-icon-packs/snow-demo/[Snow editor]
+* xref:enterprise/premium-skins-and-icon-packs/bootstrap-demo.adoc[Bootstrap skin]
+* xref:enterprise/premium-skins-and-icon-packs/material-outline-demo.adoc[Material Outline skin with Material icon pack]
+* xref:enterprise/premium-skins-and-icon-packs/material-classic-demo.adoc[Material Classic skin with Material icon pack]
+* xref:enterprise/premium-skins-and-icon-packs/fabric-demo.adoc[Microsoft Fabric skin]
+* xref:enterprise/premium-skins-and-icon-packs/fluent-demo.adoc[Microsoft Fluent skin]
+* xref:enterprise/premium-skins-and-icon-packs/small-demo.adoc[Small skin with Small icon pack]
+* xref:enterprise/premium-skins-and-icon-packs/jam-demo.adoc[Small skin with Jam icon pack]
+* xref:enterprise/premium-skins-and-icon-packs/borderless-demo.adoc[Borderless editor]
+* xref:enterprise/premium-skins-and-icon-packs/naked-demo.adoc[Naked editor]
+* xref:enterprise/premium-skins-and-icon-packs/outside-demo.adoc[Outside editor]
+* xref:enterprise/premium-skins-and-icon-packs/snow-demo.adoc[Snow editor]
 
 :pluginname: Tiny Skins and Icon
 :pluginminimumplan: tiertwo
-:plugindocspage: ../configure/editor-appearance/#skin
+:plugindocspage: ../../configure/editor-appearance.adoc#skin
 :extensionType: Packs
 :pluralExtensionType: true
 include::partial$misc/purchase-premium-plugins.adoc[]

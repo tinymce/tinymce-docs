@@ -1,19 +1,22 @@
 :experimental:
 
-{% if shbundledockerfiles == false %}
+ifeval::[{shbundledockerfiles} != true]
 
+[[deploythetinymcespellingserviceserver-sidecomponentusingdockerindividuallylicensed]]
 === Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)
 
-{% elsif shbundledockerfiles == true %}
+endif::[]
+ifeval::[{shbundledockerfiles} == true]
 
+[[deploythetinymcespellingserviceserver-sidecomponentusingdockerself-hostedenterprisebundles]]
 === Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)
 
-{% endif %}
+endif::[]
 The TinyMCE spelling service server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Spelling Service Docker image.
 
 include::partial$misc/admon_dont-push-docker-images.adoc[]
 
-ifeval::[ {shbundledockerfiles} == false ]
+ifeval::[{shbundledockerfiles} != true]
 
 ==== Prerequisites
 
@@ -28,9 +31,9 @@ endif::[]
 ==== Procedure
 
 The following procedure covers downloading, configuring, building and testing the {productname} Spelling Service Docker image.
-{% if shbundledockerfiles == true %}
+ifeval::[{shbundledockerfiles} == true]
 
-NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in <<downloadandextractthetinymceself-hostedbundle,Download and extract the TinyMCE Self-hosted Bundle>>.
+NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle has been extracted as described in xref:downloadandextractthetinymceself-hostedbundle[Download and extract the TinyMCE Self-hosted Bundle].
 
 . Navigate into the `tinymce-services` folder.
 +
@@ -72,7 +75,8 @@ cp ephox-spelling.war spelling-service-dockerfile/
 cd spelling-service-dockerfile
 ----
 +
-{% elsif shbundledockerfiles == false %}
+endif::[]
+ifeval::[{shbundledockerfiles} != true]
 
 . Go to menu:link:{accountpageurl}[{accountpage}][My Downloads] and download _Tiny Spell Checker Pro_.
 . Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
@@ -114,7 +118,7 @@ tinymce-spelling-service/
 └── version.txt
 ----
 +
-{% endif %}
+endif::[]
 
 . Set the permissions on the extracted files to executable.
 +
@@ -140,11 +144,11 @@ http {
 }
 ----
 +
-For information on the `http` configuration setting, see: link:{baseurl}/enterprise/server/configure/#httpoptional[Configure server-side components - `http`].
+For information on the `http` configuration setting, see: xref:enterprise/server/configure.adoc#httpoptional[Configure server-side components - `http`].
 
 . _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-spelling-docker-env.conf`. See:
-link:{baseurl}/enterprise/server/configure/[Configure server-side components].
-. _Optional_: Add a custom dictionary, as described in link:{baseurl}/enterprise/check-spelling/custom/[Adding custom dictionaries].
+xref:enterprise/server/configure.adoc[Configure server-side components].
+. _Optional_: Add a custom dictionary, as described in xref:enterprise/check-spelling/custom.adoc[Adding custom dictionaries].
 . Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-spelling-docker-env.conf`.
 +
 For example:
@@ -156,7 +160,7 @@ ORIGIN1=example
 ORIGIN2=http://example.org
 ----
 +
-For information on `allowed-origins`, see: link:{baseurl}/enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
+For information on `allowed-origins`, see: xref:enterprise/server/configure.adoc#allowed-originsrequired[Configure server-side components - allowed-origins].
 
 . As the root user or Administrator, build the {productname} Spelling Service Docker image using the following command:
 +

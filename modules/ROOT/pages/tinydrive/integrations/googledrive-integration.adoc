@@ -23,19 +23,19 @@ You can obtain the Google Drive credentials by following the steps below.
 . Click on the `Create credentials` button.
 . Click on the `API key` item.
 
-image::{baseurl}/images/tinydrive-googledrive-dump1.png[]
+image::tinydrive-googledrive-dump1.png[]
 
 === 2. Copy the new Google API Key
 
 Copy the generated Google API key this will later be used to configure {cloudfilemanager}:
 
-image::{baseurl}/images/tinydrive-googledrive-dump2.png[]
+image::tinydrive-googledrive-dump2.png[]
 
 === 3. Create the OAuth client ID
 
 Click on the `Create credentials` button then on `OAuth client ID` item:
 
-image::{baseurl}/images/tinydrive-googledrive-dump3.png[]
+image::tinydrive-googledrive-dump3.png[]
 
 === 4. Fill in the OAuth details
 
@@ -44,7 +44,7 @@ image::{baseurl}/images/tinydrive-googledrive-dump3.png[]
 . Click `create`.
 . Copy the created `client id` it will be used later to configure {cloudfilemanager}.
 
-image::{baseurl}/images/tinydrive-googledrive-dump4.png[]
+image::tinydrive-googledrive-dump4.png[]
 
 === 5. Restrict Client ID API access
 
@@ -54,11 +54,11 @@ image::{baseurl}/images/tinydrive-googledrive-dump4.png[]
 . Select `Google Picker API` from the dropdown
 . Click `Save`
 
-image::{baseurl}/images/tinydrive-googledrive-dump5.png[]
+image::tinydrive-googledrive-dump5.png[]
 
 === 6. Configure tinydrive to use the new Google Drive credentials
 
-The Google Drive API key can be configured by setting the link:{baseurl}/tinydrive/configuration/#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the link:{baseurl}/tinydrive/configuration/#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
+The Google Drive API key can be configured by setting the xref:tinydrive/configuration.adoc#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the xref:tinydrive/configuration.adoc#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
 
 [source, js]
 ----
@@ -70,12 +70,12 @@ tinymce.init({
 });
 ----
 
-For more information on other {cloudfilemanager} config options refer to the link:{baseurl}/tinydrive/configuration[configuration] section of this document.
+For more information on other {cloudfilemanager} config options refer to the xref:tinydrive/configuration.adoc[configuration] section of this document.
 
 === 7. Tiny Drive UI
 
-. From the {productname} user interface, click on the image:{baseurl}/images/insertimage.png[Insert/edit image] button to access the {cloudfilemanager} user interface.
-. Click on the image:{baseurl}/images/upload.png[Upload/Create] button to select Google Drive from the list of storages.
+. From the {productname} user interface, click on the image:insertimage.png[Insert/edit image] button to access the {cloudfilemanager} user interface.
+. Click on the image:upload.png[Upload/Create] button to select Google Drive from the list of storages.
 . Select the file to upload/import from Google Drive by clicking on the radio button next to it. Alternatively, to directly insert the file into the editor, double-click on it.
 . Choose *Save* to upload/import the selected file/files to {cloudfilemanager}.
 

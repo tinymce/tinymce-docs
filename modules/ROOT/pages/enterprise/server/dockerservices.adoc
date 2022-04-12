@@ -6,9 +6,10 @@ The {enterpriseversion} server-side components can be deployed on Docker orchest
 
 *Outline*
 
-* <<containerizedservicesforself-hostedenterprisedeployments,Containerized services for Self-hosted Enterprise deployments>>
-* <<containerizedservicesforindividuallylicensedpremiumplugins,Containerized services for individually licensed premium plugins>>
+* xref:containerizedservicesforself-hostedenterprisedeployments[Containerized services for Self-hosted Enterprise deployments]
+* xref:containerizedservicesforindividuallylicensedpremiumplugins[Containerized services for individually licensed premium plugins]
 
+[[containerizedservicesforself-hostedenterprisedeployments]]
 == Containerized services for Self-hosted Enterprise deployments
 
 The following sections assist with containerizing the {productname} services for users with licenses to the Self-hosted {productname} Enterprise bundles:
@@ -25,6 +26,7 @@ The following sections assist with containerizing the {productname} services for
  ** Using a Linux, Unix or macOS operating system.
  ** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux].
 
+[[downloadandextractthetinymceself-hostedbundle]]
 === Download and extract the TinyMCE Self-hosted Bundle
 
 . Go to *link:{download-enterprise}[{accountpage} Downloads]* and download the {productname} self-hosted bundle `.zip` file.
@@ -67,9 +69,9 @@ The structure of the extracted files will be:
 
 Proceed to setting up and deploying the containerized services:
 
-* For the Enhanced Media Embed and Link Checker service, see: <<deploythetinymcehyperlinkingserver-sidecomponentusingdockerself-hostedenterprisebundles,Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)>>.
-* For the Image Tools plugin service, see: <<deploythetinymceimageproxyserver-sidecomponentusingdockerself-hostedenterprisebundles,Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)>>.
-* For the Spell Checker Pro service, see: <<deploythetinymcespellingserviceserver-sidecomponentusingdockerself-hostedenterprisebundles,Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)>>.
+* For the Enhanced Media Embed and Link Checker service, see: xref:deploythetinymcehyperlinkingserver-sidecomponentusingdockerself-hostedenterprisebundles[Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)].
+* For the Image Tools plugin service, see: xref:deploythetinymceimageproxyserver-sidecomponentusingdockerself-hostedenterprisebundles[Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)].
+* For the Spell Checker Pro service, see: xref:deploythetinymcespellingserviceserver-sidecomponentusingdockerself-hostedenterprisebundles[Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)].
 
 :shbundledockerfiles: true
 
@@ -81,6 +83,7 @@ include::partial$docker/dockerized-spelling-service.adoc[]
 
 :shbundledockerfiles: false
 
+[[containerizedservicesforindividuallylicensedpremiumplugins]]
 == Containerized services for individually licensed premium plugins
 
 The following sections assist with containerizing the {productname} services for users with licenses to self-hosted versions of:
@@ -91,8 +94,8 @@ The following sections assist with containerizing the {productname} services for
 
 Select from the following:
 
-* For the Tiny Enhanced Media Embed and Tiny Link Checker service, see: <<deploythetinymcehyperlinkingserver-sidecomponentusingdockerindividuallylicensed,Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)>>.
-* For the Tiny Spell Checker Pro service, see: <<deploythetinymcespellingserviceserver-sidecomponentusingdockerindividuallylicensed,Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)>>.
+* For the Tiny Enhanced Media Embed and Tiny Link Checker service, see: xref:deploythetinymcehyperlinkingserver-sidecomponentusingdockerindividuallylicensed[Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)].
+* For the Tiny Spell Checker Pro service, see: xref:deploythetinymcespellingserviceserver-sidecomponentusingdockerindividuallylicensed[Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)].
 
 include::partial$docker/dockerized-hyperlinking-service.adoc[]
 

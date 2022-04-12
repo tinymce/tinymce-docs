@@ -2,7 +2,7 @@
 :description: WCAG & Section 508 compliant accessibility checking.
 :keywords: a11y accessibility
 
-For most developers, accessibility has become critical to the usability of their solutions. {productname}`'s link:{baseurl}/plugins/premium/a11ychecker/[accessibility checker] (based on technology built by link:{url}[{companyname}]) makes checking for common accessibility issues incredibly easy for content creators by using an interface that steps them through each error, and in most cases also recommends a solution.
+For most developers, accessibility has become critical to the usability of their solutions. {productname}'s xref:plugins/premium/a11ychecker.adoc[accessibility checker] (based on technology built by link:{url}[{companyname}]) makes checking for common accessibility issues incredibly easy for content creators by using an interface that steps them through each error, and in most cases also recommends a solution.
 
 The check is achieved within the editor before the user posts their content and operates in a similar fashion to running a spell check in Word.
 
@@ -10,5 +10,5 @@ Before the introduction of this feature users would have to manually check for e
 
 :pluginname: Accessibility Checker
 :pluginminimumplan: tierthree
-:plugindocspage: a11ychecker
+:plugindocspage: a11ychecker.adoc
 include::partial$misc/purchase-premium-plugins.adoc[]

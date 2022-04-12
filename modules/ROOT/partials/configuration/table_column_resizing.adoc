@@ -3,8 +3,9 @@
 
 include::partial$misc/requires_5_5v.adoc[]
 
-ifeval::[{plugincode} != "table"]
+ifeval::["{plugincode}" != "table"]
 NOTE: The `table_column_resizing` option requires the `table` plugin.
+endif::[]
 
 The `table_column_resizing` option sets whether a table or other columns are resized when a user resizes, inserts, or deletes a table column.
 

@@ -36,7 +36,8 @@ The Word Count plugin exposes an API for retrieving the word and character count
 
 === Example: Using the `wordcount` plugin APIs
 
-```js
+[source, js]
+----
 var wordcount = tinymce.activeEditor.plugins.wordcount;
 
 console.log(wordcount.body.getWordCount());
@@ -46,4 +47,4 @@ console.log(wordcount.body.getCharacterCountWithoutSpaces());
 console.log(wordcount.selection.getWordCount());
 console.log(wordcount.selection.getCharacterCount());
 console.log(wordcount.selection.getCharacterCountWithoutSpaces());
-```
+----

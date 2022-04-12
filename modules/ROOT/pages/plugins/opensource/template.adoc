@@ -100,15 +100,24 @@ A template is a file with a `div` containing the template data. All `html` outsi
 
 A template has more capabilities than a simple snippet, for example, a template can have dynamic content/smart content that gets updated by functions located in the `template_replace_values` key. These functions will continue to be executed each time a cleanup procedure is performed.
 
-Each template needs to be inside of a div with the `mceTmpl` class, like this example:
+Each template needs to be inside a div with the `mceTmpl` class, like this example:
 
-```html
-// This will not be inserted+++<div class="mceTmpl">++++++<table width="98%%" border="0" cellspacing="0" cellpadding="0">++++++<tr>++++++<th scope="col">++++++</th>+++
-      +++<th scope="col">++++++</th>++++++</tr>+++
-    +++<tr>++++++<td>++++++</td>+++
-      +++<td>++++++</td>++++++</tr>++++++</table>++++++</div>+++
-
-```
+[source, html]
+----
+<!-- This will not be inserted -->
+<div class="mceTmpl">
+  <table width="98%%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </table>
+</div>
+----
 
 == Making Snippets
 

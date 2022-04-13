@@ -1,4 +1,4 @@
-name: Release > Tiny docs 6.0
+name: Release > Tiny 6 Docs
 
 on:
   workflow_dispatch:
@@ -26,16 +26,16 @@ jobs:
         cache: 'yarn'
         node-version: ${{ matrix.node-version }}
 
-    - name: (Release - Docs 6.0) Install dependencies
+    - name: (Release - Docs 6) Install dependencies
       run: yarn install
 
-    - name: (Release - Docs 6.0) Build API References
+    - name: (Release - Docs 6) Build API References
       run: yarn build
 
-    - name: (Release - Docs 6.0) Build Website
+    - name: (Release - Docs 6) Build Website
       run: yarn antora ./antora-playbook-prod.yml
 
-    - name: (Release - Docs 6.0) Rename sitemap.xml (Temporary solution - Amit)
+    - name: (Release - Docs 6) Rename sitemap.xml (Temporary solution - Amit)
       shell: bash
       run: |
         mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml

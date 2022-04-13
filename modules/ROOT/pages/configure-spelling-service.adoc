@@ -11,6 +11,7 @@ The Spelling service has these configurable settings:
 * `+hunspell-dictionaries-path+`
 * `+custom-dictionaries-path+`
 * `+dynamic-custom-dictionaries+`
+* `+num-incorrect-words-in-suggestions-request-limit+`
 
 [[hunspell-dictionaries-path]]
 === `+hunspell-dictionaries-path+` (optional)
@@ -27,3 +28,8 @@ include::partial$misc/custom-dictionaries-path.adoc[]
 === `+dynamic-custom-dictionaries+` (optional)
 
 include::partial$misc/dynamic-custom-dictionaries.adoc[]
+
+[[num-incorrect-words-in-suggestions-request-limit]]
+=== `+num-incorrect-words-in-suggestions-request-limit+` (optional)
+
+include::partial$misc/num-incorrect-words-in-suggestions-request-limit.adoc[]

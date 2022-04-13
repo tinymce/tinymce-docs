@@ -125,7 +125,7 @@ tinymce.init({
   toolbar: 'spellchecker',
   init_instance_callback: (editor) => {
     editor.on('SpellcheckerIgnoreAll', (e) => {
-      console.log('Ignore word (all)', e.word);
+      console.log('Ignore word (all)', e.word, e.language);
     });
   }
 });

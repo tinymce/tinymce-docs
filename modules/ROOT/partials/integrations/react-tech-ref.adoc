@@ -14,6 +14,7 @@
 ** xref:oneditorchange[`+onEditorChange+`]
 ** xref:outputformat[[.line-through]#`+outputFormat+`# (_removed_)]
 ** xref:plugins[`+plugins+`]
+** xref:rollback[`+rollback+`]
 ** xref:scriptloading[`+scriptLoading+`]
 ** xref:tagname[`+tagName+`]
 ** xref:textareaname[`+textareaName+`]
@@ -398,6 +399,30 @@ For information on adding plugins to {productname}, see: xref:work-with-plugins.
 ----
 <Editor
   plugins='lists code'
+/>
+----
+
+[[rollback]]
+=== `+rollback+`
+
+Used to configure the rollback timer. This is the milliseconds between an event
+being emitted by the xref:oneditorchange[`+onEditorChange+`] prop and the
+xref:value[`+value+`] prop being enforced.
+
+When `+rollback+` is `false` the xref:value[`+value+`] prop will not be
+enforced unless it changes.
+
+*Type:* `+Number+` or `false`
+
+*Default value:* `200`
+
+==== Example: Using `+rollback+`
+
+[source,jsx]
+----
+<Editor
+  rollback={0}
+  value="<p>This value will be restored almost as soon as it is changed.</p>"
 />
 ----
 

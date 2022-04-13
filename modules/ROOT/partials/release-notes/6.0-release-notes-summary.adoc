@@ -1,14 +1,6 @@
-[[summary]]
-= Summary
-This section documents the three core changes made to {productname} 6.0.
-
-This section also includes four tables that set out the:
-
-* renamed APIs, Commands, Plugins, Options, and UI & UX elements
-* values changed in a default {productname} 6.0 instance.
-* previously deprecated and now removed items.
-* never documented, and consequently never supported, items that have now been removed.
-
+// tag::contents[]
+[[contents]]
+= Contents
 
 * xref:core-changes[Core changes]
 * xref:things-we-renamed[Things we renamed]
@@ -16,6 +8,12 @@ This section also includes four tables that set out the:
 * xref:previously-deprecated-items-now-removed[Previously deprecated items now removed]
 * xref:previously-undocumented-items-removed-without-prior-deprecation[Previously undocumented items removed without prior deprecation]
 
+//end::contents[]
+
+
+[[summary]]
+= Summary
+This section documents the three core changes made to {productname} 6.0.
 
 // tag::core-changes[]
 [[core-changes]]
@@ -35,6 +33,13 @@ NOTE: In particular, this means {productname} 6.0 does not support Microsoft Int
 These packs are available to all https://tiny.cloud/get-tiny/[Cloud subscribers] and all https://tiny.cloud/pricing/[Premium plan subscribers].
 
 // end::core-changes[]
+
+This section also includes four tables that set out the:
+
+* renamed APIs, Commands, Plugins, Options, and UI & UX elements
+* values changed in a default {productname} 6.0 instance.
+* previously deprecated and now removed items.
+* never documented, and consequently never supported, items that have now been removed.
 
 
 // tag::things-we-renamed[]

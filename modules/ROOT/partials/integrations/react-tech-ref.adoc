@@ -12,7 +12,7 @@
 ** xref:initialvalue[`+initialValue+`]
 ** xref:inline[`+inline+`]
 ** xref:oneditorchange[`+onEditorChange+`]
-** xref:outputformat[`+outputFormat+` (_deprecated_)]
+** xref:outputformat[[.line-through]#`+outputFormat+`# (_removed_)]
 ** xref:plugins[`+plugins+`]
 ** xref:scriptloading[`+scriptLoading+`]
 ** xref:tagname[`+tagName+`]
@@ -342,7 +342,7 @@ Used to store the state of the editor outside the {productname} React component.
 
 It is called with two arguments:
 
-`+value+`:: The current value of the editor. This is normally HTML but can be text if the deprecated xref:outputformat[`+outputFormat+`] prop is used.
+`+value+`:: The current value of the editor. This is HTML.
 
 `+editor+`:: A reference to the editor.
 
@@ -351,46 +351,13 @@ For detailed information on using `+onEditorChange+`, see: xref:using-the-tinymc
 *Type:* `+EventHandler+`
 
 [[outputformat]]
-=== `+outputFormat+`
+=== [.line-through]#`+outputFormat+`# (__removed__)
 
-IMPORTANT: This option was deprecated with the release of the {productname} React component 3.11.0. The `+outputFormat+` option will be removed in a future release of the {productname} React component.
+IMPORTANT: This option was removed with the release of the {productname} React component 4.0.0.
 
-Used to specify the format of the content produced by the xref:oneditorchange[`+onEditorChange+`] event.
-
-This does not change the input format, so the editor must still be supplied HTML in the `+value+` or `+initialValue+`, which makes this prop much harder to use correctly than it initially seems.
-
-*Type:* `+String+`
-
-*Default value:* `+'html'+`
-
-*Possible values:* `+'html'+`, `+'text'+`
-
-==== Example: Using `+outputFormat+`
-
-[source,jsx]
-----
-const textToHtml = (text) => {
-  const elem = document.createElement('div');
-  return text.split(/\n\n+/).map((paragraph) => {
-    return '<p>' + paragraph.split(/\n+/).map((line) => {
-      elem.textContent = line;
-      return elem.innerHTML;
-    }).join('<br/>') + '</p>';
-  }).join('');
-};
-const initialText = 'The quick brown fox jumps over the lazy dog';
-const [text, setText] = useState(initialText);
-return (
-  <>
-    <Editor
-      initialValue={textToHtml(initialText)}
-      outputFormat='text'
-      onEditorChange={(newText) => setText(newText)}
-    />
-    <pre>{text}</pre>
-  </>
-);
-----
+This option was used to specify the format of the content produced by the 
+xref:oneditorchange[`+onEditorChange+`] event, however as it did not change the
+input format it was almost impossible to use correctly.
 
 ==== Example: Replacing usage of `+outputFormat+`
 

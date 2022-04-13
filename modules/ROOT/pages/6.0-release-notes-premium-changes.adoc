@@ -54,48 +54,26 @@ No Premium Plugins released with {productname} 6.0 are backwards compatible with
 
 The following Premium Plugins now present in Hindi, Malay, and Vietnamese:
 
-* Accessibility Checker
-* Advanced Tables
-* Comments
-* Enhanced Image Editing
-* Export
-* PowerPaste
-* Real-time Collaboration (RTC)
-* Spell Checker Pro
-* Table of Contents
-
-// to do above
-// link out to each plugin page
-//
-// pre-requisite
-// xref or https as link syntax?
-
+* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:advtable.adoc[Advanced Tables]
+* xref:introduction-to-tiny-comments.adoc[Comments]
+* xref:editimage.adoc[Enhanced Image Editing]
+* xref:export.adoc[Export]
+* xref:introduction-to-powerpaste.adoc[PowerPaste]
+* xref:rtc-introduction.adoc[Real-time Collaboration (RTC)]
+* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
+* xref:tableofcontents.adoc[Table of Contents]
 
 [[title-case-corrected-in-premium-plugin-ui-elements]]
 == Title case corrected in Premium Plugin UI elements
 
 Previously, buttons, dialog fields, and menu items in the following Premium Plugins were presented in title case:
 
-* Accessibility Checker
-* Format Painter
-* Spell Checker Pro
+* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:formatpainter.adoc[Format Painter]
+* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
 
 As of this update, these UI elements in these Plugins present in standard sentence case.
-
-// to do above
-// link out to each plugin page
-//
-// pre-requisite
-// xref or https as link syntax?
-
-
-
-// to do below
-// link out to each plugin page
-//
-// pre-requisites
-// 1. xref or https as link syntax?
-// 2. edit each opening sentence to provide text amenable to being wrapped in xref or https anchoring.
 
 
 // tag::accompanying-premium-plugin-changes[]
@@ -106,12 +84,16 @@ The following premium plugin updates were released alongside {productname} 6.0.
 
 === Accessibility Checker
 
+The following change was made to the xref:a11ychecker.adoc[Accessibility Checker] plugin:
+
 The default value for `a11ychecker_html_version` was `html4`.
 
 It is now `html5`.
 
 
-=== Advanced Table
+=== Advanced Tables
+
+The following changes and fixes were made to the xref:advtable.adoc[Advanced Tables] plugin:
 
 With all table logic, except table UI components, now part of xref:6.0-release-notes-core-changes.adoc#changed-plugins-table[core {productname} editor], the `advtable` plugin now only requires the `table` plugin be enabled to use the Advanced Table-specific toolbar buttons and menu items.
 
@@ -124,8 +106,7 @@ Previously tables containing a `colgroup` did not sort correctly. As of this rel
 
 === Comments
 
-The following fixes were applied to the Comments plugin:
-
+The following changes and fixes were applied to the xref:introduction-to-tiny-comments.adoc[Comments] plugin:
 
 Because of how a comment’s active state was captured when the comment was made active, this active state was not excluded when capturing editor content from a comment.
 
@@ -142,6 +123,8 @@ The logic has been corrected and, with this update, all comments scroll into vie
 
 === Enhanced Image Editing (was Image Tools)
 
+The following changes were made to the xref:editimage.adoc[Enhanced Image Editing] plugin:
+
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Free editor.
 
 _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
@@ -153,18 +136,22 @@ Users of the Free version of {productname} 5.x who rely on the removed `imagetoo
 
 === Enhanced Media Embed
 
+The following change was made to the xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugin:
+
 In earlier versions of the {productname}, the `forced_root_black` option took the value `false`.
 
 This value was previously deprecated and, with this release, support for `false` as a `forced_root_black` value has been removed from the Enhanced Media Embed plugin.
 
 === Export
 
+The following improvement was made to the xref:export.adoc[Export] plugin:
+
 A new `export_image_proxy_service_url` option is available for use with the proxy service provided by https://tiny.cloud/docs/enterprise/server/[Tiny services].
 
 
 === Format Painter
 
-The following improvements and changes were made to Format Painter.
+The following improvement and following change were made to the xref:formatpainter.adoc[Format Painter] plugin:
 
 A `formatpainter` menu item was added to match the toolbar button.
 
@@ -172,6 +159,8 @@ The `formatpainter_blacklisted_formats` option was re-named to `formatpainter_ig
 
 
 === Mentions
+
+The following change was made to the xref:mentions.adoc[Mentions] plugin:
 
 The `getUsers` API was removed.
 
@@ -184,7 +173,7 @@ Because the functionality was unmaintainable, however, `paste` no longer support
 
 The Premium plugin, xref:introduction-to-powerpaste.adoc[`PowerPaste`] provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
-For this release, the following fixes and changes were also incorporated into PowerPaste.
+For this release, the following fixes and changes were also incorporated into the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin:
 
 Previously, when dragging content from outside the editor to inside the editor the pointer did not move with the dragged content as expected.
 
@@ -210,13 +199,13 @@ The `content` argument can no longer be used with `mceInsertClipboardContent`. I
 +
 . The, now built-in, `paste` functionality no longer supports pasting from Microsoft Word.
 +
-NOTE: There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintainance of this particular functionality as a separate plugin. +
+NOTE: There is an open https://github.com/tinymce/tinymce/discussions/7487[request for maintainers] should someone in the community be interested in taking over maintenance of this particular functionality as a separate plugin. +
 If a community-maintained version of the `paste` plugin becomes available, we will link to it from the xref:migration-from-5x.adoc#plugins-paste[_Migration Guide_].
 
 
 === Real-time Collaboration
 
-The following improvements, changes, and fixes were made to Real-time Collaboration.
+The following improvements, changes, and fixes were made to the xref:rtc-introduction.adoc[Real-time Collaboration] plugin:
 
 Three additional options are now supported when Real-time Collaboration is active:
 
@@ -253,7 +242,7 @@ The free `spellchecker` plugin was removed as no longer supported.
 
 The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
 
-This update to Spell Checker Pro includes the following fixes.
+The following fixes were made to the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] plugin:
 
 Previously, Spell Checker Pro treated soft hyphens (ie the `+&shy;+` html entity) as a word boundary. As a consequence words containing soft hyphens were not correctly spellchecked as whole words.
 
@@ -274,6 +263,8 @@ As well, one command and one option have been replaced and a, previously depreca
 
 
 === Table of Contents
+
+The following changes were made to the xref:tableofcontents.adoc[Table of Contents] plugin:
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#new-and-improved-plugins-table-of-contents[_{productname} 6.0 Release Notes_], the `toc` plugin is no longer part of the Core editor.
 
@@ -298,18 +289,12 @@ The new Premium `tableofcontents` plugin also changes the names of several eleme
 | `toc_header` | `tableofcontents_header` | Option
 |===
 
-
-
-
-
-
 Any configurations or logic that use the old element names must be updated to the new names after upgrading to {productname} 6.0 and installing the new `tableofcontents` plugin.
-
 
 
 === Tiny Drive
 
-The following improvements, changes, and fixes were made to Tiny Drive.
+The following improvements, changes, and fixes were made to the xref:tinydrive-introduction.adoc[Tiny Drive] plugin:
 
 Tiny Drive supports several new file formats:
 
@@ -384,11 +369,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 The {productname} 6.0 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
 
-* The Enhanced Media Embed plugin (`+mediaembed+`)
-* The Export plugin (`+export+`)
-* The Enhanced Image Editing plugin (`+editimage+`)
-* The Link Checker plugin (`+linkchecker+`)
-* The Spell Checker Pro plugin (`+tinymcespellchecker+`)
+* The xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugin (`+mediaembed+`)
+* The xref:export.adoc[Export] plugin (`+export+`)
+* The xref:editimage.adoc[Enhanced Image Editing] plugin (`+editimage+`)
+* The xref:linkchecker.adoc[Link Checker] plugin (`+linkchecker+`)
+* The xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] plugin (`+tinymcespellchecker+`)
 
 The Java server-side components have been updated to the following versions:
 

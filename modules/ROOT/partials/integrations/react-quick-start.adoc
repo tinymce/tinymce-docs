@@ -301,7 +301,7 @@ ifeval::["{productUse}" == "host"]
 npm install --save @tinymce/tinymce-react
 ----
 
-. Unzip the content of the `+tinymce/js+` folder from the https://www.tiny.cloud/my-account/downloads/[{productname} zip] into the `+public+` folder. Afterwards the directory listing should be similar to below:
+. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder. Afterwards the directory listing should be similar to below:
 +
 .> `tree -L 2 public`
 [source,text]

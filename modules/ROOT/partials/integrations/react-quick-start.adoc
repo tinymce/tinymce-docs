@@ -634,6 +634,9 @@ NOTE: Additional configuration is required to deploy the application outside the
 
 == Next Steps
 
+ifeval::["{productUse}" == "bundle"]
+* For for information on bundling, see: xref:introduction-to-bundling-tinymce.adoc[]
+endif::[]
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 * For information on customizing:
 ** {productname} integration, see: xref:react-ref.adoc[React framework Technical Reference].

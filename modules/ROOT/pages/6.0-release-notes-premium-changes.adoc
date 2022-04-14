@@ -256,13 +256,13 @@ As well, one command and one option have been replaced and a, previously depreca
 
 [cols="1,1,1"]
 |===
-| Removed item                    | Replacement           | Element type
+| Removed item                    | Replacement                | Element type
 
-| `mceSpellcheckDocument`         | `mceSpellcheckDialog` | Command
+| `mceSpellcheckDocument`         | `mceSpellcheckDialog`      | Command
 
-| `spellchecker_select_languages` | `content_langs`       | Option
+| `spellchecker_select_languages` | `content_langs`            | Option
 
-| `spellchecker_whitelist`        | No replacement        | Option
+| `spellchecker_whitelist`        | `spellchecker_ignore_list` | Option
 |===
 
 

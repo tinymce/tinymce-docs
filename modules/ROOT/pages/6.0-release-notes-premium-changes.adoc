@@ -120,11 +120,13 @@ Previously, the Comments plugin’s scroll position logic lead to, in some edge 
 
 The logic has been corrected and, with this update, all comments scroll into view as expected.
 
-Previously, when a Comment was added to a {productname} instance, the data in `tinycomments` was automatically, and incorrectly, added to the *Find and Replace* Find text-entry input field.
+Previously, when a Comment was added to a {productname} instance, the data in `tinycomments` was automatically, and incorrectly, added to `editor.selection.getContent()`.
+
+This caused that same data to appear in dialogs such as the *Find and Replace* Find text-entry input field and the *Insert Link* text-entry input field.
 
 Typically, the added data was the content selected before adding the comment. Selecting any or all the contents of a {productname} instance was not, however, necessary for this bug to present. Adding a comment to a {productname} instance automatically adds data to `tinycomments` regardless of whether there is selected content in the {productname} instance.
 
-With this update, adding a comment still adds data to `tinycomments` but that data is no longer passed to `editor.selection.getContent()`, which prevents it being automatically added to the *Find and Replace* Find text-entry input field.
+With this update, adding a comment still adds data to `tinycomments` but that data is no longer passed to `editor.selection.getContent()`, which prevents it being automatically added to dialogs such as the *Find and Replace* Find text-entry input field.
 
 
 === Enhanced Image Editing (was Image Tools)

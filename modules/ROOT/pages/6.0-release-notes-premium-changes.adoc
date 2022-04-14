@@ -246,10 +246,6 @@ With this update, the Real-time Collaboration editor no longer enters an endless
 
 === Spell Checker Pro
 
-The free `spellchecker` plugin was removed as no longer supported.
-
-The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
-
 The following fixes were made to the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] plugin:
 
 Previously, Spell Checker Pro treated soft hyphens (ie the `+&shy;+` html entity) as a word boundary. As a consequence words containing soft hyphens were not correctly spellchecked as whole words.

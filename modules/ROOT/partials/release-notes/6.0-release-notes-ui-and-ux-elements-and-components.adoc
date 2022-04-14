@@ -54,9 +54,9 @@ Consequently, it now supports partial nested objects.
 [[editor-text-entry-height]]
 === Editor text entry height
 
-In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high text entry area.
+In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high editor.
 
-In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high text entry area.
+In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high editor.
 
 As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
 

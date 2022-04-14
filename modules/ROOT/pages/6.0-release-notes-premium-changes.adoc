@@ -250,7 +250,7 @@ The following fixes were made to the xref:introduction-to-tiny-spellchecker.adoc
 
 Previously, Spell Checker Pro treated soft hyphens (ie the `+&shy;+` html entity) as a word boundary. As a consequence words containing soft hyphens were not correctly spellchecked as whole words.
 
-With this update, `+&shy;+` entity is correctly recognised as part of a word, not a word boundary. And words containing soft hyphens are, consequently, spell checked correctly.
+With this update, the `+&shy;+` entity is correctly recognised as part of a word, not a word boundary. And words containing soft hyphens are, consequently, spell checked correctly.
 
 As well, one command and one option have been replaced and a, previously deprecated, fallback option has been removed.
 

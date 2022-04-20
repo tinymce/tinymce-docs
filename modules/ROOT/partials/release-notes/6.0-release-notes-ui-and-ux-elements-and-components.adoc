@@ -54,9 +54,14 @@ Consequently, it now supports partial nested objects.
 [[editor-text-entry-height]]
 === Editor text entry height
 
-In {productname} 5.x, editors without a specified `height` value defaulted to 200px high.
+In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high editor.
 
-In {productname} 6.0, editors without a specified `height` value default to 400px high.
+In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high editor.
+
+As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
+
+Also, editors now have a `min-height` default value of `100px`. This prevents the editor UI from disappearing during re-sizing, which prevented users from interacting with the editor.
+
 
 
 [[editor-theme-parallel-fetched]]
@@ -106,16 +111,6 @@ Previously, {productname} UI classes provided a `.disabled` property.
 In {productname} 6, this property has been renamed to `.enabled`.
 
 Also, the Dialog API, which previously offered the `disable(<name>)` and `enable(<name>)` functions, now offers a single `setEnabled(<name>, <state>)` function.
-
-
-[[changed-editor-text-entry-height]]
-=== Editor text entry height
-
-In {productname} 5.x, editors without a `height` value specified in the {productname} configuration defaulted to a 200px high text entry area.
-
-In {productname} 6.0, editors without a `height` value specified in the {productname} configuration default to a 400px high text entry area.
-
-As was the case in {productname} 5.x, this new default only applies to editors in `iframe` mode, not `inline` mode.
 
 
 [[status-bar-compeny-id-changed-from-text-to-logo]]

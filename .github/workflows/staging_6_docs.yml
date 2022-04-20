@@ -1,4 +1,4 @@
-name: Staging > Tiny docs 6.0
+name: Staging > Tiny 6 Docs
 
 on:
   workflow_dispatch:
@@ -26,16 +26,16 @@ jobs:
         cache: 'yarn'
         node-version: ${{ matrix.node-version }}
 
-    - name: (Staging - Docs 6.0) Install dependencies
+    - name: (Staging - Docs 6) Install dependencies
       run: yarn install
 
-    - name: (Staging - Docs 6.0) Build API References
+    - name: (Staging - Docs 6) Build API References
       run: yarn build
 
-    - name: (Staging - Docs 6.0) Build Website
+    - name: (Staging - Docs 6) Build Website
       run: yarn antora ./antora-playbook-staging.yml
 
-    - name: (Staging - Docs 6.0) Rename sitemap.xml (Temporary solution - Amit)
+    - name: (Staging - Docs 6) Rename sitemap.xml (Temporary solution - Amit)
       shell: bash
       run: |
         mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml

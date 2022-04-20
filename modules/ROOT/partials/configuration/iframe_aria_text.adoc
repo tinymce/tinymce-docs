@@ -4,12 +4,12 @@
 include::partial$misc/requires_5_9v.adoc[]
 
 This option is used to customize the `title` attribute on the {productname} `iframe` element. For example:
+[source, html]
+----
+<iframe title="Rich Text Area. Press ALT-0 for help."></iframe>
+----
 
-```html+++<iframe title="Rich Text Area. Press ALT-0 for help.">++++++</iframe>+++
-
-```
-
-The `title` attribute is read by screen-readers to help users identify the editor. This option only applies to {productname} classic (iframe) mode and has no effect on link:{baseurl}/configure/editor-appearance/#inline[`inline` editors].
+The `title` attribute is read by screen-readers to help users identify the editor. This option only applies to {productname} classic (iframe) mode and has no effect on xref:configure/editor-appearance.adoc#inline[`inline` editors].
 
 *Type:* `String`
 

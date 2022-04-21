@@ -5,12 +5,13 @@ This option provides the ability to specify which built-in emoji database to use
 
 * `+emojis+` - This database uses Unicode characters to represent emoji in the editor content.
 * `+emojiimages+` - This database uses images provided by the Twitter Emoji (twemoji) project to represent emoji in the editor content.
-
++
+--
 :feature: emojiimages database
-
 :third_party_product: Twitter Emoji (twemoji) graphics
 :license_agreement_name: CC-BY 4.0
 include::partial$misc/under-license.adoc[]
+--
 
 *Type:* `+String+`
 

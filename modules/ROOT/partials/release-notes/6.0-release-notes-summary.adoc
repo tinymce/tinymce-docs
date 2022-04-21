@@ -153,11 +153,11 @@ Where an Option name has changed, configurations using that option must be chang
 
 | `a11ychecker_html_version`     | `html4`                     | `html5`   |
 
-| assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata
-
-| `config.height`               | `200px`                     | `400px`   | Changed to improve user experience.
+| assignment operator character | `:`                         | `~`       | Changed in the `valid_elements` and `extended_valid_elements` schemata.
 
 | `element_format`              | _no default value assigned_ | `html`    | Changed as part of modernising {productname}’s default behavior.
+
+| `height`                      | `200px`                     | `400px`   | Changed to improve user experience.
 
 | `link_default_protocol`       | `http`                      | `https`   | Changed as part of modernising {productname}’s default behavior.
 

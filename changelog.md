@@ -8,6 +8,12 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.4 - 2022-04-27
+
+### Fixed
+- Inline toolbars flickered when switching between editors.
+- Multiple inline toolbars were shown if focused too quickly.
+
 ## 5.10.3 - 2022-02-09
 
 ### Fixed

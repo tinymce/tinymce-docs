@@ -3,7 +3,6 @@ The https://github.com/tinymce/tinymce-jquery[Official {productname} jQuery comp
 == Procedure
 This procedure creates a basic jQuery integration containing a {productname} editor based on our xref:basic-example.adoc[Basic example].
 
-. Open a HTML file.
 ifeval::["{productSource}" == "package-manager"]
 . Install jQuery, {productname}, the {productname} jQuery integration and the library `fs-extra` from NPM:
 +
@@ -12,7 +11,7 @@ ifeval::["{productSource}" == "package-manager"]
 npm install --save jquery tinymce @tinymce/tinymce-jquery fs-extra
 ----
 
-. Setup a `postinstall` script to copy the packages into a public directory:
+. Setup a `postinstall` script to copy the packages into a public directory whenever a new dependency is installed:
 +
 .postinstall.js
 [source,js]
@@ -42,6 +41,17 @@ fse.copySync(path.join(nodeModulesDir, '@tinymce', 'tinymce-jquery', 'dist'), pa
 }
 ----
 
+. Run the `postinstall` script to copy the packages into your public directory:
++
+[source,shell]
+----
+npm run postinstall
+----
+endif::[]
+
+. Open an HTML file
+
+ifeval::["{productSource}" == "package-manager"]
 . Assuming the `public` directory is served at `+/public+`, add source scripts, such as:
 +
 [source,html]
@@ -53,6 +63,7 @@ fse.copySync(path.join(nodeModulesDir, '@tinymce', 'tinymce-jquery', 'dist'), pa
 +
 For information on self-hosting {productname}, see: xref:installation.adoc[Installing {productname}].
 endif::[]
+
 ifeval::["{productSource}" == "cloud"]
 . Add a `<script>` element to get jQuery with a snippet from the official
 https://code.jquery.com/[jQuery CDN page], which includes the `integrity` and

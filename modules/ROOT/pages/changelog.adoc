@@ -4,6 +4,15 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.0.2 - 2022-04-27
+
+=== Fixed
+* Some media elements wouldn't update when changing the source URL.
+* Inline toolbars flickered when switching between editors.
+* Multiple inline toolbars were shown if focused too quickly.
+* Added background and additional spacing for the text labeled buttons in the toolbar to improve visual clarity.
+* Toolbar split buttons with text used an incorrect width on touch devices.
+
 == 6.0.1 - 2022-03-23
 
 === Fixed

@@ -5,9 +5,9 @@
 :pluginname: Emoticons
 :plugincode: emoticons
 
-This plugin adds a dialog to the editor lets users insert emoji into {productname}'s editable area. The dialog can be invoked via a toolbar button - `+emoticons+` - or a dedicated menu item added as `+Insert > Emoticons+`.
+This plugin adds a dialog to the editor that lets users insert emoji into {productname}'s editable area. The dialog can be invoked via a toolbar button - `+emoticons+` - or a dedicated menu item added as `+Insert > Emojis...+`.
 
-The emoticons plugin provides an autocompleter for adding emoji without using the toolbar button or menu item. Adding a colon `+:+`, followed by at least two characters will open the emoticon picker showing matching emoji.
+The emoticons plugin provides an autocompleter for adding emoji without using the toolbar button or menu item. Adding a colon `+:+`, followed by at least two characters will open a popup collection showing matching emoji.
 
 NOTE: The emoticons plugin does not automatically convert text emoticons into graphical emoji.
 
@@ -32,7 +32,7 @@ liveDemo::emoticons[]
 
 The default database of emoji can be overridden or extended through the options below.
 
-Internally, emoticons is defined by an object mapping emoticon names to additional details, whereby each entry represents a single emoji. The additional details should contain a unicode character representing the emoji, any keywords that can be used to search for the emoji and a category to place the emoji in. Options are expected to be provided in the same format.
+Internally, emojis are defined by an object mapping emoji names to additional details, whereby each entry represents a single emoji. The additional details should contain a unicode character representing the emoji, any keywords that can be used to search for the emoji and a category to place the emoji in. Options are expected to be provided in the same format.
 
 [source,js]
 ----

@@ -131,7 +131,7 @@ ifeval::["{productSource}" == "package-manager"]
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-          'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+          'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
           'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
         ],
         toolbar: 'undo redo | blocks | bold italic backcolor | ' +
@@ -172,7 +172,7 @@ ifeval::["{productSource}" == "cloud"]
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-          'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+          'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
           'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
         ],
         toolbar: 'undo redo | blocks | bold italic backcolor | ' +

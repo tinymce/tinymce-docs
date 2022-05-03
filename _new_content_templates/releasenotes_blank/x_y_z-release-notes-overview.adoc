@@ -14,7 +14,7 @@ The following "list" should be added to `data/nav.yml`
   - url: "vnumsnake-release-notes-known-issues"
 ////
 
-= TinyMCE vnumtxt
+= TinyMCE vnumtxt: Release overview
 :navtitle: TinyMCE vnumtxt
 :description: Release notes overview for TinyMCE vnumtxt
 :keywords: releasenotes, new, changes, bugfixes
@@ -23,7 +23,7 @@ include::partial$misc/admon_releasenotes_for_stable.adoc[]
 
 == Overview
 
-{productname} vnumtxt was released for {enterpriseversion} and {cloudname} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {productname} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} vnumtxt, including:
+{productname} vnumtxt was released for {enterpriseversion} and {cloudname} on <<`WEEKDAY`, `MMM` `D`^`st|nd|th`^, `YYYY`>>. It includes {productname} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} vnumtxt, including:
 
 * xref:X_Y_Z-release-notes-core-changes.adoc[{productname} core new features, enhancements, and changes]
 * xref:X_Y_Z-release-notes-premium-changes.adoc[Accompanying premium feature changes]

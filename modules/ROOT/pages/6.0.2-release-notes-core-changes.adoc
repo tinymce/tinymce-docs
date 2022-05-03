@@ -1,0 +1,19 @@
+= TinyMCE 6.0.2: Core changes
+:navtitle: Core changes
+:description: The core changes for TinyMCE 6.0.2
+:keywords: releasenotes, bugfixes, defaults
+
+== Contents
+
+* xref:fixes[Fixes]
+
+[[fixes]]
+== Fixes
+
+{productname} 6.0.2 provides fixes for the following bugs:
+
+* Some media elements wouldn't update when changing the source URL.
+* Inline toolbars flickered when switching between editors.
+* Multiple inline toolbars were shown if focused too quickly.
+* Added background and additional spacing for the text labeled buttons in the toolbar to improve visual clarity.
+* Toolbar split buttons with text used an incorrect width on touch devices.

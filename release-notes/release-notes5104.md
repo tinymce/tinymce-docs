@@ -24,7 +24,9 @@ The following premium plugin updates were released alongside {{site.productname}
 
 The {{site.productname}} 5.10.4 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 2.5.1 fixes the page focus incorrectly changing when spellchecking is triggered on multiple editors after scrolling.
+In the previous release, **Spell Checker Pro** would change page focus incorrectly when spellchecking was triggered on multiple editors after a `scroll` event.
+
+**Spell Checker Pro** 2.5.1, which accompanies this release, corrects this so that the page focus no longer moves in this circumstance.
 
 For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 

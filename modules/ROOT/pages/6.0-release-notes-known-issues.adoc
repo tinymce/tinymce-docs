@@ -6,7 +6,7 @@
 This section documents the single known issue that {productname} 6.0 users may encounter and possible workarounds for this issue.
 
 // tag::known-issues[]
-There is one known issue affecting {productname} 6.0.
+There are two known issues affecting {productname} 6.0.
 
 == Unexpected `nonbreaking_force_tab: true` behavior
 
@@ -22,5 +22,14 @@ As of this release, however, the specific cause is still being investigated.
 
 Workaround::
 Other than keeping `nonbreaking_force_tab` set to `false`, no workaround is currently available.
+
+== Editor content can overlap with an open floating toolbar drawer when using certain premium skins
+
+In {productname} 6.0, if one of the premium skins, `snow`, `naked`, `outside`, or `fabric` is used and the floating toolbar drawer is open, content within the editor may visually overlap the toolbar drawer.
+
+The expected behavior is for there to be no overlap between the editor content and the toolbar drawer.
+
+Workaround::
+There was no known workaround at the time of the release.
 
 // end::known-issues[]

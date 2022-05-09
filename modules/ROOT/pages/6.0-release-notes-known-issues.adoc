@@ -25,7 +25,14 @@ Other than keeping `nonbreaking_force_tab` set to `false`, no workaround is curr
 
 == Editor content can overlap with an open floating toolbar drawer when using certain premium skins
 
-In {productname} 6.0, if one of the premium skins, `snow`, `naked`, `outside`, or `fabric` is used and the floating toolbar drawer is open, content within the editor may visually overlap the toolbar drawer.
+In {productname} 6.0, if
+
+* the floating toolbar drawer is open; and
+* one of the following premium skins is being used
++
+— `snow`, `naked`, `outside`, or `fabric` —
+
+content within the {productname} editor may overlap visually with the toolbar drawer.
 
 The expected behavior is for there to be no overlap between the editor content and the toolbar drawer.
 

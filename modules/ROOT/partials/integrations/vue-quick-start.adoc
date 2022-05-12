@@ -118,7 +118,6 @@ For example:
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <editor
-      api-key="no-api-key"
       :init="{
         plugins: 'lists link image table code help wordcount'
       }"

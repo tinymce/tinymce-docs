@@ -85,11 +85,11 @@ Live demos can be added to content using the "live-demo.html" include, such as:
 
 There are several options for this include file - please see live-demo.html for details.
 
-The source for each live demo is store in the `_includes/live-demos/` directory.
+The source for each live demo is store in the `modules/ROOT/examples/live-demos/` directory.
 
 #### Overriding the tinymce URL in live demos
 
-All live demos usually get their tinymce.min.js URL from the `tinymce_live_demo_url` setting in the _config.yml file.
+All live demos usually get their tinymce.min.js URL from the `tinymce_live_demo_url` setting in the `antora.yml` file.
 However, there are some instances where you wish to override this, e.g.
 
  - You want to push/deploy a branch for a new feature that's only on the 'dev' channel.
@@ -98,7 +98,7 @@ However, there are some instances where you wish to override this, e.g.
 To help with this, there are two mechanisms for overriding the tinymce.min.js URL.
 
  1. Set `tinymce_live_demo_url` in `_config-local-override.yml`.
-    - This will override the `tinymce_live_demo_url` setting in `config.yml`.
+    - This will override the `tinymce_live_demo_url` setting in `antora.yml`.
     - This file is *not* intended to be checked in.
     - This option changes the URL for all live demos.
 
@@ -108,6 +108,3 @@ To help with this, there are two mechanisms for overriding the tinymce.min.js UR
     - Don't use this in more than one live demo on a page.
     - Don't use this long-term - when the feature is fully rolled-out, use the standard channel.
     - See `live-demo.html` for details.
-
-Note: Jekyll is pretty bad at automatically reloading code when you're playing with include files.
-Sometimes you need to restart the server.

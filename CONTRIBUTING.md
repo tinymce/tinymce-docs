@@ -1,5 +1,4 @@
-This page outlines how you can provide feedback and contribute to
-TinyMCE documentation.
+This page outlines how you can provide feedback and contribute to TinyMCE documentation.
 
 # Contributor Code of Conduct
 
@@ -15,11 +14,7 @@ Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-do
 
 # TinyMCE documentation tech stack
 
-The documentation is built with Jekyll. Text files are written in [kramdown](https://kramdown.gettalong.org/) and published on [GitHub](https://github.com/tinymce/tinymce-docs). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
-
-# Markdown & code syntax
-
-The documentation is written in [kramdown Flavored Markdown](https://kramdown.gettalong.org/). If you are not familiar with kramdown [read this](https://kramdown.gettalong.org/quickref.html).
+The documentation is built with [Antora](https://antora.org/) and text files are written in [ascii doc](https://asciidoc.org/). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
 
 ## Highlighting
 
@@ -54,34 +49,30 @@ This is not:
 
 ## URLs and links
 
-Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
+Resources to be linked take the form of a URL following by the linked text between two brackets. Linking an external resource looks like this:
+
 ```
-    hello, [text to link](http://www.example.com) to the URL example.com.
+    hello, http://www.example.com[text to link] to the URL example.com.
 ```
 
 ## Live demos
 
-Live demos can be added to content using the "live-demo.html" include, such as:
+New live demos can be added to [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
+
 ```
-    {% include live-demo.html id="basic-example" %}
+    liveDemo::{sub-directory-name}[]
 ```
 
-There are several options for this include file, see [`_includes/live-demo.html`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/live-demo.html) for details.
-
-The source for each live-demo is store in the [`_includes/live-demos/`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/live-demos/) directory.
 
 ## Adding metadata to a page
 
 Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
-```md
-    ---                // Three dashes at the start and end of the meta section, must be included.
-    layout: default    // In most cases leave this as 'default'.
-    title:             // The nav.yml references this so it must be included and it should be brief.
-    title_nav:         // Descriptive title for the navigation bar, if omitted nav defaults to title field.
-    description_short: // Short description for the grid layouts.
-    description:       // Detailed description at page level for the header section under the title.
-    keywords:          // Space-separated list of keywords in the content.
-    ---
+
+```
+    :navtitle:          // Descriptive title for the navigation bar, if omitted nav defaults to title field.
+    :description_short: // Short description for the grid layouts.
+    :description:       // Detailed description at page level for the header section under the title.
+    :keywords:          // Space-separated list of keywords in the content.
 ```
 
 # Recommended tools
@@ -95,10 +86,6 @@ The following tools are recommended for significant edits to the documentation. 
 
 -   Write Good - [Write good based
     plugins](https://github.com/btford/write-good#other-projects-using-write-good).
-
--   A markdown linter (We use the Kramdown flavor of markdown).
-
--   A Jekyll linter.
 
 # Style guide
 

@@ -60,7 +60,7 @@ Resources to be linked take the form of a URL following by the linked text betwe
 New live demos can be added to [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
 
 ```
-  liveDemo::{sub-directory-name}[]
+    liveDemo::{sub-directory-name}[]
 ```
 
 
@@ -69,11 +69,10 @@ New live demos can be added to [modules/ROOT/examples/live-demos directory](modu
 Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
 
 ```
-  = Title             // Page title
-  :navtitle:          // Descriptive title for the navigation bar, if omitted nav defaults to title field.
-  :description_short: // Short description for the grid layouts.
-  :description:       // Detailed description at page level for the header section under the title.
-  :keywords:          // Space-separated list of keywords in the content.
+    :navtitle:          // Descriptive title for the navigation bar, if omitted nav defaults to title field.
+    :description_short: // Short description for the grid layouts.
+    :description:       // Detailed description at page level for the header section under the title.
+    :keywords:          // Space-separated list of keywords in the content.
 ```
 
 # Recommended tools

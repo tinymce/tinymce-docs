@@ -24,7 +24,7 @@ Highlight words relating specifically to executable parts of software languages.
 
 ## Code snippets
 
-Code snippets should always be complete, executable code blocks starting with the `tinymce` object. We write code snippets using [source blocks](https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/) which starts by specifying the `source` style and the code snippet language in square brackets to enable syntax highlighting. The language is typically html, css, js, or ts.
+Code snippets should be complete, executable code blocks starting with the `tinymce` object. We write code snippets using [source blocks](https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/). These start by specifying the `source` style and the code snippet language in square brackets to enable syntax highlighting. The language is typically html, css, js, or ts.
 
 Include any key values pairs and method options that are required to enable a user to test the snippet in a local HTML file. You do not need to include the `html` surrounding the `tinymce` object that would be required to make the snippet work.
 
@@ -96,15 +96,13 @@ The following tools are recommended for significant edits to the documentation. 
 
 You are not required to know the style guide, **but** changes may be requested on GitHub pull requests to Tiny documentation where these guidelines are not met.
 
-The Tiny documentation style guide is based on the Readability Guideline provided by Content Design London. We have chosen this guide because it’s:
+The Tiny documentation style guide is based on the [Readability Guidelines](https://readabilityguidelines.co.uk) provided by [Content Design London](https://contentdesign.london/usability/readability-guidelines/). We have chosen this guide because it’s:
 
 - open to the community
 
 - focused on readability.
 
 The information in the following subsections gives an overview of key points and lists both exceptions and additions. Please follow the guidelines on this page when they differ from the linked information.
-
-For information the Readability Guidelines project, visit [Content Design London: Readability Guidelines](https://readabilityguidelines.co.uk/).
 
 ## Keep it simple
 
@@ -171,7 +169,7 @@ When referring to a program, use the proper name.
 
 For example:
 
-- "Microsoft Internet Explorer" not "IE"
+- "Google Chrome" not "Chrome"
 
 - "Apache Tomcat" not "Tomcat"
 
@@ -328,9 +326,9 @@ Tiny documentation uses four levels of admonition:
 
     - A significant increase in the risk of a security breach.
 
-    - Create a security vulnerability.
+    - A security vulnerability.
 
-    - Cause information loss.
+    - Information loss.
 
     - System failure.
 
@@ -340,9 +338,9 @@ Tiny documentation uses four levels of admonition:
 
     - A significant increase in the risk of a security breach.
 
-    - Create a security vulnerability.
+    - A security vulnerability.
 
-    - Cause information loss.
+    - Information loss.
 
     - System failure.
 
@@ -361,7 +359,7 @@ writing.
 
 # Glossary
 
-Accessible Rich Internet Applications (ARIA) Acronym for *Accessible Rich Internet Applications* Spell out and describe on first mention within a section.
+Accessible Rich Internet Applications (ARIA): Acronym for *Accessible Rich Internet Applications*. Spell out and describe on first mention within a section.
 
 See: [MDN Web Docs - ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA).
 
@@ -374,7 +372,7 @@ anchor tag into HTML. When talking with a business audience, use
 *bookmark* or add *bookmark* as a clarifier.
 
 Application Programming Interface (API)  
-: Use *API* in most circumstances. Spell it out on first mention only if kthe document is for a non-technical audience.
+: Use *API* in most circumstances. Spell it out on first mention only if the document is for a non-technical audience.
 
 asynchronous, async  
 : Use *asynchronous* Do not use *async*.
@@ -464,7 +462,7 @@ HTML
 : Do not spell out. Do not use *html* (except in codeblocks).
 
 JavaScript, JS  
-: The correct capitalization is *JavaScript* Do not use *Javascript* or *javascript* Do not use *JS* unless it is referring to a specific library such as *PrismJS*
+: The correct capitalization is *JavaScript*. Do not use *Javascript* or *javascript*. Do not use *JS* unless it is referring to a specific library such as *PrismJS*
 
 For example: Another popular JavaScript minification tool, UglifyJS2, will corrupt TinyMCE unless ASCII-only is set.
 
@@ -515,17 +513,16 @@ See or Refer to…
 Such as: For information on creating links, see: &lt;link&gt;.
 
 self-hosted  
-: The preferred way to refer to an on-premises deployment of our
-technology.
+: The preferred way to refer to an on-premises deployment of our technology.
 
 self-hosted premium plugins  
 : Preferred. Do not use *premium plugin SDKs*.
 
 should or must  
-: Avoid using *must* or *should* Only use where it is unavoidable.
+: Avoid using *must* or *should*. Only use where it is unavoidable.
 
 submenu  
-: Use *submenu* Do not use *sub-menu* or *sub menu*.
+: Use *submenu*. Do not use *sub-menu* or *sub menu*.
 
 Software as a Service (SaaS)  
 : Spell out on the first mention in a section for general audience. For a technical audience, it is always OK to use SaaS.
@@ -547,8 +544,8 @@ Tiny
 
 Do not use *Tiny* to refer to the core editor, which is *TinyMCE*.
 
-Tiny 4.x, Tiny 5.0  
-: *Tiny* is not a product. Do not give it a version. Use the product name, such as TinyMCE 5.0 or TinyMCE 4.9.
+Tiny 5.x, Tiny 6.0
+: *Tiny* is not a product. Do not give it a version. Use the product name, such as TinyMCE 6.0 or TinyMCE 5.9.
 
 Tiny Cloud  
 : Correct way to refer to the Tiny Cloud service. Spell it out on all occasions.
@@ -556,24 +553,23 @@ Tiny Cloud
 For example: *Tiny Cloud* includes a fast content delivery network.
 
 Tiny Technologies Inc.  
-: *Tiny Technologies Inc.* is full and correct business name for *Tiny*
+: *Tiny Technologies Inc.* is the full and correct business name for *Tiny*
 
 Do not use *Ephox Corporation*.
 
 TinyMCE  
 : This is the JavaScript library for rich text editing.
 
-Capitalize the *MCE* Do not use *Tinymce* *tinymce* is allowed in code
-and codeblocks where required.
+Capitalize the *MCE* Do not use *Tinymce*. *tinymce* is allowed in code and codeblocks where required.
 
-TinyMCE 4  
-: Correct way to refer to the 4.x releases of TinyMCE unless a specific version number (major.minor.patch) is *required*.
-
-TinyMCE 4.x  
-: Do not use. Use *TinyMCE 4* or *version 4* If necessary to specify the availability of a new feature or change in behavior, specify the minor version number such as TinyMCE 4.7.
-
-TinyMCE 5  
+TinyMCE 5
 : Correct way to refer to the 5.x releases of TinyMCE unless a specific version number (major.minor.patch) is *required*.
+
+TinyMCE 5.x
+: Do not use. Use *TinyMCE 5* or *version 5*. If necessary to specify the availability of a new feature or change in behavior, specify the minor version number such as TinyMCE 5.7.
+
+TinyMCE 6
+: Correct way to refer to the 6.x releases of TinyMCE unless a specific version number (major.minor.patch) is *required*.
 
 TinyMCE Cloud  
 : Do not use. Use *Tiny Cloud*.
@@ -585,7 +581,7 @@ UI element
 : Avoid using *UI element*.
 
 URL, url, Url  
-: Use *URL* Do not spell out the acronym. Do not use *url* or *Url*.
+: Use *URL*. Do not spell out the acronym. Do not use *url* or *Url*.
 
 user  
 : Typically refers to the end user of TinyMCE (such as the content author).
@@ -610,15 +606,15 @@ user interface (UI)
 
 Do not use *Ui* or *ui*
 
-Do not use *UI experience* It is either *user experience (UX)* OR *user interface (UI)*, but never both.
+Do not use *UI experience*. It is either *user experience (UX)* OR *user interface (UI)*, but never both.
 
 web  
-: Do not use *web* Use *Internet* for clarity. Can be used for terms such as *web server*.
+: Do not use *web*. Use *Internet* for clarity. Can be used for terms such as *web server*.
 
 Web Content Accessibility Guidelines (WCAG)  
-: Acronym for *Web Content Accessibility Guidelines* Spell out and describe on first mention within a section.
+: Acronym for *Web Content Accessibility Guidelines*. Spell out and describe on first mention within a section.
 
 WYSIWYG  
-: Avoid using *WYSIWYG* Use *rich text editor*
+: Avoid using *WYSIWYG*. Use *rich text editor*.
 
-It stands for *what you see is what you get* Make sure to use the acronym correctly, it is easy to misspell.
+It stands for *what you see is what you get*. Make sure to use the acronym correctly, it is easy to misspell.

@@ -75,7 +75,7 @@ The TinyMCE API documentation is maintained within the [TinyMCE project reposito
 - [Node.js](https://nodejs.org/en/).
 
 
-### Live Demos [WIP]
+### Live Demos
 
 New live demos can be added to the [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
 
@@ -83,7 +83,7 @@ New live demos can be added to the [modules/ROOT/examples/live-demos directory](
   liveDemo::{sub-directory-name}[]
 ```
 
-#### Overriding the tinymce URL in live demos [WIP]
+#### Overriding the tinymce URL in live demos
 
 All live demos usually get their `tinymce.min.js` URL from the `tinymce_live_demo_url` setting in the `antora.yml` file.
 However, there are some instances where you wish to override this, e.g.

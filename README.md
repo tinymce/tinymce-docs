@@ -89,7 +89,7 @@ The source for each live demo is store in the `modules/ROOT/examples/live-demos/
 
 #### Overriding the tinymce URL in live demos
 
-All live demos usually get their tinymce.min.js URL from the `tinymce_live_demo_url` setting in the `antora.yml` file.
+All live demos usually get their `tinymce.min.js` URL from the `tinymce_live_demo_url` setting in the `antora.yml` file.
 However, there are some instances where you wish to override this, e.g.
 
  - You want to push/deploy a branch for a new feature that's only on the 'dev' channel.

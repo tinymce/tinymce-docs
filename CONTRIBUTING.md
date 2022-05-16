@@ -1,5 +1,4 @@
-This page outlines how you can provide feedback and contribute to
-TinyMCE documentation.
+This page outlines how you can provide feedback and contribute to TinyMCE documentation.
 
 # Contributor Code of Conduct
 
@@ -15,11 +14,7 @@ Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-do
 
 # TinyMCE documentation tech stack
 
-The documentation is built with Jekyll. Text files are written in [kramdown](https://kramdown.gettalong.org/) and published on [GitHub](https://github.com/tinymce/tinymce-docs). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
-
-# Markdown & code syntax
-
-The documentation is written in [kramdown Flavored Markdown](https://kramdown.gettalong.org/). If you are not familiar with kramdown [read this](https://kramdown.gettalong.org/quickref.html).
+The documentation is built with [Antora](https://antora.org/) and text files are written in [ascii doc](https://asciidoc.org/). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
 
 ## Highlighting
 
@@ -54,51 +49,44 @@ This is not:
 
 ## URLs and links
 
-Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
+Resources to be linked take the form of a URL following by the linked text between two brackets. Linking an external resource looks like this:
+
 ```
-    hello, [text to link](http://www.example.com) to the URL example.com.
+    hello, http://www.example.com[text to link] to the URL example.com.
 ```
 
 ## Live demos
 
-Live demos can be added to content using the "live-demo.html" include, such as:
+New live demos can be added to [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
+
 ```
-    {% include live-demo.html id="basic-example" %}
+  liveDemo::{sub-directory-name}[]
 ```
 
-There are several options for this include file, see [`_includes/live-demo.html`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/live-demo.html) for details.
-
-The source for each live-demo is store in the [`_includes/live-demos/`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/live-demos/) directory.
 
 ## Adding metadata to a page
 
 Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
-```md
-    ---                // Three dashes at the start and end of the meta section, must be included.
-    layout: default    // In most cases leave this as 'default'.
-    title:             // The nav.yml references this so it must be included and it should be brief.
-    title_nav:         // Descriptive title for the navigation bar, if omitted nav defaults to title field.
-    description_short: // Short description for the grid layouts.
-    description:       // Detailed description at page level for the header section under the title.
-    keywords:          // Space-separated list of keywords in the content.
-    ---
+
+```
+  = Title             // Page title
+  :navtitle:          // Descriptive title for the navigation bar, if omitted nav defaults to title field.
+  :description_short: // Short description for the grid layouts.
+  :description:       // Detailed description at page level for the header section under the title.
+  :keywords:          // Space-separated list of keywords in the content.
 ```
 
 # Recommended tools
 
 The following tools are recommended for significant edits to the documentation. The warnings and notifications from these tools should only be used as *guides*, not as *rules*.
 
--   A Spelling Checker (US English). Note: Some IDE/text editor spelling
+- A Spelling Checker (US English). Note: Some IDE/text editor spelling
     checkers work well with Pascal-case, Camel-case, and Snake-case.
 
--   Alex - [Alex.js integrations](https://alexjs.com/#integrations).
+- Alex - [Alex.js integrations](https://alexjs.com/#integrations).
 
--   Write Good - [Write good based
+- Write Good - [Write good based
     plugins](https://github.com/btford/write-good#other-projects-using-write-good).
-
--   A markdown linter (We use the Kramdown flavor of markdown).
-
--   A Jekyll linter.
 
 # Style guide
 
@@ -106,9 +94,9 @@ You are not required to know the style guide, **but** changes may be requested o
 
 The Tiny documentation style guide is based on the Readability Guideline provided by Content Design London. We have chosen this guide because it’s:
 
--   open to the community
+- open to the community
 
--   focused on readability.
+- focused on readability.
 
 The information in the following subsections gives an overview of key points and lists both exceptions and additions. Please follow the guidelines on this page when they differ from the linked information.
 
@@ -120,30 +108,30 @@ Use short, simple words where possible. Use formal language.
 
 Do not use:
 
--   Long sentences.
+- Long sentences.
 
--   Slang; such as *there you go*.
+- Slang; such as *there you go*.
 
--   Jargon; such as *leverage* and *streamline*.
+- Jargon; such as *leverage* and *streamline*.
 
--   Ambiguous contractions; such as *there’d*, and *it’ll*.
+- Ambiguous contractions; such as *there’d*, and *it’ll*.
 
--   Latin terms; such as *i.e.*, *e.g.*, *etc.*, *vs.*, and *via*.
+- Latin terms; such as *i.e.*, *e.g.*, *etc.*, *vs.*, and *via*.
 
--   Metaphors; such as *cherry picking* and *nutshell*.
+- Metaphors; such as *cherry picking* and *nutshell*.
 
--   Complex or specialist terms; such as *chrome* (the toolbar, menu
+- Complex or specialist terms; such as *chrome* (the toolbar, menu
     bar, status bar) and *upstream*.
 
 For guidelines on using specialist terms, see: [Content Design London: Readability Guidelines - Specialist terms](https://readabilityguidelines.co.uk/clear-language/specialist-terms/).
 
 For information on:
 
--   Using simple words, see: [Content Design London: Readability Guidelines - Plain English](https://readabilityguidelines.co.uk/clear-language/plain-english/).
+- Using simple words, see: [Content Design London: Readability Guidelines - Plain English](https://readabilityguidelines.co.uk/clear-language/plain-english/).
 
--   Short, simple sentences, see: [Content Design London: Readability Guidelines - Simple sentences](https://readabilityguidelines.co.uk/clear-language/simple-sentences/).
+- Short, simple sentences, see: [Content Design London: Readability Guidelines - Simple sentences](https://readabilityguidelines.co.uk/clear-language/simple-sentences/).
 
--   Words to avoid, such as jargon, metaphores, and Latin terms; see: [Content Design London: Readability Guidelines - Words to avoid](https://readabilityguidelines.co.uk/clear-language/words-to-avoid/).
+- Words to avoid, such as jargon, metaphores, and Latin terms; see: [Content Design London: Readability Guidelines - Words to avoid](https://readabilityguidelines.co.uk/clear-language/words-to-avoid/).
 
 For a short list of some commonly used Latin terms, see: [Australian Government Style Manual - Latin shortened forms](https://www.stylemanual.gov.au/format-writing-and-structure/clear-language-and-writing-style/plain-english-and-word-choice/latin-shortened-forms).
 
@@ -151,9 +139,9 @@ For a short list of some commonly used Latin terms, see: [Australian Government 
 
 Use United States English. For example:
 
--   "behavior" rather than "behaviour".
+- "behavior" rather than "behaviour".
 
--   "canceled" rather than "cancelled".
+- "canceled" rather than "cancelled".
 
 ## Use proper names for programs and languages
 
@@ -161,29 +149,29 @@ When referring to the name of a development language, use the proper name or the
 
 For example:
 
--   "CSS" not "css"
+- "CSS" not "css"
 
--   "jQuery" not "Jquery"
+- "jQuery" not "Jquery"
 
--   "React" not "React-js"
+- "React" not "React-js"
 
 When using these terms in code elements (\`) or pre blocks (\`\`\`), use standard syntax. Such as:
 
--   `tinymce`
+- `tinymce`
 
--   `<html>`
+- `<html>`
 
--   `var React = require('react');`
+- `var React = require('react');`
 
 When referring to a program, use the proper name.
 
 For example:
 
--   "Microsoft Internet Explorer" not "IE"
+- "Microsoft Internet Explorer" not "IE"
 
--   "Apache Tomcat" not "Tomcat"
+- "Apache Tomcat" not "Tomcat"
 
--   "TinyMCE" not "Tiny"
+- "TinyMCE" not "Tiny"
 
 ## TinyMCE or tinymce
 
@@ -201,9 +189,9 @@ For information on the difference between active and passive voice, see: [Gramma
 
 Titles and headings should be:
 
--   Descriptive but concise
+- Descriptive but concise
 
--   Written using Sentence-case capitalization.
+- Written using Sentence-case capitalization.
 
 Sentence case capitalization is more comfortable to read in technical documentation.
 
@@ -213,22 +201,22 @@ For guidelines on headings and titles, see: [Content Design London: Readability 
 
 General points:
 
--   Do not use points or spaces.
+- Do not use points or spaces.
 
--   Write out "for example" and "that is" in full (not "eg" or "ie").
+- Write out "for example" and "that is" in full (not "eg" or "ie").
 
--   If an acronym is better understood than the full text, use the
+- If an acronym is better understood than the full text, use the
     acronym.
 
--   Use all capital letters for initialisms.
+- Use all capital letters for initialisms.
 
--   Start with a capital letter for acronyms.
+- Start with a capital letter for acronyms.
 
--   Capitalize single letters in expressions.
+- Capitalize single letters in expressions.
 
--   Provide full text explanations.
+- Provide full text explanations.
 
--   Consider providing a full explanation each time.
+- Consider providing a full explanation each time.
 
 For guidelines on using abbreviations, acronyms, and intialisms; see: [Content Design London: Readability Guidelines - Abbreviations and acronyms](https://readabilityguidelines.co.uk/grammar-points/abbreviations-and-acronyms/).
 
@@ -250,11 +238,11 @@ For information on contractions, see: [Content Design London: Readability Guidel
 
 Limit use of hyphens. Some general pointers:
 
--   Only use a hyphen if the word or phrase is confusing without it.
+- Only use a hyphen if the word or phrase is confusing without it.
 
--   Make sure your hyphen usage is up to date.
+- Make sure your hyphen usage is up to date.
 
--   Be consistent with hyphen usage.
+- Be consistent with hyphen usage.
 
 For guidelines on using hyphens, see: [Content Design London: Readability Guidelines - Hyphens and dashes](https://readabilityguidelines.co.uk/grammar-points/hyphens-and-dashes/).
 
@@ -276,13 +264,13 @@ For information on writing in a second person perspective, see: [Grammar Girl: F
 
 When adding links or cross-references:
 
--   Make link text meaningful.
+- Make link text meaningful.
 
--   Avoid mid-sentence links.
+- Avoid mid-sentence links.
 
--   Match the destination content.
+- Match the destination content.
 
--   Use sentence case.
+- Use sentence case.
 
 For guidelines on adding links to the documentation, see: [Content Design London: Readability Guidelines - Links](https://readabilityguidelines.co.uk/content-design/links/).
 
@@ -302,17 +290,17 @@ Tiny uses the Microsoft Style Guide for describing the user interface and intera
 
 For guidelines on:
 
--   Describing *interactions* with the user interface for a procedure or task, see: [Microsoft Style Guide: Describing interactions with UI](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/describing-interactions-with-ui).
+- Describing *interactions* with the user interface for a procedure or task, see: [Microsoft Style Guide: Describing interactions with UI](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/describing-interactions-with-ui).
 
--   Describing *interactions* with the user interface for a procedure or task with multiple input methods; for example, procedures that can be performed with a keyboard or a mouse; see: [Microsoft Style Guide: Describing alternative input methods - Multiple input methods and branching within procedures](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/describing-alternative-input-methods#multiple-input-methods-and-branching-within-procedures).
+- Describing *interactions* with the user interface for a procedure or task with multiple input methods; for example, procedures that can be performed with a keyboard or a mouse; see: [Microsoft Style Guide: Describing alternative input methods - Multiple input methods and branching within procedures](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/describing-alternative-input-methods#multiple-input-methods-and-branching-within-procedures).
 
--   Referring to user interface elements in instructions or procedures, see: [Microsoft Style Guide: Formatting text in instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions).
+- Referring to user interface elements in instructions or procedures, see: [Microsoft Style Guide: Formatting text in instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions).
 
--   Referring to the mouse and mouse-based interactions, such as "click" and "right mouse button"; see: [Microsoft Style Guide: Mouse and mouse interaction terms](https://docs.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/term-collections/mouse-mouse-interaction-terms).
+- Referring to the mouse and mouse-based interactions, such as "click" and "right mouse button"; see: [Microsoft Style Guide: Mouse and mouse interaction terms](https://docs.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/term-collections/mouse-mouse-interaction-terms).
 
--   Referring to keyboard keys and keyboard shortcuts, see: [Microsoft Style Guide: Keys and keyboard shortcuts](https://docs.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/term-collections/keys-keyboard-shortcuts).
+- Referring to keyboard keys and keyboard shortcuts, see: [Microsoft Style Guide: Keys and keyboard shortcuts](https://docs.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/term-collections/keys-keyboard-shortcuts).
 
--   Referring to touch interactions, such as "tap" and "swipe"; see: [Microsoft Style Guide: Describing alternative input methods - Pen-computing and touch procedures](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/describing-alternative-input-methods#pen-computing-and-touch-procedures).
+- Referring to touch interactions, such as "tap" and "swipe"; see: [Microsoft Style Guide: Describing alternative input methods - Pen-computing and touch procedures](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/describing-alternative-input-methods#pen-computing-and-touch-procedures).
 
 ## Adding admonitions or notes
 
@@ -334,38 +322,38 @@ Tiny documentation uses four levels of admonition:
 
 3.  CAUTION: Use when ignoring the notice *may* lead to one or more of the following:
 
-    -   A significant increase in the risk of a security breach.
+    - A significant increase in the risk of a security breach.
 
-    -   Create a security vulnerability.
+    - Create a security vulnerability.
 
-    -   Cause information loss.
+    - Cause information loss.
 
-    -   System failure.
+    - System failure.
 
-    -   Worse outcomes than those listed here.
+    - Worse outcomes than those listed here.
 
 4.  WARNING: Use when ignoring the notice *will* lead to one or more of the following:
 
-    -   A significant increase in the risk of a security breach.
+    - A significant increase in the risk of a security breach.
 
-    -   Create a security vulnerability.
+    - Create a security vulnerability.
 
-    -   Cause information loss.
+    - Cause information loss.
 
-    -   System failure.
+    - System failure.
 
-    -   Worse outcomes than those listed here.
+    - Worse outcomes than those listed here.
 
 ## Useful general writing advice
 
 The following pages provide advice on writing, including technical
 writing.
 
--   For a brief overview of how users read (or don’t read) content, see: [Content Design London: Readability Guidelines - How people read](https://readabilityguidelines.co.uk/content-design/how-people-read/).
+- For a brief overview of how users read (or don’t read) content, see: [Content Design London: Readability Guidelines - How people read](https://readabilityguidelines.co.uk/content-design/how-people-read/).
 
--   For points on how to structure content, see: [Content Design London: Readability Guidelines - Page design](https://readabilityguidelines.co.uk/content-design/page-design/).
+- For points on how to structure content, see: [Content Design London: Readability Guidelines - Page design](https://readabilityguidelines.co.uk/content-design/page-design/).
 
--   For general information on writing, covering a variety of subjects, see: [plainlanguage.gov: Mary Dash’s Writing Tips](https://plainlanguage.gov/resources/articles/dash-writing-tips/).
+- For general information on writing, covering a variety of subjects, see: [plainlanguage.gov: Mary Dash’s Writing Tips](https://plainlanguage.gov/resources/articles/dash-writing-tips/).
 
 # Glossary
 
@@ -497,11 +485,11 @@ Why make TinyMCE mobile friendly?
 
 *Good examples:*
 
--   If you forgot your password, provide your secret answer.
+- If you forgot your password, provide your secret answer.
 
--   More nature themes are available online.
+- More nature themes are available online.
 
--   Do you want to save your changes?
+- Do you want to save your changes?
 
 quickstart, quick start  
 : Content to help developers get our products up and running quickly. Use *quickstart*.

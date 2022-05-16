@@ -14,7 +14,7 @@ Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-do
 
 # TinyMCE documentation tech stack
 
-The documentation is built with [Antora](https://antora.org/) and text files are written in [ascii doc](https://asciidoc.org/). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
+The documentation is built with [Antora](https://antora.org/) and text files are written in [AsciiDoc](https://asciidoc.org/). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
 
 ## Highlighting
 
@@ -30,21 +30,27 @@ Include any key values pairs and method options that are required to enable a us
 
 For example, this is good:
 ```js
-    tinymce.init({
-      selector: 'textarea', // change this value according to your HTML
-      plugins: 'codesample',
-      toolbar: 'codesample',
-    });
+  [source, js]
+  ----
+  tinymce.init({
+    selector: 'textarea', // change this value according to your HTML
+    plugins: 'codesample',
+    toolbar: 'codesample',
+  });
+  ----
 ```
 
 This is not:
 ```js
-    tinymce.init({
-      ...
-      plugins: 'codesample',
-      toolbar: 'codesample'
-      ...
-    });
+  [source, js]
+  ----
+  tinymce.init({
+    ...
+    plugins: 'codesample',
+    toolbar: 'codesample'
+    ...
+  });
+  ---
 ```
 
 ## URLs and links
@@ -52,27 +58,26 @@ This is not:
 Resources to be linked take the form of a URL following by the linked text between two brackets. Linking an external resource looks like this:
 
 ```
-    hello, http://www.example.com[text to link] to the URL example.com.
+  hello, http://www.example.com[text to link] to the URL example.com.
 ```
 
 ## Live demos
 
-New live demos can be added to [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
+New live demos can be added to the [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
 
 ```
-    liveDemo::{sub-directory-name}[]
+  liveDemo::{sub-directory-name}[]
 ```
 
 
 ## Adding metadata to a page
 
-Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
+Every page should have a meta section immediately after the heading containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
 
 ```
-    :navtitle:          // Descriptive title for the navigation bar, if omitted nav defaults to title field.
-    :description_short: // Short description for the grid layouts.
-    :description:       // Detailed description at page level for the header section under the title.
-    :keywords:          // Space-separated list of keywords in the content.
+  :navtitle:          // Descriptive title for the navigation bar, if omitted nav defaults to title field.
+  :description:       // Detailed description at page level for the header section under the title.
+  :keywords:          // Comma-separated list of keywords in the content.
 ```
 
 # Recommended tools

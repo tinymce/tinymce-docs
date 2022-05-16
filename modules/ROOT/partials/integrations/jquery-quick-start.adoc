@@ -83,7 +83,7 @@ API key, which is created when signing up to the link:{accountsignup}/[{cloudnam
 +
 [source,html]
 ----
-<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
 ----
 endif::[]
 . Add an initialization point for {productname}, such as:
@@ -160,7 +160,7 @@ ifeval::["{productSource}" == "cloud"]
       src="{cdnurl}"
       referrerpolicy="origin"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
   </head>
   <body>
     <div>

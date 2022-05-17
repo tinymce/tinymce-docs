@@ -222,9 +222,9 @@ The following elements were previously deprecated and have, with this release, b
 
 | `force_p_newlines`                    | Option        | Superseded by `forced_root_block`.
 
-| `forced_root_black: false`            | Option        | `forced_root_black` must be a non-empty string and cannot take a value of `false`.
+| `forced_root_block: false`            | Option        | `forced_root_block` must be a non-empty string and cannot take a value of `false`.
 
-| `forced_root_black: ''`               | Option        | `forced_root_black` must be a non-empty string and cannot take a value of `false`.
+| `forced_root_block: ''`               | Option        | `forced_root_block` must be a non-empty string and cannot take a value of `false`.
 
 | `gecko_spellcheck`                    | Option        | Replaced by `browser_spellcheck`.
 

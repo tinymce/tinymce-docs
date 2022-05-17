@@ -207,8 +207,7 @@ General points:
 
 - Write out "for example" and "that is" in full (not "eg" or "ie").
 
-- If an acronym is better understood than the full text, use the
-    acronym.
+- If an acronym is better understood than the full text, use the acronym.
 
 - Use all capital letters for initialisms.
 
@@ -359,7 +358,8 @@ writing.
 
 # Glossary
 
-Accessible Rich Internet Applications (ARIA): Acronym for *Accessible Rich Internet Applications*. Spell out and describe on first mention within a section.
+Accessible Rich Internet Applications (ARIA)
+: Acronym for *Accessible Rich Internet Applications*. Spell out and describe on first mention within a section.
 
 See: [MDN Web Docs - ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA).
 
@@ -367,9 +367,7 @@ add-on
 : Do not use *add-on*. Use *"`plugin`"* instead.
 
 anchor
-: Use when describing the Anchor plugin or the technical insertion of an
-anchor tag into HTML. When talking with a business audience, use
-*bookmark* or add *bookmark* as a clarifier.
+: Use when describing the Anchor plugin or the technical insertion of an anchor tag into HTML. When talking with a business audience, use *bookmark* or add *bookmark* as a clarifier.
 
 Application Programming Interface (API)  
 : Use *API* in most circumstances. Spell it out on first mention only if the document is for a non-technical audience.
@@ -398,9 +396,7 @@ cloud
 : Use *cloud* as an adjective. Do not use as a noun (the cloud). Do not use cloud interchangeably with *internet*
 
 configuration option, configuration setting, configuration parameter  
-: Use *configuration option*. For example: *the `selector` configuration
-option*. This can be abbreviated to *option* in sequential mentions,
-such as: *the `selector` option*.
+: Use *configuration option*. For example: *the `selector` configuration option*. This can be abbreviated to *option* in sequential mentions, such as: *the `selector` option*.
 
 configuration, config  
 : Use configuration. Do not abbreviate to *config*.
@@ -442,8 +438,7 @@ Ephox
 example, examples  
 : Do not use as a heading, provide a detailed heading.
 
-In text, use *The following example uses…* or *The following example
-shows…*.
+In text, use *The following example uses…* or *The following example shows…*.
 
 exclamation points ("!")  
 : Do not use in text, only use in code where required.
@@ -455,8 +450,7 @@ execute/executed
 : Do not use. Use *run* (or *ran* for past-tense) instead.
 
 front end, front-end, frontend  
-: Do not use frontend. Use *front end* as a noun. Use front-end as a
-compound adjective.
+: Do not use frontend. Use *front end* as a noun. Use front-end as a compound adjective.
 
 HTML  
 : Do not spell out. Do not use *html* (except in codeblocks).

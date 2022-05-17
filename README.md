@@ -75,39 +75,37 @@ The TinyMCE API documentation is maintained within the [TinyMCE project reposito
 - [Node.js](https://nodejs.org/en/).
 
 
-### Live Demos [WIP]
+### Live Demos
 
-Live demos can be added to content using the "live-demo.html" include, such as:
+New live demos can be added to the [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
 
 ```
-{% include live-demo.html id="basic-example" %}
+  liveDemo::{sub-directory-name}[]
 ```
-
-There are several options for this include file - please see live-demo.html for details.
-
-The source for each live demo is store in the `_includes/live-demos/` directory.
 
 #### Overriding the tinymce URL in live demos
 
-All live demos usually get their tinymce.min.js URL from the `tinymce_live_demo_url` setting in the _config.yml file.
+All live demos usually get their `tinymce.min.js` URL from the `tinymce_live_demo_url` setting in the `antora.yml` file.
 However, there are some instances where you wish to override this, e.g.
 
  - You want to push/deploy a branch for a new feature that's only on the 'dev' channel.
  - You want to run the site locally, but test out the live demos in a different channel.
 
-To help with this, there are two mechanisms for overriding the tinymce.min.js URL.
+To help with this, there are two mechanisms for overriding the `tinymce.min.js` URL.
 
- 1. Set `tinymce_live_demo_url` in `_config-local-override.yml`.
-    - This will override the `tinymce_live_demo_url` setting in `config.yml`.
-    - This file is *not* intended to be checked in.
-    - This option changes the URL for all live demos.
+ 1. Change the URL for all live demos by setting the `tinymce_live_demo_url` attribute in `antora-playbook-dev.yml`. For example:
+    ```
+      asciidoc
+        attributes:
+          tinymce_live_demo_url: URL_to_script_file
+    ```
 
- 2. Set the `script_url_override` setting when including `live-demo.html`.
+ 2. Change the URL for an individual live demo by setting `script_url_override` attribute in the live demo markup. For example:
+    ```
+      liveDemo::{sub-directory-name}[script_url_override='URL_to_script_file']
+    ```
+
     - This is useful if you want to deploy the develop branch for a feature only in the 'dev' channel.
     - This only overrides the URL for one live demo.
     - Don't use this in more than one live demo on a page.
     - Don't use this long-term - when the feature is fully rolled-out, use the standard channel.
-    - See `live-demo.html` for details.
-
-Note: Jekyll is pretty bad at automatically reloading code when you're playing with include files.
-Sometimes you need to restart the server.

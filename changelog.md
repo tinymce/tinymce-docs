@@ -8,6 +8,14 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.5 - 2022-05-25
+
+### Fixed
+- Base64 data URIs were not extracted correctly during parsing when proceeded by `data:` text.
+- Empty lines that were formatted in a ranged selection using the `format_empty_lines` option were not kept in the serialized content.
+- The `s` element was missing from the default schema text inline elements.
+- Some text inline elements specified via the schema were not removed when empty by default.
+
 ## 5.10.4 - 2022-04-27
 
 ### Fixed

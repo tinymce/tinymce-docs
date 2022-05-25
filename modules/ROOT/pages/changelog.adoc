@@ -4,6 +4,15 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.0.3 - 2022-05-25
+
+=== Fixed
+* Could not remove values when multiple cells were selected with the cell properties dialog.
+* Could not remove values when multiple rows were selected with the row properties dialog.
+* Empty lines that were formatted in a ranged selection using the `format_empty_lines` option were not kept in the serialized content.
+* The `s` element was missing from the default schema text inline elements.
+* Some text inline elements specified via the schema were not removed when empty by default.
+
 == 6.0.2 - 2022-04-27
 
 === Fixed

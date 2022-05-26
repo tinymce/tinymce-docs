@@ -81,9 +81,9 @@ API key, which is created when signing up to the link:{accountsignup}/[{cloudnam
 
 . Add the following `<script>` element to get the {productname} jQuery integration from the JS Delivr CDN:
 +
-[source,html]
+[source,html,subs="attributes+"]
 ----
-<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
+<script src="{jquery_url}"></script>
 ----
 endif::[]
 . Add an initialization point for {productname}, such as:
@@ -160,7 +160,7 @@ ifeval::["{productSource}" == "cloud"]
       src="{cdnurl}"
       referrerpolicy="origin"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@1/dist/tinymce-jquery.min.js"></script>
+    <script src="{jquery_url}"></script>
   </head>
   <body>
     <div>

@@ -109,7 +109,12 @@ editor.annotator.annotationChanged('alpha', (state, name, obj) => {
 });
 ----
 
-The `+obj+` parameter is only set if the `+state+` is true. A set `+obj+` has two fields:
+The `+obj+` parameter is only set if the `+state+` is true. And the `+state+` is
+
+* _true_ when the selection cursor moves in to an annotation; and
+* _false_ when the selection cursor moves out of an annotation.
+
+When `+state+` is true, and the `+obj+` parameter is set, the parameter has two fields:
 
 * `+uid+`, which is the uid of the annotation currently nearest (in the DOM hierarchy) to the selection cursor.
 * `+nodes+`, which is an array of DOM nodes which make up this annotation. `+nodes+` are made available to users in case the user might want to tag these nodes with a class to say that they are the *active annotations*.

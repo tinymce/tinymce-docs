@@ -11,9 +11,9 @@ For information on available list types, see: https://developer.mozilla.org/en-U
 [source,js]
 ----
 tinymce.activeEditor.execCommand('ApplyOrderedListStyle', false, {
-  'list-style-type': 'disc'
+  'list-style-type': 'decimal'
 });
 tinymce.activeEditor.execCommand('ApplyUnorderedListStyle', false, {
-  'list-style-type': 'decimal'
+  'list-style-type': 'disc'
 });
 ----

@@ -1,0 +1,90 @@
+= TinyMCE 6.0.3
+:navtitle: TinyMCE 6.0.3
+:description: Release notes for TinyMCE 6.0.3
+:keywords: releasenotes, new, changes, bugfixes
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.0.3 was released for {enterpriseversion} and {cloudname} on Wednesday, June 1^st^, 2022. It includes {productname} 6.0.3. These release notes provide an overview of the changes for {productname} 6.0.3:
+
+* xref:general-bug-fixes[General bug fixes]
+* xref:known-issues[Known issues]
+
+[[general-bug-fixes]]
+== General bug fixes
+
+{productname} 6.0.3 provides fixes for the following bugs:
+
+=== When multiple cells were selected, removing values in the cell properties dialog did not work
+
+Previously, when dealing with {productname} tables with two or more columns, the cell properties dialog box did not honour deleting values when multiple rows were selected.
+
+If multiple table cells were selected in a {productname} table with two or more columns and the cell properties dialog was invoked, deleting the `height` value in the dialog box had no effect. However, if each cell was selected individually, invoking the cell properties dialog and delete the `height` value worked as expected.
+
+With this update, selecting multiple cells, invoking the cell properties dialog, and removing `height` values across the selected cells works as expected, with all cell heights deleted at once.
+
+=== When multiple rows were selected, removing values in the cell properties dialog did not work
+
+Previously, when dealing with {productname} tables with two or more columns, the cell properties dialog box did not honour deleting values when multiple rows were selected.
+
+If multiple table rows were selected in a {productname} table with two or more columns and the cell properties dialog was invoked, deleting the height value in the dialog box had no effect. However, if each cell was selected individually, invoking the cell properties dialog and delete the height value worked as expected.
+
+With this update, selecting multiple cells, invoking the cell properties dialog, and removing height values across the selected cells works as expected, with all cell heights deleted at once.
+
+NOTE: this is related to the near-equivalent bug regarding cell properties deletion not being honored when multiple cells were selected. The two, slightly different, behaviors are being documented separately for clarity’s sake, and because some people only encountered one or other errant behavior.
+
+=== `format_empty_lines` did not work as documented
+
+Previously, when `format_empty_lines` was set to `true`, lines that included no text (ie, a line consisting of just a Return) did not preserved inline formatting when saved.
+
+So, for example, a line
+
+[source,html]
+----
+<p> 
+<em> 
+<strong> 
+<span style="font-family: arial, helvetica, sans-serif;" ><br /></span> 
+</strong> 
+</em> 
+</p> 
+----
+
+when saved, became
+
+[source,html]
+----
+<p> 
+&nbsp; 
+</p> 
+----
+
+That is, the line was preserved, but the formatting was not.
+
+With this update, `format_empty_lines: true` behaves as it should (and as advertised), and formatting added to an otherwise empty line is preserved when saved.
+
+NOTE: by default `format_empty_lines` is set to `false`.
+
+
+=== Some inline text elements specified via the schema were not removed when empty by default
+
+// any further information on this greatly appreciated.
+
+=== The default {productname} schema did not include the `<s>` element
+
+Previously, the default {productname} schema did not include the `+<s>+` element. Consequently, formatting text with `Strike-through` did not render as expected.
+
+With this update, the `+<s>+` element is part of the default {productname} schema, as expected.
+
+
+
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} 6.0.3 may encounter and possible workarounds for these issues.
+
+There are no new known issues affecting {productname} 6.0.3.

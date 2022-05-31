@@ -38,7 +38,7 @@ NOTE: this is related to the near-equivalent bug regarding cell properties delet
 
 === `format_empty_lines` did not work as documented
 
-Previously, when `format_empty_lines` was set to `true`, lines that included no text (ie, a line consisting of just a Return) did not preserved inline formatting when saved.
+Previously, when `format_empty_lines` was set to `true`, lines that included no text (ie, a line consisting of just a Return) did not preserve inline formatting when saved.
 
 So, for example, a line
 

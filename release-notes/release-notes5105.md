@@ -17,7 +17,7 @@ keywords: releasenotes bugfixes
 
 ## General bug fixes
 
-{{site.productname}} 5.10.4 provides fixes for the following bugs:
+{{site.productname}} 5.10.5 provides fixes for the following bugs:
 
 ### base64 encoded images were corrupted and not displayed when added immediately following the string `data:`
 

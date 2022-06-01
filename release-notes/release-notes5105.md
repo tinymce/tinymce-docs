@@ -76,7 +76,7 @@ Previously, the default {{site.productname}} schema did not include the `<s>` el
 
 Consequently, although `strike-through` elements rendered as expected, anything that relied on the `schema.getTextInlineElements()` API may not have handled the `<s>` element correctly.
 
-This update corrects the omission in the {{site.productname}} schema and `<s>` element is now correctly returned by the `schema.getTextInlineElements()` API.```
+This update corrects the omission in the {{site.productname}} schema and `<s>` element is now correctly returned by the `schema.getTextInlineElements()` API.
 
 
 {% assign enterprise = true %}

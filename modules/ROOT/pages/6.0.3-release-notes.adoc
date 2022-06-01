@@ -71,7 +71,11 @@ NOTE: by default `format_empty_lines` is set to `false`.
 
 === Some inline elements specified by the {productname} schema were not removed by default when empty
 
-// any further information on this greatly appreciated.
+By default, the {productname} schema removes empty inline +html+ elements.
+
+Previously, however, some inline +html+ elements — including +s+, +u+, +var+, +cite+, +dfn+, +code+, +mark+, +q+, +sup+, +sub+, and +samp+ — were not removed when they were present but empty.
+
+With this update, inline +html+ elements such as those noted above will have the +removeEmpty+ schema flag set, as expected.
 
 === The default {productname} schema did not include the `<s>` element
 

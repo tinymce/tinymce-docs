@@ -25,7 +25,7 @@ When the string `data:` immediately preceded the insertion point, or was only se
 
 Rather than displaying the encoded image, the mis-parsing caused the image to corrupt and present as a raw string of base64 text within html tags, which also displayed as text.
 
-With this update, the `extractBase64DataUris` function, which was responsible for the mis-parsing, now engages in more comprehensive sanity checking. These further sanity checks prevent the function from mis-parsing a user-entered `data:` string.
+With this update, the code responsible for the mis-parsing now engages in more comprehensive sanity checking. These further sanity checks prevent the function from mis-parsing a user-entered `data:` string.
 
 Consequently, adding images to a {{site.productname}} 5.x document now works in this circumstance: the image is not corrupted and displays at the insertion point as expected.
 

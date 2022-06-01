@@ -28,7 +28,7 @@ With this update, selecting multiple cells, invoking the cell properties dialog,
 
 === When multiple rows were selected, removing values in the row properties dialog did not work
 
-Previously, when dealing with {productname} tables with two or more columns, the cell properties dialog box did not honour deleting values when multiple rows were selected.
+Previously, when dealing with {productname} tables with two or more rows, the row properties dialog box did not honour deleting values when multiple rows were selected.
 
 If multiple table rows were selected in a {productname} table with two or more columns and the cell properties dialog was invoked, deleting the height value in the dialog box had no effect. However, if each cell was selected individually, invoking the cell properties dialog and deleting the height value worked as expected.
 

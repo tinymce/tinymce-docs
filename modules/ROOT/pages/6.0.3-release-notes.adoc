@@ -34,7 +34,7 @@ If multiple table rows were selected in a {productname} table with two or more c
 
 With this update, selecting multiple cells, invoking the cell properties dialog, and removing height values across the selected cells works as expected, with all cell heights deleted at once.
 
-NOTE: this is related to the near-equivalent bug regarding cell properties deletion not being honored when multiple cells were selected. The two, slightly different, behaviors are being documented separately for clarity’s sake, and because some people only encountered one or other errant behavior.
+NOTE: This is related to the near-equivalent bug regarding cell properties deletion not being honored when multiple cells were selected. The two, slightly different, behaviors are being documented separately for clarity’s sake, and because some people only encountered one or other errant behavior.
 
 === `format_empty_lines` did not work as documented
 

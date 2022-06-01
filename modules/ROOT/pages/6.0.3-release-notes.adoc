@@ -85,7 +85,6 @@ Consequently, although `strike-through` elements rendered as expected, anything 
 
 This update corrects the omission in the {productname} schema and `+<s>+` element is now correctly returned by the `schema.getTextInlineElements()` API.
 
-With this update, the `+<s>+` element is part of the default {productname} schema, as expected.
 
 
 

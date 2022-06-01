@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.10.5 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, June 1<sup>st</sup>, 2022. It includes {{site.productname}} 5.10.4. These release notes provide an overview of the changes for {{site.productname}} 5.10.4, including:
+{{site.productname}} 5.10.5 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, June 1<sup>st</sup>, 2022. It includes {{site.productname}} 5.10.5. These release notes provide an overview of the changes for {{site.productname}} 5.10.5, including:
 
 - [General bug fixes](#generalbugfixes)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)

@@ -48,7 +48,7 @@ So, for example, a line
 
 when saved, became
 
-```html]
+```html
 <p> 
 &nbsp; 
 </p> 

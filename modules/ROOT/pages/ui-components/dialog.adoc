@@ -5,37 +5,37 @@
 
 A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 
-NOTE: {productname} also supports link:{baseurl}/ui-components/urldialog/[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
+NOTE: {productname} also supports xref:ui-components/urldialog.adoc[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 
 == Use cases
 
 === Display simple information
 
-The link:{baseurl}/plugins/opensource/code[`code`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
+The xref:plugins/opensource/code.adoc[`code`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
-image::{baseurl}/images/sourcecode.png[Source Code]
+image::sourcecode.png[Source Code]
 
 === Display complex information
 
-More complex dialogs can use link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panels] and various link:{baseurl}/ui-components/dialogcomponents/#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the link:{baseurl}/plugins/opensource/help[`help`] and link:{baseurl}/plugins/opensource/charmap[`character map`] plugins use dialogs with tabbed panels to categorise and separate information.
+More complex dialogs can use xref:ui-components/dialogcomponents.adoc#tabpanel[tab panels] and various xref:ui-components/dialogcomponents.adoc#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the xref:plugins/opensource/help.adoc[`help`] and xref:plugins/opensource/charmap.adoc[`character map`] plugins use dialogs with tabbed panels to categorise and separate information.
 
-image::{baseurl}/images/specialchars.png[Special Characters]
+image::specialchars.png[Special Characters]
 
 === Interactive dialogs
 
-{productname} dialogs can also contain link:{baseurl}/ui-components/dialogcomponents/#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
+{productname} dialogs can also contain xref:ui-components/dialogcomponents.adoc#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
 
-For example, the link:{baseurl}/plugins/opensource/image[`image`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
+For example, the xref:plugins/opensource/image.adoc[`image`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
-image::{baseurl}/images/interactive.png[Insert/Edit images]
+image::interactive.png[Insert/Edit images]
 
 == Dialog configuration
 
 A dialog configuration has three main parts to match the three main parts of the dialog's UI:
 
 * *Title:* The title of the dialog. This will display in the header of the dialog.
-* *Body:* The body of the dialog. The body component can be a <<panel,panel>> or a <<tabpanel,tab panel>>, which can contain an array of link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components] such as buttons, inputs and text.
-* *Buttons:* An array of <<footerbuttons,footer buttons>> that are displayed in the dialog's footer.
+* *Body:* The body of the dialog. The body component can be a xref:panel[panel] or a xref:tabpanel[tab panel], which can contain an array of xref:ui-components/dialogcomponents.adoc#panelcomponents[panel components] such as buttons, inputs and text.
+* *Buttons:* An array of xref:footerbuttons[footer buttons] that are displayed in the dialog's footer.
 
 === Basic example
 
@@ -77,12 +77,12 @@ tinymce.activeEditor.windowManager.open({
 | body
 | `panel` or `tabpanel` component
 | required
-| The specification for the <<bodycomponents,body component>>.
+| The specification for the xref:bodycomponents[body component].
 
 | buttons
 | `FooterButton[]`
 | required
-| An array of <<footerbuttons,footer buttons>> to render in the footer of the dialog.
+| An array of xref:footerbuttons[footer buttons] to render in the footer of the dialog.
 
 | size
 | `'normal'`, `'medium'` or `'large'`
@@ -122,10 +122,10 @@ tinymce.activeEditor.windowManager.open({
 | onTabChange
 | `+(dialogApi, details) => void+`
 | optional
-| *This method only applies to link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`.
+| *This method only applies to xref:ui-components/dialogcomponents.adoc#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`.
 |===
 
-For more information on the `dialogApi` object that is passed to some of the configuration options, see the <<dialoginstanceapi,dialog instance API>> documentation.
+For more information on the `dialogApi` object that is passed to some of the configuration options, see the xref:dialoginstanceapi[dialog instance API] documentation.
 
 ==== Event callback functions
 
@@ -133,15 +133,17 @@ Each of the event callback functions - `onAction`, `onSubmit`, `onCancel`, `onCh
 
 Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a *Submit* type footer button, and {productname} assumes that a dialog will only have one *Submit* type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a *Cancel* type footer button. These two buttons have the same functionality, and therefore {productname} does not differentiate between them.
 
+[[bodycomponents]]
 === Body components
 
-The body of a dialog must be either a link:{baseurl}/ui-components/dialogcomponents/#panel[`panel`] (a single panel) or a link:{baseurl}/ui-components/dialogcomponents/#tabpanel[`tabpanel`] (a collection of panels). Each panel can contain link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components] such as inputs, buttons and text.
+The body of a dialog must be either a xref:ui-components/dialogcomponents.adoc#panel[`panel`] (a single panel) or a xref:ui-components/dialogcomponents.adoc#tabpanel[`tabpanel`] (a collection of panels). Each panel can contain xref:ui-components/dialogcomponents.adoc#panelcomponents[panel components] such as inputs, buttons and text.
 
-NOTE: {productname} also supports link:{baseurl}/ui-components/urldialog/[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
+NOTE: {productname} also supports xref:ui-components/urldialog.adoc[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 
+[[panel]]
 ==== Panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components]. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for xref:ui-components/dialogcomponents.adoc#panelcomponents[panel components]. A panel type dialog only has one panel.
 
 [source, js]
 ----
@@ -151,11 +153,12 @@ The basic dialog type is a *panel* dialog. A panel is a container for link:{base
 }
 ----
 
+[[tabpanel]]
 ==== TabPanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different link:{baseurl}/ui-components/dialogcomponents/#panelcomponents[panel components], allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:ui-components/dialogcomponents.adoc#panelcomponents[panel components], allowing for complex dialogs.
 
-See the link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel component reference] for tab panel configuration options.
+See the xref:ui-components/dialogcomponents.adoc#tabpanel[tab panel component reference] for tab panel configuration options.
 
 [source, js]
 ----
@@ -172,19 +175,20 @@ See the link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel compon
 }
 ----
 
-The `name` of the panel can be used with the <<dialogapimethods,`dialogApi.showTab('tabName')`>> method to programmatically switch tabs. It is also passed to <<configurationoptions,`onTabChange`>> as part of the `details` object.
+The `name` of the panel can be used with the xref:dialogapimethods[`dialogApi.showTab('tabName')`] method to programmatically switch tabs. It is also passed to xref:configurationoptions[`onTabChange`] as part of the `details` object.
 
 ===== Example tab panel
 
 The Help plugin's dialog is an example of a tab panel dialog.
 
-image::{baseurl}/images/help.png[Help Button]
+image::help.png[Help Button]
 
+[[footerbuttons]]
 === Footer buttons
 
-A *button* is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{baseurl}/general-configuration-guide/customize-ui/#skins[skin]. Menu buttons will open a menu with more options when clicked, instead of performing an action.
+A *button* is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen xref:general-configuration-guide/customize-ui.adoc#skins[skin]. Menu buttons will open a menu with more options when clicked, instead of performing an action.
 
-NOTE: Dialog footer buttons are different to link:{baseurl}/ui-components/dialogcomponents/#button[dialog panel buttons].
+NOTE: Dialog footer buttons are different to xref:ui-components/dialogcomponents.adoc#button[dialog panel buttons].
 
 ==== Configuration
 
@@ -231,7 +235,7 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 
 ==== Disabling and enabling buttons
 
-To toggle between a button's disabled and enabled states, use `enable(name)` or `disable(name)` from the <<dialoginstanceapi,dialog instance API>>, where `name` is the identifier the button was configured with.
+To toggle between a button's disabled and enabled states, use `enable(name)` or `disable(name)` from the xref:dialoginstanceapi[dialog instance API], where `name` is the identifier the button was configured with.
 
 ==== Button types and event callbacks
 
@@ -239,10 +243,10 @@ The different footer button types will invoke different callbacks when clicked:
 
 * A *Submit* type button will invoke the `onSubmit` callback function provided in the dialog configuration.
 * A *Cancel* type button will invoke the `onCancel` and `onClose` callback functions. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
-* A *Custom* type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the <<interactiveexampleusingredial,Redial example>> for an example of how to use this.
-* A *Menu* type button will fetch a list of options and display them in a drop-down menu. When a menu button item is clicked, the item `name` is passed to the <<configurationoptions,_dialog `onAction` callback_>>.  For details, see: <<dialogmenubuttons,Dialog menu buttons>>.
+* A *Custom* type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the xref:interactiveexampleusingredial[Redial example] for an example of how to use this.
+* A *Menu* type button will fetch a list of options and display them in a drop-down menu. When a menu button item is clicked, the item `name` is passed to the xref:configurationoptions[_dialog `onAction` callback_].  For details, see: xref:dialogmenubuttons[Dialog menu buttons].
 
-See the <<configurationoptions,dialog configuration options>> documentation for more information.
+See the xref:configurationoptions[dialog configuration options] documentation for more information.
 
 ===== Example: Dialog footer button
 
@@ -259,11 +263,12 @@ See the <<configurationoptions,dialog configuration options>> documentation for 
 }
 ----
 
+[[dialogmenubuttons]]
 ===== Dialog menu buttons
 
 A dialog menu button is a drop-down button that can be used to provide a drop-down list of items in a dialog footer.
 
-When dialog menu items are clicked, a <<configurationoptions,_dialog `onAction` callback_>> is triggered. The `name` of the menu item is passed into the onAction callback.
+When dialog menu items are clicked, a xref:configurationoptions[_dialog `onAction` callback_] is triggered. The `name` of the menu item is passed into the onAction callback.
 Clicking on the menu footer button won't trigger any callbacks and will only open the menu of specified items.
 
 ====== Dialog menu button
@@ -276,7 +281,7 @@ The following options can be specified for a dialog menu button:
 | items
 | array
 | required
-| An array of <<dialogmenuitems,dialog menu items>>.
+| An array of xref:dialogmenuitems[dialog menu items].
 
 | name
 | string
@@ -299,6 +304,7 @@ The following options can be specified for a dialog menu button:
 | Text for button tooltip.
 |===
 
+[[dialogmenuitems]]
 ====== Dialog menu items
 
 The following options can be specified for a dialog menu button _item_:
@@ -309,7 +315,7 @@ The following options can be specified for a dialog menu button _item_:
 | name
 | string
 | required
-| Identifier for the dialog menu item which is passed to the <<configurationoptions,_dialog `onAction` callback_>>. `name` can be used with <<configurationoptions,initialData>> to set the initial state.
+| Identifier for the dialog menu item which is passed to the xref:configurationoptions[_dialog `onAction` callback_]. `name` can be used with xref:configurationoptions[initialData] to set the initial state.
 
 | type
 | string
@@ -359,10 +365,11 @@ buttons: [
 [[dialoginstanceapi]]
 == Dialog instance API
 
-When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the <<configurationoptions,dialog configuration options>>.
+When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the xref:configurationoptions[dialog configuration options].
 
 The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
+[[dialogapimethods]]
 === Dialog API methods
 
 |===
@@ -393,22 +400,24 @@ The instance API is a JavaScript object containing methods attached to the dialo
 | Calling the `close()` method will close the dialog. When closing the dialog, all DOM elements and dialog data are destroyed.  When `windowManager.open(config)` is called again, all DOM elements and data are recreated from the config.
 
 | `+redial(config) => void+`
-| Calling `redial()` and passing a dialog body configuration will destroy and recreate the body of the dialog. See the <<redial,Redial>> documentation.
+| Calling `redial()` and passing a dialog body configuration will destroy and recreate the body of the dialog. See the xref:redial[Redial] documentation.
 
 | `+showTab(name: string) => void+`
-| *This method only applies to link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel] dialogs.* Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab.
+| *This method only applies to xref:ui-components/dialogcomponents.adoc#tabpanel[tab panel] dialogs.* Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab.
 |===
 
+[[dialogdataandstate]]
 == Dialog data and state
 
 All dialogs have an internal data store, which is used to track the value and/or state of the dialog's panel components.
 
-This data store takes the form of a JavaScript object, where the object's keys are the ``name``s of the configured panel components. For example, if a dialog contains a link:{baseurl}/ui-components/dialogcomponents/#checkbox[checkbox] component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
+This data store takes the form of a JavaScript object, where the object's keys are the ``name``s of the configured panel components. For example, if a dialog contains a xref:ui-components/dialogcomponents.adoc#checkbox[checkbox] component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
 
 The current value of a dialog's data store can be accessed using the dialog instance API's `getData()` function. It can also be set using `setData()` which will automatically update the relevant components. For example, if you call `setData({ myCheckbox: true })` with the previous example, the checkbox would be toggled to checked.
 
-To set initial values for components when the dialog is opened, use the `initialData` <<configurationoptions,dialog configuration option>>. For example, you could set the checkbox in the previous example to be checked when the dialog opens by including `initialData: { myCheckbox: true }` in the dialog's configuration.
+To set initial values for components when the dialog is opened, use the `initialData` xref:configurationoptions[dialog configuration option]. For example, you could set the checkbox in the previous example to be checked when the dialog opens by including `initialData: { myCheckbox: true }` in the dialog's configuration.
 
+[[redial]]
 == Redial
 
 *Redial* is a concept that allows developers to replace a dialog's configuration with a new configuration. This can be used for advanced applications such as:
@@ -417,11 +426,11 @@ To set initial values for components when the dialog is opened, use the `initial
 * Changing panel components on user action. For example, updating the options in a `selectbox` component based on user input to another interactive component.
 * Creating a multipage form where a button leads to the next page.
 
-To redial a dialog, pass a new dialog configuration to the `redial()` method from the <<dialoginstanceapi,dialog instance API>>.
+To redial a dialog, pass a new dialog configuration to the `redial()` method from the xref:dialoginstanceapi[dialog instance API].
 
 NOTE: At the moment, Redial does not support partial dialog replacement or the replacement of specific components. Redial must be passed an entire dialog configuration.
 
-See the <<interactiveexampleusingredial,redial example>> for more information on how to use Redial.
+See the xref:interactiveexampleusingredial[redial example] for more information on how to use Redial.
 
 == Examples
 
@@ -437,7 +446,7 @@ The dialog also contains two footer buttons - a *submit* type button and a *canc
 
 In the `onSubmit` callback, the dialog instance API that is passed into the callback is used to call `getData()`. This function returns the dialog's data store, from which we are able to get the state of the `isdog` checkbox and the value of the `catadata` input. This information is used to construct a sentence which is then inserted into the editor. Finally, `close()` is called to manually close the dialog.
 
-[[interactiveexampleusingredialconfigvoid]]
+[[interactiveexampleusingredial]]
 === Interactive example using Redial
 
 Redial can be used to change information that is displayed in the dialog, create a multipage form where the next button loads a new form page, or to re-create the dialog with different components or options.

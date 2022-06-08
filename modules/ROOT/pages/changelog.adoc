@@ -5,6 +5,18 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes/index.adoc[{productname} Release Notes].
 
+== 5.10.4 - 2022-04-27
+
+=== Fixed
+* Inline toolbars flickered when switching between editors.
+* Multiple inline toolbars were shown if focused too quickly.
+
+== 5.10.3 - 2022-02-09
+
+=== Fixed
+* Alignment would sometimes be removed on parent elements when changing alignment on certain inline nodes, such as images.
+* The `fullscreen` plugin would reset the scroll position when exiting fullscreen mode.
+
 == 5.10.2 - 2021-11-17
 
 === Fixed

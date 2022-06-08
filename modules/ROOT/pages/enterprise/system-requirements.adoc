@@ -9,7 +9,7 @@ include::partial$misc/browser_compatibility.adoc[]
 
 include::partial$misc/mobile_platform_compatibility.adoc[]
 
-Visit link:{baseurl}/mobile[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
+Visit xref:mobile.adoc[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
 
 == Supported Application Servers: Self-hosted Enterprise
 
@@ -44,7 +44,6 @@ IMPORTANT: Tomcat 10 will require WAR files to be placed in the _webapp-javaee_ 
 * CPU:  Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
 * RAM: 4 Gigabytes of RAM available for services
 
-+++<a class="anchor" id="premiumpluginsupport">++++++</a>+++
 include::partial$misc/support-powerpaste.adoc[]
 
 include::partial$misc/plugin_support_table.adoc[]

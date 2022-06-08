@@ -13,11 +13,11 @@
 
 The methods for adding custom toolbar buttons are in the UI Registry part of the editor API `editor.ui.registry`. The API has four methods for adding toolbar buttons, one for each type of toolbar button:
 
-* `editor.ui.registry.addButton`(identifier, configuration)
-* `editor.ui.registry.addToggleButton`(identifier, configuration)
-* `editor.ui.registry.addSplitButton`(identifier, configuration)
-* `editor.ui.registry.addMenuButton`(identifier, configuration)
-* `editor.ui.registry.addGroupToolbarButton`(identifier, configuration)
+* `editor.ui.registry.addButton(identifier, configuration)`
+* `editor.ui.registry.addToggleButton(identifier, configuration)`
+* `editor.ui.registry.addSplitButton(identifier, configuration)`
+* `editor.ui.registry.addMenuButton(identifier, configuration)`
+* `editor.ui.registry.addGroupToolbarButton(identifier, configuration)`
 
 The two arguments these methods take are:
 

@@ -10,11 +10,11 @@ The following example demonstrates how data flows through the dialog and how but
 
 liveDemo::dialog-pet-machine[height="150", tab="js"]
 
-The dialog in this example contains two interactive components - an input component named `+catdata+` and a checkbox component named `+isdog+`. These names are used in the `+initialdata+` configuration property to set the initial values for these components. In this case, when the dialog loads the input will contain the text _initial Cat_ and the checkbox will not be checked.
+The dialog in this example contains two interactive components - an input component named `+catdata+` and a checkbox component named `+isdog+`. These names are used in the `+initialData+` configuration property to set the initial values for these components. In this case, when the dialog loads the input will contain the text _initial Cat_ and the checkbox will not be checked.
 
 The dialog also contains two footer buttons - a *submit* type button and a *cancel* type button. Since the dialog's configuration does not contain an `+onCancel+` callback, clicking the cancel type button will just close the dialog. However, the configuration does contain an `+onSubmit+` callback that will be fired when the submit type button is clicked.
 
-In the `+onSubmit+` callback, the dialog instance API that is passed into the callback is used to call `+getData()+`. This function returns the dialog's data store, from which we are able to get the state of the `+isdog+` checkbox and the value of the `+catadata+` input. This information is used to construct a sentence which is then inserted into the editor. Finally, `+close()+` is called to manually close the dialog.
+In the `+onSubmit+` callback, the dialog instance API that is passed into the callback is used to call `+getData()+`. This function returns the dialog's data store, from which we are able to get the state of the `+isdog+` checkbox and the value of the `+catdata+` input. This information is used to construct a sentence which is then inserted into the editor. Finally, `+close()+` is called to manually close the dialog.
 
 [[interactive-example-using-redial]]
 == Interactive example using Redial

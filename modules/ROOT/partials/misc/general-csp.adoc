@@ -15,7 +15,21 @@
 
 [IMPORTANT]
 ====
-These directives will prevent all content loading from external sources. To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
+There is a hardened approach to CSP, commonly known as _strict CSP_. A strict CSP
+
+1. uses a `+nonce+` for all `+<script>+` elements;
+
+2. regenerates each `+nonce+` on every page load;
+
+3. refactors inline event handlers such that they are added from a JavaScript block; and
+
+4. does not allow the `+unsafe-inline+` value in any directive.
+
+However, {productname} currently requires the `unsafe-inline` value in the `style-src` directive to present material as other than plain-text, and to position its own user interface elements.
+
+As a consequence, running {productname} from within a strict CSP configuration is not currently supported
+
+Also, the required directives documented above prevent any content loading from external sources. To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
 
 [source,html]
 ----

@@ -8,7 +8,7 @@ These options affect the color selector shown when using the `forecolor` (text c
 
 This option allows for specifying the number of columns for text color grids. The number of rows is calculated based on the number of text colors supplied divided by the specified number of columns.
 
-By default, the number of rows and columns is dependent of the number of colors specified using <<color_map,`color_map`>>. The dimensions of the grid will be calculated by {productname} to keep the grid a square or a rectangle with a minimum of 5 columns.
+By default, the number of rows and columns is dependent of the number of colors specified using xref:color_map[`color_map`]. The dimensions of the grid will be calculated by {productname} to keep the grid a square or a rectangle with a minimum of 5 columns.
 
 NOTE: The `textcolor_cols` and `textcolor_rows` properties have been removed in {productname}{nbsp}5.
 

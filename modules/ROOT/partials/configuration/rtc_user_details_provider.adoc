@@ -5,7 +5,7 @@ By default, a user's unique ID (`userId`, the `sub` field from their xref:rtc/jw
 
 To display a descriptive name on the caret, the `userId` needs to be resolved into user details that include the user's display name (`fullName`). This resolution is done on each client to avoid sending any personal information through the RTC server.
 
-Only the `fullName` is required, but the whole object will be stored within the RTC caret information for use with the <<rtc_client_connected,`rtc_client_connected`>> and <<rtc_client_disconnected,`rtc_client_disconnected`>> callbacks to avoid duplicate lookup queries. The user details are also passed to the `RtcClientConnected` and `RtcClientDisconnected` events.
+Only the `fullName` is required, but the whole object will be stored within the RTC caret information for use with the xref:rtc_client_connected[`rtc_client_connected`] and xref:rtc_client_disconnected[`rtc_client_disconnected`] callbacks to avoid duplicate lookup queries. The user details are also passed to the `RtcClientConnected` and `RtcClientDisconnected` events.
 
 This provider function is called once for each connecting client. Clients that reconnect may trigger a new call to the provider function rather than using cached data.
 
@@ -40,7 +40,7 @@ Return data::
 
 | any custom field
 | `any`
-| Extra user data for use in the <<rtc_client_connected,`rtc_client_connected` API>>.
+| Extra user data for use in the xref:rtc_client_connected[`rtc_client_connected` API].
 |===
 
 ==== Example of providing static user details

@@ -26,7 +26,7 @@ Two situations to consider when organising the toolbar:
 * When there are two or more toolbar button groups, the main toolbar will show as many complete, sequential toolbar groups as possible within the width of the editor. Any remaining toolbar button groups will be moved to the toolbar drawer.
 * If the first toolbar button group is wider than the editor, the whole toolbar will be shown in the toolbar drawer.
 
-The toolbar modes are not available when using <<usingmultipletoolbars,multiple toolbars>> or the <<toolbar_n,toolbar(n)>> option.
+The toolbar modes are not available when using xref:usingmultipletoolbars[multiple toolbars] or the xref:toolbar_n[`toolbar(n)`] option.
 
 *Type:* `String`
 
@@ -41,10 +41,10 @@ include::partial$misc/differs_for_mobile.adoc[]
 
 The toolbar mode is specified in the `tinymce.init`. There are four toolbar modes:
 
-* <<floating,Floating>>
-* <<sliding,Sliding>>
-* <<scrolling,Scrolling>>
-* <<wrap,Wrap>>
+* xref:floating[Floating]
+* xref:sliding[Sliding]
+* xref:scrolling[Scrolling]
+* xref:wrap[Wrap]
 
 [[floating]]
 ==== Floating

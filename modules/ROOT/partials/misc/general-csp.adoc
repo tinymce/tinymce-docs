@@ -25,7 +25,7 @@ There is a hardened approach to CSP, commonly known as _strict CSP_. A strict CS
 
 4. does not allow the `+unsafe-inline+` value in any directive.
 
-However, {productname} currently requires the `unsafe-inline` value in the `style-src` directive to present material as other than plain-text, and to position its own user interface elements.
+However, {productname} currently requires the `unsafe-inline` value in the `style-src` directive to present content other than plain-text.
 
 As a consequence, running {productname} from within a strict CSP configuration is not currently supported.
 

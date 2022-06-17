@@ -71,7 +71,7 @@ Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 | Results in a unique ID. For example, `'p[id:{$uid}]'`.
 |===
 
-Use `*[*]` to include all elements and all attributes. This can be very useful when used with the xref:invalid_elements[`invalid_elements`] option.
+Use `+*[*]+` to include all elements and all attributes. This can be very useful when used with the xref:invalid_elements[`invalid_elements`] option.
 
 *Type:* `String`
 

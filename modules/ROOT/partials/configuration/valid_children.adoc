@@ -7,9 +7,9 @@ The valid_children enables you to control what child elements can exists within 
 
 The syntax for this option is a comma separated list of parents with elements that should be added/removed as valid children for that element. So for example `'+body[style]'` would add style as a valid child of body.
 
-[discrete]
 === Control characters
 
+[cols="1,6"]
 |===
 | Name | Summary
 
@@ -24,7 +24,6 @@ This example shows you how to add `style` as a valid child of `body` and remove 
 
 *Type:* `String`
 
-[discrete]
 === Example: Using `valid_children`
 
 [source, js]

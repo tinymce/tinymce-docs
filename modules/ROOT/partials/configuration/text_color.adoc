@@ -14,7 +14,6 @@ NOTE: The `textcolor_cols` and `textcolor_rows` properties have been removed in 
 
 *Type:* `Integer`
 
-[discrete]
 ==== Example: Using `color_cols`
 
 [source, js]
@@ -33,7 +32,6 @@ This option allows specifying a map of the text colors that will appear in the g
 
 *Type:* `Array`
 
-[discrete]
 ==== Example: Using `color_map`
 
 [source, js]
@@ -53,7 +51,6 @@ tinymce.init({
 });
 ----
 
-[discrete]
 ==== The default color_map
 
 [source, js]
@@ -97,7 +94,6 @@ This option allows disabling the custom color picker in all color swatches of th
 
 *Default Value:* `true`
 
-[discrete]
 ==== Example: Using `custom_colors`
 
 [source, js]

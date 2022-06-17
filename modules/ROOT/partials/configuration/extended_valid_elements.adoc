@@ -9,7 +9,6 @@ The below example replaces the current `img` rule (including the global element 
 
 *Type:* `String`
 
-[discrete]
 === Example: Using `extended_valid_elements`
 
 [source, js]
@@ -22,7 +21,6 @@ tinymce.init({
 
 Also see xref:valid_elements[`valid_elements`] and xref:invalid_elements[`invalid_elements`] for more configuration options.
 
-[discrete]
 === Using extended_valid_elements to allow script elements
 
 WARNING: Allowing script elements (`<script>`) in {productname} exposes users to https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting[cross-site scripting (XSS) attacks].
@@ -33,7 +31,6 @@ To allow script elements in the editor, include the following in the {productnam
 extended_valid_elements : 'script[src|async|defer|type|charset]'
 ----
 
-[discrete]
 === Interactive example
 
 This example shows you how to use the xref:extended_valid_elements[`extended_valid_elements`] option. This option is used to add additional valid elements and attributes.

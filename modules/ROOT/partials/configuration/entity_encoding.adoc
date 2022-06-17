@@ -5,7 +5,6 @@ This option controls how entities/characters get processed by {productname}. The
 
 The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into their named equivalents. Though, `'` and `"` will only be encoded within attribute values and `<` and `>` will only be encoded within text nodes. This is correct according to the HTML and XML specs.
 
-[discrete]
 === Encoding types
 
 |===
@@ -24,7 +23,6 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 *Type:* `String`
 
 
-[discrete]
 === Example: Using `entity_encoding`
 
 [source, js]

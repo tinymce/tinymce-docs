@@ -8,7 +8,6 @@ When resizing is enabled, the editor can be resized by either:
 * Clicking and dragging the resize handle in the bottom right-hand corner of the editor.
 * Focusing the resize handle, and using the arrow keys. The *Up Arrow* and *Left Arrow* keys will make the editor smaller, and the *Down Arrow* and *Right Arrow* keys will make the editor larger.
 
-[discrete]
 === Disabling the resize
 
 *Type:* `Boolean`
@@ -19,7 +18,6 @@ When resizing is enabled, the editor can be resized by either:
 
 include::partial$misc/differs_for_mobile.adoc[]
 
-[discrete]
 ==== Example: Disabling editor resizing
 
 [source, js]
@@ -30,7 +28,6 @@ tinymce.init({
 });
 ----
 
-[discrete]
 === Enabling both vertical and horizontal resize
 
 *Type:* `Boolean`
@@ -39,7 +36,6 @@ tinymce.init({
 
 *Possible Values:* `true`, `false`, `'both'`
 
-[discrete]
 ==== Example: Enabling vertical and horizontal editor resizing
 
 [source, js]

@@ -6,12 +6,10 @@ The `invalid_styles` option enables you to restrict the styles that are valid fo
 * *String format* - This is a list of global styles to disallow.
 * *Object format* - This is a more complex format where you can specify invalid styles for individual elements.
 
-[discrete]
 === Simple global classes
 
 *Type:* `String`, `Object`
 
-[discrete]
 ==== Example: Using `invalid_styles` string
 
 [source, js]
@@ -22,12 +20,10 @@ tinymce.init({
 });
 ----
 
-[discrete]
 === Element specific classes
 
 *Type:* `String`, `Object`
 
-[discrete]
 ==== Example: Using `invalid_styles` object
 
 [source, js]

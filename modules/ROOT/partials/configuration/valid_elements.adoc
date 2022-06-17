@@ -7,9 +7,9 @@ This option contains a comma separated list of element conversion chunks. Each c
 
 If you just want to add or change some behavior for a few items, use the xref:extended_valid_elements[`extended_valid_elements`] option
 
-[discrete]
 === Control characters
 
+[cols="1,6"]
 |===
 | Name | Summary
 
@@ -61,9 +61,9 @@ If you just want to add or change some behavior for a few items, use the xref:ex
 
 Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 
-[discrete]
 === Variables
 
+[cols="1,6"]
 |===
 | Name | Summary
 
@@ -75,7 +75,6 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 
 *Type:* `String`
 
-[discrete]
 === Example: Using `valid_elements`
 
 [source, js]
@@ -88,7 +87,6 @@ tinymce.init({
 
 This example string tells {productname} to remove all elements that are not a `'a, strong, div or br'` element, convert `'b'` elements to `'strong'` elements, default '[.code]``target``' to '[.code]``_blank``' and keep the '[.code]``href``', '[.code]``target``' and '[.code]``align``' attributes of the elements.
 
-[discrete]
 === Duplicate attribute warning
 
 Be careful not to duplicate attributes in the definitions as this may cause {productname} to render duplicate attributes in the output. For example, if you have:

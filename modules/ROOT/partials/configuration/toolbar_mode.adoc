@@ -36,7 +36,6 @@ The toolbar modes are not available when using xref:usingmultipletoolbars[multip
 
 include::partial$misc/differs_for_mobile.adoc[]
 
-[discrete]
 === Settings
 
 The toolbar mode is specified in the `tinymce.init`. There are four toolbar modes:
@@ -51,9 +50,8 @@ The toolbar mode is specified in the `tinymce.init`. There are four toolbar mode
 
 If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
 
-image:floating_toolbar.png[Floating Toolbar]
+image::floating_toolbar.png[Floating Toolbar]
 
-[discrete]
 ===== Configuring a Floating toolbar
 
 Use the following settings to configure a Floating toolbar:
@@ -71,9 +69,8 @@ tinymce.init({
 
 If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
 
-image:sliding_toolbar.png[Sliding Toolbar]
+image::sliding_toolbar.png[Sliding Toolbar]
 
-[discrete]
 ===== Configuring a Sliding toolbar
 
 Use the following settings to configure a Sliding toolbar:
@@ -95,9 +92,8 @@ If the `toolbar_mode` is configured to `scrolling`, the overflow toolbar buttons
 
 A scrollbar will be shown on the toolbar on desktop devices and hybrid devices in desktop mode.
 
-image:scrolling_toolbar.png[Scrolling Toolbar]
+image::scrolling_toolbar.png[Scrolling Toolbar]
 
-[discrete]
 ===== Configuring a Scrolling toolbar
 
 Use the following settings to configure a Scrolling toolbar:
@@ -115,9 +111,8 @@ tinymce.init({
 
 If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
 
-image:wrapped_toolbar.png[Wrapped Toolbar]
+image::wrapped_toolbar.png[Wrapped Toolbar]
 
-[discrete]
 ===== Configuring a Wrapped toolbar
 
 Use the following settings to configure a wrapped toolbar:

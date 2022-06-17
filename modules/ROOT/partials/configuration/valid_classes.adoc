@@ -5,7 +5,6 @@ This option enables you to restrict the classes that are valid for specific elem
 
 *Type:* `String`, `Object`
 
-[discrete]
 === Example simple global classes
 
 [source, js]
@@ -16,7 +15,6 @@ tinymce.init({
 });
 ----
 
-[discrete]
 === Example element specific classes
 
 [source, js]

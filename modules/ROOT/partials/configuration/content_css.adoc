@@ -11,7 +11,6 @@ include::partial$misc/shipped-content-css.adoc[]
 
 If a relative path is specified, it will be resolved in relation to the URL of the webpage {productname} is rendered in.
 
-[discrete]
 === Absolute path example
 
 ```js
@@ -23,7 +22,6 @@ tinymce.init({
 });
 ```
 
-[discrete]
 === Relative path example
 
 ```js
@@ -37,7 +35,6 @@ tinymce.init({
 
 To load multiple stylesheets, provide the paths as either a array of strings or a comma-separated string.
 
-[discrete]
 === Using multiple stylesheets example
 
 [source, js]
@@ -48,7 +45,6 @@ tinymce.init({
 });
 ----
 
-[discrete]
 === Using multiple stylesheets as array example
 
 [source, js]
@@ -59,7 +55,6 @@ tinymce.init({
 });
 ----
 
-[discrete]
 === Browser caching
 
 Browser caching might cause {productname} to not read the contents of a changed CSS file. You'll see "old" colors & styles.

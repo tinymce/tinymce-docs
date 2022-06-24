@@ -6,9 +6,11 @@
 :plugincode: editimage
 :pluginminimumplan: tiertwo
 
-NOTE: In previous versions of {productname}, the {pluginname} plugin was provided as an open source plugin known as the Image Tools plugin.
+include::partial$misc/admon-premium-plugin.adoc[]
 
-Enhanced Image Editing (`+editimage+`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+editimage_cors_hosts+` or `+editimage_proxy_service_url+` (see below).
+The {pluginname} (`{plugincode}`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `+editimage_cors_hosts+` or `+editimage_proxy_service_url+` (see below).
+
+NOTE: In previous versions of {productname}, the {pluginname} plugin was provided as an open source plugin known as the Image Tools plugin.
 
 == Interactive example
 

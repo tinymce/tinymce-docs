@@ -3,10 +3,15 @@
 :description: Insert a simple Table of Contents into the {productname} editor
 :keywords: tableofcontents, tableofcontents_depth, tableofcontents_class, tableofcontents_header, toc
 :pluginname: Table of Contents
+:pluginnamelower: table of contents
 :plugincode: tableofcontents
 :pluginminimumplan: tiertwo
 
-The `+tableofcontents+` plugin will generate basic _Table of Contents_ and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
+include::partial$misc/admon-premium-plugin.adoc[]
+
+The {pluginname} plugin will generate basic {pluginnamelower} and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
+
+NOTE: In previous versions of {productname}, the {pluginname} plugin was provided as an open source plugin.
 
 == Interactive Example
 

@@ -68,7 +68,7 @@ The `yarn build` step will download the latest TinyMCE package and generate new 
 
 #### TinyMCE API documentation
 
-The TinyMCE API documentation is maintained within the [TinyMCE project repository](https://github.com/tinymce/tinymce) and compiled for the documentation site using the above `yarn build` command.
+The TinyMCE API documentation is maintained within the [TinyMCE project repository](https://github.com/tinymce/tinymce) and compiled for the documentation site using [MoxieDoc](https://github.com/tinymce/moxiedoc).
 
 ##### Prerequisites
 

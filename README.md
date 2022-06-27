@@ -71,9 +71,11 @@ The `yarn build` step will download the latest TinyMCE package and generate new 
 The TinyMCE API documentation is maintained within the [TinyMCE project repository](https://github.com/tinymce/tinymce) and compiled for the documentation site using [MoxieDoc](https://github.com/tinymce/moxiedoc).
 
 To update the published API documentation:
+
 1. Change the version in `.api-version`.
 2. Run `yarn build`.
 3. Commit the changes.
+
 Running `yarn build` downloads the TinyMCE package specified in `.api-version` and generates new API reference content from source.
 
 **Note:** The API documentation should never be edited manually.

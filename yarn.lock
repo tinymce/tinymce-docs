@@ -210,6 +210,13 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tinymce/antora-extension-livedemos@^0.0.1-rc.20220624042543634.shaf1b28a3":
+  version "0.0.1-rc.20220624042543634.shaf1b28a3"
+  resolved "https://registry.yarnpkg.com/@tinymce/antora-extension-livedemos/-/antora-extension-livedemos-0.0.1-rc.20220624042543634.shaf1b28a3.tgz#73a0a7e343a7e428b47888a0317d08e172b4b94a"
+  integrity sha512-0rB9k5msVsi5fc1YREsxcZ9kI5AKV//MQwThuRdIVchjjY53dwOt3I2f7qOzMj84dyHoC40Vuue9Za9iyxRBLg==
+  dependencies:
+    liquidjs "^9.37.0"
+
 "@tinymce/moxiedoc@^0.2.0-rc.20220310010105103.sha4bab33b":
   version "0.2.0-rc.20220328033957729.sha8a62f31"
   resolved "https://registry.yarnpkg.com/@tinymce/moxiedoc/-/moxiedoc-0.2.0-rc.20220328033957729.sha8a62f31.tgz#7b2bcc9b2c93ca4fd9a0c4cfc7b33e610e552f56"
@@ -1540,10 +1547,10 @@ leven@2.1.0:
   resolved "https://registry.yarnpkg.com/leven/-/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
   integrity sha1-wuep93IJTe6dNCAq6KzORoeHVYA=
 
-liquidjs@~9.25.0:
-  version "9.25.1"
-  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.25.1.tgz#1330e015158e9d7f0a24d4c063d2242049266f79"
-  integrity sha512-V6RYwuFsx13aKZ5ZrSUMHUgTPrEWpcP3GcafEkMdvlWVW9tTlQHOgBoJaK2HtLbOyvjXtaHXT82ZElwmRNY+Kw==
+liquidjs@^9.37.0:
+  version "9.37.0"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.37.0.tgz#58e0dd2fa779635ead589e82cfa9baffe49f490e"
+  integrity sha512-qDj9iiNdB+QNZTR4iKjiQzoHQma7V8Itx5oZG/ZCP7xjebh1LI+s5IG2ZYUbs1ALO6hBzmW36Ptd8RR4eohuDA==
 
 load-json-file@^4.0.0:
   version "4.0.0"

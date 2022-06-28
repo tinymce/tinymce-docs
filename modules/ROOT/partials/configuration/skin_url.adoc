@@ -7,7 +7,7 @@ If you are using {productname} skins, this option enables you to specify the loc
 
 === Example: Using `skin_url`
 
-[source, js]
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

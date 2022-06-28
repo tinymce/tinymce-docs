@@ -11,6 +11,8 @@ If you set this option to `true`, {productname} will convert all `font` elements
 
 *Possible Values:* `true`, `false`
 
+=== Example: Using `convert_fonts_to_spans`
+
 [source, js]
 ----
 tinymce.init({

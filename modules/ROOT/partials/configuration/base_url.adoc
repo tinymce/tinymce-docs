@@ -9,7 +9,7 @@ By default, the `base_url` is the directory containing {productname} javascript 
 
 === Example: Using `base_url`
 
-[source, js]
+[source, js, subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

@@ -11,6 +11,8 @@ This option allows you to specify the skin that {productname} should use, or `fa
 
 The name of the skin should match the name of the folder within the skins directory of {productname}. If the specified skin is not found, {productname} will not load.
 
+=== Example: using `skin`
+
 [source, js]
 ----
 tinymce.init({
@@ -19,4 +21,4 @@ tinymce.init({
 });
 ----
 
-If you would like to create your own skin, please see the guide link:{baseurl}/advanced/creating-a-skin/[here].
+If you would like to create your own skin, please see the guide xref:advanced/creating-a-skin.adoc[here].

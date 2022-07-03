@@ -8,8 +8,10 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} 6.1 was released for {enterpriseversion} and {cloudname} on Wednesday, July 13^th^, 2022. It includes {productname} 6.1. These release notes provide an overview of the changes for {productname} 6.1:
+{productname} 6.1 was released for {enterpriseversion} and {cloudname} on Wednesday, July 13^th^, 2022. It includes {productname} 6.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 6.1:
 
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
 * xref:bug-fixes[Bug fixes]
 * xref:changes[Changes]
 * xref:improvements[Improvements]
@@ -55,27 +57,165 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 <https://ephocks.atlassian.net/browse/DOC-1657>
 
-
-# updated premium plugins and skins being released along with TinyMCE 6.1
-
-## A11ychecker 3.0.2
-
-## Comments 3.1.0
-
-## Enhanced Media Embed 3.0.1
-
-## Page Embed 2.1.0
-
-## PowerPaste 6.1.0
-
-## Real-Time Collaboration 2.1.0
-
-## Spell Checker Pro 3.0.3
-
-## Table of Contents 1.1.0
-
-## Premium Skins (due to oxide changes in core)
 ////
+
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.1.
+
+=== A11ychecker 3.0.2
+
+The {productname} vnumtxt release includes an accompanying release of the **A11ychecker** premium plugin.
+
+**A11ychecker** 3.0.2 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **A11ychecker** plugin, see: xref:a11ychecker.adoc[A11ychecker plugin].
+
+
+=== Comments 3.1.0
+
+The {productname} vnumtxt release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** 3.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **Comments** plugin, see: xref:comments.adoc[Comments plugin].
+
+
+=== Enhanced Media Embed 3.0.1
+
+The {productname} vnumtxt release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
+
+**Enhanced Media Embed** 3.0.1 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **Enhanced Media Embed** plugin, see: xref:enhancedmediaembed.adoc[Enhanced Media Embed plugin].
+
+
+=== Page Embed 2.1.0
+
+The {productname} vnumtxt release includes an accompanying release of the **Page Embed** premium plugin.
+
+**Page Embed** 2.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed plugin].
+
+
+=== PowerPaste 6.1.0
+
+The {productname} vnumtxt release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 6.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **PowerPaste** plugin, see: xref:powerpaste.adoc[PowerPaste plugin].
+
+
+=== Real-Time Collaboration 2.1.0
+
+The {productname} vnumtxt release includes an accompanying release of the **Real-Time Collaboration** premium plugin.
+
+**Real-Time Collaboration** 2.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **Real-Time Collaboration** plugin, see: xref:real-timecollaboration.adoc[Real-Time Collaboration plugin].
+
+
+=== Spell Checker Pro 3.0.3
+
+The {productname} vnumtxt release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 3.0.3 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **Spell Checker Pro** plugin, see: xref:spellcheckerpro.adoc[Spell Checker Pro plugin].
+
+
+=== Table of Contents 1.1.0
+
+The {productname} vnumtxt release includes an accompanying release of the **Table of Contents** premium plugin.
+
+**Table of Contents** 1.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+
+* <features>
+
+* <bug fixes>
+
+* <enhancements>
+
+For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents plugin].
+
+
+
+
+
+[[accompanying-premium-skins-and-icon-packs-changes]]
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} vnumtxt release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+=== Premium Skins and Icon Packs — New features
+
+oxide changes in core
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+
+
+////
+If the oxide changes are bug fixes
+
+=== Premium Skins and Icon Packs — Bug fixes
+
+The **Premium Skins and Icon Packs** release includes the following bug fixes:
+
+oxide changes in core
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+////
+
+
+
+
 
 
 

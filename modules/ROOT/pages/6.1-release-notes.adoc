@@ -177,14 +177,14 @@ NOTE: Enablng this feature depends on changes made to the Core {productname} edi
 Previously, the Save Comment was labeled *Save*. After field reports that end-users were interpreting this to mean the entire {productname} document would be saved on pressing this button, two changes have been made.
 
 1. The default label for this button is now *Comment*.
-
-   This new default presents for both new comments and replies to existing comments.
++
+This new default presents for both new comments and replies to existing comments.
 
 2. This default label is now customisable.
-
-   [How does one customise this? I presume it’s a value one sets as part of `tinymce.init` but which one? And where in this configuration file?]
-   
-   [Or is it a matter of an integrator editing the `.pot` file — `src/text/pot/plugins/tinycomments/tinymce_tinycomments.pot` — that comes along for the ride?]
++
+[How does one customise this? I presume it’s a value one sets as part of `tinymce.init` but which one? And where in this configuration file?]
++
+[Or is it a matter of an integrator editing the `.pot` file — `src/text/pot/plugins/tinycomments/tinymce_tinycomments.pot` — that comes along for the ride?]
 
 NOTE: when a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
 

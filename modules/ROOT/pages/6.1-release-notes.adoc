@@ -29,34 +29,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 <https://ephocks.atlassian.net/browse/DOC-1660>
 
-
-## EPIC-3 Show avatars next to username in comments
-
-<https://ephocks.atlassian.net/browse/EPIC-3>
-
-<https://ephocks.atlassian.net/browse/DOC-1658>
-
-
-## EPIC-4 Show comments upfront upon editor init
-
-<https://ephocks.atlassian.net/browse/EPIC-4>
-
-<https://ephocks.atlassian.net/browse/DOC-1663>
-
-
-## EPIC-5 Allow comments on all (official) types of content
-
-<https://ephocks.atlassian.net/browse/EPIC-5>
-
-<https://ephocks.atlassian.net/browse/DOC-1659>
-
-
-## EPIC-6 Customize the label name for the save comment button
-
-<https://ephocks.atlassian.net/browse/EPIC-6>
-
-<https://ephocks.atlassian.net/browse/DOC-1657>
-
 ////
 
 
@@ -70,7 +42,7 @@ The following premium plugin updates were released alongside {productname} 6.1.
 
 The {productname} vnumtxt release includes an accompanying release of the **A11ychecker** premium plugin.
 
-**A11ychecker** 3.0.2 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**A11ychecker** 3.0.2 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
 
 * <features>
 
@@ -85,13 +57,137 @@ For information on the **A11ychecker** plugin, see: xref:a11ychecker.adoc[A11ych
 
 The {productname} vnumtxt release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** 3.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**Comments** 3.1.0 introduces the following enhancements:
 
-* <features>
 
-* <bug fixes>
+==== Improvements to Comment APIs
 
-* <enhancements>
+//// epic-2 ////
+
+
+==== Avatars can now be displayed next to usernames in comments
+
+The default icon presented next to user names in comments can now be replaced by a custom avatar.
+
+In embedded mode, the avatar is supplied by the `tinycomments_author_avatar` option:
+
+[source,js]
+----
+    plugins: [
+        "tinycomments",
+    ],
+	tinycomments_mode: "embedded",
+	tinycomments_author: "testuser",
+	tinycomments_author_name: "Test User",
+	tinycomments_author_avatar: "https://example.com/image.ext",
+----
+
+In callback mode, the avatar is supplied by the `avatar` option of `setConverstation()`:
+
+[source,js]
+----
+const avatarUrl = "https://example.com/image.ext";
+
+/*
+
+much non-avatar-related configuration here
+
+*/
+
+      setConversation(conversationUid, [
+        {
+          author,
+		  avatar: avatarUrl,
+          createdAt,
+          modifiedAt: createdAt,
+          content,
+          uid: conversationUid /* first comment has same uid as conversation */,
+        },
+      ]);
+----
+
+In both modes the avatar:
+
+* must be 36px by 36px.
+
+* can be any filetype able to be wrapped in an `<img>` element.
+
+* will present as the browser’s default ‘image not found’ icon if the avatar resource is not available at the nominated URL.
+
+NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, showing avatars next to the user-name in comments requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
+
+
+==== Show comments sidebar on editor initialization
+
+It is now possible to initialize a {productname} editor with a comment sidebar automatically visible and available but with focus still in the main editor.
+
+To add a comment sidebar add `sidebar_show: 'showcomments'` to `tinymce.init`:
+
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",
+	sidebar_show: 'showcomments',
+});
+----
+
+For a customised comments sidebar, setup the sidebar in the `setup` section of `tinymce.init`:
+
+[source,js]
+----
+	setup: (editor) => {
+	  editor.ui.registry.addSidebar('showcomments', {
+		tooltip: 'showcomments',
+		icon: 'comment',
+		onSetup: (api) => {
+		  console.log('Render panel', api.element());
+		},
+		onShow: (api) => {
+		  console.log('Show panel', api.element());
+		},
+		onHide: (api) => {
+		  console.log('Hide panel', api.element());
+		}
+	  });
+	}
+----
+
+NOTE: The comment sidebar presents with no animation or other effect. It is just there, along with any other initialised {productname} editor components. Also, as noted above, the sidebar does not take focus, which remains with the main editor.
+
+
+==== Support annotating certain block elements directly when using the editor annotator API
+
+Several new block elements can now have comments attached to them, including:
+
+* Tables of contents
+* Images
+* Images with captions
+* Code samples
+* media in iframes
+* embedded media
+* embedded pages
+
+When comments are showing, a 3px wide yellow (hex color #FFE89D) rectangle presents around any element with a comment attached.
+
+NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
+
+
+==== the label name for the Save Comment button can now be customized
+
+Previously, the Save Comment was labeled *Save*. After field reports that end-users were interpreting this to mean the entire {productname} document would be saved on pressing this button, two changes have been made.
+
+1. The default label for this button is now *Comment*.
+
+   This new default presents for both new comments and replies to existing comments.
+
+2. This default label is now customisable.
+
+   [How does one customise this? I presume it’s a value one sets as part of `tinymce.init` but which one? And where in this configuration file?]
+   
+   [Or is it a matter of an integrator editing the `.pot` file — `src/text/pot/plugins/tinycomments/tinymce_tinycomments.pot` — that comes along for the ride?]
+
+NOTE: when a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
+
 
 For information on the **Comments** plugin, see: xref:comments.adoc[Comments plugin].
 
@@ -100,7 +196,7 @@ For information on the **Comments** plugin, see: xref:comments.adoc[Comments plu
 
 The {productname} vnumtxt release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
 
-**Enhanced Media Embed** 3.0.1 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**Enhanced Media Embed** 3.0.1 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
 
 * <features>
 
@@ -115,7 +211,7 @@ For information on the **Enhanced Media Embed** plugin, see: xref:enhancedmediae
 
 The {productname} vnumtxt release includes an accompanying release of the **Page Embed** premium plugin.
 
-**Page Embed** 2.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**Page Embed** 2.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
 
 * <features>
 
@@ -130,7 +226,7 @@ For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embe
 
 The {productname} vnumtxt release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 6.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**PowerPaste** 6.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
 
 * <features>
 
@@ -145,7 +241,7 @@ For information on the **PowerPaste** plugin, see: xref:powerpaste.adoc[PowerPas
 
 The {productname} vnumtxt release includes an accompanying release of the **Real-Time Collaboration** premium plugin.
 
-**Real-Time Collaboration** 2.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**Real-Time Collaboration** 2.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
 
 * <features>
 
@@ -160,7 +256,7 @@ For information on the **Real-Time Collaboration** plugin, see: xref:real-timeco
 
 The {productname} vnumtxt release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 3.0.3 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**Spell Checker Pro** 3.0.3 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
 
 * <features>
 
@@ -175,7 +271,7 @@ For information on the **Spell Checker Pro** plugin, see: xref:spellcheckerpro.a
 
 The {productname} vnumtxt release includes an accompanying release of the **Table of Contents** premium plugin.
 
-**Table of Contents** 1.1.0 [adds the following new features | provides the following bug fixes: introduces the following enhancements]:
+**Table of Contents** 1.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
 
 * <features>
 
@@ -766,16 +862,6 @@ tinymce.init({
 });
 ----
 
-A common envisioned use is to initialise a {productname} editor with a {productname} comments sidebar automatically present.
-
-[source,js]
-----
-tinymce.init({
-    selector: "textarea",
-	sidebar_show: 'showcomments',
-});
-----
-
 If the sidebar is custom, the sidebar should be setup in the `setup` section of `tinymce.init`:
 
 [source,js]
@@ -783,7 +869,7 @@ If the sidebar is custom, the sidebar should be setup in the `setup` section of 
 	setup: (editor) => {
 	  editor.ui.registry.addSidebar('<sidebar-name>', {
 		tooltip: '<sidebar-name>',
-		icon: 'comment',
+		icon: '<icon-name>',
 		onSetup: (api) => {
 		  console.log('Render panel', api.element());
 		},
@@ -797,7 +883,23 @@ If the sidebar is custom, the sidebar should be setup in the `setup` section of 
 	}
 ----
 
-NOTE: The sidebar presents with no animation or other effect. It is just there, along with any other part of the initialised {productname} editor. Also, as documented above, the sidebar does not take focus, which remains with the main editor.
+NOTE: The sidebar presents with no animation or other effect. It is just there, along with any other initialised {productname} editor components. Also, as noted above, the sidebar does not take focus, which remains with the main editor.
+
+////
+A common envisioned use is to initialise a {productname} editor with the Premium Plugin Comments sidebar automatically present.
+
+After adding the Comments Premium Plugin, to add a Comments sidebar, add `sidebar_show: 'showcomments'` to `tinymce.init`:
+
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",
+	sidebar_show: 'showcomments',
+});
+----
+////
+
+
 
 
 === New `newline_behavior` option controls what happens when the Return or Enter key is pressed or the `mceInsertNewLine` command is used

@@ -182,9 +182,9 @@ This new default presents for both new comments and replies to existing comments
 
 2. This default label is now customisable.
 +
-[How does one customise this? I presume it’s a value one sets as part of `tinymce.init` but which one? And where in this configuration file?]
+_How does one customise this? I presume it’s a value one sets as part of `tinymce.init` but which one? And where in this configuration file?_
 +
-[Or is it a matter of an integrator editing the `.pot` file — `src/text/pot/plugins/tinycomments/tinymce_tinycomments.pot` — that comes along for the ride?]
+_Or is it a matter of an integrator editing the `.pot` file — `src/text/pot/plugins/tinycomments/tinymce_tinycomments.pot` — that comes along for the ride?_
 
 NOTE: when a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
 

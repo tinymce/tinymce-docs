@@ -917,30 +917,30 @@ The `newline_behavior` option has been added to {productname} 6.1 to cater to th
 By default these keystrokes work as follows:
 
 1. pressing *Return* or *Enter* creates a new paragraph.
-
-   For example, in ordinary text, pressing *Return* closes the current `<p>` tag, moves the insertion point in the {productname} editor to a new line and opens a new `<p>` tag.
++
+For example, in ordinary text, pressing *Return* closes the current `<p>` tag, moves the insertion point in the {productname} editor to a new line and opens a new `<p>` tag.
    
 2. pressing *Shift-Return* or *Shift-Enter* creates a new line.
-
-   For example, in ordinary text, pressing *Shift-Return* enters two `<br>` tags and moves the insertion point in the {productname} editor to a new line.
++
+For example, in ordinary text, pressing *Shift-Return* enters two `<br>` tags and moves the insertion point in the {productname} editor to a new line.
 
 The `newline_behavior` option takes one of four values:
 
 * `block`
-
-  `block` sets {productname} to treat all four keystrokes as if they are *Return*.
++
+`block` sets {productname} to treat all four keystrokes as if they are *Return*.
   
 * `linebreak`
-
-  `linebreak` sets {productname} to treat all four keystrokes as if they are *Shift-Return*.
++
+`linebreak` sets {productname} to treat all four keystrokes as if they are *Shift-Return*.
   
 * `invert`
-
-  `invert` swaps the behavior or *Return* and *Shift-Return* (and *Enter* and *Shift-Return*). That is, pressing *Return* results in *Shift-Return* behavior, and vice versa.
++
+`invert` swaps the behavior or *Return* and *Shift-Return* (and *Enter* and *Shift-Return*). That is, pressing *Return* results in *Shift-Return* behavior, and vice versa.
 
 * `default`
-
-   `default`, as its name suggests, sets {productname} to do what it does by default when *Return*, *Enter*, *Shift-Return*, or *Shift-Enter* are pressed.
++
+`default`, as its name suggests, sets {productname} to do what it does by default when *Return*, *Enter*, *Shift-Return*, or *Shift-Enter* are pressed.
 
 NOTE: Two other commands that, in their effect, add new lines to a {productname} document are `insertParagraph` and `InsertLineBreak`. Their behavior is not affected by any `newline_behavior` setting.
 

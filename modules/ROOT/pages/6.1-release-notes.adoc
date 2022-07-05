@@ -995,7 +995,7 @@ It takes the current editor undo level status as `level` and the current `undoMa
 
 This section describes issues that users of {productname} 6.1 may encounter and possible workarounds for these issues.
 
-There is one known issue affecting {productname} 6.1.
+There are three known issues affecting {productname} 6.1.
 
 === Clearer focus states for buttons while navigating with keyboard does not work in older browsers
 
@@ -1027,4 +1027,26 @@ Specifically, for `:focus-visible` to work, the following browser versions, or l
 |Safari
 |15.4
 |=== 
+
+
+=== If a `codesample` is the first element added to a {productname} document, the selection is incorrectly set to inside the `contenteditable="false"` block
+
+When adding a `codesample` (by, for example, choosing *Insert > Code sample…*), the added material is placed within a `contenteditable="false"` block.
+
+This block can be selected and copied but not edited. And, once copied, pasting it back adds a further `contenteditable="false"` block containing the added material, to the document.
+
+In {productname} 6.1, however, if a `codesample` is the first material added to a document, {productname} incorrectly sets the selection to the added material within the block, and not to the block itself.
+
+If this material is then copied and pasted, it is added to the document as editable text. This is not the expected behavior.
+
+There is a workaround: adding a blank line to an otherwise empty {productname} 6.1 document before adding a `codesample` results in the selection being sets to the added block, as expected.
+
+
+=== The Show comments toolbar button is not highlighted when comments sidebar is loaded at {productname} initialization
+
+If a {productname} instance presents a toolbar which includes a Show comments button — `toolbar: "showcomments",` — this button is highlighted when the Comments sidebar is visible.
+
+However, in {productname} 6.1, if the Comments sidebar is set to show at initialization — `sidebar_show: 'showcomments',` — the Show comments button does not highlight.
+
+There is no workaround per se, but clicking the *Show comments* button twice (to hide and then re-display the Comments sidebar) does set the button to highlight, correcting the display error.
 

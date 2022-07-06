@@ -19,20 +19,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:known-issues[Known issues]
 
 
-
-////
-# epic documentation
-
-## EPIC-2 Improved Comments APIs
-
-<https://ephocks.atlassian.net/browse/EPIC-2>
-
-<https://ephocks.atlassian.net/browse/DOC-1660>
-
-////
-
-
-
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
@@ -42,13 +28,13 @@ The following premium plugin updates were released alongside {productname} 6.1.
 
 The {productname} vnumtxt release includes an accompanying release of the **A11ychecker** premium plugin.
 
-**A11ychecker** 3.0.2 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
+**A11ychecker** 3.0.2 fixes the following UI bug:
 
-* <features>
+The *Tools > Accessibility Checker* command opens a dialog. As such, its menu title should be *Accessibility Checker…*.
 
-* <bug fixes>
+The trailing ellipsis indicates the command will not execute without further user input and is required for all menu commands that present dialogs.
 
-* <enhancements>
+This update corrects both the menu title and the equivalently mis-presented toolbar tool tip text. Both strings now include the required ellipsis and present as *Accessibility Checker…*, as expected.
 
 For information on the **A11ychecker** plugin, see: xref:a11ychecker.adoc[A11ychecker plugin].
 
@@ -62,7 +48,12 @@ The {productname} vnumtxt release includes an accompanying release of the **Comm
 
 ==== Improvements to Comment APIs
 
-//// epic-2 ////
+//// EPIC-2 ////
+
+//// <https://ephocks.atlassian.net/browse/EPIC-2> ////
+
+//// <https://ephocks.atlassian.net/browse/DOC-1660> ////
+
 
 
 ==== Avatars can now be displayed next to usernames in comments
@@ -196,13 +187,13 @@ For information on the **Comments** plugin, see: xref:comments.adoc[Comments plu
 
 The {productname} vnumtxt release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
 
-**Enhanced Media Embed** 3.0.1 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
+**Enhanced Media Embed** 3.0.1 fixes the following bug:
 
-* <features>
+==== Enhanced Media Embed tests failed in several browsers
 
-* <bug fixes>
+An incorrect `RealKeys()` setting caused the Enhanced Media Embed webdriver tests to fail in several browsers (including Firefox, Microsoft Edge, and Safari).
 
-* <enhancements>
+With this update, this setting has been corrected, from `RealKeys.text(\n)` to `RealKeys.combo({}, 'enter')`. As a consequence, the Enhanced Media Embed webdriver tests now pass in all supported browsers, as expected.
 
 For information on the **Enhanced Media Embed** plugin, see: xref:enhancedmediaembed.adoc[Enhanced Media Embed plugin].
 
@@ -211,13 +202,17 @@ For information on the **Enhanced Media Embed** plugin, see: xref:enhancedmediae
 
 The {productname} vnumtxt release includes an accompanying release of the **Page Embed** premium plugin.
 
-**Page Embed** 2.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
+**Page Embed** 2.1.0 includes the following bug fix:
 
-* <features>
+==== Portions of the Page Embed dialog were not fully translated
 
-* <bug fixes>
+Four elements in the Page Embed dialog presented in English when the configured language was not English.
 
-* <enhancements>
+Three elements — the text-box label, *Long description URL*, and the checkbox labels *Show iframe border*, and *Enable scrollbar* — presented in English when the configured language was Vietnamese, Hindi, Malay, Japanese or Dutch.
+
+A fourth element — the *Scrollbar* label — presented in English no matter the configured language (ie, it was not translated in to any non-English language).
+
+With this update, these four elements are now translated into all configurable languages, and appear correctly when {productname} is switched to another language, as expected.
 
 For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed plugin].
 
@@ -226,13 +221,56 @@ For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embe
 
 The {productname} vnumtxt release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 6.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
+**PowerPaste** 6.1.0 provides the following bug fixes:
 
-* <features>
 
-* <bug fixes>
+==== Depending on the source application, some objects pasted in to {productname} when running inside Safari were presented as PDF images
 
-* <enhancements>
+For example, when an equation created within the macOS application, *Pages*, is copied, the equation is placed on the macOS clipboard in several formats. And, when subsequently pasted, the format provided to {productname} by Safari is a PDF object.
+
+This format does not display or store safely within `+<img>+` tags.
+
+With this update, PowerPaste converts provided PDF objects into a PNG image, which reside and display within `+<img>+` tags safely, as expected.
+
+NOTE: With this fix PowerPaste is able to detect PDF objects and have them converted into PNG images. It does not mean PowerPaste now supports pasting from the Pages application. As of this release, PowerPaste does not specifically support pasting from Pages.
+
+
+==== If URL paths contained either a colon or an exclamation point (or both) PowerPaste’s link detection logic failed
+
+If a colon or an exclamation point — `+:+` or `+!+` was present in the path portion of a URL, PowerPaste’s link detection logic treated the characters as, in effect, end-of-path boundaries. As a consequence, while the string was pasted into {productname}, the expected link was incomplete and incorrect.
+
+For example, pasting the string
+
+`https://example.com/!exclamation-point`
+
+resulted in the following, incomplete, link and trailing text
+
+https://example.com/[]!exclamation-point
+
+Equivalent results occured when URL paths contained the colon character (for example, `https://example.com/:colon`).
+
+With this update, the link detection logic has been improved to capture and present such URLs correctly.
+
+Now, pasting the string 
+
+`https://example.com/!exclamation-point`
+
+results in the following, complete, link and no trailing text
+
+https://example.com/!exclamation-point[]
+
+Also, this improved link detection logic works when manually typing in a URL. If the above example were typed in to a {productname} document, the automatic link-creation would wrap the entire string in an anchor tag after a boundary character (such as a space) was typed.
+
+NOTE: exclamation points and colons are still boundary characters for URL detection and delmiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
+
+
+==== Pasted URL-like strings without a defining protocol were detected as URLs but not provided with a protocol
+
+When fully qualified domain names (FQDN), such as `www.example.com`, were pasted in to a {productname} document, they were detected as URLs, but no protocol was added to the consequent underlying `href` attribute.
+
+As a consequence, the text would display as a clickable link but not work as such.
+
+With this release such FQDNs are, when pasted in to place, supplied with {productname}’s default protocol — `https` — in the underlying `href` attribute. And these pasted strings now display as a clickable link and works as such, as expected.
 
 For information on the **PowerPaste** plugin, see: xref:powerpaste.adoc[PowerPaste plugin].
 
@@ -256,13 +294,17 @@ For information on the **Real-Time Collaboration** plugin, see: xref:real-timeco
 
 The {productname} vnumtxt release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 3.0.3 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
+**Spell Checker Pro** 3.0.3 includes the following bug fix:
 
-* <features>
+==== An issue with the `DomDescent.toLeaf` API could result in Spell Checker Pro’s ‘preserve selection’ logic setting the selection when it did not need to
 
-* <bug fixes>
+The `DomDescent.toLeaf` API can walk inside void elements (for example `+<br>+`). The Core editor’s selection logic, by contrast, does not allow this.
 
-* <enhancements>
+Consequently, when comparing selections where one is from `editor.selection.getRng()` and the other is created by `DomDescent.toLeaf`, the comparison can return `false` when it should be `true`.
+
+When this happens, code runs when it does not need to: in this case, Spell Checker Pro’s ‘preserve selection’ logic.
+
+With this update, SpellcheckerPro now correctly handles `DomDescent.toLeaf` being able to walk into a void element, making the range comparison more accurate, and ensuring the preserve selection code does not run when not needed.
 
 For information on the **Spell Checker Pro** plugin, see: xref:spellcheckerpro.adoc[Spell Checker Pro plugin].
 
@@ -271,13 +313,11 @@ For information on the **Spell Checker Pro** plugin, see: xref:spellcheckerpro.a
 
 The {productname} vnumtxt release includes an accompanying release of the **Table of Contents** premium plugin.
 
-**Table of Contents** 1.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
+**Table of Contents** 1.1.0 includes the following change:
 
-* <features>
+As part of making it possible to link Comments to almost any block element in a {productname} document, a `data-mce-toc` attribute is now added to the Table of Contents wrapper `div` while editing.
 
-* <bug fixes>
-
-* <enhancements>
+This is an internal attribute, used as part of keeping comments attributed to the correct block element. It has no user- or integrator-facing impact.
 
 For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents plugin].
 
@@ -290,24 +330,17 @@ For information on the **Table of Contents** plugin, see: xref:tableofcontents.a
 
 The {productname} vnumtxt release includes an accompanying release of the **Premium Skins and Icon Packs**.
 
-=== Premium Skins and Icon Packs — New features
+=== Premium Skins and Icon Packs
 
-oxide changes in core
+The **Premium Skins and Icon Packs** release includes the following bug fix:
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+When using a Premium skin and the xref:comments.adoc[Comments plugin], avatars in the comments overflowed their bounds and covered the comment text in the Comments side-bar.
 
+This **Premium Skins and Icons Packs** release has been re-built to pull in the changes required to correct this.
 
-////
-If the oxide changes are bug fixes
-
-=== Premium Skins and Icon Packs — Bug fixes
-
-The **Premium Skins and Icon Packs** release includes the following bug fixes:
-
-oxide changes in core
+When a Premium skin and the Comments plugin are now used together, avatars stay within their bounds as they do in the {productname} default skin, and comment text is not hidden.
 
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
-////
 
 
 
@@ -900,8 +933,6 @@ tinymce.init({
 });
 ----
 ////
-
-
 
 
 === New `newline_behavior` option controls what happens when the Return or Enter key is pressed or the `mceInsertNewLine` command is used

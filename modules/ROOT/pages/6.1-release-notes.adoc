@@ -46,14 +46,34 @@ The {productname} vnumtxt release includes an accompanying release of the **Comm
 **Comments** 3.1.0 introduces the following enhancements:
 
 
-==== Improvements to Comment APIs
+==== A new event log API
 
-//// EPIC-2 ////
+A new API, `tinymce.activeEditor.plugins.tinycomments.getEventLog()` is now available.
 
-//// <https://ephocks.atlassian.net/browse/EPIC-2> ////
+As its name suggests, it returns a log of all Comment-related events, including:
 
-//// <https://ephocks.atlassian.net/browse/DOC-1660> ////
+* when a new comment is added (and who added it).
 
+* when a coment is edited (and who edited it).
+
+* when a reply to a comment is added (and who added the reply).
+
+* when a comment is resolved (and who resolved the comment).
+
+* when a comment is deleted (and who deleted the comment).
+
+The new API also supports an `after` option.
+
+[source,js]
+////
+tinymce.activeEditor.plugins.tinycomments.getEventLog(
+	{after: '<iso-8601-format-time-stamp>'}
+	)
+////
+
+restricts the returned list to Comment events after the time-stamp date.
+
+Underlying this new API is a new `CommentChange` event, which gets fired when any modification is made to Comments data.
 
 
 ==== Avatars can now be displayed next to usernames in comments

@@ -279,13 +279,31 @@ For information on the **PowerPaste** plugin, see: xref:powerpaste.adoc[PowerPas
 
 The {productname} vnumtxt release includes an accompanying release of the **Real-Time Collaboration** premium plugin.
 
-**Real-Time Collaboration** 2.1.0 [adds the following new features | provides the following bug fixes | introduces the following enhancements]:
+**Real-Time Collaboration** 2.1.0 adds one new features and fixes two bugs:
 
-* <features>
+==== Real-Time Collaboration can now disable inline boundaries
 
-* <bug fixes>
+xref:content-behavior-options.adoc#inline_boundaries[*Inline boundaries*] are highlights applied to certain inline elements. The exact elements highlighted can be configured with `inline_boundaries_selector` but the elements highlighted by default are `a` (anchor tags), `code`, and `.mce-annotation`.
 
-* <enhancements>
+Setting `inline_boundaries: false` turns this highlighting off.
+
+With this release, Real-time Collaboration now supports this setting.
+
+NOTE: the equivalent behavior could be achieved by setting `inline_boundaries_selector` to an empty string. And this setting was, previously supported by Real-time Collaboration (and still is). But setting `inline_boundaries` to `false` is the preferred method of turning inline element highlighting off.
+
+==== Lists selected with Select All (Ctrl+A or Cmd+A) did not provide a valid fragment for `tinymce.activeEditor.selection.getContent()`
+
+If a {productname} document contained only a list, and the entire document was selected using *Edit > Select All* (or by typing Ctrl+A or Cmd+A), the selection did not present as valid to `tinymce.activeEditor.selection.getContent()`.
+
+If `getContent` was run after such a document was selected using *Select All*, `getContent` returned an empty string.
+
+With this update, this behavior has been corrected. Selecting all of such a document and running `getContent` now returns an html list, as expected.
+
+==== The ‘reconnect’ message did not appear after connectivity was lost
+
+Previously, Real-time Collaboration only checked for jitter (the variations in the speed of signal transmission to signal reception over the network connection over time). Consequently, if a Network connection went down, and stayed down, the ‘connection lost’ alert did not appear.
+
+With this update, Real-time Collaboration now also checks for straight-up connectivity. And, if the connection goes down for 30 seconds, the ‘connection lost’ alert appears.
 
 For information on the **Real-Time Collaboration** plugin, see: xref:real-timecollaboration.adoc[Real-Time Collaboration plugin].
 

@@ -148,27 +148,6 @@ tinymce.init({
 });
 ----
 
-For a customised comments sidebar, setup the sidebar in the `setup` section of `tinymce.init`:
-
-[source,js]
-----
-	setup: (editor) => {
-	  editor.ui.registry.addSidebar('showcomments', {
-		tooltip: 'showcomments',
-		icon: 'comment',
-		onSetup: (api) => {
-		  console.log('Render panel', api.element());
-		},
-		onShow: (api) => {
-		  console.log('Show panel', api.element());
-		},
-		onHide: (api) => {
-		  console.log('Hide panel', api.element());
-		}
-	  });
-	}
-----
-
 NOTE: The comment sidebar presents with no animation or other effect. It is just there, along with any other initialised {productname} editor components. Also, as noted above, the sidebar does not take focus, which remains with the main editor.
 
 

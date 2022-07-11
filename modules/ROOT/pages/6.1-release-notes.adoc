@@ -303,7 +303,7 @@ NOTE: The equivalent behavior could be achieved by setting `inline_boundaries_se
 
 ==== Lists selected with Select All (Ctrl+A or Cmd+A) did not provide a valid fragment for `editor.selection.getContent()`
 
-If a {productname} document contained only a list, and the entire document was selected using *Edit > Select All* (or by typing Ctrl+A or Cmd+A), the selection did not present as valid to `tinymce.activeEditor.selection.getContent()`.
+If a {productname} document contained only a list, and the entire document was selected using *Edit > Select All* (or by typing Ctrl+A or Cmd+A), the selection did not present as valid to `editor.selection.getContent()`.
 
 If `getContent` was run after such a document was selected using *Select All*, `getContent` returned an empty string.
 

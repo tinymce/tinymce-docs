@@ -388,7 +388,7 @@ However, if Edit -> Select All was chosen from the {productname} menu bar, the i
 
 The image handler display was a visual error. It should not present unless the image is the only selected object. _Select All_ selects the whole {productname} document, not just the image.
 
-With this update, typing Ctrl-A or ⌘-A, or choosing _Edit -> Select All_ from the {productname} menu bar, both produce the same effect (the entire document is selected) and the same visual presentation (the image handler outline does not display).
+With this update, typing Ctrl+A or ⌘+A, or choosing _Edit -> Select All_ from the {productname} menu bar, both produce the same effect (the entire document is selected) and the same visual presentation (the image handler outline does not display).
 
 
 === Links opened when Alt-Return or Option-Return was typed even when `preventDefault()` was called on the keydown event

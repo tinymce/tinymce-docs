@@ -48,7 +48,7 @@ The {productname} 6.1 release includes an accompanying release of the **Comments
 
 ==== A new event log API
 
-A new API, `tinymce.activeEditor.plugins.tinycomments.getEventLog()` is now available.
+A new API, `editor.plugins.tinycomments.getEventLog()` is now available.
 
 As its name suggests, it returns a log of all Comment-related events, including:
 

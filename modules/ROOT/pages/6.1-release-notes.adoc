@@ -30,11 +30,11 @@ The {productname} 6.1 release includes an accompanying release of the **A11ychec
 
 **A11ychecker** 3.0.2 fixes the following UI bug:
 
-The *Tools > Accessibility Checker* command opens a dialog. As such, its menu title should be *Accessibility Checker…*.
+The *Tools > Accessibility Checker* menu item opens a dialog. As such, its menu title should be *Accessibility Checker…*.
 
-The trailing ellipsis indicates the action will not execute without further user input and is required for all menu items that present dialogs.
+The trailing ellipsis indicates the action will not execute without further user input and is required for all menu items that present dialogs. And, previously, this menu item did not.
 
-This update corrects both the menu title and the equivalently mis-presented toolbar tool tip text. Both strings now include the required ellipsis and present as *Accessibility Checker…*, as expected.
+This update corrects the menu title. *Tools > Accessibility Checker…* now includes the required ellipsis and presents as expected.
 
 For information on the **A11ychecker** plugin, see: xref:a11ychecker.adoc[A11ychecker plugin].
 

@@ -579,7 +579,7 @@ Instead of indenting the list element (if *Tab* was pressed) or outdenting the l
 
 With this update, when the insertion point is in a list within a list within another block element, pressing *Tab* or *Shift+Tab* behaves as expected.
 
-If *Tab* is pressed in this circumstance, the list element is moved in to a further nested list created inside the div. If *Shift-Tab* is pressed in this circumstance, the indented list element becomes a list element in the list it was previously inside.
+If *Tab* is pressed in this circumstance, the list element is moved in to a further nested list created inside the div. If *Shift+Tab* is pressed in this circumstance, the indented list element becomes a list element in the list it was previously inside.
 
 
 === Changing the list type of a list within another block element altered the parent element that contained that list

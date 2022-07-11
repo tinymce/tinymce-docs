@@ -700,7 +700,7 @@ This capture meant that the neither {productname}’s built-in copy-and-paste, n
 
 Instead, copying from a read-only {productname} document fell-back to the host browser’s copy command.
 
-In some circumstances, this resulted in the subsequently pasted material containing unexpected characters. Specifically, normal spaces were sometimes replaced with non-breaking spaces, `&nbsp;`.
+In some circumstances, this resulted in the subsequently pasted material containing unexpected characters. Specifically, normal spaces were sometimes replaced with non-breaking spaces, `+&nbsp;+`.
 
 In {productname} 6.1, documents in read-only mode no longer captures copy events. Rather, they white-list copy events and pass them to the appropriate event listener (either {productname}’s built-in capability or the PowerPaste plugin).
 

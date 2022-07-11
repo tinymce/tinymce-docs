@@ -189,19 +189,24 @@ When comments are showing, a 3px wide colored rectangle presents around any elem
 NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 
 
-==== The label name for the Save Comment button can now be customized
+==== The label name for the Save Comment button has been changed and can now be translated
 
-Previously, the Save Comment was labeled *Save*. After field reports that end-users were interpreting this to mean the entire {productname} document would be saved on pressing this button, two changes have been made.
+Previously, the Save Comment was labeled *Save*. After field reports that end-users were interpreting this to mean the entire {productname} document would be saved on pressing this button, two changes were made.
 
 1. The default label for this button is now *Comment*.
 +
 This new default presents for both new comments and replies to existing comments.
 
-2. This default label is now customisable.
-+
-_How does one customise this? I presume it’s a value one sets as part of `tinymce.init` but which one? And where in this configuration file?_
-+
-_Or is it a matter of an integrator editing the `.pot` file — `src/text/pot/plugins/tinycomments/tinymce_tinycomments.pot` — that comes along for the ride?_
+2. This default label can now be translated.
+
+As is usual in {productname}, translation of this string is done wth `addI18n()`:
+
+[source,js]
+----
+tinymce.addI18n('<optional-IETF-language-code>', {
+   'Comment': '<translation>'
+});
+----
 
 NOTE: when a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
 

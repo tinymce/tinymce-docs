@@ -131,7 +131,7 @@ In both modes the avatar:
 
 * will present as the browser’s default ‘image not found’ icon if the avatar resource is not available at the nominated URL.
 
-NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, showing avatars next to the user-name in comments requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
+NOTE: Enabling this feature depends on changes made to the Core {productname} editor. As a consequence, showing avatars next to the user-name in comments requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 
 
 ==== Show comments sidebar on editor initialization
@@ -186,7 +186,7 @@ Several new block elements can now have comments attached to them, including:
 
 When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a Skin can, however, change this default.
 
-NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
+NOTE: Enabling this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 
 
 ==== The label name for the Save Comment button has been changed and can now be translated
@@ -891,7 +891,7 @@ Setting `window.opener` to `null` set the browser to load the target resource wi
 
 With this release, all {productname} help dialog links out to https://tiny.cloud[tiny.cloud] include the `rel="noopener"` attribute and value.
 
-This provides basic protection against `Window.opener` attacks.
+This provides basic protection against attacks that mis-use the `window.opener` default.
 
 
 === The `mceLink` command can now take the value `{ dialog: true }` to always open the link dialog
@@ -903,7 +903,7 @@ When set with this value, the *Link…* dialog will always open when `mceLink` i
 
 === Support annotating certain block elements directly when using the editor annotator API
 
-Several new block elements can now have comments attached to them, including:
+Several new block elements can now have annotations attached to them, including:
 
 * Tables of contents
 * Images
@@ -913,9 +913,11 @@ Several new block elements can now have comments attached to them, including:
 * embedded media
 * embedded pages
 
+As of this release, the only supported annotation types are comments, as provided by the xref:comments.adoc[Comments Premium Plugin].
+
 When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a Skin can, however, change this default.
 
-NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
+NOTE: Enabling this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 
 
 === Clearer focus states for buttons while navigating with keyboard

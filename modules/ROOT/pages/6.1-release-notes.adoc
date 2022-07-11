@@ -43,6 +43,8 @@ For information on the **A11ychecker** plugin, see: xref:a11ychecker.adoc[A11ych
 
 The {productname} 6.1 release includes an accompanying release of the **Comments** premium plugin.
 
+NOTE: Enabling any of these features depends on changes made to the Core {productname} editor. As a consequence, version 3.1.0 of the xref:comments.adoc[Comments Premium Plugin] requires {productname} 6.1 or later. 
+
 **Comments** 3.1.0 introduces the following enhancements:
 
 
@@ -85,57 +87,52 @@ editor.on('CommentChange', (e) => {
 ----
 
 
-
 ==== Avatars can now be displayed next to usernames in comments
 
-The default icon presented next to user names in comments can now be replaced by a custom avatar.
+{productname} now generates a different default avatar icon for each user.
+
+And this default icon, presented next to user names in comments, can be replaced with a custom avatar.
 
 In embedded mode, the avatar is supplied by the `tinycomments_author_avatar` option:
 
 [source,js]
 ----
-    plugins: [
-        "tinycomments",
-    ],
-	tinycomments_mode: "embedded",
-	tinycomments_author: "testuser",
-	tinycomments_author_name: "Test User",
-	tinycomments_author_avatar: "https://example.com/image.ext",
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'tinycomments',
+  tinycomments_mode: "embedded",
+  tinycomments_author: "testuser",
+  tinycomments_author_name: "Test User",
+  tinycomments_author_avatar: "https://example.com/image.ext"
+});
 ----
 
-In callback mode, the avatar is supplied by the `avatar` option of `setConverstation()`:
+In callback mode, the avatar is supplied via the `tinycomments_create` and `tinycoments_reply` callbacks.
 
 [source,js]
 ----
-const avatarUrl = "https://example.com/image.ext";
-
-/*
-
-much non-avatar-related configuration here
-
-*/
-
-      setConversation(conversationUid, [
-        {
-          author,
-		  avatar: avatarUrl,
-          createdAt,
-          modifiedAt: createdAt,
-          content,
-          uid: conversationUid /* first comment has same uid as conversation */,
-        },
-      ]);
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'tinycomments',
+  tinycomments_mode: 'callback',
+  tinycomments_create: create_comment, // Add the callback to TinyMCE
+  tinycomments_reply: reply_comment,   // Add the callback to TinyMCE
+  tinycomments_edit_comment: edit_comment,
+  tinycomments_delete: delete_comment_thread,
+  tinycomments_delete_all: delete_all_comment_threads,
+  tinycomments_delete_comment: delete_comment,
+  tinycomments_lookup: lookup_comment,
+  tinycomments_author: "testuser",
+  tinycomments_author_name: "Test User",
+  tinycomments_author_avatar: "https://example.com/image.ext"
+});
 ----
 
 In both modes the avatar:
 
-* must be 36px by 36px.
+* will be scaled to a 36px diameter circle; and
 
 * can be any filetype able to be wrapped in an `<img>` element.
-
-* will present as the browser’s default ‘image not found’ icon if the avatar resource is not available at the nominated URL.
-
-NOTE: Enabling this feature depends on changes made to the Core {productname} editor. As a consequence, showing avatars next to the user-name in comments requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 
 
 ==== Show comments sidebar on editor initialization
@@ -147,8 +144,9 @@ To add a comment sidebar add `sidebar_show: 'showcomments'` to `tinymce.init`:
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-	sidebar_show: 'showcomments',
+  selector: "textarea", // change this value according to your HTML
+  plugins: 'tinycomments',
+  sidebar_show: 'showcomments',
 });
 ----
 
@@ -168,8 +166,6 @@ Several new block elements can now have comments attached to them, including:
 * embedded pages
 
 When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a Skin can, however, change this default.
-
-NOTE: Enabling this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 
 
 ==== The label name for the Save Comment button has been changed and can now be translated

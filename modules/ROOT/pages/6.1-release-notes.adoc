@@ -885,11 +885,13 @@ Consequently, screen readers will, correctly, report the options in these menus 
 
 === All help dialog links to `https://tiny.cloud` now include `rel="noopener"` to avoid potential security issues
 
-`rel` is an attribute for the `<a>` element (and other elements). And setting this attribute to `rel="noopener"`  instructs the browser to load the resource referenced in the anchor tag in the same browsing context (ie, it instructs the browser to not open a new window).
+`rel` is an attribute for the `<a>` element (and other elements). Setting this attribute to `rel="noopener"` instructs the browser to set the `window.opener` JavaScript API to `null`. By default `window.opener` references the page that opened the link.
+
+Setting `window.opener` to `null` set the browser to load the target resource without granting the target resource access to the document that opened it.
 
 With this release, all {productname} help dialog links out to https://tiny.cloud[tiny.cloud] include the `rel="noopener"` attribute and value.
 
-This provides basic protection against window opener attacks.
+This provides basic protection against `Window.opener` attacks.
 
 
 === The `mceLink` command can now take the value `{ dialog: true }` to always open the link dialog

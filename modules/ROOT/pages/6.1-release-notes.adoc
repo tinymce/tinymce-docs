@@ -892,12 +892,6 @@ Several new block elements can now have annotations attached to them, including:
 * embedded media
 * embedded pages
 
-As of this release, the only supported annotation types are comments, as provided by the xref:comments.adoc[Comments Premium Plugin].
-
-When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a Skin can, however, change this default.
-
-NOTE: Enabling this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
-
 
 === Clearer focus states for buttons while navigating with keyboard
 

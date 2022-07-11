@@ -255,7 +255,10 @@ For example, pasting the string
 
 resulted in the following, incomplete, link and trailing text
 
-https://example.com/[]!exclamation-point
+[source,html]
+----
+<a href="https://example.com/">https://example.com/</a>!exclamation-point
+----
 
 Equivalent results occured when URL paths contained the colon character (for example, `https://example.com/:colon`).
 
@@ -267,9 +270,10 @@ Now, pasting the string
 
 results in the following, complete, link and no trailing text
 
-https://example.com/!exclamation-point[]
-
-Also, this improved link detection logic works when manually typing in a URL. If the above example were typed in to a {productname} document, the automatic link-creation would wrap the entire string in an anchor tag after a boundary character (such as a space) was typed.
+[source,html]
+----
+<a href="https://example.com/!exclamation-point">
+----
 
 NOTE: Exclamation points and colons are still boundary characters for URL detection and delmiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
 
@@ -632,11 +636,16 @@ For example, if
 
 +`https://example.com/:w:/index.html`+
 
-was pasted into a {productname} document, the URL detection would cause the pasted text to present as
+was pasted into a {productname} document, the URL detection would cause the pasted text to be transformed into an html fragment as follows:
 
-https://example.com/[]:w:/index.html
+[source,html]
+----
+<a href="https://example.com/">:w:/index.html
+----
 
 With this update, valid characters such `+!+` and `+:+` are correctly treated as part of the URL, and pasting in URLs that include these characters results in a clickable link that includes the entire pasted URL.
+
+Also, this improved link detection logic works when manually typing in a URL. If the above example were typed in to a {productname} document, the automatic link-creation would wrap the entire string in an anchor tag after a boundary character (such as a space) was typed.
 
 NOTE: Punctation characters, such as `+:+` (the colon) and `+.+` (the full-stop or period), at the end of a pasted URL are still ignored. In almost every case, trailing punctuation marks are functioning as punctuation marks, not as part of the URL.
 

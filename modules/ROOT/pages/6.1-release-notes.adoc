@@ -812,7 +812,7 @@ NOTE: In the HTML version of such a document (viewable by choosing *View > Sourc
 
 Previously, when the insertion point was within a `blockquote` element, and the `blockquote` element was the only block element in the {productname} document, there was no way of exiting the element without deleting all the text also within the element.
 
-As of this update, the `end_container_on_empty_block` has been changed such that pressing the *Return* key twice will exit the insertion point from a `blockquote` element. This is the same action that exits other block elements, such as lists.
+As of this update, the `end_container_on_empty_block` has been changed such that pressing the *Enter* or *Return* key twice will exit the insertion point from a `blockquote` element. This is the same action that exits other block elements, such as lists.
 
 
 === The default value for `end_container_on_empty_block` option has been changed to `blockquote`

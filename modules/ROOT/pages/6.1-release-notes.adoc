@@ -575,7 +575,7 @@ tinymce.init({
 
 If a list element within a list was also inside a block element, such as a `<div></div>`, placing the insertion point within any of the displayed lists and pressing *Tab* or *Shift+Tab* did not act as expected.
 
-Instead of indenting the list element (if *Tab* was pressed) or outdenting the list element (if *Shift-Tab* was pressed), nothing happened.
+Instead of indenting the list element (if *Tab* was pressed) or outdenting the list element (if *Shift+Tab* was pressed), nothing happened.
 
 With this update, when the insertion point is in a list within a list within another block element, pressing *Tab* or *Shift-Tab* behaves as expected.
 

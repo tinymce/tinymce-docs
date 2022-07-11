@@ -65,11 +65,11 @@ As its name suggests, it returns a log of all Comment-related events, including:
 The new API also supports an `after` option.
 
 [source,js]
-////
-tinymce.activeEditor.plugins.tinycomments.getEventLog(
-	{after: '<iso-8601-format-time-stamp>'}
-	)
-////
+----
+editor.plugins.tinycomments.getEventLog(
+  { after: '<iso-8601-format-time-stamp>' }
+)
+----
 
 restricts the returned list to Comment events after the time-stamp date.
 

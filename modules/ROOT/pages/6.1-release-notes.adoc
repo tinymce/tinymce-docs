@@ -32,7 +32,7 @@ The {productname} 6.1 release includes an accompanying release of the **A11ychec
 
 The *Tools > Accessibility Checker* command opens a dialog. As such, its menu title should be *Accessibility Checker…*.
 
-The trailing ellipsis indicates the command will not execute without further user input and is required for all menu commands that present dialogs.
+The trailing ellipsis indicates the action will not execute without further user input and is required for all menu items that present dialogs.
 
 This update corrects both the menu title and the equivalently mis-presented toolbar tool tip text. Both strings now include the required ellipsis and present as *Accessibility Checker…*, as expected.
 

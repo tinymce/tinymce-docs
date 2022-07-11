@@ -610,7 +610,7 @@ Errors in the logic of both the *Copy Column* and *Paste Column* actions could, 
 
 With the insertion point in, for example, a cell in the third column of a 4x4 table, selecting *Table > Column > Copy Column* and then *Table > Column > Paste Column Before* produced a table that appeared to be a 5x4 table. But the now-5th column
 
-NOTE: When the column was pasted in, the table would appear to change as expected. But attempt to change material in some cells would fail, because the underlying table DOM was invalid.
+NOTE: When the column was pasted in, the table would appear to change as expected. But attempting to change material in some cells would fail, because the underlying table DOM was invalid.
 
 With this update, the logic errors in Copy Column and Paste Column have been corrected: copying and pasting table columns now works as expected in all tested circumstances.
 

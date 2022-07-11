@@ -395,7 +395,7 @@ The image handler display was a visual error. It should not present unless the i
 With this update, typing Ctrl+A or ⌘+A, or choosing _Edit -> Select All_ from the {productname} menu bar, both produce the same effect (the entire document is selected) and the same visual presentation (the image handler outline does not display).
 
 
-=== Links opened when Alt-Return or Option-Return was typed even when `preventDefault()` was called on the keydown event
+=== Links opened when Alt+Enter or Option+Return was typed even when `preventDefault()` was called on the keydown event
 
 When the insertion point was within text that was also a link, typing Alt-Return or Option-Return opened the link in a new browser tab. This behavior, while non-destructive, is incorrect.
 

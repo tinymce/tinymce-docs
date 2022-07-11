@@ -54,7 +54,7 @@ As its name suggests, it returns a log of all Comment-related events, including:
 
 * when a new comment is added (and who added it).
 
-* when a coment is edited (and who edited it).
+* when a comment is edited (and who edited it).
 
 * when a reply to a comment is added (and who added the reply).
 
@@ -66,9 +66,15 @@ The new API also supports an `after` option.
 
 [source,js]
 ----
+<<<<<<< HEAD
 editor.plugins.tinycomments.getEventLog(
   { after: '<iso-8601-format-time-stamp>' }
 )
+=======
+tinymce.activeEditor.plugins.tinycomments.getEventLog(
+	{after: '<iso-8601-format-time-stamp>'}
+	)
+>>>>>>> DOC-1743: 6.1-release-notes.adoc
 ----
 
 restricts the returned list to Comment events after the time-stamp date.
@@ -178,7 +184,7 @@ Several new block elements can now have comments attached to them, including:
 * embedded media
 * embedded pages
 
-When comments are showing, a 3px wide yellow (hex color #FFE89D) rectangle presents around any element with a comment attached.
+When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a Skin can, however, change this default.
 
 NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 
@@ -902,7 +908,7 @@ Several new block elements can now have comments attached to them, including:
 * embedded media
 * embedded pages
 
-When comments are showing, a 3px wide yellow (hex color #FFE89D) rectangle presents around any element with a comment attached.
+When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a Skin can, however, change this default.
 
 NOTE: Enablng this feature depends on changes made to the Core {productname} editor. As a consequence, adding comments to these elements requires both {productname} 6.1 or later and version 3.1.0 or later of the xref:comments.adoc[Comments Premium Plugin].
 

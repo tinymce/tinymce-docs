@@ -730,7 +730,7 @@ This update corrects this. `<pre>` formatted text copied or cut will now continu
 
 === Preview and Insert Template dialogs now display the correct content background color when using dark themed skins
 
-Previously, when {productname} was in any dark mode (ie `skin_url` pointed to a dark themed skin), choosing *View > Preview* presented a background in the preview that was not consistent with the dark themed content.
+Previously, when {productname} was in any dark mode (ie `skin` pointed to a dark themed skin), choosing *View > Preview* presented a background in the preview that was not consistent with the dark themed content.
 
 Choosing *Insert > Insert template…* produced the same inconsistent presentation in the *Insert template…* dialog.
 

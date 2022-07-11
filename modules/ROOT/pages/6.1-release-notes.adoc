@@ -345,15 +345,13 @@ The {productname} 6.1 release includes an accompanying release of the **Spell Ch
 
 **Spell Checker Pro** 3.0.3 includes the following bug fix:
 
-==== An issue with the `DomDescent.toLeaf` API could result in Spell Checker Pro’s ‘preserve selection’ logic setting the selection when it did not need to
+==== Spell Checker Pro caused inline editing sections to steal window focus in some circumstances.
 
-The `DomDescent.toLeaf` API can walk inside void elements (for example `+<br>+`). The Core editor’s selection logic, by contrast, does not allow this.
+When scrolling a browser window containing a {productname} instance, a conflict between a {productname} API and Spell Checker Pro’s ‘preserve selection’ logic could cause inline editing sections to steal window focus.
 
-Consequently, when comparing selections where one is from `editor.selection.getRng()` and the other is created by `DomDescent.toLeaf`, the comparison can return `false` when it should be `true`.
+This stolen window focus was particularly evident with multiple inline editors on a single page.
 
-When this happens, code runs when it does not need to: in this case, Spell Checker Pro’s ‘preserve selection’ logic.
-
-With this update, SpellcheckerPro now correctly handles `DomDescent.toLeaf` being able to walk into a void element, making the range comparison more accurate, and ensuring the preserve selection code does not run when not needed.
+With this update, Spell Checker Pro now correctly handles the API’s behavior and, consequently, scrolling through a window containing an inline editor or editors does not cause window focus to change, as is expected.
 
 For information on the **Spell Checker Pro** plugin, see: xref:spellcheckerpro.adoc[Spell Checker Pro plugin].
 

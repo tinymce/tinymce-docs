@@ -796,7 +796,7 @@ Previously, if a {productname} editor instance contained nothing but blank lines
 
 In {productname} 6.1, the plain text version of the same material is two newline characters — `+\n\n+` — for each entered Return.
 
-NOTE: In the HTML version of such a document (viewable by choosing *View > Source Code*) , each Return was represented by a paragraph tag containing a non-breaking space entity: `+<p>&nbsp;</p>+`. This representation, which accurately presents the empty paragraphs as white space is unchanged in {productname} 6.1.
+NOTE: In the HTML version of such a document (viewable by choosing *View > Source Code*), each Enter or Return was represented by a paragraph tag containing a non-breaking space entity: `+<p>&nbsp;</p>+`. This representation, which accurately presents the empty paragraphs as white-space is unchanged in {productname} 6.1.
 
 
 === The `end_container_on_empty_block` option can now take a string of blocks, allowing the exiting of a blockquote element by pressing Enter or Return twice

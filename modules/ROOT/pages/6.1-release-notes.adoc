@@ -641,7 +641,7 @@ With this update, valid characters such `+!+` and `+:+` are correctly treated as
 NOTE: Punctation characters, such as `+:+` (the colon) and `+.+` (the full-stop or period), at the end of a pasted URL are still ignored. In almost every case, trailing punctuation marks are functioning as punctuation marks, not as part of the URL.
 
 
-=== If selected content straddled a parent and nested list, cutting the selection did not always set the list style to none on the parent list.
+=== If selected content straddled a parent and nested list, cutting the selection did not always set the list style to none on the parent list
 
 Previously, the `list` plugin was only responsible for {productname}’s behavior when a list, or part of a list, was _deleted_. If, for example, a part of a list was selected and the *Backspace* or *Delete* key was pressed.
 

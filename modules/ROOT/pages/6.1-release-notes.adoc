@@ -777,7 +777,7 @@ This update adds a new `dispatchChange` API (see below) which can take a change 
 
 === The selection is no longer incorrectly moved inside a comment by the `editor.selection.normalize()` API
 
-Peviously, if a {productname} editor had an HTML comment as its first element, the `editor.selection.normalize()` API set the selection to within the comment element.
+Previously, if a {productname} editor had an HTML comment as its first element, the `editor.selection.normalize()` API set the selection to within the comment element.
 
 Depending on how the editor was then made the current focus, this, invalid, selection location could result in {productname} throwing a JavaScript error in the host browser’s console.
 

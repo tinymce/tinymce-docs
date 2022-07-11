@@ -66,20 +66,24 @@ The new API also supports an `after` option.
 
 [source,js]
 ----
-<<<<<<< HEAD
 editor.plugins.tinycomments.getEventLog(
   { after: '<iso-8601-format-time-stamp>' }
 )
-=======
-tinymce.activeEditor.plugins.tinycomments.getEventLog(
-	{after: '<iso-8601-format-time-stamp>'}
-	)
->>>>>>> DOC-1743: 6.1-release-notes.adoc
 ----
 
 restricts the returned list to Comment events after the time-stamp date.
 
 Underlying this new API is a new `CommentChange` event, which gets fired when any modification is made to Comments data.
+
+This new event also exposes the `getEventLog()` API. For example:
+
+[source,js]
+----
+editor.on('CommentChange', (e) => {
+  const logs = e.getEventLogs();
+});
+----
+
 
 
 ==== Avatars can now be displayed next to usernames in comments

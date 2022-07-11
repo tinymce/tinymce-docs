@@ -573,7 +573,7 @@ tinymce.init({
 
 === Indenting or outdenting list items inside a block element that was inside another list item did not work
 
-If a list element within a list was also inside a block element, such as a <div></div>, placing the insertion point within any of the displayed lists and pressing *Tab* or *Shift-Tab* did not act as expected.
+If a list element within a list was also inside a block element, such as a `<div></div>`, placing the insertion point within any of the displayed lists and pressing *Tab* or *Shift+Tab* did not act as expected.
 
 Instead of indenting the list element (if *Tab* was pressed) or outdenting the list element (if *Shift-Tab* was pressed), nothing happened.
 

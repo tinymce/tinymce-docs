@@ -208,7 +208,7 @@ tinymce.addI18n('<optional-IETF-language-code>', {
 });
 ----
 
-NOTE: when a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
+NOTE: When a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
 
 
 For information on the **Comments** plugin, see: xref:comments.adoc[Comments plugin].
@@ -292,7 +292,7 @@ https://example.com/!exclamation-point[]
 
 Also, this improved link detection logic works when manually typing in a URL. If the above example were typed in to a {productname} document, the automatic link-creation would wrap the entire string in an anchor tag after a boundary character (such as a space) was typed.
 
-NOTE: exclamation points and colons are still boundary characters for URL detection and delmiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
+NOTE: Exclamation points and colons are still boundary characters for URL detection and delmiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
 
 
 ==== Pasted URL-like strings without a defining protocol were detected as URLs but not provided with a protocol
@@ -320,7 +320,7 @@ Setting `inline_boundaries: false` turns this highlighting off.
 
 With this release, Real-time Collaboration now supports this setting.
 
-NOTE: the equivalent behavior could be achieved by setting `inline_boundaries_selector` to an empty string. And this setting was, previously supported by Real-time Collaboration (and still is). But setting `inline_boundaries` to `false` is the preferred method of turning inline element highlighting off.
+NOTE: The equivalent behavior could be achieved by setting `inline_boundaries_selector` to an empty string. And this setting was, previously supported by Real-time Collaboration (and still is). But setting `inline_boundaries` to `false` is the preferred method of turning inline element highlighting off.
 
 ==== Lists selected with Select All (Ctrl+A or Cmd+A) did not provide a valid fragment for `tinymce.activeEditor.selection.getContent()`
 
@@ -570,7 +570,7 @@ Instead the insertion point moved to the beginning of the paragraph. This only o
 
 With this update, triple-clicking text a paragraph above a `contenteditable` structure and below an already selected paragraph selects the clicked-on paragraph, no matter the host browser.
 
-NOTE: this update works around a Google Chrome bug by implementing on-triple-click selection behavior within {productname} regardless of the host browser.
+NOTE: This update works around a Google Chrome bug by implementing on-triple-click selection behavior within {productname} regardless of the host browser.
 
 
 === When text within an inline boundary element was selected and the right-arrow key was pressed, the insertion point incorrectly moved to the left

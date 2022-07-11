@@ -412,11 +412,11 @@ For example, if a {productname} document contained the following —
 ----
 <p style="margin: 0; word-break: break-word;">
 text
-	<strong>
-		<span contenteditable="false" style="display: block;">
-		and not-editable words on a following line
-		</span>
-	</strong>
+  <strong>
+    <span contenteditable="false" style="display: block;">
+      and not-editable words on a following line
+    </span>
+  </strong>
 </p>" 
 ----
 

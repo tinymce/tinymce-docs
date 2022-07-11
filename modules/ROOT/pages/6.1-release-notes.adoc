@@ -740,7 +740,7 @@ Previously, when text set between `<pre>` tags was cut or copied and then pasted
 This update corrects this. `<pre>` formatted text copied or cut will now continue to be `<pre>` formatted text when pasted elsewhere in a {productname} document.
 
 
-=== Preview and Insert Template dialogs now display the correct content background color when using dark skins
+=== Preview and Insert Template dialogs now display the correct content background color when using dark themed skins
 
 Previously, when {productname} was in any dark mode (ie `skin_url` pointed to a dark themed skin), choosing *View > Preview* presented a background in the preview that was not consistent with the dark themed content.
 

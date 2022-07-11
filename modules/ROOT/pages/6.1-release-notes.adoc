@@ -601,7 +601,7 @@ This caused custom elements added to empty lines to be automatically removed dur
 
 With this update the {productname} schema has been updated; the `isEmpty` check now returns `false` for custom elements. 
 
-As a consequence, it is now possible to add custom elements to empty lines in a {productname} document. added to
+As a consequence, it is now possible to add custom elements to empty lines in a {productname} document.
 
 
 === Pasting columns in tables could, in some circumstances, result in an invalid table

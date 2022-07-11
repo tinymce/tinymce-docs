@@ -301,7 +301,7 @@ With this release, Real-time Collaboration now supports this setting.
 
 NOTE: The equivalent behavior could be achieved by setting `inline_boundaries_selector` to an empty string. And this setting was, previously supported by Real-time Collaboration (and still is). But setting `inline_boundaries` to `false` is the preferred method of turning inline element highlighting off.
 
-==== Lists selected with Select All (Ctrl+A or Cmd+A) did not provide a valid fragment for `tinymce.activeEditor.selection.getContent()`
+==== Lists selected with Select All (Ctrl+A or Cmd+A) did not provide a valid fragment for `editor.selection.getContent()`
 
 If a {productname} document contained only a list, and the entire document was selected using *Edit > Select All* (or by typing Ctrl+A or Cmd+A), the selection did not present as valid to `tinymce.activeEditor.selection.getContent()`.
 

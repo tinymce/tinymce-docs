@@ -13,7 +13,7 @@ include::partial$commands/comments-cmds.adoc[]
 
 == API
 
-The Comments plugin exposes an API, `editor.plugins.tinycomments.getEventLog()`, which returns a log of all `CommentChange` events which are fired when:
+The Comments plugin exposes the API `editor.plugins.tinycomments.getEventLog()` which returns a log of all `CommentChange` events. These events are dispatched whenever:
 
 * A new comment is added (and who added it).
 * A comment is edited (and who edited it).
@@ -24,7 +24,7 @@ The Comments plugin exposes an API, `editor.plugins.tinycomments.getEventLog()`,
 :minimumversion: 6.1
 include::partial$misc/minimum-version.adoc[]
 
-The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after the time-stamp date, both shown in the following:
+The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://www.iso.org/standard/70907.html[ISO-8601] format, both shown in the following:
 
 === Example: Using the `+comments+` plugin APIs
 
@@ -34,6 +34,6 @@ const comments = tinymce.activeEditor.plugins.tinycomments;
 
 console.log(comments.getEventLog());
 console.log(comments.getEventLog(
-    { after: '<iso-8601-format-time-stamp>' }
+    { after: '2022-02-22' }     //ISO-8601 standard: YYYY-MM-DD
 ));
 ----

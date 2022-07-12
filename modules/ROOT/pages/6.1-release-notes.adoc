@@ -188,7 +188,7 @@ tinymce.addI18n('<optional-IETF-language-code>', {
 NOTE: When a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
 
 
-For information on the **Comments** plugin, see: xref:comments.adoc[Comments plugin].
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
 
 
 === Enhanced Media Embed 3.0.1
@@ -203,7 +203,7 @@ An incorrect `RealKeys()` setting caused the Enhanced Media Embed webdriver test
 
 With this update, this setting has been corrected, from `RealKeys.text(\n)` to `RealKeys.combo({}, 'enter')`. As a consequence, the Enhanced Media Embed webdriver tests now pass in all supported browsers, as expected.
 
-For information on the **Enhanced Media Embed** plugin, see: xref:enhancedmediaembed.adoc[Enhanced Media Embed plugin].
+For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
 
 
 === Page Embed 2.1.0

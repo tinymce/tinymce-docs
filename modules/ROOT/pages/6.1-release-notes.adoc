@@ -998,7 +998,7 @@ The `newline_behavior` option takes one of four values:
 +
 `default`, as its name suggests, sets {productname} to do what it does by default when *Return*, *Enter*, *Shift+Return*, or *Shift+Enter* are pressed.
 
-NOTE: Two other commands that, in their effect, add new lines to a {productname} document are `insertParagraph` and `InsertLineBreak`. Their behavior is not affected by any `newline_behavior` setting.
+NOTE: Two other commands that, in their effect, add new lines to a {productname} document are `InsertParagraph` and `InsertLineBreak`. Their behavior is not affected by any `newline_behavior` option.
 
 
 === New `transparent` property for `iframe` dialog component

@@ -517,7 +517,7 @@ When running within some versions of Safari, a bug in the `editor.selection.isFo
 With this update, the `editor.selection.isForward()` API bug has been corrected, invalid selections no longer occur, a valid `input` value is passed to `input.parentNode.removeChild(input)`, and exceptions are no longer thrown.
 
 
-=== The InsertParagraph or `mceInsertNewLine` commands did not delete the current selection like the native command does
+=== The `InsertParagraph` or `mceInsertNewLine` commands did not delete the current selection like the native command does
 
 The `InsertParagraph` command was added to provide a {productname}-native replication of browser implementations of this functionality.
 

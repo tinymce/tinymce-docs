@@ -21,10 +21,10 @@ The Comments plugin exposes an API, `editor.plugins.tinycomments.getEventLog()`,
 * A comment is resolved (and who resolved the comment).
 * A comment is deleted (and who deleted the comment).
 
-The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after the time-stamp date, both shown in the following:
-
 :minimumversion: 6.1
 include::partial$misc/minimum-version.adoc[]
+
+The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after the time-stamp date, both shown in the following:
 
 === Example: Using the `+comments+` plugin APIs
 

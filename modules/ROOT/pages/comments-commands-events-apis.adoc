@@ -28,7 +28,7 @@ Returns a log of all `CommentChange` events. These events are dispatched wheneve
 
 include::partial$misc/requires_6_1v.adoc[]
 
-The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://www.iso.org/standard/70907.html[ISO-8601] format, both shown in the following:
+The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://en.wikipedia.org/wiki/ISO_8601[ISO-8601] format, both shown in the following:
 
 ==== Example: Using `+getEventLog()+`
 
@@ -38,6 +38,6 @@ const comments = tinymce.activeEditor.plugins.tinycomments;
 
 console.log(comments.getEventLog());
 console.log(comments.getEventLog(
-    { after: '2022-02-22' }     //ISO-8601 standard: YYYY-MM-DD
+    { after: '2022-02-22T12:34:56Z' }     //ISO-8601 standard: YYYY-MM-DDThh:mm:ssZ
 ));
 ----

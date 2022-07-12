@@ -1,13 +1,13 @@
 [[end_container_on_empty_block]]
 == `+end_container_on_empty_block+`
 
-This option allows you to to split the current container block element if the enter key is pressed inside an empty inner block element.
+This option allows you to split the current container block element if the enter key is pressed inside an empty inner block element, and specify the type of element created.
 
-*Type:* `+Boolean+`
+*Type:* `+Boolean+` or `+String+`
 
-*Default value:* `+false+`
+*Default value:* `+'blockquote'+`
 
-*Possible values:* `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`, `+String+`
 
 === Example: Using `+end_container_on_empty_block+`
 
@@ -15,6 +15,6 @@ This option allows you to to split the current container block element if the en
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  end_container_on_empty_block: true
+  end_container_on_empty_block: 'blockquote'
 });
 ----

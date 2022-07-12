@@ -295,13 +295,14 @@ The {productname} 6.1 release includes an accompanying release of the **Real-Tim
 
 ==== Real-Time Collaboration can now disable inline boundaries
 
-xref:content-behavior-options.adoc#inline_boundaries[*Inline boundaries*] are highlights applied to certain inline elements. The exact elements highlighted can be configured with `inline_boundaries_selector` but the elements highlighted by default are `a` (anchor tags), `code`, and `.mce-annotation`.
+xref:content-behavior-options.adoc#inline_boundaries[*Inline boundaries*] are highlights applied to certain inline elements. The exact elements highlighted can be configured with xref:content-behavior-options.adoc#inline_boundaries_selector[`inline_boundaries_selector`].
 
 Setting `inline_boundaries: false` turns this highlighting off.
 
 With this release, Real-time Collaboration now supports this setting.
 
-NOTE: The equivalent behavior could be achieved by setting `inline_boundaries_selector` to an empty string. And this setting was, previously supported by Real-time Collaboration (and still is). But setting `inline_boundaries` to `false` is the preferred method of turning inline element highlighting off.
+NOTE: The equivalent behavior could be achieved by setting `inline_boundaries_selector` to an empty string. And this setting was, previously supported by Real-time Collaboration (and still is). Setting `inline_boundaries` to `false` is, however, the preferred method of turning inline element highlighting off.
+
 
 ==== Lists selected with Select All (Ctrl+A or Cmd+A) did not provide a valid fragment for `editor.selection.getContent()`
 

@@ -159,11 +159,11 @@ Several new block elements can now have comments attached to them, including:
 * Images
 * Images with captions
 * Code samples
-* media in iframes
-* embedded media
-* embedded pages
+* Media in iframes
+* Embedded media
+* Embedded pages
 
-When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a Skin can, however, change this default.
+When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a skin can, however, change this default.
 
 
 ==== The label name for the Save Comment button has been changed and can now be translated
@@ -258,7 +258,7 @@ resulted in the following, incomplete, link and trailing text
 <a href="https://example.com/">https://example.com/</a>!exclamation-point
 ----
 
-Equivalent results occured when URL paths contained the colon character (for example, `https://example.com/:colon`).
+Equivalent results occurred when URL paths contained the colon character (for example, `https://example.com/:colon`).
 
 With this update, the link detection logic has been improved to capture and present such URLs correctly.
 
@@ -273,7 +273,7 @@ results in the following, complete, link and no trailing text
 <a href="https://example.com/!exclamation-point">
 ----
 
-NOTE: Exclamation points and colons are still boundary characters for URL detection and delmiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
+NOTE: Exclamation points and colons are still boundary characters for URL detection and delimiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
 
 
 ==== Pasted URL-like strings without a defining protocol were detected as URLs but not provided with a protocol
@@ -415,7 +415,7 @@ text
 
 === Images were not showing as selected when selected along with other content
 
-Previously, when an image was one of the selected objects in a {productname} document, the image did not present with the _Selected_ background color like text objects do. (In most browsers the _show the object is selected_ colour is, by default, blue.)
+Previously, when an image was one of the selected objects in a {productname} document, the image did not present with the _Selected_ background color like text objects do. (In most browsers the _show the object is selected_ color is, by default, blue.)
 
 The image was selected, but there was no visual feedback to show this.
 
@@ -481,15 +481,15 @@ This resulted in {productname} not working as expected (or at all).
 This error has been corrected with this update. Installing the {productname} Nuget package into a .NET project automatically places {productname} in `/wwwroot/lib`, as expected.
 
 
-=== UI components, such as dialogs, would in some cases cause the esc keyup event to incorrectly trigger inside the editor
+=== UI components, such as dialogs, would in some cases cause the esc KeyUp event to incorrectly trigger inside the editor
 
 In {productname} the *esc* (Escape) key can be used to exit or ‘escape’ from an active user-interface component. If a menu is open, pressing the esc key closes the menu. If a dialog is present, pressing the esc closes the dialog.
 
-{productname} responds to the `KeyDown` event and exits the active element when the *esc* key is pressed. Previously, however, the consequent `KeyUp` event (generated when the user stops pressing the *esc* key) was propogated to the {productname} editor. This should not have happened.
+{productname} responds to the `KeyDown` event and exits the active element when the *esc* key is pressed. Previously, however, the consequent `KeyUp` event (generated when the user stops pressing the *esc* key) was propagated to the {productname} editor. This should not have happened.
 
 The `KeyDown` event does not propagate outside the component listening for it and neither should the `KeyUp` event.
 
-As of this update, this is the behavior: pressing the *esc* key closes or exits an active user-interface component and neither the `KeyDown` or `KeyUp event are propogated outside the component listening for these events.
+As of this update, this is the behavior: pressing the *esc* key closes or exits an active user-interface component and neither the `KeyDown` or `KeyUp` event are propagated outside the component listening for these events.
 
 
 === Selection direction was not stored/restored when getting/setting selection bookmarks
@@ -498,7 +498,7 @@ _Selection direction_ is a real-time state that ‘knows’ where the current te
 
 For example, consider a document containing words written in a left-to-right script and an insertion point set at the end of a word. A user then holds down the Shift key and presses the left-arrow key. The selection direction for this moment and this action is set by said action. While the Shift key is held down, pressing the left-arrow key adds letters to the selection and pressing the right-arrow key removes letters from the selection.
 
-When a {productname} document had *View > Show invisible characters* checked and text was selected in this manner, and the user paused for a second or two, pausing the selection extentsion, the `moveToBookmark` function copied the current selection into a bookmark and then restored the selection in the document.
+When a {productname} document had *View > Show invisible characters* checked and text was selected in this manner, and the user paused for a second or two, pausing the selection extension, the `moveToBookmark` function copied the current selection into a bookmark and then restored the selection in the document.
 
 In doing this, however, the selection direction was lost, because `movetoBookmark` did not store the selection direction state.
 
@@ -580,7 +580,7 @@ If a list was within another block element and the list type was changed {produc
 
 For example, if a bulleted list within a `<div></div>` was changed to a numbered list, {productname} changed the bulleted list to a numbered list but, at the same time, created a new bulleted list that encompassed the now-numbered list.
 
-Also, the list type change did not need to be from an unordered to an ordered list. The same erroneous list-creation happend if a round-bullet bulleted list was changed to a square-bullet bulleted list.
+Also, the list type change did not need to be from an unordered to an ordered list. The same erroneous list-creation happened if a round-bullet bulleted list was changed to a square-bullet bulleted list.
 
 The {productname} 6.1 update corrects this. When changing a list’s type, {productname} leaves the parent element unchanged, as expected.
 
@@ -622,7 +622,7 @@ Previously, if a URL containing valid characters rarely used in URLs, such as `+
 
 For example, if
 
-+`https://example.com/:w:/index.html`+
+`+https://example.com/:w:/index.html+`
 
 was pasted into a {productname} document, the URL detection would cause the pasted text to be transformed into an html fragment as follows:
 
@@ -681,7 +681,7 @@ These errors have been corrected. In {productname} 6.1, template settings values
 
 When a {productname} document was in read-only mode, copy events were captured and killed.
 
-This capture meant that the neither {productname}’s built-in copy-and-paste, nor the PowerPaste plugin’s copy-and-paste could intercept the copy event and act to copy (and, consequently, paste) the selected material.
+This capture meant that neither {productname}’s built-in copy-and-paste, nor the PowerPaste plugin’s copy-and-paste could intercept the copy event and act to copy (and, consequently, paste) the selected material.
 
 Instead, copying from a read-only {productname} document fell-back to the host browser’s copy command.
 
@@ -829,7 +829,7 @@ If the current viewport is too small to present the entire menu, access to the �
 
 Previously, however, the rendering of this menu’s height (which, in turn, establishes whether a scroll bar is required) was done with the wrong element. Rendering was done by `tox-autocompleter`, not `tox-menu`. (`tox-menu` renders the height of all other {productname} menus.)
 
-In some circumstances this error resulted in the top or bottom menu borders to scroll out of view, making the meny appear unusable.
+In some circumstances this error resulted in the top or bottom menu borders to scroll out of view, making the menu appear unusable.
 
 This update corrects this. Rendering of the `autocompleter` menu height is now assigned to `tox-menu` and its menu borders do not scroll out of view.
 
@@ -851,7 +851,7 @@ To this end, some {productname} menu items were assigned the `menuitemcheckbox` 
 
 The appropriate ARIA role for these objects is `menuitemradio` and, as of this release, this is the ARIA role these menu items are assigned.
 
-Consequently, screen readers will, correctly, report the options in these menus as mutally exclusive.
+Consequently, screen readers will, correctly, report the options in these menus as mutually exclusive.
 
 
 [[improvements]]
@@ -885,9 +885,9 @@ Several new block elements can now have annotations attached to them, including:
 * Images
 * Images with captions
 * Code samples
-* media in iframes
-* embedded media
-* embedded pages
+* Media in iframes
+* Embedded media
+* Embedded pages
 
 
 === Clearer focus states for buttons while navigating with keyboard

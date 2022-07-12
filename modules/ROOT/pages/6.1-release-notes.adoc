@@ -837,9 +837,9 @@ This update corrects this. Rendering of the `autocompleter` menu height is now a
 
 === Link menu and toolbar buttons now always execute the `mceLink` command
 
-Selecting *Insert > Link…* or clicking the Link toolbar button did not, previously, execute the `mceLink` command. Equivalently, if the `link_quicklink` option was enabled, using the Ctrl+K or ⌘+K shortcut to open the Contextual Link Toolbar did not execute `mceLink` either.
+Selecting *Insert > Link…* or clicking the Link toolbar button did not, previously, execute the `mceLink` command. (If the `link_quicklink` option was enabled, using the Ctrl+K or ⌘+K shortcut to open the Contextual Link Toolbar did execute `mceLink`, however).
 
-This was not consistent with other, related, actions. For example, clicking the Unlink toolbar button executed the `unlink` command. As well, not executing a command meant it was not possible to track the *Link…* dialog being opened, and the command could not be over-ridden with `addCommand`.
+This behavior by the UI was not consistent with other, related, actions. For example, clicking the Unlink toolbar button executed the `unlink` command. As well, not executing a command meant it was not possible to track the *Link…* dialog being opened, and the command could not be over-ridden with `addCommand`.
 
 With this update, `mceLink` is always executed when the Link dialog or Contextual Link Toolbar is opened.
 

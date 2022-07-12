@@ -23,7 +23,7 @@ The Comments plugin exposes an API, `editor.plugins.tinycomments.getEventLog()`,
 
 The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after the time-stamp date, both shown in the following:
 
-NOTE: This feature is only available for TinyMCE 6.1 and later.
+NOTE: This feature is only available for {productname} 6.1 and later.
 
 === Example: Using the `+comments+` plugin APIs
 

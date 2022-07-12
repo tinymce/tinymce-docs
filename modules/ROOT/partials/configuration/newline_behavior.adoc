@@ -3,14 +3,14 @@
 
 NOTE: This option is only available for TinyMCE 6.1 and later.
 
-This option enables you to adjust what happens when enter or return is pressed. There are four options:
+This option enables you to adjust what happens when Enter or Return is pressed. There are four options:
 
-* `default` inserts a block (defined by xref:content-filtering.adoc#forced_root_block[forced_root_block]) on enter, and a `br` tag on shift+enter
-* `block` forces the above enter behaviour in all cases
-* `linebreak` forces the above shift+enter behaviour in all cases
-* `invert` swaps enter and shift+enter behaviors
+* `default` inserts a block (defined by xref:content-filtering.adoc#forced_root_block[forced_root_block]) on Enter, and a `br` tag on Shift+Enter.
+* `block` forces the above Enter behavior in all cases.
+* `linebreak` forces the above Shift+Enter behavior in all cases.
+* `invert` swaps Enter and Shift+Enter behaviors.
 
-NOTE: This option changes the behaviour of the `mceInsertNewLine` command. `insertParagraph` and `InsertLineBreak` commands are not affected.
+NOTE: This option changes the behavior of the `mceInsertNewLine` command. `insertParagraph` and `InsertLineBreak` commands are not affected.
 
 *Type:* `+String+`
 

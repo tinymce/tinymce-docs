@@ -37,6 +37,20 @@ The Comments plugin allows the user to perform the following functions:
 * Resolve a comment thread
 * Delete a comment or comment thread
 
+=== Supported content
+
+The Comments plugin allows the user to comment on text.
+
+In addition, the user can comment on various blocks, including:
+
+NOTE: This feature is only available for {productname} 6.1 and later.
+
+* Tables of contents created using the xref:tableofcontents.adoc[Table of Contents] plugin.
+* Images and images with captions created using the xref:image.adoc[Image] plugin.
+* Code samples created using the xref:codesample.adoc[Code Sample] plugin.
+* Media created using the xref:media.adoc[Media] plugin and xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugin.
+* Embedded pages created using the xref:pageembed.adoc[Page Embed] plugin.
+
 === Interactive example
 
 The following example shows how to configure the Comments plugin in *embedded* mode. For information on configuring the Comments plugin, see: xref:getting-started-with-the-comments-plugin-selecting-a-mode[Comments plugin Modes].

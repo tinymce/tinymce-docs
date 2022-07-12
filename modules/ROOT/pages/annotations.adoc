@@ -3,7 +3,7 @@
 :keywords: annotation, annotations, annotator
 
 
-The {productname} Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the {productname} core and functions in the same way as the formatting APIs in {productname} core.
+The {productname} Annotations API provides the ability to add, modify, and delete annotations; listen to selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the {productname} core and functions in the same way as the formatting APIs in {productname} core.
 
 The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) accessible through `+editor.annotator+`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `+getContent+`, depending on the user configuration (`+persistent+` setting).
 
@@ -71,7 +71,9 @@ toolbar: 'annotate-alpha'
 
 After registering an annotation, use it by applying it to the current selection.
 
-NOTE: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection. The API to apply an annotation is `+annotate+`. Annotations can be programmatically applied to selected text using:
+NOTE: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection.
+
+The API to apply an annotation is `+annotate+`. Annotations can be programmatically applied to selected content using:
 
 [source,js]
 ----

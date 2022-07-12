@@ -70,6 +70,7 @@ toolbar: 'annotate-alpha'
 === 4. Applying Annotations
 
 After registering an annotation, use it by applying it to the current selection.
+For content that can be annotated, see: xref:supported-content[Supported content].
 
 NOTE: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection.
 
@@ -183,3 +184,5 @@ This bypasses any other annotations that might be closer to the selection cursor
 */
 remove: (name)
 ----
+
+include::partial$misc/annotation-supported-content.adoc[leveloffset=+1]

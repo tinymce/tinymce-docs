@@ -552,12 +552,12 @@ Previously, however, when a custom `inline_boundaries_selector` was initialised 
 For example, if the following was added to `tinymce.init` —
 
 [source,js]
-===
+----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   inline_boundaries_selector: 'span'
 });
-===
+----
 
 — and text set within `<span></span>` tags was selected, pressing the right arrow key caused the text to be de-selected (expected behavior) and the insertion point to present to the left of the previously selected text (entirely not expected behavior).
 

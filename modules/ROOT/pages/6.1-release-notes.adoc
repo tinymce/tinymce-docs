@@ -600,9 +600,9 @@ As a consequence, it is now possible to add custom elements to empty lines in a 
 
 Errors in the logic of both the *Copy Column* and *Paste Column* actions could, in some circumstances, cause a Copy and Paste of table cells to produce an invalid table.
 
-With the insertion point in, for example, a cell in the third column of a 4x4 table, selecting *Table > Column > Copy Column* and then *Table > Column > Paste Column Before* produced a table that appeared to be a 5x4 table. But the now-5th column
+For example, with the insertion point in a cell in the third column of a 4x4 table, selecting *Table > Column > Copy Column* and then *Table > Column > Paste Column Before* produced what appeared to be a 5x4 table. But at least one cell in the now-5th column was not generated on paste, making the table invalid.
 
-NOTE: When the column was pasted in, the table would appear to change as expected. But attempting to change material in some cells would fail, because the underlying table DOM was invalid.
+NOTE: Table presentation did not reveal the error. When a column was pasted in, the table would appear to change as expected. But, because the underlying table DOM was invalid, attempting to change material in some cells would fail.
 
 With this update, the logic errors in Copy Column and Paste Column have been corrected: copying and pasting table columns now works as expected in all tested circumstances.
 

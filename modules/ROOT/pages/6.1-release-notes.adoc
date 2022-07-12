@@ -486,11 +486,11 @@ This error has been corrected with this update. Installing the {productname} Nug
 
 In {productname} the *esc* (Escape) key can be used to exit or ‘escape’ from an active user-interface component. If a menu is open, pressing the esc key closes the menu. If a dialog is present, pressing the esc closes the dialog.
 
-{productname} responds to the `KeyDown` event and exits the active element when the *esc* key is pressed. Previously, however, the consequent `KeyUp` event (generated when the user stops pressing the *esc* key) was propagated to the {productname} editor. This should not have happened.
+{productname} responds to the `keydown` event and exits the active element when the *esc* key is pressed. Previously, however, the consequent `keyup` event (generated when the user stops pressing the *esc* key) was propagated to the {productname} editor. This should not have happened.
 
-The `KeyDown` event does not propagate outside the component listening for it and neither should the `KeyUp` event.
+The `keydown` event does not propagate outside the component listening for it and neither should the `KeyUp` event.
 
-As of this update, this is the behavior: pressing the *esc* key closes or exits an active user-interface component and neither the `KeyDown` or `KeyUp` event are propagated outside the component listening for these events.
+As of this update, this is the behavior: pressing the *esc* key closes or exits an active user-interface component and neither the `keydown` or `keyup` event are propagated outside the component listening for these events.
 
 
 === Selection direction was not stored/restored when getting/setting selection bookmarks

@@ -693,7 +693,7 @@ In {productname} 6.1, documents in read-only mode no longer captures copy events
 Consequently, unexpected characters no longer present in material copied-and-pasted from read-only {productname} documents.
 
 
-=== Ctrl-Shift-Home/End or ⌘-Shift-Up-arrow/Down-arrow did not expand the selection to a `contenteditable="false"` element if the element was at the beginning or end of a document
+=== Ctrl+Shift+Home/End or ⌘+Shift+Up-arrow/Down-arrow did not expand the selection to a `contenteditable="false"` element if the element was at the beginning or end of a document
 
 The keyboard shortcut Ctrl-Shift-Home or ⌘-Shift-Up-arrow selects all material from the insertion point to a document’s beginning. Equivalently, Ctrl-Shift-End or ⌘-Shift-Down-arrow selects all material from the insertion point to a document’s end.
 

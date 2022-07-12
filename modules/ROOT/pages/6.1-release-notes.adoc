@@ -1031,7 +1031,7 @@ When only `name` is provided, the new functions work in equivalent fashion to th
 
 The new `iframe_template_callback` option, provided by Namstel, is an addition to the media plugin.
 
-The `iframe_template_callback` option takes a function and replaces the default callback when the source URL matches a valid iframe.
+The `iframe_template_callback` option takes a function and replaces the default callback when the provided source URL would produce an iframe embed.
 
 It works equivalently to the `audio_template_callback` and `video_template_callback` options, but for iframes.
 

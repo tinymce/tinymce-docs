@@ -914,8 +914,8 @@ To add a `sidebar_show: '<sidebar-name>'` to `tinymce.init`:
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-	sidebar_show: '<sidebar-name>',
+  selector: "textarea", // change this value according to your HTML
+  sidebar_show: '<sidebar-name>',
 });
 ----
 

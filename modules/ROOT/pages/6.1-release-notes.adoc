@@ -860,7 +860,7 @@ Consequently, screen readers will, correctly, report the options in these menus 
 
 {productname} 6.1 also includes the following improvements:
 
-=== All help dialog links to `https://tiny.cloud` now include `rel="noopener"` to avoid potential security issues
+=== All help dialog links to `https://tiny.cloud` now include `rel="noopener"`
 
 `rel` is an attribute for the `<a>` element (and other elements). Setting this attribute to `rel="noopener"` instructs the browser to set the `window.opener` JavaScript API to `null`. By default `window.opener` references the page that opened the link.
 

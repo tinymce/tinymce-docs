@@ -521,7 +521,7 @@ With this update, the `editor.selection.isForward()` API bug has been corrected,
 
 The `InsertParagraph` command was added to provide a {productname}-native replication of browser implementations of this functionality.
 
-However, when a string was selected and the `insertParagraph` was then executed, it did not delete the selected string and insert the paragraph break as expected. Instead, the command inserted a paragraph break at the beginning of the selected string and added the selection to the new trailing paragraph.
+However, when a string was selected and the `InsertParagraph` was then executed, it did not delete the selected string and insert the paragraph break as expected. Instead, the command inserted a paragraph break at the beginning of the selected string and added the selection to the new trailing paragraph.
 
 With this update, this behavior has been corrected. Selecting a string and running `editor.execCommand('InsertParagraph');` now replaces the selection with a paragraph break, as expected.
 

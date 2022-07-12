@@ -10,8 +10,7 @@ This option allows you to show the specified sidebar on initialization.
 === Example: Using `+sidebar_show+`
 
 [source,js]
-
-```javascript
+----
   tinymce.init({
     setup: (editor) => {
       editor.ui.registry.addSidebar('mysidebar', {
@@ -24,4 +23,4 @@ This option allows you to show the specified sidebar on initialization.
     },
     sidebar_show: 'mysidebar'
   });
-```
+----

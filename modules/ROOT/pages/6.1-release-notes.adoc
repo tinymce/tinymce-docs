@@ -653,7 +653,7 @@ With this update, the `list` plugin cleans up after cutting a {productname} list
 
 The {productname} Autocompleter feature displays suggestions while the user is typing. If, however, the insertion point was at the start of an empty list item nested inside an outer list item that contained text, typing a trigger character (such as the `:`) did not produce the suggestions display, as expected. (If the outer list item was otherwise empty, the trigger character worked.)
 
-The underlying cause was Autocompleter using `dom.getRoot()` as its root element. As of this update, Autocompleter uses the nearest parent block element as its root element rather than `dom.getRoot()`. And, consequently, trigger characters cause the suggestions display to present in nested list items inside populated list items, as expected.
+The underlying cause was Autocompleter walked too far up the DOM tree when trying to detect if the content was at the start of a boundary. As of this update, Autocompleter improves this detection and, consequently, trigger characters cause the suggestions display to present in nested list items inside populated list items, as expected.
 
 
 === Some template plugin option values were not escaped properly when doing replacement lookups with Regular Expressions

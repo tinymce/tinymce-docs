@@ -10,3 +10,29 @@
 The Comments plugin provides the following {productname} commands.
 
 include::partial$commands/comments-cmds.adoc[]
+
+== API
+
+The Comments plugin exposes an API, `editor.plugins.tinycomments.getEventLog()`, which returns a log of all Comment-related events, including when:
+
+* A new comment is added (and who added it).
+* A comment is edited (and who edited it).
+* A reply to a comment is added (and who added the reply).
+* A comment is resolved (and who resolved the comment).
+* A comment is deleted (and who deleted the comment).
+
+The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after the time-stamp date, both shown in the following:
+
+NOTE: This feature is only available for TinyMCE 6.1 and later.
+
+=== Example: Using the `+comments+` plugin APIs
+
+[source,js]
+----
+const comments = tinymce.activeEditor.plugins.tinycomments;
+
+console.log(comments.getEventLog());
+console.log(comments.getEventLog(
+    { after: '<iso-8601-format-time-stamp>' }
+));
+----

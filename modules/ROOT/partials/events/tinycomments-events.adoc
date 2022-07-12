@@ -4,5 +4,5 @@ The following events are provided by the xref:introduction-to-tiny-comments.adoc
 |===
 |Name |Data |Description
 |mce-tinycomments-update |N/A |Fired when the comments sidebar is opened or closed.
-|CommentChange |getEventLog() |Fired when a comment is added, resolved, deleted, edited, or replied to.
+|CommentChange |`{ getEventLog: () => EventLog[] }` |Fired when a comment is added, resolved, deleted, edited, or replied to.
 |===

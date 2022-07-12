@@ -13,6 +13,7 @@ I'm trying to:
 * xref:delete-a-comment-thread-conversation[Delete a comment thread (conversation)].
 * xref:resolve-a-comment-thread-conversation[Resolve a comment thread (conversation)].
 * xref:show-or-view-a-comment[Show or view a comment].
+* xref:show-comments-on-init[Show comments on initialisation].
 * xref:delete-all-comment-threads[Delete all comment threads].
 
 [[add-a-comment]]
@@ -104,3 +105,17 @@ image:comments-delete-conversations.png[Delete all conversations]
 . Click *Ok* to remove the all the comments or *Cancel* to dismiss the action.
 
 *Result*: All the comments for the selected document will be deleted.
+
+[[show-comments-on-init]]
+== Show comments on initialisation
+Set `sidebar_show` option to `'showcomments'` in the TinyMCE configuration as below:
+
+```javascript
+  tinymce.init({
+    selector: 'textarea',   // change this value according to your html
+    plugins: 'tinycomments',
+    toolbar: 'addcomment showcomments',
+    sidebar_show: 'showcomments',
+    // other configurations for TinyMCE Comments plugin
+  });
+```

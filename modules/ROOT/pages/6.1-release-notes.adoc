@@ -822,7 +822,7 @@ With this update the {productname} schema has been updated; the `isEmpty` check 
 
 === The autocompleter's menu HTML element is now positioned instead of the wrapper
 
-The `autocompleter` menu element presents a menu of formatting options. If the current viewport is too small to present the entire menu, access to the ‘overflow’ is ensured by presenting a scrollbar in the menu.
+The `autocompleter` menu element presents a menu of related options. If the current viewport is too small to present the entire menu, access to the ‘overflow’ is ensured by presenting a scrollbar in the menu.
 
 Previously, however, the rendering of this menu’s height (which, in turn, establishes whether a scroll bar is required) was done with the wrong element. Rendering was done by `tox-autocompleter`, not `tox-menu`. (`tox-menu` renders the height of all other {productname} menus.)
 

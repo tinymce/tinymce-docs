@@ -499,13 +499,13 @@ _Selection direction_ is a real-time state that ‘knows’ where the current te
 
 For example, consider a document containing words written in a left-to-right script and an insertion point set at the end of a word. A user then holds down the Shift key and presses the left-arrow key. The selection direction for this moment and this action is set by said action. While the Shift key is held down, pressing the left-arrow key adds letters to the selection and pressing the right-arrow key removes letters from the selection.
 
-When a {productname} document had *View > Show invisible characters* checked and text was selected in this manner, and the user paused for a second or two, pausing the selection extension, the `moveToBookmark` function copied the current selection into a bookmark and then restored the selection in the document.
+When a {productname} document had *View > Show invisible characters* checked and text was selected in this manner, and the user paused for a second or two, pausing the selection extension, the `moveToBookmark` function passed the current selection to `getBookmark` and then restored the selection in the document.
 
-In doing this, however, the selection direction was lost, because `movetoBookmark` did not store the selection direction state.
+In doing this, however, the selection direction was lost, because `getBookmark` did not store the selection direction state to pass back to `moveToBookmark` for restoration.
 
 When a user re-started the selection process by pressing the right arrow key, {productname} extended the selection from the right-most already-selected letter rather than, as expected, removing the left-most already-selected letter from the selection.
 
-As of this update, `moveToBookmark` now stores and restores selection direction. And pausing and restarting a selection as described above works as expected.
+As of this update, selection direction is stored and restored correctly. And pausing and restarting a selection as described above works as expected.
 
 
 === In some versions of Safari, the `editor.selection.isForward()` API could throw an exception due to an invalid selection

@@ -755,7 +755,7 @@ This update corrects this. In {productname} 6.1 material inside elements with a 
 
 === `uploadImages` no longer triggers two change events if there is a removal of images on upload
 
-Previously, if an image was uploaded and then immediately deleted, the removal triggered a second change event, which, in turn, changed the undo stack.
+Previously, if an image failed to upload and was flagged for removal, the flagging triggered a second change event, which, in turn, changed the undo stack.
 
 Given the most common, by far, reason for immediately deleting an uploaded image is the uploaded image being the incorrect image, this was undesirable behavior.
 

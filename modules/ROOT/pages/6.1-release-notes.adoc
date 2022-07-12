@@ -443,18 +443,9 @@ If a {productname} instance had a custom notification, `+editor.notificationMana
 
 === Dialogs no longer exceed window height on smaller screens
 
-When re-sizing the viewport while a {productname} dialog is open, the dialog did not start re-sizing until the viewport boundary begins encroaching on the dialog. As a consequence, the dialog was partially cut off in the re-sized viewport (specifically, the bottom border and several pixels of the dialog’s buttons were over-shot) and it could become difficult to distinguish the dialog from the viewport.
+When re-sizing the viewport while a {productname} dialog is open, the dialog did not start re-sizing until the viewport boundary began encroaching on the dialog. As a consequence, the dialog was partially cut off in the re-sized viewport (specifically, the bottom border and several pixels of the dialog’s buttons were over-shot) and it could become difficult to distinguish the dialog from the viewport.
 
 With this update, this behavior has been corrected. When a {productname} dialog is open and the viewport is re-sized, the dialog now re-sizes such that both the top and bottom borders of the dialog are always within the current viewport.
-
-
-=== Some function types in the TreeWalker API missed that it could return `undefined`
-
-Backspacing through material in an active {productname} editor could, in some circumstances, result in the insertion point stepping into a table and continue deleting where the expected behavior was for the insertion point to stop on the line below the table.
-
-In investigating and fixing this issue (see immediately below) it was also found that some function types in the `tinymce.dom.TreeWalker` class did not detect that the class could return an `undefined` value.
-
-This has been corrected and all `tinymce.dom.TreeWalker` functions now correctly detect `undefined` values when these are returned.
 
 
 === In some cases pressing the Backspace or Delete key would incorrectly step into tables rather than remain outside
@@ -464,6 +455,15 @@ In some circumstances, when a table was followed immediately by a text paragraph
 The expected behavior when backspacing on an empty line immediately following a table is for the insertion point to not move at all.
 
 With this update, {productname} behaves as expected. Pressing the backspace key on an empty line immediately following a table produces no change to the insertion point location.
+
+
+=== Some function types in the TreeWalker API missed that it could return `undefined`
+
+Backspacing through material in an active {productname} editor could, in some circumstances, result in the insertion point stepping into a table and continue deleting where the expected behavior was for the insertion point to stop on the line below the table.
+
+In investigating and fixing this issue (see immediately above) it was also found that some function types in the `tinymce.dom.TreeWalker` class did not detect that the class could return an `undefined` value.
+
+This has been corrected and all `tinymce.dom.TreeWalker` functions now correctly detect `undefined` values when these are returned.
 
 
 === Text alignments, such as flush left and centered, could not be applied to `<pre>` elements

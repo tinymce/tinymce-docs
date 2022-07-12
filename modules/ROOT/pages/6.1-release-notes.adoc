@@ -1036,7 +1036,7 @@ The `iframe_template_callback` option takes a function and replaces the default 
 It works equivalently to the `audio_template_callback` and `video_template_callback` options, but for iframes.
 
 
-=== New `dispatchChange` UndoManager API to fire the change with current editor status as `level` and current undoManager layer as `lastLevel`
+=== New `dispatchChange` UndoManager API
 
 The new `dispatchChange` API allows for the generating of an undo level outside the current editor’s context.
 

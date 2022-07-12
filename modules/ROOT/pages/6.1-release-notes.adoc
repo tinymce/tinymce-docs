@@ -1081,17 +1081,25 @@ Specifically, for `:focus-visible` to work, the following browser versions, or l
 |=== 
 
 
-=== If a `codesample` is the first element added to a {productname} document, the selection is incorrectly set to inside the `contenteditable="false"` block
+=== Pasting a code sample over an extant code sample incorrectly sets the pasted code sample in `<pre>` tags
 
-When adding a `codesample` (by, for example, choosing *Insert > Code sample…*), the added material is placed within a `contenteditable="false"` block.
+Code samples are placed inside `contenteditable="false"` blocks. These blocks can be copied and pasted but not directly edited.
 
-This block can be selected and copied but not edited. And, once copied, pasting it back adds a further `contenteditable="false"` block containing the added material, to the document.
+A regression in {productname} 6.1, however, means that copying a code sample on to a code sample removes the `contenteditable="false"` block and sets the pasted material inside `+<pre>+` tags.
 
-In {productname} 6.1, however, if a `codesample` is the first material added to a document, {productname} incorrectly sets the selection to the added material within the block, and not to the block itself.
+A workaround is to
 
-If this material is then copied and pasted, it is added to the document as editable text. This is not the expected behavior.
+1. select and copy the code sample to paste.
 
-There is a workaround: adding a blank line to an otherwise empty {productname} 6.1 document before adding a `codesample` results in the selection being sets to the added block, as expected.
+2. select the code sample to be pasted over;
+
+3. select *Insert > Code sample…*;
+
+4. select the text of the extant code sample as it presents in the *Insert/Edit Code Sample* dialog; and
+
+5. paste the copied code sample over this text.
+
+6. Click *Save* to close the *Insert/Edit Code Sample* dialog with the pasted-over text in place.
 
 
 === The Show comments toolbar button is not highlighted when comments sidebar is loaded at {productname} initialization

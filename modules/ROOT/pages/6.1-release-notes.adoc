@@ -499,7 +499,7 @@ _Selection direction_ is a real-time state that ‘knows’ where the current te
 
 For example, consider a document containing words written in a left-to-right script and an insertion point set at the end of a word. A user then holds down the Shift key and presses the left-arrow key. The selection direction for this moment and this action is set by said action. While the Shift key is held down, pressing the left-arrow key adds letters to the selection and pressing the right-arrow key removes letters from the selection.
 
-When a {productname} document had *View > Show invisible characters* checked and text was selected in this manner, and the user paused for a second or two, pausing the selection extension, the `moveToBookmark` function passed the current selection to `getBookmark` and then restored the selection in the document.
+When a {productname} document had *View > Show invisible characters* checked and text was selected in this manner, and the user paused for a second or two, pausing the selection extension, a bookmark was used to store and then restore the selection in the document.
 
 In doing this, however, the selection direction was lost, because `getBookmark` did not store the selection direction state to pass back to `moveToBookmark` for restoration.
 

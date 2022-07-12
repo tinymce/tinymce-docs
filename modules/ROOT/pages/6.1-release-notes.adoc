@@ -107,7 +107,7 @@ tinymce.init({
 });
 ----
 
-In callback mode, the avatar is supplied via the `authorAvatar` property in the `tinycomments_create` and `tinycoments_reply` callbacks.
+In callback mode, the avatar is supplied via the `authorAvatar` property on the comments returned in the `tinycomments_lookup` callback.
 
 [source,js]
 ----

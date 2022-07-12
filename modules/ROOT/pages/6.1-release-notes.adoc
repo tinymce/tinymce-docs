@@ -508,13 +508,11 @@ When a user re-started the selection process by pressing the right arrow key, {p
 As of this update, selection direction is stored and restored correctly. And pausing and restarting a selection as described above works as expected.
 
 
-=== In some versions of Safari, the `editor.selection.isForward()` API could throw an exception due to an invalid selection
+=== Some versions of Safari caused an exception when calling `editor.selection.isForward()`
 
-When running within some versions of Safari, a bug in the `editor.selection.isForward()` API produced an invalid selection resulting in the `input` value provided to `input.parentNode.removeChild(input)` being `null`.
+Some versions of Safari could end up with an invalid selection. When {productname} was running in this environment, the invalid selection resulted an exception being thrown when `editor.selection.isForward()` was called.
 
-`null` is not a valid value for `input` and, as a consequence, an exception was thrown.
-
-With this update, the `editor.selection.isForward()` API bug has been corrected, invalid selections no longer occur, a valid `input` value is passed to `input.parentNode.removeChild(input)`, and exceptions are no longer thrown.
+With this update, {productname} handles Safari’s invalid selection such that the exception is no longer thrown.
 
 
 === The `InsertParagraph` or `mceInsertNewLine` commands did not delete the current selection like the native command does

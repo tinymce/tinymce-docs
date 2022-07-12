@@ -1,0 +1,27 @@
+[[newline_behavior]]
+== `+newline_behavior+`
+
+NOTE: This option is only available for TinyMCE 6.1 and later.
+
+This option enables you to adjust what happens when enter or return is pressed. There are four options:
+
+* `default` inserts a block (defined by xref:content-filtering.adoc#forced_root_block[forced_root_block]) on enter, and a `br` tag on shift+enter
+* `block` forces the above enter behaviour in all cases
+* `linebreak` forces the above shift+enter behaviour in all cases
+* `invert` swaps enter and shift+enter behaviors
+
+NOTE: This option changes the behaviour of the `mceInsertNewLine` command. `insertParagraph` and `InsertLineBreak` commands are not affected.
+
+*Type:* `+String+`
+
+*Default value:* `+'default'+`
+
+=== Example: Using `+newline_behavior+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  newline_behavior: 'linebreak'
+});
+----

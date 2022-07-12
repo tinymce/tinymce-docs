@@ -675,7 +675,7 @@ Previously, however, it did not escape or correctly handle all the generated reg
 
 In some cases it did not escape option values for safe use within a regex and, in one case, incorrect handling caused word boundaries — `+\b+` — to not work as expected.
 
-These errors have been corrected. In {productname} 6.1, template settings values are escaped properly. As well the incorrect handling has been corrected, and word boundaries work as expected.
+These errors have been corrected. In {productname} 6.1, template option values are escaped properly. As well the incorrect handling has been corrected, and word boundaries work as expected.
 
 
 === Copy events were not dispatched in readonly mode

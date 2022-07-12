@@ -823,7 +823,7 @@ Previously {productname} treated custom elements as empty elements. The {product
 With this update the {productname} schema has been updated; the `isEmpty` check now returns `false` for custom elements. 
 
 
-=== The `autocompleter` menu element is now positioned instead of the wrapper
+=== The autocompleter's menu HTML element is now positioned instead of the wrapper
 
 The `autocompleter` menu element — made available to a {productname} instance by the `editor.ui.registry.addAutocompleter()` function — presents a menu of formatting options when the `+/+` key is pressed in an active editor.
 

@@ -953,8 +953,8 @@ After adding the Comments Premium Plugin, to add a Comments sidebar, add `sideba
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-	sidebar_show: 'showcomments',
+  selector: "textarea", // change this value according to your HTML
+  sidebar_show: 'showcomments',
 });
 ----
 ////

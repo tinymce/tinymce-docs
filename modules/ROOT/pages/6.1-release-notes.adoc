@@ -923,21 +923,24 @@ If the sidebar is custom, the sidebar should be setup in the `setup` section of 
 
 [source,js]
 ----
-	setup: (editor) => {
-	  editor.ui.registry.addSidebar('<sidebar-name>', {
-		tooltip: '<sidebar-name>',
-		icon: '<icon-name>',
-		onSetup: (api) => {
-		  console.log('Render panel', api.element());
-		},
-		onShow: (api) => {
-		  console.log('Show panel', api.element());
-		},
-		onHide: (api) => {
-		  console.log('Hide panel', api.element());
-		}
-	  });
-	}
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  setup: (editor) => {
+    editor.ui.registry.addSidebar('<sidebar-name>', {
+      tooltip: '<sidebar-name>',
+      icon: '<icon-name>',
+      onSetup: (api) => {
+        console.log('Render panel', api.element());
+      },
+      onShow: (api) => {
+        console.log('Show panel', api.element());
+      },
+      onHide: (api) => {
+        console.log('Hide panel', api.element());
+      }
+    });
+  }
+});
 ----
 
 NOTE: The sidebar presents with no animation or other effect. It is just there, along with any other initialised {productname} editor components. Also, as noted above, the sidebar does not take focus, which remains with the main editor.

@@ -1,0 +1,24 @@
+[[sidebar_show]]
+== `+sidebar_show+`
+This option allows you to show the specified sidebar on initialization.
+
+*Type:* `+String+`
+
+=== Example: Using `+sidebar_show+`
+
+[source,js]
+
+```javascript
+  tinymce.init({
+    setup: (editor) => {
+      editor.ui.registry.addSidebar('mysidebar', {
+        tooltip: 'My sidebar',
+        icon: 'comment',
+        onShow: (api) => {
+          api.element().innerHTML = 'Hello world!';
+        },
+      });
+    },
+    sidebar_show: 'mysidebar'
+  });
+```

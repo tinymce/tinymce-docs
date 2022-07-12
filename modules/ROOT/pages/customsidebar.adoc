@@ -60,6 +60,10 @@ The `+onHide+` specifies a function to be called when the panel is hidden. It pa
 
 The `+element():HTMLElement+` function returns the root element of the sidebar panel.
 
+=== Options
+
+include::partial$configuration/sidebar_show.adoc[leveloffset=+2]
+
 [[example-inside-the-tinymceinit]]
 == Example inside the tinymce.init
 

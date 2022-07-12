@@ -523,7 +523,7 @@ The `insertParagraph` command was added to provide a {productname}-native replic
 
 However, when a string was selected and the `insertParagraph` was then executed, it did not delete the selected string and insert the paragraph break as expected. Instead, the command inserted a paragraph break at the beginning of the selected string and added the selection to the new trailing paragraph.
 
-With this update, this behavior has been corrected. Selecting a string and running `tinymce.activeEditor.execCommand('insertParagraph');` now replaces the selection with a paragraph break, as expected.
+With this update, this behavior has been corrected. Selecting a string and running `editor.execCommand('InsertParagraph');` now replaces the selection with a paragraph break, as expected.
 
 
 === Triple-clicking did not select the paragraph in Google Chrome in some circumstances

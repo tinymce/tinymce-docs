@@ -17,17 +17,11 @@ include::partial$events/tinycomments-events.adoc[]
 
 === CommentChange event
 
-This event triggers whenever:
+include::partial$misc/admon-requires-6.1v.adoc[]
 
-* A new comment is added (and who added it).
-* A comment is edited (and who edited it).
-* A reply to a comment is added (and who added the reply).
-* A comment is resolved (and who resolved the comment).
-* A comment is deleted (and who deleted the comment).
+Fired when a comment is added, resolved, deleted, edited, or replied to. Contains the `getEventLog` API for retrieving the state of the comment.
 
 ==== Example: The CommentChange event
-
-include::partial$misc/admon-requires-6.1v.adoc[]
 
 [source,js]
 ----
@@ -52,7 +46,13 @@ The {pluginname} plugin provides the following API.
 
 include::partial$misc/admon-requires-6.1v.adoc[]
 
-Returns a log of all `CommentChange` events.
+Returns a log with information and timestamps of all changes to comments, including when:
+
+* A new comment is added (and who added it).
+* A comment is edited (and who edited it).
+* A reply to a comment is added (and who added the reply).
+* A comment is resolved (and who resolved the comment).
+* A comment is deleted (and who deleted the comment).
 
 The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://en.wikipedia.org/wiki/ISO_8601[ISO-8601] format, both shown in the following:
 

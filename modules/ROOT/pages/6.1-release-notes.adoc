@@ -435,7 +435,7 @@ For this update, the upload logic has been corrected. Data URIs are no longer as
 
 A {productname} toolbar option, *Fullscreen*, toggles the {productname} editor between the size it takes by default and, as the toolbar’s name suggests, fullscreen. Fullscreen is the largest size available to the editor (ie, taking up all the space available to {productname} in the browser).
 
-If a {productname} instance had a custom notification, `+editor.notificationManager.open+`, set to display when the *Fullscreen* button was used, toggling from Fullscreen back to default resulted in the notification displaying outside the {productname} editor.
+If a {productname} instance had a custom notification, `+editor.notificationManager.open()+`, set to display when the *Fullscreen* button was used, toggling from Fullscreen back to default resulted in the notification displaying outside the {productname} editor.
 
 {productname} 6.1 corrects this. When toggling between the two *Fullscreen* states, custom notifications now display immediately below the toolbar in either state, as expected.
 

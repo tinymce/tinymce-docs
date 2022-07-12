@@ -12,6 +12,8 @@ This option allows you to show the specified sidebar on initialization.
 [source,js]
 ----
   tinymce.init({
+    selector: 'textarea', // change this value according to your HTML
+    sidebar_show: 'mysidebar',
     setup: (editor) => {
       editor.ui.registry.addSidebar('mysidebar', {
         tooltip: 'My sidebar',
@@ -20,7 +22,6 @@ This option allows you to show the specified sidebar on initialization.
           api.element().innerHTML = 'Hello world!';
         },
       });
-    },
-    sidebar_show: 'mysidebar'
+    }
   });
 ----

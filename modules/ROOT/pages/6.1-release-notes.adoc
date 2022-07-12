@@ -699,7 +699,7 @@ The keyboard shortcut Ctrl+Shift+Home or ⌘+Shift+Up-arrow selects all material
 
 NOTE: These selection behaviors are not {productname}-specific. These keyboard shortcuts select in this fashion in virtually all applications.
 
-However, if the first element in a {productname} document had a `contenteditable="false"` property, the Ctrl-Shift-Home or ⌘-Shift-Up-arrow keystrokes did not extend the selection to the first element. That is, the selection extended to the trailing edge of the element with a `contenteditable="false"` property but no further.
+However, if the first element in a {productname} document had a `contenteditable="false"` property, the Ctrl+Shift+Home or ⌘+Shift+Up-arrow keystrokes did not extend the selection to the first element. That is, the selection extended to the trailing edge of the element with a `contenteditable="false"` property but no further.
 
 Equivalently, if the last element in a {productname} document had a `contenteditable="false"` property, Ctrl-Shift-End or ⌘-Shift-Down-arrow extended the selection only to the leading edge of this final element.
 

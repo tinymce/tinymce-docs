@@ -1,7 +1,11 @@
 [[end_container_on_empty_block]]
 == `+end_container_on_empty_block+`
 
-This option allows you to split the current container block element when the enter key is pressed, and specify which blocks should be split.
+This option specifies how the current container block element is split when the Enter key is pressed inside an empty inner block element. The available options are:
+
+* always split the block;
+* split for specific block elements; or
+* do not split the block at all.
 
 *Type:* `+Boolean+` or `+String+`
 

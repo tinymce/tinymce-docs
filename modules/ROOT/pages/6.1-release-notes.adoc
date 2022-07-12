@@ -210,17 +210,17 @@ For information on the **Enhanced Media Embed** plugin, see: xref:enhancedmediae
 
 The {productname} 6.1 release includes an accompanying release of the **Page Embed** premium plugin.
 
-**Page Embed** 2.1.0 includes the following bug fix:
+**Page Embed** 2.1.0 includes the following enhancement:
 
-==== Portions of the Page Embed dialog were not fully translated
+==== The entirety of the Page Embed dialog can now be translated
 
-Four elements in the Page Embed dialog presented in English when the configured language was not English.
+Previously, four elements in the Page Embed dialog presented in English when the configured language was not English.
 
 Three elements — the text-box label, *Long description URL*, and the checkbox labels *Show iframe border*, and *Enable scrollbar* — presented in English when the configured language was Vietnamese, Hindi, Malay, Japanese or Dutch.
 
 A fourth element — the *Scrollbar* label — presented in English no matter the configured language (ie, it was not translated in to any non-English language).
 
-With this update, these four elements are now translated into all configurable languages, and appear correctly when {productname} is switched to another language, as expected.
+With this update, all these elements have been setup so as to be translatable into all confifigurable languages. As well, translations in to all currently supported languages have been added. When {productname} is switched to another language, these elements now appear in that language.
 
 For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed plugin].
 

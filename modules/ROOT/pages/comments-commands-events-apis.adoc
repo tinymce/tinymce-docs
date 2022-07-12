@@ -27,7 +27,7 @@ This event triggers whenever:
 
 ==== Example: The CommentChange event
 
-include::partial$misc/requires_6_1v.adoc[]
+include::partial$misc/admon-requires-6.1v.adoc[]
 
 [source,js]
 ----
@@ -50,7 +50,7 @@ The {pluginname} plugin provides the following API.
 [[getEventLog]]
 === getEventLog()
 
-include::partial$misc/requires_6_1v.adoc[]
+include::partial$misc/admon-requires-6.1v.adoc[]
 
 Returns a log of all `CommentChange` events.
 

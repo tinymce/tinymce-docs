@@ -832,7 +832,7 @@ Previously, however, the rendering of this menu’s height (which, in turn, esta
 
 In some circumstances this error resulted in the top or bottom menu borders to scroll out of view, making the menu present as cut off.
 
-This update corrects this. Rendering of the `autocompleter` menu height is now assigned to `tox-menu` and its menu borders do not scroll out of view.
+This update corrects this. Rendering of the `autocompleter` menu overflow is now assigned to `tox-menu` and its menu borders do not scroll out of view.
 
 
 === Link menu and toolbar buttons now always execute the `mceLink` command

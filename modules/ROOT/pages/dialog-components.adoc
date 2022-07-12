@@ -330,7 +330,7 @@ NOTE: To replace the entire dialog body with an iframe that loads its content fr
 |name |string |required |A identifier for the button.
 |label |string |optional |String to use for the iframe's `+title+` attribute.
 |sandboxed |boolean |optional |default: `+true+` - When true, sets the iframe's `+sandbox+` attribute to `+"allow-scripts allow-same-origin"+`.
-|transparent |boolean |optional |default: `+true+` - When true, sets the iframe's background to transparent instead of opaque.
+|transparent |boolean |optional |default: `+true+` - When true, sets the iframe's background to transparent instead of opaque. NOTE: This feature is only available for {productname} 6.1 and later.
 |===
 
 [source,js]

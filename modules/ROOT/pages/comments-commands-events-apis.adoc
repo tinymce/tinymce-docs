@@ -11,9 +11,14 @@ The Comments plugin provides the following {productname} commands.
 
 include::partial$commands/comments-cmds.adoc[]
 
-== API
+== APIs
 
-The Comments plugin exposes the API `editor.plugins.tinycomments.getEventLog()` which returns a log of all `CommentChange` events. These events are dispatched whenever:
+The {pluginname} plugin provides the following API.
+
+[[getEventLog]]
+=== getEventLog()
+
+Returns a log of all `CommentChange` events. These events are dispatched whenever:
 
 * A new comment is added (and who added it).
 * A comment is edited (and who edited it).
@@ -21,12 +26,11 @@ The Comments plugin exposes the API `editor.plugins.tinycomments.getEventLog()` 
 * A comment is resolved (and who resolved the comment).
 * A comment is deleted (and who deleted the comment).
 
-:minimumversion: 6.1
-include::partial$misc/minimum-version.adoc[]
+include::partial$misc/requires_6_1v.adoc[]
 
 The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://www.iso.org/standard/70907.html[ISO-8601] format, both shown in the following:
 
-=== Example: Using the `+comments+` plugin APIs
+==== Example: Using `+getEventLog()+`
 
 [source,js]
 ----

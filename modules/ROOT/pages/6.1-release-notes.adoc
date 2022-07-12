@@ -197,11 +197,11 @@ The {productname} 6.1 release includes an accompanying release of the **Enhanced
 
 **Enhanced Media Embed** 3.0.1 fixes the following bug:
 
-==== Enhanced Media Embed tests failed in several browsers
+==== Console warnings were logged incorrectly when the media plugin was not used
 
-An incorrect `RealKeys()` setting caused the Enhanced Media Embed webdriver tests to fail in several browsers (including Firefox, Microsoft Edge, and Safari).
+Previously, a ‘`media_url_resolver` not registered’ warning was printed to the console when the Enhanced Media Embed was not used.
 
-With this update, this setting has been corrected, from `RealKeys.text(\n)` to `RealKeys.combo({}, 'enter')`. As a consequence, the Enhanced Media Embed webdriver tests now pass in all supported browsers, as expected.
+This update corrects this error. When the plugin is not used, extraneous warnings are no longer sent to the console.
 
 For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
 

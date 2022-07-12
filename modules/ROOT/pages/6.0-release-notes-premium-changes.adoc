@@ -146,9 +146,9 @@ Users of the Free version of {productname} 5.x who rely on the removed `imagetoo
 
 The following change was made to the xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugin:
 
-In earlier versions of the {productname}, the `forced_root_black` option took the value `false`.
+In earlier versions of the {productname}, the `forced_root_block` option took the value `false`.
 
-This value was previously deprecated and, with this release, support for `false` as a `forced_root_black` value has been removed from the Enhanced Media Embed plugin.
+This value was previously deprecated and, with this release, support for `false` as a `forced_root_block` value has been removed from the Enhanced Media Embed plugin.
 
 === Export
 

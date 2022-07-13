@@ -215,7 +215,13 @@ This resulted in applications that relied on {productname} reporting its current
 This update corrects this. In Comments 3.1.0, deleting any or all comments fires a `change` event. And a `changed` message is, consequently, printed to the console.
 
 
-==== An additional undo level was incorrectly created when the initial HTML included embedded comment data
+==== An additional undo level was incorrectly created when the Comments plugin was loaded at {productname} initialization
+
+Previously, when the Comments plugin loaded, a bug in the plugin caused {productname} to put the comment model data into a first undo level.
+
+This caused {productname} to present as if an undo option was available when there was no action to undo (for example, the Undo button would enable if all that had changed as the insertion point moving).
+
+This update fixes this bug. When the Comments plugin loads, the comment model data is no longer placed into an undo level and no Undo actions will present as available until there are actual changes available to undo.
 
 
 

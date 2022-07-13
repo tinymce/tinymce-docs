@@ -226,6 +226,9 @@ This update fixes this bug. When the Comments plugin loads, the comment model da
 
 ==== Opening the comments sidebar via an editor command did not respect the `skip_focus` argument
 
+If the Comments sidebar was opened with an editor command and `skip_focus` was set to true — `editor.execCommand("ToggleSidebar", false, "showcomments", { skip_focus: true });` — the sidebar still stole focus.
+
+This update corrects this: `skip_focus: true` is honored, as expected, and the sidebar does not steal focus.
 
 
 ==== Comments did not blocking the Save UI while saving the data in callback mode

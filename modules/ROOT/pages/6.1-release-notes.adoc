@@ -208,6 +208,11 @@ NOTE: When a comment is being edited, the default button, which writes the chang
 
 ==== The `change` event was not fired when deleting all conversations
 
+Previously, when all comments were deleted, existing undo levels were re-written but no new undo level was created. As a consequence no `change` event was fired.
+
+This resulted in applications that relied on {productname} reporting its current state incorrectly assuming the now-deleted comments still existed.
+
+This update corrects this. In Comments 3.1.0, deleting any or all comments fires a `change` event. And a `changed` message is, consequently, printed to the console.
 
 
 ==== An additional undo level was incorrectly created when the initial HTML included embedded comment data

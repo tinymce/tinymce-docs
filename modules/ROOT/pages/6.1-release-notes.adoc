@@ -234,6 +234,13 @@ This update fixes this bug. When the Comments plugin loads, the comment model da
 
 ==== A selected `hr` block could be commented on when it should not have been possible
 
+A new feature of the Comments plugin is support for annotating many block-level elements directly, using the editor annotator API (see above).
+
+A bug in this new feature, however, made it possible to, at least apparently, add a comment to an `+<hr>` block.
+
+The comment did not, in fact, attach to the horizontal rule. It attached to the Comment sidebar, which resulted in the comment showing even when surrounding paragraphs were clicked in or selected.
+
+With this update, `+<hr>` blocks specifically cannot have comments added to them.
 
 
 ==== Previous comment replies were retained in the comment placeholder after the comment had been submitted

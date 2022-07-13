@@ -206,6 +206,36 @@ tinymce.addI18n('<optional-IETF-language-code>', {
 NOTE: When a comment is being edited, the default button, which writes the changes back and closes the Edit Comment dialog, is still labeled *Save*.
 
 
+==== The `change` event was not fired when deleting all conversations
+
+
+
+==== An additional undo level was incorrectly created when the initial HTML included embedded comment data
+
+
+
+==== Opening the comments sidebar via an editor command did not respect the `skip_focus` argument
+
+
+
+==== Creating or editing a comment was not blocking the UI while saving the data in callback mode
+
+
+
+==== A selected `hr` block could be commented on when it should not have been possible
+
+
+
+==== Previous comment replies were retained in the comment placeholder after the comment had been submitted
+
+
+
+==== The comment textarea will now shrink, as well as grow, in response to comment content changes
+
+
+
+
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
 
 

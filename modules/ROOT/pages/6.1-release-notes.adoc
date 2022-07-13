@@ -231,7 +231,7 @@ If the Comments sidebar was opened with an editor command and `skip_focus` was s
 This update corrects this: `skip_focus: true` is honored, as expected, and the sidebar does not steal focus.
 
 
-==== Comments did not blocking the Save UI while saving the data in callback mode
+==== Comments did not block the sidebar UI while saving the data in callback mode
 
 When Comments was working in callback mode, it was possible to send multiple `save` actions from the Comment text-entry UI.
 

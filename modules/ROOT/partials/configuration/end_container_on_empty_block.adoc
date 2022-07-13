@@ -1,13 +1,19 @@
 [[end_container_on_empty_block]]
 == `+end_container_on_empty_block+`
 
-This option allows you to to split the current container block element if the enter key is pressed inside an empty inner block element.
+This option specifies how the current container block element is split when the Enter key is pressed inside an empty inner block element. The available options are:
 
-*Type:* `+Boolean+`
+* always split the block;
+* split for specific block elements; or
+* do not split the block at all.
 
-*Default value:* `+false+`
+*Type:* `+Boolean+` or `+String+`
 
-*Possible values:* `+true+`, `+false+`
+*Default value:* `+'blockquote'+`
+
+*Possible values:* `+true+`, `+false+` or a comma separated `+String+` of element tag names
+
+NOTE: Prior to {productname} 6.1, this option only accepted `+Boolean+` values.
 
 === Example: Using `+end_container_on_empty_block+`
 

@@ -224,7 +224,6 @@ This caused {productname} to present as if an undo option was available when the
 This update fixes this bug. When the Comments plugin loads, the comment model data is no longer placed into an undo level and no Undo actions will present as available until there are actual changes available to undo.
 
 
-
 ==== Opening the comments sidebar via an editor command did not respect the `skip_focus` argument
 
 
@@ -243,7 +242,9 @@ This update fixes this bug. When the Comments plugin loads, the comment model da
 
 ==== The comment textarea will now shrink, as well as grow, in response to comment content changes
 
+Previously, the comment text entry field would grow larger to more usefully display a long comment-in-progress but it did not shink back to its orignal size when the text in this field was deleted.
 
+This Comments update corrects this. When text is deleted from a grown-larger Comments text-entry field, this field now snaps back to its original size.
 
 
 

@@ -139,7 +139,7 @@ The commands in the following table are provided by the {productname} editor and
 |ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
 |ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |InsertLineBreak |Adds a line break `+<br>+` at the current cursor or selection.
-|mceInsertNewLine |Adds a new line at the current cursor or selection, such as splitting the current paragraph element. NOTE: This is an alias for the `InsertParagraph` command.
+|mceInsertNewLine |Adds a new line at the current cursor or selection, such as splitting the current paragraph element. The behavior of this setting can be controlled with the xref:content-behavior-options.adoc#newline_behavior[newline_behavior] option.
 |mceToggleVisualAid |Toggles the visual aids for: tables without borders and anchors.
 |mceNewDocument |Removes all contents of the editor.
 |mceAddUndoLevel |Adds an undo level.

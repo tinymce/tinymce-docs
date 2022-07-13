@@ -1,6 +1,6 @@
 == Show the comments sidebar when TinyMCE loads
 
-To show the comments sidebar when the editor is loaded or to display the sidebar by default, add a callback to open the sidebar once the editor 'skin' is loaded.
+The xref:customsidebar.adoc#sidebar_show[`sidebar_show`] option can be used to show the comments sidebar when the editor is loaded.
 
 For example:
 
@@ -18,13 +18,7 @@ tinymce.init({
   tinycomments_delete_all,
   tinycomments_delete_comment,
   tinycomments_lookup,
-
-  /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: (editor) => {
-    editor.on('SkinLoaded', () => {
-      editor.execCommand("ToggleSidebar", false, "showcomments");
-    })
-  }
+  sidebar_show: 'showcomments'
 });
 ----
 endif::[]
@@ -38,12 +32,7 @@ tinymce.init({
   tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
   tinycomments_can_resolve: canResolveCommentsCallback,
-  /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: (editor) => {
-    editor.on('SkinLoaded', () => {
-      editor.execCommand("ToggleSidebar", false, "showcomments");
-    })
-  }
+  sidebar_show: 'showcomments'
 });
 ----
 endif::[]

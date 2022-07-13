@@ -330,6 +330,8 @@ NOTE: To replace the entire dialog body with an iframe that loads its content fr
 |name |string |required |A identifier for the button.
 |label |string |optional |String to use for the iframe's `+title+` attribute.
 |sandboxed |boolean |optional |default: `+true+` - When true, sets the iframe's `+sandbox+` attribute to `+"allow-scripts allow-same-origin"+`.
+|transparent |boolean |optional |default: `+true+` - When true, sets the iframe's background to transparent instead of opaque.
+include::partial$misc/admon-requires-6.1v.adoc[]
 |===
 
 [source,js]
@@ -338,7 +340,8 @@ NOTE: To replace the entire dialog body with an iframe that loads its content fr
   type: 'iframe', // component type
   name: 'iframe', // identifier
   label: 'Description of iframe', // text for the iframe's title attribute
-  sandboxed: true
+  sandboxed: true,
+  transparent: true
 }
 ----
 

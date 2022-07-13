@@ -979,7 +979,7 @@ was pasted into a {productname} document, the URL detection would cause the past
 
 [source,html]
 ----
-<a href="https://example.com/">:w:/index.html
+<a href="https://example.com/">https://example.com/</a>:w:/index.html
 ----
 
 With this update, valid characters such `+!+` and `+:+` are correctly treated as part of the URL, and pasting in URLs that include these characters results in a clickable link that includes the entire pasted URL.

@@ -24,6 +24,7 @@ The `+done+` callback should accept the following object:
     {
       author: string, // author of first comment
       authorName: string, // optional - Display name to use instead of author. Defaults to using `author` if not specified
+      authorAvatar: string, // optional - URL to the author's avatar. If not provided an automated avatar will be generated
       createdAt: date, // when the first comment was created
       content: string, // content of first comment
       modifiedAt: date, // when the first comment was created/last updated
@@ -32,6 +33,7 @@ The `+done+` callback should accept the following object:
     {
       author: string, // author of second comment
       authorName: string, // optional - Display name to use instead of author. Defaults to using `author` if not specified
+      authorAvatar: string, // optional - URL to the author's avatar. If not provided an automated avatar will be generated
       createdAt: date, // when the second comment was created
       content: string, // content of second comment
       modifiedAt: date, // when the second comment was created/last updated
@@ -42,7 +44,15 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-NOTE: The dates should use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString[ISO 8601 format]. This can be generated in JavaScript with: `+new Date().toISOString()+`.
+[NOTE]
+====
+The dates should use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString[ISO 8601 format]. This can be generated in JavaScript with: `+new Date().toISOString()+`.
+
+The author avatar feature is only available in {productname} 6.1 or higher and if provided:
+
+* will be scaled to a 36px diameter circle; and
+* can be any filetype able to be wrapped in an `<img>` element.
+====
 
 For example:
 
@@ -66,12 +76,16 @@ const lookup_comment = ({ conversationUid }, done, fail) => {
     return {
       conversation: {
         uid: conversationUid,
-        comments: comments.map((comment) => ({
-          ...comment,
-          content: comment.content,
-          authorName: getUser(comment.author)?.displayName,
-        })),
-      },
+        comments: comments.map((comment) => {
+          const user = getUser(comment.author);
+          return {
+            ...comment,
+            content: comment.content,
+            authorName: user?.displayName,
+            authorAvatar: user?.avatarUrl
+          };
+        })
+      }
     };
   };
 

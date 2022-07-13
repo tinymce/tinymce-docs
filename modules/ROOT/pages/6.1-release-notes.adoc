@@ -228,8 +228,13 @@ This update fixes this bug. When the Comments plugin loads, the comment model da
 
 
 
-==== Creating or editing a comment was not blocking the UI while saving the data in callback mode
+==== Comments did not blocking the Save UI while saving the data in callback mode
 
+When Comments was working in callback mode, it was possible to send multiple `save` actions from the Comment text-entry UI.
+
+Save actions are asyncrhonous, so this made it possible to generate multiple saves of the same comment.
+
+This update disables the *Save* UI when a comment is being saved, ensuring only one copy of a comment is saved at a time.
 
 
 ==== A selected `hr` block could be commented on when it should not have been possible

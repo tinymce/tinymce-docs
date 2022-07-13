@@ -243,8 +243,13 @@ The comment did not, in fact, attach to the horizontal rule. It attached to the 
 With this update, `+<hr>` blocks specifically cannot have comments added to them.
 
 
-==== Previous comment replies were retained in the comment placeholder after the comment had been submitted
+==== Comment text was retained in the comment placeholder after more than one comment had been submitted
 
+If a second comment was added to a given element, the re-displayed ‘empty’ Comment text entry field presented with the text of the second comment in this field rather than the default placeholder text, *Add comment…*.
+
+If a third comment was added, the re-displayed Comment text entry field then presented with the text of the third comment, and so on.
+
+This update corrects this. When the Comment sidebar re-displays the Comment text entry field for a further comment, the previous comment is not retained and presented. Rather, the *Add comment…* placeholder text displays, as expected.
 
 
 ==== The comment textarea will now shrink, as well as grow, in response to comment content changes

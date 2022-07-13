@@ -11,7 +11,7 @@ This option specifies how the current container block element is split when the 
 
 *Default value:* `+'blockquote'+`
 
-*Possible values:* `+true+`, `+false+` or comma separated `+String+` of element tag names
+*Possible values:* `+true+`, `+false+` or a comma separated `+String+` of element tag names
 
 NOTE: Prior to {productname} 6.1, this option only accepted `+Boolean+` values.
 
@@ -21,6 +21,6 @@ NOTE: Prior to {productname} 6.1, this option only accepted `+Boolean+` values.
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  end_container_on_empty_block: 'blockquote'
+  end_container_on_empty_block: true
 });
 ----

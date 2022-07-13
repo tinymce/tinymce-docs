@@ -37,13 +37,14 @@ do {
 === current()
 [source, javascript]
 ----
-current(): Node
+current(): Node | undefined
 ----
 Returns the current node.
 
 ==== Return value
 
-* `Node` - Current node where the walker is.
+* `Node` - Current node where the walker is, or undefined if the walker has reached the end.
+* `undefined` - Current node where the walker is, or undefined if the walker has reached the end.
 
 '''
 
@@ -51,13 +52,14 @@ Returns the current node.
 === next()
 [source, javascript]
 ----
-next(): Node
+next(): Node | undefined
 ----
 Walks to the next node in tree.
 
 ==== Return value
 
-* `Node` - Current node where the walker is after moving to the next node.
+* `Node` - Current node where the walker is after moving to the next node, or undefined if the walker has reached the end.
+* `undefined` - Current node where the walker is after moving to the next node, or undefined if the walker has reached the end.
 
 '''
 
@@ -65,12 +67,13 @@ Walks to the next node in tree.
 === prev()
 [source, javascript]
 ----
-prev(): Node
+prev(): Node | undefined
 ----
 Walks to the previous node in tree.
 
 ==== Return value
 
-* `Node` - Current node where the walker is after moving to the previous node.
+* `Node` - Current node where the walker is after moving to the previous node, or undefined if the walker has reached the end.
+* `undefined` - Current node where the walker is after moving to the previous node, or undefined if the walker has reached the end.
 
 '''

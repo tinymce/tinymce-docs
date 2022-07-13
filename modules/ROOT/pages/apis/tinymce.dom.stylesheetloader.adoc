@@ -14,8 +14,8 @@ This class handles loading of external stylesheets and fires events when these a
 [cols="2,5,1",options="header"]
 |===
 |Name|Summary|Defined by
-|xref:#load[load()]|Loads the specified CSS file and calls the `success` callback if successfully loaded, otherwise calls `failure`.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
-|xref:#loadAll[loadAll()]|Loads the specified CSS files and calls the `success` callback if successfully loaded, otherwise calls `failure`.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|xref:#load[load()]|Loads the specified CSS file and returns a Promise that will resolve when the stylesheet is loaded successfully or reject if it failed to load.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|xref:#loadAll[loadAll()]|Loads the specified CSS files and returns a Promise that is resolved when all stylesheets are loaded or rejected if any failed to load.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
 |xref:#unload[unload()]|Unloads the specified CSS file if no resources currently depend on it.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
 |xref:#unloadAll[unloadAll()]|Unloads each specified CSS file if no resources currently depend on it.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
 |===
@@ -29,7 +29,7 @@ This class handles loading of external stylesheets and fires events when these a
 ----
 load(url: String): Promise
 ----
-Loads the specified CSS file and calls the `success` callback if successfully loaded, otherwise calls `failure`.
+Loads the specified CSS file and returns a Promise that will resolve when the stylesheet is loaded successfully or reject if it failed to load.
 
 ==== Parameters
 
@@ -37,7 +37,7 @@ Loads the specified CSS file and calls the `success` callback if successfully lo
 
 ==== Return value
 
-* `Promise` - A promise that will resolve when the stylesheet is loaded successfully or reject if it failed to load.
+* `Promise` - A Promise that will resolve or reject when the stylesheet is loaded.
 
 '''
 
@@ -47,7 +47,7 @@ Loads the specified CSS file and calls the `success` callback if successfully lo
 ----
 loadAll(urls: Array): Promise
 ----
-Loads the specified CSS files and calls the `success` callback if successfully loaded, otherwise calls `failure`.
+Loads the specified CSS files and returns a Promise that is resolved when all stylesheets are loaded or rejected if any failed to load.
 
 ==== Parameters
 
@@ -55,7 +55,7 @@ Loads the specified CSS files and calls the `success` callback if successfully l
 
 ==== Return value
 
-* `Promise` - A promise that is resolved when all stylesheets are loaded or rejected if any failed to load.
+* `Promise` - A Promise that will resolve or reject when all stylesheets are loaded.
 
 '''
 

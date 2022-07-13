@@ -16,8 +16,8 @@ Entity encoder class.
 |Name|Summary|Defined by
 |xref:#decode[decode()]|Decodes the specified string, this will replace entities with raw UTF characters.|`xref:apis/tinymce.html.entities.adoc[Entities]`
 |xref:#encodeAllRaw[encodeAllRaw()]|Encoded the specified text with both the attributes and text entities. This function will produce larger text contents
-since it doesn't know if the context is within a attribute or text node. This was added for compatibility
-and is exposed as the DOMUtils.encode function.|`xref:apis/tinymce.html.entities.adoc[Entities]`
+since it doesn't know if the context is within an attribute or text node. This was added for compatibility
+and is exposed as the `DOMUtils.encode` function.|`xref:apis/tinymce.html.entities.adoc[Entities]`
 |xref:#encodeNamed[encodeNamed()]|Encodes the specified string using named entities. The core entities will be encoded
 as named ones but all non lower ascii characters will be encoded into named entities.|`xref:apis/tinymce.html.entities.adoc[Entities]`
 |xref:#encodeNumeric[encodeNumeric()]|Encodes the specified string using numeric entities. The core entities will be
@@ -54,8 +54,8 @@ Decodes the specified string, this will replace entities with raw UTF characters
 encodeAllRaw(text: String): String
 ----
 Encoded the specified text with both the attributes and text entities. This function will produce larger text contents
-since it doesn't know if the context is within a attribute or text node. This was added for compatibility
-and is exposed as the DOMUtils.encode function.
+since it doesn't know if the context is within an attribute or text node. This was added for compatibility
+and is exposed as the `DOMUtils.encode` function.
 
 ==== Parameters
 

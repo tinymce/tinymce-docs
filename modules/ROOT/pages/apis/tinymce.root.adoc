@@ -37,9 +37,9 @@ TinyMCE core class.
 |xref:#add[add()]|Adds an editor instance to the editor collection. This will also set it as the active editor.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#addI18n[addI18n()]|Adds a language pack, this gets called by the loaded language files like en.js.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#createEditor[createEditor()]|Creates an editor instance and adds it to the EditorManager collection.|`xref:apis/tinymce.root.adoc[tinymce]`
-|xref:#each[each()]|Performs an iteration of all items in a collection such as an object or array. This method will execure the
+|xref:#each[each()]|Performs an iteration of all items in a collection such as an object or array. This method will execute the
 callback function for each item in the collection, if the callback returns false the iteration will terminate.
-The callback has the following format: cb(value, key_or_index).|`xref:apis/tinymce.root.adoc[tinymce]`
+The callback has the following format: `cb(value, key_or_index)`.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#execCommand[execCommand()]|Executes a specific command on the currently active editor.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#explode[explode()]|Splits a string but removes the whitespace before and after each value.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#get[get()]|Returns an editor instance for a given id.|`xref:apis/tinymce.root.adoc[tinymce]`
@@ -129,9 +129,9 @@ Creates an editor instance and adds it to the EditorManager collection.
 ----
 each(o: Object, cb: Function, s: Object)
 ----
-Performs an iteration of all items in a collection such as an object or array. This method will execure the
+Performs an iteration of all items in a collection such as an object or array. This method will execute the
 callback function for each item in the collection, if the callback returns false the iteration will terminate.
-The callback has the following format: cb(value, key_or_index).
+The callback has the following format: `cb(value, key_or_index)`.
 
 ==== Examples
 [source, javascript]

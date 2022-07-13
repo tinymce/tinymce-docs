@@ -218,13 +218,7 @@ The following event is provided by the xref:charmap.adoc[Character Map plugin].
 [[comments-events]]
 === Comments events
 
-The following event is provided by the xref:introduction-to-tiny-comments.adoc[Comments plugin].
-
-[cols="1,1,2",options="header"]
-|===
-|Name |Data |Description
-|mce-tinycomments-update |N/A |Fired when the comments sidebar is opened or closed.
-|===
+include::partial$events/tinycomments-events.adoc[]
 
 [[export-events]]
 === Export events

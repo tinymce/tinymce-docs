@@ -244,11 +244,11 @@ This update disables the *Save* UI when a comment is being saved, ensuring only 
 
 A new feature of the Comments plugin is support for annotating many block-level elements directly, using the editor annotator API (see above).
 
-A bug in this new feature, however, made it possible to, at least apparently, add a comment to an `+<hr>+` block.
+This new feature revealed an existing bug that made it possible to, at least apparently, add a comment to an `+<hr>+` block.
 
 The comment did not, in fact, attach to the horizontal rule. It attached to the Comment sidebar, which resulted in the comment showing even when surrounding paragraphs were clicked in or selected.
 
-With this update, `+<hr>+` blocks specifically cannot have comments added to them.
+With this update the bug has been fixed and `+<hr>+` blocks specifically cannot have comments added to them.
 
 
 ==== Comment text was retained in the comment placeholder after more than one comment had been submitted

@@ -148,7 +148,7 @@ tinymce.init({
 });
 ----
 
-NOTE: The comment sidebar presents with no animation or other effect. It is just there, along with any other initialised {productname} editor components. Also, as noted above, the sidebar does not take focus, which remains with the main editor.
+NOTE: The comment sidebar presents with no animation and, because of an internal {productname} change which ensures CSS loads earlier, no ‘flash’ as styles are applied. It is just there, along with any other initialised {productname} editor components. Also, as noted above, the sidebar does not take focus, which remains with the main editor.
 
 
 ==== Support annotating certain block elements directly when using the editor annotator API
@@ -164,6 +164,24 @@ Several new block elements can now have comments attached to them, including:
 * Embedded pages
 
 When comments are showing, a 3px wide colored rectangle presents around any element with a comment attached. By default this rectangle presents in two shades of yellow: one for commented elements which are selected and one for commented elements which are not selected. Using a skin can, however, change this default.
+
+
+==== The Comments sidebar now presents with a title bar
+
+When the Comments sidebar is showing, it now presents with a title bar to visually distinguish the sidebar from the {productname} document proper.
+
+The title bar label is *Comments* in English and the appropriately translated equivalent has been added to all (productname} supported languages.
+
+
+==== The Comment text-entry field placeholder text has been changed
+
+The new comment sidebar text-entry field contains placeholder text.
+
+Previously, this placeholder string was, in English, `Say something…`.
+
+For this update, the English-language string has been changed to `Add comment…`.
+
+Updated translations of this placeholder text have also been added to all (productname} supported languages.
 
 
 ==== The label name for the Save Comment button has been changed and can now be translated
@@ -189,6 +207,8 @@ NOTE: When a comment is being edited, the default button, which writes the chang
 
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
+
+
 
 
 === Enhanced Media Embed 3.0.1

@@ -1,10 +1,10 @@
 = tinymce.html.Styles
 :navtitle: tinymce.html.Styles
-:description: This class is used to parse CSS styles it also compresses styles to reduce the output size.
+:description: This class is used to parse CSS styles. It also compresses styles to reduce the output size.
 :keywords: parse, serialize
 :moxie-type: api
 
-This class is used to parse CSS styles it also compresses styles to reduce the output size.
+This class is used to parse CSS styles. It also compresses styles to reduce the output size.
 
 [[examples]]
 == Examples
@@ -31,8 +31,8 @@ console.log(tinymce.html.Styles().serialize(styles));
 |===
 |Name|Summary|Defined by
 |xref:#parse[parse()]|Parses the specified style value into an object collection. This parser will also
-merge and remove any redundant items that browsers might have added. It will also convert non hex
-colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings.|`xref:apis/tinymce.html.styles.adoc[Styles]`
+merge and remove any redundant items that browsers might have added. URLs inside
+the styles will also be converted to absolute/relative based on the settings.|`xref:apis/tinymce.html.styles.adoc[Styles]`
 |xref:#serialize[serialize()]|Serializes the specified style object into a string.|`xref:apis/tinymce.html.styles.adoc[Styles]`
 |===
 
@@ -46,16 +46,16 @@ colors to hex values. Urls inside the styles will also be converted to absolute/
 parse(css: String): Object
 ----
 Parses the specified style value into an object collection. This parser will also
-merge and remove any redundant items that browsers might have added. It will also convert non hex
-colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings.
+merge and remove any redundant items that browsers might have added. URLs inside
+the styles will also be converted to absolute/relative based on the settings.
 
 ==== Parameters
 
-* `css (String)` - Style value to parse for example: border:1px solid red;.
+* `css (String)` - Style value to parse. For example: `border:1px solid red;`
 
 ==== Return value
 
-* `Object` - Object representation of that style like {border: '1px solid red'}
+* `Object` - Object representation of that style. For example: `{ border: '1px solid red' }`
 
 '''
 
@@ -69,11 +69,11 @@ Serializes the specified style object into a string.
 
 ==== Parameters
 
-* `styles (Object)` - Object to serialize as string for example: {border: '1px solid red'}
+* `styles (Object)` - Object to serialize as string. For example: `{ border: '1px solid red' }`
 * `elementName (String)` - Optional element name, if specified only the styles that matches the schema will be serialized.
 
 ==== Return value
 
-* `String` - String representation of the style object for example: border: 1px solid red.
+* `String` - String representation of the style object. For example: `border: 1px solid red`
 
 '''

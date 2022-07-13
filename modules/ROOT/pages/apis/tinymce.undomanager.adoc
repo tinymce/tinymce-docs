@@ -1,7 +1,7 @@
 = tinymce.UndoManager
 :navtitle: tinymce.UndoManager
 :description: This class handles the undo/redo history levels for the editor. Since the built-in undo/redo has major drawbacks a custom one was needed.
-:keywords: add, beforeChange, clear, extra, hasRedo, hasUndo, ignore, redo, reset, transact, typing, undo
+:keywords: add, beforeChange, clear, dispatchChange, extra, hasRedo, hasUndo, ignore, redo, reset, transact, typing, undo
 :moxie-type: api
 
 This class handles the undo/redo history levels for the editor. Since the built-in undo/redo has major drawbacks a custom one was needed.
@@ -18,6 +18,7 @@ This class handles the undo/redo history levels for the editor. Since the built-
 |xref:#beforeChange[beforeChange()]|Stores away a bookmark to be used when performing an undo action so that the selection is before
 the change has been made.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
 |xref:#clear[clear()]|Removes all undo levels.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#dispatchChange[dispatchChange()]|Dispatch a change event with current editor status as level and current undoManager layer as lastLevel|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
 |xref:#extra[extra()]|Adds an extra "hidden" undo level by first applying the first mutation and store that to the undo stack
 then roll back that change and do the second mutation on top of the stack. This will produce an extra
 undo level that the user doesn't see until they undo.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
@@ -75,6 +76,16 @@ the change has been made.
 clear()
 ----
 Removes all undo levels.
+
+'''
+
+[[dispatchChange]]
+=== dispatchChange()
+[source, javascript]
+----
+dispatchChange()
+----
+Dispatch a change event with current editor status as level and current undoManager layer as lastLevel
 
 '''
 

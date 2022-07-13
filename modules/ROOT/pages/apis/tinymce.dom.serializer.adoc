@@ -1,7 +1,7 @@
 = tinymce.dom.Serializer
 :navtitle: tinymce.dom.Serializer
 :description: This class is used to serialize DOM trees into a string. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
-:keywords: addAttributeFilter, addNodeFilter, addRules, addTempAttr, getTempAttrs, schema, serialize, setRules
+:keywords: addAttributeFilter, addNodeFilter, addRules, addTempAttr, getTempAttrs, removeAttributeFilter, removeNodeFilter, schema, serialize, setRules
 :moxie-type: api
 
 This class is used to serialize DOM trees into a string. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
@@ -14,7 +14,7 @@ This class is used to serialize DOM trees into a string. Consult the TinyMCE API
 [cols="2,5,1",options="header"]
 |===
 |Name|Summary|Defined by
-|xref:#addAttributeFilter[addAttributeFilter()]|Adds a attribute filter function to the parser used by the serializer, the parser will
+|xref:#addAttributeFilter[addAttributeFilter()]|Adds an attribute filter function to the parser used by the serializer, the parser will
 collect nodes that has the specified attributes
 and then execute the callback once it has finished parsing the document.|`xref:apis/tinymce.dom.serializer.adoc[Serializer]`
 |xref:#addNodeFilter[addNodeFilter()]|Adds a node filter function to the parser used by the serializer, the parser will collect the specified nodes by name
@@ -25,6 +25,8 @@ Consult the TinyMCE Documentation for more details on this format.|`xref:apis/ti
 |xref:#addTempAttr[addTempAttr()]|Adds a temporary internal attribute these attributes will get removed on undo and
 when getting contents out of the editor.|`xref:apis/tinymce.dom.serializer.adoc[Serializer]`
 |xref:#getTempAttrs[getTempAttrs()]|Returns an array of all added temp attrs names.|`xref:apis/tinymce.dom.serializer.adoc[Serializer]`
+|xref:#removeAttributeFilter[removeAttributeFilter()]|Removes an attribute filter function or removes all filter functions from the parser used by the serializer for the attribute names provided.|`xref:apis/tinymce.dom.serializer.adoc[Serializer]`
+|xref:#removeNodeFilter[removeNodeFilter()]|Removes a node filter function or removes all filter functions from the parser used by the serializer for the node names provided.|`xref:apis/tinymce.dom.serializer.adoc[Serializer]`
 |xref:#serialize[serialize()]|Serializes the specified browser DOM node into a HTML string.|`xref:apis/tinymce.dom.serializer.adoc[Serializer]`
 |xref:#setRules[setRules()]|Sets the valid elements rules to the serializers schema instance this enables you to specify things
 like what elements should be outputted and what attributes specific elements might have.
@@ -38,16 +40,16 @@ Consult the TinyMCE Documentation for more details on this format.|`xref:apis/ti
 === addAttributeFilter()
 [source, javascript]
 ----
-addAttributeFilter(callback: Function)
+addAttributeFilter(name: String, callback: Function)
 ----
-Adds a attribute filter function to the parser used by the serializer, the parser will
+Adds an attribute filter function to the parser used by the serializer, the parser will
 collect nodes that has the specified attributes
 and then execute the callback once it has finished parsing the document.
 
 ==== Examples
 [source, javascript]
 ----
-parser.addAttributeFilter('src,href', (nodes, name) => {
+serializer.addAttributeFilter('src,href', (nodes, name) => {
   for (let i = 0; i < nodes.length; i++) {
     console.log(nodes[i].name);
   }
@@ -56,6 +58,7 @@ parser.addAttributeFilter('src,href', (nodes, name) => {
 
 ==== Parameters
 
+* `name (String)` - Comma separated list of attributes to collect.
 * `callback (Function)` - Callback function to execute once it has collected nodes.
 
 '''
@@ -64,7 +67,7 @@ parser.addAttributeFilter('src,href', (nodes, name) => {
 === addNodeFilter()
 [source, javascript]
 ----
-addNodeFilter(callback: Function)
+addNodeFilter(name: String, callback: Function)
 ----
 Adds a node filter function to the parser used by the serializer, the parser will collect the specified nodes by name
 and then execute the callback once it has finished parsing the document.
@@ -72,7 +75,7 @@ and then execute the callback once it has finished parsing the document.
 ==== Examples
 [source, javascript]
 ----
-parser.addNodeFilter('p,h1', (nodes, name) => {
+serializer.addNodeFilter('p,h1', (nodes, name) => {
   for (let i = 0; i < nodes.length; i++) {
     console.log(nodes[i].name);
   }
@@ -81,6 +84,7 @@ parser.addNodeFilter('p,h1', (nodes, name) => {
 
 ==== Parameters
 
+* `name (String)` - Comma separated list of nodes to collect.
 * `callback (Function)` - Callback function to execute once it has collected nodes.
 
 '''
@@ -127,6 +131,56 @@ Returns an array of all added temp attrs names.
 ==== Return value
 
 * `String[]` - Array with attribute names.
+
+'''
+
+[[removeAttributeFilter]]
+=== removeAttributeFilter()
+[source, javascript]
+----
+removeAttributeFilter(name: String, callback: Function)
+----
+Removes an attribute filter function or removes all filter functions from the parser used by the serializer for the attribute names provided.
+
+==== Examples
+[source, javascript]
+----
+// Remove a single filter
+serializer.removeAttributeFilter('src,href', someCallback);
+
+// Remove all filters
+serializer.removeAttributeFilter('src,href');
+----
+
+==== Parameters
+
+* `name (String)` - Comma separated list of attribute names to remove filters for.
+* `callback (Function)` - Optional callback function to only remove a specific callback.
+
+'''
+
+[[removeNodeFilter]]
+=== removeNodeFilter()
+[source, javascript]
+----
+removeNodeFilter(name: String, callback: Function)
+----
+Removes a node filter function or removes all filter functions from the parser used by the serializer for the node names provided.
+
+==== Examples
+[source, javascript]
+----
+// Remove a single filter
+serializer.removeNodeFilter('p,h1', someCallback);
+
+// Remove all filters
+serializer.removeNodeFilter('p,h1');
+----
+
+==== Parameters
+
+* `name (String)` - Comma separated list of node names to remove filters for.
+* `callback (Function)` - Optional callback function to only remove a specific callback.
 
 '''
 

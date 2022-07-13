@@ -42,10 +42,10 @@ tinymce.activeEditor.dom.addClass('someid', 'someclass');
 |xref:#createHTML[createHTML()]|Creates HTML string for element. The element will be closed unless an empty inner HTML string is passed in.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#createRng[createRng()]|Creates a new DOM Range object. This will use the native DOM Range API if it's
 available. If it's not, it will fall back to the custom TinyMCE implementation.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
-|xref:#decode[decode()]|Entity decodes a string. This method decodes any HTML entities, such as &aring;.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
+|xref:#decode[decode()]|Entity decodes a string. This method decodes any HTML entities, such as `&amp;aring;`.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#destroy[destroy()]|Destroys all internal references to the DOM to solve memory leak issues.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#dispatch[dispatch()]|Dispatches the specified event name and optional object on the specified target.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
-|xref:#encode[encode()]|Entity encodes a string. This method encodes the most common entities, such as <>"&.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
+|xref:#encode[encode()]|Entity encodes a string. This method encodes the most common entities, such as `<`, `>`, `"` and `&`.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#findCommonAncestor[findCommonAncestor()]|Find the common ancestor of two elements. This is a shorter method than using the DOM Range logic.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#fire[fire()]|Fires the specified event name and optional object on the specified target.
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
@@ -87,9 +87,7 @@ colors to hex values. Urls inside the styles will also be converted to absolute/
 |xref:#replace[replace()]|Replaces the specified element or elements with the new element specified. The new element will
 be cloned if multiple input elements are passed in.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#run[run()]|Executes the specified function on the element by id or dom element node or array of elements/id.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
-|xref:#select[select()]|Returns a list of the elements specified by the given CSS selector. For example "div#a1 p.test".
-This function is optimized for the most common patterns needed in TinyMCE but it also performs well enough
-on more complex patterns.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
+|xref:#select[select()]|Returns a list of the elements specified by the given CSS selector. For example: `div#a1 p.test`|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#serializeStyle[serializeStyle()]|Serializes the specified style object into a string.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#setAttrib[setAttrib()]|Sets the specified attribute of an element or elements.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#setAttribs[setAttribs()]|Sets two or more specified attributes of an element or elements.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
@@ -102,7 +100,7 @@ or the CSS style name like background-color.|`xref:apis/tinymce.dom.domutils.ado
 |xref:#show[show()]|Shows the specified element(s) by ID by setting the "display" style.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#split[split()]|Splits an element into two new elements and places the specified split
 element or elements between the new ones. For example splitting the paragraph at the bold element in
-this example <p>abc<b>abc</b>123</p> would produce <p>abc</p><b>abc</b><p>123</p>.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
+this example `<p>abc<b>abc</b>123</p>` would produce `<p>abc</p><b>abc</b><p>123</p>`.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#toggleClass[toggleClass()]|Toggles the specified class on/off.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#unbind[unbind()]|Removes the specified event handler by name and function from an element or collection of elements.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#uniqueId[uniqueId()]|Returns a unique id. This can be useful when generating elements on the fly.
@@ -311,7 +309,7 @@ alert(rng.startContainer + "," + rng.startOffset);
 ----
 decode(s: String): String
 ----
-Entity decodes a string. This method decodes any HTML entities, such as &aring;.
+Entity decodes a string. This method decodes any HTML entities, such as `&amp;aring;`.
 
 ==== Parameters
 
@@ -359,7 +357,7 @@ Dispatches the specified event name and optional object on the specified target.
 ----
 encode(text: String): String
 ----
-Entity encodes a string. This method encodes the most common entities, such as <>"&.
+Entity encodes a string. This method encodes the most common entities, such as `<`, `>`, `"` and `&`.
 
 ==== Parameters
 
@@ -1029,9 +1027,7 @@ Executes the specified function on the element by id or dom element node or arra
 ----
 select(selector: String, scope: Object): Array
 ----
-Returns a list of the elements specified by the given CSS selector. For example "div#a1 p.test".
-This function is optimized for the most common patterns needed in TinyMCE but it also performs well enough
-on more complex patterns.
+Returns a list of the elements specified by the given CSS selector. For example: `div#a1 p.test`
 
 ==== Examples
 [source, javascript]
@@ -1250,7 +1246,7 @@ split(parentElm: Element, splitElm: Element, replacementElm: Element): Element
 ----
 Splits an element into two new elements and places the specified split
 element or elements between the new ones. For example splitting the paragraph at the bold element in
-this example <p>abc<b>abc</b>123</p> would produce <p>abc</p><b>abc</b><p>123</p>.
+this example `<p>abc<b>abc</b>123</p>` would produce `<p>abc</p><b>abc</b><p>123</p>`.
 
 ==== Parameters
 
@@ -1268,15 +1264,15 @@ this example <p>abc<b>abc</b>123</p> would produce <p>abc</p><b>abc</b><p>123</p
 === toggleClass()
 [source, javascript]
 ----
-toggleClass(elm: Element, cls: [type], state: [type])
+toggleClass(elm: Element, cls: String, state: Boolean)
 ----
 Toggles the specified class on/off.
 
 ==== Parameters
 
 * `elm (Element)` - Element to toggle class on.
-* `cls ([type])` - Class to toggle on/off.
-* `state ([type])` - Optional state to set.
+* `cls (String)` - Class to toggle on/off.
+* `state (Boolean)` - Optional state to set.
 
 '''
 

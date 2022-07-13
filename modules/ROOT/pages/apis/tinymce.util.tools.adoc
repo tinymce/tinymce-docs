@@ -14,9 +14,9 @@ This class contains various utlity functions. These are also exposed directly on
 [cols="2,5,1",options="header"]
 |===
 |Name|Summary|Defined by
-|xref:#each[each()]|Performs an iteration of all items in a collection such as an object or array. This method will execure the
+|xref:#each[each()]|Performs an iteration of all items in a collection such as an object or array. This method will execute the
 callback function for each item in the collection, if the callback returns false the iteration will terminate.
-The callback has the following format: cb(value, key_or_index).|`xref:apis/tinymce.util.tools.adoc[Tools]`
+The callback has the following format: `cb(value, key_or_index)`.|`xref:apis/tinymce.util.tools.adoc[Tools]`
 |xref:#explode[explode()]|Splits a string but removes the whitespace before and after each value.|`xref:apis/tinymce.util.tools.adoc[Tools]`
 |xref:#grep[grep()]|Filters out items from the input array by calling the specified function for each item.
 If the function returns false the item will be excluded if it returns true it will be included.|`xref:apis/tinymce.util.tools.adoc[Tools]`
@@ -44,9 +44,9 @@ one array list into another.|`xref:apis/tinymce.util.tools.adoc[Tools]`
 ----
 each(o: Object, cb: Function, s: Object)
 ----
-Performs an iteration of all items in a collection such as an object or array. This method will execure the
+Performs an iteration of all items in a collection such as an object or array. This method will execute the
 callback function for each item in the collection, if the callback returns false the iteration will terminate.
-The callback has the following format: cb(value, key_or_index).
+The callback has the following format: `cb(value, key_or_index)`.
 
 ==== Examples
 [source, javascript]

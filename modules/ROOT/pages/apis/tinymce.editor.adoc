@@ -74,7 +74,7 @@ The command that you add can be executed with queryCommandState function.|`xref:
 |xref:#addQueryValueHandler[addQueryValueHandler()]|Adds a custom query value command to the editor. This function can also be used to override existing commands.
 The command that you add can be executed with queryCommandValue function.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#addShortcut[addShortcut()]|Adds a keyboard shortcut for some command or function.|`xref:apis/tinymce.editor.adoc[Editor]`
-|xref:#addVisual[addVisual()]|Adds visual aid for tables, anchors etc so they can be more easily edited inside the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#addVisual[addVisual()]|Adds visual aids for tables, anchors, etc so they can be more easily edited inside the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#convertURL[convertURL()]|URL converter function this gets executed each time a user adds an img, a or
 any other element that has a URL in it. This will be called both by the DOM and HTML
 manipulation functions.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -280,11 +280,11 @@ editor.addShortcut('meta+shift+32', 'Inserts "Hello, World!" for meta+shift+spac
 ----
 addVisual(elm: Element)
 ----
-Adds visual aid for tables, anchors etc so they can be more easily edited inside the editor.
+Adds visual aids for tables, anchors, etc so they can be more easily edited inside the editor.
 
 ==== Parameters
 
-* `elm (Element)` - Optional root element to loop though to find tables etc that needs the visual aid.
+* `elm (Element)` - Optional root element to loop though to find tables, etc that needs the visual aid.
 
 '''
 

@@ -14,10 +14,10 @@ Utility class for working with delayed actions like setTimeout.
 [cols="2,5,1",options="header"]
 |===
 |Name|Summary|Defined by
-|xref:#setEditorInterval[setEditorInterval()]|Sets an interval timer it's similar to setInterval except that it checks if the editor instance is
-still alive when the callback gets executed.|`xref:apis/tinymce.util.delay.adoc[Delay]`
-|xref:#setEditorTimeout[setEditorTimeout()]|Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is
-still alive when the callback gets executed.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#setEditorInterval[setEditorInterval()]|Sets an interval timer that's similar to native browser link:https://developer.mozilla.org/en-US/docs/Web/API/setInterval[setInterval]
+API, except that it checks if the editor instance is still alive when the callback gets executed.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#setEditorTimeout[setEditorTimeout()]|Sets a timeout that's similar to the native browser link:https://developer.mozilla.org/en-US/docs/Web/API/setTimeout[setTimeout]
+API, except that it checks if the editor instance is still alive when the callback gets executed.|`xref:apis/tinymce.util.delay.adoc[Delay]`
 |===
 
 [[methods]]
@@ -29,8 +29,8 @@ still alive when the callback gets executed.|`xref:apis/tinymce.util.delay.adoc[
 ----
 setEditorInterval(callback: Function, time: Number): Number
 ----
-Sets an interval timer it's similar to setInterval except that it checks if the editor instance is
-still alive when the callback gets executed.
+Sets an interval timer that's similar to native browser link:https://developer.mozilla.org/en-US/docs/Web/API/setInterval[setInterval]
+API, except that it checks if the editor instance is still alive when the callback gets executed.
 
 ==== Parameters
 
@@ -49,8 +49,8 @@ still alive when the callback gets executed.
 ----
 setEditorTimeout(editor: tinymce.Editor, callback: Function, time: Number): Number
 ----
-Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is
-still alive when the callback gets executed.
+Sets a timeout that's similar to the native browser link:https://developer.mozilla.org/en-US/docs/Web/API/setTimeout[setTimeout]
+API, except that it checks if the editor instance is still alive when the callback gets executed.
 
 ==== Parameters
 

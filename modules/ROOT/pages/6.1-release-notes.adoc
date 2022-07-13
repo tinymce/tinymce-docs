@@ -352,7 +352,7 @@ results in the following, complete, link and no trailing text
 
 [source,html]
 ----
-<a href="https://example.com/!exclamation-point">
+<a href="https://example.com/!exclamation-point">https://example.com/!exclamation-point</a>
 ----
 
 NOTE: Exclamation points and colons are still boundary characters for URL detection and delimiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.

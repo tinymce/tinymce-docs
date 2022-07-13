@@ -576,21 +576,22 @@ For example, in ordinary text, pressing *Shift+Return* enters two `<br>` tags an
 
 The `newline_behavior` option takes one of four values:
 
-* `block`
-+
-`block` sets {productname} to treat all four keystrokes as if they are *Return*.
-  
-* `linebreak`
-+
-`linebreak` sets {productname} to treat all four keystrokes as if they are *Shift+Return*.
-  
-* `invert`
-+
-`invert` swaps the behavior or *Return* and *Shift+Return* (and *Enter* and *Shift+Enter*). That is, pressing *Return* results in *Shift-Return* behavior, and vice versa.
+[cols="1,1"]
+|===
+|Value |Action
+|`block`
+|sets {productname} to treat all four keystrokes as if they are *Return*.
 
-* `default`
-+
-`default`, as its name suggests, sets {productname} to do what it does by default when *Return*, *Enter*, *Shift+Return*, or *Shift+Enter* are pressed.
+|`linebreak`
+|sets {productname} to treat all four keystrokes as if they are *Shift+Return*.
+
+|`invert`
+|swaps the behavior or *Return* and *Shift+Return* (and *Enter* and *Shift+Enter*). That is, pressing *Return* results in *Shift-Return* behavior, and vice versa.
+
+|`default`
+|`default`, as its name suggests, sets {productname} to do what it does by default when *Return*, *Enter*, *Shift+Return*, or *Shift+Enter* are pressed.
+|===
+
 
 NOTE: Two other commands that, in their effect, add new lines to a {productname} document are `InsertParagraph` and `InsertLineBreak`. Their behavior is not affected by any `newline_behavior` option.
 

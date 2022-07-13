@@ -281,7 +281,7 @@ The {productname} 6.1 release includes an accompanying release of the **Enhanced
 
 ==== Console warnings were logged incorrectly when the media plugin was not used
 
-Previously, a ‘`media_url_resolver` not registered’ warning was printed to the console when the Enhanced Media Embed was not used.
+Previously, a `'media_url_resolver' not registered` warning was printed to the console when the Enhanced Media Embed was not used.
 
 This update corrects this error. When the plugin is not used, extraneous warnings are no longer sent to the console.
 

@@ -4,6 +4,17 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.1.1 - 2022-07-27
+
+=== Fixed
+* Invalid special elements were not cleaned up correctly during sanitization.
+* An exception was thrown when deleting all content if the start or end of the document had a `contenteditable="false"` element.
+* When a sidebar was opened using the `sidebar_show` option, its associated toolbar button was not highlighted.
+* When converting a URL to a link, the `autolink` plugin did not fire an `ExecCommand` event, nor did it create an undo level.
+* Worked around a Firefox bug which resulted in cookies not being available inside the editor content.
+* `<pre>` content pasted into a `<pre>` block that had inline styles or was `noneditable` now merges correctly with the surrounding content.
+* After a `codesample` was pasted, the insertion point was placed incorrectly.
+
 == 6.1.0 - 2022-06-29
 
 === Added

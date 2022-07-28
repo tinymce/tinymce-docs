@@ -10,11 +10,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} 6.1.1 was released for {enterpriseversion} and {cloudname} on Wednesday, August 3^rd^, 2022. It includes {productname} 6.1.1. These release notes provide an overview of the changes for {productname} 6.1.1:
 
-* xref:general-bug-fixes[General bug fixes]
+* xref:bug-fixes[Bug fixes]
 * xref:known-issues[Known issues]
 
-[[general-bug-fixes]]
-== General bug fixes
+[[bug-fixes]]
+== Bug fixes
 
 
 === Invalid special elements were not cleaned up correctly during sanitization

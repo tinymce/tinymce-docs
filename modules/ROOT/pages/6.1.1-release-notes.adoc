@@ -32,8 +32,8 @@ If the first or last element in a {productname} document had a `contenteditable=
 
 With this update, the exception is no longer thrown in this circumstance. In {productname} 6.1.1, selecting all of a {productname} document that includes a `contenteditable="false"` property at the beginning or end of the document and deleting the selected contents produces no console error.
 
-
-=== When a sidebar was opened using the `sidebar_show` option, its associated toggle button was not highlighted
+[[show-comments-toolbar-button-highlights]]
+=== When a sidebar was opened using the `sidebar_show` option, its associated toolbar button was not highlighted
 
 If a {productname} instance presents a toolbar which includes a Show comments button — `toolbar: "showcomments",` — this button is highlighted when the Comments sidebar is visible.
 

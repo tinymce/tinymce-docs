@@ -66,6 +66,7 @@ In doing so, however, {productname} became subject to a bug in Firefox: https://
 NOTE: This is a Firefox-specific workaround. When other browsers are the host, {productname} continues to use the, newer, `srcDoc` attribute.
 
 
+[[pre-content-now-correctly-merges]]
 === Pasting `<pre>` content into a `<pre>` block that had inline styles or was `noneditable` now correctly merges with the surrounding content.
 
 Previously, when a `<pre>` block was pasted into a `noneditable` block, or was pasted into a `<pre>` block that also contained content with inline styles applied (such as `<strong>`), the pasted-in block did not merge correctly.

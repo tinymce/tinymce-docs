@@ -4,6 +4,11 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.1.2 - 2022-07-29
+
+=== Fixed
+* Reverted the undo level fix in the `autolink` plugin as it caused duplicated content in some edge cases.
+
 == 6.1.1 - 2022-07-27
 
 === Fixed

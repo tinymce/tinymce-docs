@@ -82,7 +82,7 @@ NOTE: This was a known issue in the {productname} 6.1 release.
 
 === After a `codesample` was pasted, the insertion point was placed incorrectly
 
-Previously, if a `codesample` block (or other block with a `contenteditable="false"` attribute applied) was copied and then pasted, the insertion point was, incorrectly, placed inside the `contenteditable="false"` block.
+Previously, if a `codesample` block (or other pre block with a `contenteditable="false"` attribute applied) was copied and then pasted, the insertion point was, incorrectly, placed inside the `contenteditable="false"` block.
 
 With this update, when a `codesample` is pasted in a {productname} document, the insertion point is placed immediately after and outside the `contenteditable="false"` block, as expected.
 

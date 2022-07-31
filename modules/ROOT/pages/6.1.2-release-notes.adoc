@@ -80,7 +80,7 @@ In {productname} 6.1.2, pasting `<pre>` blocks merges with surrounding content a
 NOTE: This was a known issue in the {productname} 6.1 release.
 
 
-=== After a `codesample` was pasted, the insertion point was placed incorrectly. #TINY-8861
+=== After a `codesample` was pasted, the insertion point was placed incorrectly
 
 Previously, if a `codesample` block (or other block with a `contenteditable="false"` attribute applied) was copied and then pasted, the insertion point was, incorrectly, placed inside the `contenteditable="false"` block.
 

@@ -44,15 +44,15 @@ With the {productname} 6.1.2 update, this visual misbehavior has been corrected.
 NOTE: This was a known issue in the {productname} 6.1 release.
 
 
-=== When converting a URL to a link, the `autolink` plugin did not fire an `ExecCommand` event, nor did it create an undo level #TINY-8896
+=== When converting a URL to a link, the `autolink` plugin did not fire an `ExecCommand` event
 
 The `autolink` plugin converts typed or pasted strings that match its criteria for being URLs into clickable blocks. It acts when a word-boundary character (such as a space or a closing bracket) is typed.
 
-In {productname} 6, however, the plugin did not fire an `ExecCommand` event and did not add the link-creation to the undo stack.
+In {productname} 6, however, the plugin did not fire an `ExecCommand` event.
 
-Consequently no record of the link creation was available. As well, stepping through the availble undo actions did not present an undo step where the typed or pasted string was present but not a clickable link. Instead, undoing went straight to removing the typed or pasted string.
+Consequently no record of the link creation was available.
 
-This update corrects this. In {productname} 6.1.2, the `autolink` plugin both fires an `ExecCommand` event and adds link-creation to the undo stack, as expected.
+This update corrects this. In {productname} 6.1.2, the `autolink` plugin fires an `ExecCommand` event, as expected.
 
 
 === Worked around a Firefox bug that results in cookies not being available inside the editor content

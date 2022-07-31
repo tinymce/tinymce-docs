@@ -63,7 +63,7 @@ In doing so, however, {productname} became subject to a bug in Firefox: https://
 
 {productname} 6.1.2 includes a workaround: if Firefox is the host browser, iframe content is loaded using the older `iframe.contentDocument.write()` API. This ensures set cookies are available to {productname}.
 
-NOTE: This is a Firefox-specific workaround. When other browsers are the host, {productname} continues to use the, newer, `srcDoc` attribute.
+NOTE: This is a Firefox-specific workaround. When other browsers are the host, {productname} continues to use the, newer, `srcdoc` attribute.
 
 
 [[pre-content-now-correctly-merges]]

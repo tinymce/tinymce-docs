@@ -57,7 +57,7 @@ This update corrects this. In {productname} 6.1.2, the `autolink` plugin fires a
 
 === Worked around a Firefox bug that results in cookies not being available inside the editor content
 
-As part of the changes made for version 6, {productname} switched from the now-partly deprecated `iframe.contentDocument.write()` browser API to the newer, `srcDoc` attribute.
+As part of the changes made for version 6, {productname} switched from the now-partly deprecated `iframe.contentDocument.write()` browser API to the newer, `srcdoc` attribute.
 
 In doing so, however, {productname} became subject to a bug in Firefox: https://bugzilla.mozilla.org/show_bug.cgi?id=1741489[Firefox bug 1741489: cookies from parent window aren’t sent in iframe via srcDoc]. This Firefox bug causes cookies to not be available to the {productname} editor.
 

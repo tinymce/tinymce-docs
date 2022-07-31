@@ -67,7 +67,7 @@ NOTE: This is a Firefox-specific workaround. When other browsers are the host, {
 
 
 [[pre-content-now-correctly-merges]]
-=== Pasting `<pre>` content into a `<pre>` block that had inline styles or was `noneditable` now correctly merges with the surrounding content.
+=== Pasting `<pre>` content into a `<pre>` block that had inline styles or was `noneditable` now correctly merges with the surrounding content
 
 Previously, when a `<pre>` block was pasted into a `noneditable` block, or was pasted into a `<pre>` block that also contained content with inline styles applied (such as `<strong>`), the pasted-in block did not merge correctly.
 

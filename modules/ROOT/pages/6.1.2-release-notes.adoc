@@ -19,7 +19,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 === Invalid special elements were not cleaned up correctly during sanitization
 
-In {productname} 5.x, loading data that contained invalid elements resulted in the invalid elements and their contents being removed before the data was placed in a {productname} document.
+In {productname} 5.x, loading data that contained invalid special elements resulted in the invalid elements and their contents being removed before the data was placed in a {productname} document.
 
 In {productname} 6, a change to the DomParser introduced a regression: invalid elements were still filtered out, but their contents were placed in the {productname} document as plain text.
 

@@ -35,11 +35,19 @@ With this update, the exception is no longer thrown in this circumstance. In {pr
 [[show-comments-toolbar-button-highlights]]
 === When a sidebar was opened using the `sidebar_show` option, its associated toolbar button was not highlighted
 
-If a {productname} instance presents a toolbar which includes a Show comments button — `toolbar: "showcomments",` — this button is highlighted when the Comments sidebar is visible.
+If a {productname} instance is set to initialize with both a sidebar and an associated toolbar button, the toolbar button should be highlighted.
 
-However, in {productname} 6.1, if the Comments sidebar is set to show at initialization — `sidebar_show: 'showcomments',` — the Show comments button did not highlight.
+If, for example, a {productname} instance 
 
-With the {productname} 6.1.2 update, this visual misbehavior has been corrected. When the Comments sidebar is set to show on initialization, the Show comments button, if present, is now highlighted.
+1. presents a toolbar which includes a Show comments button — `toolbar: "showcomments",` and
+
+2. has Comments set to appear at initialization — `sidebar_show: 'showcomments',` 
+
+the _Show Comments_ button should be highlighted on {productname} initialization.
+
+However, in {productname} 6.1, if a sidebar and its associated toolbar button were both set to appear on initialization, the associated toolbar button did not hightlight.
+
+With the {productname} 6.1.2 update, this visual misbehavior has been corrected. When a sidebar is set to show on initialization, the associated toolbar button, if present, is now highlighted.
 
 NOTE: This was a known issue in the {productname} 6.1 release.
 

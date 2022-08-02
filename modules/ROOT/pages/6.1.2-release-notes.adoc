@@ -30,7 +30,7 @@ The {productname} 6.1.2 update reverts this regression. When input data is being
 
 If the first or last element in a {productname} document had a `contenteditable="false"` property and the entire {productname} document was selected (eg, *Edit > Select All* was chosen), pressing the Delete or Backspace key resulted in a console error: `Uncaught Error: Node cannot be null or undefined`.
 
-With this update, the exception is no longer thrown in this circumstance. In {productname} 6.1.2, selecting all of a {productname} document that includes a `contenteditable="false"` property at the beginning or end of the document and deleting the selected contents produces no console error.
+With this update, the exception is no longer thrown in this circumstance. In {productname} 6.1.2, selecting all of a {productname} document that includes a `contenteditable="false"` element at the beginning or end of the document and deleting the selected contents produces no console error.
 
 [[toolbar-button-highlights]]
 === When a sidebar was opened using the `sidebar_show` option, its associated toolbar button was not highlighted

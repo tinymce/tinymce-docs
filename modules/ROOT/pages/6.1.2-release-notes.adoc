@@ -41,7 +41,7 @@ If, for example, a {productname} instance
 
 1. presents a toolbar which includes a Show comments button — `toolbar: "showcomments",` and
 
-2. has Comments set to appear at initialization — `sidebar_show: 'showcomments',` 
+2. has Comments set to appear at initialization — `sidebar_show: "showcomments"` 
 
 the _Show Comments_ button should be highlighted on {productname} initialization.
 

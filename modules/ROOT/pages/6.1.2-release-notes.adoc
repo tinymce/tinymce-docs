@@ -45,7 +45,7 @@ If, for example, a {productname} instance
 
 the _Show Comments_ button should be highlighted on {productname} initialization.
 
-However, in {productname} 6.1, if a sidebar and its associated toolbar button were both set to appear on initialization, the associated toolbar button did not hightlight.
+However, in {productname} 6.1, if a sidebar and its associated toolbar button were both set to appear on initialization, the associated toolbar button was not highlighted.
 
 With the {productname} 6.1.2 update, this visual misbehavior has been corrected. When a sidebar is set to show on initialization, the associated toolbar button, if present, is now highlighted.
 

@@ -7,6 +7,8 @@
 [[fullfeaturedincludingpremiumplugins]]
 == Full Featured: Including Premium Plugins
 
+IMPORTANT: This demonstration page is for {productname} 5.10. {productname} 5.10 is still a supported version but it is not the current release. The full-featured demonstration page for {productname} 6 is xref:tinymce/6/full-featured-premium-demo.adoc[available] in the {productname} 6 xref:tinymce/6/[documentation].
+
 This example includes most of the available {productname} plugins, including plugins available on {cloudname} premium subscriptions. Please note, it includes link:{plugindirectory}[premium plugins].
 
 Want to try it for yourself ? link:{accountsignup}[Get started with TinyMCE now on Cloud].
@@ -17,12 +19,13 @@ The following plugins are excluded from this example:
 
 * xref:plugins/premium/moxiemanager.adoc[MoxieManager (Premium Plugin)] -- xref:plugins/premium/tinydrive.adoc[*{cloudfilemanager}*] included instead.
 * xref:plugins/opensource/autoresize.adoc[Autoresize] -- Resizes the editor to fit the content.
-* xref:plugins/opensource/bbcode.adoc[BBCode] -- Changes the markup used for the content.
+* xref:plugins/opensource/bbcode.adoc[BBCode] -- Changes the markup used for the content. xref:release-notes/6.0-upcoming-changes/#plugins[Deprecated] as of {productname} 5.9.
 * xref:plugins/opensource/code.adoc[Code] -- xref:plugins/premium/advcode.adoc[*Advanced Code Editor*] included instead.
-* xref:plugins/opensource/fullpage.adoc[Full Page] -- Used for modifying HTML `<head>` elements.
+* xref:plugins/opensource/fullpage.adoc[Full Page] -- Used for modifying HTML `<head>` elements. xref:release-notes/6.0-upcoming-changes/#plugins[Deprecated] as of {productname} 5.9.
 * xref:plugins/opensource/paste.adoc[Paste] -- xref:plugins/premium/powerpaste.adoc[*PowerPaste*] included instead.
 * xref:plugins/opensource/spellchecker.adoc[Spellchecker] -- xref:plugins/premium/tinymcespellchecker.adoc[*Spell Checker Pro*] included instead.
 * xref:plugins/opensource/tabfocus.adoc[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
+
 
 == Full Featured: Non-Premium Plugins
 
@@ -34,7 +37,7 @@ The following plugins are excluded from this example:
 
 * link:{plugindirectory}[All premium plugins].
 * xref:plugins/opensource/autoresize.adoc[Autoresize] -- Resizes the editor to fit the content.
-* xref:plugins/opensource/bbcode.adoc[BBCode] -- Changes the markup used for the content.
-* xref:plugins/opensource/fullpage.adoc[Full Page] -- Used for modifying HTML `<head>` elements.
-* xref:plugins/opensource/spellchecker.adoc[Spellchecker] -- Requires Server-Side components, see: xref:general-configuration-guide/spell-checking.adoc[Check spelling in {productname}].
+* xref:plugins/opensource/bbcode.adoc[BBCode] -- Changes the markup used for the content. xref:release-notes/6.0-upcoming-changes/#plugins[Deprecated] as of {productname} 5.9.
+* xref:plugins/opensource/fullpage.adoc[Full Page] -- Used for modifying HTML `<head>` elements. xref:release-notes/6.0-upcoming-changes/#plugins[Deprecated] as of {productname} 5.9.
+* xref:plugins/opensource/spellchecker.adoc[Spellchecker] -- Requires Server-Side components, see: xref:general-configuration-guide/spell-checking.adoc[Check spelling in {productname}]. xref:release-notes/release-notes54/#thefreetinymcespellcheckerplugin[Deprecated] as of {productname} 5.4.
 * xref:plugins/opensource/tabfocus.adoc[Tab Focus] -- Changes the behavior of the TAB-key within the editor.

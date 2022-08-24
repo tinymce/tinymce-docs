@@ -78,6 +78,9 @@ tinymce.init({
       icon: 'comment',
       onSetup: (api) => {
         console.log('Render panel', api.element());
+			return () => {
+		 	api.element().removeChild(box);
+			};
       },
       onShow: (api) => {
         console.log('Show panel', api.element());
@@ -100,8 +103,11 @@ tinymce.PluginManager.add('myplugin', (editor) => {
     tooltip: 'My sidebar',
     icon: 'comment',
     onSetup: (api) => {
-      console.log('Render panel', api.element());
-    },
+     console.log('Render panel', api.element());
+      return () => {
+	   api.element().removeChild(box);
+	  };
+	},
     onShow: (api) => {
       console.log('Show panel', api.element());
       api.element().innerHTML = 'Hello world!';

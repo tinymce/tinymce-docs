@@ -79,7 +79,7 @@ tinymce.init({
       onSetup: (api) => {
         console.log('Render panel', api.element());
 			return () => {
-		 	api.element().removeChild(box);
+		 	api.element().focus();
 			};
       },
       onShow: (api) => {
@@ -105,7 +105,7 @@ tinymce.PluginManager.add('myplugin', (editor) => {
     onSetup: (api) => {
      console.log('Render panel', api.element());
       return () => {
-	   api.element().removeChild(box);
+	   api.element().focus();
 	  };
 	},
     onShow: (api) => {

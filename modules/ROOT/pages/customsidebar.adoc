@@ -105,10 +105,11 @@ tinymce.PluginManager.add('myplugin', (editor) => {
     icon: 'comment',
     onSetup: (api) => {
      console.log('Render panel', api.element());
-      return () => {
-	   api.element().focus();
-	  };
-	},
+     api.element().focus();
+     return () => {
+       editor.focus();
+     };
+   },
     onShow: (api) => {
       console.log('Show panel', api.element());
       api.element().innerHTML = 'Hello world!';

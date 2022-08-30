@@ -5,7 +5,9 @@
 :pluginname: Media
 :plugincode: media
 
-The `+media+` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the item `+Insert/edit video+` under the `+Insert+` menu as well as a toolbar button.
+The `+media+` plugin provides users with the ability to add HTML5 video and audio elements to the editable area.
+
+It also adds the `+Insert/edit video+` menu item under the `+Insert+` menu and adds an `+Insert/edit video+` toolbar button.
 
 == Basic setup
 
@@ -20,7 +22,9 @@ tinymce.init({
 
 == Options
 
-These settings affect the execution of the `+media+` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
+These settings affect the execution of the `+media+` plugin, making it possible to disable parts of the media dialog box made available to an end-user inserting or editing media items.
+
+In addition there are options here for disabling the cross-site scripting (XSS) sanitation filter. This filter is enabled by default for the `+media+` plugin.
 
 include::partial$configuration/audio_template_callback.adoc[leveloffset=+1]
 

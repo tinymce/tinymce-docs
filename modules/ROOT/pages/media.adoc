@@ -20,7 +20,7 @@ tinymce.init({
 
 == Options
 
-These settings affect the execution of the `+media+` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
+These settings affect the execution of the `+media+` plugin, namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
 include::partial$configuration/audio_template_callback.adoc[leveloffset=+1]
 

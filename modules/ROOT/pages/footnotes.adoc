@@ -27,7 +27,11 @@ tinymce.init({
 });
 ----
 
-The footnotes section is automatically created and updated whenever an intext footnote is inserted into the editor, and located at the bottom of the editor. An intext footnote can be inserted using the _Insert footnote_ button, located in the _Insert_ menu or on the toolbar. 
+A footnotes section is automatically created and updated whenever a footnote is inserted into the {productname} editor.
+
+This footnotes section is placed at the bottom of the {productname} editor.
+
+Footnotes can be inserted using the _Insert footnote_ button, located in the _Insert_ menu or on the toolbar. 
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

@@ -1,0 +1,53 @@
+[[mergetags_list]]
+== `+mergetags_list+`
+
+This option allows you to specify the suffix which will be attached to each merge tag.
+
+*Type:* `+Array+`
+
+*Default value:* `+}}+`
+
+=== Example: Using `+mergetags_list+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  mergetags_list: [
+    {
+      value: 'Current.Date',
+      title: 'Current date in DD/MM/YYYY format'
+    },
+    {
+      value: 'Current.Time',
+    },
+    {
+      title: 'Person',
+      menu: [
+        {
+          value: 'Person.Name.First',
+          title: 'first name'
+        },
+        {
+          value: 'Person.Name.Last',
+          title: 'last name'
+        },
+        {
+          value: 'Person.Name.Full',
+          title: 'full name'
+        },
+        {
+          title: 'Email',
+          menu: [{
+            value: 'Person.Email.Work'
+          },
+          {
+            value: 'Person.Email.Home'
+          },
+          ]
+        }
+      ]
+    }
+  ]
+});
+----

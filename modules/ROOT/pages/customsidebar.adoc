@@ -77,11 +77,11 @@ tinymce.init({
       tooltip: 'My sidebar',
       icon: 'comment',
       onSetup: (api) => {
-      console.log('Render panel', api.element());
-      return () => {
-        console.log('Removing sidebar');
+        console.log('Render panel', api.element());
+        return () => {
+          console.log('Removing sidebar');
+        };
       };
-    };
       onShow: (api) => {
         console.log('Show panel', api.element());
         api.element().innerHTML = 'Hello world!';

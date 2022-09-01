@@ -81,7 +81,7 @@ tinymce.init({
         return () => {
           console.log('Removing sidebar');
         };
-      };
+      },
       onShow: (api) => {
         console.log('Show panel', api.element());
         api.element().innerHTML = 'Hello world!';

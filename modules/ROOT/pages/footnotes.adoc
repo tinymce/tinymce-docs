@@ -1,0 +1,40 @@
+= Footnotes plugin
+:navtitle: Footnotes
+:description: Insert footnotes into the {productname} editor
+:keywords: footnotes, footnote, tableofcontents_class, tableofcontents_header, toc
+:pluginname: Footnotes
+:plugincode: footnotes
+:pluginminimumplan: tiertwo
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+The {pluginname} plugin allows the user to insert a footnote into the editor at the current cursor position, and add a related entry to a footnotes section located at the bottom of the editor.
+
+== Interactive Example
+
+// live demo
+
+include::partial$misc/purchase-premium-plugins.adoc[]
+
+== Basic setup
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'footnotes',
+  toolbar: 'footnotes footnotesupdate',
+});
+----
+
+The _Footnotes_ is automatically created and updated whenever an intext _footnote_ is inserted into the editor, and will be located at the bottom of the editor. An intext _footnote_ can be inserted using the _Insert footnote_ button, located in the _Insert_ menu or on the toolbar. 
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/footnotes-cmds.adoc[]

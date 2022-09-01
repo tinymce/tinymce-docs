@@ -102,7 +102,7 @@ tinymce.PluginManager.add('myplugin', (editor) => {
   editor.ui.registry.addSidebar('mysidebar', {
     tooltip: 'My sidebar',
     icon: 'comment',
-      onSetup: (api) => {
+    onSetup: (api) => {
       console.log('Render panel', api.element());
       return () => {
         console.log('Removing sidebar');

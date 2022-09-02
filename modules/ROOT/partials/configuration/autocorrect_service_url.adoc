@@ -1,0 +1,19 @@
+[[autocorrect_service_url]]
+
+== `+autocorrect_service_url+`
+
+This option allows you to specify the 
+
+*Type:* `+String+`
+
+*Default value:* `+''+`
+
+=== Example: Using `+autocorrect_service_url+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  autocorrect_service_url: 'https://spelling.tiny.cloud'
+});
+----

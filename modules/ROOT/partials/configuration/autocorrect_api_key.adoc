@@ -1,0 +1,17 @@
+[[autocorrect_api_key]]
+
+== `+autocorrect_api_key+`
+
+This option allows you to specify the 
+
+*Type:* `+String+`
+
+=== Example: Using `+autocorrect_api_key+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  autocorrect_api_key: '<<48-bit api key>>'
+});
+----

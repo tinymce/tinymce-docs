@@ -1,0 +1,19 @@
+[[autocorrect_autocorrect]]
+
+== `+autocorrect_autocorrect+`
+
+This option allows you to specify the 
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+=== Example: Using `+autocorrect_autocorrect+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  autocorrect_autocorrect: true
+});
+----

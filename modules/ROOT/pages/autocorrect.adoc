@@ -1,0 +1,46 @@
+= Spelling Autocorrect plugin
+:navtitle: Spelling Autocorrect
+:description: Autocorrect for common spelling mistakes.
+:keywords: autocorrect, capitalization, spell, spelling, spellcheck
+:pluginname: Spelling Autocorrect
+:plugincode: autocorrect
+:pluginminimumplan: tiertwo
+
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+The {pluginname} plugin will automatically correct a specific set of spelling errors as they are typed.
+
+== Interactive Example
+
+liveDemo::autocorrect[]
+
+include::partial$misc/purchase-premium-plugins.adoc[]
+
+== Basic setup
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autocorrect'
+});
+----
+
+== Options
+
+include::partial$configuration/autocorrect_api_key.adoc[leveloffset=+1]
+
+include::partial$configuration/autocorrect_autocorrect.adoc[leveloffset=+1]
+
+include::partial$configuration/autocorrect_capitalize.adoc[leveloffset=+1]
+
+include::partial$configuration/autocorrect_rpc_url.adoc[leveloffset=+1]
+
+include::partial$configuration/autocorrect_service_url.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Events
+
+include::partial$events/{plugincode}-events.adoc[]

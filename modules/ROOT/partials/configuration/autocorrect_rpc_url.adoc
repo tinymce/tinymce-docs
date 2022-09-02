@@ -1,0 +1,19 @@
+[[autocorrect_rpc_url]]
+
+== `+autocorrect_rpc_url+`
+
+This option allows you to specify the 
+
+*Type:* `+String+`
+
+*Default value:* `+''+`
+
+=== Example: Using `+autocorrect_rpc_url+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  autocorrect_rpc_url: 'https://spelling.tiny.cloud'
+});
+----

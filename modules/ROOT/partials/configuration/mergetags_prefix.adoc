@@ -1,7 +1,9 @@
 [[mergetags_prefix]]
 == `+mergetags_prefix+`
 
-This option allows you to specify the prefix which will be attached to each merge tag, and which will trigger the {pluginname} autocompleter within the editor.
+This option specifies the prefix to be attached to each merge tag.
+
+Whatever this option is set to, when it is typed, it triggers the {pluginname} autocompleter within the editor.
 
 *Type:* `+String+`
 

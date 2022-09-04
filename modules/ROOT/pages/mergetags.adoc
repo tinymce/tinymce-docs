@@ -8,9 +8,20 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The {pluginname} plugin allows the user to insert a merge tag from a drop-down list when a specified prefix is typed, leaving a non-editable variable wrapped in a prefix and a suffix making the tag easily identifiable.
+The {pluginname} plugin allows the user to insert a merge tag from a drop-down list when a specified prefix is typed.
 
-The {pluginname} plugin provides an xref:autocompleter.adoc[autocompleter] for adding a merge tag without using the toolbar button or menu item. The autocompleter is triggered by typing a specified prefix, controlled by the xref:#mergetags_prefix[`+mergetags_prefix+`] option which by default is `{{`, with any further characters filtering the list of merge tags.
+Once the merge tag is inserted, the plugin leaves
+
+* a non-editable variable wrapped in a prefix; and
+* a suffix making the tag easily identifiable.
+
+The {pluginname} plugin provides an xref:autocompleter.adoc[autocompleter] for adding a merge tag without using the toolbar button or menu item.
+
+The autocompleter is triggered by typing a specified prefix, controlled by the xref:#mergetags_prefix[`+mergetags_prefix+`] option.
+
+By default, this prefix is `{{`.
+
+Entering characters after the prefix begins filtering the merge tags list.
 
 == Interactive Example
 

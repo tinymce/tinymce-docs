@@ -8,7 +8,11 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The {pluginname} plugin allows the user to insert a footnote into the editor at the current cursor position, and add a related entry to a footnotes section located at the bottom of the editor.
+The {pluginname} plugin allows the user to insert a footnote into the {productname} editor.
+
+Invoking the plugin adds a superscripted footnote number at the current insertion point, or at the end of the current selection.
+
+The plugin then places the insertion point in a new line in the footnotes section located at the bottom of the editor, allowing the user to add the footnote entry related to the newly-created footnote.
 
 == Interactive Example
 

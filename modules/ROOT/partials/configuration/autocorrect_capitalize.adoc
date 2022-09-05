@@ -2,11 +2,15 @@
 
 == `+autocorrect_capitalize+`
 
-This option allows you to specify the 
+This option enables or disables the autocorrection for capitalization errors when the editor is loaded. When set to `false`, the autocorrection will be disabled when the editor is initialized.
+
+NOTE: The user's preference takes precendence over the configuration at the next initialization. The user's preference is saved to `localStorage` when the user enables or disables the autocorrection via menu item.
 
 *Type:* `+Boolean+`
 
-*Default value:* `+false+`
+*Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `+autocorrect_capitalize+`
 
@@ -14,6 +18,6 @@ This option allows you to specify the
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  autocorrect_capitalize: true
+  autocorrect_capitalize: false
 });
 ----

@@ -1,6 +1,6 @@
 = Spelling Autocorrect plugin
 :navtitle: Spelling Autocorrect
-:description: Autocorrect for common spelling mistakes.
+:description: Autocorrect common spelling mistakes.
 :keywords: autocorrect, capitalization, spell, spelling, spellcheck
 :pluginname: Spelling Autocorrect
 :plugincode: autocorrect
@@ -9,7 +9,7 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The {pluginname} plugin automatically corrects a specified set of spelling errors, capitalization errors, or both, as they are typed.
+The {pluginname} plugin automatically corrects a specified set of spelling errors, capitalization errors, or both, as they are being typed.
 
 == Interactive Example
 
@@ -28,8 +28,6 @@ tinymce.init({
 ----
 
 == Options
-
-include::partial$configuration/autocorrect_api_key.adoc[leveloffset=+1]
 
 include::partial$configuration/autocorrect_autocorrect.adoc[leveloffset=+1]
 

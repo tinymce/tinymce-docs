@@ -1,0 +1,15 @@
+== Inline formatting.
+
+Bullets and numbers are spot- or inline-formatted by default.
+
+If an end-user selects the contents of a list item and applies inline formatting, such as a change of color or change of font-size, this spot formatting is also applied to the bullet or number.
+
+NOTE: PowerPaste does not, currently, support inline-formatted bullets or list numbers. Inline-formatting, as applied to the bullets or list numbers, is lost when such material is copied and pasted.
+
+Only the bullets or list numbers associated with the selection are inline-formatted.
+
+If the selection is one list item (ie, if the selection runs from an particular `<li>` tag to its associated `</li>` tag), only the bullet or number associated with the single selected list item takes on the inline-formatting.
+
+If the selection is the entire list, (ie, if the selection runs from the list’s opening `<ol>` or `<ul>` tag to the closing `</ol>` or `</ul>` tag, or if the selection runs from the list’s first `<li>` tag to the last `</li>` tag), every bullet or number takes on the inline-formatting.
+
+IMPORTANT: If, after applying inline-formatting, a partial selection of the now inline-formatted material is made and said inline-formatting is removed from the partial selection, the bullet or list-number formatting will also be removed.

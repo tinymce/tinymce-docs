@@ -27,7 +27,7 @@ include::partial$misc/purchase-premium-plugins.adoc[]
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'footnotes',
-  toolbar: 'footnotes footnotesupdate',
+  toolbar: 'footnotes',
 });
 ----
 

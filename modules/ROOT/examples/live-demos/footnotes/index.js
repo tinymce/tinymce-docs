@@ -1,5 +1,5 @@
 tinymce.init({
   selector: 'textarea#footnotes',
   plugins: 'code footnotes link',
-  toolbar: 'bold italic underline | footnotes footnotesupdate | link code'
+  toolbar: 'bold italic underline | footnotes | link code'
 });

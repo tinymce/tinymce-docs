@@ -14,6 +14,6 @@ This option specifies the URL of the server-side `+ephox-spelling+` service. For
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  autocorrect_service_url: 'http://mydomain.com/spelling/'
+  autocorrect_service_url: 'http://mydomain.com/ephox-spelling/'
 });
 ----

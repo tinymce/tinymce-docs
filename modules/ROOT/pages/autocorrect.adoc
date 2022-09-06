@@ -9,7 +9,7 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The {pluginname} plugin automatically corrects a specified set of spelling errors, capitalization errors, or both, as they are being typed.
+The {pluginname} plugin adds capabilties to TinyMCE to autocorrect a specified set of spelling errors or capitalization errors, as they are being typed.
 
 == Interactive Example
 
@@ -30,15 +30,13 @@ tinymce.init({
 The {pluginname} plugin has a few limitations or known issues that should be noted:
 
 * Currently, only the English language is supported.
-* With both autocorrect and capitalization enabled, when a misspelt word word is typed at the beginning of a sentence, the word is corrected but not capitalized.
+* With both autocorrect and capitalization enabled, when a misspelt word is typed at the beginning of a sentence, the word is corrected but not capitalized.
 
 == Options
 
 include::partial$configuration/autocorrect_autocorrect.adoc[leveloffset=+1]
 
 include::partial$configuration/autocorrect_capitalize.adoc[leveloffset=+1]
-
-include::partial$configuration/autocorrect_rpc_url.adoc[leveloffset=+1]
 
 include::partial$configuration/autocorrect_service_url.adoc[leveloffset=+1]
 

@@ -4,7 +4,7 @@
 
 This option enables or disables the autocorrection for capitalization errors when the editor is loaded. When set to `false`, the autocorrection will be disabled when the editor is initialized.
 
-NOTE: The user's preference takes precendence over the configuration at the next initialization. The user's preference is saved to `localStorage` when the user enables or disables the autocorrection via menu item.
+include::partial$misc/autocorrect-options-notes.adoc[]
 
 *Type:* `+Boolean+`
 

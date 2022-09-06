@@ -16,6 +16,6 @@ NOTE: If not specified, the plugin will attempt to fallback onto `autocorrect_rp
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  autocorrect_service_url: 'https://spelling.tiny.cloud'
+  autocorrect_service_url: 'http://mydomain.com/spelling/'
 });
 ----

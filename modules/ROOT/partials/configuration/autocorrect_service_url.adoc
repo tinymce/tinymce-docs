@@ -4,8 +4,6 @@
 
 This option specifies the URL of the server-side `+ephox-spelling+` service. For instructions on how to set up a Spellchecking server-side component, see: the xref:introduction-to-premium-selfhosted-services.adoc[server-side component installation guide].
 
-NOTE: If not specified, the plugin will attempt to fallback onto `autocorrect_rpc_url` option.
-
 *Type:* `+String+`
 
 *Default value:* `+''+`

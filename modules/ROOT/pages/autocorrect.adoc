@@ -27,6 +27,11 @@ tinymce.init({
 });
 ----
 
+The {pluginname} plugin has a few limitations or known issues that should be noted:
+
+* Currently, only the English language is supported.
+* With both autocorrect and capitalization enabled, when a misspelt word word is typed at the beginning of a sentence, the word is corrected but not capitalized.
+
 == Options
 
 include::partial$configuration/autocorrect_autocorrect.adoc[leveloffset=+1]

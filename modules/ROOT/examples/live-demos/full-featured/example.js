@@ -69,5 +69,7 @@ tinymce.init({
   mentions_menu_hover: mentions_menu_hover,
   mentions_menu_complete: mentions_menu_complete,
   mentions_select: mentions_select,
-  mentions_item_type: 'profile'
+  mentions_item_type: 'profile',
+  autocorrect_autocorrect: true,
+  autocorrect_capitalize: true,
 });

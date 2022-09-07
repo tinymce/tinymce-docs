@@ -4,10 +4,12 @@
 :keywords: autocorrect, capitalization, spell, spelling, spellcheck
 :pluginname: Spelling Autocorrect
 :plugincode: autocorrect
-:pluginminimumplan: tiertwo
+:pluginminimumplan: tierthree
 
 
 include::partial$misc/admon-premium-plugin.adoc[]
+
+include::partial$misc/admon-requires-6.2v.adoc[]
 
 The {pluginname} plugin adds capabilties to TinyMCE to autocorrect a specified set of spelling errors or capitalization errors, as they are being typed.
 

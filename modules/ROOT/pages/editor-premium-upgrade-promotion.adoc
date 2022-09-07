@@ -5,7 +5,7 @@
 
 == Premium upgrade promotion defaults
 
-When {productname} 6.2 or later is running in self-hosted Community mode, an *Upgrade* promotion button appears in the top-right of the editor menu bar by default. The button does note appear when {productname} is running in Community mode on the Tiny cloud.
+When {productname} 6.2 or later is running in self-hosted Community mode, an *Upgrade* promotion button appears in the top-right of the editor menu bar by default. The button does not appear when {productname} is running in Community mode on the {cloudname}.
 
 This promotion button redirects to a link:{companyurl}/tinymce-self-hosted-premium-features/[promotion page], showcasing the benefits of the variety of xref:plugins#premium-plugins[Premium Plugins] available for {productname}.
 
@@ -21,6 +21,6 @@ tinymce.init({
 });
 ----
 
-The *Upgrade* button appears as part of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
+The *Upgrade* button appears in the top-right of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
 
-IMPORTANT: It is not necessary to set `promotion` to `false` when {productname} is running in Premium mode. The *Upgrade* promotion button is disabled in this instance.
+IMPORTANT: It is not necessary to set `promotion` to `false` when {productname} is running in Premium mode. Running {productname} in Premium mode automatically disables the *Upgrade* promotion button.

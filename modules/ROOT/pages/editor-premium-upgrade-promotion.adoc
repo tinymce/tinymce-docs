@@ -3,6 +3,19 @@
 :description: Editor options related to turning the Premium promotion display off
 :keywords: upgrade, promotion, premium, button
 
+== Premum upgrade promotion option
+
+{productname} 6.2 and later includes the `promotion` option. It controls the presentation or otherwise of a Tiny-specific promotion button.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+` in Community self-hosted instances; otherwise `+false+` see xref:#premium-upgrade-promotion-defaults[immediately below] for details
+
+*Possible values:* `+true+`, `+false+`
+
+NOTE: these distribution-specific defaults are not fixed. Someone running {productname} as part of a Premium plan can turn this option on. And someone running the Community distribution of {productname} as a self-hosted instance can turn this option off.
+
+[premium-upgrade-promotion-defaults]
 == Premium upgrade promotion defaults
 
 When the Community distribution of {productname} 6.2 is running as a self-hosted instance, an *Upgrade* promotion button appears in the unused corner of the editor menu bar by default. The button does not appear when Community distributions of {productname} are running on the {cloudname}.
@@ -24,3 +37,10 @@ tinymce.init({
 The *Upgrade* promotion appears in the unused corner of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
 
 IMPORTANT: It is not necessary to set `promotion` to `false` when {productname} is running as part of a Premium plan. Running {productname} as part of a Premium plan automatically disables the *Upgrade* promotion button.
+
+
+
+
+
+
+

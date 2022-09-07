@@ -13,6 +13,8 @@
 
 *Possible values:* `+true+`, `+false+`
 
+The *Upgrade* promotion appears in the unused corner of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
+
 NOTE: these distribution-specific defaults are not fixed. Someone running {productname} as part of a Premium plan can turn this option on. And someone running the Community distribution of {productname} as a self-hosted instance can turn this option off.
 
 [premium-upgrade-promotion-defaults]
@@ -33,8 +35,6 @@ tinymce.init({
   promotion: false
 });
 ----
-
-The *Upgrade* promotion appears in the unused corner of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
 
 IMPORTANT: It is not necessary to set `promotion` to `false` when {productname} is running as part of a Premium plan. Running {productname} as part of a Premium plan automatically disables the *Upgrade* promotion button.
 

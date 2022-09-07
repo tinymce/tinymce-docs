@@ -5,13 +5,14 @@
 
 == Premium upgrade promotion defaults
 
-When {productname} 6.2 or later is running in self-hosted Community mode, an *Upgrade* promotion button appears in the top-right of the editor menu bar by default. The button does not appear when {productname} is running in Community mode on the {cloudname}.
+When the Community distribution of {productname} 6.2 is running as a self-hosted instance, an *Upgrade* promotion button appears in the unused corner of the editor menu bar by default. The button does not appear when Community distributions of {productname} are running on the {cloudname}.
 
 This promotion button redirects to a link:{companyurl}/tinymce-self-hosted-premium-features/[promotion page], showcasing the benefits of the variety of xref:plugins#premium-plugins[Premium Plugins] available for {productname}.
 
-When {productname} 6.2 or later is running in Premium mode, the *Upgrade* promotion button is disabled. And it is disabled when running on a Premium plan whether {productname} is running in the {cloudname} or as a self-hosted instance.
+When {productname} 6.2 or later is running as part of a Premium plan, the *Upgrade* promotion button is disabled. And it is disabled when running with a Premium plan whether {productname} is running in the {cloudname} or as a self-hosted instance.
 
-To turn this button off in Community mode, set the `promotion` option, which defaults to `true`, to false.
+
+The {productname} Community distribution displays the promotion button when running as a self-hosted instance because the `promotion` option is set to `true` by default. To turn this button off in the Community disribution, set the `promotion` option to false.
 
 [source,js]
 ----
@@ -21,6 +22,6 @@ tinymce.init({
 });
 ----
 
-The *Upgrade* button appears in the top-right of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
+The *Upgrade* promotion appears in the unused corner of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
 
-IMPORTANT: It is not necessary to set `promotion` to `false` when {productname} is running in Premium mode. Running {productname} in Premium mode automatically disables the *Upgrade* promotion button.
+IMPORTANT: It is not necessary to set `promotion` to `false` when {productname} is running as part of a Premium plan. Running {productname} as part of a Premium plan automatically disables the *Upgrade* promotion button.

@@ -7,7 +7,7 @@ include::partial$misc/autocorrect-options-notes.adoc[]
 
 *Type:* `+Boolean+`
 
-*Default value:* `+true+`
+*Default value:* `+false+`
 
 *Possible values:* `+true+`, `+false+`
 
@@ -17,6 +17,6 @@ include::partial$misc/autocorrect-options-notes.adoc[]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  autocorrect_capitalize: false
+  autocorrect_capitalize: true
 });
 ----

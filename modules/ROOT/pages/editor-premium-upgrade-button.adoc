@@ -1,0 +1,34 @@
+= Premium upgrade button
+:navtitle: {productname} Premium upgrade button
+:description: Editor options related to turning the Premium upgrade button off
+:keywords:
+
+== Premium upgrade button defaults
+
+When {productname} 6.2 or later is running in Free mode, an *Upgrade* button appears in the top-right of the editor menu bar by default. The button appears in Free mode when {productname} is running in the Tiny cloud or as a self-hosted instance.
+
+When {productname} 6.2 or later is running in Premium mode, the *Upgrade* button is disabled. And it is disabled when running on a Premium plan whether {productname} is running in the Tiny cloud or as a self-hosted instance.
+
+To turn this button off in Free mode, set the `promotion` option, which defaults to `true`, to false.
+
+//// the `.js` below does not work. I know this.
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+    plugins: [
+      "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
+      "help", "image", "insertdatetime", "link", "lists", "media", 
+      "preview", "searchreplace", "table", "visualblocks", 
+    ],
+    toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+  tinymce.overrideDefaults({
+    promotion:false
+    });    
+});
+----
+
+The *Upgrade* button appears as part of the {productname} menu bar and, consequently, does not appear if the menu bar is disabled.
+
+IMPORTANT: It is not necessary to set `promotion` to `false` when {productname} is running in Premium mode. The *Upgrade* button is disabled in this instance, both in the Tiny cloud and when {productname} is self-hosted.

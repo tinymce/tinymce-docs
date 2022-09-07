@@ -11,8 +11,7 @@ This promotion button redirects to a link:{companyurl}/tinymce-self-hosted-premi
 
 When {productname} 6.2 or later is running as part of a Premium plan, the *Upgrade* promotion button is disabled. And it is disabled when running with a Premium plan whether {productname} is running in the {cloudname} or as a self-hosted instance.
 
-
-The {productname} Community distribution displays the promotion button when running as a self-hosted instance because the `promotion` option is set to `true` by default. To turn this button off in the Community disribution, set the `promotion` option to false.
+The {productname} Community distribution displays the promotion button when running as a self-hosted instance because the `promotion` option is set to `true` by default. To turn this button off in the Community disribution, set the `promotion` option to `false`.
 
 [source,js]
 ----

@@ -5,9 +5,9 @@
 
 == Premium upgrade promotion defaults
 
-When {productname} 6.2 or later is running in self-hosted Open source mode, an *Upgrade* button appears in the top-right of the editor menu bar by default. The button does note appear when {productname} is running in Open source mode on the Tiny cloud.
+When {productname} 6.2 or later is running in self-hosted Open source mode, an *Upgrade* promotion button appears in the top-right of the editor menu bar by default. The button does note appear when {productname} is running in Open source mode on the Tiny cloud.
 
-When {productname} 6.2 or later is running in Premium mode, the *Upgrade* button is disabled. And it is disabled when running on a Premium plan whether {productname} is running in the Tiny cloud or as a self-hosted instance.
+When {productname} 6.2 or later is running in Premium mode, the *Upgrade* promotion button is disabled. And it is disabled when running on a Premium plan whether {productname} is running in the Tiny cloud or as a self-hosted instance.
 
 To turn this button off in Open source mode, set the `promotion` option, which defaults to `true`, to false.
 

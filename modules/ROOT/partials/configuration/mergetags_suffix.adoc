@@ -13,6 +13,7 @@ This option specifies the suffix to be attached to each merge tag.
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  plugins: 'mergetags',
   mergetags_suffix: '}}'
 });
 ----

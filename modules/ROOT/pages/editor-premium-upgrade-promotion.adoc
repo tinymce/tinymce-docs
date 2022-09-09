@@ -3,18 +3,18 @@
 :description: Editor options related to turning the Premium promotion display off
 :keywords: upgrade, promotion, premium, button
 
-include::partial$configuration/premium-upgrade-promotion-option.adoc[]
+include::partial$misc/premium-upgrade-promotion-option.adoc[]
 
-[premium-upgrade-promotion-defaults]
-== Premium upgrade promotion defaults
+[[premium-upgrade-promotion-defaults]]
+=== Premium upgrade promotion defaults
 
 When the Community distribution of {productname} 6.2 is running as a self-hosted instance, an *Upgrade* promotion button appears in the unused corner of the editor menu bar by default. The button does not appear when Community distributions of {productname} are running on the {cloudname}.
 
-This promotion button redirects to a link:{companyurl}/tinymce-self-hosted-premium-features/[promotion page], showcasing the benefits of the variety of xref:plugins#premium-plugins[Premium Plugins] available for {productname}.
+This promotion button redirects to a link:{companyurl}/tinymce-self-hosted-premium-features/[promotion page], showcasing the benefits of the variety of xref:plugins.adoc#premium-plugins[Premium Plugins] available for {productname}.
 
 When {productname} 6.2 or later is running as part of a Premium plan, the *Upgrade* promotion button is disabled. And it is disabled when running with a Premium plan whether {productname} is running in the {cloudname} or as a self-hosted instance.
 
-The {productname} Community distribution displays the promotion button when running as a self-hosted instance because the `promotion` option is set to `true` by default. To turn this button off in the Community disribution, set the `promotion` option to `false`.
+The {productname} Community distribution displays the promotion button when running as a self-hosted instance because the `promotion` option is set to `true` by default. To turn this button off in the Community distribution, set the `promotion` option to `false`.
 
 [source,js]
 ----

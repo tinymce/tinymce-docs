@@ -1,9 +1,7 @@
-== Premium upgrade promotion option
-
-{productname} 6.2 and later includes the `promotion` option. It controls the presentation or otherwise of a Tiny-specific promotion button.
-
 [[promotion]]
 == `+promotion+`
+
+{productname} 6.2 and later includes the `promotion` option. It controls the presentation or otherwise of a Tiny-specific promotion button.
 
 *Type:* `+Boolean+`
 
@@ -13,7 +11,7 @@
 
 See xref:editor-premium-upgrade-promotion.adoc#premium-upgrade-promotion-defaults[Premium upgrade promotion defaults] for details.
 
-== Example: Using `+promotion+`
+=== Example: Using `+promotion+`
 
 [source,js]
 ----

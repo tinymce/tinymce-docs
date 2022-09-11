@@ -43,6 +43,12 @@ For example, adding a new footnote between already extant footnotes ~*1*~ and ~*
 
 Superscripted footnote numbers can also be dragged to a different position in the document. Footnote numbers and their relationship with the respective footnote entry are automatically updated when they are dragged to a different position.
 
+Each superscripted footnote number links to its respective footnote entry, and each footnote entry is prefixed with a caret — ~*^*~ — that links back to its respective superscripted footnote number. This allows for navigation between the editor content and the footnotes section.
+
+If the TinyMCE document is large enough to produce a scroll bar, clicking the caret prefixing a footnote entry scrolls the document back to the line containing said entry’s superscripted footnote number.
+
+NOTE: Although the viewport scrolls back to the line containing the footnote number, the insertion point is not changed. Users must move the insertion point by, for example, clicking the I-beam pointer somewhere in the now-scrolled document.
+
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

@@ -1,9 +1,9 @@
 [[mergetags_list]]
 == `+mergetags_list+`
 
-This option specifies the content of the menu which is used for merge tags insertion. It is an array of objects, where every object specifies the configuration for a submenu or a menu item. 
+`+mergetags_list+` is an object array that specifies the menu content used for merge tags insertion. Every object specifies the configuration of a submenu or a menu item.
 
-NOTE: If the `+mergetags_list+` option is not set or contains no entries the plugin toolbar button and the menu item will be hidden, and the merge tags autosuggestion will be disabled.
+NOTE: If the `+mergetags_list+` option is not set, or contains no entries, both the merge tags toolbar button and the merge tags menu item are hidden. As well, merge tags autosuggestions are disabled.
 
 *Type:* `+Array+`
 
@@ -14,8 +14,8 @@ NOTE: If the `+mergetags_list+` option is not set or contains no entries the plu
 [cols="1,1,1,4",options="header"]
 |===
 |Name|Type|Required|Description
-|title |string |optional |Menu item label to display instead of the `+value+` if set
-|value |string |required |The content of the merge tag to be inserted after the  menu item is activated
+|title |string |optional |If set: the menu item label to display instead of the `+value+`
+|value |string |required |The merge tag content to be inserted after the menu item is activated
 |===
 
 === Submenu properties
@@ -23,8 +23,8 @@ NOTE: If the `+mergetags_list+` option is not set or contains no entries the plu
 [cols="1,1,1,4",options="header"]
 |===
 |Name|Type|Required|Description
-|title |string |required |Submenu label to display
-|menu |Array |required | The list of nested submenus and menu items
+|title |string |required |The submenu label to display
+|menu |Array |required |The list of nested submenus and menu items
 |===
 
 === Example: Using `+mergetags_list+`

@@ -12,8 +12,8 @@ NOTE: If the `+mergetags_list+` option is not set, or contains no entries, both 
 [cols="1,1,1,4",options="header"]
 |===
 |Name|Type|Required|Description
-|title |string |optional |If set: the menu item label to display instead of the `+value+`
-|value |string |required |The merge tag content to be inserted after the menu item is activated
+|title |string |optional |If set: the menu item label to display instead of the `+value+`.
+|value |string |required |The merge tag content to be inserted after the menu item is activated.
 |===
 
 === Submenu properties
@@ -21,8 +21,8 @@ NOTE: If the `+mergetags_list+` option is not set, or contains no entries, both 
 [cols="1,1,1,4",options="header"]
 |===
 |Name|Type|Required|Description
-|title |string |required |The submenu label to display
-|menu |Array |required |The list of nested submenus and menu items
+|title |string |required |The submenu label to display.
+|menu |Array |required |The list of nested submenus and menu items.
 |===
 
 === Example: Using `+mergetags_list+`

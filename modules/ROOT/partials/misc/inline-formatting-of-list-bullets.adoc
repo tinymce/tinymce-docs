@@ -8,7 +8,7 @@ Only the bullets or list numbers associated with the selection are inline-format
 
 NOTE: PowerPaste does not, currently, support inline-formatted bullets or list numbers. Inline-formatting, as applied to the bullets or list numbers, is lost when such material is copied and pasted.
 
-If the selection is one list item (ie, if the selection runs from an particular `<li>` tag to its associated `</li>` tag), only the bullet or number associated with the single selected list item takes on the inline-formatting.
+If the selection is one list item (that is, if the selection runs from an particular `<li>` tag to its associated `</li>` tag), only the bullet or number associated with the single selected list item takes on the inline-formatting.
 
 If the selection is the entire list, (ie, if the selection runs from the list’s opening `<ol>` or `<ul>` tag to the closing `</ol>` or `</ul>` tag, or if the selection runs from the list’s first `<li>` tag to the last `</li>` tag), every bullet or number takes on the inline-formatting.
 

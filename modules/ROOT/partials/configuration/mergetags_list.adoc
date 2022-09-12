@@ -32,6 +32,7 @@ NOTE: If the `+mergetags_list+` option is not set, or contains no entries, both 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'mergetags',
+  toolbar: 'mergetags',
   mergetags_list: [
     {
       value: 'Current.Date',

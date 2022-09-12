@@ -57,12 +57,13 @@ tinymce.init({
         },
         {
           title: 'Email',
-          menu: [{
-            value: 'Person.Email.Work'
-          },
-          {
-            value: 'Person.Email.Home'
-          },
+          menu: [
+            {
+              value: 'Person.Email.Work'
+            },
+            {
+              value: 'Person.Email.Home'
+            }
           ]
         }
       ]

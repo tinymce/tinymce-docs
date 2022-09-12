@@ -16,6 +16,7 @@ Whatever this option is set to, when it is typed, it triggers the {pluginname} a
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'mergetags',
+  toolbar: 'mergetags',
   mergetags_prefix: '{{'
 });
 ----

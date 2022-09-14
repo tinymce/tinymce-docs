@@ -12,7 +12,6 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:enhanced-image-editing[Enhanced Image Editing (editimage)]
 ** xref:enhanced-media-embed[Enhanced Media Embed (mediaembed)]
 ** xref:export[Export (export)]
-** xref:footnotes[Footnotes (footnotes)]
 ** xref:format-painter[Format Painter (formatpainter)]
 ** xref:link-checker[Link Checker (linkchecker)]
 ** xref:mentions[Mentions (mentions)]
@@ -110,13 +109,6 @@ include::partial$plugin-files/plugin-file-list-mediaembed.adoc[]
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-export.adoc[]
-
-[[footnotes]]
-=== Footnotes (`+footnotes+`)
-
-include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
-
-include::partial$plugin-files/plugin-file-list-footnotes.adoc[]
 
 [[format-painter]]
 === Format Painter (`+formatpainter+`)

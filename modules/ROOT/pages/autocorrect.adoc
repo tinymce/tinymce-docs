@@ -25,7 +25,13 @@ The {pluginname} plugin also has the following known issue:
 
 * Autocorrect, in effect, over-rides auto-capitalization.
 
-As a consequence, if `autocorrect` is active and a word from the specified spelling error set is mis-typed at the beginning of a sentence, the spelling is corrected but the initial letter is not capitalized.
+As a consequence, if
+
+1. `autocorrect` and `capitalization` are both active; and
+
+2. a word from the specified spelling error set is mis-typed at the beginning of a sentence;
+
+the spelling is corrected but the initial letter is not capitalized.
 
 == Interactive Example
 

@@ -11,14 +11,21 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.2v.adoc[]
 
-The {pluginname} plugin adds capabilties to TinyMCE to autocorrect a specified set of spelling errors or capitalization errors, as they are being typed.
+The {pluginname} plugin allows {productname} to autocorrect a specified set of spelling errors or capitalization errors, as they are being typed.
 
-== Limitations and known issues
+== Limitation
 
-The {pluginname} plugin has limitations or known issues that should be noted:
+The {pluginname} plugin has the following limitation:
 
 * English is currently the only supported language.
-* If both autocorrect and capitalization are enabled and a word is mis-typed at the beginning of a sentence, the spelling is corrected but the initial letter is not capitalized.
+
+== Known issue
+
+The {pluginname} plugin also has the following known issue:
+
+* Autocorrect, in effect, over-rides auto-capitalization.
+
+As a consequence, if `autocorrect` is active and a word from the specified spelling error set is mis-typed at the beginning of a sentence, the spelling is corrected but the initial letter is not capitalized.
 
 == Interactive Example
 

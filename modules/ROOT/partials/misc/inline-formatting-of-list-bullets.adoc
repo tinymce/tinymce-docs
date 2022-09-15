@@ -2,17 +2,13 @@
 
 List bullets and list numbers can now be inline-formatted.
 
-Inline-formatting is the direct formatting of an object. It contrasts with formatting applied to an object because that object is a particular type of object.
+Inline-formatting, also known as spot-formatting, is the direct formatting of an object. It contrasts with formatting applied to an object because that object is a particular type of object.
 
-If all Table Headers are formatted a particular way, that is not inline formatting. When a particular Table Header is selected and has formatting specifically applied to it, that is inline formatting.
-
-Inline-formatting is also known as spot-formatting.
-
-If an end-user selects the entire content of a list item and applies inline formatting, such as a change of color or change of font-size, this spot-formatting is also applied to the list item’s associated bullet or number.
+If an end-user selects the entire contents of a list item and applies inline formatting — such as a change of color or change of font-size — this spot-formatting is also applied to the list item’s associated bullet or number.
 
 Only the bullets or list numbers associated with the selection take on the inline-formatting applied to the selection.
 
-If the selection having inline formatting applied is one list item (that is, if the selection runs from an particular `<li>` tag to its associated `</li>` tag), the bullet or number associated with that single selected list item takes on the inline-formatting applied to the selection.
+If the selection having inline formatting applied is one list item (that is, if the selection runs from one `<li>` tag to its associated `</li>` tag), the bullet or number associated with the selected list item takes on the inline-formatting applied to the selection.
 
 If the selection is the entire list, (that is, if the selection runs from the list’s opening `<ol>` or `<ul>` tag to the closing `</ol>` or `</ul>` tag, or if the selection runs from the list’s first `<li>` tag to the last `</li>` tag), every bullet or number takes on the inline-formatting applied to the selection.
 

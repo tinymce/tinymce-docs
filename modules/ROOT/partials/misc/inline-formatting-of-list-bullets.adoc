@@ -6,7 +6,7 @@ Inline-formatting, also known as spot-formatting, is the direct formatting of an
 
 If an end-user selects the entire contents of a list item and applies inline formatting — such as a change of color or change of font-size — this spot-formatting is also applied to the list item’s associated bullet or number.
 
-Only the bullets or list numbers associated with the selection take on the inline-formatting applied to the selection.
+Only the list bullets or list numbers associated with the selection take on the inline-formatting applied to the selection.
 
 If the selection having inline formatting applied is one list item (that is, if the selection runs from one `<li>` tag to its associated `</li>` tag), the bullet or number associated with the selected list item takes on the inline-formatting applied to the selection.
 

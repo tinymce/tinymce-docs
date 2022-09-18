@@ -31,6 +31,12 @@ For example, Spelling Autocorrect can be entirely turned off, but there is, curr
 
 The {pluginname} plugin also has the following known issues:
 
+. Switching to a language other than English disables the Autocorrect and Capitalization menus
++
+When the `autocorrect` plugin loads, *Autocorrect* and *Capitalization* menu items are added to the *Tools* menu.
++
+If {productname} is then switched to a language other than English, both these menu items are disabled. And they are not automatically re-enabled if a user switches back to English.
+
 . Spelling Autocorrect is case-sensitive.
 +
 As a consequence, mis-spelled words are not auto-corrected if they do not exactly match the plugin’s built-in correction set.

@@ -1,7 +1,9 @@
 [[autocorrect_autocorrect]]
 == `+autocorrect_autocorrect+`
 
-This option enables or disables spelling error autocorrection and auto-capitalization when the {productname} editor is loaded. When set to `false`, spelling autocorrection and auto-capitalization are disabled when the editor is initialized.
+This option enables or disables spelling error autocorrection when the {productname} editor is loaded.
+
+When set to `true`, spelling error autocorrection is enabled when {productnam} is initialized.
 
 include::partial$misc/autocorrect-options-notes.adoc[]
 

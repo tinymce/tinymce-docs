@@ -13,25 +13,51 @@ include::partial$misc/admon-requires-6.2v.adoc[]
 
 The {pluginname} plugin allows {productname} to autocorrect a specified set of spelling errors or capitalization errors, as they are being typed.
 
-== Limitation
+[[limitations]]
+== Limitations
 
-The {pluginname} plugin has the following limitation:
+The {pluginname} plugin currently has the following limitations:
 
-* English is currently the only supported language.
+. English is the only supported language.
 
-== Known issue
+. Capitalization and autocorrect can both be turned off, but specific autocorrections cannot.
++
+For example, Spelling Autocorrect can be entirely turned off, but there is, currently, no way of instructing the plugin to ignore a particular string that it considers a mis-spelling. If *cna* (which the plugin treats as a mis-typing of *can*) is a desired string in a particular use-case, turning Spelling Autocorrect off is the currently recommended setting.
 
-The {pluginname} plugin also has the following known issue:
+. End-users cannot turn Autocorrect on or off on hand-held devices.
 
-* Autocorrect, in effect, over-rides auto-capitalization.
+[[known-issues]]
+== Known issues
 
-As a consequence, if
+The {pluginname} plugin also has the following known issues:
 
-1. `autocorrect` and `capitalization` are both active; and
+. Spelling Autocorrect is case-sensitive.
++
+As a consequence, mis-spelled words are not auto-corrected if they do not exactly match the plugin’s built-in correction set.
++
+For example, Spelling Autocorrect auto-corrects *teh* to *the*, but does not auto-correct *Teh* to *The*.
 
-2. a word from the specified spelling error set is mis-typed at the beginning of a sentence;
-
+. Spelling Autocorrect over-rides auto-capitalization.
++
+As a consequence of both this and Spelling Autocorrect being case-sensitive, if
++
+  * `autocorrect` and `capitalization` are both active; and
+  * a word from the specified spelling error set is mis-typed at the beginning of a sentence;
++
 the spelling is corrected but the initial letter is not capitalized.
+
+. Auto-capitalization does not work on text immediately following a soft return in non-empty {productname} documents.
++
+If
++
+  * a {productname} document contains any data other than a soft return character (Unicode U+2028, commonly entered by typing *Shift+Return*); and
+  * the character immediately preceding an entered string is a soft return character
++
+Auto-capitalization will not operate on the entered string.
+
+. Auto-capitalization interferes with media embeds.
+
+. Auto-capitalization interferes with `linkchecker`.
 
 == Interactive Example
 

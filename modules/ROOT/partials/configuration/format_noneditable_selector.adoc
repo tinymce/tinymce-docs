@@ -1,0 +1,20 @@
+[[format_noneditable_selector]]
+== `+format_noneditable_selector+`
+
+This option allows a non-editable (`+contenteditable="false"+`) element that matches the selector specified to be wrapped with a valid format.
+
+NOTE: The non-editable element must not have any editable descendants in order for it to be wrappable.
+
+*Type:* `+String+`
+
+*Default value:* `+''+`
+
+=== Example: Using `+format_noneditable_selector+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  format_noneditable_selector: 'span,p.special'
+});
+----

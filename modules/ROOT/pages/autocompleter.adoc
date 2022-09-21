@@ -23,7 +23,7 @@ The two arguments this method take are:
 [cols="1,2,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
-|ch |`+string+` |Required |The character to trigger the autocompleter. This option has been deprecated in TinyMCE 6.2, and has been replaced in 6.2 with the `+trigger+` option.
+|ch |`+string+` |Required |The character to trigger the autocompleter. This option has been deprecated in TinyMCE 6.2 and has been replaced with the `+trigger+` option.
 |trigger |`+string+` |Required |The string to trigger the autocompleter. This option is new in 6.2 and replaces the deprecated `+ch+` option.
 |fetch |`+(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleteItem[] \| CardMenuItem[]+` |Required |A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a Promise containing matching results.
 |onAction |`+(api, rng: Range, value: string) => void+` |Required |A function invoked when a fetched item is selected.

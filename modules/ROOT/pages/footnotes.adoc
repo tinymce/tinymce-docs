@@ -49,8 +49,9 @@ If the TinyMCE document is large enough to produce a scroll bar, clicking the ca
 
 NOTE: Although the viewport scrolls back to the line containing the footnote number, the insertion point is not changed. Users must move the insertion point by, for example, clicking the I-beam pointer somewhere in the now-scrolled document.
 
+== Usage notes
 
-== The update footnotes button
+=== The update footnotes button
 
 The update footnotes button, as its name implies, updates the state of all footnotes in a {productname} document.
 
@@ -74,12 +75,12 @@ In similar fashion, if a table row or column that contains a footnote is removed
 These orphan footnote texts can be deleted manually. They can also be removed by clicking the `footnotesupdate` button in the toolbar.
 
 
-== Footnotes and {productname} Previews
+=== Footnotes and {productname} Previews
 
 *File > Preview* presents footnote-specific in-document links, but these links do not work in the Preview.
 
 
-== Footnotes and exporting {productname} documents to PDF
+=== Footnotes and exporting {productname} documents to PDF
 
 In-document footnote links are not preserved when a {productname} document is exported to a PDF file.
 
@@ -88,7 +89,7 @@ The footnotes and footnote text are preserved, but the clickable links between t
 And the carets set between a footnote number and footnote text, which act as links back to a superscripted footnote number in a {productname} document, are removed in the exported PDF file.
 
 
-== Formatting superscripted footnote numbers
+=== Formatting superscripted footnote numbers
 
 . Superscripted footnote numbers cannot be inline-formatted
 +
@@ -102,7 +103,7 @@ If a selected string includes a superscripted footnote number and block-formatti
 +
 Block-formatting includes making a selection a Heading of any level or setting the selection to `Preformatted`.
 
-== Formatting footnote text
+=== Formatting footnote text
 
 . Footnote text can be inline-formatted
 +

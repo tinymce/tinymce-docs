@@ -65,7 +65,7 @@ tinymce.init({
 });
 ----
 
-In the main footnotes update automatically as they are added, removed, or edited. However, there are some circumstances where user-edits change footnote state but the footnotes themselves do not update.
+In the main, footnotes update automatically as they are added, removed, or edited. However, there are some circumstances where user-edits change footnote state but the footnotes themselves do not update.
 
 For example, when an image caption with an attached footnote is removed (by unchecking the _Show caption_ checkbox in the **Insert/Edit Image* dialog), the associated footnote text is not automatically removed.
 

@@ -23,12 +23,12 @@ The two arguments this method take are:
 [cols="1,2,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
-|ch |`+string+` |Required |The character to trigger the autocompleter.
+|ch |`+string+` (of one character) |Required |The character to trigger the autocompleter.
 include::partial$misc/admon-deprecated-6.2v.adoc[]
-It has been replaced with the `+trigger+` option.
+It has been replaced with the `+trigger+` option, which should be used instead.
 |trigger |`+string+` |Required |The string to trigger the autocompleter.
 include::partial$misc/admon-requires-6.2v.adoc[]
-It replaces the deprecated `+ch+` option.
+It replaces the deprecated `+ch+` option, and should be used instead of that option.
 |fetch |`+(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleteItem[] \| CardMenuItem[]+` |Required |A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a Promise containing matching results.
 |onAction |`+(api, rng: Range, value: string) => void+` |Required |A function invoked when a fetched item is selected.
 |columns |number or `'auto'` |Optional |default: auto - The number of columns to show. If set to `+1+` column, then icons and text are displayed, otherwise only icons are displayed.

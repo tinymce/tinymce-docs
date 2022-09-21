@@ -39,11 +39,11 @@ Footnotes can be inserted using the _Insert footnote_ button on the toolbar, or 
 
 The footnotes section is automatically updated whenever a footnote is inserted, reordered, or removed within the {productname} editor. The footnotes section is automatically removed if all footnotes are removed.
 
-For example, adding a new footnote between already extant footnotes ~*1*~ and ~*2*~ results in the new footnote becoming footnote ~*2*~ and the previous footnote ~*2*~ automatically becoming footnote ~*3*~.
+For example, adding a new footnote between already extant footnotes ^*1*^ and ^*2*^ results in the new footnote becoming footnote ^*2*^ and the previous footnote ^*2*^ automatically becoming footnote ^*3*^.
 
 Superscripted footnote numbers can also be dragged to a different position in the document. Footnote numbers and their relationship with the respective footnote entry are automatically updated when they are dragged to a different position.
 
-Each superscripted footnote number links to its respective footnote entry, and each footnote entry is prefixed with a caret — ~*^*~ — that links back to its respective superscripted footnote number. This allows for navigation between the editor content and the footnotes section.
+Each superscripted footnote number links to its respective footnote entry, and each footnote entry is prefixed with a caret — *^* — that links back to its respective superscripted footnote number. This allows for navigation between the editor content and the footnotes section.
 
 If the TinyMCE document is large enough to produce a scroll bar, clicking the caret prefixing a footnote entry scrolls the document back to the line containing said entry’s superscripted footnote number.
 

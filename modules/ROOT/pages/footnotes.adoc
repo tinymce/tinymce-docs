@@ -88,6 +88,16 @@ Footnote text can be formatted using inline-formatting options such as *Bold*, _
 +
 Footnote text cannot, for example, be made into a Heading, or set as `Preformatted`.
 
+== Known issue
+
+Footnote entries are not automatically removed after removing an image caption containing a footnote.
+
+When an image caption with an attached footnote is removed (by unchecking the _Show caption_ checkbox in the **Insert/Edit Image* dialog), the associated footnote text should be automatically removed.
+
+As of this release, however, this automatic removal does not happen.
+
+The orphan footnote text can be deleted manually. It can also be removed by clicking the `footnotesupdate` button in the toolbar.
+
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

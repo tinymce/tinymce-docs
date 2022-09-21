@@ -1,0 +1,33 @@
+[[text_patterns_lookup]]
+== `+text_patterns_lookup+`
+
+This option allows you to specify a function that dynamically append additional text patterns to the xref:content-behavior-options.adoc#text_patterns[text_patterns]. The function takes a context object as an argument and should return a list of text patterns. The function will be called whenever the editor is attempting to do text pattern matching.
+
+*Type:* `+Function+`
+
+=== Example: Using text_patterns_lookup
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  text_patterns_lookup: (ctx) => {
+    const text = ctx.
+    const parentTag = ctx.block.nodeName.toLowerCase();
+    if (parentTag === 'pre') {
+      return [
+        { start: '`', end: '`', format: 'code' }
+      ];
+    } else if (parentTag === 'p') {
+      return [
+        { start: '*', end: '*', format: 'bold' }
+      ];
+    } else {
+      return [
+        // ctx.text is the string from the start of the block to the cursor
+        { start: 'brb', replacement: ctx.text + ': Be Right Back' }
+      ];
+    }
+  }
+});
+----

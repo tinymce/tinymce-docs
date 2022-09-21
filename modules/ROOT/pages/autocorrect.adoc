@@ -29,21 +29,6 @@ tinymce.init({
 });
 ----
 
-== Options
-
-include::partial$configuration/autocorrect_autocorrect.adoc[leveloffset=+1]
-
-include::partial$configuration/autocorrect_capitalize.adoc[leveloffset=+1]
-
-include::partial$configuration/autocorrect_service_url.adoc[leveloffset=+1]
-
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-
-== Events
-
-include::partial$events/{plugincode}-events.adoc[]
-
-
 [[usage-notes]]
 == Usage notes
 
@@ -97,3 +82,19 @@ Auto-capitalization will not operate on the entered string.
 . Auto-capitalization interferes with media embeds.
 
 . Auto-capitalization interferes with `linkchecker`.
+
+== Options
+
+include::partial$configuration/autocorrect_autocorrect.adoc[leveloffset=+1]
+
+include::partial$configuration/autocorrect_capitalize.adoc[leveloffset=+1]
+
+include::partial$configuration/autocorrect_service_url.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Events
+
+include::partial$events/{plugincode}-events.adoc[]
+
+

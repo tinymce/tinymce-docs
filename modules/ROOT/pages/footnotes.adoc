@@ -49,6 +49,17 @@ If the TinyMCE document is large enough to produce a scroll bar, clicking the ca
 
 NOTE: Although the viewport scrolls back to the line containing the footnote number, the insertion point is not changed. Users must move the insertion point by, for example, clicking the I-beam pointer somewhere in the now-scrolled document.
 
+
+=== CSS
+
+//// explanatory text here.
+
+[source,css]
+----
+include::example$css-codeblock/footnotes-plugin.css[]
+----
+
+
 == Usage notes
 
 === The update footnotes button

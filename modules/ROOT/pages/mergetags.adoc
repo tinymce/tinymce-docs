@@ -39,6 +39,20 @@ By default, this prefix is `{{`.
 
 Entering characters after the prefix begins filtering the merge tags list.
 
+== Usage notes
+
+. Merge tag are non-editable but can be inline-formatted.
++
+For example, a merge tag can be set to any available typeface and type-size and can be set to *bold*, or _italic_.
+
+. Merge tags can be changed.
++
+Select the Merge tag, click the Merge tag toolbar button, and select a new tag from the menu that presents.
+
+Users can paste from clipboard merge tags, which are not available in mergetags_list.
+User can customize prefix and suffix styles by tweaking provided mce-mergetag-affix class.
+Users can simplify merge tag menu navigation by grouping merge tags in categories and providing user-friendly titles.
+
 == Options
 
 include::partial$configuration/mergetags_prefix.adoc[leveloffset=+1]

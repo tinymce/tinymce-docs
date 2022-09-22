@@ -3,11 +3,11 @@
 
 This option allows a non-editable (`+contenteditable="false"+`) element that matches the selector specified to be wrapped with a format.
 
-Formats that can wrap include block formats that have the `+wrapper+` parameter set to `+true+` and inline formats. Selector formats are not supported.
-
 In addition to a non-editable element matching the selector, any non-editable element that has the `+data-mce-cef-wrappable+` attribute can be wrapped with a format.
 
-NOTE: The non-editable element must not have any editable descendants in order for it to be wrappable.
+Formats that can wrap include block formats that have the `+wrapper+` parameter set to `+true+` and inline formats. Selector formats are not supported.
+
+NOTE: The non-editable element must not have any editable (`+contenteditable="true"+`) descendants in order for it to be wrappable.
 
 *Type:* `+String+`
 

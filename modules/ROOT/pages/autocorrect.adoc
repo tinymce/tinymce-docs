@@ -64,12 +64,6 @@ As a consequence of {pluginname} being case-sensitive, if
 +
 the spelling is corrected but the initial letter is not capitalized.
 
-. Switching to a language other than English disables the Autocorrect and Capitalization menus
-+
-When the `autocorrect` plugin loads, *Autocorrect* and *Capitalization* menu items are added to the *Tools* menu.
-+
-If {productname} is then switched to a language other than English, both these menu items are disabled. And they are not automatically re-enabled if a user switches back to English.
-
 . Auto-capitalization does not work on text immediately following a soft return in non-empty {productname} documents.
 +
 If
@@ -82,6 +76,8 @@ Auto-capitalization will not operate on the entered string.
 . Auto-capitalization interferes with `+mediaembed+`, the xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] Premium plugin.
 
 . Auto-capitalization interferes with `linkchecker`, the xref:linkchecker.adoc[Link Checker] Premium plugin.
+
+include::partial$misc/autocorrect-usage-notes.adoc[]
 
 == Options
 

@@ -5,6 +5,10 @@ This option enables or disables spelling error autocorrection when the {productn
 
 When set to `true`, spelling error autocorrection is enabled when {productname} is initialized.
 
+=== Usage note
+
+include::partial$misc/autocorrect-usage-notes.adoc[]
+
 include::partial$misc/autocorrect-options-notes.adoc[]
 
 *Type:* `+Boolean+`

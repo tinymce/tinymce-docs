@@ -1,0 +1,314 @@
+= TinyMCE 6.2
+:navtitle: TinyMCE 6.2
+:description: Release notes for TinyMCE 6.2
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.2 was released for {enterpriseversion} and {cloudname} on Monday, September 26^th^, 2022. It includes {productname} 6.2, additional changes to Premium plugins, and several new Premium plugins. These release notes provide an overview of the changes for {productname} 6.2:
+
+* xref:new-premium-plugins[New Premium plugins]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:improvements[Improvements]
+* xref:additions[Additions]
+* xref:changes[Changes]
+* xref:bug-fixes[Bug fixes]
+* xref:deprecated[Deprecated]
+* xref:known-issues[Known issues]
+
+[[new-premium-plugins]]
+== New Premium plugins
+
+=== Spelling Autocorrect 1.0.0
+
+The {productname} 6.2 release includes the new **Autocorrect** premium plugin.
+
+The Spelling Autocorrect plugin allows {productname} to autocorrect a specified set of spelling errors, common typos, and capitalization errors, as they are being typed.
+
+For information on the **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect].
+
+=== Footnotes 1.0.0
+
+The {productname} 6.2 release includes the new **Footnotes** premium plugin.
+
+The Footnotes plugin allows the user to add footnotes to {productname} documents.
+
+For information on the **Footnotes** plugin, see: xref:footnotes.adoc[Footnotes].
+
+=== Merge Tags 1.0.0
+
+The {productname} 6.2 release includes the new **Merge Tags** premium plugin.
+
+The Merge Tags plugin allows the user to insert merge tags (also known as a personalization tokens, or a mail merge fields) into {productname} documents.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.2.
+
+=== Enhanced Media Embed 3.0.4
+
+The {productname} 6.2 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
+
+**Enhanced Media Embed** 3.0.4 fixes the following bug:
+
+Added `min-width: 100px` to audio elements so that they would still show if aligned left or right. TINY-8687
+
+For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed].
+
+=== Permanent Pen 2.0.2
+
+The {productname} 6.2 release includes an accompanying release of the **Permanent Pen** premium plugin.
+
+Permanent Pen 2.0.2 fixes the following bug:
+
+Fixed an issue where permanent pen wouldn't turn off correctly if the next action was an enter keypress #TINY-8835
+
+For information on the **Permanent Pen** plugin, see: xref:permanentpen.adoc[Permanent Pen].
+
+=== PowerPaste 6.1.1
+
+The {productname} 6.2 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+PowerPaste 6.1.1 fixes the following bug:
+
+The wordimport.js resource file was difficult to bundle when using Webpack 5 #TINY-8791
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+=== Real-Time Collaboration 2.1.1
+
+The {productname} 6.2 release includes an accompanying release of the **Real-Time Collaboration** premium plugin.
+
+Real-Time Collaboration 2.1.1 fixes the following bug:
+
+Providers now accept any object that has then and catch functions to be compatible with promise like objects. #TINY-8970
+
+For information on the **Real-Time Collaboration** plugin, see: xref:rtc-introduction.adoc[Real-Time Collaboration].
+
+=== Spell Checker Pro 3.1.0
+
+The {productname} 6.2 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+Spell Checker Pro 3.1.0 includes one change and fixes two bugs:
+
+The SpellcheckerLanguageChanged event is now dispatched during plugin initialization #TINY-8996
+
+Copying and pasting in tables would not work correctly due to spellchecker incorrectly moving the selection in some specific cases #TINY-7839
+
+Spellchecking incorrectly triggered on all change events when it was only meant to trigger if content was inserted #TINY-8994
+
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
+
+[[accompanying-premium-skins-and-icon-packs-changes]]
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} 6.2 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+=== Premium Skins and Icon Packs
+
+The **Premium Skins and Icon Packs** release includes the following update:
+
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.2 skin, Oxide.
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+
+
+[[additions]]
+== Additions
+
+{productname} 6.2 also includes the following additions:
+
+=== A new `text_patterns_lookup` option to provide additional text patterns dynamically.
+
+// #TINY-8778
+
+=== A new promotion element has been added to the default UI.
+
+{productname} 6.2 includes an *Upgrade* promotion button. It appears in the unused corner of the {productname} menu bar.
+
+It can be disabled using the new `promotion` option.
+
+For more information see xref:content-appearance.adoc#premium-upgrade-promotion-option[Premium upgrade promotion option].
+
+// #TINY-8840
+
+=== New `format_noneditable_selector` option to specify the `contenteditable="false"` elements that can be wrapped in a format.
+
+// #TINY-8905
+
+=== Added `allow` as a valid attribute for the iframe element in the editor schema.
+
+// #TINY-8939
+
+=== New search field in the MenuButton that shows a search field at the top of the menu, and refetches items when the search field updates.
+
+// #TINY-8952
+
+
+[[improvements]]
+== Improvements
+
+{productname} 6.2 also includes the following improvements:
+
+=== The formatter can now apply a format to a `contenteditable="false"` element by wrapping it.
+
+Configurable using the `format_noneditable_selector` option.
+
+// #TINY-8905
+
+=== The autocompleter now supports a multiple character trigger using the new trigger configuration.
+
+// #TINY-8887
+
+=== Some inline formatting, such as color and font size, can now be applied to list item elements
+
+In {productname} 6.2 list bullets and list numbers can be inline-formatted.
+
+If the contents of a list item are selected and inline formatting is applied — such as a change of color or change of font-size — this spot-formatting is also applied to the list item’s associated bullet or number.
+
+For more information see the xref:advlist.adoc#inline-formatting[Inline formatting of list elements documentation].
+
+=== The installed and available plugin lists in the Help dialog are now sorted alphabetically.
+
+// #TINY-9019
+
+=== Alignment can now be applied to more embedded media element types.
+
+// #TINY-8687
+
+
+[[changes]]
+== Changes
+
+{productname} 6.2 also incorporates the following changes:
+
+=== The `@menubar-row-separator-color` oxide variable no longer affects the divider between the Menubar and Toolbar.
+
+It only controls the color of the separator lines drawn in multiline Menubars.
+
+// #TINY-8632
+
+=== The `@toolbar-separator-color` oxide variable now affects the color of the separator between the Menubar and Toolbar only.
+
+// #TINY-8632
+
+=== Available Premium plugins, which are listed by name in the Help dialog, are no longer translated.
+
+//#TINY-9019
+
+
+[[bug-fixes]]
+== Bug fixes
+
+=== The Autolink plugin did not work when text nodes in the content were fragmented.
+//
+
+// #TINY-3723
+
+=== Fixed multiple incorrect types on public APIs found while enabling TypeScript strict mode.
+
+// #TINY-8806
+
+=== The number of blank lines returned from `editor.getContent({format: 'text'})` differed between browsers.
+
+// #TINY-8579
+
+=== The editor focused via the `auto_focus` option was not scrolled into the viewport.
+
+// #TINY-8785
+
+=== Adding spaces immediately after a `contenteditable="false"` block did not work properly in some circumstances.
+
+// #TINY-8814
+
+=== Elements with only `data-*` custom attributes were sometimes removed when they should not be removed.
+
+// #TINY-8755
+
+=== Selecting a figure with `class="image"` incorrectly highlighted the link toolbar button.
+
+// #TINY-8832
+
+=== Specifying a single, non-default list style for the `advlist_bullet_styles` and `advlist_number_styles` options was not respected.
+
+// #TINY-8721
+
+=== Fixed multiple issues that occurred when formatting `contenteditable` elements.
+
+// #TINY-8905
+
+=== Spaces could be incorrectly added to `urlinput` dialog components in certain cases.
+
+`urlinput` dialog components are commonly but not exclusively presented in the **Insert/Edit Link** dialog.
+
+// #TINY-8775
+
+=== The text patterns logic threw an error when there were fragmented text nodes in a paragraph.
+
+// #TINY-8779
+
+=== Dragging a `contentEditable=false` element towards a document’s edge did not cause scrolling.
+
+// #TINY-8874
+
+=== Parsing large documents no longer throws a Maximum call stack size exceeded exception.
+
+// #TINY-6945
+
+=== DomParser filter matching was not checked between filters, which could lead to an exception in the parser.
+
+// #TINY-8888
+
+=== Fixed `contenteditable="false"` lists and `contenteditable="true"` list elements issues
+
+`contenteditable="false"` lists can no longer be toggled; and contenteditable="true" list elements within these lists can no longer be indented, split into another list element, or appended to the previous list element by deletion.
+
+// #TINY-8920
+
+=== Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin.
+
+// #TINY-8980
+
+=== Fixed a regression where pressing Enter added or deleted content outside the selection.
+
+// #TINY-9101
+
+=== Fixed a bug where pressing Enter deleted selected `contenteditable="false" <pre>` elements.
+
+// #TINY-9101
+
+=== The `editor.insertContent()` API did not respect the `no_events` argument.
+
+// #TINY-9140
+
+[[deprecated]
+== Deprecated
+
+=== The autocompleter configuration property, ch, has been deprecated.
+
+It will be removed in the next major release. Use the `trigger` property instead.
+
+// #TINY-8887
+
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} 6.2 may encounter and possible workarounds for these issues.
+
+There is one known issue in {productname} 6.2 affecting the new premium plugin, xref:mergetags.adoc[Merge Tags].
+
+=== Manually adding a merge tag doesn’t allow other merge tags on same line
+
+// # TINY-9118
+
+// known issues source: <https://jointiny.slack.com/archives/C23SKMHEZ/p1663719545547599>

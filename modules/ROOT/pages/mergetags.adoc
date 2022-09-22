@@ -49,9 +49,9 @@ For example, a merge tag can be set to any available typeface and type-size and 
 +
 Select the Merge tag, click the Merge tag toolbar button, and select a new tag from the menu that presents.
 
-Users can paste from clipboard merge tags, which are not available in mergetags_list.
-User can customize prefix and suffix styles by tweaking provided mce-mergetag-affix class.
-Users can simplify merge tag menu navigation by grouping merge tags in categories and providing user-friendly titles.
+. Text that matches an existing Merge tag will be recognised as a Merge tag when it is pasted or otherwise inserted into a {productname} document.
++
+For example, if `Sender.Firstname` is a Merge tag value, and the Merge tag prefix and suffix have their default values, adding the string, `{{Sender.FirstName}}`, to a {productname} document will result in the string automatically being recognised as a Merge tag.
 
 == Options
 

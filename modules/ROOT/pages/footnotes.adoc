@@ -90,20 +90,6 @@ In similar fashion, if a table row or column that contains a footnote is removed
 These orphan footnote texts can be deleted manually. They can also be removed by clicking the `footnotesupdate` button in the toolbar.
 
 
-=== Footnotes and {productname} Previews
-
-*File > Preview* presents footnote-specific in-document links, but these links do not work in the Preview.
-
-
-=== Footnotes and exporting {productname} documents to PDF
-
-In-document footnote links are not preserved when a {productname} document is exported to a PDF file.
-
-The footnotes and footnote text are preserved, but the clickable links between them are not. In an exported PDF file, the superscripted footnote numbers are not clickable.
-
-And the carets set between a footnote number and footnote text, which act as links back to a superscripted footnote number in a {productname} document, are removed in the exported PDF file.
-
-
 === Formatting superscripted footnote numbers
 
 . Superscripted footnote numbers cannot be inline-formatted

@@ -60,7 +60,9 @@ The {productname} 6.2 release includes an accompanying release of the **Enhanced
 
 **Enhanced Media Embed** 3.0.4 fixes the following bug:
 
-Added `min-width: 100px` to audio elements so that they would still show if aligned left or right. TINY-8687
+Previously, embedded audio objects became invisible when a left or right alignment was applied.
+
+With this update all audio objects are set to `min-width: 100px` and now continue to show in {productname} documents when aligned left or right.
 
 For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed].
 
@@ -70,7 +72,9 @@ The {productname} 6.2 release includes an accompanying release of the **Permanen
 
 Permanent Pen 2.0.2 fixes the following bug:
 
-Fixed an issue where permanent pen wouldn't turn off correctly if the next action was an enter keypress #TINY-8835
+Previously, if Permanent Pen was switched off (by, for example, clicking the Permanent Pen button in the toolbar so the button toggles from highlighted to not-highlighed) and the next user-action was to press the *Enter* or *Return* key, Permanent Pen did not turn off as expected.
+
+This update improves Permanent Pen’s activate and deactivate mechanism. When the plugin is switched off and the next user-action is to press either *Enter* or *Return*, Permanent Pen stays switched off.
 
 For information on the **Permanent Pen** plugin, see: xref:permanentpen.adoc[Permanent Pen].
 
@@ -80,7 +84,11 @@ The {productname} 6.2 release includes an accompanying release of the **PowerPas
 
 PowerPaste 6.1.1 fixes the following bug:
 
-The wordimport.js resource file was difficult to bundle when using Webpack 5 #TINY-8791
+The `wordimport.js` resource file was difficult to bundle when using Webpack 5.
+
+// #TINY-8791
+
+// Bumped internal dependency of wimp to fix webpack 5 bundling issues
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
@@ -90,7 +98,11 @@ The {productname} 6.2 release includes an accompanying release of the **Real-Tim
 
 Real-Time Collaboration 2.1.1 fixes the following bug:
 
-Providers now accept any object that has then and catch functions to be compatible with promise like objects. #TINY-8970
+The Real_Time Collaboration plugin validates `that` parameters, used to set the token provider among other settings, as valid Promises.
+
+However, Angular code wraps promises into ZoneAwarePromises. These fail said validation, throwing an `expected it to return a promise` error.
+
+With this update, providers now accept any object that has `then` and `catch` functions as compatible with promise-like objects.
 
 For information on the **Real-Time Collaboration** plugin, see: xref:rtc-introduction.adoc[Real-Time Collaboration].
 
@@ -98,13 +110,29 @@ For information on the **Real-Time Collaboration** plugin, see: xref:rtc-introdu
 
 The {productname} 6.2 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-Spell Checker Pro 3.1.0 includes one change and fixes two bugs:
+Spell Checker Pro 3.1.0 adds one change and fixes two bugs:
 
-The SpellcheckerLanguageChanged event is now dispatched during plugin initialization #TINY-8996
+==== The `SpellcheckerLanguageChanged` event is now dispatched at plugin initialization
 
-Copying and pasting in tables would not work correctly due to spellchecker incorrectly moving the selection in some specific cases #TINY-7839
+Spell Checker Pro now fires the `SpellcheckerLanguageChanged` event when it is initialized, making the language Spell Checker Pro has been configured to use available for querying.
 
-Spellchecking incorrectly triggered on all change events when it was only meant to trigger if content was inserted #TINY-8994
+This enables other plugins to check for the currently configured language.
+
+==== Ins some specific cases, copying and pasting in tables did not work as expected due to Spell Checker Pro incorrectly moving the selection
+
+In some circumstances, Spell Checker Pro would silently, and incorrectly, extend a selection. When the extended selection was then copied-and-pasted, unexpected results occurred.
+
+For example, in some circumstances the selection appeared to be the contents of a single table cell, but Spell Checker Pro incorrectly extended the selection to include an HTML markup element outside the table. When this wa pasted, the incorrectly added element made the paste behave incorrectly.
+
+With this update, the way elements are traversed when selections are being made has been changed. Consequently, incorrect selection extension no longer occurs, and copying-and-pasting content from tables works as expected.
+
+==== Spellchecking incorrectly triggered on all `change` events
+
+Spell Checker Pro should trigger on any `paste` event, whether the event comes from a plugin (such as Paste or PowerPaste) or a native browser action. Previously, however, Spell Checker Pro was listening to the wrong event — the `change` event — to cover this case.
+
+As a consequence, Spell Checker Pro triggered on all `change` events.
+
+With this update, Spell Checker Pro now listens for input events and only triggers when content is inserted into a {productname} document.
 
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
@@ -138,8 +166,6 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 It can be disabled using the new `promotion` option.
 
 For more information see xref:content-appearance.adoc#premium-upgrade-promotion-option[Premium upgrade promotion option].
-
-// #TINY-8840
 
 === New `format_noneditable_selector` option to specify the `contenteditable="false"` elements that can be wrapped in a format.
 
@@ -179,11 +205,19 @@ For more information see the xref:advlist.adoc#inline-formatting[Inline formatti
 
 === The installed and available plugin lists in the Help dialog are now sorted alphabetically.
 
-// #TINY-9019
+Previously, when the *Help > Help* dialog was invoked, and the _Plugins_ list was selected, available Premium plugins were supposed to be presented in alphabetical order by name.
+
+This was done manually, however, and the manual presentation was not entirely alphabetical.
+
+Also, this manual sort did not take account of the selected UI language and the Premium plugin names were not, in the main, translated.
+
+With this update Premium plugin names are explicitly not translated. But they are, now, correctly sorted in alphabetical order by name.
 
 === Alignment can now be applied to more embedded media element types.
 
-// #TINY-8687
+Embedded media elements could not, previously, be set to left, right, or center alignment.
+
+With this update they can. Selecting an embedded media element and clicking the left, right, or center alignment toolbar buttons, or selecting the appropriate option from the *Format > Align* sub-menu, sets the element to the chosen alignment.
 
 
 [[changes]]
@@ -193,18 +227,27 @@ For more information see the xref:advlist.adoc#inline-formatting[Inline formatti
 
 === The `@menubar-row-separator-color` oxide variable no longer affects the divider between the Menubar and Toolbar.
 
-It only controls the color of the separator lines drawn in multiline Menubars.
+Testing revealed circumstances in which an unnecessary border was added under the {productname} Menu bar.
 
-// #TINY-8632
+This update includes changes to the `@menubar-row-separator-color` oxide variable. It now only controls the color of the separator lines drawn in multiline Menubars.
 
-=== The `@toolbar-separator-color` oxide variable now affects the color of the separator between the Menubar and Toolbar only.
+Consequently, unnecessary borders are no longer added under the {productname} menu bar.
 
-// #TINY-8632
+=== The `@toolbar-separator-color` oxide variable now affects the color of the separator between the Menu bar and Toolbar only.
+
+In concert with the testing above that discovered an unnecessary border occasionally being added under the {productname} Menu bar, the `@toolbar-separator-color` oxide variable was also changed.
+
+This variable now only affects the color of the separator between the {productname} Menu bar and the {productname} Toolbar.
 
 === Available Premium plugins, which are listed by name in the Help dialog, are no longer translated.
 
-//#TINY-9019
+Previously, when the *Help > Help* dialog was invoked, and the _Plugins_ list was selected, available Premium plugins were supposed to be presented in alphabetical order by name.
 
+This was done manually, however, and the manual presentation was not entirely alphabetical.
+
+Also, this manual sort did not take account of the selected UI language and the Premium plugin names were not, in the main, translated.
+
+With this update Premium plugin names are explicitly not translated. But they are, now, correctly sorted in alphabetical order by name.
 
 [[bug-fixes]]
 == Bug fixes
@@ -288,16 +331,21 @@ It only controls the color of the separator lines drawn in multiline Menubars.
 
 === The `editor.insertContent()` API did not respect the `no_events` argument.
 
-// #TINY-9140
+If, for example, `editor.insertContent('<p>test</p>', { no_events: true });` was run, `BeforeGetContent` and `SetContent` events were still fired, despite `no_events` being set to `true`.
+
+With this update, the API respects the `no_events: true` setting. Adding content to a {productname} document with `no_events` set to true now adds the content without firing events, as expected.
 
 [[deprecated]
 == Deprecated
 
-=== The autocompleter configuration property, ch, has been deprecated.
+=== The `autocompleter` configuration property, `ch`, has been deprecated.
 
-It will be removed in the next major release. Use the `trigger` property instead.
+`ch` will be removed in the next major release. Use the `trigger` property instead.
 
-// #TINY-8887
+[source,js]
+----
+trigger: '<string>',
+----
 
 
 [[known-issues]]
@@ -307,8 +355,12 @@ This section describes issues that users of {productname} 6.2 may encounter and 
 
 There is one known issue in {productname} 6.2 affecting the new premium plugin, xref:mergetags.adoc[Merge Tags].
 
-=== Manually adding a merge tag doesn’t allow other merge tags on same line
+=== Merge Tags cannot be manually added to a {productname} document in some circumstances
 
-// # TINY-9118
+There are several circumstances where typing the Merge tags prefix (by default, `+{{+`) does not activate the `autocompleter`. Consequently, choosing a Merge tag from the expected pop-up menu is not possible because the pop-up menu does not present.
 
-// known issues source: <https://jointiny.slack.com/archives/C23SKMHEZ/p1663719545547599>
+Moreover, in the circumstances where the `autocompleter` does not activate, even typing the entire Merge tag does not result in the string being turned in to a Merge tag.
+
+There is a workaround, however.
+
+If typing the Merge tags prefix does not work as expected, clicking the Merge tags toolbar button and selecting the desired Merge tag from the resultant menu inserts a functioning Merge tag.

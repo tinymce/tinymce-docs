@@ -35,7 +35,11 @@ tinymce.init({
 
 The footnotes section, which is placed at the bottom of the {productname} editor, is created when the first footnote is added.
 
-Footnotes can be inserted using the _Insert footnote_ button, located on the toolbar, or by selecting the _Insert > Insert Footnote_ command from the menu bar, or by using the `+mceInsertFootnote+` command.
+Footnotes can be inserted with
+
+* the _Insert footnote_ button, located on the toolbar;
+* the _Insert > Insert Footnote_ command from the menu bar;
+* or the `+mceInsertFootnote+` command.
 
 The footnotes section is automatically updated whenever a footnote is inserted, reordered, or removed within the {productname} editor. The footnotes section is automatically removed if all footnotes are removed.
 
@@ -52,7 +56,7 @@ NOTE: Although the viewport scrolls back to the line containing the footnote num
 
 === CSS
 
-//// explanatory text here.
+// explanatory text here.
 
 [source,css]
 ----

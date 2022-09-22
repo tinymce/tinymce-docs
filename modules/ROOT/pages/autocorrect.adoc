@@ -1,7 +1,7 @@
 = Spelling Autocorrect plugin
 :navtitle: Spelling Autocorrect
-:description: Autocorrect common spelling mistakes.
-:keywords: autocorrect, capitalization, spell, spelling, spellcheck
+:description: Autocorrect common spelling errors.
+:keywords: autocorrect, capitalization, misprint, spell, spelling, spellcheck, typo, typographical error
 :pluginname: Spelling Autocorrect
 :plugincode: autocorrect
 :pluginminimumplan: tierthree
@@ -11,7 +11,7 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.2v.adoc[]
 
-The {pluginname} plugin allows {productname} to autocorrect a specified set of spelling errors or capitalization errors, as they are being typed.
+The {pluginname} plugin allows {productname} to autocorrect a specified set of spelling errors, common typos, and capitalization errors, as they are being typed.
 
 == Interactive Example
 
@@ -46,9 +46,9 @@ For example, if *cna* (which the {pluginname} plugin treats as a mis-typing of *
 
 . Spelling Autocorrect is case-sensitive.
 +
-As a consequence, mis-spelled words are not auto-corrected if they do not exactly match the plugin’s built-in correction set.
+As a consequence, mis-spelled words are not autocorrected if they do not exactly match the plugin’s built-in correction set.
 +
-For example, {pluginname} auto-corrects *teh* to *the*, but does not, currently, auto-correct *Teh* to *The*.
+For example, {pluginname} autocorrects *teh* to *the*, but does not, currently, autocorrect *Teh* to *The*.
 
 [[known-issues]]
 == Known issues

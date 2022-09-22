@@ -1,7 +1,7 @@
 [[text_patterns_lookup]]
 == `+text_patterns_lookup+`
 
-This option allows specifying a function that dynamically appends additional text patterns to the xref:content-behavior-options.adoc#text_patterns[text_patterns]. The function takes a context object as an argument and should return a list of text patterns. The function will be called whenever the editor is attempting to do text pattern matching.
+This option allows the specification of a function that dynamically appends additional text patterns to the default xref:content-behavior-options.adoc#text_patterns[text_patterns]. The function takes a context object as an argument and returns an array of text patterns. This function is called whenever the editor triggers text pattern matching.
 
 *Type:* `+Function+`
 

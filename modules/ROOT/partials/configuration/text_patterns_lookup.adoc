@@ -21,11 +21,13 @@ tinymce.init({
       return [
         { start: '*', end: '*', format: 'bold' }
       ];
-    } else {
+    } else if (parentTag === 'span') {
       return [
         // ctx.text is the string from the start of the block to the cursor
         { start: 'brb', replacement: ctx.text + ': Be Right Back' }
       ];
+    } else {
+      return [];
     }
   }
 });

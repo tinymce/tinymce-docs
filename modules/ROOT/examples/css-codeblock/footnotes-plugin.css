@@ -7,3 +7,17 @@ div.mce-footnotes hr {
 div.mce-footnotes li > a.mce-footnotes-backlink {
   text-decoration: none;
 }
+
+@media print {
+  sup.mce-footnote a {
+    color: black;
+    text-decoration: none;
+  }
+  div.mce-footnotes {
+    break-inside: avoid;
+    width: 100%;
+  }
+  div.mce-footnotes li > a.mce-footnotes-backlink {
+    display: none;
+  }
+}

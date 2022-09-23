@@ -382,21 +382,33 @@ With this update, when auto focus is set, the editor is focused and scrolled int
 
 === Fixed `contenteditable="false"` lists and `contenteditable="true"` list elements issues
 
-`contenteditable="false"` lists can no longer be toggled; and contenteditable="true" list elements within these lists can no longer be indented, split into another list element, or appended to the previous list element by deletion.
+Previously, lists with `contenteditable="false"` attributes could be toggled and updated. And, within those lists, list elements with `contenteditable="true"` attributes could be indented, split into another list element, or appended to the previous list element by deletion.
 
-// #TINY-8920
+Neither behavior was correct and, as of {productname} 6.2, this has been corrected.
+
+In {productname} 6.2, list functionality in this regard is dependent on the value of the list’s `contenteditable` attribute.
+
+And an editable list element’s functionality is now dependent on the value of the `contenteditable` attribute in its parent list.
+
 
 === Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin.
 
-// #TINY-8980
+In {productname} 6.1.2, extra padding was added to the context toolbar and, consequently, separator lines were incorrectly drawn on multi-line toolbars when using either the `tinymce-5` skin or premium skins.
+
+With this update the extra padding was removed and separator lines in {productname} 6.2 multi-line toolbars are drawn correctly.
 
 === Fixed a regression where pressing Enter added or deleted content outside the selection.
 
-// #TINY-9101
+A regression found in {productname} 6.0 caused inline elements with `contenteditable="false"` attributes to be incorrectly removed when *Enter* or *Return* were pressed on a selection which began before, and entered into, the block containing the element.
 
-=== Fixed a bug where pressing Enter deleted selected `contenteditable="false" <pre>` elements.
+This regression was fixed in {productname} 6.2 and pressing *Enter* or *Return* in this circumstance no longer incorrectly removes these elements.
 
-// #TINY-9101
+=== Fixed a regression where pressing Enter deleted selected `contenteditable="false" <pre>` elements.
+
+A regression found in {productname} 6.0 caused `preformatted` elements with `contenteditable="false"` attributes to incorrectly insert a newline when *Enter* or *Return* were pressed.
+
+This regression was fixed in {productname} 6.2 and pressing *Enter* or *Return* no longer inserts an erroneous newline.
+
 
 === The `editor.insertContent()` API did not respect the `no_events` argument.
 

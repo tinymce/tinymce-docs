@@ -500,3 +500,13 @@ For example, if a {productname} instance is running the Merge tags plugin and th
 into the document results in the pasted string being turned in to an apparently working tag, ready to take whatever values `not.a.merge.tag.value.for.this.document` is the placeholder for.
 
 There is no current workaround.
+
+=== A Merge tags UI element has not been translated
+
+{productname} 6.2 adds a new UI option to MenuButtons. These toolbar objects can now present a search field at the top of the menu.
+
+As text is entered in to this search field, the menu contents update in real-time. And, when nothing in the menu matches the entered string, the MenuButton presents a _No matches_ result.
+
+This particular string, _No matches_ has not been translated.
+
+There is no current workaround and this error is slated to be fixed in a future {productname} release.

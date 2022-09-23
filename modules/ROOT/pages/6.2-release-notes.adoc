@@ -291,21 +291,52 @@ With this update Premium plugin names are explicitly not translated. But they ar
 == Bug fixes
 
 === The Autolink plugin did not work when text nodes in the content were fragmented.
-//
 
-// #TINY-3723
+The Spell Checker Pro plugin fragments text nodes as part of its normal workings. Previously however, this fragmentation broke the URL text detection of the Autolink plugin.
+
+This presented as, for example, FQDN strings such as `www.example.com` not being converted into a link.
+
+In {productname} 6.2, the Autolink plugin is now able to handle this text node fragmentation and correctly converts URL-like strings such as FQDNs into a clickable link.
 
 === Fixed multiple incorrect types on public APIs found while enabling TypeScript strict mode.
 
-// #TINY-8806
+As part of switching to TypeScript’s strict mode, multiple public {productname} APIs were found to be typed incorrectly.
+
+These types have been corrected types in {productname} 6.2. 
 
 === The number of blank lines returned from `editor.getContent({format: 'text'})` differed between browsers.
 
-// #TINY-8579
+In some browsers, blank lines in a {productname} document were being returned as plain text by `editor.getContent({format: 'text'})` with a different number of newlines — `+\n+` — than expected.
+
+For example, if the underlying HTML was
+
+[source,html]
+----
+<p>line-1</p>
+<p> </p>
+<p>line-2</p>
+----
+
+`editor.getContent({format: 'text'})` could, depending on the host browser, return
+
+[source,text]
+----
+line-1\n\n\n\n\nline-2
+----
+
+This is one more newline character than expected.
+
+There were two related causes for this behaviour: an attribute not being assigned to a `<br>` tag when required, and {productname} not removing unnecessary elements when parsing the content.
+
+For this update, both these causes have been corrected, and the number of newlines returned as plain text by `editor.getContent({format: 'text'})` is the number expected.
 
 === The editor focused via the `auto_focus` option was not scrolled into the viewport.
 
-// #TINY-8785
+Previously, when a {productname} editor was not in view and was set to auto focus, the editor was focused but did not scroll into view.
+
+This only occurred if the host browser was Google Chrome.
+
+With this update, when auto focus is set, the editor is focused and scrolled into view even when the editor is outside the viewport, no matter the host browser.
 
 === Adding spaces immediately after a `contenteditable="false"` block did not work properly in some circumstances.
 

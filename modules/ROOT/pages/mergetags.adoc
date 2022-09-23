@@ -74,12 +74,12 @@ It's possible to change the visual appearance of the Merge tags within the edito
 [source,css]
 ----
 .mce-content-body .mce-mergetag:hover {
-    background-color: rgba(0, 108, 231, .1)
+    background-color: rgba(0, 108, 231, .1);
 }
 
 .mce-content-body .mce-mergetag-affix {
     background-color: rgba(0, 108, 231, .1);
-    color: #006ce7
+    color: #006ce7;
 }
 ----
 

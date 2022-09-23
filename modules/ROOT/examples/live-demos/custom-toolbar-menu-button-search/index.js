@@ -12,7 +12,7 @@ tinymce.init({
     editor.ui.registry.addMenuButton('mybutton', {
       text: 'My searchable button',
       search: {
-        placeholder: 'What do you want to search for?'
+        placeholder: 'Type...'
       },
       fetch: (callback, fetchContext) => {
         if (fetchContext.pattern.length > 0) {

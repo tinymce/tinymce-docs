@@ -338,9 +338,13 @@ This only occurred if the host browser was Google Chrome.
 
 With this update, when auto focus is set, the editor is focused and scrolled into view even when the editor is outside the viewport, no matter the host browser.
 
-=== Adding spaces immediately after a `contenteditable="false"` block did not work properly in some circumstances.
+=== Adding spaces immediately after a block with a `contenteditable="false"` attribute did not work properly in some circumstances.
 
-// #TINY-8814
+Previously, pressing the *Space bar* when the insertion point was immediately after a `span` containing a `contenteditable="false"` attribute did not consistently insert a space.
+
+This was known to occur on Mozilla Firefox and Google Chrome and was consequent to issues related to insertion point movement and non-breaking spaces.
+
+{productname} 6.2 deals with these issues and typing a space immediately after a a block with a `contenteditable="false"` attribute now adds that space, as expected.
 
 === Elements with only `data-*` custom attributes were sometimes removed when they should not be removed.
 
@@ -473,7 +477,7 @@ trigger: '<string>',
 
 This section describes issues that users of {productname} 6.2 may encounter and possible workarounds for these issues.
 
-There is one known issue in {productname} 6.2 affecting the new premium plugin, xref:mergetags.adoc[Merge Tags].
+There are three known issues in {productname} 6.2, all affecting the new premium plugin, xref:mergetags.adoc[Merge Tags].
 
 === Merge Tags cannot be manually added to a {productname} document in some circumstances
 
@@ -484,3 +488,15 @@ Moreover, in the circumstances where the `autocompleter` does not activate, even
 There is a workaround, however.
 
 If typing the Merge tags prefix does not work as expected, clicking the Merge tags toolbar button and selecting the desired Merge tag from the resultant menu inserts a functioning Merge tag.
+
+=== Merge tags does not validate inserted strings that match merge tag syntax
+
+If a string is pasted or otherwise inserted into a {productname} document and that string presents as a complete merge tag, the Merge tag plugin will turn the string into an apparently working merge tag, regardless of the string’s content.
+
+For example, if a {productname} instance is running the Merge tags plugin and the plugin is using the default prefix and suffix characters — +{{+` and +}}+` — pasting
+
+`{{not.a.merge.tag.value.for.this.document}}`
+
+into the document results in the pasted string being turned in to an apparently working tag, ready to take whatever values `not.a.merge.tag.value.for.this.document` is the placeholder for.
+
+There is no current workaround.

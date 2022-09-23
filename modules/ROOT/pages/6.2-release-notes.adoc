@@ -157,7 +157,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === A new `text_patterns_lookup` option to provide additional text patterns dynamically.
 
-// #TINY-8778
+{productname} 6.2 includes a new `text_patterns_lookup` option.
+
+This option allows the specification of a function that dynamically appends additional text patterns to the default xref:content-behavior-options.adoc#text_patterns[text_patterns].
+
+The function takes a context object as an argument and returns an array of text patterns. This function is called whenever the editor triggers text pattern matching.
+
+For details see xref:content-behavior-options.adoc#text_patterns_lookup[Content Behavior Options].
 
 === A new promotion element has been added to the default UI.
 
@@ -169,31 +175,63 @@ For more information see xref:content-appearance.adoc#premium-upgrade-promotion-
 
 === New `format_noneditable_selector` option to specify the `contenteditable="false"` elements that can be wrapped in a format.
 
-// #TINY-8905
+Elements with `contenteditable="false"` attributes can now have formatting applied to them.
 
-=== Added `allow` as a valid attribute for the iframe element in the editor schema.
+And this new capability is configurable using the new `format_noneditable_selector` option.
 
-// #TINY-8939
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  format_noneditable_selector: 'span,p.special'
+});
+----
 
-=== New search field in the MenuButton that shows a search field at the top of the menu, and refetches items when the search field updates.
+For details see xref:content-formatting.adoc#format_noneditable_selector[Content Formatting].
 
-// #TINY-8952
+=== Added `allow` as a valid attribute for the `iframe` element in the editor schema.
 
+Previously, the `allow` attribute was not considered a valid attribute for `iframe` elements in the {productname} schema. It now is.
+
+When a {productname} editor with an `allow` attribute —
+
+[source,html]
+----
+<iframe allow="fullscreen" style="width: 200px; height: 200px; border: 1px solid blue"></iframe>
+----
+
+— is initialized, the `allow` attribute will still be present in the rendered `iframe` element.
+
+=== MenuButtons can now contain a search field
+
+MenuButtons, buttons on the {productname} toolbar that show a menu when clicked, can now present a search field at the top of the menu.
+
+The button refetches items as the search field is updated.
+
+The new xref:mergetags.adoc[Merge Tags] Premium plugin includes a MenuButton with this new search field.
 
 [[improvements]]
 == Improvements
 
 {productname} 6.2 also includes the following improvements:
 
-=== The formatter can now apply a format to a `contenteditable="false"` element by wrapping it.
+=== Formatting can now be applied to an element that has a `contenteditable="false"` attribute
 
-Configurable using the `format_noneditable_selector` option.
+Elements with `contenteditable="false"` attributes can now have formatting applied to them.
 
-// #TINY-8905
+For example, such elements can now be set to *bold* or _italic_. As well, such elements can have their font and font-size changed.
+
+This new capability is also configurable using the new `format_noneditable_selector` option.
+
+For details see xref:content-formatting.adoc#format_noneditable_selector[Content Formatting].
 
 === The autocompleter now supports a multiple character trigger using the new trigger configuration.
 
-// #TINY-8887
+Previously, the autocompleter only supported a single character trigger.
+
+With this update, the autocompleter now supports multi-character triggers.
+
+The new xref:mergetags.adoc[Merge Tags] Premium plugin, for example, uses the string `+{{+` as its default trigger.
 
 === Some inline formatting, such as color and font size, can now be applied to list item elements
 
@@ -340,7 +378,9 @@ With this update, the API respects the `no_events: true` setting. Adding content
 
 === The `autocompleter` configuration property, `ch`, has been deprecated.
 
-`ch` will be removed in the next major release. Use the `trigger` property instead.
+The `ch` autocompleter configuration property will be removed in the next major release.
+
+Use the `trigger` property instead.
 
 [source,js]
 ----

@@ -348,25 +348,42 @@ This was known to occur on Mozilla Firefox and Google Chrome and was consequent 
 
 === Elements with only `data-*` custom attributes were sometimes removed when they should not be removed.
 
-// #TINY-8755
+Previously, when removing formatting from content that had elements with only custom data attributes, those elements could be incorrectly removed as part of the remove formatting operation.
+
+For this update the remove formatting logic was changed. In {productnmae 6.2 all non-{productname} specific or non-{productname} internal `data-*` custom attributes are considered content that must be preserved.
 
 === Selecting a figure with `class="image"` incorrectly highlighted the link toolbar button.
 
-// #TINY-8832
+Previously, when inserting an image with a caption, the `image` plugin created a `figure` element. However, the `link` plugin treated the `figure` element as a link, even when the image caption did not contain a link.
+
+This caused the link toolbar button to, incorrectly, highlight.
+
+As of this update, the `link` plugin does not treat images with captions as links when the image caption does not contain a link. And the link toolbar no longer highlights incorrectly.
+
 
 === Specifying a single, non-default list style for the `advlist_bullet_styles` and `advlist_number_styles` options was not respected.
 
-// #TINY-8721
+Previously, when a single, non-default, list style for the `advlist_bullet_styles` and `advlist_number_styles` options was set, pressing the `bullist` and `numlist` toolbar buttons still applied a default list style.
 
-=== Fixed multiple issues that occurred when formatting `contenteditable` elements.
+This has been corrected and, with this update, {productname} behaves as expected.
 
-// #TINY-8905
+Pressing a list toolbar button when a single, non-default list style is set now applies the list style correctly.
+
+
+=== Fixed multiple issues that occurred when formatting elements with `contenteditable` attributes.
+
+For this update, the formatting logic has been refactored to improve the handling of elements containing `+contenteditable=”false”+` and `+contenteditable=”true”+` attributes.
+
+In particular, this includes ensuring that formatting is not directly removed from elements with `+contenteditable=”false”+` attributes when merging duplicate or similar formatting between parent, sibling and child elements.
 
 === Spaces could be incorrectly added to `urlinput` dialog components in certain cases.
 
-`urlinput` dialog components are commonly but not exclusively presented in the **Insert/Edit Link** dialog.
+The handling of spaces inserted into the xref:dialog-components/#urlinput[UrlInput] dialog component, specifically its implementation in the xref:link[Link Dialog], was inconsistent.
 
-// #TINY-8775
+It allowed spaces to be entered when it was empty and the text input contained text, but did not allow spaces to be entered when both fields were empty.
+
+In {productname} 6.2, the xref:dialog-components/#urlinput[UrlInput] dialog component no longer allows leading or trailing spaces. Only spaces within other text content are now allowed.
+
 
 === The text patterns logic threw an error when there were fragmented text nodes in a paragraph.
 

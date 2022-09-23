@@ -474,7 +474,7 @@ If, for example, `editor.insertContent('<p>test</p>', { no_events: true });` was
 
 With this update, the API respects the `no_events: true` setting. Adding content to a {productname} document with `no_events` set to true now adds the content without firing events, as expected.
 
-[[deprecated]
+[[deprecated]]
 == Deprecated
 
 === The `autocompleter` configuration property, `ch`, has been deprecated.

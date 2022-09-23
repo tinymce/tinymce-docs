@@ -338,7 +338,7 @@ This only occurred if the host browser was Google Chrome.
 
 With this update, when auto focus is set, the editor is focused and scrolled into view even when the editor is outside the viewport, no matter the host browser.
 
-=== Adding spaces immediately after a block with a `contenteditable="false"` attribute did not work properly in some circumstances.
+=== Adding spaces immediately after a `<span>` containing a `contenteditable="false"` attribute did not work properly in some circumstances.
 
 Previously, pressing the *Space bar* when the insertion point was immediately after a `span` containing a `contenteditable="false"` attribute did not consistently insert a space.
 

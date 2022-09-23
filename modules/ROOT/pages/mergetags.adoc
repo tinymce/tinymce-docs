@@ -66,3 +66,30 @@ include::partial$configuration/mergetags_list.adoc[leveloffset=+1]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Styling Merge tags
+
+It's possible to change the visual appearance of the Merge tags within the editor using a custom CSS file provided though the xref:add-css-options.adoc#content_css[content_css] option. Here is an example on how to style the various elements of the merge tag.
+
+[source,css]
+----
+.mce-content-body .mce-mergetag:hover {
+    background-color: rgba(0, 108, 231, .1)
+}
+
+.mce-content-body .mce-mergetag-affix {
+    background-color: rgba(0, 108, 231, .1);
+    color: #006ce7
+}
+----
+
+Here is an example of the Merge tag HTML structure.
+
+[source,html]
+----
+<span class="mce-mergetag">
+  <span class="mce-mergetag-affix">{{</span>
+    some.mergetag
+  <span class="mce-mergetag-affix">}}</span>
+</span>
+----

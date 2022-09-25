@@ -54,7 +54,7 @@ Adds a new undo level/snapshot to the undo list.
 
 ==== Return value
 
-* `Object` - Undo level that got added or null it a level wasn't needed.
+* `Object` - Undo level that got added or null if a level wasn't needed.
 
 '''
 

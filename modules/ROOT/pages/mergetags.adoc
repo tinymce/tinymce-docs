@@ -30,6 +30,21 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'mergetags',
   toolbar: 'mergetags',
+  mergetags_list: [
+  {
+    title: 'Example merge tags list',
+    menu: [
+    {
+      value: 'Example.1',
+      title: 'Example one'
+    },
+    {
+      value: 'Example.2',
+      title: 'Example two'
+    }
+  ]
+  },
+  ]
 });
 ----
 

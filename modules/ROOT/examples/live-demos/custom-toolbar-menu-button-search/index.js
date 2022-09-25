@@ -22,7 +22,7 @@ tinymce.init({
               text: `You searched for: "${fetchContext.pattern}"`,
               onAction: () => editor.insertContent(`<strong>Inserted selected search result</strong>`)
             }
-          ])
+          ]);
         } else {
           const items = [
             {

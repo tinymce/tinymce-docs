@@ -57,7 +57,7 @@ The following is a simple toolbar menu button example, where searching has been 
 
 liveDemo::custom-toolbar-menu-button-search[tab="js"]
 
-This example configures a toolbar menu button with the label `+My searchable button+` that opens the specified menu when clicked. The menu will contain a search input field because `+search+` is not `+false+`. The input field's https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder[placeholder attribute] will be `+What do you want to search for?+`.
+This example configures a toolbar menu button with the label `+My searchable button+` that opens the specified menu when clicked. The menu will contain a search input field because `+search+` is not `+false+`. The input field's https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder[placeholder attribute] will be `+Type...+`.
 
 Initially, when the menu opens, the search input field will be empty, and the `+fetch+` function is called with an empty `+pattern+` for its `+fetchContext+`. In that situation, `+fetch+` passes back an array of two items to be rendered in the drop-down menu. When the user types in the input field, `+fetch+` will be called again, except this time, the `+pattern+` property in `+fetchContext+` will reflect the value typed in the input field. For illustration purposes, this example then passes back an item that contains this pattern inside the item's text. In a more real-life example, the `+pattern+` could be used to filter which of the items are passed to the callback.
 

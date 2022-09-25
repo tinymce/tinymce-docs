@@ -118,7 +118,7 @@ Spell Checker Pro now fires the `SpellcheckerLanguageChanged` event when it is i
 
 This enables other plugins to check for the currently configured language.
 
-==== Ins some specific cases, copying and pasting in tables did not work as expected due to Spell Checker Pro incorrectly moving the selection
+==== In some specific cases, copying and pasting in tables did not work as expected due to Spell Checker Pro incorrectly moving the selection
 
 In some circumstances, Spell Checker Pro would silently, and incorrectly, extend a selection. When the extended selection was then copied-and-pasted, unexpected results occurred.
 

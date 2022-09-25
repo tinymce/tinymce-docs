@@ -66,12 +66,11 @@ the spelling is corrected but the initial letter is not capitalized.
 
 . Auto-capitalization does not work on text immediately following a soft return in non-empty {productname} documents.
 +
-If
+Auto-capitalization will not operate on the entered string if
 +
   * a {productname} document contains any data other than a soft return character (Unicode U+2028, commonly entered by typing *Shift+Return*); and
-  * the character immediately preceding an entered string is a soft return character
+  * the character immediately preceding an entered string is a soft return character.
 +
-Auto-capitalization will not operate on the entered string.
 
 . Auto-capitalization interferes with `+mediaembed+`, the xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] Premium plugin.
 

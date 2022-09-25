@@ -400,7 +400,7 @@ For this update the text pattern logic was improved to handle these cases and th
 
 Previously, when an element with a `contenteditable=false` attribute was dragged towards the document’s edge, the drag did not cause scrolling. This meant such elements could only be dropped within the current viewport.
 
-When dragging other elements (such as an image), as the dragged element aproaches the edge of the document, {productname} starts scrolling, allowing these other elements to be dropped anywhere in the document.
+When dragging other elements (such as an image), as the dragged element approaches the edge of the document, {productname} starts scrolling, allowing these other elements to be dropped anywhere in the document.
 
 With this update, dragging an element with a `contenteditable=false` attribute towards the document edge triggers scrolling, allowing for dropping the element anywhere in the document.
 
@@ -447,6 +447,10 @@ Neither behavior was correct and, as of {productname} 6.2, this has been correct
 In {productname} 6.2, list functionality in this regard is dependent on the value of the list’s `contenteditable` attribute.
 
 And an editable list element’s functionality is now dependent on the value of the `contenteditable` attribute in its parent list.
+
+////
+More specifically, this is dependent on the contenteditable state, meaning that the parent list may not have a contenteditable attribute (no attribute specified, by default it would have inherit) but the first parent of that list with a contenteditable attribute determines the contenteditable state of that list, for example, a noneditable div means any list within that div without a contenteditable attribute would be noneditable. Another example would be a contenteditable true list would be editable, even within a noneditable div. Just wanted to clarify that this isn't always determined by the attribute, but by the state of the first parent with the attribute.
+////
 
 
 === Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin.

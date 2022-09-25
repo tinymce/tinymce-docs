@@ -56,9 +56,9 @@ NOTE: Although the viewport scrolls back to the line containing the footnote num
 
 == CSS
 
-The following CSS is what is used in the internal `+content.css+` within {productname}. It can be overridden with a custom xref:add-css-options.adoc#content_css[`+content_css+`] stylesheet.
+The following CSS is used in the internal `+content.css+` within {productname}. It can be overridden with a custom xref:add-css-options.adoc#content_css[`+content_css+`] stylesheet.
 
-To make footnotes display correctly outside of {productname}, be sure to add the CSS to the published webpage.
+To make footnotes display correctly outside of {productname}, add this CSS to the published webpage.
 
 [source,css]
 ----

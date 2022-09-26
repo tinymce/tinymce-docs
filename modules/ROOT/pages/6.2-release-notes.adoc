@@ -461,7 +461,7 @@ In {productname} 6.1.2, extra padding was added to the context toolbar and, cons
 
 With this update the extra padding was removed and separator lines in {productname} 6.2 multi-line toolbars are drawn correctly.
 
-=== Fixed a regression where pressing Enter added or deleted content outside the selection.
+=== Fixed a regression where pressing Enter added or deleted content outside the selection
 
 A regression found in {productname} 6.0 caused inline elements with `contenteditable="false"` attributes to be incorrectly removed when *Enter* or *Return* were pressed on a selection which began before, and entered into, the block containing the element.
 

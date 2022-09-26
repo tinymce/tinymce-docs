@@ -181,16 +181,6 @@ If the contents of a list item are selected and inline formatting is applied —
 
 For more information see the xref:advlist.adoc#inline-formatting[Inline formatting of list elements documentation].
 
-=== The installed and available plugin lists in the Help dialog are now sorted alphabetically
-
-Previously, when the *Help > Help* dialog was invoked, and the _Plugins_ list was selected, available Premium plugins were supposed to be presented in alphabetical order by name.
-
-This was done manually, however, and the manual presentation was not entirely alphabetical.
-
-Also, this manual sort did not take account of the selected UI language and the Premium plugin names were not, in the main, translated.
-
-With this update Premium plugin names are explicitly not translated. But they are, now, correctly sorted in alphabetical order by name.
-
 === Alignment can now be applied to more embedded media element types
 
 Embedded media elements could not, previously, be set to left, right, or center alignment.

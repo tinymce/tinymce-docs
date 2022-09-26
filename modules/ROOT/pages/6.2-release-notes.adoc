@@ -474,7 +474,7 @@ A regression found in {productname} 6.0 caused `preformatted` elements with `con
 This regression was fixed in {productname} 6.2 and pressing *Enter* or *Return* no longer inserts an erroneous newline.
 
 
-=== The `editor.insertContent()` API did not respect the `no_events` argument.
+=== The `editor.insertContent()` API did not respect the `no_events` argument
 
 If, for example, `editor.insertContent('<p>test</p>', { no_events: true });` was run, `BeforeGetContent` and `SetContent` events were still fired, despite `no_events` being set to `true`.
 

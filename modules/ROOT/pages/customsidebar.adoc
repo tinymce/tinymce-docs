@@ -78,6 +78,9 @@ tinymce.init({
       icon: 'comment',
       onSetup: (api) => {
         console.log('Render panel', api.element());
+        return () => {
+          console.log('Removing sidebar');
+        };
       },
       onShow: (api) => {
         console.log('Show panel', api.element());
@@ -101,6 +104,9 @@ tinymce.PluginManager.add('myplugin', (editor) => {
     icon: 'comment',
     onSetup: (api) => {
       console.log('Render panel', api.element());
+      return () => {
+        console.log('Removing sidebar');
+      };
     },
     onShow: (api) => {
       console.log('Show panel', api.element());

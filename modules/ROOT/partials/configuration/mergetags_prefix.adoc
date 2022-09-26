@@ -1,0 +1,22 @@
+[[mergetags_prefix]]
+== `+mergetags_prefix+`
+
+This option specifies the prefix to be attached to each merge tag.
+
+Whatever this option is set to, when it is typed, it triggers the {pluginname} autocompleter within the editor.
+
+*Type:* `+String+`
+
+*Default value:* `+{{+`
+
+=== Example: Using `+mergetags_prefix+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'mergetags',
+  toolbar: 'mergetags',
+  mergetags_prefix: '{{'
+});
+----

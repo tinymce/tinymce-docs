@@ -330,7 +330,7 @@ line-1\n\n\n\n\nline-2
 
 This is one more newline character than expected.
 
-There were two related causes for this behaviour: an attribute not being assigned to a `<br>` tag when required, and {productname} not removing unnecessary elements when parsing the content.
+There were two related causes for this behavior: an attribute not being assigned to a `<br>` tag when required, and {productname} not removing unnecessary elements when parsing the content.
 
 For this update, both these causes have been corrected, and the number of newlines returned as plain text by `editor.getContent({format: 'text'})` is the number expected.
 

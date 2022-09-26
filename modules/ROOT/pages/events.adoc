@@ -187,6 +187,7 @@ The following plugins provide events.
 * xref:permanent-pen-events[Permanent Pen events]
 * xref:powerpaste-events[PowerPaste events]
 * xref:spell-checker-pro-events[Spell Checker Pro events]
+* xref:autocorrect-events[Spelling Autocorrect events]
 * xref:visual-blocks-events[Visual Blocks events]
 * xref:visual-characters-events[Visual Characters events]
 * xref:word-count-events[Word Count events]
@@ -320,6 +321,11 @@ The following events are provided by the xref:introduction-to-powerpaste.adoc[Po
 === Spell Checker Pro events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
+
+[[autocorrect-events]]
+=== Spelling Autocorrect events
+
+include::partial$events/autocorrect-events.adoc[]
 
 [[visual-blocks-events]]
 === Visual Blocks events

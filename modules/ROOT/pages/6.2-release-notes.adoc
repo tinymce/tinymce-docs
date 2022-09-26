@@ -385,6 +385,8 @@ Previously, pressing *Enter* or *Return* to trigger an inline replacement text p
 > tinymce.min.js:9 Uncaught DOMException: Failed to execute 'setEnd' on 'Range'
 ----
 
+The example above is browser-specific. The exact error message will not be the same in all browsers.
+
 For this update the text pattern logic was improved to handle these cases and these console errors are no longer thrown.
 
 === Dragging a `contentEditable=false` element towards a document’s edge did not cause scrolling

@@ -290,7 +290,7 @@ With this update Premium plugin names are explicitly not translated. But they ar
 [[bug-fixes]]
 == Bug fixes
 
-=== The Autolink plugin did not work when text nodes in the content were fragmented.
+=== The Autolink plugin did not work when text nodes in the content were fragmented
 
 The most common cause of text fragmentation is the Spell Checker Pro plugin, which fragments text nodes as part of its normal workings.
 
@@ -300,13 +300,13 @@ This presented as, for example, FQDN strings such as `www.example.com` not being
 
 In {productname} 6.2, the Autolink plugin is now able to handle this text node fragmentation and correctly converts URL-like strings such as FQDNs into a clickable link.
 
-=== Fixed multiple incorrect types on public APIs found while enabling TypeScript strict mode.
+=== Fixed multiple incorrect types on public APIs found while enabling TypeScript strict mode
 
 As part of switching to TypeScript’s strict mode, multiple public {productname} APIs were found to be typed incorrectly.
 
 These types have been corrected types in {productname} 6.2. 
 
-=== The number of blank lines returned from `editor.getContent({format: 'text'})` differed between browsers.
+=== The number of blank lines returned from `editor.getContent({format: 'text'})` differed between browsers
 
 In some browsers, blank lines in a {productname} document were being returned as plain text by `editor.getContent({format: 'text'})` with a different number of newlines — `+\n+` — than expected.
 
@@ -332,13 +332,13 @@ There were two related causes for this behaviour: an attribute not being assigne
 
 For this update, both these causes have been corrected, and the number of newlines returned as plain text by `editor.getContent({format: 'text'})` is the number expected.
 
-=== The editor focused via the `auto_focus` option was not scrolled into the viewport.
+=== The editor focused via the `auto_focus` option was not scrolled into the viewport
 
 Previously, when a {productname} editor was not in view and was set to auto focus, the editor was focused but did not scroll into view in some browsers.
 
 With this update, when auto focus is set, the editor is focused and scrolled into view even when the editor is outside the viewport, no matter the host browser.
 
-=== Adding spaces immediately after a `<span>` containing a `contenteditable="false"` attribute did not work properly in some circumstances.
+=== Adding spaces immediately after a `<span>` containing a `contenteditable="false"` attribute did not work properly in some circumstances
 
 Previously, pressing the *Space bar* when the insertion point was immediately after a `span` containing a `contenteditable="false"` attribute did not consistently insert a space.
 
@@ -346,13 +346,13 @@ This was known to occur on Mozilla Firefox and Google Chrome and was consequent 
 
 {productname} 6.2 deals with these issues and typing a space immediately after a a block with a `contenteditable="false"` attribute now adds that space, as expected.
 
-=== Elements with only `data-*` custom attributes were sometimes removed when they should not be removed.
+=== Elements with only `data-*` custom attributes were sometimes removed when they should not be removed
 
 Previously, when removing formatting from content that had elements with only custom data attributes, those elements could be incorrectly removed as part of the remove formatting operation.
 
 For this update the remove formatting logic was changed. In {productnmae 6.2 all non-{productname} specific or non-{productname} internal `data-*` custom attributes are considered content that must be preserved.
 
-=== Selecting a figure with `class="image"` incorrectly highlighted the link toolbar button.
+=== Selecting a figure with `class="image"` incorrectly highlighted the link toolbar button
 
 Previously, when inserting an image with a caption, the `image` plugin created a `figure` element. However, the `link` plugin treated the `figure` element as a link, even when the image caption did not contain a link.
 
@@ -361,7 +361,7 @@ This caused the link toolbar button to, incorrectly, highlight.
 As of this update, the `link` plugin does not treat images with captions as links when the image caption does not contain a link. And the link toolbar no longer highlights incorrectly.
 
 
-=== Specifying a single, non-default list style for the `advlist_bullet_styles` and `advlist_number_styles` options was not respected.
+=== Specifying a single, non-default list style for the `advlist_bullet_styles` and `advlist_number_styles` options was not respected
 
 Previously, when a single, non-default, list style for the `advlist_bullet_styles` and `advlist_number_styles` options was set, pressing the `bullist` and `numlist` toolbar buttons still applied a default list style.
 
@@ -370,13 +370,13 @@ This has been corrected and, with this update, {productname} behaves as expected
 Pressing a list toolbar button when a single, non-default list style is set now applies the list style correctly.
 
 
-=== Fixed multiple issues that occurred when formatting elements with `contenteditable` attributes.
+=== Fixed multiple issues that occurred when formatting elements with `contenteditable` attributes
 
 For this update, the formatting logic has been refactored to improve the handling of elements containing `+contenteditable=”false”+` and `+contenteditable=”true”+` attributes.
 
 In particular, this includes ensuring that formatting is not directly removed from elements with `+contenteditable=”false”+` attributes when merging duplicate or similar formatting between parent, sibling and child elements.
 
-=== Spaces could be incorrectly added to `urlinput` dialog components in certain cases.
+=== Spaces could be incorrectly added to `urlinput` dialog components in certain cases
 
 The handling of spaces inserted into the xref:dialog-components/#urlinput[UrlInput] dialog component, specifically its implementation in the xref:link[Link Dialog], was inconsistent.
 
@@ -385,7 +385,7 @@ It allowed spaces to be entered when it was empty and the text input contained t
 In {productname} 6.2, the xref:dialog-components/#urlinput[UrlInput] dialog component no longer allows leading or trailing spaces. Only spaces within other text content are now allowed.
 
 
-=== The text patterns logic threw an error when there were fragmented text nodes in a paragraph.
+=== The text patterns logic threw an error when there were fragmented text nodes in a paragraph
 
 Previously, pressing *Enter* or *Return* to trigger an inline replacement text pattern could, in certain circumstances, throw an error to the console.
 
@@ -396,7 +396,7 @@ Previously, pressing *Enter* or *Return* to trigger an inline replacement text p
 
 For this update the text pattern logic was improved to handle these cases and these console errors are no longer thrown.
 
-=== Dragging a `contentEditable=false` element towards a document’s edge did not cause scrolling.
+=== Dragging a `contentEditable=false` element towards a document’s edge did not cause scrolling
 
 Previously, when an element with a `contenteditable=false` attribute was dragged towards the document’s edge, the drag did not cause scrolling. This meant such elements could only be dropped within the current viewport.
 
@@ -407,7 +407,7 @@ With this update, dragging an element with a `contenteditable=false` attribute t
 In {productname} 6.2, dragging elements with `contentEditable=false` attributes now results in the same behavior as dragging other draggable elements.
 
 
-=== Parsing large documents no longer throws a Maximum call stack size exceeded exception.
+=== Parsing large documents no longer throws a Maximum call stack size exceeded exception
 
 Previously, parsing very large documents would throw an error to the console that they had exceeded the Maximum call stack size. 
 
@@ -425,7 +425,7 @@ tinymce.min.js:9 Uncaught RangeError: Maximum call stack size exceeded
 
 the {productnanme} 6.2 parsing logic was updated and {productname} can now handle large documents without throwing this error.
 
-=== DomParser filter matching was not checked between filters, which could lead to an exception in the parser.
+=== DomParser filter matching was not checked between filters, which could lead to an exception in the parser
 
 When inserting content, each node has their attributes run through a number of filters.
 
@@ -455,7 +455,7 @@ However, if the `list` has a `contenteditable` attribute value of its own it wil
 Likeiwse, if a child element of a `list` (for example, an `+<li>+`) has a `contenteditable` attribute value of its own, it will take this value rather than the value of any parent element.
 
 
-=== Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin.
+=== Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin
 
 In {productname} 6.1.2, extra padding was added to the context toolbar and, consequently, separator lines were incorrectly drawn on multi-line toolbars when using either the `tinymce-5` skin or premium skins.
 

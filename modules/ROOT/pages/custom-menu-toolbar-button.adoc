@@ -41,7 +41,7 @@ This example configures a toolbar menu button with the label `+My Button+` that 
 The `+fetch+` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
 
 [[searchable-menu-buttons]]
-== Searchable Menu Buttons
+== Searchable menu buttons
 
 include::partial$misc/admon-requires-6.2v.adoc[]
 

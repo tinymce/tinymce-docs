@@ -9,7 +9,7 @@ tinymce.init({
   tinydrive_google_drive_key: 'YOUR_GOOGLE_DRIVE_KEY',
   tinydrive_google_drive_client_id: 'YOUR_GOOGLE_DRIVE_CLIENT_ID',
   mobile: {
-    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable'
+    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable footnotes mergetags'
   },
   menu: {
     tc: {
@@ -69,5 +69,37 @@ tinymce.init({
   mentions_menu_hover: mentions_menu_hover,
   mentions_menu_complete: mentions_menu_complete,
   mentions_select: mentions_select,
-  mentions_item_type: 'profile'
+  mentions_item_type: 'profile',
+  mergetags_list: [
+    {
+      title: 'Client',
+      menu: [
+        {
+          value: 'Client.LastCallDate',
+          title: 'Call date'
+        },
+        {
+          value: 'Client.Name',
+          title: 'Client name'
+        }
+      ]
+    },
+    {
+      title: 'Proposal',
+      menu: [
+        {
+          value: 'Proposal.SubmissionDate',
+          title: 'Submission date'
+        }
+      ]
+    },
+    {
+      value: 'Consultant',
+      title: 'Consultant'
+    },
+    {
+      value: 'Salutation',
+      title: 'Salutation'
+    }
+  ]
 });

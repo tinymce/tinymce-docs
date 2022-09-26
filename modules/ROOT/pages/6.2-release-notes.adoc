@@ -332,9 +332,7 @@ For this update, both these causes have been corrected, and the number of newlin
 
 === The editor focused via the `auto_focus` option was not scrolled into the viewport.
 
-Previously, when a {productname} editor was not in view and was set to auto focus, the editor was focused but did not scroll into view.
-
-This only occurred if the host browser was Google Chrome.
+Previously, when a {productname} editor was not in view and was set to auto focus, the editor was focused but did not scroll into view in some browsers.
 
 With this update, when auto focus is set, the editor is focused and scrolled into view even when the editor is outside the viewport, no matter the host browser.
 

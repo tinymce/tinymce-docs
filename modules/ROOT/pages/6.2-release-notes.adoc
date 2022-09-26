@@ -346,7 +346,7 @@ Previously, pressing the *Space bar* when the insertion point was immediately af
 
 This was known to occur on Mozilla Firefox and Google Chrome and was consequent to issues related to insertion point movement and non-breaking spaces.
 
-{productname} 6.2 deals with these issues and typing a space immediately after a a block with a `contenteditable="false"` attribute now adds that space, as expected.
+{productname} 6.2 deals with these issues and typing a space immediately after a block with a `contenteditable="false"` attribute now adds that space, as expected.
 
 === Elements with only `data-*` custom attributes were sometimes removed when they should not be removed
 

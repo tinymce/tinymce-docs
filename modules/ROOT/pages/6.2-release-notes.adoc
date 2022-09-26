@@ -152,6 +152,54 @@ The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also in
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
 
 
+[[improvements]]
+== Improvements
+
+{productname} 6.2 also includes the following improvements:
+
+=== Formatting can now be applied to an element that has a `contenteditable="false"` attribute
+
+Elements with `contenteditable="false"` attributes can now have formatting applied to them that wraps the element.
+
+For example, such elements can now be set to *bold* or _italic_. As well, such elements can have their font and font-size changed.
+
+This new capability is configurable using the new `format_noneditable_selector` option.
+
+For details see xref:content-formatting.adoc#format_noneditable_selector[Content Formatting].
+
+=== The autocompleter now supports a multiple character trigger using the new trigger configuration
+
+Previously, the autocompleter only supported a single character trigger.
+
+With this update, the autocompleter now supports multi-character triggers.
+
+The new xref:mergetags.adoc[Merge Tags] Premium plugin, for example, uses the string `+{{+` as its default trigger.
+
+=== Some inline formatting, such as color and font size, can now be applied to list item elements
+
+In {productname} 6.2 list bullets and list numbers can be inline-formatted.
+
+If the contents of a list item are selected and inline formatting is applied — such as a change of color or change of font-size — this spot-formatting is also applied to the list item’s associated bullet or number.
+
+For more information see the xref:advlist.adoc#inline-formatting[Inline formatting of list elements documentation].
+
+=== The installed and available plugin lists in the Help dialog are now sorted alphabetically
+
+Previously, when the *Help > Help* dialog was invoked, and the _Plugins_ list was selected, available Premium plugins were supposed to be presented in alphabetical order by name.
+
+This was done manually, however, and the manual presentation was not entirely alphabetical.
+
+Also, this manual sort did not take account of the selected UI language and the Premium plugin names were not, in the main, translated.
+
+With this update Premium plugin names are explicitly not translated. But they are, now, correctly sorted in alphabetical order by name.
+
+=== Alignment can now be applied to more embedded media element types
+
+Embedded media elements could not, previously, be set to left, right, or center alignment.
+
+With this update they can. Selecting an embedded media element and clicking the left, right, or center alignment toolbar buttons, or selecting the appropriate option from the *Format > Align* sub-menu, sets the element to the chosen alignment.
+
+
 [[additions]]
 == Additions
 
@@ -211,53 +259,6 @@ Menu toolbar buttons, buttons on the {productname} toolbar that show a menu when
 The button refetches items as the search field is updated.
 
 The new xref:mergetags.adoc[Merge Tags] Premium plugin includes a menu toolbar button with this new search field.
-
-[[improvements]]
-== Improvements
-
-{productname} 6.2 also includes the following improvements:
-
-=== Formatting can now be applied to an element that has a `contenteditable="false"` attribute
-
-Elements with `contenteditable="false"` attributes can now have formatting applied to them that wraps the element.
-
-For example, such elements can now be set to *bold* or _italic_. As well, such elements can have their font and font-size changed.
-
-This new capability is configurable using the new `format_noneditable_selector` option.
-
-For details see xref:content-formatting.adoc#format_noneditable_selector[Content Formatting].
-
-=== The autocompleter now supports a multiple character trigger using the new trigger configuration
-
-Previously, the autocompleter only supported a single character trigger.
-
-With this update, the autocompleter now supports multi-character triggers.
-
-The new xref:mergetags.adoc[Merge Tags] Premium plugin, for example, uses the string `+{{+` as its default trigger.
-
-=== Some inline formatting, such as color and font size, can now be applied to list item elements
-
-In {productname} 6.2 list bullets and list numbers can be inline-formatted.
-
-If the contents of a list item are selected and inline formatting is applied — such as a change of color or change of font-size — this spot-formatting is also applied to the list item’s associated bullet or number.
-
-For more information see the xref:advlist.adoc#inline-formatting[Inline formatting of list elements documentation].
-
-=== The installed and available plugin lists in the Help dialog are now sorted alphabetically
-
-Previously, when the *Help > Help* dialog was invoked, and the _Plugins_ list was selected, available Premium plugins were supposed to be presented in alphabetical order by name.
-
-This was done manually, however, and the manual presentation was not entirely alphabetical.
-
-Also, this manual sort did not take account of the selected UI language and the Premium plugin names were not, in the main, translated.
-
-With this update Premium plugin names are explicitly not translated. But they are, now, correctly sorted in alphabetical order by name.
-
-=== Alignment can now be applied to more embedded media element types
-
-Embedded media elements could not, previously, be set to left, right, or center alignment.
-
-With this update they can. Selecting an embedded media element and clicking the left, right, or center alignment toolbar buttons, or selecting the appropriate option from the *Format > Align* sub-menu, sets the element to the chosen alignment.
 
 
 [[changes]]

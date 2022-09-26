@@ -478,7 +478,7 @@ With this update, the API respects the `no_events: true` setting. Adding content
 
 The `ch` autocompleter configuration property will be removed in the next major release.
 
-Use the `trigger` property instead.
+The `trigger` property should be used instead, as it allows one or more characters to be specified.
 
 [source,js]
 ----

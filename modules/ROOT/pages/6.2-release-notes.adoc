@@ -265,19 +265,19 @@ With this update they can. Selecting an embedded media element and clicking the 
 
 {productname} 6.2 also incorporates the following changes:
 
-=== The `@menubar-row-separator-color` oxide variable no longer affects the divider between the Menubar and Toolbar
+=== The `@menubar-row-separator-color` oxide variable no longer affects the divider between the menu bar and Toolbar
 
-Testing revealed circumstances in which an unnecessary border was added under the {productname} Menu bar.
+Testing revealed circumstances in which an unnecessary border was added under the {productname} menu bar.
 
 This update includes changes to the `@menubar-row-separator-color` oxide variable. It now only controls the color of the separator lines drawn in multiline Menubars.
 
 Consequently, unnecessary borders are no longer added under the {productname} menu bar.
 
-=== The `@toolbar-separator-color` oxide variable now affects the color of the separator between the Menu bar and Toolbar only
+=== The `@toolbar-separator-color` oxide variable now affects the color of the separator between the menu bar and Toolbar only
 
-In concert with the testing above that discovered an unnecessary border occasionally being added under the {productname} Menu bar, the `@toolbar-separator-color` oxide variable was also changed.
+In concert with the testing above that discovered an unnecessary border occasionally being added under the {productname} menu bar, the `@toolbar-separator-color` oxide variable was also changed.
 
-This variable now only affects the color of the separator between the {productname} Menu bar and the {productname} Toolbar.
+This variable now only affects the color of the separator between the {productname} menu bar and the {productname} Toolbar.
 
 === Available Premium plugins, which are listed by name in the Help dialog, are no longer translated
 

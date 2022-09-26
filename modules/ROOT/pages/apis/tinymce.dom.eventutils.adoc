@@ -30,14 +30,14 @@ __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use 
 === bind()
 [source, javascript]
 ----
-bind(target: Object, names: String, callback: Function, scope: Object): Function
+bind(target: Object, name: String, callback: Function, scope: Object): Function
 ----
 Binds a callback to an event on the specified target.
 
 ==== Parameters
 
 * `target (Object)` - Target node/window or custom object.
-* `names (String)` - Name of the event to bind.
+* `name (String)` - Name of the event to bind.
 * `callback (Function)` - Callback function to execute when the event occurs.
 * `scope (Object)` - Scope to call the callback function on, defaults to target.
 
@@ -111,14 +111,14 @@ __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use 
 === unbind()
 [source, javascript]
 ----
-unbind(target: Object, names: String, callback: Function): EventUtils
+unbind(target: Object, name: String, callback: Function): EventUtils
 ----
 Unbinds the specified event by name, name and callback or all events on the target.
 
 ==== Parameters
 
 * `target (Object)` - Target node/window or custom object.
-* `names (String)` - Optional event name to unbind.
+* `name (String)` - Optional event name to unbind.
 * `callback (Function)` - Optional callback function to unbind.
 
 ==== Return value

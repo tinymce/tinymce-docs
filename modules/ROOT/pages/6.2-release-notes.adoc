@@ -467,7 +467,7 @@ A regression found in {productname} 6.0 caused inline elements with `contentedit
 
 This regression was fixed in {productname} 6.2 and pressing *Enter* or *Return* in this circumstance no longer incorrectly removes these elements.
 
-=== Fixed a regression where pressing Enter deleted selected `contenteditable="false" <pre>` elements.
+=== Fixed a regression where pressing Enter deleted selected `contenteditable="false" <pre>` elements
 
 A regression found in {productname} 6.0 caused `preformatted` elements with `contenteditable="false"` attributes to incorrectly insert a newline when *Enter* or *Return* were pressed.
 

@@ -98,7 +98,7 @@ The {productname} 6.2 release includes an accompanying release of the **Real-Tim
 
 Real-Time Collaboration 2.1.1 fixes the following bug:
 
-The Real-Time Collaboration plugin validates that parameters, used to set the token provider among other settings, are valid link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promises].
+The Real-Time Collaboration plugin checks that parameters used to set the token provider, among other settings, are valid link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promises].
 
 However, Angular code wraps promises into ZoneAwarePromises. These fail said validation, throwing an `expected it to return a promise` error.
 

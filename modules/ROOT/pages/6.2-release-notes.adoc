@@ -271,7 +271,7 @@ This update includes changes to the `@menubar-row-separator-color` oxide variabl
 
 Consequently, unnecessary borders are no longer added under the {productname} menu bar.
 
-=== The `@toolbar-separator-color` oxide variable now affects the color of the separator between the Menu bar and Toolbar only.
+=== The `@toolbar-separator-color` oxide variable now affects the color of the separator between the Menu bar and Toolbar only
 
 In concert with the testing above that discovered an unnecessary border occasionally being added under the {productname} Menu bar, the `@toolbar-separator-color` oxide variable was also changed.
 

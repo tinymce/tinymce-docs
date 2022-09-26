@@ -424,7 +424,7 @@ By default, only the filters within {productname} are run. Users are, however, a
 
 Previously, this node filter function did not check whether the next filter was still valid for all nodes. This meant the {productname} filters naively assumed that each attribute would be available for each filter.
 
-This situation, which was not identified by default, could, when using a custom filter, potentially remove a necessary attribute for the next filter. This resulted in a console error.
+This situation, which did not occur by default, could, when using a custom filter, potentially remove a necessary attribute for the next filter. This resulted in a console error.
 
 This has been fixed in {productname} 6.2 by checking that each filter is still valid with the current attributes before running that filter.
 

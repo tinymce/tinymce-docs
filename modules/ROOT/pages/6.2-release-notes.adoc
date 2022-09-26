@@ -395,7 +395,7 @@ When dragging other elements (such as an image), as the dragged element approach
 
 With this update, dragging an element with a `contenteditable=false` attribute towards the document edge triggers scrolling, allowing for dropping the element anywhere in the document.
 
-In {productname} 6.2, dragging elements with `contentEditable=false` attributes now results in the same behavior as dragging other draggable elements.
+In {productname} 6.2, dragging elements with `contenteditable=false` attributes now results in the same behavior as dragging other draggable elements.
 
 
 === Parsing large documents no longer throws a Maximum call stack size exceeded exception

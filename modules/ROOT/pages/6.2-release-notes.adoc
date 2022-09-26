@@ -469,7 +469,7 @@ This regression was fixed in {productname} 6.2 and pressing *Enter* or *Return* 
 
 If, for example, `editor.insertContent('<p>test</p>', { no_events: true });` was run, `BeforeSetContent` and `SetContent` events were still fired, despite `no_events` being set to `true`.
 
-With this update, the API respects the `no_events: true` setting. Adding content to a {productname} document with `no_events` set to true now adds the content without firing events, as expected.
+With this update, the API respects the `no_events: true` property. Adding content to a {productname} document with `no_events` set to true now adds the content without firing events, as expected.
 
 [[deprecated]]
 == Deprecated

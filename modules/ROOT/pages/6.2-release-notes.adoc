@@ -292,7 +292,9 @@ With this update Premium plugin names are explicitly not translated. But they ar
 
 === The Autolink plugin did not work when text nodes in the content were fragmented.
 
-The Spell Checker Pro plugin fragments text nodes as part of its normal workings. Previously however, this fragmentation broke the URL text detection of the Autolink plugin.
+The most common cause of text fragmentation is the Spell Checker Pro plugin, which fragments text nodes as part of its normal workings.
+
+Previously, however, when text nodes were fragmented, the Autolink plugin’s URL text detection did not work.
 
 This presented as, for example, FQDN strings such as `www.example.com` not being converted into a link.
 

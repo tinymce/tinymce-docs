@@ -369,11 +369,11 @@ In particular, this includes ensuring that formatting is not directly removed fr
 
 === Spaces could be incorrectly added to `urlinput` dialog components in certain cases
 
-The handling of spaces inserted into the xref:dialog-components/#urlinput[UrlInput] dialog component, specifically its implementation in the xref:link[Link Dialog], was inconsistent.
+The handling of spaces inserted into the xref:dialog-components.adoc#urlinput[UrlInput] dialog component, specifically its implementation in the xref:link[Link Dialog], was inconsistent.
 
 It allowed spaces to be entered when it was empty and the text input contained text, but did not allow spaces to be entered when both fields were empty.
 
-In {productname} 6.2, the xref:dialog-components/#urlinput[UrlInput] dialog component no longer allows leading or trailing spaces. Only spaces within other text content are now allowed.
+In {productname} 6.2, the xref:dialog-components.adoc#urlinput[UrlInput] dialog component no longer allows leading or trailing spaces. Only spaces within other text content are now allowed.
 
 
 === The text patterns logic threw an error when there were fragmented text nodes in a paragraph

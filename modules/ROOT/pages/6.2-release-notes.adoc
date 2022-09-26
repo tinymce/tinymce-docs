@@ -554,3 +554,13 @@ Auto-capitalization will not operate on the entered string if
 When the {pluginname} is used with the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] Premium plugin, autocorrection and capitalization are disabled when a non-English language is selected.
 
 Autocorrection and capitalization can, however, be re-enabled by selecting the *Tools > Autocorrect* menu item and the *Tools > Capitalization* menu item respectively.
+
+=== In some circumstances, the Footnotes plugin does not automatically update changes
+
+In the main, footnotes update automatically as they are added, removed, or edited. However, there are some circumstances where user-edits change footnote state but the footnotes themselves do not update.
+
+For example, when an image caption with an attached footnote is removed (by unchecking the _Show caption_ checkbox in the *Insert/Edit Image* dialog), the associated footnote text is not automatically removed.
+
+In similar fashion, if a table row or column that contains a footnote is removed, the associated footnote text is not automatically removed.
+
+These orphan footnote texts can be deleted manually. They can also be removed by clicking the `footnotesupdate` button in the toolbar.

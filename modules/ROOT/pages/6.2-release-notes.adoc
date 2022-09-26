@@ -507,7 +507,7 @@ If typing the Merge tags prefix does not work as expected, clicking the Merge ta
 
 If a string is pasted or otherwise inserted into a {productname} document and that string presents as a complete merge tag, the Merge tag plugin will turn the string into an apparently working merge tag, regardless of the string’s content.
 
-For example, if a {productname} instance is running the Merge tags plugin and the plugin is using the default prefix and suffix characters — +{{+` and +}}+` — pasting
+For example, if a {productname} instance is running the Merge tags plugin and the plugin is using the default prefix and suffix characters — `+{{+` and `+}}+` — pasting
 
 `{{not.a.merge.tag.value.for.this.document}}`
 

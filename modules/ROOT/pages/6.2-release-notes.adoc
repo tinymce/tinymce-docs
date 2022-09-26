@@ -414,7 +414,7 @@ tinymce.min.js:9 Uncaught RangeError: Maximum call stack size exceeded
     at zp (tinymce.min.js:9:143507)
 ----
 
-the {productname} 6.2 parsing logic was updated and {productname} can now handle large documents without throwing this error.
+The {productname} 6.2 parsing logic was updated and {productname} can now handle large documents without throwing this error.
 
 === DomParser filter matching was not checked between filters, which could lead to an exception in the parser
 

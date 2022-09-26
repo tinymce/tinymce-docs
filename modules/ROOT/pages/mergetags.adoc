@@ -31,19 +31,19 @@ tinymce.init({
   plugins: 'mergetags',
   toolbar: 'mergetags',
   mergetags_list: [
-  {
-    title: 'Example merge tags list',
-    menu: [
     {
-      value: 'Example.1',
-      title: 'Example one'
-    },
-    {
-      value: 'Example.2',
-      title: 'Example two'
+      title: 'Example merge tags list',
+      menu: [
+        {
+          value: 'Example.1',
+          title: 'Example one'
+        },
+        {
+          value: 'Example.2',
+          title: 'Example two'
+        }
+      ]
     }
-  ]
-  },
   ]
 });
 ----
@@ -74,18 +74,6 @@ Content containing the specified prefix and suffix, and matching a specified mer
 +
 The `+mergetags_list+` option allows for the specification of a nested menu item within the merge tags toolbar menu button. This option allows any number of nested menus and items for merge tag categorisation.
 
-== Options
-
-include::partial$configuration/mergetags_prefix.adoc[leveloffset=+1]
-
-include::partial$configuration/mergetags_suffix.adoc[leveloffset=+1]
-
-include::partial$configuration/mergetags_list.adoc[leveloffset=+1]
-
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-
 == Styling Merge tags
 
 It's possible to change the visual appearance of the Merge tags within the editor using a custom CSS file provided through the xref:add-css-options.adoc#content_css[content_css] option. Here is an example on how to style the various elements of the merge tag.
@@ -112,3 +100,15 @@ Here is an example of the Merge tag HTML structure.
   <span class="mce-mergetag-affix">}}</span>
 </span>
 ----
+
+== Options
+
+include::partial$configuration/mergetags_prefix.adoc[leveloffset=+1]
+
+include::partial$configuration/mergetags_suffix.adoc[leveloffset=+1]
+
+include::partial$configuration/mergetags_list.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

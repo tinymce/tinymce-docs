@@ -268,13 +268,11 @@ In concert with the testing above that discovered an unnecessary border occasion
 
 This variable now only affects the color of the separator between the {productname} menu bar and the {productname} Toolbar.
 
-=== Available Premium plugins, which are listed by name in the Help dialog, are now in alphabetical order
+=== Available Premium plugins, which are listed by name in the Help dialog, are no longer translated
 
-When the *Help > Help* dialog is invoked, and the _Plugins_ list was selected, available Premium plugins are supposed to be presented in alphabetical order by name.
+Previously, when {productname} was running in a language other than English, and the *Help > Help* dialog was invoked, and the _Plugins_ list was selected, some available Premium plugin names were presented in translation.
 
-The presented list was not entirely alphabetical, however.
-
-With this update Premium plugin names are, now, correctly sorted in alphabetical order by name.
+With this update no Premium plugin names are translated. The Premium plugin names list is presented in English-language alphabetical order regardless of the language {productname} is running.
 
 
 [[bug-fixes]]
@@ -350,7 +348,6 @@ This caused the link toolbar button to, incorrectly, highlight.
 
 As of this update, the `link` plugin does not treat images with captions as links when the image caption does not contain a link. And the link toolbar no longer highlights incorrectly.
 
-
 === Specifying a single, non-default list style for the `advlist_bullet_styles` and `advlist_number_styles` options was not respected
 
 Previously, when a single, non-default, list style for the `advlist_bullet_styles` and `advlist_number_styles` options was set, pressing the `bullist` and `numlist` toolbar buttons still applied a default list style.
@@ -358,7 +355,6 @@ Previously, when a single, non-default, list style for the `advlist_bullet_style
 This has been corrected and, with this update, {productname} behaves as expected.
 
 Pressing a list toolbar button when a single, non-default list style is set now applies the list style correctly.
-
 
 === Fixed multiple issues that occurred when formatting elements with `contenteditable` attributes
 
@@ -373,7 +369,6 @@ The handling of spaces inserted into the xref:dialog-components.adoc#urlinput[Ur
 It allowed spaces to be entered when it was empty and the text input contained text, but did not allow spaces to be entered when both fields were empty.
 
 In {productname} 6.2, the xref:dialog-components.adoc#urlinput[UrlInput] dialog component no longer allows leading or trailing spaces. Only spaces within other text content are now allowed.
-
 
 === The text patterns logic threw an error when there were fragmented text nodes in a paragraph
 
@@ -397,7 +392,6 @@ When dragging other elements (such as an image), as the dragged element approach
 With this update, dragging an element with a `contenteditable=false` attribute towards the document edge triggers scrolling, allowing for dropping the element anywhere in the document.
 
 In {productname} 6.2, dragging elements with `contenteditable=false` attributes now results in the same behavior as dragging other draggable elements.
-
 
 === Parsing large documents no longer throws a Maximum call stack size exceeded exception
 
@@ -429,7 +423,6 @@ This situation, which did not occur by default, could, when using a custom filte
 
 This has been fixed in {productname} 6.2 by checking that each filter is still valid with the current attributes before running that filter.
 
-
 === Fixed `contenteditable="false"` lists and `contenteditable="true"` list elements issues
 
 Previously, lists with `contenteditable="false"` attributes could be toggled and updated. And, within those lists, list elements with `contenteditable="true"` attributes could be indented, split into another list element, or appended to the previous list element by deletion.
@@ -445,7 +438,6 @@ If a `list` does not have a `contenteditable` attribute value of its own and the
 However, if the `list` has a `contenteditable` attribute value of its own it will take this value rather than the value of the parent div.
 
 Likewise, if a child element of a `list` (for example, an `+<li>+`) has a `contenteditable` attribute value of its own, it will take this value rather than the value of any parent element.
-
 
 === Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin
 
@@ -465,12 +457,20 @@ A regression found in {productname} 6.0 caused `preformatted` elements with `con
 
 This regression was fixed in {productname} 6.2 and pressing *Enter* or *Return* no longer inserts an erroneous newline.
 
-
 === The `editor.insertContent()` API did not respect the `no_events` argument
 
 If, for example, `editor.insertContent('<p>test</p>', { no_events: true });` was run, `BeforeSetContent` and `SetContent` events were still fired, despite `no_events` being set to `true`.
 
 With this update, the API respects the `no_events: true` property. Adding content to a {productname} document with `no_events` set to true now adds the content without firing events, as expected.
+
+=== Available Premium plugins, which are listed by name in the Help dialog, are now in alphabetical order
+
+When the *Help > Help* dialog is invoked, and the _Plugins_ list was selected, available Premium plugins are supposed to be presented in alphabetical order by name.
+
+The presented list was not entirely alphabetical, however.
+
+With this update Premium plugin names are, now, correctly sorted in alphabetical order by name.
+
 
 [[deprecated]]
 == Deprecated

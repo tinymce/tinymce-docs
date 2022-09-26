@@ -458,7 +458,7 @@ Likeiwse, if a child element of a `list` (for example, an `+<li>+`) has a `conte
 
 === Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin
 
-In {productname} 6.1.2, extra padding was added to the context toolbar and, consequently, separator lines were incorrectly drawn on multi-line toolbars when using either the `tinymce-5` skin or premium skins.
+In {productname} 6.0, extra padding was added to the context toolbar and, consequently, separator lines were incorrectly drawn on multi-line toolbars when using either the `tinymce-5` skin or premium skins.
 
 With this update the extra padding was removed and separator lines in {productname} 6.2 multi-line toolbars are drawn correctly.
 

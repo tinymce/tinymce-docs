@@ -12,13 +12,16 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:enhanced-image-editing[Enhanced Image Editing (editimage)]
 ** xref:enhanced-media-embed[Enhanced Media Embed (mediaembed)]
 ** xref:export[Export (export)]
+** xref:footnotes[Footnotes (footnotes)]
 ** xref:format-painter[Format Painter (formatpainter)]
 ** xref:link-checker[Link Checker (linkchecker)]
 ** xref:mentions[Mentions (mentions)]
+** xref:mergetags[Merge Tags]
 ** xref:page-embed[Page Embed (pageembed)]
 ** xref:permanent-pen[Permanent Pen (permanentpen)]
 ** xref:powerpaste[PowerPaste (powerpaste)]
 ** xref:spell-checker-pro[Spell Checker Pro (tinymcespellchecker)]
+** xref:autocorrect[Spelling Autocorrect]
 ** xref:table-of-contents[Table of Contents (tableofcontents)]
 * xref:community-plugins[Community plugins]
 ** xref:advanced-list[Advanced List (advlist)]
@@ -109,6 +112,13 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-export.adoc[]
 
+[[footnotes]]
+=== Footnotes (`+footnotes+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-footnotes.adoc[]
+
 [[format-painter]]
 === Format Painter (`+formatpainter+`)
 
@@ -123,6 +133,13 @@ include::partial$plugin-files/plugin-file-list-linkchecker.adoc[]
 === Mentions (`+mentions+`)
 
 include::partial$plugin-files/plugin-file-list-mentions.adoc[]
+
+[[mergetags]]
+=== Merge Tags (`+mergetags+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-mergetags.adoc[]
 
 [[page-embed]]
 === Page Embed (`+pageembed+`)
@@ -147,6 +164,13 @@ include::partial$plugin-files/plugin-file-list-powerpaste.adoc[]
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinymcespellchecker.adoc[]
+
+[[autocorrect]]
+=== Spelling Autocorrect (`+autocorrect+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-autocorrect.adoc[]
 
 [[table-of-contents]]
 === Table of Contents (`+tableofcontents+`)

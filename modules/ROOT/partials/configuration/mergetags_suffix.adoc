@@ -1,0 +1,20 @@
+[[mergetags_suffix]]
+== `+mergetags_suffix+`
+
+This option specifies the suffix to be attached to each merge tag.
+
+*Type:* `+String+`
+
+*Default value:* `+}}+`
+
+=== Example: Using `+mergetags_suffix+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'mergetags',
+  toolbar: 'mergetags',
+  mergetags_suffix: '}}'
+});
+----

@@ -12,4 +12,3 @@ Pre-checks:
 
 Review:
 - [ ] Documentation Team Lead has reviewed
-- [ ] Product Manager has reviewed

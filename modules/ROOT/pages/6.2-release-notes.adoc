@@ -122,7 +122,7 @@ This enables other plugins to check for the currently configured language.
 
 In some circumstances, Spell Checker Pro would silently, and incorrectly, extend a selection. When the extended selection was then copied-and-pasted, unexpected results occurred.
 
-For example, in some circumstances the selection appeared to be the contents of a single table cell, but Spell Checker Pro incorrectly extended the selection to include an HTML markup element outside the table. When this wa pasted, the incorrectly added element made the paste behave incorrectly.
+For example, in some circumstances the selection appeared to be the contents of a single table cell, but Spell Checker Pro incorrectly extended the selection to include an HTML markup element outside the table. When this was pasted, the incorrectly added element made the paste behave incorrectly.
 
 With this update, the way elements are traversed when selections are being made has been changed. Consequently, incorrect selection extension no longer occurs, and copying-and-pasting content from tables works as expected.
 

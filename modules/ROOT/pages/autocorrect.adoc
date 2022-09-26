@@ -40,9 +40,9 @@ The {pluginname} plugin currently has the following limitations:
 +
 {pluginname} can be entirely turned off, but there is, currently, no way of instructing the plugin to ignore a particular string that it considers a mis-spelling.
 +
-For example, if *cna* (which the {pluginname} plugin treats as a mis-typing of *can*) is a desired string in a particular use-case, turning {pluginname} off is the currently recommended setting.
+For example, if `+cna+` (which the {pluginname} plugin treats as a mis-typing of *can*) is a desired string in a particular use-case, turning the {pluginname} plugin off is currently recommended.
 
-. End-users cannot, currently, turn Autocorrect on or off on hand-held devices.
+. Autocorrect and capitalization are not available as toolbar buttons. They are only available as menu items.
 
 . Spelling Autocorrect is case-sensitive.
 +

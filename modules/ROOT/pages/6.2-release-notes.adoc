@@ -86,9 +86,7 @@ PowerPaste 6.1.1 fixes the following bug:
 
 The `wordimport.js` resource file was difficult to bundle when using Webpack 5.
 
-// #TINY-8791
-
-// Bumped internal dependency of wimp to fix webpack 5 bundling issues
+With this update, bundling is not as difficult.
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 

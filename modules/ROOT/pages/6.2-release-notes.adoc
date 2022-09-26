@@ -202,9 +202,9 @@ When a {productname} editor with an `allow` attribute —
 
 — is initialized, the `allow` attribute will still be present in the rendered `iframe` element.
 
-=== MenuButtons can now contain a search field
+=== Menu toolbar buttons can now contain a search field
 
-MenuButtons, buttons on the {productname} toolbar that show a menu when clicked, can now present a search field at the top of the menu.
+Menu toolbar buttons, buttons on the {productname} toolbar that show a menu when clicked, can now present a search field at the top of the menu.
 
 The button refetches items as the search field is updated.
 

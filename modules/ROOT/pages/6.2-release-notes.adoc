@@ -443,7 +443,7 @@ If a `list` does not have a `contenteditable` attribute value of its own and the
 
 However, if the `list` has a `contenteditable` attribute value of its own it will take this value rather than the value of the parent div.
 
-Likeiwse, if a child element of a `list` (for example, an `+<li>+`) has a `contenteditable` attribute value of its own, it will take this value rather than the value of any parent element.
+Likewise, if a child element of a `list` (for example, an `+<li>+`) has a `contenteditable` attribute value of its own, it will take this value rather than the value of any parent element.
 
 
 === Removed extra bottom padding in the context toolbar of the TinyMCE 5 skin

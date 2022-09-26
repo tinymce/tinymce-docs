@@ -528,7 +528,7 @@ There is no current workaround. This error is slated for fixing in a future {pro
 
 === The Autocorrect plugin over-rides auto-capitalization.
 
-As a consequence of {pluginname} being case-sensitive, if
+As a consequence of Autocorrect being case-sensitive, if
 
 * both `autocorrect` and `capitalization` are active; and
 * a word from the specified spelling error set is mis-typed at the beginning of a sentence;
@@ -551,7 +551,7 @@ Auto-capitalization will not operate on the entered string if
 
 === When the Spell Checker Pro plugin is used, Autocorrect’s autocorrection is disabled when a non-English language is selected.
 
-When the {pluginname} is used with the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] Premium plugin, autocorrection and capitalization are disabled when a non-English language is selected.
+When Autocorrect is used with the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] Premium plugin, autocorrection and capitalization are disabled when a non-English language is selected.
 
 Autocorrection and capitalization can, however, be re-enabled by selecting the *Tools > Autocorrect* menu item and the *Tools > Capitalization* menu item respectively.
 

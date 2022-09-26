@@ -189,7 +189,7 @@ tinymce.init({
 
 For details see xref:content-formatting.adoc#format_noneditable_selector[Content Formatting].
 
-=== Added `allow` as a valid attribute for the `iframe` element in the editor schema.
+=== Added `allow` as a valid attribute for the `iframe` element in the editor schema
 
 Previously, the `allow` attribute was not considered a valid attribute for `iframe` elements in the {productname} schema. It now is.
 

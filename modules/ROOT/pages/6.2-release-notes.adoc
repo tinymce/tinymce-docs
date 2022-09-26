@@ -448,7 +448,7 @@ Neither behavior was correct and, as of {productname} 6.2, this has been correct
 
 In {productname} 6.2, list functionality in this regard is dependent on the state of the closest inheritable `contenteditable` attribute.
 
-If a `list` has a `contenteditable` attribute value of its own, this is, of course the closest ‘inheritable’ attribute, and the list and its child elements takes that value.
+If a `list` has a `contenteditable` attribute value of its own, this is, of course the closest ‘inheritable’ attribute, and the list and its child elements take that value.
 
 If a `list` does not have a `contenteditable` attribute value of its own and the immediate parent of the `list` is a `div` which does have a `contenteditable` attribute set, the `list` will inherit the value of this attribute.
 

@@ -292,7 +292,7 @@ In {productname} 6.2, the Autolink plugin is now able to handle this text node f
 
 As part of switching to TypeScript’s strict mode, multiple public {productname} APIs were found to be typed incorrectly.
 
-These types have been corrected types in {productname} 6.2. 
+These types have been corrected types in {productname} 6.2.
 
 === The number of blank lines returned from `editor.getContent({format: 'text'})` differed between browsers
 
@@ -364,7 +364,7 @@ In particular, this includes ensuring that formatting is not directly removed fr
 
 === Spaces could be incorrectly added to `urlinput` dialog components in certain cases
 
-The handling of spaces inserted into the xref:dialog-components.adoc#urlinput[UrlInput] dialog component, specifically its implementation in the xref:link[Link Dialog], was inconsistent.
+The handling of spaces inserted into the xref:dialog-components.adoc#urlinput[UrlInput] dialog component, specifically its implementation in the xref:link.adoc[Link Dialog], was inconsistent.
 
 It allowed spaces to be entered when it was empty and the text input contained text, but did not allow spaces to be entered when both fields were empty.
 
@@ -395,7 +395,7 @@ In {productname} 6.2, dragging elements with `contenteditable=false` attributes 
 
 === Parsing large documents no longer throws a Maximum call stack size exceeded exception
 
-Previously, parsing very large documents would throw an error to the console that they had exceeded the Maximum call stack size. 
+Previously, parsing very large documents would throw an error to the console that they had exceeded the Maximum call stack size.
 
 For example:
 

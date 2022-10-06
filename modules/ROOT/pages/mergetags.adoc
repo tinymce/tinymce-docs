@@ -12,7 +12,7 @@ include::partial$misc/admon-requires-6.2v.adoc[]
 
 The {pluginname} plugin allows the user to insert a merge tag (also known as a personalization token, or a mail merge field).
 
-Merge tags can be inserted by selecting from a drop-down list when a specified prefix is typed, or selected and inserted from the searchable Merge tags toolbar menu button.
+{pluginname} can be inserted by selecting from a drop-down list when a specified prefix is typed, or selected and inserted from the searchable {pluginname} toolbar menu button.
 
 Once a merge tag is inserted, the plugin leaves a non-editable variable wrapped with a prefix and suffix, making it easily identifiable.
 
@@ -54,29 +54,29 @@ The autocompleter is triggered by typing a specified prefix, controlled by the x
 
 By default, this prefix is `{{`.
 
-Entering characters after the prefix begins filtering the merge tags list.
+Entering characters after the prefix begins filtering the {pluginname} list.
 
-== Using Merge Tags
+== Using {pluginname}
 
-. Merge tag contents are non-editable but can have any inline-formats applied to them.
+. {pluginname} contents are non-editable but can have any inline-formats applied to them.
 +
 For example, a merge tag can be set to any available typeface, type-size, foreground or background color, or can be set to *bold*, or _italic_.
 
-. Merge tags can be changed.
+. {pluginname} can be changed.
 +
-A selected merge tag can be changed to any other merge tag by using the merge tags toolbar menu button.
+A selected merge tag can be changed to any other merge tag by using the {pluginname} toolbar menu button.
 
 . Text that matches an existing merge tag will be recognised as a merge tag when it is pasted or otherwise inserted into a {productname} document.
 +
-Content containing the specified prefix and suffix, and matching a specified merge tag, will be inserted as a merge tag when pasted into the editor. For example, if `Sender.Firstname` is a Merge tag value, and the Merge tag prefix and suffix have their default values, adding the string, `{{Sender.FirstName}}`, to a {productname} document will result in the string automatically being recognised as a Merge tag.
+Content containing the specified prefix and suffix, and matching a specified merge tag, will be inserted as a merge tag when pasted into the editor. For example, if `Sender.Firstname` is a merge tag value, and the merge tag prefix and suffix have their default values, adding the string, `{{Sender.FirstName}}`, to a {productname} document will result in the string automatically being recognised as a merge tag.
 
-. Merge tags can be nested within the `+mergetags_list+` option.
+. {pluginname} can be nested within the `+mergetags_list+` option.
 +
-The `+mergetags_list+` option allows for the specification of a nested menu item within the merge tags toolbar menu button. This option allows any number of nested menus and items for merge tag categorisation.
+The `+mergetags_list+` option allows for the specification of a nested menu item within the {pluginname} toolbar menu button. This option allows any number of nested menus and items for merge tag categorisation.
 
 == Styling Merge Tags
 
-It's possible to change the visual appearance of the Merge Tags within the editor using a custom CSS file provided through the xref:add-css-options.adoc#content_css[content_css] option. Here is an example of how to style the various elements of the merge tag.
+It's possible to change the visual appearance of the {pluginname} within the editor using a custom CSS file provided through the xref:add-css-options.adoc#content_css[content_css] option. Here is an example of how to style the {pluginname} elements.
 
 [source,css]
 ----
@@ -90,7 +90,7 @@ It's possible to change the visual appearance of the Merge Tags within the edito
 }
 ----
 
-Here is an example of the Merge tag HTML structure.
+Here is an example of the {pluginname} HTML structure.
 
 [source,html]
 ----

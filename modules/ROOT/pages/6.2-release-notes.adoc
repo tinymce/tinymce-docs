@@ -549,19 +549,19 @@ There are several known issues in {productname} 6.2.
 
 === Merge Tags cannot be manually added to a {productname} document in some circumstances
 
-There are several circumstances where typing the Merge tags prefix (by default, `+{{+`) does not activate the `autocompleter`. Consequently, choosing a Merge tag from the expected pop-up menu is not possible because the pop-up menu does not present.
+There are several circumstances where typing the Merge Tags prefix (by default, `+{{+`) does not activate the `autocompleter`. Consequently, choosing a Merge tag from the expected pop-up menu is not possible because the pop-up menu does not present.
 
-Moreover, in the circumstances where the `autocompleter` does not activate, even typing the entire Merge tag does not result in the string being turned in to a Merge tag.
+Moreover, in the circumstances where the `autocompleter` does not activate, even typing the entire merge tag does not result in the string being turned in to a merge tag.
 
 There is a workaround, however.
 
-If typing the Merge tags prefix does not work as expected, clicking the Merge tags toolbar button and selecting the desired Merge tag from the resultant menu inserts a functioning Merge tag.
+If typing the Merge Tags prefix does not work as expected, clicking the Merge Tags toolbar button and selecting the desired merge tag from the resultant menu inserts a functioning merge tag.
 
-=== Merge tags does not validate inserted strings that match merge tag syntax
+=== Merge Tags does not validate inserted strings that match merge tag syntax
 
-If a string is pasted or otherwise inserted into a {productname} document and that string presents as a complete merge tag, the Merge tag plugin will turn the string into an apparently working merge tag, regardless of the string’s content.
+If a string is pasted or otherwise inserted into a {productname} document and that string presents as a complete merge tag, the Merge Tags plugin will turn the string into an apparently working merge tag, regardless of the string’s content.
 
-For example, if a {productname} instance is running the Merge tags plugin and the plugin is using the default prefix and suffix characters — `+{{+` and `+}}+` — pasting
+For example, if a {productname} instance is running the Merge Tags plugin and the plugin is using the default prefix and suffix characters — `+{{+` and `+}}+` — pasting
 
 `{{not.a.merge.tag.value.for.this.document}}`
 
@@ -569,7 +569,7 @@ into the document results in the pasted string being turned in to an apparently 
 
 There is no current workaround.
 
-=== A Merge tags UI element has not been translated
+=== A Merge Tags UI element has not been translated
 
 {productname} 6.2 adds a new UI option to menu toolbar buttons. These buttons can now present a search field at the top of the menu.
 

@@ -230,7 +230,7 @@ The following elements were previously deprecated and have, with this release, b
 
 | `images_dataimg_filter`               | Option        |
 
-| `JSON`                                | API           |
+| `JSON`                                | API           | Use the native `JSON` https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON[API] instead.
 
 | `JSONP`                               | API           |
 
@@ -276,7 +276,7 @@ The following elements were previously deprecated and have, with this release, b
 
 | `validate`                            | Schema option |
 
-| `XHR`                                 | API           | Any remaining `XHR` users have been replaced with `fetch`.
+| `XHR`                                 | API           | Any remaining `XHR` uses have been replaced with https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API[`fetch`].
 |===
 
 // end::previously-deprecated-items-now-removed[]

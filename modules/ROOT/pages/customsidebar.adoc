@@ -6,7 +6,8 @@
 
 {productname} allows developers to create sidebars and add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow administrators and plugin developers to provide additional tools that can be accessed by {productname} users.
 
-NOTE: Sidebars do not work when {productname} is run in xref:use-tinymce-inline.adoc[inline editing mode].
+NOTE: Sidebars are only supported when {productname}  is run in _classic_ editing mode. Sidebars are not supported in _inline_ or _distraction free_ mode. For more information on the differences between these editing modes, see xref:use-tinymce-inline.adoc[Inline editing mode].
+
 
 == Editor sidebar API
 

@@ -210,13 +210,13 @@ This new capability is configurable using the new `format_noneditable_selector` 
 
 For details see xref:content-formatting.adoc#format_noneditable_selector[Content Formatting].
 
-=== The autocompleter now supports a multiple character trigger using the new trigger configuration
+=== The autocompleter now supports a multiple character trigger using the new `trigger` configuration
 
-Previously, the autocompleter only supported a single character trigger.
+include::partial$release-notes/6.2-release-notes-autocompleter-trigger-configuration-property.adoc[]
 
-With this update, the autocompleter now supports multi-character triggers.
+The new xref:mergetags.adoc[Merge Tags] Premium plugin, for example, uses the `trigger` property to set the `+{{+` string as its default trigger.
 
-The new xref:mergetags.adoc[Merge Tags] Premium plugin, for example, uses the string `+{{+` as its default trigger.
+For details see the xref:autocompleter.adoc[Autocompleter] UI component.
 
 === Some inline formatting, such as color and font size, can now be applied to list item elements
 
@@ -530,14 +530,7 @@ For information on the server-side components updates, see: xref:#accompanying-p
 
 === The `autocompleter` configuration property, `ch`, has been deprecated
 
-The `ch` autocompleter configuration property will be removed in the next major release.
-
-The `trigger` property should be used instead, as it allows one or more characters to be specified.
-
-[source,js]
-----
-trigger: '<string>',
-----
+include::partial$release-notes/6.2-release-notes-autocompleter-trigger-configuration-property.adoc[]
 
 
 [[known-issues]]

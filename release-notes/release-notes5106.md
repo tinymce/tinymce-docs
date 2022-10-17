@@ -11,8 +11,7 @@ keywords: releasenotes bugfixes
 {{site.productname}} 5.10.6 was released for {{site.enterpriseversion}} and {{site.cloudname}} on October 26 26<sup>th</sup>, 2022. It includes {{site.productname}} 5.10.6. These release notes provide an overview of the changes for {{site.productname}} 5.10.6, including:
 
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Bug fixes](#bugfixes)
-- [Changes](#changes)
+- [General Bug fixes](#bugfixes)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 {{site.releasenotes_for_stable}}
@@ -57,7 +56,7 @@ results in the following, complete, link and no trailing text
 For information on the PowerPaste plugin, [PowerPaste plugin]({{site.baseurl}}plugins/premium/powerpaste/).
 
 
-## Bug fixes
+## General bug fixes
 
 {{site.productname}} 5.10.6 provides fixes for the following bugs:
 
@@ -80,11 +79,6 @@ A {{site.productname}} toolbar option, *Fullscreen*, toggles the {{site.productn
 If a {{site.productname}} instance had a custom notification, `+editor.notificationManager.open()+`, set to display when the *Fullscreen* button was used, toggling from Fullscreen back to default resulted in the notification displaying outside the {{site.productname}} editor.
 
 {{site.productname}} 5.10.6 corrects this. When toggling between the two *Fullscreen* states, custom notifications now display immediately below the toolbar in either state, as expected.
-
-
-## Changes
-
-{{site.productname}} 5.10.6 also includes the following change:
 
 ### Toggling fullscreen mode with the `fullscreen` plugin now also fires the `ResizeEditor` event
 

@@ -21,6 +21,6 @@ include::partial$misc/admon-different-default-for-mobile.adoc[]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  toolbar_sticky: true
+  toolbar_sticky: true //toolbar_sticky: false will have no effect in inline mode.
 });
 ----

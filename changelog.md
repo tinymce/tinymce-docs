@@ -8,6 +8,14 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.6 - 2022-10-19
+
+### Fixed
+- The `name` and `id` attributes of some elements were incorrectly removed during serialization.
+- Notifications would not properly reposition when toggling fullscreen mode.
+- Toggling fullscreen mode with the `fullscreen` plugin now also fires the `ResizeEditor` event.
+- The URL detection used for `autolink` and smart paste didn't work if a path segment contained valid characters such as `!` and `:`.
+
 ## 5.10.5 - 2022-05-25
 
 ### Fixed

@@ -7,10 +7,10 @@
     function getPrefixURL(type) {
         switch(type) {
             case "blog":
-                return "https://go.tiny.cloud/blog/";
+                return "https://www.tiny.cloud/blog/";
                 break;
             default:
-                return "https://go.tiny.cloud/blog/";
+                return "https://www.tiny.cloud/blog/";
         }
     }
 

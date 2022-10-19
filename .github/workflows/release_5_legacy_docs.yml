@@ -47,9 +47,11 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_LEGACY_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_LEGACY_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true
 
     - name: (deploy) Invalidate Cache
       run: aws cloudfront create-invalidation --distribution-id E3LFU502SQ5UR --paths "/docs/*"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_LEGACY_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_LEGACY_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true

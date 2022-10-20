@@ -3,15 +3,17 @@
 
 A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top of the screen when scrolling down a web page until the editor is no longer visible.
 
-To enable Sticky Toolbars, set `+toolbar_sticky+` as `+true+` in the `+tinymce.init+` script. To disable Sticky Toolbars, set `+toolbar_sticky+` as `+false+`.
+To enable Sticky Toolbars, set `+toolbar_sticky+` as `+true+` in the `+tinymce.init+` script. To disable Sticky Toolbars, set `+toolbar_sticky+` as `+false+`. Sticky toolbars are always enabled in inline mode and cannot be disabled.
 
 To see a demo of sticky toolbar, see the https://codepen.io/tinymce/full/qBWLLMP[{productname} Sticky Toolbar Demo].
 
 *Type:* `+Boolean+`
 
-*Default value:* `+false+`
+*Default value:* `+false+` in `iframe` mode, `+true+` in `inline` mode
 
 *Possible values:* `+true+`, `+false+`
+
+include::partial$misc/admon-iframe-only.adoc[]
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 
@@ -21,6 +23,6 @@ include::partial$misc/admon-different-default-for-mobile.adoc[]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  toolbar_sticky: true //toolbar_sticky: false will have no effect in inline mode.
+  toolbar_sticky: true
 });
 ----

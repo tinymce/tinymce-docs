@@ -15,8 +15,8 @@ A basic button triggers its `+onAction+` function when clicked.
 include::partial$misc/admon-predefined-icons-only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
 |enabled |boolean |optional |default: `true` - Represents the button's state. When `false`, the button is unclickable. Toggled by the button's API.
-|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered.
-|onAction |`+(api) => void+` |required |Function invoked when the button is clicked. For details, see: xref:using-onsetup[Using `+onSetup+`].
+|onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
+|onAction |`+(api) => void+` |required |Function invoked when the button is clicked.
 |===
 
 == API

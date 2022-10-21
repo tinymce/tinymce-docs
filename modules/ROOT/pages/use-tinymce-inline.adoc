@@ -16,6 +16,8 @@ Inline editing mode does not replace the selected element with an iframe, but in
 * To use the CSS stylesheet of the page where it initializes, and
 * To have minimal UI around the content area to minimize the area occupied by the editor.
 
+include::partial$misc/admon-inline-editing-mode-does-not-support-comments.adoc[]
+
 == Enabling inline editing mode
 
 Inline mode only works on content within a block element (such as: `+div+` or `+h1+`). To enable inline mode, set the `+inline+` option to `+true+`. For example:

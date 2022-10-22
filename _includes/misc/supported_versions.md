@@ -21,7 +21,7 @@ Supported versions of {{site.productname}}:
 To view our Software License Agreements, visit:
 
 - [The {{site.cloudname}} Services Subscription Agreement]({{site.legalpages}}/cloud-use-subscription-agreement/).
-- [The {{site.companyname}} Self-Hosted Software License Agreement - (Enterprise Users)]({{site.legalpages}}/tiny-self-hosted-enterprise-agreement/).
-- [The {{site.companyname}} Self-Hosted Software License Agreement - (OEM & SaaS Users)]({{site.legalpages}}/tiny-self-hosted-oem-saas-agreement/).
+- [The {{site.companyname}} Self-Hosted Software License Agreement — (Enterprise Users)]({{site.legalpages}}/tiny-self-hosted-enterprise-agreement/).
+- [The {{site.companyname}} Self-Hosted Software License Agreement — (OEM & SaaS Users)]({{site.legalpages}}/tiny-self-hosted-oem-saas-agreement/).
 
 Support for Partner Plugins is provided by Partner companies and is not the responsibility of {{site.companynameformal}}. For information on Partner Plugins, see: [https://www.tiny.cloud/partners/]({{site.url}}/partners/).

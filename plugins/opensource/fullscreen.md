@@ -27,6 +27,7 @@ tinymce.init({
   toolbar: 'fullscreen'
 });
 ```
+
 ## Configuration options
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.

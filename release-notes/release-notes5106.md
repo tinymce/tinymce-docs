@@ -95,7 +95,7 @@ The new versions of the server-side services provide updates for the Java-based 
         - 8.0.42+
         - 7.0.76+
 
-2. Replace the existing server-side `.war` files with the `.war` files bundled with {{site.productname}} 5103 or later.
+2. Replace the existing server-side `.war` files with the `.war` files bundled with {{site.productname}} 5.10.6 or later.
 
 For information on:
 

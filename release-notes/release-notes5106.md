@@ -109,7 +109,7 @@ For information on:
 
 ### The name and id attributes of some elements were incorrectly removed during serialization
 
-Previously, when {{site.productname}} serialized an object, a bug in the SaxParser incorrectly removed `name` and `id` attributes from some elements (for example, `img` and `iframe` elements, among others).
+Previously, when {{site.productname}} serialized editor content, a bug in the SaxParser incorrectly removed `name` and `id` attributes from some elements (for example, `img` and `iframe` elements, among others).
 
 This occurred in several circumstances but could be demonstrated by adding, for example, an image with `id` and `name` attributes to a {{site.productname}} instance and then choosing **Tools > Source code** from the menu bar.
 

@@ -27,8 +27,6 @@ tinymce.init({
   toolbar: 'fullscreen'
 });
 ```
-> **NOTE**: As of {{site.productname}} 5.10.6, toggling fullscreen mode with the `fullscreen` plugin also fires the `ResizeEditor` event.
-
 ## Configuration options
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.

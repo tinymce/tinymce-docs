@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-{{site.productname}} 5.10.6 was released for {{site.enterpriseversion}} and {{site.cloudname}} on October 26 26<sup>th</sup>, 2022. It includes {{site.productname}} 5.10.6. These release notes provide an overview of the changes for {{site.productname}} 5.10.6, including:
+{{site.productname}} 5.10.6 was released for {{site.enterpriseversion}} and {{site.cloudname}} on October 26<sup>th</sup>, 2022. It includes {{site.productname}} 5.10.6. These release notes provide an overview of the changes for {{site.productname}} 5.10.6, including:
 
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)

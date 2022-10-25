@@ -70,7 +70,7 @@ The Java server-side components have been updated to the following versions:
 
 - `ephox-spelling.war`: 2.118.6
 - `ephox-hyperlinking.war`: 2.105.13
-- `ephox-image-proxy.war`: 2.106.1
+- `ephox-image-proxy.war`: 2.106.4
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
 

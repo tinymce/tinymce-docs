@@ -54,7 +54,7 @@ results in the following, complete, link and no trailing text
 
 > **NOTE**: Exclamation points and colons are still boundary characters for URL detection and delimiting. If the string `https://example.com/colon:` is pasted or typed into a {{site.productname}} document, automatic link detection will produce a link that does not include the trailing colon character.
 
-For information on the PowerPaste plugin, see [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
 
 ## Accompanying Premium self-hosted server-side component changes

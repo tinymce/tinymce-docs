@@ -4,12 +4,12 @@ This option specifies the language used for the {{site.productname}} user interf
 
 Before changing the language option, ensure that the language pack is available to the {{site.productname}} instance. {{site.companyname}} provides two collections of language packs:
 
-- _Premium_ language packs - Professionally localized language packs provided on {{site.cloudname}} and bundled with premium self-hosted bundles.
+- _Enterprise_ language packs - Professionally localized language packs provided on {{site.cloudname}} and bundled with enterprise self-hosted bundles.
 - _Community_ language packs - Localizations provided by {{site.productname}} users through Transifex, which need to be downloaded prior to use, from [the {{site. companyname}} Downloads Page - Language Packages]({{site.gettiny}}/language-packages/).
 
 For information on:
 
-- Using the premium language packs, see: [Using the premium language packs](#usingthepremiumlanguagepacks).
+- Using the enterprise language packs, see: [Using the enterprise language packs](#usingtheenterpriselanguagepacks).
 - Using the community language packs, see: [Using the community language packs](#usingthecommunitylanguagepacks).
 
 **Option:** `language`
@@ -29,9 +29,9 @@ tinymce.init({
 });
 ```
 
-### Using the premium language packs
+### Using the enterprise language packs
 
-The following professionally localized language packs are provided to paid {{site.cloudname}} and premium self-hosted deployments. To use these language packs, set the `language` option to the corresponding language code. No additional configuration is required.
+The following professionally localized language packs are provided to paid {{site.cloudname}} and enterprise self-hosted deployments. To use these language packs, set the `language` option to the corresponding language code. No additional configuration is required.
 
 {% include misc/ui-languages.md %}
 

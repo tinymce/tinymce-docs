@@ -421,7 +421,27 @@ one array list into another.
 ----
 overrideDefaults(defaultOptions: Object)
 ----
-Overrides the default options for editor instances.
+`overrideDefaults` will replace any of the defaults set by a previous call to the `overrideDefaults` function. 
+When using the cloud some of the defaults are required for the cloud based editor to function.
+
+Therefore when using `overrideDefaults` with the cloud based editor, the user will need to combine the previous defaults `tinymce.defaultOptions` with the new options that you want to integrate. 
+
+==== Example
+[source, javascript]
+----
+const customOptions = { 
+plugins: [
+        "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
+        "help", "image", "insertdatetime", "link", "lists", "media", 
+        "preview", "searchreplace", "table", "visualblocks", 
+    ],
+    toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	
+tinymce.overrideDefaults({
+    ...tinymce.defaultOptions,
+		...customOptions
+})
+----
 
 ==== Parameters
 

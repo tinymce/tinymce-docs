@@ -1,0 +1,450 @@
+= TinyMCE 6.3
+:navtitle: TinyMCE 6.3
+:description: Release notes for TinyMCE 6.3
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.3 was released for {enterpriseversion} and {cloudname} on Wednesday, December 7^th^, 2022. It includes {productname} 6.3, additional changes to Premium plugins, and several new Premium plugins. These release notes provide an overview of the changes for {productname} 6.3:
+
+* xref:new-premium-plugins[New Premium plugins]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:improvements[Improvements]
+* xref:additions[Additions]
+* xref:changes[Changes]
+* xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:deprecated[Deprecated]
+* xref:known-issues[Known issues]
+
+[[new-premium-plugins]]
+== New Premium plugins
+
+=== Inline CSS 1.0.0
+
+The {productname} 6.3 release includes the new **Inline CSS** premium plugin.
+
+The Inline CSS plugin allows the user to <notes here>.
+
+For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline CSS].
+
+=== Smart typography 1.0.0
+
+The {productname} 6.3 release includes the new **Smart typography** premium plugin.
+
+The Smart typography plugin allows the user to <notes here>.
+
+For information on the **Smart typography** plugin, see: xref:smart-typography.adoc[Smart typography].
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.3.
+
+=== Accessibility Checker <accessibility checker version number>
+
+The {productname} 6.3 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** <accessibility checker version number> <type(s) of change here>:
+
+// accessibility checker change documentation here.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Merge tags <merge tags version number>
+
+The {productname} 6.3 release includes an accompanying release of the **Merge tags** premium plugin.
+
+// merge tags change documentation here.
+
+For information on the **Merge tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+
+[[accompanying-premium-skins-and-icon-packs-changes]]
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} 6.3 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+=== Premium Skins and Icon Packs
+
+The **Premium Skins and Icon Packs** release includes the following updates:
+
+// premium skins and icon packs change documentation here.
+
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.3 skin, Oxide.
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 6.3 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* <plugin name 1> plugin (`plugin-name-1`)
+* <plugin name 2> plugin (`plugin-name-2`)
+* <plugin name 3> plugin (`plugin-name-3`)
+
+The Java server-side components have been updated to the following versions:
+
+* `component-1.war`: <component-1 version number>
+* `component-2.war`: <component-2 version number>
+* `component-3.war`: <component-3 version number>
+
+For information on:
+
+* The <plugin name 1> plugin, see: xref:plugin-1-filename.adoc[<plugin name 1> plugin].
+* The <plugin name 2> plugin, see: xref:plugin-2-filename.adoc[<plugin name 2> plugin].
+* The <plugin name 2> plugin, see: xref:plugin-3-filename.adoc[<plugin name 3> plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} vnumtxt or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+
+[[improvements]]
+== Improvements
+
+{productname} 6.3 also includes the following improvement:
+
+=== Transparent elements, like anchors, can now contain block elements.
+
+// https://ephocks.atlassian.net/browse/TINY-9172
+// cause
+// consequence
+// fix
+// result
+// https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+[[additions]]
+== Additions
+
+{productname} 6.3 also includes the following additions:
+
+=== New expand function added to tinymce.selection which expands the selection around the nearest word.
+
+// https://ephocks.atlassian.net/browse/TINY-9001
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== New expand function added to tinymce.dom.RangeUtils to return a new range expanded around the nearest word.
+
+// https://ephocks.atlassian.net/browse/TINY-9001
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== New color_map_background and color_map_foreground option which sets the base colors used in the backcolor and forecolor toolbar buttons and menu items.
+
+// https://ephocks.atlassian.net/browse/TINY-9184
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Added optional storageKey property to colorinput component and colorswatch fancy menu item.
+
+// https://ephocks.atlassian.net/browse/TINY-9184
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== New addView function added to editor.ui.registry which makes it possible to register custom editor views.
+
+// https://ephocks.atlassian.net/browse/TINY-9210
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== New ToggleView command which makes it possible to hide or show registered custom views.
+
+// https://ephocks.atlassian.net/browse/TINY-9210
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== New color_default_foreground and color_default_background options to set the initial default color for the forecolor and backcolor toolbar buttons and menu items.
+
+// https://ephocks.atlassian.net/browse/TINY-9183
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== New getTransparentElements function added to tinymce.html.Schema to return a map object of transparent HTML elements.
+
+// https://ephocks.atlassian.net/browse/TINY-9172
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+
+
+[[changes]]
+== Changes
+
+{productname} 6.3 also incorporates the following change:
+
+=== Transparent elements, like anchors, are now allowed in the root of the editor body if they contain blocks.
+
+// https://ephocks.atlassian.net/browse/TINY-9172
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.3 also includes the following bug fixes:
+
+=== Parsing media content would cause a memory leak, which for example occurred when using the getContent API.
+
+// https://ephocks.atlassian.net/browse/TINY-9186
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Dragging a noneditable element toward the bottom edge would cause the page to scroll up.
+
+// https://ephocks.atlassian.net/browse/TINY-9025
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Range expanding capabilities would behave inconsistently depending on where the cursor was placed.
+
+// https://ephocks.atlassian.net/browse/TINY-9029
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Compilation errors were thrown when using TypeScript 4.8.
+
+// https://ephocks.atlassian.net/browse/TINY-9161
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Line separator scrolling in floating toolbars.
+
+// https://ephocks.atlassian.net/browse/TINY-8948
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== A double bottom border appeared on inline mode editor for the tinymce-5 skin.
+
+// https://ephocks.atlassian.net/browse/TINY-9108
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== The editor header showed up even with no menubar and toolbar configured.
+
+// https://ephocks.atlassian.net/browse/TINY-8819
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Inline text pattern no longer triggers if it matches only the end but not the start.
+
+// https://ephocks.atlassian.net/browse/TINY-8947
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Matches of inline text patterns that are similar are now managed correctly.
+
+// https://ephocks.atlassian.net/browse/TINY-8949
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== The context toolbar prevented the user from placing the cursor at the edges of the editor.
+
+// https://ephocks.atlassian.net/browse/TINY-8890
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== The Quick Insert context toolbar provided by the quickbars plugin showed when the cursor was in a fake block caret.
+
+// https://ephocks.atlassian.net/browse/TINY-9190
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== The editor.selection.getRng() API was not returning a proper range on hidden editors in Firefox.
+
+// https://ephocks.atlassian.net/browse/TINY-9259
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== The editor.selection.getBookmark() API was not returning a proper bookmark on hidden editors in Firefox.
+
+// https://ephocks.atlassian.net/browse/TINY-9259
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Dragging a noneditable element before or after another noneditable element now works correctly.
+
+// https://ephocks.atlassian.net/browse/TINY-9253
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== The restored selection after a redo or undo action was not scrolled into view.
+
+// https://ephocks.atlassian.net/browse/TINY-9222
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== A newline could not be inserted when the selection was restored from a bookmark after an inline contenteditable="false" element.
+
+// https://ephocks.atlassian.net/browse/TINY-9194
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.3 includes fixes for the following security issues:
+
+=== are there any security fixes in this release?
+
+// https://ephocks.atlassian.net/browse/[ticket-number-for-any-security-fixes]
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+[[deprecated]]
+== Deprecated
+
+=== are there any deprecations in this release?
+
+// https://ephocks.atlassian.net/browse/[ticket-number-for-any-deprecations]
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} 6.3 may encounter and possible workarounds for these issues.
+
+There are several known issues in {productname} 6.3.
+
+=== are there any known issues fixes in this release?
+
+// https://ephocks.atlassian.net/browse/[ticket-number-for-any-known-issues]
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+

@@ -355,17 +355,7 @@ editor.plugins.a11ychecker.toggleaudit();
 [[getreport]]
 === `+getReport()+`
 
-Conducts an accessibility audit and reports the results without opening the dialog. The report produced is an array of objects, where each object represents an issue and contains the following details:
-
-id : The issue identifier used by {productname}, such as D1, T4A. For a description and other details about the issue, see xref:accessibility-rules[Accessibility Rules].
-
-description : A description of the issue.
-
-severity : The severity of the issue, either: `+info+`, `+warning+`, or `+error+`.
-
-element : The DOM element where the issue was found.
-
-url : A URL to the W3 WCAG technique that needs to be addressed to clear the issue.
+Conducts an accessibility audit and reports the results without opening the dialog. The report produced is an array of objects, where each object represents an xref:a11ychecker.adoc#issue[issue].
 
 ==== Example: Using `+getReport()+`
 
@@ -393,3 +383,20 @@ console.log(issues);
   }
 ]
 ----
+
+[[issue]]
+=== The `+issue+` object
+
+Each `rule` in a11ychecker will generate an issue on any element which matches it. This issue is available as an object in a number of APIs, and contains the specific data used in the a11ychecker dialog, pertaining to the element which triggered it. With `a11ychecker_filter_issue`, these issues can be parsed before they are classified as issues, with the data provided in the `issue` object used in the callback function. 
+
+The `+issue+` object is provided to any function implementation of this option. This object provides relevant data pertaining to the triggered issue:
+
+* `+id+` : `+String+` A11ychecker issue identifier used by {productname}, such as D1, T4A. For a description and other details about the issue, see xref:accessibility-rules[Accessibility Rules].
+
+* `+description+` : `+String+` description of the issue, as will be displayed in the dialog.
+
+* `+severity+` : `+String+` severity level of the issue, either `+info+`, `+warning+`, or `+error+`.
+
+* `+url+` : `+String+` URL reference for the issue. By default, this will be a link to the W3 website, containing the W3 WCAG technique that needs to be addressed to clear the issue.
+
+* `+element+` : `+Object+` DOM element where the issue was found.

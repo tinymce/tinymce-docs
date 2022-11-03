@@ -67,3 +67,62 @@ console.log(comments.getEventLog(
   { after: '2022-02-22T12:34:56Z' }  // ISO-8601 standard: YYYY-MM-DDThh:mm:ssZ
 ));
 ----
+
+=== `+editor.annotator+`: `+'tinycomments'+` annotator
+
+The {pluginname} plugin makes use of the xref:annotations.adoc[`+editor.annotator+` API] to annotate content with attached conversations. The annotator used by the {pluginname} plugin is named `+'tinycomments'+` and is available for use in each of the `+editor.annotator+` API methods. The `+'tinycomments'+` annotator, like all editor APIs, can only be accessed after the editor is initialized.
+
+==== Example: Using the `+'tinycomments'+` annotator to notify when conversations are selected
+
+This example makes use of the `+annotationChanged+` method in the `+editor.annotator+` API to create a xref:creating-custom-notifications.adoc[custom notification] to display for five seconds each time any content with the `+'tinycomments'+` annotation is selected.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
+  setup: (editor) => {
+    editor.on('init', () => {
+      editor.annotator.annotationChanged('tinycomments', (selected, annotatorName, context) => {
+        if (selected) {
+          editor.notificationManager.open({
+          text: `The content you have selected contains a conversation. ${annotatorName}: ${context.uid}.`,
+          type: 'info',
+          timeout: 5000
+          });
+        }
+      });
+    });
+  }
+});
+----
+
+==== Example: Using the `+'tinycomments'+` annotator to highlight conversations without showing comments
+
+This example makes use of the `+getAll+` method in the `+editor.annotator+` API to apply the `+'background-color: aquamarine;'+` style to any elements annotated by `+'tinycomments'+` once the `+'highlightcomments'+` button on the toolbar is pressed. This gives the elements the appearance that they are highlighted, without requiring to xref:comments-using-comments#show-or-view-a-comment[show comments].
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments highlightcomments',
+  setup: (editor) => {
+    editor.ui.registry.addButton('highlightcomments', {
+      icon: 'highlight-bg-color',
+      onAction: () => {
+        const conversations = editor.annotator.getAll('tinycomments');
+        for (const [conversation, elements] of Object.entries(conversations)) {
+          elements.forEach((element, _) => {
+            const currentStyle = element.getAttribute('style');
+            const highlightColor = 'background-color: aquamarine;';
+            const newStyle = currentStyle ? currentStyle + highlightColor : highlightColor;
+            element.setAttribute('style', newStyle);
+          });
+        }
+      }
+    });
+  }
+});
+----

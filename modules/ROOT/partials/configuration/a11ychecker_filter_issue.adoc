@@ -47,7 +47,7 @@ tinymce.init({
 
 === Example: Using `+a11ychecker_filter_issue+` to filter images with empty alternative text from the Accessibility Checker I1 rule
 
-The callback function in the following example will only return `false` for any issues with `'I1'` as the `+'id'+` image elements with an empty `+'alt+'` attribute, otherwise the issue won't be filtered out. This implementation can be useful as allowing images to have empty alternative text can be another method of applying the `+role="presentation"+` attribute to mark an image as `+decorative+`.
+The callback function in the following example will only return `false` for any issues with `'I1'` as the `+'id'+` image elements with an empty `+'alt+'` attribute, otherwise the issue won’t be filtered out. This implementation can be useful as allowing images to have empty alternative text can be another method of applying the `+role="presentation"+` attribute to mark an image as `+decorative+`.
 
 [source,js]
 ----

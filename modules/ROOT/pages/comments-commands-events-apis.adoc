@@ -39,7 +39,7 @@ tinymce.init({
 
 == APIs
 
-The {pluginname} plugin provides the following API.
+The {pluginname} plugin provides the xref:comments-commands-events-apis#getEventLog[`+getEventLog()+`] API, as well as an annotator named xref:comments-commands-events-apis#tinycomments-annotator[`+'tinycomments'+`] created using the xref:annotations.adoc[`+editor.annotator+` API].
 
 [[getEventLog]]
 === getEventLog()
@@ -68,7 +68,8 @@ console.log(comments.getEventLog(
 ));
 ----
 
-=== `+editor.annotator+`: `+'tinycomments'+` annotator
+[[tinycomments-annotator]]
+=== The `+'tinycomments'+` annotator
 
 The {pluginname} plugin makes use of the xref:annotations.adoc[`+editor.annotator+` API] to annotate content with attached conversations. The annotator used by the {pluginname} plugin is named `+'tinycomments'+` and is available for use in each of the `+editor.annotator+` API methods. The `+'tinycomments'+` annotator, like all editor APIs, can only be accessed after the editor is initialized.
 
@@ -87,9 +88,9 @@ tinymce.init({
       editor.annotator.annotationChanged('tinycomments', (selected, annotatorName, context) => {
         if (selected) {
           editor.notificationManager.open({
-          text: `The content you have selected contains a conversation. ${annotatorName}: ${context.uid}.`,
-          type: 'info',
-          timeout: 5000
+            text: `The content you have selected contains a conversation. ${annotatorName}: ${context.uid}.`,
+            type: 'info',
+            timeout: 5000
           });
         }
       });

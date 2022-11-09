@@ -5,7 +5,7 @@ This option enables a hover card to be presented when a user hovers over a menti
 
 *Type:* `+Function+`
 
-=== Example: Using `+mentions_select+`
+=== Example: using `+mentions_select+`
 
 [source,js]
 ----
@@ -50,7 +50,7 @@ tinymce.init({
 
 If `+mentions_select+` is resolved with an object specifying the type and user details, a predefined hover card template will be used. To use the predefined template, set `+type+` to `+'profile'+`. For details on the user properties required for the `+profile+` template, see: xref:mentions.adoc#user-properties[User properties].
 
-==== Example: Using the `+'profile'+` template with `+mentions_select+`
+==== Example: using the `+'profile'+` template with `+mentions_select+`
 
 [source,js]
 ----

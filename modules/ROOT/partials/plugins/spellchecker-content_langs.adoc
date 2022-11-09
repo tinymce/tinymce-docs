@@ -5,7 +5,7 @@ include::partial$configuration/content_langs_base.adoc[]
 
 *Type:* `+Array+`
 
-=== Example: Using `+content_langs+` to change spelling dictionaries
+=== Example: using `+content_langs+` to change spelling dictionaries
 
 The Spell Checker Pro plugin will use the `+code+` property to determine which dictionary to use on the content, unless the `+customCode+` property is available. The language tag specified by `+customCode+` overrides the spelling dictionary, to allow for non-standard languages such as the medical dictionaries provided with Spell Checker Pro. For all languages, ensure that:
 

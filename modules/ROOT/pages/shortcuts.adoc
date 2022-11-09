@@ -12,11 +12,11 @@ To add a custom keyboard shortcut to {productname}, use either:
 
 include::partial$misc/shortcut-os-mappings.adoc[]
 
-== Example: Custom keyboard shortcut
+== Example: custom keyboard shortcut
 
 liveDemo::custom-shortcut[tab="js"]
 
-== Example: Adding a custom shortcut for a menu item
+== Example: adding a custom shortcut for a menu item
 
 When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `+shortcut+` configuration option when creating the menu item.
 

@@ -61,7 +61,7 @@ A dialog can be configured with an xref:dialog-configuration.adoc#options[`+onTa
 
 As an example of when this is useful, the `+charmap+` and `+emoticons+` plugin dialogs use `+newTabName+` to change search results to match the character or emoticon category represented by the current tab.
 
-=== Example: Using the dialog API
+=== Example: using the dialog API
 
 Below is a trivial example of how to use `+onTabChange+` and `+showTab()+`.
 

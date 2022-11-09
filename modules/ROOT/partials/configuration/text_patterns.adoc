@@ -46,7 +46,7 @@ This allows for patterns to be used to either apply a format or execute a comman
 
 NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Enter* key.
 
-==== Example: Using inline patterns
+==== Example: using inline patterns
 
 [source,js]
 ----
@@ -80,7 +80,7 @@ The block patterns do not have an `+end+` property. This allows for patterns to 
 
 NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spacebar*.
 
-==== Example: Using block patterns
+==== Example: using block patterns
 
 [source,js]
 ----
@@ -123,7 +123,7 @@ Whether a replacement pattern inserts a block or inline element depends on what 
 
 NOTE: Replacement patterns are executed on either pressing the *spacebar* or the *Enter* key.
 
-==== Example: Using replacement patterns
+==== Example: using replacement patterns
 
 [source,js]
 ----

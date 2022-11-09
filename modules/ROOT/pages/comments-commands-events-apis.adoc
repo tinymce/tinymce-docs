@@ -71,11 +71,17 @@ console.log(comments.getEventLog(
 [[tinycomments-annotator]]
 === The `+'tinycomments'+` annotator
 
-The {pluginname} plugin makes use of the xref:annotations.adoc[`+editor.annotator+` API] to annotate content with attached conversations. The annotator used by the {pluginname} plugin is named `+'tinycomments'+` and is available for use in each of the `+editor.annotator+` API methods. The `+'tinycomments'+` annotator, like all editor APIs, can only be accessed after the editor is initialized.
+The {pluginname} plugin provides an annotator named `+'tinycomments'+`, constructed using the xref:annotations.adoc[`+editor.annotator+` API].
+
+The `+'tinycomments'+` annotator is used to annotate content with conversations attached, and is available for use in each of the `+editor.annotator+` API methods.
+
+The `+'tinycomments'+` annotator, like all editor APIs, can only be accessed after the editor is initialized.
 
 ==== Example: Using the `+'tinycomments'+` annotator to notify when conversations are selected
 
-This example makes use of the `+annotationChanged+` method in the `+editor.annotator+` API to create a xref:creating-custom-notifications.adoc[custom notification] to display for five seconds each time any content with the `+'tinycomments'+` annotation is selected.
+This example makes use of the `+annotationChanged+` method in the `+editor.annotator+` API to create a xref:creating-custom-notifications.adoc[custom notification].
+
+This notification displays for five seconds every time any content with a `+'tinycomments'+` annotation is selected.
 
 [source,js]
 ----
@@ -101,7 +107,9 @@ tinymce.init({
 
 ==== Example: Using the `+'tinycomments'+` annotator to highlight conversations without showing comments
 
-This example makes use of the `+getAll+` method in the `+editor.annotator+` API to apply the `+'background-color: aquamarine;'+` style to any elements annotated by `+'tinycomments'+` once the `+'highlightcomments'+` button on the toolbar is pressed. This gives the elements the appearance that they are highlighted, without requiring to xref:comments-using-comments#show-or-view-a-comment[show comments].
+This example makes use of the `+getAll+` method in the `+editor.annotator+` API to highlight every element annotated by `+'tinycomments'+`.
+
+When the `+'highlightcomments'+` button on the toolbar is toggled on, every annotated element is highlighted `+aquamarine+`, without requiring the user to xref:comments-using-comments#show-or-view-a-comment[show comments].
 
 [source,js]
 ----
@@ -110,16 +118,18 @@ tinymce.init({
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments highlightcomments',
   setup: (editor) => {
-    editor.ui.registry.addButton('highlightcomments', {
+    editor.ui.registry.addToggleButton('highlightcomments', {
       icon: 'highlight-bg-color',
-      onAction: () => {
+      onAction: (api) => {
+        api.setActive(!api.isActive());
         const conversations = editor.annotator.getAll('tinycomments');
         for (const [conversation, elements] of Object.entries(conversations)) {
           elements.forEach((element, _) => {
-            const currentStyle = element.getAttribute('style');
-            const highlightColor = 'background-color: aquamarine;';
-            const newStyle = currentStyle ? currentStyle + highlightColor : highlightColor;
-            element.setAttribute('style', newStyle);
+            if (api.isActive()) {
+              element.style.setProperty('background-color', 'aquamarine');
+            } else {
+              element.style.removeProperty('background-color');
+            }
           });
         }
       }

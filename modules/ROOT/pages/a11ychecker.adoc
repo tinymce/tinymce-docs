@@ -195,6 +195,8 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html[
 
 *Rule description:* This rule checks that all images have alternative (`+alt+`) text for screen readers and other assistive technologies.
 
+NOTE: In {productname} 6.3 and later, this rule also presents an _Image alternative text should be less than 100 characters_ warning dialog if the alternative (`+alt+`) text is longer than 100 characters. This dialog also presents the alternative text in an editable field, for immediate repair.
+
 ==== {pluginname} rule details - I1
 
 Notification level (severity):: Error

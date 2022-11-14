@@ -1,0 +1,26 @@
+// I’ve assumed — in continuing semi-blind fashion — the
+// Inline CSS plugin offers more than one API.
+
+[cols="1,1,4",options="header"]
+|===
+|Name |Arguments |Description
+|api-1 |args-1 |description-1
+|api-2 |args-2 |description-2
+|api-3 |args-3 |description-3
+|===
+
+.Examples
+[source,js]
+----
+// use-case-1
+tinymce.activeEditor.plugins.inlinecss.arg-1();
+
+// use-case-2
+tinymce.activeEditor.plugins.inlinecss.arg-2();
+
+// use-case-3
+tinymce.activeEditor.plugins.inlinecss.arg-3();
+
+// use-case-4
+tinymce.activeEditor.plugins.inlinecss.arg-4();
+----

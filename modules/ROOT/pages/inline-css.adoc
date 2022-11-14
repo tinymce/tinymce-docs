@@ -1,0 +1,92 @@
+= Inline CSS plugin
+:navtitle: Inline CSS
+:description: takes {productname} documents and outputs HTML formatted according to email-friendly HTML best practices (eg inlined CSS).
+:description_short: Inlines {productname} CSS for better presentation in email.
+:keywords: plugin, inlinecss, email friendly, email, output, inline, css, post-process, html
+
+:pluginname: Inline CSS
+:plugincode: inlinecss
+:plugincategory: premium
+
+include::partial$misc/admon_premium_plugin.adoc[]
+
+include::partial$misc/admon-requires-6.3v.adoc[]
+
+As is normal and long-time best practice, {productname} documents keep CSS and HTML separate. This practice is not, however, email-friendly.
+
+The {pluginname} plugin takes a {productname} document, and processes it such that the previously separate CSS is applied inline to each HTML element. This single output file is much closer to the common requirements for sending as an HTML-formatted email.
+
+== Interactive example
+
+////
+  No Lorem Ipsum! Add some content to test on, possibly just a description of how end-users use the feature?
+  See the emoticons, advtable,and advcode demos for examples.
+////
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: '{{plugincode}}',
+});
+----
+
+== Usage notes
+
+// Document what we are and are not supporting. Set out the specific
+// limitations of this plugin and its API.
+// 
+// 1. We skip pseudo-elements and most @-rules.
+// 
+// 2. Vogue only supports `@import` @-rules at this stage.
+// 
+// See the Jira ticket: https://ephocks.atlassian.net/browse/TINY-9265
+// 
+// And see the tech spec for @-rule support:
+// https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#555fede3a4ff4a26ad5efdf72bc1af6f.
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/inline-css.adoc[]
+
+// ‘The target group is developers, not end-users’: <https://ephocks.atlassian.net/browse/EPIC-31>
+// Consequently, I’ve assumed the Inline CSS plugin will not be invoked by:
+// * using a Toolbar button; nor by
+// * selecting from a menu.
+
+== Commands
+
+// I’ve assumed — in semi-blind fashion — that there is a
+// `mceInlineCSS` command.
+
+The {pluginname} plugin provides the following {productname} command.
+
+include::partial$commands/{plugincode}-cmds.adoc[]
+
+== Events
+
+// I’ve assumed — still in semi-blind fashion — that there are 
+// Inline CSS-specific events.
+
+The {{pluginname}} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+// I’ve assumed — in continuing semi-blind fashion — that the plugin
+// offers more than one API.
+
+The {{pluginname}} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

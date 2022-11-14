@@ -1,0 +1,75 @@
+= Advanced Typography plugin
+:navtitle: Advanced Typography
+:description: Automatically or interactively replace typewriter-centric characters with characters preferred by typesetters.
+:description_short: Auomatically or interactively typeset {productname} documents.
+:keywords: plugin, typography, typesetting, smart quotes, dashes, em-dash, en-dash, quotation marks
+:pluginname: Advanced Typography
+:plugincode: typography
+:plugincategory: premium
+
+include::partial$misc/admon_premium_plugin.adoc[]
+
+include::partial$misc/admon-requires-6.3v.adoc[]
+
+The {pluginname} plugin, depending on it setting, automatically or interactively replaces common typewriter-style characters with their professional typesetter’s equivalents.
+
+For example, it can automatically replace the double-hyphen (`--`) with an em-dash (`—`). And it can automatically replace the teardrop apostrophe (`'`) with opening and closing quote marks (`‘` and `’`).
+
+== Interactive example
+
+////
+  No Lorem Ipsum! Add some content to test on, possibly just a description of how end-users use the feature?
+  See the emoticons, advtable,and advcode demos for examples.
+////
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+NOTE: The {pluginname} plugin requires a `language` be configured.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: '{{plugincode}}',
+  toolbar: 'typography',
+  language: 'en_US' // This is required to configure the default language used by typography.
+});
+----
+
+// Delete everything not require/relevant from this point on.
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/advanced-typography.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+// My current semi-educated guess is that this plugin does not provide commands, events, or an API.
+// 
+// == Commands
+// 
+// The {pluginname} plugin provides the following {productname} commands.
+// 
+// include::partial$commands/{plugincode}-cmds.adoc[]
+// 
+// == Events
+// 
+// The {{pluginname}} plugin provides the following events.
+// 
+// include::partial$events/{plugincode}-events.adoc[]
+// 
+// == APIs
+// 
+// The {{pluginname}} plugin provides the following APIs.
+// 
+// include::partial$plugin-apis/{plugincode}-apis.adoc[]

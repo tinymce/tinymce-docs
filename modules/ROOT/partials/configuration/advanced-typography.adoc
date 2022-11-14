@@ -1,0 +1,97 @@
+[[content_langs]]
+== `+content_langs+`
+
+// What this option does, precisely.
+
+*Type:* `+Object+`
+
+=== Example: Using `content_langs`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugin: typography
+  toolbar: typography
+  language: 'en_US' // This is required to configure the default language used by typography.
+  content_langs: [
+    { title: 'English', code: 'en' }
+    { title: 'Spanish', code: 'es' }
+    { title: 'German', code: 'de' }
+    ]
+});
+----
+
+
+[[typography_custom_rules]]
+== `+typography_custom_rules+`
+
+// What this option does, precisely.
+
+*Type:* `+Object+`
+
+=== Example: Using `typography_custom_rules`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugin: typography
+  toolbar: typography
+  language: 'en_US' // This is required to configure the default language used by typography.
+  typography_custom_rules: {
+    'en/quotes': (text) => text.replace(/"/g, "'"),
+  },
+});
+----
+
+
+[[typography_ignore]]
+== `+typography_ignore+`
+
+This option allows for content within specific HTML tags to be ignored by the Typography plugin. If a tag is added to the `typography_ignore` array, the Typograhy plugin’s rules are not applied to material set within that tag.
+
+*Type:* `+Array+`
+
+*Possible values:* `[ '<html-selector>', 'span["<html-selector>"]' ]`
+
+*Default value:* none
+
+=== Example: Using `typography_ignore`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugin: typography
+  toolbar: typography
+  language: 'en_US' // This is required to configure the default language used by typography.
+  typography_ignore: [ 'strong 'span["lang"]' ]
+});
+----
+
+
+[[typography_rules]]
+== `+typography_rules+`
+
+// What this option does, precisely.
+
+*Type:* `+Array+`
+
+=== Example: Using `typography_rules`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugin: typography
+  toolbar: typography
+  language: 'en_US' // This is required to configure the default language used by typography.
+  typography_rules: {
+    en: ['en/quotes', 'en/spaces']
+    es: ['es/quotes', 'es/spaces']
+    }
+});
+----
+
+

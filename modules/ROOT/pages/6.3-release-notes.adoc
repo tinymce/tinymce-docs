@@ -288,10 +288,25 @@ This regression has been addressed in {productname} 6.3. Dragging elements conta
 === Line separator scrolling in floating toolbars.
 
 // https://ephocks.atlassian.net/browse/TINY-8948
-// cause
-// consequence
-// fix
-// result
+In {productname} 6.0.3 the background images in the floating toolbar followed the scroll position of any nested scrolling containers when the editor width was reduced by the browser. By default, however, the background images should scroll with the main scrollable element, `+<body>+`.
+
+As a consequence the divider lines that act as background image to improve the UI would not follow the scroll position of any nested containers inside the floating toolbar.
+
+In {productname} 6.3 background images now scroll with the toolbar’s content as expected.
+
+KNOWN ISSUES: `Safari 14 not properly supporting local value for background attachment property`
+
+We explicitly support the current version of
+
+Google Chrome;
+Mozilla Firefox;
+Microsoft Edge; and
+Apple Safari
+
+We also provide
+
+_support for the prior major version for 60 days after the release has been superseded by a new major version_
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -307,10 +322,10 @@ With {productname} 6.3, all {productname} premium skins were updated.
 === The editor header showed up even with no menubar and toolbar configured.
 
 // https://ephocks.atlassian.net/browse/TINY-8819
-// cause
-// consequence
-// fix
-// result
+In classic mode, when both the {productname} toolbar and menubar were disabled, a header was still visible at the top of the editor. 
+
+In {productname} 6.3 this header no longer presents when the {productname} toolbar and menubar are disable, giving the editor a cleaner appearance with only the content editor visible.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -364,10 +379,12 @@ A fix was applied to the logic to ensure it could handle such cases, and prevent
 === The editor.selection.getRng() API was not returning a proper range on hidden editors in Firefox.
 
 // https://ephocks.atlassian.net/browse/TINY-9259
-// cause
-// consequence
-// fix
-// result
+In contrast to other supported browsers, Firefox did not return the selected object or the selection range from iframes that are hidden by the `display: none` attribute.
+
+As a consequence, when a {productname} instance was running on Firefox, the `window.getSelection()` API for an iframe returned `null` if the iframe was hidden. This, further, resulted in the `editor.selection.getRng()` and `editor.selection.getBookmark()` APIs returning incorrect data from hidden editors when Firefox was the host browser.
+
+This has been fixed in {productname} 6.3. All browsers, including Firefox, now return the correct values even when the iframe is hidden.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -442,13 +459,17 @@ In {productname} 6.3, the toolbar separator lines behavior was updated to fix th
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
-=== Add title here
+=== Inline mode did not respect `content_css_cors` option.
 
-// 
-// cause
-// consequence
-// fix
-// result
+// https://ephocks.atlassian.net/browse/TINY-6037
+In previous versions of {productname}, the `tinymce.styleSheetLoader` global was not configured by the `content_css_cors` option, when specified.
+
+Consequently, stylesheets loaded by `tinymce` onto the outer document page did not have the `crossOrigin="anonymous"` attribute. This particularly effected {productname} instances running in inline mode, because the `tinymce.styleSheetLoader` global is used to load stylesheets used by inline editors. (Stylesheets for {productname} editors running in iframe mode are specific to the editor.)
+
+Without the `crossOrigins="anonymous"` attribute being set, no external stylesheets were loaded. And inline editors with the `pageembed` plugin loaded and the `tiny_pageembed_inline_styles` option set to `true` would, as a result, return an error when attempting to insert any iframse through the dialog.
+
+As of {productname} 6.3, the `content_css_cors` option now configures the `tinymce.dom.styleSheetLoader` global when specified. This allows the `crossOrigin="anonymous"` attribute to be added to all stylesheets loaded by the editor — including editors running in inline mode — when the attribute is set to true.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 

@@ -245,20 +245,23 @@ For information on:
 === Parsing media content would cause a memory leak, which for example occurred when using the getContent API.
 
 // https://ephocks.atlassian.net/browse/TINY-9186
-// cause
-// consequence
-// fix
-// result
+
+A memory leak occurred in Chrome, Edge and Firefox browsers when media content was parsed into the editor using the `tinymce.activeEditor.getContent()` method API.
+The memory leak caused an abnormal behavior that increased the memory requirements of the editor until the active tab in the browser crashed.
+Fixed in v6.3 update. (Reported issues with Chromium) https://bugs.chromium.org/p/chromium/issues/detail?id=1374180[Memory leak with DOMParser parseFromString method]
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === Dragging a noneditable element toward the bottom edge would cause the page to scroll up.
 
 // https://ephocks.atlassian.net/browse/TINY-9025
-// cause
-// consequence
-// fix
-// result
+A regression was found in {productname} 6.2 where dragging an element containing a `contentEditable=false` attribute towards a document’s edge did not cause scrolling.
+
+It was also found that dragging elements containing a `contentEditable=false` attribute toward the bottom edge cause similar behaviour. In this instance, however, when the elements containing a `contentEditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
+
+This regression has been addressed in {productname} 6.3. Dragging elements containing a `contentEditable=false` attribute towards a document’s causes the viewport to scroll as expected. And dragging elements containing a `contentEditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -295,10 +298,9 @@ For information on:
 === A double bottom border appeared on inline mode editor for the tinymce-5 skin.
 
 // https://ephocks.atlassian.net/browse/TINY-9108
-// cause
-// consequence
-// fix
-// result
+The `inline-mode` toolbar showed an additional border line with {productname} 6.x premium skins that used {productname} 5.x skin packages.
+With {productname} 6.3, all {productname} premium skins were updated.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -335,20 +337,27 @@ For information on:
 === The context toolbar prevented the user from placing the cursor at the edges of the editor.
 
 // https://ephocks.atlassian.net/browse/TINY-8890
-// cause
-// consequence
-// fix
-// result
+When scrolled past the top row of a table, the table _context toolbar_ overlapped any rows at the top of the editor to display below the toolbar.
+
+In {productname} 5.x, the _context toolbar_ switched from being at the top of the editor, to the bottom of the table or editor when a user attempted to select cells close to the top row of the table. And vice versa when the _context toolbar_ was docked to the bottom of the editor.
+
+In {productname} 6.x, the height of the _context toolbar_ was increased, while the distance from which it needed to be selected in order to switch locations was not.
+
+With {productname} 6.3 this distance has been increased. This allows the _context toolbar_ to correctly switch locations when a user selects cells close to the toolbar, allowing the top or bottom visible rows of a table to be selected without issue when the _context toolbar_ is visible.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === The Quick Insert context toolbar provided by the quickbars plugin showed when the cursor was in a fake block caret.
 
 // https://ephocks.atlassian.net/browse/TINY-9190
-// cause
-// consequence
-// fix
-// result
+The Quick Insert context toolbar, provided by the xref:quickbars.adoc[Quick Toolbars] plugin, was displayed when the cursor was moved to the left of an element with a `contenteditable="false"` attribute.
+
+This behavior was unexpected because the Quick Insert context toolbar should not present when the insertion point is placed on a line with content.
+
+The root cause was the insertion point being placed into a fake block caret, which was not considered by the logic for toggling the Quick Insert context toolbar.
+
+A fix was applied to the logic to ensure it could handle such cases, and prevent it from showing in this circumstance.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -375,10 +384,19 @@ For information on:
 === Dragging a noneditable element before or after another noneditable element now works correctly.
 
 // https://ephocks.atlassian.net/browse/TINY-9253
-// cause
-// consequence
-// fix
-// result
+Elements that had the `contenteditable="false"` attribute set could not be dragged to the left of an ancestor element.
+
+For example in the following
+
+[source,html]
+----
+<p>Text in a paragraph tag with a span of <span contenteditable="false">non-editable text</span> inside.</p>
+----
+
+the string _non-editable text_ could not be dragged to before the opening `+<p>+` tag.
+
+{productname} 6.3 can place a fake insertion point next to elements with a `contenteditable="false"` attribute when another element with a `contenteditable="false"` attribute is dragged, allowing the object to be moved before and after other such elements.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -402,6 +420,56 @@ For information on:
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
+=== Spellchecking could search outside of editor for language match. // REVIEW TITLE
+
+// https://ephocks.atlassian.net/browse/TINY-8989
+For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in the word’s ancestors (ie, elements that [surround | contain]^1 the word). For inline mode, that included ancestors that were outside the editor element.
+
+If a `lang` attribute existed anywhere in the ancestry of a word for a {productname} instance running in inline mode, that `lang` attribute value overrode all attempts by the user to set the spell checking `lang` for the document.
+
+As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
+
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Overscroll issue in floating toolbar in Firefox.
+
+// https://ephocks.atlassian.net/browse/TINY-9237
+The floating toolbar background dividers were not following the overscroll behavior set for the toolbar's content when the browser size was reduced, forcing the toolbar to stack.
+
+In {productname} 6.3, the toolbar separator lines behavior was updated to fix the issue. 
+
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Add title here
+
+// 
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Add title here
+
+// 
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+=== Add title here
+
+// 
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 [[security-fixes]]
 == Security fixes

@@ -82,7 +82,7 @@ Tag name of the block element to use as a wrapper, for example, `+h1+`. Existing
 
 *Type:* `+String+`
 
-===== Example: Using `+block+` format
+===== Example: using `+block+` format
 
 [source,js]
 ----
@@ -102,7 +102,7 @@ Tag name of the inline element to use as a wrapper, for example, `+span+` is use
 
 *Type:* `+String+`
 
-===== Example: Using `+inline+` format
+===== Example: using `+inline+` format
 
 [source,js]
 ----
@@ -122,7 +122,7 @@ CSS3 selector pattern that is used to find elements within the selection. It can
 
 *Type:* `+String+`
 
-===== Example: Using `+selector+` format
+===== Example: using `+selector+` format
 
 [source,js]
 ----
@@ -155,7 +155,7 @@ To replace existing classes, use the `+class+` attribute.
 
 *Type:* `+String+`
 
-===== Example: Using `+classes+` parameter
+===== Example: using `+classes+` parameter
 
 [source,js]
 ----
@@ -175,7 +175,7 @@ Key/value object with CSS styles to apply to the selected or newly created inlin
 
 *Type:* `+Object+`
 
-===== Example: Using `+styles+` parameter
+===== Example: using `+styles+` parameter
 
 [source,js]
 ----
@@ -195,7 +195,7 @@ Key/value object with attributes to apply to the selected or newly created inlin
 
 *Type:* `+Object+`
 
-===== Example: Using `+attributes+` parameter
+===== Example: using `+attributes+` parameter
 
 [source,js]
 ----
@@ -208,7 +208,7 @@ tinymce.init({
 });
 ----
 
-===== Example: Using `+class+` in the attributes parameter
+===== Example: using `+class+` in the attributes parameter
 
 To apply a class to new or selected existing elements, add the `+'class'+` attribute to the `+attributes+` parameter. The provided class will replace any existing classes on the element when the format is applied.
 
@@ -235,7 +235,7 @@ Makes sure that the format is not merged with other wrappers having the same for
 
 *Default value:* `+false+`
 
-===== Example: Using `+exact+` parameter
+===== Example: using `+exact+` parameter
 
 [source,js]
 ----
@@ -258,7 +258,7 @@ States that the format is a container format for block elements. For example, a 
 
 *Default value:* `+false+`
 
-===== Example: Using `+wrapper+`
+===== Example: using `+wrapper+`
 
 [source,js]
 ----
@@ -286,7 +286,7 @@ This can be set to three different modes:
 * *empty*: If the element has no styles, classes, or attributes then the element is removed.
 * *all*: Removes the element regardless of its styles, classes, and or attributes.
 
-===== Example: Using `+remove+`
+===== Example: using `+remove+`
 
 [source,js]
 ----
@@ -317,7 +317,7 @@ So if the selection is from _a_ to _b_ in this html contents `+<h1><b>[a</b></h1
 
 *Type:* `+Boolean+`
 
-===== Example: Using `+block_expand+`
+===== Example: using `+block_expand+`
 
 [source,js]
 ----
@@ -356,7 +356,7 @@ Enables control for removing the child elements of the matching format. This is 
 
 *Default value:* `+false+` for `+selector+` formats
 
-===== Example: Using `+deep+`
+===== Example: using `+deep+`
 
 [source,js]
 ----
@@ -394,7 +394,7 @@ After merge:
 
 *Default value:* `+true+`
 
-===== Example: Using `+merge_siblings+`
+===== Example: using `+merge_siblings+`
 
 [source,js]
 ----
@@ -414,7 +414,7 @@ This example overrides some of the built-in formats and tells {productname} to a
 
 *Type:* `+Object+`
 
-==== Example: Using the `+formats+` option
+==== Example: using the `+formats+` option
 
 [source,js]
 ----
@@ -472,7 +472,7 @@ Use the `+removeformat+` option to specify how the `+clear formatting+` feature 
 
 *Type:* `+Array+`
 
-==== Example: Removing a format
+==== Example: removing a format
 
 [source,js]
 ----

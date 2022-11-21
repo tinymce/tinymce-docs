@@ -95,7 +95,7 @@ include::partial$events/tinymcespellchecker-events.adoc[]
 
 This event triggers when the user selects *Ignore* on a misspelled word.
 
-==== Example: The SpellcheckerIgnore event
+==== Example: the SpellcheckerIgnore event
 
 [source,js]
 ----
@@ -115,7 +115,7 @@ tinymce.init({
 
 This event triggers when the user selects *Ignore All* on a misspelled word.
 
-==== Example: The SpellcheckerIgnoreAll event
+==== Example: the SpellcheckerIgnoreAll event
 
 [source,js]
 ----
@@ -135,7 +135,7 @@ tinymce.init({
 
 This event triggers when the user *enables* the `+spellchecker+`.
 
-==== Example: The SpellcheckStart event
+==== Example: the SpellcheckStart event
 
 [source,js]
 ----
@@ -155,7 +155,7 @@ tinymce.init({
 
 This event triggers when the user *disables* the `+spellchecker+`.
 
-==== Example: The SpellcheckEnd event
+==== Example: the SpellcheckEnd event
 
 [source,js]
 ----
@@ -175,7 +175,7 @@ tinymce.init({
 
 This event triggers when a spellchecker error occurs, such as the Spell Checker Pro service can’t be reached.
 
-==== Example: The SpellcheckError event
+==== Example: the SpellcheckError event
 
 [source,js]
 ----
@@ -195,7 +195,7 @@ tinymce.init({
 
 This event fires when the spellchecking language is changed.
 
-==== Example: The SpellcheckerLanguageChanged event
+==== Example: the SpellcheckerLanguageChanged event
 
 [source,js]
 ----

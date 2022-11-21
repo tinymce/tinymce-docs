@@ -345,7 +345,7 @@ The {pluginname} plugin provides the following APIs.
 
 Opens and closes the accessibility checker dialog with the results of the audit and options to correct the problems, if any.
 
-==== Example: Using `+toggleaudit()+`
+==== Example: using `+toggleaudit()+`
 
 [source,js]
 ----
@@ -357,7 +357,7 @@ editor.plugins.a11ychecker.toggleaudit();
 
 Conducts an accessibility audit and reports the results without opening the dialog. The report produced is an array of objects, where each object represents an xref:a11ychecker.adoc#issue[issue].
 
-==== Example: Using `+getReport()+`
+==== Example: using `+getReport()+`
 
 [source,js]
 ----

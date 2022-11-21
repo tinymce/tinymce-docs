@@ -9,7 +9,7 @@ To disable the Quick Insert toolbar, set `+quickbars_insert_toolbar+` to `+false
 
 *Default value:* `+'quickimage quicktable'+`
 
-=== Example: Customizing the Quick Insert toolbar
+=== Example: customizing the Quick Insert toolbar
 
 [source,js]
 ----
@@ -20,7 +20,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Disabling the Quick Insert toolbar
+=== Example: disabling the Quick Insert toolbar
 
 To disable the Quick Insert toolbar, set `+quickbars_insert_toolbar+` to `+false+`.
 

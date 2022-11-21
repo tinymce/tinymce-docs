@@ -169,7 +169,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Default value:* `+'no-api-key'+`
 
-==== Example: Using `+apiKey+`
+==== Example: using `+apiKey+`
 
 [source,jsx]
 ----
@@ -220,7 +220,7 @@ The `+disabled+` prop can dynamically switch the editor between a "disabled" (re
 
 *Possible values:* `+true+`, `+false+`
 
-==== Example: Using `+disabled+`
+==== Example: using `+disabled+`
 
 [source,jsx]
 ----
@@ -238,7 +238,7 @@ An id for the editor. Used for retrieving the editor instance using the `+tinymc
 
 *Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
 
-==== Example: Using `+id+`
+==== Example: using `+id+`
 
 [source,jsx]
 ----
@@ -263,7 +263,7 @@ When using `+tinymce-react+`:
 
 *Default value:* `+{ }+`
 
-==== Example: Using `+init+`
+==== Example: using `+init+`
 
 [source,jsx]
 ----
@@ -288,7 +288,7 @@ IMPORTANT: Ensure that this is *not* updated by `+onEditorChange+` or the editor
 
 *Default value:* `+''+`
 
-==== Example: Using static `+initialValue+`
+==== Example: using static `+initialValue+`
 
 [source,jsx]
 ----
@@ -297,7 +297,7 @@ IMPORTANT: Ensure that this is *not* updated by `+onEditorChange+` or the editor
 />
 ----
 
-==== Example: Using asynchronous `+initialValue+`
+==== Example: using asynchronous `+initialValue+`
 
 [source,jsx]
 ----
@@ -327,7 +327,7 @@ For information on inline mode, see: xref:inline-editor-options.adoc#inline[User
 
 *Possible values:* `+true+`, `+false+`
 
-==== Example: Using `+inline+`
+==== Example: using `+inline+`
 
 [source,jsx]
 ----
@@ -360,7 +360,7 @@ This option was used to specify the format of the content produced by the
 xref:oneditorchange[`+onEditorChange+`] event, however as it did not change the
 input format it was almost impossible to use correctly.
 
-==== Example: Replacing usage of `+outputFormat+`
+==== Example: replacing usage of `+outputFormat+`
 
 [source,jsx]
 ----
@@ -393,7 +393,7 @@ For information on adding plugins to {productname}, see: xref:work-with-plugins.
 
 *Type:* `+String+` or `+Array+`
 
-==== Example: Using `+plugins+`
+==== Example: using `+plugins+`
 
 [source,jsx]
 ----
@@ -416,7 +416,7 @@ enforced unless it changes.
 
 *Default value:* `200`
 
-==== Example: Using `+rollback+`
+==== Example: using `+rollback+`
 
 [source,jsx]
 ----
@@ -469,7 +469,7 @@ This Boolean attribute is set to indicate to a browser that the script is meant 
 
 
 [[example-loading-siteproductname-asynchronously]]
-==== Example: Loading {productname} asynchronously
+==== Example: loading {productname} asynchronously
 
 [source,jsx]
 ----
@@ -477,7 +477,7 @@ This Boolean attribute is set to indicate to a browser that the script is meant 
 ----
 
 [[example-delaying-load-of-siteproductname-for-500-milliseconds]]
-==== Example: Delaying load of {productname} for 500 milliseconds
+==== Example: delaying load of {productname} for 500 milliseconds
 
 [source,jsx]
 ----
@@ -493,7 +493,7 @@ Only valid when xref:inline[`+<Editor inline={true} />+`]. Used to define the HT
 
 *Default value:* `+'div'+`
 
-==== Example: Using `+tagName+`
+==== Example: using `+tagName+`
 
 [source,jsx]
 ----
@@ -510,7 +510,7 @@ Only valid when the editor is in classic (iframe) mode. Sets the `+name+` attrib
 
 *Type:* `+String+`
 
-==== Example: Using `+textareaName+`
+==== Example: using `+textareaName+`
 
 [source,jsx]
 ----
@@ -533,7 +533,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 
 *Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-==== Example: Using `+toolbar+`
+==== Example: using `+toolbar+`
 
 [source,jsx]
 ----
@@ -550,7 +550,7 @@ Use the `+tinymceScriptSrc+` prop to specify an external version of {productname
 
 *Type:* `+String+`
 
-==== Example: Using `+tinymceScriptSrc+`
+==== Example: using `+tinymceScriptSrc+`
 
 [source,jsx]
 ----
@@ -583,7 +583,7 @@ To provide visual feedback to the user when the content is ready to be saved, us
 
 include::partial$misc/concept-dirty-state.adoc[]
 
-=== Example: Functional uncontrolled component with save button and dirty state
+=== Example: functional uncontrolled component with save button and dirty state
 
 [source,jsx]
 ----
@@ -625,7 +625,7 @@ The `+value+` prop is used to set and re-set the editor content. If it is not up
 
 The `+onEditorChange+` prop is used to provide an event handler that will be run when any change is made to the editor content. Changes to the editor must be applied to the `+value+` prop within _200 milliseconds_ to prevent the changes being rolled back.
 
-=== Example: Functional controlled component
+=== Example: functional controlled component
 
 [source,jsx]
 ----
@@ -642,7 +642,7 @@ function MyComponent({initialValue}) {
 }
 ----
 
-=== Example: Class controlled component
+=== Example: class controlled component
 
 [source,jsx]
 ----
@@ -678,7 +678,7 @@ class MyComponent extends React.Component {
 
 When the editor must be restricted to avoid invalid states, such as exceeding a maximum length, then a handler for `+onBeforeAddUndo+` must be added to avoid those states in the undo history.
 
-=== Example: Limited length controlled component
+=== Example: limited length controlled component
 
 [source,jsx]
 ----

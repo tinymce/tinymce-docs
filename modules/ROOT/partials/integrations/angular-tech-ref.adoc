@@ -117,7 +117,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Default value:* `+'no-api-key'+`
 
-==== Example: Using `+apiKey+`
+==== Example: using `+apiKey+`
 
 [source,html]
 ----
@@ -165,7 +165,7 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 
 *Possible values:* `+true+`, `+false+`
 
-==== Example: Using `+disabled+`
+==== Example: using `+disabled+`
 
 [source,html]
 ----
@@ -183,7 +183,7 @@ An id for the editor. Used for retrieving the editor instance using the `+tinymc
 
 *Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
 
-==== Example: Using `+id+`
+==== Example: using `+id+`
 
 [source,html]
 ----
@@ -203,7 +203,7 @@ For information on the {productname} selector (`+tinymce.init+`), see: xref:basi
 
 *Default value:* `+{ }+`
 
-==== Example: Using `+init+`
+==== Example: using `+init+`
 
 [source,html]
 ----
@@ -224,7 +224,7 @@ Initial content of the editor when the editor is initialized.
 
 *Default value:* `+' '+`
 
-==== Example: Using `+initialValue+`
+==== Example: using `+initialValue+`
 
 [source,html]
 ----
@@ -246,7 +246,7 @@ For information on inline mode, see: xref:inline-editor-options.adoc#inline[User
 
 *Possible values:* `+true+`, `+false+`
 
-==== Example: Using `+inline+`
+==== Example: using `+inline+`
 
 [source,html]
 ----
@@ -264,7 +264,7 @@ For information on adding plugins to {productname}, see: xref:work-with-plugins.
 
 *Type:* `+String+` or `+Array+`
 
-==== Example: Using `+plugins+`
+==== Example: using `+plugins+`
 
 [source,html]
 ----
@@ -284,7 +284,7 @@ Used to specify the format of the content emitted by the `+tinymce-angular+` com
 
 *Possible values:* `+'html'+`, `+'text'+`
 
-==== Example: Using `+outputFormat+`
+==== Example: using `+outputFormat+`
 
 [source,html]
 ----
@@ -302,7 +302,7 @@ Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to defi
 
 *Default value:* `+'div'+`
 
-==== Example: Using `+tagName+`
+==== Example: using `+tagName+`
 
 [source,html]
 ----
@@ -323,7 +323,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 
 *Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-==== Example: Using `+toolbar+`
+==== Example: using `+toolbar+`
 
 [source,html]
 ----
@@ -358,7 +358,7 @@ Used to specify the events that trigger the `+NgModelChange+` to emit.
 
 *Possible values:* A space separated list of TinyMCE editor events.
 
-==== Example: Using `+modelEvents+`
+==== Example: using `+modelEvents+`
 
 [source,html]
 ----
@@ -484,7 +484,7 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 
 *Possible values:* A comma separated list of events to allow.
 
-==== Example: Using `+allowedEvents+`
+==== Example: using `+allowedEvents+`
 
 [source,html]
 ----
@@ -504,7 +504,7 @@ Used to block a list of events from the `+tinymce-angular+` component.
 
 *Possible values:* A comma separated list of events to ignore.
 
-==== Example: Using `+ignoreEvents+`
+==== Example: using `+ignoreEvents+`
 
 [source,html]
 ----

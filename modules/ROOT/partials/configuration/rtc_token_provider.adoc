@@ -48,7 +48,7 @@ endif::[]
 |`https://claims.tiny.cloud/rtc/role` |`+string+` |The possible role values are: `editor` or `viewer`. `viewer` will put the editor into readonly mode and `editor` (default) will let the user edit the document.
 |===
 
-=== Example: Using `+rtc_token_provider+`
+=== Example: using `+rtc_token_provider+`
 
 This example shows the minimum required configuration for the Real-Time Collaboration plugin, including the `+rtc_token_provider+` option.
 

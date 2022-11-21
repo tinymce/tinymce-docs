@@ -91,7 +91,7 @@ The generator callback function should return an object with the following prope
 |value |`+string+`, `+number+` or `+undefined+` |Optional |The value of the table cell. If the value is `+undefined+`, the editor will use the previous value of the table cell.
 |===
 
-=== Example: Using `+advtable_value_series+`
+=== Example: using `+advtable_value_series+`
 
 [source,js]
 ----

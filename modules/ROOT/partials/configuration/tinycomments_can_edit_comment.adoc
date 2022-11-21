@@ -18,7 +18,7 @@ _Optional_ - This option sets the author permissions for _editing comments_. If 
 
 The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === '<Admin user>'`.
 
-=== Example: Using `tinycomments_can_edit_comment`
+=== Example: using `tinycomments_can_edit_comment`
 
 [source,js]
 ----

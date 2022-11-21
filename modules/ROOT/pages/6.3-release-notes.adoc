@@ -541,14 +541,13 @@ As of {productname} 6.3, the `content_css_cors` option now configures the `tinym
 
 This section describes issues that users of {productname} 6.3 may encounter and possible workarounds for these issues.
 
-There are several known issues in {productname} 6.3.
+There is a known issue in {productname} 6.3 when the new xref:advanced-typography.adoc[Advanced Typography] Premium plugin is used.
 
-=== are there any known issues fixes in this release?
+=== After switching the Advanced Typography language to en-GB, switching to any other language is not possible 
 
-// https://ephocks.atlassian.net/browse/[ticket-number-for-any-known-issues]
+// https://ephocks.atlassian.net/browse/TINY-9332
 // cause
 // consequence
-// fix
-// result
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+// workaround (if any)
+
 

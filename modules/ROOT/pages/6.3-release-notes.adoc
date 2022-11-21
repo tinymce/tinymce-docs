@@ -122,11 +122,20 @@ For information on:
 [[improvements]]
 == Improvements
 
-{productname} 6.3 also includes the following improvement:
+{productname} 6.3 also includes the following improvements
 
 === Transparent elements, like anchors, can now contain block elements.
 
 // https://ephocks.atlassian.net/browse/TINY-9172
+// cause
+// consequence
+// fix
+// result
+// https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Color picker dialog now starts on the appropriate color for the cursor position.
+
+// https://ephocks.atlassian.net/browse/TINY-9213
 // cause
 // consequence
 // fix
@@ -218,13 +227,21 @@ For information on:
 // result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing. 
+
+// https://ephocks.atlassian.net/browse/TINY-9271
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 
 [[changes]]
 == Changes
 
-{productname} 6.3 also incorporates the following change:
+{productname} 6.3 also incorporates the following changes:
 
 === Transparent elements, like anchors, are now allowed in the root of the editor body if they contain blocks.
 
@@ -235,6 +252,14 @@ For information on:
 // result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== `setContent` is now allowed to accept any custom keys and values as a second options argument.
+
+// https://ephocks.atlassian.net/browse/TINY-9143
+// cause
+// consequence
+// fix
+// result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 [[bug-fixes]]
@@ -473,9 +498,9 @@ As of {productname} 6.3, the `content_css_cors` option now configures the `tinym
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
-=== Add title here
+=== The caret was moved to the previous line when a text pattern executed a `mceInsertContent` command on Enter key when running on Firefox.
 
-// 
+// https://ephocks.atlassian.net/browse/TINY-9193
 // cause
 // consequence
 // fix

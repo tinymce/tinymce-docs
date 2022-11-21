@@ -474,16 +474,6 @@ As of {productname} 6.3, the `lang` attribute inherits the default settings for 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
-=== Overscroll issue in floating toolbar in Firefox.
-
-// https://ephocks.atlassian.net/browse/TINY-9237
-The floating toolbar background dividers were not following the overscroll behavior set for the toolbar's content when the browser size was reduced, forcing the toolbar to stack.
-
-In {productname} 6.3, the toolbar separator lines behavior was updated to fix the issue. 
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
-
 === Inline mode did not respect `content_css_cors` option.
 
 // https://ephocks.atlassian.net/browse/TINY-6037

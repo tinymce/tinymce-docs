@@ -34,7 +34,7 @@ These channels are updated automatically and provide the latest {productname} ve
 This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `/{productmajorversion}` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page]. The {productname} {productmajorversion} channel can be loaded from `{cdnurl}`.
 
 [#example-using-the-{productmajorversion}-release-channel]
-===== Example: Using the `{productmajorversion}` release channel
+===== Example: using the `{productmajorversion}` release channel
 
 [source,html,subs="attributes+"]
 ----
@@ -47,7 +47,7 @@ This channel deploys the latest release of {productname} that has passed our qua
 This channel deploys the current *release candidate* for the `{productmajorversion}` channel. The {productname} release candidate is undergoing quality assurance. The current version of {productname} available through the `{productmajorversion}-testing` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/version.txt[{cloudname} {productname} {productmajorversion}-testing version page].
 
 [#example-using-the-{productmajorversion}-testing-release-channel]
-===== Example: Using the `{productmajorversion}-testing` release channel
+===== Example: using the `{productmajorversion}-testing` release channel
 
 [source,html,subs="attributes+"]
 ----
@@ -60,7 +60,7 @@ This channel deploys the current *release candidate* for the `{productmajorversi
 This channel deploys nightly builds of {productname}. This channel includes the unreleased changes documented in the https://github.com/tinymce/tinymce/blob/develop/modules/tinymce/CHANGELOG.md[{productname} changelog]. The current version of {productname} available through the `{productmajorversion}-dev` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page].
 
 [#example-using-the-{productmajorversion}-dev-release-channel]
-===== Example: Using the `{productmajorversion}-dev` release channel
+===== Example: using the `{productmajorversion}-dev` release channel
 
 [source,html,subs="attributes+"]
 ----

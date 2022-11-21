@@ -9,7 +9,7 @@ To disable the Quick Image toolbar, set `+quickbars_image_toolbar+` to `+false+`
 
 *Default value:* `+'alignleft aligncenter alignright'+`
 
-=== Example: Customizing the Quick Image toolbar
+=== Example: customizing the Quick Image toolbar
 
 [source,js]
 ----
@@ -20,7 +20,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Disabling the Quick Image toolbar
+=== Example: disabling the Quick Image toolbar
 
 To disable the Quick Image toolbar, set `+quickbars_image_toolbar+` to `+false+`.
 

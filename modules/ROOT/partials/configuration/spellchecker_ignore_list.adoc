@@ -7,7 +7,7 @@ NOTE: Languages specified as keys in the `+spellchecker_ignore_list+` object mus
 
 *Type:* `+Array+` or `+Object+`
 
-=== Example: Using `+spellchecker_ignore_list+` to ignore words in all languages
+=== Example: using `+spellchecker_ignore_list+` to ignore words in all languages
 
 [source,js]
 ----
@@ -18,7 +18,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Using `+spellchecker_ignore_list+` for specific languages
+=== Example: using `+spellchecker_ignore_list+` for specific languages
 
 [source,js]
 ----

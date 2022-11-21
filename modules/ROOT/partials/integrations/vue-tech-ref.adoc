@@ -115,7 +115,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 *Default value:* `+'no-api-key'+`
 
-==== Example: Using `+api-key+`
+==== Example: using `+api-key+`
 
 [source,html]
 ----
@@ -164,7 +164,7 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 
 *Possible values:* `+true+`, `+false+`
 
-==== Example: Using `+disabled+`
+==== Example: using `+disabled+`
 
 [source,html]
 ----
@@ -182,7 +182,7 @@ An id for the editor. Used for retrieving the editor instance using the `+tinymc
 
 *Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
 
-==== Example: Using `+id+`
+==== Example: using `+id+`
 
 [source,html]
 ----
@@ -202,7 +202,7 @@ For information on the {productname} selector (`+tinymce.init+`), see: xref:basi
 
 *Default value:* `+'{ }'+`
 
-==== Example: Using `+init+`
+==== Example: using `+init+`
 
 [source,html]
 ----
@@ -223,7 +223,7 @@ Initial content of the editor when the editor is initialized.
 
 *Default value:* `+' '+`
 
-==== Example: Using `+initial-value+`
+==== Example: using `+initial-value+`
 
 [source,html]
 ----
@@ -245,7 +245,7 @@ For information on inline mode, see: xref:inline-editor-options.adoc#inline[User
 
 *Possible values:* `+true+`, `+false+`
 
-==== Example: Using `+inline+`
+==== Example: using `+inline+`
 
 [source,html]
 ----
@@ -265,7 +265,7 @@ For a list of available {productname} events, see: xref:events.adoc#editor-core-
 
 *Default value:* `+'change keyup undo redo'+`.
 
-==== Example: Using `+model-events+`
+==== Example: using `+model-events+`
 
 [source,html]
 ----
@@ -285,7 +285,7 @@ Used to specify the format of the content emitted via the `+input+` event. This 
 
 *Possible values:* `+'html'+`, `+'text'+`
 
-==== Example: Using `+output-format+`
+==== Example: using `+output-format+`
 
 [source,html]
 ----
@@ -303,7 +303,7 @@ For information on adding plugins to {productname}, see: xref:work-with-plugins.
 
 *Type:* `+String+` or `+Array+`
 
-==== Example: Using `+plugins+`
+==== Example: using `+plugins+`
 
 [source,html]
 ----
@@ -321,7 +321,7 @@ Only valid when xref:inline[`+<editor :inline=true />+`]. Used to define the HTM
 
 *Default value:* `+'div'+`
 
-==== Example: Using `+tag-name+`
+==== Example: using `+tag-name+`
 
 [source,html]
 ----
@@ -342,7 +342,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 
 *Possible values:* See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-==== Example: Using `+toolbar+`
+==== Example: using `+toolbar+`
 
 [source,html]
 ----
@@ -359,7 +359,7 @@ Use the `+tinymce-script-src+` prop to specify an external version of TinyMCE to
 
 *Type:* `+String+`
 
-==== Example: Using `+tinymce-script-src+`
+==== Example: using `+tinymce-script-src+`
 
 [source,html]
 ----

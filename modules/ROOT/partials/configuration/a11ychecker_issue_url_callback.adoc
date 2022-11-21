@@ -11,7 +11,7 @@ The `+a11ychecker_issue_url_callback+` option is used to change the target URL f
 (ruleId) => `https://www.tiny.cloud/docs/tinymce/6/a11ychecker/#${ruleId}`
 ----
 
-=== Example: Using `+a11ychecker_issue_url_callback+`
+=== Example: using `+a11ychecker_issue_url_callback+`
 
 This example shows how to change the link for the "Click for more info" button (image:icons/help.svg[help icon - a question mark inside a circle]) on the Accessibility Checker dialog to point to anchors at `+www.example.com/tinymce/a11ychecker/more_info+`.
 

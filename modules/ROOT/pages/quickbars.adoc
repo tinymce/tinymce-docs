@@ -35,7 +35,7 @@ tinymce.init({
 
 The following examples show how to disable specific quick toolbars for editors where they are not required.
 
-==== Example: Disabling the Quick Insert context toolbar
+==== Example: disabling the Quick Insert context toolbar
 
 [source,js]
 ----
@@ -46,7 +46,7 @@ tinymce.init({
 });
 ----
 
-==== Example: Disabling the Quick Selection context toolbar
+==== Example: disabling the Quick Selection context toolbar
 
 [source,js]
 ----
@@ -57,7 +57,7 @@ tinymce.init({
 });
 ----
 
-==== Example: Disabling the Quick Image context toolbar
+==== Example: disabling the Quick Image context toolbar
 
 [source,js]
 ----
@@ -74,7 +74,7 @@ tinymce.init({
 
 The Quick Link (`+quicklink+`) toolbar button lets the user quickly insert/edit links inline. It is included in the Quick Selection context toolbar by default and can be used in other context toolbars.
 
-==== Example: Using quicklink in a custom context toolbar
+==== Example: using quicklink in a custom context toolbar
 
 [source,js]
 ----
@@ -99,7 +99,7 @@ The Quick Image (`+quickimage+`) toolbar button allows users to quickly insert i
 
 NOTE: To enable automatic upload of images on insertion, xref:upload-images.adoc[image upload] must be configured.
 
-==== Example: Using quickimage in the editor toolbar
+==== Example: using quickimage in the editor toolbar
 
 [source,js]
 ----
@@ -114,7 +114,7 @@ tinymce.init({
 
 The Quick Table (`+quicktable+`) toolbar button inserts a 2x2 table with 100% width. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
-==== Example: Using quicktable in the editor toolbar
+==== Example: using quicktable in the editor toolbar
 
 [source,js]
 ----

@@ -16,7 +16,7 @@ If xref:link.adoc#link_default_target[`+link_default_target+`] is also configure
 ]
 ----
 
-=== Example: Adding a `_parent` target to the dropdown list
+=== Example: adding a `_parent` target to the dropdown list
 
 [source,js]
 ----
@@ -35,7 +35,7 @@ tinymce.init({
 
 To disable the option dialog, set `+link_target_list+` to `+false+`.
 
-=== Example: Turning off the target list dialog
+=== Example: turning off the target list dialog
 
 [source,js]
 ----

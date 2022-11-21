@@ -133,6 +133,17 @@ For information on:
 // result
 // https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+
+=== Colorswatch now displays a checkmark for selected color.
+
+// https://ephocks.atlassian.net/browse/TINY-9283
+// cause
+// consequence
+// fix
+// result
+// https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
 === Color picker dialog now starts on the appropriate color for the cursor position.
 
 // https://ephocks.atlassian.net/browse/TINY-9213
@@ -252,6 +263,17 @@ For information on:
 // result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+
+=== Colorswatch keyboard navigation now starts on currently selected color if present in the colorswatch.
+
+// https://ephocks.atlassian.net/browse/TINY-9283
+// cause
+// consequence
+// fix
+// result
+// https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
 === `setContent` is now allowed to accept any custom keys and values as a second options argument.
 
 // https://ephocks.atlassian.net/browse/TINY-9143
@@ -270,13 +292,14 @@ For information on:
 === Parsing media content would cause a memory leak, which for example occurred when using the getContent API.
 
 // https://ephocks.atlassian.net/browse/TINY-9186
-
 A memory leak occurred in Chrome, Edge and Firefox browsers when media content was parsed into the editor using the `tinymce.activeEditor.getContent()` method API.
+
 The memory leak caused an abnormal behavior that increased the memory requirements of the editor until the active tab in the browser crashed.
+
+// Edit the notes below into a useful sentence.
+////
 Fixed in v6.3 update. (Reported issues with Chromium) https://bugs.chromium.org/p/chromium/issues/detail?id=1374180[Memory leak with DOMParser parseFromString method]
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
+////
 
 === Dragging a noneditable element toward the bottom edge would cause the page to scroll up.
 
@@ -286,8 +309,6 @@ A regression was found in {productname} 6.2 where dragging an element containing
 It was also found that dragging elements containing a `contentEditable=false` attribute toward the bottom edge cause similar behaviour. In this instance, however, when the elements containing a `contentEditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
 
 This regression has been addressed in {productname} 6.3. Dragging elements containing a `contentEditable=false` attribute towards a document’s causes the viewport to scroll as expected. And dragging elements containing a `contentEditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === Range expanding capabilities would behave inconsistently depending on where the cursor was placed.
@@ -319,6 +340,9 @@ As a consequence the divider lines that act as background image to improve the U
 
 In {productname} 6.3 background images now scroll with the toolbar’s content as expected.
 
+
+// Should the following be: here; in xref:known-issues[Known issues] below; nowhere at all?
+////
 KNOWN ISSUES: `Safari 14 not properly supporting local value for background attachment property`
 
 We explicitly support the current version of
@@ -331,17 +355,14 @@ Apple Safari
 We also provide
 
 _support for the prior major version for 60 days after the release has been superseded by a new major version_
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
+////
 
 === A double bottom border appeared on inline mode editor for the tinymce-5 skin.
 
 // https://ephocks.atlassian.net/browse/TINY-9108
 The `inline-mode` toolbar showed an additional border line with {productname} 6.x premium skins that used {productname} 5.x skin packages.
-With {productname} 6.3, all {productname} premium skins were updated.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+With {productname} 6.3, all {productname} premium skins were updated.
 
 
 === The editor header showed up even with no menubar and toolbar configured.
@@ -350,8 +371,6 @@ With {productname} 6.3, all {productname} premium skins were updated.
 In classic mode, when both the {productname} toolbar and menubar were disabled, a header was still visible at the top of the editor. 
 
 In {productname} 6.3 this header no longer presents when the {productname} toolbar and menubar are disable, giving the editor a cleaner appearance with only the content editor visible.
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === Inline text pattern no longer triggers if it matches only the end but not the start.
@@ -384,7 +403,6 @@ In {productname} 5.x, the _context toolbar_ switched from being at the top of th
 In {productname} 6.x, the height of the _context toolbar_ was increased, while the distance from which it needed to be selected in order to switch locations was not.
 
 With {productname} 6.3 this distance has been increased. This allows the _context toolbar_ to correctly switch locations when a user selects cells close to the toolbar, allowing the top or bottom visible rows of a table to be selected without issue when the _context toolbar_ is visible.
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === The Quick Insert context toolbar provided by the quickbars plugin showed when the cursor was in a fake block caret.
@@ -398,8 +416,6 @@ The root cause was the insertion point being placed into a fake block caret, whi
 
 A fix was applied to the logic to ensure it could handle such cases, and prevent it from showing in this circumstance.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
 
 === The editor.selection.getRng() API was not returning a proper range on hidden editors in Firefox.
 
@@ -409,8 +425,6 @@ In contrast to other supported browsers, Firefox did not return the selected obj
 As a consequence, when a {productname} instance was running on Firefox, the `window.getSelection()` API for an iframe returned `null` if the iframe was hidden. This, further, resulted in the `editor.selection.getRng()` and `editor.selection.getBookmark()` APIs returning incorrect data from hidden editors when Firefox was the host browser.
 
 This has been fixed in {productname} 6.3. All browsers, including Firefox, now return the correct values even when the iframe is hidden.
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === The editor.selection.getBookmark() API was not returning a proper bookmark on hidden editors in Firefox.
@@ -438,8 +452,6 @@ For example in the following
 the string _non-editable text_ could not be dragged to before the opening `+<p>+` tag.
 
 {productname} 6.3 can place a fake insertion point next to elements with a `contenteditable="false"` attribute when another element with a `contenteditable="false"` attribute is dragged, allowing the object to be moved before and after other such elements.
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === The restored selection after a redo or undo action was not scrolled into view.
@@ -471,8 +483,6 @@ If a `lang` attribute existed anywhere in the ancestry of a word for a {productn
 
 As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
 
 === Inline mode did not respect `content_css_cors` option.
 
@@ -485,8 +495,6 @@ Without the `crossOrigins="anonymous"` attribute being set, no external styleshe
 
 As of {productname} 6.3, the `content_css_cors` option now configures the `tinymce.dom.styleSheetLoader` global when specified. This allows the `crossOrigin="anonymous"` attribute to be added to all stylesheets loaded by the editor — including editors running in inline mode — when the attribute is set to true.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
 
 === The caret was moved to the previous line when a text pattern executed a `mceInsertContent` command on Enter key when running on Firefox.
 
@@ -497,15 +505,6 @@ As of {productname} 6.3, the `content_css_cors` option now configures the `tinym
 // result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-
-=== Add title here
-
-// 
-// cause
-// consequence
-// fix
-// result
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 [[security-fixes]]
 == Security fixes

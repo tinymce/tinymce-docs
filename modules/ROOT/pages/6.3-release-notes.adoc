@@ -66,6 +66,23 @@ The {productname} 6.3 release includes an accompanying release of the **Merge ta
 For information on the **Merge tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
 
+=== Spellchecker Pro <spellchecker pro version number>
+
+The {productname} 6.3 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
+
+==== Spellchecking could search outside of editor for language match. // REVIEW TITLE
+
+// https://ephocks.atlassian.net/browse/TINY-8989
+For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in the word’s ancestors (ie, elements that [surround | contain]^1 the word). For inline mode, that included ancestors that were outside the editor element.
+
+If a `lang` attribute existed anywhere in the ancestry of a word for a {productname} instance running in inline mode, that `lang` attribute value overrode all attempts by the user to set the spell checking `lang` for the document.
+
+As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
+
+For information on the **Spellchecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spellchecker Pro].
+
+
+
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
 
@@ -472,16 +489,6 @@ the string _non-editable text_ could not be dragged to before the opening `+<p>+
 // fix
 // result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
-
-=== Spellchecking could search outside of editor for language match. // REVIEW TITLE
-
-// https://ephocks.atlassian.net/browse/TINY-8989
-For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in the word’s ancestors (ie, elements that [surround | contain]^1 the word). For inline mode, that included ancestors that were outside the editor element.
-
-If a `lang` attribute existed anywhere in the ancestry of a word for a {productname} instance running in inline mode, that `lang` attribute value overrode all attempts by the user to set the spell checking `lang` for the document.
-
-As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
 
 
 === Inline mode did not respect `content_css_cors` option.

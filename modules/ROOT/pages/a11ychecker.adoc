@@ -225,11 +225,13 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.ht
 include::partial$misc/admon-acessibility-rule-i3-can-also-be-applied.adoc[]
 
 [[I3]]
-==== {pluginname} rule details - I3
+=== I3 - Image `+alt+` text is not greater than 100 characters
 
 *Rule description:* this rule checks that the `+alt+` attribute text of the image is not more than 100 characters.
 
 An _Image alternative text should be less than 100 characters_ warning dialog presents if the alternative (`+alt+`) text is longer than 100 characters. This dialog also presents the alternative text in an editable field, for immediate repair.
+
+==== {pluginname} rule details - I3
 
 Notification level (severity):: Warning
 

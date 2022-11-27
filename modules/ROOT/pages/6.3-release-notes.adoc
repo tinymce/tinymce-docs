@@ -47,13 +47,37 @@ For information on the **Smart typography** plugin, see: xref:smart-typography.a
 
 The following premium plugin updates were released alongside {productname} 6.3.
 
-=== Accessibility Checker <accessibility checker version number>
+=== Accessibility Checker 3.1.0
 
 The {productname} 6.3 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**Accessibility Checker** <accessibility checker version number> <type(s) of change here>:
+**Accessibility Checker** 3.1.0 includes the following fixes, additions, and improvements.
 
-// accessibility checker change documentation here.
+==== Merge tags prefix and suffix elements were not ignored
+
+Previously, **Accessibility Checker** incorrectly flagged xref:mergetags.adoc[Merge Tags] prefixes and suffixes as presenting a contrast issue.
+
+With this update, the **Accessibility Checker** plugin ignores Merge Tag prefixes and suffixes, as expected.
+
+==== Added a new rule to show a warning when the alternative text of an image exceeds 100 characters
+
+**Accessibility Checker** 3.1.0 now includes a rule that, when applied, shows a warning dialog when an image’s alternative (`+alt+`) text attribute exceeds 100 characters. This dialog also presents the alternative text in an editable field, for immediate repair.
+
+==== Replaces the single warning icon presented in dialogs with icons specific to each alert level;
+
+Previously, all **Accessibility Checker** warning dialogs presented with a triangle warning icon, regardless of whether the alert was informational, a warning, or an error.
+
+With this update, **Accessibility Checker** shows a level-specific icon with each alert.
+
+==== improves the discoverability of the question mark button in warning dialogs
+
+Many **Accessibility Checker** dialogs include a question mark icon. This icon is also a link to further information about the discovered issue.
+
+This update includes changes to the presentation of this icon to make its being a clickable button more immediately apparent.
+
+==== improves the legibility of warning dialogs
+
+In concert with the changes noted above to the question mark icon in **Accessibility Checker** dialogs, legibility improvements were made to the presentation and typography of these dialogs.
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 

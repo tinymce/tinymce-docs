@@ -11,18 +11,16 @@ include::partial$misc/admon_premium_plugin.adoc[]
 
 include::partial$misc/admon-requires-6.3v.adoc[]
 
-The {pluginname} plugin, depending on it setting, automatically or interactively replaces common typewriter-style characters with their professional typesetter’s equivalents.
+The {pluginname} plugin, depending on its setting, automatically or interactively replaces common typewriter-style characters with their professional typesetter’s equivalents.
 
-For example, it can automatically replace the double-hyphen (`--`) with an em-dash (`—`). And it can automatically replace the teardrop apostrophe (`'`) with opening and closing quote marks (`‘` and `’`).
+For example, if English-language typography rules are set, the {pluginname} plugin can automatically replace the double-hyphen (`--`) with an em-dash (`—`). And it can automatically replace the teardrop apostrophe (`'`) with opening and closing quote marks (`‘` and `’`).
+
+NOTE: The {pluginname} plugin rules are sourced from the https://github.com/typograf/typograf[typograf] library.
 
 == Interactive example
 
-////
-  No Lorem Ipsum! Add some content to test on, possibly just a description of how end-users use the feature?
-  See the emoticons, advtable,and advcode demos for examples.
-////
-
 liveDemo::{plugincode}[]
+
 
 == Basic setup
 

@@ -1,7 +1,9 @@
 [[content_langs]]
 == `+content_langs+`
 
-// What this option does, precisely.
+This option sets which languages are available for applying language-specific typography rules.
+
+A user can then select text and select from the available languages. That language’s language-specific typography rules are then applied to the selected text.
 
 *Type:* `+Object+`
 
@@ -10,15 +12,15 @@
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  plugin: typography
-  toolbar: typography
-  language: 'en_US' // This is required to configure the default language used by typography.
+  selector: "textarea", // change this value according to your html
+  plugins: "typography", 
+	toolbar: "typography language",
+  language: 'en_US', // This is required to configure the default language used by typography.
   content_langs: [
-    { title: 'English', code: 'en' }
-    { title: 'Spanish', code: 'es' }
+    { title: 'English', code: 'en' },
+    { title: 'Spanish', code: 'es' },
     { title: 'German', code: 'de' }
-    ]
+    ],
 });
 ----
 
@@ -36,9 +38,9 @@ tinymce.init({
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  plugin: typography
-  toolbar: typography
-  language: 'en_US' // This is required to configure the default language used by typography.
+  plugins: "typography", 
+  toolbar: "typography",
+  language: 'en_US', // This is required to configure the default language used by typography.
   typography_custom_rules: {
     'en/quotes': (text) => text.replace(/"/g, "'"),
   },
@@ -49,7 +51,9 @@ tinymce.init({
 [[typography_ignore]]
 == `+typography_ignore+`
 
-This option allows for content within specific HTML tags to be ignored by the Typography plugin. If a tag is added to the `typography_ignore` array, the Typograhy plugin’s rules are not applied to material set within that tag.
+This option tells the {pluginame} plugin to ignore content within specified HTML tags or within specified HTML tags that have specified attributes.
+
+If an HTML tag or an HTML tag with a specified attribute is added to the `typography_ignore` array, the Typograhy plugin’s rules are not applied to material set within that tag.
 
 *Type:* `+Array+`
 
@@ -63,10 +67,10 @@ This option allows for content within specific HTML tags to be ignored by the Ty
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  plugin: typography
-  toolbar: typography
-  language: 'en_US' // This is required to configure the default language used by typography.
-  typography_ignore: [ 'strong 'span["lang"]' ]
+  plugins: "typography", 
+  toolbar: "typography",
+  language: 'en_US', // This is required to configure the default language used by typography.
+  typography_ignore: [ 'code', 'span["lang"]' ]
 });
 ----
 
@@ -74,7 +78,11 @@ tinymce.init({
 [[typography_rules]]
 == `+typography_rules+`
 
-// What this option does, precisely.
+This option specifies which rules are available to the {pluginname} plugin.
+
+The {pluginname} plugin rules are sourced from the https://github.com/typograf/typograf[typograf] library.
+
+All rules supported by the {pluginname} plugin are documented in the https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md[Rules of typograf].
 
 *Type:* `+Array+`
 
@@ -84,9 +92,9 @@ tinymce.init({
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  plugin: typography
-  toolbar: typography
-  language: 'en_US' // This is required to configure the default language used by typography.
+  plugins: "typography", 
+  toolbar: "typography",
+  language: 'en_US', // This is required to configure the default language used by typography.
   typography_rules: {
     en: ['en/quotes', 'en/spaces']
     es: ['es/quotes', 'es/spaces']

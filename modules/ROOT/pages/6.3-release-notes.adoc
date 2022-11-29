@@ -14,7 +14,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:new-premium-plugins[New Premium plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
-* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
@@ -204,44 +203,6 @@ The **Premium Skins and Icon Packs** release includes the following updates:
 The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.3 skin, Oxide.
 
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
-
-[[accompanying-premium-self-hosted-server-side-component-changes]]
-== Accompanying Premium self-hosted server-side component changes
-
-The {productname} 6.3 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
-
-* <plugin name 1> plugin (`plugin-name-1`)
-* <plugin name 2> plugin (`plugin-name-2`)
-* <plugin name 3> plugin (`plugin-name-3`)
-
-The Java server-side components have been updated to the following versions:
-
-* `component-1.war`: <component-1 version number>
-* `component-2.war`: <component-2 version number>
-* `component-3.war`: <component-3 version number>
-
-For information on:
-
-* The <plugin name 1> plugin, see: xref:plugin-1-filename.adoc[<plugin name 1> plugin].
-* The <plugin name 2> plugin, see: xref:plugin-2-filename.adoc[<plugin name 2> plugin].
-* The <plugin name 2> plugin, see: xref:plugin-3-filename.adoc[<plugin name 3> plugin].
-* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
-
-=== Updating the self-hosted server-side components
-
-The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
-
-. Update your Java Application Server to the minimum required version:
-
-include::partial$misc/supported-application-servers.adoc[]
-
-. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} vnumtxt or later.
-
-For information on:
-
-* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
-* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
-
 
 [[improvements]]
 == Improvements

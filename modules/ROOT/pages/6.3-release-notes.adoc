@@ -80,25 +80,25 @@ Previously, all **Accessibility Checker** warning dialogs presented with a trian
 
 With this update, **Accessibility Checker** shows a level-specific icon with each alert.
 
-==== improves the discoverability of the question mark button in warning dialogs
+==== Improves the discoverability of the question mark button in warning dialogs
 // @bforte review required
 In {productname} 6.3 improvements were made to the `Help` icon in the accessibility checker dialog.
 
-The changes made to the icon involved re-adjusting the icon’s text alignment to `centered`, decreasing the font size for the subheadings under the label of  `issue, warning and error`.  
+The changes made to the icon involved re-adjusting the icon’s text alignment to `centered`, and decreasing the font size for the subheadings under the label of  `issue, warning and error`.  
 
-Additional changes were made to remove borders from the exterior of the description field, while adjusting the contrast colors to ensure they matched the `background-color` for the icon changes that were added in {productname}’s 6.3 release also.
+Additional changes were made to remove borders from the exterior of the description field while adjusting the contrast colors to ensure they matched the `background-color` for the icon changes that were added in {productname}’s 6.3 release also.
 
 Many **Accessibility Checker** dialogs include a question mark icon. This icon is also a link to further information about the discovered issue.
 
-This update includes changes to the presentation of this icon to make its being a clickable button more immediately apparent.
+This update includes changes to the presentation of this icon to make it's visability of being a `clickable button` more apparent to the user.
 
-==== improves the legibility of warning dialogs
+==== Improves the legibility of warning dialogs
 
 In concert with the changes noted above to the question mark icon in **Accessibility Checker** dialogs, legibility improvements were made to the presentation and typography of these dialogs.
 
 ==== Added correct icons in dialog alert panel for each severity level
 // @bforte review required
-In {productname} 6.3, improvements for accessibility checker were added to provide additional support for users when trying to identify different alerts such as `info | warning or error` icons.
+In {productname} 6.3, improvements for the accessibility checker were added to provide additional support for users when trying to identify different alerts such as `info | warning or error` icons.
 
 In previous versions of {productname} the accessibility checker used the same triangle warning icon for all alerts when displayed.  With the improvements made in 6.3, each icon will now display as its own unique icon with a matching pair color style to provide a better UX for all users and developers.
 
@@ -106,7 +106,7 @@ Warning alert now displays as an `exclamation` mark nested inside a `yellow` col
 Error alert now displays as an `exclamation` mark nested inside a `red` colored  `triangle`.
 Success alert now displays as a `green` tick.
 
-Other benefits from the introduction of this improvement made in {productname}'s 6.3 release is that users requiring visual aids will be able to enjoy the benefits of a improved user experience if they choose to upgrade to {product name} 6.3.
+Another benefit from the introduction of this improvement made in {productname}'s 6.3 release is that users requiring visual aids will be able to enjoy the benefits of an improved user experience if they choose to upgrade to {product name} 6.3.
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
@@ -151,7 +151,7 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 The {productname} 6.3 release includes an accompanying release of the **Merge tags** premium plugin.
 
-**Merge Tags 1.1.0 includes one fix:
+**Merge Tags** 1.1.0 includes one fix:
 
 // @bforte review required
 ==== New mceMergeTag command to wrap selected content in a merge tag
@@ -225,7 +225,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 // @bforte review required.
 {productname} 6.3 introduced a new improvement to the color picker dialog that allows the user to easily identify the pre-populated color for the `selected-text` with a visual ✔️ which is nested inside the color box dialog associated with the user `text-selection` within the editor.
 
-The benefits from this improvement is that it allows the user to easily identify the location for the default/custom color in the dialog based on the current `text-selection`, and identifying the #Hex value for the `selected` color when the user hovers over a color in the dialog.
+The benefits from this improvement is that it allows the user to easily identify the location for the default/custom color in the dialog based on the current `text-selection`, and identify the #Hex value for the `selected` color when the user hovers over a color in the dialog.
 
 With {productname} 6.3 the `getCurrentColor` now checks for the first found `backcolor` and `forecolor` color before the parent color based on the user cursor positioning.
 
@@ -392,7 +392,7 @@ Fixed in v6.3 update. (Reported issues with Chromium) https://bugs.chromium.org/
 // https://ephocks.atlassian.net/browse/TINY-9025
 A regression was found in {productname} 6.2 where dragging an element containing a `contentEditable=false` attribute towards a document’s edge did not cause scrolling.
 
-It was also found that dragging elements containing a `contentEditable=false` attribute toward the bottom edge cause similar behaviour. In this instance, however, when the elements containing a `contentEditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
+It was also found that dragging elements containing a `contentEditable=false` attribute toward the bottom edge causes similar behaviour. In this instance, however, when the elements containing a `contentEditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
 
 This regression has been addressed in {productname} 6.3. Dragging elements containing a `contentEditable=false` attribute towards a document’s causes the viewport to scroll as expected. And dragging elements containing a `contentEditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
 
@@ -424,7 +424,7 @@ Note: With the release for 6.3, {productname} made updates to the latest `rollup
 // https://ephocks.atlassian.net/browse/TINY-8948
 In {productname} 6.0.3 the background images in the floating toolbar followed the scroll position of any nested scrolling containers when the editor width was reduced by the browser. By default, however, the background images should scroll with the main scrollable element, `+<body>+`.
 
-As a consequence the divider lines that act as background image to improve the UI would not follow the scroll position of any nested containers inside the floating toolbar.
+As a consequence, the divider lines that act as background image to improve the UI would not follow the scroll position of any nested containers inside the floating toolbar.
 
 In {productname} 6.3 background images now scroll with the toolbar’s content as expected.
 
@@ -515,7 +515,9 @@ For example, consider you want to wrap a specific `text-selection` with a font-s
 
 {productname} would find the end `**` after_the_word and would then look for text pattern `**` before_the_word , but specifically for any offsets in between the two elements as length 2 (`**` equivilant to ` *` or `11` == `node_1,node2`).
 
-In this circumstance, `example bold*` would return a match because the search mechanism would check for the available node spaces before_the_word and `**` after_the_word.For example:
+In this circumstance, `example bold*` would return a match because the search mechanism would check for the available node spaces before_the_word and `**` after_the_word.
+
+For example:
 
 [source,grep]
 ----
@@ -528,7 +530,9 @@ example bold* // renders `examplebold `
 ----
 The example above detected `1` missing text pattern, but also `1` available node space which triggered the mechanism to remove the node space _after_the_last_word, while replacing the missing text pattern `⤴*` _before_the_word.
 
-In {productname} 6.3 the mechanism now directly checks the text pattern before_the_word and _after_the_word only and apply the closest match based on the text patterns entered. Noted: If the user enter’s an incorrect text pattern that does not match both _before_the_word and after_the_word, the trailing text pattern will remain.For example:
+In {productname} 6.3 the mechanism now directly checks the text pattern before_the_word and _after_the_word only and apply the closest match based on the text patterns entered. Noted: If the user enter’s an incorrect text pattern that does not match both _before_the_word and after_the_word, the trailing text pattern will remain.
+
+For example:
 
 [source,grep]
 ----

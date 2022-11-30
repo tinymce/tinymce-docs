@@ -2,7 +2,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "staging/docs-6", "develop", "feature/TinyMCE_5.10", "feature/TinyMCE_5.10.3", "main", "release/TinyMCE_5.10", "release/docs-6" ]
+    branches: [ "release/**", "feature/**" ]
   pull_request:
     branches: [ "staging/docs-6" ]
 ## Add schedule if needed

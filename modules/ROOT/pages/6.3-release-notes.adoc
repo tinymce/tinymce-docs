@@ -151,7 +151,7 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 The {productname} 6.3 release includes an accompanying release of the **Merge tags** premium plugin.
 
-**Merge Tags** 1.1.0 includes one fix:
+**Merge Tags** 1.1.0 includes one fix and one change:
 
 // @bforte review required
 ==== New mceMergeTag command to wrap selected content in a merge tag
@@ -160,6 +160,17 @@ The {productname} 6.3 release includes an accompanying release of the **Merge ta
 In {productname} 6.2, the Merge Tags autocompleter would remain after being triggered, in the case where a merge tag was inserted by the 'mceMergeTag' command and not the autocompleter. 
 
 With the update to {productname} 6.3, the autocompleter now closes after the 'mceMergeTag' command is executed.
+
+// @bforte review required
+==== Merge tags can not exceed 255 characters in length
+
+In {productname} 6.3 a new character limit range of 0-255 was introduced.
+
+With these improvements, all `mergeTag` items now apply to this limit which also includes `mergetags_lists`.  In {productname} 6.3 to support this feature the editor will check all `mergeTag` lengths to ensure they do not exceed `255` characters, while in the event the `mergeTag` char length exceeds this new limit, the text/item will not be accepted by the editor.
+
+It's also worth noting that some non-ASCII characters or unicode codepoints are worth more than one character.
+
+The other feature improvement that was added to `mergeTags` was the introduction of the `mceMergeTag` command that gives the user the ability to wrap any `selectable-text` content within the editor, which can then be converted into a `mergeTag` providing its length limit is within the range of `0-255` characters.
 
 
 For information on the **Merge tags** plugin, see: xref:mergetags.adoc[Merge Tags].

@@ -3,12 +3,11 @@
 :description: takes {productname} documents and outputs HTML formatted according to email-friendly HTML best practices (eg inlined CSS).
 :description_short: Inlines {productname} CSS for better presentation in email.
 :keywords: plugin, inlinecss, email friendly, email, output, inline, css, post-process, html
-
 :pluginname: Inline CSS
 :plugincode: inlinecss
 :plugincategory: premium
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.3v.adoc[]
 
@@ -23,7 +22,7 @@ The {pluginname} plugin takes a {productname} document, and processes it such th
   See the emoticons, advtable,and advcode demos for examples.
 ////
 
-liveDemo::{plugincode}[]
+liveDemo::inline-css[]
 
 == Basic setup
 
@@ -35,7 +34,7 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
+  plugins: '{plugincode}',
 });
 ----
 
@@ -99,7 +98,7 @@ include::partial$commands/{plugincode}-cmds.adoc[]
 // I’ve assumed — still in semi-blind fashion — that there are 
 // Inline CSS-specific events.
 
-The {{pluginname}} plugin provides the following events.
+The {pluginname} plugin provides the following events.
 
 include::partial$events/{plugincode}-events.adoc[]
 
@@ -108,6 +107,6 @@ include::partial$events/{plugincode}-events.adoc[]
 // I’ve assumed — in continuing semi-blind fashion — that the plugin
 // offers more than one API.
 
-The {{pluginname}} plugin provides the following APIs.
+The {pluginname} plugin provides the following APIs.
 
-include::partial$plugin-apis/{plugincode}-apis.adoc[]
+// include::partial$plugin-apis/{plugincode}-apis.adoc[]

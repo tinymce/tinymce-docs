@@ -72,6 +72,10 @@ tinymce.init({
 // * some pseudo-class selectors. See the specification for more details
 // (https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#94b1d13ff444492bbfce789f7876f39c)
 
+// There is only one API: `getContent()`.
+// Regarding to the events, it dispatches `InlineCSS` event.
+// I think it is OK to document this event even though its purpose isn’t really for the user’s usage.
+
 
 == Options
 

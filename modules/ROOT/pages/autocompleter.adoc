@@ -192,13 +192,13 @@ A `+CardContainer+` is a layout component used to apply a layout to an array of 
 
 The following examples show how to create a special characters autocompleters.
 
-=== Example: Standard Autocompleter
+=== Example: standard Autocompleter
 
 This example uses the standard autocompleter item and will show when user types the colon (`+:+`) character and at least one additional character.
 
 liveDemo::autocompleter-autocompleteitem[height="300", tab="js"]
 
-=== Example: Using `+CardMenuItems+` in the Autocompleter
+=== Example: using `+CardMenuItems+` in the Autocompleter
 
 This example uses xref:cardmenuitem[CardMenuItems] and will show when a user types a hyphen (`+-+`) character and at least one additional character.
 

@@ -7,7 +7,7 @@ This option allows custom CSS styles to be set as a string. The styles are injec
 
 NOTE: `+content_style+` styles are not saved within {productname}'s content. If they are needed for display purposes, ensure the styles are also included in the page the content will be displayed on.
 
-=== Example: Applying one CSS style using `+content_style+`
+=== Example: applying one CSS style using `+content_style+`
 
 [source,js]
 ----
@@ -19,7 +19,7 @@ tinymce.init({
 
 To add two or more styles with this option, provide the styles as a single string.
 
-=== Example: Applying two or more CSS styles using `+content_style+`
+=== Example: applying two or more CSS styles using `+content_style+`
 
 [source,js]
 ----

@@ -3,7 +3,7 @@
 
 `+mergetags_list+` is an object array that specifies the menu content used for merge tags insertion. Every object specifies the configuration of a submenu or a menu item.
 
-IMPORTANT: If the `+mergetags_list+` option is not set, or contains no entries, both the merge tags toolbar button and the merge tags menu item are hidden. Merge tag autosuggestions are also disabled if the `+mergetags_list+` option is not set, or contains no entries.
+IMPORTANT: If the `+mergetags_list+` option is not set, or contains no entries, both the Merge Tags toolbar button and the Merge Tags menu item are hidden. Merge tag autosuggestions are also disabled if the `+mergetags_list+` option is not set, or contains no entries.
 
 *Type:* `+Array+`
 
@@ -25,7 +25,7 @@ IMPORTANT: If the `+mergetags_list+` option is not set, or contains no entries, 
 |menu |Array |required |The list of nested submenus and menu items.
 |===
 
-=== Example: Using `+mergetags_list+`
+=== Example: using `+mergetags_list+`
 
 [source,js]
 ----

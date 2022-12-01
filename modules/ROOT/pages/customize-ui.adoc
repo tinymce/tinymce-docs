@@ -114,7 +114,7 @@ See the xref:add-css-options.adoc#content_css[content_css] customization page fo
 
 The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area.
 
-=== Example: Hiding the status bar
+=== Example: hiding the status bar
 
 The following example disables the status bar.
 
@@ -145,7 +145,7 @@ tinymce.init({
 
 All of the buttons disappear after the `+code+` button is added to the toolbar and a new menu called `+Tools+` with the menu item `+Source code+` is created. (See xref:cloud-quick-start.adoc[this page] for a basic HTML code block.)
 
-=== Example: Adding the code toolbar button
+=== Example: adding the code toolbar button
 
 The following example displays the default toolbar in addition to the `+code+` functionality:
 

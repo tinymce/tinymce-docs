@@ -18,7 +18,7 @@ _Optional_ - This option sets the author permissions for _deleting comments_. If
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comments by adding `|| currentAuthor === '<Admin user>'`.
 
-=== Example: Using `tinycomments_can_delete_comment`
+=== Example: using `tinycomments_can_delete_comment`
 
 [source,js]
 ----

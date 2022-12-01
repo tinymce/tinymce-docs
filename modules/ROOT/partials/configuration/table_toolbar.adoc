@@ -11,7 +11,7 @@ To disable the table toolbar, set the value to an empty string.
 
 *Possible values:* Any toolbar button. For a list of predefined toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
-=== Example: Default table_toolbar configuration
+=== Example: default table_toolbar configuration
 
 [source,js]
 ----
@@ -23,7 +23,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Disable the table toolbar
+=== Example: disable the table toolbar
 
 To disable or remove the contextual table toolbar, set `+table_toolbar+` to an empty string.
 

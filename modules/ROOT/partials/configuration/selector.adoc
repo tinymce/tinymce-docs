@@ -9,7 +9,7 @@ For more information on the differences between regular and inline editing modes
 
 *Type:* `+String+`
 
-=== Example: Replace all textarea elements on the page
+=== Example: replace all textarea elements on the page
 
 [source,js]
 ----
@@ -18,7 +18,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Replace a textarea element with id "editable"
+=== Example: replace a textarea element with id "editable"
 
 [source,js]
 ----
@@ -27,7 +27,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Inline editing mode on a div element with id "editable"
+=== Example: inline editing mode on a div element with id "editable"
 
 [source,js]
 ----

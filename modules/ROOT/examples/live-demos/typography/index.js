@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea#typography',
+  selector: "textarea#advanced-typography",
   height: 300,
   plugins: 'code visualchars nonbreaking typography wordcount',
   toolbar: 'bold italic | code visualchars nonbreaking | typography language',
@@ -8,6 +8,7 @@ tinymce.init({
     { title: 'Spanish', code: 'es' },
     { title: 'German', code: 'de' }
   ],
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   typography_default_lang: 'en-US',
   typography_langs: [
     'en-US',
@@ -76,5 +77,4 @@ var languages = {
   'sv': 'Swedish',
   'tr': 'Turkish',
   'uk': 'Ukraninan',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
-});
+};

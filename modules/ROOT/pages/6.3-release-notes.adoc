@@ -664,13 +664,14 @@ In {productname} 6.3, users or developers that work inside of `Firefox` can now 
 
 {productname} 6.3 includes fixes for the following security issues:
 
-=== are there any security fixes in this release?
+=== HTML in messages for the `WindowManager.alert` and `WindowManager.confirm` APIs were not properly sanitized.
 
 // https://ephocks.atlassian.net/browse/[ticket-number-for-any-security-fixes]
-// cause
-// consequence
-// fix
-// result
+// @bforte review required.
+Prior to the release of {productname} 6.3, It was reported that a number of calls to the `DomFactory.fromHtml` were escaping the text being substituted into the HTML `string`, resulting in an isolated `alert/notification` being displayed within the {productname} editor viewport. 
+
+{productname} 6.3 introduced `dompurify` into to the core dependancies to reduce the risks associated with XSS attacks.
+In messages for the `WindowManager.alert` and `WindowManager.confirm` APIs now sanitise properly.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 

@@ -49,6 +49,50 @@ tinymce.init({
 });
 ----
 
+[[color_default_background]]
+=== `+color_default_background+`
+
+This option allows the user to replace the `background` default color for the toolbar buttons and menu items.
+
+Once set, the background color for the toolbar button will then render the new color set in the `color_default_background` options.  This will then apply the new `background` color to any text that has been selected after the button is pressed.
+
+Assuming a `color_map` is also set (and it is set by default) other colors in the `color_map` are visible by opening the `backcolor` toolbar's menu.
+
+*Type:*  `String`
+
+==== Example: using `+color_default_background+`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  toolbar: 'forecolor backcolor',
+  color_default_background: 'yellow',
+});
+----
+
+[[color_default_foreground]]
+=== `+color_default_foreground+`
+
+This option allows the user to replace the `foreground` default color for the toolbar buttons and menu items.
+
+Once set, the foreground color for the toolbar button will then render the new color set in the `color_default_foreground` options.  This will then apply the new `foreground` color to any text that has been selected after the button is pressed.
+
+Assuming a `color_map` is also set (and it is set by default) other colors in the `color_map` are visible by opening the `forecolor` toolbar's menu.
+
+*Type:*  `String`
+
+==== Example: using `+color_default_foreground+`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  toolbar: 'forecolor',
+  color_default_foreground: 'red',
+});
+----
+
 ==== The default `+color_map+`
 
 [source,js]

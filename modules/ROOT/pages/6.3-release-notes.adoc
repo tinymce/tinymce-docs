@@ -681,7 +681,10 @@ This section describes issues that users of {productname} 6.3 may encounter and 
 
 There are several known issues in {productname} 6.3.
 
-=== After switching the Advanced Typography language to en-GB, switching to any other language is not possible
+==== After switching the Advanced Typography language to en-GB, switching to any other language is not possible
+
+:awaiting update for content 
+
 ==== Fix issues with quotation marks when switching to en_GB and de
 
 // when the new xref:advanced-typography.adoc[Advanced Typography] Premium plugin is used.
@@ -691,17 +694,38 @@ There is a current known issue in {productname} 6.3, that stops the user from sw
 
 As a consequence, quotation marks will not be applied to any text selection after swithing to any other `lang` from `en_GB` specific when the Typography plugin button is pressed.
 
-Currently there is no wordaround for this issue, however.
-The issue can be currently avoided by not swithching to another `lang` after `en_GB` is set.
+Currently there is no wordaround for this issue, however the issue can be currently avoided by not switching to another `lang` after `en_GB` is set.
 
 ==== Toobar more button disappear after exit from inline code editor
 
 //https://ephocks.atlassian.net/browse/TINY-9419
 // @bforte review required
-// cause
-:awaiting content
-// consequence
-// workaround (if any)
+
+When {productname} 6.3 is running `advcode_inline: true` and `toolbar_mode: sliding` specifically the `more` button disappears after clicking on the _cancel_ button in the advanced code viewport.
+
+This instance only occurs when the toolbar is forced into a viewport small enough to render the `more` button inside the editor.
+
+Example below, shows the viewport `width` is less than the toolbar width.
+
+[source,js]
+----
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+	width: 400,
+    plugins: [
+        "advcode",
+    ],
+	advcode_inline: true,
+	toolbar_mode: 'sliding',
+    toolbar: " undo redo | styles | bold italic underline strikethrough | code "
+});
+</script>
+----
+
+The current issue is specific to all browsers that are setup using `advcode_inline: true` and `toolbar_mode: sliding` specific.
+A current workaround for this issue is to adjust the browser frame which will cause the button to reapear in the {productname} viewport.
+
 
 ==== Fix applying typography to quotes for French language
 
@@ -747,16 +771,16 @@ The only current known workaround for users would be  to apply the underline fon
 
 // https://ephocks.atlassian.net/browse/TINY-9413
 // @bforte review required
-// cause
-There is a notable conflict with the typography and spellchecker where the spellcheck would affect the typography plugin when different `langs` where selected.
 
-There is currently no workaround for this issue. 
+There is a notable conflict with the typography and spellchecker where the spellcheck would affect the typography plugin when a different `lang` is selected.
+
+Currently there is no workaround for this issue. 
 
 ==== Fix removing spaces between ! !
 
 // https://ephocks.atlassian.net/browse/TINY-9398
 // @bforte review required
-:awaiting content
+:awating content as we dont support `common/space/delBetweenExclamationMarks` currently`
 // cause
 // consequence
 // workaround (if any)

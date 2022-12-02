@@ -19,7 +19,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
 [[new-premium-plugins]]
@@ -673,20 +672,6 @@ Prior to the release of {productname} 6.3, It was reported that a number of call
 {productname} 6.3 introduced `dompurify` into to the core dependancies to reduce the risks associated with XSS attacks.
 In messages for the `WindowManager.alert` and `WindowManager.confirm` APIs now sanitise properly.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
-
-[[deprecated]]
-== Deprecated
-
-=== are there any deprecations in this release?
-
-// https://ephocks.atlassian.net/browse/[ticket-number-for-any-deprecations]
-// cause
-// consequence
-// fix
-// result
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
-
 
 
 [[known-issues]]

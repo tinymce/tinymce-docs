@@ -679,13 +679,52 @@ In messages for the `WindowManager.alert` and `WindowManager.confirm` APIs now s
 
 This section describes issues that users of {productname} 6.3 may encounter and possible workarounds for these issues.
 
-There is a known issue in {productname} 6.3 when the new xref:advanced-typography.adoc[Advanced Typography] Premium plugin is used.
+There are several known issues in {productname} 6.3.
 
 === After switching the Advanced Typography language to en-GB, switching to any other language is not possible 
 
+// when the new xref:advanced-typography.adoc[Advanced Typography] Premium plugin is used.
 // https://ephocks.atlassian.net/browse/TINY-9332
 // cause
 // consequence
 // workaround (if any)
 
 
+==== Toobar more button disappear after exit from inline code editor (P2)
+
+//https://ephocks.atlassian.net/browse/TINY-9419
+
+
+==== Fix applying typography to quotes for French language (P2)
+
+// https://ephocks.atlassian.net/browse/TINY-9434
+
+
+==== Safari focus visible not applying a blue outline to all buttons (P2)
+
+// https://ephocks.atlassian.net/browse/TINY-9330
+
+
+==== Color swatch checkmark is not displayed when accessed forecolor or backcolor from menu (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9395
+
+
+==== Backcolor not showing selected color-picker in dialog when inline styles (B/I/U..) applied before applying backcolor (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9410
+
+
+==== Resolve conflict with typography and spellchecker (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9413
+
+
+==== Fix issues with quotation marks when switching to en_GB and de (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9332
+
+
+==== Fix removing spaces between ! ! (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9398

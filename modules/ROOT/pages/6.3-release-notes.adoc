@@ -681,50 +681,81 @@ This section describes issues that users of {productname} 6.3 may encounter and 
 
 There are several known issues in {productname} 6.3.
 
-=== After switching the Advanced Typography language to en-GB, switching to any other language is not possible 
+=== After switching the Advanced Typography language to en-GB, switching to any other language is not possible
+==== Fix issues with quotation marks when switching to en_GB and de
 
 // when the new xref:advanced-typography.adoc[Advanced Typography] Premium plugin is used.
 // https://ephocks.atlassian.net/browse/TINY-9332
-// cause
-// consequence
-// workaround (if any)
+// @bforte review required
+There is a current known issue in {productname} 6.3, that stops the user from switching to any other languages after Advanced Typography `lang` is set to `en-GB`, as it causes issues with some rules when applied after the switch.
 
+As a consequence, quotation marks will not be applied to any text selection after swithing to any other `lang` from `en_GB` specific when the Typography plugin button is pressed.
+
+Currently there is no wordaround for this issue, however.
+The issue can be currently avoided by not swithching to another `lang` after `en_GB` is set.
 
 ==== Toobar more button disappear after exit from inline code editor (P2)
 
 //https://ephocks.atlassian.net/browse/TINY-9419
+// @bforte review required
+// cause
 
+// consequence
+// workaround (if any)
 
 ==== Fix applying typography to quotes for French language (P2)
 
 // https://ephocks.atlassian.net/browse/TINY-9434
+// @bforte review required
+Applying typography for French language unexpectedly removes characters.
 
+The French language uses Guillemets `« »` as punctuation marks, which causes conflicts with the existing typography functionality, but specifically any complex formatting cases for content when the user applys the Advanced Typography plugin to any text selection while using the French `lang`.  
 
+No workarounds currently for available for this.
 ==== Safari focus visible not applying a blue outline to all buttons (P2)
 
 // https://ephocks.atlassian.net/browse/TINY-9330
+// @bforte review required
+Unusual focus issues have been idenified while in _developer_mode_ for _Safari_v_16.1_ for some elements when rendered into HTML.
 
+As an example, open _developer_mode_ in _Safari_v_16.1_, apply Accessability Checker dialog via the toolbar, hover over the `down` button should trigger the toggle `:focus-visible` which should enable a blue outline around the button.
+In some situations such as the above example, the outline is not applying to all buttons in {productname} 6.3 when using  _Safari_v_16.1_ or higher versions.
+
+Currently there are no workarounds for this issue specifically when using _Safari_v_16.1_.
 
 ==== Color swatch checkmark is not displayed when accessed forecolor or backcolor from menu (P3)
 
 // https://ephocks.atlassian.net/browse/TINY-9395
+// @bforte review required
+With the update to {productname} 6.3, a low level issue was found where the color swatch checkmark would not display in the `forecolor` and `backcolor` dialog when accessed by the {productname} menu toolbar.
 
+As a result, users will only be able to view the color swatch checkmark via the toolbar dialog buttons as the current workaround.
 
 ==== Backcolor not showing selected color-picker in dialog when inline styles (B/I/U..) applied before applying backcolor (P3)
 
 // https://ephocks.atlassian.net/browse/TINY-9410
-
+// @bforte review required
+// cause
+A regression was found where the `backcolor` would not render the tick inside the selected custom color from the `backcolor` dropdown dialog when {productname} is used specifically on MacOS + Firefox + _Inline_mode_.
+// consequence
+As a consequence, specific sequences would result in the tick not applying such as when B/I/U is applied prior to the `forecolor` and `backcolor`. 
+// workaround (if any)
+The only current known workaround for users would be  to apply the underline font-styling + `forecolor` and `backcolor` which will result in the tick being rendered inside the dialog.
 
 ==== Resolve conflict with typography and spellchecker (P3)
 
 // https://ephocks.atlassian.net/browse/TINY-9413
+// @bforte review required
+// cause
+There is a notable conflict with the typography and spellchecker where the spellcheck would affect the typography plugin when different `langs` where selected.
 
-
-==== Fix issues with quotation marks when switching to en_GB and de (P3)
-
-// https://ephocks.atlassian.net/browse/TINY-9332
-
+There is currently no workaround for this issue. 
 
 ==== Fix removing spaces between ! ! (P3)
 
 // https://ephocks.atlassian.net/browse/TINY-9398
+// @bforte review required
+
+// cause
+// consequence
+// workaround (if any)

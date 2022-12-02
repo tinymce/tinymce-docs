@@ -694,16 +694,16 @@ As a consequence, quotation marks will not be applied to any text selection afte
 Currently there is no wordaround for this issue, however.
 The issue can be currently avoided by not swithching to another `lang` after `en_GB` is set.
 
-==== Toobar more button disappear after exit from inline code editor (P2)
+==== Toobar more button disappear after exit from inline code editor
 
 //https://ephocks.atlassian.net/browse/TINY-9419
 // @bforte review required
 // cause
-
+:awaiting content
 // consequence
 // workaround (if any)
 
-==== Fix applying typography to quotes for French language (P2)
+==== Fix applying typography to quotes for French language
 
 // https://ephocks.atlassian.net/browse/TINY-9434
 // @bforte review required
@@ -712,7 +712,8 @@ Applying typography for French language unexpectedly removes characters.
 The French language uses Guillemets `« »` as punctuation marks, which causes conflicts with the existing typography functionality, but specifically any complex formatting cases for content when the user applys the Advanced Typography plugin to any text selection while using the French `lang`.  
 
 No workarounds currently for available for this.
-==== Safari focus visible not applying a blue outline to all buttons (P2)
+
+==== Safari focus visible not applying a blue outline to all buttons
 
 // https://ephocks.atlassian.net/browse/TINY-9330
 // @bforte review required
@@ -723,7 +724,7 @@ In some situations such as the above example, the outline is not applying to all
 
 Currently there are no workarounds for this issue specifically when using _Safari_v_16.1_.
 
-==== Color swatch checkmark is not displayed when accessed forecolor or backcolor from menu (P3)
+==== Color swatch checkmark is not displayed when accessed forecolor or backcolor from menu
 
 // https://ephocks.atlassian.net/browse/TINY-9395
 // @bforte review required
@@ -731,7 +732,7 @@ With the update to {productname} 6.3, a low level issue was found where the colo
 
 As a result, users will only be able to view the color swatch checkmark via the toolbar dialog buttons as the current workaround.
 
-==== Backcolor not showing selected color-picker in dialog when inline styles (B/I/U..) applied before applying backcolor (P3)
+==== Backcolor not showing selected color-picker in dialog when inline styles (B/I/U..) applied before applying backcolor
 
 // https://ephocks.atlassian.net/browse/TINY-9410
 // @bforte review required
@@ -742,7 +743,7 @@ As a consequence, specific sequences would result in the tick not applying such 
 // workaround (if any)
 The only current known workaround for users would be  to apply the underline font-styling + `forecolor` and `backcolor` which will result in the tick being rendered inside the dialog.
 
-==== Resolve conflict with typography and spellchecker (P3)
+==== Resolve conflict with typography and spellchecker
 
 // https://ephocks.atlassian.net/browse/TINY-9413
 // @bforte review required
@@ -751,11 +752,11 @@ There is a notable conflict with the typography and spellchecker where the spell
 
 There is currently no workaround for this issue. 
 
-==== Fix removing spaces between ! ! (P3)
+==== Fix removing spaces between ! !
 
 // https://ephocks.atlassian.net/browse/TINY-9398
 // @bforte review required
-
+:awaiting content
 // cause
 // consequence
 // workaround (if any)

@@ -820,3 +820,48 @@ A workaround is to apply inline formatting after applying the Text and Backgroun
 
 NOTE: this checkmark presentation issue occurs in conjunction with the similar checkmark presentation issue documented above. When this presentation issue occurs, the checkmark does denote the current background color in either the *Background color* menu or toolbar item.
 
+
+==== Applying typography for French language unexpectedly removes characters. 
+// https://ephocks.atlassian.net/browse/TINY-9434
+// @bforte review required.
+
+According to Wikipedia (https://en.wikipedia.org/wiki/Quotation_mark#French), French quotation marks `« »` require spaces around them. 
+
+Currently in {productname} 6.3, Typography is implemented to operate on text entities only.
+
+There is no current workaround.
+
+
+==== Issues converting quotation marks when uisng “en_GB” and “de” Typography languages.
+// https://ephocks.atlassian.net/browse/TINY-9332
+// @bforte review required.
+Quotation marks are not converted after applying typography in `“en_GB”` and  `“de”` Typography languages in {productname} 6.3.
+
+There is no current workaround.
+
+
+==== Toolbar “more” button disappears after exiting from the inline source code editor
+// https://ephocks.atlassian.net/browse/TINY-9419
+// @bforte review required.
+When TinyMCE 6.3 is running advcode_inline: true and toolbar_mode: sliding specifically the `more` button disappears after clicking on the cancel button in the advanced code viewport.
+ 
+This instance only occurs when the toolbar is forced into a viewport small enough to render the `more` button inside the editor.
+The current issue is specific to all browsers that are setup using advcode_inline: true and toolbar_mode: sliding specific. 
+
+A current workaround for this issue is to adjust the browser frame, which will cause the button to reappear in the {productname} viewport.
+ 
+ 
+==== Safari focus_visible not applying a blue outline to all buttons
+// https://ephocks.atlassian.net/browse/TINY-9330
+// @bforte review required.
+The focus outline in {productname} 6.3 is not applying to all buttons in Safari_v_16.1.
+ 
+Currently, there are no workarounds, and the issue is isolated to version 16.1 for Safari specific.
+ 
+==== Color swatch checkmark is not displayed when accessing forecolor or backcolor from menu
+// https://ephocks.atlassian.net/browse/TINY-9395
+// @bforte review required.
+With the update to {productname} 6.3, a low level issue was found where the color swatch checkmark would not display in the `forecolor` and `backcolor` dialog when accessed in the {productname} menu toolbar.
+ 
+As a result, users can only view the color swatch checkmark via the toolbar dialog buttons as the current workaround.
+

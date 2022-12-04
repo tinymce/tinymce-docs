@@ -36,7 +36,7 @@ For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline C
 
 The {productname} 6.3 release includes the new **Advanced typography** premium plugin.
 
-The Advanced Typography plugin, depending on its setting, can automatically or interactively replace common typewriter-style characters with their professional typesetter’s equivalents.
+The **Advanced Typography** plugin, depending on its setting, can automatically or interactively replace common typewriter-style characters with their professional typesetter’s equivalents.
 
 For information on the **Advanced typography** plugin, see: xref:advanced-typography.adoc[Advanced typography].
 
@@ -86,15 +86,15 @@ As of this initial release of the xref:advanced-typography.adoc[Advanced typogra
 There is, as of this release, no specific workaround.
 
 
-==== The Advanced Typograhly plugin erroneously honors the current Spell Checker language selection
+==== The Advanced Typography plugin erroneously honors the current SpellChecker Pro language selection
 
-There is currently a conflict between the selected Spell Checker language and the selected Advanced Typography language.
+There is currently a conflict between the selected **SpellChecker Pro** language and the selected **Advanced Typography** language.
 
-When a Spell Checker language is specified, the Spell Checker adds a `lang=<language-value>` attribute to the `<body>` tag and the Advanced Typography plugin erroneously honours this attribute when applying Typography rules.
+When a **SpellChecker Pro** language is specified, **SpellChecker Pro** adds a `lang=<language-value>` attribute to the `<body>` tag and the **Advanced Typography** plugin erroneously honours this attribute when applying Typography rules.
 
-Consequently, if, for example, the Advanced Typography plugin is set to Danish but the Spell Checker language is set to English, when Advanced Typography rules are applied, it is English-language rules that are applied to the text, not Danish language rules.
+Consequently, if, for example, the **Advanced Typography** plugin is set to Danish but the **SpellChecker Pro** language is set to English, when **Advanced Typography** rules are applied, it is English-language rules that are applied to the text, not Danish language rules.
 
-As of this release, the only workaround is to either not specify a Spell Checker language or to make certain the currently specified Spell Checker language is the same as the desired Advanced Typography language.
+As of this release, the only workaround is to either not specify a **SpellChecker Pro** language or to make certain the currently specified **SpellChecker Pro** language is the same as the desired **Advanced Typography** language.
 
 
 ==== Fix issues with quotation marks when switching to en_GB and de (P3)
@@ -242,7 +242,7 @@ The other feature improvement that was added to `mergeTags` was the introduction
 For information on the **Merge tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
 
-=== Spellchecker Pro <spellchecker pro version number>
+=== Spellchecker Pro 3.1.1
 
 The {productname} 6.3 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
 

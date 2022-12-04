@@ -32,13 +32,73 @@ The Inline CSS plugin allows the user to <notes here>.
 
 For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline CSS].
 
-=== Smart Typography 1.0.0
+=== Advanced Typography 1.0.0
 
-The {productname} 6.3 release includes the new **Smart typography** premium plugin.
+The {productname} 6.3 release includes the new **Advanced typography** premium plugin.
 
-The Smart Typography plugin, depending on its setting, can automatically or interactively replace common typewriter-style characters with their professional typesetter’s equivalents.
+The Advanced Typography plugin, depending on its setting, can automatically or interactively replace common typewriter-style characters with their professional typesetter’s equivalents.
 
-For information on the **Smart typography** plugin, see: xref:smart-typography.adoc[Smart typography].
+For information on the **Advanced typography** plugin, see: xref:advanced-typography.adoc[Advanced typography].
+
+There are several known issues in **Advanced Typography** 1.0.0
+
+==== Switching the Advanced Typography target language does not always work as expected
+
+Selecting a language from the *Advanced Typography* toolbar button’s menu, runs the rules for the newly selected over the current {productname} document.
+
+In some circumstances, switching the target language in this fashion does not result in typesetting changes as expected. This is most visibly apparent with quotation marks.
+
+The British English typesetting norm is to use opening and closing single-quote marks to denote direct quotation: *‘* and *’*.
+
+The American English typesetting norm is to use opening and closing double-quote marks to denote direct quotation: *“* and *”*.
+
+And one Spanish typesetting norm is to use guillemets, also known as comillas angulares, comillas franceses or chevrons, to denote direct quotation: *«* and *»*.
+
+So, for example, if a {productname} document included a string thus:
+
+[source,text]
+----
+"They went that way," he said, pointing.
+----
+
+Selecting _English (US)_ from the *Advanced Typography* toolbar icon’s pop-up menu transforms the text, as expected, into
+
+[source,text]
+----
+“They went that way,” he said, pointing.
+----
+
+Following this action by, then, selecting _Spanish_ from the *Advanced Typography* toolbar icon’s pop-up menu, however, can result in the following incomplete typesetting change:
+
+[source,text]
+----
+«They went that way, ” he said, pointing.
+----
+
+As of this release the only workaround is to not change *Advanced Typography* target languages.
+
+==== When French Advanced Typography rules are applied, the quarter-em space is not added between the guillemet and the quoted text.
+
+French typesetting tends to set a quarter-em space between the guillemet and the beginning or end of the text being quoted. (It is also common for this space to be set using the non-breaking space character: the visual difference is almost imperceptible and using the non-breakin space character also prevents orphaned or widowed guillemets.)
+
+As of this initial release of the xref:advanced-typography.adoc[Advanced typography] plugin, applying French rules to a {productname} document does not do this. Instead the guillemets are set close. That is, with no space character of any sort between the guillemet and the quoted text. This is not uncommon in French typsetting, but it is, nonetheless, not the most common approach.
+
+There is, as of this release, no specific workaround.
+
+
+==== Resolve conflict with typography and spellchecker (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9413
+
+==== Fix issues with quotation marks when switching to en_GB and de (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9332
+
+
+==== Fix removing spaces between ! ! (P3)
+
+// https://ephocks.atlassian.net/browse/TINY-9398
+
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
@@ -663,16 +723,19 @@ In {productname} 6.3, users or developers that work inside of `Firefox` can now 
 
 {productname} 6.3 includes fixes for the following security issues:
 
-=== HTML in messages for the `WindowManager.alert` and `WindowManager.confirm` APIs were not properly sanitized.
+=== HTML in messages for the `WindowManager.alert` and `WindowManager.confirm` APIs was not properly sanitized.
 
-// https://ephocks.atlassian.net/browse/[ticket-number-for-any-security-fixes]
-// @bforte review required.
-Prior to the release of {productname} 6.3, It was reported that a number of calls to the `DomFactory.fromHtml` were escaping the text being substituted into the HTML `string`, resulting in an isolated `alert/notification` being displayed within the {productname} editor viewport. 
+Some calls to `DomFactory.fromHtml` were escaping the text being substituted into the HTML `string`, resulting in an isolated alert being displayed within the {productname} editor viewport. 
 
-{productname} 6.3 introduced `dompurify` into to the core dependancies to reduce the risks associated with XSS attacks.
+{productname} 6.3 introduced `dompurify` into the core dependencies to reduce the risks associated with XSS attacks.
+
 In messages for the `WindowManager.alert` and `WindowManager.confirm` APIs now sanitise properly.
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Cross-site scripting vulnerability in TinyMCE alerts
+
+A cross-site scripting (XSS) vulnerability was discovered in the alert and confirm dialogs when these dialogs were provided with malicious HTML content. This can occur in plugins that use the alert or confirm dialogs, such as in the image plugin, which presents these dialogs when certain errors occur. The vulnerability allowed arbitrary JavaScript execution when an alert presented in the TinyMCE UI for the current user.
+
+This vulnerability has been patched in this release by ensuring HTML sanitization is still performed after unwrapping invalid elements.
 
 [[known-issues]]
 == Known issues
@@ -681,106 +744,54 @@ This section describes issues that users of {productname} 6.3 may encounter and 
 
 There are several known issues in {productname} 6.3.
 
-==== After switching the Advanced Typography language to en-GB, switching to any other language is not possible
+=== The More button can disappear from the {productname} toolbar when exiting the inline code editor
 
-:awaiting update for content 
+When the More button in the {productname} toolbar is open (ie, is set to display all of a multi-line toolbar), opening and closing the  xref:advcode.adoc[Advanced Code Editor] in inline mode causes the More button to disappear.
 
-==== Fix issues with quotation marks when switching to en_GB and de
-
-// when the new xref:advanced-typography.adoc[Advanced Typography] Premium plugin is used.
-// https://ephocks.atlassian.net/browse/TINY-9332
-// @bforte review required
-There is a current known issue in {productname} 6.3, that stops the user from switching to any other languages after Advanced Typography `lang` is set to `en-GB`, as it causes issues with some rules when applied after the switch.
-
-As a consequence, quotation marks will not be applied to any text selection after swithing to any other `lang` from `en_GB` specific when the Typography plugin button is pressed.
-
-Currently there is no wordaround for this issue, however the issue can be currently avoided by not switching to another `lang` after `en_GB` is set.
-
-==== Toobar more button disappear after exit from inline code editor
-
-//https://ephocks.atlassian.net/browse/TINY-9419
-// @bforte review required
-
-When {productname} 6.3 is running `advcode_inline: true` and `toolbar_mode: sliding` specifically the `more` button disappears after clicking on the _cancel_ button in the advanced code viewport.
-
-This instance only occurs when the toolbar is forced into a viewport small enough to render the `more` button inside the editor.
-
-Example below, shows the viewport `width` is less than the toolbar width.
-
-[source,js]
-----
-<script type="text/javascript">
-tinymce.init({
-    selector: "textarea",
-	width: 400,
-    plugins: [
-        "advcode",
-    ],
-	advcode_inline: true,
-	toolbar_mode: 'sliding',
-    toolbar: " undo redo | styles | bold italic underline strikethrough | code "
-});
-</script>
-----
-
-The current issue is specific to all browsers that are setup using `advcode_inline: true` and `toolbar_mode: sliding` specific.
-A current workaround for this issue is to adjust the browser frame which will cause the button to reapear in the {productname} viewport.
+A workaround does exist to resolve this issue: if the More button disappears, re-sizing the editor viewport forces it to re-display. Switching to Full Screen mode and back counts as re-sizing for this workaround’s purposes.
 
 
-==== Fix applying typography to quotes for French language
+=== In Safari 16.1, the ‘Click for more info’ button in Accessibility Checker dialogs is not outlined when made active
 
-// https://ephocks.atlassian.net/browse/TINY-9434
-// @bforte review required
-Applying typography for French language unexpectedly removes characters.
+*Accessibility Checker* dialogs for accessibility Errors and Warnings include a _Click for more info_ button: a coloured square containing a circled question mark.
 
-The French language uses Guillemets `« »` as punctuation marks, which causes conflicts with the existing typography functionality, but specifically any complex formatting cases for content when the user applys the Advanced Typography plugin to any text selection while using the French `lang`.  
+When this button is navigated to using keyboard navigation, the button is highlighted and a blue outline appears around the highlighted button.
 
-No workarounds currently for available for this.
+When Safari 16.1 is the host browser for a {productname} instance, the _Click for more info_ button highlights, but the blue outline does not present when this button is navigated to using keyboard navigation.
 
-==== Safari focus visible not applying a blue outline to all buttons
+This is a presentation issue only. The _Click for more info_ button still works as a button in Safari 16.1, responding as expected when it is clicked or pressed, or when the Return key is pressed after navigating to the button using the Tab key.
 
-// https://ephocks.atlassian.net/browse/TINY-9330
-// @bforte review required
-Unusual focus issues have been idenified while in _developer_mode_ for _Safari_v_16.1_ for some elements when rendered into HTML.
+There is, as of this release, no specific workaround.
 
-As an example, open _developer_mode_ in _Safari_v_16.1_, apply Accessability Checker dialog via the toolbar, hover over the `down` button should trigger the toggle `:focus-visible` which should enable a blue outline around the button.
-In some situations such as the above example, the outline is not applying to all buttons in {productname} 6.3 when using  _Safari_v_16.1_ or higher versions.
+NOTE: if the _Click for more info_ button is navigated to using the Tab key, and then the  Return key is pressed to activate the button and load the more information page, the blue outline does appear in Safari 16.1 after the Return key is pressed.
 
-Currently there are no workarounds for this issue specifically when using _Safari_v_16.1_.
 
-==== Color swatch checkmark is not displayed when accessed forecolor or backcolor from menu
+=== Checkmark over the current color is not displayed when ‘Text color’ or ‘Background color’ is accessed from the {productname} menu
 
-// https://ephocks.atlassian.net/browse/TINY-9395
-// @bforte review required
-With the update to {productname} 6.3, a low level issue was found where the color swatch checkmark would not display in the `forecolor` and `backcolor` dialog when accessed by the {productname} menu toolbar.
+The *Text color* and *Background color* commands set the color of the selected text and the background behind the selected text respectively.
 
-As a result, users will only be able to view the color swatch checkmark via the toolbar dialog buttons as the current workaround.
+Depending on the {productname} configuration, these commands can be accessed from the *Format* menu or from the {productname} toolbar, or both.
 
-==== Backcolor not showing selected color-picker in dialog when inline styles (B/I/U..) applied before applying backcolor
+And, when selected text or the background behind selected text is set to one of the colors available from the swatch presented by both commands, a checkbox appears over that color when these commands are selected and the swatch is opened.
 
-// https://ephocks.atlassian.net/browse/TINY-9410
-// @bforte review required
-// cause
-A regression was found where the `backcolor` would not render the tick inside the selected custom color from the `backcolor` dropdown dialog when {productname} is used specifically on MacOS + Firefox + _Inline_mode_.
-// consequence
-As a consequence, specific sequences would result in the tick not applying such as when B/I/U is applied prior to the `forecolor` and `backcolor`. 
-// workaround (if any)
-The only current known workaround for users would be  to apply the underline font-styling + `forecolor` and `backcolor` which will result in the tick being rendered inside the dialog.
+As of {productname} 6.3, however, this checkmark does not appear if the *Text color* or *Background color* commands are opened via the *Format* menu. The checkmark does, however, appear when the equivalent toolbar button menus are opened.
 
-==== Resolve conflict with typography and spellchecker
+This presentation issue does not affect functionality. Selecting a new *Text color* or *Background color*, either via the *Format* menu or the toolbar, changes the selected text color or the selected text’s background color, as expected.
 
-// https://ephocks.atlassian.net/browse/TINY-9413
-// @bforte review required
+A workaround is to display the {productname} toolbar with the *Text color* and *Background color* options and access these commands from the toolbar. The checkmark appears in the 
 
-There is a notable conflict with the typography and spellchecker where the spellcheck would affect the typography plugin when a different `lang` is selected.
 
-Currently there is no workaround for this issue. 
+=== Checkmark over the current Background color is not displayed when inline formatting is applied in a certain order
 
-==== Fix removing spaces between ! !
+If text in a {productname} document is formatted in the following order, the checkmark over the currently active background color does not display in the Background color swatch menu:
 
-// https://ephocks.atlassian.net/browse/TINY-9398
-// @bforte review required
-:awating content as we dont support `common/space/delBetweenExclamationMarks` currently`
-// cause
-// consequence
-// workaround (if any)
+. Apply inline formatting, such as *Bold* or _Italic_.
+. Apply a Text color
+. Apply a Background color
+
+This presentation issue does not affect functionality. Selecting an new *Background color*, either via the *Format* menu or the toolbar, changes the selected text’s background color, as expected.
+
+A workaround is to apply inline formatting after applying the Text and Background color. When the inline formatting is applied after the Text and Background colors are applied, the presentation error does not occur.
+
+NOTE: this checkmark presentation issue occurs in conjunction with the similar checkmark presentation issue documented above. When this presentation issue occurs, the checkmark does denote the current background color in either the *Background color* menu or toolbar item.
+

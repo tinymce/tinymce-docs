@@ -7,7 +7,7 @@
 :plugincode: typography
 :plugincategory: premium
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.3v.adoc[]
 
@@ -30,11 +30,11 @@ NOTE: The {pluginname} plugin requires a `language` be configured.
 
 For example:
 
-[source,js]
+[source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
+  plugins: '{plugincode}',
   toolbar: 'typography',
   language: 'en_US' // This is required to configure the default language used by typography.
 });

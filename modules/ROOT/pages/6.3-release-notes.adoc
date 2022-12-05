@@ -258,26 +258,35 @@ For information on the **Merge tags** plugin, see: xref:mergetags.adoc[Merge Tag
 
 The {productname} 6.3 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
 
-==== Spellchecking could search outside of editor for language match. // REVIEW TITLE
+**Spellchecker Pro** 3.1.1 includes one fix:
 
-// https://ephocks.atlassian.net/browse/TINY-8989
-For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in the word’s ancestors (ie, elements that [surround | contain]^1 the word). For inline mode, that included ancestors that were outside the editor element.
+==== Spellchecker Pro could search outside of the {productname} editor for a language match.
 
-If a `lang` attribute existed anywhere in the ancestry of a word for a {productname} instance running in inline mode, that `lang` attribute value overrode all attempts by the user to set the spell checking `lang` for the document.
+For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in an ancestor HTML element to the word (ie, any elements that contain the word). 
+
+When {productname} was running in Inline mode, that included HTML ancestors that were provided by the host Browser, which are outside the {productname} editor instance.
+
+If a `lang` attribute existed anywhere in this ancestry that `lang` attribute value overrode all attempts by the user to set the spell checking language for the document.
 
 As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
 
 For information on the **Spellchecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spellchecker Pro].
 
 // @bforte added the below for Spelling AutoCorrect
-=== Spelling Autocorrect: (premium plugin)
+=== Spelling Autocorrect 1.0.1
 
-==== Removed redundant "pre-text" punctuation, before the word at the start of the sentence being capitalized, from start and replacement of text-pattern.
+The {productname} 6.3 release includes an accompanying release of the **Spelling Autocorrect** premium plugin.
 
-In Spelling Autocorrect with `capitalization` enabled, any format which was applied at the beginning of a new sentence, after a full stop but before the start of the word, would be lost when the word is `capitalized` and replaced by the format at the end of the previous sentence. 
+**Spelling Autocorrect** 1.0.1 includes one fix:
 
-In {productname} 6.3, this format is now retained when the word is capitalized.
-// end
+==== Fixed format changes at the start of sentences when auto-capitalization was on
+
+When **Spelling Autocorrect** was active and had Capitalization enabled (ie had `autocorrect_capitalize: true` set), any inline formatting applied at the beginning of a new sentence, after a full stop (period) but before the start of the word, would be lost when the word was auto-capitalized. Instead the format at the end of the previous sentence was incorrectly applied. 
+
+This update to the **Spelling Autocorrect** premium plugin removed redundant ‘pre-text’ punctuation, before the word at the start of the sentence being capitalized, from start and replacement of text-pattern.
+
+As a consequence, formatting is now retained when the word is capitalized, as expected.
+
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
 
@@ -286,8 +295,6 @@ The {productname} 6.3 release includes an accompanying release of the **Premium 
 === Premium Skins and Icon Packs
 
 The **Premium Skins and Icon Packs** release includes the following updates:
-
-// premium skins and icon packs change documentation here.
 
 The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.3 skin, Oxide.
 
@@ -554,7 +561,7 @@ In {productname} 6.3 this header no longer presents when the {productname} toolb
 // @bforte review required 2x versions for suggestions (MERGED 8949 into this!)
 Previously, to check if something matched a pattern, {productname} would first search for the end pattern and then check if the offset was long enough to be the start pattern.
 
-For example, consider a pattern that has a start = `**` and an end = `**`. And a document that consists of the following string: `a *test**`.
+For example, consider a pattern that has a start = `+**+` and an end = `+**+`. And a document that consists of the following string: `a *test**`.
 
 {productname} would find the end — `**` — and would then look for the the offset between the two elements as length 2(` *`).
 

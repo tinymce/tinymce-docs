@@ -445,86 +445,56 @@ New tests have been added to the `setContent` feature in {productname} 6.3 that 
 
 === Parsing media content would cause a memory leak, which for example occurred when using the getContent API.
 
-// https://ephocks.atlassian.net/browse/TINY-9186
 A memory leak occurred in Chrome, Edge and Firefox browsers when media content was parsed into the editor using the `tinymce.activeEditor.getContent()` method API.
 
 The memory leak caused an abnormal behavior that increased the memory requirements of the editor until the active tab in the browser crashed.
 
-// Edit the notes below into a useful sentence.
-////
-Fixed in v6.3 update. (Reported issues with Chromium) https://bugs.chromium.org/p/chromium/issues/detail?id=1374180[Memory leak with DOMParser parseFromString method]
-////
+This memory leak has been reported as https://bugs.chromium.org/p/chromium/issues/detail?id=1374180[Memory leak with DOMParser parseFromString method] in the Chromium bug tracker.
+
+A fix that prevents {productname} being effected by the leak has been included in {productname} 6.3.
 
 === Dragging a noneditable element toward the bottom edge would cause the page to scroll up.
 
-// https://ephocks.atlassian.net/browse/TINY-9025
 A regression was found in {productname} 6.2 where dragging an element containing a `contentEditable=false` attribute towards a document’s edge did not cause scrolling.
 
 It was also found that dragging elements containing a `contentEditable=false` attribute toward the bottom edge causes similar behaviour. In this instance, however, when the elements containing a `contentEditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
 
 This regression has been addressed in {productname} 6.3. Dragging elements containing a `contentEditable=false` attribute towards a document’s edge causes the viewport to scroll as expected. And dragging elements containing a `contentEditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
 
+=== Range expanding capabilities behaved inconsistently depending on where the insertion point was placed.
 
-=== Range expanding capabilities would behave inconsistently depending on where the cursor was placed.
+When the `ExpandRange.ts:expandRng()` function is given a range, it is expected to select a the next word whether the range begins before or after the word. Previously, however, this was discovered to not be the case.
 
-// https://ephocks.atlassian.net/browse/TINY-9029
-// @bforte review required.
-In previous versions of {productname}, the behavior for the `ExpandRange.ts:expandRng()` function was to set both the range just `before` and just `after` a word in a string which was not the case.
+As a result of the discovery, it was further discovered that the string `ExpandRange.ts:expandRng()` function, that checks the location of the user’s insertion point before and after, was affecting the for-loop in `walkText-implementation`.
 
-As a result of the issue, it was discovered that the string `ExpandRange.ts:expandRng()` function that checks the location of the user cursor before and after was affecting the for-loop in `walkText-implementation`.
+Fixes were applied to the `tinymce.activeEditor.selection.expand()` function which is responsible for directly affecting the white space next to a word that accompanies a space-separated instance. 
 
-Fixes were applied to the `tinymce.activeEditor.selection.expand()` function which is responsible for directly affecting the white space next to a word that is accompanied with a `space-separated` instance.  In {productname} 6.3, the `ExpandRange.ts:expandRng()` function now behaves as intended with any element such as text, special character, styles or elements with contenteditable="false” attributes.
-
-
+In {productname} 6.3, the `ExpandRange.ts:expandRng()` function now behaves as intended with any element such as text, special character, styles or elements with `contenteditable="false”` attributes. Regardless of where the insertion point is placed, the function, when given a range, now selects the word as expected.
 
 === Compilation errors were thrown when using TypeScript 4.8.
 
-// https://ephocks.atlassian.net/browse/TINY-9161
-// @bforte review required (Feedback >> Ben + Luke mentioned not something we need to really cover!)
-Note: With the release for 6.3, {productname} made updates to the latest `rollup-plugin-dts` versions to pull in a fix that was generating invalid generics.  The update allowed for a smooth transition from `typescript`: “^4.7.4” to `typescript`: "^4.8.3" which also fixed various compilation errors that were occurring.
-
-
+{productname} 6.3 includes updates to the latest `rollup-plugin-dts` version to pull in a fix that was generating invalid generics. The update also allowed for a transition from typescript 4.7.4 to typescript 4.8.3, which, further, fixed compilation errors that were occurring.
 
 === Line separator scrolling in floating toolbars.
 
-// https://ephocks.atlassian.net/browse/TINY-8948
 In {productname} 6.0.3 the background images in the floating toolbar followed the scroll position of any nested scrolling containers when the editor width was reduced by the browser. By default, however, the background images should scroll with the main scrollable element, `+<body>+`.
 
 As a consequence, the divider lines that act as background image to improve the UI would not follow the scroll position of any nested containers inside the floating toolbar.
 
 In {productname} 6.3 background images now scroll with the toolbar’s content as expected.
 
-
-// Should the following be: here; in xref:known-issues[Known issues] below; nowhere at all?
-////
-KNOWN ISSUES: `Safari 14 not properly supporting local value for background attachment property`
-
-We explicitly support the current version of
-
-Google Chrome;
-Mozilla Firefox;
-Microsoft Edge; and
-Apple Safari
-
-We also provide
-
-_support for the prior major version for 60 days after the release has been superseded by a new major version_
-////
-
 === A double bottom border appeared on inline mode editor for the tinymce-5 skin.
 
-// https://ephocks.atlassian.net/browse/TINY-9108
 The `inline-mode` toolbar showed an additional border line with {productname} 6.x premium skins that used {productname} 5.x skin packages.
 
-With {productname} 6.3, all {productname} premium skins were updated.
+With {productname} 6.3, all {productname} premium skins were updated and the additional border line no longer presents.
 
 
 === The editor header showed up even with no menubar and toolbar configured.
 
-// https://ephocks.atlassian.net/browse/TINY-8819
 In classic mode, when both the {productname} toolbar and menubar were disabled, a header was still visible at the top of the editor. 
 
-In {productname} 6.3 this header no longer presents when the {productname} toolbar and menubar are disable, giving the editor a cleaner appearance with only the content editor visible.
+In {productname} 6.3 this header no longer presents when the {productname} toolbar and menubar are disabled, giving the editor a cleaner appearance with only the content editor visible.
 
 
 === Inline text pattern no longer triggers if it matches only the end but not the start.
@@ -615,7 +585,6 @@ example bold* // renders `example bold*
 
 === The context toolbar prevented the user from placing the cursor at the edges of the editor.
 
-// https://ephocks.atlassian.net/browse/TINY-8890
 When scrolled past the top row of a table, the table _context toolbar_ overlapped any rows at the top of the editor to display below the toolbar.
 
 In {productname} 5.x, the _context toolbar_ switched from being at the top of the editor, to the bottom of the table or editor when a user attempted to select cells close to the top row of the table. And vice versa when the _context toolbar_ was docked to the bottom of the editor.
@@ -627,7 +596,6 @@ With {productname} 6.3 this distance has been increased. This allows the _contex
 
 === The Quick Insert context toolbar provided by the quickbars plugin showed when the cursor was in a fake block caret.
 
-// https://ephocks.atlassian.net/browse/TINY-9190
 The Quick Insert context toolbar, provided by the xref:quickbars.adoc[Quick Toolbars] plugin, was displayed when the cursor was moved to the left of an element with a `contenteditable="false"` attribute.
 
 This behavior was unexpected because the Quick Insert context toolbar should not present when the insertion point is placed on a line with content.
@@ -637,10 +605,8 @@ The root cause was the insertion point being placed into a fake block caret, whi
 A fix was applied to the logic to ensure it could handle such cases, and prevent it from showing in this circumstance.
 
 
-=== The editor.selection.getRng() API was not returning a proper range on hidden editors in Firefox.
-=== The editor.selection.getBookmark() API was not returning a proper bookmark on hidden editors in Firefox.
+=== When running on Firefox, the editor.selection.getRng() API was not returning expected values on hidden editors
 
-// https://ephocks.atlassian.net/browse/TINY-9259
 In contrast to other supported browsers, Firefox did not return the selected object or the selection range from iframes that are hidden by the `display: none` attribute.
 
 As a consequence, when a {productname} instance was running on Firefox, the `window.getSelection()` API for an iframe returned `null` if the iframe was hidden. This, further, resulted in the `editor.selection.getRng()` and `editor.selection.getBookmark()` APIs returning incorrect data from hidden editors when Firefox was the host browser.

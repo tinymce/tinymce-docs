@@ -40,7 +40,7 @@ The **Advanced Typography** plugin, depending on its setting, can automatically 
 
 For information on the **Advanced typography** plugin, see: xref:advanced-typography.adoc[Advanced typography].
 
-There are several known issues in **Advanced Typography** 1.0.0
+There are several known issues in **Advanced Typography** 1.0.0:
 
 ==== Switching the Advanced Typography target language does not always work as expected
 
@@ -272,7 +272,6 @@ As of {productname} 6.3, the `lang` attribute inherits the default settings for 
 
 For information on the **Spellchecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spellchecker Pro].
 
-// @bforte added the below for Spelling AutoCorrect
 === Spelling Autocorrect 1.0.1
 
 The {productname} 6.3 release includes an accompanying release of the **Spelling Autocorrect** premium plugin.
@@ -346,24 +345,25 @@ If, in the following example, a user places the insertion point between the firs
 
 — {productname} 6.3 will automatically expand the selection to include the whole word, ‘Comment’.
 
-=== New color_map_background and color_map_foreground option which sets the base colors used in the backcolor and forecolor toolbar buttons and menu items.
-=== Added optional storageKey property to colorinput component and colorswatch fancy menu item.
+=== New `color_map_foreground` and `color_map_background` options store custom colors selected using the Text color and Background color menus.
 
-// https://ephocks.atlassian.net/browse/TINY-9184
-// @bforte review required
-{productname} 6.3 introduced two new palettes for the `color_map_background` and `color_map_foreground`, which have now been separated.  In {productname} 6.3, when a user adds a custom color to the `color_map_background` pallet, the editor will not replicate the new color in the `color_map_foreground` pallet as it used to.
+{productname} 6.3 has two new and separate color palettes — `color_map_foreground` and `color_map_background` — for custom Text colors and custom Background colors.
 
-The feature introduced changes to the `colorcache` which is no longer considered to be a singleton.  The `colorcache` can now be accessed with the help of a custom ID, which can now create custom `color_map` colors, selected by the user to be assigned to either the `backcolor` or `forecolor` pallets separately.
+When custom colors are selected from the Text color or Background color menus, these colors are now stored in these separate color palettes, `color_map_foreground` and `color_map_background`, respectively.
 
-To accompany this feature {productname} 6.3 now allows for separate `storage` keys to be created for the pre-provided colors in `color_map_forground` and `color_map_background` respectively, and versions for `color_cols`.
+When chosen, these custom colors are still added to the Text color and Background color menus. But they are now stored separately from the default color sets used by both menus.
 
-These will still `default` to the shared or previous values as before, if no separate values are set.
-In addition one can now access these as a `developer`.
+NOTE: When a user adds a custom color to the `color_map_background` pallete, the editor does not replicate the new color in the `color_map_foreground` pallete.
 
+=== Added optional storageKey property to `colorinput` component
 
-Key feature points saw the introduction for new expanded sets for `color_map` and `color_col`.  And the added optional `storageKey` property to `colorinput` component and `colorswatch`.
+{productname} 6.3 introduced two new color palettes for `color_map_background` and `color_map_foreground`.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+This addition introduced changes to the `colorcache`: it is no longer considered a singleton. The `colorcache` can now be accessed with the help of a custom ID, which can now create custom `color_map` colors, selected by the user to be assigned to either the `backcolor` or `forecolor` pallets separately.
+
+To accompany this, {productname} 6.3 now allows for the creation of a separate `storageKey` property for the pre-provided colors in `color_map_forground` and `color_map_background` respectively. `storageKey` properties can also be set fo `color_cols`, the `colorinput` component, and `colorswatch`.
+
+NOTE: If no separate values are set for `color_map_forground` and `color_map_background`, they still default to the shared or previous values as before.
 
 
 === New addView function added to editor.ui.registry which makes it possible to register custom editor views.
@@ -373,7 +373,6 @@ Key feature points saw the introduction for new expanded sets for `color_map` an
 // @bforte review required -- Feedback provided is to keep this minimal.
 {productname} 6.3 now gives users the ability to register `custom` editor views with use of the new  `addView` API.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === New color_default_foreground and color_default_background options to set the initial default color for the forecolor and backcolor toolbar buttons and menu items.
@@ -400,7 +399,6 @@ tinymce.init({
 </script>
 ----
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New getTransparentElements function added to tinymce.html.Schema to return a map object of transparent HTML elements.
 === Transparent elements, like anchors, are now allowed in the root of the editor body if they contain blocks.
@@ -409,7 +407,6 @@ tinymce.init({
 // @bforte review required
 In {productname} 6.3 block level links are now supported.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing. 
 
@@ -422,7 +419,6 @@ With {productname} 6.3, a new feature has been introduced to ensure that, when t
 
 Once the `OuterContainer` component event is triggered, the console records either a `true` or `false` action that calls on the `onToggled` callback which supports the `FloatingToolbarButton` and `SplitFloatingToolbar` components.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 
@@ -431,15 +427,11 @@ Once the `OuterContainer` component event is triggered, the console records eith
 
 {productname} 6.3 also incorporates the following changes:
 
-=== Colorswatch keyboard navigation now starts on currently selected color if present in the colorswatch.
+=== Keyboard navigation in the Text color and Background color  menus now starts on the currently selected color if that color is present.
 
-// https://ephocks.atlassian.net/browse/TINY-9283
-// cause
-// consequence
-// fix
-// result
-// https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+In {productname} 6.3, `getCurrentColor` now checks for the first found `backcolor` and `forecolor` color before the parent color, based on the current selection or insertion point position.
 
+As a consequence, when either the Text color or Background color toolbar menus are opened, if the selected Text color or Background color matches one of the colors available from the appropriate color swatch menu, that color is pre-selected and navigating through the available colors using arrow keys on the keyboard starts from this pre-selected color.
 
 === `setContent` is now allowed to accept any custom keys and values as a second options argument.
 
@@ -451,7 +443,6 @@ The improvements to this feature give the user more flexibility with the `getCon
 
 New tests have been added to the `setContent` feature in {productname} 6.3 that now checks if content manipulation in `BeforeSetContent` callback is possible so it can pass the custom data `object` to the `getContent` feature allowing it to set both the content and action events.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 [[bug-fixes]]
@@ -491,7 +482,6 @@ As a result of the issue, it was discovered that the string `ExpandRange.ts:expa
 
 Fixes were applied to the `tinymce.activeEditor.selection.expand()` function which is responsible for directly affecting the white space next to a word that is accompanied with a `space-separated` instance.  In {productname} 6.3, the `ExpandRange.ts:expandRng()` function now behaves as intended with any element such as text, special character, styles or elements with contenteditable="false” attributes.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === Compilation errors were thrown when using TypeScript 4.8.
@@ -500,7 +490,6 @@ Fixes were applied to the `tinymce.activeEditor.selection.expand()` function whi
 // @bforte review required (Feedback >> Ben + Luke mentioned not something we need to really cover!)
 Note: With the release for 6.3, {productname} made updates to the latest `rollup-plugin-dts` versions to pull in a fix that was generating invalid generics.  The update allowed for a smooth transition from `typescript`: “^4.7.4” to `typescript`: "^4.8.3" which also fixed various compilation errors that were occurring.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === Line separator scrolling in floating toolbars.
@@ -629,7 +618,6 @@ example bold* // renders `example bold*
 ----
 // end
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === The context toolbar prevented the user from placing the cursor at the edges of the editor.
@@ -692,7 +680,6 @@ Prior to the {productname} 6.3 release, executing an undo or redo function in th
 
 With the {productname} 6.3 release, a fix was applied to allow the scroll function to reposition the users caret to the last known `undo` or `redo` location.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === A newline could not be inserted when the selection was restored from a bookmark after an inline contenteditable="false" element.
@@ -704,7 +691,6 @@ In versions of {productname}, the `Enter` key would not move the caret after a `
 This meant that a newline could not be inserted when the selection was restored from a `bookmark` positioning after an inline `contenteditable="false"` element.
 
 A fix was applied to the core `SelectionOverrides` settings to ensure that the user selection restores from the `bookmark` positioning before and after a `contenteditable="false"` element in {productname} 6.3.
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 === Inline mode did not respect `content_css_cors` option.
@@ -729,7 +715,6 @@ As a result, users that where using (a) The specific browser `firefox` (b) Previ
 
 In {productname} 6.3, users or developers that work inside of `Firefox` can now create `mergeTags` without the caret changing position based on a `Enter` execution.
 
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
 [[security-fixes]]

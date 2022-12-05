@@ -77,15 +77,6 @@ Following this action by, then, selecting _Spanish_ from the *Advanced Typograph
 
 As of this release the only workaround is to not change *Advanced Typography* target languages.
 
-==== When French Advanced Typography rules are applied, the quarter-em space is not added between the guillemet and the quoted text.
-
-French typesetting tends to set a quarter-em space between the guillemet and the beginning or end of the text being quoted. (It is also common for this space to be set using the non-breaking space character: the visual difference is almost imperceptible and using the non-breakin space character also prevents orphaned or widowed guillemets.)
-
-As of this initial release of the xref:advanced-typography.adoc[Advanced typography] plugin, applying French rules to a {productname} document does not do this. Instead the guillemets are set close. That is, with no space character of any sort between the guillemet and the quoted text. This is not uncommon in French typsetting, but it is, nonetheless, not the most common approach.
-
-There is, as of this release, no specific workaround.
-
-
 ==== The Advanced Typography plugin erroneously honors the current SpellChecker Pro language selection
 
 There is currently a conflict between the selected **SpellChecker Pro** language and the selected **Advanced Typography** language.
@@ -408,7 +399,6 @@ In {productname} 6.3 block level links are now supported.
 
 === Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing. 
 
-// https://ephocks.atlassian.net/browse/TINY-9271
 {productname} 6.3 includes a new event, `ToggleToolbarDrawer`, to subscribe to the toolbar's opening and closing actions.
 
 In previous versions of {productname}, when the `ToggleToolbarDrawer` command was set to `toolbar_mode: "sliding"` or `toolbar_mode: “floating”,` the `ToggleToolbarDrawer` did not create an opening or closing event.

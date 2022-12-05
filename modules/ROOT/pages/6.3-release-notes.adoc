@@ -487,91 +487,31 @@ In classic mode, when both the {productname} toolbar and menubar were disabled, 
 In {productname} 6.3 this header no longer presents when the {productname} toolbar and menubar are disabled, giving the editor a cleaner appearance with only the content editor visible.
 
 
-=== Inline text pattern no longer triggers if it matches only the end but not the start.
-=== Matches of inline text patterns that are similar are now managed correctly.
+=== Inline text pattern no longer triggers if only the end pattern matches and similar inline text pattern matches are now managed correctly.
 
-// https://ephocks.atlassian.net/browse/TINY-8947
-// https://ephocks.atlassian.net/browse/TINY-8949
-// @bforte review required 2x versions for suggestions (MERGED 8949 into this!)
-Previously, to check if something matched a pattern, {productname} would first search for the end pattern and then check if the offset was long enough to be the start pattern.
+{productname} supports the automatic styling of basic Markdown-style markup syntax. For example, typing
 
-For example, consider a pattern that has a start = `+**+` and an end = `+**+`. And a document that consists of the following string: `a *test**`.
-
-{productname} would find the end — `**` — and would then look for the the offset between the two elements as length 2(` *`).
-
-In this circumstance, {productname} returned a match because the search mechanism searched within the nodes. Using the previous mechanism a start pattern like `**` would match, for example, `*<span class="not-visible"></span>*`.
-
-Example of what would happen when the issue would occur.
-
-`a *test**` became `a<em>test</em>`
-
-In {productname} 6.3 the mechanism now directly checks the text, and the text only, avoiding the errors caused by the previous mechanism.
-
-
-Notes
-
-The above edit still leaves me cold.
-
-What does start = `**` mean?
-
-Is `**` a string an end-user would enter, or a string an integrator would add to a configuration or other setup?
-
-If we have examples, are they in a particular syntax? Should they be presented as AsciiDoc code-blocks for syntax highlighting and, consequently, easier parsing? For example (and making a blind guess as to the underlying syntax):
-
-For example:
-
-[source,grep]
+[source,text]
 ----
-a *test**
+This is a **bold** step.
 ----
 
-would become
+will be automatically turned into
 
-[source,grep]
+[source,html]
 ----
-a<em>test</em>
-----
-
-Also, even re-presented like this, I’m unsure what _this_ becoming _that_ means?
-
-// @bforte version 2 for the above.
-Previously, to check if something matched a pattern, {productname} would first search for the end pattern and then check if the offset was long enough to be the start pattern.
-
-For example, consider you want to wrap a specific `text-selection` with a font-style `bold`. In previous versions of {productname}, when applying a pattern to apply font-styling `bold` you would add text pattern `**` before_the_word and `**` after_the_word, such as this `example *bold*`.
-
-{productname} would find the end `**` after_the_word and would then look for text pattern `**` before_the_word , but specifically for any offsets in between the two elements as length 2 (`**` equivilant to ` *` or `11` == `node_1,node2`).
-
-In this circumstance, `example bold*` would return a match because the search mechanism would check for the available node spaces before_the_word and `**` after_the_word.
-
-For example:
-
-[source,grep]
-----
-example bold* // renders `examplebold `
+<p>This is a <strong>bold</strong> step.
 ----
 
-[source,grep]
-----
-<p>example<strong>bold</strong>&nbsp;</p>
-----
-The example above detected `1` missing text pattern, but also `1` available node space which triggered the mechanism to remove the node space _after_the_last_word, while replacing the missing text pattern `⤴*` _before_the_word.
+and will be displayed accordingly.
 
-In {productname} 6.3 the mechanism now directly checks the text pattern before_the_word and _after_the_word only and apply the closest match based on the text patterns entered. Noted: If the user enter’s an incorrect text pattern that does not match both _before_the_word and after_the_word, the trailing text pattern will remain.
+In providing this support, {productname} uses xref:content-behavior-options.adoc#text_patterns[text_patterns].
 
-For example:
+Previously, to check if something matched a supported pattern, {productname} first searched for the end pattern (ie, in the example above, the trailing `+**+`), then searched for the starting pattern (ie, in the example above, the leading `+**+`, then checked the offset to establish if the leading pattern was, in fact, a leading pattern.
 
-[source,grep]
-----
-example bold* // renders `example bold* 
-----
+However, the previous logic for determining offset could, in some circumstances, cause inline formatting to be either applied when not expected and not applied when expected.
 
-[source,grep]
-----
-<p>example <em>bold</em>*&nbsp;</p>
-----
-// end
-
-
+In {productname} 6.3 the mechanism now checks the text patterns only and applies the closest match based on said text patterns.
 
 === The context toolbar prevented the user from placing the cursor at the edges of the editor.
 

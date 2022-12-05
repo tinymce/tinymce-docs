@@ -9,7 +9,7 @@ To disable the Quick Selection toolbar, set `+quickbars_selection_toolbar+` to `
 
 *Default value:* `+'bold italic | quicklink h2 h3 blockquote'+`
 
-=== Example: Customizing the Quick Selection toolbar
+=== Example: customizing the Quick Selection toolbar
 
 [source,js]
 ----
@@ -20,7 +20,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Disabling the Quick Selection toolbar
+=== Example: disabling the Quick Selection toolbar
 
 To disable the Quick Selection toolbar, set `+quickbars_selection_toolbar+` to `+false+`.
 

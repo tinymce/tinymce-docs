@@ -2,7 +2,7 @@
 
 The https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects. This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a {productname} editor.
 
-Version 4 of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
+Version 4 and later of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
 
 [[tinymce-vuejs-integration-live-examples]]
 == TinyMCE Vue.js integration live examples
@@ -36,32 +36,23 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-. On a command line or command prompt, install the https://cli.vuejs.org/#getting-started[Vue CLI Tool] package.
+. Create a new Vue project named `tinymce-vue-demo` using the https://github.com/vuejs/create-vue[Create Vue Tool].
+* From a command line or command prompt create a Vue.js 3.x project: `+tinymce-vue-demo+`.
 +
 [source,sh]
 ----
-npm install -g @vue/cli
+npm create vue@3
 ----
-. Create a new Vue.js project named `+tinymce-vue-demo+`.
-* To use the interactive prompt, run:
+* If you need to create a Vue.js 2.x projects instead:
 +
 [source,sh]
 ----
-vue create tinymce-vue-demo
+npm create vue@2
 ----
-* To skip the interactive prompt:
-** For Vue.js 3.x users:
-+
-[source,sh]
-----
-vue create --inlinePreset '{ "vueVersion": "3", "plugins": {} }' tinymce-vue-demo
-----
-** For Vue.js 2.x users:
-+
-[source,sh]
-----
-vue create --inlinePreset '{ "vueVersion": "2", "plugins": {} }' tinymce-vue-demo
-----
+
+NOTE: As per the https://vuejs.org/about/faq.html#what-s-the-difference-between-vue-2-and-vue-3[Vue FAQ], _Vue 2 will reach End of Life by the end of 2023_.
+
+* Follow the prompts and type `+tinymce-vue-demo+` as the project name.
 . Change into the newly created directory.
 +
 [source,sh]
@@ -76,7 +67,7 @@ ifeval::["{productSource}" == "package-manager"]
 +
 [source,sh]
 ----
-npm install --save tinymce "@tinymce/tinymce-vue@^4"
+npm install --save tinymce "@tinymce/tinymce-vue@^5"
 ----
 
 * For Vue.js 2.x users:
@@ -94,7 +85,7 @@ ifeval::["{productSource}" != "package-manager"]
 +
 [source,sh]
 ----
-npm install --save "@tinymce/tinymce-vue@^4"
+npm install --save "@tinymce/tinymce-vue@^5"
 ----
 * For Vue.js 2.x users:
 +
@@ -106,35 +97,44 @@ npm install --save "@tinymce/tinymce-vue@^3"
 endif::[]
 
 . Using a text editor, open `+/path/to/tinymce-vue-demo/src/App.vue+`.
-.. Add a {productname} configuration to the `+<template>+` using the `+<editor>+` tag.
+.. Add a {productname} configuration to the `+<template>+` using the `+<Editor>+` tag.
 .. Add `+import Editor from '@tinymce/tinymce-vue'+` to the start of the `+<script>+`.
-.. Add `+editor: Editor+` to the `+default {components}+`.
 +
 For example:
 +
 [source,jsx]
 ----
+<script setup>
+import Editor from '@tinymce/tinymce-vue'
+</script>
+
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <editor
+  <main id="sample">
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <Editor
+      api-key="no-api-key"
       :init="{
         plugins: 'lists link image table code help wordcount'
       }"
     />
-  </div>
+  </main>
 </template>
 
-<script>
-import Editor from '@tinymce/tinymce-vue'
+<style scoped>
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
 
-export default {
-  name: 'app',
-  components: {
-    'editor': Editor
+@media (min-width: 1024px) {
+  #sample {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 1000px;
   }
 }
-</script>
+</style>
 ----
 
 ifeval::["{productSource}" == "cloud"]
@@ -144,7 +144,7 @@ Such as:
 +
 [source,html]
 ----
-<editor api-key='your-api-key' :init="{ /* your other settings */ }" />
+<Editor api-key='your-api-key' :init="{ /* your other settings */ }" />
 ----
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
@@ -182,7 +182,7 @@ endif::[]
 +
 [source,sh]
 ----
-npm run serve
+npm run dev
 ----
 
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.

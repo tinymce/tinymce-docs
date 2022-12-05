@@ -16,7 +16,7 @@ Is there any risks? (But explain them without saying the word `risk` or similar.
 
 *Default value:* `false`, `1`, `'string1'`
 
-=== Example: Using `<configuration_option>`
+=== Example: using `<configuration_option>`
 
 // This should be a working configuration. Please test.
 [source,js]
@@ -28,7 +28,7 @@ tinymce.init({
 ----
 
 // Remove if not required. add additional examples as required.
-=== Example: Disabling the <feature>
+=== Example: disabling the <feature>
 
 To disable the <feature>, set the `<configuration_option>` to `false`.
 // This should be a working configuration. Please test.

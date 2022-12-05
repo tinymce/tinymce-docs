@@ -11,7 +11,7 @@ If something goes wrong in your function and you want to show an error to the us
 
 *Type:* `+Function+`
 
-=== Example: Using `+media_url_resolver+`
+=== Example: using `+media_url_resolver+`
 
 The following example simply checks if the url contains some special url and returns an iframe if it does. Otherwise it calls the `+resolve+` callback with an empty string, falling back to the default media embed logic.
 

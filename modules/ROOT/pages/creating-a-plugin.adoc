@@ -33,7 +33,7 @@ Optionally, the function passed to `+PluginManager.add()+` can return an object 
 * `+name+`: A string that contains the plugin's name, usually in a human-readable format.
 * `+url+`: A string that contains a URL, usually used to link to help documentation.
 
-=== Example: Plugin registration boilerplate
+=== Example: plugin registration boilerplate
 
 [source,js]
 ----
@@ -58,7 +58,7 @@ Custom plugins can be added to a {productname} instance by either:
 
 NOTE: {companyname} recommends using the `+external_plugins+` option for custom plugins.
 
-=== Example: Using `+external_plugins+`
+=== Example: using `+external_plugins+`
 
 [source,js]
 ----
@@ -71,7 +71,7 @@ tinymce.init({
 });
 ----
 
-=== Example: Copying plugin code into the `+plugins+` folder
+=== Example: copying plugin code into the `+plugins+` folder
 
 [source,js]
 ----
@@ -98,7 +98,7 @@ The files should be JavaScript files and use the relevant language code as the f
 . In each translation file, add translation strings by passing an object containing key-value pairs of source strings and translation strings to the xref:apis/tinymce.root.adoc#addI18n[`+tinymce.addI18n()+` API].
 . In the plugin's entry point file, call `+tinymce.PluginManager.requireLangPack()+` and pass it the plugin identifier and a comma-delimitated string of the language codes to load.
 
-=== Example: The content of a translation file for additional Spanish translations
+=== Example: the content of a translation file for additional Spanish translations
 
 [source,js]
 ----
@@ -107,7 +107,7 @@ tinymce.addI18n('es_ES', {
 });
 ----
 
-=== Example: Loading additional translation files for a custom plugin
+=== Example: loading additional translation files for a custom plugin
 
 [source,js]
 ----

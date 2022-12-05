@@ -21,7 +21,7 @@ include::partial$misc/admon-requires-6.1v.adoc[]
 
 Fired when a comment is added, resolved, deleted, edited, or replied to. Contains the `getEventLog` API for retrieving log of comment changes.
 
-==== Example: The CommentChange event
+==== Example: the CommentChange event
 
 [source,js]
 ----
@@ -56,7 +56,7 @@ Returns a log with information and timestamps of all changes to comments, includ
 
 The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://en.wikipedia.org/wiki/ISO_8601[ISO-8601] format, both shown in the following:
 
-==== Example: Using `+getEventLog()+`
+==== Example: using `+getEventLog()+`
 
 [source,js]
 ----

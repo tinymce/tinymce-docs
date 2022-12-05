@@ -194,7 +194,7 @@ With this update, the comments button, menu-item, comment sidebar and shortcut k
 
 {productname} 6.3 adds xref:additions[two new API functions] — `tinymce.selection` and `tinymce.dom.RangeUtils`.
 
-With these two functions availale, if there is no selected text when a new comment is added, {productname} automatically extends the selection to encompass the word containing the insertion point and links the newly added comment to this automatically selected word.
+With these two functions available, if there is no selected text when a new comment is added, {productname} automatically extends the selection to encompass the word containing the insertion point and links the newly added comment to this automatically selected word.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 
@@ -332,7 +332,7 @@ With {productname} 6.3 the `getCurrentColor` now checks for the first found `bac
 
 This new `tinymce.selection` API function allows {productname} users and developers to expand the selection range to contain the entire word when the selection is collapsed within the word.
 
-To support this new API function, {product name} 6.3 also introduced `tinymce.dom.RangeUtils`, which focuses on a new `expand` method range that expands around the entire word that the user selection was collapsed within by the `tinymce.selection` API function.
+To support this new API function, {productname} 6.3 also introduced `tinymce.dom.RangeUtils`, which focuses on a new `expand` method range that expands around the entire word that the user selection was collapsed within by the `tinymce.selection` API function.
 
 If, in the following example, a user places the insertion point between the first and second `m` in the word, `comment`, then clicks the _Add comment_ toolbar button, or selects _Insert > Add comment_ from the TinyMCE menu, or presses the _Add comment_ keyboard shortcut  (eg ⌘+⌥+M) — 
 
@@ -356,7 +356,7 @@ If, in the following example, a user places the insertion point between the firs
 
 The feature introduced changes to the `colorcache` which is no longer considered to be a singleton.  The `colorcache` can now be accessed with the help of a custom ID, which can now create custom `color_map` colors, selected by the user to be assigned to either the `backcolor` or `forecolor` pallets separately.
 
-To accompany this feature {productmame} 6.3 now allows for separate `storage` keys to be created for the pre-provided colors in `color_map_forground` and `color_map_background` respectively, and versions for `color_cols`.
+To accompany this feature {productname} 6.3 now allows for separate `storage` keys to be created for the pre-provided colors in `color_map_forground` and `color_map_background` respectively, and versions for `color_cols`.
 
 These will still `default` to the shared or previous values as before, if no separate values are set.
 In addition one can now access these as a `developer`.
@@ -450,7 +450,7 @@ In {productname} 6.3 release, changes have been made to the `setContent` feature
 
 The improvements to this feature give the user more flexibility with the `getContent` and `setContent` features.
 
-New tests have been added to the `setContent` feature in {product name} 6.3 that now checks if content manipulation in `BeforeSetContent` callback is possible so it can pass the custom data `object` to the `getContent` feature allowing it to set both the content and action events.
+New tests have been added to the `setContent` feature in {productname} 6.3 that now checks if content manipulation in `BeforeSetContent` callback is possible so it can pass the custom data `object` to the `getContent` feature allowing it to set both the content and action events.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -479,7 +479,7 @@ A regression was found in {productname} 6.2 where dragging an element containing
 
 It was also found that dragging elements containing a `contentEditable=false` attribute toward the bottom edge causes similar behaviour. In this instance, however, when the elements containing a `contentEditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
 
-This regression has been addressed in {productname} 6.3. Dragging elements containing a `contentEditable=false` attribute towards a document’s causes the viewport to scroll as expected. And dragging elements containing a `contentEditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
+This regression has been addressed in {productname} 6.3. Dragging elements containing a `contentEditable=false` attribute towards a document’s edge causes the viewport to scroll as expected. And dragging elements containing a `contentEditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
 
 
 === Range expanding capabilities would behave inconsistently depending on where the cursor was placed.
@@ -704,7 +704,7 @@ In versions of {productname}, the `Enter` key would not move the caret after a `
 
 This meant that a newline could not be inserted when the selection was restored from a `bookmark` positioning after an inline `contenteditable="false"` element.
 
-A fix was applied to the core `SelectionOverrides` settings to ensure that the user selection restores from the `bookmark` positioning before and after a `contenteditable="false"` element in {product name} 6.3.
+A fix was applied to the core `SelectionOverrides` settings to ensure that the user selection restores from the `bookmark` positioning before and after a `contenteditable="false"` element in {productname} 6.3.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -763,7 +763,7 @@ There are several known issues in {productname} 6.3.
 
 When the More button in the {productname} toolbar is open (ie, is set to display all of a multi-line toolbar), opening and closing the xref:advcode.adoc[Advanced Code Editor] in inline mode can cause the More button to disappear.
 
-Specifically, when {productname} 6.3 is running `advcode_inline: true` and `toolbar_mode: sliding` specifically the `more` button disappears after clicking on the _Cancel_ button in the xref:advcode.adoc[Advanced Code Editor] viewport.
+Specifically, when {productname} 6.3 is running `advcode_inline: true` and `toolbar_mode: sliding` specifically the More button disappears after clicking on the _Cancel_ button in the xref:advcode.adoc[Advanced Code Editor] viewport.
 
 This only occurs when the toolbar is forced into a viewport small enough to render the _More_ toolbar button inside the editor. As in the example below, which sets the viewport width to be less than the toolbar width.
 

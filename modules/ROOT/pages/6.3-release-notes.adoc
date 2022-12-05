@@ -97,33 +97,6 @@ Consequently, if, for example, the **Advanced Typography** plugin is set to Dani
 As of this release, the only workaround is to either not specify a **SpellChecker Pro** language or to make certain the currently specified **SpellChecker Pro** language is the same as the desired **Advanced Typography** language.
 
 
-==== Fix issues with quotation marks when switching to en_GB and de
-
-https://ephocks.atlassian.net/browse/TINY-9332[TINY-9332].
-
-Is this a duplicate of _Switching the Advanced Typography target language does not always work as expected_ above?
-
-==== The Advanced Typography plugin does not support removing spaces between exclamation points.
-
-We don’t support `common/space/delBetweenExclamationMarks` currently.
-According to https://ephocks.atlassian.net/browse/TINY-9398[TINY-9398]:
-
-> We only support rules from the ticket https://ephocks.atlassian.net/browse/QA-875[QA-875].
-> -- kate.potemina
-
-And `common/space/delBetweenExclamationMarks` is not in that QA ticket, so nothing to see or write here.
-
-However, also according to https://ephocks.atlassian.net/browse/TINY-9398[TINY-9398]:
-
-> There is requirement in https://notion.so/tinycloud/Advanced-Smart-Typography-Discovery-76af09a3f8c943a5a961f95ce902ffe2[notion]
-> -- kate.potemina
-
-So, there is something to write here.
-
-Which is true?
-
-And what to write if the latter is the case?
-
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 

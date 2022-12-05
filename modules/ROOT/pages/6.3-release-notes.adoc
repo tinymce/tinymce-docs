@@ -203,27 +203,53 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 The {productname} 6.3 release includes an accompanying release of the **Merge tags** premium plugin.
 
-**Merge Tags** 1.1.0 includes one fix and one change:
+**Merge Tags** 1.1.0 includes one addition, one fix, and one change:
 
-// @bforte review required
 ==== New mceMergeTag command to wrap selected content in a merge tag
+
+A new command, `mceMergeTag`, is now available as a Text Patterns option.
+
+When this command is added as a `text_pattern`, manually typing a complete Merge Tag, including the prefix and suffix strings, into a {productname} document will result in the entered string being turned into an active merge tag when the string is completed by having a word boundary character added immediately after it.
+
+In the following example, the Merge Tag prefix and suffix are the default, `{{` and `}}`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea", // change this value according to your HTML
+  plugins: "mergetags",
+  text_patterns: [
+    { start: '{{', end: '}}', cmd: 'mceMergeTag' }
+  ],
+  mergetags_list: [
+  {
+    value: 'merge.tag',
+    title: 'A merge tag.'
+  },
+	],
+  toolbar: "mergetags",
+});
+----
+
+In this example, typing `{{string}}` followed by a word boundary character (such as a space, full-stop, question mark or comma) will result in the _string_ being turned into an active merge tag.
+
 ==== The autocompleter was triggered without being preceded by a merge tag prefix.
 
-In {productname} 6.2, the Merge Tags autocompleter would remain after being triggered, in the case where a merge tag was inserted by the 'mceMergeTag' command and not the autocompleter. 
+Previously, the Merge Tags autocompleter would remain after being triggered, in the case where a merge tag was inserted by the `mceMergeTag` command and not the autocompleter. 
 
-With the update to {productname} 6.3, the autocompleter now closes after the 'mceMergeTag' command is executed.
+In {productname} 6.3, the autocompleter now closes after the `mceMergeTag` command is executed.
 
-// @bforte review required
-==== Merge tags can not exceed 255 characters in length
+==== Merge tags cannot exceed 255 characters in length
 
 In {productname} 6.3 a new character limit range of 0-255 was introduced.
 
-With these improvements, all `mergeTag` items now apply to this limit which also includes `mergetags_lists`.  In {productname} 6.3 to support this feature the editor will check all `mergeTag` lengths to ensure they do not exceed `255` characters, while in the event the `mergeTag` char length exceeds this new limit, the text/item will not be accepted by the editor.
+With this change, all Merge Tag items are now subject to this limit including `mergetags_lists`.
 
-It's also worth noting that some non-ASCII characters or unicode codepoints are worth more than one character.
+In {productname} 6.3, to support this feature, the editor will check all `mergeTag` lengths to ensure they do not exceed 255 characters. 
 
-The other feature improvement that was added to `mergeTags` was the introduction of the `mceMergeTag` command that gives the user the ability to wrap any `selectable-text` content within the editor, which can then be converted into a `mergeTag` providing its length limit is within the range of `0-255` characters.
+In the event the `mergeTag` length exceeds this, the item will not be accepted by the editor.
 
+NOTE: some non-ASCII characters or Unicode codepoints count as more than one character.
 
 For information on the **Merge tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
@@ -744,7 +770,7 @@ This only occurs when the toolbar is forced into a viewport small enough to rend
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
+    selector: "textarea", // change this value according to your HTML
 	width: 400,
     plugins: [
         "advcode",

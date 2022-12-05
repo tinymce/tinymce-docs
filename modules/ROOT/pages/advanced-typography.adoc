@@ -35,7 +35,7 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
-  toolbar: 'typography',
+  toolbar: '{plugincode}',
   language: 'en_US' // This is required to configure the default language used by typography.
 });
 ----

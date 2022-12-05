@@ -153,16 +153,14 @@ This update includes changes to the presentation of this icon to make it's visab
 In concert with the changes noted above to the question mark icon in **Accessibility Checker** dialogs, legibility improvements were made to the presentation and typography of these dialogs.
 
 ==== Added correct icons in dialog alert panel for each severity level
-// @bforte review required
-In {productname} 6.3, improvements for the accessibility checker were added to provide additional support for users when trying to identify different alerts such as `info | warning or error` icons.
 
-In previous versions of {productname} the accessibility checker used the same triangle warning icon for all alerts when displayed.  With the improvements made in 6.3, each icon will now display as its own unique icon with a matching pair color style to provide a better UX for all users and developers.
+In {productname} 6.3, improvements for the accessibility checker were added to provide additional support for users when trying to identify different alerts such as _info_, _warning_ or _error_ icons.
 
-Warning alert now displays as an `exclamation` mark nested inside a `yellow` colored `round circle`.
-Error alert now displays as an `exclamation` mark nested inside a `red` colored  `triangle`.
-Success alert now displays as a `green` tick.
+In previous versions of {productname} the accessibility checker used the same triangle warning icon for all alerts when displayed. In {productname} 6.3, each alert type now displays a unique icon.
 
-Another benefit from the introduction of this improvement made in {productname}'s 6.3 release is that users requiring visual aids will be able to enjoy the benefits of an improved user experience if they choose to upgrade to {product name} 6.3.
+* Warning alerts now display as an exclamation mark nested inside a yellow circle.
+* Error alerts now display as an exclamation mark nested inside a red triangle.
+* Success alerts now display as a green tick.
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
@@ -174,13 +172,11 @@ The {productname} 6.3 release includes an accompanying release of the **Checklis
 
 ==== Checklist toggling did not preserve selection when used on an existing list.
 
-// @bforte review required.
-In previous versions of {productname}, when selecting content over either an ordered or unordered list, then switching the list to a checklist would not preserve the user's selection of the content.
+In previous {productname} versions, when selecting content over either an ordered or unordered list, then switching the list to a checklist, the user’s content selection was not preserved.
 
 In {productname} 6.3, the user selection is now preserved when toggling a list to a checklist.
 
 For information on the **Checklist** plugin, see xref:checklist.adoc[Checklist].
-
 
 === Comments 3.2.0
 
@@ -190,15 +186,15 @@ The {productname} 6.3 release includes an accompanying release of the **Comments
 
 ==== A comment could be inserted when in an empty editor or block
 
-// @bforte review required
-In previous versions of {productname} a bug was found that allowed comments to be placed into an empty editor or block.
+In previous {productname} versions a bug existed that allowed comments to be placed into an empty editor or block.
 
-With the update to {productname} 6.3, the comments button, menu-item, comment sidebar and shortcut keys for now disables this function when the editor contains no content.
+With this update, the comments button, menu-item, comment sidebar and shortcut keys are now disabled when the editor contains no content.
 
-==== Selection now expands to select the entirety of what a comment will be added to when clicking the toolbar or menu buttons
+==== The selection now expands to encompass the word containing the insertion point when a comment is added
 
-// write-up here
-// @bforte This is already covered in // https://ephocks.atlassian.net/browse/TINY-8777 under TINY-9001 ??
+{productname} 6.3 adds xref:additions[two new API functions] — `tinymce.selection` and `tinymce.dom.RangeUtils`.
+
+With these two functions availale, if there is no selected text when a new comment is added, {productname} automatically extends the selection to encompass the word containing the insertion point and links the newly added comment to this automatically selected word.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 

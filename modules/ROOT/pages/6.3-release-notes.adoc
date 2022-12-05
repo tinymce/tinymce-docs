@@ -305,27 +305,19 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.3 also includes the following improvements
 
-=== Colorswatch now displays a checkmark for selected color.
+=== The Text color and Background color menus now display a checkmark denoting the currently selected color.
 
-// https://ephocks.atlassian.net/browse/TINY-9283
-// cause
-// consequence
-// fix
-// result
-// https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+Previously, the color swatches displayed when the Text color and Background color menus were opened gave no indication as to whether or not the Text color or Background color of the current selection was one of the colors displayed in these menus.
 
+With this update, when the selected text’s current Text color or Background color matches one of the colors available from the appropriate color swatch menu, a check mark (the ✔️ character, also known as a tick) displays over that color.
 
-=== Color picker dialog now starts on the appropriate color for the cursor position.
+=== Text color and Background color toolbar menus now pre-select the color for the selected text or insertion point position.
 
-// https://ephocks.atlassian.net/browse/TINY-9213
-// @bforte review required.
-{productname} 6.3 introduced a new improvement to the color picker dialog that allows the user to easily identify the pre-populated color for the `selected-text` with a visual ✔️ which is nested inside the color box dialog associated with the user `text-selection` within the editor.
+{productname} 6.3 included an improvement to the Text color or Background color menus that allows the user to identify the pre-populated color for the selected-text: a ✔️ character displayed over the color that matches the currently selected Text color or Background color.
 
-The benefits from this improvement is that it allows the user to easily identify the location for the default/custom color in the dialog based on the current `text-selection`, and identify the #Hex value for the `selected` color when the user hovers over a color in the dialog.
+In addition to this, in {productname} 6.3, `getCurrentColor` checks for the first found `backcolor` and `forecolor` color before the parent color, based on the current selection or insertion point position.
 
-With {productname} 6.3 the `getCurrentColor` now checks for the first found `backcolor` and `forecolor` color before the parent color based on the user cursor positioning.
-
-// https://www.notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+As a consequence, when either the Text color or Background color toolbar menus are opened, if the selected Text color or Background color matches one of the colors available from the appropriate color swatch menu, that color is pre-selected.
 
 
 [[additions]]

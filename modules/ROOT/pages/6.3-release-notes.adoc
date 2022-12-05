@@ -97,10 +97,11 @@ Consequently, if, for example, the **Advanced Typography** plugin is set to Dani
 As of this release, the only workaround is to either not specify a **SpellChecker Pro** language or to make certain the currently specified **SpellChecker Pro** language is the same as the desired **Advanced Typography** language.
 
 
-==== Fix issues with quotation marks when switching to en_GB and de (P3)
+==== Fix issues with quotation marks when switching to en_GB and de
 
-// https://ephocks.atlassian.net/browse/TINY-9332
+https://ephocks.atlassian.net/browse/TINY-9332[TINY-9332].
 
+Is this a duplicate of _Switching the Advanced Typography target language does not always work as expected_ above?
 
 ==== The Advanced Typography plugin does not support removing spaces between exclamation points.
 

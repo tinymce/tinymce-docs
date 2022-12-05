@@ -377,8 +377,6 @@ NOTE: If no separate values are set for `color_map_forground` and `color_map_bac
 
 === New color_default_foreground and color_default_background options to set the initial default color for the forecolor and backcolor toolbar buttons and menu items.
 
-// https://ephocks.atlassian.net/browse/TINY-9183
-// @bforte review required.
 {productname} 6.3 adds a new feature that allows the default color for the `color_default_foreground` and `color_default_background` in the toolbar button menu to be pre-defined.
 
 The `color_default_foreground` and `color_default_background` colors are pre-defined by including them in `tinymce.init`
@@ -411,15 +409,13 @@ In {productname} 6.3 block level links are now supported.
 === Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing. 
 
 // https://ephocks.atlassian.net/browse/TINY-9271
-In {productname} 6.3 a new event was added that allows the `ToggleToolbarDrawer` to subscribe to the toolbar's opening and closing actions.
+{productname} 6.3 includes a new event, `ToggleToolbarDrawer`, to subscribe to the toolbar's opening and closing actions.
 
-In previous versions of {productname}, when the `ToggleToolbarDrawer` was set to `toolbar_mode: "sliding"` or `toolbar_mode: “floating”,` the `ToggleToolbarDrawer` did not create an opening or closing event.
+In previous versions of {productname}, when the `ToggleToolbarDrawer` command was set to `toolbar_mode: "sliding"` or `toolbar_mode: “floating”,` the `ToggleToolbarDrawer` did not create an opening or closing event.
 
-With {productname} 6.3, a new feature has been introduced to ensure that, when the `ToggleToolbarDrawer` is triggered, the new event initializes an `onToggle` callback that propagates the `OuterContainer` component for `SplitSlidingToolbar` and `SplitFloatingToolbar`.
+With {productname} 6.3, the new `ToggleToolbarDrawer` event has been introduced. When the `ToggleToolbarDrawer` command is triggered, the new event initializes an `onToggle` callback that propagates the `OuterContainer` component for `SplitSlidingToolbar` and `SplitFloatingToolbar`.
 
 Once the `OuterContainer` component event is triggered, the console records either a `true` or `false` action that calls on the `onToggled` callback which supports the `FloatingToolbarButton` and `SplitFloatingToolbar` components.
-
-
 
 
 [[changes]]
@@ -435,14 +431,11 @@ As a consequence, when either the Text color or Background color toolbar menus a
 
 === `setContent` is now allowed to accept any custom keys and values as a second options argument.
 
-// https://ephocks.atlassian.net/browse/TINY-9143
-// @bforte review required
-In {productname} 6.3 release, changes have been made to the `setContent` feature that now allows the editor to accept any custom `[key: string]: (value) any;` as a second option argument when the user inserts content.
+In {productname} 6.3, changes have been made to the `setContent` feature that now allows the editor to accept any custom `[key: string]: (value) any;` as a second option argument when the user inserts content.
 
-The improvements to this feature give the user more flexibility with the `getContent` and `setContent` features.
+The provides more flexibility with the `getContent` and `setContent` features.
 
-New tests have been added to the `setContent` feature in {productname} 6.3 that now checks if content manipulation in `BeforeSetContent` callback is possible so it can pass the custom data `object` to the `getContent` feature allowing it to set both the content and action events.
-
+New tests have been added to the `setContent` feature in {productname} 6.3 that now check if content manipulation in `BeforeSetContent` callback is possible so it can pass the custom data object to the `getContent` feature, allowing it to set both the content and action events.
 
 
 [[bug-fixes]]
@@ -657,7 +650,6 @@ This has been fixed in {productname} 6.3. All browsers, including Firefox, now r
 
 === Dragging a noneditable element before or after another noneditable element now works correctly.
 
-// https://ephocks.atlassian.net/browse/TINY-9253
 Elements that had the `contenteditable="false"` attribute set could not be dragged to the left of an ancestor element.
 
 For example in the following
@@ -672,49 +664,41 @@ the string _non-editable text_ could not be dragged to before the opening `+<p>+
 {productname} 6.3 can place a fake insertion point next to elements with a `contenteditable="false"` attribute when another element with a `contenteditable="false"` attribute is dragged, allowing the object to be moved before and after other such elements.
 
 
-=== The restored selection after a redo or undo action was not scrolled into view.
+=== The restored selection or location after a redo or undo action was not scrolled into view.
 
-// https://ephocks.atlassian.net/browse/TINY-9222
-// @bforte pending review
-Prior to the {productname} 6.3 release, executing an undo or redo function in the editor would not scroll to `show` the new cursor location after the function is executed, meaning the user would have to manually scroll to their last `undo` or `redo` position.
+Prior to the {productname} 6.3 release, executing an undo or redo function in the editor did not scroll the editor to the new insertion point or selection, should the undo or redo result in the insertion point or selection being out of the current viewport.
 
-With the {productname} 6.3 release, a fix was applied to allow the scroll function to reposition the users caret to the last known `undo` or `redo` location.
+Instead, users had to manually scroll to the insertion point or selection after issuing an undo or redo command that resulted in the insertion point or selection being out of view.
 
-
-
-=== A newline could not be inserted when the selection was restored from a bookmark after an inline contenteditable="false" element.
-
-// https://ephocks.atlassian.net/browse/TINY-9194
-// @bforte pending review
-In versions of {productname}, the `Enter` key would not move the caret after a `mergeTag` insertion occurred in the editor.
-
-This meant that a newline could not be inserted when the selection was restored from a `bookmark` positioning after an inline `contenteditable="false"` element.
-
-A fix was applied to the core `SelectionOverrides` settings to ensure that the user selection restores from the `bookmark` positioning before and after a `contenteditable="false"` element in {productname} 6.3.
+As of the {productname} 6.3 release, the scroll function now repositions the insertion point to the last known undo or redo location.
 
 
-=== Inline mode did not respect `content_css_cors` option.
+=== A newline could not be inserted after an inline element with a contenteditable="false" attribute was created.
 
-// https://ephocks.atlassian.net/browse/TINY-6037
+In previous versions of {productname}, a newline could not be inserted when the selection was restored from a ‘bookmark’ positioning after adding an inline element with a `contenteditable="false"` attribute.
+
+This was most commonly seen by pressing the *Return* (or *Enter*) key not moving the insertion point to a new line after a merge tag was created in the editor.
+
+For {productname} 6.3, a fix was applied to the core `SelectionOverrides` settings to ensure the user selection restores from the ‘bookmark’ positioning before and after an inline element with a `contenteditable="false"` attribute is created.
+
+Hitting the *Return* (or *Enter*) after creating a merge tag now moves the insertion point to a new line, as expected.
+
+
+=== Inline mode did not respect the `content_css_cors` option.
+
 In previous versions of {productname}, the `tinymce.styleSheetLoader` global was not configured by the `content_css_cors` option, when specified.
 
-Consequently, stylesheets loaded by `tinymce` onto the outer document page did not have the `crossOrigin="anonymous"` attribute. This particularly effected {productname} instances running in inline mode, because the `tinymce.styleSheetLoader` global is used to load stylesheets used by inline editors. (Stylesheets for {productname} editors running in iframe mode are specific to the editor.)
+Consequently, stylesheets loaded by {productname} onto the outer document page did not have the `crossOrigin="anonymous"` attribute. This particularly effected {productname} instances running in inline mode, because the `tinymce.styleSheetLoader` global is used to load stylesheets used by inline editors. (Stylesheets for {productname} editors running in iframe mode are specific to the editor.)
 
 Without the `crossOrigins="anonymous"` attribute being set, no external stylesheets were loaded. And inline editors with the `pageembed` plugin loaded and the `tiny_pageembed_inline_styles` option set to `true` would, as a result, return an error when attempting to insert any iframse through the dialog.
 
 As of {productname} 6.3, the `content_css_cors` option now configures the `tinymce.dom.styleSheetLoader` global when specified. This allows the `crossOrigin="anonymous"` attribute to be added to all stylesheets loaded by the editor — including editors running in inline mode — when the attribute is set to true.
 
+=== The insertion point moved to the previous line when a text pattern executed a `mceInsertContent` command on Firefox
 
-=== The caret was moved to the previous line when a text pattern executed a `mceInsertContent` command on Enter key when running on Firefox.
+In previous versions of {productname}, when running on Firefox and after pressing Enter or Return to execute an `mceInsertContent` command (to, for example, add a merge tag to a {productname} document), xref:content-behavior-options.adoc#text_patterns[text_patterns] moved the insertion point to the previous line.
 
-// https://ephocks.atlassian.net/browse/TINY-9193
-// @bforte review required.
-In previous versions of {productname}, Firefox would display unusual behavioural characteristics after a specific sequence of commands were executed, causing text patterns to force the caret position to the previous line.
-
-As a result, users that where using (a) The specific browser `firefox` (b) Previous versions of {productname}, this would create UX issues when the user would try to create a `mergeTag` directly after a `Enter` execution from the previous line in the editor.
-
-In {productname} 6.3, users or developers that work inside of `Firefox` can now create `mergeTags` without the caret changing position based on a `Enter` execution.
-
+This error has been corrected in {productname} 6.3. When running {productname} 6.3 on Firefox and creating a merge tag using `mceInsertContent`, pressing the Enter or Return to generate the desired merge tag moves the insertion point to the end of said newly-created merge tag, as expected.
 
 
 [[security-fixes]]
@@ -729,6 +713,7 @@ Some calls to `DomFactory.fromHtml` were escaping the text being substituted int
 {productname} 6.3 introduced `dompurify` into the core dependencies to reduce the risks associated with XSS attacks.
 
 In messages for the `WindowManager.alert` and `WindowManager.confirm` APIs now sanitise properly.
+
 
 === Cross-site scripting vulnerability in TinyMCE alerts
 

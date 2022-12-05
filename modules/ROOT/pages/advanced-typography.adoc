@@ -52,22 +52,9 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
-// My current semi-educated guess is that this plugin does not provide commands, events, or an API.
-// 
-// == Commands
-// 
-// The {pluginname} plugin provides the following {productname} commands.
-// 
-// include::partial$commands/{plugincode}-cmds.adoc[]
-// 
-// == Events
-// 
-// The {{pluginname}} plugin provides the following events.
-// 
-// include::partial$events/{plugincode}-events.adoc[]
-// 
-// == APIs
-// 
-// The {{pluginname}} plugin provides the following APIs.
-// 
-// include::partial$plugin-apis/{plugincode}-apis.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]

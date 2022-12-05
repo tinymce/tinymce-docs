@@ -1,6 +1,7 @@
 tinymce.init({
   selector: "textarea#advanced-typography",
   height: 300,
+  menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
   plugins: 'code visualchars nonbreaking typography wordcount',
   toolbar: 'bold italic | code visualchars nonbreaking | typography language',
   content_langs: [

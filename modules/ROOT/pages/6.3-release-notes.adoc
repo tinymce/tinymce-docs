@@ -106,20 +106,12 @@ Previously, **Accessibility Checker** incorrectly flagged xref:mergetags.adoc[Me
 With this update, the **Accessibility Checker** plugin ignores Merge Tag prefixes and suffixes, as expected.
 
 ==== Added a new rule to show a warning when the alternative text of an image exceeds 100 characters
-// @bforte review required
-In {productname} 6.3, a new function was introduced that added a new rule to show a warning to the user when the alternative text of an image either exceeds 100 characters or when alternative text is not present for an image.
 
-Warning prompts will be displayed as below examples.
+**Accessibility Checker** 3.1.0 now includes a rule that, when applied, shows a warning dialog when an image’s alternative (`+alt+`) text attribute exceeds 100 characters.
 
-When the alternative text exceeds the rule (>100) message will display `Image alternative text should be less than 100 characters`
-Secondary message will display if this rule is triggered reading `Alternative text is (number) characters`, which provides the user with a `num_value` in which the alternative text count currently is.
+When the alternative text exceeds 100 characters, an *Image alternative text should be less than 100 characters* warning presents.
 
-If alternative text cannot be found, the message will display `Images must have an alternative text description.  Decorative images are not allowed`
-
-Worth noting, if the user attempts to replace the alternative text with the same content as the `file_name` and click `repair`, the dialog will now display an error with the message `Alternative text must not be the same as the image filename`.
-
-
-**Accessibility Checker** 3.1.0 now includes a rule that, when applied, shows a warning dialog when an image’s alternative (`+alt+`) text attribute exceeds 100 characters. This dialog also presents the alternative text in an editable field, for immediate repair.
+This dialog also presents the alternative text in an editable field, for immediate repair.
 
 ==== Replaces the single warning icon presented in dialogs with icons specific to each alert level;
 
@@ -127,21 +119,19 @@ Previously, all **Accessibility Checker** warning dialogs presented with a trian
 
 With this update, **Accessibility Checker** shows a level-specific icon with each alert.
 
-==== Improves the discoverability of the question mark button in warning dialogs
-// @bforte review required
-In {productname} 6.3 improvements were made to the `Help` icon in the accessibility checker dialog.
+==== The discoverability of the question mark button in warning dialogs was improved
 
-The changes made to the icon involved re-adjusting the icon’s text alignment to `centered`, and decreasing the font size for the subheadings under the label of  `issue, warning and error`.  
+Many **Accessibility Checker** dialogs include a question mark icon. This icon is a link to further information about the discovered issue.
 
-Additional changes were made to remove borders from the exterior of the description field while adjusting the contrast colors to ensure they matched the `background-color` for the icon changes that were added in {productname}’s 6.3 release also.
+This update includes changes to the presentation of this icon to make discoverability as a clickable button` more apparent.
 
-Many **Accessibility Checker** dialogs include a question mark icon. This icon is also a link to further information about the discovered issue.
-
-This update includes changes to the presentation of this icon to make it's visability of being a `clickable button` more apparent to the user.
-
-==== Improves the legibility of warning dialogs
+==== The legibility of warning dialogs was improved
 
 In concert with the changes noted above to the question mark icon in **Accessibility Checker** dialogs, legibility improvements were made to the presentation and typography of these dialogs.
+
+The icon’s text was centered and the *Issue*, *Warning*, or *Error* sub-heading’s font size was reduced.
+
+Additionally borders were removed from the exterior of the description field and contrast colors were adjusted to match the background color of the icons added for this release.
 
 ==== Added correct icons in dialog alert panel for each severity level
 
@@ -388,14 +378,18 @@ tinymce.init({
 </script>
 ----
 
+=== Placing block elements inside anchor tags is now supported.
 
-=== New getTransparentElements function added to tinymce.html.Schema to return a map object of transparent HTML elements.
-=== Transparent elements, like anchors, are now allowed in the root of the editor body if they contain blocks.
-=== Transparent elements, like anchors, can now contain block elements.
-// https://ephocks.atlassian.net/browse/TINY-9172
-// @bforte review required
-In {productname} 6.3 block level links are now supported.
+Previously, {productname} only supported placing inline elements — such as `+<strong></strong>+` or `+<code></code>+` — inside anchor tags
 
+{productname} 6.3 adds support for wrapping anchor tags around block level elements.
+
+For example, the following is now supported:
+
+[source,html]
+----
+<a href="https://example.com/"><p>Link text inside <code>&lt;p&gt;</code> tags.</p></a>
+----
 
 === Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing. 
 

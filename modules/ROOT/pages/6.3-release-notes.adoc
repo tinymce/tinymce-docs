@@ -365,7 +365,7 @@ NOTE: When a user adds a custom color to the `color_map_background` pallete, the
 
 This addition introduced changes to the `colorcache`: it is no longer considered a singleton. The `colorcache` can now be accessed with the help of a custom ID, which can now create custom `color_map` colors, selected by the user to be assigned to either the `backcolor` or `forecolor` pallets separately.
 
-To accompany this, {productname} 6.3 now allows for the creation of a separate `storageKey` property for the pre-provided colors in `color_map_forground` and `color_map_background` respectively. `storageKey` properties can also be set fo `color_cols`, the `colorinput` component, and `colorswatch`.
+To accompany this, {productname} 6.3 now allows for the creation of a separate `storageKey` property for the pre-provided colors in `color_map_forground` and `color_map_background` respectively. `storageKey` properties can also be set to `color_cols`, the `colorinput` component, and `colorswatch`.
 
 NOTE: If no separate values are set for `color_map_forground` and `color_map_background`, they still default to the shared or previous values as before.
 

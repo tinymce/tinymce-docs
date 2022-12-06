@@ -251,7 +251,7 @@ With this change, all Merge Tag items are now subject to this limit including `m
 
 In {productname} 6.3, to support this feature, the editor will check all `mergeTag` lengths to ensure they do not exceed 255 characters. 
 
-In the event the `mergeTag` length exceeds this, the item will not be accepted by the editor.
+In the event the merge tag length exceeds this, the item will not be accepted by the editor.
 
 NOTE: Some non-ASCII characters or Unicode codepoints count as more than one character.
 

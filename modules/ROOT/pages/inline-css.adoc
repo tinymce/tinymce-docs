@@ -17,11 +17,6 @@ The {pluginname} plugin takes a {productname} document, and processes it such th
 
 == Interactive example
 
-////
-  No Lorem Ipsum! Add some content to test on, possibly just a description of how end-users use the feature?
-  See the emoticons, advtable,and advcode demos for examples.
-////
-
 liveDemo::inline-css[]
 
 == Basic setup
@@ -43,7 +38,7 @@ tinymce.init({
 // Document what we are and are not supporting. Set out the specific
 // limitations of this plugin and its API.
 // 
-// 1. We skip pseudo-elements and most @-rules.
+1. The {pluginname} plugin skip pseudo-elements and most @-rules.
 // 
 // 2. Vogue only supports `@import` @-rules at this stage.
 // 
@@ -87,15 +82,6 @@ include::partial$configuration/inline-css.adoc[]
 // Consequently, I’ve assumed the Inline CSS plugin will not be invoked by:
 // * using a Toolbar button; nor by
 // * selecting from a menu.
-
-== Commands
-
-// I’ve assumed — in semi-blind fashion — that there is a
-// `mceInlineCSS` command.
-
-The {pluginname} plugin provides the following {productname} command.
-
-include::partial$commands/{plugincode}-cmds.adoc[]
 
 == Events
 

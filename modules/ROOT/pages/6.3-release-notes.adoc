@@ -241,12 +241,6 @@ tinymce.init({
 
 In this example, typing `{{string}}` followed by a word boundary character (such as a space, full-stop, question mark or comma) will result in the _string_ being turned into an active merge tag.
 
-==== The autocompleter was triggered without being preceded by a merge tag prefix.
-
-Previously, the Merge Tags autocompleter would remain after being triggered, in the case where a merge tag was inserted by the `mceMergeTag` command and not the autocompleter. 
-
-In {productname} 6.3, the autocompleter now closes after the `mceMergeTag` command is executed.
-
 ==== Merge tags cannot exceed 255 characters in length
 
 In {productname} 6.3 a new character limit range of 0-255 was introduced.

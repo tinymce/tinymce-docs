@@ -466,7 +466,7 @@ The memory leak caused an abnormal behavior that increased the memory requiremen
 
 This memory leak has been reported as https://bugs.chromium.org/p/chromium/issues/detail?id=1374180[Memory leak with DOMParser parseFromString method] in the Chromium bug tracker.
 
-A fix that prevents {productname} being effected by the leak has been included in {productname} 6.3.
+A fix that prevents {productname} being affected by the leak has been included in {productname} 6.3.
 
 === Dragging a noneditable element toward the bottom edge would cause the page to scroll up.
 

@@ -249,7 +249,7 @@ In {productname} 6.3 a new character limit range of 0-255 was introduced.
 
 With this change, all Merge Tag items are now subject to this limit including `mergetags_lists`.
 
-In {productname} 6.3, to support this feature, the editor will check all `mergeTag` lengths to ensure they do not exceed 255 characters. 
+In {productname} 6.3, to support this feature, the editor will check all merge tag lengths to ensure they do not exceed 255 characters. 
 
 In the event the merge tag length exceeds this, the item will not be accepted by the editor.
 

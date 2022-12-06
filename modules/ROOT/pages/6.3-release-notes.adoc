@@ -627,9 +627,9 @@ This error has been corrected in {productname} 6.3. When running {productname} 6
 
 === HTML in messages for the `WindowManager.alert` and `WindowManager.confirm` APIs was not properly sanitized
 
-In some circumstances, text being substituted into an HTML string was being escaped, resulting in an isolated alert being displayed within the {productname} editor viewport. 
+In some circumstances, text being substituted into an HTML string was being escaped, resulting in an isolated message being displayed within the {productname} editor viewport. 
 
-As of {productname} 6.3 `dompurify` sanitizes this text to reduce the risk of XSS attacks.
+As of this release, {productname} 6.3 sanitizes this text to reduce the risk of XSS attacks.
 
 
 === Cross-site scripting vulnerability in TinyMCE alerts

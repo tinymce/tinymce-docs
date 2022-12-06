@@ -611,7 +611,7 @@ In previous versions of {productname}, the `tinymce.styleSheetLoader` global was
 
 Consequently, stylesheets loaded by {productname} onto the outer document page did not have the `crossOrigin="anonymous"` attribute. This particularly affected {productname} instances running in inline mode, because the `tinymce.styleSheetLoader` global is used to load stylesheets used by inline editors. (Stylesheets for {productname} editors running in iframe mode are specific to the editor.)
 
-Without the `crossOrigins="anonymous"` attribute being set, no external stylesheets were loaded. And inline editors with the `pageembed` plugin loaded and the `tiny_pageembed_inline_styles` option set to `true` would, as a result, return an error when attempting to insert any iframse through the dialog.
+Without the `crossOrigins="anonymous"` attribute being set, no external stylesheets were loaded. And inline editors with the `pageembed` plugin loaded and the `tiny_pageembed_inline_styles` option set to `true` would, as a result, return an error when attempting to insert any iframes through the dialog.
 
 As of {productname} 6.3, the `content_css_cors` option now configures the `tinymce.dom.styleSheetLoader` global when specified. This allows the `crossOrigin="anonymous"` attribute to be added to all stylesheets loaded by the editor — including editors running in inline mode — when the attribute is set to true.
 
@@ -629,7 +629,7 @@ This error has been corrected in {productname} 6.3. When running {productname} 6
 
 === HTML in messages for the `WindowManager.alert` and `WindowManager.confirm` APIs was not properly sanitized.
 
-Some calls to `DomFactory.fromHtml` were escaping the text being substituted into the HTML `string`, resulting in an isolated alert being displayed within the {productname} editor viewport. 
+Some calls to `DomFactory.fromHtml` were escaping the text being substituted into the HTML string, resulting in an isolated alert being displayed within the {productname} editor viewport. 
 
 {productname} 6.3 introduced `dompurify` into the core dependencies to reduce the risks associated with XSS attacks.
 

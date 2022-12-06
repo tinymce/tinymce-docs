@@ -231,10 +231,12 @@ tinymce.init({
   plugins: '{plugincode}',
   toolbar: '{plugincode}',
   language: 'en_US', // This is required to configure the default language used by typography.
-  typography_rules: {
-    en: ['en/quotes', 'en/spaces']
-    es: ['es/quotes', 'es/spaces']
-    }
+  typography_rules: [
+    'common/punctuation/quote',
+    'en-US/dash/main',
+    'common/nbsp/afterParagraphMark',
+    'common/nbsp/afterSectionMark',
+  ]
 });
 ----
 

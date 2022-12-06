@@ -633,7 +633,7 @@ Some calls to `DomFactory.fromHtml` were escaping the text being substituted int
 
 {productname} 6.3 introduced `dompurify` into the core dependencies to reduce the risks associated with XSS attacks.
 
-In messages for the `WindowManager.alert` and `WindowManager.confirm` APIs now sanitise properly.
+In messages for the `WindowManager.alert` and `WindowManager.confirm` APIs now sanitize properly.
 
 
 === Cross-site scripting vulnerability in TinyMCE alerts

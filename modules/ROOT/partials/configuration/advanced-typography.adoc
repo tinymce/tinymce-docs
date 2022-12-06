@@ -152,7 +152,9 @@ tinymce.init({
 [[typography_default_lang]]
 == `+typography_default_lang+`
 
-This option gives the user the ability to pre-set a default typography language within the {productname} editor.  By setting up the `typography_default_lang`, each time the user opens the {productname} editor, it will automatically default to the new default language applied.
+This option gives the user the ability to pre-set a default typography language within the {productname} editor. By setting up the `typography_default_lang`, when the user opens the {productname} editor for the first time, it will automatically default to the new default language applied. If this default language is subesequently changed by the user, the new default will be saved and persistent between documents.
+
+ By setting up the `typography_default_lang`, each time the user opens the {productname} editor, it will automatically default to the new default language applied.
 
 === Example: Using `typography_default_langs`
 

@@ -116,51 +116,6 @@ tinymce.init({
 
 |===
 
-// typography_default_lang
-// @bforte review required
-[[typography_default_lang]]
-== `+typography_default_lang+`
-
-This option gives the user the ability to pre-set a default typography language within the {productname} editor.  By setting up the `typography_default_lang`, each time the user opens the {productname} editor, it will automatically default to the new default language applied.
-
-Basic setup for {productname}'s `typography_default_lang` as below.
-
-=== Example: Using `typography_default_langs`
-
-[source,js,subs="attributes+"]
-----
-tinymce.init({
-  selector: "textarea",
-  menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
-  plugins: "typography",
-  toolbar: "typography",
-  typography_default_lang: "en-US", // Define the default language here, example: "en-US"
-});
-----
-
-// typography_langs
-[[typography_langs]]
-== `+typography_langs+`
-
-This option allows the user to apply language-specific typography rules to particular text selections within the {productname} editor.
-
-When setting up `typography_langs` in {productname} the `lang` values are required to be set such as `+"en-US", "de", "es"+`, which will then populate the typography language dropdown list for the user to select from when applying language-specific typography rules to the desired text field.
-
-=== Example: Using `typography_langs`
-
-[source,js,subs="attributes+"]
-----
-tinymce.init({
-  selector: "textarea",
-  plugins: "typography",
-  toolbar: "typography",
-  typography_langs: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
-});
-</script>
-----
-
-// Test Fiddle used by QA team for reference: https://fiddle.tiny.cloud/uqiaab/58
-
 [[typography_custom_rules]]
 == `+typography_custom_rules+`
 
@@ -192,6 +147,23 @@ tinymce.init({
 });
 ----
 
+[[typography_default_lang]]
+== `+typography_default_lang+`
+
+This option gives the user the ability to pre-set a default typography language within the {productname} editor.  By setting up the `typography_default_lang`, each time the user opens the {productname} editor, it will automatically default to the new default language applied.
+
+=== Example: Using `typography_default_langs`
+
+[source,js,subs="attributes+"]
+----
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
+  plugins: "typography",
+  toolbar: "typography",
+  typography_default_lang: "en-US", // Define the default language here, example: "en-US"
+});
+----
 
 [[typography_ignore]]
 == `+typography_ignore+`
@@ -219,6 +191,25 @@ tinymce.init({
 });
 ----
 
+
+[[typography_langs]]
+== `+typography_langs+`
+
+This option allows the user to apply language-specific typography rules to particular text selections within the {productname} editor.
+
+When setting up `typography_langs` in {productname}, `lang` values — such as `+"en-US"+`, `+"de"+`, and `+"es"+` — populate the Advanced Typography language dropdown list for the user to select from when applying language-specific typography rules to the selected text.
+
+=== Example: Using `typography_langs`
+
+[source,js,subs="attributes+"]
+----
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "typography",
+  toolbar: "typography",
+  typography_langs: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
+});
+----
 
 [[typography_rules]]
 == `+typography_rules+`

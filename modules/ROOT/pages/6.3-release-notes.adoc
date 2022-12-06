@@ -226,11 +226,11 @@ tinymce.init({
     { start: '{{', end: '}}', cmd: 'mceMergeTag' }
   ],
   mergetags_list: [
-  {
-    value: 'merge.tag',
-    title: 'A merge tag.'
-  },
-	],
+    {
+      value: 'merge.tag',
+      title: 'A merge tag.'
+    },
+  ],
   toolbar: "mergetags",
 });
 ----

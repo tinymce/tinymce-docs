@@ -478,7 +478,7 @@ This regression has been addressed in {productname} 6.3. Dragging elements conta
 
 === Range expanding capabilities behaved inconsistently depending on where the insertion point was placed.
 
-When the `ExpandRange.ts:expandRng()` function is given a range, it is expected to select a the next word whether the range begins before or after the word. Previously, however, this was discovered to not be the case.
+When the `ExpandRange.ts:expandRng()` function is given a range, it is expected to select the next word whether the range begins before or after the word. Previously, however, this was discovered to not be the case.
 
 As a result of the discovery, it was further discovered that the string `ExpandRange.ts:expandRng()` function, that checks the location of the user’s insertion point before and after, was affecting the for-loop in `walkText-implementation`.
 

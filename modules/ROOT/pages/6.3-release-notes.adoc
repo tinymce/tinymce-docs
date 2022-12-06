@@ -81,7 +81,7 @@ As of this release the only workaround is to not change *Advanced Typography* ta
 
 There is currently a conflict between the selected **SpellChecker Pro** language and the selected **Advanced Typography** language.
 
-When a **SpellChecker Pro** language is specified, **SpellChecker Pro** adds a `lang=<language-value>` attribute to the `<body>` tag and the **Advanced Typography** plugin erroneously honours this attribute when applying Typography rules.
+When a **SpellChecker Pro** language is specified, **SpellChecker Pro** adds a `lang=<language-value>` attribute to the `<body>` tag and the **Advanced Typography** plugin erroneously honors this attribute when applying Typography rules.
 
 Consequently, if, for example, the **Advanced Typography** plugin is set to Danish but the **SpellChecker Pro** language is set to English, when **Advanced Typography** rules are applied, it is English-language rules that are applied to the text, not Danish language rules.
 

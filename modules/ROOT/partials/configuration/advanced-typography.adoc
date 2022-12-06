@@ -132,7 +132,7 @@ tinymce.init({
   menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
   plugins: "typography",
   toolbar: "typography",
-	typography_default_lang: "en-US", // Define the default language here, example: "en-US"
+  typography_default_lang: "en-US", // Define the default language here, example: "en-US"
 });
 ----
 
@@ -150,7 +150,7 @@ tinymce.init({
   selector: "textarea",
   plugins: "typography",
   toolbar: "typography",
-	typography_langs: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
+  typography_langs: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
 });
 </script>
 ----

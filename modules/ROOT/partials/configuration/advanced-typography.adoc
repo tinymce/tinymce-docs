@@ -125,6 +125,8 @@ This option gives the user the ability to pre-set a default typography language 
 
 Basic setup for {productname}'s `typography_default_lang` as below.
 
+=== Example: Using `typography_default_langs`
+
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
@@ -143,6 +145,8 @@ tinymce.init({
 This option allows the user to apply language-specific typography rules to particular text selections within the {productname} editor.
 
 When setting up `typography_langs` in {productname} the `lang` values are required to be set such as `+"en-US", "de", "es"+`, which will then populate the typography language dropdown list for the user to select from when applying language-specific typography rules to the desired text field.
+
+=== Example: Using `typography_langs`
 
 [source,js,subs="attributes+"]
 ----

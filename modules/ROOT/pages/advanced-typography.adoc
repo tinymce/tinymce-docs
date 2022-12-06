@@ -11,7 +11,7 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.3v.adoc[]
 
-The {pluginname} plugin, depending on its setting, automatically or interactively replaces common typewriter-style characters with their professional typesetter’s equivalents.
+The {pluginname} plugin, depending on its setting, can replace common typewriter-style characters with their professional typesetter equivalents after the _Advanced Typography_ button is pressed. This action will modify either the entire content for the {productname} document or the specific text selection highlighted by the user.
 
 For example, if English-language typography rules are set, the {pluginname} plugin can automatically replace an open-hyphen (` - `) with an em-dash (`—`). And it can automatically replace the teardrop apostrophe (`'`) with opening and closing quote marks (`‘` and `’`).
 

@@ -34,7 +34,7 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{plugincode}',
+  plugins: 'inlinecss',
 });
 ----
 

@@ -45,3 +45,30 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 The Advanced Code plugin provides the following {productname} command.
 
 include::partial$commands/code-cmds.adoc[]
+
+// @bforte review required for the below
+== Options
+
+=== Advanced Code Inline Mode
+
+This option will allow users to open the Advanced Code Editor within {productname}'s existing editor space instead of been displayed in a seperate dialog box. 
+
+The benefits for using `advcode` inside {productname} is that mobile and narrow screen users do not require to have a `ToggleView` button, as `advcode` forces the editor to open within the existing editor space in inline mode.
+
+Type : `boolean`,
+
+Default: false
+
+== Example: Basic setup
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+ 	  "advcode" 
+  ],
+  advcode_inline: true,
+  toolbar: "code"
+});
+----

@@ -1,7 +1,7 @@
 A new API, `editor.plugins.inlinecss.getContent();` has been added to support the new `InlineCSS` plugin
 
 The API’s function is to take a {productname} document, and processes it such that the previously separate CSS is applied inline to each HTML element.
-The `editor.plugins.inlinecss.getContent();` API does not require configuration from the user server side
+The `editor.plugins.inlinecss.getContent();` API does not require configuration from the user
 
 The API will do the following
 

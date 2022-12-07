@@ -16,9 +16,9 @@ Default: false
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-  plugins: "advcode",
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'advcode',
   advcode_inline: true,
-  toolbar: "code",
+  toolbar: 'code',
 });
 ----

@@ -5,8 +5,6 @@ include::partial$misc/admon-requires-6.3v.adoc[]
 
 As part of the {productname} 6.3 release, the {pluginname} plugin includes a new option, `advcode_inline`, that allows users to open the Advanced Code Editor within {productname}’s existing editor space instead of being displayed in a separate dialog box.
 
-Using `advcode` inside {productname} means users on mobile devices or narrow screens do not require a `ToggleView` button, as `advcode` forces the editor to open within the existing editor space in inline mode.
-
 Type : `boolean`,
 
 Default: false

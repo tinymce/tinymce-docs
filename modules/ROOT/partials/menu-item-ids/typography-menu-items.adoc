@@ -1,5 +1,5 @@
 [cols="1,1,2",options="header"]
 |===
 |Menu item identifier |xref:menus-configuration-options.adoc#example-the-tinymce-default-menu-items[Default Menu Location] |Description
-|`+typography+` |Custom | Provides two sub-menu items: Enhance, which runs the currently active set of Advanced Typography rules over the document or the current selections; and Language, which displays a further menu listing all the language-specific rule sets that can be selected.
+|`+typography+` |Custom | Provides two sub-menu items: Enhance, which runs the currently active set of Advanced Typography rules over the document or the current selection; and Language, which displays a further menu listing all the language-specific rule sets that can be selected. Note that selecting a language sub-menu item both switches to that language’s rule set and runs that language’s rule set over the document or the current selection.
 |===

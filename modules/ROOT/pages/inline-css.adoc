@@ -39,12 +39,12 @@ The {pluginname} plugin does not support
 
 . https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes] (for example `button:hover { color: blue; }`).
 . https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements] (for example `p::first-line { color: blue; }`)
-. https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules] for example `@media (screen)`)
+. https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules] (for example `@media (screen)`)
 . The `!important` property.
 
 The {pluginname} plugin does support
 
-. @import with no At-rules.
+. At-rules other than @import.
 
 === Iframe mode is fully supported with some notable limitations
 

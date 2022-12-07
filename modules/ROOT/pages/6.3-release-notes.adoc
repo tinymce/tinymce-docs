@@ -367,7 +367,7 @@ When `addView` is turned on, the main editor view is hidden, and the `addView`-s
 
 Accompanying this new API is a new `ToggleView` command.
 
-The `ToggleView` command can, as its name suggest, toggle view visibility.
+The `ToggleView` command can, as its name suggests, toggle view visibility.
 
 As well, the `ToggleView` command can be queried for its current state.
 
@@ -384,14 +384,12 @@ As the example shows, these colors can be defined by either name or hex #.
 
 [source,js]
 ----
-<script type="text/javascript">
 tinymce.init({
-    selector: "textarea",
-	color_default_background: 'red',
-	color_default_foreground: '#0DEDFF',
-	toolbar: 'forecolor backcolor fontsize'
+  selector: "textarea", // change this value according to your HTML
+    color_default_background: 'red',
+    color_default_foreground: '#0DEDFF',
+    toolbar: 'forecolor backcolor fontsize'
 });
-</script>
 ----
 
 === Placing block elements inside anchor tags is now supported.
@@ -651,13 +649,11 @@ This only occurs when the toolbar is forced into a viewport small enough to rend
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea", // change this value according to your HTML
-	width: 400,
-    plugins: [
-        "advcode",
-    ],
-	advcode_inline: true,
-	toolbar_mode: 'sliding',
+  selector: "textarea", // change this value according to your HTML
+    width: 400,
+    plugins: "advcode",
+    advcode_inline: true,
+    toolbar_mode: 'sliding',
     toolbar: " undo redo | styles | bold italic underline strikethrough | code "
 });
 ----

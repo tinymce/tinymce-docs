@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TinyMCE 5.10.7
-title_nav: TinyMCE v5.10.7
+title_nav: TinyMCE 5.10.7
 description: Release notes for TinyMCE 5.10.7
 keywords: releasenotes bugfixes security advisory
 ---

@@ -413,7 +413,7 @@ For example, the following is now supported:
 
 === Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing. 
 
-{productname} 6.3 includes a new event, `ToggleToolbarDrawer`, to subscribe to the toolbar's opening and closing actions.
+{productname} 6.3 includes a new event, `ToggleToolbarDrawer`, to subscribe to the toolbar’s opening and closing actions.
 
 In previous versions of {productname}, when the `ToggleToolbarDrawer` command was set to `toolbar_mode: "sliding"` or `toolbar_mode: “floating”,` the `ToggleToolbarDrawer` did not create an opening or closing event.
 

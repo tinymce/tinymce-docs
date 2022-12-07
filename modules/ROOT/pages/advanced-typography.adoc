@@ -26,6 +26,9 @@ liveDemo::{plugincode}[]
 
 To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
 
+NOTE: The {pluginname} plugin requires a `typography_default_lang` be configured.
+
+
 For example:
 
 [source,js,subs="attributes+"]
@@ -34,6 +37,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: '{plugincode}',
+  typography_default_lang: [ "en-US" ], // Required to set specific typography language rules.
 });
 ----
 

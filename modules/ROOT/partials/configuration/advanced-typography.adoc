@@ -15,7 +15,7 @@ tinymce.init({
   selector: 'textarea', // change this value according to your html
   plugins: '{plugincode}',
   toolbar: '{plugincode} language',
-  language: 'en_US', // This is required to configure the default language used by typography.
+  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
   content_langs: [
     { title: 'English', code: 'en' },
     { title: 'Spanish', code: 'es' },
@@ -141,7 +141,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: '{plugincode}',
   toolbar: '{plugincode}',
-  language: 'en_US', // This is required to configure the default language used by typography.
+  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
   typography_custom_rules: {
     'en/quotes': (text) => text.replace(/"/g, "'"),
   },
@@ -190,7 +190,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: '{plugincode}',
   toolbar: 'typography',
-  language: 'en_US', // This is required to configure the default language used by typography.
+  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
   typography_ignore: [ 'code', 'span["lang"]' ]
 });
 ----
@@ -211,7 +211,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: "typography",
   toolbar: "typography",
-  typography_langs: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
+  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
 });
 ----
 

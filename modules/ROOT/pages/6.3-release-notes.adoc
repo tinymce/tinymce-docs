@@ -257,9 +257,9 @@ The {productname} 6.3 release includes an accompanying release of the **Spellche
 
 For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in an ancestor HTML element to the word (ie, any elements that contain the word). 
 
-When {productname} was running in Inline mode, that included HTML ancestors that were provided by the host Browser, which are outside the {productname} editor instance.
+When {productname} was running in Inline mode, that ancestry included HTML ancestors extant outside the {productname} editor instance.
 
-If a `lang` attribute existed anywhere in this ancestry that `lang` attribute value overrode all attempts by the user to set the spell checking language for the document.
+If a `lang` attribute existed anywhere in that ancestry, this ancestral `lang` attribute value overrode all attempts by the user to set the spell checking language for the document.
 
 As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
 
@@ -273,7 +273,7 @@ The {productname} 6.3 release includes an accompanying release of the **Spelling
 
 ==== Fixed format changes at the start of sentences when auto-capitalization was on
 
-When **Spelling Autocorrect** was active and had Capitalization enabled (ie had `autocorrect_capitalize: true` set), any inline formatting applied at the beginning of a new sentence, after a full stop (period) but before the start of the word, would be lost when the word was auto-capitalized. Instead the format at the end of the previous sentence was incorrectly applied. 
+When **Spelling Autocorrect** was active and had Capitalization enabled (ie had `autocorrect_capitalize: true` set), any inline formatting applied at the beginning of a new sentence, after a full stop (period) but before the start of the word, would be lost when the word was auto-capitalized. Instead, the format at the end of the previous sentence was incorrectly applied. 
 
 This update to the **Spelling Autocorrect** premium plugin removed redundant ‘pre-text’ punctuation, before the word at the start of the sentence being capitalized, from start and replacement of text-pattern.
 

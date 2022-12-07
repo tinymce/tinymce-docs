@@ -623,20 +623,17 @@ This error has been corrected in {productname} 6.3. When running {productname} 6
 [[security-fixes]]
 == Security fixes
 
-{productname} 6.3 includes fixes for the following security issues:
+{productname} 6.3 includes a fix for the following security issue:
 
-=== HTML in messages for the `WindowManager.alert` and `WindowManager.confirm` APIs was not properly sanitized
+=== A cross-site scripting (XSS) vulnerability was found in TinyMCE alerts
 
-In some circumstances, text being substituted into an HTML string was being escaped, resulting in an isolated message being displayed within the {productname} editor viewport. 
+It was discovered that HTML being inserted into the DOM for presentation in {productname} alert and confirm dialogs was not being sanitized.
 
-As of this release, {productname} 6.3 sanitizes this text to reduce the risk of XSS attacks.
+As a consequence, plugins that used the alert or confirm dialogs could be used to insert aribtrary JavaScript that would execute when an alert presented in the TinyMCE UI for the current user.
 
+As of {productname} 6.3, HTML being provided to the DOM for presentation in {productname} alert and confirm dialogs is now sanitized before being added.
 
-=== Cross-site scripting vulnerability in TinyMCE alerts
-
-A cross-site scripting (XSS) vulnerability was discovered in the alert and confirm dialogs when these dialogs were provided with malicious HTML content. This can occur in plugins that use the alert or confirm dialogs, such as in the image plugin, which presents these dialogs when certain errors occur. The vulnerability allowed arbitrary JavaScript execution when an alert presented in the TinyMCE UI for the current user.
-
-This vulnerability has been patched in this release by ensuring HTML sanitization is still performed after unwrapping invalid elements.
+This sanitizing closes the XSS vulnerability.
 
 [[known-issues]]
 == Known issues

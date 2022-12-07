@@ -202,7 +202,7 @@ A new command, `mceMergeTag` has been added which can convert any selected text 
 
 Previously only a predefined list of merge tags could be used. When the new `mceMergeTag` command is added, any selected text can be converted into a merge tag.
 
-As well, configuring the inline `text_pattern` with this command allows merge tags to be entered by manual typing.
+As well, configuring the inline `text_patterns` with this command allows merge tags to be entered by manual typing.
 
 Type the prefix, some content, the suffix, and then a word boundary character, and the `mceMergeTag` command will immediately wrap that content in a complete merge tag.
 

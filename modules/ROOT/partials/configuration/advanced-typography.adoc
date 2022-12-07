@@ -116,39 +116,6 @@ tinymce.init({
 
 |===
 
-////
-[[typography_custom_rules]]
-== `+typography_custom_rules+`
-
-// What this option does, precisely.
-// questions still about `typography_custom_rules`.
-// from the supplied example it is unclear (to me, at least) what it does.
-// is `/"/g, "'"` just `sed` and `regex`?
-// and, even if so, I remain unclear as to what
-//     'en/quotes': (text) => text.replace(/"/g, "'"),
-// does to
-//     (text)
-// other than replace ? it with
-//     text.replace(/"/g, "'")
-
-*Type:* `+Object+`
-
-=== Example: Using `typography_custom_rules`
-
-[source,js,subs="attributes+"]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  plugins: '{plugincode}',
-  toolbar: '{plugincode}',
-  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
-  typography_custom_rules: {
-    'en/quotes': (text) => text.replace(/"/g, "'"),
-  },
-});
-----
-////
-
 [[typography_default_lang]]
 == `+typography_default_lang+`
 

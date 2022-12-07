@@ -28,7 +28,9 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The {productname} 6.3 release includes the new **Inline CSS** premium plugin.
 
-The Inline CSS plugin allows the user to <notes here>.
+As is normal and long-time best practice, TinyMCE documents keep CSS and HTML separate. This practice is not, however, email-friendly.
+
+The Inline CSS plugin takes a TinyMCE document, and processes it such that the previously separate CSS is applied inline to each HTML element. This single output file is much closer to the common requirements for sending as an HTML-formatted email.
 
 For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline CSS].
 

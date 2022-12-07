@@ -26,13 +26,13 @@ tinymce.init({
   ...settings
 });
 
-const outputIframe = document.getElementById('outputIframe');
-const rawDoc = outputIframe.contentWindow.document;
 const button = document.getElementById('inline-css-btn');
 const outputTextArea = document.getElementById('output-text-area');
 
 button.addEventListener('click', () => {
   const pluginAPI = tinymce.get(0).plugins.inlinecss;
+  const outputIframe = document.getElementById('outputIframe');
+  const rawDoc = outputIframe.contentWindow.document;
   pluginAPI.getContent().then((content) => {
     outputTextArea.value = content.html;
 

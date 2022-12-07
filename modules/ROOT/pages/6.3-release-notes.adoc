@@ -90,7 +90,7 @@ The {productname} 6.3 release includes an accompanying release of the **Accessib
 
 **Accessibility Checker** 3.1.0 includes the following fixes, additions, and improvements.
 
-==== Merge tags prefix and suffix elements were not ignored
+==== Merge Tags prefix and suffix elements were not ignored
 
 Previously, **Accessibility Checker** incorrectly flagged xref:mergetags.adoc[Merge Tags] prefixes and suffixes as presenting a contrast issue.
 
@@ -194,9 +194,9 @@ With these two functions available, if there is no selected text when a new comm
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 
 
-=== Merge tags 1.1.0
+=== Merge Tags 1.1.0
 
-The {productname} 6.3 release includes an accompanying release of the **Merge tags** premium plugin.
+The {productname} 6.3 release includes an accompanying release of the **Merge Tags** premium plugin.
 
 **Merge Tags** 1.1.0 includes one addition, one fix, and one change:
 
@@ -206,7 +206,7 @@ A new command, `mceMergeTag`, is now available as a Text Patterns option.
 
 Previously only a predefined list of merge tags could be used. When the new `mceMergeTag` command is added to `text_patterns`, any text selection content can be converted into a merge tag.
 
-As well, configuring the inline text_pattern with this command allows merge tags to be entered by manual typing.
+As well, configuring the inline `text_pattern` with this command allows merge tags to be entered by manual typing.
 
 Type the prefix, some content, the suffix, and then a word boundary character, and the `mceMergeTag` command will immediately wrap that content in a complete merge tag.
 
@@ -244,7 +244,7 @@ In the event the merge tag length exceeds this, the item will not be accepted by
 
 NOTE: Some non-ASCII characters or Unicode codepoints count as more than one character.
 
-For information on the **Merge tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
 
 === Spellchecker Pro 3.1.1

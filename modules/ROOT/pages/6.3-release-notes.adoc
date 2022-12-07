@@ -202,7 +202,7 @@ The {productname} 6.3 release includes an accompanying release of the **Merge Ta
 
 ==== New mceMergeTag command to wrap selected content in a merge tag
 
-A new command, `mceMergeTag`, is now available as a Text Patterns option.
+A new command, `mceMergeTag` has been added which can convert the current editor context into a merge tag. This new command is available to use when defining xref:content-behavior-options.adoc#text_patterns[Text Patterns].
 
 Previously only a predefined list of merge tags could be used. When the new `mceMergeTag` command is added to `text_patterns`, any text selection content can be converted into a merge tag.
 

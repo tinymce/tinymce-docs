@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes security advisory
 
 ## Overview
 
-{{site.productname}} vnumtxt was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 7<sup>th</sup>, 2022. It includes {{site.productname}} 5.10.7. These release notes provide an overview of the changes for {{site.productname}} 5.10.7, including:
+{{site.productname}} 5.10.7 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 7<sup>th</sup>, 2022. It includes {{site.productname}} 5.10.7. These release notes provide an overview of the changes for {{site.productname}} 5.10.7, including:
 
 - [Security fixes](#securityfixes)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)

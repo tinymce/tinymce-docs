@@ -585,11 +585,11 @@ As of the {productname} 6.3 release, the scroll function now repositions the ins
 
 === A newline could not be inserted after an inline element with a contenteditable="false" attribute was created.
 
-In previous versions of {productname}, a newline could not be inserted when the selection was restored from a ‘bookmark’ positioning after adding an inline element with a `contenteditable="false"` attribute.
+In previous versions of {productname}, a newline could not be inserted when the selection was restored from a bookmark positioning after adding an inline element with a `contenteditable="false"` attribute.
 
 This was most commonly seen by pressing the *Return* (or *Enter*) key not moving the insertion point to a new line after a merge tag was created in the editor.
 
-For {productname} 6.3, a fix was applied to the core `SelectionOverrides` settings to ensure the user selection restores from the ‘bookmark’ positioning before and after an inline element with a `contenteditable="false"` attribute is created.
+For {productname} 6.3, a fix was applied to the core `SelectionOverrides` settings to ensure the user selection restores from the bookmark positioning before and after an inline element with a `contenteditable="false"` attribute is created.
 
 Hitting the *Return* (or *Enter*) after creating a merge tag now moves the insertion point to a new line, as expected.
 

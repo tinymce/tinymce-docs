@@ -76,16 +76,45 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/inline-css.adoc[]
+// include::partial$configuration/inline-css.adoc[]
 
 // ‘The target group is developers, not end-users’: <https://ephocks.atlassian.net/browse/EPIC-31>
 // Consequently, I’ve assumed the Inline CSS plugin will not be invoked by:
 // * using a Toolbar button; nor by
 // * selecting from a menu.
+// @bforte review required.
+=== inline_selector_filter
+
+Determines whether it is valid for a given CSS selector to have its CSS properties inlined into the HTML content
+
+Default: All selectors are considered valid to have their CSS inlined
+
+Type: `String` `RegExp` or `Function`
+
+[source,js]
+----
+inlinecss_selector_filter: (selector: string): boolean => {
+	return selector.indexOf('myprefix') !== -1;
+}
+----
+
+=== inline_file_filter
+
+Determines whether it is valid for a given CSS stylesheet to have its CSS inspected and inlined into the HTML content
+
+Default: All CSS stylesheet are considered valid to have their CSS inspected and inlined
+
+Type: `String` `RegExp` or `Function`
+
+[source,js]
+----
+inlinecss_file_filter: (href: string): boolean => {
+	return selector.indexOf('mystyles') !== -1;
+}
+----
 
 == Events
 
-// I’ve assumed — still in semi-blind fashion — that there are 
 // Inline CSS-specific events.
 
 The {pluginname} plugin provides the following events.
@@ -93,9 +122,6 @@ The {pluginname} plugin provides the following events.
 include::partial$events/{plugincode}-events.adoc[]
 
 == APIs
-
-// I’ve assumed — in continuing semi-blind fashion — that the plugin
-// offers more than one API.
 
 The {pluginname} plugin provides the following APIs.
 

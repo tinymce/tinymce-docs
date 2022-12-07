@@ -1,5 +1,36 @@
-// I’ve assumed — in continuing semi-blind fashion — the
-// Inline CSS plugin offers more than one API.
+A new API, `editor.getContent()` has been added to support the new `InlineCSS` plugin
+
+The API does not require configuration from the user server side, as the API’s function is to return a `string` around the HTML content specific that has `InlineCSS` styling applied.
+
+The API will do the following
+
+* Fire the 'InlineCSS' event
+* Get the editor's content by calling `editor.getContent()`
+* Collect all of the stylesheets defined by the `content_css` option
+* Collect all styles specified in the `content_style` option
+* Combine `content_css` and `content_style` styles while making sure `content_style` has a higher precedent
+* Iterate over the content within the {productname} editor viewport, by inlining any `InlineCSS` styles where it finds a selector match
+* Return an object that contains the content with `InlineCSS` as a `string`
+
+== Example
+
+[source,js]
+----
+interface PluginAPI {
+	getContent: () = >”content”< {
+		html: string;
+	}
+}
+----
+
+Result output after the `InlineCSS` content has been applied by the API
+
+[source,js]
+----
+{
+	html: '<p style="color: red;">hello</p>'
+}
+----
 
 [cols="1,1,4",options="header"]
 |===

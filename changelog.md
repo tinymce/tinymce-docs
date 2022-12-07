@@ -8,6 +8,11 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.7 - 2022-12-06
+
+### Fixed
+- A cross-site scripting (XSS) vulnerability in TinyMCE alerts which allowed arbitrary JavaScript execution was found and fixed.
+
 ## 5.10.6 - 2022-10-19
 
 ### Fixed
@@ -254,7 +259,7 @@ class: changelog
 - Fixed a regression in the `tinymce.create()` API that caused issues when multiple objects were created.
 - Fixed the `LineHeight` command causing the `change` event to be fired inconsistently.
 
-<!-- Note: The below anchor is matches a historical changelog format and is not needed for new versions in the changelog. -->
+<!-- Note: The below anchor matches an historical changelog format and is not needed for new versions in the changelog. -->
 <div><a class="anchor" id="version571march172021"></a></div>
 
 ## 5.7.1 - 2021-03-17

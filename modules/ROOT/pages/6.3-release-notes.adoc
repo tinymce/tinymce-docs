@@ -134,26 +134,28 @@ In previous versions of {productname} the accessibility checker used the same tr
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
-=== Advanced Code Editor
-// @bforte review required.
-// https://ephocks.atlassian.net/browse/TINY-8964 
-==== Apply new design options around advcode for `inline` mode users.
+=== Advanced Code Editor 3.1.0
 
-In {productname} 6.3, users now have the option to force the Advanced Code Editor within {productname}’s existing editor space, rather than displaying it in a seperate dialog box. 
+The {productname} 6.3 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-The benefits for using `advcode` in {productname} 6.3, is that mobile and narrow screen users is the improved benefits to the UX as there is no need to have a `ToggleView` button in the viewport.
+**Advanced Code Editor** 3.1.0 includes the following improvement.
 
-Basic setup for `inline` mode users as below.
+
+==== new option to display the Advanced Code Editor inline instead of in a dialog
+
+In {productname} 6.3, the Advanced Code Editor plugin includes a new option, `advcode_inline`, that allows users to open the Advanced Code Editor within TinyMCE’s existing editor space instead of been displayed in a seperate dialog box.
+
+Using advcode inside TinyMCE means users on mobile devices or with otherwise narrow screens do not require a ToggleView button, as advcode forces the editor to open within the existing editor space in inline mode.
+
+The basic setup for is as follows.
 
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
-  plugins: [
- 	"advcode" 
-    ],
-	advcode_inline: true, // To use this option, set value to "true".
-    toolbar: "code"
+  selector: "textarea", // change this value according to your HTML
+  plugins: "advcode",
+  advcode_inline: true, // To use this option, set this value to "true".
+  toolbar: "code",
 });
 ----
 

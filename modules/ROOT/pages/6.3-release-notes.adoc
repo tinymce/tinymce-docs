@@ -236,7 +236,7 @@ With this change, all merge tags are now subject to this limit including those p
 
 In {productname} 6.3, to support this feature, the editor will check all merge tag lengths to ensure they do not exceed 255 characters. 
 
-In the event the merge tag length exceeds this, the item will not be accepted by the editor.
+In the event the merge tag length exceeds this, the item will be inserted as plain text.
 
 NOTE: Some non-ASCII characters or Unicode codepoints count as more than one character.
 

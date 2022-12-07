@@ -15,12 +15,12 @@ tinymce.init({
   selector: 'textarea', // change this value according to your html
   plugins: '{plugincode}',
   toolbar: '{plugincode} language',
-  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
-  content_langs: [
-    { title: 'English', code: 'en' },
-    { title: 'Spanish', code: 'es' },
-    { title: 'German', code: 'de' }
-    ],
+  typography_default_lang: 'en-US',
+  typography_langs: [
+    'en-US',
+    'es',
+    'de'
+  ],
 });
 ----
 

@@ -215,8 +215,8 @@ In the following example, the Merge Tag prefix and suffix are the default, `{{` 
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-  plugins: "mergetags",
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'mergetags',
   text_patterns: [
     { start: '{{', end: '}}', cmd: 'mceMergeTag' }
   ],
@@ -226,7 +226,7 @@ tinymce.init({
       title: 'A merge tag.'
     },
   ],
-  toolbar: "mergetags",
+  toolbar: 'mergetags',
 });
 ----
 

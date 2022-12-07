@@ -4,10 +4,6 @@ tinymce.init({
   menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
   plugins: 'code typography',
   toolbar: 'bold italic | code typography',
-  content_langs: [
-    { title: 'English', code: 'en' },
-    { title: 'Spanish', code: 'es' },
-    { title: 'German', code: 'de' }
   ],
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   typography_default_lang: 'en-US',

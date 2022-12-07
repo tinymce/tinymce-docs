@@ -37,14 +37,14 @@ tinymce.init({
 
 The {pluginname} plugin does not support
 
-.https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes] (for example `button:hover { color: blue; }`).
-.https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements] (for example `p::first-line { color: blue; }`)
-.https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules] for example `@media (screen)`)
-.The `!important` property.
+. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes] (for example `button:hover { color: blue; }`).
+. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements] (for example `p::first-line { color: blue; }`)
+. https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules] for example `@media (screen)`)
+. The `!important` property.
 
 The {pluginname} plugin does support
 
-.@import with no @-rules.
+. @import with no @-rules.
 
 // * some pseudo-class selectors. See the specification for more details
 // (https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#94b1d13ff444492bbfce789f7876f39c)

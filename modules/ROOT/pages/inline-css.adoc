@@ -35,37 +35,32 @@ tinymce.init({
 
 == Usage notes
 
-// Document what we are and are not supporting. Set out the specific
-// limitations of this plugin and its API.
-// 
-1. The {pluginname} plugin skip pseudo-elements and most @-rules.
+The {pluginname} plugin does not support
+
+.https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes] (for example `button:hover { color: blue; }`).
+.https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements] (for example `p::first-line { color: blue; }`)
+.https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules] for example `@media (screen)`)
+.The `!important` property.
+
+The {pluginname} plugin does support
+
+.@import with no @-rules.
+
+// * some pseudo-class selectors. See the specification for more details
+// (https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#94b1d13ff444492bbfce789f7876f39c)
 // 
 // 2. Vogue only supports `@import` @-rules at this stage.
 // 
 // See the Jira ticket: https://ephocks.atlassian.net/browse/TINY-9265
 // 
-// And see the tech spec for @-rule support:
+// see the tech spec for @-rule support:
 // https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#555fede3a4ff4a26ad5efdf72bc1af6f.
 
 // This plugin allows extracting the content of the editor with CSS inlined.
 // Support classic and inline modes. Can be used in shadow dom. 
 // Should be able to extract CSS from the stylesheets defined via
 // `content_css` and `font_css` options, and CSS styles defined via `style_css` option.
-// 
-// Does not support:
-// * Pseudo-classes ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes))
-//   - Example: `button:hover { color: blue; }`
-// * Pseudo-elements ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements))
-//   - Example: `p::first-line { color: blue; }`
-// * At rules ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule))
-//	  - Example: @media (screen)
-// * !important property
-//   
 
-// Does support: 
-// * @import with no at-rules at this stage
-// * some pseudo-class selectors. See the specification for more details
-// (https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#94b1d13ff444492bbfce789f7876f39c)
 
 // There is only one API: `getContent()`.
 // Regarding to the events, it dispatches `InlineCSS` event.

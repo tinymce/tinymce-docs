@@ -104,12 +104,6 @@ When the alternative text exceeds 100 characters, an *Image alternative text sho
 
 This dialog also presents the alternative text in an editable field, for immediate repair.
 
-==== Replaces the single warning icon presented in dialogs with icons specific to each alert level;
-
-Previously, all **Accessibility Checker** warning dialogs presented with a triangle warning icon, regardless of whether the alert was informational, a warning, or an error.
-
-With this update, **Accessibility Checker** shows a level-specific icon with each alert.
-
 ==== The discoverability of the question mark button in warning dialogs was improved
 
 Many **Accessibility Checker** dialogs include a question mark icon. This icon is a link to further information about the discovered issue.
@@ -124,7 +118,9 @@ The icon’s text was centered and the *Issue*, *Warning*, or *Error* sub-headin
 
 Additionally, borders were removed from the exterior of the description field and contrast colors were adjusted to match the background color of the icons added for this release.
 
-==== Added correct icons in dialog alert panel for each severity level
+==== Replaced the single warning icon presented in dialogs with icons specific to each alert level;
+
+Previously, all **Accessibility Checker** warning dialogs presented with a triangle warning icon, regardless of whether the alert was informational, a warning, or an error.
 
 In {productname} 6.3, improvements for the accessibility checker were added to provide additional support for users when trying to identify different alerts such as _info_, _warning_ or _error_ icons.
 
@@ -420,6 +416,17 @@ In previous versions of {productname}, when the `ToggleToolbarDrawer` command wa
 With {productname} 6.3, the new `ToggleToolbarDrawer` event has been introduced. When the `ToggleToolbarDrawer` command is triggered, the new event initializes an `onToggle` callback that propagates the `OuterContainer` component for `SplitSlidingToolbar` and `SplitFloatingToolbar`.
 
 Once the `OuterContainer` component event is triggered, the console records either a `true` or `false` action that calls on the `onToggled` callback which supports the `FloatingToolbarButton` and `SplitFloatingToolbar` components.
+
+
+
+
+
+
+We added a ToggleToolbarDrawer event which gets passed {state: true, or state: false} depending on whether the toolbar is now visible or invisible.
+
+
+
+
 
 
 [[changes]]

@@ -161,7 +161,7 @@ The {productname} 6.3 release includes an accompanying release of the **Checklis
 
 **Checklist** 2.0.2 includes one fix:
 
-==== Checklist toggling did not preserve selection when used on an existing list.
+==== Checklist toggling did not preserve selection when used on an existing list
 
 In previous {productname} versions, when selecting content over either an ordered or unordered list, then switching the list to a checklist, the user’s content selection was not preserved.
 
@@ -249,7 +249,7 @@ The {productname} 6.3 release includes an accompanying release of the **Spellche
 
 **Spellchecker Pro** 3.1.1 includes one fix:
 
-==== Spellchecker Pro could search outside of the {productname} editor for a language match.
+==== Spellchecker Pro could search outside of the {productname} editor for a language match
 
 For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in an ancestor HTML element to the word (ie, any elements that contain the word). 
 
@@ -293,7 +293,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.3 also includes the following improvements
 
-=== The Text color and Background color menus now display a checkmark denoting the currently selected color.
+=== The Text color and Background color menus now display a checkmark denoting the currently selected color
 
 Previously, the color swatches displayed when the Text color and Background color menus were opened gave no indication as to whether or not the Text color or Background color of the current selection was one of the colors displayed in these menus.
 
@@ -392,7 +392,7 @@ tinymce.init({
 });
 ----
 
-=== Placing block elements inside anchor tags is now supported.
+=== Placing block elements inside anchor tags is now supported
 
 Previously, {productname} only supported placing inline elements — such as `+<strong></strong>+` or `+<code></code>+` — inside anchor tags
 
@@ -405,7 +405,7 @@ For example, the following is now supported:
 <a href="https://example.com/"><p>Link text inside <code>&lt;p&gt;</code> tags.</p></a>
 ----
 
-=== Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing. 
+=== Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing
 
 {productname} 6.3 includes a new event, `ToggleToolbarDrawer`, to subscribe to the toolbar’s opening and closing actions.
 
@@ -417,13 +417,13 @@ This new event passes `{state: true}` if the toolbar is visible and it passes `{
 
 {productname} 6.3 also incorporates the following changes:
 
-=== Keyboard navigation in the Text color and Background color  menus now starts on the currently selected color if that color is present.
+=== Keyboard navigation in the Text color and Background color  menus now starts on the currently selected color if that color is present
 
 In {productname} 6.3, `getCurrentColor` now checks for the first found `backcolor` and `forecolor` color before the parent color, based on the current selection or insertion point position.
 
 As a consequence, when either the Text color or Background color toolbar menus are opened, if the selected Text color or Background color matches one of the colors available from the appropriate color swatch menu, that color is pre-selected and navigating through the available colors using arrow keys on the keyboard starts from this pre-selected color.
 
-=== `setContent` is now allowed to accept any custom keys and values as a second options argument.
+=== `setContent` is now allowed to accept any custom keys and values as a second options argument
 
 In {productname} 6.3, changes have been made to the `setContent` feature that now allows the editor to accept any custom `[key: string]: (value) any;` as a second option argument when the user inserts content.
 
@@ -437,7 +437,7 @@ New tests have been added to the `setContent` feature in {productname} 6.3 that 
 
 {productname} 6.3 also includes the following bug fixes:
 
-=== Parsing media content would cause a memory leak, which for example occurred when using the getContent API.
+=== Parsing media content would cause a memory leak, which for example occurred when using the getContent API
 
 A memory leak occurred in Chrome, Edge and Firefox browsers when media content was parsed into the editor using the `tinymce.activeEditor.getContent()` method API.
 
@@ -447,7 +447,7 @@ This memory leak has been reported as https://bugs.chromium.org/p/chromium/issue
 
 A fix that prevents {productname} being affected by the leak has been included in {productname} 6.3.
 
-=== Dragging a noneditable element toward the bottom edge would cause the page to scroll up.
+=== Dragging a noneditable element toward the bottom edge would cause the page to scroll up
 
 A regression was found in {productname} 6.2 where dragging an element containing a `contentEditable=false` attribute towards a document’s edge did not cause scrolling.
 
@@ -455,7 +455,7 @@ It was also found that dragging elements containing a `contentEditable=false` at
 
 This regression has been addressed in {productname} 6.3. Dragging elements containing a `contentEditable=false` attribute towards a document’s edge causes the viewport to scroll as expected. And dragging elements containing a `contentEditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
 
-=== Range expanding capabilities behaved inconsistently depending on where the insertion point was placed.
+=== Range expanding capabilities behaved inconsistently depending on where the insertion point was placed
 
 When the `ExpandRange.ts:expandRng()` function is given a range, it is expected to select the next word whether the range begins before or after the word. Previously, however, this was discovered to not be the case.
 
@@ -465,11 +465,11 @@ Fixes were applied to the `tinymce.activeEditor.selection.expand()` function whi
 
 In {productname} 6.3, the `ExpandRange.ts:expandRng()` function now behaves as intended with any element such as text, special character, styles or elements with `contenteditable="false”` attributes. Regardless of where the insertion point is placed, the function, when given a range, now selects the word as expected.
 
-=== Compilation errors were thrown when using TypeScript 4.8.
+=== Compilation errors were thrown when using TypeScript 4.8
 
 {productname} 6.3 includes updates to the latest `rollup-plugin-dts` version to pull in a fix that was generating invalid generics. The update also allowed for a transition from typescript 4.7.4 to typescript 4.8.3, which, further, fixed compilation errors that were occurring.
 
-=== Line separator scrolling in floating toolbars.
+=== Line separator scrolling in floating toolbars
 
 In {productname} 6.0.3 the background images in the floating toolbar followed the scroll position of any nested scrolling containers when the editor width was reduced by the browser. By default, however, the background images should scroll with the main scrollable element, `+<body>+`.
 
@@ -477,7 +477,7 @@ As a consequence, the divider lines that act as background image to improve the 
 
 In {productname} 6.3 background images now scroll with the toolbar’s content as expected.
 
-=== A double bottom border appeared on inline mode editor for the tinymce-5 skin.
+=== A double bottom border appeared on inline mode editor for the tinymce-5 skin
 
 The `inline-mode` toolbar showed an additional border line with {productname} 6.x premium skins that used {productname} 5.x skin packages.
 
@@ -528,7 +528,7 @@ In {productname} 6.x, the height of the _context toolbar_ was increased, while t
 With {productname} 6.3 this distance has been increased. This allows the _context toolbar_ to correctly switch locations when a user selects cells close to the toolbar, allowing the top or bottom visible rows of a table to be selected without issue when the _context toolbar_ is visible.
 
 
-=== The Quick Insert context toolbar provided by the quickbars plugin showed when the cursor was in a fake block caret.
+=== The Quick Insert context toolbar provided by the quickbars plugin showed when the cursor was in a fake block caret
 
 The Quick Insert context toolbar, provided by the xref:quickbars.adoc[Quick Toolbars] plugin, was displayed when the cursor was moved to the left of an element with a `contenteditable="false"` attribute.
 
@@ -548,7 +548,7 @@ As a consequence, when a {productname} instance was running on Firefox, the `win
 This has been fixed in {productname} 6.3. All browsers, including Firefox, now return the correct values even when the iframe is hidden.
 
 
-=== Dragging a noneditable element before or after another noneditable element now works correctly.
+=== Dragging a noneditable element before or after another noneditable element now works correctly
 
 Elements that had the `contenteditable="false"` attribute set could not be dragged to the left of an ancestor element.
 
@@ -564,7 +564,7 @@ the string _non-editable text_ could not be dragged to before the opening `+<p>+
 {productname} 6.3 can place a fake insertion point next to elements with a `contenteditable="false"` attribute when another element with a `contenteditable="false"` attribute is dragged, allowing the object to be moved before and after other such elements.
 
 
-=== The restored selection or location after a redo or undo action was not scrolled into view.
+=== The restored selection or location after a redo or undo action was not scrolled into view
 
 Prior to the {productname} 6.3 release, executing an undo or redo function in the editor did not scroll the editor to the new insertion point or selection, should the undo or redo result in the insertion point or selection being out of the current viewport.
 
@@ -573,7 +573,7 @@ Instead, users had to manually scroll to the insertion point or selection after 
 As of the {productname} 6.3 release, the scroll function now repositions the insertion point to the last known undo or redo location.
 
 
-=== A newline could not be inserted after an inline element with a contenteditable="false" attribute was created.
+=== A newline could not be inserted after an inline element with a contenteditable="false" attribute was created
 
 In previous versions of {productname}, a newline could not be inserted when the selection was restored from a bookmark positioning after adding an inline element with a `contenteditable="false"` attribute.
 
@@ -584,7 +584,7 @@ For {productname} 6.3, a fix was applied to the core `SelectionOverrides` settin
 Hitting the *Return* (or *Enter*) after creating a merge tag now moves the insertion point to a new line, as expected.
 
 
-=== Inline mode did not respect the `content_css_cors` option.
+=== Inline mode did not respect the `content_css_cors` option
 
 In previous versions of {productname}, the `tinymce.styleSheetLoader` global was not configured by the `content_css_cors` option, when specified.
 

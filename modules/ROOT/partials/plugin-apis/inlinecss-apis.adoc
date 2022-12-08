@@ -1,0 +1,59 @@
+A new API, `editor.plugins.inlinecss.getContent();` has been added to support the new `InlineCSS` plugin
+
+The API’s function is to take a {productname} document, and processes it such that the previously separate CSS is applied inline to each HTML element.
+The `editor.plugins.inlinecss.getContent();` API does not require configuration from the user
+
+The API will do the following
+
+* Fire the 'InlineCSS' event
+* Get the editor's content by calling the `editor.plugins.inlinecss.getContent();`
+* Collect all of the stylesheets defined by the `content_css` option
+* Collect all styles specified in the `content_style` option
+* Combine `content_css` and `content_style` styles while making sure `content_style` has a higher precedent
+* Iterate over the content within the {productname} editor viewport, by inlining any `InlineCSS` styles where it finds a selector match
+* Return an object that contains the content with `InlineCSS` as a `string`
+
+== Example
+
+[source,ts]
+----
+interface PluginAPI {
+  getContent: () => Promise<{
+    html: string;
+  }>
+}
+----
+
+Result output after the `InlineCSS` content has been applied by the API
+
+[source,js]
+----
+{
+  html: '<p style="color: red;">hello</p>'
+}
+----
+// @bforte do we need the below?
+
+// [cols="1,1,4",options="header"]
+// |===
+// |Name |Arguments |Description
+// |api-1 |args-1 |description-1
+// |api-2 |args-2 |description-2
+// |api-3 |args-3 |description-3
+// |===
+
+// .Examples
+// [source,js]
+// ----
+// // use-case-1
+// tinymce.activeEditor.plugins.inlinecss.arg-1();
+
+// // use-case-2
+// tinymce.activeEditor.plugins.inlinecss.arg-2();
+
+// // use-case-3
+// tinymce.activeEditor.plugins.inlinecss.arg-3();
+
+// // use-case-4
+// tinymce.activeEditor.plugins.inlinecss.arg-4();
+// ----

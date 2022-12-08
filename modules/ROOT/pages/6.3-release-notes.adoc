@@ -593,7 +593,7 @@ In previous versions of {productname}, the `tinymce.dom.styleSheetLoader` global
 Consequently, stylesheets loaded by {productname} onto the outer document page did not have the `crossorigin="anonymous"` attribute. This particularly affected {productname} instances running in inline mode, because the `tinymce.dom.styleSheetLoader` global is used to load stylesheets used by inline editors. (Stylesheets for {productname} editors running in iframe mode are specific to the editor.)
 Without the `crossorigin="anonymous"` attribute being set, no external stylesheets were loaded. And inline editors with the `pageembed` plugin loaded and the `tiny_pageembed_inline_styles` option set to `true` would, as a result, return an error when attempting to insert any iframes through the dialog.
 
-As of {productname} 6.3, the `content_css_cors` option now configures the `tinymce.dom.styleSheetLoader` global when specified. This allows the `crossorigin="anonymous"` attribute to be added to all stylesheets loaded by the editor — including editors running in inline mode — when the attribute is set to true.
+As of {productname} 6.3, the `content_css_cors` option now configures the `tinymce.dom.styleSheetLoader` global when specified. This allows the `crossorigin="anonymous"` attribute to be added to all stylesheets loaded by the editor — including editors running in inline mode — when the option is set to true.
 
 === The insertion point moved to the previous line when a text pattern executed a `mceInsertContent` command on Firefox
 

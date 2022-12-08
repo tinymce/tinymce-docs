@@ -6,10 +6,10 @@ Default: All selectors are considered valid to have their CSS inlined
 
 Type: `String` `RegExp` or `Function`
 
-[source,js]
+[source,ts]
 ----
 inlinecss_selector_filter: (selector: string): boolean => {
-	return selector.indexOf('myprefix') !== -1;
+  return selector.indexOf('myprefix') !== -1;
 }
 ----
 

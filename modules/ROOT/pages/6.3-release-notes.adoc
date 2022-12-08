@@ -317,7 +317,7 @@ As a consequence, when either the Text color or Background color toolbar menus a
 
 {productname} 6.3 introduced two new API functions that allow a user to select a word from the insertion point location which applies a new expand feature.
 
-This new `tinymce.selection` API function allows {productname} users and developers to expand the selection range to contain the entire word when the selection is collapsed within the word.
+This new `tinymce.selection.expand` API function allows {productname} users and developers to expand the selection range to contain the entire word when the selection is collapsed within the word.
 
 To support this new API function, {productname} 6.3 also introduced `tinymce.dom.RangeUtils`, which focuses on a new `expand` method range that expands around the entire word that the user selection was collapsed within by the `tinymce.selection` API function.
 

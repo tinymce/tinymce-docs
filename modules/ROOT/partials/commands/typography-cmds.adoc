@@ -1,0 +1,11 @@
+[cols="1,3",options="header"]
+|===
+|Command |Description
+|mceTypography |Run the currently active Advanced Typography rules over either the entire content for the {productname} document or the specific text selection highlighted by the user.
+|===
+
+.Example
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceTypography');
+----

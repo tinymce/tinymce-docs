@@ -301,7 +301,7 @@ With this update, when the selected text’s current Text color or Background co
 
 === Text color and Background color toolbar menus now pre-select the color for the selected text or insertion point position.
 
-{productname} 6.3 included an improvement to the Text color or Background color menus that allows the user to identify the pre-populated color for the selected-text: a ✔️ character displayed over the color that matches the currently selected Text color or Background color.
+{productname} 6.3 included an improvement to the Text color or Background color menus that allows the user to identify the pre-populated color for the selected-text: a checkmark (also known as a tick or tickmark) displayed over the color that matches the currently selected Text color or Background color.
 
 In addition to this, in {productname} 6.3, `getCurrentColor` checks for the first found `backcolor` and `forecolor` color before the parent color, based on the current selection or insertion point position.
 

@@ -636,12 +636,12 @@ This only occurs when the toolbar is forced into a viewport small enough to rend
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-    width: 400,
-    plugins: "advcode",
-    advcode_inline: true,
-    toolbar_mode: 'sliding',
-    toolbar: " undo redo | styles | bold italic underline strikethrough | code "
+  selector: 'textarea', // change this value according to your HTML
+  width: 400,
+  plugins: 'advcode',
+  advcode_inline: true,
+  toolbar_mode: 'sliding',
+  toolbar: 'undo redo | styles | bold italic underline strikethrough | code'
 });
 ----
 

@@ -15,12 +15,12 @@ The API will do the following
 
 == Example
 
-[source,js]
+[source,ts]
 ----
 interface PluginAPI {
-	getContent: () => Promise<{
-		html: string;
-	}>
+  getContent: () => Promise<{
+    html: string;
+  }>
 }
 ----
 

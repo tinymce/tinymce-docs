@@ -357,7 +357,7 @@ To accompany this, {productname} 6.3 now allows for the creation of a separate `
 NOTE: If no separate values are set for `color_map_forground` and `color_map_background`, they still default to the shared or previous values as before.
 
 
-=== A new addView API was added to editor.ui.registry 
+=== A new `addView` API was added to `editor.ui.registry`
 
 The new `addView` API registers a new view container.
 

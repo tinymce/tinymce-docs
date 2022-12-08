@@ -612,7 +612,7 @@ This error has been corrected in {productname} 6.3. When running {productname} 6
 
 It was discovered that HTML being inserted into the DOM for presentation in {productname} alert and confirm dialogs was not being sanitized.
 
-As a consequence, plugins that used the alert or confirm dialogs could be used to insert aribtrary JavaScript that would execute when an alert presented in the TinyMCE UI for the current user.
+As a consequence, plugins that used the alert or confirm dialogs could be used to insert arbitrary JavaScript that would execute when an alert presented in the TinyMCE UI for the current user.
 
 As of {productname} 6.3, HTML being provided to the DOM for presentation in {productname} alert and confirm dialogs is now sanitized before being added.
 

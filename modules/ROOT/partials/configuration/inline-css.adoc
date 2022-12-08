@@ -21,10 +21,10 @@ Default: All CSS stylesheet are considered valid to have their CSS inspected and
 
 Type: `String` `RegExp` or `Function`
 
-[source,js]
+[source,ts]
 ----
 inlinecss_file_filter: (href: string): boolean => {
-	return selector.indexOf('mystyles') !== -1;
+  return selector.indexOf('mystyles') !== -1;
 }
 ----
 

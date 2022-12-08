@@ -271,7 +271,7 @@ The {productname} 6.3 release includes an accompanying release of the **Spelling
 
 When **Spelling Autocorrect** was active and had Capitalization enabled (ie had `autocorrect_capitalize: true` set), any inline formatting applied at the beginning of a new sentence, after a full stop (period) but before the start of the word, would be lost when the word was auto-capitalized. Instead, the format at the end of the previous sentence was incorrectly applied. 
 
-This update to the **Spelling Autocorrect** premium plugin removed redundant ‘pre-text’ punctuation, before the word at the start of the sentence being capitalized, from start and replacement of text-pattern.
+This update to the **Spelling Autocorrect** premium plugin includes changes to the **Spelling Autocorrect** logic that prevent this.
 
 As a consequence, formatting is now retained when the word is capitalized, as expected.
 

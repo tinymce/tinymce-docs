@@ -387,10 +387,10 @@ As the example shows, these colors can be defined by either name or hex #.
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-    color_default_background: 'red',
-    color_default_foreground: '#0DEDFF',
-    toolbar: 'forecolor backcolor fontsize'
+  selector: 'textarea', // change this value according to your HTML
+  color_default_background: 'red',
+  color_default_foreground: '#0DEDFF',
+  toolbar: 'forecolor backcolor fontsize'
 });
 ----
 

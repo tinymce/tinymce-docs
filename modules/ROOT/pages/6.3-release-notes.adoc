@@ -453,7 +453,7 @@ A fix that prevents {productname} being affected by the leak has been included i
 
 A regression was found in {productname} 6.2 where dragging an element containing a `contentEditable=false` attribute towards a document’s edge did not cause scrolling.
 
-It was also found that dragging elements containing a `contentEditable=false` attribute toward the bottom edge causes similar behavior. In this instance, however, when the elements containing a `contentEditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
+It was also found that dragging elements containing a `contenteditable=false` attribute toward the bottom edge causes similar behavior. In this instance, however, when the elements containing a `contenteditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
 
 This regression has been addressed in {productname} 6.3. Dragging elements containing a `contenteditable=false` attribute towards a document’s edge causes the viewport to scroll as expected. And dragging elements containing a `contenteditable=false` attribute toward the bottom edge of the editor no longer causes the page to scroll up.
 

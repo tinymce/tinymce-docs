@@ -590,7 +590,7 @@ Hitting the *Return* (or *Enter*) after creating a merge tag now moves the inser
 
 In previous versions of {productname}, the `tinymce.styleSheetLoader` global was not configured by the `content_css_cors` option, when specified.
 
-Consequently, stylesheets loaded by {productname} onto the outer document page did not have the `crossOrigin="anonymous"` attribute. This particularly affected {productname} instances running in inline mode, because the `tinymce.styleSheetLoader` global is used to load stylesheets used by inline editors. (Stylesheets for {productname} editors running in iframe mode are specific to the editor.)
+Consequently, stylesheets loaded by {productname} onto the outer document page did not have the `crossorigin="anonymous"` attribute. This particularly affected {productname} instances running in inline mode, because the `tinymce.styleSheetLoader` global is used to load stylesheets used by inline editors. (Stylesheets for {productname} editors running in iframe mode are specific to the editor.)
 
 Without the `crossorigin="anonymous"` attribute being set, no external stylesheets were loaded. And inline editors with the `pageembed` plugin loaded and the `tiny_pageembed_inline_styles` option set to `true` would, as a result, return an error when attempting to insert any iframes through the dialog.
 

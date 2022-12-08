@@ -1,0 +1,216 @@
+[[typography_default_lang]]
+== `+typography_default_lang+`
+
+This option gives the user the ability to pre-set a default typography language within the {productname} editor. By setting up the `typography_default_lang`, when the user opens the {productname} editor for the first time, it will automatically default to the new default language applied. If this default language is subsequently changed by the user, the new default will be saved and persistent between documents.
+
+By setting up the `typography_default_lang`, each time the user opens the {productname} editor, it will automatically default to the new default language applied.
+
+=== Example: Using `typography_default_langs`
+
+[source,js,subs="attributes+"]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
+  plugins: 'typography',
+  toolbar: 'typography',
+  typography_default_lang: 'en-US', // Define the default language here, example: 'en-US'
+});
+----
+
+[[typography_ignore]]
+== `+typography_ignore+`
+
+This option tells the {pluginname} plugin to ignore content within specified HTML tags or within specified HTML tags that have specified attributes.
+
+If an HTML tag or an HTML tag with a specified attribute is added to the `typography_ignore` array, the Typography plugin’s rules are not applied to material set within that tag.
+
+*Type:* `+Array+`
+
+*Possible values:* `[ '<html-selector>', 'span["<html-selector>"]' ]`
+
+*Default value:* none
+
+=== Example: Using `typography_ignore`
+
+[source,js,subs="attributes+"]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: '{plugincode}',
+  toolbar: 'typography',
+  typography_default_lang: 'en-US', 
+  typography_ignore: [ 'code', 'span["lang"]' ]
+});
+----
+
+
+////
+[[typography_default_lang]]
+== `+typography_default_lang+`
+
+This option allows the user to apply language-specific typography rules to particular text selections within the {productname} editor.
+
+When setting up `typography_langs` in {productname}, `lang` values — such as `+"en-US"+`, `+"de"+`, and `+"es"+` — populate the Advanced Typography language dropdown list for the user to select from when applying language-specific typography rules to the selected text.
+
+=== Example: Using `typography_default_lang`
+
+[source,js,subs="attributes+"]
+----
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "typography",
+  toolbar: "typography",
+  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
+});
+----
+////
+
+[[typography_langs]]
+== `+typography_langs+`
+
+This option sets which languages are available for applying language-specific typography rules.
+
+A user can then select text and select from the available languages. That language’s language-specific typography rules are then applied to the selected text.
+
+*Type:* `+Object+`
+
+=== Example: Using `typography_langs`
+
+[source,js,subs="attributes+"]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your html
+  plugins: '{plugincode}',
+  toolbar: '{plugincode} language',
+  typography_default_lang: 'en-US',
+  typography_langs: [
+    'en-US',
+    'es',
+    'de'
+  ],
+});
+----
+
+=== Currently supported languages
+
+[cols="1,1"]
+|===
+|Supported language |Language code 
+
+|Belarusian
+|be
+
+|Bulgarian
+|bg
+
+|Catalan
+|ca
+
+|Czech
+|cs
+
+|Danish
+|da
+
+|Dutch
+|nl
+
+|English (UK)
+|en-GB
+
+|English (US)
+|en-US
+
+|Esperanto
+|eo
+
+|Estonian
+|et
+
+|Finnish
+|fi
+
+|German
+|de
+
+|Greek
+|el
+
+|Hungarian
+|hu
+
+|Irish
+|ga
+
+|Italian
+|it
+
+|Latvian
+|lv
+
+|Norwegian
+|no
+
+|Polish
+|pl
+
+|Romanian
+|ro
+
+|Russian
+|ru
+
+|Servian
+|sr
+
+|Slovak
+|sk
+
+|Slovenian
+|sl
+
+|Spanish
+|es
+
+|Swedish
+|sv
+
+|Turkish
+|tr
+
+|Ukrainian
+|uk
+
+|===
+
+[[typography_rules]]
+== `+typography_rules+`
+
+This option specifies which rules are available to the {pluginname} plugin.
+
+The {pluginname} plugin rules are sourced from the https://github.com/typograf/typograf[typograf] library.
+
+All rules supported by the {pluginname} plugin are documented in the https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md[Rules of typograf].
+
+*Type:* `+Array+`
+
+=== Example: Using `typography_rules`
+
+[source,js,subs="attributes+"]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: '{plugincode}',
+  toolbar: '{plugincode}',
+  typography_default_lang: 'en_US', // This is required to configure the default language used by typography.
+  typography_rules: [
+    'common/punctuation/quote',
+    'en-US/dash/main',
+    'common/nbsp/afterParagraphMark',
+    'common/nbsp/afterSectionMark',
+  ]
+});
+----
+
+

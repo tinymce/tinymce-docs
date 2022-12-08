@@ -39,7 +39,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: '{plugincode}',
   toolbar: 'typography',
-  typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
+  typography_default_lang: 'en-US', 
   typography_ignore: [ 'code', 'span["lang"]' ]
 });
 ----

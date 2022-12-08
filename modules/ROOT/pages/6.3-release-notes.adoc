@@ -451,7 +451,7 @@ A fix that prevents {productname} being affected by the leak has been included i
 
 === Dragging a noneditable element toward the bottom edge would cause the page to scroll up
 
-A regression was found in {productname} 6.2 where dragging an element containing a `contentEditable=false` attribute towards a document’s edge did not cause scrolling.
+A regression was found in {productname} 6.2 where dragging an element containing a `contenteditable=false` attribute towards a document’s edge did not cause scrolling.
 
 It was also found that dragging elements containing a `contenteditable=false` attribute toward the bottom edge causes similar behavior. In this instance, however, when the elements containing a `contenteditable=false` attribute was dragged to the bottom of the page the editor would sometimes scroll up.
 

@@ -674,7 +674,7 @@ As of {productname} 6.3, however, this checkmark does not appear if the *Text co
 
 This presentation issue does not affect functionality. Selecting a new *Text color* or *Background color*, either via the *Format* menu or the toolbar, changes the selected text color or the selected text’s background color, as expected.
 
-A workaround is to display the {productname} toolbar with the *Text color* and *Background color* options and access these commands from the toolbar.
+A workaround is to specify the *Text color* and *Background color* using the color swatch UI provided by the `forecolor` and `backcolor` toolbar buttons.
 
 
 === Checkmark over the current Background color is not displayed when inline formatting is applied in a certain order

@@ -321,7 +321,7 @@ This new `tinymce.selection.expand` API function allows {productname} users and 
 
 To support this new API function, {productname} 6.3 also introduced `tinymce.dom.RangeUtils`, which focuses on a new `expand` method range that expands around the entire word that the user selection was collapsed within by the `tinymce.selection` API function.
 
-If, in the following example, a user places the insertion point between the first and second `m` in the word, `comment`, then clicks the _Add comment_ toolbar button, or selects _Insert > Add comment_ from the TinyMCE menu, or presses the _Add comment_ keyboard shortcut (eg ⌘+⌥+M) — 
+These new API functions are implemented to improve the selection of whole words in the Comments plugin. If, in the following example, a user places the insertion point between the first and second `m` in the word, `comment`, then clicks the _Add comment_ toolbar button, or selects _Insert > Add comment_ from the TinyMCE menu, or presses the _Add comment_ keyboard shortcut (eg ⌘+⌥+M) — 
 
 [source,html]
 ----

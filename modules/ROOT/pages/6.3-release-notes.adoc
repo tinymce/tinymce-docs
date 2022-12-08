@@ -523,7 +523,7 @@ In {productname} 6.3 the mechanism now checks the text patterns only and applies
 
 When scrolled past the top row of a table, the table _context toolbar_ overlapped any rows at the top of the editor to display below the toolbar.
 
-In {productname} 5.x, the _context toolbar_ switched from being at the top of the editor, to the bottom of the table or editor when a user attempted to select cells close to the top row of the table. And vice versa when the _context toolbar_ was docked to the bottom of the editor.
+In {productname} 5.x, the _context toolbar_ switches from being at the top of the editor, to the bottom of the table or editor when a user attempted to select cells close to the top row of the table. And vice versa when the _context toolbar_ was docked to the bottom of the editor.
 
 In {productname} 6.x, the height of the _context toolbar_ was increased, while the distance from which it needed to be selected in order to switch locations was not.
 

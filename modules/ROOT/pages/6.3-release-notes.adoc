@@ -427,7 +427,7 @@ As a consequence, when either the Text color or Background color toolbar menus a
 
 === `setContent` is now allowed to accept any custom keys and values as a second options argument
 
-In {productname} 6.3, changes have been made to the `setContent` feature that now allows the editor to accept any custom `[key: string]: (value) any;` as a second option argument when the user inserts content.
+In {productname} 6.3, changes have been made to the `setContent` API that now allows the editor to accept any custom `[key: string]: (value) any;` as a second option argument when the user inserts content.
 
 The provides more flexibility with the `getContent` and `setContent` features.
 

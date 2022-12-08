@@ -183,7 +183,7 @@ With this update, the comments button, menu-item, comment sidebar and shortcut k
 
 ==== The selection now expands to encompass the word containing the insertion point when a comment is added
 
-{productname} 6.3 adds xref:additions[two new API functions] — `tinymce.selection` and `tinymce.dom.RangeUtils`.
+{productname} 6.3 adds xref:additions[two new API functions] — `tinymce.selection.expand` and `tinymce.dom.RangeUtils.expand`.
 
 With these two functions available, if there is no selected text when a new comment is added, {productname} automatically extends the selection to encompass the word containing the insertion point and links the newly added comment to this automatically selected word.
 

@@ -376,7 +376,7 @@ As well, the `ToggleView` command can be queried for its current state.
 
 === New `color_default_foreground` and `color_default_background` options to set the initial default color for the forecolor and backcolor toolbar buttons and menu items.
 
-{productname} 6.3 adds a new feature that allows the default color for the `color_default_foreground` and `color_default_background` in the toolbar button menu to be pre-defined.
+{productname} 6.3 adds a new feature that allows the default color for the icons in the foreground color and background color toolbar buttons to be pre-defined.
 
 The `color_default_foreground` and `color_default_background` colors are pre-defined by including them in `tinymce.init`
 

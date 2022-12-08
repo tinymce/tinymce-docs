@@ -461,8 +461,6 @@ This regression has been addressed in {productname} 6.3. Dragging elements conta
 
 When the `ExpandRange.ts:expandRng()` function is given a range, it is expected to select the next word whether the range begins before or after the word. Previously, however, this was discovered to not be the case.
 
-As a result of the discovery, it was further discovered that the string `ExpandRange.ts:expandRng()` function, that checks the location of the user’s insertion point before and after, was affecting the for-loop in `walkText-implementation`.
-
 Fixes were applied to the `tinymce.activeEditor.selection.expand()` function which is responsible for directly affecting the white space next to a word that accompanies a space-separated instance. 
 
 In {productname} 6.3, the `ExpandRange.ts:expandRng()` function now behaves as intended with any element such as text, special character, styles or elements with `contenteditable="false”` attributes. Regardless of where the insertion point is placed, the function, when given a range, now selects the word as expected.

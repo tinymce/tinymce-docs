@@ -22,7 +22,7 @@ const settings = {
 };
 
 tinymce.init({
-  selector: "textarea.classic",
+  selector: 'textarea.classic',
   ...settings
 });
 

@@ -278,7 +278,7 @@ Three plugins have been empty stub plugins since {productname} 5.0, and were rem
 . `contextmenu`
 . `textcolor`
 
-NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], https://tiny.cloud/docs/plugins/premium/tinymcespellchecker/[Spell Checker Pro], which offers equivalent functionality and more, is available.
+NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
@@ -290,7 +290,7 @@ _Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/feat
 
 The `imagetools_proxy` option has been renamed to `editimage_proxy`. However, when setting up xref:introduction-to-premium-selfhosted-services.adoc[Tiny services] the recommended configuration is now `editimage_proxy_service_url` and will be used in favour of `editimage_proxy` if both are set.
 
-Users of the Free version of {productname} 5.x who rely on the removed `imagetools` plugin should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to https://tiny.cloud/tinymce/features/#productivity[_Enhanced Image Editing_].
+Users of the Free version of {productname} 5.x who rely on the removed `imagetools` plugin should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to xref:editimage.adoc[Enhanced Image Editing].
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
@@ -331,7 +331,7 @@ There is an open https://github.com/tinymce/tinymce/discussions/7487[request for
 +
 If a community-maintained version of the `paste` plugin becomes available, we will link to it from here.
 
-NOTE: The Premium plugin, https://tiny.cloud/tinymce/features/powerpaste[`PowerPaste`], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
+NOTE: The Premium plugin, xref:introduction-to-powerpaste.adoc[PowerPaste], is available. It provides the capability to accept data from Microsoft Word and Microsoft Excel, and clean-up the received data before pasting it into place.
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
@@ -343,7 +343,7 @@ The `tabfocus_elements` option, which relied on the `tabfocus` plugin, no longer
 
 As per standard web practice, the `tabindex` attribute should be used instead of the `tabfocus` plugin or any of the `tabfocus` plugin's options.
 
-The tab order of a page's elements, including {productname}, is configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`tabindex` attribute] on the relevant HTML elements. The browser then natively handles the tab order.
+The tab order of a page’s elements, including {productname}, is configured by setting the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[`tabindex` attribute] on the relevant HTML elements. The browser then natively handles the tab order.
 
 To configure `tabindex` for the {productname} editor, set the attribute on the target element for the editor. For example:
 
@@ -367,7 +367,7 @@ As noted in the xref:6.0-release-notes-core-changes.adoc#new-and-improved-plugin
 
 Table of Contents has been updated and is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
-Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `toc` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as https://tiny.cloud/tinymce/features/#productivity[_Table of Contents_].
+Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `toc` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as xref:tableofcontents.adoc[Table of Contents].
 
 The new Premium `tableofcontents` plugin also changes the names of several elements.
 

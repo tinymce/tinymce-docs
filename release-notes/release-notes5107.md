@@ -29,7 +29,7 @@ As of TinyMCE 5.10.7, HTML being provided to the DOM for presentation in TinyMCE
 
 This sanitizing closes the XSS vulnerability.
 
-CVE: [CVE-2022-23494](https://cve.org/CVERecord?id=CVE-2022-23494).
+CVE: [CVE-2022-23494](https://www.cve.org/CVERecord?id=CVE-2022-23494).
 
 > **NOTE**: Tiny Technologies would like to thank [P4rkJW](https://p4rkjw.com/) for discovering this vulnerability.
 

@@ -22,15 +22,15 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * New `getTransparentElements` function added to `tinymce.html.Schema` to return a map object of transparent HTML elements.
 * Added `ToggleToolbarDrawer` event to subscribe to toolbar’s opening and closing.
 
-=== Changed
-* Transparent elements, like anchors, are now allowed in the root of the editor body if they contain blocks.
-* Colorswatch keyboard navigation now starts on currently selected color if present in the colorswatch.
-* `setContent` is now allowed to accept any custom keys and values as a second options argument.
-
 === Improved
 * Transparent elements, like anchors, can now contain block elements.
 * Colorswatch now displays a checkmark for selected color.
 * Color picker dialog now starts on the appropriate color for the cursor position.
+
+=== Changed
+* Transparent elements, like anchors, are now allowed in the root of the editor body if they contain blocks.
+* Colorswatch keyboard navigation now starts on currently selected color if present in the colorswatch.
+* `setContent` is now allowed to accept any custom keys and values as a second options argument.
 
 === Fixed
 * Parsing media content would cause a memory leak, which for example occurred when using the `getContent` API.
@@ -322,6 +322,12 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Clicking on menu items could cause an unexpected console warning if the `onAction` function caused the menu to close.
 * Fixed various color and contrast issues for the dark skins.
 
+=== Deprecated
+* The dialog button component's `primary` property has been deprecated and will be removed in the next major release. Use the new `buttonType` property instead.
+* The `fire()` function of `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been deprecated and will be removed in the next major release. Use the `dispatch()` function instead.
+* The `content` property on the `SetContent` event has been deprecated and will be removed in the next major release.
+* The return value of the `editor.setContent` API has been deprecated and will be removed in the next major release.
+
 === Removed
 * Removed support for Microsoft Internet Explorer 11.
 * Removed support for Microsoft Word from the opensource paste functionality.
@@ -365,9 +371,3 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Removed the deprecated `fullpage`, `spellchecker`, `bbcode`, `legacyoutput`, `colorpicker`, `contextmenu` and `textcolor` plugins.
 * Removed the undocumented `editor.editorCommands.hasCustomCommand` API.
 * Removed the undocumented `mceResetDesignMode`, `mceRepaint` and `mceBeginUndoLevel` commands.
-
-=== Deprecated
-* The dialog button component's `primary` property has been deprecated and will be removed in the next major release. Use the new `buttonType` property instead.
-* The `fire()` function of `tinymce.Editor`, `tinymce.dom.EventUtils`, `tinymce.dom.DOMUtils`, `tinymce.util.Observable` and `tinymce.util.EventDispatcher` has been deprecated and will be removed in the next major release. Use the `dispatch()` function instead.
-* The `content` property on the `SetContent` event has been deprecated and will be removed in the next major release.
-* The return value of the `editor.setContent` API has been deprecated and will be removed in the next major release.

@@ -1,7 +1,7 @@
 = tinymce.html.Schema
 :navtitle: tinymce.html.Schema
 :description: Schema validator class.
-:keywords: addCustomElements, addValidChildren, addValidElements, children, getBlockElements, getBoolAttrs, getCustomElements, getElementRule, getInvalidStyles, getMoveCaretBeforeOnEnterElements, getNonEmptyElements, getSelfClosingElements, getSpecialElements, getTextBlockElements, getTextInlineElements, getValidClasses, getValidStyles, getVoidElements, getWhitespaceElements, isValid, isValidChild, setValidElements
+:keywords: addCustomElements, addValidChildren, addValidElements, children, getBlockElements, getBoolAttrs, getCustomElements, getElementRule, getInvalidStyles, getMoveCaretBeforeOnEnterElements, getNonEmptyElements, getSelfClosingElements, getSpecialElements, getTextBlockElements, getTextInlineElements, getTransparentElements, getValidClasses, getValidStyles, getVoidElements, getWhitespaceElements, isValid, isValidChild, setValidElements
 :moxie-type: api
 
 Schema validator class.
@@ -49,6 +49,7 @@ in a special way such as script, style, textarea etc. The map object values
 are regexps used to find the end of the element.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getTextBlockElements[getTextBlockElements()]|Returns a map with text block elements. For example: `&#60;p&#62;`, `&#60;h1&#62;` to `&#60;h6&#62;`, `&#60;div&#62;` or `&#60;address&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getTextInlineElements[getTextInlineElements()]|Returns a map of inline text format nodes. For example: `&#60;strong&#62;`, `&#60;span&#62;` or `&#60;ins&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getTransparentElements[getTransparentElements()]|Returns a map with elements that should be treated as transparent.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getValidClasses[getValidClasses()]|Name/value map object with valid classes for each element.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getValidStyles[getValidStyles()]|Name/value map object with valid styles for each element.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getVoidElements[getVoidElements()]|Returns a map with void elements. For example: `&#60;br&#62;` or `&#60;img&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
@@ -266,6 +267,20 @@ Returns a map of inline text format nodes. For example: `&#60;strong&#62;`, `&#6
 ==== Return value
 
 * `Object` - Name/value lookup map for text format elements.
+
+'''
+
+[[getTransparentElements]]
+=== getTransparentElements()
+[source, javascript]
+----
+getTransparentElements(): Object
+----
+Returns a map with elements that should be treated as transparent.
+
+==== Return value
+
+* `Object` - Name/value lookup map for special elements.
 
 '''
 

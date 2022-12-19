@@ -1,7 +1,7 @@
 = tinymce.dom.Selection
 :navtitle: tinymce.dom.Selection
 :description: This class handles text and control selection it&#x27;s an crossbrowser utility class. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
-:keywords: Selection, collapse, getBookmark, getContent, getEnd, getNode, getRng, getSel, getStart, isCollapsed, moveToBookmark, select, selectorChanged, setContent, setCursorLocation, setNode, setRng
+:keywords: Selection, collapse, expand, getBookmark, getContent, getEnd, getNode, getRng, getSel, getStart, isCollapsed, moveToBookmark, select, selectorChanged, setContent, setCursorLocation, setNode, setRng
 :moxie-type: api
 
 This class handles text and control selection it's an crossbrowser utility class. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
@@ -31,6 +31,7 @@ alert(tinymce.activeEditor.selection.getNode().nodeName);
 |===
 |Name|Summary|Defined by
 |xref:#collapse[collapse()]|Collapse the selection to start or end of range.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#expand[expand()]|Expands the selection range to contain the entire word when the selection is collapsed within the word.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#getBookmark[getBookmark()]|Returns a bookmark location for the current selection. This bookmark object
 can then be used to restore the selection after some content modification to the document.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#getContent[getContent()]|Returns the selected contents using the DOM serializer passed in to this class.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
@@ -87,6 +88,20 @@ Collapse the selection to start or end of range.
 ==== Parameters
 
 * `toStart (Boolean)` - Optional boolean state if to collapse to end or not. Defaults to false.
+
+'''
+
+[[expand]]
+=== expand()
+[source, javascript]
+----
+expand(options: Object)
+----
+Expands the selection range to contain the entire word when the selection is collapsed within the word.
+
+==== Parameters
+
+* `options (Object)` - Optional options provided to the expansion. Defaults to { type: 'word' }
 
 '''
 

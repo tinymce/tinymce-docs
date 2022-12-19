@@ -1,7 +1,7 @@
 = tinymce.dom.RangeUtils
 :navtitle: tinymce.dom.RangeUtils
 :description: This class contains a few utility methods for ranges.
-:keywords: compareRanges, getCaretRangeFromPoint
+:keywords: compareRanges, expand, getCaretRangeFromPoint
 :moxie-type: api
 
 This class contains a few utility methods for ranges.
@@ -15,6 +15,7 @@ This class contains a few utility methods for ranges.
 |===
 |Name|Summary|Defined by
 |xref:#compareRanges[compareRanges()]|Compares two ranges and checks if they are equal.|`xref:apis/tinymce.dom.rangeutils.adoc[RangeUtils]`
+|xref:#expand[expand()]|Returns a range expanded around the entire word the provided selection was collapsed within.|`xref:apis/tinymce.dom.rangeutils.adoc[RangeUtils]`
 |xref:#getCaretRangeFromPoint[getCaretRangeFromPoint()]|Gets the caret range for the given x/y location.|`xref:apis/tinymce.dom.rangeutils.adoc[RangeUtils]`
 |===
 
@@ -37,6 +38,25 @@ Compares two ranges and checks if they are equal.
 ==== Return value
 
 * `Boolean` - True or false if the ranges are equal.
+
+'''
+
+[[expand]]
+=== expand()
+[source, javascript]
+----
+expand(rng: Range, options: Object): Range
+----
+Returns a range expanded around the entire word the provided selection was collapsed within.
+
+==== Parameters
+
+* `rng (Range)` - The initial range to work from.
+* `options (Object)` - Optional options provided to the expansion. Defaults to { type: 'word' }
+
+==== Return value
+
+* `Range` - Returns the expanded range.
 
 '''
 

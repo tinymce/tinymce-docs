@@ -1,7 +1,7 @@
 = tinymce.editor.ui.Registry
 :navtitle: tinymce.editor.ui.Registry
 :description: TinyMCE UI registration API.
-:keywords: addAutocompleter, addButton, addContextForm, addContextMenu, addContextToolbar, addGroupToolbarButton, addIcon, addMenuButton, addMenuItem, addNestedMenuItem, addSidebar, addSplitButton, addToggleButton, addToggleMenuItem
+:keywords: addAutocompleter, addButton, addContextForm, addContextMenu, addContextToolbar, addGroupToolbarButton, addIcon, addMenuButton, addMenuItem, addNestedMenuItem, addSidebar, addSplitButton, addToggleButton, addToggleMenuItem, addView
 :moxie-type: api
 
 TinyMCE UI registration API.
@@ -95,6 +95,14 @@ showing a tick in the menu item to represent state.
 For information on creating a toggle menu item, see:
 link:https://www.tiny.cloud/docs/tinymce/6/custom-toggle-menu-items/[
 UI Components - Custom menu items: Toggle menu items].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
+|xref:#addView[addView()]|Registers a new view container.
+This view container is hidden (off) by default and attached next to the main view.
+It can be toggled on or off.
+When it is on, the main editor view is hidden and the specific view is shown.
+When it is off, the specific view is hidden and the main view is shown.
+There is also a ToggleView command.
+The ToggleView command can toggle the view visibility.
+The ToggleView command can be queried for its current state.|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |===
 
 [[methods]]
@@ -381,5 +389,27 @@ UI Components - Custom menu items: Toggle menu items].
 
 * `name (String)` - Unique name identifying the new menu item.
 * `obj (Menu.ToggleMenuItemSpec)` - The menu item configuration object.
+
+'''
+
+[[addView]]
+=== addView()
+[source, javascript]
+----
+addView(name: String, obj: View.ViewSpec)
+----
+Registers a new view container.
+This view container is hidden (off) by default and attached next to the main view.
+It can be toggled on or off.
+When it is on, the main editor view is hidden and the specific view is shown.
+When it is off, the specific view is hidden and the main view is shown.
+There is also a ToggleView command.
+The ToggleView command can toggle the view visibility.
+The ToggleView command can be queried for its current state.
+
+==== Parameters
+
+* `name (String)` - Unique name identifying the new view.
+* `obj (View.ViewSpec)` - The view configuration object.
 
 '''

@@ -419,7 +419,7 @@ The `+'issue'+` object provides relevant data pertaining to any issue generated 
 
 * `+description+` : `+String+` description of the issue; as will be displayed in the dialog.
 
-* `+severity+` : `+String+` severity level of the issue; either `+info+`, `+warning+`, or `+error+`.
+* `+severity+` : `+String+` severity level of the issue; either `+info+`, `+warning+` or `+error+`.
 
 * `+url+` : `+String+` URL reference for the issue. By default, this will be a link to the W3 website, containing the W3 WCAG technique that needs to be addressed to clear the issue.
 

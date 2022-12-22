@@ -243,13 +243,13 @@ NOTE: Some non-ASCII characters or Unicode codepoints count as more than one cha
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
 
-=== Spellchecker Pro 3.1.1
+=== Spell Checker Pro 3.1.1
 
-The {productname} 6.3 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
+The {productname} 6.3 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spellchecker Pro** 3.1.1 includes one fix:
+**Spell Checker Pro** 3.1.1 includes one fix:
 
-==== Spellchecker Pro could search outside of the {productname} editor for a language match
+==== Spell Checker Pro could search outside of the {productname} editor for a language match
 
 For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in an ancestor HTML element to the word (ie, any elements that contain the word). 
 
@@ -259,7 +259,7 @@ If a `lang` attribute existed anywhere in that ancestry, this ancestral `lang` a
 
 As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
 
-For information on the **Spellchecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spellchecker Pro].
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
 === Spelling Autocorrect 1.0.1
 

@@ -599,7 +599,7 @@ In previous versions of {productname}, when running on Firefox and after pressin
 
 This error has been corrected in {productname} 6.3. When running {productname} 6.3 on Firefox and creating a merge tag using `mceInsertContent`, pressing Enter or Return to generate the desired merge tag moves the insertion point to the end of said newly-created merge tag, as expected.
 
-=== The `autoresize` plugin caused the editor area to infinitely resize when `content_css` was set to `document`.
+=== The `autoresize` plugin caused the editor area to infinitely resize when `content_css` was set to `document`
 
 The `document` skin’s CSS aligns the bottom of the content area to the bottom of the editor, but does not set anything for `autoresize_bottom_margin`. As a consequence the {productname} editor takes the default value for this attribute: 50.
 

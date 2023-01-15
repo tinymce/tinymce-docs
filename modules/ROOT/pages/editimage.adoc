@@ -52,8 +52,8 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'image',
   plugins: 'image editimage',
-  editimage_cors_hosts: [ 'mydomain.com', 'otherdomain.com' ],
-  editimage_proxy_service_url: 'http://mydomain.com/ephox-image-proxy/'
+  editimage_cors_hosts: [ 'example.com', 'example.net' ],
+  editimage_proxy_service_url: 'http://example.com/ephox-image-proxy/'
 });
 ----
 

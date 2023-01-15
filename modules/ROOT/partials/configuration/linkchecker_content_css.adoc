@@ -28,6 +28,6 @@ It is possible to replace or extend those styles, by providing a URL to custom s
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'linkchecker',
-  linkchecker_content_css: 'http://mydomain.com/linkchecker_content.css'
+  linkchecker_content_css: 'http://example.com/linkchecker_content.css'
 });
 ----

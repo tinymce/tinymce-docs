@@ -1,4 +1,4 @@
-Ticket: [DOC-<num>](https://ephocks.atlassian.net/browse/DOC-<num>), <ticket-title-here>.
+Ticket: DOC-<num>, <ticket-title-here>.
 
 Changes:
 * <placeholder-text>

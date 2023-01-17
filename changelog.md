@@ -28,7 +28,6 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### 2022-12-22
 
 - DOC-1883: re-titled and re-arranged entries in `nav.adoc`. This file generates the TinyMCE documentation’s Table of Contents navigation sidebar.
-
 - DOC-1877: copy-edits, corrections, and AsciiDoc markup clean-up across multiple files.
 
 ### 2022-12-21

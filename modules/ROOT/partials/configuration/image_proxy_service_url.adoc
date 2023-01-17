@@ -24,6 +24,6 @@ NOTE: `{proxy_setting_name}` is *not* required when enabling this plugin via xre
 tinymce.init({
   selector: 'textarea',
   plugins: 'image {plugincode}',
-  {proxy_setting_name}: 'http://mydomain.com/ephox-image-proxy/'
+  {proxy_setting_name}: 'http://example.com/ephox-image-proxy/'
 });
 ----

@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-1898: added changelog file, `changelog.md`, to the TinyMCE Documentation project. Entries for previous month’s changes added to this file.
+
 ### 2023-01-18
 
 - DOC-1897: minor edits to template files. No reader-visible changes.

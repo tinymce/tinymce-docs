@@ -1,7 +1,7 @@
-Related Ticket: 
+Ticket: DOC-<num>, <ticket-title-here>.
 
-Description of Changes:
-* Placeholder text
+Changes:
+* <placeholder-text>
 
 Pre-checks:
 - [ ] Branch prefixed with `feature/6/` or `hotfix/6/`

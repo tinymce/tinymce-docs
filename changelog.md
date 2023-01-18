@@ -11,7 +11,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### 2023-01-18
 
 - DOC-1897: minor edits to template files. No reader-visible changes.
-- DOC-1859: copy edits across a baker’s dozen files. Mostly `s/mydomain.com/example.com/` in code samples and editing short plugin descriptions on index pages for tense consistency.
+- DOC-1859: copy edits to a baker’s dozen files. Mostly `s/mydomain.com/example.com/` in code samples plus plugin description edits on index pages for tense consistency.
 
 ### 2023-01-13
 
@@ -44,7 +44,12 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-1895: updates to workflow files. No reader-visible changes.
 
-
 ### 2022-12-15
 
 - DOC-1886: corrected the default values listed for [the `advlist_bullet_styles` option](https://www.tiny.cloud/docs/tinymce/6/advlist/#advlist_bullet_styles) of the *Advanced List plugin*.
+
+### 2022-12-08
+
+- DOC-1777: added the [*6.3 Release Notes*](https://tiny.cloud/docs/tinymce/6/6.3-release-notes).
+- DOC-1868: added entry for the [6.3.1 Community Release](https://tiny.cloud/docs/tinymce/6/changelog/#6-3-1-2022-12-06) noting the discovered and patched XSS vulnerability.
+- DOC-1843: documentation of new `advcode_inline` option added to 

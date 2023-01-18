@@ -20,11 +20,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-01-10
 
-- DOC-1887: added material re responsible disclosure and reporter credit to the [Reporting TinyMCE security issues section](https://tiny.cloud/docs/tinymce/6/security/#reporting-tinymce-security-issues) of the *Security guide*.
+- DOC-1887: added material re responsible disclosure and reporter credit to the [Reporting TinyMCE security issues section](https://tiny.cloud/docs/tinymce/6/security/#reporting-tinymce-security-issues) of the *Security guide* chapter.
 
 ### 2022-12-23
 
-- DOC-1890: fixed two typos in the underlying AsciiDoc markup for the [*Accessibility Checker plugin*](https://tiny.cloud/docs/tinymce/6/a11ychecker/).
+- DOC-1890: fixed two typos in the underlying AsciiDoc markup for the [*Accessibility Checker plugin*](https://tiny.cloud/docs/tinymce/6/a11ychecker/) chapter.
 
 ### 2022-12-22
 
@@ -33,7 +33,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2022-12-21
 
-- DOC-1823: documentation of [accessibilty rule I3, ‘Image alt text is not greater than 100 characters’](https://tiny.cloud/docs/tinymce/6/a11ychecker/#I3), added to *Accessibility Checker plugin*.
+- DOC-1823: documentation of [accessibilty rule I3, ‘Image alt text is not greater than 100 characters’](https://tiny.cloud/docs/tinymce/6/a11ychecker/#I3), added to *Accessibility Checker plugin* chapter.
 
 ### 2022-12-19
 
@@ -47,14 +47,23 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2022-12-15
 
-- DOC-1886: corrected the default values listed for [the `advlist_bullet_styles` option](https://www.tiny.cloud/docs/tinymce/6/advlist/#advlist_bullet_styles) of the *Advanced List plugin*.
+- DOC-1886: corrected the default values listed for [the `advlist_bullet_styles` option](https://www.tiny.cloud/docs/tinymce/6/advlist/#advlist_bullet_styles) of the *Advanced List plugin* chapter.
 
 ### 2022-12-08
 
 - DOC-1777: added the [*6.3 Release Notes*](https://tiny.cloud/docs/tinymce/6/6.3-release-notes).
 - DOC-1868: added entry for the [6.3.1 Community Release](https://tiny.cloud/docs/tinymce/6/changelog/#6-3-1-2022-12-06) noting the discovered and patched XSS vulnerability.
 - DOC-1843: documentation of [`advcode_inline` option](https://tiny.cloud/docs/tinymce/6/advcode/#advcode_inline) added to the *Advanced Code Editor* chapter.
-- DOC-1825: documentation of the [`color_foreground_default` and `color_background_default` options](https://tiny.cloud/docs/tinymce/6/user-formatting-options/#color_default_background) added to *User formatting* chapter.
+- DOC-1825: documentation of the [`color_foreground_default` and `color_background_default` options](https://tiny.cloud/docs/tinymce/6/user-formatting-options/#color_default_background) added to the *User formatting* chapter.
 - DOC-1827: added documentation of the [Inline CSS Premium plugin](https://tiny.cloud/docs/tinymce/6/inline-css/).
 - DOC-1754: added documentation of the [Advanced Typography Premium plugin](https://www.tiny.cloud/docs/tinymce/6/advanced-typography/).
 
+### 2022-12-02
+
+- TINY-9428: updates to workflow files. No reader-visible changes.
+
+### 2022-11-30
+
+- DOC-1858: suite-wide typesetting change. Words immediately following a colon are now set in all lowercase (with the expected exception of any Proper Nouns).
+- DOC-1857: typo corrections and copy-edits.
+- DOC-1852: documentation of the [`tinycomments` annotator](https://tiny.cloud/docs/tinymce/6/comments-commands-events-apis/#tinycomments-annotator) added to the *Commands, Events and APIs for the comments plugin* chapter.

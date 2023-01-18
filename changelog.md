@@ -11,7 +11,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### 2023-01-18
 
 - DOC-1897: minor edits to template files. No reader-visible changes.
-- DOC-1859: copy edits across a baker’s dozen files. Mostly s/mydomain.com/example.com/ in code samples and editing short plugin descriptions on index pages for tense consistency.
+- DOC-1859: copy edits across a baker’s dozen files. Mostly `s/mydomain.com/example.com/` in code samples and editing short plugin descriptions on index pages for tense consistency.
 
 ### 2023-01-13
 

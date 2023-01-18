@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-1898: added changelog file, `changelog.md`, to the TinyMCE Documentation project. Entries for previous month’s changes added to this file.
+- DOC-1899: added missing `include` statement to `advcode.adoc`. The [`advcode_inline` option documentation](https://tiny.cloud/docs/tinymce/6/advcode/#advcode_inline) now appears in the *Advanced Code Editor* chapter (it was always present in the *6.3 Release Notes*).
 
 ### 2023-01-18
 
@@ -52,4 +53,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-1777: added the [*6.3 Release Notes*](https://tiny.cloud/docs/tinymce/6/6.3-release-notes).
 - DOC-1868: added entry for the [6.3.1 Community Release](https://tiny.cloud/docs/tinymce/6/changelog/#6-3-1-2022-12-06) noting the discovered and patched XSS vulnerability.
-- DOC-1843: documentation of new `advcode_inline` option added to 
+- DOC-1843: documentation of [new `advcode_inline` option](https://tiny.cloud/docs/tinymce/6/advcode/#advcode_inline) added to the *Advanced Code Editor* chapter.
+- DOC-1825: documentation of the [`color_foreground_default` and `color_background_default` options](https://tiny.cloud/docs/tinymce/6/user-formatting-options/#color_default_background) added to *User formatting* chapter.
+- DOC-1827: added documentation of the [Inline CSS Premium plugin](https://tiny.cloud/docs/tinymce/6/inline-css/).
+- DOC-1754: added documentation of the [Advanced Typography Premium plugin](https://www.tiny.cloud/docs/tinymce/6/advanced-typography/).
+

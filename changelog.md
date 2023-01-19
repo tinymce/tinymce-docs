@@ -7,6 +7,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-1898: added changelog file, `changelog.md`, to the TinyMCE Documentation project. Entries for previous month’s changes added to this file.
+
+### 2023-01-19
+
 - DOC-1899: added missing `include` statement to `advcode.adoc`. The [`advcode_inline` option documentation](https://tiny.cloud/docs/tinymce/6/advcode/#advcode_inline) now appears in the *Advanced Code Editor* chapter (it was always present in the *6.3 Release Notes*).
 
 ### 2023-01-18
@@ -67,3 +70,39 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-1858: suite-wide typesetting change. Words immediately following a colon are now set in all lowercase (with the expected exception of any Proper Nouns).
 - DOC-1857: typo corrections and copy-edits.
 - DOC-1852: documentation of the [`tinycomments` annotator](https://tiny.cloud/docs/tinymce/6/comments-commands-events-apis/#tinycomments-annotator) added to the *Commands, Events and APIs for the comments plugin* chapter.
+
+
+### 2022-11-03
+
+- DOC-1849: documentation of the [`issue` object](https://tiny.cloud/docs/tinymce/6/a11ychecker/#issue) added to the *Accessibility Checker plugin* chapter. Example of [using `+a11ychecker_filter_issue+` to filter images with empty alternative text from the Accessibility Checker I1 rule](https://tiny.cloud/docs/tinymce/6/a11ychecker/#example-using-a11ychecker_filter_issue-to-filter-out-all-accessibility-checker-table-rules-and-rules-less-than-error-level) added to the *Accessibility Checker plugin* chapter. Also added further explanatory details regarding the [`a11ychecker_filter_issue`](https://tiny.cloud/docs/tinymce/6/a11ychecker/#a11ychecker_filter_issue) to the the *Accessibility Checker plugin* chapter.
+
+### 2022-10-27
+
+- DOC-1850: markup error, resulting in an incorrect in-document link, corrected.
+
+### 2022-10-21
+
+- DOC-1799: Added documentation of the `toolbar_sticky` option to [*Options for customizing the editor’s toolbars*](https://tiny.cloud/docs/tinymce/6/toolbar-configuration-options/#toolbar_sticky) and [*Options for customizing the editor’s menus*](https://tiny.cloud/docs/tinymce/6/menus-configuration-options/#toolbar_sticky) chapters.
+- DOC-1844: in-document links to `onSetup` documentation were presented on the wrong table rows in the [*Creating custom Basic toolbar buttons*](https://tiny.cloud/docs/tinymce/6/custom-basic-toolbar-button) and [*Creating custom Toggle toolbar buttons*](https://tiny.cloud/docs/tinymce/6/custom-toggle-toolbar-button/) chapters. This was corrected.
+
+### 2022-10-17
+
+- DOC-1834: Edits to and restructuring of the [autocompleter](https://tiny.cloud/docs/tinymce/6/6.2-release-notes/#the-autocompleter-now-supports-a-multiple-character-trigger-using-the-new-trigger-configuration) and [`ch` deprecation](https://tiny.cloud/docs/tinymce/6/6.2-release-notes/#the-autocompleter-configuration-property-ch-has-been-deprecated) sections of the *6.2 release notes* to more explicitly note the new trigger property’s utility.
+
+### 2022-10-11
+
+- DOC-1831: two TinyMCE-specific APIs were deprecated and removed from the TinyMCE 6.0 release. The *6.0 Release Notes* include [a table listing these, along with other deprecated and removed items](https://tiny.cloud/docs/tinymce/6/6.0-release-notes-core-changes/#previously-deprecated-items-now-removed). Outbound links to documentation of the browser-native APIs that constitute the alternative to these were added to these tables.
+
+### 2022-10-06
+
+- DOC-1821: inconsistent spelling of *Merge Tags* (the Proper Nown plugin) and *merge tags* (specific examples of the markup said plugin adds to a TinyMCE document, and a plain noun phrase) made consistent across the entire documentation suite.
+
+### 2022-10-05
+
+- DOC-1818: typo correction. `s/tags/Tags/`.
+
+### 2022-10-04
+
+- DOC-1824: updates to template files with no reader-visible changes. Typo correction in `nav.adoc`, the file that generates the TinyMCE documentation’s Table of Contents navigation sidebar. ID markup added to two files to prevent IDEs from complaining about their absence. Again, no reader-visible changes. And the [Accompanying Premium self-hosted server-side component changes](https://tiny.cloud/docs/tinymce/6/6.2-release-notes/#accompanying-premium-self-hosted-server-side-component-changes) and [Security fixes](https://tiny.cloud/docs/tinymce/6/6.2-release-notes/#security-fixes) sections were added back to the *6.2 Release Notes*.
+- DOC-1816: markup corrections to prevent asciidoctor warnings. No reader-visible changes.
+

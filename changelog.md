@@ -6,7 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-1898: added changelog file, `changelog.md`, to the TinyMCE Documentation project. Entries for previous month’s changes added to this file.
+### 2023-01-20
+
+- DOC-1898: added changelog file, `changelog.md`, to the TinyMCE Documentation project. Entries for several month’s changes dating back from this initial creation date added to the file.
 
 ### 2023-01-19
 

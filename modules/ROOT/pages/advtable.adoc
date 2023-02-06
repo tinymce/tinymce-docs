@@ -75,26 +75,26 @@ tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: 'table advtable',
   toolbar: "table advtablerownumbering",
-	advtable_value_series: {
-		numbers: {
-			update: true,
-			resizable: false,
-			generator: function(info, rowIndex, colIndex) {
-				var prevCount = info.prev ? info.prev.count : 0;
-				if (info.sectionType === 'tbody' && info.cellType === 'td') {
-					var newCount = prevCount + 1;
-					return {
-						value: newCount,
-						count: newCount
-					};
-				} else {
-					return {
-						count: prevCount
-					};
-				}
-			}
-		}
-	}
+  advtable_value_series: {
+    numbers: {
+      update: true,
+      resizable: false,
+      generator: function(info, rowIndex, colIndex) {
+        var prevCount = info.prev ? info.prev.count : 0;
+        if (info.sectionType === 'tbody' && info.cellType === 'td') {
+          var newCount = prevCount + 1;
+          return {
+            value: newCount,
+            count: newCount
+          };
+        } else {
+          return {
+            count: prevCount
+          };
+        }
+      }
+    }
+  }
 });
 ----
 

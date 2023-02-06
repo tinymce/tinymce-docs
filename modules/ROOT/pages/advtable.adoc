@@ -63,46 +63,10 @@ A numeric and alpha value series are available by default. The available value s
 
 image::advtable-row-numbering.png[Table with numeric row numbering column and row numbering menu open (Numeric item checked)]
 
-== Excluding header and footer rows from row numbering
-
 A commonly desired customisation of the row-numbering column is that a table’s header and footer rows not be included in the numbering.
 
-This can be done using the xref:advtable_value_series[`+advtable_value_series+` option] to specify a custom generator, as in the following simple example.
+This can be done using the xref:advtable_value_series[`+advtable_value_series+` option] to specify a custom generator.
 
-[source,js]
-----
-tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  plugins: 'table advtable',
-  toolbar: "table advtablerownumbering",
-  advtable_value_series: {
-    numbers: {
-      update: true,
-      resizable: false,
-      generator: function(info, rowIndex, colIndex) {
-        var prevCount = info.prev ? info.prev.count : 0;
-        if (info.sectionType === 'tbody' && info.cellType === 'td') {
-          var newCount = prevCount + 1;
-          return {
-            value: newCount,
-            count: newCount
-          };
-        } else {
-          return {
-            count: prevCount
-          };
-        }
-      }
-    }
-  }
-});
-----
-
-With this custom generator, when a table with a header and footer row already set has row numbers added via the `advtablerownumbering` toolbar item, row numbers are not added to the header and footer rows.
-
-image::advtable-row-numbered-table-with-un-numbered-header-and-footer-rows.png[Row-numbered table with un-numbered header and footer rows]
-
-NOTE: This simple custom generator is a demonstration. It has significant limitations. Perhaps most significant, it requires the header and footer rows be set _before_ row numbers are added to a table. If row numbers are added and then a header row, or a footer row, or both, are set, this generator will _not_ remove existing row numbers from the now-set header and footer rows.
 
 == Options
 

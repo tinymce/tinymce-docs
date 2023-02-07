@@ -1,10 +1,11 @@
-Related Ticket: 
+Ticket: DOC-<num>, <ticket-title-here>.
 
-Description of Changes:
-* Placeholder text
+Changes:
+* <placeholder-text>
 
 Pre-checks:
 - [ ] Branch prefixed with `feature/6/` or `hotfix/6/`
+- [ ] Changelog entry added
 - [ ] `modules/ROOT/nav.adoc` has been updated (if applicable)
 - [ ] Files has been included where required (if applicable)
 - [ ] Files removed have been deleted, not just excluded from the build (if applicable)

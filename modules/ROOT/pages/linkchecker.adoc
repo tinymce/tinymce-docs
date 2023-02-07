@@ -43,7 +43,7 @@ Customers using a Self-hosted environment will need to provide a URL to their de
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'linkchecker',
-  linkchecker_service_url: 'http://mydomain.com/linkchecker'
+  linkchecker_service_url: 'http://example.com/linkchecker'
 });
 ----
 

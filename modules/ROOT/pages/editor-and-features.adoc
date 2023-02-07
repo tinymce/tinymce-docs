@@ -1,6 +1,6 @@
 = Cloud deployment of editor & plugins
-:description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
-:description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
+:description_short: Learn how to set up the {productname} editor via the Cloud or migrate from a self-hosted environment.
+:description: Learn how to set up the {productname} editor via the Cloud or migrate from a self-hosted environment.
 :keywords: tinymce, cloud, script, textarea, apiKey
 :productSource: cloud
 
@@ -10,7 +10,7 @@
 
 All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:editimage.adoc[Enhanced Image Editing] plugin.
 
-== Integrating TinyMCE for the first time
+== Integrating {productname} for the first time
 
 === Step 1: Insert the Tiny Cloud script tag into the webpage
 
@@ -39,13 +39,13 @@ image::scripttag.png[Script Tag Description]
 To check the *Referer* header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {productname} with your API key, and click on the *Headers* tab. In the section called *Request Headers* there should be a field for *Referer*. If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's *Refer* header settings.
 ====
 
-=== Step 2: Load, customize and interact with TinyMCE
+=== Step 2: Load, customize and interact with {productname}
 
 There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on {cloudname}. A range of xref:basic-example.adoc[simple examples] are available. Refer to the xref:cloud-quick-start.adoc[Quick start] section for more information.
 
-=== Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
+=== Step 3: Specifying purchased {productname} plugins and toolbar/menu items
 
-NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
+NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser’s cache.
 
 Extend the xref:basic-setup.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
@@ -92,7 +92,7 @@ Reference xref:editor-important-options.adoc#external_plugins[external_plugins] 
 
 WARNING: Do not use the regular xref:work-with-plugins.adoc[plugins] configuration element.
 
-=== Step 3: Specify purchased TinyMCE plugins and toolbar buttons
+=== Step 3: Specify purchased {productname} plugins and toolbar buttons
 
 Extend the xref:basic-setup.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 

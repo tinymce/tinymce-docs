@@ -1,7 +1,7 @@
 = tinymce
 :navtitle: tinymce
 :description: TinyMCE core class.
-:keywords: DOM, PluginManager, ScriptLoader, ThemeManager, activeEditor, add, addI18n, baseURI, baseURL, createEditor, documentBaseURL, each, execCommand, explode, get, grep, hasOwnProperty, i18n, inArray, init, is, isArray, majorVersion, makeMap, map, minorVersion, overrideDefaults, releaseDate, remove, resolve, setActive, suffix, toArray, translate, triggerSave, trim, walk
+:keywords: DOM, PluginManager, ScriptLoader, ThemeManager, activeEditor, add, addI18n, baseURI, baseURL, createEditor, defaultOptions, documentBaseURL, each, execCommand, explode, get, grep, hasOwnProperty, i18n, inArray, init, is, isArray, majorVersion, makeMap, map, minorVersion, overrideDefaults, releaseDate, remove, resolve, setActive, suffix, toArray, translate, triggerSave, trim, walk
 :moxie-type: api
 
 TinyMCE core class.
@@ -21,6 +21,7 @@ TinyMCE core class.
 |activeEditor|`xref:apis/tinymce.editor.adoc[Editor]`|Currently active editor instance.|`xref:apis/tinymce.root.adoc[tinymce]`
 |baseURI|`xref:apis/tinymce.util.uri.adoc[URI]`|Absolute baseURI for the installation path of TinyMCE.|`xref:apis/tinymce.root.adoc[tinymce]`
 |baseURL|`String`|Base URL where the root directory if TinyMCE is located.|`xref:apis/tinymce.root.adoc[tinymce]`
+|defaultOptions|`Object`|Object containing the options that will be passed by default to the `init` method upon each initialization of an editor. These defaults will be shallow merged with other options passed to `init`.|`xref:apis/tinymce.root.adoc[tinymce]`
 |documentBaseURL|`String`|Document base URL where the current document is located.|`xref:apis/tinymce.root.adoc[tinymce]`
 |i18n|`Object`|Collection of language pack data.|`xref:apis/tinymce.root.adoc[tinymce]`
 |majorVersion|`String`|Major version of TinyMCE build.|`xref:apis/tinymce.root.adoc[tinymce]`
@@ -57,7 +58,11 @@ For information on basic usage of `init`, see: link:https://www.tiny.cloud/docs/
 |xref:#makeMap[makeMap()]|Makes a name/object map out of an array with names.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#map[map()]|Creates a new array by the return value of each iteration function call. This enables you to convert
 one array list into another.|`xref:apis/tinymce.root.adoc[tinymce]`
-|xref:#overrideDefaults[overrideDefaults()]|Overrides the default options for editor instances.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#overrideDefaults[overrideDefaults()]|Overrides the default options for editor instances. The `overrideDefaults` method replaces the `defaultOptions`, including any set by a previous call to the `overrideDefaults` method.
+
+When using the Tiny Cloud, some of these defaults are required for the cloud-based editor to function.
+
+Therefore, when using `overrideDefaults` with the cloud-based editor, any newly integrated options must be combined with the options in `tinymce.defaultOptions`.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#remove[remove()]|Removes a editor or editors form page.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#resolve[resolve()]|Resolves a string and returns the object from a specific structure.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#setActive[setActive()]|Sets the active editor instance and fires the deactivate/activate events.|`xref:apis/tinymce.root.adoc[tinymce]`
@@ -421,11 +426,28 @@ one array list into another.
 ----
 overrideDefaults(defaultOptions: Object)
 ----
-Overrides the default options for editor instances.
+Overrides the default options for editor instances. The `overrideDefaults` method replaces the `defaultOptions`, including any set by a previous call to the `overrideDefaults` method.
+
+When using the Tiny Cloud, some of these defaults are required for the cloud-based editor to function.
+
+Therefore, when using `overrideDefaults` with the cloud-based editor, any newly integrated options must be combined with the options in `tinymce.defaultOptions`.
+
+==== Examples
+[source, javascript]
+----
+const customOptions = {
+  toolbar_sticky: true
+};
+
+tinymce.overrideDefaults({
+  ...tinymce.defaultOptions,
+  ...customOptions
+});
+----
 
 ==== Parameters
 
-* `defaultOptions (Object)` - Defaults options object.
+* `defaultOptions (Object)` - Default options object.
 
 '''
 

@@ -126,16 +126,7 @@
 *** xref:plugin-editor-version-compatibility.adoc[Version compatibility reference]
 *** xref:cloud-troubleshooting.adoc[Cloud Troubleshooting]
 ** Premium server-side services guide
-*** xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation]
-*** Configure the server-side components
-**** xref:configure-required-services.adoc[Required configuration]
-**** xref:configure-common-settings-services.adoc[Optional common settings]
-**** xref:configure-hyperlink-service.adoc[Hyperlinking service settings]
-**** xref:configure-imageproxy-service.adoc[Image Proxy service settings]
-**** xref:configure-spelling-service.adoc[Spelling service settings]
-**** xref:self-hosting-hunspell.adoc[Spelling service - Using Hunspell dictionaries]
-**** xref:configure-logging-services.adoc[Activity logging]
-*** Docker containers
+*** Server-side component installation with Docker
 **** Premium self-hosted bundle users
 ***** xref:bundle-intro-setup.adoc[Introduction and initial setup]
 ***** xref:bundle-hyperlinking-container.adoc[Hyperlinking service]
@@ -144,6 +135,15 @@
 **** Individually licensed plugin services
 ***** xref:individual-hyperlinking-container.adoc[Hyperlinking service]
 ***** xref:individual-spelling-container.adoc[Spelling service]
+*** Configure the server-side components
+**** xref:configure-required-services.adoc[Required configuration]
+**** xref:configure-common-settings-services.adoc[Optional common settings]
+**** xref:configure-hyperlink-service.adoc[Hyperlinking service settings]
+**** xref:configure-imageproxy-service.adoc[Image Proxy service settings]
+**** xref:configure-spelling-service.adoc[Spelling service settings]
+**** xref:self-hosting-hunspell.adoc[Spelling service - Using Hunspell dictionaries]
+**** xref:configure-logging-services.adoc[Activity logging]
+*** xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation without Docker]
 *** xref:troubleshoot-server.adoc[Troubleshoot server-side components]
 ** Customizing the editor appearance
 *** xref:customize-ui.adoc[Customizing the UI]
